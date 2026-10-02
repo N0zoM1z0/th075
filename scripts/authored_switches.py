@@ -69,3 +69,57 @@ def verify_switches(code, address, records, read):
             raise ValueError("switch targets an external tail, guard interior or non-instruction")
         result[site] = destinations
     return result
+
+
+def verify_direct_switches(code, address, records, read):
+    """Verify a guarded, directly indexed complete 32-bit jump table."""
+    decoder = Cs(CS_ARCH_X86, CS_MODE_32)
+    decoder.detail = True
+    instructions = list(decoder.disasm(code, address))
+    positions = {item.address: index for index, item in enumerate(instructions)}
+    starts = set(positions)
+    result = {}
+    for record in records:
+        site = int(record["jump_site"], 16)
+        index = positions[site]
+        if site in result or index < 3:
+            raise ValueError("duplicate or incomplete direct switch dispatch")
+        compare, guard, load, jump = instructions[index - 3:index + 1]
+        if [item.mnemonic for item in (compare, guard, load, jump)] != ["cmp", "ja", "mov", "jmp"]:
+            raise ValueError("unsupported direct switch dispatch instructions")
+        slot, limit = compare.operands
+        if (slot.type != X86_OP_MEM or slot.mem.base != X86_REG_EBP or slot.mem.index
+                or slot.mem.segment or slot.size != 4 or limit.type != X86_OP_IMM
+                or not 0 <= limit.imm <= 255 or guard.operands[0].type != X86_OP_IMM
+                or guard.operands[0].imm not in starts):
+            raise ValueError("direct switch lacks an unsigned bounded frame selector")
+        loaded_register, loaded_slot = load.operands
+        if (loaded_register.type != X86_OP_REG or loaded_slot.type != X86_OP_MEM
+                or loaded_slot.mem.base != slot.mem.base or loaded_slot.mem.index
+                or loaded_slot.mem.segment or loaded_slot.mem.disp != slot.mem.disp
+                or loaded_slot.size != 4):
+            raise ValueError("direct switch selector differs from its range guard")
+        operand = jump.operands[0]
+        if (operand.type != X86_OP_MEM or operand.size != 4 or operand.mem.base
+                or operand.mem.segment or operand.mem.scale != 4
+                or operand.mem.index != loaded_register.reg):
+            raise ValueError("direct switch table does not consume the bounded selector")
+        table_size = (limit.imm + 1) * 4
+        if (compare.address != int(record["range_site"], 16)
+                or guard.operands[0].imm != int(record["default_target"], 16)
+                or operand.mem.disp != int(record["table_address"], 16)
+                or table_size != int(record["table_size"])):
+            raise ValueError("direct switch instruction fields differ from evidence")
+        forbidden = {item.address for item in (guard, load, jump)}
+        for other in instructions:
+            if (other.group(CS_GRP_JUMP) and other.operands[0].type == X86_OP_IMM
+                    and other.operands[0].imm in forbidden):
+                raise ValueError("incoming branch bypasses the direct switch range guard")
+        table = read(operand.mem.disp, table_size)
+        if (len(table) != table_size or hashlib.sha256(table).hexdigest() != record["table_sha256"]):
+            raise ValueError("complete direct switch table hash mismatch")
+        destinations = list(struct.unpack("<" + "I" * (limit.imm + 1), table))
+        if any(value not in starts or value in forbidden for value in destinations):
+            raise ValueError("direct switch targets an external tail or non-instruction")
+        result[site] = destinations
+    return result

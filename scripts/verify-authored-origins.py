@@ -17,7 +17,7 @@ SWITCHES = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(SWITCHES)
 
 
-def verify_body(code, address, switches=(), read=None):
+def verify_body(code, address, switches=(), read=None, direct_switches=()):
     decoder = Cs(CS_ARCH_X86, CS_MODE_32)
     decoder.detail = True
     instructions = list(decoder.disasm(code, address))
@@ -26,6 +26,11 @@ def verify_body(code, address, switches=(), read=None):
         raise ValueError("authored extent is incomplete or lacks its final RET")
     starts = {item.address for item in instructions}
     switch_targets = SWITCHES.verify_switches(code, address, switches, read) if switches else {}
+    direct_targets = (SWITCHES.verify_direct_switches(code, address, direct_switches, read)
+                      if direct_switches else {})
+    if set(switch_targets) & set(direct_targets):
+        raise ValueError("duplicate authored switch jump site")
+    switch_targets.update(direct_targets)
     jumps = [item for item in instructions if item.group(CS_GRP_JUMP)]
     for jump in jumps:
         if jump.address in switch_targets:
@@ -54,9 +59,14 @@ def main():
     if switch_path.exists():
         for row in rows("authored-origin-switches.csv"):
             switches.setdefault(row["address"], []).append(row)
+    direct_switches = {}
+    direct_path = ROOT / "config/authored-origin-direct-switches.csv"
+    if direct_path.exists():
+        for row in rows("authored-origin-direct-switches.csv"):
+            direct_switches.setdefault(row["address"], []).append(row)
     if not evidence or len({row["address"] for row in evidence}) != len(evidence):
         raise ValueError("empty or duplicate authored origin evidence")
-    if set(switches) - {row["address"] for row in evidence}:
+    if (set(switches) | set(direct_switches)) - {row["address"] for row in evidence}:
         raise ValueError("orphan authored switch evidence")
     total = 0
     for row in evidence:
@@ -70,11 +80,12 @@ def main():
         code = comparison.pe_bytes_at(target, int(key, 16), size)
         if hashlib.sha256(code).hexdigest() != row["body_sha256"]:
             raise ValueError("authored target body hash mismatch: " + key)
-        for switch in switches.get(key, []):
+        for switch in switches.get(key, []) + direct_switches.get(key, []):
             if switch["evidence_id"] != row["evidence_id"]:
                 raise ValueError("authored switch origin batch differs from body evidence")
         counts = verify_body(code, int(key, 16), switches.get(key, []),
-                             lambda address, extent: comparison.pe_bytes_at(target, address, extent))
+                             lambda address, extent: comparison.pe_bytes_at(target, address, extent),
+                             direct_switches.get(key, []))
         if (counts != (int(row["return_count"]), int(row["internal_branch_count"]))
                 or int(row["external_branch_count"]) != 0):
             raise ValueError("authored complete CFG metadata mismatch: " + key)

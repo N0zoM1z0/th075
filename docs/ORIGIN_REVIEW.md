@@ -2025,3 +2025,34 @@ Local CI passed 95 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r043-origin-verification.json`.
+
+## R044 — complete guarded scene-state dispatchers
+
+Three previously pending scene routines use a direct x86 jump table. Their
+whole target bodies and all decoded instructions are hashed and checked by
+`verify-authored-origins.py`. The new direct-switch verifier checks the exact
+`cmp` / unsigned `ja` / selector `mov` / indexed `jmp` sequence, requires the
+same stack slot in the bound and selector load, checks that no direct branch
+enters the guard's interior, hashes every table byte, and requires every table
+destination and the default destination to be an instruction start inside the
+complete function extent. This resolves their outgoing indirect jumps without
+guessing a callee or accepting only selected cases.
+
+| Entry | Extent | Cases | Target-observed behavior supporting authored origin |
+| --- | ---: | ---: | --- |
+| `0x00433470` | 1,442 bytes | 9 | Advances the paired character-select state, dispatching player selection, animation, controller handling and scene transitions. |
+| `0x0043A270` | 1,273 bytes | 10 | Dispatches title-menu selections to game-mode and transition policies, including the observed scene return codes. |
+| `0x0043B610` | 4,764 bytes | 15 | Advances the battle scene through its mode/state cases, round progress, persistence and transition calls. |
+
+The table locations, complete SHA-256 values and guard instruction addresses
+are recorded in `config/authored-origin-direct-switches.csv`; the independent
+whole-body hashes and local CFG counts are in
+`config/authored-origin-evidence.csv`. The scene names remain inferred. R044
+adds origin evidence only; no source, mapping or exact credit is added. Totals
+are 1,611 reviewed: 280 authored, 767 library and 564 compiler; 2,740 remain
+pending. Exact stays 42 functions / 8,916 bytes against the provisional
+184,366-byte authored slice (4.84%). Finish origin review before exact work.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r044-origin-verification.json`.

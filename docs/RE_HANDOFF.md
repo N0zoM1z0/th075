@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  277 authored, 767 library and 564 compiler candidates; 2,743 origins remain
+  280 authored, 767 library and 564 compiler candidates; 2,740 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 176,887, with 8,916 exact (5.04%).
+  The current reviewed authored-byte denominator is 184,366, with 8,916 exact (4.84%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R043 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R044 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -526,3 +526,15 @@ https://github.com/N0zoM1z0/th075/actions/runs/37015681021.
 Local CI passed 95 tests. The unchanged no-auth public Funnel MCP ran the
 authored verifier and target-required status checks; private receipt:
 `.analysis/public-r043-origin-verification.json`.
+
+R044 reviews three complete central scene-state functions / 7,479 bytes. A
+new cold verifier checks each exact direct jump-table guard, all table bytes,
+every in-body destination, and the complete extent and CFG. Character select,
+title selection and battle state advance have inferred roles only. Totals are
+1,611 reviewed (280 authored, 767 library, 564 compiler), 2,740 pending;
+exact remains 42 / 8,916 bytes against provisional 184,366 authored bytes
+(4.84%). No exact work resumes until origin review is complete. The unchanged
+no-auth public Funnel MCP runs the origin verifier and target-required checks;
+private receipt: `.analysis/public-r044-origin-verification.json`.
+R043 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37016850140.

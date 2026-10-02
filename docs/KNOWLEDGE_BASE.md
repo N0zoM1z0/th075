@@ -823,3 +823,14 @@ transitions. Five small progress-record accessors use game-specific nested
 offsets and are independently observed as complete bodies. Tiny wrappers,
 empty methods and unresolved jump-table extents remain pending. The 37 R043
 decisions grant authored origin only, with no source or exact credit.
+
+## Origin-only observations after R044
+
+The character-select, title and battle advance routines use direct indexed
+jump tables with nine, ten and fifteen entries, respectively. Each selector
+has an immediately preceding unsigned bound check on the same stack slot.
+The tables' complete bytes and all in-body case destinations are now checked
+as part of cold origin replay. These central dispatchers connect many of the
+already reviewed scene helpers and identify useful candidates for later exact
+prioritization. Their class labels are inferred; the three R044 decisions
+grant authored origin only, with no source or exact credit.

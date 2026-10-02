@@ -41,5 +41,33 @@ class AuthoredSwitchTests(unittest.TestCase):
             SWITCHES.verify_switches(body, 0x401000, [record], read)
 
 
+def direct_fixture(targets=(0x401010, 0x401010)):
+    body = (b"\x83\x7d\xfc\x01\x77\x0a\x8b\x45\xfc\xff\x24\x85"
+            + struct.pack("<I", 0x5100) + b"\xc3")
+    table = struct.pack("<II", *targets)
+    record = {"jump_site": "0x401009", "range_site": "0x401000",
+              "default_target": "0x401010", "table_address": "0x5100",
+              "table_size": "8", "table_sha256": hashlib.sha256(table).hexdigest()}
+    return body, record, lambda address, size: table[:size]
+
+
+class DirectAuthoredSwitchTests(unittest.TestCase):
+    def test_guard_and_all_direct_table_targets_are_verified(self):
+        body, record, read = direct_fixture()
+        self.assertEqual(SWITCHES.verify_direct_switches(body, 0x401000, [record], read),
+                         {0x401009: [0x401010, 0x401010]})
+
+    def test_direct_table_target_outside_complete_body_is_rejected(self):
+        body, record, read = direct_fixture((0x401010, 0x401011))
+        with self.assertRaisesRegex(ValueError, "external tail or non-instruction"):
+            SWITCHES.verify_direct_switches(body, 0x401000, [record], read)
+
+    def test_direct_dispatch_must_load_the_guarded_slot(self):
+        body, record, read = direct_fixture()
+        body = body[:8] + b"\xf8" + body[9:]  # MOV EAX, [EBP-8], not [EBP-4].
+        with self.assertRaisesRegex(ValueError, "differs from its range guard"):
+            SWITCHES.verify_direct_switches(body, 0x401000, [record], read)
+
+
 if __name__ == "__main__":
     unittest.main()
