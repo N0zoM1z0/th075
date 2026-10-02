@@ -2216,3 +2216,34 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r048-origin-verification.json`. R047 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37019902898.
+
+## R049 — medium character special and auxiliary routines
+
+Forty-four complete character-specific bodies add 88,471 authored-origin
+bytes. Twenty-two neighboring pairs implement a timed special action and its
+renderer. Each update routine switches on ten bounded action cases through a
+direct table; each renderer uses a ten-entry bounded byte remap and a complete
+target table. All 22 tables, default destinations and in-body case targets
+are cold-replayed from the pinned executable. The remaining 22 functions
+have complete direct CFGs and one final RET each. Every body has its own
+SHA-256 and branch count in `config/authored-origin-evidence.csv`.
+
+| Group | Entries | Bytes | Target-observed behavior |
+| --- | ---: | ---: | --- |
+| `CharacterSpecial` | 22 | 59,248 | Eleven update/render pairs advance custom action timers and positions, then draw the paired animated sprite layers. |
+| `CharacterAux` | 22 | 29,223 | Character-specific helpers spawn effects, select fighting-game command strings, update paired fighter fields, and render timed custom geometry. |
+
+The decompiled complete bodies include explicit fighter offsets, action IDs,
+project effect/render calls and command patterns such as `236236D`, `4136A`
+and `6314B`. Address-qualified labels keep character identities and original
+method names open. Tiny adjacent forwarders and generated-looking helpers
+remain pending until their ownership is independently established. R049
+changes origin review only, with no source, mapping or exact credit. Totals
+are 1,749 reviewed: 418 authored, 767 library and 564 compiler; 2,602
+remain pending. Exact stays 42 functions / 8,916 bytes against the
+provisional 1,769,023-byte authored slice (0.50%).
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r049-origin-verification.json`. R048 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37020738880.

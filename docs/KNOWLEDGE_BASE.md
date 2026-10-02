@@ -876,3 +876,13 @@ three family labels describe observed data flow, not original class names.
 These bodies dominate the provisional authored-byte denominator, so eventual
 exact-work planning must consider their size and the common helpers they call.
 R048 grants origin only, with no source or exact credit.
+
+## Origin-only observations after R049
+
+Medium character functions contain eleven repeated update/render pairs for
+special actions. The update side switches among ten action states; the
+render side uses a bounded byte remap. Other complete character helpers
+parse explicit fighting-game command patterns, spawn effects and draw
+character-specific geometry. Their complete extents and 22 jump tables are
+replayed, while adjacent tiny forwarders remain pending. R049 adds origin
+only, with no source or exact credit.
