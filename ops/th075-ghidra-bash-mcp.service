@@ -1,0 +1,16 @@
+[Unit]
+Description=TH075 headless Bash and attested Ghidra MCP server
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/th075-ghidra-bash-mcp.env
+UnsetEnvironment=MCP_BEARER_TOKEN
+ExecStart=/bin/bash -lc 'exec "$NODE_BINARY" "$MCP_SERVER_ENTRY"'
+Nice=15
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target

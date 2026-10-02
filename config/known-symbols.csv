@@ -1,0 +1,2 @@
+address,name,module,confidence,evidence
+0x00401000,GraphicsResourceClient::GraphicsResourceClient,GraphicsResourceClient,inferred,F001; constructor role supported by paired cleanup and constructor caller; original name unknown

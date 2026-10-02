@@ -1,0 +1,2 @@
+address,name,module,confidence,evidence
+0x00671210,g_GraphicsResourceClientCount,GraphicsResourceClient,target-observed,F001; 32-bit increment/decrement counter; signedness unknown

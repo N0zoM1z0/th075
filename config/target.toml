@@ -1,0 +1,69 @@
+[target]
+title = "東方萃夢想 ～ Immaterial and Missing Power"
+version = "1.11"
+region = "supplied-japanese"
+filename = "th075.exe"
+size = 2576384
+sha256 = "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98"
+md5 = "21bcb855a39f2170195811e6ad292f18"
+
+[provenance]
+archive_filename = "[th075] 东方萃梦想 (汉化版+日文版).rar"
+archive_member = "[th075] 东方萃梦想 (汉化版+日文版)/th075.exe"
+evidence = "User-supplied archive; Japanese title strings self-report ver1.11. Official distribution identity has not been independently corroborated."
+
+[pe]
+machine = "i386"
+image_base = "0x00400000"
+entry_point = "0x0064232C"
+timestamp_utc = "2005-07-08T02:04:54Z"
+linker_version = "7.10"
+size_of_image = 2699264
+headers_raw_size = 4096
+text_start = "0x00401000"
+text_end = "0x00656F0E"
+text_virtual_size = 2449167
+text_raw_offset = "0x00001000"
+text_raw_size = 2449408
+relocations_stripped = true
+
+[[pe.sections]]
+name = ".text"
+rva = "0x00001000"
+virtual_size = 2449167
+raw_offset = "0x00001000"
+raw_size = 2449408
+
+[[pe.sections]]
+name = ".rdata"
+rva = "0x00257000"
+virtual_size = 83950
+raw_offset = "0x00257000"
+raw_size = 86016
+
+[[pe.sections]]
+name = ".data"
+rva = "0x0026C000"
+virtual_size = 146376
+raw_offset = "0x0026C000"
+raw_size = 24576
+
+[[pe.sections]]
+name = ".data1"
+rva = "0x00290000"
+virtual_size = 2272
+raw_offset = "0x00272000"
+raw_size = 4096
+
+[[pe.sections]]
+name = ".rsrc"
+rva = "0x00291000"
+virtual_size = 7120
+raw_offset = "0x00273000"
+raw_size = 8192
+
+[toolchain]
+family = "Microsoft Visual C++ .NET 2003 generation"
+probe_compiler_version = "13.10.3077"
+probe_linker_version = "7.10.3077"
+evidence = "PE linker 7.10; Rich header contains many build 3077 records and also 2179, 2067, 9178, 8444, 4035, 3052 records. Probe toolchain is inherited from TH095; per-function compiler ownership and flags remain unproven."

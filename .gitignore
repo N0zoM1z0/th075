@@ -1,0 +1,15 @@
+.tools/
+.analysis/
+build/
+ghidra-project/
+resources/*.exe
+resources/*.dat
+*.pdb
+*.obj
+*.idb
+*.i64
+*.gpr
+*.rep/
+__pycache__/
+*.py[cod]
+.env
