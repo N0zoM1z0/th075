@@ -62,11 +62,16 @@ def main():
                 or counts != (int(record["return_count"]),
                               int(record["internal_branch_count"]))):
             raise ValueError("effect/fighter body or complete CFG differs: " + key)
-        calls = {item.operands[0].imm for item in decoder.disasm(body, address)
+        instructions = list(decoder.disasm(body, address))
+        calls = {item.operands[0].imm for item in instructions
                  if item.mnemonic == "call" and item.operands[0].type == X86_OP_IMM}
         if key == "0x005F71F0":
             literal = b"data\\system\\effect\\effect.pat\0"
-            if (literal not in target or 0x0041D750 not in calls
+            pushed = {item.operands[0].imm for item in instructions
+                      if item.mnemonic == "push" and item.operands[0].type == X86_OP_IMM}
+            if (0x0065A0C0 not in pushed
+                    or comparison.pe_bytes_at(target, 0x0065A0C0, len(literal)) != literal
+                    or 0x0041D750 not in calls
                     or origins["0x0041D750"]["origin"] != "authored"):
                 raise ValueError("effect catalog literal/archive binding differs")
         if key in ("0x005F78B0", "0x005F7AA0") and (

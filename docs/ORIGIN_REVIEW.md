@@ -1,9 +1,10 @@
 # Origin review journal
 
-The active objective is to finish origin review of every candidate and then
-reach at least 50% exact coverage of the confirmed authored-byte set.
-Finish evidence-backed origin review of every candidate before resuming exact
-reconstruction. This supersedes the earlier alternating workflow. Percentages remain provisional until no origin is pending.
+Work stopped after R069 with 2,187 candidates still pending. If the project
+resumes, finish evidence-backed origin review of every candidate before
+resuming exact reconstruction, then target at least 50% exact coverage of
+the confirmed authored-byte set. This order supersedes the earlier
+alternating workflow. Percentages remain provisional until no origin is pending.
 Auto-analysis names, adjacency, and small size do not establish origin.
 
 ## R001 — remaining shared graphics family
