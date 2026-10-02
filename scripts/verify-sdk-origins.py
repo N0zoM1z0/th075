@@ -111,8 +111,12 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
                 or binding["symbol"] != relocation["symbol"]):
             raise ValueError("SDK relocation metadata mismatch")
         offsets.add(offset)
+        target_kind = binding.get("target_kind", "")
+        if target_kind not in ("", "function"):
+            raise ValueError("unsupported SDK relocation target kind")
         if relocation["type"] == "REL32":
-            if binding.get("literal_hex", "") or binding.get("data_section_id", ""):
+            if (binding.get("literal_hex", "") or binding.get("data_section_id", "")
+                    or target_kind):
                 raise ValueError("SDK call cannot claim scalar literal evidence")
             calls.append(relocation)
             call_bindings.append(binding)
@@ -120,7 +124,11 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
               and relocation["local_symbol_offset"] is None):
             destination = int(binding["target_address"], 16)
             section_id = binding.get("data_section_id", "")
-            if section_id:
+            if target_kind == "function":
+                if (section_id or binding.get("literal_hex", "")
+                        or symbols.get(destination) != relocation["symbol"]):
+                    raise ValueError("SDK function pointer lacks a verified complete callee")
+            elif section_id:
                 if binding.get("literal_hex", "") or relocation["symbol"].startswith("__real@"):
                     raise ValueError("SDK scalar and readonly section evidence cannot be mixed")
                 section = readonly_sections[section_id]
@@ -264,7 +272,7 @@ def main():
     archives = {}
     directory = ROOT / ".analysis/sdk-origin-verification"
     directory.mkdir(parents=True, exist_ok=True)
-    total = indirect = total_relocations = total_constants = total_section_fields = 0
+    total = indirect = total_relocations = total_constants = total_section_fields = total_function_fields = 0
     checked = []
     with tempfile.TemporaryDirectory(dir=directory) as temporary:
         object_path = Path(temporary) / "vendor.obj"
@@ -304,6 +312,8 @@ def main():
             total_constants += len(data_fields)
             total_section_fields += sum(bool(binding.get("data_section_id"))
                                         for binding in bindings.get(record["address"], []))
+            total_function_fields += sum(binding.get("target_kind", "") == "function"
+                                         for binding in bindings.get(record["address"], []))
         # All callee records passed complete byte comparison before CFG checks.
         for record, linked, data_fields in checked:
             address = int(record["address"], 16)
@@ -321,7 +331,8 @@ def main():
             raise ValueError("short SDK typed caller evidence failed")
     print(f"SDK origin evidence OK: {len(records)} whole COMDAT bodies, {total} bytes, "
           f"{total_relocations} verified call bindings, {indirect} unchanged indirect calls; "
-          f"{total_constants - total_section_fields} scalar bindings, "
+          f"{total_constants - total_section_fields - total_function_fields} scalar bindings, "
+          f"{total_function_fields} function-pointer bindings, "
           f"{total_section_fields} readonly-section bindings ({len(readonly_sections)} whole sections); "
           "no reconstruction exact credit.")
     return 0

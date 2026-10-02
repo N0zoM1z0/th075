@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 497 library and 428 compiler candidates; 3,288 origins remain
+  138 authored, 500 library and 428 compiler candidates; 3,285 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R027 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R028 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 72 passing
+  across six objects through scripts/repo-python after F005. Public CI has 73 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -318,3 +318,19 @@ static, compiler and authored origins, plus target-required tracking/status.
 Private receipt `.analysis/public-r026-r027-origin-verification.json`. Local
 CI passed 72 regressions and progress is current. R025 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37005233600.
+
+R028 reviews three complete JPEG decoder SDK COMDATs / 830 bytes, with seven
+DIR32 function-pointer fields whose symbols resolve to separately verified
+complete SDK functions and two independently bound direct calls. The SDK
+verifier now covers 309 bodies / 78,328 bytes, 142 direct calls, seven function
+pointers, 158 scalars, 232 readonly-section fields and 382 unchanged indirect
+calls. `sdk-origin-relocations.csv` has a `target_kind` column; existing
+bindings leave it empty, while the seven new pointer rows say `function`.
+Current totals are 1,066 reviewed (138 authored, 500 library, 428 compiler),
+3,285 pending; exact stays 42 functions / 8,916 bytes. No source or exact credit
+comes from R028. Local CI passed 73 tests and the progress SVG is current.
+Public no-auth Funnel receipt: `.analysis/public-r028-origin-verification.json`.
+R027 published GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37005857354.
+Next, continue complete origin review; only after every candidate is reviewed,
+resume exact work on the core authored functions and their dependencies.

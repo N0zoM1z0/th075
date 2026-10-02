@@ -642,3 +642,14 @@ diagnostic missed. Fifteen further JPEG/zlib bodies then passed whole-function
 comparison with all 34 direct calls bound to independently verified SDK
 functions. Indirect calls in those bodies grant no ownership to their targets.
 These batches add no authored source or exact credit.
+
+## Origin-only observations after R028
+
+Three JPEG decoder COMDATs store seven function entrypoints through DIR32
+relocations. All seven source symbols and zero addends match independently
+verified complete SDK callees at the actual linked addresses. The progressive
+decoder also makes two independently bound direct calls. A stored function
+pointer establishes the initializer's vendor origin but says nothing about
+which later indirect calls execute or who owns a caller. The verifier records
+pointer fields separately from scalar and readonly data. All three bodies
+remain library-origin exclusions with no authored source or exact credit.

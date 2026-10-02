@@ -1367,3 +1367,41 @@ Funnel MCP. Private receipt: `.analysis/public-r026-r027-origin-verification.jso
 Local CI passed 72 regressions; progress freshness and `git diff --check`
 passed. R025 published GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37005233600.
+
+## R028 — SDK function-pointer relocations
+
+Reviewed 2026-10-02. Three complete D3DX8 JPEG decoder COMDATs / 830 bytes
+are excluded: `jinit_huff_decoder` at 0x0062C9D3 (58 bytes),
+`start_pass_phuff_decoder` at 0x0062D2DE (675 bytes), and
+`jinit_phuff_decoder` at 0x0062D581 (97 bytes). Their source members have a
+single complete code-function definition at section offset zero. The pinned
+archive member, complete section extent and hash, linked target bytes, and
+decoded control flow are independently checked for each body.
+
+Seven DIR32 fields store pointers to separately verified complete SDK
+functions. Each binding checks the source relocation symbol, zero addend,
+immediate/operand field, resolved target entry and the callee's independently
+verified symbol. The first decoder binds two functions, the progressive-pass
+decoder binds four, and the progressive initializer binds the verified pass
+decoder. The pass decoder also has two separately bound REL32 calls to
+`jpeg_make_d_derived_tbl`. Its indirect calls do not identify their runtime
+targets or grant any callee ownership. Mutable data and guessed pointers
+remain pending.
+
+`sdk-origin-relocations.csv` now distinguishes function-pointer fields from
+scalar constants and complete readonly-section data. `verify-sdk-origins.py`
+rejects an unsupported target kind, a function-pointer field claimed as a
+direct call, and a pointer whose relocation symbol lacks the verified callee.
+A public regression checks a valid pointer and rejects a missing callee.
+The SDK verifier now covers 309 complete bodies / 78,328 bytes, 142 direct-call
+bindings, 7 function-pointer bindings, 158 scalar bindings, 232 readonly
+fields from 81 complete sections, and 382 unchanged indirect calls. R028 adds
+origin evidence only; no source or exact credit. Current totals are 1,066
+reviewed: 138 authored, 500 library and 428 compiler; 3,285 remain pending.
+Exact remains 42 functions / 8,916 bytes against the provisional 43,031-byte
+authored slice (20.72%). The complete-origin prerequisite is still open.
+
+Local CI passed 73 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. Public no-auth Funnel verification receipt:
+`.analysis/public-r028-origin-verification.json`. R027 published GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37005857354.

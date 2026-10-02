@@ -89,6 +89,27 @@ class SDKOriginExtentTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "opcode or partial field"):
             SDK.verify_control_flow(b"\xc3", 0x401000, {}, {0x401000: 0x65747C})
 
+    def test_function_pointer_requires_the_verified_callee_symbol(self):
+        class RuntimeStub:
+            @staticmethod
+            def bind_calls(code, calls, bindings, symbols, address):
+                return bytearray(code)
+
+        relocation = dict(offset=1, type="DIR32", symbol="vendor_target",
+                          addend=0, local_symbol_offset=None)
+        binding = dict(offset="0x1", type="DIR32", symbol="vendor_target",
+                       target_address="0x00402000", literal_hex="",
+                       data_section_id="", target_kind="function")
+        code = b"\xb8\0\0\0\0\xc3"
+        linked, fields = SDK.bind_sdk_function(
+            code, [relocation], [binding], {0x402000: "vendor_target"},
+            0x401000, b"", None, RuntimeStub, None)
+        self.assertEqual(struct.unpack_from("<I", linked, 1)[0], 0x402000)
+        self.assertEqual(fields, {0x401001: 0x402000})
+        with self.assertRaisesRegex(ValueError, "verified complete callee"):
+            SDK.bind_sdk_function(code, [relocation], [binding], {}, 0x401000,
+                                  b"", None, RuntimeStub, None)
+
 
 if __name__ == "__main__":
     unittest.main()

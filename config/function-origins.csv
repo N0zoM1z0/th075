@@ -3370,14 +3370,14 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0062C479,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0062C4D7,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x0062C8A4,library,D3DX8SDK,exclude,complete-vendor-body,R009
-0x0062C9D3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0062C9D3,library,D3DX8SDK,exclude,complete-vendor-body-bound-functions,R028
 0x0062CA0D,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0062CA68,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x0062CC65,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x0062CE8E,library,D3DX8SDK,exclude,complete-vendor-body,R010
 0x0062CF70,library,D3DX8SDK,exclude,complete-vendor-body,R013
-0x0062D2DE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0062D581,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0062D2DE,library,D3DX8SDK,exclude,complete-vendor-body-bound-functions,R028
+0x0062D581,library,D3DX8SDK,exclude,complete-vendor-body-bound-functions,R028
 0x0062D5E2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0062D799,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0062D80D,library,D3DX8SDK,exclude,complete-vendor-body,R008
