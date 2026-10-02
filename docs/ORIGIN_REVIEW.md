@@ -2507,3 +2507,36 @@ verified the 34 destructors and all 596 authored-origin extents, and
 rechecked tracking. Private receipt:
 `.analysis/public-r057-origin-verification.json`. R055/R056 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37024184101.
+
+## R058 — background vtable no-op methods
+
+Eighty-six complete 11-byte bodies / 946 bytes are classified authored.
+The independent synthetic source in `probes/VC7BackgroundNoOp.cpp`
+defines an empty virtual member. A pinned VC7.1 cold build under
+`/Od /Ob0 /Gy /GR- /GX- /Zi /GS` emits it as the sole, relocation-free
+11-byte code COMDAT. All 86 target bodies match every source byte and
+their own complete one-RET CFG. The byte match alone would be weak origin
+evidence because the body is short and identical across functions.
+
+`scripts/repo-python scripts/verify-background-noop-origins.py` also
+requires each target address to occur exactly once in slot 1, 2 or 3 of a
+target vtable whose pointer is written by an independently verified R055
+background asset constructor. The exact vtable, constructor, slot, full
+body hash and cold source hash for every method are in
+`config/background-noop-origin-evidence.csv`. This ties each tiny method
+to a project-owned background class without inferring an original method
+name or complete class layout. Three other same-byte no-op candidates are
+referenced by the larger BG05b/BG08a classes and remain pending until those
+constructors are reviewed.
+
+R058 adds origin only, with no reconstruction source or exact credit.
+Totals are 2,085 reviewed: 729 authored, 792 library and 564 compiler;
+2,266 remain pending. Exact stays 42 functions / 8,916 bytes against
+the provisional 1,812,137-byte authored slice (0.49%). Continue origin
+review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP cold
+verified the no-op source, the background destructor probe, all 682 authored
+origin extents and tracking. Private receipt:
+`.analysis/public-r058-origin-verification.json`. R057 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37024823847.

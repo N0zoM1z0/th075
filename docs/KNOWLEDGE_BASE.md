@@ -959,3 +959,12 @@ bind to the exact vtables of the separately reviewed BG asset constructors.
 The base destructor, two further larger-background pairs and adjacent
 empty virtual methods remain pending. R057 adds no reconstruction source
 or exact credit.
+
+## Origin-only observations after R058
+
+Eighty-six identical 11-byte no-op functions are independently present in
+slots 1–3 of verified background-class vtables. A cold VC7.1 source probe
+emits the exact complete body for an empty virtual member. The vtable
+slot/constructor relationship supplies ownership evidence that the short
+body alone cannot provide. Three similar methods in unreviewed BG05b/BG08a
+classes remain pending. R058 adds no reconstruction source or exact credit.
