@@ -999,3 +999,13 @@ fighter cleanup. Their separately verified scalar deleting wrappers call
 them. This supports compiler ownership for those ten specific methods;
 nearby destructors with different shapes remain separate candidates.
 R061 adds no reconstruction source or exact credit.
+
+## Origin-only observations after R062
+
+Staff Roll and Title scene constructors write distinct vtables that their
+destructors restore while releasing a member and the common game-global
+owner. The Title destructor additionally publishes a selected byte to
+global state. A separate small Battle scene hook calls the accepted
+graphics-present routine. These relationships establish ownership for four
+specific bodies; short adjacent callbacks remain pending. R062 adds no
+reconstruction source or exact credit.

@@ -2625,3 +2625,31 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 verified the implicit destructor source, all R037 scalar deleting wrappers
 and tracking. Private receipt:
 `.analysis/public-r061-origin-verification.json`.
+
+## R062 — scene lifetime and presentation hooks
+
+Four complete authored bodies / 316 bytes close specific gaps in the
+scene-code region. `0x00431F40` writes the scene base vtable and releases
+the separately reviewed game-global owner. `0x00438BA0` and `0x0043A1E0`
+write the respective Staff Roll and Title vtables, delete an owned member
+through the independently reviewed R037 scalar-deleting wrapper, and call
+that common scene cleanup. The Title destructor also copies the object's
+selected byte into game state at `0x00671630`. `0x0043B5D0` directly calls
+the accepted exact graphics-present routine. Original class and method
+names remain inferred.
+
+`scripts/repo-python scripts/verify-scene-lifetime-origins.py` checks each
+whole body hash and CFG, exact direct-call set, and vtable writes. It
+independently checks the complete R043 Staff Roll and R041 Title constructor
+bodies and their matching vtables. The title-state write must still be
+present. The adjacent CRT absolute-value wrapper, empty Staff Roll callback
+and other ambiguous small methods remain pending.
+
+R062 adds origin only: 2,138 reviewed (772 authored, 792 library, 574
+compiler), 2,213 pending. Exact remains 42 functions / 8,916 bytes against
+1,813,334 provisional authored bytes (0.49%). Continue origin review.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+the scene bindings, all 725 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r062-origin-verification.json`. R061 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37026646605.
