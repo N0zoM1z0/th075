@@ -1146,3 +1146,53 @@ status passed through the unchanged no-auth public Funnel MCP. Private receipt:
 progress freshness and `git diff --check` passed. Accepted exact units remain
 unchanged. Published R019/R020/R021 CI also passed:
 https://github.com/N0zoM1z0/th075/actions/runs/37003418979.
+
+## R023 — optimized allocation cleanups using reused argument slots
+
+Reviewed 2026-10-02. All 39 previously deferred positive-slot cleanup bodies
+(390 bytes) are now compiler/exclude. An independent ordinary C++ fixture,
+`probes/VC7OptimizedEH.cpp`, selects between two real std::string allocations.
+A fresh /O1/Ob0/EH build naturally reuses its EBP+12 argument slot for allocation
+storage. The compiler emits two whole ten-byte cleanup bodies, each PUSH
+DWORD[EBP+12] / CALL operator delete / POP ECX / RET. COFF definition offsets
+0/10/20 in their complete 30-byte generated section independently bound both
+funclets and the handler. The call relocation is independently typed as
+operator delete. No target extent, fake local, padding or reconstructed owner
+is used to select the emitted bodies. This is emission/ABI evidence only;
+it does not establish that the target originally used this compiler build,
+source type or exact fixture flags.
+
+Each target cleanup is a complete ten-byte positive-frame PUSH/CALL/POP/RET
+body with an actual candidate callee entry and full body hash. The 39 records
+are referenced by two of the already verified 236 complete FunctionInfo frames,
+including a 37-state allocation-selection frame. All metadata states remain
+recorded. Actual caller code at 0x0061A4CC independently shows new allocations
+stored in EBP+8 before the corresponding constructor/state transitions.
+The target's original source types, parent ownership/boundary and deallocation
+callee ownership remain separate questions; no ownership is inherited from
+Ghidra's allocator labels. The full target body and pure dispatch template,
+actual state references and independent optimized compiler emission support
+the exclusion of these cleanup funclets.
+
+```bash
+scripts/compile-probe.sh probes/VC7OptimizedEH.cpp build/probes/CompilerEHOptimizedTemplates.obj /O1 /Ob0 /Gy /GR- /GX /Zi /GS- /I src
+scripts/repo-python scripts/verify-compiler-origins.py
+```
+
+The compiler verifier requires this independent optimized probe whenever a
+positive-slot allocation template is recorded. An additional public regression
+covers positive argument-slot dispatch; absolute globals and indirect/unresolved
+transfers remain rejected. Private evidence: `.analysis/r023-*`. The verifier
+now covers 401 cleanup bodies / 4,144 bytes and 236 full frames. Only the 21
+static lifetime wrappers remain pending in the earlier 422-candidate tail survey.
+
+Current totals are 992 reviewed origins: 138 authored, 447 library and 407
+compiler; 3,359 remain pending. Exact remains 42 functions / 8,916 bytes from
+the provisional 43,031-byte authored set (20.72%). Exact work remains deferred
+until all origins are reviewed; the full goal remains incomplete.
+
+R023 compiler/runtime and authored verification plus target-required tracking/
+status passed through the unchanged no-auth public Funnel MCP. Private receipt:
+`.analysis/public-r023-origin-verification.json`. Local CI passed 60 regressions;
+progress freshness and `git diff --check` passed. R022's published GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37003968089.

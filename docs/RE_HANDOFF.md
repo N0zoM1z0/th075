@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 447 library and 368 compiler candidates; 3,398 origins remain
+  138 authored, 447 library and 407 compiler candidates; 3,359 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R022 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R023 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 59 passing
+  across six objects through scripts/repo-python after F005. Public CI has 60 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -211,7 +211,7 @@ the remaining container/string helpers starting at
 the remaining metadata/container helpers at `0x0040D8C0/0x0040DD60` and
 the unreviewed family after `0x0041BF90`. Texture loading, bitmap/RLE/upload
 and manager lifetimes are now reviewed. Extend compiler EH review only after
-independently validating other registration/metadata/pattern forms; 60 tail
+independently validating other registration/metadata/pattern forms; 21 static lifetime tail
 candidates remain pending in the earlier 422-candidate diagnostic. Review the
 math/constructor aliases separately; do not inherit origin from these callers.
 Keep vendor
@@ -259,3 +259,15 @@ R022 verification passed through the unchanged no-auth public Funnel MCP;
 private receipt `.analysis/public-r022-origin-verification.json`. Local CI has
 59 passing tests and progress is current. R019/R020/R021 published GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37003418979.
+
+R023 resolves the 39 previously deferred positive-slot allocation cleanup bodies
+(390 bytes) with fresh optimized compiler emission and full actual metadata
+bindings. Build `probes/VC7OptimizedEH.cpp` using the command in ORIGIN_REVIEW.md
+before running the compiler-origin verifier. It now checks 401 cleanup bodies /
+4,144 bytes and all 236 frames. The 21 static lifetime wrappers remain pending
+in the original tail survey. No compiler/query session remains active.
+R023 compiler/runtime and authored verification plus target-required tracking/
+status passed through the no-auth public Funnel MCP; private receipt
+`.analysis/public-r023-origin-verification.json`. Local CI passed 60 tests,
+progress is current and the accepted exact units remain unchanged. R022 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37003968089.

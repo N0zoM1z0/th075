@@ -55,9 +55,11 @@ def cleanup_template(code, address, function_entries):
                 and not instructions[4].operands):
             kind, transfer = "allocation", instructions[2]
     elif names == ["push", "call", "pop", "ret"]:
-        if (frame(instructions[0], 0) and reg(instructions[2], 0, "ecx")
+        if ((frame(instructions[0], 0) or frame(instructions[0], 0, parameter=True))
+                and reg(instructions[2], 0, "ecx")
                 and not instructions[3].operands):
-            kind, transfer = "allocation", instructions[1]
+            kind = "parameter-allocation" if frame(instructions[0], 0, parameter=True) else "allocation"
+            transfer = instructions[1]
     elif names == ["mov", "push", "mov", "push", "call", "add", "ret"]:
         if (reg(instructions[0], 0, "eax")
                 and (frame(instructions[0], 1) or frame(instructions[0], 1, parameter=True))

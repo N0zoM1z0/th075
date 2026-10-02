@@ -117,10 +117,34 @@ def verify_placement_probe(path, comparison):
     raise ValueError("placement probe lacks its named generated EH owner")
 
 
+def verify_optimized_probe(path, comparison):
+    """Use independently bounded optimized funclets, including reused argument slots."""
+    data = path.read_bytes()
+    _, symbols = DATA.parse_symbols(data, comparison.coff_name)
+    for symbol in symbols:
+        if not symbol["symbol"].startswith("__ehhandler$?ProbeCompilerSelectString@@"):
+            continue
+        section = struct.unpack_from("<8sIIIIIIHHI", data, 20 + (symbol["section"] - 1) * 40)
+        definitions = sorted((row for row in symbols if row["section"] == symbol["section"]
+                              and row["type"] == 0x20), key=lambda row: row["offset"])
+        if section[3] != 30 or [row["offset"] for row in definitions] != [0, 10, 20]:
+            raise ValueError("optimized probe lacks independently bounded complete funclets")
+        for first, following in zip(definitions[:2], definitions[1:]):
+            extent = following["offset"] - first["offset"]
+            code, relocations = comparison.object_function(path, first["symbol"], extent)
+            if (code != b"\xff\x75\x0c\xe8\0\0\0\0\x59\xc3" or len(relocations) != 1
+                    or relocations[0]["offset"] != 4 or relocations[0]["type"] != "REL32"
+                    or relocations[0]["addend"] or relocations[0]["symbol"] != "??3@YAXPAX@Z"):
+                raise ValueError("optimized probe does not emit whole positive-slot allocation cleanup")
+        return
+    raise ValueError("optimized probe lacks its named generated EH owner")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--probe", type=Path, default=ROOT / "build/probes/CompilerEHOriginTemplates.obj")
     parser.add_argument("--parameter-probe", type=Path, default=ROOT / "build/probes/CompilerEHParameterTemplates.obj")
+    parser.add_argument("--optimized-probe", type=Path, default=ROOT / "build/probes/CompilerEHOptimizedTemplates.obj")
     arguments = parser.parse_args()
     comparison = load_module("compiler_coff", "compare-coff-function.py")
     templates = verify_emission_probe(arguments.probe, comparison)
@@ -174,6 +198,8 @@ def main():
         verify_parameter_probe(arguments.parameter_probe, comparison)
     if any(row["template_kind"] == "placement-allocation" for row in evidence):
         verify_placement_probe(arguments.parameter_probe, comparison)
+    if any(row["template_kind"] == "parameter-allocation" for row in evidence):
+        verify_optimized_probe(arguments.optimized_probe, comparison)
     total = 0
     for row in evidence:
         key, size = row["address"], int(row["size"])

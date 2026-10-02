@@ -45,6 +45,11 @@ class CompilerEHOriginTests(unittest.TestCase):
         self.assertEqual(EH.cleanup_template(body, 0x401000, {0x402000}),
                          ("placement-allocation", 0x402000))
 
+    def test_optimized_allocation_can_reuse_a_positive_argument_slot(self):
+        body = b"\xff\x75\x08\xe8" + struct.pack("<i", 0x402000 - 0x401008) + b"\x59\xc3"
+        self.assertEqual(EH.cleanup_template(body, 0x401000, {0x402000}),
+                         ("parameter-allocation", 0x402000))
+
     def test_absolute_application_global_cannot_be_hidden_as_a_frame_slot(self):
         body = b"\x8b\x0d\0\x50\0\0\xe9" + struct.pack("<i", 0x402000 - 0x40100B)
         with self.assertRaisesRegex(ValueError, "unsupported compiler cleanup"):

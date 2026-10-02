@@ -596,3 +596,11 @@ Registration is accepted only after whole vendor-helper verification. All 236
 frames and 362 recorded cleanup bodies are now rechecked. Thirty-nine positive
 argument-slot cleanup forms remain pending; do not generalize negative-frame
 acceptance or blanket-classify referenced parents/callees.
+
+R023 resolves the 39 positive-slot cleanup bodies (390 bytes) using a fresh
+ordinary optimized std::string-allocation fixture. Its compiler naturally
+reuses an argument slot and emits two independently bounded ten-byte dispatch
+funclets. The target's complete metadata and observed allocation/state stores
+establish the analogous frame role, while source types, parent/callee ownership
+and whole parent boundaries remain unknown. All 401 recorded cleanup bodies
+and 236 complete frames are now rechecked. Exact source and units are unchanged.
