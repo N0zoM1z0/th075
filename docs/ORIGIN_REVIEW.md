@@ -2566,3 +2566,32 @@ passed. The unchanged no-auth public Funnel MCP cold-replayed all expanded
 background verifiers, all 689 authored extents and tracking. Private
 receipt: `.analysis/public-r059-origin-verification.json`. R058 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37025220392.
+
+## R060 — fighter vtable action forwards and no-op overrides
+
+Thirty-two complete authored methods / 440 bytes belong to the eleven
+previously verified playable-character fighter vtables. Each R046/R050
+fighter constructor writes one distinct derived vtable. Slot 8 of every
+vtable points to a 19-byte method that directly calls the separately
+reviewed base action method at `0x00451EB0`; slot 18 points to an 11-byte
+no-op method. Slot 9 points to another 11-byte no-op in ten vtables, while
+Marisa's slot 9 method was already reviewed in R049. Exact slots,
+constructor addresses, full body hashes and call targets are recorded in
+`config/fighter-virtual-origin-evidence.csv`.
+
+A cold pinned VC7.1 build of `probes/VC7FighterVirtuals.cpp` emits each
+source method as a sole complete code COMDAT. The forward method has one
+typed REL32 call relocation at offset 11; the no-op has none.
+`scripts/repo-python scripts/verify-fighter-virtual-origins.py` checks
+source sections and relocations, constructor hashes and control flow,
+vtable slots, full target bodies and the direct-call destination. The
+probe establishes code shape, not original class layouts or method names.
+
+R060 adds origin evidence only: 2,124 reviewed, comprising 768 authored,
+792 library and 564 compiler; 2,227 remain pending. The exact baseline
+remains 42 functions / 8,916 bytes against 1,813,018 provisional authored
+bytes (0.49%). Continue origin review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking and `git diff --check`
+passed. The unchanged no-auth public Funnel MCP cold-compiled the fighter
+probe, verified all 721 authored-origin extents and rechecked tracking.
+Private receipt: `.analysis/public-r060-origin-verification.json`.

@@ -978,3 +978,15 @@ and three source-shaped no-op members. The checked background cohort now
 contains 36 asset constructors, 36 matching destructors, 89 no-op virtual
 members and 18 side-pair drawers. R059 adds no reconstruction source or
 exact credit.
+
+## Origin-only observations after R060
+
+The eleven playable-character fighter constructors each write a distinct
+vtable. Every checked vtable has a virtual method that forwards directly
+to the reviewed base action routine, plus an empty method at slot 18.
+Ten have a second empty method at slot 9; Marisa has a previously reviewed
+nonempty override there. A cold VC7.1 source probe reproduces the complete
+forward and empty-method shapes. Vtable binding supplies project ownership
+for these otherwise tiny and repetitive methods. Original names and complete
+class layouts remain unknown. R060 adds no reconstruction source or exact
+credit.
