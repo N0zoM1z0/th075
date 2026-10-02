@@ -1476,3 +1476,55 @@ Local CI passed 77 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. Public no-auth Funnel verification receipt:
 `.analysis/public-r030-origin-verification.json`. R029 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37006586340.
+
+## R031 — complete VC7 STL record templates and split catch bodies
+
+Reviewed 2026-10-02. Eight complete vendor `std::_Uninit_fill_n` or
+`std::_Uninit_copy` bodies / 1,276 distinct bytes exclude 32 original
+inventory candidates. Ghidra split each actual function into four contiguous
+pieces: the main entry, a two-byte catch jump, a nine-byte catch adjustment,
+and the remainder through the complete RET. The first ledger row now records
+the whole function extent, while the other three rows remain explicit
+non-independent analysis fragments. No candidate was dropped to reduce the
+pending count.
+
+| Complete entry | Bytes | Generic template | Probe record width |
+| --- | ---: | --- | ---: |
+| `0x0040F780` | 157 | `_Uninit_fill_n` | 44 |
+| `0x0040F880` | 162 | `_Uninit_copy` | 44 |
+| `0x0045AE10` | 157 | `_Uninit_fill_n` | 16 |
+| `0x0045B170` | 157 | `_Uninit_fill_n` | 116 |
+| `0x0045B3C0` | 162 | `_Uninit_copy` | 16 |
+| `0x0045B470` | 162 | `_Uninit_copy` | 116 |
+| `0x005FA810` | 157 | `_Uninit_fill_n` | 16 |
+| `0x005FA960` | 162 | `_Uninit_copy` | 16 |
+
+The independent, ordinary VC7 probe in
+`probes/VC7OriginRecordContainers.cpp` instantiates `std::vector` on synthetic
+16-, 44- and 116-byte aggregates with the pinned `/Od /Ob0 /Gy /GR- /GX /Zi
+/GS /I src` profile. Each selected COFF primary definition has an auxiliary
+size equal to its entire COMDAT section. The compiler also emits a local
+`$L...` catch label typed as a function at an interior offset; the verifier
+permits that local label but rejects a second external function definition.
+The synthetic types demonstrate generic compiler/STL emission and **do not**
+identify the target's original record types or owner layouts.
+
+`verify-vendor-record-origins.py` cold-compiles the probe, checks the whole
+source section and target hashes, masks only the seven typed relocation fields
+per body, and compares every other byte. All 56 fields are then resolved from
+the target's actual instruction operands: eight EH-handler pointers, 24
+`__except_list` fields, and 24 direct calls with source roles for construct,
+destroy and throw. Complete target decoding proves internal branches and
+terminal returns. The recorded four-piece coverage exactly partitions each
+whole body; three public regressions cover a complete local-label extent and
+reject an external peer or a wrong typed binding.
+Called helper origins and EH-handler owners remain independent questions.
+
+R031 adds vendor-origin exclusions only, with no authored source or exact
+credit. Current totals are 1,111 reviewed: 138 authored, 542 library and 431
+compiler; 3,240 remain pending. Exact remains 42 functions / 8,916 bytes
+against the provisional 43,031-byte authored slice (20.72%). Local CI passed
+80 regressions; target-required tracking, progress freshness and
+`git diff --check` passed. Public no-auth Funnel receipt:
+`.analysis/public-r031-origin-verification.json`. R030 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37007109069.

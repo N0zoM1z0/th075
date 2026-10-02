@@ -502,17 +502,17 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F6C0,53,0x0040F6F4,FUN_0040f6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F700,55,0x0040F736,FUN_0040f700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F740,51,0x0040F772,FUN_0040f740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F780,91,0x0040F7DA,FUN_0040f780,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F7DB,2,0x0040F7DC,Catch@0040f7db,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F7DD,9,0x0040F7E5,FUN_0040f7dd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F7E6,55,0x0040F81C,FUN_0040f7e6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F780,157,0x0040F81C,FUN_0040f780,std::_Uninit_fill<44-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F7DB,2,0x0040F7DC,Catch@0040f7db,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F7DD,9,0x0040F7E5,FUN_0040f7dd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F7E6,55,0x0040F81C,FUN_0040f7e6,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F820,25,0x0040F838,FUN_0040f820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F840,29,0x0040F85C,FUN_0040f840,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F860,25,0x0040F878,FUN_0040f860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F880,93,0x0040F8DC,FUN_0040f880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F8DD,2,0x0040F8DE,Catch@0040f8dd,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F8DF,9,0x0040F8E7,FUN_0040f8df,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F8E8,58,0x0040F921,FUN_0040f8e8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F880,162,0x0040F921,FUN_0040f880,std::_Uninit_copy<44-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F8DD,2,0x0040F8DE,Catch@0040f8dd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F8DF,9,0x0040F8E7,FUN_0040f8df,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0040F8E8,58,0x0040F921,FUN_0040f8e8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F930,49,0x0040F960,FUN_0040f930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F970,43,0x0040F99A,FUN_0040f970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F9A0,65,0x0040F9E0,FUN_0040f9a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2041,10 +2041,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045AC50,381,0x0045ADCC,FUN_0045ac50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045ADD0,37,0x0045ADF4,FUN_0045add0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AE00,11,0x0045AE0A,FUN_0045ae00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045AE10,91,0x0045AE6A,FUN_0045ae10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045AE6B,2,0x0045AE6C,Catch@0045ae6b,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045AE6D,9,0x0045AE75,FUN_0045ae6d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045AE76,55,0x0045AEAC,FUN_0045ae76,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045AE10,157,0x0045AEAC,FUN_0045ae10,std::_Uninit_fill<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045AE6B,2,0x0045AE6C,Catch@0045ae6b,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045AE6D,9,0x0045AE75,FUN_0045ae6d,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045AE76,55,0x0045AEAC,FUN_0045ae76,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045AEB0,55,0x0045AEE6,FUN_0045aeb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AEF0,38,0x0045AF15,_Destroy_range<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AF20,55,0x0045AF56,FUN_0045af20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2059,10 +2059,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B0C0,48,0x0045B0EF,FUN_0045b0c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B0F0,55,0x0045B126,FUN_0045b0f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B130,51,0x0045B162,FUN_0045b130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B170,91,0x0045B1CA,FUN_0045b170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B1CB,2,0x0045B1CC,Catch@0045b1cb,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B1CD,9,0x0045B1D5,FUN_0045b1cd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B1D6,55,0x0045B20C,FUN_0045b1d6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B170,157,0x0045B20C,FUN_0045b170,std::_Uninit_fill<116-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B1CB,2,0x0045B1CC,Catch@0045b1cb,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B1CD,9,0x0045B1D5,FUN_0045b1cd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B1D6,55,0x0045B20C,FUN_0045b1d6,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B210,25,0x0045B228,FUN_0045b210,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B230,51,0x0045B262,FUN_0045b230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B270,29,0x0045B28C,FUN_0045b270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2074,14 +2074,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B378,2,0x0045B379,Catch@0045b378,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B37A,9,0x0045B382,FUN_0045b37a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B383,58,0x0045B3BC,FUN_0045b383,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B3C0,93,0x0045B41C,FUN_0045b3c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B41D,2,0x0045B41E,Catch@0045b41d,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B41F,9,0x0045B427,FUN_0045b41f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B428,58,0x0045B461,FUN_0045b428,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B470,93,0x0045B4CC,FUN_0045b470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B4CD,2,0x0045B4CE,Catch@0045b4cd,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B4CF,9,0x0045B4D7,FUN_0045b4cf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B4D8,58,0x0045B511,FUN_0045b4d8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B3C0,162,0x0045B461,FUN_0045b3c0,std::_Uninit_copy<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B41D,2,0x0045B41E,Catch@0045b41d,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B41F,9,0x0045B427,FUN_0045b41f,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B428,58,0x0045B461,FUN_0045b428,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B470,162,0x0045B511,FUN_0045b470,std::_Uninit_copy<116-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B4CD,2,0x0045B4CE,Catch@0045b4cd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B4CF,9,0x0045B4D7,FUN_0045b4cf,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x0045B4D8,58,0x0045B511,FUN_0045b4d8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B520,49,0x0045B550,FUN_0045b520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B560,43,0x0045B58A,FUN_0045b560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B590,66,0x0045B5D1,FUN_0045b590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2611,19 +2611,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA750,64,0x005FA78F,FUN_005fa750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA790,55,0x005FA7C6,FUN_005fa790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA7D0,51,0x005FA802,FUN_005fa7d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA810,91,0x005FA86A,FUN_005fa810,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA86B,2,0x005FA86C,Catch@005fa86b,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA86D,9,0x005FA875,FUN_005fa86d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA876,55,0x005FA8AC,FUN_005fa876,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA810,157,0x005FA8AC,FUN_005fa810,std::_Uninit_fill<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA86B,2,0x005FA86C,Catch@005fa86b,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA86D,9,0x005FA875,FUN_005fa86d,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA876,55,0x005FA8AC,FUN_005fa876,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA8B0,25,0x005FA8C8,FUN_005fa8b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA8D0,29,0x005FA8EC,FUN_005fa8d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA8F0,25,0x005FA908,FUN_005fa8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA910,29,0x005FA92C,FUN_005fa910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA930,43,0x005FA95A,FUN_005fa930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA960,93,0x005FA9BC,FUN_005fa960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA9BD,2,0x005FA9BE,Catch@005fa9bd,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA9BF,9,0x005FA9C7,FUN_005fa9bf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA9C8,58,0x005FAA01,FUN_005fa9c8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA960,162,0x005FAA01,FUN_005fa960,std::_Uninit_copy<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA9BD,2,0x005FA9BE,Catch@005fa9bd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA9BF,9,0x005FA9C7,FUN_005fa9bf,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
+0x005FA9C8,58,0x005FAA01,FUN_005fa9c8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FAA10,49,0x005FAA40,FUN_005faa10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAA50,43,0x005FAA7A,FUN_005faa50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAA80,76,0x005FAACB,FUN_005faa80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

@@ -673,3 +673,14 @@ slots. Three six-byte `FF 25` entries jump through actual slots for DirectInput,
 Direct3D8 and RtlUnwind. They are linker trampolines, separate from the DLL
 implementations and from functions that call them. Other indirect jumps of
 the same instruction shape address non-import data and remain under review.
+
+## Origin-only observations after R031
+
+Eight complete VC7 `std::_Uninit_fill_n`/`std::_Uninit_copy` template bodies
+were split into 32 provisional inventory rows by local catch jumps and
+adjustments. Fresh ordinary `std::vector` instantiations with synthetic
+16-, 44- and 116-byte aggregates reproduce the complete emission outside
+explicitly resolved EH and call relocation fields. The aggregate widths are
+observed code strides, not proof of the original target record types. Every
+body's full source auxiliary extent, target bytes and internal control flow
+are checked; the interior rows cannot become independent authored functions.
