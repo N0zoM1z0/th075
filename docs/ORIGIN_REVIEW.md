@@ -1605,3 +1605,34 @@ regressions; target-required tracking, progress freshness and
 `git diff --check` passed. Public no-auth Funnel receipt:
 `.analysis/public-r033-origin-verification.json`. R032 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37008140937.
+
+## R034 — additional VC7 record-width probes
+
+Reviewed 2026-10-02. Thirty-one further complete VC7 STL helper bodies /
+1,685 bytes are excluded. The independent ordinary source probe in
+`probes/VC7AdditionalRecordContainers.cpp` instantiates `std::vector` for
+fourteen synthetic aggregate widths: 4, 8, 12, 20, 24, 28, 32, 40, 48, 64,
+72, 80, 96 and 128 bytes. The 31 accepted target bodies match complete source
+COMDATs selected from widths 4, 8, 20 and 64. Width agreement is evidence of
+compiler emission only; it does not recover any original record type.
+
+`verify-vendor-additional-records.py` cold-compiles the probe and extracts all
+336 complete record-related source definitions of at least 32 bytes, requiring
+each primary auxiliary size to cover its whole code section. It matches each
+target against *all* definitions, admits one generic STL template family,
+and checks the exact source alias set, both complete-body hashes, all 26 typed
+REL32 fields and decoded CFG through the terminal RET. Six template families
+are represented: size, capacity, assignment, allocator `max_size`, vector
+`_Ufill` and construction. No indirect calls are credited. Five
+additional `copy`/`copy_backward` dual-family hits remain pending; the broader
+width probe does not resolve their original family.
+
+Two public regressions accept width variants within one family and reject
+`copy`/`copy_backward` conflation. The 31 new exclusions grant no callee,
+authored source or exact credit. Current totals are 1,297 reviewed: 138
+authored, 728 library and 431 compiler; 3,054 remain pending. Exact remains
+42 functions / 8,916 bytes against the provisional 43,031-byte authored slice
+(20.72%). Local CI passed 87 regressions; target-required tracking, progress
+freshness and `git diff --check` passed. Public no-auth Funnel receipt:
+`.analysis/public-r034-origin-verification.json`. R033 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37008617872.

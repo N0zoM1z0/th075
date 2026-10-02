@@ -704,3 +704,13 @@ byte-identical `copy`/`copy_backward` candidates resolve specifically to
 REL32 fields. Five dual-family candidates remain unresolved. Typed caller
 evidence disambiguates the source family, not the original record type, and
 neither caller nor callee gains authored source or exact credit.
+
+## Origin-only observations after R034
+
+An independent VC7 `std::vector` probe across fourteen synthetic aggregate
+widths supplies 31 more complete generic STL helper matches. Only widths
+4, 8, 20 and 64 contribute accepted bodies, with all 26 direct-call fields
+bound and six unambiguous template families. These widths are compiler-oracle
+inputs, not recovered game record declarations. Five byte-identical
+`copy`/`copy_backward` matches still lack family-level evidence and remain
+pending. No source or exact credit changes.

@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 697 library and 431 compiler candidates; 3,085 origins remain
+  138 authored, 728 library and 431 compiler candidates; 3,054 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R033 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R034 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 85 passing
+  across six objects through scripts/repo-python after F005. Public CI has 87 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -401,3 +401,16 @@ source-family sets and exact witness destinations. Totals are 1,266 reviewed
 `.analysis/public-r033-origin-verification.json`. Local CI passed 85 tests;
 progress remains current. R032 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37008140937.
+
+R034 uses a separate ordinary VC7 `std::vector` probe with fourteen synthetic
+record widths. Thirty-one complete helper bodies / 1,685 bytes match exactly
+one of six generic STL template families; selected probe widths are 4, 8, 20
+and 64 bytes, without asserting original game types. The cold verifier scans
+all 336 complete source definitions >=32 bytes, checks both whole-body hashes,
+all 26 typed REL32 fields and complete control flow. Five further
+`copy`/`copy_backward` dual-family matches remain pending. Totals are 1,297
+reviewed (138 authored, 728 library, 431 compiler) and 3,054 pending; exact
+remains 42 / 8,916 bytes. Public no-auth Funnel receipt:
+`.analysis/public-r034-origin-verification.json`. Local CI passed 87 tests;
+progress remains current. R033 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37008617872.
