@@ -496,3 +496,135 @@ relocations = [
   { offset = 0x10, type = "DIR32", symbol = "?g_Window@Input@@3PAUHWND__@@A", target = 0x00671344 },
   { offset = 0x17, type = "DIR32", symbol = "__imp__MessageBoxA@16", target = 0x0065720C },
 ]
+
+[units.graphics-create-16-bit-texture]
+source = "src/GraphicsTexture.cpp"
+object = "build/matching/GraphicsTexture.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::Create16BitTexture"]
+symbol = "?Create16BitTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@@Z"
+target_address = 0x00401B20
+size = 248
+relocations = [
+  { offset = 0x94, type = "DIR32", symbol = "?g_RequireSquareTextures@Graphics@@3_NA", target = 0x0067123A },
+  { offset = 0xCE, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0xD4, type = "REL32", symbol = "_D3DXCreateTexture@32", target = 0x00605B61 },
+  { offset = 0xE2, type = "DIR32", symbol = "?g_Create16BitTextureError@Graphics@@3QBDB", target = 0x006573FC },
+  { offset = 0xE7, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+]
+
+[units.graphics-create-texture]
+source = "src/GraphicsTexture.cpp"
+object = "build/matching/GraphicsTexture.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::CreateTexture"]
+symbol = "?CreateTexture@Graphics@@YA_NGGPAPAUIDirect3DTexture8@@E@Z"
+target_address = 0x00401C20
+size = 340
+relocations = [
+  { offset = 0x94, type = "DIR32", symbol = "?g_RequireSquareTextures@Graphics@@3_NA", target = 0x0067123A },
+  { offset = 0xE0, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0xE6, type = "REL32", symbol = "_D3DXCreateTexture@32", target = 0x00605B61 },
+  { offset = 0x117, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x11D, type = "REL32", symbol = "_D3DXCreateTexture@32", target = 0x00605B61 },
+  { offset = 0x127, type = "DIR32", symbol = "?g_UnsupportedTextureDepthError@Graphics@@3QBDB", target = 0x00657414 },
+  { offset = 0x12C, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x13E, type = "DIR32", symbol = "?g_CreateTextureError@Graphics@@3QBDB", target = 0x0065742C },
+  { offset = 0x143, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+]
+
+[units.graphics-reset-device]
+source = "src/GraphicsTexture.cpp"
+object = "build/matching/GraphicsTexture.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::ResetDevice"]
+symbol = "?ResetDevice@Graphics@@YAXXZ"
+target_address = 0x004017A0
+size = 245
+relocations = [
+  { offset = 0x22, type = "DIR32", symbol = "?g_TargetTextures@Graphics@@3PAPAUIDirect3DTexture8@@A", target = 0x006711D4 },
+  { offset = 0x2C, type = "DIR32", symbol = "?g_TargetTextures@Graphics@@3PAPAUIDirect3DTexture8@@A", target = 0x006711D4 },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_TargetRenderers@Graphics@@3PAPAUID3DXRenderToSurface@@A", target = 0x006711FC },
+  { offset = 0x46, type = "DIR32", symbol = "?g_TargetRenderers@Graphics@@3PAPAUID3DXRenderToSurface@@A", target = 0x006711FC },
+  { offset = 0x53, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x59, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x61, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x6E, type = "DIR32", symbol = "?g_ResetDeviceError@Graphics@@3QBDB", target = 0x006573D4 },
+  { offset = 0x73, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x7D, type = "REL32", symbol = "?SetDefaultStates@Graphics@@YAXXZ", target = 0x00401540 },
+  { offset = 0x9F, type = "DIR32", symbol = "?g_TargetTextures@Graphics@@3PAPAUIDirect3DTexture8@@A", target = 0x006711D4 },
+  { offset = 0xB8, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0xC0, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0xCE, type = "DIR32", symbol = "?g_TargetRenderers@Graphics@@3PAPAUID3DXRenderToSurface@@A", target = 0x006711FC },
+  { offset = 0xE5, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0xEB, type = "REL32", symbol = "_D3DXCreateRenderToSurface@28", target = 0x0060508B },
+]
+
+[units.input-initialize]
+source = "src/InputDevice.cpp"
+object = "build/matching/InputDevice.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Input::Initialize"]
+symbol = "?Initialize@Input@@YA_NPAUHWND__@@PAUHINSTANCE__@@@Z"
+target_address = 0x00403D20
+size = 95
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?g_Window@Input@@3PAUHWND__@@A", target = 0x00671344 },
+  { offset = 0x11, type = "DIR32", symbol = "?g_Instance@Input@@3PAUHINSTANCE__@@A", target = 0x00671348 },
+  { offset = 0x17, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x25, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x2A, type = "DIR32", symbol = "_IID_IDirectInput8A", target = 0x0065BA8C },
+  { offset = 0x35, type = "DIR32", symbol = "?g_Instance@Input@@3PAUHINSTANCE__@@A", target = 0x00671348 },
+  { offset = 0x3B, type = "REL32", symbol = "_DirectInput8Create@20", target = 0x006036A4 },
+  { offset = 0x49, type = "DIR32", symbol = "?g_CreateDirectInputError@Input@@3QBDB", target = 0x00657498 },
+  { offset = 0x4E, type = "REL32", symbol = "?ShowError@Input@@YAXPBD@Z", target = 0x00403D00 },
+]
+
+[units.input-create-keyboard]
+source = "src/InputDevice.cpp"
+object = "build/matching/InputDevice.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Input::CreateKeyboard"]
+symbol = "?CreateKeyboard@Input@@YA_NXZ"
+target_address = 0x00403D80
+size = 197
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x17, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x1C, type = "DIR32", symbol = "_GUID_SysKeyboard", target = 0x0065B91C },
+  { offset = 0x21, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x29, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x3B, type = "DIR32", symbol = "?g_CreateKeyboardError@Input@@3QBDB", target = 0x006574BC },
+  { offset = 0x40, type = "REL32", symbol = "?ShowError@Input@@YAXPBD@Z", target = 0x00403D00 },
+  { offset = 0x4C, type = "DIR32", symbol = "_c_dfDIKeyboard", target = 0x0065A4DC },
+  { offset = 0x51, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x59, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x6B, type = "DIR32", symbol = "?g_KeyboardFormatError@Input@@3QBDB", target = 0x006574D8 },
+  { offset = 0x70, type = "REL32", symbol = "?ShowError@Input@@YAXPBD@Z", target = 0x00403D00 },
+  { offset = 0x7E, type = "DIR32", symbol = "?g_Window@Input@@3PAUHWND__@@A", target = 0x00671344 },
+  { offset = 0x85, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x8C, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x9E, type = "DIR32", symbol = "?g_KeyboardCooperativeLevelError@Input@@3QBDB", target = 0x006574F8 },
+  { offset = 0xA3, type = "REL32", symbol = "?ShowError@Input@@YAXPBD@Z", target = 0x00403D00 },
+  { offset = 0xB0, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0xB7, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+]
+
+[units.input-poll-keyboard]
+source = "src/InputDevice.cpp"
+object = "build/matching/InputDevice.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Input::PollKeyboard"]
+symbol = "?PollKeyboard@Input@@YAXXZ"
+target_address = 0x00403E50
+size = 90
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0xE, type = "DIR32", symbol = "?g_KeyboardState@Input@@3PAEA", target = 0x00671240 },
+  { offset = 0x18, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x20, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x32, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x3A, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x4A, type = "DIR32", symbol = "?g_KeyboardState@Input@@3PAEA", target = 0x00671240 },
+  { offset = 0x4F, type = "REL32", symbol = "_memset", target = 0x00640490 },
+]

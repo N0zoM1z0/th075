@@ -19,8 +19,11 @@ def main() -> int:
     reviewed = count - status["review"]
     ratio = 100 * exact / count if count else 0
     review_ratio = 100 * reviewed / count if count else 0
-    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="194" role="img" aria-label="TH075: {exact:,} exact functions, {status['exact_bytes']:,} exact bytes; {reviewed:,} of {count:,} candidates reviewed">
-  <rect width="560" height="194" rx="8" fill="#1f2335"/>
+    authored_ratio = status["authored_exact_percent"] or 0
+    authored_label = "Confirmed authored bytes" if status["origin_review_complete"] else "Reviewed authored bytes (provisional set)"
+    goal_label = "Goal achieved" if status["fifty_percent_goal_complete"] else "Goal incomplete: all origins reviewed and at least 50% authored bytes exact."
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="258" role="img" aria-label="TH075: {exact:,} exact functions, {status['exact_bytes']:,} exact bytes; {reviewed:,} of {count:,} candidates reviewed; {goal_label}">
+  <rect width="560" height="258" rx="8" fill="#1f2335"/>
   <text x="24" y="28" fill="#f4f4f5" font-family="sans-serif" font-size="16" font-weight="600">TH075 function reconstruction</text>
   <text x="24" y="52" fill="#f4f4f5" font-family="sans-serif" font-size="13" font-weight="600">Exact functions / all provisional candidates</text>
   <text x="536" y="52" fill="#f4f4f5" text-anchor="end" font-family="monospace" font-size="13">{ratio:.2f}%</text>
@@ -32,7 +35,12 @@ def main() -> int:
   <rect x="24" y="124" width="512" height="12" rx="6" fill="#3b4058"/>
   <rect x="24" y="124" width="{512 * review_ratio / 100:.2f}" height="12" rx="6" fill="#9b6de3"/>
   <text x="24" y="153" fill="#c8cad2" font-family="sans-serif" font-size="12">{reviewed:,} / {count:,} candidates · {status['review']:,} pending</text>
-  <text x="24" y="179" fill="#a0a5ba" font-family="sans-serif" font-size="11">Authored-function denominator unknown; candidates include runtime and library code.</text>
+  <text x="24" y="180" fill="#f4f4f5" font-family="sans-serif" font-size="13" font-weight="600">{authored_label}</text>
+  <text x="536" y="180" fill="#f4f4f5" text-anchor="end" font-family="monospace" font-size="13">{authored_ratio:.2f}%</text>
+  <rect x="24" y="188" width="512" height="12" rx="6" fill="#3b4058"/>
+  <rect x="24" y="188" width="{512 * authored_ratio / 100:.2f}" height="12" rx="6" fill="#9b6de3"/>
+  <text x="24" y="217" fill="#c8cad2" font-family="sans-serif" font-size="12">{status['exact_authored_bytes']:,} / {status['authored_bytes']:,} reviewed authored bytes exact</text>
+  <text x="24" y="243" fill="#a0a5ba" font-family="sans-serif" font-size="11">{goal_label}</text>
 </svg>
 '''
     destination = ROOT / "resources/progress.svg"

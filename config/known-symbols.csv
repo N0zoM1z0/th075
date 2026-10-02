@@ -1,5 +1,6 @@
 address,name,module,confidence,evidence
 0x00401000,GraphicsResourceClient::GraphicsResourceClient,GraphicsResourceClient,inferred,F001; constructor role supported by paired cleanup and constructor caller; original name unknown
+0x004017A0,Graphics::ResetDevice,Graphics,inferred,F003; complete target behavior and SDK ABI; original name unknown
 0x00401A00,Graphics::ShowError,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401A20,Graphics::SetPresentationDestinationRect,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401A50,Graphics::SetTargetViewport,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
@@ -7,6 +8,8 @@ address,name,module,confidence,evidence
 0x00401AB0,Graphics::SetClearColor,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401AF0,Graphics::SetColorMultiplier,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401B00,Graphics::SetDrawTransform,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401B20,Graphics::Create16BitTexture,Graphics,inferred,F003; complete target behavior and SDK ABI; original name unknown
+0x00401C20,Graphics::CreateTexture,Graphics,inferred,F003; complete target behavior and SDK ABI; original name unknown
 0x00401F00,Graphics::LoadTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401F50,Graphics::SetBlendMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00402140,Graphics::SetAlphaMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
@@ -23,3 +26,6 @@ address,name,module,confidence,evidence
 0x004028F0,Graphics::Present,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00402970,Graphics::PresentToWindow,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00403D00,Input::ShowError,Input,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00403D20,Input::Initialize,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown
+0x00403D80,Input::CreateKeyboard,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown
+0x00403E50,Input::PollKeyboard,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown

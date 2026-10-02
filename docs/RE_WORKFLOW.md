@@ -19,8 +19,16 @@ timeouts, and scratch cleanup; the workspace script owns target attestation.
 
 Reconcile function boundaries against target bytes. Ghidra's candidate extent
 can include tables, shared tails, or incorrect analysis. Classify authored,
-compiler-generated, and library code separately. Except for the first reviewed
-function, the initial candidates remain unknown/review.
+compiler-generated, and library code separately. Consult `function-origins.csv`
+and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
+origin evidence. Record a durable origin batch before attempting exact credit.
+
+Alternate origin-review batches with exact reconstruction of reviewed authored
+functions. The active goal requires every origin reviewed and at least 50% of
+confirmed authored bytes exact. Run `report-reconstruction-status.py --summary`
+through `scripts/repo-python` for both gates. Its percentage uses a provisional
+denominator while any origin remains pending; neither function count nor exact
+coverage of the currently selected slice establishes overall completion.
 
 Form an ABI and behavior hypothesis, then write a small natural C++ probe below
 `.analysis/probes/`. Compiler flags must be explicit:

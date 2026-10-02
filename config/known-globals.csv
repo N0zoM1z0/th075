@@ -1,12 +1,24 @@
 address,name,module,confidence,evidence
+0x006573D4,Graphics::g_ResetDeviceError,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
+0x006573FC,Graphics::g_Create16BitTextureError,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
+0x00657414,Graphics::g_UnsupportedTextureDepthError,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
+0x0065742C,Graphics::g_CreateTextureError,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
 0x00657444,Graphics::g_TextureLoadError,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00657460,Graphics::g_TargetBeginError,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00657498,Input::g_CreateDirectInputError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x006574BC,Input::g_CreateKeyboardError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x006574D8,Input::g_KeyboardFormatError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x006574F8,Input::g_KeyboardCooperativeLevelError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x0065A4DC,c_dfDIKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x0065B91C,GUID_SysKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x0065BA8C,IID_IDirectInput8A,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x0066C080,Graphics::g_ColorMultiplier,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C084,Graphics::g_DrawScale,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C088,Graphics::g_ActiveTarget,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C1B8,Graphics::g_PixelShader,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671180,Graphics::g_TargetViewport,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671198,Graphics::g_PresentCallback,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0067119C,Graphics::g_PresentationParameters,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
 0x006711D0,Graphics::g_ClearColor,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x006711D4,Graphics::g_TargetTextures,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x006711D8,Graphics::g_PresentationDestinationRect,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
@@ -19,5 +31,10 @@ address,name,module,confidence,evidence
 0x00671224,Graphics::g_DrawOriginY,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671230,Graphics::g_Device,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671238,Graphics::g_Windowed,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0067123A,Graphics::g_RequireSquareTextures,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
 0x0067123B,Graphics::g_PixelShaderEnabled,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671240,Input::g_KeyboardState,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x00671344,Input::g_Window,Input,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671348,Input::g_Instance,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x0067134C,Input::g_DirectInput,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x00671350,Input::g_Keyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals

@@ -22,3 +22,9 @@ Graphics::GetTargetTexture
 Graphics::Present
 Graphics::PresentToWindow
 Input::ShowError
+Graphics::ResetDevice
+Graphics::Create16BitTexture
+Graphics::CreateTexture
+Input::Initialize
+Input::CreateKeyboard
+Input::PollKeyboard

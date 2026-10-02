@@ -139,8 +139,8 @@ inferred interface, and original return-type spelling is unrecovered.
 `LoadTexture` preserves the fourteen-argument stdcall call at `0x00608666`.
 Its declaration is inferred as `D3DXCreateTextureFromFileExA` from the path,
 arguments, texture output, and SDK contract; the callee implementation is not
-reconstructed or credited here. Device reset at `0x004017A0` likewise remains
-an external, named dependency. Both error wrappers call the MessageBoxA IAT
+reconstructed or credited here. Device reset at `0x004017A0` was subsequently
+accepted in F003 below. Both error wrappers call the MessageBoxA IAT
 slot at `0x0065720C`, with independently verified NUL-terminated captions
 `DGraphics-Error` at `0x006573EC` and `DInput-Error` at `0x00657488`.
 
@@ -198,3 +198,101 @@ That client resolves the public Funnel ingress, verifies TLS, omits
 Authorization, loads the private URL from the ignored local environment, and
 keeps it out of process arguments. Public Ghidra queries supplied decompiles,
 xrefs, disassembly, and project attestation for this batch.
+
+
+## F003 — texture allocation and device reset
+
+Accepted on 2026-10-02 after origin batch R001. Three complete functions add
+833 exact bytes; all 30 DIR32/REL32 bindings were reviewed and cold replayed.
+The source is `src/GraphicsTexture.cpp`; a separate header avoids changing the
+accepted graphics-state translation unit's compiler-generated label names.
+
+| Complete extent | Bytes | Inferred function |
+| --- | ---: | --- |
+| `0x004017A0..0x00401894` | 245 | `Graphics::ResetDevice` |
+| `0x00401B20..0x00401C17` | 248 | `Graphics::Create16BitTexture` |
+| `0x00401C20..0x00401D73` | 340 | `Graphics::CreateTexture` |
+
+**Target observations:** All three functions use cdecl stack arguments and
+ordinary RET. Both allocation functions return bool in AL. Width/height are
+zero-extended 16-bit inputs; their rounded dimensions and shift counters are
+32-bit unsigned locals. Width's initial comparison uses integer promotion;
+height's comparison uses the unsigned working value. Rounding keeps dimensions
+zero/one unchanged and rounds larger inputs upward to a power of two. The byte
+at `0x0067123A` enables square dimensions. Preserve these choices rather than
+introducing validation or factoring the repeated rounding into a new call.
+
+The eight-argument stdcall call at `0x00605B61` agrees with the SDK's
+`D3DXCreateTexture`: one mip level, no usage flags, managed pool. The dedicated
+helper uses A1R5G5B5; the general helper selects A8R8G8B8 for depths 32/24 and
+A1R5G5B5 for depths 8/16, testing 8 before 16. Other depths report an error.
+Both helpers require D3D_OK; the creation HRESULT is used by the failure check.
+Error literals are separately verified at `0x006573FC`, `0x00657414`, and
+`0x0065742C`, even though their Japanese text is identical.
+
+Reset releases the one texture/renderer pair, passes the 52-byte SDK
+D3DPRESENT_PARAMETERS at `0x0067119C` to the device's Reset slot, and reports
+the verified failure literal at `0x006573D4`. Success invokes the reviewed
+custom default-state body at `0x00401540`, then recreates a 1024-by-1024,
+one-level A8R8G8B8 default-pool render target and a render-to-surface helper
+with a D16 depth buffer. The seven-argument stdcall destination `0x0060508B`
+agrees with `D3DXCreateRenderToSurface`. Resource-call results are discarded
+where the target discards them; no fake HRESULT locals were introduced.
+
+**Compiler observations:** Pinned VC7.1 build 3077 with the common explicit
+Od/Ob0/Gy/GR-/GX-/Zi profile emits each full extent. Meaningful local identifier
+variants affect VC7's stack allocation; declaration reordering alone did not
+change the observed slots. Names are inferred and carry no original-symbol
+claim. The retained allocation locals are used for sizing and error handling;
+there is no assembly, inert local, padding, or conditional matching body.
+
+**Verification:** Cold replay of `graphics-create-16-bit-texture`,
+`graphics-create-texture`, and `graphics-reset-device` passed 3/3 from one
+fresh object. Every relocation is explicitly bound in `match-units.toml`,
+including the previously evidenced shared device/arrays/ShowError and the
+reviewed default-state dependency. Full instruction decoding, internal branch
+destinations, terminal returns and trailing INT3 alignment agree with R001.
+The authored origin classification precedes and is independent of exact credit.
+
+
+## F004 — DirectInput initialization and keyboard polling
+
+Accepted on 2026-10-02 after origin batch R002. Three complete functions add
+382 exact bytes, with all 36 relocations independently reviewed and cold
+replayed from `src/InputDevice.cpp`. No input container or class layout is
+needed by these three functions.
+
+| Complete extent | Bytes | Inferred function |
+| --- | ---: | --- |
+| `0x00403D20..0x00403D7E` | 95 | `Input::Initialize` |
+| `0x00403D80..0x00403E44` | 197 | `Input::CreateKeyboard` |
+| `0x00403E50..0x00403EA9` | 90 | `Input::PollKeyboard` |
+
+**Target observations:** All three use ordinary RET and cdecl stack arguments;
+setup returns bool in AL. The decompiler's apparent fastcall/thiscall registers
+are unused at entry and are not ABI evidence. Initialize assigns the shared
+HWND/HINSTANCE before its already-created check, then calls version 0x0800
+DirectInput8Create with the SDK's actual IID_IDirectInput8A and output pointer.
+The call destination `0x006036A4` is a JMP through IAT `0x00657010`; independent
+PE import-descriptor decoding identifies DINPUT8.dll!DirectInput8Create. This
+establishes the SDK's five-argument stdcall call independently of a guessed
+Ghidra prototype. R002 records the exact GUID and data-format observations.
+
+CreateKeyboard returns early when the keyboard already exists. It creates the
+system keyboard, sets c_dfDIKeyboard, then NONEXCLUSIVE | FOREGROUND |
+NOWINKEY cooperation, checking each HRESULT for negativity and reporting its
+own verified error literal. Acquire's result is discarded. PollKeyboard reads
+the entire 256-byte shared state buffer; failure reacquires and zeros it through
+the separately evidenced CRT memset body at `0x00640490`. Pointer/global
+addresses and every SDK constant/vtable slot are preserved. The source uses
+real SDK interfaces and one live HRESULT variable per function.
+
+**Compiler observations and verification:** The explicit pinned VC7.1 common
+profile emits exact complete extents on the first source compile; no artificial
+locals, owner layouts, assembly, or matching-only body is required. Canonical
+cold replay passed `input-initialize`, `input-create-keyboard`, and
+`input-poll-keyboard` 3/3 from one fresh object. Every device/state/error/GUID/
+format/ShowError/memset relocation is explicit in the manifest. Classify the
+called import thunk, SDK data and CRT body independently; these caller matches
+do not grant source or exact credit to their callees. Original function/global
+names and pointer declaration spellings remain inferred.

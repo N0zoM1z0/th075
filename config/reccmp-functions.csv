@@ -1,5 +1,6 @@
 name,address,type
 GraphicsResourceClient::GraphicsResourceClient,0x00401000,function
+Graphics::ResetDevice,0x004017A0,function
 Graphics::ShowError,0x00401A00,function
 Graphics::SetPresentationDestinationRect,0x00401A20,function
 Graphics::SetTargetViewport,0x00401A50,function
@@ -7,6 +8,8 @@ Graphics::SetPresentationSourceRect,0x00401A80,function
 Graphics::SetClearColor,0x00401AB0,function
 Graphics::SetColorMultiplier,0x00401AF0,function
 Graphics::SetDrawTransform,0x00401B00,function
+Graphics::Create16BitTexture,0x00401B20,function
+Graphics::CreateTexture,0x00401C20,function
 Graphics::LoadTexture,0x00401F00,function
 Graphics::SetBlendMode,0x00401F50,function
 Graphics::SetAlphaMode,0x00402140,function
@@ -23,3 +26,6 @@ Graphics::GetTargetTexture,0x004028C0,function
 Graphics::Present,0x004028F0,function
 Graphics::PresentToWindow,0x00402970,function
 Input::ShowError,0x00403D00,function
+Input::Initialize,0x00403D20,function
+Input::CreateKeyboard,0x00403D80,function
+Input::PollKeyboard,0x00403E50,function

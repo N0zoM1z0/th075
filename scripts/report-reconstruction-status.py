@@ -20,7 +20,7 @@ def rows(name: str) -> list[dict[str, str]]:
         return list(csv.DictReader(stream))
 
 
-def load() -> tuple[list[dict[str, object]], dict[str, int]]:
+def load() -> tuple[list[dict[str, object]], dict[str, object]]:
     functions = rows("functions.csv")
     origins = {row["address"]: row for row in rows("function-origins.csv")}
     mapped = {row["address"]: row for row in rows("reccmp-functions.csv")}
@@ -76,6 +76,18 @@ def load() -> tuple[list[dict[str, object]], dict[str, int]]:
         "exact_bytes": sum(int(row["size"]) for row in result if row["exact"]),
         "configured_units": len(manifest.get("units", {})),
     }
+    authored_bytes = sum(int(row["size"]) for row in result if row["category"] == "authored")
+    exact_authored_bytes = sum(int(row["size"]) for row in result
+                               if row["category"] == "authored" and row["exact"])
+    summary.update({
+        "reviewed": summary["authored"] + summary["excluded"],
+        "authored_bytes": authored_bytes,
+        "exact_authored_bytes": exact_authored_bytes,
+        "authored_exact_percent": 100.0 * exact_authored_bytes / authored_bytes if authored_bytes else None,
+        "origin_review_complete": summary["review"] == 0,
+        "fifty_percent_goal_complete": summary["review"] == 0 and authored_bytes > 0
+                                      and exact_authored_bytes * 2 >= authored_bytes,
+    })
     return result, summary
 
 
@@ -133,6 +145,12 @@ def main() -> int:
             f"{summary['source_present']}, exact {summary['exact_functions']} "
             f"({summary['exact_bytes']} bytes), units {summary['configured_units']}"
         )
+        percentage = summary["authored_exact_percent"]
+        label = "final denominator" if summary["origin_review_complete"] else "provisional denominator; origin review incomplete"
+        print(f"Authored bytes: {summary['exact_authored_bytes']}/{summary['authored_bytes']} exact "
+              f"({percentage:.2f}%; {label})" if percentage is not None else "Authored bytes: denominator unknown")
+        print("Goal (all origins reviewed and authored exact bytes >=50%): "
+              + ("achieved" if summary["fifty_percent_goal_complete"] else "incomplete"))
     else:
         for row in selected:
             unit_names = ",".join(row["units"]) or "-"

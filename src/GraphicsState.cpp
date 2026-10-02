@@ -23,7 +23,7 @@ namespace Graphics
     extern DWORD g_PixelShader;
     extern const char g_TextureLoadError[];
     extern const char g_TargetBeginError[];
-    // Reset is identified at 0x004017A0; its body has not been reconstructed.
+    // Reset is implemented separately in GraphicsTexture.cpp (F003).
     extern void ResetDevice();
 
     void ShowError(const char *message)
