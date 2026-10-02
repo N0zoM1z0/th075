@@ -2056,3 +2056,54 @@ Local CI passed 98 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r044-origin-verification.json`.
+
+## R045 — battle collision, fighter state and resource ownership
+
+Twenty-seven complete game-specific bodies add 21,301 bytes of authored-origin
+evidence. The pinned target supplies each complete body hash and the decoded
+local CFG; every direct branch stays inside its extent and the final
+instruction returns. The observations below come from the actual body and its
+game data/call context, not from the provisional Ghidra label. Names describe
+observed roles and remain provisional.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x00441EA0` | Draws a battle banner with the scene's countdown-driven alpha and textured geometry. |
+| `0x00442400` | Expands four collision bounds to include two project records. |
+| `0x00443E90` | Applies an attack impact, including hit/guard state, damage feedback and game sound. |
+| `0x00444770` | Tests an attack flag against the defender's guard state and applies the guarded result. |
+| `0x00444FC0` | Resolves a special attack/defense flag pair and marks both fighter records. |
+| `0x004450E0` | Resolves contact flags, records the defender response and dispatches an impact. |
+| `0x004456F0` | Reads game input combinations and toggles battle pause state and sound. |
+| `0x00451A00` | Draws a timed fighter sprite using the game's texture and transform API. |
+| `0x00451EB0` | Chooses movement animation IDs from grounded state, movement direction and fighter flags. |
+| `0x00452230` | Integrates horizontal/vertical fighter position with arena bounds. |
+| `0x00452360` | Chooses an action animation from current input and attack state, including a random branch. |
+| `0x00452490` | Decrements multiple paired fighter timers and updates battle-specific recovery state. |
+| `0x00452C10` | Applies a calculated gauge change to the opposing fighter and its recovery timers. |
+| `0x00452F10` | Converts controller/AI state to held directional and action values and per-frame commands. |
+| `0x00453F70` | Renders the fighter's current pattern frames, flip, tint and stage transform. |
+| `0x00454840` | Renders a side-dependent fighter effect using two animation counters and alpha. |
+| `0x00454AA0` | Renders a fading side-dependent overlay based on a fighter timer. |
+| `0x00455640` | Computes a paired fighter value from the opponent's state and mode. |
+| `0x004567B0` | Initializes fighter-owned state, containers and resource references. |
+| `0x00456910` | Releases fighter-owned pattern, stage, sound and other project resources. |
+| `0x00456B60` | Loads `wave\\se%s.dat`, character pictures and character data, with a named character-specific pack path. |
+| `0x00457010` | Clears round-local fighter fields and sets side-dependent spawn position and initial counters. |
+| `0x00457660` | Loads `data\\character\\%s\\%s.pat`, then parses pattern records and associated resources. |
+| `0x004584D0` | Loads a numbered `data\\character\\%s\\stage%d.dat` resource. |
+| `0x0045BB10` | Initializes a battle-effect record with side, position, flags, collision rectangle and appearance fields. |
+| `0x0045BDB0` | Advances project effect objects through virtual update calls and removes finished records. |
+| `0x0045D810` | Selects a weighted fighter pattern sequence from game tables and copies the chosen entries. |
+
+Template-like record copies and container assignment in the same address
+region remain pending. R045 changes origin review only, with no source,
+mapping or exact credit. Totals are 1,638 reviewed: 307 authored, 767 library
+and 564 compiler; 2,713 remain pending. Exact stays 42 functions / 8,916
+bytes against the provisional 205,667-byte authored slice (4.34%). Finish
+origin review before exact work.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r045-origin-verification.json`. R044 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37017759236.

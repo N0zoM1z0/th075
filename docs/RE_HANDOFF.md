@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  280 authored, 767 library and 564 compiler candidates; 2,740 origins remain
+  307 authored, 767 library and 564 compiler candidates; 2,713 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 184,366, with 8,916 exact (4.84%).
+  The current reviewed authored-byte denominator is 205,667, with 8,916 exact (4.34%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R044 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R045 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -538,3 +538,13 @@ no-auth public Funnel MCP runs the origin verifier and target-required checks;
 private receipt: `.analysis/public-r044-origin-verification.json`.
 R043 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37016850140.
+
+R045 reviews 27 complete authored battle-collision, fighter-state, resource
+and effect bodies / 21,301 bytes. Each whole-body hash and direct CFG is
+cold-checked; `ORIGIN_REVIEW.md` records the observed role for each. Template
+copies and container assignments in the same region stay pending. Totals are
+1,638 reviewed (307 authored, 767 library, 564 compiler), 2,713 pending;
+exact remains 42 / 8,916 bytes against provisional 205,667 authored bytes
+(4.34%). Continue all origin review before exact work. Local and public MCP
+verification details and the R044 CI result are recorded in the review log.
+Private public-MCP receipt: `.analysis/public-r045-origin-verification.json`.

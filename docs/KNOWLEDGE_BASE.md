@@ -834,3 +834,14 @@ as part of cold origin replay. These central dispatchers connect many of the
 already reviewed scene helpers and identify useful candidates for later exact
 prioritization. Their class labels are inferred; the three R044 decisions
 grant authored origin only, with no source or exact credit.
+
+## Origin-only observations after R045
+
+The battle collision layer and fighter object form a useful later exact-work
+cluster. Paired fighter records share side, current pattern, input, animation,
+health/gauge and recovery fields. The resource loader names character-specific
+sound, `.dat`, `.pat` and numbered stage files, which grounds the nearby
+state and drawing routines. The effect manager creates project-specific
+records and advances them through virtual callbacks. The 27 reviewed bodies
+are complete and hashed, but inferred names and class layouts remain
+provisional. They add no source or exact credit.
