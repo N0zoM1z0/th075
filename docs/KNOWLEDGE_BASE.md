@@ -604,3 +604,19 @@ funclets. The target's complete metadata and observed allocation/state stores
 establish the analogous frame role, while source types, parent/callee ownership
 and whole parent boundaries remain unknown. All 401 recorded cleanup bodies
 and 236 complete frames are now rechecked. Exact source and units are unchanged.
+
+## Origin-only observations after R024
+
+Eleven functions in the executable's startup pointer table are generated
+global initializers. Ten register separate finalizers; every pair uses the
+same observed global address. One init-only wrapper has no registered
+finalizer. A fresh VC7 C++ global-lifetime fixture emits the same complete
+wrapper structures and relocation roles. The target's array uses two
+72-byte elements; the fixture's string array uses two 28-byte elements.
+Neither global type is inferred from the wrapper pattern alone.
+
+The full startup runner, table interval, callback pairing, per-body hashes and
+all code fields are rechecked by `verify-static-origins.py`. Its `_atexit`
+destination has its own pinned CRT whole-body fingerprint; other callees and
+global owner layouts remain separately pending. R024 adds 21 compiler-origin
+exclusions / 468 bytes and no authored source or exact credit.

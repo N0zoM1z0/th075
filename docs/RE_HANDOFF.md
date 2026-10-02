@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 447 library and 407 compiler candidates; 3,359 origins remain
+  138 authored, 447 library and 428 compiler candidates; 3,338 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R023 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R024 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 60 passing
+  across six objects through scripts/repo-python after F005. Public CI has 65 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -271,3 +271,17 @@ status passed through the no-auth public Funnel MCP; private receipt
 `.analysis/public-r023-origin-verification.json`. Local CI passed 60 tests,
 progress is current and the accepted exact units remain unchanged. R022 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37003968089.
+
+R024 reviews all 21 remaining static-lifetime wrappers in the earlier EH-tail
+diagnostic: 11 startup entries and ten paired finalizers, 468 bytes.
+`verify-static-origins.py` checks fresh ordinary compiler emission, complete
+target bodies, the executable startup loop/table, callbacks, writable global
+addresses, and a pinned vendor exit-registration fingerprint. Build the probe
+with the command in ORIGIN_REVIEW.md before running its target verifier. Called
+constructor/destructor bodies, vector helpers, global types and startup runner
+remain separate origins. Current totals are 1,013 reviewed / 3,338 pending;
+Exact remains 42 functions / 8,916 bytes. No query/compiler session is active.
+R024 verification passed through the unchanged no-auth public Funnel MCP;
+private receipt `.analysis/public-r024-origin-verification.json`. Local CI passed
+65 regressions, target-required tracking and progress freshness. R023 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37004206011.

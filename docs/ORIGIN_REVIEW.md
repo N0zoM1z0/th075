@@ -1196,3 +1196,67 @@ status passed through the unchanged no-auth public Funnel MCP. Private receipt:
 `.analysis/public-r023-origin-verification.json`. Local CI passed 60 regressions;
 progress freshness and `git diff --check` passed. R022's published GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37003968089.
+
+## R024 — generated global initialization and finalization wrappers
+
+Reviewed 2026-10-02. Twenty-one complete compiler-generated wrappers / 468
+bytes are excluded from authored reconstruction. The executable's 106-byte
+startup runner at 0x0064411D walks the complete function-pointer interval
+0x0066C000..0x0066C034. Eleven candidate wrappers occupy consecutive slots
+0x0066C008..0x0066C030; the table has the observed zero sentinels and a
+separate security-cookie initializer before them. This is actual startup
+registration evidence, not a label inferred from Ghidra.
+
+A fresh, ordinary VC7 C++ fixture defines a global string, vector, two-element
+string array and one object with a constructor but no destructor. The compiler
+emits separate, whole COFF code sections for the same four wrapper structures:
+28-byte object init plus exit registration, 15-byte object finalization,
+42/24-byte array init/finalization, and a 15-byte init-only wrapper.
+`verify-static-origins.py` checks every fixture section's complete size,
+instruction pattern and relocation fields. Source lives in
+`probes/VC7StaticLifetime.cpp`; it does not declare the game's global types.
+The array fixture uses a 28-byte string stride; the target's two-element array
+uses 72 bytes. That observed target stride is retained and does not imply the
+same object type. Compiler emission establishes the wrapper form only.
+
+Target verification checks the full hash, instruction sequence and actual
+fields of each body, the writable global address, complete startup slot,
+known constructor/destructor entry and every callback pairing. Ten init
+wrappers register ten distinct finalizers, with matching global addresses;
+the remaining startup wrapper initializes without registering a finalizer.
+The array pair also agrees on its constructor/destructor callback, count two,
+stride 72 and array address. The registration destination at 0x0064168B is
+checked against its own complete pinned libcmt `_atexit` body and the complete
+vendor fingerprint of its `__onexit` call target. The latter's downstream
+relocation bindings and origin remain separately pending. The wrappers' called
+constructors, destructor bodies, vector iterator helpers, complete global
+types and startup runner origin are not classified by inheritance.
+
+| Wrapper group | Startup addresses | Finalizer addresses |
+| --- | --- | --- |
+| Single global | 0x00656D00, 0x00656D20, 0x00656D40, 0x00656D90, 0x00656DC0, 0x00656DE0, 0x00656E00, 0x00656E20, 0x00656E40 | 0x00656E60, 0x00656E70, 0x00656E80, 0x00656EB0, 0x00656EC0, 0x00656ED0, 0x00656EE0, 0x00656EF0, 0x00656F00 |
+| Two-element array | 0x00656D60 | 0x00656E90 |
+| Init only | 0x00656DB0 | — |
+
+```bash
+scripts/compile-probe.sh probes/VC7StaticLifetime.cpp build/probes/StaticLifetimeOrigins.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/repo-python scripts/verify-static-origins.py
+```
+
+The evidence CSV records all complete extents, hashes, global/callee/callback
+fields, table slots and inferred template kinds. Five public regressions reject
+missing or mismatched finalizers and wrong startup membership. The earlier
+422-candidate tail survey now has no pending entries. Private source inspection
+and diagnostics are under `.analysis/r024-*`. These origin decisions grant no
+source, mapping or exact credit.
+
+Current totals: 1,013 reviewed origins, comprising 138 authored, 447 library
+and 428 compiler; 3,338 remain pending. Exact remains 42 functions / 8,916
+bytes from the provisional 43,031-byte authored set (20.72%). Finish the
+remaining origins before returning to exact reconstruction.
+
+R024 static, compiler, authored, SDK and runtime verifiers plus target-required
+tracking/status passed through the unchanged no-auth public Funnel MCP. Private
+receipt: `.analysis/public-r024-origin-verification.json`. Local CI passed 65
+regressions; progress freshness and `git diff --check` passed. The R023 public
+GitHub CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37004206011.
