@@ -1031,3 +1031,13 @@ dispatcher. Both have complete guarded switch tables after their final
 RETs and game-specific state updates. Their original names and the
 auxiliary object's exact role remain unresolved. R064 adds no source or
 exact credit.
+
+## Origin-only observations after R065
+
+Battle resource loading uses explicit `LoadCharacter...` and
+`LoadStage...` diagnostic markers and replaces owned game objects based
+on current selection state. Six other reviewed routines draw or advance
+scene, battle and fighter state. Their ten complete guarded tables cover
+75 entries, all inside their owning code extents. Detailed layouts and
+original method names remain unresolved. R065 adds no reconstruction
+source or exact credit.

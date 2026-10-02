@@ -2725,3 +2725,34 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 both switch bodies, all 729 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r064-origin-verification.json`. R063 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37028175815.
+
+## R065 — battle loading, rendering and state dispatchers
+
+Eight complete game-authored bodies / 19,028 bytes are reviewed. Two
+battle-loading functions contain the literal `LoadCharacter...` and
+`LoadStage...` diagnostic strings, call the previously reviewed game log
+routine, and select owned character or stage resources from game state.
+The remaining six draw a scene, advance scene and battle state, or process
+fighter action data. Names describe observed behavior; class boundaries
+and original method names remain provisional.
+
+All eight extents decode to a single final RET. Their ten guarded switches
+have 75 complete 32-bit table entries: nine direct tables and one
+byte-remapped table. `scripts/repo-python
+scripts/verify-game-dispatcher-origins.py` rechecks full body hashes,
+every internal branch and table destination, all table/remap hashes,
+the two literal strings and their reviewed logging calls. The switch
+records are in `config/authored-origin-direct-switches.csv` and
+`config/authored-origin-switches.csv`. The nearby `0x00420880` body has
+complex exception machinery and remains pending; it is not included by
+proximity.
+
+R065 adds origin only, with no source or exact credit. Totals are 2,150
+reviewed (784 authored, 792 library, 574 compiler), 2,201 pending.
+Exact stays 42 functions / 8,916 bytes against 1,937,229 provisional
+authored bytes (0.46%). Continue origin review before exact work.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+all eight dispatchers, all 737 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r065-origin-verification.json`. R064 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37028835995.
