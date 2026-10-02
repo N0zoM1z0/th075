@@ -947,3 +947,15 @@ share every non-call byte and the same two checked game call targets.
 Tiny adjacent empty methods and destructor wrappers remain pending because
 proximity cannot establish authored versus generated origin. These batches
 add no source or exact credit.
+
+## Origin-only observations after R057
+
+A pinned VC7.1 probe differentiates an explicitly defined empty derived
+virtual destructor from an implicit one: the explicit form writes its
+derived vtable before calling the base destructor (28 bytes), while the
+implicit form only calls the base destructor (19 bytes). Thirty-four
+background destructor bodies match the explicit complete source shape and
+bind to the exact vtables of the separately reviewed BG asset constructors.
+The base destructor, two further larger-background pairs and adjacent
+empty virtual methods remain pending. R057 adds no reconstruction source
+or exact credit.

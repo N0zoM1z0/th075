@@ -2471,3 +2471,39 @@ both background verifiers, all 562 authored-origin extents and tracking.
 Private receipt: `.analysis/public-r055-r056-origin-verification.json`.
 R054 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37023216064.
+
+## R057 — explicit background destructor source shape
+
+Thirty-four complete 28-byte background destructors / 952 bytes are
+classified authored. The independent synthetic VC7.1 fixture in
+`probes/VC7BackgroundDestructor.cpp` defines both an explicit empty
+derived virtual destructor and an implicit derived destructor. A cold
+`/Od /Ob0 /Gy /GR- /GX- /Zi /GS` build gives the explicit destructor one
+complete 28-byte code COMDAT with a typed vtable DIR32 field at `+12` and
+a typed base-destructor REL32 call at `+20`. The implicit destructor has a
+distinct complete 19-byte COMDAT with only the base-destructor call. This
+distinction supports the source-defined origin of the target shape without
+claiming the fixture's class names, layouts or exact source as TH075's.
+
+`scripts/repo-python scripts/verify-background-destructor-origins.py`
+cold-compiles the fixture, checks both whole source COMDAT boundaries and
+typed relocations, and compares every nonrelocated target byte. Each
+target body has one complete RET and direct call. Its vtable field must
+equal the unique vtable written by one of the 34 independently verified
+R055 asset constructors; its call must reach the common base destructor at
+`0x00449D40`. Per-body hashes, source hash and bindings are in
+`config/background-destructor-origin-evidence.csv`. The base destructor
+and adjacent empty virtual methods keep independent pending origins.
+Two other same-shaped wrappers bind to larger BG05b and BG08a constructors;
+their paired constructors remain pending for separate review.
+
+R057 adds origin only, with no reconstruction source or exact credit.
+Totals are 1,999 reviewed: 643 authored, 792 library and 564 compiler;
+2,352 remain pending. Exact remains 42 functions / 8,916 bytes against
+the provisional 1,811,191-byte authored slice (0.49%).
+Local CI passed 98 tests; target-required tracking and progress freshness
+passed. The unchanged no-auth public Funnel MCP cold-compiled the probe,
+verified the 34 destructors and all 596 authored-origin extents, and
+rechecked tracking. Private receipt:
+`.analysis/public-r057-origin-verification.json`. R055/R056 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37024184101.
