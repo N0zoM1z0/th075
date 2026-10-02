@@ -684,3 +684,13 @@ explicitly resolved EH and call relocation fields. The aggregate widths are
 observed code strides, not proof of the original target record types. Every
 body's full source auxiliary extent, target bytes and internal control flow
 are checked; the interior rows cannot become independent authored functions.
+
+## Origin-only observations after R032
+
+The fresh VC7 record probe also produces 129 complete STL helpers whose
+target bodies have one unambiguous generic template family after ignoring
+synthetic record-name aliases. Their 398 typed code relocations and complete
+control flow are checked. Some helpers encode a record width; others emit
+the same bytes for 16-, 44- and 116-byte aggregates, so no original target
+type or owner layout follows. Eight byte-identical `copy`/`copy_backward`
+cases remain pending because the probe alone cannot select their family.

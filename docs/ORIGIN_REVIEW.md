@@ -1528,3 +1528,44 @@ against the provisional 43,031-byte authored slice (20.72%). Local CI passed
 `git diff --check` passed. Public no-auth Funnel receipt:
 `.analysis/public-r031-origin-verification.json`. R030 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37007109069.
+
+## R032 — unambiguous VC7 STL record helpers
+
+Reviewed 2026-10-02. A complete-source survey of the same ordinary VC7
+`std::vector` probe found 129 additional pending target bodies / 7,545 bytes.
+Each candidate has exactly the size of a whole COFF primary function
+definition, with its auxiliary size equal to its complete COMDAT section.
+Every non-relocation byte agrees across the complete target body, all 398
+typed relocation fields are explicitly resolved (200 REL32 and 198 DIR32),
+and decoded control flow reaches the complete RET without an unresolved
+outgoing jump. There are no indirect calls in these bodies.
+
+For each target body, `verify-vendor-record-helpers.py` cold-compiles the
+pinned probe and scans all 72 complete record-related source definitions of
+at least 32 bytes. It accepts only when every matching source symbol reduces
+to **one** STL template family after replacing the synthetic `Record16`,
+`Record44`, and `Record116` type names with a neutral record placeholder.
+Ninety-six targets match all three synthetic widths within one family;
+33 match one width-specific definition. Neither observation establishes the
+original target type. Eighteen distinct template families are represented,
+including vector bounds/iterator, insert/erase, allocation, fill/copy,
+construction and destruction helpers. The exact matched-source alias set,
+complete hashes, source symbol, and every relocation are recorded in
+`vendor-record-helper-origins.csv` and rechecked from a fresh object.
+
+Eight other target starts match both `copy` and `copy_backward` source families
+with identical complete bodies. They remain pending rather than selecting a
+convenient original name. Three public regressions require one family despite
+width aliases, reject two matching families, and reject a recorded symbol
+whose whole body does not match. The chosen synthetic COFF symbol is a
+compiler oracle, not a claim about the target's original symbol or record
+layout. Callee ownership remains separate.
+
+R032 adds library-origin evidence only, with no source or exact credit.
+Current totals are 1,240 reviewed: 138 authored, 671 library and 431 compiler;
+3,111 remain pending. Exact remains 42 functions / 8,916 bytes against the
+provisional 43,031-byte authored slice (20.72%). The complete-origin
+prerequisite is still open. Local CI passed 83 regressions; target-required
+tracking, progress freshness and `git diff --check` passed. Public no-auth
+Funnel receipt: `.analysis/public-r032-origin-verification.json`. R031 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37007728822.
