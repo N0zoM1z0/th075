@@ -514,3 +514,24 @@ passed 42/42 units across nine freshly compiled objects: all 8,916 bytes and
 497 relocation fields matched. The private RPC result is
 `.analysis/public-f007-replay.json`; the retained build/comparison receipt is
 `.analysis/f007-public-cold-receipt.json`.
+## Origin-only observations after R014
+
+R012/R013 establish vendor ownership of 38 more SDK bodies through complete
+function and readonly-section evidence; see `ORIGIN_REVIEW.md`. This adds
+no source or exact credit. Whole readonly sections anchor named data definitions
+and their offsets; mutable globals and relocated dispatch tables remain unresolved.
+
+R014 establishes authored policy in twelve texture-manager functions. The
+bitmap palette loader converts 256 entries from file offset 54 into 16-bit
+A1R5G5B5 and clears the first entry's alpha bit. Its valid-BMP-branch cleanup
+and observed header checks must be retained when reconstruction resumes.
+Do not silently fix the target's file/error behavior during byte reconstruction.
+
+The texture resolver's first-use guard initializes the cached handle to the
+incoming argument. The special metadata flag then selects texture zero and
+uploads only on a cache mismatch. Do not replace this with an imagined
+always-upload initialization. Metadata has observed 44-byte container stride;
+its complete record and owner layout remain unknown. A real DIDEVCAPS-sized
+vendor probe investigates generic vector policy only and provides no evidence
+that the target record uses that SDK type. The converter at `0x0041B990`
+and container operations remain separately reviewable.

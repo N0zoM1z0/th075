@@ -619,3 +619,127 @@ checks also passed through the unchanged no-auth public Funnel Bash MCP using
 tests. Current totals are 477 reviewed origins: 63 authored, 409 library and
 five compiler; 3,874 remain pending. Exact stays at 42 functions / 8,916 bytes
 from the provisional 17,284-byte authored set (51.59%). The goal is incomplete.
+
+## R012 — SDK normalization, transforms and codec workers
+
+Reviewed 2026-10-02. Thirteen complete SDK function COMDATs, 3,420 bytes, are
+library/exclude. They cover vector and quaternion normalization, coordinate
+transforms, DXT1/3/5 decode, indexed/YUV color handling and JPEG dithering.
+The pinned vendor members independently establish the complete extents. All
+15 direct-call and 30 scalar bindings pass the existing complete-byte and CFG
+verifier. Every called SDK peer also passes complete verification. No new
+indirect dispatch or unresolved tail is present. The public evidence and
+relocation CSVs contain the full member identities and fields; private plan
+and acceptance receipts are under `.analysis/r012-sdk-*`.
+
+## R013 — complete readonly SDK sections and their users
+
+Reviewed 2026-10-02. Twenty-five further complete SDK bodies, 23,205 bytes,
+are library/exclude. These include filtering/color conversion, JPEG/PNG
+workers and assembly-optimized matrix/vector implementations. Their 31
+direct-call bindings and 232 data-reference fields are verified against
+independent vendor definitions. Eight unchanged indirect calls remain inside
+the complete vendor bodies, without conferring ownership on their callees.
+
+`config/sdk-origin-data.csv` records 81 whole readonly vendor sections,
+3,843 bytes: archive/member identities, section number, full size/hash,
+target base and every defined symbol with its section offset. The section
+header determines the extent, rather than a selected symbol or matching
+prefix. Every section is initialized, readable, non-executable, non-writable
+and relocation-free. Every recorded byte equals the corresponding target
+data, including neighboring constants in the same section. Relocated tables,
+mutable globals and unresolved data remain pending.
+
+`scripts/coff_data.py` extracts these full definitions. The SDK verifier
+rechecks the complete sections before binding each DIR32 field to its named
+definition and target base plus offset. Locally defined data must come from
+the caller's same vendor member, preventing unrelated static-symbol aliases.
+All references must occupy full decoded displacement/immediate fields.
+Scalar `__real@...` evidence keeps its separate strict definition checks.
+`sdk-origin-relocations.csv` adds `data_section_id`; the existing scalar and
+call rows leave it empty. Eight public regressions protect whole extents,
+readonly properties, symbol offsets and local-member identity.
+
+The SDK verifier now covers 260 whole function bodies / 72,739 bytes,
+106 verified direct-call bindings, 158 scalar bindings, 232 readonly-section
+fields and 323 unchanged indirect calls. Full origin verification adds no
+reconstruction source, mapping or exact credit. The remaining SDK survey
+addresses number 319; unresolved switch tables require separate evidence.
+
+```bash
+scripts/repo-python scripts/verify-sdk-origins.py
+```
+
+## R014 — custom palette, texture uploads, cache and render wrappers
+
+Reviewed 2026-10-02 against attested Ghidra decompilation and complete raw
+target instruction decoding. Twelve functions add 1,475 authored bytes.
+`config/authored-origin-evidence.csv` records the full extents, target hashes
+and return/branch counts. Names and ABI declarations remain inferred.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x0040C380` | 523 | Load and convert bitmap palette |
+| `0x0040C590` | 340 | Upload indexed texture by handle |
+| `0x0040C6F0` | 54 | Resolve handle and invoke upload |
+| `0x0040C730` | 173 | Upload supplied texture/metadata |
+| `0x0040C7E0` | 16 | Forward shared Present policy |
+| `0x0040C7F0` | 65 | Couple blend mode with depth policy |
+| `0x0040C840` | 25 | Forward custom depth mode |
+| `0x0040C860` | 25 | Forward custom texture filter |
+| `0x0040C880` | 25 | Forward custom pixel-shader mode |
+| `0x0040C8A0` | 25 | Forward custom color multiplier |
+| `0x0040C8C0` | 162 | Resolve texture with lazy upload/cache |
+| `0x0040C970` | 42 | Resolve texture and draw projected strip |
+
+The palette loader frees its previous palette, opens the supplied filename,
+reads the file and checks the BMP signature and observed bits-per-pixel byte.
+It allocates 512 bytes and converts 256 RGBQUAD entries starting at file
+offset 54 into A1R5G5B5 using three-bit channel shifts and alpha bit 0x8000.
+It then clears that alpha bit in the first entry. This transparency and
+palette policy is application authored. The observed resource cleanup is
+inside the valid-BMP branch; this review introduces no imagined validation
+or error-path repair.
+
+The indexed upload validates the handle against the application's texture
+vector and reads a separate 44-byte-stride metadata container. Its special
+flag selects the shared texture at index zero and width 256. Otherwise it
+obtains the selected texture's surface description and releases the surface.
+Successful LockRect calls invoke the conversion worker at `0x0041B990`,
+then UnlockRect. That worker and the generic container accessors remain
+separately pending; calls alone do not establish their origins.
+
+The resolver uses a one-time guard at `0x006713B8` and cached handle at
+`0x006713B4`. Special metadata entries reuse texture zero and upload only
+when their handle differs from the cached handle. First use initializes the
+cache to the incoming argument, so its observed first-use behavior must be
+preserved. Blend modes 2/3/6 select depth mode 3; other modes select depth
+mode 2 before forwarding to the already reviewed custom blend function.
+The remaining wrappers connect this owner to the existing custom rendering
+pipeline. These coordinated policies support authored ownership.
+
+Every accepted body decodes completely, ends at its final RET and has only
+direct internal branches to instruction starts. There are no unresolved
+switch tables, shared tails or external jumps. Complete owner types and the
+44-byte metadata record layout remain unknown; no partial owner or invented
+padded record is instantiated. Private evidence is under
+`.analysis/r014-texture-manager.*` and
+`.analysis/r014-texture-manager-instructions.json`.
+
+The separate vendor-container probe uses the real SDK DIDEVCAPS type,
+which has size 44, to investigate element-size-dependent VC7 vector policy.
+It does not claim that the game's metadata record is DIDEVCAPS. Its 83
+diagnostic candidate addresses remain uncredited until complete bindings,
+typed call context and CFG are checked. Private probe/receipts are under
+`.analysis/MetadataVectorOrigins.cpp` and `.analysis/r015-metadata-vector-*`.
+
+Current totals are 527 reviewed origins: 75 authored, 447 library and five
+compiler; 3,824 remain pending. Exact is unchanged at 42 functions / 8,916
+bytes from the provisional 18,759-byte authored set (47.53%). Review remains
+incomplete, so exact reconstruction stays deferred.
+
+R012/R013 SDK verification, all 52 runtime-origin bodies, target-required
+tracking and current status also passed through the unchanged no-auth public
+Funnel Bash MCP using `scripts/repo-python`. The private receipt is
+`.analysis/public-r012-r014-origin-verification.json`. Public CI passed all
+41 tests and the title-image progress SVG was regenerated from current ledgers.

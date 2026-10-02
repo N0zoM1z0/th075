@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import struct
 import sys
@@ -96,7 +97,8 @@ def real_constant(data, name, coff_name):
 
 
 def bind_sdk_function(code, relocations, bindings, symbols, address,
-                      member, comparison, runtime, target):
+                      member, comparison, runtime, target, readonly_sections=None):
+    readonly_sections = readonly_sections or {}
     if len(relocations) != len(bindings):
         raise ValueError("SDK relocation coverage mismatch")
     calls, call_bindings, data_fields = [], [], {}
@@ -110,18 +112,32 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
             raise ValueError("SDK relocation metadata mismatch")
         offsets.add(offset)
         if relocation["type"] == "REL32":
-            if binding.get("literal_hex", ""):
+            if binding.get("literal_hex", "") or binding.get("data_section_id", ""):
                 raise ValueError("SDK call cannot claim scalar literal evidence")
             calls.append(relocation)
             call_bindings.append(binding)
         elif (relocation["type"] == "DIR32" and relocation["addend"] == 0
               and relocation["local_symbol_offset"] is None):
-            literal = real_constant(member, relocation["symbol"], comparison.coff_name)
-            if bytes.fromhex(binding["literal_hex"]) != literal:
-                raise ValueError("SDK recorded scalar literal differs from vendor definition")
             destination = int(binding["target_address"], 16)
-            if comparison.pe_bytes_at(target, destination, len(literal)) != literal:
-                raise ValueError("SDK target scalar literal differs from vendor definition")
+            section_id = binding.get("data_section_id", "")
+            if section_id:
+                if binding.get("literal_hex", "") or relocation["symbol"].startswith("__real@"):
+                    raise ValueError("SDK scalar and readonly section evidence cannot be mixed")
+                section = readonly_sections[section_id]
+                if section["symbols"].get(relocation["symbol"]) != destination:
+                    raise ValueError("SDK data binding differs from the complete section definition")
+                data_reader = module("sdk_data_binding", "coff_data.py")
+                _, source_symbols = data_reader.parse_symbols(member, comparison.coff_name)
+                if any(entry["symbol"] == relocation["symbol"] and entry["section"] > 0
+                       for entry in source_symbols):
+                    if hashlib.sha256(member).hexdigest() != section["member_sha256"]:
+                        raise ValueError("SDK locally defined data requires the same source member")
+            else:
+                literal = real_constant(member, relocation["symbol"], comparison.coff_name)
+                if bytes.fromhex(binding["literal_hex"]) != literal:
+                    raise ValueError("SDK recorded scalar literal differs from vendor definition")
+                if comparison.pe_bytes_at(target, destination, len(literal)) != literal:
+                    raise ValueError("SDK target scalar literal differs from vendor definition")
             data_fields[address + offset] = destination
         else:
             raise ValueError("unsupported SDK relocation")
@@ -129,6 +145,46 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
     for field, destination in data_fields.items():
         struct.pack_into("<I", linked, field - address, destination)
     return linked, data_fields
+
+
+def verify_readonly_sections(comparison, runtime, target):
+    path = ROOT / "config/sdk-origin-data.csv"
+    if not path.exists():
+        return {}
+    data_reader = module("sdk_readonly_data", "coff_data.py")
+    with path.open() as stream:
+        records = list(csv.DictReader(stream))
+    result, archives = {}, {}
+    for record in records:
+        identifier, library = record["id"], record["library"]
+        if identifier in result or library not in {"d3dx8.lib", "d3dx8dt.lib"}:
+            raise ValueError("invalid readonly SDK data identity")
+        if library not in archives:
+            data = (ROOT / ".tools/msvc710/Vc7/PlatformSDK/Lib" / library).read_bytes()
+            archives[library] = (hashlib.sha256(data).hexdigest(),
+                                {offset: (name, body) for offset, name, body
+                                 in runtime.archive_members(data)})
+        digest, members = archives[library]
+        if digest != record["archive_sha256"]:
+            raise ValueError("readonly SDK archive identity mismatch")
+        name, body = members[int(record["member_offset"])]
+        if name != record["member"]:
+            raise ValueError("readonly SDK member identity mismatch")
+        data, definitions = data_reader.readonly_section(
+            body, int(record["section_number"]), comparison.coff_name)
+        if (len(data) != int(record["size"])
+                or hashlib.sha256(data).hexdigest() != record["section_sha256"]
+                or definitions != json.loads(record["definitions"])):
+            raise ValueError("readonly SDK complete section metadata mismatch")
+        base = int(record["target_address"], 16)
+        if comparison.pe_bytes_at(target, base, len(data)) != data:
+            raise ValueError("readonly SDK complete target section mismatch")
+        symbols = {entry["symbol"]: base + entry["offset"] for entry in definitions}
+        if len(symbols) != len(definitions):
+            raise ValueError("duplicate readonly SDK symbol definitions")
+        result[identifier] = {"symbols": symbols,
+                              "member_sha256": hashlib.sha256(body).hexdigest()}
+    return result
 
 
 def verify_control_flow(code, address, bound_calls=None, bound_constants=None):
@@ -191,6 +247,7 @@ def main():
     comparison = module("sdk_coff", "compare-coff-function.py")
     runtime = module("sdk_archive", "verify-runtime-origins.py")
     target = comparison.verified_target()
+    readonly_sections = verify_readonly_sections(comparison, runtime, target)
     with (ROOT / "config/sdk-origin-evidence.csv").open() as stream:
         records = list(csv.DictReader(stream))
     if not records or len({record["address"] for record in records}) != len(records):
@@ -207,7 +264,7 @@ def main():
     archives = {}
     directory = ROOT / ".analysis/sdk-origin-verification"
     directory.mkdir(parents=True, exist_ok=True)
-    total = indirect = total_relocations = total_constants = 0
+    total = indirect = total_relocations = total_constants = total_section_fields = 0
     checked = []
     with tempfile.TemporaryDirectory(dir=directory) as temporary:
         object_path = Path(temporary) / "vendor.obj"
@@ -238,13 +295,15 @@ def main():
             address = int(record["address"], 16)
             linked, data_fields = bind_sdk_function(
                 code, relocations, bindings.get(record["address"], []), symbols, address,
-                body, comparison, runtime, target)
+                body, comparison, runtime, target, readonly_sections)
             if bytes(linked) != comparison.pe_bytes_at(target, address, size):
                 raise ValueError("SDK complete target bytes mismatch: " + record["address"])
             checked.append((record, linked, data_fields))
             total += size
             total_relocations += len(relocations) - len(data_fields)
             total_constants += len(data_fields)
+            total_section_fields += sum(bool(binding.get("data_section_id"))
+                                        for binding in bindings.get(record["address"], []))
         # All callee records passed complete byte comparison before CFG checks.
         for record, linked, data_fields in checked:
             address = int(record["address"], 16)
@@ -258,7 +317,9 @@ def main():
             indirect += calls
     print(f"SDK origin evidence OK: {len(records)} whole COMDAT bodies, {total} bytes, "
           f"{total_relocations} verified call bindings, {indirect} unchanged indirect calls; "
-          f"{total_constants} verified scalar bindings; no reconstruction exact credit.")
+          f"{total_constants - total_section_fields} scalar bindings, "
+          f"{total_section_fields} readonly-section bindings ({len(readonly_sections)} whole sections); "
+          "no reconstruction exact credit.")
     return 0
 
 
