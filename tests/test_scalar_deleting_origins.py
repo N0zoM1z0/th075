@@ -20,6 +20,9 @@ CFG = load("scalar_cfg_test", "verify-authored-origins.py")
 SOURCE = bytes.fromhex(
     "558bec51894dfc8b4dfce8000000008b450883e001740c8b4dfc51"
     "e80000000083c4048b45fc8be55dc20400")
+OPTIMIZED = load("optimized_scalar_test", "verify-optimized-deleting-origins.py")
+OPTIMIZED_SOURCE = bytes.fromhex(
+    "568bf1e800000000f644240801740756e800000000598bc65ec20400")
 
 
 def body(address=0x00412340, destructor=0x00415000, delete=SCALAR.DELETE_ADDRESS):
@@ -52,6 +55,20 @@ class ScalarDeletingOriginTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "whole deleting-destructor body"):
             SCALAR.verify_target_body(body() + b"\x90", 0x00412340,
                                       SOURCE, {0x00415000}, CFG)
+
+    def test_optimized_whole_body_uses_its_own_relocation_offsets(self):
+        address, destructor = 0x00612340, 0x00615000
+        code = bytearray(OPTIMIZED_SOURCE)
+        for offset, destination in [(4, destructor), (17, SCALAR.DELETE_ADDRESS)]:
+            struct.pack_into("<i", code, offset, destination - (address + offset + 4))
+        self.assertEqual(SCALAR.verify_target_body(
+            bytes(code), address, OPTIMIZED_SOURCE, {destructor}, CFG,
+            size=OPTIMIZED.SIZE, fields=OPTIMIZED.FIELDS), destructor)
+        with self.assertRaisesRegex(ValueError, "known operator delete"):
+            struct.pack_into("<i", code, 17, 0x00616000 - (address + 21))
+            SCALAR.verify_target_body(bytes(code), address, OPTIMIZED_SOURCE,
+                                      {destructor}, CFG, size=OPTIMIZED.SIZE,
+                                      fields=OPTIMIZED.FIELDS)
 
 
 if __name__ == "__main__":

@@ -451,3 +451,15 @@ for cold evidence replay.
 Local CI passed 91 tests and the no-auth public Funnel MCP cold-ran the new
 verifier successfully. Private receipt:
 `.analysis/public-r037-origin-verification.json`.
+
+R038 excludes 53 more complete VC7 `/O1` scalar deleting destructors /
+1,484 bytes from a cold build of the same independent fixture. The optimized
+28-byte whole COMDAT has two typed REL32 calls at offsets +4 and +17; every
+target body, call destination, return and local CFG is rechecked. Totals are
+1,456 reviewed (164 authored, 728 library, 564 compiler), 2,895 pending;
+exact remains 42 / 8,916 bytes against provisional 62,647 authored bytes.
+Run `scripts/repo-python scripts/verify-optimized-deleting-origins.py` for
+cold evidence replay. Callee origins remain independent.
+Local CI passed 92 tests, and the unchanged no-auth public Funnel MCP cold-ran
+both deleting-destructor verifiers. Private receipt:
+`.analysis/public-r038-origin-verification.json`.

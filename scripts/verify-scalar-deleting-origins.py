@@ -18,7 +18,6 @@ DELETE_SYMBOL = "??3@YAXPAX@Z"
 DELETE_ADDRESS = 0x00640F15
 SIZE = 44
 FIELDS = ((11, DESTRUCTOR_SYMBOL), (28, DELETE_SYMBOL))
-MASK = {byte for field, _ in FIELDS for byte in range(field, field + 4)}
 PROFILE = ("/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src")
 
 
@@ -34,7 +33,7 @@ def rows(filename: str):
         return list(csv.DictReader(stream))
 
 
-def source_definition(path: Path, comparison, coff_data):
+def source_definition(path: Path, comparison, coff_data, size=SIZE, fields=FIELDS):
     """Require the generated symbol to occupy its entire executable COMDAT."""
     data = path.read_bytes()
     count, symbols = coff_data.parse_symbols(data, comparison.coff_name)
@@ -45,28 +44,30 @@ def source_definition(path: Path, comparison, coff_data):
     if not 1 <= section_number <= count:
         raise ValueError("probe deleting-destructor section is invalid")
     section = struct.unpack_from("<8sIIIIIIHHI", data, 20 + (section_number - 1) * 40)
-    if (section[3] != SIZE or section[7] != 2 or not section[9] & 0x20
-            or not section[9] & 0x20000000 or section[4] + SIZE > len(data)):
-        raise ValueError("probe generated function does not own one complete 44-byte code section")
+    if (section[3] != size or section[7] != len(fields) or not section[9] & 0x20
+            or not section[9] & 0x20000000 or section[4] + size > len(data)):
+        raise ValueError("probe generated function does not own one complete code section")
     peers = [row for row in symbols if row["section"] == section_number and row["type"] == 0x20]
     if len(peers) != 1:
         raise ValueError("probe generated section has another function definition")
-    code, relocations = comparison.object_function(path, SYMBOL, SIZE)
-    if (len(code) != SIZE or [(row["offset"], row["type"], row["symbol"], row["addend"])
-            for row in relocations] != [(field, "REL32", symbol, 0) for field, symbol in FIELDS]):
+    code, relocations = comparison.object_function(path, SYMBOL, size)
+    if (len(code) != size or [(row["offset"], row["type"], row["symbol"], row["addend"])
+            for row in relocations] != [(field, "REL32", symbol, 0) for field, symbol in fields]):
         raise ValueError("probe generated relocations differ from the VC7 pattern")
     return bytes(code)
 
 
-def verify_target_body(code: bytes, address: int, source: bytes, starts: set[int], cfg):
+def verify_target_body(code: bytes, address: int, source: bytes, starts: set[int], cfg,
+                       size=SIZE, fields=FIELDS):
     """Check every nonrelocated byte, both calls, and the complete local CFG."""
-    if len(code) != SIZE or len(source) != SIZE or any(
-            code[index] != source[index] for index in range(SIZE) if index not in MASK):
+    mask = {byte for field, _ in fields for byte in range(field, field + 4)}
+    if len(code) != size or len(source) != size or any(
+            code[index] != source[index] for index in range(size) if index not in mask):
         raise ValueError("whole deleting-destructor body differs from source emission")
     if cfg.verify_body(code, address) != (1, 1):
         raise ValueError("deleting-destructor return or local branch differs")
     destinations = []
-    for field, _ in FIELDS:
+    for field, _ in fields:
         if code[field - 1] != 0xE8:
             raise ValueError("relocation field is not a direct CALL")
         destinations.append(address + field + 4 + struct.unpack_from("<i", code, field)[0])

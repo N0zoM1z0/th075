@@ -749,3 +749,13 @@ typed relocations; 80 remaining target bodies match this entire generated
 form with individually bound destinations. The compiler owns each wrapper,
 while the called destructor and deallocator retain separate origin decisions.
 No authored source or exact credit changes.
+
+## Origin-only observations after R038
+
+The same synthetic virtual-destructor fixture emits a complete 28-byte
+scalar deleting destructor under VC7.1 `/O1`. Its two relocated calls and
+low-bit deletion policy match 53 additional whole target bodies, including
+the CRT-linked `type_info` wrapper. This supports compiler origin for each
+wrapper only; it does not assign origin to any called destructor or to the
+deallocator and does not prove the target's executable-wide optimization
+settings. No authored source or exact credit changes.

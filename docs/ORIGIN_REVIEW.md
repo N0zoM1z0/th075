@@ -1746,3 +1746,34 @@ Local CI passed 91 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP
 cold-ran the new verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r037-origin-verification.json`.
+
+## R038 — optimized VC7 scalar deleting destructors
+
+Reviewed 2026-10-02. Fifty-three additional complete 28-byte bodies /
+1,484 bytes are compiler/exclude. The **same synthetic source fixture** from
+R037, cold-compiled with VC7.1 `/O1 /Ob0 /Gy /GR- /GX- /Zi /GS`, emits a
+different complete scalar deleting destructor as its sole executable COMDAT.
+Its two typed REL32 fields move to offsets `+4` and `+17`; the low-bit test,
+conditional deallocation, return of `this` and terminal `RET 4` remain.
+This profile is evidence for the generated body shape, not a claim that the
+entire target or any original class used `/O1`.
+
+`scripts/verify-optimized-deleting-origins.py` cold-builds that fixture and
+reuses R037's whole-section, unique-definition, relocation and decoded-body
+checks with the optimized size and offsets. It binds each target's first CALL
+to an actual candidate function entry and its second CALL to the R005-anchored
+`operator delete` at `0x00640F15`. Individual whole-body hashes, source hash
+and both destinations are recorded in
+`config/optimized-deleting-origin-evidence.csv`. This includes the CRT-linked
+`type_info` wrapper at `0x00640E8F`; only its generated wrapper is classified
+here. The callee destructor and deallocator keep independent origin decisions.
+
+All 53 complete 28-byte candidates with this generated shape and delete
+endpoint are now accounted for. No authored source or exact credit is added.
+Current totals are 1,456 reviewed: 164 authored, 728 library and 564
+compiler; 2,895 remain pending. Exact remains 42 functions / 8,916 bytes
+against the provisional 62,647-byte authored slice (14.23%).
+Local CI passed 92 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP
+cold-ran both deleting-destructor verifiers and target-required status checks;
+private receipt: `.analysis/public-r038-origin-verification.json`.
