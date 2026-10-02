@@ -2653,3 +2653,46 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 the scene bindings, all 725 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r062-origin-verification.json`. R061 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37026646605.
+
+## R063 — complete Reimu action-state dispatcher
+
+One complete 60,999-byte function at `0x0045DD70` is classified authored.
+It is the largest reviewed game body so far and is reached through slot 1
+of the vtable written by the independently reviewed R046 Reimu fighter
+constructor. The code reads the fighter's action state, dispatches hundreds
+of action IDs, updates movement and attack fields, and calls game action
+helpers. The inferred role `ReimuFighter::AdvanceActionStatesAt0045DD70`
+does not claim an original method name or complete object layout.
+
+The target extent from `0x0045DD70` through its sole RET at `0x0046CBB6`
+decodes completely: 16,837 instructions and 1,690 branches. Two directly
+indexed jump tables and four byte-remapped tables follow that RET. The
+six guards bound every selector; all 142 table entries resolve to
+instruction starts inside the complete function. Full table and remap
+hashes, guard addresses, default destinations and sizes are in
+`config/authored-origin-direct-switches.csv` and
+`config/authored-origin-switches.csv`. The tables are data, not additional
+code in the function extent. `scripts/repo-python
+scripts/verify-reimu-action-origin.py` rechecks the whole body hash and
+CFG, all six complete guarded tables, the R046 constructor body and
+vtable slot 1. `verify-authored-origins.py` rechecks the same extent in
+the shared authored-origin ledger.
+
+The same verifier cross-binds slot 1 of all eleven previously reviewed
+fighter constructors to eleven complete authored action bodies: this new
+Reimu body and ten R048 bodies. Together they contain 613,391 bytes,
+32.7% of the current provisional authored-byte denominator. This is a
+measured core-function cohort for planning exact work after origin review,
+not exact-match credit.
+
+R063 adds origin evidence only. Totals are 2,139 reviewed (773 authored,
+792 library, 574 compiler), 2,212 pending. Exact stays 42 functions /
+8,916 bytes against 1,874,333 provisional authored bytes (0.48%). This
+large confirmed body is important for post-review exact-work planning;
+finish the remaining origin review first.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+the complete Reimu dispatcher, all eleven fighter action slots, all 726
+authored-origin extents and tracking. Private receipt:
+`.analysis/public-r063-origin-verification.json`. R062 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37027429693.

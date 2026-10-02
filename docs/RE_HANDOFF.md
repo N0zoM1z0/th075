@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  772 authored, 792 library and 574 compiler candidates; 2,213 origins remain
+  773 authored, 792 library and 574 compiler candidates; 2,212 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 1,813,334, with 8,916 exact (0.49%).
+  The current reviewed authored-byte denominator is 1,874,333, with 8,916 exact (0.48%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R062 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R063 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -763,3 +763,21 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 the scene bindings, all 725 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r062-origin-verification.json`. R061 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37026646605.
+
+R063 reviews the complete 60,999-byte Reimu action-state dispatcher at
+`0x0045DD70`. Its one-RET body has 1,690 internal branches and six
+independently checked guarded jump tables (two direct, four remapped)
+stored after the RET. The R046 constructor's vtable slot 1 points to the
+function. All eleven fighter vtable slot-1 bodies together cover 613,391
+authored bytes (32.7% of the provisional denominator). This adds origin
+evidence only; no reconstruction source or exact credit. Totals are 2,139
+reviewed (773 authored, 792 library, 574
+compiler), 2,212 pending. Exact stays 42 / 8,916 bytes against the
+provisional 1,874,333 authored-byte denominator (0.48%). Finish origin
+review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+the Reimu dispatcher, all eleven fighter action slots, all 726 authored
+extents and tracking. Private receipt:
+`.analysis/public-r063-origin-verification.json`. R062 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37027429693.

@@ -2170,7 +2170,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045D810,authored,FighterState,authored,target-observed,R045
 0x0045DD00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045DD50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045DD70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045DD70,authored,ReimuFighter,authored,target-observed,R063
 0x0046D000,authored,ReimuFighter,authored,target-observed,R046
 0x0046D080,authored,ReimuFighter,authored,target-observed,R046
 0x0046D160,authored,ReimuFighter,authored,target-observed,R046

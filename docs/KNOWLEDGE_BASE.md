@@ -1009,3 +1009,15 @@ global state. A separate small Battle scene hook calls the accepted
 graphics-present routine. These relationships establish ownership for four
 specific bodies; short adjacent callbacks remain pending. R062 adds no
 reconstruction source or exact credit.
+
+## Origin-only observations after R063
+
+Reimu's constructor-written fighter vtable points at a 60,999-byte action
+dispatcher in slot 1. Its single code extent contains six guarded switches
+whose complete readonly tables and remaps sit after the final RET. Every
+recorded case points inside that extent. It handles many numeric action
+states and repeatedly calls game movement and attack helpers. All eleven
+fighter constructors point to distinct authored action bodies in this
+slot, totaling 613,391 bytes. The specific
+source method name and full fighter layout remain unknown. R063 adds no
+reconstruction source or exact credit.
