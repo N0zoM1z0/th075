@@ -968,3 +968,13 @@ emits the exact complete body for an empty virtual member. The vtable
 slot/constructor relationship supplies ownership evidence that the short
 body alone cannot provide. Three similar methods in unreviewed BG05b/BG08a
 classes remain pending. R058 adds no reconstruction source or exact credit.
+
+## Origin-only observations after R059
+
+The larger BG05b and BG08a constructors use the same asset/base pattern
+as the smaller background classes while initializing extra per-scene fields.
+Their vtables independently bind two explicit-source-shaped destructors
+and three source-shaped no-op members. The checked background cohort now
+contains 36 asset constructors, 36 matching destructors, 89 no-op virtual
+members and 18 side-pair drawers. R059 adds no reconstruction source or
+exact credit.

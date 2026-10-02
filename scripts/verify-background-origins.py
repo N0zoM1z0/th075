@@ -82,7 +82,7 @@ def main():
     origins = {row["address"]: row for row in rows("function-origins.csv")}
     evidence = {row["address"]: row for row in rows("authored-origin-evidence.csv")}
     witnesses = rows("background-origin-evidence.csv")
-    if len(witnesses) != 52 or len({row["address"] for row in witnesses}) != 52:
+    if len(witnesses) != 54 or len({row["address"] for row in witnesses}) != 54:
         raise ValueError("background witness cohort is incomplete or duplicated")
     decoder = Cs(CS_ARCH_X86, CS_MODE_32)
     decoder.detail = True
@@ -90,9 +90,10 @@ def main():
     for row in witnesses:
         key = row["address"]
         origin, function, body_record = origins[key], functions[key], evidence[key]
-        if (row["evidence_id"] != "R055" or origin["evidence_id"] != "R055"
+        if (row["evidence_id"] not in ("R055", "R059")
+                or origin["evidence_id"] != row["evidence_id"]
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
-                or body_record["evidence_id"] != "R055"
+                or body_record["evidence_id"] != row["evidence_id"]
                 or function["proposed_name"] != body_record["inferred_role"]):
             raise ValueError("background witness/ledger origin mismatch")
         expected_role = ("BackgroundStage::Load" + row["asset_path"].rsplit("\\", 1)[-1][:-4]
@@ -107,10 +108,10 @@ def main():
         authored.verify_body(body, address)
         verify_witness(row, body, target, comparison, decoder)
         totals[row["kind"]] += 1
-    if totals != {"asset-constructor": 34, "side-pair-drawer": 18}:
+    if totals != {"asset-constructor": 36, "side-pair-drawer": 18}:
         raise ValueError("background family counts differ")
-    print("Background origins OK: 34 asset constructors, 18 side-pair drawers; "
-          "52 complete authored bodies, no source or exact credit.")
+    print("Background origins OK: 36 asset constructors, 18 side-pair drawers; "
+          "54 complete authored bodies, no source or exact credit.")
     return 0
 
 

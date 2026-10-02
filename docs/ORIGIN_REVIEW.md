@@ -2540,3 +2540,29 @@ verified the no-op source, the background destructor probe, all 682 authored
 origin extents and tracking. Private receipt:
 `.analysis/public-r058-origin-verification.json`. R057 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37024823847.
+
+## R059 — complete larger background constructor families
+
+Seven complete authored bodies / 441 bytes close the same reviewed
+background pattern for BG05b and BG08a. The constructors at `0x0044E810`
+and `0x00450B20` load the literal `BG05b.dat` and `BG08a.dat` paths and
+write distinct derived vtables. Their paired 28-byte destructors at
+`0x0044F2E0` and `0x00451110` match the cold VC7 explicit-destructor
+COMDAT outside the typed vtable and base-call fields. Three 11-byte no-op
+methods (`0x0044F230`, `0x0044F240`, `0x00450ED0`) match the cold empty
+virtual-method COMDAT and occur in unique slots 2 or 3 of those same
+vtables. The two constructors have extra initialization fields, so their
+whole extents were checked separately rather than assumed from the smaller
+R055 constructors.
+
+The R055/R057/R058 verifiers now replay all 36 constructors, 36 paired
+destructors and 89 no-op virtual members with per-row R059 evidence IDs;
+the 18 side-pair drawers remain in the same background ledger. R059 adds
+origin only. Totals are 2,092 reviewed: 736 authored, 792 library and 564
+compiler; 2,259 remain pending. Exact remains 42 functions / 8,916 bytes
+against the provisional 1,812,578-byte authored slice (0.49%).
+Local CI passed 98 tests; target-required tracking and progress freshness
+passed. The unchanged no-auth public Funnel MCP cold-replayed all expanded
+background verifiers, all 689 authored extents and tracking. Private
+receipt: `.analysis/public-r059-origin-verification.json`. R058 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37025220392.

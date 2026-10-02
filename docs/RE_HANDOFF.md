@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  729 authored, 792 library and 564 compiler candidates; 2,266 origins remain
+  736 authored, 792 library and 564 compiler candidates; 2,259 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 1,812,137, with 8,916 exact (0.49%).
+  The current reviewed authored-byte denominator is 1,812,578, with 8,916 exact (0.49%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R058 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R059 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -706,3 +706,17 @@ source, the R057 destructors, all authored-origin extents and tracking.
 Private receipt: `.analysis/public-r058-origin-verification.json`.
 R057 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37024823847.
+
+R059 reviews seven complete larger-background bodies / 441 bytes: BG05b
+and BG08a asset constructors, their paired explicit-source-shaped
+destructors, and three vtable-bound no-op methods. The existing background
+verifiers now cover 36 constructors, 36 destructors, 89 no-op methods and
+18 side-pair drawers. Totals are 2,092 reviewed (736 authored, 792 library,
+564 compiler), 2,259 pending. Exact remains 42 / 8,916 bytes against
+provisional 1,812,578 authored bytes (0.49%). Continue origin review before
+exact reconstruction.
+Local CI passed 98 tests; target-required tracking and progress freshness
+passed. The unchanged no-auth public Funnel MCP cold-replayed the expanded
+background verifiers, all authored extents and tracking. Private receipt:
+`.analysis/public-r059-origin-verification.json`. R058 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37025220392.

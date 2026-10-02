@@ -96,7 +96,7 @@ def constructor_vtables(target, comparison, background):
         if len(values) != 1 or values[0] in result:
             raise ValueError("background constructor lacks a unique derived vtable")
         result[values[0]] = witness["address"]
-    if len(result) != 34:
+    if len(result) != 36:
         raise ValueError("background constructor vtable set is incomplete")
     return result
 
@@ -112,7 +112,7 @@ def main():
     origins = {row["address"]: row for row in rows("function-origins.csv")}
     authored_evidence = {row["address"]: row for row in rows("authored-origin-evidence.csv")}
     evidence = rows("background-destructor-origin-evidence.csv")
-    if len(evidence) != 34 or len({row["address"] for row in evidence}) != 34:
+    if len(evidence) != 36 or len({row["address"] for row in evidence}) != 36:
         raise ValueError("background destructor cohort is incomplete or duplicated")
     scratch = ROOT / "build/origin-background-destructor-verification"
     scratch.mkdir(parents=True, exist_ok=True)
@@ -134,9 +134,11 @@ def main():
         key = row["address"]
         address = int(key, 16)
         function, origin, body_record = functions[key], origins[key], authored_evidence[key]
-        if (row["evidence_id"] != "R057" or origin["evidence_id"] != "R057"
+        if (row["evidence_id"] not in ("R057", "R059")
+                or origin["evidence_id"] != row["evidence_id"]
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
-                or body_record["evidence_id"] != "R057" or int(function["size"]) != 28
+                or body_record["evidence_id"] != row["evidence_id"]
+                or int(function["size"]) != 28
                 or function["proposed_name"] != body_record["inferred_role"]
                 or row["source_sha256"] != source_hash):
             raise ValueError("background destructor witness/ledger differs")
@@ -162,7 +164,7 @@ def main():
         found_vtables.add(vtable)
     if found_vtables != set(vtables):
         raise ValueError("background destructor cohort misses a constructor vtable")
-    print("Background destructor origins OK: 34 explicit-source-shaped complete "
+    print("Background destructor origins OK: 36 explicit-source-shaped complete "
           "28-byte bodies, matched derived vtables and common base destructor; "
           "no source or exact credit.")
     return 0

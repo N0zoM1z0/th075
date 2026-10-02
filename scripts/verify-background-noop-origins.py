@@ -60,7 +60,7 @@ def main():
     origins = {row["address"]: row for row in rows("function-origins.csv")}
     authored_evidence = {row["address"]: row for row in rows("authored-origin-evidence.csv")}
     evidence = rows("background-noop-origin-evidence.csv")
-    if len(evidence) != 86 or len({row["address"] for row in evidence}) != 86:
+    if len(evidence) != 89 or len({row["address"] for row in evidence}) != 89:
         raise ValueError("background no-op cohort is incomplete or duplicated")
     scratch = ROOT / "build/origin-background-noop-verification"
     scratch.mkdir(parents=True, exist_ok=True)
@@ -83,9 +83,11 @@ def main():
     for row in evidence:
         key, address = row["address"], int(row["address"], 16)
         function, origin, body_record = functions[key], origins[key], authored_evidence[key]
-        if (row["evidence_id"] != "R058" or origin["evidence_id"] != "R058"
+        if (row["evidence_id"] not in ("R058", "R059")
+                or origin["evidence_id"] != row["evidence_id"]
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
-                or body_record["evidence_id"] != "R058" or int(function["size"]) != 11
+                or body_record["evidence_id"] != row["evidence_id"]
+                or int(function["size"]) != 11
                 or function["proposed_name"] != body_record["inferred_role"]
                 or function["proposed_name"] != "BackgroundStage::NoOpVirtualAt" + key[2:]
                 or row["source_sha256"] != source_hash):
@@ -101,7 +103,7 @@ def main():
                 or int(row["slot_index"]) != found[0][2]
                 or found[0][2] not in (1, 2, 3)):
             raise ValueError("background no-op vtable slot lacks a unique constructor binding")
-    print("Background no-op origins OK: 86 complete VC7 source-shaped virtual "
+    print("Background no-op origins OK: 89 complete VC7 source-shaped virtual "
           "methods, each in one verified game background vtable; no source or exact credit.")
     return 0
 
