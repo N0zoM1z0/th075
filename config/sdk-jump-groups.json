@@ -1,0 +1,331 @@
+{
+  "archive": "d3dx8.lib",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "groups": [
+    {
+      "id": "lock_surface",
+      "member_offset": 1511402,
+      "member": "obj\\i386\\cd3dxlock.obj",
+      "callee_symbol": "?Unlock@CD3DXLockSurface@@QAEJXZ",
+      "callee_address": "0x00614B5D",
+      "callee_size": 105,
+      "callee_source_sha256": "75285b18c5209ef863e4b159f05dc96dc936f1af46964e57d18ca299b2d4d173",
+      "callee_body_sha256": "75285b18c5209ef863e4b159f05dc96dc936f1af46964e57d18ca299b2d4d173",
+      "callee_relocations": [],
+      "source_symbols": [
+        "??1CD3DXLockSurface@@QAE@XZ"
+      ]
+    },
+    {
+      "id": "lock_volume",
+      "member_offset": 1511402,
+      "member": "obj\\i386\\cd3dxlock.obj",
+      "callee_symbol": "?Unlock@CD3DXLockVolume@@QAEJXZ",
+      "callee_address": "0x00614BCC",
+      "callee_size": 22,
+      "callee_source_sha256": "998481fe5a5e9d95a738ac17c9fbc14a5eff1da248cbff7f1e85e891e0420bf6",
+      "callee_body_sha256": "998481fe5a5e9d95a738ac17c9fbc14a5eff1da248cbff7f1e85e891e0420bf6",
+      "callee_relocations": [],
+      "source_symbols": [
+        "??1CD3DXLockVolume@@QAE@XZ"
+      ]
+    },
+    {
+      "id": "codec_base",
+      "member_offset": 1376096,
+      "member": "obj\\i386\\cd3dxcodec.obj",
+      "callee_symbol": "??1CD3DXCodec@@UAE@XZ",
+      "callee_address": "0x0061535A",
+      "callee_size": 19,
+      "callee_source_sha256": "cda0a362ca4c053a88825c292c378f5a9903395015977476457383122c7c9fa3",
+      "callee_body_sha256": "04d282b9d9efe2bc9fd7d63ccc651faf9d680628d557dc60278e42bb51951e87",
+      "callee_relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXCodec@@6B@",
+          "addend": 0,
+          "target_value": "0x0065DA54"
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_value": "0x00640F15"
+        }
+      ],
+      "source_symbols": [
+        "??1CD3DXCodec_A1R5G5B5@@UAE@XZ",
+        "??1CD3DXCodec_A2B10G10R10@@UAE@XZ",
+        "??1CD3DXCodec_A2W10V10U10@@UAE@XZ",
+        "??1CD3DXCodec_A4L4@@UAE@XZ",
+        "??1CD3DXCodec_A4R4G4B4@@UAE@XZ",
+        "??1CD3DXCodec_A8@@UAE@XZ",
+        "??1CD3DXCodec_A8L8@@UAE@XZ",
+        "??1CD3DXCodec_A8P8@@UAE@XZ",
+        "??1CD3DXCodec_A8R3G3B2@@UAE@XZ",
+        "??1CD3DXCodec_A8R8G8B8@@UAE@XZ",
+        "??1CD3DXCodec_D16_LOCKABLE@@UAE@XZ",
+        "??1CD3DXCodec_D3DX_A16L16@@UAE@XZ",
+        "??1CD3DXCodec_D3DX_A16R16G16B16@@UAE@XZ",
+        "??1CD3DXCodec_D3DX_L16@@UAE@XZ",
+        "??1CD3DXCodec_D3DX_R16G16B16@@UAE@XZ",
+        "??1CD3DXCodec_G16R16@@UAE@XZ",
+        "??1CD3DXCodec_L6V5U5@@UAE@XZ",
+        "??1CD3DXCodec_L8@@UAE@XZ",
+        "??1CD3DXCodec_P8@@UAE@XZ",
+        "??1CD3DXCodec_Q8W8V8U8@@UAE@XZ",
+        "??1CD3DXCodec_R3G3B2@@UAE@XZ",
+        "??1CD3DXCodec_R5G6B5@@UAE@XZ",
+        "??1CD3DXCodec_R8G8B8@@UAE@XZ",
+        "??1CD3DXCodec_V16U16@@UAE@XZ",
+        "??1CD3DXCodec_V8U8@@UAE@XZ",
+        "??1CD3DXCodec_W11V11U10@@UAE@XZ",
+        "??1CD3DXCodec_X1R5G5B5@@UAE@XZ",
+        "??1CD3DXCodec_X4R4G4B4@@UAE@XZ",
+        "??1CD3DXCodec_X8L8V8U8@@UAE@XZ",
+        "??1CD3DXCodec_X8R8G8B8@@UAE@XZ"
+      ],
+      "vtable": {
+        "symbol": "??_7CD3DXCodec@@6B@",
+        "target_address": "0x0065DA54",
+        "size": 16,
+        "source_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "body_sha256": "4c0bcf1ea0a9003c3c6e73ddccfe937ee5d05d3f8756721be86fee844dacd18f",
+        "relocations": [
+          {
+            "offset": 0,
+            "type": "DIR32",
+            "symbol": "??_ECD3DXCodec@@UAEPAXI@Z",
+            "target_value": "0x00615E54"
+          },
+          {
+            "offset": 4,
+            "type": "DIR32",
+            "symbol": "?Decode@CD3DXCodec@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x0061536D"
+          },
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "?Encode@CD3DXCodec@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x00615370"
+          },
+          {
+            "offset": 12,
+            "type": "DIR32",
+            "symbol": "?QuantizeColorKey@CD3DXCodec@@MAEXXZ",
+            "target_value": "0x00615EEB"
+          }
+        ]
+      }
+    },
+    {
+      "id": "codec_dxt",
+      "member_offset": 1376096,
+      "member": "obj\\i386\\cd3dxcodec.obj",
+      "callee_symbol": "??1CD3DXCodecDXT@@UAE@XZ",
+      "callee_address": "0x0061572C",
+      "callee_size": 160,
+      "callee_source_sha256": "4d4c48696ba237dec00a0a7c9933ed3c625f7b28cc6405e3521b1aa6c5b8412b",
+      "callee_body_sha256": "bd72f72aca93f5c62228bae7531737a654f0dc230aacd12c86e83dde34c54778",
+      "callee_relocations": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "$L52733",
+          "addend": 0,
+          "target_value": "0x00656AC2"
+        },
+        {
+          "offset": 6,
+          "type": "REL32",
+          "symbol": "__EH_prolog",
+          "addend": 0,
+          "target_value": "0x006425A4"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXCodecDXT@@6B@",
+          "addend": 0,
+          "target_value": "0x0065DA68"
+        },
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_value": "0x00640F15"
+        },
+        {
+          "offset": 119,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_value": "0x00640F15"
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_value": "0x00640F15"
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "??1CD3DXCodec@@UAE@XZ",
+          "addend": 0,
+          "target_value": "0x0061535A"
+        },
+        {
+          "offset": 154,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_value": "0x00000000"
+        }
+      ],
+      "source_symbols": [
+        "??1CD3DXCodec_DXT1@@UAE@XZ",
+        "??1CD3DXCodec_DXT2@@UAE@XZ",
+        "??1CD3DXCodec_DXT3@@UAE@XZ",
+        "??1CD3DXCodec_DXT4@@UAE@XZ",
+        "??1CD3DXCodec_DXT5@@UAE@XZ"
+      ],
+      "vtable": {
+        "symbol": "??_7CD3DXCodecDXT@@6B@",
+        "target_address": "0x0065DA68",
+        "size": 16,
+        "source_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "body_sha256": "612e98fdecb76db28253e4d1e4be628ea7ce5865c60dd0faa93dcb4e58e67d7e",
+        "relocations": [
+          {
+            "offset": 0,
+            "type": "DIR32",
+            "symbol": "??_ECD3DXCodecDXT@@UAEPAXI@Z",
+            "target_value": "0x00619C36"
+          },
+          {
+            "offset": 4,
+            "type": "DIR32",
+            "symbol": "?Decode@CD3DXCodecDXT@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x00619FD6"
+          },
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "?Encode@CD3DXCodecDXT@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x006157CC"
+          },
+          {
+            "offset": 12,
+            "type": "DIR32",
+            "symbol": "?QuantizeColorKey@CD3DXCodecDXT@@MAEXXZ",
+            "target_value": "0x00619CB0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "codec_yuv",
+      "member_offset": 1376096,
+      "member": "obj\\i386\\cd3dxcodec.obj",
+      "callee_symbol": "??1CD3DXCodecYUV@@UAE@XZ",
+      "callee_address": "0x0061A453",
+      "callee_size": 73,
+      "callee_source_sha256": "43403b6b491f248fff9f1e51e665636bbd892b510bd4cf496abcc0fcab11748b",
+      "callee_body_sha256": "efc8d3923a57879a096d37e6a53c8763903c77c7f7e31e02fe63aa7b291199f2",
+      "callee_relocations": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "$L54358",
+          "addend": 0,
+          "target_value": "0x00656B2C"
+        },
+        {
+          "offset": 6,
+          "type": "REL32",
+          "symbol": "__EH_prolog",
+          "addend": 0,
+          "target_value": "0x006425A4"
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXCodecYUV@@6B@",
+          "addend": 0,
+          "target_value": "0x0065DACC"
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?Commit@CD3DXCodecYUV@@QAEJXZ",
+          "addend": 0,
+          "target_value": "0x00619172"
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_value": "0x00640F15"
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "??1CD3DXCodec@@UAE@XZ",
+          "addend": 0,
+          "target_value": "0x0061535A"
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_value": "0x00000000"
+        }
+      ],
+      "source_symbols": [
+        "??1CD3DXCodec_UYVY@@UAE@XZ",
+        "??1CD3DXCodec_YUY2@@UAE@XZ"
+      ],
+      "vtable": {
+        "symbol": "??_7CD3DXCodecYUV@@6B@",
+        "target_address": "0x0065DACC",
+        "size": 16,
+        "source_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+        "body_sha256": "be4557cf578fb2f735ccf575b42617f9f967fcb64e84f49669c426f65ccababa",
+        "relocations": [
+          {
+            "offset": 0,
+            "type": "DIR32",
+            "symbol": "??_ECD3DXCodecYUV@@UAEPAXI@Z",
+            "target_value": "0x0061AC28"
+          },
+          {
+            "offset": 4,
+            "type": "DIR32",
+            "symbol": "?Decode@CD3DXCodecYUV@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x006198C5"
+          },
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "?Encode@CD3DXCodecYUV@@UAEXIIPAUD3DXCOLOR@@@Z",
+            "target_value": "0x006197FB"
+          },
+          {
+            "offset": 12,
+            "type": "DIR32",
+            "symbol": "?QuantizeColorKey@CD3DXCodecYUV@@MAEXXZ",
+            "target_value": "0x0061572B"
+          }
+        ]
+      }
+    }
+  ]
+}

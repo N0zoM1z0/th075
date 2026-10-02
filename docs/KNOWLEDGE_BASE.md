@@ -759,3 +759,14 @@ the CRT-linked `type_info` wrapper. This supports compiler origin for each
 wrapper only; it does not assign origin to any called destructor or to the
 deallocator and does not prove the target's executable-wide optimization
 settings. No authored source or exact credit changes.
+
+## Origin-only observations after R039
+
+The pinned D3DX8 archive defines 39 linked five-byte destructor forwarders
+whose complete target bodies and typed jump destinations agree. Thirty-seven
+belong to codec alias families and two to the lock wrappers. Whole codec
+destination-body fingerprints and four-pointer readonly vtables corroborate
+the library symbol grouping, but unresolved external callee dependencies
+leave those destination functions pending. Alias multiplicity does not reveal
+which target entry belonged to which original codec subclass. No authored
+source or exact credit changes.

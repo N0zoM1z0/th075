@@ -463,3 +463,16 @@ cold evidence replay. Callee origins remain independent.
 Local CI passed 92 tests, and the unchanged no-auth public Funnel MCP cold-ran
 both deleting-destructor verifiers. Private receipt:
 `.analysis/public-r038-origin-verification.json`.
+
+R039 reviews 39 complete D3DX8 five-byte forwarding COMDATs / 195 bytes:
+30 codec-base, five DXT, two YUV and two lock wrappers. The verifier checks
+the pinned archive's whole source sections and typed JMP relocations, every
+target JMP/body hash, all matching source aliases, destination body/relocation
+fingerprints, and complete readonly codec vtables. The three codec callee
+origins remain pending; this batch grants the forwarders' library origin only.
+Totals are 1,495 reviewed (164 authored, 767 library, 564 compiler), 2,856
+pending; exact remains 42 / 8,916 bytes against provisional 62,647 authored
+bytes. Cold replay: `scripts/repo-python scripts/verify-sdk-jump-origins.py`.
+Local CI passed 95 tests, and the unchanged no-auth public Funnel MCP ran the
+new verifier successfully. Private receipt:
+`.analysis/public-r039-origin-verification.json`.

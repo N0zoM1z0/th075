@@ -1777,3 +1777,41 @@ Local CI passed 92 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP
 cold-ran both deleting-destructor verifiers and target-required status checks;
 private receipt: `.analysis/public-r038-origin-verification.json`.
+
+## R039 — complete D3DX8 destructor-forwarding COMDATs
+
+Reviewed 2026-10-02. Thirty-nine complete five-byte D3DX8 forwarding
+functions / 195 bytes are library/exclude. The pinned `d3dx8.lib` contains
+standalone executable COMDATs consisting of a single `JMP rel32` with one
+typed REL32 relocation. Their source groups are 30 base-codec destructor
+aliases, five DXT aliases, two YUV aliases and one each for the surface and
+volume lock wrappers. Each accepted target body has exactly the same complete
+five-byte form and reaches the group's recorded destination.
+
+`scripts/verify-sdk-jump-origins.py` reopens the hash-pinned archive and checks
+every original member, all source aliases, their complete five-byte sections
+and typed destination symbol, every target extent/hash/JMP destination, and
+exhaustive inventory coverage for each destination. The lock destinations
+already have independent R008/R026 complete SDK origin records. For the three
+codec destinations, the verifier checks each destination's **own** complete
+19-, 160- or 73-byte source/target body, all relocation fields and local CFG
+as corroboration for the source symbol binding. It also checks the complete
+16-byte readonly codec vtable sections, all four typed pointer fields and
+their linked target values. Those three callee bodies remain pending because
+their external data/function dependencies have not yet been independently
+resolved to the stricter SDK origin standard. Their origin is not inherited
+from the forwarding functions.
+
+`config/sdk-jump-groups.json` records the complete source alias sets and
+callee/vtable evidence; `config/sdk-jump-origin-evidence.csv` records each
+target extent and hash. Repeated codec aliases establish the D3DX8 library
+origin but do not identify which original codec class corresponds to a given
+target entry. Three public regressions reject a non-JMP, a truncated/extended
+body and an incorrect typed source relocation. No authored source or exact
+credit is added. Current totals are 1,495 reviewed: 164 authored, 767 library
+and 564 compiler; 2,856 remain pending. Exact remains 42 functions / 8,916
+bytes against the provisional 62,647-byte authored slice (14.23%).
+Local CI passed 95 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+new whole-archive verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r039-origin-verification.json`.
