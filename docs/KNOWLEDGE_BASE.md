@@ -783,3 +783,16 @@ HUD use paired player/character fields and fixed sprite geometry. These are
 useful clusters for later exact-work prioritization, but inferred names and
 class boundaries remain provisional. The 23 complete R040 bodies grant origin
 only; they provide no source or exact credit.
+
+## Origin-only observations after R041
+
+Character-selection initialization directly loads three `select*.dat` packs
+and resets paired player state. Its input and animation functions use shared
+per-player offsets but have distinct transitions and rendering. The title
+initializer directly loads `title.dat`, and the battle initializer loads
+`battle.dat`; these file references give strong scene context to neighboring
+render/update bodies. The battle loop updates both players, handles knockout
+and transition state, then renders the camera-adjusted fight and HUD. The
+card-list loader and encoder share an evolving XOR stream with separate text
+and binary paths. All 21 R041 bodies are origin-only observations with
+inferred names; they add no source or exact credit.

@@ -1864,3 +1864,47 @@ Local CI passed 95 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r040-origin-verification.json`.
+
+## R041 — character selection, title and battle state
+
+Reviewed 2026-10-02. Twenty-one complete target bodies / 18,004 bytes have
+independent game-specific state, resource or file behavior. Each entire body
+has a recorded SHA-256, one terminal RET and direct branches only to decoded
+instruction starts within its own extent. `verify-authored-origins.py` checks
+these properties against the pinned executable. Names and original class
+boundaries remain inferred.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x00431B60` | Reads `data\\character\\%s\\cardlist.dat`, decodes its evolving XOR stream and stores newline-delimited card records. |
+| `0x00431D60` | Reads the corresponding `cardlist.txt`, applies the inverse evolving XOR stream and writes `cardlist.dat`. |
+| `0x00431F60` | Dispatches game scene-transition flags through specific callbacks and 40-/10-frame countdowns. |
+| `0x00432EA0` | Loads `select.dat`, `selectchar.dat` and `selectbg.dat`, resets selection state and copies unlock/progress flags. |
+| `0x00433230` | Resets both character-selection slots, animation offsets, selected IDs and progress-selection fields. |
+| `0x00433A40` | Processes each player's option toggle, five-step setting and cancel input with scene-specific globals. |
+| `0x004348E0` | Advances a player's selection animation and interprets directional/confirm input for that choice state. |
+| `0x00434CF0` | Advances the next selection state, handles confirm/cancel and sets both players' terminal selection flags. |
+| `0x004350E0` | Drives choice animation, randomizes one pending choice and handles player-specific confirmation timing. |
+| `0x00435870` | Advances the same selection offsets and resets a player's state on cancel input. |
+| `0x00438240` | Draws paired player option panels, setting bars, cursors and character portraits. |
+| `0x00438670` | Draws the single-player option panel with a setting bar, disabled region and cursor. |
+| `0x0043A020` | Loads `data\\system\\title.dat`, records a millisecond baseline and initializes title-menu fade/selection fields. |
+| `0x0043A7A0` | Draws the title background and ten menu rows with per-row fade and current-selection color. |
+| `0x0043AD10` | Loads `data\\system\\battle.dat`, constructs battle effects, binds both player objects and sets battle mode/camera state. |
+| `0x0043B1B0` | Advances both players and stage objects, handles frame timing, render callbacks, pause/fade and battle-state transitions. |
+| `0x0043C930` | Resolves a zero-health player, transfers score/progress and selects round-end or next-round state. |
+| `0x0043CDB0` | Detects single or double knockout, resets both players' combat fields and sets round-end countdowns. |
+| `0x0043D010` | Updates per-player round-transition counters, opacity and position animation. |
+| `0x0043D570` | Draws a side-specific combo counter, caps displayed count at 99 and animates its alpha/slide timing. |
+| `0x0043D9D0` | Applies camera motion, renders battle layers/players and HUD, and updates the frame-rate display. |
+
+R041 classifies only these bodies; the neighboring menu dispatchers, player
+methods and data records retain separate pending or prior-reviewed origins.
+No authored source, mapping or exact credit is added. Totals are 1,539
+reviewed: 208 authored, 767 library and 564 compiler; 2,812 remain pending.
+Exact remains 42 functions / 8,916 bytes against the provisional 117,510-byte
+authored slice (7.59%). Origin review remains the prerequisite for exact work.
+Local CI passed 95 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r041-origin-verification.json`.

@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  187 authored, 767 library and 564 compiler candidates; 2,833 origins remain
+  208 authored, 767 library and 564 compiler candidates; 2,812 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 99,506, with 8,916 exact (8.96%).
+  The current reviewed authored-byte denominator is 117,510, with 8,916 exact (7.59%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R040 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R041 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -491,3 +491,14 @@ CFG replay. Finish the remaining origins before exact reconstruction.
 Local CI passed 95 tests. The unchanged no-auth public Funnel MCP ran the
 authored verifier and target-required status checks; private receipt:
 `.analysis/public-r040-origin-verification.json`.
+
+R041 reviews 21 complete game-authored card-list, character-selection, title
+and battle functions / 18,004 bytes. The complete hash and decoded CFG are
+recorded for each; `ORIGIN_REVIEW.md` gives the local behavioral evidence.
+Totals are 1,539 reviewed (208 authored, 767 library, 564 compiler), with
+2,812 pending. Exact remains 42 / 8,916 bytes against a provisional 117,510
+authored bytes (7.59%). Continue all origin review before exact work. R040
+GitHub CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37014655658.
+Local CI passed 95 tests. The unchanged no-auth public Funnel MCP ran the
+authored verifier and target-required status checks; private receipt:
+`.analysis/public-r041-origin-verification.json`.
