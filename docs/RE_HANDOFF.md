@@ -621,3 +621,17 @@ this batch before exact work, which remains gated on all origins reviewed.
 Local CI and the unchanged no-auth public MCP cold replay passed; private
 receipt: `.analysis/public-r051-origin-verification.json`. R050 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37021584341.
+
+R052 reviews 23 complete early game functions / 12,010 bytes: a custom
+archive index reader/writer, config.ini pair, text rasterizer, progress
+defaults, battle-state snapshots, globals/sound setup and several
+music/replay/result scene helpers. All have full target hashes and decoded
+CFG; owner layouts and some call-site-specific renderer names remain
+provisional. Totals are 1,849 reviewed (493 authored, 792 library, 564
+compiler), 2,502 pending. Exact remains 42 / 8,916 bytes against provisional
+1,790,605 authored bytes (0.50%). Continue all origin review before exact
+work. See ORIGIN_REVIEW.md for address-level evidence and unknowns.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+the unchanged no-auth public Funnel MCP verification passed. Private receipt:
+`.analysis/public-r052-origin-verification.json`. R051 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37022186738.

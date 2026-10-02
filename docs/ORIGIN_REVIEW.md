@@ -2325,3 +2325,41 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP cold
 compiled and verified the aliases successfully; private receipt:
 `.analysis/public-r051-origin-verification.json`. R050 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37021584341.
+
+## R052 — early game globals, archives, text and scene setup
+
+Twenty-three complete game functions / 12,010 bytes have direct target
+evidence and fully decoded local control flow. The archive pair at
+`0x0041D260` and `0x0041D510` writes and reads a custom index of 108-byte
+entries. The index writer XORs bytes from offset two with an evolving
+two-byte sequence, then appends each source file's contents. The reader
+reverses the sequence before inserting the names and offsets. These roles
+describe target behavior; the full archive format and callers remain open.
+
+The text renderer at `0x0041C2E0` handles two- and four-byte pixels,
+multibyte glyphs, line wrapping, and the inline `\\c`, `\\e`, `\\n`
+commands. `0x00413460` prepares a texture and invokes that renderer.
+`0x004192F0` and `0x00419450` read and write the same ordered `config.ini`
+fields. `0x00419920` copies live battle selection into a snapshot, and
+`0x004195B0` restores it. The large default initializer at `0x00416640`
+sets repeated progress-record fields; its full owner layout is open.
+
+Other reviewed bodies initialize game globals and sound (`0x00417210`,
+`0x00417430`, `0x004175A0`), choose BGM paths (`0x00419CB0`), initialize
+music/replay/result scenes (`0x00425750`, `0x0042A180`, `0x0042C3D0`,
+`0x0042E640`, `0x0042F710`), and render numeric or filename fields in
+those scenes. Three replay numeric renderers are byte-identical but are
+independent complete functions; their specific call-site roles remain
+provisional. Each new body has a full target SHA-256 and verified CFG in
+`config/authored-origin-evidence.csv`. No adjacent STL helper or callee
+inherits ownership.
+
+R052 is origin-only. Totals are 1,849 reviewed: 493 authored, 792 library
+and 564 compiler; 2,502 remain pending. Exact stays 42 functions / 8,916
+bytes against the provisional 1,790,605-byte authored slice (0.50%).
+Finish all origin review before exact work.
+Local CI passed 98 tests, target-required tracking and progress freshness
+passed, and the unchanged no-auth public Funnel MCP reran the authored
+verifier and tracking checks. Private receipt:
+`.analysis/public-r052-origin-verification.json`. R051 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37022186738.

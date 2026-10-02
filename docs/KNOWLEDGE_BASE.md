@@ -906,3 +906,14 @@ byte-identical target candidates: iterator advance, allocator maximum size,
 local CFG now support their library origin. The same code may arise from
 different template arguments, so names remain generic; shorter coincident
 bodies were not classified. R051 adds no authored or exact credit.
+
+## Origin-only observations after R052
+
+The early game-code cluster contains a custom data-archive index reader and
+writer, config-file read/write pair, text rasterizer with inline color and
+newline commands, progress defaults, battle-state snapshots, and scene
+initializers. These direct behaviors establish game authorship independently
+of neighboring VC7 container functions. Three replay-number drawing bodies
+are identical whole functions at separate addresses; call-site-specific
+names remain provisional. The archive entry format and full progress owner
+layout remain unresolved. R052 adds no source or exact credit.
