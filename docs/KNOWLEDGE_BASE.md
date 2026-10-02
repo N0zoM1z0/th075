@@ -296,3 +296,69 @@ format/ShowError/memset relocation is explicit in the manifest. Classify the
 called import thunk, SDK data and CRT body independently; these caller matches
 do not grant source or exact credit to their callees. Original function/global
 names and pointer declaration spellings remain inferred.
+
+
+## F005 — input lifetime and joystick protocol
+
+Accepted on 2026-10-02 after R002/R003. Six complete authored functions add
+1,060 exact bytes. All 84 new relocations are explicitly reviewed in the
+manifest, including vendor container calls, callbacks and compiler security
+instrumentation. Cold replay passed 6/6 from one freshly rebuilt object.
+
+| Complete extent | Bytes | Inferred function |
+| --- | ---: | --- |
+| `0x00403B90..0x00403BDB` | 76 | `InputResourceClient::InputResourceClient` |
+| `0x00403BE0..0x00403CF5` | 278 | `InputResourceClient::~InputResourceClient` |
+| `0x00403EB0..0x00403F3A` | 139 | `Input::InitializeJoysticks` |
+| `0x00403F40..0x00404007` | 200 | `Input::PollJoysticks` |
+| `0x00404010..0x00404111` | 260 | `Input::EnumerateJoystickDevice` |
+| `0x00404120..0x0040418A` | 107 | `Input::ConfigureJoystickAxis` |
+
+**Target behavior and ABI:** The constructor/destructor use thiscall, while
+initializer/polling use cdecl. The two callbacks use the real SDK BOOL stdcall
+two-argument interfaces and RET 8. Context arguments are unused, but retained
+for the SDK ABI. Last-owner destruction unacquires/releases the keyboard,
+iterates and releases nonnull controller entries, clears both vendor vectors,
+and releases DirectInput. The shared count's signedness is unknown; its
+increment/decrement and zero checks do not distinguish signed and unsigned.
+The source's count-only class interface establishes neither original name nor
+complete object layout; never instantiate or embed that reconstructed owner.
+
+Joystick setup enumerates attached game controllers, truncates vector size to
+the observed unsigned byte, zeroes an 80-byte SDK DIJOYSTATE, and uses the real
+vendor vector assign(count, value) interface. There is no inferred resize call.
+Polling uses a signed loop index against that byte count, reacquires on negative
+Poll results, and reads each 80-byte state without inventing extra checks.
+Device enumeration appends a null slot, creates the device from instance GUID,
+pops on failure, otherwise sets data format, cooperation, capability size and
+axis enumeration. The capability output object has only dwSize initialized;
+GetCapabilities fills it. Axis enumeration applies object-ID ranges -1000/+1000
+and returns STOP for a negative SetProperty result. R002/R003 establish the
+SDK data identities and independently reviewed template callees.
+
+**Compiler observations:** `src/InputJoystick.cpp` uses the explicit common
+profile plus `/GS`. Without GS, the initializer emitted 123 bytes; GS produces
+the complete 139-byte target, including the cookie load at `0x0066FE30` and
+check at `0x00640611`. Independent target decoding shows that checker compares
+ECX with the same cookie and jumps to its failure path on mismatch. This is
+positive compiler-instrumentation evidence, not a fake local or copied bytes.
+The checker/cookie remain separate runtime-origin objects without authored
+source/exact credit.
+
+The live Poll HRESULT belongs to the outer function scope and its loop index
+to the loop. Enumeration keeps its live HRESULT outside the device branch and
+DIDEVCAPS inside it. The null slot is expressed as push_back(0): VC7 generates
+the observed four-byte temporary for the SDK const-reference parameter. A
+named extra device pointer is unnecessary. Identifier variants alone did not
+fix these scope/temporary differences. All retained variables serve real API,
+loop or failure handling; there are no inert locals, padding, assembly,
+artificial class layouts, or conditional matching bodies.
+
+VC7 emits C4530 warnings in instantiated vendor allocation/exception helpers
+with GX disabled. Those helper bodies are not being rebuilt into an executable
+or credited as authored exact source. Keep the evidenced function profile;
+this checkpoint proves complete authored function bytes, not whole-program
+exception or linkage behavior. Constructor, destructor, callbacks and polling
+match complete extents under the same per-object profile. All exits and trailing
+alignment were reviewed in R002/R003; the security check remains in the
+initializer's full extent. Names remain inferred.

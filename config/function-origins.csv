@@ -45,22 +45,22 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00403EB0,authored,Input,authored,target-observed,R002; docs/ORIGIN_REVIEW.md
 0x00403F40,authored,Input,authored,target-observed,R002; docs/ORIGIN_REVIEW.md
 0x00404010,authored,Input,authored,target-observed,R002; docs/ORIGIN_REVIEW.md
-0x00404120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404190,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004041D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404210,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404240,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004042B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404300,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404320,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404380,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004043A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004043E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404400,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404420,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404440,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004044C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00404120,authored,Input,authored,target-observed,R003; docs/ORIGIN_REVIEW.md
+0x00404190,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x004041D0,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404210,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404240,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x004042B0,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404300,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404320,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404360,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404380,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x004043A0,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x004043E0,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404400,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404420,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x00404440,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
+0x004044C0,library,VC71STL,exclude,vendor-source-corroborated,R003; docs/ORIGIN_REVIEW.md
 0x004044F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00404560,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00404590,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

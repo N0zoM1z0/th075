@@ -9,13 +9,16 @@ address,name,module,confidence,evidence
 0x006574BC,Input::g_CreateKeyboardError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x006574D8,Input::g_KeyboardFormatError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x006574F8,Input::g_KeyboardCooperativeLevelError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x00657510,Input::g_EnumerateJoysticksError,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x0065A4DC,c_dfDIKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x0065A6E4,c_dfDIJoystick,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x0065B91C,GUID_SysKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x0065BA8C,IID_IDirectInput8A,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x0066C080,Graphics::g_ColorMultiplier,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C084,Graphics::g_DrawScale,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C088,Graphics::g_ActiveTarget,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C1B8,Graphics::g_PixelShader,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066FE30,__security_cookie,VC71Runtime,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x00671180,Graphics::g_TargetViewport,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671198,Graphics::g_PresentCallback,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0067119C,Graphics::g_PresentationParameters,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
@@ -34,7 +37,11 @@ address,name,module,confidence,evidence
 0x0067123A,Graphics::g_RequireSquareTextures,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings
 0x0067123B,Graphics::g_PixelShaderEnabled,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671240,Input::g_KeyboardState,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x00671340,g_InputResourceClientCount,InputResourceClient,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x00671344,Input::g_Window,Input,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671348,Input::g_Instance,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x0067134C,Input::g_DirectInput,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x00671350,Input::g_Keyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
+0x00671354,Input::g_JoystickCount,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
+0x00671358,Input::g_JoystickStates,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
+0x00671368,Input::g_Joysticks,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"

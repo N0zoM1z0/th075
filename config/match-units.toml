@@ -628,3 +628,153 @@ relocations = [
   { offset = 0x4A, type = "DIR32", symbol = "?g_KeyboardState@Input@@3PAEA", target = 0x00671240 },
   { offset = 0x4F, type = "REL32", symbol = "_memset", target = 0x00640490 },
 ]
+
+[units.input-resource-client-constructor]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["InputResourceClient::InputResourceClient"]
+symbol = "??0InputResourceClient@@QAE@XZ"
+target_address = 0x00403B90
+size = 76
+relocations = [
+  { offset = 0x9, type = "DIR32", symbol = "?g_InputResourceClientCount@@3HA", target = 0x00671340 },
+  { offset = 0x12, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x1C, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x25, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x2A, type = "REL32", symbol = "?clear@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEXXZ", target = 0x00404300 },
+  { offset = 0x2F, type = "DIR32", symbol = "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A", target = 0x00671358 },
+  { offset = 0x34, type = "REL32", symbol = "?clear@?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEXXZ", target = 0x00404380 },
+  { offset = 0x39, type = "DIR32", symbol = "?g_InputResourceClientCount@@3HA", target = 0x00671340 },
+  { offset = 0x41, type = "DIR32", symbol = "?g_InputResourceClientCount@@3HA", target = 0x00671340 },
+]
+
+[units.input-resource-client-destructor]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["InputResourceClient::~InputResourceClient"]
+symbol = "??1InputResourceClient@@QAE@XZ"
+target_address = 0x00403BE0
+size = 278
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "?g_InputResourceClientCount@@3HA", target = 0x00671340 },
+  { offset = 0x12, type = "DIR32", symbol = "?g_InputResourceClientCount@@3HA", target = 0x00671340 },
+  { offset = 0x1E, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x27, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x2E, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x38, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x3F, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x49, type = "DIR32", symbol = "?g_Keyboard@Input@@3PAUIDirectInputDevice8A@@A", target = 0x00671350 },
+  { offset = 0x64, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x69, type = "REL32", symbol = "?size@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QBEIXZ", target = 0x00404190 },
+  { offset = 0x77, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x7C, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0x8A, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x8F, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0xA9, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0xAE, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0xC8, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0xCD, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0xDA, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0xDF, type = "REL32", symbol = "?clear@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEXXZ", target = 0x00404300 },
+  { offset = 0xE4, type = "DIR32", symbol = "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A", target = 0x00671358 },
+  { offset = 0xE9, type = "REL32", symbol = "?clear@?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEXXZ", target = 0x00404380 },
+  { offset = 0xEF, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0xF8, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x100, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x10A, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+]
+
+[units.input-initialize-joysticks]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["Input::InitializeJoysticks"]
+symbol = "?InitializeJoysticks@Input@@YA_NXZ"
+target_address = 0x00403EB0
+size = 139
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x10, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x1C, type = "DIR32", symbol = "?EnumerateJoystickDevice@Input@@YGHPBUDIDEVICEINSTANCEA@@PAX@Z", target = 0x00404010 },
+  { offset = 0x23, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x2B, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x38, type = "DIR32", symbol = "?g_EnumerateJoysticksError@Input@@3QBDB", target = 0x00657510 },
+  { offset = 0x3D, type = "REL32", symbol = "?ShowError@Input@@YAXPBD@Z", target = 0x00403D00 },
+  { offset = 0x49, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x4E, type = "REL32", symbol = "?size@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QBEIXZ", target = 0x00404190 },
+  { offset = 0x53, type = "DIR32", symbol = "?g_JoystickCount@Input@@3EA", target = 0x00671354 },
+  { offset = 0x60, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0x6E, type = "DIR32", symbol = "?g_JoystickCount@Input@@3EA", target = 0x00671354 },
+  { offset = 0x74, type = "DIR32", symbol = "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A", target = 0x00671358 },
+  { offset = 0x79, type = "REL32", symbol = "?assign@?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEXIABUDIJOYSTATE@@@Z", target = 0x00404360 },
+  { offset = 0x83, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units.input-poll-joysticks]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["Input::PollJoysticks"]
+symbol = "?PollJoysticks@Input@@YAXXZ"
+target_address = 0x00403F40
+size = 200
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x28, type = "DIR32", symbol = "?g_JoystickCount@Input@@3EA", target = 0x00671354 },
+  { offset = 0x3A, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x3F, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0x4D, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x52, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0x75, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x7A, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0x94, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x99, type = "REL32", symbol = "??A?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@I@Z", target = 0x004041D0 },
+  { offset = 0xA7, type = "DIR32", symbol = "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A", target = 0x00671358 },
+  { offset = 0xAC, type = "REL32", symbol = "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z", target = 0x00404320 },
+]
+
+[units.input-enumerate-joystick-device]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["Input::EnumerateJoystickDevice"]
+symbol = "?EnumerateJoystickDevice@Input@@YGHPBUDIDEVICEINSTANCEA@@PAX@Z"
+target_address = 0x00404010
+size = 260
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x22, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x27, type = "REL32", symbol = "?push_back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEXABQAUIDirectInputDevice8A@@@Z", target = 0x00404240 },
+  { offset = 0x2E, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x33, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+  { offset = 0x41, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x49, type = "DIR32", symbol = "?g_DirectInput@Input@@3PAUIDirectInput8A@@A", target = 0x0067134C },
+  { offset = 0x5B, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x60, type = "REL32", symbol = "?pop_back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEXXZ", target = 0x004042B0 },
+  { offset = 0x6C, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x71, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+  { offset = 0x7B, type = "DIR32", symbol = "_c_dfDIJoystick", target = 0x0065A6E4 },
+  { offset = 0x8C, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x91, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+  { offset = 0x9E, type = "DIR32", symbol = "?g_Window@Input@@3PAUHWND__@@A", target = 0x00671344 },
+  { offset = 0xB7, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0xBC, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+  { offset = 0xD6, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0xDB, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+  { offset = 0xE9, type = "DIR32", symbol = "?ConfigureJoystickAxis@Input@@YGHPBUDIDEVICEOBJECTINSTANCEA@@PAX@Z", target = 0x00404120 },
+]
+
+[units.input-configure-joystick-axis]
+source = "src/InputJoystick.cpp"
+object = "build/matching/InputJoystick.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/GS", "/I", "src"]
+functions = ["Input::ConfigureJoystickAxis"]
+symbol = "?ConfigureJoystickAxis@Input@@YGHPBUDIDEVICEOBJECTINSTANCEA@@PAX@Z"
+target_address = 0x00404120
+size = 107
+relocations = [
+  { offset = 0x33, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
+  { offset = 0x38, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
+]

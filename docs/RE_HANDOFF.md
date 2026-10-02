@@ -8,23 +8,28 @@ deferred subsequent phases. Write documentation and handoffs in English.
   Official distribution provenance is uncorroborated. Do not substitute the
   localized executable.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
-  There are 4,351 candidates, with 30 mapped, 30 source-present, and 30
-  complete exact functions covering 4,202 bytes. Origin review has classified
-  46 authored functions; 4,305 origins remain pending. Candidate count is not authored function count; regenerate
+  There are 4,351 candidates, with 36 mapped, 36 source-present, and 36
+  complete exact functions covering 5,262 bytes. Origin review has classified
+  47 authored functions and 15 library functions; 4,289 origins remain pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Alternate origin batches and exact reconstruction. The current
-  reviewed authored-byte denominator is 12,236, with 4,202 exact (34.34%).
+  reviewed authored-byte denominator is 12,343, with 5,262 exact (42.63%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
-  The no-auth public Funnel Bash MCP then cold-replayed all 30/30 units
-  across five objects through scripts/repo-python. Public CI has 17 passing
+  The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
+  across six objects through scripts/repo-python after F005. Public CI has 17 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
+- F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
+  relocations, under an independently evidenced GS-enabled profile. R003
+  excluded 15 vendor-vector bodies (712 bytes) and reviewed the custom axis
+  callback before exact acceptance. See the knowledge base for real SDK
+  container types, callback ABI and compiler-generated null temporary.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -68,9 +73,9 @@ TH105 was reviewed as an engine-structure reference: it uses VC8/LTCG and
 D3D9, so retain TH075's proven VC7.1/D3D8 profile. See `REFERENCE_PROJECTS.md`
 and `BUILD_MATCHING.md`.
 
-Next alternate batch: review the axis callback at `0x00404120` and distinguish
-the following SDK/container helpers from authored input policy, then return
-to exact reconstruction of reviewed graphics or joystick bodies. Full input
+Next alternate batch: extend vendor-source origin review through the remaining
+input-container helpers at `0x004044F0` onward, then return to exact
+reconstruction of reviewed graphics drawing/copy/default-state functions. Full input
 decompiles/instructions are private under `.analysis/origin-input-*`; avoid
 trusting misleading Ghidra string/back labels on device containers.
 Deferred paired cleanup at `0x00401020..0x0040110E`, 239 bytes.

@@ -25,7 +25,13 @@ Graphics::GetPrimaryTargetTexture,0x004028B0,function
 Graphics::GetTargetTexture,0x004028C0,function
 Graphics::Present,0x004028F0,function
 Graphics::PresentToWindow,0x00402970,function
+InputResourceClient::InputResourceClient,0x00403B90,function
+InputResourceClient::~InputResourceClient,0x00403BE0,function
 Input::ShowError,0x00403D00,function
 Input::Initialize,0x00403D20,function
 Input::CreateKeyboard,0x00403D80,function
 Input::PollKeyboard,0x00403E50,function
+Input::InitializeJoysticks,0x00403EB0,function
+Input::PollJoysticks,0x00403F40,function
+Input::EnumerateJoystickDevice,0x00404010,function
+Input::ConfigureJoystickAxis,0x00404120,function

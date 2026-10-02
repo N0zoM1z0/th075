@@ -28,3 +28,9 @@ Graphics::CreateTexture
 Input::Initialize
 Input::CreateKeyboard
 Input::PollKeyboard
+InputResourceClient::InputResourceClient
+InputResourceClient::~InputResourceClient
+Input::InitializeJoysticks
+Input::PollJoysticks
+Input::EnumerateJoystickDevice
+Input::ConfigureJoystickAxis

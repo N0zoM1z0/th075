@@ -25,7 +25,13 @@ address,name,module,confidence,evidence
 0x004028C0,Graphics::GetTargetTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x004028F0,Graphics::Present,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00402970,Graphics::PresentToWindow,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00403B90,InputResourceClient::InputResourceClient,InputResourceClient,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
+0x00403BE0,InputResourceClient::~InputResourceClient,InputResourceClient,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
 0x00403D00,Input::ShowError,Input,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00403D20,Input::Initialize,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown
 0x00403D80,Input::CreateKeyboard,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown
 0x00403E50,Input::PollKeyboard,Input,inferred,F004; SDK ABI and complete target behavior; original name unknown
+0x00403EB0,Input::InitializeJoysticks,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
+0x00403F40,Input::PollJoysticks,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
+0x00404010,Input::EnumerateJoystickDevice,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
+0x00404120,Input::ConfigureJoystickAxis,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown

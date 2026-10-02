@@ -118,3 +118,71 @@ custom device policy compiler-origin. SDK/CRT helper bodies remain separately
 reviewable. Private evidence is in `.analysis/origin-input-family.c` and
 `.analysis/origin-input-instructions.json`; reproduce with the same attested
 Ghidra workflow used for R001.
+
+
+## R003 — axis policy and VC7 vector specializations
+
+Reviewed 2026-10-02 after F004. The axis callback at `0x00404120`, 107 bytes,
+is authored: it applies the game's -1000/+1000 range to each enumerated axis
+by object ID on the last controller. Its DIPROPRANGE header is 24/16 bytes,
+dwHow is DIPH_BYID (2), and the property identifier is DIPROP_RANGE (4).
+It returns the SDK BOOL DIENUM_STOP/CONTINUE with stdcall RET 8, depending
+on the negative HRESULT test. This custom callback is independent of the
+following generated standard-library functions.
+
+Fifteen complete bodies, totaling 712 bytes, are classified library/exclude:
+
+| Address | Bytes | Corroborated VC7 vector role |
+| --- | ---: | --- |
+| `0x00404190` | 52 | device-vector size |
+| `0x004041D0` | 49 | device-vector subscript |
+| `0x00404210` | 45 | device-vector back |
+| `0x00404240` | 99 | device-vector push_back |
+| `0x004042B0` | 66 | device-vector pop_back |
+| `0x00404300` | 19 | device-vector clear |
+| `0x00404320` | 49 | DIJOYSTATE-vector subscript |
+| `0x00404360` | 29 | DIJOYSTATE-vector assign(count, value) |
+| `0x00404380` | 19 | DIJOYSTATE-vector clear |
+| `0x004043A0` | 52 | device-vector capacity |
+| `0x004043E0` | 31 | device-vector begin |
+| `0x00404400` | 31 | device-vector end |
+| `0x00404420` | 24 | device-vector empty |
+| `0x00404440` | 114 | device-vector insert |
+| `0x004044C0` | 33 | device-vector _Destroy |
+
+**Vendor-source evidence:** The pinned VC7 header `Vc7/include/vector` has
+SHA-256 `de722c2662f74e78332c6a1b7ddabb9976f3381a904780aaefba54e661a9656d`.
+Its size/capacity null checks and pointer differences, iterator-based subscript
+and back, capacity-dependent push_back, guarded pop_back, _Tidy-based clear,
+count/value assign and insert protocol agree with complete target control
+flow. Recompiling real `std::vector<IDirectInputDevice8A *>` and
+`std::vector<DIJOYSTATE>` using pinned VC7 /Od /Ob0 /Gy /GR- /GX- /Zi emitted
+matching complete sizes and every non-relocation byte for all fifteen bodies.
+SDK headers remain shared read-only; none were rewritten to obtain evidence.
+
+Several short fingerprints have multiple library aliases. Relocation call
+roles and caller types distinguish them: device subscript uses begin/add/
+dereference at `0x004043E0/0x004046C0/0x004046A0`; state subscript uses the
+separate `0x00404590/0x00404740/0x00404720` family. Back uses end/subtract/
+dereference at `0x00404400/0x004046F0/0x004046A0`. Clear calls distinct _Tidy
+bodies at `0x004044F0` (103 bytes) and `0x00404630` (110 bytes); each also has
+a complete vendor-generated non-relocation fingerprint. Assign forwards to
+_Assign_n at `0x004045B0`, preserving count and DIJOYSTATE reference. These
+callee candidates remain separately reviewable; this batch does not grant
+them classification or authored exact credit. In particular, the Ghidra
+VS2012/VS2015 wchar-string back label on `0x00404210` is unsupported and was
+not used as provenance evidence.
+
+Independent instruction decoding proves every listed extent complete, with
+internal direct jump destinations, one final RET and trailing INT3 alignment.
+There are no switch tables, external jumps or shared tails in these extents.
+This evidence establishes library origin; the diagnostic fingerprints exclude
+relocation fields and are deliberately not entered into matches/implemented
+or authored coverage. Private evidence: `.analysis/origin-input-containers.c`,
+`.analysis/origin-input-containers-instructions.json`,
+`.analysis/origin-vector-fingerprints.json`, and
+`.analysis/input-containers-probe.cpp`. To reproduce the vendor probe, include
+InputDevice.hpp and vector, declare the two real vendor vector types, and call
+the listed methods, including state-vector assign (not resize). Compile using
+the profile above and inspect the actual decorated COFF symbols. This review
+precedes exact reconstruction of the authored callback.

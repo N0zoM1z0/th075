@@ -25,7 +25,13 @@ address,name,size,status,match_percent,unit,evidence
 0x004028C0,Graphics::GetTargetTexture,37,matching,100.00,graphics-get-target-texture,scripts/repo-python scripts/replay-exact-units.py --unit graphics-get-target-texture; F002; public MCP aggregate replay
 0x004028F0,Graphics::Present,123,matching,100.00,graphics-present,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present; F002; public MCP aggregate replay
 0x00402970,Graphics::PresentToWindow,128,matching,100.00,graphics-present-to-window,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present-to-window; F002; public MCP aggregate replay
+0x00403B90,InputResourceClient::InputResourceClient,76,matching,100.00,input-resource-client-constructor,scripts/repo-python scripts/replay-exact-units.py --unit input-resource-client-constructor; F005
+0x00403BE0,InputResourceClient::~InputResourceClient,278,matching,100.00,input-resource-client-destructor,scripts/repo-python scripts/replay-exact-units.py --unit input-resource-client-destructor; F005
 0x00403D00,Input::ShowError,29,matching,100.00,input-show-error,scripts/repo-python scripts/replay-exact-units.py --unit input-show-error; F002; public MCP aggregate replay
 0x00403D20,Input::Initialize,95,matching,100.00,input-initialize,scripts/repo-python scripts/replay-exact-units.py --unit input-initialize; F004
 0x00403D80,Input::CreateKeyboard,197,matching,100.00,input-create-keyboard,scripts/repo-python scripts/replay-exact-units.py --unit input-create-keyboard; F004
 0x00403E50,Input::PollKeyboard,90,matching,100.00,input-poll-keyboard,scripts/repo-python scripts/replay-exact-units.py --unit input-poll-keyboard; F004
+0x00403EB0,Input::InitializeJoysticks,139,matching,100.00,input-initialize-joysticks,scripts/repo-python scripts/replay-exact-units.py --unit input-initialize-joysticks; F005
+0x00403F40,Input::PollJoysticks,200,matching,100.00,input-poll-joysticks,scripts/repo-python scripts/replay-exact-units.py --unit input-poll-joysticks; F005
+0x00404010,Input::EnumerateJoystickDevice,260,matching,100.00,input-enumerate-joystick-device,scripts/repo-python scripts/replay-exact-units.py --unit input-enumerate-joystick-device; F005
+0x00404120,Input::ConfigureJoystickAxis,107,matching,100.00,input-configure-joystick-axis,scripts/repo-python scripts/replay-exact-units.py --unit input-configure-joystick-axis; F005
