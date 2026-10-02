@@ -3488,15 +3488,15 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0063EEC6,859,0x0063F220,FUN_0063eec6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063F221,3539,0x0063FFF3,FUN_0063f221,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063FFF4,693,0x006402A8,FUN_0063fff4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00640490,96,0x006404EF,_memset,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00640490,96,0x006404EF,_memset,_memset,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x006404F0,88,0x00640547,_sprintf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640548,49,0x00640578,__scprintf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064057A,56,0x006405B1,FUN_0064057a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006405C2,30,0x006405DF,__fpmath,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006405E0,48,0x0064060F,report_failure,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640611,14,0x0064061E,__security_check_cookie,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00640620,139,0x006406AA,_strlen,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006406AC,117,0x00640720,FUN_006406ac,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00640620,139,0x006406AA,_strlen,_strlen,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x006406AC,117,0x00640720,FUN_006406ac,__ftol2,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00640721,43,0x0064074B,_JumpToContinuation,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640751,7,0x00640757,_CallMemberFunction0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640758,7,0x0064075E,FID_conflict:_CallMemberFunction1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3541,7 +3541,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064168B,18,0x0064169C,_atexit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064169D,5,0x006416A1,_free,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006416A2,5,0x006416A6,operator_new,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006416B0,136,0x00641737,_strcmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006416B0,136,0x00641737,_strcmp,_strcmp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00641740,20,0x00641753,FUN_00641740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641754,9,0x0064175C,FUN_00641754,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064175D,145,0x006417ED,FUN_0064175d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3555,27 +3555,27 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00641AFE,57,0x00641B36,FID_conflict:__time32,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641B37,70,0x00641B7C,FUN_00641b37,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641B80,7,0x00641B86,FUN_00641b80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00641B90,232,0x00641C77,FUN_00641b90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00641B90,232,0x00641C77,FUN_00641b90,_strcat,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00641C78,74,0x00641CC1,`eh_vector_constructor_iterator',,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641CC2,24,0x00641CD9,FUN_00641cc2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641CEC,47,0x00641D1A,__ArrayUnwind,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641D4A,72,0x00641D91,`eh_vector_destructor_iterator',,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641D92,24,0x00641DA9,FUN_00641d92,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641DAA,11,0x00641DB4,FUN_00641daa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00641DE0,57,0x00641E18,_strncmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00641DE0,57,0x00641E18,_strncmp,_strncmp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00641E40,20,0x00641E53,FUN_00641e40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641E54,9,0x00641E5C,FUN_00641e54,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641E5D,157,0x00641EF9,FUN_00641e5d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00641F00,184,0x00641FB7,_memcmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00641F00,184,0x00641FB7,_memcmp,_memcmp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00641FB8,11,0x00641FC2,FUN_00641fb8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641FD0,152,0x00642067,FID_conflict:_cos,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642120,285,0x0064223C,FUN_00642120,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642240,10,0x00642249,FUN_00642240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00642260,45,0x0064228C,_strrchr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00642260,45,0x0064228C,_strrchr,_strrchr,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064228D,37,0x006422B1,__amsg_exit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006422B2,36,0x006422D5,fast_error_exit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064232C,469,0x00642500,entry,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00642510,61,0x0064254C,__chkstk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00642510,61,0x0064254C,__chkstk,__chkstk,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064254D,87,0x006425A3,__snprintf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006425A4,31,0x006425C2,FUN_006425a4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006425C3,86,0x00642618,__vsnprintf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3605,15 +3605,15 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006435F2,9,0x006435FA,FUN_006435f2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643604,120,0x0064367B,_longjmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643680,123,0x006436FA,__setjmp3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006436FC,39,0x00643722,__ftol,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006436FC,39,0x00643722,__ftol,__ftol,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00643770,84,0x006437C3,FUN_00643770,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006437CD,221,0x006438A9,FUN_006437cd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006439C0,289,0x00643AE0,FUN_006439c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643AF0,31,0x00643B0E,__aullshr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643B10,20,0x00643B23,FUN_00643b10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643B2D,12494,0x00646BFA,FUN_00643b2d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00643BDB,33,0x00643BFB,__copysign,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00643BFC,38,0x00643C21,__chgsign,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00643BDB,33,0x00643BFB,__copysign,__copysign,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x00643BFC,38,0x00643C21,__chgsign,__chgsign,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00643C38,235,0x00643D22,FUN_00643c38,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643D23,675,0x00643FC5,FUN_00643d23,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643FC6,21,0x00643FDA,FUN_00643fc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3693,7 +3693,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00646B43,7,0x00646B49,FUN_00646b43,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646B65,23,0x00646B7B,FUN_00646b65,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646B7C,25,0x00646B94,FUN_00646b7c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00646B95,67,0x00646BD7,__fload_withFB,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00646B95,67,0x00646BD7,__fload_withFB,__fload_withFB,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00646BD8,22,0x00646BED,FUN_00646bd8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646BFB,42,0x00646C24,__math_exit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646CE0,23,0x00646CF6,FUN_00646ce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3701,19 +3701,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00646D33,677,0x00646FD7,__raise_exc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646FD8,548,0x006471FB,__handle_exc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006471FC,40,0x00647223,__set_errno,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00647244,45,0x00647270,__errcode,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00647244,45,0x00647270,__errcode,__errcode,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00647271,158,0x0064730E,__umatherr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064730F,83,0x00647361,__handle_qnan1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647362,95,0x006473C0,__handle_qnan2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006473C1,184,0x00647478,__except1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647479,201,0x00647541,__except2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00647542,42,0x0064756B,__set_exp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006475AB,37,0x006475CF,__set_bexp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006475D0,91,0x0064762A,__sptype,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00647542,42,0x0064756B,__set_exp,__set_exp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x006475AB,37,0x006475CF,__set_bexp,__set_bexp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x006475D0,91,0x0064762A,__sptype,__sptype,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064762B,188,0x006476E6,__decomp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006476E7,11,0x006476F1,__statfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006476F2,12,0x006476FD,__clrfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006476FE,36,0x00647721,__ctrlfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006476FE,36,0x00647721,__ctrlfp,__ctrlfp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00647722,86,0x00647777,FUN_00647722,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647778,680,0x00647A1F,__tzset_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647993,9,0x0064799B,FUN_00647993,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3724,7 +3724,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00647DE0,53,0x00647E14,__isindst,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647E15,9,0x00647E1D,FUN_00647e15,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647E1E,263,0x00647F24,_gmtime,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00647F30,104,0x00647F97,__aulldiv,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00647F30,104,0x00647F97,__aulldiv,__aulldiv,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00647F98,9,0x00647FA0,FUN_00647f98,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647FA1,9,0x00647FA9,FUN_00647fa1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00647FAA,115,0x0064801C,__dosmaperr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3742,7 +3742,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00648AB3,7,0x00648AB9,FUN_00648ab3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648ABA,327,0x00648C00,FUN_00648aba,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648C01,51,0x00648C33,__ctrandisp1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00648C34,60,0x00648C6F,__fload,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00648C34,60,0x00648C6F,__fload,__fload,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00648C70,375,0x00648DE6,__NMSG_WRITE,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648E11,57,0x00648E49,__FF_MSGBANNER,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648E76,356,0x00648FD9,__XcptFilter,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3756,7 +3756,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064971B,26,0x00649734,___heap_select,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00649735,81,0x00649785,__heap_init,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064980B,119,0x00649881,___isctype_mt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006498B0,52,0x006498E3,__allmul,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006498B0,52,0x006498E3,__allmul,__allmul,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x006498FC,22,0x00649911,__inc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064993C,3452,0x0064A6B7,__input,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064A6CD,72,0x0064A714,___sbh_heap_init,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3764,14 +3764,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064A740,792,0x0064AA57,___sbh_free_block,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064AA58,183,0x0064AB0E,___sbh_alloc_new_region,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064AB0F,262,0x0064AC14,___sbh_alloc_new_group,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064AC15,735,0x0064AEF3,___sbh_resize_block,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064AC15,735,0x0064AEF3,___sbh_resize_block,___sbh_resize_block,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064AFC5,793,0x0064B2DD,___sbh_heap_check,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064B339,764,0x0064B634,___sbh_alloc_block,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064B635,127,0x0064B6B3,__Getdays,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064B6B4,149,0x0064B748,__Getmonths,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064B749,563,0x0064B97B,__Gettnames,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064B97C,32,0x0064B99B,__store_str,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064B9D2,121,0x0064BA4A,__store_num,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064B97C,32,0x0064B99B,__store_str,__store_str,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x0064B9D2,121,0x0064BA4A,__store_num,__store_num,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064BA4B,614,0x0064BCB0,__expandtime,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064BCB1,1162,0x0064C13A,__store_winword,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064C13B,197,0x0064C1FF,__Strftime_mt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3783,14 +3783,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064CA47,217,0x0064CB1F,___free_lconv_mon,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064CB20,575,0x0064CD5E,___init_monetary,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064CD5F,490,0x0064CF48,___init_ctype,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064CFA0,70,0x0064CFE5,_strcspn,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064CFF0,292,0x0064D113,_strncpy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064CFA0,70,0x0064CFE5,_strcspn,_strcspn,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x0064CFF0,292,0x0064D113,_strncpy,_strncpy,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064D114,96,0x0064D173,_TranslateName,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D174,26,0x0064D18D,_GetLcidFromDefault,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D18E,118,0x0064D203,_ProcessCodePage,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D204,30,0x0064D221,_TestDefaultCountry,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D222,227,0x0064D304,crtGetLocaleInfoA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064D305,53,0x0064D339,_LcidFromHexString,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064D305,53,0x0064D339,_LcidFromHexString,_LcidFromHexString,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064D33A,29,0x0064D356,_GetPrimaryLen,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D357,148,0x0064D3EA,_CountryEnumProc@4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D3EB,113,0x0064D45B,_TestDefaultLanguage,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3801,7 +3801,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064D7FE,85,0x0064D852,_GetLcidFromLanguage,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064D853,437,0x0064DA07,___get_qualified_locale,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064DA08,442,0x0064DBC1,___crtGetStringTypeA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064DBD0,64,0x0064DC0F,_strpbrk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064DBD0,64,0x0064DC0F,_strpbrk,_strpbrk,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064DC10,66,0x0064DC51,__rt_probe_read4@4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064DC60,25,0x0064DC78,FUN_0064dc60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064DC79,2861,0x0064E7A5,FUN_0064dc79,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3820,16 +3820,16 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064F05F,42,0x0064F088,__isatty,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F1F0,96,0x0064F24F,___wctomb_mt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F250,39,0x0064F276,_wctomb,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064F280,149,0x0064F314,__aulldvrm,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064F280,149,0x0064F314,__aulldvrm,__aulldvrm,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064F31D,200,0x0064F3E4,___tolower_mt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F3E5,34,0x0064F406,_tolower,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064F407,50,0x0064F438,__ZeroTail,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064F407,50,0x0064F438,__ZeroTail,__ZeroTail,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064F439,77,0x0064F485,__IncMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F486,114,0x0064F4F7,__RoundMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F4F8,27,0x0064F512,__CopyMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F513,12,0x0064F51E,FUN_0064f513,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F51F,25,0x0064F537,__IsZeroMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064F538,123,0x0064F5B2,__ShrMan,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064F538,123,0x0064F5B2,__ShrMan,__ShrMan,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064F5B3,344,0x0064F70A,__ld12cvt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F70B,22,0x0064F720,FID_conflict:__ld12tod,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F721,22,0x0064F736,FID_conflict:__ld12tod,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3838,11 +3838,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064F7F0,62,0x0064F82D,__atoldbl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F82E,61,0x0064F86A,FID_conflict:__atodbl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F86B,119,0x0064F8E1,__fptostr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064F8E2,186,0x0064F99B,___dtold,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064F8E2,186,0x0064F99B,___dtold,___dtold,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064F99C,108,0x0064FA07,__fltout2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FA08,9,0x0064FA10,FUN_0064fa08,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064FA3C,146,0x0064FACD,__abstract_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064FACE,142,0x0064FB5B,__hw_cw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064FA3C,146,0x0064FACD,__abstract_cw,__abstract_cw,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x0064FACE,142,0x0064FB5B,__hw_cw,__hw_cw,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064FBB6,50,0x0064FBE7,__control87,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FBE8,22,0x0064FBFD,__controlfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FBFE,249,0x0064FCF6,___crtMessageBoxA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3850,7 +3850,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064FF20,28,0x0064FF3B,_ValidateRead,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FF3C,28,0x0064FF57,_ValidateWrite,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FF58,24,0x0064FF6F,_ValidateExecute,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064FFB6,47,0x0064FFE4,_CPtoLCID,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064FFB6,47,0x0064FFE4,_CPtoLCID,_CPtoLCID,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064FFE5,41,0x0065000D,setSBCS,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0065000E,396,0x00650199,setSBUpLow,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0065019A,99,0x006501FC,___updatetmbcinfo,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3873,11 +3873,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006517CE,192,0x0065188D,___mbtowc_mt,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0065188E,43,0x006518B8,_mbtowc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006518B9,227,0x0065199B,__resetstkoflw,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006519A0,78,0x006519ED,___ascii_stricmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006519A0,78,0x006519ED,___ascii_stricmp,___ascii_stricmp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x006519EE,295,0x00651B14,___getlocaleinfo,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00651B15,105,0x00651B7D,__stricmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00651B7E,127,0x00651BFC,__strnicmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00651BFD,62,0x00651C3A,xtoa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00651BFD,62,0x00651C3A,xtoa,_xtoa,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00651C3B,42,0x00651C64,__itoa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00651C65,39,0x00651C8B,__ltoa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00651CA6,109,0x00651D12,FID_conflict:@x64toa@20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3893,10 +3893,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006523AC,131,0x0065242E,__lseeki64_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00652588,93,0x006525E4,FUN_00652588,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0065275D,956,0x00652B18,___crtLCMapStringA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00652B19,33,0x00652B39,___addl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00652B19,33,0x00652B39,___addl,___addl,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00652B3A,94,0x00652B97,___add_12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00652B98,46,0x00652BC5,___shl_12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00652BC6,45,0x00652BF2,___shr_12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00652B98,46,0x00652BC5,___shl_12,___shl_12,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
+0x00652BC6,45,0x00652BF2,___shr_12,___shr_12,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00652BF3,222,0x00652CD0,___mtold12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00652CD1,1028,0x006530D4,___strgtold12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00653105,76,0x00653150,FUN_00653105,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3911,7 +3911,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00653B08,8,0x00653B0F,FUN_00653b08,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00653B2C,304,0x00653C5B,___crtGetLocaleInfoW,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00653C5C,320,0x00653D9B,___crtGetLocaleInfoA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00653DA0,97,0x00653E00,___ascii_strnicmp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00653DA0,97,0x00653E00,___ascii_strnicmp,___ascii_strnicmp,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00653E01,76,0x00653E4C,FUN_00653e01,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00653F5A,562,0x0065418B,___ld12mul,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0065418C,134,0x00654211,___multtenpow12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

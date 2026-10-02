@@ -3488,15 +3488,15 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0063EEC6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063F221,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063FFF4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00640490,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00640490,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006404F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00640548,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064057A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006405C2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006405E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00640611,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00640620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006406AC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00640620,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x006406AC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00640721,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00640751,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00640758,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3541,7 +3541,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064168B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064169D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006416A2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006416B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006416B0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641740,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641754,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064175D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3555,27 +3555,27 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00641AFE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641B37,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641B80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641B90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641B90,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641C78,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641CC2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641CEC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641D4A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641D92,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641DAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641DE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641DE0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641E40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641E54,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641E5D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641F00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641F00,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641FB8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641FD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642240,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00642260,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642260,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064228D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006422B2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064232C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00642510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642510,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064254D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006425A4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006425C3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3605,15 +3605,15 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006435F2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643604,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643680,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006436FC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006436FC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00643770,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006437CD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006439C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643AF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643B10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643B2D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00643BDB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00643BFC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00643BDB,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x00643BFC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00643C38,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643D23,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643FC6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3693,7 +3693,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00646B43,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646B65,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646B7C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00646B95,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00646B95,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00646BD8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646BFB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646CE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3701,19 +3701,19 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00646D33,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646FD8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006471FC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00647244,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00647244,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00647271,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064730F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647362,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006473C1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647479,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00647542,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006475AB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006475D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00647542,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x006475AB,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x006475D0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064762B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006476E7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006476F2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006476FE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006476FE,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00647722,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647778,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647993,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3724,7 +3724,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00647DE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647E15,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647E1E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00647F30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00647F30,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00647F98,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647FA1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647FAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3742,7 +3742,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00648AB3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00648ABA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00648C01,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00648C34,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00648C34,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00648C70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00648E11,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00648E76,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3756,7 +3756,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064971B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00649735,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064980B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006498B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006498B0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006498FC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064993C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064A6CD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3764,14 +3764,14 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064A740,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064AA58,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064AB0F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064AC15,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064AC15,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064AFC5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B339,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B635,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B6B4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B749,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064B97C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064B9D2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064B97C,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x0064B9D2,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064BA4B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064BCB1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064C13B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3783,14 +3783,14 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064CA47,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064CB20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064CD5F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064CFA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064CFF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064CFA0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x0064CFF0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064D114,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D174,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D18E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D204,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D222,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D305,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064D305,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064D33A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D357,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D3EB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3801,7 +3801,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064D7FE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064D853,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064DA08,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064DBD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064DBD0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064DC10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064DC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064DC79,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3820,16 +3820,16 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064F05F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F1F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F250,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F280,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F280,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F31D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F3E5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F407,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F407,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F439,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F486,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F4F8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F513,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F51F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F538,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F538,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F5B3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F70B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F721,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3838,11 +3838,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064F7F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F82E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F86B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F8E2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F8E2,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F99C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FA08,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064FA3C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064FACE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064FA3C,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x0064FACE,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064FBB6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FBE8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FBFE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3850,7 +3850,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064FF20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FF3C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FF58,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064FFB6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064FFB6,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064FFE5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065000E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065019A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3873,11 +3873,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006517CE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065188E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006518B9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006519A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006519A0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006519EE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00651B15,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00651B7E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00651BFD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00651BFD,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00651C3B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00651C65,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00651CA6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3893,10 +3893,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006523AC,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00652588,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065275D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00652B19,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00652B19,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00652B3A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00652B98,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00652BC6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00652B98,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
+0x00652BC6,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00652BF3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00652CD1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653105,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3911,7 +3911,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00653B08,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653B2C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653C5C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00653DA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00653DA0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00653E01,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653F5A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065418C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

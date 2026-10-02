@@ -339,3 +339,61 @@ reviewed bytes; summing overlapping candidate sizes would overstate this.
 This is origin evidence only. It grants no source-presence, canonical exact
 or authored-byte credit. Private instruction, generated-symbol and attested
 decompile evidence is under `.analysis/r005-*`.
+
+## R006 — complete relocation-free runtime archive bodies
+
+Reviewed 2026-10-02 after F007. Forty-one additional pending candidates are
+library-owned static-runtime functions, covering 4,282 distinct, nonoverlapping
+bytes. Current origin totals are 47 authored, 177 library and four compiler
+candidates; 4,123 origins remain pending. All 4,351 candidates are retained.
+
+The read-only VC7 runtime archives provide independent function bodies and
+symbol metadata. A preliminary survey of libcmt, libcpmt, libc and libcp found
+469 full-body non-relocation fingerprints at 264 pending candidate addresses.
+That survey is diagnostic only: aliases and relocated callees/data still need
+corroboration. This batch accepts only 41 relocation-free bodies with complete
+vendor function-definition auxiliary records. Their recorded size is the
+vendor's complete function size, not a selected target prefix or a section-size
+fallback. Every byte, including relative branch fields, equals the target.
+
+`config/runtime-origin-evidence.csv` records all 41 target extents, the archive
+identity, original member names/offsets, COFF symbols, full-body SHA-256 values,
+zero relocation counts and the extent basis. The selected archive is:
+
+| Read-only artifact | SHA-256 |
+| --- | --- |
+| `.tools/msvc710/Vc7/lib/libcmt.lib` | `6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8` |
+
+The public verifier extracts each recorded member into temporary private
+scratch, uses the existing COFF reader without a size fallback, and compares
+the full body against the hash-pinned PE. Complete decoding covers every byte;
+each jump/call is direct and resolves to an instruction start in the same body.
+There are no unresolved switch targets or external shared tails in this set.
+Every body contains a return. The strcmp body ends with an internal JMP after
+earlier return paths; its complete 136-byte range is retained rather than
+truncated at an earlier RET. Temporary members are removed after verification.
+
+The set includes memory/string primitives, ASCII comparisons, stack probing,
+64-bit arithmetic, locale conversion helpers, small-block heap resizing and
+floating-point conversion/control helpers. The runtime __ftol2 at
+`0x006406AC` is now independently corroborated as a complete 117-byte archive
+body, strengthening the conversion-helper bindings in F006/F007. Names in the
+function ledger are vendor COFF symbol associations; original executable debug
+names are not recovered by this evidence.
+
+Some identical bodies also appear in the single-threaded archive. Their bytes
+cannot establish which archive supplied the original link, executable-wide
+threading mode, or one compiler profile for all functions. The recorded archive
+pins the reproducible ownership evidence. No source-presence, mapping or
+canonical exact credit is added by these vendor byte identities.
+
+```bash
+scripts/repo-python scripts/verify-runtime-origins.py
+```
+
+The local verifier passed all 41 bodies. The remaining 223 surveyed candidate
+addresses stay pending until relocated symbol roles, aliases and complete
+control flow are checked. Private survey/CFG evidence is under
+`.analysis/crt-origin-survey.*` and `.analysis/r006-*`.
+The same verifier also passed through the no-auth public Bash MCP; the private
+RPC receipt is `.analysis/public-r006-runtime-origins.json`.

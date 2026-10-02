@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  47 authored, 136 library and four compiler candidates; 4,164 origins remain
+  47 authored, 177 library and four compiler candidates; 4,123 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,7 +18,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
   reviewed authored-byte denominator is 12,343, with 8,916 exact (72.24%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003/R004/R005 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003/R004/R005/R006 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -56,6 +56,13 @@ deferred subsequent phases. Write documentation and handoffs in English.
   Full no-auth public MCP cold replay passed 42/42 units across nine fresh
   objects, covering all 8,916 bytes and 497 relocations. CI's 18 regressions,
   target-required tracking validation and progress freshness checks passed.
+- R006 reviewed 41 relocation-free static-runtime functions, 4,282 distinct
+  bytes. Every target byte equals the complete vendor COFF function, using its
+  own definition auxiliary size. All branches/calls resolve to internal
+  instruction starts. `scripts/verify-runtime-origins.py` rechecks the pinned
+  archive, member identities, complete bytes and CFG. This grants origin
+  evidence only, with no source-presence or canonical exact credit.
+  The verifier passed locally and through the no-auth public Bash MCP.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -104,7 +111,10 @@ TH105 was reviewed as an engine-structure reference: it uses VC8/LTCG and
 D3D9, so retain TH075's proven VC7.1/D3D8 profile. See `REFERENCE_PROJECTS.md`
 and `BUILD_MATCHING.md`.
 
-Next origin batch: follow the remaining container/string helpers starting at
+Next origin batch: resolve the 223 remaining archive fingerprint candidates
+under `.analysis/crt-origin-survey.json` with complete relocation/callee/data
+binding evidence. The survey alone grants no credit. Also follow the remaining
+container/string helpers starting at
 `0x004063F0`, then review the custom geometry builders and textured-quad
 callers around `0x0040C9A0..0x0040DB10` from complete control flow. Keep vendor
 and custom ownership separate. Return to exact reconstruction of newly
