@@ -2425,3 +2425,49 @@ passed, and the unchanged no-auth public Funnel MCP reran all authored
 extent and tracking checks. Private receipt:
 `.analysis/public-r054-origin-verification.json`. R053 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37022960028.
+
+## R055 — background asset constructors and paired sprite drawers
+
+Fifty-two complete authored bodies / 8,527 bytes belong to a repeated
+background-stage family. Thirty-four constructors call the same project
+background base and asset loader, each with a complete observed literal
+`data\\background\\BG*.dat` path. The filenames cover BG00 through BG09;
+the exact address/path pairs are in `config/background-origin-evidence.csv`.
+Eighteen companion routines call the project sprite renderer twice for
+the left and right side images, with the same game geometry. Some draw
+bodies are byte-identical, but each has a separate complete target extent.
+
+`scripts/repo-python scripts/verify-background-origins.py` rechecks the
+whole-body authored hashes and CFG, direct base/asset or sprite calls, and
+the PE-resident literal path reached by each constructor. A deliberately
+changed asset-path witness was rejected. The vtable addresses and selected
+background-file names support origin and inferred roles; they do not prove
+complete class layouts or original C++ names. Adjacent no-op virtual
+methods and tiny destructor wrappers remain pending.
+
+R055 adds origin only. Totals are 1,933 reviewed: 577 authored, 792 library
+and 564 compiler; 2,418 remain pending. Exact remains 42 functions / 8,916
+bytes against the provisional 1,807,327-byte authored slice (0.49%).
+
+## R056 — repeated background transform/copy routines
+
+Thirty-two further complete authored bodies / 2,912 bytes each call the
+same two project transform helpers (`0x004115C0` and `0x004116F0`) and copy
+the same fixed 0x21-word record before writing a sentinel. Every body is
+91 bytes, has a complete single-RET CFG, and matches the entire first
+body after masking only the two decoded call displacement fields. The
+call targets themselves are checked at every address. This is
+target-observed family evidence, not a claim of exact source or owner layout.
+
+`scripts/repo-python scripts/verify-background-transform-origins.py`
+replays the 32-body cohort and its complete non-call-byte comparison. R056
+adds origin only. Totals are 1,965 reviewed: 609 authored, 792 library and
+564 compiler; 2,386 remain pending. Exact stays 42 functions / 8,916 bytes
+against the provisional 1,810,239-byte authored slice (0.49%). Continue
+all origin review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP replayed
+both background verifiers, all 562 authored-origin extents and tracking.
+Private receipt: `.analysis/public-r055-r056-origin-verification.json`.
+R054 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37023216064.

@@ -936,3 +936,14 @@ project sprite renderer with literal geometry. They repeat whole bodies at
 different addresses, but that repetition does not imply ownership of
 neighbors. The two scene cleanup bodies release distinct owned resources;
 class names remain unresolved. R054 adds no source or exact credit.
+
+## Origin-only observations after R055/R056
+
+The background family has 34 asset-loading constructors with explicit
+BG00–BG09 file paths, 18 paired side-sprite drawers, and 32 complete
+transform/copy routines. The constructors' full target bodies, literal
+paths and direct calls are independently replayed. The transform routines
+share every non-call byte and the same two checked game call targets.
+Tiny adjacent empty methods and destructor wrappers remain pending because
+proximity cannot establish authored versus generated origin. These batches
+add no source or exact credit.
