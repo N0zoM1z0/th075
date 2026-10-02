@@ -897,3 +897,12 @@ Small special-variant selectors use ten-case guarded tables; round-reset
 bodies call the common fighter reset. These 52 reviewed bodies grant origin
 only; names and complete layouts remain inferred, with no source or exact
 credit.
+
+## Origin-only observations after R051
+
+Four complete VC7 STL source COMDATs with no relocations recur as 25
+byte-identical target candidates: iterator advance, allocator maximum size,
+`fill` and `fill_n`. A cold compile, complete source extent, target hash and
+local CFG now support their library origin. The same code may arise from
+different template arguments, so names remain generic; shorter coincident
+bodies were not classified. R051 adds no authored or exact credit.

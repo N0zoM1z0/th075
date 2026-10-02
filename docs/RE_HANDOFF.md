@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  470 authored, 767 library and 564 compiler candidates; 2,550 origins remain
+  470 authored, 792 library and 564 compiler candidates; 2,525 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,7 +18,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 1,778,595, with 8,916 exact (0.50%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R050 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R051 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -609,3 +609,15 @@ remains 42 / 8,916 bytes against provisional 1,778,595 authored bytes
 Local CI and the unchanged no-auth public MCP verification passed; private
 receipt: `.analysis/public-r050-origin-verification.json`. R049 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37021220821.
+
+R051 excludes 25 complete VC7 STL template aliases / 1,004 bytes by cold
+compilation of four independently evidenced whole relocation-free COMDATs.
+Their full target bytes and CFG match source; shorter generic matches remain
+pending. Totals are 1,826 reviewed (470 authored, 792 library, 564
+compiler), 2,525 pending. Exact remains 42 / 8,916 bytes against provisional
+1,778,595 authored bytes (0.50%). Run
+`scripts/repo-python scripts/verify-vendor-identical-origins.py` to cold replay
+this batch before exact work, which remains gated on all origins reviewed.
+Local CI and the unchanged no-auth public MCP cold replay passed; private
+receipt: `.analysis/public-r051-origin-verification.json`. R050 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37021584341.

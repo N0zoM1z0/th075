@@ -2290,3 +2290,38 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r050-origin-verification.json`. R049 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37021220821.
+
+## R051 — whole relocation-free VC7 STL template aliases
+
+Twenty-five more complete candidates / 1,004 bytes reproduce four
+independently evidenced VC7 STL template bodies. The verifier cold-compiles
+the unchanged `VC7InputContainers.cpp` probe under the pinned `/Od /Ob0 /Gy
+/GR- /GX /Zi /GS` profile. For each base symbol it requires a single whole
+code COMDAT with its own auxiliary extent, no relocations, the R004 source
+fingerprint and an exact match to the original base target body. Every new
+alias then has to match all bytes of that source body, its complete target
+extent and decoded CFG. No callee or nearby address inherits ownership.
+
+| VC7 source family | Independently verified base | New aliases | Bytes |
+| --- | --- | ---: | ---: |
+| vector iterator `operator+=` | `0x00405270` | 4 | 128 |
+| allocator `max_size` | `0x00405B20` | 1 | 44 |
+| `std::fill` | `0x00405D90` | 4 | 144 |
+| `std::fill_n` | `0x00406260` | 16 | 688 |
+
+The exact type aliases remain unresolved: a different template argument can
+produce the same full relocation-free body. The library family is grounded
+by the cold vendor source and complete code shape. Shorter generic matches
+stay pending because a tiny byte-identical body does not independently prove
+ownership. All 25 alias addresses and SHA-256 values are in
+`config/vendor-identical-origin-evidence.csv`. R051 grants library origin
+only; no source, authored or exact credit. Totals are 1,826 reviewed: 470
+authored, 792 library and 564 compiler; 2,525 remain pending. Exact stays
+42 functions / 8,916 bytes against the provisional 1,778,595-byte authored
+slice (0.50%). Cold replay:
+`scripts/repo-python scripts/verify-vendor-identical-origins.py`.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP cold
+compiled and verified the aliases successfully; private receipt:
+`.analysis/public-r051-origin-verification.json`. R050 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37021584341.

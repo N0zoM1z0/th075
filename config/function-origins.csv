@@ -289,7 +289,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A0E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A100,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040A140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A140,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040A160,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A170,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A190,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -319,7 +319,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A8E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A900,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A910,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0040A940,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A940,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040A970,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A9B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A9F0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
@@ -335,9 +335,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040AB40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040AB80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040ABC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040ABE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040ABE0,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040AC10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040AC50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040AC50,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040AC80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040ACD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040AD10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -457,7 +457,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040E9B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040E9C0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0040E9E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040EA00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040EA00,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040EA20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040EA30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040EB74,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -487,7 +487,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040F400,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F430,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040F470,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0040F4A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F4A0,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040F4D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040F510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040F520,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -514,7 +514,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040F8DF,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0040F8E8,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0040F930,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040F970,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F970,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0040F9A0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F9F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040FA00,compiler,VC71Compiler,exclude,compiler-template-backed,R037
@@ -720,7 +720,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00415E90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415EC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415EF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00415F10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00415F10,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00415F40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00415F90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -764,9 +764,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00416540,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00416580,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004165A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004165B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004165E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00416610,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004165B0,library,VC7STL,exclude,vendor-source-corroborated,R051
+0x004165E0,library,VC7STL,exclude,vendor-source-corroborated,R051
+0x00416610,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00416640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004169D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004169E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1004,8 +1004,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00420150,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00420170,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x004201A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004201E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00420210,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004201E0,library,VC7STL,exclude,vendor-source-corroborated,R051
+0x00420210,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00420240,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00420290,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004202D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1137,8 +1137,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00422C80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00422CA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00422CB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00422D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00422D30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00422D00,library,VC7STL,exclude,vendor-source-corroborated,R051
+0x00422D30,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00422D60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00422D70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042308D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1232,7 +1232,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00424C80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00424CA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00424CB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00424CD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00424CD0,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00424D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00424D50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00424D90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1363,7 +1363,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042E5A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E5E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042E610,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E610,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0042E640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E870,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E8F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1478,7 +1478,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00442340,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00442360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00442370,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00442390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00442390,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x004423B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004423C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004423E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2033,7 +2033,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A950,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045A980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045A9C0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0045A9F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045A9F0,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0045AA20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045AA60,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045AAA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2083,7 +2083,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B4CF,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0045B4D8,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0045B520,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045B560,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B560,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0045B590,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B5E0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B630,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2157,7 +2157,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045CCD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045CCF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045CD00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045CD20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045CD20,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x0045CD50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045CD70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045CDC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2545,7 +2545,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F95D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F95F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F9620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9620,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x005F9640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F97A1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2590,7 +2590,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FA360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FA3A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FA3B0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x005FA3E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FA3E0,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x005FA410,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FA450,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FA490,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2619,13 +2619,13 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FA8D0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x005FA8F0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x005FA910,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005FA930,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FA930,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x005FA960,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x005FA9BD,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x005FA9BF,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x005FA9C8,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x005FAA10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005FAA50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FAA50,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x005FAA80,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FAAD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAAE0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
