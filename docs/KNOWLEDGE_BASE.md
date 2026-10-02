@@ -928,3 +928,11 @@ catalog lifetime and named-entry seeking are custom game code, while the
 adjacent iterator/container helpers remain separately pending. Scene setup
 uses literal `load.dat` and `logo.dat` asset paths. R053 adds no source or
 exact credit.
+
+## Origin-only observations after R054
+
+Several battle-layer draw helpers are complete and directly call the
+project sprite renderer with literal geometry. They repeat whole bodies at
+different addresses, but that repetition does not imply ownership of
+neighbors. The two scene cleanup bodies release distinct owned resources;
+class names remain unresolved. R054 adds no source or exact credit.

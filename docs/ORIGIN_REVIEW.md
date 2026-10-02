@@ -2399,3 +2399,29 @@ passed, and the unchanged no-auth public Funnel MCP reran all authored
 origin extents and tracking checks. Private receipt:
 `.analysis/public-r053-origin-verification.json`. R052 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37022645391.
+
+## R054 — scene cleanup and battle rendering helpers
+
+Ten complete authored functions / 2,980 bytes have full target SHA-256
+evidence and decoded local CFG. `0x00433140` and `0x0043B0B0` release
+different scene-owned resource fields and call the common scene teardown.
+Their exact class ownership remains unresolved, so their names are
+address-qualified.
+
+Six complete draw-layer bodies at `0x00449B50`, `0x0044A2E0`, `0x0044AC60`,
+`0x0044AF00`, `0x0044CC20`, and `0x0044CEC0` choose positions and draw a
+fixed set of custom sprites with `FUN_0040CA80`. Some whole bodies are
+byte-identical; they are independently bounded target functions, not
+evidence for nearby functions. `0x00455B30` packs signs and action flags
+from a battle input record into one byte, then passes it to a project
+helper. `0x004574D0` copies round result fields into a player-state record.
+The object layout and original names are not established.
+
+R054 adds origin only. Totals are 1,881 reviewed: 525 authored, 792 library
+and 564 compiler; 2,470 remain pending. Exact stays 42 functions / 8,916
+bytes against the provisional 1,798,800-byte authored slice (0.50%).
+Local CI passed 98 tests, target-required tracking and progress freshness
+passed, and the unchanged no-auth public Funnel MCP reran all authored
+extent and tracking checks. Private receipt:
+`.analysis/public-r054-origin-verification.json`. R053 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37022960028.
