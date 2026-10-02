@@ -1446,3 +1446,33 @@ prerequisite remains open. Local CI passed 74 regressions; target-required
 tracking, progress freshness and `git diff --check` passed. Public no-auth
 Funnel receipt: `.analysis/public-r029-origin-verification.json`. R028 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37006188725.
+
+## R030 — independently decoded PE import thunks
+
+Reviewed 2026-10-02. Three complete six-byte `FF 25` entries are excluded as
+linker-generated import thunks: 0x006036A4 for
+`DINPUT8.dll!DirectInput8Create`, 0x0060499A for
+`d3d8.dll!Direct3DCreate8`, and 0x00654B54 for
+`KERNEL32.dll!RtlUnwind`. The pinned target PE's import directory contains
+eight descriptors and 157 independently decoded IAT slots. Each six-byte
+body is one complete indirect JMP, and its embedded absolute operand names
+the exact recorded IAT slot. The on-disk original lookup and IAT values agree;
+the descriptor's DLL and import-by-name record establish the symbol without
+using Ghidra's imported label as evidence. Complete target body hashes are
+recorded in `import-origin-evidence.csv` and rechecked by
+`verify-import-origins.py`.
+
+The three records classify only the linker trampolines, not the imported
+implementations or their callers. Fourteen other pending six-byte `FF 25`
+bodies point to non-import addresses; their opcode shape grants no import
+origin. Three public regressions cover complete descriptor/slot resolution,
+wrong slot or symbol, and an IAT value that differs from the original lookup.
+This batch adds no source or exact credit. Current totals are 1,079 reviewed:
+138 authored, 510 library, 431 compiler; 3,272 pending. Exact remains 42
+functions / 8,916 bytes against the provisional 43,031-byte authored slice
+(20.72%). The complete-origin prerequisite remains open.
+
+Local CI passed 77 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. Public no-auth Funnel verification receipt:
+`.analysis/public-r030-origin-verification.json`. R029 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37006586340.

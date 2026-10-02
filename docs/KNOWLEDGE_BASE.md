@@ -665,3 +665,11 @@ only, not an accessible element. A JPEG quantizer became eligible only after
 its direct callee had a separately verified complete SDK origin. Indirect
 calls and other callers remain independently unclassified; none of these ten
 bodies gains authored source or exact reconstruction credit.
+
+## Origin-only observations after R030
+
+The pinned executable's PE import descriptors independently identify 157 IAT
+slots. Three six-byte `FF 25` entries jump through actual slots for DirectInput,
+Direct3D8 and RtlUnwind. They are linker trampolines, separate from the DLL
+implementations and from functions that call them. Other indirect jumps of
+the same instruction shape address non-import data and remain under review.

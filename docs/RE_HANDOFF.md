@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 510 library and 428 compiler candidates; 3,275 origins remain
+  138 authored, 510 library and 431 compiler candidates; 3,272 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R029 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R030 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 74 passing
+  across six objects through scripts/repo-python after F005. Public CI has 77 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -348,3 +348,14 @@ remains 42 functions / 8,916 bytes. Public no-auth Funnel receipt:
 `.analysis/public-r029-origin-verification.json`. Local CI passed 74 tests;
 progress remains current. R028 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37006188725.
+
+R030 excludes three complete six-byte linker import thunks (18 bytes):
+DirectInput8Create, Direct3DCreate8 and RtlUnwind. The new
+`verify-import-origins.py` decodes all eight PE import descriptors and 157 IAT
+slots from the pinned target, then checks each whole `FF 25` body, target slot,
+DLL/name and hash. The fourteen other pending six-byte `FF 25` bodies point to
+non-import addresses and remain pending. Totals are 1,079 reviewed (138
+authored, 510 library, 431 compiler) and 3,272 pending; exact stays 42 bodies /
+8,916 bytes. Local CI passed 77 tests and progress is current. Public no-auth
+Funnel receipt: `.analysis/public-r030-origin-verification.json`. R029 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37006586340.

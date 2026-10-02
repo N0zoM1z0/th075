@@ -2642,8 +2642,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FAE30,31352,0x006028A7,FUN_005fae30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00602A60,2987,0x0060360A,FUN_00602a60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00603650,83,0x006036A2,FUN_00603650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006036A4,6,0x006036A9,DINPUT8.DLL::DirectInput8Create,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060499A,6,0x0060499F,D3D8.DLL::Direct3DCreate8,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006036A4,6,0x006036A9,DINPUT8.DLL::DirectInput8Create,DINPUT8.dll!DirectInput8Create,PEImportThunk,excluded,0.00,,,true,,R030,compiler,Whole PE linker FF25 import thunk; IAT slot and descriptor name checked; imported implementation uncredited
+0x0060499A,6,0x0060499F,D3D8.DLL::Direct3DCreate8,d3d8.dll!Direct3DCreate8,PEImportThunk,excluded,0.00,,,true,,R030,compiler,Whole PE linker FF25 import thunk; IAT slot and descriptor name checked; imported implementation uncredited
 0x006049A0,28,0x006049BB,FUN_006049a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006049BC,28,0x006049D7,FUN_006049bc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006049D8,28,0x006049F3,FUN_006049d8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3927,7 +3927,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0065497E,336,0x00654ACD,FUN_0065497e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00654ACE,64,0x00654B0D,FUN_00654ace,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00654B0E,64,0x00654B4D,FUN_00654b0e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00654B54,6,0x00654B59,KERNEL32.DLL::RtlUnwind,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00654B54,6,0x00654B59,KERNEL32.DLL::RtlUnwind,KERNEL32.dll!RtlUnwind,PEImportThunk,excluded,0.00,,,true,,R030,compiler,Whole PE linker FF25 import thunk; IAT slot and descriptor name checked; imported implementation uncredited
 0x00654D00,8,0x00654D07,Unwind@00654d00,VC7EH::Unwind_local_object_00654D00,VC7EH,excluded,0.00,,,false,,R020,compiler,"R020; generated EH cleanup dispatch, complete registered FunctionInfo/unwind map and full body hash/decoded template; callee and parent ownership independent; origin only, no authored/source/exact credit."
 0x00654D20,8,0x00654D27,Unwind@00654d20,VC7EH::Unwind_frame_object_00654D20,VC7EH,excluded,0.00,,,false,,R020,compiler,"R020; generated EH cleanup dispatch, complete registered FunctionInfo/unwind map and full body hash/decoded template; callee and parent ownership independent; origin only, no authored/source/exact credit."
 0x00654D40,8,0x00654D47,Unwind@00654d40,VC7EH::Unwind_frame_object_00654D40,VC7EH,excluded,0.00,,,false,,R020,compiler,"R020; generated EH cleanup dispatch, complete registered FunctionInfo/unwind map and full body hash/decoded template; callee and parent ownership independent; origin only, no authored/source/exact credit."
