@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 671 library and 431 compiler candidates; 3,111 origins remain
+  138 authored, 697 library and 431 compiler candidates; 3,085 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R032 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R033 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 83 passing
+  across six objects through scripts/repo-python after F005. Public CI has 85 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -387,3 +387,17 @@ and 3,111 pending. Exact remains 42 functions / 8,916 bytes. Public no-auth
 Funnel receipt: `.analysis/public-r032-origin-verification.json`. Local CI
 passed 83 tests; progress remains current. R031 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37007728822.
+
+R033 reviews 23 short STL helpers / 551 bytes and three 51-byte `copy` aliases
+/ 153 bytes. Each whole callee source match has a separately verified complete
+R031 or R032 caller with a typed REL32 relocation at the actual CALL field.
+The three formerly ambiguous aliases are 0x0040F270, 0x0045A7E0, and
+0x005FA170; their complete `erase` callers specifically name `copy`.
+Five other `copy`/`copy_backward` dual-family candidates remain pending.
+The cold verifier checks the whole callee and caller, all relocations, matched
+source-family sets and exact witness destinations. Totals are 1,266 reviewed
+(138 authored, 697 library, 431 compiler), 3,085 pending; exact stays 42 /
+8,916 bytes. Public no-auth Funnel receipt:
+`.analysis/public-r033-origin-verification.json`. Local CI passed 85 tests;
+progress remains current. R032 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37008140937.

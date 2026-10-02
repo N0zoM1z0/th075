@@ -1569,3 +1569,39 @@ prerequisite is still open. Local CI passed 83 regressions; target-required
 tracking, progress freshness and `git diff --check` passed. Public no-auth
 Funnel receipt: `.analysis/public-r032-origin-verification.json`. R031 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37007728822.
+
+## R033 — typed caller witnesses for short helpers and copy aliases
+
+Reviewed 2026-10-02. Twenty-six more complete VC7 STL bodies / 704 bytes are
+excluded: 23 short helpers (551 bytes) and three 51-byte `copy` aliases
+(153 bytes). Each short helper has a whole-body match to the independently
+compiled VC7 record probe and only one matching generic template family.
+Short bodies can have byte-identical aliases, so each accepted one also has a
+separately verified complete vendor caller whose **typed REL32 relocation**
+names the selected source symbol and resolves to the actual target entry.
+
+Three R032 dual-family bodies at 0x0040F270, 0x0045A7E0, and 0x005FA170
+match both `copy` and `copy_backward` source bodies by bytes. Their complete
+R032 `erase` callers at 0x0040DDC0, 0x00459900, and 0x005F8F60 respectively
+have typed relocations to `copy`, fixing those three source-family choices.
+The five other dual-family candidates lack a complete matching typed caller
+in this probe and remain pending. Synthetic `Record16`/`Record44`/`Record116`
+aliases do not identify original target types.
+
+`verify-vendor-record-witnesses.py` cold-compiles the source probe and
+rechecks each callee's complete source/target bytes, relocation fields, CFG,
+matching source-symbol set, and family scope. It then independently rechecks
+each witness caller's entire source and target bodies, every typed field and
+the exact CALL opcode/destination. Twenty-two witnesses use R032 caller
+records; four use R031 whole template callers. A caller's review status is
+never inherited by its callee. Two public regressions reject a wrong source
+symbol or a wrong target address at the witness field.
+
+These are library-origin records only, with no authored source or exact credit.
+Current totals are 1,266 reviewed: 138 authored, 697 library and 431 compiler;
+3,085 remain pending. Exact remains 42 functions / 8,916 bytes against the
+provisional 43,031-byte authored slice (20.72%). Local CI passed 85
+regressions; target-required tracking, progress freshness and
+`git diff --check` passed. Public no-auth Funnel receipt:
+`.analysis/public-r033-origin-verification.json`. R032 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37008140937.

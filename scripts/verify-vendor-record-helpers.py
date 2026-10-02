@@ -29,7 +29,7 @@ def template_family(symbol):
     return re.sub(r"Record(?:16|44|116)", "RecordN", symbol)
 
 
-def source_functions(data, path, comparison, record_verifier):
+def source_functions(data, path, comparison, record_verifier, minimum_size=32):
     _, _, _, symbols_offset, symbol_count, _, _ = struct.unpack_from("<HHIIIHH", data)
     strings_offset = symbols_offset + symbol_count * 18
     strings = data[strings_offset:]
@@ -45,7 +45,7 @@ def source_functions(data, path, comparison, record_verifier):
         if (section > 0 and kind == 0x20 and storage == 2 and auxiliary
                 and "Record" in name):
             size = struct.unpack_from("<I", data, offset + 18 + 4)[0]
-            if size >= 32:
+            if size >= minimum_size:
                 whole = record_verifier.complete_aux_section_size(
                     data, name, comparison.coff_name)
                 if whole != size:

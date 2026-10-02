@@ -305,7 +305,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040A600,33,0x0040A620,FUN_0040a600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A630,52,0x0040A663,FUN_0040a630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A670,46,0x0040A69D,FUN_0040a670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A6A0,28,0x0040A6BB,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040A6A0,28,0x0040A6BB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040A6C0,50,0x0040A6F1,FUN_0040a6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A700,55,0x0040A736,FUN_0040a700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A740,55,0x0040A776,FUN_0040a740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -455,7 +455,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040E970,25,0x0040E988,std::allocator<std::_Container_proxy>::destroy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E990,24,0x0040E9A7,FUN_0040e990,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E9B0,16,0x0040E9BF,FUN_0040e9b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040E9C0,28,0x0040E9DB,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040E9C0,28,0x0040E9DB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040E9E0,28,0x0040E9FB,FUN_0040e9e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040EA00,32,0x0040EA1F,iterator::operator+=,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040EA20,16,0x0040EA2F,FUN_0040ea20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -474,8 +474,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F1B0,46,0x0040F1DD,FUN_0040f1b0,VC7 STL generic ?_Ufill,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F1E0,52,0x0040F213,FUN_0040f1e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F220,46,0x0040F24D,FUN_0040f220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F250,28,0x0040F26B,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F270,51,0x0040F2A2,FUN_0040f270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F250,28,0x0040F26B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0040F270,51,0x0040F2A2,FUN_0040f270,VC7 STL generic ??$copy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040F2B0,51,0x0040F2E2,FUN_0040f2b0,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F2F0,20,0x0040F303,FUN_0040f2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F310,51,0x0040F342,FUN_0040f310,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -492,7 +492,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F510,5,0x0040F514,FUN_0040f510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F520,55,0x0040F556,FUN_0040f520,VC7 STL generic ??$_Uninitialized_fill_n,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F560,55,0x0040F596,FUN_0040f560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F5A0,11,0x0040F5AA,FUN_0040f5a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F5A0,11,0x0040F5AA,FUN_0040f5a0,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040F5B0,55,0x0040F5E6,FUN_0040f5b0,VC7 STL generic ??$_Copy_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F5F0,38,0x0040F615,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F620,11,0x0040F62A,FUN_0040f620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -507,8 +507,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F7DD,9,0x0040F7E5,FUN_0040f7dd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F7E6,55,0x0040F81C,FUN_0040f7e6,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F820,25,0x0040F838,FUN_0040f820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F840,29,0x0040F85C,FUN_0040f840,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F860,25,0x0040F878,FUN_0040f860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F840,29,0x0040F85C,FUN_0040f840,VC7 STL generic ?construct,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0040F860,25,0x0040F878,FUN_0040f860,VC7 STL generic ?destroy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040F880,162,0x0040F921,FUN_0040f880,std::_Uninit_copy<44-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F8DD,2,0x0040F8DE,Catch@0040f8dd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F8DF,9,0x0040F8E7,FUN_0040f8df,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
@@ -569,7 +569,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004121C0,28,0x004121DB,FUN_004121c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004121E0,19,0x004121F2,FUN_004121e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412200,22,0x00412215,FUN_00412200,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00412220,28,0x0041223B,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00412220,28,0x0041223B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x00412240,137,0x004122C8,FUN_00412240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004122C9,52,0x004122FC,Catch@004122c9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412300,5,0x00412304,FUN_00412300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -873,7 +873,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041E020,54,0x0041E055,FUN_0041e020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041E060,19,0x0041E072,FUN_0041e060,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041E080,42,0x0041E0A9,FUN_0041e080,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041E0B0,28,0x0041E0CB,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041E0B0,28,0x0041E0CB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0041E0D0,33,0x0041E0F0,const_iterator::operator!=,VC7 STL generic ??9const_iterator,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0041E100,8,0x0041E107,FUN_0041e100,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041E110,11,0x0041E11A,FUN_0041e110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2013,8 +2013,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045A540,46,0x0045A56D,FUN_0045a540,VC7 STL generic ?_Ufill,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A570,52,0x0045A5A3,FUN_0045a570,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A5B0,46,0x0045A5DD,FUN_0045a5b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045A5E0,28,0x0045A5FB,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045A600,28,0x0045A61B,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045A5E0,28,0x0045A5FB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0045A600,28,0x0045A61B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045A620,50,0x0045A651,FUN_0045a620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A660,55,0x0045A696,FUN_0045a660,VC7 STL generic ??$_Uninitialized_fill_n,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A6A0,37,0x0045A6C4,DoMessageBox,VC7 STL generic ??$_Ucopy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
@@ -2023,7 +2023,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045A740,54,0x0045A775,FUN_0045a740,VC7 STL generic ??$fill,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A780,51,0x0045A7B2,FUN_0045a780,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A7C0,20,0x0045A7D3,FUN_0045a7c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045A7E0,51,0x0045A812,FUN_0045a7e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045A7E0,51,0x0045A812,FUN_0045a7e0,VC7 STL generic ??$copy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045A820,51,0x0045A852,FUN_0045a820,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A860,20,0x0045A873,FUN_0045a860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A880,51,0x0045A8B2,FUN_0045a880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2040,7 +2040,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045AAE0,368,0x0045AC4F,FUN_0045aae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AC50,381,0x0045ADCC,FUN_0045ac50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045ADD0,37,0x0045ADF4,FUN_0045add0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045AE00,11,0x0045AE0A,FUN_0045ae00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045AE00,11,0x0045AE0A,FUN_0045ae00,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045AE10,157,0x0045AEAC,FUN_0045ae10,std::_Uninit_fill<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045AE6B,2,0x0045AE6C,Catch@0045ae6b,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045AE6D,9,0x0045AE75,FUN_0045ae6d,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
@@ -2049,7 +2049,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045AEF0,38,0x0045AF15,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045AF20,55,0x0045AF56,FUN_0045af20,VC7 STL generic ??$_Uninitialized_copy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045AF60,64,0x0045AF9F,FUN_0045af60,VC7 STL generic ??$_Copy_backward_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x0045AFA0,11,0x0045AFAA,FUN_0045afa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045AFA0,11,0x0045AFAA,FUN_0045afa0,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045AFB0,50,0x0045AFE1,FUN_0045afb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AFF0,38,0x0045B015,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045B020,11,0x0045B02A,FUN_0045b020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2065,11 +2065,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B1D6,55,0x0045B20C,FUN_0045b1d6,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B210,25,0x0045B228,FUN_0045b210,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B230,51,0x0045B262,FUN_0045b230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B270,29,0x0045B28C,FUN_0045b270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B290,25,0x0045B2A8,std::allocator<std::_Container_proxy>::destroy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B2B0,29,0x0045B2CC,FUN_0045b2b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B2D0,25,0x0045B2E8,FUN_0045b2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B2F0,11,0x0045B2FA,FUN_0045b2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B270,29,0x0045B28C,FUN_0045b270,VC7 STL generic ?construct,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0045B290,25,0x0045B2A8,std::allocator<std::_Container_proxy>::destroy,VC7 STL generic ?destroy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0045B2B0,29,0x0045B2CC,FUN_0045b2b0,VC7 STL generic ?construct,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0045B2D0,25,0x0045B2E8,FUN_0045b2d0,VC7 STL generic ?destroy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x0045B2F0,11,0x0045B2FA,FUN_0045b2f0,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045B300,120,0x0045B377,FUN_0045b300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B378,2,0x0045B379,Catch@0045b378,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B37A,9,0x0045B382,FUN_0045b37a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2092,7 +2092,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B6C0,44,0x0045B6EB,FUN_0045b6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B6F0,27,0x0045B70A,FUN_0045b6f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B710,33,0x0045B730,const_iterator::operator!=,VC7 STL generic ??9const_iterator,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x0045B740,28,0x0045B75B,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B740,28,0x0045B75B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0045B760,203,0x0045B82A,FUN_0045b760,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B830,21,0x0045B844,FUN_0045b830,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B850,13,0x0045B85C,FUN_0045b850,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2567,8 +2567,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F9ED0,46,0x005F9EFD,FUN_005f9ed0,VC7 STL generic ?_Ufill,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005F9F00,52,0x005F9F33,FUN_005f9f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F9F40,46,0x005F9F6D,FUN_005f9f40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F9F70,28,0x005F9F8B,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F9F90,28,0x005F9FAB,const_iterator::operator==,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F9F70,28,0x005F9F8B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x005F9F90,28,0x005F9FAB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005F9FB0,70,0x005F9FF5,FUN_005f9fb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA000,70,0x005FA045,FUN_005fa000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA050,55,0x005FA086,FUN_005fa050,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2576,7 +2576,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA0D0,51,0x005FA102,FUN_005fa0d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA110,20,0x005FA123,FUN_005fa110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA130,58,0x005FA169,FUN_005fa130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA170,51,0x005FA1A2,FUN_005fa170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA170,51,0x005FA1A2,FUN_005fa170,VC7 STL generic ??$copy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005FA1B0,51,0x005FA1E2,FUN_005fa1b0,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA1F0,20,0x005FA203,FUN_005fa1f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA210,16,0x005FA21F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2601,7 +2601,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA5B0,49,0x005FA5E0,FUN_005fa5b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA5F0,25,0x005FA608,FUN_005fa5f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA610,5,0x005FA614,FUN_005fa610,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA620,11,0x005FA62A,FUN_005fa620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA620,11,0x005FA62A,FUN_005fa620,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005FA630,66,0x005FA671,FUN_005fa630,VC7 STL generic ??$_Copy_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA680,38,0x005FA6A5,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA6B0,11,0x005FA6BA,FUN_005fa6b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2616,8 +2616,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA86D,9,0x005FA875,FUN_005fa86d,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA876,55,0x005FA8AC,FUN_005fa876,VC7 STL internal catch fragment +0x66,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA8B0,25,0x005FA8C8,FUN_005fa8b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA8D0,29,0x005FA8EC,FUN_005fa8d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA8F0,25,0x005FA908,FUN_005fa8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA8D0,29,0x005FA8EC,FUN_005fa8d0,VC7 STL generic ?construct,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
+0x005FA8F0,25,0x005FA908,FUN_005fa8f0,VC7 STL generic ?destroy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005FA910,29,0x005FA92C,FUN_005fa910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA930,43,0x005FA95A,FUN_005fa930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA960,162,0x005FAA01,FUN_005fa960,std::_Uninit_copy<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit

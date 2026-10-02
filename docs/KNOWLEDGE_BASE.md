@@ -694,3 +694,13 @@ control flow are checked. Some helpers encode a record width; others emit
 the same bytes for 16-, 44- and 116-byte aggregates, so no original target
 type or owner layout follows. Eight byte-identical `copy`/`copy_backward`
 cases remain pending because the probe alone cannot select their family.
+
+## Origin-only observations after R033
+
+Twenty-three short STL helper bodies have complete source matches and a
+separately checked typed call in a complete vendor caller. Three more
+byte-identical `copy`/`copy_backward` candidates resolve specifically to
+`copy` because complete `erase` callers name that symbol at their actual
+REL32 fields. Five dual-family candidates remain unresolved. Typed caller
+evidence disambiguates the source family, not the original record type, and
+neither caller nor callee gains authored source or exact credit.
