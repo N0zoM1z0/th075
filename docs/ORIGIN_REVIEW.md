@@ -743,3 +743,193 @@ tracking and current status also passed through the unchanged no-auth public
 Funnel Bash MCP using `scripts/repo-python`. The private receipt is
 `.analysis/public-r012-r014-origin-verification.json`. Public CI passed all
 41 tests and the title-image progress SVG was regenerated from current ledgers.
+
+## R015 — shared DirectSound and held-input policy
+
+Reviewed 2026-10-02. Fifteen complete custom bodies add 3,352 authored bytes.
+The target GUIDs at 0x0065B54C/0x0065B4AC/0x0065B48C match the pinned SDK's
+CLSID_DirectSound8, IID_IDirectSound8 and IID_IDirectSoundBuffer8 definitions.
+The family has its own client count, shared interfaces, window and
+DSound-Error diagnostics. Initialization tries cooperative level PRIORITY,
+then NORMAL, and creates the observed primary buffer. Buffer helpers replace
+previous interfaces, create/query the secondary interface, Lock/copy/Unlock,
+and preserve observed error/resource behavior. The RIFF reader finds WAVE,
+fmt and data chunks, accepts PCM format 1, and reads an 18-byte format header.
+This is custom integration policy; called Win32/CRT implementations retain
+separate ownership.
+
+Input mapping copies 40 bytes of bindings, validates its signed device
+selector, and maintains 28 bytes of held counts. Negative selector uses
+keyboard state at 0x00671240; otherwise it reads the reviewed joystick state.
+Its two directional counts reset on direction reversal and grow signed
+magnitude. Joystick thresholds are strictly below -500 or above 500. Five
+button counts reset on release and increment while held. The clear and
+key-state helpers participate in this same custom input protocol. Complete
+owner/record types remain unknown.
+
+The two audio-manager lifetime functions create the shared playback worker,
+set thread priority 15 and perform the observed thread/handle/buffer cleanup
+when the client count reaches zero. This does not grant ownership to generic
+container helpers or compiler EH handlers. The empty function at 0x004073A0
+remains pending because its body alone cannot distinguish source ownership.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x00406610` | 56 | `SharedSound::AcquireClient` |
+| `0x00406650` | 98 | `SharedSound::ReleaseClient` |
+| `0x004066C0` | 29 | `SharedSound::ShowError` |
+| `0x004066E0` | 311 | `SharedSound::Initialize` |
+| `0x00406820` | 500 | `SharedSound::LoadWaveBuffer` |
+| `0x00406A20` | 348 | `SharedSound::CreateBuffer` |
+| `0x00406B80` | 559 | `SharedSound::ReadPcmWave` |
+| `0x00406DB0` | 60 | `InputMapping::Initialize` |
+| `0x00406DF0` | 19 | `InputMapping::ReleaseClient` |
+| `0x00406E10` | 110 | `InputMapping::SetBindings` |
+| `0x00406E80` | 741 | `InputMapping::UpdateHeldCounts` |
+| `0x00407170` | 38 | `InputMapping::IsKeyDown` |
+| `0x004071A0` | 30 | `InputMapping::ClearHeldCounts` |
+| `0x004071C0` | 161 | `AudioStream::AcquireClient` |
+| `0x00407270` | 292 | `AudioStream::ReleaseClient` |
+
+All recorded bodies decode completely, retain their final physical RET and
+have only direct internal branches to instruction starts. Full target hashes
+and return/branch counts are in `authored-origin-evidence.csv`. Ghidra evidence
+was attested in a read-only project; complete instructions/decompiles are
+private under `.analysis/`. These origin decisions add no source, mapping
+or exact credit.
+
+## R016 — sound-bank serialization, playback and streaming worker
+
+Reviewed 2026-10-02. Fifteen complete custom bodies add 3,318 authored bytes.
+The bank loader constructs `%s\%03d.wav` names and populates the application's
+sound-buffer collection. Serialized readers/writer use a four-byte count,
+one-byte presence flag, four-byte buffer length, 18-byte wave format and
+sample bytes. The archive variant calls the application's resource helpers.
+This coordinated file format and buffer policy establishes authored ownership.
+Called generic containers and archive helpers remain separately reviewable.
+
+Playback resets the selected sound buffer, seeks to zero, converts the
+sound-bank volume to `(value - 100) * 50`, then starts non-looping playback.
+The tiny volume setters write actual bytes 0x0066C213 and 0x0066C214; Ghidra's
+nearby length_error string label does not describe these audio globals.
+Stream start uses looping playback and has a special zero-volume policy.
+Volume offsets clamp to [-10000, 0]. File/archive queue wrappers select the
+observed playback mode and request a 0x100000-byte streaming buffer.
+The queue's imported wchar_t/string labels are unsupported and remain pending.
+
+Fade configuration updates record fields and shared flags. The worker checks
+playback status/position, refills with the 0x20000-byte policy, applies the
+observed fade step times four, and handles stop/restart transitions. It waits
+80 milliseconds between iterations. The complete 535-byte worker includes
+its physical unreachable epilogue after the infinite loop; no body is
+truncated to the decompiler's reachable statements and no return is invented.
+Thread ABI, complete stream-owner types and original names remain unresolved.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x004073B0` | 13 | `SoundBank::SetVolume` |
+| `0x004073C0` | 13 | `AudioStream::SetVolume` |
+| `0x004073D0` | 367 | `SoundBank::LoadWaveDirectory` |
+| `0x00407540` | 341 | `SoundBank::LoadSerializedFile` |
+| `0x004076A0` | 310 | `SoundBank::LoadSerializedArchiveEntry` |
+| `0x004077E0` | 472 | `SoundBank::SaveSerializedFile` |
+| `0x004079C0` | 142 | `SoundBank::Play` |
+| `0x00407A50` | 289 | `AudioStream::QueueFile` |
+| `0x00407B80` | 283 | `AudioStream::QueueArchiveEntry` |
+| `0x00407CA0` | 29 | `AudioStream::ClearPlayback` |
+| `0x00407CC0` | 169 | `AudioStream::Start` |
+| `0x00407D70` | 88 | `AudioStream::Stop` |
+| `0x00407DD0` | 129 | `AudioStream::ApplyVolumeOffset` |
+| `0x00407E60` | 138 | `AudioStream::ScheduleFade` |
+| `0x00407EF0` | 535 | `AudioStream::Worker` |
+
+All recorded bodies decode completely, retain their final physical RET and
+have only direct internal branches to instruction starts. Full target hashes
+and return/branch counts are in `authored-origin-evidence.csv`. Ghidra evidence
+was attested in a read-only project; complete instructions/decompiles are
+private under `.analysis/`. These origin decisions add no source, mapping
+or exact credit.
+
+## R017 — stream records, game loop points and texture lifetimes
+
+Reviewed 2026-10-02. Twelve complete custom bodies add 5,789 authored bytes.
+File/archive stream openers read the observed WAVE offsets, choose full-load
+or streaming mode by data size, and initially fill half of the requested
+buffer. Archive access coordinates the shared loader/refill flags. Resource
+cleanup closes a privately owned file handle according to the record flag
+and releases the DirectSound interface. Initialization sets selected fields;
+it does not establish every record field or its complete C++ type.
+
+The loop-point readers scan the last 320 bytes for cue/adtl markers and
+convert their observed counts into byte offsets using a factor of four.
+The archive variant explicitly special-cases `wave\bgm\59.wav`, assigning
+0x60E8AC and 0x5E0D90. This filename-specific policy is strong authored
+ownership evidence. Preserve the original scan bounds, byte arithmetic and
+error paths when reconstruction resumes.
+
+The 1,724-byte refill function selects non-looping, full-loop or cue-loop
+policy, reads/zero-fills across data boundaries, updates the circular-buffer
+and file positions, and coordinates its shared flags. Its complete extent
+has no unresolved switch/jump table or external branch. Read lengths,
+wraparound and EOF arithmetic must be recovered from raw instructions before
+natural exact source is accepted; a plausible rewritten streaming algorithm
+would not establish equivalence.
+
+Texture-manager construction/destruction combines the reviewed graphics
+client protocol, palette ownership and separate texture/metadata containers.
+Destruction releases textures and tears down members/base in the observed
+order. Slot initialization selects byte format and allocates collections;
+the shared-texture variant creates 256-by-256 textures. The two format-setting
+functions have different observed condition chains at 0x0040B000/0x0040B110;
+do not normalize them into an imagined common validation rule. Generic
+container methods, allocator helpers and EH handlers remain separately pending.
+
+The deque-like helpers at 0x00409520/0x004095C0/0x004096A0/0x00409740 remain
+pending. The pinned VC7 deque source explains their map/index/size policy;
+a fresh probe using the real 64-byte D3DMATRIX SDK type matches their complete
+nonrelocation bytes and produced 76 diagnostic candidate addresses. The game
+stream record is not claimed to be a matrix. Every call/data binding and
+ambiguous alias still needs independent review. Private probe, object and
+survey are under `.analysis/StreamDequeOrigins.cpp`,
+`build/probes/StreamDequeOrigins.obj` and `.analysis/r018-stream-deque-*`.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x00408110` | 627 | `AudioStreamRecord::OpenFile` |
+| `0x00408390` | 727 | `AudioStreamRecord::OpenArchiveEntry` |
+| `0x00408670` | 644 | `AudioStreamRecord::ReadLoopPointsFromFile` |
+| `0x00408900` | 713 | `AudioStreamRecord::ReadLoopPointsFromArchive` |
+| `0x00408BD0` | 1724 | `AudioStreamRecord::RefillBuffer` |
+| `0x00409290` | 83 | `AudioStreamRecord::Initialize` |
+| `0x004092F0` | 87 | `AudioStreamRecord::ReleaseResources` |
+| `0x0040AD80` | 177 | `TextureManager::Initialize` |
+| `0x0040AE40` | 434 | `TextureManager::ReleaseResources` |
+| `0x0040B000` | 261 | `TextureManager::AllocateSharedTextures` |
+| `0x0040B110` | 184 | `TextureManager::AllocateTextureSlots` |
+| `0x0040B1D0` | 128 | `TextureManager::AllocateUnformattedSlots` |
+
+All recorded bodies decode completely, retain their final physical RET and
+have only direct internal branches to instruction starts. Full target hashes
+and return/branch counts are in `authored-origin-evidence.csv`. Ghidra evidence
+was attested in a read-only project; complete instructions/decompiles are
+private under `.analysis/`. These origin decisions add no source, mapping
+or exact credit.
+
+`scripts/verify-authored-origins.py` now rechecks all 70 explicitly recorded
+authored bodies / 18,875 bytes against the pinned target, their ledger entries,
+complete decoding, hashes and CFG counts. Semantic ownership remains supported
+by the documented manual evidence, not inferred automatically from a hash.
+The verifier currently accepts final-RET bodies with direct internal branches;
+other boundary forms need explicit future evidence. Three public regressions
+reject incomplete instructions, hidden external tails and mid-instruction jumps.
+
+Current totals are 569 reviewed origins: 117 authored, 447 library and five
+compiler; 3,782 remain pending. Exact stays at 42 functions / 8,916 bytes from
+the provisional 31,218-byte authored set (28.56%). Finish all origins before
+resuming exact reconstruction; the goal remains incomplete.
+
+All 70 recorded authored extents and the target-required tracking/status
+checks also passed through the unchanged no-auth public Funnel Bash MCP with
+`scripts/repo-python`; private receipt:
+`.analysis/public-r015-r017-origin-verification.json`. Public CI passed all
+44 tests and the title-image progress SVG is current.

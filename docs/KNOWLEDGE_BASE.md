@@ -535,3 +535,27 @@ its complete record and owner layout remain unknown. A real DIDEVCAPS-sized
 vendor probe investigates generic vector policy only and provides no evidence
 that the target record uses that SDK type. The converter at `0x0041B990`
 and container operations remain separately reviewable.
+
+## Origin-only observations after R017
+
+R015/R016/R017 add 42 custom audio/input/texture lifetime bodies and no exact
+credit. The sound bank uses its own serialized count/presence/length/18-byte
+wave-format/sample layout. Held input has signed directional durations and
+five button counts, with joystick thresholds -500 and 500. BGM streaming has
+separate load/refill flags, the observed ring-buffer/EOF policies, volume/fade
+transitions and a dedicated `wave\bgm\59.wav` loop-point exception. These
+behaviors identify useful core candidates after the complete origin review.
+
+The physical worker extent includes its unreachable epilogue. Preserve the
+original first-use/cache, queue/thread/resource order and arithmetic rather
+than introducing intended behavior. Texture-slot initializers have different
+observed format conditions at `0x0040B000/0x0040B110`; their equivalence is not
+established. Complete owners, original names and some call ABIs remain unknown.
+
+The stream queue's pop/push/clear policy is consistent with pinned VC7 deque
+source and a fresh 64-byte D3DMATRIX probe. Those generic helpers remain
+pending until full bindings and alias context are independently verified.
+The probe does not identify the application's stream record as D3DMATRIX.
+`verify-authored-origins.py` rechecks the 70 recorded manual-review bodies,
+their target hashes and full internal CFG; it does not infer ownership from
+machine similarity or create source/exact credit.

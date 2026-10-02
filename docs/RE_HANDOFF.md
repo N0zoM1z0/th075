@@ -10,20 +10,20 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  75 authored, 447 library and five compiler candidates; 3,824 origins remain
+  117 authored, 447 library and five compiler candidates; 3,782 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 18,759, with 8,916 exact (47.53%).
+  The current reviewed authored-byte denominator is 31,218, with 8,916 exact (28.56%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R014 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R017 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 41 passing
+  across six objects through scripts/repo-python after F005. Public CI has 44 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -116,6 +116,23 @@ deferred subsequent phases. Write documentation and handoffs in English.
   Public CI passed all 41 tests and progress is current. The private receipt
   is `.analysis/public-r012-r014-origin-verification.json`. Exact remains
   deferred at 42 functions / 8,916 bytes; the full goal remains incomplete.
+- R015/R016/R017 reviewed 42 custom sound/input/stream/texture lifetime
+  functions, 12,459 authored bytes. This includes the game's sound-bank file
+  format, signed held-input counts, BGM playback/fade/refill and its dedicated
+  wave\bgm\59.wav loop-point case. Generic deque/vector helpers remain
+  separately pending; source names, ABI and complete owner layouts are unknown.
+- verify-authored-origins.py rechecks 70 explicitly recorded bodies / 18,875
+  bytes, full target hashes and internal CFG. This rechecks boundaries rather
+  than automatically proving semantic ownership, and adds no exact credit.
+- The fresh 64-byte D3DMATRIX deque probe produced 76 diagnostic pending
+  addresses under `.analysis/r018-stream-deque-*`. The SDK type only probes
+  generic size-dependent container policy, not the game stream record type.
+  The compiler session is complete; no build/query session remains active.
+- R015/R016/R017 authored extent verification and target-required tracking/
+  status checks passed through the existing no-auth public Funnel MCP using
+  scripts/repo-python. Private receipt:
+  `.analysis/public-r015-r017-origin-verification.json`. Public CI passed
+  44 tests and the progress SVG is current. Origin review remains incomplete.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -172,11 +189,13 @@ usable anchors; relocated dispatch tables and mutable globals need their own
 proof. Continue the private 83-address vendor-container diagnostic from
 `.analysis/r015-metadata-vector-hits.json`, using its fresh compiler object
 and complete typed call context before crediting a match. No compiler build
-is currently active. Neither survey alone grants credit. Also follow
+is currently active. Neither survey alone grants credit. Also review the fresh 76-address stream-deque diagnostic and its helper bindings
+under `.analysis/r018-stream-deque-hits.json`. Then follow
 the remaining container/string helpers starting at
-`0x004063F0`, then follow the reviewed custom sprite/geometry family into
-texture-manager lifetimes and the unreviewed generic accessor at
-`0x0040DD60`; the custom resolver `0x0040C8C0` is now reviewed. Review the
+`0x004063F0`, then follow the reviewed custom texture-manager family into
+resource loading at `0x0040B250/0x0040B280/0x0040B560/0x0040B7C0` and
+the unreviewed generic accessor at `0x0040DD60`; the custom resolver
+`0x0040C8C0` and manager lifetimes are now reviewed. Review the
 math/constructor aliases separately; do not inherit origin from these callers.
 Keep vendor
 and custom ownership separate. Finish every origin review before resuming
