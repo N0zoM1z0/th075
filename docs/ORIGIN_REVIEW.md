@@ -2363,3 +2363,39 @@ passed, and the unchanged no-auth public Funnel MCP reran the authored
 verifier and tracking checks. Private receipt:
 `.analysis/public-r052-origin-verification.json`. R051 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37022186738.
+
+## R053 — score persistence, glyphs, archives and scene callbacks
+
+Twenty-two more complete authored bodies / 5,215 bytes have full target
+hashes and decoded local CFG in `config/authored-origin-evidence.csv`.
+`0x00416B10` reads both observed `score.dat` layouts, selecting by file
+size; `0x004169E0` writes the newer layout and occasionally changes a
+256-byte trailing field using `rand`. `0x00416EE0` inserts a score into a
+ten-entry ranking, shifting records and stamping the current date. These
+functions share offsets with the R052 progress initializer but do not yet
+establish a complete owner layout.
+
+`0x0041C1B0` uses `GetGlyphOutlineA` to allocate a glyph bitmap and record
+its metrics. The archive catalog functions at `0x0041CE50`, `0x0041CF80`
+and `0x0041D080` manage named archive handles; `0x0041D750` and
+`0x0041D800` search an archive entry and seek to its stored offset, the
+latter also returning the recorded size. The decompiled iterator condition
+has not yet been resolved to a natural C++ expression, so these roles are
+descriptive rather than exact-source claims.
+
+The remaining functions initialize/draw/update the battle-end, loading,
+logo, replay and result-list scenes, with direct `.dat` asset names and
+input-global evidence. `0x00417000` fills a game surface black.
+`0x0042C270` displays a replay filename using its target prefix check.
+Two similar replay input pollers write at different object offsets. The
+large neighboring STL vector bodies and unresolved switch/tail bodies
+remain pending; none inherits authorship from these call relationships.
+
+R053 is origin-only. Totals are 1,871 reviewed: 515 authored, 792 library
+and 564 compiler; 2,480 remain pending. Exact remains 42 functions / 8,916
+bytes against the provisional 1,795,820-byte authored slice (0.50%).
+Local CI passed 98 tests, target-required tracking and progress freshness
+passed, and the unchanged no-auth public Funnel MCP reran all authored
+origin extents and tracking checks. Private receipt:
+`.analysis/public-r053-origin-verification.json`. R052 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37022645391.

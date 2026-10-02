@@ -917,3 +917,14 @@ of neighboring VC7 container functions. Three replay-number drawing bodies
 are identical whole functions at separate addresses; call-site-specific
 names remain provisional. The archive entry format and full progress owner
 layout remain unresolved. R052 adds no source or exact credit.
+
+## Origin-only observations after R053
+
+The score file has two observed read layouts selected by file size; the
+writer emits the newer field order. A ranking insertion shifts ten 16-byte
+records and stamps a date. A glyph helper calls `GetGlyphOutlineA` twice,
+first to get the bitmap size and then to fill an allocated buffer. Archive
+catalog lifetime and named-entry seeking are custom game code, while the
+adjacent iterator/container helpers remain separately pending. Scene setup
+uses literal `load.dat` and `logo.dat` asset paths. R053 adds no source or
+exact credit.
