@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  312 authored, 767 library and 564 compiler candidates; 2,708 origins remain
+  343 authored, 767 library and 564 compiler candidates; 2,677 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 220,507, with 8,916 exact (4.04%).
+  The current reviewed authored-byte denominator is 524,642, with 8,916 exact (1.70%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R046 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R047 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -559,3 +559,16 @@ authored bytes (4.04%). Local CI and the public MCP verification passed;
 private receipt:
 `.analysis/public-r046-origin-verification.json`. R045 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37018599753.
+
+R047 reviews 31 complete character-specific action and AI bodies / 304,135
+bytes. Ten action dispatchers have checked calls to game input/transition
+routines; 21 AI-choice functions branch on opponent geometry, fighter state
+and action IDs. Vector and math helpers called by them retain independent
+origins. Each body is wholly hashed and has in-extent direct CFG.
+Neighboring functions with unresolved indirect jumps remain pending. Totals
+are 1,674 reviewed (343 authored, 767 library, 564 compiler), 2,677 pending;
+exact remains 42 / 8,916 bytes against provisional 524,642 authored bytes
+(1.70%). Character identity and original method names remain unresolved.
+Local CI and the unchanged no-auth public MCP verification passed; private
+receipt: `.analysis/public-r047-origin-verification.json`. R046 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37019016587.

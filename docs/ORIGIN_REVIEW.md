@@ -2136,3 +2136,43 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r046-origin-verification.json`. R045 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37018599753.
+
+## R047 — complete character action and AI routines
+
+Thirty-one large, complete functions between `0x0047` and `0x005E` add
+304,135 authored-origin bytes. They form two recurring families, confirmed
+by decompilation of all 31 bodies and by their decoded direct calls. Every
+whole body has its own pinned-target SHA-256, one final RET and only in-extent
+direct branches. Each `CharacterAction` body combines vector access
+(`0x004420B0`) with game-specific input capture (`0x00455B30`), action
+transition (`0x0040FAC0`) and state clearing (`0x00453A10`). Each
+`CharacterAI` body calls a math wrapper (`0x00412D90`) and fighter-state
+predicate (`0x00454F90`) while branching on opponent position, game state and
+character-specific action IDs. These call destinations and their behavior
+were checked in the pinned target. The vector/math helpers do not inherit
+authored ownership from these callers.
+
+The ten action-dispatch entries are `0x00493470`, `0x004C0AD0`,
+`0x004E2F20`, `0x00502450`, `0x0052D230`, `0x00551C00`, `0x00574370`,
+`0x00597660`, `0x005C0D70` and `0x005E2310` (139,026 bytes). The 21 AI-choice
+entries are `0x00472890`, `0x00474B40`, `0x00499030`, `0x0049B070`,
+`0x004C6B50`, `0x004C8CD0`, `0x004E7DE0`, `0x004EA090`, `0x005086E0`,
+`0x00532950`, `0x005349B0`, `0x00557380`, `0x00558F50`, `0x00579650`,
+`0x0057B900`, `0x0059D240`, `0x0059F4F0`, `0x005C5D10`, `0x005C7FC0`,
+`0x005E7370` and `0x005E9620` (165,109 bytes). Address-qualified labels in
+the ledger distinguish these bodies without prematurely assigning character
+names or original method names. Neighboring larger functions with unresolved
+indirect jumps remain pending.
+
+R047 changes origin review only; no source, mapping or exact credit is added.
+Totals are 1,674 reviewed: 343 authored, 767 library and 564 compiler;
+2,677 remain pending. Exact stays 42 functions / 8,916 bytes against the
+provisional 524,642-byte authored slice (1.70%). Finish origin review before
+exact reconstruction. These very large functions change the cost picture for
+the later 50%-of-authored-bytes objective; that denominator is still
+provisional until all origins are reviewed.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r047-origin-verification.json`. R046 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37019016587.

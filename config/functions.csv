@@ -2186,8 +2186,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00472460,44,0x0047248B,FUN_00472460,VC7::ScalarDeletingDestructor_00472460,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00472490,19,0x004724A2,FUN_00472490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004724B0,982,0x00472885,FUN_004724b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00472890,8871,0x00474B36,FUN_00472890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00474B40,7780,0x004769A3,FUN_00474b40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00472890,8871,0x00474B36,FUN_00472890,CharacterAI::ChooseAt00472890,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00474B40,7780,0x004769A3,FUN_00474b40,CharacterAI::ChooseAt00474B40,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004769B0,134,0x00476A35,FUN_004769b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00476A40,50915,0x00483122,FUN_00476a40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00483300,21,0x00483314,FUN_00483300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2199,7 +2199,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00493130,780,0x0049343B,FUN_00493130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00493440,19,0x00493452,FUN_00493440,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00493460,11,0x0049346A,FUN_00493460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00493470,14312,0x00496C57,FUN_00493470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00493470,14312,0x00496C57,FUN_00493470,CharacterAction::DispatchAt00493470,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00496C60,1027,0x00497062,FUN_00496c60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00497070,1291,0x0049757A,FUN_00497070,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00497580,130,0x00497601,FUN_00497580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2208,8 +2208,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00498B90,44,0x00498BBB,FUN_00498b90,VC7::ScalarDeletingDestructor_00498B90,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00498BC0,19,0x00498BD2,FUN_00498bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00498BE0,1099,0x0049902A,FUN_00498be0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00499030,8256,0x0049B06F,FUN_00499030,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0049B070,6097,0x0049C840,FUN_0049b070,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00499030,8256,0x0049B06F,FUN_00499030,CharacterAI::ChooseAt00499030,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x0049B070,6097,0x0049C840,FUN_0049b070,CharacterAI::ChooseAt0049B070,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0049C850,146,0x0049C8E1,FUN_0049c850,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0049C8F0,46596,0x004A7EF3,FUN_0049c8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004A80F0,3935,0x004A904E,FUN_004a80f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2220,7 +2220,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004C09A0,247,0x004C0A96,FUN_004c09a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C0AA0,19,0x004C0AB2,FUN_004c0aa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C0AC0,11,0x004C0ACA,FUN_004c0ac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004C0AD0,16098,0x004C49B1,FUN_004c0ad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004C0AD0,16098,0x004C49B1,FUN_004c0ad0,CharacterAction::DispatchAt004C0AD0,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004C49C0,1757,0x004C509C,FUN_004c49c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C50A0,130,0x004C5121,FUN_004c50a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C5150,3800,0x004C6027,FUN_004c5150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2229,8 +2229,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004C66B0,44,0x004C66DB,FUN_004c66b0,VC7::ScalarDeletingDestructor_004C66B0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004C66E0,19,0x004C66F2,FUN_004c66e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C6700,1099,0x004C6B4A,FUN_004c6700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004C6B50,8572,0x004C8CCB,FUN_004c6b50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004C8CD0,6504,0x004CA637,FUN_004c8cd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004C6B50,8572,0x004C8CCB,FUN_004c6b50,CharacterAI::ChooseAt004C6B50,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004C8CD0,6504,0x004CA637,FUN_004c8cd0,CharacterAI::ChooseAt004C8CD0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004CA640,146,0x004CA6D1,FUN_004ca640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004CA6E0,42511,0x004D4CEE,FUN_004ca6e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004D4EA0,11859,0x004D7CF2,FUN_004d4ea0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2240,7 +2240,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004E2E10,223,0x004E2EEE,FUN_004e2e10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E2EF0,19,0x004E2F02,FUN_004e2ef0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E2F10,11,0x004E2F1A,FUN_004e2f10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004E2F20,13170,0x004E6291,FUN_004e2f20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004E2F20,13170,0x004E6291,FUN_004e2f20,CharacterAction::DispatchAt004E2F20,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004E62A0,256,0x004E639F,FUN_004e62a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E63A0,130,0x004E6421,FUN_004e63a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E6450,3800,0x004E7327,FUN_004e6450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2249,8 +2249,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004E79B0,44,0x004E79DB,FUN_004e79b0,VC7::ScalarDeletingDestructor_004E79B0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004E79E0,19,0x004E79F2,FUN_004e79e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E7A00,982,0x004E7DD5,FUN_004e7a00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004E7DE0,8871,0x004EA086,FUN_004e7de0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004EA090,7279,0x004EBCFE,FUN_004ea090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004E7DE0,8871,0x004EA086,FUN_004e7de0,CharacterAI::ChooseAt004E7DE0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004EA090,7279,0x004EBCFE,FUN_004ea090,CharacterAI::ChooseAt004EA090,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004EBD00,146,0x004EBD91,FUN_004ebd00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004EBDA0,33293,0x004F3FAC,FUN_004ebda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004F4170,855,0x004F44C6,FUN_004f4170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2261,7 +2261,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00502340,211,0x00502412,FUN_00502340,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00502420,19,0x00502432,FUN_00502420,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00502440,11,0x0050244A,FUN_00502440,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00502450,13839,0x00505A5E,FUN_00502450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00502450,13839,0x00505A5E,FUN_00502450,CharacterAction::DispatchAt00502450,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00505A60,1576,0x00506087,FUN_00505a60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00506090,130,0x00506111,FUN_00506090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00506140,3800,0x00507017,FUN_00506140,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2271,7 +2271,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005076D0,19,0x005076E2,FUN_005076d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005076F0,1060,0x00507B13,FUN_005076f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00507B20,3000,0x005086D7,FUN_00507b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005086E0,7676,0x0050A4DB,FUN_005086e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005086E0,7676,0x0050A4DB,FUN_005086e0,CharacterAI::ChooseAt005086E0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0050A4E0,146,0x0050A571,FUN_0050a4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0050A580,81539,0x0051E402,FUN_0050a580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0051E640,11521,0x00521340,FUN_0051e640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2282,7 +2282,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0052D110,225,0x0052D1F0,FUN_0052d110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0052D200,19,0x0052D212,FUN_0052d200,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0052D220,11,0x0052D22A,FUN_0052d220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0052D230,12146,0x005301A1,FUN_0052d230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0052D230,12146,0x005301A1,FUN_0052d230,CharacterAction::DispatchAt0052D230,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005301B0,1008,0x0053059F,FUN_005301b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005305A0,130,0x00530621,FUN_005305a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00530650,3822,0x0053153D,FUN_00530650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2333,8 +2333,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00532500,5,0x00532504,FUN_00532500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00532510,16,0x0053251F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00532520,1060,0x00532943,FUN_00532520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00532950,8273,0x005349A0,FUN_00532950,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005349B0,6567,0x00536356,FUN_005349b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00532950,8273,0x005349A0,FUN_00532950,CharacterAI::ChooseAt00532950,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005349B0,6567,0x00536356,FUN_005349b0,CharacterAI::ChooseAt005349B0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00536360,146,0x005363F1,FUN_00536360,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00536400,39999,0x0054003E,FUN_00536400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00540220,32,0x0054023F,FUN_00540220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2348,7 +2348,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00551B20,175,0x00551BCE,FUN_00551b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00551BD0,19,0x00551BE2,FUN_00551bd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00551BF0,11,0x00551BFA,FUN_00551bf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00551C00,14631,0x00555526,FUN_00551c00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00551C00,14631,0x00555526,FUN_00551c00,CharacterAction::DispatchAt00551C00,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00555530,1028,0x00555933,FUN_00555530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00555940,130,0x005559C1,FUN_00555940,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005559F0,3800,0x005568C7,FUN_005559f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2357,8 +2357,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00556F50,44,0x00556F7B,FUN_00556f50,VC7::ScalarDeletingDestructor_00556F50,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00556F80,19,0x00556F92,FUN_00556f80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00556FA0,982,0x00557375,FUN_00556fa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00557380,7113,0x00558F48,FUN_00557380,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00558F50,7303,0x0055ABD6,FUN_00558f50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00557380,7113,0x00558F48,FUN_00557380,CharacterAI::ChooseAt00557380,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00558F50,7303,0x0055ABD6,FUN_00558f50,CharacterAI::ChooseAt00558F50,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0055ABE0,146,0x0055AC71,FUN_0055abe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0055AC80,28432,0x00561B8F,FUN_0055ac80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00561D40,11569,0x00564A70,FUN_00561d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2368,7 +2368,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00574290,175,0x0057433E,FUN_00574290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00574340,19,0x00574352,FUN_00574340,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00574360,11,0x0057436A,FUN_00574360,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00574370,13278,0x0057774D,FUN_00574370,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00574370,13278,0x0057774D,FUN_00574370,CharacterAction::DispatchAt00574370,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00577750,1121,0x00577BB0,FUN_00577750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00577BC0,130,0x00577C41,FUN_00577bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00577C70,3800,0x00578B47,FUN_00577c70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2377,8 +2377,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005791D0,44,0x005791FB,FUN_005791d0,VC7::ScalarDeletingDestructor_005791D0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00579200,19,0x00579212,FUN_00579200,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00579220,1060,0x00579643,FUN_00579220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00579650,8871,0x0057B8F6,FUN_00579650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0057B900,7125,0x0057D4D4,FUN_0057b900,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00579650,8871,0x0057B8F6,FUN_00579650,CharacterAI::ChooseAt00579650,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x0057B900,7125,0x0057D4D4,FUN_0057b900,CharacterAI::ChooseAt0057B900,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0057D4E0,146,0x0057D571,FUN_0057d4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0057D580,43845,0x005880C4,FUN_0057d580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005882B0,11102,0x0058AE0D,FUN_005882b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2388,7 +2388,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00597500,295,0x00597626,FUN_00597500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00597630,19,0x00597642,FUN_00597630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00597650,11,0x0059765A,FUN_00597650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00597660,15918,0x0059B48D,FUN_00597660,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00597660,15918,0x0059B48D,FUN_00597660,CharacterAction::DispatchAt00597660,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0059B490,679,0x0059B736,FUN_0059b490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059B740,130,0x0059B7C1,FUN_0059b740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059B7F0,3797,0x0059C6C4,FUN_0059b7f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2397,8 +2397,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0059CD50,44,0x0059CD7B,FUN_0059cd50,VC7::ScalarDeletingDestructor_0059CD50,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0059CD80,19,0x0059CD92,FUN_0059cd80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059CDA0,1177,0x0059D238,FUN_0059cda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0059D240,8871,0x0059F4E6,FUN_0059d240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0059F4F0,8294,0x005A1555,FUN_0059f4f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0059D240,8871,0x0059F4E6,FUN_0059d240,CharacterAI::ChooseAt0059D240,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x0059F4F0,8294,0x005A1555,FUN_0059f4f0,CharacterAI::ChooseAt0059F4F0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005A1560,146,0x005A15F1,FUN_005a1560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005A1600,43599,0x005AC04E,FUN_005a1600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005AC250,10998,0x005AED45,FUN_005ac250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2408,7 +2408,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005C0C30,261,0x005C0D34,FUN_005c0c30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C0D40,19,0x005C0D52,FUN_005c0d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C0D60,11,0x005C0D6A,FUN_005c0d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005C0D70,12857,0x005C3FA8,FUN_005c0d70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005C0D70,12857,0x005C3FA8,FUN_005c0d70,CharacterAction::DispatchAt005C0D70,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005C3FB0,874,0x005C4319,FUN_005c3fb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C4320,130,0x005C43A1,FUN_005c4320,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C43D0,3797,0x005C52A4,FUN_005c43d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2417,8 +2417,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005C5930,44,0x005C595B,FUN_005c5930,VC7::ScalarDeletingDestructor_005C5930,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005C5960,19,0x005C5972,FUN_005c5960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C5980,904,0x005C5D07,FUN_005c5980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005C5D10,8871,0x005C7FB6,FUN_005c5d10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005C7FC0,7264,0x005C9C1F,FUN_005c7fc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005C5D10,8871,0x005C7FB6,FUN_005c5d10,CharacterAI::ChooseAt005C5D10,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005C7FC0,7264,0x005C9C1F,FUN_005c7fc0,CharacterAI::ChooseAt005C7FC0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005C9C20,146,0x005C9CB1,FUN_005c9c20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C9CC0,43501,0x005D46AC,FUN_005c9cc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005D4890,10712,0x005D7267,FUN_005d4890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2428,7 +2428,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005E21F0,235,0x005E22DA,FUN_005e21f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E22E0,19,0x005E22F2,FUN_005e22e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E2300,11,0x005E230A,FUN_005e2300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005E2310,12777,0x005E54F8,FUN_005e2310,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005E2310,12777,0x005E54F8,FUN_005e2310,CharacterAction::DispatchAt005E2310,CharacterAction,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005E5500,1027,0x005E5902,FUN_005e5500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E5910,130,0x005E5991,FUN_005e5910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E59C0,3797,0x005E6894,FUN_005e59c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2437,8 +2437,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005E6F20,44,0x005E6F4B,FUN_005e6f20,VC7::ScalarDeletingDestructor_005E6F20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005E6F50,19,0x005E6F62,FUN_005e6f50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E6F70,1021,0x005E736C,FUN_005e6f70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005E7370,8871,0x005E9616,FUN_005e7370,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005E9620,7780,0x005EB483,FUN_005e9620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005E7370,8871,0x005E9616,FUN_005e7370,CharacterAI::ChooseAt005E7370,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005E9620,7780,0x005EB483,FUN_005e9620,CharacterAI::ChooseAt005E9620,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005EB490,134,0x005EB515,FUN_005eb490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005EB520,34434,0x005F3BA1,FUN_005eb520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F3D60,12400,0x005F6DCF,FUN_005f3d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

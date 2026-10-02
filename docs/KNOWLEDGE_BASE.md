@@ -854,3 +854,14 @@ character-specific vtable. Her action dispatcher is a single complete
 pattern IDs through the project's lookup and transition calls. This is a
 potentially central but expensive exact-reconstruction candidate after the
 origin-review gate. The five R046 decisions add no source or exact credit.
+
+## Origin-only observations after R047
+
+Ten complete character action dispatchers and 21 complete AI-choice bodies
+share game-specific call patterns while encoding many per-character action
+IDs and decisions. They add 304,135 bytes to the provisional authored slice,
+so later exact-work prioritization must account for these large bodies and
+their dependencies. Address-qualified names avoid inventing character
+ownership from proximity. Larger neighboring bodies with indirect jumps
+still require separate control-flow evidence. The R047 decisions add no
+source or exact credit.
