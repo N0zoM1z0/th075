@@ -631,3 +631,14 @@ unwind helper similarly matches its vendor member and has a checked 34-byte
 preceding handler dependency. The 119-byte floating-point conversion body
 now binds both calls to separately verified CRT bodies. All four remain
 library-origin exclusions, with no authored source or exact credit.
+
+## Origin-only observations after R027
+
+Thirty-one short D3DX8 functions have complete, relocation-free vendor COMDAT
+matches and individually checked typed caller references. The caller bodies
+supply symbol/alias context; their own origins remain separate. This added
+JPEG, PNG, file/resource/image and stack anchors that the earlier size-filtered
+diagnostic missed. Fifteen further JPEG/zlib bodies then passed whole-function
+comparison with all 34 direct calls bound to independently verified SDK
+functions. Indirect calls in those bodies grant no ownership to their targets.
+These batches add no authored source or exact credit.

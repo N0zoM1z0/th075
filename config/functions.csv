@@ -2763,7 +2763,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0060B7AF,1421,0x0060BD3B,FUN_0060b7af,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060BD3C,177,0x0060BDEC,FUN_0060bd3c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060BE10,227,0x0060BEF2,FUN_0060be10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060BEF3,18,0x0060BF04,FUN_0060bef3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060BEF3,18,0x0060BF04,FUN_0060bef3,??0CD3DXFile@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0060BF05,272,0x0060C014,FUN_0060bf05,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060C015,202,0x0060C0DE,FUN_0060c015,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060C0DF,65,0x0060C11F,FUN_0060c0df,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2782,12 +2782,12 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0060D7A9,2188,0x0060E034,FUN_0060d7a9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060E0E0,1013,0x0060E4D4,FUN_0060e0e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060E599,1219,0x0060EA5B,FUN_0060e599,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060EA5C,13,0x0060EA68,FUN_0060ea5c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060EA5C,13,0x0060EA68,FUN_0060ea5c,??0CD3DXResource@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0060EA69,14,0x0060EA76,FUN_0060ea69,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EA77,31,0x0060EA95,FUN_0060ea77,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EA96,142,0x0060EB23,FUN_0060ea96,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EB24,144,0x0060EBB3,FUN_0060eb24,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060EBB4,25,0x0060EBCC,FUN_0060ebb4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060EBB4,25,0x0060EBCC,FUN_0060ebb4,??0CD3DXImage@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0060EBCD,89,0x0060EC25,FUN_0060ebcd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EC26,28,0x0060EC41,FUN_0060ec26,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EC42,195,0x0060ED04,FUN_0060ec42,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2804,8 +2804,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00610CCD,713,0x00610F95,FUN_00610ccd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00610F96,48,0x00610FC5,FUN_00610f96,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00610FC6,469,0x0061119A,FUN_00610fc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0061119B,10,0x006111A4,FUN_0061119b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006111A5,30,0x006111C2,FUN_006111a5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061119B,10,0x006111A4,FUN_0061119b,??0CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x006111A5,30,0x006111C2,FUN_006111a5,??1CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006111EA,701,0x006114A6,FUN_006111ea,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006114A7,76,0x006114F2,FUN_006114a7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006114F3,1140,0x00611966,FUN_006114f3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2838,10 +2838,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00613F60,1841,0x00614690,FUN_00613f60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00614691,930,0x00614A32,FUN_00614691,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00614A33,282,0x00614B4C,FUN_00614a33,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00614B4D,16,0x00614B5C,FUN_00614b4d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00614B4D,16,0x00614B5C,FUN_00614b4d,??0CD3DXLockSurface@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00614B5D,105,0x00614BC5,FUN_00614b5d,?Unlock@CD3DXLockSurface@@QAEJXZ,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00614BC6,6,0x00614BCB,FUN_00614bc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00614BCC,22,0x00614BE1,FUN_00614bcc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00614BCC,22,0x00614BE1,FUN_00614bcc,?Unlock@CD3DXLockVolume@@QAEJXZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00614BE2,5,0x00614BE6,FUN_00614be2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00614BE7,1043,0x00614FF9,FUN_00614be7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00614FFA,5,0x00614FFE,FUN_00614ffa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3126,12 +3126,12 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0061F45E,321,0x0061F59E,FUN_0061f45e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061F59F,1299,0x0061FAB1,FUN_0061f59f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FAB2,117,0x0061FB26,FUN_0061fab2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0061FB27,16,0x0061FB36,FUN_0061fb27,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FB27,16,0x0061FB36,FUN_0061fb27,??0CD3DXDwStack@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0061FB37,14,0x0061FB44,FUN_0061fb37,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FB45,110,0x0061FBB2,FUN_0061fb45,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FBB3,52,0x0061FBE6,FUN_0061fbb3,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0061FBE7,8,0x0061FBEE,FUN_0061fbe7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0061FBEF,19,0x0061FC01,FUN_0061fbef,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FBEF,19,0x0061FC01,FUN_0061fbef,??0CD3DXSzStack@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0061FC02,49,0x0061FC32,FUN_0061fc02,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FC33,179,0x0061FCE5,FUN_0061fc33,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FCE6,52,0x0061FD19,FUN_0061fce6,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3174,7 +3174,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006213B2,572,0x006215ED,FUN_006213b2,?get_app0@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006215EE,378,0x00621767,FUN_006215ee,?get_app14@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00621768,343,0x006218BE,FUN_00621768,?get_dac@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
-0x006218BF,660,0x00621B52,FUN_006218bf,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006218BF,660,0x00621B52,FUN_006218bf,?get_dht@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x00621B53,553,0x00621D7B,FUN_00621b53,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00621D7C,215,0x00621E52,FUN_00621d7c,?get_dri@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00621E53,156,0x00621EEE,FUN_00621e53,?skip_variable@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3186,9 +3186,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0062245E,26,0x00622477,FUN_0062245e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062256F,76,0x006225BA,FUN_0062256f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006225BB,135,0x00622641,FUN_006225bb,?png_format_buffer@D3DX@@YAXPAUpng_struct_def@1@PADPBD@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
-0x0062264F,26,0x00622668,FUN_0062264f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062264F,26,0x00622668,FUN_0062264f,?png_set_error_fn@D3DX@@YAXPAUpng_struct_def@1@PAXP6AX0PBD@Z3@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00622671,29,0x0062268D,FUN_00622671,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062268F,21,0x006226A3,FUN_0062268f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062268F,21,0x006226A3,FUN_0062268f,?png_warning@D3DX@@YAXPAUpng_struct_def@1@PBD@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006226A4,37,0x006226C8,FUN_006226a4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006226C9,37,0x006226ED,FUN_006226c9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006226EE,259,0x006227F0,FUN_006226ee,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3201,25 +3201,25 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00622EC4,256,0x00622FC3,FUN_00622ec4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00622FC4,291,0x006230E6,FUN_00622fc4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006230F6,129,0x00623176,FUN_006230f6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00623177,26,0x00623190,FUN_00623177,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00623191,22,0x006231A6,FUN_00623191,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006231A7,22,0x006231BC,FUN_006231a7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00623177,26,0x00623190,FUN_00623177,?png_get_valid@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@K@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x00623191,22,0x006231A6,FUN_00623191,?png_get_rowbytes@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x006231A7,22,0x006231BC,FUN_006231a7,?png_get_channels@D3DX@@YAEPAUpng_struct_def@1@PAUpng_info_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006231D3,41,0x006231FB,FUN_006231d3,?png_get_gAMA@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@PAN@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006231FC,43,0x00623226,FUN_006231fc,?png_get_sRGB@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@PAH@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00623227,209,0x006232F7,FUN_00623227,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006232F8,51,0x0062332A,FUN_006232f8,?png_get_PLTE@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@PAPAUpng_color_struct@1@PAH@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0062332B,103,0x00623391,FUN_0062332b,?png_get_tRNS@D3DX@@YAKPAUpng_struct_def@1@PAUpng_info_struct@1@PAPAEPAHPAPAUpng_color_16_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00623392,9,0x0062339A,FUN_00623392,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062339B,18,0x006233AC,FUN_0062339b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006233AD,25,0x006233C5,FUN_006233ad,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006233DF,25,0x006233F7,FUN_006233df,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00623392,9,0x0062339A,FUN_00623392,?png_set_bgr@D3DX@@YAXPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x0062339B,18,0x006233AC,FUN_0062339b,?png_set_swap@D3DX@@YAXPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x006233AD,25,0x006233C5,FUN_006233ad,?png_set_packing@D3DX@@YAXPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x006233DF,25,0x006233F7,FUN_006233df,?png_set_interlace_handling@D3DX@@YAHPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006233F8,77,0x00623444,FUN_006233f8,?png_set_filler@D3DX@@YAXPAUpng_struct_def@1@KH@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00623445,45,0x00623471,FUN_00623445,?png_do_swap@D3DX@@YAXPAUpng_row_info_struct@1@PAE@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00623472,191,0x00623530,FUN_00623472,?png_do_bgr@D3DX@@YAXPAUpng_row_info_struct@1@PAE@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006235B9,1619,0x00623C0B,FUN_006235b9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00623C0C,54,0x00623C41,FUN_00623c0c,?png_set_gamma@D3DX@@YAXPAUpng_struct_def@1@NN@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
-0x00623C54,9,0x00623C5C,FUN_00623c54,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00623C5D,9,0x00623C65,FUN_00623c5d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00623C54,9,0x00623C5C,FUN_00623c54,?png_set_gray_1_2_4_to_8@D3DX@@YAXPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x00623C5D,9,0x00623C65,FUN_00623c5d,?png_set_tRNS_to_alpha@D3DX@@YAXPAUpng_struct_def@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00623C66,235,0x00623D50,FUN_00623c66,?png_read_transform_info@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00623D51,272,0x00623E60,FUN_00623d51,?png_do_unpack@D3DX@@YAXPAUpng_row_info_struct@1@PAE@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00623E61,375,0x00623FD7,FUN_00623e61,?png_do_unshift@D3DX@@YAXPAUpng_row_info_struct@1@PAEPAUpng_color_8_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3233,10 +3233,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00624C6A,777,0x00624F72,FUN_00624c6a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00624F73,275,0x00625085,FUN_00624f73,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00625086,440,0x0062523D,FUN_00625086,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062523E,27,0x00625258,FUN_0062523e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062523E,27,0x00625258,FUN_0062523e,?png_set_gAMA@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@N@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00625259,161,0x006252F9,FUN_00625259,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006252FA,36,0x0062531D,FUN_006252fa,?png_set_PLTE@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@PAUpng_color_struct@1@H@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x0062531E,27,0x00625338,FUN_0062531e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062531E,27,0x00625338,FUN_0062531e,?png_set_sRGB@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@H@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00625339,57,0x00625371,FUN_00625339,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00625372,71,0x006253B8,FUN_00625372,?png_set_tRNS@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@PAEHPAUpng_color_16_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006253CC,40,0x006253F3,FUN_006253cc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3247,7 +3247,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0062551E,24,0x00625535,FUN_0062551e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00625536,63,0x00625574,FUN_00625536,?png_calculate_crc@D3DX@@YAXPAUpng_struct_def@1@PAEI@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00625575,14,0x00625582,FUN_00625575,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00625583,14,0x00625590,FUN_00625583,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00625583,14,0x00625590,FUN_00625583,?png_info_destroy@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006255A0,38,0x006255C5,FUN_006255a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006255C6,38,0x006255EB,FUN_006255c6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006255EC,76,0x00625637,FUN_006255ec,?Decode565@@YAXPAUD3DXCOLOR@@G@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
@@ -3266,19 +3266,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00626D05,1106,0x00627156,FUN_00626d05,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062719D,52,0x006271D0,FUN_0062719d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006271D1,52,0x00627204,FUN_006271d1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00627205,16,0x00627214,FUN_00627205,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00627215,24,0x0062722C,FUN_00627215,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00627205,16,0x00627214,FUN_00627205,?jdiv_round_up@D3DX@@YAJJJ@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x00627215,24,0x0062722C,FUN_00627215,?jround_up@D3DX@@YAJJJ@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0062722D,71,0x00627273,FUN_0062722d,?jcopy_sample_rows@D3DX@@YAXPAPAEH0HHI@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00627274,34,0x00627295,FUN_00627274,?jcopy_block_row@D3DX@@YAXPAY0EA@F0I@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00627296,27,0x006272B0,FUN_00627296,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00627296,27,0x006272B0,FUN_00627296,?jzero_far@D3DX@@YAXPAXI@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006272B1,50,0x006272E2,FUN_006272b1,?IsMMX@D3DX@@YAHXZ,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x006272E3,443,0x0062749D,FUN_006272e3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062749E,374,0x00627613,FUN_0062749e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006272E3,443,0x0062749D,FUN_006272e3,?initial_setup@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
+0x0062749E,374,0x00627613,FUN_0062749e,?per_scan_setup@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x00627614,146,0x006276A5,FUN_00627614,?latch_quant_tables@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x006276A6,58,0x006276DF,FUN_006276a6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006276A6,58,0x006276DF,FUN_006276a6,?start_input_pass@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x00627773,55,0x006277A9,FUN_00627773,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006277BB,65,0x006277FB,FUN_006277bb,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006277FC,21,0x00627810,FUN_006277fc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006277FC,21,0x00627810,FUN_006277fc,?out_of_memory@D3DX@@YAXPAUjpeg_common_struct@1@H@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x00627811,252,0x0062790C,FUN_00627811,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062790D,142,0x0062799A,FUN_0062790d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062799B,146,0x00627A2C,FUN_0062799b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3288,17 +3288,17 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00627B8D,383,0x00627D0B,FUN_00627b8d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00627D0C,136,0x00627D93,FUN_00627d0c,?do_sarray_io@D3DX@@YAXPAUjpeg_common_struct@1@PAUjvirt_sarray_control@1@E@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00627D94,139,0x00627E1E,FUN_00627d94,?do_barray_io@D3DX@@YAXPAUjpeg_common_struct@1@PAUjvirt_barray_control@1@E@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00627E1F,286,0x00627F3C,FUN_00627e1f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00627F3D,291,0x0062805F,FUN_00627f3d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00627E1F,286,0x00627F3C,FUN_00627e1f,?access_virt_sarray@D3DX@@YAPAPAEPAUjpeg_common_struct@1@PAUjvirt_sarray_control@1@IIE@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
+0x00627F3D,291,0x0062805F,FUN_00627f3d,?access_virt_barray@D3DX@@YAPAPAY0EA@FPAUjpeg_common_struct@1@PAUjvirt_barray_control@1@IIE@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x00628060,225,0x00628140,FUN_00628060,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00628141,48,0x00628170,FUN_00628141,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00628171,180,0x00628224,FUN_00628171,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00628225,34,0x00628246,FUN_00628225,?jpeg_abort@D3DX@@YAXPAUjpeg_common_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00628247,27,0x00628261,FUN_00628247,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00628262,28,0x0062827D,FUN_00628262,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062827E,28,0x00628299,FUN_0062827e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00628262,28,0x0062827D,FUN_00628262,?jpeg_alloc_quant_table@D3DX@@YAPAUJQUANT_TBL@1@PAUjpeg_common_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
+0x0062827E,28,0x00628299,FUN_0062827e,?jpeg_alloc_huff_table@D3DX@@YAPAUJHUFF_TBL@1@PAUjpeg_common_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0062829A,113,0x0062830A,FUN_0062829a,?use_merged_upsample@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x0062830B,495,0x006284F9,FUN_0062830b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062830B,495,0x006284F9,FUN_0062830b,?jpeg_calc_output_dimensions@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x006284FA,111,0x00628568,FUN_006284fa,?prepare_range_limit_table@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x00628569,429,0x00628715,FUN_00628569,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00628864,99,0x006288C6,FUN_00628864,?jpeg_new_colormap@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3311,8 +3311,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0062914B,227,0x0062922D,FUN_0062914b,?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0062922E,142,0x006292BB,FUN_0062922e,?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006292BC,60,0x006292F7,FUN_006292bc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006292F8,63,0x00629336,FUN_006292f8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00629337,62,0x00629374,FUN_00629337,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006292F8,63,0x00629336,FUN_006292f8,?inflateReset@D3DX@@YAHPAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
+0x00629337,62,0x00629374,FUN_00629337,?inflateEnd@D3DX@@YAHPAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x00629375,229,0x00629459,FUN_00629375,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062945A,23,0x00629470,FUN_0062945a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00629471,815,0x0062979F,FUN_00629471,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3347,7 +3347,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0062AE53,11,0x0062AE5D,FUN_0062ae53,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062AE5E,11,0x0062AE68,FUN_0062ae5e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062AE69,5,0x0062AE6D,FUN_0062ae69,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0062AE6E,20,0x0062AE81,FUN_0062ae6e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062AE6E,20,0x0062AE81,FUN_0062ae6e,?jpeg_open_backing_store@D3DX@@YAXPAUjpeg_common_struct@1@PAUbacking_store_struct@1@J@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0062AE82,3,0x0062AE84,FUN_0062ae82,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062AE85,1,0x0062AE85,FUN_0062ae85,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062AE86,168,0x0062AF2D,FUN_0062ae86,?alloc_funny_pointers@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3358,7 +3358,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0062B231,264,0x0062B338,FUN_0062b231,?process_data_context_main@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAEPAII@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x0062B3C4,211,0x0062B496,FUN_0062b3c4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0062B497,63,0x0062B4D5,FUN_0062b497,?start_iMCU_row@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x0062B4E6,474,0x0062B6BF,FUN_0062b4e6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0062B4E6,474,0x0062B6BF,FUN_0062b4e6,?decompress_onepass@D3DX@@YAHPAUjpeg_decompress_struct@1@PAPAPAE@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x0062B6C3,415,0x0062B861,FUN_0062b6c3,?consume_data@D3DX@@YAHPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x0062B862,358,0x0062B9C7,FUN_0062b862,?decompress_data@D3DX@@YAHPAUjpeg_decompress_struct@1@PAPAPAE@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x0062B9C8,227,0x0062BAAA,FUN_0062b9c8,?smoothing_ok@D3DX@@YAEPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -3426,9 +3426,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00630368,197,0x0063042C,FUN_00630368,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063042D,136,0x006304B4,FUN_0063042d,?color_quantize@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAE1H@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006304B5,141,0x00630541,FUN_006304b5,?color_quantize3@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAE1H@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00630542,235,0x0063062C,FUN_00630542,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00630542,235,0x0063062C,FUN_00630542,?quantize_ord_dither@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAE1H@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x0063062D,255,0x0063072B,FUN_0063062d,?quantize3_ord_dither@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAE1H@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x0063072C,388,0x006308AF,FUN_0063072c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063072C,388,0x006308AF,FUN_0063072c,?quantize_fs_dither@D3DX@@YAXPAUjpeg_decompress_struct@1@PAPAE1H@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x006308B0,54,0x006308E5,FUN_006308b0,?alloc_fs_workspace@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006308E6,202,0x006309AF,FUN_006308e6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006309C5,135,0x00630A4B,FUN_006309c5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3455,10 +3455,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00639A1F,518,0x00639C24,FUN_00639a1f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00639C45,307,0x00639D77,FUN_00639c45,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063A668,100,0x0063A6CB,FUN_0063a668,?x3d_D3DXPlaneNormalize@@YGPAUD3DXPLANE@@PAU1@PBU1@@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
-0x0063A80B,107,0x0063A875,FUN_0063a80b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063A876,141,0x0063A902,FUN_0063a876,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063A80B,107,0x0063A875,FUN_0063a80b,?inflate_blocks_reset@D3DX@@YAXPAUinflate_blocks_state@1@PAUz_stream_s@1@PAK@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
+0x0063A876,141,0x0063A902,FUN_0063a876,?inflate_blocks_new@D3DX@@YAPAUinflate_blocks_state@1@PAUz_stream_s@1@P6AKKPBEI@ZI@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x0063A903,1907,0x0063B075,FUN_0063a903,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063B09E,52,0x0063B0D1,FUN_0063b09e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063B09E,52,0x0063B0D1,FUN_0063b09e,?inflate_blocks_free@D3DX@@YAHPAUinflate_blocks_state@1@PAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R027,library,Whole pinned SDK COMDAT; all direct calls bind to complete independently verified SDK bodies; indirect callees independent; no source/exact credit
 0x0063B0D2,49,0x0063B102,FUN_0063b0d2,?inflate_set_dictionary@D3DX@@YAXPAUinflate_blocks_state@1@PBEI@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0063B110,281,0x0063B228,FUN_0063b110,?adler32@D3DX@@YAKKPBEI@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0063B240,16,0x0063B24F,FUN_0063b240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3477,7 +3477,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0063D3C0,283,0x0063D4DA,FUN_0063d3c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063D7B8,52,0x0063D7EB,FUN_0063d7b8,?inflate_codes_new@D3DX@@YAPAUinflate_codes_state@1@IIPAUinflate_huft_s@1@0PAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0063D7EC,1340,0x0063DD27,FUN_0063d7ec,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063DD50,17,0x0063DD60,FUN_0063dd50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063DD50,17,0x0063DD60,FUN_0063dd50,?inflate_codes_free@D3DX@@YAXPAUinflate_codes_state@1@PAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0063DD61,901,0x0063E0E5,FUN_0063dd61,?huft_build@D3DX@@YAHPAIIIPBI1PAPAUinflate_huft_s@1@0PAU21@00@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x0063E0E6,127,0x0063E164,FUN_0063e0e6,?inflate_trees_bits@D3DX@@YAHPAI0PAPAUinflate_huft_s@1@PAU21@PAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x0063E165,259,0x0063E267,FUN_0063e165,?inflate_trees_dynamic@D3DX@@YAHIIPAI00PAPAUinflate_huft_s@1@1PAU21@PAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."

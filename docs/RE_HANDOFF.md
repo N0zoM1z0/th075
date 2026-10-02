@@ -10,7 +10,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 451 library and 428 compiler candidates; 3,334 origins remain
+  138 authored, 497 library and 428 compiler candidates; 3,288 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
@@ -18,12 +18,12 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R025 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R027 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 68 passing
+  across six objects through scripts/repo-python after F005. Public CI has 72 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -302,3 +302,19 @@ runtime, static, compiler, authored and SDK origin verifiers, with target-requir
 tracking/status. Private receipt `.analysis/public-r025-origin-verification.json`.
 Local CI passed 68 regressions; the SVG remains current. R024 GitHub CI passed
 at https://github.com/N0zoM1z0/th075/actions/runs/37004893091.
+
+R026 reviewed 31 complete short SDK COMDATs / 630 bytes, each with a separately
+checked typed caller witness; the callers themselves remain uncredited.
+R027 then reviewed 15 complete JPEG/zlib SDK bodies / 4,129 bytes with 34
+independently bound direct calls. The SDK verifier now covers 306 bodies /
+77,498 bytes, 140 direct-call fields, 374 unchanged indirect calls, 158 scalar
+bindings and 232 readonly-section fields. `verify-sdk-origins.py` also runs
+the R026 typed-witness verifier. Current totals are 1,063 reviewed / 3,288
+pending; exact remains deferred at 42 functions / 8,916 bytes. Candidate
+function-pointer fields, mutable globals and other unbound SDK calls stay
+pending. No query or compiler session is active.
+R026/R027 public no-auth Funnel verification passed across SDK, runtime,
+static, compiler and authored origins, plus target-required tracking/status.
+Private receipt `.analysis/public-r026-r027-origin-verification.json`. Local
+CI passed 72 regressions and progress is current. R025 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37005233600.

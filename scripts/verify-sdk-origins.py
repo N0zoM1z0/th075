@@ -315,6 +315,10 @@ def main():
             if calls != int(record["indirect_call_count"]):
                 raise ValueError("SDK dispatch count mismatch")
             indirect += calls
+    if any(record["evidence_id"] == "R026" for record in records):
+        witness = module("short_sdk_witness", "verify-sdk-short-origins.py")
+        if witness.main() != 0:
+            raise ValueError("short SDK typed caller evidence failed")
     print(f"SDK origin evidence OK: {len(records)} whole COMDAT bodies, {total} bytes, "
           f"{total_relocations} verified call bindings, {indirect} unchanged indirect calls; "
           f"{total_constants - total_section_fields} scalar bindings, "

@@ -1311,3 +1311,59 @@ no-auth public Funnel MCP. Private receipt:
 `.analysis/public-r025-origin-verification.json`. Local CI passed 68 regressions;
 progress freshness and `git diff --check` passed. R024 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37004893091.
+
+## R026 — short whole SDK functions with typed caller witnesses
+
+Reviewed 2026-10-02. Thirty-one complete D3DX8 SDK COMDAT bodies / 630 bytes
+are excluded. These 8–30-byte functions had fallen below the earlier diagnostic
+fingerprint length threshold; that threshold was never an origin decision.
+A fresh survey used each vendor object's independently defined, whole,
+relocation-free code section and compared every byte to a pending target
+candidate. Many short implementations have multiple identical vendor symbols.
+For each accepted function, a separate complete vendor caller body has an
+exactly typed REL32 CALL to the selected symbol and the actual target address.
+The caller's entire non-relocated extent was checked against the pinned target;
+all relocation fields were masked explicitly, and the selected CALL opcode,
+field and destination were then verified. This disambiguates short aliases
+without granting any origin credit to the callers. Thirty-one source/caller
+pairs passed; seven other short byte-identical candidates without the required
+typed caller witness remain pending.
+
+The accepted functions include D3DX file/resource/image and stack constructors,
+bitmap operations, PNG getters/setters, JPEG allocation/math helpers and a zlib
+free helper. Some complete bodies have unchanged indirect calls. Their callee
+ownership remains independent. `sdk-short-origin-witnesses.csv` records the
+specific caller/member/symbol/field for every accepted body;
+`verify-sdk-short-origins.py` rechecks all 31 whole caller definitions and typed
+fields. The normal SDK verifier also rechecks each short source COMDAT,
+complete body hash, target bytes and control flow. Four public regressions
+reject an unrelated caller opcode, a wrong symbol or a wrong destination.
+Private survey and full caller checks are under `.analysis/r026-*`.
+
+## R027 — direct-call closure from independently verified SDK bodies
+
+Reviewed 2026-10-02. Fifteen more complete D3DX8 functions / 4,129 bytes are
+excluded using 34 zero-addend direct calls. Every callee was already a
+separately verified complete SDK origin when the caller was accepted; the
+source COFF symbol, relocation offset, target CALL opcode and actual destination
+all agree. The review started from the R026 JPEG/zlib helpers and propagated
+only when every direct relocation could be bound. It reached JPEG marker,
+scan, virtual-array, dithering and output-dimension helpers, plus zlib inflate
+reset/block and free helpers. Unchanged indirect calls remain separately
+uncredited to their callees. No mutable data, guessed imports or external tail
+jumps were accepted.
+
+`verify-sdk-origins.py` now rechecks 306 whole COMDAT bodies / 77,498 bytes,
+140 direct-call bindings, 332 earlier plus 42 new unchanged indirect calls,
+158 scalar bindings and 232 fields from 81 complete readonly sections.
+R026/R027 add origin evidence only. Current totals are 1,063 reviewed:
+138 authored, 497 library and 428 compiler; 3,288 remain pending. Exact
+remains 42 functions / 8,916 bytes against the provisional 43,031-byte
+authored set (20.72%). The complete-origin prerequisite is still open.
+
+R026/R027 SDK, runtime, static, compiler and authored origin verifiers plus
+target-required tracking/status passed through the unchanged no-auth public
+Funnel MCP. Private receipt: `.analysis/public-r026-r027-origin-verification.json`.
+Local CI passed 72 regressions; progress freshness and `git diff --check`
+passed. R025 published GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37005233600.
