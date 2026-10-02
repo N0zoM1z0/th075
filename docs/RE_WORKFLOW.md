@@ -23,9 +23,10 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-Alternate origin-review batches with exact reconstruction of reviewed authored
-functions. The active goal requires every origin reviewed and at least 50% of
-confirmed authored bytes exact. Run `report-reconstruction-status.py --summary`
+Finish origin review for all 4,351 candidates before resuming exact
+reconstruction of reviewed authored functions. This user strategy supersedes
+the earlier alternating workflow. The active goal requires every origin
+reviewed and at least 50% of confirmed authored bytes exact. Run `report-reconstruction-status.py --summary`
 through `scripts/repo-python` for both gates. Its percentage uses a provisional
 denominator while any origin remains pending; neither function count nor exact
 coverage of the currently selected slice establishes overall completion.

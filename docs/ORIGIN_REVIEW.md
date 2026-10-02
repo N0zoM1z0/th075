@@ -2,8 +2,8 @@
 
 The active objective is to finish origin review of every candidate and then
 reach at least 50% exact coverage of the confirmed authored-byte set.
-Alternate evidence-backed origin batches with exact reconstruction of reviewed
-authored functions. Percentages remain provisional until no origin is pending.
+Finish evidence-backed origin review of every candidate before resuming exact
+reconstruction. This supersedes the earlier alternating workflow. Percentages remain provisional until no origin is pending.
 Auto-analysis names, adjacency, and small size do not establish origin.
 
 ## R001 — remaining shared graphics family
@@ -397,3 +397,91 @@ control flow are checked. Private survey/CFG evidence is under
 `.analysis/crt-origin-survey.*` and `.analysis/r006-*`.
 The same verifier also passed through the no-auth public Bash MCP; the private
 RPC receipt is `.analysis/public-r006-runtime-origins.json`.
+
+## R007 — complete CRT bodies with independently anchored calls
+
+Reviewed 2026-10-02 under the user's revised strategy: finish every origin
+review before resuming exact reconstruction. Eleven additional candidates,
+813 complete bytes, are library/exclude. All 4,351 candidates remain retained.
+No source, mapping or canonical exact credit is added.
+
+The pinned libcmt archive supplies each function's own definition auxiliary
+record and complete body. `runtime-origin-evidence.csv` adds the member
+identities, vendor symbols, complete sizes and hashes. The 17 REL32 fields are
+recorded separately in `runtime-origin-relocations.csv`. Each is a zero-addend
+direct CALL to the matching vendor symbol at an independently verified R006
+or R007 function. Every callee body passes its own complete-byte verification
+before the batch is accepted; guessed names and unexplored targets cannot
+anchor a binding. No DIR32 field, local-label ambiguity or opcode is masked.
+
+The reviewed bodies are the integer conversion wrappers `_itoa`, `_ltoa` and
+`_i64toa`, their complete 64-bit conversion worker, exception type matching,
+variadic string concatenation, mantissa increment/rounding and long-double
+conversion, 12-byte addition, and x87 control-word conversion. Complete
+decoding verifies every byte, internal branch instruction start and verified
+external CALL. The runtime verifier now rechecks all 52 bodies, 5,095 bytes
+and 17 call bindings. Three public regressions reject an unexplored callee,
+a mismatched vendor-symbol alias and a relocation masking MOV rather than
+CALL. The remaining runtime survey addresses number 212 and stay pending.
+
+```bash
+scripts/repo-python scripts/verify-runtime-origins.py
+```
+
+Private diagnostic evidence is under `.analysis/r007-*`. Unfinished F008
+exact probes, ledger changes and cold-build receipts were preserved with
+hashes under `.analysis/deferred-exact-f008/`. They add no published exact
+credit; accepted F001 through F007 units remain unchanged.
+
+## R008 — complete relocation-free D3DX SDK COMDATs
+
+Reviewed 2026-10-02. A diagnostic search of SDK static archives found 1,155
+full non-relocation fingerprints at 579 candidate addresses. This review
+accepts only 145 complete, relocation-free function COMDATs, 29,590 bytes,
+whose independent vendor extent and control flow have been reconciled.
+The other 434 candidate addresses remain pending, including bodies with
+relocations, aliases requiring context, and trailing paths outside the strict
+accepted cohort. The diagnostic survey alone grants no origin credit.
+
+`config/sdk-origin-evidence.csv` records every accepted address, member
+name/offset, symbol, full-body hash, complete extent and dispatch count.
+The read-only evidence archive is:
+
+| Artifact | SHA-256 |
+| --- | --- |
+| `.tools/msvc710/Vc7/PlatformSDK/Lib/d3dx8.lib` | `39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28` |
+
+These objects lack definition auxiliary sizes. The verifier independently
+requires exactly one function-definition symbol in a code COMDAT, at section
+offset zero, and uses the entire vendor section. It does not take a target
+size as an extent fallback. Every byte must equal the target, and every body
+must decode completely through its final RET. All direct jumps and direct
+calls land on instruction starts within the same complete body. No unresolved
+switch, external shared tail, padding prefix or relocation mask is accepted.
+The 194 indirect calls are unchanged, unmasked vendor dispatch instructions;
+they grant no classification to their callees.
+
+The cohort covers SDK font/sprite/render-target methods, scalar/vector/matrix
+operations, color conversion and surface filtering, and SDK-packaged JPEG,
+PNG and zlib workers. Those codecs are vendor code, not authored game logic.
+144 candidates are library/exclude. The complete `??_H` vector-construction
+iterator at `0x00605D75` is compiler/exclude. Identical vendor aliases do not
+recover original executable names, the original linked archive variant, or
+one executable-wide compiler profile. This adds no authored-byte, source,
+mapping or canonical exact credit.
+
+```bash
+scripts/repo-python scripts/verify-sdk-origins.py
+```
+
+Five public regressions cover independent whole-section sizing, rejection of
+multiple functions and nonzero function starts, unresolved indirect jumps,
+and branches into instruction interiors. Private survey and strict-cohort
+evidence is under `.analysis/sdk-origin-survey.json` and
+`.analysis/r008-sdk-zero-cohort.json`. Current totals are 384 origins reviewed:
+47 authored, 332 library and five compiler candidates; 3,967 remain pending.
+
+Both R007/R008 verifiers passed locally and through the unchanged no-auth
+public Funnel Bash MCP using `scripts/repo-python`. The private combined RPC
+receipt is `.analysis/public-r007-r008-origins.json`. Public CI passed 26 tests;
+target-required tracking validation and progress freshness checks also passed.

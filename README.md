@@ -31,10 +31,12 @@ functions have reconstructed source and complete exact matches covering 8,916
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-Origin review has classified 47 authored, 177 library and four compiler candidates; 4,123 candidates remain
+Origin review has classified 47 authored, 332 library and five compiler candidates; 3,967 candidates remain
 pending. The current authored-byte slice is 8,916 / 12,343 exact (72.24%), with
-a provisional denominator. Work alternates origin review and exact matching;
-the goal of all origins reviewed and 50% authored bytes exact remains active.
+a provisional denominator. Finish origin review of every candidate before
+resuming exact reconstruction, then prioritize core authored behavior and
+dependencies. The goal of all origins reviewed and 50% authored bytes exact
+remains active.
 See the [origin review journal](docs/ORIGIN_REVIEW.md).
 
 ## Getting started
