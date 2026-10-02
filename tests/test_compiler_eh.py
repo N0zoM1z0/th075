@@ -79,6 +79,28 @@ class CompilerEHOriginTests(unittest.TestCase):
         result = EH.verify_frame(record, read, read, {0x401000, 0x404000})
         self.assertEqual(result, json.loads(record["entries"]))
 
+    def test_external_prolog_registration_requires_independent_vendor_evidence(self):
+        record, read, memory = fixture()
+        memory[0x401000] = (b"\xb8" + struct.pack("<I", 0x403000) + b"\xe8"
+                            + struct.pack("<i", 0x402000 - 0x40100A))
+        record["owners"] = json.dumps([{"owner_address": "0x00401000",
+                                        "handler_load_site": "0x00401000",
+                                        "registration_kind": "external-prolog"}])
+        with self.assertRaisesRegex(ValueError, "verified external"):
+            EH.verify_frame(record, read, read, {0x401000, 0x404000})
+        result = EH.verify_frame(record, read, read, {0x401000, 0x404000}, {0x402000})
+        self.assertEqual(result, json.loads(record["entries"]))
+
+    def test_external_registration_must_load_its_own_handler(self):
+        record, read, memory = fixture()
+        memory[0x401000] = (b"\xb8" + struct.pack("<I", 0x403001) + b"\xe8"
+                            + struct.pack("<i", 0x402000 - 0x40100A))
+        record["owners"] = json.dumps([{"owner_address": "0x00401000",
+                                        "handler_load_site": "0x00401000",
+                                        "registration_kind": "external-prolog"}])
+        with self.assertRaisesRegex(ValueError, "verified external"):
+            EH.verify_frame(record, read, read, {0x401000, 0x404000}, {0x402000})
+
 
 if __name__ == "__main__":
     unittest.main()

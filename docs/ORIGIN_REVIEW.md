@@ -1102,3 +1102,47 @@ Private receipt: `.analysis/public-r019-r021-origin-verification.json`.
 Local public-workflow CI passed all 57 target-independent regressions;
 `git diff --check` and progress freshness passed. The 42 accepted exact units,
 their source/header files and matching configuration were unchanged.
+
+## R022 — externally registered exception frames
+
+Reviewed 2026-10-02. Sixty further compiler/exclude candidates cover 611 bytes:
+the complete 31-byte `__EH_prolog` helper at 0x006425A4 and 59 generated cleanup
+bodies (580 bytes). The helper's pinned libcmt.lib member is
+`..\build\intel\mt_obj\ehprolog.obj`, archive offset 666934. Its own function
+auxiliary record establishes the entire extent, with no relocations. Every
+byte equals the target and all instructions through RET are reviewed. It pushes
+the state/handler/prior FS:[0] frame, installs the registration and establishes
+EBP while preserving the real return address. This is compiler support policy,
+not application behavior.
+
+Twenty-eight additional complete FunctionInfo/unwind frames use a ten-byte
+parent prefix: MOV EAX, its handler; CALL the independently verified
+`__EH_prolog`. The verifier checks both instruction fields, actual parent entry
+and the complete vendor helper before accepting external registration. It does
+not infer ownership from an unverified helper name or arbitrary call target.
+All 236 registered frames, including try/catch tables and state transitions,
+are now verified. Full metadata also retains the unsupported cleanup entries;
+retaining a reference does not classify that cleanup or its parent/callee.
+
+The 59 accepted bodies use the existing fully decoded negative-frame
+object/member/allocation templates. Thirty-nine positive-slot PUSH/CALL cleanups
+remain pending until that distinct emission/context is independently reviewed.
+The earlier 422-candidate tail diagnostic has 60 remaining pending candidates:
+those 39 cleanup bodies and 21 static lifetime wrappers. No source/mapping/exact
+credit is added. Private evidence: `.analysis/r022-compiler-accepted.json` and
+attested `.analysis/r022-eh-prolog-parent.*`.
+
+Two additional public regressions require independently verified prolog binding
+and the correct handler load. `verify-runtime-origins.py` now rechecks 53 complete
+vendor bodies / 5,126 bytes; `verify-compiler-origins.py` rechecks 362 cleanup
+bodies / 3,754 bytes and 236 full registered frames. Current totals are 953
+reviewed: 138 authored, 447 library and 368 compiler; 3,398 origins remain pending.
+Exact remains 42 functions / 8,916 bytes and is deferred until all origins are
+reviewed. The authored denominator remains 43,031 bytes (20.72% provisional).
+
+R022 compiler/runtime and authored revalidation, target-required tracking and
+status passed through the unchanged no-auth public Funnel MCP. Private receipt:
+`.analysis/public-r022-origin-verification.json`. Local CI passed 59 regressions;
+progress freshness and `git diff --check` passed. Accepted exact units remain
+unchanged. Published R019/R020/R021 CI also passed:
+https://github.com/N0zoM1z0/th075/actions/runs/37003418979.

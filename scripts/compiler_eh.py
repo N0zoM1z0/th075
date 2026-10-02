@@ -82,7 +82,7 @@ def cleanup_template(code, address, function_entries):
     return kind, transfer.operands[0].imm
 
 
-def verify_frame(record, read_code, read_data, function_entries):
+def verify_frame(record, read_code, read_data, function_entries, verified_prologs=()):
     handler, info = int(record["handler_address"], 16), int(record["funcinfo_address"], 16)
     code = read_code(handler, 10)
     if (code[:1] != b"\xb8" or code[5:6] != b"\xe9"
@@ -123,6 +123,17 @@ def verify_frame(record, read_code, read_data, function_entries):
         raise ValueError("EH frame lacks a registered parent")
     for owner in owners:
         start = int(owner["owner_address"], 16)
+        if owner.get("registration_kind") == "external-prolog":
+            prefix = read_code(start, 10)
+            if (start not in function_entries
+                    or int(owner["handler_load_site"], 16) != start
+                    or prefix[:1] != b"\xb8" or prefix[5:6] != b"\xe8"
+                    or struct.unpack_from("<I", prefix, 1)[0] != handler
+                    or start + 10 + struct.unpack_from("<i", prefix, 6)[0] not in verified_prologs):
+                raise ValueError("EH parent lacks a verified external registration prolog")
+            continue
+        if owner.get("registration_kind", "inline") != "inline":
+            raise ValueError("unsupported EH registration kind")
         site = int(owner["handler_push_site"], 16)
         if (start not in function_entries or site != start + 5
                 or read_code(start, 16) != b"\x55\x8b\xec\x6a\xff\x68"

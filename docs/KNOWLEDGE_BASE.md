@@ -588,3 +588,11 @@ Original names, ABI and complete bitmap/texture/progress owner layouts remain
 unknown. The three scalar deleting-destructor candidates and 0x0041BF90
 initializer still need independent review. Exact work remains deferred until
 all candidate origins have been reviewed.
+
+R022 adds the independently bounded 31-byte libcmt `__EH_prolog` and 59 pure
+cleanup bodies (580 bytes). Twenty-eight more parent frames register through
+MOV EAX, handler / CALL prolog, rather than the inline PUSH/FS:[0] prefix.
+Registration is accepted only after whole vendor-helper verification. All 236
+frames and 362 recorded cleanup bodies are now rechecked. Thirty-nine positive
+argument-slot cleanup forms remain pending; do not generalize negative-frame
+acceptance or blanket-classify referenced parents/callees.

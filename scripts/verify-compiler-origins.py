@@ -144,12 +144,23 @@ def main():
     origins = {row["address"]: row for row in rows("function-origins.csv")}
     function_entries = {int(address, 16) for address in functions}
     frames = rows("compiler-eh-frames.csv")
+    verified_prologs = set()
+    if any(owner.get("registration_kind") == "external-prolog"
+           for row in frames for owner in json.loads(row["owners"])):
+        # A name/address is insufficient: verify complete archive bodies first.
+        runtime = load_module("compiler_runtime", "verify-runtime-origins.py")
+        if runtime.main() != 0:
+            raise ValueError("external EH prolog origin verification failed")
+        verified_prologs = {int(row["address"], 16) for row in rows("runtime-origin-evidence.csv")
+                           if row["coff_symbol"] == "__EH_prolog"}
+        if not verified_prologs:
+            raise ValueError("external EH registration lacks a verified vendor prolog")
     references = {}
     if not frames or len({row["handler_address"] for row in frames}) != len(frames):
         raise ValueError("empty or duplicate EH frame evidence")
     for row in frames:
         entries = EH.verify_frame(row, lambda a, n: read(a, n, True),
-                               lambda a, n: read(a, n, False), function_entries)
+                               lambda a, n: read(a, n, False), function_entries, verified_prologs)
         for entry in entries:
             if int(entry["cleanup_address"], 16):
                 references.setdefault(entry["cleanup_address"], []).append({
