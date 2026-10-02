@@ -714,3 +714,18 @@ bound and six unambiguous template families. These widths are compiler-oracle
 inputs, not recovered game record declarations. Five byte-identical
 `copy`/`copy_backward` matches still lack family-level evidence and remain
 pending. No source or exact credit changes.
+
+## Origin-only observations after R035
+
+Twenty additional bodies have full target-byte hashes, complete decoded
+local control flow and independent game-specific behavior. Four routines
+operate on the project's four-vertex sprite geometry; scene-node routines
+compose those transforms with sprite color, texture and camera state. Camera
+functions clamp and ease shared coordinates, including explicit override and
+shake setters. Replay functions use the game's temporary replay path, packed
+header, variable-width record arrays and numbered output slots. A window
+initializer loads the game's window texture pack. A
+large scene renderer selects sprite IDs and fades by fixed time intervals.
+`docs/ORIGIN_REVIEW.md` records observations per entry. The inferred names
+are aids for navigation; original class identities are still unknown. No
+source or exact credit follows from the classification.

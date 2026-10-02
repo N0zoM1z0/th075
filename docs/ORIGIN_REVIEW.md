@@ -1636,3 +1636,51 @@ authored, 728 library and 431 compiler; 3,054 remain pending. Exact remains
 freshness and `git diff --check` passed. Public no-auth Funnel receipt:
 `.analysis/public-r034-origin-verification.json`. R033 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37008617872.
+
+## R035 — sprite geometry, camera motion, replay records and timed scene rendering
+
+Reviewed 2026-10-02. Twenty complete bodies / 17,149 bytes have independent
+target-observed authored behavior. Their names and class boundaries are
+provisional. Each entry has a pinned whole-body SHA-256 in
+`config/authored-origin-evidence.csv`; `verify-authored-origins.py` decodes the
+entire recorded extent, checks that its last instruction is RET, and verifies
+every direct branch remains on an instruction boundary inside that extent.
+All twenty have one terminal RET and no unresolved outgoing branch. This is
+origin evidence only; no source or exact-match credit follows.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x00410350` | Draws a sprite node from its own position, color, rotation and flip fields; chooses projected or ordinary custom quad drawing. |
+| `0x00410A00` | Draws the mirrored node with inverted Y placement and the shared camera offsets. |
+| `0x00411000` | Copies one 132-byte scene element, appends it to the scene sequence and applies a scene-specific count limit. |
+| `0x00411110` | Walks that sequence, builds custom sprite quads and renders them using node texture and color state. |
+| `0x00411400` | Converts four corners of a rectangle into the project's four-vertex sprite geometry. |
+| `0x00411500` | Translates all four vertex positions in the project-specific 16-byte vertex layout. |
+| `0x004115C0` | Scales those four positions about supplied X/Y/Z pivots, skipping unit axes. |
+| `0x004116F0` | Rotates the same four positions using the project's trigonometric helpers. |
+| `0x004126C0` | Clamps and eases the shared camera coordinates, damps camera shake and updates direction from tracked positions. |
+| `0x00412CB0` | Sets the camera shake amplitude in the same shared camera state. |
+| `0x00412CC0` | Installs a camera-position override and its three coordinates in that state. |
+| `0x00412CF0` | Snaps the same camera state to current or override coordinates. |
+| `0x00412DD0` | Initializes project graphics resources, loads `data\\system\\window.dat` and selects a 1024-by-512 render surface. |
+| `0x00412EB0` | Builds a 571-pixel text region and draws its outline and alpha-changing fill with project sprite routines. |
+| `0x00413790` | Resets record/date fields and opens `replay\\replay.tmp` for capture. |
+| `0x004138E0` | Writes a 60-byte record header, copies temporary replay bytes and closes both files. |
+| `0x00413AC0` | Seeks to a selected replay record and reads its packed byte fields from the game's replay file. |
+| `0x00413DE0` | Writes those packed fields and variable-length 1-, 2- and 4-byte record arrays, then advances the record index. |
+| `0x00414300` | Searches numbered `replay\\replay%03d.rep` paths up to slot 999 and selects the first unused file. |
+| `0x004277A0` | Uses explicit millisecond intervals, sprite IDs and fade windows to draw a fixed animated scene. |
+
+These are local observations of each body, not classifications inherited from
+callers or callees. The nearby VC7 iterator/container helpers and
+exception-frame code remain separately reviewed or pending. The Ghidra
+decompilations used for semantic inspection are private diagnostic hypotheses
+under `.analysis/r035-*-survey.*`; whole-byte and CFG claims come from the
+attested target, not from decompiler text. Current totals are 1,317 reviewed:
+158 authored, 728 library and 431 compiler; 3,034 remain pending. Exact
+remains 42 functions / 8,916 bytes against the provisional 60,180-byte
+authored slice (14.82%). The complete-origin prerequisite remains open.
+Local CI passed 87 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran
+the authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r035-origin-verification.json`.

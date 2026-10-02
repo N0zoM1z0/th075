@@ -414,3 +414,19 @@ remains 42 / 8,916 bytes. Public no-auth Funnel receipt:
 `.analysis/public-r034-origin-verification.json`. Local CI passed 87 tests;
 progress remains current. R033 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37008617872.
+
+R035 reviews twenty independently observed authored bodies / 17,149 bytes:
+sprite-node rendering and four-vertex transforms, shared camera easing,
+packed replay record I/O and filename selection, and a timed animated scene.
+The window resource initializer also loads the game's window texture pack.
+Each full target body
+has a SHA-256 and a complete decoded local CFG in
+`config/authored-origin-evidence.csv`; semantic observations are listed in
+`docs/ORIGIN_REVIEW.md`. Names and original class ownership remain inferred.
+This grants origin only, without source or exact credit. Totals are 1,317
+reviewed (158 authored, 728 library, 431 compiler), 3,034 pending; exact
+remains 42 / 8,916 bytes against a provisional 60,180 authored bytes. Continue
+origin review before returning to exact reconstruction.
+Local CI passed 87 tests; the unchanged no-auth public Funnel MCP also ran
+the authored-origin and target-required checks successfully. Private receipt:
+`.analysis/public-r035-origin-verification.json`.
