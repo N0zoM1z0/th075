@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  343 authored, 767 library and 564 compiler candidates; 2,677 origins remain
+  374 authored, 767 library and 564 compiler candidates; 2,646 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 524,642, with 8,916 exact (1.70%).
+  The current reviewed authored-byte denominator is 1,680,552, with 8,916 exact (0.53%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R047 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R048 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -572,3 +572,15 @@ exact remains 42 / 8,916 bytes against provisional 524,642 authored bytes
 Local CI and the unchanged no-auth public MCP verification passed; private
 receipt: `.analysis/public-r047-origin-verification.json`. R046 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37019016587.
+
+R048 reviews 31 complete character object, timed-sequence and fighter-move
+dispatchers / 1,155,910 bytes. A total of 90 guarded jump tables (63 remapped,
+27 direct) have fully hashed remaps/tables and checked in-body destinations.
+The whole extents and branch counts are replayed by the authored verifier;
+character identities remain provisional. Totals are 1,705 reviewed (374
+authored, 767 library, 564 compiler), 2,646 pending; exact remains 42 /
+8,916 bytes against provisional 1,680,552 authored bytes (0.53%). Continue
+all origin review before exact reconstruction.
+Local CI and the unchanged no-auth public MCP verification passed; private
+receipt: `.analysis/public-r048-origin-verification.json`. R047 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37019902898.

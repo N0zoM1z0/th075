@@ -2176,3 +2176,43 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r047-origin-verification.json`. R046 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37019016587.
+
+## R048 — complete character object, sequence and move dispatchers
+
+Thirty-one large character-specific bodies add 1,155,910 authored-origin
+bytes. Every body has a complete target SHA-256, one final RET and a decoded
+local CFG. They contain 90 bounded indirect dispatches: 63 byte-remapped
+tables and 27 directly indexed tables. The cold verifier checks each bound,
+selector source, complete remap/table hash, default edge and every reachable
+destination, and rejects direct branches into a guard's interior. Their
+complete table metadata is recorded in the two authored-origin switch CSVs;
+the whole-body hashes and branch counts are in
+`config/authored-origin-evidence.csv`.
+
+| Family | Entries | Bytes | Target-observed behavior |
+| --- | ---: | ---: | --- |
+| `CharacterObject` | 11 | 488,664 | Switches on an owned object's action IDs, updates position/state against its fighter and opponent, and repeatedly uses project object/effect routines. |
+| `CharacterSequence` | 10 | 114,854 | Switches on a character sequence byte, advances explicit timers and coordinates, and calls the project's effect/animation routines. |
+| `CharacterMove` | 10 | 552,392 | Switches on fighter move IDs, updates movement and combat state, and repeatedly calls game action/transition routines. |
+
+The object entries are `0x00476A40`, `0x0049C8F0`, `0x004CA6E0`,
+`0x004EBDA0`, `0x0050A580`, `0x00536400`, `0x0055AC80`, `0x0057D580`,
+`0x005A1600`, `0x005C9CC0` and `0x005EB520`. The sequence entries are
+`0x00483350`, `0x004A9050`, `0x004D4EA0`, `0x004F44D0`, `0x0051E640`,
+`0x00540290`, `0x00561D40`, `0x005882B0`, `0x005AC250` and `0x005D4890`.
+The move entries are `0x00486550`, `0x004AC040`, `0x004D7E70`,
+`0x004F7130`, `0x005214B0`, `0x00543210`, `0x00564BE0`, `0x0058AF60`,
+`0x005AEEC0` and `0x005D73C0`. The address-qualified names distinguish
+complete bodies without guessing original character or method names.
+
+R048 changes origin review only; no source, mapping or exact credit is added.
+Totals are 1,705 reviewed: 374 authored, 767 library and 564 compiler;
+2,646 remain pending. Exact stays 42 functions / 8,916 bytes against the
+provisional 1,680,552-byte authored slice (0.53%). The large character
+dispatchers materially change later exact-work prioritization, but the
+denominator remains provisional until all origins are reviewed.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r048-origin-verification.json`. R047 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37019902898.

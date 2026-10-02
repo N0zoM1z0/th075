@@ -2189,11 +2189,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00472890,8871,0x00474B36,FUN_00472890,CharacterAI::ChooseAt00472890,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00474B40,7780,0x004769A3,FUN_00474b40,CharacterAI::ChooseAt00474B40,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004769B0,134,0x00476A35,FUN_004769b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00476A40,50915,0x00483122,FUN_00476a40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00476A40,50915,0x00483122,FUN_00476a40,CharacterObject::AdvanceAt00476A40,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00483300,21,0x00483314,FUN_00483300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00483320,37,0x00483344,FUN_00483320,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00483350,12400,0x004863BF,FUN_00483350,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00486550,50735,0x00492B7E,FUN_00486550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00483350,12400,0x004863BF,FUN_00483350,CharacterSequence::AdvanceAt00483350,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00486550,50735,0x00492B7E,FUN_00486550,CharacterMove::AdvanceAt00486550,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00492FB0,243,0x004930A2,FUN_00492fb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004930B0,120,0x00493127,FUN_004930b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00493130,780,0x0049343B,FUN_00493130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2211,10 +2211,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00499030,8256,0x0049B06F,FUN_00499030,CharacterAI::ChooseAt00499030,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0049B070,6097,0x0049C840,FUN_0049b070,CharacterAI::ChooseAt0049B070,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0049C850,146,0x0049C8E1,FUN_0049c850,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0049C8F0,46596,0x004A7EF3,FUN_0049c8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0049C8F0,46596,0x004A7EF3,FUN_0049c8f0,CharacterObject::AdvanceAt0049C8F0,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004A80F0,3935,0x004A904E,FUN_004a80f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004A9050,11894,0x004ABEC5,FUN_004a9050,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004AC040,82796,0x004C03AB,FUN_004ac040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004A9050,11894,0x004ABEC5,FUN_004a9050,CharacterSequence::AdvanceAt004A9050,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004AC040,82796,0x004C03AB,FUN_004ac040,CharacterMove::AdvanceAt004AC040,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004C0820,243,0x004C0912,FUN_004c0820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C0920,120,0x004C0997,FUN_004c0920,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C09A0,247,0x004C0A96,FUN_004c09a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2232,9 +2232,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004C6B50,8572,0x004C8CCB,FUN_004c6b50,CharacterAI::ChooseAt004C6B50,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004C8CD0,6504,0x004CA637,FUN_004c8cd0,CharacterAI::ChooseAt004C8CD0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004CA640,146,0x004CA6D1,FUN_004ca640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004CA6E0,42511,0x004D4CEE,FUN_004ca6e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004D4EA0,11859,0x004D7CF2,FUN_004d4ea0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004D7E70,43601,0x004E28C0,FUN_004d7e70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004CA6E0,42511,0x004D4CEE,FUN_004ca6e0,CharacterObject::AdvanceAt004CA6E0,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004D4EA0,11859,0x004D7CF2,FUN_004d4ea0,CharacterSequence::AdvanceAt004D4EA0,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004D7E70,43601,0x004E28C0,FUN_004d7e70,CharacterMove::AdvanceAt004D7E70,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004E2C90,243,0x004E2D82,FUN_004e2c90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E2D90,120,0x004E2E07,FUN_004e2d90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E2E10,223,0x004E2EEE,FUN_004e2e10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2252,10 +2252,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004E7DE0,8871,0x004EA086,FUN_004e7de0,CharacterAI::ChooseAt004E7DE0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004EA090,7279,0x004EBCFE,FUN_004ea090,CharacterAI::ChooseAt004EA090,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004EBD00,146,0x004EBD91,FUN_004ebd00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004EBDA0,33293,0x004F3FAC,FUN_004ebda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004EBDA0,33293,0x004F3FAC,FUN_004ebda0,CharacterObject::AdvanceAt004EBDA0,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x004F4170,855,0x004F44C6,FUN_004f4170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004F44D0,11012,0x004F6FD3,FUN_004f44d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004F7130,44211,0x00501DE2,FUN_004f7130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004F44D0,11012,0x004F6FD3,FUN_004f44d0,CharacterSequence::AdvanceAt004F44D0,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x004F7130,44211,0x00501DE2,FUN_004f7130,CharacterMove::AdvanceAt004F7130,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005021C0,243,0x005022B2,FUN_005021c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005022C0,120,0x00502337,FUN_005022c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00502340,211,0x00502412,FUN_00502340,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2273,9 +2273,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00507B20,3000,0x005086D7,FUN_00507b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005086E0,7676,0x0050A4DB,FUN_005086e0,CharacterAI::ChooseAt005086E0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0050A4E0,146,0x0050A571,FUN_0050a4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0050A580,81539,0x0051E402,FUN_0050a580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0051E640,11521,0x00521340,FUN_0051e640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005214B0,46755,0x0052CB52,FUN_005214b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0050A580,81539,0x0051E402,FUN_0050a580,CharacterObject::AdvanceAt0050A580,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x0051E640,11521,0x00521340,FUN_0051e640,CharacterSequence::AdvanceAt0051E640,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005214B0,46755,0x0052CB52,FUN_005214b0,CharacterMove::AdvanceAt005214B0,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0052CEE0,314,0x0052D019,FUN_0052cee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0052D020,105,0x0052D088,FUN_0052d020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0052D090,120,0x0052D107,FUN_0052d090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2336,13 +2336,13 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00532950,8273,0x005349A0,FUN_00532950,CharacterAI::ChooseAt00532950,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005349B0,6567,0x00536356,FUN_005349b0,CharacterAI::ChooseAt005349B0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00536360,146,0x005363F1,FUN_00536360,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00536400,39999,0x0054003E,FUN_00536400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00536400,39999,0x0054003E,FUN_00536400,CharacterObject::AdvanceAt00536400,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00540220,32,0x0054023F,FUN_00540220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00540240,19,0x00540252,FUN_00540240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00540260,25,0x00540278,FUN_00540260,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00540280,11,0x0054028A,FUN_00540280,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00540290,11787,0x0054309A,FUN_00540290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00543210,58294,0x005515C5,FUN_00543210,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00540290,11787,0x0054309A,FUN_00540290,CharacterSequence::AdvanceAt00540290,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00543210,58294,0x005515C5,FUN_00543210,CharacterMove::AdvanceAt00543210,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00551980,277,0x00551A94,FUN_00551980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00551AA0,120,0x00551B17,FUN_00551aa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00551B20,175,0x00551BCE,FUN_00551b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2360,9 +2360,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00557380,7113,0x00558F48,FUN_00557380,CharacterAI::ChooseAt00557380,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00558F50,7303,0x0055ABD6,FUN_00558f50,CharacterAI::ChooseAt00558F50,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0055ABE0,146,0x0055AC71,FUN_0055abe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0055AC80,28432,0x00561B8F,FUN_0055ac80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00561D40,11569,0x00564A70,FUN_00561d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00564BE0,61872,0x00573D8F,FUN_00564be0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0055AC80,28432,0x00561B8F,FUN_0055ac80,CharacterObject::AdvanceAt0055AC80,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00561D40,11569,0x00564A70,FUN_00561d40,CharacterSequence::AdvanceAt00561D40,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x00564BE0,61872,0x00573D8F,FUN_00564be0,CharacterMove::AdvanceAt00564BE0,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00574100,266,0x00574209,FUN_00574100,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00574210,120,0x00574287,FUN_00574210,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00574290,175,0x0057433E,FUN_00574290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2380,9 +2380,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00579650,8871,0x0057B8F6,FUN_00579650,CharacterAI::ChooseAt00579650,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0057B900,7125,0x0057D4D4,FUN_0057b900,CharacterAI::ChooseAt0057B900,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0057D4E0,146,0x0057D571,FUN_0057d4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0057D580,43845,0x005880C4,FUN_0057d580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005882B0,11102,0x0058AE0D,FUN_005882b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0058AF60,49230,0x00596FAD,FUN_0058af60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0057D580,43845,0x005880C4,FUN_0057d580,CharacterObject::AdvanceAt0057D580,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005882B0,11102,0x0058AE0D,FUN_005882b0,CharacterSequence::AdvanceAt005882B0,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x0058AF60,49230,0x00596FAD,FUN_0058af60,CharacterMove::AdvanceAt0058AF60,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x00597380,243,0x00597472,FUN_00597380,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00597480,120,0x005974F7,FUN_00597480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00597500,295,0x00597626,FUN_00597500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2400,9 +2400,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0059D240,8871,0x0059F4E6,FUN_0059d240,CharacterAI::ChooseAt0059D240,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x0059F4F0,8294,0x005A1555,FUN_0059f4f0,CharacterAI::ChooseAt0059F4F0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005A1560,146,0x005A15F1,FUN_005a1560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005A1600,43599,0x005AC04E,FUN_005a1600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005AC250,10998,0x005AED45,FUN_005ac250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005AEEC0,71616,0x005C067F,FUN_005aeec0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005A1600,43599,0x005AC04E,FUN_005a1600,CharacterObject::AdvanceAt005A1600,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005AC250,10998,0x005AED45,FUN_005ac250,CharacterSequence::AdvanceAt005AC250,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005AEEC0,71616,0x005C067F,FUN_005aeec0,CharacterMove::AdvanceAt005AEEC0,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005C0AB0,243,0x005C0BA2,FUN_005c0ab0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C0BB0,120,0x005C0C27,FUN_005c0bb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C0C30,261,0x005C0D34,FUN_005c0c30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2420,9 +2420,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005C5D10,8871,0x005C7FB6,FUN_005c5d10,CharacterAI::ChooseAt005C5D10,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005C7FC0,7264,0x005C9C1F,FUN_005c7fc0,CharacterAI::ChooseAt005C7FC0,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005C9C20,146,0x005C9CB1,FUN_005c9c20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005C9CC0,43501,0x005D46AC,FUN_005c9cc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005D4890,10712,0x005D7267,FUN_005d4890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005D73C0,43282,0x005E1CD1,FUN_005d73c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005C9CC0,43501,0x005D46AC,FUN_005c9cc0,CharacterObject::AdvanceAt005C9CC0,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005D4890,10712,0x005D7267,FUN_005d4890,CharacterSequence::AdvanceAt005D4890,CharacterSequence,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
+0x005D73C0,43282,0x005E1CD1,FUN_005d73c0,CharacterMove::AdvanceAt005D73C0,CharacterMove,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005E2090,218,0x005E2169,FUN_005e2090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E2170,120,0x005E21E7,FUN_005e2170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E21F0,235,0x005E22DA,FUN_005e21f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2440,7 +2440,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005E7370,8871,0x005E9616,FUN_005e7370,CharacterAI::ChooseAt005E7370,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005E9620,7780,0x005EB483,FUN_005e9620,CharacterAI::ChooseAt005E9620,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005EB490,134,0x005EB515,FUN_005eb490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005EB520,34434,0x005F3BA1,FUN_005eb520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005EB520,34434,0x005F3BA1,FUN_005eb520,CharacterObject::AdvanceAt005EB520,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005F3D60,12400,0x005F6DCF,FUN_005f3d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F6F60,142,0x005F6FED,FUN_005f6f60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F6FF0,235,0x005F70DA,FUN_005f6ff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

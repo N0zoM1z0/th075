@@ -865,3 +865,14 @@ their dependencies. Address-qualified names avoid inventing character
 ownership from proximity. Larger neighboring bodies with indirect jumps
 still require separate control-flow evidence. The R047 decisions add no
 source or exact credit.
+
+## Origin-only observations after R048
+
+Thirty-one more character-specific functions are exceptionally large:
+object behavior, timed sequences and fighter move handling total over 1.15 MB.
+They use bounded direct and byte-remapped jump tables; all 90 complete tables
+and in-body destinations are now replayed from the pinned executable. The
+three family labels describe observed data flow, not original class names.
+These bodies dominate the provisional authored-byte denominator, so eventual
+exact-work planning must consider their size and the common helpers they call.
+R048 grants origin only, with no source or exact credit.
