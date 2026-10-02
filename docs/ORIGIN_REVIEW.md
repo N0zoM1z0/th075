@@ -485,3 +485,137 @@ Both R007/R008 verifiers passed locally and through the unchanged no-auth
 public Funnel Bash MCP using `scripts/repo-python`. The private combined RPC
 receipt is `.analysis/public-r007-r008-origins.json`. Public CI passed 26 tests;
 target-required tracking validation and progress freshness checks also passed.
+
+## R009 — SDK call bindings and complete internal tails
+
+Reviewed 2026-10-02. Twenty-six additional candidates, 7,034 bytes, are
+library/exclude. Nineteen whole COMDAT bodies have 26 zero-addend REL32 calls
+to independently verified SDK symbols. The public SDK verifier checks every
+callee's complete body before accepting those bindings and requires each field
+to be the immediate of the corresponding decoded CALL. The cohort includes
+environment-map entry points, surface filtering, JPEG processing and zlib
+dictionary setup. Original executable names remain unrecovered.
+
+Seven relocation-free members end with unconditional branches back into their
+own complete body after earlier RET paths. These were conservatively deferred
+by R008's final-RET restriction. Full vendor section extents, complete decoding,
+every instruction-start destination and earlier returns now prove these
+internal tails: `0x0062068D`, `0x0062B862`, `0x0062C2A5`, `0x00620E05`,
+`0x00621768`, `0x0062F65F`, and `0x0063DD61`. Their entire 3,152 bytes are
+retained; no comparison is truncated at the first RET. The verifier still
+rejects external tails, indirect jumps and trailing conditional fallthrough.
+
+`sdk-origin-evidence.csv` records the full member identities and body hashes;
+`sdk-origin-relocations.csv` records all call bindings. Four additional public
+regressions cover mismatched call destinations, fields hiding a MOV, complete
+internal tails and unresolved trailing conditional branches. Private proof is
+under `.analysis/r009-sdk-*`. No authored, source, mapping or exact credit is
+added by these vendor comparisons.
+
+## R010 — SDK scalar definitions and matrix/color/codec workers
+
+Reviewed 2026-10-02. Fifty-one additional candidates, 9,490 bytes, are
+library/exclude. Their complete COMDATs are anchored by 34 direct calls to
+verified SDK bodies and 128 DIR32 references to scalar constants. Every scalar
+is independently defined in the same vendor member: one initialized-data
+COMDAT at offset zero, exactly four or eight bytes, no relocations. Its full
+data equals both the numerical bits encoded by its `__real@...` symbol and
+the target bytes at the recorded address. This proves the data binding rather
+than solving an address solely to hide an instruction difference.
+
+The relocation CSV's `literal_hex` column records the scalar's little-endian
+value; it is empty for CALLs. The verifier patches every recorded field,
+compares all target function bytes and requires scalar fields to coincide with
+complete decoded immediate/displacement fields. Opcode bytes and partial
+fields cannot be hidden. Complete control flow has no unresolved jump/table
+or external tail. The cohort includes projection matrices, color adjustments,
+format conversion and codec calculations. As before, vendor aliases establish
+ownership rather than original linked archive or debug-name recovery.
+
+The SDK verifier now covers 222 complete bodies, 46,114 bytes, 60 direct-call
+bindings, 128 scalar bindings and 315 unchanged indirect calls. Three added
+public regressions validate real constant definitions and reject mismatched
+vendor data or an opcode treated as a constant field. Private evidence is under
+`.analysis/r010-sdk-*`. The remaining SDK survey addresses number 357.
+
+```bash
+scripts/repo-python scripts/verify-sdk-origins.py
+```
+
+## R011 — custom sprite drawing, geometry and diagnostic files
+
+Reviewed 2026-10-02 against hash-attested Ghidra decompilation and independent
+complete target instruction decoding. Sixteen functions add 4,941 confirmed
+authored bytes. Their extents, target-body SHA-256 values, inferred roles and
+branch/return counts are recorded in `config/authored-origin-evidence.csv`.
+This is origin evidence only, without source, mapping or exact credit.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x0040C9A0` | 115 | Draw supplied quad through a texture owner |
+| `0x0040CA20` | 92 | Draw supplied projected quad |
+| `0x0040CA80` | 1132 | Build and draw scaled/rotated/mirrored sprite |
+| `0x0040CEF0` | 994 | Alternate sprite placement policy |
+| `0x0040D2E0` | 970 | Sprite with independent X/Y scale |
+| `0x0040D6B0` | 212 | Opaque sprite with mirroring |
+| `0x0040D790` | 171 | Opaque sprite |
+| `0x0040D840` | 35 | Opaque sprite with default white color |
+| `0x0040D870` | 80 | Rectangle from texture dimensions |
+| `0x0040D990` | 85 | Initialize custom 132-byte geometry owner to zero |
+| `0x0040DA00` | 259 | Build its four corners from coordinates |
+| `0x0040DB50` | 305 | Build its four corners from integer RECT |
+| `0x0041CC00` | 67 | Select and truncate/create diagnostic file |
+| `0x0041CC50` | 115 | Append diagnostic string |
+| `0x0041CCD0` | 152 | Format and append integer diagnostic |
+| `0x0041CD70` | 157 | Format and append floating diagnostic |
+
+**Authored ownership evidence:** The sprite family resolves the application's
+texture handle through `0x0040C8C0`, reads dimensions via `0x0040DD60`, builds
+four corners using the game's origin/scale/angle/flip policy, and calls the
+reviewed custom quad renderers `0x004029F0/0x00402D50`. Opaque variants select
+the custom blend protocol at `0x00401F50`; the white wrapper supplies -1 color.
+Corner swapping implements mirror policy. Rectangle builders produce the
+TL/TR/BR/BL order consumed by this pipeline. These coordinated behaviors are
+custom application policy, not generic SDK methods.
+
+The zero initializer calls member constructors at offsets 0/16/32/48/64 and
+then explicitly clears 132 bytes. This custom initialization policy is authored;
+the member constructors are separately reviewable. The 132-byte owner contains
+more than its first four 16-byte corner records. Its complete types, original
+name and remaining member roles are unresolved; no partial owner is instantiated.
+The four-float constructor at `0x0040DB10` remains pending because generic
+custom and SDK constructor bodies can alias. The nearby empty constructors
+and math helpers also receive no blanket ownership from these callers.
+
+Ghidra's `CDialog::CreateIndirect` label at `0x0040D840` is unsupported: its
+complete target body forwards to the custom opaque sprite renderer with white
+color, with no dialog/template/window creation. The proposed role corrects
+the ledger interpretation without modifying the private database.
+
+The diagnostic family shares filename storage `0x0068BD00`. Its initializer
+sets that storage through a string helper, calls CreateFileA with CREATE_ALWAYS,
+then closes the result. Append functions use OPEN_EXISTING, GENERIC_WRITE and
+FILE_END, write the observed byte count, then close on a valid handle. The
+integer and float variants use target literals `%d` at `0x00657B2C` and `%f`
+at `0x00657B30`; the floating argument is promoted to double. They form the
+custom diagnostics used by graphics initialization, rather than CRT file state.
+Their GS instrumentation stays inside the authored extents; CRT/Win32 helpers
+keep separate origin decisions. The initializer's handle/error behavior is
+recorded as observed, with no invented validation.
+
+All sixteen bodies decode completely, have one final RET, and have only direct
+internal branches to instruction starts. Some bodies abut the next candidate;
+INT3 alignment is excluded where present. There is no unresolved switch table,
+external branch or shared tail in the accepted extents. Names, partitions and
+ABI declarations remain inferred. Private evidence is under
+`.analysis/r011-geometry-*`, `.analysis/r011-log-family.*` and
+`.analysis/r011-log-filename-xrefs.*`; reproduction uses the attested Ghidra
+decompile workflow in groups of at most sixteen addresses.
+
+R009/R010 complete SDK verification and R011 target-required tracking/status
+checks also passed through the unchanged no-auth public Funnel Bash MCP using
+`scripts/repo-python`. Private receipt:
+`.analysis/public-r009-r011-origin-verification.json`. Public CI passed all 33
+tests. Current totals are 477 reviewed origins: 63 authored, 409 library and
+five compiler; 3,874 remain pending. Exact stays at 42 functions / 8,916 bytes
+from the provisional 17,284-byte authored set (51.59%). The goal is incomplete.

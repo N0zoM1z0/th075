@@ -27,6 +27,14 @@ def object_with_functions(functions):
     return header + section + b"\xc3\xc3" + symbols + struct.pack("<I", 4)
 
 
+def object_with_real_constant(value):
+    name = b"__real@3f800000\0"
+    header = struct.pack("<HHIIIHH", 0x14C, 1, 0, 64, 1, 0, 0)
+    section = struct.pack("<8sIIIIIIHHI", b".rdata", 0, 0, 4, 60, 0, 0, 0, 0, 0x40301040)
+    symbol = struct.pack("<8sIhHBB", struct.pack("<II", 0, 4), 0, 1, 0, 2, 0)
+    return header + section + value + symbol + struct.pack("<I", 4 + len(name)) + name
+
+
 class SDKOriginExtentTests(unittest.TestCase):
     def test_whole_extent_comes_from_vendor_section_without_target_size(self):
         body = object_with_functions([(b"_first", 0)])
@@ -49,6 +57,37 @@ class SDKOriginExtentTests(unittest.TestCase):
     def test_internal_loop_must_target_an_instruction_start(self):
         with self.assertRaisesRegex(ValueError, "unresolved vendor jump"):
             SDK.verify_control_flow(b"\xb8\0\0\0\0\xeb\xfa\xc3", 0x401000)
+
+    def test_bound_call_must_use_the_decoded_destination(self):
+        with self.assertRaisesRegex(ValueError, "decoded destination"):
+            SDK.verify_control_flow(b"\xe8\xfb\x0f\0\0\xc3", 0x401000,
+                                    {0x401001: 0x403000})
+
+    def test_recorded_call_cannot_hide_a_mov_immediate(self):
+        with self.assertRaisesRegex(ValueError, "non-call instruction"):
+            SDK.verify_control_flow(b"\xb8\0\0\0\0\xc3", 0x401000,
+                                    {0x401001: 0x402000})
+
+    def test_complete_internal_tail_is_not_truncated_at_first_return(self):
+        self.assertEqual(SDK.verify_control_flow(b"\xc3\xeb\xfd", 0x401000), 0)
+
+    def test_trailing_conditional_branch_cannot_fall_outside_extent(self):
+        with self.assertRaisesRegex(ValueError, "trailing fallthrough"):
+            SDK.verify_control_flow(b"\xc3\x75\xfd", 0x401000)
+
+    def test_real_constant_requires_both_symbol_bits_and_vendor_data(self):
+        body = object_with_real_constant(b"\0\0\x80\x3f")
+        self.assertEqual(SDK.real_constant(body, "__real@3f800000", COFF.coff_name),
+                         b"\0\0\x80\x3f")
+
+    def test_real_constant_symbol_cannot_hide_different_vendor_data(self):
+        body = object_with_real_constant(b"\0\0\0\x40")
+        with self.assertRaisesRegex(ValueError, "scalar bits"):
+            SDK.real_constant(body, "__real@3f800000", COFF.coff_name)
+
+    def test_constant_binding_cannot_cover_an_opcode(self):
+        with self.assertRaisesRegex(ValueError, "opcode or partial field"):
+            SDK.verify_control_flow(b"\xc3", 0x401000, {}, {0x401000: 0x65747C})
 
 
 if __name__ == "__main__":

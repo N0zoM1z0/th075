@@ -10,20 +10,20 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  47 authored, 332 library and five compiler candidates; 3,967 origins remain
+  63 authored, 409 library and five compiler candidates; 3,874 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 12,343, with 8,916 exact (72.24%).
+  The current reviewed authored-byte denominator is 17,284, with 8,916 exact (51.59%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R008 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R011 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 26 passing
+  across six objects through scripts/repo-python after F005. Public CI has 33 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -77,6 +77,24 @@ deferred subsequent phases. Write documentation and handoffs in English.
   using scripts/repo-python. Public CI passed all 26 tests, target-required
   tracking validation passed, and the progress SVG is current. Reconstruction
   remains at the published 42-unit / 8,916-byte baseline.
+- R009/R010 reviewed 77 more complete SDK bodies, 16,524 bytes, with
+  independently evidenced calls, scalar definitions and internal tails.
+  verify-sdk-origins.py now covers 222 bodies / 46,114 bytes, all 60 direct-call
+  and 128 scalar bindings, and 315 unchanged indirect calls. Seven complete
+  members end with internal jumps after earlier RET paths; no truncation.
+  The remaining SDK survey addresses number 357, still pending.
+- R011 reviewed sixteen custom sprite/geometry/diagnostic functions, 4,941
+  authored bytes. Full extents/hashes are in authored-origin-evidence.csv;
+  semantic ownership and complete CFG are documented in ORIGIN_REVIEW.md.
+  The misleading MFC dialog label at 0x0040D840 is a custom white-sprite wrapper.
+  The four-float constructor at 0x0040DB10 stays pending until SDK/custom alias
+  evidence is resolved. Complete 132-byte owner types/roles remain unknown.
+  These reviews add no source, mapping or exact credit.
+- R009/R010 SDK verification and R011 tracking/status checks passed through
+  the no-auth public Funnel MCP using scripts/repo-python. Public CI passed
+  33 tests; target-required tracking and progress freshness passed. Exact
+  remains unchanged at 42 functions / 8,916 bytes. The 51.59% percentage uses
+  a provisional denominator and does not satisfy the full goal.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -127,14 +145,23 @@ and `BUILD_MATCHING.md`.
 
 Next origin batch: resolve the 212 remaining runtime archive fingerprint candidates
 under `.analysis/crt-origin-survey.json` with complete relocation/callee/data
-binding evidence. Review the remaining 434 SDK fingerprint candidates, starting
-with complete call-only bodies anchored to the R008 set and independently
-verified constant/data bindings. Neither survey alone grants credit. Also follow
+binding evidence. Review the remaining 357 SDK fingerprint candidates, starting
+with the 13-function diagnostic cohort (3,420 bytes) with anchored calls and
+scalar references in
+`.analysis/r012-sdk-call-scalar-plan.json`. It grants no credit until all member,
+constant, call and CFG checks pass. Continue from the 222 reviewed bodies and
+independently verified data definitions. Other data/global/dispatch bindings
+remain pending; literal-only matches are not blanket ownership evidence.
+Neither survey alone grants credit. Also follow
 the remaining container/string helpers starting at
-`0x004063F0`, then review the custom geometry builders and textured-quad
-callers around `0x0040C9A0..0x0040DB10` from complete control flow. Keep vendor
+`0x004063F0`, then follow the reviewed custom sprite/geometry family into
+texture handle
+accessors at `0x0040C8C0/0x0040DD60` and texture-manager lifetimes. Review the
+math/constructor aliases separately; do not inherit origin from these callers.
+Keep vendor
 and custom ownership separate. Finish every origin review before resuming
-exact reconstruction. Then rank authored functions by core behavior, dependency leverage and reconstruction
+exact reconstruction. Then rank authored functions by core behavior,
+dependencies and reconstruction
 cost. The unfinished F008 probes and ledger snapshot are preserved privately
 under `.analysis/deferred-exact-f008/`; they have no additional published
 source or exact credit. Existing accepted units remain unchanged.
