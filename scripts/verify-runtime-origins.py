@@ -87,7 +87,22 @@ def main() -> int:
             for binding in csv.DictReader(stream):
                 bindings.setdefault(binding["address"], []).append(binding)
     symbols = {int(record["address"], 16): record["coff_symbol"] for record in records}
-    if len(symbols) != len(records) or set(bindings) - {record["address"] for record in records}:
+    local_path = ROOT / "config/runtime-local-evidence.csv"
+    if local_path.exists():
+        spec = importlib.util.spec_from_file_location(
+            "runtime_local_anchors", ROOT / "scripts/verify-runtime-local-origins.py")
+        local = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(local)
+        if local.main() != 0:
+            raise ValueError("whole local CRT anchors did not verify")
+        with local_path.open() as stream:
+            for row in csv.DictReader(stream):
+                address = int(row["address"], 16)
+                if address in symbols:
+                    raise ValueError("duplicate CRT origin anchor")
+                symbols[address] = row["coff_symbol"]
+    if (len({record["address"] for record in records}) != len(records)
+            or set(bindings) - {record["address"] for record in records}):
         raise ValueError("duplicate runtime origins or orphan relocation bindings")
     archives = {}
     decoder = capstone.Cs(capstone.CS_ARCH_X86, capstone.CS_MODE_32)

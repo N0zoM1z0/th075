@@ -620,3 +620,14 @@ all code fields are rechecked by `verify-static-origins.py`. Its `_atexit`
 destination has its own pinned CRT whole-body fingerprint; other callees and
 global owner layouts remain separately pending. R024 adds 21 compiler-origin
 exclusions / 468 bytes and no authored source or exact credit.
+
+## Origin-only observations after R025
+
+Two complete 829-byte CRT memory-copy bodies match their pinned vendor COFF
+members after all 46 member-local pointer/table relocations per body are
+resolved. The source members for `_memcpy` and `_memmove` emit identical bytes,
+so source alias choice is not proved by the binary match. The 104-byte local
+unwind helper similarly matches its vendor member and has a checked 34-byte
+preceding handler dependency. The 119-byte floating-point conversion body
+now binds both calls to separately verified CRT bodies. All four remain
+library-origin exclusions, with no authored source or exact credit.

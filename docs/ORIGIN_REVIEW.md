@@ -1260,3 +1260,54 @@ tracking/status passed through the unchanged no-auth public Funnel MCP. Private
 receipt: `.analysis/public-r024-origin-verification.json`. Local CI passed 65
 regressions; progress freshness and `git diff --check` passed. The R023 public
 GitHub CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37004206011.
+
+## R025 — complete CRT local tables and dependent conversion
+
+Reviewed 2026-10-02. Four more library bodies / 1,881 bytes are excluded:
+`__local_unwind2` at 0x00640B66 (104 bytes), two 829-byte memory-copy bodies
+at 0x00640F20/0x00641260 and `__fptostr` at 0x0064F86B (119 bytes).
+The first three have 93 COFF DIR32 relocations in total. Every relocation
+uses an independently defined symbol in the same pinned libcmt member, with
+its source addend and exact target address checked. The two memory-copy
+bodies' 46 table/pointer references each remain inside their complete
+829-byte vendor auxiliary extents. Their entire linked bytes, including
+embedded tables and final RET, equal the target. Distinct `_memcpy` and
+`_memmove` archive members emit byte-identical implementations here; the
+proposed symbolic names use the matching member but the original linker's
+chosen alias is not proven by bytes alone.
+
+`__local_unwind2` has one local pointer to the preceding
+`__unwind_handler` at 0x00640B44. The latter has a separate whole 34-byte
+vendor function definition in the same COFF member; all 34 target bytes
+match. It is not one of the original 4,351 inventory candidates. This
+validates the linked pointer without granting a separate mapped/source/exact
+function or extrapolating other helper ownership.
+
+The fourth body has two zero-addend direct calls. `_strlen` was already
+separately verified; `_memmove` is the newly verified complete local-relocated
+body. `verify-runtime-origins.py` requires the local verifier to pass before
+allowing these callees as anchors. It then checks the complete `__fptostr`
+source extent, both resolved calls, full target bytes and control flow.
+No mutable globals or guessed aliases were accepted through this dependency.
+
+`runtime-local-evidence.csv` records the three complete source members,
+auxiliary extents, whole hashes, relocation counts and one helper dependency.
+`verify-runtime-local-origins.py` recomputes every local field from the pinned
+archive. Three public regressions reject an escaped local pointer, an unverified
+member-local dependency and a hidden call relocation. The existing runtime
+verifier now covers 54 bodies / 5,245 bytes and 19 verified direct calls;
+the separate local verifier covers three bodies / 1,762 bytes and 93 internal
+relocations. They grant origin evidence only. Private selection/byte evidence
+is under `.analysis/r025-*`.
+
+Current totals are 1,017 reviewed: 138 authored, 451 library, 428 compiler;
+3,334 remain pending. Exact remains 42 functions / 8,916 bytes, with a
+provisional authored denominator of 43,031 (20.72%). Exact reconstruction
+continues after the complete origin review.
+
+R025 local CRT, linked runtime, static, compiler, authored and SDK origin
+verifiers plus target-required tracking/status passed through the unchanged
+no-auth public Funnel MCP. Private receipt:
+`.analysis/public-r025-origin-verification.json`. Local CI passed 68 regressions;
+progress freshness and `git diff --check` passed. R024 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37004893091.

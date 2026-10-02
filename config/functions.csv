@@ -3511,7 +3511,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00640A7F,76,0x00640ACA,_FindAndUnlinkFrame,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640ACB,89,0x00640B23,_CallCatchBlock2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640B24,32,0x00640B43,__global_unwind2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00640B66,104,0x00640BCD,__local_unwind2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00640B66,104,0x00640BCD,__local_unwind2,__local_unwind2,VC71CRT,excluded,0.00,,,false,,R025,library,Whole pinned CRT auxiliary extent and every local relocation verified; alias name provisional; no source/exact credit
 0x00640BCE,35,0x00640BF0,__abnormal_termination,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640BF1,9,0x00640BF9,__NLG_Notify1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640BFA,24,0x00640C11,FUN_00640bfa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3531,8 +3531,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00640E86,9,0x00640E8E,FUN_00640e86,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640E8F,28,0x00640EAA,type_info::`scalar_deleting_destructor',,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00640F15,5,0x00640F19,_free,,,unclassified,0.00,,,true,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00640F20,829,0x0064125C,_memcpy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00641260,829,0x0064159C,_memmove,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00640F20,829,0x0064125C,_memcpy,_memcpy,VC71CRT,excluded,0.00,,,false,,R025,library,Whole pinned CRT auxiliary extent and every local relocation verified; alias name provisional; no source/exact credit
+0x00641260,829,0x0064159C,_memmove,_memmove,VC71CRT,excluded,0.00,,,false,,R025,library,Whole pinned CRT auxiliary extent and every local relocation verified; alias name provisional; no source/exact credit
 0x0064159D,14,0x006415AA,operator_new,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006415AB,128,0x0064162A,__onexit_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064162B,40,0x00641652,___onexitinit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3837,7 +3837,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064F7B3,61,0x0064F7EF,FID_conflict:__atodbl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F7F0,62,0x0064F82D,__atoldbl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064F82E,61,0x0064F86A,FID_conflict:__atodbl,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064F86B,119,0x0064F8E1,__fptostr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064F86B,119,0x0064F8E1,__fptostr,__fptostr,VC71CRT,excluded,0.00,,,false,,R025,library,Whole pinned CRT COFF body; direct calls bound to separately verified strlen/memmove; no source/exact credit
 0x0064F8E2,186,0x0064F99B,___dtold,___dtold,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064F99C,108,0x0064FA07,__fltout2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FA08,9,0x0064FA10,FUN_0064fa08,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
