@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  784 authored, 792 library and 574 compiler candidates; 2,201 origins remain
+  788 authored, 792 library and 574 compiler candidates; 2,197 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 1,937,229, with 8,916 exact (0.46%).
+  The current reviewed authored-byte denominator is 1,940,330, with 8,916 exact (0.46%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R065 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R066 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -809,3 +809,17 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 all eight dispatchers, all 737 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r065-origin-verification.json`. R064 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37028835995.
+
+R066 reviews four complete authored bodies / 3,101 bytes for options,
+music-room catalog loading and progress decisions. Five complete guarded
+tables cover 28 entries. The verifier checks the `musicroom.dat` literal,
+archive call, option sound call, whole bodies and CFG. Nine nearby repeated
+vector routines remain pending cold vendor-source and typed-binding proof.
+Totals are 2,154 reviewed (788 authored, 792 library, 574 compiler),
+2,197 pending. Exact stays 42 / 8,916 bytes against 1,940,330 provisional
+authored bytes (0.46%). Continue origin review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+the four bodies, all 741 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r066-origin-verification.json`. R065 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37029350867.

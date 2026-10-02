@@ -1041,3 +1041,12 @@ scene, battle and fighter state. Their ten complete guarded tables cover
 75 entries, all inside their owning code extents. Detailed layouts and
 original method names remain unresolved. R065 adds no reconstruction
 source or exact credit.
+
+## Origin-only observations after R066
+
+The music-room catalog loader reads `musicroom.dat` from the game archive,
+decodes bytes and parses records. Options changes call the game sound
+routine, while a progress decision polls a game flag helper. Five guarded
+tables cover 28 in-function cases across these four bodies. Nearby repeated
+vector routines still need a cold VC7 source/binding witness. R066 adds
+no reconstruction source or exact credit.

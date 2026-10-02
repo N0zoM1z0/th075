@@ -795,7 +795,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00419920,authored,GameState,authored,target-observed,R052
 0x00419CB0,authored,Music,authored,target-observed,R052
 0x00419DF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00419E10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00419E10,authored,GameProgress,authored,target-observed,R066
 0x0041A0E0,authored,ProgressRecords,authored,custom-policy-backed,R021
 0x0041A110,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0041A140,compiler,VC71Compiler,exclude,compiler-template-backed,R037
@@ -1268,7 +1268,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00426670,authored,MusicRoomScene,authored,target-observed,R040
 0x004268A0,authored,MusicRoomScene,authored,target-observed,R040
 0x00426A70,authored,MusicRoomScene,authored,target-observed,R040
-0x00426DD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00426DD0,authored,MusicRoom,authored,target-observed,R066
 0x00427180,authored,MusicRoomScene,authored,target-observed,R052
 0x00427300,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00427430,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1285,10 +1285,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00428D40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00428D60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00428E60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00428F00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00428F00,authored,OptionsScene,authored,target-observed,R066
 0x004292E0,authored,SceneRenderer,authored,target-observed,R065
 0x00429DC0,authored,ReplayScene,authored,target-observed,R053
-0x00429F00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00429F00,authored,OptionsScene,authored,target-observed,R066
 0x0042A150,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0042A180,authored,ReplayScene,authored,target-observed,R052
 0x0042A2C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

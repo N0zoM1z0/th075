@@ -2756,3 +2756,30 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 all eight dispatchers, all 737 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r065-origin-verification.json`. R064 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37028835995.
+
+## R066 — options, music room and progress decisions
+
+Four complete authored bodies / 3,101 bytes cover options-state changes,
+music-room catalog loading and a progress-selection decision. The catalog
+loader reads the literal `musicroom.dat` through the project's archive
+helper, decodes its byte stream and parses records. The options update
+changes game globals and calls the independently reviewed sound routine.
+The progress decision repeatedly queries a game flag helper. Method
+names and owner boundaries remain inferred.
+
+Five directly indexed, guarded switches contain 28 complete table entries.
+`scripts/repo-python scripts/verify-medium-game-origins.py` rechecks
+every full body hash and CFG, each table/guard/destination, the music-room
+literal and archive call, and the options sound call. Nine adjacent
+520/511-byte vector-template bodies have recognizable STL behavior but
+remain pending until a complete cold vendor-source match and typed
+bindings establish their origin; repetition alone grants no exclusion.
+
+R066 adds origin only: 2,154 reviewed (788 authored, 792 library, 574
+compiler), 2,197 pending. Exact stays 42 functions / 8,916 bytes against
+1,940,330 provisional authored bytes (0.46%). Continue origin review.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+the four bodies, all 741 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r066-origin-verification.json`. R065 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37029350867.
