@@ -2827,3 +2827,24 @@ R068 adds origin only: 2,162 reviewed (796 authored, 792 library, 574
 compiler), 2,189 pending. Exact remains 42 functions / 8,916 bytes
 against 1,945,954 provisional authored bytes (0.46%). R067 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37030747665.
+
+## R069 — combat hit-response dispatchers
+
+Two complete game-authored bodies / 2,129 bytes choose and apply a fighter's
+hit response. The selector reads fighter and opponent state, game options
+and random or scripted input. Its caller applies damage, changes state and
+triggers sound/effect helpers. Their direct call edge is visible in the
+target. Names describe observed behavior; original method boundaries and
+full fighter layout remain provisional.
+
+The caller's guarded byte remap covers all 31 input values and its nine-entry
+table. The selector's guarded direct table has four entries. Both tables
+follow the final RETs, and every reachable destination lands at an
+instruction boundary inside its full owning body.
+`scripts/repo-python scripts/verify-combat-reaction-origins.py` rechecks
+the full body/CFG hashes, both complete table records and the caller edge.
+
+R069 adds origin only: 2,164 reviewed (798 authored, 792 library, 574
+compiler), 2,187 pending. Exact remains 42 functions / 8,916 bytes against
+1,948,083 provisional authored bytes (0.46%). R068 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37031049890.

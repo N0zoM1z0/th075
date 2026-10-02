@@ -1489,7 +1489,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00442A70,authored,BattleCombat,authored,target-observed,R042
 0x00442E40,authored,BattleCombat,authored,target-observed,R042
 0x004431D0,authored,BattleState,authored,target-observed,R065
-0x004439A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004439A0,authored,BattleCombat,authored,target-observed,R069
 0x00443E90,authored,BattleCollision,authored,target-observed,R045
 0x00443FC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00444020,authored,BattleCombat,authored,target-observed,R042
@@ -1879,7 +1879,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00455010,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00455070,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004550B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00455140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00455140,authored,BattleCombat,authored,target-observed,R069
 0x00455500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00455580,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00455610,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

@@ -1068,3 +1068,11 @@ binding method. Alice's slot-19 method updates a character-specific timer
 from relative opponent position. Those two complete bodies close the
 remaining pending entries within the inspected 23-slot range of the
 eleven playable-fighter vtables. R068 adds no source or exact credit.
+
+## Origin-only observations after R069
+
+A combat selector chooses a hit response from fighter/opponent state and
+game options. Its caller applies damage and effects. Their guarded switches
+use one complete 31-byte action remap with nine destinations and one direct
+four-entry table. Both code bodies and the direct call edge are verified.
+R069 adds no source or exact credit.

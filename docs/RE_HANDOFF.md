@@ -847,3 +847,13 @@ Totals are 2,162 reviewed (796 authored, 792 library, 574 compiler),
 2,189 pending. Exact stays 42 / 8,916 bytes against 1,945,954 provisional
 authored bytes (0.46%). Continue origin review first. R067 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37030747665.
+
+R069 reviews two combat hit-response dispatchers / 2,129 bytes. One calls
+the other directly; their guarded switches cover a 31-byte remap and 13
+complete table entries. `scripts/repo-python
+scripts/verify-combat-reaction-origins.py` rechecks body/CFG/table hashes
+and the caller edge. Totals are 2,164 reviewed (798 authored, 792 library,
+574 compiler), 2,187 pending. Exact stays 42 / 8,916 bytes against
+1,948,083 provisional authored bytes (0.46%). Continue origin review
+first. R068 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37031049890.

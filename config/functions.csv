@@ -1489,7 +1489,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00442A70,975,0x00442E3E,FUN_00442a70,BattleCombat::ResolveAttackHitboxes,BattleCombat,unclassified,0.00,,,false,,"R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00442E40,897,0x004431C0,FUN_00442e40,BattleCombat::ResolveBodyContact,BattleCombat,unclassified,0.00,,,false,,"R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x004431D0,1982,0x0044398D,FUN_004431d0,BattleState::ProcessAt004431D0,BattleState,unclassified,0.00,,,false,,"R065; complete target body, guarded switch table, CFG and game-specific behavior",authored,Origin reviewed; role inferred; source and exact state independent
-0x004439A0,1185,0x00443E40,FUN_004439a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004439A0,1185,0x00443E40,FUN_004439a0,BattleCombat::ApplyHitResponseAt004439A0,BattleCombat,unclassified,0.00,,,false,,"R069; complete target body/CFG, guarded switch and combat state",authored,Origin reviewed; role inferred; source and exact state independent
 0x00443E90,304,0x00443FBF,FUN_00443e90,BattleCollision::ApplyImpact,BattleCollision,unclassified,0.00,,,false,,"R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00443FC0,88,0x00444017,FUN_00443fc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00444020,898,0x004443A1,FUN_00444020,BattleCombat::ApplyAttackHit,BattleCombat,unclassified,0.00,,,false,,"R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
@@ -1879,7 +1879,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00455010,96,0x0045506F,FUN_00455010,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00455070,56,0x004550A7,FUN_00455070,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004550B0,130,0x00455131,FUN_004550b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00455140,944,0x004554EF,FUN_00455140,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00455140,944,0x004554EF,FUN_00455140,BattleCombat::SelectHitResponseAt00455140,BattleCombat,unclassified,0.00,,,false,,"R069; complete target body/CFG, guarded switch and combat state",authored,Origin reviewed; role inferred; source and exact state independent
 0x00455500,118,0x00455575,FUN_00455500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00455580,139,0x0045560A,FUN_00455580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00455610,44,0x0045563B,FUN_00455610,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
