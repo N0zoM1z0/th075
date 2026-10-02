@@ -1815,3 +1815,52 @@ Local CI passed 95 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 new whole-archive verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r039-origin-verification.json`.
+
+## R040 — game-specific menu, replay, result and battle routines
+
+Reviewed 2026-10-02. Twenty-three further complete target bodies / 36,859
+bytes have directly observed game behavior. Each has one terminal RET, all
+direct branches end on instruction boundaries within its recorded extent,
+and its complete SHA-256 and branch counts are recorded in
+`config/authored-origin-evidence.csv`. The roles below are inferred navigation
+names, not claims about original C++ class ownership. Ghidra decompilations
+used for semantic inspection are private diagnostics under `.analysis/r040-*`;
+the whole-body and CFG checks use the hash-pinned executable.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x004206D0` | Reads a file, optionally applies the game's evolving two-byte XOR stream, passes the buffer to a custom parser and can write the transformed copy. |
+| `0x004259D0` | Wraps a music-room selection across the recorded track count, scrolls a ten-row window and selects track/title preview resources. |
+| `0x00425C80` | Draws that track list, ten-row selection highlight, scrollbar, title and detail textures using project sprite primitives. |
+| `0x00426670` | Builds a multiline track catalog from unlock state and track strings, then uploads the text to a scene-owned texture. |
+| `0x004268A0` | Bounds-checks the selected track, formats its title and updates a dedicated text texture. |
+| `0x00426A70` | Builds two selected-track text textures, including the fixed `No.%02d %s / %s` detail format. |
+| `0x0042A340` | Updates an individual name-entry slot in character record storage, with 0x5b/0x5c keyboard commands and a nine-character cap. |
+| `0x0042A560` | Draws an individual player's record/name grid, cursor and animated keyboard selection. |
+| `0x0042AB90` | Polls two players' directional and confirm/cancel input, then wraps the custom 26-column/4-row name keyboard. |
+| `0x0042B380` | Updates the shared name-entry buffer and its confirm/cancel state, including replay finalization on the confirm path. |
+| `0x0042B570` | Draws that shared name-entry keyboard, record fields, cursor and time-driven highlight. |
+| `0x0042BCD0` | Polls both controllers for the shared keyboard and applies its distinct column/row state policy. |
+| `0x0042C670` | Pages replay selection by one or ten entries, navigates a subordinate slot and returns scene transitions on select/cancel. |
+| `0x0042CA60` | Draws a ten-item replay list with per-entry metadata and a subordinate slot menu. |
+| `0x0042D470` | Enumerates `replay\\*.rep`, opens each file and reads its header/slot metadata into the replay browser. |
+| `0x0042EF10` | Draws result counters, an animated scale/alpha panel and a character-indexed result label. |
+| `0x0042F530` | Extracts decimal digits from a value, selects glyph rectangles and draws a fixed or variable-width number. |
+| `0x0042F970` | Navigates result pages with availability checks, builds a detail page on selection and returns game transition codes. |
+| `0x00431070` | Formats a ten-row result-record page from selected progress data and uploads it as text. |
+| `0x00431350` | Formats four selected progress counters and uploads the result panel text. |
+| `0x004319B0` | Loads `data\\character\\%s\\cardlist.txt`, splits its newline-delimited records and stores copied strings. |
+| `0x00435A70` | Renders paired character-specific sprite layers, animated panels and background state with the game's fixed coordinates. |
+| `0x0043E040` | Renders the battle HUD from both players' health/state fields, gauges, character sprites and score indicators. |
+
+The nearby vector-growth helpers, jump-table parser, and scene switch dispatchers
+remain pending where complete ownership or extent is unresolved. Calling a
+reviewed helper does not transfer its origin to the caller, or vice versa.
+R040 adds no source, mapping or exact-match credit. Totals are 1,518 reviewed:
+187 authored, 767 library and 564 compiler; 2,833 remain pending. Exact is
+still 42 functions / 8,916 bytes against the provisional 99,506-byte authored
+slice (8.96%). Finish all origin review before resuming exact reconstruction.
+Local CI passed 95 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r040-origin-verification.json`.

@@ -770,3 +770,16 @@ the library symbol grouping, but unresolved external callee dependencies
 leave those destination functions pending. Alias multiplicity does not reveal
 which target entry belonged to which original codec subclass. No authored
 source or exact credit changes.
+
+## Origin-only observations after R040
+
+The music-room list, text-resource builders and selection update share a
+track count and ten-row scrolling policy. The two name-entry paths share the
+0x5b/0x5c keyboard commands but store characters in different record fields;
+their rendering and input routines are independently reviewed. Replay browsing
+enumerates `.rep` files and reads metadata before displaying ten entries at a
+time. Result panels format selected progress counters. The battle renderer and
+HUD use paired player/character fields and fixed sprite geometry. These are
+useful clusters for later exact-work prioritization, but inferred names and
+class boundaries remain provisional. The 23 complete R040 bodies grant origin
+only; they provide no source or exact credit.

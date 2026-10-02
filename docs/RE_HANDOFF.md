@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  138 authored, 728 library and 431 compiler candidates; 3,054 origins remain
+  187 authored, 767 library and 564 compiler candidates; 2,833 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
+  The current reviewed authored-byte denominator is 99,506, with 8,916 exact (8.96%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R034 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R040 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -476,3 +476,18 @@ bytes. Cold replay: `scripts/repo-python scripts/verify-sdk-jump-origins.py`.
 Local CI passed 95 tests, and the unchanged no-auth public Funnel MCP ran the
 new verifier successfully. Private receipt:
 `.analysis/public-r039-origin-verification.json`.
+
+R040 reviews 23 further game-authored menu, replay, result and battle bodies /
+36,859 bytes. Every complete target extent has a SHA-256 and local CFG check;
+the `ORIGIN_REVIEW.md` table records the behavior supporting each origin.
+Inferred names remain provisional. This batch reveals the music-room and
+name-entry flows, replay browsing, results pages, character card-list loading,
+and paired battle renderers as candidate clusters for later exact work.
+Totals are 1,518 reviewed (187 authored, 767 library, 564 compiler), with
+2,833 pending. Exact remains 42 / 8,916 bytes against a provisional 99,506
+authored bytes (8.96%). Run
+`scripts/repo-python scripts/verify-authored-origins.py` for cold extent and
+CFG replay. Finish the remaining origins before exact reconstruction.
+Local CI passed 95 tests. The unchanged no-auth public Funnel MCP ran the
+authored verifier and target-required status checks; private receipt:
+`.analysis/public-r040-origin-verification.json`.
