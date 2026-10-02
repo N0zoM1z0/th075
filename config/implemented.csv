@@ -34,3 +34,6 @@ Input::InitializeJoysticks
 Input::PollJoysticks
 Input::EnumerateJoystickDevice
 Input::ConfigureJoystickAxis
+Graphics::CopyTextureOpaque
+Graphics::DrawLine
+Graphics::DrawFilledRectangle

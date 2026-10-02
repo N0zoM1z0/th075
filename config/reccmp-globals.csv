@@ -32,6 +32,7 @@ g_GraphicsResourceClientCount,0x00671210,data
 Graphics::g_Window,0x00671214,data
 Graphics::g_DrawOriginX,0x00671220,data
 Graphics::g_DrawOriginY,0x00671224,data
+Graphics::g_CachedTexture,0x00671228,data
 Graphics::g_Device,0x00671230,data
 Graphics::g_Windowed,0x00671238,data
 Graphics::g_RequireSquareTextures,0x0067123A,data

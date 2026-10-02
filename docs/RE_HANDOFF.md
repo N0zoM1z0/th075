@@ -8,16 +8,16 @@ deferred subsequent phases. Write documentation and handoffs in English.
   Official distribution provenance is uncorroborated. Do not substitute the
   localized executable.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
-  There are 4,351 candidates, with 36 mapped, 36 source-present, and 36
-  complete exact functions covering 5,262 bytes. Origin review has classified
-  47 authored functions and 15 library functions; 4,289 origins remain pending. Candidate count is not authored function count; regenerate
+  There are 4,351 candidates, with 39 mapped, 39 source-present, and 39
+  complete exact functions covering 6,810 bytes. Origin review has classified
+  47 authored functions and 115 library functions; 4,189 origins remain pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Alternate origin batches and exact reconstruction. The current
-  reviewed authored-byte denominator is 12,343, with 5,262 exact (42.63%).
+  reviewed authored-byte denominator is 12,343, with 6,810 exact (55.17%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003/R004 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -30,6 +30,16 @@ deferred subsequent phases. Write documentation and handoffs in English.
   excluded 15 vendor-vector bodies (712 bytes) and reviewed the custom axis
   callback before exact acceptance. See the knowledge base for real SDK
   container types, callback ABI and compiler-generated null temporary.
+- R004 reviewed 100 more VC7 container/string/exception bodies (4,497 bytes)
+  using fresh vendor-source fingerprints, typed call destinations and complete
+  control flow. The public vendor probe and CSV record all extents/symbols and
+  159 relocation bindings. Overlapping catch funclets remain separately pending.
+- F006 accepted texture copy, line and filled-rectangle drawing: 1,548 bytes
+  and 48 relocations, cold-replayed from two new objects. Preserve the copy's
+  Width-based pixel indexing, bitwise float multiplier test, RGB byte casts,
+  alpha operation, and right/bottom +1 policy. See `KNOWLEDGE_BASE.md`.
+  Full no-auth public MCP cold replay then passed 39/39 units across eight
+  objects, including all 428 relocations and 6,810 accepted bytes.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -78,9 +88,10 @@ TH105 was reviewed as an engine-structure reference: it uses VC8/LTCG and
 D3D9, so retain TH075's proven VC7.1/D3D8 profile. See `REFERENCE_PROJECTS.md`
 and `BUILD_MATCHING.md`.
 
-Next alternate batch: extend vendor-source origin review through the remaining
-input-container helpers at `0x004044F0` onward, then return to exact
-reconstruction of reviewed graphics drawing/copy/default-state functions. Full input
+Next alternate batch: resolve the remaining container insertion/allocation
+helpers and overlapping compiler EH funclets around `0x00404770..0x004063E0`,
+then return to exact reconstruction of reviewed textured drawing,
+rectangle-outline and default-state functions. Full input
 decompiles/instructions are private under `.analysis/origin-input-*`; avoid
 trusting misleading Ghidra string/back labels on device containers.
 Deferred paired cleanup at `0x00401020..0x0040110E`, 239 bytes.

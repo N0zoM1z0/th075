@@ -32,6 +32,7 @@ address,name,module,confidence,evidence
 0x00671214,Graphics::g_Window,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671220,Graphics::g_DrawOriginX,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671224,Graphics::g_DrawOriginY,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671228,Graphics::g_CachedTexture,Graphics,inferred,R001/F006; textured drawing compares/stores the bound SDK texture; untextured drawing clears it
 0x00671230,Graphics::g_Device,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671238,Graphics::g_Windowed,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0067123A,Graphics::g_RequireSquareTextures,Graphics,target-observed,F003; reset parameters; one-byte square-texture policy; target error strings

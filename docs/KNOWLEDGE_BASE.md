@@ -362,3 +362,71 @@ exception or linkage behavior. Constructor, destructor, callbacks and polling
 match complete extents under the same per-object profile. All exits and trailing
 alignment were reviewed in R002/R003; the security check remains in the
 initializer's full extent. Names remain inferred.
+
+## F006 — opaque texture copy and untextured drawing
+
+Accepted 2026-10-02 after origin batch R004, from the authored set reviewed in
+R001. Three complete functions add 1,548 exact bytes and 48 explicitly reviewed
+relocations. Cold replay passed the two drawing units from one new object and
+the copy unit from a second new object. Names remain inferred.
+
+| Complete extent | Bytes | Inferred function |
+| --- | ---: | --- |
+| `0x00401D80..0x00401EF7` | 376 | `Graphics::CopyTextureOpaque` |
+| `0x00403400..0x0040361B` | 540 | `Graphics::DrawLine` |
+| `0x00403910..0x00403B87` | 632 | `Graphics::DrawFilledRectangle` |
+
+**Copy behavior and ABI:** The cdecl function takes two pointers to SDK texture
+pointers and a const RECT pointer. It obtains level-zero surfaces, calls the
+device's CopyRects(source, rectangle, 1, destination, null), locks the
+destination texture, and obtains its surface description. Full-surface loops
+use unsigned width/height counters; rectangle loops use signed RECT/LONG
+coordinates. Each visited DWORD is ORed with 0xFF000000. The target computes
+the pixel index with surface Width rather than LockRect's Pitch; the source
+preserves this observed behavior without adding validation or pitch correction.
+HRESULTs are discarded where the target discards them. Unlock and both COM
+Release calls remain in order, using real D3D8 interfaces. The natural SDK
+locals and scoped loop counters reproduce the full 64-byte stack frame; their
+inferred identifiers are not evidence of recovered original symbols.
+
+**Drawing behavior and representation:** Both cdecl functions take a const
+RECT and a packed D3DCOLOR. A complete 28-byte local ScreenVertex contains
+x/y/z/rhw, diffuse color, and one u/v pair, matching FVF 0x144 and the actual
+DrawPrimitiveUP stride. This local vertex record is independently evidenced;
+it establishes no unknown resource-owner layout. Line emits two vertices,
+z=0/rhw=1, UV (0,0)/(1,1), and a one-primitive LINELIST. Filled rectangle emits
+four vertices and a two-primitive TRIANGLEFAN; right/bottom coordinates add the
+verified float 1.0 at `0x0065747C`. All vertex fields are initialized before use.
+
+The multiplier condition compares its float's 32-bit representation with
+0x3F800000; a floating comparison would emit different instructions. The
+source retains the observed representation test under the pinned MSVC x86
+profile. D3DCOLOR_ARGB preserves alpha and scales/truncates each RGB channel
+through an unsigned-byte conversion. The compiler supplies the three __ftol2
+calls per function at the observed runtime destination `0x006406AC`; no helper
+ABI or return value is fabricated. Vertex X/Y then use the previously evidenced
+global scale and origin. Line temporarily sets D3DTSS_ALPHAOP to
+D3DTOP_SELECTARG2 and restores MODULATE, rather than changing texture filtering.
+Both functions clear a nonnull cached texture before untextured drawing and set
+the SDK vertex shader/FVF. The textured-quad caller compares and stores the
+same texture pointer at `0x00671228`, independently confirming that cache role.
+
+**Complete comparison:** The common explicit VC7.1 profile is
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. There are 2 copy, 23 line and 23 filled
+rectangle relocations. Shared globals, the compiler conversion helper and the
+1.0 constant were individually checked before canonical binding; none of
+their four-byte fields is omitted from acceptance. R001 and fresh decoding
+confirm internal direct branches, final returns and excluded trailing INT3
+alignment, without switches or shared tails. There is one natural source body
+per function, with no padding, assembly, inert locals, or conditional layouts.
+Full cold replay through the no-auth public Bash MCP subsequently passed
+39/39 units across eight fresh objects, including all 428 relocations and
+6,810 accepted bytes. The private receipt is `.analysis/public-f006-replay.json`.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit graphics-copy-texture-opaque --unit graphics-draw-line --unit graphics-draw-filled-rectangle
+```
+
+The reviewed authored slice is now 6,810/12,343 bytes exact (55.17%). Its
+denominator remains provisional: 4,189 origins are still pending, so the
+all-origins/50%-authored-byte goal remains incomplete.

@@ -10,6 +10,7 @@ address,name,module,confidence,evidence
 0x00401B00,Graphics::SetDrawTransform,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401B20,Graphics::Create16BitTexture,Graphics,inferred,F003; complete target behavior and SDK ABI; original name unknown
 0x00401C20,Graphics::CreateTexture,Graphics,inferred,F003; complete target behavior and SDK ABI; original name unknown
+0x00401D80,Graphics::CopyTextureOpaque,Graphics,inferred,F006; full SDK behavior and cold byte comparison; original name unknown
 0x00401F00,Graphics::LoadTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00401F50,Graphics::SetBlendMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00402140,Graphics::SetAlphaMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
@@ -25,6 +26,8 @@ address,name,module,confidence,evidence
 0x004028C0,Graphics::GetTargetTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x004028F0,Graphics::Present,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
 0x00402970,Graphics::PresentToWindow,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00403400,Graphics::DrawLine,Graphics,inferred,F006; full SDK behavior and cold byte comparison; original name unknown
+0x00403910,Graphics::DrawFilledRectangle,Graphics,inferred,F006; full SDK behavior and cold byte comparison; original name unknown
 0x00403B90,InputResourceClient::InputResourceClient,InputResourceClient,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
 0x00403BE0,InputResourceClient::~InputResourceClient,InputResourceClient,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
 0x00403D00,Input::ShowError,Input,inferred,F002; target-observed operations and typed SDK call slots; original name unknown

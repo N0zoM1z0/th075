@@ -101,7 +101,7 @@ tests without depending on a game executable or private database.
 
 Use `scripts/repo-python scripts/NAME.py ...` in public `run_command`
 requests. The same pinned environment is used by Ghidra's workspace wrapper.
-A complete 36-unit replay (six cold objects, 5,262 bytes) also passed through
+A complete 39-unit replay (eight cold objects, 6,810 bytes) also passed through
 public Bash after the environment migration. The smoke test exercises failure
 handling as well as successful reads and compilation.
 

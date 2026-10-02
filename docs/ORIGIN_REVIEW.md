@@ -186,3 +186,71 @@ InputDevice.hpp and vector, declare the two real vendor vector types, and call
 the listed methods, including state-vector assign (not resize). Compile using
 the profile above and inspect the actual decorated COFF symbols. This review
 precedes exact reconstruction of the authored callback.
+
+## R004 — remaining VC7 container, string and exception helpers
+
+Reviewed 2026-10-02 after F005. One hundred complete bodies, totaling 4,497
+bytes, are now library/exclude. Their addresses, complete sizes, inferred
+vendor signatures, decorated COFF symbols, masked SHA-256 fingerprints and
+159 relocation bindings are recorded in `config/vendor-origin-evidence.csv`.
+These are origin records, not canonical exact-match units or recovered
+original names. The batch leaves 4,189 origins pending and grants no authored
+source or exact credit.
+
+The real VC7 headers instantiate `std::vector<IDirectInputDevice8A *>` and
+`std::vector<DIJOYSTATE>`, their allocators/iterators, copy/fill/destruction
+algorithms, and the string/exception machinery used by vector length checks.
+The public probe is `probes/VC7InputContainers.cpp`; it calls vendor interfaces
+and contains no copied implementation. A fresh compile with pinned VC7.1
+13.10.3077 reproduced each complete size and every non-relocation byte under:
+
+```bash
+scripts/compile-probe.sh probes/VC7InputContainers.cpp build/probes/VC7InputContainers.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+```
+
+The EH/GS profile is required by five fingerprints, including the 80-byte
+value copy and cookie in state-vector `_Assign_n`. Ninety-five also reproduce
+under the previously evidenced GX-disabled profile. This does not establish
+one executable-wide profile. Reproduce an individual diagnostic using its
+CSV COFF symbol, address and complete size with `compare-coff-function.py`;
+the CSV hash replaces precisely its listed four-byte relocation fields with
+zeros. Every field was checked against an actual decoded 32-bit immediate
+or displacement, so opcode bytes cannot be hidden by the mask.
+
+Short library bodies have aliases. The reviewed R003 vector callers, their
+4/80-byte element strides, and mutually consistent incoming/outgoing typed
+call destinations distinguish the device/state specializations. For example,
+device `_Tidy` at `0x004044F0` destroys through `0x004044C0` and deallocates
+through `0x00405100`; state `_Tidy` at `0x00404630` uses
+`0x00405200/0x00405230`. State `_Assign_n` at `0x004045B0` copies the value
+before erase/insert, preserving alias safety. Scalar pointer algorithms use
+memmove; the DIJOYSTATE algorithms advance/copy 80-byte records. The CSV
+bindings document compiler-intended roles at observed target destinations;
+unreviewed callees receive no origin credit from these callers.
+
+The string family uses a 16-byte small buffer, length/reserve at +20/+24,
+`_Eos` termination, `_Grow`/`_Tidy` policies and char_traits copy/move calls.
+`logic_error` owns a string and returns its c_str from what(); length_error
+derives from it. The two vector `_Xlen` bodies use the verified literal
+`vector<T> too long` and length_error throw metadata. These agree with real
+`std::allocator` headers; Ghidra's DebugHeapAllocator and `_Xran` labels are
+not used. The `__except_list` bindings with target zero are FS:[0] accesses,
+not PE globals at address zero.
+
+Complete Capstone decoding verifies all 100 bodies through their single final
+RET, with every jump internal and direct, no switch table or shared/external
+tail. Padding is excluded where present; some bodies abut their next function.
+The unmatched insertion/allocation bodies and overlapping EH catch funclets
+remain pending rather than being blanket-classified from adjacency. Private
+attested decompiles and full instruction evidence remain under
+`.analysis/origin-container-extended-*`; the source/header/compiler
+fingerprints and typed call graph provide independent corroboration.
+
+| Read-only vendor header | SHA-256 |
+| --- | --- |
+| vector | `de722c2662f74e78332c6a1b7ddabb9976f3381a904780aaefba54e661a9656d` |
+| stdexcept | `bc3e7b40b6413b1aa2a2cc011057ca42aa03a714f409f927734c4f507aaea2a7` |
+| xstring | `c715ae6f152ca41d73e701c5d77dd5da0b61832250c967d2a8376b9471656943` |
+| memory | `81895e7a4ef1c432ec68484b072bcd14f953a75d99af77c0f83667c1c7cf9bf4` |
+| xmemory | `e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94` |
+| xutility | `177f47d09110228013374513e62a9de2e9be2f9bd22e4ae15bb31c584da4db7b` |

@@ -778,3 +778,84 @@ relocations = [
   { offset = 0x33, type = "DIR32", symbol = "?g_Joysticks@Input@@3V?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@A", target = 0x00671368 },
   { offset = 0x38, type = "REL32", symbol = "?back@?$vector@PAUIDirectInputDevice8A@@V?$allocator@PAUIDirectInputDevice8A@@@std@@@std@@QAEAAPAUIDirectInputDevice8A@@XZ", target = 0x00404210 },
 ]
+
+[units.graphics-draw-line]
+source = "src/GraphicsDraw.cpp"
+object = "build/matching/GraphicsDraw.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::DrawLine"]
+symbol = "?DrawLine@Graphics@@YAXPBUtagRECT@@K@Z"
+target_address = 0x00403400
+size = 540
+relocations = [
+  { offset = 0x64, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0xA2, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0xA7, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0xD3, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0xD8, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x102, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0x107, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x144, type = "DIR32", symbol = "?g_DrawScale@Graphics@@3MA", target = 0x0066C084 },
+  { offset = 0x14E, type = "DIR32", symbol = "?g_DrawOriginX@Graphics@@3MA", target = 0x00671220 },
+  { offset = 0x164, type = "DIR32", symbol = "?g_DrawScale@Graphics@@3MA", target = 0x0066C084 },
+  { offset = 0x16E, type = "DIR32", symbol = "?g_DrawOriginY@Graphics@@3MA", target = 0x00671224 },
+  { offset = 0x186, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x18E, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x19B, type = "DIR32", symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A", target = 0x00671228 },
+  { offset = 0x1A8, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x1B0, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x1BD, type = "DIR32", symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A", target = 0x00671228 },
+  { offset = 0x1CC, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x1D4, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x1EA, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x1F2, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x204, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x20C, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+]
+
+[units.graphics-draw-filled-rectangle]
+source = "src/GraphicsDraw.cpp"
+object = "build/matching/GraphicsDraw.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::DrawFilledRectangle"]
+symbol = "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z"
+target_address = 0x00403910
+size = 632
+relocations = [
+  { offset = 0x31, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
+  { offset = 0x57, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
+  { offset = 0x66, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
+  { offset = 0x8B, type = "DIR32", symbol = "__real@3f800000", target = 0x0065747C },
+  { offset = 0xDA, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0x118, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0x11D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x14F, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0x154, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x186, type = "DIR32", symbol = "?g_ColorMultiplier@Graphics@@3MA", target = 0x0066C080 },
+  { offset = 0x18B, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1D5, type = "DIR32", symbol = "?g_DrawScale@Graphics@@3MA", target = 0x0066C084 },
+  { offset = 0x1DF, type = "DIR32", symbol = "?g_DrawOriginX@Graphics@@3MA", target = 0x00671220 },
+  { offset = 0x1F5, type = "DIR32", symbol = "?g_DrawScale@Graphics@@3MA", target = 0x0066C084 },
+  { offset = 0x1FF, type = "DIR32", symbol = "?g_DrawOriginY@Graphics@@3MA", target = 0x00671224 },
+  { offset = 0x211, type = "DIR32", symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A", target = 0x00671228 },
+  { offset = 0x21E, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x226, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x233, type = "DIR32", symbol = "?g_CachedTexture@Graphics@@3PAUIDirect3DTexture8@@A", target = 0x00671228 },
+  { offset = 0x242, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x24A, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x260, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x268, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+]
+
+[units.graphics-copy-texture-opaque]
+source = "src/GraphicsCopy.cpp"
+object = "build/matching/GraphicsCopy.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["Graphics::CopyTextureOpaque"]
+symbol = "?CopyTextureOpaque@Graphics@@YAXPAPAUIDirect3DTexture8@@0PBUtagRECT@@@Z"
+target_address = 0x00401D80
+size = 376
+relocations = [
+  { offset = 0x43, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x4B, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+]

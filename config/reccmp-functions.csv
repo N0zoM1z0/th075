@@ -10,6 +10,7 @@ Graphics::SetColorMultiplier,0x00401AF0,function
 Graphics::SetDrawTransform,0x00401B00,function
 Graphics::Create16BitTexture,0x00401B20,function
 Graphics::CreateTexture,0x00401C20,function
+Graphics::CopyTextureOpaque,0x00401D80,function
 Graphics::LoadTexture,0x00401F00,function
 Graphics::SetBlendMode,0x00401F50,function
 Graphics::SetAlphaMode,0x00402140,function
@@ -25,6 +26,8 @@ Graphics::GetPrimaryTargetTexture,0x004028B0,function
 Graphics::GetTargetTexture,0x004028C0,function
 Graphics::Present,0x004028F0,function
 Graphics::PresentToWindow,0x00402970,function
+Graphics::DrawLine,0x00403400,function
+Graphics::DrawFilledRectangle,0x00403910,function
 InputResourceClient::InputResourceClient,0x00403B90,function
 InputResourceClient::~InputResourceClient,0x00403BE0,function
 Input::ShowError,0x00403D00,function
