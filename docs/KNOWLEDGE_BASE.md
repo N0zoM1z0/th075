@@ -653,3 +653,15 @@ pointer establishes the initializer's vendor origin but says nothing about
 which later indirect calls execute or who owns a caller. The verifier records
 pointer fields separately from scalar and readonly data. All three bodies
 remain library-origin exclusions with no authored source or exact credit.
+
+## Origin-only observations after R029
+
+Ten PNG/JPEG/zlib SDK bodies now have complete origin evidence. Their data
+references use complete relocation-free readonly sections, a proven scalar,
+verified function entrypoints, and exact source addends. A +256 relocation
+may identify a position inside a section or its endpoint; the full-section
+bound is checked before accepting it. The endpoint records pointer provenance
+only, not an accessible element. A JPEG quantizer became eligible only after
+its direct callee had a separately verified complete SDK origin. Indirect
+calls and other callers remain independently unclassified; none of these ten
+bodies gains authored source or exact reconstruction credit.

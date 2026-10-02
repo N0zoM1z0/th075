@@ -120,19 +120,23 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
                 raise ValueError("SDK call cannot claim scalar literal evidence")
             calls.append(relocation)
             call_bindings.append(binding)
-        elif (relocation["type"] == "DIR32" and relocation["addend"] == 0
+        elif (relocation["type"] == "DIR32"
               and relocation["local_symbol_offset"] is None):
             destination = int(binding["target_address"], 16)
             section_id = binding.get("data_section_id", "")
             if target_kind == "function":
-                if (section_id or binding.get("literal_hex", "")
+                if (relocation["addend"] != 0 or section_id or binding.get("literal_hex", "")
                         or symbols.get(destination) != relocation["symbol"]):
                     raise ValueError("SDK function pointer lacks a verified complete callee")
             elif section_id:
                 if binding.get("literal_hex", "") or relocation["symbol"].startswith("__real@"):
                     raise ValueError("SDK scalar and readonly section evidence cannot be mixed")
                 section = readonly_sections[section_id]
-                if section["symbols"].get(relocation["symbol"]) != destination:
+                addend = relocation["addend"]
+                source = section["symbols"].get(relocation["symbol"])
+                if (source is None or addend < 0
+                        or source + addend > section["base"] + section["size"]
+                        or source + addend != destination):
                     raise ValueError("SDK data binding differs from the complete section definition")
                 data_reader = module("sdk_data_binding", "coff_data.py")
                 _, source_symbols = data_reader.parse_symbols(member, comparison.coff_name)
@@ -141,6 +145,8 @@ def bind_sdk_function(code, relocations, bindings, symbols, address,
                     if hashlib.sha256(member).hexdigest() != section["member_sha256"]:
                         raise ValueError("SDK locally defined data requires the same source member")
             else:
+                if relocation["addend"] != 0:
+                    raise ValueError("SDK scalar constant cannot have a source addend")
                 literal = real_constant(member, relocation["symbol"], comparison.coff_name)
                 if bytes.fromhex(binding["literal_hex"]) != literal:
                     raise ValueError("SDK recorded scalar literal differs from vendor definition")
@@ -190,7 +196,7 @@ def verify_readonly_sections(comparison, runtime, target):
         symbols = {entry["symbol"]: base + entry["offset"] for entry in definitions}
         if len(symbols) != len(definitions):
             raise ValueError("duplicate readonly SDK symbol definitions")
-        result[identifier] = {"symbols": symbols,
+        result[identifier] = {"symbols": symbols, "base": base, "size": len(data),
                               "member_sha256": hashlib.sha256(body).hexdigest()}
     return result
 

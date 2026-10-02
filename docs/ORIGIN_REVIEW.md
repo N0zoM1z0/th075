@@ -1405,3 +1405,44 @@ Local CI passed 73 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. Public no-auth Funnel verification receipt:
 `.analysis/public-r028-origin-verification.json`. R027 published GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37005857354.
+
+## R029 — whole SDK readonly data and bounded source addends
+
+Reviewed 2026-10-02. Ten more complete D3DX8 COMDAT functions / 2,093 bytes
+are excluded. Six PNG/zlib functions bind complete readonly string or local
+constant sections, one exact real scalar, verified SDK function pointers and
+independently reviewed direct calls. Four JPEG functions then bind whole
+`jpeg_natural_order` or `_base_dither_matrix` sections: `get_dqt` (553 bytes),
+`make_odither_array` (98), `create_odither_tables` (197), and
+`start_pass_1_quant` (202). The last one became eligible only after its
+`create_odither_tables` callee was independently reviewed.
+
+Three DIR32 source fields carry an explicit +256 addend. The verifier checks
+the source symbol's actual offset in its complete, relocation-free readonly
+section, the source addend, the resolved target address, and the full target
+section bytes. The two `_base_dither_matrix` fields point exactly one byte
+past the 256-byte section, so the verifier permits an endpoint pointer while
+rejecting any farther address; this is pointer provenance, not a claim that
+the endpoint can be dereferenced. The `jpeg_natural_order` field points
+inside its 576-byte source section. Real scalar constants and function
+pointers still require zero source addends. A public regression checks a
+bounded data addend and rejects one outside the whole section.
+
+`sdk-origin-data.csv` adds seven completely checked readonly sections; the
+earlier whole `jpeg_natural_order` section was already independently verified.
+All accepted code sections have one complete function definition, pinned
+archive/member identity, complete body hash, linked bytes and decoded control
+flow. The ten bodies add 13 direct calls, five function-pointer fields, 12
+readonly-section fields, one scalar field, and 12 unchanged indirect calls.
+The SDK verifier now covers 319 bodies / 80,421 bytes, 155 direct-call fields,
+12 function pointers, 159 scalars, 244 readonly fields from 88 complete
+sections, and 394 unchanged indirect calls. These origin records add no source
+or exact credit and do not establish the owners of called functions.
+
+Current totals are 1,076 reviewed: 138 authored, 510 library and 428 compiler;
+3,275 remain pending. Exact remains 42 functions / 8,916 bytes against the
+provisional 43,031-byte authored slice (20.72%). The complete-origin
+prerequisite remains open. Local CI passed 74 regressions; target-required
+tracking, progress freshness and `git diff --check` passed. Public no-auth
+Funnel receipt: `.analysis/public-r029-origin-verification.json`. R028 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37006188725.

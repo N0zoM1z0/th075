@@ -1,5 +1,6 @@
 """Protect whole vendor extents from convenient prefixes and unresolved tails."""
 import importlib.util
+import hashlib
 from pathlib import Path
 import struct
 import unittest
@@ -109,6 +110,32 @@ class SDKOriginExtentTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "verified complete callee"):
             SDK.bind_sdk_function(code, [relocation], [binding], {}, 0x401000,
                                   b"", None, RuntimeStub, None)
+
+    def test_readonly_addend_must_stay_within_complete_section(self):
+        class RuntimeStub:
+            @staticmethod
+            def bind_calls(code, calls, bindings, symbols, address):
+                return bytearray(code)
+
+        member = object_with_functions([(b"_first", 0)])
+        section = dict(symbols={"vendor_data": 0x402000}, base=0x402000,
+                       size=8, member_sha256=hashlib.sha256(member).hexdigest())
+        relocation = dict(offset=1, type="DIR32", symbol="vendor_data",
+                          addend=4, local_symbol_offset=None)
+        binding = dict(offset="0x1", type="DIR32", symbol="vendor_data",
+                       target_address="0x00402004", literal_hex="",
+                       data_section_id="readonly", target_kind="")
+        code = b"\xb8\x04\0\0\0\xc3"
+        linked, fields = SDK.bind_sdk_function(
+            code, [relocation], [binding], {}, 0x401000, member, COFF,
+            RuntimeStub, None, {"readonly": section})
+        self.assertEqual(struct.unpack_from("<I", linked, 1)[0], 0x402004)
+        self.assertEqual(fields, {0x401001: 0x402004})
+        binding["target_address"] = "0x00402009"
+        relocation["addend"] = 9
+        with self.assertRaisesRegex(ValueError, "complete section definition"):
+            SDK.bind_sdk_function(code, [relocation], [binding], {}, 0x401000,
+                                  member, COFF, RuntimeStub, None, {"readonly": section})
 
 
 if __name__ == "__main__":

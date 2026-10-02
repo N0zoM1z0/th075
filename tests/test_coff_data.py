@@ -64,6 +64,7 @@ class ReadonlyVendorDataTests(unittest.TestCase):
                    "target_address": hex(destination), "data_section_id": "whole",
                    "literal_hex": ""}
         sections = {"whole": {"symbols": {"_first": 0x657000, "_second": 0x657004},
+                              "base": 0x657000, "size": 8,
                               "member_sha256": member_digest or hashlib.sha256(body).hexdigest()}}
         return SDK.bind_sdk_function(b"\xb8\0\0\0\0\xc3", [relocation], [binding], {},
                                      0x401000, body, COFF, RUNTIME, None, sections)
