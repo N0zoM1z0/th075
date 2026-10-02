@@ -2696,3 +2696,32 @@ the complete Reimu dispatcher, all eleven fighter action slots, all 726
 authored-origin extents and tracking. Private receipt:
 `.analysis/public-r063-origin-verification.json`. R062 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37027429693.
+
+## R064 — Meiling and auxiliary action-state bodies
+
+Three complete authored bodies / 43,868 bytes are reviewed in the
+character-adjacent code region. A 116-byte constructor at `0x005FAB10`
+writes a distinct auxiliary-object vtable. Its slot 1 points to the
+31,352-byte action-state routine at `0x005FAE30`, which has 630 internal
+branches and a bounded byte-remapped switch with 70 complete table
+entries. Separately, slot 16 of the R050 Meiling fighter vtable points to
+the 12,400-byte routine at `0x005F3D60`, with 350 internal branches and
+a directly indexed 98-entry switch. Both routines mutate character
+action/effect fields and call game-specific helpers. The auxiliary object's
+exact identity and original method names remain unknown.
+
+`scripts/repo-python scripts/verify-character-aux-action-origins.py`
+rechecks the three whole body hashes and CFGs, both guarded table extents
+and every case destination, constructor vtable writes, and the independently
+reviewed R050 Meiling constructor. The tables follow their functions'
+sole final RETs; they are recorded as data, not included in the code
+extents. R064 adds origin only, with no source or exact credit.
+
+Totals are 2,142 reviewed (776 authored, 792 library, 574 compiler),
+2,209 pending. Exact stays 42 functions / 8,916 bytes against 1,918,201
+provisional authored bytes (0.46%). Continue origin review first.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+both switch bodies, all 729 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r064-origin-verification.json`. R063 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37028175815.

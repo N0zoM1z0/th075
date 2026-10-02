@@ -2441,7 +2441,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005E9620,7780,0x005EB483,FUN_005e9620,CharacterAI::ChooseAt005E9620,CharacterAI,unclassified,0.00,,,false,,"R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
 0x005EB490,134,0x005EB515,FUN_005eb490,MeilingObject::Initialize,MeilingObject,unclassified,0.00,,,false,,"R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",authored,Origin reviewed; method name and complete class layout inferred; source and exact state remain independent
 0x005EB520,34434,0x005F3BA1,FUN_005eb520,CharacterObject::AdvanceAt005EB520,CharacterObject,unclassified,0.00,,,false,,"R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",authored,"Origin reviewed; role inferred; character identity, source and exact state remain independent"
-0x005F3D60,12400,0x005F6DCF,FUN_005f3d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F3D60,12400,0x005F6DCF,FUN_005f3d60,MeilingFighter::DispatchSpecialStatesAt005F3D60,MeilingFighter,unclassified,0.00,,,false,,"R064; complete body, guarded switch, CFG and constructor-written character vtable",authored,Origin reviewed; role inferred; source and exact state independent
 0x005F6F60,142,0x005F6FED,FUN_005f6f60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F6FF0,235,0x005F70DA,FUN_005f6ff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F70E0,84,0x005F7133,FUN_005f70e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2629,7 +2629,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FAA80,76,0x005FAACB,FUN_005faa80,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FAAD0,15,0x005FAADE,FUN_005faad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAAE0,44,0x005FAB0B,FUN_005faae0,VC7::ScalarDeletingDestructor_005FAAE0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
-0x005FAB10,116,0x005FAB83,FUN_005fab10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FAB10,116,0x005FAB83,FUN_005fab10,CharacterAuxObject::InitializeAt005FAB10,CharacterAuxObject,unclassified,0.00,,,false,,"R064; complete body, guarded switch, CFG and constructor-written character vtable",authored,Origin reviewed; role inferred; source and exact state independent
 0x005FAB90,61,0x005FABCC,FUN_005fab90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FABD0,65,0x005FAC10,FUN_005fabd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAC20,21,0x005FAC34,FUN_005fac20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2639,7 +2639,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FAD20,70,0x005FAD65,FUN_005fad20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAD70,90,0x005FADC9,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FADD0,90,0x005FAE29,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x005FAE30,31352,0x006028A7,FUN_005fae30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FAE30,31352,0x006028A7,FUN_005fae30,CharacterAuxObject::AdvanceActionAt005FAE30,CharacterAuxObject,unclassified,0.00,,,false,,"R064; complete body, guarded switch, CFG and constructor-written character vtable",authored,Origin reviewed; role inferred; source and exact state independent
 0x00602A60,2987,0x0060360A,FUN_00602a60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00603650,83,0x006036A2,FUN_00603650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006036A4,6,0x006036A9,DINPUT8.DLL::DirectInput8Create,DINPUT8.dll!DirectInput8Create,PEImportThunk,excluded,0.00,,,true,,R030,compiler,Whole PE linker FF25 import thunk; IAT slot and descriptor name checked; imported implementation uncredited

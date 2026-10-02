@@ -1018,6 +1018,16 @@ whose complete readonly tables and remaps sit after the final RET. Every
 recorded case points inside that extent. It handles many numeric action
 states and repeatedly calls game movement and attack helpers. All eleven
 fighter constructors point to distinct authored action bodies in this
-slot, totaling 613,391 bytes. The specific
-source method name and full fighter layout remain unknown. R063 adds no
+slot, totaling 613,391 bytes. The specific source method name and full
+fighter layout remain unknown. R063 adds no
 reconstruction source or exact credit.
+
+## Origin-only observations after R064
+
+A character-adjacent auxiliary constructor writes a vtable whose action
+slot points to a 31,352-byte state dispatcher. Meiling's independently
+verified fighter vtable points to a separate 12,400-byte special-state
+dispatcher. Both have complete guarded switch tables after their final
+RETs and game-specific state updates. Their original names and the
+auxiliary object's exact role remain unresolved. R064 adds no source or
+exact credit.

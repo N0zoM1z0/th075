@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  773 authored, 792 library and 574 compiler candidates; 2,212 origins remain
+  776 authored, 792 library and 574 compiler candidates; 2,209 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 1,874,333, with 8,916 exact (0.48%).
+  The current reviewed authored-byte denominator is 1,918,201, with 8,916 exact (0.46%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R063 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R064 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -781,3 +781,18 @@ the Reimu dispatcher, all eleven fighter action slots, all 726 authored
 extents and tracking. Private receipt:
 `.analysis/public-r063-origin-verification.json`. R062 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37027429693.
+
+R064 reviews three complete authored bodies / 43,868 bytes: a
+character-adjacent auxiliary constructor, its 31,352-byte slot-1 action
+dispatcher, and a 12,400-byte routine in slot 16 of Meiling's fighter
+vtable. Both dispatchers have fully bounded jump tables after their final
+RETs. Their original method names and the auxiliary object's exact
+identity remain unknown. Totals are 2,142 reviewed (776 authored, 792
+library, 574 compiler), 2,209 pending. Exact stays 42 / 8,916 bytes
+against 1,918,201 provisional authored bytes (0.46%). Continue origin
+review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP verified
+both switches, all 729 authored-origin extents and tracking. Private
+receipt: `.analysis/public-r064-origin-verification.json`. R063 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37028175815.

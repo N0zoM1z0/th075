@@ -2441,7 +2441,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005E9620,authored,CharacterAI,authored,target-observed,R047
 0x005EB490,authored,MeilingObject,authored,target-observed,R050
 0x005EB520,authored,CharacterObject,authored,target-observed,R048
-0x005F3D60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F3D60,authored,MeilingFighter,authored,target-observed,R064
 0x005F6F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F6FF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F70E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2629,7 +2629,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FAA80,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FAAD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAAE0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x005FAB10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FAB10,authored,CharacterAuxObject,authored,target-observed,R064
 0x005FAB90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FABD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAC20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2639,7 +2639,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FAD20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAD70,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FADD0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x005FAE30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FAE30,authored,CharacterAuxObject,authored,target-observed,R064
 0x00602A60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00603650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006036A4,compiler,PEImportThunk,exclude,complete-PE-import-thunk,R030
