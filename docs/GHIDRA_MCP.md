@@ -128,7 +128,7 @@ For a cold function comparison, use:
 `ghidra_call` invokes the same Python entry point automatically. See the
 [Python environment guide](PYTHON_ENVIRONMENT.md) for setup and verification.
 
-A complete 39-unit replay (eight cold objects, 6,810 bytes) also passed through
+A complete 42-unit replay (nine cold objects, 8,916 bytes and 497 relocations) passed through
 public Bash after the environment migration. The smoke test exercises failure
 handling as well as successful reads and compilation.
 

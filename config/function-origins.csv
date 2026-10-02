@@ -71,19 +71,19 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004046F0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404720,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404740,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00404770,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004048AB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004049B3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00404A79,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00404770,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004048AB,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004049B3,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00404A79,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x00404A90,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404AB0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404B10,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404B40,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404BA0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00404BC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00404BC0,compiler,VC71Compiler,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x00404BF0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404C50,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00404C70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00404C70,compiler,VC71Compiler,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x00404CA0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404CF0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00404D10,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
@@ -116,18 +116,18 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004052F0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00405310,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00405330,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00405340,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00405370,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00405340,compiler,VC71Compiler,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00405370,compiler,VC71Compiler,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x004053E0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00405420,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00405460,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00405507,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040552E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00405550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00405460,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00405507,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x0040552E,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00405550,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x004055C0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x004055F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00405744,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040585D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004055F0,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00405744,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x0040585D,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x00405940,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00405960,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x004059C0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
@@ -171,21 +171,21 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004060D0,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00406100,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00406140,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x00406180,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004061DB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004061DD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004061E6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00406180,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004061DB,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004061DD,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004061E6,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x00406220,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00406240,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00406260,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
 0x00406290,library,VC71STL,exclude,vendor-source-corroborated,R004; docs/ORIGIN_REVIEW.md; config/vendor-origin-evidence.csv
-0x004062D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040632D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040632F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00406338,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00406380,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004063D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004063E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004062D0,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x0040632D,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x0040632F,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00406338,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x00406380,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004063D0,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
+0x004063E0,library,VC71STL,exclude,vendor-source-corroborated,R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints
 0x004063F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00406420,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004064A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

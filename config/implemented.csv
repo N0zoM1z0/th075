@@ -37,3 +37,6 @@ Input::ConfigureJoystickAxis
 Graphics::CopyTextureOpaque
 Graphics::DrawLine
 Graphics::DrawFilledRectangle
+Graphics::DrawRectangleOutline
+Graphics::DrawTexturedQuad
+Graphics::DrawProjectedTriangleStrip

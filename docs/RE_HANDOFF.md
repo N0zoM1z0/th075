@@ -8,16 +8,17 @@ deferred subsequent phases. Write documentation and handoffs in English.
   Official distribution provenance is uncorroborated. Do not substitute the
   localized executable.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
-  There are 4,351 candidates, with 39 mapped, 39 source-present, and 39
-  complete exact functions covering 6,810 bytes. Origin review has classified
-  47 authored functions and 115 library functions; 4,189 origins remain pending. Candidate count is not authored function count; regenerate
+  There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
+  complete exact functions covering 8,916 bytes. Origin review has classified
+  47 authored, 136 library and four compiler candidates; 4,164 origins remain
+  pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Alternate origin batches and exact reconstruction. The current
-  reviewed authored-byte denominator is 12,343, with 6,810 exact (55.17%).
+  reviewed authored-byte denominator is 12,343, with 8,916 exact (72.24%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003/R004 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001/R002/R003/R004/R005 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -40,6 +41,21 @@ deferred subsequent phases. Write documentation and handoffs in English.
   alpha operation, and right/bottom +1 policy. See `KNOWLEDGE_BASE.md`.
   Full no-auth public MCP cold replay then passed 39/39 units across eight
   objects, including all 428 relocations and 6,810 accepted bytes.
+- R005 reviewed 25 more candidates, including five complete vendor EH spans
+  and six generated/memory helpers. Fourteen retained analysis fragments belong
+  to those vendor spans. The length_error copy constructor alias at 0x00405340
+  was corrected to compiler ownership using actual throw metadata. The public
+  vendor CSV records revalidated all 111 full fingerprints and bindings.
+- F007 accepted rectangle outline, textured quad and projected triangle strip,
+  adding 2,106 bytes and 69 relocations. Outline closes its five-vertex strip
+  with assignment and uses index <= 4. Quad reads unsigned texture dimensions
+  and converts a four-record coordinate view without claiming the complete
+  132-byte caller owner. Strip mutates input vertices with the verified 3000/2
+  projection. Shared ScreenVertex is a complete 28-byte record. See the
+  knowledge base for scopes, ABI and full cold replay evidence.
+  Full no-auth public MCP cold replay passed 42/42 units across nine fresh
+  objects, covering all 8,916 bytes and 497 relocations. CI's 18 regressions,
+  target-required tracking validation and progress freshness checks passed.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -88,12 +104,15 @@ TH105 was reviewed as an engine-structure reference: it uses VC8/LTCG and
 D3D9, so retain TH075's proven VC7.1/D3D8 profile. See `REFERENCE_PROJECTS.md`
 and `BUILD_MATCHING.md`.
 
-Next alternate batch: resolve the remaining container insertion/allocation
-helpers and overlapping compiler EH funclets around `0x00404770..0x004063E0`,
-then return to exact reconstruction of reviewed textured drawing,
-rectangle-outline and default-state functions. Full input
-decompiles/instructions are private under `.analysis/origin-input-*`; avoid
-trusting misleading Ghidra string/back labels on device containers.
+Next origin batch: follow the remaining container/string helpers starting at
+`0x004063F0`, then review the custom geometry builders and textured-quad
+callers around `0x0040C9A0..0x0040DB10` from complete control flow. Keep vendor
+and custom ownership separate. Return to exact reconstruction of newly
+reviewed authored functions and the remaining default-state/projected-quad
+functions. Full input decompiles/instructions are private under
+`.analysis/origin-input-*`; avoid trusting misleading Ghidra string/back labels
+on device containers. F007 caller/layout evidence is under
+`.analysis/textured-quad-*`; complete 132-byte owners remain unknown.
 Deferred paired cleanup at `0x00401020..0x0040110E`, 239 bytes.
 Review interface types, shared pointers, and loop bounds before writing a
 natural source probe. The target saves one Release result into a local slot;

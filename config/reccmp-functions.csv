@@ -26,7 +26,10 @@ Graphics::GetPrimaryTargetTexture,0x004028B0,function
 Graphics::GetTargetTexture,0x004028C0,function
 Graphics::Present,0x004028F0,function
 Graphics::PresentToWindow,0x00402970,function
+Graphics::DrawTexturedQuad,0x004029F0,function
+Graphics::DrawProjectedTriangleStrip,0x00403200,function
 Graphics::DrawLine,0x00403400,function
+Graphics::DrawRectangleOutline,0x00403620,function
 Graphics::DrawFilledRectangle,0x00403910,function
 InputResourceClient::InputResourceClient,0x00403B90,function
 InputResourceClient::~InputResourceClient,0x00403BE0,function

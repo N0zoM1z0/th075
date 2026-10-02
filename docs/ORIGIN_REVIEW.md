@@ -254,3 +254,88 @@ fingerprints and typed call graph provide independent corroboration.
 | memory | `81895e7a4ef1c432ec68484b072bcd14f953a75d99af77c0f83667c1c7cf9bf4` |
 | xmemory | `e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94` |
 | xutility | `177f47d09110228013374513e62a9de2e9be2f9bd22e4ae15bb31c584da4db7b` |
+
+R005 subsequently resolved the identical constructor fingerprint at
+`0x00405340`: it is the generated length_error copy constructor, rather than
+the explicit string constructor alias. Its CSV signature/binding and origin
+were corrected; it still receives no authored or exact credit.
+
+## R005 — complete EH spans and generated exception helpers
+
+Reviewed 2026-10-02 after F006. Twenty-five additional pending candidates are
+excluded: 22 have vendor-library ownership and three are compiler-generated
+exception helpers. The previously reviewed copy constructor at `0x00405340`
+is also corrected from library to compiler. Current ownership totals are 47
+authored, 136 library and four compiler candidates; 4,164 remain pending.
+Candidate count includes retained analysis fragments, not just callable functions.
+
+Fresh compilation of the unchanged public vendor probe under R004's EH/GS
+profile reproduced five complete COFF bodies, including all non-relocation
+bytes, for 2,300 distinct bytes and 91 relocation bindings. Full-range
+fingerprints and the associated 19 candidates are in
+`config/vendor-origin-spans.csv`. Fourteen of those candidates are split or
+overlapping pieces of the five vendor functions. No candidate was deleted to
+reduce the pending count, and overlapping bytes receive no authored credit.
+
+| Vendor body start | Correct complete size | Covered candidate starts |
+| --- | ---: | --- |
+| `0x00404770` | 796 | 404770, 4048AB, 4049B3, 404A79 |
+| `0x00405460` | 339 | 405460, 405507, 40552E, 405550 |
+| `0x004055F0` | 846 | 4055F0, 405744, 40585D |
+| `0x00406180` | 157 | 406180, 4061DB, 4061DD, 4061E6 |
+| `0x004062D0` | 162 | 4062D0, 40632D, 40632F, 406338 |
+
+The two vector insertion bodies implement the header's capacity/growth,
+prefix/fill/suffix copy and catch cleanup policy. String `_Copy` retries
+allocation at the requested size after the first allocation failure, cleans
+storage and reraises on a second failure, then copies the old string into the
+new buffer. The DIJOYSTATE uninitialized fill/copy helpers catch failures,
+destroy only successfully constructed records and reraise. These are vendor
+source policies, corroborated by the compiler's local catch labels and the
+complete target control flow, rather than inferred from Ghidra labels.
+
+The old principal extents omitted EH continuations or shared exits. Their
+function-ledger sizes/end addresses now include the complete COFF ranges.
+Every full range decodes completely; direct jumps remain in that range and
+the compiler's same-section continuation label has the expected target offset.
+Fragments are explicitly marked as non-independent analysis pieces; they need
+not have standalone prologues or returns. In particular, `0x00404A79` restores
+FS:[0] and returns with the insertion body's frame, and `0x004061E6` branches
+back to the loop increment at `0x004061DD`. Such fragments cannot be accepted
+as separate authored functions merely because auto-analysis named them.
+
+Six other new complete helper bodies are recorded in the extended
+`config/vendor-origin-evidence.csv`:
+
+| Address | Bytes | Ownership and corroborated role |
+| --- | ---: | --- |
+| `0x00404BC0` | 44 | compiler: logic_error scalar deleting destructor |
+| `0x00404C70` | 44 | compiler: length_error scalar deleting destructor |
+| `0x00405370` | 100 | compiler: logic_error copy constructor |
+| `0x00406380` | 65 | library: `_Construct<DIJOYSTATE>` |
+| `0x004063D0` | 8 | library: placement operator new |
+| `0x004063E0` | 5 | library: `_Destroy<DIJOYSTATE>` |
+
+Generated copy/deleting functions lack definition auxiliary records, but each
+has its own complete executable COFF section and defined function symbol.
+That section supplies the independently checked full extent; no target prefix
+was chosen to force a fingerprint. Deleting destructors call their specific
+destructor, test the low bit (mask 1), optionally call operator delete and return this. Copy
+constructors copy the exception base and string member while setting the
+correct vtable. The memory helpers agree with read-only xmemory/new headers
+and the allocator's typed construct/destroy callers. Short equal-body aliases
+are resolved with those callee/caller roles.
+
+The length_error ThrowInfo at `0x00667A38` points to CatchableTypeArray
+`0x00667A28`. Its length_error and logic_error records at
+`0x00667A0C/0x006679F0` specify 40-byte objects and copy callbacks
+`0x00405340/0x00405370`; the exception record specifies 12 bytes and
+`0x00640C9A`. This independently resolves R004's explicit-string/copy-constructor
+alias. The corrected signature is length_error(const length_error &), its base
+call is logic_error(const logic_error &), and no authored accounting changes.
+
+Full vendor spans and the six independent helpers cover 2,566 distinct new
+reviewed bytes; summing overlapping candidate sizes would overstate this.
+This is origin evidence only. It grants no source-presence, canonical exact
+or authored-byte credit. Private instruction, generated-symbol and attested
+decompile evidence is under `.analysis/r005-*`.

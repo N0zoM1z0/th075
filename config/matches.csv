@@ -26,7 +26,10 @@ address,name,size,status,match_percent,unit,evidence
 0x004028C0,Graphics::GetTargetTexture,37,matching,100.00,graphics-get-target-texture,scripts/repo-python scripts/replay-exact-units.py --unit graphics-get-target-texture; F002; public MCP aggregate replay
 0x004028F0,Graphics::Present,123,matching,100.00,graphics-present,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present; F002; public MCP aggregate replay
 0x00402970,Graphics::PresentToWindow,128,matching,100.00,graphics-present-to-window,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present-to-window; F002; public MCP aggregate replay
+0x004029F0,Graphics::DrawTexturedQuad,857,matching,100.00,graphics-draw-textured-quad,scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-textured-quad; F007
+0x00403200,Graphics::DrawProjectedTriangleStrip,507,matching,100.00,graphics-draw-projected-triangle-strip,scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-projected-triangle-strip; F007
 0x00403400,Graphics::DrawLine,540,matching,100.00,graphics-draw-line,F006; scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-line
+0x00403620,Graphics::DrawRectangleOutline,742,matching,100.00,graphics-draw-rectangle-outline,F007; scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-rectangle-outline
 0x00403910,Graphics::DrawFilledRectangle,632,matching,100.00,graphics-draw-filled-rectangle,F006; scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-filled-rectangle
 0x00403B90,InputResourceClient::InputResourceClient,76,matching,100.00,input-resource-client-constructor,scripts/repo-python scripts/replay-exact-units.py --unit input-resource-client-constructor; F005
 0x00403BE0,InputResourceClient::~InputResourceClient,278,matching,100.00,input-resource-client-destructor,scripts/repo-python scripts/replay-exact-units.py --unit input-resource-client-destructor; F005

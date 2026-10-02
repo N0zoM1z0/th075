@@ -430,3 +430,87 @@ scripts/repo-python scripts/replay-exact-units.py --unit graphics-copy-texture-o
 The reviewed authored slice is now 6,810/12,343 bytes exact (55.17%). Its
 denominator remains provisional: 4,189 origins are still pending, so the
 all-origins/50%-authored-byte goal remains incomplete.
+
+## F007 — rectangle outline and textured drawing
+
+Accepted 2026-10-02 after origin batch R005. Three complete authored functions
+add 2,106 exact bytes and 69 explicitly reviewed relocations. The outline
+cold-replayed with both existing untextured drawing functions after the shared
+vertex record moved into `GraphicsVertex.hpp`. Both textured functions then
+passed cold replay from a new independent object. Names remain inferred.
+
+| Complete extent | Bytes | Inferred function | Relocations |
+| --- | ---: | --- | ---: |
+| `0x00403620..0x00403905` | 742 | `Graphics::DrawRectangleOutline` | 23 |
+| `0x004029F0..0x00402D48` | 857 | `Graphics::DrawTexturedQuad` | 25 |
+| `0x00403200..0x004033FA` | 507 | `Graphics::DrawProjectedTriangleStrip` | 21 |
+
+**Outline:** Four initialized ScreenVertex records describe the RECT corners,
+with z=0, rhw=1 and the corresponding unit UV corners. Assignment of the first
+record to the fifth closes the strip; the compiler emits a seven-DWORD copy.
+The signed loop condition is `index <= 4`, matching CMP 4/JG rather than the
+decompiler's normalized `< 5`. The function applies the shared color and
+scale/origin policies, selects alpha argument 2, clears the cached texture,
+sets FVF 0x144, draws four LINESTRIP primitives and restores alpha modulation.
+The right/bottom coordinates have no filled-rectangle +1 adjustment.
+
+**Textured quad input evidence:** Twenty-five target callers include the
+attested wrappers at `0x0040C9A0`, `0x0040CA80`, `0x0040CEF0` and `0x0040D2E0`.
+They copy 132-byte coordinate owners and rotate or mirror their first four
+16-byte records. The geometry builder at `0x0040DA00` fills those records in
+top-left, top-right, bottom-right, bottom-left order through `0x0040DB10`.
+Those observations prove the accessed coordinate stride and order; they do
+not establish the complete 132-byte class. The source takes a const view of
+four-float coordinate records and never instantiates that unknown owner.
+The complete output/input ScreenVertex record remains 28 bytes, as established
+by the actual field accesses, FVF and DrawPrimitiveUP stride.
+
+The quad obtains a level-zero surface, reads the real D3DSURFACE_DESC, converts
+unsigned Width/Height to float, and releases the surface before drawing.
+Output position order is 0, 1, 3, 2. X/Y subtract the verified float 0.5;
+z=0.5 and rhw=1. UV values use the signed RECT coordinates divided by the
+texture dimensions. All four vertices then receive the global scale/origin
+transform and the same packed color. A changed texture is bound and cached,
+and two TRIANGLESTRIP primitives are drawn. The target does not set FVF here.
+HRESULTs are discarded where observed.
+
+The source limits dimension/description locals to vertex assembly and the
+surface pointer to its acquire/query/release operation. These meaningful
+lifetimes reproduce the target's 200-byte frame and local positions without
+padding or inert variables. The scopes and identifiers are inferred source
+choices, not recovered original debug symbols.
+
+**Projected strip:** The cdecl arguments are a mutable ScreenVertex pointer,
+a signed vertex count and an SDK texture pointer. Each vertex receives the
+scale/origin transform, followed by
+`projection = 3000.0f / (3000.0f - z)`, `rhw = projection` and
+`z = 1.0f - projection / 2.0f`. Actual PE bytes independently establish the
+constants at `0x00657484` (3000), `0x00657480` (2) and `0x0065747C` (1).
+The multiplier condition scales RGB while retaining alpha, using the same
+unsigned-byte conversions and three compiler __ftol2 calls as F006. The
+function mutates the supplied vertices, binds/caches a changed texture and
+draws `count - 2` TRIANGLESTRIP primitives. It adds no input validation or FVF
+change. The real projection temporary is consumed by both rhw and z writes.
+
+**Acceptance:** The explicit profile is `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+The full ranges decode through their final RET with direct internal branches,
+no switch table or external tail, and excluded trailing INT3 padding. Shared
+globals, __ftol2 and all four real constants were checked before canonical
+binding. All relocation fields are included in exact comparison. Each function
+has one natural C++ body, with real D3D8 interfaces and no assembly, arbitrary
+padding, inert locals or conditional matching implementation.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit graphics-draw-rectangle-outline --unit graphics-draw-textured-quad --unit graphics-draw-projected-triangle-strip
+```
+
+Private full instruction/caller evidence and cold receipts are under
+`.analysis/f007-*` and `.analysis/textured-quad-*`. The reviewed authored slice
+is 8,916/12,343 bytes exact (72.24%). Its denominator is provisional; 4,164
+origins remain pending and the full goal is incomplete.
+
+Full cold replay through the existing no-auth public Bash MCP subsequently
+passed 42/42 units across nine freshly compiled objects: all 8,916 bytes and
+497 relocation fields matched. The private RPC result is
+`.analysis/public-f007-replay.json`; the retained build/comparison receipt is
+`.analysis/f007-public-cold-receipt.json`.
