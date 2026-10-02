@@ -74,7 +74,7 @@ def main() -> int:
             raise ValueError(f"unknown or ambiguous match object: {wanted}")
         name, unit = matches[0]
         subprocess.run(
-            [sys.executable, str(ROOT / "scripts" / "verify-target.py")],
+            [str(ROOT / "scripts/repo-python"), str(ROOT / "scripts" / "verify-target.py")],
             cwd=ROOT, check=True,
         )
         profile = unit["profile"]

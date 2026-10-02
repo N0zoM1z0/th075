@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main() -> int:
     status = json.loads(subprocess.check_output(
-        [sys.executable, str(ROOT / "scripts/report-reconstruction-status.py"), "--summary", "--json"],
+        [str(ROOT / "scripts/repo-python"), str(ROOT / "scripts/report-reconstruction-status.py"), "--summary", "--json"],
         cwd=ROOT, text=True))["summary"]
     count = status["candidates"]
     exact = status["exact_functions"]
@@ -46,7 +46,7 @@ def main() -> int:
     destination = ROOT / "resources/progress.svg"
     if "--check" in sys.argv[1:]:
         if not destination.exists() or destination.read_text() != svg:
-            print("error: progress.svg is stale; run scripts/update-progress.py", file=sys.stderr)
+            print("error: progress.svg is stale; run scripts/repo-python scripts/update-progress.py", file=sys.stderr)
             return 1
     else:
         destination.parent.mkdir(exist_ok=True)

@@ -65,7 +65,7 @@ def validate_target(require_bytes: bool) -> tuple[dict[str, object], dict[str, o
         raise ValueError("target.toml: invalid target identity")
     if require_bytes:
         subprocess.run(
-            [sys.executable, "scripts/verify-target.py"], cwd=ROOT, check=True
+            [str(ROOT / "scripts/repo-python"), "scripts/verify-target.py"], cwd=ROOT, check=True
         )
     return target, pe
 

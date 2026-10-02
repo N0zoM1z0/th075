@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main() -> int:
-    subprocess.run([sys.executable, str(ROOT / "scripts/verify-python-env.py")], check=True)
+    subprocess.run([str(ROOT / "scripts/repo-python"), str(ROOT / "scripts/verify-python-env.py")], check=True)
     locked = tomllib.loads((ROOT / "config/tools.lock.toml").read_text())
     for command in ("wine", "winepath", "git", "curl", "node", "npm", "flock"):
         if not shutil.which(command):

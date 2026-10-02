@@ -22,7 +22,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 17 passing
+  across six objects through scripts/repo-python after F005. Public CI has 18 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -51,7 +51,7 @@ deferred subsequent phases. Write documentation and handoffs in English.
   The user explicitly requested no authentication. Its fixed random path
   lives only in the private `.tools/mcp_for_gptweb-ghidra/.env` (mode 600);
   no Bearer token is configured or needed.
-- Public HTTP smoke testing passed 14 checks through a global IPv4 ingress,
+- Public HTTP smoke testing passed 15 checks through a global IPv4 ingress,
   including no-auth access, unrelated-path rejection, two-tool discovery,
   pinned Python/decoder verification, Bash verification, Ghidra
   check/query/decompile, failure rejection, scratch cleanup, and cold exact
@@ -64,6 +64,11 @@ Use `scripts/repo-python` for every Python command. The private Python 3.12
 environment and Capstone 5.0.6 binding/native hashes are checked on each call.
 The deployed Ghidra command uses this entry point; the endpoint and no-auth
 settings stayed fixed. Public smoke testing passed after service restart.
+Python child processes now also invoke the absolute wrapper, preserving
+isolated mode through build, comparison, tracking, Ghidra, progress, and CI
+chains. A conflicting `json` module on shell `PYTHONPATH` reproduced the
+previous child-process gap; the new local/public regression verifies that the
+progress/status chain ignores it from an unrelated working directory.
 
 The compiler/linker hashes and executable banners are checked by
 `scripts/check-tools.py`; the SDK supplies D3D8/D3DX8 and DirectInput headers.

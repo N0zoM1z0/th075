@@ -31,13 +31,13 @@ def main() -> int:
                 raise ValueError("conflicting sources/profiles share object " + key)
             groups[key] = (shape, name)
         for _, name in groups.values():
-            subprocess.run([sys.executable, "scripts/build.py", "--unit", name], cwd=ROOT, check=True)
+            subprocess.run([str(ROOT / "scripts/repo-python"), "scripts/build.py", "--unit", name], cwd=ROOT, check=True)
         reports = ROOT / ".analysis/replay"
         reports.mkdir(parents=True, exist_ok=True)
         results = []
         for name in selected:
             completed = subprocess.run(
-                [sys.executable, "scripts/compare-coff-function.py", "--unit", name, "--json"],
+                [str(ROOT / "scripts/repo-python"), "scripts/compare-coff-function.py", "--unit", name, "--json"],
                 cwd=ROOT, capture_output=True, text=True,
             )
             report = json.loads(completed.stdout)

@@ -57,7 +57,7 @@ def environment(ghidra_home: Path) -> dict[str, str]:
 
 def verify_target(path: Path) -> None:
     subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "verify-target.py"), str(path)],
+        [str(ROOT / "scripts/repo-python"), str(ROOT / "scripts" / "verify-target.py"), str(path)],
         cwd=ROOT,
         check=True,
     )

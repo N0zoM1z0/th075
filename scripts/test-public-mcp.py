@@ -116,6 +116,11 @@ def main() -> int:
         if "Capstone 5.0.6, four SHA-256 identities verified" not in python_environment:
             raise ValueError("public Bash did not use the pinned repository Python/decoder")
         results.append("repository Python and hash-pinned decoder through Bash")
+        isolation = tool("run_command", {"command":
+            "scripts/repo-python -m unittest discover -s tests -p test_repo_python.py -v"})
+        if "test_nested_status_ignores_shell_pythonpath" not in isolation or "OK" not in isolation:
+            raise ValueError("public Bash nested Python isolation regression failed")
+        results.append("nested Python isolation from shell PYTHONPATH through Bash")
         checked = tool("ghidra_call", {"operation": "check"})
         if "TH075_GHIDRA_ATTESTATION_OK:bd441e99075436e8" not in checked:
             raise ValueError("public Ghidra attestation marker missing")

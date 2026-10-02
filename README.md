@@ -43,6 +43,8 @@ Use `scripts/repo-python` for repository Python commands and Web MCP Bash
 requests. Bootstrap the isolated Python 3.12 environment with
 `scripts/bootstrap-python.sh`; Capstone 5.0.6 bindings and its native decoder
 are hash-checked before every invocation. No activation is needed.
+Build, comparison, Ghidra, and CI scripts use this entry point for their Python
+child processes as well, preserving the same isolated environment throughout.
 
 Private symlinks currently reuse TH095's installed tool binaries. TH075 has
 its own bridge checkout, Ghidra project, and output directories. Recreate the

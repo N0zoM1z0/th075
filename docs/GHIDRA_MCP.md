@@ -68,7 +68,7 @@ IPv4 ingress, and uses `curl --resolve` with `--noproxy '*'`. TLS certificate
 verification stays enabled. This avoids accidentally testing only a MagicDNS
 tailnet address or loopback listener.
 
-The latest no-auth public run passed 14 checks:
+The latest no-auth public run passed 15 checks:
 
 - Requests without an Authorization header return HTTP 200.
 - An unrelated URL returns HTTP 404.
@@ -76,6 +76,7 @@ The latest no-auth public run passed 14 checks:
 - Tool discovery exposes exactly `run_command` and `ghidra_call`.
 - Public Bash verifies the TH075 workspace and target hash.
 - Public Bash uses the repository Python and four hash-pinned Capstone files.
+- Nested Python calls ignore shell `PYTHONPATH`, including from another directory.
 - Public Ghidra attests the independent project.
 - A bounded function query reports the expected 27-byte extent.
 - A bounded decompile returns the expected target function.
@@ -93,14 +94,14 @@ stdin configuration instead of process arguments. Temporary headers and
 response files are removed; the private receipt records the URL and results.
 
 Local bridge validation also passed type checking, all 55 bridge tests, and
-the TypeScript build. The public function-workflow checks passed 13 regression
+the TypeScript build. The public function-workflow checks passed 18 regression
 tests without depending on a game executable or private database.
 
 ## Web command entry point
 
 Use `scripts/repo-python scripts/NAME.py ...` in public `run_command`
 requests. The same pinned environment is used by Ghidra's workspace wrapper.
-A complete 24-unit replay (three cold objects, 2,987 bytes) also passed through
+A complete 36-unit replay (six cold objects, 5,262 bytes) also passed through
 public Bash after the environment migration. The smoke test exercises failure
 handling as well as successful reads and compilation.
 

@@ -15,9 +15,9 @@ def main() -> int:
         for path in [*sorted((ROOT / "scripts").glob("*.sh")), ROOT / "scripts/repo-python"]:
             subprocess.run(["bash", "-n", str(path)], check=True)
         for command in [
-            [sys.executable, "scripts/validate-tracking.py", "--skip-target-bytes"],
-            [sys.executable, "scripts/build.py", "--check"],
-            [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
+            [str(ROOT / "scripts/repo-python"), "scripts/validate-tracking.py", "--skip-target-bytes"],
+            [str(ROOT / "scripts/repo-python"), "scripts/build.py", "--check"],
+            [str(ROOT / "scripts/repo-python"), "-m", "unittest", "discover", "-s", "tests", "-v"],
         ]:
             subprocess.run(command, cwd=ROOT, check=True)
         print("Public function-workflow checks passed.")

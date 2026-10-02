@@ -28,6 +28,13 @@ the configured Python package index, then its actual binding/library files are
 verified. Linux x86_64 is the pinned native-decoder platform. Repository checks
 on GitHub also bootstrap and use this environment.
 
+Python scripts also launch their Python children through the absolute
+`scripts/repo-python` path. Reusing `sys.executable` alone would lose isolated
+mode: a child could then import a shell's `PYTHONPATH` even though its parent
+ignored it. A regression invokes the progress/status chain from an unrelated
+directory with a conflicting `json` module on `PYTHONPATH`; both processes
+must ignore that module. The public MCP smoke test runs the same regression.
+
 This follows TH10's verified `repo-python` routing idea, with a single private
 virtual environment for TH075. Capstone provides bounded disassembly; the
 canonical byte comparator itself uses Python's standard library and PE bytes.
