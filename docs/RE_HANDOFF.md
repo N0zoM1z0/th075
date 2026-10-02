@@ -10,15 +10,15 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  307 authored, 767 library and 564 compiler candidates; 2,713 origins remain
+  312 authored, 767 library and 564 compiler candidates; 2,708 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 205,667, with 8,916 exact (4.34%).
+  The current reviewed authored-byte denominator is 220,507, with 8,916 exact (4.04%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R045 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R046 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
@@ -548,3 +548,14 @@ exact remains 42 / 8,916 bytes against provisional 205,667 authored bytes
 (4.34%). Continue all origin review before exact work. Local and public MCP
 verification details and the R044 CI result are recorded in the review log.
 Private public-MCP receipt: `.analysis/public-r045-origin-verification.json`.
+
+R046 reviews five complete Reimu-specific fighter bodies / 14,840 bytes,
+including a 14,141-byte action dispatcher with 749 verified in-body direct
+branches. The constructor literal `reimu`, derived vtable and common fighter
+calls ground ownership; adjacent forwarding/empty methods remain pending.
+Totals are 1,643 reviewed (312 authored, 767 library, 564 compiler), 2,708
+pending. Exact remains 42 / 8,916 bytes against provisional 220,507
+authored bytes (4.04%). Local CI and the public MCP verification passed;
+private receipt:
+`.analysis/public-r046-origin-verification.json`. R045 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37018599753.

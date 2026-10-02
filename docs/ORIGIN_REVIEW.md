@@ -2107,3 +2107,32 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r045-origin-verification.json`. R044 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37017759236.
+
+## R046 — Reimu-specific fighter control
+
+Five complete neighboring bodies add 14,840 authored-origin bytes. The
+initializer writes the literal character key `reimu` into the fighter record
+and sets its individual parameters. The other four bodies use the same
+derived object layout and project action system:
+
+| Entry | Extent | Target-observed behavior supporting authored origin |
+| --- | ---: | --- |
+| `0x0046D000` | 126 bytes | Decrements a character gauge timer and activates a game action at zero. |
+| `0x0046D080` | 218 bytes | Calls the fighter initializer, installs a Reimu-specific vtable, stores `reimu` and initializes per-character parameters. |
+| `0x0046D160` | 120 bytes | Allocates a project-specific owned object through the character's factory path. |
+| `0x0046D1E0` | 235 bytes | Clears Reimu-specific round fields before resetting the common fighter state. |
+| `0x0046D300` | 14,141 bytes | Dispatches hundreds of Reimu action and pattern IDs using the project pattern lookup and action-transition routines. |
+
+The large dispatcher has 749 decoded local branches; every direct branch
+targets an instruction start within its complete body, which ends in RET.
+Its whole target body, not a convenient prefix, is SHA-256 checked on cold
+replay. Two adjacent forwarding/empty methods remain pending because their
+ownership is not established by game behavior alone. R046 grants origin
+evidence only. Totals are 1,643 reviewed: 312 authored, 767 library and 564
+compiler; 2,708 pending. Exact stays 42 functions / 8,916 bytes against the
+provisional 220,507-byte authored slice (4.04%).
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r046-origin-verification.json`. R045 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37018599753.

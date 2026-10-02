@@ -2171,13 +2171,13 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045DD00,66,0x0045DD41,FUN_0045dd00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045DD50,17,0x0045DD60,FUN_0045dd50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045DD70,60999,0x0046CBB6,FUN_0045dd70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0046D000,126,0x0046D07D,FUN_0046d000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0046D080,218,0x0046D159,FUN_0046d080,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0046D160,120,0x0046D1D7,FUN_0046d160,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0046D1E0,235,0x0046D2CA,FUN_0046d1e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0046D000,126,0x0046D07D,FUN_0046d000,ReimuFighter::UpdateGaugeTimer,ReimuFighter,unclassified,0.00,,,false,,"R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x0046D080,218,0x0046D159,FUN_0046d080,ReimuFighter::Initialize,ReimuFighter,unclassified,0.00,,,false,,"R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x0046D160,120,0x0046D1D7,FUN_0046d160,ReimuFighter::CreateOwnedObject,ReimuFighter,unclassified,0.00,,,false,,"R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x0046D1E0,235,0x0046D2CA,FUN_0046d1e0,ReimuFighter::ResetRound,ReimuFighter,unclassified,0.00,,,false,,"R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x0046D2D0,19,0x0046D2E2,FUN_0046d2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0046D2F0,11,0x0046D2FA,FUN_0046d2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0046D300,14141,0x00470A3C,FUN_0046d300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0046D300,14141,0x00470A3C,FUN_0046d300,ReimuFighter::DispatchActions,ReimuFighter,unclassified,0.00,,,false,,"R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00470A40,1027,0x00470E42,FUN_00470a40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00470E50,130,0x00470ED1,FUN_00470e50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00470F00,3797,0x00471DD4,FUN_00470f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

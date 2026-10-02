@@ -845,3 +845,12 @@ state and drawing routines. The effect manager creates project-specific
 records and advances them through virtual callbacks. The 27 reviewed bodies
 are complete and hashed, but inferred names and class layouts remain
 provisional. They add no source or exact credit.
+
+## Origin-only observations after R046
+
+Reimu's derived fighter initializer writes the literal `reimu` and installs a
+character-specific vtable. Her action dispatcher is a single complete
+14,141-byte function with 749 direct local branches; it repeatedly chooses
+pattern IDs through the project's lookup and transition calls. This is a
+potentially central but expensive exact-reconstruction candidate after the
+origin-review gate. The five R046 decisions add no source or exact credit.
