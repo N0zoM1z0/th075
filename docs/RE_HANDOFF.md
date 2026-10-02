@@ -10,20 +10,20 @@ deferred subsequent phases. Write documentation and handoffs in English.
 - Initial analysis completed in the separate TH075 Ghidra 12.1.3 project.
   There are 4,351 candidates, with 42 mapped, 42 source-present, and 42
   complete exact functions covering 8,916 bytes. Origin review has classified
-  117 authored, 447 library and five compiler candidates; 3,782 origins remain
+  138 authored, 447 library and 308 compiler candidates; 3,458 origins remain
   pending. Candidate count is not authored function count; regenerate
   statistics from the ledgers.
 - The active goal is all origins reviewed and at least 50% authored bytes
   exact. Finish every origin review before resuming exact reconstruction.
-  The current reviewed authored-byte denominator is 31,218, with 8,916 exact (28.56%).
+  The current reviewed authored-byte denominator is 43,031, with 8,916 exact (20.72%).
   This denominator is provisional; the goal is incomplete. Four public
   accounting regressions prevent pending origins or function counts from
-  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R017 evidence.
+  falsely satisfying it. See `ORIGIN_REVIEW.md` for R001 through R021 evidence.
 - F003 accepted three texture/reset functions, 833 bytes and 30 relocations.
   F004 accepted three keyboard/setup functions, 382 bytes and 36 relocations.
   Each batch passed complete cold replay from a fresh independent object.
   The no-auth public Funnel Bash MCP cold-replayed all 36/36 units
-  across six objects through scripts/repo-python after F005. Public CI has 44 passing
+  across six objects through scripts/repo-python after F005. Public CI has 57 passing
   target-independent regressions.
   The original GraphicsState/Input translation units remain unchanged.
 - F005 accepted six input-lifetime/joystick functions, 1,060 bytes and 84
@@ -133,6 +133,21 @@ deferred subsequent phases. Write documentation and handoffs in English.
   scripts/repo-python. Private receipt:
   `.analysis/public-r015-r017-origin-verification.json`. Public CI passed
   44 tests and the progress SVG is current. Origin review remains incomplete.
+- R019 reviewed nine texture directory/pack/palette reader/writer bodies,
+  4,337 authored bytes. R021 reviewed twelve bitmap/RLE/upload/progress-record
+  bodies, 7,476 authored bytes. Four indirect switches are fully bounded and
+  all remaps/tables/case targets are verified. Their 168 outside-code data bytes
+  are evidence only, not additional authored or exact credit. Complete owners
+  and original ABI/names remain unknown.
+- R020 excluded 303 generated exception cleanup bodies / 3,174 bytes using
+  fresh independent compiler fixtures and actual metadata/parent registration.
+  208 FunctionInfo frames and all their state entries are rechecked by
+  verify-compiler-origins.py. Parent/callee ownership stays independent.
+  See ORIGIN_REVIEW.md for the two required serial probe-build commands.
+- verify-authored-origins.py now rechecks 91 recorded bodies / 30,688 bytes,
+  including all four bounded indirect dispatches. Generic scalar deleting
+  destructor candidates at 0x0041A110/0x0041A140/0x0041A170 and the initializer
+  at 0x0041BF90 remain pending. No build/query session is currently active.
 - Accepted F002: 22 shared graphics-state/frame functions plus the input error
   wrapper, adding 2,960 bytes. Complete jump tables and all 228 new relocations
   are included. Public MCP cold replay passed 24/24 units across three objects.
@@ -193,9 +208,11 @@ is currently active. Neither survey alone grants credit. Also review the fresh 7
 under `.analysis/r018-stream-deque-hits.json`. Then follow
 the remaining container/string helpers starting at
 `0x004063F0`, then follow the reviewed custom texture-manager family into
-resource loading at `0x0040B250/0x0040B280/0x0040B560/0x0040B7C0` and
-the unreviewed generic accessor at `0x0040DD60`; the custom resolver
-`0x0040C8C0` and manager lifetimes are now reviewed. Review the
+the remaining metadata/container helpers at `0x0040D8C0/0x0040DD60` and
+the unreviewed family after `0x0041BF90`. Texture loading, bitmap/RLE/upload
+and manager lifetimes are now reviewed. Extend compiler EH review only after
+independently validating other registration/metadata/pattern forms; 119 tail
+candidates remain pending in the earlier 422-candidate diagnostic. Review the
 math/constructor aliases separately; do not inherit origin from these callers.
 Keep vendor
 and custom ownership separate. Finish every origin review before resuming
@@ -225,3 +242,9 @@ scripts/repo-python scripts/replay-exact-units.py
 scripts/repo-python scripts/ci.py
 scripts/repo-python scripts/test-public-mcp.py
 ```
+
+R019/R020/R021 checkpoint: all four origin verifiers and target-required
+tracking/status passed through the unchanged no-auth public Funnel Bash MCP.
+Private receipt: `.analysis/public-r019-r021-origin-verification.json`.
+Local CI passed all 57 regressions and the progress SVG is current. No accepted
+exact source/header, flags, relocation or unit configuration changed.

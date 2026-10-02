@@ -933,3 +933,172 @@ checks also passed through the unchanged no-auth public Funnel Bash MCP with
 `scripts/repo-python`; private receipt:
 `.analysis/public-r015-r017-origin-verification.json`. Public CI passed all
 44 tests and the title-image progress SVG is current.
+
+## R019 — texture directories, palettes and texture-pack serialization
+
+Reviewed 2026-10-02. Nine complete custom functions add 4,337 authored bytes.
+The directory loaders construct `%s\%04d.bmp` names and populate the owner's
+44-byte-stride metadata and texture collections. A failed bitmap load erases
+the remaining metadata range. Successful paths choose shared/compressed or
+individual textures, invoke the reviewed upload policy and release temporary
+pixels. Preserve the observed repeated height test in the shared-texture
+condition; width/height symmetry must not be invented from the decompile.
+
+Texture-pack readers select among 512-byte palette blocks using the observed
+signed-byte palette count/index and seek arithmetic. Per-image records contain
+width, height, stride, a one-byte format and compressed byte length. A zero
+compressed length selects the observed raw allocation size; higher formats
+use four bytes per stored pixel. The archive variant uses the application's
+resource handle helpers. The writer produces the corresponding record order,
+loads additional `%s\pal%dp.bmp` palettes, invokes bitmap/RLE processing and
+writes each data block. These filename, palette, format and upload policies
+establish authored integration ownership. Called generic containers, memory
+helpers and archive functions remain separately reviewable.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x0040B250` | 33 | `TextureManager::ClearSlots` |
+| `0x0040B280` | 727 | `TextureManager::LoadBitmapDirectory` |
+| `0x0040B560` | 575 | `TextureManager::LoadBitmapDirectoryWithFormat` |
+| `0x0040B7A0` | 27 | `TextureManager::LoadTexturePackDefaultPalette` |
+| `0x0040B7C0` | 949 | `TextureManager::LoadTexturePack` |
+| `0x0040BB80` | 31 | `TextureManager::LoadArchiveTexturePackDefaultPalette` |
+| `0x0040BBA0` | 918 | `TextureManager::LoadArchiveTexturePack` |
+| `0x0040BF40` | 31 | `TextureManager::SaveTexturePackDefaultPalette` |
+| `0x0040BF60` | 1046 | `TextureManager::SaveTexturePack` |
+
+Every body decodes completely, has a final RET and only direct internal
+branches. Full extents, hashes and branch/return counts are recorded in the
+authored evidence CSV. Original names, ABI and complete owners remain unknown.
+Private evidence is under `.analysis/r019-texture-loaders.*` and
+`.analysis/r019-texture-loader-instructions.json`. No source or exact credit
+is added. R018's container surveys remain diagnostic and uncredited.
+
+## R020 — compiler-generated exception cleanup dispatch
+
+Reviewed 2026-10-02. 303 complete cleanup bodies / 3,174 bytes are
+compiler/exclude. This decision uses compiler emission and actual exception
+metadata, not Ghidra's Unwind labels or small-function byte similarity.
+
+Fresh builds of `probes/VC7InputContainers.cpp` and `probes/VC7CompilerEH.cpp`
+under the pinned VC7.1 /Od/EH/GS profile independently emit the compatible
+handler and metadata ABI. A whole generated handler section is ten bytes:
+load its FunctionInfo into EAX, then jump to the C++ personality endpoint.
+Its own COFF data definition establishes a complete 28-byte, seven-word
+FunctionInfo with magic 0x19930520. The additional ordinary string/value and
+placement-copy fixtures produce independently bounded cleanup funclets,
+including a placement context passed through the EBP+8 argument slot.
+No reconstructed game owner is instantiated and no target function size is
+used to select a convenient compiler prefix. This establishes ABI compatibility,
+not an executable-wide original compiler build or original source type.
+
+`compiler-eh-frames.csv` records 208 handler/FunctionInfo pairs, their parent
+registrations and every unwind state entry. The verifier checks the full
+handler dispatch, immutable metadata sections, complete FunctionInfo/unwind
+hashes, descending state transitions and actual cleanup candidate entries.
+All parents have the complete standard frame-registration prefix, including
+the handler address and FS:[0] load. Try/handler tables are also read in full
+and their state ranges checked. Evidence of registration does not settle the
+parent's ownership or accept its entire boundary.
+
+`compiler-origin-evidence.csv` records all cleanup extents, hashes, template
+kinds, destinations and metadata references. Every body decodes completely
+and contains only a recognized EBP-frame cleanup dispatch: local/member object,
+allocation, placement failure or array cleanup. External tail jumps/calls must
+resolve to known candidate entries; arrays also require a known callback entry.
+There are no hidden conditionals, application-global accesses, unresolved
+switches or instruction prefixes in these accepted bodies. Callee ownership
+and behavior remain separate; the personality endpoint and deallocation
+helpers receive no blanket credit from this batch. These funclets are entered
+with their parent's frame context, not an invented standalone C++ ABI.
+
+`scripts/verify-compiler-origins.py` rechecks the source-generated templates,
+all metadata/registrations and every complete target cleanup body. Ten public
+regressions reject unregistered tables, bad state transitions, truncated code,
+unresolved tails and non-frame application policy, and exercise argument-slot
+and placement cleanup. Private survey/acceptance evidence is under
+`.analysis/r020-*`. Other unwind patterns and static lifetime wrappers remain
+pending. These origin records grant no authored, source, mapping or exact credit.
+
+```bash
+scripts/compile-probe.sh probes/VC7InputContainers.cpp build/probes/CompilerEHOriginTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/compile-probe.sh probes/VC7CompilerEH.cpp build/probes/CompilerEHParameterTemplates.obj /Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+scripts/repo-python scripts/verify-compiler-origins.py
+```
+
+## R021 — bitmap pixels, run-length policy and selected progress records
+
+Reviewed 2026-10-02. Twelve complete custom functions add 7,476 authored bytes.
+The bitmap owner connects directly to the R019 texture-pack format and R014
+upload path. Its initialization accepts observed formats 8/16/24/32 or zero,
+tracks palette ownership and frees its pixel/owned-palette resources.
+The file reader checks BMP signature 0x4D42, aligns stored pitch, converts
+bottom-up rows, builds the application's 16-bit palette and applies its
+first-entry/black-pixel transparency policy. The 24-bit path stores four-byte
+pixels; the 32-bit path preserves observed source data. Error cleanup remains
+as observed, with no invented header validation or repaired resource paths.
+
+Serialized pixel loading uses the format/stride/compression fields from R019.
+The encoder emits run-count/value pairs in byte, word or DWORD form. Its
+8-bit path limits a run to 255; the wider paths retain their own observed
+count arithmetic. The uploader selects raw or run-length decoding, applies
+indexed palette conversion or direct copies, and respects the observed
+width/stride behavior. Row-boundary run continuation and the raw 16-bit
+width>>1 copy must be preserved when exact reconstruction resumes.
+
+Four bounded indirect jumps belong to three complete bodies. Each dispatch
+has an unsigned stack-selector CMP/JA guard, a load of that same selector,
+a byte remap and a scale-four jump through the resulting case index.
+`authored-origin-switches.csv` records every guard/site, full remap/table
+extent, hash and default target. The four full 25-byte remaps and associated
+jump tables occupy 168 bytes after the code extents. No data is interpreted
+as instructions or counted as additional authored/exact bytes. All reachable
+case/default destinations are internal instruction starts, with no branch
+bypassing the range guard. The complete tables, rather than a selected prefix,
+are verified by `authored_switches.py`; three public regressions protect
+bounds, full table extent and selector data flow. Other switch forms remain
+unsupported until reviewed independently.
+
+The selected-record helpers use two signed-byte selectors at owner offsets
+0x16AC4/0x16AC5, strides 0x17F0/0x5FC, a maximum-value update at selected
+record offset 0x556 and a record counter. The separate encoded-item gate has
+its own decimal-remainder rule and query offset 200. These coordinated policies
+support authored ownership; exact record meaning and complete owner layout
+remain unknown. Names and partitions are inferred, not recovered debug names.
+
+| Address | Bytes | Inferred custom role |
+| --- | ---: | --- |
+| `0x0041A0E0` | 47 | `ProgressRecords::CheckEncodedItem` |
+| `0x0041A1A0` | 37 | `ProgressRecords::SetSelection` |
+| `0x0041A1D0` | 109 | `ProgressRecords::RaiseSelectedValue` |
+| `0x0041A240` | 48 | `ProgressRecords::GetSelectedRecordAddress` |
+| `0x0041A270` | 90 | `ProgressRecords::IncrementSelectedRecordCount` |
+| `0x0041A2D0` | 57 | `BitmapData::Initialize` |
+| `0x0041A310` | 105 | `BitmapData::InitializeWithFormat` |
+| `0x0041A380` | 75 | `BitmapData::ReleaseResources` |
+| `0x0041A3D0` | 3751 | `BitmapData::LoadBitmap` |
+| `0x0041B2B0` | 326 | `BitmapData::LoadSerializedPixels` |
+| `0x0041B400` | 1383 | `BitmapData::EncodeRuns` |
+| `0x0041B990` | 1448 | `BitmapData::UploadDecodedPixels` |
+
+Complete target hashes and branch/return counts are recorded in the authored
+CSV. Attested Ghidra decompiles and complete instructions are private under
+`.analysis/r021-*`. The scalar deleting-destructor candidates at
+0x0041A110/0x0041A140/0x0041A170 and the following initializer at 0x0041BF90
+remain pending for their separate compiler/type/owner evidence.
+
+The authored verifier now covers 91 recorded bodies / 30,688 bytes, including
+all four complete switch dispatches. It rechecks manual origin extents, not
+automatically inferring semantic ownership or accepting source reconstruction.
+Current totals: 893 reviewed origins, comprising 138 authored, 447 library and
+308 compiler; 3,458 remain pending. Exact remains 42 functions / 8,916 bytes
+from the provisional 43,031-byte authored set (20.72%). The goal remains
+incomplete and exact reconstruction stays deferred until all origins are reviewed.
+
+R019/R020/R021 verification also passed through the unchanged no-auth public
+Funnel Bash MCP using `scripts/repo-python`. The remote run rechecked all
+compiler, authored, SDK and runtime evidence and target-required tracking/status.
+Private receipt: `.analysis/public-r019-r021-origin-verification.json`.
+Local public-workflow CI passed all 57 target-independent regressions;
+`git diff --check` and progress freshness passed. The 42 accepted exact units,
+their source/header files and matching configuration were unchanged.

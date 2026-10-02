@@ -559,3 +559,32 @@ The probe does not identify the application's stream record as D3DMATRIX.
 `verify-authored-origins.py` rechecks the 70 recorded manual-review bodies,
 their target hashes and full internal CFG; it does not infer ownership from
 machine similarity or create source/exact credit.
+
+## Origin-only observations after R021
+
+R019/R021 add 21 custom texture-pack, bitmap/RLE/upload and selected-record
+bodies (11,813 bytes). Directory loading uses `%s\\%04d.bmp`; palette selection
+and pack records retain signed-byte count/index arithmetic and the observed
+width/height/stride/format/compressed-length order. Preserve the repeated height
+comparison in shared-texture selection instead of inventing symmetry.
+
+The bitmap loader stores four bytes per 24-bit logical pixel, converts indexed
+palettes to A1R5G5B5 and retains observed transparency/error cleanup. RLE encode
+and upload use format-specific run counts, row continuation and raw-copy rules,
+including the raw 16-bit width>>1 copy. Four complete guarded remap switches
+are verified with all case/default targets and 168 bytes of external tables;
+those data bytes grant no additional authored or exact credit.
+
+R020 excludes 303 compiler-generated cleanup bodies (3,174 bytes). Independent
+VC7 fixtures establish compatible handler/FunctionInfo and placement-cleanup
+emission. Actual metadata binds each body to registered parent frames; all
+208 complete state maps and body operand patterns are verified. This establishes
+compiler ownership of dispatch bodies only. Parent/callee ownership, original
+source types and whole parent boundaries remain separate questions.
+
+The origin verifiers now cover 91 manually reviewed authored bodies / 30,688
+bytes and the 303 compiler cleanup bodies. They add no reconstruction credit.
+Original names, ABI and complete bitmap/texture/progress owner layouts remain
+unknown. The three scalar deleting-destructor candidates and 0x0041BF90
+initializer still need independent review. Exact work remains deferred until
+all candidate origins have been reviewed.
