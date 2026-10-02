@@ -101,6 +101,33 @@ tests without depending on a game executable or private database.
 
 Use `scripts/repo-python scripts/NAME.py ...` in public `run_command`
 requests. The same pinned environment is used by Ghidra's workspace wrapper.
+Commands start in the TH075 repository root; no environment activation is
+needed. For example, send this `tools/call` parameter object:
+
+```json
+{
+  "name": "run_command",
+  "arguments": {
+    "command": "scripts/repo-python scripts/verify-python-env.py"
+  }
+}
+```
+
+For a cold function comparison, use:
+
+```json
+{
+  "name": "run_command",
+  "arguments": {
+    "command": "scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-constructor",
+    "timeout_ms": 120000
+  }
+}
+```
+
+`ghidra_call` invokes the same Python entry point automatically. See the
+[Python environment guide](PYTHON_ENVIRONMENT.md) for setup and verification.
+
 A complete 39-unit replay (eight cold objects, 6,810 bytes) also passed through
 public Bash after the environment migration. The smoke test exercises failure
 handling as well as successful reads and compilation.
