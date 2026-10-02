@@ -990,3 +990,12 @@ forward and empty-method shapes. Vtable binding supplies project ownership
 for these otherwise tiny and repetitive methods. Original names and complete
 class layouts remain unknown. R060 adds no reconstruction source or exact
 credit.
+
+## Origin-only observations after R061
+
+Ten character-adjacent 19-byte methods exactly follow the compiler's
+implicit derived-destructor shape: they only call the reviewed shared
+fighter cleanup. Their separately verified scalar deleting wrappers call
+them. This supports compiler ownership for those ten specific methods;
+nearby destructors with different shapes remain separate candidates.
+R061 adds no reconstruction source or exact credit.

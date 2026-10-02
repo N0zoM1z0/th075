@@ -2595,3 +2595,33 @@ Local CI passed 98 tests; target-required tracking and `git diff --check`
 passed. The unchanged no-auth public Funnel MCP cold-compiled the fighter
 probe, verified all 721 authored-origin extents and rechecked tracking.
 Private receipt: `.analysis/public-r060-origin-verification.json`.
+
+## R061 — generated character-derived destructors
+
+Ten complete 19-byte methods / 190 bytes are classified compiler-generated.
+They match every non-relocation byte of the implicit destructor emitted by
+a cold pinned VC7.1 build of `probes/VC7BackgroundDestructor.cpp`. That
+probe declares a derived class without a destructor definition; the
+compiler emits a sole complete code COMDAT with one typed REL32 call to
+the base destructor. The target bodies each call the separately reviewed
+`FighterState::ReleaseResources` at `0x00456910`.
+
+The R037 whole-body scalar-deleting-destructor verifier independently
+checks all ten deleting wrappers and their calls to these methods.
+`scripts/repo-python scripts/verify-character-implicit-destructor-origins.py`
+rechecks the cold source section, target body hashes and complete CFG,
+wrapper hashes and calls, and the shared authored base destination.
+Individual bindings are in
+`config/character-implicit-destructor-origins.csv`. This source probe
+establishes generated code shape and call ownership, not original class
+names or layouts.
+
+R061 adds no authored source or exact credit. Totals are 2,134 reviewed:
+768 authored, 792 library and 574 compiler; 2,217 remain pending. Exact
+stays 42 functions / 8,916 bytes against 1,813,018 provisional authored
+bytes (0.49%). Finish origin review before exact reconstruction.
+Local CI passed 98 tests; target-required tracking, progress freshness and
+`git diff --check` passed. The unchanged no-auth public Funnel MCP cold
+verified the implicit destructor source, all R037 scalar deleting wrappers
+and tracking. Private receipt:
+`.analysis/public-r061-origin-verification.json`.

@@ -2184,7 +2184,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00471E00,authored,CharacterSpecial,authored,target-observed,R049
 0x00472450,authored,ReimuFighter,authored,target-observed,R060
 0x00472460,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x00472490,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00472490,compiler,VC7Generated,exclude,compiler-probe,R061
 0x004724B0,authored,CharacterAux,authored,target-observed,R049
 0x00472890,authored,CharacterAI,authored,target-observed,R047
 0x00474B40,authored,CharacterAI,authored,target-observed,R047
@@ -2206,7 +2206,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00497630,authored,CharacterSpecial,authored,target-observed,R049
 0x00498540,authored,CharacterSpecial,authored,target-observed,R049
 0x00498B90,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x00498BC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00498BC0,compiler,VC7Generated,exclude,compiler-probe,R061
 0x00498BE0,authored,CharacterAux,authored,target-observed,R049
 0x00499030,authored,CharacterAI,authored,target-observed,R047
 0x0049B070,authored,CharacterAI,authored,target-observed,R047
@@ -2227,7 +2227,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004C6050,authored,CharacterSpecial,authored,target-observed,R049
 0x004C66A0,authored,SakuyaFighter,authored,target-observed,R060
 0x004C66B0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x004C66E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004C66E0,compiler,VC7Generated,exclude,compiler-probe,R061
 0x004C6700,authored,CharacterAux,authored,target-observed,R049
 0x004C6B50,authored,CharacterAI,authored,target-observed,R047
 0x004C8CD0,authored,CharacterAI,authored,target-observed,R047
@@ -2247,7 +2247,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004E7350,authored,CharacterSpecial,authored,target-observed,R049
 0x004E79A0,authored,AliceFighter,authored,target-observed,R060
 0x004E79B0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x004E79E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004E79E0,compiler,VC7Generated,exclude,compiler-probe,R061
 0x004E7A00,authored,CharacterAux,authored,target-observed,R049
 0x004E7DE0,authored,CharacterAI,authored,target-observed,R047
 0x004EA090,authored,CharacterAI,authored,target-observed,R047
@@ -2268,7 +2268,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00507040,authored,CharacterSpecial,authored,target-observed,R049
 0x00507690,authored,PatchouliFighter,authored,target-observed,R060
 0x005076A0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x005076D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005076D0,compiler,VC7Generated,exclude,compiler-probe,R061
 0x005076F0,authored,CharacterAux,authored,target-observed,R049
 0x00507B20,authored,CharacterAux,authored,target-observed,R049
 0x005086E0,authored,CharacterAI,authored,target-observed,R047
@@ -2355,7 +2355,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005568F0,authored,CharacterSpecial,authored,target-observed,R049
 0x00556F40,authored,RemiliaFighter,authored,target-observed,R060
 0x00556F50,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x00556F80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00556F80,compiler,VC7Generated,exclude,compiler-probe,R061
 0x00556FA0,authored,CharacterAux,authored,target-observed,R049
 0x00557380,authored,CharacterAI,authored,target-observed,R047
 0x00558F50,authored,CharacterAI,authored,target-observed,R047
@@ -2375,7 +2375,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00578B70,authored,CharacterSpecial,authored,target-observed,R049
 0x005791C0,authored,YuyukoFighter,authored,target-observed,R060
 0x005791D0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x00579200,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00579200,compiler,VC7Generated,exclude,compiler-probe,R061
 0x00579220,authored,CharacterAux,authored,target-observed,R049
 0x00579650,authored,CharacterAI,authored,target-observed,R047
 0x0057B900,authored,CharacterAI,authored,target-observed,R047
@@ -2395,7 +2395,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0059C6F0,authored,CharacterSpecial,authored,target-observed,R049
 0x0059CD40,authored,YukariFighter,authored,target-observed,R060
 0x0059CD50,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x0059CD80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0059CD80,compiler,VC7Generated,exclude,compiler-probe,R061
 0x0059CDA0,authored,CharacterAux,authored,target-observed,R049
 0x0059D240,authored,CharacterAI,authored,target-observed,R047
 0x0059F4F0,authored,CharacterAI,authored,target-observed,R047
@@ -2415,7 +2415,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005C52D0,authored,CharacterSpecial,authored,target-observed,R049
 0x005C5920,authored,SuikaFighter,authored,target-observed,R060
 0x005C5930,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x005C5960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005C5960,compiler,VC7Generated,exclude,compiler-probe,R061
 0x005C5980,authored,CharacterAux,authored,target-observed,R049
 0x005C5D10,authored,CharacterAI,authored,target-observed,R047
 0x005C7FC0,authored,CharacterAI,authored,target-observed,R047
@@ -2435,7 +2435,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005E68C0,authored,CharacterSpecial,authored,target-observed,R049
 0x005E6F10,authored,MeilingFighter,authored,target-observed,R060
 0x005E6F20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x005E6F50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005E6F50,compiler,VC7Generated,exclude,compiler-probe,R061
 0x005E6F70,authored,CharacterAux,authored,target-observed,R049
 0x005E7370,authored,CharacterAI,authored,target-observed,R047
 0x005E9620,authored,CharacterAI,authored,target-observed,R047
