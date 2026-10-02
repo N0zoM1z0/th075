@@ -886,3 +886,14 @@ parse explicit fighting-game command patterns, spawn effects and draw
 character-specific geometry. Their complete extents and 22 jump tables are
 replayed, while adjacent tiny forwarders remain pending. R049 adds origin
 only, with no source or exact credit.
+
+## Origin-only observations after R050
+
+Ten derived fighter constructors store literal character keys and distinct
+vtables; paired factories call character-specific owned-object initializers,
+which in turn call the same project base initializer. The eleven-character
+mapping now has direct target evidence rather than address proximity alone.
+Small special-variant selectors use ten-case guarded tables; round-reset
+bodies call the common fighter reset. These 52 reviewed bodies grant origin
+only; names and complete layouts remain inferred, with no source or exact
+credit.

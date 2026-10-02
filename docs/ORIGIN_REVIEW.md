@@ -2247,3 +2247,46 @@ and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r049-origin-verification.json`. R048 GitHub
 CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37020738880.
+
+## R050 — named character constructor and object chains
+
+Fifty-two small, complete game bodies add 9,572 authored-origin bytes. Ten
+fighter initializers call the common fighter initializer, install distinct
+derived vtables and store literal character keys in the target. Reimu's
+corresponding initializer was already reviewed in R046. These are direct
+target observations; the inferred C++ method names and complete object
+layouts remain open.
+
+| Character key | Fighter initializer | Owned-object factory | Object initializer |
+| --- | --- | --- | --- |
+| `reimu` | `0x0046D080` (R046) | `0x0046D160` (R046) | `0x004769B0` |
+| `marisa` | `0x00492FB0` | `0x004930B0` | `0x0049C850` |
+| `sakuya` | `0x004C0820` | `0x004C0920` | `0x004CA640` |
+| `alice` | `0x004E2C90` | `0x004E2D90` | `0x004EBD00` |
+| `patchouli` | `0x005021C0` | `0x005022C0` | `0x0050A4E0` |
+| `youmu` | `0x0052CEE0` | `0x0052D090` | `0x00536360` |
+| `remilia` | `0x00551980` | `0x00551AA0` | `0x0055ABE0` |
+| `yuyuko` | `0x00574100` | `0x00574210` | `0x0057D4E0` |
+| `yukari` | `0x00597380` | `0x00597480` | `0x005A1560` |
+| `suika` | `0x005C0AB0` | `0x005C0BB0` | `0x005C9C20` |
+| `meiling` | `0x005E2090` | `0x005E2170` | `0x005EB490` |
+
+Each of the ten newly reviewed factories allocates a project object and
+directly calls its paired initializer; all eleven object initializers call
+the shared object base at `0x0045B760` and install a character-associated
+vtable. Ten round-reset bodies directly call the common fighter reset at
+`0x00457010`. Eleven short special-variant selectors map a project mode
+global to a character record byte through a complete ten-case guarded direct
+jump table. All eleven tables and all 52 whole bodies are hashed and
+cold-replayed with full local CFG checks. No small forwarding or generated
+method gained ownership merely through adjacency.
+
+R050 changes origin review only. Totals are 1,801 reviewed: 470 authored,
+767 library and 564 compiler; 2,550 remain pending. Exact stays 42
+functions / 8,916 bytes against the provisional 1,778,595-byte authored
+slice (0.50%). Finish all origin review before exact work.
+Local CI passed 98 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r050-origin-verification.json`. R049 GitHub
+CI passed at https://github.com/N0zoM1z0/th075/actions/runs/37021220821.
