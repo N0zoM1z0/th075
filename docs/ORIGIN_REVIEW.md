@@ -1908,3 +1908,60 @@ Local CI passed 95 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r041-origin-verification.json`.
+
+## R042 — battle collision, overlays and visual effects
+
+Reviewed 2026-10-02. Thirty-two complete target bodies / 37,531 bytes have
+independent battle-specific behavior. `config/authored-origin-evidence.csv`
+records each whole-body SHA-256, one terminal RET and all direct-branch
+counts; `verify-authored-origins.py` reopens the pinned target, decodes each
+entire extent and checks every direct branch stays inside it. The fifteen
+`RenderPattern` names are deliberately neutral: the target shows distinct
+fixed atlas/geometry/effect sequences, but their original visual-effect names
+are unknown. No source or exact match is inferred.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x004406C0` | Draws timed, randomized full-screen rectangles from live player state and a battle camera offset. |
+| `0x00440B50` | Draws paired battle status effects from each player's state, resource atlas and fade fields. |
+| `0x00441910` | Draws a mode-specific battle overlay, including character portraits and end-state choices. |
+| `0x00442580` | Gathers active hitboxes for both players, invokes project collision decisions and emits impact effects. |
+| `0x00442A70` | Transforms attack/defense rectangles and applies hit/guard responses after overlap tests. |
+| `0x00442E40` | Compares transformed player body rectangles and changes both movement states on contact. |
+| `0x00444020` | Applies attack damage, combo/hit state, sound and impact effects using move flags and player health. |
+| `0x004443B0` | Applies the related reduced-damage response, updates combo fields and launches impact effects. |
+| `0x00445830` | Updates both players' per-frame effect fields and resets them for selected battle states. |
+| `0x004461D0` | Handles battle pause/continue choices, including continue-count and transition-code changes. |
+| `0x00446590` | Builds several digit-glyph atlas rectangle arrays and stores the project's texture/spacing widths. |
+| `0x00446B90` | Draws decimal digits from those atlas arrays with optional fixed width and per-style spacing. |
+| `0x00446D80` | Advances a fixed-frame overlay schedule with position, fade and scale changes. |
+| `0x00447340` | Renders that overlay from mirrored/scrolled atlas strips and timed alpha effects. |
+| `0x004480D0` | Interprets a fixed set of debug keys to alter character/move/battle state. |
+| `0x00448710` | Draws the battle pause-menu rows, highlighted selection and character portrait. |
+| `0x00449310` | Separates overlapping player rectangles using their facing and velocity, updating both positions. |
+| `0x00449EE0` | Composes randomized background, foreground and timed effect layers. |
+| `0x0044B630` | Draws one atlas-based rotating/translated sprite pattern with random offsets. |
+| `0x0044BB50` | Draws the related atlas pattern with its own geometry and orientation constants. |
+| `0x0044C070` | Draws a third atlas pattern variant with different sprite placement. |
+| `0x0044D620` | Builds and renders a parameterized quad burst from project sprite coordinates. |
+| `0x0044DA90` | Uses a battle timer and trigonometric scaling to draw a layered effect variant. |
+| `0x0044E3D0` | Composes a random backdrop with several project sprite/effect layers. |
+| `0x0044E930` | Builds a multi-layer wave/burst from timer values, random offsets and sprite geometry. |
+| `0x0044F850` | Draws another trigonometric effect pattern with a different atlas selection. |
+| `0x0044FAF0` | Rotates and scales project sprite quads using a battle-timer value. |
+| `0x0044FD40` | Composes timer-scaled sprite quads and render-state changes for one pulse pattern. |
+| `0x00450420` | Draws a tinted battle backdrop and layered sprite pattern. |
+| `0x00450C10` | Draws a related randomized layered pattern with a distinct atlas slot. |
+| `0x00450EE0` | Draws timer-scaled tinted quads with its own geometry parameters. |
+| `0x00451440` | Builds a multi-layer pulse from random offsets, timer-dependent colors and sprite geometry. |
+
+Calling the game's renderer or the CRT random/trigonometric helper gives no
+ownership credit to those callees. Nearby effect dispatchers and player
+functions remain separately pending. R042 raises totals to 1,571 reviewed:
+240 authored, 767 library and 564 compiler; 2,780 remain pending. Exact stays
+42 functions / 8,916 bytes against the provisional 155,041-byte authored
+slice (5.75%). Finish origin review before resuming exact reconstruction.
+Local CI passed 95 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r042-origin-verification.json`.

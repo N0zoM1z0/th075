@@ -796,3 +796,16 @@ and transition state, then renders the camera-adjusted fight and HUD. The
 card-list loader and encoder share an evolving XOR stream with separate text
 and binary paths. All 21 R041 bodies are origin-only observations with
 inferred names; they add no source or exact credit.
+
+## Origin-only observations after R042
+
+The battle loop's collision path gathers separate player hitboxes, transforms
+their rectangles, tests attack/body contact and updates health, movement,
+combo and impact state. The same region contains explicit pause-menu handling,
+debug-key actions and a fixed-frame overlay schedule. A battle HUD initializer
+builds multiple digit atlases; its number renderer reads those exact arrays.
+Fifteen large effect renderers use project sprite/particle APIs, randomized
+offsets, distinct atlas slots and timer-driven geometry. Their neutral
+`RenderPattern` labels do not claim original effect names. All 32 R042 bodies
+have independent full-body and local CFG evidence for authored origin only;
+no source or exact credit follows.
