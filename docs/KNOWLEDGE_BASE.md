@@ -809,3 +809,17 @@ offsets, distinct atlas slots and timer-driven geometry. Their neutral
 `RenderPattern` labels do not claim original effect names. All 32 R042 bodies
 have independent full-body and local CFG evidence for authored origin only;
 no source or exact credit follows.
+
+## Origin-only observations after R043
+
+The result page uses the same selected progress/card records as its text
+builders, plus a custom eight-glyph, 26-column name atlas. Eleven complete
+transition callbacks implement distinct fade, color, rotation, slide and
+scale schedules dispatched by the previously reviewed mode routine. The
+character-selection scene has paired input records and custom card sprites.
+The staff-roll initializer explicitly loads `staffroll.dat`, while its
+renderer uses fixed millisecond windows and its advance routine handles skip
+transitions. Five small progress-record accessors use game-specific nested
+offsets and are independently observed as complete bodies. Tiny wrappers,
+empty methods and unresolved jump-table extents remain pending. The 37 R043
+decisions grant authored origin only, with no source or exact credit.

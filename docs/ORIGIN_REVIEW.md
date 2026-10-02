@@ -1965,3 +1965,63 @@ Local CI passed 95 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
 authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r042-origin-verification.json`.
+
+## R043 — result pages, scene fades, character selection and staff roll
+
+Reviewed 2026-10-02. Thirty-seven complete bodies / 21,846 bytes have
+independent game-specific behavior. Each entire extent is hash-pinned, ends
+in one RET, and has only in-extent direct branches to instruction starts;
+`verify-authored-origins.py` checks all properties against the supplied
+executable. The transition pattern names below distinguish callbacks without
+claiming original C++ names. The inferred owner labels are navigational.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x00430080` | Draws the result record page, including ten card/score rows, selected-character labels and progress values. |
+| `0x00430D80` | Converts two controllers' directional and select/cancel state into result-menu fields. |
+| `0x00430EE0` | Loads the selected character's numbered data pack and corresponding encoded card list. |
+| `0x004315F0` | Draws a result counter as variable- or fixed-width decimal glyphs. |
+| `0x00431770` | Draws exactly eight name glyphs from the project's 26-column character atlas. |
+| `0x00431890` | Builds an eight-character rank/number label and delegates its glyph drawing. |
+| `0x00431940` | Frees each owned card-list string and clears the list container. |
+| `0x00432200` | Draws the whole-screen transition texture with a countdown-driven fading alpha. |
+| `0x004322B0` | Draws the corresponding opposite alpha ramp. |
+| `0x00432360` | Draws a countdown-driven color fade over a complete screen rectangle. |
+| `0x00432410` | Draws the complementary countdown color fade. |
+| `0x004324D0` | Draws rotating sprite quads as the transition count changes. |
+| `0x00432660` | Draws the complementary rotating-quad transition. |
+| `0x004327F0` | Slides/fades transition sprites according to the shared countdown. |
+| `0x00432960` | Scales transition sprites from the shared countdown. |
+| `0x00432AF0` | Moves a transition sprite using a trigonometric count curve. |
+| `0x00432C40` | Draws a countdown-colored rotating transition sprite. |
+| `0x00432D70` | Draws the paired rotating transition sprite with its own color curve. |
+| `0x00433BE0` | Changes a player's character sub-selection and commits selected character/progress globals. |
+| `0x00433CF0` | Advances a player's selection animation and input state across game-specific character choices. |
+| `0x00437380` | Renders each player's selected character card and animated highlight layers. |
+| `0x004388D0` | Copies controller state into the scene's two player-input records and processes selection controls. |
+| `0x00438A80` | Looks up a selected card value in the game's nested progress-record layout. |
+| `0x00438AC0` | Loads `data\\system\\staffroll.dat` and initializes a millisecond baseline. |
+| `0x00438C20` | Advances staff-roll time, responds to skip input and returns a title/scene transition code. |
+| `0x00438D00` | Renders fixed millisecond windows of staff-roll sprites, fades and particles. |
+| `0x00439F90` | Polls the staff-roll skip key combination and window-mode shortcut. |
+| `0x0043ABF0` | Polls two-player title-menu navigation, changing the selected row and its timers. |
+| `0x0043B510` | Updates both battle players and decrements their per-frame counters. |
+| `0x0043C8F0` | Chooses the battle round-end handler from the current mode and player state. |
+| `0x0043D360` | Increments a mode-indexed counter in a game progress record. |
+| `0x0043D3B0` | Writes a selected card's value into a character progress record. |
+| `0x0043D3E0` | Increments the selected card's count in that record. |
+| `0x0043D430` | Sets the selected card's seen/used flag. |
+| `0x0043D460` | Reads that selected card's stored value. |
+| `0x0043D490` | Initializes a battle combo-counter record with side, texture and off-screen position. |
+| `0x0043D4D0` | Applies count/position/timer policy to the combo-counter record and starts its slide animation. |
+
+Ambiguous tiny wrappers, empty methods, destructor bodies and three functions
+with unresolved outgoing jumps stay pending. R043 adds origin evidence only;
+no source, mapping or exact credit is added. Totals are 1,608 reviewed:
+277 authored, 767 library and 564 compiler; 2,743 remain pending. Exact
+stays 42 functions / 8,916 bytes against the provisional 176,887-byte
+authored slice (5.04%). Finish origin review before resuming exact work.
+Local CI passed 95 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran the
+authored-origin verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r043-origin-verification.json`.
