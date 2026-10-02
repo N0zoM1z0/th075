@@ -1854,7 +1854,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00453D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453D40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453D60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00453D80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00453D80,authored,FighterBase,authored,target-observed,R068
 0x00453E20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453E60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453E80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2241,7 +2241,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004E2EF0,authored,AliceFighter,authored,target-observed,R060
 0x004E2F10,authored,AliceFighter,authored,target-observed,R060
 0x004E2F20,authored,CharacterAction,authored,target-observed,R047
-0x004E62A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004E62A0,authored,AliceFighter,authored,target-observed,R068
 0x004E63A0,authored,AliceFighter,authored,target-observed,R050
 0x004E6450,authored,CharacterSpecial,authored,target-observed,R049
 0x004E7350,authored,CharacterSpecial,authored,target-observed,R049

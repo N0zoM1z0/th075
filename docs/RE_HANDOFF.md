@@ -837,3 +837,13 @@ Local CI passed 98 tests; target-required tracking, full authored extent
 verification, progress freshness and `git diff --check` passed. The no-auth
 public Funnel passed all 15 HTTPS smoke checks, including Ghidra and a
 cold exact-unit replay. The private receipt is under `.analysis/deployment/`.
+
+R068 reviews the two remaining pending entries in the inspected 23-slot
+range of the eleven playable-fighter vtables: their shared slot-0
+animation binder and Alice's slot-19 special-state updater. Complete
+body/CFG and vtable bindings are rechecked by
+`scripts/repo-python scripts/verify-fighter-final-virtual-origins.py`.
+Totals are 2,162 reviewed (796 authored, 792 library, 574 compiler),
+2,189 pending. Exact stays 42 / 8,916 bytes against 1,945,954 provisional
+authored bytes (0.46%). Continue origin review first. R067 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37030747665.

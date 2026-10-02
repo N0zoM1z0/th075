@@ -1060,3 +1060,11 @@ character-specific update body in fighter vtable slot 19. A separate
 projectile routine advances action and position state. The six complete
 bodies add no source or exact credit. Nearby repeated container helpers
 remain pending vendor-source verification.
+
+## Origin-only observations after R068
+
+All eleven reviewed playable-fighter vtables use the same slot-0 animation
+binding method. Alice's slot-19 method updates a character-specific timer
+from relative opponent position. Those two complete bodies close the
+remaining pending entries within the inspected 23-slot range of the
+eleven playable-fighter vtables. R068 adds no source or exact credit.

@@ -2810,3 +2810,20 @@ verification, progress freshness and `git diff --check` passed. The
 unchanged no-auth public Funnel MCP passed its 15-check HTTPS smoke test,
 including Ghidra and cold exact-unit replay. Its private receipt remains
 under `.analysis/deployment/`.
+
+## R068 — final two reviewed playable-fighter vtable entries
+
+The shared 149-byte slot-0 method binds fighter animation data; all eleven
+previously reviewed playable-character vtables point to it. Alice's
+256-byte slot-19 update changes character timer/state using opponent
+position. Both full bodies decode to a final RET with every branch internal.
+`scripts/repo-python scripts/verify-fighter-final-virtual-origins.py`
+rechecks hashes, complete CFG and all eleven slot-0 pointers plus Alice's
+slot 19. This closes origin decisions for the 23-entry range inspected in
+each of those eleven vtables; it does not establish complete class layouts
+or original names.
+
+R068 adds origin only: 2,162 reviewed (796 authored, 792 library, 574
+compiler), 2,189 pending. Exact remains 42 functions / 8,916 bytes
+against 1,945,954 provisional authored bytes (0.46%). R067 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37030747665.
