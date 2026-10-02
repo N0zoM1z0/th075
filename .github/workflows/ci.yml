@@ -8,5 +8,6 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python3 scripts/ci.py
-      - run: python3 scripts/update-progress.py --check
+      - run: scripts/bootstrap-python.sh
+      - run: scripts/repo-python scripts/ci.py
+      - run: scripts/repo-python scripts/update-progress.py --check

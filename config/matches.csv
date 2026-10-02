@@ -1,2 +1,25 @@
 address,name,size,status,match_percent,unit,evidence
-0x00401000,GraphicsResourceClient::GraphicsResourceClient,27,matching,100.00,graphics-resource-client-constructor,python3 scripts/replay-exact-units.py --unit graphics-resource-client-constructor; F001
+0x00401000,GraphicsResourceClient::GraphicsResourceClient,27,matching,100.00,graphics-resource-client-constructor,scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-constructor; F001
+0x00401A00,Graphics::ShowError,29,matching,100.00,graphics-show-error,scripts/repo-python scripts/replay-exact-units.py --unit graphics-show-error; F002; public MCP aggregate replay
+0x00401A20,Graphics::SetPresentationDestinationRect,43,matching,100.00,graphics-set-presentation-destination-rect,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-presentation-destination-rect; F002; public MCP aggregate replay
+0x00401A50,Graphics::SetTargetViewport,39,matching,100.00,graphics-set-target-viewport,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-target-viewport; F002; public MCP aggregate replay
+0x00401A80,Graphics::SetPresentationSourceRect,43,matching,100.00,graphics-set-presentation-source-rect,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-presentation-source-rect; F002; public MCP aggregate replay
+0x00401AB0,Graphics::SetClearColor,54,matching,100.00,graphics-set-clear-color,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-clear-color; F002; public MCP aggregate replay
+0x00401AF0,Graphics::SetColorMultiplier,13,matching,100.00,graphics-set-color-multiplier,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-color-multiplier; F002; public MCP aggregate replay
+0x00401B00,Graphics::SetDrawTransform,31,matching,100.00,graphics-set-draw-transform,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-draw-transform; F002; public MCP aggregate replay
+0x00401F00,Graphics::LoadTexture,72,matching,100.00,graphics-load-texture,scripts/repo-python scripts/replay-exact-units.py --unit graphics-load-texture; F002; public MCP aggregate replay
+0x00401F50,Graphics::SetBlendMode,495,matching,100.00,graphics-set-blend-mode,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-blend-mode; F002; public MCP aggregate replay
+0x00402140,Graphics::SetAlphaMode,270,matching,100.00,graphics-set-alpha-mode,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-alpha-mode; F002; public MCP aggregate replay
+0x00402250,Graphics::SetDepthMode,344,matching,100.00,graphics-set-depth-mode,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-depth-mode; F002; public MCP aggregate replay
+0x004023B0,Graphics::SetTextureFilter,386,matching,100.00,graphics-set-texture-filter,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-texture-filter; F002; public MCP aggregate replay
+0x00402540,Graphics::SetTextureStage,161,matching,100.00,graphics-set-texture-stage,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-texture-stage; F002; public MCP aggregate replay
+0x004025F0,Graphics::SetPixelShaderMode,102,matching,100.00,graphics-set-pixel-shader-mode,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-pixel-shader-mode; F002; public MCP aggregate replay
+0x00402660,Graphics::BeginFrame,36,matching,100.00,graphics-begin-frame,scripts/repo-python scripts/replay-exact-units.py --unit graphics-begin-frame; F002; public MCP aggregate replay
+0x00402690,Graphics::BeginTarget,306,matching,100.00,graphics-begin-target,scripts/repo-python scripts/replay-exact-units.py --unit graphics-begin-target; F002; public MCP aggregate replay
+0x004027D0,Graphics::EndFrame,196,matching,100.00,graphics-end-frame,scripts/repo-python scripts/replay-exact-units.py --unit graphics-end-frame; F002; public MCP aggregate replay
+0x004028A0,Graphics::SetPresentCallback,13,matching,100.00,graphics-set-present-callback,scripts/repo-python scripts/replay-exact-units.py --unit graphics-set-present-callback; F002; public MCP aggregate replay
+0x004028B0,Graphics::GetPrimaryTargetTexture,10,matching,100.00,graphics-get-primary-target-texture,scripts/repo-python scripts/replay-exact-units.py --unit graphics-get-primary-target-texture; F002; public MCP aggregate replay
+0x004028C0,Graphics::GetTargetTexture,37,matching,100.00,graphics-get-target-texture,scripts/repo-python scripts/replay-exact-units.py --unit graphics-get-target-texture; F002; public MCP aggregate replay
+0x004028F0,Graphics::Present,123,matching,100.00,graphics-present,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present; F002; public MCP aggregate replay
+0x00402970,Graphics::PresentToWindow,128,matching,100.00,graphics-present-to-window,scripts/repo-python scripts/replay-exact-units.py --unit graphics-present-to-window; F002; public MCP aggregate replay
+0x00403D00,Input::ShowError,29,matching,100.00,input-show-error,scripts/repo-python scripts/replay-exact-units.py --unit input-show-error; F002; public MCP aggregate replay

@@ -5,6 +5,9 @@ comparison. The user explicitly deferred subsequent project phases.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use the user-required commit subject format `gpt-6.1-sol: ...`.
+Use `scripts/repo-python` for repository Python commands, including public
+MCP Bash requests. It checks the private environment and hash-pinned decoder;
+do not replace it with a shell-dependent Python or silent fallback.
 
 ## Target and preflight
 
@@ -18,10 +21,10 @@ Before changing reconstruction state, read `docs/RE_HANDOFF.md`,
 `git status`, then run from the repository root:
 
 ```bash
-python3 scripts/verify-target.py
-python3 scripts/validate-tracking.py --require-target
-python3 scripts/report-reconstruction-status.py --summary
-python3 scripts/ghidra.py check
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/ghidra.py check
 ```
 
 ## Function evidence and acceptance
@@ -36,7 +39,7 @@ python3 scripts/ghidra.py check
 - `config/match-units.toml` records the exact source, COFF symbol, target extent,
   compiler flags, and every relocation. `config/matches.csv` accepts only a
   reproducible complete comparison with zero differences.
-- Acceptance requires `python3 scripts/replay-exact-units.py --unit NAME`.
+- Acceptance requires `scripts/repo-python scripts/replay-exact-units.py --unit NAME`.
   This cold-builds the object before comparing it. Direct comparison of an old
   object is diagnostic, not new acceptance evidence.
 - A diagnostic `structural-exact` result excludes relocation fields and cannot
@@ -82,4 +85,4 @@ python3 scripts/ghidra.py check
   archives, analysis databases, downloaded tools, generated decompiles, or secrets.
 - Update the knowledge base and handoff after a bounded accepted function. Replay
   affected units after changing headers, ABI declarations, flags, or relocations.
-  Run `python3 scripts/ci.py` and `git diff --check` before handoff.
+  Run `scripts/repo-python scripts/ci.py` and `git diff --check` before handoff.

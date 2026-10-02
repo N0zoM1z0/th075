@@ -1,0 +1,2 @@
+# Linux x86_64 decoder identities are independently checked by repo-python.
+capstone==5.0.6

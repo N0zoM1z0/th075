@@ -26,12 +26,17 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Initial Ghidra analysis found 4,351 provisional function candidates. One
-function has reconstructed source and a complete exact match covering 27 bytes;
-its name remains inferred. Candidate count is not the number of confirmed
-authored functions. Scripts and the `config/` ledgers report current state.
+Ghidra analysis found 4,351 provisional function candidates. 24
+functions have reconstructed source and complete exact matches covering 2,987
+bytes, including reviewed switch tables. Names remain inferred. Candidate
+count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
 ## Getting started
+
+Use `scripts/repo-python` for repository Python commands and Web MCP Bash
+requests. Bootstrap the isolated Python 3.12 environment with
+`scripts/bootstrap-python.sh`; Capstone 5.0.6 bindings and its native decoder
+are hash-checked before every invocation. No activation is needed.
 
 Private symlinks currently reuse TH095's installed tool binaries. TH075 has
 its own bridge checkout, Ghidra project, and output directories. Recreate the
@@ -39,31 +44,33 @@ tool environment with:
 
 ```bash
 scripts/bootstrap-tools.sh /path/to/th095
-python3 scripts/import-target.py /path/to/th075.exe
+scripts/repo-python scripts/import-target.py /path/to/th075.exe
 ```
 
 `import-target.py` also accepts an executable path and imports only the pinned
-hash. Game files are ignored by Git. Run `python3 scripts/ghidra.py import` only
+hash. Game files are ignored by Git. Run `scripts/repo-python scripts/ghidra.py import` only
 to create a new project and initial candidate ledgers. For the existing project,
 use `check` instead of importing again.
 
 Start each reconstruction session with:
 
 ```bash
-python3 scripts/verify-target.py
-python3 scripts/validate-tracking.py --require-target
-python3 scripts/report-reconstruction-status.py --summary
-python3 scripts/ghidra.py check
+scripts/repo-python scripts/check-tools.py
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/ghidra.py check
 ```
 
 Cold-build and replay the first accepted function:
 
 ```bash
-python3 scripts/replay-exact-units.py --unit graphics-resource-client-constructor
+scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-constructor
 ```
 
-Replay all configured functions with `python3 scripts/replay-exact-units.py`.
-Run public checks with `python3 scripts/ci.py`; these do not require the game
+Replay all configured functions with `scripts/repo-python scripts/replay-exact-units.py`.
+See [toolchain and matching details](docs/BUILD_MATCHING.md).
+Run public checks with `scripts/repo-python scripts/ci.py`; these do not require the game
 executable or private Ghidra project.
 
 ## Bash + Ghidra MCP
@@ -84,7 +91,7 @@ Operate and test the existing service with:
 ```bash
 systemctl --user status th075-ghidra-bash-mcp.service --no-pager
 systemctl --user restart th075-ghidra-bash-mcp.service
-python3 scripts/test-public-mcp.py
+scripts/repo-python scripts/test-public-mcp.py
 ```
 
 Public tests passed through a global IPv4 Funnel ingress with TLS validation,
@@ -103,10 +110,14 @@ See the [function workflow](docs/RE_WORKFLOW.md),
 The [TH095 reconstruction](https://github.com/N0zoM1z0/th095) supplies the
 Bash + Ghidra bridge and VC7.1 comparison workflow. The
 [TH08 reconstruction](https://github.com/N0zoM1z0/th08) supplies additional
-function-matching patterns. Their source and engine layouts are supporting
+function-matching patterns. The
+[TH105 reconstruction](https://github.com/N0zoM1z0/th105) provides a related
+engine reference for rendering, input, and ownership investigations.
+See the [reference comparison](docs/REFERENCE_PROJECTS.md).
+Their source and engine layouts are supporting
 references; acceptance depends on the pinned TH075 target.
 
-Regenerate the progress card with `python3 scripts/update-progress.py` after
+Regenerate the progress card with `scripts/repo-python scripts/update-progress.py` after
 updating the ledgers. Its denominator includes all provisional candidates,
 including compiler and library code; the total authored set is not known yet.
 

@@ -108,10 +108,14 @@ def main() -> int:
         if sorted(item["name"] for item in listing["tools"]) != ["ghidra_call", "run_command"]:
             raise ValueError("unexpected public tool catalog")
         results.append("two-tool discovery")
-        bash = tool("run_command", {"command": "python3 scripts/verify-target.py"})
+        bash = tool("run_command", {"command": "scripts/repo-python scripts/verify-target.py"})
         if env["WORKSPACE_ROOT"] not in bash or "bd441e99075436e8" not in bash:
             raise ValueError("Bash tool did not attest the TH075 target")
         results.append("Bash workspace and target verification")
+        python_environment = tool("run_command", {"command": "scripts/repo-python scripts/verify-python-env.py"})
+        if "Capstone 5.0.6, four SHA-256 identities verified" not in python_environment:
+            raise ValueError("public Bash did not use the pinned repository Python/decoder")
+        results.append("repository Python and hash-pinned decoder through Bash")
         checked = tool("ghidra_call", {"operation": "check"})
         if "TH075_GHIDRA_ATTESTATION_OK:bd441e99075436e8" not in checked:
             raise ValueError("public Ghidra attestation marker missing")
@@ -127,7 +131,7 @@ def main() -> int:
         tool("ghidra_call", {"operation": "decompile", "addresses": ["0x0"]}, True)
         results.append("failed decompilation rejected")
         replay = tool("run_command", {"command":
-            "python3 scripts/replay-exact-units.py --unit graphics-resource-client-constructor",
+            "scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-constructor",
             "timeout_ms": 120000})
         if "Cold replay: 1/1 exact units" not in replay:
             raise ValueError("cold function replay failed through public Bash")

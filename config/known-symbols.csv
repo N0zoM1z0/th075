@@ -1,2 +1,25 @@
 address,name,module,confidence,evidence
 0x00401000,GraphicsResourceClient::GraphicsResourceClient,GraphicsResourceClient,inferred,F001; constructor role supported by paired cleanup and constructor caller; original name unknown
+0x00401A00,Graphics::ShowError,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401A20,Graphics::SetPresentationDestinationRect,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401A50,Graphics::SetTargetViewport,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401A80,Graphics::SetPresentationSourceRect,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401AB0,Graphics::SetClearColor,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401AF0,Graphics::SetColorMultiplier,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401B00,Graphics::SetDrawTransform,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401F00,Graphics::LoadTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00401F50,Graphics::SetBlendMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402140,Graphics::SetAlphaMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402250,Graphics::SetDepthMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004023B0,Graphics::SetTextureFilter,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402540,Graphics::SetTextureStage,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004025F0,Graphics::SetPixelShaderMode,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402660,Graphics::BeginFrame,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402690,Graphics::BeginTarget,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004027D0,Graphics::EndFrame,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004028A0,Graphics::SetPresentCallback,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004028B0,Graphics::GetPrimaryTargetTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004028C0,Graphics::GetTargetTexture,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x004028F0,Graphics::Present,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00402970,Graphics::PresentToWindow,Graphics,inferred,F002; target-observed operations and typed SDK call slots; original name unknown
+0x00403D00,Input::ShowError,Input,inferred,F002; target-observed operations and typed SDK call slots; original name unknown

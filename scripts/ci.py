@@ -12,7 +12,7 @@ def main() -> int:
     try:
         for path in [*sorted((ROOT / "scripts").glob("*.py")), *sorted((ROOT / "tests").glob("*.py"))]:
             compile(path.read_text(), str(path), "exec")
-        for path in sorted((ROOT / "scripts").glob("*.sh")):
+        for path in [*sorted((ROOT / "scripts").glob("*.sh")), ROOT / "scripts/repo-python"]:
             subprocess.run(["bash", "-n", str(path)], check=True)
         for command in [
             [sys.executable, "scripts/validate-tracking.py", "--skip-target-bytes"],

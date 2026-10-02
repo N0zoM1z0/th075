@@ -39,6 +39,8 @@ systemctl --user is-enabled th075-ghidra-bash-mcp.service
 The systemd unit loads `.env` through its dedicated environment link. Node does
 not load this file itself. Installed tool binaries remain shared read-only;
 all analysis state and build products belong to TH075.
+The Ghidra command is the absolute path to `scripts/repo-python`; Bash Python
+commands also use this wrapper. See [the Python/toolchain setup](BUILD_MATCHING.md).
 
 ## Funnel routing
 
@@ -58,7 +60,7 @@ unrelated private endpoint paths.
 ## Public validation
 
 ```bash
-python3 scripts/test-public-mcp.py
+scripts/repo-python scripts/test-public-mcp.py
 ```
 
 The test resolves the hostname through Google public DNS, selects a global
@@ -66,13 +68,14 @@ IPv4 ingress, and uses `curl --resolve` with `--noproxy '*'`. TLS certificate
 verification stays enabled. This avoids accidentally testing only a MagicDNS
 tailnet address or loopback listener.
 
-The latest no-auth public run passed 13 checks:
+The latest no-auth public run passed 14 checks:
 
 - Requests without an Authorization header return HTTP 200.
 - An unrelated URL returns HTTP 404.
 - MCP initialization negotiates a supported protocol.
 - Tool discovery exposes exactly `run_command` and `ghidra_call`.
 - Public Bash verifies the TH075 workspace and target hash.
+- Public Bash uses the repository Python and four hash-pinned Capstone files.
 - Public Ghidra attests the independent project.
 - A bounded function query reports the expected 27-byte extent.
 - A bounded decompile returns the expected target function.
@@ -90,5 +93,24 @@ stdin configuration instead of process arguments. Temporary headers and
 response files are removed; the private receipt records the URL and results.
 
 Local bridge validation also passed type checking, all 55 bridge tests, and
-the TypeScript build. The public function-workflow checks passed 10 regression
+the TypeScript build. The public function-workflow checks passed 13 regression
 tests without depending on a game executable or private database.
+
+## Web command entry point
+
+Use `scripts/repo-python scripts/NAME.py ...` in public `run_command`
+requests. The same pinned environment is used by Ghidra's workspace wrapper.
+A complete 24-unit replay (three cold objects, 2,987 bytes) also passed through
+public Bash after the environment migration. The smoke test exercises failure
+handling as well as successful reads and compilation.
+
+For local reproduction without exposing the private endpoint in arguments:
+
+```bash
+scripts/repo-python scripts/public-mcp-client.py <<'JSON'
+{"name":"ghidra_call","arguments":{"operation":"check"}}
+JSON
+```
+
+The helper loads the private endpoint locally and uses verified public IPv4
+HTTPS ingress. Keep the full endpoint out of tracked examples and receipts.

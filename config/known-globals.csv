@@ -1,2 +1,23 @@
 address,name,module,confidence,evidence
+0x00657444,Graphics::g_TextureLoadError,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00657460,Graphics::g_TargetBeginError,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066C080,Graphics::g_ColorMultiplier,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066C084,Graphics::g_DrawScale,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066C088,Graphics::g_ActiveTarget,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066C1B8,Graphics::g_PixelShader,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671180,Graphics::g_TargetViewport,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671198,Graphics::g_PresentCallback,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x006711D0,Graphics::g_ClearColor,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x006711D4,Graphics::g_TargetTextures,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x006711D8,Graphics::g_PresentationDestinationRect,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x006711F8,Graphics::g_PixelShaderSupport,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x006711FC,Graphics::g_TargetRenderers,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671200,Graphics::g_PresentationSourceRect,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671210,g_GraphicsResourceClientCount,GraphicsResourceClient,target-observed,F001; 32-bit increment/decrement counter; signedness unknown
+0x00671214,Graphics::g_Window,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671220,Graphics::g_DrawOriginX,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671224,Graphics::g_DrawOriginY,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671230,Graphics::g_Device,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671238,Graphics::g_Windowed,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0067123B,Graphics::g_PixelShaderEnabled,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x00671344,Input::g_Window,Input,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd -P)
+repo_python="$repo_root/.tools/python/bin/python"
+if [[ ! -x "$repo_python" ]]; then
+  echo "missing repository Python; run scripts/bootstrap-python.sh" >&2
+  exit 1
+fi
+# Isolated mode excludes PYTHONPATH, user site-packages, and conda activation.
+# Never silently fall back to an interpreter with a different decoder.
+"$repo_python" -I "$repo_root/scripts/verify-python-env.py" >/dev/null
+exec "$repo_python" -I "$@"

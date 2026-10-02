@@ -5,11 +5,11 @@ Ghidra project before investigating complete disassembly, callers, callees,
 global accesses, strings, and bounded decompilation.
 
 ```bash
-python3 scripts/ghidra.py query .analysis/function.txt function 0x00401020
-python3 scripts/ghidra.py query .analysis/disassembly.txt disassemble 100 0x00401020
-python3 scripts/ghidra.py query .analysis/callers.txt callers 0x00401020
-python3 scripts/ghidra.py query .analysis/xrefs.txt xrefs_to 30 0x00671210
-python3 scripts/ghidra.py decompile .analysis/hypothesis.c 0x00401020
+scripts/repo-python scripts/ghidra.py query .analysis/function.txt function 0x00401020
+scripts/repo-python scripts/ghidra.py query .analysis/disassembly.txt disassemble 100 0x00401020
+scripts/repo-python scripts/ghidra.py query .analysis/callers.txt callers 0x00401020
+scripts/repo-python scripts/ghidra.py query .analysis/xrefs.txt xrefs_to 30 0x00671210
+scripts/repo-python scripts/ghidra.py decompile .analysis/hypothesis.c 0x00401020
 ```
 
 MCP's `ghidra_call` provides the same `check`, `decompile`, `function`,
@@ -27,7 +27,7 @@ Form an ABI and behavior hypothesis, then write a small natural C++ probe below
 
 ```bash
 scripts/compile-probe.sh .analysis/probes/example.cpp build/probes/example.obj /Od /Zi
-python3 scripts/compare-coff-function.py build/probes/example.obj SYMBOL ADDRESS SIZE --json
+scripts/repo-python scripts/compare-coff-function.py build/probes/example.obj SYMBOL ADDRESS SIZE --json
 ```
 
 These flags illustrate invocation only. Diagnostic `structural-exact` excludes
@@ -38,7 +38,7 @@ symbol, complete extent, and relocations in `config/match-units.toml`.
 Accept a function only after:
 
 ```bash
-python3 scripts/replay-exact-units.py --unit UNIT_NAME
+scripts/repo-python scripts/replay-exact-units.py --unit UNIT_NAME
 ```
 
 This cold-builds the object and compares all configured bytes. Reports are
