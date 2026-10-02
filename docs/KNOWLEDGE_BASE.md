@@ -729,3 +729,13 @@ large scene renderer selects sprite IDs and fades by fixed time intervals.
 `docs/ORIGIN_REVIEW.md` records observations per entry. The inferred names
 are aids for navigation; original class identities are still unknown. No
 source or exact credit follows from the classification.
+
+## Origin-only observations after R036
+
+The opening-scene initializer explicitly loads `data\\system\\opening.dat`
+and stores a `timeGetTime` baseline. The corresponding scene advance routine
+uses elapsed time and skip flags, while the R035 renderer contains the timed
+sprite/fade schedule. `OpeningScene` is an inferred owner name supported by
+that context; each function's origin remains based on its own behavior and
+complete bytes. Sprite-node reset and camera-relative render functions also
+have local custom field and drawing policy. No source or exact credit changes.

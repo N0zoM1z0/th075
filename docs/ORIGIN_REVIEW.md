@@ -1684,3 +1684,29 @@ Local CI passed 87 regressions; target-required tracking, progress freshness
 and `git diff --check` passed. The unchanged no-auth public Funnel MCP ran
 the authored-origin verifier and target-required status checks successfully;
 private receipt: `.analysis/public-r035-origin-verification.json`.
+
+## R036 — opening scene ownership and node transforms
+
+Reviewed 2026-10-02. Six further complete game-authored bodies / 2,467 bytes
+were inspected separately and recorded with whole-body hashes and complete
+local CFG metadata. Each has one terminal RET and no unresolved outgoing
+branch. `0x004275D0` explicitly loads `data\\system\\opening.dat`, sets up
+graphics and stores an initial `timeGetTime` timestamp. This makes
+`OpeningScene` a better inferred role for the already reviewed R035 timed
+renderer at `0x004277A0`; only its provisional name changed. The renderer's
+own time-window and sprite-ID logic remains its independent origin evidence.
+
+| Entry | Target-observed behavior supporting authored origin |
+| --- | --- |
+| `0x0040FBB0` | Resets the node's custom transform, color and rotation fields to project-specific defaults. |
+| `0x0040FC70` | Composes those node fields with camera offsets, flip and color policy before drawing a custom sprite quad. |
+| `0x004275D0` | Creates opening-scene graphics state, loads `opening.dat` and initializes elapsed time. |
+| `0x004276B0` | Releases the scene's owned graphics resource and runs its scene cleanup path. |
+| `0x00427730` | Advances the scene using elapsed time, skip flags and explicit transition result codes. |
+| `0x00428C80` | Runs frame/input updates and toggles window mode for a specific key combination. |
+
+The adjacent scalar math wrapper and deleting-destructor thunk are still
+pending. No caller/callee origin was inherited. R036 adds no source or exact
+credit. Totals are 1,323 reviewed: 164 authored, 728 library and 431 compiler;
+3,028 remain pending. Exact remains 42 functions / 8,916 bytes against a
+provisional 62,647-byte authored slice (14.23%).

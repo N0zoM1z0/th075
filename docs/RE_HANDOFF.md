@@ -430,3 +430,11 @@ origin review before returning to exact reconstruction.
 Local CI passed 87 tests; the unchanged no-auth public Funnel MCP also ran
 the authored-origin and target-required checks successfully. Private receipt:
 `.analysis/public-r035-origin-verification.json`.
+
+R036 reviews six more game-authored bodies / 2,467 bytes. The opening-scene
+initializer at `0x004275D0` loads `data\\system\\opening.dat`, explaining the
+inferred `OpeningScene` name for R035's timed renderer; its origin evidence
+remains local to its own complete body. R036 also covers scene state advance,
+input, resource cleanup and two sprite-node transforms. Totals are 1,323
+reviewed (164 authored, 728 library, 431 compiler), 3,028 pending. Exact is
+still 42 / 8,916 bytes against a provisional 62,647 authored bytes (14.23%).

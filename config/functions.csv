@@ -523,9 +523,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040FB00,56,0x0040FB37,FUN_0040fb00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040FB40,43,0x0040FB6A,FUN_0040fb40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040FB70,57,0x0040FBA8,FUN_0040fb70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040FBB0,158,0x0040FC4D,FUN_0040fbb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040FBB0,158,0x0040FC4D,FUN_0040fbb0,SpriteScene::ResetNodeTransform,SpriteScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x0040FC50,18,0x0040FC61,FUN_0040fc50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040FC70,1758,0x0041034D,FUN_0040fc70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040FC70,1758,0x0041034D,FUN_0040fc70,SpriteScene::RenderCameraNode,SpriteScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00410350,1706,0x004109F9,FUN_00410350,SpriteScene::RenderNode,SpriteScene,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00410A00,1268,0x00410EF3,FUN_00410a00,SpriteScene::RenderMirroredNode,SpriteScene,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00410F00,44,0x00410F2B,FUN_00410f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1275,11 +1275,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00427470,82,0x004274C1,FUN_00427470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004274D0,44,0x004274FB,FUN_004274d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00427500,204,0x004275CB,FUN_00427500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004275D0,219,0x004276AA,FUN_004275d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004276B0,127,0x0042772E,FUN_004276b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00427730,99,0x00427792,FUN_00427730,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004277A0,5339,0x00428C7A,FUN_004277a0,TimedScene::RenderTimeline,TimedScene,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
-0x00428C80,106,0x00428CE9,FUN_00428c80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004275D0,219,0x004276AA,FUN_004275d0,OpeningScene::Initialize,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x004276B0,127,0x0042772E,FUN_004276b0,OpeningScene::ReleaseResources,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x00427730,99,0x00427792,FUN_00427730,OpeningScene::Advance,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x004277A0,5339,0x00428C7A,FUN_004277a0,OpeningScene::RenderTimeline,OpeningScene,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
+0x00428C80,106,0x00428CE9,FUN_00428c80,OpeningScene::ProcessInput,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00428CF0,44,0x00428D1B,FUN_00428cf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00428D20,17,0x00428D30,FUN_00428d20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00428D40,28,0x00428D5B,FUN_00428d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
