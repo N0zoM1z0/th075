@@ -1050,3 +1050,13 @@ routine, while a progress decision polls a game flag helper. Five guarded
 tables cover 28 in-function cases across these four bodies. Nearby repeated
 vector routines still need a cold VC7 source/binding witness. R066 adds
 no reconstruction source or exact credit.
+
+## Origin-only observations after R067
+
+The effect-pattern catalog loader reads `data\system\effect\effect.pat`
+through the archive opener. Two auxiliary spawn routines call the previously
+reviewed auxiliary object constructor. Suika and Yukari each place a
+character-specific update body in fighter vtable slot 19. A separate
+projectile routine advances action and position state. The six complete
+bodies add no source or exact credit. Nearby repeated container helpers
+remain pending vendor-source verification.

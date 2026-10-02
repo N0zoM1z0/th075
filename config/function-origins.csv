@@ -2253,7 +2253,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004EA090,authored,CharacterAI,authored,target-observed,R047
 0x004EBD00,authored,AliceObject,authored,target-observed,R050
 0x004EBDA0,authored,CharacterObject,authored,target-observed,R048
-0x004F4170,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004F4170,authored,CharacterProjectile,authored,target-observed,R067
 0x004F44D0,authored,CharacterSequence,authored,target-observed,R048
 0x004F7130,authored,CharacterMove,authored,target-observed,R048
 0x005021C0,authored,PatchouliFighter,authored,target-observed,R050
@@ -2389,7 +2389,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00597630,authored,YukariFighter,authored,target-observed,R060
 0x00597650,authored,YukariFighter,authored,target-observed,R060
 0x00597660,authored,CharacterAction,authored,target-observed,R047
-0x0059B490,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0059B490,authored,YukariFighter,authored,target-observed,R067
 0x0059B740,authored,YukariFighter,authored,target-observed,R050
 0x0059B7F0,authored,CharacterSpecial,authored,target-observed,R049
 0x0059C6F0,authored,CharacterSpecial,authored,target-observed,R049
@@ -2409,7 +2409,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005C0D40,authored,SuikaFighter,authored,target-observed,R060
 0x005C0D60,authored,SuikaFighter,authored,target-observed,R060
 0x005C0D70,authored,CharacterAction,authored,target-observed,R047
-0x005C3FB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005C3FB0,authored,SuikaFighter,authored,target-observed,R067
 0x005C4320,authored,SuikaFighter,authored,target-observed,R050
 0x005C43D0,authored,CharacterSpecial,authored,target-observed,R049
 0x005C52D0,authored,CharacterSpecial,authored,target-observed,R049
@@ -2446,9 +2446,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F6FF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F70E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F7140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F71F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F78B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F7AA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F71F0,authored,Effects,authored,target-observed,R067
+0x005F78B0,authored,Effects,authored,target-observed,R067
+0x005F7AA0,authored,Effects,authored,target-observed,R067
 0x005F7D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F7D80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F7EA0,compiler,VC71Compiler,exclude,compiler-template-backed,R037

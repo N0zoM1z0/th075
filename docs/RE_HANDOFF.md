@@ -823,3 +823,17 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 the four bodies, all 741 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r066-origin-verification.json`. R065 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37029350867.
+
+R067 reviews six complete authored bodies / 5,219 bytes: the effect-pattern
+catalog loader, two auxiliary object spawn methods, Suika and Yukari
+vtable-slot-19 special-state updates, and a projectile update. The
+verifier checks full extents/CFG, the archive literal and call, auxiliary
+constructor calls, and both fighter vtable bindings. Totals are 2,160
+reviewed (794 authored, 792 library, 574 compiler), 2,191 pending. Exact
+stays 42 / 8,916 bytes against 1,945,549 provisional authored bytes
+(0.46%). Continue origin review before exact reconstruction. R066 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37029800827.
+Local CI passed 98 tests; target-required tracking, full authored extent
+verification, progress freshness and `git diff --check` passed. The no-auth
+public Funnel passed all 15 HTTPS smoke checks, including Ghidra and a
+cold exact-unit replay. The private receipt is under `.analysis/deployment/`.

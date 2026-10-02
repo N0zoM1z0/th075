@@ -2783,3 +2783,30 @@ Local CI passed 98 tests; target-required tracking, progress freshness and
 the four bodies, all 741 authored-origin extents and tracking. Private
 receipt: `.analysis/public-r066-origin-verification.json`. R065 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37029350867.
+
+## R067 — effect catalog and fighter special-state origins
+
+Six complete authored bodies / 5,219 bytes are reviewed. The effect-pattern
+loader references `data\system\effect\effect.pat` and calls the already
+reviewed archive opener. Two related methods allocate and initialize the
+reviewed auxiliary game object. Suika and Yukari special-state update bodies
+are bound to slot 19 of their independently reviewed fighter vtables; they
+read character state, update timers and emit game effects. A projectile
+update body applies action and position rules. Names describe observed
+behavior; original method names and full layouts remain provisional.
+
+`scripts/repo-python scripts/verify-effect-fighter-origins.py` rechecks
+each full body hash, final RET, every internal branch, the catalog/archive
+binding, auxiliary constructor calls and both vtable slots. No source or
+exact credit is added. The repeated 520/511-byte container routines still
+await cold vendor-source and typed-binding evidence.
+
+Totals are 2,160 reviewed (794 authored, 792 library, 574 compiler),
+2,191 pending. Exact stays 42 functions / 8,916 bytes against 1,945,549
+provisional authored bytes (0.46%). R066 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37029800827.
+Local CI passed 98 tests; target-required tracking, full authored extent
+verification, progress freshness and `git diff --check` passed. The
+unchanged no-auth public Funnel MCP passed its 15-check HTTPS smoke test,
+including Ghidra and cold exact-unit replay. Its private receipt remains
+under `.analysis/deployment/`.
