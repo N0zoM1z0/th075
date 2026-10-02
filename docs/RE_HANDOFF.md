@@ -438,3 +438,16 @@ remains local to its own complete body. R036 also covers scene state advance,
 input, resource cleanup and two sprite-node transforms. Totals are 1,323
 reviewed (164 authored, 728 library, 431 compiler), 3,028 pending. Exact is
 still 42 / 8,916 bytes against a provisional 62,647 authored bytes (14.23%).
+
+R037 excludes 80 complete 44-byte VC7 scalar deleting destructors / 3,520
+bytes. The new ordinary C++ probe cold-emits one whole generated COMDAT with
+two typed REL32 fields; the verifier checks every source/target byte,
+both calls, decoded CFG and terminal RET. All wrappers call their own
+candidate destructor and the R005-anchored `operator delete` at `0x00640F15`.
+Called bodies retain independent origin decisions. Totals are 1,403 reviewed
+(164 authored, 728 library, 511 compiler), 2,948 pending; exact remains 42 /
+8,916 bytes. Run `scripts/repo-python scripts/verify-scalar-deleting-origins.py`
+for cold evidence replay.
+Local CI passed 91 tests and the no-auth public Funnel MCP cold-ran the new
+verifier successfully. Private receipt:
+`.analysis/public-r037-origin-verification.json`.

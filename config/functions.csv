@@ -257,7 +257,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004098D0,90,0x00409929,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x00409930,37,0x00409954,FID_conflict:length_error,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00409960,28,0x0040997B,FUN_00409960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00409980,44,0x004099AB,FUN_00409980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00409980,44,0x004099AB,FUN_00409980,VC7::ScalarDeletingDestructor_00409980,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004099B0,28,0x004099CB,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004099D0,14,0x004099DD,FUN_004099d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004099E0,35,0x00409A02,FUN_004099e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -322,7 +322,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040A940,36,0x0040A963,FUN_0040a940,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A970,51,0x0040A9A2,FUN_0040a970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A9B0,55,0x0040A9E6,FUN_0040a9b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A9F0,44,0x0040AA1B,FUN_0040a9f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040A9F0,44,0x0040AA1B,FUN_0040a9f0,VC7::ScalarDeletingDestructor_0040A9F0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0040AA20,11,0x0040AA2A,FUN_0040aa20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AA30,37,0x0040AA54,FUN_0040aa30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AA60,11,0x0040AA6A,FUN_0040aa60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -517,7 +517,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F970,43,0x0040F99A,FUN_0040f970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F9A0,65,0x0040F9E0,FUN_0040f9a0,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F9F0,15,0x0040F9FE,FUN_0040f9f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040FA00,44,0x0040FA2B,FUN_0040fa00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040FA00,44,0x0040FA2B,FUN_0040fa00,VC7::ScalarDeletingDestructor_0040FA00,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0040FA30,142,0x0040FABD,FUN_0040fa30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040FAC0,52,0x0040FAF3,FUN_0040fac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040FB00,56,0x0040FB37,FUN_0040fb00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -608,7 +608,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00413420,64,0x0041345F,FUN_00413420,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00413460,398,0x004135ED,FUN_00413460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004135F0,40,0x00413617,FUN_004135f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00413620,44,0x0041364B,FUN_00413620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00413620,44,0x0041364B,FUN_00413620,VC7::ScalarDeletingDestructor_00413620,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00413650,132,0x004136D3,FUN_00413650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004136E0,161,0x00413780,FUN_004136e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00413790,225,0x00413870,FUN_00413790,ReplayRecords::BeginCapture,ReplayRecords,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
@@ -797,9 +797,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00419DF0,27,0x00419E0A,FUN_00419df0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00419E10,671,0x0041A0AE,FUN_00419e10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041A0E0,47,0x0041A10E,FUN_0041a0e0,ProgressRecords::CheckEncodedItem,ProgressRecords,unclassified,0.00,,,false,,R021,,"R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
-0x0041A110,44,0x0041A13B,FUN_0041a110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041A140,44,0x0041A16B,FUN_0041a140,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041A170,44,0x0041A19B,FUN_0041a170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041A110,44,0x0041A13B,FUN_0041a110,VC7::ScalarDeletingDestructor_0041A110,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x0041A140,44,0x0041A16B,FUN_0041a140,VC7::ScalarDeletingDestructor_0041A140,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x0041A170,44,0x0041A19B,FUN_0041a170,VC7::ScalarDeletingDestructor_0041A170,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0041A1A0,37,0x0041A1C4,FUN_0041a1a0,ProgressRecords::SetSelection,ProgressRecords,unclassified,0.00,,,false,,R021,,"R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
 0x0041A1D0,109,0x0041A23C,FUN_0041a1d0,ProgressRecords::RaiseSelectedValue,ProgressRecords,unclassified,0.00,,,false,,R021,,"R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
 0x0041A240,48,0x0041A26F,FUN_0041a240,ProgressRecords::GetSelectedRecordAddress,ProgressRecords,unclassified,0.00,,,false,,R021,,"R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
@@ -841,7 +841,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041D6C0,133,0x0041D744,FUN_0041d6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D750,164,0x0041D7F3,FUN_0041d750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D800,180,0x0041D8B3,FUN_0041d800,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041D8C0,44,0x0041D8EB,FUN_0041d8c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041D8C0,44,0x0041D8EB,FUN_0041d8c0,VC7::ScalarDeletingDestructor_0041D8C0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0041D8F0,56,0x0041D927,FUN_0041d8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D930,19,0x0041D942,FUN_0041d930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041D950,42,0x0041D979,FUN_0041d950,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1122,8 +1122,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004229B0,15,0x004229BE,FUN_004229b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004229C0,15,0x004229CE,FUN_004229c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004229D0,28,0x004229EB,FUN_004229d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004229F0,44,0x00422A1B,FUN_004229f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422A20,44,0x00422A4B,FUN_00422a20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004229F0,44,0x00422A1B,FUN_004229f0,VC7::ScalarDeletingDestructor_004229F0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x00422A20,44,0x00422A4B,FUN_00422a20,VC7::ScalarDeletingDestructor_00422A20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00422A50,195,0x00422B12,FUN_00422a50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422B13,46,0x00422B40,Catch@00422b13,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422B50,35,0x00422B72,FUN_00422b50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1246,20 +1246,20 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00425000,180,0x004250B3,FUN_00425000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004250C0,107,0x0042512A,FUN_004250c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00425130,92,0x0042518B,FUN_00425130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00425190,44,0x004251BB,FUN_00425190,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00425190,44,0x004251BB,FUN_00425190,VC7::ScalarDeletingDestructor_00425190,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004251C0,34,0x004251E1,FUN_004251c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004251F0,181,0x004252A4,FUN_004251f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004252B0,127,0x0042532E,FUN_004252b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00425330,84,0x00425383,FUN_00425330,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00425390,156,0x0042542B,FUN_00425390,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00425430,44,0x0042545B,FUN_00425430,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00425460,44,0x0042548B,FUN_00425460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00425430,44,0x0042545B,FUN_00425430,VC7::ScalarDeletingDestructor_00425430,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x00425460,44,0x0042548B,FUN_00425460,VC7::ScalarDeletingDestructor_00425460,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00425490,183,0x00425546,FUN_00425490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00425550,127,0x004255CE,FUN_00425550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004255D0,78,0x0042561D,FUN_004255d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00425620,156,0x004256BB,FUN_00425620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004256C0,96,0x0042571F,FUN_004256c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00425720,44,0x0042574B,FUN_00425720,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00425720,44,0x0042574B,FUN_00425720,VC7::ScalarDeletingDestructor_00425720,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00425750,372,0x004258C3,FUN_00425750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004258D0,244,0x004259C3,FUN_004258d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004259D0,675,0x00425C72,FUN_004259d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1273,14 +1273,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00427300,298,0x00427429,FUN_00427300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00427430,50,0x00427461,FUN_00427430,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00427470,82,0x004274C1,FUN_00427470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004274D0,44,0x004274FB,FUN_004274d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004274D0,44,0x004274FB,FUN_004274d0,VC7::ScalarDeletingDestructor_004274D0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00427500,204,0x004275CB,FUN_00427500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004275D0,219,0x004276AA,FUN_004275d0,OpeningScene::Initialize,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x004276B0,127,0x0042772E,FUN_004276b0,OpeningScene::ReleaseResources,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00427730,99,0x00427792,FUN_00427730,OpeningScene::Advance,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x004277A0,5339,0x00428C7A,FUN_004277a0,OpeningScene::RenderTimeline,OpeningScene,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x00428C80,106,0x00428CE9,FUN_00428c80,OpeningScene::ProcessInput,OpeningScene,unclassified,0.00,,,false,,"R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
-0x00428CF0,44,0x00428D1B,FUN_00428cf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00428CF0,44,0x00428D1B,FUN_00428cf0,VC7::ScalarDeletingDestructor_00428CF0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00428D20,17,0x00428D30,FUN_00428d20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00428D40,28,0x00428D5B,FUN_00428d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00428D60,251,0x00428E5A,FUN_00428d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1289,7 +1289,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004292E0,2759,0x00429DA6,FUN_004292e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00429DC0,310,0x00429EF5,FUN_00429dc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00429F00,563,0x0042A132,FUN_00429f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042A150,44,0x0042A17B,FUN_0042a150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042A150,44,0x0042A17B,FUN_0042a150,VC7::ScalarDeletingDestructor_0042A150,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042A180,315,0x0042A2BA,FUN_0042a180,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042A2C0,127,0x0042A33E,FUN_0042a2c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042A340,541,0x0042A55C,FUN_0042a340,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1298,7 +1298,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042AE70,377,0x0042AFE8,FUN_0042ae70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042AFF0,280,0x0042B107,FUN_0042aff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042B110,169,0x0042B1B8,FUN_0042b110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042B1C0,44,0x0042B1EB,FUN_0042b1c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042B1C0,44,0x0042B1EB,FUN_0042b1c0,VC7::ScalarDeletingDestructor_0042B1C0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042B1F0,260,0x0042B2F3,FUN_0042b1f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042B300,127,0x0042B37E,FUN_0042b300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042B380,494,0x0042B56D,FUN_0042b380,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1307,7 +1307,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042BFD0,377,0x0042C148,FUN_0042bfd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042C150,280,0x0042C267,FUN_0042c150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042C270,303,0x0042C39E,FUN_0042c270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042C3A0,44,0x0042C3CB,FUN_0042c3a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042C3A0,44,0x0042C3CB,FUN_0042c3a0,VC7::ScalarDeletingDestructor_0042C3A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042C3D0,395,0x0042C55A,FUN_0042c3d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042C560,265,0x0042C668,FUN_0042c560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042C670,1005,0x0042CA5C,FUN_0042c670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1317,7 +1317,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042D6E0,377,0x0042D858,FUN_0042d6e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042D860,280,0x0042D977,FUN_0042d860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042D980,315,0x0042DABA,FUN_0042d980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042DAC0,44,0x0042DAEB,FUN_0042dac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042DAC0,44,0x0042DAEB,FUN_0042dac0,VC7::ScalarDeletingDestructor_0042DAC0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042DAF0,49,0x0042DB20,FUN_0042daf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DB30,72,0x0042DB77,FUN_0042db30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DB80,19,0x0042DB92,FUN_0042db80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1370,7 +1370,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042EF10,1344,0x0042F44F,FUN_0042ef10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042F450,220,0x0042F52B,FUN_0042f450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042F530,423,0x0042F6D6,FUN_0042f530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042F6E0,44,0x0042F70B,FUN_0042f6e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042F6E0,44,0x0042F70B,FUN_0042f6e0,VC7::ScalarDeletingDestructor_0042F6E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042F710,366,0x0042F87D,FUN_0042f710,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042F880,229,0x0042F964,FUN_0042f880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042F970,1803,0x0043007A,FUN_0042f970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1386,7 +1386,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004319B0,429,0x00431B5C,FUN_004319b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00431B60,503,0x00431D56,FUN_00431b60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00431D60,432,0x00431F0F,FUN_00431d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00431F10,44,0x00431F3B,FUN_00431f10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00431F10,44,0x00431F3B,FUN_00431f10,VC7::ScalarDeletingDestructor_00431F10,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00431F40,31,0x00431F5E,FUN_00431f40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00431F60,663,0x004321F6,FUN_00431f60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00432200,175,0x004322AE,FUN_00432200,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1416,7 +1416,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00438240,1072,0x0043866F,FUN_00438240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00438670,596,0x004388C3,FUN_00438670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004388D0,346,0x00438A29,FUN_004388d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00438A30,44,0x00438A5B,FUN_00438a30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00438A30,44,0x00438A5B,FUN_00438a30,VC7::ScalarDeletingDestructor_00438A30,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00438A60,17,0x00438A70,FUN_00438a60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00438A80,53,0x00438AB4,FUN_00438a80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00438AC0,224,0x00438B9F,FUN_00438ac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1425,19 +1425,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00438CF0,11,0x00438CFA,FUN_00438cf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00438D00,4749,0x00439F8C,FUN_00438d00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00439F90,96,0x00439FEF,FUN_00439f90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00439FF0,44,0x0043A01B,FUN_00439ff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00439FF0,44,0x0043A01B,FUN_00439ff0,VC7::ScalarDeletingDestructor_00439FF0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0043A020,435,0x0043A1D2,FUN_0043a020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043A1E0,142,0x0043A26D,FUN_0043a1e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043A270,1273,0x0043A768,FUN_0043a270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043A7A0,1089,0x0043ABE0,FUN_0043a7a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043ABF0,228,0x0043ACD3,FUN_0043abf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0043ACE0,44,0x0043AD0B,FUN_0043ace0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0043ACE0,44,0x0043AD0B,FUN_0043ace0,VC7::ScalarDeletingDestructor_0043ACE0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0043AD10,922,0x0043B0A9,FUN_0043ad10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043B0B0,248,0x0043B1A7,FUN_0043b0b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043B1B0,859,0x0043B50A,FUN_0043b1b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043B510,179,0x0043B5C2,FUN_0043b510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043B5D0,16,0x0043B5DF,FUN_0043b5d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0043B5E0,44,0x0043B60B,FUN_0043b5e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0043B5E0,44,0x0043B60B,FUN_0043b5e0,VC7::ScalarDeletingDestructor_0043B5E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0043B610,4764,0x0043C8AB,FUN_0043b610,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043C8F0,55,0x0043C926,FUN_0043c8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0043C930,1150,0x0043CDAD,FUN_0043c930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1552,8 +1552,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00449CD0,11,0x00449CDA,FUN_00449cd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00449CE0,91,0x00449D3A,FUN_00449ce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00449D40,31,0x00449D5E,FUN_00449d40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00449D60,44,0x00449D8B,FUN_00449d60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00449D90,44,0x00449DBB,FUN_00449d90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00449D60,44,0x00449D8B,FUN_00449d60,VC7::ScalarDeletingDestructor_00449D60,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x00449D90,44,0x00449DBB,FUN_00449d90,VC7::ScalarDeletingDestructor_00449D90,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00449DC0,28,0x00449DDB,FUN_00449dc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00449DE0,45,0x00449E0C,FUN_00449de0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00449E10,161,0x00449EB0,FUN_00449e10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1562,7 +1562,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044A160,11,0x0044A16A,FUN_0044a160,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A170,11,0x0044A17A,FUN_0044a170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A180,91,0x0044A1DA,FUN_0044a180,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044A1E0,44,0x0044A20B,FUN_0044a1e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044A1E0,44,0x0044A20B,FUN_0044a1e0,VC7::ScalarDeletingDestructor_0044A1E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044A210,28,0x0044A22B,FUN_0044a210,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A230,151,0x0044A2C6,FUN_0044a230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A2D0,11,0x0044A2DA,FUN_0044a2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1570,7 +1570,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044A450,11,0x0044A45A,FUN_0044a450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A460,11,0x0044A46A,FUN_0044a460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A470,91,0x0044A4CA,FUN_0044a470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044A4D0,44,0x0044A4FB,FUN_0044a4d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044A4D0,44,0x0044A4FB,FUN_0044a4d0,VC7::ScalarDeletingDestructor_0044A4D0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044A500,28,0x0044A51B,FUN_0044a500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A520,140,0x0044A5AB,FUN_0044a520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A5B0,11,0x0044A5BA,FUN_0044a5b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1578,7 +1578,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044A680,11,0x0044A68A,FUN_0044a680,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A690,11,0x0044A69A,FUN_0044a690,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A6A0,91,0x0044A6FA,FUN_0044a6a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044A700,44,0x0044A72B,FUN_0044a700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044A700,44,0x0044A72B,FUN_0044a700,VC7::ScalarDeletingDestructor_0044A700,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044A730,28,0x0044A74B,FUN_0044a730,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A750,140,0x0044A7DB,FUN_0044a750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A7E0,11,0x0044A7EA,FUN_0044a7e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1586,7 +1586,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044A8B0,11,0x0044A8BA,FUN_0044a8b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A8C0,11,0x0044A8CA,FUN_0044a8c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A8D0,91,0x0044A92A,FUN_0044a8d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044A930,44,0x0044A95B,FUN_0044a930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044A930,44,0x0044A95B,FUN_0044a930,VC7::ScalarDeletingDestructor_0044A930,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044A960,28,0x0044A97B,FUN_0044a960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044A980,140,0x0044AA0B,FUN_0044a980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AA10,11,0x0044AA1A,FUN_0044aa10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1594,7 +1594,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044AAE0,11,0x0044AAEA,FUN_0044aae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AAF0,11,0x0044AAFA,FUN_0044aaf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AB00,91,0x0044AB5A,FUN_0044ab00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044AB60,44,0x0044AB8B,FUN_0044ab60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044AB60,44,0x0044AB8B,FUN_0044ab60,VC7::ScalarDeletingDestructor_0044AB60,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044AB90,28,0x0044ABAB,FUN_0044ab90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044ABB0,151,0x0044AC46,FUN_0044abb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AC50,11,0x0044AC5A,FUN_0044ac50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1602,7 +1602,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044AD80,11,0x0044AD8A,FUN_0044ad80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AD90,11,0x0044AD9A,FUN_0044ad90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044ADA0,91,0x0044ADFA,FUN_0044ada0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044AE00,44,0x0044AE2B,FUN_0044ae00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044AE00,44,0x0044AE2B,FUN_0044ae00,VC7::ScalarDeletingDestructor_0044AE00,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044AE30,28,0x0044AE4B,FUN_0044ae30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AE50,151,0x0044AEE6,FUN_0044ae50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044AEF0,11,0x0044AEFA,FUN_0044aef0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1610,7 +1610,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044B020,11,0x0044B02A,FUN_0044b020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B030,11,0x0044B03A,FUN_0044b030,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B040,91,0x0044B09A,FUN_0044b040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044B0A0,44,0x0044B0CB,FUN_0044b0a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044B0A0,44,0x0044B0CB,FUN_0044b0a0,VC7::ScalarDeletingDestructor_0044B0A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044B0D0,28,0x0044B0EB,FUN_0044b0d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B0F0,140,0x0044B17B,FUN_0044b0f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B180,11,0x0044B18A,FUN_0044b180,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1618,7 +1618,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044B250,11,0x0044B25A,FUN_0044b250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B260,11,0x0044B26A,FUN_0044b260,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B270,91,0x0044B2CA,FUN_0044b270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044B2D0,44,0x0044B2FB,FUN_0044b2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044B2D0,44,0x0044B2FB,FUN_0044b2d0,VC7::ScalarDeletingDestructor_0044B2D0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044B300,28,0x0044B31B,FUN_0044b300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B320,140,0x0044B3AB,FUN_0044b320,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B3B0,11,0x0044B3BA,FUN_0044b3b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1626,7 +1626,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044B480,11,0x0044B48A,FUN_0044b480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B490,11,0x0044B49A,FUN_0044b490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B4A0,91,0x0044B4FA,FUN_0044b4a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044B500,44,0x0044B52B,FUN_0044b500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044B500,44,0x0044B52B,FUN_0044b500,VC7::ScalarDeletingDestructor_0044B500,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044B530,28,0x0044B54B,FUN_0044b530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B550,161,0x0044B5F0,FUN_0044b550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B600,48,0x0044B62F,FUN_0044b600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1634,7 +1634,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044B970,11,0x0044B97A,FUN_0044b970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B980,60,0x0044B9BB,FUN_0044b980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044B9C0,91,0x0044BA1A,FUN_0044b9c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044BA20,44,0x0044BA4B,FUN_0044ba20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044BA20,44,0x0044BA4B,FUN_0044ba20,VC7::ScalarDeletingDestructor_0044BA20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044BA50,28,0x0044BA6B,FUN_0044ba50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044BA70,161,0x0044BB10,FUN_0044ba70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044BB20,48,0x0044BB4F,FUN_0044bb20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1642,7 +1642,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044BE90,11,0x0044BE9A,FUN_0044be90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044BEA0,60,0x0044BEDB,FUN_0044bea0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044BEE0,91,0x0044BF3A,FUN_0044bee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044BF40,44,0x0044BF6B,FUN_0044bf40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044BF40,44,0x0044BF6B,FUN_0044bf40,VC7::ScalarDeletingDestructor_0044BF40,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044BF70,28,0x0044BF8B,FUN_0044bf70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044BF90,161,0x0044C030,FUN_0044bf90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C040,48,0x0044C06F,FUN_0044c040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1650,7 +1650,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044C3B0,11,0x0044C3BA,FUN_0044c3b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C3C0,60,0x0044C3FB,FUN_0044c3c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C400,91,0x0044C45A,FUN_0044c400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044C460,44,0x0044C48B,FUN_0044c460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044C460,44,0x0044C48B,FUN_0044c460,VC7::ScalarDeletingDestructor_0044C460,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044C490,28,0x0044C4AB,FUN_0044c490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C4B0,151,0x0044C546,FUN_0044c4b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C550,11,0x0044C55A,FUN_0044c550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1658,7 +1658,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044C620,11,0x0044C62A,FUN_0044c620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C630,11,0x0044C63A,FUN_0044c630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C640,91,0x0044C69A,FUN_0044c640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044C6A0,44,0x0044C6CB,FUN_0044c6a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044C6A0,44,0x0044C6CB,FUN_0044c6a0,VC7::ScalarDeletingDestructor_0044C6A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044C6D0,28,0x0044C6EB,FUN_0044c6d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C6F0,151,0x0044C786,FUN_0044c6f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C790,11,0x0044C79A,FUN_0044c790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1666,7 +1666,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044C860,11,0x0044C86A,FUN_0044c860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C870,11,0x0044C87A,FUN_0044c870,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C880,91,0x0044C8DA,FUN_0044c880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044C8E0,44,0x0044C90B,FUN_0044c8e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044C8E0,44,0x0044C90B,FUN_0044c8e0,VC7::ScalarDeletingDestructor_0044C8E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044C910,28,0x0044C92B,FUN_0044c910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C930,151,0x0044C9C6,FUN_0044c930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044C9D0,11,0x0044C9DA,FUN_0044c9d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1674,7 +1674,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044CAA0,11,0x0044CAAA,FUN_0044caa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CAB0,11,0x0044CABA,FUN_0044cab0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CAC0,91,0x0044CB1A,FUN_0044cac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044CB20,44,0x0044CB4B,FUN_0044cb20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044CB20,44,0x0044CB4B,FUN_0044cb20,VC7::ScalarDeletingDestructor_0044CB20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044CB50,28,0x0044CB6B,FUN_0044cb50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CB70,151,0x0044CC06,FUN_0044cb70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CC10,11,0x0044CC1A,FUN_0044cc10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1682,7 +1682,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044CD40,11,0x0044CD4A,FUN_0044cd40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CD50,11,0x0044CD5A,FUN_0044cd50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CD60,91,0x0044CDBA,FUN_0044cd60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044CDC0,44,0x0044CDEB,FUN_0044cdc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044CDC0,44,0x0044CDEB,FUN_0044cdc0,VC7::ScalarDeletingDestructor_0044CDC0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044CDF0,28,0x0044CE0B,FUN_0044cdf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CE10,151,0x0044CEA6,FUN_0044ce10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CEB0,11,0x0044CEBA,FUN_0044ceb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1690,7 +1690,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044CFE0,11,0x0044CFEA,FUN_0044cfe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044CFF0,11,0x0044CFFA,FUN_0044cff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D000,91,0x0044D05A,FUN_0044d000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044D060,44,0x0044D08B,FUN_0044d060,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044D060,44,0x0044D08B,FUN_0044d060,VC7::ScalarDeletingDestructor_0044D060,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044D090,28,0x0044D0AB,FUN_0044d090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D0B0,151,0x0044D146,FUN_0044d0b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D150,11,0x0044D15A,FUN_0044d150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1698,7 +1698,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044D220,11,0x0044D22A,FUN_0044d220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D230,11,0x0044D23A,FUN_0044d230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D240,91,0x0044D29A,FUN_0044d240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044D2A0,44,0x0044D2CB,FUN_0044d2a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044D2A0,44,0x0044D2CB,FUN_0044d2a0,VC7::ScalarDeletingDestructor_0044D2A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044D2D0,28,0x0044D2EB,FUN_0044d2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D2F0,151,0x0044D386,FUN_0044d2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D390,11,0x0044D39A,FUN_0044d390,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1706,7 +1706,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044D460,11,0x0044D46A,FUN_0044d460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D470,11,0x0044D47A,FUN_0044d470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D480,91,0x0044D4DA,FUN_0044d480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044D4E0,44,0x0044D50B,FUN_0044d4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044D4E0,44,0x0044D50B,FUN_0044d4e0,VC7::ScalarDeletingDestructor_0044D4E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044D510,28,0x0044D52B,FUN_0044d510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D530,161,0x0044D5D0,FUN_0044d530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D5E0,55,0x0044D616,FUN_0044d5e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1714,7 +1714,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044D8F0,11,0x0044D8FA,FUN_0044d8f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D900,11,0x0044D90A,FUN_0044d900,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D910,88,0x0044D967,FUN_0044d910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044D970,44,0x0044D99B,FUN_0044d970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044D970,44,0x0044D99B,FUN_0044d970,VC7::ScalarDeletingDestructor_0044D970,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044D9A0,28,0x0044D9BB,FUN_0044d9a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044D9C0,161,0x0044DA60,FUN_0044d9c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DA70,26,0x0044DA89,FUN_0044da70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1722,7 +1722,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044DDA0,11,0x0044DDAA,FUN_0044dda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DDB0,11,0x0044DDBA,FUN_0044ddb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DDC0,88,0x0044DE17,FUN_0044ddc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044DE20,44,0x0044DE4B,FUN_0044de20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044DE20,44,0x0044DE4B,FUN_0044de20,VC7::ScalarDeletingDestructor_0044DE20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044DE50,28,0x0044DE6B,FUN_0044de50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DE70,151,0x0044DF06,FUN_0044de70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DF10,11,0x0044DF1A,FUN_0044df10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1730,7 +1730,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044DFE0,11,0x0044DFEA,FUN_0044dfe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044DFF0,11,0x0044DFFA,FUN_0044dff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E000,91,0x0044E05A,FUN_0044e000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044E060,44,0x0044E08B,FUN_0044e060,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044E060,44,0x0044E08B,FUN_0044e060,VC7::ScalarDeletingDestructor_0044E060,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044E090,28,0x0044E0AB,FUN_0044e090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E0B0,151,0x0044E146,FUN_0044e0b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E150,11,0x0044E15A,FUN_0044e150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1738,7 +1738,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044E220,11,0x0044E22A,FUN_0044e220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E230,11,0x0044E23A,FUN_0044e230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E240,91,0x0044E29A,FUN_0044e240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044E2A0,44,0x0044E2CB,FUN_0044e2a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044E2A0,44,0x0044E2CB,FUN_0044e2a0,VC7::ScalarDeletingDestructor_0044E2A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044E2D0,28,0x0044E2EB,FUN_0044e2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E2F0,161,0x0044E390,FUN_0044e2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E3A0,45,0x0044E3CC,FUN_0044e3a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1746,7 +1746,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044E740,11,0x0044E74A,FUN_0044e740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E750,11,0x0044E75A,FUN_0044e750,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E760,91,0x0044E7BA,FUN_0044e760,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044E7C0,44,0x0044E7EB,FUN_0044e7c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044E7C0,44,0x0044E7EB,FUN_0044e7c0,VC7::ScalarDeletingDestructor_0044E7C0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044E7F0,28,0x0044E80B,FUN_0044e7f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E810,181,0x0044E8C4,FUN_0044e810,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044E8D0,94,0x0044E92D,FUN_0044e8d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1754,7 +1754,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044F230,11,0x0044F23A,FUN_0044f230,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F240,11,0x0044F24A,FUN_0044f240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F250,91,0x0044F2AA,FUN_0044f250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044F2B0,44,0x0044F2DB,FUN_0044f2b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044F2B0,44,0x0044F2DB,FUN_0044f2b0,VC7::ScalarDeletingDestructor_0044F2B0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044F2E0,28,0x0044F2FB,FUN_0044f2e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F300,151,0x0044F396,FUN_0044f300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F3A0,11,0x0044F3AA,FUN_0044f3a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1762,7 +1762,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044F470,11,0x0044F47A,FUN_0044f470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F480,11,0x0044F48A,FUN_0044f480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F490,91,0x0044F4EA,FUN_0044f490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044F4F0,44,0x0044F51B,FUN_0044f4f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044F4F0,44,0x0044F51B,FUN_0044f4f0,VC7::ScalarDeletingDestructor_0044F4F0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044F520,28,0x0044F53B,FUN_0044f520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F540,151,0x0044F5D6,FUN_0044f540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F5E0,11,0x0044F5EA,FUN_0044f5e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1770,7 +1770,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044F6B0,11,0x0044F6BA,FUN_0044f6b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F6C0,11,0x0044F6CA,FUN_0044f6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F6D0,91,0x0044F72A,FUN_0044f6d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0044F730,44,0x0044F75B,FUN_0044f730,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0044F730,44,0x0044F75B,FUN_0044f730,VC7::ScalarDeletingDestructor_0044F730,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0044F760,28,0x0044F77B,FUN_0044f760,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F780,161,0x0044F820,FUN_0044f780,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044F830,26,0x0044F849,FUN_0044f830,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1778,7 +1778,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0044FAF0,579,0x0044FD32,FUN_0044faf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0044FD40,756,0x00450033,FUN_0044fd40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450040,88,0x00450097,FUN_00450040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004500A0,44,0x004500CB,FUN_004500a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004500A0,44,0x004500CB,FUN_004500a0,VC7::ScalarDeletingDestructor_004500A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004500D0,28,0x004500EB,FUN_004500d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004500F0,151,0x00450186,FUN_004500f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450190,11,0x0045019A,FUN_00450190,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1786,7 +1786,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00450260,11,0x0045026A,FUN_00450260,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450270,11,0x0045027A,FUN_00450270,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450280,91,0x004502DA,FUN_00450280,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004502E0,44,0x0045030B,FUN_004502e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004502E0,44,0x0045030B,FUN_004502e0,VC7::ScalarDeletingDestructor_004502E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00450310,28,0x0045032B,FUN_00450310,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450330,161,0x004503D0,FUN_00450330,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004503E0,55,0x00450416,FUN_004503e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1794,7 +1794,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00450810,11,0x0045081A,FUN_00450810,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450820,11,0x0045082A,FUN_00450820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450830,91,0x0045088A,FUN_00450830,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00450890,44,0x004508BB,FUN_00450890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00450890,44,0x004508BB,FUN_00450890,VC7::ScalarDeletingDestructor_00450890,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004508C0,28,0x004508DB,FUN_004508c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004508E0,151,0x00450976,FUN_004508e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450980,11,0x0045098A,FUN_00450980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1802,7 +1802,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00450A50,11,0x00450A5A,FUN_00450a50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450A60,11,0x00450A6A,FUN_00450a60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450A70,91,0x00450ACA,FUN_00450a70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00450AD0,44,0x00450AFB,FUN_00450ad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00450AD0,44,0x00450AFB,FUN_00450ad0,VC7::ScalarDeletingDestructor_00450AD0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00450B00,28,0x00450B1B,FUN_00450b00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450B20,171,0x00450BCA,FUN_00450b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450BD0,60,0x00450C0B,FUN_00450bd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1810,7 +1810,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00450ED0,11,0x00450EDA,FUN_00450ed0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00450EE0,408,0x00451077,FUN_00450ee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451080,91,0x004510DA,FUN_00451080,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004510E0,44,0x0045110B,FUN_004510e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004510E0,44,0x0045110B,FUN_004510e0,VC7::ScalarDeletingDestructor_004510E0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00451110,28,0x0045112B,FUN_00451110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451130,151,0x004511C6,FUN_00451130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004511D0,11,0x004511DA,FUN_004511d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1818,7 +1818,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004512A0,11,0x004512AA,FUN_004512a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004512B0,11,0x004512BA,FUN_004512b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004512C0,91,0x0045131A,FUN_004512c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00451320,44,0x0045134B,FUN_00451320,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00451320,44,0x0045134B,FUN_00451320,VC7::ScalarDeletingDestructor_00451320,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00451350,28,0x0045136B,FUN_00451350,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451370,161,0x00451410,FUN_00451370,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451420,26,0x00451439,FUN_00451420,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1826,7 +1826,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004519F0,11,0x004519FA,FUN_004519f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451A00,446,0x00451BBD,FUN_00451a00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451BC0,88,0x00451C17,FUN_00451bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00451C20,44,0x00451C4B,FUN_00451c20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00451C20,44,0x00451C4B,FUN_00451c20,VC7::ScalarDeletingDestructor_00451C20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00451C50,28,0x00451C6B,FUN_00451c50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451C70,151,0x00451D06,FUN_00451c70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451D10,11,0x00451D1A,FUN_00451d10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1834,7 +1834,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00451DE0,11,0x00451DEA,FUN_00451de0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451DF0,11,0x00451DFA,FUN_00451df0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451E00,91,0x00451E5A,FUN_00451e00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00451E60,44,0x00451E8B,FUN_00451e60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00451E60,44,0x00451E8B,FUN_00451e60,VC7::ScalarDeletingDestructor_00451E60,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00451E90,28,0x00451EAB,FUN_00451e90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00451EB0,742,0x00452195,FUN_00451eb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004521A0,132,0x00452223,FUN_004521a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1918,10 +1918,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004584D0,374,0x00458645,FUN_004584d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00458650,31,0x0045866E,FUN_00458650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00458670,23,0x00458686,FUN_00458670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00458690,44,0x004586BB,FUN_00458690,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00458690,44,0x004586BB,FUN_00458690,VC7::ScalarDeletingDestructor_00458690,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004586C0,72,0x00458707,ATL::CAtlWinModule::~CAtlWinModule,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00458710,44,0x0045873B,FUN_00458710,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00458740,44,0x0045876B,FUN_00458740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00458710,44,0x0045873B,FUN_00458710,VC7::ScalarDeletingDestructor_00458710,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
+0x00458740,44,0x0045876B,FUN_00458740,VC7::ScalarDeletingDestructor_00458740,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00458770,22,0x00458785,CDHtmlElementEventSink::~CDHtmlElementEventSink,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00458790,70,0x004587D5,FUN_00458790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004587E0,145,0x00458870,FUN_004587e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2089,7 +2089,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B630,5,0x0045B634,FUN_0045b630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B640,108,0x0045B6AB,FUN_0045b640,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B6B0,15,0x0045B6BE,FUN_0045b6b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B6C0,44,0x0045B6EB,FUN_0045b6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B6C0,44,0x0045B6EB,FUN_0045b6c0,VC7::ScalarDeletingDestructor_0045B6C0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0045B6F0,27,0x0045B70A,FUN_0045b6f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B710,33,0x0045B730,const_iterator::operator!=,VC7 STL generic ??9const_iterator,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045B740,28,0x0045B75B,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
@@ -2183,7 +2183,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00470F00,3797,0x00471DD4,FUN_00470f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00471E00,1584,0x0047242F,FUN_00471e00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00472450,11,0x0047245A,FUN_00472450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00472460,44,0x0047248B,FUN_00472460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00472460,44,0x0047248B,FUN_00472460,VC7::ScalarDeletingDestructor_00472460,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00472490,19,0x004724A2,FUN_00472490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004724B0,982,0x00472885,FUN_004724b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00472890,8871,0x00474B36,FUN_00472890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2205,7 +2205,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00497580,130,0x00497601,FUN_00497580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00497630,3814,0x00498515,FUN_00497630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00498540,1584,0x00498B6F,FUN_00498540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00498B90,44,0x00498BBB,FUN_00498b90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00498B90,44,0x00498BBB,FUN_00498b90,VC7::ScalarDeletingDestructor_00498B90,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00498BC0,19,0x00498BD2,FUN_00498bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00498BE0,1099,0x0049902A,FUN_00498be0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00499030,8256,0x0049B06F,FUN_00499030,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2226,7 +2226,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004C5150,3800,0x004C6027,FUN_004c5150,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C6050,1584,0x004C667F,FUN_004c6050,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C66A0,11,0x004C66AA,FUN_004c66a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004C66B0,44,0x004C66DB,FUN_004c66b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004C66B0,44,0x004C66DB,FUN_004c66b0,VC7::ScalarDeletingDestructor_004C66B0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004C66E0,19,0x004C66F2,FUN_004c66e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C6700,1099,0x004C6B4A,FUN_004c6700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004C6B50,8572,0x004C8CCB,FUN_004c6b50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2246,7 +2246,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004E6450,3800,0x004E7327,FUN_004e6450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E7350,1584,0x004E797F,FUN_004e7350,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E79A0,11,0x004E79AA,FUN_004e79a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004E79B0,44,0x004E79DB,FUN_004e79b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004E79B0,44,0x004E79DB,FUN_004e79b0,VC7::ScalarDeletingDestructor_004E79B0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x004E79E0,19,0x004E79F2,FUN_004e79e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E7A00,982,0x004E7DD5,FUN_004e7a00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004E7DE0,8871,0x004EA086,FUN_004e7de0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2267,7 +2267,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00506140,3800,0x00507017,FUN_00506140,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00507040,1584,0x0050766F,FUN_00507040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00507690,11,0x0050769A,FUN_00507690,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005076A0,44,0x005076CB,FUN_005076a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005076A0,44,0x005076CB,FUN_005076a0,VC7::ScalarDeletingDestructor_005076A0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005076D0,19,0x005076E2,FUN_005076d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005076F0,1060,0x00507B13,FUN_005076f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00507B20,3000,0x005086D7,FUN_00507b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2288,7 +2288,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00530650,3822,0x0053153D,FUN_00530650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00531570,1584,0x00531B9F,FUN_00531570,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00531BC0,11,0x00531BCA,FUN_00531bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00531BD0,44,0x00531BFB,FUN_00531bd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00531BD0,44,0x00531BFB,FUN_00531bd0,VC7::ScalarDeletingDestructor_00531BD0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00531C00,56,0x00531C37,FUN_00531c00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00531C40,19,0x00531C52,FUN_00531c40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00531C60,17,0x00531C70,FUN_00531c60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2354,7 +2354,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005559F0,3800,0x005568C7,FUN_005559f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005568F0,1584,0x00556F1F,FUN_005568f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00556F40,11,0x00556F4A,FUN_00556f40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00556F50,44,0x00556F7B,FUN_00556f50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00556F50,44,0x00556F7B,FUN_00556f50,VC7::ScalarDeletingDestructor_00556F50,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00556F80,19,0x00556F92,FUN_00556f80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00556FA0,982,0x00557375,FUN_00556fa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00557380,7113,0x00558F48,FUN_00557380,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2374,7 +2374,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00577C70,3800,0x00578B47,FUN_00577c70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00578B70,1584,0x0057919F,FUN_00578b70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005791C0,11,0x005791CA,FUN_005791c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005791D0,44,0x005791FB,FUN_005791d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005791D0,44,0x005791FB,FUN_005791d0,VC7::ScalarDeletingDestructor_005791D0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00579200,19,0x00579212,FUN_00579200,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00579220,1060,0x00579643,FUN_00579220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00579650,8871,0x0057B8F6,FUN_00579650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2394,7 +2394,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0059B7F0,3797,0x0059C6C4,FUN_0059b7f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059C6F0,1584,0x0059CD1F,FUN_0059c6f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059CD40,11,0x0059CD4A,FUN_0059cd40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0059CD50,44,0x0059CD7B,FUN_0059cd50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0059CD50,44,0x0059CD7B,FUN_0059cd50,VC7::ScalarDeletingDestructor_0059CD50,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0059CD80,19,0x0059CD92,FUN_0059cd80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059CDA0,1177,0x0059D238,FUN_0059cda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0059D240,8871,0x0059F4E6,FUN_0059d240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2414,7 +2414,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005C43D0,3797,0x005C52A4,FUN_005c43d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C52D0,1584,0x005C58FF,FUN_005c52d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C5920,11,0x005C592A,FUN_005c5920,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005C5930,44,0x005C595B,FUN_005c5930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005C5930,44,0x005C595B,FUN_005c5930,VC7::ScalarDeletingDestructor_005C5930,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005C5960,19,0x005C5972,FUN_005c5960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C5980,904,0x005C5D07,FUN_005c5980,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005C5D10,8871,0x005C7FB6,FUN_005c5d10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2434,7 +2434,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005E59C0,3797,0x005E6894,FUN_005e59c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E68C0,1584,0x005E6EEF,FUN_005e68c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E6F10,11,0x005E6F1A,FUN_005e6f10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005E6F20,44,0x005E6F4B,FUN_005e6f20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005E6F20,44,0x005E6F4B,FUN_005e6f20,VC7::ScalarDeletingDestructor_005E6F20,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005E6F50,19,0x005E6F62,FUN_005e6f50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E6F70,1021,0x005E736C,FUN_005e6f70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005E7370,8871,0x005E9616,FUN_005e7370,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2451,7 +2451,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F7AA0,602,0x005F7CF9,FUN_005f7aa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F7D00,114,0x005F7D71,FUN_005f7d00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F7D80,276,0x005F7E93,FUN_005f7d80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F7EA0,44,0x005F7ECB,FUN_005f7ea0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F7EA0,44,0x005F7ECB,FUN_005f7ea0,VC7::ScalarDeletingDestructor_005F7EA0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005F7ED0,72,0x005F7F17,ATL::CAtlWinModule::~CAtlWinModule,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F7F20,75,0x005F7F6A,FUN_005f7f20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F7F70,42,0x005F7F99,FUN_005f7f70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2628,7 +2628,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FAA50,43,0x005FAA7A,FUN_005faa50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAA80,76,0x005FAACB,FUN_005faa80,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FAAD0,15,0x005FAADE,FUN_005faad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FAAE0,44,0x005FAB0B,FUN_005faae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FAAE0,44,0x005FAB0B,FUN_005faae0,VC7::ScalarDeletingDestructor_005FAAE0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x005FAB10,116,0x005FAB83,FUN_005fab10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FAB90,61,0x005FABCC,FUN_005fab90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FABD0,65,0x005FAC10,FUN_005fabd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

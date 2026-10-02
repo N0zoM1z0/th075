@@ -1710,3 +1710,39 @@ pending. No caller/callee origin was inherited. R036 adds no source or exact
 credit. Totals are 1,323 reviewed: 164 authored, 728 library and 431 compiler;
 3,028 remain pending. Exact remains 42 functions / 8,916 bytes against a
 provisional 62,647-byte authored slice (14.23%).
+
+## R037 — generated VC7 scalar deleting destructors
+
+Reviewed 2026-10-02. Eighty more complete 44-byte bodies / 3,520 bytes are
+classified compiler/exclude. A new independent ordinary C++ fixture,
+`probes/VC7DeletingDestructor.cpp`, defines a synthetic class with a virtual
+destructor and invokes `delete`. A cold pinned VC7.1 build emits its generated
+scalar deleting destructor as the **sole** function in a complete 44-byte
+executable COMDAT. It has exactly two typed REL32 fields: the synthetic
+class destructor and `operator delete`. The source class has no inferred
+relationship to any game's class or layout.
+
+`scripts/verify-scalar-deleting-origins.py` recompiles the fixture, checks
+the entire COFF section, sole definition, both relocation types and symbols,
+and the full source body. It then checks every target body's complete SHA-256,
+all nonrelocated bytes, terminal RET and internal conditional branch. Both
+target CALL opcodes and destinations are decoded: the first must reach a
+recorded function entry, and the second must reach `0x00640F15`, the same
+`operator delete` address bound by the independently reviewed R005 vendor
+deleting-destructor examples. The 80 per-body hashes and call targets are
+recorded in `config/scalar-deleting-origin-evidence.csv`. All complete
+44-byte candidates with this generated shape and delete endpoint are now
+accounted for: these 80 plus the two R005 compiler bodies.
+
+These wrappers' *own* origin is compiler-generated. The first call target's
+origin is not inherited, and the pending `operator delete` body is not
+classified by this call-site evidence. No authored source or exact credit is
+added. Four public regressions reject a changed branch/body, trailing code,
+an unknown destructor entry or a different delete destination. Current totals
+are 1,403 reviewed: 164 authored, 728 library and 511 compiler; 2,948 remain
+pending. Exact remains 42 functions / 8,916 bytes against the provisional
+62,647-byte authored slice (14.23%).
+Local CI passed 91 regressions; target-required tracking, progress freshness
+and `git diff --check` passed. The unchanged no-auth public Funnel MCP
+cold-ran the new verifier and target-required status checks successfully;
+private receipt: `.analysis/public-r037-origin-verification.json`.

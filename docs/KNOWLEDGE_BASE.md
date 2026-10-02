@@ -739,3 +739,13 @@ sprite/fade schedule. `OpeningScene` is an inferred owner name supported by
 that context; each function's origin remains based on its own behavior and
 complete bytes. Sprite-node reset and camera-relative render functions also
 have local custom field and drawing policy. No source or exact credit changes.
+
+## Origin-only observations after R037
+
+VC7.1 emits a 44-byte scalar deleting destructor with one call to the owning
+class destructor and a low-bit-controlled call to `operator delete`. A fresh
+synthetic virtual-destructor fixture emits the whole function and its two
+typed relocations; 80 remaining target bodies match this entire generated
+form with individually bound destinations. The compiler owns each wrapper,
+while the called destructor and deallocator retain separate origin decisions.
+No authored source or exact credit changes.
