@@ -1171,3 +1171,14 @@ one typed relocation each, and a same-family direct call from a reviewed
 `deque::at` parent. The parent chain and raw call fields replay. Six
 same-shape helpers without this caller witness remain pending. R079 grants
 library origin only, with no reconstruction source or exact credit.
+
+## VC7 deque iterator constructors after R080–R081
+
+Seven 32-byte deque iterator constructors match complete VC7 source bodies
+and are called by reviewed `deque::begin` methods. Each calls a matching
+33-byte const-iterator constructor through one typed relocation. Those
+seven no-relocation const-iterator bodies also have complete source matches
+and reviewed parent calls. The cold verifier chain checks every source
+body, target body and call field. Ghidra's imported `_Vector_iterator`
+labels on the 32-byte bodies are not origin evidence. The actual game
+element types remain unknown; these batches add library origin only.

@@ -897,13 +897,13 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041EB80,177,0x0041EC30,FUN_0041eb80,VC7::deque__Tidy_0041EB80,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0041EC40,27,0x0041EC5A,FUN_0041ec40,VC7::allocate_0041EC40,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x0041EC60,29,0x0041EC7C,FUN_0041ec60,VC7::construct_0041EC60,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
-0x0041EC80,32,0x0041EC9F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041EC80,32,0x0041EC9F,_Vector_iterator<>,VC7::deque_IteratorConstructor_0041EC80,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x0041ECA0,29,0x0041ECBC,iterator::operator++,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041ECC0,57,0x0041ECF8,FUN_0041ecc0,VC7::deque_IteratorPlus_0041ECC0,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x0041ED00,57,0x0041ED38,FUN_0041ed00,VC7::deque_IteratorPlus_0041ED00,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x0041ED40,89,0x0041ED98,FUN_0041ed40,VC7::deque_ConstIteratorDereference_0041ED40,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x0041EDA0,60,0x0041EDDB,FUN_0041eda0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041EDE0,32,0x0041EDFF,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041EDE0,32,0x0041EDFF,_Vector_iterator<>,VC7::deque_IteratorConstructor_0041EDE0,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x0041EE00,29,0x0041EE1C,iterator::operator++,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041EE20,57,0x0041EE58,FUN_0041ee20,VC7::deque_IteratorPlus_0041EE20,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x0041EE60,57,0x0041EE98,FUN_0041ee60,VC7::deque_IteratorPlus_0041EE60,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
@@ -940,11 +940,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041F630,31,0x0041F64E,FUN_0041f630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F650,27,0x0041F66A,FUN_0041f650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F670,41,0x0041F698,FUN_0041f670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041F6A0,33,0x0041F6C0,FUN_0041f6a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041F6A0,33,0x0041F6C0,FUN_0041f6a0,VC7::deque_ConstIteratorConstructor_0041F6A0,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x0041F6D0,31,0x0041F6EE,FUN_0041f6d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F6F0,27,0x0041F70A,FUN_0041f6f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F710,41,0x0041F738,FUN_0041f710,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041F740,33,0x0041F760,FUN_0041f740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041F740,33,0x0041F760,FUN_0041f740,VC7::deque_ConstIteratorConstructor_0041F740,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x0041F770,24,0x0041F787,FUN_0041f770,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F790,25,0x0041F7A8,FUN_0041f790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F7B0,35,0x0041F7D2,FUN_0041f7b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1089,11 +1089,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004223E0,25,0x004223F8,FUN_004223e0,VC7::deallocate_004223E0,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x00422400,27,0x0042241A,FUN_00422400,VC7::allocate_00422400,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x00422420,25,0x00422438,std::allocator<std::_Container_proxy>::destroy,VC7::destroy_00422420,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
-0x00422440,32,0x0042245F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00422440,32,0x0042245F,_Vector_iterator<>,VC7::deque_IteratorConstructor_00422440,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x00422460,31,0x0042247E,FUN_00422460,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422480,27,0x0042249A,FUN_00422480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004224A0,87,0x004224F6,FUN_004224a0,VC7::deque_ConstIteratorDereference_004224A0,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
-0x00422500,32,0x0042251F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00422500,32,0x0042251F,_Vector_iterator<>,VC7::deque_IteratorConstructor_00422500,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x00422520,31,0x0042253E,FUN_00422520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422540,27,0x0042255A,FUN_00422540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422560,83,0x004225B2,FUN_00422560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1101,8 +1101,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004225E0,44,0x0042260B,max_size,VC7 STL generic ?max_size,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
 0x00422610,25,0x00422628,FUN_00422610,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422630,44,0x0042265B,max_size,VC7 STL generic ?max_size,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
-0x00422660,33,0x00422680,FUN_00422660,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422690,33,0x004226B0,FUN_00422690,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00422660,33,0x00422680,FUN_00422660,VC7::deque_ConstIteratorConstructor_00422660,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
+0x00422690,33,0x004226B0,FUN_00422690,VC7::deque_ConstIteratorConstructor_00422690,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x004226C0,55,0x004226F6,FUN_004226c0,VC7::__Uninitialized_copy_004226C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00422700,55,0x00422736,FUN_00422700,VC7::__Uninitialized_fill_n_00422700,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00422740,51,0x00422772,FUN_00422740,VC7::__Destroy_range_00422740,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
@@ -1193,7 +1193,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00424380,177,0x00424430,FUN_00424380,VC7::deque__Tidy_00424380,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00424440,27,0x0042445A,FUN_00424440,VC7::allocate_00424440,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x00424460,29,0x0042447C,FUN_00424460,VC7::construct_00424460,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
-0x00424480,32,0x0042449F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00424480,32,0x0042449F,_Vector_iterator<>,VC7::deque_IteratorConstructor_00424480,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x004244A0,29,0x004244BC,iterator::operator++,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004244C0,57,0x004244F8,FUN_004244c0,VC7::deque_IteratorPlus_004244C0,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x00424500,33,0x00424520,FUN_00424500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1210,7 +1210,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00424820,25,0x00424838,std::allocator<std::_Container_proxy>::destroy,VC7::destroy_00424820,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x00424840,31,0x0042485E,FUN_00424840,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424860,41,0x00424888,FUN_00424860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424890,33,0x004248B0,FUN_00424890,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00424890,33,0x004248B0,FUN_00424890,VC7::deque_ConstIteratorConstructor_00424890,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x004248C0,25,0x004248D8,std::allocator<std::_Container_proxy>::destroy,VC7::destroy_004248C0,VC7STL,excluded,0.00,,,false,,"R074; cold VC7 whole helper body, typed binding and reviewed parent call",library,Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit
 0x004248E0,44,0x0042490B,max_size,VC7 STL generic ?max_size,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
 0x00424910,66,0x00424951,FUN_00424910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1513,14 +1513,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00445440,33,0x00445460,FUN_00445440,VC7 STL generic ??9const_iterator,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x00445470,31,0x0044548E,FUN_00445470,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00445490,90,0x004454E9,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x004454F0,32,0x0044550F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004454F0,32,0x0044550F,_Vector_iterator<>,VC7::deque_IteratorConstructor_004454F0,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x00445510,29,0x0044552C,iterator::operator++,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00445530,33,0x00445550,FUN_00445530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00445560,89,0x004455B8,FUN_00445560,VC7::deque_ConstIteratorDereference_00445560,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x004455C0,60,0x004455FB,FUN_004455c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00445600,19,0x00445612,FUN_00445600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00445620,45,0x0044564C,FUN_00445620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00445650,33,0x00445670,FUN_00445650,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00445650,33,0x00445670,FUN_00445650,VC7::deque_ConstIteratorConstructor_00445650,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x00445680,28,0x0044569B,FUN_00445680,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004456A0,32,0x004456BF,FUN_004456a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004456C0,16,0x004456CF,FUN_004456c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2498,7 +2498,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F8C50,103,0x005F8CB6,FUN_005f8c50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8CC0,28,0x005F8CDB,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8CE0,14,0x005F8CED,FUN_005f8ce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F8CF0,32,0x005F8D0F,_Vector_iterator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F8CF0,32,0x005F8D0F,_Vector_iterator<>,VC7::deque_IteratorConstructor_005F8CF0,VC7STL,excluded,0.00,,,false,,R080; cold VC7 whole iterator constructor and reviewed begin parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x005F8D10,29,0x005F8D2C,iterator::operator++,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8D30,57,0x005F8D68,FUN_005f8d30,VC7::deque_IteratorPlus_005F8D30,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
 0x005F8D70,57,0x005F8DA8,FUN_005f8d70,VC7::deque_IteratorPlus_005F8D70,VC7STL,excluded,0.00,,,false,,R078; cold VC7 whole deque access/iterator COMDAT and typed relocations,library,Template body origin verified; original record type and called-function origins unknown; no source or exact credit
@@ -2540,7 +2540,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F9510,31,0x005F952E,FUN_005f9510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F9530,27,0x005F954A,FUN_005f9530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F9550,41,0x005F9578,FUN_005f9550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F9580,33,0x005F95A0,FUN_005f9580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F9580,33,0x005F95A0,FUN_005f9580,VC7::deque_ConstIteratorConstructor_005F9580,VC7STL,excluded,0.00,,,false,,R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call,library,Template body and same-family parent call verified; original element type unknown; no source or exact credit
 0x005F95B0,28,0x005F95CB,FUN_005f95b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F95D0,32,0x005F95EF,FUN_005f95d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F95F0,16,0x005F95FF,FUN_005f95f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

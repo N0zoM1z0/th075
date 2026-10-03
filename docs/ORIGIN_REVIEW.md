@@ -3102,3 +3102,41 @@ origins: 2,537 reviewed (804 authored, 1,159 library, 574 compiler),
 1,814 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%). R078 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37095752902.
+
+## R080 — parent-backed VC7 deque iterator construction
+
+Seven complete 32-byte deque iterator constructors, totaling 224 bytes,
+match the independent VC7 access probe. Each has one typed call to a
+const-iterator constructor and a same-family direct call from one of the
+seven reviewed R079 `deque::begin` bodies. The raw parent call fields and
+complete source/target bodies replay. Five other same-shape iterator
+constructors lack this reviewed parent witness and remain pending.
+Ghidra's imported `_Vector_iterator` label on these seven candidates is
+not accepted as origin evidence; the VC7 deque source and parent calls
+establish the family.
+
+`scripts/repo-python scripts/verify-vendor-deque-iterator-origins.py`
+cold-replays the R079 parents, recompiles the source and checks complete
+body hashes, template aliases, typed bindings, parent calls and CFG.
+Evidence is in `config/vendor-deque-iterator-origins.csv`. R080 adds seven
+library origins: 2,544 reviewed (804 authored, 1,166 library, 574 compiler),
+1,807 pending. No source or exact credit is added.
+
+## R081 — parent-backed VC7 deque const-iterator construction
+
+Seven complete 33-byte const-iterator constructors, totaling 231 bytes,
+match the VC7 access probe without source relocations. Each has a
+same-family typed call from a reviewed R080 iterator constructor. The R080
+parent chain is cold-replayed; its raw call field, full target body hash
+and source symbol must reach the const-iterator candidate. A complete
+no-relocation source match plus that caller witness establishes library
+origin without guessing the original element type.
+
+`scripts/repo-python scripts/verify-vendor-deque-const-iterator-origins.py`
+checks the complete chain, source/target bodies, aliases, parent calls and
+CFG. Evidence is in `config/vendor-deque-const-iterator-origins.csv`.
+R081 adds seven library origins: 2,551 reviewed (804 authored, 1,173
+library, 574 compiler), 1,800 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R079
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37095934946.
