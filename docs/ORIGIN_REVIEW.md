@@ -3434,3 +3434,33 @@ with 1,456 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%); no source or exact credit.
 R092 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37105417836.
+
+## R094 — scalar copy wrappers with complete source-family aliases
+
+Four complete 51-byte scalar `std::copy` wrappers at `0x0040A840`,
+`0x0040F310`, `0x0045A880` and `0x005FA250` match the vector probe,
+including their eight typed relocations and complete control flow.
+Each calls a complete 49-byte scalar `_Copy_opt` source body, which binds
+its one REL32 field to the independently reverified CRT `memmove`.
+These four target callees had already gained library origin in R073 from
+complete `_Uninit_copy` source matches. Both full source families emit
+the same target bodies and typed `memmove` binding. Their original
+specialization and whether linker folding occurred remain unknown;
+R094 preserves their library origins and records the alternative source
+evidence without inventing additional target functions.
+
+`scripts/repo-python scripts/verify-vendor-vector-copy-origins.py`
+cold-replays the R073 callee evidence and CRT anchor, cold-compiles the
+vector probe and checks full wrapper/callee COMDAT extents, hashes,
+source aliases, all linked bytes, complete CFG and origin ledgers.
+Evidence is in `config/vendor-vector-copy-origins.csv`. Public witness
+tests reject different complete callee hashes and mismatched source-typed
+calls. Original game element types remain unclaimed.
+The complete cold verifier also passed through the no-auth public Funnel MCP.
+
+R094 adds four library origins / 204 bytes / eight wrapper relocations
+and reaches 2,899 reviewed candidates (804 authored, 1,521 library,
+574 compiler), with 1,452 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%); no source or exact
+credit. R093 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37105951162.

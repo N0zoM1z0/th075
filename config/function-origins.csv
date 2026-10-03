@@ -313,7 +313,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A7C0,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
 0x0040A7E0,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A830,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040A840,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A840,library,vc7-stl-copy,exclude,complete-vendor-body-and-callee,R094
 0x0040A880,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040A8C0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0040A8E0,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
@@ -478,7 +478,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040F270,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0040F2B0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F2F0,library,vc7-stl-vector-helpers,exclude,high,R090
-0x0040F310,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F310,library,vc7-stl-copy,exclude,complete-vendor-body-and-callee,R094
 0x0040F350,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040F390,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0040F3B0,library,vc7-stl-deque-helpers,exclude,high,R088
@@ -2026,7 +2026,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A7E0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045A820,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A860,library,vc7-stl-vector-helpers,exclude,high,R090
-0x0045A880,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045A880,library,vc7-stl-copy,exclude,complete-vendor-body-and-callee,R094
 0x0045A8C0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0045A900,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0045A920,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2582,7 +2582,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FA210,library,vc7-stl-deque-helpers,exclude,high,R088
 0x005FA220,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
 0x005FA240,library,vc7-stl-deque-helpers,exclude,high,R088
-0x005FA250,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FA250,library,vc7-stl-copy,exclude,complete-vendor-body-and-callee,R094
 0x005FA290,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x005FA2D0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x005FA2F0,library,VC7STL,exclude,complete-vc7-template-family,R032

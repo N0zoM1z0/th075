@@ -1325,3 +1325,16 @@ relocations, alongside the three local CRT anchors. Identical emission
 from the single-threaded archive does not identify the actual linked
 archive. Other CRT globals/callees remain unknown; this batch adds library
 origin only, with no source or exact credit.
+
+## Scalar copy wrappers and source-family ambiguity after R094
+
+Four complete scalar copy wrappers reproduce 204 bytes with eight typed
+relocations. Each has a complete 49-byte copying callee and an independent
+CRT `memmove` anchor. These same callee bodies also reproduce the R073
+`_Uninit_copy` specializations. The new `_Copy_opt` comparison checks the
+entire alternative COMDAT and its typed call; it does not replace the
+older evidence with a guessed source identity. Library origin remains
+established while the original specialization and linker-folding history
+remain unknown. All four wrapper bodies and all callee variants cold-
+replay. R094 grants four new library origins only, with no exact or
+reconstruction-source credit.
