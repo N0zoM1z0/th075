@@ -1076,3 +1076,12 @@ game options. Its caller applies damage and effects. Their guarded switches
 use one complete 31-byte action remap with nine destinations and one direct
 four-entry table. Both code bodies and the direct call edge are verified.
 R069 adds no source or exact credit.
+
+## Origin-only observations after R070
+
+The fighter resource loader builds a `data\\character\\%s\\%s.sce` path
+and selects file or archive loading. Both paths call one parser. Its complete
+target body has a guarded 100-byte remap and seven-entry table after the
+final RET; all destinations stay inside the owning body. The archive path
+applies the observed decode loop before parsing. R070 adds no source or
+exact credit.

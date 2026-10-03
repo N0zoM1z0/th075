@@ -1,8 +1,7 @@
 # Origin review journal
 
-Work stopped after R069 with 2,187 candidates still pending. If the project
-resumes, finish evidence-backed origin review of every candidate before
-resuming exact reconstruction, then target at least 50% exact coverage of
+Work resumed after R069. Finish evidence-backed origin review of every
+candidate before resuming exact reconstruction, then target at least 50% exact coverage of
 the confirmed authored-byte set. This order supersedes the earlier
 alternating workflow. Percentages remain provisional until no origin is pending.
 Auto-analysis names, adjacency, and small size do not establish origin.
@@ -2849,3 +2848,25 @@ R069 adds origin only: 2,164 reviewed (798 authored, 792 library, 574
 compiler), 2,187 pending. Exact remains 42 functions / 8,916 bytes against
 1,948,083 provisional authored bytes (0.46%). R068 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37031049890.
+
+## R070 — fighter script archive loading and parsing
+
+Two complete authored bodies / 2,518 bytes handle a fighter `.sce` resource.
+The previously reviewed `FighterState::LoadResources` builds the literal
+`data\\character\\%s\\%s.sce` and calls both file and archive loaders. The
+archive loader opens through the reviewed game archive routine, decodes the
+same byte stream as the reviewed file loader, and calls the shared parser.
+The parser compares script tokens and dispatches record construction through
+a guarded 100-byte remap and a complete seven-entry jump table. Ghidra could
+not recover that table, so the decision uses the full target body and raw
+instruction/table checks. Its original class and method names remain
+inferred.
+
+`scripts/repo-python scripts/verify-fighter-script-origins.py` rechecks
+both full body hashes, all internal branch destinations and final RETs,
+the complete remap/table hashes, the reviewed `.sce` filename/caller edge,
+and the archive/file loader edges into the parser. No source or exact credit
+is added. Totals are 2,166 reviewed (800 authored, 792 library, 574
+compiler), 2,185 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,601 provisional authored bytes (0.46%). R069 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37031358595.

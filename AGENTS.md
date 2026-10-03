@@ -2,8 +2,8 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-Work stopped after R069 for handoff. If the user resumes it, finish origin
-review of all 4,351 candidates before resuming exact reconstruction. This
+Work resumed after R069. Finish origin review of all 4,351 candidates before
+resuming exact reconstruction. This
 supersedes the earlier alternating workflow. After the complete review,
 prioritize core authored behavior and dependencies by expected benefit and
 reconstruction cost.
