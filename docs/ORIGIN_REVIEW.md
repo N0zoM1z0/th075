@@ -3406,3 +3406,31 @@ R092 reaches 2,892 reviewed candidates (804 authored, 1,514 library,
 against 1,950,893 provisional authored bytes (0.46%), with no new source
 or exact credit. R091 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37105091974.
+
+## R093 — closed CRT mantissa-conversion calls
+
+The complete 344-byte `__ld12cvt` at `0x0064F5B3` matches the pinned
+`libcmt.lib` `intrncvt.obj` function auxiliary extent. All nine direct
+REL32 calls bind to separately complete vendor bodies: the previously
+reviewed `__RoundMan` and `__ShrMan`, and the complete 27-byte `__CopyMan`
+at `0x0064F4F8` and 25-byte `__IsZeroMan` at `0x0064F51F`. Both small
+helpers match every byte without relocations and have exact source-typed
+calls from the conversion body. Imported names and short fingerprints
+alone would not establish their ownership. The corresponding single-
+threaded archive emits the same conversion body; the pinned multithreaded
+archive provides reproducibility, not proof of the original link input.
+
+`scripts/repo-python scripts/verify-runtime-origins.py` now re-extracts
+57 complete vendor bodies, 5,641 bytes and 28 typed direct calls, after
+rechecking the three whole local CRT anchors. It verifies archive hashes,
+member identity, full function extents, every linked byte, full decoding
+and all calls/branches. The existing runtime evidence and relocation CSVs
+record R093, with no new verifier or source body required.
+The complete runtime verification also passed through the no-auth public Funnel MCP.
+
+R093 adds three library origins / 396 bytes / nine typed calls and reaches
+2,895 reviewed candidates (804 authored, 1,517 library, 574 compiler),
+with 1,456 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%); no source or exact credit.
+R092 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37105417836.

@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R092. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R093. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,892: 804 authored, 1,514 library and 574 compiler generated.
-There are 1,459 pending. Candidate count is not authored function count.
+has resolved 2,895: 804 authored, 1,517 library and 574 compiler generated.
+There are 1,456 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R092; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R093; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -71,6 +71,7 @@ scripts/repo-python scripts/verify-vendor-vector-storage-origins.py
 scripts/repo-python scripts/verify-vendor-vector-helper-origins.py
 scripts/repo-python scripts/verify-vendor-vector-operation-origins.py
 scripts/repo-python scripts/verify-vendor-vector-callee-origins.py
+scripts/repo-python scripts/verify-runtime-origins.py
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
@@ -83,7 +84,7 @@ storage, vector helper, vector operation and vector callee cold verifiers
 passed through the no-auth public Funnel MCP.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R091 passed.
+endpoint. Public GitHub CI through R092 passed.
 
 ## Deferred investigations
 
@@ -168,8 +169,15 @@ used a different synthetic record name. These sixteen bodies total 660
 bytes with 21 typed relocations. Equal-shape `begin` and `end` bodies cannot
 exchange source identities. The complete `_Insert_n` body remains pending.
 
-The CRT survey at `.analysis/crt-origin-survey.json` still contains 353
-pending, relocation-bearing observations. A source fingerprint alone does
+The CRT survey at `.analysis/crt-origin-survey.json` contains 353 historical
+relocation-bearing observations. R093 resolved the complete 344-byte
+`__ld12cvt` and its 27-/25-byte `__CopyMan` and `__IsZeroMan` helpers from
+the pinned CRT archive. All nine direct calls bind to separately complete
+vendor bodies, including the previously reviewed rounding and shift
+helpers. The runtime verifier now checks 57 complete bodies and 28 typed
+calls, plus the three local CRT anchors. The complete runtime verification
+also passed through the no-auth public Funnel MCP. Other survey observations remain
+diagnostic. A source fingerprint alone does
 not establish each relocated callee or data binding. The metadata-vector
 and other stream-deque probes likewise remain diagnostic. The 2,301-byte
 `0x00420880` script parser was reviewed in R070 using the complete guarded
@@ -177,7 +185,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,459 pending origin decisions before doing further exact
+Complete the 1,456 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; remaining

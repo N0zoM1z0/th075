@@ -1312,3 +1312,16 @@ relocations replay. Identical `begin`/`end` shapes are distinguished by the
 source-typed parent witness. Original game types remain unknown. R092
 adds library origins only; the complete insertion implementation remains
 pending and exact reconstruction is unchanged.
+
+## CRT mantissa conversion after R093
+
+The complete `__ld12cvt` body and its two short mantissa helpers reproduce
+396 bytes from the pinned CRT archive. All nine conversion calls are
+bound to independently complete vendor bodies, including existing
+rounding and shift anchors. This resolves the two short helper identities
+without relying on their imported names or tiny fingerprints. The
+runtime verifier checks all 57 recorded functions and 28 direct-call
+relocations, alongside the three local CRT anchors. Identical emission
+from the single-threaded archive does not identify the actual linked
+archive. Other CRT globals/callees remain unknown; this batch adds library
+origin only, with no source or exact credit.

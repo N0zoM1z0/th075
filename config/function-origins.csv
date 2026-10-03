@@ -3826,11 +3826,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064F407,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F439,library,VC71CRT,exclude,complete-vendor-body,R007
 0x0064F486,library,VC71CRT,exclude,complete-vendor-body,R007
-0x0064F4F8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F4F8,library,VC71CRT,exclude,complete-vendor-body-with-verified-callees,R093
 0x0064F513,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F51F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F51F,library,VC71CRT,exclude,complete-vendor-body-with-verified-callees,R093
 0x0064F538,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064F5B3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F5B3,library,VC71CRT,exclude,complete-vendor-body-with-verified-callees,R093
 0x0064F70B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F721,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F737,library,VC71CRT,exclude,complete-vendor-body,R007
