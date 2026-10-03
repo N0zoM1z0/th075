@@ -1,7 +1,8 @@
 # TH075 function reconstruction handoff
 
 Updated 2026-10-03. Work resumed with origin-review batches R070–R107, then the
-user paused the full origin review and resumed exact reconstruction with F008. The public
+user paused the full origin review and resumed exact reconstruction with F008
+and F009. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -13,12 +14,13 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 3,040: 897 authored, 1,568 library and 575 compiler generated.
 There are 1,311 pending. Candidate count is not authored function count.
 
-The exact baseline is 51 source-present and exact functions, covering 9,231
-bytes across 51 match units. Exact coverage of the currently reviewed authored
-bytes is 9,231 / 1,958,337 (0.47%). This denominator is provisional because
+The exact baseline is 60 source-present and exact functions, covering 9,883
+bytes across 60 match units. Exact coverage of the currently reviewed authored
+bytes is 9,883 / 1,958,337 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
-bytes to the F001–F007 baseline. The current strategy is exact reconstruction
-from reviewed authored candidates; full origin review is paused.
+bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
+current strategy is exact reconstruction from reviewed authored candidates;
+full origin review is paused.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
@@ -39,7 +41,9 @@ has no bearer authentication. Its random path is private in the ignored
 `.tools/mcp_for_gptweb-ghidra/.env`; do not print or commit it. The latest
 public HTTPS smoke test passed 15 checks, including Ghidra attestation and a
 cold exact-unit replay. A separate public MCP request cold-replayed the new
-F008 `animation-clear-byte40` unit exact. See [MCP operations](GHIDRA_MCP.md).
+F008 `animation-clear-byte40` unit exact. F009 then cold-replayed all nine new
+units / 652 bytes through the same no-auth public route. See
+[MCP operations](GHIDRA_MCP.md).
 
 ```bash
 scripts/repo-python scripts/verify-target.py
@@ -88,6 +92,7 @@ scripts/repo-python scripts/verify-runtime-origins.py
 scripts/repo-python scripts/verify-runtime-external-origins.py
 scripts/repo-python scripts/verify-runtime-leaf-origins.py
 scripts/repo-python scripts/replay-exact-units.py --unit sprite-geometry-set-four-dwords --unit animation-reset-primary-counters --unit animation-set-three-counters --unit animation-reset-secondary-counter --unit animation-clear-byte40 --unit game-set-clamped-value --unit battle-effect-clear-field74 --unit fighter-clear-notice-transition --unit aux-effect-clear-field8
+scripts/repo-python scripts/replay-exact-units.py --unit sprite-scene-copy-vector --unit sprite-scene-dispatch-global-draw --unit text-rasterizer-decode-hex-digit --unit battle-hud-draw-selected-notice --unit fighter-is-grounded-state-window --unit fighter-configure-notice-text --unit fighter-begin-notice-transition --unit battle-state-start-hit-sequence --unit fighter-initialize-notice
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
@@ -112,11 +117,13 @@ R107 adds four complete pinned-archive runtime leaves / 199 bytes, including an
 explicit FS:[0] relocation in `__setjmp3`; its verifier passed locally and
 through the public route. The F008 18-byte animation clear helper also
 cold-replayed exact through public MCP after the complete 15-check smoke test.
+The complete F009 object subsequently cold-replayed 9/9 exact over public MCP.
 The complete batch origin scanner also passed through that endpoint before the
 latest accepted closure; its refreshed local report is current.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R106 passed.
+endpoint. Public GitHub CI through F008 passed; F009 passed the same 141-test
+suite locally before push.
 
 ## Deferred investigations
 
@@ -309,6 +316,8 @@ source/target binding or game-owner witness is available.
 
 Continue bounded exact reconstruction from the 897 reviewed authored
 candidates, ranking core behavior, cross-function dependencies and likely
-matching cost. F008 establishes a low-cost leaf-helper source unit and should
-remain a single natural body per function. The 1,311 pending origin decisions
-remain deferred; do not infer ownership from scanner hits alone.
+matching cost. F008 and F009 establish natural game helper and policy source
+units. The 1,311 pending origin decisions remain deferred; do not infer
+ownership from scanner hits alone. The R105 rectangle-corner builder at
+`0x00427500` remains diagnostic: its natural source differs at two local stack
+slot bytes and has no exact credit.

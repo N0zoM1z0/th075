@@ -1055,3 +1055,117 @@ symbol = "?ClearField8@AuxEffect@@QAEXXZ"
 target_address = 0x005FAC20
 size = 21
 relocations = []
+
+[units.sprite-scene-copy-vector]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteScene::CopyVector"]
+symbol = "?CopyVector@SpriteScene@@QAEXPAUVector3@@@Z"
+target_address = 0x00411BB0
+size = 38
+relocations = []
+
+[units.sprite-scene-dispatch-global-draw]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteScene::DispatchGlobalDraw"]
+symbol = "?DispatchGlobalDraw@SpriteScene@@SAXHHH@Z"
+target_address = 0x00411BE0
+size = 33
+relocations = [
+  { offset = 0x10, type = "DIR32", symbol = "?g_DrawDispatcher@@3PAVDrawDispatcher@@A", target = 0x00671424 },
+  { offset = 0x18, type = "DIR32", symbol = "?g_DrawDispatcher@@3PAVDrawDispatcher@@A", target = 0x00671424 },
+]
+
+[units.text-rasterizer-decode-hex-digit]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TextRasterizer::DecodeHexDigit"]
+symbol = "?DecodeHexDigit@TextRasterizer@@QAEEE@Z"
+target_address = 0x0041CA80
+size = 96
+relocations = []
+
+[units.battle-hud-draw-selected-notice]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleHud::DrawSelectedNotice"]
+symbol = "?DrawSelectedNotice@BattleHud@@QAEXXZ"
+target_address = 0x00440B00
+size = 78
+relocations = [
+  { offset = 0x3B, type = "REL32", symbol = "?DrawFacingSprite@FighterState@@QAEXFMHH@Z", target = 0x004549C0 },
+  { offset = 0x41, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
+  { offset = 0x46, type = "REL32", symbol = "?DrawBox@TextRenderer@@QAEXXZ", target = 0x00412EB0 },
+]
+
+[units.fighter-is-grounded-state-window]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::IsGroundedStateWindow"]
+symbol = "?IsGroundedStateWindow@FighterState@@QAE_NXZ"
+target_address = 0x00455010
+size = 96
+relocations = [
+  { offset = 0x11, type = "DIR32", symbol = "?g_ZeroFloat@@3MA", target = 0x0065782C },
+  { offset = 0x2E, type = "REL32", symbol = "?IsState50To149@FighterState@@QAE_NXZ", target = 0x00454F90 },
+]
+
+[units.fighter-configure-notice-text]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::ConfigureNoticeText"]
+symbol = "?ConfigureNoticeText@FighterState@@QAEXE@Z"
+target_address = 0x0045D650
+size = 78
+relocations = [
+  { offset = 0x12, type = "DIR32", symbol = "?g_NoticeSelection@@3CA", target = 0x0067161E },
+  { offset = 0x29, type = "DIR32", symbol = "?g_TextRenderer@@3PAVTextRenderer@@A", target = 0x0067143C },
+  { offset = 0x2E, type = "REL32", symbol = "?ConfigureText@TextRenderer@@QAEXMM_N@Z", target = 0x00413420 },
+]
+
+[units.fighter-begin-notice-transition]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::BeginNoticeTransition"]
+symbol = "?BeginNoticeTransition@FighterState@@QAEXEE@Z"
+target_address = 0x0045D6A0
+size = 72
+relocations = [
+  { offset = 0x32, type = "REL32", symbol = "?SetNoticeFields@FighterState@@QAEXCEE@Z", target = 0x0045CD70 },
+]
+
+[units.battle-state-start-hit-sequence]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleState::StartHitSequence"]
+symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z"
+target_address = 0x00443FC0
+size = 88
+relocations = [
+  { offset = 0x28, type = "REL32", symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x30, type = "REL32", symbol = "?ClearByte40@AnimationState@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x41, type = "REL32", symbol = "?SpawnMidpointEffect@BattleState@@QAEXHE@Z", target = 0x004424E0 },
+  { offset = 0x49, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x4E, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+]
+
+[units.fighter-initialize-notice]
+source = "src/GamePolicyHelpers.cpp"
+object = "build/matching/GamePolicyHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::InitializeNotice"]
+symbol = "?InitializeNotice@FighterState@@QAEXF@Z"
+target_address = 0x0045CDC0
+size = 73
+relocations = [
+  { offset = 0x3F, type = "REL32", symbol = "?ConfigureNoticeText@FighterState@@QAEXE@Z", target = 0x0045D650 },
+]

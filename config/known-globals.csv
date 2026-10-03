@@ -10,6 +10,7 @@ address,name,module,confidence,evidence
 0x006574D8,Input::g_KeyboardFormatError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x006574F8,Input::g_KeyboardCooperativeLevelError,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x00657510,Input::g_EnumerateJoysticksError,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
+0x0065782C,g_ZeroFloat,FighterState,inferred,F009; exact readonly float relocation and complete comparison in the grounded-state predicate; original symbol name unknown
 0x0065A4DC,c_dfDIKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
 0x0065A6E4,c_dfDIJoystick,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x0065B91C,GUID_SysKeyboard,Input,target-observed,F004; SDK GUID/format identity; complete setup and poll memory accesses; verified error literals
@@ -47,3 +48,7 @@ address,name,module,confidence,evidence
 0x00671354,Input::g_JoystickCount,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x00671358,Input::g_JoystickStates,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x00671368,Input::g_Joysticks,Input,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
+0x00671424,g_DrawDispatcher,SpriteScene,inferred,F009; two exact DIR32 relocations and virtual slot-five dispatch; original symbol name unknown
+0x0067143C,g_TextRenderer,TextRenderer,inferred,F009; exact HUD draw and text-configuration relocations; original symbol name unknown
+0x00671618,g_SoundBank,SoundBank,inferred,F009; exact sound-manager pointer relocation and reviewed Play call; original symbol name unknown
+0x0067161E,g_NoticeSelection,FighterState,inferred,F009; exact signed-byte relocation used by the notice configuration policy; original symbol name unknown

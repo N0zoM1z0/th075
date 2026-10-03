@@ -1553,3 +1553,33 @@ bytes. Class, field and method names remain provisional; the partial owner
 interfaces are not instantiated or embedded. The exact total is now 51
 functions / 9,231 bytes, or 0.47% of the provisional 1,958,337-byte authored
 denominator.
+
+## F009 — game policy helpers and dependency closure
+
+Nine R104/R105 authored functions now have natural C++ source and complete
+cold exact replay:
+
+| Address | Bytes | Reconstructed function |
+| --- | ---: | --- |
+| `0x00411BB0` | 38 | `SpriteScene::CopyVector` |
+| `0x00411BE0` | 33 | `SpriteScene::DispatchGlobalDraw` |
+| `0x0041CA80` | 96 | `TextRasterizer::DecodeHexDigit` |
+| `0x00440B00` | 78 | `BattleHud::DrawSelectedNotice` |
+| `0x00443FC0` | 88 | `BattleState::StartHitSequence` |
+| `0x00455010` | 96 | `FighterState::IsGroundedStateWindow` |
+| `0x0045CDC0` | 73 | `FighterState::InitializeNotice` |
+| `0x0045D650` | 78 | `FighterState::ConfigureNoticeText` |
+| `0x0045D6A0` | 72 | `FighterState::BeginNoticeTransition` |
+
+The batch covers 652 bytes and 17 explicit relocations. The vector copy and
+hex decoder are relocation-free. The remaining units bind the observed global
+dispatcher, text renderer, zero scalar, notice selector and sound bank, plus
+all direct calls to independently reviewed game functions. One cold compile of
+`GamePolicyHelpers.cpp` replays all nine complete extents exact.
+
+The related R105 rectangle-corner builder at `0x00427500` remains diagnostic.
+Natural source reproduces its full 204-byte extent, four calls and every byte
+except two local-object stack displacements. It receives no source or exact
+credit; no artificial layout was introduced. Names and partial owner layouts
+in F009 remain provisional. The exact total is now 60 functions / 9,883 bytes,
+or 0.50% of the provisional 1,958,337-byte authored denominator.

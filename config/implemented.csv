@@ -49,3 +49,12 @@ SetClampedGameValue
 BattleEffect::ClearField74
 FighterState::ClearNoticeTransition
 AuxEffect::ClearField8
+SpriteScene::CopyVector
+SpriteScene::DispatchGlobalDraw
+TextRasterizer::DecodeHexDigit
+BattleHud::DrawSelectedNotice
+BattleState::StartHitSequence
+FighterState::IsGroundedStateWindow
+FighterState::InitializeNotice
+FighterState::ConfigureNoticeText
+FighterState::BeginNoticeTransition
