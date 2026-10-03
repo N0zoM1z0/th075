@@ -4232,3 +4232,88 @@ retained R110 evidence, all 864 authored extents, target/project attestation,
 157 public tests, progress freshness and `git diff --check`. All 60 exact units
 also cold-replayed across eleven objects / 9,883 bytes. Investigation and
 intermediate verification used local tools; the public route ran once.
+
+
+## R112 — postfix increment identities and complete game callers
+
+Local attested Ghidra observations and evidence-only cold verification preceded
+acceptance. Six 54-byte bodies now have library origin (324 bytes); two complete
+game policies add 968 authored bytes. Replay the frozen manifest
+`config/deque-postfix-context-origins.json` with
+`scripts/repo-python scripts/verify-deque-postfix-context-origins.py`.
+
+| Address | Bytes | Accepted origin and inferred role |
+| --- | ---: | --- |
+| `0x00414970` | 54 | Library postfix increment through `0x00415580` |
+| `0x00414A20` | 54 | Library postfix increment through `0x00415690` |
+| `0x00414AD0` | 54 | Library postfix increment through `0x004157A0` |
+| `0x0041DF90` | 54 | Library postfix increment through `0x0041ECA0` |
+| `0x0041E020` | 54 | Library postfix increment through `0x0041EE00` |
+| `0x00423F90` | 54 | Library postfix increment through `0x004244A0` |
+| `0x00455800` | 695 | Authored `BattleInput::MatchSequenceAt00455800` |
+| `0x00423B40` | 273 | Authored `EventQueue::RunWorkerAt00423B40` |
+
+The independent natural probe emits 52 complete overload controls across
+thirteen element models: postfix/prefix increment and decrement. Both postfix
+families have identical non-relocation bytes. Each actual relocation at offset
+27 instead binds a complete 29-byte increment callee, distinguishing thirteen
+increment alternatives from thirteen decrement controls. Every complete
+postfix retains its hidden-result iterator copy and `RET 8`. The R085 verifier
+cold-replays its independent typed algorithm parents; the two R106 prefix
+peers preserve their full prior records and reproduce the cold source of their
+R085 anchor. Original element types and any linker folding remain unknown.
+
+Complete authored callers `ReplayRecords::AppendRecord` and
+`ArchiveCatalog::CloseNamed` retain their own evidence. The latter walks paired
+deques, compares names and erases both entries on a match. Their game ownership
+does not independently establish the library identity of a small callee.
+
+The 695-byte input matcher receives sequence length and history offset as
+signed byte arguments, derives a history iterator from the deque at `this+0x518`
+and scans through its reviewed postfix increment. Its guarded character switch
+maps direction digits, A/B/C/D button masks, X and facing-dependent L/R tokens.
+The full code ends at `0x00455AB6`; its adjacent 68-byte pointer table and
+40-byte remap table are separately frozen and checked with the range guard,
+all destinations and both table hashes. The switch data is not extra code or
+exact credit. The matcher compares the low nibble for direction tokens and
+the high nibble for button tokens. A terminal X pattern reports the first set
+button as 1/2/3/4. The complete independently authored fighter caller
+`0x004724B0` supplies ownership context. Buffer capacity, invalid-pattern
+semantics, the complete owner layout and original source remain unknown.
+
+The worker waits on event global `0x0068BE34` using wait interval `0x0066C23C`,
+then traverses deque `0x0068BE44`. A nonzero current entry triggers `SetEvent`
+using the queue front's first dword, then postfix increment. A zero entry is
+erased through the reviewed single-erase wrapper and the end iterator is
+refreshed. Preserve the observed use of the front rather than silently
+substituting the current entry. The full 273-byte span includes the target's
+unreachable return and `RET 4`. Its exact callback address is pushed to raw
+`CreateThread` IAT slot `0x0065713C` by the bounded 155-byte setup context.
+The already authored, exact `0x00423C60` controls the same wait global and
+has independently authored scene/battle callers. Its R104/F008 evidence,
+source, provisional name and exact status are preserved; it earns no new
+origin count. HANDLE representation, synchronization and termination intent
+remain unproved. No game source body is added from these observations.
+
+The verifier checks 22 complete context bodies / 6,407 bytes, 41 actual parent
+edges, 112 field/literal witnesses, raw PE imports and all switch data. The
+unknown setup `0x004239F0`, cleanup `0x00423A90`, default iterator
+`0x00423F50`, const-iterator constructor `0x00424500` and cookie tail retain
+unknown ownership. Context snapshots allow later independent review without
+credit from adjacency or reviewed children. The next bounded R113 cohort
+covers the queue's five small helper candidates and 96-byte enqueue policy.
+
+The checkpoint is 3,081 reviewed candidates: 913 authored, 1,593 library and
+575 compiler generated, with 1,270 pending. Exact stays 60 functions / 9,883
+bytes; the provisional authored denominator is 1,961,801 bytes. The complete
+recorded authored evidence now covers 866 bodies / 1,949,458 bytes. Five new
+regression tests reject decrement substitution, a truncated prefix, a changed
+callback/import binding, unknown game-control ancestry and false source/exact
+credit. Investigation and intermediate verification use local tools; one
+final public MCP request provides acceptance replay.
+
+One final no-auth public HTTPS MCP request passed R112, retained R111/R110
+source graphs, all 866 authored extents, target/project attestation, 162 tests,
+progress freshness and `git diff --check`. All 60 exact units / 9,883 bytes
+cold-replayed across eleven objects. Investigation and intermediate checks
+used local tools; the public acceptance route ran once.

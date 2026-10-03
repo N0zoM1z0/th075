@@ -1734,3 +1734,47 @@ alternatives, retained R110 evidence, 864 authored extents, target/project
 attestation and 157 tests. It also cold-replayed every exact unit: 60/60 across
 eleven objects / 9,883 bytes. The provisional insertion span still contains
 `0x00456137` and must be reconciled with its cleanup tails before review.
+
+
+## R112 — postfix identity, input matching and the event worker
+
+Six complete 54-byte postfix increment bodies bind six independently reviewed
+29-byte prefix increments: `0x00414970→0x00415580`,
+`0x00414A20→0x00415690`, `0x00414AD0→0x004157A0`,
+`0x0041DF90→0x0041ECA0`, `0x0041E020→0x0041EE00` and
+`0x00423F90→0x004244A0`. Complete cold prefix typing distinguishes the
+increment from identical-shaped postfix decrement. Thirteen source models
+fit each increment; original element identity and folding remain unproved.
+The natural probe and verifier retain all 52 overload controls, the full
+REL32 field at offset 27, hidden-result copy and `RET 8`.
+
+The complete 695-byte game input matcher at `0x00455800` transforms guarded
+pattern characters into direction/button masks, applies facing to L/R and
+walks the history deque at `this+0x518`. The complete switch comprises 17
+pointers and 40 remap bytes outside the code span. The low/high-nibble tests
+and terminal X return behavior are target observations; the inferred name,
+complete layout and buffer capacity are not recovered source facts.
+
+The complete 273-byte worker at `0x00423B40` waits on `0x0068BE34`, traverses
+`0x0068BE44`, signals the queue front for a nonzero current entry and erases
+zero entries. Its callback push is bound to the raw `CreateThread` import.
+The independently authored/exact clamp `0x00423C60` controls the same wait
+global `0x0066C23C`; R104/F008 source and exact evidence remain unchanged.
+Unknown setup, cleanup, default iterator and const-iterator construction
+receive context hashes without ownership credit. The unusual front/current
+relationship and unreachable return are preserved as observations.
+
+`verify-deque-postfix-context-origins.py` cold-replays independent R085 roots,
+checks all complete postfix/prefix alternatives, 22 contexts / 6,407 bytes,
+41 parent edges, 112 witnesses and the full 108 bytes of switch data. R112
+adds six library bodies / 324 bytes and two authored bodies / 968 bytes.
+The checkpoint is 3,081 resolved (913 authored, 1,593 library, 575 compiler),
+1,270 pending, and 60 exact functions / 9,883 bytes. Authored exact coverage
+is provisionally 9,883 / 1,961,801. The next bounded R113 queue-helper cohort
+requires fresh complete source typing; tiny shapes remain insufficient.
+
+One final no-auth public HTTPS MCP request passed R112, retained R111/R110
+source graphs, all 866 authored extents, target/project attestation, 162 tests,
+progress freshness and `git diff --check`. All 60 exact units / 9,883 bytes
+cold-replayed across eleven objects. Investigation and intermediate checks
+used local tools; the public acceptance route ran once.
