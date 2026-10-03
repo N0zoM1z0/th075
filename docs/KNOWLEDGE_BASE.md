@@ -1223,3 +1223,13 @@ Seven synthetic record widths and six scalar/pointer variants establish
 template emission without identifying the game's original element types.
 Other external callees retain their existing origin decisions; R085 adds
 no authored source or exact credit.
+
+## VC7 deque emptiness checks after R086
+
+Thirteen complete 25-byte `deque::empty` bodies match all VC7 probe bytes
+without source relocations. Each is also called through an exact
+source-typed relocation from a separately reviewed R072 deque operation.
+The parent operations and child bodies are cold-reverified. The short
+body alone would not distinguish another owner with the same field test;
+the caller witness supplies the template identity. These are library
+origins only; original game element types remain unknown.

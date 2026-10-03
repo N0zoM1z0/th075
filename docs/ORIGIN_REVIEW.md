@@ -3233,3 +3233,22 @@ reviewed candidates (804 authored, 1,276 library, 574 compiler), with
 1,697 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%). R084 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37097140126.
+
+## R086 — parent-backed VC7 deque emptiness checks
+
+Thirteen complete 25-byte `deque::empty` bodies, totaling 325 bytes, match
+all bytes of seven independently compiled record-width variants without
+source relocations. Each has an exact source-typed direct call from a
+reviewed R072 deque operation. The caller's complete source and target body,
+its typed relocation, raw call displacement and hash are cold-reverified.
+That witness distinguishes the short field test from possible unrelated
+owners with an identical body. Original game element types remain unknown.
+
+`scripts/repo-python scripts/verify-vendor-deque-empty-origins.py`
+replays R072 first, then cold compiles the source and checks all complete
+child bodies, aliases, parent calls, control flow and ledgers. Evidence is
+in `config/vendor-deque-empty-origins.csv`. R086 adds thirteen library
+origins: 2,667 reviewed (804 authored, 1,289 library, 574 compiler), with
+1,684 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%). R085 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37098124930.
