@@ -2399,3 +2399,99 @@ All 300 public tests pass. Origin totals are 3,159 resolved (919 authored,
 exact baseline and 872 recorded authored bodies / 1,952,956 bytes are preserved.
 Investigation and intermediate verification use local tools; final acceptance
 uses one no-auth public HTTPS MCP request. Private URLs and logs stay untracked.
+
+## R123 — complete multibyte/codepage, NLS and locale dependency graph
+
+The six handoff roots and nine necessary callee candidates gain library origin:
+fifteen complete own source auxiliary bodies / 3,970 bytes / 209 typed fields.
+Replay `scripts/repo-python scripts/verify-codepage-nls-origins.py`. Every byte,
+relocation, instruction, branch, exit, indirect call and defining code/data/API
+binding is checked against the pinned supplied Japanese TH075 target and pinned
+VC7 CRT archive. Complete independent R122 and all retained runtime/import/layout
+controls cold-replay. Relocation-masked fingerprints alone earn no credit.
+
+| Complete body | Address | Source bytes |
+| --- | --- | ---: |
+| `___initmbctable` | `0x006504F9` | 30 |
+| `__setmbcp` | `0x006503A9` | 336 |
+| `__setmbcp_lk` | `0x00650209` | 400 |
+| `_setSBCS` | `0x0064FFE5` | 41 |
+| `_setSBUpLow` | `0x0065000E` | 396 |
+| `___updatetmbcinfo` | `0x0065019A` | 111 |
+| `___crtGetStringTypeA` | `0x0064DA08` | 442 |
+| `___crtLCMapStringA` | `0x0065275D` | 956 |
+| `__resetstkoflw` | `0x006518B9` | 227 |
+| `___ansicp` | `0x00651D5F` | 67 |
+| `___convertcp` | `0x00651DA2` | 457 |
+| `_atol` | `0x00642619` | 136 |
+| `___updatetlocinfo` | `0x00642DEB` | 59 |
+| `___isctype_mt` | `0x0064980B` | 119 |
+| `___updatetlocinfo_lk` | `0x00642BD9` | 193 |
+
+The provisional setmbcp 327, mbc updater 99 and locale updater 50 extents are
+reconciled to full source extents 336, 111 and 59. All contain their final cleanup
+and return. Existing interior candidates `0x006504F0`, `0x00650200` and
+`0x00642E1D` retain nine-byte extents and blank names; they gain library origin
+as labels in the complete accepted parents. Their 27 bytes overlap the parents,
+not separate whole source functions. The mbc updater's EH head is +99 while its
+shared cleanup entry is +102. All source labels and earlier EH heads are checked.
+No Ghidra database writes or target patches are made.
+
+The source graph closes through fourteen whole independent anchors / 1,142 bytes /
+60 fields. The stack probe callee `__alloca_probe` is the actual same-offset alias
+of the complete `__chkstk` source definition; its entire 61-byte body still
+replays. The other R006/R115/R117/R118/R120/R122 anchors retain their independent
+ownership. No additional credit follows from their presence or caller names.
+
+Twelve full defining source sections / 2,296 bytes, eight actual COMMON objects /
+545 bytes, six complete scope tables / 96 bytes and forty-four readonly literals /
+267 bytes are verified. The whole mutable 248-byte mbctype carrier includes
+four type flags, source alignment and all five 48-byte records for codepages
+932/936/949/950/1361. It is not treated as a readonly table or a convenient
+single-record prefix. COMMON arrays are exactly mbctype 257, mbcasemap 256 and
+mbulinfo 12 bytes; the copied mbulinfo loop in setmbcp retains the source's five
+USHORT iterations although the complete storage has six. Undefined references
+are never substituted for actual defining COMMON records. Every zero object
+retains whole PE loader zero-fill geometry.
+
+The entire 32-byte lc_handle/codepage carrier and 72-byte crt0dat platform/argv/
+termination carrier bind their real interior definitions. Whole initial locale,
+lconv, ctype/wctype and time defaults retain all initialized pointers and all
+42 time literals. Both NLS flavor caches have their own real four-byte defining
+BSS objects, not arbitrary zero values. Each NLS member's complete four-byte
+wide empty-string COMDAT is checked, even though target folding shares its
+address. Every initialized data pointer resolves to a complete source definition
+or literal. Source and target mutability are checked independently.
+
+Natural `VC7CodePageLayout.cpp` cold-builds a 43-DWORD / 172-byte control with
+pinned CRT/SDK headers and explicit reproducibility flags. SDK sizes are CPINFO
+20 (LeadByte +6, twelve bytes), MEMORY_BASIC_INFORMATION 28 and SYSTEM_INFO 36
+(page size +4). Codepage records are 48 bytes, six USHORTs +4 and ranges +16;
+five records occupy 240 bytes. Complete CRT structures retain multibyte 544 and
+locale 84; locale codepage is +4, handle array +12, max width +40 and pctype +72.
+The earlier R122 thread/locale/time layout control still cold-replays. SDK NLS,
+conversion, platform and guard-page constants are included in full. These are
+vendor controls, not reconstructed game layouts or executable-wide flags.
+
+Both ANSI and wide NLS branches, including flavor detection and GetLastError,
+whole count handling, size-only conversion, sort-key output, dynamic stack
+allocation, all five exception filter/handler pairs, stack recovery, heap
+fallback and every cleanup path are retained. Stack recovery binds actual raw
+VirtualQuery/GetSystemInfo/VirtualAlloc/VirtualProtect imports and complete SDK
+output structures. ANSI codepage lookup binds the actual GetLocaleInfoA buffer,
+locale-aware atol and its complete character-classification/update cycle. The
+cycle closes through already accepted locale cleanup and whole codepage data;
+no circular name assumption substitutes for any code or state definition.
+
+R115 and R122 keep historical pending snapshots through narrowly bounded
+same-source guards: complete member/source/target/field identities still match,
+and the new canonical accepted extent and classification are required. The
+three old provisional boundaries remain recorded in the new evidence manifest.
+Twenty-two regression checks reject truncated parents/data/arrays, unreviewed
+NLS children, forged aliases, guessed layouts, changed historical fields and
+source/exact credit. All 322 public checks pass. Origin totals are 3,177 resolved
+(919 authored, 1,683 library, 575 compiler), with 1,174 pending. Exact/source/
+mapping stays 60 functions / 9,883 bytes; recorded authored extents stay 872 /
+1,952,956 bytes. Investigation and intermediate verification are local; final
+acceptance uses one no-auth public HTTPS MCP request. Private URLs/logs stay
+untracked. Floating-point startup and PE entry ownership remain pending.

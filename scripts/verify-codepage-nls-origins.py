@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Replay the bounded R122 complete locale/thread graph without treating labels as functions."""
+"""Replay the bounded R123 complete codepage/NLS graph and actual enclosing cleanup extents."""
 from __future__ import annotations
 
 import argparse
@@ -16,22 +16,13 @@ from capstone import Cs, CS_ARCH_X86, CS_MODE_32, CS_GRP_JUMP
 from capstone.x86 import X86_OP_IMM
 
 ROOT = Path(__file__).resolve().parents[1]
-ACCEPTED = {
-    '0x00642B09': ('___freetlocinfo', 208), '0x0064CA47': ('___free_lconv_mon', 217),
-    '0x0064C7E8': ('___free_lconv_num', 95), '0x0064C5C6': ('___free_lc_time', 400),
-    '0x00646389': ('__mtinit', 239),
-}
-PENDING = {'0x006504F9': 'crt-multibyte-initialization-codepage-case-map-dependencies-unresolved'}
-CONTEXT_PENDING = {
-    '0x006503A9': 'crt-codepage-case-map-dependencies-unresolved',
-    '0x00650209': 'crt-codepage-table-case-map-binding-dependencies-unresolved',
-}
-CONFIDENCE = 'complete-vendor-locale-thread-code-data-layout-api-eh-provenance'
+ACCEPTED = {'0x006504F9': ('___initmbctable', 30), '0x006503A9': ('__setmbcp', 336), '0x00650209': ('__setmbcp_lk', 400), '0x0064FFE5': ('_setSBCS', 41), '0x0065000E': ('_setSBUpLow', 396), '0x0065019A': ('___updatetmbcinfo', 111), '0x0064DA08': ('___crtGetStringTypeA', 442), '0x0065275D': ('___crtLCMapStringA', 956), '0x006518B9': ('__resetstkoflw', 227), '0x00651D5F': ('___ansicp', 67), '0x00651DA2': ('___convertcp', 457), '0x00642619': ('_atol', 136), '0x00642DEB': ('___updatetlocinfo', 59), '0x0064980B': ('___isctype_mt', 119), '0x00642BD9': ('___updatetlocinfo_lk', 193)}
+CONFIDENCE = 'complete-vendor-codepage-nls-code-data-layout-api-eh-provenance'
 LABEL_CONFIDENCE = 'complete-interior-label-of-reviewed-vendor-parent'
-LAYOUT = [140,36,44,52,60,68,72,84,96,100,544,0,4,8,12,16,28,285,
-          84,0,44,48,52,56,60,64,68,72,76,80,48,0,4,8,12,16,20,24,28,32,36,
-          184,0,28,56,104,152,160,164,168,172,176,180,2,4]
-
+LAYOUT = [20, 0, 4, 6, 12, 28, 0, 4, 12, 16, 20, 36, 4, 48, 4, 16, 240, 544, 16, 12, 28, 285, 84, 4, 12, 40, 72, 1, 256, 512, 1024, 1, 8, 4100, 120, 4096, 4, 256, 1, 1, 2, 2, 4]
+COMMON = {'___mbctype_initialized': ('0x0068FBB4', 4), '___mbcodepage': ('0x0068E904', 4), '___ptmbcinfo': ('0x0068E7F8', 4), '___ismbcodepage': ('0x0068E7FC', 4), '___mblcid': ('0x0068E7F4', 4), '___mbulinfo': ('0x0068E910', 12), '__mbctype': ('0x0068E800', 257), '__mbcasemap': ('0x0068E920', 256)}
+LABELS = [('0x006504F0', '0x006503A9', 327, 327), ('0x00650200', '0x0065019A', 102, 99), ('0x00642E1D', '0x00642DEB', 50, 50)]
+RECONCILED = {'0x006503A9': (327,336), '0x0065019A': (99,111), '0x00642DEB': (50,59)}
 
 
 def module(name, filename):
@@ -42,143 +33,111 @@ def module(name, filename):
 
 
 def manifest():
-    m = json.loads((ROOT / 'config/locale-thread-origin-evidence.json').read_text())
-    reconciliation = module('locale_identity', 'origin_reconciliation.py')
-    if m['evidence_id'] != 'R122' or m['target_sha256'] != reconciliation.TARGET:
-        raise ValueError('locale/thread target identity differs')
+    m = json.loads((ROOT / 'config/codepage-nls-origin-evidence.json').read_text())
+    reconciliation = module('codepage_identity', 'origin_reconciliation.py')
+    if m['evidence_id'] != 'R123' or m['target_sha256'] != reconciliation.TARGET:
+        raise ValueError('codepage/NLS target identity differs')
     return m
 
 
 def verify_plan(m):
-    rows = {r['address']:r for r in m['functions']}
-    if len(m['functions']) != 6 or set(rows) != set(ACCEPTED) | set(PENDING):
-        raise ValueError('bounded locale/thread cohort differs')
+    rows={r['address']:r for r in m['functions']}
+    if len(m['functions'])!=15 or set(rows)!=set(ACCEPTED):
+        raise ValueError('bounded complete codepage/NLS graph differs')
     for key,(symbol,size) in ACCEPTED.items():
-        row = rows[key]
-        if row['coff_symbol'] != symbol or row['size'] != size or row['decision'] != 'library' or row['extent_basis'] != 'function-auxiliary-record':
-            raise ValueError('accepted locale function loses complete own source extent')
-    if rows['0x006504F9']['decision'] != 'pending' or rows['0x006504F9']['uncertainty'] != PENDING['0x006504F9'] or rows['0x006504F9']['size'] != 30:
-        raise ValueError('unclosed multibyte initializer gains ownership')
-    controls = m['auxiliary_bodies']
-    if [(r['address'],r['coff_symbol'],r['size'],r['ledger_size'],r['decision']) for r in controls] != [('0x00646207','__freefls@4',327,None,'library-control')]:
-        raise ValueError('whole non-inventoried callback gains candidate credit')
-    historical = json.loads((ROOT / 'config/startup-registration-origin-evidence.json').read_text())
-    identity = module('locale_source_identity', 'origin_reconciliation.py')
-    identity.same_source(next(r for r in historical['functions'] if r['address']=='0x00646389'),rows['0x00646389'])
-    identity.same_source(next(r for r in historical['diagnostic_contexts'] if r['address']=='0x00646207'),controls[0])
-    graph = {**rows,**{r['address']:r for r in controls+m['anchors']}}
-    if len(m['anchors']) != 12 or sum(r['size'] for r in m['anchors']) != 636:
-        raise ValueError('complete independent locale/thread anchors differ')
-    for row in [rows[k] for k in ACCEPTED]+controls:
+        row=rows[key]
+        if (row['coff_symbol']!=symbol or row['size']!=size or row['decision']!='library'
+                or row['extent_basis']!='function-auxiliary-record'):
+            raise ValueError('codepage function loses complete own auxiliary extent')
+        if row['ledger_size']!=RECONCILED.get(key,(size,size))[0]:
+            raise ValueError('reconciled extent loses its historical provisional boundary')
+    if m['auxiliary_bodies'] or m['diagnostic_contexts'] or m['pending_labels']:
+        raise ValueError('closed codepage graph gains an unreviewed context')
+    graph={**rows,**{r['address']:r for r in m['anchors']}}
+    if len(m['anchors'])!=14 or sum(r['size'] for r in m['anchors'])!=1142:
+        raise ValueError('independent complete codepage anchors differ')
+    for row in rows.values():
         for b in row['relocation_bindings']:
             if b['target_kind']=='callee':
                 dest=graph.get(b['target_address'])
-                if not dest or dest['decision'] not in ('library','library-control','anchor') or dest['coff_symbol']!=b['symbol']:
-                    raise ValueError('accepted locale/thread graph retains an unreviewed callee')
+                if (not dest or b['symbol'] not in [dest['coff_symbol']]+dest.get('source_aliases',[])
+                        or dest['decision'] not in ('library','anchor')):
+                    raise ValueError('closed codepage graph retains an unreviewed callee')
             elif b['target_kind'] not in ('state','import','scope-table','literal'):
-                raise ValueError('accepted locale/thread graph retains unresolved provenance')
-    if [(r['address'],r['size'],r['parent'],r['source_offset'],r['eh_source_offset'],r['decision']) for r in m['interior_labels']] != [
-            ('0x00646339',9,'0x00646207',306,301,'library'),('0x00646345',9,'0x00646207',318,315,'library')]:
-        raise ValueError('fiber cleanup loses actual parent and earlier EH heads')
-    if any(r['extent_basis']!='interior-label-in-complete-vendor-primary' for r in m['interior_labels']):
-        raise ValueError('fiber cleanup becomes fabricated standalone source')
-    if [(r['address'],r['size'],r['parent'],r['source_offset'],r['eh_source_offset'],r['decision']) for r in m['pending_labels']] != [
-            ('0x006504F0',9,'0x006503A9',327,327,'pending')]:
-        raise ValueError('unclosed codepage cleanup gains ownership')
-    if [(r['address'],r['size'],r['ledger_size'],r['decision']) for r in m['diagnostic_contexts']] != [
-            ('0x006503A9',336,327,'diagnostic'),('0x00650209',400,400,'diagnostic')]:
-        raise ValueError('complete codepage context loses cleanup or gains ownership')
-    if (len(m['state_data'])!=10 or sum(r['size'] for r in m['state_data'])!=2092
-            or len(m['common_globals'])!=5 or len(m['scope_tables'])!=2
-            or sum(r['size'] for r in m['scope_tables'])!=36
-            or len(m['literal_controls'])!=47 or sum(r['data_size'] for r in m['literal_controls'])!=313):
-        raise ValueError('complete locale defining data/API/scope controls differ')
-    critical = {(r['symbol'],r['target_address'],r['size']) for r in m['state_data']}
-    if not {('___lconv_static_decimal','0x006708C8',56),('__clocalestr','0x0066FF20',403),
-            ('___lconv_static_null','0x0068E684',1),('___newctype','0x006626B0',1284),
-            ('___lc_time_c','0x00670808',184)} <= critical:
-        raise ValueError('whole locale defaults cannot be replaced by convenient fields')
-    if {r['symbol']:r['target_address'] for r in m['common_globals']} != {
-            '___lconv_mon_refcount':'0x0068FA4C','___lconv_num_refcount':'0x0068FA54',
-            '___ctype1_refcount':'0x0068FA48','___ptmbcinfo':'0x0068E7F8','___mbctype_initialized':'0x0068FBB4'}:
-        raise ValueError('locale COMMON state loses actual defining provenance')
-    if m['sdk_layout']['size']!=220 or m['sdk_layout']['values']!=LAYOUT:
-        raise ValueError('whole natural CRT locale/thread layout differs')
-    if m['retained_controls'] != [dict(evidence_id='R121',manifest='startup-registration-origin-evidence.json')]:
-        raise ValueError('locale/thread graph loses cold independent controls')
+                raise ValueError('closed codepage graph loses defining provenance')
+    if [(r['address'],r['parent'],r['source_offset'],r['eh_source_offset']) for r in m['interior_labels']]!=LABELS:
+        raise ValueError('codepage cleanup loses actual entry or earlier EH head')
+    if any(r['size']!=9 or r['decision']!='library' or r['extent_basis']!='interior-label-in-complete-vendor-primary' for r in m['interior_labels']):
+        raise ValueError('interior cleanup becomes a fabricated standalone function')
+    if (len(m['state_data'])!=12 or sum(r['size'] for r in m['state_data'])!=2296
+            or len(m['scope_tables'])!=6 or sum(r['size'] for r in m['scope_tables'])!=96
+            or len(m['literal_controls'])!=44 or sum(r['data_size'] for r in m['literal_controls'])!=267):
+        raise ValueError('complete codepage defining data/scopes/literals differ')
+    critical={(r['symbol'],r['target_address'],r['size']) for r in m['state_data']}
+    if not {('___rgctypeflag','0x00670BE0',248),('___lc_handle','0x0068E6B4',32),
+            ('__umaskval','0x0068E2E4',72),('__clocalestr','0x0066FF20',403),
+            ('___newctype','0x006626B0',1284)} <= critical:
+        raise ValueError('full codepage and locale carriers become convenient fields')
+    if len(m['common_globals'])!=8 or {r['symbol']:(r['target_address'],r['size']) for r in m['common_globals']}!=COMMON:
+        raise ValueError('codepage arrays lose actual complete COMMON storage')
+    if m['sdk_layout']['size']!=172 or m['sdk_layout']['values']!=LAYOUT:
+        raise ValueError('whole natural codepage/SDK layout differs')
+    if m['retained_controls']!=[dict(evidence_id='R122',manifest='locale-thread-origin-evidence.json')]:
+        raise ValueError('codepage graph loses cold independent locale controls')
+    old=json.loads((ROOT/'config/locale-thread-origin-evidence.json').read_text())
+    identity=module('codepage_source_identity','origin_reconciliation.py')
+    for row in old['functions']+old['diagnostic_contexts']:
+        if row['address'] in rows:identity.same_source(row,rows[row['address']])
     return rows
 
 
 def check_ledger(row,function,origin):
-    if row['address']=='0x006504F9' and origin.get('evidence_id')=='R123':
-        module('codepage_init_reconciliation','verify-codepage-nls-origins.py').check_historical_root(row,function,origin)
-        return
-    key=row['address']
     if (int(function['size'])!=row['size'] or function['span_end']!=row['span_end']
             or function['source_file'] or function['match_percent']!='0.00'):
-        raise ValueError('locale/thread loses complete origin-only extent')
-    if key in ACCEPTED:
-        if (origin['evidence_id']!='R122' or origin['origin']!='library' or origin['subsystem']!='VC71CRT'
-                or origin['disposition']!='exclude' or origin['confidence']!=CONFIDENCE
-                or function['owner']!='library' or function['module']!='VC71CRT'
-                or function['status']!='excluded' or function['proposed_name']!=row['coff_symbol']):
-            raise ValueError('locale/thread library ledger differs')
-    elif (origin['evidence_id']!='R122' or origin['origin']!='unknown' or origin['disposition']!='review'
-            or origin['confidence']!=PENDING[key] or function['owner'] or function['module']
-            or function['status']!='unclassified'):
-        raise ValueError('unclosed multibyte initializer gains ownership')
+        raise ValueError('codepage loses whole origin-only extent')
+    if (origin['evidence_id']!='R123' or origin['origin']!='library' or origin['subsystem']!='VC71CRT'
+            or origin['disposition']!='exclude' or origin['confidence']!=CONFIDENCE
+            or function['owner']!='library' or function['module']!='VC71CRT'
+            or function['status']!='excluded' or function['proposed_name']!=row['coff_symbol']):
+        raise ValueError('codepage library ledger differs')
 
 
 def check_label(row,function,origin,functions,origins,rows):
-    if row['decision']=='pending' and origin.get('evidence_id')=='R123':
-        module('codepage_label_reconciliation','verify-codepage-nls-origins.py').check_historical_label(row,function,origin,functions,origins)
-        return
-    accepted=row['decision']=='library'
-    if accepted:
-        if row['parent']!='0x00646207' or row['parent'] in functions:
-            raise ValueError('fiber label invents an independent primary candidate')
-        for key in ACCEPTED:
-            check_ledger(rows[key],functions[key],origins[key])
-        expected_origin,disposition,confidence,status='library','exclude',LABEL_CONFIDENCE,'excluded'
-        owner,subsystem='library','VC71CRT'
-    else:
-        expected_origin,disposition,confidence,status='unknown','review',row['uncertainty'],'unclassified'
-        owner,subsystem='',''
-    if (origin['evidence_id']!='R122' or origin['origin']!=expected_origin or origin['disposition']!=disposition
-            or origin['confidence']!=confidence or origin['subsystem']!=subsystem
-            or function['owner']!=owner or function['module']!=subsystem or function['status']!=status
-            or function['proposed_name'] or int(function['size'])!=row['size']
-            or int(function['span_end'],16)!=int(row['address'],16)+row['size']-1
+    parent=rows.get(row['parent'])
+    if not parent or parent['address'] not in ACCEPTED:
+        raise ValueError('cleanup loses its complete accepted primary')
+    check_ledger(parent,functions[parent['address']],origins[parent['address']])
+    if (origin['evidence_id']!='R123' or origin['origin']!='library' or origin['disposition']!='exclude'
+            or origin['confidence']!=LABEL_CONFIDENCE or origin['subsystem']!='VC71CRT'
+            or function['owner']!='library' or function['module']!='VC71CRT' or function['status']!='excluded'
+            or function['proposed_name'] or int(function['size'])!=9
+            or int(function['span_end'],16)!=int(row['address'],16)+8
             or function['source_file'] or function['match_percent']!='0.00'):
-        raise ValueError('locale interior label gains unsupported parent/source credit')
+        raise ValueError('codepage label gains unsupported standalone/source credit')
+
+
+def check_common(row,definition):
+    if (definition['symbol']!=row['symbol'] or definition['section']!=0 or definition['storage']!=2
+            or definition['type'] or definition['offset']!=row['size']
+            or (row['target_address'],row['size'])!=COMMON.get(row['symbol'])):
+        raise ValueError('codepage COMMON loses actual full defining array/object')
 
 
 def check_historical_root(row,function,origin):
-    if row['address']!='0x00646389':
-        raise ValueError('historical locale reconciliation is outside its source parent')
+    if row['address'] not in ('0x006504F9','0x006503A9','0x00650209'):
+        raise ValueError('historical codepage guard is outside the reviewed graph')
     current=next(r for r in manifest()['functions'] if r['address']==row['address'])
-    module('locale_historical_identity','origin_reconciliation.py').same_source(row,current)
+    module('codepage_historical_identity','origin_reconciliation.py').same_source(row,current)
     check_ledger(current,function,origin)
-
-
-def check_diagnostic(row,function,origin):
-    if origin.get('evidence_id')=='R123':
-        module('codepage_context_reconciliation','verify-codepage-nls-origins.py').check_historical_root(row,function,origin)
-        return
-    if (int(function['size'])!=row['ledger_size']
-            or int(function['span_end'],16)!=int(row['address'],16)+row['ledger_size']-1
-            or origin['evidence_id']!='R122' or origin['origin']!='unknown'
-            or origin['disposition']!='review' or origin['confidence']!=CONTEXT_PENDING[row['address']]
-            or function['owner'] or function['module'] or function['status']!='unclassified'
-            or function['source_file'] or function['match_percent']!='0.00'):
-        raise ValueError('unclosed codepage context gains boundary/source/origin credit')
 
 
 def check_historical_label(row,function,origin,functions,origins):
     m=manifest();matches=[r for r in m['interior_labels'] if r['address']==row['address']]
-    if len(matches)!=1 or any(row[k]!=matches[0][k] for k in ('address','size','parent','source_offset','source_symbol','eh_source_offset','eh_source_symbol')):
-        raise ValueError('historical fiber label loses whole source identity')
-    check_label(matches[0],function,origin,functions,origins,{r['address']:r for r in m['functions']})
+    if len(matches)!=1 or row['address']!='0x006504F0' or any(row[k]!=matches[0][k] for k in ('address','size','parent','source_offset','source_symbol','eh_source_offset','eh_source_symbol')):
+        raise ValueError('historical codepage label loses its actual source identity')
+    rows=verify_plan(m)
+    for current in rows.values():check_ledger(current,functions[current['address']],origins[current['address']])
+    check_label(matches[0],function,origin,functions,origins,rows)
 
 
 def main():
@@ -207,15 +166,6 @@ def main():
         expected_interiors = {r['address'] for r in m['interior_labels'] if r['parent'] == key}
         if actual_interiors != expected_interiors:
             raise ValueError('complete runtime primary has an undeclared interior candidate')
-    for row in m['diagnostic_contexts']:
-        key = row['address']
-        if row['ledger_size'] is None:
-            if key in functions:
-                raise ValueError('non-inventoried diagnostic gains candidate credit')
-        elif origins[key].get('evidence_id')!='R123' and int(functions[key]['size']) != row['ledger_size']:
-            raise ValueError('unaccepted diagnostic candidate boundary differs')
-        if not args.evidence_only:
-            check_diagnostic(row, functions[key], origins[key])
     for row in m['auxiliary_bodies']:
         key = row['address']
         if key in functions:
@@ -280,9 +230,9 @@ def main():
         defs = [d for d in coff.parse_symbols(member(row), c.coff_name)[1] if d['symbol'] == row['symbol']]
         if defs != [row['source_definition']]:
             raise ValueError('actual COMMON definition differs')
-        startup.check_common_definition(defs[0])
+        check_common(row,defs[0])
         a = int(row['target_address'], 16)
-        if startup.zero_fill_region(target, a, 4) != row['zero_fill_region']:
+        if startup.zero_fill_region(target, a, row['size']) != row['zero_fill_region']:
             raise ValueError('COMMON runtime storage lacks loader provenance')
         state_map[row['symbol']] = a
     literal_map = {}
@@ -298,23 +248,23 @@ def main():
                 raise ValueError('initialized locale pointer loses whole defining provenance')
     decoder = Cs(CS_ARCH_X86, CS_MODE_32)
     decoder.detail = True
-    scratch = ROOT / 'build/origin-locale-thread-verification'
+    scratch = ROOT / 'build/origin-codepage-nls-verification'
     scratch.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=scratch) as temp:
         path = Path(temp) / 'VendorMember.obj'
         layout=m['sdk_layout'];probe=ROOT/layout['probe'];profile=old.PROFILE+['/D_CRTBLD','/D_MT','/I','.tools/msvc710/Vc7/crt/src']
         if layout['profile']!=profile or hashlib.sha256(probe.read_bytes()).hexdigest()!=layout['probe_sha256']:
-            raise ValueError('natural locale layout probe differs')
-        if set(layout['headers'])!={'crt/src/mtdll.h','crt/src/locale.h','crt/src/cruntime.h','PlatformSDK/Include/WinNT.h'}:
-            raise ValueError('pinned complete locale layout headers differ')
+            raise ValueError('natural codepage layout probe differs')
+        if set(layout['headers'])!={'crt/src/mtdll.h', 'PlatformSDK/Include/WinNT.h', 'crt/src/locale.h', 'crt/src/cruntime.h', 'PlatformSDK/Include/WinBase.h', 'PlatformSDK/Include/WinNls.h', 'crt/src/mbctype.c'}:
+            raise ValueError('pinned complete codepage layout headers differ')
         for filename,digest in layout['headers'].items():
             if hashlib.sha256((ROOT/'.tools/msvc710/Vc7'/filename).read_bytes()).hexdigest()!=digest:
                 raise ValueError('pinned CRT header differs')
         subprocess.run([str(ROOT/'scripts/compile-probe.sh'),str(probe),str(path),*profile],cwd=ROOT,capture_output=True,text=True,check=True)
         data=path.read_bytes();definition=next(d for d in coff.parse_symbols(data,c.coff_name)[1] if d['symbol']==layout['symbol'])
         raw,names=coff.readonly_section(data,definition['section'],c.coff_name)
-        if definition['offset'] or names!=[dict(symbol=layout['symbol'],offset=0)] or len(raw)!=220 or list(struct.unpack('<55I',raw))!=LAYOUT:
-            raise ValueError('cold complete natural locale/thread layout differs')
+        if definition['offset'] or names!=[dict(symbol=layout['symbol'],offset=0)] or len(raw)!=172 or list(struct.unpack('<43I',raw))!=LAYOUT:
+            raise ValueError('cold complete natural codepage/SDK layout differs')
         for row in m['functions'] + m['auxiliary_bodies'] + m['anchors'] + m['diagnostic_contexts']:
             key, a = row['address'], int(row['address'], 16)
             if key in rows and not args.evidence_only:
@@ -331,7 +281,7 @@ def main():
             if [f['local_symbol_offset'] for f in fields] != [b['local_symbol_offset'] for b in row['relocation_bindings']]:
                 raise ValueError('full local relocation provenance differs')
             if row['decision'] == 'anchor':
-                if row['control_flow_basis'] != 'Independent complete runtime/archive controls replayed through R121':
+                if row['control_flow_basis'] != 'Independent complete runtime/archive controls replayed through R122':
                     raise ValueError('anchor loses its independent full control-flow replay')
                 for alias in row.get('source_aliases', []):
                     defs = coff.parse_symbols(member(row), c.coff_name)[1]
@@ -385,10 +335,10 @@ def main():
                 label = next(d for d in defs if d['symbol'] == b['symbol'])
                 if label['section'] != primary['section'] or int(b['target_address'], 16) != int(owner['address'], 16) + label['offset'] - primary['offset']:
                     raise ValueError('runtime EH pointer loses actual full parent source label')
-    result = subprocess.run([str(ROOT / 'scripts/repo-python'), 'scripts/verify-startup-registration-origins.py'], cwd=ROOT, capture_output=True, text=True)
+    result = subprocess.run([str(ROOT / 'scripts/repo-python'), 'scripts/verify-locale-thread-origins.py'], cwd=ROOT, capture_output=True, text=True)
     if result.returncode:
         raise ValueError('retained independent runtime replay failed: ' + result.stderr[-1500:])
-    print('R122 origins OK: five complete library candidates / 1159 bytes / 120 fields; whole non-inventoried fiber callback / 327 bytes / 21 fields and two existing interior labels / 18 overlapping bytes; complete locale defaults/data graph and cold layout / 220 bytes; multibyte initializer/codepage contexts retained as historical pending snapshots; independent R121 controls; no source or exact credit.')
+    print('R123 origins OK: fifteen complete library bodies / 3970 bytes / 209 typed fields; three interior labels / 27 overlapping bytes; fourteen independent complete anchors; full codepage/NLS/locale/SDK/state/API/EH graph, natural cold layout / 172 bytes and retained R122 controls; no source or exact credit.')
     return 0
 
 

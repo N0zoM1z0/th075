@@ -72,6 +72,9 @@ def check_import_binding(binding,imports):
 
 def check_diagnostic_ledger(row,functions,origins):
     key=row['address']
+    if key=='0x006503A9' and origins[key].get('evidence_id')=='R123':
+        module('codepage_startup_reconciliation','verify-codepage-nls-origins.py').check_historical_root(row,functions[key],origins[key])
+        return
     recorded=row['ledger_size']
     if recorded is None:
         if key in functions:

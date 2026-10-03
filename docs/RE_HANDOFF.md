@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R122. The public
+review cohorts R108 through R123. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,159: 919 authored, 1,665 library and 575 compiler generated.
-There are 1,192 pending. Candidate count is not authored function count.
+has resolved 3,177: 919 authored, 1,683 library and 575 compiler generated.
+There are 1,174 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R123 multibyte/codepage cohort below.
+the bounded R124 floating-point startup cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R122; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R123; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R123 multibyte/codepage dependencies
+## Next agent objective — R124 floating-point startup dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -304,26 +304,50 @@ target/project attestation, 300 public tests, progress freshness and
 eleven objects. Investigation and intermediate verification used local tools;
 the final public acceptance request ran once.
 
-The next bounded cohort is six existing multibyte/codepage roots:
+R123 closes all six multibyte/codepage handoff roots plus nine necessary NLS/
+locale callees: fifteen complete bodies / 3,970 bytes / 209 fields and three
+existing interior labels / 27 overlapping bytes. Replay
+`scripts/repo-python scripts/verify-codepage-nls-origins.py`; it cold-retains
+R122 and all earlier runtime/import/layout controls. Candidate extents 327/99/50
+are reconciled to source 336/111/59, preserving every cleanup and return.
+
+The complete defining graph includes twelve sections / 2,296 bytes, eight
+COMMON objects / 545 bytes, six scopes / 96 bytes and forty-four literals /
+267 bytes. Full 248-byte source codepage carrier and 257-/256-/12-byte arrays
+are independently bound. Natural SDK/CRT control / 172 bytes proves CPINFO 20,
+MEMORY_BASIC_INFORMATION 28, SYSTEM_INFO 36, record 48, locale handle +12 and
+all conversion/guard constants. The two NLS flavor branches, five exception
+filter/handler pairs, stack recovery, heap fallback and entire locale cycle close.
+R115/R122 retain frozen pending snapshots through strict source identity guards.
+No game source/header, exact ledger or database changes are made.
+
+One final no-auth public HTTPS MCP request passed R123, cold-retained R122
+and every earlier runtime/import/layout graph, retained R114 including R077/
+R113 replays, all 872 recorded authored extents, target/project attestation,
+322 public tests, progress freshness and `git diff --check`. All 60 exact
+units / 9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the final public request ran once.
+
+The next bounded cohort is six existing floating-point startup roots:
 
 | Candidate | Provisional bytes | Observed source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x006504F9` | 30 | `___initmbctable` | Actual flag and complete codepage/case-map initialization graph |
-| `0x006503A9` | 327 | `__setmbcp` (336 source) | Full heap/thread/global-field graph and embedded finally |
-| `0x00650209` | 400 | `__setmbcp_lk` | Complete codepage record table, flags, SDK CPINFO/NLS and SBCS/case-map children |
-| `0x0064FFE5` | 41 | `_setSBCS` | Whole source arrays and independently proven mutable definitions |
-| `0x0065000E` | 396 | `_setSBUpLow` | Complete classification/case conversion buffers and actual NLS helper bindings |
-| `0x0065019A` | 99 | `___updatetmbcinfo` | Full source parent/cleanup extent, thread/global pointer/refcount and heap graph |
+| `0x0064411D` | 106 | `__cinit` | Actual FPinit callback, all initializer ranges, RTC and full startup binding graph |
+| `0x006405C2` | 30 | `__fpmath` | Complete conversion registration, division-test and precision dependencies |
+| `0x0064057A` | 56 | `__cfltcvt_init` | Whole six-slot carrier and actual complete converter callbacks |
+| `0x0064520F` | 41 | `__ms_p5_mp_test_fdiv` | Whole kernel/export literals, API provenance and independently reviewed division-test fallback |
+| `0x006451BD` | 18 | `__setdefaultprecision` | Actual controlfp call and complete x87 control mapping |
+| `0x0064FBE8` | 22 | `__controlfp` | Complete control87 child and its actual control/status bit mappings |
 
-Use R115–R122 manifests diagnostically. R122 records complete setmbcp 336 and
-its worker 400 as unaccepted contexts with all 52 fields; neither codepage
-parent gains origin from correct field offsets or the accepted locale graph.
-The nine-byte setmbcp cleanup at `0x006504F0` stays unknown. Reconcile complete
-updater source and the existing cleanup at `0x00650200` before accepting an
-extent; never stop at provisional 99/327-byte entries. Source CPtoLCID at
-`0x0064FFB6` / 47 is an independently accepted R006 anchor and earns no new
-credit. Necessary NLS/SDK wrapper children may expand the graph; cold-build
-natural SDK layouts serially and prove every actual code/data/API binding.
+Use R121 FP contexts and `.analysis/r123-next-fp-survey.json` diagnostically.
+No ownership follows from those source fingerprints. Source converter at
+`0x0064516C` / 81 is an existing pending candidate; several registration callees
+have no primary inventory candidate and must be checked completely without
+inventing entries. The six-slot carrier at `0x00670120` and complete FPinit
+carrier / 20 bytes remain unaccepted until actual callbacks/state close.
+The R098 division-test at `0x006451CF` / 64 retains its independent evidence;
+no additional credit follows from its presence. Query the full controlfp child
+before accepting precision wrappers or parent startup.
 
 Retain cinit/FP conversion and precision uncertainty for a later bounded
 cohort. Non-inventoried `__RTC_Terminate` at `0x006496D7` / 68 remains diagnostic;
@@ -347,7 +371,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R123 adds no exact scope. Update
+private path and 60-function exact baseline. R124 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -704,7 +728,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R123 multibyte/codepage cohort described above. F008 and F009 remain
+Continue the bounded R124 floating-point startup cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

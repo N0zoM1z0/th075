@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R122 checkpoint, origin review has classified 919 authored,
-1,665 library and 575 compiler-generated candidates; 1,192 remain pending.
+At the R123 checkpoint, origin review has classified 919 authored,
+1,683 library and 575 compiler-generated candidates; 1,174 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -59,7 +59,9 @@ existing interior labels. R121 resolves the complete onexit/heap-growth/
 teardown graph and retains two startup parents until locale and FP
 dependencies close. R122 closes five complete locale/thread roots and the
 whole fiber cleanup control, while multibyte initialization remains pending.
-The next handoff targets six R123 multibyte/codepage roots while preserving
+R123 closes the six multibyte/codepage roots and nine necessary NLS/locale
+callees, including three full cleanup extents and three existing interior labels.
+The next handoff targets six R124 floating-point startup roots while preserving
 the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
