@@ -1124,3 +1124,11 @@ reviewed deque template. The parent body hash and raw call displacement are
 rechecked, as are all parent cold verifiers. These library classifications
 do not confer origin on the functions they call or identify original game
 element types. Short matches lacking a corroborating parent remain pending.
+
+## Parent-backed VC7 allocations after R075
+
+Twenty-two short `std::_Allocate` bodies match complete VC7 source
+definitions and are called by reviewed allocator wrappers through
+same-family typed calls. The source/target bindings and reviewed parent
+chain are cold-reverified. These are library origins only; allocated game
+types and the final allocation routine's origin are unresolved.

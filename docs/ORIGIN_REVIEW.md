@@ -2973,3 +2973,26 @@ library, 574 compiler), 1,904 pending. Exact remains 42 functions /
 8,916 bytes against 1,950,601 provisional authored bytes (0.46%). R073
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37094093913.
+
+## R075 — parent-backed VC7 STL allocations
+
+Twenty-two complete 17–20-byte `std::_Allocate` bodies, totaling 436 bytes,
+match the pinned VC7 source probe. Each has one typed relocation and a
+complete decoded exit. Each is called by a reviewed R074 allocator wrapper
+whose typed symbol names the same `_Allocate` family. The raw parent call
+field reaches the candidate entry, and the parent chain is cold-reverified
+before this batch is accepted. The original allocated type and the origin
+of the ultimate `operator new` callee remain independent questions.
+
+`scripts/repo-python scripts/verify-vendor-deque-allocation-origins.py`
+replays the parent chain, cold compiles the independent source and checks
+all complete source/target bytes, aliases, typed bindings, call fields and
+ledgers. Evidence is in `config/vendor-deque-allocation-origins.csv`.
+Six same-shape `_Allocate` candidates without a reviewed parent remain
+pending, as do the other ambiguous short helpers. No reconstruction source
+or exact credit is added.
+
+R075 adds 22 library origins: 2,469 reviewed (800 authored, 1,095 library,
+574 compiler), 1,882 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,601 provisional authored bytes (0.46%). R074 GitHub CI passed
+at https://github.com/N0zoM1z0/th075/actions/runs/37094428035.
