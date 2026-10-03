@@ -4709,3 +4709,120 @@ tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the public acceptance request
 ran once.
+
+
+## R117 — complete security initialization and SEH dependency closure
+
+The six handoff candidates and three necessary NLG/prolog dependencies retain
+whole source/target review. Six gain library origin / 779 bytes; three roots /
+394 bytes remain pending. Replay `config/security-eh-origin-evidence.json`
+with `scripts/repo-python scripts/verify-security-eh-origins.py`.
+
+| Address | Complete bytes | Decision and source association |
+| --- | ---: | --- |
+| `0x00645238` | 102 | Library `___security_init_cookie` |
+| `0x0064FCF7` | 553 | Library `__ValidateEH3RN` |
+| `0x00640B24` | 32 | Library `__global_unwind2` |
+| `0x00645414` | 59 | Library `__SEH_prolog`; R115 missing handler evidence closed |
+| `0x00640BF1` | 9 | Library `__NLG_Notify1`; whole shared carrier required |
+| `0x00640BFA` | 24 | Library `__NLG_Notify`; observed RET 4 |
+| `0x006405E0` | 49 source, 48 candidate | Pending `_report_failure` |
+| `0x0064529E` | 328 | Pending `___security_error_handler` |
+| `0x0064425B` | 17 | Pending `__exit` |
+
+Cold extraction checks each complete hash-pinned libcmt.lib member, each own
+function auxiliary extent, every non-field byte and all 65 typed root fields.
+Original executable debug names and executable-wide compiler/linker settings
+remain unknown. No source, mapping or exact ledger receives new credit.
+
+The cookie initializer independently binds five raw KERNEL32 APIs:
+GetSystemTimeAsFileTime, GetCurrentProcessId, GetCurrentThreadId, GetTickCount
+and QueryPerformanceCounter. Its actual shared four-byte cookie definition
+starts with the complete source value 0xBB40E64E. The body preserves nonzero,
+nondefault cookies and otherwise combines observed entropy results, retaining
+its actual default fallback. A natural cold SDK probe proves FILETIME and
+LARGE_INTEGER sizes and low/high offsets; all actual buffers and field reads
+remain in the full instruction witnesses.
+
+The secchk.obj member's entire four-byte `.CRT$XCAA` initializer definition
+binds the cookie initializer at target `0x0066C004`. Actual COFF long section
+names and all relocation metadata are checked. Complete crt0init.obj boundary
+objects `.CRT$XCA`/`.CRT$XCZ` bind `0x0066C000`/`0x0066C034`. The whole merged
+56-byte table, including both markers and every observed pointer, is frozen.
+The full 106-byte cinit context's actual begin/end loads and four-byte callback
+walk prove registration. Other callbacks retain observed addresses only;
+registration alone grants them no ownership. Cinit remains pending because
+its other FP/RTC/atexit bindings are diagnostic.
+
+The full 553-byte EH validator retains all internal exits and nineteen fields.
+Its complete defining 76-byte BSS section contains count at offset 0, page
+array at 8 and modification state at 72, including the source alignment gap.
+Actual target writable loader zero-fill geometry is checked. VirtualQuery
+uses a 28-byte memory-information buffer; InterlockedExchange has both direct
+IAT calls and two actual EBX calls after the raw IAT load. The complete cache
+lookup/promotion paths, 16-entry limit, lock release and validation failures
+remain inside the comparison. Equal-width zero storage proves no identity.
+
+The entire 120-byte readonly SDK layout/constant array cold-builds from the
+pinned headers. Its thirty entries prove NT_TIB self/stack fields,
+MEMORY_BASIC_INFORMATION allocation/protection/type fields, image/protection
+constants, DOS/NT/section header offsets/signatures and entropy buffer fields.
+Actual target accesses preserve FS:[0x18], stack bounds, PE field tests and
+the writable-section mask. These are CRT observations, not game layouts.
+
+The global unwind body binds its actual local continuation `_gu_return` at
+`0x00640B3C`, source offset 24, and the complete six-byte RtlUnwind linker thunk
+at `0x00654B54`. The independently decoded IAT slot `0x00657180` names
+KERNEL32.dll!RtlUnwind; the external API implementation gains no origin credit.
+The return continuation and observed frame/register restoration remain whole.
+
+The two NLG own extents are contiguous at source offsets 205/214 and target
+`0x00640BF1`/`0x00640BFA`. The nine-byte first entry jumps into the second at
+`0x00640C04`; all 33 carrier bytes and the complete RET 4 tail are checked.
+Both actual fields bind the entire 16-byte `__NLG_Destination` source definition,
+including signature 0x19930520 and EAX/ECX/EBP stores at offsets 4/8/12. No tiny
+shape or guessed ordinary C ABI establishes these origins.
+
+Two non-inventoried source handlers now have complete independently bound
+code evidence: `__except_handler3` at `0x00645468` (230) and `__unwind_handler`
+at `0x00640B44` (34). Neither receives a new ledger candidate or origin count.
+The first handler's five fields bind the complete validator/global unwind,
+retained 104-byte R025 local unwind and NLG body. Local unwind's registered
+handler field binds the full 34-byte second handler; its fixed same-section
+NLG call is checked independently. All scope filter/handler input callbacks
+retain their actual 12-byte record stride, slots, register/frame behavior and
+complete dispatch paths; their application implementations are uncredited.
+The full prolog's handler binding is therefore closed. R115's historical
+pending manifest stays intact through a specific R117 accepted-origin guard;
+its own complete source comparison still replays. The private database is
+unchanged.
+
+The remaining security failure/error/exit roots retain actual unresolved EH,
+user callback and termination associations. Whole error-handler literals
+remain diagnostic: nine complete definitions / 474 bytes are checked with
+source topology and readonly target geometry. The failure source keeps the
+filter RET and terminal INT3 at `0x00640610`; its provisional 48-byte candidate
+is unchanged. The full 195-byte doexit context retains lock calls, onexit and
+pre/terminal callback arrays, exit state and both returns; it does not earn
+ownership from the reviewed exit dispatcher. R116 writer/banner/cookie roots
+remain pending until this termination graph closes.
+
+Evidence-only and accepted replays passed locally, including retained R116/
+R115/R006/R025 evidence and all PE linker thunks. Fifteen public regressions
+reject premature short-wrapper ownership, unverified callees, invented handler
+candidates, truncated shared tails, incorrect cleanup, swapped SDK/API/scope
+fields, arbitrary zero storage, incomplete initializer ranges/markers, lost
+terminal bytes, broad historical exceptions and source/exact credit.
+The checkpoint is 3,105 resolved: 919 authored, 1,611 library and 575 compiler
+generated, with 1,246 pending. Exact remains 60 functions / 9,883 bytes; the
+provisional authored denominator and recorded authored extents remain
+1,965,299 and 872 / 1,952,956. Continue the R118 termination/lock cohort and
+preserve all outstanding R108/R114 ambiguities and R115/R116/R117 roots.
+
+One final no-auth public HTTPS MCP request passed R117, retained R116/R115,
+R006/R025 runtime anchors and all PE import thunks, retained R114 including
+R077/R113 dependency replays, all 872 recorded authored extents, target/project
+attestation, 217 public tests, progress freshness and `git diff --check`.
+All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
+Investigation and intermediate verification used local tools; the public
+acceptance request ran once.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R116. The public
+review cohorts R108 through R117. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,099: 919 authored, 1,605 library and 575 compiler generated.
-There are 1,252 pending. Candidate count is not authored function count.
+has resolved 3,105: 919 authored, 1,611 library and 575 compiler generated.
+There are 1,246 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R117 security/failure/EH cohort below.
+the bounded R118 termination/lock cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R116; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R117; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R117 security/failure/EH closure
+## Next agent objective — R118 termination/lock dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -148,26 +148,51 @@ helper's source is 49 bytes, including a filter RET and terminal INT3;
 its 48-byte candidate is unchanged. Do not repeatedly review these roots
 until the missing security/failure/EH bindings change.
 
-The next bounded cohort is six unreviewed security/failure/EH dependencies:
+R117 resolves six complete library bodies / 779 bytes: cookie initializer
+(102), EH validator (553), global unwind (32), prolog (59) and both NLG entries
+(9/24). Replay `scripts/repo-python scripts/verify-security-eh-origins.py`; it
+cold-replays R116/R115/R006/R025 and all complete PE import thunks. Whole SDK
+layout/control array (120), actual validator cache BSS (76), complete NLG
+state (16), cookie definition (4), initializer/markers and the full merged
+56-byte table retain independent source/data/API provenance. The NLG entry
+requires the entire 33-byte shared carrier and actual RET 4.
+
+The two non-inventoried source handlers at `0x00645468` (230) and `0x00640B44`
+(34) now have complete source/target/CFG and dependency evidence without new
+candidate credit. This closes R115's missing prolog handler binding. Its
+historical pending record is retained through a specific R117 origin guard;
+its entire source body still replays. Application scope callbacks retain their
+observed input-slot ABI and no implementation credit. The private database
+remains unchanged.
+
+The failure helper `0x006405E0` (49-byte source; 48-byte candidate), error
+handler `0x0064529E` (328) and exit wrapper `0x0064425B` (17) remain unknown.
+Complete cinit (106) and doexit (195) contexts and nine whole error literals /
+474 bytes stay diagnostic. EH metadata, user callback and termination state/
+lock/callback chains remain unresolved. Retain R116 writer/banner/cookie and
+remaining R115 error/multibyte roots until their missing evidence changes.
+
+The next bounded cohort is six unreviewed termination/lock dependencies:
 
 | Candidate | Provisional bytes | Observed archive association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x006405E0` | 48 | `_report_failure` (49-byte source) | Reconcile whole embedded filter/trap and actual EH metadata, prolog and handler chain |
-| `0x00645238` | 102 | `___security_init_cookie` | Whole entropy API calls, actual cookie storage and initializer registration |
-| `0x0064529E` | 328 | `___security_error_handler` | Every EH/data/callback/exit field; retained strings, copy and dynamic box controls |
-| `0x0064FCF7` | 553 | `__ValidateEH3RN` | Complete validation branches, actual API/layout/data fields and required read/write/execute helpers |
-| `0x00640B24` | 32 | `__global_unwind2` | Full auxiliary extent, raw RtlUnwind call and continuation/tail ABI |
-| `0x0064425B` | 17 | `__exit` | Whole termination graph and mutable state; no short-wrapper credit |
+| `0x00644187` | 195 | `_doexit` | Entire EH/filter/cleanup graph, actual exit state, lock calls and onexit/pre/terminal callback ranges |
+| `0x00646725` | 49 | `__lock` | Full lock table and lazy initializer/error dependency; raw critical-section API |
+| `0x00646658` | 21 | `__unlock` | Complete table topology and actual LeaveCriticalSection pointer flow |
+| `0x00646685` | 151 | `__mtinitlocknum` | Reconcile own extent, allocation/initialization/error paths and actual lock storage |
+| `0x006440E7` | 24 | `__initterm` | Entire callback loop and actual caller ranges; preserve observed EAX begin ABI |
+| `0x0064162B` | 40 | `___onexitinit` | Complete allocator callee and actual onexit pointer definitions/initialization |
 
-Use R115/R116 manifests and `.analysis/r114-startup-graph.json` diagnostically.
-Cold-extract whole source members and prove each code/data edge independently.
-Required validation and termination callees may expand the closed evidence
-graph, but do not infer ownership from source names or masked fingerprints.
-Retain R006/R025 stack/local-unwind/NLG evidence and the accepted R116
-shared-copy/dynamic-dispatch controls. Keep non-inventoried `__except_handler3`
-`0x00645468` and `__c_exit` `0x0064427B` outside candidate credit until their
-boundaries and dependencies are reconciled. The R114 PE entry remains pending;
-its historical diagnostic record is preserved.
+Use R115–R117 manifests and `.analysis/r114-startup-graph.json` diagnostically.
+Cold-extract whole source members and independently prove every code/data
+edge. Necessary allocator/lock/callback callees may expand the evidence graph;
+no ownership follows from masked fingerprints or a reviewed caller alone.
+Retain accepted R006/R025 runtime and R116/R117 dispatch/SEH source graphs.
+Keep non-inventoried handlers outside candidate counts; `__c_exit`
+`0x0064427B` remains outside credit until its boundaries/dependencies are
+reconciled. The PE entry and cinit remain pending with historical diagnostics
+preserved. Do not select the already reviewed ambiguous lifetime roots from
+scanner rank alone.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -183,7 +208,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R117 adds no exact scope. Update
+private path and 60-function exact baseline. R118 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -232,6 +257,7 @@ scripts/repo-python scripts/verify-event-queue-origins.py
 scripts/repo-python scripts/verify-queue-lifetime-origins.py
 scripts/repo-python scripts/verify-startup-dependency-origins.py
 scripts/repo-python scripts/verify-runtime-error-origins.py
+scripts/repo-python scripts/verify-security-eh-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
@@ -546,3 +572,11 @@ tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the public acceptance request
 ran once.
+
+One final no-auth public HTTPS MCP request passed R117, retained R116/R115,
+R006/R025 runtime anchors and all PE import thunks, retained R114 including
+R077/R113 dependency replays, all 872 recorded authored extents, target/project
+attestation, 217 public tests, progress freshness and `git diff --check`.
+All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
+Investigation and intermediate verification used local tools; the public
+acceptance request ran once.

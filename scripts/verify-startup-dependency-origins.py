@@ -176,6 +176,12 @@ def check_ledger(row,functions,origins,evidence_only):
         if (origin['origin']!='library' or origin['disposition']!='exclude' or origin['evidence_id']!='R115'
                 or function['owner']!='library' or function['status']!='excluded' or function['proposed_name']!=ACCEPTED[key]):
             raise ValueError('R115 accepted library ledger differs')
+    elif (key=='0x00645414' and origin['origin']=='library' and origin['disposition']=='exclude'
+            and origin['evidence_id']=='R117' and function['owner']=='library'
+            and function['status']=='excluded' and function['proposed_name']=='__SEH_prolog'):
+        # R117 independently closes the complete handler's validation/unwind/NLG
+        # edges. Preserve this historical pending record and its whole source body.
+        return
     elif (origin['origin']!='unknown' or origin['disposition']!='review' or origin['evidence_id']!='R115'
             or origin['confidence']!=row['uncertainty'] or function['owner'] or function['status']!='unclassified'):
         raise ValueError('R115 pending chain gains unearned ownership')
@@ -326,7 +332,7 @@ def main():
     if runtime.main()!=0:
         raise ValueError('retained R006/R025 archive anchors failed')
     print('R115 origins OK: four library bodies / 196 bytes, closed heap graph / 17 fields and full SDK layout; '
-          'four startup candidates / 225 bytes retain unresolved bindings; eight complete diagnostic source bodies / 1144 bytes; '
+          'four historical pending startup records / 225 bytes retained; eight complete diagnostic source bodies / 1144 bytes; '
           'eight whole literals / 121 bytes and existing 61-byte stack probe alias verified; no source or exact credit.')
     return 0
 

@@ -1976,3 +1976,51 @@ tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the public acceptance request
 ran once.
+
+
+## R117 — complete cookie initialization and SEH/NLG dependencies
+
+Six complete library bodies add 779 bytes: cookie initializer (102), EH
+validator (553), global unwind (32), previously pending prolog (59), NLG first
+entry (9) and NLG shared body (24). All 65 root fields retain complete cold
+source/target comparison. The prolog now binds a fully compared 230-byte
+handler with independently checked validation/unwind/NLG children. The
+104-byte R025 local unwind's registered handler is also compared as a complete
+34-byte source body. These two handlers are not inventoried and receive no
+candidate credit; scope input callbacks retain their actual slot/frame ABI
+without credit for application implementations. R115's historical prolog
+record is preserved through a specific R117 accepted-origin guard.
+
+The entire 33-byte NLG carrier preserves the first entry's shared jump and
+RET 4, and binds the complete initialized 16-byte destination/signature state.
+Global unwind retains its real local continuation and raw RtlUnwind import
+thunk. The validator's complete 76-byte cache BSS has actual defining offsets,
+source alignment and loader zero-fill geometry; direct and EBX-mediated
+InterlockedExchange calls retain their raw IAT provenance. A cold natural
+120-byte SDK array proves all thirty TIB, memory, PE and entropy layout facts.
+
+Cookie initialization binds five actual entropy APIs and its whole default
+cookie definition. The entire `.CRT$XCAA` registration and complete startup
+boundary objects bind the actual 56-byte merged table; the whole 106-byte
+cinit context proves traversal. Other table callbacks and cinit bindings
+remain diagnostic. Full original debug names/compiler settings remain unknown.
+
+Failure source (49; candidate 48), user error handler (328) and short exit
+wrapper (17) remain pending. Their EH/callback/termination fields retain
+actual destinations; nine whole readonly error literals / 474 bytes and the
+complete 195-byte doexit context earn no ownership. R116 writer/banner/cookie
+roots remain pending. The private database and exact/source ledgers are
+unchanged.
+
+The checkpoint is 3,105 resolved (919 authored, 1,611 library, 575 compiler)
+and 1,246 pending. Exact stays 60 / 9,883 bytes; provisional authored coverage
+and recorded extents remain 9,883 / 1,965,299 and 872 / 1,952,956. Continue
+R118 termination/lock dependencies, preserving all outstanding ambiguities.
+
+One final no-auth public HTTPS MCP request passed R117, retained R116/R115,
+R006/R025 runtime anchors and all PE import thunks, retained R114 including
+R077/R113 dependency replays, all 872 recorded authored extents, target/project
+attestation, 217 public tests, progress freshness and `git diff --check`.
+All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
+Investigation and intermediate verification used local tools; the public
+acceptance request ran once.
