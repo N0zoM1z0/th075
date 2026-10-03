@@ -2076,3 +2076,51 @@ controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
 233 public tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools.
+
+
+## R119 — complete small-block heap graph and callback/TLS dependencies
+
+Six library dependencies add 1,818 bytes: small-block find (43), free (792),
+allocation (764), new region (183), new-handler callback (27) and TLS allocation
+fallback (9). All 100 root fields cold-compare; the accepted graph's 51 fields
+bind actual COMMON/state definitions, raw imports and independently replayed
+memmove/group-allocation dependencies. Whole coalescing, split, rover, bucket,
+decommit/release and list-compaction paths retain their complete extents.
+The callback passes the requested size; TLS allocation ignores its callback
+argument and preserves RET 4. Neither grants user callback implementation credit.
+
+A natural 168-byte internal CRT layout probe checks complete heap types,
+page/group/region constants, API flags and the observed 140-byte thread-data
+layout fields. All nine heap COMMON globals have real definitions and loader
+geometry. Six defining state sections / 452 bytes include the whole 136-byte
+exception table/control section, sixteen-byte FLS cache, initialized TLS index,
+mode/callback BSS and 288-byte lock table. Five full readonly FLS literals /
+54 bytes retain the actual dynamic/fallback flows in full thread-startup context.
+Seven old anchors / 1,341 bytes replay independently; memmove's entire code
+and embedded switch-data extent remains under the complete R025 control.
+
+Heap-allocation source is 123 bytes, including a three-byte EH head and nine-byte
+shared cleanup after its main return. The 111-byte main candidate and separate
+nine-byte interior remain unchanged. Calloc's earlier three-byte EH head and
+nine-byte cleanup, and free's nine-byte cleanup, also belong to complete source
+parents. Three whole scopes / 36 bytes and all actual label bindings replay;
+no synthetic fragment source or database mutation is used.
+
+All six original handoff roots plus calloc remain unknown: seven whole source
+bodies / 607 bytes and three existing interior candidates / 27 bytes. Their
+lazy-lock/malloc/calloc/errno/getptd/error/termination cycle is still open.
+Four complete diagnostic contexts / 485 bytes retain its observed edges.
+The next bounded R120 task must close real error/termination dependencies;
+accepted small-block callees and correct thread fields alone confer no origin.
+Exact/source/mapping ledgers and original pending lifetime alternatives remain.
+
+The checkpoint is 3,116 resolved (919 authored, 1,622 library, 575 compiler)
+and 1,235 pending. Exact remains 60 / 9,883 bytes; provisional authored coverage
+and recorded extents stay 9,883 / 1,965,299 and 872 / 1,952,956.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the complete
+R119 verifier, retained R118/R117/R116/R115/runtime/import graphs, R114 lifetime
+controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
+251 public tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools.

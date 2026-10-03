@@ -4945,3 +4945,129 @@ controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
 233 public tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools.
+
+
+## R119 — whole small-block heap dependencies and allocator/TLS cycle
+
+The six allocator/TLS handoff candidates, required calloc parent and six
+necessary heap/callback/TLS dependencies receive complete source/target
+review. Six library dependencies / 1,818 bytes are accepted; seven roots /
+607 source bytes and three existing interior cleanups / 27 bytes remain
+unknown. Replay `config/allocator-thread-origin-evidence.json` with
+`scripts/repo-python scripts/verify-allocator-thread-origins.py`.
+
+| Address | Complete bytes | Decision and source association |
+| --- | ---: | --- |
+| `0x0064A715` | 43 | Library `___sbh_find_block` |
+| `0x0064A740` | 792 | Library `___sbh_free_block` |
+| `0x0064B339` | 764 | Library `___sbh_alloc_block` |
+| `0x0064AA58` | 183 | Library `___sbh_alloc_new_region` |
+| `0x0064EC68` | 27 | Library `__callnewh`; actual size-taking callback |
+| `0x0064615D` | 9 | Library `___crtTlsAlloc@4`; raw TlsAlloc, RET 4 |
+| `0x00644331` | 18 | Pending `_malloc`: heap/lock/error cycle |
+| `0x00644305` | 44 | Pending `__nh_malloc`: whole allocation dependency |
+| `0x0064428A` | 123 source, 111 candidate | Pending `__heap_alloc` |
+| `0x00642A61` | 113 | Pending `_free`: lazy-lock/error graph |
+| `0x00647F98` | 9 | Pending `__errno`: complete thread getter unresolved |
+| `0x00646196` | 113 | Pending `__getptd`: calloc/error/FLS graph |
+| `0x00644343` | 187 | Pending `_calloc`: lazy-lock/error cycle |
+| `0x006442FC` | 9 interior | Pending shared cleanup in complete allocation parent |
+| `0x006443ED` | 9 interior | Pending shared cleanup in complete calloc parent |
+| `0x00642AB4` | 9 interior | Pending shared cleanup in complete free parent |
+
+Cold extraction verifies every whole hash-pinned vendor member, every own
+auxiliary extent, all non-field bytes and all 100 typed root fields. The
+accepted graph's 51 fields have actual defining data/import/callee provenance.
+Entire instruction inventories, exits, internal branches and indirect calls
+are frozen for every root and diagnostic context. Seven retained anchors /
+1,341 bytes keep independent R025/R098/R115/R117/R118 origins. Memmove's entire
+829-byte code and embedded switch-data extent is independently replayed by
+R025; it is not truncated to a linear disassembler's instruction prefix or
+misrepresented as all instructions. Full bytes and all fields also compare
+in the new verifier. No new exact, source or mapping units are added.
+
+The complete small-block graph binds real heap/header storage, raw HeapAlloc,
+HeapReAlloc, HeapFree, VirtualAlloc and VirtualFree imports, the complete
+reviewed 262-byte group allocator and the full memmove carrier. Find scans
+20-byte headers and uses the actual heap-data field with an unsigned 1 MiB
+region test. Free retains both neighboring-entry coalescing paths, size
+buckets, vector/count updates, deferred group decommit, whole-region release,
+header-list compaction and scan/defer updates. Allocation retains both rover
+scans, region/group creation, high/low vector selection, entry unlink/split,
+front/back size marks, group count and deferred-group cancellation. The whole
+183-byte region allocator retains header-list growth by sixteen records,
+16,836-byte zeroed REGION allocation, 1 MiB reservation, cleanup on failure
+and all final header/count stores. No larger body is accepted from a prefix.
+
+A cold natural internal CRT/SDK probe emits all 168 readonly bytes: complete
+HEADER/REGION/GROUP/LISTHEAD/ENTRY/ENTRYEND sizes and field offsets, page/group/
+region constants and real Win32 allocation flags. The 140-byte `_tiddata`
+control retains the six observed size/field facts for thread id, handle,
+errno, random seed and exception-table pointer. These are supplied complete
+runtime types, not inferred game owner layouts. Four defining header hashes,
+the source hash, whole probe section and explicit reproducibility profile
+are checked; original executable compiler settings remain unknown.
+
+All nine four-byte heap globals have their actual COMMON definitions and
+writable loader zero-fill geometry. R115 independently supplies the heap
+creation and whole 72-byte small-block initialization/store witnesses. The
+six complete defining state sections total 452 bytes: new-handler pointer,
+zero-mode BSS, initialized TLS index, four FLS caches, the entire exception
+section and the old lock table. The exception section is 136 bytes, including
+all ten twelve-byte records and four defining control dwords; no first-record
+comparison substitutes for it. Original target debug names remain unknown.
+
+The whole 27-byte new-handler wrapper preserves a null guard, actual callback
+pointer load, requested-size argument, caller cleanup and boolean result.
+Its complete defining four-byte BSS has real source and loader provenance;
+allocation/retry parents retain actual typed calls. No implementation origin
+is granted to a user callback. The nine-byte TLS allocation fallback has its
+own complete vendor extent, raw TlsAlloc identity and RET 4 despite ignoring
+the supplied callback input. The complete 239-byte thread-startup context
+retains the actual fallback pointer assignment, full DLL/four-export lookup
+flows, four-cache topology and TLS-index result store. Five entire readonly
+literal definitions / 54 bytes retain those dispatch controls. The thread
+startup parent itself remains pending.
+
+The heap-allocation auxiliary source extent is 123 bytes, ending at
+`0x00644304`. Its historical 111-byte candidate ends at the main RET; a
+three-byte EH head restores ESI at `0x006442F9`, followed by the nine-byte
+shared cleanup at `0x006442FC`. The complete calloc parent similarly has
+its EH head at +167 (`0x006443EA`) and shared cleanup at +170 (`0x006443ED`).
+The free cleanup at +83 is also an existing interior candidate. All three
+whole twelve-byte scope tables retain their real source label pointers and
+enclosing-level sentinel. Both earlier EH heads currently have no containing
+Ghidra function; the verified PE/source comparisons include them without a
+database write. All provisional main/interior extents remain unchanged.
+No standalone source bodies are fabricated for these parent labels.
+
+Four complete contexts / 485 bytes preserve thread startup, lock, lazy-lock
+initialization and error exit. The remaining allocator/TLS parents participate
+in a real dependency cycle through lazy lock initialization, malloc/calloc,
+errno/getptd and error/termination policy. Correct fields, complete masked
+fingerprints or accepted small-block children do not close that cycle. The
+errno offset is observed: the actual nine-byte getter adds eight bytes,
+matching the natural `_terrno` field, but its thread-data callee remains pending.
+All seven roots and three interior candidates retain explicit open
+reasons and no source/exact credit. R118's historical diagnostic snapshots
+remain unchanged and cold-replay with the same full extents.
+
+Local complete evidence and accepted-state checks passed. Eighteen public
+regressions reject truncated primary/coalescing/memmove extents, independently
+promoted cleanup slices, lost EH heads, premature malloc/errno ownership,
+wrong region callees, partial layout/state/exception sections, missing COMMON
+storage, wrong scope labels, changed callback/TLS ABI or thread allocation
+size, omitted literals and source/exact credit.
+
+The checkpoint is 3,116 resolved: 919 authored, 1,622 library and 575 compiler
+generated, with 1,235 pending. Exact stays 60 / 9,883 bytes; provisional authored
+coverage and recorded extents remain 9,883 / 1,965,299 and 872 / 1,952,956.
+R120 targets the six lock/error/termination roots needed to close this cycle;
+retain all existing lifetime ambiguities and pending security/error parents.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the complete
+R119 verifier, retained R118/R117/R116/R115/runtime/import graphs, R114 lifetime
+controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
+251 public tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools.
