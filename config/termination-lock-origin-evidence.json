@@ -1,0 +1,5402 @@
+{
+  "evidence_id": "R118",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+  "functions": [
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x00644187",
+      "coff_symbol": "_doexit",
+      "size": 195,
+      "span_end": "0x00644249",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "f9c3982f9b920755ee7ca6edffb3e9310182a4c3a8e12d7b02f85f30f939e545",
+      "body_sha256": "ebbb6a1746d46dd2504595429c8671050a7a6bfd3a30b2a3dce3ab91f67e4788",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T20885",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00661200",
+          "target_kind": "scope-table"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00645414",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "__lock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646725",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__C_Exit_Done",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E328",
+          "target_kind": "state"
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "__imp__GetCurrentProcess@0",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065719C",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetCurrentProcess",
+          "target_kind": "import"
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "__imp__TerminateProcess@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657198",
+          "dll": "KERNEL32.dll",
+          "import_name": "TerminateProcess",
+          "target_kind": "import"
+        },
+        {
+          "offset": 54,
+          "type": "DIR32",
+          "symbol": "__C_Termination_Done",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E324",
+          "target_kind": "state"
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "__exitflag",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E320",
+          "target_kind": "state"
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "___onexitbegin",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBB0",
+          "target_kind": "state"
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "___onexitend",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBAC",
+          "target_kind": "state"
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "___onexitend",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBAC",
+          "target_kind": "state"
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "___onexitbegin",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBB0",
+          "target_kind": "state"
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "___xp_z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C05C",
+          "target_kind": "state"
+        },
+        {
+          "offset": 116,
+          "type": "DIR32",
+          "symbol": "___xp_a",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C054",
+          "target_kind": "state"
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "__initterm",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006440E7",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 127,
+          "type": "DIR32",
+          "symbol": "___xt_z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C068",
+          "target_kind": "state"
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "___xt_a",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C060",
+          "target_kind": "state"
+        },
+        {
+          "offset": 137,
+          "type": "REL32",
+          "symbol": "__initterm",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006440E7",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 158,
+          "type": "DIR32",
+          "symbol": "__C_Exit_Done",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E328",
+          "target_kind": "state"
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "___crtExitProcess",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006440A5",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 183,
+          "type": "REL32",
+          "symbol": "__unlock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646658",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 190,
+          "type": "REL32",
+          "symbol": "__SEH_epilog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064544F",
+          "target_kind": "callee"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00644243",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00644249",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x0064418E",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x00644195",
+            "target": "0x00646725"
+          },
+          {
+            "site": "0x006441FF",
+            "target": "0x006440E7"
+          },
+          {
+            "site": "0x0064420F",
+            "target": "0x006440E7"
+          },
+          {
+            "site": "0x00644219",
+            "target": "0x00644236"
+          },
+          {
+            "site": "0x0064422C",
+            "target": "0x006440A5"
+          },
+          {
+            "site": "0x0064423D",
+            "target": "0x00646658"
+          },
+          {
+            "site": "0x00644244",
+            "target": "0x0064544F"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006441A9",
+          "target": "0x006441BB"
+        },
+        {
+          "site": "0x006441CC",
+          "target": "0x00644205"
+        },
+        {
+          "site": "0x006441D4",
+          "target": "0x006441F5"
+        },
+        {
+          "site": "0x006441E9",
+          "target": "0x006441F5"
+        },
+        {
+          "site": "0x006441EF",
+          "target": "0x006441D6"
+        },
+        {
+          "site": "0x006441F3",
+          "target": "0x006441D6"
+        },
+        {
+          "site": "0x00644221",
+          "target": "0x00644244"
+        },
+        {
+          "site": "0x00644239",
+          "target": "0x00644243"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006441AE",
+          "operand": "dword ptr [0x65719c]"
+        },
+        {
+          "site": "0x006441B5",
+          "operand": "dword ptr [0x657198]"
+        },
+        {
+          "site": "0x006441F1",
+          "operand": "eax"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00644187",
+          "mnemonic": "push",
+          "operands": "8"
+        },
+        {
+          "site": "0x00644189",
+          "mnemonic": "push",
+          "operands": "0x661200"
+        },
+        {
+          "site": "0x0064418E",
+          "mnemonic": "call",
+          "operands": "0x645414"
+        },
+        {
+          "site": "0x00644193",
+          "mnemonic": "push",
+          "operands": "8"
+        },
+        {
+          "site": "0x00644195",
+          "mnemonic": "call",
+          "operands": "0x646725"
+        },
+        {
+          "site": "0x0064419A",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064419B",
+          "mnemonic": "xor",
+          "operands": "edi, edi"
+        },
+        {
+          "site": "0x0064419D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], edi"
+        },
+        {
+          "site": "0x006441A0",
+          "mnemonic": "xor",
+          "operands": "esi, esi"
+        },
+        {
+          "site": "0x006441A2",
+          "mnemonic": "inc",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006441A3",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e328], esi"
+        },
+        {
+          "site": "0x006441A9",
+          "mnemonic": "jne",
+          "operands": "0x6441bb"
+        },
+        {
+          "site": "0x006441AB",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x006441AE",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x65719c]"
+        },
+        {
+          "site": "0x006441B4",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006441B5",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x657198]"
+        },
+        {
+          "site": "0x006441BB",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e324], esi"
+        },
+        {
+          "site": "0x006441C1",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [ebp + 0x10]"
+        },
+        {
+          "site": "0x006441C4",
+          "mnemonic": "mov",
+          "operands": "byte ptr [0x68e320], al"
+        },
+        {
+          "site": "0x006441C9",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 0xc], edi"
+        },
+        {
+          "site": "0x006441CC",
+          "mnemonic": "jne",
+          "operands": "0x644205"
+        },
+        {
+          "site": "0x006441CE",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68fbb0], edi"
+        },
+        {
+          "site": "0x006441D4",
+          "mnemonic": "je",
+          "operands": "0x6441f5"
+        },
+        {
+          "site": "0x006441D6",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68fbac]"
+        },
+        {
+          "site": "0x006441DB",
+          "mnemonic": "sub",
+          "operands": "eax, 4"
+        },
+        {
+          "site": "0x006441DE",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68fbac], eax"
+        },
+        {
+          "site": "0x006441E3",
+          "mnemonic": "cmp",
+          "operands": "eax, dword ptr [0x68fbb0]"
+        },
+        {
+          "site": "0x006441E9",
+          "mnemonic": "jb",
+          "operands": "0x6441f5"
+        },
+        {
+          "site": "0x006441EB",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x006441ED",
+          "mnemonic": "cmp",
+          "operands": "eax, edi"
+        },
+        {
+          "site": "0x006441EF",
+          "mnemonic": "je",
+          "operands": "0x6441d6"
+        },
+        {
+          "site": "0x006441F1",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006441F3",
+          "mnemonic": "jmp",
+          "operands": "0x6441d6"
+        },
+        {
+          "site": "0x006441F5",
+          "mnemonic": "push",
+          "operands": "0x66c05c"
+        },
+        {
+          "site": "0x006441FA",
+          "mnemonic": "mov",
+          "operands": "eax, 0x66c054"
+        },
+        {
+          "site": "0x006441FF",
+          "mnemonic": "call",
+          "operands": "0x6440e7"
+        },
+        {
+          "site": "0x00644204",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644205",
+          "mnemonic": "push",
+          "operands": "0x66c068"
+        },
+        {
+          "site": "0x0064420A",
+          "mnemonic": "mov",
+          "operands": "eax, 0x66c060"
+        },
+        {
+          "site": "0x0064420F",
+          "mnemonic": "call",
+          "operands": "0x6440e7"
+        },
+        {
+          "site": "0x00644214",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644215",
+          "mnemonic": "or",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x00644219",
+          "mnemonic": "call",
+          "operands": "0x644236"
+        },
+        {
+          "site": "0x0064421E",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 0x10], edi"
+        },
+        {
+          "site": "0x00644221",
+          "mnemonic": "jne",
+          "operands": "0x644244"
+        },
+        {
+          "site": "0x00644223",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e328], esi"
+        },
+        {
+          "site": "0x00644229",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0064422C",
+          "mnemonic": "call",
+          "operands": "0x6440a5"
+        },
+        {
+          "site": "0x00644231",
+          "mnemonic": "xor",
+          "operands": "edi, edi"
+        },
+        {
+          "site": "0x00644233",
+          "mnemonic": "xor",
+          "operands": "esi, esi"
+        },
+        {
+          "site": "0x00644235",
+          "mnemonic": "inc",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00644236",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 0x10], edi"
+        },
+        {
+          "site": "0x00644239",
+          "mnemonic": "je",
+          "operands": "0x644243"
+        },
+        {
+          "site": "0x0064423B",
+          "mnemonic": "push",
+          "operands": "8"
+        },
+        {
+          "site": "0x0064423D",
+          "mnemonic": "call",
+          "operands": "0x646658"
+        },
+        {
+          "site": "0x00644242",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644243",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x00644244",
+          "mnemonic": "call",
+          "operands": "0x64544f"
+        },
+        {
+          "site": "0x00644249",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "uncertainty": "crt-termination-lock-onexit-bindings-unresolved"
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "address": "0x00646725",
+      "coff_symbol": "__lock",
+      "size": 49,
+      "span_end": "0x00646755",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "734fe337276c14d1066f5fa2d95266833d22fbbf8cdfea7edecb9bdf496d7396",
+      "body_sha256": "d3b8f8ccb7818fcb0f6cc9d023c6ad713acac9c4e0f8d7f29cd95c86e8455561",
+      "relocation_bindings": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        },
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "__mtinitlocknum",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646685",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "__amsg_exit",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064228D",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "__imp__EnterCriticalSection@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571DC",
+          "dll": "KERNEL32.dll",
+          "import_name": "EnterCriticalSection",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00646755",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00646739",
+            "target": "0x00646685"
+          },
+          {
+            "site": "0x00646745",
+            "target": "0x0064228D"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00646736",
+          "target": "0x0064674B"
+        },
+        {
+          "site": "0x00646741",
+          "target": "0x0064674B"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0064674D",
+          "operand": "dword ptr [0x6571dc]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00646725",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x00646726",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x00646728",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0064672B",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064672C",
+          "mnemonic": "lea",
+          "operands": "esi, [eax*8 + 0x670150]"
+        },
+        {
+          "site": "0x00646733",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [esi], 0"
+        },
+        {
+          "site": "0x00646736",
+          "mnemonic": "jne",
+          "operands": "0x64674b"
+        },
+        {
+          "site": "0x00646738",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00646739",
+          "mnemonic": "call",
+          "operands": "0x646685"
+        },
+        {
+          "site": "0x0064673E",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646740",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00646741",
+          "mnemonic": "jne",
+          "operands": "0x64674b"
+        },
+        {
+          "site": "0x00646743",
+          "mnemonic": "push",
+          "operands": "0x11"
+        },
+        {
+          "site": "0x00646745",
+          "mnemonic": "call",
+          "operands": "0x64228d"
+        },
+        {
+          "site": "0x0064674A",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064674B",
+          "mnemonic": "push",
+          "operands": "dword ptr [esi]"
+        },
+        {
+          "site": "0x0064674D",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6571dc]"
+        },
+        {
+          "site": "0x00646753",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00646754",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x00646755",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "uncertainty": "crt-lock-lazy-initializer-error-chain-unresolved"
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "address": "0x00646658",
+      "coff_symbol": "__unlock",
+      "size": 21,
+      "span_end": "0x0064666C",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "54b819013e3dbb128b261b173f6930b111abaeafdcdcf83c81efc81c96092723",
+      "body_sha256": "63cbcd749943370fd404cf4096989baf3a79ad1d485672129adf1b5f76cfa970",
+      "relocation_bindings": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        },
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "__imp__LeaveCriticalSection@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571D4",
+          "dll": "KERNEL32.dll",
+          "import_name": "LeaveCriticalSection",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064666C",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [
+        {
+          "site": "0x00646665",
+          "operand": "dword ptr [0x6571d4]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00646658",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x00646659",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0064665B",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0064665E",
+          "mnemonic": "push",
+          "operands": "dword ptr [eax*8 + 0x670150]"
+        },
+        {
+          "site": "0x00646665",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6571d4]"
+        },
+        {
+          "site": "0x0064666B",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0064666C",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "address": "0x00646685",
+      "coff_symbol": "__mtinitlocknum",
+      "size": 160,
+      "span_end": "0x00646724",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "b7d0bd98bd04dc4b308f98510cc125b234febf3aae396a9a96e2a4975360cdc9",
+      "body_sha256": "2d78cf4bc5a7d2a40020ac5dd245a710cdfd208d580e05c5fda5c1daf8dddb53",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T20187",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006615D0",
+          "target_kind": "scope-table"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00645414",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        },
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644331",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 43,
+          "type": "REL32",
+          "symbol": "__errno",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00647F98",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 58,
+          "type": "REL32",
+          "symbol": "__lock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646725",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 77,
+          "type": "REL32",
+          "symbol": "___crtInitCritSecAndSpinCount",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065053F",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642A61",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 94,
+          "type": "REL32",
+          "symbol": "__errno",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00647F98",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "__local_unwind2",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640B66",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 128,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642A61",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 146,
+          "type": "REL32",
+          "symbol": "__SEH_epilog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064544F",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 154,
+          "type": "REL32",
+          "symbol": "__unlock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646658",
+          "target_kind": "callee"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064671B",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00646724",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x0064668C",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x006466A3",
+            "target": "0x00644331"
+          },
+          {
+            "site": "0x006466AF",
+            "target": "0x00647F98"
+          },
+          {
+            "site": "0x006466BE",
+            "target": "0x00646725"
+          },
+          {
+            "site": "0x006466D1",
+            "target": "0x0065053F"
+          },
+          {
+            "site": "0x006466DD",
+            "target": "0x00642A61"
+          },
+          {
+            "site": "0x006466E2",
+            "target": "0x00647F98"
+          },
+          {
+            "site": "0x006466F3",
+            "target": "0x00640B66"
+          },
+          {
+            "site": "0x00646704",
+            "target": "0x00642A61"
+          },
+          {
+            "site": "0x0064670E",
+            "target": "0x0064671C"
+          },
+          {
+            "site": "0x00646716",
+            "target": "0x0064544F"
+          },
+          {
+            "site": "0x0064671E",
+            "target": "0x00646658"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x0064669F",
+          "target": "0x00646713"
+        },
+        {
+          "site": "0x006466AD",
+          "target": "0x006466BC"
+        },
+        {
+          "site": "0x006466BA",
+          "target": "0x006466FB"
+        },
+        {
+          "site": "0x006466C9",
+          "target": "0x00646703"
+        },
+        {
+          "site": "0x006466DA",
+          "target": "0x006466FF"
+        },
+        {
+          "site": "0x006466FD",
+          "target": "0x00646716"
+        },
+        {
+          "site": "0x00646701",
+          "target": "0x0064670A"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00646685",
+          "mnemonic": "push",
+          "operands": "8"
+        },
+        {
+          "site": "0x00646687",
+          "mnemonic": "push",
+          "operands": "0x6615d0"
+        },
+        {
+          "site": "0x0064668C",
+          "mnemonic": "call",
+          "operands": "0x645414"
+        },
+        {
+          "site": "0x00646691",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00646694",
+          "mnemonic": "lea",
+          "operands": "esi, [esi*8 + 0x670150]"
+        },
+        {
+          "site": "0x0064669B",
+          "mnemonic": "xor",
+          "operands": "ebx, ebx"
+        },
+        {
+          "site": "0x0064669D",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [esi], ebx"
+        },
+        {
+          "site": "0x0064669F",
+          "mnemonic": "jne",
+          "operands": "0x646713"
+        },
+        {
+          "site": "0x006466A1",
+          "mnemonic": "push",
+          "operands": "0x18"
+        },
+        {
+          "site": "0x006466A3",
+          "mnemonic": "call",
+          "operands": "0x644331"
+        },
+        {
+          "site": "0x006466A8",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006466A9",
+          "mnemonic": "mov",
+          "operands": "edi, eax"
+        },
+        {
+          "site": "0x006466AB",
+          "mnemonic": "cmp",
+          "operands": "edi, ebx"
+        },
+        {
+          "site": "0x006466AD",
+          "mnemonic": "jne",
+          "operands": "0x6466bc"
+        },
+        {
+          "site": "0x006466AF",
+          "mnemonic": "call",
+          "operands": "0x647f98"
+        },
+        {
+          "site": "0x006466B4",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], 0xc"
+        },
+        {
+          "site": "0x006466BA",
+          "mnemonic": "jmp",
+          "operands": "0x6466fb"
+        },
+        {
+          "site": "0x006466BC",
+          "mnemonic": "push",
+          "operands": "0xa"
+        },
+        {
+          "site": "0x006466BE",
+          "mnemonic": "call",
+          "operands": "0x646725"
+        },
+        {
+          "site": "0x006466C3",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006466C4",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ebx"
+        },
+        {
+          "site": "0x006466C7",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [esi], ebx"
+        },
+        {
+          "site": "0x006466C9",
+          "mnemonic": "jne",
+          "operands": "0x646703"
+        },
+        {
+          "site": "0x006466CB",
+          "mnemonic": "push",
+          "operands": "0xfa0"
+        },
+        {
+          "site": "0x006466D0",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006466D1",
+          "mnemonic": "call",
+          "operands": "0x65053f"
+        },
+        {
+          "site": "0x006466D6",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006466D7",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006466D8",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006466DA",
+          "mnemonic": "jne",
+          "operands": "0x6466ff"
+        },
+        {
+          "site": "0x006466DC",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006466DD",
+          "mnemonic": "call",
+          "operands": "0x642a61"
+        },
+        {
+          "site": "0x006466E2",
+          "mnemonic": "call",
+          "operands": "0x647f98"
+        },
+        {
+          "site": "0x006466E7",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], 0xc"
+        },
+        {
+          "site": "0x006466ED",
+          "mnemonic": "push",
+          "operands": "-1"
+        },
+        {
+          "site": "0x006466EF",
+          "mnemonic": "lea",
+          "operands": "eax, [ebp - 0x10]"
+        },
+        {
+          "site": "0x006466F2",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006466F3",
+          "mnemonic": "call",
+          "operands": "0x640b66"
+        },
+        {
+          "site": "0x006466F8",
+          "mnemonic": "add",
+          "operands": "esp, 0xc"
+        },
+        {
+          "site": "0x006466FB",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006466FD",
+          "mnemonic": "jmp",
+          "operands": "0x646716"
+        },
+        {
+          "site": "0x006466FF",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esi], edi"
+        },
+        {
+          "site": "0x00646701",
+          "mnemonic": "jmp",
+          "operands": "0x64670a"
+        },
+        {
+          "site": "0x00646703",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00646704",
+          "mnemonic": "call",
+          "operands": "0x642a61"
+        },
+        {
+          "site": "0x00646709",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064670A",
+          "mnemonic": "or",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x0064670E",
+          "mnemonic": "call",
+          "operands": "0x64671c"
+        },
+        {
+          "site": "0x00646713",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646715",
+          "mnemonic": "inc",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00646716",
+          "mnemonic": "call",
+          "operands": "0x64544f"
+        },
+        {
+          "site": "0x0064671B",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x0064671C",
+          "mnemonic": "push",
+          "operands": "0xa"
+        },
+        {
+          "site": "0x0064671E",
+          "mnemonic": "call",
+          "operands": "0x646658"
+        },
+        {
+          "site": "0x00646723",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00646724",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "uncertainty": "crt-lazy-lock-allocator-tls-boundaries-unresolved",
+      "ledger_size": 151
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x006440E7",
+      "coff_symbol": "__initterm",
+      "size": 24,
+      "span_end": "0x006440FE",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "0b6174d87ebf9fb95863f92b795ae070082647b69cbc6cab3ff13d0f8ac62001",
+      "body_sha256": "0b6174d87ebf9fb95863f92b795ae070082647b69cbc6cab3ff13d0f8ac62001",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006440FE",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006440EA",
+          "target": "0x006440F7"
+        },
+        {
+          "site": "0x006440F0",
+          "target": "0x006440F4"
+        },
+        {
+          "site": "0x006440FB",
+          "target": "0x006440EC"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006440F2",
+          "operand": "eax"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x006440E7",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006440E8",
+          "mnemonic": "mov",
+          "operands": "esi, eax"
+        },
+        {
+          "site": "0x006440EA",
+          "mnemonic": "jmp",
+          "operands": "0x6440f7"
+        },
+        {
+          "site": "0x006440EC",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esi]"
+        },
+        {
+          "site": "0x006440EE",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006440F0",
+          "mnemonic": "je",
+          "operands": "0x6440f4"
+        },
+        {
+          "site": "0x006440F2",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006440F4",
+          "mnemonic": "add",
+          "operands": "esi, 4"
+        },
+        {
+          "site": "0x006440F7",
+          "mnemonic": "cmp",
+          "operands": "esi, dword ptr [esp + 8]"
+        },
+        {
+          "site": "0x006440FB",
+          "mnemonic": "jb",
+          "operands": "0x6440ec"
+        },
+        {
+          "site": "0x006440FD",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006440FE",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "member_offset": 1411494,
+      "member": "build\\intel\\mt_obj\\onexit.obj",
+      "member_sha256": "eab9b3b16d2a3c0e2f995be8e15a93f7fba41331a72ae2a7bafa127d5a27bc59",
+      "address": "0x0064162B",
+      "coff_symbol": "___onexitinit",
+      "size": 40,
+      "span_end": "0x00641652",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "e411419d1daa2aeb3dbf3fecb6419940ea398610013ff16e014d048410ff3f95",
+      "body_sha256": "302fe3d0c0b6a60023972b1e8843c388db59195a724404ee44d16c4f23a6b938",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644331",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "___onexitbegin",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBB0",
+          "target_kind": "state"
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "___onexitbegin",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBB0",
+          "target_kind": "state"
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "___onexitend",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBAC",
+          "target_kind": "state"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00641642",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00641652",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00641630",
+            "target": "0x00644331"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x0064163D",
+          "target": "0x00641643"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0064162B",
+          "mnemonic": "push",
+          "operands": "0x80"
+        },
+        {
+          "site": "0x00641630",
+          "mnemonic": "call",
+          "operands": "0x644331"
+        },
+        {
+          "site": "0x00641635",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00641637",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00641638",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68fbb0], eax"
+        },
+        {
+          "site": "0x0064163D",
+          "mnemonic": "jne",
+          "operands": "0x641643"
+        },
+        {
+          "site": "0x0064163F",
+          "mnemonic": "push",
+          "operands": "0x18"
+        },
+        {
+          "site": "0x00641641",
+          "mnemonic": "pop",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00641642",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x00641643",
+          "mnemonic": "and",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": "0x00641646",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68fbb0]"
+        },
+        {
+          "site": "0x0064164B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68fbac], eax"
+        },
+        {
+          "site": "0x00641650",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00641652",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "uncertainty": "crt-onexit-allocator-bindings-unresolved"
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "address": "0x006465BA",
+      "coff_symbol": "__mtinitlocks",
+      "size": 73,
+      "span_end": "0x00646602",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "279f41aaf62b585f8f3ccbad63d94ed01be8348872cb2ab76258bb58fb7dbb89",
+      "body_sha256": "dd37ea2c6de995698ec0a2ecac0257ca7bfbf73ae5cfb125fbfff0736a2faf2b",
+      "relocation_bindings": [
+        {
+          "offset": 5,
+          "type": "DIR32",
+          "symbol": "_lclcritsects",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E348",
+          "target_kind": "state"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 4,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "___crtInitCritSecAndSpinCount",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065053F",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "__locktable",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670150",
+          "target_kind": "state"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006465F6",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006465E0",
+            "target": "0x0065053F"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006465CB",
+          "target": "0x006465EB"
+        },
+        {
+          "site": "0x006465E9",
+          "target": "0x006465F7"
+        },
+        {
+          "site": "0x006465EF",
+          "target": "0x006465C3"
+        },
+        {
+          "site": "0x00646601",
+          "target": "0x006465F4"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x006465BA",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006465BB",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006465BC",
+          "mnemonic": "xor",
+          "operands": "esi, esi"
+        },
+        {
+          "site": "0x006465BE",
+          "mnemonic": "mov",
+          "operands": "edi, 0x68e348"
+        },
+        {
+          "site": "0x006465C3",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [esi*8 + 0x670154], 1"
+        },
+        {
+          "site": "0x006465CB",
+          "mnemonic": "jne",
+          "operands": "0x6465eb"
+        },
+        {
+          "site": "0x006465CD",
+          "mnemonic": "lea",
+          "operands": "eax, [esi*8 + 0x670150]"
+        },
+        {
+          "site": "0x006465D4",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], edi"
+        },
+        {
+          "site": "0x006465D6",
+          "mnemonic": "push",
+          "operands": "0xfa0"
+        },
+        {
+          "site": "0x006465DB",
+          "mnemonic": "push",
+          "operands": "dword ptr [eax]"
+        },
+        {
+          "site": "0x006465DD",
+          "mnemonic": "add",
+          "operands": "edi, 0x18"
+        },
+        {
+          "site": "0x006465E0",
+          "mnemonic": "call",
+          "operands": "0x65053f"
+        },
+        {
+          "site": "0x006465E5",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006465E7",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006465E8",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006465E9",
+          "mnemonic": "je",
+          "operands": "0x6465f7"
+        },
+        {
+          "site": "0x006465EB",
+          "mnemonic": "inc",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006465EC",
+          "mnemonic": "cmp",
+          "operands": "esi, 0x24"
+        },
+        {
+          "site": "0x006465EF",
+          "mnemonic": "jl",
+          "operands": "0x6465c3"
+        },
+        {
+          "site": "0x006465F1",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006465F3",
+          "mnemonic": "inc",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006465F4",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006465F5",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006465F6",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x006465F7",
+          "mnemonic": "and",
+          "operands": "dword ptr [esi*8 + 0x670150], 0"
+        },
+        {
+          "site": "0x006465FF",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646601",
+          "mnemonic": "jmp",
+          "operands": "0x6465f4"
+        }
+      ]
+    },
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "address": "0x0065053F",
+      "coff_symbol": "___crtInitCritSecAndSpinCount",
+      "size": 139,
+      "span_end": "0x006505C9",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "2730ad81688f8e789833dd7d2a8048bfd9e4e26f51a09d0d2161ff3b4123cc43",
+      "body_sha256": "a7915d00a12c4b2c6d9bb7a566c6850439e5975e760e633e81ce6acf5fc98e06",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T19908",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00667408",
+          "target_kind": "scope-table"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00645414",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 13,
+          "type": "DIR32",
+          "symbol": "?__crtInitCritSecAndSpinCount@?1??0@@9@9",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E770",
+          "target_kind": "state"
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__osplatform",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E2E8",
+          "target_kind": "state"
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066159C",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleHandleA@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A8",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleHandleA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "??_C@_0CG@PKBDLMEO@InitializeCriticalSectionAndSpin@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006673DC",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A0",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress",
+          "target_kind": "import"
+        },
+        {
+          "offset": 58,
+          "type": "DIR32",
+          "symbol": "?__crtInitCritSecAndSpinCount@?1??0@@9@9",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E770",
+          "target_kind": "state"
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "___crtInitCritSecNoSpinCount@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065052F",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "?__crtInitCritSecAndSpinCount@?1??0@@9@9",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E770",
+          "target_kind": "state"
+        },
+        {
+          "offset": 123,
+          "type": "DIR32",
+          "symbol": "__imp__SetLastError@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571B8",
+          "dll": "KERNEL32.dll",
+          "import_name": "SetLastError",
+          "target_kind": "import"
+        },
+        {
+          "offset": 134,
+          "type": "REL32",
+          "symbol": "__SEH_epilog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064544F",
+          "target_kind": "callee"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006505A9",
+            "cleanup": 0
+          },
+          {
+            "site": "0x006505C9",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00650546",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x006505C4",
+            "target": "0x0064544F"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00650552",
+          "target": "0x0065058B"
+        },
+        {
+          "site": "0x0065055B",
+          "target": "0x00650581"
+        },
+        {
+          "site": "0x0065056A",
+          "target": "0x00650581"
+        },
+        {
+          "site": "0x0065057F",
+          "target": "0x0065058B"
+        },
+        {
+          "site": "0x0065059A",
+          "target": "0x006505C0"
+        },
+        {
+          "site": "0x006505B4",
+          "target": "0x006505BE"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x00650562",
+          "operand": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x00650572",
+          "operand": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x00650595",
+          "operand": "eax"
+        },
+        {
+          "site": "0x006505B8",
+          "operand": "dword ptr [0x6571b8]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0065053F",
+          "mnemonic": "push",
+          "operands": "0x10"
+        },
+        {
+          "site": "0x00650541",
+          "mnemonic": "push",
+          "operands": "0x667408"
+        },
+        {
+          "site": "0x00650546",
+          "mnemonic": "call",
+          "operands": "0x645414"
+        },
+        {
+          "site": "0x0065054B",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68e770]"
+        },
+        {
+          "site": "0x00650550",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00650552",
+          "mnemonic": "jne",
+          "operands": "0x65058b"
+        },
+        {
+          "site": "0x00650554",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e2e8], 1"
+        },
+        {
+          "site": "0x0065055B",
+          "mnemonic": "je",
+          "operands": "0x650581"
+        },
+        {
+          "site": "0x0065055D",
+          "mnemonic": "push",
+          "operands": "0x66159c"
+        },
+        {
+          "site": "0x00650562",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x00650568",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0065056A",
+          "mnemonic": "je",
+          "operands": "0x650581"
+        },
+        {
+          "site": "0x0065056C",
+          "mnemonic": "push",
+          "operands": "0x6673dc"
+        },
+        {
+          "site": "0x00650571",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00650572",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x00650578",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e770], eax"
+        },
+        {
+          "site": "0x0065057D",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0065057F",
+          "mnemonic": "jne",
+          "operands": "0x65058b"
+        },
+        {
+          "site": "0x00650581",
+          "mnemonic": "mov",
+          "operands": "eax, 0x65052f"
+        },
+        {
+          "site": "0x00650586",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e770], eax"
+        },
+        {
+          "site": "0x0065058B",
+          "mnemonic": "and",
+          "operands": "dword ptr [ebp - 4], 0"
+        },
+        {
+          "site": "0x0065058F",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 0xc]"
+        },
+        {
+          "site": "0x00650592",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00650595",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00650597",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x20], eax"
+        },
+        {
+          "site": "0x0065059A",
+          "mnemonic": "jmp",
+          "operands": "0x6505c0"
+        },
+        {
+          "site": "0x0065059C",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x14]"
+        },
+        {
+          "site": "0x0065059F",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x006505A1",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x006505A3",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x1c], eax"
+        },
+        {
+          "site": "0x006505A6",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006505A8",
+          "mnemonic": "inc",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006505A9",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x006505AA",
+          "mnemonic": "mov",
+          "operands": "esp, dword ptr [ebp - 0x18]"
+        },
+        {
+          "site": "0x006505AD",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x1c], 0xc0000017"
+        },
+        {
+          "site": "0x006505B4",
+          "mnemonic": "jne",
+          "operands": "0x6505be"
+        },
+        {
+          "site": "0x006505B6",
+          "mnemonic": "push",
+          "operands": "8"
+        },
+        {
+          "site": "0x006505B8",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6571b8]"
+        },
+        {
+          "site": "0x006505BE",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006505C0",
+          "mnemonic": "or",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x006505C4",
+          "mnemonic": "call",
+          "operands": "0x64544f"
+        },
+        {
+          "site": "0x006505C9",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "address": "0x0065052F",
+      "coff_symbol": "___crtInitCritSecNoSpinCount@8",
+      "size": 16,
+      "span_end": "0x0065053E",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "4f68b459a0bf6dc302cc4e384955857fb03c9f95aaf2975d96804d9a4f1869dd",
+      "body_sha256": "2d91df223a3588cb74c0d1b7ad29a69b232f5743d5f523398580fb2c32a19986",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__imp__InitializeCriticalSection@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570EC",
+          "dll": "KERNEL32.dll",
+          "import_name": "InitializeCriticalSection",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0065053C",
+            "cleanup": 8
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [
+        {
+          "site": "0x00650533",
+          "operand": "dword ptr [0x6570ec]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0065052F",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x00650533",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570ec]"
+        },
+        {
+          "site": "0x00650539",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0065053B",
+          "mnemonic": "inc",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0065053C",
+          "mnemonic": "ret",
+          "operands": "8"
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "member_offset": 1244382,
+      "member": "build\\intel\\mt_obj\\sehprolg.obj",
+      "member_sha256": "2a6b52f5cb60984fb2ef7b1fcf134de94b9f458b79013ef380e6ba3a48c828f4",
+      "address": "0x00645414",
+      "coff_symbol": "__SEH_prolog",
+      "size": 59,
+      "span_end": "0x0064544E",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "72b12764e7409e01997a2375b20833a3afcf3325477ed61e480ba55db04a4ea8",
+      "body_sha256": "2dc2849091d156d0feda1fbe79761f6cd3621bcc9df05385d6f09cb2bcc02e34",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "__except_handler3",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00645468",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064544E",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00645414",
+          "mnemonic": "push",
+          "operands": "0x645468"
+        },
+        {
+          "site": "0x00645419",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr fs:[0]"
+        },
+        {
+          "site": "0x0064541F",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00645420",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esp + 0x10]"
+        },
+        {
+          "site": "0x00645424",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esp + 0x10], ebp"
+        },
+        {
+          "site": "0x00645428",
+          "mnemonic": "lea",
+          "operands": "ebp, [esp + 0x10]"
+        },
+        {
+          "site": "0x0064542C",
+          "mnemonic": "sub",
+          "operands": "esp, eax"
+        },
+        {
+          "site": "0x0064542E",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064542F",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00645430",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00645431",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 8]"
+        },
+        {
+          "site": "0x00645434",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x18], esp"
+        },
+        {
+          "site": "0x00645437",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00645438",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": "0x0064543B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x00645442",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 8], eax"
+        },
+        {
+          "site": "0x00645445",
+          "mnemonic": "lea",
+          "operands": "eax, [ebp - 0x10]"
+        },
+        {
+          "site": "0x00645448",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], eax"
+        },
+        {
+          "site": "0x0064544E",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "origin_evidence": "R117",
+      "origin": "library"
+    },
+    {
+      "member_offset": 1244382,
+      "member": "build\\intel\\mt_obj\\sehprolg.obj",
+      "member_sha256": "2a6b52f5cb60984fb2ef7b1fcf134de94b9f458b79013ef380e6ba3a48c828f4",
+      "address": "0x0064544F",
+      "coff_symbol": "__SEH_epilog",
+      "size": 17,
+      "span_end": "0x0064545F",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "6e914ba12848b264526c84faf2e95ada281f321bd5b8e492879c17af034c76e2",
+      "body_sha256": "6e914ba12848b264526c84faf2e95ada281f321bd5b8e492879c17af034c76e2",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064545F",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0064544F",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x00645452",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], ecx"
+        },
+        {
+          "site": "0x00645459",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064545A",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064545B",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064545C",
+          "mnemonic": "pop",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064545D",
+          "mnemonic": "leave",
+          "operands": ""
+        },
+        {
+          "site": "0x0064545E",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064545F",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "origin_evidence": "R115",
+      "origin": "library"
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x006440A5",
+      "coff_symbol": "___crtExitProcess",
+      "size": 48,
+      "span_end": "0x006440D4",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "22b7b78107b9338909545f5c4e0f79c48164582d148a074379e9d33b64bf948e",
+      "body_sha256": "b41e5c99fb72a82f9343d68b84edae67b9e0286946323dda792fdb424129cb11",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006611F0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleHandleA@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A8",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleHandleA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006611E0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A0",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress",
+          "target_kind": "import"
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__ExitProcess@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065717C",
+          "dll": "KERNEL32.dll",
+          "import_name": "ExitProcess",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006440B2",
+          "target": "0x006440CA"
+        },
+        {
+          "site": "0x006440C2",
+          "target": "0x006440CA"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006440AA",
+          "operand": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006440BA",
+          "operand": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x006440C8",
+          "operand": "eax"
+        },
+        {
+          "site": "0x006440CE",
+          "operand": "dword ptr [0x65717c]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x006440A5",
+          "mnemonic": "push",
+          "operands": "0x6611f0"
+        },
+        {
+          "site": "0x006440AA",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006440B0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006440B2",
+          "mnemonic": "je",
+          "operands": "0x6440ca"
+        },
+        {
+          "site": "0x006440B4",
+          "mnemonic": "push",
+          "operands": "0x6611e0"
+        },
+        {
+          "site": "0x006440B9",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006440BA",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x006440C0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006440C2",
+          "mnemonic": "je",
+          "operands": "0x6440ca"
+        },
+        {
+          "site": "0x006440C4",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x006440C8",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006440CA",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x006440CE",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x65717c]"
+        },
+        {
+          "site": "0x006440D4",
+          "mnemonic": "int3",
+          "operands": ""
+        }
+      ],
+      "origin_evidence": "R116",
+      "origin": "library"
+    }
+  ],
+  "diagnostic_contexts": [
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "address": "0x00646389",
+      "coff_symbol": "__mtinit",
+      "size": 239,
+      "span_end": "0x00646477",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "c22b2a62b61627119f11638279d0c94e783717e1ca372a5729dde65e1d5d873f",
+      "body_sha256": "97e78218ee2bb651b1f698f83c01691b13be521de2b074ee287dcdaf941fea94",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "__mtinitlocks",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006465BA",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__mtterm",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646166",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066159C",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 26,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleHandleA@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A8",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleHandleA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 38,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006570A0",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress",
+          "target_kind": "import"
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "??_C@_08KNHFBNJ@FlsAlloc?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00661590",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@GDNOONDI@FlsGetValue?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00661584",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 57,
+          "type": "DIR32",
+          "symbol": "_gpFlsAlloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E330",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@JCPCPOEF@FlsSetValue?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00661578",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 70,
+          "type": "DIR32",
+          "symbol": "_gpFlsGetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E334",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "??_C@_07PEJMOBNF@FlsFree?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00661570",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "_gpFlsSetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E338",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "_gpFlsGetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E334",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "_gpFlsFree",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E33C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__imp__TlsGetValue@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571C8",
+          "dll": "KERNEL32.dll",
+          "import_name": "TlsGetValue",
+          "target_kind": "import"
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "_gpFlsGetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E334",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 114,
+          "type": "DIR32",
+          "symbol": "__imp__TlsSetValue@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571C4",
+          "dll": "KERNEL32.dll",
+          "import_name": "TlsSetValue",
+          "target_kind": "import"
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "_gpFlsSetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E338",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "__imp__TlsFree@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571C0",
+          "dll": "KERNEL32.dll",
+          "import_name": "TlsFree",
+          "target_kind": "import"
+        },
+        {
+          "offset": 130,
+          "type": "DIR32",
+          "symbol": "_gpFlsAlloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E330",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 134,
+          "type": "DIR32",
+          "symbol": "___crtTlsAlloc@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064615D",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "_gpFlsFree",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E33C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 144,
+          "type": "DIR32",
+          "symbol": "__freefls@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646207",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 150,
+          "type": "DIR32",
+          "symbol": "_gpFlsAlloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E330",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 158,
+          "type": "DIR32",
+          "symbol": "___tlsindex",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0067013C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 174,
+          "type": "REL32",
+          "symbol": "_calloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644343",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 189,
+          "type": "DIR32",
+          "symbol": "___tlsindex",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0067013C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 195,
+          "type": "DIR32",
+          "symbol": "_gpFlsSetValue",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E338",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "__XcptActTab",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00670748",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "__imp__GetCurrentThreadId@0",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006571AC",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetCurrentThreadId",
+          "target_kind": "import"
+        },
+        {
+          "offset": 230,
+          "type": "REL32",
+          "symbol": "__mtterm",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646166",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00646399",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00646477",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00646389",
+            "target": "0x006465BA"
+          },
+          {
+            "site": "0x00646392",
+            "target": "0x00646166"
+          },
+          {
+            "site": "0x00646436",
+            "target": "0x00644343"
+          },
+          {
+            "site": "0x0064646E",
+            "target": "0x00646166"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00646390",
+          "target": "0x0064639A"
+        },
+        {
+          "site": "0x006463AB",
+          "target": "0x00646418"
+        },
+        {
+          "site": "0x006463EE",
+          "target": "0x00646418"
+        },
+        {
+          "site": "0x0064642B",
+          "target": "0x0064646E"
+        },
+        {
+          "site": "0x00646441",
+          "target": "0x0064646E"
+        },
+        {
+          "site": "0x00646452",
+          "target": "0x0064646E"
+        },
+        {
+          "site": "0x0064646C",
+          "target": "0x00646475"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006463A1",
+          "operand": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006463B9",
+          "operand": "esi"
+        },
+        {
+          "site": "0x006463C6",
+          "operand": "esi"
+        },
+        {
+          "site": "0x006463D3",
+          "operand": "esi"
+        },
+        {
+          "site": "0x006463E0",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064641D",
+          "operand": "dword ptr [0x68e330]"
+        },
+        {
+          "site": "0x0064644A",
+          "operand": "dword ptr [0x68e338]"
+        },
+        {
+          "site": "0x0064645E",
+          "operand": "dword ptr [0x6571ac]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00646389",
+          "mnemonic": "call",
+          "operands": "0x6465ba"
+        },
+        {
+          "site": "0x0064638E",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646390",
+          "mnemonic": "jne",
+          "operands": "0x64639a"
+        },
+        {
+          "site": "0x00646392",
+          "mnemonic": "call",
+          "operands": "0x646166"
+        },
+        {
+          "site": "0x00646397",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646399",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x0064639A",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064639B",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064639C",
+          "mnemonic": "push",
+          "operands": "0x66159c"
+        },
+        {
+          "site": "0x006463A1",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006463A7",
+          "mnemonic": "mov",
+          "operands": "edi, eax"
+        },
+        {
+          "site": "0x006463A9",
+          "mnemonic": "test",
+          "operands": "edi, edi"
+        },
+        {
+          "site": "0x006463AB",
+          "mnemonic": "je",
+          "operands": "0x646418"
+        },
+        {
+          "site": "0x006463AD",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x006463B3",
+          "mnemonic": "push",
+          "operands": "0x661590"
+        },
+        {
+          "site": "0x006463B8",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006463B9",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006463BB",
+          "mnemonic": "push",
+          "operands": "0x661584"
+        },
+        {
+          "site": "0x006463C0",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006463C1",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e330], eax"
+        },
+        {
+          "site": "0x006463C6",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006463C8",
+          "mnemonic": "push",
+          "operands": "0x661578"
+        },
+        {
+          "site": "0x006463CD",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006463CE",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e334], eax"
+        },
+        {
+          "site": "0x006463D3",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006463D5",
+          "mnemonic": "push",
+          "operands": "0x661570"
+        },
+        {
+          "site": "0x006463DA",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x006463DB",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e338], eax"
+        },
+        {
+          "site": "0x006463E0",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x006463E2",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e334], 0"
+        },
+        {
+          "site": "0x006463E9",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e33c], eax"
+        },
+        {
+          "site": "0x006463EE",
+          "mnemonic": "jne",
+          "operands": "0x646418"
+        },
+        {
+          "site": "0x006463F0",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6571c8]"
+        },
+        {
+          "site": "0x006463F5",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e334], eax"
+        },
+        {
+          "site": "0x006463FA",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6571c4]"
+        },
+        {
+          "site": "0x006463FF",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e338], eax"
+        },
+        {
+          "site": "0x00646404",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6571c0]"
+        },
+        {
+          "site": "0x00646409",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e330], 0x64615d"
+        },
+        {
+          "site": "0x00646413",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e33c], eax"
+        },
+        {
+          "site": "0x00646418",
+          "mnemonic": "push",
+          "operands": "0x646207"
+        },
+        {
+          "site": "0x0064641D",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x68e330]"
+        },
+        {
+          "site": "0x00646423",
+          "mnemonic": "cmp",
+          "operands": "eax, -1"
+        },
+        {
+          "site": "0x00646426",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x67013c], eax"
+        },
+        {
+          "site": "0x0064642B",
+          "mnemonic": "je",
+          "operands": "0x64646e"
+        },
+        {
+          "site": "0x0064642D",
+          "mnemonic": "xor",
+          "operands": "edi, edi"
+        },
+        {
+          "site": "0x0064642F",
+          "mnemonic": "push",
+          "operands": "0x8c"
+        },
+        {
+          "site": "0x00646434",
+          "mnemonic": "inc",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00646435",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00646436",
+          "mnemonic": "call",
+          "operands": "0x644343"
+        },
+        {
+          "site": "0x0064643B",
+          "mnemonic": "mov",
+          "operands": "esi, eax"
+        },
+        {
+          "site": "0x0064643D",
+          "mnemonic": "test",
+          "operands": "esi, esi"
+        },
+        {
+          "site": "0x0064643F",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00646440",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00646441",
+          "mnemonic": "je",
+          "operands": "0x64646e"
+        },
+        {
+          "site": "0x00646443",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00646444",
+          "mnemonic": "push",
+          "operands": "dword ptr [0x67013c]"
+        },
+        {
+          "site": "0x0064644A",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x68e338]"
+        },
+        {
+          "site": "0x00646450",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646452",
+          "mnemonic": "je",
+          "operands": "0x64646e"
+        },
+        {
+          "site": "0x00646454",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esi + 0x54], 0x670748"
+        },
+        {
+          "site": "0x0064645B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esi + 0x14], edi"
+        },
+        {
+          "site": "0x0064645E",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6571ac]"
+        },
+        {
+          "site": "0x00646464",
+          "mnemonic": "or",
+          "operands": "dword ptr [esi + 4], 0xffffffff"
+        },
+        {
+          "site": "0x00646468",
+          "mnemonic": "mov",
+          "operands": "dword ptr [esi], eax"
+        },
+        {
+          "site": "0x0064646A",
+          "mnemonic": "mov",
+          "operands": "eax, edi"
+        },
+        {
+          "site": "0x0064646C",
+          "mnemonic": "jmp",
+          "operands": "0x646475"
+        },
+        {
+          "site": "0x0064646E",
+          "mnemonic": "call",
+          "operands": "0x646166"
+        },
+        {
+          "site": "0x00646473",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00646475",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00646476",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00646477",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 239
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x0064411D",
+      "coff_symbol": "__cinit",
+      "size": 106,
+      "span_end": "0x00644186",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "a41b7df27eaacc857cb964a00bdb907103ee57594200f366df5cd5f72fb5f453",
+      "body_sha256": "092c31e65665826e99df3a90ac2878b26b156a7d17efc9e972923bf08651f751",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "__FPinit",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066FE3C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "___xi_a",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C038",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "___xi_z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C050",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "__RTC_Terminate",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006496D7",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": "_atexit",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064168B",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 70,
+          "type": "DIR32",
+          "symbol": "___xc_a",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C000",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "___xc_z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066C034",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00644186",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x0064415D",
+            "target": "0x0064168B"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00644124",
+          "target": "0x0064412D"
+        },
+        {
+          "site": "0x0064413F",
+          "target": "0x00644158"
+        },
+        {
+          "site": "0x00644143",
+          "target": "0x00644184"
+        },
+        {
+          "site": "0x00644149",
+          "target": "0x0064414D"
+        },
+        {
+          "site": "0x00644152",
+          "target": "0x00644141"
+        },
+        {
+          "site": "0x00644156",
+          "target": "0x00644184"
+        },
+        {
+          "site": "0x00644171",
+          "target": "0x00644182"
+        },
+        {
+          "site": "0x00644177",
+          "target": "0x0064417B"
+        },
+        {
+          "site": "0x00644180",
+          "target": "0x00644173"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0064412A",
+          "operand": "eax"
+        },
+        {
+          "site": "0x0064414B",
+          "operand": "ecx"
+        },
+        {
+          "site": "0x00644179",
+          "operand": "eax"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0064411D",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x66fe3c]"
+        },
+        {
+          "site": "0x00644122",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00644124",
+          "mnemonic": "je",
+          "operands": "0x64412d"
+        },
+        {
+          "site": "0x00644126",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x0064412A",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064412C",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064412D",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064412E",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064412F",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x66c038"
+        },
+        {
+          "site": "0x00644134",
+          "mnemonic": "mov",
+          "operands": "edi, 0x66c050"
+        },
+        {
+          "site": "0x00644139",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064413B",
+          "mnemonic": "cmp",
+          "operands": "ecx, edi"
+        },
+        {
+          "site": "0x0064413D",
+          "mnemonic": "mov",
+          "operands": "esi, ecx"
+        },
+        {
+          "site": "0x0064413F",
+          "mnemonic": "jae",
+          "operands": "0x644158"
+        },
+        {
+          "site": "0x00644141",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00644143",
+          "mnemonic": "jne",
+          "operands": "0x644184"
+        },
+        {
+          "site": "0x00644145",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [esi]"
+        },
+        {
+          "site": "0x00644147",
+          "mnemonic": "test",
+          "operands": "ecx, ecx"
+        },
+        {
+          "site": "0x00644149",
+          "mnemonic": "je",
+          "operands": "0x64414d"
+        },
+        {
+          "site": "0x0064414B",
+          "mnemonic": "call",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064414D",
+          "mnemonic": "add",
+          "operands": "esi, 4"
+        },
+        {
+          "site": "0x00644150",
+          "mnemonic": "cmp",
+          "operands": "esi, edi"
+        },
+        {
+          "site": "0x00644152",
+          "mnemonic": "jb",
+          "operands": "0x644141"
+        },
+        {
+          "site": "0x00644154",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00644156",
+          "mnemonic": "jne",
+          "operands": "0x644184"
+        },
+        {
+          "site": "0x00644158",
+          "mnemonic": "push",
+          "operands": "0x6496d7"
+        },
+        {
+          "site": "0x0064415D",
+          "mnemonic": "call",
+          "operands": "0x64168b"
+        },
+        {
+          "site": "0x00644162",
+          "mnemonic": "mov",
+          "operands": "esi, 0x66c000"
+        },
+        {
+          "site": "0x00644167",
+          "mnemonic": "mov",
+          "operands": "eax, esi"
+        },
+        {
+          "site": "0x00644169",
+          "mnemonic": "mov",
+          "operands": "edi, 0x66c034"
+        },
+        {
+          "site": "0x0064416E",
+          "mnemonic": "cmp",
+          "operands": "eax, edi"
+        },
+        {
+          "site": "0x00644170",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644171",
+          "mnemonic": "jae",
+          "operands": "0x644182"
+        },
+        {
+          "site": "0x00644173",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [esi]"
+        },
+        {
+          "site": "0x00644175",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00644177",
+          "mnemonic": "je",
+          "operands": "0x64417b"
+        },
+        {
+          "site": "0x00644179",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064417B",
+          "mnemonic": "add",
+          "operands": "esi, 4"
+        },
+        {
+          "site": "0x0064417E",
+          "mnemonic": "cmp",
+          "operands": "esi, edi"
+        },
+        {
+          "site": "0x00644180",
+          "mnemonic": "jb",
+          "operands": "0x644173"
+        },
+        {
+          "site": "0x00644182",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00644184",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "site": "0x00644185",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00644186",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 106
+    },
+    {
+      "member_offset": 816374,
+      "member": "build\\intel\\mt_obj\\malloc.obj",
+      "member_sha256": "d3b26ef5497560a5e2ffa46a36f5426f6c3bee71f50a0e8ec98c067ef97647d8",
+      "address": "0x00644331",
+      "coff_symbol": "_malloc",
+      "size": 18,
+      "span_end": "0x00644342",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "7f388340df849960003a441cc927c3ded189f49d9ea02af2e49fdd7ade73df0a",
+      "body_sha256": "107fe45d68df613d95e4e95f1f6840fb12af76a534519573067abb76f3aaa920",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "__newmode",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E700",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00644342",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x0064433B",
+            "target": "0x00644305"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00644331",
+          "mnemonic": "push",
+          "operands": "dword ptr [0x68e700]"
+        },
+        {
+          "site": "0x00644337",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 8]"
+        },
+        {
+          "site": "0x0064433B",
+          "mnemonic": "call",
+          "operands": "0x644305"
+        },
+        {
+          "site": "0x00644340",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644341",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00644342",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 18
+    },
+    {
+      "member_offset": 280602,
+      "member": "build\\intel\\mt_obj\\dosmap.obj",
+      "member_sha256": "015fadd0c6f53e2099faf8b94af8d192395f4828d5e2307fc6bb89babc652768",
+      "address": "0x00647F98",
+      "coff_symbol": "__errno",
+      "size": 9,
+      "span_end": "0x00647FA0",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "6226b875dee6bb94294f3b1fe32bf09b8aaa4a6d0671775b484d1d50ba6138ca",
+      "body_sha256": "f2083794f18e7b35106763fe6c8f160ee7748105d86e0ed1e2d524e8c5a30f9c",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "__getptd",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646196",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00647FA0",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00647F98",
+            "target": "0x00646196"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00647F98",
+          "mnemonic": "call",
+          "operands": "0x646196"
+        },
+        {
+          "site": "0x00647F9D",
+          "mnemonic": "add",
+          "operands": "eax, 8"
+        },
+        {
+          "site": "0x00647FA0",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 9
+    },
+    {
+      "member_offset": 794604,
+      "member": "build\\intel\\mt_obj\\free.obj",
+      "member_sha256": "534c3017da5b8d0f77b51617cb97ee0914e59bc66df3471209152914d2508290",
+      "address": "0x00642A61",
+      "coff_symbol": "_free",
+      "size": 113,
+      "span_end": "0x00642AD1",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "eb0874aa5de460923669e8f92476099cb63b29e4e10add24575a7cb7043b1f2a",
+      "body_sha256": "b00e04e36255979085fc4482d11dc2c51bb65870fa046de16c233a2db2eb725d",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T19906",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00660F88",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00645414",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 21,
+          "type": "DIR32",
+          "symbol": "___active_heap",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FA7C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "__lock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646725",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 42,
+          "type": "REL32",
+          "symbol": "___sbh_find_block",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064A715",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "___sbh_free_block",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064A740",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "__unlock",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646658",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "__crtheap",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FA78",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 103,
+          "type": "DIR32",
+          "symbol": "__imp__HeapFree@12",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657098",
+          "dll": "KERNEL32.dll",
+          "import_name": "HeapFree",
+          "target_kind": "import"
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "__SEH_epilog",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064544F",
+          "target_kind": "callee"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00642ABC",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00642AD1",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00642A68",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x00642A7F",
+            "target": "0x00646725"
+          },
+          {
+            "site": "0x00642A8A",
+            "target": "0x0064A715"
+          },
+          {
+            "site": "0x00642A99",
+            "target": "0x0064A740"
+          },
+          {
+            "site": "0x00642AA4",
+            "target": "0x00642AB4"
+          },
+          {
+            "site": "0x00642AB6",
+            "target": "0x00646658"
+          },
+          {
+            "site": "0x00642ACC",
+            "target": "0x0064544F"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00642A72",
+          "target": "0x00642ACC"
+        },
+        {
+          "site": "0x00642A7B",
+          "target": "0x00642ABD"
+        },
+        {
+          "site": "0x00642A95",
+          "target": "0x00642AA0"
+        },
+        {
+          "site": "0x00642AAD",
+          "target": "0x00642ACC"
+        },
+        {
+          "site": "0x00642AB2",
+          "target": "0x00642ABE"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x00642AC6",
+          "operand": "dword ptr [0x657098]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00642A61",
+          "mnemonic": "push",
+          "operands": "0xc"
+        },
+        {
+          "site": "0x00642A63",
+          "mnemonic": "push",
+          "operands": "0x660f88"
+        },
+        {
+          "site": "0x00642A68",
+          "mnemonic": "call",
+          "operands": "0x645414"
+        },
+        {
+          "site": "0x00642A6D",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00642A70",
+          "mnemonic": "test",
+          "operands": "esi, esi"
+        },
+        {
+          "site": "0x00642A72",
+          "mnemonic": "je",
+          "operands": "0x642acc"
+        },
+        {
+          "site": "0x00642A74",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68fa7c], 3"
+        },
+        {
+          "site": "0x00642A7B",
+          "mnemonic": "jne",
+          "operands": "0x642abd"
+        },
+        {
+          "site": "0x00642A7D",
+          "mnemonic": "push",
+          "operands": "4"
+        },
+        {
+          "site": "0x00642A7F",
+          "mnemonic": "call",
+          "operands": "0x646725"
+        },
+        {
+          "site": "0x00642A84",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00642A85",
+          "mnemonic": "and",
+          "operands": "dword ptr [ebp - 4], 0"
+        },
+        {
+          "site": "0x00642A89",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00642A8A",
+          "mnemonic": "call",
+          "operands": "0x64a715"
+        },
+        {
+          "site": "0x00642A8F",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00642A90",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x1c], eax"
+        },
+        {
+          "site": "0x00642A93",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x00642A95",
+          "mnemonic": "je",
+          "operands": "0x642aa0"
+        },
+        {
+          "site": "0x00642A97",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00642A98",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x00642A99",
+          "mnemonic": "call",
+          "operands": "0x64a740"
+        },
+        {
+          "site": "0x00642A9E",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00642A9F",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00642AA0",
+          "mnemonic": "or",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x00642AA4",
+          "mnemonic": "call",
+          "operands": "0x642ab4"
+        },
+        {
+          "site": "0x00642AA9",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x1c], 0"
+        },
+        {
+          "site": "0x00642AAD",
+          "mnemonic": "jne",
+          "operands": "0x642acc"
+        },
+        {
+          "site": "0x00642AAF",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00642AB2",
+          "mnemonic": "jmp",
+          "operands": "0x642abe"
+        },
+        {
+          "site": "0x00642AB4",
+          "mnemonic": "push",
+          "operands": "4"
+        },
+        {
+          "site": "0x00642AB6",
+          "mnemonic": "call",
+          "operands": "0x646658"
+        },
+        {
+          "site": "0x00642ABB",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00642ABC",
+          "mnemonic": "ret",
+          "operands": ""
+        },
+        {
+          "site": "0x00642ABD",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x00642ABE",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00642AC0",
+          "mnemonic": "push",
+          "operands": "dword ptr [0x68fa78]"
+        },
+        {
+          "site": "0x00642AC6",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x657098]"
+        },
+        {
+          "site": "0x00642ACC",
+          "mnemonic": "call",
+          "operands": "0x64544f"
+        },
+        {
+          "site": "0x00642AD1",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 113
+    },
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "address": "0x0064228D",
+      "coff_symbol": "__amsg_exit",
+      "size": 37,
+      "span_end": "0x006422B1",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "319effa96c10d6ea86de3226841569cfc57b04636dbbb6a317f824336069a198",
+      "body_sha256": "cd4e9913c164f7d95bb6b8418ff0264b95b1d404aefcba1fd5170cfa92f73264",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__FF_MSGBANNER",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00648E11",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__aexit_rtn",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066FF10",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006422B1",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00642296",
+            "target": "0x00648E11"
+          },
+          {
+            "site": "0x0064229F",
+            "target": "0x00648C70"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00642294",
+          "target": "0x0064229B"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006422A9",
+          "operand": "dword ptr [0x66ff10]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0064228D",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e2d4], 1"
+        },
+        {
+          "site": "0x00642294",
+          "mnemonic": "jne",
+          "operands": "0x64229b"
+        },
+        {
+          "site": "0x00642296",
+          "mnemonic": "call",
+          "operands": "0x648e11"
+        },
+        {
+          "site": "0x0064229B",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x0064229F",
+          "mnemonic": "call",
+          "operands": "0x648c70"
+        },
+        {
+          "site": "0x006422A4",
+          "mnemonic": "push",
+          "operands": "0xff"
+        },
+        {
+          "site": "0x006422A9",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x66ff10]"
+        },
+        {
+          "site": "0x006422AF",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006422B0",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x006422B1",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "ledger_size": 37
+    }
+  ],
+  "pending_funclets": [
+    {
+      "address": "0x0064671C",
+      "size": 9,
+      "parent": "0x00646685",
+      "source_offset": 151,
+      "source_symbol": "$L20182",
+      "decision": "pending",
+      "uncertainty": "crt-lock-finally-parent-bindings-unresolved"
+    },
+    {
+      "address": "0x00644236",
+      "size": 14,
+      "parent": "0x00644187",
+      "source_offset": 175,
+      "source_symbol": "$L20876",
+      "decision": "pending",
+      "uncertainty": "crt-exit-cleanup-parent-bindings-unresolved"
+    }
+  ],
+  "state_data": [
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "symbol": "__locktable",
+      "target_address": "0x00670150",
+      "size": 288,
+      "source_section": {
+        "size": 288,
+        "flags": "0xC0400040",
+        "definitions": [
+          {
+            "symbol": "__locktable",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "2a42b9cd37b5c11ab78cc633ffd65479d77dd8e54eaffb8fe5929630a6801299",
+      "body_sha256": "2a42b9cd37b5c11ab78cc633ffd65479d77dd8e54eaffb8fe5929630a6801299"
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "symbol": "_lclcritsects",
+      "target_address": "0x0068E348",
+      "size": 336,
+      "source_section": {
+        "size": 336,
+        "flags": "0xC0400080",
+        "definitions": [
+          {
+            "symbol": "_lclcritsects",
+            "offset": 0,
+            "section": 5,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "symbol": "?__crtInitCritSecAndSpinCount@?1??0@@9@9",
+      "target_address": "0x0068E770",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300080",
+        "definitions": [
+          {
+            "symbol": "?__crtInitCritSecAndSpinCount@?1??0@@9@9",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "__umaskval",
+      "target_address": "0x0068E2E4",
+      "size": 72,
+      "source_section": {
+        "size": 72,
+        "flags": "0xC0300080",
+        "definitions": [
+          {
+            "symbol": "__C_Exit_Done",
+            "offset": 68,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__C_Termination_Done",
+            "offset": 64,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__exitflag",
+            "offset": 60,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__wpgmptr",
+            "offset": 56,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__pgmptr",
+            "offset": 52,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "___winitenv",
+            "offset": 48,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__wenviron",
+            "offset": 44,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "___initenv",
+            "offset": 40,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__environ",
+            "offset": 36,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "___wargv",
+            "offset": 32,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "___argv",
+            "offset": 28,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "___argc",
+            "offset": 24,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__winminor",
+            "offset": 20,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__winmajor",
+            "offset": 16,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__winver",
+            "offset": 12,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__osver",
+            "offset": 8,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__osplatform",
+            "offset": 4,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__umaskval",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    }
+  ],
+  "lock_flags": [
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope_tables": [
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "symbol": "$T19908",
+      "target_address": "0x00667408",
+      "size": 12,
+      "source_section": {
+        "size": 12,
+        "flags": "0x40401040",
+        "definitions": [
+          {
+            "symbol": "$T19908",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": [
+          {
+            "offset": 4,
+            "type": "DIR32",
+            "symbol": "$L19903",
+            "addend": 0
+          },
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "$L19904",
+            "addend": 0
+          }
+        ]
+      },
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "$L19903",
+          "addend": 0,
+          "target_address": "0x0065059C"
+        },
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "$L19904",
+          "addend": 0,
+          "target_address": "0x006505AA"
+        }
+      ],
+      "source_sha256": "3414421b183188342209566fad4e0c0723070b4030630dde685ba70281e92725",
+      "body_sha256": "e9a103377a2030e262d2ca1cadcd0dd099b30ddc582049fa2b08034efedd0dfb",
+      "parent": "0x0065053F"
+    },
+    {
+      "member_offset": 1698134,
+      "member": "build\\intel\\mt_obj\\mlock.obj",
+      "member_sha256": "0f09836f942b1956e0f601fecfa77e8730c17e67d3d3bf939c78596391a035f4",
+      "symbol": "$T20187",
+      "target_address": "0x006615D0",
+      "size": 12,
+      "source_section": {
+        "size": 12,
+        "flags": "0x40401040",
+        "definitions": [
+          {
+            "symbol": "$T20187",
+            "offset": 0,
+            "section": 17,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": [
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "$L20182",
+            "addend": 0
+          }
+        ]
+      },
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "$L20182",
+          "addend": 0,
+          "target_address": "0x0064671C"
+        }
+      ],
+      "source_sha256": "3414421b183188342209566fad4e0c0723070b4030630dde685ba70281e92725",
+      "body_sha256": "db6659dfb0e49e0568656344c65dbd260a74141e3adcf5c5747f28d288398853",
+      "parent": "0x00646685"
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "$T20885",
+      "target_address": "0x00661200",
+      "size": 12,
+      "source_section": {
+        "size": 12,
+        "flags": "0x40401040",
+        "definitions": [
+          {
+            "symbol": "$T20885",
+            "offset": 0,
+            "section": 25,
+            "type": 0,
+            "storage": 3
+          }
+        ],
+        "relocations": [
+          {
+            "offset": 8,
+            "type": "DIR32",
+            "symbol": "$L20874",
+            "addend": 0
+          }
+        ]
+      },
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "$L20874",
+          "addend": 0,
+          "target_address": "0x00644231"
+        }
+      ],
+      "source_sha256": "3414421b183188342209566fad4e0c0723070b4030630dde685ba70281e92725",
+      "body_sha256": "3d6ae20c6b9a4c964d452549e3abfdf341d260000d17104fee82b304f039fd3f",
+      "parent": "0x00644187"
+    }
+  ],
+  "range_markers": [
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xp_a",
+      "target_address": "0x0066C054",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xp_a",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XPA"
+    },
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xp_z",
+      "target_address": "0x0066C05C",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xp_z",
+            "offset": 0,
+            "section": 5,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XPZ"
+    },
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xt_a",
+      "target_address": "0x0066C060",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xt_a",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XTA"
+    },
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xt_z",
+      "target_address": "0x0066C068",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xt_z",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XTZ"
+    },
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xi_a",
+      "target_address": "0x0066C038",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xi_a",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XIA"
+    },
+    {
+      "member_offset": 1677642,
+      "member": "build\\intel\\mt_obj\\crt0init.obj",
+      "member_sha256": "85b2c823c513ea3d5c30cdd55841830a8930e848281c4d9e864e0b4b51153ebb",
+      "symbol": "___xi_z",
+      "target_address": "0x0066C050",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___xi_z",
+            "offset": 0,
+            "section": 9,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "relocations": [],
+      "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "body_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "section_name": ".CRT$XIZ"
+    }
+  ],
+  "onexit_registration": {
+    "member_offset": 1411494,
+    "member": "build\\intel\\mt_obj\\onexit.obj",
+    "member_sha256": "eab9b3b16d2a3c0e2f995be8e15a93f7fba41331a72ae2a7bafa127d5a27bc59",
+    "symbol": "_pinit",
+    "target_address": "0x0066C03C",
+    "size": 4,
+    "source_section": {
+      "size": 4,
+      "flags": "0xC0300040",
+      "definitions": [
+        {
+          "symbol": "_pinit",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "___onexitinit",
+          "addend": 0
+        }
+      ]
+    },
+    "relocations": [
+      {
+        "offset": 0,
+        "type": "DIR32",
+        "symbol": "___onexitinit",
+        "addend": 0,
+        "target_address": "0x0064162B"
+      }
+    ],
+    "source_sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+    "body_sha256": "88d649df8d7f37279bd976f134bdada2227553251dc42f0102c6a76517d0d42f",
+    "section_name": ".CRT$XIC"
+  },
+  "common_globals": [
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "___onexitbegin",
+      "target_address": "0x0068FBB0",
+      "source_definition": {
+        "symbol": "___onexitbegin",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "___onexitend",
+      "target_address": "0x0068FBAC",
+      "source_definition": {
+        "symbol": "___onexitend",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    }
+  ],
+  "callback_ranges": [
+    {
+      "address": "0x0066C054",
+      "size": 12,
+      "sha256": "95578da9a0a13f3cc1f0a58ddaad479ddeb7ff02f3f82f4b0d0ec55b49aebda2",
+      "entries": [
+        "0x00000000",
+        "0x0064F138",
+        "0x00000000"
+      ],
+      "uncertainty": "Observed callback pointers only; no application/callee ownership follows from registration."
+    },
+    {
+      "address": "0x0066C060",
+      "size": 12,
+      "sha256": "383c3708dfb5fa32f1fb97f811f09e041b9654392c13d11b5ddc0e287691a824",
+      "entries": [
+        "0x00000000",
+        "0x006465AD",
+        "0x00000000"
+      ],
+      "uncertainty": "Observed callback pointers only; no application/callee ownership follows from registration."
+    },
+    {
+      "address": "0x0066C038",
+      "size": 28,
+      "sha256": "50d7bceb85ac2a06e7360cbb6ee62534283ba3a8ce1f26ba996b578596f1849d",
+      "entries": [
+        "0x00000000",
+        "0x0064162B",
+        "0x00648052",
+        "0x0064F08F",
+        "0x006504F9",
+        "0x0064659A",
+        "0x00000000"
+      ],
+      "uncertainty": "Observed callback pointers only; no application/callee ownership follows from registration."
+    }
+  ],
+  "sdk_layout": {
+    "probe": "probes/VC7CriticalSectionLayout.cpp",
+    "probe_sha256": "8cef7860e0e9a4cef2522db2576db12b04196f67cf8da9d8302d6329e67d6389",
+    "profile": [
+      "/Od",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/I",
+      "src"
+    ],
+    "symbol": "_CriticalSectionLayoutProbe",
+    "size": 40,
+    "values": [
+      24,
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      4,
+      8,
+      3221225495
+    ],
+    "headers": {
+      "PlatformSDK/Include/WinNT.h": "3aec4a87873489d4ea3987c117c7d1a37c2198f5f07d953031d47bc4a28da106",
+      "PlatformSDK/Include/WinError.h": "d17ebc1cd84e9257c92fbdf6198f34c126ee8b8c71fda453a4bc3f3005326304"
+    }
+  },
+  "literal_controls": [
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+      "target_address": "0x0066159C",
+      "data_size": 13,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "d89b4bfe0229ab034c8597fbd9c4b70af3690382b8c700ec05d6923da518275c"
+    },
+    {
+      "member_offset": 1364582,
+      "member": "build\\intel\\mt_obj\\initcrit.obj",
+      "member_sha256": "59f0135ad56a9a640c7a73d71766db25da3f739675f46eee23d5198802737baa",
+      "symbol": "??_C@_0CG@PKBDLMEO@InitializeCriticalSectionAndSpin@",
+      "target_address": "0x006673DC",
+      "data_size": 38,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CG@PKBDLMEO@InitializeCriticalSectionAndSpin@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "c142f764ccea0b35a43e19573417a221997af846a3fd93f7ddd0262a34f0ef6f"
+    },
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+      "target_address": "0x0066159C",
+      "data_size": 13,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0N@MDJJJHMB@kernel32?4dll?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "d89b4bfe0229ab034c8597fbd9c4b70af3690382b8c700ec05d6923da518275c"
+    },
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "symbol": "??_C@_08KNHFBNJ@FlsAlloc?$AA@",
+      "target_address": "0x00661590",
+      "data_size": 9,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_08KNHFBNJ@FlsAlloc?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "574f9b2cb1c509be66aa90427c3250a3249a19c7a243b86f4ab13b4040abbd1e"
+    },
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "symbol": "??_C@_0M@GDNOONDI@FlsGetValue?$AA@",
+      "target_address": "0x00661584",
+      "data_size": 12,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0M@GDNOONDI@FlsGetValue?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "51598ab3ab558b58b22deb49515346e61d997d79ab4215fd040ce7125ea0818f"
+    },
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "symbol": "??_C@_0M@JCPCPOEF@FlsSetValue?$AA@",
+      "target_address": "0x00661578",
+      "data_size": 12,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0M@JCPCPOEF@FlsSetValue?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "24e391b36bf5f29d67cdb94094f5662081c98677e63407f52f1dc1e924034c7d"
+    },
+    {
+      "member_offset": 1724384,
+      "member": "build\\intel\\mt_obj\\tidtable.obj",
+      "member_sha256": "0323986c63d1bb2cc9f3026b8a83a182e51f308a87ee24d7aaee493fcb05fef3",
+      "symbol": "??_C@_07PEJMOBNF@FlsFree?$AA@",
+      "target_address": "0x00661570",
+      "data_size": 8,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_07PEJMOBNF@FlsFree?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "b25da59ca0b82d9b4b8ddb0a22566cbce73af231e364ed982046c841b26c8dd8"
+    }
+  ]
+}

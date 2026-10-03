@@ -4826,3 +4826,122 @@ attestation, 217 public tests, progress freshness and `git diff --check`.
 All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
 Investigation and intermediate verification used local tools; the public
 acceptance request ran once.
+
+
+## R118 — complete lock initialization and termination-range controls
+
+All six handoff candidates and three required initialization dependencies
+receive whole source/target review. Five library bodies / 273 bytes are
+accepted; four roots / 444 source bytes and two existing interior cleanup
+candidates / 23 bytes remain pending. Replay
+`config/termination-lock-origin-evidence.json` with
+`scripts/repo-python scripts/verify-termination-lock-origins.py`.
+
+| Address | Complete bytes | Decision and source association |
+| --- | ---: | --- |
+| `0x00646658` | 21 | Library `__unlock` |
+| `0x006440E7` | 24 | Library `__initterm`; observed EAX begin ABI |
+| `0x006465BA` | 73 | Library `__mtinitlocks`, required static initializer |
+| `0x0065053F` | 139 | Library `___crtInitCritSecAndSpinCount`, required API wrapper |
+| `0x0065052F` | 16 | Library `___crtInitCritSecNoSpinCount@8`, complete RET 8 fallback |
+| `0x00644187` | 195 | Pending `_doexit`: lock/onexit graph unresolved |
+| `0x00646725` | 49 | Pending `__lock`: lazy initializer/error chain unresolved |
+| `0x00646685` | 160 source, 151 candidate | Pending `__mtinitlocknum` |
+| `0x0064162B` | 40 | Pending `___onexitinit`: allocator chain unresolved |
+| `0x0064671C` | 9 interior | Pending finally inside the 160-byte lock parent |
+| `0x00644236` | 14 interior | Pending shared cleanup inside the 195-byte exit parent |
+
+The cold replay checks every complete hash-pinned archive member, each own
+auxiliary source extent and all 64 typed root fields. It rechecks full local
+relocation metadata, every non-field byte, every instruction, branch and
+indirect call. Complete source fingerprints and named but unreviewed callees
+are insufficient ownership evidence. Exact, source and mapping ledgers are
+unchanged; executable debug names and original compiler flags remain unknown.
+
+The entire writable lock table is 288 bytes: 36 eight-byte pointer/type records.
+All initial pointer words are zero; fourteen type words are 1. The complete
+336-byte static critical-section BSS has its actual defining symbol and PE
+loader zero-fill geometry. A cold natural SDK probe emits all forty readonly
+bytes: 24-byte CRITICAL_SECTION, six field offsets, four-byte pointer size,
+ERROR_NOT_ENOUGH_MEMORY and STATUS_NO_MEMORY. Source/header hashes and the
+whole section definition are checked. These are complete SDK types, not game
+owner layouts. Source table flags, actual stride/count, API calls and target
+stores establish associations; arbitrary zero storage earns no identity.
+
+The full 73-byte initializer walks all 36 records, assigns the fourteen static
+buffers at 24-byte strides and calls the independently compared critical-section
+wrapper with spin count 4000. Its failure branch clears the actual table slot
+and returns zero; the complete success path returns one. The 21-byte unlock
+loads the actual indexed pointer and passes it to raw LeaveCriticalSection.
+The 239-byte thread-startup parent independently calls this initializer; its
+FLS/TLS/allocation dependencies remain diagnostic and do not gain ownership.
+
+The complete 139-byte wrapper retains its cached function pointer, platform
+branch, full "kernel32.dll" and "InitializeCriticalSectionAndSpinCount"
+literals, raw GetModuleHandleA/GetProcAddress, actual EAX lookup result/store,
+fallback selection and two-argument indirect call. Its complete defining
+four-byte cache BSS has actual loader geometry. R115's independent
+GetVersionExA result/store witnesses preserve platform-global identity. The
+16-byte fallback passes only the first input to raw InitializeCriticalSection,
+returns one and removes both incoming arguments with RET 8. No guessed ordinary
+C cleanup or truncated unused argument is used.
+
+The wrapper's entire twelve-byte readonly scope table has the source enclosing
+level -1 and two actual label pointers: filter `0x0065059C`, handler
+`0x006505AA`. Cold COFF label definitions prove that both belong to the same
+complete primary source section. The embedded filter RET, exception-code
+read, STATUS_NO_MEMORY comparison, SetLastError(8), SEH epilog and main RET
+remain in the 139-byte extent. The prolog/epilog and fallback bind independently
+replayed complete bodies. Three full scope definitions / 36 bytes retain the
+other pending parents' actual cleanup bindings as diagnostics.
+
+The callback loop's own 24-byte source body is checked in full, including
+EAX begin, stack end, null guard, four-byte advance, indirect input call and
+caller cleanup. Whole doexit parent calls supply actual pre/terminal ranges;
+complete crt0init.obj `.CRT$XPA`/`.CRT$XPZ` and `.CRT$XTA`/`.CRT$XTZ` boundary
+objects independently define their endpoints. Both entire twelve-byte merged
+ranges retain markers and their observed callback pointer. Implementations
+of those callbacks receive no credit from registration.
+
+Onexit begin/end have real four-byte COMMON definitions in crt0dat.obj and
+actual loader zero-fill geometry. The full forty-byte pending initializer
+retains its allocation call and both pointer stores. Its entire four-byte
+`.CRT$XIC` registration and complete `.CRT$XIA`/`.CRT$XIZ` markers prove the
+actual merged 28-byte input table. The whole 106-byte cinit context retains
+its observed range traversal; other callbacks and dependencies remain unknown.
+All three merged ranges total 52 bytes. The entire shared 72-byte CRT state
+BSS and pending doexit's flag/pointer flows remain independently frozen.
+
+The source auxiliary extent for lazy lock initialization is 160 bytes, including
+its nine-byte finally at `0x0064671C`. The historical 151-byte main and nine-byte
+interior candidate are preserved pending allocator/TLS dependencies. The
+195-byte doexit body also owns the fourteen-byte shared cleanup entry at
+`0x00644236`; its EH finally pointer starts five bytes earlier at `0x00644231`
+with register preparation. Every source label and full parent byte is checked.
+Neither fragment has a fabricated standalone source body or origin credit.
+No comparison is truncated to the provisional candidate, and the private
+Ghidra database remains unchanged.
+
+Six additional whole source contexts / 522 bytes retain thread initialization,
+cinit, malloc, errno, free and the older error policy. Three old anchors /
+124 bytes independently preserve prolog, epilog and exit dispatch; R117 also
+cold-replays the complete security/runtime/import graphs. Seven whole readonly
+literal definitions / 105 bytes include the dynamic API controls and diagnostic
+FLS names. All fields keep actual destinations without promoting open graphs.
+
+Evidence-only and accepted replays passed locally. Sixteen public regressions
+reject lost primary/cleanup extents, tiny-slice ownership, premature allocator
+acceptance, substituted callees, wrong table/static storage, partial SDK layout,
+changed API cache/cleanup/scope/range/ABI fields, missing literals and source/
+exact credit. The checkpoint is 3,110 resolved: 919 authored, 1,616 library and
+575 compiler generated, with 1,241 pending. Exact remains 60 / 9,883 bytes;
+the provisional authored denominator and recorded extents remain 1,965,299
+and 872 / 1,952,956. R119 targets the required allocator/TLS dependencies;
+retain outstanding lifetime ambiguities and pending security/error/lock roots.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the full
+R118 verifier and retained R117/R116/R115/runtime/import graphs, R114 lifetime
+controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
+233 public tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools.

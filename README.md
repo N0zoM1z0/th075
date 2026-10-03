@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R117 checkpoint, origin review has classified 919 authored,
-1,611 library and 575 compiler-generated candidates; 1,246 remain pending.
+At the R118 checkpoint, origin review has classified 919 authored,
+1,616 library and 575 compiler-generated candidates; 1,241 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -49,9 +49,11 @@ complete heap initialization graph and vendor SEH epilog, retaining unresolved
 error, handler and multibyte chains. R116 resolves dynamic exit/message-box
 dispatch and the complete shared-copy entry while preserving unresolved cookie
 failure chains. R117 resolves the cookie initializer and complete SEH/NLG
-dependencies, retaining unresolved user-handler and termination chains. The
-next handoff targets six R118 termination/lock dependencies while preserving
-the 60-function exact baseline.
+dependencies, retaining unresolved user-handler and termination chains.
+R118 resolves complete static locks, dynamic critical-section dispatch and
+the callback loop, retaining allocator/TLS and shared-cleanup uncertainty. The
+next handoff targets six R119 allocator/TLS dependencies while preserving the
+60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).

@@ -2024,3 +2024,55 @@ attestation, 217 public tests, progress freshness and `git diff --check`.
 All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
 Investigation and intermediate verification used local tools; the public
 acceptance request ran once.
+
+
+## R118 — complete static locks, critical-section dispatch and callback loop
+
+Five complete library bodies add 273 bytes: unlock (21), callback loop (24),
+static lock initializer (73), dynamic critical-section wrapper (139) and
+stdcall no-spin fallback (16). All 64 root fields and entire own source
+extents cold-replay. The callback loop preserves its observed EAX begin
+and stack end; the fallback keeps RET 8 despite using only its first input.
+Neither inferred conventional ABI nor tiny code shape supplies origin.
+
+The full 288-byte lock table has 36 pointer/type entries and fourteen static
+flags. All 336 bytes of static critical-section BSS, four-byte API cache and
+whole 72-byte CRT state have real source definitions and actual loader
+geometry. A natural forty-byte SDK array proves complete 24-byte critical
+sections, all field offsets, pointer size and error constants. The full
+initializer walks all table records and uses actual 24-byte buffer strides.
+The thread-startup parent is frozen diagnostically, retaining its unresolved
+FLS/TLS/allocation graph.
+
+The dynamic wrapper binds full DLL/export strings, raw lookup imports, actual
+cache stores/call/fallback selection and all twelve bytes of its readonly
+scope table. Actual filter/handler labels belong to the entire 139-byte primary,
+including the embedded RET, status/error paths, epilog and main RET. R115's
+version-global provenance and R117's complete SEH graph independently replay.
+
+Three complete merged callback ranges / 52 bytes retain actual source boundary
+objects and markers. The forty-byte onexit initializer and its entire CRT
+registration are pending; both four-byte onexit COMMON definitions retain
+actual loader storage and pointer flows. Callback registration grants no
+implementation origin. Seven full literal controls / 105 bytes and six whole
+source contexts / 522 bytes remain independently compared diagnostics.
+
+Lazy lock source is 160 bytes, including a nine-byte finally; the provisional
+151-byte main and nine-byte interior candidate remain unknown. The 195-byte
+exit parent also owns a fourteen-byte shared cleanup entry whose EH finally
+starts five bytes earlier. Whole labels/parents are compared without synthetic
+standalone sources or truncation. Four roots / 444 source bytes and both
+interior candidates / 23 bytes retain allocator/TLS/termination uncertainty.
+The private database, exact and source ledgers are unchanged.
+
+The checkpoint is 3,110 resolved (919 authored, 1,616 library, 575 compiler)
+and 1,241 pending. Exact remains 60 / 9,883 bytes; provisional authored coverage
+and recorded extents stay 9,883 / 1,965,299 and 872 / 1,952,956. Continue R119
+allocator/TLS dependencies, preserving all prior unresolved roots/ambiguities.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the full
+R118 verifier and retained R117/R116/R115/runtime/import graphs, R114 lifetime
+controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
+233 public tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools.

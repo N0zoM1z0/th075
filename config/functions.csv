@@ -3535,7 +3535,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00641260,829,0x0064159C,_memmove,_memmove,VC71CRT,excluded,0.00,,,false,,R025,library,Whole pinned CRT auxiliary extent and every local relocation verified; alias name provisional; no source/exact credit
 0x0064159D,14,0x006415AA,operator_new,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006415AB,128,0x0064162A,__onexit_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064162B,40,0x00641652,___onexitinit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064162B,40,0x00641652,___onexitinit,,,unclassified,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,,Complete own source body and actual fields retained; crt-onexit-allocator-bindings-unresolved; no source or exact credit
 0x00641653,50,0x00641684,__onexit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641685,6,0x0064168A,FUN_00641685,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064168B,18,0x0064169C,_atexit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3621,10 +3621,10 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006440A5,48,0x006440D4,___crtExitProcess,___crtExitProcess,VC71CRT,excluded,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,library,Library origin only; complete source definitions and actual dynamic API/shared-tail provenance; original executable debug names unknown; no source or exact credit; ledger extent reconciled from 47 to 48 including terminal INT3; private database unchanged
 0x006440D5,9,0x006440DD,FUN_006440d5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006440DE,9,0x006440E6,FUN_006440de,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006440E7,24,0x006440FE,__initterm,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006440E7,24,0x006440FE,__initterm,__initterm,VC71CRT,excluded,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,library,Library origin only; complete source definitions and actual API/cache/static-storage/parent-range provenance; executable debug names unknown; no source or exact credit
 0x0064411D,106,0x00644186,__cinit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00644187,195,0x00644249,doexit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00644236,14,0x00644243,FUN_00644236,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00644187,195,0x00644249,doexit,,,unclassified,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,,Complete own source body and actual fields retained; crt-termination-lock-onexit-bindings-unresolved; no source or exact credit
+0x00644236,14,0x00644243,FUN_00644236,,,unclassified,0.00,,,false,,R118; complete parent source auxiliary extent and internal label/cleanup comparison,,Interior cleanup retains original provisional extent; parent code/data/allocator bindings remain unresolved; no source or exact credit
 0x0064424A,17,0x0064425A,_exit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064425B,17,0x0064426B,__exit,,,unclassified,0.00,,,false,,R117; config/security-eh-origin-evidence.json; whole vendor auxiliary extent and all typed fields; complete source/data/API/shared-tail/initializer controls,,Complete source/target extent and actual fields retained; crt-doexit-lock-callback-state-unresolved; no source or exact credit
 0x0064426C,15,0x0064427A,__cexit,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3678,12 +3678,12 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006464C5,45,0x006464F1,_inconsistency,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646500,76,0x0064654B,__CallSettingFrame@12,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064654C,78,0x00646599,FUN_0064654c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x006465BA,73,0x00646602,__mtinitlocks,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006465BA,73,0x00646602,__mtinitlocks,__mtinitlocks,VC71CRT,excluded,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,library,Library origin only; complete source definitions and actual API/cache/static-storage/parent-range provenance; executable debug names unknown; no source or exact credit
 0x00646603,85,0x00646657,__mtdeletelocks,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00646658,21,0x0064666C,FUN_00646658,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00646685,151,0x0064671B,__mtinitlocknum,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064671C,9,0x00646724,FUN_0064671c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00646725,49,0x00646755,__lock,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00646658,21,0x0064666C,FUN_00646658,__unlock,VC71CRT,excluded,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,library,Library origin only; complete source definitions and actual API/cache/static-storage/parent-range provenance; executable debug names unknown; no source or exact credit
+0x00646685,151,0x0064671B,__mtinitlocknum,,,unclassified,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,,Complete own source body and actual fields retained; crt-lazy-lock-allocator-tls-boundaries-unresolved; no source or exact credit; whole source is 160 bytes with internal 9-byte cleanup; provisional 151-byte main and 9-byte interior candidate remain unchanged
+0x0064671C,9,0x00646724,FUN_0064671c,,,unclassified,0.00,,,false,,R118; complete parent source auxiliary extent and internal label/cleanup comparison,,Interior cleanup retains original provisional extent; parent code/data/allocator bindings remain unresolved; no source or exact credit
+0x00646725,49,0x00646755,__lock,,,unclassified,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,,Complete own source body and actual fields retained; crt-lock-lazy-initializer-error-chain-unresolved; no source or exact credit
 0x00646756,429,0x00646902,_realloc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006468BE,9,0x006468C6,FUN_006468be,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00646903,106,0x0064696C,__msize,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3860,8 +3860,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006504F0,9,0x006504F8,FUN_006504f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006504F9,30,0x00650516,___initmbctable,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00650517,24,0x0065052E,_abort,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0065052F,16,0x0065053E,___crtInitCritSecNoSpinCount@8,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0065053F,139,0x006505C9,___crtInitCritSecAndSpinCount,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0065052F,16,0x0065053E,___crtInitCritSecNoSpinCount@8,___crtInitCritSecNoSpinCount@8,VC71CRT,excluded,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,library,Library origin only; complete source definitions and actual API/cache/static-storage/parent-range provenance; executable debug names unknown; no source or exact credit
+0x0065053F,139,0x006505C9,___crtInitCritSecAndSpinCount,___crtInitCritSecAndSpinCount,VC71CRT,excluded,0.00,,,false,,R118; config/termination-lock-origin-evidence.json; whole vendor auxiliary extent and all typed fields; full lock table/SDK/API/EH/callback range controls,library,Library origin only; complete source definitions and actual API/cache/static-storage/parent-range provenance; executable debug names unknown; no source or exact credit
 0x006505CA,248,0x006506C1,__87except,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006506C2,3,0x006506C4,FUN_006506c2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006506C5,129,0x00650745,__getenv_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
