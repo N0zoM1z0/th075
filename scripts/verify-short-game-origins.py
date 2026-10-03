@@ -21,6 +21,8 @@ COHORTS = {
     "R100": ("short-game-origin-evidence.json", 12, 780, 27),
     "R102": ("batch-game-origin-evidence.json", 17, 2051, 33),
     "R103": ("batch-state-origin-evidence.json", 33, 2600, 22),
+    "R104": ("batch-helper-origin-evidence.json", 16, 806, 18),
+    "R105": ("batch-closure-origin-evidence.json", 3, 365, 9),
 }
 
 

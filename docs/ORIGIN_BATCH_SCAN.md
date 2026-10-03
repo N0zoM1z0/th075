@@ -60,3 +60,22 @@ scripts/repo-python scripts/verify-short-game-origins.py --cohort R103
 This cohort and its four readonly scalar bindings also passed through the
 public MCP. There are now 1,358 pending candidates; refresh the private scan
 after every accepted batch.
+
+R104 used the same complete-body queues for sixteen small game helpers / 806
+bytes. The cohort binds eighteen independently reviewed whole anchors, sixteen
+parent edges and 88 selected instructions. It includes animation/state resets,
+sprite record operations, hexadecimal digit parsing, HUD/notice policies and
+small effect-field updates. R105 then accepted three larger callers / 365
+bytes whose ownership became explicit after R104: rectangle-corner assembly,
+a battle hit-sequence transition and notice initialization. Replay them with:
+
+```bash
+scripts/repo-python scripts/verify-short-game-origins.py --cohort R104
+scripts/repo-python scripts/verify-short-game-origins.py --cohort R105
+```
+
+Both cohort replays passed locally and through the no-auth public HTTPS MCP.
+The refreshed scan covers all 1,339 remaining candidates and retains 47 whole-
+body groups and 182 extent questions. Its strongest combined reviewed-game-
+callee/parent lane now contains six candidates. Short lifetime wrappers in
+that lane remain pending until explicit versus implicit emission is resolved.

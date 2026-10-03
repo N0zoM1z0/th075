@@ -3874,3 +3874,65 @@ bodies / 1,944,823 bytes. Exact remains 42 functions / 8,916 bytes against
 1,957,166 provisional authored bytes (0.46%); no source or exact credit.
 R102 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37113017957.
+
+## R104 — compact game helpers from the full batch scan
+
+The refreshed scanner supplied sixteen complete small bodies / 806 bytes with
+independent whole game context. Manual review reconciled every instruction,
+exit, direct target and indirect call site before recording ownership:
+
+| Address | Bytes | Observed behavior |
+| --- | ---: | --- |
+| `0x0040DB10` | 51 | Store four incoming dwords into a 16-byte sprite/geometry record |
+| `0x0040FAC0`, `0x0040FB00` | 52, 56 | Reset or set the observed animation counters and limits |
+| `0x0040FB40`, `0x0040FC50` | 43, 18 | Clear the secondary animation counter or byte at `+0x40` |
+| `0x00411BB0` | 38 | Copy three dwords into the vector at object offset 12 |
+| `0x00411BE0` | 33 | Forward the object to the observed global indirect draw dispatch |
+| `0x0041CA80` | 96 | Convert the observed ASCII hexadecimal digit/letter ranges |
+| `0x00423C60` | 32 | Clamp the selected global dword to a nonnegative value |
+| `0x00440B00` | 78 | Draw the selected battle-HUD notice through the reviewed renderer |
+| `0x00455010` | 96 | Combine the reviewed state-range predicate with the observed float field test |
+| `0x0045B830`, `0x005FAC20` | 21 each | Clear one selected effect dword |
+| `0x0045D650` | 78 | Configure the selected notice text fields and reviewed text helper |
+| `0x0045D6A0`, `0x0045D6F0` | 72, 21 | Begin or clear the observed notice transition fields |
+
+`verify-short-game-origins.py --cohort R104` freezes all sixteen extents,
+eighteen independently reviewed whole anchors, sixteen parent edges and 88
+selected instruction witnesses. One complete readonly `0.0f` scalar is bound
+to its actual instruction use. The draw call is retained as indirect and gives
+no dynamic-callee credit. Constructor/destructor-only shapes and an ambiguous
+copy/copy-backward helper remain pending. Names and complete object layouts are
+inferred; ASCII conversion behavior does not recover the original API contract.
+
+The cohort passed locally and through the no-auth public HTTPS MCP. An attested
+Ghidra caller query covered all sixteen addresses and returned its completion
+marker. R104 reaches 3,009 reviewed candidates (894 authored, 1,540 library,
+575 compiler), with 1,342 pending. There are 847 explicitly recorded authored
+bodies / 1,945,629 bytes. Exact remains 42 functions / 8,916 bytes against
+1,957,972 provisional authored bytes (0.46%); no source or exact credit.
+R103 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37113604310.
+
+## R105 — closure from newly reviewed helper dependencies
+
+R104 exposed three complete callers whose direct dependencies and parent
+context are now independently reviewed:
+
+| Address | Bytes | Observed behavior |
+| --- | ---: | --- |
+| `0x00427500` | 204 | Build four 16-byte rectangle-corner records through `0x0040DB10`, then copy all four records |
+| `0x00443FC0` | 88 | Initialize the observed battle hit-sequence fields, reset animation state, forward one selected byte and request sound `0x26` |
+| `0x0045CDC0` | 73 | Initialize four notice fields and call `0x0045D650` with argument one |
+
+`verify-short-game-origins.py --cohort R105` checks all 365 bytes, nine whole
+reviewed anchors, three full parent edges and every direct call. The attested
+Ghidra caller query returned both target and query completion markers. The
+cohort passed locally and through the no-auth public HTTPS MCP. A complete CRT
+archive dependency-closure scan found no remaining pending candidate whose
+every direct relocation resolves to an already reviewed CRT body; this is a
+negative diagnostic result rather than origin evidence.
+
+R105 reaches 3,012 reviewed candidates (897 authored, 1,540 library, 575
+compiler), with 1,339 pending. There are 850 explicitly recorded authored
+bodies / 1,945,994 bytes. Exact remains 42 functions / 8,916 bytes against
+1,958,337 provisional authored bytes (0.46%); no source or exact credit.

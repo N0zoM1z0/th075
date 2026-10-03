@@ -1484,3 +1484,24 @@ does not establish dynamic ownership. Camera reset writes explicit nonmember
 globals, including 20.0f, rather than proving origin from a constructor-like
 return value. R103 grows the provisional authored denominator to 1,957,166;
 no source or exact credit is added.
+
+## Small game helpers and dependency closure after R105
+
+R104 records sixteen complete authored helpers / 806 bytes. Observed behavior
+includes four-dword sprite-record writes, animation counter resets, a vector
+copy at object offset 12, one indirect global draw dispatch, hexadecimal digit
+conversion, a nonnegative global clamp, selected HUD text drawing, a grounded
+state-window predicate, notice setup/transition updates and small effect-field
+clears. The hexadecimal helper maps the observed ASCII digit and letter ranges;
+its provisional name does not imply a recovered parser contract. Likewise,
+state and field names remain inferred from their complete instruction behavior
+and reviewed game context.
+
+R105 closes three dependencies exposed by those helpers. One 204-byte body
+builds and copies four 16-byte rectangle-corner records through the R104 setter.
+An 88-byte battle transition resets animation fields, forwards a selected byte
+and requests sound 0x26. A 73-byte notice initializer writes four observed
+fields and calls the reviewed notice-text setup with argument one. Their full
+365 bytes bind nine independently reviewed whole anchors and three parent
+edges. R104 and R105 grow the provisional authored denominator to 1,958,337;
+they add no reconstruction source or exact credit.

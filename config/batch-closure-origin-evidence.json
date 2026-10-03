@@ -1,0 +1,428 @@
+{
+  "evidence_id": "R105",
+  "functions": [
+    {
+      "address": "0x00427500",
+      "size": 204,
+      "role": "SceneText::BuildRectangleCornersAt00427500",
+      "subsystem": "SceneText",
+      "body_sha256": "7e50a9f13d54d43903719b41bae3238b4ad65e72eec18830477bef0ee3b0df63",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00427518",
+          "target": "0x0040DB10"
+        },
+        {
+          "site": "0x00427545",
+          "target": "0x0040DB10"
+        },
+        {
+          "site": "0x00427575",
+          "target": "0x0040DB10"
+        },
+        {
+          "site": "0x004275A5",
+          "target": "0x0040DB10"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00427509",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00427515",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 0x10]"
+        },
+        {
+          "site": "0x00427518",
+          "mnemonic": "call",
+          "operands": "0x40db10"
+        },
+        {
+          "site": "0x00427520",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x00427533",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0xc], eax"
+        },
+        {
+          "site": "0x00427536",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00427542",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 0x20]"
+        },
+        {
+          "site": "0x00427545",
+          "mnemonic": "call",
+          "operands": "0x40db10"
+        },
+        {
+          "site": "0x0042754D",
+          "mnemonic": "add",
+          "operands": "ecx, 0x10"
+        },
+        {
+          "site": "0x00427563",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], eax"
+        },
+        {
+          "site": "0x00427566",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00427572",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 0x30]"
+        },
+        {
+          "site": "0x00427575",
+          "mnemonic": "call",
+          "operands": "0x40db10"
+        },
+        {
+          "site": "0x0042757D",
+          "mnemonic": "add",
+          "operands": "ecx, 0x20"
+        },
+        {
+          "site": "0x00427593",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], eax"
+        },
+        {
+          "site": "0x00427596",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x004275A2",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 0x40]"
+        },
+        {
+          "site": "0x004275A5",
+          "mnemonic": "call",
+          "operands": "0x40db10"
+        },
+        {
+          "site": "0x004275AD",
+          "mnemonic": "add",
+          "operands": "ecx, 0x30"
+        },
+        {
+          "site": "0x004275C3",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], eax"
+        },
+        {
+          "site": "0x004275C9",
+          "mnemonic": "ret",
+          "operands": "0x10"
+        }
+      ],
+      "evidence_id": "R105"
+    },
+    {
+      "address": "0x00443FC0",
+      "size": 88,
+      "role": "BattleState::StartHitSequenceAt00443FC0",
+      "subsystem": "BattleState",
+      "body_sha256": "313c8901c0b8980cc147575cf02da27fc7b79436d2868d6694c2b233a37ed696",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00443FE7",
+          "target": "0x0040FAC0"
+        },
+        {
+          "site": "0x00443FEF",
+          "target": "0x0040FC50"
+        },
+        {
+          "site": "0x00444000",
+          "target": "0x004424E0"
+        },
+        {
+          "site": "0x0044400D",
+          "target": "0x004079C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00443FCA",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x3b0], 0"
+        },
+        {
+          "site": "0x00443FD6",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x3b6], 0x3e8"
+        },
+        {
+          "site": "0x00443FE3",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "site": "0x00443FE7",
+          "mnemonic": "call",
+          "operands": "0x40fac0"
+        },
+        {
+          "site": "0x00443FEF",
+          "mnemonic": "call",
+          "operands": "0x40fc50"
+        },
+        {
+          "site": "0x00443FF7",
+          "mnemonic": "mov",
+          "operands": "cl, byte ptr [eax + 0x66]"
+        },
+        {
+          "site": "0x00443FFA",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x00443FFB",
+          "mnemonic": "push",
+          "operands": "0x35"
+        },
+        {
+          "site": "0x00444000",
+          "mnemonic": "call",
+          "operands": "0x4424e0"
+        },
+        {
+          "site": "0x00444005",
+          "mnemonic": "push",
+          "operands": "0x26"
+        },
+        {
+          "site": "0x00444007",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671618]"
+        },
+        {
+          "site": "0x0044400D",
+          "mnemonic": "call",
+          "operands": "0x4079c0"
+        },
+        {
+          "site": "0x00444015",
+          "mnemonic": "ret",
+          "operands": "8"
+        }
+      ],
+      "evidence_id": "R105"
+    },
+    {
+      "address": "0x0045CDC0",
+      "size": 73,
+      "role": "FighterState::InitializeNoticeAt0045CDC0",
+      "subsystem": "FighterState",
+      "body_sha256": "4612750848d852f73d6fb6eb8f9cc3306e6ae317ddc17f74445086111b5165e6",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x0045CDFE",
+          "target": "0x0045D650"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045CDCA",
+          "mnemonic": "mov",
+          "operands": "cx, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0045CDCE",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x6f0], cx"
+        },
+        {
+          "site": "0x0045CDD8",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0x6f4], 0"
+        },
+        {
+          "site": "0x0045CDE4",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x6f2], 0"
+        },
+        {
+          "site": "0x0045CDF0",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x6f6], 5"
+        },
+        {
+          "site": "0x0045CDF9",
+          "mnemonic": "push",
+          "operands": "1"
+        },
+        {
+          "site": "0x0045CDFE",
+          "mnemonic": "call",
+          "operands": "0x45d650"
+        },
+        {
+          "site": "0x0045CE06",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R105"
+    }
+  ],
+  "anchors": [
+    {
+      "address": "0x004079C0",
+      "size": 142,
+      "role": "SoundBank::Play",
+      "origin_evidence": "R016",
+      "body_sha256": "33b7623f1b4f854846ed5011bc60dc3813756253a4a29b83142124759fd99f82"
+    },
+    {
+      "address": "0x0040DB10",
+      "size": 51,
+      "role": "SpriteGeometry::SetFourDwordsAt0040DB10",
+      "origin_evidence": "R104",
+      "body_sha256": "27c6d0aab2f916c4313422356c0468403bb2ac182891d47686c0eaf76f160523"
+    },
+    {
+      "address": "0x0040FAC0",
+      "size": 52,
+      "role": "AnimationState::ResetPrimaryCountersAt0040FAC0",
+      "origin_evidence": "R104",
+      "body_sha256": "8a25044237b7ee62e5dda1c6de489cab9be302c0b3a192e423faeea009925db2"
+    },
+    {
+      "address": "0x0040FC50",
+      "size": 18,
+      "role": "AnimationState::ClearByte40At0040FC50",
+      "origin_evidence": "R104",
+      "body_sha256": "8bdb12f79bc53f67e273b304b97c02ff7c0a2e412419c3ff2d0c8da12caa99f4"
+    },
+    {
+      "address": "0x00425C80",
+      "size": 2429,
+      "role": "MusicRoomScene::RenderList",
+      "origin_evidence": "R040",
+      "body_sha256": "f91b961dfdaf387bccfc92733cf0dca5ccba649e1efcee69bb06c24cf9777206"
+    },
+    {
+      "address": "0x004424E0",
+      "size": 96,
+      "role": "BattleState::SpawnMidpointEffectAt004424E0",
+      "origin_evidence": "R101",
+      "body_sha256": "72e3c2ed173979a05f8a06cb79c52784f39aabff94a296c52f809c6a9fee8484"
+    },
+    {
+      "address": "0x004439A0",
+      "size": 1185,
+      "role": "BattleCombat::ApplyHitResponseAt004439A0",
+      "origin_evidence": "R069",
+      "body_sha256": "c156b362b56143183d3ffa0e1816c78ec5ff70d20c69c904c56a767d3cc05db3"
+    },
+    {
+      "address": "0x0045D650",
+      "size": 78,
+      "role": "FighterState::ConfigureNoticeTextAt0045D650",
+      "origin_evidence": "R104",
+      "body_sha256": "9227ac4ce2b0d857cba5a42fbada8780d03c02de938a63222cf6293f2824da7c"
+    },
+    {
+      "address": "0x00483350",
+      "size": 12400,
+      "role": "CharacterSequence::AdvanceAt00483350",
+      "origin_evidence": "R048",
+      "body_sha256": "95e5f04a7adfbb758b62d7bf403bdc27c5e7db8e521de76dd31f2035f692ff7e"
+    }
+  ],
+  "parent_calls": [
+    {
+      "parent": "0x00425C80",
+      "child": "0x00427500",
+      "sites": [
+        "0x00425D54",
+        "0x00425D93",
+        "0x00425DCD",
+        "0x00426164",
+        "0x00426468"
+      ]
+    },
+    {
+      "parent": "0x004439A0",
+      "child": "0x00443FC0",
+      "sites": [
+        "0x00443A64",
+        "0x00443B0F",
+        "0x00443C05",
+        "0x00443CB0",
+        "0x00443DA9"
+      ]
+    },
+    {
+      "parent": "0x00483350",
+      "child": "0x0045CDC0",
+      "sites": [
+        "0x00483447",
+        "0x004836B4",
+        "0x00483793",
+        "0x0048389D",
+        "0x004839DA",
+        "0x00483C4B",
+        "0x00483D2A",
+        "0x00483E34",
+        "0x00483F71",
+        "0x004841E0",
+        "0x004842BF",
+        "0x004843C9",
+        "0x00484512",
+        "0x00484783",
+        "0x00484862",
+        "0x00484A00",
+        "0x00484B0A",
+        "0x00484C47",
+        "0x00484EB8",
+        "0x00484FA5",
+        "0x0048510A",
+        "0x00485247",
+        "0x004854B6",
+        "0x00485652",
+        "0x004857B7",
+        "0x004858CC",
+        "0x00485B5E",
+        "0x00485CE3",
+        "0x00485D75",
+        "0x00485E64",
+        "0x00485EF6",
+        "0x00485FE5",
+        "0x00486033",
+        "0x0048615D",
+        "0x00486287"
+      ]
+    }
+  ],
+  "strings": [],
+  "virtual_slots": []
+}
