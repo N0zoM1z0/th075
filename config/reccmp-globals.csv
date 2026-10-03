@@ -18,6 +18,7 @@ Graphics::g_ColorMultiplier,0x0066C080,data
 Graphics::g_DrawScale,0x0066C084,data
 Graphics::g_ActiveTarget,0x0066C088,data
 Graphics::g_PixelShader,0x0066C1B8,data
+g_ClampedGameValue,0x0066C23C,data
 __security_cookie,0x0066FE30,data
 Graphics::g_TargetViewport,0x00671180,data
 Graphics::g_PresentCallback,0x00671198,data

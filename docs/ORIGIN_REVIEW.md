@@ -3967,3 +3967,28 @@ library origin only. R106 reaches 3,036 reviewed candidates (897 authored,
 exact state remain 8,916 / 1,958,337 bytes (0.46%); no source or exact credit.
 R105 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37114655064.
+
+## R107 — pinned VC7 runtime leaves
+
+Four complete target bodies / 199 bytes match complete COFF functions extracted
+from the hash-pinned VC7.1 `libcmt.lib` archive:
+
+| Address | Bytes | COFF function | Relocations |
+| --- | ---: | --- | ---: |
+| `0x00643680` | 123 | `__setjmp3` | one `DIR32` `__except_list` field |
+| `0x00643AF0` | 31 | `__aullshr` | none |
+| `0x00646B65` | 23 | `__load_CW` | none |
+| `0x00646BD8` | 22 | `__checkTOS_withFB` | none |
+
+`verify-runtime-leaf-origins.py` re-extracts the pinned archive members, checks
+their names, offsets, symbol extents, relocations and hashes, compares every
+target byte and validates complete control flow. The `__setjmp3` relocation is
+the zero field of the observed `64 A1 00000000` FS:[0] load; it is retained as
+explicit evidence rather than treated as a relocation-free match. The verifier
+passed locally and through the no-auth public HTTPS MCP.
+
+R107 reaches 3,040 reviewed candidates (897 authored, 1,568 library, 575
+compiler), with 1,311 pending. The authored denominator remains 1,958,337
+bytes. This is library-origin evidence and adds no reconstruction source or
+exact credit. The user then paused full origin review and resumed exact
+reconstruction.

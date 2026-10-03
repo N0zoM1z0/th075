@@ -36,6 +36,8 @@ def main() -> int:
     if health.get("authentication") != "none" or health.get("workspaceRoot") != str(ROOT):
         raise ValueError("service does not report the expected no-auth TH075 configuration")
     state = json.loads(subprocess.check_output(["tailscale", "status", "--json"]))
+    funnel_before_test = json.loads(
+        subprocess.check_output(["tailscale", "funnel", "status", "--json"]))
     host = state["Self"]["DNSName"].rstrip(".")
     port = int(env["FUNNEL_HTTPS_PORT"])
     url = f"https://{host}:{port}{env['MCP_PATH']}"
@@ -150,16 +152,11 @@ def main() -> int:
         raise ValueError("Ghidra bridge did not clean call scratch directories")
     results.append("bridge scratch cleanup")
     current = json.loads(subprocess.check_output(["tailscale", "funnel", "status", "--json"]))
-    before_path = directory / "funnel-before-no-auth.json"
-    if not before_path.exists():
-        before_path = directory / "funnel-before.json"
-    if before_path.exists():
-        before = json.loads(before_path.read_text())
-        for listener, web in before.get("Web", {}).items():
-            for route, handler in web.get("Handlers", {}).items():
-                if current.get("Web", {}).get(listener, {}).get("Handlers", {}).get(route) != handler:
-                    raise ValueError("an existing Funnel handler changed")
-        results.append("existing Funnel handlers preserved")
+    for listener, web in funnel_before_test.get("Web", {}).items():
+        for route, handler in web.get("Handlers", {}).items():
+            if current.get("Web", {}).get(listener, {}).get("Handlers", {}).get(route) != handler:
+                raise ValueError("an existing Funnel handler changed during the smoke test")
+    results.append("existing Funnel handlers preserved during test")
     listener = f"{host}:{port}"
     expected_proxy = f"http://127.0.0.1:{env['PORT']}{env['MCP_PATH']}"
     actual_proxy = current.get("Web", {}).get(listener, {}).get("Handlers", {}).get(env["MCP_PATH"], {}).get("Proxy")

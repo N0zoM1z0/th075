@@ -2,11 +2,10 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-Work resumed after R069. Finish origin review of all 4,351 candidates before
-resuming exact reconstruction. This
-supersedes the earlier alternating workflow. After the complete review,
-prioritize core authored behavior and dependencies by expected benefit and
-reconstruction cost.
+Work resumed after R069. On 2026-10-03 the user paused the full origin review
+and resumed exact reconstruction from reviewed authored candidates. Preserve
+accepted origin evidence, but prioritize bounded authored behavior and its
+dependencies by expected benefit and reconstruction cost.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use the user-required commit subject format `gpt-6.1-sol: ...`.

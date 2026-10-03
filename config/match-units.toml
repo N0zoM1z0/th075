@@ -961,3 +961,97 @@ relocations = [
   { offset = 0x1E3, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
   { offset = 0x1EB, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
 ]
+
+[units.sprite-geometry-set-four-dwords]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteGeometry::SetFourDwords"]
+symbol = "?SetFourDwords@SpriteGeometry@@QAEPAV1@KKKK@Z"
+target_address = 0x0040DB10
+size = 51
+relocations = []
+
+[units.animation-reset-primary-counters]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AnimationState::ResetPrimaryCounters"]
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target_address = 0x0040FAC0
+size = 52
+relocations = []
+
+[units.animation-set-three-counters]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AnimationState::SetThreeCounters"]
+symbol = "?SetThreeCounters@AnimationState@@QAEXFFF@Z"
+target_address = 0x0040FB00
+size = 56
+relocations = []
+
+[units.animation-reset-secondary-counter]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AnimationState::ResetSecondaryCounter"]
+symbol = "?ResetSecondaryCounter@AnimationState@@QAEXF@Z"
+target_address = 0x0040FB40
+size = 43
+relocations = []
+
+[units.animation-clear-byte40]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AnimationState::ClearByte40"]
+symbol = "?ClearByte40@AnimationState@@QAEXXZ"
+target_address = 0x0040FC50
+size = 18
+relocations = []
+
+[units.game-set-clamped-value]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SetClampedGameValue"]
+symbol = "?SetClampedGameValue@@YAXH@Z"
+target_address = 0x00423C60
+size = 32
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
+  { offset = 0xD, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
+  { offset = 0x16, type = "DIR32", symbol = "?g_ClampedGameValue@@3HA", target = 0x0066C23C },
+]
+
+[units.battle-effect-clear-field74]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleEffect::ClearField74"]
+symbol = "?ClearField74@BattleEffect@@QAEXXZ"
+target_address = 0x0045B830
+size = 21
+relocations = []
+
+[units.fighter-clear-notice-transition]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FighterState::ClearNoticeTransition"]
+symbol = "?ClearNoticeTransition@FighterState@@QAEXXZ"
+target_address = 0x0045D6F0
+size = 21
+relocations = []
+
+[units.aux-effect-clear-field8]
+source = "src/GameLeafHelpers.cpp"
+object = "build/matching/GameLeafHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AuxEffect::ClearField8"]
+symbol = "?ClearField8@AuxEffect@@QAEXXZ"
+target_address = 0x005FAC20
+size = 21
+relocations = []

@@ -1,0 +1,57 @@
+{
+  "evidence_id": "R107",
+  "functions": [
+    {
+      "address": "0x00643680",
+      "size": 123,
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member": "build\\intel\\mt_obj\\setjmp3.obj",
+      "member_offset": 1251462,
+      "coff_symbol": "__setjmp3",
+      "body_sha256": "c24e8aaed4de58907df11c265260404d68e8b92e1a6373d11e2db8e73238e755",
+      "relocations": [
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "address": "0x00643AF0",
+      "size": 31,
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member": "build\\intel\\mt_obj\\ullshr.obj",
+      "member_offset": 883212,
+      "coff_symbol": "__aullshr",
+      "body_sha256": "909b1a39b7337f2fa8d8626167f578bf92643cf163ee37f401893b5b813db166",
+      "relocations": []
+    },
+    {
+      "address": "0x00646B65",
+      "size": 23,
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member": "..\\build\\intel\\mt_obj\\common.obj",
+      "member_offset": 2559836,
+      "coff_symbol": "__load_CW",
+      "body_sha256": "e6ec999d45c3c78e22ed722d9cdd003ca3e8685d7954a7d030915df1e55eb902",
+      "relocations": []
+    },
+    {
+      "address": "0x00646BD8",
+      "size": 22,
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member": "..\\build\\intel\\mt_obj\\common.obj",
+      "member_offset": 2559836,
+      "coff_symbol": "__checkTOS_withFB",
+      "body_sha256": "4adcaaeddff7fc3980a56d0f0bd062f443e97ac27181910e7fc475851b93b5d9",
+      "relocations": []
+    }
+  ]
+}

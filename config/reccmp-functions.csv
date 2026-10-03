@@ -41,3 +41,12 @@ Input::InitializeJoysticks,0x00403EB0,function
 Input::PollJoysticks,0x00403F40,function
 Input::EnumerateJoystickDevice,0x00404010,function
 Input::ConfigureJoystickAxis,0x00404120,function
+SpriteGeometry::SetFourDwords,0x0040DB10,function
+AnimationState::ResetPrimaryCounters,0x0040FAC0,function
+AnimationState::SetThreeCounters,0x0040FB00,function
+AnimationState::ResetSecondaryCounter,0x0040FB40,function
+AnimationState::ClearByte40,0x0040FC50,function
+SetClampedGameValue,0x00423C60,function
+BattleEffect::ClearField74,0x0045B830,function
+FighterState::ClearNoticeTransition,0x0045D6F0,function
+AuxEffect::ClearField8,0x005FAC20,function

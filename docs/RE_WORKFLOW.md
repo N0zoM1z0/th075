@@ -23,13 +23,12 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-Finish origin review for all 4,351 candidates before resuming exact
-reconstruction of reviewed authored functions. This user strategy supersedes
-the earlier alternating workflow. The active goal requires every origin
-reviewed and at least 50% of confirmed authored bytes exact. Run `report-reconstruction-status.py --summary`
-through `scripts/repo-python` for both gates. Its percentage uses a provisional
-denominator while any origin remains pending; neither function count nor exact
-coverage of the currently selected slice establishes overall completion.
+The user paused the full origin review on 2026-10-03 and resumed exact
+reconstruction from already reviewed authored functions. Preserve accepted
+origin evidence and use it to select bounded behavior with favorable value,
+dependency and matching cost. `report-reconstruction-status.py --summary`
+continues to report the incomplete origin milestone and uses a provisional
+authored denominator while any origin remains pending.
 
 Form an ABI and behavior hypothesis, then write a small natural C++ probe below
 `.analysis/probes/`. Compiler flags must be explicit:

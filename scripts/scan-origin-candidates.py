@@ -131,6 +131,8 @@ def main():
         pending.append({**record, "lane": lane, "call_origins": dict(call_kinds),
                         "reviewed_parents": reviewed_parents, "pending_peer_addresses": [
                             peer for peer in peers if origins[peer]["origin"] == "unknown"],
+                        "pending_parents": [row for row in parents
+                                            if row["origin"] == "unknown"],
                         "reviewed_peers": [{"address": peer, "origin": origins[peer]["origin"],
                                              "role": functions[peer]["proposed_name"]}
                                             for peer in reviewed_peers]})

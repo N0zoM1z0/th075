@@ -1518,3 +1518,38 @@ and RET cleanup remain unchanged. Existing family verifiers are cold-replayed
 before the peer set is accepted. This establishes library ownership without
 recovering the original game element types. R106 adds no authored denominator,
 reconstruction source or exact credit.
+
+## R107 — pinned VC7 runtime leaves
+
+Four target bodies / 199 bytes reproduce complete COFF functions from the
+hash-pinned VC7.1 `libcmt.lib`: `__setjmp3`, `__aullshr`, `__load_CW` and
+`__checkTOS_withFB`. Three have no relocations. `__setjmp3` has one explicit
+`DIR32` field for `__except_list` in its FS:[0] load. The verifier re-extracts
+the original archive members and checks archive identity, member offsets,
+symbol extents, relocations, full bytes and control flow. These are library
+origins only and add no authored source or exact credit.
+
+## F008 — reviewed game leaf helpers
+
+Nine R104-authored helpers now have natural C++ source and complete cold exact
+replay:
+
+| Address | Bytes | Reconstructed function |
+| --- | ---: | --- |
+| `0x0040DB10` | 51 | `SpriteGeometry::SetFourDwords` |
+| `0x0040FAC0` | 52 | `AnimationState::ResetPrimaryCounters` |
+| `0x0040FB00` | 56 | `AnimationState::SetThreeCounters` |
+| `0x0040FB40` | 43 | `AnimationState::ResetSecondaryCounter` |
+| `0x0040FC50` | 18 | `AnimationState::ClearByte40` |
+| `0x00423C60` | 32 | `SetClampedGameValue` |
+| `0x0045B830` | 21 | `BattleEffect::ClearField74` |
+| `0x0045D6F0` | 21 | `FighterState::ClearNoticeTransition` |
+| `0x005FAC20` | 21 | `AuxEffect::ClearField8` |
+
+The member functions are relocation-free. `SetClampedGameValue` includes all
+three `DIR32` relocations to the observed global at `0x0066C23C`. One cold
+compile of `GameLeafHelpers.cpp` replayed all nine units exact, covering 315
+bytes. Class, field and method names remain provisional; the partial owner
+interfaces are not instantiated or embedded. The exact total is now 51
+functions / 9,231 bytes, or 0.47% of the provisional 1,958,337-byte authored
+denominator.

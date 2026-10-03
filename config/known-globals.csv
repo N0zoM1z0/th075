@@ -18,6 +18,7 @@ address,name,module,confidence,evidence
 0x0066C084,Graphics::g_DrawScale,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C088,Graphics::g_ActiveTarget,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x0066C1B8,Graphics::g_PixelShader,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
+0x0066C23C,g_ClampedGameValue,GameState,inferred,F008; complete reads and writes plus three exact DIR32 relocations; semantic name remains provisional
 0x0066FE30,__security_cookie,VC71Runtime,target-observed,"R002/R003; F005; complete device policy, vendor containers/data format and compiler cookie accesses"
 0x00671180,Graphics::g_TargetViewport,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown
 0x00671198,Graphics::g_PresentCallback,Graphics,inferred,F002; reviewed producers/consumers and complete relocation replay; original symbol name unknown

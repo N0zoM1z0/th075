@@ -26,16 +26,16 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 42
-functions have reconstructed source and complete exact matches covering 8,916
+Ghidra analysis found 4,351 provisional function candidates. 51
+functions have reconstructed source and complete exact matches covering 9,231
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R106 checkpoint, origin review has classified 897 authored,
-1,564 library and 575 compiler-generated candidates; 1,315 remain pending.
-The reviewed authored-byte slice is 8,916 / 1,958,337 exact (0.46%), with a
-provisional denominator. Finish origin review before exact
-reconstruction, then prioritize core authored behavior and dependencies.
+At the R107 checkpoint, origin review has classified 897 authored,
+1,568 library and 575 compiler-generated candidates; 1,311 remain pending.
+The reviewed authored-byte slice is 9,231 / 1,958,337 exact (0.47%), with a
+provisional denominator. The user paused full origin review and resumed exact
+reconstruction from reviewed authored behavior and dependencies.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).

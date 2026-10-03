@@ -1,6 +1,7 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R106. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R107, then the
+user paused the full origin review and resumed exact reconstruction with F008. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,23 +10,22 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,036: 897 authored, 1,564 library and 575 compiler generated.
-There are 1,315 pending. Candidate count is not authored function count.
+has resolved 3,040: 897 authored, 1,568 library and 575 compiler generated.
+There are 1,311 pending. Candidate count is not authored function count.
 
-The unchanged exact baseline is 42 source-present and exact functions,
-covering 8,916 bytes across 42 match units. Exact coverage of the currently
-reviewed authored bytes is 8,916 / 1,958,337 (0.46%). This denominator is
-provisional because origin review is incomplete. The origin-review batches
-added no exact credit; F001–F007 established the existing exact baseline.
-The requested order was to finish origin review, then rank core authored
-functions by value and dependencies before resuming exact reconstruction.
+The exact baseline is 51 source-present and exact functions, covering 9,231
+bytes across 51 match units. Exact coverage of the currently reviewed authored
+bytes is 9,231 / 1,958,337 (0.47%). This denominator is provisional because
+origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
+bytes to the F001–F007 baseline. The current strategy is exact reconstruction
+from reviewed authored candidates; full origin review is paused.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R106; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R107; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -38,7 +38,8 @@ reused privately from TH095. The user-requested Tailscale Funnel endpoint
 has no bearer authentication. Its random path is private in the ignored
 `.tools/mcp_for_gptweb-ghidra/.env`; do not print or commit it. The latest
 public HTTPS smoke test passed 15 checks, including Ghidra attestation and a
-cold exact-unit replay. See [MCP operations](GHIDRA_MCP.md).
+cold exact-unit replay. A separate public MCP request cold-replayed the new
+F008 `animation-clear-byte40` unit exact. See [MCP operations](GHIDRA_MCP.md).
 
 ```bash
 scripts/repo-python scripts/verify-target.py
@@ -85,6 +86,8 @@ scripts/repo-python scripts/verify-vendor-exception-origins.py
 scripts/repo-python scripts/verify-battle-end-destructor-origin.py
 scripts/repo-python scripts/verify-runtime-origins.py
 scripts/repo-python scripts/verify-runtime-external-origins.py
+scripts/repo-python scripts/verify-runtime-leaf-origins.py
+scripts/repo-python scripts/replay-exact-units.py --unit sprite-geometry-set-four-dwords --unit animation-reset-primary-counters --unit animation-set-three-counters --unit animation-reset-secondary-counter --unit animation-clear-byte40 --unit game-set-clamped-value --unit battle-effect-clear-field74 --unit fighter-clear-notice-transition --unit aux-effect-clear-field8
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
@@ -105,17 +108,21 @@ The R102 seventeen-function, R103 thirty-three-function, R104 sixteen-function
 and R105 three-function cohorts passed through the no-auth public HTTPS MCP.
 The R106 verifier cold-replayed seven independently reviewed VC7 families and
 accepted 24 complete peer bodies through the same public MCP route.
+R107 adds four complete pinned-archive runtime leaves / 199 bytes, including an
+explicit FS:[0] relocation in `__setjmp3`; its verifier passed locally and
+through the public route. The F008 18-byte animation clear helper also
+cold-replayed exact through public MCP after the complete 15-check smoke test.
 The complete batch origin scanner also passed through that endpoint before the
 latest accepted closure; its refreshed local report is current.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R105 passed.
+endpoint. Public GitHub CI through R106 passed.
 
 ## Deferred investigations
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
-shortlist for all 1,315 pending candidates. The current report groups 40 whole
+shortlist for all 1,311 pending candidates. The current report groups 40 whole
 bodies and isolates 182 extent questions. Start with grouped source/context
 witnesses rather than one-address setup. R102 accepted seventeen explicit
 game policies through the shared cohort verifier, with 33 independent whole
@@ -300,8 +307,8 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,391 pending origin decisions before doing further exact
-reconstruction. Then derive a priority list from
-confirmed authored bytes, core behavior, cross-function dependencies and
-likely matching cost. R070's script loader/parser is verified; remaining
-adjacent short deque-like helpers still need independent origin review.
+Continue bounded exact reconstruction from the 897 reviewed authored
+candidates, ranking core behavior, cross-function dependencies and likely
+matching cost. F008 establishes a low-cost leaf-helper source unit and should
+remain a single natural body per function. The 1,311 pending origin decisions
+remain deferred; do not infer ownership from scanner hits alone.
