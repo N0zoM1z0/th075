@@ -1163,3 +1163,11 @@ and internal control flow are reproducible. The two `at` methods used by
 the fighter script accessors support the STL portion of their lookup path;
 the script's 1,000-slot mapping is game-authored. Original element types
 and callee ownership remain unclaimed, with no exact credit.
+
+## Parent-backed VC7 deque `begin` after R079
+
+Seven complete 35-byte `deque::begin` bodies have a cold VC7 source match,
+one typed relocation each, and a same-family direct call from a reviewed
+`deque::at` parent. The parent chain and raw call fields replay. Six
+same-shape helpers without this caller witness remain pending. R079 grants
+library origin only, with no reconstruction source or exact credit.

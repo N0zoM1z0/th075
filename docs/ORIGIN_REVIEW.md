@@ -3081,3 +3081,24 @@ credit is added. R078 adds 33 library origins: 2,530 reviewed (804 authored,
 8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R077
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37095398320.
+
+## R079 — parent-backed VC7 deque `begin`
+
+Seven complete 35-byte `std::deque::begin` bodies, totaling 245 bytes,
+match the independent VC7 access probe. Each has one typed call to an
+iterator constructor and a complete decoded exit. Each is also called by
+one of the seven reviewed R078 `deque::at` methods through a typed
+same-family `begin` relocation. The raw call field reaches the pending
+helper, and the parent `at` verifier is cold-replayed before acceptance.
+Six other same-shape `begin` candidates have no such reviewed parent and
+remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-begin-origins.py`
+cold compiles the probe, checks the complete source and target bodies,
+typed bindings, parent calls and ledgers. Evidence is in
+`config/vendor-deque-begin-origins.csv`. No original element type,
+reconstruction source or exact credit is claimed. R079 adds seven library
+origins: 2,537 reviewed (804 authored, 1,159 library, 574 compiler),
+1,814 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%). R078 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37095752902.
