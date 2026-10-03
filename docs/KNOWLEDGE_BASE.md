@@ -1105,3 +1105,12 @@ typed relocation fields are bound to observed targets; the rest of each
 151–226-byte body matches an independently compiled whole COMDAT. These
 are library-template origins. Synthetic record widths only test code
 generation; original record types and callee ownership remain unknown.
+
+## VC7 deque constructor and helper origins after R073
+
+Ninety-seven complete target bodies reproduce six VC7 deque-related
+constructor and STL helper families, with 190 typed relocations and
+complete decoded control flow. The source probe spans multiple synthetic
+record widths; identical emissions do not identify an original game type.
+These are library origins only, with no reconstruction source or exact
+credit. A no-relocation 44-byte allocator match remains pending.

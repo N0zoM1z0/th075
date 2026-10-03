@@ -307,39 +307,39 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040A670,46,0x0040A69D,FUN_0040a670,VC7 STL generic ?_Ufill,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
 0x0040A6A0,28,0x0040A6BB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040A6C0,50,0x0040A6F1,FUN_0040a6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A700,55,0x0040A736,FUN_0040a700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A740,55,0x0040A776,FUN_0040a740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A780,51,0x0040A7B2,FUN_0040a780,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040A700,55,0x0040A736,FUN_0040a700,VC7::__Uninitialized_copy_0040A700,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0040A740,55,0x0040A776,FUN_0040a740,VC7::__Uninitialized_fill_n_0040A740,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0040A780,51,0x0040A7B2,FUN_0040a780,VC7::__Destroy_range_0040A780,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040A7C0,20,0x0040A7D3,FUN_0040a7c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A7E0,65,0x0040A820,FUN_0040a7e0,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
 0x0040A830,15,0x0040A83E,FUN_0040a830,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A840,51,0x0040A872,FUN_0040a840,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A880,51,0x0040A8B2,FUN_0040a880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040A880,51,0x0040A8B2,FUN_0040a880,VC7::__Destroy_range_0040A880,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040A8C0,20,0x0040A8D3,FUN_0040a8c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A8E0,20,0x0040A8F3,FUN_0040a8e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A900,5,0x0040A904,FUN_0040a900,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040A910,37,0x0040A934,DoMessageBox,VC7 STL generic ??$_Ucopy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040A940,36,0x0040A963,FUN_0040a940,VC7 STL generic fill,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x0040A970,51,0x0040A9A2,FUN_0040a970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040A9B0,55,0x0040A9E6,FUN_0040a9b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040A9B0,55,0x0040A9E6,FUN_0040a9b0,VC7::__Uninitialized_fill_n_0040A9B0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040A9F0,44,0x0040AA1B,FUN_0040a9f0,VC7::ScalarDeletingDestructor_0040A9F0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0040AA20,11,0x0040AA2A,FUN_0040aa20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AA30,37,0x0040AA54,FUN_0040aa30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AA60,11,0x0040AA6A,FUN_0040aa60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040AA70,49,0x0040AAA0,FUN_0040aa70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040AA70,49,0x0040AAA0,FUN_0040aa70,VC7::__Uninit_copy_0040AA70,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040AAB0,25,0x0040AAC8,FUN_0040aab0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AAD0,5,0x0040AAD4,FUN_0040aad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AAE0,11,0x0040AAEA,FUN_0040aae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040AAF0,49,0x0040AB20,FUN_0040aaf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040AAF0,49,0x0040AB20,FUN_0040aaf0,VC7::__Uninit_copy_0040AAF0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040AB30,5,0x0040AB34,FUN_0040ab30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040AB40,55,0x0040AB76,FUN_0040ab40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040AB40,55,0x0040AB76,FUN_0040ab40,VC7::__Uninitialized_copy_0040AB40,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040AB80,51,0x0040ABB2,FUN_0040ab80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040ABC0,25,0x0040ABD8,FUN_0040abc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040ABE0,43,0x0040AC0A,FUN_0040abe0,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
-0x0040AC10,49,0x0040AC40,FUN_0040ac10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040AC10,49,0x0040AC40,FUN_0040ac10,VC7::__Uninit_copy_0040AC10,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040AC50,43,0x0040AC7A,FUN_0040ac50,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
-0x0040AC80,72,0x0040ACC7,FUN_0040ac80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040ACD0,53,0x0040AD04,FUN_0040acd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040AC80,72,0x0040ACC7,FUN_0040ac80,VC7::0__deque_0040AC80,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0040ACD0,53,0x0040AD04,FUN_0040acd0,VC7::0___Deque_val_0040ACD0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040AD10,14,0x0040AD1D,FUN_0040ad10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AD20,28,0x0040AD3B,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040AD40,16,0x0040AD4F,FUN_0040ad40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -407,7 +407,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040DEE0,49,0x0040DF10,FUN_0040dee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040DF20,29,0x0040DF3C,FUN_0040df20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040DF40,19,0x0040DF52,FUN_0040df40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040DF60,72,0x0040DFA7,FUN_0040df60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040DF60,72,0x0040DFA7,FUN_0040df60,VC7::0__deque_0040DF60,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040DFB0,19,0x0040DFC2,FUN_0040dfb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040DFD0,45,0x0040DFFC,FUN_0040dfd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E000,158,0x0040E09D,FUN_0040e000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -423,7 +423,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040E360,28,0x0040E37B,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E380,14,0x0040E38D,FUN_0040e380,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E390,177,0x0040E440,FUN_0040e390,VC7::deque__Tidy_0040E390,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x0040E450,53,0x0040E484,FUN_0040e450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040E450,53,0x0040E484,FUN_0040e450,VC7::0___Deque_val_0040E450,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040E490,14,0x0040E49D,FUN_0040e490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E4A0,28,0x0040E4BB,FUN_0040e4a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040E4C0,19,0x0040E4D2,FUN_0040e4c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -479,7 +479,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F2B0,51,0x0040F2E2,FUN_0040f2b0,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F2F0,20,0x0040F303,FUN_0040f2f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F310,51,0x0040F342,FUN_0040f310,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F350,51,0x0040F382,FUN_0040f350,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F350,51,0x0040F382,FUN_0040f350,VC7::__Destroy_range_0040F350,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040F390,20,0x0040F3A3,FUN_0040f390,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F3B0,16,0x0040F3BF,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F3C0,5,0x0040F3C4,FUN_0040f3c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -491,16 +491,16 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F4D0,51,0x0040F502,FUN_0040f4d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F510,5,0x0040F514,FUN_0040f510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F520,55,0x0040F556,FUN_0040f520,VC7 STL generic ??$_Uninitialized_fill_n,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x0040F560,55,0x0040F596,FUN_0040f560,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F560,55,0x0040F596,FUN_0040f560,VC7::__Uninitialized_fill_n_0040F560,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040F5A0,11,0x0040F5AA,FUN_0040f5a0,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x0040F5B0,55,0x0040F5E6,FUN_0040f5b0,VC7 STL generic ??$_Copy_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F5F0,38,0x0040F615,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F620,11,0x0040F62A,FUN_0040f620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0040F630,49,0x0040F660,FUN_0040f630,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F630,49,0x0040F660,FUN_0040f630,VC7::__Uninit_copy_0040F630,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040F670,5,0x0040F674,FUN_0040f670,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F680,55,0x0040F6B6,FUN_0040f680,VC7 STL generic ??$_Uninitialized_copy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F6C0,53,0x0040F6F4,FUN_0040f6c0,VC7 STL generic ??$_Copy_backward_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x0040F700,55,0x0040F736,FUN_0040f700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F700,55,0x0040F736,FUN_0040f700,VC7::__Uninitialized_copy_0040F700,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040F740,51,0x0040F772,FUN_0040f740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0040F780,157,0x0040F81C,FUN_0040f780,std::_Uninit_fill<44-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F7DB,2,0x0040F7DC,Catch@0040f7db,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
@@ -513,7 +513,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0040F8DD,2,0x0040F8DE,Catch@0040f8dd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F8DF,9,0x0040F8E7,FUN_0040f8df,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0040F8E8,58,0x0040F921,FUN_0040f8e8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
-0x0040F930,49,0x0040F960,FUN_0040f930,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0040F930,49,0x0040F960,FUN_0040f930,VC7::__Uninit_copy_0040F930,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0040F970,43,0x0040F99A,FUN_0040f970,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x0040F9A0,65,0x0040F9E0,FUN_0040f9a0,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0040F9F0,15,0x0040F9FE,FUN_0040f9f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -574,7 +574,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004122C9,52,0x004122FC,Catch@004122c9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412300,5,0x00412304,FUN_00412300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412310,126,0x0041238D,FUN_00412310,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00412390,53,0x004123C4,FUN_00412390,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00412390,53,0x004123C4,FUN_00412390,VC7::0___Deque_val_00412390,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004123D0,16,0x004123DF,FUN_004123d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004123E0,27,0x004123FA,FUN_004123e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00412400,29,0x0041241C,FUN_00412400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -620,21 +620,21 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00413DE0,1252,0x004142C3,FUN_00413de0,ReplayRecords::AppendRecord,ReplayRecords,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x004142D0,35,0x004142F2,FUN_004142d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414300,89,0x00414358,FUN_00414300,ReplayRecords::FindAvailablePath,ReplayRecords,unclassified,0.00,,,false,,"R035; full body hash, complete decoded CFG and game-specific policy reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
-0x00414360,72,0x004143A7,FUN_00414360,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00414360,72,0x004143A7,FUN_00414360,VC7::0__deque_00414360,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004143B0,19,0x004143C2,FUN_004143b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004143D0,35,0x004143F2,FUN_004143d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414400,41,0x00414428,FUN_00414400,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414430,17,0x00414440,FUN_00414430,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414450,214,0x00414525,FUN_00414450,VC7::deque_push_back_00414450,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00414530,19,0x00414542,FUN_00414530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00414550,72,0x00414597,FUN_00414550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00414550,72,0x00414597,FUN_00414550,VC7::0__deque_00414550,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004145A0,19,0x004145B2,FUN_004145a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004145C0,35,0x004145E2,FUN_004145c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004145F0,41,0x00414618,FUN_004145f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414620,17,0x00414630,FUN_00414620,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414640,217,0x00414718,FUN_00414640,VC7::deque_push_back_00414640,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00414720,19,0x00414732,FUN_00414720,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00414740,72,0x00414787,FUN_00414740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00414740,72,0x00414787,FUN_00414740,VC7::0__deque_00414740,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00414790,19,0x004147A2,FUN_00414790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004147B0,35,0x004147D2,FUN_004147b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004147E0,41,0x00414808,FUN_004147e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -655,19 +655,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00414B10,33,0x00414B30,FUN_00414b10,VC7 STL generic ??9const_iterator,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x00414B40,520,0x00414D47,FUN_00414b40,VC7::deque_Growmap_00414B40,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00414D50,177,0x00414E00,FUN_00414d50,VC7::deque__Tidy_00414D50,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x00414E10,53,0x00414E44,FUN_00414e10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00414E10,53,0x00414E44,FUN_00414e10,VC7::0___Deque_val_00414E10,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00414E50,14,0x00414E5D,FUN_00414e50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414E60,27,0x00414E7A,std::allocator<char>::allocate,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414E80,29,0x00414E9C,FUN_00414e80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00414EA0,520,0x004150A7,FUN_00414ea0,VC7::deque_Growmap_00414EA0,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004150B0,177,0x00415160,FUN_004150b0,VC7::deque__Tidy_004150B0,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x00415170,53,0x004151A4,FUN_00415170,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00415170,53,0x004151A4,FUN_00415170,VC7::0___Deque_val_00415170,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004151B0,14,0x004151BD,FUN_004151b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004151C0,27,0x004151DA,allocate,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004151E0,29,0x004151FC,FUN_004151e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415200,520,0x00415407,FUN_00415200,VC7::deque_Growmap_00415200,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00415410,177,0x004154C0,FUN_00415410,VC7::deque__Tidy_00415410,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x004154D0,53,0x00415504,FUN_004154d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004154D0,53,0x00415504,FUN_004154d0,VC7::0___Deque_val_004154D0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00415510,14,0x0041551D,FUN_00415510,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415520,27,0x0041553A,FUN_00415520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415540,29,0x0041555C,FUN_00415540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -725,19 +725,19 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00415F60,44,0x00415F8B,max_size,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415F90,25,0x00415FA8,std::allocator<std::_Container_proxy>::destroy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00415FB0,44,0x00415FDB,max_size,VC7 STL generic ?max_size,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
-0x00415FE0,55,0x00416016,FUN_00415fe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416020,55,0x00416056,FUN_00416020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416060,51,0x00416092,FUN_00416060,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00415FE0,55,0x00416016,FUN_00415fe0,VC7::__Uninitialized_copy_00415FE0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00416020,55,0x00416056,FUN_00416020,VC7::__Uninitialized_fill_n_00416020,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00416060,51,0x00416092,FUN_00416060,VC7::__Destroy_range_00416060,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004160A0,17,0x004160B0,std::_Allocate<char>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004160C0,58,0x004160F9,FUN_004160c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416100,55,0x00416136,FUN_00416100,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416140,55,0x00416176,FUN_00416140,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416180,51,0x004161B2,FUN_00416180,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00416100,55,0x00416136,FUN_00416100,VC7::__Uninitialized_copy_00416100,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00416140,55,0x00416176,FUN_00416140,VC7::__Uninitialized_fill_n_00416140,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00416180,51,0x004161B2,FUN_00416180,VC7::__Destroy_range_00416180,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004161C0,19,0x004161D2,_Allocate<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004161E0,60,0x0041621B,FUN_004161e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416220,55,0x00416256,FUN_00416220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416260,55,0x00416296,FUN_00416260,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004162A0,51,0x004162D2,FUN_004162a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00416220,55,0x00416256,FUN_00416220,VC7::__Uninitialized_copy_00416220,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00416260,55,0x00416296,FUN_00416260,VC7::__Uninitialized_fill_n_00416260,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x004162A0,51,0x004162D2,FUN_004162a0,VC7::__Destroy_range_004162A0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004162E0,20,0x004162F3,FUN_004162e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416300,58,0x00416339,FUN_00416300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416340,16,0x0041634F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -753,15 +753,15 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00416410,5,0x00416414,FUN_00416410,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416420,5,0x00416424,FUN_00416420,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416430,11,0x0041643A,FUN_00416430,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416440,49,0x00416470,FUN_00416440,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00416440,49,0x00416470,FUN_00416440,VC7::__Uninit_copy_00416440,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00416480,25,0x00416498,FUN_00416480,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004164A0,5,0x004164A4,FUN_004164a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004164B0,11,0x004164BA,FUN_004164b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004164C0,49,0x004164F0,FUN_004164c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004164C0,49,0x004164F0,FUN_004164c0,VC7::__Uninit_copy_004164C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00416500,25,0x00416518,FUN_00416500,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416520,5,0x00416524,FUN_00416520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00416530,11,0x0041653A,FUN_00416530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00416540,49,0x00416570,FUN_00416540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00416540,49,0x00416570,FUN_00416540,VC7::__Uninit_copy_00416540,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00416580,25,0x00416598,FUN_00416580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004165A0,5,0x004165A4,FUN_004165a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004165B0,43,0x004165DA,FUN_004165b0,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
@@ -914,7 +914,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041EF60,134,0x0041EFE5,FUN_0041ef60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041EFE6,52,0x0041F019,Catch@0041efe6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F020,126,0x0041F09D,FUN_0041f020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041F0A0,53,0x0041F0D4,FUN_0041f0a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041F0A0,53,0x0041F0D4,FUN_0041f0a0,VC7::0___Deque_val_0041F0A0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0041F0E0,16,0x0041F0EF,FUN_0041f0e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F0F0,27,0x0041F10A,FUN_0041f0f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041F110,29,0x0041F12C,FUN_0041f110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -963,16 +963,16 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041F9F0,5,0x0041F9F4,FUN_0041f9f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FA00,70,0x0041FA45,FUN_0041fa00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FA50,70,0x0041FA95,FUN_0041fa50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FAA0,55,0x0041FAD6,FUN_0041faa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FAE0,55,0x0041FB16,FUN_0041fae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FB20,51,0x0041FB52,FUN_0041fb20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041FAA0,55,0x0041FAD6,FUN_0041faa0,VC7::__Uninitialized_copy_0041FAA0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0041FAE0,55,0x0041FB16,FUN_0041fae0,VC7::__Uninitialized_fill_n_0041FAE0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0041FB20,51,0x0041FB52,FUN_0041fb20,VC7::__Destroy_range_0041FB20,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0041FB60,20,0x0041FB73,FUN_0041fb60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FB80,58,0x0041FBB9,FUN_0041fb80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FBC0,70,0x0041FC05,FUN_0041fbc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FC10,70,0x0041FC55,FUN_0041fc10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FC60,55,0x0041FC96,FUN_0041fc60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FCA0,55,0x0041FCD6,FUN_0041fca0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FCE0,51,0x0041FD12,FUN_0041fce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041FC60,55,0x0041FC96,FUN_0041fc60,VC7::__Uninitialized_copy_0041FC60,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0041FCA0,55,0x0041FCD6,FUN_0041fca0,VC7::__Uninitialized_fill_n_0041FCA0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0041FCE0,51,0x0041FD12,FUN_0041fce0,VC7::__Destroy_range_0041FCE0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0041FD20,20,0x0041FD33,FUN_0041fd20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FD40,58,0x0041FD79,FUN_0041fd40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FD80,16,0x0041FD8F,FUN_0041fd80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -990,14 +990,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0041FEA0,81,0x0041FEF0,FUN_0041fea0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FF00,85,0x0041FF54,FUN_0041ff00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FF60,11,0x0041FF6A,FUN_0041ff60,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0041FF70,49,0x0041FFA0,FUN_0041ff70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0041FF70,49,0x0041FFA0,FUN_0041ff70,VC7::__Uninit_copy_0041FF70,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0041FFB0,25,0x0041FFC8,FUN_0041ffb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FFD0,5,0x0041FFD4,FUN_0041ffd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FFE0,11,0x0041FFEA,FUN_0041ffe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0041FFF0,81,0x00420040,FUN_0041fff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00420050,85,0x004200A4,FUN_00420050,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004200B0,11,0x004200BA,FUN_004200b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004200C0,49,0x004200F0,FUN_004200c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004200C0,49,0x004200F0,FUN_004200c0,VC7::__Uninit_copy_004200C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00420100,25,0x00420118,FUN_00420100,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00420120,5,0x00420124,FUN_00420120,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00420130,29,0x0042014C,FUN_00420130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1006,14 +1006,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x004201A0,60,0x004201DB,FUN_004201a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004201E0,43,0x0042020A,FUN_004201e0,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x00420210,43,0x0042023A,FUN_00420210,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
-0x00420240,72,0x00420287,FUN_00420240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00420290,53,0x004202C4,FUN_00420290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00420240,72,0x00420287,FUN_00420240,VC7::0__deque_00420240,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00420290,53,0x004202C4,FUN_00420290,VC7::0___Deque_val_00420290,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004202D0,14,0x004202DD,FUN_004202d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004202E0,28,0x004202FB,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00420300,16,0x0042030F,FUN_00420300,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00420310,16,0x0042031F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00420320,72,0x00420367,FUN_00420320,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00420370,53,0x004203A4,FUN_00420370,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00420320,72,0x00420367,FUN_00420320,VC7::0__deque_00420320,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00420370,53,0x004203A4,FUN_00420370,VC7::0___Deque_val_00420370,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004203B0,14,0x004203BD,FUN_004203b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004203C0,28,0x004203DB,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004203E0,16,0x004203EF,FUN_004203e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1032,13 +1032,13 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00421220,43,0x0042124A,Concurrency::details::TaskStack::~TaskStack,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421250,75,0x0042129A,FUN_00421250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004212A0,72,0x004212E7,ATL::CAtlWinModule::~CAtlWinModule,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004212F0,72,0x00421337,FUN_004212f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004212F0,72,0x00421337,FUN_004212f0,VC7::0__deque_004212F0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00421340,19,0x00421352,FUN_00421340,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421360,68,0x004213A3,FUN_00421360,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004213B0,45,0x004213DC,"std::basic_string<wchar_t,std::char_traits<wchar_t>,std::allocator<wchar_t>_>::back",,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004213E0,215,0x004214B6,FUN_004213e0,VC7::deque_push_back_004213E0,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004214C0,19,0x004214D2,FUN_004214c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004214E0,72,0x00421527,FUN_004214e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004214E0,72,0x00421527,FUN_004214e0,VC7::0__deque_004214E0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00421530,19,0x00421542,FUN_00421530,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421550,17,0x00421560,FUN_00421550,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421570,68,0x004215B3,FUN_00421570,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1050,7 +1050,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00421750,90,0x004217A9,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x004217B0,517,0x004219B4,FUN_004217b0,VC7::deque_Growmap_004217B0,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004219C0,177,0x00421A70,FUN_004219c0,VC7::deque__Tidy_004219C0,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x00421A80,53,0x00421AB4,FUN_00421a80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00421A80,53,0x00421AB4,FUN_00421a80,VC7::0___Deque_val_00421A80,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00421AC0,14,0x00421ACD,FUN_00421ac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421AD0,27,0x00421AEA,FUN_00421ad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421AF0,29,0x00421B0C,FUN_00421af0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1059,7 +1059,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00421B70,90,0x00421BC9,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x00421BD0,511,0x00421DCE,FUN_00421bd0,VC7::deque_Growmap_00421BD0,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00421DD0,177,0x00421E80,FUN_00421dd0,VC7::deque__Tidy_00421DD0,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x00421E90,53,0x00421EC4,FUN_00421e90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00421E90,53,0x00421EC4,FUN_00421e90,VC7::0___Deque_val_00421E90,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00421ED0,14,0x00421EDD,FUN_00421ed0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421EE0,27,0x00421EFA,FUN_00421ee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00421F00,29,0x00421F1C,FUN_00421f00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1103,14 +1103,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00422630,44,0x0042265B,max_size,VC7 STL generic ?max_size,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
 0x00422660,33,0x00422680,FUN_00422660,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422690,33,0x004226B0,FUN_00422690,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x004226C0,55,0x004226F6,FUN_004226c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422700,55,0x00422736,FUN_00422700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422740,51,0x00422772,FUN_00422740,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004226C0,55,0x004226F6,FUN_004226c0,VC7::__Uninitialized_copy_004226C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00422700,55,0x00422736,FUN_00422700,VC7::__Uninitialized_fill_n_00422700,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00422740,51,0x00422772,FUN_00422740,VC7::__Destroy_range_00422740,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00422780,20,0x00422793,FUN_00422780,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004227A0,64,0x004227DF,FUN_004227a0,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R034,library,Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit
-0x004227E0,55,0x00422816,FUN_004227e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422820,55,0x00422856,FUN_00422820,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422860,51,0x00422892,FUN_00422860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x004227E0,55,0x00422816,FUN_004227e0,VC7::__Uninitialized_copy_004227E0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00422820,55,0x00422856,FUN_00422820,VC7::__Uninitialized_fill_n_00422820,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00422860,51,0x00422892,FUN_00422860,VC7::__Destroy_range_00422860,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x004228A0,20,0x004228B3,FUN_004228a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004228C0,108,0x0042292B,FUN_004228c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422930,16,0x0042293F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1129,11 +1129,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00422B50,35,0x00422B72,FUN_00422b50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422B80,41,0x00422BA8,FUN_00422b80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422BB0,11,0x00422BBA,FUN_00422bb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422BC0,49,0x00422BF0,FUN_00422bc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00422BC0,49,0x00422BF0,FUN_00422bc0,VC7::__Uninit_copy_00422BC0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00422C00,25,0x00422C18,FUN_00422c00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422C20,5,0x00422C24,FUN_00422c20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422C30,11,0x00422C3A,FUN_00422c30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00422C40,49,0x00422C70,FUN_00422c40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00422C40,49,0x00422C70,FUN_00422c40,VC7::__Uninit_copy_00422C40,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00422C80,25,0x00422C98,FUN_00422c80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422CA0,5,0x00422CA4,FUN_00422ca0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00422CB0,67,0x00422CF2,FUN_00422cb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1216,9 +1216,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00424910,66,0x00424951,FUN_00424910,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424960,70,0x004249A5,FUN_00424960,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x004249B0,70,0x004249F5,FUN_004249b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424A00,55,0x00424A36,FUN_00424a00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424A40,55,0x00424A76,FUN_00424a40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424A80,51,0x00424AB2,FUN_00424a80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00424A00,55,0x00424A36,FUN_00424a00,VC7::__Uninitialized_copy_00424A00,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00424A40,55,0x00424A76,FUN_00424a40,VC7::__Uninitialized_fill_n_00424A40,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00424A80,51,0x00424AB2,FUN_00424a80,VC7::__Destroy_range_00424A80,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00424AC0,20,0x00424AD3,FUN_00424ac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424AE0,58,0x00424B19,FUN_00424ae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424B20,20,0x00424B33,FUN_00424b20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1228,13 +1228,13 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00424B70,81,0x00424BC0,FUN_00424b70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424BD0,85,0x00424C24,FUN_00424bd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424C30,11,0x00424C3A,FUN_00424c30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424C40,49,0x00424C70,FUN_00424c40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00424C40,49,0x00424C70,FUN_00424c40,VC7::__Uninit_copy_00424C40,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00424C80,25,0x00424C98,FUN_00424c80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424CA0,5,0x00424CA4,FUN_00424ca0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424CB0,29,0x00424CCC,FUN_00424cb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424CD0,43,0x00424CFA,FUN_00424cd0,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
-0x00424D00,72,0x00424D47,FUN_00424d00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00424D50,53,0x00424D84,FUN_00424d50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00424D00,72,0x00424D47,FUN_00424d00,VC7::0__deque_00424D00,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x00424D50,53,0x00424D84,FUN_00424d50,VC7::0___Deque_val_00424D50,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00424D90,14,0x00424D9D,FUN_00424d90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424DA0,28,0x00424DBB,_String_val<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00424DC0,16,0x00424DCF,FUN_00424dc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1319,14 +1319,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042D980,315,0x0042DABA,FUN_0042d980,ReplayScene::DrawReplayFilename,ReplayScene,unclassified,0.00,,,false,,"R052; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
 0x0042DAC0,44,0x0042DAEB,FUN_0042dac0,VC7::ScalarDeletingDestructor_0042DAC0,VC71Compiler,excluded,0.00,,,false,,R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x0042DAF0,49,0x0042DB20,FUN_0042daf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042DB30,72,0x0042DB77,FUN_0042db30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042DB30,72,0x0042DB77,FUN_0042db30,VC7::0__deque_0042DB30,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0042DB80,19,0x0042DB92,FUN_0042db80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DBA0,49,0x0042DBD0,FUN_0042dba0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DBE0,211,0x0042DCB2,FUN_0042dbe0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DCC0,35,0x0042DCE2,FUN_0042dcc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042DCF0,511,0x0042DEEE,FUN_0042dcf0,VC7::deque_Growmap_0042DCF0,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0042DEF0,177,0x0042DFA0,FUN_0042def0,VC7::deque__Tidy_0042DEF0,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x0042DFB0,53,0x0042DFE4,FUN_0042dfb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042DFB0,53,0x0042DFE4,FUN_0042dfb0,VC7::0___Deque_val_0042DFB0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0042DFF0,14,0x0042DFFD,FUN_0042dff0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E000,27,0x0042E01A,FUN_0042e000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E020,29,0x0042E03C,FUN_0042e020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1350,9 +1350,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042E390,25,0x0042E3A8,std::allocator<std::_Container_proxy>::destroy,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E3B0,44,0x0042E3DB,max_size,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E3E0,33,0x0042E400,FUN_0042e3e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042E410,55,0x0042E446,FUN_0042e410,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042E450,55,0x0042E486,FUN_0042e450,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042E490,51,0x0042E4C2,FUN_0042e490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042E410,55,0x0042E446,FUN_0042e410,VC7::__Uninitialized_copy_0042E410,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0042E450,55,0x0042E486,FUN_0042e450,VC7::__Uninitialized_fill_n_0042E450,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0042E490,51,0x0042E4C2,FUN_0042e490,VC7::__Destroy_range_0042E490,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0042E4D0,20,0x0042E4E3,FUN_0042e4d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E4F0,65,0x0042E530,FUN_0042e4f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E540,16,0x0042E54F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -1360,7 +1360,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0042E570,5,0x0042E574,FUN_0042e570,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E580,5,0x0042E584,FUN_0042e580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E590,11,0x0042E59A,FUN_0042e590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0042E5A0,49,0x0042E5D0,FUN_0042e5a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0042E5A0,49,0x0042E5D0,FUN_0042e5a0,VC7::__Uninit_copy_0042E5A0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0042E5E0,25,0x0042E5F8,FUN_0042e5e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E600,5,0x0042E604,FUN_0042e600,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0042E610,43,0x0042E63A,FUN_0042e610,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
@@ -2027,7 +2027,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045A820,51,0x0045A852,FUN_0045a820,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A860,20,0x0045A873,FUN_0045a860,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A880,51,0x0045A8B2,FUN_0045a880,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045A8C0,51,0x0045A8F2,FUN_0045a8c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045A8C0,51,0x0045A8F2,FUN_0045a8c0,VC7::__Destroy_range_0045A8C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045A900,20,0x0045A913,FUN_0045a900,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045A920,37,0x0045A944,DoMessageBox,VC7 STL generic ??$_Ucopy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045A950,38,0x0045A975,_Destroy_range<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2036,7 +2036,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045A9F0,36,0x0045AA13,FUN_0045a9f0,VC7 STL generic fill,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x0045AA20,51,0x0045AA52,FUN_0045aa20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AA60,55,0x0045AA96,FUN_0045aa60,VC7 STL generic ??$_Uninitialized_fill_n,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x0045AAA0,55,0x0045AAD6,FUN_0045aaa0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045AAA0,55,0x0045AAD6,FUN_0045aaa0,VC7::__Uninitialized_fill_n_0045AAA0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045AAE0,368,0x0045AC4F,FUN_0045aae0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AC50,381,0x0045ADCC,FUN_0045ac50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045ADD0,37,0x0045ADF4,FUN_0045add0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2053,11 +2053,11 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045AFB0,50,0x0045AFE1,FUN_0045afb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045AFF0,38,0x0045B015,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045B020,11,0x0045B02A,FUN_0045b020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B030,49,0x0045B060,FUN_0045b030,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B030,49,0x0045B060,FUN_0045b030,VC7::__Uninit_copy_0045B030,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045B070,5,0x0045B074,FUN_0045b070,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B080,55,0x0045B0B6,FUN_0045b080,VC7 STL generic ??$_Uninitialized_copy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045B0C0,48,0x0045B0EF,FUN_0045b0c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045B0F0,55,0x0045B126,FUN_0045b0f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B0F0,55,0x0045B126,FUN_0045b0f0,VC7::__Uninitialized_copy_0045B0F0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045B130,51,0x0045B162,FUN_0045b130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045B170,157,0x0045B20C,FUN_0045b170,std::_Uninit_fill<116-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B1CB,2,0x0045B1CC,Catch@0045b1cb,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
@@ -2082,7 +2082,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045B4CD,2,0x0045B4CE,Catch@0045b4cd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B4CF,9,0x0045B4D7,FUN_0045b4cf,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x0045B4D8,58,0x0045B511,FUN_0045b4d8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
-0x0045B520,49,0x0045B550,FUN_0045b520,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045B520,49,0x0045B550,FUN_0045b520,VC7::__Uninit_copy_0045B520,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045B560,43,0x0045B58A,FUN_0045b560,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x0045B590,66,0x0045B5D1,FUN_0045b590,VC7 STL generic ??$_Copy_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045B5E0,76,0x0045B62B,FUN_0045b5e0,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
@@ -2106,7 +2106,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045BC30,166,0x0045BCD5,FUN_0045bc30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045BCE0,207,0x0045BDAE,FUN_0045bce0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045BDB0,296,0x0045BED7,FUN_0045bdb0,BattleEffect::AdvanceAll,BattleEffect,unclassified,0.00,,,false,,"R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",authored,Origin reviewed; role inferred; source and exact state remain independent
-0x0045BEE0,72,0x0045BF27,FUN_0045bee0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045BEE0,72,0x0045BF27,FUN_0045bee0,VC7::0__deque_0045BEE0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045BF30,19,0x0045BF42,FUN_0045bf30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045BF50,17,0x0045BF60,FUN_0045bf50,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045BF70,68,0x0045BFB3,FUN_0045bf70,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2117,7 +2117,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045C210,90,0x0045C269,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x0045C270,520,0x0045C477,FUN_0045c270,VC7::deque_Growmap_0045C270,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045C480,177,0x0045C530,FUN_0045c480,VC7::deque__Tidy_0045C480,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x0045C540,53,0x0045C574,FUN_0045c540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045C540,53,0x0045C574,FUN_0045c540,VC7::0___Deque_val_0045C540,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045C580,14,0x0045C58D,FUN_0045c580,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045C590,27,0x0045C5AA,FUN_0045c590,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045C5B0,29,0x0045C5CC,FUN_0045c5b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2140,9 +2140,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045C950,66,0x0045C991,FUN_0045c950,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045C9A0,70,0x0045C9E5,FUN_0045c9a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045C9F0,70,0x0045CA35,FUN_0045c9f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045CA40,55,0x0045CA76,FUN_0045ca40,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045CA80,55,0x0045CAB6,FUN_0045ca80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045CAC0,51,0x0045CAF2,FUN_0045cac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045CA40,55,0x0045CA76,FUN_0045ca40,VC7::__Uninitialized_copy_0045CA40,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0045CA80,55,0x0045CAB6,FUN_0045ca80,VC7::__Uninitialized_fill_n_0045CA80,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x0045CAC0,51,0x0045CAF2,FUN_0045cac0,VC7::__Destroy_range_0045CAC0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045CB00,20,0x0045CB13,FUN_0045cb00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CB20,58,0x0045CB59,FUN_0045cb20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CB60,16,0x0045CB6F,allocator<>,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2153,7 +2153,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0045CBC0,81,0x0045CC10,FUN_0045cbc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CC20,85,0x0045CC74,FUN_0045cc20,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CC80,11,0x0045CC8A,FUN_0045cc80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0045CC90,49,0x0045CCC0,FUN_0045cc90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0045CC90,49,0x0045CCC0,FUN_0045cc90,VC7::__Uninit_copy_0045CC90,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x0045CCD0,25,0x0045CCE8,FUN_0045ccd0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CCF0,5,0x0045CCF4,FUN_0045ccf0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0045CD00,29,0x0045CD1C,FUN_0045cd00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2311,7 +2311,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00532110,134,0x00532195,FUN_00532110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00532196,52,0x005321C9,Catch@00532196,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005321D0,126,0x0053224D,FUN_005321d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00532250,53,0x00532284,FUN_00532250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00532250,53,0x00532284,FUN_00532250,VC7::0___Deque_val_00532250,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x00532290,16,0x0053229F,FUN_00532290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005322A0,27,0x005322BA,FUN_005322a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005322C0,29,0x005322DC,FUN_005322c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2459,7 +2459,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F7FC0,49,0x005F7FF0,FUN_005f7fc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8000,29,0x005F801C,FUN_005f8000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8020,19,0x005F8032,FUN_005f8020,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005F8040,72,0x005F8087,FUN_005f8040,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F8040,72,0x005F8087,FUN_005f8040,VC7::0__deque_005F8040,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005F8090,19,0x005F80A2,FUN_005f8090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F80B0,35,0x005F80D2,FUN_005f80b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F80E0,41,0x005F8108,FUN_005f80e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2488,7 +2488,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F8790,90,0x005F87E9,FID_conflict:_Xran,VC7 STL generic ?_Xlen,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005F87F0,520,0x005F89F7,FUN_005f87f0,VC7::deque_Growmap_005F87F0,VC7STL,excluded,0.00,,,false,,R071; cold VC7 complete deque::_Growmap COMDAT and 13 typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005F8A00,177,0x005F8AB0,FUN_005f8a00,VC7::deque__Tidy_005F8A00,VC7STL,excluded,0.00,,,false,,R072; cold VC7 complete deque operation COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
-0x005F8AC0,53,0x005F8AF4,FUN_005f8ac0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005F8AC0,53,0x005F8AF4,FUN_005f8ac0,VC7::0___Deque_val_005F8AC0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005F8B00,14,0x005F8B0D,FUN_005f8b00,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8B10,27,0x005F8B2A,FUN_005f8b10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005F8B30,29,0x005F8B4C,FUN_005f8b30,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2571,9 +2571,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005F9F90,28,0x005F9FAB,const_iterator::operator==,VC7 STL generic ??8const_iterator,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005F9FB0,70,0x005F9FF5,FUN_005f9fb0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA000,70,0x005FA045,FUN_005fa000,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA050,55,0x005FA086,FUN_005fa050,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA090,55,0x005FA0C6,FUN_005fa090,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA0D0,51,0x005FA102,FUN_005fa0d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA050,55,0x005FA086,FUN_005fa050,VC7::__Uninitialized_copy_005FA050,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x005FA090,55,0x005FA0C6,FUN_005fa090,VC7::__Uninitialized_fill_n_005FA090,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
+0x005FA0D0,51,0x005FA102,FUN_005fa0d0,VC7::__Destroy_range_005FA0D0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA110,20,0x005FA123,FUN_005fa110,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA130,58,0x005FA169,FUN_005fa130,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA170,51,0x005FA1A2,FUN_005fa170,VC7 STL generic ??$copy,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
@@ -2583,7 +2583,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA220,20,0x005FA233,FUN_005fa220,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA240,5,0x005FA244,FUN_005fa240,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA250,51,0x005FA282,FUN_005fa250,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA290,51,0x005FA2C2,FUN_005fa290,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA290,51,0x005FA2C2,FUN_005fa290,VC7::__Destroy_range_005FA290,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA2D0,20,0x005FA2E3,FUN_005fa2d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA2F0,37,0x005FA314,DoMessageBox,VC7 STL generic ??$_Ucopy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA320,54,0x005FA355,FUN_005fa320,VC7 STL generic ??$fill,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
@@ -2593,23 +2593,23 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA3E0,36,0x005FA403,FUN_005fa3e0,VC7 STL generic fill,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x005FA410,51,0x005FA442,FUN_005fa410,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA450,55,0x005FA486,FUN_005fa450,VC7 STL generic ??$_Uninitialized_fill_n,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x005FA490,55,0x005FA4C6,FUN_005fa490,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA490,55,0x005FA4C6,FUN_005fa490,VC7::__Uninitialized_fill_n_005FA490,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA4D0,11,0x005FA4DA,FUN_005fa4d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA4E0,81,0x005FA530,FUN_005fa4e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA540,85,0x005FA594,FUN_005fa540,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA5A0,11,0x005FA5AA,FUN_005fa5a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA5B0,49,0x005FA5E0,FUN_005fa5b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA5B0,49,0x005FA5E0,FUN_005fa5b0,VC7::__Uninit_copy_005FA5B0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA5F0,25,0x005FA608,FUN_005fa5f0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA610,5,0x005FA614,FUN_005fa610,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA620,11,0x005FA62A,FUN_005fa620,VC7 STL generic ??$_Ptr_cat,VC7STL,excluded,0.00,,,false,,R033,library,Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit
 0x005FA630,66,0x005FA671,FUN_005fa630,VC7 STL generic ??$_Copy_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA680,38,0x005FA6A5,_Destroy_range<>,VC7 STL generic ??$_Destroy_range,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA6B0,11,0x005FA6BA,FUN_005fa6b0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x005FA6C0,49,0x005FA6F0,FUN_005fa6c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA6C0,49,0x005FA6F0,FUN_005fa6c0,VC7::__Uninit_copy_005FA6C0,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA700,5,0x005FA704,FUN_005fa700,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA710,55,0x005FA746,FUN_005fa710,VC7 STL generic ??$_Uninitialized_copy,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FA750,64,0x005FA78F,FUN_005fa750,VC7 STL generic ??$_Copy_backward_opt,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
-0x005FA790,55,0x005FA7C6,FUN_005fa790,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FA790,55,0x005FA7C6,FUN_005fa790,VC7::__Uninitialized_copy_005FA790,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FA7D0,51,0x005FA802,FUN_005fa7d0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x005FA810,157,0x005FA8AC,FUN_005fa810,std::_Uninit_fill<16-byte record-like>,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA86B,2,0x005FA86C,Catch@005fa86b,VC7 STL internal catch fragment +0x5B,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
@@ -2624,7 +2624,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x005FA9BD,2,0x005FA9BE,Catch@005fa9bd,VC7 STL internal catch fragment +0x5D,VC7STL,excluded,0.00,,,true,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA9BF,9,0x005FA9C7,FUN_005fa9bf,VC7 STL internal catch fragment +0x5F,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
 0x005FA9C8,58,0x005FAA01,FUN_005fa9c8,VC7 STL internal catch fragment +0x68,VC7STL,excluded,0.00,,,false,,R031,library,Complete independent VC7 STL probe source and target span; synthetic record type is not original-type evidence; no source/exact credit
-0x005FAA10,49,0x005FAA40,FUN_005faa10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x005FAA10,49,0x005FAA40,FUN_005faa10,VC7::__Uninit_copy_005FAA10,VC7STL,excluded,0.00,,,false,,R073; cold VC7 complete deque/iterator helper COMDAT and typed relocations,library,Template body origin verified; original record type and bound callee origin unknown; no source or exact credit
 0x005FAA50,43,0x005FAA7A,FUN_005faa50,VC7 STL generic fill_n,VC7STL,excluded,0.00,,,false,,R051; whole cold-compiled VC7 STL COMDAT and CFG,library,Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit
 0x005FAA80,76,0x005FAACB,FUN_005faa80,VC7 STL generic ??$_Construct,VC7STL,excluded,0.00,,,false,,R032,library,Whole independent VC7 STL probe COMDAT and unique template family; synthetic record aliases and original type unresolved; no source/exact credit
 0x005FAAD0,15,0x005FAADE,FUN_005faad0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

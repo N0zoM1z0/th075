@@ -2920,3 +2920,28 @@ R072 adds 46 library origins: 2,224 reviewed (800 authored, 850 library,
 574 compiler), 2,127 pending. Exact remains 42 functions / 8,916 bytes
 against 1,950,601 provisional authored bytes (0.46%). R071 GitHub CI passed
 at https://github.com/N0zoM1z0/th075/actions/runs/37093616372.
+
+## R073 — VC7 deque construction and helper origins
+
+Ninety-seven complete 49–72-byte bodies, totaling 5,340 bytes, match six
+independently compiled VC7 deque constructor/helper template families:
+`deque` and `_Deque_val` construction, `_Uninitialized_copy`,
+`_Uninitialized_fill_n`, `_Destroy_range` and `_Uninit_copy`. Their 190
+typed relocations bind to observed target destinations. Each whole source
+COMDAT and target body has complete decoded control flow. The synthetic
+record-width aliases all resolve to one method family for each accepted
+target. Original game element types and called-function origins remain
+unclaimed.
+
+`scripts/repo-python scripts/verify-vendor-deque-helper-origins.py` cold
+compiles the independent source and rechecks the complete source extent,
+all non-relocation bytes, hashes, aliases, typed bindings, target control
+flow and ledgers. Evidence is in `config/vendor-deque-helper-origins.csv`.
+The 44-byte allocator `max_size` match has no relocation witness and remains
+pending. Shorter generic matches remain pending as well. This batch adds
+no reconstruction source or exact credit.
+
+R073 adds 97 library origins: 2,321 reviewed (800 authored, 947 library,
+574 compiler), 2,030 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,601 provisional authored bytes (0.46%). R072 GitHub CI passed
+at https://github.com/N0zoM1z0/th075/actions/runs/37093860727.
