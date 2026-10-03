@@ -107,6 +107,10 @@ def verify_plan(m):
 
 
 def check_ledger(row, function, origin):
+    if row['address'] == '0x00646389' and origin.get('evidence_id') == 'R122':
+        module('locale_thread_reconciliation', 'verify-locale-thread-origins.py').check_historical_root(
+            row, function, origin)
+        return
     key = row['address']
     if (int(function['size']) != row['size'] or function['span_end'] != row['span_end']
             or function['source_file'] or function['match_percent'] != '0.00'):
@@ -133,6 +137,10 @@ def check_historical_startup(row, function, origin):
 
 
 def check_label(row, function, origin, functions, origins, rows):
+    if row['decision'] == 'pending' and origin.get('evidence_id') == 'R122':
+        module('locale_thread_label_reconciliation', 'verify-locale-thread-origins.py').check_historical_label(
+            row, function, origin, functions, origins)
+        return
     if row['decision'] == 'library':
         parent = rows[row['parent']]
         if parent['decision'] != 'library' or parent['address'] not in ACCEPTED:
@@ -337,7 +345,7 @@ def main():
     result = subprocess.run([str(ROOT / 'scripts/repo-python'), 'scripts/verify-runtime-cycle-origins.py'], cwd=ROOT, capture_output=True, text=True)
     if result.returncode:
         raise ValueError('retained independent runtime replay failed: ' + result.stderr[-1500:])
-    print('R121 origins OK: ten complete library bodies / 917 bytes / 71 typed fields; three interior labels / 24 overlapping bytes; two startup parents / 345 bytes and two fiber cleanup labels remain pending; complete source/data/API/EH provenance and independent cold R120 controls; no source or exact credit.')
+    print('R121 origins OK: ten complete library bodies / 917 bytes / 71 typed fields; three interior labels / 24 overlapping bytes; two startup parents / 345 bytes and two fiber labels retained as historical pending snapshots; complete source/data/API/EH provenance and independent cold R120 controls; no source or exact credit.')
     return 0
 
 

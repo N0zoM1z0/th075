@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R121. The public
+review cohorts R108 through R122. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,152: 919 authored, 1,658 library and 575 compiler generated.
-There are 1,199 pending. Candidate count is not authored function count.
+has resolved 3,159: 919 authored, 1,665 library and 575 compiler generated.
+There are 1,192 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R122 locale/thread cohort below.
+the bounded R123 multibyte/codepage cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R121; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R122; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R122 locale/thread dependencies
+## Next agent objective — R123 multibyte/codepage dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -280,25 +280,50 @@ contexts / 748 bytes preserve the actual next dependencies. The two existing
 fiber-cleanup interior candidates stay unknown. Whole FP carrier / 20 bytes,
 RTC scope and empty marker range are frozen diagnostics, not parent credit.
 
-The next bounded cohort is six existing locale/thread roots:
+R122 resolves five complete locale/thread library candidates / 1,159 bytes /
+120 typed fields and two existing fiber-cleanup source labels / 18 overlapping
+bytes. The complete 327-byte fiber callback / 21 fields is independently
+closed without inventing a primary candidate. Replay
+`scripts/repo-python scripts/verify-locale-thread-origins.py`; it cold-replays
+R121 and all retained runtime/import/layout graphs. No candidate extents,
+database, target, authored source or exact ledgers are changed.
+
+The complete defining graph includes 2,092 source data bytes, five actual
+COMMON objects, two full scopes and 47 readonly literals / 313 bytes. Natural
+CRT layout control / 220 bytes proves thread 140, multibyte 544, locale 84,
+lconv 48 and time 184; thread pointers are +96/+100. Whole 403-byte initial
+locale/cache data, 56-byte lconv carrier, 1,284-byte ctype/wctype source and
+184-byte time default bind every initialized field to actual full definitions.
+R121 keeps its historical pending snapshots through narrow same-source guards.
+
+One final no-auth public HTTPS MCP request passed R122, cold-retained R121
+and all R120/R119/R118/R117/R116/R115/runtime/import/layout dependencies,
+retained R114 including R077/R113 replays, all 872 recorded authored extents,
+target/project attestation, 300 public tests, progress freshness and
+`git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
+eleven objects. Investigation and intermediate verification used local tools;
+the final public acceptance request ran once.
+
+The next bounded cohort is six existing multibyte/codepage roots:
 
 | Candidate | Provisional bytes | Observed source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00642B09` | 208 | `___freetlocinfo` | Complete refcount/sentinel and locale-child graph with actual defining state |
-| `0x0064CA47` | 217 | `___free_lconv_mon` | Whole monetary-field cleanup, defaults and free bindings |
-| `0x0064C7E8` | 95 | `___free_lconv_num` | Whole numeric-field cleanup and genuine locale defaults |
-| `0x0064C5C6` | 400 | `___free_lc_time` | Full locale-time arrays, ownership conditions and frees |
-| `0x00646389` | 239 | `__mtinit` | Close non-inventoried freefls / 327 bytes, full locale/thread layout, all code/data/API bindings |
-| `0x006504F9` | 30 | `___initmbctable` | Actual multibyte defining state and complete initialization child graph |
+| `0x006504F9` | 30 | `___initmbctable` | Actual flag and complete codepage/case-map initialization graph |
+| `0x006503A9` | 327 | `__setmbcp` (336 source) | Full heap/thread/global-field graph and embedded finally |
+| `0x00650209` | 400 | `__setmbcp_lk` | Complete codepage record table, flags, SDK CPINFO/NLS and SBCS/case-map children |
+| `0x0064FFE5` | 41 | `_setSBCS` | Whole source arrays and independently proven mutable definitions |
+| `0x0065000E` | 396 | `_setSBUpLow` | Complete classification/case conversion buffers and actual NLS helper bindings |
+| `0x0065019A` | 99 | `___updatetmbcinfo` | Full source parent/cleanup extent, thread/global pointer/refcount and heap graph |
 
-Use R115–R121 manifests and `.analysis/r114-startup-graph.json` diagnostically.
-Re-read complete `_tiddata`, thread locale, multibyte and locale-time source
-layouts from pinned CRT headers; cold-build natural layout controls serially.
-Data references must bind actual full source definitions/initializers, not
-arbitrary zero scalars or inferred offsets. Necessary multibyte initialization
-children may expand the graph. Keep the two freefls interior entries and their
-earlier EH heads outside credit until the complete parent graph closes;
-its non-inventoried primary cannot silently inflate candidate counts.
+Use R115–R122 manifests diagnostically. R122 records complete setmbcp 336 and
+its worker 400 as unaccepted contexts with all 52 fields; neither codepage
+parent gains origin from correct field offsets or the accepted locale graph.
+The nine-byte setmbcp cleanup at `0x006504F0` stays unknown. Reconcile complete
+updater source and the existing cleanup at `0x00650200` before accepting an
+extent; never stop at provisional 99/327-byte entries. Source CPtoLCID at
+`0x0064FFB6` / 47 is an independently accepted R006 anchor and earns no new
+credit. Necessary NLS/SDK wrapper children may expand the graph; cold-build
+natural SDK layouts serially and prove every actual code/data/API binding.
 
 Retain cinit/FP conversion and precision uncertainty for a later bounded
 cohort. Non-inventoried `__RTC_Terminate` at `0x006496D7` / 68 remains diagnostic;
@@ -322,7 +347,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R122 adds no exact scope. Update
+private path and 60-function exact baseline. R123 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -376,6 +401,7 @@ scripts/repo-python scripts/verify-termination-lock-origins.py
 scripts/repo-python scripts/verify-allocator-thread-origins.py
 scripts/repo-python scripts/verify-runtime-cycle-origins.py
 scripts/repo-python scripts/verify-startup-registration-origins.py
+scripts/repo-python scripts/verify-locale-thread-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
@@ -678,7 +704,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R114 startup/shared-lifetime cohort described above. F008 and F009 remain
+Continue the bounded R123 multibyte/codepage cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

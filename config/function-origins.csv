@@ -3590,7 +3590,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00642A61,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00642AB4,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R120
 0x00642AD2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00642B09,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642B09,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x00642BD9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642C9D,library,VC71CRT,exclude,complete-vendor-body,R007
 0x00642CC1,library,VC71CRT,exclude,complete-vendor-body-with-readonly-data-and-callees,R099
@@ -3671,9 +3671,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064615D,library,VC71CRT,exclude,complete-vendor-heap-source-data-api-and-closed-dependencies,R119
 0x00646166,library,VC71CRT,exclude,complete-vendor-startup-registration-code-data-api-eh-provenance,R121
 0x00646196,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
-0x00646339,unknown,,review,crt-fiber-cleanup-locale-parent-dependencies-unresolved,R121
-0x00646345,unknown,,review,crt-fiber-cleanup-locale-parent-dependencies-unresolved,R121
-0x00646389,unknown,,review,crt-thread-initialization-locale-cleanup-dependencies-unresolved,R121
+0x00646339,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R122
+0x00646345,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R122
+0x00646389,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x00646478,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006464C5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3777,10 +3777,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064C13B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064C200,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064C25F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064C5C6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064C7E8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064C5C6,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
+0x0064C7E8,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x0064C847,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064CA47,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064CA47,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x0064CB20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064CD5F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064CFA0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
@@ -3855,10 +3855,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0065000E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065019A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00650200,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00650209,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006503A9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006504F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006504F9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00650209,unknown,,review,crt-codepage-table-case-map-binding-dependencies-unresolved,R122
+0x006503A9,unknown,,review,crt-codepage-case-map-dependencies-unresolved,R122
+0x006504F0,unknown,,review,crt-codepage-cleanup-parent-case-map-dependencies-unresolved,R122
+0x006504F9,unknown,,review,crt-multibyte-initialization-codepage-case-map-dependencies-unresolved,R122
 0x00650517,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065052F,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
 0x0065053F,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118

@@ -2314,3 +2314,88 @@ baseline stays 60 functions / 9,883 bytes, and recorded authored extents stay
 872 bodies / 1,952,956 bytes. Investigation and intermediate checks use local
 tools; final acceptance uses one no-auth public HTTPS MCP request. The private
 URL and logs remain untracked.
+
+## R122 — complete locale defaults, thread cleanup and initialization
+
+The six handoff candidates are reviewed against the pinned supplied Japanese
+TH075 target. Five complete bodies gain library origin / 1,159 bytes / 120
+typed fields: freetlocinfo `0x00642B09` / 208, monetary cleanup `0x0064CA47` /
+217, numeric cleanup `0x0064C7E8` / 95, time cleanup `0x0064C5C6` / 400 and MT
+initializer `0x00646389` / 239. Replay
+`scripts/repo-python scripts/verify-locale-thread-origins.py`.
+
+The verifier also closes the complete non-inventoried fiber callback
+`0x00646207`, `__freefls@4` / 327 bytes / 21 fields. This is an independently
+checked whole source control, not a newly invented candidate. Its two existing
+interior candidates `0x00646339` / 9 and `0x00646345` / 9 gain library origin
+as source labels, retain blank names and unchanged extents, and add no separate
+source or exact bytes. Their 18 bytes overlap the whole parent. Earlier EH
+heads are +301/+315, shared entries +306/+318; every source label and pointer
+is re-read inside its complete primary COFF section. No canonical boundaries
+or database names/types are changed in this batch.
+
+Every complete source auxiliary extent, source member/hash, byte, typed
+relocation, branch, exit, callback and API witness is replayed. All code edges
+of accepted candidates and the whole fiber control close against complete
+accepted bodies or twelve independent anchors / 636 bytes / 44 fields. The
+full R121 and retained R120/R119/R118/R117/R116/R115/runtime/import graphs
+cold-replay their earlier code, data and layout controls. A matched prefix,
+provisional name or correct field offset does not earn ownership.
+
+The locale graph uses ten complete defining source sections / 2,092 bytes,
+five genuine four-byte COMMON definitions, two scopes / 36 bytes and
+forty-seven full readonly literals / 313 bytes. All initialized data pointers
+resolve to a full source definition or literal. Source mutability and actual
+PE writable/readonly storage are checked; every BSS/COMMON object retains real
+loader zero-fill geometry. No arbitrary zero scalar is substituted.
+
+Whole defining carriers include lconv's 56-byte source section at
+`0x006708C8`: decimal string +0, complete 48-byte lconv +4 and global pointer
++52. The empty string is a genuine separate one-byte BSS definition at
+`0x0068E684`. The full 403-byte setlocal source section at `0x0066FF20`
+contains the initial 84-byte thread locale at +8, current pointer +92 and
+cache/static data; its complete four-field initializer is compared. The
+entire 1,284-byte readonly ctype/wctype section at `0x006626B0` is compared,
+including the actual +256 pctype addend, not a 514-byte slice. The complete
+184-byte C-locale time record at `0x00670808` binds all 43 pointer fields to
+42 whole literals (May shares one definition). Together with the five FLS
+export/kernel literals these give all 47 readonly controls.
+
+The new natural `VC7LocaleThreadLayout.cpp` probe cold-builds a complete
+55-DWORD / 220-byte control using pinned CRT/SDK headers and explicit
+reproducibility flags. Whole sizes are `_tiddata` 140, `threadmbcinfo` 544,
+`threadlocinfo` 84, `lconv` 48 and `__lc_time_data` 184. The actual thread
+pointers are +96 multibyte and +100 locale; guesses at the end of the structure
+are false. Time refcount is +180; its 7/7/12/12/2 pointer arrays and three
+format fields are retained in full. These are complete vendor layouts,
+not game class declarations or evidence of one executable-wide compiler
+profile. No source body is reconstructed and the exact baseline is unchanged.
+
+Cleanup retains all six actual allocated thread buffer fields, exception-table
+sentinel, multibyte/locale refcounts, default/current pointer exclusions,
+monetary/numeric shared-string protections, ctype allocation base adjustment,
+time fields and both finally unlocks. MT initialization keeps actual FLS
+lookup/fallback slots, the TLS index, calloc(1,140), exception/random/thread
+initializers and all failure teardown paths. Owning the runtime callback does
+not assign origin to application callbacks registered elsewhere.
+
+The multibyte initializer `0x006504F9` / 30 remains pending: its real child
+`0x006503A9` has a complete 336-byte source body but a 327-byte provisional
+candidate plus nine-byte cleanup `0x006504F0`. The 400-byte `__setmbcp_lk`
+context at `0x00650209` still needs complete codepage table, SBCS/case-map and
+NLS binding evidence. Both contexts / 736 bytes / 52 fields and the whole
+cleanup/scope are frozen without origin or boundary credit. The actual
+initialization flag COMMON definition is proven; that alone cannot classify
+the initialization or its children.
+
+R121 retains its old pending MT/fiber snapshots through narrowly checked
+same-source reconciliation. Complete member/source/target identity and all
+fields still replay; accepting an interior additionally requires the complete
+R122 locale/thread graph and all five accepted canonical roots. Eighteen new
+regression checks reject convenient source/data prefixes, fabricated primary
+candidates, guessed layouts, unresolved codepage ownership and exact credit.
+All 300 public tests pass. Origin totals are 3,159 resolved (919 authored,
+1,665 library, 575 compiler) and 1,192 pending. The 60-function / 9,883-byte
+exact baseline and 872 recorded authored bodies / 1,952,956 bytes are preserved.
+Investigation and intermediate verification use local tools; final acceptance
+uses one no-auth public HTTPS MCP request. Private URLs and logs stay untracked.
