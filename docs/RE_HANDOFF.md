@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R105. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R106. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,012: 897 authored, 1,540 library and 575 compiler generated.
-There are 1,339 pending. Candidate count is not authored function count.
+has resolved 3,036: 897 authored, 1,564 library and 575 compiler generated.
+There are 1,315 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R105; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R106; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -51,6 +51,7 @@ scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R103
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R104
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R105
+scripts/repo-python scripts/verify-vendor-peer-origins.py
 scripts/repo-python scripts/verify-effect-fighter-origins.py
 scripts/repo-python scripts/verify-effect-forwarder-origins.py
 scripts/repo-python scripts/verify-fighter-final-virtual-origins.py
@@ -102,17 +103,19 @@ The eleven effect forwarders/fixed transforms also passed their complete
 context and ABI verifier through that endpoint.
 The R102 seventeen-function, R103 thirty-three-function, R104 sixteen-function
 and R105 three-function cohorts passed through the no-auth public HTTPS MCP.
+The R106 verifier cold-replayed seven independently reviewed VC7 families and
+accepted 24 complete peer bodies through the same public MCP route.
 The complete batch origin scanner also passed through that endpoint before the
 latest accepted closure; its refreshed local report is current.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R103 passed.
+endpoint. Public GitHub CI through R105 passed.
 
 ## Deferred investigations
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
-shortlist for all 1,339 pending candidates. The current report groups 47 whole
+shortlist for all 1,315 pending candidates. The current report groups 40 whole
 bodies and isolates 182 extent questions. Start with grouped source/context
 witnesses rather than one-address setup. R102 accepted seventeen explicit
 game policies through the shared cohort verifier, with 33 independent whole
@@ -124,8 +127,11 @@ sixteen small game helpers / 806 bytes using complete parents, callees and
 selected policy instructions. R105 closes three dependencies exposed by that
 batch / 365 bytes. The batches keep signed field widths, indexed record strides
 and state limits explicit; lifetime-only and generic helper hypotheses remain
-pending. The refreshed scan has six candidates in the strongest combined
-game-callee/parent lane, 161 in the game-parent lane and 182 extent questions.
+pending. R106 resolves the former 24-member reviewed-peer lane through seven
+source-reviewed VC7 vector/deque families; actual call destinations and RET
+cleanup remain part of each comparison. The refreshed scan has six candidates
+in the strongest combined game-callee/parent lane, 161 in the game-parent lane
+and 182 extent questions.
 
 Twelve repeated 520/517/511-byte bodies are now verified as complete VC7
 `std::deque::_Growmap` templates, including all 13 typed relocations per

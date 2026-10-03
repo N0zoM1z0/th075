@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 8,916
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R105 checkpoint, origin review has classified 897 authored,
-1,540 library and 575 compiler-generated candidates; 1,339 remain pending.
+At the R106 checkpoint, origin review has classified 897 authored,
+1,564 library and 575 compiler-generated candidates; 1,315 remain pending.
 The reviewed authored-byte slice is 8,916 / 1,958,337 exact (0.46%), with a
 provisional denominator. Finish origin review before exact
 reconstruction, then prioritize core authored behavior and dependencies.

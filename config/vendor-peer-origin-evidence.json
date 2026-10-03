@@ -1,0 +1,212 @@
+{
+  "evidence_id": "R106",
+  "functions": [
+    {
+      "address": "0x0040A590",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0040A5E0",
+      "size": 31,
+      "family": "deque-iterator-advance",
+      "anchor": "0x0041F630",
+      "body_sha256": "1637f0078bddcf4acb06cb287f78098c62e751748777f14550ba2ccdf9474b8e",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0040A600",
+      "size": 33,
+      "family": "deque-const-iterator-constructor",
+      "anchor": "0x0041F6A0",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0040E990",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0040F120",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x00412180",
+      "size": 25,
+      "family": "allocator-deallocate",
+      "anchor": "0x004050E0",
+      "body_sha256": "11d3e30f10d79558785076cd5151febe0c055914845e10d36d83442980f55b97",
+      "direct_calls": [
+        {
+          "site": "0x0041218B",
+          "target": "0x00640F15"
+        }
+      ]
+    },
+    {
+      "address": "0x00412440",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x00415690",
+      "size": 29,
+      "family": "deque-iterator-increment",
+      "anchor": "0x00415580",
+      "body_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "direct_calls": []
+    },
+    {
+      "address": "0x004157A0",
+      "size": 29,
+      "family": "deque-iterator-increment",
+      "anchor": "0x00415580",
+      "body_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "direct_calls": []
+    },
+    {
+      "address": "0x00415E60",
+      "size": 33,
+      "family": "deque-const-iterator-constructor",
+      "anchor": "0x0041F6A0",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "direct_calls": []
+    },
+    {
+      "address": "0x00415E90",
+      "size": 33,
+      "family": "deque-const-iterator-constructor",
+      "anchor": "0x0041F6A0",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "direct_calls": []
+    },
+    {
+      "address": "0x00415EC0",
+      "size": 33,
+      "family": "deque-const-iterator-constructor",
+      "anchor": "0x0041F6A0",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0041E340",
+      "size": 25,
+      "family": "allocator-deallocate",
+      "anchor": "0x004050E0",
+      "body_sha256": "799fa284a0813d827d06318f95187395e9fd1d6845d6d481112f2cc192432805",
+      "direct_calls": [
+        {
+          "site": "0x0041E34B",
+          "target": "0x00640F15"
+        }
+      ]
+    },
+    {
+      "address": "0x0041F770",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x004235A0",
+      "size": 29,
+      "family": "deque-iterator-decrement",
+      "anchor": "0x00420130",
+      "body_sha256": "3344e010b691dd65084ba8f1c95eac3832868d7bc3341c25add5e89ab229bd33",
+      "direct_calls": []
+    },
+    {
+      "address": "0x004239A0",
+      "size": 31,
+      "family": "deque-iterator-advance",
+      "anchor": "0x0041F630",
+      "body_sha256": "1637f0078bddcf4acb06cb287f78098c62e751748777f14550ba2ccdf9474b8e",
+      "direct_calls": []
+    },
+    {
+      "address": "0x0042E3E0",
+      "size": 33,
+      "family": "deque-const-iterator-constructor",
+      "anchor": "0x0041F6A0",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "direct_calls": []
+    },
+    {
+      "address": "0x004423C0",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x004423E0",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x005320D0",
+      "size": 25,
+      "family": "allocator-deallocate",
+      "anchor": "0x004050E0",
+      "body_sha256": "f4abfcf73db67cd3199e6489529200821ac2530b7dde78ea4e53dd338b994c25",
+      "direct_calls": [
+        {
+          "site": "0x005320DB",
+          "target": "0x00640F15"
+        }
+      ]
+    },
+    {
+      "address": "0x005323C0",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x005F95D0",
+      "size": 32,
+      "family": "vector-iterator-advance",
+      "anchor": "0x004456A0",
+      "body_sha256": "95571e2d68d1fe053297c4858e28ca1b25bf5a7a46b07e4df3981706f358e567",
+      "direct_calls": []
+    },
+    {
+      "address": "0x005F9DB0",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    },
+    {
+      "address": "0x005F9E00",
+      "size": 24,
+      "family": "vector-const-iterator-constructor",
+      "anchor": "0x00405A10",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "direct_calls": []
+    }
+  ]
+}

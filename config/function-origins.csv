@@ -299,10 +299,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A453,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040A530,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A560,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
-0x0040A590,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A590,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0040A5B0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0040A5E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040A600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A5E0,library,VC7STL,exclude,complete-source-family-peer,R106
+0x0040A600,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0040A630,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A670,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A6A0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
@@ -453,7 +453,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040E930,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0040E950,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0040E970,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0040E990,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040E990,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0040E9B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040E9C0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0040E9E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -468,7 +468,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040EFF3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040F0D0,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040F100,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0040F120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F120,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0040F140,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F170,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F1B0,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -564,7 +564,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004120C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412130,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412170,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00412180,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00412180,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004121A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004121C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004121E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -579,7 +579,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004123E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412400,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x00412420,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00412440,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00412440,library,VC7STL,exclude,complete-source-family-peer,R106
 0x00412460,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412480,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004124B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -677,12 +677,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004155D0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00415630,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x00415670,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00415690,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00415690,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004156B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004156E0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00415740,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x00415780,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004157A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004157A0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004157C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004157F0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00415850,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
@@ -716,9 +716,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00415E00,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00415E20,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00415E40,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x00415E60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00415E90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00415EC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00415E60,library,VC7STL,exclude,complete-source-family-peer,R106
+0x00415E90,library,VC7STL,exclude,complete-source-family-peer,R106
+0x00415EC0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x00415EF0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00415F10,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00415F40,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
@@ -883,7 +883,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041E280,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E2F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E340,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E340,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0041E360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E380,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E490,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -945,7 +945,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041F6F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F710,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x0041F740,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
-0x0041F770,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F770,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0041F790,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F7B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F7E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1148,7 +1148,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00423520,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x00423550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00423580,library,vc7-stl-deque-algorithms,exclude,high,R085
-0x004235A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004235A0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004235C0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x004235F0,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x00423640,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
@@ -1166,7 +1166,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00423900,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x00423960,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x00423980,library,vc7-stl-deque-algorithms,exclude,high,R085
-0x004239A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004239A0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004239C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004239F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00423A90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1349,7 +1349,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E3B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042E3E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E3E0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0042E410,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0042E450,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0042E490,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -1480,8 +1480,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00442370,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00442390,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x004423B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004423C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004423E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004423C0,library,VC7STL,exclude,complete-source-family-peer,R106
+0x004423E0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x00442400,authored,BattleCollision,authored,target-observed,R045
 0x004424E0,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x00442540,authored,BattleCollision,authored,complete-game-policy-with-batch-context,R103
@@ -2306,7 +2306,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00532010,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00532080,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005320C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005320D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005320D0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005320F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00532110,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00532196,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2322,7 +2322,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00532360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00532380,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x005323A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005323C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005323C0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005323E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00532420,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x00532450,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2542,7 +2542,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F9550,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x005F9580,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
 0x005F95B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F95D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F95D0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005F95F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9620,library,VC7STL,exclude,vendor-source-corroborated,R051
@@ -2558,9 +2558,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F9C53,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9D30,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x005F9D60,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
-0x005F9DB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9DB0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005F9DD0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x005F9E00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9E00,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005F9E20,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005F9E50,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005F9E90,library,VC7STL,exclude,complete-vc7-template-family,R032

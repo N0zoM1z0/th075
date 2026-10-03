@@ -79,3 +79,17 @@ The refreshed scan covers all 1,339 remaining candidates and retains 47 whole-
 body groups and 182 extent questions. Its strongest combined reviewed-game-
 callee/parent lane now contains six candidates. Short lifetime wrappers in
 that lane remain pending until explicit versus implicit emission is resolved.
+
+R106 consumes the former 24-member `whole-reviewed-peer` lane. A dedicated
+verifier ties every complete body to one of seven independently reviewed VC7
+vector/deque families, cold-replays the existing family verifiers and retains
+each direct-call destination in the structural signature:
+
+```bash
+scripts/repo-python scripts/verify-vendor-peer-origins.py
+```
+
+This resolves 661 bytes as library origin without inferring original element
+types. The verifier passed locally and through the no-auth public HTTPS MCP.
+The refreshed scan now covers 1,315 pending candidates in forty whole-body
+groups; no candidate remains in the reviewed-peer lane.

@@ -1505,3 +1505,16 @@ fields and calls the reviewed notice-text setup with argument one. Their full
 365 bytes bind nine independently reviewed whole anchors and three parent
 edges. R104 and R105 grow the provisional authored denominator to 1,958,337;
 they add no reconstruction source or exact credit.
+
+## Reviewed VC7 family peers after R106
+
+Twenty-four complete pending bodies / 661 bytes share full structural
+signatures with independently source-reviewed VC7 families: vector const-
+iterator construction, deque iterator advance/increment/decrement, deque
+const-iterator construction, allocator deallocation and vector iterator
+advance. Direct-call displacements are normalized only after decoding, while
+the exact destination remains in the signature; all other bytes, data fields
+and RET cleanup remain unchanged. Existing family verifiers are cold-replayed
+before the peer set is accepted. This establishes library ownership without
+recovering the original game element types. R106 adds no authored denominator,
+reconstruction source or exact credit.

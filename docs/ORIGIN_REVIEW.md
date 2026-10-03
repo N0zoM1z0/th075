@@ -3936,3 +3936,34 @@ R105 reaches 3,012 reviewed candidates (897 authored, 1,540 library, 575
 compiler), with 1,339 pending. There are 850 explicitly recorded authored
 bodies / 1,945,994 bytes. Exact remains 42 functions / 8,916 bytes against
 1,958,337 provisional authored bytes (0.46%); no source or exact credit.
+
+## R106 — complete peers of source-reviewed VC7 families
+
+The scanner's reviewed-peer lane contained twenty-four complete bodies / 661
+bytes across seven established STL families:
+
+| Family | Bodies | Anchor |
+| --- | ---: | --- |
+| vector const-iterator constructor | 10 | `0x00405A10` |
+| deque iterator advance | 2 | `0x0041F630` |
+| deque const-iterator constructor | 5 | `0x0041F6A0` |
+| allocator deallocate | 3 | `0x004050E0` |
+| deque iterator increment | 2 | `0x00415580` |
+| deque iterator decrement | 1 | `0x00420130` |
+| vector iterator advance | 1 | `0x004456A0` |
+
+`verify-vendor-peer-origins.py` validates every full candidate extent and
+control flow, checks the accepted anchor ownership, cold-runs the existing
+deque/vector family verifiers and compares the scanner's structural signature.
+Only decoded REL32 call fields are normalized, and their exact destinations
+remain in that signature. All other bytes, vtable/data fields and RET cleanup
+must agree. This prevents an unrelated short helper or a same-shaped call to a
+different function from inheriting library ownership.
+
+The verifier passed locally and through the no-auth public HTTPS MCP. Original
+template element types remain unknown; source-family equality establishes
+library origin only. R106 reaches 3,036 reviewed candidates (897 authored,
+1,564 library, 575 compiler), with 1,315 pending. The authored denominator and
+exact state remain 8,916 / 1,958,337 bytes (0.46%); no source or exact credit.
+R105 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37114655064.
