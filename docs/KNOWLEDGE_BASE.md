@@ -1366,3 +1366,16 @@ are insufficient. A same-shaped 28-byte method near the game scenes uses
 a game vtable and a reviewed scene cleanup callee, so the exception byte
 shape cannot establish its ownership. R096 adds three origins only, with
 no reconstruction source or exact credit.
+
+## Battle-end scene lifetime ownership after R097
+
+The 28-byte `0x00424F40` uses the vtable written by the reviewed battle-end
+initializer and calls the reviewed scene-base game cleanup. Its two
+checked virtual slots bind the reviewed deleting wrapper and game update;
+the deleting wrapper calls this exact destructor. The complete function
+matches the natural explicit-destructor probe while the implicit probe
+emits 19 bytes. This is authored game lifetime behavior even though the
+nonrelocated shape matches standard exception destructors. The role/name
+is inferred; the full class layout and vtable extent remain unknown.
+R097 adds one authored origin and no source or exact credit. The provisional
+authored denominator grows by 28 bytes to 1,950,921.

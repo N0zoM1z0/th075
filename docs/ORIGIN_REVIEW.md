@@ -3530,3 +3530,36 @@ with 1,438 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%); no source or exact credit.
 R095 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37106781323.
+
+## R097 — game scene destructor distinguished from the exception lookalike
+
+The complete 28-byte `0x00424F40` writes the readonly vtable also written
+by the independently reviewed `BattleEndScene::Initialize` at
+`0x00424E00`, then calls the reviewed game scene cleanup at `0x00431F40`.
+Two observed vtable slots point to the already-reviewed deleting wrapper
+at `0x00425190` and battle-end scene update at `0x00424F60`; the deleting
+wrapper's typed call targets this destructor. These are selected slot
+witnesses, not a claim about the complete vtable or object layout. The
+initializer's full 308-byte body updates game actor/state/history fields;
+its owner provenance is independent of any standard exception byte shape.
+Attested Ghidra queries also confirmed the two vtable references and the
+single direct deleting-wrapper caller.
+
+`scripts/repo-python scripts/verify-battle-end-destructor-origin.py`
+checks all target bytes and CFG, complete constructor/update witnesses,
+readonly virtual-slot fingerprints and direct cleanup/deleting calls. It
+replays the existing scene-lifetime and deleting verifiers, then cold
+compiles the existing natural explicit/implicit destructor probe. The
+entire explicit 28-byte COMDAT matches with its typed vtable/base-call
+fields; the implicit variant is a distinct 19-byte COMDAT. The inferred
+role is `BattleEndScene::DestroyAt00424F40`. No incomplete game class is
+instantiated and no reconstruction source or exact credit is added.
+
+The complete verifier also passed through the no-auth public Funnel MCP.
+
+R097 adds one authored origin / 28 bytes and reaches 2,914 reviewed
+candidates (805 authored, 1,534 library, 575 compiler), with 1,437 pending.
+There are 758 explicitly recorded authored bodies, totaling 1,938,578
+bytes. Exact remains 42 functions / 8,916 bytes against 1,950,921
+provisional authored bytes (0.46%). R096 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37108585900.

@@ -1241,7 +1241,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00424DD0,library,vc7-stl-deque-helpers,exclude,high,R088
 0x00424DE0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x00424E00,authored,BattleEndScene,authored,target-observed,R053
-0x00424F40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00424F40,authored,BattleEndScene,authored,target-observed-and-explicit-source-shape,R097
 0x00424F60,authored,BattleEndScene,authored,target-observed,R053
 0x00425000,authored,BattleEndScene,authored,target-observed,R053
 0x004250C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
