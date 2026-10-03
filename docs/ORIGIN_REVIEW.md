@@ -2996,3 +2996,31 @@ R075 adds 22 library origins: 2,469 reviewed (800 authored, 1,095 library,
 574 compiler), 1,882 pending. Exact remains 42 functions / 8,916 bytes
 against 1,950,601 provisional authored bytes (0.46%). R074 GitHub CI passed
 at https://github.com/N0zoM1z0/th075/actions/runs/37094428035.
+
+## R076 — fighter script initialization and field access
+
+Four complete game-authored bodies, totaling 292 bytes, sit beside the
+previously reviewed fighter script loaders and parser. The 130-byte
+initializer constructs an adjacent member at offset `0x7D0`, then writes
+`0xFFFF` into all 1,000 16-bit slots before returning the owner pointer.
+Three 53–55-byte accessors use a 16-bit slot selection and the same two
+lookup calls, then return a byte at record offset 0, a word at offset 2,
+or a dword at offset 4. Their common object offset and field widths are
+target observations, not a complete class layout. The original method
+names remain inferred.
+
+The independently reviewed fighter initializer at `0x004567B0` calls the
+script initializer. Its reviewed action and pattern-selection methods at
+`0x0045CE10` and `0x0045D810` each call all three accessors. The ownership
+decision combines these game-specific uses with complete body hashes and
+decoded control flow. `scripts/repo-python
+scripts/verify-fighter-script-accessor-origins.py` rechecks the 1,000-slot
+sentinel loop, each field width, the two shared lookup calls and all fighter
+caller edges. The adjacent 84-byte cleanup body at `0x004204D0` remains
+pending because a composite destructor can be compiler generated.
+
+R076 adds four authored origins: 2,473 reviewed (804 authored, 1,095
+library, 574 compiler), 1,878 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R075
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37094665913.
