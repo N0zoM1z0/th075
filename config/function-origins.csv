@@ -937,11 +937,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041F5D0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0041F5F0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0041F610,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0041F630,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F630,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0041F650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F670,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F6A0,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
-0x0041F6D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041F6D0,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0041F6F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F710,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041F740,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
@@ -1090,11 +1090,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00422400,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00422420,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00422440,library,VC7STL,exclude,complete-vc7-deque-iterator-family,R080
-0x00422460,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00422460,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x00422480,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004224A0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00422500,library,VC7STL,exclude,complete-vc7-deque-iterator-family,R080
-0x00422520,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00422520,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x00422540,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00422560,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004225C0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
@@ -1208,7 +1208,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004247E0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00424800,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00424820,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x00424840,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00424840,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x00424860,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00424890,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
 0x004248C0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
@@ -1343,9 +1343,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042E270,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0042E290,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0042E2B0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0042E2D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E2D0,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0042E2F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042E310,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E310,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0042E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E3B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2133,7 +2133,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045C850,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0045C870,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0045C890,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0045C8B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045C8B0,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0045C8D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045C900,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0045C920,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
@@ -2537,7 +2537,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F94C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F94D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F94F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F9510,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9510,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x005F9530,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9580,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081

@@ -3160,3 +3160,22 @@ origins: 2,561 reviewed (804 authored, 1,183 library, 574 compiler),
 1,790 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%). R081 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37096270119.
+
+## R083 — parent-backed VC7 iterator advance
+
+Nine complete 31-byte deque iterator `operator+=` bodies, totaling 279
+bytes, match the independent VC7 access probe without source relocations.
+Each has a same-family typed direct call from a reviewed R078 iterator
+addition body. The R078 parent is cold-reverified; its raw call field,
+source symbol and target body hash bind the otherwise short no-relocation
+helper to the VC7 template family. Seven 27-byte advance-like callees
+do not match this probe profile and remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-iterator-advance-origins.py`
+rechecks complete source and target bodies, aliases, parent calls, CFG and
+ledgers. Evidence is in `config/vendor-deque-iterator-advance-origins.csv`.
+R083 adds nine library origins: 2,570 reviewed (804 authored, 1,192
+library, 574 compiler), 1,781 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R082
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37096537793.

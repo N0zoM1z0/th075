@@ -1190,3 +1190,11 @@ and a typed call to an independently verified const-iterator dereference.
 Other same-shape 19-byte bodies target unrelated or unknown functions and
 remain pending. R082 grants library origin only; original element types
 and reconstruction exactness remain unknown.
+
+## VC7 iterator advance after R083
+
+Nine complete 31-byte deque iterator `operator+=` bodies match the VC7
+source probe and have typed same-family calls from independently reviewed
+iterator additions. The reviewed parent is cold-replayed. Seven 27-byte
+advance-like bodies do not match this profile and remain pending. R083
+adds library origin only, with no reconstruction source or exact credit.
