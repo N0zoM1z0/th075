@@ -34,6 +34,70 @@
     "evidence_id": "R098"
   },
   {
+    "address": "0x00642CC1",
+    "size": 220,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "build\\intel\\mt_obj\\setlocal.obj",
+    "member_offset": 1444790,
+    "member_sha256": "b5e3f376725dbb16aa8ba8143d48559e463985a51823f9f415016c4dd75eee1c",
+    "coff_symbol": "___lc_strtolc",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "fafd12078cd4124bf04ff3cd7c41c024aac5496af773a978a43ffd4a5cf23dac",
+    "target_body_sha256": "369e96bfcda897efdbf114a79cb2a06e8b9a321ac3299f2a2d5769bfa7300a1d",
+    "relocations": [
+      {
+        "offset": 17,
+        "type": "REL32",
+        "symbol": "_memset",
+        "addend": 0,
+        "target_address": "0x00640490",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 56,
+        "type": "REL32",
+        "symbol": "_strncpy",
+        "addend": 0,
+        "target_address": "0x0064CFF0",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 169,
+        "type": "REL32",
+        "symbol": "_strncpy",
+        "addend": 0,
+        "target_address": "0x0064CFF0",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 192,
+        "type": "DIR32",
+        "symbol": "??_C@_03EGDHDPFD@_?4?0?$AA@",
+        "addend": 0,
+        "target_address": "0x00661158",
+        "target_kind": "readonly-section",
+        "data_size": 4,
+        "data_definitions": [
+          {
+            "symbol": "??_C@_03EGDHDPFD@_?4?0?$AA@",
+            "offset": 0
+          }
+        ],
+        "source_data_sha256": "c89016c3ec2725b816c819c8a4e625256d02ed2d471199e91fe1cb753cd739e7"
+      },
+      {
+        "offset": 198,
+        "type": "REL32",
+        "symbol": "_strcspn",
+        "addend": 0,
+        "target_address": "0x0064CFA0",
+        "target_kind": "callee"
+      }
+    ],
+    "evidence_id": "R099"
+  },
+  {
     "address": "0x00644009",
     "size": 156,
     "library": "libcmt.lib",

@@ -19,6 +19,7 @@ DATA = load("coff_readonly_data", "coff_data.py")
 COFF = load("coff_readonly_names", "compare-coff-function.py")
 SDK = load("coff_readonly_bindings", "verify-sdk-origins.py")
 RUNTIME = load("coff_readonly_calls", "verify-runtime-origins.py")
+CRT = load("coff_crt_readonly", "verify-runtime-external-origins.py")
 
 
 def fixture(flags=0x40000040, relocation_count=0):
@@ -32,6 +33,27 @@ def fixture(flags=0x40000040, relocation_count=0):
 
 
 class ReadonlyVendorDataTests(unittest.TestCase):
+    def test_crt_binding_cannot_shrink_the_complete_section(self):
+        binding = {"data_size": 8, "source_data_sha256": hashlib.sha256(b"12345678").hexdigest(),
+                   "data_definitions": [{"symbol": "_first", "offset": 0},
+                                        {"symbol": "_second", "offset": 4}]}
+        self.assertEqual(CRT.readonly_member_data(fixture(), "_first", binding, COFF.coff_name),
+                         b"12345678")
+        binding["data_size"] = 4
+        binding["source_data_sha256"] = hashlib.sha256(b"1234").hexdigest()
+        with self.assertRaises(ValueError):
+            CRT.readonly_member_data(fixture(), "_first", binding, COFF.coff_name)
+
+    def test_crt_binding_cannot_hide_peer_definitions(self):
+        binding = {"data_size": 8, "source_data_sha256": hashlib.sha256(b"12345678").hexdigest(),
+                   "data_definitions": [{"symbol": "_first", "offset": 0}]}
+        with self.assertRaises(ValueError):
+            CRT.readonly_member_data(fixture(), "_first", binding, COFF.coff_name)
+
+    def test_crt_binding_cannot_treat_an_interior_symbol_as_section_start(self):
+        with self.assertRaisesRegex(ValueError, "section start"):
+            CRT.readonly_member_data(fixture(), "_second", {}, COFF.coff_name)
+
     def test_evidence_keeps_the_entire_section_and_every_definition(self):
         data, definitions = DATA.readonly_section(fixture(), 1, COFF.coff_name)
         self.assertEqual(data, b"12345678")

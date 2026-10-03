@@ -1392,3 +1392,12 @@ slots, not merely point somewhere in the import section. Complete body
 comparison and control-flow validation distinguish these vendor functions
 from short lookalikes. R098 adds five library origins and no source or exact
 credit. The pinned archive choice does not establish original linkage flags.
+
+## Whole locale delimiter data after R099
+
+`___lc_strtolc` at `0x00642CC1` is now a reviewed complete 220-byte vendor
+function. Its four calls bind separately replayed CRT bodies and its remaining
+field binds the entire four-byte readonly `_.,` string COMDAT, including NUL.
+The readonly extension requires the full defining section and every symbol
+definition, without granting a data origin or original-name proof from an
+arbitrary pointer. R099 adds one library origin and no source or exact credit.

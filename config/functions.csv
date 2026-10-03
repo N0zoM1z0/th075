@@ -3593,7 +3593,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00642B09,208,0x00642BD8,___freetlocinfo,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642BD9,193,0x00642C99,___updatetlocinfo_lk,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642C9D,36,0x00642CC0,__strcats,__strcats,VC71CRT,excluded,0.00,,,false,,R007,,"R007; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00642CC1,220,0x00642D9C,___lc_strtolc,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00642CC1,220,0x00642D9C,___lc_strtolc,___lc_strtolc,VC71CRT,excluded,0.00,,,false,,R099; scripts/repo-python scripts/verify-runtime-external-origins.py,library,Complete pinned CRT body and five typed fields; four independently replayed CRT calls and whole readonly string COMDAT including NUL; no source or exact credit; original archive profile unknown
 0x00642D9D,78,0x00642DEA,___lc_lctostr,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642DEB,50,0x00642E1C,___updatetlocinfo,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00642E1D,9,0x00642E25,FUN_00642e1d,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

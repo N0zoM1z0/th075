@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R098. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R099. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,919: 805 authored, 1,539 library and 575 compiler generated.
-There are 1,432 pending. Candidate count is not authored function count.
+has resolved 2,920: 805 authored, 1,540 library and 575 compiler generated.
+There are 1,431 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R098; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R099; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -82,7 +82,7 @@ scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The current session passed 122 public tests, target-required tracking,
+The current session passed 125 public tests, target-required tracking,
 complete checks of 758 explicitly recorded authored bodies, and progress
 freshness. The new deque algorithm, emptiness, short-helper, cleanup, vector
 storage, vector helper, vector operation, vector callee, scalar copy and
@@ -91,7 +91,7 @@ passed through the no-auth public Funnel MCP.
 The complete CRT external-dependency verifier also passed through that endpoint.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R097 passed.
+endpoint. Public GitHub CI through R098 passed.
 
 ## Deferred investigations
 
@@ -220,6 +220,11 @@ own auxiliary extent. Tiny code shapes, guessed IAT labels and zero-value
 storage are insufficient ownership evidence. Original archive/link flags
 remain unknown.
 
+The same CRT external verifier now includes the complete 220-byte locale
+parser `___lc_strtolc`, whose four calls bind reviewed CRT bodies and whose
+remaining field binds the entire four-byte readonly delimiter string COMDAT.
+The readonly check preserves all section definitions and rejects prefixes.
+
 The CRT survey at `.analysis/crt-origin-survey.json` contains 353 historical
 relocation-bearing observations. R093 resolved the complete 344-byte
 `__ld12cvt` and its 27-/25-byte `__CopyMan` and `__IsZeroMan` helpers from
@@ -236,7 +241,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,432 pending origin decisions before doing further exact
+Complete the 1,431 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; remaining

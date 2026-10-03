@@ -43,6 +43,21 @@ def check_scalar(source, actual, recorded_size, sections, address):
         raise ValueError("CRT scalar requires its complete readonly target definition")
 
 
+def readonly_member_data(member, symbol, binding, coff_name):
+    """Require the entire defining section and its symbol topology, never a prefix."""
+    reader = module("crt_external_readonly", "coff_data.py")
+    _, symbols = reader.parse_symbols(member, coff_name)
+    definitions = [entry for entry in symbols
+                   if entry["symbol"] == symbol and entry["section"] > 0]
+    if len(definitions) != 1 or definitions[0]["offset"] != 0:
+        raise ValueError("CRT readonly binding lacks one definition at section start")
+    source, names = reader.readonly_section(member, definitions[0]["section"], coff_name)
+    if (len(source) != binding["data_size"] or names != binding["data_definitions"]
+            or hashlib.sha256(source).hexdigest() != binding["source_data_sha256"]):
+        raise ValueError("CRT readonly whole section or symbol definitions differ")
+    return source
+
+
 def bind_body(code, relocations, bindings, symbols, address, member,
               comparison, runtime, sdk, target, imports, sections):
     if len(relocations) != len(bindings):
@@ -70,6 +85,12 @@ def bind_body(code, relocations, bindings, symbols, address, member,
         elif kind == "scalar" and relocation["type"] == "DIR32":
             scalar = sdk.real_constant(member, relocation["symbol"], comparison.coff_name)
             check_scalar(scalar, comparison.pe_bytes_at(target, destination, len(scalar)),
+                         binding["data_size"], sections, destination)
+            data_fields[address + offset] = destination
+        elif kind == "readonly-section" and relocation["type"] == "DIR32":
+            source = readonly_member_data(member, relocation["symbol"], binding,
+                                          comparison.coff_name)
+            check_scalar(source, comparison.pe_bytes_at(target, destination, len(source)),
                          binding["data_size"], sections, destination)
             data_fields[address + offset] = destination
         else:
@@ -167,7 +188,7 @@ def main():
             if linked != actual:
                 raise ValueError("CRT external complete comparison differs")
     print(f"CRT external origins OK: {len(records)} complete vendor bodies / "
-          f"{sum(row['size'] for row in records)} bytes; full scalar definitions, raw PE imports "
+          f"{sum(row['size'] for row in records)} bytes; full readonly definitions, raw PE imports "
           "and independently replayed callees; no source or exact credit.")
     return 0
 

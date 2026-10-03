@@ -3609,3 +3609,32 @@ candidates (805 authored, 1,539 library, 575 compiler), with 1,432 pending.
 Exact remains 42 functions / 8,916 bytes against 1,950,921 provisional
 authored bytes (0.46%); no source or exact credit. R097 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37109339147.
+
+## R099 — locale parser with a whole readonly string definition
+
+The complete 220-byte `0x00642CC1` matches `___lc_strtolc` from the pinned
+`libcmt.lib` member `setlocal.obj`. Its own function auxiliary record establishes
+the full source extent; every byte, exit and internal branch is checked.
+Four typed direct calls bind independently replayed `_memset`, two `_strncpy`
+calls and `_strcspn`. The fifth field binds the string COMDAT at `0x00661158`.
+The whole four-byte source section contains the locale delimiters `_.,`
+and the terminating NUL. Its complete bytes, readonly PE permissions,
+definition topology and source hash are checked; no prefix or arbitrary
+string label establishes the binding.
+
+The existing CRT external verifier now supports whole relocation-free
+readonly sections in addition to scalar COMDATs. It requires the referenced
+symbol at section offset zero and records every definition in that complete
+section. Three public regression tests reject shrinking a section, dropping
+peer definitions and treating an interior symbol as the section start.
+R098's five accepted bodies are replayed by the same verifier. No new data
+origin, source presence or exact credit is granted.
+
+The complete six-body verifier passed locally and through the no-auth public
+Funnel MCP. Public CI passed all 125 tests and progress freshness checks.
+
+R099 adds one library origin / 220 bytes, reaching 2,920 reviewed candidates
+(805 authored, 1,540 library, 575 compiler), with 1,431 pending. Exact remains
+42 functions / 8,916 bytes against 1,950,921 provisional authored bytes
+(0.46%). R098 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37109763536.

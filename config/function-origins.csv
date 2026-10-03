@@ -3593,7 +3593,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00642B09,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642BD9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642C9D,library,VC71CRT,exclude,complete-vendor-body,R007
-0x00642CC1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642CC1,library,VC71CRT,exclude,complete-vendor-body-with-readonly-data-and-callees,R099
 0x00642D9D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642DEB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00642E1D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
