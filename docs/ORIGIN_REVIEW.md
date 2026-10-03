@@ -3348,3 +3348,30 @@ R090 reaches 2,859 reviewed candidates (804 authored, 1,481 library,
 against 1,950,893 provisional authored bytes (0.46%), with no new source
 or exact credit. R089 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37101591701.
+
+## R091 — complete construction, backward copy and vector wrappers
+
+Eleven complete `std::_Construct` bodies (ten 58-byte and one 60-byte),
+four 51-byte `_Copy_backward_opt` bodies, one 99-byte vector `push_back`
+and one 114-byte single-element `insert` wrapper reproduce 1,057 bytes
+with 26 typed relocations. The construction helpers call the complete
+8-byte placement-new body; the backward-copy helpers call the reviewed
+829-byte CRT `memmove`. Both anchors are independently reverified. The
+vector wrappers match complete source bodies including every typed call
+and the full control flow; their callees do not gain ownership credit
+without a separate complete comparison. In particular, the 795-byte
+`_Insert_n` at `0x004594B0` remains pending.
+
+`scripts/repo-python scripts/verify-vendor-vector-operation-origins.py`
+cold-replays the CRT anchor and cold compiles the vector operation probe,
+then checks full COMDAT extents, source aliases, hashes, typed bindings,
+control flow and origin ledgers. Evidence is in
+`config/vendor-vector-operation-origins.csv`. Source variants establish
+library emission without identifying original game element types. The
+same verifier passed through the no-auth public Funnel MCP.
+
+R091 reaches 2,876 reviewed candidates (804 authored, 1,498 library,
+574 compiler), with 1,475 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%), with no new source
+or exact credit. R090 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37103676294.

@@ -1284,3 +1284,16 @@ Ghidra's `_String_val` aliases on some base constructors do not establish
 identity; the typed vector-constructor calls support `_Vector_val` here.
 Original game types remain unknown, with library origin only and no source
 or exact credit.
+
+## VC7 construction, backward copy and vector wrappers after R091
+
+Seventeen complete bodies match the independent vector operation probe:
+eleven construction helpers, four backward-copy helpers and two vector
+insertion wrappers. All 1,057 bytes and 26 typed relocations replay. The
+construction and copy identities are corroborated by independently
+reverified complete placement-new and CRT `memmove` anchors. The vector
+wrapper source variants remain consistent along their recorded calls;
+they do not identify original game types. Their short iterator callees
+and the complete 795-byte `_Insert_n` at `0x004594B0` still require their
+own evidence. R091 grants library origin only, with no source or exact
+reconstruction credit.
