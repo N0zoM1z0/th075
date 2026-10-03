@@ -1256,3 +1256,15 @@ record and record-pointer instantiations supply the exact callee symbols,
 so a scalar probe is unnecessary for these accepted bodies. Nontrivial
 destruction bodies remain pending. Original game types remain unknown,
 with library origin only and no reconstruction source or exact credit.
+
+## VC7 vector storage after R089
+
+Ten complete 126-byte vector `_Buy` bodies and eight complete 103-/110-byte
+`_Tidy` bodies match the independent vector operation probe. All 2,098
+bytes, 46 typed relocations and full decoded control flow cold-replay.
+Ten synthetic record widths and six scalar/pointer variants test template
+emission without identifying original game types. Short constructors and
+allocator callees still need their own complete comparisons and witnesses.
+The pending vector insertion bodies do not match the probe's complete
+extents and remain unclassified. R089 adds library origin only, with no
+authored source or exact credit.

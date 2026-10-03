@@ -3295,3 +3295,27 @@ candidates (804 authored, 1,391 library, 574 compiler), with 1,582 pending.
 Exact remains 42 functions / 8,916 bytes against 1,950,893 provisional
 authored bytes (0.46%), with no new source or exact credit. R087 GitHub CI
 passed at https://github.com/N0zoM1z0/th075/actions/runs/37098893616.
+
+## R089 — complete VC7 vector storage bodies
+
+An independent vector operation probe covers ten synthetic record widths
+and six scalar/pointer variants. Ten complete 126-byte `_Buy` bodies and
+eight complete `_Tidy` bodies (six 103-byte and two 110-byte bodies)
+reproduce all 2,098 target bytes apart from 46 declared typed relocations.
+Every relocation's source symbol, type, addend and observed target are
+recorded and every other byte matches. The complete target control flow
+also checks. Original element types and callee ownership remain unclaimed.
+
+`scripts/repo-python scripts/verify-vendor-vector-storage-origins.py`
+cold-compiles the probe and verifies full COMDAT extents, source aliases,
+hashes, all typed bindings, CFG and origin ledgers. Evidence is in
+`config/vendor-vector-storage-origins.csv`. Short constructors and allocator
+callees require independent comparisons before gaining their own origin
+credit. Vector insertion remains pending because its complete bodies do
+not match this probe; no shortened comparison is accepted.
+
+R089 reaches 2,787 reviewed candidates (804 authored, 1,409 library,
+574 compiler), with 1,564 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%), with no new source
+or exact credit. R088 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37099620503.
