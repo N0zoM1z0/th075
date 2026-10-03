@@ -1778,3 +1778,50 @@ source graphs, all 866 authored extents, target/project attestation, 162 tests,
 progress freshness and `git diff --check`. All 60 exact units / 9,883 bytes
 cold-replayed across eleven objects. Investigation and intermediate checks
 used local tools; the public acceptance route ran once.
+
+
+## R113 — queue dependency typing and the main application loop
+
+Five complete deque helpers now have library origin: default iterator
+`0x00423F50` (22), default const iterator `0x00424500` (33), size `0x00423D40`
+(17), unchecked index `0x00423DB0` (49) and front `0x00423DF0` (32).
+The 96-byte enqueue policy at `0x00423C80` scans for equal entries and appends
+only if none was found; it continues scanning after a duplicate. Its natural
+source probe binds all six relocations to the actual size/at/push_back methods
+and global `0x0068BE44`. The worker's two used default iterators and the full
+begin/addition/dereference relationships supply independent type context.
+Getter shapes and two-field clearing alone remain insufficient.
+
+The complete 2,987-byte game parent at `0x00602A60` creates the main window,
+loads the three TH075 archives, initializes graphics/input/sound, dispatches
+scenes through a guarded fifteen-entry table and runs the message/event loop.
+It queues the address of a local event handle slot. Preserve the observed
+indirection and the worker's front/current relationship; synchronization and
+original handle types remain unproved. The full 60-byte table follows the
+`RET 16` code span and is checked separately from authored code coverage.
+The inferred role is `GameApplication::RunAt00602A60`; original interface and
+WinMain spelling are not established by this review.
+
+The verifier cold-compares 65 source bodies / 4,002 bytes and 150 typed fields,
+retains 65 shape controls, nine external byte snapshots, nine complete game
+contexts / 5,063 bytes and 234 witnesses. Its 59 old library anchors retain
+independent evidence. Archive replay verifies the complete CRT memory/string
+boundaries with embedded tables. Unknown external functions and the three
+interior candidates of the already accepted string `_Copy` body receive no
+new origin credit. The pointer model fits this whole graph; it does not
+identify the original game element type. No new game source or exact unit
+is accepted. R104/F008 wait-global clamp evidence remains unchanged.
+
+R113 adds five library bodies / 153 bytes and two authored bodies / 3,083 bytes.
+The checkpoint is 3,088 resolved (915 authored, 1,598 library, 575 compiler)
+and 1,263 pending. Exact remains 60 / 9,883 bytes; reviewed authored coverage
+is provisionally 9,883 / 1,964,884. R114 investigates the remaining shared
+lifetime wrappers, registered window callback and startup entry with complete
+source controls and independent ownership; no classification follows from
+adjacency, use by the game or a previously imported symbol name.
+
+One final no-auth public HTTPS MCP request passed R113, retained R112,
+all 868 recorded authored extents, target/project attestation, 169 public
+tests, progress freshness and `git diff --check`. All 60 exact units / 9,883
+bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools; the public acceptance request ran once.

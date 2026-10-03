@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R112. The public
+review cohorts R108 through R113. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,28 +11,28 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,081: 913 authored, 1,593 library and 575 compiler generated.
-There are 1,270 pending. Candidate count is not authored function count.
+has resolved 3,088: 915 authored, 1,598 library and 575 compiler generated.
+There are 1,263 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,961,801 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,964,884 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R113 queue-helper cohort below.
+the bounded R114 startup/lifetime cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R112; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R113; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R113 event-queue helper cohort
+## Next agent objective — R114 startup and shared-lifetime cohort
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -71,23 +71,33 @@ The existing exact wait-global clamp `0x00423C60` retains R104/F008 evidence,
 source and name. Setup/cleanup context does not gain ownership automatically.
 Replay `scripts/repo-python scripts/verify-deque-postfix-context-origins.py`.
 
-The next bounded cohort is six event-queue helper/policy candidates:
+R113 resolves all six queue-helper handoff candidates, plus their complete
+2,987-byte game main-loop parent: five library bodies / 153 bytes and two
+authored policies / 3,083 bytes. Its verifier cold-compares 65 complete source
+bodies / 4,002 bytes and 150 typed fields. Nine external snapshots retain
+independent origins; archive replay owns the complete CRT boundaries and their
+embedded tables. Nine complete game contexts retain 234 witnesses, actual
+imports, TH075 resource literals and the whole fifteen-entry scene table.
+The 65 separate shape controls do not identify original element types.
+Replay `scripts/repo-python scripts/verify-event-queue-origins.py`.
+
+The next bounded cohort is six startup/shared-lifetime candidates:
 
 | Candidate | Bytes | Observed context | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00423F50` | 22 | Worker default iterator calls `0x00424500` | Complete natural default construction and actual typed constructor |
-| `0x00424500` | 33 | Default-iterator constructor dependency | Independent vendor constructor source, whole body and every call field |
-| `0x00423D40` | 17 | Shared queue cleanup size observation | Independently typed full parent; a getter shape is insufficient |
-| `0x00423DB0` | 49 | Queue cleanup element-access observation | Complete source access method and actual helper chain |
-| `0x00423DF0` | 32 | Worker reads queue front | Whole source-typed front/access relationship, retain observed front semantics |
-| `0x00423C80` | 96 | Adjacent enqueue candidate | Full body, independently owned game callers and all callees; no ownership from adjacency |
+| `0x004239F0` | 155 | Main loop acquires shared queue service | Complete global lifetime policy, imports, worker callback and independently owned game parents |
+| `0x00423A90` | 143 | Main loop's repeated/final cleanup | Full reference-count/queue cleanup, all exits and actual APIs; preserve observed thread termination |
+| `0x004239C0` | 34 | Short queue-owner construction wrapper | Full explicit/implicit source controls and paired ownership; a game callee alone is insufficient |
+| `0x00423B20` | 26 | Short cleanup wrapper | Complete source/ABI/lifetime alternatives and actual callee; preserve ambiguity if alternatives remain equal |
+| `0x00603650` | 83 | Main loop's registered window callback | Raw callback binding, complete message cases, readiness flag and imports |
+| `0x0064232C` | 469 | Supplied PE entry candidate | Complete startup extent and pinned CRT/compiler evidence, every code/data field; no origin from entry address alone |
 
-Use `.analysis/r112-event-context.txt`, the worker snapshot and refreshed
-scanner as diagnostic starting points. The 155-byte setup `0x004239F0` and
-143-byte cleanup `0x00423A90` remain unknown bounded context. They are not
-additional acceptance scope for R113 unless required to resolve the six
-candidates with complete independent evidence. Preserve the five R108 lifetime
-ambiguities and the unresolved insertion/catch spans.
+Use `.analysis/r113-parent.c`, the complete R113 context manifest and refreshed
+scanner as diagnostic starting points. The entry and short lifetime wrappers
+are not already accepted. Retain the five R108 lifetime ambiguities, unknown
+external string/throw/allocation contexts and unresolved insertion/catch spans.
+The three interior candidates within the older string `_Copy` COMDAT keep
+their independent ledger state; do not truncate the enclosing source body.
 
 Run the preflight and refresh `.analysis/origin-scan/latest.json`. Query full
 bodies, callers and callees locally through the attested Ghidra wrapper.
@@ -98,7 +108,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R113 adds no exact scope. Update
+private path and 60-function exact baseline. R114 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -125,6 +135,8 @@ scripts/repo-python scripts/verify-game-lifetime-origins.py
 scripts/repo-python scripts/verify-game-context-origins.py
 scripts/repo-python scripts/verify-deque-game-dependency-origins.py
 scripts/repo-python scripts/verify-vendor-deque-erase-origins.py
+scripts/repo-python scripts/verify-deque-postfix-context-origins.py
+scripts/repo-python scripts/verify-event-queue-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
@@ -208,6 +220,12 @@ progress freshness and `git diff --check`. All 60 exact units / 9,883 bytes
 cold-replayed across eleven objects. Investigation and intermediate checks
 used local tools; the public acceptance route ran once.
 
+One final no-auth public HTTPS MCP request passed R113, retained R112,
+all 868 recorded authored extents, target/project attestation, 169 public
+tests, progress freshness and `git diff --check`. All 60 exact units / 9,883
+bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools; the public acceptance request ran once.
+
 The complete CRT external-dependency verifier also passed through that endpoint.
 The twelve short game policies and full blend-mode context also replayed
 successfully through the public MCP.
@@ -223,8 +241,8 @@ through the public route. The F008 18-byte animation clear helper also
 cold-replayed exact through public MCP after the complete 15-check smoke test.
 The complete F009 object subsequently cold-replayed 9/9 exact over public MCP.
 The complete batch origin scanner also passed through that endpoint during this
-F009 handoff and reproduced the then-current 1,311-candidate queues. The R112
-refresh now covers 1,270 pending candidates in forty groups and 181 extent
+F009 handoff and reproduced the then-current 1,311-candidate queues. The R113
+refresh now covers 1,263 pending candidates in forty groups and 180 extent
 questions; five known ambiguous lifetime wrappers remain in the strongest lane.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
@@ -235,8 +253,8 @@ endpoint. Public GitHub CI for F009 passed the same 141-test suite in
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
-shortlist for all 1,270 pending candidates. The current report groups 40 whole
-bodies and isolates 181 extent questions. Start with grouped source/context
+shortlist for all 1,263 pending candidates. The current report groups 40 whole
+bodies and isolates 180 extent questions. Start with grouped source/context
 witnesses rather than one-address setup. R102 accepted seventeen explicit
 game policies through the shared cohort verifier, with 33 independent whole
 anchors and 15 complete parent edges; scan hits alone remain diagnostic.
@@ -421,7 +439,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R113 event-queue helper cohort described above. F008 and F009 remain
+Continue the bounded R114 startup/shared-lifetime cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

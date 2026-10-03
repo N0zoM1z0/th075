@@ -4317,3 +4317,90 @@ source graphs, all 866 authored extents, target/project attestation, 162 tests,
 progress freshness and `git diff --check`. All 60 exact units / 9,883 bytes
 cold-replayed across eleven objects. Investigation and intermediate checks
 used local tools; the public acceptance route ran once.
+
+
+## R113 — event queue helpers and the complete game main loop
+
+The six handoff candidates are resolved. Five helpers gain library origin /
+153 bytes; the 96-byte enqueue policy and its required 2,987-byte game parent
+add 3,083 authored bytes. Replay `config/event-queue-origin-evidence.json` with
+`scripts/repo-python scripts/verify-event-queue-origins.py`.
+
+| Address | Bytes | Accepted origin and inferred role |
+| --- | ---: | --- |
+| `0x00423F50` | 22 | Library default iterator construction |
+| `0x00424500` | 33 | Library default const-iterator construction |
+| `0x00423D40` | 17 | Library deque size |
+| `0x00423DB0` | 49 | Library unchecked deque indexing |
+| `0x00423DF0` | 32 | Library deque front |
+| `0x00423C80` | 96 | Authored `EventQueue::EnqueueUniqueAt00423C80` |
+| `0x00602A60` | 2987 | Authored `GameApplication::RunAt00602A60` |
+
+The natural enqueue probe scans the shared queue for equal entries, retains a
+flag rather than exiting early, and calls push_back only when the entry is
+absent. Its complete 96-byte body reproduces three source-typed calls and
+three DIR32 fields bound to global `0x0068BE44`. This supplies independent
+source typing for the 17-byte size helper. The worker's independently reviewed
+iterator use and the complete front/begin/dereference chain distinguish these
+short helpers from unrelated getters or game constructors. The default
+iterator binds its actual 33-byte const-iterator base constructor; two worker
+locals are then used with the independently reviewed deque operations. No
+ownership follows from two zero stores alone. Unchecked indexing retains
+begin, iterator addition and dereference; front retains begin and dereference.
+
+A serial cold build compares 65 whole source bodies / 4,002 bytes and all 150
+typed code/data fields, including 59 old library anchors. The probe separately
+retains thirteen whole shape controls for each of the five helper families.
+These 65 controls demonstrate type ambiguity; they are not claimed as 65
+valid complete alternative call graphs. The canonical pointer model fits the
+whole checked source graph. Original game element definitions and any folding
+remain unknown. This probe does not instantiate an incomplete game owner.
+
+Nine external snapshots retain independent ownership. The pinned archive
+verifier cold-rechecks the full memcpy/memmove/strlen anchors, including the
+assembly methods' embedded tables. The other external throw, allocation,
+exception and string-error candidates remain unknown; their frozen bytes are
+context, not new reconciled extents or source identities. The already accepted
+string `_Copy` COMDAT at `0x00405460` retains its entire 339 bytes and its three
+interior candidates `0x00405507`, `0x0040552E`, `0x00405550` without changing
+their ledgers. New accepted functions have no unresolved interior candidate.
+All source relocations remain explicit, including FS:[0], exception metadata,
+EH handler links, the internal catch label and the two whole vendor literals.
+This replay grants no new metadata ownership or external function credit.
+
+The unique enqueue caller creates the game's window, initializes graphics,
+input and sound, opens `th075.dat`, `th075bgm.dat` and `th075b.dat`, enters the
+message/scene loop and saves scores before cleanup. The literal window title
+is `東方萃夢想 ～ Immaterial and Missing Power. ver1.11` in the supplied target.
+It creates an event and passes the address of the local handle slot to enqueue;
+the reviewed worker reads the first dword of that queued entry to signal it.
+The source model's void pointer is a representation witness, not recovery of
+the original handle-wrapper or complete synchronization protocol.
+
+The game parent ends at `0x0060360A` with `RET 16`. Its directly indexed table
+contains all fifteen scene destinations at `0x0060360B..0x00603646`, followed
+by nine INT3 alignment bytes before `0x00603650`. The range guard, all targets,
+complete 60-byte table hash, virtual calls and raw PE imports are checked.
+Table bytes are separate evidence and earn no extra code or exact credit.
+Full local Ghidra decompilation and independent instruction decoding cover the
+complete body; partial disassembly output is not the extent authority.
+Nine complete game contexts / 5,063 bytes retain 234 field/literal witnesses
+and independent game initialization, transition and logo-scene evidence.
+The inferred role does not recover the original WinMain spelling or interface.
+
+Evidence-only verification passed before ledger changes. Accepted replay,
+retained R112, all 868 authored extents / 1,952,541 bytes, target-required
+tracking and refreshed scanner pass locally. The checkpoint is 3,088 reviewed:
+915 authored, 1,598 library and 575 compiler generated, with 1,263 pending.
+Exact stays 60 functions / 9,883 bytes; the provisional authored denominator
+is 1,964,884 bytes. Seven regression tests reject front/back substitution,
+untyped getter calls, unused constructor context, a changed queue global,
+changed anchor ownership, unresolved new interiors and false source/exact credit.
+The next bounded R114 cohort covers shared queue lifetime, its short wrappers,
+the registered window callback and the startup entry candidate.
+
+One final no-auth public HTTPS MCP request passed R113, retained R112,
+all 868 recorded authored extents, target/project attestation, 169 public
+tests, progress freshness and `git diff --check`. All 60 exact units / 9,883
+bytes cold-replayed across eleven objects. Investigation and intermediate
+verification used local tools; the public acceptance request ran once.
