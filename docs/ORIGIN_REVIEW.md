@@ -3495,3 +3495,38 @@ R095 reaches 2,910 reviewed candidates (804 authored, 1,532 library,
 against 1,950,893 provisional authored bytes (0.46%), with no new source
 or exact credit. R094 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37106349760.
+
+## R096 — named exception metadata and complete vtable/base witnesses
+
+The message constructor at `0x00409930` (37 bytes) and destructor at
+`0x00409960` (28 bytes) are reviewed as standard-library functions. The
+37-byte implicit copy constructor at `0x00409E30` is compiler generated.
+Complete compiler type metadata identifies the class as `std::out_of_range`:
+ThrowInfo `0x00667D60` binds the destructor and CatchableTypeArray; the
+first complete CatchableType binds the copy constructor and complete
+TypeDescriptor with the name `.?AVout_of_range@std@@`. The target's
+`length_error` sibling emits the same short method shape, so the original
+shape-only name hypothesis was insufficient. The independent exception
+probe supplies the correct class and implicit-copy source definitions.
+
+`scripts/repo-python scripts/verify-vendor-exception-origins.py`
+cold-replays the existing scalar deleting-destructor anchors, then cold
+compiles seven natural standard exception instantiations. It checks ten
+complete function COMDATs (508 bytes), every typed relocation, full CFG,
+two complete eight-byte readonly vtables, their actual COFF weak `_E` to
+`_G` fallback records, and four complete type-data COMDATs (91 bytes).
+Source/target hashes, all linked bytes, PE section permissions, source
+header hashes and origin ledgers replay. The manifest is
+`config/vendor-exception-groups.json`. The deleting helpers keep their
+existing compiler origins; context methods gain no new credit. Public
+graph tests reject a same-shaped scene cleanup callee, a scene-update
+vtable slot, a different sibling exception type name, and a library label
+for the implicit copy constructor.
+The complete cold verifier also passed through the no-auth public Funnel MCP.
+
+R096 adds three origins / 102 bytes (two library, one compiler) and reaches
+2,913 reviewed candidates (804 authored, 1,534 library, 575 compiler),
+with 1,438 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%); no source or exact credit.
+R095 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37106781323.

@@ -1351,3 +1351,18 @@ construction implementations cold-replay before the new wrapper/callee
 comparison. Other tiny lookalikes and exception methods with unresolved
 data/vtable fields remain pending. R095 adds library origins only; source
 presence and exact reconstruction are unchanged.
+
+## Named standard exception ownership after R096
+
+The three short exception candidates are `std::out_of_range`, established
+by the complete ThrowInfo/CatchableType chain and actual emitted type
+name. The initial `length_error` source shape was indistinguishable without
+that metadata. Its message constructor and destructor are library methods;
+its implicit copy constructor is compiler generated. Ten complete bodies,
+two whole vtables and four whole compiler type-data COMDATs cold-replay.
+The weak `_E` vtable symbols resolve through actual COFF fallback records
+to independently complete `_G` deleting bodies; guessed symbol aliases
+are insufficient. A same-shaped 28-byte method near the game scenes uses
+a game vtable and a reviewed scene cleanup callee, so the exception byte
+shape cannot establish its ownership. R096 adds three origins only, with
+no reconstruction source or exact credit.

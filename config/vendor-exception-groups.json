@@ -1,0 +1,531 @@
+{
+  "evidence_id": "R096",
+  "derived_class": "out_of_range",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/I",
+    "src"
+  ],
+  "vendor_headers": {
+    "stdexcept": "bc3e7b40b6413b1aa2a2cc011057ca42aa03a714f409f927734c4f507aaea2a7",
+    "exception": "994d4a23a837d92100205d89ac38c13c317cfb1851c2ae1fdc4d80b0e052c40c"
+  },
+  "bodies": [
+    {
+      "address": "0x00409930",
+      "coff_symbol": "??0out_of_range@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z",
+      "role": "constructor",
+      "size": 37,
+      "origin": "library",
+      "accepted": true,
+      "source_sha256": "a2a2cc97875cbbbddcccf8c1100b38e0c043571711367948dd9bdd82f8a60a92",
+      "body_sha256": "31eb7b64d36dc8b03fdc0de8ab7657f6928851a1df5f41524f23d8e969692945",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z",
+          "addend": 0,
+          "target_address": "0x00404B40"
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "??_7out_of_range@std@@6B@",
+          "addend": 0,
+          "target_address": "0x0066767C"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00409960",
+      "coff_symbol": "??1out_of_range@std@@UAE@XZ",
+      "role": "destructor",
+      "size": 28,
+      "origin": "library",
+      "accepted": true,
+      "source_sha256": "8163ac504b99d0fd9e7d334f403b4efe929bd1363f887ad1e05104b1f6313cd9",
+      "body_sha256": "c6e50b69cc9a83e1a1a274b5fe4ebee2cc3d17c5beb9c87d67a47cc12d1e9b40",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_7out_of_range@std@@6B@",
+          "addend": 0,
+          "target_address": "0x0066767C"
+        },
+        {
+          "offset": 20,
+          "type": "REL32",
+          "symbol": "??1logic_error@std@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00404BF0"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00409E30",
+      "coff_symbol": "??0out_of_range@std@@QAE@ABV01@@Z",
+      "role": "copy_constructor",
+      "size": 37,
+      "origin": "compiler",
+      "accepted": true,
+      "source_sha256": "a2a2cc97875cbbbddcccf8c1100b38e0c043571711367948dd9bdd82f8a60a92",
+      "body_sha256": "ee68d2d16d1b78d2d3fab223d11004521792d3f2c760e2038939aa328c603445",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??0logic_error@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target_address": "0x00405370"
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "??_7out_of_range@std@@6B@",
+          "addend": 0,
+          "target_address": "0x0066767C"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00409980",
+      "coff_symbol": "??_Gout_of_range@std@@UAEPAXI@Z",
+      "role": "deleting_destructor",
+      "size": 44,
+      "origin": "compiler",
+      "accepted": false,
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "body_sha256": "d43fb9241f430d58414c4e6dc0fcacc8cdc6947801174d2c4b43b3589b109238",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??1out_of_range@std@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00409960"
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00404BA0",
+      "coff_symbol": "?what@logic_error@std@@UBEPBDXZ",
+      "role": "what",
+      "size": 22,
+      "origin": "library",
+      "accepted": false,
+      "source_sha256": "39e9911583384d998c493daf428f1d83a0c139a21e898726f70b4872e0dbbaf8",
+      "body_sha256": "2007c3756bf964e011bea53f78e80e91e722502071288298928c6d300436b6ce",
+      "relocation_bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ",
+          "addend": 0,
+          "target_address": "0x00404D10"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00404B40",
+      "coff_symbol": "??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z",
+      "role": "base_constructor",
+      "size": 93,
+      "origin": "library",
+      "accepted": false,
+      "source_sha256": "710ff594c008ffc2c562ac1dfd344586a47f958cbaaabf988e34a42072e36c5a",
+      "body_sha256": "903382812b7361b3b70ac3244ac34194efe774be4db433bc56b2ff6fc7d3b75e",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0logic_error@std@@QAE@ABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@@Z",
+          "addend": 0,
+          "target_address": "0x00654D28"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0exception@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x00640C4C"
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "??_7logic_error@std@@6B@",
+          "addend": 0,
+          "target_address": "0x00667664"
+        },
+        {
+          "offset": 63,
+          "type": "REL32",
+          "symbol": "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target_address": "0x00404CA0"
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00404BF0",
+      "coff_symbol": "??1logic_error@std@@UAE@XZ",
+      "role": "base_destructor",
+      "size": 84,
+      "origin": "library",
+      "accepted": false,
+      "source_sha256": "8072062b305b41ecb8cc7651b9687b8f65a36e66dfb952d423a921952adc0f9c",
+      "body_sha256": "38d468ef332486b0997e6309a7eb24996ea8192624ecc842eb5bb96223efc8c7",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1logic_error@std@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00654D48"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "??_7logic_error@std@@6B@",
+          "addend": 0,
+          "target_address": "0x00667664"
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x00404CF0"
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "??1exception@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00640CE4"
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00405370",
+      "coff_symbol": "??0logic_error@std@@QAE@ABV01@@Z",
+      "role": "base_copy_constructor",
+      "size": 100,
+      "origin": "compiler",
+      "accepted": false,
+      "source_sha256": "f8ee64d36219b6a656a47e66c4d29a5b537bfbf348fd4cc12df8aa727265a9d5",
+      "body_sha256": "a6a26c3a93de4308386210b19520e2fe832d28088b5f411a99bbff2537b61f63",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0logic_error@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target_address": "0x00654D68"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??0exception@@QAE@ABV0@@Z",
+          "addend": 0,
+          "target_address": "0x00640C9A"
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "??_7logic_error@std@@6B@",
+          "addend": 0,
+          "target_address": "0x00667664"
+        },
+        {
+          "offset": 70,
+          "type": "REL32",
+          "symbol": "??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target_address": "0x00404CA0"
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target_address": "0x00000000"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00404BC0",
+      "coff_symbol": "??_Glogic_error@std@@UAEPAXI@Z",
+      "role": "base_deleting_destructor",
+      "size": 44,
+      "origin": "compiler",
+      "accepted": false,
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "body_sha256": "a7ca8d05c532135291ccdefcc895619fe5f26d9bef7e61b98048b3ac4732813b",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??1logic_error@std@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00404BF0"
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0
+    },
+    {
+      "address": "0x00404D10",
+      "coff_symbol": "?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ",
+      "role": "c_str",
+      "size": 19,
+      "origin": "library",
+      "accepted": false,
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "4a47c1d6f93b299714ef9e7d78d1c733236ed47ffce2561b915bc613a0a6ebd0",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?_Myptr@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ",
+          "addend": 0,
+          "target_address": "0x00404E90"
+        }
+      ],
+      "indirect_call_count": 0
+    }
+  ],
+  "vtables": [
+    {
+      "role": "out_of_range",
+      "address": "0x0066767C",
+      "coff_symbol": "??_7out_of_range@std@@6B@",
+      "size": 8,
+      "source_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "body_sha256": "b0875663e21b246d433187d6f9ed106e966481a77b92c8c4b82e6eba48137a49",
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "??_Eout_of_range@std@@UAEPAXI@Z",
+          "resolved_symbol": "??_Gout_of_range@std@@UAEPAXI@Z",
+          "target_address": "0x00409980"
+        },
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "?what@logic_error@std@@UBEPBDXZ",
+          "resolved_symbol": "?what@logic_error@std@@UBEPBDXZ",
+          "target_address": "0x00404BA0"
+        }
+      ]
+    },
+    {
+      "role": "logic_error",
+      "address": "0x00667664",
+      "coff_symbol": "??_7logic_error@std@@6B@",
+      "size": 8,
+      "source_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+      "body_sha256": "06bfc4ea9b74b267f74127501e051720ebe0037b826d64ebd739cc0de212954a",
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "??_Elogic_error@std@@UAEPAXI@Z",
+          "resolved_symbol": "??_Glogic_error@std@@UAEPAXI@Z",
+          "target_address": "0x00404BC0"
+        },
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "?what@logic_error@std@@UBEPBDXZ",
+          "resolved_symbol": "?what@logic_error@std@@UBEPBDXZ",
+          "target_address": "0x00404BA0"
+        }
+      ]
+    }
+  ],
+  "data_nodes": [
+    {
+      "role": "throw_info",
+      "address": "0x00667D60",
+      "coff_symbol": "__TI3?AVout_of_range@std@@",
+      "size": 16,
+      "source_sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "body_sha256": "24914682b301e83cd5aa6c175a917369f5a989fa7d6a7162eee64d49312bdb1e",
+      "relocation_bindings": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "??1out_of_range@std@@UAE@XZ",
+          "addend": 0,
+          "target_address": "0x00409960"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__CTA3?AVout_of_range@std@@",
+          "addend": 0,
+          "target_address": "0x00667D50"
+        }
+      ]
+    },
+    {
+      "role": "catch_array",
+      "address": "0x00667D50",
+      "coff_symbol": "__CTA3?AVout_of_range@std@@",
+      "size": 16,
+      "source_sha256": "59d5966c96af7ecad5c9d2918d6582d102b2c67f6b765ea28ac24371ab4f93be",
+      "body_sha256": "bbc8c63664f59bbc3ef6e11ec137df2e7aef33432b63d77804784d22741f3b78",
+      "relocation_bindings": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "__CT??_R0?AVout_of_range@std@@@8??0out_of_range@std@@QAE@ABV01@@Z40",
+          "addend": 0,
+          "target_address": "0x00667D34"
+        },
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "__CT??_R0?AVlogic_error@std@@@8??0logic_error@std@@QAE@ABV01@@Z40",
+          "addend": 0,
+          "target_address": "0x006679F0"
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__CT??_R0?AVexception@@@8??0exception@@QAE@ABV0@@Z12",
+          "addend": 0,
+          "target_address": "0x006679D4"
+        }
+      ]
+    },
+    {
+      "role": "catchable_type",
+      "address": "0x00667D34",
+      "coff_symbol": "__CT??_R0?AVout_of_range@std@@@8??0out_of_range@std@@QAE@ABV01@@Z40",
+      "size": 28,
+      "source_sha256": "6b77dd7c7795898c9c20b251c260c7043dbf93a303a2188b8bf71a576713d4f0",
+      "body_sha256": "d9d4f47b4b50c352ff8cbe5a65c1450a63e4543650237d77d0af33bbcdb51cc0",
+      "relocation_bindings": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "??_R0?AVout_of_range@std@@@8",
+          "addend": 0,
+          "target_address": "0x0066C218"
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "??0out_of_range@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target_address": "0x00409E30"
+        }
+      ]
+    },
+    {
+      "role": "type_descriptor",
+      "address": "0x0066C218",
+      "coff_symbol": "??_R0?AVout_of_range@std@@@8",
+      "size": 31,
+      "source_sha256": "c431ff00e8712d97df337fe97c9a79c58867d11894df041e70b5f31368a0b37e",
+      "body_sha256": "e407242b32f138d4a144977f07188e804fa93a6c1a12d22ef2a4222d876dd73f",
+      "relocation_bindings": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "??_7type_info@@6B@",
+          "addend": 0,
+          "target_address": "0x00660EDC"
+        }
+      ],
+      "type_name": ".?AVout_of_range@std@@"
+    }
+  ]
+}

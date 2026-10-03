@@ -255,8 +255,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004097E0,library,vc7-stl-vector-storage,exclude,high,R089
 0x00409860,library,vc7-stl-vector-storage,exclude,high,R089
 0x004098D0,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x00409930,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00409960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00409930,library,VC71STL,exclude,complete-source-vtable-and-bases,R096
+0x00409960,library,VC71STL,exclude,complete-source-vtable-and-bases,R096
 0x00409980,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x004099B0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x004099D0,library,vc7-stl-vector-helpers,exclude,high,R090
@@ -272,7 +272,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00409DA0,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x00409DD0,library,VC7STL,exclude,complete-vc7-deque-dereference-family,R082
 0x00409DF0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
-0x00409E30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00409E30,compiler,VC71Compiler,exclude,complete-source-vtable-and-bases,R096
 0x00409E60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00409E80,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00409EA0,library,VC7STL,exclude,complete-vc7-template-family,R032

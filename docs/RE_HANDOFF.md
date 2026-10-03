@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R095. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R096. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,910: 804 authored, 1,532 library and 574 compiler generated.
-There are 1,441 pending. Candidate count is not authored function count.
+has resolved 2,913: 804 authored, 1,534 library and 575 compiler generated.
+There are 1,438 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R095; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R096; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -73,13 +73,14 @@ scripts/repo-python scripts/verify-vendor-vector-operation-origins.py
 scripts/repo-python scripts/verify-vendor-vector-callee-origins.py
 scripts/repo-python scripts/verify-vendor-vector-copy-origins.py
 scripts/repo-python scripts/verify-vendor-vector-wrapper-origins.py
+scripts/repo-python scripts/verify-vendor-exception-origins.py
 scripts/repo-python scripts/verify-runtime-origins.py
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The current session passed 111 public tests, target-required tracking,
+The current session passed 116 public tests, target-required tracking,
 complete checks of 757 explicitly recorded authored bodies, and progress
 freshness. The new deque algorithm, emptiness, short-helper, cleanup, vector
 storage, vector helper, vector operation, vector callee, scalar copy and
@@ -87,7 +88,7 @@ vector wrapper cold verifiers
 passed through the no-auth public Funnel MCP.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R094 passed.
+endpoint. Public GitHub CI through R095 passed.
 
 ## Deferred investigations
 
@@ -187,8 +188,16 @@ witnesses: 383 bytes with eleven typed calls. The verifier passed through
 the no-auth public Funnel MCP. The earlier callee evidence
 and every new exact source variant cold-replay. The iterator callees use
 existing complete no-relocation alias evidence; these calls do not infer
-the game's original element type. The short exception methods still need
-independent data/vtable bindings and remain pending.
+the game's original element type. Three short exception methods now have
+complete source, vtable, weak-fallback and named throw-metadata evidence:
+the 37-/28-byte `std::out_of_range` message constructor/destructor are
+library; its 37-byte implicit copy constructor is compiler generated.
+The complete verifier passed through the no-auth public Funnel MCP.
+The initial `length_error` shape hypothesis was insufficient: the complete
+type descriptor names `out_of_range`, and its CatchableType binds the
+actual copy constructor. Ten context bodies, two whole vtables and four
+whole type-data COMDATs cold-replay. Same-shaped game scene methods retain
+independent ownership and are not library functions.
 
 The CRT survey at `.analysis/crt-origin-survey.json` contains 353 historical
 relocation-bearing observations. R093 resolved the complete 344-byte
@@ -206,7 +215,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,441 pending origin decisions before doing further exact
+Complete the 1,438 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; remaining
