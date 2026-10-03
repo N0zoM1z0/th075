@@ -1153,3 +1153,13 @@ target bodies, typed call destinations and callee hashes are reproducible.
 Other same-shape destructor-like bodies call unrelated or unknown functions
 and remain pending. R077 adds library origin only, with no reconstruction
 source or exact credit.
+
+## VC7 deque access after R078
+
+Seven `std::deque::at` bodies, sixteen iterator additions and ten
+const-iterator dereferences match complete VC7 source COMDATs from an
+independent seven-width probe. The 44 typed relocations, full body bytes
+and internal control flow are reproducible. The two `at` methods used by
+the fighter script accessors support the STL portion of their lookup path;
+the script's 1,000-slot mapping is game-authored. Original element types
+and callee ownership remain unclaimed, with no exact credit.

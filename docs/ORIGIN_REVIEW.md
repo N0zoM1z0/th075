@@ -3053,3 +3053,31 @@ library, 574 compiler), 1,854 pending. Exact remains 42 functions /
 8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R076
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37095046444.
+
+## R078 — VC7 deque bounds-checked access and iterators
+
+An independent VC7 source probe calls `std::deque<DequeAccessRecord<N>>::at`
+for seven synthetic record widths. Thirty-three complete pending target
+bodies, totaling 2,267 bytes, match three emitted STL families: seven
+68-byte `at` methods with four typed relocations each; sixteen 57-byte
+iterator additions with one typed relocation each; and ten 83–89-byte
+const-iterator dereferences with no relocations. Each definition occupies
+its own complete code COMDAT. The full target control flow and every typed
+relocation destination are checked. Width aliases show code-shape
+equivalence, not original game element types.
+
+The two `at` methods at `0x00421360` and `0x00421570` are called by the
+fighter script field accessors reviewed in R076. This supplies an
+independent STL explanation for their bounds check and iterator sequence;
+the custom 1,000-slot mapping remains authored. Other short access-related
+template matches await additional evidence.
+
+`scripts/repo-python scripts/verify-vendor-deque-access-origins.py`
+cold compiles the probe and rechecks complete source/target bodies, aliases,
+44 typed relocations, decoded control flow and ledgers. Evidence is in
+`config/vendor-deque-access-origins.csv`. No reconstruction source or exact
+credit is added. R078 adds 33 library origins: 2,530 reviewed (804 authored,
+1,152 library, 574 compiler), 1,821 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R077
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37095398320.
