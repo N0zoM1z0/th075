@@ -70,6 +70,27 @@ def check_import_binding(binding,imports):
         raise ValueError('CRT API lacks its independent raw PE import identity')
 
 
+def check_diagnostic_ledger(row,functions,origins):
+    key=row['address']
+    recorded=row['ledger_size']
+    if recorded is None:
+        if key in functions:
+            raise ValueError('non-inventoried diagnostic unexpectedly gains a candidate')
+        return
+    function=functions[key]
+    if int(function['size'])==recorded:
+        return
+    # R116 reconciles this already-frozen entire 48-byte source body. Keep
+    # R115's historical 47-byte candidate snapshot and complete source extent.
+    origin=origins[key]
+    if (key!='0x006440A5' or recorded!=47 or row['size']!=48
+            or int(function['size'])!=48 or function['span_end']!=row['span_end']
+            or origin['origin']!='library' or origin['evidence_id']!='R116'
+            or function['owner']!='library' or function['status']!='excluded'
+            or function['proposed_name']!='___crtExitProcess'):
+        raise ValueError('unaccepted diagnostic candidate extent differs')
+
+
 def verify_plan(manifest):
     rows={r['address']:r for r in manifest['functions']}
     if (len(rows)!=8 or set(rows)!=set(ACCEPTED)|set(PENDING)
@@ -245,10 +266,7 @@ def main():
             if key in rows:
                 check_ledger(row,functions,origins,args.evidence_only)
             elif row['decision']=='diagnostic':
-                ledger_size=row['ledger_size']
-                if ((ledger_size is None and key in functions)
-                        or (ledger_size is not None and int(functions[key]['size'])!=ledger_size)):
-                    raise ValueError('unaccepted diagnostic candidate extent differs')
+                check_diagnostic_ledger(row,functions,origins)
             data=member(row)
             path.write_bytes(data)
             # An auxiliary extent is mandatory, including static functions and INT3.

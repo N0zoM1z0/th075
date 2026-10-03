@@ -4617,3 +4617,95 @@ tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the public acceptance request
 ran once.
+
+
+## R116 — complete dynamic CRT dispatch and shared-copy tail
+
+All six runtime error candidates receive whole source/target and control-flow
+review. Three gain library origin / 304 bytes; three roots / 446 bytes retain
+explicit unresolved failure-chain reasons. Replay
+`config/runtime-error-origin-evidence.json` with
+`scripts/repo-python scripts/verify-runtime-error-origins.py`.
+
+| Address | Complete bytes | Decision and source association |
+| --- | ---: | --- |
+| `0x006440A5` | 48 | Library `___crtExitProcess`; candidate reconciled from 47 |
+| `0x0064FBFE` | 249 | Library `___crtMessageBoxA` |
+| `0x00641B80` | 7 | Library `_strcpy`; complete 248-byte shared carrier |
+| `0x00648C70` | 375 | Pending `__NMSG_WRITE`: cookie failure chain unresolved |
+| `0x00648E11` | 57 | Pending `__FF_MSGBANNER`: writer chain unresolved |
+| `0x00640611` | 14 | Pending fastcall cookie check: failure/EH chain unresolved |
+
+The cold replay re-extracts whole members from the hash-pinned VC7.1
+libcmt.lib, checks each own function auxiliary extent and compares every byte
+outside all 63 typed root fields. All fields retain actual destinations;
+pending code/data associations remain diagnostic. Archive spelling and a
+relocation-masked fingerprint alone cannot establish ownership.
+
+The exit dispatcher tests GetModuleHandleA("mscoree.dll"), resolves the full
+"CorExitProcess" export through raw GetProcAddress and calls that actual EAX
+result before unconditional raw ExitProcess. Its own 48-byte source extent
+ends with INT3 at `0x006440D4`. The ledger now includes that byte; no invented
+return or truncated 47-byte comparison is used. The private database remains
+unchanged. R115 retains its historical 47-byte candidate snapshot and checks
+this specific R116 reconciliation when replaying its complete 48-byte source.
+
+The message-box dispatcher retains all 21 fields and the complete lookup,
+guard, store, argument and indirect-call sequence. Five exports from the
+whole "user32.dll" literal bind their actual pointer slots: MessageBoxA,
+GetActiveWindow, GetLastActivePopup, GetProcessWindowStation and
+GetUserObjectInformationA. Their defining 20-byte BSS section has five
+independent source definitions at offsets 0/4/8/12/16 and actual writable PE
+loader zero-fill geometry. Equal-width zero storage alone earns no identity.
+Raw LoadLibraryA/GetProcAddress and six dynamic export flows are checked.
+
+A natural SDK probe cold-builds the entire 24-byte readonly layout/flag array:
+USEROBJECTFLAGS size 12, dwFlags offset 8, WSF_VISIBLE and UOI_FLAGS both 1,
+and service notification flags 0x200000/0x40000. The complete target buffer,
+flag read and version-dependent byte ORs bind these values. Platform/major
+source globals retain independent R115 GetVersionExA-result provenance.
+The dispatcher uses a four-argument MessageBoxA call with guarded parent/popup
+lookups; the wrapper itself returns with caller cleanup. Original linker flags
+and executable debug names remain unknown.
+
+The seven-byte strcpy entry preserves EDI, loads its destination and jumps
+to `0x00641BF5` inside the independently reviewed `_strcat` body at
+`0x00641B90`. Cold extraction checks the whole relocation-free 248-byte
+carrier: the two own function extents, the intervening nine-byte LEA/MOV
+alignment, all shared-tail branches and every target byte. The seven-byte
+entry has no local RET; ownership does not come from its tiny shape. Retained
+strcat/strncpy/strlen/stack anchors total 724 bytes; R115 also cold-replays
+57 R006 archive bodies and the three local R025 definitions with full tables.
+
+The diagnostic writer controls include the complete 152-byte, nineteen-entry
+error table, every pointer and all nineteen whole vendor messages. All 32
+readonly literal definitions / 1,120 bytes are checked with full section
+symbol topology, source hashes and readonly target geometry. Complete mutable
+application/error/debug/cookie definitions retain their source sections and
+initialized or loader-zero-fill target storage. These diagnostic data checks
+do not close the remaining code graph. Three additional whole source contexts
+/ 122 bytes retain the two R115 error policies and 49-byte cookie failure body.
+The failure context includes its embedded filter RET and terminal INT3 at
+`0x00640610`; its 48-byte candidate is not accepted or silently reconciled.
+Its EH metadata, prolog and security error handler remain unresolved. The
+14-byte fastcall check preserves ECX and its real external failure tail.
+
+Evidence-only and accepted checks passed locally. Thirteen public regressions
+reject truncated terminal/shared extents, changed shared owners, swapped dynamic
+slots, missing actual store witnesses, wrong SDK layout, incomplete table or
+literal definitions, guessed cache topology, premature failure ownership,
+unearned exact credit and an unrelated historical boundary exception.
+The checkpoint is 3,099 resolved: 919 authored, 1,605 library and 575 compiler
+generated, with 1,252 pending. Exact stays 60 functions / 9,883 bytes; the
+provisional authored denominator remains 1,965,299. Recorded authored extents
+remain 872 / 1,952,956 bytes. R117 targets the remaining security/failure/EH
+closure. Retain all R108/R114 ambiguities and unresolved R115/R116 roots until
+their missing evidence changes.
+
+One final no-auth public HTTPS MCP request passed R116, retained R115 and
+R114 including R077/R113 dependency replays, R006/R025 archive anchors,
+all 872 recorded authored extents, target/project attestation, 202 public
+tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the public acceptance request
+ran once.

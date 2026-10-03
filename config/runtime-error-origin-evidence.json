@@ -1,0 +1,3357 @@
+{
+  "evidence_id": "R116",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+  "functions": [
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x006440A5",
+      "coff_symbol": "___crtExitProcess",
+      "size": 48,
+      "span_end": "0x006440D4",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "22b7b78107b9338909545f5c4e0f79c48164582d148a074379e9d33b64bf948e",
+      "body_sha256": "b41e5c99fb72a82f9343d68b84edae67b9e0286946323dda792fdb424129cb11",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+          "addend": 0,
+          "target_address": "0x006611F0",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleHandleA@4",
+          "addend": 0,
+          "target_address": "0x006570A8",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleHandleA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+          "addend": 0,
+          "target_address": "0x006611E0",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "target_address": "0x006570A0",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress",
+          "target_kind": "import"
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__ExitProcess@4",
+          "addend": 0,
+          "target_address": "0x0065717C",
+          "dll": "KERNEL32.dll",
+          "import_name": "ExitProcess",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006440B2",
+          "target": "0x006440CA"
+        },
+        {
+          "site": "0x006440C2",
+          "target": "0x006440CA"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006440AA",
+          "operand": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006440BA",
+          "operand": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x006440C8",
+          "operand": "eax"
+        },
+        {
+          "site": "0x006440CE",
+          "operand": "dword ptr [0x65717c]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x006440A5",
+          "mnemonic": "push",
+          "operands": "0x6611f0"
+        },
+        {
+          "site": "0x006440AA",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a8]"
+        },
+        {
+          "site": "0x006440B0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006440B2",
+          "mnemonic": "je",
+          "operands": "0x6440ca"
+        },
+        {
+          "site": "0x006440B4",
+          "mnemonic": "push",
+          "operands": "0x6611e0"
+        },
+        {
+          "site": "0x006440B9",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006440BA",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x006440C0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x006440C2",
+          "mnemonic": "je",
+          "operands": "0x6440ca"
+        },
+        {
+          "site": "0x006440C4",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x006440C8",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x006440CA",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 4]"
+        },
+        {
+          "site": "0x006440CE",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x65717c]"
+        },
+        {
+          "site": "0x006440D4",
+          "mnemonic": "int3",
+          "operands": ""
+        }
+      ],
+      "terminal": "ExitProcess-followed-by-int3"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "address": "0x00648C70",
+      "coff_symbol": "__NMSG_WRITE",
+      "size": 375,
+      "span_end": "0x00648DE6",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "673609a4eb501db314310d3ca13e95cf61d43687dddf6fa677840cbff5b61291",
+      "body_sha256": "f74e09d384ec8d663231b7a6b5a487deffe8619ffb1479d509015992bce29d6d",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "addend": 0,
+          "target_address": "0x0066FE30",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 0,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 0,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "___app_type",
+          "addend": 0,
+          "target_address": "0x0066FF14",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleFileNameA@12",
+          "addend": 0,
+          "target_address": "0x00657074",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleFileNameA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+          "addend": 0,
+          "target_address": "0x00661324",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "addend": 0,
+          "target_address": "0x00641B80",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 162,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 177,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 194,
+          "type": "DIR32",
+          "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+          "addend": 0,
+          "target_address": "0x00661320",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 200,
+          "type": "REL32",
+          "symbol": "_strncpy",
+          "addend": 0,
+          "target_address": "0x0064CFF0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 209,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 222,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 239,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "target_address": "0x00642510",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+          "addend": 0,
+          "target_address": "0x00662518",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "addend": 0,
+          "target_address": "0x00641B80",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 259,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+          "addend": 0,
+          "target_address": "0x0066131C",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 270,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 292,
+          "type": "DIR32",
+          "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+          "addend": 0,
+          "target_address": "0x006612E8",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 298,
+          "type": "REL32",
+          "symbol": "___crtMessageBoxA",
+          "addend": 0,
+          "target_address": "0x0064FBFE",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 324,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 336,
+          "type": "DIR32",
+          "symbol": "__imp__GetStdHandle@4",
+          "addend": 0,
+          "target_address": "0x006571EC",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetStdHandle",
+          "target_kind": "import"
+        },
+        {
+          "offset": 343,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "target_address": "0x00657124",
+          "dll": "KERNEL32.dll",
+          "import_name": "WriteFile",
+          "target_kind": "import"
+        },
+        {
+          "offset": 360,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "addend": 0,
+          "target_address": "0x00640611",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00648DE6",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00648D04",
+            "target": "0x00641B80"
+          },
+          {
+            "site": "0x00648D11",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D20",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D37",
+            "target": "0x0064CFF0"
+          },
+          {
+            "site": "0x00648D40",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D4D",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D5E",
+            "target": "0x00642510"
+          },
+          {
+            "site": "0x00648D6B",
+            "target": "0x00641B80"
+          },
+          {
+            "site": "0x00648D72",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D7D",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D89",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D99",
+            "target": "0x0064FBFE"
+          },
+          {
+            "site": "0x00648DB3",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648DD7",
+            "target": "0x00640611"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00648C9D",
+          "target": "0x00648CA5"
+        },
+        {
+          "site": "0x00648CA3",
+          "target": "0x00648C96"
+        },
+        {
+          "site": "0x00648CB0",
+          "target": "0x00648DCB"
+        },
+        {
+          "site": "0x00648CBE",
+          "target": "0x00648DA3"
+        },
+        {
+          "site": "0x00648CC6",
+          "target": "0x00648CD5"
+        },
+        {
+          "site": "0x00648CCF",
+          "target": "0x00648DA3"
+        },
+        {
+          "site": "0x00648CDB",
+          "target": "0x00648DCB"
+        },
+        {
+          "site": "0x00648CF9",
+          "target": "0x00648D0B"
+        },
+        {
+          "site": "0x00648D1B",
+          "target": "0x00648D3F"
+        },
+        {
+          "site": "0x00648DA1",
+          "target": "0x00648DCB"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x00648CF1",
+          "operand": "dword ptr [0x657074]"
+        },
+        {
+          "site": "0x00648DBE",
+          "operand": "dword ptr [0x6571ec]"
+        },
+        {
+          "site": "0x00648DC5",
+          "operand": "dword ptr [0x657124]"
+        }
+      ],
+      "instruction_witnesses": [],
+      "uncertainty": "crt-writer-cookie-chain-unresolved"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "address": "0x00648E11",
+      "coff_symbol": "__FF_MSGBANNER",
+      "size": 57,
+      "span_end": "0x00648E49",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "b0d5d716b5b7dbc999f7d07a5281f3bed5019bf7169c7d0fdd454b1ca866e9d5",
+      "body_sha256": "5a2421c5ab6d0a7e04a79be9afe0cbdaf62c8eb551d4147a76e436dc08b92701",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "___app_type",
+          "addend": 0,
+          "target_address": "0x0066FF14",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 34,
+          "type": "DIR32",
+          "symbol": "__adbgmsg",
+          "addend": 0,
+          "target_address": "0x0068E574",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00648E49",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00648E2D",
+            "target": "0x00648C70"
+          },
+          {
+            "site": "0x00648E43",
+            "target": "0x00648C70"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00648E19",
+          "target": "0x00648E28"
+        },
+        {
+          "site": "0x00648E1D",
+          "target": "0x00648E49"
+        },
+        {
+          "site": "0x00648E26",
+          "target": "0x00648E49"
+        },
+        {
+          "site": "0x00648E3A",
+          "target": "0x00648E3E"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x00648E3C",
+          "operand": "eax"
+        }
+      ],
+      "instruction_witnesses": [],
+      "uncertainty": "crt-banner-writer-chain-unresolved"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "address": "0x0064FBFE",
+      "coff_symbol": "___crtMessageBoxA",
+      "size": 249,
+      "span_end": "0x0064FCF6",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "c39c94d14db2ad41df736263012f7a31314925869103033cbabd2cb550d137cf",
+      "body_sha256": "cbc5dbeea35db247978632b3c491c03ea99461e36ad2f7a642aa09f378baffdb",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E708",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_C@_0L@GMPLCCII@user32?4dll?$AA@",
+          "addend": 0,
+          "target_address": "0x006673B0",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 26,
+          "type": "DIR32",
+          "symbol": "__imp__LoadLibraryA@4",
+          "addend": 0,
+          "target_address": "0x006570A4",
+          "dll": "KERNEL32.dll",
+          "import_name": "LoadLibraryA",
+          "target_kind": "import"
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "target_address": "0x006570A0",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress",
+          "target_kind": "import"
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@CHKKJDAI@MessageBoxA?$AA@",
+          "addend": 0,
+          "target_address": "0x006673A4",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 57,
+          "type": "DIR32",
+          "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E708",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "??_C@_0BA@HNOPNCHB@GetActiveWindow?$AA@",
+          "addend": 0,
+          "target_address": "0x00667394",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "??_C@_0BD@HHGDFDBJ@GetLastActivePopup?$AA@",
+          "addend": 0,
+          "target_address": "0x00667380",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "?pfnGetActiveWindow@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E70C",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "__osplatform",
+          "addend": 0,
+          "target_address": "0x0068E2E8",
+          "target_kind": "version-global"
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "?pfnGetLastActivePopup@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E710",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 99,
+          "type": "DIR32",
+          "symbol": "??_C@_0BK@CIDNPOGP@GetUserObjectInformationA?$AA@",
+          "addend": 0,
+          "target_address": "0x00667364",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "?pfnGetUserObjectInformationA@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E718",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 116,
+          "type": "DIR32",
+          "symbol": "??_C@_0BI@DFKBFLJE@GetProcessWindowStation?$AA@",
+          "addend": 0,
+          "target_address": "0x0066734C",
+          "target_kind": "literal"
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "?pfnGetProcessWindowStation@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E714",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 129,
+          "type": "DIR32",
+          "symbol": "?pfnGetProcessWindowStation@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E714",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 158,
+          "type": "DIR32",
+          "symbol": "?pfnGetUserObjectInformationA@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E718",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 174,
+          "type": "DIR32",
+          "symbol": "__winmajor",
+          "addend": 0,
+          "target_address": "0x0068E2F4",
+          "target_kind": "version-global"
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "?pfnGetActiveWindow@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E70C",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "?pfnGetLastActivePopup@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E710",
+          "target_kind": "cache"
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+          "addend": 0,
+          "target_address": "0x0068E708",
+          "target_kind": "cache"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064FCF6",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x0064FC0F",
+          "target": "0x0064FC7E"
+        },
+        {
+          "site": "0x0064FC20",
+          "target": "0x0064FCB9"
+        },
+        {
+          "site": "0x0064FC3B",
+          "target": "0x0064FCB9"
+        },
+        {
+          "site": "0x0064FC5E",
+          "target": "0x0064FC7E"
+        },
+        {
+          "site": "0x0064FC6F",
+          "target": "0x0064FC7E"
+        },
+        {
+          "site": "0x0064FC85",
+          "target": "0x0064FCC3"
+        },
+        {
+          "site": "0x0064FC8B",
+          "target": "0x0064FCAA"
+        },
+        {
+          "site": "0x0064FCA2",
+          "target": "0x0064FCAA"
+        },
+        {
+          "site": "0x0064FCA8",
+          "target": "0x0064FCC3"
+        },
+        {
+          "site": "0x0064FCB1",
+          "target": "0x0064FCBD"
+        },
+        {
+          "site": "0x0064FCB7",
+          "target": "0x0064FCE2"
+        },
+        {
+          "site": "0x0064FCBB",
+          "target": "0x0064FCF2"
+        },
+        {
+          "site": "0x0064FCC1",
+          "target": "0x0064FCE2"
+        },
+        {
+          "site": "0x0064FCCA",
+          "target": "0x0064FCE2"
+        },
+        {
+          "site": "0x0064FCD2",
+          "target": "0x0064FCE2"
+        },
+        {
+          "site": "0x0064FCDB",
+          "target": "0x0064FCE2"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0064FC16",
+          "operand": "dword ptr [0x6570a4]"
+        },
+        {
+          "site": "0x0064FC32",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064FC43",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064FC50",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064FC66",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064FC77",
+          "operand": "esi"
+        },
+        {
+          "site": "0x0064FC87",
+          "operand": "eax"
+        },
+        {
+          "site": "0x0064FC9A",
+          "operand": "dword ptr [0x68e718]"
+        },
+        {
+          "site": "0x0064FCCC",
+          "operand": "eax"
+        },
+        {
+          "site": "0x0064FCDE",
+          "operand": "eax"
+        },
+        {
+          "site": "0x0064FCEC",
+          "operand": "dword ptr [0x68e708]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0064FBFE",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0064FBFF",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0064FC01",
+          "mnemonic": "sub",
+          "operands": "esp, 0x10"
+        },
+        {
+          "site": "0x0064FC04",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064FC05",
+          "mnemonic": "xor",
+          "operands": "ebx, ebx"
+        },
+        {
+          "site": "0x0064FC07",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e708], ebx"
+        },
+        {
+          "site": "0x0064FC0D",
+          "mnemonic": "push",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC0E",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC0F",
+          "mnemonic": "jne",
+          "operands": "0x64fc7e"
+        },
+        {
+          "site": "0x0064FC11",
+          "mnemonic": "push",
+          "operands": "0x6673b0"
+        },
+        {
+          "site": "0x0064FC16",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x6570a4]"
+        },
+        {
+          "site": "0x0064FC1C",
+          "mnemonic": "mov",
+          "operands": "edi, eax"
+        },
+        {
+          "site": "0x0064FC1E",
+          "mnemonic": "cmp",
+          "operands": "edi, ebx"
+        },
+        {
+          "site": "0x0064FC20",
+          "mnemonic": "je",
+          "operands": "0x64fcb9"
+        },
+        {
+          "site": "0x0064FC26",
+          "mnemonic": "mov",
+          "operands": "esi, dword ptr [0x6570a0]"
+        },
+        {
+          "site": "0x0064FC2C",
+          "mnemonic": "push",
+          "operands": "0x6673a4"
+        },
+        {
+          "site": "0x0064FC31",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC32",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC34",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FC36",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e708], eax"
+        },
+        {
+          "site": "0x0064FC3B",
+          "mnemonic": "je",
+          "operands": "0x64fcb9"
+        },
+        {
+          "site": "0x0064FC3D",
+          "mnemonic": "push",
+          "operands": "0x667394"
+        },
+        {
+          "site": "0x0064FC42",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC43",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC45",
+          "mnemonic": "push",
+          "operands": "0x667380"
+        },
+        {
+          "site": "0x0064FC4A",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC4B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e70c], eax"
+        },
+        {
+          "site": "0x0064FC50",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC52",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e2e8], 2"
+        },
+        {
+          "site": "0x0064FC59",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e710], eax"
+        },
+        {
+          "site": "0x0064FC5E",
+          "mnemonic": "jne",
+          "operands": "0x64fc7e"
+        },
+        {
+          "site": "0x0064FC60",
+          "mnemonic": "push",
+          "operands": "0x667364"
+        },
+        {
+          "site": "0x0064FC65",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC66",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC68",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FC6A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e718], eax"
+        },
+        {
+          "site": "0x0064FC6F",
+          "mnemonic": "je",
+          "operands": "0x64fc7e"
+        },
+        {
+          "site": "0x0064FC71",
+          "mnemonic": "push",
+          "operands": "0x66734c"
+        },
+        {
+          "site": "0x0064FC76",
+          "mnemonic": "push",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FC77",
+          "mnemonic": "call",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FC79",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x68e714], eax"
+        },
+        {
+          "site": "0x0064FC7E",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68e714]"
+        },
+        {
+          "site": "0x0064FC83",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FC85",
+          "mnemonic": "je",
+          "operands": "0x64fcc3"
+        },
+        {
+          "site": "0x0064FC87",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064FC89",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FC8B",
+          "mnemonic": "je",
+          "operands": "0x64fcaa"
+        },
+        {
+          "site": "0x0064FC8D",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 4]"
+        },
+        {
+          "site": "0x0064FC90",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064FC91",
+          "mnemonic": "push",
+          "operands": "0xc"
+        },
+        {
+          "site": "0x0064FC93",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 0x10]"
+        },
+        {
+          "site": "0x0064FC96",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0064FC97",
+          "mnemonic": "push",
+          "operands": "1"
+        },
+        {
+          "site": "0x0064FC99",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064FC9A",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x68e718]"
+        },
+        {
+          "site": "0x0064FCA0",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FCA2",
+          "mnemonic": "je",
+          "operands": "0x64fcaa"
+        },
+        {
+          "site": "0x0064FCA4",
+          "mnemonic": "test",
+          "operands": "byte ptr [ebp - 8], 1"
+        },
+        {
+          "site": "0x0064FCA8",
+          "mnemonic": "jne",
+          "operands": "0x64fcc3"
+        },
+        {
+          "site": "0x0064FCAA",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [0x68e2f4], 4"
+        },
+        {
+          "site": "0x0064FCB1",
+          "mnemonic": "jb",
+          "operands": "0x64fcbd"
+        },
+        {
+          "site": "0x0064FCB3",
+          "mnemonic": "or",
+          "operands": "byte ptr [ebp + 0x12], 0x20"
+        },
+        {
+          "site": "0x0064FCB7",
+          "mnemonic": "jmp",
+          "operands": "0x64fce2"
+        },
+        {
+          "site": "0x0064FCB9",
+          "mnemonic": "xor",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FCBB",
+          "mnemonic": "jmp",
+          "operands": "0x64fcf2"
+        },
+        {
+          "site": "0x0064FCBD",
+          "mnemonic": "or",
+          "operands": "byte ptr [ebp + 0x12], 4"
+        },
+        {
+          "site": "0x0064FCC1",
+          "mnemonic": "jmp",
+          "operands": "0x64fce2"
+        },
+        {
+          "site": "0x0064FCC3",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68e70c]"
+        },
+        {
+          "site": "0x0064FCC8",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FCCA",
+          "mnemonic": "je",
+          "operands": "0x64fce2"
+        },
+        {
+          "site": "0x0064FCCC",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064FCCE",
+          "mnemonic": "mov",
+          "operands": "ebx, eax"
+        },
+        {
+          "site": "0x0064FCD0",
+          "mnemonic": "test",
+          "operands": "ebx, ebx"
+        },
+        {
+          "site": "0x0064FCD2",
+          "mnemonic": "je",
+          "operands": "0x64fce2"
+        },
+        {
+          "site": "0x0064FCD4",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x68e710]"
+        },
+        {
+          "site": "0x0064FCD9",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0064FCDB",
+          "mnemonic": "je",
+          "operands": "0x64fce2"
+        },
+        {
+          "site": "0x0064FCDD",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064FCDE",
+          "mnemonic": "call",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0064FCE0",
+          "mnemonic": "mov",
+          "operands": "ebx, eax"
+        },
+        {
+          "site": "0x0064FCE2",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 0x10]"
+        },
+        {
+          "site": "0x0064FCE5",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 0xc]"
+        },
+        {
+          "site": "0x0064FCE8",
+          "mnemonic": "push",
+          "operands": "dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0064FCEB",
+          "mnemonic": "push",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064FCEC",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x68e708]"
+        },
+        {
+          "site": "0x0064FCF2",
+          "mnemonic": "pop",
+          "operands": "edi"
+        },
+        {
+          "site": "0x0064FCF3",
+          "mnemonic": "pop",
+          "operands": "esi"
+        },
+        {
+          "site": "0x0064FCF4",
+          "mnemonic": "pop",
+          "operands": "ebx"
+        },
+        {
+          "site": "0x0064FCF5",
+          "mnemonic": "leave",
+          "operands": ""
+        },
+        {
+          "site": "0x0064FCF6",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "member_offset": 2186124,
+      "member": "build\\intel\\mt_obj\\strcat.obj",
+      "member_sha256": "b77945760f7348ccc2efec45aa2c3915480e9597a15000377e4976603575bd49",
+      "address": "0x00641B80",
+      "coff_symbol": "_strcpy",
+      "size": 7,
+      "span_end": "0x00641B86",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "a485aa6d5eda4dfbd126c3d0fc231f25f4edfdfe999f74dd8ee8d90956a67b5b",
+      "body_sha256": "a485aa6d5eda4dfbd126c3d0fc231f25f4edfdfe999f74dd8ee8d90956a67b5b",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00641B85",
+          "target": "0x00641BF5"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": []
+    },
+    {
+      "member_offset": 1230768,
+      "member": "build\\intel\\mt_obj\\secchk.obj",
+      "member_sha256": "84ae801ce4d7775d5fc3b9c5057100599d1490762a37ede1b13de1eb78deaab3",
+      "address": "0x00640611",
+      "coff_symbol": "@__security_check_cookie@4",
+      "size": 14,
+      "span_end": "0x0064061E",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "257ee7804525c227e05a52da8cb796f7c952b4cbee7faed6f98f5f1b1f480129",
+      "body_sha256": "70610e39e10609c0e37185c56057a2c2e683d36388b5e0058cff2f1019430cf3",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "addend": 0,
+          "target_address": "0x0066FE30",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "_report_failure",
+          "addend": 0,
+          "target_address": "0x006405E0",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00640619",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00640617",
+          "target": "0x0064061A"
+        },
+        {
+          "site": "0x0064061A",
+          "target": "0x006405E0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "uncertainty": "cookie-failure-chain-unresolved"
+    }
+  ],
+  "diagnostic_contexts": [
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "address": "0x006422B2",
+      "coff_symbol": "_fast_error_exit",
+      "size": 36,
+      "span_end": "0x006422D5",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "432e8b38ceba8846a44157db58d79dae80f9dcfaad1ab22ae54c6568dc1c25fb",
+      "body_sha256": "cb45824b1ca764f5574139c3c1a6c34cfea1fc293eab20de96048264e581616e",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__FF_MSGBANNER",
+          "addend": 0,
+          "target_address": "0x00648E11",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "___crtExitProcess",
+          "addend": 0,
+          "target_address": "0x006440A5",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006422D5",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006422BB",
+            "target": "0x00648E11"
+          },
+          {
+            "site": "0x006422C4",
+            "target": "0x00648C70"
+          },
+          {
+            "site": "0x006422CE",
+            "target": "0x006440A5"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006422B9",
+          "target": "0x006422C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "ledger_size": 36
+    },
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "address": "0x0064228D",
+      "coff_symbol": "__amsg_exit",
+      "size": 37,
+      "span_end": "0x006422B1",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "319effa96c10d6ea86de3226841569cfc57b04636dbbb6a317f824336069a198",
+      "body_sha256": "cd4e9913c164f7d95bb6b8418ff0264b95b1d404aefcba1fd5170cfa92f73264",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__FF_MSGBANNER",
+          "addend": 0,
+          "target_address": "0x00648E11",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__aexit_rtn",
+          "addend": 0,
+          "target_address": "0x0066FF10",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006422B1",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00642296",
+            "target": "0x00648E11"
+          },
+          {
+            "site": "0x0064229F",
+            "target": "0x00648C70"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00642294",
+          "target": "0x0064229B"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x006422A9",
+          "operand": "dword ptr [0x66ff10]"
+        }
+      ],
+      "instruction_witnesses": [],
+      "ledger_size": 37
+    },
+    {
+      "member_offset": 1230768,
+      "member": "build\\intel\\mt_obj\\secchk.obj",
+      "member_sha256": "84ae801ce4d7775d5fc3b9c5057100599d1490762a37ede1b13de1eb78deaab3",
+      "address": "0x006405E0",
+      "coff_symbol": "_report_failure",
+      "size": 49,
+      "span_end": "0x00640610",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "b27e2070d1777098e105c43fd5f4ec88999fd5fc736fade1e2c39680fff947c6",
+      "body_sha256": "98e9a95994d2838dcdeb6e1a350450377b9cf34780429f7c03b9267914c5d3bc",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T19882",
+          "addend": 0,
+          "target_address": "0x00660E68",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "target_address": "0x00645414",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "___security_error_handler",
+          "addend": 0,
+          "target_address": "0x0064529E",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "__imp__ExitProcess@4",
+          "addend": 0,
+          "target_address": "0x0065717C",
+          "dll": "KERNEL32.dll",
+          "import_name": "ExitProcess",
+          "target_kind": "import"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00640600",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006405E7",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x006405F4",
+            "target": "0x0064529E"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x006405FB",
+          "target": "0x00640604"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0064060A",
+          "operand": "dword ptr [0x65717c]"
+        }
+      ],
+      "instruction_witnesses": [],
+      "terminal": "ExitProcess-followed-by-int3",
+      "ledger_size": 48
+    }
+  ],
+  "anchors": [
+    {
+      "member_offset": 2186124,
+      "member": "build\\intel\\mt_obj\\strcat.obj",
+      "member_sha256": "b77945760f7348ccc2efec45aa2c3915480e9597a15000377e4976603575bd49",
+      "address": "0x00641B90",
+      "coff_symbol": "_strcat",
+      "size": 232,
+      "span_end": "0x00641C77",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "0bbe819bf652ab9399ea485cc6b62dd0d29ccda96747d5df8c5733cb91868bde",
+      "body_sha256": "0bbe819bf652ab9399ea485cc6b62dd0d29ccda96747d5df8c5733cb91868bde",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00641C59",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00641C66",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00641C6F",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00641C77",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00641B9B",
+          "target": "0x00641BB0"
+        },
+        {
+          "site": "0x00641BA4",
+          "target": "0x00641BE3"
+        },
+        {
+          "site": "0x00641BAC",
+          "target": "0x00641B9D"
+        },
+        {
+          "site": "0x00641BC6",
+          "target": "0x00641BB0"
+        },
+        {
+          "site": "0x00641BCD",
+          "target": "0x00641BF2"
+        },
+        {
+          "site": "0x00641BD1",
+          "target": "0x00641BED"
+        },
+        {
+          "site": "0x00641BD8",
+          "target": "0x00641BE8"
+        },
+        {
+          "site": "0x00641BDF",
+          "target": "0x00641BE3"
+        },
+        {
+          "site": "0x00641BE1",
+          "target": "0x00641BB0"
+        },
+        {
+          "site": "0x00641BE6",
+          "target": "0x00641BF5"
+        },
+        {
+          "site": "0x00641BEB",
+          "target": "0x00641BF5"
+        },
+        {
+          "site": "0x00641BF0",
+          "target": "0x00641BF5"
+        },
+        {
+          "site": "0x00641BFF",
+          "target": "0x00641C1E"
+        },
+        {
+          "site": "0x00641C08",
+          "target": "0x00641C70"
+        },
+        {
+          "site": "0x00641C15",
+          "target": "0x00641C01"
+        },
+        {
+          "site": "0x00641C17",
+          "target": "0x00641C1E"
+        },
+        {
+          "site": "0x00641C36",
+          "target": "0x00641C19"
+        },
+        {
+          "site": "0x00641C3A",
+          "target": "0x00641C70"
+        },
+        {
+          "site": "0x00641C3E",
+          "target": "0x00641C67"
+        },
+        {
+          "site": "0x00641C46",
+          "target": "0x00641C5A"
+        },
+        {
+          "site": "0x00641C4E",
+          "target": "0x00641C52"
+        },
+        {
+          "site": "0x00641C50",
+          "target": "0x00641C19"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+    },
+    {
+      "member_offset": 2207814,
+      "member": "build\\intel\\mt_obj\\strncpy.obj",
+      "member_sha256": "e231932ffaf6e1cb158fc70405155487398f27fc1db9718130a6528558071bf3",
+      "address": "0x0064CFF0",
+      "coff_symbol": "_strncpy",
+      "size": 292,
+      "span_end": "0x0064D113",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "22006e25651e484a1c6be63bde03c539bb04291083659ef03adadd480f32d18e",
+      "body_sha256": "22006e25651e484a1c6be63bde03c539bb04291083659ef03adadd480f32d18e",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064D05D",
+            "cleanup": 0
+          },
+          {
+            "site": "0x0064D094",
+            "cleanup": 0
+          },
+          {
+            "site": "0x0064D113",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x0064CFF7",
+          "target": "0x0064D08F"
+        },
+        {
+          "site": "0x0064D00F",
+          "target": "0x0064D01C"
+        },
+        {
+          "site": "0x0064D014",
+          "target": "0x0064D09F"
+        },
+        {
+          "site": "0x0064D01A",
+          "target": "0x0064D043"
+        },
+        {
+          "site": "0x0064D029",
+          "target": "0x0064D056"
+        },
+        {
+          "site": "0x0064D02D",
+          "target": "0x0064D05E"
+        },
+        {
+          "site": "0x0064D035",
+          "target": "0x0064D01C"
+        },
+        {
+          "site": "0x0064D03C",
+          "target": "0x0064D09F"
+        },
+        {
+          "site": "0x0064D041",
+          "target": "0x0064D056"
+        },
+        {
+          "site": "0x0064D04F",
+          "target": "0x0064D088"
+        },
+        {
+          "site": "0x0064D054",
+          "target": "0x0064D043"
+        },
+        {
+          "site": "0x0064D064",
+          "target": "0x0064D07C"
+        },
+        {
+          "site": "0x0064D06E",
+          "target": "0x0064D10C"
+        },
+        {
+          "site": "0x0064D07A",
+          "target": "0x0064D066"
+        },
+        {
+          "site": "0x0064D081",
+          "target": "0x0064D0F7"
+        },
+        {
+          "site": "0x0064D08B",
+          "target": "0x0064D083"
+        },
+        {
+          "site": "0x0064D09D",
+          "target": "0x0064D03E"
+        },
+        {
+          "site": "0x0064D0B7",
+          "target": "0x0064D095"
+        },
+        {
+          "site": "0x0064D0BB",
+          "target": "0x0064D0E9"
+        },
+        {
+          "site": "0x0064D0BF",
+          "target": "0x0064D0DF"
+        },
+        {
+          "site": "0x0064D0C7",
+          "target": "0x0064D0D5"
+        },
+        {
+          "site": "0x0064D0CF",
+          "target": "0x0064D095"
+        },
+        {
+          "site": "0x0064D0D3",
+          "target": "0x0064D0ED"
+        },
+        {
+          "site": "0x0064D0DD",
+          "target": "0x0064D0ED"
+        },
+        {
+          "site": "0x0064D0E7",
+          "target": "0x0064D0ED"
+        },
+        {
+          "site": "0x0064D0F5",
+          "target": "0x0064D103"
+        },
+        {
+          "site": "0x0064D101",
+          "target": "0x0064D0F9"
+        },
+        {
+          "site": "0x0064D106",
+          "target": "0x0064D083"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+    },
+    {
+      "member_offset": 2200788,
+      "member": "build\\intel\\mt_obj\\strlen.obj",
+      "member_sha256": "a7d62a1dfa0e5cb277fdb7c772beb83efb8aba48a49b0b87e3d5805451d75b97",
+      "address": "0x00640620",
+      "coff_symbol": "_strlen",
+      "size": 139,
+      "span_end": "0x006406AA",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "5044fc769fb26ae1772d18e3e1ef5ffc16757c910207278cab8d90af3557a7f0",
+      "body_sha256": "5044fc769fb26ae1772d18e3e1ef5ffc16757c910207278cab8d90af3557a7f0",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064068C",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00640696",
+            "cleanup": 0
+          },
+          {
+            "site": "0x006406A0",
+            "cleanup": 0
+          },
+          {
+            "site": "0x006406AA",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x0064062A",
+          "target": "0x00640650"
+        },
+        {
+          "site": "0x00640633",
+          "target": "0x00640683"
+        },
+        {
+          "site": "0x0064063B",
+          "target": "0x0064062C"
+        },
+        {
+          "site": "0x00640666",
+          "target": "0x00640650"
+        },
+        {
+          "site": "0x0064066D",
+          "target": "0x006406A1"
+        },
+        {
+          "site": "0x00640671",
+          "target": "0x00640697"
+        },
+        {
+          "site": "0x00640678",
+          "target": "0x0064068D"
+        },
+        {
+          "site": "0x0064067F",
+          "target": "0x00640683"
+        },
+        {
+          "site": "0x00640681",
+          "target": "0x00640650"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+    },
+    {
+      "member_offset": 1654494,
+      "member": "build\\intel\\mt_obj\\chkstk.obj",
+      "member_sha256": "247d433c8c3aa18924897bb2e9af619e0a038a524a8c266a4ccf44fc854fbe1a",
+      "address": "0x00642510",
+      "coff_symbol": "__chkstk",
+      "size": 61,
+      "span_end": "0x0064254C",
+      "decision": "anchor",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+      "body_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00642524",
+            "cleanup": 0
+          },
+          {
+            "site": "0x0064254C",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "branches": [
+        {
+          "site": "0x00642515",
+          "target": "0x00642525"
+        },
+        {
+          "site": "0x0064253C",
+          "target": "0x0064252A"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [],
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+    }
+  ],
+  "copy_carrier": {
+    "member_offset": 2186124,
+    "member": "build\\intel\\mt_obj\\strcat.obj",
+    "member_sha256": "b77945760f7348ccc2efec45aa2c3915480e9597a15000377e4976603575bd49",
+    "symbol": "_strcpy",
+    "target_address": "0x00641B80",
+    "size": 248,
+    "source_section": {
+      "size": 248,
+      "flags": "0x60500020",
+      "definitions": [
+        {
+          "symbol": "_strcpy",
+          "offset": 0,
+          "section": 1,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": "_strcat",
+          "offset": 16,
+          "section": 1,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": []
+    },
+    "sha256": "ea7abc5fc5be74f1c20ec9d7c72bf1f83e8472d958815b9f90ed644cae66605e",
+    "function_definitions": [
+      {
+        "symbol": "_strcpy",
+        "offset": 0,
+        "size": 7
+      },
+      {
+        "symbol": "_strcat",
+        "offset": 16,
+        "size": 232
+      }
+    ],
+    "alignment": {
+      "offset": 7,
+      "size": 9,
+      "instructions": [
+        "lea esp, [esp]",
+        "mov edi, edi"
+      ]
+    },
+    "shared_tail": {
+      "site": "0x00641B85",
+      "target": "0x00641BF5",
+      "owner": "0x00641B90"
+    }
+  },
+  "dynamic_exports": [
+    {
+      "dll": "mscoree.dll",
+      "export": "CorExitProcess",
+      "resolve_site": "0x006440BA",
+      "call_site": "0x006440C8",
+      "cache_slot": null
+    },
+    {
+      "dll": "user32.dll",
+      "export": "MessageBoxA",
+      "resolve_site": "0x0064FC32",
+      "call_site": "0x0064FCEC",
+      "cache_slot": "0x0068E708"
+    },
+    {
+      "dll": "user32.dll",
+      "export": "GetActiveWindow",
+      "resolve_site": "0x0064FC43",
+      "call_site": "0x0064FCCC",
+      "cache_slot": "0x0068E70C"
+    },
+    {
+      "dll": "user32.dll",
+      "export": "GetLastActivePopup",
+      "resolve_site": "0x0064FC50",
+      "call_site": "0x0064FCDE",
+      "cache_slot": "0x0068E710"
+    },
+    {
+      "dll": "user32.dll",
+      "export": "GetProcessWindowStation",
+      "resolve_site": "0x0064FC77",
+      "call_site": "0x0064FC87",
+      "cache_slot": "0x0068E714"
+    },
+    {
+      "dll": "user32.dll",
+      "export": "GetUserObjectInformationA",
+      "resolve_site": "0x0064FC66",
+      "call_site": "0x0064FC9A",
+      "cache_slot": "0x0068E718"
+    }
+  ],
+  "sdk_layout": {
+    "probe": "probes/VC7UserObjectLayout.cpp",
+    "probe_sha256": "afc4a1a43888f5c4fd25e663ce04fbca84c774eea7fde290beda7ca6a2759c65",
+    "profile": [
+      "/Od",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/I",
+      "src"
+    ],
+    "symbol": "_UserObjectLayoutProbe",
+    "size": 24,
+    "values": [
+      12,
+      8,
+      1,
+      1,
+      2097152,
+      262144
+    ],
+    "headers": {
+      "PlatformSDK/Include/WinUser.h": "eae72e5e7ee5b13132ce059a0de42fa9ee956aafdec64436eabddfb91193fa49"
+    }
+  },
+  "cache_data": {
+    "member_offset": 1304574,
+    "member": "build\\intel\\mt_obj\\crtmbox.obj",
+    "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+    "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+    "target_address": "0x0068E708",
+    "size": 20,
+    "source_section": {
+      "size": 20,
+      "flags": "0xC0300080",
+      "definitions": [
+        {
+          "symbol": "?pfnGetUserObjectInformationA@?1??__crtMessageBoxA@@9@9",
+          "offset": 16,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pfnGetProcessWindowStation@?1??__crtMessageBoxA@@9@9",
+          "offset": 12,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pfnGetLastActivePopup@?1??__crtMessageBoxA@@9@9",
+          "offset": 8,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pfnGetActiveWindow@?1??__crtMessageBoxA@@9@9",
+          "offset": 4,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "relocations": []
+    },
+    "definitions": [
+      {
+        "symbol": "?pfnGetUserObjectInformationA@?1??__crtMessageBoxA@@9@9",
+        "offset": 16,
+        "section": 2,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "?pfnGetProcessWindowStation@?1??__crtMessageBoxA@@9@9",
+        "offset": 12,
+        "section": 2,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "?pfnGetLastActivePopup@?1??__crtMessageBoxA@@9@9",
+        "offset": 8,
+        "section": 2,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "?pfnGetActiveWindow@?1??__crtMessageBoxA@@9@9",
+        "offset": 4,
+        "section": 2,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "?pfnMessageBoxA@?1??__crtMessageBoxA@@9@9",
+        "offset": 0,
+        "section": 2,
+        "type": 0,
+        "storage": 3
+      }
+    ],
+    "relocations": [],
+    "zero_fill_region": {
+      "section": ".data",
+      "base": "0x0066C000",
+      "raw_size": 24576,
+      "virtual_size": 146376,
+      "flags": "0xC0000040"
+    }
+  },
+  "error_table": {
+    "member_offset": 1679710,
+    "member": "build\\intel\\mt_obj\\crt0msg.obj",
+    "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+    "symbol": "_rterrs",
+    "target_address": "0x006706B0",
+    "size": 152,
+    "source_section": {
+      "size": 152,
+      "flags": "0xC0400040",
+      "definitions": [
+        {
+          "symbol": "_rterrs",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "??_C@_0CF@HOHMHDEK@R6002?$AN?6?9?5floating?5point?5not?5load@",
+          "addend": 0
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "??_C@_0CK@KMMJOAPP@R6008?$AN?6?9?5not?5enough?5space?5for?5ar@",
+          "addend": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "??_C@_0CM@FLCNIPKK@R6009?$AN?6?9?5not?5enough?5space?5for?5en@",
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "??_C@_0JG@LBKMGKLD@?$AN?6This?5application?5has?5requested@",
+          "addend": 0
+        },
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "??_C@_0CM@FAHFJNHO@R6016?$AN?6?9?5not?5enough?5space?5for?5th@",
+          "addend": 0
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "??_C@_0CN@FOLDKNG@R6017?$AN?6?9?5unexpected?5multithread?5@",
+          "addend": 0
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "??_C@_0CB@GNHNIELH@R6018?$AN?6?9?5unexpected?5heap?5error?$AN?6@",
+          "addend": 0
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "??_C@_0CJ@EGEJHFME@R6019?$AN?6?9?5unable?5to?5open?5console?5@",
+          "addend": 0
+        },
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "??_C@_0DF@JIJJFJDC@R6024?$AN?6?9?5not?5enough?5space?5for?5_o@",
+          "addend": 0
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "??_C@_0CG@IOHKGFNJ@R6025?$AN?6?9?5pure?5virtual?5function?5c@",
+          "addend": 0
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "??_C@_0DF@IBLNNAIG@R6026?$AN?6?9?5not?5enough?5space?5for?5st@",
+          "addend": 0
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "??_C@_0DF@GAKBPDFP@R6027?$AN?6?9?5not?5enough?5space?5for?5lo@",
+          "addend": 0
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "??_C@_0CF@KJDAIALP@R6028?$AN?6?9?5unable?5to?5initialize?5he@",
+          "addend": 0
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "??_C@_0KC@BDDGGBEJ@R6029?$AN?6?9?5This?5application?5cannot@",
+          "addend": 0
+        },
+        {
+          "offset": 116,
+          "type": "DIR32",
+          "symbol": "??_C@_0P@MBDAJNE@DOMAIN?5error?$AN?6?$AA@",
+          "addend": 0
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "??_C@_0N@BONNPDHF@SING?5error?$AN?6?$AA@",
+          "addend": 0
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "??_C@_0O@MJNIPGOH@TLOSS?5error?$AN?6?$AA@",
+          "addend": 0
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "??_C@_02PCIJFNDE@?$AN?6?$AA@",
+          "addend": 0
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "??_C@_0P@GGKDKEEG@runtime?5error?5?$AA@",
+          "addend": 0
+        }
+      ]
+    },
+    "definitions": [
+      {
+        "symbol": "_rterrs",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 3
+      }
+    ],
+    "relocations": [
+      {
+        "offset": 4,
+        "type": "DIR32",
+        "symbol": "??_C@_0CF@HOHMHDEK@R6002?$AN?6?9?5floating?5point?5not?5load@",
+        "addend": 0,
+        "target_address": "0x006624F0"
+      },
+      {
+        "offset": 12,
+        "type": "DIR32",
+        "symbol": "??_C@_0CK@KMMJOAPP@R6008?$AN?6?9?5not?5enough?5space?5for?5ar@",
+        "addend": 0,
+        "target_address": "0x006624C4"
+      },
+      {
+        "offset": 20,
+        "type": "DIR32",
+        "symbol": "??_C@_0CM@FLCNIPKK@R6009?$AN?6?9?5not?5enough?5space?5for?5en@",
+        "addend": 0,
+        "target_address": "0x00662498"
+      },
+      {
+        "offset": 28,
+        "type": "DIR32",
+        "symbol": "??_C@_0JG@LBKMGKLD@?$AN?6This?5application?5has?5requested@",
+        "addend": 0,
+        "target_address": "0x00662400"
+      },
+      {
+        "offset": 36,
+        "type": "DIR32",
+        "symbol": "??_C@_0CM@FAHFJNHO@R6016?$AN?6?9?5not?5enough?5space?5for?5th@",
+        "addend": 0,
+        "target_address": "0x006623D4"
+      },
+      {
+        "offset": 44,
+        "type": "DIR32",
+        "symbol": "??_C@_0CN@FOLDKNG@R6017?$AN?6?9?5unexpected?5multithread?5@",
+        "addend": 0,
+        "target_address": "0x006623A4"
+      },
+      {
+        "offset": 52,
+        "type": "DIR32",
+        "symbol": "??_C@_0CB@GNHNIELH@R6018?$AN?6?9?5unexpected?5heap?5error?$AN?6@",
+        "addend": 0,
+        "target_address": "0x00662380"
+      },
+      {
+        "offset": 60,
+        "type": "DIR32",
+        "symbol": "??_C@_0CJ@EGEJHFME@R6019?$AN?6?9?5unable?5to?5open?5console?5@",
+        "addend": 0,
+        "target_address": "0x00662354"
+      },
+      {
+        "offset": 68,
+        "type": "DIR32",
+        "symbol": "??_C@_0DF@JIJJFJDC@R6024?$AN?6?9?5not?5enough?5space?5for?5_o@",
+        "addend": 0,
+        "target_address": "0x0066231C"
+      },
+      {
+        "offset": 76,
+        "type": "DIR32",
+        "symbol": "??_C@_0CG@IOHKGFNJ@R6025?$AN?6?9?5pure?5virtual?5function?5c@",
+        "addend": 0,
+        "target_address": "0x006622F4"
+      },
+      {
+        "offset": 84,
+        "type": "DIR32",
+        "symbol": "??_C@_0DF@IBLNNAIG@R6026?$AN?6?9?5not?5enough?5space?5for?5st@",
+        "addend": 0,
+        "target_address": "0x006622BC"
+      },
+      {
+        "offset": 92,
+        "type": "DIR32",
+        "symbol": "??_C@_0DF@GAKBPDFP@R6027?$AN?6?9?5not?5enough?5space?5for?5lo@",
+        "addend": 0,
+        "target_address": "0x00662284"
+      },
+      {
+        "offset": 100,
+        "type": "DIR32",
+        "symbol": "??_C@_0CF@KJDAIALP@R6028?$AN?6?9?5unable?5to?5initialize?5he@",
+        "addend": 0,
+        "target_address": "0x0066225C"
+      },
+      {
+        "offset": 108,
+        "type": "DIR32",
+        "symbol": "??_C@_0KC@BDDGGBEJ@R6029?$AN?6?9?5This?5application?5cannot@",
+        "addend": 0,
+        "target_address": "0x006621B8"
+      },
+      {
+        "offset": 116,
+        "type": "DIR32",
+        "symbol": "??_C@_0P@MBDAJNE@DOMAIN?5error?$AN?6?$AA@",
+        "addend": 0,
+        "target_address": "0x006621A4"
+      },
+      {
+        "offset": 124,
+        "type": "DIR32",
+        "symbol": "??_C@_0N@BONNPDHF@SING?5error?$AN?6?$AA@",
+        "addend": 0,
+        "target_address": "0x00662194"
+      },
+      {
+        "offset": 132,
+        "type": "DIR32",
+        "symbol": "??_C@_0O@MJNIPGOH@TLOSS?5error?$AN?6?$AA@",
+        "addend": 0,
+        "target_address": "0x00662184"
+      },
+      {
+        "offset": 140,
+        "type": "DIR32",
+        "symbol": "??_C@_02PCIJFNDE@?$AN?6?$AA@",
+        "addend": 0,
+        "target_address": "0x00662180"
+      },
+      {
+        "offset": 148,
+        "type": "DIR32",
+        "symbol": "??_C@_0P@GGKDKEEG@runtime?5error?5?$AA@",
+        "addend": 0,
+        "target_address": "0x00662170"
+      }
+    ],
+    "source_sha256": "82e251f2a58bd71f6824b9eba497a265b912b2938cf4c7cb700bb97d68a89b15",
+    "body_sha256": "7dd1a189b7aea6e4f9fc1b10fc14e691c33d0bfcff7f20b7aadbf5a108d81b3f",
+    "codes": [
+      2,
+      8,
+      9,
+      10,
+      16,
+      17,
+      18,
+      19,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      120,
+      121,
+      122,
+      252,
+      255
+    ]
+  },
+  "state_data": [
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "symbol": "__aenvptr",
+      "target_address": "0x0068E2CC",
+      "size": 12,
+      "source_section": {
+        "size": 12,
+        "flags": "0xC0300080",
+        "definitions": [
+          {
+            "symbol": "___error_mode",
+            "offset": 8,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__wenvptr",
+            "offset": 4,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__aenvptr",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "definitions": [
+        {
+          "symbol": "___error_mode",
+          "offset": 8,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__wenvptr",
+          "offset": 4,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__aenvptr",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "symbol": "__aexit_rtn",
+      "target_address": "0x0066FF10",
+      "size": 8,
+      "source_section": {
+        "size": 8,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___app_type",
+            "offset": 4,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          },
+          {
+            "symbol": "__aexit_rtn",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": [
+          {
+            "offset": 0,
+            "type": "DIR32",
+            "symbol": "__exit",
+            "addend": 0
+          }
+        ]
+      },
+      "definitions": [
+        {
+          "symbol": "___app_type",
+          "offset": 4,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__aexit_rtn",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 0,
+          "type": "DIR32",
+          "symbol": "__exit",
+          "addend": 0,
+          "target_address": "0x0064425B"
+        }
+      ],
+      "source_sha256": "2fcd151b8295e8b3bf8ec64ede173523417960a8db6cbc569de9a25a458f9135",
+      "body_sha256": "9fe69469ce41c0289a7cf3c90a7eb965463dc687c102a8efe557ff24c9f29f74"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "__adbgmsg",
+      "target_address": "0x0068E574",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300080",
+        "definitions": [
+          {
+            "symbol": "__adbgmsg",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "definitions": [
+        {
+          "symbol": "__adbgmsg",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1236214,
+      "member": "build\\intel\\mt_obj\\seccook.obj",
+      "member_sha256": "61ebd0f2274851904617ee9d826c9e16b594cdf6a61e9d2505af84f13eb971aa",
+      "symbol": "___security_cookie",
+      "target_address": "0x0066FE30",
+      "size": 4,
+      "source_section": {
+        "size": 4,
+        "flags": "0xC0300040",
+        "definitions": [
+          {
+            "symbol": "___security_cookie",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 2
+          }
+        ],
+        "relocations": []
+      },
+      "definitions": [
+        {
+          "symbol": "___security_cookie",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "source_sha256": "ce27c3a226b06f760dc303582e2dd3ab690a1634fdced2e53b238a4e947cd75f",
+      "body_sha256": "ce27c3a226b06f760dc303582e2dd3ab690a1634fdced2e53b238a4e947cd75f"
+    }
+  ],
+  "literal_controls": [
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+      "target_address": "0x006611F0",
+      "data_size": 12,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "4ff54914d3f5b6b17029de1534c72c4ac7ffa90a8b43ed6171856f987a3eba0d"
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+      "target_address": "0x006611E0",
+      "data_size": 15,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "bd0fadc9bf17cc3c3d2338aec58f1f3d85763c75f3cc84c9e82005e51a963fdc"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+      "target_address": "0x00661324",
+      "data_size": 23,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "7fd035a12f341287a3c9823243ec8d61c76902a36a01f7de5ae0e2d8f6668676"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+      "target_address": "0x00661320",
+      "data_size": 4,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "2c2b93ab063d64d75b80c9901170ce7ae0d79a64bc7f077ce1a010ab0956a391"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+      "target_address": "0x00662518",
+      "data_size": 26,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "465f1d44236bf14ecf37d7200a6c96955cef72403f98afc7b38138c96836c30f"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+      "target_address": "0x0066131C",
+      "data_size": 3,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "c1c91a7d882700051cb22bf907cfedf13b133deac2aa913eb68f5690146a9317"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+      "target_address": "0x006612E8",
+      "data_size": 37,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "99b02f72dbb42a44bb629693f626a409c12c6c556ab6998fa19ac8a46a896f45"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0L@GMPLCCII@user32?4dll?$AA@",
+      "target_address": "0x006673B0",
+      "data_size": 11,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0L@GMPLCCII@user32?4dll?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "5071963fd92c1657e2197560508edd5ed1b23df57565c2366696ba9b6d43ba49"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0M@CHKKJDAI@MessageBoxA?$AA@",
+      "target_address": "0x006673A4",
+      "data_size": 12,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0M@CHKKJDAI@MessageBoxA?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "a15212d1b91c5f8bef604d3acefdbdb471b6133ca74fa569ecc54cc3ba204514"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0BA@HNOPNCHB@GetActiveWindow?$AA@",
+      "target_address": "0x00667394",
+      "data_size": 16,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BA@HNOPNCHB@GetActiveWindow?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "293f5e20e5576ac1a3f7fdc6ce1e7ed5d9573fc8ab4d9bc3b54a6cd7109919c0"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0BD@HHGDFDBJ@GetLastActivePopup?$AA@",
+      "target_address": "0x00667380",
+      "data_size": 19,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BD@HHGDFDBJ@GetLastActivePopup?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "ef2918049080cfeb6b9ab79fecf21f21bb17e626fcbb5da91ab56886de4a625f"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0BK@CIDNPOGP@GetUserObjectInformationA?$AA@",
+      "target_address": "0x00667364",
+      "data_size": 26,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BK@CIDNPOGP@GetUserObjectInformationA?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "beb23fe43dca5fd25c5786da1bab8ec72356d1813d5ec52911733888426cfe0e"
+    },
+    {
+      "member_offset": 1304574,
+      "member": "build\\intel\\mt_obj\\crtmbox.obj",
+      "member_sha256": "90edd07db71d93c1b6b8b16ca12a36315db7cb6ac8f61f20cd2ca0e68fafadef",
+      "symbol": "??_C@_0BI@DFKBFLJE@GetProcessWindowStation?$AA@",
+      "target_address": "0x0066734C",
+      "data_size": 24,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BI@DFKBFLJE@GetProcessWindowStation?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "053ebaa94f1df905bba26149013d1809ce03ff9f668a600d06f168c31ce1ebc8"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CF@HOHMHDEK@R6002?$AN?6?9?5floating?5point?5not?5load@",
+      "target_address": "0x006624F0",
+      "data_size": 37,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CF@HOHMHDEK@R6002?$AN?6?9?5floating?5point?5not?5load@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "263ea0cdd73938d9836ae3226bf8a97dac6fce5a203214bd3924a57d7ce42d3e"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CK@KMMJOAPP@R6008?$AN?6?9?5not?5enough?5space?5for?5ar@",
+      "target_address": "0x006624C4",
+      "data_size": 42,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CK@KMMJOAPP@R6008?$AN?6?9?5not?5enough?5space?5for?5ar@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "0906606fb832c8ef38717f49ac875190c29ae5b66db96a5fd656f89dbb4558f4"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CM@FLCNIPKK@R6009?$AN?6?9?5not?5enough?5space?5for?5en@",
+      "target_address": "0x00662498",
+      "data_size": 44,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CM@FLCNIPKK@R6009?$AN?6?9?5not?5enough?5space?5for?5en@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "3a16eb31e10ac9ffdca62c1068abca97f8db30902c777973a237b1acc2b935bc"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0JG@LBKMGKLD@?$AN?6This?5application?5has?5requested@",
+      "target_address": "0x00662400",
+      "data_size": 150,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0JG@LBKMGKLD@?$AN?6This?5application?5has?5requested@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "06bde66b980e68d062393283d48401e26e41815ea889a462e887060dd17697fa"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CM@FAHFJNHO@R6016?$AN?6?9?5not?5enough?5space?5for?5th@",
+      "target_address": "0x006623D4",
+      "data_size": 44,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CM@FAHFJNHO@R6016?$AN?6?9?5not?5enough?5space?5for?5th@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "13b29a2f8b1931d20afa30ff6ec9d3c8e1b954ec53e837a3be34028de7230b38"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CN@FOLDKNG@R6017?$AN?6?9?5unexpected?5multithread?5@",
+      "target_address": "0x006623A4",
+      "data_size": 45,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CN@FOLDKNG@R6017?$AN?6?9?5unexpected?5multithread?5@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "3bd622510aefa18aeb212201b83523a5b3ae0e715e5e278e56854d999ca63f73"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CB@GNHNIELH@R6018?$AN?6?9?5unexpected?5heap?5error?$AN?6@",
+      "target_address": "0x00662380",
+      "data_size": 33,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CB@GNHNIELH@R6018?$AN?6?9?5unexpected?5heap?5error?$AN?6@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "09092685f819ec0c773e4562793485d2a7a1ae6f069e6a1a5927e6d06ea1d067"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CJ@EGEJHFME@R6019?$AN?6?9?5unable?5to?5open?5console?5@",
+      "target_address": "0x00662354",
+      "data_size": 41,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CJ@EGEJHFME@R6019?$AN?6?9?5unable?5to?5open?5console?5@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "38a9a3d0e5b81a108b29ed03de139d21a7bc03e7d3d991bfeb327d74f2128250"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0DF@JIJJFJDC@R6024?$AN?6?9?5not?5enough?5space?5for?5_o@",
+      "target_address": "0x0066231C",
+      "data_size": 53,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0DF@JIJJFJDC@R6024?$AN?6?9?5not?5enough?5space?5for?5_o@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "3fab5394bc4101eda09020799b64347958deaba52fa85853f816255d2140f015"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CG@IOHKGFNJ@R6025?$AN?6?9?5pure?5virtual?5function?5c@",
+      "target_address": "0x006622F4",
+      "data_size": 38,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CG@IOHKGFNJ@R6025?$AN?6?9?5pure?5virtual?5function?5c@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "5726637590bd294867e06ede9b3e60b7a1c0637fcc0f9644c39fe3bde2ea6215"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0DF@IBLNNAIG@R6026?$AN?6?9?5not?5enough?5space?5for?5st@",
+      "target_address": "0x006622BC",
+      "data_size": 53,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0DF@IBLNNAIG@R6026?$AN?6?9?5not?5enough?5space?5for?5st@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "98dc20c45d8eb1953ee5b3043d6de9258010de63c0ea64a1a42320767792bc3f"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0DF@GAKBPDFP@R6027?$AN?6?9?5not?5enough?5space?5for?5lo@",
+      "target_address": "0x00662284",
+      "data_size": 53,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0DF@GAKBPDFP@R6027?$AN?6?9?5not?5enough?5space?5for?5lo@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "e5a08d1bb205dd2dddc2d12a0b7f35fb6ffbfca28a11075168c9c073169a0390"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CF@KJDAIALP@R6028?$AN?6?9?5unable?5to?5initialize?5he@",
+      "target_address": "0x0066225C",
+      "data_size": 37,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CF@KJDAIALP@R6028?$AN?6?9?5unable?5to?5initialize?5he@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "13325207c1b1579b1c23919622f5a129ef9db5def651f74d75dfcee2ac071a98"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0KC@BDDGGBEJ@R6029?$AN?6?9?5This?5application?5cannot@",
+      "target_address": "0x006621B8",
+      "data_size": 162,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0KC@BDDGGBEJ@R6029?$AN?6?9?5This?5application?5cannot@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "8ad62dddc13f4c3c3352d7fb6afc6779cfdbcb71642830d634e5e4f08e30ac8f"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0P@MBDAJNE@DOMAIN?5error?$AN?6?$AA@",
+      "target_address": "0x006621A4",
+      "data_size": 15,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0P@MBDAJNE@DOMAIN?5error?$AN?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "a44d6c84d54b151e2570838c2f0cce0f7703e217abc19c4376687dd57b26cf92"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0N@BONNPDHF@SING?5error?$AN?6?$AA@",
+      "target_address": "0x00662194",
+      "data_size": 13,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0N@BONNPDHF@SING?5error?$AN?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "79401932400bd55353996db7424998ffb2ed7da5bb0ef4d084775331dc320223"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0O@MJNIPGOH@TLOSS?5error?$AN?6?$AA@",
+      "target_address": "0x00662184",
+      "data_size": 14,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0O@MJNIPGOH@TLOSS?5error?$AN?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "cfdaf405e7398cd37ca118cc20112dd0f1f3fc5a81e8db0dac4e2bd18dc2ae46"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_02PCIJFNDE@?$AN?6?$AA@",
+      "target_address": "0x00662180",
+      "data_size": 3,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_02PCIJFNDE@?$AN?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "426520180ee94ef36224225e32706bc9f2be242acf51bb23d69fea7e6d92a20a"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0P@GGKDKEEG@runtime?5error?5?$AA@",
+      "target_address": "0x00662170",
+      "data_size": 15,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0P@GGKDKEEG@runtime?5error?5?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "9ee29122b3a873936424686f33837ec52c94fecb974cf753b106e58141c89b82"
+    }
+  ]
+}

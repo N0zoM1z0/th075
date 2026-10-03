@@ -1933,3 +1933,46 @@ tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the public acceptance request
 ran once.
+
+
+## R116 — dynamic error dispatch and complete shared-copy ownership
+
+Three complete library bodies add 304 bytes: exit dispatcher `0x006440A5`
+(48), dynamic message-box dispatcher `0x0064FBFE` (249) and shared-copy entry
+`0x00641B80` (7). The exit candidate now includes its own terminal INT3;
+R115's historical diagnostic record is preserved with a narrowly checked
+R116 reconciliation. The private database is unchanged. The seven-byte copy
+entry jumps into the reviewed strcat tail; the whole 248-byte source/target
+carrier includes both own extents and nine bytes of LEA/MOV alignment.
+
+Six actual DLL export flows bind complete literals, lookup results, pointer
+stores and indirect calls. The five USER32 caches retain their whole 20-byte
+source BSS topology and PE loader zero-fill geometry. A cold natural SDK
+probe checks USEROBJECTFLAGS size/field and full service flags through the
+entire readonly 24-byte array. R115's independent GetVersionExA buffer/store
+witnesses establish the actual platform/major policy globals. Original debug
+names and compiler/linker settings remain unknown.
+
+The writer (375), banner (57) and fastcall cookie check (14) remain pending:
+the actual cookie failure tail's EH/security-handler chain is unresolved.
+Their whole source/target controls preserve all fields. Complete nineteen-entry
+error table and messages, all 32 readonly literals / 1,120 bytes, mutable
+state definitions and three source contexts / 122 bytes are diagnostic;
+they do not close the code graph. The failure helper's full source extent is
+49 bytes, including its embedded filter and terminal INT3; its 48-byte ledger
+candidate remains unchanged. Retained anchors cold-replay independently.
+
+The checkpoint is 3,099 resolved (919 authored, 1,605 library, 575 compiler)
+and 1,252 pending. Exact remains 60 / 9,883 bytes; provisional authored
+coverage and recorded authored extents remain 9,883 / 1,965,299 and
+872 / 1,952,956. Continue the bounded R117 security/failure/EH cohort;
+retain all unresolved roots and lifetime ambiguities. No new source or exact
+units are added.
+
+One final no-auth public HTTPS MCP request passed R116, retained R115 and
+R114 including R077/R113 dependency replays, R006/R025 archive anchors,
+all 872 recorded authored extents, target/project attestation, 202 public
+tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the public acceptance request
+ran once.

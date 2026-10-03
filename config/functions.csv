@@ -3494,7 +3494,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064057A,56,0x006405B1,FUN_0064057a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006405C2,30,0x006405DF,__fpmath,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006405E0,48,0x0064060F,report_failure,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00640611,14,0x0064061E,__security_check_cookie,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00640611,14,0x0064061E,__security_check_cookie,,,unclassified,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,,Complete source/target body and fields retained; cookie-failure-chain-unresolved; no source or exact credit
 0x00640620,139,0x006406AA,_strlen,_strlen,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x006406AC,117,0x00640720,FUN_006406ac,__ftol2,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00640721,43,0x0064074B,_JumpToContinuation,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3554,7 +3554,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064197E,384,0x00641AFD,_localtime,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641AFE,57,0x00641B36,FID_conflict:__time32,_time,VC71CRT,excluded,0.00,,,false,,R098; scripts/repo-python scripts/verify-runtime-external-origins.py,library,"Complete pinned CRT archive body and every typed relocation; independent raw PE imports, full readonly scalar definitions and replayed call anchors; no source or exact credit; archive profile is a reproducibility choice"
 0x00641B37,70,0x00641B7C,FUN_00641b37,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00641B80,7,0x00641B86,FUN_00641b80,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00641B80,7,0x00641B86,FUN_00641b80,_strcpy,VC71CRT,excluded,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,library,Library origin only; complete source definitions and actual dynamic API/shared-tail provenance; original executable debug names unknown; no source or exact credit
 0x00641B90,232,0x00641C77,FUN_00641b90,_strcat,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x00641C78,74,0x00641CC1,`eh_vector_constructor_iterator',,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00641CC2,24,0x00641CD9,FUN_00641cc2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3618,7 +3618,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00643D23,675,0x00643FC5,FUN_00643d23,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00643FC6,21,0x00643FDA,FUN_00643fc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00644009,156,0x006440A4,__fpclass,__fpclass,VC71CRT,excluded,0.00,,,false,,R098; scripts/repo-python scripts/verify-runtime-external-origins.py,library,"Complete pinned CRT archive body and every typed relocation; independent raw PE imports, full readonly scalar definitions and replayed call anchors; no source or exact credit; archive profile is a reproducibility choice"
-0x006440A5,47,0x006440D3,___crtExitProcess,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006440A5,48,0x006440D4,___crtExitProcess,___crtExitProcess,VC71CRT,excluded,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,library,Library origin only; complete source definitions and actual dynamic API/shared-tail provenance; original executable debug names unknown; no source or exact credit; ledger extent reconciled from 47 to 48 including terminal INT3; private database unchanged
 0x006440D5,9,0x006440DD,FUN_006440d5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006440DE,9,0x006440E6,FUN_006440de,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006440E7,24,0x006440FE,__initterm,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3743,8 +3743,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00648ABA,327,0x00648C00,FUN_00648aba,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648C01,51,0x00648C33,__ctrandisp1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648C34,60,0x00648C6F,__fload,__fload,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
-0x00648C70,375,0x00648DE6,__NMSG_WRITE,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00648E11,57,0x00648E49,__FF_MSGBANNER,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00648C70,375,0x00648DE6,__NMSG_WRITE,,,unclassified,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,,Complete source/target body and fields retained; crt-writer-cookie-chain-unresolved; no source or exact credit
+0x00648E11,57,0x00648E49,__FF_MSGBANNER,,,unclassified,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,,Complete source/target body and fields retained; crt-banner-writer-chain-unresolved; no source or exact credit
 0x00648E76,356,0x00648FD9,__XcptFilter,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00648FF5,93,0x00649051,__wincmdln,,,unclassified,0.00,,,false,,R115; complete pinned CRT source/target extent and CFG; unresolved bindings retained,,Complete 93-byte command-line source; multibyte initialization/classification chains and mutable globals remain unresolved; ownership pending; no source or exact credit
 0x00649052,199,0x00649118,__setenvp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3845,7 +3845,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0064FACE,142,0x0064FB5B,__hw_cw,__hw_cw,VC71CRT,excluded,0.00,,,false,,R006; complete COFF function-auxiliary extent and all-byte runtime archive identity,library,Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names
 0x0064FBB6,50,0x0064FBE7,__control87,__control87,VC71CRT,excluded,0.00,,,false,,R007,,"R007; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0064FBE8,22,0x0064FBFD,__controlfp,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0064FBFE,249,0x0064FCF6,___crtMessageBoxA,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0064FBFE,249,0x0064FCF6,___crtMessageBoxA,___crtMessageBoxA,VC71CRT,excluded,0.00,,,false,,R116; config/runtime-error-origin-evidence.json; complete vendor auxiliary extent and all typed fields; whole dispatch/data/shared-tail controls,library,Library origin only; complete source definitions and actual dynamic API/shared-tail provenance; original executable debug names unknown; no source or exact credit
 0x0064FCF7,553,0x0064FF1F,__ValidateEH3RN,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FF20,28,0x0064FF3B,_ValidateRead,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0064FF3C,28,0x0064FF57,_ValidateWrite,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
