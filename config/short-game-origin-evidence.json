@@ -1,0 +1,883 @@
+{
+  "evidence_id": "R100",
+  "functions": [
+    {
+      "address": "0x00412660",
+      "size": 96,
+      "role": "CameraMotion::InitializeAt00412660",
+      "subsystem": "CameraMotion",
+      "body_sha256": "1acd6ac7d0659f87135f94093d04d8d5c059e169eb39a1d79d525491397bb2c8",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00412685",
+          "target": "0x004126C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00412666",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713c8], eax"
+        },
+        {
+          "site": "0x0041266E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713d0], ecx"
+        },
+        {
+          "site": "0x00412677",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713cc], edx"
+        },
+        {
+          "site": "0x00412680",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713d4], eax"
+        },
+        {
+          "site": "0x004126B2",
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x65784c]"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x004170D0",
+      "size": 65,
+      "role": "FrameCapture::CapturePrimaryAt004170D0",
+      "subsystem": "FrameCapture",
+      "body_sha256": "7902e64d0f7be19d52efc5437d13683392c433838d3e986d22a47b9ea7e2a387",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x004170D9",
+          "target": "0x004028B0"
+        },
+        {
+          "site": "0x00417105",
+          "target": "0x00401D80"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x004170F3",
+          "operand": "dword ptr [0x657210]",
+          "iat_slot": "0x00657210",
+          "dll": "USER32.dll",
+          "symbol": "SetRect"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x004170E1",
+          "mnemonic": "push",
+          "operands": "0x1e0"
+        },
+        {
+          "site": "0x004170E6",
+          "mnemonic": "push",
+          "operands": "0x280"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00417120",
+      "size": 31,
+      "role": "FrameCapture::InstallPresentCallbackAt00417120",
+      "subsystem": "FrameCapture",
+      "body_sha256": "17a30c91963186b27dcf3e041fd84e4c58ba64b588c285b2106abecf874cb660",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x0041712C",
+          "target": "0x004028A0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00417127",
+          "mnemonic": "push",
+          "operands": "0x417160"
+        },
+        {
+          "site": "0x00417137",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 4], 0"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00417160",
+      "size": 98,
+      "role": "FrameCapture::PresentPrimaryAt00417160",
+      "subsystem": "FrameCapture",
+      "body_sha256": "19f91b5a63ab79eabeca1ea603a548ae3a1180819a0242b57c498cc1d3263bd4",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00417191",
+          "target": "0x0040DB50"
+        },
+        {
+          "site": "0x00417198",
+          "target": "0x00401F50"
+        },
+        {
+          "site": "0x004171B6",
+          "target": "0x004029F0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0041717E",
+          "operand": "dword ptr [0x657210]",
+          "iat_slot": "0x00657210",
+          "dll": "USER32.dll",
+          "symbol": "SetRect"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00417169",
+          "mnemonic": "push",
+          "operands": "0x1e0"
+        },
+        {
+          "site": "0x0041716E",
+          "mnemonic": "push",
+          "operands": "0x280"
+        },
+        {
+          "site": "0x00417196",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x004171A6",
+          "mnemonic": "push",
+          "operands": "-1"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x004171D0",
+      "size": 50,
+      "role": "FrameCapture::DrawIfEnabledAt004171D0",
+      "subsystem": "FrameCapture",
+      "body_sha256": "b9790cfd51266b2262af4ddac9f014e6ad28bfa3b6b15c8e756a2fa3690c968f",
+      "return_count": 1,
+      "internal_branch_count": 1,
+      "direct_calls": [
+        {
+          "site": "0x004171F4",
+          "target": "0x004029F0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004171DA",
+          "mnemonic": "movzx",
+          "operands": "ecx, byte ptr [eax + 4]"
+        },
+        {
+          "site": "0x004171DE",
+          "mnemonic": "test",
+          "operands": "ecx, ecx"
+        },
+        {
+          "site": "0x004171E0",
+          "mnemonic": "je",
+          "operands": "0x4171fc"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00425330",
+      "size": 84,
+      "role": "LoadingScene::AdvanceAt00425330",
+      "subsystem": "SceneRuntime",
+      "body_sha256": "ea4837ccb75e4b02de1fbfd7b1c72f1ceb526bb5b703588ed58e73c9f0f72d87",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [
+        {
+          "site": "0x0042534D",
+          "target": "0x004176F0"
+        },
+        {
+          "site": "0x00425370",
+          "target": "0x004183D0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0042533F",
+          "operand": "dword ptr [edx + 8]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00425345",
+          "mnemonic": "movzx",
+          "operands": "ecx, byte ptr [eax + 0xc]"
+        },
+        {
+          "site": "0x00425352",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [0x6714b4]"
+        },
+        {
+          "site": "0x0042535E",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [0x67161e]"
+        },
+        {
+          "site": "0x0042536A",
+          "mnemonic": "mov",
+          "operands": "ax, 0x1108"
+        },
+        {
+          "site": "0x00425378",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0xc], 1"
+        },
+        {
+          "site": "0x0042537C",
+          "mnemonic": "mov",
+          "operands": "ax, 0x2000"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x004255D0",
+      "size": 78,
+      "role": "TimedScene::AdvanceAt004255D0",
+      "subsystem": "SceneRuntime",
+      "body_sha256": "69bc7bc7accc0117e35f5d61228af908aa8f191d6d04fc695d662034730ee30e",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x004255DA",
+          "target": "0x004256C0"
+        },
+        {
+          "site": "0x004255EA",
+          "target": "0x004028F0"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x004255E7",
+          "operand": "dword ptr [edx + 8]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x004255F2",
+          "mnemonic": "mov",
+          "operands": "cx, word ptr [eax + 0xc]"
+        },
+        {
+          "site": "0x004255FD",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0xc], cx"
+        },
+        {
+          "site": "0x00425608",
+          "mnemonic": "cmp",
+          "operands": "ecx, 0xb4"
+        },
+        {
+          "site": "0x00425610",
+          "mnemonic": "mov",
+          "operands": "ax, 0x220d"
+        },
+        {
+          "site": "0x00425616",
+          "mnemonic": "mov",
+          "operands": "ax, 4"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x004256C0",
+      "size": 96,
+      "role": "SceneInput::PollAt004256C0",
+      "subsystem": "SceneRuntime",
+      "body_sha256": "38bb20ed2eb499d59c4a2146e1ec5d809aa8e3455bbeac38055043c1b96f7c7b",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x004256C7",
+          "target": "0x00403E50"
+        },
+        {
+          "site": "0x004256CC",
+          "target": "0x00403F40"
+        },
+        {
+          "site": "0x004256D6",
+          "target": "0x00406E80"
+        },
+        {
+          "site": "0x004256E2",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x004256F5",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x0042570B",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00425717",
+          "target": "0x004018A0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004256D1",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x671638"
+        },
+        {
+          "site": "0x004256DB",
+          "mnemonic": "push",
+          "operands": "0x1c"
+        },
+        {
+          "site": "0x004256EE",
+          "mnemonic": "push",
+          "operands": "0x38"
+        },
+        {
+          "site": "0x00425701",
+          "mnemonic": "push",
+          "operands": "0xb8"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00446B60",
+      "size": 35,
+      "role": "BattleHud::DrawAtlasNumberDefaultAt00446B60",
+      "subsystem": "BattleHud",
+      "body_sha256": "cb178632160b9a45f6307e89d9d1307b85e39176460e6e4db19230c4f1e686c1",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00446B79",
+          "target": "0x00446B90"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00446B63",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00446B65",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [ebp + 0x18]"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00453D40",
+      "size": 32,
+      "role": "FighterState::PlaySoundAt00453D40",
+      "subsystem": "FighterState",
+      "body_sha256": "45febea8ec2e9f002be7181f978cf2e3b0013459be34c72a440e88c0102a1e4b",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00453D55",
+          "target": "0x004079C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453D47",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00453D4F",
+          "mnemonic": "add",
+          "operands": "ecx, 0x6d0"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x00457490",
+      "size": 31,
+      "role": "FighterState::SetBindingsAt00457490",
+      "subsystem": "FighterState",
+      "body_sha256": "bd27af14ea76ccf321185c97924d10bb89aec5fd3ec7f148ca4fe26923e0c63e",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x004574A4",
+          "target": "0x00406E10"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045749E",
+          "mnemonic": "add",
+          "operands": "ecx, 0x494"
+        }
+      ],
+      "evidence_id": "R100"
+    },
+    {
+      "address": "0x005F70E0",
+      "size": 84,
+      "role": "Effects::LoadResourcesAt005F70E0",
+      "subsystem": "Effects",
+      "body_sha256": "26e3b771cd9296a4ac17f1b9d423fa34ff0e09a7de53a31633ff5c0153dcf5eb",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x005F70EA",
+          "target": "0x005F71F0"
+        },
+        {
+          "site": "0x005F70F4",
+          "target": "0x0041CC50"
+        },
+        {
+          "site": "0x005F7109",
+          "target": "0x0040B110"
+        },
+        {
+          "site": "0x005F711E",
+          "target": "0x0040BB80"
+        },
+        {
+          "site": "0x005F7128",
+          "target": "0x0041CC50"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x005F70EF",
+          "mnemonic": "push",
+          "operands": "0x65a078"
+        },
+        {
+          "site": "0x005F70FE",
+          "mnemonic": "push",
+          "operands": "0x90"
+        },
+        {
+          "site": "0x005F7118",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": "0x005F7123",
+          "mnemonic": "push",
+          "operands": "0x65a0a8"
+        }
+      ],
+      "evidence_id": "R100"
+    }
+  ],
+  "anchors": [
+    {
+      "address": "0x004018A0",
+      "size": 340,
+      "role": "Graphics::ToggleWindowMode",
+      "origin_evidence": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed",
+      "body_sha256": "f918a10369f18cbbfed4f7ca2425a2f05edaea7a568177dab8eef131447fce5f"
+    },
+    {
+      "address": "0x00401D80",
+      "size": 376,
+      "role": "Graphics::CopyTextureOpaque",
+      "origin_evidence": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed",
+      "body_sha256": "c6df8b0e1e7c628ec2de777972594bfb9463f0886649c9275c196ba23b7f273f"
+    },
+    {
+      "address": "0x00401F50",
+      "size": 495,
+      "role": "Graphics::SetBlendMode",
+      "origin_evidence": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs",
+      "body_sha256": "90cceff0be0f6c4061f67f4c5f2d31af0c64b9cb287ec61080b28e3475547b61",
+      "exact_unit": "graphics-set-blend-mode"
+    },
+    {
+      "address": "0x004028A0",
+      "size": 13,
+      "role": "Graphics::SetPresentCallback",
+      "origin_evidence": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs",
+      "body_sha256": "52b1e40ba3334d5758960645ca540109d0033d9100f9999d1312571535e92671"
+    },
+    {
+      "address": "0x004028B0",
+      "size": 10,
+      "role": "Graphics::GetPrimaryTargetTexture",
+      "origin_evidence": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs",
+      "body_sha256": "96d0af1f379e117d847817f8d448191139985590ab9d63749019435d0e90d9d0"
+    },
+    {
+      "address": "0x004028F0",
+      "size": 123,
+      "role": "Graphics::Present",
+      "origin_evidence": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs",
+      "body_sha256": "84572c137c71748b874cf55253794d2be023557486a37fd8430c47b39a3e7cef"
+    },
+    {
+      "address": "0x004029F0",
+      "size": 857,
+      "role": "Graphics::DrawTexturedQuad",
+      "origin_evidence": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed",
+      "body_sha256": "2aff2be14450c7067a28ad3af4dfe5317346d4890e4a3000a13d7cba473f5c54"
+    },
+    {
+      "address": "0x00403E50",
+      "size": 90,
+      "role": "Input::PollKeyboard",
+      "origin_evidence": "R002; docs/ORIGIN_REVIEW.md",
+      "body_sha256": "04b570241257bb89b114ac479fe6d2565407308b8a4344874de29e4889b68083"
+    },
+    {
+      "address": "0x00403F40",
+      "size": 200,
+      "role": "Input::PollJoysticks",
+      "origin_evidence": "R002; docs/ORIGIN_REVIEW.md",
+      "body_sha256": "231e1dead3ec498470a3982f6183b21c44898f156594b6550ec7c70f76be0425"
+    },
+    {
+      "address": "0x00406E10",
+      "size": 110,
+      "role": "InputMapping::SetBindings",
+      "origin_evidence": "R015",
+      "body_sha256": "1131b6d94afd522902fb33e8520ab7ac4779075c9d5c3d7e20a8702929643be9"
+    },
+    {
+      "address": "0x00406E80",
+      "size": 741,
+      "role": "InputMapping::UpdateHeldCounts",
+      "origin_evidence": "R015",
+      "body_sha256": "2bfc67c037111ef10edc80a215fb922964ad7cffe8769728c05edfbc93319c31"
+    },
+    {
+      "address": "0x00407170",
+      "size": 38,
+      "role": "InputMapping::IsKeyDown",
+      "origin_evidence": "R015",
+      "body_sha256": "802b49dd53ce14639d775b71dd23f1981e7f27ac932718e3d96b22a9efd086f3"
+    },
+    {
+      "address": "0x004079C0",
+      "size": 142,
+      "role": "SoundBank::Play",
+      "origin_evidence": "R016",
+      "body_sha256": "33b7623f1b4f854846ed5011bc60dc3813756253a4a29b83142124759fd99f82"
+    },
+    {
+      "address": "0x0040B110",
+      "size": 184,
+      "role": "TextureManager::AllocateTextureSlots",
+      "origin_evidence": "R017",
+      "body_sha256": "b850d81326f372cfdb3f3069a743af8192f8d1bdf4a3c114793968c18958104f"
+    },
+    {
+      "address": "0x0040BB80",
+      "size": 31,
+      "role": "TextureManager::LoadArchiveTexturePackDefaultPalette",
+      "origin_evidence": "R019",
+      "body_sha256": "1f9b2025eaabfc492d6ab8c1baa0423ea149912eac47d24c056d3a712a2e44bd"
+    },
+    {
+      "address": "0x0040DB50",
+      "size": 305,
+      "role": "SpriteGeometry::InitializeRectangleFromRect",
+      "origin_evidence": "R011",
+      "body_sha256": "044430cb8da9082f9bac7b8d3a7d0eaa1e908e15cd9e1fff5c90877153897ff0"
+    },
+    {
+      "address": "0x004126C0",
+      "size": 1520,
+      "role": "CameraMotion::Update",
+      "origin_evidence": "R035",
+      "body_sha256": "a1a2f054418e7f7c0693600b1a919ac3211ccde334c3bc1a3d549f689f640aab"
+    },
+    {
+      "address": "0x004175A0",
+      "size": 334,
+      "role": "GameGlobals::InitializeSound",
+      "origin_evidence": "R052",
+      "body_sha256": "edabd3cf233ed6befa5b4761245e68d43f798d87ccd4580c60580a8c35c78fa8"
+    },
+    {
+      "address": "0x004176F0",
+      "size": 3232,
+      "role": "BattleLoader::LoadCharactersAt004176F0",
+      "origin_evidence": "R065",
+      "body_sha256": "6acdbe6fd9efb49eaeb8a42bd7586d00648753d39894e6317a002105ddf1507a"
+    },
+    {
+      "address": "0x004183D0",
+      "size": 3765,
+      "role": "BattleLoader::LoadStageAt004183D0",
+      "origin_evidence": "R065",
+      "body_sha256": "9d670e4a82fec9987f1785f1d1818aec6677c609cd0d71ba91da8c45406a6076"
+    },
+    {
+      "address": "0x0041CC50",
+      "size": 115,
+      "role": "DiagnosticLog::AppendString",
+      "origin_evidence": "R011",
+      "body_sha256": "5a41a6d99e4f7ab7318f92401200936f30772389133720307147fb416e948cd1"
+    },
+    {
+      "address": "0x0042EF10",
+      "size": 1344,
+      "role": "ResultScene::RenderCounters",
+      "origin_evidence": "R040",
+      "body_sha256": "4caa7d7d4c0d1f0ea0db8d352f14f744b8cd8474a0146c368d7b5e4624d5c8b1"
+    },
+    {
+      "address": "0x0043B610",
+      "size": 4764,
+      "role": "BattleScene::AdvanceState",
+      "origin_evidence": "R044",
+      "body_sha256": "2cf9ab10a5ad0cd96e4ac268a4a2425a4af856ef1c7f6ebbb64ba351ad33a086"
+    },
+    {
+      "address": "0x0043D570",
+      "size": 1115,
+      "role": "BattleHud::RenderComboCounter",
+      "origin_evidence": "R041",
+      "body_sha256": "04871252375fd12ff4bac788828276f72cdc697f6dcead065b4b887f695b0b4d"
+    },
+    {
+      "address": "0x00446B90",
+      "size": 463,
+      "role": "BattleHud::DrawAtlasNumber",
+      "origin_evidence": "R042",
+      "body_sha256": "409ce5879f6816cb38729386ebb4ce3516e6b8be46b8445cba14996dd426f22a"
+    },
+    {
+      "address": "0x0045DD70",
+      "size": 60999,
+      "role": "ReimuFighter::AdvanceActionStatesAt0045DD70",
+      "origin_evidence": "R063",
+      "body_sha256": "b78fa89a709b1cbbafdf4310c6fd81dd68369a9fa528a1852a64bb105ee93bc2"
+    },
+    {
+      "address": "0x005F71F0",
+      "size": 1722,
+      "role": "Effects::LoadPatternCatalogAt005F71F0",
+      "origin_evidence": "R067",
+      "body_sha256": "6fc11b0e9aec650d60b8e4d00bca85e26a026d4dce9bed0d3a5a46bd6adb526d"
+    }
+  ],
+  "parent_calls": [
+    {
+      "parent": "0x004176F0",
+      "child": "0x00412660",
+      "sites": [
+        "0x004180CB"
+      ]
+    },
+    {
+      "parent": "0x0043B610",
+      "child": "0x004170D0",
+      "sites": [
+        "0x0043BDDB"
+      ]
+    },
+    {
+      "parent": "0x0043B610",
+      "child": "0x00417120",
+      "sites": [
+        "0x0043BDBA"
+      ]
+    },
+    {
+      "parent": "0x0042EF10",
+      "child": "0x004171D0",
+      "sites": [
+        "0x0042F0D0"
+      ]
+    },
+    {
+      "parent": "0x0043D570",
+      "child": "0x00446B60",
+      "sites": [
+        "0x0043D6C6",
+        "0x0043D71F",
+        "0x0043D774",
+        "0x0043D854",
+        "0x0043D8AF",
+        "0x0043D90A"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00453D40",
+      "sites": [
+        "0x00464387",
+        "0x004645B7",
+        "0x00464845",
+        "0x00464A7B",
+        "0x00464B71",
+        "0x00464E50",
+        "0x00465086",
+        "0x0046533C",
+        "0x00465572",
+        "0x0046569B",
+        "0x00465749",
+        "0x0046581A",
+        "0x00465943",
+        "0x004659F1",
+        "0x00465AC2",
+        "0x00465BB8",
+        "0x00465D8A",
+        "0x00465E38",
+        "0x00465F09",
+        "0x004660B2",
+        "0x00466160",
+        "0x00466231",
+        "0x0046635A",
+        "0x00466408",
+        "0x004664D9",
+        "0x004665B7",
+        "0x004666AE",
+        "0x00466880",
+        "0x0046692E",
+        "0x004669FF",
+        "0x00466B5F",
+        "0x00466C11",
+        "0x00466DDA",
+        "0x00466ED7",
+        "0x004670B7",
+        "0x004671A4",
+        "0x0046736D",
+        "0x0046745E",
+        "0x00467633",
+        "0x00467730",
+        "0x00467910",
+        "0x00467AB4",
+        "0x00467C87",
+        "0x004681CA",
+        "0x004683AE",
+        "0x004685AE",
+        "0x004687AE",
+        "0x004688CE",
+        "0x00468B91",
+        "0x00468D0D",
+        "0x00468FEC",
+        "0x00469413",
+        "0x00469742",
+        "0x00469B51",
+        "0x00469D42",
+        "0x00469F3A",
+        "0x0046A0D9",
+        "0x0046A1A2",
+        "0x0046A55D",
+        "0x0046A98E",
+        "0x0046AA44",
+        "0x0046AB19",
+        "0x0046AC35",
+        "0x0046ACEE",
+        "0x0046ADC6",
+        "0x0046AF3E",
+        "0x0046AFF8",
+        "0x0046B0D1",
+        "0x0046B24C",
+        "0x0046B309",
+        "0x0046B3E5",
+        "0x0046B581",
+        "0x0046BBA0",
+        "0x0046BCED",
+        "0x0046BE7E",
+        "0x0046BFD4",
+        "0x0046C197"
+      ]
+    },
+    {
+      "parent": "0x004176F0",
+      "child": "0x00457490",
+      "sites": [
+        "0x00417DE8"
+      ]
+    },
+    {
+      "parent": "0x004175A0",
+      "child": "0x005F70E0",
+      "sites": [
+        "0x004176DB"
+      ]
+    }
+  ],
+  "strings": [
+    {
+      "address": "0x0065A078",
+      "value": "LoadEffect...\r\n"
+    },
+    {
+      "address": "0x0065A088",
+      "value": "data"
+    },
+    {
+      "address": "0x0065A090",
+      "value": "data\\system\\effect.dat"
+    },
+    {
+      "address": "0x0065A0A8",
+      "value": "LoadEffect...\r\n"
+    }
+  ],
+  "callback": {
+    "installer": "0x00417120",
+    "site": "0x00417127",
+    "target": "0x00417160"
+  },
+  "virtual_slots": [
+    {
+      "address": "0x00657BB8",
+      "target": "0x00425330"
+    },
+    {
+      "address": "0x00657BE4",
+      "target": "0x004255D0"
+    }
+  ]
+}

@@ -1401,3 +1401,23 @@ field binds the entire four-byte readonly `_.,` string COMDAT, including NUL.
 The readonly extension requires the full defining section and every symbol
 definition, without granting a data origin or original-name proof from an
 arbitrary pointer. R099 adds one library origin and no source or exact credit.
+
+## Short custom core policies after R100
+
+Twelve reviewed bodies add camera setup, primary-frame capture/compositing,
+scene input and transition logic, HUD defaults, character sound/binding
+forwarders and effect resource loading. Their full 780-byte extents use
+independently reviewed game behavior and explicit policy fields, rather than
+indistinguishable empty constructors or generic template wrappers. Full
+game parent bodies corroborate the short methods where direct calls exist;
+callback and selected virtual-slot pointers corroborate indirect entrypoints.
+The input policy polls both input devices and toggles window mode for Enter
+with either Alt scan code. The timed scene increments a word counter and
+returns `0x220D` when that counter exceeds 180. Names, complete class layouts and original
+transition/type spellings remain unknown.
+
+The `SetRect` fields bind the raw PE import name/DLL. The existing full
+`SetBlendMode` unit includes its eight-entry table and is cold-replayed as
+495 bytes, without treating the table as code or dropping it from context.
+R100 adds twelve authored origins, growing the provisional denominator by
+780 bytes to 1,951,701; no reconstruction source or new exact credit is added.

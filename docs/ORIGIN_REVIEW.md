@@ -3638,3 +3638,61 @@ R099 adds one library origin / 220 bytes, reaching 2,920 reviewed candidates
 42 functions / 8,916 bytes against 1,950,921 provisional authored bytes
 (0.46%). R098 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37109763536.
+
+## R100 — explicit game policies around reviewed core behavior
+
+Twelve complete short bodies implement custom game behavior and bind reviewed
+authored callees. Origin acceptance comes from these operations and their
+owner context, rather than a short instruction shape or a mapped name.
+
+| Address | Bytes | Inferred role and target observations |
+| --- | ---: | --- |
+| `0x00412660` | 96 | Camera initialization stores four parameters in camera globals, calls the reviewed camera update and copies derived camera state |
+| `0x004170D0` | 65 | Capture the primary target using a 640-by-480 `SetRect` and the reviewed opaque texture copy |
+| `0x00417120` | 31 | Install the actual `0x00417160` present callback and clear the object's byte flag at `+4` |
+| `0x00417160` | 98 | Build a 640-by-480 quad, select blend mode zero and draw the supplied texture with color `0xFFFFFFFF` |
+| `0x004171D0` | 50 | Draw the object's texture through the reviewed quad renderer only when its `+4` byte flag is nonzero |
+| `0x00425330` | 84 | Loading-scene update runs custom virtual dispatch, loads characters/stage and handles mode/progress flags and transition results |
+| `0x004255D0` | 78 | Timed-scene update polls scene input, dispatches virtually, presents, increments a word counter and chooses transition `0x220D` when the counter exceeds 180 |
+| `0x004256C0` | 96 | Poll keyboard/joysticks, update held counts and toggle window mode for Enter with either Alt key |
+| `0x00446B60` | 35 | Call the reviewed HUD atlas-number renderer with an additional default-zero argument |
+| `0x00453D40` | 32 | Forward a signed word sound index to the reviewed game sound bank at object offset `+0x6D0` |
+| `0x00457490` | 31 | Set the reviewed input mapping at object offset `+0x494` from the supplied binding pointer |
+| `0x005F70E0` | 84 | Load the effect pattern catalog, allocate texture slots and load `data\system\effect.dat`, with explicit `LoadEffect...` logging |
+
+The calling roles are inferred. Byte/word reads and observed member offsets
+do not establish complete object layouts or original type spellings. The
+loading update's values are transition observations, not a recovered enum.
+The two Alt scan codes are `0x38` and `0xB8`, and Enter is `0x1C`; their use
+is explicit in the keyboard policy, not inferred from a generic wrapper.
+
+`scripts/repo-python scripts/verify-short-game-origins.py` checks the complete
+780 bytes and all exits/branches, 27 direct calls, four indirect calls and
+40 selected policy instructions. It replays all recorded authored extents
+and freezes 27 independently reviewed whole game anchors, including the
+reviewed loader, battle/character/HUD owners and the core callees. Eight
+complete-parent call edges add owner context. The primary capture and
+callback use `USER32.dll!SetRect`, independently decoded from the raw PE IAT
+at `0x00657210`. The remaining two indirect calls are observed game virtual
+dispatch; their dynamic destinations receive no origin credit.
+
+`Graphics::SetBlendMode` is a complete 495-byte exact context unit including
+its eight-entry table. The verifier cold-builds and replays that whole unit;
+it never decodes the table as instructions or narrows its credited extent.
+The actual present callback pointer and two selected readonly scene virtual
+slots (`0x00657BB8` and `0x00657BE4`) are checked. These selected slots do not
+establish full vtable extents. Attested Ghidra caller/callee/reference queries
+each supplied their own completion marker; raw decoding remains authoritative
+for the complete body and fields. Four public edge tests reject omitted
+calls, unrelated reviewed destinations and unreviewed/vendor owner anchors.
+
+The full verifier passed locally and through the no-auth public Funnel MCP,
+including the cold 495-byte blend-mode context. Public CI passed all 129
+tests, target-required tracking and progress freshness checks.
+
+R100 adds twelve authored origins / 780 bytes, reaching 2,932 reviewed
+candidates (817 authored, 1,540 library, 575 compiler), with 1,419 pending.
+There are 770 explicitly recorded authored bodies / 1,939,358 bytes. Exact
+remains 42 functions / 8,916 bytes against 1,951,701 provisional authored
+bytes (0.46%); no source or new exact credit. R099 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37110276865.
