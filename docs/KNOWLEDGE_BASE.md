@@ -1085,3 +1085,14 @@ target body has a guarded 100-byte remap and seven-entry table after the
 final RET; all destinations stay inside the owning body. The archive path
 applies the observed decode loop before parsing. R070 adds no source or
 exact credit.
+
+## VC7 deque map-growth origin after R071
+
+Twelve complete target bodies, 6,210 bytes in total, reproduce VC7.1
+`std::deque::_Growmap` emission from independently varied record-width
+instantiations. Their full code COMDAT extents, 13 typed relocations per
+body and decoded control flow are checked by a cold verifier. Widths of at
+least 16 share the same 511-byte emitted shape in this probe; the original
+game element types and called-function origins remain unknown. These twelve
+are library templates with no authored source or exact credit. The prior
+vector hypothesis for them was incorrect.

@@ -2870,3 +2870,30 @@ is added. Totals are 2,166 reviewed (800 authored, 792 library, 574
 compiler), 2,185 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,601 provisional authored bytes (0.46%). R069 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37031358595.
+
+## R071 — VC7 deque map-growth template origins
+
+Twelve complete 520/517/511-byte bodies, totaling 6,210 bytes, are verified
+as VC7 `std::deque::_Growmap` library templates. Seven independent
+`std::deque<DequeProbeRecord<N>>` instantiations at widths 1, 2, 4, 8, 16,
+32 and 64 compile with the pinned VC7.1 toolchain. Each emitted `_Growmap`
+definition occupies its entire code COMDAT and has 13 typed relocations.
+For each target body, all non-relocation bytes match one template family;
+every relocation is bound to its observed target destination, and the full
+decoded control flow has internal branches and a complete exit. The 511-byte
+variant has three matching probe aliases; this proves a common template
+shape, not the original game element type.
+
+`scripts/repo-python scripts/verify-vendor-deque-growmap-origins.py` cold
+compiles the source and rechecks all complete code bodies, hashes, aliases,
+relocation types/addends/destinations, control flow and ledgers. The evidence
+is in `config/vendor-deque-growmap-origins.csv`. No original record type,
+callee origin, reconstruction source or exact credit is claimed. The earlier
+vector-template hypothesis for these bodies is superseded. A scan of the
+remaining pending candidates found no more whole-body matches to the seven
+probe variants.
+
+R071 adds 12 library origins: 2,178 reviewed (800 authored, 804 library,
+574 compiler), 2,173 pending. Exact stays 42 functions / 8,916 bytes
+against 1,950,601 provisional authored bytes (0.46%). R070 GitHub CI passed
+at https://github.com/N0zoM1z0/th075/actions/runs/37093204780.

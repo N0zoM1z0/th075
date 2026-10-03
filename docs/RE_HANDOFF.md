@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batch R070. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R071. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,166: 800 authored, 792 library and 574 compiler generated.
-There are 2,185 pending. Candidate count is not authored function count.
+has resolved 2,178: 800 authored, 804 library and 574 compiler generated.
+There are 2,173 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R070; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R071; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -49,33 +49,37 @@ scripts/repo-python scripts/verify-effect-fighter-origins.py
 scripts/repo-python scripts/verify-fighter-final-virtual-origins.py
 scripts/repo-python scripts/verify-combat-reaction-origins.py
 scripts/repo-python scripts/verify-fighter-script-origins.py
+scripts/repo-python scripts/verify-vendor-deque-growmap-origins.py
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The R069 local run passed 98 public tests, target-required tracking,
-complete checks of 751 explicitly recorded authored bodies, and progress
-freshness. The public GitHub CI for R067–R069 passed.
+The R071 local run passed 98 public tests, target-required tracking,
+complete checks of 753 explicitly recorded authored bodies, and progress
+freshness. The no-auth public Funnel MCP also ran the new cold verifier
+successfully. Public GitHub CI through R070 passed.
 
 ## Deferred investigations
 
-The repeated 520/511-byte bodies near `0x00414B40` and related addresses
-match a newly compiled VC7 `std::deque::_Growmap` probe outside all 13
-relocation fields. A complete cold verifier and typed bindings are being
-prepared before any library-origin promotion. The earlier vector probes
-were a wrong family. Private diagnostics are under `.analysis/r071-*`.
+Twelve repeated 520/517/511-byte bodies are now verified as complete VC7
+`std::deque::_Growmap` templates, including all 13 typed relocations per
+body and internal control flow. The independently compiled record widths do
+not identify the game's original element types. A scan of remaining pending
+candidates found no further whole-body matches to these seven probe variants.
+The earlier vector hypothesis for these bodies was wrong. Reproduce with
+`scripts/repo-python scripts/verify-vendor-deque-growmap-origins.py`.
 
 The CRT survey at `.analysis/crt-origin-survey.json` still contains 353
 pending, relocation-bearing observations. A source fingerprint alone does
 not establish each relocated callee or data binding. The metadata-vector
-and stream-deque probes likewise remain diagnostic. The 2,301-byte
-`0x00420880` candidate has a bounded remap dispatch, but Ghidra did not
-recover its semantics; it was left pending. Private reads are under
-`.analysis/r067-*`. Preserve unknown classifications until a complete
+and other stream-deque probes likewise remain diagnostic. The 2,301-byte
+`0x00420880` script parser was reviewed in R070 using the complete guarded
+remap dispatch, even though Ghidra did not recover it. Preserve unknown
+classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 2,185 pending origin decisions before doing further exact
+Complete the 2,173 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; the adjacent
