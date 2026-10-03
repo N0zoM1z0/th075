@@ -2945,3 +2945,31 @@ R073 adds 97 library origins: 2,321 reviewed (800 authored, 947 library,
 574 compiler), 2,030 pending. Exact remains 42 functions / 8,916 bytes
 against 1,950,601 provisional authored bytes (0.46%). R072 GitHub CI passed
 at https://github.com/N0zoM1z0/th075/actions/runs/37093860727.
+
+## R074 — parent-backed VC7 deque callee origins
+
+One hundred twenty-six complete 20–29-byte bodies, totaling 3,246 bytes,
+match seven independently compiled VC7 deque/allocator helper families:
+`allocate`, `construct`, `destroy`, `max_size`, `deallocate`,
+`_Uninit_fill_n` and `_Deque_map` construction. Each target has a full
+source COMDAT match, one typed relocation bound to its actual destination,
+complete decoded control flow, and at least one direct call from an already
+reviewed VC7 deque template. That parent call's typed source symbol names
+the same method family and its raw target displacement reaches the reviewed
+callee. The parent templates are cold-reverified before this batch is
+accepted. This extra call witness matters because 20-byte bodies can match
+unrelated implementations by coincidence.
+
+`scripts/repo-python scripts/verify-vendor-deque-callee-origins.py` replays
+all three parent batches, cold compiles the seven-width probe and verifies
+the complete source/target bodies, aliases, 126 typed bindings, parent call
+fields and ledgers. Evidence is in `config/vendor-deque-callee-origins.csv`.
+Other short matches, including a previously observed destructor body whose
+call lands in authored code, remain pending. No game element type, called
+function origin, reconstruction source or exact credit is inferred.
+
+R074 adds 126 library origins: 2,447 reviewed (800 authored, 1,073
+library, 574 compiler), 1,904 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,601 provisional authored bytes (0.46%). R073
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37094093913.

@@ -1114,3 +1114,13 @@ complete decoded control flow. The source probe spans multiple synthetic
 record widths; identical emissions do not identify an original game type.
 These are library origins only, with no reconstruction source or exact
 credit. A no-relocation 44-byte allocator match remains pending.
+
+## Parent-backed VC7 deque callees after R074
+
+One hundred twenty-six short VC7 deque/allocator helper bodies have two
+independent witnesses: a complete cold source/target comparison with one
+typed relocation each, and a direct same-family call from a previously
+reviewed deque template. The parent body hash and raw call displacement are
+rechecked, as are all parent cold verifiers. These library classifications
+do not confer origin on the functions they call or identify original game
+element types. Short matches lacking a corroborating parent remain pending.
