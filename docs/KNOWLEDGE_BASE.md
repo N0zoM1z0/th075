@@ -1268,3 +1268,19 @@ allocator callees still need their own complete comparisons and witnesses.
 The pending vector insertion bodies do not match the probe's complete
 extents and remain unclassified. R089 adds library origin only, with no
 authored source or exact credit.
+
+## VC7 vector helper call chains after R090
+
+Seventy-two complete 14–42-byte vector/allocator helper bodies now have
+full source comparisons and typed links to the independently reviewed
+R089 storage bodies. Ten vector constructors call verified `_Buy` bodies.
+The constructors in turn bind ten `_Vector_val` constructors and twenty
+default/copy allocator constructors. Eight maximum-size wrappers, eight
+allocation wrappers, eight deallocation wrappers and eight `_Allocate`
+helpers also have exact source-typed parent calls. All 1,728 bytes and
+72 relocations cold-replay; every short witness chain reaches a reviewed
+storage body, and cycles or unrelated source callee symbols are rejected.
+Ghidra's `_String_val` aliases on some base constructors do not establish
+identity; the typed vector-constructor calls support `_Vector_val` here.
+Original game types remain unknown, with library origin only and no source
+or exact credit.

@@ -3319,3 +3319,32 @@ R089 reaches 2,787 reviewed candidates (804 authored, 1,409 library,
 against 1,950,893 provisional authored bytes (0.46%), with no new source
 or exact credit. R088 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37099620503.
+
+## R090 — vector constructors and helpers with storage witnesses
+
+Seventy-two complete source/target bodies, totaling 1,728 bytes, have typed
+witness chains to the R089 storage functions: ten 42-byte vector default
+constructors, ten 28-byte `_Vector_val` constructors, ten 14-byte default
+allocator constructors, ten 16-byte copy allocator constructors, eight
+19-byte maximum-size wrappers, eight 27-byte allocation wrappers, eight
+25-byte deallocation wrappers and eight 20-byte `_Allocate` helpers.
+The ten vector constructors have exact source-typed `_Buy` calls; every
+other body has an exact source-typed call from a reviewed parent. All short
+chains must reach an independently verified storage body; a circular or
+unanchored chain cannot supply origin credit. Source variants remain
+consistent along the recorded calls without claiming original game types.
+
+`scripts/repo-python scripts/verify-vendor-vector-helper-origins.py`
+cold-replays R089, cold compiles the same probe, and checks full COMDATs,
+aliases, hashes, all 72 typed relocations, witness chains, CFG and ledgers.
+Evidence is in `config/vendor-vector-helper-origins.csv`. Public graph tests
+also reject mismatched source callee symbols and removed storage anchors;
+these metadata tests do not replace the private complete cold comparison.
+Some Ghidra `_String_val` base-constructor labels are misleading; the typed
+vector calls establish the expected `_Vector_val` family for this batch.
+
+R090 reaches 2,859 reviewed candidates (804 authored, 1,481 library,
+574 compiler), with 1,492 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%), with no new source
+or exact credit. R089 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37101591701.
