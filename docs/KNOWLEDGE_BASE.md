@@ -2220,3 +2220,97 @@ one public no-auth HTTPS MCP request covering this verifier and retained
 runtime/import proofs, R114 lifetime evidence, authored extents, target and
 Ghidra attestation, all 60 cold exact units, CI, progress freshness and diff
 whitespace checks. The private URL and investigation logs stay untracked.
+
+## R121 — complete registration, heap growth and thread teardown
+
+The six handoff roots are reviewed against the pinned supplied Japanese
+TH075 target. Four roots and six required dependencies gain library origin;
+ten complete source bodies cover 917 bytes and 71 typed relocation fields:
+
+| Address | Whole bytes | Vendor source symbol |
+| --- | ---: | --- |
+| `0x006422B2` | 36 | `_fast_error_exit` |
+| `0x00646603` | 85 | `__mtdeletelocks` |
+| `0x00646166` | 29 | `__mtterm` |
+| `0x0064168B` | 18 | `_atexit` |
+| `0x00641653` | 56 | `__onexit` |
+| `0x006415AB` | 128 | `__onexit_lk` |
+| `0x00646756` | 429 | `_realloc` |
+| `0x00646903` | 118 | `__msize` |
+| `0x006440D5` | 9 | `__lockexit` |
+| `0x006440DE` | 9 | `__unlockexit` |
+
+Replay `scripts/repo-python scripts/verify-startup-registration-origins.py`.
+Each complete own source auxiliary extent is extracted from a hash-pinned
+VC7.1 archive member and all target bytes and typed fields are compared.
+Control-flow inventories retain every exit, embedded cleanup and external
+REL32 tail. Every accepted direct code edge closes against another complete
+accepted body or nineteen independent anchors / 4,280 bytes / 162 fields;
+R120 and retained R115–R119/runtime/import/layout controls cold-replay their
+original CFG and shared-data extents. In particular memcpy's whole 829-byte
+code/switch carrier and resize's whole 735-byte region/group logic remain
+independent accepted evidence, not convenient linear instruction prefixes.
+
+Fast error exit uses the WINCRT0 member proven by earlier complete startup
+context. Narrow and wide Windows helper bodies are identical here; the
+console startup members differ at non-relocation bytes 6 and 7. Neither a
+first symbol hit nor this small helper alone establishes the entry variant.
+The function retains the actual mutable error-mode test, full banner/writer
+callees and terminal exit dispatcher. Thread teardown compares all 36 lock
+records, frees dynamic critical sections first, then deletes preallocated
+ones so the heap lock outlives heap frees. The FLS/TLS free dispatch retains
+its actual slot, source defining cache and index reset; the complete 239-byte
+MT initializer supplies API lookup/raw fallback provenance without receiving
+ownership for its unresolved locale cleanup callback.
+
+The full onexit/atexit graph retains the application callback value, growth
+policy, failed first/retry realloc paths, preservation of the end offset,
+pointer updates and callback store. Complete msize/realloc bodies close both
+small-block and system-heap paths against real heap COMMON definitions,
+whole new-mode storage, all API slots, resize/copy/free/new-handler children
+and SEH labels. Registered callback implementations gain no origin merely
+from registration. The genuine onexit initializer and CRT registration
+remain independently replayed R120 evidence.
+
+Canonical source extents expand only for onexit `0x00641653` 50 -> 56 and
+msize `0x00646903` 106 -> 118. Three existing candidates become library-owned
+interior labels, not extra complete source functions: `0x00641685` / 6,
+`0x00646970` / 9 and `0x006468BE` / 9. Their 24 bytes overlap accepted parents;
+spans and blank names are preserved. Onexit's finally starts +50, msize's
+EH head +106 and shared entry +109, realloc's EH head +352 and shared entry
++360. Every label and scope pointer is re-read from its actual primary COFF
+section. Database and target bytes are unchanged; no source or exact credit
+is granted.
+
+Defining controls include seven whole sections / 480 bytes, five actual
+four-byte COMMON definitions, ten four-byte source range markers, five whole
+callback ranges / 116 bytes, the four-byte onexit registration, five scopes /
+72 bytes, and seven complete export literals / 89 bytes. Writable storage,
+loader zero-fill, full source topology, all initialized pointers and literal
+extents are checked. The FP carrier is the whole 20-byte source section:
+`__FPinit` is +8, not an invented isolated scalar. The whole RTC terminator
+scope and empty eight-byte marker range are diagnostic evidence only.
+
+MT initializer `0x00646389` / 239 and cinit `0x0064411D` / 106 stay pending.
+Their complete 345-byte source and 38 fields are frozen. MT init still needs
+the non-inventoried 327-byte freefls parent's locale data and complete freeing
+dependencies. Cinit still needs the actual FP callback's conversion table,
+converter implementations and precision-control chain. Seven full contexts /
+748 bytes / 63 fields cover freefls, non-inventoried RTC termination, fpmath,
+freetlocinfo, cfltcvt initialization, processor-feature probing and default
+precision. These footprints do not grant parent/callee origin. The two
+existing freefls cleanup entries `0x00646339` / 9 and `0x00646345` / 9 remain
+unknown, preserving earlier EH heads +301/+315 and shared entries +306/+318.
+The non-inventoried primary bodies are not added to candidate counts.
+
+R115 preserves its historical fast-exit snapshot through a narrow R121
+reconciliation guard: same whole member/source/target identity and every
+field are required, followed by the original cold replay. Sixteen new tests
+reject convenient extents, console-member substitution, arbitrary TLS zeros,
+unclosed parent ownership, fabricated diagnostic candidates and exact credit.
+All 282 public checks pass. Current origin totals are 3,152 resolved:
+919 authored, 1,658 library and 575 compiler; 1,199 remain pending. The exact
+baseline stays 60 functions / 9,883 bytes, and recorded authored extents stay
+872 bodies / 1,952,956 bytes. Investigation and intermediate checks use local
+tools; final acceptance uses one no-auth public HTTPS MCP request. The private
+URL and logs remain untracked.

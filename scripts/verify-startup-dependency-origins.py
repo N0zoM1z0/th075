@@ -165,6 +165,10 @@ def verify_plan(manifest):
 
 
 def check_ledger(row,functions,origins,evidence_only):
+    if row['address'] == '0x006422B2' and origins.get(row['address'], {}).get('evidence_id') == 'R121':
+        module('startup_registration_reconciliation', 'verify-startup-registration-origins.py').check_historical_startup(
+            row, functions[row['address']], origins[row['address']])
+        return
     if row['address'] in PENDING and origins.get(row['address'], {}).get('evidence_id') == 'R120':
         module('runtime_cycle_reconciliation', 'origin_reconciliation.py').check_root(
             row, functions[row['address']], origins[row['address']])

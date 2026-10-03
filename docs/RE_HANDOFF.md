@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R120. The public
+review cohorts R108 through R121. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,139: 919 authored, 1,645 library and 575 compiler generated.
-There are 1,212 pending. Candidate count is not authored function count.
+has resolved 3,152: 919 authored, 1,658 library and 575 compiler generated.
+There are 1,199 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R121 startup/registration cohort below.
+the bounded R122 locale/thread cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R120; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R121; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R121 startup/registration dependencies
+## Next agent objective — R122 locale/thread dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -257,26 +257,56 @@ and call ABI without classifying their implementations. Callback registration
 also grants no application origin. PE entry, cinit and other startup parents
 remain pending until every binding has independent evidence.
 
-The next bounded cohort is six existing startup/registration roots:
+R121 resolves ten complete library bodies / 917 bytes / 71 typed fields:
+fast error exit, lock deletion, MT teardown, atexit/onexit and its mutation
+helper, realloc, msize and the paired exit-lock wrappers. Three existing
+interior candidates / 24 overlapping bytes are library source labels only.
+Replay `scripts/repo-python scripts/verify-startup-registration-origins.py`;
+it cold-replays R120 and all retained runtime/import/layout graphs. Onexit
+expands 50 -> 56 and msize 106 -> 118. Complete EH heads and later shared
+entries remain distinct. No database, target, source or exact state changes.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the full
+R121 verifier and retained R120/R119/R118/R117/R116/R115/runtime/import graphs,
+R114 lifetime evidence, all 872 recorded authored extents, target/tracking/
+Ghidra attestation, 282 public tests, progress freshness and diff whitespace.
+All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
+Investigation and intermediate verification used local tools.
+
+Two complete startup parents / 345 bytes remain pending: mtinit needs the
+327-byte non-inventoried fiber-cleanup parent's locale ownership graph;
+cinit needs complete FP conversion/precision children. Seven full diagnostic
+contexts / 748 bytes preserve the actual next dependencies. The two existing
+fiber-cleanup interior candidates stay unknown. Whole FP carrier / 20 bytes,
+RTC scope and empty marker range are frozen diagnostics, not parent credit.
+
+The next bounded cohort is six existing locale/thread roots:
 
 | Candidate | Provisional bytes | Observed source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x006422B2` | 36 | `fast_error_exit` | Whole WINCRT0 source, exit-policy/global and accepted banner/writer graph |
-| `0x00646603` | 85 | `__mtdeletelocks` | Actual static/dynamic critical-section distinction, heap frees and API bindings |
-| `0x00646166` | 29 | `__mtterm` | Full FLS/TLS teardown dispatch and independently closed deletion dependency |
-| `0x00646389` | 239 | `__mtinit` | All export/fallback API slots, free callback, error paths and startup bindings |
-| `0x0064411D` | 106 | `__cinit` | Whole FP/RTC/registration and callback-range source/data provenance |
-| `0x0064168B` | 18 | `_atexit` | Full onexit registration/mutation graph and actual callback ABI |
+| `0x00642B09` | 208 | `___freetlocinfo` | Complete refcount/sentinel and locale-child graph with actual defining state |
+| `0x0064CA47` | 217 | `___free_lconv_mon` | Whole monetary-field cleanup, defaults and free bindings |
+| `0x0064C7E8` | 95 | `___free_lconv_num` | Whole numeric-field cleanup and genuine locale defaults |
+| `0x0064C5C6` | 400 | `___free_lc_time` | Full locale-time arrays, ownership conditions and frees |
+| `0x00646389` | 239 | `__mtinit` | Close non-inventoried freefls / 327 bytes, full locale/thread layout, all code/data/API bindings |
+| `0x006504F9` | 30 | `___initmbctable` | Actual multibyte defining state and complete initialization child graph |
 
-Use R115–R120 manifests and `.analysis/r114-startup-graph.json` diagnostically.
-Required onexit registration/mutation, FLS free callback and RTC/FP bodies may
-expand the graph. Keep the non-inventoried `__RTC_Terminate` source at
-`0x006496D7` outside candidate counts unless its boundary and inventory are
-explicitly reconciled; cinit's field points there but does not grant ownership.
-Keep PE startup diagnostic until environment, multibyte, IO and other real
-children close independently. Do not use the six root byte counts as accepted
-source extents without replaying actual auxiliary metadata. `__c_exit` at
-`0x0064427B` also remains outside credit pending its own reconciliation.
+Use R115–R121 manifests and `.analysis/r114-startup-graph.json` diagnostically.
+Re-read complete `_tiddata`, thread locale, multibyte and locale-time source
+layouts from pinned CRT headers; cold-build natural layout controls serially.
+Data references must bind actual full source definitions/initializers, not
+arbitrary zero scalars or inferred offsets. Necessary multibyte initialization
+children may expand the graph. Keep the two freefls interior entries and their
+earlier EH heads outside credit until the complete parent graph closes;
+its non-inventoried primary cannot silently inflate candidate counts.
+
+Retain cinit/FP conversion and precision uncertainty for a later bounded
+cohort. Non-inventoried `__RTC_Terminate` at `0x006496D7` / 68 remains diagnostic;
+its complete own code/scope/empty range comparison alone does not classify
+cinit or FP callbacks. Preserve complete FPinit data / 20 bytes and conversion
+slots. PE startup stays diagnostic until environment, multibyte, IO and all
+other real children close. `__c_exit` at `0x0064427B` also remains outside
+credit pending its own reconciliation.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -292,7 +322,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R121 adds no exact scope. Update
+private path and 60-function exact baseline. R122 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -345,6 +375,7 @@ scripts/repo-python scripts/verify-security-eh-origins.py
 scripts/repo-python scripts/verify-termination-lock-origins.py
 scripts/repo-python scripts/verify-allocator-thread-origins.py
 scripts/repo-python scripts/verify-runtime-cycle-origins.py
+scripts/repo-python scripts/verify-startup-registration-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
