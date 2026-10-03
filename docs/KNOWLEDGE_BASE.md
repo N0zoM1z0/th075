@@ -1439,3 +1439,21 @@ caller/callee anchors, selected virtual slots and complete extents verify
 ownership; no short-shape match or implicit compiler attribution is used.
 R101 adds eleven authored origins / 814 bytes, growing the provisional
 denominator to 1,952,515, with no source or exact credit.
+
+## Batch-scanned game policy ownership after R102
+
+The full origin scanner now prioritizes complete body groups and independently
+reviewed call context across all pending candidates. It retains actual call
+destinations, vtable/data fields and RET cleanup. A scan hit remains a
+diagnostic hypothesis; constructor/destructor shapes and vendor helpers still
+need independent ownership evidence.
+
+The first shared cohort adds seventeen explicit game policies: input, callback
+control, audio/camera forwarding, conditional fighter/effect dispatch, facing
+sprite drawing, text width selection and three complete name-glyph renderers.
+Their full 2,051 bytes bind thirty-three whole reviewed anchors and fifteen
+parent call edges. Four complete game peers corroborate input/glyph policies.
+The name renderer draws eight signed glyph indices using 26 columns with
+19-by-20 cells and 14-unit spacing; this is project rendering policy. Several
+field meanings and original names/types remain unknown. R102 grows the
+provisional authored denominator to 1,954,566, with no source or exact credit.

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import importlib.util
 import json
 from pathlib import Path
@@ -16,6 +17,10 @@ from capstone.x86 import X86_OP_IMM, X86_OP_MEM
 
 
 ROOT = Path(__file__).resolve().parents[1]
+COHORTS = {
+    "R100": ("short-game-origin-evidence.json", 12, 780, 27),
+    "R102": ("batch-game-origin-evidence.json", 17, 2051, 33),
+}
 
 
 def module(name, filename):
@@ -36,21 +41,26 @@ def check_calls(instructions, recorded, origins):
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cohort", choices=COHORTS, default="R100")
+    args = parser.parse_args()
+    batch = args.cohort
+    filename, expected_count, expected_bytes, expected_anchors = COHORTS[batch]
     comparison = module("short_game_target", "compare-coff-function.py")
     authored = module("short_game_cfg", "verify-authored-origins.py")
     imports_module = module("short_game_imports", "verify-import-origins.py")
     compiler = module("short_game_sections", "verify-compiler-origins.py")
     target = comparison.verified_target()
-    manifest = json.loads((ROOT / "config/short-game-origin-evidence.json").read_text())
+    manifest = json.loads((ROOT / "config" / filename).read_text())
     records = manifest["functions"]
     keys = {row["address"] for row in records}
-    if (manifest["evidence_id"] != "R100" or len(records) != 12 or len(keys) != 12
-            or sum(row["size"] for row in records) != 780):
+    if (manifest["evidence_id"] != batch or len(records) != expected_count or len(keys) != expected_count
+            or sum(row["size"] for row in records) != expected_bytes):
         raise ValueError("short game origin cohort differs")
     functions = {row["address"]: row for row in authored.rows("functions.csv")}
     origins = {row["address"]: row for row in authored.rows("function-origins.csv")}
     evidence = {row["address"]: row for row in authored.rows("authored-origin-evidence.csv")}
-    if {key for key, row in evidence.items() if row["evidence_id"] == "R100"} != keys:
+    if {key for key, row in evidence.items() if row["evidence_id"] == batch} != keys:
         raise ValueError("short game authored evidence cohort differs")
     # Replay complete extents and guarded tables of previously reviewed game context.
     if authored.main() != 0:
@@ -63,7 +73,7 @@ def main():
     remaps = authored.rows("authored-origin-switches.csv")
     directs = authored.rows("authored-origin-direct-switches.csv")
     anchors = manifest["anchors"]
-    if len(anchors) != 27 or len({row["address"] for row in anchors}) != len(anchors):
+    if len(anchors) != expected_anchors or len({row["address"] for row in anchors}) != len(anchors):
         raise ValueError("short game independent anchor cohort differs")
     for anchor in anchors:
         key = anchor["address"]
@@ -103,7 +113,7 @@ def main():
         key = record["address"]
         address, size = int(key, 16), record["size"]
         function, origin, body_record = functions[key], origins[key], evidence[key]
-        if (record["evidence_id"] != "R100" or origin["evidence_id"] != "R100"
+        if (record["evidence_id"] != batch or origin["evidence_id"] != batch
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
                 or function["owner"] != "authored" or function["status"] != "unclassified"
                 or function["proposed_name"] != record["role"]
@@ -151,13 +161,23 @@ def main():
                   and item.operands[0].imm == int(edge["child"], 16)]
         if actual != edge["sites"] or not actual:
             raise ValueError("short game complete parent lacks its recorded child call")
-    callback = manifest["callback"]
-    installer = {f"0x{item.address:08X}": item for item in decoded[callback["installer"]]}
-    push = installer[callback["site"]]
-    if (callback["target"] not in keys or push.mnemonic != "push"
-            or push.operands[0].type != X86_OP_IMM
-            or push.operands[0].imm != int(callback["target"], 16)):
-        raise ValueError("short game installer does not bind the complete present callback")
+    callback = manifest.get("callback")
+    if callback:
+        installer = {f"0x{item.address:08X}": item for item in decoded[callback["installer"]]}
+        push = installer[callback["site"]]
+        if (callback["target"] not in keys or push.mnemonic != "push"
+                or push.operands[0].type != X86_OP_IMM
+                or push.operands[0].imm != int(callback["target"], 16)):
+            raise ValueError("short game installer does not bind the complete present callback")
+    for peer in manifest.get("whole_body_peers", []):
+        scanner = module("short_game_peer_signature", "scan-origin-candidates.py")
+        signatures = []
+        for key in (peer["address"], peer["reviewed_address"]):
+            function = functions[key]
+            code = comparison.pe_bytes_at(target, int(key, 16), int(function["size"]))
+            signatures.append(scanner.body_signature(code, decoded[key], int(key, 16)))
+        if peer["address"] not in keys or peer["reviewed_address"] in keys or signatures[0] != signatures[1]:
+            raise ValueError("short game whole reviewed peer differs outside typed direct-call fields")
     # Only selected slots are observed; this does not assert a full game vtable layout.
     for row in manifest["virtual_slots"]:
         slot = int(row["address"], 16)
@@ -172,8 +192,9 @@ def main():
         literal = row["value"].encode("ascii") + b"\0"
         if comparison.pe_bytes_at(target, pointer, len(literal)) != literal:
             raise ValueError("short game resource/log literal differs")
-    print("Short game origins OK: 12 whole authored bodies / 780 bytes; 27 independently reviewed "
-          "whole anchors, custom policy fields, raw PE imports, callback and selected virtual slots; "
+    print(f"Short game origins {batch} OK: {expected_count} whole authored bodies / {expected_bytes} bytes; "
+          f"{expected_anchors} independently reviewed "
+          "whole anchors and complete call/parent/policy contexts; "
           "names/layouts inferred, no source or exact credit.")
     return 0
 

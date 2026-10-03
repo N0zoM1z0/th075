@@ -1,0 +1,1174 @@
+{
+  "evidence_id": "R102",
+  "functions": [
+    {
+      "address": "0x00417140",
+      "size": 28,
+      "role": "FrameCapture::EnableDirectDrawAt00417140",
+      "subsystem": "FrameCapture",
+      "body_sha256": "7b7b2b1f438308dca72456a613b6d25a9b4be0641d00cce7643042d644f318a6",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00417149",
+          "target": "0x004028A0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00417147",
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": "0x00417154",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 4], 1"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00419DF0",
+      "size": 27,
+      "role": "AudioStream::ScheduleTransitionFadeAt00419DF0",
+      "subsystem": "AudioStream",
+      "body_sha256": "43997ef22f85341a11655d92ecc54de7a78a3c916e3f3503e1555c6d15076fd0",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00419E01",
+          "target": "0x00407E60"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00419DF3",
+          "mnemonic": "push",
+          "operands": "1"
+        },
+        {
+          "site": "0x00419DF5",
+          "mnemonic": "push",
+          "operands": "1"
+        },
+        {
+          "site": "0x00419DF7",
+          "mnemonic": "push",
+          "operands": "0xffffff38"
+        },
+        {
+          "site": "0x00419DFC",
+          "mnemonic": "push",
+          "operands": "0xffffe890"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x004250C0",
+      "size": 107,
+      "role": "BattleEndScene::PollInputAt004250C0",
+      "subsystem": "BattleEndScene",
+      "body_sha256": "d40584cce3faeb759ca8e38a514ddee3e532d2471b1a4420a47a6d9ef0bdcc60",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x004250C7",
+          "target": "0x00403E50"
+        },
+        {
+          "site": "0x004250CC",
+          "target": "0x00403F40"
+        },
+        {
+          "site": "0x004250D6",
+          "target": "0x00406E80"
+        },
+        {
+          "site": "0x004250E1",
+          "target": "0x00452F10"
+        },
+        {
+          "site": "0x004250ED",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00425100",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00425116",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00425122",
+          "target": "0x004018A0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004250D1",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x671638"
+        },
+        {
+          "site": "0x004250DB",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671418]"
+        },
+        {
+          "site": "0x004250E6",
+          "mnemonic": "push",
+          "operands": "0x1c"
+        },
+        {
+          "site": "0x004250F9",
+          "mnemonic": "push",
+          "operands": "0x38"
+        },
+        {
+          "site": "0x0042510C",
+          "mnemonic": "push",
+          "operands": "0xb8"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x004521A0",
+      "size": 132,
+      "role": "FighterState::AdvanceGuardedStateAt004521A0",
+      "subsystem": "FighterState",
+      "body_sha256": "77029c93cb77c428753c449a963e79a40cfe1c03ab5458016cb2df81f841e037",
+      "return_count": 1,
+      "internal_branch_count": 6,
+      "direct_calls": [
+        {
+          "site": "0x00452210",
+          "target": "0x00452360"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x004521DD",
+          "operand": "dword ptr [edx + 0x20]"
+        },
+        {
+          "site": "0x0045221D",
+          "operand": "dword ptr [eax + 0x28]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x004521AA",
+          "mnemonic": "movsx",
+          "operands": "ecx, word ptr [eax + 0x82]"
+        },
+        {
+          "site": "0x004521B8",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0x2e8]"
+        },
+        {
+          "site": "0x004521BE",
+          "mnemonic": "movsx",
+          "operands": "ecx, word ptr [eax + 0x3b8]"
+        },
+        {
+          "site": "0x004521D0",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x32"
+        },
+        {
+          "site": "0x004521F3",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x96"
+        },
+        {
+          "site": "0x00452200",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [0x65782c]"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00453AC0",
+      "size": 136,
+      "role": "FighterState::SpawnTrackedEffectAt00453AC0",
+      "subsystem": "FighterState",
+      "body_sha256": "ab5e849ad110ae18a864e3704c72e26d6d19c32ba857e3b9311d60cb7ecb5938",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x00453B07",
+          "target": "0x0045BB10"
+        },
+        {
+          "site": "0x00453B3D",
+          "target": "0x0045BB10"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453AC7",
+          "mnemonic": "movzx",
+          "operands": "eax, byte ptr [ebp + 0x1c]"
+        },
+        {
+          "site": "0x00453AD4",
+          "mnemonic": "add",
+          "operands": "ecx, 0x2f0"
+        },
+        {
+          "site": "0x00453ADE",
+          "mnemonic": "add",
+          "operands": "edx, 0x314"
+        },
+        {
+          "site": "0x00453B01",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [edx + 0x2ec]"
+        },
+        {
+          "site": "0x00453B45",
+          "mnemonic": "ret",
+          "operands": "0x18"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00453B50",
+      "size": 140,
+      "role": "FighterState::SpawnTrackedEffectAt00453B50",
+      "subsystem": "FighterState",
+      "body_sha256": "891fc2789b991934c53377a8bd20e12face3b51bf4733bf1771f2f858913a3a4",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x00453B98",
+          "target": "0x0045BB10"
+        },
+        {
+          "site": "0x00453BD1",
+          "target": "0x0045BB10"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453B57",
+          "mnemonic": "movzx",
+          "operands": "eax, byte ptr [ebp + 0x1c]"
+        },
+        {
+          "site": "0x00453B66",
+          "mnemonic": "add",
+          "operands": "edx, 0x2f0"
+        },
+        {
+          "site": "0x00453B70",
+          "mnemonic": "add",
+          "operands": "eax, 0x314"
+        },
+        {
+          "site": "0x00453B92",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x2ec]"
+        },
+        {
+          "site": "0x00453BD9",
+          "mnemonic": "ret",
+          "operands": "0x1c"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00453BE0",
+      "size": 145,
+      "role": "FighterState::SpawnTrackedEffectAt00453BE0",
+      "subsystem": "FighterState",
+      "body_sha256": "ef648df571df679bf8265c134ddf2622b65b1c4a8ba7aad09ca8d6bb4821230e",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x00453C2B",
+          "target": "0x0045BB10"
+        },
+        {
+          "site": "0x00453C66",
+          "target": "0x0045BB10"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453BE7",
+          "mnemonic": "movzx",
+          "operands": "eax, byte ptr [ebp + 0x24]"
+        },
+        {
+          "site": "0x00453BF4",
+          "mnemonic": "add",
+          "operands": "ecx, 0x2f0"
+        },
+        {
+          "site": "0x00453BFE",
+          "mnemonic": "add",
+          "operands": "edx, 0x314"
+        },
+        {
+          "site": "0x00453C25",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ecx + 0x2ec]"
+        },
+        {
+          "site": "0x00453C6E",
+          "mnemonic": "ret",
+          "operands": "0x20"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00453D60",
+      "size": 29,
+      "role": "FighterState::PlaySharedSoundAt00453D60",
+      "subsystem": "FighterState",
+      "body_sha256": "722f58afa5c3401cd4802e307a1756c203ddd36a563ec73d8cde8dc5f82f7fed",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00453D72",
+          "target": "0x004079C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453D67",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00453D6C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671618]"
+        },
+        {
+          "site": "0x00453D7A",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00453E60",
+      "size": 25,
+      "role": "FighterState::SetCameraShakeAt00453E60",
+      "subsystem": "FighterState",
+      "body_sha256": "249e1849ad8210ecdaf2bb70ee6efece6aee1f3a227020348617a968c5673ea9",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x00453E6B",
+          "target": "0x00412CB0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453E67",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00453E76",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x004549C0",
+      "size": 165,
+      "role": "FighterState::DrawFacingSpriteAt004549C0",
+      "subsystem": "FighterState",
+      "body_sha256": "572f375b0fcdd65d0153fd39283c5d2c570158b9dcc9ab1736667cb1263ed5f5",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x00454A11",
+          "target": "0x0040CA80"
+        },
+        {
+          "site": "0x00454A5A",
+          "target": "0x0040CA80"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004549CA",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x2cc]"
+        },
+        {
+          "site": "0x004549EA",
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x65782c]"
+        },
+        {
+          "site": "0x004549F3",
+          "mnemonic": "fsub",
+          "operands": "dword ptr [0x6583a0]"
+        },
+        {
+          "site": "0x00454A0B",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [edx + 0x534]"
+        },
+        {
+          "site": "0x00454A2D",
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x657884]"
+        },
+        {
+          "site": "0x00454A54",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x534]"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x0045B860",
+      "size": 29,
+      "role": "BattleEffect::PlaySharedSoundAt0045B860",
+      "subsystem": "BattleEffect",
+      "body_sha256": "7f4d9a62a5a4dd4fc4a2e259ad43d2e4e32046505fc925c38d26ad1da5fcd02d",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x0045B872",
+          "target": "0x004079C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045B867",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0045B86C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671618]"
+        },
+        {
+          "site": "0x0045B87A",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x0045D5D0",
+      "size": 113,
+      "role": "FighterState::RenderNoticeAt0045D5D0",
+      "subsystem": "FighterState",
+      "body_sha256": "2060c9380d73c4760fd35727e78904580ae461559d482c794c9b0553fc9e573e",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x0045D609",
+          "target": "0x00413460"
+        },
+        {
+          "site": "0x0045D636",
+          "target": "0x00413460"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045D5D7",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [0x67161e]"
+        },
+        {
+          "site": "0x0045D5DE",
+          "mnemonic": "cmp",
+          "operands": "eax, 8"
+        },
+        {
+          "site": "0x0045D5F1",
+          "mnemonic": "push",
+          "operands": "0x18"
+        },
+        {
+          "site": "0x0045D603",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x67143c]"
+        },
+        {
+          "site": "0x0045D61E",
+          "mnemonic": "push",
+          "operands": "0x10"
+        },
+        {
+          "site": "0x0045D63E",
+          "mnemonic": "ret",
+          "operands": "0x14"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x005FAC40",
+      "size": 29,
+      "role": "AuxEffect::PlaySharedSoundAt005FAC40",
+      "subsystem": "AuxEffect",
+      "body_sha256": "647284f43923e5530fcaa34a938784f7f624b44dd22c961a53365dbf64cd9bb9",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x005FAC52",
+          "target": "0x004079C0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x005FAC47",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x005FAC4C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671618]"
+        },
+        {
+          "site": "0x005FAC5A",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x00426600",
+      "size": 106,
+      "role": "SceneInput::PollTwoMappingsAt00426600",
+      "subsystem": "SceneInput",
+      "body_sha256": "17444f033e6174d85536c82954a7c41e81c301bb18e09bd8e601e559a274557e",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x00426607",
+          "target": "0x00403E50"
+        },
+        {
+          "site": "0x0042660C",
+          "target": "0x00403F40"
+        },
+        {
+          "site": "0x00426616",
+          "target": "0x00406E80"
+        },
+        {
+          "site": "0x00426620",
+          "target": "0x00406E80"
+        },
+        {
+          "site": "0x0042662C",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x0042663F",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00426655",
+          "target": "0x00407170"
+        },
+        {
+          "site": "0x00426661",
+          "target": "0x004018A0"
+        }
+      ],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00426611",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x671638"
+        },
+        {
+          "site": "0x0042661B",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x671680"
+        },
+        {
+          "site": "0x00426625",
+          "mnemonic": "push",
+          "operands": "0x1c"
+        },
+        {
+          "site": "0x00426638",
+          "mnemonic": "push",
+          "operands": "0x38"
+        },
+        {
+          "site": "0x0042664B",
+          "mnemonic": "push",
+          "operands": "0xb8"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x0042AFF0",
+      "size": 280,
+      "role": "SceneText::DrawNameGlyphsAt0042AFF0",
+      "subsystem": "SceneText",
+      "body_sha256": "582cae75647df937c4e306dda7493cf48bd5303d510141016b824d97e313e313",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x0042B027",
+          "target": "0x0040DA00"
+        },
+        {
+          "site": "0x0042B0E4",
+          "target": "0x0040C9A0"
+        },
+        {
+          "site": "0x0042B0F8",
+          "target": "0x00411500"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0042B0C1",
+          "operand": "dword ptr [0x657210]",
+          "iat_slot": "0x00657210",
+          "dll": "USER32.dll",
+          "symbol": "SetRect"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0042B047",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x9c], 8"
+        },
+        {
+          "site": "0x0042B061",
+          "mnemonic": "mov",
+          "operands": "ecx, 0x1a"
+        },
+        {
+          "site": "0x0042B068",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x14"
+        },
+        {
+          "site": "0x0042B083",
+          "mnemonic": "imul",
+          "operands": "edx, edx, 0x13"
+        },
+        {
+          "site": "0x0042B0E1",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 8]"
+        },
+        {
+          "site": "0x0042B0ED",
+          "mnemonic": "push",
+          "operands": "0x41600000"
+        }
+      ],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x0042C150",
+      "size": 280,
+      "role": "SceneText::DrawNameGlyphsAt0042C150",
+      "subsystem": "SceneText",
+      "body_sha256": "e131b61d5b6b6d93de2e86e0c41281b447e9a3af1265a48634f654de22643a25",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x0042C187",
+          "target": "0x0040DA00"
+        },
+        {
+          "site": "0x0042C244",
+          "target": "0x0040C9A0"
+        },
+        {
+          "site": "0x0042C258",
+          "target": "0x00411500"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0042C221",
+          "operand": "dword ptr [0x657210]",
+          "iat_slot": "0x00657210",
+          "dll": "USER32.dll",
+          "symbol": "SetRect"
+        }
+      ],
+      "instruction_witnesses": [],
+      "evidence_id": "R102"
+    },
+    {
+      "address": "0x0042D860",
+      "size": 280,
+      "role": "SceneText::DrawNameGlyphsAt0042D860",
+      "subsystem": "SceneText",
+      "body_sha256": "c45e561572f8457a32bb6be2318032a9544e4b9c0f23b12e7beedba522d3272b",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x0042D897",
+          "target": "0x0040DA00"
+        },
+        {
+          "site": "0x0042D954",
+          "target": "0x0040C9A0"
+        },
+        {
+          "site": "0x0042D968",
+          "target": "0x00411500"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0042D931",
+          "operand": "dword ptr [0x657210]",
+          "iat_slot": "0x00657210",
+          "dll": "USER32.dll",
+          "symbol": "SetRect"
+        }
+      ],
+      "instruction_witnesses": [],
+      "evidence_id": "R102"
+    }
+  ],
+  "anchors": [
+    {
+      "address": "0x004018A0",
+      "size": 340,
+      "role": "Graphics::ToggleWindowMode",
+      "origin_evidence": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed",
+      "body_sha256": "f918a10369f18cbbfed4f7ca2425a2f05edaea7a568177dab8eef131447fce5f"
+    },
+    {
+      "address": "0x004028A0",
+      "size": 13,
+      "role": "Graphics::SetPresentCallback",
+      "origin_evidence": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs",
+      "body_sha256": "52b1e40ba3334d5758960645ca540109d0033d9100f9999d1312571535e92671"
+    },
+    {
+      "address": "0x00403E50",
+      "size": 90,
+      "role": "Input::PollKeyboard",
+      "origin_evidence": "R002; docs/ORIGIN_REVIEW.md",
+      "body_sha256": "04b570241257bb89b114ac479fe6d2565407308b8a4344874de29e4889b68083"
+    },
+    {
+      "address": "0x00403F40",
+      "size": 200,
+      "role": "Input::PollJoysticks",
+      "origin_evidence": "R002; docs/ORIGIN_REVIEW.md",
+      "body_sha256": "231e1dead3ec498470a3982f6183b21c44898f156594b6550ec7c70f76be0425"
+    },
+    {
+      "address": "0x00406E80",
+      "size": 741,
+      "role": "InputMapping::UpdateHeldCounts",
+      "origin_evidence": "R015",
+      "body_sha256": "2bfc67c037111ef10edc80a215fb922964ad7cffe8769728c05edfbc93319c31"
+    },
+    {
+      "address": "0x00407170",
+      "size": 38,
+      "role": "InputMapping::IsKeyDown",
+      "origin_evidence": "R015",
+      "body_sha256": "802b49dd53ce14639d775b71dd23f1981e7f27ac932718e3d96b22a9efd086f3"
+    },
+    {
+      "address": "0x004079C0",
+      "size": 142,
+      "role": "SoundBank::Play",
+      "origin_evidence": "R016",
+      "body_sha256": "33b7623f1b4f854846ed5011bc60dc3813756253a4a29b83142124759fd99f82"
+    },
+    {
+      "address": "0x00407E60",
+      "size": 138,
+      "role": "AudioStream::ScheduleFade",
+      "origin_evidence": "R016",
+      "body_sha256": "a2178430a6afc50dc6fd07da7bb1ad8b9123d41e9a631a67d18e06530bfd0e9e"
+    },
+    {
+      "address": "0x0040C9A0",
+      "size": 115,
+      "role": "SpriteDrawing::DrawQuad",
+      "origin_evidence": "R011",
+      "body_sha256": "205b6e87df6c466f6fe10c298e7bdba40522c49ef8c182f5aac6774d60acf000"
+    },
+    {
+      "address": "0x0040CA80",
+      "size": 1132,
+      "role": "SpriteDrawing::DrawSprite",
+      "origin_evidence": "R011",
+      "body_sha256": "0a5671f60f172f01c0ad56e9ead86b8f44baa46531e9421c540a142675df2f22"
+    },
+    {
+      "address": "0x0040DA00",
+      "size": 259,
+      "role": "SpriteGeometry::InitializeRectangle",
+      "origin_evidence": "R011",
+      "body_sha256": "c220120d45e82e1ff4f463590938163d3a327c375446bca8eb6ca9e7e24d8417"
+    },
+    {
+      "address": "0x00411500",
+      "size": 191,
+      "role": "SpriteTransform::TranslateQuad",
+      "origin_evidence": "R035",
+      "body_sha256": "f187ba453941c792956f2da14a11c749d1aaaf993d9a0322ba59a422584026c6"
+    },
+    {
+      "address": "0x00412CB0",
+      "size": 13,
+      "role": "CameraMotion::SetShakeAmplitude",
+      "origin_evidence": "R035",
+      "body_sha256": "bd82bbfee630394f9fcc46ed81f2c2afb8791eed310e876c76d61feddac926e3"
+    },
+    {
+      "address": "0x00413460",
+      "size": 398,
+      "role": "FontSurface::RenderTextToTexture",
+      "origin_evidence": "R052",
+      "body_sha256": "f879de336a20a85f1062eef0a7e18a6a0a69b3fa3ad72461ace01a194ea2599c"
+    },
+    {
+      "address": "0x00424F60",
+      "size": 152,
+      "role": "BattleEndScene::Update",
+      "origin_evidence": "R053",
+      "body_sha256": "794308aea60d349bbd4373329f151a92ecf3da1e30e62a89b744e2f96b5cc8f5"
+    },
+    {
+      "address": "0x004259D0",
+      "size": 675,
+      "role": "MusicRoomScene::UpdateSelection",
+      "origin_evidence": "R040",
+      "body_sha256": "da7be73a54b77cebacf43215e0f5502722393f166bcf2c79ee92326805761c6a"
+    },
+    {
+      "address": "0x004275D0",
+      "size": 219,
+      "role": "OpeningScene::Initialize",
+      "origin_evidence": "R036",
+      "body_sha256": "50952c4df29abac45f1bafe3acc661aae27bc4dfeab3c518e89bf7dbdada71b1"
+    },
+    {
+      "address": "0x00428C80",
+      "size": 106,
+      "role": "OpeningScene::ProcessInput",
+      "origin_evidence": "R036",
+      "body_sha256": "d78daec2b5a419e0cc4ff46fda94c0e67693012628a73fe78f65a73f23b2ced7"
+    },
+    {
+      "address": "0x0042A560",
+      "size": 1581,
+      "role": "NameEntryScene::RenderPlayer",
+      "origin_evidence": "R040",
+      "body_sha256": "b015167b5d47742206dc96dc08d6560d5b880b8d119af56d4caea2819428d094"
+    },
+    {
+      "address": "0x0042B570",
+      "size": 1875,
+      "role": "NameEntryScene::RenderShared",
+      "origin_evidence": "R040",
+      "body_sha256": "e78ba83457afde6a19e4be19918835dc931afe88872638b67459a0656b5f304b"
+    },
+    {
+      "address": "0x0042CA60",
+      "size": 2246,
+      "role": "ReplayBrowserScene::RenderList",
+      "origin_evidence": "R040",
+      "body_sha256": "59e3738cda6189f055503e3ebd64d4f471a7e5635cbbafe95248815af1ce970a"
+    },
+    {
+      "address": "0x00431770",
+      "size": 280,
+      "role": "ResultScene::DrawNameGlyphs",
+      "origin_evidence": "R043",
+      "body_sha256": "f15d10c289d027c00a5516530b66741d2e4c7d09862f9ed5974de5dcc5849f81"
+    },
+    {
+      "address": "0x0043B1B0",
+      "size": 859,
+      "role": "BattleScene::UpdateFrame",
+      "origin_evidence": "R041",
+      "body_sha256": "41d5e8ff3d7596064fc22aaef4f066696ff5fa4c5b3d225d88818d146bb9e2bf"
+    },
+    {
+      "address": "0x0043B610",
+      "size": 4764,
+      "role": "BattleScene::AdvanceState",
+      "origin_evidence": "R044",
+      "body_sha256": "2cf9ab10a5ad0cd96e4ac268a4a2425a4af856ef1c7f6ebbb64ba351ad33a086"
+    },
+    {
+      "address": "0x00452360",
+      "size": 304,
+      "role": "FighterState::ChooseAction",
+      "origin_evidence": "R045",
+      "body_sha256": "c8168e220ac4cb577a9091e9b016052c0fdcdfa7470544092078afae3b080a00"
+    },
+    {
+      "address": "0x00452490",
+      "size": 1696,
+      "role": "FighterState::AdvanceCombatTimers",
+      "origin_evidence": "R045",
+      "body_sha256": "db58a112c44c359c84ebc712f57e73aade290d5beb0ccdca34a572bb131c6ead"
+    },
+    {
+      "address": "0x00452F10",
+      "size": 2815,
+      "role": "FighterState::UpdateControls",
+      "origin_evidence": "R045",
+      "body_sha256": "d984532ee5b19e6ff7030360b54edc80e8748e657cb12a1175b81e1b219ab56f"
+    },
+    {
+      "address": "0x0045BB10",
+      "size": 282,
+      "role": "BattleEffect::Spawn",
+      "origin_evidence": "R045",
+      "body_sha256": "a86ff7e64701eb3d157722b812eedf604bd75326f9cbc6c907a4ac4db6ccaad9"
+    },
+    {
+      "address": "0x0045CE10",
+      "size": 1926,
+      "role": "FighterState::ProcessActionAt0045CE10",
+      "origin_evidence": "R065",
+      "body_sha256": "467e3f11c8654967f96ffc628ef2001207aa11c13db8226cc08226946f8865e6"
+    },
+    {
+      "address": "0x0045DD70",
+      "size": 60999,
+      "role": "ReimuFighter::AdvanceActionStatesAt0045DD70",
+      "origin_evidence": "R063",
+      "body_sha256": "b78fa89a709b1cbbafdf4310c6fd81dd68369a9fa528a1852a64bb105ee93bc2"
+    },
+    {
+      "address": "0x00470A40",
+      "size": 1027,
+      "role": "CharacterAux::RunAt00470A40",
+      "origin_evidence": "R049",
+      "body_sha256": "3778ba85e4a5bf91f1cb8dc0a9bfb67df547dc839dc14d0426d659589608dec3"
+    },
+    {
+      "address": "0x00476A40",
+      "size": 50915,
+      "role": "CharacterObject::AdvanceAt00476A40",
+      "origin_evidence": "R048",
+      "body_sha256": "bb515f9c7886429d01d68966ef5678f8826ee74081ac60ad486bb421e2f7574f"
+    },
+    {
+      "address": "0x005AEEC0",
+      "size": 71616,
+      "role": "CharacterMove::AdvanceAt005AEEC0",
+      "origin_evidence": "R048",
+      "body_sha256": "48496159a314c5a23d911faf72019b4f62304568621f8299ccf9f72338247bad"
+    }
+  ],
+  "parent_calls": [
+    {
+      "parent": "0x0043B610",
+      "child": "0x00417140",
+      "sites": [
+        "0x0043BDD0"
+      ]
+    },
+    {
+      "parent": "0x004275D0",
+      "child": "0x00419DF0",
+      "sites": [
+        "0x00427670"
+      ]
+    },
+    {
+      "parent": "0x00424F60",
+      "child": "0x004250C0",
+      "sites": [
+        "0x00424F6A"
+      ]
+    },
+    {
+      "parent": "0x0043B1B0",
+      "child": "0x004521A0",
+      "sites": [
+        "0x0043B24B",
+        "0x0043B256"
+      ]
+    },
+    {
+      "parent": "0x00470A40",
+      "child": "0x00453AC0",
+      "sites": [
+        "0x00470B78",
+        "0x00470C78",
+        "0x00470D66"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00453B50",
+      "sites": [
+        "0x00469679",
+        "0x004699A8",
+        "0x0046A473",
+        "0x0046A82E",
+        "0x0046B7CE"
+      ]
+    },
+    {
+      "parent": "0x005AEEC0",
+      "child": "0x00453BE0",
+      "sites": [
+        "0x005BF187",
+        "0x005BF9E0",
+        "0x005C027F",
+        "0x005C02A9"
+      ]
+    },
+    {
+      "parent": "0x00452490",
+      "child": "0x00453D60",
+      "sites": [
+        "0x004528C4"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00453E60",
+      "sites": [
+        "0x0045F386",
+        "0x0045F511",
+        "0x0045F647",
+        "0x0045F73D",
+        "0x0045F993",
+        "0x0045FA38",
+        "0x0045FB57",
+        "0x0045FC4F",
+        "0x0045FE5E",
+        "0x00460C43",
+        "0x00463099"
+      ]
+    },
+    {
+      "parent": "0x00476A40",
+      "child": "0x0045B860",
+      "sites": [
+        "0x00482824",
+        "0x00482AF3"
+      ]
+    },
+    {
+      "parent": "0x0045CE10",
+      "child": "0x0045D5D0",
+      "sites": [
+        "0x0045CF76",
+        "0x0045D027",
+        "0x0045D112",
+        "0x0045D1CF",
+        "0x0045D26B"
+      ]
+    },
+    {
+      "parent": "0x004259D0",
+      "child": "0x00426600",
+      "sites": [
+        "0x004259DA"
+      ]
+    },
+    {
+      "parent": "0x0042A560",
+      "child": "0x0042AFF0",
+      "sites": [
+        "0x0042A8C6"
+      ]
+    },
+    {
+      "parent": "0x0042B570",
+      "child": "0x0042C150",
+      "sites": [
+        "0x0042B89F"
+      ]
+    },
+    {
+      "parent": "0x0042CA60",
+      "child": "0x0042D860",
+      "sites": [
+        "0x0042CD58"
+      ]
+    }
+  ],
+  "strings": [],
+  "virtual_slots": [],
+  "whole_body_peers": [
+    {
+      "address": "0x00426600",
+      "reviewed_address": "0x00428C80"
+    },
+    {
+      "address": "0x0042AFF0",
+      "reviewed_address": "0x00431770"
+    },
+    {
+      "address": "0x0042C150",
+      "reviewed_address": "0x00431770"
+    },
+    {
+      "address": "0x0042D860",
+      "reviewed_address": "0x00431770"
+    }
+  ]
+}

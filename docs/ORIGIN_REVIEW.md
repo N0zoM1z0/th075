@@ -3748,3 +3748,63 @@ There are 781 explicitly recorded authored bodies / 1,940,172 bytes. Exact
 remains 42 functions / 8,916 bytes against 1,952,515 provisional authored
 bytes (0.46%); no source or exact credit. R100 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37110975044.
+
+## R102 — batch scan and shared game-policy cohort verification
+
+The read-only `scan-origin-candidates.py` examines every ledger extent and
+groups the remaining candidates by full body and reviewed call context.
+Its initial report covered all 1,408 pending candidates: fifty whole-body
+groups, nineteen candidates calling only known game behavior, 214 with
+reviewed game callers, 69 with reviewed vendor/compiler callers, 28 with
+whole reviewed peers, 182 extent questions and 896 unresolved-context
+candidates. These diagnostic lanes do not establish ownership or exactness.
+The scan changes no accepted state and normalizes only direct-call fields,
+retaining actual destinations, every data/vtable field and RET cleanup.
+
+Manual review of the shortlisted complete bodies accepted one seventeen-
+function authored cohort / 2,051 bytes:
+
+| Address | Bytes | Observed game policy |
+| --- | ---: | --- |
+| `0x00417140` | 28 | Disable the present callback and enable the object's direct-draw byte flag |
+| `0x00419DF0` | 27 | Schedule a game audio fade with four explicit fixed arguments |
+| `0x004250C0` | 107 | Poll input and fighter controls, then handle Enter with either Alt key for window mode |
+| `0x004521A0` | 132 | Gate fighter action/virtual updates on two word flags, state ranges 50/150 and the observed float field |
+| `0x00453AC0` | 136 | Select an optional `+0x2F0` owner pointer for effect spawning from a stack flag |
+| `0x00453B50` | 140 | Forward the same owner selection and an additional effect flag |
+| `0x00453BE0` | 145 | Forward configurable effect flags with the selected owner pointer |
+| `0x00453D60`, `0x0045B860`, `0x005FAC40` | 29 each | Forward a signed word sound index through the shared game sound bank at `0x00671618` |
+| `0x00453E60` | 25 | Forward the camera shake argument to the reviewed custom camera function |
+| `0x004549C0` | 165 | Choose facing-dependent sprite coordinates/flip from the object's `+0x2CC` byte and sprite manager at `+0x534` |
+| `0x0045D5D0` | 113 | Choose text-render width argument 24 or 16 from a game progress byte and forward object/text flags |
+| `0x00426600` | 106 | Poll both input mappings and apply the known Enter/Alt policy, matching the complete reviewed input peer |
+| `0x0042AFF0`, `0x0042C150`, `0x0042D860` | 280 each | Draw eight signed glyph indices from a 26-column, 19-by-20 atlas with 14-unit spacing, matching the whole reviewed name renderer |
+
+The shared `verify-short-game-origins.py --cohort R102` checks every byte,
+exit and branch, 42 direct calls, five indirect calls, 66 selected policy
+instructions and thirty-three independent whole game anchors. Fifteen full
+parent edges supply owner context. Four complete reviewed-peer comparisons
+retain exact call destinations and all non-call bytes; the peer matches are
+corroboration of the explicit game behavior, not a blanket shape-based origin.
+The glyph IAT calls bind `USER32.dll!SetRect` decoded from the raw PE; the two
+fighter virtual dispatches credit no dynamic callee. Names, object layouts,
+original parameter types and several field meanings remain provisional.
+Constructor/destructor-only wrappers shortlisted by the same scan remain
+pending where explicit-versus-implicit emission is unresolved.
+
+Four new public regressions ensure changing a call destination, data/vtable
+pointer or unused-argument cleanup splits a scan group. The existing R100
+cohort passed again after the shared-verifier refactor, including its complete
+cold 495-byte blend-mode unit and table. Attested caller queries were split
+into lists of at most sixteen addresses and each completed independently.
+See [batch operations](ORIGIN_BATCH_SCAN.md) for the local/public MCP commands.
+Both the R102 cohort verifier and full batch scanner passed through the
+no-auth public HTTPS MCP. Local CI passed all 136 public regressions,
+target-required tracking and progress freshness; `git diff --check` passed.
+
+R102 reaches 2,960 reviewed candidates (845 authored, 1,540 library, 575
+compiler), with 1,391 pending. There are 798 explicitly recorded authored
+bodies / 1,942,223 bytes. Exact remains 42 functions / 8,916 bytes against
+1,954,566 provisional authored bytes (0.46%); no source or exact credit.
+R101 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37111565207.

@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R101. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R102. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,12 +9,12 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,943: 828 authored, 1,540 library and 575 compiler generated.
-There are 1,408 pending. Candidate count is not authored function count.
+has resolved 2,960: 845 authored, 1,540 library and 575 compiler generated.
+There are 1,391 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
-reviewed authored bytes is 8,916 / 1,952,515 (0.46%). This denominator is
+reviewed authored bytes is 8,916 / 1,954,566 (0.46%). This denominator is
 provisional because origin review is incomplete. The origin-review batches
 added no exact credit; F001–F007 established the existing exact baseline.
 The requested order was to finish origin review, then rank core authored
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R101; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R102; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -45,7 +45,9 @@ scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/verify-authored-origins.py
+scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
+scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
 scripts/repo-python scripts/verify-effect-fighter-origins.py
 scripts/repo-python scripts/verify-effect-forwarder-origins.py
 scripts/repo-python scripts/verify-fighter-final-virtual-origins.py
@@ -84,8 +86,8 @@ scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The current session passed 132 public tests, target-required tracking,
-complete checks of 781 explicitly recorded authored bodies, and progress
+The current session passed 136 public tests, target-required tracking,
+complete checks of 798 explicitly recorded authored bodies, and progress
 freshness. The new deque algorithm, emptiness, short-helper, cleanup, vector
 storage, vector helper, vector operation, vector callee, scalar copy and
 vector wrapper, standard exception and battle-end destructor cold verifiers
@@ -95,11 +97,21 @@ The twelve short game policies and full blend-mode context also replayed
 successfully through the public MCP.
 The eleven effect forwarders/fixed transforms also passed their complete
 context and ABI verifier through that endpoint.
+The R102 seventeen-function cohort and complete batch origin scanner also
+passed through the no-auth public HTTPS MCP.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through R100 passed.
+endpoint. Public GitHub CI through R101 passed.
 
 ## Deferred investigations
+
+Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
+`scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
+shortlist for all 1,391 pending candidates. The current report groups 47 whole
+bodies and isolates 182 extent questions. Start with grouped source/context
+witnesses rather than one-address setup. R102 accepted seventeen explicit
+game policies through the shared cohort verifier, with 33 independent whole
+anchors and 15 complete parent edges; scan hits alone remain diagnostic.
 
 Twelve repeated 520/517/511-byte bodies are now verified as complete VC7
 `std::deque::_Growmap` templates, including all 13 typed relocations per
@@ -268,7 +280,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,408 pending origin decisions before doing further exact
+Complete the 1,391 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; remaining
