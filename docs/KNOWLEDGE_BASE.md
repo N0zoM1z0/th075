@@ -1135,11 +1135,21 @@ types and the final allocation routine's origin are unresolved.
 
 ## Fighter script owner after R076
 
-The script initializer sets 1,000 16-bit slots to `0xFFFF` and constructs
-an adjacent member at owner offset `0x7D0`. Three field accessors use a
+The script initializer sets 1,000 16-bit slots to `0xFFFF` after calling
+a VC7 deque constructor and destructor at owner offset `0x7D0`. The purpose
+of that sequence is unresolved. Three field accessors use a
 16-bit slot mapping and the same lookup pair, then return 1-, 2- and
 4-byte fields at offsets 0, 2 and 4. Reviewed fighter routines call the
 initializer and all three accessors. This supports one game-authored script
 owner but does not establish its full layout or original method names.
 The adjacent cleanup body remains unclassified pending an implicit
 destructor analysis. R076 adds no source or exact credit.
+
+## VC7 deque destructor bindings after R077
+
+Twenty-four complete 19-byte VC7 deque destructor bodies call `_Tidy`
+functions independently verified in R072. The cold source probe, complete
+target bodies, typed call destinations and callee hashes are reproducible.
+Other same-shape destructor-like bodies call unrelated or unknown functions
+and remain pending. R077 adds library origin only, with no reconstruction
+source or exact credit.

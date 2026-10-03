@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R076. The public
+Updated 2026-10-03. Work resumed with origin-review batches R070–R077. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -9,8 +9,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 2,473: 804 authored, 1,095 library and 574 compiler generated.
-There are 1,878 pending. Candidate count is not authored function count.
+has resolved 2,497: 804 authored, 1,119 library and 574 compiler generated.
+There are 1,854 pending. Candidate count is not authored function count.
 
 The unchanged exact baseline is 42 source-present and exact functions,
 covering 8,916 bytes across 42 match units. Exact coverage of the currently
@@ -25,7 +25,7 @@ The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R076; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R077; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
@@ -55,16 +55,17 @@ scripts/repo-python scripts/verify-vendor-deque-helper-origins.py
 scripts/repo-python scripts/verify-vendor-deque-callee-origins.py
 scripts/repo-python scripts/verify-vendor-deque-allocation-origins.py
 scripts/repo-python scripts/verify-fighter-script-accessor-origins.py
+scripts/repo-python scripts/verify-vendor-deque-destructor-origins.py
 scripts/repo-python scripts/update-progress.py --check
 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The R076 local run passed 98 public tests, target-required tracking,
+The R077 local run passed 98 public tests, target-required tracking,
 complete checks of 757 explicitly recorded authored bodies, and progress
-freshness. The no-auth public Funnel MCP ran all five deque cold verifiers
+freshness. The no-auth public Funnel MCP ran all six deque cold verifiers
 and the fighter script accessor verifier successfully. Public GitHub CI
-through R075 passed.
+through R076 passed.
 
 ## Deferred investigations
 
@@ -89,7 +90,9 @@ Twenty-two `std::_Allocate` helpers now have the same complete code and
 parent-call chain, including their call from the R074 allocator wrappers.
 The fighter script initializer and three byte/word/dword field getters are
 now reviewed as authored through their complete bodies and independently
-reviewed fighter callers. The adjacent destructor remains pending.
+reviewed fighter callers. Twenty-four 19-byte deque destructor templates,
+including the script owner's cleanup helpers, call verified VC7 `_Tidy`
+functions. The adjacent composite cleanup body remains pending.
 
 The CRT survey at `.analysis/crt-origin-survey.json` still contains 353
 pending, relocation-bearing observations. A source fingerprint alone does
@@ -100,7 +103,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Complete the 1,878 pending origin decisions before doing further exact
+Complete the 1,854 pending origin decisions before doing further exact
 reconstruction. Then derive a priority list from
 confirmed authored bytes, core behavior, cross-function dependencies and
 likely matching cost. R070's script loader/parser is verified; remaining

@@ -3001,8 +3001,10 @@ at https://github.com/N0zoM1z0/th075/actions/runs/37094428035.
 
 Four complete game-authored bodies, totaling 292 bytes, sit beside the
 previously reviewed fighter script loaders and parser. The 130-byte
-initializer constructs an adjacent member at offset `0x7D0`, then writes
-`0xFFFF` into all 1,000 16-bit slots before returning the owner pointer.
+initializer calls a VC7 deque constructor and destructor on the owner
+pointer at offset `0x7D0`, then writes `0xFFFF` into all 1,000 16-bit slots
+before returning the owner pointer. The purpose of that helper sequence is
+not yet resolved.
 Three 53–55-byte accessors use a 16-bit slot selection and the same two
 lookup calls, then return a byte at record offset 0, a word at offset 2,
 or a dword at offset 4. Their common object offset and field widths are
@@ -3024,3 +3026,30 @@ library, 574 compiler), 1,878 pending. Exact remains 42 functions /
 8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R075
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37094665913.
+
+## R077 — deque destructors bound to verified `_Tidy`
+
+Twenty-four complete 19-byte bodies, totaling 456 bytes, match independently
+compiled VC7 `std::deque` destructor definitions. Each has one typed call
+relocation naming `_Tidy`, and its target is one of the 13 complete VC7
+deque `_Tidy` bodies independently reviewed in R072. The R072 verifier
+cold-replays those callees before this batch is accepted. This callee
+identity is essential: other 19-byte lookalikes call vector helpers,
+unknown functions, or authored game routines and remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-destructor-origins.py`
+cold compiles the source and checks the complete bodies, source aliases,
+typed call bindings, verified `_Tidy` body hashes, target control flow and
+ledgers. Evidence is in `config/vendor-deque-destructor-origins.csv`.
+The script helper at `0x004216D0`, called in R076's initializer, and the
+helper at `0x00421530`, called in the adjacent cleanup body, are in this
+cohort. This refines the R076 observation: the initializer calls both a
+deque constructor and a deque destructor at offset `0x7D0`; why it does
+so is still unknown. The composite cleanup body at `0x004204D0` remains
+pending.
+
+R077 adds 24 library origins: 2,497 reviewed (804 authored, 1,119
+library, 574 compiler), 1,854 pending. Exact remains 42 functions /
+8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R076
+GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37095046444.
