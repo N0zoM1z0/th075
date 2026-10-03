@@ -3563,3 +3563,49 @@ There are 758 explicitly recorded authored bodies, totaling 1,938,578
 bytes. Exact remains 42 functions / 8,916 bytes against 1,950,921
 provisional authored bytes (0.46%). R096 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37108585900.
+
+## R098 — CRT bodies with complete scalar and import bindings
+
+Five complete functions match the pinned `libcmt.lib` archive members,
+including all 727 bytes and every typed relocation:
+
+| Address | Bytes | Vendor symbol | Independently checked dependencies |
+| --- | ---: | --- | --- |
+| `0x00641AFE` | 57 | `_time` | `GetSystemTimeAsFileTime` IAT slot and whole `__aulldiv` |
+| `0x00644009` | 156 | `__fpclass` | Whole `__sptype` and complete double-zero constant |
+| `0x006451CF` | 64 | `__ms_p5_test_fdiv` | Three complete double constants from its own member |
+| `0x0064762B` | 188 | `__decomp` | Two double-zero references and two calls to whole `__set_exp` |
+| `0x0064AB0F` | 262 | `___sbh_alloc_new_group` | `VirtualAlloc` IAT slot |
+
+`scripts/repo-python scripts/verify-runtime-external-origins.py` freshly
+extracts hash-pinned archive members and requires each function's own
+definition auxiliary extent, without a caller-supplied size fallback. It
+compares every byte, verifies complete decoding and internal control flow,
+and checks the ledger extents for overlapping candidates. Four direct-call
+fields bind separately replayed full CRT bodies; two absolute indirect-call
+fields bind names and DLLs decoded from the raw PE import directory, rather
+than guessed slot labels. Six scalar fields bind whole relocation-free
+8-byte definitions in their own vendor members, including the exact bits
+encoded by each `__real@...` symbol. Every target scalar is checked for its
+full bytes and readonly section permissions. These checks credit no extra
+callee or data origins.
+
+The target imports are `KERNEL32.dll!GetSystemTimeAsFileTime` at
+`0x00657188` and `KERNEL32.dll!VirtualAlloc` at `0x00657158`. The four
+distinct scalar targets are `0x0065F4C8`, `0x006612B8`, `0x006612B0` and
+`0x00657D00`. They are full double constants, not inferred global layouts.
+The single-threaded archive also contains identical full function shapes
+and typed dependencies for these five candidates; the selected multithreaded
+archive is a pinned reproduction source, not proof of the original link
+profile. Six public regression tests reject incorrect imports, unverified
+callees, arbitrary IAT reads, untyped fields, truncated constants and writable
+scalar storage.
+
+The complete verifier passed locally and through the no-auth public Funnel
+MCP. Public CI passed all 122 tests and progress freshness checks.
+
+R098 adds five library origins / 727 bytes, reaching 2,919 reviewed
+candidates (805 authored, 1,539 library, 575 compiler), with 1,432 pending.
+Exact remains 42 functions / 8,916 bytes against 1,950,921 provisional
+authored bytes (0.46%); no source or exact credit. R097 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37109339147.

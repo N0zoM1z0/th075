@@ -1379,3 +1379,16 @@ nonrelocated shape matches standard exception destructors. The role/name
 is inferred; the full class layout and vtable extent remain unknown.
 R097 adds one authored origin and no source or exact credit. The provisional
 authored denominator grows by 28 bytes to 1,950,921.
+
+## CRT scalar and import ownership after R098
+
+Five full CRT archive functions now bind all twelve relocation fields:
+four to independently replayed complete callees, two to imports decoded
+from the raw PE directory, and six to complete scalar definitions in the
+same vendor member. The scalar definitions are whole readonly doubles;
+zero-value storage alone is not used to infer a global or class layout.
+Import fields must decode as absolute indirect calls to the verified IAT
+slots, not merely point somewhere in the import section. Complete body
+comparison and control-flow validation distinguish these vendor functions
+from short lookalikes. R098 adds five library origins and no source or exact
+credit. The pinned archive choice does not establish original linkage flags.

@@ -1,0 +1,188 @@
+[
+  {
+    "address": "0x00641AFE",
+    "size": 57,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "build\\intel\\mt_obj\\time.obj",
+    "member_offset": 2352442,
+    "member_sha256": "b7080b42a4379501deb568b274c29f22f185e07070e057e3870c2664b2718e1a",
+    "coff_symbol": "_time",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "5cab13b19de6bab0783efdb6815c85fac69f686fb6a95fb99e8d36ae80228003",
+    "target_body_sha256": "74133a6e3ebec9761c616cd492dc65aee6fdfeb826c3f138e88ae79168d52c4d",
+    "relocations": [
+      {
+        "offset": 11,
+        "type": "DIR32",
+        "symbol": "__imp__GetSystemTimeAsFileTime@4",
+        "addend": 0,
+        "target_address": "0x00657188",
+        "target_kind": "import",
+        "import_dll": "KERNEL32.dll",
+        "import_name": "GetSystemTimeAsFileTime"
+      },
+      {
+        "offset": 42,
+        "type": "REL32",
+        "symbol": "__aulldiv",
+        "addend": 0,
+        "target_address": "0x00647F30",
+        "target_kind": "callee"
+      }
+    ],
+    "evidence_id": "R098"
+  },
+  {
+    "address": "0x00644009",
+    "size": 156,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "..\\build\\intel\\mt_obj\\ieeemisc.obj",
+    "member_offset": 2915526,
+    "member_sha256": "a816a703eacb31015100df979b70e9315560ab6d38b6410bbbd060fb533576ec",
+    "coff_symbol": "__fpclass",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "f7fcb0d2114c273ccfdbf3584b173e2c90f2d2b0aa2f5c7ad67a5736d82d188b",
+    "target_body_sha256": "756e9669be7446b4f4caef11db26932a56d5071f32a8c8be8a3cd3873ddcfe6e",
+    "relocations": [
+      {
+        "offset": 29,
+        "type": "REL32",
+        "symbol": "__sptype",
+        "addend": 0,
+        "target_address": "0x006475D0",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 110,
+        "type": "DIR32",
+        "symbol": "__real@0000000000000000",
+        "addend": 0,
+        "target_address": "0x0065F4C8",
+        "target_kind": "scalar",
+        "data_size": 8
+      }
+    ],
+    "evidence_id": "R098"
+  },
+  {
+    "address": "0x006451CF",
+    "size": 64,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "..\\build\\intel\\mt_obj\\testfdiv.obj",
+    "member_offset": 2689882,
+    "member_sha256": "3371eee2509cfc61bc1cca925fc40cd7daf5b920d95b3e7c4b6f681437ba3940",
+    "coff_symbol": "__ms_p5_test_fdiv",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "9b822c5f0bba26346ab95ae89b94e5d537d4e856f54a5803942d6445b3c687da",
+    "target_body_sha256": "bc02a6f05e84d9454d0dc16c9c44a92d37e730ecfb4885cf21b59cadcf97b44e",
+    "relocations": [
+      {
+        "offset": 8,
+        "type": "DIR32",
+        "symbol": "__real@4147ffff80000000",
+        "addend": 0,
+        "target_address": "0x006612B8",
+        "target_kind": "scalar",
+        "data_size": 8
+      },
+      {
+        "offset": 17,
+        "type": "DIR32",
+        "symbol": "__real@4150017ec0000000",
+        "addend": 0,
+        "target_address": "0x006612B0",
+        "target_kind": "scalar",
+        "data_size": 8
+      },
+      {
+        "offset": 44,
+        "type": "DIR32",
+        "symbol": "__real@3ff0000000000000",
+        "addend": 0,
+        "target_address": "0x00657D00",
+        "target_kind": "scalar",
+        "data_size": 8
+      }
+    ],
+    "evidence_id": "R098"
+  },
+  {
+    "address": "0x0064762B",
+    "size": 188,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "..\\build\\intel\\mt_obj\\util.obj",
+    "member_offset": 2931994,
+    "member_sha256": "033a66f5cf157a0665729b3134c20cc5ca074d8c329bafc8ef86199dbba14e5c",
+    "coff_symbol": "__decomp",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "dc9e5b866cea12adf0c42a91675c9e451ba81d44ef6dce6b5846778c16e7d90a",
+    "target_body_sha256": "6905e3ea753411b82b3955c0c97c7efbf39af3d0b82b99f6889a16970b970e4c",
+    "relocations": [
+      {
+        "offset": 7,
+        "type": "DIR32",
+        "symbol": "__real@0000000000000000",
+        "addend": 0,
+        "target_address": "0x0065F4C8",
+        "target_kind": "scalar",
+        "data_size": 8
+      },
+      {
+        "offset": 66,
+        "type": "DIR32",
+        "symbol": "__real@0000000000000000",
+        "addend": 0,
+        "target_address": "0x0065F4C8",
+        "target_kind": "scalar",
+        "data_size": 8
+      },
+      {
+        "offset": 131,
+        "type": "REL32",
+        "symbol": "__set_exp",
+        "addend": 0,
+        "target_address": "0x00647542",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 150,
+        "type": "REL32",
+        "symbol": "__set_exp",
+        "addend": 0,
+        "target_address": "0x00647542",
+        "target_kind": "callee"
+      }
+    ],
+    "evidence_id": "R098"
+  },
+  {
+    "address": "0x0064AB0F",
+    "size": 262,
+    "library": "libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member": "build\\intel\\mt_obj\\sbheap.obj",
+    "member_offset": 827680,
+    "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+    "coff_symbol": "___sbh_alloc_new_group",
+    "extent_basis": "function-auxiliary-record",
+    "source_body_sha256": "7d22d8e93367a5a7901d4cd1fc724fef6d657c23b059af985071cc338485cdf2",
+    "target_body_sha256": "f1405919986bc90d861a0102062b93e38386657af1748f558ed2666b846c2a65",
+    "relocations": [
+      {
+        "offset": 84,
+        "type": "DIR32",
+        "symbol": "__imp__VirtualAlloc@16",
+        "addend": 0,
+        "target_address": "0x00657158",
+        "target_kind": "import",
+        "import_dll": "KERNEL32.dll",
+        "import_name": "VirtualAlloc"
+      }
+    ],
+    "evidence_id": "R098"
+  }
+]
