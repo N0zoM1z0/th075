@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R123. The public
+review cohorts R108 through R124. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,177: 919 authored, 1,683 library and 575 compiler generated.
-There are 1,174 pending. Candidate count is not authored function count.
+has resolved 3,204: 919 authored, 1,710 library and 575 compiler generated.
+There are 1,147 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R124 floating-point startup cohort below.
+the bounded R125 initializer/startup cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R123; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R124; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R124 floating-point startup dependencies
+## Next agent objective — R125 initializer and startup dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -328,34 +328,51 @@ R113 replays, all 872 recorded authored extents, target/project attestation,
 units / 9,883 bytes cold-replayed across eleven objects. Investigation and
 intermediate verification used local tools; the final public request ran once.
 
-The next bounded cohort is six existing floating-point startup roots:
+R124 closes 27 complete library candidates / 4,252 bytes / 142 fields, five
+whole non-inventoried controls / 230 bytes / ten fields, and the actual FP
+conversion/control dependency graph. Replay
+`scripts/repo-python scripts/verify-floating-point-origins.py`. The parser's
+provisional 1,028-byte code prefix becomes its whole 1,076-byte source extent:
+all twelve embedded table entries, unsigned guard and actual indexed jump close.
+Six-slot initial trap and registration pointers, whole 20-byte FPinit carrier,
+700-byte mutable powers, 48-byte formats, division flags and every locale/data
+pointer are independently verified. Complete natural FP and locale/API layouts
+cold-build 196 bytes; twenty-four prior anchors and the full R123 chain replay.
+The MP API provenance and R098 fallback remain explicit. No exact scope is added.
 
-| Candidate | Provisional bytes | Observed source association | Required next evidence |
+Cinit / 106 remains unknown. Its three unresolved XI callbacks are SSE2 init,
+stdio init and C++ unhandled-exception filter registration. Complete FP children
+and empty RTC termination range do not grant parent credit. The two latter
+initializers have no primary inventory entry and must close without invented
+candidates. R121 preserves its old pending cinit source through a narrow guard.
+
+The final no-auth public HTTPS MCP replay passed R124, retained R123 and every
+earlier runtime/import/layout graph, retained R114 including R077/R113 controls,
+all 872 recorded authored extents, target/project attestation, 347 public tests
+and progress freshness. All 60 exact units / 9,883 bytes cold-replayed across
+eleven objects. A narrow public follow-up confirms corrected documentation EOF
+whitespace, `git diff --check` and final progress/status. The complete cold
+acceptance replay ran once; investigation and intermediate checks were local.
+
+The next bounded cohort is six existing initializer/startup candidates:
+
+| Candidate | Provisional bytes | Observed association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0064411D` | 106 | `__cinit` | Actual FPinit callback, all initializer ranges, RTC and full startup binding graph |
-| `0x006405C2` | 30 | `__fpmath` | Complete conversion registration, division-test and precision dependencies |
-| `0x0064057A` | 56 | `__cfltcvt_init` | Whole six-slot carrier and actual complete converter callbacks |
-| `0x0064520F` | 41 | `__ms_p5_mp_test_fdiv` | Whole kernel/export literals, API provenance and independently reviewed division-test fallback |
-| `0x006451BD` | 18 | `__setdefaultprecision` | Actual controlfp call and complete x87 control mapping |
-| `0x0064FBE8` | 22 | `__controlfp` | Complete control87 child and its actual control/status bit mappings |
+| `0x0064411D` | 106 | `__cinit` | Complete actual XI callbacks, retained XC origins, FP/RTC registration graph |
+| `0x00648052` | 206 | `___sse2_available_init` | Whole flags, actual OSFXSR probe, CPUID policy, AMD literal and strncmp anchor |
+| `0x0064801D` | 53 | `_has_osfxsr_set` | Complete SEH scope, local handler and actual instruction/exception paths |
+| `0x0064654C` | 78 | C++ unhandled exception filter | Full registration callback, terminate/validation children, prior-filter state and SDK exception records |
+| `0x00649693` | 68 | `__RTC_Initialize` | Whole code/scope and actual RTC initializer range |
+| `0x00649449` | 510 | `__ioinit` | Entire IO table/handle geometry, imports, natural FILE/IOINFO layouts and stdio callback dependencies |
 
-Use R121 FP contexts and `.analysis/r123-next-fp-survey.json` diagnostically.
-No ownership follows from those source fingerprints. Source converter at
-`0x0064516C` / 81 is an existing pending candidate; several registration callees
-have no primary inventory candidate and must be checked completely without
-inventing entries. The six-slot carrier at `0x00670120` and complete FPinit
-carrier / 20 bytes remain unaccepted until actual callbacks/state close.
-The R098 division-test at `0x006451CF` / 64 retains its independent evidence;
-no additional credit follows from its presence. Query the full controlfp child
-before accepting precision wrappers or parent startup.
-
-Retain cinit/FP conversion and precision uncertainty for a later bounded
-cohort. Non-inventoried `__RTC_Terminate` at `0x006496D7` / 68 remains diagnostic;
-its complete own code/scope/empty range comparison alone does not classify
-cinit or FP callbacks. Preserve complete FPinit data / 20 bytes and conversion
-slots. PE startup stays diagnostic until environment, multibyte, IO and all
-other real children close. `__c_exit` at `0x0064427B` also remains outside
-credit pending its own reconciliation.
+Use `.analysis/r124-next-initializer-survey.json` diagnostically. Complete
+masked-source associations there prove no origin. Non-inventoried initstdio
+`0x0064F08F` / 169 and C++ filter registration `0x0064659A` / 19 must be checked
+as complete controls. The former binds whole iob and pioinfo definitions;
+the latter binds SetUnhandledExceptionFilter and the real 78-byte callback.
+PE startup stays pending until environment, argv, IO, exception filtering and
+all other real children close. `__c_exit` at `0x0064427B` remains outside credit
+pending its own reconciliation. Preserve independent retained origins.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -371,7 +388,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R124 adds no exact scope. Update
+private path and 60-function exact baseline. R125 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -728,7 +745,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R124 floating-point startup cohort described above. F008 and F009 remain
+Continue the bounded R125 initializer/startup cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

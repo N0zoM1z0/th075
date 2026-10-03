@@ -2495,3 +2495,121 @@ mapping stays 60 functions / 9,883 bytes; recorded authored extents stay 872 /
 1,952,956 bytes. Investigation and intermediate verification are local; final
 acceptance uses one no-auth public HTTPS MCP request. Private URLs/logs stay
 untracked. Floating-point startup and PE entry ownership remain pending.
+
+## R124 — Complete floating-point conversion and control graph
+
+R124 resolves 27 existing library candidates / 4,252 complete source bytes /
+142 typed relocation fields. The six handoff roots expand only to the necessary
+conversion, parser, locale, digit-output and arithmetic dependencies. `__cinit`
+remains unknown: completed FP children do not resolve its actual initializer
+callbacks. Replay `scripts/repo-python scripts/verify-floating-point-origins.py`;
+the evidence manifest is `config/floating-point-origin-evidence.json`.
+
+| Complete source body | Address | Source bytes |
+| --- | --- | ---: |
+| `__fpmath` | `0x006405C2` | 30 |
+| `__cfltcvt_init` | `0x0064057A` | 56 |
+| `__ms_p5_mp_test_fdiv` | `0x0064520F` | 41 |
+| `__setdefaultprecision` | `0x006451BD` | 18 |
+| `__controlfp` | `0x0064FBE8` | 22 |
+| `__cfltcvt` | `0x0064516C` | 81 |
+| `__fassign` | `0x00644E5F` | 62 |
+| `__cftof` | `0x00645070` | 98 |
+| `__cftog` | `0x006450D2` | 154 |
+| `__cftoe` | `0x00644F68` | 108 |
+| `__atodbl` | `0x0064F7B3` | 61 |
+| `__atoflt` | `0x0064F82E` | 61 |
+| `_tolower` | `0x0064F3E5` | 34 |
+| `_isdigit` | `0x00642800` | 58 |
+| `___tolower_mt` | `0x0064F31D` | 200 |
+| `__fltout2` | `0x0064F99C` | 108 |
+| `__cftof2` | `0x00644FD4` | 156 |
+| `__cftoe2` | `0x00644EBA` | 174 |
+| `___strgtold12` | `0x00652CD1` | 1076 |
+| `__ld12tod` | `0x0064F70B` | 22 |
+| `__ld12tof` | `0x0064F721` | 22 |
+| `_$I10_OUTPUT` | `0x00653151` | 654 |
+| `___mtold12` | `0x00652BF3` | 222 |
+| `___multtenpow12` | `0x0065418C` | 134 |
+| `__shift` | `0x00644E9D` | 29 |
+| `___ld12mul` | `0x00653F5A` | 562 |
+| `__fptrap` | `0x0064FA08` | 9 |
+
+Every complete own COFF AUX extent, non-relocation byte, typed field, instruction,
+branch, exit and indirect dispatch is compared to the pinned supplied Japanese
+TH075 target and pinned VC7 CRT archive. The parser at `0x00652CD1` expands from
+its provisional 1,028-byte code prefix to the whole 1,076-byte source extent,
+ending at `0x00653104`. All twelve DIR32 entries in its embedded 48-byte table
+bind actual instruction starts in the same source definition. The real unsigned
+`eax <= 11` guard, table reference and indexed dispatch at `0x00652D34` remain
+checked. The table is compared as data, not disassembled as instructions.
+There are no interior candidate additions, target patches or database writes.
+
+Five whole non-inventoried library controls / 230 bytes / ten fields close
+`__cropzeros` (75), `__forcdecpt` (60), `__positive` (26), `__fpclear` (1) and
+`__RTC_Terminate` (68). They earn no candidate credit. The one-byte fpclear is
+its complete real vendor RET body. RTC termination retains its complete scope,
+handler and actual empty two-entry range. Twenty-four whole independent anchors /
+3,732 bytes / 131 fields retain their prior origins and cold R123 dependencies.
+The complete 50-byte control87 is additionally decoded with its actual
+abstract/hardware control-word children; previously accepted mapping helpers
+remain independently verified. Identical CRT error-source alternatives preserve
+the accepted R120 source identity and do not establish one executable-wide profile.
+
+Twelve entire defining source sections / 2,744 bytes, one 12-byte RTC scope,
+six whole CRT range markers / 24 bytes, three observed callback ranges / 92 bytes
+and fifty readonly literals / 334 bytes are verified. There are no COMMON
+substitutes. The six-slot conversion table / 24 bytes initially points to the
+complete nine-byte trap in every slot; registration writes bind each real
+converter/format helper, including the shared conversion slot. The whole
+20-byte fpinit carrier binds fpmath and both fpclear callbacks. A weaker COMMON
+FPinit reference never replaces the actual strong source definition.
+
+The 700-byte powers carrier includes all positive and negative records and
+retains its actual mutable source and target storage. Both complete 24-byte
+float/double conversion-format records are retained in the whole 48-byte carrier.
+The eight-byte division flags and twelve-byte multibyte/decimal-point carrier
+retain all defining symbols. Decimal point is the actual character field, not
+a guessed pointer. Whole locale, lconv, ctype and time defaults preserve every
+initialized pointer and all 42 time literals. Every data pointer resolves to a
+complete code definition, defining data object or readonly literal; whole BSS
+objects retain PE loader zero-fill geometry.
+
+Two natural independent translation units cold-build 36-DWORD / 144-byte FP
+and 13-DWORD / 52-byte locale/API controls with pinned CRT/SDK headers and explicit
+reproducibility flags. This avoids the real SDK/vendor DOUBLE typedef conflict
+without modifying either header. DOUBLE, LONGDOUBLE and long double are eight
+bytes; STRFLT is 16 with offsets 0/4/8/12. Complete exception, denormal, rounding,
+precision and default control masks are retained, including 53-bit precision.
+Locale remains 84 bytes with clike +36, handles +12 and pctype +72. These controls
+are vendor evidence, not reconstructed game layouts or executable-wide flags.
+
+The MP division test binds whole KERNEL32 and IsProcessorFeaturePresent strings,
+actual GetModuleHandleA/GetProcAddress imports and the indirect call at
+`0x00645230` with feature 0 and four-byte stack ABI. Its complete 64-byte R098
+fallback retains independent evidence. Parser classification closes through
+complete locale-aware tolower/isdigit, locale updating and digit/long-double
+arithmetic definitions; names and masked fingerprints alone earn no credit.
+
+The complete cinit code / 106 bytes and actual XI/XC ranges remain observations.
+SSE2 initialization at `0x00648052`, non-inventoried stdio initialization at
+`0x0064F08F` and non-inventoried C++ exception-filter registration at `0x0064659A`
+still need their full defining dependency graphs. The latter registers the
+actual callback at `0x0064654C` via SetUnhandledExceptionFilter; it is not pointer
+encoding. R121's frozen cinit snapshot is retained through a narrow same-source
+guard requiring the new canonical unknown R124 record. No parent ownership is
+inherited from completed children. PE entry remains pending independently.
+
+Twenty-five regression checks reject code-only parser truncation, omitted table
+entries, invented local labels/candidates, carrier prefixes, unreviewed children,
+guessed masks/layouts/API provenance, changed historical source fields and
+source/exact credit. All 347 public checks pass. Origin totals are 3,204 resolved
+(919 authored, 1,710 library, 575 compiler), with 1,147 pending. Exact/source/
+mapping remains 60 functions / 9,883 bytes; recorded authored extents remain
+872 / 1,952,956 bytes. Investigation and intermediate verification are local;
+one final no-auth public HTTPS MCP acceptance replay passed R124, retained
+runtime/import/layout and R114 dependency graphs, all 872 authored extents,
+target/project attestation, 347 tests and all 60 exact units across eleven objects.
+A narrow public follow-up confirms corrected documentation EOF whitespace and
+progress/status; the complete cold acceptance replay ran once. Private URLs and
+logs remain untracked.
