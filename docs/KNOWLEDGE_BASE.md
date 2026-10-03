@@ -1233,3 +1233,14 @@ The parent operations and child bodies are cold-reverified. The short
 body alone would not distinguish another owner with the same field test;
 the caller witness supplies the template identity. These are library
 origins only; original game element types remain unknown.
+
+## Short VC7 template helpers after R087
+
+Thirty-two allocator constructors, sixteen pointer-category helpers and
+sixteen trivial destruction-range bodies reproduce complete VC7 source
+COMDATs. The 5-, 11-, 14- and 16-byte bodies have no source relocations.
+Each also has an exact source-typed call from a complete R073 template
+parent, which the verifier cold-replays before checking the child. All
+64 bodies, totaling 742 bytes, are library origins. Identical short code
+without this caller witness remains insufficient; original game types and
+reconstruction exactness remain unknown.

@@ -3252,3 +3252,25 @@ origins: 2,667 reviewed (804 authored, 1,289 library, 574 compiler), with
 1,684 pending. Exact remains 42 functions / 8,916 bytes against
 1,950,893 provisional authored bytes (0.46%). R085 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37098124930.
+
+## R087 — short VC7 template helpers with verified callers
+
+Sixty-four complete source/target bodies have exact source-typed calls from
+reviewed R073 template parents: 32 allocator constructors (thirteen 14-byte
+and nineteen 16-byte bodies), sixteen 11-byte `_Ptr_cat` helpers, and
+sixteen 5-byte trivial `_Destroy_range` specializations. All 742 bytes
+match without source relocations. The short code alone is insufficient;
+the independently reviewed parent's complete body and exact source callee
+symbol supply the library-template witness. Nontrivial destruction bodies
+that do not match this probe remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-leaf-origins.py`
+cold-replays R073, cold compiles the probe, and checks all complete child
+COMDATs, source aliases, hashes, typed parent calls, raw call displacements,
+control flow and ledgers. Evidence is in
+`config/vendor-deque-leaf-origins.csv`. Original game types remain unknown,
+with no authored source or exact credit. R087 reaches 2,731 reviewed
+candidates (804 authored, 1,353 library, 574 compiler), with 1,620 pending.
+Exact remains 42 functions / 8,916 bytes against 1,950,893 provisional
+authored bytes (0.46%). R086 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37098464756.
