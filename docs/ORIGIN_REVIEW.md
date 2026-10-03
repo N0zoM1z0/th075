@@ -3274,3 +3274,24 @@ candidates (804 authored, 1,353 library, 574 compiler), with 1,620 pending.
 Exact remains 42 functions / 8,916 bytes against 1,950,893 provisional
 authored bytes (0.46%). R086 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37098464756.
+
+## R088 — converting allocators and trivial destruction with R074 callers
+
+Thirty-eight short bodies have complete VC7 source matches and exact
+source-typed calls from reviewed R074 allocator/helper parents: sixteen
+16-byte converting allocator constructors and twenty-two 5-byte `_Destroy`
+specializations. Their existing record/record-pointer source definitions
+match all 366 bytes without relocations. The parent witness distinguishes
+these library templates from unrelated short methods with identical code.
+Other nontrivial destruction bodies remain pending; original game types
+are not inferred from the probe.
+
+`scripts/repo-python scripts/verify-vendor-deque-cleanup-origins.py`
+cold-replays R074 and its parent chain, then cold compiles the existing
+record probe. It checks whole child COMDATs, aliases, hashes, typed parent
+calls, raw displacements, full control flow and ledgers. Evidence is in
+`config/vendor-deque-cleanup-origins.csv`. R088 reaches 2,769 reviewed
+candidates (804 authored, 1,391 library, 574 compiler), with 1,582 pending.
+Exact remains 42 functions / 8,916 bytes against 1,950,893 provisional
+authored bytes (0.46%), with no new source or exact credit. R087 GitHub CI
+passed at https://github.com/N0zoM1z0/th075/actions/runs/37098893616.

@@ -1244,3 +1244,15 @@ parent, which the verifier cold-replays before checking the child. All
 64 bodies, totaling 742 bytes, are library origins. Identical short code
 without this caller witness remains insufficient; original game types and
 reconstruction exactness remain unknown.
+
+## VC7 allocator conversions and trivial destruction after R088
+
+Sixteen complete 16-byte converting allocator constructors and twenty-two
+complete 5-byte `_Destroy` specializations match the existing VC7 record
+probe. Each also has an exact source-typed call from a reviewed R074
+allocator/helper body. Both the complete parent chain and child COMDATs
+cold-replay; all 366 child bytes match without relocations. The existing
+record and record-pointer instantiations supply the exact callee symbols,
+so a scalar probe is unnecessary for these accepted bodies. Nontrivial
+destruction bodies remain pending. Original game types remain unknown,
+with library origin only and no reconstruction source or exact credit.
