@@ -101,3 +101,21 @@ callee/parent lane. Those six form the bounded R108 handoff cohort in
 `RE_HANDOFF.md`. Their constructor/destructor-like shapes are hypotheses only;
 the next review must freeze complete bodies, parent edges, callees, vtable
 writes and unresolved caller context before changing an origin ledger.
+
+R108 completed the six-candidate lifetime investigation and resolved only the
+31-byte stage destructor. Five functions remain pending because complete cold
+explicit/implicit alternatives are indistinguishable. R109 then resolved
+thirteen explicit game policies / 2,465 bytes, including the two formerly
+pending scene parents, with heterogeneous callee ownership kept separate:
+
+```bash
+scripts/repo-python scripts/verify-game-lifetime-origins.py
+scripts/repo-python scripts/verify-game-context-origins.py
+```
+
+The refreshed R109 scan covers 1,297 pending candidates, forty whole-body
+groups and 182 extent questions. Its five combined game-callee/parent hits are
+the known R108 ambiguities; their high rank grants no new credit. The next R110
+cohort investigates six unresolved source-family dependencies of the reviewed
+effect-list policies. The user authorized local queries and verification for
+speed, with one public MCP acceptance replay at the end.

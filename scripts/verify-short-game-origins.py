@@ -103,7 +103,7 @@ def main():
         size = anchor["size"]
         if (key in keys or origin["origin"] != "authored"
                 or origin["evidence_id"] != anchor["origin_evidence"]
-                or function["proposed_name"] != anchor["role"]
+                or not authored.role_matches(function, anchor["role"])
                 or int(function["size"]) != size
                 or int(function["span_end"], 16) != address + size - 1):
             raise ValueError("short game independent owner anchor differs")
@@ -136,8 +136,8 @@ def main():
         function, origin, body_record = functions[key], origins[key], evidence[key]
         if (record["evidence_id"] != batch or origin["evidence_id"] != batch
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
-                or function["owner"] != "authored" or function["status"] != "unclassified"
-                or function["proposed_name"] != record["role"]
+                or function["owner"] != "authored" or function["status"] not in ("unclassified", "matching")
+                or not authored.role_matches(function, record["role"])
                 or body_record["inferred_role"] != record["role"]
                 or int(function["size"]) != size
                 or int(function["span_end"], 16) != address + size - 1

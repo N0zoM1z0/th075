@@ -46,6 +46,23 @@ def rows(name):
         return list(csv.DictReader(stream))
 
 
+def role_matches(function, reviewed_role):
+    """Preserve reviewed names when a later exact unit adopts a shorter name."""
+    if function["proposed_name"] == reviewed_role:
+        return True
+    aliases = [row for row in rows("authored-origin-name-aliases.csv")
+               if row["address"] == function["address"] and row["reviewed_role"] == reviewed_role]
+    if len(aliases) != 1 or function["status"] != "matching":
+        return False
+    alias = aliases[0]
+    matches = [row for row in rows("matches.csv") if row["address"] == function["address"]]
+    origins = [row for row in rows("function-origins.csv") if row["address"] == function["address"]]
+    return (len(matches) == len(origins) == 1 and alias["mapped_role"] == function["proposed_name"]
+            and matches[0]["name"] == alias["mapped_role"] and matches[0]["status"] == "matching"
+            and matches[0]["unit"] == alias["exact_unit"] and matches[0]["size"] == function["size"]
+            and origins[0]["evidence_id"] == alias["origin_evidence"])
+
+
 def main():
     spec = importlib.util.spec_from_file_location("authored_coff", ROOT / "scripts/compare-coff-function.py")
     comparison = importlib.util.module_from_spec(spec)
@@ -75,7 +92,7 @@ def main():
         if (size <= 0 or int(function["size"]) != size
                 or origin["origin"] != "authored" or origin["disposition"] != "authored"
                 or origin["evidence_id"] != row["evidence_id"]
-                or function["proposed_name"] != row["inferred_role"]):
+                or not role_matches(function, row["inferred_role"])):
             raise ValueError("authored origin ledger differs from recorded evidence")
         code = comparison.pe_bytes_at(target, int(key, 16), size)
         if hashlib.sha256(code).hexdigest() != row["body_sha256"]:

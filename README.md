@@ -31,12 +31,13 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R107 checkpoint, origin review has classified 897 authored,
-1,568 library and 575 compiler-generated candidates; 1,311 remain pending.
-The reviewed authored-byte slice is 9,883 / 1,958,337 exact (0.50%), with a
-provisional denominator. After exact batches F008 and F009, the user resumed
-bounded origin review. The next handoff targets the six-candidate R108
-game-callee/parent cohort while preserving the 60-function exact baseline.
+At the R109 checkpoint, origin review has classified 911 authored,
+1,568 library and 575 compiler-generated candidates; 1,297 remain pending.
+The reviewed authored-byte slice is 9,883 / 1,960,833 exact (0.50%), with a
+provisional denominator. R108 resolved one destructor and retained five
+explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
+The next handoff targets six R110 callee dependencies while preserving the
+60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).

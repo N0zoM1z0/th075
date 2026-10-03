@@ -3992,3 +3992,106 @@ compiler), with 1,311 pending. The authored denominator remains 1,958,337
 bytes. This is library-origin evidence and adds no reconstruction source or
 exact credit. The user then completed exact batches F008 and F009 before
 resuming bounded origin review with the six-candidate R108 handoff cohort.
+
+## R108 — complete lifetime evidence and retained ambiguity
+
+Reviewed all six handoff candidates against fresh attested local Ghidra
+queries, complete target bytes, 103 independently reviewed or explicitly
+pending parent/callee contexts, 98 parent edges and nine selected readonly
+vtable slots. The manifest is `config/game-lifetime-origin-evidence.json`;
+replay with `scripts/repo-python scripts/verify-game-lifetime-origins.py`.
+
+The pinned VC7 probe cold-builds eleven complete source alternatives and two
+implicit cleanup controls. Every COMDAT, including aux-less implicit methods,
+includes its entire code section and every typed relocation. Five functions
+have indistinguishable explicit and implicit alternatives:
+
+| Address | Bytes | Retained observation |
+| --- | ---: | --- |
+| `0x0040D8C0` | 22 | Construct the bitmap member through reviewed `0x0041A2D0` |
+| `0x0040D8E0` | 19 | Destroy the bitmap member through reviewed `0x0041A380` |
+| `0x00411C10` | 25 | Construct geometry at `this + 4` |
+| `0x004251C0` | 34 | Write scene vtable `0x00657B88`, then construct game globals at `this + 4` |
+| `0x00449DE0` | 45 | Write stage vtable `0x0065844C`, then construct camera at `+4` and texture manager at `+0x18` |
+
+All five remain `unknown/review`. Reviewed game callees, authored parents and
+a compiler deleting wrapper cannot distinguish authorship here. The camera
+callee writes five explicit globals, rather than five member fields; the
+synthetic probe tests spacing only and recovers no class size or layout.
+The scene vtable's three observed slots all point to `0x00641E19`; its origin
+receives no credit. The six stage slots bind the existing scalar deleting
+wrapper plus five `0x00641E19` pointers, without claiming a full vtable extent.
+
+Only `0x00449D40` gains authored origin. Its full 31-byte body writes the stage
+vtable and destroys the texture member at `+0x18`. It matches the natural
+explicit virtual destructor; implicit nonvirtual and inherited virtual cleanup
+controls emit distinct complete 22- and 30-byte bodies. The deleting slot
+calls this exact function, and the reviewed derived loader/destroyer family
+corroborates the lifetime pairing. Its role is inferred as
+`BackgroundBase::DestroyAt00449D40`; the full layout remains unknown.
+
+The pending bitmap parents were also inspected: `0x0040E000` combines generic
+vector erase/insert calls with a copied 44-byte element and cleanup, without
+independent ownership proof. `0x0040EC8A` begins at an interior catch label and
+continues into shared cleanup; its 232-byte candidate span is frozen as partial
+context, without accepting an enclosing function or attributing it to authored
+code. The pending scene parents `0x00428D60` and `0x0042B1F0` exposed explicit
+policies, subsequently reviewed independently in R109.
+
+R108 reaches 3,041 resolved candidates (898 authored, 1,568 library, 575
+compiler), with 1,310 pending. It adds 31 authored bytes, no reconstruction
+source and no exact credit. Five investigated origins remain unresolved.
+
+## R109 — explicit game policies with mixed-origin dependencies
+
+Thirteen complete functions / 2,465 bytes now have independently reviewed game
+ownership. The manifest is `config/game-context-origin-evidence.json`; replay
+with `scripts/repo-python scripts/verify-game-context-origins.py`.
+
+| Address | Bytes | Target-observed policy |
+| --- | ---: | --- |
+| `0x0041C130` | 119 | Release raster storage, restore/delete the selected GDI object, release the window DC and clear two fields |
+| `0x0041CF00` | 113 | Search the global name list for equality and retrieve the corresponding entry from a separate list, returning zero when absent |
+| `0x00428D60` | 251 | Load `data\system\option.dat`, allocate three textures, create a 1024-by-512 texture with argument 32, set byte/word defaults and apply the selection |
+| `0x0042B110` | 169 | Form eight glyph bytes with signed decimal quotient/remainder indices offset by 52, use 19/20 coordinate offsets and call the reviewed glyph renderer |
+| `0x0042B1F0` | 260 | Load `data\system\replay.dat`, allocate three textures, clear four word fields, derive a byte from signed global `+0x006714CE` and obtain a replay path |
+| `0x004491E0` | 215 | Transform four rectangle coordinates using the argument owner's facing byte `+0x66` and position fields `+0x44/+0x48` |
+| `0x00452B30` | 215 | Select word value 9999 and indexed parameter tables in the observed mode, otherwise convert `field +0x36C * 8800 / 900` and add 1201 |
+| `0x00455580` | 139 | Read a queued word in mode 2, otherwise obtain a word and record it in mode 1; scale a signed range by division through 32768 |
+| `0x0045BA30` | 221 | Delete nonzero pointer entries and clear exactly four lists at stride 20 |
+| `0x0045BC30` | 166 | Select a list with a signed-byte index; choose virtual slot 12 or 8 from element byte `+0x67` |
+| `0x0045BCE0` | 207 | Visit four lists and dispatch virtual slot 16 when element byte `+0x68` is nonzero |
+| `0x005F7D00` | 114 | Select an auxiliary list with a signed-byte index and dispatch virtual slot 8 |
+| `0x005F7D80` | 276 | Advance entries through virtual slot 4 across two lists, then delete/erase entries whose dword `+8` is zero |
+
+The verifier freezes 51 complete bounded callee/parent contexts, eleven parent
+edges, 157 policy instructions, exact RET cleanup, three raw PE import bindings,
+four reviewed scene update/render slots and four complete readonly float
+scalars. `0x00640611` and `0x00640F15` retain their explicitly decoded external
+tails to `0x006405E0` and `0x00642A61`; those unresolved callees gain no origin
+credit. Library helpers and dynamic dispatch likewise retain independent
+ownership. Names, field meanings, original state terminology and full owner
+layouts remain inferred. A scene's explicit resource/default policy establishes
+its authorship despite an ambiguous base constructor.
+
+Restored the prior R104/R105 origin replays after F008/F009 renamed eighteen
+accepted functions and changed their status to matching. Explicit aliases bind
+each original reviewed name to its current mapped name, address, origin batch,
+size and accepted exact unit. All original body hashes and review roles are
+preserved. Wrong-unit, wrong-origin and unrelated-name substitutions fail the
+public regression tests.
+
+R109 reaches 3,054 resolved candidates (911 authored, 1,568 library, 575
+compiler), with 1,297 pending. There are 864 explicitly recorded authored bodies
+/ 1,948,490 bytes. The provisional authored denominator is 1,960,833 bytes;
+exact remains 60 functions / 9,883 bytes (0.50%). Local acceptance passed both
+new verifiers, old R104/R105 replays, target-required tracking, the refreshed
+scanner and 146 public tests. R110 starts with six unresolved dependencies
+exposed by the effect-list policies; the five R108 lifetime ambiguities remain
+pending and are not repeated acceptance targets.
+
+The final no-auth public HTTPS MCP request passed both new verifiers, R104/R105
+replays, target-required tracking, 146 public tests, progress freshness and
+`git diff --check`. It also cold-built eleven objects and reproduced all 60
+complete exact units / 9,883 bytes. Investigation and local verification used
+the local tools; the public route was used once for final acceptance.

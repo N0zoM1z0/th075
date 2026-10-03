@@ -25,10 +25,15 @@ origin evidence. Record a durable origin batch before attempting exact credit.
 
 After exact batches F008 and F009, the user resumed origin review on
 2026-10-03. Preserve the 60-function exact baseline while reviewing bounded
-candidate cohorts. R108 starts with the six candidates in the combined
-reviewed-game-callee/parent lane recorded in `RE_HANDOFF.md`. Scanner output is
-only a shortlist: accept each origin only after a durable verifier freezes its
-complete extent, body, control flow and independent ownership context.
+candidate cohorts. R108 resolved one explicit destructor and retained five
+complete explicit/implicit lifetime ambiguities. R109 resolved thirteen game
+policies and exposed the six-callee R110 cohort recorded in `RE_HANDOFF.md`.
+Scanner output is only a shortlist: accept each origin only after a durable
+verifier freezes its complete extent, body, control flow and independent
+ownership context. Run investigation and local verification directly, then
+perform one public MCP acceptance replay at the end, as authorized by the user.
+Recorded name aliases preserve earlier origin roles after exact reconstruction
+renames a function; a matching ledger state does not invalidate its origin.
 `report-reconstruction-status.py --summary` continues to report the incomplete
 origin milestone and uses a provisional authored denominator while any origin
 remains pending.

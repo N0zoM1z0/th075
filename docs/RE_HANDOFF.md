@@ -1,8 +1,8 @@
 # TH075 function reconstruction handoff
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
-exact reconstruction for F008 and F009, and has now returned to bounded origin
-review. The public
+exact reconstruction for F008 and F009, and has now completed bounded origin
+review cohorts R108 and R109. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,66 +11,62 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,040: 897 authored, 1,568 library and 575 compiler generated.
-There are 1,311 pending. Candidate count is not authored function count.
+has resolved 3,054: 911 authored, 1,568 library and 575 compiler generated.
+There are 1,297 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,958,337 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,960,833 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R108 cohort below.
+the bounded R110 dependency cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R107; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R109; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R108 origin cohort
+## Next agent objective — R110 dependency cohort
 
-Review these six pending candidates as one bounded cohort. The refreshed
-scanner places them in its strongest combined reviewed-game-callee/parent
-lane. That ranking is diagnostic and grants no origin credit.
+R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
+origin: its complete 31-byte explicit virtual destructor differs from the
+implicit cleanup controls and binds the game texture destructor and paired
+stage lifetime context. The other five have indistinguishable complete
+explicit/implicit source alternatives and remain pending. Do not repeatedly
+accept or re-review those five based only on scanner rank.
 
-| Candidate | Bytes | Reviewed callee context | Reviewed parent context | Unresolved context |
-| --- | ---: | --- | --- | --- |
-| `0x0040D8C0` | 22 | `BitmapData::Initialize` | 3 authored texture-allocation parents | None reported by the scanner |
-| `0x0040D8E0` | 19 | `BitmapData::ReleaseResources` | 3 authored allocation parents and 1 compiler deleting destructor | 2 pending parents |
-| `0x00411C10` | 25 | `SpriteGeometry::ZeroInitialize` on `this + 4` | `SpriteSequence::AppendElement` | None reported by the scanner |
-| `0x004251C0` | 34 | `GameGlobals::Initialize` on `this + 4` | 13 authored scene initializers | 2 pending parents; vtable `0x00657B88` |
-| `0x00449D40` | 31 | `TextureManager::ReleaseResources` on `this + 0x18` | 36 authored stage destroyers and 1 compiler deleting destructor | Vtable `0x0065844C`; complete lifetime contract unknown |
-| `0x00449DE0` | 45 | `CameraMotion::ResetParametersAt00412620` and `TextureManager::Initialize` | 36 authored stage loaders | Vtable `0x0065844C`; complete lifetime contract unknown |
+R109 resolved thirteen explicit game policies, including the two pending
+scene parents of `0x004251C0`. The next bounded cohort is six unresolved
+callee dependencies exposed by R109:
 
-The next agent should:
+| Candidate | Bytes | Observed context | Required next evidence |
+| --- | ---: | --- | --- |
+| `0x004453C0` | 22 | Four-list effect policy; calls `0x00445530` | Complete default iterator source and typed callee chain |
+| `0x00445400` | 54 | Selected/four-list policies; calls reviewed R085 iterator increment `0x00445510` | Complete postfix iterator source and all fields |
+| `0x00445530` | 33 | Called by `0x004453C0` | Independently source-typed default iterator initialization |
+| `0x005F8110` | 17 | Two-list auxiliary advance policy; reads `+0x10` | Whole source family plus independent typed witness; tiny getter equality is insufficient |
+| `0x005F8290` | 59 | Auxiliary prune path | Full erase-wrapper source with its iterator-addition and erase callees |
+| `0x005F8420` | 54 | Selected/two-list policies; calls reviewed R085 increment `0x005F8D10` | Whole postfix iterator source with its exact source-typed call |
 
-1. Run the repository preflight, refresh
-   `.analysis/origin-scan/latest.json`, and re-query complete disassembly,
-   callers and callees for all six addresses.
-2. Reconcile each full extent, every exit, RET cleanup, direct call and vtable
-   write. Inspect the two pending parents of `0x0040D8E0` and `0x004251C0`.
-3. Resolve the `0x00657B88` and `0x0065844C` vtable context far enough to
-   distinguish authored lifetime code from compiler-emitted member cleanup.
-   A compiler deleting-destructor edge does not by itself prove that its callee
-   is authored.
-4. Add a bounded durable R108 manifest and verifier. Extend
-   `verify-short-game-origins.py` only if its evidence schema fits; otherwise
-   add a focused verifier. Freeze full body hashes, CFG/RET facts, calls, parent
-   edges and vtable writes. Avoid accepting inferred class names or complete
-   layouts.
-5. Classify every candidate independently. Only after the verifier passes,
-   update the function/origin ledgers, authored evidence, origin journal,
-   knowledge base and this handoff. Replay the verifier through the existing
-   no-auth public MCP route, then run public CI and `git diff --check`.
+Run the preflight and refresh `.analysis/origin-scan/latest.json`. Query full
+bodies, callers and callees locally through the attested Ghidra wrapper.
+Cold-build independent VC7 source families serially, bind every relocation
+and retain original-type uncertainty. The game caller grants no library or
+compiler credit by itself. Keep `0x0040EC8A` as an unresolved interior catch/
+tail candidate until its enclosing function and EH extent are reconciled.
 
-R108 may resolve up to six pending decisions. It should add no source or exact
-credit under the current strategy. Refresh the scanner after accepted ledger
-changes instead of carrying its present counts forward.
+The user authorized local investigation and verification for speed, followed
+by one public MCP acceptance replay at the end. Preserve the no-auth route,
+private path and 60-function exact baseline. R110 adds no exact scope. Update
+the origin journal, knowledge base, progress card and handoff after acceptance;
+run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
+with `gpt-6.1-sol: ...`.
 
 ## Tooling and verification
 
@@ -90,6 +86,8 @@ scripts/repo-python scripts/verify-target.py
 scripts/repo-python scripts/validate-tracking.py --require-target
 scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/verify-authored-origins.py
+scripts/repo-python scripts/verify-game-lifetime-origins.py
+scripts/repo-python scripts/verify-game-context-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
@@ -138,9 +136,18 @@ scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-The current session passed 141 public tests, target-required tracking,
-complete checks of 850 explicitly recorded authored bodies, and progress
-freshness. The new deque algorithm, emptiness, short-helper, cleanup, vector
+The R109 session passed 146 public tests, target-required tracking,
+complete checks of 864 explicitly recorded authored bodies / 1,948,490 bytes,
+and progress freshness. Explicit aliases preserve all eighteen original
+R104/R105 reviewed roles after F008/F009 adopted shorter exact names; the old
+cohort verifiers now accept those recorded renames and matching states.
+R108 cold-replays eleven complete source alternatives and two implicit cleanup
+controls; R109 verifies thirteen game policies with mixed-origin dependencies.
+The final no-auth public HTTPS MCP acceptance passed both new verifiers,
+old R104/R105 replays, target-required tracking and 146 tests. A full cold
+replay preserved all 60 exact units across eleven objects / 9,883 bytes.
+No callee or dynamic dispatch receives origin credit from these callers.
+The earlier deque algorithm, emptiness, short-helper, cleanup, vector
 storage, vector helper, vector operation, vector callee, scalar copy and
 vector wrapper, standard exception and battle-end destructor cold verifiers
 passed through the no-auth public Funnel MCP.
@@ -159,7 +166,9 @@ through the public route. The F008 18-byte animation clear helper also
 cold-replayed exact through public MCP after the complete 15-check smoke test.
 The complete F009 object subsequently cold-replayed 9/9 exact over public MCP.
 The complete batch origin scanner also passed through that endpoint during this
-handoff and reproduced the 1,311-candidate queues; its private report is current.
+F009 handoff and reproduced the then-current 1,311-candidate queues. The R109
+refresh now covers 1,297 pending candidates in forty groups and 182 extent
+questions; five known ambiguous lifetime wrappers remain in the strongest lane.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
 endpoint. Public GitHub CI for F009 passed the same 141-test suite in
@@ -169,7 +178,7 @@ endpoint. Public GitHub CI for F009 passed the same 141-test suite in
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
-shortlist for all 1,311 pending candidates. The current report groups 40 whole
+shortlist for all 1,297 pending candidates. The current report groups 40 whole
 bodies and isolates 182 extent questions. Start with grouped source/context
 witnesses rather than one-address setup. R102 accepted seventeen explicit
 game policies through the shared cohort verifier, with 33 independent whole
@@ -183,9 +192,10 @@ batch / 365 bytes. The batches keep signed field widths, indexed record strides
 and state limits explicit; lifetime-only and generic helper hypotheses remain
 pending. R106 resolves the former 24-member reviewed-peer lane through seven
 source-reviewed VC7 vector/deque families; actual call destinations and RET
-cleanup remain part of each comparison. The refreshed scan has six candidates
-in the strongest combined game-callee/parent lane, 161 in the game-parent lane
-and 182 extent questions.
+cleanup remain part of each comparison. The R109 refreshed scan has five candidates
+in the strongest combined game-callee/parent lane, 155 in the game-parent lane
+and 182 extent questions. The five strongest candidates have verified lifetime
+ambiguity in R108 and cannot gain credit from that ranking.
 
 Twelve repeated 520/517/511-byte bodies are now verified as complete VC7
 `std::deque::_Growmap` templates, including all 13 typed relocations per
@@ -333,10 +343,10 @@ including the unused incoming stack argument. The four transforms copy
 the midpoint helper divides signed coordinate sums by the readonly `2.0f`.
 These facts do not establish complete game class layouts or original types.
 
-Nearby destructor-shaped candidates `0x00412E50` and `0x00449D40` remain
-pending. Their reviewed game cleanup calls alone do not distinguish an
-authored destructor body from implicit member destruction. Preserve that
-origin question until the complete lifetime/source-emission context is checked.
+The destructor-shaped candidate `0x00412E50` remains pending. R108 resolved
+`0x00449D40` using whole explicit/implicit source controls and paired lifetime
+context; its reviewed game cleanup call alone was insufficient. Five other
+R108 wrappers remain ambiguous despite complete source/context evidence.
 
 The CRT survey at `.analysis/crt-origin-survey.json` contains 353 historical
 relocation-bearing observations. R093 resolved the complete 344-byte
@@ -354,7 +364,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R108 origin cohort described above. F008 and F009 remain
+Continue the bounded R110 dependency cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

@@ -1,0 +1,2515 @@
+{
+  "evidence_id": "R109",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "functions": [
+    {
+      "address": "0x0041C130",
+      "size": 119,
+      "span_end": "0x0041C1A6",
+      "role": "FontSurface::ReleaseRasterResourcesAt0041C130",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "7b848e9c7fe4570cdf2f900e6efc549ac363354fad64446ca0c56594b0f4e2a8",
+      "cfg": [
+        1,
+        1
+      ],
+      "external_tails": [],
+      "subsystem": "FontSurface",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 1,
+      "direct_calls": [
+        {
+          "site": "0x0041C14F",
+          "target": "0x00640F15",
+          "origin": "unknown"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0041C16F",
+          "operand": "dword ptr [0x657048]",
+          "iat_slot": "0x00657048",
+          "dll": "GDI32.dll",
+          "symbol": "SelectObject"
+        },
+        {
+          "site": "0x0041C176",
+          "operand": "dword ptr [0x65704c]",
+          "iat_slot": "0x0065704C",
+          "dll": "GDI32.dll",
+          "symbol": "DeleteObject"
+        },
+        {
+          "site": "0x0041C189",
+          "operand": "dword ptr [0x657214]",
+          "iat_slot": "0x00657214",
+          "dll": "USER32.dll",
+          "symbol": "ReleaseDC"
+        }
+      ],
+      "returns": [
+        {
+          "site": "0x0041C1A6",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0041C13C",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax + 0x14], 0"
+        },
+        {
+          "site": "0x0041C145",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx + 0x14]"
+        },
+        {
+          "site": "0x0041C15A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x14], 0"
+        },
+        {
+          "site": "0x0041C164",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0xc]"
+        },
+        {
+          "site": "0x0041C16B",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx + 4]"
+        },
+        {
+          "site": "0x0041C16F",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x657048]"
+        },
+        {
+          "site": "0x0041C176",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x65704c]"
+        },
+        {
+          "site": "0x0041C17F",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x0041C186",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx]"
+        },
+        {
+          "site": "0x0041C189",
+          "mnemonic": "call",
+          "operands": "dword ptr [0x657214]"
+        },
+        {
+          "site": "0x0041C192",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], 0"
+        },
+        {
+          "site": "0x0041C19C",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 4], 0"
+        }
+      ]
+    },
+    {
+      "address": "0x0041CF00",
+      "size": 113,
+      "span_end": "0x0041CF70",
+      "role": "ResourceLookup::FindByNameAt0041CF00",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "6391a9bbd25ec4b140e9fd14203dda8247ef25cd77891930f15a1ab7067586a1",
+      "cfg": [
+        1,
+        7
+      ],
+      "external_tails": [],
+      "subsystem": "ResourceLookup",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 7,
+      "direct_calls": [
+        {
+          "site": "0x0041CF1B",
+          "target": "0x0041DD50",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0041CF32",
+          "target": "0x0041DD70",
+          "origin": "library"
+        },
+        {
+          "site": "0x0041CF3A",
+          "target": "0x006416B0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0041CF4F",
+          "target": "0x0041DD50",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0041CF66",
+          "target": "0x0041DAF0",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x0041CF70",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0041CF20",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 4], eax"
+        },
+        {
+          "site": "0x0041CF37",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0041CF54",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 4], eax"
+        },
+        {
+          "site": "0x0041CF6B",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        }
+      ]
+    },
+    {
+      "address": "0x00428D60",
+      "size": 251,
+      "span_end": "0x00428E5A",
+      "role": "OptionsScene::InitializeAt00428D60",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "6ce1aef1c6f541c98bb666165ff39521010299f29ccfa1bfe0adb40937102a25",
+      "cfg": [
+        1,
+        2
+      ],
+      "external_tails": [],
+      "subsystem": "OptionsScene",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x00428D81",
+          "target": "0x004251C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00428DA2",
+          "target": "0x0064159D",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00428DBA",
+          "target": "0x0040AD80",
+          "origin": "authored"
+        },
+        {
+          "site": "0x00428DE6",
+          "target": "0x0040B1D0",
+          "origin": "authored"
+        },
+        {
+          "site": "0x00428DFB",
+          "target": "0x0040BB80",
+          "origin": "authored"
+        },
+        {
+          "site": "0x00428E13",
+          "target": "0x00401C20",
+          "origin": "authored"
+        },
+        {
+          "site": "0x00428E3E",
+          "target": "0x00429F00",
+          "origin": "authored"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x00428E5A",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00428D6A",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr fs:[0]"
+        },
+        {
+          "site": "0x00428D71",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], esp"
+        },
+        {
+          "site": "0x00428D90",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], 0x657f38"
+        },
+        {
+          "site": "0x00428D99",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], 0"
+        },
+        {
+          "site": "0x00428DB1",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x14], 0"
+        },
+        {
+          "site": "0x00428DDB",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 8], ecx"
+        },
+        {
+          "site": "0x00428DE3",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [edx + 8]"
+        },
+        {
+          "site": "0x00428DF8",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 8]"
+        },
+        {
+          "site": "0x00428E1E",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x14], 5"
+        },
+        {
+          "site": "0x00428E25",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x10], 0"
+        },
+        {
+          "site": "0x00428E2E",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x12], 0"
+        },
+        {
+          "site": "0x00428E37",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [edx + 0x10]"
+        },
+        {
+          "site": "0x00428E50",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], ecx"
+        }
+      ]
+    },
+    {
+      "address": "0x0042B110",
+      "size": 169,
+      "span_end": "0x0042B1B8",
+      "role": "NameEntryScene::DrawDecimalGlyphLabelAt0042B110",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "317ab6d10009cc492ff3603c897cabf0a4336b08a46981e0ab171e76e05ed573",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": [],
+      "subsystem": "NameEntryScene",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [
+        {
+          "site": "0x0042B14F",
+          "target": "0x0040DA00",
+          "origin": "authored"
+        },
+        {
+          "site": "0x0042B1A6",
+          "target": "0x0042AFF0",
+          "origin": "authored"
+        },
+        {
+          "site": "0x0042B1AE",
+          "target": "0x00640611",
+          "origin": "unknown"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x0042B1B6",
+          "cleanup": 16
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0042B119",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x66fe30]"
+        },
+        {
+          "site": "0x0042B12A",
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x65786c]"
+        },
+        {
+          "site": "0x0042B137",
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x657f78]"
+        },
+        {
+          "site": "0x0042B16A",
+          "mnemonic": "idiv",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0042B17C",
+          "mnemonic": "idiv",
+          "operands": "ecx"
+        }
+      ]
+    },
+    {
+      "address": "0x0042B1F0",
+      "size": 260,
+      "span_end": "0x0042B2F3",
+      "role": "NameEntryScene::InitializeAt0042B1F0",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "0e8571ffc4d9d443fe4dee4449d9640c406dc8b8b8aa097dcf0a697c52c71877",
+      "cfg": [
+        1,
+        4
+      ],
+      "external_tails": [],
+      "subsystem": "NameEntryScene",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [
+        {
+          "site": "0x0042B211",
+          "target": "0x004251C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0042B228",
+          "target": "0x0064159D",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0042B240",
+          "target": "0x0040AD80",
+          "origin": "authored"
+        },
+        {
+          "site": "0x0042B26C",
+          "target": "0x0040B1D0",
+          "origin": "authored"
+        },
+        {
+          "site": "0x0042B281",
+          "target": "0x0040BB80",
+          "origin": "authored"
+        },
+        {
+          "site": "0x0042B2D1",
+          "target": "0x00414300",
+          "origin": "authored"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x0042B2F3",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0042B1FA",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr fs:[0]"
+        },
+        {
+          "site": "0x0042B201",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], esp"
+        },
+        {
+          "site": "0x0042B220",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], 0x657fac"
+        },
+        {
+          "site": "0x0042B237",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x14], 0"
+        },
+        {
+          "site": "0x0042B261",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 8], eax"
+        },
+        {
+          "site": "0x0042B269",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ecx + 8]"
+        },
+        {
+          "site": "0x0042B27E",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [edx + 8]"
+        },
+        {
+          "site": "0x0042B289",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0xe], 0"
+        },
+        {
+          "site": "0x0042B292",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x10], 0"
+        },
+        {
+          "site": "0x0042B29B",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0x12], 0"
+        },
+        {
+          "site": "0x0042B2A4",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x14], 0"
+        },
+        {
+          "site": "0x0042B2AA",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [0x6714ce]"
+        },
+        {
+          "site": "0x0042B2B8",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0xc], 1"
+        },
+        {
+          "site": "0x0042B2C1",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0xc], 0"
+        },
+        {
+          "site": "0x0042B2D9",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x18], eax"
+        },
+        {
+          "site": "0x0042B2E9",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], ecx"
+        }
+      ]
+    },
+    {
+      "address": "0x004491E0",
+      "size": 215,
+      "span_end": "0x004492B6",
+      "role": "BattleGeometry::TransformBoundsByFacingAt004491E0",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "97e7eafa7679ba36c6b3ab73d7005f11a79059577efd5a414b387c645bd93397",
+      "cfg": [
+        1,
+        2
+      ],
+      "external_tails": [],
+      "subsystem": "BattleGeometry",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [
+        {
+          "site": "0x004491FA",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00449207",
+          "target": "0x006406AC",
+          "origin": "library"
+        },
+        {
+          "site": "0x00449218",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00449226",
+          "target": "0x006406AC",
+          "origin": "library"
+        },
+        {
+          "site": "0x0044923A",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00449248",
+          "target": "0x006406AC",
+          "origin": "library"
+        },
+        {
+          "site": "0x00449259",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00449266",
+          "target": "0x006406AC",
+          "origin": "library"
+        },
+        {
+          "site": "0x00449278",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00449286",
+          "target": "0x006406AC",
+          "origin": "library"
+        },
+        {
+          "site": "0x00449298",
+          "target": "0x00449A60",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x004492A6",
+          "target": "0x006406AC",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x004492B4",
+          "cleanup": 12
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x004491EA",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x66]"
+        },
+        {
+          "site": "0x004491EE",
+          "mnemonic": "cmp",
+          "operands": "ecx, 1"
+        },
+        {
+          "site": "0x004491F6",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0x44]"
+        },
+        {
+          "site": "0x00449205",
+          "mnemonic": "fiadd",
+          "operands": "dword ptr [ecx]"
+        },
+        {
+          "site": "0x0044920F",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx], eax"
+        },
+        {
+          "site": "0x00449214",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x44]"
+        },
+        {
+          "site": "0x00449223",
+          "mnemonic": "fiadd",
+          "operands": "dword ptr [edx + 8]"
+        },
+        {
+          "site": "0x0044922E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 8], eax"
+        },
+        {
+          "site": "0x00449236",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0x44]"
+        },
+        {
+          "site": "0x00449245",
+          "mnemonic": "fisub",
+          "operands": "dword ptr [ecx + 8]"
+        },
+        {
+          "site": "0x00449250",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx], eax"
+        },
+        {
+          "site": "0x00449255",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x44]"
+        },
+        {
+          "site": "0x00449264",
+          "mnemonic": "fisub",
+          "operands": "dword ptr [edx]"
+        },
+        {
+          "site": "0x0044926E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 8], eax"
+        },
+        {
+          "site": "0x00449274",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0x48]"
+        },
+        {
+          "site": "0x00449283",
+          "mnemonic": "fisub",
+          "operands": "dword ptr [ecx + 0xc]"
+        },
+        {
+          "site": "0x0044928E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 4], eax"
+        },
+        {
+          "site": "0x00449294",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x48]"
+        },
+        {
+          "site": "0x004492A3",
+          "mnemonic": "fisub",
+          "operands": "dword ptr [edx + 4]"
+        },
+        {
+          "site": "0x004492AE",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0xc], eax"
+        }
+      ]
+    },
+    {
+      "address": "0x00452B30",
+      "size": 215,
+      "span_end": "0x00452C06",
+      "role": "FighterState::SelectResourceParametersAt00452B30",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "fd421b3200e22bf5e24dc03830c1746598738ddb379f3c9c13da24a4f0747baf",
+      "cfg": [
+        1,
+        4
+      ],
+      "external_tails": [],
+      "subsystem": "FighterState",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [
+        {
+          "site": "0x00452BC9",
+          "target": "0x00454D00",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x00452BE5",
+          "target": "0x006406AC",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x00452C06",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00452B3A",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x3a2], 0"
+        },
+        {
+          "site": "0x00452B46",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ecx + 0x2cd]"
+        },
+        {
+          "site": "0x00452B51",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [0x6714b4]"
+        },
+        {
+          "site": "0x00452B58",
+          "mnemonic": "cmp",
+          "operands": "eax, 3"
+        },
+        {
+          "site": "0x00452B60",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x3a0], 0x270f"
+        },
+        {
+          "site": "0x00452B6C",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x39d]"
+        },
+        {
+          "site": "0x00452B79",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + eax*4 + 0x3d0]"
+        },
+        {
+          "site": "0x00452B80",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x3a4], eax"
+        },
+        {
+          "site": "0x00452B89",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ecx + 0x39d]"
+        },
+        {
+          "site": "0x00452B96",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx + edx*4 + 0x400]"
+        },
+        {
+          "site": "0x00452B9D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x3a8], edx"
+        },
+        {
+          "site": "0x00452BA3",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [0x66c238]"
+        },
+        {
+          "site": "0x00452BAA",
+          "mnemonic": "cmp",
+          "operands": "eax, 1"
+        },
+        {
+          "site": "0x00452BB2",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ecx + 0x39d]"
+        },
+        {
+          "site": "0x00452BBC",
+          "mnemonic": "mov",
+          "operands": "cl, byte ptr [eax + edx + 0x384]"
+        },
+        {
+          "site": "0x00452BD3",
+          "mnemonic": "fld",
+          "operands": "dword ptr [edx + 0x36c]"
+        },
+        {
+          "site": "0x00452BD9",
+          "mnemonic": "fmul",
+          "operands": "dword ptr [0x658e74]"
+        },
+        {
+          "site": "0x00452BDF",
+          "mnemonic": "fdiv",
+          "operands": "dword ptr [0x657b28]"
+        },
+        {
+          "site": "0x00452BF2",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x3a0], ax"
+        },
+        {
+          "site": "0x00452BFC",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x464], 0"
+        }
+      ]
+    },
+    {
+      "address": "0x00455580",
+      "size": 139,
+      "span_end": "0x0045560A",
+      "role": "FighterState::SelectRecordedRandomRangeAt00455580",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "0af306971a71c16600e33ffe9cdd9cf8f603702279803e868505cc5b66b765dc",
+      "cfg": [
+        1,
+        4
+      ],
+      "external_tails": [],
+      "subsystem": "FighterState",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [
+        {
+          "site": "0x004555A0",
+          "target": "0x00414620",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x004555AE",
+          "target": "0x00454E10",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x004555BF",
+          "target": "0x00454E30",
+          "origin": "library"
+        },
+        {
+          "site": "0x004555C6",
+          "target": "0x006418AB",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x004555E4",
+          "target": "0x00414640",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x00455608",
+          "cleanup": 8
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045558F",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [0x66c238]"
+        },
+        {
+          "site": "0x00455596",
+          "mnemonic": "cmp",
+          "operands": "eax, 2"
+        },
+        {
+          "site": "0x004555B3",
+          "mnemonic": "mov",
+          "operands": "cx, word ptr [eax]"
+        },
+        {
+          "site": "0x004555CF",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [0x66c238]"
+        },
+        {
+          "site": "0x004555D6",
+          "mnemonic": "cmp",
+          "operands": "edx, 1"
+        },
+        {
+          "site": "0x004555F3",
+          "mnemonic": "imul",
+          "operands": "eax, ecx"
+        },
+        {
+          "site": "0x004555F7",
+          "mnemonic": "and",
+          "operands": "edx, 0x7fff"
+        },
+        {
+          "site": "0x004555FF",
+          "mnemonic": "sar",
+          "operands": "eax, 0xf"
+        }
+      ]
+    },
+    {
+      "address": "0x0045BA30",
+      "size": 221,
+      "span_end": "0x0045BB0C",
+      "role": "BattleEffectManager::DeleteFourListsAt0045BA30",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "3743bf93d6ae0ec33bc9baa57c0c2559af34b458fe8e72f83c63099f74ae1aad",
+      "cfg": [
+        1,
+        7
+      ],
+      "external_tails": [],
+      "subsystem": "BattleEffectManager",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 7,
+      "direct_calls": [
+        {
+          "site": "0x0045BA3C",
+          "target": "0x004453C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BA44",
+          "target": "0x004453C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BA76",
+          "target": "0x00445360",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BA97",
+          "target": "0x00445390",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BAB2",
+          "target": "0x00445400",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BABE",
+          "target": "0x00445440",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BACD",
+          "target": "0x004453E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BADA",
+          "target": "0x004453E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BAE8",
+          "target": "0x00640F15",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BAFF",
+          "target": "0x0045C0E0",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [],
+      "returns": [
+        {
+          "site": "0x0045BB0C",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045BA5B",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x14], 4"
+        },
+        {
+          "site": "0x0045BA6C",
+          "mnemonic": "imul",
+          "operands": "edx, edx, 0x14"
+        },
+        {
+          "site": "0x0045BA72",
+          "mnemonic": "lea",
+          "operands": "ecx, [eax + edx + 4]"
+        },
+        {
+          "site": "0x0045BA7B",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BA7D",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x0045BA8D",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x0045BA93",
+          "mnemonic": "lea",
+          "operands": "ecx, [edx + ecx + 4]"
+        },
+        {
+          "site": "0x0045BA9C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BA9E",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x0045BAD2",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": "0x0045BADF",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BAF5",
+          "mnemonic": "imul",
+          "operands": "edx, edx, 0x14"
+        },
+        {
+          "site": "0x0045BAFB",
+          "mnemonic": "lea",
+          "operands": "ecx, [eax + edx + 4]"
+        }
+      ]
+    },
+    {
+      "address": "0x0045BC30",
+      "size": 166,
+      "span_end": "0x0045BCD5",
+      "role": "BattleEffectManager::DispatchSelectedListAt0045BC30",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "ea978545a41a05499bd9a757a368393c49c28a782c9924f23422275199e39a66",
+      "cfg": [
+        1,
+        5
+      ],
+      "external_tails": [],
+      "subsystem": "BattleEffectManager",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 5,
+      "direct_calls": [
+        {
+          "site": "0x0045BC4B",
+          "target": "0x00445360",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BC62",
+          "target": "0x00445390",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BC72",
+          "target": "0x00445400",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BC7E",
+          "target": "0x00445440",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BC8D",
+          "target": "0x004453E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BC9F",
+          "target": "0x004453E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BCB9",
+          "target": "0x004453E0",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0045BCB1",
+          "operand": "dword ptr [edx + 0xc]"
+        },
+        {
+          "site": "0x0045BCCB",
+          "operand": "dword ptr [edx + 8]"
+        }
+      ],
+      "returns": [
+        {
+          "site": "0x0045BCD3",
+          "cleanup": 4
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045BC41",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x0045BC47",
+          "mnemonic": "lea",
+          "operands": "ecx, [edx + ecx + 4]"
+        },
+        {
+          "site": "0x0045BC58",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x0045BC5E",
+          "mnemonic": "lea",
+          "operands": "ecx, [edx + ecx + 4]"
+        },
+        {
+          "site": "0x0045BC92",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BC94",
+          "mnemonic": "movzx",
+          "operands": "ecx, byte ptr [eax + 0x67]"
+        },
+        {
+          "site": "0x0045BCA4",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BCAC",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BCB1",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 0xc]"
+        },
+        {
+          "site": "0x0045BCBE",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BCC6",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx]"
+        },
+        {
+          "site": "0x0045BCCB",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 8]"
+        }
+      ]
+    },
+    {
+      "address": "0x0045BCE0",
+      "size": 207,
+      "span_end": "0x0045BDAE",
+      "role": "BattleEffectManager::DispatchFourListsAt0045BCE0",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "5991b3501d280331a9ab38adbf11c73e77c36ed9a002514cb2943138b31aaea9",
+      "cfg": [
+        1,
+        7
+      ],
+      "external_tails": [],
+      "subsystem": "BattleEffectManager",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 7,
+      "direct_calls": [
+        {
+          "site": "0x0045BCEC",
+          "target": "0x004453C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BCF4",
+          "target": "0x004453C0",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BD26",
+          "target": "0x00445360",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BD47",
+          "target": "0x00445390",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BD62",
+          "target": "0x00445400",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x0045BD6E",
+          "target": "0x00445440",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BD7D",
+          "target": "0x004453E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x0045BD8F",
+          "target": "0x004453E0",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x0045BDA1",
+          "operand": "dword ptr [edx + 0x10]"
+        }
+      ],
+      "returns": [
+        {
+          "site": "0x0045BDAE",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045BD0B",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x14], 4"
+        },
+        {
+          "site": "0x0045BD1C",
+          "mnemonic": "imul",
+          "operands": "edx, edx, 0x14"
+        },
+        {
+          "site": "0x0045BD22",
+          "mnemonic": "lea",
+          "operands": "ecx, [eax + edx + 4]"
+        },
+        {
+          "site": "0x0045BD2B",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BD2D",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x0045BD3D",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x0045BD43",
+          "mnemonic": "lea",
+          "operands": "ecx, [edx + ecx + 4]"
+        },
+        {
+          "site": "0x0045BD4C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BD4E",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x0045BD82",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BD84",
+          "mnemonic": "movzx",
+          "operands": "ecx, byte ptr [eax + 0x68]"
+        },
+        {
+          "site": "0x0045BD94",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BD9C",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0045BDA1",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 0x10]"
+        }
+      ]
+    },
+    {
+      "address": "0x005F7D00",
+      "size": 114,
+      "span_end": "0x005F7D71",
+      "role": "AuxEffectManager::DispatchSelectedListAt005F7D00",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "77905fa4b9e3546107eeb0869d37a743fb08186907ad5ed134e7ccb84cd7ff1b",
+      "cfg": [
+        1,
+        3
+      ],
+      "external_tails": [],
+      "subsystem": "AuxEffectManager",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [
+        {
+          "site": "0x005F7D17",
+          "target": "0x005F80B0",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7D2A",
+          "target": "0x005F80E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7D3A",
+          "target": "0x005F8420",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x005F7D46",
+          "target": "0x005F8460",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7D55",
+          "target": "0x005F8400",
+          "origin": "library"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x005F7D67",
+          "operand": "dword ptr [edx + 8]"
+        }
+      ],
+      "returns": [
+        {
+          "site": "0x005F7D6F",
+          "cleanup": 4
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x005F7D11",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7D24",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7D5A",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7D62",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7D67",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 8]"
+        }
+      ]
+    },
+    {
+      "address": "0x005F7D80",
+      "size": 276,
+      "span_end": "0x005F7E93",
+      "role": "AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "b23cb9469c9501989cd48500296650b521e9edc094c651e5a790c1d41c776b2b",
+      "cfg": [
+        1,
+        10
+      ],
+      "external_tails": [],
+      "subsystem": "AuxEffectManager",
+      "evidence_id": "R109",
+      "return_count": 1,
+      "internal_branch_count": 10,
+      "direct_calls": [
+        {
+          "site": "0x005F7DAE",
+          "target": "0x005F8110",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x005F7DDD",
+          "target": "0x005F8130",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E01",
+          "target": "0x005F80B0",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E13",
+          "target": "0x005F80E0",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E1C",
+          "target": "0x005F8460",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E2B",
+          "target": "0x005F8400",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E3B",
+          "target": "0x005F8400",
+          "origin": "library"
+        },
+        {
+          "site": "0x005F7E49",
+          "target": "0x00640F15",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x005F7E66",
+          "target": "0x005F8290",
+          "origin": "unknown"
+        },
+        {
+          "site": "0x005F7E81",
+          "target": "0x005F8420",
+          "origin": "unknown"
+        }
+      ],
+      "indirect_calls": [
+        {
+          "site": "0x005F7DEF",
+          "operand": "dword ptr [eax + 4]"
+        }
+      ],
+      "returns": [
+        {
+          "site": "0x005F7E93",
+          "cleanup": 0
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x005F7D9B",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 4], 2"
+        },
+        {
+          "site": "0x005F7DA8",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7DCB",
+          "mnemonic": "cmp",
+          "operands": "edx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x005F7DD7",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7DE2",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7DEA",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx]"
+        },
+        {
+          "site": "0x005F7DEF",
+          "mnemonic": "call",
+          "operands": "dword ptr [eax + 4]"
+        },
+        {
+          "site": "0x005F7DFB",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7E0D",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7E30",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7E32",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ecx + 8], 0"
+        },
+        {
+          "site": "0x005F7E40",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7E60",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x14"
+        },
+        {
+          "site": "0x005F7E6B",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x005F7E6D",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [eax + 4]"
+        }
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "address": "0x00401C20",
+      "size": 340,
+      "span_end": "0x00401D73",
+      "role": "Graphics::CreateTexture",
+      "origin": "authored",
+      "origin_evidence": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed",
+      "body_sha256": "65a50e9224053fd34edb3a7ec0066e99b859448055f0c86062b3eef12699271b",
+      "cfg": [
+        1,
+        18
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x004076A0",
+      "size": 310,
+      "span_end": "0x004077D5",
+      "role": "SoundBank::LoadSerializedArchiveEntry",
+      "origin": "authored",
+      "origin_evidence": "R016",
+      "body_sha256": "b3b123ec724630c9793da2c5ef9f05049df75f6b3b57c59446d1a0c7085eafbf",
+      "cfg": [
+        1,
+        6
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0040AD80",
+      "size": 177,
+      "span_end": "0x0040AE30",
+      "role": "TextureManager::Initialize",
+      "origin": "authored",
+      "origin_evidence": "R017",
+      "body_sha256": "e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0040B1D0",
+      "size": 128,
+      "span_end": "0x0040B24F",
+      "role": "TextureManager::AllocateUnformattedSlots",
+      "origin": "authored",
+      "origin_evidence": "R017",
+      "body_sha256": "570580110f4777092fba3bb6ca93d760abb364c5dea46998a42e07ad0ed6cac4",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0040BB80",
+      "size": 31,
+      "span_end": "0x0040BB9E",
+      "role": "TextureManager::LoadArchiveTexturePackDefaultPalette",
+      "origin": "authored",
+      "origin_evidence": "R019",
+      "body_sha256": "1f9b2025eaabfc492d6ab8c1baa0423ea149912eac47d24c056d3a712a2e44bd",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0040DA00",
+      "size": 259,
+      "span_end": "0x0040DB02",
+      "role": "SpriteGeometry::InitializeRectangle",
+      "origin": "authored",
+      "origin_evidence": "R011",
+      "body_sha256": "c220120d45e82e1ff4f463590938163d3a327c375446bca8eb6ca9e7e24d8417",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00414300",
+      "size": 89,
+      "span_end": "0x00414358",
+      "role": "ReplayRecords::FindAvailablePath",
+      "origin": "authored",
+      "origin_evidence": "R035",
+      "body_sha256": "2d65ab5258cc61702673ad78e3c645fba70d58a6f296ec92559ad868b57a9466",
+      "cfg": [
+        1,
+        5
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00414620",
+      "size": 17,
+      "span_end": "0x00414630",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "d500a64daa2531474397cfd9958b6e1b88fc9b0b86d04aa2ea4015b50431bc91",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00414640",
+      "size": 217,
+      "span_end": "0x00414718",
+      "role": "VC7::deque_push_back_00414640",
+      "origin": "library",
+      "origin_evidence": "R072",
+      "body_sha256": "70fee47a3a0f2dccc2587b57a9887ba8efd7434cea8df4a3ce261404640a2420",
+      "cfg": [
+        1,
+        4
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0041C2E0",
+      "size": 1766,
+      "span_end": "0x0041C9C5",
+      "role": "FontSurface::RasterizeText",
+      "origin": "authored",
+      "origin_evidence": "R052",
+      "body_sha256": "2eb1e53bbddcc11a3e9aa0c3f1a9cab200fe7d09d154448fb7cc0dc18980a6d7",
+      "cfg": [
+        1,
+        65
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0041DAF0",
+      "size": 68,
+      "span_end": "0x0041DB33",
+      "role": "VC7::deque_At_0041DAF0",
+      "origin": "library",
+      "origin_evidence": "R078",
+      "body_sha256": "1e0a5af98ad23901143e11837619bddfc69ddcd7061b56b9d9123a6b3f86a801",
+      "cfg": [
+        1,
+        1
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0041DD50",
+      "size": 17,
+      "span_end": "0x0041DD60",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "d500a64daa2531474397cfd9958b6e1b88fc9b0b86d04aa2ea4015b50431bc91",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0041DD70",
+      "size": 68,
+      "span_end": "0x0041DDB3",
+      "role": "VC7::deque_At_0041DD70",
+      "origin": "library",
+      "origin_evidence": "R078",
+      "body_sha256": "15535f240aea08bbc4b97c6b17334fdedcad00e526df0d9a2e1aff5a9a2d6fc7",
+      "cfg": [
+        1,
+        1
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x004251C0",
+      "size": 34,
+      "span_end": "0x004251E1",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "9ff723978ea0aa946f4147ff70aef987da9b3dbd431196873a7dc4fa331eb85f",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00428F00",
+      "size": 951,
+      "span_end": "0x004292B6",
+      "role": "OptionsScene::AdvanceAt00428F00",
+      "origin": "authored",
+      "origin_evidence": "R066",
+      "body_sha256": "21e698c0f26cbca4c23286883c7de9a04cf91b1825c1090dfa320b09956f75fa",
+      "cfg": [
+        1,
+        37
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x004292E0",
+      "size": 2759,
+      "span_end": "0x00429DA6",
+      "role": "SceneRenderer::DrawAt004292E0",
+      "origin": "authored",
+      "origin_evidence": "R065",
+      "body_sha256": "3f87ee9297c62f647b729dcfd626e289d8c69147a477edc06e123988a76b7b00",
+      "cfg": [
+        1,
+        6
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00429F00",
+      "size": 563,
+      "span_end": "0x0042A132",
+      "role": "OptionsScene::ApplySelectionAt00429F00",
+      "origin": "authored",
+      "origin_evidence": "R066",
+      "body_sha256": "65e7c664f6846ac95a8085eeb2bba5eab32f5ad2c272cb3d2dfa049ad8e2d759",
+      "cfg": [
+        1,
+        13
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0042A560",
+      "size": 1581,
+      "span_end": "0x0042AB8C",
+      "role": "NameEntryScene::RenderPlayer",
+      "origin": "authored",
+      "origin_evidence": "R040",
+      "body_sha256": "b015167b5d47742206dc96dc08d6560d5b880b8d119af56d4caea2819428d094",
+      "cfg": [
+        1,
+        8
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0042AFF0",
+      "size": 280,
+      "span_end": "0x0042B107",
+      "role": "SceneText::DrawNameGlyphsAt0042AFF0",
+      "origin": "authored",
+      "origin_evidence": "R102",
+      "body_sha256": "582cae75647df937c4e306dda7493cf48bd5303d510141016b824d97e313e313",
+      "cfg": [
+        1,
+        3
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0042B380",
+      "size": 494,
+      "span_end": "0x0042B56D",
+      "role": "NameEntryScene::UpdateShared",
+      "origin": "authored",
+      "origin_evidence": "R040",
+      "body_sha256": "8ba26f2d27a8279ca52a9811ebdb7aa664726253349d2de6255a11f3ca75f1f0",
+      "cfg": [
+        1,
+        20
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0042B570",
+      "size": 1875,
+      "span_end": "0x0042BCC2",
+      "role": "NameEntryScene::RenderShared",
+      "origin": "authored",
+      "origin_evidence": "R040",
+      "body_sha256": "e78ba83457afde6a19e4be19918835dc931afe88872638b67459a0656b5f304b",
+      "cfg": [
+        1,
+        8
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0043B1B0",
+      "size": 859,
+      "span_end": "0x0043B50A",
+      "role": "BattleScene::UpdateFrame",
+      "origin": "authored",
+      "origin_evidence": "R041",
+      "body_sha256": "41d5e8ff3d7596064fc22aaef4f066696ff5fa4c5b3d225d88818d146bb9e2bf",
+      "cfg": [
+        1,
+        25
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0043D9D0",
+      "size": 1637,
+      "span_end": "0x0043E034",
+      "role": "BattleScene::RenderFrame",
+      "origin": "authored",
+      "origin_evidence": "R041",
+      "body_sha256": "0769d3037cfc0da55226de25fd3cd7ce2cba14edce50fb5d9af76ec8a6fedc7b",
+      "cfg": [
+        1,
+        31
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00442A70",
+      "size": 975,
+      "span_end": "0x00442E3E",
+      "role": "BattleCombat::ResolveAttackHitboxes",
+      "origin": "authored",
+      "origin_evidence": "R042",
+      "body_sha256": "caa6c81fe7ad20f2926780084e6620b835f0b889abba852a7f32cc10110ebc51",
+      "cfg": [
+        1,
+        44
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00445360",
+      "size": 35,
+      "span_end": "0x00445382",
+      "role": "VC7::deque_Begin_00445360",
+      "origin": "library",
+      "origin_evidence": "R079",
+      "body_sha256": "ca90ad44c99464bcd834b3c64e71254ca6a0ff036d0349a997ac17cab7407375",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00445390",
+      "size": 41,
+      "span_end": "0x004453B8",
+      "role": "VC7::deque_End_00445390",
+      "origin": "library",
+      "origin_evidence": "R084",
+      "body_sha256": "ebad3021b94ebbf286e1ceb7cbe78f9fd8b3cdff3f2103a58a30adf5bb830172",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x004453C0",
+      "size": 22,
+      "span_end": "0x004453D5",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "1ad623302163c546382a92d6cdc806e0490fa12ae3dd12c85960a41083f8655a",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x004453E0",
+      "size": 19,
+      "span_end": "0x004453F2",
+      "role": "VC7::deque_IteratorDereference_004453E0",
+      "origin": "library",
+      "origin_evidence": "R082",
+      "body_sha256": "4a47c1d6f93b299714ef9e7d78d1c733236ed47ffce2561b915bc613a0a6ebd0",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00445400",
+      "size": 54,
+      "span_end": "0x00445435",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "d132d826b06927e322134bd75982f0e72d65249a9300eac0c8fa8ca339687b62",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00445440",
+      "size": 33,
+      "span_end": "0x00445460",
+      "role": "VC7 STL generic ??9const_iterator",
+      "origin": "library",
+      "origin_evidence": "R032",
+      "body_sha256": "3ee4657fded583f2ed5ea975113cb3a2856f756f759284fbf3dbd93f7532e01d",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00449A60",
+      "size": 17,
+      "span_end": "0x00449A70",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "e3e4fafc86254701a05f419c4913994a1d39e46cf769cc731c9703b95f331976",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00454D00",
+      "size": 79,
+      "span_end": "0x00454D4E",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "137f93610dbba88e812ec408d2f3b686c128f6900bf0008cc84e68ae089b2637",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00454E10",
+      "size": 32,
+      "span_end": "0x00454E2F",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "6c0a4cc64bc39e19f12e7380eb8799c80d8708d32d93cc397bc98482ba3ee6ee",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00454E30",
+      "size": 164,
+      "span_end": "0x00454ED3",
+      "role": "VC7::deque_pop_front_00454E30",
+      "origin": "library",
+      "origin_evidence": "R072",
+      "body_sha256": "4d68e84fd29c986da0d859f5c60ab86c8a6078f3a0c70b36e4c28dca62d0f30a",
+      "cfg": [
+        1,
+        3
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00457010",
+      "size": 1151,
+      "span_end": "0x0045748E",
+      "role": "FighterState::ResetRound",
+      "origin": "authored",
+      "origin_evidence": "R045",
+      "body_sha256": "433c2da1fd0f5a01546b6705405766600525d855d1c92bb036ef97893913efd1",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0045C0E0",
+      "size": 19,
+      "span_end": "0x0045C0F2",
+      "role": "VC7::deque_Destructor_0045C0E0",
+      "origin": "library",
+      "origin_evidence": "R077",
+      "body_sha256": "bb8aa2502c2732e1f5577a74ba33669f72e2f2b92ab5ecb4f6078398609a2ec0",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x0045DD70",
+      "size": 60999,
+      "span_end": "0x0046CBB6",
+      "role": "ReimuFighter::AdvanceActionStatesAt0045DD70",
+      "origin": "authored",
+      "origin_evidence": "R063",
+      "body_sha256": "b78fa89a709b1cbbafdf4310c6fd81dd68369a9fa528a1852a64bb105ee93bc2",
+      "cfg": [
+        1,
+        1690
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F80B0",
+      "size": 35,
+      "span_end": "0x005F80D2",
+      "role": "VC7::deque_Begin_005F80B0",
+      "origin": "library",
+      "origin_evidence": "R079",
+      "body_sha256": "6c1ec514a6b31642d632ebab29078f0cad91dd295234daabc4d4c3f6f475f1d3",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F80E0",
+      "size": 41,
+      "span_end": "0x005F8108",
+      "role": "VC7::deque_End_005F80E0",
+      "origin": "library",
+      "origin_evidence": "R084",
+      "body_sha256": "b9bae11718c3e234fde98e7084ae2a349f85663dcac30cabce10a1d2d7f31936",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8110",
+      "size": 17,
+      "span_end": "0x005F8120",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "d500a64daa2531474397cfd9958b6e1b88fc9b0b86d04aa2ea4015b50431bc91",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8130",
+      "size": 68,
+      "span_end": "0x005F8173",
+      "role": "VC7::deque_At_005F8130",
+      "origin": "library",
+      "origin_evidence": "R078",
+      "body_sha256": "e822a4c622019eb5e6b638633e41156c6ae2a7377a2ab7fe308b435382725720",
+      "cfg": [
+        1,
+        1
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8290",
+      "size": 59,
+      "span_end": "0x005F82CA",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "1c2f8ab6afb0bc01ac0c19d6234babb68c293b5e9dcf838d1af534fd4fbd5d3b",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8400",
+      "size": 19,
+      "span_end": "0x005F8412",
+      "role": "VC7::deque_IteratorDereference_005F8400",
+      "origin": "library",
+      "origin_evidence": "R082",
+      "body_sha256": "672dc7b05c6ab0aa5d75aa4ea782b8d59ab501138670db3928bc505cc308dbc0",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8420",
+      "size": 54,
+      "span_end": "0x005F8455",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "d025272370503d10b143e857603d67f801dbc4766fef8d9329838b67463b60d0",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x005F8460",
+      "size": 33,
+      "span_end": "0x005F8480",
+      "role": "VC7 STL generic ??9const_iterator",
+      "origin": "library",
+      "origin_evidence": "R032",
+      "body_sha256": "4de3f64b4f40598e24be670610454af4d1f6fa54d75419e35a6e6d3b6f03b1bc",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00640611",
+      "size": 14,
+      "span_end": "0x0064061E",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "70610e39e10609c0e37185c56057a2c2e683d36388b5e0058cff2f1019430cf3",
+      "cfg": [
+        1,
+        1
+      ],
+      "external_tails": [
+        {
+          "site": "0x0064061A",
+          "target": "0x006405E0"
+        }
+      ]
+    },
+    {
+      "address": "0x006406AC",
+      "size": 117,
+      "span_end": "0x00640720",
+      "role": "__ftol2",
+      "origin": "library",
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG",
+      "body_sha256": "5333b186c02836974c6f792303aeb2c00d856316b93ccbbe65f51def6ae661b4",
+      "cfg": [
+        1,
+        5
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x00640F15",
+      "size": 5,
+      "span_end": "0x00640F19",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+      "cfg": [
+        0,
+        0
+      ],
+      "external_tails": [
+        {
+          "site": "0x00640F15",
+          "target": "0x00642A61"
+        }
+      ]
+    },
+    {
+      "address": "0x0064159D",
+      "size": 14,
+      "span_end": "0x006415AA",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x006416B0",
+      "size": 136,
+      "span_end": "0x00641737",
+      "role": "_strcmp",
+      "origin": "library",
+      "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG",
+      "body_sha256": "b88e392a72effabe7a1bc73017ee600186707911d4eda5691e692edb744e0c9c",
+      "cfg": [
+        2,
+        18
+      ],
+      "external_tails": []
+    },
+    {
+      "address": "0x006418AB",
+      "size": 34,
+      "span_end": "0x006418CC",
+      "role": "",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "body_sha256": "de2dd676029d751980505e6a3ef0890373ff372824ac95f33d49e5fabdf7a3fd",
+      "cfg": [
+        1,
+        0
+      ],
+      "external_tails": []
+    }
+  ],
+  "parent_calls": [
+    {
+      "parent": "0x0041C2E0",
+      "child": "0x0041C130",
+      "sites": [
+        "0x0041C9B9"
+      ]
+    },
+    {
+      "parent": "0x004076A0",
+      "child": "0x0041CF00",
+      "sites": [
+        "0x004076BC"
+      ]
+    },
+    {
+      "parent": "0x0042A560",
+      "child": "0x0042B110",
+      "sites": [
+        "0x0042A879"
+      ]
+    },
+    {
+      "parent": "0x00442A70",
+      "child": "0x004491E0",
+      "sites": [
+        "0x00442BC2"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00452B30",
+      "sites": [
+        "0x0046C372"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00455580",
+      "sites": [
+        "0x0046562F"
+      ]
+    },
+    {
+      "parent": "0x00457010",
+      "child": "0x0045BA30",
+      "sites": [
+        "0x0045738A"
+      ]
+    },
+    {
+      "parent": "0x0043D9D0",
+      "child": "0x0045BC30",
+      "sites": [
+        "0x0043DC35"
+      ]
+    },
+    {
+      "parent": "0x0043D9D0",
+      "child": "0x0045BCE0",
+      "sites": [
+        "0x0043DBB0"
+      ]
+    },
+    {
+      "parent": "0x0043D9D0",
+      "child": "0x005F7D00",
+      "sites": [
+        "0x0043DC90"
+      ]
+    },
+    {
+      "parent": "0x0043B1B0",
+      "child": "0x005F7D80",
+      "sites": [
+        "0x0043B3A3"
+      ]
+    }
+  ],
+  "virtual_slots": [
+    {
+      "address": "0x00657F3C",
+      "target": "0x00428F00",
+      "constructor": "0x00428D60",
+      "vtable": "0x00657F38"
+    },
+    {
+      "address": "0x00657F40",
+      "target": "0x004292E0",
+      "constructor": "0x00428D60",
+      "vtable": "0x00657F38"
+    },
+    {
+      "address": "0x00657FB0",
+      "target": "0x0042B380",
+      "constructor": "0x0042B1F0",
+      "vtable": "0x00657FAC"
+    },
+    {
+      "address": "0x00657FB4",
+      "target": "0x0042B570",
+      "constructor": "0x0042B1F0",
+      "vtable": "0x00657FAC"
+    }
+  ],
+  "readonly_float32": [
+    {
+      "address": "0x0065786C",
+      "value": 20.0,
+      "uses": [
+        {
+          "address": "0x0042B110",
+          "site": "0x0042B12A"
+        }
+      ]
+    },
+    {
+      "address": "0x00657F78",
+      "value": 19.0,
+      "uses": [
+        {
+          "address": "0x0042B110",
+          "site": "0x0042B137"
+        }
+      ]
+    },
+    {
+      "address": "0x00658E74",
+      "value": 8800.0,
+      "uses": [
+        {
+          "address": "0x00452B30",
+          "site": "0x00452BD9"
+        }
+      ]
+    },
+    {
+      "address": "0x00657B28",
+      "value": 900.0,
+      "uses": [
+        {
+          "address": "0x00452B30",
+          "site": "0x00452BDF"
+        }
+      ]
+    }
+  ],
+  "strings": [
+    {
+      "address": "0x00657D78",
+      "value": "data"
+    },
+    {
+      "address": "0x00657D80",
+      "value": "data\\system\\option.dat"
+    },
+    {
+      "address": "0x00657F7C",
+      "value": "datab"
+    },
+    {
+      "address": "0x00657F84",
+      "value": "data\\system\\replay.dat"
+    }
+  ],
+  "limitations": [
+    "All target callee extents are frozen, including unresolved generic helpers and two explicitly bounded external-tail contexts. Their origins remain independently pending.",
+    "Game policies establish ownership in each candidate; STL loops, imports and dynamic callees receive no origin credit.",
+    "Names, full owner layouts, original state and replay terminology remain inferred."
+  ]
+}

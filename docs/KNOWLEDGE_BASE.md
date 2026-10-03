@@ -1589,3 +1589,65 @@ reviewing bounded pending cohorts. The scanner's six combined reviewed-game-
 callee/parent candidates define the next R108 investigation, but their
 constructor/destructor-like shapes and reviewed neighbors do not prove
 ownership.
+
+## R108 — lifetime shape can preserve ownership uncertainty
+
+Complete cold VC7 source alternatives reproduce all 176 bytes of the six
+handoff candidates, including every call and vtable field. Five functions
+remain pending because explicit and implicit source alternatives emit the same
+complete bytes. Reviewed game callees and parents establish their runtime
+context, not whether their source bodies were authored. These are retained
+negative discrimination results, not failed or abandoned reviews.
+
+The stage destructor at `0x00449D40` is authored: its 31-byte vtable-writing
+virtual destructor matches explicit source and differs from complete 22-/30-
+byte implicit cleanup controls. The paired stage lifetime family and selected
+deleting slot corroborate this interpretation. Original names and the complete
+stage layout remain unknown. The camera initializer called at `this + 4`
+writes globals; it supplies no evidence for five member fields or object size.
+
+`0x0040EC8A` is retained as a 232-byte interior catch/tail candidate. Its bytes
+and cleanup call are frozen as bounded context, without accepting a complete
+owner extent or inferring compiler/library/authored ownership. The explicit
+source/target verifier records 103 context extents, 98 parent edges and nine
+selected readonly vtable slots. R108 adds one authored origin / 31 bytes and
+no source or exact credit.
+
+## R109 — scene, geometry, replay and list-dispatch policies
+
+Thirteen whole policies add 2,465 authored bytes. The options and name-entry
+initializers bind the actual resource paths, texture counts, field widths and
+selected reviewed scene slots. Ambiguity in their base constructor does not
+hide their own explicit policy. Font cleanup binds SelectObject, DeleteObject
+and ReleaseDC through the raw PE imports. Name lookup uses separate observed
+global lists; no complete global owner layout is recovered.
+
+The numeric label renderer uses signed quotient/remainder by ten and glyph
+index offset 52, with four other fixed glyph values 13, 40, 71 and 100. The
+bounds transform selects horizontal arithmetic using the signed byte at
+argument offset `+0x66`; six conversion call sites use the existing reviewed
+runtime helper, with four executed on each branch path. Resource parameters distinguish the observed mode
+branches, word 9999, indexed owner tables, and a float expression with complete
+readonly scalars 8800 and 900 plus integer 1201. The range selector distinguishes
+queue playback, word generation and recording using observed global modes;
+its signed arithmetic divides by 32768 with truncation toward zero. Original
+mode names and physical units remain unknown.
+
+Effect policies visit four 20-byte lists or two auxiliary lists. Signed-byte
+selectors and element bytes `+0x67/+0x68` control the observed virtual slots;
+auxiliary advancement and pruning test element dword `+8`. Generic STL helpers,
+unresolved calls and actual dynamic callees receive no ownership credit from
+these policies. The complete external tails in the two runtime-looking
+contexts remain explicit and independently pending.
+
+The verifier checks 51 bounded context extents, eleven parent edges, 157
+policy witnesses, three import bindings, four selected scene slots and four
+readonly scalars. R109 adds no source or exact credit. Eighteen explicit name
+aliases preserve earlier R104/R105 evidence after F008/F009 renamed functions;
+original hashes and roles remain unchanged. The exact baseline is still 60
+functions / 9,883 bytes; origin review has 1,297 pending candidates and the
+provisional authored denominator is 1,960,833 bytes.
+
+Both R108/R109 verifiers and the retained R104/R105 evidence passed the final
+no-auth public MCP acceptance, alongside 146 tests and a full 60/60-unit cold
+exact replay across eleven objects. No exact source or manifest was changed.
