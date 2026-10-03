@@ -1208,3 +1208,18 @@ typed calls bound to separately verified callee families. Five `end`
 lookalikes with different or unknown callees remain pending. The accepted
 bodies are library templates; original element types and exact
 reconstruction remain unresolved.
+
+## VC7 deque algorithm origins after R085
+
+Sixteen complete VC7 template loops reproduce the target's forward and
+backward deque copies and one fill, including `0x00420050` near the script
+owner. Fifteen 70-byte copy wrappers are distinguished by their typed calls
+to those independently verified forward/backward loop bodies. Eight
+11-byte pointer-category helpers and fifteen 29-byte iterator increment or
+decrement bodies also match complete source COMDATs and have exact
+source-typed calls from those reviewed parents. The cold verifier checks
+all 54 bodies, 2,889 bytes and 108 relocations with complete control flow.
+Seven synthetic record widths and six scalar/pointer variants establish
+template emission without identifying the game's original element types.
+Other external callees retain their existing origin decisions; R085 adds
+no authored source or exact credit.

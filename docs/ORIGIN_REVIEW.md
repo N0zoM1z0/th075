@@ -3203,3 +3203,33 @@ types remain unknown. R084 adds 30 library origins: 2,600 reviewed
 42 functions / 8,916 bytes against 1,950,893 provisional authored bytes
 (0.46%). R083 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37096707076.
+
+## R085 — VC7 deque copy/fill loops and corroborated helpers
+
+An independent VC7 probe instantiates deque algorithms for seven synthetic
+record widths and six scalar/pointer types. Sixteen complete target loop
+bodies reproduce eight `_Copy_opt`, seven `_Copy_backward_opt` and one
+`fill` template. These include the formerly pending 85-byte `0x00420050`
+helper beside the fighter script code. Original game element types and the
+ownership of other external callees remain unclaimed.
+
+Fifteen complete 70-byte wrappers share the same non-relocation bytes for
+`copy` and `copy_backward`. Each is distinguished by its typed call to a
+complete loop body verified in this batch; the exact source callee symbol
+must appear among that body's matching source definitions. Their other
+typed call binds a complete 11-byte `_Ptr_cat` body. Those eight short
+pointer-category helpers, eight 29-byte iterator increments and seven
+29-byte iterator decrements have complete source matches plus exact
+source-typed calls from the reviewed wrappers or loops. Three other
+increment/decrement lookalikes without this witness remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-algorithm-origins.py`
+cold-compiles the probe and checks all 54 full COMDAT bodies, 2,889 bytes,
+108 typed relocations, all source aliases, parent/callee witnesses, decoded
+control flow and origin ledgers. Evidence is in
+`config/vendor-deque-algorithm-origins.csv`. This grants library origin
+only, with no reconstruction source or exact credit. R085 reaches 2,654
+reviewed candidates (804 authored, 1,276 library, 574 compiler), with
+1,697 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%). R084 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37097140126.
