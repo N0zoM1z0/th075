@@ -3140,3 +3140,23 @@ library, 574 compiler), 1,800 pending. Exact remains 42 functions /
 8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R079
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37095934946.
+
+## R082 — VC7 iterator dereferences bound to verified callees
+
+Ten complete 19-byte deque iterator dereferences, totaling 190 bytes,
+match independently compiled VC7 source. Each has one typed call to a
+const-iterator dereference body already verified in R078. Its target body
+hash and library origin, the complete 19-byte caller, and the relocation
+destination are rechecked after cold-replaying the R078 callee batch.
+The bound callee is decisive: identical short instruction shells also
+appear with calls to vector helpers, unknown functions and authored game
+methods. Those lookalikes remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-dereference-origins.py`
+cold compiles the source and verifies all complete bodies, source aliases,
+typed calls, callee hashes, CFG and ledgers. Evidence is in
+`config/vendor-deque-dereference-origins.csv`. R082 adds ten library
+origins: 2,561 reviewed (804 authored, 1,183 library, 574 compiler),
+1,790 pending. Exact remains 42 functions / 8,916 bytes against
+1,950,893 provisional authored bytes (0.46%). R081 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37096270119.

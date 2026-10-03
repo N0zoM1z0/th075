@@ -1182,3 +1182,11 @@ and reviewed parent calls. The cold verifier chain checks every source
 body, target body and call field. Ghidra's imported `_Vector_iterator`
 labels on the 32-byte bodies are not origin evidence. The actual game
 element types remain unknown; these batches add library origin only.
+
+## VC7 iterator dereferences after R082
+
+Ten complete 19-byte deque iterator dereferences have a VC7 source match
+and a typed call to an independently verified const-iterator dereference.
+Other same-shape 19-byte bodies target unrelated or unknown functions and
+remain pending. R082 grants library origin only; original element types
+and reconstruction exactness remain unknown.
