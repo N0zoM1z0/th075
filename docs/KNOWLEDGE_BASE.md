@@ -1198,3 +1198,13 @@ source probe and have typed same-family calls from independently reviewed
 iterator additions. The reviewed parent is cold-replayed. Seven 27-byte
 advance-like bodies do not match this profile and remain pending. R083
 adds library origin only, with no reconstruction source or exact credit.
+
+## VC7 deque iterator comparison after R084
+
+Thirty complete target bodies reproduce VC7 deque const-iterator equality
+and subtraction, iterator subtraction, and `end`. The two const-iterator
+families have full no-relocation byte matches; the other 14 bodies have
+typed calls bound to separately verified callee families. Five `end`
+lookalikes with different or unknown callees remain pending. The accepted
+bodies are library templates; original element types and exact
+reconstruction remain unresolved.

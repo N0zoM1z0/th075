@@ -3179,3 +3179,27 @@ library, 574 compiler), 1,781 pending. Exact remains 42 functions /
 8,916 bytes against 1,950,893 provisional authored bytes (0.46%). R082
 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37096537793.
+
+## R084 — VC7 deque iterator comparisons and `end`
+
+An independent seven-width VC7 deque iterator probe reproduces 30 complete
+target bodies, totaling 1,576 bytes: seven 66-byte const-iterator
+subtractions, nine 60-byte const-iterator equality checks, seven 41-byte
+iterator subtractions and seven 41-byte `deque::end` methods. The first two
+families have no source relocations and match every target byte. Each
+iterator subtraction has a typed call to one of the seven newly verified
+const-iterator subtraction bodies. Each accepted `end` method has a typed
+call to an iterator constructor independently reviewed in R080. Five
+similar `end` bodies whose callee does not have that verified identity
+remain pending.
+
+`scripts/repo-python scripts/verify-vendor-deque-comparison-origins.py`
+cold-replays the iterator-constructor chain, cold compiles the new source,
+and checks complete source/target COMDATs, aliases, all 14 typed call
+bindings, callee hashes, control flow and ledgers. Evidence is in
+`config/vendor-deque-comparison-origins.csv`. The original game element
+types remain unknown. R084 adds 30 library origins: 2,600 reviewed
+(804 authored, 1,222 library, 574 compiler), 1,751 pending. Exact remains
+42 functions / 8,916 bytes against 1,950,893 provisional authored bytes
+(0.46%). R083 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37096707076.
