@@ -1421,3 +1421,21 @@ The `SetRect` fields bind the raw PE import name/DLL. The existing full
 495 bytes, without treating the table as code or dropping it from context.
 R100 adds twelve authored origins, growing the provisional denominator by
 780 bytes to 1,951,701; no reconstruction source or new exact credit is added.
+
+## Effect forwarding contracts after R101
+
+Eleven additional authored bodies combine reviewed game geometry/effect
+calls with explicit owner fields, fixed transform/color policy and signed
+coordinate arithmetic. The four background policies copy exactly 132 bytes;
+this does not recover a complete class layout. The midpoint helper divides
+the two observed signed coordinate sums by the complete readonly `2.0f`.
+Game manager and argument-owner offsets are observed independently for the
+fighter and auxiliary-object forwarders, with their original types unknown.
+
+The two 57-byte auxiliary forwarders have distinct 20-/24-byte RET cleanup
+despite otherwise similar argument forwarding. Preserve the unused incoming
+argument and separate method contracts in later reconstruction. Full game
+caller/callee anchors, selected virtual slots and complete extents verify
+ownership; no short-shape match or implicit compiler attribution is used.
+R101 adds eleven authored origins / 814 bytes, growing the provisional
+denominator to 1,952,515, with no source or exact credit.

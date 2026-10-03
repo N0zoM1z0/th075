@@ -1,0 +1,12 @@
+address,size,inferred_role,kind,body_sha256,callees,return_pop,manager_instruction,argument_pointer_offset,colour,evidence_id
+0x004424E0,96,BattleState::SpawnMidpointEffectAt004424E0,midpoint,72e3c2ed173979a05f8a06cb79c52784f39aabff94a296c52f809c6a9fee8484,0x005F78B0,8,"mov ecx, 0x6716c8",,,R101
+0x0044D910,88,BackgroundTransform::CopyDarkAt0044D910,transform,fcc240d5c16b7bbe5f665771f6c78c839a3c2e66edadd5f6a5f28ea7e1e739bb,0x004115C0;0x004116F0,12,,,0x80000000,R101
+0x0044DDC0,88,BackgroundTransform::CopyDarkAt0044DDC0,transform,803afa07ea3a36c9412c93569b28a248896651ee0d26a42248bce569a17cd852,0x004115C0;0x004116F0,12,,,0x80000000,R101
+0x00450040,88,BackgroundTransform::CopyLightAt00450040,transform,cd30018dfe3bb113b4b71b8b0f556477b7b4ebb8586d20debfa6b6437ac3fb69,0x004115C0;0x004116F0,12,,,0x40FFFFFF,R101
+0x00451BC0,88,BackgroundTransform::CopyLightAt00451BC0,transform,aec74127e8ed1ac0b9cd7ee8d709b493fb0b9b3348f8549edd7eb98f0861c529,0x004115C0;0x004116F0,12,,,0x40FFFFFF,R101
+0x00453A70,65,FighterState::SpawnBattleEffectAt00453A70,spawn,f19857f6fa99e799a70cad9a2e359eeec66811609f7cd7d33a681b8ab8f939b5,0x0045BB10,20,"mov ecx, dword ptr [eax + 0x2ec]",0x314,,R101
+0x00453C80,57,FighterState::SpawnAuxEffectAt00453C80,spawn,c4057befe59f62b4c8a1e44fa7bd6f505b77d81849e2f2d7f68d11e92bf8f479,0x005F7AA0,20,"mov ecx, 0x6716c8",0x314,,R101
+0x00453CC0,57,FighterState::SpawnAuxEffectAt00453CC0,spawn,ab5d617b850a157a4c452cb857797ada1813f5781a98b39262ffe17e5a84b465,0x005F7AA0,24,"mov ecx, 0x6716c8",0x314,,R101
+0x00453D00,61,FighterState::SpawnConfiguredAuxEffectAt00453D00,spawn,8e171c799261e9552d771eb85f36417979526f97d87e460fc6148ce92ea58513,0x005F7AA0,28,"mov ecx, 0x6716c8",0x314,,R101
+0x005FAB90,61,AuxEffect::SpawnPeerAt005FAB90,spawn,880a5115745e90929d87e33218bb682b72c04dadbbb6e123b6e255f373b59551,0x005F7AA0,20,"mov ecx, dword ptr [eax + 0x90]",0x80,,R101
+0x005FABD0,65,AuxEffect::SpawnConfiguredPeerAt005FABD0,spawn,9d49aba514d07edabe5844f72ada9c3fe98970508bccb03b311719a479c75333,0x005F7AA0,28,"mov ecx, dword ptr [edx + 0x90]",0x80,,R101

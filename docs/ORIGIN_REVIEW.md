@@ -3696,3 +3696,55 @@ There are 770 explicitly recorded authored bodies / 1,939,358 bytes. Exact
 remains 42 functions / 8,916 bytes against 1,951,701 provisional authored
 bytes (0.46%); no source or new exact credit. R099 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37110276865.
+
+## R101 — effect forwarders and fixed background transforms
+
+Eleven complete game bodies bind reviewed custom geometry/effect behavior:
+
+| Address | Bytes | Target-observed policy |
+| --- | ---: | --- |
+| `0x004424E0` | 96 | Sum signed coordinate fields `+0x34/+0x3C` and `+0x38/+0x40`, convert each sum to float, divide by the readonly `2.0f` and spawn an auxiliary effect through `0x006716C8` |
+| `0x0044D910`, `0x0044DDC0` | 88 each | Apply fixed scale/rotation arguments, copy 33 DWORDs and write output color word `0x80000000` |
+| `0x00450040`, `0x00451BC0` | 88 each | Apply the same fixed transform and 132-byte copy with output color word `0x40FFFFFF` |
+| `0x00453A70` | 65 | Spawn a battle effect through the game manager pointer at `+0x2EC`, supplying an argument-owner pointer at `+0x314` |
+| `0x00453C80`, `0x00453CC0` | 57 each | Spawn auxiliary effects through the global game manager, supplying `+0x314` and two default-zero arguments |
+| `0x00453D00` | 61 | Forward the configurable auxiliary-effect flags through the same global manager with argument-owner pointer `+0x314` |
+| `0x005FAB90` | 61 | Spawn a peer effect through manager pointer `+0x90` with argument-owner pointer `+0x80` and default-zero arguments |
+| `0x005FABD0` | 65 | Forward configurable peer-effect flags through the same observed owner fields |
+
+The four transforms call the whole reviewed `SpriteTransform::ScaleQuad`
+and `RotateQuad`; the seven effect policies call whole reviewed custom
+spawn implementations. The fixed stack literals include the float bit
+patterns for `0.3f`, `1.0f` and `160.0f`. Their original parameter/type
+spellings remain unknown. The copy width describes an observed 132-byte
+record operation, not a complete recovered class layout.
+
+`0x00453C80` returns with 20 bytes of stack cleanup, while `0x00453CC0`
+returns with 24. Their similar argument-forwarding instruction shapes do
+not justify collapsing the distinct method contracts or deleting an unused
+stack argument. The configurable variants return with 28 bytes. These are
+target ABI observations; no source declaration or exact reconstruction is
+introduced. Three public regressions preserve the cleanup distinction and
+reject ordinary RET or an unreviewed trailing instruction.
+
+`scripts/repo-python scripts/verify-effect-forwarder-origins.py` checks all
+814 bytes, complete CFG, direct call destinations, explicit game-manager
+and argument-owner fields, fixed transform/copy/color policy and terminal
+RET cleanup. It replays the complete authored ledger and freezes eight
+independent whole game anchors: five callees and three previously reviewed
+caller owners. Four complete-parent call edges corroborate battle/fighter/
+auxiliary-object context. Four selected readonly virtual slots corroborate
+the background transform entrypoints; their presence does not establish
+full vtable extents. Attested Ghidra caller/reference queries supplied their
+own completion markers. The observed divisor is checked as one complete
+readonly float at `0x00657480`; no additional data origin is inferred.
+
+The full verifier passed locally and through the no-auth public Funnel MCP.
+Public CI passed all 132 tests, target-required tracking and SVG freshness.
+
+R101 adds eleven authored origins / 814 bytes, reaching 2,943 reviewed
+candidates (828 authored, 1,540 library, 575 compiler), with 1,408 pending.
+There are 781 explicitly recorded authored bodies / 1,940,172 bytes. Exact
+remains 42 functions / 8,916 bytes against 1,952,515 provisional authored
+bytes (0.46%); no source or exact credit. R100 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37110975044.

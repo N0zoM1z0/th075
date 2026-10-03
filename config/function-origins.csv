@@ -1483,7 +1483,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004423C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004423E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00442400,authored,BattleCollision,authored,target-observed,R045
-0x004424E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004424E0,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x00442540,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00442580,authored,BattleCombat,authored,target-observed,R042
 0x00442A70,authored,BattleCombat,authored,target-observed,R042
@@ -1713,7 +1713,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044D620,authored,BattleEffect,authored,target-observed,R042
 0x0044D8F0,authored,BackgroundStage,authored,target-observed,R058
 0x0044D900,authored,BackgroundStage,authored,target-observed,R058
-0x0044D910,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044D910,authored,BackgroundTransform,authored,complete-game-transform-or-effect-policy,R101
 0x0044D970,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044D9A0,authored,BackgroundStage,authored,target-observed,R057
 0x0044D9C0,authored,BackgroundStage,authored,target-observed,R055
@@ -1721,7 +1721,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044DA90,authored,BattleEffect,authored,target-observed,R042
 0x0044DDA0,authored,BackgroundStage,authored,target-observed,R058
 0x0044DDB0,authored,BackgroundStage,authored,target-observed,R058
-0x0044DDC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044DDC0,authored,BackgroundTransform,authored,complete-game-transform-or-effect-policy,R101
 0x0044DE20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044DE50,authored,BackgroundStage,authored,target-observed,R057
 0x0044DE70,authored,BackgroundStage,authored,target-observed,R055
@@ -1777,7 +1777,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044F850,authored,BattleEffect,authored,target-observed,R042
 0x0044FAF0,authored,BattleEffect,authored,target-observed,R042
 0x0044FD40,authored,BattleEffect,authored,target-observed,R042
-0x00450040,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00450040,authored,BackgroundTransform,authored,complete-game-transform-or-effect-policy,R101
 0x004500A0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x004500D0,authored,BackgroundStage,authored,target-observed,R057
 0x004500F0,authored,BackgroundStage,authored,target-observed,R055
@@ -1825,7 +1825,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00451440,authored,BattleEffect,authored,target-observed,R042
 0x004519F0,authored,BackgroundStage,authored,target-observed,R058
 0x00451A00,authored,FighterState,authored,target-observed,R045
-0x00451BC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00451BC0,authored,BackgroundTransform,authored,complete-game-transform-or-effect-policy,R101
 0x00451C20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00451C50,authored,BackgroundStage,authored,target-observed,R057
 0x00451C70,authored,BackgroundStage,authored,target-observed,R055
@@ -1845,13 +1845,13 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00452C10,authored,FighterState,authored,target-observed,R045
 0x00452F10,authored,FighterState,authored,target-observed,R045
 0x00453A10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00453A70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00453A70,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x00453AC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453B50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453BE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00453C80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00453CC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00453D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00453C80,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
+0x00453CC0,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
+0x00453D00,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x00453D40,authored,FighterState,authored,target-observed-game-policy-and-reviewed-callees,R100
 0x00453D60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00453D80,authored,FighterBase,authored,target-observed,R068
@@ -2630,8 +2630,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FAAD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAAE0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x005FAB10,authored,CharacterAuxObject,authored,target-observed,R064
-0x005FAB90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005FABD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FAB90,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
+0x005FABD0,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x005FAC20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAC40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005FAC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
