@@ -1338,3 +1338,16 @@ established while the original specialization and linker-folding history
 remain unknown. All four wrapper bodies and all callee variants cold-
 replay. R094 grants four new library origins only, with no exact or
 reconstruction-source credit.
+
+## VC7 vector/allocator wrapper callees after R095
+
+Eleven complete assignment, iterator-addition and allocator-construction
+wrappers reproduce 383 bytes and eleven typed calls. Each exact source
+callee variant matches the entire independently reviewed same-family
+callee. Older synthetic record and DirectInput-pointer probes provide
+method-origin evidence, not the game's original element types. Complete
+iterator alias/base bodies, vector assignment implementations and
+construction implementations cold-replay before the new wrapper/callee
+comparison. Other tiny lookalikes and exception methods with unresolved
+data/vtable fields remain pending. R095 adds library origins only; source
+presence and exact reconstruction are unchanged.

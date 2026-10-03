@@ -3464,3 +3464,34 @@ and reaches 2,899 reviewed candidates (804 authored, 1,521 library,
 against 1,950,893 provisional authored bytes (0.46%); no source or exact
 credit. R093 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37105951162.
+
+## R095 — vector/allocator wrappers with independent complete callees
+
+Four complete 29-byte vector `assign` wrappers bind to independently
+reviewed complete 96-byte `_Assign_n` bodies. Four complete 45-byte
+iterator additions bind to independently reviewed 32-byte iterator
+advance bodies. Three complete 29-byte allocator `construct` wrappers
+bind to independently reviewed 58-byte `_Construct` implementations.
+All eleven wrapper bodies reproduce 383 bytes and eleven typed calls.
+Every wrapper's exact source callee variant also reproduces the entire
+reviewed target callee, preserving consistent source types without
+claiming the game's original element types. Existing no-relocation alias
+records for iterator advances retain their own independently cold-checked
+base COMDAT evidence.
+
+`scripts/repo-python scripts/verify-vendor-vector-wrapper-origins.py`
+cold-replays R034 additional-record, R051 identical-body and R091
+construction evidence, then cold-compiles the vector probe and checks
+full wrapper/callee COMDATs, source aliases, hashes, typed call bindings,
+complete control flow and origin ledgers. Evidence is in
+`config/vendor-vector-wrapper-origins.csv`. Public witness tests reject
+wrong callee source families and removed iterator anchors. Exception
+constructor/destructor lookalikes with unresolved vtable/data fields
+remain pending.
+The complete cold verifier also passed through the no-auth public Funnel MCP.
+
+R095 reaches 2,910 reviewed candidates (804 authored, 1,532 library,
+574 compiler), with 1,441 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%), with no new source
+or exact credit. R094 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37106349760.
