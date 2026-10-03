@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 COHORTS = {
     "R100": ("short-game-origin-evidence.json", 12, 780, 27),
     "R102": ("batch-game-origin-evidence.json", 17, 2051, 33),
+    "R103": ("batch-state-origin-evidence.json", 33, 2600, 22),
 }
 
 
@@ -38,6 +39,24 @@ def check_calls(instructions, recorded, origins):
     if actual != expected or any(origins.get(key, {}).get("origin") != "authored"
                                  for _, key in actual):
         raise ValueError("short game direct calls differ or lack reviewed game ownership")
+
+
+def check_readonly_float32(row, target, comparison, sections, decoded):
+    """Bind each observed scalar to complete readonly storage and actual uses."""
+    pointer = int(row["address"], 16)
+    if (comparison.pe_bytes_at(target, pointer, 4) != struct.pack("<f", row["value"])
+            or not any(base <= pointer and pointer + 4 <= base + size and flags & 0x40000000
+                       and not flags & 0xA0000000 for base, size, flags in sections)
+            or not row["uses"]):
+        raise ValueError("short game float scalar lacks complete readonly target storage")
+    for use in row["uses"]:
+        instruction = next((item for item in decoded[use["address"]]
+                            if f"0x{item.address:08X}" == use["site"]), None)
+        if instruction is None or not any(
+                operand.type == X86_OP_MEM and operand.size == 4
+                and not operand.mem.base and not operand.mem.index
+                and operand.mem.disp == pointer for operand in instruction.operands):
+            raise ValueError("short game float scalar lacks its full-width instruction binding")
 
 
 def main():
@@ -192,6 +211,10 @@ def main():
         literal = row["value"].encode("ascii") + b"\0"
         if comparison.pe_bytes_at(target, pointer, len(literal)) != literal:
             raise ValueError("short game resource/log literal differs")
+    for row in manifest.get("readonly_float32", []):
+        if any(use["address"] not in keys for use in row["uses"]):
+            raise ValueError("short game float scalar use falls outside the cohort")
+        check_readonly_float32(row, target, comparison, sections, decoded)
     print(f"Short game origins {batch} OK: {expected_count} whole authored bodies / {expected_bytes} bytes; "
           f"{expected_anchors} independently reviewed "
           "whole anchors and complete call/parent/policy contexts; "

@@ -49,3 +49,14 @@ are still pending. The updated scan has forty-seven whole-body groups and
 182 extent questions; these numbers are diagnostic queues, not new origins.
 Both the scanner and R102 cohort verifier have passed through the existing
 no-auth public HTTPS MCP, using `scripts/repo-python` in each Bash request.
+
+R103 reused the same shortlist and verifier for thirty-three further state/
+record policies, each with an independently reviewed whole parent. Replay:
+
+```bash
+scripts/repo-python scripts/verify-short-game-origins.py --cohort R103
+```
+
+This cohort and its four readonly scalar bindings also passed through the
+public MCP. There are now 1,358 pending candidates; refresh the private scan
+after every accepted batch.

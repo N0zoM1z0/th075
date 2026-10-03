@@ -3808,3 +3808,69 @@ bodies / 1,942,223 bytes. Exact remains 42 functions / 8,916 bytes against
 1,954,566 provisional authored bytes (0.46%); no source or exact credit.
 R101 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37111565207.
+
+## R103 — grouped state, record and display policies
+
+The refreshed batch shortlist supplied thirty-three complete game policies /
+2,600 bytes. Every member has an independently reviewed whole authored parent;
+no origin is inferred solely from a short field accessor or caller name.
+Manual review reconciled all bytes, exits, signed field widths and indexed
+policy fields before adding this cohort to the shared verifier:
+
+| Address | Bytes | Observed policy |
+| --- | ---: | --- |
+| `0x0040FA30` | 142 | Increment the `+0x64` word, wrap against `+0x72`, then advance/wrap `+0x62` against `+0x70` with virtual dispatch |
+| `0x00412620` | 64 | Reset five camera globals, including the explicit `20.0f` parameter |
+| `0x00413420` | 64 | Set font-surface parameters and reset its dword/byte policy fields |
+| `0x00413A60` | 85 | Open the object's filename, read 60 bytes to `+0x108`, then close the handle in the reviewed snapshot-restore path |
+| `0x00416CE0`, `0x00416DC0` | 108, 93 | Set/test progress bits at `+0x16A9C` with signed-word indices and inclusive range 0 through 320 |
+| `0x0041C060`, `0x0041C0D0` | 99, 83 | Configure/create a font with explicit constants, then acquire a DC, select it and record text metrics |
+| `0x00425130` | 92 | Increment the selected game record using signed-byte selectors and strides `0x17F0` / `0x5FC` |
+| `0x00441FE0`, `0x00442010` | 44 each | Read selected unsigned word tables at `+0x268` / `+0x394` with the game record stride |
+| `0x00442540` | 51 | Reset four collision bounds to -10000 / +10000 |
+| `0x004451D0`, `0x00445210`, `0x00445250`, `0x00445290` | 55, 55, 50, 50 | Set/get selected game-record dwords at `+8` / `+12` with both observed strides |
+| `0x00446D60` | 32 | Set the HUD object's `+0x60` dword to 150 and store its argument byte at `+0x64` |
+| `0x004492C0` | 68 | Combine four signed rectangle-edge differences and arithmetic-shift the sign bit, returning 0 / -1 |
+| `0x00453A10`, `0x00453E20` | 89, 51 | Reset six auxiliary dwords at `+0x4F8..+0x50C` and four motion fields at `+0x50..+0x5C` in active game update paths |
+| `0x00453E80` | 37 | Store the `+0x3B8` signed-word argument only when nonnegative |
+| `0x00453EB0` | 181 | Choose signed camera offsets from the argument, facing byte and opponent coordinate; write observed globals with 0 / ±50 policies |
+| `0x00454A70` | 35 | Set `+0x538` to `0xF0` and `+0x539` from the argument byte |
+| `0x00454EE0` | 133 | Check horizontal limits using complete readonly scalars 40, 0, 880 and 1280; return the observed -1 / 0 / 1 byte policy |
+| `0x00454F90`, `0x00454FD0`, `0x00455070` | 58, 61, 56 | Test signed state-word ranges 50–149, 150–199 and 95–99 |
+| `0x004550B0` | 130 | Update the `+0x66` facing byte from relative opponent coordinates and report whether it changed |
+| `0x00455500` | 118 | Save seven selected collision/state fields with their original dword, byte and word widths |
+| `0x004574B0` | 25 | Bind the opponent pointer at `+0x2E8` in the reviewed character-loading path |
+| `0x0045CD50`, `0x0045CD70` | 25, 75 | Store notice-related bytes, retaining signed-index bounds and independent flag updates |
+| `0x0045D710` | 247 | Advance two signed-word levels according to mode 0/1/2, with limits 25 and 5 and guarded decrements |
+
+`verify-short-game-origins.py --cohort R103` replays all thirty-three full
+extents, 185 selected policy instructions, 22 whole independent parents and
+33 complete parent edges. Its nine indirect calls include seven IAT bindings
+decoded from raw PE imports and two virtual dispatches without a credited
+dynamic target. Four full-width readonly float observations bind all six
+actual instruction uses. These are target scalar observations, not COFF
+section matches or exact reconstruction evidence.
+
+The camera reset's writes to nonmember globals and its explicit nonzero
+parameter establish game policy even though it returns `this`; its ownership
+does not follow from a generic constructor shape. Other lifetime-only wrappers,
+generic hexadecimal conversion and container-like helpers remain pending.
+Original names, full object layouts and several field meanings are inferred
+or unknown. In particular, a word range or dword value does not by itself
+identify a named action, frame rate or timer unit.
+
+Three attested Ghidra caller queries respected the sixteen-address limit and
+each returned its completion marker. Local and no-auth public HTTPS MCP
+cohort replays passed. Five scalar regressions cover value, readonly storage,
+actual pointer and operand-width binding. After regenerating the progress
+card, local CI passed 141 public tests, target-required tracking and progress
+freshness; `git diff --check` passed.
+Both older shared cohorts R100 and R102 passed again, including R100's full
+cold blend-mode context and switch table.
+
+R103 reaches 2,993 reviewed candidates (878 authored, 1,540 library, 575
+compiler), with 1,358 pending. There are 831 explicitly recorded authored
+bodies / 1,944,823 bytes. Exact remains 42 functions / 8,916 bytes against
+1,957,166 provisional authored bytes (0.46%); no source or exact credit.
+R102 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37113017957.

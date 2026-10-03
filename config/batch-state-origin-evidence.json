@@ -1,0 +1,2187 @@
+{
+  "evidence_id": "R103",
+  "functions": [
+    {
+      "address": "0x0040FA30",
+      "size": 142,
+      "role": "AnimationState::AdvanceNestedFrameAt0040FA30",
+      "subsystem": "AnimationState",
+      "body_sha256": "b74aae06c3c0eb49e82597de28b9553e1445815e45c57010e19124b0ca84b65c",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "site": "0x0040FA99",
+          "operand": "dword ptr [edx]"
+        },
+        {
+          "site": "0x0040FAAC",
+          "operand": "dword ptr [edx]"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0040FA3A",
+          "mnemonic": "mov",
+          "operands": "cx, word ptr [eax + 0x64]"
+        },
+        {
+          "site": "0x0040FA45",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0x64], cx"
+        },
+        {
+          "site": "0x0040FA53",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [edx + 0x72]"
+        },
+        {
+          "site": "0x0040FA5E",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x64], 0"
+        },
+        {
+          "site": "0x0040FA72",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x62], ax"
+        },
+        {
+          "site": "0x0040FA80",
+          "mnemonic": "movsx",
+          "operands": "edx, word ptr [ecx + 0x70]"
+        },
+        {
+          "site": "0x0040FA8B",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x62], 0"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00412620",
+      "size": 64,
+      "role": "CameraMotion::ResetParametersAt00412620",
+      "subsystem": "CameraMotion",
+      "body_sha256": "5cbfbb4ed7f9e8380bb4991739067876ee642797a60b3321491128d9e486b77d",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00412627",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713ec], 0"
+        },
+        {
+          "site": "0x00412631",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x67140c], 0x41a00000"
+        },
+        {
+          "site": "0x0041263B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713f8], 0"
+        },
+        {
+          "site": "0x00412645",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671410], 0"
+        },
+        {
+          "site": "0x0041264F",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713fc], 0"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00413420",
+      "size": 64,
+      "role": "FontSurface::ConfigureTextAt00413420",
+      "subsystem": "FontSurface",
+      "body_sha256": "b2168041d4e4d9617977f8a28a3e2aa97a11f72188c8261f782e97216415b651",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0041342D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 4], ecx"
+        },
+        {
+          "site": "0x00413436",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 8], eax"
+        },
+        {
+          "site": "0x0041343C",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x10], 0"
+        },
+        {
+          "site": "0x00413446",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x15], 0"
+        },
+        {
+          "site": "0x0041344D",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x14], 0"
+        },
+        {
+          "site": "0x00413457",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x25], dl"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00413A60",
+      "size": 85,
+      "role": "GameState::ReadSnapshotHeaderAt00413A60",
+      "subsystem": "GameState",
+      "body_sha256": "a64e819aca08d030fa6326f31e0ada81334e475ace8089f6cf49f5b6a7468a84",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "site": "0x00413A82",
+          "operand": "dword ptr [0x657130]",
+          "iat_slot": "0x00657130",
+          "dll": "KERNEL32.dll",
+          "symbol": "CreateFileA"
+        },
+        {
+          "site": "0x00413AA1",
+          "operand": "dword ptr [0x65712c]",
+          "iat_slot": "0x0065712C",
+          "dll": "KERNEL32.dll",
+          "symbol": "ReadFile"
+        },
+        {
+          "site": "0x00413AAB",
+          "operand": "dword ptr [0x657138]",
+          "iat_slot": "0x00657138",
+          "dll": "KERNEL32.dll",
+          "symbol": "CloseHandle"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x00413A70",
+          "mnemonic": "push",
+          "operands": "3"
+        },
+        {
+          "site": "0x00413A76",
+          "mnemonic": "push",
+          "operands": "0x80000000"
+        },
+        {
+          "site": "0x00413A7E",
+          "mnemonic": "add",
+          "operands": "eax, 4"
+        },
+        {
+          "site": "0x00413A91",
+          "mnemonic": "push",
+          "operands": "0x3c"
+        },
+        {
+          "site": "0x00413A96",
+          "mnemonic": "add",
+          "operands": "edx, 0x108"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00416CE0",
+      "size": 108,
+      "role": "GameProgress::SetUnlockBitAt00416CE0",
+      "subsystem": "GameProgress",
+      "body_sha256": "957dee189131c6559bde1a9a5715e4176e5cc8404e4b1132e349321a7f3b23e6",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00416CE8",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00416CEC",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x140"
+        },
+        {
+          "site": "0x00416CF7",
+          "mnemonic": "test",
+          "operands": "ecx, ecx"
+        },
+        {
+          "site": "0x00416D16",
+          "mnemonic": "jns",
+          "operands": "0x416d1d"
+        },
+        {
+          "site": "0x00416D27",
+          "mnemonic": "or",
+          "operands": "esi, dword ptr [ecx + eax*4 + 0x16a9c]"
+        },
+        {
+          "site": "0x00416D3E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + eax*4 + 0x16a9c], esi"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00416DC0",
+      "size": 93,
+      "role": "GameProgress::TestUnlockBitAt00416DC0",
+      "subsystem": "GameProgress",
+      "body_sha256": "df52c9a7f30a5580c76056b8fdc2620d96b436bd89d50ab9d708189cef7cab29",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00416DC7",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00416DCB",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x140"
+        },
+        {
+          "site": "0x00416DD6",
+          "mnemonic": "test",
+          "operands": "ecx, ecx"
+        },
+        {
+          "site": "0x00416DF7",
+          "mnemonic": "jns",
+          "operands": "0x416dfe"
+        },
+        {
+          "site": "0x00416E08",
+          "mnemonic": "and",
+          "operands": "edx, dword ptr [ecx + eax*4 + 0x16a9c]"
+        },
+        {
+          "site": "0x00416E15",
+          "mnemonic": "neg",
+          "operands": "eax"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x0041C060",
+      "size": 99,
+      "role": "TextRasterizer::CreateFontAt0041C060",
+      "subsystem": "TextRasterizer",
+      "body_sha256": "7787306d92a91e07f5c22dcb0bd14abd54b60853e61fbf0a80f6fc49531dc9c7",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "site": "0x0041C0B1",
+          "operand": "dword ptr [0x657044]",
+          "iat_slot": "0x00657044",
+          "dll": "GDI32.dll",
+          "symbol": "CreateFontA"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0041C06D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x10], ecx"
+        },
+        {
+          "site": "0x0041C076",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x28], al"
+        },
+        {
+          "site": "0x0041C07F",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x29], dl"
+        },
+        {
+          "site": "0x0041C088",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x2a], cl"
+        },
+        {
+          "site": "0x0041C08F",
+          "mnemonic": "push",
+          "operands": "0x31"
+        },
+        {
+          "site": "0x0041C0A2",
+          "mnemonic": "push",
+          "operands": "0x190"
+        },
+        {
+          "site": "0x0041C0BA",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 8], eax"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x0041C0D0",
+      "size": 83,
+      "role": "TextRasterizer::SelectFontAt0041C0D0",
+      "subsystem": "TextRasterizer",
+      "body_sha256": "e24b2a690079d62be41af03135640adb47899f3ecaa2cfeef65c4a956ddad65a",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [
+        {
+          "site": "0x0041C0DF",
+          "operand": "dword ptr [0x657218]",
+          "iat_slot": "0x00657218",
+          "dll": "USER32.dll",
+          "symbol": "GetDC"
+        },
+        {
+          "site": "0x0041C0F9",
+          "operand": "dword ptr [0x657048]",
+          "iat_slot": "0x00657048",
+          "dll": "GDI32.dll",
+          "symbol": "SelectObject"
+        },
+        {
+          "site": "0x0041C110",
+          "operand": "dword ptr [0x657040]",
+          "iat_slot": "0x00657040",
+          "dll": "GDI32.dll",
+          "symbol": "GetTextMetricsA"
+        }
+      ],
+      "instruction_witnesses": [
+        {
+          "site": "0x0041C0DC",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0041C0E8",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 4], eax"
+        },
+        {
+          "site": "0x0041C0FF",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x3c]"
+        },
+        {
+          "site": "0x0041C105",
+          "mnemonic": "lea",
+          "operands": "edx, [ebp - 0x38]"
+        },
+        {
+          "site": "0x0041C119",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x34]"
+        },
+        {
+          "site": "0x0041C11C",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x2c], eax"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00425130",
+      "size": 92,
+      "role": "GameProgress::IncrementSelectedRecordAt00425130",
+      "subsystem": "GameProgress",
+      "body_sha256": "0fb4c8bcd359efb606e39a0f39282fe764abcb7fbb2c7ebbd38699a100e8dd89",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0042513A",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac5]"
+        },
+        {
+          "site": "0x00425141",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x5fc"
+        },
+        {
+          "site": "0x0042514A",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x16ac4]"
+        },
+        {
+          "site": "0x00425151",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x17f0"
+        },
+        {
+          "site": "0x0042515A",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + ecx + 4]"
+        },
+        {
+          "site": "0x0042515E",
+          "mnemonic": "add",
+          "operands": "ecx, 1"
+        },
+        {
+          "site": "0x00425184",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + eax + 4], ecx"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x004492C0",
+      "size": 68,
+      "role": "BattleCollision::TestRectangleOverlapAt004492C0",
+      "subsystem": "BattleCollision",
+      "body_sha256": "1886e4cd37e16b4cd7cf53cebccd9b6389e746d2c772d6573b5947a35d1970d0",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004492CF",
+          "mnemonic": "sub",
+          "operands": "eax, dword ptr [ecx + 8]"
+        },
+        {
+          "site": "0x004492DA",
+          "mnemonic": "sub",
+          "operands": "edx, dword ptr [ecx + 8]"
+        },
+        {
+          "site": "0x004492E8",
+          "mnemonic": "sub",
+          "operands": "ecx, dword ptr [edx + 0xc]"
+        },
+        {
+          "site": "0x004492F6",
+          "mnemonic": "sub",
+          "operands": "edx, dword ptr [ecx + 0xc]"
+        },
+        {
+          "site": "0x004492FB",
+          "mnemonic": "sar",
+          "operands": "eax, 0x1f"
+        },
+        {
+          "site": "0x00449301",
+          "mnemonic": "ret",
+          "operands": "8"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00453A10",
+      "size": 89,
+      "role": "FighterState::ClearAuxiliaryWordsAt00453A10",
+      "subsystem": "FighterState",
+      "body_sha256": "7d00c5c8790ad20628130e03aa141479675f11bd91f9b5b0943508bfaba60478",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453A1A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x4f8], 0"
+        },
+        {
+          "site": "0x00453A27",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x4fc], 0"
+        },
+        {
+          "site": "0x00453A34",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x500], 0"
+        },
+        {
+          "site": "0x00453A41",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x504], 0"
+        },
+        {
+          "site": "0x00453A4E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x508], 0"
+        },
+        {
+          "site": "0x00453A5B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x50c], 0"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00453EB0",
+      "size": 181,
+      "role": "FighterState::AdjustCameraOffsetAt00453EB0",
+      "subsystem": "FighterState",
+      "body_sha256": "bb1b497421d7a0e85b4f04b389b40585ad011b71357600d3650af772b6e9a0ba",
+      "return_count": 1,
+      "internal_branch_count": 8,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453EB9",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00453ECE",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ecx + 0x2cc]"
+        },
+        {
+          "site": "0x00453EDD",
+          "mnemonic": "imul",
+          "operands": "eax, eax, -0x32"
+        },
+        {
+          "site": "0x00453EE6",
+          "mnemonic": "fstp",
+          "operands": "dword ptr [0x6713ec]"
+        },
+        {
+          "site": "0x00453EF5",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 8]"
+        },
+        {
+          "site": "0x00453EFB",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [edx + 0x48]"
+        },
+        {
+          "site": "0x00453F11",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x67140c], 0xc2480000"
+        },
+        {
+          "site": "0x00453F21",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x32"
+        },
+        {
+          "site": "0x00453F55",
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x67140c], 0x42480000"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00454EE0",
+      "size": 133,
+      "role": "FighterState::CheckHorizontalLimitsAt00454EE0",
+      "subsystem": "FighterState",
+      "body_sha256": "7e4a0d64a02e7439199a772fe4b1cbe50d3c5bcf9e4c3d6b0c6eedb29844e1af",
+      "return_count": 1,
+      "internal_branch_count": 6,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00454EEA",
+          "mnemonic": "fld",
+          "operands": "dword ptr [eax + 0x44]"
+        },
+        {
+          "site": "0x00454EED",
+          "mnemonic": "fsub",
+          "operands": "dword ptr [0x657858]"
+        },
+        {
+          "site": "0x00454EF3",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [0x65782c]"
+        },
+        {
+          "site": "0x00454F12",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [0x657870]"
+        },
+        {
+          "site": "0x00454F26",
+          "mnemonic": "fld",
+          "operands": "dword ptr [ecx + 0x44]"
+        },
+        {
+          "site": "0x00454F29",
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x657858]"
+        },
+        {
+          "site": "0x00454F2F",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [0x658e80]"
+        },
+        {
+          "site": "0x00454F4E",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [0x657870]"
+        },
+        {
+          "site": "0x00454F5B",
+          "mnemonic": "or",
+          "operands": "al, 0xff"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00454FD0",
+      "size": 61,
+      "role": "FighterState::IsState150To199At00454FD0",
+      "subsystem": "FighterState",
+      "body_sha256": "fea93f3c3d75524ae5963f12746da41bb676cf18b878180f998879fd7ecc53e3",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00454FDC",
+          "mnemonic": "movsx",
+          "operands": "ecx, word ptr [eax + 0x60]"
+        },
+        {
+          "site": "0x00454FE0",
+          "mnemonic": "cmp",
+          "operands": "ecx, 0x96"
+        },
+        {
+          "site": "0x00454FEF",
+          "mnemonic": "cmp",
+          "operands": "eax, 0xc8"
+        },
+        {
+          "site": "0x00454FF4",
+          "mnemonic": "jge",
+          "operands": "0x454fff"
+        },
+        {
+          "site": "0x00455006",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [ebp - 8]"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x004550B0",
+      "size": 130,
+      "role": "FighterState::UpdateFacingFromOpponentAt004550B0",
+      "subsystem": "FighterState",
+      "body_sha256": "96a946762607319017a9d6ca3a3866b3a624b22924a9f7f8aaaf989c9588056d",
+      "return_count": 1,
+      "internal_branch_count": 4,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004550BC",
+          "mnemonic": "mov",
+          "operands": "cl, byte ptr [eax + 0x66]"
+        },
+        {
+          "site": "0x004550C5",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx + 0x2e8]"
+        },
+        {
+          "site": "0x004550D1",
+          "mnemonic": "fcomp",
+          "operands": "dword ptr [eax + 0x44]"
+        },
+        {
+          "site": "0x004550DE",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x66], 1"
+        },
+        {
+          "site": "0x004550EF",
+          "mnemonic": "cmp",
+          "operands": "ecx, edx"
+        },
+        {
+          "site": "0x00455112",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x66], 0xff"
+        },
+        {
+          "site": "0x00455123",
+          "mnemonic": "cmp",
+          "operands": "edx, eax"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00455500",
+      "size": 118,
+      "role": "FighterState::SaveCollisionFieldsAt00455500",
+      "subsystem": "FighterState",
+      "body_sha256": "5f58c91f94abc1f9a734258b08ab9444644a11580d3bc62691328a3407178cfa",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045550D",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx + 0x7c]"
+        },
+        {
+          "site": "0x00455510",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0xa8], edx"
+        },
+        {
+          "site": "0x0045551F",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0xac], edx"
+        },
+        {
+          "site": "0x0045552E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0xb0], edx"
+        },
+        {
+          "site": "0x0045553D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0xb8], edx"
+        },
+        {
+          "site": "0x0045554C",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0xbc], edx"
+        },
+        {
+          "site": "0x0045555B",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0xc0], dl"
+        },
+        {
+          "site": "0x0045556B",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0xb4], dx"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x0045CD70",
+      "size": 75,
+      "role": "FighterState::SetNoticeFieldsAt0045CD70",
+      "subsystem": "FighterState",
+      "body_sha256": "23ab2cd62ba92da2751e03dd49870c08865e466a8201535bdca65ebf934b4ee3",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045CD77",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0045CD7D",
+          "mnemonic": "jl",
+          "operands": "0x45cd9d"
+        },
+        {
+          "site": "0x0045CD86",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x532]"
+        },
+        {
+          "site": "0x0045CD8F",
+          "mnemonic": "jg",
+          "operands": "0x45cd9d"
+        },
+        {
+          "site": "0x0045CD97",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x6e7], dl"
+        },
+        {
+          "site": "0x0045CDA3",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x6e8], cl"
+        },
+        {
+          "site": "0x0045CDAF",
+          "mnemonic": "mov",
+          "operands": "byte ptr [edx + 0x6e9], al"
+        },
+        {
+          "site": "0x0045CDB8",
+          "mnemonic": "ret",
+          "operands": "0xc"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x0045D710",
+      "size": 247,
+      "role": "FighterState::AdvanceNoticeLevelsAt0045D710",
+      "subsystem": "FighterState",
+      "body_sha256": "a76adeb47b34c648d3d1e0d274297fe54aa83d4bfc50442649bbd1a977b3453a",
+      "return_count": 1,
+      "internal_branch_count": 11,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045D71C",
+          "mnemonic": "mov",
+          "operands": "cl, byte ptr [eax + 0x6e6]"
+        },
+        {
+          "site": "0x0045D725",
+          "mnemonic": "cmp",
+          "operands": "byte ptr [ebp - 8], 0"
+        },
+        {
+          "site": "0x0045D72B",
+          "mnemonic": "cmp",
+          "operands": "byte ptr [ebp - 8], 1"
+        },
+        {
+          "site": "0x0045D731",
+          "mnemonic": "cmp",
+          "operands": "byte ptr [ebp - 8], 2"
+        },
+        {
+          "site": "0x0045D746",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x19"
+        },
+        {
+          "site": "0x0045D75C",
+          "mnemonic": "mov",
+          "operands": "word ptr [eax + 0x6ea], dx"
+        },
+        {
+          "site": "0x0045D787",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0x6ea], cx"
+        },
+        {
+          "site": "0x0045D7AD",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x6ec], ax"
+        },
+        {
+          "site": "0x0045D7E6",
+          "mnemonic": "cmp",
+          "operands": "edx, 5"
+        },
+        {
+          "site": "0x0045D7FC",
+          "mnemonic": "mov",
+          "operands": "word ptr [edx + 0x6ec], cx"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00441FE0",
+      "size": 44,
+      "role": "GameProgress::ReadSelectedWord268At00441FE0",
+      "subsystem": "GameProgress",
+      "body_sha256": "24ffa5db41353bec4b42c3963827c77e55d41eb7ac07e7531782ee88cc49ad98",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00441FEA",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x00441FF1",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x00441FFA",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00441FFE",
+          "mnemonic": "movzx",
+          "operands": "eax, word ptr [ecx + edx*2 + 0x268]"
+        },
+        {
+          "site": "0x00442009",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00442010",
+      "size": 44,
+      "role": "GameProgress::ReadSelectedWord394At00442010",
+      "subsystem": "GameProgress",
+      "body_sha256": "bace0d40f187899460075587cbea58ecf344d5b6e40366a6e13f2703fad164c8",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0044201A",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x00442021",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x0044202A",
+          "mnemonic": "movsx",
+          "operands": "edx, byte ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0044202E",
+          "mnemonic": "movzx",
+          "operands": "eax, word ptr [ecx + edx*2 + 0x394]"
+        },
+        {
+          "site": "0x00442039",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00442540",
+      "size": 51,
+      "role": "BattleCollision::ResetBoundsAt00442540",
+      "subsystem": "BattleCollision",
+      "body_sha256": "c21d887c6b38f971f518e4b0ffdee06ebdea402c2788f2426344066c013092ad",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0044254A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x34], 0xffffd8f0"
+        },
+        {
+          "site": "0x00442554",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x38], 0xffffd8f0"
+        },
+        {
+          "site": "0x0044255E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x3c], 0x2710"
+        },
+        {
+          "site": "0x00442568",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x40], 0x2710"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x004451D0",
+      "size": 55,
+      "role": "GameProgress::SetSelectedValue8At004451D0",
+      "subsystem": "GameProgress",
+      "body_sha256": "a9ebba6937445f8d7f89da35a0e6589a6b47528adffad2ef6cd16b03c3c9faa1",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004451DA",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x004451E1",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x004451ED",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x16ac5]"
+        },
+        {
+          "site": "0x004451F4",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x5fc"
+        },
+        {
+          "site": "0x004451FD",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + eax + 8], edx"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00445210",
+      "size": 55,
+      "role": "GameProgress::SetSelectedValue12At00445210",
+      "subsystem": "GameProgress",
+      "body_sha256": "58c9bc42e9d4abdc16cee4dfad38b5ea485835c40c6e7f8ecae1835bd50d7c97",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0044521A",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x00445221",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x0044522D",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x16ac5]"
+        },
+        {
+          "site": "0x00445234",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x5fc"
+        },
+        {
+          "site": "0x0044523D",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + eax + 0xc], edx"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00445250",
+      "size": 50,
+      "role": "GameProgress::GetSelectedValue8At00445250",
+      "subsystem": "GameProgress",
+      "body_sha256": "87586fadb0d18085cd2f92d6365cb83eb2e91217351a7237fe18c79db563b8ec",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0044525A",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x00445261",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x0044526D",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x16ac5]"
+        },
+        {
+          "site": "0x00445274",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x5fc"
+        },
+        {
+          "site": "0x0044527A",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ecx + eax + 8]"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00445290",
+      "size": 50,
+      "role": "GameProgress::GetSelectedValue12At00445290",
+      "subsystem": "GameProgress",
+      "body_sha256": "777ceeead3f9042c11655191174bb1ba5c0afae56ae09b755877ad5733be9941",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0044529A",
+          "mnemonic": "movsx",
+          "operands": "ecx, byte ptr [eax + 0x16ac4]"
+        },
+        {
+          "site": "0x004452A1",
+          "mnemonic": "imul",
+          "operands": "ecx, ecx, 0x17f0"
+        },
+        {
+          "site": "0x004452AD",
+          "mnemonic": "movsx",
+          "operands": "eax, byte ptr [edx + 0x16ac5]"
+        },
+        {
+          "site": "0x004452B4",
+          "mnemonic": "imul",
+          "operands": "eax, eax, 0x5fc"
+        },
+        {
+          "site": "0x004452BA",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ecx + eax + 0xc]"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00446D60",
+      "size": 32,
+      "role": "HudNotice::SetNoticeStateAt00446D60",
+      "subsystem": "HudNotice",
+      "body_sha256": "897940699aeb5ca439c77ff7d5fde6bca2f60844aed0ed36db3b523af9142bfc",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00446D6A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x60], 0x96"
+        },
+        {
+          "site": "0x00446D77",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x64], dl"
+        },
+        {
+          "site": "0x00446D7D",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00453E20",
+      "size": 51,
+      "role": "FighterState::ClearMotionFieldsAt00453E20",
+      "subsystem": "FighterState",
+      "body_sha256": "b945306b3296aba282082e3c473ce6f0bb755fb3d9c9881d3ce3f35c784c49b8",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453E2A",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x50], 0"
+        },
+        {
+          "site": "0x00453E34",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x54], 0"
+        },
+        {
+          "site": "0x00453E3E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x58], 0"
+        },
+        {
+          "site": "0x00453E48",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x5c], 0"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00453E80",
+      "size": 37,
+      "role": "FighterState::SetNonnegativeWordAt00453E80",
+      "subsystem": "FighterState",
+      "body_sha256": "f1c0dfc365d9487051ab403815d5f07d64b1c6198a000a9c4e56213e7d3e12b8",
+      "return_count": 1,
+      "internal_branch_count": 2,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00453E87",
+          "mnemonic": "movsx",
+          "operands": "eax, word ptr [ebp + 8]"
+        },
+        {
+          "site": "0x00453E8D",
+          "mnemonic": "jge",
+          "operands": "0x453e91"
+        },
+        {
+          "site": "0x00453E98",
+          "mnemonic": "mov",
+          "operands": "word ptr [ecx + 0x3b8], dx"
+        },
+        {
+          "site": "0x00453EA2",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00454A70",
+      "size": 35,
+      "role": "FighterState::BeginFadeParametersAt00454A70",
+      "subsystem": "FighterState",
+      "body_sha256": "237d1e41de0e490b9ad08c0023054d274fc56f756fb96beba35dd527ca6f1239",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00454A7A",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x538], 0xf0"
+        },
+        {
+          "site": "0x00454A87",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x539], dl"
+        },
+        {
+          "site": "0x00454A90",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00454F90",
+      "size": 58,
+      "role": "FighterState::IsState50To149At00454F90",
+      "subsystem": "FighterState",
+      "body_sha256": "4e66bb0204aacf2526488beb672d3fd69ba2dc825e1ef3e2fc8564d9e34f9991",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x00454F9C",
+          "mnemonic": "movsx",
+          "operands": "ecx, word ptr [eax + 0x60]"
+        },
+        {
+          "site": "0x00454FA0",
+          "mnemonic": "cmp",
+          "operands": "ecx, 0x32"
+        },
+        {
+          "site": "0x00454FAC",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x96"
+        },
+        {
+          "site": "0x00454FB1",
+          "mnemonic": "jge",
+          "operands": "0x454fbc"
+        },
+        {
+          "site": "0x00454FC3",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [ebp - 8]"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x00455070",
+      "size": 56,
+      "role": "FighterState::IsState95To99At00455070",
+      "subsystem": "FighterState",
+      "body_sha256": "564135e59cd420638da81e67b45da4ce2e4c3df1a4e4629559f5e383763bb9c6",
+      "return_count": 1,
+      "internal_branch_count": 3,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045507C",
+          "mnemonic": "movsx",
+          "operands": "ecx, word ptr [eax + 0x60]"
+        },
+        {
+          "site": "0x00455080",
+          "mnemonic": "cmp",
+          "operands": "ecx, 0x5f"
+        },
+        {
+          "site": "0x0045508C",
+          "mnemonic": "cmp",
+          "operands": "eax, 0x63"
+        },
+        {
+          "site": "0x0045508F",
+          "mnemonic": "jg",
+          "operands": "0x45509a"
+        },
+        {
+          "site": "0x004550A1",
+          "mnemonic": "mov",
+          "operands": "al, byte ptr [ebp - 8]"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x004574B0",
+      "size": 25,
+      "role": "FighterState::BindOpponentAt004574B0",
+      "subsystem": "FighterState",
+      "body_sha256": "6e7ea2b7dca2332f95058c9da44e4311344b8ab4c68bcff2d7964184756c05ca",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x004574BD",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 0x2e8], ecx"
+        },
+        {
+          "site": "0x004574C6",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    },
+    {
+      "address": "0x0045CD50",
+      "size": 25,
+      "role": "FighterState::SetNoticeModeByteAt0045CD50",
+      "subsystem": "FighterState",
+      "body_sha256": "1befd85338f3c8ffc00f6405c71bae0adf10cc1d0bd3d5899dac76aca0d95984",
+      "return_count": 1,
+      "internal_branch_count": 0,
+      "direct_calls": [],
+      "indirect_calls": [],
+      "instruction_witnesses": [
+        {
+          "site": "0x0045CD5D",
+          "mnemonic": "mov",
+          "operands": "byte ptr [eax + 0x6e4], cl"
+        },
+        {
+          "site": "0x0045CD66",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "evidence_id": "R103"
+    }
+  ],
+  "anchors": [
+    {
+      "address": "0x00413460",
+      "size": 398,
+      "role": "FontSurface::RenderTextToTexture",
+      "origin_evidence": "R052",
+      "body_sha256": "f879de336a20a85f1062eef0a7e18a6a0a69b3fa3ad72461ace01a194ea2599c"
+    },
+    {
+      "address": "0x004176F0",
+      "size": 3232,
+      "role": "BattleLoader::LoadCharactersAt004176F0",
+      "origin_evidence": "R065",
+      "body_sha256": "6acdbe6fd9efb49eaeb8a42bd7586d00648753d39894e6317a002105ddf1507a"
+    },
+    {
+      "address": "0x004183D0",
+      "size": 3765,
+      "role": "BattleLoader::LoadStageAt004183D0",
+      "origin_evidence": "R065",
+      "body_sha256": "9d670e4a82fec9987f1785f1d1818aec6677c609cd0d71ba91da8c45406a6076"
+    },
+    {
+      "address": "0x004195B0",
+      "size": 880,
+      "role": "GameState::RestoreFromSnapshot",
+      "origin_evidence": "R052",
+      "body_sha256": "20b5cc4a2deae989f5c72cee1bd0fd27eea7c9be6abdc020b7a82d0156981c17"
+    },
+    {
+      "address": "0x00419E10",
+      "size": 671,
+      "role": "GameProgress::CheckSelectionAt00419E10",
+      "origin_evidence": "R066",
+      "body_sha256": "997d651510426c6dbac11ce4a66f06e2ab20505bcdcf71c3808f026295031b3d"
+    },
+    {
+      "address": "0x0041C2E0",
+      "size": 1766,
+      "role": "FontSurface::RasterizeText",
+      "origin_evidence": "R052",
+      "body_sha256": "2eb1e53bbddcc11a3e9aa0c3f1a9cab200fe7d09d154448fb7cc0dc18980a6d7"
+    },
+    {
+      "address": "0x00424E00",
+      "size": 308,
+      "role": "BattleEndScene::Initialize",
+      "origin_evidence": "R053",
+      "body_sha256": "4680497f7bf07f1e6e75d282ee5a75994ca784cb795238c5efb4a4519aa93780"
+    },
+    {
+      "address": "0x0043B610",
+      "size": 4764,
+      "role": "BattleScene::AdvanceState",
+      "origin_evidence": "R044",
+      "body_sha256": "2cf9ab10a5ad0cd96e4ac268a4a2425a4af856ef1c7f6ebbb64ba351ad33a086"
+    },
+    {
+      "address": "0x004406C0",
+      "size": 1081,
+      "role": "BattleScene::DrawDamageFlash",
+      "origin_evidence": "R042",
+      "body_sha256": "abeafc8234b6663b0285b71be30a26af04256d01acb50db19f55952afb010d2a"
+    },
+    {
+      "address": "0x00440B50",
+      "size": 3510,
+      "role": "BattleHud::RenderStatusEffects",
+      "origin_evidence": "R042",
+      "body_sha256": "b253f373ba6c5655e56482f3cf4aea7a3d2891a72b63c0e3ec6b86341cbcec7a"
+    },
+    {
+      "address": "0x00442580",
+      "size": 1249,
+      "role": "BattleCombat::ResolveActiveCollisions",
+      "origin_evidence": "R042",
+      "body_sha256": "27c4e034288002e56940981d382b963313ed9f702135d4ab3041098012bffa96"
+    },
+    {
+      "address": "0x00442A70",
+      "size": 975,
+      "role": "BattleCombat::ResolveAttackHitboxes",
+      "origin_evidence": "R042",
+      "body_sha256": "caa6c81fe7ad20f2926780084e6620b835f0b889abba852a7f32cc10110ebc51"
+    },
+    {
+      "address": "0x004431D0",
+      "size": 1982,
+      "role": "BattleState::ProcessAt004431D0",
+      "origin_evidence": "R065",
+      "body_sha256": "a3062652eaf31d86a0ce2291a6063527c42ab5adea76e1a9a6dc6a15aa213415"
+    },
+    {
+      "address": "0x00445830",
+      "size": 457,
+      "role": "BattleScene::UpdatePlayerEffects",
+      "origin_evidence": "R042",
+      "body_sha256": "a56c4893f58dfcc6012fe3e7488e2388b9f8e43e1c62f86cbc9c080270fd075d"
+    },
+    {
+      "address": "0x00449310",
+      "size": 1861,
+      "role": "BattleCombat::ResolveBodySeparation",
+      "origin_evidence": "R042",
+      "body_sha256": "ba6b53faf0fdd50c3775a9d2dfc3de654f744dc96a2ee5ecfc5b4e54f699b1fa"
+    },
+    {
+      "address": "0x00452490",
+      "size": 1696,
+      "role": "FighterState::AdvanceCombatTimers",
+      "origin_evidence": "R045",
+      "body_sha256": "db58a112c44c359c84ebc712f57e73aade290d5beb0ccdca34a572bb131c6ead"
+    },
+    {
+      "address": "0x004567B0",
+      "size": 345,
+      "role": "FighterState::Initialize",
+      "origin_evidence": "R045",
+      "body_sha256": "f3de21648341293bf8058450b5425bf659e733a0cd41c6cbb11789bd2d80ef13"
+    },
+    {
+      "address": "0x00456B60",
+      "size": 1186,
+      "role": "FighterState::LoadResources",
+      "origin_evidence": "R045",
+      "body_sha256": "b32d8ac0cfeccf13aeca2a12a628276b5efa4cfae78689ced2b321ed14bc85bb"
+    },
+    {
+      "address": "0x0045CE10",
+      "size": 1926,
+      "role": "FighterState::ProcessActionAt0045CE10",
+      "origin_evidence": "R065",
+      "body_sha256": "467e3f11c8654967f96ffc628ef2001207aa11c13db8226cc08226946f8865e6"
+    },
+    {
+      "address": "0x0045DD70",
+      "size": 60999,
+      "role": "ReimuFighter::AdvanceActionStatesAt0045DD70",
+      "origin_evidence": "R063",
+      "body_sha256": "b78fa89a709b1cbbafdf4310c6fd81dd68369a9fa528a1852a64bb105ee93bc2"
+    },
+    {
+      "address": "0x00483350",
+      "size": 12400,
+      "role": "CharacterSequence::AdvanceAt00483350",
+      "origin_evidence": "R048",
+      "body_sha256": "95e5f04a7adfbb758b62d7bf403bdc27c5e7db8e521de76dd31f2035f692ff7e"
+    },
+    {
+      "address": "0x005AEEC0",
+      "size": 71616,
+      "role": "CharacterMove::AdvanceAt005AEEC0",
+      "origin_evidence": "R048",
+      "body_sha256": "48496159a314c5a23d911faf72019b4f62304568621f8299ccf9f72338247bad"
+    }
+  ],
+  "parent_calls": [
+    {
+      "parent": "0x0045DD70",
+      "child": "0x0040FA30",
+      "sites": [
+        "0x0045E04F",
+        "0x0045E1D7",
+        "0x0045E6C3",
+        "0x0045E710",
+        "0x0045E7F5",
+        "0x0045E8C2",
+        "0x0045E98F",
+        "0x0045EA68",
+        "0x0045EB83",
+        "0x0045EC50",
+        "0x0045ED1D",
+        "0x0045EDF6",
+        "0x0045EF11",
+        "0x0045EFDE",
+        "0x0045F0AB",
+        "0x0045F184",
+        "0x0045F39D",
+        "0x0045F528",
+        "0x0045F65E",
+        "0x0045F754",
+        "0x0045FA4F",
+        "0x0045FB6C",
+        "0x0045FCD9",
+        "0x0045FE7D",
+        "0x0045FF7E",
+        "0x004600CF",
+        "0x004601B5",
+        "0x004603D4",
+        "0x00460531",
+        "0x00460778",
+        "0x00460851",
+        "0x00460972",
+        "0x00460A93",
+        "0x00460C50",
+        "0x00460D64",
+        "0x00460E78",
+        "0x00460F8C",
+        "0x004610A0",
+        "0x004611B4",
+        "0x004612C8",
+        "0x004613BB",
+        "0x004614CF",
+        "0x004615E3",
+        "0x004616F7",
+        "0x004617FF",
+        "0x00461907",
+        "0x00461A0F",
+        "0x00461B6D",
+        "0x00461CCB",
+        "0x00461D9D",
+        "0x00461E74",
+        "0x00461FA1",
+        "0x0046221B",
+        "0x004623E7",
+        "0x004624E6",
+        "0x00462ADF",
+        "0x00462BAC",
+        "0x00462C5B",
+        "0x00462D56",
+        "0x00462E1C",
+        "0x00462EEB",
+        "0x00463014",
+        "0x00463172",
+        "0x00463352",
+        "0x00463471",
+        "0x004635E7",
+        "0x0046371F",
+        "0x0046380C",
+        "0x0046396A",
+        "0x00463B0C",
+        "0x00463C33",
+        "0x00463DDB",
+        "0x00463EEF",
+        "0x0046408B",
+        "0x00464184",
+        "0x00464624",
+        "0x00464AE8",
+        "0x00464C11",
+        "0x004650FD",
+        "0x004655DF",
+        "0x00465887",
+        "0x00465B2F",
+        "0x00465CCE",
+        "0x00465FF6",
+        "0x0046629E",
+        "0x004665CC",
+        "0x00466625",
+        "0x004667C4",
+        "0x00466AC2",
+        "0x00466D58",
+        "0x0046703E",
+        "0x004672EB",
+        "0x004675B1",
+        "0x00467897",
+        "0x00467A57",
+        "0x00467C2A",
+        "0x00467D8D",
+        "0x00467E91",
+        "0x00467F71",
+        "0x0046801B",
+        "0x004681FF",
+        "0x004683FF",
+        "0x004685FF",
+        "0x004688D6",
+        "0x00468B99",
+        "0x00468C02",
+        "0x00468D5E",
+        "0x004690A5",
+        "0x00469184",
+        "0x004691ED",
+        "0x004692E8",
+        "0x0046957A",
+        "0x004698A9",
+        "0x00469AE5",
+        "0x00469CD6",
+        "0x00469EB5",
+        "0x0046A054",
+        "0x0046A374",
+        "0x0046A72F",
+        "0x0046A8D8",
+        "0x0046AB7C",
+        "0x0046AE84",
+        "0x0046B18F",
+        "0x0046B74A",
+        "0x0046B91E",
+        "0x0046BA4B",
+        "0x0046BB19",
+        "0x0046BEF7",
+        "0x0046C09B",
+        "0x0046C24C",
+        "0x0046C778",
+        "0x0046C7D1",
+        "0x0046C8D2",
+        "0x0046CB8B",
+        "0x0046CBAD"
+      ]
+    },
+    {
+      "parent": "0x004567B0",
+      "child": "0x00412620",
+      "sites": [
+        "0x004567E8"
+      ]
+    },
+    {
+      "parent": "0x00424E00",
+      "child": "0x00413420",
+      "sites": [
+        "0x00424E46"
+      ]
+    },
+    {
+      "parent": "0x004195B0",
+      "child": "0x00413A60",
+      "sites": [
+        "0x004195B8"
+      ]
+    },
+    {
+      "parent": "0x004183D0",
+      "child": "0x00416CE0",
+      "sites": [
+        "0x00419265"
+      ]
+    },
+    {
+      "parent": "0x00419E10",
+      "child": "0x00416DC0",
+      "sites": [
+        "0x00419E5B",
+        "0x00419E6A",
+        "0x00419E7B",
+        "0x00419E95",
+        "0x00419EA4",
+        "0x00419EB5",
+        "0x00419ECF",
+        "0x00419EDE",
+        "0x00419EEF",
+        "0x00419F12",
+        "0x00419F21",
+        "0x00419F32",
+        "0x00419F4C",
+        "0x00419F5B",
+        "0x00419F6C",
+        "0x00419FAC",
+        "0x00419FC0",
+        "0x00419FFF",
+        "0x0041A05B",
+        "0x0041A073",
+        "0x0041A082",
+        "0x0041A098"
+      ]
+    },
+    {
+      "parent": "0x00413460",
+      "child": "0x0041C060",
+      "sites": [
+        "0x0041354C"
+      ]
+    },
+    {
+      "parent": "0x0041C2E0",
+      "child": "0x0041C0D0",
+      "sites": [
+        "0x0041C358"
+      ]
+    },
+    {
+      "parent": "0x00424E00",
+      "child": "0x00425130",
+      "sites": [
+        "0x00424F02"
+      ]
+    },
+    {
+      "parent": "0x00442A70",
+      "child": "0x004492C0",
+      "sites": [
+        "0x00442CB6"
+      ]
+    },
+    {
+      "parent": "0x00445830",
+      "child": "0x00453A10",
+      "sites": [
+        "0x004458BA"
+      ]
+    },
+    {
+      "parent": "0x005AEEC0",
+      "child": "0x00453EB0",
+      "sites": [
+        "0x005B6F40",
+        "0x005B6FE9",
+        "0x005B8DA1",
+        "0x005B8E4A",
+        "0x005BAA0E",
+        "0x005BB895",
+        "0x005BB93E",
+        "0x005BC6D7",
+        "0x005BC780"
+      ]
+    },
+    {
+      "parent": "0x00449310",
+      "child": "0x00454EE0",
+      "sites": [
+        "0x0044933A",
+        "0x00449348"
+      ]
+    },
+    {
+      "parent": "0x00452490",
+      "child": "0x00454FD0",
+      "sites": [
+        "0x0045292E"
+      ]
+    },
+    {
+      "parent": "0x004431D0",
+      "child": "0x004550B0",
+      "sites": [
+        "0x00443808"
+      ]
+    },
+    {
+      "parent": "0x00442580",
+      "child": "0x00455500",
+      "sites": [
+        "0x004425D8",
+        "0x004426B0",
+        "0x00442909"
+      ]
+    },
+    {
+      "parent": "0x0045CE10",
+      "child": "0x0045CD70",
+      "sites": [
+        "0x0045CFB9",
+        "0x0045D062",
+        "0x0045D161",
+        "0x0045D1F8"
+      ]
+    },
+    {
+      "parent": "0x00483350",
+      "child": "0x0045D710",
+      "sites": [
+        "0x004863A9",
+        "0x004863B7"
+      ]
+    },
+    {
+      "parent": "0x00440B50",
+      "child": "0x00441FE0",
+      "sites": [
+        "0x00441399"
+      ]
+    },
+    {
+      "parent": "0x00440B50",
+      "child": "0x00442010",
+      "sites": [
+        "0x00441443"
+      ]
+    },
+    {
+      "parent": "0x00442A70",
+      "child": "0x00442540",
+      "sites": [
+        "0x00442C42"
+      ]
+    },
+    {
+      "parent": "0x004431D0",
+      "child": "0x004451D0",
+      "sites": [
+        "0x0044393D"
+      ]
+    },
+    {
+      "parent": "0x004431D0",
+      "child": "0x00445210",
+      "sites": [
+        "0x00443910"
+      ]
+    },
+    {
+      "parent": "0x004431D0",
+      "child": "0x00445250",
+      "sites": [
+        "0x00443924"
+      ]
+    },
+    {
+      "parent": "0x004431D0",
+      "child": "0x00445290",
+      "sites": [
+        "0x004438F7"
+      ]
+    },
+    {
+      "parent": "0x0043B610",
+      "child": "0x00446D60",
+      "sites": [
+        "0x0043B6AF",
+        "0x0043B6DA",
+        "0x0043B70F",
+        "0x0043B915",
+        "0x0043BF39",
+        "0x0043C1B0",
+        "0x0043C1E5",
+        "0x0043C30E"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00453E20",
+      "sites": [
+        "0x0045DEFA",
+        "0x0045DF3F",
+        "0x0045DF89",
+        "0x0045DFAE",
+        "0x0045DFF3",
+        "0x0045E03D",
+        "0x0045E082",
+        "0x0045E0C7",
+        "0x0045E111",
+        "0x0045E136",
+        "0x0045E17B",
+        "0x0045E1C5",
+        "0x0045E278",
+        "0x0045E2D2",
+        "0x0045E3E2",
+        "0x0045E43C",
+        "0x0045E54C",
+        "0x0045E5A6",
+        "0x0045E6B6",
+        "0x0045E708",
+        "0x0045F365",
+        "0x0045F4F0",
+        "0x0045F626",
+        "0x0045F71C",
+        "0x0045FA17",
+        "0x0045FB2C",
+        "0x0045FC2E",
+        "0x0045FE33",
+        "0x0045FF67",
+        "0x004600B8",
+        "0x004603BD",
+        "0x00460C22",
+        "0x004613AE",
+        "0x00461D06",
+        "0x00461D90",
+        "0x00461DDD",
+        "0x00461E67",
+        "0x0046260A",
+        "0x00462664",
+        "0x004627BD",
+        "0x00462817",
+        "0x00462970",
+        "0x004629CA",
+        "0x00462B9F",
+        "0x00462C1C",
+        "0x00462DB7",
+        "0x00462E86",
+        "0x00462F61",
+        "0x0046310D",
+        "0x00463260",
+        "0x004637A7",
+        "0x00463868",
+        "0x00463A59",
+        "0x00463B80",
+        "0x00463E63",
+        "0x00463FDD",
+        "0x00464170",
+        "0x00464610",
+        "0x00464AD4",
+        "0x004655CB",
+        "0x00465873",
+        "0x00465B1B",
+        "0x0046628A",
+        "0x00466532",
+        "0x00466611",
+        "0x00466B8F",
+        "0x00466E49",
+        "0x00467122",
+        "0x004673DC",
+        "0x004676A2",
+        "0x00467D36",
+        "0x00467E3A",
+        "0x00467F3D",
+        "0x00468013",
+        "0x004681F7",
+        "0x004687DB",
+        "0x0046891B",
+        "0x00469019",
+        "0x004690EA",
+        "0x004693D7",
+        "0x00469706",
+        "0x00469A35",
+        "0x00469C26",
+        "0x00469E17",
+        "0x00469FC7",
+        "0x0046A166",
+        "0x0046A367",
+        "0x0046A521",
+        "0x0046A722",
+        "0x0046A8C4",
+        "0x0046AB68",
+        "0x0046B461",
+        "0x0046B52A",
+        "0x0046B8B7",
+        "0x0046B911",
+        "0x0046B9E4",
+        "0x0046BA3E",
+        "0x0046BB11",
+        "0x0046BC5F",
+        "0x0046C093",
+        "0x0046C1D0",
+        "0x0046C341",
+        "0x0046C58D",
+        "0x0046C7C9",
+        "0x0046C8CA"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00453E80",
+      "sites": [
+        "0x004695B7",
+        "0x004698E6",
+        "0x00469A56",
+        "0x00469C47",
+        "0x00469E3B",
+        "0x00469FE7",
+        "0x0046A3B1",
+        "0x0046A76C"
+      ]
+    },
+    {
+      "parent": "0x0045DD70",
+      "child": "0x00454A70",
+      "sites": [
+        "0x0046C36A",
+        "0x0046C80A",
+        "0x0046CB1D"
+      ]
+    },
+    {
+      "parent": "0x004406C0",
+      "child": "0x00454F90",
+      "sites": [
+        "0x00440721",
+        "0x00440925"
+      ]
+    },
+    {
+      "parent": "0x004406C0",
+      "child": "0x00455070",
+      "sites": [
+        "0x00440767",
+        "0x0044096B"
+      ]
+    },
+    {
+      "parent": "0x004176F0",
+      "child": "0x004574B0",
+      "sites": [
+        "0x0041808E",
+        "0x0041809F"
+      ]
+    },
+    {
+      "parent": "0x00456B60",
+      "child": "0x0045CD50",
+      "sites": [
+        "0x00456FD6"
+      ]
+    }
+  ],
+  "strings": [],
+  "virtual_slots": [],
+  "readonly_float32": [
+    {
+      "address": "0x00657858",
+      "value": 40.0,
+      "uses": [
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454EED"
+        },
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454F29"
+        }
+      ]
+    },
+    {
+      "address": "0x0065782C",
+      "value": 0.0,
+      "uses": [
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454EF3"
+        }
+      ]
+    },
+    {
+      "address": "0x00657870",
+      "value": 880.0,
+      "uses": [
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454F12"
+        },
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454F4E"
+        }
+      ]
+    },
+    {
+      "address": "0x00658E80",
+      "value": 1280.0,
+      "uses": [
+        {
+          "address": "0x00454EE0",
+          "site": "0x00454F2F"
+        }
+      ]
+    }
+  ]
+}

@@ -1457,3 +1457,30 @@ The name renderer draws eight signed glyph indices using 26 columns with
 19-by-20 cells and 14-unit spacing; this is project rendering policy. Several
 field meanings and original names/types remain unknown. R102 grows the
 provisional authored denominator to 1,954,566, with no source or exact credit.
+
+## Batch state/record policies after R103
+
+Thirty-three additional complete bodies / 2,600 bytes now have reviewed game
+ownership, each tied to an independent whole parent. The shared cohort
+verifier freezes 22 parent bodies, 33 edges and 185 policy instructions.
+
+Game progress uses signed-byte selectors at `+0x16AC4` / `+0x16AC5` and
+record strides `0x17F0` / `0x5FC`. Selected dwords at `+8` / `+12` and word
+tables at `+0x268` / `+0x394` are accessed in reviewed battle/HUD paths.
+The progress bit operations use a signed-word argument, reject values below
+0 or above 320 and access the bitmap at `+0x16A9C`. These observed strides
+and offsets do not establish the full record/object layout.
+
+Fighter predicates distinguish signed state ranges 50–149, 150–199 and
+95–99. The horizontal-limit policy reads four readonly float scalars: 40,
+0, 880 and 1280. Relative opponent coordinates drive a facing byte and
+camera offsets of 0 / ±50. Selected collision fields are saved with their
+original widths. Notice-related mode branches update signed-word levels
+with limits 25 and 5. Original state names and time units remain unknown.
+
+The font/snapshot helpers bind seven Windows import calls through the raw
+PE and preserve all explicit project parameters; virtual animation dispatch
+does not establish dynamic ownership. Camera reset writes explicit nonmember
+globals, including 20.0f, rather than proving origin from a constructor-like
+return value. R103 grows the provisional authored denominator to 1,957,166;
+no source or exact credit is added.
