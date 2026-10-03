@@ -5,7 +5,7 @@ comparison. The user explicitly deferred subsequent project phases.
 Work resumed after R069. Following exact batches F008 and F009, on 2026-10-03
 the user resumed origin review. Preserve the 60-function exact baseline and
 prior accepted origin evidence. The next bounded task is the six-candidate
-R115 startup dependency cohort documented in `docs/RE_HANDOFF.md`; do not add
+R116 runtime error dependency cohort documented in `docs/RE_HANDOFF.md`; do not add
 exact-reconstruction scope unless the user changes strategy again.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.

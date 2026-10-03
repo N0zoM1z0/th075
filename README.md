@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R114 checkpoint, origin review has classified 919 authored,
-1,598 library and 575 compiler-generated candidates; 1,259 remain pending.
+At the R115 checkpoint, origin review has classified 919 authored,
+1,602 library and 575 compiler-generated candidates; 1,255 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -44,8 +44,10 @@ R112 resolves six postfix increments through their actual typed prefix callees
 and two complete game callers. R113 resolves five queue helpers and the
 unique enqueue/main-loop policies. R114 resolves four shared-lifetime/callback
 policies, retains a complete ordinary/generated initializer ambiguity and leaves
-the CRT entry pending until every binding is supported. The next handoff targets
-six R115 startup dependencies while preserving the 60-function exact baseline.
+the CRT entry pending until every binding is supported. R115 resolves the
+complete heap initialization graph and vendor SEH epilog, retaining unresolved
+error, handler and multibyte chains. The next handoff targets six R116 runtime
+error dependencies while preserving the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).

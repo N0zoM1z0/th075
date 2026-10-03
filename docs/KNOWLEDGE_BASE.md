@@ -1877,3 +1877,59 @@ target/project attestation, 178 public tests, progress freshness and
 `git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
 eleven objects. Investigation and intermediate verification used local
 tools; the public acceptance request ran once.
+
+
+## R115 — vendor heap graph and startup boundary evidence
+
+Four complete vendor-library bodies add 196 bytes: SEH epilog `0x0064544F`
+(17), heap initializer `0x00649735` (81), heap selector `0x0064971B` (26) and
+small-block initializer `0x0064A6CD` (72). The epilog's own complete assembly
+source extent has no relocation. The three-function heap graph retains all
+17 fields, both failure/success paths, raw HeapCreate/HeapAlloc/HeapDestroy,
+actual COMMON definitions and whole 72-byte version-state BSS topology.
+Target data uses PE loader zero-fill geometry, not fictitious file bytes.
+Zero values alone are insufficient evidence; full API flows and target
+instructions bind these reproducible source associations. Original debug
+names and executable-wide compiler settings remain unknown.
+
+The natural SDK probe emits the entire 24-byte OSVERSIONINFOA layout array:
+148-byte size and offsets 0/4/8/12/16. Whole section, source and header hashes
+are checked on a cold build. Seventeen witnesses in the full 469-byte pending
+entry prove the raw GetVersionExA buffer and actual platform/major stores.
+The selector returns 1 for platform 2 and unsigned major >=5, otherwise 3.
+The heap initializer uses selector 3 to initialize the 0x3F8 small-block
+threshold; its helper allocates 0x140 bytes for sixteen five-dword vendor
+headers. This establishes CRT behavior without inferring game object layouts.
+
+Four roots retain unknown ownership: prolog `0x00645414` (59), fast error
+policy `0x006422B2` (36), error policy `0x0064228D` (37) and command-line
+parser `0x00648FF5` (93). Their complete vendor source controls and CFGs
+are retained, but unresolved handler/error/multibyte chains do not become
+accepted callees. Eight diagnostic source bodies / 1,144 bytes retain whole
+auxiliary extents and actual fields. The 230-byte `__except_handler3` target
+is not inventoried. The exit helper's 48-byte source includes a final INT3
+that its 47-byte candidate omits. Neither boundary receives new credit.
+The 336-byte set-codepage body includes its entire cleanup helper; no caller
+prefix or truncated tail is used.
+
+The 61-byte R006 stack probe's `__alloca_probe` alias is now confirmed from
+the complete member's same section/offset definition and all target bytes.
+The original `__chkstk` evidence/name remains unchanged. R115 cold-replays
+57 old archive bodies and the three local R025 definitions with full tables.
+Eight whole readonly literals / 121 bytes retain independent source/target
+data comparison. The R114 entry stays pending with its historical diagnostic
+record intact.
+
+The checkpoint is 3,096 resolved (919 authored, 1,602 library, 575 compiler)
+and 1,255 pending. Exact remains 60 / 9,883 bytes, with provisional authored
+coverage 9,883 / 1,965,299. Recorded authored extents remain 872 / 1,952,956.
+R116 investigates six runtime error dependencies. Retain all R108 and R114
+ambiguities and the four R115 pending roots until their missing evidence changes.
+
+One final no-auth public HTTPS MCP request passed R115, retained R114
+including its R077/R113 dependency replays, R006/R025 archive anchors,
+all 872 recorded authored extents, target/project attestation, 189 public
+tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the public acceptance request
+ran once.

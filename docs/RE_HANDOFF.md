@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R114. The public
+review cohorts R108 through R115. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,092: 919 authored, 1,598 library and 575 compiler generated.
-There are 1,259 pending. Candidate count is not authored function count.
+has resolved 3,096: 919 authored, 1,602 library and 575 compiler generated.
+There are 1,255 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R115 startup dependency cohort below.
+the bounded R116 runtime error dependency cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R114; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R115; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R115 startup dependencies
+## Next agent objective — R116 runtime error dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -104,24 +104,48 @@ exact evidence. Its internal SEH filter and second return remain inside the
 full extent. The 55-node private startup survey is diagnostic only; neither
 its names nor its relocation-masked body matches confer ownership.
 
-The next bounded cohort is six still-unknown startup dependencies:
+R115 reviews all six startup candidates and the two required heap callees.
+Four gain library origin / 196 bytes: `0x0064544F` (17), `0x00649735` (81),
+`0x0064971B` (26) and `0x0064A6CD` (72). The closed heap graph checks all
+17 fields, defining COMMON/BSS topology, writable PE loader zero-fill geometry,
+raw HeapCreate/HeapAlloc/HeapDestroy identities and independent GetVersionExA
+result provenance through a cold SDK layout control. Zero-filled dwords alone
+do not prove a global identity; original executable debug names remain unknown.
+The SEH epilog has its own complete relocation-free vendor auxiliary extent.
+The 61-byte R006 stack probe's `__alloca_probe` label is proved to share the
+full `__chkstk` definition's offset and section; no candidate is counted twice.
+Replay `scripts/repo-python scripts/verify-startup-dependency-origins.py`.
 
-| Candidate | Bytes | Observed archive association | Required next evidence |
+The prolog `0x00645414` (59), `_fast_error_exit` `0x006422B2` (36),
+`__amsg_exit` `0x0064228D` (37) and `__wincmdln` `0x00648FF5` (93) retain
+explicit pending reasons. Eight cold-extracted whole source diagnostics /
+1,144 bytes preserve their immediate dependencies without ownership credit.
+The handler at `0x00645468` has a complete 230-byte vendor source body but no
+Ghidra function or ledger candidate; its validation/unwind graph is unresolved.
+The existing 47-byte exit candidate's source auxiliary extent includes the
+next INT3, for 48 bytes total. Do not truncate comparison to 47 or accept that
+extent silently. The command-line parser binds complete 30-/17-byte source
+helpers, but their set-codepage/classification graphs and mutable data remain
+unresolved. Avoid re-reviewing these four roots until the missing evidence changes.
+
+The next bounded cohort is six unreviewed runtime error dependencies:
+
+| Candidate | Provisional bytes | Observed archive association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00645414` | 59 | `__SEH_prolog` | Whole definition and actual FS/EH stack behavior; no origin from imported name |
-| `0x0064544F` | 17 | `__SEH_epilog` | Full paired SEH restore/return extent and independent archive evidence |
-| `0x006422B2` | 36 | `_fast_error_exit` | Own static-function extent and complete code/data/import binding chain |
-| `0x0064228D` | 37 | `__amsg_exit` | Entire failure-policy body, all globals and independently owned callees |
-| `0x00649735` | 81 | `__heap_init` | Complete heap initialization policy, data identities and raw APIs |
-| `0x00648FF5` | 93 | `__wincmdln` | Full command-line parser extent, all globals and actual CRT context |
+| `0x006440A5` | 47 | `___crtExitProcess` (48-byte source) | Reconcile the terminal INT3 and nonreturning exits; whole literals, raw imports and dynamic CorExitProcess binding |
+| `0x00648C70` | 375 | `__NMSG_WRITE` | Complete error table/string data, every helper and cookie/stack binding, raw output APIs |
+| `0x00648E11` | 57 | `__FF_MSGBANNER` | Full error-writer dependency and actual mutable error/app/debug state |
+| `0x0064FBFE` | 249 | `___crtMessageBoxA` | Complete dynamic USER32 lookup, all imports/data fields and version context |
+| `0x00641B80` | 7 | `_strcpy` | Whole definition and shared-tail relationship to independently reviewed `_strcat`; no tiny-shape credit |
+| `0x00640611` | 14 | `@__security_check_cookie@4` | Complete compiler/archive identity, cookie field and real failure tail; preserve fastcall ABI |
 
-Use `.analysis/r114-startup-graph.json`, the R114 diagnostic entry record and
-the refreshed scanner as starting points. Re-extract whole archive members
-locally; do not accept guessed code/data destinations from the survey. The
-61-byte stack probe at `0x00642510` already has R006 whole `__chkstk` archive
-evidence: preserve that origin and investigate the entry's `__alloca_probe`
-association without counting the body again. Keep non-inventoried `__c_exit`
-`0x0064427B` outside new candidate credit until its boundary is reconciled.
+Use the R115 manifest and `.analysis/r114-startup-graph.json` as diagnostic
+starting points. Cold-extract whole archive members and prove each code/data
+edge independently. Retain the accepted R006 `_strcat`, `_strncpy`, `_strlen`
+and stack-probe evidence. The byte-exact source survey itself earns no origin.
+Keep the non-inventoried `__except_handler3` and `__c_exit` `0x0064427B`
+outside candidate credit until their boundaries and dependencies are reconciled.
+The R114 PE entry remains pending; its historic diagnostic record is preserved.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -137,7 +161,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R115 adds no exact scope. Update
+private path and 60-function exact baseline. R116 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -149,6 +173,15 @@ target/project attestation, 178 public tests, progress freshness and
 `git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
 eleven objects. Investigation and intermediate verification used local
 tools; the public acceptance request ran once.
+
+
+One final no-auth public HTTPS MCP request passed R115, retained R114
+including its R077/R113 dependency replays, R006/R025 archive anchors,
+all 872 recorded authored extents, target/project attestation, 189 public
+tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the public acceptance request
+ran once.
 
 ## Tooling and verification
 
@@ -175,6 +208,7 @@ scripts/repo-python scripts/verify-vendor-deque-erase-origins.py
 scripts/repo-python scripts/verify-deque-postfix-context-origins.py
 scripts/repo-python scripts/verify-event-queue-origins.py
 scripts/repo-python scripts/verify-queue-lifetime-origins.py
+scripts/repo-python scripts/verify-startup-dependency-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102

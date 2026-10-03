@@ -4503,3 +4503,117 @@ target/project attestation, 178 public tests, progress freshness and
 `git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
 eleven objects. Investigation and intermediate verification used local
 tools; the public acceptance request ran once.
+
+
+## R115 — complete heap initialization and unresolved startup dependencies
+
+All six handoff candidates and two required heap callees receive complete
+origin review evidence. Four source bodies / 196 bytes gain library origin;
+four roots / 225 bytes retain explicit pending binding reasons. Replay
+`config/startup-dependency-origin-evidence.json` with
+`scripts/repo-python scripts/verify-startup-dependency-origins.py`.
+
+| Address | Bytes | Decision and source association |
+| --- | ---: | --- |
+| `0x0064544F` | 17 | Library `__SEH_epilog` |
+| `0x00649735` | 81 | Library `__heap_init` |
+| `0x0064971B` | 26 | Library `___heap_select`, required callee |
+| `0x0064A6CD` | 72 | Library `___sbh_heap_init`, required callee |
+| `0x00645414` | 59 | Pending SEH handler binding |
+| `0x006422B2` | 36 | Pending complete CRT error chain |
+| `0x0064228D` | 37 | Pending error chain and mutable exit callback |
+| `0x00648FF5` | 93 | Pending multibyte initialization/classification chain |
+
+All source bodies come from cold-extracted complete members of the previously
+pinned libcmt.lib. Each comparison requires its own function-definition auxiliary
+extent; static `_fast_error_exit` is included without using a chosen prefix.
+The SEH epilog is a complete relocation-free 17-byte vendor assembly routine:
+it restores FS:[0], saved registers and the caller's frame/return state. Its
+origin is the vendor library; use by compiler-generated frames does not turn
+this imported implementation into newly authored code. No assembly source is
+introduced into the reconstruction or exact units.
+
+The complete heap initializer calls raw HeapCreate, stores its handle, calls
+the actual selector and saves its result. Selector value 3 invokes the complete
+small-block initializer with threshold 0x3F8. If that fails, HeapDestroy receives
+the same stored handle. Both failure and success returns are retained. The
+selector returns 1 for platform 2 and unsigned major version >=5, otherwise 3.
+The small-block initializer calls raw HeapAlloc for 0x140 bytes, checks its
+result, records header-list/scan state, clears deferred/count state, stores the
+threshold argument and sets list capacity to 16. The pinned vendor header
+contains the five-dword HEADER definition used by this allocation. No game
+object layout or owner interface is inferred from these CRT structures.
+
+The closed three-function heap graph verifies all 17 code/data fields. Eight
+four-byte globals have actual external COMMON definitions in their complete
+vendor members; the two version globals use the entire 72-byte crt0dat BSS
+symbol topology. Every target data range lies in writable, non-executable PE
+loader zero-fill, beyond raw file bytes and within VirtualSize. The verifier
+does not attempt to read virtual zeros from nonexistent file data. Zero fill
+and matching widths alone establish no semantic identity: the full Heap API
+flows, source data definitions, actual stores and independent version-result
+provenance provide the bindings. These are reproducible source associations;
+original executable debug symbol names remain unproved.
+
+A natural SDK probe cold-emits one complete 24-byte readonly definition of
+OSVERSIONINFOA size and field offsets: 148, 0, 4, 8, 12, 16. The whole defining
+section and SDK/CRT header hashes are checked. The 469-byte entry observation
+retains 17 independent witnesses: it allocates the 148-byte buffer, passes it
+to raw GetVersionExA, reads platform at +16 and major version at +4, then stores
+the selector's actual globals. Its unknown ownership is preserved; none of
+these observations accepts the whole entry or renames the R113 main loop.
+
+The prolog's complete 59-byte source pushes handler `0x00645468` and builds
+its FS frame. That target has a full 230-byte `__except_handler3` archive
+source body but no current Ghidra function or ledger candidate. Its validation,
+global unwind, notification and local-unwind relationships still need full
+binding evidence. It remains a diagnostic boundary and grants no candidate
+credit. The R025 local-unwind evidence is independently replayed.
+
+The two complete error-policy source bodies bind a shared error-mode location,
+error banner/writer and either the dynamic exit slot or direct exit helper.
+The latter has a 48-byte own auxiliary extent, including terminal INT3 after
+ExitProcess. The ledger currently records only 47 bytes. The diagnostic freezes
+all 48 bytes, both constant literals, raw import identities and the dynamic
+CorExitProcess path; it does not reconcile or accept that ledger extent yet.
+The full 375-byte writer and 57-byte banner remain diagnostic source contexts,
+with their error table, mutable state and downstream bindings unresolved.
+
+The complete 93-byte command-line parser has quote-state handling, whitespace
+skipping, a null fallback string and lead-byte advancement. Its 30-byte initializer
+and 17-byte lead-byte helper fit entire vendor source definitions. Their 336-byte
+set-codepage and 51-byte classification bodies are also retained completely,
+including the set-codepage cleanup helper inside its source extent. Their
+lock/allocation/locale/EH and table bindings still require independent evidence.
+These source associations do not accept the parser or its helper candidates.
+
+Eight whole readonly source literals / 121 bytes are independently compared
+against complete raw target definitions. Eight diagnostic source bodies /
+1,144 bytes preserve all actual field
+resolutions and complete instruction inventories without granting ownership.
+The existing R006 61-byte stack probe is freshly compared in full. Its
+`__alloca_probe` alias is an external label at the same section/offset as the
+own auxiliary-record `__chkstk` definition, not an inferred name from a call.
+R006 origin, name, extent and denominator remain unchanged. Retained archive
+replay covers 57 old bodies / 5,641 bytes and the three R025 local bodies /
+1,762 bytes, including embedded tables and complete local bindings.
+
+Evidence-only verification passed before ledger changes. Accepted replay,
+target-required tracking, refreshed scanner and public local checks pass.
+Eleven regression tests reject named unknown callees, promoted pending edges,
+same-width wrong version fields, incomplete SDK layouts, wrong raw API identity,
+truncated INT3 extents, interior aliases, arbitrary zero spans, file-backed zeros
+masquerading as loader zero-fill, missing whole literal definitions and source/exact credit. The checkpoint is
+3,096 resolved: 919 authored, 1,602 library and 575 compiler generated, with
+1,255 pending. Exact stays 60 functions / 9,883 bytes; the provisional authored
+denominator remains 1,965,299 bytes, and recorded authored extents remain
+872 / 1,952,956 bytes. R116 targets six runtime error dependencies; do not
+repeat the four pending roots until their missing binding evidence changes.
+
+One final no-auth public HTTPS MCP request passed R115, retained R114
+including its R077/R113 dependency replays, R006/R025 archive anchors,
+all 872 recorded authored extents, target/project attestation, 189 public
+tests, progress freshness and `git diff --check`. All 60 exact units /
+9,883 bytes cold-replayed across eleven objects. Investigation and
+intermediate verification used local tools; the public acceptance request
+ran once.

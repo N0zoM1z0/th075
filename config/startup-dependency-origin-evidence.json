@@ -1,0 +1,2422 @@
+{
+  "evidence_id": "R115",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+  "functions": [
+    {
+      "member_offset": 1244382,
+      "member": "build\\intel\\mt_obj\\sehprolg.obj",
+      "member_sha256": "2a6b52f5cb60984fb2ef7b1fcf134de94b9f458b79013ef380e6ba3a48c828f4",
+      "address": "0x00645414",
+      "coff_symbol": "__SEH_prolog",
+      "size": 59,
+      "span_end": "0x0064544E",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "72b12764e7409e01997a2375b20833a3afcf3325477ed61e480ba55db04a4ea8",
+      "body_sha256": "2dc2849091d156d0feda1fbe79761f6cd3621bcc9df05385d6f09cb2bcc02e34",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "__except_handler3",
+          "addend": 0,
+          "target_address": "0x00645468",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064544E",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "cfg": [
+        1,
+        0
+      ],
+      "uncertainty": "seh-handler-binding-unresolved"
+    },
+    {
+      "member_offset": 1244382,
+      "member": "build\\intel\\mt_obj\\sehprolg.obj",
+      "member_sha256": "2a6b52f5cb60984fb2ef7b1fcf134de94b9f458b79013ef380e6ba3a48c828f4",
+      "address": "0x0064544F",
+      "coff_symbol": "__SEH_epilog",
+      "size": 17,
+      "span_end": "0x0064545F",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "6e914ba12848b264526c84faf2e95ada281f321bd5b8e492879c17af034c76e2",
+      "body_sha256": "6e914ba12848b264526c84faf2e95ada281f321bd5b8e492879c17af034c76e2",
+      "relocation_bindings": [],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064545F",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "address": "0x006422B2",
+      "coff_symbol": "_fast_error_exit",
+      "size": 36,
+      "span_end": "0x006422D5",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "432e8b38ceba8846a44157db58d79dae80f9dcfaad1ab22ae54c6568dc1c25fb",
+      "body_sha256": "cb45824b1ca764f5574139c3c1a6c34cfea1fc293eab20de96048264e581616e",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__FF_MSGBANNER",
+          "addend": 0,
+          "target_address": "0x00648E11",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "___crtExitProcess",
+          "addend": 0,
+          "target_address": "0x006440A5",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006422D5",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006422BB",
+            "target": "0x00648E11"
+          },
+          {
+            "site": "0x006422C4",
+            "target": "0x00648C70"
+          },
+          {
+            "site": "0x006422CE",
+            "target": "0x006440A5"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "cfg": [
+        1,
+        1
+      ],
+      "uncertainty": "crt-error-chain-bindings-unresolved"
+    },
+    {
+      "member_offset": 1756238,
+      "member": "build\\intel\\mt_obj\\wincrt0.obj",
+      "member_sha256": "3bd6dd6f97cfd5e38c2eda581b9ec779c95e06fb9a18545369f93b0005c912bf",
+      "address": "0x0064228D",
+      "coff_symbol": "__amsg_exit",
+      "size": 37,
+      "span_end": "0x006422B1",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "319effa96c10d6ea86de3226841569cfc57b04636dbbb6a317f824336069a198",
+      "body_sha256": "cd4e9913c164f7d95bb6b8418ff0264b95b1d404aefcba1fd5170cfa92f73264",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "__FF_MSGBANNER",
+          "addend": 0,
+          "target_address": "0x00648E11",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "__aexit_rtn",
+          "addend": 0,
+          "target_address": "0x0066FF10",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006422B1",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00642296",
+            "target": "0x00648E11"
+          },
+          {
+            "site": "0x0064229F",
+            "target": "0x00648C70"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "cfg": [
+        1,
+        1
+      ],
+      "uncertainty": "crt-error-chain-bindings-unresolved"
+    },
+    {
+      "member_offset": 802580,
+      "member": "build\\intel\\mt_obj\\heapinit.obj",
+      "member_sha256": "37c6013dc55320470159ba500fd3a35a4d20900e93a8ac591aa6641b94a9db06",
+      "address": "0x00649735",
+      "coff_symbol": "__heap_init",
+      "size": 81,
+      "span_end": "0x00649785",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "9d1baae2150613beccb9c6e91e5a5de3886b317c0da98873420906907216d652",
+      "body_sha256": "43876dd2023602de84c1e3ffaf41dbdfefcfdc892a3c0d3223f274401eea7d8a",
+      "relocation_bindings": [
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "__imp__HeapCreate@12",
+          "addend": 0,
+          "target_address": "0x00657160",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "HeapCreate"
+        },
+        {
+          "offset": 26,
+          "type": "DIR32",
+          "symbol": "__crtheap",
+          "addend": 0,
+          "target_address": "0x0068FA78",
+          "target_kind": "global"
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "___heap_select",
+          "addend": 0,
+          "target_address": "0x0064971B",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "___active_heap",
+          "addend": 0,
+          "target_address": "0x0068FA7C",
+          "target_kind": "global"
+        },
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "___sbh_heap_init",
+          "addend": 0,
+          "target_address": "0x0064A6CD",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "__crtheap",
+          "addend": 0,
+          "target_address": "0x0068FA78",
+          "target_kind": "global"
+        },
+        {
+          "offset": 70,
+          "type": "DIR32",
+          "symbol": "__imp__HeapDestroy@4",
+          "addend": 0,
+          "target_address": "0x00657164",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "HeapDestroy"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00649781",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00649785",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00649755",
+            "target": "0x0064971B"
+          },
+          {
+            "site": "0x00649769",
+            "target": "0x0064A6CD"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "cfg": [
+        2,
+        3
+      ]
+    },
+    {
+      "member_offset": 1754170,
+      "member": "build\\intel\\mt_obj\\wincmdln.obj",
+      "member_sha256": "81b9cee10c50608f4011feba0f08731181124c06e1ad3b926f5fa4eb10628c3f",
+      "address": "0x00648FF5",
+      "coff_symbol": "__wincmdln",
+      "size": 93,
+      "span_end": "0x00649051",
+      "decision": "pending",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "ceef9834dd6c45da558eb853abf5dc7de362739b71f9181d61ed4863444fbf4e",
+      "body_sha256": "cfbeaf72dac8b95451cdce8f6d914412b7bb771c39b58a4a95c8b2c3cb90abbc",
+      "relocation_bindings": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "___mbctype_initialized",
+          "addend": 0,
+          "target_address": "0x0068FBB4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "___initmbctable",
+          "addend": 0,
+          "target_address": "0x006504F9",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "__acmdln",
+          "addend": 0,
+          "target_address": "0x0068FBC4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "??_C@_00CNPNBAHC@?$AA@",
+          "addend": 0,
+          "target_address": "0x006609AB",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "__ismbblead",
+          "addend": 0,
+          "target_address": "0x006515F3",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00649051",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00649001",
+            "target": "0x006504F9"
+          },
+          {
+            "site": "0x00649034",
+            "target": "0x006515F3"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "cfg": [
+        1,
+        10
+      ],
+      "uncertainty": "crt-command-line-multibyte-bindings-unresolved"
+    },
+    {
+      "member_offset": 802580,
+      "member": "build\\intel\\mt_obj\\heapinit.obj",
+      "member_sha256": "37c6013dc55320470159ba500fd3a35a4d20900e93a8ac591aa6641b94a9db06",
+      "address": "0x0064971B",
+      "coff_symbol": "___heap_select",
+      "size": 26,
+      "span_end": "0x00649734",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "b96b2683e5b9ab8f9865b0a6a3ed6f6f4da6e91998d6847f47c15f73e464cc66",
+      "body_sha256": "a940897250399403d977c4e61d5668f9210903f252fd9d301475d6b8ba00bb85",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "__osplatform",
+          "addend": 0,
+          "target_address": "0x0068E2E8",
+          "target_kind": "global"
+        },
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "__winmajor",
+          "addend": 0,
+          "target_address": "0x0068E2F4",
+          "target_kind": "global"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00649730",
+            "cleanup": 0
+          },
+          {
+            "site": "0x00649734",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "cfg": [
+        2,
+        2
+      ]
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "address": "0x0064A6CD",
+      "coff_symbol": "___sbh_heap_init",
+      "size": 72,
+      "span_end": "0x0064A714",
+      "decision": "library",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "9c4d08c5048641176ebc5e03e3cc5653b292b8b415f19d88bed67b1cd2f450b4",
+      "body_sha256": "88cf836c266a7adb7752b1e8e9af59fd46ca9e80c7ab9abbd5d06c7ac4a2065a",
+      "relocation_bindings": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "__crtheap",
+          "addend": 0,
+          "target_address": "0x0068FA78",
+          "target_kind": "global"
+        },
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "__imp__HeapAlloc@12",
+          "addend": 0,
+          "target_address": "0x006571A0",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "HeapAlloc"
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "___sbh_pHeaderList",
+          "addend": 0,
+          "target_address": "0x0068FA64",
+          "target_kind": "global"
+        },
+        {
+          "offset": 35,
+          "type": "DIR32",
+          "symbol": "___sbh_pHeaderDefer",
+          "addend": 0,
+          "target_address": "0x0068FA5C",
+          "target_kind": "global"
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "___sbh_cntHeaderList",
+          "addend": 0,
+          "target_address": "0x0068FA60",
+          "target_kind": "global"
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "___sbh_pHeaderScan",
+          "addend": 0,
+          "target_address": "0x0068FA6C",
+          "target_kind": "global"
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "___sbh_threshold",
+          "addend": 0,
+          "target_address": "0x0068FA68",
+          "target_kind": "global"
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "___sbh_sizeHeaderList",
+          "addend": 0,
+          "target_address": "0x0068FA70",
+          "target_kind": "global"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064A6E9",
+            "cleanup": 0
+          },
+          {
+            "site": "0x0064A714",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "cfg": [
+        2,
+        1
+      ]
+    }
+  ],
+  "diagnostic_boundaries": [
+    {
+      "member_offset": 1221154,
+      "member": "build\\intel\\mt_obj\\exsup3.obj",
+      "member_sha256": "edbe6c7fcf86d22036cf9872c45885584dbb60a1c80fb7030d8a9286d08d6691",
+      "address": "0x00645468",
+      "coff_symbol": "__except_handler3",
+      "size": 230,
+      "span_end": "0x0064554D",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "7605ac3271a637abe5287e0c041aaaadbe60877cb822353b9ab491c3d6689a3a",
+      "body_sha256": "0e2f76375128e3fd57cc6bedb2337232d8f88f2ffac30b19c2a605bd73850a47",
+      "relocation_bindings": [
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "__ValidateEH3RN",
+          "addend": 0,
+          "target_address": "0x0064FCF7",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "__global_unwind2",
+          "addend": 0,
+          "target_address": "0x00640B24",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 126,
+          "type": "REL32",
+          "symbol": "__local_unwind2",
+          "addend": 0,
+          "target_address": "0x00640B66",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "__NLG_Notify",
+          "addend": 0,
+          "target_address": "0x00640BFA",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 209,
+          "type": "REL32",
+          "symbol": "__local_unwind2",
+          "addend": 0,
+          "target_address": "0x00640B66",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0064554D",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x0064549C",
+            "target": "0x0064FCF7"
+          },
+          {
+            "site": "0x006454D8",
+            "target": "0x00640B24"
+          },
+          {
+            "site": "0x006454E5",
+            "target": "0x00640B66"
+          },
+          {
+            "site": "0x006454F6",
+            "target": "0x00640BFA"
+          },
+          {
+            "site": "0x00645538",
+            "target": "0x00640B66"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": null,
+      "extent_status": "not-inventoried",
+      "cfg": [
+        1,
+        9
+      ]
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "address": "0x00648C70",
+      "coff_symbol": "__NMSG_WRITE",
+      "size": 375,
+      "span_end": "0x00648DE6",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "673609a4eb501db314310d3ca13e95cf61d43687dddf6fa677840cbff5b61291",
+      "body_sha256": "f74e09d384ec8d663231b7a6b5a487deffe8619ffb1479d509015992bce29d6d",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "addend": 0,
+          "target_address": "0x0066FE30",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 0,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 0,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "___app_type",
+          "addend": 0,
+          "target_address": "0x0066FF14",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleFileNameA@12",
+          "addend": 0,
+          "target_address": "0x00657074",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleFileNameA"
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+          "addend": 0,
+          "target_address": "0x00661324",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "addend": 0,
+          "target_address": "0x00641B80",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 162,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 177,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 194,
+          "type": "DIR32",
+          "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+          "addend": 0,
+          "target_address": "0x00661320",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 200,
+          "type": "REL32",
+          "symbol": "_strncpy",
+          "addend": 0,
+          "target_address": "0x0064CFF0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 209,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 222,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 239,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "target_address": "0x00642510",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+          "addend": 0,
+          "target_address": "0x00662518",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "addend": 0,
+          "target_address": "0x00641B80",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 259,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+          "addend": 0,
+          "target_address": "0x0066131C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 270,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "_strcat",
+          "addend": 0,
+          "target_address": "0x00641B90",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 292,
+          "type": "DIR32",
+          "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+          "addend": 0,
+          "target_address": "0x006612E8",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 298,
+          "type": "REL32",
+          "symbol": "___crtMessageBoxA",
+          "addend": 0,
+          "target_address": "0x0064FBFE",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "_rterrs",
+          "addend": 4,
+          "target_address": "0x006706B0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 324,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "addend": 0,
+          "target_address": "0x00640620",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 336,
+          "type": "DIR32",
+          "symbol": "__imp__GetStdHandle@4",
+          "addend": 0,
+          "target_address": "0x006571EC",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetStdHandle"
+        },
+        {
+          "offset": 343,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "target_address": "0x00657124",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "WriteFile"
+        },
+        {
+          "offset": 360,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "addend": 0,
+          "target_address": "0x00640611",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00648DE6",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00648D04",
+            "target": "0x00641B80"
+          },
+          {
+            "site": "0x00648D11",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D20",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D37",
+            "target": "0x0064CFF0"
+          },
+          {
+            "site": "0x00648D40",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D4D",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648D5E",
+            "target": "0x00642510"
+          },
+          {
+            "site": "0x00648D6B",
+            "target": "0x00641B80"
+          },
+          {
+            "site": "0x00648D72",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D7D",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D89",
+            "target": "0x00641B90"
+          },
+          {
+            "site": "0x00648D99",
+            "target": "0x0064FBFE"
+          },
+          {
+            "site": "0x00648DB3",
+            "target": "0x00640620"
+          },
+          {
+            "site": "0x00648DD7",
+            "target": "0x00640611"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": 375,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        1,
+        10
+      ]
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "address": "0x00648E11",
+      "coff_symbol": "__FF_MSGBANNER",
+      "size": 57,
+      "span_end": "0x00648E49",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "b0d5d716b5b7dbc999f7d07a5281f3bed5019bf7169c7d0fdd454b1ca866e9d5",
+      "body_sha256": "5a2421c5ab6d0a7e04a79be9afe0cbdaf62c8eb551d4147a76e436dc08b92701",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "___error_mode",
+          "addend": 0,
+          "target_address": "0x0068E2D4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "___app_type",
+          "addend": 0,
+          "target_address": "0x0066FF14",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 34,
+          "type": "DIR32",
+          "symbol": "__adbgmsg",
+          "addend": 0,
+          "target_address": "0x0068E574",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "__NMSG_WRITE",
+          "addend": 0,
+          "target_address": "0x00648C70",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00648E49",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00648E2D",
+            "target": "0x00648C70"
+          },
+          {
+            "site": "0x00648E43",
+            "target": "0x00648C70"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": 57,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        1,
+        4
+      ]
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "address": "0x006440A5",
+      "coff_symbol": "___crtExitProcess",
+      "size": 48,
+      "span_end": "0x006440D4",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "22b7b78107b9338909545f5c4e0f79c48164582d148a074379e9d33b64bf948e",
+      "body_sha256": "b41e5c99fb72a82f9343d68b84edae67b9e0286946323dda792fdb424129cb11",
+      "relocation_bindings": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+          "addend": 0,
+          "target_address": "0x006611F0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "__imp__GetModuleHandleA@4",
+          "addend": 0,
+          "target_address": "0x006570A8",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetModuleHandleA"
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+          "addend": 0,
+          "target_address": "0x006611E0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__imp__GetProcAddress@8",
+          "addend": 0,
+          "target_address": "0x006570A0",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetProcAddress"
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__ExitProcess@4",
+          "addend": 0,
+          "target_address": "0x0065717C",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "ExitProcess"
+        }
+      ],
+      "body_facts": {
+        "returns": [],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "ledger_size": 47,
+      "extent_status": "candidate-omits-terminal-int3",
+      "cfg": null
+    },
+    {
+      "member_offset": 1094010,
+      "member": "build\\intel\\mt_obj\\mbctype.obj",
+      "member_sha256": "d31fbbef1d8d91657c0b74713600f8635074964f1c1f3187af02b058d582e892",
+      "address": "0x006504F9",
+      "coff_symbol": "___initmbctable",
+      "size": 30,
+      "span_end": "0x00650516",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "7469ccbdded5e7bfc475e7d6f2505e0119066f13d8121454eda38d17036f96fe",
+      "body_sha256": "b218421ea82d3fc96da924470bb266d070e36bef37b93162713db68ef3b46444",
+      "relocation_bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___mbctype_initialized",
+          "addend": 0,
+          "target_address": "0x0068FBB4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "__setmbcp",
+          "addend": 0,
+          "target_address": "0x006503A9",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "___mbctype_initialized",
+          "addend": 0,
+          "target_address": "0x0068FBB4",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00650516",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x00650504",
+            "target": "0x006503A9"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": 30,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "member_offset": 1094010,
+      "member": "build\\intel\\mt_obj\\mbctype.obj",
+      "member_sha256": "d31fbbef1d8d91657c0b74713600f8635074964f1c1f3187af02b058d582e892",
+      "address": "0x006503A9",
+      "coff_symbol": "__setmbcp",
+      "size": 336,
+      "span_end": "0x006504F8",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "870ded8b3c7ecd6241bdabb52c1c80d45b8841f80ea7594d50e2515747637aab",
+      "body_sha256": "322dc62f998631145dfe9e710129c385d8c65fe69f3d3030765bf5a98c5d3d03",
+      "relocation_bindings": [
+        {
+          "offset": 3,
+          "type": "DIR32",
+          "symbol": "$T20875",
+          "addend": 0,
+          "target_address": "0x006673D0",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "__SEH_prolog",
+          "addend": 0,
+          "target_address": "0x00645414",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__lock",
+          "addend": 0,
+          "target_address": "0x00646725",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "_fSystemSet",
+          "addend": 0,
+          "target_address": "0x0068E76C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "_fSystemSet",
+          "addend": 0,
+          "target_address": "0x0068E76C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 55,
+          "type": "DIR32",
+          "symbol": "__imp__GetOEMCP@0",
+          "addend": 0,
+          "target_address": "0x006570F0",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetOEMCP"
+        },
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "_fSystemSet",
+          "addend": 0,
+          "target_address": "0x0068E76C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "__imp__GetACP@0",
+          "addend": 0,
+          "target_address": "0x006570F4",
+          "target_kind": "import",
+          "dll": "KERNEL32.dll",
+          "import_name": "GetACP"
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "_fSystemSet",
+          "addend": 0,
+          "target_address": "0x0068E76C",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "___lc_codepage",
+          "addend": 0,
+          "target_address": "0x0068E6CC",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "___mbcodepage",
+          "addend": 0,
+          "target_address": "0x0068E904",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "___ptmbcinfo",
+          "addend": 0,
+          "target_address": "0x0068E7F8",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 142,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "target_address": "0x00644331",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "__setmbcp_lk",
+          "addend": 0,
+          "target_address": "0x00650209",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 175,
+          "type": "DIR32",
+          "symbol": "___mbcodepage",
+          "addend": 0,
+          "target_address": "0x0068E904",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 183,
+          "type": "DIR32",
+          "symbol": "___ismbcodepage",
+          "addend": 0,
+          "target_address": "0x0068E7FC",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "___mblcid",
+          "addend": 0,
+          "target_address": "0x0068E7F4",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 212,
+          "type": "DIR32",
+          "symbol": "___mbulinfo",
+          "addend": 0,
+          "target_address": "0x0068E910",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "__mbctype",
+          "addend": 0,
+          "target_address": "0x0068E800",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 263,
+          "type": "DIR32",
+          "symbol": "__mbcasemap",
+          "addend": 0,
+          "target_address": "0x0068E920",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 279,
+          "type": "DIR32",
+          "symbol": "___ptmbcinfo",
+          "addend": 0,
+          "target_address": "0x0068E7F8",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 291,
+          "type": "DIR32",
+          "symbol": "___ptmbcinfo",
+          "addend": 0,
+          "target_address": "0x0068E7F8",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 299,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "target_address": "0x00642A61",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 322,
+          "type": "REL32",
+          "symbol": "__SEH_epilog",
+          "addend": 0,
+          "target_address": "0x0064544F",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 330,
+          "type": "REL32",
+          "symbol": "__unlock",
+          "addend": 0,
+          "target_address": "0x00646658",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x006504EF",
+            "cleanup": 0
+          },
+          {
+            "site": "0x006504F8",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006503B0",
+            "target": "0x00645414"
+          },
+          {
+            "site": "0x006503BB",
+            "target": "0x00646725"
+          },
+          {
+            "site": "0x00650436",
+            "target": "0x00644331"
+          },
+          {
+            "site": "0x00650448",
+            "target": "0x00650209"
+          },
+          {
+            "site": "0x006504D3",
+            "target": "0x00642A61"
+          },
+          {
+            "site": "0x006504E2",
+            "target": "0x006504F0"
+          },
+          {
+            "site": "0x006504EA",
+            "target": "0x0064544F"
+          },
+          {
+            "site": "0x006504F2",
+            "target": "0x00646658"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": 327,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        2,
+        19
+      ]
+    },
+    {
+      "member_offset": 1054476,
+      "member": "build\\intel\\mt_obj\\ismbbyte.obj",
+      "member_sha256": "50abb06927fe4c5e5eea91465c6315f6cf91d3946da43e476c665d5aa3025d27",
+      "address": "0x006515F3",
+      "coff_symbol": "__ismbblead",
+      "size": 17,
+      "span_end": "0x00651603",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "c1f2beb64c62efcd7818896b09750cc66ce5995f2d18c89941866bea2de67491",
+      "body_sha256": "4ab19886f65bb888c7efc780131bff160a6fab925d5d3e20899ec0332a4ab88b",
+      "relocation_bindings": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "_x_ismbbtype",
+          "addend": 0,
+          "target_address": "0x0065152C",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x00651603",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [
+          {
+            "site": "0x006515FB",
+            "target": "0x0065152C"
+          }
+        ],
+        "vtable_writes": []
+      },
+      "ledger_size": 17,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "member_offset": 1054476,
+      "member": "build\\intel\\mt_obj\\ismbbyte.obj",
+      "member_sha256": "50abb06927fe4c5e5eea91465c6315f6cf91d3946da43e476c665d5aa3025d27",
+      "address": "0x0065152C",
+      "coff_symbol": "_x_ismbbtype",
+      "size": 51,
+      "span_end": "0x0065155E",
+      "decision": "diagnostic",
+      "extent_basis": "function-auxiliary-record",
+      "source_sha256": "16afef207ab522094fbfcd7fc9c4b299a256a12b437665f14f3a42c47da2bd91",
+      "body_sha256": "fc63098ecd4c25ed4d57d97fb959fa219856643dd4d97f3f6c8f9da179890125",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "__mbctype",
+          "addend": 1,
+          "target_address": "0x0068E800",
+          "target_kind": "diagnostic"
+        },
+        {
+          "offset": 26,
+          "type": "DIR32",
+          "symbol": "__pctype",
+          "addend": 0,
+          "target_address": "0x006708C0",
+          "target_kind": "diagnostic"
+        }
+      ],
+      "body_facts": {
+        "returns": [
+          {
+            "site": "0x0065155A",
+            "cleanup": 0
+          },
+          {
+            "site": "0x0065155E",
+            "cleanup": 0
+          }
+        ],
+        "direct_calls": [],
+        "vtable_writes": []
+      },
+      "ledger_size": 51,
+      "extent_status": "unaccepted-whole-source",
+      "cfg": [
+        2,
+        4
+      ]
+    }
+  ],
+  "globals": [
+    {
+      "member_offset": 802580,
+      "member": "build\\intel\\mt_obj\\heapinit.obj",
+      "member_sha256": "37c6013dc55320470159ba500fd3a35a4d20900e93a8ac591aa6641b94a9db06",
+      "symbol": "__crtheap",
+      "target_address": "0x0068FA78",
+      "source_definition": {
+        "symbol": "__crtheap",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 802580,
+      "member": "build\\intel\\mt_obj\\heapinit.obj",
+      "member_sha256": "37c6013dc55320470159ba500fd3a35a4d20900e93a8ac591aa6641b94a9db06",
+      "symbol": "___active_heap",
+      "target_address": "0x0068FA7C",
+      "source_definition": {
+        "symbol": "___active_heap",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_pHeaderList",
+      "target_address": "0x0068FA64",
+      "source_definition": {
+        "symbol": "___sbh_pHeaderList",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_pHeaderScan",
+      "target_address": "0x0068FA6C",
+      "source_definition": {
+        "symbol": "___sbh_pHeaderScan",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_pHeaderDefer",
+      "target_address": "0x0068FA5C",
+      "source_definition": {
+        "symbol": "___sbh_pHeaderDefer",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_cntHeaderList",
+      "target_address": "0x0068FA60",
+      "source_definition": {
+        "symbol": "___sbh_cntHeaderList",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_threshold",
+      "target_address": "0x0068FA68",
+      "source_definition": {
+        "symbol": "___sbh_threshold",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 827680,
+      "member": "build\\intel\\mt_obj\\sbheap.obj",
+      "member_sha256": "4766bed27872b18366db042a0e1f5b2805a0567218234632708c85663cf6e0ae",
+      "symbol": "___sbh_sizeHeaderList",
+      "target_address": "0x0068FA70",
+      "source_definition": {
+        "symbol": "___sbh_sizeHeaderList",
+        "offset": 4,
+        "section": 0,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "common",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      }
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "__osplatform",
+      "target_address": "0x0068E2E8",
+      "source_definition": {
+        "symbol": "__osplatform",
+        "offset": 4,
+        "section": 2,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "bss-section",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      },
+      "whole_bss_definitions": [
+        {
+          "symbol": "__C_Exit_Done",
+          "offset": 68,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__C_Termination_Done",
+          "offset": 64,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__exitflag",
+          "offset": 60,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__wpgmptr",
+          "offset": 56,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__pgmptr",
+          "offset": 52,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___winitenv",
+          "offset": 48,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__wenviron",
+          "offset": 44,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___initenv",
+          "offset": 40,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__environ",
+          "offset": 36,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___wargv",
+          "offset": 32,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___argv",
+          "offset": 28,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___argc",
+          "offset": 24,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winminor",
+          "offset": 20,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winmajor",
+          "offset": 16,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winver",
+          "offset": 12,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__osver",
+          "offset": 8,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__osplatform",
+          "offset": 4,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__umaskval",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "__winmajor",
+      "target_address": "0x0068E2F4",
+      "source_definition": {
+        "symbol": "__winmajor",
+        "offset": 16,
+        "section": 2,
+        "type": 0,
+        "storage": 2
+      },
+      "definition_kind": "bss-section",
+      "zero_fill_region": {
+        "section": ".data",
+        "base": "0x0066C000",
+        "raw_size": 24576,
+        "virtual_size": 146376,
+        "flags": "0xC0000040"
+      },
+      "whole_bss_definitions": [
+        {
+          "symbol": "__C_Exit_Done",
+          "offset": 68,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__C_Termination_Done",
+          "offset": 64,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__exitflag",
+          "offset": 60,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__wpgmptr",
+          "offset": 56,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__pgmptr",
+          "offset": 52,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___winitenv",
+          "offset": 48,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__wenviron",
+          "offset": 44,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___initenv",
+          "offset": 40,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__environ",
+          "offset": 36,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___wargv",
+          "offset": 32,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___argv",
+          "offset": 28,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "___argc",
+          "offset": 24,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winminor",
+          "offset": 20,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winmajor",
+          "offset": 16,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__winver",
+          "offset": 12,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__osver",
+          "offset": 8,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__osplatform",
+          "offset": 4,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__umaskval",
+          "offset": 0,
+          "section": 2,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    }
+  ],
+  "sdk_layout": {
+    "probe": "probes/VC7VersionInfoLayout.cpp",
+    "probe_sha256": "236cf52e50c2a232a1762c1d9764697645e46c2e5e0996f81e2672f5e57e77ed",
+    "profile": [
+      "/Od",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/I",
+      "src"
+    ],
+    "symbol": "_VersionInfoLayoutProbe",
+    "size": 24,
+    "values": [
+      148,
+      0,
+      4,
+      8,
+      12,
+      16
+    ],
+    "sha256": "5263168ae853427e914541f970fae0a49ddd634ffc9f7663f3cb8132e35dc6d5",
+    "headers": {
+      "PlatformSDK/Include/WinNT.h": "3aec4a87873489d4ea3987c117c7d1a37c2198f5f07d953031d47bc4a28da106",
+      "crt/src/winheap.h": "d387591fdc9e12838aadf35f80ceb23d5759ba68fa29e1226774c98ce3bbddf0"
+    }
+  },
+  "entry_context": {
+    "address": "0x0064232C",
+    "size": 469,
+    "span_end": "0x00642500",
+    "body_sha256": "f675df523799bb683356a0a9e08c12c3c4e2e01c249c8d07f256cb3c9c61952d",
+    "cfg": [
+      2,
+      20
+    ],
+    "body_facts": {
+      "returns": [
+        {
+          "site": "0x006424DA",
+          "cleanup": 0
+        },
+        {
+          "site": "0x00642500",
+          "cleanup": 0
+        }
+      ],
+      "direct_calls": [
+        {
+          "site": "0x00642333",
+          "target": "0x00645414"
+        },
+        {
+          "site": "0x0064233F",
+          "target": "0x00642510"
+        },
+        {
+          "site": "0x006423F5",
+          "target": "0x00649735"
+        },
+        {
+          "site": "0x00642401",
+          "target": "0x006422B2"
+        },
+        {
+          "site": "0x00642407",
+          "target": "0x00646389"
+        },
+        {
+          "site": "0x00642412",
+          "target": "0x006422B2"
+        },
+        {
+          "site": "0x00642418",
+          "target": "0x00649693"
+        },
+        {
+          "site": "0x00642420",
+          "target": "0x00649449"
+        },
+        {
+          "site": "0x0064242B",
+          "target": "0x0064228D"
+        },
+        {
+          "site": "0x0064243C",
+          "target": "0x00649327"
+        },
+        {
+          "site": "0x00642446",
+          "target": "0x00649285"
+        },
+        {
+          "site": "0x00642451",
+          "target": "0x0064228D"
+        },
+        {
+          "site": "0x00642457",
+          "target": "0x00649052"
+        },
+        {
+          "site": "0x00642462",
+          "target": "0x0064228D"
+        },
+        {
+          "site": "0x0064246A",
+          "target": "0x0064411D"
+        },
+        {
+          "site": "0x00642478",
+          "target": "0x0064228D"
+        },
+        {
+          "site": "0x0064248B",
+          "target": "0x00648FF5"
+        },
+        {
+          "site": "0x006424AB",
+          "target": "0x00602A60"
+        },
+        {
+          "site": "0x006424BB",
+          "target": "0x0064424A"
+        },
+        {
+          "site": "0x006424C0",
+          "target": "0x0064426C"
+        },
+        {
+          "site": "0x006424D3",
+          "target": "0x00648E76"
+        },
+        {
+          "site": "0x006424E8",
+          "target": "0x0064425B"
+        },
+        {
+          "site": "0x006424ED",
+          "target": "0x0064427B"
+        },
+        {
+          "site": "0x006424FB",
+          "target": "0x0064544F"
+        }
+      ],
+      "vtable_writes": []
+    },
+    "origin": "unknown",
+    "origin_evidence": "R114",
+    "instruction_witnesses": [
+      {
+        "site": "0x00642333",
+        "mnemonic": "call",
+        "operands": "0x645414"
+      },
+      {
+        "site": "0x00642338",
+        "mnemonic": "mov",
+        "operands": "edi, 0x94"
+      },
+      {
+        "site": "0x0064233D",
+        "mnemonic": "mov",
+        "operands": "eax, edi"
+      },
+      {
+        "site": "0x0064233F",
+        "mnemonic": "call",
+        "operands": "0x642510"
+      },
+      {
+        "site": "0x00642344",
+        "mnemonic": "mov",
+        "operands": "dword ptr [ebp - 0x18], esp"
+      },
+      {
+        "site": "0x00642347",
+        "mnemonic": "mov",
+        "operands": "esi, esp"
+      },
+      {
+        "site": "0x00642349",
+        "mnemonic": "mov",
+        "operands": "dword ptr [esi], edi"
+      },
+      {
+        "site": "0x0064234B",
+        "mnemonic": "push",
+        "operands": "esi"
+      },
+      {
+        "site": "0x0064234C",
+        "mnemonic": "call",
+        "operands": "dword ptr [0x657090]"
+      },
+      {
+        "site": "0x00642352",
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [esi + 0x10]"
+      },
+      {
+        "site": "0x00642355",
+        "mnemonic": "mov",
+        "operands": "dword ptr [0x68e2e8], ecx"
+      },
+      {
+        "site": "0x0064235B",
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esi + 4]"
+      },
+      {
+        "site": "0x0064235E",
+        "mnemonic": "mov",
+        "operands": "dword ptr [0x68e2f4], eax"
+      },
+      {
+        "site": "0x00642363",
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esi + 8]"
+      },
+      {
+        "site": "0x00642366",
+        "mnemonic": "mov",
+        "operands": "dword ptr [0x68e2f8], edx"
+      },
+      {
+        "site": "0x006423F5",
+        "mnemonic": "call",
+        "operands": "0x649735"
+      },
+      {
+        "site": "0x006424FB",
+        "mnemonic": "call",
+        "operands": "0x64544f"
+      }
+    ]
+  },
+  "stack_probe_alias": {
+    "member_offset": 1654494,
+    "member": "build\\intel\\mt_obj\\chkstk.obj",
+    "member_sha256": "247d433c8c3aa18924897bb2e9af619e0a038a524a8c266a4ccf44fc854fbe1a",
+    "address": "0x00642510",
+    "coff_symbol": "__chkstk",
+    "size": 61,
+    "span_end": "0x0064254C",
+    "decision": "anchor",
+    "extent_basis": "function-auxiliary-record",
+    "source_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+    "body_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+    "relocation_bindings": [],
+    "body_facts": {
+      "returns": [
+        {
+          "site": "0x00642524",
+          "cleanup": 0
+        },
+        {
+          "site": "0x0064254C",
+          "cleanup": 0
+        }
+      ],
+      "direct_calls": [],
+      "vtable_writes": []
+    },
+    "alias": "__alloca_probe",
+    "origin_evidence": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+  },
+  "literal_controls": [
+    {
+      "member_offset": 1754170,
+      "member": "build\\intel\\mt_obj\\wincmdln.obj",
+      "member_sha256": "81b9cee10c50608f4011feba0f08731181124c06e1ad3b926f5fa4eb10628c3f",
+      "symbol": "??_C@_00CNPNBAHC@?$AA@",
+      "target_address": "0x006609AB",
+      "data_size": 1,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_00CNPNBAHC@?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+      "target_address": "0x00661324",
+      "data_size": 23,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BH@DNAGHKFM@?$DMprogram?5name?5unknown?$DO?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "7fd035a12f341287a3c9823243ec8d61c76902a36a01f7de5ae0e2d8f6668676"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+      "target_address": "0x00661320",
+      "data_size": 4,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_03KHICJKCI@?4?4?4?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "2c2b93ab063d64d75b80c9901170ce7ae0d79a64bc7f077ce1a010ab0956a391"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+      "target_address": "0x00662518",
+      "data_size": 26,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0BK@OFGJDLJJ@Runtime?5Error?$CB?6?6Program?3?5?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "465f1d44236bf14ecf37d7200a6c96955cef72403f98afc7b38138c96836c30f"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+      "target_address": "0x0066131C",
+      "data_size": 3,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_02PHMGELLB@?6?6?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "c1c91a7d882700051cb22bf907cfedf13b133deac2aa913eb68f5690146a9317"
+    },
+    {
+      "member_offset": 1679710,
+      "member": "build\\intel\\mt_obj\\crt0msg.obj",
+      "member_sha256": "8d80c165e12afef16de8b2fc0b76a7d354000db50d3cdfd31afae7e6be1c6cb8",
+      "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+      "target_address": "0x006612E8",
+      "data_size": 37,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0CF@GOGNBNAK@Microsoft?5Visual?5C?$CL?$CL?5Runtime?5Lib@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "99b02f72dbb42a44bb629693f626a409c12c6c556ab6998fa19ac8a46a896f45"
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+      "target_address": "0x006611F0",
+      "data_size": 12,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0M@MBOPBNBK@mscoree?4dll?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "4ff54914d3f5b6b17029de1534c72c4ac7ffa90a8b43ed6171856f987a3eba0d"
+    },
+    {
+      "member_offset": 1663884,
+      "member": "build\\intel\\mt_obj\\crt0dat.obj",
+      "member_sha256": "b957320df70d4a31f5a5a31025b71e9ce48ad2fbf3bf2bdd18571e0eb455ed3d",
+      "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+      "target_address": "0x006611E0",
+      "data_size": 15,
+      "data_definitions": [
+        {
+          "symbol": "??_C@_0P@MIGLKIOC@CorExitProcess?$AA@",
+          "offset": 0
+        }
+      ],
+      "source_data_sha256": "bd0fadc9bf17cc3c3d2338aec58f1f3d85763c75f3cc84c9e82005e51a963fdc"
+    }
+  ]
+}
