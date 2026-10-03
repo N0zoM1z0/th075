@@ -126,6 +126,10 @@ def verify_plan(m):
 
 
 def check_ledger(row,functions,origins,evidence_only):
+    if row['address'] in PENDING and origins.get(row['address'], {}).get('evidence_id') == 'R120':
+        module('runtime_cycle_reconciliation', 'origin_reconciliation.py').check_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     key=row['address'];function=functions[key];expected=row.get('ledger_size',row['size'])
     if int(function['size'])!=expected or int(function['span_end'],16)!=int(key,16)+expected-1:raise ValueError('unaccepted lock/termination boundary changes')
     interiors=[k for k in functions if int(key,16)<int(k,16)<int(key,16)+row['size']]
@@ -233,6 +237,10 @@ def main():
             primary=next(d for d in defs if d['symbol']==parent['coff_symbol']);entry=next(d for d in defs if d['symbol']==fragment['source_symbol'])
             if entry['section']!=primary['section'] or entry['offset']-primary['offset']!=fragment['source_offset']:raise ValueError('interior cleanup loses its actual source parent label')
             f=functions[fragment['address']];o=origins[fragment['address']]
+            if o['evidence_id'] == 'R120':
+                module('runtime_cycle_label_reconciliation', 'origin_reconciliation.py').check_label(
+                    fragment, f, o, functions, origins)
+                continue
             if int(f['size'])!=fragment['size'] or f['source_file'] or f['match_percent']!='0.00' or o['origin']!='unknown' or f['owner'] or f['status']!='unclassified':raise ValueError('pending parent cleanup gains source/exact/origin credit')
             if not args.evidence_only and (o['evidence_id']!='R118' or o['confidence']!=fragment['uncertainty']):raise ValueError('pending cleanup ledger loses its explicit uncertainty')
         # Re-read both label definitions for every scope pointer, including the
@@ -248,7 +256,7 @@ def main():
     if result.returncode:raise ValueError('retained security/runtime replay failed: '+result.stderr[-1000:])
     print('R118 origins OK: five library bodies / 273 bytes; whole 36-entry lock table / 288 bytes, '
           'fourteen static critical sections / 336 bytes, complete dynamic API/fallback/EH bindings and callback ranges; '
-          'four roots / 444 source bytes and two interior cleanup candidates / 23 bytes remain pending; no source or exact credit.')
+          'four roots / 444 source bytes and two interior cleanup candidates / 23 bytes retained as historical pending snapshots; current ownership recorded separately; no source or exact credit.')
     return 0
 
 

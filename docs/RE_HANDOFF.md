@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R119. The public
+review cohorts R108 through R120. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,116: 919 authored, 1,622 library and 575 compiler generated.
-There are 1,235 pending. Candidate count is not authored function count.
+has resolved 3,139: 919 authored, 1,645 library and 575 compiler generated.
+There are 1,212 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R120 lock/error/termination cohort below.
+the bounded R121 startup/registration cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R119; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R120; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R120 lock/error/termination cycle
+## Next agent objective — R121 startup/registration dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -231,29 +231,52 @@ controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
 9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools.
 
-The next bounded cohort is six existing lock/error/termination roots:
+R120 closes the complete allocator/lock/error/termination cycle: eighteen
+complete library source bodies / 1,928 bytes / 166 typed fields, plus five
+existing interior labels / 50 overlapping bytes. Replay
+`scripts/repo-python scripts/verify-runtime-cycle-origins.py`. It compares the
+complete own source and every field, genuine defining state / COMMON storage,
+full literals and all seven EH scopes, then cold-replays R119 and retained
+runtime/import/layout controls. Canonical extents expand only for lazy-lock
+151 -> 160, heap allocation 111 -> 123 and report_failure 48 -> 49. Historical
+R115–R119 snapshots retain their earlier decisions through narrowly checked
+same-source reconciliation. Internal labels remain unnamed and receive no
+standalone-source or exact credit. Target and Ghidra database are unchanged.
+
+Final acceptance passed in one no-auth public HTTPS MCP request: the full
+R120 verifier and retained R119/R118/R117/R116/R115/runtime/import graphs,
+R114 lifetime evidence, all 872 recorded authored extents, target/tracking/
+Ghidra attestation, 266 public tests, progress freshness and diff whitespace.
+All 60 exact units / 9,883 bytes cold-replayed across eleven objects.
+Investigation and intermediate verification used local tools.
+
+The whole MT initializer remains diagnostic; its API lookup/fallback context
+supports getptd without accepting its other children. Optional new-handler,
+user security handler and debug-message callbacks retain actual source storage
+and call ABI without classifying their implementations. Callback registration
+also grants no application origin. PE entry, cinit and other startup parents
+remain pending until every binding has independent evidence.
+
+The next bounded cohort is six existing startup/registration roots:
 
 | Candidate | Provisional bytes | Observed source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00646725` | 49 | `__lock` | Close actual lazy-lock/error-exit graph and lock pointer/API provenance |
-| `0x00646685` | 151 | `__mtinitlocknum` (160 source) | Whole allocator/errno/free cycle and embedded finally; no 151-byte truncation |
-| `0x00644187` | 195 | `_doexit` | Full lock/onexit/flag graph, cleanup labels and actual callback ABI |
-| `0x0064228D` | 37 | `__amsg_exit` | Actual exit-policy pointer and full banner/writer/termination bindings |
-| `0x00648C70` | 375 | `__NMSG_WRITE` | Complete error table/format/import/security-cookie graph |
-| `0x00648E11` | 57 | `__FF_MSGBANNER` | Actual mutable policy fields and independent whole writer dependency |
+| `0x006422B2` | 36 | `fast_error_exit` | Whole WINCRT0 source, exit-policy/global and accepted banner/writer graph |
+| `0x00646603` | 85 | `__mtdeletelocks` | Actual static/dynamic critical-section distinction, heap frees and API bindings |
+| `0x00646166` | 29 | `__mtterm` | Full FLS/TLS teardown dispatch and independently closed deletion dependency |
+| `0x00646389` | 239 | `__mtinit` | All export/fallback API slots, free callback, error paths and startup bindings |
+| `0x0064411D` | 106 | `__cinit` | Whole FP/RTC/registration and callback-range source/data provenance |
+| `0x0064168B` | 18 | `_atexit` | Full onexit registration/mutation graph and actual callback ABI |
 
-Use R115–R119 manifests and `.analysis/r114-startup-graph.json` diagnostically.
-Close the real cycle as a complete source/data/API graph rather than assuming
-that a named child or source fingerprint grants ownership. Required cookie
-failure (49 source/48 candidate), security-error handler (328), exit wrappers,
-onexit initializer, allocator/TLS roots and their data definitions may expand
-the graph. Reconcile all full source extents and interior/scope labels first.
-Retain actual callback input ABI and independently prove storage/registration;
-user callback implementations gain no origin merely from a runtime call.
-Keep non-inventoried handlers outside candidate counts. `__c_exit` at
-`0x0064427B` remains outside credit until its boundaries/dependencies are
-reconciled. PE entry, cinit and thread-startup parent retain pending diagnostics.
-Do not repeat the allocator or lifetime ambiguities without new dependencies.
+Use R115–R120 manifests and `.analysis/r114-startup-graph.json` diagnostically.
+Required onexit registration/mutation, FLS free callback and RTC/FP bodies may
+expand the graph. Keep the non-inventoried `__RTC_Terminate` source at
+`0x006496D7` outside candidate counts unless its boundary and inventory are
+explicitly reconciled; cinit's field points there but does not grant ownership.
+Keep PE startup diagnostic until environment, multibyte, IO and other real
+children close independently. Do not use the six root byte counts as accepted
+source extents without replaying actual auxiliary metadata. `__c_exit` at
+`0x0064427B` also remains outside credit pending its own reconciliation.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -269,7 +292,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R120 adds no exact scope. Update
+private path and 60-function exact baseline. R121 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -320,6 +343,8 @@ scripts/repo-python scripts/verify-startup-dependency-origins.py
 scripts/repo-python scripts/verify-runtime-error-origins.py
 scripts/repo-python scripts/verify-security-eh-origins.py
 scripts/repo-python scripts/verify-termination-lock-origins.py
+scripts/repo-python scripts/verify-allocator-thread-origins.py
+scripts/repo-python scripts/verify-runtime-cycle-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102

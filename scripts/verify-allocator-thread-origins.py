@@ -161,6 +161,10 @@ def verify_plan(m):
 
 
 def check_ledger(row, functions, origins, evidence_only):
+    if row['address'] in PENDING and origins.get(row['address'], {}).get('evidence_id') == 'R120':
+        module('runtime_cycle_reconciliation', 'origin_reconciliation.py').check_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     key = row['address']
     function = functions[key]
     if (int(function['size']) != row['ledger_size'] or
@@ -300,7 +304,8 @@ def main():
                 if origins[key]['origin'] != row['origin'] or origins[key]['evidence_id'] != row['origin_evidence']:
                     raise ValueError('retained complete heap anchor origin differs')
             elif int(functions[key]['size']) != row['ledger_size']:
-                raise ValueError('unaccepted lock/TLS context boundary differs')
+                module('runtime_cycle_context_reconciliation', 'origin_reconciliation.py').check_root(
+                    row, functions[key], origins[key])
             path.write_bytes(member(row))
             source, fields = c.object_function(path, row['coff_symbol'])
             actual = c.pe_bytes_at(target, a, row['size'])
@@ -348,6 +353,10 @@ def main():
                 if entry['section'] != primary['section'] or entry['offset'] - primary['offset'] != offset:
                     raise ValueError('interior cleanup loses its whole source parent label')
             f, o = functions[fragment['address']], origins[fragment['address']]
+            if o['evidence_id'] == 'R120':
+                module('runtime_cycle_label_reconciliation', 'origin_reconciliation.py').check_label(
+                    fragment, f, o, functions, origins)
+                continue
             if (int(f['size']) != fragment['size'] or int(f['span_end'], 16) != int(fragment['address'], 16) + fragment['size'] - 1
                     or f['source_file'] or f['match_percent'] != '0.00' or o['origin'] != 'unknown'
                     or o['disposition'] != 'review' or f['owner'] or f['status'] != 'unclassified'):
@@ -369,7 +378,7 @@ def main():
         raise ValueError('retained lock/runtime replay failed: ' + result.stderr[-1000:])
     print('R119 origins OK: six library dependencies / 1818 bytes; complete small-block allocation/free/region graph, '
           'new-handler callback and RET 4 TLS fallback; full CRT layout / 168 bytes and defining data/API/EH provenance; '
-          'seven roots / 607 source bytes and three interior cleanup candidates / 27 bytes remain pending; no source or exact credit.')
+          'seven roots / 607 source bytes and three interior cleanup candidates / 27 bytes retained as historical pending snapshots; current ownership recorded separately; no source or exact credit.')
     return 0
 
 

@@ -5071,3 +5071,99 @@ controls, all 872 recorded authored extents, target/tracking/Ghidra attestation,
 251 public tests, progress freshness and `git diff --check`. All 60 exact units /
 9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools.
+
+## R120 — complete CRT allocator/lock/error/termination cycle
+
+Reviewed against the pinned supplied Japanese TH075 target. The six handoff
+roots require twelve further complete source bodies to close their actual
+code, data, API and EH graph. All eighteen are library origin, covering 1,928
+complete source bytes and 166 typed relocation fields:
+
+| Address | Whole bytes | Vendor source symbol |
+| --- | ---: | --- |
+| `0x00648C70` | 375 | `__NMSG_WRITE` |
+| `0x00648E11` | 57 | `__FF_MSGBANNER` |
+| `0x00640611` | 14 | `@__security_check_cookie@4` |
+| `0x006405E0` | 49 | `_report_failure` |
+| `0x0064529E` | 328 | `___security_error_handler` |
+| `0x0064425B` | 17 | `__exit` |
+| `0x00644187` | 195 | `_doexit` |
+| `0x00646725` | 49 | `__lock` |
+| `0x00646685` | 160 | `__mtinitlocknum` |
+| `0x0064162B` | 40 | `___onexitinit` |
+| `0x00644331` | 18 | `_malloc` |
+| `0x00644305` | 44 | `__nh_malloc` |
+| `0x0064428A` | 123 | `__heap_alloc` |
+| `0x00642A61` | 113 | `_free` |
+| `0x00647F98` | 9 | `__errno` |
+| `0x00646196` | 113 | `__getptd` |
+| `0x00644343` | 187 | `_calloc` |
+| `0x0064228D` | 37 | `__amsg_exit` |
+
+Replay `scripts/repo-python scripts/verify-runtime-cycle-origins.py`. The
+verifier extracts each complete own function auxiliary extent from its
+hash-pinned VC7.1 archive member, compares every source byte and relocation,
+rechecks the full instruction inventory and exits, and closes every direct
+code edge against another complete root or an independently accepted anchor.
+The cookie check's external tail jump is accepted only at its actual typed
+REL32 field to the complete failure body. Eighteen independently reviewed
+anchors / 3,114 bytes are compared in full; their original control-flow and
+shared-tail proofs cold-replay through R119 and the retained R115–R118 chain.
+This preserves strcpy's shared carrier, memmove's embedded switch data and
+the genuine chkstk/alloca source alias rather than inventing new bodies.
+
+Three canonical boundaries expand to their complete source extents:
+`0x00646685` 151 -> 160, `0x0064428A` 111 -> 123, and `0x006405E0` 48 -> 49.
+The last byte of report_failure is a terminal INT3 after ExitProcess. The
+allocator and lazy-lock extents include their complete cleanup entries; no
+comparison stops at the earlier provisional Ghidra boundary. No target or
+database write is made.
+
+Five existing candidates are library-owned interior labels, **not five more
+complete source functions**: `0x0064671C` / 9, `0x00644236` / 14,
+`0x006442FC` / 9, `0x006443ED` / 9 and `0x00642AB4` / 9. Their 50 bytes overlap
+reviewed parents. Names remain blank, spans remain unchanged, and exact/source
+credit remains zero. Each label is re-read from its parent's actual COFF
+section; the earlier EH heads (+170 doexit, +111 heap allocation, +167 calloc)
+remain distinct from the later shared entries (+175, +114, +170). Seven whole
+12-byte scope tables bind their actual filter/handler labels inside complete
+parents, including the two newly replayed security failure scopes.
+
+Defining data comprises fifteen whole sections / 1,048 bytes, eleven genuine
+four-byte COMMON definitions, six source CRT range markers, three complete
+merged callback ranges / 52 bytes, the actual four-byte onexit initializer
+registration, and thirty-eight full readonly literals / 1,513 bytes. The full
+152-byte error table retains all nineteen code/message pairs; each pointer
+binds a whole defining literal. Writable PE storage, loader zero-fill,
+source symbol offsets and every initialized pointer are checked rather than
+using arbitrary zero scalars. Retained cold SDK/CRT probes establish the
+complete critical-section, exception, heap and thread layouts without adding
+any game class layout or source.
+
+The 239-byte MT initializer is diagnostic context only. Its complete code,
+export literals, raw fallback API slots, TLS index and FLS cache establish the
+provenance of getptd's dynamic API dispatch. Its other startup/free-callback
+children remain unaccepted. Optional `_pnhHeap`, `_user_handler` and `__adbgmsg`
+callbacks preserve their actual call ABI and genuine whole BSS definitions;
+no user callback implementation receives library origin. The security handler
+retains both user arguments, caller stack cleanup, its exception filter and
+continuation. The onexit callback loop similarly preserves reverse traversal,
+flags, source registration and callback ABI without assigning origin to
+registered application callbacks.
+
+`origin_reconciliation.py` lets R115–R119 retain their historical pending
+snapshots while accepting only the same complete own member, source/target
+hashes, field provenance and specific R120 canonical classification. Historical
+cold source and data checks still run. Internal labels additionally require
+an accepted complete parent and cannot gain an independent name or source
+credit. Fifteen new regression checks reject truncation, open graph edges,
+changed parent/source identity, registration substitutions and exact credit.
+All 266 public checks pass. The 60-function / 9,883-byte exact baseline and
+872 recorded authored bodies / 1,952,956 bytes remain unchanged. Origin totals
+are 3,139 resolved (919 authored, 1,645 library, 575 compiler), 1,212 pending.
+
+Investigation and intermediate replay use local tools. Final acceptance is
+one public no-auth HTTPS MCP request covering this verifier and retained
+runtime/import proofs, R114 lifetime evidence, authored extents, target and
+Ghidra attestation, all 60 cold exact units, CI, progress freshness and diff
+whitespace checks. The private URL and investigation logs stay untracked.

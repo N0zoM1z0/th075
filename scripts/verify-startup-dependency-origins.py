@@ -80,6 +80,9 @@ def check_diagnostic_ledger(row,functions,origins):
     function=functions[key]
     if int(function['size'])==recorded:
         return
+    if origins[key]['evidence_id'] == 'R120':
+        module('runtime_cycle_context_reconciliation', 'origin_reconciliation.py').check_root(row, function, origins[key])
+        return
     # R116 reconciles this already-frozen entire 48-byte source body. Keep
     # R115's historical 47-byte candidate snapshot and complete source extent.
     origin=origins[key]
@@ -162,6 +165,10 @@ def verify_plan(manifest):
 
 
 def check_ledger(row,functions,origins,evidence_only):
+    if row['address'] in PENDING and origins.get(row['address'], {}).get('evidence_id') == 'R120':
+        module('runtime_cycle_reconciliation', 'origin_reconciliation.py').check_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     key,address,size=row['address'],int(row['address'],16),row['size']
     function,origin=functions[key],origins[key]
     if (int(function['size'])!=size or function['span_end']!=row['span_end']

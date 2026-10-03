@@ -148,6 +148,10 @@ def source_section_name(data,symbol,c,coff):
 
 
 def check_ledger(row,functions,origins,evidence_only):
+    if row['address'] in PENDING and origins.get(row['address'], {}).get('evidence_id') == 'R120':
+        module('runtime_cycle_reconciliation', 'origin_reconciliation.py').check_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     key=row['address'];function=functions[key]
     expected=48 if key=='0x006405E0' else row['size']
     if (int(function['size'])!=expected or int(function['span_end'],16)!=int(key,16)+expected-1
@@ -268,7 +272,7 @@ def main():
         result=subprocess.run([str(ROOT/'scripts/repo-python'),'scripts/'+script],cwd=ROOT,capture_output=True,text=True)
         if result.returncode:raise ValueError('retained runtime/import replay failed: '+result.stderr[-1000:])
     print('R117 origins OK: six library bodies / 779 bytes; two closed non-inventoried handlers / 264 bytes, full 33-byte NLG shared tail, '
-          'whole SDK layouts and actual loader/state/initializer provenance; three termination roots / 394 bytes remain pending; no source or exact credit.')
+          'whole SDK layouts and actual loader/state/initializer provenance; three termination roots / 394 bytes retained as historical pending snapshots; current ownership recorded separately; no source or exact credit.')
     return 0
 
 
