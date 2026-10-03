@@ -3375,3 +3375,34 @@ R091 reaches 2,876 reviewed candidates (804 authored, 1,498 library,
 against 1,950,893 provisional authored bytes (0.46%), with no new source
 or exact credit. R090 GitHub CI passed at
 https://github.com/N0zoM1z0/th075/actions/runs/37103676294.
+
+## R092 — vector iterators and copy wrappers with complete call witnesses
+
+Eight complete vector/iterator bodies reproduce `begin`, `end`, iterator
+construction, iterator subtraction/addition, const-iterator construction
+and subtraction, and iterator advance. All source variants remain
+consistent along their exact typed calls from the R091 vector wrappers.
+Short identical bodies gain identity from this rooted call chain, not
+from their byte shape alone. Eight more complete 51-byte `copy` and
+`copy_backward` wrappers bind to independently reviewed copy
+implementations. The verifier cold-replays both R091 and the earlier
+record-helper evidence, then compares each wrapper's exact callee source
+variant against the entire reviewed target callee. A different synthetic
+record name cannot bypass that full comparison.
+
+`scripts/repo-python scripts/verify-vendor-vector-callee-origins.py`
+cold-compiles the vector probe and checks all sixteen complete bodies,
+660 bytes and 21 typed relocations, full COMDAT extents, hashes, source
+aliases, complete CFG, typed ownership witnesses and ledgers. Evidence is
+in `config/vendor-vector-callee-origins.csv`. Public metadata tests reject
+exchanged `begin`/`end` source identities, altered complete callee hashes
+and missing copy anchors; these tests do not replace cold byte comparison.
+The complete cold verifier also passed through the no-auth public Funnel MCP.
+Original game element types remain unknown. The 795-byte `_Insert_n`
+callee still differs from the whole source body and remains pending.
+
+R092 reaches 2,892 reviewed candidates (804 authored, 1,514 library,
+574 compiler), with 1,459 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,893 provisional authored bytes (0.46%), with no new source
+or exact credit. R091 GitHub CI passed at
+https://github.com/N0zoM1z0/th075/actions/runs/37105091974.

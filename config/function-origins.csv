@@ -320,7 +320,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A900,library,vc7-stl-deque-helpers,exclude,high,R088
 0x0040A910,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040A940,library,VC7STL,exclude,vendor-source-corroborated,R051
-0x0040A970,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A970,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0040A9B0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040A9F0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0040AA20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -485,10 +485,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040F3C0,library,vc7-stl-deque-helpers,exclude,high,R088
 0x0040F3D0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F400,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0040F430,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F430,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0040F470,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F4A0,library,VC7STL,exclude,vendor-source-corroborated,R051
-0x0040F4D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040F4D0,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0040F510,library,vc7-stl-deque-helpers,exclude,high,R088
 0x0040F520,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040F560,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -1511,7 +1511,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004453E0,library,VC7STL,exclude,complete-vc7-deque-dereference-family,R082
 0x00445400,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00445440,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x00445470,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00445470,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x00445490,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x004454F0,library,VC7STL,exclude,complete-vc7-deque-iterator-family,R080
 0x00445510,library,vc7-stl-deque-algorithms,exclude,high,R085
@@ -1519,12 +1519,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00445560,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x004455C0,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x00445600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00445620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00445620,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x00445650,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
-0x00445680,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004456A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00445680,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
+0x004456A0,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x004456C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004456D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004456D0,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x004456F0,authored,BattleScene,authored,target-observed,R045
 0x00445830,authored,BattleScene,authored,target-observed,R042
 0x00445A00,authored,BattleState,authored,target-observed,R065
@@ -1944,7 +1944,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00458C00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458C20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458C40,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x00458C80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00458C80,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x00458CA0,library,vc7-stl-vector-operations,exclude,high,R091
 0x00458D20,library,vc7-stl-vector-storage,exclude,high,R089
 0x00458DA0,library,vc7-stl-vector-storage,exclude,high,R089
@@ -1992,7 +1992,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00459BC0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00459BD0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00459BF0,library,vc7-stl-vector-helpers,exclude,high,R090
-0x00459C10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00459C10,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x00459C40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00459C60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00459C80,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2006,7 +2006,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A373,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045A439,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045A450,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
-0x0045A480,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045A480,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0045A4A0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A4D0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A500,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2021,7 +2021,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A6D0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A710,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A740,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0045A780,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045A780,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0045A7C0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0045A7E0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045A820,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2034,7 +2034,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045A9C0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A9F0,library,VC7STL,exclude,vendor-source-corroborated,R051
-0x0045AA20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045AA20,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0045AA60,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045AAA0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0045AAE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2064,7 +2064,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B1CD,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0045B1D6,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0045B210,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x0045B230,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B230,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0045B270,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045B290,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045B2B0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
@@ -2587,11 +2587,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FA2D0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x005FA2F0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FA320,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x005FA360,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FA360,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x005FA3A0,library,vc7-stl-deque-helpers,exclude,high,R088
 0x005FA3B0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FA3E0,library,VC7STL,exclude,vendor-source-corroborated,R051
-0x005FA410,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FA410,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x005FA450,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FA490,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x005FA4D0,library,vc7-stl-deque-algorithms,exclude,high,R085

@@ -1297,3 +1297,18 @@ they do not identify original game types. Their short iterator callees
 and the complete 795-byte `_Insert_n` at `0x004594B0` still require their
 own evidence. R091 grants library origin only, with no source or exact
 reconstruction credit.
+
+## VC7 vector iterator and copy witnesses after R092
+
+Eight complete vector/iterator callees now match source variants coupled
+to their reviewed R091 parent calls. The bodies include the 26-byte
+const-iterator subtraction and 32-byte iterator advance; the other probe
+variants cannot substitute for these complete, stride-sensitive bodies.
+Eight 51-byte copy wrappers also bind to independently cold-reverified
+copy implementations. Their exact source callee variants replay against
+all target bytes, even where the earlier record probe used different
+synthetic type names. All sixteen bodies, 660 bytes and 21 typed
+relocations replay. Identical `begin`/`end` shapes are distinguished by the
+source-typed parent witness. Original game types remain unknown. R092
+adds library origins only; the complete insertion implementation remains
+pending and exact reconstruction is unchanged.
