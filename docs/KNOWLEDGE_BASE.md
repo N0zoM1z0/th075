@@ -1096,3 +1096,12 @@ least 16 share the same 511-byte emitted shape in this probe; the original
 game element types and called-function origins remain unknown. These twelve
 are library templates with no authored source or exact credit. The prior
 vector hypothesis for them was incorrect.
+
+## VC7 deque operations after R072
+
+Forty-six complete target functions reproduce five VC7 deque methods:
+`_Tidy`, `pop_back`, `pop_front`, `push_back` and `push_front`. All 143
+typed relocation fields are bound to observed targets; the rest of each
+151–226-byte body matches an independently compiled whole COMDAT. These
+are library-template origins. Synthetic record widths only test code
+generation; original record types and callee ownership remain unknown.

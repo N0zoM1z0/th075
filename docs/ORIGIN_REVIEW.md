@@ -2897,3 +2897,26 @@ R071 adds 12 library origins: 2,178 reviewed (800 authored, 804 library,
 574 compiler), 2,173 pending. Exact stays 42 functions / 8,916 bytes
 against 1,950,601 provisional authored bytes (0.46%). R070 GitHub CI passed
 at https://github.com/N0zoM1z0/th075/actions/runs/37093204780.
+
+## R072 — VC7 deque push, pop and cleanup origins
+
+Forty-six complete 151–226-byte bodies, totaling 8,220 bytes, match the
+independently compiled VC7 deque probe. The methods are `_Tidy`, `pop_back`,
+`pop_front`, `push_back` and `push_front`. Their 143 typed relocations are
+individually bound to target destinations, and every whole body has complete
+decoded control flow. The source has 35 unique whole-COMDAT operation
+definitions across seven synthetic record widths. Multiple `_Tidy` aliases
+share one emitted shape; no original game record type is inferred.
+
+`scripts/repo-python scripts/verify-vendor-deque-operation-origins.py` cold
+compiles the probe, checks each whole COMDAT, compares every non-relocation
+byte, verifies each relocation binding and rechecks complete control flow.
+Evidence is in `config/vendor-deque-operation-origins.csv`. These are
+library-template origins only; called-function origins, reconstruction
+source and exact credit are independent. Shorter generic STL-like matches
+remain pending until stronger ownership evidence is established.
+
+R072 adds 46 library origins: 2,224 reviewed (800 authored, 850 library,
+574 compiler), 2,127 pending. Exact remains 42 functions / 8,916 bytes
+against 1,950,601 provisional authored bytes (0.46%). R071 GitHub CI passed
+at https://github.com/N0zoM1z0/th075/actions/runs/37093616372.
