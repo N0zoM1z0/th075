@@ -4404,3 +4404,102 @@ all 868 recorded authored extents, target/project attestation, 169 public
 tests, progress freshness and `git diff --check`. All 60 exact units / 9,883
 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools; the public acceptance request ran once.
+
+
+## R114 — shared queue lifetime, window callback and retained startup ambiguity
+
+Four complete policies gain authored origin / 415 bytes. Replay
+`config/queue-lifetime-origin-evidence.json` using
+`scripts/repo-python scripts/verify-queue-lifetime-origins.py`.
+
+| Address | Bytes | Decision and inferred role |
+| --- | ---: | --- |
+| `0x004239F0` | 155 | Authored `EventQueue::AcquireSharedServiceAt004239F0` |
+| `0x00423A90` | 143 | Authored `EventQueue::ReleaseSharedServiceAt00423A90` |
+| `0x004239C0` | 34 | Authored `EventQueue::LocalAcquireReleaseAt004239C0` |
+| `0x00603650` | 83 | Authored `GameApplication::WindowCallbackAt00603650` |
+| `0x00423B20` | 26 | Pending ordinary/compiler-generated initializer ambiguity |
+| `0x0064232C` | 469 | Pending CRT startup code/data/EH bindings |
+
+The shared service initializes only when client count `0x0068BE30` is zero.
+It clamps the signed wait interval at `0x0066C23C`, calls timeBeginPeriod(1),
+clears global deque `0x0068BE44`, creates event/thread handles, binds the
+independently reviewed worker `0x00423B40`, sets thread priority to 15 and
+sets active byte `0x0068BE40`. Every acquisition increments the client count.
+Release decrements it and performs cleanup only at zero: clears the active
+byte, calls TerminateThread, iterates the complete deque through its actual
+size/index methods, signals entries, clears it and closes both handles.
+The target passes each queue entry value directly to SetEvent. The reviewed
+worker reads the first dword of an entry before signaling; that difference
+remains an observation, not a repaired indirection or a proved shutdown protocol.
+Raw imports identify WINMM timeBeginPeriod and the actual KERNEL32 functions.
+The game main loop provides the actual acquire site and four release sites.
+
+Natural probes cold-build the entire 155-, 143- and 83-byte policies with all
+37 typed fields. The complete 19-byte clear method is identical to the older
+R077 destructor-shaped body at `0x00423F30`, including its actual `_Tidy`
+callee. Preserve the R077 name/evidence and original method/folding uncertainty.
+The fresh size/index controls retain R113 evidence. The verifier cold-replays
+R077 and R113 rather than granting new library credit from equal bytes.
+Original owners, queue element types and complete object layouts remain unknown;
+the synthetic complete empty probe owners are not recovered game layouts.
+
+Ten whole lifetime controls / 274 bytes include explicit construction and
+destruction, implicit member construction/destruction, persistent member
+construction/destruction, an ordinary pulse, two generated initializers and a
+member function returning this. The 34-byte candidate reproduces explicit local
+guard construction/release, retains this in ECX/EAX and binds both complete
+accepted lifetime policies. Implicit/persistent construction is 24 bytes;
+implicit/persistent destruction is 19, explicit destruction 31 and the ordinary
+member returning this 40. The accepted role remains constructor-like and
+provisional; no call/xref or complete original owner identity was found.
+
+The separate 26-byte candidate matches both the complete ordinary pulse and
+compiler-generated copy initializer `_$E3`. Both bind the actual acquire and
+release with the same two typed fields. The entire eight-byte `.CRT$XCU`
+section, its two typed registrations and both generated helper bodies prove
+that the second alternative is compiler emitted. The value initializer
+`_$E1` is a distinct 31-byte control. Neither alternative can select ownership
+for the target, whose local Ghidra query found no caller or data reference.
+The candidate retains `authored-generated-initializer-ambiguity` and no source
+or exact credit. A guessed destructor interpretation is not accepted.
+
+The 83-byte registered callback handles messages 1, 2 and 0x12. Message 1
+sets readiness byte `0x0068D674`; message 2 calls PostQuitMessage(0); 0x12
+returns zero. Other messages return DefWindowProcA's result with the original
+four arguments. The complete body has one RET 16 and eight internal branches.
+Main-loop sites `0x00602B47` and `0x00602CE0` bind the function pointer and
+readiness flag independently. Four complete game contexts / 3,388 bytes and
+all six candidate bodies retain 336 instruction witnesses, complete CFGs,
+all calls and actual imports; R113 replay owns the main loop's complete table.
+
+The supplied PE entry's full 469-byte body matches `_WinMainCRTStartup` in
+the pinned libcmt.lib `build\intel\mt_obj\wincrt0.obj` member outside every
+one of its 37 relocation fields. The source's own auxiliary extent covers
+both returns and the internal SEH filter. The diagnostic replay re-extracts
+the whole archive member and checks its identity, full source/target hashes,
+all non-field bytes and actual field destinations. Four IAT identities and
+the `_WinMain@16` callback to the R113 game main loop have independent context;
+32 code/data/EH associations remain unresolved. This is not a fully bound
+library comparison and the entry remains unknown. It does not retroactively
+rename the accepted game main loop. The already reviewed R006 stack probe
+retains its complete `__chkstk` evidence; the startup survey's `__alloca_probe`
+association requires alias evidence, not repeat candidate credit.
+
+Evidence-only checks passed before ledger changes. Accepted replay, all 872
+recorded authored extents / 1,952,956 bytes, target-required tracking and the
+refreshed scanner pass locally. Nine regression tests reject discarded generated
+alternatives, missing initializer registration, guessed destructor substitution,
+wrong release calls, changed callback/readiness/API context, premature startup
+acceptance, promoted unresolved bindings and source/exact credit. The checkpoint
+is 3,092 resolved: 919 authored, 1,598 library and 575 compiler generated, with
+1,259 pending. Exact remains 60 functions / 9,883 bytes; the provisional authored
+denominator is 1,965,299 bytes. R115 targets six unreviewed startup dependencies;
+none gains ownership from the pending entry's source-symbol spelling.
+
+One final no-auth public HTTPS MCP request passed R114, retained R077/R113
+dependency replays and R112 contexts, all 872 recorded authored extents,
+target/project attestation, 178 public tests, progress freshness and
+`git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
+eleven objects. Investigation and intermediate verification used local
+tools; the public acceptance request ran once.

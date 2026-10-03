@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R113. The public
+review cohorts R108 through R114. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,28 +11,28 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,088: 915 authored, 1,598 library and 575 compiler generated.
-There are 1,263 pending. Candidate count is not authored function count.
+has resolved 3,092: 919 authored, 1,598 library and 575 compiler generated.
+There are 1,259 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,964,884 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R114 startup/lifetime cohort below.
+the bounded R115 startup dependency cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R113; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R114; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R114 startup and shared-lifetime cohort
+## Next agent objective — R115 startup dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -81,23 +81,52 @@ imports, TH075 resource literals and the whole fifteen-entry scene table.
 The 65 separate shape controls do not identify original element types.
 Replay `scripts/repo-python scripts/verify-event-queue-origins.py`.
 
-The next bounded cohort is six startup/shared-lifetime candidates:
+R114 resolves four authored policies / 415 bytes: shared queue acquire
+`0x004239F0` (155), release `0x00423A90` (143), local acquire/release construction
+`0x004239C0` (34) and window callback `0x00603650` (83). Ten complete lifetime
+controls / 274 bytes distinguish the 34-byte construction from the implicit
+member and persistent-member controls. The 26-byte `0x00423B20` matches both
+an ordinary pulse and the compiler-generated copy initializer `_$E3`, with the
+whole `.CRT$XCU` registration retained. It remains unknown; do not call it a
+destructor or repeatedly choose one source alternative from scanner rank.
+The callback has the actual main-loop registration/readiness witnesses and
+raw USER32 imports. Cleanup preserves TerminateThread and passes the queued
+entry value directly to SetEvent, unlike the worker's first-dword indirection.
+Replay `scripts/repo-python scripts/verify-queue-lifetime-origins.py`; it also
+cold-replays R077 and R113, preserving their complete dependency graphs.
 
-| Candidate | Bytes | Observed context | Required next evidence |
+The supplied PE entry `0x0064232C` has a complete 469-byte `_WinMainCRTStartup`
+source body from the hash-pinned libcmt.lib wincrt0.obj member. All non-field
+bytes match, but 32 of its 37 code/data/EH bindings remain diagnostically
+unresolved. Four raw IAT bindings and the independently reviewed game main
+callback are checked. This is a pending candidate, not accepted runtime or
+exact evidence. Its internal SEH filter and second return remain inside the
+full extent. The 55-node private startup survey is diagnostic only; neither
+its names nor its relocation-masked body matches confer ownership.
+
+The next bounded cohort is six still-unknown startup dependencies:
+
+| Candidate | Bytes | Observed archive association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x004239F0` | 155 | Main loop acquires shared queue service | Complete global lifetime policy, imports, worker callback and independently owned game parents |
-| `0x00423A90` | 143 | Main loop's repeated/final cleanup | Full reference-count/queue cleanup, all exits and actual APIs; preserve observed thread termination |
-| `0x004239C0` | 34 | Short queue-owner construction wrapper | Full explicit/implicit source controls and paired ownership; a game callee alone is insufficient |
-| `0x00423B20` | 26 | Short cleanup wrapper | Complete source/ABI/lifetime alternatives and actual callee; preserve ambiguity if alternatives remain equal |
-| `0x00603650` | 83 | Main loop's registered window callback | Raw callback binding, complete message cases, readiness flag and imports |
-| `0x0064232C` | 469 | Supplied PE entry candidate | Complete startup extent and pinned CRT/compiler evidence, every code/data field; no origin from entry address alone |
+| `0x00645414` | 59 | `__SEH_prolog` | Whole definition and actual FS/EH stack behavior; no origin from imported name |
+| `0x0064544F` | 17 | `__SEH_epilog` | Full paired SEH restore/return extent and independent archive evidence |
+| `0x006422B2` | 36 | `_fast_error_exit` | Own static-function extent and complete code/data/import binding chain |
+| `0x0064228D` | 37 | `__amsg_exit` | Entire failure-policy body, all globals and independently owned callees |
+| `0x00649735` | 81 | `__heap_init` | Complete heap initialization policy, data identities and raw APIs |
+| `0x00648FF5` | 93 | `__wincmdln` | Full command-line parser extent, all globals and actual CRT context |
 
-Use `.analysis/r113-parent.c`, the complete R113 context manifest and refreshed
-scanner as diagnostic starting points. The entry and short lifetime wrappers
-are not already accepted. Retain the five R108 lifetime ambiguities, unknown
-external string/throw/allocation contexts and unresolved insertion/catch spans.
-The three interior candidates within the older string `_Copy` COMDAT keep
-their independent ledger state; do not truncate the enclosing source body.
+Use `.analysis/r114-startup-graph.json`, the R114 diagnostic entry record and
+the refreshed scanner as starting points. Re-extract whole archive members
+locally; do not accept guessed code/data destinations from the survey. The
+61-byte stack probe at `0x00642510` already has R006 whole `__chkstk` archive
+evidence: preserve that origin and investigate the entry's `__alloca_probe`
+association without counting the body again. Keep non-inventoried `__c_exit`
+`0x0064427B` outside new candidate credit until its boundary is reconciled.
+
+Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
+unknown external string/throw/allocation contexts and unresolved insertion/
+catch spans. Preserve the three interior candidates of the older string
+`_Copy` COMDAT and its full enclosing body.
 
 Run the preflight and refresh `.analysis/origin-scan/latest.json`. Query full
 bodies, callers and callees locally through the attested Ghidra wrapper.
@@ -108,10 +137,18 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R114 adds no exact scope. Update
+private path and 60-function exact baseline. R115 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
+
+
+One final no-auth public HTTPS MCP request passed R114, retained R077/R113
+dependency replays and R112 contexts, all 872 recorded authored extents,
+target/project attestation, 178 public tests, progress freshness and
+`git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
+eleven objects. Investigation and intermediate verification used local
+tools; the public acceptance request ran once.
 
 ## Tooling and verification
 
@@ -137,6 +174,7 @@ scripts/repo-python scripts/verify-deque-game-dependency-origins.py
 scripts/repo-python scripts/verify-vendor-deque-erase-origins.py
 scripts/repo-python scripts/verify-deque-postfix-context-origins.py
 scripts/repo-python scripts/verify-event-queue-origins.py
+scripts/repo-python scripts/verify-queue-lifetime-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102

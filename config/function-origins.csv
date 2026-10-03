@@ -1167,10 +1167,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00423960,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x00423980,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x004239A0,library,VC7STL,exclude,complete-source-family-peer,R106
-0x004239C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004239F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00423A90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00423B20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004239C0,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
+0x004239F0,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
+0x00423A90,authored,EventQueue,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
+0x00423B20,unknown,,review,authored-generated-initializer-ambiguity,R114
 0x00423B40,authored,EventQueue,authored,complete-game-policy-with-independent-controls,R112
 0x00423C60,authored,GameState,authored,complete-game-policy-with-batch-context,R104
 0x00423C80,authored,EventQueue,authored,complete-game-policy-with-independent-context,R113
@@ -2641,7 +2641,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FADD0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FAE30,authored,CharacterAuxObject,authored,target-observed,R064
 0x00602A60,authored,GameApplication,authored,complete-game-policy-with-independent-context,R113
-0x00603650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00603650,authored,GameApplication,authored,complete-game-policy-with-independent-context-and-lifetime-controls,R114
 0x006036A4,compiler,PEImportThunk,exclude,complete-PE-import-thunk,R030
 0x0060499A,compiler,PEImportThunk,exclude,complete-PE-import-thunk,R030
 0x006049A0,compiler,VC71Compiler,exclude,compiler-template-backed,R038
@@ -3574,7 +3574,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00642260,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064228D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006422B2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064232C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064232C,unknown,,review,crt-startup-bindings-unresolved,R114
 0x00642510,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064254D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006425A4,compiler,VC7EH,exclude,complete-vendor-body,R022

@@ -1825,3 +1825,55 @@ all 868 recorded authored extents, target/project attestation, 169 public
 tests, progress freshness and `git diff --check`. All 60 exact units / 9,883
 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification used local tools; the public acceptance request ran once.
+
+
+## R114 — queue service lifetime and callback ownership
+
+Four complete policies add 415 authored bytes: acquire `0x004239F0` (155),
+release `0x00423A90` (143), local construction/acquire/release `0x004239C0`
+(34) and registered window callback `0x00603650` (83). Independent R113 main
+and R112 worker contexts bind actual client count, wait/active globals,
+handles, worker callback, readiness flag and raw PE APIs. Queue release
+calls TerminateThread and passes queue entry values directly to SetEvent;
+the worker's first-dword dereference remains a different target observation.
+The 19-byte clear source equals the older R077 destructor-shaped body with
+its `_Tidy` call; preserve the old evidence/name and method/folding ambiguity.
+The synthetic probes establish source controls, not complete game layouts.
+
+Ten complete lifetime controls / 274 bytes distinguish the 34-byte explicit
+local-guard construction from implicit/persistent members and the 40-byte
+ordinary member returning this. Its original owner/spelling remains provisional
+and the target has no observed caller/xref. The separate 26-byte `0x00423B20`
+matches an ordinary pulse and compiler-generated copy initializer `_$E3`
+exactly outside the same typed calls. Whole `.CRT$XCU` registration and both
+generated helper bodies preserve that compiler alternative. It stays unknown;
+a destructor guess or ordinary-source-only choice is insufficient.
+
+The window callback's complete message cases set readiness for 1, post quit
+for 2, return zero for 0x12 and otherwise return DefWindowProcA. Its RET 16,
+actual main-loop registration/readiness fields and raw USER32 imports agree
+with the natural full source probe. The replay checks 37 policy fields, fresh
+clear/size/index controls, four game contexts / 3,388 bytes and 336 witnesses,
+and cold-replays R077/R113 including the whole main-loop scene table.
+
+The PE entry `0x0064232C` remains pending. Its complete 469-byte pinned CRT
+source body matches outside all 37 fields, but 32 code/data/EH associations
+lack independent binding evidence. Four IAT fields and the game main callback
+are checked; structural identity does not earn library or exact credit.
+Both returns and the internal SEH filter remain inside the complete extent.
+R006 already owns the 61-byte `__chkstk` target; investigate the startup's
+`__alloca_probe` association without recounting it. The private startup graph
+is a diagnostic survey, not a closed accepted source graph.
+
+The checkpoint is 3,092 resolved (919 authored, 1,598 library, 575 compiler)
+and 1,259 pending. Exact remains 60 / 9,883 bytes, with provisional authored
+coverage 9,883 / 1,965,299. Recorded authored extents total 872 / 1,952,956 bytes.
+R115 targets six unknown startup dependencies; retain both R114 ambiguities
+and the five R108 lifetime ambiguities. No new source or exact units are added.
+
+One final no-auth public HTTPS MCP request passed R114, retained R077/R113
+dependency replays and R112 contexts, all 872 recorded authored extents,
+target/project attestation, 178 public tests, progress freshness and
+`git diff --check`. All 60 exact units / 9,883 bytes cold-replayed across
+eleven objects. Investigation and intermediate verification used local
+tools; the public acceptance request ran once.
