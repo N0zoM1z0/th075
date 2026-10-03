@@ -1693,3 +1693,44 @@ bounded review; their diagnostic shapes do not yet establish ownership.
 The single final no-auth public MCP replay passed this complete graph, retained
 R108/R109 evidence, 864 authored extents, target/project attestation and 152
 tests. All 60 exact units also cold-replayed across eleven objects / 9,883 bytes.
+
+## R111 — five complete erase graphs and four single-erase wrappers
+
+Twelve complete library bodies / 1,654 bytes are accepted by
+`scripts/repo-python scripts/verify-vendor-deque-erase-origins.py` and
+`config/vendor-deque-erase-origins.json`. The five complete range erases are
+`0x0041E380`, `0x0041E800`, `0x00424000`, `0x00455D30` and `0x0045C100`.
+Four full single-erase wrappers at `0x0041DC90`, `0x0041DF10`, `0x00423EF0`
+and `0x0045C0A0` each bind their actual iterator addition and range-erase body.
+The one-byte graph additionally types begin `0x004143D0`, end `0x00414400`
+and indexed iterator construction `0x00415560` through complete parent calls.
+
+All five range bodies have 262 bytes and thirteen calls. The source profiles
+that fit become distinguishable only through their complete callees. Four
+whole graphs reproduce unsigned-long, float and `void*` models; the fifth
+reproduces the checked unsigned-byte model. Original element identities,
+signedness, game owner layouts and linker folding remain unknown. Source
+alternatives are scoped to complete graphs, rather than all short body shapes.
+
+Cold verification covers 129 distinct target bodies / 7,958 bytes and 203 typed
+calls, including 117 independently reviewed library anchors. All 337 complete
+source alternatives cold-replay. Every call is bound to a complete source-typed
+callee inside the graph. Both copy/pop branches, iterator-result construction
+and exact `RET 20`/`RET 12` cleanup remain part of the comparisons. The begin/end
+helpers retain their distinct 35-/41-byte bodies and complete 32-byte indexed
+constructor, which calls the reviewed const-iterator constructor.
+
+The 108-byte parent `0x00455CA0` and 1,459-byte insertion dependency
+`0x00455E40` retain unknown origin. A parent calling newly proven library
+functions is insufficient ownership evidence. No source or exact credit is
+added; exact stays 60 functions / 9,883 bytes. Origin review now has 3,073
+resolved candidates (911 authored, 1,587 library, 575 compiler) and 1,278
+pending. Target-required tracking, the accepted-state cold replay and all 157
+public tests passed locally. R112 starts with six pending postfix candidates;
+same-shaped increment/decrement bodies still require exact typed calls.
+
+The single final no-auth public MCP replay passed all 337 whole source
+alternatives, retained R110 evidence, 864 authored extents, target/project
+attestation and 157 tests. It also cold-replayed every exact unit: 60/60 across
+eleven objects / 9,883 bytes. The provisional insertion span still contains
+`0x00456137` and must be reconciled with its cleanup tails before review.

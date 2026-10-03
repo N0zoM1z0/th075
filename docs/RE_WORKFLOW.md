@@ -28,6 +28,9 @@ After exact batches F008 and F009, the user resumed origin review on
 candidate cohorts. R108 resolved one explicit destructor and retained five
 complete explicit/implicit lifetime ambiguities. R109 resolved thirteen game
 policies and exposed the six-callee R110 cohort recorded in `RE_HANDOFF.md`.
+R110 resolved those dependencies through complete source-typed game loops;
+R111 resolved complete erase graphs, related wrappers and necessary helpers.
+The current bounded cohort is recorded in the handoff.
 Scanner output is only a shortlist: accept each origin only after a durable
 verifier freezes its complete extent, body, control flow and independent
 ownership context. Run investigation and local verification directly, then

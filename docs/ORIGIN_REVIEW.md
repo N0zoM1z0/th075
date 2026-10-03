@@ -4157,3 +4157,78 @@ parents, the retained R108 evidence, all 864 authored extents, target/project
 attestation, 152 tests, progress freshness and `git diff --check`. It also
 cold-built eleven objects and reproduced all 60 exact units / 9,883 bytes.
 Investigation and intermediate acceptance used local tools.
+
+## R111 — complete deque erase families and necessary iterator helpers
+
+The six handoff candidates, three necessary short callees and three complete
+single-erase parents now have library origin: twelve bodies / 1,654 bytes.
+Replay `config/vendor-deque-erase-origins.json` with
+`scripts/repo-python scripts/verify-vendor-deque-erase-origins.py`.
+
+| Address | Bytes | Complete source-typed role |
+| --- | ---: | --- |
+| `0x0041E380` | 262 | Range erase for the first reviewed iterator/algorithm family |
+| `0x0041E800` | 262 | Range erase for the separate second family |
+| `0x00424000` | 262 | Range erase with its own actual helper destinations |
+| `0x00455D30` | 262 | Range erase through a complete one-byte-element source graph |
+| `0x0045C100` | 262 | Effect-list range erase |
+| `0x0041DC90` | 59 | Single erase through `0x0041E380` |
+| `0x0041DF10` | 59 | Single erase through `0x0041E800` |
+| `0x00423EF0` | 59 | Single erase through `0x00424000` |
+| `0x0045C0A0` | 59 | Single erase through `0x0045C100` |
+| `0x004143D0` | 35 | Begin iterator for the one-byte source graph |
+| `0x00414400` | 41 | End iterator for that same graph |
+| `0x00415560` | 32 | Indexed iterator construction through reviewed const-iterator `0x00415E60` |
+
+The independent probe cold-builds erase methods for thirteen synthetic element
+types. Matching a 262-byte root alone leaves element types indistinguishable.
+Instead, each valid source alternative must reproduce its entire call graph,
+including copying, dereferencing, iterator arithmetic, both pop paths and
+allocator destruction. Four range graphs completely reproduce with unsigned
+long, float and `void*` alternatives. The fifth completely reproduces with
+the checked unsigned-byte alternative. This distinguishes the source models
+that fit each whole graph; it does not recover the original element types,
+their signedness, or whether identical short instantiations were folded.
+
+The verifier compares 129 distinct complete target bodies / 7,958 bytes, 203
+typed call fields and 337 complete source alternatives. Its 117 old library
+anchors retain their independent origin evidence and whole body hashes. All
+calls resolve to complete source-typed bodies inside the graph; it has no
+unresolved external dependency. Source extents come from whole code COMDATs
+and function auxiliary records. Target extents, every non-relocation byte,
+all fields and complete CFGs are checked again after a serial cold build.
+
+Each range erase retains all thirteen calls and both copy/pop paths, with
+`RET 20` for two value iterators and the hidden result buffer. Each single
+erase retains its iterator-addition call and exact range-erase destination,
+with `RET 12`. The one-byte begin/end helpers construct their returned iterator
+through the same indexed constructor; that full 32-byte callee in turn binds
+the independently reviewed const-iterator constructor. A shorter shape alone
+does not earn origin credit, and copy direction or another same-shaped range
+body cannot substitute for the actual source-typed call.
+
+The separate 108-byte parent `0x00455CA0` remains pending. Its complete local
+Ghidra observation copies an input byte, calls the newly reviewed begin/end
+and range erase, then calls the unresolved 1,459-byte `0x00455E40`. R111's
+erase probe does not independently type that parent or its insertion callee;
+their game/library ownership is not inferred from these reviewed children.
+The insertion span is provisional and contains the separate candidate
+`0x00456137`; its enclosing extent and adjacent cleanup tails still need
+reconciliation before any acceptance.
+
+Evidence-only cold verification passed before ledger changes. Accepted-state
+replay, target-required tracking, refreshed scanner, progress freshness and
+157 public tests then passed locally. Public tests reject a foreign source
+specialization, swapped copying directions, the wrong same-shaped range
+callee, changed anchor ownership and accidental source/exact credit.
+The checkpoint is 3,073 reviewed candidates: 911 authored, 1,587 library and
+575 compiler generated, with 1,278 pending. Exact remains 60 functions /
+9,883 bytes; the authored denominator remains 1,960,833 bytes. The next bounded
+cohort is six remaining postfix-iterator candidates, requiring complete typed
+increment/decrement discrimination and independent context.
+
+One final no-auth public HTTPS MCP replay passed the entire R111 source graph,
+retained R110 evidence, all 864 authored extents, target/project attestation,
+157 public tests, progress freshness and `git diff --check`. All 60 exact units
+also cold-replayed across eleven objects / 9,883 bytes. Investigation and
+intermediate verification used local tools; the public route ran once.
