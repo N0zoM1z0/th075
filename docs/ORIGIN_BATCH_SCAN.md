@@ -93,3 +93,11 @@ This resolves 661 bytes as library origin without inferring original element
 types. The verifier passed locally and through the no-auth public HTTPS MCP.
 The refreshed scan now covers 1,315 pending candidates in forty whole-body
 groups; no candidate remains in the reviewed-peer lane.
+
+R107 subsequently resolved four complete pinned VC7 runtime leaves, leaving
+1,311 pending candidates. The refreshed scanner retains forty whole-body
+groups and reports six candidates in its strongest combined reviewed-game-
+callee/parent lane. Those six form the bounded R108 handoff cohort in
+`RE_HANDOFF.md`. Their constructor/destructor-like shapes are hypotheses only;
+the next review must freeze complete bodies, parent edges, callees, vtable
+writes and unresolved caller context before changing an origin ledger.

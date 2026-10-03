@@ -34,8 +34,9 @@ count is not the number of confirmed authored functions. Scripts and the `config
 At the R107 checkpoint, origin review has classified 897 authored,
 1,568 library and 575 compiler-generated candidates; 1,311 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,958,337 exact (0.50%), with a
-provisional denominator. The user paused full origin review and resumed exact
-reconstruction from reviewed authored behavior and dependencies.
+provisional denominator. After exact batches F008 and F009, the user resumed
+bounded origin review. The next handoff targets the six-candidate R108
+game-callee/parent cohort while preserving the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).

@@ -1583,3 +1583,9 @@ except two local-object stack displacements. It receives no source or exact
 credit; no artificial layout was introduced. Names and partial owner layouts
 in F009 remain provisional. The exact total is now 60 functions / 9,883 bytes,
 or 0.50% of the provisional 1,958,337-byte authored denominator.
+
+After F009, origin review is active again. Preserve this exact baseline while
+reviewing bounded pending cohorts. The scanner's six combined reviewed-game-
+callee/parent candidates define the next R108 investigation, but their
+constructor/destructor-like shapes and reviewed neighbors do not prove
+ownership.

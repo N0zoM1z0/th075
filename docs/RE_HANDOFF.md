@@ -1,8 +1,8 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-03. Work resumed with origin-review batches R070–R107, then the
-user paused the full origin review and resumed exact reconstruction with F008
-and F009. The public
+Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
+exact reconstruction for F008 and F009, and has now returned to bounded origin
+review. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -19,8 +19,8 @@ bytes across 60 match units. Exact coverage of the currently reviewed authored
 bytes is 9,883 / 1,958,337 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
-current strategy is exact reconstruction from reviewed authored candidates;
-full origin review is paused.
+current strategy is origin review. Preserve the exact baseline while resolving
+the bounded R108 cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
@@ -31,6 +31,46 @@ R001–R107; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
+
+## Next agent objective — R108 origin cohort
+
+Review these six pending candidates as one bounded cohort. The refreshed
+scanner places them in its strongest combined reviewed-game-callee/parent
+lane. That ranking is diagnostic and grants no origin credit.
+
+| Candidate | Bytes | Reviewed callee context | Reviewed parent context | Unresolved context |
+| --- | ---: | --- | --- | --- |
+| `0x0040D8C0` | 22 | `BitmapData::Initialize` | 3 authored texture-allocation parents | None reported by the scanner |
+| `0x0040D8E0` | 19 | `BitmapData::ReleaseResources` | 3 authored allocation parents and 1 compiler deleting destructor | 2 pending parents |
+| `0x00411C10` | 25 | `SpriteGeometry::ZeroInitialize` on `this + 4` | `SpriteSequence::AppendElement` | None reported by the scanner |
+| `0x004251C0` | 34 | `GameGlobals::Initialize` on `this + 4` | 13 authored scene initializers | 2 pending parents; vtable `0x00657B88` |
+| `0x00449D40` | 31 | `TextureManager::ReleaseResources` on `this + 0x18` | 36 authored stage destroyers and 1 compiler deleting destructor | Vtable `0x0065844C`; complete lifetime contract unknown |
+| `0x00449DE0` | 45 | `CameraMotion::ResetParametersAt00412620` and `TextureManager::Initialize` | 36 authored stage loaders | Vtable `0x0065844C`; complete lifetime contract unknown |
+
+The next agent should:
+
+1. Run the repository preflight, refresh
+   `.analysis/origin-scan/latest.json`, and re-query complete disassembly,
+   callers and callees for all six addresses.
+2. Reconcile each full extent, every exit, RET cleanup, direct call and vtable
+   write. Inspect the two pending parents of `0x0040D8E0` and `0x004251C0`.
+3. Resolve the `0x00657B88` and `0x0065844C` vtable context far enough to
+   distinguish authored lifetime code from compiler-emitted member cleanup.
+   A compiler deleting-destructor edge does not by itself prove that its callee
+   is authored.
+4. Add a bounded durable R108 manifest and verifier. Extend
+   `verify-short-game-origins.py` only if its evidence schema fits; otherwise
+   add a focused verifier. Freeze full body hashes, CFG/RET facts, calls, parent
+   edges and vtable writes. Avoid accepting inferred class names or complete
+   layouts.
+5. Classify every candidate independently. Only after the verifier passes,
+   update the function/origin ledgers, authored evidence, origin journal,
+   knowledge base and this handoff. Replay the verifier through the existing
+   no-auth public MCP route, then run public CI and `git diff --check`.
+
+R108 may resolve up to six pending decisions. It should add no source or exact
+credit under the current strategy. Refresh the scanner after accepted ledger
+changes instead of carrying its present counts forward.
 
 ## Tooling and verification
 
@@ -118,14 +158,14 @@ explicit FS:[0] relocation in `__setjmp3`; its verifier passed locally and
 through the public route. The F008 18-byte animation clear helper also
 cold-replayed exact through public MCP after the complete 15-check smoke test.
 The complete F009 object subsequently cold-replayed 9/9 exact over public MCP.
-The complete batch origin scanner also passed through that endpoint before the
-latest accepted closure; its refreshed local report is current.
+The complete batch origin scanner also passed through that endpoint during this
+handoff and reproduced the 1,311-candidate queues; its private report is current.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
-endpoint. Public GitHub CI through F008 passed; F009 passed the same 141-test
-suite locally before push.
+endpoint. Public GitHub CI for F009 passed the same 141-test suite in
+[run 37121669326](https://github.com/N0zoM1z0/th075/actions/runs/37121669326).
 
-## Deferred investigations
+## Origin backlog and retained evidence
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
@@ -314,10 +354,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue bounded exact reconstruction from the 897 reviewed authored
-candidates, ranking core behavior, cross-function dependencies and likely
-matching cost. F008 and F009 establish natural game helper and policy source
-units. The 1,311 pending origin decisions remain deferred; do not infer
-ownership from scanner hits alone. The R105 rectangle-corner builder at
-`0x00427500` remains diagnostic: its natural source differs at two local stack
-slot bytes and has no exact credit.
+Continue the bounded R108 origin cohort described above. F008 and F009 remain
+the accepted exact baseline; do not infer ownership from scanner hits alone.
+The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
+natural source differs at two local stack-slot bytes and has no exact credit.

@@ -2,10 +2,11 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-Work resumed after R069. On 2026-10-03 the user paused the full origin review
-and resumed exact reconstruction from reviewed authored candidates. Preserve
-accepted origin evidence, but prioritize bounded authored behavior and its
-dependencies by expected benefit and reconstruction cost.
+Work resumed after R069. Following exact batches F008 and F009, on 2026-10-03
+the user resumed origin review. Preserve the 60-function exact baseline and
+prior accepted origin evidence. The next bounded task is the six-candidate
+R108 game-callee/parent cohort documented in `docs/RE_HANDOFF.md`; do not add
+exact-reconstruction scope unless the user changes strategy again.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use the user-required commit subject format `gpt-6.1-sol: ...`.

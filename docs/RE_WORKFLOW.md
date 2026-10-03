@@ -23,12 +23,15 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-The user paused the full origin review on 2026-10-03 and resumed exact
-reconstruction from already reviewed authored functions. Preserve accepted
-origin evidence and use it to select bounded behavior with favorable value,
-dependency and matching cost. `report-reconstruction-status.py --summary`
-continues to report the incomplete origin milestone and uses a provisional
-authored denominator while any origin remains pending.
+After exact batches F008 and F009, the user resumed origin review on
+2026-10-03. Preserve the 60-function exact baseline while reviewing bounded
+candidate cohorts. R108 starts with the six candidates in the combined
+reviewed-game-callee/parent lane recorded in `RE_HANDOFF.md`. Scanner output is
+only a shortlist: accept each origin only after a durable verifier freezes its
+complete extent, body, control flow and independent ownership context.
+`report-reconstruction-status.py --summary` continues to report the incomplete
+origin milestone and uses a provisional authored denominator while any origin
+remains pending.
 
 Form an ABI and behavior hypothesis, then write a small natural C++ probe below
 `.analysis/probes/`. Compiler flags must be explicit:

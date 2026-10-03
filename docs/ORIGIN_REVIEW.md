@@ -3990,5 +3990,5 @@ passed locally and through the no-auth public HTTPS MCP.
 R107 reaches 3,040 reviewed candidates (897 authored, 1,568 library, 575
 compiler), with 1,311 pending. The authored denominator remains 1,958,337
 bytes. This is library-origin evidence and adds no reconstruction source or
-exact credit. The user then paused full origin review and resumed exact
-reconstruction.
+exact credit. The user then completed exact batches F008 and F009 before
+resuming bounded origin review with the six-candidate R108 handoff cohort.
