@@ -4095,3 +4095,65 @@ replays, target-required tracking, 146 public tests, progress freshness and
 `git diff --check`. It also cold-built eleven objects and reproduced all 60
 complete exact units / 9,883 bytes. Investigation and local verification used
 the local tools; the public route was used once for final acceptance.
+
+## R110 — deque dependencies rooted in complete game loops
+
+All six R109 handoff dependencies now have complete library-origin evidence,
+alongside their necessary whole range-erase callee: seven bodies / 501 bytes.
+The manifest is `config/deque-game-dependency-origin-evidence.json`; replay
+with `scripts/repo-python scripts/verify-deque-game-dependency-origins.py`.
+
+| Address | Bytes | Independently source-typed library role |
+| --- | ---: | --- |
+| `0x004453C0` | 22 | Default iterator construction through the const-iterator base |
+| `0x00445400` | 54 | Postfix increment, returning the saved two-word iterator |
+| `0x00445530` | 33 | Default const-iterator construction, zeroing both words |
+| `0x005F8110` | 17 | Deque size, reading the observed `+0x10` field |
+| `0x005F8290` | 59 | Single erase through iterator addition and range erase |
+| `0x005F8420` | 54 | Postfix increment through the actual reviewed prefix increment |
+| `0x005F8680` | 262 | Complete range erase, including both copy/pop paths and result construction |
+
+The independent natural VC7 probe models the already-reviewed four-list delete
+policy at `0x0045BA30` and two-list advance/prune policy at `0x005F7D80`.
+Both whole parents reproduce, with all twenty direct calls bound. The second
+parent's access call binds the full 68-byte `at` body, including its range-error
+path; a probe using unchecked `operator[]` has identical parent bytes but the
+wrong typed callee and is rejected. The default-iterator chain and tiny size
+getter therefore have independent typed parent evidence, rather than a short
+byte-shape guess. These synthetic models do not recover complete game owner
+layouts, original class names or original element types.
+
+Cold acceptance compares 53 complete source COMDATs / 3,207 bytes and 85 typed
+calls. This includes 44 independently reviewed library anchors, both complete
+game parents and all seven new bodies. Every source extent comes from its
+function auxiliary record and entire code section. Every target extent, branch,
+return and relocation field is checked. The range erase compares all thirteen
+calls, both copying directions, pop loops and returned iterator; its extent is
+not shortened to fit a wrapper. Postfix increment and decrement share all
+non-relocation bytes, so their exact source symbols and full prefix callees
+distinguish them. Their hidden-result ABI retains `RET 8`; the single/range erase
+wrappers retain `RET 12` and `RET 20` respectively.
+
+Two external boundary contexts remain separately bounded. The unknown
+five-byte delete jump at `0x00640F15` retains its exact tail to `0x00642A61` and
+receives no origin credit. The 90-byte range-error body at `0x005F8790` retains
+its accepted R032 library ownership and whole target hash/CFG. Its historical
+vector/`length_error` source-shape alias is not proof of its original source
+identity; R110 does not reinterpret that old alias or claim its exception/EH
+dependencies. The actual parent probe emits the typed deque range-error call.
+
+The evidence-only cold replay passed before ledger acceptance. Local acceptance
+then passed the complete R110/R109 replays, target-required tracking, refreshed
+scanner, progress freshness and 152 public tests. Tests reject decrement as
+increment, a same-shaped game constructor callee, an untyped or disconnected
+getter, and accidental source/exact credit. R110 reaches 3,061 resolved
+candidates (911 authored, 1,575 library, 575 compiler), leaving 1,290 pending.
+The exact baseline stays 60 functions / 9,883 bytes and the provisional authored
+denominator stays 1,960,833 bytes. R111 starts with five diagnostic range-erase
+shapes and their effect-list single-erase wrapper; none has acceptance yet.
+
+The single final no-auth public HTTPS MCP replay passed R110 and its R109
+parents, the retained R108 evidence, all 864 authored extents, target/project
+attestation, 152 tests, progress freshness and `git diff --check`. It also
+cold-built eleven objects and reproduced all 60 exact units / 9,883 bytes.
+Investigation and intermediate acceptance used local tools.

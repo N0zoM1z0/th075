@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 and R109. The public
+review cohorts R108 through R110. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,054: 911 authored, 1,568 library and 575 compiler generated.
-There are 1,297 pending. Candidate count is not authored function count.
+has resolved 3,061: 911 authored, 1,575 library and 575 compiler generated.
+There are 1,290 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,960,833 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R110 dependency cohort below.
+the bounded R111 erase cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R109; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R110; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R110 dependency cohort
+## Next agent objective — R111 deque-erase cohort
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -42,17 +42,32 @@ explicit/implicit source alternatives and remain pending. Do not repeatedly
 accept or re-review those five based only on scanner rank.
 
 R109 resolved thirteen explicit game policies, including the two pending
-scene parents of `0x004251C0`. The next bounded cohort is six unresolved
-callee dependencies exposed by R109:
+scene parents of `0x004251C0`. R110 resolves all six deque dependencies from
+that handoff plus the complete 262-byte range-erase callee `0x005F8680`:
+seven library bodies / 501 bytes. Its verifier cold-builds 53 complete source
+bodies / 3,207 bytes with 85 exact typed calls, rooted in the independently
+reviewed 221-/276-byte game loops. The 17-byte getter now has independent
+source typing; postfix increment binds the actual prefix increment, not the
+equal-shaped postfix decrement. Synthetic game types are probe models, not
+reconstructed owner layouts or exact units. The unknown delete tail retains
+no origin credit; the already-reviewed range-error boundary retains its
+historical library evidence and unresolved original source identity.
+
+The next bounded cohort is five remaining 262-byte range-erase candidates and
+the 59-byte single-erase wrapper for the reviewed effect-list family:
 
 | Candidate | Bytes | Observed context | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x004453C0` | 22 | Four-list effect policy; calls `0x00445530` | Complete default iterator source and typed callee chain |
-| `0x00445400` | 54 | Selected/four-list policies; calls reviewed R085 iterator increment `0x00445510` | Complete postfix iterator source and all fields |
-| `0x00445530` | 33 | Called by `0x004453C0` | Independently source-typed default iterator initialization |
-| `0x005F8110` | 17 | Two-list auxiliary advance policy; reads `+0x10` | Whole source family plus independent typed witness; tiny getter equality is insufficient |
-| `0x005F8290` | 59 | Auxiliary prune path | Full erase-wrapper source with its iterator-addition and erase callees |
-| `0x005F8420` | 54 | Selected/two-list policies; calls reviewed R085 increment `0x005F8D10` | Whole postfix iterator source with its exact source-typed call |
+| `0x0041E380` | 262 | Whole scalar probe shape; thirteen direct calls | Cold source family, complete typed callee variants and CFG |
+| `0x0041E800` | 262 | Same whole shape; separate target destinations | Independently bind every actual callee, preserving type uncertainty |
+| `0x00424000` | 262 | Whole shape with reviewed iterator/algorithm helpers | Complete same-specialization source graph |
+| `0x00455D30` | 262 | Whole shape; begin/end dependencies remain pending | Resolve necessary helper types through the complete parent |
+| `0x0045C100` | 262 | Effect-list range erase; reviewed begin/end/algorithm helpers | Complete cold variant and all thirteen bindings |
+| `0x0045C0A0` | 59 | Single erase calls range erase `0x0045C100` | Typed iterator-addition and complete range-erase witnesses |
+
+The private `.analysis/r110-source-scan.json` and scalar probe are diagnostic
+starting points, not acceptance records. R110's tracked pointer probe does
+not establish that these other lists use the same element specialization.
 
 Run the preflight and refresh `.analysis/origin-scan/latest.json`. Query full
 bodies, callers and callees locally through the attested Ghidra wrapper.
@@ -63,7 +78,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R110 adds no exact scope. Update
+private path and 60-function exact baseline. R111 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -88,6 +103,7 @@ scripts/repo-python scripts/report-reconstruction-status.py --summary
 scripts/repo-python scripts/verify-authored-origins.py
 scripts/repo-python scripts/verify-game-lifetime-origins.py
 scripts/repo-python scripts/verify-game-context-origins.py
+scripts/repo-python scripts/verify-deque-game-dependency-origins.py
 scripts/repo-python scripts/scan-origin-candidates.py
 scripts/repo-python scripts/verify-short-game-origins.py
 scripts/repo-python scripts/verify-short-game-origins.py --cohort R102
@@ -151,6 +167,12 @@ The earlier deque algorithm, emptiness, short-helper, cleanup, vector
 storage, vector helper, vector operation, vector callee, scalar copy and
 vector wrapper, standard exception and battle-end destructor cold verifiers
 passed through the no-auth public Funnel MCP.
+
+R110 subsequently passed its complete 53-body source graph, retained R108/R109
+evidence, all 864 authored extents, target/project attestation, 152 tests,
+progress freshness and `git diff --check` through one final public MCP replay.
+That request also cold-replayed all 60 exact units across eleven objects /
+9,883 bytes. Local tools handled investigation and intermediate acceptance.
 The complete CRT external-dependency verifier also passed through that endpoint.
 The twelve short game policies and full blend-mode context also replayed
 successfully through the public MCP.
@@ -166,8 +188,8 @@ through the public route. The F008 18-byte animation clear helper also
 cold-replayed exact through public MCP after the complete 15-check smoke test.
 The complete F009 object subsequently cold-replayed 9/9 exact over public MCP.
 The complete batch origin scanner also passed through that endpoint during this
-F009 handoff and reproduced the then-current 1,311-candidate queues. The R109
-refresh now covers 1,297 pending candidates in forty groups and 182 extent
+F009 handoff and reproduced the then-current 1,311-candidate queues. The R110
+refresh now covers 1,290 pending candidates in forty groups and 182 extent
 questions; five known ambiguous lifetime wrappers remain in the strongest lane.
 R084 had already replayed the earlier thirteen
 deque cold verifiers and the fighter script accessor verifier over that
@@ -178,7 +200,7 @@ endpoint. Public GitHub CI for F009 passed the same 141-test suite in
 
 Use [batch origin review](ORIGIN_BATCH_SCAN.md) and
 `scripts/repo-python scripts/scan-origin-candidates.py` to refresh the private
-shortlist for all 1,297 pending candidates. The current report groups 40 whole
+shortlist for all 1,290 pending candidates. The current report groups 40 whole
 bodies and isolates 182 extent questions. Start with grouped source/context
 witnesses rather than one-address setup. R102 accepted seventeen explicit
 game policies through the shared cohort verifier, with 33 independent whole
@@ -364,7 +386,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R110 dependency cohort described above. F008 and F009 remain
+Continue the bounded R111 erase cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

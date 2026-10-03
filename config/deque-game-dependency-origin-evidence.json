@@ -1,0 +1,1496 @@
+{
+  "evidence_id": "R110",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "probe": "probes/VC7GameDequeDependencies.cpp",
+  "probe_sha256": "60c58b62a37e697c88c806cb95c17e89d198587abee53112fcfc84f184f7293e",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/I",
+    "src"
+  ],
+  "vendor_headers": {
+    "deque": "8180a844c7f3948ab6daae2ce2f117fbaf5636590c7b50cd06110ed714ebb585",
+    "xmemory": "e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94",
+    "algorithm": "36a6b5634df850c0c63d821f69114a6dcdc0b716fc96fcbb938f9e2dccb2b2eb"
+  },
+  "accepted_addresses": [
+    "0x004453C0",
+    "0x00445400",
+    "0x00445530",
+    "0x005F8110",
+    "0x005F8290",
+    "0x005F8420",
+    "0x005F8680"
+  ],
+  "game_parents": [
+    "0x0045BA30",
+    "0x005F7D80"
+  ],
+  "nodes": [
+    {
+      "address": "0x0045BA30",
+      "size": 221,
+      "coff_symbol": "?DeleteEntries@EffectListProbe@@QAEXXZ",
+      "source_sha256": "64c83ce09e161a1709fb0a0165005c5ce5c0c4886385b0e06a4a41a6b863f8fc",
+      "body_sha256": "3743bf93d6ae0ec33bc9baa57c0c2559af34b458fe8e72f83c63099f74ae1aad",
+      "relocation_bindings": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x004453C0"
+        },
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x004453C0"
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x00445360"
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x00445390"
+        },
+        {
+          "offset": 131,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x00445400"
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x00445440"
+        },
+        {
+          "offset": 158,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBEAAPAUEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x004453E0"
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBEAAPAUEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x004453E0"
+        },
+        {
+          "offset": 185,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        },
+        {
+          "offset": 208,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target_address": "0x0045C0E0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "authored",
+      "origin_evidence": "R109",
+      "span_end": "0x0045BB0C",
+      "evidence_role": "game_parent",
+      "prior_name": "BattleEffectManager::DeleteFourListsAt0045BA30",
+      "prior_evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py"
+    },
+    {
+      "address": "0x005F7D80",
+      "size": 276,
+      "coff_symbol": "?AdvanceAndPrune@AuxListProbe@@QAEXXZ",
+      "source_sha256": "413d7f9401e5b394f2c42daad6df62f1dc4d9d256d83fe55cd4e812ad7a51af2",
+      "body_sha256": "b23cb9469c9501989cd48500296650b521e9edc094c651e5a790c1d41c776b2b",
+      "relocation_bindings": [
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?size@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEIXZ",
+          "addend": 0,
+          "target_address": "0x005F8110"
+        },
+        {
+          "offset": 94,
+          "type": "REL32",
+          "symbol": "?at@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAPAUAuxEntryProbe@@I@Z",
+          "addend": 0,
+          "target_address": "0x005F8130"
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80B0"
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80E0"
+        },
+        {
+          "offset": 157,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x005F8460"
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        },
+        {
+          "offset": 188,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        },
+        {
+          "offset": 231,
+          "type": "REL32",
+          "symbol": "?erase@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@V312@@Z",
+          "addend": 0,
+          "target_address": "0x005F8290"
+        },
+        {
+          "offset": 258,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x005F8420"
+        }
+      ],
+      "indirect_call_count": 1,
+      "origin": "authored",
+      "origin_evidence": "R109",
+      "span_end": "0x005F7E93",
+      "evidence_role": "game_parent",
+      "prior_name": "AuxEffectManager::AdvanceAndPruneTwoListsAt005F7D80",
+      "prior_evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py"
+    },
+    {
+      "address": "0x004453C0",
+      "size": 22,
+      "coff_symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@XZ",
+      "source_sha256": "bee41cce2413eb7536ca9fa03183aa19cac759c1b4b8c460627b9f7033bffca4",
+      "body_sha256": "1ad623302163c546382a92d6cdc806e0490fa12ae3dd12c85960a41083f8655a",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x00445530"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x004453D5",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x00445360",
+      "size": 35,
+      "coff_symbol": "?begin@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+      "source_sha256": "f8d43b5f8f23816054d585df2dcff4671731f2c99745095621e82d24bf465003",
+      "body_sha256": "ca90ad44c99464bcd834b3c64e71254ca6a0ff036d0349a997ac17cab7407375",
+      "relocation_bindings": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x004454F0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R079",
+      "span_end": "0x00445382",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Begin_00445360",
+      "prior_evidence": "R079; cold VC7 whole begin helper and reviewed at parent call"
+    },
+    {
+      "address": "0x00445390",
+      "size": 41,
+      "coff_symbol": "?end@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+      "source_sha256": "c2a5d86764925529a534485c026d8332af9aa3f2ace319918700bbb87851bf73",
+      "body_sha256": "ebad3021b94ebbf286e1ceb7cbe78f9fd8b3cdff3f2103a58a30adf5bb830172",
+      "relocation_bindings": [
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x004454F0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x004453B8",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_End_00445390",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x00445400",
+      "size": 54,
+      "coff_symbol": "??Eiterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE?AV012@H@Z",
+      "source_sha256": "8805d0536ff73725c56a5434ecc0386fc51008beb7e2ea49ce8ba05671d817fc",
+      "body_sha256": "d132d826b06927e322134bd75982f0e72d65249a9300eac0c8fa8ca339687b62",
+      "relocation_bindings": [
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x00445510"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x00445435",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x00445440",
+      "size": 33,
+      "coff_symbol": "??9const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+      "source_sha256": "45222d0f1ea2e8f3a2fb82596669d336b521a94e57868952c9b1dbfb05a92d25",
+      "body_sha256": "3ee4657fded583f2ed5ea975113cb3a2856f756f759284fbf3dbd93f7532e01d",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??8const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x004455C0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R032",
+      "span_end": "0x00445460",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7 STL generic ??9const_iterator",
+      "prior_evidence": "R032"
+    },
+    {
+      "address": "0x004453E0",
+      "size": 19,
+      "coff_symbol": "??Diterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBEAAPAUEntryProbe@@XZ",
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "4a47c1d6f93b299714ef9e7d78d1c733236ed47ffce2561b915bc613a0a6ebd0",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??Dconst_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBEABQAUEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x00445560"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R082",
+      "span_end": "0x004453F2",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorDereference_004453E0",
+      "prior_evidence": "R082; cold VC7 whole iterator dereference and verified const-iterator callee"
+    },
+    {
+      "address": "0x0045C0E0",
+      "size": 19,
+      "coff_symbol": "?clear@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEXXZ",
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "bb8aa2502c2732e1f5577a74ba33669f72e2f2b92ab5ecb4f6078398609a2ec0",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?_Tidy@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@IAEXXZ",
+          "addend": 0,
+          "target_address": "0x0045C480"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R077",
+      "span_end": "0x0045C0F2",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Destructor_0045C0E0",
+      "prior_evidence": "R077; cold VC7 whole deque destructor and independently verified _Tidy call"
+    },
+    {
+      "address": "0x005F8110",
+      "size": 17,
+      "coff_symbol": "?size@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEIXZ",
+      "source_sha256": "d500a64daa2531474397cfd9958b6e1b88fc9b0b86d04aa2ea4015b50431bc91",
+      "body_sha256": "d500a64daa2531474397cfd9958b6e1b88fc9b0b86d04aa2ea4015b50431bc91",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x005F8120",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x005F8130",
+      "size": 68,
+      "coff_symbol": "?at@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAPAUAuxEntryProbe@@I@Z",
+      "source_sha256": "e276cc86a6900658ce102a6eac3387d479c93c736e1afab114059a301cbda702",
+      "body_sha256": "e822a4c622019eb5e6b638633e41156c6ae2a7377a2ab7fe308b435382725720",
+      "relocation_bindings": [
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "?_Xran@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@IBEXXZ",
+          "addend": 0,
+          "target_address": "0x005F8790"
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80B0"
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "??Hiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x005F8D30"
+        },
+        {
+          "offset": 58,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R078",
+      "span_end": "0x005F8173",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_At_005F8130",
+      "prior_evidence": "R078; cold VC7 whole deque access/iterator COMDAT and typed relocations"
+    },
+    {
+      "address": "0x005F80B0",
+      "size": 35,
+      "coff_symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+      "source_sha256": "f8d43b5f8f23816054d585df2dcff4671731f2c99745095621e82d24bf465003",
+      "body_sha256": "6c1ec514a6b31642d632ebab29078f0cad91dd295234daabc4d4c3f6f475f1d3",
+      "relocation_bindings": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x005F8CF0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R079",
+      "span_end": "0x005F80D2",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Begin_005F80B0",
+      "prior_evidence": "R079; cold VC7 whole begin helper and reviewed at parent call"
+    },
+    {
+      "address": "0x005F80E0",
+      "size": 41,
+      "coff_symbol": "?end@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+      "source_sha256": "c2a5d86764925529a534485c026d8332af9aa3f2ace319918700bbb87851bf73",
+      "body_sha256": "b9bae11718c3e234fde98e7084ae2a349f85663dcac30cabce10a1d2d7f31936",
+      "relocation_bindings": [
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x005F8CF0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x005F8108",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_End_005F80E0",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x005F8460",
+      "size": 33,
+      "coff_symbol": "??9const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+      "source_sha256": "45222d0f1ea2e8f3a2fb82596669d336b521a94e57868952c9b1dbfb05a92d25",
+      "body_sha256": "4de3f64b4f40598e24be670610454af4d1f6fa54d75419e35a6e6d3b6f03b1bc",
+      "relocation_bindings": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??8const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x005F8E10"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R032",
+      "span_end": "0x005F8480",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7 STL generic ??9const_iterator",
+      "prior_evidence": "R032"
+    },
+    {
+      "address": "0x005F8400",
+      "size": 19,
+      "coff_symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "672dc7b05c6ab0aa5d75aa4ea782b8d59ab501138670db3928bc505cc308dbc0",
+      "relocation_bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??Dconst_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEABQAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8DB0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R082",
+      "span_end": "0x005F8412",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorDereference_005F8400",
+      "prior_evidence": "R082; cold VC7 whole iterator dereference and verified const-iterator callee"
+    },
+    {
+      "address": "0x005F8290",
+      "size": 59,
+      "coff_symbol": "?erase@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@V312@@Z",
+      "source_sha256": "2d3da5d9c60ae2d38ded14aab6a40078752dbffe4928545bfa4c16a566a4cf54",
+      "body_sha256": "1c2f8ab6afb0bc01ac0c19d6234babb68c293b5e9dcf838d1af534fd4fbd5d3b",
+      "relocation_bindings": [
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "??Hiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x005F8D30"
+        },
+        {
+          "offset": 46,
+          "type": "REL32",
+          "symbol": "?erase@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@V312@0@Z",
+          "addend": 0,
+          "target_address": "0x005F8680"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x005F82CA",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x005F8420",
+      "size": 54,
+      "coff_symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AV012@H@Z",
+      "source_sha256": "8805d0536ff73725c56a5434ecc0386fc51008beb7e2ea49ce8ba05671d817fc",
+      "body_sha256": "d025272370503d10b143e857603d67f801dbc4766fef8d9329838b67463b60d0",
+      "relocation_bindings": [
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x005F8D10"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x005F8455",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x00445530",
+      "size": 33,
+      "coff_symbol": "??0const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@XZ",
+      "source_sha256": "7251f6ad9918338ce0e16bf5f8d9a1f1749b6e564b941171a23f17a2683394cf",
+      "body_sha256": "7251f6ad9918338ce0e16bf5f8d9a1f1749b6e564b941171a23f17a2683394cf",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x00445550",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x004454F0",
+      "size": 32,
+      "coff_symbol": "??0iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+      "source_sha256": "30c0425de1614665c76a99f5e69c72c7bd91d8a7e3541dfa096b7a017c850a7f",
+      "body_sha256": "28d58b823fcf5364c7b0784bccf8b7abdf1c34808336b883e92f362d4dfe3fb2",
+      "relocation_bindings": [
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "??0const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x00445650"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R080",
+      "span_end": "0x0044550F",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorConstructor_004454F0",
+      "prior_evidence": "R080; cold VC7 whole iterator constructor and reviewed begin parent call"
+    },
+    {
+      "address": "0x00445510",
+      "size": 29,
+      "coff_symbol": "??Eiterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+      "source_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "body_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x0044552C",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorIncrement_00445510",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x004455C0",
+      "size": 60,
+      "coff_symbol": "??8const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+      "source_sha256": "adbeacee6eccf6a6b6006d5c111fa912070b92ff5ffcca20ed6b77e67b00fbbb",
+      "body_sha256": "adbeacee6eccf6a6b6006d5c111fa912070b92ff5ffcca20ed6b77e67b00fbbb",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x004455FB",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorEqual_004455C0",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x00445560",
+      "size": 89,
+      "coff_symbol": "??Dconst_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBEABQAUEntryProbe@@XZ",
+      "source_sha256": "defedce652cf9db7d2ca80b3bdd80282e7fd11dccaa1b07cf9dde0baf0d60ebe",
+      "body_sha256": "defedce652cf9db7d2ca80b3bdd80282e7fd11dccaa1b07cf9dde0baf0d60ebe",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R078",
+      "span_end": "0x004455B8",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorDereference_00445560",
+      "prior_evidence": "R078; cold VC7 whole deque access/iterator COMDAT and typed relocations"
+    },
+    {
+      "address": "0x0045C480",
+      "size": 177,
+      "coff_symbol": "?_Tidy@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@IAEXXZ",
+      "source_sha256": "57871878891f67934151d824f915e7cf44a82e1414f0358e5d198e8056dc71fc",
+      "body_sha256": "2518344b1f956ea24d625c31e1e00d5a1fce7da4ab1285937c78d4f58da45413",
+      "relocation_bindings": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x0045C630"
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?pop_back@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target_address": "0x0045C700"
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": "?deallocate@?$allocator@PAUEntryProbe@@@std@@QAEXPAPAUEntryProbe@@I@Z",
+          "addend": 0,
+          "target_address": "0x0045C830"
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAPAUEntryProbe@@@std@@QAEXPAPAPAUEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x0045C890"
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "?deallocate@?$allocator@PAPAUEntryProbe@@@std@@QAEXPAPAPAUEntryProbe@@I@Z",
+          "addend": 0,
+          "target_address": "0x0045C850"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R072",
+      "span_end": "0x0045C530",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque__Tidy_0045C480",
+      "prior_evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations"
+    },
+    {
+      "address": "0x005F8D30",
+      "size": 57,
+      "coff_symbol": "??Hiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE?AV012@H@Z",
+      "source_sha256": "072b49fe059ac5a319c6078f6b2beb9834ef3ce0ac5d170627d518fbfa195453",
+      "body_sha256": "8a3d8434bf3ea1085f2ab666c07e2f0f3a78f3289665274eeb24bca89ec4f9d3",
+      "relocation_bindings": [
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "??Yiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@H@Z",
+          "addend": 0,
+          "target_address": "0x005F9510"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R078",
+      "span_end": "0x005F8D68",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorPlus_005F8D30",
+      "prior_evidence": "R078; cold VC7 whole deque access/iterator COMDAT and typed relocations"
+    },
+    {
+      "address": "0x005F8CF0",
+      "size": 32,
+      "coff_symbol": "??0iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+      "source_sha256": "30c0425de1614665c76a99f5e69c72c7bd91d8a7e3541dfa096b7a017c850a7f",
+      "body_sha256": "535d3199ab3603466eb25e780c1a36ace70bff5806c5c0053c8ae76a5b20b97a",
+      "relocation_bindings": [
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "??0const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+          "addend": 0,
+          "target_address": "0x005F9580"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R080",
+      "span_end": "0x005F8D0F",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorConstructor_005F8CF0",
+      "prior_evidence": "R080; cold VC7 whole iterator constructor and reviewed begin parent call"
+    },
+    {
+      "address": "0x005F8E10",
+      "size": 60,
+      "coff_symbol": "??8const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+      "source_sha256": "adbeacee6eccf6a6b6006d5c111fa912070b92ff5ffcca20ed6b77e67b00fbbb",
+      "body_sha256": "adbeacee6eccf6a6b6006d5c111fa912070b92ff5ffcca20ed6b77e67b00fbbb",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x005F8E4B",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorEqual_005F8E10",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x005F8DB0",
+      "size": 89,
+      "coff_symbol": "??Dconst_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEABQAUAuxEntryProbe@@XZ",
+      "source_sha256": "defedce652cf9db7d2ca80b3bdd80282e7fd11dccaa1b07cf9dde0baf0d60ebe",
+      "body_sha256": "defedce652cf9db7d2ca80b3bdd80282e7fd11dccaa1b07cf9dde0baf0d60ebe",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R078",
+      "span_end": "0x005F8E08",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorDereference_005F8DB0",
+      "prior_evidence": "R078; cold VC7 whole deque access/iterator COMDAT and typed relocations"
+    },
+    {
+      "address": "0x005F8680",
+      "size": 262,
+      "coff_symbol": "?erase@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@V312@0@Z",
+      "source_sha256": "01725d00bfef10a083757bc2fcdddad234b0f19c886492fe45ccfe71972dcb0d",
+      "body_sha256": "e49837b8d48edefc98b5ddd7d294f514b077539fafc131dff8dd6d5e0afece99",
+      "relocation_bindings": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80B0"
+        },
+        {
+          "offset": 26,
+          "type": "REL32",
+          "symbol": "??Giterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABVconst_iterator@12@@Z",
+          "addend": 0,
+          "target_address": "0x005F9550"
+        },
+        {
+          "offset": 41,
+          "type": "REL32",
+          "symbol": "??Giterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABVconst_iterator@12@@Z",
+          "addend": 0,
+          "target_address": "0x005F9550"
+        },
+        {
+          "offset": 60,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80E0"
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??Giterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABVconst_iterator@12@@Z",
+          "addend": 0,
+          "target_address": "0x005F9550"
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80B0"
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": "??$copy_backward@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00@Z",
+          "addend": 0,
+          "target_address": "0x005F9FB0"
+        },
+        {
+          "offset": 144,
+          "type": "REL32",
+          "symbol": "?pop_front@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target_address": "0x005F90F0"
+        },
+        {
+          "offset": 168,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80E0"
+        },
+        {
+          "offset": 192,
+          "type": "REL32",
+          "symbol": "??$copy@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00@Z",
+          "addend": 0,
+          "target_address": "0x005FA000"
+        },
+        {
+          "offset": 220,
+          "type": "REL32",
+          "symbol": "?pop_back@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target_address": "0x005F91A0"
+        },
+        {
+          "offset": 242,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x005F80B0"
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "??Hiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x005F8D30"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "span_end": "0x005F8785",
+      "evidence_role": "accepted",
+      "prior_name": "",
+      "prior_evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed"
+    },
+    {
+      "address": "0x005F8D10",
+      "size": 29,
+      "coff_symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+      "source_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "body_sha256": "2d9ee1ef888fd99ef80c4a16231f33a7d3060b679b381a3be310d81d9205a535",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005F8D2C",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorIncrement_005F8D10",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x00445650",
+      "size": 33,
+      "coff_symbol": "??0const_iterator@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+      "source_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R081",
+      "span_end": "0x00445670",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorConstructor_00445650",
+      "prior_evidence": "R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call"
+    },
+    {
+      "address": "0x0045C630",
+      "size": 25,
+      "coff_symbol": "?empty@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NXZ",
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R086",
+      "span_end": "0x0045C648",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Empty_0045C630",
+      "prior_evidence": "R086; complete cold VC7 deque::empty COMDAT; source-typed call from cold-verified deque operation parent"
+    },
+    {
+      "address": "0x0045C700",
+      "size": 154,
+      "coff_symbol": "?pop_back@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QAEXXZ",
+      "source_sha256": "2e8684d3033d991166290431317003400550651e490dbd3f77c5a6d6fe4604b3",
+      "body_sha256": "cc00eba56f608806caa4a922e231bc2a037d71e609cd7743cb5fad4e9613745f",
+      "relocation_bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAUEntryProbe@@V?$allocator@PAUEntryProbe@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x0045C630"
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAUEntryProbe@@@std@@QAEXPAPAUEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x0045C900"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R072",
+      "span_end": "0x0045C799",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_pop_back_0045C700",
+      "prior_evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations"
+    },
+    {
+      "address": "0x0045C830",
+      "size": 25,
+      "coff_symbol": "?deallocate@?$allocator@PAUEntryProbe@@@std@@QAEXPAPAUEntryProbe@@I@Z",
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "body_sha256": "579e350d704761280e764b5a7675516d8002409b29f0283f5860d079bdf63e79",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R074",
+      "span_end": "0x0045C848",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deallocate_0045C830",
+      "prior_evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call"
+    },
+    {
+      "address": "0x0045C890",
+      "size": 25,
+      "coff_symbol": "?destroy@?$allocator@PAPAUEntryProbe@@@std@@QAEXPAPAPAUEntryProbe@@@Z",
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "5e91ab8c436b5983babde899cf27e804ea2b89920acc2ce3e2c68c2effc53707",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@PAPAUEntryProbe@@@std@@YAXPAPAPAUEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x0045CB90"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R074",
+      "span_end": "0x0045C8A8",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::destroy_0045C890",
+      "prior_evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call"
+    },
+    {
+      "address": "0x0045C850",
+      "size": 25,
+      "coff_symbol": "?deallocate@?$allocator@PAPAUEntryProbe@@@std@@QAEXPAPAPAUEntryProbe@@I@Z",
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "body_sha256": "6f78003fa782c13e509456e3006c698c8798fe26c57b43a4e4c6daf52b5ca6ac",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R074",
+      "span_end": "0x0045C868",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deallocate_0045C850",
+      "prior_evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call"
+    },
+    {
+      "address": "0x005F9510",
+      "size": 31,
+      "coff_symbol": "??Yiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@H@Z",
+      "source_sha256": "1637f0078bddcf4acb06cb287f78098c62e751748777f14550ba2ccdf9474b8e",
+      "body_sha256": "1637f0078bddcf4acb06cb287f78098c62e751748777f14550ba2ccdf9474b8e",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R083",
+      "span_end": "0x005F952E",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorAdvance_005F9510",
+      "prior_evidence": "R083; cold VC7 whole iterator advance and reviewed addition parent call"
+    },
+    {
+      "address": "0x005F9580",
+      "size": 33,
+      "coff_symbol": "??0const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAE@IPBV12@@Z",
+      "source_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "body_sha256": "f9acd19f2ba87e44db5550f714640dd00fbc5b4ffe22c5d829ef3d5636ae62b9",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R081",
+      "span_end": "0x005F95A0",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorConstructor_005F9580",
+      "prior_evidence": "R081; cold VC7 whole const-iterator constructor and reviewed iterator parent call"
+    },
+    {
+      "address": "0x005F9550",
+      "size": 41,
+      "coff_symbol": "??Giterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABVconst_iterator@12@@Z",
+      "source_sha256": "89a1cc2e9c9755babd489bad7201a8c870c3b4efe6283c46a6f8584f1cd9b1ac",
+      "body_sha256": "86fdf5f27bc3b021b5cbd80b7a545cab20dda7965a3547ce1a2be061b28a035e",
+      "relocation_bindings": [
+        {
+          "offset": 31,
+          "type": "REL32",
+          "symbol": "??Gconst_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABV012@@Z",
+          "addend": 0,
+          "target_address": "0x005F9D60"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x005F9578",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorSubtract_005F9550",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x005F9FB0",
+      "size": 70,
+      "coff_symbol": "??$copy_backward@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00@Z",
+      "source_sha256": "176cdfba5567dc13581198d5fe4b6108a448767e0eba7e831e822039770c9411",
+      "body_sha256": "dbb593b4f00bbb5ae9c85769e4b77edfd579294fd1eef082de532c3c15e099a9",
+      "relocation_bindings": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??$_Ptr_cat@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@0@Z",
+          "addend": 0,
+          "target_address": "0x005FA4D0"
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "??$_Copy_backward_opt@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+          "addend": 0,
+          "target_address": "0x005FA4E0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005F9FF5",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_CopyBackward_005F9FB0",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x005F90F0",
+      "size": 164,
+      "coff_symbol": "?pop_front@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEXXZ",
+      "source_sha256": "66dc823673b29d7222415e9ebaffd0fc90210990a2417d74b204aef0bca35aac",
+      "body_sha256": "998184bf2abadb2d16bbdf2b2b48dba9152e1281f3847406a807343b58b2cb5a",
+      "relocation_bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x005F90D0"
+        },
+        {
+          "offset": 79,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAUAuxEntryProbe@@@std@@QAEXPAPAUAuxEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x005F99C0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R072",
+      "span_end": "0x005F9193",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_pop_front_005F90F0",
+      "prior_evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations"
+    },
+    {
+      "address": "0x005FA000",
+      "size": 70,
+      "coff_symbol": "??$copy@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00@Z",
+      "source_sha256": "176cdfba5567dc13581198d5fe4b6108a448767e0eba7e831e822039770c9411",
+      "body_sha256": "5bae47cf32ca65a92eeda77ba17089b97214a6fef6818b26831b22746fc8c4bc",
+      "relocation_bindings": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??$_Ptr_cat@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@0@Z",
+          "addend": 0,
+          "target_address": "0x005FA4D0"
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "??$_Copy_opt@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+          "addend": 0,
+          "target_address": "0x005FA540"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005FA045",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Copy_005FA000",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x005F91A0",
+      "size": 154,
+      "coff_symbol": "?pop_back@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEXXZ",
+      "source_sha256": "2e8684d3033d991166290431317003400550651e490dbd3f77c5a6d6fe4604b3",
+      "body_sha256": "e078e131eb2c692813b4977ac3e8950051af3f9eb9778be2fbd117a66b93090e",
+      "relocation_bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x005F90D0"
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAUAuxEntryProbe@@@std@@QAEXPAPAUAuxEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x005F99C0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R072",
+      "span_end": "0x005F9239",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_pop_back_005F91A0",
+      "prior_evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations"
+    },
+    {
+      "address": "0x0045C900",
+      "size": 25,
+      "coff_symbol": "?destroy@?$allocator@PAUEntryProbe@@@std@@QAEXPAPAUEntryProbe@@@Z",
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "7cf2171500bafdfd6ebe21d74c15112a621939fefe3e617bc192e10c93629987",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@PAUEntryProbe@@@std@@YAXPAPAUEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x0045CBA0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R074",
+      "span_end": "0x0045C918",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::destroy_0045C900",
+      "prior_evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call"
+    },
+    {
+      "address": "0x0045CB90",
+      "size": 5,
+      "coff_symbol": "??$_Destroy@PAPAUEntryProbe@@@std@@YAXPAPAPAUEntryProbe@@@Z",
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R088",
+      "span_end": "0x0045CB94",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_TrivialDestroy_0045CB90",
+      "prior_evidence": "R088; complete cold VC7 short helper COMDAT; exact source-typed call from cold-verified R074 template parent"
+    },
+    {
+      "address": "0x005F9D60",
+      "size": 66,
+      "coff_symbol": "??Gconst_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEHABV012@@Z",
+      "source_sha256": "fd421925398ca60cfecd82b320f455710d6e858191831cd60d9a2d8a371e1ad1",
+      "body_sha256": "fd421925398ca60cfecd82b320f455710d6e858191831cd60d9a2d8a371e1ad1",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R084",
+      "span_end": "0x005F9DA1",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_ConstIteratorSubtract_005F9D60",
+      "prior_evidence": "R084; cold VC7 whole iterator comparison/end COMDAT and typed callee bindings"
+    },
+    {
+      "address": "0x005FA4D0",
+      "size": 11,
+      "coff_symbol": "??$_Ptr_cat@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@0@Z",
+      "source_sha256": "125af26ed15ea5e17205bbf1df6e31eeb82f0d79055557b9a04ec8a39e8679a8",
+      "body_sha256": "125af26ed15ea5e17205bbf1df6e31eeb82f0d79055557b9a04ec8a39e8679a8",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005FA4DA",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_PointerCategory_005FA4D0",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x005FA4E0",
+      "size": 81,
+      "coff_symbol": "??$_Copy_backward_opt@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+      "source_sha256": "43aa99804565a4c4fe985ca3fcb3eda8da541eac727785d3291eb6324efcff5d",
+      "body_sha256": "96f023e21c18bc48a2e6938c660428756717173cd1f644573dbb54f7a59651c0",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x005F8460"
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "??Fiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x005FA910"
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "??Fiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x005FA910"
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005FA530",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_CopyBackwardOpt_005FA4E0",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x005F90D0",
+      "size": 25,
+      "coff_symbol": "?empty@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NXZ",
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R086",
+      "span_end": "0x005F90E8",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_Empty_005F90D0",
+      "prior_evidence": "R086; complete cold VC7 deque::empty COMDAT; source-typed call from cold-verified deque operation parent"
+    },
+    {
+      "address": "0x005F99C0",
+      "size": 25,
+      "coff_symbol": "?destroy@?$allocator@PAUAuxEntryProbe@@@std@@QAEXPAPAUAuxEntryProbe@@@Z",
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "fb2c1097aae1b2ec176e2c5ce6a9607d821a059c694e451232ca559541c35abe",
+      "relocation_bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@PAUAuxEntryProbe@@@std@@YAXPAPAUAuxEntryProbe@@@Z",
+          "addend": 0,
+          "target_address": "0x005FA3A0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R074",
+      "span_end": "0x005F99D8",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::destroy_005F99C0",
+      "prior_evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call"
+    },
+    {
+      "address": "0x005FA540",
+      "size": 85,
+      "coff_symbol": "??$_Copy_opt@Viterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@V123@@std@@YA?AViterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@0@V120@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+      "source_sha256": "2bd382cd6d2b7fb92f384144a5ab1321e1e72e9a539b8ae5abdd07fda1402ba9",
+      "body_sha256": "610487729d1875819ff23cdd434859414809ed4a79fc4fecc4255602ec99199b",
+      "relocation_bindings": [
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x005F8D10"
+        },
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+          "addend": 0,
+          "target_address": "0x005F8D10"
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBE_NABV012@@Z",
+          "addend": 0,
+          "target_address": "0x005F8460"
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        },
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QBEAAPAUAuxEntryProbe@@XZ",
+          "addend": 0,
+          "target_address": "0x005F8400"
+        }
+      ],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005FA594",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_CopyOpt_005FA540",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x0045CBA0",
+      "size": 5,
+      "coff_symbol": "??$_Destroy@PAUEntryProbe@@@std@@YAXPAPAUEntryProbe@@@Z",
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R088",
+      "span_end": "0x0045CBA4",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_TrivialDestroy_0045CBA0",
+      "prior_evidence": "R088; complete cold VC7 short helper COMDAT; exact source-typed call from cold-verified R074 template parent"
+    },
+    {
+      "address": "0x005FA910",
+      "size": 29,
+      "coff_symbol": "??Fiterator@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@QAEAAV012@XZ",
+      "source_sha256": "3344e010b691dd65084ba8f1c95eac3832868d7bc3341c25add5e89ab229bd33",
+      "body_sha256": "3344e010b691dd65084ba8f1c95eac3832868d7bc3341c25add5e89ab229bd33",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R085",
+      "span_end": "0x005FA92C",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_IteratorDecrement_005FA910",
+      "prior_evidence": "R085; complete cold VC7 source COMDAT comparison; typed relocations and full CFG; short helpers corroborated by source-typed calls"
+    },
+    {
+      "address": "0x005FA3A0",
+      "size": 5,
+      "coff_symbol": "??$_Destroy@PAUAuxEntryProbe@@@std@@YAXPAPAUAuxEntryProbe@@@Z",
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "relocation_bindings": [],
+      "indirect_call_count": 0,
+      "origin": "library",
+      "origin_evidence": "R088",
+      "span_end": "0x005FA3A4",
+      "evidence_role": "library_anchor",
+      "prior_name": "VC7::deque_TrivialDestroy_005FA3A0",
+      "prior_evidence": "R088; complete cold VC7 short helper COMDAT; exact source-typed call from cold-verified R074 template parent"
+    }
+  ],
+  "boundaries": [
+    {
+      "address": "0x00640F15",
+      "size": 5,
+      "span_end": "0x00640F19",
+      "coff_symbol": "??3@YAXPAX@Z",
+      "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+      "origin": "unknown",
+      "origin_evidence": "ghidra-12.1.3-initial-inventory",
+      "external_tails": [
+        {
+          "site": "0x00640F15",
+          "target": "0x00642A61"
+        }
+      ],
+      "cfg": [
+        0,
+        0
+      ]
+    },
+    {
+      "address": "0x005F8790",
+      "size": 90,
+      "span_end": "0x005F87E9",
+      "coff_symbol": "?_Xran@?$deque@PAUAuxEntryProbe@@V?$allocator@PAUAuxEntryProbe@@@std@@@std@@IBEXXZ",
+      "body_sha256": "75c0f309207236d99055b44d05c70697eb8351ed8e193b793391af1bbc2c7951",
+      "origin": "library",
+      "origin_evidence": "R032",
+      "external_tails": [],
+      "cfg": [
+        1,
+        0
+      ]
+    }
+  ]
+}

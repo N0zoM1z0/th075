@@ -1651,3 +1651,45 @@ provisional authored denominator is 1,960,833 bytes.
 Both R108/R109 verifiers and the retained R104/R105 evidence passed the final
 no-auth public MCP acceptance, alongside 146 tests and a full 60/60-unit cold
 exact replay across eleven objects. No exact source or manifest was changed.
+
+## R110 — source-typed deque dependencies of the reviewed game policies
+
+Seven complete library bodies / 501 bytes are now accepted through
+`scripts/repo-python scripts/verify-deque-game-dependency-origins.py` and
+`config/deque-game-dependency-origin-evidence.json`. The new bodies are default
+iterator/const-iterator constructors `0x004453C0`/`0x00445530`, postfix iterator
+increments `0x00445400`/`0x005F8420`, size getter `0x005F8110`, single erase
+`0x005F8290` and complete range erase `0x005F8680`.
+
+Natural VC7 source models reproduce both already-reviewed whole game parents:
+the 221-byte four-list delete/clear loop and 276-byte two-list advance/prune
+loop. Each parent has ten direct calls. The cold graph compares all 53 source
+COMDATs / 3,207 bytes, including 44 prior library anchors and 85 exact typed
+calls. All nodes are reachable from the independent game policies. The tiny
+size getter is typed by its full parent; the zeroing const-iterator constructor
+is typed through the default iterator. The second game loop accesses entries
+through `at`, not the unchecked `operator[]` source alternative. Equal parent
+bytes cannot distinguish those calls without whole typed callee evidence.
+
+Postfix increment and decrement have equal non-relocation bytes. The exact
+prefix call and complete prefix body distinguish them. The two-word return
+uses a hidden result buffer and `RET 8`; single/range erase retain `RET 12` and
+`RET 20`. The 262-byte range erase compares both copy/pop paths and all thirteen
+calls, including result-iterator construction. Preserve these full extents.
+
+Probe element classes and owner fields are explicit synthetic observations,
+not recovered game layouts or original element definitions. No reconstructed
+source, mapped name or exact match is added. The delete jump remains unknown,
+including its external tail. The prior R032 range-error library body is bounded
+context; its old vector/`length_error` source-shape alias does not establish its
+original family or exception identity and is not rewritten by this review.
+
+The checkpoint is 3,061 reviewed candidates: 911 authored, 1,575 library and
+575 compiler generated, with 1,290 pending. Exact stays 60 / 9,883 bytes and the
+authored denominator stays 1,960,833 bytes. Local cold acceptance, target-required
+tracking and all 152 public tests passed. Six R111 erase candidates are the next
+bounded review; their diagnostic shapes do not yet establish ownership.
+
+The single final no-auth public MCP replay passed this complete graph, retained
+R108/R109 evidence, 864 authored extents, target/project attestation and 152
+tests. All 60 exact units also cold-replayed across eleven objects / 9,883 bytes.
