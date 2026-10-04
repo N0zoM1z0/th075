@@ -7282,3 +7282,62 @@ MCP acceptance remains waived; the full remaining-origin goal is active and
 unfinished. The next bounded R174 cohort is the secondary texture-vector index
 and mutable dereference candidates through complete R017 resource policies and
 independently accepted R161/R095/R034 SDK context.
+
+## R174 — independent secondary texture-vector access
+
+Two complete library definitions / 68 bytes are accepted: unchecked index
+`0x0040DEE0` / 49 and mutable iterator dereference `0x0040E530` / 19. Replay
+`scripts/repo-python scripts/verify-secondary-texture-access-origins.py` with
+immutable `config/secondary-texture-access-origin-evidence.json`. The entire
+R017 texture initialization `0x0040AD80` / 177 and resource release `0x0040AE40`
+/ 434 preserve their original 611 bytes, authored records, instructions, CFG
+and switch evidence. Their five actual index calls and returned-pointer slot
+accesses supply independent game argument/value context. Unchanged R034
+assignment `0x0040E210` / 96 and full R161 endpoint records remain independent.
+
+Target observation: the actual 32-byte iterator addition assignment
+`0x0040EA00` uses `LEA EAX,[ECX+EDX*4]` at `0x0040EA0F`. The full game policies
+read and clear four-byte slots through actual index results. This independently
+observed width is four, rather than an inherited width from another container.
+The original slot type, method names and complete private owner layout remain
+unknown. A query initially requested an interior address while locating the
+const constructor; only the actual complete `0x0040F120` / 24 target extent
+and genuine defining source supply evidence.
+
+Compiler/source observation: a complete synthetic four-byte record closes eight
+entire SDK definitions / 244 bytes with seven genuine fields. Actual index calls
+the accepted R161 begin, R095 addition and the mutable dereference. Its const
+getter and both complete iterator constructors are compared through their own
+full primary AUX extents. Whole ordinary begin/index/dereference alternatives
+/ 31,49,19 bytes are byte-equal with five fields. They preserve original method
+spelling uncertainty. Library ownership is an inference from this complete
+typed source graph and the independent entire game policies; neither caller
+labels nor byte equality alone is sufficient.
+
+All eleven whole controls / 343 bytes compare without masks using twelve actual
+fields and one coherent defining-symbol catalog. All fifteen cold ordinary
+sections / 414 bytes, 27 actual SDK headers and whole 24-byte readonly layout
+`[4,16,4,4,16,4]` are frozen. Forty-three canonical/body snapshots and two whole
+prior R161 records preserve previous evidence. The 16-byte const getter
+`0x0040EA20` remains independently unknown, together with all previously protected
+opaque getter, destruction, assignment, lifetime, math and catch policies.
+
+Complete cold replay preceded acceptance. Strict R173 HEAD eed679a readback
+permits exactly two function/origin changes with unchanged extents, preserves
+all 880 original authored evidence rows/order and all earlier tracked
+configuration. Thirty new regression checks and all 1897 public checks pass.
+Fresh scanning, full authored extent validation, pinned target and local Ghidra
+attestation, exact-input preservation and whitespace checks pass. No prior
+source/header/build/ABI/mapping/match input changes require an exact replay.
+
+Totals are 3595 resolved (927 authored, 2093 library, 575 compiler), 756 pending
+and 2668 excluded. Authored evidence remains 880 complete bodies / 1953711 bytes.
+Exact stays 60 functions / 9883 bytes with provisional coverage
+9883 / 1966054 (0.50%); the prior R139 cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added. Public
+MCP acceptance remains waived. The full remaining-origin goal remains active
+and unfinished. Original R108 full explicit/implicit alternatives already leave
+0x00411C10, 0x004251C0 and 0x00449DE0 indistinguishable; they are not repeated
+as new acceptance candidates. The next bounded R175 review examines three
+resource-release parents, with genuine compiler-generated lifetime alternatives
+required wherever ownership remains ambiguous.

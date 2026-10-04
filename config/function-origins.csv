@@ -404,7 +404,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040DE50,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0040DE80,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040DEA0,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
-0x0040DEE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040DEE0,library,VC7STL,exclude,complete-vc7-secondary-vector-access-and-whole-game-context,R174
 0x0040DF20,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x0040DF40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040DF60,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -429,7 +429,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040E4C0,library,VC7STL,exclude,complete-vc7-texture-vector-access-size-erase-and-whole-game-context,R173
 0x0040E4E0,library,VC7STL,exclude,complete-vc7-texture-vector-access-size-erase-and-whole-game-context,R173
 0x0040E500,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x0040E530,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040E530,library,VC7STL,exclude,complete-vc7-secondary-vector-access-and-whole-game-context,R174
 0x0040E550,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x0040E580,library,vc7-stl-vector-helpers,exclude,high,R090
 0x0040E5A0,library,VC7STL,exclude,complete-vc7-template-family,R032

@@ -1,0 +1,4611 @@
+{
+  "evidence_id": "R174",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "probe": "probes/VC7SecondaryTextureAccess.cpp",
+  "probe_sha256": "80c52c0ed3ad50daf6919c46e526e1c9e129f56365f63f0d95717b31046431cc",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/I",
+    "src",
+    "/showIncludes"
+  ],
+  "headers": {
+    ".tools/msvc710/Vc7/include/vector": "de722c2662f74e78332c6a1b7ddabb9976f3381a904780aaefba54e661a9656d",
+    ".tools/msvc710/Vc7/include/memory": "81895e7a4ef1c432ec68484b072bcd14f953a75d99af77c0f83667c1c7cf9bf4",
+    ".tools/msvc710/Vc7/include/iterator": "030f894a4ba6cb78bd1c98ca20a28bcab7443697eafc740c1162eb41a73c48d6",
+    ".tools/msvc710/Vc7/include/xutility": "177f47d09110228013374513e62a9de2e9be2f9bd22e4ae15bb31c584da4db7b",
+    ".tools/msvc710/Vc7/include/climits": "ccd3e243fd3d9b28d7ef487c6c203ff39e7fbc039eadd28384f7ae8f8e133a0e",
+    ".tools/msvc710/Vc7/include/yvals.h": "b9340f3de0fd2f1c0e0b81b99e9f42252a0ec5652267536e9c62b0b4f1bf8980",
+    ".tools/msvc710/Vc7/include/use_ansi.h": "56ba75ecabe4ff0af0ab227d88ce407c31e0f0c8d05c1e42423186da04069fdc",
+    ".tools/msvc710/Vc7/include/limits.h": "d3ad33ce7c8eb1c3f7c5f151339efdcd44ae1d76506a314f0b91daf26c004522",
+    ".tools/msvc710/Vc7/include/utility": "77d42e02d0abc5e8aceefe893c2fad9fe7b55dce409a88c3bc2e3f3809ad12d4",
+    ".tools/msvc710/Vc7/include/iosfwd": "ceb0247fc75f4fe840dcef2b04f41eb71c115d57748ad6eb0e9416713f658cd9",
+    ".tools/msvc710/Vc7/include/cstdio": "0ce255cdf0ff57258ea2ecc8b203658f9945f17eedd9c6366bc5caa227c8df96",
+    ".tools/msvc710/Vc7/include/stdio.h": "96f0b2c746b580b6a5d9a13f9a221275d210de79ef832e2265e0ed70b0c914e1",
+    ".tools/msvc710/Vc7/include/cstring": "363e4858a9b1d3fd3ef07d300f7b384615b8af48c0d1e9e4c294ea86a1d7d620",
+    ".tools/msvc710/Vc7/include/string.h": "b68e9db97d695655abe65dd36d9fc0f92e5bc304371eb9c8a9d2144e55eb8c37",
+    ".tools/msvc710/Vc7/include/cwchar": "13448c9868fdc9b220822f2433ee52c6af825dde539707377c10572af2133820",
+    ".tools/msvc710/Vc7/include/wchar.h": "85e9bfe575fa70bd37eb694cb8b8ca5ca2ca9d0fb811d983054a42afc06ecfa1",
+    ".tools/msvc710/Vc7/include/xstddef": "e3b1fa3dcb3281ee2f22f79150303d943362263ea0b95874cd313b2798112a27",
+    ".tools/msvc710/Vc7/include/cstddef": "f83f50123dd77e05f5b112abcf7f47b2a9e7076727955f91db471ae273e67430",
+    ".tools/msvc710/Vc7/include/stddef.h": "491ce357cd01c533b07664fb9a97403a172e277096ee58a924696c0046a96afe",
+    ".tools/msvc710/Vc7/include/xmemory": "e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94",
+    ".tools/msvc710/Vc7/include/cstdlib": "e7c431e5c256b9458bb31bce7e770d99481b23ff22f609b4b6a91c50f183ec24",
+    ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946",
+    ".tools/msvc710/Vc7/include/new": "bd97c3f682c039eb7ee00c9acfc2d4cf44c55671b373fba777af7652faf15fd9",
+    ".tools/msvc710/Vc7/include/exception": "994d4a23a837d92100205d89ac38c13c317cfb1851c2ae1fdc4d80b0e052c40c",
+    ".tools/msvc710/Vc7/include/eh.h": "6ee4653126d60011021b2c57abe3e01b3030c3103248346da5299ecdf8e9d932",
+    ".tools/msvc710/Vc7/include/stdexcept": "bc3e7b40b6413b1aa2a2cc011057ca42aa03a714f409f927734c4f507aaea2a7",
+    ".tools/msvc710/Vc7/include/xstring": "c715ae6f152ca41d73e701c5d77dd5da0b61832250c967d2a8376b9471656943"
+  },
+  "functions": [
+    {
+      "address": "0x0040DEE0",
+      "size": 49,
+      "decision": "library",
+      "symbol": "??A?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+      "body_sha256": "a81fd5a9862f0fa10859d1416716ac381a7a75875c927cb80b128836769842a1",
+      "cfg": [
+        1,
+        0
+      ],
+      "witnesses": [
+        {
+          "site": "0x0040DEE0",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040DEE1",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0040DEE3",
+          "mnemonic": "sub",
+          "operands": "esp, 0xc"
+        },
+        {
+          "site": "0x0040DEE6",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0xc], ecx"
+        },
+        {
+          "site": "0x0040DEE9",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": "0x0040DEEC",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040DEED",
+          "mnemonic": "lea",
+          "operands": "ecx, [ebp - 8]"
+        },
+        {
+          "site": "0x0040DEF0",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0040DEF1",
+          "mnemonic": "lea",
+          "operands": "edx, [ebp - 4]"
+        },
+        {
+          "site": "0x0040DEF4",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "site": "0x0040DEF5",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "site": "0x0040DEF8",
+          "mnemonic": "call",
+          "operands": "0x40e1f0"
+        },
+        {
+          "site": "0x0040DEFD",
+          "mnemonic": "mov",
+          "operands": "ecx, eax"
+        },
+        {
+          "site": "0x0040DEFF",
+          "mnemonic": "call",
+          "operands": "0x40e550"
+        },
+        {
+          "site": "0x0040DF04",
+          "mnemonic": "mov",
+          "operands": "ecx, eax"
+        },
+        {
+          "site": "0x0040DF06",
+          "mnemonic": "call",
+          "operands": "0x40e530"
+        },
+        {
+          "site": "0x0040DF0B",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": "0x0040DF0D",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040DF0E",
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "original_function": {
+        "address": "0x0040DEE0",
+        "size": "49",
+        "span_end": "0x0040DF10",
+        "current_name": "FUN_0040dee0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0040DEE0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0040DEE0",
+        "size": "49",
+        "span_end": "0x0040DF10",
+        "current_name": "FUN_0040dee0",
+        "proposed_name": "std::vector::indexAt0040DEE0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R174; config/secondary-texture-access-origin-evidence.json; scripts/repo-python scripts/verify-secondary-texture-access-origins.py",
+        "owner": "library",
+        "notes": "Whole SDK index/begin/iterator arithmetic/dereference graph through unchanged full R017 resource policies and independently accepted R161/R095/R034 context. Actual scaled pointer step and complete game pointer-slot access independently observe width 4. Ordinary whole begin/index/dereference alternatives are byte-equal; original types/names/private owner layout remain unknown. Independent 16-byte const getter and prior opaque owners stay unknown. No source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0040DEE0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-secondary-vector-access-and-whole-game-context",
+        "evidence_id": "R174"
+      }
+    },
+    {
+      "address": "0x0040E530",
+      "size": 19,
+      "decision": "library",
+      "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+      "body_sha256": "64d68de3668cc88db77c9ef61e1089ef8f1a3130d1da3be4a7f91173757d6b68",
+      "cfg": [
+        1,
+        0
+      ],
+      "witnesses": [
+        {
+          "site": "0x0040E530",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040E531",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0040E533",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0040E534",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "site": "0x0040E537",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": "0x0040E53A",
+          "mnemonic": "call",
+          "operands": "0x40ea20"
+        },
+        {
+          "site": "0x0040E53F",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": "0x0040E541",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040E542",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "original_function": {
+        "address": "0x0040E530",
+        "size": "19",
+        "span_end": "0x0040E542",
+        "current_name": "FUN_0040e530",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0040E530",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0040E530",
+        "size": "19",
+        "span_end": "0x0040E542",
+        "current_name": "FUN_0040e530",
+        "proposed_name": "std::vector::iterator::dereferenceAt0040E530",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R174; config/secondary-texture-access-origin-evidence.json; scripts/repo-python scripts/verify-secondary-texture-access-origins.py",
+        "owner": "library",
+        "notes": "Whole SDK index/begin/iterator arithmetic/dereference graph through unchanged full R017 resource policies and independently accepted R161/R095/R034 context. Actual scaled pointer step and complete game pointer-slot access independently observe width 4. Ordinary whole begin/index/dereference alternatives are byte-equal; original types/names/private owner layout remain unknown. Independent 16-byte const getter and prior opaque owners stay unknown. No source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0040E530",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-secondary-vector-access-and-whole-game-context",
+        "evidence_id": "R174"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "address": "0x0040DEE0",
+      "size": 49,
+      "source_definition": {
+        "symbol": "??A?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+        "offset": 0,
+        "section": 16,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 16,
+        "name": ".text",
+        "size": 49,
+        "flags": 1615859744,
+        "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+        "fields": [
+          {
+            "offset": 25,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+              "offset": 0,
+              "section": 26,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 32,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+              "offset": 0,
+              "section": 22,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 39,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+              "offset": 0,
+              "section": 20,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 16,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??A?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+            "offset": 0,
+            "section": 16,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 49,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+      "body_sha256": "a81fd5a9862f0fa10859d1416716ac381a7a75875c927cb80b128836769842a1",
+      "bindings": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+          "addend": 0,
+          "target_address": "0x0040E1F0"
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x0040E550"
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+          "addend": 0,
+          "target_address": "0x0040E530"
+        }
+      ],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040E530",
+      "size": 19,
+      "source_definition": {
+        "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+        "offset": 0,
+        "section": 20,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 20,
+        "name": ".text",
+        "size": 19,
+        "flags": 1615859744,
+        "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+        "fields": [
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+              "offset": 0,
+              "section": 24,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 20,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 20,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 20,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 20,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 19,
+            "section": 20,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "64d68de3668cc88db77c9ef61e1089ef8f1a3130d1da3be4a7f91173757d6b68",
+      "bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+          "addend": 0,
+          "target_address": "0x0040EA20"
+        }
+      ],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040E1F0",
+      "size": 31,
+      "source_definition": {
+        "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+        "offset": 0,
+        "section": 26,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 26,
+        "name": ".text",
+        "size": 31,
+        "flags": 1615859744,
+        "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+        "fields": [
+          {
+            "offset": 18,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+              "offset": 0,
+              "section": 18,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 26,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+            "offset": 0,
+            "section": 26,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 26,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 26,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 31,
+            "section": 26,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+      "body_sha256": "97c37e57e0fd7bbd5f63fb802ec2f995abe0cd7c6a99a3365c95da5bb6d30081",
+      "bindings": [
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+          "addend": 0,
+          "target_address": "0x0040E9E0"
+        }
+      ],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040E550",
+      "size": 45,
+      "source_definition": {
+        "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+        "offset": 0,
+        "section": 22,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 22,
+        "name": ".text",
+        "size": 45,
+        "flags": 1615859744,
+        "source_sha256": "17b7c3ed41ad517cd3acb5efb05da7099a01f2bfdfc835c18427cf5361d45a1f",
+        "fields": [
+          {
+            "offset": 25,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+              "offset": 0,
+              "section": 28,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 22,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+            "offset": 0,
+            "section": 22,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 22,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 4,
+            "section": 22,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 45,
+            "section": 22,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "17b7c3ed41ad517cd3acb5efb05da7099a01f2bfdfc835c18427cf5361d45a1f",
+      "body_sha256": "bd959a0e368764420631ee9991a3a8dbe95a3067f872df7244a67a35c122bb24",
+      "bindings": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+          "addend": 0,
+          "target_address": "0x0040EA00"
+        }
+      ],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040EA20",
+      "size": 16,
+      "source_definition": {
+        "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+        "offset": 0,
+        "section": 24,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 24,
+        "name": ".text",
+        "size": 16,
+        "flags": 1615859744,
+        "source_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 24,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 24,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 24,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 24,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 16,
+            "section": 24,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936",
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936",
+      "bindings": [],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040E9E0",
+      "size": 28,
+      "source_definition": {
+        "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+        "offset": 0,
+        "section": 18,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 18,
+        "name": ".text",
+        "size": 28,
+        "flags": 1615859744,
+        "source_sha256": "b5a54e6590401f346d8dc98072704e6fc565f15b95c4c6c81e3243eed3d860ac",
+        "fields": [
+          {
+            "offset": 15,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+              "offset": 0,
+              "section": 30,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 18,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+            "offset": 0,
+            "section": 18,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 18,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 2,
+            "section": 18,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 28,
+            "section": 18,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "b5a54e6590401f346d8dc98072704e6fc565f15b95c4c6c81e3243eed3d860ac",
+      "body_sha256": "ff6ec3c905a31917f591386e45c2a5f9f3173afdc7854b200c4aaa3527b3954a",
+      "bindings": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+          "addend": 0,
+          "target_address": "0x0040F120"
+        }
+      ],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040EA00",
+      "size": 32,
+      "source_definition": {
+        "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+        "offset": 0,
+        "section": 28,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 28,
+        "name": ".text",
+        "size": 32,
+        "flags": 1615859744,
+        "source_sha256": "587ef1015cec43df958c885b305d15893812d7f26e607cc65e1832ac382bae85",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 28,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+            "offset": 0,
+            "section": 28,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 28,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 4,
+            "section": 28,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 32,
+            "section": 28,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "587ef1015cec43df958c885b305d15893812d7f26e607cc65e1832ac382bae85",
+      "body_sha256": "587ef1015cec43df958c885b305d15893812d7f26e607cc65e1832ac382bae85",
+      "bindings": [],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040F120",
+      "size": 24,
+      "source_definition": {
+        "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+        "offset": 0,
+        "section": 30,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 30,
+        "name": ".text",
+        "size": 24,
+        "flags": 1615859744,
+        "source_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 30,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+            "offset": 0,
+            "section": 30,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 30,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 30,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 24,
+            "section": 30,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "bindings": [],
+      "kind": "code",
+      "role": "closed-whole-sdk-context",
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0040E1F0",
+      "size": 31,
+      "kind": "code",
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+        "offset": 0,
+        "section": 10,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 10,
+        "name": ".text",
+        "size": 31,
+        "flags": 1615859744,
+        "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+        "fields": [
+          {
+            "offset": 18,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+              "offset": 0,
+              "section": 18,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+            "offset": 0,
+            "section": 10,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 31,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+      "body_sha256": "97c37e57e0fd7bbd5f63fb802ec2f995abe0cd7c6a99a3365c95da5bb6d30081",
+      "cfg": [
+        1,
+        0
+      ],
+      "bindings": [
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+          "addend": 0,
+          "target_address": "0x0040E9E0"
+        }
+      ]
+    },
+    {
+      "address": "0x0040DEE0",
+      "size": 49,
+      "kind": "code",
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?entry@OrdinarySecondaryTextureAccess@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+        "offset": 0,
+        "section": 8,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 8,
+        "name": ".text",
+        "size": 49,
+        "flags": 1615859744,
+        "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+        "fields": [
+          {
+            "offset": 25,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+              "offset": 0,
+              "section": 10,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 32,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+              "offset": 0,
+              "section": 22,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 39,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+              "offset": 0,
+              "section": 20,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 8,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?entry@OrdinarySecondaryTextureAccess@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+            "offset": 0,
+            "section": 8,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 8,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 8,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 49,
+            "section": 8,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+      "body_sha256": "a81fd5a9862f0fa10859d1416716ac381a7a75875c927cb80b128836769842a1",
+      "cfg": [
+        1,
+        0
+      ],
+      "bindings": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+          "addend": 0,
+          "target_address": "0x0040E1F0"
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+          "addend": 0,
+          "target_address": "0x0040E550"
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+          "addend": 0,
+          "target_address": "0x0040E530"
+        }
+      ]
+    },
+    {
+      "address": "0x0040E530",
+      "size": 19,
+      "kind": "code",
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?value@OrdinarySecondaryTextureIterator@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+        "offset": 0,
+        "section": 14,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 14,
+        "name": ".text",
+        "size": 19,
+        "flags": 1615859744,
+        "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+        "fields": [
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+              "offset": 0,
+              "section": 24,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 14,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?value@OrdinarySecondaryTextureIterator@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 14,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 14,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 14,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 19,
+            "section": 14,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "body_sha256": "64d68de3668cc88db77c9ef61e1089ef8f1a3130d1da3be4a7f91173757d6b68",
+      "cfg": [
+        1,
+        0
+      ],
+      "bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+          "addend": 0,
+          "target_address": "0x0040EA20"
+        }
+      ]
+    }
+  ],
+  "emission": [
+    {
+      "section": 3,
+      "name": ".rdata",
+      "size": 24,
+      "flags": 1076887616,
+      "source_sha256": "0ee82e0d957551059df83afa96a2ca2ba357da9a49c9fa20402823c54e7da21d",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_SecondaryTextureAccessLayout",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 4,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "8fed375e56aadc6feee24dab9337bda72e45f0c8ae2c3209c6741363fde7cf91",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??A?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+            "offset": 0,
+            "section": 16,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveSecondaryTextureIndex@@YAAAUSecondaryTextureAccessObservation@@AAV?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@I@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 6,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "8fed375e56aadc6feee24dab9337bda72e45f0c8ae2c3209c6741363fde7cf91",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?entry@OrdinarySecondaryTextureAccess@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+            "offset": 0,
+            "section": 8,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinarySecondaryTextureIndex@@YAAAUSecondaryTextureAccessObservation@@AAUOrdinarySecondaryTextureAccess@@I@Z",
+          "offset": 0,
+          "section": 6,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 8,
+      "name": ".text",
+      "size": 49,
+      "flags": 1615859744,
+      "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+      "fields": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+            "offset": 0,
+            "section": 10,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+            "offset": 0,
+            "section": 22,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 20,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?entry@OrdinarySecondaryTextureAccess@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+          "offset": 0,
+          "section": 8,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 49,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 10,
+      "name": ".text",
+      "size": 31,
+      "flags": 1615859744,
+      "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+      "fields": [
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+            "offset": 0,
+            "section": 18,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?begin@OrdinarySecondaryTextureAccess@@QAE?AViterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@XZ",
+          "offset": 0,
+          "section": 10,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 31,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 12,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?value@OrdinarySecondaryTextureIterator@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 14,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinarySecondaryTextureValue@@YAAAUSecondaryTextureAccessObservation@@ABUOrdinarySecondaryTextureIterator@@@Z",
+          "offset": 0,
+          "section": 12,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 14,
+      "name": ".text",
+      "size": 19,
+      "flags": 1615859744,
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 24,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?value@OrdinarySecondaryTextureIterator@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+          "offset": 0,
+          "section": 14,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 19,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 16,
+      "name": ".text",
+      "size": 49,
+      "flags": 1615859744,
+      "source_sha256": "5e5b8e280f2d8e18315d1d5272b8f0bc00fbd2558e5b92838ca1267a9eed8ba1",
+      "fields": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+            "offset": 0,
+            "section": 26,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+            "offset": 0,
+            "section": 22,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 20,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??A?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAUSecondaryTextureAccessObservation@@I@Z",
+          "offset": 0,
+          "section": 16,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 49,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 18,
+      "name": ".text",
+      "size": 28,
+      "flags": 1615859744,
+      "source_sha256": "b5a54e6590401f346d8dc98072704e6fc565f15b95c4c6c81e3243eed3d860ac",
+      "fields": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+            "offset": 0,
+            "section": 30,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+          "offset": 0,
+          "section": 18,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 28,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 20,
+      "name": ".text",
+      "size": 19,
+      "flags": 1615859744,
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+            "offset": 0,
+            "section": 24,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??Diterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEAAUSecondaryTextureAccessObservation@@XZ",
+          "offset": 0,
+          "section": 20,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 19,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 22,
+      "name": ".text",
+      "size": 45,
+      "flags": 1615859744,
+      "source_sha256": "17b7c3ed41ad517cd3acb5efb05da7099a01f2bfdfc835c18427cf5361d45a1f",
+      "fields": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+            "offset": 0,
+            "section": 28,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??Hiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBE?AV012@H@Z",
+          "offset": 0,
+          "section": 22,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 4,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 45,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 24,
+      "name": ".text",
+      "size": 16,
+      "flags": 1615859744,
+      "source_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??Dconst_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QBEABUSecondaryTextureAccessObservation@@XZ",
+          "offset": 0,
+          "section": 24,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 16,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 26,
+      "name": ".text",
+      "size": 31,
+      "flags": 1615859744,
+      "source_sha256": "48ccf9c5a873fb47d715603b43bcb95f18976b1d0727bd628758ec1240319c6a",
+      "fields": [
+        {
+          "offset": 18,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??0iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+            "offset": 0,
+            "section": 18,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?begin@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+          "offset": 0,
+          "section": 26,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 31,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 28,
+      "name": ".text",
+      "size": 32,
+      "flags": 1615859744,
+      "source_sha256": "587ef1015cec43df958c885b305d15893812d7f26e607cc65e1832ac382bae85",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??Yiterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAEAAV012@H@Z",
+          "offset": 0,
+          "section": 28,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 4,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 32,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 30,
+      "name": ".text",
+      "size": 24,
+      "flags": 1615859744,
+      "source_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??0const_iterator@?$vector@USecondaryTextureAccessObservation@@V?$allocator@USecondaryTextureAccessObservation@@@std@@@std@@QAE@PAUSecondaryTextureAccessObservation@@@Z",
+          "offset": 0,
+          "section": 30,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 24,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    }
+  ],
+  "layout": {
+    "section": 3,
+    "name": ".rdata",
+    "size": 24,
+    "flags": 1076887616,
+    "source_sha256": "0ee82e0d957551059df83afa96a2ca2ba357da9a49c9fa20402823c54e7da21d",
+    "fields": [],
+    "definitions": [
+      {
+        "symbol": ".rdata",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "_SecondaryTextureAccessLayout",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      }
+    ]
+  },
+  "layout_values": [
+    4,
+    16,
+    4,
+    4,
+    16,
+    4
+  ],
+  "anchors": [
+    {
+      "address": "0x0040AD80",
+      "size": 177,
+      "function": {
+        "address": "0x0040AD80",
+        "size": "177",
+        "span_end": "0x0040AE30",
+        "current_name": "FUN_0040ad80",
+        "proposed_name": "TextureManager::Initialize",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0040AD80",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      },
+      "record": {
+        "address": "0x0040AD80",
+        "size": "177",
+        "body_sha256": "e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a",
+        "inferred_role": "TextureManager::Initialize",
+        "return_count": "1",
+        "internal_branch_count": "0",
+        "external_branch_count": "0",
+        "evidence_id": "R017"
+      },
+      "switches": [],
+      "direct_switches": [],
+      "witnesses": [
+        {
+          "site": "0x0040AD80",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040AD81",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0040AD83",
+          "mnemonic": "push",
+          "operands": "-1"
+        },
+        {
+          "site": "0x0040AD85",
+          "mnemonic": "push",
+          "operands": "0x654ed4"
+        },
+        {
+          "site": "0x0040AD8A",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr fs:[0]"
+        },
+        {
+          "site": "0x0040AD90",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040AD91",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], esp"
+        },
+        {
+          "site": "0x0040AD98",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0040AD99",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x10], ecx"
+        },
+        {
+          "site": "0x0040AD9C",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AD9F",
+          "mnemonic": "call",
+          "operands": "0x401000"
+        },
+        {
+          "site": "0x0040ADA4",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], 0"
+        },
+        {
+          "site": "0x0040ADAB",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADAE",
+          "mnemonic": "add",
+          "operands": "ecx, 8"
+        },
+        {
+          "site": "0x0040ADB1",
+          "mnemonic": "call",
+          "operands": "0x40dc90"
+        },
+        {
+          "site": "0x0040ADB6",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 1"
+        },
+        {
+          "site": "0x0040ADBA",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADBD",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040ADC0",
+          "mnemonic": "call",
+          "operands": "0x40de50"
+        },
+        {
+          "site": "0x0040ADC5",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 2"
+        },
+        {
+          "site": "0x0040ADC9",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADCC",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040ADCF",
+          "mnemonic": "call",
+          "operands": "0x40de50"
+        },
+        {
+          "site": "0x0040ADD4",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 3"
+        },
+        {
+          "site": "0x0040ADD8",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADDB",
+          "mnemonic": "add",
+          "operands": "ecx, 0x38"
+        },
+        {
+          "site": "0x0040ADDE",
+          "mnemonic": "call",
+          "operands": "0x40df60"
+        },
+        {
+          "site": "0x0040ADE3",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 4"
+        },
+        {
+          "site": "0x0040ADE7",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADEA",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040ADED",
+          "mnemonic": "call",
+          "operands": "0x40df40"
+        },
+        {
+          "site": "0x0040ADF2",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040ADF5",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040ADF8",
+          "mnemonic": "call",
+          "operands": "0x40df40"
+        },
+        {
+          "site": "0x0040ADFD",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AE00",
+          "mnemonic": "add",
+          "operands": "ecx, 8"
+        },
+        {
+          "site": "0x0040AE03",
+          "mnemonic": "call",
+          "operands": "0x40de30"
+        },
+        {
+          "site": "0x0040AE08",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AE0B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax + 4], 0"
+        },
+        {
+          "site": "0x0040AE12",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AE15",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ecx + 0x4c], 0x10"
+        },
+        {
+          "site": "0x0040AE19",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x0040AE20",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AE23",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "site": "0x0040AE26",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], ecx"
+        },
+        {
+          "site": "0x0040AE2D",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": "0x0040AE2F",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040AE30",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "address": "0x0040AE40",
+      "size": 434,
+      "function": {
+        "address": "0x0040AE40",
+        "size": "434",
+        "span_end": "0x0040AFF1",
+        "current_name": "FUN_0040ae40",
+        "proposed_name": "TextureManager::ReleaseResources",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0040AE40",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      },
+      "record": {
+        "address": "0x0040AE40",
+        "size": "434",
+        "body_sha256": "ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8",
+        "inferred_role": "TextureManager::ReleaseResources",
+        "return_count": "1",
+        "internal_branch_count": "12",
+        "external_branch_count": "0",
+        "evidence_id": "R017"
+      },
+      "switches": [],
+      "direct_switches": [],
+      "witnesses": [
+        {
+          "site": "0x0040AE40",
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040AE41",
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": "0x0040AE43",
+          "mnemonic": "push",
+          "operands": "-1"
+        },
+        {
+          "site": "0x0040AE45",
+          "mnemonic": "push",
+          "operands": "0x654f12"
+        },
+        {
+          "site": "0x0040AE4A",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr fs:[0]"
+        },
+        {
+          "site": "0x0040AE50",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040AE51",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], esp"
+        },
+        {
+          "site": "0x0040AE58",
+          "mnemonic": "sub",
+          "operands": "esp, 0x1c"
+        },
+        {
+          "site": "0x0040AE5B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x20], ecx"
+        },
+        {
+          "site": "0x0040AE5E",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], 4"
+        },
+        {
+          "site": "0x0040AE65",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AE68",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax + 4], 0"
+        },
+        {
+          "site": "0x0040AE6C",
+          "mnemonic": "je",
+          "operands": "0x40ae83"
+        },
+        {
+          "site": "0x0040AE6E",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AE71",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx + 4]"
+        },
+        {
+          "site": "0x0040AE74",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x1c], edx"
+        },
+        {
+          "site": "0x0040AE77",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x1c]"
+        },
+        {
+          "site": "0x0040AE7A",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040AE7B",
+          "mnemonic": "call",
+          "operands": "0x64169d"
+        },
+        {
+          "site": "0x0040AE80",
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "site": "0x0040AE83",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AE86",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AE89",
+          "mnemonic": "call",
+          "operands": "0x40dea0"
+        },
+        {
+          "site": "0x0040AE8E",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0040AE90",
+          "mnemonic": "jbe",
+          "operands": "0x40af0d"
+        },
+        {
+          "site": "0x0040AE92",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x10], 0"
+        },
+        {
+          "site": "0x0040AE99",
+          "mnemonic": "jmp",
+          "operands": "0x40aea4"
+        },
+        {
+          "site": "0x0040AE9B",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AE9E",
+          "mnemonic": "add",
+          "operands": "ecx, 1"
+        },
+        {
+          "site": "0x0040AEA1",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x10], ecx"
+        },
+        {
+          "site": "0x0040AEA4",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AEA7",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AEAA",
+          "mnemonic": "call",
+          "operands": "0x40dea0"
+        },
+        {
+          "site": "0x0040AEAF",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x10], eax"
+        },
+        {
+          "site": "0x0040AEB2",
+          "mnemonic": "jae",
+          "operands": "0x40af02"
+        },
+        {
+          "site": "0x0040AEB4",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AEB7",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "site": "0x0040AEB8",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AEBB",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AEBE",
+          "mnemonic": "call",
+          "operands": "0x40dee0"
+        },
+        {
+          "site": "0x0040AEC3",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": "0x0040AEC6",
+          "mnemonic": "je",
+          "operands": "0x40af00"
+        },
+        {
+          "site": "0x0040AEC8",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AECB",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040AECC",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AECF",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AED2",
+          "mnemonic": "call",
+          "operands": "0x40dee0"
+        },
+        {
+          "site": "0x0040AED7",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": "0x0040AED9",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x24], ecx"
+        },
+        {
+          "site": "0x0040AEDC",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 0x24]"
+        },
+        {
+          "site": "0x0040AEDF",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [edx]"
+        },
+        {
+          "site": "0x0040AEE1",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x24]"
+        },
+        {
+          "site": "0x0040AEE4",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0040AEE5",
+          "mnemonic": "call",
+          "operands": "dword ptr [eax + 8]"
+        },
+        {
+          "site": "0x0040AEE8",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x14], eax"
+        },
+        {
+          "site": "0x0040AEEB",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 0x10]"
+        },
+        {
+          "site": "0x0040AEEE",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "site": "0x0040AEEF",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AEF2",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AEF5",
+          "mnemonic": "call",
+          "operands": "0x40dee0"
+        },
+        {
+          "site": "0x0040AEFA",
+          "mnemonic": "mov",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": "0x0040AF00",
+          "mnemonic": "jmp",
+          "operands": "0x40ae9b"
+        },
+        {
+          "site": "0x0040AF02",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF05",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AF08",
+          "mnemonic": "call",
+          "operands": "0x40df40"
+        },
+        {
+          "site": "0x0040AF0D",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF10",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AF13",
+          "mnemonic": "call",
+          "operands": "0x40dea0"
+        },
+        {
+          "site": "0x0040AF18",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0040AF1A",
+          "mnemonic": "jbe",
+          "operands": "0x40af7f"
+        },
+        {
+          "site": "0x0040AF1C",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x18], 0"
+        },
+        {
+          "site": "0x0040AF23",
+          "mnemonic": "jmp",
+          "operands": "0x40af2e"
+        },
+        {
+          "site": "0x0040AF25",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x18]"
+        },
+        {
+          "site": "0x0040AF28",
+          "mnemonic": "add",
+          "operands": "eax, 1"
+        },
+        {
+          "site": "0x0040AF2B",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x18], eax"
+        },
+        {
+          "site": "0x0040AF2E",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF31",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AF34",
+          "mnemonic": "call",
+          "operands": "0x40dea0"
+        },
+        {
+          "site": "0x0040AF39",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp - 0x18], eax"
+        },
+        {
+          "site": "0x0040AF3C",
+          "mnemonic": "jae",
+          "operands": "0x40af74"
+        },
+        {
+          "site": "0x0040AF3E",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x18]"
+        },
+        {
+          "site": "0x0040AF41",
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": "0x0040AF42",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF45",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AF48",
+          "mnemonic": "call",
+          "operands": "0x40dee0"
+        },
+        {
+          "site": "0x0040AF4D",
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": "0x0040AF50",
+          "mnemonic": "je",
+          "operands": "0x40af72"
+        },
+        {
+          "site": "0x0040AF52",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 0x18]"
+        },
+        {
+          "site": "0x0040AF55",
+          "mnemonic": "push",
+          "operands": "edx"
+        },
+        {
+          "site": "0x0040AF56",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF59",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AF5C",
+          "mnemonic": "call",
+          "operands": "0x40dee0"
+        },
+        {
+          "site": "0x0040AF61",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [eax]"
+        },
+        {
+          "site": "0x0040AF63",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0x28], eax"
+        },
+        {
+          "site": "0x0040AF66",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x28]"
+        },
+        {
+          "site": "0x0040AF69",
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx]"
+        },
+        {
+          "site": "0x0040AF6B",
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 0x28]"
+        },
+        {
+          "site": "0x0040AF6E",
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "site": "0x0040AF6F",
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 8]"
+        },
+        {
+          "site": "0x0040AF72",
+          "mnemonic": "jmp",
+          "operands": "0x40af25"
+        },
+        {
+          "site": "0x0040AF74",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF77",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AF7A",
+          "mnemonic": "call",
+          "operands": "0x40df40"
+        },
+        {
+          "site": "0x0040AF7F",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF82",
+          "mnemonic": "add",
+          "operands": "ecx, 8"
+        },
+        {
+          "site": "0x0040AF85",
+          "mnemonic": "call",
+          "operands": "0x40dd20"
+        },
+        {
+          "site": "0x0040AF8A",
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "site": "0x0040AF8C",
+          "mnemonic": "jbe",
+          "operands": "0x40af99"
+        },
+        {
+          "site": "0x0040AF8E",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AF91",
+          "mnemonic": "add",
+          "operands": "ecx, 8"
+        },
+        {
+          "site": "0x0040AF94",
+          "mnemonic": "call",
+          "operands": "0x40de30"
+        },
+        {
+          "site": "0x0040AF99",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 3"
+        },
+        {
+          "site": "0x0040AF9D",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AFA0",
+          "mnemonic": "add",
+          "operands": "ecx, 0x38"
+        },
+        {
+          "site": "0x0040AFA3",
+          "mnemonic": "call",
+          "operands": "0x40dfb0"
+        },
+        {
+          "site": "0x0040AFA8",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 2"
+        },
+        {
+          "site": "0x0040AFAC",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AFAF",
+          "mnemonic": "add",
+          "operands": "ecx, 0x28"
+        },
+        {
+          "site": "0x0040AFB2",
+          "mnemonic": "call",
+          "operands": "0x40de80"
+        },
+        {
+          "site": "0x0040AFB7",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 1"
+        },
+        {
+          "site": "0x0040AFBB",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AFBE",
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "site": "0x0040AFC1",
+          "mnemonic": "call",
+          "operands": "0x40de80"
+        },
+        {
+          "site": "0x0040AFC6",
+          "mnemonic": "mov",
+          "operands": "byte ptr [ebp - 4], 0"
+        },
+        {
+          "site": "0x0040AFCA",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AFCD",
+          "mnemonic": "add",
+          "operands": "ecx, 8"
+        },
+        {
+          "site": "0x0040AFD0",
+          "mnemonic": "call",
+          "operands": "0x40dcc0"
+        },
+        {
+          "site": "0x0040AFD5",
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], 0xffffffff"
+        },
+        {
+          "site": "0x0040AFDC",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0x20]"
+        },
+        {
+          "site": "0x0040AFDF",
+          "mnemonic": "call",
+          "operands": "0x401020"
+        },
+        {
+          "site": "0x0040AFE4",
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "site": "0x0040AFE7",
+          "mnemonic": "mov",
+          "operands": "dword ptr fs:[0], ecx"
+        },
+        {
+          "site": "0x0040AFEE",
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": "0x0040AFF0",
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": "0x0040AFF1",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    }
+  ],
+  "parent_edges": [
+    {
+      "parent": "0x0040AE40",
+      "site": "0x0040AEBE",
+      "target": "0x0040DEE0"
+    },
+    {
+      "parent": "0x0040AE40",
+      "site": "0x0040AED2",
+      "target": "0x0040DEE0"
+    },
+    {
+      "parent": "0x0040AE40",
+      "site": "0x0040AEF5",
+      "target": "0x0040DEE0"
+    },
+    {
+      "parent": "0x0040AE40",
+      "site": "0x0040AF48",
+      "target": "0x0040DEE0"
+    },
+    {
+      "parent": "0x0040AE40",
+      "site": "0x0040AF5C",
+      "target": "0x0040DEE0"
+    }
+  ],
+  "snapshots": [
+    {
+      "address": "0x0040AD80",
+      "size": 177,
+      "function": {
+        "address": "0x0040AD80",
+        "size": "177",
+        "span_end": "0x0040AE30",
+        "current_name": "FUN_0040ad80",
+        "proposed_name": "TextureManager::Initialize",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0040AD80",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      },
+      "body_sha256": "e0ce84473c5b407a441c88fc5c7485a47547ad48e39abadf4beedd1d41cbf37a"
+    },
+    {
+      "address": "0x0040AE40",
+      "size": 434,
+      "function": {
+        "address": "0x0040AE40",
+        "size": "434",
+        "span_end": "0x0040AFF1",
+        "current_name": "FUN_0040ae40",
+        "proposed_name": "TextureManager::ReleaseResources",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0040AE40",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      },
+      "body_sha256": "ae20b89ac58429797e1de78f18c5419a216567af8fc3ca11da18c837a14cc3f8"
+    },
+    {
+      "address": "0x0040D8E0",
+      "size": 19,
+      "function": {
+        "address": "0x0040D8E0",
+        "size": "19",
+        "span_end": "0x0040D8F2",
+        "current_name": "FUN_0040d8e0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R108; scripts/repo-python scripts/verify-game-lifetime-origins.py",
+        "owner": "",
+        "notes": "Complete extent, calls, RET and lifetime context reviewed; cold explicit and implicit source alternatives are indistinguishable; origin remains unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0040D8E0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "explicit-implicit-source-ambiguity",
+        "evidence_id": "R108"
+      },
+      "body_sha256": "37746225131fdffa9b1ebd4b9457eae2d85941fedc717f5f12eb86ba781e6d8a"
+    },
+    {
+      "address": "0x0040DEE0",
+      "size": 49,
+      "function": {
+        "address": "0x0040DEE0",
+        "size": "49",
+        "span_end": "0x0040DF10",
+        "current_name": "FUN_0040dee0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0040DEE0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "a81fd5a9862f0fa10859d1416716ac381a7a75875c927cb80b128836769842a1"
+    },
+    {
+      "address": "0x0040E000",
+      "size": 158,
+      "function": {
+        "address": "0x0040E000",
+        "size": "158",
+        "span_end": "0x0040E09D",
+        "current_name": "FUN_0040e000",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R162; config/vector-producer-origin-evidence.json; scripts/repo-python scripts/verify-vector-producer-origins.py",
+        "owner": "",
+        "notes": "Complete SDK and actual fields are retained as source observations, without ownership acceptance. Nontrivial assignments / 158 and / 167 and their entire EH code / 18 and state / 36 have byte-equal ordinary C++ member alternatives. Reviewed game callers or library children do not alone identify an original endpoint/constructor/assignment owner; related whole 42-byte producer and 8-byte bridge contexts remain unknown. No truncated 96-byte parent or relocation-masked acceptance. Original declarations/types/lifetime policy remain unknown. No origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040E000",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9e102e0112d5c289365582bf63d44f751c454a7c350ed24f4375cf47ba8b6ad6"
+    },
+    {
+      "address": "0x0040E1F0",
+      "size": 31,
+      "function": {
+        "address": "0x0040E1F0",
+        "size": "31",
+        "span_end": "0x0040E20E",
+        "current_name": "FUN_0040e1f0",
+        "proposed_name": "VC7::vector_begin_0040E1F0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+        "owner": "library",
+        "notes": "Whole positive own AUX SDK source, real fields and entire independently accepted parent/source operations compare without masking. Complete ordinary endpoint, constructor and destruction controls are byte-equal; leaf shape alone grants no ownership or original declaration. Actual deque subtraction negates offset before the independently complete addition-assignment operation; original R078 addition-shaped association is retained as historical source-shape evidence and refined by full real subtraction/addition controls. R037 deleting wrappers, R017 authored resource policy and R108 unknown lifetime policy remain separately classified. Full ordinary emission, actual SDK headers and complete observation layout are pinned. Original types/source/compiler choices and live iterator/lifetime outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040E1F0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-vector-endpoint-constructor-deque-operation-and-independent-lifetime-context",
+        "evidence_id": "R161"
+      },
+      "body_sha256": "97c37e57e0fd7bbd5f63fb802ec2f995abe0cd7c6a99a3365c95da5bb6d30081"
+    },
+    {
+      "address": "0x0040E210",
+      "size": 96,
+      "function": {
+        "address": "0x0040E210",
+        "size": "96",
+        "span_end": "0x0040E26F",
+        "current_name": "FUN_0040e210",
+        "proposed_name": "VC7 STL generic ?_Assign_n",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R034",
+        "owner": "library",
+        "notes": "Whole additional-width VC7 STL probe COMDAT and unique family; synthetic record size is not original type; no source/exact credit"
+      },
+      "origin": {
+        "address": "0x0040E210",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-additional-record-family",
+        "evidence_id": "R034"
+      },
+      "body_sha256": "321a71d4777aaaa47d57aed038c7b1d45d349e082692c87fff6d06bec03ef574"
+    },
+    {
+      "address": "0x0040E530",
+      "size": 19,
+      "function": {
+        "address": "0x0040E530",
+        "size": "19",
+        "span_end": "0x0040E542",
+        "current_name": "FUN_0040e530",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0040E530",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "64d68de3668cc88db77c9ef61e1089ef8f1a3130d1da3be4a7f91173757d6b68"
+    },
+    {
+      "address": "0x0040E550",
+      "size": 45,
+      "function": {
+        "address": "0x0040E550",
+        "size": "45",
+        "span_end": "0x0040E57C",
+        "current_name": "iterator::operator+",
+        "proposed_name": "std::vector::iterator::operator+ [element type unknown]",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R095; scripts/repo-python scripts/verify-vendor-vector-wrapper-origins.py",
+        "owner": "library",
+        "notes": "Complete cold VC7 wrapper body and exact source-typed call to an independently replayed complete same-family callee; original element type unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0040E550",
+        "origin": "library",
+        "subsystem": "vc7-stl-vector-wrappers",
+        "disposition": "exclude",
+        "confidence": "complete-source-and-typed-callee",
+        "evidence_id": "R095"
+      },
+      "body_sha256": "bd959a0e368764420631ee9991a3a8dbe95a3067f872df7244a67a35c122bb24"
+    },
+    {
+      "address": "0x0040E9B0",
+      "size": 16,
+      "function": {
+        "address": "0x0040E9B0",
+        "size": "16",
+        "span_end": "0x0040E9BF",
+        "current_name": "FUN_0040e9b0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0040E9B0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936"
+    },
+    {
+      "address": "0x0040E9E0",
+      "size": 28,
+      "function": {
+        "address": "0x0040E9E0",
+        "size": "28",
+        "span_end": "0x0040E9FB",
+        "current_name": "FUN_0040e9e0",
+        "proposed_name": "VC7::vector_iterator_constructor_0040E9E0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+        "owner": "library",
+        "notes": "Whole positive own AUX SDK source, real fields and entire independently accepted parent/source operations compare without masking. Complete ordinary endpoint, constructor and destruction controls are byte-equal; leaf shape alone grants no ownership or original declaration. Actual deque subtraction negates offset before the independently complete addition-assignment operation; original R078 addition-shaped association is retained as historical source-shape evidence and refined by full real subtraction/addition controls. R037 deleting wrappers, R017 authored resource policy and R108 unknown lifetime policy remain separately classified. Full ordinary emission, actual SDK headers and complete observation layout are pinned. Original types/source/compiler choices and live iterator/lifetime outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040E9E0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-vector-endpoint-constructor-deque-operation-and-independent-lifetime-context",
+        "evidence_id": "R161"
+      },
+      "body_sha256": "ff6ec3c905a31917f591386e45c2a5f9f3173afdc7854b200c4aaa3527b3954a"
+    },
+    {
+      "address": "0x0040EA00",
+      "size": 32,
+      "function": {
+        "address": "0x0040EA00",
+        "size": "32",
+        "span_end": "0x0040EA1F",
+        "current_name": "iterator::operator+=",
+        "proposed_name": "VC7 STL generic vector iterator::operator+=",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R051; whole cold-compiled VC7 STL COMDAT and CFG",
+        "owner": "library",
+        "notes": "Generic VC7 STL family; original type alias unresolved; no authored/source/exact credit"
+      },
+      "origin": {
+        "address": "0x0040EA00",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "vendor-source-corroborated",
+        "evidence_id": "R051"
+      },
+      "body_sha256": "587ef1015cec43df958c885b305d15893812d7f26e607cc65e1832ac382bae85"
+    },
+    {
+      "address": "0x0040EA20",
+      "size": 16,
+      "function": {
+        "address": "0x0040EA20",
+        "size": "16",
+        "span_end": "0x0040EA2F",
+        "current_name": "FUN_0040ea20",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0040EA20",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936"
+    },
+    {
+      "address": "0x0040F120",
+      "size": 24,
+      "function": {
+        "address": "0x0040F120",
+        "size": "24",
+        "span_end": "0x0040F137",
+        "current_name": "FUN_0040f120",
+        "proposed_name": "VC7::vector_const_iterator_constructor_0040F120",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R106; scripts/repo-python scripts/verify-vendor-peer-origins.py",
+        "owner": "library",
+        "notes": "Complete body matches an independently source-reviewed VC7 family with actual call destinations retained; original element type unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0040F120",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-source-family-peer",
+        "evidence_id": "R106"
+      },
+      "body_sha256": "22e907d6a10554107457345a5dc9d56c6b87be88b0b1c0b492613352e838e2b5"
+    },
+    {
+      "address": "0x0040F9F0",
+      "size": 15,
+      "function": {
+        "address": "0x0040F9F0",
+        "size": "15",
+        "span_end": "0x0040F9FE",
+        "current_name": "FUN_0040f9f0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+        "owner": "",
+        "notes": "Complete SDK destruction / 15 and ordinary explicit destructor wrapper / 15 are byte-equal through the full unchanged R037 deleting wrapper / 44. The original independently protected R108 lifetime policy at 0x0040D8E0 / 19 remains an explicit/implicit source ambiguity. Full SDK allocator parent / 25 and actual fields associate the operation but do not resolve the original surrounding lifetime declaration; this candidate remains unknown. No origin, source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040F9F0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8d2236534a334c285a1b80d62cb93b8cdb981acc7182f20dc84840e274b18c6a"
+    },
+    {
+      "address": "0x00411E80",
+      "size": 8,
+      "function": {
+        "address": "0x00411E80",
+        "size": "8",
+        "span_end": "0x00411E87",
+        "current_name": "FUN_00411e80",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00411E80",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "d5a2b635b0bbb254914f2641e4508361a0c95686c0422dcebeb3abbcca7f1d2b"
+    },
+    {
+      "address": "0x00411E90",
+      "size": 11,
+      "function": {
+        "address": "0x00411E90",
+        "size": "11",
+        "span_end": "0x00411E9A",
+        "current_name": "FUN_00411e90",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00411E90",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "595090aeba440dcef9ae6977d73e6a4172d5fae75a6ae25cf4438a3cb9cc0303"
+    },
+    {
+      "address": "0x0041206F",
+      "size": 80,
+      "function": {
+        "address": "0x0041206F",
+        "size": "80",
+        "span_end": "0x004120BE",
+        "current_name": "Catch@0041206f",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0041206F",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "d144e201c61a9568059ac41346780a6e010d8a098c20468092fba5c03c356743"
+    },
+    {
+      "address": "0x004122C9",
+      "size": 52,
+      "function": {
+        "address": "0x004122C9",
+        "size": "52",
+        "span_end": "0x004122FC",
+        "current_name": "Catch@004122c9",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004122C9",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "b6579ccfbf09e8f480409d19070a5c8dd866526651db72a1f2b1dd80f063ecf4"
+    },
+    {
+      "address": "0x004124B0",
+      "size": 16,
+      "function": {
+        "address": "0x004124B0",
+        "size": "16",
+        "span_end": "0x004124BF",
+        "current_name": "FUN_004124b0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004124B0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936"
+    },
+    {
+      "address": "0x004124C0",
+      "size": 11,
+      "function": {
+        "address": "0x004124C0",
+        "size": "11",
+        "span_end": "0x004124CA",
+        "current_name": "FUN_004124c0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004124C0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "faec5440a4f2f34429d34999f49c23d24029c158406b3887b184489b24829941"
+    },
+    {
+      "address": "0x00412580",
+      "size": 5,
+      "function": {
+        "address": "0x00412580",
+        "size": "5",
+        "span_end": "0x00412584",
+        "current_name": "FUN_00412580",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00412580",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x00412600",
+      "size": 5,
+      "function": {
+        "address": "0x00412600",
+        "size": "5",
+        "span_end": "0x00412604",
+        "current_name": "FUN_00412600",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00412600",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x0041E100",
+      "size": 8,
+      "function": {
+        "address": "0x0041E100",
+        "size": "8",
+        "span_end": "0x0041E107",
+        "current_name": "FUN_0041e100",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0041E100",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "d5a2b635b0bbb254914f2641e4508361a0c95686c0422dcebeb3abbcca7f1d2b"
+    },
+    {
+      "address": "0x0041E110",
+      "size": 11,
+      "function": {
+        "address": "0x0041E110",
+        "size": "11",
+        "span_end": "0x0041E11A",
+        "current_name": "FUN_0041e110",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0041E110",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "595090aeba440dcef9ae6977d73e6a4172d5fae75a6ae25cf4438a3cb9cc0303"
+    },
+    {
+      "address": "0x0041EFE6",
+      "size": 52,
+      "function": {
+        "address": "0x0041EFE6",
+        "size": "52",
+        "span_end": "0x0041F019",
+        "current_name": "Catch@0041efe6",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0041EFE6",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "c27d87e7504a72cfbd74b8595131e7426eed97197f871e9e9f902f31b80406b2"
+    },
+    {
+      "address": "0x0041F7E0",
+      "size": 16,
+      "function": {
+        "address": "0x0041F7E0",
+        "size": "16",
+        "span_end": "0x0041F7EF",
+        "current_name": "FUN_0041f7e0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0041F7E0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936"
+    },
+    {
+      "address": "0x004212A0",
+      "size": 72,
+      "function": {
+        "address": "0x004212A0",
+        "size": "72",
+        "span_end": "0x004212E7",
+        "current_name": "ATL::CAtlWinModule::~CAtlWinModule",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004212A0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "58b0cefa9912f04c5d4205de469f31f814cd4e45d59304c44a77ad10cacb4c68"
+    },
+    {
+      "address": "0x004229C0",
+      "size": 15,
+      "function": {
+        "address": "0x004229C0",
+        "size": "15",
+        "span_end": "0x004229CE",
+        "current_name": "FUN_004229c0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004229C0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "b6ec5eb04b9b6eaff1fcca9a85f62489ffba61d83455af012ee12efcd1579eec"
+    },
+    {
+      "address": "0x004229D0",
+      "size": 28,
+      "function": {
+        "address": "0x004229D0",
+        "size": "28",
+        "span_end": "0x004229EB",
+        "current_name": "FUN_004229d0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R158; config/deque-copy-insert-origin-evidence.json; entire SDK copy/insertion source and registered catch/shared-return reconciliation; scripts/repo-python scripts/verify-deque-copy-insert-origins.py",
+        "owner": "",
+        "notes": "Pending after R158: the entire 28-byte implicit copy constructor defining code section compares unmasked, but a natural ordinary explicit copy constructor of a complete observation record emits all 28 identical bytes and the same actual SDK deque-copy field. Complete R157 construction context and full 241-byte SDK child establish operation, not implicit-versus-authored ownership. Original record type/declaration and original source ownership remain unknown. No source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x004229D0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "262fa7d1254d13d46408d9f3b601c5249d3f708c0997caf7e1a75360d7f41c3e"
+    },
+    {
+      "address": "0x0042E580",
+      "size": 5,
+      "function": {
+        "address": "0x0042E580",
+        "size": "5",
+        "span_end": "0x0042E584",
+        "current_name": "FUN_0042e580",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0042E580",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x00458650",
+      "size": 31,
+      "function": {
+        "address": "0x00458650",
+        "size": "31",
+        "span_end": "0x0045866E",
+        "current_name": "FUN_00458650",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00458650",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "cd12d0d125ba20f7ba4fed2ebccda4567f6a29ee325261a6906c3d9e0fa8d76f"
+    },
+    {
+      "address": "0x00458670",
+      "size": 23,
+      "function": {
+        "address": "0x00458670",
+        "size": "23",
+        "span_end": "0x00458686",
+        "current_name": "FUN_00458670",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00458670",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "5baafbb4135cd1245ebf2c0ec06f2323b2d0fd9acdfd445b76ad060458e9d8b2"
+    },
+    {
+      "address": "0x004591E0",
+      "size": 417,
+      "function": {
+        "address": "0x004591E0",
+        "size": "417",
+        "span_end": "0x00459380",
+        "current_name": "FUN_004591e0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004591E0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9b9961143c8b16c6a373eb5d781f01c3c9be91546579f616f3f1956e2b954035"
+    },
+    {
+      "address": "0x0045AAE0",
+      "size": 368,
+      "function": {
+        "address": "0x0045AAE0",
+        "size": "368",
+        "span_end": "0x0045AC4F",
+        "current_name": "FUN_0045aae0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0045AAE0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "3be1079eff71381f3fec84f669fe938f04349d8ac36608c3ab015f050e556a71"
+    },
+    {
+      "address": "0x0045B880",
+      "size": 149,
+      "function": {
+        "address": "0x0045B880",
+        "size": "149",
+        "span_end": "0x0045B914",
+        "current_name": "FUN_0045b880",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0045B880",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "4f3c7a26eef48aea6a63eaf843f3d5542899ed7a4c396ec97681d34ac0222b7d"
+    },
+    {
+      "address": "0x00531D80",
+      "size": 8,
+      "function": {
+        "address": "0x00531D80",
+        "size": "8",
+        "span_end": "0x00531D87",
+        "current_name": "FUN_00531d80",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00531D80",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "d5a2b635b0bbb254914f2641e4508361a0c95686c0422dcebeb3abbcca7f1d2b"
+    },
+    {
+      "address": "0x00531D90",
+      "size": 11,
+      "function": {
+        "address": "0x00531D90",
+        "size": "11",
+        "span_end": "0x00531D9A",
+        "current_name": "FUN_00531d90",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00531D90",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "595090aeba440dcef9ae6977d73e6a4172d5fae75a6ae25cf4438a3cb9cc0303"
+    },
+    {
+      "address": "0x00532196",
+      "size": 52,
+      "function": {
+        "address": "0x00532196",
+        "size": "52",
+        "span_end": "0x005321C9",
+        "current_name": "Catch@00532196",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00532196",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "3f02b4e06cc532247454c2f396b9ab3bb9e47a2d5a8b99caf4cc7ba63a02ab0d"
+    },
+    {
+      "address": "0x00532350",
+      "size": 16,
+      "function": {
+        "address": "0x00532350",
+        "size": "16",
+        "span_end": "0x0053235F",
+        "current_name": "FUN_00532350",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00532350",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8857d15e5bce580adb0e5dc96d1aba616e10aa72982c77604b0d7b40d9671936"
+    },
+    {
+      "address": "0x005F84B0",
+      "size": 167,
+      "function": {
+        "address": "0x005F84B0",
+        "size": "167",
+        "span_end": "0x005F8556",
+        "current_name": "FUN_005f84b0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R162; config/vector-producer-origin-evidence.json; scripts/repo-python scripts/verify-vector-producer-origins.py",
+        "owner": "",
+        "notes": "Complete SDK and actual fields are retained as source observations, without ownership acceptance. Nontrivial assignments / 158 and / 167 and their entire EH code / 18 and state / 36 have byte-equal ordinary C++ member alternatives. Reviewed game callers or library children do not alone identify an original endpoint/constructor/assignment owner; related whole 42-byte producer and 8-byte bridge contexts remain unknown. No truncated 96-byte parent or relocation-masked acceptance. Original declarations/types/lifetime policy remain unknown. No origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x005F84B0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "b5bb58cceb81f7049b228a59bebf502d6ef116f1f4e427aeb15f97a4cb177ddf"
+    },
+    {
+      "address": "0x00641DAA",
+      "size": 11,
+      "function": {
+        "address": "0x00641DAA",
+        "size": "11",
+        "span_end": "0x00641DB4",
+        "current_name": "FUN_00641daa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R129; config/short-runtime-origin-evidence.json; scripts/repo-python scripts/verify-short-runtime-origins.py",
+        "owner": "",
+        "notes": "Pending: full abs/labs vendor alternatives and cold ordinary int/long expression controls emit identical 11-byte bodies; nearby complete runtime context and game callers do not distinguish source ownership, original symbol or type"
+      },
+      "origin": {
+        "address": "0x00641DAA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+    },
+    {
+      "address": "0x00641FB8",
+      "size": 11,
+      "function": {
+        "address": "0x00641FB8",
+        "size": "11",
+        "span_end": "0x00641FC2",
+        "current_name": "FUN_00641fb8",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00641FB8",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+    }
+  ],
+  "retained": [
+    {
+      "file": "config/vector-endpoint-origin-evidence.json",
+      "address": "0x0040E1F0",
+      "collection": "functions",
+      "record": {
+        "address": "0x0040E1F0",
+        "size": 31,
+        "decision": "library",
+        "symbol": "?begin@?$vector@USecondVectorObservation@@V?$allocator@USecondVectorObservation@@@std@@@std@@QAE?AViterator@12@XZ",
+        "original_function": {
+          "address": "0x0040E1F0",
+          "size": "31",
+          "span_end": "0x0040E20E",
+          "current_name": "FUN_0040e1f0",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x0040E1F0",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x0040E1F0",
+          "size": "31",
+          "span_end": "0x0040E20E",
+          "current_name": "FUN_0040e1f0",
+          "proposed_name": "VC7::vector_begin_0040E1F0",
+          "module": "VC7STL",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+          "owner": "library",
+          "notes": "Whole positive own AUX SDK source, real fields and entire independently accepted parent/source operations compare without masking. Complete ordinary endpoint, constructor and destruction controls are byte-equal; leaf shape alone grants no ownership or original declaration. Actual deque subtraction negates offset before the independently complete addition-assignment operation; original R078 addition-shaped association is retained as historical source-shape evidence and refined by full real subtraction/addition controls. R037 deleting wrappers, R017 authored resource policy and R108 unknown lifetime policy remain separately classified. Full ordinary emission, actual SDK headers and complete observation layout are pinned. Original types/source/compiler choices and live iterator/lifetime outcomes remain unknown; no source/private ABI/mapping/exact credit."
+        },
+        "accepted_origin": {
+          "address": "0x0040E1F0",
+          "origin": "library",
+          "subsystem": "VC7STL",
+          "disposition": "exclude",
+          "confidence": "complete-vc7-vector-endpoint-constructor-deque-operation-and-independent-lifetime-context",
+          "evidence_id": "R161"
+        }
+      }
+    },
+    {
+      "file": "config/vector-endpoint-origin-evidence.json",
+      "address": "0x0040E9E0",
+      "collection": "functions",
+      "record": {
+        "address": "0x0040E9E0",
+        "size": 28,
+        "decision": "library",
+        "symbol": "??0iterator@?$vector@USecondVectorObservation@@V?$allocator@USecondVectorObservation@@@std@@@std@@QAE@PAUSecondVectorObservation@@@Z",
+        "original_function": {
+          "address": "0x0040E9E0",
+          "size": "28",
+          "span_end": "0x0040E9FB",
+          "current_name": "FUN_0040e9e0",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x0040E9E0",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x0040E9E0",
+          "size": "28",
+          "span_end": "0x0040E9FB",
+          "current_name": "FUN_0040e9e0",
+          "proposed_name": "VC7::vector_iterator_constructor_0040E9E0",
+          "module": "VC7STL",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+          "owner": "library",
+          "notes": "Whole positive own AUX SDK source, real fields and entire independently accepted parent/source operations compare without masking. Complete ordinary endpoint, constructor and destruction controls are byte-equal; leaf shape alone grants no ownership or original declaration. Actual deque subtraction negates offset before the independently complete addition-assignment operation; original R078 addition-shaped association is retained as historical source-shape evidence and refined by full real subtraction/addition controls. R037 deleting wrappers, R017 authored resource policy and R108 unknown lifetime policy remain separately classified. Full ordinary emission, actual SDK headers and complete observation layout are pinned. Original types/source/compiler choices and live iterator/lifetime outcomes remain unknown; no source/private ABI/mapping/exact credit."
+        },
+        "accepted_origin": {
+          "address": "0x0040E9E0",
+          "origin": "library",
+          "subsystem": "VC7STL",
+          "disposition": "exclude",
+          "confidence": "complete-vc7-vector-endpoint-constructor-deque-operation-and-independent-lifetime-context",
+          "evidence_id": "R161"
+        }
+      }
+    }
+  ],
+  "retained_sha256": {
+    "config/texture-vector-access-origin-evidence.json": "69e2d6a01358b088121cef02d4153cf307429921dc0b1ac8d2891ccb732297a3",
+    "config/vector-endpoint-origin-evidence.json": "afe1d3136b9d1ce15d370b11234b8bfa4b6be877032c76ba4623df3ecb8a11fe"
+  },
+  "external": {},
+  "unknowns": [
+    "Independently observed scale 4 and full resource pointer-slot consumers establish this specialization geometry; no original entry/pointer/interface declaration or private owner layout is recovered.",
+    "Whole ordinary begin/index/dereference alternatives are byte-equal. Original method spelling stays provisional; source equality alone supplies no owner.",
+    "The 16-byte const getter at0x0040EA20 and all prior opaque getter/destruction/lifetime/assignment/math/catch policies remain independently unknown. No source/private ABI/mapping/exact credit is added."
+  ]
+}
