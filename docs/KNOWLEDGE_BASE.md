@@ -5582,3 +5582,83 @@ Both 11-byte abs-shaped candidates have complete abs/labs source alternatives.
 R129 already proves ordinary expression controls can also reproduce the
 entire shape; preserve that ownership ambiguity instead of repeating an
 acceptance from the new survey.
+
+## R155 — Short CRT provenance and unsupported leaf ownership
+
+R155 reviews five complete candidates / 92 bytes. Three gain library origin:
+`0x006426A1` / 5 bytes (`_atoi` source association), `0x0064554E` / 27 bytes
+(`__seh_longjmp_unwind@4`), and `0x00651D44` / 27 bytes (`__ui64toa`).
+The entire 21-byte `0x00643FC6` finite association and 12-byte `0x0064F513`
+FillZeroMan association remain unknown/pending. Replay
+`scripts/repo-python scripts/verify-short-crt-origins.py` with
+`config/short-crt-origin-evidence.json`. No original executable symbol or
+private game declaration is established by these provisional archive names.
+
+Every candidate's complete positive COFF AUX extent is extracted without a
+size override. All target bytes agree unmasked with the pinned whole archive
+source, including actual typed fields and final return/tail instructions.
+The accepted atoi tail routes to independently complete R123 atol / 136 bytes;
+the saved-context helper routes to unchanged R025 local unwind / 104 bytes;
+the unsigned-wide formatter routes to unchanged R007 x64toa / 109 bytes and
+its original typed unsigned division dependency. Whole original runtime
+metadata and canonical evidence remain unchanged. Complete codepage/NLS,
+jump/unwind, security/EH and runtime verifiers replay successfully, including
+retained cold source/layout/data/API/EH dependencies and all 57 original whole
+runtime bodies / 5641 bytes with 28 actual bindings.
+
+**Complete SEH source carrier.** The saved-context helper is a positive
+27-byte own AUX inside exsup3's larger source section. Its entire 265-byte
+carrier compares unmasked: the eight-byte `VC20XC00` source marker, complete
+230-byte original handler, full helper at offset 238 and all six actual typed
+fields are retained. It reads actual SDK saved Ebp, Registration and TryLevel,
+calls full local unwind with the real registration/try-level pair and restores
+the frame with four-byte argument cleanup. The SDK saved-context declaration
+and the whole source carrier independently corroborate this operation;
+a library child or absent direct callers alone supplies no origin proof.
+
+**Bounded pending controls.** The entire twelve-byte FillZeroMan source also
+matches an ordinary natural source control clearing a complete three-word
+observation with memset. The cold compiler emits all twelve identical bytes,
+without any relocation masking. No actual direct caller or independent owning
+context distinguishes the two sources, so library origin is withheld. Finite
+has a complete 21-byte vendor/SDK association, while the ordinary exponent
+expression emits a complete different 20-byte function. Its failed control
+must not be compared against a twenty-byte target prefix, and it does not
+exclude other original compiler/source variants or prove ownership. It also
+has no observed direct caller or independent owning context and remains
+pending. Both rows retain their original unknown origin records, empty owner
+and proposed-name fields, and full extents; only durable evidence/notes change.
+
+`probes/VC7ShortCrtCalls.cpp` cold-builds all eight complete SDK/source controls /
+109 bytes and every one of nine entire ordinary code/data sections / 153 bytes.
+The complete 44-byte layout freezes real 64-byte jump buffers, saved-field
+offsets, actual primitive/observation sizes, JBLEN and floating exponent range;
+all five actual SDK headers are pinned. The synthetic three-word observation
+is not an original floating/game structure. Build 3077 and /O1 /Oi /Ob0 are
+per-probe reproducibility settings; original flags/linker inputs, source
+spelling/types and live decimal/radix/floating/jump outcomes remain unknown.
+
+Exactly three canonical origins and five bounded function evidence rows
+change against R154 HEAD; both pending origins, every unrelated row and all
+authored records remain unchanged. Additional pure source/carrier registration
+guards preserve all already cold inputs. Twenty-two regression checks reject
+partial extents/carriers/layouts, wrong fields/SDK operations, altered saved
+context and false pending/exact/ABI credit. All 1285 public workflow tests,
+local target/project/query attestation, authored extents, fresh scanner/progress,
+exact-input preservation and whitespace checks pass. Totals are 3465 resolved
+(922 authored, 1968 library, 575 compiler), 886 pending and 2543 excluded.
+Authored records remain 875 / 1953089 bytes; exact coverage remains provisionally
+9883 / 1965432. All 60 source/mapped/exact functions / 9883 bytes and exact
+inputs remain unchanged from R139 db26a05, preserving its 60/60 cold replay
+across eleven objects. No affected exact unit needs replay. No source, mapping,
+private ABI or exact credit is added. Public MCP acceptance remains waived;
+the private no-auth route is unchanged. Private queries, diagnostics and objects
+remain untracked. The complete-origin objective remains unfinished.
+
+The next bounded R156 cohort is two previously unreviewed complete 211-byte
+deque-like producers and their four 27-/29-byte allocation/construction
+callees. Independent full R070 parser and R040 replay-file scanning parents,
+plus unchanged full R071 grow-map owners, provide investigation context.
+Diagnostic target observations show distinct 20-/60-byte element scales;
+these sizes do not recover original element declarations. No next-cohort
+classification follows from scanner rank or these source-shape observations.

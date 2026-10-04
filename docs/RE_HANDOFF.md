@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R154. The public
+review cohorts R108 through R155. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,462: 922 authored, 1,965 library and 575 compiler generated.
-There are 889 pending. Candidate count is not authored function count.
+has resolved 3,465: 922 authored, 1,968 library and 575 compiler generated.
+There are 886 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R155 short CRT provenance cohort below.
+the bounded R156 paired deque producer cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R154; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R155; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R155 complete short CRT provenance
+## Next agent objective — R156 complete paired deque producers and typed dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -815,26 +815,50 @@ retain original evidence and boundaries. Replay
 All 1263 public workflow checks pass. Totals are 3462 resolved and 889 pending;
 all 60 exact functions and R139 cold proof remain preserved.
 
-The next bounded R155 cohort is five retained unknown CRT candidates:
+R155 reviews all five short CRT candidates / 92 bytes. Three owners / 59 bytes
+become library through complete own-AUX source, independent whole callees and
+actual SDK operations. The SEH helper's entire 265-byte source carrier, including
+the eight-byte source marker, full original 230-byte handler and all six fields,
+compares unmasked. Complete original codepage/NLS, jump/unwind, security/EH and
+runtime provenance replay; eight cold SDK/source controls / 109 bytes and nine
+whole code/data sections / 153 bytes preserve the entire real 44-byte layout.
+Replay `scripts/repo-python scripts/verify-short-crt-origins.py`.
+All 1285 public workflow checks pass. Totals are 3465 resolved and 886 pending;
+all 60 exact functions and R139 cold proof remain preserved.
 
-| Candidate | Complete provisional extent | Actual full-source diagnostic |
+Preserve the two R155 unsupported leaves: `0x0064F513` / 12 bytes has an
+entire byte-equal ordinary memset control, and `0x00643FC6` / 21 bytes has
+full SDK/vendor source but no independent owning context. Its ordinary
+20-byte expression control is genuinely different, not a partial target match.
+Both have no observed direct caller; absence alone proves no runtime property.
+Do not revisit either from scanner rank, adjacent CRT names or new same-shaped
+controls without new independent source ownership evidence. Preserve all R129
+abs/labs versus ordinary expression ambiguity, including `0x00641FB8` / 11.
+
+The next bounded R156 cohort is six retained unknown deque-context candidates:
+
+| Candidate | Complete provisional extent | Actual investigation context |
 | --- | ---: | --- |
-| `0x006426A1` | 5 | atox.obj member 157246, own-AUX `_atoi`; actual typed tail to accepted whole R123 `_atol` / 136 bytes at `0x00642619` |
-| `0x00643FC6` | 21 | ieeemisc.obj member 2915526, own-AUX `__finite`; full exponent-mask and return protocol |
-| `0x0064554E` | 27 | exsup3.obj member 1221154, own-AUX `__seh_longjmp_unwind@4`; actual typed call to accepted whole R025 `__local_unwind2` / 104 bytes |
-| `0x0064F513` | 12 | intrncvt.obj member 2436458, own-AUX `__FillZeroMan`; full three-word destination/return protocol |
-| `0x00651D44` | 27 | xtoa.obj member 232636, own-AUX `__ui64toa`; actual typed call to accepted whole R007 `_x64toa@20` / 109 bytes |
+| `0x004215F0` | 211 | entire R070 parser calls it at `0x00420CE4`; actual scale 20; grow-map call `0x00421BD0`, allocation `0x00421EE0`, construction `0x00421F00` |
+| `0x00421EE0` | 27 | actual allocation dependency of the complete 20-byte-element producer |
+| `0x00421F00` | 29 | actual construction dependency of that producer |
+| `0x0042DBE0` | 211 | entire authored R040 replay-file scan / 613 bytes calls it at `0x0042D684`; actual scale 60; grow-map `0x0042DCF0`, allocation `0x0042E000`, construction `0x0042E020` |
+| `0x0042E000` | 27 | actual allocation dependency of the complete 60-byte-element producer |
+| `0x0042E020` | 29 | actual construction dependency of that producer |
 
-Private `.analysis/r154-next-crt-survey.json` and the complete atoi diagnostic
-are non-accepting source associations. Reconcile whole target control flow,
-all return/tail/adjacent alignment, complete own source extents and every actual
-field independently. Establish genuine SDK/source operation and whole actual
-parent/callee context, including defining layout/data/API/EH where used;
-prior names, byte equality or reviewed children alone grant no origin.
-Preserve original accepted owners and all R129 abs/labs versus authored
-expression ambiguity, including the second identical 11-byte candidate at
-`0x00641FB8`. Do not recover private game layouts or infer live runtime inputs
-or outcomes from synthetic source controls. No exact scope is authorized.
+Both grow-map owners / 511 bytes retain their original R071 library origin;
+replay complete source and all actual fields before relying on either as
+independent context. Reconcile complete target control flow, guards, final
+returns, adjacent alignment and every producer/helper source AUX. Cold-build
+natural actual SDK deque/allocator/construction families with complete synthetic
+20-/60-byte observation elements, cover every emitted ordinary code/data/EH
+section and retain original-type uncertainty. Bind genuine typed callees
+independently, including accepted R154 allocation owners and existing complete
+copy/runtime owners where actual source fields establish those operations.
+The game caller, numeric element size or whole-body shape alone grants no
+library credit. Do not treat a size observation as a recovered game element,
+reuse the R072 eight-byte byte-record as an original declaration, or alter
+prior accepted growth/parser/file-scan evidence. No exact scope is authorized.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -886,7 +910,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R155 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R156 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

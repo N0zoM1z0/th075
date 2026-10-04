@@ -3580,7 +3580,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006425A4,compiler,VC7EH,exclude,complete-vendor-body,R022
 0x006425C3,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x00642619,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
-0x006426A1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006426A1,library,VC71CRT,exclude,complete-vendor-short-crt-typed-sdk-independent-runtime-and-carrier-provenance,R155
 0x0064274D,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
 0x00642800,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x0064283A,library,VC71CRT,exclude,complete-vendor-input-format-code-data-seh-nls-api-abi-provenance,R135
@@ -3654,7 +3654,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064529E,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00645414,library,VC71CRT,exclude,complete-vendor-security-eh-graph-with-independent-source-data-api-bindings,R117
 0x0064544F,library,VC71CRT,exclude,complete-vendor-archive-with-independent-code-data-import-bindings,R115
-0x0064554E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064554E,library,VC71CRT,exclude,complete-vendor-short-crt-typed-sdk-independent-runtime-and-carrier-provenance,R155
 0x00645569,library,VC71CRT,exclude,complete-vendor-body,R007
 0x006455D6,library,VC71CRT,exclude,complete-vendor-exception-frame-unwind-scope-code-data-private-abi-provenance,R141
 0x00645689,library,VC71CRT,exclude,interior-cleanup-in-complete-vendor-exception-frame-primary,R141
@@ -3882,7 +3882,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00651C65,library,VC71CRT,exclude,complete-vendor-body,R007
 0x00651CA6,library,VC71CRT,exclude,complete-vendor-body,R007
 0x00651D13,library,VC71CRT,exclude,complete-vendor-body,R007
-0x00651D44,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00651D44,library,VC71CRT,exclude,complete-vendor-short-crt-typed-sdk-independent-runtime-and-carrier-provenance,R155
 0x00651D5F,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x00651DA2,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x00651FE7,library,VC71CRT,exclude,complete-vendor-low-io-code-data-api-eh-abi-provenance,R132
