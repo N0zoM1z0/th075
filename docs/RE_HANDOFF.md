@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R140. The public
+review cohorts R108 through R141. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,393: 919 authored, 1,899 library and 575 compiler generated.
-There are 958 pending. Candidate count is not authored function count.
+has resolved 3,422: 919 authored, 1,928 library and 575 compiler generated.
+There are 929 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R141 exception frame/unwind cohort below.
+the bounded R142 C++ throw/frame/standard-exception cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R140; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R141; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R141 exception frame/unwind graph
+## Next agent objective — R142 C++ throw/frame/standard-exception graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -619,30 +619,44 @@ that batch's 60/60 cold exact replay across eleven objects. No affected exact
 unit requires another replay. Totals are 3393 resolved and 958 pending.
 Public MCP acceptance remains waived; no source/mapping/exact credit is added.
 
-The next bounded cohort is six existing exception frame/unwind candidates in
-the same full defining frame.obj member / 379030:
+R141 resolves all six exception frame/unwind roots and the required closure:
+27 complete own-AUX primaries / 3,502 bytes / 116 fields, two existing interior
+cleanup labels, three non-inventory auxiliary controls / 123 bytes / four
+fields, eight full anchors / 1,183 bytes / 65 fields and seven whole defining
+data sections / 92 bytes / thirteen fields. Five whole scope tables contain
+seven records; existing cleanup labels start six bytes after actual handler
+prologues. Five extents expand to include real tails. Private helpers retain
+observed register contracts and unset canonical declarations. The six-byte
+RtlUnwind linker thunk retains R030 compiler ownership and actual PE IAT
+identity. Cold 128-byte SDK/thread layouts, nine independent natural controls,
+all seven generated model data sections and the entire ten-byte no-AUX EH
+handler replay. Original private frame source/types remain unavailable and
+current opaque callback behavior is unknown. Replay
+`scripts/repo-python scripts/verify-exception-frame-origins.py`.
+All 909 public checks pass; totals are 3422 resolved and 929 pending. Exact
+inputs/records remain unchanged from R139 `db26a05`, preserving its 60/60 cold
+replay across eleven objects. Public MCP acceptance remains waived.
+
+The next bounded cohort is four existing C++ throw/frame/standard-exception
+candidates. Use `.analysis/r141-next-cxx-survey.json` only diagnostically:
 
 | Candidate | Provisional bytes | Diagnostic own AUX / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x006455D6` | 173 | `___FrameUnwindToState`, 206 / ten | Whole unwind owner, every finally/filter entry, complete scope/state/thread/funclet contracts and all fields |
-| `0x006456D4` | 52 | `___DestructExceptionObject`, 69 / five | Full object/member-call/termination owner and actual scope handler; no 52-byte prefix acceptance |
-| `0x0064592D` | 332 | `CallCatchBlock`, 452 / sixteen | Whole catch/cleanup parent, complete scope and related frame/exception object graph, all shared entries and exits |
-| `0x00645AF1` | 368 | `BuildCatchObject`, 380 / twenty-two | Complete validation/adjust/copy/member-call branches and termination tail, truthful private type/ABI uncertainty |
-| `0x00645C6D` | 293 | `___CxxExceptionFilter`, 293 / seven | Full exception/type/thread/build-catch contract and every binding, without deriving origin from known helpers |
-| `0x00645D92` | 103 | `CatchIt`, 103 / five | Complete build/unwind/catch/continuation graph, actual callee cleanup and frame contracts |
+| `0x006407B8` | 54 | `___CxxFrameHandler`, 54 / one | Complete EAX/registration/context shim and actual eight-argument InternalCxxFrameHandler binding; do not invent a conventional private ABI |
+| `0x00640C12` | 58 | `__CxxThrowException@8`, 58 / two | Whole exception template, every RaiseException argument/import and real throw descriptor contract; no template prefix or guessed private typedef |
+| `0x00640C9A` | 74 | exception copy constructor, 74 / four | Whole vtable, exact copy/allocation/string dependencies, actual SDK class identity and paired lifetime graph |
+| `0x00640E49` | 61 | type_info destructor, 70 / seven | Complete scope/filter/finally tail, whole vtable, locked cached-name lifetime and all fields; no 61-byte prefix acceptance |
 
-Use `.analysis/r140-next-eh-survey.json` diagnostically. Full source bodies
-match outside typed fields, but substantial provisional boundaries omit real
-handlers and tails. Reconcile complete parents and existing interior candidates;
-never accept the old prefixes or invent new inventory entries. Close the
-related hooks/CallSettingFrame/SE-translator/frame-info/continuation and all
-scope/callback/state dependencies when required. Their names and signatures
-remain provisional until actual complete source/target ABI evidence supports
-them. The original private frame.cpp/ehdata.h/ehhooks.h/trnsctrl.h files are
-absent in the supplied tree. Full pinned COFF definitions still provide owner,
-extent, typed field and scope provenance; natural controls must use real
-available SDK/CRT declarations and cannot invent complete private frame types.
-Retain R140/R139 and the entire older EH/thread/heap/error/game evidence chain.
+Close all required standard exception/type_info constructor, copy, assignment,
+virtual/destructor and handler/callback/data owners without inventing inventory
+entries. The original private throw.cpp/stdexcpt.cpp/typinfo.cpp/trnsctrl.cpp
+files are unavailable in the supplied tree; real stdexcpt.h is available.
+Use actual supplied headers, full source COFF owners and independent natural
+models. A full header declaration or independent complete probe class does
+not recover an unknown TH075 object owner. Preserve R141's complete private
+register ABI, all scope callbacks and the full R140/older EH/thread/heap/error/
+stream/FP/game evidence chain. Unknown game parents gain no origin from a
+reviewed library callee.
 
 The broader `.analysis/r138-next-crt-survey.json` preserves other diagnostic
 full-AUX associations, including conflicting floating wrappers and substantial
@@ -666,7 +680,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R141 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R142 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

@@ -4373,3 +4373,131 @@ header, build and match inputs are unchanged from R139 `db26a05`; that batch's
 exact unit needs another replay. The user's 2026-10-04 public MCP acceptance
 waiver remains in force. Private evidence stays untracked and shared tools
 read-only.
+
+## R141 — Complete exception frame and unwind graph
+
+R141 resolves all six exception frame/unwind handoff roots and their required
+callee/parent closure: 27 complete library primaries / 3,502 bytes / 116 typed
+fields, plus two existing interior cleanup candidates. Replay
+`scripts/repo-python scripts/verify-exception-frame-origins.py` with
+`config/exception-frame-origin-evidence.json`. All 29 canonical candidates gain
+library origin only. No source, mapping or exact credit is added; three complete
+non-inventory auxiliary controls / 123 bytes / four fields gain no invented
+candidate rows. The six roots account for 1,503 bytes / 65 fields.
+
+| Root | Address | Previous bytes | Complete own AUX | Fields |
+| --- | --- | ---: | ---: | ---: |
+| `___FrameUnwindToState` | `0x006455D6` | 173 | 206 | 10 |
+| `___DestructExceptionObject` | `0x006456D4` | 52 | 69 | 5 |
+| `CallCatchBlock` | `0x0064592D` | 332 | 452 | 16 |
+| `BuildCatchObject` | `0x00645AF1` | 368 | 380 | 22 |
+| `___CxxExceptionFilter` | `0x00645C6D` | 293 | 293 | 7 |
+| `CatchIt` | `0x00645D92` | 103 | 103 | 5 |
+
+**Complete extents and scope entries.** All six roots retain their complete
+frame.obj member / 379030 definitions, AUX extents, source/target hashes and
+all typed fields. Five canonical extents expand, including the four roots
+above and JumpToContinuation / `0x00640721`, 43 to 48 bytes. Its final five
+bytes are real POP EBX, LEAVE and RET 8 after JMP EAX, not invented alignment.
+CallCatchBlock has three actual INT3 alignment bytes at source offsets
+332–334 before its finally entry; its full 452-byte owner includes them.
+No first-return or old provisional prefix supplies acceptance.
+
+The existing `0x00645689` / 27-byte and `0x00645A82` / 111-byte candidates
+are actual source-defined body labels $L19974 / +179 and $L20060 / +341 inside
+complete parents `0x006455D6` and `0x0064592D`. Their real scope handlers start
+six bytes earlier, at +173 / `0x00645683` and +335 / `0x00645A7C`. The full
+parents include these prologues, body labels, all filters and handler tails.
+The two labels gain no standalone function/source/exact interpretation.
+Read-only Ghidra helper queries attest the target and complete successfully;
+its provisional function inventory does not contain the four queried scope
+entries. Raw target mapping, full COFF fields and independent whole decoding
+provide extent and callback evidence without database writes.
+
+Five whole readonly source scope tables / 84 bytes contain seven complete
+12-byte enclosing/filter/handler records and twelve typed callback fields:
+$T19981 / `0x006614E8`, $T20002 / `0x00661500`, $T20075 / `0x00661530`,
+$T20094 / `0x00661548` and $T18949 / `0x006615C0`. Every signed enclosing level,
+null finally filter, actual non-null handler and filter instruction start is
+checked against its complete source parent. The mutable four-byte inconsistency
+handler / `0x00670140` has one complete initial pointer to the retained terminate
+worker; its current runtime value remains unknown. The full four-byte cookie
+at `0x0066FE30` is retained. These are seven whole defining data sections /
+92 bytes / thirteen fields, not carrier prefixes or reconstructed private types.
+
+**Dependency and actual ABI closure.** The other 21 complete primaries close
+inconsistency, CallSettingFrame, all three member-call trampolines, create/unlink/
+destruction frame-chain checks, CallCatchBlock2, abnormal termination, read/write
+validators, AdjustPointer, nested unwind, continuation, InternalCxxFrameHandler,
+FindHandler, foreign exception handling, try-range selection, SE translation
+and TranslatorGuardHandler. Three full non-inventory controls retain
+FrameUnwindFilter / 30, CatchGuardHandler / 59 and unwind_handler / 34 bytes.
+Eight full anchors / 1,183 bytes / 65 fields retain SEH prolog/epilog, getptd,
+terminate, memmove, execute validation, TypeMatch and NLG_Notify1's prior origins.
+Memmove's whole 829-byte owner has seven code regions / 709 bytes and six whole
+inline tables / 120 bytes; every source-typed case reaches a real code start.
+The retained R117 graph still owns NLG_Notify1's shared notification parent.
+
+The nested-unwind REL32 calls the complete six-byte compiler linker thunk at
+`0x00654B54`. Its raw IAT slot `0x00657180` independently imports
+KERNEL32.dll!RtlUnwind. The thunk retains R030 compiler ownership and its full
+hash/extent; the imported implementation gains no library credit. Validator
+fields bind actual IsBadReadPtr and IsBadWritePtr imports, without assuming
+runtime pointer validity or outcomes. All direct transfers retain either an
+actual typed relocation or the same complete defining source section.
+
+Optimized private helpers cannot be declared from their decorated names:
+BuildCatchObject copies incoming ECX/EDX to ESI/EDI and reads two stack inputs;
+AdjustPointer uses EAX as the base pointer and ECX as adjustment-field storage;
+TypeMatch uses ESI/EDI and one stack input; FrameUnwindFilter receives exception
+pointer storage in EAX. Canonical calling convention/signature fields stay
+unset. The three seven-byte member trampolines pop ECX, exchange the target and
+return address on the stack and tail-jump EAX, delegating cleanup to the actual
+worker; no fake RET is introduced. CallSettingFrame returns with twelve callee
+bytes and switches EBP to the supplied frame plus twelve. Nested unwind and
+the continuation epilogue return with eight callee bytes. SE translator calls
+use the actual thread field +0x74 and two consecutive caller-cleanup POPs.
+The forward-compatible exception handler consumes eight stack arguments / 32
+caller bytes. Actual opaque member/funclet/continuation/translator/handler
+indirect sites are inventoried completely; current callback targets and results
+remain unknown.
+
+**Compiler observations and source limits.** The original private
+frame.cpp/ehdata.h/ehhooks.h/trnsctrl.h files are unavailable in the supplied
+tree. Full pinned vendor COFF definitions establish ownership, extent, typed
+fields and scope provenance; they do not recover complete original private
+record identities or source. The real available exsup.inc supports exception
+constants. The cold natural `probes/VC7ExceptionFrameLayout.cpp` uses six actual
+SDK/CRT headers and a complete 128-byte layout array: EXCEPTION_RECORD / 80,
+EXCEPTION_POINTERS / eight, CONTEXT / 716 and _tiddata / 140 bytes, with translator/
+current-exception/context/frame-chain offsets 116/124/128/136. Filter results and
+handler dispositions are distinguished. Complete independent member classes,
+translator/stdcall calls, SEH finally/filter policies and C++ integer throw/catch
+produce nine complete 38-/20-/11-/15-/19-/94-/143-/28-/82-byte controls.
+
+All seven generated defining data sections / 167 bytes replay whole, including
+the complete 80-byte catch metadata section and all its neighbouring definitions,
+not only FuncInfo. The separate ten-byte compiler EH handler has no AUX; its
+complete defining code section, full symbol topology, flags and both typed
+fields replay. It is a compiler model, not a new target candidate or an invented
+private record. Complete generated metadata does not establish TH075's original
+private type names/layouts. VC7.1 build 3077 and explicit probe flags remain
+per-probe reproducibility settings.
+
+**Local acceptance.** Forty regression checks reject truncated scopes/owners,
+wrong enclosing or null-handler records, non-instruction callbacks, invented
+source labels, absent tables/dependencies, false private cdecl declarations,
+wrong member/translator cleanup, missing SDK facts and descriptor prefixes.
+All 909 public checks pass. The new complete origin replay and full retained
+R140/older EH/thread/heap/error/stream/FP/game chain cold-replay locally, with
+canonical guards, target/project/query attestation, all 872 authored extents,
+progress/scanner freshness and whitespace checks. Totals are 3,422 resolved
+(919 authored, 1,928 library, 575 compiler), 929 pending and 2,503 excluded.
+Source/mapping/exact remains 60 / 9,883 bytes; recorded authored extents remain
+872 / 1,952,956 bytes and the provisional denominator is 1,965,299. All exact
+function records and source/header/build/match inputs are unchanged from R139
+`db26a05`, retaining its 60/60 cold replay across eleven objects. No affected
+exact unit needs another replay. Public MCP acceptance remains waived by the
+user's 2026-10-04 instruction. Private evidence stays untracked; shared tools
+remain read-only. Original private types, current exception/frame/thread state
+and opaque callback behavior remain explicitly unknown.
