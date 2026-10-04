@@ -3556,8 +3556,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00641B37,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641B80,library,VC71CRT,exclude,complete-vendor-archive-with-independent-code-data-import-bindings,R116
 0x00641B90,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x00641C78,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641CC2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641C78,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
+0x00641CC2,library,VC71CRT,exclude,interior-entry-in-complete-vendor-vector-math-parent,R130
 0x00641CEC,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
 0x00641D4A,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
 0x00641D92,library,VC71CRT,exclude,interior-entry-in-complete-vendor-array-destruction-primary,R129
@@ -3568,8 +3568,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00641E5D,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
 0x00641F00,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641FB8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641FD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00642120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641FD0,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
+0x00642120,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x00642240,library,VC71CRT,exclude,complete-vendor-x87-dispatch-exception-code-data-table-layout-provenance,R127
 0x00642260,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064228D,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
@@ -3704,9 +3704,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00647244,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00647271,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
 0x0064730F,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
-0x00647362,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00647362,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x006473C1,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
-0x00647479,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00647479,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x00647542,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006475AB,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006475D0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
@@ -3730,11 +3730,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00647FAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064801D,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x00648052,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
-0x00648140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00648158,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064815E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006485D7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00648865,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00648140,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
+0x00648158,library,VC71CRT,exclude,interior-entry-in-complete-vendor-vector-math-parent,R130
+0x0064815E,library,VC71CRT,exclude,interior-entry-in-complete-vendor-vector-math-parent,R130
+0x006485D7,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
+0x00648865,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x006489AC,library,VC71CRT,exclude,interior-entry-in-complete-vendor-x87-dispatch-primary,R127
 0x006489F0,library,VC71CRT,exclude,complete-vendor-x87-dispatch-exception-code-data-table-layout-provenance,R127
 0x00648A2E,library,VC71CRT,exclude,complete-vendor-x87-dispatch-exception-code-data-table-layout-provenance,R127
@@ -3805,8 +3805,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064DC10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064DC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064DC79,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064E7B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064E81E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064E7B0,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
+0x0064E81E,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x0064E980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064EA53,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064EC68,library,VC71CRT,exclude,complete-vendor-heap-source-data-api-and-closed-dependencies,R119
@@ -3865,7 +3865,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006505CA,library,VC71CRT,exclude,complete-vendor-x87-dispatch-exception-code-data-table-layout-provenance,R127
 0x006506C2,library,VC71CRT,exclude,complete-vendor-x87-dispatch-exception-code-data-table-layout-provenance,R127
 0x006506C5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0065151B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0065151B,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x0065152C,library,VC71CRT,exclude,complete-vendor-environment-commandline-pe-startup-code-data-api-eh-provenance,R126
 0x006515F3,library,VC71CRT,exclude,complete-vendor-environment-commandline-pe-startup-code-data-api-eh-provenance,R126
 0x0065163C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R129. The public
+review cohorts R108 through R130. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,268: 919 authored, 1,774 library and 575 compiler generated.
-There are 1,083 pending. Candidate count is not authored function count.
+has resolved 3,282: 919 authored, 1,788 library and 575 compiler generated.
+There are 1,069 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R130 vector-construction and two-argument math cohort below.
+the bounded R131 localtime and time-zone cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R129; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R130; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R130 vector construction and two-argument math
+## Next agent objective — R131 localtime and time-zone graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -468,29 +468,38 @@ or folding. Do not promote it from archive/scanner rank; replay its frozen
 negative controls with the R129 verifier. The separate eleven-byte `0x00641FB8`
 has the same diagnostic vendor alternatives and remains unreviewed/pending.
 
-The next bounded cohort is six existing vector/two-argument math candidates:
+R130 resolves all six vector/two-argument math candidates and eight existing
+callees: eleven library primaries / 2,511 bytes / 99 fields and three shared
+entries / 644 overlapping bytes. The constructor's full sole code section is
+98 bytes. The complete log10/ceil sections are 336/285 bytes, including every
+own-AUX body and log10's source-emitted one-byte NOP. Canonical C extents are
+63/64 only after whole-section replay; the old FID cos association is rejected.
+The SSE log10 owner is 644 bytes with actual C/core entries at +24/+30. Its
+whole coefficient carrier is 2,336 bytes. Nine complete auxiliary controls,
+full EXP/fdiv tables and all 64 dispatch pointers close the actual graph.
+The existing R127 `0x00646B43` entry retains its prior origin. Replay
+`scripts/repo-python scripts/verify-vector-math-parent-origins.py`.
+
+The next bounded cohort is six existing localtime/time-zone candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00641C78` | 74 | `??_L@YGXPAXIHP6EX0@Z1@Z`, whole defining code section 98 | Full sole source owner, both callbacks, count/state, scope, exceptional cleanup and every typed field |
-| `0x00641CC2` | 24 | Constructor owner's cleanup at +74 | Actual source label, scope binding, remaining-element unwind and complete parent; no standalone credit |
-| `0x00647362` | 95 | `__handle_qnan2` | Whole own AUX extent, two-operand/result ABI, actual matherr/errno/state and control restoration |
-| `0x00647479` | 201 | `__except2` | Full own AUX body, both operands, all raise/mask/errno/default-handler paths and state |
-| `0x00641FD0` | 152 | 63-byte atan/log/log10 source-prefix alternatives | Account for the entire provisional extent and all actual source owners/entries; bind actual table before choosing a name |
-| `0x00642120` | 285 | 64-byte modf/floor/ceil source-prefix alternatives | Reconcile full extent, all subsequent source entries/tails, actual flags/table/dispatch and every code/data field |
+| `0x0064197E` | 384 | `_localtime`, own AUX 384 | Full time/thread result layout, GMT callee, limits, timezone/daylight/DST state and every field |
+| `0x00647778` | 680 | `__tzset_lk`, own AUX 680 | Entire initializer, real Windows/time/environment calls, all 62 fields and complete writable/string/table carriers |
+| `0x00647BD8` | 391 | `__isindst_lk`, own AUX 391 | All transition/date arithmetic, actual cache/table state and all 30 typed fields |
+| `0x00647D5F` | 67 | `___tzset`, own AUX 76 | Reconcile whole 76-byte source including EH cleanup; lock, scope and every field |
+| `0x00647DE0` | 53 | `__isindst`, own AUX 62 | Reconcile whole 62-byte source including EH cleanup; lock, callback/result ABI and every field |
+| `0x00647E1E` | 263 | `_gmtime`, own AUX 263 | Whole thread result/storage layout, allocation/errno/calendar tables and every typed field |
 
-Use `.analysis/r129-next-root-survey.json`,
-`.analysis/r129-next-vector-ctor.log` and
-`.analysis/r129-next-math-parent-survey.json` diagnostically. The constructor's
-complete 98-byte source section matches outside its four fields, but those
-fields and callbacks/scope are not yet accepted. The math source-prefix hits
-cover only 63/64 bytes of provisional 152/285-byte extents. They are not full
-candidate matches: never truncate to those prefixes or select a convenient
-source spelling. Reconcile all full source primaries, switch/dispatch entries,
-shared tails and alignment before acceptance. Preserve the independently closed
-R129 name/exception/unwind graph without inheriting parent ownership from it.
-Localtime/time-zone evidence remains diagnostic for a later bounded cohort.
-Keep hooks/CallSettingFrame and read/write validators pending for later review.
+Use `.analysis/r130-next-time-survey.json` and
+`.analysis/r130-next-time-survey.log` diagnostically. Whole source bodies match
+outside their fields, but none of the six has accepted code/data/API/EH/ABI
+closure. The two lock wrappers extend beyond their provisional prefixes; never
+accept only 67/53 bytes. Required transition helpers, environment readers,
+Windows imports, allocations and enclosing data remain for R131 investigation.
+Preserve the R129 abs ambiguity and complete R130 math graph without inferring
+parent ownership from reviewed callees. Keep hooks/CallSettingFrame and
+read/write validators pending for later review.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -506,7 +515,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R130 adds no exact scope. Update
+private path and 60-function exact baseline. R131 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -863,7 +872,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R130 vector-construction and two-argument math cohort described above. F008 and F009 remain
+Continue the bounded R131 localtime and time-zone cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

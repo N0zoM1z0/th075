@@ -6073,3 +6073,126 @@ all authored extents, project attestation, progress freshness, 483 tests and
 git diff whitespace. All 60 exact units cold-replay across eleven objects.
 Investigation and intermediate checks are local. Private evidence stays
 untracked; target, database, shared tools and game source/headers are unchanged.
+
+## R130 — Complete vector construction and multi-entry math parents
+
+R130 resolves all six handoff candidates and eight necessary existing dependencies:
+eleven complete library primaries / 2,511 bytes / 99 typed fields, plus three
+existing interior entries / 644 overlapping bytes. Replay
+`scripts/repo-python scripts/verify-vector-math-parent-origins.py`; the manifest
+is `config/vector-math-parent-origin-evidence.json`. This is origin evidence,
+with no new source, mapped function or exact unit. Source associations identify
+hash-pinned libcmt.lib definitions; they do not recover executable debug names.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `??_L@YGXPAXIHP6EX0@Z1@Z` | `0x00641C78` | 98 | 4 |
+| `__handle_qnan2` | `0x00647362` | 95 | 4 |
+| `__except2` | `0x00647479` | 201 | 9 |
+| `_log10` | `0x00641FD0` | 63 | 2 |
+| `_ceil` | `0x00642120` | 64 | 3 |
+| `__CIlog10_pentium4` | `0x00648140` | 644 | 21 |
+| `___libm_error_support` | `0x006485D7` | 654 | 28 |
+| `__ceil_default` | `0x00648865` | 211 | 9 |
+| `__powhlp` | `0x0064E81E` | 354 | 15 |
+| `__d_inttype` | `0x0064E7B0` | 110 | 4 |
+| `__frnd` | `0x0065151B` | 17 | 0 |
+
+**Target and source extents.** Ten primaries retain their own full COFF AUX
+extents. The vector constructor lacks a function-definition AUX record; its
+sole global function owns a complete 98-byte executable/readable/non-writable
+section. All source definitions and four fields are verified. Its provisional
+74-byte prefix expands through the actual local cleanup at +74, including the
+normal finally call and exceptional unwind. The existing 24-byte cleanup
+`0x00641CC2` binds actual source label `$L322`, the full twelve-byte scope at
+`0x00660F00`, and independently replayed 94-byte ArrayUnwind. It gains no
+standalone function name, source or exact bytes.
+
+The mathematical prefixes are accepted only after comparing their entire
+emitted code sections, every complete constituent AUX body and all alignment.
+The log10 section is 336 bytes: C entry / 63, source-emitted NOP / 1,
+`__CIlog10` / 59 and `__CIlog10_default` / 213. The vendor alignment marker
+`_$$$00002` has a zero-length AUX; it is not invented as a one-byte function.
+The default body includes actual global entry `__log10_default` at +20.
+The complete ceil section is 285 bytes: C entry / 64 and SSE body
+`__ceil_pentium4` / 221. Both entire sections and all eighteen/ten fields replay
+before the canonical C extents are reconciled from provisional 152/285 to
+own-AUX 63/64. No prefix-only match earns origin. The target FID cos association
+at `0x00641FD0` is rejected; the actual whole LOG10 data definition at
+`0x0066FF00` and full shared code identify the log10 source family.
+
+Whole alternatives retain distinguishing evidence: atan / 282 has 74
+non-field differences, log / 336 has three, modf / 328 has 223, and floor / 289
+has 33. Equal-shaped C prefixes cannot substitute for complete source bodies.
+Their fields remain excluded only for this negative diagnostic comparison;
+accepted source bodies compare every typed field against independent actual
+code/data provenance.
+
+**Shared entries and ABI.** The log10 SSE intrinsic expands from 24 provisional
+bytes to its own complete 644-byte AUX, including all computation and error
+paths. Existing C entry `0x00648158` / 6 binds global `__log10_pentium4` at +24.
+The existing unnamed 614-byte core `0x0064815E` starts at +30: the intrinsic's
+actual same-section call at +17 targets it, and the six-byte MOVLPD C-entry
+instruction falls through to it. No source symbol is invented for this core.
+Both entries retain blank proposed names and overlap adds no standalone bytes.
+All intra-body branch destinations and all external typed/shared transfers
+must reach instruction starts in complete defining owners.
+
+The vector constructor uses ECX as the element receiver, callback at EBP+20,
+signed count at EBP+16 and stride at EBP+12. Its exceptional cleanup passes the
+current element pointer, completed-element count and separate incoming destructor
+at EBP+24 to reverse unwind; normal completion suppresses that work. RET 20
+retains its five-argument stdcall protocol. Arbitrary incoming callbacks and
+original game element types remain unknown. Qnan2 retains both double operands
+at EBP+12/+20 and the control word at +28. Except2 retains operands +16/+24,
+result +32 and control word +40, including every mask/raise/errno/restoration
+path. Their full exception/name/default-handler graph is retained through R129.
+
+**Dependency closure.** Nine complete auxiliary bodies / 2,723 bytes / 51 fields
+include both log10 intrinsic/default entries, the ceil SSE body, fast_exit,
+complete x87 primitives / 215, exponential dispatch / 519, safe_fdivr / 21,
+fdiv_main_routine / 279 and adj_fdiv_r / 1,183. These unlisted source controls
+do not invent inventory candidates. The existing seven-byte `__rtchsifneg`
+entry `0x00646B43` retains its original R127 acceptance at primitive +208;
+it is replayed without being counted again. Twenty-one independent complete
+anchors / 2,430 bytes / 57 fields retain their historical origins and the full
+R129/runtime/compiler/game/import chain.
+
+Twenty-nine whole defining data sections / 3,133 bytes / 70 typed fields
+include the complete 2,336-byte log10 coefficient carrier, 72-byte ceil constants,
+full literals, scope, cookie, fast flags and initialized default callback.
+`__pmatherr` at `0x0067064C` contains the actual DIR32 pointer to complete
+three-byte `__matherr` at `0x006506C2`; it is not null loader state. All three
+indirect libm error calls use that slot. Later installed callbacks remain
+unknown. The full 90-byte infinity/EXP carrier has four code pointers and
+requires the complete exponential owner and pow helpers. The full 352-byte
+fdiv carrier retains all 64 DIR32 dispatch entries to actual labels inside
+complete adj_fdiv_r; the safe wrapper's unrelocated same-section call retains
+complete fdiv_main_routine. A ten-byte infinity or 21-byte safe-wrapper hit
+alone is insufficient. One four-byte SSE2-enable COMMON has its complete source
+definition and actual loader zero-fill geometry; no guessed initial value or
+truncated table substitutes for the defining storage.
+
+**Compiler observations and limits.** Natural VC7VectorMathParentLayout
+cold-builds thirteen DWORDs / 52 bytes from complete pinned vendor/SDK types:
+pointer/int / 4, double / 8, exception / 32 with both operand/result offsets,
+FP80 / 10, member pointer / 4 and SEH results. Its complete synthetic class
+emits a thirteen-byte member-call control with ECX receiver and RET 8. No
+incomplete game owner is instantiated or embedded. Explicit probe flags and
+VC7.1 build 3077 are reproducibility settings, not an executable-wide compiler
+profile. Vendor assembly COFF bodies supply archive origin evidence; no
+assembly, target byte arrays or conditional matching bodies are added to game
+source.
+
+Thirty-four regression checks reject missing whole carriers/default bodies,
+false alignment credit, truncated tables, wrong callback/operand/control-word
+slots, invented shared symbols, lost COMMON/default-handler bindings and
+recounting the R127 entry. All 517 public checks pass. Canonical totals are
+3,282 resolved (919 authored, 1,788 library, 575 compiler), with 1,069 pending.
+Exact/source/mapping remains 60 / 9,883 bytes; recorded authored extents remain
+872 / 1,952,956 bytes and the provisional denominator remains 1,965,299.
+Local investigation and verification are followed by one final no-auth public
+HTTPS MCP acceptance covering R130 and retained graphs, all authored extents,
+project attestation, progress freshness, 517 tests and whitespace checks.
+All 60 exact units cold-replay across eleven objects. Private evidence stays
+untracked; target, private database, shared tools and game source are preserved.
