@@ -3581,11 +3581,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006425C3,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x00642619,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x006426A1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064274D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064274D,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
 0x00642800,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x0064283A,library,VC71CRT,exclude,complete-vendor-input-format-code-data-seh-nls-api-abi-provenance,R135
 0x00642879,library,VC71CRT,exclude,complete-vendor-input-format-code-data-seh-nls-api-abi-provenance,R135
-0x006428ED,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006428ED,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
 0x00642A2D,library,VC71CRT,exclude,complete-vendor-input-format-code-data-seh-nls-api-abi-provenance,R135
 0x00642A61,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00642AB4,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R120
@@ -3767,9 +3767,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064AC15,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064AFC5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B339,library,VC71CRT,exclude,complete-vendor-heap-source-data-api-and-closed-dependencies,R119
-0x0064B635,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064B6B4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064B749,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064B635,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
+0x0064B6B4,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
+0x0064B749,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
 0x0064B97C,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064B9D2,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064BA4B,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137

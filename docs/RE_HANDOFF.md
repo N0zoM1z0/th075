@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R137. The public
+review cohorts R108 through R138. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,378: 919 authored, 1,884 library and 575 compiler generated.
-There are 973 pending. Candidate count is not authored function count.
+has resolved 3,383: 919 authored, 1,889 library and 575 compiler generated.
+There are 968 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R138 locale snapshot/classification cohort below.
+the bounded R139 floating conversion/operation cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R137; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R138; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R138 locale snapshot/classification graph
+## Next agent objective — R139 floating conversion/operation graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -576,28 +576,47 @@ public checks, target/project attestation and local final acceptance pass;
 all 60 exact units cold-replay across eleven objects. Totals are 3378 resolved
 and 973 pending. The user waived public MCP acceptance on 2026-10-04.
 
-The next bounded cohort is five existing locale snapshot/classification candidates:
+R138 resolves all five locale snapshot/classification roots: five full primaries
+/ 965 bytes / 54 fields. Gettnames retains all 184 record bytes and retargets all
+43 strings in one allocation; concurrent snapshot consistency remains unknown.
+Alpha/alnum preserve masks 259/263, actual thread locale +100, classification
+pointer +72, signed input and full multibyte worker. Forty-eight whole defining
+sections / 2191 bytes / 59 fields and seven independent anchors / 1284 bytes /
+65 fields replay. Memcpy keeps its complete 829-byte code/table partition and
+strcpy its independently retained shared carrier. Natural 132-byte layouts and
+full 26-/67-/67-byte controls preserve real record, copy and classification
+contracts. Replay `scripts/repo-python scripts/verify-locale-snapshot-origins.py`.
+All 799 public checks and local final acceptance pass; all 60 exact units
+cold-replay across eleven objects. Totals are 3383 resolved and 968 pending.
+No source/mapping/exact credit is added. The public MCP acceptance waiver applies.
+
+The next bounded cohort is six existing floating conversion/operation candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0064B635` | 127 | `__Getdays`, own AUX 127 / eight fields | Complete day-string sizing/assembly, time-record fields, actual allocation/string helpers and all exits |
-| `0x0064B6B4` | 149 | `__Getmonths`, own AUX 149 / eight fields | Whole month-string sizing/assembly, actual source loops and day/month pointer arrays, allocation and returns |
-| `0x0064B749` | 563 | `__Gettnames`, own AUX 563 / thirty fields | Full time-record snapshot plus every copied string, pointer relocation/ownership and failed-allocation behavior |
-| `0x0064274D` | 63 | `_isalpha`, own AUX 63 / four fields | Whole thread/locale and character classification contract, real mask and complete table/worker bindings |
-| `0x006428ED` | 63 | `_isalnum`, own AUX 63 / four fields | Full classification graph, actual alpha/digit mask, signed input/EOF behavior and all ABI/data fields |
+| `0x0064F7F0` | 62 | `__atoldbl`, own AUX 62 / four fields | Whole long-double parsing/conversion ABI, actual record widths and complete callee/data/FP graph |
+| `0x00653105` | 76 | `___STRINGTOLD`, own AUX 76 / four fields | Full internal parser contract, real argument/register handling, special/failure paths and every binding |
+| `0x0064E980` | 211 | `__floor_default`, own AUX 211 / nine fields | Whole floating operation, source-defined constants/state, actual dispatcher/error controls and all exits |
+| `0x00643C38` | 235 | `__logb`, own AUX 235 / ten fields | Complete exponent/special-value behavior, FP control/error state, helper ABI and full defining data |
+| `0x00643D23` | 675 | `__nextafter`, own AUX 675 / ten fields | Full adjacent-value branches, signs/exponent/mantissa policies, exceptions and complete helper/constant graph |
+| `0x0064EA53` | 491 | `_ldexp`, own AUX 491 / fifteen fields | Whole exponent scaling, limits/special values, control word/error/callback policies and every typed field |
 
-Use `.analysis/r137-next-time-survey.json` and
-`.analysis/r137-next-time-survey.log` diagnostically. All five complete source
-bodies match outside typed fields; this does not itself grant origin. Getdays,
-Getmonths and Gettnames have zero ordinary Ghidra callers; that does not prove
-unused code or remove callback/export uncertainty. Whole vendor/source/data
-closure must establish origin independently. Preserve full R137 time scopes,
-locale snapshots, actual API dispatch and complete output-bound behavior;
-retain R136 category/enumeration callbacks and all older dependency evidence.
-Do not infer ownership of game parents through reviewed library children.
-Keep hooks/CallSettingFrame, read/write validators and unrelated parents pending
-for later bounded review. Preserve R129's abs ambiguity without selecting an
-indistinguishable alternative.
+Use `.analysis/r138-next-math-survey.json` and
+`.analysis/r138-next-math-survey.log` diagnostically. All six complete source
+bodies match outside typed fields; independently close every binding before
+accepting origin. The broader `.analysis/r138-next-crt-survey.json` preserves
+other full-AUX diagnostic associations, including conflicting operation wrappers
+and substantial provisional-extent mismatches. Do not treat its masked fields,
+names or source extents as accepted ownership. In particular, CIacos 20/203,
+CIpow_pentium4 25/2886 and equal-shaped CIatan/log/log10/pow and modf/floor/ceil
+wrappers require their own complete owner, shared-tail/table and actual operation
+provenance. Preserve R129's abs ambiguity and all earlier explicit/implicit
+lifetime alternatives. New natural FP type/ABI probes must use real pinned
+vendor/SDK declarations; no target byte arrays, assembly matching bodies, fake
+returns or executable-wide compiler profile. Retain the complete R138/R137
+snapshot, classification, time, locale and older runtime graphs. Keep
+hooks/CallSettingFrame, read/write validators and unrelated parents pending for
+later bounded review without automatic game-parent origin from library children.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -613,7 +632,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R138 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R139 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -970,7 +989,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R138 locale snapshot/classification cohort described above. F008 and F009 remain
+Continue the bounded R139 floating conversion/operation cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

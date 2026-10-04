@@ -4084,3 +4084,105 @@ objects. On 2026-10-04 the user waived public MCP acceptance to accelerate
 continued review; R137 uses local final verification. Existing no-auth route
 and private path remain unchanged. Private evidence stays untracked and shared
 tools read-only.
+
+## R138 — Complete locale time snapshots and classification graph
+
+R138 resolves all five locale snapshot/classification handoff candidates:
+five complete library primaries / 965 bytes / 54 typed fields. Replay
+`scripts/repo-python scripts/verify-locale-snapshot-origins.py`; its manifest
+is `config/locale-snapshot-origin-evidence.json`. Every primary retains its
+complete own AUX, source member, branches, exits and independently bound fields.
+No source, mapping or exact reconstruction credit is added. No new auxiliary,
+interior, COMMON or exception-scope inventory entries are fabricated.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__Getdays` | `0x0064B635` | 127 | 8 |
+| `__Getmonths` | `0x0064B6B4` | 149 | 8 |
+| `__Gettnames` | `0x0064B749` | 563 | 30 |
+| `_isalpha` | `0x0064274D` | 63 | 4 |
+| `_isalnum` | `0x006428ED` | 63 | 4 |
+
+**Target observations and source behavior.** Getdays sizes all seven abbreviated
+and full weekday names, adds two separators per pair and one final NUL, then
+allocates and assembles the complete colon-delimited result. Getmonths performs
+the corresponding complete twelve-month sizing and copy loops. Both preserve
+null-allocation returns, real strlen/strcpy dependencies, all separator writes
+and final termination. Their runtime strings and resulting allocation lengths
+remain unknown. Ordinary Ghidra caller counts for all three time snapshot
+owners are zero; this does not establish unused code or callback/export status.
+
+Gettnames sizes all 43 strings: fourteen weekday names, twenty-four month
+names, two AM/PM names and three date/time formats, including their terminators.
+It allocates the whole time record / 184 plus the complete string storage,
+copies all 184 bytes through the real memcpy and retargets every pointer into
+that single allocation. All seven/twelve loops, five trailing pointer copies,
+allocation failure and final return remain inside its full 563-byte owner.
+The record's LCID, calendar type and refcount are copied with the other fields;
+no artificial refcount reset or incomplete object copy is introduced. The
+source uses a captured pointer to size/copy strings but reads the current global
+again for the record copy. This is the original behavior, without a guarantee
+of an atomic or coherent snapshot during concurrent locale mutation. Runtime
+pointer values, record contents, allocations and ownership consumers are unknown.
+
+Isalpha and isalnum retain their complete 63-byte bodies and both returns.
+Each reads the thread's locale at `_tiddata` +100, compares the actual global
+locale pointer and calls the complete independent update worker when needed.
+For mb_cur_max at locale +40 greater than one, each calls the full isctype_mt
+worker with the actual locale, original signed integer input and mask, then
+removes twelve caller bytes. Otherwise it uses the locale's pctype at +72,
+loads the unsigned short classification indexed by the original integer and
+applies the same mask. Alpha uses `_ALPHA` / 259 / 0x103; alnum uses
+`_ALPHA | _DIGIT` / 263 / 0x107. These are classification bit results, without
+Boolean normalization or added input-range checks. The natural header control
+retains EOF / -1; arbitrary invalid input behavior is not redefined. Runtime
+locale, byte width and returned classification remain unknown.
+
+**Complete data and independent dependencies.** Forty-eight whole defining
+sections / 2191 bytes / 59 typed fields retain the complete C time record /
+184 and its 43 original pointer fields at offsets 0 through 168. All original
+strings, full initial-locale/cache carrier / 403, whole CTYPE carrier / 1284,
+C lconv/default carrier and current-time pointer retain actual defining COFF
+identities, source/target hashes, mutability and all recursively bound fields.
+The initial locale's full source-defined pointer topology is preserved without
+splitting convenient prefixes or claiming post-startup pointer contents.
+
+Seven complete independent anchors / 1284 bytes / 65 fields preserve their
+prior origins: strlen, malloc, strcpy, memcpy, getptd, locale update and the
+isctype_mt worker. The seven-byte strcpy entry still depends on the entire
+248-byte shared strcpy/strcat carrier through independent R116 evidence.
+Memcpy retains its full R025 829-byte own AUX, seven code regions / 709 bytes
+and six complete embedded tables / 120 bytes. Every defining table label,
+actual code case start and typed field replays. Its full partition is retained,
+rather than decoding data as instructions or shortening the owner. All new
+primaries use direct calls and branches; no unexplained indirect dispatch is
+added. The entire R137 locale/time parent graph and retained R136/R135
+category, enumeration, SDK, SEH, FP, stream, handle, heap and lifetime chains
+replay. Reviewed library children do not grant origin to game parents.
+
+**Compiler observations and local acceptance.** The natural probe
+`probes/VC7LocaleSnapshotLayout.cpp` cold-builds a complete 132-byte layout array.
+It establishes the full time / 184 and every field/array size, all 43 pointers,
+thread locale / 84, thread / 140, actual locale/classification offsets,
+unsigned-short width / 2, distinct alpha/alnum masks and EOF / -1. The complete
+26-byte copy control passes the real memcpy symbol and 184-byte count and
+retains twelve-byte cdecl caller cleanup. Two complete 67-byte controls use
+the original header's alpha/alnum macros, actual multibyte worker declaration,
+mask, table load and twelve-byte cdecl cleanup. These are type/ABI controls,
+without target reconstruction exact credit. Three complete vendor sources and
+nine pinned headers replay. VC7.1 build 3077 and explicit flags are per-probe
+reproducibility settings, without an executable-wide compiler-profile claim.
+
+Twenty-eight regression checks reject truncated owners, invented scope/interior
+credit, incomplete time/locale/CTYPE carriers, missing strings, wrong masks,
+EOF/width/offset mistakes, guessed runtime snapshot consistency, incorrect copy
+or worker contracts, unexplained indirect calls and incomplete memcpy partitions.
+All 799 public checks pass. Canonical totals are 3383 resolved (919 authored,
+1889 library, 575 compiler), with 968 pending. Exact/source/mapping remains
+60 / 9883 bytes; recorded authored extents remain 872 / 1952956 bytes and the
+provisional denominator is 1965299. Complete new and retained origin replay,
+canonical ledger guards, target/project/query attestation, authored extents,
+progress/scanner freshness, tests and whitespace checks pass locally. All 60
+exact units cold-replay across eleven objects. The user's 2026-10-04 waiver of
+public MCP acceptance remains in force. Private evidence stays untracked and
+shared tools read-only.
