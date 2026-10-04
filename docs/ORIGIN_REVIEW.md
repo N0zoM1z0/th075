@@ -6437,3 +6437,102 @@ MCP acceptance replays R132 and retained graphs, authored extents, project
 attestation, progress freshness, 588 tests and whitespace checks. All 60 exact
 units cold-replay across eleven objects. Investigation and intermediate checks
 use local tools; private evidence stays untracked and shared tools read-only.
+
+## R133 — Complete stream buffering, character pushback and close wrapper
+
+R133 resolves all six stream buffer/close handoff roots and one existing cleanup
+entry: six complete library primaries / 879 bytes / 29 typed fields and an
+eight-byte overlapping cleanup. Replay
+`scripts/repo-python scripts/verify-stream-buffer-origins.py`; the whole manifest
+is `config/stream-buffer-origin-evidence.json`. Every primary retains its entire
+own COFF AUX from the hash-pinned libcmt.lib. No source, mapping or exact credit
+is added. Reviewed low-level callees alone establish none of these origins.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__filbuf` | `0x0065163C` | 225 | 4 |
+| `__flsbuf` | `0x006443FE` | 281 | 9 |
+| `__getbuf` | `0x0064F01B` | 68 | 2 |
+| `__isatty` | `0x0064F05F` | 42 | 2 |
+| `__ungetc_lk` | `0x0065171D` | 108 | 1 |
+| `__close` | `0x006548B8` | 155 | 11 |
+
+**Target behavior and complete boundaries.** The refill parent retains stream
+access/string checks, allocation/reuse, read count, EOF/error distinction,
+control-Z policy, small-buffer restoration, unsigned narrow-byte return and
+both complete returns. Its safe-handle branch uses the entire badioinfo object
+when FILE._file is -1. The flush parent retains read-to-write switching only at
+EOF, stdout/stderr device handling, buffer allocation, buffered write, append
+seek for an empty buffer, single-character output, short-write error and the
+unsigned-byte return. Both paths bind the actual complete R132 read/write/seek
+parents. Neither formatting caller gains origin through this association.
+
+Getbuf increments the actual cflush state, requests 4096 bytes from the complete
+reviewed malloc wrapper and preserves its allocation-failure branch. The
+fallback points at FILE._charbuf / +20, with runtime buffer size two; the
+underlying integer field occupies four bytes. Isatty uses unsigned bounds,
+shift 5 / mask 31 and 36-byte handle stride. It returns raw FDEV / 0x40 or zero,
+not a normalized boolean and not an errno-setting invalid-handle failure.
+Pushback rejects EOF and incompatible stream modes, allocates when needed,
+preserves buffer-limit checks, compares and rolls back pointers for a string
+stream without writing that source buffer, and writes the character only on
+the ordinary-buffer branch. Success increments count, clears EOF, sets READ
+and returns the unsigned byte.
+
+The whole 155-byte close wrapper retains validation, locking, second FOPEN
+check, close_lk call, error cases, finally cleanup and complete SEH epilog.
+Its existing eight-byte cleanup `0x0065492F` is the actual `$L20316` label at
++119; the complete twelve-byte scope points at `$L20314` / +116, including
+three bytes that reload the handle before the label. Both source definitions
+and actual instruction starts replay. The initial invalid-handle branch clears
+OS errno; the post-lock FOPEN failure sets EBADF and preserves the distinct
+source behavior. Cleanup names remain blank and overlapping bytes earn no
+standalone source or exact credit. Every branch, exit, indirect instruction,
+code/data/EH field and direct external edge is checked against the full source.
+
+**Whole data, loader and retained graph.** Four complete defining sections /
+692 bytes / three DIR32 fields comprise badioinfo / 36, all twenty FILE records
+/ 640, cflush / 4 and the close scope / 12. Both stdin pointer/base fields bind
+the entire input-buffer COMMON / 4096. Stdout/stderr comparisons bind actual
+__iob addends +32/+64. The source's stale stderr index comment does not override
+the observed third record / index two. Initial FILE flags, handles, buffer size,
+pointers and all seventeen unused records replay; runtime stream state remains
+unknown. Badioinfo preserves handle -1, FTEXT / 128, pipe lookahead / 10 and
+complete lock/padding storage. Cflush is a full defining BSS section, correcting
+the prior diagnostic COMMON association; its actual loader zero-fill geometry
+replays. The source explains its link retention of stdio termination, while
+complete initializer/terminator registrations retain R125 evidence.
+
+Three complete COMMON declarations / 4356 bytes retain the input buffer / 4096,
+all 64 handle-array pointers / 256 and nhandle / 4. All loader-zero spans remain
+in the actual writable PE region; runtime allocated handle arrays are unknown.
+Eleven complete anchors / 950 bytes / 62 fields retain independent origins and
+replay the entire R132 code/data/API/EH/ABI chain, including R125 initialization.
+These anchors and their existing cleanup entries receive no new origin credit.
+No table prefix, guessed pointer or shape-only library name replaces complete
+source definition and actual target binding.
+
+**Compiler observations and limits.** Natural VC7StreamBufferLayout cold-builds
+53 DWORDs / 212 bytes with complete pinned FILE / 32 and all eight fields,
+20-record array / 640, char / 1, wchar_t / 2, buffer sizes, flags, complete
+ioinfo / 36, critical section / 24, thread / 140 and error slots +8/+12. Its
+13-byte narrow-byte load control uses MOVZX from one byte through FILE._ptr;
+its 21-byte pushback call control preserves the actual __ungetc_lk REL32
+symbol, parameter order and eight-byte caller cleanup. Both whole own AUX
+bodies and every instruction replay. Eight vendor source files and eight
+headers remain hash-pinned. These controls do not instantiate any incomplete
+game owner or earn reconstruction exact credit. Explicit flags and VC7.1 build
+3077 remain reproducibility settings, without an executable-wide profile claim.
+
+Thirty-three regression checks reject truncated source owners, misbound cleanup,
+incomplete FILE/input/handle/BSS objects, lost stdin fields or stdout/stderr
+addends, wide-byte substitutions, incorrect pushback ABI and changed initial
+records. All 621 public checks pass. Canonical totals are 3,327 resolved
+(919 authored, 1,833 library, 575 compiler), with 1,024 pending. Exact/source/
+mapping remains 60 / 9,883 bytes; recorded authored extents remain 872 /
+1,952,956 bytes and the provisional denominator remains 1,965,299. One final
+no-auth public HTTPS MCP acceptance replays R133 and retained graphs, authored
+extents, target/project attestation, progress freshness, 621 tests and whitespace
+checks. All 60 exact units cold-replay across eleven objects. Investigation
+and intermediate verification use local tools; private evidence stays
+untracked and shared tools remain read-only.

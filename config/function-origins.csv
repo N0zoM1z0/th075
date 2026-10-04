@@ -3634,7 +3634,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00644331,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00644343,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x006443ED,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R120
-0x006443FE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006443FE,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
 0x00644517,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064454A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064456E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3816,8 +3816,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064EDA2,library,VC71CRT,exclude,complete-vendor-low-io-code-data-api-eh-abi-provenance,R132
 0x0064EF70,library,VC71CRT,exclude,complete-vendor-low-io-code-data-api-eh-abi-provenance,R132
 0x0064EFF7,library,VC71CRT,exclude,interior-cleanup-in-complete-vendor-low-io-primary,R132
-0x0064F01B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F05F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F01B,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
+0x0064F05F,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
 0x0064F1F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F250,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064F280,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
@@ -3868,8 +3868,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0065151B,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x0065152C,library,VC71CRT,exclude,complete-vendor-environment-commandline-pe-startup-code-data-api-eh-provenance,R126
 0x006515F3,library,VC71CRT,exclude,complete-vendor-environment-commandline-pe-startup-code-data-api-eh-provenance,R126
-0x0065163C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0065171D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0065163C,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
+0x0065171D,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
 0x006517CE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065188E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006518B9,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
@@ -3921,8 +3921,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006545FF,library,VC71CRT,exclude,complete-vendor-time-zone-calendar-environment-code-data-api-eh-abi-provenance,R131
 0x00654660,library,VC71CRT,exclude,complete-vendor-time-zone-calendar-environment-code-data-api-eh-abi-provenance,R131
 0x00654835,library,VC71CRT,exclude,complete-vendor-low-io-code-data-api-eh-abi-provenance,R132
-0x006548B8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0065492F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006548B8,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
+0x0065492F,library,VC71CRT,exclude,interior-cleanup-in-complete-vendor-stream-buffer-primary,R133
 0x00654953,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0065497E,library,VC71CRT,exclude,complete-vendor-time-zone-calendar-environment-code-data-api-eh-abi-provenance,R131
 0x00654ACE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

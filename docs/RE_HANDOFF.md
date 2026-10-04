@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R132. The public
+review cohorts R108 through R133. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,320: 919 authored, 1,826 library and 575 compiler generated.
-There are 1,031 pending. Candidate count is not authored function count.
+has resolved 3,327: 919 authored, 1,833 library and 575 compiler generated.
+There are 1,024 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R133 stream buffer/close cohort below.
+the bounded R134 output formatting cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R132; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R133; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R133 stream buffer/close graph
+## Next agent objective — R134 output formatting graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -503,28 +503,46 @@ explicit. Cold natural controls establish ioinfo / 36, lock / 24, thread error
 offsets +8/+12 and cdecl EDX:EAX return. Replay
 `scripts/repo-python scripts/verify-low-io-origins.py`. All 588 public checks and
 one final public MCP acceptance pass; all 60 exact units cold-replay across
-eleven objects. The new total is 3,320 resolved, with 1,031 pending.
+eleven objects. The R132 checkpoint was 3,320 resolved, with 1,031 pending.
 
-The next bounded cohort is six existing stream buffer/close candidates:
+R133 resolves all six stream buffer/close roots and one existing eight-byte
+cleanup: six complete primaries / 879 bytes / 29 fields. Close retains its full
+155-byte AUX, actual +116 scope entry and +119 cleanup label. All twenty FILE
+records / 640, badioinfo / 36, defining cflush BSS / 4 and full scope / 12 replay.
+Three COMMON declarations cover input buffer / 4096, handle pointers / 256 and
+nhandle / 4. Natural controls verify complete FILE / 32, field offsets, inline
+fallback, narrow-byte return and typed cdecl pushback call. Eleven complete
+anchors retain the whole R132/R125 code/data/API/EH graph. Replay
+`scripts/repo-python scripts/verify-stream-buffer-origins.py`. All 621 public
+checks and one final public MCP acceptance pass; all 60 exact units cold-replay
+across eleven objects. Canonical totals are 3,327 resolved, with 1,024 pending.
+
+The next bounded cohort is six existing output formatting candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0065163C` | 225 | `__filbuf`, own AUX 225 / four fields | Whole FILE/handle state, bad-handle carrier, getbuf/read dependencies and every exit |
-| `0x006443FE` | 281 | `__flsbuf`, own AUX 281 / nine fields | Entire stream buffering policy, complete iob/badioinfo definitions, actual write/seek/isatty dependencies |
-| `0x0064F01B` | 68 | `__getbuf`, own AUX 68 / two fields | Whole cflush COMMON definition, allocation dependency and fallback inline character storage |
-| `0x0064F05F` | 42 | `__isatty`, own AUX 42 / two fields | Actual complete handle bounds, geometry, FDEV and source ABI |
-| `0x0065171D` | 108 | `__ungetc_lk`, own AUX 108 / one field | Full FILE buffer/pushback/EOF policy and actual getbuf dependency |
-| `0x006548B8` | 155 | `__close`, own AUX 155 / eleven fields | Entire lock/EH wrapper, complete scope/cleanup entry and actual close/error/handle owners |
+| `0x006404F0` | 88 | `_sprintf`, own AUX 88 / two fields | Whole synthetic FILE setup, varargs ABI, output and terminating-byte/error behavior |
+| `0x00640548` | 49 | `__scprintf`, own AUX 49 / one field | Entire counting-stream policy and actual complete output parent |
+| `0x0064254D` | 87 | `__snprintf`, own AUX 87 / two fields | Complete bounded string stream, varargs/count/termination policy and typed dependencies |
+| `0x006425C3` | 86 | `__vsnprintf`, own AUX 86 / two fields | Actual va_list ABI, full buffer/count/error paths and source fields |
+| `0x00644517` | 51 | `_write_char`, own AUX 51 / one field | Entire narrow-character helper, counter/stream state and full flsbuf binding |
+| `0x0064456E` | 55 | `_write_string`, own AUX 55 / one field | Actual complete defining output parent/local helper, all loop/error/return paths |
 
-Use `.analysis/r132-next-stream-survey.json` and
-`.analysis/r132-next-stream-survey.log` diagnostically. All six whole source
-bodies match outside their fields; no origin follows from those diagnostic
-matches or already-reviewed low-level callees. Preserve complete R125 I/O
-initialization and R132 low-level data/code/EH provenance. Reconcile the actual
-existing close cleanup and every defining FILE/badioinfo/COMMON object before
-acceptance. Keep hooks/CallSettingFrame, output/input formatting parents and
-the separate read/write validators pending for later bounded review. Preserve
-R129's abs ambiguity without promoting an equal source alternative.
+Use `.analysis/r133-next-format-survey.json` and
+`.analysis/r133-next-format-survey.log` diagnostically. These six complete
+source bodies match outside fields; no origin follows from that diagnostic
+fact. The actual output dependency is `0x006445C4` / provisional 2010 bytes.
+Its diagnostic own AUX is 2042 bytes with 34 fields, including a complete
+eight-entry DIR32 dispatch table / 32 bytes at +2010. Retain all code and table
+bytes; this is pending evidence in `.analysis/r133-output-parent-survey.json`.
+Its complete dispatcher/tables, width/precision/type conversion, actual
+local write_multi_char and other dependencies must close before accepting the
+wrappers. The archive includes multiple differently sized local write helpers;
+preserve actual full parent/source definitions rather than selecting by name
+or masked shape. Preserve R133's whole FILE/badioinfo/COMMON and R132's entire
+low-level graph. Keep the input-formatting parent, hooks/CallSettingFrame,
+read/write validators and other locale parents pending for later bounded review.
+Preserve R129's abs ambiguity without promoting an equal source alternative.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -540,7 +558,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R133 adds no exact scope. Update
+private path and 60-function exact baseline. R134 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -897,7 +915,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R133 stream buffer/close cohort described above. F008 and F009 remain
+Continue the bounded R134 output formatting cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.
