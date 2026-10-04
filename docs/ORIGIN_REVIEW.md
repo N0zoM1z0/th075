@@ -10619,3 +10619,67 @@ remains 60 functions / 9883 bytes with provisional coverage
 9883 / 1967206 (0.50%). No reconstructed source/private ABI/mapping/exact credit
 is added. Public MCP acceptance remains waived; the full remaining-origin goal
 is active and unfinished. Continue with fresh whole resource-operation context.
+
+## R179 — music catalog transformation and readable-file registration
+
+Two complete authored policies / 431 bytes are accepted: `0x00427300` / 298 and
+`0x0041D6C0` / 133. Replay
+`scripts/repo-python scripts/verify-file-resource-policy-origins.py` with
+immutable `config/file-resource-policy-origin-evidence.json`.
+
+Target observation: the first policy opens literal `musicroom.csv`, obtains
+its size, allocates byte storage, reads and closes the input. It creates
+`musicroom.dat`, transforms each byte with an evolving XOR mask initialized to
+0x5C and step 0x5A, adds that step to the mask and increments the step by 0x3D,
+then writes and closes the output. Both file-open failure branches, the entire
+unsigned loop and final array deletion are retained. The independent whole
+R066 game catalog loader / 916 bytes reads its own `musicroom.dat` literal at
+`0x00657C80` and uses the same mask/step/increment before parsing game records.
+This is game resource policy evidence, rather than ownership inferred from
+file APIs or a short XOR shape alone. Names remain inferred.
+
+The second policy checks whether the supplied file can be opened, records its
+size, copies its name, closes the handle and appends the full record to the
+archive list at owner +4. Complete R169 source evidence establishes value/node
+widths 108/116. The record pointer passed from stack -0x78 includes the filename
+region, size at record +100 and zero-initialized field at +104; these are copied
+data, not inert locals. The full original R053 archive registration / 245 and
+R052 archive index reader / 429 provide independent project ownership context.
+The list insertion, array allocation/deallocation, strcpy and security-cookie
+helper retain their separate accepted library origins. Every real import slot
+is verified against the PE directory.
+
+Compiler/source observation: complete natural small-owner methods emit 298 and
+130 bytes / 428 total. These are operation controls, not target-byte positives.
+The whole 298-byte music source negative binds all eleven genuine code/data
+fields and retains 33 differences; equal length does not earn a match. Complete
+14-byte CSV/DAT source strings compare independently and their exact fields
+bind to the two actual target string locations. The 133-byte registration
+extent is never truncated to the 130-byte source control. Its complete source
+record includes both metadata fields, with sizeof 108 and list sizeof 12 as
+source observations. Original full owner layout, original record spelling and
+meaning of the zero-initialized field remain unknown; no padding or incomplete
+original owner is introduced.
+
+All 86 ordinary source sections / 4266 bytes, 28 actual SDK headers and the whole
+16-byte readonly layout are frozen. Both entire methods retain their own full
+primary AUX extent. The verifier preserves 143 complete canonical/body
+snapshots, 40 protected unknowns, three whole authored anchors / 1590 bytes with
+all original guarded switch records, and four full R169 archive/list records.
+The earlier R169 80-control / 3752-byte closed source graph with 189 genuine
+fields cold-replays unchanged. Evidence-only cold replay precedes canonical
+mutation; accepted-state cold replay, complete authored validation, target/
+tracking, fresh scanning and local Ghidra attestation pass. Strict R178 HEAD
+9f31228 readback permits exactly two function/origin changes and two complete
+new authored records, preserving all 889 prior rows/order and every earlier
+configuration. Thirty-seven new regression guards and all 2068 public checks
+pass; progress and whitespace checks pass. All exact inputs remain unchanged,
+so the earlier R139 cold 60/60 replay across eleven objects remains applicable.
+
+Totals are 3624 resolved (938 authored, 2111 library, 575 compiler), 727 pending
+and 2686 excluded. Authored evidence totals 891 whole bodies / 1955294 bytes.
+Exact remains 60 functions / 9883 bytes with provisional coverage
+9883 / 1967637 (0.50%). No reconstructed source/private ABI/mapping/exact credit
+is added. Public MCP acceptance remains waived; the full remaining-origin goal
+is active and unfinished. The next bounded cohort investigates two directional
+binding copies, explicit queue cleanup and archive construction defaults.

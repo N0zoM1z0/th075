@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R178. The public
+review cohorts R108 through R179. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,61 +11,63 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,622: 936 authored, 2,111 library and 575 compiler generated.
-There are 729 pending. Candidate count is not authored function count.
+has resolved 3,624: 938 authored, 2,111 library and 575 compiler generated.
+There are 727 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,967,206 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,967,637 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R179 resource-operation cohort below.
+the bounded R180 binding/owner-policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R178; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R179; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R179 resource-operation context
+## Next agent objective — R180 binding and container-owner policies
 
-R178 accepts two entire explicit construction/raster lifetime policies / 271
-bytes. Replay
-`scripts/repo-python scripts/verify-remaining-lifetime-policy-origins.py`.
-The game roots have full native operation/control-flow evidence and seven
-complete small-owner source controls / 457 bytes, with no target-source
-positive or reconstruction credit. A full 129-byte unmasked source negative
-retains four genuine fields and three actual storage-offset differences.
-The separate 27-byte interface Release `0x004170B0` is byte-equal to two whole
-explicit/ordinary source alternatives and remains unknown. All 119 ordinary
-sections / 5446 bytes, 28 actual SDK headers, 48-byte readonly layout, 133 full
-snapshots, 40 protected unknowns, five prior records, one full EH frame and
-three entire authored anchors / 531 bytes remain frozen. Earlier R177 evidence
-cold-replays unchanged. Strict R177 09fccb7 readback preserves all 887 prior
-authored rows and adds two complete records. All 2031 public checks pass.
-Authored evidence totals 889 bodies / 1954863 bytes. All sixty exact units and
-their inputs are preserved. Public MCP acceptance remains waived; the full
+R179 accepts two entire game file policies / 431 bytes. Replay
+`scripts/repo-python scripts/verify-file-resource-policy-origins.py`.
+Whole musicroom.csv/dat transformation and independent 916-byte game loader
+share actual mask 0x5C, step 0x5A and increment 0x3D. The readable-file policy
+copies the complete 108-byte archive record, including size and initialized
+metadata, through the unchanged R169 list graph. Two whole natural source
+methods / 428 bytes supply operation evidence; neither has a target-byte
+positive. The full 298-byte source negative retains all eleven actual fields
+and 33 differences. The 133-byte target is never shortened to its 130-byte
+source control. Complete source strings, all 86 ordinary sections / 4266 bytes,
+28 actual SDK headers, 16-byte readonly layout, 143 full snapshots, 40 protected
+unknowns, three authored anchors / 1590 bytes and four R169 records are frozen.
+Earlier R169 source evidence cold-replays. Strict R178 9f31228 readback preserves
+all 889 prior authored rows and adds two full records. All 2068 public checks
+pass. Authored evidence totals 891 bodies / 1955294 bytes; all sixty exact units
+and inputs are preserved. Public MCP acceptance remains waived; the full
 remaining-origin goal is active and unfinished.
 
-The fresh `.analysis/origin-scan/r178-triage.json` has 729 pending. The next
-bounded diagnostic cohort is two resource-operation candidates / 431 provisional
-bytes. These are candidates, not promised acceptances:
+The fresh `.analysis/origin-scan/r179-triage.json` has 727 pending. The next
+bounded diagnostic cohort has four candidates / 343 provisional bytes:
 
-| Candidate | Entire provisional bytes | Independent context to investigate |
+| Candidate | Entire provisional bytes | Independent original context |
 | --- | ---: | --- |
-| `0x00427300` | 298 | seven actual indirect calls and two library calls; resolve actual imports, game/global/resource policy and full control flow before granting ownership |
-| `0x0041D6C0` | 133 | three actual indirect calls and three library calls; reconcile full operation/guard/exit and independent original resource-policy context |
+| `0x00416E20` | 84 | full authored `0x0042A180` caller; actual eight-byte copy from working data +0x16A94 into the selected nested record, retaining signed selectors and all strides |
+| `0x00416E80` | 85 | full authored `0x0042A340` caller; actual reversed eight-byte copy using the same nested selectors and member offsets |
+| `0x004204D0` | 84 | full R045 `0x00456910` parent; distinguish explicit member clear at +0x7D0 from automatic destruction and retain whole registered EH context |
+| `0x0041D190` | 90 | full R053 `0x0041CF80` parent; distinguish explicit zero/default and post-construction list clear from generated member construction |
 
-Read original evidence and full call/data fields, actual indirect destinations,
-parent registrations, EH and shared tails before proposing origin. A library
-child, short wrapper or nearby game function grants no ownership. Preserve all
-protected lifetime/interface/math/getter/destruction uncertainties and earlier
-accepted rows. Do not instantiate incomplete original owners or add exact scope.
+These are candidates, not promised acceptances. Read all native operations,
+complete original parents and source/implicit alternatives before deciding
+ownership. Preserve original SDK aliases and unknown complete game layouts.
+Do not instantiate incomplete original owners or add exact-reconstruction scope.
+Keep every protected lifetime/interface/math/getter/destruction uncertainty and
+all older accepted evidence unchanged.
 
 ## R165 checkpoint and the completed R166 shortlist
 
