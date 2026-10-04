@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R153. The public
+review cohorts R108 through R154. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,459: 922 authored, 1,962 library and 575 compiler generated.
-There are 892 pending. Candidate count is not authored function count.
+has resolved 3,462: 922 authored, 1,965 library and 575 compiler generated.
+There are 889 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R154 allocation/delete runtime cohort below.
+the bounded R155 short CRT provenance cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R153; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R154; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R154 complete allocation/delete runtime provenance
+## Next agent objective — R155 complete short CRT provenance
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -802,26 +802,39 @@ Replay `scripts/repo-python scripts/verify-script-buffer-origins.py`.
 All 1244 public checks pass. Totals are 3459 resolved and 892 pending;
 the 60-function exact baseline and R139 cold proof remain preserved.
 
-The next bounded R154 cohort is three retained unknown CRT candidates exposed
-by the complete buffer allocation/release context:
+R154 resolves all three allocation API candidates / 24 bytes as library.
+Complete new.obj, delete2.obj and new2.obj own-AUX bodies compare unmasked
+through every actual typed field and complete independent runtime owner.
+Eight natural SDK call controls / 196 bytes and nine whole ordinary code/data
+sections / 212 bytes, including a complete 16-byte observation layout and
+eight actual headers, cold-build. Complete R120 allocation/handler/data/API/EH
+provenance and retained source dependencies replay, followed by full R153
+buffer lifetime source profiles and game contexts. Existing accepted owners
+retain original evidence and boundaries. Replay
+`scripts/repo-python scripts/verify-allocation-api-origins.py`.
+All 1263 public workflow checks pass. Totals are 3462 resolved and 889 pending;
+all 60 exact functions and R139 cold proof remain preserved.
 
-| Candidate | Complete provisional extent | Actual source/target context |
+The next bounded R155 cohort is five retained unknown CRT candidates:
+
+| Candidate | Complete provisional extent | Actual full-source diagnostic |
 | --- | ---: | --- |
-| `0x0064169D` | 5 | whole delete2.obj array-delete source, member 854462; typed scalar-delete tail to accepted `0x00640F15` |
-| `0x0064159D` | 14 | whole new.obj source, member 856822; actual new-handler-enabled call to accepted `0x00644305` |
-| `0x006416A2` | 5 | whole new2.obj array-new source, member 858348; typed scalar-new tail to `0x0064159D` |
+| `0x006426A1` | 5 | atox.obj member 157246, own-AUX `_atoi`; actual typed tail to accepted whole R123 `_atol` / 136 bytes at `0x00642619` |
+| `0x00643FC6` | 21 | ieeemisc.obj member 2915526, own-AUX `__finite`; full exponent-mask and return protocol |
+| `0x0064554E` | 27 | exsup3.obj member 1221154, own-AUX `__seh_longjmp_unwind@4`; actual typed call to accepted whole R025 `__local_unwind2` / 104 bytes |
+| `0x0064F513` | 12 | intrncvt.obj member 2436458, own-AUX `__FillZeroMan`; full three-word destination/return protocol |
+| `0x00651D44` | 27 | xtoa.obj member 232636, own-AUX `__ui64toa`; actual typed call to accepted whole R007 `_x64toa@20` / 109 bytes |
 
-The array-delete complete non-accepting control already compares unmasked in
-R153; preserve its whole source and both accepted scalar-delete/free owners.
-The private complete new.obj survey finds a 14-byte own-AUX association with
-zero non-field differences. It is diagnostic, not acceptance: independently
-verify its real __nh_malloc field and the entire existing allocation/handler
-provenance before considering either new origin. Trace the full parser
-allocation/store/use/release and actual typed source operation; same-shaped
-five-byte tails, imported names or reviewed children alone do not classify
-these owners. Preserve complete extents and exact original SDK fields, and
-keep runtime execution/input/allocation outcomes unknown. No source, ABI,
-mapping or exact credit is authorized.
+Private `.analysis/r154-next-crt-survey.json` and the complete atoi diagnostic
+are non-accepting source associations. Reconcile whole target control flow,
+all return/tail/adjacent alignment, complete own source extents and every actual
+field independently. Establish genuine SDK/source operation and whole actual
+parent/callee context, including defining layout/data/API/EH where used;
+prior names, byte equality or reviewed children alone grant no origin.
+Preserve original accepted owners and all R129 abs/labs versus authored
+expression ambiguity, including the second identical 11-byte candidate at
+`0x00641FB8`. Do not recover private game layouts or infer live runtime inputs
+or outcomes from synthetic source controls. No exact scope is authorized.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -873,7 +886,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R154 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R155 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

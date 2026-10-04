@@ -1,0 +1,1104 @@
+{
+  "evidence_id": "R154",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+  "functions": [
+    {
+      "address": "0x0064159D",
+      "symbol": "??2@YAPAXI@Z",
+      "size": 14,
+      "span_end": "0x006415AA",
+      "decision": "library",
+      "member_offset": 856822,
+      "member": "build\\intel\\mt_obj\\new.obj",
+      "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+      "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+      "body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1",
+      "fields": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305"
+        }
+      ],
+      "instructions": [
+        {
+          "address": "0x0064159D",
+          "mnemonic": "push",
+          "operands": "1"
+        },
+        {
+          "address": "0x0064159F",
+          "mnemonic": "push",
+          "operands": "dword ptr [esp + 8]"
+        },
+        {
+          "address": "0x006415A3",
+          "mnemonic": "call",
+          "operands": "0x644305"
+        },
+        {
+          "address": "0x006415A8",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "address": "0x006415A9",
+          "mnemonic": "pop",
+          "operands": "ecx"
+        },
+        {
+          "address": "0x006415AA",
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ]
+    },
+    {
+      "address": "0x0064169D",
+      "symbol": "??_V@YAXPAX@Z",
+      "size": 5,
+      "span_end": "0x006416A1",
+      "decision": "library",
+      "member_offset": 854462,
+      "member": "build\\intel\\mt_obj\\delete2.obj",
+      "member_sha256": "1ac42bded9e809b131e127aeb9598128ea4ea51af632eb2b81c160600f03e55f",
+      "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "body_sha256": "d9f3d12506c5c97b604a9649002734d198d91824fe702c7b21ea7682434efec0",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "instructions": [
+        {
+          "address": "0x0064169D",
+          "mnemonic": "jmp",
+          "operands": "0x640f15"
+        }
+      ]
+    },
+    {
+      "address": "0x006416A2",
+      "symbol": "??_U@YAPAXI@Z",
+      "size": 5,
+      "span_end": "0x006416A6",
+      "decision": "library",
+      "member_offset": 858348,
+      "member": "build\\intel\\mt_obj\\new2.obj",
+      "member_sha256": "ab2ded9b6cb6f55ac7b55b52abea1a8435b8655cd9c945f3bb45a2684bb93db6",
+      "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "body_sha256": "ce98887c053f3a4493ecd21b455d59f7ae81d3dcc78012baa440d886ccb14228",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D"
+        }
+      ],
+      "instructions": [
+        {
+          "address": "0x006416A2",
+          "mnemonic": "jmp",
+          "operands": "0x64159d"
+        }
+      ]
+    }
+  ],
+  "probe": "probes/VC7AllocationCalls.cpp",
+  "probe_sha256": "5cab96b4a7846b874dcda7db0526802839c4da817daf55857920245e18816390",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/I",
+    "src",
+    "/showIncludes"
+  ],
+  "headers": {
+    ".tools/msvc710/Vc7/include/new": "bd97c3f682c039eb7ee00c9acfc2d4cf44c55671b373fba777af7652faf15fd9",
+    ".tools/msvc710/Vc7/include/exception": "994d4a23a837d92100205d89ac38c13c317cfb1851c2ae1fdc4d80b0e052c40c",
+    ".tools/msvc710/Vc7/include/xstddef": "e3b1fa3dcb3281ee2f22f79150303d943362263ea0b95874cd313b2798112a27",
+    ".tools/msvc710/Vc7/include/yvals.h": "b9340f3de0fd2f1c0e0b81b99e9f42252a0ec5652267536e9c62b0b4f1bf8980",
+    ".tools/msvc710/Vc7/include/use_ansi.h": "56ba75ecabe4ff0af0ab227d88ce407c31e0f0c8d05c1e42423186da04069fdc",
+    ".tools/msvc710/Vc7/include/cstddef": "f83f50123dd77e05f5b112abcf7f47b2a9e7076727955f91db471ae273e67430",
+    ".tools/msvc710/Vc7/include/stddef.h": "491ce357cd01c533b07664fb9a97403a172e277096ee58a924696c0046a96afe",
+    ".tools/msvc710/Vc7/include/eh.h": "6ee4653126d60011021b2c57abe3e01b3030c3103248346da5299ecdf8e9d932"
+  },
+  "controls": [
+    {
+      "symbol": "?AllocateByteArray@@YAPADI@Z",
+      "size": 26,
+      "source_definition": {
+        "symbol": "?AllocateByteArray@@YAPADI@Z",
+        "offset": 0,
+        "section": 4,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "e869fd16edadd5eba32ef1ba1441f44b8be19f3bb84311424599e395bf3e2612",
+      "fields": [
+        {
+          "offset": 9,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?AllocateWordArray@@YAPAKI@Z",
+      "size": 29,
+      "source_definition": {
+        "symbol": "?AllocateWordArray@@YAPAKI@Z",
+        "offset": 0,
+        "section": 6,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "8667167243eef1d0536e35d470f949a3c96fd479ff8cebff07837dbc04535068",
+      "fields": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?AllocateRecordArray@@YAPAUAllocationRecordObservation@@I@Z",
+      "size": 29,
+      "source_definition": {
+        "symbol": "?AllocateRecordArray@@YAPAUAllocationRecordObservation@@I@Z",
+        "offset": 0,
+        "section": 8,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "4eb1ad40ba4440a9f74b74b2c71c883394015390fed3108a763c8bdef632e404",
+      "fields": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?ReleaseByteArray@@YAXPAD@Z",
+      "size": 26,
+      "source_definition": {
+        "symbol": "?ReleaseByteArray@@YAXPAD@Z",
+        "offset": 0,
+        "section": 10,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?ReleaseWordArray@@YAXPAK@Z",
+      "size": 26,
+      "source_definition": {
+        "symbol": "?ReleaseWordArray@@YAXPAK@Z",
+        "offset": 0,
+        "section": 12,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?ReleaseRecordArray@@YAXPAUAllocationRecordObservation@@@Z",
+      "size": 26,
+      "source_definition": {
+        "symbol": "?ReleaseRecordArray@@YAXPAUAllocationRecordObservation@@@Z",
+        "offset": 0,
+        "section": 14,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?AllocateScalarStorage@@YAPAXI@Z",
+      "size": 17,
+      "source_definition": {
+        "symbol": "?AllocateScalarStorage@@YAPAXI@Z",
+        "offset": 0,
+        "section": 16,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "1c268736a240e2202586552f52b8eb7a8cdf71939cb2129e2fb15cfe8a5723bc",
+      "fields": [
+        {
+          "offset": 8,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    },
+    {
+      "symbol": "?ReleaseScalarStorage@@YAXPAX@Z",
+      "size": 17,
+      "source_definition": {
+        "symbol": "?ReleaseScalarStorage@@YAXPAX@Z",
+        "offset": 0,
+        "section": 18,
+        "type": 32,
+        "storage": 2
+      },
+      "source_sha256": "1c268736a240e2202586552f52b8eb7a8cdf71939cb2129e2fb15cfe8a5723bc",
+      "fields": [
+        {
+          "offset": 8,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "section": 3,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076887616,
+      "source_sha256": "2f92f349511f94ba38538a3fe92424e1dbbcc50651afaacfb2be9a559b8a7a8e",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_AllocationCallLayout",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 4,
+      "name": ".text",
+      "size": 26,
+      "flags": 1615859744,
+      "source_sha256": "e869fd16edadd5eba32ef1ba1441f44b8be19f3bb84311424599e395bf3e2612",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_U@YAPAXI@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?AllocateByteArray@@YAPADI@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 26,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 6,
+      "name": ".text",
+      "size": 29,
+      "flags": 1615859744,
+      "source_sha256": "8667167243eef1d0536e35d470f949a3c96fd479ff8cebff07837dbc04535068",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_U@YAPAXI@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?AllocateWordArray@@YAPAKI@Z",
+          "offset": 0,
+          "section": 6,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 29,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 8,
+      "name": ".text",
+      "size": 29,
+      "flags": 1615859744,
+      "source_sha256": "4eb1ad40ba4440a9f74b74b2c71c883394015390fed3108a763c8bdef632e404",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_U@YAPAXI@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?AllocateRecordArray@@YAPAUAllocationRecordObservation@@I@Z",
+          "offset": 0,
+          "section": 8,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 29,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 10,
+      "name": ".text",
+      "size": 26,
+      "flags": 1615859744,
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_V@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ReleaseByteArray@@YAXPAD@Z",
+          "offset": 0,
+          "section": 10,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 26,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 12,
+      "name": ".text",
+      "size": 26,
+      "flags": 1615859744,
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_V@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ReleaseWordArray@@YAXPAK@Z",
+          "offset": 0,
+          "section": 12,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 26,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 14,
+      "name": ".text",
+      "size": 26,
+      "flags": 1615859744,
+      "source_sha256": "1f195818735aa3b12018da052571359bbe7e339601acb473b9ae29cc47d2c65b",
+      "fields": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_V@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ReleaseRecordArray@@YAXPAUAllocationRecordObservation@@@Z",
+          "offset": 0,
+          "section": 14,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 26,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 16,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "1c268736a240e2202586552f52b8eb7a8cdf71939cb2129e2fb15cfe8a5723bc",
+      "fields": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??2@YAPAXI@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?AllocateScalarStorage@@YAPAXI@Z",
+          "offset": 0,
+          "section": 16,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 18,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "1c268736a240e2202586552f52b8eb7a8cdf71939cb2129e2fb15cfe8a5723bc",
+      "fields": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ReleaseScalarStorage@@YAXPAX@Z",
+          "offset": 0,
+          "section": 18,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    }
+  ],
+  "layout": [
+    4,
+    4,
+    8,
+    4
+  ],
+  "allocation": {
+    "member_offset": 816374,
+    "member": "build\\intel\\mt_obj\\malloc.obj",
+    "member_sha256": "d3b26ef5497560a5e2ffa46a36f5426f6c3bee71f50a0e8ec98c067ef97647d8",
+    "address": "0x00644305",
+    "coff_symbol": "__nh_malloc",
+    "size": 44,
+    "span_end": "0x00644330",
+    "decision": "library",
+    "extent_basis": "function-auxiliary-record",
+    "source_sha256": "dbb3e472b55752a4522ce5ad849d314a7da2b8c9f63a5cacc72522d5c98b0d0e",
+    "body_sha256": "7cf7fd9903f696b7ff23d469a93eadf06dcc7503bec25b1ec0cebefd33768021",
+    "relocation_bindings": [
+      {
+        "offset": 12,
+        "type": "REL32",
+        "symbol": "__heap_alloc",
+        "addend": 0,
+        "local_symbol_offset": null,
+        "target_address": "0x0064428A",
+        "target_kind": "callee"
+      },
+      {
+        "offset": 32,
+        "type": "REL32",
+        "symbol": "__callnewh",
+        "addend": 0,
+        "local_symbol_offset": null,
+        "target_address": "0x0064EC68",
+        "target_kind": "callee"
+      }
+    ],
+    "body_facts": {
+      "returns": [
+        {
+          "site": "0x00644330",
+          "cleanup": 0
+        }
+      ],
+      "direct_calls": [
+        {
+          "site": "0x00644310",
+          "target": "0x0064428A"
+        },
+        {
+          "site": "0x00644324",
+          "target": "0x0064EC68"
+        }
+      ],
+      "vtable_writes": []
+    },
+    "branches": [
+      {
+        "site": "0x0064430A",
+        "target": "0x0064432E"
+      },
+      {
+        "site": "0x00644318",
+        "target": "0x00644330"
+      },
+      {
+        "site": "0x0064431E",
+        "target": "0x00644330"
+      },
+      {
+        "site": "0x0064432C",
+        "target": "0x0064430C"
+      }
+    ],
+    "indirect_calls": [],
+    "instruction_witnesses": [
+      {
+        "site": "0x00644305",
+        "mnemonic": "cmp",
+        "operands": "dword ptr [esp + 4], -0x20"
+      },
+      {
+        "site": "0x0064430A",
+        "mnemonic": "ja",
+        "operands": "0x64432e"
+      },
+      {
+        "site": "0x0064430C",
+        "mnemonic": "push",
+        "operands": "dword ptr [esp + 4]"
+      },
+      {
+        "site": "0x00644310",
+        "mnemonic": "call",
+        "operands": "0x64428a"
+      },
+      {
+        "site": "0x00644315",
+        "mnemonic": "test",
+        "operands": "eax, eax"
+      },
+      {
+        "site": "0x00644317",
+        "mnemonic": "pop",
+        "operands": "ecx"
+      },
+      {
+        "site": "0x00644318",
+        "mnemonic": "jne",
+        "operands": "0x644330"
+      },
+      {
+        "site": "0x0064431A",
+        "mnemonic": "cmp",
+        "operands": "dword ptr [esp + 8], eax"
+      },
+      {
+        "site": "0x0064431E",
+        "mnemonic": "je",
+        "operands": "0x644330"
+      },
+      {
+        "site": "0x00644320",
+        "mnemonic": "push",
+        "operands": "dword ptr [esp + 4]"
+      },
+      {
+        "site": "0x00644324",
+        "mnemonic": "call",
+        "operands": "0x64ec68"
+      },
+      {
+        "site": "0x00644329",
+        "mnemonic": "test",
+        "operands": "eax, eax"
+      },
+      {
+        "site": "0x0064432B",
+        "mnemonic": "pop",
+        "operands": "ecx"
+      },
+      {
+        "site": "0x0064432C",
+        "mnemonic": "jne",
+        "operands": "0x64430c"
+      },
+      {
+        "site": "0x0064432E",
+        "mnemonic": "xor",
+        "operands": "eax, eax"
+      },
+      {
+        "site": "0x00644330",
+        "mnemonic": "ret",
+        "operands": ""
+      }
+    ]
+  },
+  "scalar_delete": {
+    "member_offset": 852956,
+    "member": "build\\intel\\mt_obj\\delete.obj",
+    "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+    "address": "0x00640F15",
+    "coff_symbol": "??3@YAXPAX@Z",
+    "size": 5,
+    "code_size": 5,
+    "code_regions": [
+      {
+        "offset": 0,
+        "size": 5
+      }
+    ],
+    "span_end": "0x00640F19",
+    "extent_basis": "function-auxiliary-record",
+    "decision": "library",
+    "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+    "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+    "relocation_bindings": [
+      {
+        "offset": 1,
+        "type": "REL32",
+        "symbol": "_free",
+        "addend": 0,
+        "local_symbol_offset": null,
+        "target_address": "0x00642A61",
+        "target_kind": "callee",
+        "code_entry": {
+          "owner": "0x00642A61",
+          "source_member_offset": 794604,
+          "source_offset": 0,
+          "source_definition": {
+            "symbol": "_free",
+            "offset": 0,
+            "section": 2,
+            "type": 32,
+            "storage": 2
+          }
+        }
+      }
+    ],
+    "body_facts": {
+      "returns": [],
+      "direct_calls": [],
+      "vtable_writes": []
+    },
+    "branches": [
+      {
+        "site": "0x00640F15",
+        "target": "0x00642A61"
+      }
+    ],
+    "direct_edges": [
+      {
+        "site": "0x00640F15",
+        "target": "0x00642A61",
+        "basis": "typed-REL32",
+        "field_offset": 1,
+        "code_entry": {
+          "owner": "0x00642A61",
+          "source_member_offset": 794604,
+          "source_offset": 0,
+          "source_definition": {
+            "symbol": "_free",
+            "offset": 0,
+            "section": 2,
+            "type": 32,
+            "storage": 2
+          }
+        }
+      }
+    ],
+    "indirect_calls": [],
+    "indirect_jumps": [],
+    "instruction_witnesses": [
+      {
+        "site": "0x00640F15",
+        "mnemonic": "jmp",
+        "operands": "0x642a61"
+      }
+    ],
+    "source_definition": {
+      "symbol": "??3@YAXPAX@Z",
+      "offset": 0,
+      "section": 2,
+      "type": 32,
+      "storage": 2
+    },
+    "ledger_size": 5
+  },
+  "retained_verifiers": [
+    "verify-runtime-cycle-origins.py",
+    "verify-script-buffer-origins.py"
+  ],
+  "unknowns": [
+    "Original linker inputs and original user-installed new-handler callback implementation remain unknown.",
+    "Live allocation/free/error/handler outcomes are not inferred from static source evidence.",
+    "The eight-byte call observation model is not an original game record/type/layout declaration.",
+    "No other allocator, private ABI, source, mapping or exact classification is granted."
+  ]
+}

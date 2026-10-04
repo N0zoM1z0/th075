@@ -5522,3 +5522,63 @@ replay. No source, mapping, private ABI or exact credit is added. Public MCP
 acceptance remains waived; the private no-auth route is unchanged. Private
 queries, diagnostics and objects remain untracked. The origin objective remains
 unfinished.
+
+## R154 — Complete allocation API provenance
+
+R154 resolves three library owners, preserving their complete original extents:
+scalar new at `0x0064159D` / 14 bytes, array delete at `0x0064169D` / 5 bytes,
+and array new at `0x006416A2` / 5 bytes. Replay
+`scripts/repo-python scripts/verify-allocation-api-origins.py` with
+`config/allocation-api-origin-evidence.json`. Complete own-AUX code from the
+pinned libcmt.lib new.obj, delete2.obj and new2.obj members compares unmasked
+across all 24 bytes, including every actual typed relocation and return/tail.
+The matching five-byte shapes alone provide no ownership proof.
+
+Scalar new pushes the observed new-handler flag 1 and original caller size,
+calls the independently complete accepted R120 `__nh_malloc` / 44 bytes, then
+balances its cdecl stack. Array new's actual source field routes to that full
+scalar-new owner; array delete routes to the different independently complete
+R142 scalar-delete owner, then the existing whole R120 free owner. All archive
+members, full source/target hashes and actual fields are pinned. Original
+accepted callee evidence, boundaries and classification remain unchanged.
+The full R120 allocation/handler/data/API/EH provenance and its retained cold
+source dependencies replay successfully, followed by the complete R153 buffer
+lifetime source profiles and independent whole parser/cleanup contexts.
+
+Natural controls in `probes/VC7AllocationCalls.cpp` cold-build eight complete
+SDK allocation/release functions / 196 bytes. Three distinct primitive/complete
+observation array types route through array operations; explicitly declared
+scalar storage operations route through the different scalar owners. All nine
+ordinary code/data sections / 212 bytes, their complete definitions and typed
+fields, the entire 16-byte observation layout and eight actual included SDK
+headers are read back. Build 3077 and explicit /Od /Ob0 flags are probe
+reproducibility settings, not an executable-wide compiler claim. Synthetic
+observation records do not recover or instantiate incomplete game owners.
+Original linker inputs, original game element declarations, user-installed
+handlers and live allocation outcomes remain unknown.
+
+Exactly three existing unknown canonical rows become library/excluded;
+every unrelated row and authored body record is unchanged against R153 HEAD.
+Nineteen regression checks reject incomplete owners/carriers, wrong typed
+array/scalar destinations, altered handler/input protocol, skipped independent
+provenance and exact credit. All 1263 public workflow tests, local attested
+queries, authored extents, fresh scanner/progress, exact-input preservation
+and whitespace checks pass. Totals are 3462 resolved (922 authored, 1965
+library, 575 compiler), 889 pending and 2540 excluded. Recorded authored
+extents remain 875 / 1953089 bytes; provisional exact coverage remains
+9883 / 1965432. The 60 source/mapped/exact functions / 9883 bytes, all exact
+inputs and R139 db26a05's 60/60 cold replay across eleven objects remain
+preserved; no changed exact unit requires replay. No game source, mapping,
+private ABI or exact credit is added. Public MCP acceptance remains waived,
+and the private no-auth route is unchanged. Private queries, surveys and
+objects remain untracked. The complete-origin objective remains unfinished.
+
+A fresh private whole-own-AUX CRT survey identifies full diagnostic controls
+for ui64toa / 27 bytes, SEH longjmp unwind / 27, FillZeroMan / 12 and finite /
+21. A separate complete atox.obj check identifies the five-byte atoi owner
+and its actual typed tail to accepted whole atol / 136 bytes. These five
+candidates form the bounded R155 cohort; these diagnostics grant no origin.
+Both 11-byte abs-shaped candidates have complete abs/labs source alternatives.
+R129 already proves ordinary expression controls can also reproduce the
+entire shape; preserve that ownership ambiguity instead of repeating an
+acceptance from the new survey.
