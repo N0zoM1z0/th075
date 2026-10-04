@@ -6685,3 +6685,93 @@ The next bounded R167 cohort is four list-policy dependencies / 250 bytes:
 `0x00411C70` / 19. Preserve complete R166 parent/wrapper/EH context and all
 actual lower node/allocator boundaries; a source association alone does not
 identify original element/node types. No exact scope is added.
+
+## R167 complete list graph, node width and catch extent
+
+The bounded four-candidate R167 cohort expands only to its necessary complete
+list/allocator dependency graph. One authored wrapper / 22 bytes and eleven
+library definitions / 718 bytes are accepted through the unchanged whole R166
+custom policy `0x00410F30` / 104 and complete R045 game parent `0x00456B60` /
+1186. Caller labels, byte shapes and a compiled method name alone prove no
+ownership. Replay `scripts/repo-python scripts/verify-list-policy-dependency-origins.py`
+against immutable `config/list-policy-dependency-origin-evidence.json`.
+
+| Address | Accepted complete bytes | Inferred source role | Origin |
+| --- | ---: | --- | --- |
+| `0x004110F0` | 22 | custom owner clear, delegates to list at receiver +4 | authored |
+| `0x00411C30` | 56 | SDK list constructor | library |
+| `0x00411C70` | 19 | SDK list destructor, calls complete `_Tidy` | library |
+| `0x00411D60` | 153 | SDK list clear, all six real node-operation fields | library |
+| `0x00411FE0` | 223 | SDK `_Buynode`, including local catch and shared tail | library |
+| `0x004120C0` | 100 | SDK `_Tidy`, clear and sentinel link destruction/deallocation | library |
+| `0x00412130` | 53 | SDK `_List_val` constructor | library |
+| `0x00412170` | 14 | SDK value allocator constructor | library |
+| `0x004121A0` | 25 | SDK node allocator destroy wrapper | library |
+| `0x004123E0` | 27 | SDK node allocator allocation wrapper | library |
+| `0x00412420` | 25 | SDK node-pointer allocator destroy wrapper | library |
+| `0x004125A0` | 23 | SDK `_Allocate`, actual 172-byte node multiplier | library |
+
+Target observation: the old `_Buynode` candidate ends at `0x0041206E`, before
+its catch. The actual complete primary is `0x00411FE0..0x004120BE` / 223 bytes.
+Both forward catch/shared-tail branches are internal to that full primary; the
+complete source's own positive AUX extent is also 223 bytes. A local typed COFF
+catch label at +143 corresponds to `0x0041206F`. The complete 80-byte
+try/catch/unwind/FuncInfo section at `0x00668194` retains all four real fields,
+including the actual catch entry, catch table, unwind array and try map. Original
+R020 registrations at `0x0065501B` and `0x00655030` are read back and verified.
+The canonical primary extent is reconciled before library acceptance; no 143-byte
+prefix earns complete evidence. The independently listed 80-byte catch interior
+stays unknown, with the overlap explicit and no separate primary AUX claim.
+
+Compiler/source observation: a complete `std::list` of a synthetic 164-byte
+record emits the observed 172-byte node allocation, plus the complete list
+constructor, clear, destructor, allocation and destruction graph. All 31 entire
+positive controls / 1288 bytes compare unmasked, retaining 62 genuine fields
+through one coherent catalog of actual defining code/local EH/data symbols.
+Every regular positive has its own full AUX extent. Full EH carriers are 21 and
+10 bytes; complete registered state carriers are 36 and 80 bytes. Existing
+allocator hierarchy/construct/deallocate records and full R142 frame/throw/delete
+and R154 scalar-new boundaries remain independent. Thirteen original records
+and 103 full canonical/body snapshots are retained; the growing authored CSV is
+checked by exact original-row membership, never an immutable whole-file hash.
+
+An ordinary delegating destructor reproduces the entire 19-byte SDK destructor;
+original spelling remains unknown. A full implicit 22-byte owner destructor
+calls `0x00411C70`, whereas the actual custom wrapper calls `0x00411D60`.
+Their complete real-callee fields differ. The entire unsigned-list node
+allocation is 20 bytes and differs from the full 23-byte target allocation; no
+prefix or masked comparison is used. These two complete negatives / 42 bytes
+retain their actual SDK destinations. The 164-byte payload is an observation,
+not original element identity or a reconstructed game layout. No incomplete
+original game owner is instantiated.
+
+All 182 cold ordinary sections / 8150 bytes, 29 actual SDK headers plus the
+unchanged pinned R166 probe include, and the entire combined 56-byte readonly
+layout `[20,20,84,84,40,4,4,12,20,164,20,12,1,16]` are frozen. The full unchanged
+104-byte custom policy retains every real field and operation; its independent
+1186-byte game anchor retains the original authored record, complete CFG and
+actual argument/call window. The original R166 manifest is immutable. Its
+verifier permits only these exact R167 original-to-accepted transitions and
+cold-replays successfully. Its older 143-byte node snapshot remains historical
+context; the new acceptance independently compares the whole 223-byte primary.
+
+Unknowns remain explicit: `0x00411E80` / 8, `0x00411E90` / 11, `0x00412580` /
+5 and `0x00412600` / 5 receive no ownership from SDK-shaped pointer/no-op bodies.
+The separate catch interior and every prior protected lifetime/copy/math/
+destruction policy retain their original rows. Complete cold evidence preceded
+canonical changes. Strict R166 HEAD adbe743 readback confirms exactly twelve
+function/origin changes, only one primary extent refinement, and one new authored
+22-byte record; all 879 old authored rows, original headers/order, previous
+manifests and exact source/header/build/ABI/mapping/match inputs remain unchanged.
+Thirty-two new regression checks and all 1665 public checks pass, as do fresh
+scanning, full authored extents, local attestation and whitespace checks.
+
+Totals are 3527 resolved (927 authored, 2025 library, 575 compiler), 824 pending
+and 2600 excluded. Authored evidence is 880 complete bodies / 1953711 bytes.
+The exact baseline remains 60 functions / 9883 bytes, with provisional coverage
+9883 / 1966054 (0.50%); the earlier R139 60/60 cold replay across eleven objects
+remains applicable. No reconstructed source, private ABI, mapping or exact
+credit is added. Public MCP acceptance stays waived; the complete-origin goal
+is active and unfinished. The next bounded R168 cohort is the seven list-iterator
+policies / 233 bytes recorded in the current handoff, with complete independent
+game parents and necessary lower operation/EH dependencies.

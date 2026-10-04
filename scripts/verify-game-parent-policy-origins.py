@@ -153,6 +153,15 @@ def verify_negative(raw,linked,actual,row):
         raise ValueError('game parent policy compares a negative prefix or gives it positive source credit')
 
 
+def preserved_snapshot(row,function,origin):
+    if function==row['function'] and origin==row['origin']:return True
+    if row['address'] not in ('0x004110F0','0x00411C30','0x00411C70','0x00411D60','0x00411FE0',
+            '0x004120C0','0x00412130','0x00412170','0x004121A0','0x004123E0','0x00412420','0x004125A0'):
+        return False
+    later=module('game_parent_list_transition','verify-list-policy-dependency-origins.py')
+    return later.accepted_snapshot(dict(function=row['function'],origin=row['origin']),function,origin)
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args();m=manifest();verify_plan(m)
     for path,expected in [('config/game-parent-policy-origin-evidence.json',MANIFEST_SHA256),(m['probe'],m['probe_sha256']),*m['retained_sha256'].items()]:
@@ -175,7 +184,7 @@ def main():
     for r in m['snapshots']:
         a=r['address']
         if a in records:SDK.check_ledger(records[a],functions[a],origins[a],args.evidence_only)
-        elif functions[a]!=r['function'] or origins[a]!=r['origin']:raise ValueError('game parent policy alters unrelated canonical owner/boundary')
+        elif not preserved_snapshot(r,functions[a],origins[a]):raise ValueError('game parent policy alters unrelated canonical owner/boundary')
         if digest(c.pe_bytes_at(target,int(a,16),r['size']))!=r['body_sha256']:raise ValueError('game parent policy complete independent body snapshot differs')
     for r in m['anchors']:
         a=r['address'];body=c.pe_bytes_at(target,int(a,16),r['size'])
