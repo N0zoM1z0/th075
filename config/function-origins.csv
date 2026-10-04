@@ -1529,7 +1529,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00445830,authored,BattleScene,authored,target-observed,R042
 0x00445A00,authored,BattleState,authored,target-observed,R065
 0x004461D0,authored,BattleScene,authored,target-observed,R042
-0x004464C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004464C0,library,VC7STL,exclude,complete-vc7-front-graph-and-whole-game-consumer-widths,R172
 0x004464E0,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00446590,authored,BattleHud,authored,target-observed,R042
 0x00446B60,authored,BattleHud,authored,target-observed-game-policy-and-reviewed-callees,R100
@@ -1868,9 +1868,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00454C00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00454C20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00454D00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00454D50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00454D50,library,VC7STL,exclude,complete-vc7-front-graph-and-whole-game-consumer-widths,R172
 0x00454D70,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
-0x00454E10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00454E10,library,VC7STL,exclude,complete-vc7-front-graph-and-whole-game-consumer-widths,R172
 0x00454E30,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00454EE0,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
 0x00454F70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

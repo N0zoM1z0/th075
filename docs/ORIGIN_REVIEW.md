@@ -10104,3 +10104,66 @@ remains applicable. No source/private ABI/mapping/exact credit is added.
 Public MCP acceptance stays waived. The full remaining-origin goal is active
 and unfinished. The next bounded R172 cohort is three complete front helpers
 through these actual SDK graphs and independent full fighter/battle policies.
+
+## R172 — complete front helpers with independent consumer widths
+
+Three complete library front helpers / 96 bytes are accepted: `0x00454D50`,
+`0x00454E10` and `0x004464C0`, each 32 bytes. Replay
+`scripts/repo-python scripts/verify-replay-deque-front-origins.py` with immutable
+`config/replay-deque-front-origin-evidence.json`. Each whole SDK front body calls
+its actual begin and then iterator dereference, with both real fields unmasked:
+byte `0x004143D0` / `0x00414950`, word `0x004145C0` / `0x00414A00`, and
+dword `0x004147B0` / `0x00414AB0`. Full own primary AUX and complete CFG are
+verified for every positive source definition.
+
+Independent target context is preserved in three full authored policies:
+R045 fighter controls `0x00452F10` / 2815, R109 recorded random selection
+`0x00455580` / 139 and R065 battle sequence `0x00445A00` / 1958, totaling 4912
+bytes. Their complete original records, instructions, CFG, switches and eight
+actual front calls remain unchanged. Actual returned-pointer loads at
+`0x00452FBB`, `0x004555B3` and `0x00445A4E` independently observe byte/word/
+dword widths 1/2/4. The verifier checks actual decoded memory operand widths,
+base EAX and zero index/displacement. This supplies new consumer evidence;
+R171's scalar observations and mapped caller names alone are not inherited as
+ownership proof. Original scalar declarations, signedness and private owner
+layouts remain unknown; later signed use does not recover the original template
+argument.
+
+Compiler/source observation: natural SDK front definitions for three complete
+scalar specializations close through the full accepted R171 iterator/endpoint/
+comparison/step/dereference graph. A complete synthetic class derives naturally
+from the byte deque and implements `first()` as `*begin()`. Its entire 32-byte
+body is byte-equal with both genuine SDK call fields, so original method spelling
+remains provisional. No incomplete original owner is instantiated. No target
+arrays, assembly, fake returns, inert padding or guessed ABI are used.
+
+All 42 entire SDK/ordinary controls / 1620 bytes compare unmasked with 30 real
+fields through one coherent defining-symbol catalog. All 51 cold ordinary
+sections / 2111 bytes and 27 actual SDK headers plus the pinned original R171
+probe include are frozen. The whole 76-byte readonly layout is
+`[1,2,4,20,20,20,8,8,8,8,8,8,1,2,4,20,20,20,20]`. All 38 prior R171 controls
+retain their complete source/body/CFG/field identities. Seventy-six canonical/
+body snapshots and fifteen original complete accepted records preserve earlier
+SDK/game/peer evidence. The immutable R109 manifest retains its historical
+unknown child snapshots; its existing verifier explicitly permits later
+independent origin review while checking complete unchanged context. That
+verifier passes without changes or new relaxed callbacks. All protected
+getters, empty destruction children and catch/lifetime/copy/math owners stay
+unknown.
+
+Full cold evidence preceded canonical acceptance. Strict R171 HEAD 63339e6
+readback checks exactly three function/origin transitions, all unchanged
+extents, all 880 original authored rows/order and every prior tracked manifest/
+configuration. Thirty new regression checks and all 1833 public checks pass,
+with fresh scanning, full authored extents, local Ghidra attestation and
+whitespace checks. All prior source/header/build/ABI/mapping/match inputs stay
+unchanged.
+
+Totals are 3586 resolved (927 authored, 2084 library, 575 compiler), 765 pending
+and 2659 excluded. Authored evidence stays 880 complete bodies / 1953711 bytes.
+Exact stays 60 functions / 9883 bytes; provisional coverage remains
+9883 / 1966054 (0.50%). The earlier R139 cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added. Public
+MCP acceptance remains waived. The full remaining-origin goal is active and
+unfinished; the next bounded R173 cohort is four complete iterator/index
+candidates through the unchanged R019 bitmap-directory policies.
