@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R163. The public
+review cohorts R108 through R164. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,504: 922 authored, 2,007 library and 575 compiler generated.
-There are 847 pending. Candidate count is not authored function count.
+has resolved 3,509: 922 authored, 2,012 library and 575 compiler generated.
+There are 842 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,54 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R164 SDK dependency cohort below.
+the bounded R165 allocator destruction-wrapper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R163; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R164; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R164 full SDK dependency and parent contexts
+## Next agent objective — R165 full allocator destruction wrappers
+
+R164 accepts five complete SDK dependencies / 504 bytes through unchanged
+whole R074/R072/R033 library parents. Replay
+`scripts/repo-python scripts/verify-sdk-dependency-origins.py` with the immutable
+`config/sdk-dependency-origin-evidence.json`. Its one cold source object supplies
+39 complete code/EH/data controls / 1988 bytes and 57 actual unmasked fields:
+37 whole positive comparisons / 1686 bytes and two whole ordinary-pop negative
+comparisons / 302 bytes. Five ordinary controls / 252 bytes are byte-equal;
+each complete ordinary pop differs at eight local-stack displacement bytes.
+The entire backward-copy alternative is 48 bytes versus the actual forward
+worker's 50 bytes. These alternatives alone do not identify original ownership.
+All 55 ordinary sections / 2360 bytes, 28 actual SDK headers, full 60-byte
+observation layout and complete placement cleanup/handler/state are retained.
+Only the five bounded origins/function rows change. All previous evidence,
+unknown record/lifetime/copy/math policies and the exact baseline are preserved.
+
+The fresh `.analysis/origin-scan/r164-triage.json` has 842 pending candidates.
+The next bounded R165 cohort is two unresolved allocator destruction wrappers
+/ 50 provisional bytes:
+
+| Candidate | Complete provisional extent | Independent whole accepted parent | Actual child, independently unresolved |
+| --- | ---: | --- | --- |
+| `0x00422610` | 25 | R164 deque pop `0x00422290` / 151 | `0x004229C0` / 15 |
+| `0x0042E390` | 25 | R164 deque pop `0x0042E120` / 151 | `0x0042E580` / 5 |
+
+These are diagnostic candidates, not promised acceptances. Cold-build complete
+SDK and ordinary source controls; reconcile every actual field and whole own
+extent. Preserve the 15-/5-byte child ownership and the separate 72-byte
+`0x004212A0` lifetime ambiguity. The latter is reached through the retained R037
+compiler deleting wrapper; that relationship does not classify the game policy.
+Retain the original R164 snapshot/manifest and exact accepted parent rows. If a
+new bounded transition is accepted, permit only that exact original-to-new row
+transition in earlier snapshot readback; do not loosen unrelated preservation.
+Do not instantiate an incomplete game class or add exact scope. The full
+remaining-origin goal remains active and unfinished.
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -1049,7 +1084,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R164 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R165 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

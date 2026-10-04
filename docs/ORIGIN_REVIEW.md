@@ -9445,3 +9445,76 @@ source variant. Preserve all prior R108 lifetime, R158 copy, R161 destruction,
 R162 endpoint/assignment and R163 math/abs ownership ambiguities, including the
 unchanged R129 abs alternative and R161 R078 operation refinement. No exact
 scope is added. The full origin-review goal remains active and unfinished.
+
+## R164 — Complete SDK dependencies through retained whole library parents
+
+R164 accepts five library bodies / 504 bytes. Cold own-AUX source comparisons
+use genuine SDK operations with every actual field, through independently
+accepted full R074/R072/R033 parents. Original parent evidence remains immutable.
+
+| Address | Complete bytes | SDK observation | Independent whole library parent |
+| --- | ---: | --- | --- |
+| `0x00415F60` | 44 | allocator max_size, two-byte observation | R074 `0x00415A80` / 22 |
+| `0x00422290` | 151 | deque pop_back, 20-byte nontrivial observation | R072 tidy `0x00421DD0` / 177 |
+| `0x0042E120` | 151 | deque pop_back, 60-byte trivial observation | R072 tidy `0x0042DEF0` / 177 |
+| `0x0045AFB0` | 50 | forward nonscalar copy, 116-byte observation | R033 generic copy `0x0045A7E0` / 51 |
+| `0x0045B640` | 108 | placement construction with copy and EH | R033 allocator construct `0x0045B2B0` / 29 |
+
+Target observations distinguish the full forward copy from a complete 48-byte
+backward alternative: both forward pointers advance by 116, and the actual
+assignment destination is unresolved `0x0045AAE0` / 368. Placement construction
+calls independently accepted placement new `0x004063D0` / 8 and unresolved
+record copy `0x004591E0` / 417. The complete registered R020 frame binds handler
+`0x00656391`, cleanup `0x00656380`, unwind `0x00669C30` and FuncInfo
+`0x00669C38`. The new object supplies both complete 27-byte cleanup/handler
+carriers and both complete 36-byte unwind/FuncInfo sections, with actual placement
+delete `0x00412300` / 5 and runtime handler `0x006407B8` / 54. No EH or data
+prefix is accepted. FS exception-list fields represent offset zero, not PE data.
+
+Replay `scripts/repo-python scripts/verify-sdk-dependency-origins.py` using
+`config/sdk-dependency-origin-evidence.json`. The explicit /Od /Ob0 /Gy /GR-
+/GX /Zi /GS profile cold-builds one natural synthetic observation source. All
+55 ordinary sections / 2360 bytes and 28 actual SDK headers are pinned. The
+whole 60-byte layout is `[2,20,60,116,20,20,20,1,1,1,1,1,20,20,1]`;
+these are probe/compiler facts, not original game declarations or object layouts.
+Externally declared genuine copy/assignment/destruction operations preserve the
+observed ABI without instantiating an incomplete reconstructed game owner.
+
+Thirty-nine whole source/code/EH/data controls / 1988 bytes retain 57 real
+fields. Thirty-seven full comparisons / 1686 bytes are positive. Five complete
+ordinary capacity/copy/placement/empty alternatives / 252 bytes are byte-equal.
+Two entire ordinary deque-pop alternatives / 302 bytes each differ at eight
+local-stack displacement bytes; their full source/target CFG and every actual
+field remain checked. They receive no positive comparison credit. Their source
+is preserved without adjusting local names to force equality. The complete
+48-byte backward-copy negative uses its own source extent and actual assignment
+field; it is never truncated to the target or compared as a convenient prefix.
+Ordinary source similarity alone does not establish original ownership; the
+library inferences require the separate complete accepted SDK-parent context.
+
+Seventeen exact original evidence records and 41 full canonical/body snapshots
+retain independent parents, runtime/compiler boundaries and unknown policies.
+Allocator destroy `0x00422610` / 25 and `0x0042E390` / 25, their actual
+15-/5-byte destruction children, opaque record assignment/copy, protected
+R108/R158/R161/R162 lifetime/copy policies and R163 math/abs alternatives remain
+unknown. The R037 deleting wrapper stays compiler generated; its 72-byte game
+lifetime child receives no ownership from library callers. The already accepted
+five-byte map-pointer destruction helpers retain R088 ownership.
+
+Full cold comparisons precede ledger acceptance. Readback against R163 HEAD
+1923ec1 verifies exactly five function and five origin transitions, with all
+unrelated rows, previous manifests, authored evidence and exact inputs preserved.
+Thirty-four regression checks guard complete fields/extents, whole negative
+comparisons, source-versus-ordinary distinctions, EH/data, opaque children and
+false credit. All 1561 public checks, local target/project/query attestation,
+fresh scanner, 875 authored extents / 1953089 bytes, exact-input preservation
+and whitespace checks pass. Public MCP acceptance remains waived.
+
+Totals are 3509 resolved (922 authored, 2012 library, 575 compiler), 842 pending
+and 2587 excluded. All 60 source/mapped/exact functions / 9883 bytes remain
+unchanged from R139 db26a05; its earlier 60/60 cold replay across eleven objects
+remains applicable. Provisional coverage remains 9883 / 1965432 (0.50%).
+No reconstructed source, private ABI, mapping or exact credit is added.
+The next R165 cohort is the two 25-byte allocator-destruction wrappers reached
+from the newly accepted full deque-pop parents. Their 15-/5-byte children and
+separate game lifetime ownership remain independent. The full goal is unfinished.

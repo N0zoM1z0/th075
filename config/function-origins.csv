@@ -722,7 +722,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00415EF0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00415F10,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x00415F40,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x00415F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00415F60,library,VC7STL,exclude,complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields,R164
 0x00415F90,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00415FB0,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x00415FE0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -1081,7 +1081,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00422230,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00422250,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00422270,library,vc7-stl-deque-access,exclude,high,R086
-0x00422290,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00422290,library,VC7STL,exclude,complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields,R164
 0x00422330,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x00422390,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x004223B0,library,vc7-stl-deque-helpers,exclude,high,R087
@@ -1335,7 +1335,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042E0A0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x0042E0E0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0042E100,library,vc7-stl-deque-access,exclude,high,R086
-0x0042E120,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E120,library,VC7STL,exclude,complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields,R164
 0x0042E1C0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0042E220,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x0042E240,library,vc7-stl-deque-helpers,exclude,high,R087
@@ -2050,7 +2050,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045AF20,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045AF60,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045AFA0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
-0x0045AFB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045AFB0,library,VC7STL,exclude,complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields,R164
 0x0045AFF0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B020,library,vc7-stl-deque-helpers,exclude,high,R087
 0x0045B030,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -2087,7 +2087,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B590,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B5E0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B630,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045B640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B640,library,VC7STL,exclude,complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields,R164
 0x0045B6B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045B6C0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0045B6F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
