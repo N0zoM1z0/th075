@@ -123,6 +123,9 @@ def verify_plan(m):
 
 
 def check_ledger(row, function, origin, evidence_only=False):
+    if row['address'] in ('0x00411CC0','0x004121C0') and row['decision']=='unknown':
+        later=module('producer_list_iterator_ledger_transition','verify-list-iterator-policy-origins.py')
+        if later.accepted_snapshot(dict(function=row['accepted_function'],origin=row['accepted_origin']),function,origin):return
     PRIOR.check_ledger(row,function,origin,evidence_only)
 
 
@@ -134,6 +137,13 @@ def accepted_snapshot(snapshot,function,origin):
     r = next((r for r in m['functions'] if r['address']==function['address']),None)
     return bool(r and snapshot==dict(function=r['original_function'],origin=r['original_origin'])
                 and function==r['accepted_function'] and origin==r['accepted_origin'])
+
+
+def preserved_snapshot(row,function,origin):
+    if function==row['function'] and origin==row['origin']:return True
+    if row['address'] not in ('0x00411C90','0x00411D30'):return False
+    later=module('producer_list_iterator_transition','verify-list-iterator-policy-origins.py')
+    return later.accepted_snapshot(dict(function=row['function'],origin=row['origin']),function,origin)
 
 
 def main():
@@ -154,7 +164,7 @@ def main():
     for r in m['snapshots']:
         a = r['address']
         if a in records: check_ledger(records[a],functions[a],origins[a],args.evidence_only)
-        elif functions[a] != r['function'] or origins[a] != r['origin']:
+        elif not preserved_snapshot(r,functions[a],origins[a]):
             raise ValueError('vector producer changes independent accepted/protected opaque canonical boundary')
         if digest(c.pe_bytes_at(target,int(a,16),r['size'])) != r['body_sha256']:
             raise ValueError('vector producer independent whole boundary differs')
@@ -241,7 +251,7 @@ def main():
             raw,_ = coff.readonly_section(data,m['layout']['section'],c.coff_name)
             if list(struct.unpack('<23I',raw))!=LAYOUT:
                 raise ValueError('vector producer complete SDK/ordinary observation layout differs')
-    print('R162 origins OK: three library endpoints/constructor / 90 bytes through unchanged full R034 assignment; twelve short candidates / 357 bytes and both ordinary-equivalent assignment parents / 158,167 remain unknown; 43 complete source/code/EH/state controls / 2039 bytes and 95 genuine unmasked fields; all 244 cold ordinary sections / 13520 bytes, full 92-byte layout and 27 SDK headers; full /GS negative inventory / 13616 bytes retains 174/183-byte parent extents; independent full game, SDK, runtime, registered frames and protected unknown lifetime/copy contexts preserved; no source/private ABI/mapping/exact credit.')
+    print('R162 historical evidence OK: three library endpoints/constructor / 90 bytes through unchanged full R034 assignment; twelve short candidates / 357 bytes and both ordinary-equivalent assignment parents / 158,167 were retained as unknown at R162; exact bounded R168 iterator transitions are checked separately; 43 complete source/code/EH/state controls / 2039 bytes and 95 genuine unmasked fields; all 244 cold ordinary sections / 13520 bytes, full 92-byte layout and 27 SDK headers; full /GS negative inventory / 13616 bytes retains 174/183-byte parent extents; independent full game, SDK, runtime, registered frames and protected unknown lifetime/copy contexts preserved; no source/private ABI/mapping/exact credit.')
     return 0
 
 
