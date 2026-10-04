@@ -5241,3 +5241,83 @@ need complete reconciliation. The parent, back worker and other unknown
 iterator controls receive no ownership credit. Their actual complete bodies,
 original ledger extents, private declarations and prior owners are preserved.
 The complete-origin objective remains unfinished.
+
+## R150 — Complete nested deque code, data and EH provenance
+
+R150 resolves the two complete 17-byte size candidates `0x00421550` and
+`0x0045DD50` as library origins / 34 bytes. Replay
+`scripts/repo-python scripts/verify-nested-deque-size-origins.py` with
+`config/nested-deque-size-origin-evidence.json`. The actual nested SDK source
+has a twenty-byte outer container holding complete twenty-byte inner SDK
+containers. Original element definitions, folding, private declarations and
+complete game owner layouts remain unknown. There is no source, mapping,
+private ABI or exact credit; no auxiliary owner is reclassified in this batch.
+
+**Independent actual receivers.** The entire independently authored
+2,301-byte R070 parser preserves its observed owner +0x7D0 outer receiver for
+back and size. Back-returned EAX is transferred directly into ECX for the
+independently cold-replayed complete R072 byte push_back producer. The entire
+66-byte count observation follows the signed-short index map, rejects a
+negative mapped index, calls the actual outer at owner and transfers its
+returned EAX into ECX for the inner size call. The natural source model uses
+an observed 1000-short index map and real complete nested SDK containers;
+it is a synthetic observation model, not a recovered complete game owner.
+Actual uninterrupted receiver/returned-object instructions, full parent
+bytes and complete control flow are checked. Identical getter bytes or a
+reviewed library child alone establish neither origin.
+
+**Whole independently linked provenance.** Fifty-three complete code owners /
+2,980 bytes and all their typed fields are cold-linked through separately
+complete source code/data definitions or explicit retained whole controls.
+Every relocated byte is compared unmasked; target-derived field solving is
+not used by the acceptance linker. Real own AUX extents are distinguished
+from the few complete compiler-emitted code sections without AUX. The whole
+string _Copy body and actual internal table/catch entries remain intact;
+all original interior candidates and ledger extents are preserved.
+
+Seventeen entire defining data sections / 524 bytes retain the complete
+27-byte invalid-deque-subscript literal, out_of_range throw/catch information,
+three complete type descriptors, two whole virtual tables, npos and all five
+EH metadata owners. Five complete EH code carriers / 82 bytes preserve actual
+cleanup/handler partitions and independent R020 frame records. FuncInfo is
+an interior source anchor: the actual Xran owner is 36 bytes from 0x0066886C,
+not a selected 28-byte header; the shared _Copy scope owner is the entire
+132-byte section. Code/data callbacks bind actual complete owners, including
+the independently emitted 23-byte SDK string destructor. Both actual weak
+vector-deleting references retain their complete strong fallback records.
+The whole type_info virtual table and runtime exception/frame-handler owners
+retain the complete independent R119 source/data evidence; nine original
+R113 external snapshots preserve their prior status, including the two
+unresolved string throw workers. Live exception/cache outcomes remain unknown.
+
+The existing R032 vector/length-error shape observation at 0x00421B70 is
+preserved unchanged. It does not identify the actual operation: the new whole
+literal and type/throw data bind out_of_range independently. The existing
+library origin remains accepted, with the legacy name/source shape explicitly
+separate from the stronger new operation evidence.
+
+**Controls and acceptance.** `probes/VC7NestedDequeSizeContexts.cpp` cold-builds
+all 82 ordinary emitted functions and eighteen entire emitted data sections,
+including the complete 40-byte SDK/nested/iterator/observed-index-map layout.
+All 27 actual included headers are pinned; every code/data carrier is covered.
+The VC7.1 build 3077 flags are per-probe reproducibility settings. Full R149
+and R119 cold evidence replay preserves prior deque/runtime/exception proofs.
+Twenty regression checks guard complete extents/sections, actual nested and
+returned-object typing, source/legacy separation and independently linked
+unmasked fields, including PC-relative arithmetic, missing owners and overlap.
+Pure receiver/producer read-back guards do not change the cold source,
+headers, profile, fields or emitted data.
+
+Exactly two existing canonical rows change after the complete cold evidence
+passes; write/read-back checks every unrelated row against HEAD. All 1,183
+public checks, authored-extent verification, target/project/query attestation,
+scanner/progress freshness, exact-input preservation and whitespace checks
+pass locally. Totals are 3,452 resolved (919 authored, 1,958 library,
+575 compiler), 899 pending and 2,533 excluded. The 60 source/mapped/exact
+functions / 9,883 bytes and every exact input remain unchanged from R139
+db26a05, preserving its 60/60 cold replay across eleven objects; no affected
+exact unit needs replay. Recorded authored extents remain 872 / 1,952,956
+bytes; the provisional exact coverage denominator remains 1,965,299.
+The public MCP waiver and private no-auth route remain unchanged. Private
+logs, exploratory controls and objects remain untracked. The complete-origin
+objective remains unfinished.

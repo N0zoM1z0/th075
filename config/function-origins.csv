@@ -1040,7 +1040,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004214C0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x004214E0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x00421530,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
-0x00421550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00421550,library,VC7STL,exclude,complete-nested-deque-code-data-eh-receiver-provenance,R150
 0x00421570,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x004215C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004215F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2169,7 +2169,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045D710,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
 0x0045D810,authored,FighterState,authored,target-observed,R045
 0x0045DD00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045DD50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045DD50,library,VC7STL,exclude,complete-nested-deque-code-data-eh-receiver-provenance,R150
 0x0045DD70,authored,ReimuFighter,authored,target-observed,R063
 0x0046D000,authored,ReimuFighter,authored,target-observed,R046
 0x0046D080,authored,ReimuFighter,authored,target-observed,R046
