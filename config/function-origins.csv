@@ -3489,8 +3489,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0063F221,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x0063FFF4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00640490,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x006404F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00640548,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006404F0,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
+0x00640548,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x0064057A,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x006405C2,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x006405E0,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
@@ -3576,9 +3576,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006422B2,library,VC71CRT,exclude,complete-vendor-startup-registration-code-data-api-eh-provenance,R121
 0x0064232C,library,VC71CRT,exclude,complete-vendor-environment-commandline-pe-startup-code-data-api-eh-provenance,R126
 0x00642510,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064254D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064254D,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x006425A4,compiler,VC7EH,exclude,complete-vendor-body,R022
-0x006425C3,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006425C3,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x00642619,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x006426A1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064274D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3635,10 +3635,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00644343,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x006443ED,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R120
 0x006443FE,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
-0x00644517,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064454A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064456E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006445C4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00644517,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
+0x0064454A,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
+0x0064456E,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
+0x006445C4,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x00644E5F,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x00644E9D,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x00644EBA,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
@@ -3818,8 +3818,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064EFF7,library,VC71CRT,exclude,interior-cleanup-in-complete-vendor-low-io-primary,R132
 0x0064F01B,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
 0x0064F05F,library,VC71CRT,exclude,complete-vendor-stream-buffer-code-data-eh-abi-provenance,R133
-0x0064F1F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064F250,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064F1F0,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
+0x0064F250,library,VC71CRT,exclude,complete-vendor-output-format-code-data-dispatch-api-abi-provenance,R134
 0x0064F280,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064F31D,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x0064F3E5,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124

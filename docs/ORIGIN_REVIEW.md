@@ -6536,3 +6536,103 @@ extents, target/project attestation, progress freshness, 621 tests and whitespac
 checks. All 60 exact units cold-replay across eleven objects. Investigation
 and intermediate verification use local tools; private evidence stays
 untracked and shared tools remain read-only.
+
+## R134 — Complete output formatting, dispatch and conversion graph
+
+R134 resolves the six output-format handoff roots and four required existing
+callee candidates: ten complete library primaries / 2629 bytes / 50 typed
+fields. Replay `scripts/repo-python scripts/verify-output-format-origins.py`;
+the manifest is `config/output-format-origin-evidence.json`. Every source owner
+retains its entire own COFF AUX from the hash-pinned libcmt.lib, including data
+inside that extent. No source, mapping or exact reconstruction credit is added.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `_sprintf` | `0x006404F0` | 88 | 2 |
+| `__scprintf` | `0x00640548` | 49 | 1 |
+| `__snprintf` | `0x0064254D` | 87 | 2 |
+| `__vsnprintf` | `0x006425C3` | 86 | 2 |
+| `__output` | `0x006445C4` | 2042 | 34 |
+| `_write_char` | `0x00644517` | 51 | 1 |
+| `_write_string` | `0x0064456E` | 55 | 1 |
+| `_write_multi_char` | `0x0064454A` | 36 | 1 |
+| `_wctomb` | `0x0064F250` | 39 | 4 |
+| `___wctomb_mt` | `0x0064F1F0` | 96 | 2 |
+
+**Target behavior and boundaries.** The output owner is 2010 instruction bytes
+plus its own 32-byte eight-entry DIR32 table at +2010 / `0x00644D9E`; its complete
+extent ends at `0x00644DBD`. The former provisional 2010-byte ledger is expanded
+to 2042. The actual unsigned state guard, EAX-times-four indirect jump, local
+source table definition, all eight fields and all actual case instruction
+starts replay. The table address is data, while its destinations are code
+entries inside the complete source owner. No prefix or relocation mask earns
+acceptance. All width, precision, flag, string, counted-string, integer, int64,
+floating conversion, `%n`, error and return paths remain in the full comparison.
+
+The four wrappers preserve the whole synthetic FILE setup and output call.
+Sprintf uses the actual INT_MAX count and WRITE|STRG / 66 flags; bounded
+wrappers retain the historic size_t-to-int count conversion and termination
+attempt. They can exhaust the count without adding a terminator; modern snprintf
+behavior is not substituted. Vsnprintf uses the actual pointer va_list. Scprintf
+uses a null-base counting stream; both character and string helpers preserve
+that fast path, while ordinary streams retain byte output and complete flsbuf
+binding. Source-local helper spelling alone is insufficient: multiple archive
+variants exist, and the actual defining output member selects the complete
+51-/55-/36-byte bodies. The private optimized character call passes the byte in
+AL, FILE in ECX and counter pointer in ESI. The source's local cdecl declaration
+does not justify adding an external cdecl prototype for that register contract.
+All helper returns retain zero callee stack cleanup.
+
+Wctomb retains thread lookup, actual locale pointer comparison/update and the
+complete three-argument conversion call. The converter preserves null-buffer
+behavior, C-locale byte conversion, EILSEQ / 42 for an unrepresentable value,
+and the actual WideCharToMultiByte IAT binding and default-character rejection.
+Its complete source-defined thread locale object is 84 bytes, with codepage
++4, handle array +12, mb_cur_max +40 and pctype +72. The thread object is 140
+bytes, with locale pointer +100. Runtime locale/codepage values remain unknown.
+
+**Whole data and callback provenance.** Fifty-six complete defining sections /
+2361 bytes / 68 fields retain the entire 89-byte combined character-class/state
+lookup, both narrow/wide null-string pointers and literals, complete CTYPE
+carrier / 1284, full default-locale carrier / 403, lconv / 56, C time locale /
+184 and all recursively bound day/month/time strings. Signed-looking lookup
+addends retain their actual 32-bit arithmetic. Defined BSS uses actual loader
+zero-fill geometry. No guessed subobject prefix replaces the defining section.
+
+The FP dispatch object at `0x00670120` is exactly six slots / 24 bytes. All six
+initial image fields bind the complete R124 fatal stub. The complete R124
+initializer's actual stores support the initialized view: cfltcvt, cropzeros,
+fassign, forcdecpt, positive, cfltcvt again. Output uses slot offsets 0, 12 and
+4. Both initial and initialized views replay; runtime execution/current slot
+contents remain unknown. Cropzeros / 75, forcdecpt / 60 and positive / 26 are
+three complete non-inventoried auxiliary controls / 161 bytes / five fields,
+retaining R124 dependency evidence without inventing new candidates. Fifteen
+complete independent anchors / 1195 bytes / 65 fields retain their origins.
+The verifier replays the full R133 stream/handle graph and its complete retained
+locale, FP, heap, security, import and initialization evidence. Game callers gain
+no ownership from these library children.
+
+**Compiler observations and limits.** Two independent natural probes preserve
+real vendor types: a 136-byte format layout and a 52-byte SDK/thread/locale
+layout. The vendor DOUBLE struct and SDK DOUBLE typedef are kept in separate
+translation units, with no macro substitution or ABI misdeclaration. Controls
+retain FILE / 32, va_list / 4, complete DOUBLE and LONGDOUBLE carriers / 8,
+signed-short counted-string fields / 8 and conversion buffer / 512. The full
+53-byte variadic int64 control advances the argument pointer by eight and loads
+EDX:EAX; the full 25-byte typed PF0 control pushes five arguments and removes
+20 bytes in the caller. Six complete vendor source files and pinned headers
+replay. Build 3077 and explicit flags remain reproducibility settings, without
+an executable-wide compiler claim or an incomplete game-owner layout.
+
+Thirty-eight regression checks reject truncated output owners, discarded or
+misclassified tables, misbound cases, invented auxiliary origin credit, missing
+FP slots/initializer stores, incomplete locale/CTYPE/null data, incorrect natural
+layouts and changed variadic/PF0 calling contracts. All 659 public checks pass.
+Canonical totals are 3337 resolved (919 authored, 1843 library, 575 compiler),
+with 1014 pending. Exact/source/mapping remains 60 / 9883 bytes; recorded authored
+extents remain 872 / 1952956 bytes and the provisional denominator is 1965299.
+One final no-auth public HTTPS MCP acceptance replays R134 and retained graphs,
+authored extents, target/project attestation, progress freshness, 659 tests and
+whitespace checks. All 60 exact units cold-replay across eleven objects. Local
+tools perform investigation and intermediate verification; private evidence
+stays untracked and shared tools remain read-only.
