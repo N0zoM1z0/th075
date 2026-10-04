@@ -7870,3 +7870,102 @@ objects; no affected exact unit requires replay. Recorded authored extents
 remain 872 / 1,952,956 bytes and the provisional denominator is 1,965,299.
 Public MCP acceptance remains waived. The no-auth route and private random
 path remain unchanged; private logs/objects/diagnostics remain untracked.
+
+## R146 — Complete power dispatch and both math parents
+
+R146 resolves four existing candidates as library origins: `0x00643770` /
+complete 59-byte `__CIpow`, `0x0064DC60` / complete 2,886-byte
+`__CIpow_pentium4`, its actual exported `__pow_pentium4` entry at
+`0x0064DC79` / +25, and the actual static `start` entry at `0x006437CD` /
++34 inside the full 527-byte `__CIpow_default` parent. The latter extends
+through its whole 493-byte shared tail. Replay
+`scripts/repo-python scripts/verify-power-math-origins.py` with
+`config/power-math-origin-evidence.json`. No source, mapping or exact credit
+is assigned; both interior entries remain evidence-backed labels, without
+invented independent AUX records or canonical private declarations.
+
+**Complete extent and source-family reconciliation.** The provisional CI
+wrapper was 84 bytes, crossing into the fallback's 25-byte CI prelude. Its
+own AUX is 59 bytes. The provisional SSE parent was only 25 bytes; its own
+AUX is 2,886, containing every exceptional/shared/return tail and the existing
++25 entry. The original 221-byte fallback core candidate is the real source
+`start` label at +34; its complete defining parent retains the entire 493-byte
+continuation through `0x006439B9`. These reconciliations compare full defining
+owners, never convenient truncated extents. The entire 650-byte source code
+carrier at `0x00643730` contains a 63-byte C wrapper, one actual NOP with a
+zero-length `_$$$00002` AUX, the 59-byte CI wrapper and the 527-byte default
+parent. The alignment byte gains no candidate credit. Non-inventory complete
+source controls remain controls, including the real C default entry at +25.
+
+The complete atan/log/log10 CI wrappers are each 59 bytes and indistinguishable
+outside their two typed fields. Their whole defining code carriers are
+282 / 336 / 336 bytes and differ at 106 / 146 / 146 non-field positions.
+R146 retains those complete negative alternatives. The actual typed SSE
+operation binds the complete pow parent; both default and SSE source owners
+match completely with independent fields. This distinguishes pow without
+inferring ownership from a library child or a matching wrapper prefix.
+Original handwritten math assembly implementations are unavailable; complete
+pinned archive COFF and independent real SDK controls supply the evidence.
+
+**Target dispatch and private ABI observations.** The CI wrapper checks the
+actual SSE dispatch state, MXCSR exception-mask bits `0x1F80` and x87
+exception-mask bits `0x7F`. It restores its eight-byte scratch stack before
+tail transfer; disabled or unsuitable states reach the full x87 fallback.
+The SSE CI prelude aligns its stack, swaps the x87 pair, stores both doubles
+and calls the actual exported +25 stack entry. All sixteen SSE RET sites and
+62 branches remain in the full parent. The default CI path marshals its pair,
+loads the high argument word in EAX and calls `start` +34; the exported C path
+uses the complete fload helper and falls through that same source entry.
+Its full default-control-word checks, special values/error routes, four RET
+sites and 33 branches remain. SDK public pow/matherr/controlfp controls do
+not supply invented private CI/helper prototypes. Live dispatch state,
+control words, inputs, numerical accuracy and runtime outcomes remain unknown.
+
+Six whole defining data sections / 14,862 bytes / four fields replay. The
+pow constant/table source section is 14,640 bytes at `0x00663A00`, containing
+all 21 actual named definitions, complete reciprocal/log/exp tables and masks.
+Its SIGMASK anchor is interior at +14,480 / `0x00667290`; comparison starts
+at the real whole section base. No single-mask prefix or guessed array count
+substitutes for the whole table. Full default-name, fastflag, x87 constants,
+return-dispatch pointers and floating adjustment state also replay. Every
+code/data pointer reaches its actual complete source owner and instruction
+entry. The SSE dispatch state is the unique four-byte tentative COMMON from
+cpu_disp.obj at `0x0068FBA0`, with whole-archive alternatives, complete loader
+zero-fill and independent retained R130 provenance. Original external linker
+inputs and live mutable state are not inferred.
+
+The two own-AUX primaries cover 2,945 bytes / 61 fields. Five whole auxiliary
+controls cover 787 bytes / 32 fields. Nine whole independent retained anchors
+cover 1,957 bytes / 66 fields, including complete libm error, load/control-word,
+argument-error, pow helper and enclosing x87/return-dispatch owners. The two
+non-inventory anonymous parents and fast-exit control retain their full R130
+source identity; no new inventory credit is invented. Full R130 and its
+independent dependency chain cold-replay. All newly reviewed own bodies and
+the full carrier are linked from independently defined fields and compared
+against every byte, unmasked. Every actual local/shared/direct edge is checked
+against complete source and target instruction starts.
+
+**Compiler observations and local acceptance.**
+`probes/VC7PowerMathLayout.cpp` uses complete actual SDK/vendor records and
+public ABI/intrinsic controls. Its 104-byte layout includes the real 32-byte
+_exception, ten-byte FP80, full field offsets and math/exception/control-word
+constants. All 77 actual included headers are pinned. Five complete natural
+controls / 160 bytes / three fields cold-build; every allocated probe code/
+data section is accounted for, with no orphan sections or game-owner layout.
+Flags are explicit per-control reproducibility settings under VC7.1 build
+3077, not an executable-wide compiler claim. Thirty-nine regression checks
+exercise full extents/tables/source alternatives, real shared entries/dispatch
+contracts and actual independent DIR32/REL32 arithmetic, typed source symbols,
+field ranges, overlaps and complete linked-byte preservation.
+
+The new/retained cold evidence replay passes, followed by canonical ledger
+write/read-back. All 1,087 public checks, target/project/query attestation,
+authored-extent verification, unchanged exact inputs, progress/scanner freshness
+and whitespace checks pass locally. Totals are 3,441 resolved (919 authored,
+1,947 library, 575 compiler), 910 pending and 2,522 excluded. Source/mapping/
+exact remains 60 / 9,883 bytes. All exact inputs and 60 accepted rows remain
+unchanged from R139 db26a05, preserving its 60/60 cold proof across eleven
+objects. No affected exact unit requires replay. Recorded authored extents
+remain 872 / 1,952,956 bytes; the provisional denominator is 1,965,299.
+The public MCP acceptance waiver remains in force. The no-auth route/private
+random path remain unchanged; private logs, objects and diagnostics are untracked.

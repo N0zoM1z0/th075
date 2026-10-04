@@ -3606,8 +3606,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00643604,library,VC71CRT,exclude,complete-vendor-jump-unwind-seh-scope-absolute-sdk-abi-provenance,R144
 0x00643680,library,VC71CRT,exclude,complete-pinned-archive-body,R107
 0x006436FC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x00643770,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006437CD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00643770,library,VC71CRT,exclude,complete-vendor-power-parent-carrier-table-dispatch-sdk-provenance,R146
+0x006437CD,library,VC71CRT,exclude,interior-entry-in-complete-vendor-power-parent,R146
 0x006439C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643AF0,library,VC71CRT,exclude,complete-pinned-archive-body,R107
 0x00643B10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3803,8 +3803,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064DA08,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x0064DBD0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064DC10,library,VC71CRT,exclude,complete-vendor-jump-unwind-seh-scope-absolute-sdk-abi-provenance,R144
-0x0064DC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064DC79,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064DC60,library,VC71CRT,exclude,complete-vendor-power-parent-carrier-table-dispatch-sdk-provenance,R146
+0x0064DC79,library,VC71CRT,exclude,interior-entry-in-complete-vendor-power-parent,R146
 0x0064E7B0,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x0064E81E,library,VC71CRT,exclude,complete-vendor-vector-math-parent-code-data-dispatch-abi-provenance,R130
 0x0064E980,library,VC71CRT,exclude,complete-vendor-floating-conversion-operation-code-data-abi-provenance,R139
