@@ -3249,3 +3249,136 @@ HTTPS MCP acceptance covering R130 and retained graphs, all authored extents,
 project attestation, progress freshness, 517 tests and whitespace checks.
 All 60 exact units cold-replay across eleven objects. Private evidence stays
 untracked; target, private database, shared tools and game source are preserved.
+
+## R131 — Complete localtime, time-zone and environment dependency graph
+
+R131 resolves all six handoff candidates and fourteen necessary existing
+entries: seventeen complete library primaries / 4,384 bytes / 237 typed fields
+and three existing nine-byte cleanup entries. Replay
+`scripts/repo-python scripts/verify-time-zone-origins.py`; the manifest is
+`config/time-zone-origin-evidence.json`. No source, mapping or exact credit is
+added. Source associations come from the hash-pinned libcmt.lib archive, not
+from Ghidra names or the presence of reviewed callees.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `_localtime` | `0x0064197E` | 384 | 13 |
+| `__tzset_lk` | `0x00647778` | 680 | 62 |
+| `__isindst_lk` | `0x00647BD8` | 391 | 30 |
+| `___tzset` | `0x00647D5F` | 76 | 9 |
+| `__isindst` | `0x00647DE0` | 62 | 6 |
+| `_gmtime` | `0x00647E1E` | 263 | 5 |
+| `_cvtdate` | `0x00647A20` | 440 | 15 |
+| `__getenv_lk` | `0x006506C5` | 129 | 8 |
+| `___wtomb_environ` | `0x00653816` | 144 | 6 |
+| `__mbsnbicoll` | `0x006537C8` | 78 | 4 |
+| `___crtsetenv` | `0x00654660` | 469 | 27 |
+| `___crtCompareStringA` | `0x0065422E` | 900 | 38 |
+| `__mbschr` | `0x0065497E` | 123 | 4 |
+| `_copy_environ` | `0x006545FF` | 97 | 3 |
+| `_findenv` | `0x006545B2` | 77 | 4 |
+| `_strncnt` | `0x00654212` | 28 | 0 |
+| `__strdup` | `0x00642AD2` | 43 | 3 |
+
+**Complete extents and shared cleanup.** Every primary retains its whole own
+COFF AUX extent. The two lock wrappers expand from provisional 67/53 bytes to
+76/62, including all finally instructions. Their existing cleanup entries
+`0x00647DA2` and `0x00647E15` bind actual source labels at +67/+53. The existing
+`0x00647993` entry is the time-zone reader's normal cleanup subentry at +539;
+its scope points to the complete exceptional entry at +534, including the
+five-byte frame adjustment before that subentry. The verifier preserves both
+actual source labels, complete parents and instruction starts. All three
+names remain blank; overlapping cleanup bytes gain no standalone credit.
+
+The old 336-byte `0x0065497E` span merges different source owners. Reconciliation
+retains every old byte: its own MBCS search AUX / 123, seven observed INT3
+alignment bytes, and an entire separate strchr section / 206. That section
+contains a sixteen-byte static success entry at `0x00654A00` and `_strchr` /
+190 at `0x00654A10`; both have actual complete AUX records. The sixteen-byte
+AUX includes eleven source-emitted alignment bytes after RET. The strchr
+conditional branch reaches the preceding success entry in the same defining
+section, so comparing only the 190-byte entry is insufficient. All 206 source
+bytes replay. Only after that coverage is established is the canonical MBCS
+extent reconciled to 123. Neither unlisted source control becomes an invented
+inventory candidate, and the seven target alignment bytes earn no credit.
+
+**Target-observed time and storage protocol.** Localtime rejects negative
+signed epoch values and preserves both paths around the actual three-day
+margins 259,200 and 2,147,224,447. It retains timezone and DST adjustments,
+near-limit updates to the existing tm fields and actual tm_isdst at +32.
+Gmtime uses the getptd return's +68 buffer slot, allocates a complete 36-byte tm,
+and falls back to its whole static tm when allocation fails. All calendar,
+leap-year, month/day, weekday and time-of-day arithmetic stays inside its full
+263-byte AUX; both complete thirteen-element month tables replay together.
+The original time representation is the observed 32-bit signed CRT model;
+this is not a claim about current operating-system time APIs.
+
+The initializer uses time lock 6, while its TZ environment read uses lock 7.
+The first-time flag, cached lastTZ pointer, Windows API path, environment path,
+failed allocations/conversions, cache invalidation, default names and both
+cleanup paths remain intact. The transition converter and DST tester retain
+both start/end records, year caching, relative/absolute Windows transition
+forms and both orderings of the start/end dates. The full Windows timezone
+object is 172 bytes; SYSTEMTIME is sixteen with WORD fields. No Japanese-zone
+value is inferred merely from the executable's language. Writable values,
+OS/environment inputs and the runtime locale remain unknown.
+
+**Environment, NLS and API closure.** Getenv's conversion branch invokes the
+entire wide-to-multibyte environment converter, which in turn reaches the
+whole crtsetenv parent and its real local copy/find helpers. Allocation,
+duplication, environment-vector updates, failures and SetEnvironmentVariableA
+remain source-typed. Name comparison reaches complete mbsnbicoll and the
+900-byte crtCompareStringA, including ANSI/wide API selection, both conversions,
+stack/heap allocation, both stack-overflow filters/handlers and cleanup. All
+raw IAT fields bind their actual descriptor names; register-indirect calls
+retain complete source instructions and the actual loaded IAT value. The
+existing chkstk owner retains its source-defined alloca_probe alias; an alias
+without its own function AUX is not treated as a separate function.
+
+Two complete vendor alternatives remain explicit. Copy_environ / 97 also
+has a wide-family source body with equal non-field bytes and a different
+duplication symbol. Strncnt / 28 occurs in another complete NLS member. The
+selected narrow environment/CompareStringA parents actually define and call
+their own local symbols; all selected fields bind complete defining owners.
+Equivalent shapes alone do not identify a source unit, original spelling or
+folding. Natural narrow/wide duplication call controls both emit seventeen
+bytes, retaining distinct REL32 symbols `__strdup`/`__wcsdup`; symbolic calls
+cannot be merged merely because their unlinked bodies are equal.
+
+Fifteen whole defining data sections / 679 bytes / nine typed fields include
+all time-zone defaults and name pointers / 152, the full timezone/cache/once
+BSS carrier / 184, both transition records / 24, both month tables / 104,
+static tm / 36, complete environment and locale carriers, cookie, literal TZ,
+NLS flag and four full SEH scope definitions. The three time-zone scopes are
+twelve bytes each; CompareStringA's complete two-record scope is 24 with all
+four filter/handler pointers. Both environment-initialized and MBCS-info
+COMMON definitions retain their full four-byte declarations and loader
+zero-fill geometry. No table or writable-carrier prefix substitutes for a
+complete defining object. Twenty-one independent anchors / 2,607 bytes / 108
+fields retain historical origins and the entire R130/runtime/compiler/game
+chain; no new origin is inherited from those anchors.
+
+**Compiler observations and limits.** Natural VC7TimeZoneLayout cold-builds
+53 DWORDs / 212 bytes using complete pinned CRT/SDK types and a synthetic
+three-int transition control. It verifies time_t/pointer/int/long / 4,
+wchar_t / 2, tm / 36 and all nine fields, thread / 140 with gmtime/MBCS slots
++68/+96, complete MBCS info / 544, SYSTEMTIME / 16, timezone / 172 and all
+relevant offsets, transition / 12, locks and epoch constants. Eleven complete
+vendor source files and nine headers are hash-pinned privately by the manifest.
+The synthetic transition model is a layout control, not a recovered game
+owner. No incomplete game object is instantiated or embedded. Explicit probe
+flags and VC7.1 build 3077 are reproducibility settings; no executable-wide
+compiler profile is inferred. Vendor strchr assembly COFF is archive evidence;
+no assembly or target-byte arrays are added to game source.
+
+Thirty-eight regression checks reject truncated parents/scopes/tables,
+misbound cleanup or COMMON, lost thread/time/SDK layouts, conflated narrow/wide
+calls, wrong local source parents and discarding/recounting the old MBCS span.
+All 555 public checks pass. Canonical totals are 3,302 resolved (919 authored,
+1,808 library, 575 compiler), with 1,049 pending. Exact/source/mapping remains
+60 / 9,883 bytes; recorded authored extents remain 872 / 1,952,956 bytes and
+the provisional denominator remains 1,965,299. One final no-auth public HTTPS
+MCP acceptance replays R131 and retained graphs, all authored extents, project
+attestation, progress freshness, 555 tests and whitespace checks. All 60 exact
+units cold-replay across eleven objects. Investigation and intermediate checks
+are local; private evidence stays untracked and shared tools remain read-only.
