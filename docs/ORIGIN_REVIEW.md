@@ -9573,3 +9573,82 @@ bytes: `0x00410F30` / 104, `0x0045B760` / 203, `0x0045B920` / 131 and
 `0x005F7140` / 162. Retain the complete R045/R050/R065 authored parents and
 actual calls listed in the handoff. Parent/child relationships alone do not
 resolve ownership. The full remaining-origin goal is active and unfinished.
+
+## R166 — Custom game policies with complete independent parent and source context
+
+R166 accepts all four handoff candidates / 600 bytes as authored. Independent
+whole game context and each full custom behavior support these decisions;
+scanner labels and library children alone are insufficient.
+
+| Address | Entire bytes | Target-observed custom policy | Independent whole game parent |
+| --- | ---: | --- | --- |
+| `0x00410F30` | 104 | Store incoming identifier, flags 15 and mode 5; clear the member at +4, with complete EH | R045 resource loader `0x00456B60` / 1186 |
+| `0x0045B760` | 203 | Base construction, observed vptr and fifteen sparse scalar default writes | R050 Reimu initializer `0x004769B0` / 134 |
+| `0x0045B920` | 131 | Construct four 20-byte deque observations at +4, then explicitly loop over clear calls | R045 fighter initializer `0x004567B0` / 345 |
+| `0x005F7140` | 162 | Delete each pointer in two deque observations, clearing each queue after its loop | R065 character loader `0x004176F0` / 3232 |
+
+Replay `scripts/repo-python scripts/verify-game-parent-policy-origins.py` using
+`config/game-parent-policy-origin-evidence.json`. Three whole natural C++
+policies / 397 bytes compare unmasked, including every actual call and complete
+own-AUX extent. The 203-byte initializer has full target instruction witnesses,
+all fifteen observed zero stores and complete independent game context; it has
+no positive source-match claim. Its entire implicit virtual-construction control
+is 31 bytes, not a compared target prefix. Full implicit list and array controls
+are 25 and 40 bytes versus the explicit 104 and 131. These generated source
+definitions lack primary AUX records; the verifier checks the complete unique
+code COMDAT, all actual symbol metadata, every source byte and full CFG.
+None earns positive comparison, reconstructed source or exact credit.
+
+Nineteen full source/code/EH/state comparisons / 1340 bytes retain 63 genuine
+unmasked fields. They include complete list and deque contexts and both entire
+21-/32-byte cleanup/handler carriers with their whole 36-byte unwind/FuncInfo
+sections. Original R020 frames at handlers `0x0065501B` and `0x006563B6`
+remain unchanged. Real fields bind independently accepted whole runtime vector
+constructor/destructor iterators / 98 and 96 bytes and the runtime handler.
+FS exception-list fields represent offset zero, not PE data.
+
+All 146 cold ordinary sections / 6709 bytes, 29 actual SDK headers and the whole
+36-byte layout `[20,20,84,84,40,4,4,12,20]` are pinned. Complete observations
+use unsigned list values, float array-deque values and unsigned pointees for
+the pointer queues; these separate real source owners retain coherent allocator
+destinations. They do not recover original element/node types or private owner
+layouts. The four-byte virtual observer is a negative model only; no incomplete
+original game owner is instantiated. Source sizes and flags are probe/compiler
+observations, not executable-wide compiler provenance.
+
+Both SDK clear and destructor bodies can emit the entire same 19-byte form
+calling the same Tidy. Original R077 destructor evidence is retained verbatim;
+the new clear association preserves original spelling ambiguity. R073's 72-byte
+deque constructor stays library. The 56-/153-/19-byte list operations, their
+22-byte custom wrapper, base constructors and other unresolved helpers retain
+their original independent origins. One readonly four-byte vtable slot at
+`0x00659064` binds `0x0045B880` / 149, which stays unknown; this observation
+establishes neither a whole vtable extent nor original virtual ABI.
+
+Four whole authored anchors / 4897 bytes retain exact original evidence rows,
+complete CFG and actual argument/return windows. The R065 parent retains both
+entire guarded switch tables / 44 and 20 bytes. Eleven prior source/runtime
+records and 88 complete body/canonical snapshots preserve all unrelated owners
+and protected R108/R158/R161/R162/R163/R165 ambiguities. Growing authored
+registry additions are permitted through exact retained-row membership; no whole
+registry hash is frozen. No older manifest needs a transition exemption for
+these four previously unrecorded candidates.
+
+Complete cold comparison precedes acceptance. Readback against R165 HEAD
+646a2f3 confirms exactly four function/origin transitions and four appended
+authored extent records / 600 bytes. All 875 original authored records, headers
+and order, unrelated rows, previous manifests and exact inputs are preserved.
+Forty-two regression guards and all 1633 public checks pass, with local
+target/project/query attestation, fresh scanner, authored extents and whitespace
+checks. Public MCP acceptance remains waived. Totals are 3515 resolved (926
+authored, 2014 library, 575 compiler), 836 pending and 2589 excluded. Authored
+evidence is 879 bodies / 1953689 bytes. All 60 source/mapped/exact functions
+/ 9883 bytes and R139 db26a05 exact inputs remain unchanged; its earlier cold
+60/60 replay across eleven objects remains applicable. Provisional exact coverage
+is 9883 / 1966032 (0.50%), with no new reconstructed source/private ABI/mapping/
+exact credit. The full remaining-origin goal is unfinished.
+
+The next R167 cohort is the four unresolved list-policy dependencies / 250
+bytes (`0x00411C30`, `0x004110F0`, `0x00411D60`, `0x00411C70`) with their
+new complete R166 custom parent, whole wrapper and full EH cleanup context.
+Retain all actual lower node/allocator fields and unknown original types.

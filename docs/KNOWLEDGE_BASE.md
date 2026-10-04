@@ -6618,3 +6618,70 @@ The next bounded R166 cohort is four diagnostic game-parent context candidates
 Game callers or library children alone grant no origin. Preserve independently
 unknown destruction/lifetime/copy/math policies. The full goal remains active
 and unfinished, without exact-reconstruction scope.
+
+## R166: Complete custom defaults, queue initialization and pointer release policies
+
+Four whole functions / 600 bytes now have authored origin through complete
+custom behavior and independent whole game parents: `0x00410F30` / 104
+stores its incoming identifier and defaults flags 15/mode 5 before member
+clear; `0x0045B760` / 203 installs the observed vptr after base construction
+and writes fifteen sparse scalar defaults; `0x0045B920` / 131 constructs
+four 20-byte deque observations then loops over explicit clear calls;
+`0x005F7140` / 162 deletes each pointer in two queues and clears each queue
+after its loop. Names, original method spelling and full owner layouts remain
+provisional. Library children and parent labels alone do not establish origin.
+
+Replay `scripts/repo-python scripts/verify-game-parent-policy-origins.py` using
+immutable `config/game-parent-policy-origin-evidence.json`. Three entire natural
+C++ policies / 397 bytes compare unmasked with complete own-AUX extents.
+The separate 203-byte initializer relies on its whole target CFG, all fifteen
+actual default writes and independent complete Reimu initializer. No positive
+source match is claimed for it. Whole implicit construction controls / 25,
+40 and 31 bytes are negative alternatives, never target prefixes. Their generated
+definitions have no primary AUX records, so the verifier checks each complete
+unique defining code COMDAT, actual symbol metadata, full source bytes and CFG.
+
+Nineteen complete source/code/EH/state comparisons / 1340 bytes retain 63 real
+unmasked fields. Entire 21-/32-byte cleanup/handler carriers and both full
+36-byte state sections preserve the original R020 list/array frames and actual
+98-/96-byte runtime array helpers. Four unchanged whole authored parents
+/ 4897 bytes retain original evidence and actual argument/return call windows;
+the battle loader retains both complete guarded switch tables / 64 bytes.
+All 146 cold ordinary sections / 6709 bytes, 29 actual SDK headers and complete
+36-byte layout `[20,20,84,84,40,4,4,12,20]` are pinned. Unsigned list, float
+array-deque and unsigned-pointer observations distinguish genuine source owners
+and allocator destinations without claiming original game types or layouts.
+
+SDK clear and destructor source alternatives are fully byte-equal at the relevant
+19-byte boundaries. R077's original destructor evidence remains immutable;
+original spelling stays unknown. The R073 72-byte deque constructor retains
+library ownership. Independent unknown list operations, custom wrapper, base
+constructors and lower helpers receive no new ownership. Only one readonly
+four-byte virtual slot is observed at `0x00659064`; its full 149-byte target
+`0x0045B880` stays unknown. Neither original whole vtable extent nor virtual
+declaration ABI is recovered. The complete four-byte synthetic virtual observer
+serves only as a negative control and is not an instantiated original owner.
+
+Eleven exact prior records and 88 canonical/body snapshots retain independent
+source/runtime owners and every protected lifetime/copy/math/destruction policy.
+Original authored-parent records are preserved by exact membership, allowing
+unrelated future additions. Complete cold comparison precedes canonical
+acceptance. R165 HEAD 646a2f3 readback verifies exactly four function/origin
+changes and four new authored extent records; all 875 original authored rows,
+headers/order, prior manifests, unrelated records and exact inputs remain intact.
+Forty-two new regression checks and all 1633 public checks pass, as do local
+target/project/query attestation, fresh scanning, authored extents and whitespace.
+
+Totals are 3515 resolved (926 authored, 2014 library, 575 compiler), 836 pending
+and 2589 excluded. Authored evidence is 879 complete bodies / 1953689 bytes.
+The 60 source/mapped/exact functions / 9883 bytes and R139 db26a05 exact inputs
+remain unchanged; its earlier cold 60/60 replay across eleven objects remains
+applicable. Provisional exact coverage is 9883 / 1966032 (0.50%), with no new
+reconstructed source/private ABI/mapping/exact credit. Public MCP acceptance
+remains waived and the full remaining-origin goal is active and unfinished.
+
+The next bounded R167 cohort is four list-policy dependencies / 250 bytes:
+`0x00411C30` / 56, `0x004110F0` / 22, `0x00411D60` / 153 and
+`0x00411C70` / 19. Preserve complete R166 parent/wrapper/EH context and all
+actual lower node/allocator boundaries; a source association alone does not
+identify original element/node types. No exact scope is added.

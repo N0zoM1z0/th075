@@ -529,7 +529,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00410350,authored,SpriteScene,authored,target-observed,R035
 0x00410A00,authored,SpriteScene,authored,target-observed,R035
 0x00410F00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00410F30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00410F30,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x00410FA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00410FC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00410FE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2093,12 +2093,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B6F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045B710,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045B740,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
-0x0045B760,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B760,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x0045B830,authored,BattleEffect,authored,complete-game-policy-with-batch-context,R104
 0x0045B850,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045B860,authored,BattleEffect,authored,complete-game-policy-with-batch-context,R102
 0x0045B880,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0045B920,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B920,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x0045B9B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045BA10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045BA30,authored,BattleEffectManager,authored,complete-game-policy-with-mixed-context,R109
@@ -2445,7 +2445,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F6F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F6FF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F70E0,authored,Effects,authored,target-observed-game-policy-and-reviewed-callees,R100
-0x005F7140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F7140,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x005F71F0,authored,Effects,authored,target-observed,R067
 0x005F78B0,authored,Effects,authored,target-observed,R067
 0x005F7AA0,authored,Effects,authored,target-observed,R067
