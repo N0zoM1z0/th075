@@ -10167,3 +10167,85 @@ remains applicable. No source/private ABI/mapping/exact credit is added. Public
 MCP acceptance remains waived. The full remaining-origin goal is active and
 unfinished; the next bounded R173 cohort is four complete iterator/index
 candidates through the unchanged R019 bitmap-directory policies.
+
+## R173 — complete texture-vector access and erase context
+
+Seven complete library definitions / 235 bytes are accepted through the four
+iterator/index roots and necessary full iterator dependencies. Replay
+`scripts/repo-python scripts/verify-texture-vector-access-origins.py` with immutable
+`config/texture-vector-access-origin-evidence.json`. The complete R019 bitmap
+policies `0x0040B280` / 727 and `0x0040B560` / 575 retain all original authored
+records, instructions, CFG and switch rows. Their 33 actual size/index/endpoint/
+arithmetic/erase calls provide independent complete game value/argument context.
+The earlier sprite label in the shortlist was corrected against the original
+R019 bitmap-directory records; no origin depends on that temporary label.
+
+| Address | Complete bytes | Inferred SDK role |
+| --- | ---: | --- |
+| `0x0040DCE0` | 31 | begin |
+| `0x0040DD00` | 31 | end |
+| `0x0040DD60` | 49 | unchecked index |
+| `0x0040DFD0` | 45 | iterator addition |
+| `0x0040E4A0` | 28 | mutable pointer iterator constructor |
+| `0x0040E4C0` | 19 | mutable iterator dereference |
+| `0x0040E4E0` | 32 | mutable iterator addition assignment |
+
+Target observations independently agree on element width 44: the complete
+32-byte iterator addition assignment multiplies the offset by `0x2C` at
+`0x0040E4EA`, and whole 57-byte size calculation divides the pointer difference
+by 44 at `0x0040DD48..0x0040DD4E`. The complete 99-byte erase, real copy and
+range-destruction paths preserve that same width. Actual bitmap loading writes
+and reads record fields and passes the real index/iterator/erase values; original
+record declarations, packing, names and complete private owner layouts remain
+unknown. A preliminary 16-byte diagnostic observer was corrected before any
+manifest or canonical acceptance and supplies no evidence.
+
+Compiler/source observation: a complete synthetic 44-byte record with an external
+lifetime declaration closes the natural SDK vector access/size/erase/copy/
+destruction graph. All 22 full SDK/compiler controls / 815 bytes retain 22 real
+fields. Existing R032/R033 size/erase/copy/destruction/equality and R106 const
+construction remain independent. The entire 44-byte scalar deleting thunk
+`0x0040FA00` preserves compiler origin R037, its original full evidence row,
+actual opaque destructor and independently reviewed scalar delete. This generated
+function has no primary AUX; its entire unique defining code COMDAT is verified.
+Every regular positive retains its own full primary AUX and complete CFG.
+No source prefix, target array, assembly, fake return, inert padding, masked field
+or private ABI misdeclaration is used.
+
+Whole ordinary begin/end/index alternatives / 31,31,49 bytes are byte-equal with
+all five actual fields. They preserve the ambiguity of short method bodies.
+Library ownership is an inference from the newly complete actual index/stride/
+size/erase/copy/destruction graph and whole independent bitmap policies, rather
+than mapped names, caller labels or byte equality alone. Original method spelling
+stays provisional. With these alternatives, all 25 full controls / 926 bytes
+compare unmasked with 27 genuine fields through one coherent defining-symbol
+catalog. All 35 cold ordinary sections / 1129 bytes, 27 actual SDK headers and
+whole 24-byte layout `[44,16,4,4,16,1]` are frozen. Container/iterator observation
+sizes do not recover a complete original game owner.
+
+Fifty-five canonical/body snapshots and five original full pending/runtime/
+compiler records preserve previous evidence. Only three exact R162 historical
+accepted-pending to R173 accepted-library ledger transitions are added, with
+both old source profiles cold-replayed. The immutable R162 manifest and all
+R168/R169/R170 transitions remain intact. The original 158-byte assignment
+`0x0040E000`, 16-byte const pointer getter `0x0040E9B0`, 15-byte destruction
+wrapper `0x0040F9F0` and 19-byte custom lifetime policy `0x0040D8E0` remain
+independently unknown, as do all earlier protected opaque owners. Successful
+source reproduction of a low-level child grants no separate ownership.
+
+Full cold evidence preceded canonical acceptance. Strict R172 HEAD cfb1d52
+readback verifies exactly seven function/origin changes, unchanged extents,
+all 880 original authored rows/order and every earlier tracked configuration.
+Thirty-four new regression checks and all 1867 public checks pass, with fresh
+scanning, complete authored extents, local Ghidra attestation and whitespace
+checks. All prior source/header/build/ABI/mapping/match inputs stay unchanged.
+
+Totals are 3593 resolved (927 authored, 2091 library, 575 compiler), 758 pending
+and 2666 excluded. Authored evidence remains 880 complete bodies / 1953711 bytes.
+Exact stays 60 functions / 9883 bytes with provisional coverage
+9883 / 1966054 (0.50%); the earlier R139 cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added. Public
+MCP acceptance remains waived; the full remaining-origin goal is active and
+unfinished. The next bounded R174 cohort is the secondary texture-vector index
+and mutable dereference candidates through complete R017 resource policies and
+independently accepted R161/R095/R034 SDK context.

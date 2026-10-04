@@ -125,7 +125,8 @@ def verify_plan(m):
 def check_ledger(row, function, origin, evidence_only=False):
     transitions={'0x00411CC0':'verify-list-iterator-policy-origins.py','0x004121C0':'verify-list-iterator-policy-origins.py',
         '0x0041D980':'verify-archive-list-policy-origins.py','0x0041EF00':'verify-archive-list-policy-origins.py',
-        '0x00531DD0':'verify-character-list-policy-origins.py','0x00532300':'verify-character-list-policy-origins.py'}
+        '0x00531DD0':'verify-character-list-policy-origins.py','0x00532300':'verify-character-list-policy-origins.py',
+        '0x0040DCE0':'verify-texture-vector-access-origins.py','0x0040DD00':'verify-texture-vector-access-origins.py','0x0040E4A0':'verify-texture-vector-access-origins.py'}
     if row['address'] in transitions and row['decision']=='unknown':
         later=module('producer_list_ledger_transition',transitions[row['address']])
         if later.accepted_snapshot(dict(function=row['accepted_function'],origin=row['accepted_origin']),function,origin):return
@@ -257,7 +258,7 @@ def main():
             raw,_ = coff.readonly_section(data,m['layout']['section'],c.coff_name)
             if list(struct.unpack('<23I',raw))!=LAYOUT:
                 raise ValueError('vector producer complete SDK/ordinary observation layout differs')
-    print('R162 historical evidence OK: three library endpoints/constructor / 90 bytes through unchanged full R034 assignment; twelve short candidates / 357 bytes and both ordinary-equivalent assignment parents / 158,167 were retained as unknown at R162; exact bounded R168/R169/R170 iterator/list transitions are checked separately; 43 complete source/code/EH/state controls / 2039 bytes and 95 genuine unmasked fields; all 244 cold ordinary sections / 13520 bytes, full 92-byte layout and 27 SDK headers; full /GS negative inventory / 13616 bytes retains 174/183-byte parent extents; independent full game, SDK, runtime, registered frames and protected unknown lifetime/copy contexts preserved; no source/private ABI/mapping/exact credit.')
+    print('R162 historical evidence OK: three library endpoints/constructor / 90 bytes through unchanged full R034 assignment; twelve short candidates / 357 bytes and both ordinary-equivalent assignment parents / 158,167 were retained as unknown at R162; exact bounded R168/R169/R170/R173 iterator/list/vector transitions are checked separately; 43 complete source/code/EH/state controls / 2039 bytes and 95 genuine unmasked fields; all 244 cold ordinary sections / 13520 bytes, full 92-byte layout and 27 SDK headers; full /GS negative inventory / 13616 bytes retains 174/183-byte parent extents; independent full game, SDK, runtime, registered frames and protected unknown lifetime/copy contexts preserved; no source/private ABI/mapping/exact credit.')
     return 0
 
 

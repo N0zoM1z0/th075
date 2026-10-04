@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R172. The public
+review cohorts R108 through R173. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,586: 927 authored, 2,084 library and 575 compiler generated.
-There are 765 pending. Candidate count is not authored function count.
+has resolved 3,593: 927 authored, 2,091 library and 575 compiler generated.
+There are 758 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,53 +20,53 @@ bytes is 9,883 / 1,966,054 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R173 texture-record iterator/index cohort below.
+the bounded R174 secondary vector-access cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R172; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R173; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R173 texture-record iterator/index graph
+## Next agent objective — R174 secondary texture-vector access
 
-R172 accepts three entire deque front helpers / 96 bytes. Replay
-`scripts/repo-python scripts/verify-replay-deque-front-origins.py` with immutable
-`config/replay-deque-front-origin-evidence.json`. Three unchanged independent
-R045/R109/R065 game policies / 4912 bytes retain all original evidence and eight
-actual front calls; actual byte/word/dword loads independently establish widths
-1/2/4. All 42 whole SDK/ordinary controls / 1620 bytes compare unmasked with 30
-real fields; entire ordinary `first()` is byte-equal. All 51 cold ordinary
-sections / 2111 bytes, 28 actual includes and whole 76-byte layout are frozen.
-Seventy-six canonical/body snapshots and fifteen original accepted records
-preserve prior evidence. R109's unchanged verifier checks historical context
-without restricting later independent review of unknown children. All 1833
+R173 accepts seven entire SDK vector-access/iterator dependencies / 235 bytes.
+Replay `scripts/repo-python scripts/verify-texture-vector-access-origins.py` with
+immutable `config/texture-vector-access-origin-evidence.json`. Full R019 bitmap
+policies / 1302 bytes and 33 real size/index/endpoint/arithmetic/erase calls retain
+all original evidence. Actual iterator multiplier and size divisor both 44 are
+independent observations; original record/owner layouts remain unknown. All 25
+whole SDK/ordinary/compiler controls / 926 bytes compare unmasked with 27 real
+fields. Whole ordinary begin/end/index / 31,31,49-byte alternatives are byte-equal.
+All 35 cold ordinary sections / 1129 bytes, 27 actual SDK headers and whole 24-byte
+layout are frozen. Fifty-five canonical/body snapshots and five full original
+pending/runtime/compiler records preserve earlier owners. Only three exact R162
+ledger transitions are added; both old source profiles cold-replay. All 1867
 public checks pass. Existing evidence, 880 authored bodies and 60 exact functions
-stay intact. Public MCP acceptance remains waived; the full origin goal is
-active and unfinished.
+stay intact. The 16-byte pointer getter, 15-byte destruction and 158-byte assignment
+stay unknown. Public MCP acceptance remains waived; the full goal is active.
 
-The fresh `.analysis/origin-scan/r172-triage.json` has 765 pending. The next
-bounded cohort is four iterator/index candidates / 156 provisional bytes
-through complete R019 parents `0x0040B280` / 727 and `0x0040B560` / 575:
+The fresh `.analysis/origin-scan/r173-triage.json` has 758 pending. The next
+bounded cohort is two secondary vector-access candidates / 68 provisional bytes:
 
-| Candidate | Full provisional extent | Actual whole context to reconcile |
+| Candidate | Full provisional extent | Actual whole SDK and game contexts |
 | --- | ---: | --- |
-| `0x0040DCE0` | 31 | actual parent calls at `0x0040B514` / `0x0040B75C`; real iterator constructor `0x0040E4A0` |
-| `0x0040DD00` | 31 | same whole parents, calls at `0x0040B4EE` / `0x0040B736`; actual shared iterator constructor |
-| `0x0040DD60` | 49 | actual R019 record/index accesses; full begin/addition/dereference graph |
-| `0x0040DFD0` | 45 | actual iterator-producing arithmetic and full value/access context |
+| `0x0040DEE0` | 49 | actual R161 begin `0x0040E1F0`, R095 addition `0x0040E550` and pending dereference `0x0040E530`; whole R017 resource policy `0x0040AE40` / 434 |
+| `0x0040E530` | 19 | actual index graph and const dereference child; full resource value/access context and unchanged R034 assignment `0x0040E210` / 96 |
 
-These are diagnostic candidates, not promised acceptances. Obtain this graph's
-container kind and element width independently from the full target policies.
-Do not inherit list/deque widths or names from earlier batches. Require complete
-natural SDK and ordinary controls, real unmasked fields, full own primary AUX
-and original CFG/extent reconciliation. Extend only to necessary complete
-fully evidenced dependencies. Preserve all previous manifests, original records
-and protected opaque owners. Continue bounded origin review; exact remains 60.
+These are diagnostic candidates, not promised acceptances. Read the original
+R161/R095/R034 evidence and whole R017 `0x0040AD80` / 177 and `0x0040AE40`
+/ 434 policies. Obtain this vector's element width and actual owner/argument
+context independently; do not inherit R173's 44 or R172's 1/2/4. Build entire SDK
+and ordinary alternatives with genuine fields and own full extents. Preserve
+all previous manifests and only allow exact bounded later transitions if needed.
+Keep getters, destruction children, lifetime/copy/math policies and all other
+protected opaque owners independently pending. Continue origin review; exact
+credit remains 60.
 
 ## R165 checkpoint and the completed R166 shortlist
 
