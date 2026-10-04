@@ -6265,3 +6265,123 @@ lifetime ambiguities, R158 record-copy ambiguity and R161 second destruction
 leaf `0x0040F9F0` / 15 protected. Keep original R078 source-shape evidence and
 R161 genuine operation refinement intact. All prior manifests, the private
 route and 60-function exact inputs remain preserved; no exact scope is added.
+
+## R162 — Complete vector producer observations and conservative ownership
+
+R162 reviews fifteen short vector endpoint/constructor candidates / 447 bytes.
+Only `0x005F8B50` / 31, `0x005F9350` / 31 and `0x005F9600` / 28 gain library
+origin, totaling 90 bytes. Their independent whole R034 assignment
+`0x005F8B70` / 96, complete R032 erase / 99 and insert / 33, and actual R106
+const-iterator constructor / 24 supply a coherent retained SDK source context.
+Every byte and actual relocation compares unmasked. Full own positive AUX
+extents and canonical size/span_end are unchanged. The inference identifies
+library ownership, not original record declarations or an original source file.
+
+The other twelve candidates / 357 bytes remain unknown, as do the two full
+assignment parents `0x0040E000` / 158 and `0x005F84B0` / 167. Complete ordinary
+begin/end / 31 and derived iterator constructor / 28 are byte-equal to SDK
+controls. More significantly, natural ordinary C++ members using a complete
+SDK vector base, a real local record, erase and insert reproduce both entire
+nontrivial assignment bodies and their complete exception cleanup/state data.
+A reviewed game caller or library child does not independently settle ownership
+of those original short leaves or parent declarations. Seventeen function rows
+receive bounded evidence notes, while exactly three origin rows change; the
+fourteen pending records retain their names, ownership and dispositions.
+
+The 158-byte parent copies all 44 bytes of an observed local value; the
+167-byte parent copies all 16 bytes. Each registers one unwind state and calls
+its actual destructor both normally and through cleanup. Synthetic observation
+types declare external destructors; these declarations are probe ABI inputs,
+not recovered game declarations. The actual unknown policies `0x0040D8E0`
+/ 19 (protected R108 ambiguity) and `0x004588B0` / 43 remain unknown. Existing
+copy `0x004229D0` / 28 and destruction `0x0040F9F0` / 15 remain protected.
+Neither nontrivial assignment is compared to a convenient 96-byte prefix.
+
+For each SDK and ordinary parent, the whole 18-byte defining EH carrier has an
+eight-byte destructor cleanup tail followed by the ten-byte handler entry.
+The cleanup jumps to the actual destructor; the handler loads the genuine
+FuncInfo and jumps to unchanged full R142 `0x006407B8` / 54. Entire 36-byte
+state sections include both unwind records and FuncInfo, with the primary
+FuncInfo definition at offset eight. Every local symbol is bound from this
+cold object's own section definitions. Original R020 frames at `0x00654F68`
+and `0x006566F8`, their owner registration sites, state/cleanup data and actual
+field destinations are retained and revalidated. The `__except_list` value
+zero is an FS offset, not PE data. Whole cleanup/handler carriers include
+both shared tails; no positive own AUX is invented for generated local entries.
+
+The pinned build 3077 rejects `/GS-` with an unknown `/G-` warning. The accepted
+probe profile omits `/GS` and emits the full no-cookie 158/167-byte bodies.
+A separately cold-built explicit `/GS` negative profile emits entire
+174/183-byte SDK alternatives containing genuine cookie load/check fields.
+Their lengths differ from target extents; they earn no match or origin credit.
+This is a bounded compiler observation, not an executable-wide flag profile.
+The short endpoint shapes cannot distinguish those flag choices.
+
+Replay `scripts/repo-python scripts/verify-vector-producer-origins.py` with
+`config/vector-producer-origin-evidence.json` and natural complete source
+`probes/VC7VectorProducerContexts.cpp`. Forty-three full code/EH/state controls
+/ 2039 bytes and 95 genuine fields compare unmasked. The primary cold inventory
+covers all 244 ordinary sections / 13520 bytes, and the `/GS` negative inventory
+covers all 244 sections / 13616 bytes. All 27 actual SDK headers and the complete
+92-byte observation layout are pinned. Observations have record sizes 44, 16
+and four, SDK vector sizes 16, and iterator sizes four; complete ordinary bases
+are instantiated without declaring or instantiating an incomplete game owner.
+Inventory coverage does not claim every emitted section matches the executable.
+Original source, game layouts, lifetime declarations, linker choices and live
+iterator/value outcomes remain unknown. No source/private ABI/mapping/exact
+credit is added.
+
+Five whole previously authored game parents retain all eight actual candidate
+call windows: R019 `0x0040B280` / 727 and `0x0040B560` / 575, R035
+`0x00411110` / 746, R052 `0x0041D260` / 686 and R053 `0x0041D750` / 164.
+These are independently retained game evidence, not proof of callee ownership.
+Six surrounding full 42-byte producer helpers and two eight-byte bridges remain
+unknown and preserve their whole CFG. They cannot be accepted as 31-byte
+endpoint prefixes. Nineteen original SDK/runtime/game records are retained by
+immutable evidence files or exact authored-row membership. The growing authored
+registry is not frozen against unrelated future additions.
+
+Cold whole comparisons precede canonical acceptance. Exact bounded readback
+against R161 HEAD a5c512e confirms three library-origin and seventeen function-
+evidence changes; all unrelated rows, all authored evidence, previous manifests,
+private route and exact inputs are unchanged. Thirty-four public regression
+checks guard complete parents/EH/state/ordinary alternatives, actual fields,
+protected unknown ownership and false source/ABI/exact credit. All 1498 public
+checks, local target/project/query attestation, fresh scanner/progress, authored
+extents, exact-input preservation and whitespace checks pass. Public MCP
+acceptance remains waived by the user; private diagnostics and objects remain
+untracked.
+
+Totals are 3504 resolved (922 authored, 2007 library, 575 compiler), 847 pending
+and 2582 excluded. Authored evidence remains 875 bodies / 1953089 bytes.
+The 60 source/mapped/exact functions / 9883 bytes and all exact inputs remain
+unchanged from R139 db26a05; its previous 60/60 cold replay across eleven objects
+remains applicable. No affected exact unit needs replay. Provisional authored
+coverage remains 9883 / 1965432 (0.50%). The full origin-review objective is
+unfinished; this batch makes three conservative ownership decisions and retains
+complete negative/ambiguous evidence for subsequent review.
+
+The next bounded R163 cohort is twelve string-length wrapper/worker candidates
+/ 253 provisional bytes. These are diagnostic associations, not promised origin
+acceptances:
+
+| Candidate pair | Full provisional extents | Required independent context |
+| --- | ---: | --- |
+| `0x0040D900`, `0x0040D920` | 17, 28 | whole source/runtime worker and actual string argument; retain protected R108 lifetime declarations independently |
+| `0x0040D940`, `0x0040D960` | 17, 28 | second complete wrapper/worker; byte equality does not establish shared original ownership |
+| `0x00412D90`, `0x00412DB0` | 17, 28 | actual complete caller and string/storage roles, not a name-only strlen binding |
+| `0x00428D20`, `0x00428D40` | 17, 28 | complete string/source context and every real call/data/import field |
+| `0x00438A60`, `0x00641FB8` | 17, 11 | whole independently reviewed game callers and full runtime/import/possible shared-tail extent |
+| `0x00449A60`, `0x00449A80` | 17, 28 | whole authored parent `0x004491E0` and actual string arguments, keeping lifetime origins separate |
+
+A fresh R162 full own-AUX survey yields 363 relocation-excluding diagnostic
+associations; this does not grant origin or exact credit. The 17-byte shape also
+fits an allocation wrapper when its real destination is ignored. Reconcile each
+entire worker, source/ABI meaning, imports, CFG, exits, alignment and full own-AUX
+or justified defining-source carrier before accepting anything. Compare natural
+complete SDK, intrinsic/runtime and ordinary alternatives as applicable; retain
+ambiguous user wrappers as unknown. Do not infer a parent from a reviewed child
+or infer ownership from a reviewed game caller alone. Protect all prior R108
+lifetime, R158 copy and R161 destruction ambiguities, the R161 retained R078
+operation refinement, and the fourteen unknown R162 endpoint/assignment records.
+All existing evidence and exact inputs remain preserved; no exact scope is added.

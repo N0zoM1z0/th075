@@ -2492,7 +2492,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8B00,library,vc7-stl-deque-helpers,exclude,high,R087
 0x005F8B10,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x005F8B30,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x005F8B50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8B50,library,VC7STL,exclude,complete-vc7-vector-endpoint-with-whole-independent-assignment-and-constructor-context,R162
 0x005F8B70,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x005F8BD0,library,vc7-stl-vector-storage,exclude,high,R089
 0x005F8C50,library,vc7-stl-vector-storage,exclude,high,R089
@@ -2528,7 +2528,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F92F0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x005F9310,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x005F9330,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
-0x005F9350,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9350,library,VC7STL,exclude,complete-vc7-vector-endpoint-with-whole-independent-assignment-and-constructor-context,R162
 0x005F9370,library,vc7-stl-vector-helpers,exclude,high,R090
 0x005F9390,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005F93C0,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2544,7 +2544,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F95B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F95D0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005F95F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F9600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9600,library,VC7STL,exclude,complete-vc7-vector-endpoint-with-whole-independent-assignment-and-constructor-context,R162
 0x005F9620,library,VC7STL,exclude,vendor-source-corroborated,R051
 0x005F9640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F9650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
