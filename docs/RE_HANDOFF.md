@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R155. The public
+review cohorts R108 through R156. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,465: 922 authored, 1,968 library and 575 compiler generated.
-There are 886 pending. Candidate count is not authored function count.
+has resolved 3,471: 922 authored, 1,974 library and 575 compiler generated.
+There are 880 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R156 paired deque producer cohort below.
+the bounded R157 typed deque dependency cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R155; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R156; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R156 complete paired deque producers and typed dependencies
+## Next agent objective — R157 complete lower-level typed deque dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -835,30 +835,45 @@ Do not revisit either from scanner rank, adjacent CRT names or new same-shaped
 controls without new independent source ownership evidence. Preserve all R129
 abs/labs versus ordinary expression ambiguity, including `0x00641FB8` / 11.
 
-The next bounded R156 cohort is six retained unknown deque-context candidates:
+R156 accepts both complete 211-byte deque producers and all four 27-/29-byte
+element-allocator/construction wrappers: six library owners / 534 bytes.
+Replay `scripts/repo-python scripts/verify-paired-deque-producer-origins.py`.
+The cold source retains all 187 ordinary sections / 11917 bytes, 162 entire
+linked code/EH carriers / 11016 bytes, 22 whole data owners / 835 bytes,
+436 actual unmasked fields, 27 headers and the entire 32-byte layout.
+Two complete original authored parents, two unchanged R071 growth owners,
+ten full original EH frames and independently authored R153 inner destruction
+retain their original evidence. R154/R142 complete dependencies and the
+retained R150 nested-deque source cold-replay. All 1312 public checks pass;
+totals are 3471 resolved and 880 pending, with all 60 exact functions and
+R139 cold proof preserved. See the R156 knowledge-base entry for boundaries.
+
+The whole copy and insertion controls at `0x00422A50` / 241 bytes and
+`0x00422D70` / 1545 bytes include shared tails. Their original unknown
+canonical rows retain their provisional 195-/1483-byte extents. Full EH source
+carriers do not revise old compiler entry extents. Source/data/typed-call
+association alone grants none of these auxiliary parents origin credit.
+
+The next bounded R157 cohort is four retained unknown lower-level dependencies:
 
 | Candidate | Complete provisional extent | Actual investigation context |
 | --- | ---: | --- |
-| `0x004215F0` | 211 | entire R070 parser calls it at `0x00420CE4`; actual scale 20; grow-map call `0x00421BD0`, allocation `0x00421EE0`, construction `0x00421F00` |
-| `0x00421EE0` | 27 | actual allocation dependency of the complete 20-byte-element producer |
-| `0x00421F00` | 29 | actual construction dependency of that producer |
-| `0x0042DBE0` | 211 | entire authored R040 replay-file scan / 613 bytes calls it at `0x0042D684`; actual scale 60; grow-map `0x0042DCF0`, allocation `0x0042E000`, construction `0x0042E020` |
-| `0x0042E000` | 27 | actual allocation dependency of the complete 60-byte-element producer |
-| `0x0042E020` | 29 | actual construction dependency of that producer |
+| `0x004228A0` | 20 | complete R156 element allocator `0x00421EE0`; actual scalar-new call to R154 `0x0064159D` |
+| `0x004228C0` | 108 | complete R156 construction wrapper `0x00421F00`; actual placement-new `0x004063D0`, original full EH and unknown record-copy wrapper `0x004229D0` |
+| `0x0042E4D0` | 20 | complete R156 element allocator `0x0042E000`; same independently whole scalar-new operation |
+| `0x0042E4F0` | 65 | complete R156 construction wrapper `0x0042E020`; actual placement-new and full fifteen-word copy |
 
-Both grow-map owners / 511 bytes retain their original R071 library origin;
-replay complete source and all actual fields before relying on either as
-independent context. Reconcile complete target control flow, guards, final
-returns, adjacent alignment and every producer/helper source AUX. Cold-build
-natural actual SDK deque/allocator/construction families with complete synthetic
-20-/60-byte observation elements, cover every emitted ordinary code/data/EH
-section and retain original-type uncertainty. Bind genuine typed callees
-independently, including accepted R154 allocation owners and existing complete
-copy/runtime owners where actual source fields establish those operations.
-The game caller, numeric element size or whole-body shape alone grants no
-library credit. Do not treat a size observation as a recovered game element,
-reuse the R072 eight-byte byte-record as an original declaration, or alter
-prior accepted growth/parser/file-scan evidence. No exact scope is authorized.
+R156 retains full SDK source controls and every actual code/data/EH field for
+these four owners, but does not classify them. Reconcile whole own-AUX extents,
+actual typed parent/operation roles, state and alignment. Preserve ordinary
+authored allocation, placement and copy alternatives explicitly: equal complete
+bytes alone are insufficient, while independent accepted SDK parent/source
+roles may supply evidence unavailable to unrelated leaf candidates. Distinguish
+the scalar element allocator from the pointer-map allocator and retain the
+original record types as unknown. Preserve the unknown 28-byte record-copy
+wrapper, complete copy/insertion shared-tail controls, authored destruction
+policy, opaque throw boundaries and all original accepted metadata. No exact
+scope or reconstructed game element declaration is authorized.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -910,7 +925,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R156 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R157 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

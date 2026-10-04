@@ -1043,7 +1043,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00421550,library,VC7STL,exclude,complete-nested-deque-code-data-eh-receiver-provenance,R150
 0x00421570,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x004215C0,library,VC7STL,exclude,complete-vc7-nested-helper-family-typed-parent-provenance,R151
-0x004215F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004215F0,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
 0x004216D0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x004216F0,library,VC7STL,exclude,complete-vc7-deque-begin-family,R079
 0x00421720,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
@@ -1061,8 +1061,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00421DD0,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00421E90,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x00421ED0,library,vc7-stl-deque-helpers,exclude,high,R087
-0x00421EE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00421F00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00421EE0,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
+0x00421F00,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
 0x00421F20,library,VC7STL,exclude,complete-vc7-deque-dereference-family,R082
 0x00421F40,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00421F80,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
@@ -1322,14 +1322,14 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042DB30,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0042DB80,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x0042DBA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042DBE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042DBE0,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
 0x0042DCC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042DCF0,library,VC7STL,exclude,complete-vc7-deque-growmap-family,R071
 0x0042DEF0,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x0042DFB0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0042DFF0,library,vc7-stl-deque-helpers,exclude,high,R087
-0x0042E000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042E020,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E000,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
+0x0042E020,library,VC7STL,exclude,complete-vc7-paired-deque-producer-code-data-eh-typed-parent-provenance,R156
 0x0042E040,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x0042E080,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E0A0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078

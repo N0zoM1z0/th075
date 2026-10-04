@@ -8609,3 +8609,87 @@ plus unchanged full R071 grow-map owners, provide investigation context.
 Diagnostic target observations show distinct 20-/60-byte element scales;
 these sizes do not recover original element declarations. No next-cohort
 classification follows from scanner rank or these source-shape observations.
+
+## R156 — Complete paired deque producers and typed allocation/construction
+
+R156 accepts six library owners / 534 bytes: the complete 211-byte producers
+`0x004215F0` and `0x0042DBE0`, their 27-byte element-allocator wrappers
+`0x00421EE0` and `0x0042E000`, and their 29-byte construction wrappers
+`0x00421F00` and `0x0042E020`. Replay
+`scripts/repo-python scripts/verify-paired-deque-producer-origins.py` with
+`config/paired-deque-producer-origin-evidence.json`. The provisional names
+describe verified SDK source associations, not original executable symbols.
+Every accepted owner has its entire positive own COFF AUX extent; the full
+branch/return and actual relocation inventory compares without masking.
+
+**Independent original contexts.** The full unchanged R070 parser / 2301 bytes
+calls the first producer at `0x00420CE4`, and the full R040 replay-file scan /
+613 bytes calls the second at `0x0042D684`. Actual receiver/value instruction
+windows and both parents' complete authored CFG/switch evidence are retained.
+Both unchanged R071 growth owners / 511 bytes also compare completely. Source
+typing distinguishes the element allocator from the separate pointer-map
+allocator; calls continue through actual scalar-new and placement-new owners.
+R154 allocation and R142 standard-exception verifiers cold-replay their
+independently complete source/data/SDK/runtime dependencies. The retained
+R150 nested-deque verifier also completes a fresh cold replay in this batch.
+A game caller or an accepted library child alone does not establish ownership.
+
+**Entire source and state.** `probes/VC7PairedDequeProducers.cpp` cold-builds
+all 187 ordinary emission sections / 11917 bytes. The linked closure contains
+162 entire code/EH sections / 11016 bytes and 22 complete data sections /
+835 bytes. All 436 genuine typed fields resolve through complete independent
+source definitions, source weak fallback metadata, original data owners or
+retained external operations; all linked target bytes agree unmasked.
+Where implicit SDK constructors or EH carriers have no positive own function
+AUX, the entire defining code section is compared instead. Two genuine weak
+references retain their complete strong fallback definitions and actual COFF
+AUX metadata. RTTI/vtables, strings, exception state and the absolute FS
+exception-list offset are kept distinct from ordinary executable functions.
+Ten full original R020 registered frames retain unwind/try/catch/parent evidence,
+including FuncInfo records inside larger complete data carriers.
+
+The complete 32-byte layout records `[8,20,60,20,20,4,8,8]`; all 27 actual SDK
+headers are pinned. The 20-byte observation contains a real SDK deque and the
+60-byte observation is a complete synthetic file record. Their declarations
+are source controls, not recovered game record types. The eight-byte inner
+observation declares destruction through truthful C++ ABI and binds the
+independently complete 43-byte authored R153 lifetime policy. Its authored
+ownership remains separate from the SDK operations that invoke it. Original
+element fields/declarations, spelling, linker inputs and live runtime outcomes
+remain unknown. Build 3077 and /Od /Ob0 /Gy /GR- /GX /Zi /GS are explicit
+per-probe reproducibility settings, not an executable-wide compiler claim.
+
+**Shared tails and unchanged ledgers.** The SDK copy control at `0x00422A50`
+compares its whole 241 bytes, and insertion at `0x00422D70` compares all 1545
+bytes, including shared tails. Their historical provisional canonical extents
+remain 195 and 1483 bytes, respectively, and both origins remain unknown.
+Whole EH carriers likewise include their cleanup/dispatch tails without
+altering historical compiler entry extents. These complete auxiliary source
+associations grant no new boundary, authored/library/compiler classification,
+source, private ABI, mapping or exact credit. Original opaque string-throw
+workers and all other auxiliary canonical snapshots remain unchanged.
+
+Exactly six origin rows and their six function evidence rows change against
+R155 HEAD 9734107. All unrelated canonical rows and every authored record are
+preserved. Twenty-seven regression checks protect entire AUX/code/data/layout
+extents, actual typed operations, original parent and policy evidence, weak
+fallbacks, whole shared tails and false ABI/exact credit. All 1312 public tests,
+local target/project/query attestation, authored extents, fresh scanner/progress,
+exact-input preservation and whitespace checks pass. Totals are 3471 resolved
+(922 authored, 1974 library, 575 compiler), 880 pending and 2549 excluded.
+Authored evidence remains 875 records / 1953089 bytes; provisional exact
+coverage remains 9883 / 1965432. All 60 source/mapped/exact functions / 9883
+bytes and all exact inputs remain unchanged from R139 db26a05, preserving its
+60/60 cold replay across eleven objects. No affected exact unit needs replay.
+Public MCP acceptance remains waived and the private no-auth route is unchanged.
+Private queries, logs and objects remain untracked. The complete-origin
+objective remains unfinished.
+
+The next bounded R157 cohort is four still-unknown lower-level helpers /
+213 bytes: `0x004228A0` / 20, `0x004228C0` / 108, `0x0042E4D0` / 20 and
+`0x0042E4F0` / 65. R156 already retains their complete source controls, actual
+calls and state, but gives them no classification. Use the accepted typed
+allocator/construction parents as independent context and explicitly retain
+ordinary authored allocation/placement/copy alternatives. Preserve the unknown
+record-copy wrapper and full-copy/insertion parents; do not infer their origin
+from these operations or treat the observations as recovered element types.
