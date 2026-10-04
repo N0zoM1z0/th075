@@ -5440,3 +5440,85 @@ replay; no source, mapping, private ABI or exact credit is added. Public MCP
 acceptance remains waived and the private no-auth route is unchanged.
 Private queries, logs and objects remain untracked. The complete-origin
 objective remains unfinished.
+
+## R153 — Complete script record buffer lifetime policy
+
+R153 resolves two authored candidates: `0x00421200` / 24 bytes, provisionally
+`FighterScript::InitializeRecordBuffer`, and `0x00421220` / 43 bytes,
+provisionally `FighterScript::ReleaseRecordBuffer`. Original extents, all
+returns/branches and following alignment remain intact. Replay
+`scripts/repo-python scripts/verify-script-buffer-origins.py` with
+`config/script-buffer-origin-evidence.json`. The natural source controls in
+`probes/VC7ScriptBufferLifetimes.cpp` are complete synthetic observation
+records, not recovered game declarations; no game source or exact unit is added.
+
+**Independent game ownership context.** The entire independently authored
+R070 parser / 2301 bytes preserves its original guarded switch, CFG and hash.
+Eight actual local constructor/copy/release pairs retain the same local
+receiver, actual R072 push_back producer and explicit cleanup. The full pointer
+producer allocates the quoted text length plus one, stores returned storage
+at record +4, reads that same pointer back, copies the substring and writes
+the terminating byte. Complete R020 frame metadata and all eight eight-byte
+record cleanup entries, plus the entire R037 44-byte scalar-deleting owner,
+retain original evidence and extents. Those compiler contexts identify real
+lifetime use; they alone do not identify a destructor's source ownership.
+
+The accepted R072 producer is its complete 215-byte `DequeProbeRecord<8>`
+control, an eight-byte byte-record model. Earlier "byte producer" wording
+must not be taken as an original unsigned-char element declaration. The
+actual game pointer/command observations and the synthetic nested R150 size
+controls remain separate; those generic size bodies do not recover original
+element types. All prior accepted source/control metadata and origins remain
+unchanged. The actual buffer lifetime and parser protocol supply the additional
+independent game policy evidence in this batch.
+
+**Whole typed source controls.** Four guarded primitive-array constructor /
+destructor families agree unmasked across all 67 bytes, totaling eight whole
+source bodies / 268 bytes. Each destructor's actual field at +32 binds to
+the independently complete five-byte archive array-delete owner at 0x0064169D
+(delete2.obj, member 854462), then the unchanged complete accepted R142 scalar
+delete owner at 0x00640F15 and R120 free owner / 113 bytes. Both five-byte
+source owners compare unmasked through actual typed fields. Whole archive
+members, source hashes, original accepted free boundary and every target byte
+are read back; unchanged prior runtime inputs do not require another recursive
+cold replay. The array-delete auxiliary retains its original unknown ledger
+status and receives no new classification in R153.
+
+The 43-byte guarded scalar-delete source has the same relocation-masked shape,
+but differs in three actual relocation bytes after its independently typed
+scalar-delete field is bound. It is rejected. A standalone 24-byte SDK auto_ptr
+constructor differs in fourteen actual bytes; its complete destructor and
+both implicit SDK/custom-owned record lifetimes have different extents.
+The unguarded array destructor is a complete 34-byte owner, not a 43-byte
+prefix match. Eight whole rejected controls preserve these genuine differences.
+Raw implicit records emit no owning special-member policy. Under /Ob1 and
+/Ob2, the complete emitted source inventories contain no own 24/43-byte
+functions; inlined fragments cannot replace an entire target candidate.
+
+The pinned build 3077 cold-builds all three explicit profiles: 90 ordinary
+functions / 3897 bytes and all 107 entire ordinary code/data/EH sections /
+4458 bytes, including seven complete EH code/data pairs and the full 40-byte
+SDK/observation layout. All 24 actual included headers per profile are pinned.
+Flags are per-probe reproducibility settings, not an executable-wide compiler
+claim. Explicit null initialization and guarded array release, their independent
+parser ownership policy and the differing bounded implicit/SDK alternatives
+support authored inference. Original source spelling, names, types/folding,
+complete game layouts and untested source alternatives remain unknown.
+
+Exactly two existing canonical rows change and two complete authored body/CFG
+records are appended; read-back preserves every unrelated row against R152
+HEAD. Additional pure inventory/registration guards preserve all already cold
+source/profile/field inputs. Twenty-three regression checks guard complete
+extents/carriers/layouts, typed array/scalar separation, actual buffer writes,
+paired lifetimes and independent original ownership/registration. All 1244
+public checks, attested target/project/queries, authored extents, fresh scanner
+and progress, exact-input preservation and whitespace checks pass. Totals are
+3459 resolved (922 authored, 1962 library, 575 compiler), 892 pending and
+2537 excluded. Recorded authored extents are 875 / 1953089 bytes; the exact
+coverage denominator remains provisional at 1965432. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs remain unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No exact unit needs
+replay. No source, mapping, private ABI or exact credit is added. Public MCP
+acceptance remains waived; the private no-auth route is unchanged. Private
+queries, diagnostics and objects remain untracked. The origin objective remains
+unfinished.
