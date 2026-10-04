@@ -2729,3 +2729,108 @@ layout graphs, R114 dependencies, authored extents, target/project attestation,
 cold-replayed across eleven objects. Investigation and intermediate verification
 are local. PE entry remains pending until environment, argv, exception filtering
 and other actual startup bindings close. Private URLs/logs remain untracked.
+
+## R126 — Complete environment, command-line and PE startup graph
+
+R126 resolves the six environment/PE-startup handoff roots and five necessary
+parser, multibyte and exit wrappers: eleven complete library candidates /
+2,033 bytes / 100 typed relocation fields. The supplied executable's entire
+469-byte PE entry is now library-owned. Replay
+`scripts/repo-python scripts/verify-environment-startup-origins.py`; the whole
+manifest is `config/environment-startup-origin-evidence.json`.
+
+| Complete source body | Address | Bytes |
+| --- | --- | ---: |
+| `_WinMainCRTStartup` | `0x0064232C` | 469 |
+| `___crtGetEnvironmentStringsA` | `0x00649327` | 290 |
+| `__setargv` | `0x00649285` | 162 |
+| `__setenvp` | `0x00649052` | 199 |
+| `__wincmdln` | `0x00648FF5` | 93 |
+| `__XcptFilter` | `0x00648E76` | 356 |
+| `_parse_cmdline` | `0x00649119` | 364 |
+| `__ismbblead` | `0x006515F3` | 17 |
+| `_exit` | `0x0064424A` | 17 |
+| `__cexit` | `0x0064426C` | 15 |
+| `_x_ismbbtype` | `0x0065152C` | 51 |
+
+Every accepted primary retains its complete own COFF AUX extent, all source and
+target bytes, typed fields, instructions, branches, exits, local exception
+filter/handler and indirect calls. All provisional extents already equal their
+full source definitions; no comparison is shortened. The whole 15-byte c_exit
+at `0x0064427B` has no independent inventory candidate and adds no origin count.
+Nineteen complete independently reviewed vendor anchors / 2,675 bytes / 173
+fields replay through the retained R125 chain. The stack-probe call retains the
+actual same-source chkstk/alloca alias. Identical archive alternatives for
+amsg_exit and fast_error_exit preserve the previously selected wincrt0 member;
+this does not establish one executable-wide compilation profile.
+
+The startup entry validates both PE32 and PE32+ managed-image paths. Its actual
+GetModuleHandleA import is loaded into EDI before both register calls; DOS/NT
+signatures, optional-header magic, directory count and CLR directory address
+checks remain complete. All heap/thread/RTC/IO/cinit/environment/argv children
+and normal/managed/exception exit paths close independently. The actual
+WinMain@16 call binds `0x00602A60`: its full 2,987-byte game-policy body, scene
+switch and stdcall return of 16 bytes retain independent R113 authored evidence
+through R114. A generic CRT entry does not grant vendor ownership to that game
+callee, determine the game's original types or create exact reconstruction.
+
+Environment acquisition retains the four-byte flavor cache, double-null wide
+and ANSI extents, ERROR_CALL_NOT_IMPLEMENTED fallback, both WideCharToMultiByte
+passes and every allocation/API cleanup exit. Raw import names remain exact,
+including GetEnvironmentStrings without an A suffix. Setenvp preserves skipped
+'=' entries, the complete pointer array, each copied string, allocation-failure
+paths, environment initialization and source-buffer cleanup. Setargv retains
+its full 261-byte program-name buffer, two calls to the complete standard
+364-byte parse_cmdline, counts, argv/string allocation and null terminator.
+The alternative 405-byte wildcard parser is independently re-read and rejected
+for differing non-relocation bytes; its prefix earns no credit. The parser
+keeps quoted program names, backslash/quote parity, doubled quotes, DBCS lead
+bytes and both count-only/output modes. Lead-byte helpers retain the whole
+257-byte mbctype object, its +1 indexing and mask 4.
+
+Seven complete defining sections / 1,777 bytes include the 72-byte startup state,
+12-byte environment-pointer/error-mode BSS, four-byte flavor cache, 261-byte
+program-name BSS, eight-byte ctype pointers, entire 1,284-byte narrow/wide ctype
+carrier and 136-byte exception-action/count carrier. Four actual COMMON objects /
+269 bytes retain their defining records and complete loader zero-fill geometry.
+Acmdln's selected COMMON and aenvptr's selected strong section belong to the
+complete matching wincrt0 member; all actual context alternatives are enumerated
+and verified. No four-byte environment prefix, undefined COMMON reference or
+arbitrary zero region substitutes for a defining object. All ctype pointers
+retain their actual symbols and addends. Startup's full 12-byte scope binds
+both local filter and handler labels; the complete one-byte empty command-line
+literal is also checked.
+
+The full exception filter scans all ten 12-byte actions using the thread's
+actual +84 table pointer and the carrier's count/size/index fields. It retains
+default UnhandledExceptionFilter dispatch, ignore/die cases, all seven FPE
+mappings, one-/two-argument handler ABI, clearing actions and restoration of
+thread exception-information/FPE state at +88/+92. Optional installed handler
+implementations remain unknown; generic dispatch does not assign their origins.
+
+Natural VC7EnvironmentStartupLayout cold-builds 55 DWORDs / 220 bytes with
+pinned CRT/SDK headers and explicit reproducibility flags. Controls include
+32-bit pointer and two-byte wchar_t, 260-character API limit with a 261-byte
+buffer, CP_ACP/120 fallback, OSVERSIONINFOA / 148 and STARTUPINFOA / 68 with
+flags +44/show +48. DOS e_lfanew is +60; NT optional headers start +24.
+PE32/PE32+ directory counts are +116/+132 and CLR addresses +232/+248.
+Both magic values, signatures, directory index 14, thread/action layouts,
+FPE constants and exception results retain vendor definitions. The public
+mbctype header is incomplete; its 257-element bound comes from the independently
+verified whole COMMON definition, not sizeof an incomplete declaration.
+
+Frozen R114 PE-entry and R115 command-line/context observations remain intact.
+Narrow guards require their original complete bytes, extents, source identities,
+fields and instruction provenance plus the new canonical R126 library record.
+Twenty-four regression checks reject truncated paths/data/COMMON, fabricated
+c_exit credit, missing source aliases, guessed PE32+ offsets, changed historical
+fields, substituted parser versions and ownership inferred from a WinMain name.
+All 396 public checks pass. Canonical totals are 3,227 resolved (919 authored,
+1,733 library, 575 compiler), with 1,124 pending. Exact/source/mapping remains
+60 / 9,883 bytes; authored extents remain 872 / 1,952,956 recorded bytes.
+One final no-auth public HTTPS MCP acceptance replays R126, retained R125 and
+R114/runtime/compiler/game/import/layout graphs, all recorded authored extents,
+project attestation, progress freshness, 396 tests and git diff whitespace.
+All 60 exact units cold-replay across eleven objects. Investigation and
+intermediate checks are local. Target/database/tool installations and game
+source/headers are unchanged; private URLs, logs and vendor bytes stay untracked.

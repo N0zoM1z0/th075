@@ -168,6 +168,10 @@ def verify_plan(manifest):
 
 
 def check_ledger(row,functions,origins,evidence_only):
+    if row['address'] in ('0x0064232C', '0x00648FF5') and origins.get(row['address'], {}).get('evidence_id') == 'R126':
+        module('environment_startup_reconciliation', 'verify-environment-startup-origins.py').check_historical_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     if row['address'] == '0x006422B2' and origins.get(row['address'], {}).get('evidence_id') == 'R121':
         module('startup_registration_reconciliation', 'verify-startup-registration-origins.py').check_historical_startup(
             row, functions[row['address']], origins[row['address']])
@@ -326,6 +330,9 @@ def main():
                         or origins[key]['evidence_id']!=row['origin_evidence'] or origins[key]['origin']!='library'):
                     raise ValueError('stack probe alias is not the same full independently reviewed definition')
         context=manifest['entry_context']
+        if origins[context['address']]['evidence_id'] == 'R126':
+            module('environment_entry_context', 'verify-environment-startup-origins.py').check_historical_context(
+                context, functions[context['address']], origins[context['address']])
         if (int(functions[context['address']]['size'])!=context['size']
                 or functions[context['address']]['span_end']!=context['span_end']):
             raise ValueError('entry context ledger loses its complete extent')

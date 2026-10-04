@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R125. The public
+review cohorts R108 through R126. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,216: 919 authored, 1,722 library and 575 compiler generated.
-There are 1,135 pending. Candidate count is not authored function count.
+has resolved 3,227: 919 authored, 1,733 library and 575 compiler generated.
+There are 1,124 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R126 environment/PE-startup cohort below.
+the bounded R127 floating-point dispatch cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R125; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R126; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R126 environment and PE startup dependencies
+## Next agent objective — R127 floating-point dispatch dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -379,26 +379,47 @@ including R077/R113 controls, all 872 authored extents, target/project attestati
 9,883 bytes cold-replayed across eleven objects. Investigation and intermediate
 verification were local; the full public acceptance replay ran once.
 
-The next bounded cohort is six existing environment/PE-startup candidates:
+R126 resolves those six environment/startup roots and five necessary parser,
+lead-byte and exit wrappers: eleven complete library candidates / 2,033 bytes /
+100 typed fields. The full 469-byte supplied PE entry closes through every
+actual child, both PE32/PE32+ paths, its complete local filter/handler and the
+independently authored R113 WinMain callee / 2,987 bytes / stdcall cleanup 16.
+Replay `scripts/repo-python scripts/verify-environment-startup-origins.py`.
+The complete 15-byte c_exit has no inventory candidate and earns no count.
 
-| Candidate | Provisional bytes | Observed source association | Required next evidence |
+Seven whole defining sections / 1,777 bytes, four actual COMMON / 269 bytes,
+whole EH scope / 12 bytes and empty literal / one byte retain source and loader
+provenance. Program-name BSS is 261 bytes, mbctype COMMON is 257, aenvptr's
+complete selected startup section is 12. The standard parser / 364 is fully
+reviewed; the 405-byte wildcard source is rejected. All exception/FPE/optional
+handler and environment/API failure/cleanup paths remain complete. Nineteen
+independent vendor anchors / 2,675 bytes / 173 fields retain original evidence.
+Natural SDK/vendor controls cold-build 220 bytes, including both managed-image
+layouts. R114/R115 snapshots retain narrowly bounded original-identity guards.
+
+The final public HTTPS MCP acceptance passes R126 and retained R125/R114
+runtime/compiler/game/import/layout graphs, authored extents, project attestation,
+396 public checks and progress/whitespace checks. All 60 exact units / 9,883
+bytes cold-replay across eleven objects. Investigation and intermediate checks
+are local; the public acceptance replay runs once.
+
+The next bounded cohort is six existing floating-point dispatch candidates:
+
+| Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0064232C` | 469 | PE entry / CRT startup | All actual environment/argv/exception/game-entry/data/EH bindings; retain accepted children |
-| `0x00649327` | 290 | `___crtGetEnvironmentStringsA` | Whole flavor cache, wide/ANSI conversion, raw environment imports and complete cleanup |
-| `0x00649285` | 162 | `__setargv` | Full program-name buffer, actual parse_cmdline dependency, argv allocation and multibyte state |
-| `0x00649052` | 199 | `__setenvp` | Whole environment/platform state, copying, allocation failure and cleanup paths |
-| `0x00648FF5` | 93 | `__wincmdln` | Actual command-line storage, lead-byte child, empty literal and complete scan |
-| `0x00648E76` | 356 | `__XcptFilter` | Full exception-action carrier, thread/FPE fields, handler ABI and raw UnhandledExceptionFilter binding |
+| `0x00646980` | 103 | `__trandisp1` | Complete own extent, actual function-table entry, floating-point state and every dispatcher/error dependency |
+| `0x006469E7` | 140 | `__trandisp2` | Complete two-argument dispatch, stack/return ABI, whole table and error paths |
+| `0x00646B43` | 7 | Small adjacent helper; source identity unresolved | Own defining source extent or actual parent/alias, full caller/callee and exit evidence |
+| `0x00646B7C` | 25 | `__convertTOStoQNaN` | Full x87 conversion and source/target state provenance |
+| `0x00646BFB` | 42 | `__math_exit` | Whole exit, actual math context and all error/status/callback dependencies |
+| `0x00646CE0` | 23 | `__startTwoArgErrorHandling` | Own full source body, two-argument ABI and actual exception-handling child graph |
 
-Use `.analysis/r125-next-environment-survey.json` diagnostically. Full source
-fingerprints there prove no origin. The actual parse_cmdline at `0x00649119`
-and lead-byte helper at `0x006515F3` remain necessary dependencies, not accepted
-by association. Entry's frozen R114/R115 source observations must be reconciled
-against its entire own source extent and every typed field. `_exit` at
-`0x0064424A`, `__cexit` at `0x0064426C` and `__c_exit` at `0x0064427B` remain
-outside credit pending their own reconciliation; their accepted shared doexit
-parent does not grant wrapper ownership automatically. Preserve all earlier
-independent origins and callback implementation uncertainty.
+Use `.analysis/r126-next-cohort.log` diagnostically; its relocation-masked source
+associations prove no origin. Retain R124's independently closed conversion/
+control graph. Every actual dispatcher table/callback, initialized data,
+exception path and source boundary must close before parent credit. Keep
+hooks/CallSettingFrame and read/write validators pending for later bounded
+review. Do not inherit ownership from known children or adjacent archive names.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -414,7 +435,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R126 adds no exact scope. Update
+private path and 60-function exact baseline. R127 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -771,7 +792,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R126 environment/PE-startup cohort described above. F008 and F009 remain
+Continue the bounded R127 floating-point dispatch cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

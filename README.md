@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R125 checkpoint, origin review has classified 919 authored,
-1,722 library and 575 compiler-generated candidates; 1,135 remain pending.
+At the R126 checkpoint, origin review has classified 919 authored,
+1,733 library and 575 compiler-generated candidates; 1,124 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -43,8 +43,8 @@ helpers through complete, closed source graphs with 337 cold source alternatives
 R112 resolves six postfix increments through their actual typed prefix callees
 and two complete game callers. R113 resolves five queue helpers and the
 unique enqueue/main-loop policies. R114 resolves four shared-lifetime/callback
-policies, retains a complete ordinary/generated initializer ambiguity and leaves
-the CRT entry pending until every binding is supported. R115 resolves the
+policies and retains a complete ordinary/generated initializer ambiguity;
+its CRT entry remained pending until the complete R126 graph closed. R115 resolves the
 complete heap initialization graph and vendor SEH epilog, retaining unresolved
 error, handler and multibyte chains. R116 resolves dynamic exit/message-box
 dispatch and the complete shared-copy entry while preserving unresolved cookie
@@ -63,8 +63,10 @@ R123 closes the six multibyte/codepage roots and nine necessary NLS/locale
 callees, including three full cleanup extents and three existing interior labels.
 R124 closes 27 complete floating-point conversion/control bodies. R125 closes
 all six initializer roots and the necessary exception/signal graph, including
-cinit's actual callbacks and one existing raise cleanup label. The next handoff
-targets six R126 environment/PE-startup candidates while preserving
+cinit's actual callbacks and one existing raise cleanup label. R126 closes
+eleven complete environment/argv/exception/exit bodies, including the full
+PE entry and its independently authored game callee. The next handoff targets
+six R127 floating-point dispatch candidates while preserving
 the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and

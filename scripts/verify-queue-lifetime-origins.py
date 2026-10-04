@@ -149,6 +149,10 @@ def verify_decisions(manifest):
 
 
 def check_ledger(row, functions, origins, evidence_only):
+    if row['address'] == '0x0064232C' and origins.get(row['address'], {}).get('evidence_id') == 'R126':
+        module('environment_startup_reconciliation', 'verify-environment-startup-origins.py').check_historical_root(
+            row, functions[row['address']], origins[row['address']])
+        return
     key, address, size = row['address'], int(row['address'], 16), row['size']
     function, origin = functions[key], origins[key]
     if (int(function['size']) != size or function['span_end'] != row['span_end']
