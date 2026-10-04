@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R175. The public
+review cohorts R108 through R176. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,608: 930 authored, 2,103 library and 575 compiler generated.
-There are 743 pending. Candidate count is not authored function count.
+has resolved 3,612: 930 authored, 2,107 library and 575 compiler generated.
+There are 739 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,54 +20,50 @@ bytes is 9,883 / 1,966,340 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R176 iterator-wrapper cohort below.
+the bounded R177 static resource-parent cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R175; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R176; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R176 iterator arithmetic wrappers
+## Next agent objective — R177 static resource parents and release helper
 
-R175 accepts three whole explicit resource-release policies / 286 bytes and
-ten whole SDK list cleanup definitions / 644 bytes. Replay
-`scripts/repo-python scripts/verify-resource-release-policy-origins.py`.
-Full R017/R045 policies / 1022 bytes, three original R020 frames and three
-whole R037 deleting parents preserve independent context. Two complete custom
-destructors reproduce all 98/83 target bytes; the entire 105-byte character
-policy is reviewed from target control flow and complete small 99/75-byte
-source call-order alternatives, with no source-byte-match credit. All 28 whole
-positive controls / 1085 bytes compare unmasked with 56 real fields. All 52 cold
-ordinary sections / 1858 bytes, 28 SDK headers, whole 44-byte layout, 68 canonical/
-body snapshots and five prior records are frozen. Opaque node-link getters,
-five-byte destruction children and all previously protected owners remain
-independently unknown. All 1932 public checks pass; 883 authored bodies and all
-60 exact functions are preserved. Public MCP acceptance remains waived; the
-full remaining-origin goal remains active and unfinished.
+R176 accepts four whole deque subtraction-assignment definitions / 108 bytes.
+Replay `scripts/repo-python scripts/verify-deque-retreat-origins.py`. Twenty
+whole SDK/ordinary controls / 796 bytes compare unmasked with sixteen real
+fields; four complete 57-byte genuine-addition negatives preserve their actual
+destinations and distinguish subtraction despite identical wrapper shapes.
+Ordinary 27-byte alternatives are byte-equal. Width 1/2/4/64 variants expose the
+original width/type uncertainty. All 33 cold ordinary sections / 1152 bytes,
+27 SDK headers, whole 48-byte layout, 84 canonical/body snapshots and twelve
+prior R078/R083 records remain frozen. Prior proofs cold-replay; all 1960 public
+checks pass. Existing 883 authored bodies and all 60 exact functions are preserved.
+Public MCP acceptance remains waived; the full remaining-origin goal is active.
 
-The fresh `.analysis/origin-scan/r175-triage.json` has 743 pending. The next
-bounded diagnostic cohort is four iterator wrappers / 108 provisional bytes:
+The fresh `.analysis/origin-scan/r176-triage.json` has 739 pending. The next
+bounded diagnostic cohort is three static resource parents and the direct
+release helper / 595 provisional bytes:
 
-| Candidate | Entire provisional bytes | Whole original R078 parent / R083 child |
+| Candidate | Entire provisional bytes | Original independent context |
 | --- | ---: | --- |
-| `0x0041F650` | 27 | `0x0041ED00` / 57 and `0x0041F630` / 31 |
-| `0x0041F6F0` | 27 | `0x0041EE60` / 57 and `0x0041F6D0` / 31 |
-| `0x00455D10` | 27 | `0x00455C60` / 57 and `0x0042E2D0` / 31 |
-| `0x005F9530` | 27 | `0x005F8D70` / 57 and `0x005F9510` / 31 |
+| `0x00413650` | 132 | complete R024 static initializer `0x00656DC0` / 28 and entire R073 deque constructor children; distinguish explicit custom defaults from automatic member construction |
+| `0x004136E0` | 161 | complete R024 finalizer `0x00656EC0` / 15 and R077 deque destruction children; inspect actual indirect release, guard and helper call |
+| `0x00413880` | 67 | actual direct child of `0x004136E0`; retain full loop/exit/indirect-call context before proposing origin |
+| `0x005F6FF0` | 235 | complete R024 finalizer `0x00656EB0` / 15, authored R166 pointer queue release `0x005F7140` / 162 and R017 texture release `0x0040AE40` / 434; preserve R037 deleting child and independent vector helper ownership |
 
-These are candidates, not promised acceptances. Inspect complete CFG, actual
-arithmetic/argument propagation and full existing evidence before selecting
-SDK and ordinary alternatives. Parent/child classifications or shared shapes
-alone do not establish origin. Derive each vector/deque family and element
-width from its own entire source and target graph; do not inherit widths from
-adjacent review cohorts. Compare entire source extents with every genuine field
-and preserve all earlier manifests, opaque ownership and exact inputs. Continue
-origin review; exact credit remains 60.
+These are candidates, not promised acceptances. Read original evidence and
+whole candidate control flow, real data/call fields, every direct/indirect call,
+registered unwind state and shared tail. A compiler parent or library child
+does not classify the body. Compare complete explicit/implicit lifetime
+alternatives where ownership is ambiguous; do not instantiate an incomplete
+original owner or inherit widths from another cohort. Preserve historical
+evidence and all protected opaque owners. Continue origin review; exact stays 60.
 
 ## R165 checkpoint and the completed R166 shortlist
 
@@ -576,7 +572,7 @@ has the same diagnostic vendor alternatives and remains unreviewed/pending.
 R130 resolves all six vector/two-argument math candidates and eight existing
 callees: eleven library primaries / 2,511 bytes / 99 fields and three shared
 entries / 644 overlapping bytes. The constructor's full sole code section is
-98 bytes. The complete log10/ceil sections are 336/285 bytes, including every
+98 bytes. The complete log10/ceil sections are 336/ 285 bytes, including every
 own-AUX body and log10's source-emitted one-byte NOP. Canonical C extents are
 63/64 only after whole-section replay; the old FID cos association is rejected.
 The SSE log10 owner is 644 bytes with actual C/core entries at +24/+30. Its
@@ -1442,7 +1438,7 @@ and every new exact source variant cold-replay. The iterator callees use
 existing complete no-relocation alias evidence; these calls do not infer
 the game's original element type. Three short exception methods now have
 complete source, vtable, weak-fallback and named throw-metadata evidence:
-the 37-/28-byte `std::out_of_range` message constructor/destructor are
+the 37-/ 28-byte `std::out_of_range` message constructor/destructor are
 library; its 37-byte implicit copy constructor is compiler generated.
 The complete verifier passed through the no-auth public Funnel MCP.
 The initial `length_error` shape hypothesis was insufficient: the complete

@@ -10406,3 +10406,65 @@ credit is added. Public MCP acceptance remains waived; the complete-origin
 goal remains active and unfinished. The next bounded R176 diagnostic cohort
 is four iterator arithmetic wrappers through independent whole R078/R083 SDK
 parent/child evidence; derive each actual type-width/argument flow independently.
+
+## R176 — whole deque retreat graphs and real addition destinations
+
+Four complete library iterator subtraction-assignment definitions / 108 bytes
+are accepted: `0x0041F650`, `0x0041F6F0`, `0x00455D10` and `0x005F9530`, each
+27 bytes. Replay `scripts/repo-python scripts/verify-deque-retreat-origins.py`
+with immutable `config/deque-retreat-origin-evidence.json`. Whole accepted
+R078 addition/subtraction-shaped callers and R083 addition-assignment bodies
+retain their original records, extents, canonical names and ownership.
+
+Target observation: every wrapper negates the incoming signed offset at +10
+and calls its entire 31-byte addition-assignment child at +16. Each 57-byte
+subtraction caller passes the incoming offset to that wrapper. The separate
+real addition caller instead calls the 31-byte child directly. These complete
+routes distinguish actual subtraction from the historical addition-shaped
+association, even though the 57-byte wrapper shapes are otherwise identical.
+Earlier source evidence remains unchanged and historical names remain provisional.
+No element access or scaled pointer arithmetic occurs here; original element
+width/type and full private container declarations remain unknown.
+
+Compiler/source observation: four complete natural SDK iterator graphs use
+synthetic value widths 1,2,4,64. Every corresponding subtraction assignment,
+addition assignment, subtraction and genuine addition body has the same
+emission across widths. Four complete ordinary derived-iterator retreat methods
+/ 27 bytes are also byte-equal. Library ownership is an inference from the
+closed typed SDK graph and twelve entire independently accepted parent/child
+records, rather than short method shape or caller labels alone. The ordinary
+alternatives preserve original method spelling uncertainty.
+
+All twenty entire SDK/ordinary controls / 796 bytes compare unmasked through
+one coherent defining-symbol catalog with sixteen genuine fields. Four whole
+57-byte real-addition negatives retain their genuine addition-assignment call
+destinations; comparison against the subtraction parents differs inside those
+actual fields. No field is masked, substituted to the subtraction child, or
+omitted. Every positive and negative retains its own complete primary AUX
+extent. All 33 cold ordinary sections / 1152 bytes, 27 actual SDK headers and
+whole 48-byte layout `[1,2,4,64,8,8,8,8,8,8,8,8]` are frozen. Iterator sizeof 8
+is a source observation, not a claim about a complete original owner.
+
+Eighty-four canonical/body snapshots, twelve original full R078/R083 records,
+old probe source and entire earlier evidence files remain unchanged. All 37
+previously protected opaque lifetime, assignment, math, catch, getter and
+destruction owners stay unknown. Earlier R078/R083 proofs cold-replay and the
+new whole source proof cold-builds before canonical acceptance.
+
+Strict R175 HEAD f107bcd readback permits exactly four function/origin changes,
+unchanged extents, all 883 prior authored rows/order and every earlier tracked
+configuration. Twenty-eight new regression guards and all 1960 public checks
+pass, together with full authored extent validation, fresh scanning, pinned
+target/local Ghidra attestation and whitespace checks. All prior source/header/
+build/ABI/mapping/match inputs are unchanged; no exact replay is required.
+
+Totals are 3612 resolved (930 authored, 2107 library, 575 compiler), 739 pending
+and 2682 excluded. Authored evidence remains 883 whole bodies / 1953997 bytes.
+Exact remains 60 functions / 9883 bytes, with provisional coverage
+9883 / 1966340 (0.50%). The earlier R139 cold 60/60 exact replay across eleven
+objects remains applicable. No reconstructed source/private ABI/mapping/exact
+credit is added. Public MCP acceptance stays waived; the full remaining-origin
+goal is active and unfinished. The next bounded R177 diagnostic cohort is
+three static resource parent bodies and their direct release helper, preserving
+whole original R024/R073/R077 and R017/R166 evidence without granting ownership
+from those labels.
