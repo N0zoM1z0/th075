@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R184. The public
+review cohorts R108 through R185. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,654: 949 authored, 2,130 library and 575 compiler generated.
-There are 697 pending. Candidate count is not authored function count.
+has resolved 3,659: 949 authored, 2,135 library and 575 compiler generated.
+There are 692 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,64 +20,67 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R185 complete D3DX8 parent/leaf cohort below.
+the bounded R186 D3DX8 buffer/interface cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R184; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R185; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R185 complete D3DX8 parents and leaves
+## Next agent objective — R186 complete D3DX buffer/interface context
 
-R184 accepts fifteen whole pinned D3DX8 COMDAT bodies / 7667 bytes, with all
-83 genuine fields independently bound: 35 complete source-callee calls, 20
-actual PE imports and 28 complete same-member readonly scalars. Replay
-`scripts/repo-python scripts/verify-sdk-file-image-origins.py`. Its immutable
-manifest SHA-256 is
-`7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6`.
-Ten prior source/native carriers and the actual __alloca_probe/__chkstk alias
-are retained; `_floor` keeps its original complete 289-byte carrier. The six
-complete provenance roots passed; R148 recursively cold-replays R135/R125/R119
-and their full independent dependencies. Avoid duplicate cold graph replays
-when the same retained inputs have already passed.
+R185 resolves five complete D3DX parents/leaves / 724 bytes with all sixteen
+actual calls bound through full retained source records, including the complete
+19-byte R026 string-stack constructor. Replay
+`scripts/repo-python scripts/verify-sdk-debug-parent-origins.py`. Its manifest
+SHA-256 is
+`aa0b86119baf570d7308dfe0cca2123e2ef646a20ad108c862adea7b062d4a1c`.
+The full 38-byte buffer initializer at 0x0061FE1F is a positive whole source
+comparison but remains unknown without independent original owning context.
+The two assembler parents, string-stack destructor, BMP gate and PNG info
+allocator keep complete native exits/branches and actual typed library children.
+Six full retained own source records / 2028 bytes and all prior manifests are
+immutable. R184's fifteen full archive bodies / 7667 bytes / 83 fields and ten
+prior source/native carriers replay, as do all original 319 SDK bodies and
+typed short-owner witnesses. Already passed unchanged cold dependency roots
+need no duplicate invocation.
 
-Exactly fifteen function/origin rows change from a535ae3, with no original
-extent change. All 902 authored bodies / 1956112 bytes, all previous manifests
-and all sixty exact units/inputs are unchanged. All 2265 public checks, fresh
-697-pending scan, target/tracking/project/query markers, progress and whitespace
-checks pass. The full remaining-origin goal remains active. Public MCP acceptance
-is waived. R183's complete font/default controls stay valid; 0x0041CA30 and all
-previous protected ambiguities stay unknown.
+Exactly five function/origin rows change from 82be796, preserving original
+extents, all 902 authored bodies / 1956112 bytes and all sixty exact inputs.
+All 2273 public checks, fresh 692-pending scan, target/tracking/project/query
+markers, progress and whitespace checks pass. The whole origin goal remains
+active; public MCP acceptance stays waived. Keep the buffer initializer and
+all earlier protected ambiguities unknown until new complete ownership evidence.
 
-The next bounded cohort is six source-survey candidates / 762 bytes, with
-seventeen observed genuine calls to independently retained R184/earlier bodies:
+The next bounded cohort is four candidates / 251 provisional bytes:
 
-| Candidate | Provisional bytes | Vendor operation |
+| Candidate | Provisional bytes | Diagnostic context |
 | --- | ---: | --- |
-| `0x0060D11A` | 375 | CD3DXAssembler::UpdateDebugFileLine |
-| `0x0060D044` | 214 | CD3DXAssembler::UpdateDebugText |
-| `0x0061FC02` | 49 | CD3DXSzStack destructor |
-| `0x00610F96` | 48 | CD3DXImage::LoadBMP |
-| `0x0061FE1F` | 38 | CD3DXBuffer::Init |
-| `0x006255A0` | 38 | D3DX::png_create_info_struct |
+| `0x0061FE1F` | 38 | Whole CD3DXBuffer::Init association; owning object unresolved |
+| `0x00609F11` | 71 | Same-shaped QueryInterface, original IID at 0x0065DDCC |
+| `0x0060A1FA` | 71 | Same-shaped QueryInterface, original IID at 0x0065DDBC |
+| `0x00620093` | 71 | Same-shaped QueryInterface, original IID at 0x0065DDFC |
 
-The complete source children are CD3DXDwStack::Push (0x0061FB45),
-CD3DXImage::LoadDIB (0x0060ED05), D3DX::png_create_struct (0x00629921),
-operator delete (0x00640F15) and operator new (0x0064159D). Their existing whole
-source records and every actual field must be freshly replayed, not inferred
-from names alone. Reopen the same read-only pinned d3dx8.lib, SHA-256
+All three source-survey QueryInterface associations refer to the same complete
+CD3DXBuffer vendor COMDAT in d3dx8.lib member obj\i386\cd3dxbuffer.obj,
+archive offset 380178. The shared IUnknown GUID field observes 0x00660E58,
+whereas each interface-specific field observes a different original address.
+A masked code hit cannot identify the actual IID or owner. Independently read
+each complete sixteen-byte target GUID, prove its actual SDK definition from
+read-only pinned source/header/library provenance, and retain full negative
+comparisons where the interface differs. Reconcile all original extents/exits
+and complete owning vtables/source functions/callers before accepting a buffer
+owner or associating Init. Callback names and relocation-solved addresses alone
+do not prove those complete source definitions. Keep unresolved callbacks and
+other bodies pending; do not fabricate a complete original class or add exact
+scope. The archive remains read-only with SHA-256
 `39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28`.
-Derive each complete own COMDAT extent independently, reconcile all native
-branches/exits/tables/shared tails, preserve the coherent source catalogue and
-compare every byte with no masked fields. Freeze full prior records and old
-canonical rows. Source/compiler profile, full game layouts, ABI, mapping and
-exact credit are independent; do not expand exact scope. The historical survey
-and fresh private `.analysis/r185-candidate-discovery.json` are discovery only.
+Private `.analysis/r186-buffer-interface-discovery.json` is discovery only.
 
 ## R165 checkpoint and the completed R166 shortlist
 

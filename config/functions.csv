@@ -2776,8 +2776,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0060CB59,161,0x0060CBF9,FUN_0060cb59,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060CBFA,929,0x0060CF9A,FUN_0060cbfa,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060CF9B,169,0x0060D043,FUN_0060cf9b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060D044,214,0x0060D119,FUN_0060d044,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060D11A,375,0x0060D290,FUN_0060d11a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060D044,214,0x0060D119,FUN_0060d044,CD3DXAssembler::UpdateDebugText,D3DX8,excluded,0.00,,,false,,R185; complete pinned vendor parent and all genuine fields through full R184 source children,library,Complete source operation and retained typed SDK child context; origin only
+0x0060D11A,375,0x0060D290,FUN_0060d11a,CD3DXAssembler::UpdateDebugFileLine,D3DX8,excluded,0.00,,,false,,R185; complete pinned vendor parent and all genuine fields through full R184 source children,library,Complete source operation and retained typed SDK child context; origin only
 0x0060D291,1304,0x0060D7A8,FUN_0060d291,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060D7A9,2188,0x0060E034,FUN_0060d7a9,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060E0E0,1013,0x0060E4D4,FUN_0060e0e0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2802,7 +2802,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006106E4,833,0x00610A24,FUN_006106e4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00610A25,680,0x00610CCC,FUN_00610a25,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00610CCD,713,0x00610F95,FUN_00610ccd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00610F96,48,0x00610FC5,FUN_00610f96,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00610F96,48,0x00610FC5,FUN_00610f96,CD3DXImage::LoadBMP,D3DX8,excluded,0.00,,,false,,R185; complete pinned vendor parent and all genuine fields through full R184 source children,library,Complete source operation and retained typed SDK child context; origin only
 0x00610FC6,469,0x0061119A,FUN_00610fc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061119B,10,0x006111A4,FUN_0061119b,??0CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006111A5,30,0x006111C2,FUN_006111a5,??1CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
@@ -3132,7 +3132,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0061FBB3,52,0x0061FBE6,FUN_0061fbb3,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0061FBE7,8,0x0061FBEE,FUN_0061fbe7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FBEF,19,0x0061FC01,FUN_0061fbef,??0CD3DXSzStack@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
-0x0061FC02,49,0x0061FC32,FUN_0061fc02,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FC02,49,0x0061FC32,FUN_0061fc02,CD3DXSzStack::~CD3DXSzStack,D3DX8,excluded,0.00,,,false,,R185; complete pinned vendor parent and all genuine fields through full R184 source children,library,Whole destructor with reviewed complete vendor constructor and push context; no original complete owner layout inferred
 0x0061FC33,179,0x0061FCE5,FUN_0061fc33,CD3DXSzStack::Push,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0061FCE6,52,0x0061FD19,FUN_0061fce6,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0061FD1A,8,0x0061FD21,FUN_0061fd1a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3248,7 +3248,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00625536,63,0x00625574,FUN_00625536,?png_calculate_crc@D3DX@@YAXPAUpng_struct_def@1@PAEI@Z,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00625575,14,0x00625582,FUN_00625575,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00625583,14,0x00625590,FUN_00625583,?png_info_destroy@D3DX@@YAXPAUpng_struct_def@1@PAUpng_info_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
-0x006255A0,38,0x006255C5,FUN_006255a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006255A0,38,0x006255C5,FUN_006255a0,D3DX::png_create_info_struct,D3DX8,excluded,0.00,,,false,,R185; complete pinned vendor parent and all genuine fields through full R184 source children,library,Complete source operation and retained typed SDK child context; origin only
 0x006255C6,38,0x006255EB,FUN_006255c6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006255EC,76,0x00625637,FUN_006255ec,?Decode565@@YAXPAUD3DXCOLOR@@G@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00625638,126,0x006256B5,FUN_00625638,?DecodePremult@@YAJPAUD3DXCOLOR@@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."

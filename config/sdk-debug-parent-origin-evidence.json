@@ -1,0 +1,1590 @@
+{
+  "evidence_id": "R185",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "library": "d3dx8.lib",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "functions": [
+    {
+      "address": "0x0060D11A",
+      "size": 375,
+      "symbol": "?UpdateDebugFileLine@CD3DXAssembler@@QAEXXZ",
+      "member": "obj\\i386\\cd3dxassembler.obj",
+      "member_offset": 428232,
+      "member_sha256": "6b6a7694376306280866374b99fc0f5cbe8094dc6c289034e95ed57593abefd2",
+      "source_sha256": "4ea3ffafc01ec34bf231cbc6e0c46c8165aa65042644e3aa1e23e45baefd62a4",
+      "body_sha256": "348f296cab7ffe66e23d308d49521e8eee10fcaf7acc99020745c9f22456a92b",
+      "fields": [
+        {
+          "offset": 158,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 170,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 202,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 262,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 322,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 334,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 347,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 158,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 170,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 202,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 262,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 322,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 334,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 347,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        1,
+        14
+      ],
+      "extent_basis": "single-function-complete-code-section",
+      "original_function": {
+        "address": "0x0060D11A",
+        "size": "375",
+        "span_end": "0x0060D290",
+        "current_name": "FUN_0060d11a",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060D11A",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060D11A",
+        "size": "375",
+        "span_end": "0x0060D290",
+        "current_name": "FUN_0060d11a",
+        "proposed_name": "CD3DXAssembler::UpdateDebugFileLine",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R185; complete pinned vendor parent and all genuine fields through full R184 source children",
+        "owner": "library",
+        "notes": "Complete source operation and retained typed SDK child context; origin only"
+      },
+      "accepted_origin": {
+        "address": "0x0060D11A",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R185"
+      }
+    },
+    {
+      "address": "0x0060D044",
+      "size": 214,
+      "symbol": "?UpdateDebugText@CD3DXAssembler@@QAEXXZ",
+      "member": "obj\\i386\\cd3dxassembler.obj",
+      "member_offset": 428232,
+      "member_sha256": "6b6a7694376306280866374b99fc0f5cbe8094dc6c289034e95ed57593abefd2",
+      "source_sha256": "f5cdd386ace87727b65ad6d4fb3e5fd5619fdf802acbcb9f1f86e5ea34b85314",
+      "body_sha256": "727a2f2bdfa36178dc9fb963a8b81d5e255798744173c17398917f67d3261ef0",
+      "fields": [
+        {
+          "offset": 71,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 84,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 114,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 173,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 200,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 71,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 84,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 114,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 173,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        },
+        {
+          "offset": 200,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FB45",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        1,
+        5
+      ],
+      "extent_basis": "single-function-complete-code-section",
+      "original_function": {
+        "address": "0x0060D044",
+        "size": "214",
+        "span_end": "0x0060D119",
+        "current_name": "FUN_0060d044",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060D044",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060D044",
+        "size": "214",
+        "span_end": "0x0060D119",
+        "current_name": "FUN_0060d044",
+        "proposed_name": "CD3DXAssembler::UpdateDebugText",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R185; complete pinned vendor parent and all genuine fields through full R184 source children",
+        "owner": "library",
+        "notes": "Complete source operation and retained typed SDK child context; origin only"
+      },
+      "accepted_origin": {
+        "address": "0x0060D044",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R185"
+      }
+    },
+    {
+      "address": "0x0061FC02",
+      "size": 49,
+      "symbol": "??1CD3DXSzStack@@QAE@XZ",
+      "member": "obj\\i386\\cd3dxstack.obj",
+      "member_offset": 420216,
+      "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+      "source_sha256": "5d4d6f272eaaff75a60b28eab24a3732a0e88a85a5d8a790bf5aff8a50da8f62",
+      "body_sha256": "4e844e92a0f64ca4ad0b9df36e189a49d058e35102e86c3178643eebad8ea131",
+      "fields": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 41,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        },
+        {
+          "offset": 41,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        1,
+        4
+      ],
+      "extent_basis": "single-function-complete-code-section",
+      "original_function": {
+        "address": "0x0061FC02",
+        "size": "49",
+        "span_end": "0x0061FC32",
+        "current_name": "FUN_0061fc02",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FC02",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FC02",
+        "size": "49",
+        "span_end": "0x0061FC32",
+        "current_name": "FUN_0061fc02",
+        "proposed_name": "CD3DXSzStack::~CD3DXSzStack",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R185; complete pinned vendor parent and all genuine fields through full R184 source children",
+        "owner": "library",
+        "notes": "Whole destructor with reviewed complete vendor constructor and push context; no original complete owner layout inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0061FC02",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R185"
+      }
+    },
+    {
+      "address": "0x00610F96",
+      "size": 48,
+      "symbol": "?LoadBMP@CD3DXImage@@AAEJPBXK@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "7c93bcdd6a753c1c1c5bbf76636c0e5560ce85c26c354e465fcac189401a75c2",
+      "body_sha256": "db2c880f7a626ac6acf4819bf3c944d46cf90e06843d8b9d376ad55b3f3118ca",
+      "fields": [
+        {
+          "offset": 34,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 34,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060ED05",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        1,
+        4
+      ],
+      "extent_basis": "single-function-complete-code-section",
+      "original_function": {
+        "address": "0x00610F96",
+        "size": "48",
+        "span_end": "0x00610FC5",
+        "current_name": "FUN_00610f96",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00610F96",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00610F96",
+        "size": "48",
+        "span_end": "0x00610FC5",
+        "current_name": "FUN_00610f96",
+        "proposed_name": "CD3DXImage::LoadBMP",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R185; complete pinned vendor parent and all genuine fields through full R184 source children",
+        "owner": "library",
+        "notes": "Complete source operation and retained typed SDK child context; origin only"
+      },
+      "accepted_origin": {
+        "address": "0x00610F96",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R185"
+      }
+    },
+    {
+      "address": "0x006255A0",
+      "size": 38,
+      "symbol": "?png_create_info_struct@D3DX@@YAPAUpng_info_struct@1@PAUpng_struct_def@1@@Z",
+      "member": "obj\\i386\\png.obj",
+      "member_offset": 1815914,
+      "member_sha256": "2dd6aee27bd24cac81d43a0f91f4f49547d284711feb266f11b363d4d78a594d",
+      "source_sha256": "f96249a2bb08067a0c28e345a808a9317ce0b1a99a28b88b719354fb9afae067",
+      "body_sha256": "6544d84cd5e8480f6528a233f5a1cebdb6640a9a1f9b41ba5bcb4ce454425570",
+      "fields": [
+        {
+          "offset": 13,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 13,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00629921",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        2,
+        2
+      ],
+      "extent_basis": "single-function-complete-code-section",
+      "original_function": {
+        "address": "0x006255A0",
+        "size": "38",
+        "span_end": "0x006255C5",
+        "current_name": "FUN_006255a0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x006255A0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x006255A0",
+        "size": "38",
+        "span_end": "0x006255C5",
+        "current_name": "FUN_006255a0",
+        "proposed_name": "D3DX::png_create_info_struct",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R185; complete pinned vendor parent and all genuine fields through full R184 source children",
+        "owner": "library",
+        "notes": "Complete source operation and retained typed SDK child context; origin only"
+      },
+      "accepted_origin": {
+        "address": "0x006255A0",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R185"
+      }
+    }
+  ],
+  "retained": [
+    {
+      "file": "config/sdk-file-image-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x0061FB45",
+      "record": {
+        "address": "0x0061FB45",
+        "size": 110,
+        "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+        "member": "obj\\i386\\cd3dxstack.obj",
+        "member_offset": 420216,
+        "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+        "source_sha256": "d8a471afdd1bb448b7d9fd7aafc3df1c889ac55eab316804f76cea23890e1987",
+        "body_sha256": "c1ee9add0f5ca1dba9306f1f2d03d055d7c2b78edf7416b62907de34c6820fd1",
+        "fields": [
+          {
+            "offset": 21,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null
+          },
+          {
+            "offset": 75,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??3@YAXPAX@Z",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 21,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064159D",
+            "kind": "callee"
+          },
+          {
+            "offset": 75,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??3@YAXPAX@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00640F15",
+            "kind": "callee"
+          }
+        ],
+        "indirect_call_count": 0,
+        "extent_basis": "single-function-complete-code-section",
+        "cfg": [
+          1,
+          4
+        ],
+        "original_function": {
+          "address": "0x0061FB45",
+          "size": "110",
+          "span_end": "0x0061FBB2",
+          "current_name": "FUN_0061fb45",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x0061FB45",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x0061FB45",
+          "size": "110",
+          "span_end": "0x0061FBB2",
+          "current_name": "FUN_0061fb45",
+          "proposed_name": "CD3DXDwStack::Push",
+          "module": "D3DX8",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+          "owner": "library",
+          "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+        },
+        "accepted_origin": {
+          "address": "0x0061FB45",
+          "origin": "library",
+          "subsystem": "D3DX8",
+          "disposition": "exclude",
+          "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+          "evidence_id": "R184"
+        }
+      },
+      "requested_symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+      "primary_symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+      "library": "d3dx8.lib",
+      "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+      "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+      "source_size": 110,
+      "source_sha256": "d8a471afdd1bb448b7d9fd7aafc3df1c889ac55eab316804f76cea23890e1987",
+      "fields": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 75,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 75,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        }
+      ],
+      "function": {
+        "address": "0x0061FB45",
+        "size": "110",
+        "span_end": "0x0061FBB2",
+        "current_name": "FUN_0061fb45",
+        "proposed_name": "CD3DXDwStack::Push",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "origin": {
+        "address": "0x0061FB45",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      },
+      "ledger_body_sha256": "c1ee9add0f5ca1dba9306f1f2d03d055d7c2b78edf7416b62907de34c6820fd1"
+    },
+    {
+      "file": "config/sdk-file-image-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x0060ED05",
+      "record": {
+        "address": "0x0060ED05",
+        "size": 1814,
+        "symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+        "member": "obj\\i386\\cd3dximage.obj",
+        "member_offset": 1516190,
+        "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+        "source_sha256": "e1f4e52d2873de99154fdc08c21a59860ede6068c31e0d4a8a7e814104b76b88",
+        "body_sha256": "a301f9c11aeb21d63fe28796b96c2126df581404e787d53581ae145f7ea11a41",
+        "fields": [
+          {
+            "offset": 842,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null
+          },
+          {
+            "offset": 1122,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 842,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064159D",
+            "kind": "callee"
+          },
+          {
+            "offset": 1122,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??2@YAPAXI@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064159D",
+            "kind": "callee"
+          }
+        ],
+        "indirect_call_count": 0,
+        "extent_basis": "single-function-complete-code-section",
+        "cfg": [
+          1,
+          146
+        ],
+        "original_function": {
+          "address": "0x0060ED05",
+          "size": "1814",
+          "span_end": "0x0060F41A",
+          "current_name": "FUN_0060ed05",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x0060ED05",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x0060ED05",
+          "size": "1814",
+          "span_end": "0x0060F41A",
+          "current_name": "FUN_0060ed05",
+          "proposed_name": "CD3DXImage::LoadDIB",
+          "module": "D3DX8",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+          "owner": "library",
+          "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+        },
+        "accepted_origin": {
+          "address": "0x0060ED05",
+          "origin": "library",
+          "subsystem": "D3DX8",
+          "disposition": "exclude",
+          "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+          "evidence_id": "R184"
+        }
+      },
+      "requested_symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+      "primary_symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+      "library": "d3dx8.lib",
+      "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_size": 1814,
+      "source_sha256": "e1f4e52d2873de99154fdc08c21a59860ede6068c31e0d4a8a7e814104b76b88",
+      "fields": [
+        {
+          "offset": 842,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 1122,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 842,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 1122,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "function": {
+        "address": "0x0060ED05",
+        "size": "1814",
+        "span_end": "0x0060F41A",
+        "current_name": "FUN_0060ed05",
+        "proposed_name": "CD3DXImage::LoadDIB",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "origin": {
+        "address": "0x0060ED05",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      },
+      "ledger_body_sha256": "a301f9c11aeb21d63fe28796b96c2126df581404e787d53581ae145f7ea11a41"
+    },
+    {
+      "file": "config/sdk-file-image-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00629921",
+      "record": {
+        "address": "0x00629921",
+        "size": 66,
+        "symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+        "member": "obj\\i386\\pngmem.obj",
+        "member_offset": 1882814,
+        "member_sha256": "d032988cc07ec6785c5e3df65cb9487a3746ff01f31261d69b152d950f3f3326",
+        "source_sha256": "c45f7106751fad06256988d1360c9fa2ff08c9717a3040153239294fabd28d1c",
+        "body_sha256": "3018f4c1fe9e072946cb4c0178c78fddf532ef1f379624783c5734fce148bae4",
+        "fields": [
+          {
+            "offset": 27,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "_malloc",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 27,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "_malloc",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00644331",
+            "kind": "callee"
+          }
+        ],
+        "indirect_call_count": 0,
+        "extent_basis": "single-function-complete-code-section",
+        "cfg": [
+          2,
+          4
+        ],
+        "original_function": {
+          "address": "0x00629921",
+          "size": "66",
+          "span_end": "0x00629962",
+          "current_name": "FUN_00629921",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x00629921",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x00629921",
+          "size": "66",
+          "span_end": "0x00629962",
+          "current_name": "FUN_00629921",
+          "proposed_name": "D3DX::png_create_struct",
+          "module": "D3DX8",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+          "owner": "library",
+          "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+        },
+        "accepted_origin": {
+          "address": "0x00629921",
+          "origin": "library",
+          "subsystem": "D3DX8",
+          "disposition": "exclude",
+          "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+          "evidence_id": "R184"
+        }
+      },
+      "requested_symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+      "primary_symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+      "library": "d3dx8.lib",
+      "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+      "member_sha256": "d032988cc07ec6785c5e3df65cb9487a3746ff01f31261d69b152d950f3f3326",
+      "source_size": 66,
+      "source_sha256": "c45f7106751fad06256988d1360c9fa2ff08c9717a3040153239294fabd28d1c",
+      "fields": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644331",
+          "kind": "callee"
+        }
+      ],
+      "function": {
+        "address": "0x00629921",
+        "size": "66",
+        "span_end": "0x00629962",
+        "current_name": "FUN_00629921",
+        "proposed_name": "D3DX::png_create_struct",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "origin": {
+        "address": "0x00629921",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      },
+      "ledger_body_sha256": "3018f4c1fe9e072946cb4c0178c78fddf532ef1f379624783c5734fce148bae4"
+    },
+    {
+      "file": "config/standard-exception-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00640F15",
+      "record": {
+        "member_offset": 852956,
+        "member": "build\\intel\\mt_obj\\delete.obj",
+        "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+        "address": "0x00640F15",
+        "coff_symbol": "??3@YAXPAX@Z",
+        "size": 5,
+        "code_size": 5,
+        "code_regions": [
+          {
+            "offset": 0,
+            "size": 5
+          }
+        ],
+        "span_end": "0x00640F19",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+        "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "_free",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642A61",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [],
+          "direct_calls": [],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61",
+            "basis": "typed-REL32",
+            "field_offset": 1,
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00640F15",
+            "mnemonic": "jmp",
+            "operands": "0x642a61"
+          }
+        ],
+        "source_definition": {
+          "symbol": "??3@YAXPAX@Z",
+          "offset": 0,
+          "section": 2,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 5
+      },
+      "requested_symbol": "??3@YAXPAX@Z",
+      "primary_symbol": "??3@YAXPAX@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+      "source_size": 5,
+      "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642A61",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x00642A61",
+            "source_member_offset": 794604,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "_free",
+              "offset": 0,
+              "section": 2,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        }
+      ],
+      "function": {
+        "address": "0x00640F15",
+        "size": "5",
+        "span_end": "0x00640F19",
+        "current_name": "_free",
+        "proposed_name": "??3@YAXPAX@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "R142; config/standard-exception-origin-evidence.json; complete pinned own-AUX code, every typed field, full template/vtable/RTTI/scope graph and actual register/stack ABI",
+        "owner": "library",
+        "notes": "Complete 5-byte own AUX in build\\intel\\mt_obj\\delete.obj at archive member 852956; 1 independently bound fields. Complete standard exception/throw/frame graph, whole vtable/RTTI data, actual weak source records and full finally scope plus real SDK/natural controls replay. Original private implementations, throw record identities and linker input/search decisions remain unknown; no inferred complete private layout or conventional ABI, no source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00640F15",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-standard-exception-throw-frame-rtti-weak-scope-abi-provenance",
+        "evidence_id": "R142"
+      },
+      "ledger_body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002"
+    },
+    {
+      "file": "config/allocation-api-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x0064159D",
+      "record": {
+        "address": "0x0064159D",
+        "symbol": "??2@YAPAXI@Z",
+        "size": 14,
+        "span_end": "0x006415AA",
+        "decision": "library",
+        "member_offset": 856822,
+        "member": "build\\intel\\mt_obj\\new.obj",
+        "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+        "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+        "body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1",
+        "fields": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00644305"
+          }
+        ],
+        "instructions": [
+          {
+            "address": "0x0064159D",
+            "mnemonic": "push",
+            "operands": "1"
+          },
+          {
+            "address": "0x0064159F",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "address": "0x006415A3",
+            "mnemonic": "call",
+            "operands": "0x644305"
+          },
+          {
+            "address": "0x006415A8",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415A9",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415AA",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ]
+      },
+      "requested_symbol": "??2@YAPAXI@Z",
+      "primary_symbol": "??2@YAPAXI@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+      "source_size": 14,
+      "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+      "fields": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305"
+        }
+      ],
+      "function": {
+        "address": "0x0064159D",
+        "size": "14",
+        "span_end": "0x006415AA",
+        "current_name": "operator_new",
+        "proposed_name": "??2@YAPAXI@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R154; config/allocation-api-origin-evidence.json; complete vendor allocation API source, independently typed runtime fields, cold SDK operations and retained game context",
+        "owner": "library",
+        "notes": "Complete own COFF AUX extent, every return/tail, archive member and actual typed field compare unmasked. The 14-byte scalar-new owner passes actual flag 1 and the original size to independently accepted complete R120 __nh_malloc; complete array-new and array-delete tails route to different independently sourced scalar owners. Eight whole natural SDK call controls / 196 bytes, every ordinary code/data section / 212 bytes, full 16-byte observation layout and eight actual headers cold-build. Complete R120 allocator/handler/data/API/EH provenance and R153 game buffer lifetime/source profiles cold-replay; original accepted evidence, extents and game declarations remain unchanged. Source ownership is library; original linker inputs, user handlers and live allocation outcomes remain unknown. No source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0064159D",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-allocation-api-typed-sdk-runtime-and-game-context",
+        "evidence_id": "R154"
+      },
+      "ledger_body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1"
+    },
+    {
+      "file": "config/sdk-origin-evidence.csv",
+      "address": "0x0061FBEF",
+      "record": {
+        "address": "0x0061FBEF",
+        "size": "19",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxstack.obj",
+        "member_offset": "420216",
+        "coff_symbol": "??0CD3DXSzStack@@QAE@XZ",
+        "body_sha256": "df085915f81692d40fd97e34a69afbbdb1d8bfe37edbd265a3a3d570a33898d7",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R026"
+      },
+      "requested_symbol": "??0CD3DXSzStack@@QAE@XZ",
+      "primary_symbol": "??0CD3DXSzStack@@QAE@XZ",
+      "library": "d3dx8.lib",
+      "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+      "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+      "source_size": 19,
+      "source_sha256": "df085915f81692d40fd97e34a69afbbdb1d8bfe37edbd265a3a3d570a33898d7",
+      "fields": [],
+      "bindings": [],
+      "function": {
+        "address": "0x0061FBEF",
+        "size": "19",
+        "span_end": "0x0061FC01",
+        "current_name": "FUN_0061fbef",
+        "proposed_name": "??0CD3DXSzStack@@QAE@XZ",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R026",
+        "owner": "library",
+        "notes": "Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit"
+      },
+      "origin": {
+        "address": "0x0061FBEF",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body-typed-caller",
+        "evidence_id": "R026"
+      },
+      "ledger_body_sha256": "df085915f81692d40fd97e34a69afbbdb1d8bfe37edbd265a3a3d570a33898d7"
+    }
+  ],
+  "retained_sha256": {
+    "config/sdk-file-image-origin-evidence.json": "7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6",
+    "config/standard-exception-origin-evidence.json": "13e2334a626c64d5cd3c32a08b5de968e88a0bc99c2761c86828573998514aa6",
+    "config/allocation-api-origin-evidence.json": "88471391a30ca23574ab4409b5504df592fee47d2e23c368bbc71b204eb6531c",
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "scripts/verify-sdk-file-image-origins.py": "870eecd4f031cd76aef2c5ba66bec00f37502554bb14b39087d8622c1dee7aae",
+    "scripts/verify-sdk-origins.py": "bdacba65c26820bd33d67614d8cc92ccdb52b0ef8c6ce8e66898421c72c85f80"
+  },
+  "catalog": {
+    "??0CD3DXSzStack@@QAE@XZ": "0x0061FBEF",
+    "??2@YAPAXI@Z": "0x0064159D",
+    "??3@YAXPAX@Z": "0x00640F15",
+    "?LoadDIB@CD3DXImage@@AAEJPBXK@Z": "0x0060ED05",
+    "?Push@CD3DXDwStack@@QAEJK@Z": "0x0061FB45",
+    "?png_create_struct@D3DX@@YAPAXH@Z": "0x00629921"
+  },
+  "dependency_verifiers": [
+    "sdk-file-image",
+    "sdk"
+  ],
+  "pending": {
+    "address": "0x0061FE1F",
+    "size": 38,
+    "function": {
+      "address": "0x0061FE1F",
+      "size": "38",
+      "span_end": "0x0061FE44",
+      "current_name": "FUN_0061fe1f",
+      "proposed_name": "",
+      "module": "",
+      "status": "unclassified",
+      "match_percent": "0.00",
+      "calling_convention": "",
+      "signature": "",
+      "is_thunk": "false",
+      "source_file": "",
+      "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+      "owner": "",
+      "notes": ""
+    },
+    "origin": {
+      "address": "0x0061FE1F",
+      "origin": "unknown",
+      "subsystem": "",
+      "disposition": "review",
+      "confidence": "unknown",
+      "evidence_id": "ghidra-12.1.3-initial-inventory"
+    },
+    "comparison": {
+      "address": "0x0061FE1F",
+      "size": 38,
+      "symbol": "?Init@CD3DXBuffer@@UAEJK@Z",
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "member_offset": 380178,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "27061408787d8681bd4140f7c563a74fdeb7b3fa8066e67a53d9f9d097037a6a",
+      "body_sha256": "58afecb1aaf0e6cbe4a4f18004603abf6f06c94757be69bfe10d8ac0e573b070",
+      "fields": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "cfg": [
+        1,
+        0
+      ],
+      "extent_basis": "single-function-complete-code-section"
+    }
+  }
+}

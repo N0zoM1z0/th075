@@ -11061,3 +11061,71 @@ unfinished. The next bounded cohort is six newly anchored D3DX parents/leaves
 / 762 bytes: 0x0060D11A, 0x0060D044, 0x0061FC02, 0x00610F96, 0x0061FE1F and
 0x006255A0. Reopen complete source members and bind all seventeen actual calls
 through the immutable R184/earlier source bodies; survey hits remain diagnostic.
+
+## R185 — complete D3DX debug parents and typed image/stack/PNG leaves
+
+The bounded six-candidate cohort resolves five complete vendor functions
+/ 724 bytes as library/exclude and preserves the sixth candidate as unknown.
+Fresh extraction independently derives each entire own code COMDAT from the
+same pinned d3dx8.lib. All 16 actual accepted REL32 calls are bound without
+masking through six immutable complete source records, including the original
+19-byte R026 CD3DXSzStack constructor.
+
+| Address | Whole bytes | Vendor operation |
+| --- | ---: | --- |
+| `0x0060D11A` | 375 | CD3DXAssembler::UpdateDebugFileLine |
+| `0x0060D044` | 214 | CD3DXAssembler::UpdateDebugText |
+| `0x0061FC02` | 49 | CD3DXSzStack::~CD3DXSzStack |
+| `0x00610F96` | 48 | CD3DXImage::LoadBMP |
+| `0x006255A0` | 38 | D3DX::png_create_info_struct |
+
+The two complete assembler operations preserve five/seven genuine calls to the
+whole 110-byte R184 CD3DXDwStack::Push body, with their native debug-state and
+stack accesses. The full 49-byte string-stack destructor retains its actual
+non-null element deletion loop and separate container release, the full vendor
+constructor and the unchanged R184 string-stack Push context. The complete
+48-byte BMP gate checks the original header size, BM signature and input
+length before passing its remainder to the full 1814-byte LoadDIB owner. The
+38-byte PNG info allocation operation reaches the complete 66-byte
+png_create_struct source body. Names alone and region proximity establish none
+of these decisions. Complete source operations, real fields, typed retained
+children and all native CFG/exits are frozen.
+
+The full 38-byte `0x0061FE1F` buffer initializer is byte-equal to the whole
+CD3DXBuffer::Init vendor COMDAT, including its one actual call to the complete
+14-byte operator new owner. It remains unknown: this allocation-and-field-write
+body lacks independently confirmed original owning-object/interface context.
+The original canonical rows, full native body, own source extent, real field
+and complete positive diagnostic comparison are preserved; no prefix, masked
+field, inferred complete class or library promotion is introduced.
+
+Replay `scripts/repo-python scripts/verify-sdk-debug-parent-origins.py`. Before
+canonical mutation, `--evidence-only` verifies the complete six-candidate
+positive/ambiguity result. Accepted-state replay verifies the five new rows
+and unchanged pending row. Each invocation reopens the complete immutable R184
+archive graph, all 15 bodies and 83 fields, the ten earlier source/native
+carriers, and the original SDK validator's 319 bodies / 80421 bytes and typed
+short-owner evidence. The six newly retained full own source records total
+2028 bytes. Prior source/ABI inputs are unchanged; the already passed R184
+cold dependency roots remain applicable without duplicate compiler replays.
+
+Strict R184 HEAD 82be796 readback changes exactly five function/origin rows,
+preserving every original extent, all 902 authored records / 1956112 bytes and
+all earlier configuration/source/ABI/mapping/match inputs. Target/tracking/
+project attestation and query completion, full authored verification, fresh
+scanning, eight new meaningful ambiguity/owner/field guards, all 2273 public
+checks, progress and whitespace checks pass. No original target or database
+write occurs. Source, complete game layouts, ABI, mapping and exact credit
+remain independent; exact stays 60 functions / 9883 bytes and provisional
+coverage 9883 / 1968455 (0.50%). Public MCP acceptance remains waived.
+
+Totals are 3659 resolved (949 authored, 2135 library, 575 compiler), 692 pending
+and 2710 excluded. The whole remaining-origin goal is active and unfinished.
+Next investigate the bounded R186 buffer/interface cohort: the unchanged
+38-byte initializer and three entire 71-byte QueryInterface candidates at
+0x00609F11, 0x0060A1FA and 0x00620093. Their historical masked vendor diagnostic
+uses different original GUID addresses; it does not identify the same
+interface. Independently prove each complete SDK GUID, retain full negatives
+for incompatible interface constants, and reconcile complete owning vtables/
+callers/source members before assigning any new owner. Do not infer an IID
+from a name, same-shaped COM body or memory region.
