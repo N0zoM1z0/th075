@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R150. The public
+review cohorts R108 through R151. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,452: 919 authored, 1,958 library and 575 compiler generated.
-There are 899 pending. Candidate count is not authored function count.
+has resolved 3,456: 919 authored, 1,962 library and 575 compiler generated.
+There are 895 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R151 nested-deque helper cohort below.
+the bounded R152 count-parent cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R150; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R151; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R151 nested-deque helper provenance
+## Next agent objective — R152 game count-parent context
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -763,31 +763,32 @@ headers are covered. Full R149/R119 cold evidence passes. Replay
 All 1183 public checks pass. Totals are 3452 resolved and 899 pending;
 the 60-function exact baseline and R139 cold proof remain preserved.
 
-The next bounded R151 cohort is four existing nested deque helper candidates
-already held as complete, non-accepting source controls by R150:
+R151 resolves all four nested deque helpers / 174 bytes through four complete
+source-typed graphs / 36 bodies / 1472 bytes. Thirteen SDK element families
+retain four complete positive graphs and nine rejected whole const owners;
+equal-sized differing owners remain rejected and original types/folding
+remain unknown. All 169 emitted functions / 5537 bytes, entire 32-byte SDK
+layout, 27 actual headers and complete R150 cold provenance pass. Signed
+iterator subtraction assignment retains its actual argument/reference return,
+not a decrement overload. No original extent or prior anchor origin changes.
+Replay `scripts/repo-python scripts/verify-nested-deque-helper-origins.py`.
+All 1201 public checks pass. Totals are 3456 resolved and 895 pending;
+the 60-function exact baseline and R139 cold proof remain preserved.
 
-| Candidate | Complete extent | Actual SDK source operation | Complete typed dependency |
-| --- | ---: | --- | --- |
-| `0x004215C0` | 45 | outer back | end `0x00421B40`, iterator minus `0x00422020`, dereference `0x00421FC0` |
-| `0x00421FC0` | 19 | mutable iterator dereference | actual const dereference `0x00422560` |
-| `0x00422540` | 27 | iterator subtraction assignment | actual addition assignment `0x00422520`; preserve signed argument/negation |
-| `0x00422560` | 83 | const iterator dereference | complete actual nested element/map/offset policy; no relocations |
+The next bounded R152 task is the single unknown 66-byte count candidate
+`0x0045DD00`. Its full natural R150 observation follows the signed-short
+index map and real outer-at/returned-inner-size policy, but does not decide
+original authored/compiler ownership or recover a complete game layout.
+The attested caller query identifies two independently accepted authored
+parents: `0x0045CE10` / 1926 bytes (R065) and `0x0045D810` / 1264 bytes
+(R045). Review their entire control flow and actual call/argument/receiver
+context, then independently trace the real index-map producers/domain before
+considering game-policy ownership. Keep both prior parent origins/extents
+unchanged. Review natural compiler/generated alternatives where relevant;
+the reviewed SDK child or synthetic model alone is insufficient. Preserve
+the original count extent and uncertainty if independent policy evidence
+does not distinguish ownership. Do not add exact-reconstruction scope.
 
-Use the accepted `config/nested-deque-size-origin-evidence.json` and full
-R150 cold source/code/data/EH provenance, together with new bounded source
-families/typed-parent evidence before granting these four origins. Their
-current own AUX extents are complete; all old ledger extents remain unchanged.
-Source operator `??Ziterator` is subtraction assignment, not prefix decrement
-or postfix decrement; preserve the real H argument and QAEAAV return ABI.
-The actual complete back/minus/assignment/dereference chain supplies context,
-not blanket origin credit from a reviewed child. Keep original element types,
-folding, private game declarations and complete game layouts unknown. Do not
-instantiate an incomplete game owner or add exact-reconstruction scope.
-
-The 66-byte `0x0045DD00` count wrapper remains an unknown origin: its natural
-source observation alone does not decide original authored/compiler ownership.
-Preserve its complete synthetic model and actual signed map/outer-at/returned
-inner-size policy for a later independently rooted game-context review.
 The two original string throw workers `0x00654ACE` / `0x00654B0E` remain
 unresolved external snapshots; R150 gives them no additional source or origin
 credit. The prior math/source diagnostic surveys remain exhausted for their
@@ -834,7 +835,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R151 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R152 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

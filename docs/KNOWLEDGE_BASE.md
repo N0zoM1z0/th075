@@ -5321,3 +5321,58 @@ bytes; the provisional exact coverage denominator remains 1,965,299.
 The public MCP waiver and private no-auth route remain unchanged. Private
 logs, exploratory controls and objects remain untracked. The complete-origin
 objective remains unfinished.
+
+## R151 — Complete nested deque helper families
+
+R151 resolves four existing library candidates: outer back `0x004215C0`
+(45 bytes), mutable iterator dereference `0x00421FC0` (19), iterator
+subtraction assignment `0x00422540` (27) and const iterator dereference
+`0x00422560` (83). All 174 bytes retain their original complete extents.
+Replay `scripts/repo-python scripts/verify-nested-deque-helper-origins.py`
+with `config/nested-deque-helper-origin-evidence.json` and the natural SDK
+controls in `probes/VC7NestedDequeHelpers.cpp`.
+
+Thirteen real SDK element families preserve four complete positive graphs:
+twenty-byte observation records and nested byte, word and pointer deques.
+Each graph contains nine independently complete code owners / 368 bytes;
+all four graphs / 36 source bodies / 1472 bytes compare unmasked after every
+actual typed call is bound through its complete callee. Original element
+types and folding remain unknown. Back reaches end, binary iterator minus
+and mutable dereference; mutable dereference reaches the actual const owner.
+The original five accepted dependency origins and all their extents remain
+unchanged. Full R150 code/data/EH/receiver provenance cold-replays, including
+the independently authored complete parser and its actual returned-inner
+byte producer; a reviewed child alone does not establish a parent origin.
+
+Nine rejected full type graphs retain actual differing const-dereference
+owners. Byte/word/dword/pointer and eight-byte record owners have different
+complete extents; sixteen-, twenty-four-, thirty-two- and sixty-four-byte
+record owners retain the same 83-byte extent but differ in three, one, three
+and three actual bytes respectively. Equal-shaped back/mutable/subtraction
+operations alone do not identify a complete type family. No prefix or masked
+comparison grants acceptance. Source `??Ziterator` is signed subtraction
+assignment with a reference return, not iterator decrement; its actual NEG,
+addition-assignment callee, stack cleanup and whole control flow are retained.
+
+The pinned VC7.1 build 3077 cold-build covers all 169 ordinary emitted
+functions / 5537 bytes, the entire 32-byte SDK layout section and 27 actual
+included headers, with no orphan ordinary code/data carriers. Flags are
+per-probe reproducibility settings. Eighteen regression checks guard complete
+graphs/extents, independently typed callees, actual call sites, signed
+overloads, rejected type differences and retained whole provenance.
+
+Exactly four canonical rows change after complete cold acceptance; read-back
+checks every unrelated row against R150 HEAD. All 1201 public checks,
+authored-extent verification, attested target/project/queries, fresh scanner
+and progress, exact-input preservation and whitespace checks pass locally.
+Totals are 3456 resolved (919 authored, 1962 library, 575 compiler), 895
+pending and 2537 excluded. The 60 source/mapped/exact functions / 9883 bytes
+and all exact inputs remain unchanged from R139 db26a05; its 60/60 cold
+replay across eleven objects remains applicable. No affected exact unit
+needs replay. Authored extents remain 872 / 1952956 bytes and the provisional
+exact denominator remains 1965299. No source, mapping, private ABI or exact
+credit is added. The synthetic 66-byte count observation remains unknown;
+neither its model nor these SDK helpers recover the complete game owner.
+Public MCP acceptance remains waived; the private no-auth route is unchanged.
+Private logs, generated output and objects remain untracked. The complete
+origin objective remains unfinished.
