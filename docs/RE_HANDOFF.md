@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R126. The public
+review cohorts R108 through R127. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,227: 919 authored, 1,733 library and 575 compiler generated.
-There are 1,124 pending. Candidate count is not authored function count.
+has resolved 3,250: 919 authored, 1,756 library and 575 compiler generated.
+There are 1,101 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R127 floating-point dispatch cohort below.
+the bounded R128 trigonometric/square-root parent cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R126; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R127; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R127 floating-point dispatch dependencies
+## Next agent objective — R128 complete trigonometric/square-root parents
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -403,23 +403,49 @@ runtime/compiler/game/import/layout graphs, authored extents, project attestatio
 bytes cold-replay across eleven objects. Investigation and intermediate checks
 are local; the public acceptance replay runs once.
 
-The next bounded cohort is six existing floating-point dispatch candidates:
+R127 resolves all six dispatch roots and necessary dependencies: nineteen full
+library primaries / 2,608 bytes / 56 fields and four existing shared entries /
+350 overlapping bytes. Replay `scripts/repo-python scripts/verify-fp-dispatch-origins.py`.
+The 72-byte ctrandisp2 provisional extent now retains its entire 406-byte source
+owner. Three auxiliary controls / 393 bytes / eight fields have no inventory
+candidate. Seven independent anchors / 462 bytes / 17 fields retain their origins.
+
+Both complete actual atan2 callers supply the whole 80-byte, sixteen-entry table.
+Every DIR32 entry binds an actual source label within a whole reviewed owner;
+the complete FXAM tag classifier and both JMP [EBX] tails retain provenance.
+Same-section shared tails require original source-relative offsets. Eleven full
+data sections / 336 source bytes retain member-local constants, folded zero
+COMDATs, state, loader BSS and typed pointers. The full IEEE/matherr/RaiseException
+graph and natural 352-byte SDK/CRT controls retain 112-byte IEEE record layout
+and real bitfields. No incomplete game layout, new source or exact scope follows.
+
+The final public HTTPS MCP acceptance passes R127 and retained R126 runtime/
+compiler/game/import/layout graphs, authored extents, project attestation,
+427 public checks, progress freshness and git diff whitespace. All 60 exact
+units / 9,883 bytes cold-replay across eleven objects. Local investigation and
+intermediate checks precede one final public acceptance replay.
+
+The next bounded cohort is six existing trigonometric/square-root candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00646980` | 103 | `__trandisp1` | Complete own extent, actual function-table entry, floating-point state and every dispatcher/error dependency |
-| `0x006469E7` | 140 | `__trandisp2` | Complete two-argument dispatch, stack/return ABI, whole table and error paths |
-| `0x00646B43` | 7 | Small adjacent helper; source identity unresolved | Own defining source extent or actual parent/alias, full caller/callee and exit evidence |
-| `0x00646B7C` | 25 | `__convertTOStoQNaN` | Full x87 conversion and source/target state provenance |
-| `0x00646BFB` | 42 | `__math_exit` | Whole exit, actual math context and all error/status/callback dependencies |
-| `0x00646CE0` | 23 | `__startTwoArgErrorHandling` | Own full source body, two-argument ABI and actual exception-handling child graph |
+| `0x00641740` | 20 | `__CIcos`, own AUX extent 174 | Entire intrinsic/C entry and shared computation, all fourteen typed fields and math/error/data dependencies |
+| `0x0064175D` | 145 | Shared computation at full cos owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
+| `0x006417F0` | 20 | `__CIsin`, own AUX extent 174 | Entire intrinsic/C entry and shared computation, all fourteen typed fields and math/error/data dependencies |
+| `0x0064180D` | 145 | Shared computation at full sin owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
+| `0x00641E40` | 20 | `__CIsqrt`, own AUX extent 186 | Entire intrinsic/C entry and shared computation, all thirteen typed fields and math/error/data dependencies |
+| `0x00641E5D` | 157 | Shared computation at full sqrt owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
 
-Use `.analysis/r126-next-cohort.log` diagnostically; its relocation-masked source
-associations prove no origin. Retain R124's independently closed conversion/
-control graph. Every actual dispatcher table/callback, initialized data,
-exception path and source boundary must close before parent credit. Keep
-hooks/CallSettingFrame and read/write validators pending for later bounded
-review. Do not inherit ownership from known children or adjacent archive names.
+Use `.analysis/r127-next-parent-survey.json` and
+`.analysis/r127-next-full-parent-survey.log` diagnostically. Full relocation-masked
+source observations establish no origin. Each complete vendor primary spans
+both selected candidates and an existing nine-byte C entry at offset 20:
+`0x00641754` (_cos), `0x00641804` (_sin), `0x00641E54` (_sqrt). Review those entries
+through their actual complete parent if needed; do not accept the 20-/145-/157-byte
+slices as independent source definitions. Source identities and names remain
+provisional until every code/data/ABI binding closes. Retain R127's independently
+closed dispatch/error graph rather than inheriting ownership from known children.
+Keep hooks/CallSettingFrame and read/write validators pending for later review.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -435,7 +461,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R127 adds no exact scope. Update
+private path and 60-function exact baseline. R128 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -792,7 +818,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R127 floating-point dispatch cohort described above. F008 and F009 remain
+Continue the bounded R128 trigonometric/square-root parent cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

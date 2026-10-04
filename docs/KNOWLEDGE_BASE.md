@@ -2834,3 +2834,104 @@ project attestation, progress freshness, 396 tests and git diff whitespace.
 All 60 exact units cold-replay across eleven objects. Investigation and
 intermediate checks are local. Target/database/tool installations and game
 source/headers are unchanged; private URLs, logs and vendor bytes stay untracked.
+
+## R127 — Complete x87 dispatch and IEEE exception graph
+
+R127 resolves all six floating-point dispatch handoff candidates and their
+necessary graph: nineteen complete library primaries / 2,608 bytes / 56 typed
+fields, plus four existing interior candidates / 350 overlapping bytes. Replay
+`scripts/repo-python scripts/verify-fp-dispatch-origins.py`; the complete manifest
+is `config/fp-dispatch-origin-evidence.json`. No source, mapping or exact units
+are added. All source members come from the pinned VC7 libcmt.lib archive.
+
+| Complete source body | Address | Bytes |
+| --- | --- | ---: |
+| `__trandisp1` | `0x00646980` | 103 |
+| `__trandisp2` | `0x006469E7` | 140 |
+| `__convertTOStoQNaN` | `0x00646B7C` | 25 |
+| `__math_exit` | `0x00646BFB` | 42 |
+| `__startTwoArgErrorHandling` | `0x00646CE0` | 23 |
+| `__87except` | `0x006505CA` | 248 |
+| `__startOneArgErrorHandling` | `0x00646CF7` | 60 |
+| `__cintrindisp2` | `0x006489F0` | 62 |
+| `__cintrindisp1` | `0x00648A2E` | 61 |
+| `__ctrandisp1` | `0x00648C01` | 51 |
+| `__ctrandisp2` | `0x00648A6B` | 406 |
+| `__handle_exc` | `0x00646FD8` | 548 |
+| `__raise_exc` | `0x00646D33` | 677 |
+| `__set_errno` | `0x006471FC` | 40 |
+| `__matherr` | `0x006506C2` | 3 |
+| `__set_statfp` | `0x00647722` | 86 |
+| `__statfp` | `0x006476E7` | 11 |
+| `__clrfp` | `0x006476F2` | 12 |
+| `_atan2` | `0x00642240` | 10 |
+
+Each primary keeps its own complete COFF AUX extent, all source/target bytes,
+typed fields, instruction starts, local branches, external transfers, indirect
+jumps, exits and x86 ABI. The provisional 72-byte ctrandisp2 extent expands to
+its full 406-byte source definition; it includes both existing shared exits.
+Seven independently reviewed whole anchors / 462 bytes / 17 fields retain
+original R006/R098/R120 origins and replay through the complete R126 chain.
+
+Three necessary full auxiliary controls / 393 bytes / eight fields have no
+independent inventory candidate: CIatan2 at `0x0064224A` / 10, the NaN/numeric
+primitive owner at `0x00646A73` / 215, and the atan/trig primitive owner at
+`0x00648940` / 168. They earn no candidate count. Four existing candidates gain
+interior-entry origin only: rtchsifneg `0x00646B43` / 7 at primitive offset 208,
+ctranexit `0x00648AB3` / 7 at ctrandisp2 offset 72, cintrinexit `0x00648ABA` / 327
+at offset 79, and rtpiby2 `0x006489AC` / 9 at atan-owner offset 108. Their names
+remain blank and overlapping bytes earn no standalone reconstruction credit.
+
+Both actual atan2 callers load EDX with the complete 80-byte OP_ATAN2 table
+before typed REL32 tails to the C/intrinsic dispatchers. Its operation is 16,
+argument count is two and all sixteen DIR32 code entries retain actual defining
+source labels, member/section/offset and complete owners. The 16-byte XAM tag
+classifier, FXAM/control-word/status handling, XLAT, signed index conversion,
+two-argument AH-shift/AL combination and both actual JMP [EBX] tails remain
+complete. Same-section shared branches bind their own source-relative target
+and actual full owner; they are not invented relocation fields. The two-argument
+error entry shares the one-argument owner's offset-nine tail. Generic caller
+supplied tables do not classify hypothetical custom callees or game types.
+
+Eleven complete defining data sections / 336 source bytes retain all definitions
+and fields. Two distinct eight-byte zero COMDAT definitions fold to one actual
+target, leaving 328 unique target bytes; source identities remain distinct.
+Controls include the 44-byte indefinite/pi/one/tag carrier, 68-byte common math
+constants, 48-byte C-dispatch constants, 40-byte exception constants, 24-byte
+over/underflow constants, four-byte security cookie, four-byte matherr flag,
+eight-byte fastflag/adjust_fdiv BSS and complete atan2 table. Member-local One
+symbols in different archive members remain distinct. Initialized sections
+compare completely with typed code pointers; readonly/writable PE geometry and
+BSS loader zero-fill provenance are checked. No zero prefix identifies a state.
+
+The full exception graph preserves status/mask, precision/rounding, domain/range/
+inexact paths, the default zero matherr flag and zero-return handler, errno,
+thread state, IEEE operand/result records and restored control state. The actual
+RaiseException import at `0x00657184` retains its complete 16-byte API argument
+ABI and exception-code/parameter provenance. Optional user handlers remain
+unknown; generic matherr dispatch grants no ownership to their implementations.
+
+Natural VC7FPDispatchLayout cold-builds one whole 352-byte readonly section with
+hash-pinned CRT/SDK headers and explicit reproduction flags. It emits 49 DWORD
+layout/constants controls, a four-byte flags object, a 32-byte value and a
+112-byte IEEE record. The compiler's eight-byte alignment gap after the flags
+object is verified as emitted storage, not source padding or a twelve-byte type.
+Controls retain four-byte pointers, FP80 / 10, FP128 / 16, exception structure /
+32, IEEE Cause/Enable/Status at +4/+8/+12 and Operand1/Operand2/Result at
++16/+48/+80. Natural aggregate initializers verify exception flags, valid/format
+bitfields, 53-bit precision and atan2 operation bits against emitted bytes.
+These vendor layouts do not establish a game class or original compiler flags.
+
+Thirty-one regression checks reject truncated shared owners, fabricated
+auxiliary candidates, wrong source entries, substituted tables/classifiers,
+incorrect argument/index protocol, missing data carriers, member-local symbol
+confusion, undefined data references and guessed IEEE layouts. All 427 public
+checks pass. Canonical totals are 3,250 resolved (919 authored, 1,756 library,
+575 compiler), with 1,101 pending. Exact/source/mapping remains 60 / 9,883 bytes;
+authored extents remain 872 / 1,952,956 recorded bytes.
+One final no-auth public HTTPS MCP acceptance replays R127, retained R126 and
+its complete runtime/compiler/game/import/layout graphs, all authored extents,
+project attestation, progress freshness, 427 tests and git diff whitespace.
+All 60 exact units cold-replay across eleven objects. Investigation and
+intermediate checks are local. Private evidence stays untracked; target,
+database, shared tool installations and game source/headers are unchanged.
