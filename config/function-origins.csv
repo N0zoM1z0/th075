@@ -3594,12 +3594,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00642BD9,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x00642C9D,library,VC71CRT,exclude,complete-vendor-body,R007
 0x00642CC1,library,VC71CRT,exclude,complete-vendor-body-with-readonly-data-and-callees,R099
-0x00642D9D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642D9D,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x00642DEB,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x00642E1D,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R123
 0x00642E26,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00642EE5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00643041,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642EE5,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x00643041,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x006432D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006434A9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006435F2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3776,30 +3776,30 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064BCB1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064C13B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064C200,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064C25F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064C25F,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064C5C6,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x0064C7E8,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
-0x0064C847,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064C847,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064CA47,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
-0x0064CB20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064CD5F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064CB20,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064CD5F,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064CFA0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064CFF0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064D114,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D174,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D18E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D204,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D222,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064D114,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D174,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D18E,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D204,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D222,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064D305,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064D33A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D357,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D3EB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D45C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D676,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D741,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D778,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D7FE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064D853,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064D33A,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D357,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D3EB,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D45C,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D676,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D741,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D778,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D7FE,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x0064D853,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064DA08,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x0064DBD0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064DC10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3875,8 +3875,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006518B9,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x006519A0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x006519EE,library,VC71CRT,exclude,complete-vendor-input-format-code-data-seh-nls-api-abi-provenance,R135
-0x00651B15,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00651B7E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00651B15,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
+0x00651B7E,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x00651BFD,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00651C3B,library,VC71CRT,exclude,complete-vendor-body,R007
 0x00651C65,library,VC71CRT,exclude,complete-vendor-body,R007

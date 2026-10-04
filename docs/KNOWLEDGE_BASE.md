@@ -3807,3 +3807,152 @@ replays R135 and retained graphs, authored extents, target/project attestation,
 progress freshness, 702 tests and whitespace checks. All 60 exact units
 cold-replay across eleven objects. Investigation and intermediate verification
 use local tools; private evidence stays untracked and shared tools read-only.
+
+## R136 — Complete locale construction, category and enumeration graph
+
+R136 resolves all six locale-construction/category handoff roots and seventeen
+required existing dependencies: 23 complete library primaries / 5949 bytes /
+421 typed fields. Replay
+`scripts/repo-python scripts/verify-locale-construction-origins.py`; its manifest
+is `config/locale-construction-origin-evidence.json`. Every primary retains its
+entire own AUX from the hash-pinned libcmt.lib. Complete source bodies, actual
+code/data/API fields, branches and exits compare without differences. No source,
+mapping or exact reconstruction credit is added. Accepted children alone prove
+no parent origin.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__get_lc_time` | `0x0064C25F` | 871 | 46 |
+| `___init_numeric` | `0x0064C847` | 461 | 39 |
+| `___init_monetary` | `0x0064CB20` | 575 | 42 |
+| `___init_ctype` | `0x0064CD5F` | 490 | 26 |
+| `__expandlocale` | `0x00642EE5` | 348 | 24 |
+| `__setlocale_set_cat` | `0x00643041` | 655 | 42 |
+| `___get_qualified_locale` | `0x0064D853` | 437 | 38 |
+| `___lc_lctostr` | `0x00642D9D` | 78 | 5 |
+| `_TranslateName` | `0x0064D114` | 96 | 1 |
+| `_GetLcidFromLangCountry` | `0x0064D778` | 134 | 16 |
+| `_GetLcidFromLanguage` | `0x0064D7FE` | 85 | 11 |
+| `_GetLcidFromCountry` | `0x0064D741` | 55 | 7 |
+| `_GetLcidFromDefault` | `0x0064D174` | 26 | 4 |
+| `_ProcessCodePage` | `0x0064D18E` | 118 | 9 |
+| `__stricmp` | `0x00651B15` | 105 | 6 |
+| `_GetPrimaryLen` | `0x0064D33A` | 29 | 0 |
+| `_crtGetLocaleInfoA@16` | `0x0064D222` | 227 | 10 |
+| `_LangCountryEnumProc@4` | `0x0064D45C` | 538 | 49 |
+| `__strnicmp` | `0x00651B7E` | 127 | 6 |
+| `_TestDefaultCountry` | `0x0064D204` | 30 | 1 |
+| `_TestDefaultLanguage` | `0x0064D3EB` | 113 | 8 |
+| `_LanguageEnumProc@4` | `0x0064D676` | 203 | 18 |
+| `_CountryEnumProc@4` | `0x0064D357` | 148 | 13 |
+
+**Target behavior and source ownership.** Time construction retains allocation,
+all abbreviated/full weekday and month names, AM/PM and date/time strings,
+locale/calendar fields, refcount initialization and complete failure cleanup.
+Numeric and monetary initialization retain the complete lconv / 48, string and
+integer queries, source-inlined grouping conversion, allocation/refcounts,
+replacement and rollback paths. Grouping converts ASCII digits and semicolons
+according to the original source. Complete R122 freeing owners remain separate
+independent anchors; no runtime allocation or current locale value is assumed.
+
+CTYPE initialization retains GetCPInfo, the complete CPINFO / 20, lead-byte
+ranges, the actual 768-byte classification allocation, 257-byte character
+buffer, EOF slot, all 256 classification inputs, lead-byte marker / 32768,
+254-byte prefix copy, refcounts and cleanup. Category compatibility compares
+128 shorts / 256 bytes, including the defining style terminator. The full
+source carrier is 383 bytes: 256 style bytes followed by 127 character bytes.
+These historical source paths are preserved without changing their policy or
+adding padding. SDK MB_LEN_MAX is 5, established by the pinned natural probe.
+The allocated runtime table, selected codepage and resulting classifications
+remain unknown.
+
+Expandlocale retains its C-locale shortcut, complete parse/qualification,
+131-byte input/output caches, actual 130-character threshold, six-byte LC_ID
+copy, four-byte codepage copy, output formatting and all exits. The cache ID
+and codepage share a complete twelve-byte defining BSS carrier; LC_ID itself
+remains three WORDs / six bytes. The default locale and both caches belong to
+the complete 403-byte source carrier, rather than invented separate sections.
+Stricmp/strnicmp retain their whole thread/locale update, ASCII fast paths,
+count/termination behavior and independently bound lowercase worker.
+
+Qualification retains language/country translation, complete binary-search
+name tables, primary/default language policy, ACP/OCP and numeric codepage
+selection, real locale/codepage validation, default-LCID lookup and all three
+enumeration callbacks. The complete compatibility helper preserves size-only,
+string/integer query and fallback-record behavior. The source-defined special
+language cases and all full table literals remain evidence; no current system
+locale or API result is inferred.
+
+**Actual callbacks and whole defining state.** The category table at
+`0x006700B8` retains six complete twelve-byte records / 72 bytes / 17 fields.
+All six initializer pointers at +8/+20/+32/+44/+56/+68 bind actual source
+owners: dummy, collate, ctype, monetary, numeric and time. The source-local
+category helper's real call at `0x0064326A` uses `[ebx + 0x6700c0]`. Dummy and
+collate each retain three bytes; time retains 95 bytes / ten fields. These
+three non-inventoried controls / 101 bytes / ten fields gain no candidate
+credit. The LC_ALL dummy is source-defined and documented unused. Category
+bounds validation belongs to the pending parent. The helper retains actual
+allocation, compatibility, callback and failure paths; its rollback restores
+locale, handle and codepage according to the original source. It does not
+establish a more general transaction guarantee.
+
+Three actual EnumSystemLocalesA registrations bind source-local callbacks:
+`0x0064D778` to `0x0064D45C`, `0x0064D7FE` to `0x0064D676`, and `0x0064D741` to
+`0x0064D357`. Each real push sequence supplies LCID_INSTALLED / 1 and its
+actual callback pointer to IAT `0x00657118`. All three complete callbacks
+return with RET 4. Country registration schedules INC/MOV between argument
+pushes and the API call; acceptance verifies the real argument sequence,
+without requiring artificial instruction adjacency. Ordinary Ghidra caller
+counts omit these indirect registrations and do not establish unused code.
+
+The query pointer at `0x0068E6B0` is the final DWORD / +32 in the complete
+36-byte `_iLcidState` BSS carrier. It starts null. Full qualification selects
+raw GetLocaleInfoA at IAT `0x0065711C` on the actual NT platform comparison / 2,
+or stores the complete source-local compatibility helper at `0x0064D222`.
+All nine real indirect query sites remain inside full source owners. The
+helper retains RET 16 and the natural SDK control preserves the same stdcall
+contract. Runtime selection and query results remain unknown.
+
+The graph retains 198 whole defining sections / 6378 bytes / 220 typed fields
+and five complete four-byte COMMON declarations / 20 bytes. COMMON refcounts
+and the ctype pointer require their actual source definitions and writable PE
+loader zero-fill geometry. Whole data includes country records / 184, language
+records / 520, fallback locale records / 1188, ten nondefault WORD IDs / 20,
+all C time strings and the full 184-byte time record, complete CTYPE / 1284,
+lconv/default carriers and all recursively bound literals. Names, pointer
+fields and mutable-state ownership follow defining source topology, without
+claims about post-startup contents.
+
+Twenty-five full independent anchors / 4402 bytes / 215 fields preserve prior
+origins. Memcpy retains its full R025 829-byte own AUX: seven actual code
+regions / 709 bytes and six embedded tables / 120 bytes. Every complete table,
+source label, typed DIR32 field and actual case instruction start replays.
+Decoding tables as instructions or accepting a 709-byte prefix is rejected.
+Its vendor assembly is archive evidence; no assembly or byte arrays are added
+to reconstructed game source. The entire R135 input/NLS graph and all retained
+output, stream, handle, locale, heap, security and initialization chains replay.
+
+**Compiler observations and verification.** The single natural probe
+`probes/VC7LocaleConstructionLayout.cpp` cold-builds the complete 340-byte layout
+array. Pinned CRT/SDK types establish LC_ID / 6, LC_STRINGS / 144, category / 12,
+name / 8, fallback record / 44, compatibility / 8, lconv / 48, time / 184,
+thread locale / 84, CPINFO / 20 and actual offsets/constants. Source-local
+record models do not establish reconstructed game owners. Four complete
+45-/17-/8-/24-byte controls preserve real stdcall callback RET 4, SDK enumeration
+import/flag, zero-argument cdecl category call and four-argument stdcall query
+cleanup. Ten complete vendor sources and eight pinned headers replay. VC7.1
+build 3077 and explicit flags provide reproducibility, without an executable-wide
+compiler-profile claim.
+
+Thirty-eight regression checks reject shortened owners/carriers, invented
+candidate credit, wrong defining callbacks, missing table fields, ABI/flag/API
+mistakes, guessed runtime selection, incorrect cache/CTYPE layouts and incomplete
+memcpy code/table partitioning. All 740 public checks pass. Canonical totals
+are 3370 resolved (919 authored, 1876 library, 575 compiler), with 981 pending.
+Exact/source/mapping remains 60 / 9883 bytes; recorded authored extents remain
+872 / 1952956 bytes and the provisional denominator is 1965299. One final
+no-auth public HTTPS MCP request replays R136 and retained graphs, authored
+extents, target/project attestation, progress freshness, tests and whitespace.
+All 60 exact units cold-replay across eleven objects. Investigation and
+intermediate checks use local tools; private evidence stays untracked and
+shared tools read-only.
