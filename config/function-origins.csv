@@ -812,7 +812,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041B400,authored,BitmapData,authored,custom-policy-backed,R021
 0x0041B990,authored,BitmapData,authored,custom-policy-backed,R021
 0x0041BF90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041BFD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041BFD0,authored,RasterResources,authored,complete-explicit-lifetime-policy-and-whole-source-operation-controls,R178
 0x0041C060,authored,TextRasterizer,authored,complete-game-policy-with-batch-context,R103
 0x0041C0D0,authored,TextRasterizer,authored,complete-game-policy-with-batch-context,R103
 0x0041C130,authored,FontSurface,authored,complete-game-policy-with-mixed-context,R109
@@ -2442,7 +2442,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005EB490,authored,MeilingObject,authored,target-observed,R050
 0x005EB520,authored,CharacterObject,authored,target-observed,R048
 0x005F3D60,authored,MeilingFighter,authored,target-observed,R064
-0x005F6F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F6F60,authored,StaticResourcePolicy,authored,complete-explicit-lifetime-policy-and-whole-source-operation-controls,R178
 0x005F6FF0,authored,StaticResourcePolicy,authored,complete-explicit-static-resource-policy-and-whole-source-order-controls,R177
 0x005F70E0,authored,Effects,authored,target-observed-game-policy-and-reviewed-callees,R100
 0x005F7140,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166

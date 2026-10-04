@@ -7586,3 +7586,69 @@ Exact remains 60 functions / 9883 bytes, with provisional coverage
 credit is added. Public MCP acceptance remains waived. The full remaining-origin
 goal remains active and unfinished. Continue with fresh whole lifetime-policy
 candidates; a compiler parent alone grants no ownership.
+
+## R178 — remaining explicit construction and raster lifetime policies
+
+Two entire authored policies / 271 bytes are accepted: `0x005F6F60` / 142 and
+`0x0041BFD0` / 129. Replay
+`scripts/repo-python scripts/verify-remaining-lifetime-policy-origins.py` with
+immutable `config/remaining-lifetime-policy-origin-evidence.json`.
+
+Target observation: the constructor first invokes the full 98-byte array
+construction helper for two 20-byte deque members, the R017 texture constructor
+at +0x28 and R090 vector constructor at +0x78. After all members are constructed,
+it explicitly clears the two queues in ascending order and clears the vector.
+The historical R077 deque destructor-shaped aliases are preserved; the actual
+post-construction operation and complete source controls distinguish explicit
+clear from automatic construction. Whole R024 registration binds the same
+static object `0x006716C8` as the accepted R177 destructor. The entire original
+three-state R020 frame `0x00656629` and all cleanup registrations are retained.
+
+The 129-byte raster lifetime policy guards storage at +0x14, performs scalar
+delete and zeros that slot. It restores the selected GDI object through actual
+SelectObject, passes the returned object to DeleteObject, releases the DC through
+ReleaseDC, then resets fields +8, +12 and +4. All actual import slots are read
+back from the PE directory. The complete R037 deleting parent retains flags-1
+allocation cleanup; that parent alone supplies no authored evidence. R109's
+entire 119-byte independent raster release policy is preserved as context,
+including its own two resets rather than this candidate's three. Original
+owner identity, field meanings and complete game layout remain unknown.
+
+Compiler/source observation: seven full natural small-owner controls / 457
+bytes distinguish explicit constructor clears and raster cleanup from automatic
+construction/cleanup. Source constructors are 142/108 bytes; raster explicit
+cleanup is 129 bytes and the implicit raw-member observation has no cleanup
+operations. These controls grant no target-source positive or reconstruction
+credit. The 142-byte synthetic constructor has vector offset 44 rather than
+120. The full 129-byte raster source comparison binds all four genuine fields
+without masking and differs at offsets 14,23,44 because its storage offset is
+16 rather than 20. No unused field or arbitrary padding is added to hide these
+differences. Original layouts are not instantiated.
+
+The third candidate `0x004170B0` / 27 remains unknown. Its entire interface
+Release through virtual slot +8 is byte-equal to both a complete explicit
+interface destructor and an ordinary smart-owner destructor. Both full primary
+AUX extents / 54 bytes compare without fields to exclude. A complete generated
+19-byte member-owner destructor supplies additional operation context. These
+observations preserve game-versus-library ownership uncertainty; the deleting
+parent and Release shape alone do not classify the owner.
+
+All 119 ordinary source sections / 5446 bytes, 28 actual SDK headers and the
+whole 48-byte readonly layout are frozen. The verifier retains 133 complete
+canonical/body snapshots, 40 protected unknowns, three whole authored anchors
+/ 531 bytes, five original compiler/policy records and the original full EH
+frame. Previous R177 evidence cold-replays unchanged. New evidence-only cold
+replay precedes canonical mutation; accepted-state cold replay, full authored
+validation, target/tracking, fresh scanning and local Ghidra attestation pass.
+Strict R177 HEAD 09fccb7 readback permits only two function/origin changes and
+two full new authored records, preserving all 887 prior rows/order and every
+previous configuration. Thirty-four new regression guards and all 2031 public
+checks pass; progress/whitespace checks pass. The exact-input preservation
+check confirms that the earlier R139 cold 60/60 replay remains applicable.
+
+Totals are 3622 resolved (936 authored, 2111 library, 575 compiler), 729 pending
+and 2686 excluded. Authored evidence totals 889 bodies / 1954863 bytes. Exact
+remains 60 functions / 9883 bytes with provisional coverage
+9883 / 1967206 (0.50%). No reconstructed source/private ABI/mapping/exact credit
+is added. Public MCP acceptance remains waived; the full remaining-origin goal
+is active and unfinished. Continue with fresh whole resource-operation context.
