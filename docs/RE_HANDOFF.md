@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R162. The public
+review cohorts R108 through R163. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R163 string-length wrapper/worker cohort below.
+the bounded R164 SDK dependency cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R162; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R163; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R163 complete string-length wrapper and worker contexts
+## Next agent objective — R164 full SDK dependency and parent contexts
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -958,30 +958,46 @@ lifetime/copy/destruction records remain preserved. Exactly three origin rows
 and seventeen function-evidence rows change. All 1498 public checks pass; totals
 are 3504 resolved and 847 pending, with the 60-function exact baseline intact.
 
-The next bounded R163 cohort is twelve string-length wrapper/worker candidates
-/ 253 provisional bytes. These are diagnostic associations, not promised origin
-acceptances:
+R163 reviews all twelve candidates / 253 bytes and refutes the prior diagnostic
+string-length label. Five whole float math overload/worker chains use the actual
+cos/sin/fabs/sqrt/ceil C stack-double entries; the sixth calls a full eleven-byte
+integer absolute-value body. Complete SDK and ordinary chains are byte-equal,
+including every real field. Full abs/labs and cold ordinary int/long expressions
+also match the entire worker. All twelve origins remain unknown; exactly twelve
+function-evidence rows change, and all origin/extent/name/ABI/exact state remains
+unchanged. Replay `scripts/repo-python scripts/verify-math-overload-origins.py`:
+22 whole source controls / 484 bytes and 22 genuine fields, all 29 cold ordinary
+sections / 602 bytes, six SDK headers and full 16-byte layout. Five whole runtime
+primaries / 775 bytes and their actual existing C shared entries replay from the
+pinned archive. Five whole authored game contexts / 8610 bytes and twenty call
+windows remain independent; neither game callers nor byte-equal source shapes
+prove original wrapper ownership. The original R129 abs ambiguity and all other
+protected policies remain unchanged. All 1527 public checks pass; totals stay
+3504 resolved and 847 pending. Preserve the complete negative/ambiguous evidence
+and do not repeat this shortlist as a string-length or import-thunk hypothesis.
 
-| Candidate pair | Full provisional extents | Required independent context |
+The next bounded R164 cohort is five unresolved SDK dependency candidates
+/ 504 provisional bytes, each reached from an independently accepted full
+library parent. These are diagnostic contexts, not promised acceptances:
+
+| Candidate | Full provisional extent | Independent whole parent to retain |
 | --- | ---: | --- |
-| `0x0040D900`, `0x0040D920` | 17, 28 | whole source/runtime worker and actual string argument; retain protected R108 lifetime declarations independently |
-| `0x0040D940`, `0x0040D960` | 17, 28 | second complete wrapper/worker; byte equality does not establish shared original ownership |
-| `0x00412D90`, `0x00412DB0` | 17, 28 | actual complete caller and string/storage roles, not a name-only strlen binding |
-| `0x00428D20`, `0x00428D40` | 17, 28 | complete string/source context and every real call/data/import field |
-| `0x00438A60`, `0x00641FB8` | 17, 11 | whole independently reviewed game callers and full runtime/import/possible shared-tail extent |
-| `0x00449A60`, `0x00449A80` | 17, 28 | whole authored parent `0x004491E0` and actual string arguments, keeping lifetime origins separate |
+| `0x00415F60` | 44 | R074 `0x00415A80` / 22, provisionally named `VC7::max_size_00415A80` |
+| `0x00422290` | 151 | R072 deque tidy `0x00421DD0` / 177; retain actual children `0x00422270`, `0x00422610` independently |
+| `0x0042E120` | 151 | R072 deque tidy `0x0042DEF0` / 177; retain actual children `0x0042E100`, `0x0042E390` independently |
+| `0x0045AFB0` | 50 | R033 generic copy `0x0045A7E0` / 51, with actual worker `0x0045AAE0` independently unresolved |
+| `0x0045B640` | 108 | R033 construct `0x0045B2B0` / 29; actual `0x004063D0` and `0x004591E0` ownership remains independent |
 
-A fresh R162 full own-AUX survey yields 363 relocation-excluding diagnostic
-associations; this does not grant origin or exact credit. The 17-byte shape also
-fits an allocation wrapper when its real destination is ignored. Reconcile each
-entire worker, source/ABI meaning, imports, CFG, exits, alignment and full own-AUX
-or justified defining-source carrier before accepting anything. Compare natural
-complete SDK, intrinsic/runtime and ordinary alternatives as applicable; retain
-ambiguous user wrappers as unknown. Do not infer a parent from a reviewed child
-or infer ownership from a reviewed game caller alone. Protect all prior R108
-lifetime, R158 copy and R161 destruction ambiguities, the R161 retained R078
-operation refinement, and the fourteen unknown R162 endpoint/assignment records.
-All existing evidence and exact inputs remain preserved; no exact scope is added.
+Read the full actual parent and every source field; original generic names are
+not source-type or ABI proof. Build natural complete SDK and ordinary controls,
+reconcile full CFG, exits, shared tails, EH/data and own-AUX or defining-section
+extents. A library parent supplies independent context but does not automatically
+classify a child. Keep original parent evidence immutable. Do not instantiate
+an incomplete reconstructed game owner or truncate a comparison to an emitted
+source variant. Preserve all prior R108 lifetime, R158 copy, R161 destruction,
+R162 endpoint/assignment and R163 math/abs ownership ambiguities, including the
+unchanged R129 abs alternative and R161 R078 operation refinement. No exact
+scope is added. The full origin-review goal remains active and unfinished.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -1033,7 +1049,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R163 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R164 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

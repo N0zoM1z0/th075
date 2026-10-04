@@ -9332,3 +9332,116 @@ or infer ownership from a reviewed game caller alone. Protect all prior R108
 lifetime, R158 copy and R161 destruction ambiguities, the R161 retained R078
 operation refinement, and the fourteen unknown R162 endpoint/assignment records.
 All existing evidence and exact inputs remain preserved; no exact scope is added.
+
+## R163 — Real math chains refute the diagnostic string-length label
+
+R163 reviews all twelve candidates / 253 bytes from the R162 shortlist. Actual
+full worker instructions and independently reviewed runtime destinations refute
+that shortlist's string-length interpretation. Five 17-byte wrappers call whole
+28-byte float-operation workers, and the sixth calls a whole eleven-byte integer
+absolute-value body. The addresses and extents remain unchanged; the earlier
+shortlist was a diagnostic association, never accepted ownership or source proof.
+
+The five actual chains are `0x0040D900` to `0x0040D920` to C cos entry
+`0x00641754`; `0x0040D940` to `0x0040D960` to C sin entry `0x00641804`;
+`0x00412D90` to `0x00412DB0` to fabs `0x006418CD`; `0x00428D20` to
+`0x00428D40` to C sqrt entry `0x00641E54`; and `0x00449A60` to `0x00449A80`
+to ceil `0x00642120`. Workers load the four-byte floating argument, store an
+eight-byte stack argument, make the real double-operation call, then store a
+four-byte result observation before returning through x87. These instructions
+and source variants establish a math operation context, not live rounding or
+exception outcomes or an original function/type declaration.
+
+The first, second and fourth destinations are source-defined C stack-double
+entries at offset 20 inside whole unchanged R128 x87 primaries `0x00641740`
+/ 174, `0x006417F0` / 174 and `0x00641E40` / 186. They are not the __CI entry
+at offset zero, which receives an x87 register argument. Existing labels retain
+their type-zero COFF definitions and overlapping nine-byte target extents;
+no standalone AUX or independent source function is invented for them. Full
+R129 fabs / 177 and R130 ceil / 64 remain accepted independently. All five
+whole runtime primaries / 775 bytes replay from fresh extraction of the pinned
+CRT archive, with every original actual field. Existing ceil source/shared-tail
+reconciliation remains intact; no enclosing source carrier is redefined here.
+
+`0x00438A60` / 17 calls `0x00641FB8` / 11, whose full signed branch/negation
+body returns an integer absolute value. It is not a strlen worker or import
+thunk. Fresh whole positive-AUX abs.obj and labs.obj controls both reproduce the
+entire body. The prior natural R129 int/long expression source cold-builds both
+complete eleven-byte alternatives and also reproduces this new target. The
+separate original R129 abs candidate `0x00641DAA` remains unknown and unchanged.
+Source spellings, int/long choice, library versus authored ownership and possible
+linker folding cannot be inferred from these byte-equal alternatives.
+
+Natural complete `probes/VC7MathOverloadContexts.cpp` emits genuine math.h
+float overloads / 17, C float workers / 28 and the long abs overload / 17.
+Separate ordinary C++ helpers with explicit double operations and ordinary
+outer wrappers reproduce every target byte and real call field in the five
+chains. An ordinary long wrapper is also byte-equal. Both entire source chains
+are retained; binding a generic 17-byte shape to an assumed strlen or allocation
+operation would hide the actual float/integer ABI and callee meaning. Complete
+SDK/ordinary equality also leaves original wrapper/worker ownership unresolved.
+Previously authored callers alone do not resolve that ambiguity. All twelve
+origins therefore remain unknown; twelve function rows receive corrected bounded
+evidence notes only, preserving names, extents, ownership and dispositions.
+
+Replay `scripts/repo-python scripts/verify-math-overload-origins.py` with
+`config/math-overload-origin-evidence.json`. Twenty-two whole positive-own-AUX
+SDK/ordinary controls / 484 bytes and 22 actual unmasked REL32 fields compare.
+All 29 cold ordinary sections / 602 bytes, six actual SDK headers and the full
+16-byte layout `[4,8,4,4]` are pinned. These are observation/compiler sizes,
+not recovered game declarations. The two original CRT abs/labs sections and
+two newly cold ordinary expression controls each compare as entire eleven-byte
+bodies. Existing source/runtime evidence is retained by exact record membership
+and immutable file hashes; no previous origin is reopened or newly accepted.
+
+Five whole authored game contexts / 8610 bytes retain twenty actual call
+windows: R011 sprite parent `0x0040CA80` / 1132, R035 camera `0x004126C0`
+/ 1520 and opening scene `0x004277A0` / 5339, R041 character selection
+`0x00433A40` / 404 and R109 bounds policy `0x004491E0` / 215. Their complete
+CFG, switch data where applicable, whole body hashes and argument/return windows
+are verified. Exact original authored-row membership permits unrelated future
+registry additions. All protected R108 lifetime, R158 copy, R161 destruction,
+R162 endpoint/assignment and old R129 abs records remain unchanged.
+
+Cold whole source comparisons precede the canonical evidence update. Readback
+against R162 HEAD 6035ba5 confirms exactly twelve function-evidence changes and
+zero origin, extent, name, source, ABI or exact changes. All unrelated ledgers,
+previous manifests and authored records remain unchanged. Twenty-nine regression
+checks guard full source chains, real math/C-entry ABI, complete runtime owners,
+ordinary alternatives, pending ownership and false credit. All 1527 public
+checks, local target/project/query attestation, fresh scanner, authored extents,
+exact-input preservation and whitespace checks pass. Public MCP acceptance
+remains waived; private diagnostics/objects and the unchanged no-auth route
+remain private.
+
+Totals remain 3504 resolved (922 authored, 2007 library, 575 compiler), 847
+pending and 2582 excluded. Authored evidence remains 875 bodies / 1953089 bytes.
+All 60 source/mapped/exact functions / 9883 bytes and source/header/build/match
+inputs remain unchanged from R139 db26a05; its earlier 60/60 cold replay across
+eleven objects remains applicable without affected-unit replay. Provisional
+coverage remains 9883 / 1965432 (0.50%). This batch replaces a false semantic
+shortlist with reproducible whole math/ordinary evidence and leaves uncertainty
+explicit. The full remaining-origin goal is not complete.
+
+The next bounded R164 cohort is five unresolved SDK dependency candidates
+/ 504 provisional bytes, each reached from an independently accepted full
+library parent. These are diagnostic contexts, not promised acceptances:
+
+| Candidate | Full provisional extent | Independent whole parent to retain |
+| --- | ---: | --- |
+| `0x00415F60` | 44 | R074 `0x00415A80` / 22, provisionally named `VC7::max_size_00415A80` |
+| `0x00422290` | 151 | R072 deque tidy `0x00421DD0` / 177; retain actual children `0x00422270`, `0x00422610` independently |
+| `0x0042E120` | 151 | R072 deque tidy `0x0042DEF0` / 177; retain actual children `0x0042E100`, `0x0042E390` independently |
+| `0x0045AFB0` | 50 | R033 generic copy `0x0045A7E0` / 51, with actual worker `0x0045AAE0` independently unresolved |
+| `0x0045B640` | 108 | R033 construct `0x0045B2B0` / 29; actual `0x004063D0` and `0x004591E0` ownership remains independent |
+
+Read the full actual parent and every source field; original generic names are
+not source-type or ABI proof. Build natural complete SDK and ordinary controls,
+reconcile full CFG, exits, shared tails, EH/data and own-AUX or defining-section
+extents. A library parent supplies independent context but does not automatically
+classify a child. Keep original parent evidence immutable. Do not instantiate
+an incomplete reconstructed game owner or truncate a comparison to an emitted
+source variant. Preserve all prior R108 lifetime, R158 copy, R161 destruction,
+R162 endpoint/assignment and R163 math/abs ownership ambiguities, including the
+unchanged R129 abs alternative and R161 R078 operation refinement. No exact
+scope is added. The full origin-review goal remains active and unfinished.
