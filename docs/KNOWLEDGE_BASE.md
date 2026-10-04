@@ -3027,3 +3027,102 @@ project attestation, progress freshness, 453 tests and git diff whitespace.
 All 60 exact units cold-replay across eleven objects. Local investigation
 precedes one final public acceptance request. Target, database, shared tools
 and game source/headers remain unchanged; private evidence stays untracked.
+
+## R129 — Complete short runtime, FP exception and array destruction graph
+
+R129 reviews all six handoff candidates. Five gain library origin; abs remains
+unknown because complete vendor and ordinary expression alternatives are
+indistinguishable. Four necessary complete callees also gain library origin:
+eight primaries / 839 bytes / 38 typed fields and one existing interior cleanup /
+24 overlapping bytes. Replay `scripts/repo-python scripts/verify-short-runtime-origins.py`;
+the manifest is `config/short-runtime-origin-evidence.json`. No source, mapping
+or exact credit is added. All vendor definitions come from pinned libcmt.lib.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `_srand` | `0x0064189E` | 13 | 1 |
+| `_rand` | `0x006418AB` | 34 | 1 |
+| `_fabs` | `0x006418CD` | 177 | 8 |
+| `??_M@YGXPAXIHP6EX0@Z@Z` | `0x00641D4A` | 96 | 4 |
+| `?__ArrayUnwind@@YGXPAXIHP6EX0@Z@Z` | `0x00641CEC` | 94 | 4 |
+| `__except1` | `0x006473C1` | 184 | 9 |
+| `__handle_qnan1` | `0x0064730F` | 83 | 4 |
+| `__umatherr` | `0x00647271` | 158 | 7 |
+
+Seven primaries retain their entire own COFF AUX extents. The vector destructor
+has no function-definition AUX record: its sole global function starts at zero
+in a complete 96-byte defining code section. The verifier derives that extent
+from the actual source header, requires executable/readable/non-writable code,
+checks every definition and rejects a second global function or fabricated AUX.
+The original 72-byte prefix expands to include its full cleanup. All code,
+fields, instructions, local/external branches, exits and callback sites are
+compared. ArrayUnwind expands from its provisional 47 bytes to its own full
+94-byte AUX body, including filter/termination paths; neither comparison is
+shortened. The existing 24-byte candidate `0x00641D92` is the vector owner's
+source-defined local cleanup at +72. Its name remains blank and overlap earns
+no standalone source or exact bytes.
+
+Rand/srand both bind the complete independently reviewed getptd return and its
+vendor holdrand field at +20. The generator updates the same unsigned 32-bit
+state with multiplier 214013 and increment 2531011, shifts right 16 and masks
+32767. The complete vendor thread layout is 140 bytes. Seed stores, calling
+convention and returns remain complete; a thread-field guess alone is insufficient.
+
+Fabs retains normal, special-value, quiet/signaling NaN and exception exits,
+all control-word changes/restoration, its entire double-one constant and both
+operation-21 transfers. Except1, handle_qnan1 and umatherr close through the
+full reviewed status/raise/errno/default-matherr graph. The complete 29-entry
+operation/name table is 232 bytes with all 29 DIR32 string pointers. Every whole
+string COMDAT is verified: 29 definitions / 151 bytes. The full table scan,
+matched/unmatched operation paths, exception record, default handler and errno
+policy remain intact. No table prefix, guessed name or undefined reference
+substitutes for its defining object.
+
+Thirty-five complete data sections / 423 bytes / 32 typed fields include that
+table and all strings, two full twelve-byte SEH scopes, double-one, security
+cookie and matherr flag. The scopes bind the vector cleanup at +72 and actual
+ArrayUnwind filter/handler labels at +47/+83. Readonly geometry is checked
+after every typed field is linked; unrelocated scope bytes are not scalar
+literals. Each field retains its own defining source member/section/offset.
+Fourteen independent whole anchors / 1,762 bytes / 43 fields preserve original
+runtime origins through the complete retained R128 graph.
+
+Both array helpers preserve signed reverse-count traversal, element-address
+updates, ECX receiver and the incoming callback at EBP+20. The vector normal
+path marks completion before its local finally; the exceptional path invokes
+the complete ArrayUnwind over the remaining elements. ArrayUnwind's full
+exception filter/termination path and stdcall cleanup of sixteen bytes remain
+inside its own source definition. Arbitrary incoming destructor implementations
+and original game element types remain unknown and gain no origin credit.
+
+Natural VC7ShortRuntimeLayout cold-builds twenty DWORDs / 80 bytes using pinned
+complete vendor/SDK types. Controls include pointer/int/long / four bytes,
+thread size/seed offset 140/20, RAND_MAX, exception structure / 32, FP80 / 10,
+fabs operation 21 and SEH results. The eight-byte operation/name pair is an
+explicit synthetic layout control, not an asserted private vendor type. A
+complete synthetic single-inheritance class and member pointer emit a full
+thirteen-byte callback control: ECX receiver, actual indirect call and stdcall
+cleanup eight. No game owner is instantiated or embedded; this verifies the
+calling protocol without claiming an original callback type or class layout.
+
+The eleven-byte `0x00641DAA` remains unknown. Both entire abs/labs AUX definitions
+match every target byte with no fields. Natural VC7AbsOriginAlternatives at
+explicit /O1 emits the same complete eleven bytes from ordinary int and long
+absolute-value expressions. Even whole independently reviewed runtime neighbors
+and actual game callers do not distinguish authored versus library ownership,
+original spelling, int/long selection or folding. The canonical pending record
+retains that evidence and gains no name, source, mapping or exact credit.
+The verifier cold-builds both full expressions on every replay; a masked hit
+or library-neighbor name cannot erase this ownership ambiguity.
+
+Thirty regression checks reject truncated code/data/scopes, invented AUX or
+cleanup credit, wrong table fields, seed/operation/callback provenance and
+promoting the abs lookalike. All 483 public checks pass. Canonical totals are
+3,268 resolved (919 authored, 1,774 library, 575 compiler), with 1,083 pending.
+Exact/source/mapping remains 60 / 9,883 bytes; recorded authored extents remain
+872 / 1,952,956 bytes. One final no-auth public HTTPS MCP acceptance replays
+R129 and the complete retained R128/runtime/compiler/game/import/layout chain,
+all authored extents, project attestation, progress freshness, 483 tests and
+git diff whitespace. All 60 exact units cold-replay across eleven objects.
+Investigation and intermediate checks are local. Private evidence stays
+untracked; target, database, shared tools and game source/headers are unchanged.

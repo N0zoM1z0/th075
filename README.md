@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R128 checkpoint, origin review has classified 919 authored,
-1,765 library and 575 compiler-generated candidates; 1,092 remain pending.
+At the R129 checkpoint, origin review has classified 919 authored,
+1,774 library and 575 compiler-generated candidates; 1,083 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -69,8 +69,10 @@ PE entry and its independently authored game callee. R127 closes nineteen
 complete x87 dispatch/IEEE exception primaries and four existing shared entries,
 including the full atan2 table and natural vendor layout controls. R128 closes
 three whole cos/sin/sqrt primaries and six existing C/shared entries, preserving
-the complete 174-/174-/186-byte source extents. The next handoff targets six
-R129 short-runtime and adjacent math candidates while preserving
+the complete 174-/174-/186-byte source extents. R129 closes rand/srand, fabs,
+the full math exception/name graph and vector destruction/unwind, retaining an
+abs ownership ambiguity against cold ordinary expression controls. The next
+handoff targets six R130 vector-construction/two-argument math candidates while preserving
 the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
