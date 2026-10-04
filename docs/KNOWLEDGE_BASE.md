@@ -2935,3 +2935,95 @@ project attestation, progress freshness, 427 tests and git diff whitespace.
 All 60 exact units cold-replay across eleven objects. Investigation and
 intermediate checks are local. Private evidence stays untracked; target,
 database, shared tool installations and game source/headers are unchanged.
+
+## R128 — Complete elementary math parents and shared entries
+
+R128 resolves all six trigonometric/square-root handoff candidates and the
+three necessary existing C entries: three complete library primaries / 534
+bytes / 41 typed fields and six interior candidates / 474 overlapping bytes.
+Replay `scripts/repo-python scripts/verify-elementary-math-origins.py`; the
+manifest is `config/elementary-math-origin-evidence.json`. All definitions come
+from the hash-pinned VC7 libcmt.lib archive. No source, mapping or exact credit
+is added.
+
+| Complete source primary | Address | Original bytes | Whole AUX bytes | Fields |
+| --- | --- | ---: | ---: | ---: |
+| `__CIcos` | `0x00641740` | 20 | 174 | 14 |
+| `__CIsin` | `0x006417F0` | 20 | 174 | 14 |
+| `__CIsqrt` | `0x00641E40` | 20 | 186 | 13 |
+
+Each twenty-byte provisional prefix expands to its full own COFF AUX extent.
+All target/source bytes, typed fields, instructions, branches, exits and ABI
+are verified. Intrinsic entries reserve twelve stack bytes, save ST(0), call
+the independently reviewed classification helper and call their shared
+computation at owner +29; they then release twelve bytes and return. The
+C entries at owner +20 load EDX from ESP+4, call the independently reviewed
+fload_withFB and fall through to the same computation. EFLAGS/EAX from those
+complete helpers remain part of the input protocol.
+
+| Existing entry | Address | Overlapping bytes | Whole owner offset |
+| --- | --- | ---: | ---: |
+| C cos | `0x00641754` | 9 | 20 |
+| Shared cos computation | `0x0064175D` | 145 | 29 |
+| C sin | `0x00641804` | 9 | 20 |
+| Shared sin computation | `0x0064180D` | 145 | 29 |
+| C sqrt | `0x00641E54` | 9 | 20 |
+| Shared sqrt computation | `0x00641E5D` | 157 | 29 |
+
+The three C entries have actual global source definitions at offset 20.
+The shared computation entries have no independent COFF symbol; their
+provenance comes from the full source primary's actual relative call at +11,
+the target's corresponding call, C-entry fallthrough and instruction starts.
+No invented definition or shortened comparison replaces this evidence.
+All six proposed names remain blank and overlap adds no standalone source or
+exact bytes. The complete thirteen-byte fast_exit at `0x00646BEE` has no
+inventory candidate and earns no origin count. It preserves its actual
+control-word restoration and return from the saved stack state.
+
+Cos/sin preserve both FCOS/FSIN paths, the entire FPREM1 range-reduction loop,
+status/control-word handling, NaN conversion and invalid-input handling.
+Sqrt preserves the full sign, exponent/mantissa and low-word checks, signed
+zero, positive infinity, NaN and invalid negative paths. All three retain
+both actual fastflag dispatches, normal math_exit and complete one-argument
+error handling. Normal and error paths pass operation 18 (cos), 30 (sin) or
+5 (sqrt). No indirect call/jump is introduced; every external transfer binds
+its actual typed source relocation and whole independent callee.
+
+Six complete defining data sections / 136 bytes include the 68-byte common
+constant carrier, eight-byte fastflag/adjust_fdiv BSS, 44-byte indefinite/pi/
+classifier carrier and the three member-local name sections. Cos and sin
+names are four bytes each; sqrt's complete defining section is eight bytes,
+including its compiler-emitted zero suffix. The identical `_NAME_` spellings
+retain distinct archive members and actual addresses `0x0066FED0`,
+`0x0066FEE0`, `0x0066FEF0`. Default control word binds the common carrier +8;
+the full ten-byte pi_by_2_to_61 starts +10. All initialized bytes, symbol
+definitions, readonly/writable target geometry and loader BSS are verified.
+A two-byte word or string prefix does not substitute for its whole section.
+
+Six independent complete anchors / 239 bytes / three fields preserve original
+R006, R107 and R127 ownership. The verifier retains the full R127 dispatch/
+exception/runtime/game/import graph and independently replays R107's complete
+runtime leaves. Original archive/compiler profiles remain unknown.
+
+Natural VC7ElementaryMathLayout cold-builds twelve DWORDs / 48 bytes with
+pinned vendor/SDK headers and explicit reproduction flags. It verifies pointer
+4, double 8, FP80 10, exception structure 32 with type/arg1/arg2/retval at
++0/+8/+16/+24, domain value 1 and all three actual operation codes. This probe
+contains complete vendor types only and establishes no game class layout.
+The x87 control word 0x027f is independently observed in full source, the
+actual common constant definition and target instructions; it is not inferred
+from the public floating-point control API's differently encoded flags.
+
+Twenty-six regression checks reject truncated primaries/data, fabricated
+fast-exit credit, wrong parents/entries, guessed names/operation codes/stack
+sizes, removed range/sign paths, lost source-call/fallthrough evidence and
+member-local name confusion. All 453 public checks pass. Canonical totals
+are 3,259 resolved (919 authored, 1,765 library, 575 compiler), with 1,092
+pending. Exact/source/mapping remains 60 / 9,883 bytes; recorded authored
+extents remain 872 / 1,952,956 bytes.
+One final no-auth public HTTPS MCP acceptance replays R128, retained R127/R107
+and complete runtime/compiler/game/import/layout graphs, authored extents,
+project attestation, progress freshness, 453 tests and git diff whitespace.
+All 60 exact units cold-replay across eleven objects. Local investigation
+precedes one final public acceptance request. Target, database, shared tools
+and game source/headers remain unchanged; private evidence stays untracked.

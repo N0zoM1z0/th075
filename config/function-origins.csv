@@ -3542,12 +3542,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064169D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006416A2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006416B0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x00641740,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641754,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064175D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006417F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641804,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064180D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641740,library,VC71CRT,exclude,complete-vendor-elementary-math-code-data-entry-abi-provenance,R128
+0x00641754,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
+0x0064175D,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
+0x006417F0,library,VC71CRT,exclude,complete-vendor-elementary-math-code-data-entry-abi-provenance,R128
+0x00641804,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
+0x0064180D,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
 0x0064189E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006418AB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006418CD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3563,9 +3563,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00641D92,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641DAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641DE0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x00641E40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641E54,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00641E5D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641E40,library,VC71CRT,exclude,complete-vendor-elementary-math-code-data-entry-abi-provenance,R128
+0x00641E54,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
+0x00641E5D,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
 0x00641F00,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641FB8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00641FD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

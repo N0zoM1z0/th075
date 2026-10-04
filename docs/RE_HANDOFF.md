@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R127. The public
+review cohorts R108 through R128. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,250: 919 authored, 1,756 library and 575 compiler generated.
-There are 1,101 pending. Candidate count is not authored function count.
+has resolved 3,259: 919 authored, 1,765 library and 575 compiler generated.
+There are 1,092 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R128 trigonometric/square-root parent cohort below.
+the bounded R129 short-runtime and adjacent math cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R127; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R128; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R128 complete trigonometric/square-root parents
+## Next agent objective — R129 short runtime and adjacent math candidates
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -425,26 +425,43 @@ compiler/game/import/layout graphs, authored extents, project attestation,
 units / 9,883 bytes cold-replay across eleven objects. Local investigation and
 intermediate checks precede one final public acceptance replay.
 
-The next bounded cohort is six existing trigonometric/square-root candidates:
+R128 resolves those six roots and three existing C entries: three complete
+library primaries / 534 bytes / 41 fields, plus six existing overlapping entries /
+474 bytes. Replay `scripts/repo-python scripts/verify-elementary-math-origins.py`.
+The 20-byte cos/sin/sqrt prefixes expand to complete AUX extents 174/174/186.
+Named C entries are +20; unnamed computation entries are +29, proved by full
+source/target calls at +11, C-entry fallthrough and instruction starts. They
+earn no standalone source/exact bytes or fabricated COFF definitions.
+
+The complete thirteen-byte fast_exit has no independent candidate. Six whole
+data sections / 136 bytes preserve actual common constants, fastflag BSS,
+indefinite carrier and three distinct member-local names. Complete trigonometric
+range reduction, sqrt sign/zero/NaN/invalid paths, saved control state and every
+normal/fast/error dependency close through six independent anchors / 239 bytes /
+three fields. Natural 48-byte vendor controls verify ABI and operation 18/30/5.
+Retain complete R127 and independent R107 controls. The final public HTTPS MCP
+acceptance passes 453 tests, attestation, authored extents, progress/whitespace
+and all 60 exact units / 9,883 bytes cold across eleven objects.
+
+The next bounded cohort is six existing short-runtime/adjacent math candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00641740` | 20 | `__CIcos`, own AUX extent 174 | Entire intrinsic/C entry and shared computation, all fourteen typed fields and math/error/data dependencies |
-| `0x0064175D` | 145 | Shared computation at full cos owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
-| `0x006417F0` | 20 | `__CIsin`, own AUX extent 174 | Entire intrinsic/C entry and shared computation, all fourteen typed fields and math/error/data dependencies |
-| `0x0064180D` | 145 | Shared computation at full sin owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
-| `0x00641E40` | 20 | `__CIsqrt`, own AUX extent 186 | Entire intrinsic/C entry and shared computation, all thirteen typed fields and math/error/data dependencies |
-| `0x00641E5D` | 157 | Shared computation at full sqrt owner +29 | Actual full parent, unnamed source entry, complete control flow and every external edge |
+| `0x0064189E` | 13 | `_srand` | Complete own extent, actual thread-data callee/field provenance and seed store |
+| `0x006418AB` | 34 | `_rand` | Complete own extent, same actual thread-data state and full generator/return policy |
+| `0x006418CD` | 177 | `_fabs` | Complete own AUX owner, all eight fields, every normal/NaN/error path and actual data/ABI |
+| `0x00641D4A` | 72 | Source identity unresolved | Complete control flow, actual enclosing source extent or independent origin context, all transfers/data |
+| `0x00641D92` | 24 | Source identity unresolved | Actual enclosing extent/entry relationship and complete ownership evidence; no adjacency inference |
+| `0x00641DAA` | 11 | Both `_abs` and `_labs` complete alternatives | Independently bind actual caller ABI/context and both full source alternatives; spelling/folding remain unknown |
 
-Use `.analysis/r127-next-parent-survey.json` and
-`.analysis/r127-next-full-parent-survey.log` diagnostically. Full relocation-masked
-source observations establish no origin. Each complete vendor primary spans
-both selected candidates and an existing nine-byte C entry at offset 20:
-`0x00641754` (_cos), `0x00641804` (_sin), `0x00641E54` (_sqrt). Review those entries
-through their actual complete parent if needed; do not accept the 20-/145-/157-byte
-slices as independent source definitions. Source identities and names remain
-provisional until every code/data/ABI binding closes. Retain R127's independently
-closed dispatch/error graph rather than inheriting ownership from known children.
+Use `.analysis/r128-next-parent-survey.json` and
+`.analysis/r128-next-runtime-survey.log` diagnostically. Whole relocation-masked
+observations prove no origin. The fabs source is a complete 177-byte AUX body;
+rand/srand have one actual typed call each. The eleven-byte abs/labs alternatives
+are identical and cannot identify the original symbol. Do not assign authored,
+compiler or library origin to the two unresolved adjacent candidates merely
+because nearby code is CRT. Retain full R128 and existing runtime evidence;
+resolve whole parents/entries and mutable field provenance before promotion.
 Keep hooks/CallSettingFrame and read/write validators pending for later review.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
@@ -461,7 +478,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R128 adds no exact scope. Update
+private path and 60-function exact baseline. R129 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -818,7 +835,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R128 trigonometric/square-root parent cohort described above. F008 and F009 remain
+Continue the bounded R129 short-runtime and adjacent math cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.
