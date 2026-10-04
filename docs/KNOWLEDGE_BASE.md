@@ -2613,3 +2613,119 @@ target/project attestation, 347 tests and all 60 exact units across eleven objec
 A narrow public follow-up confirms corrected documentation EOF whitespace and
 progress/status; the complete cold acceptance replay ran once. Private URLs and
 logs remain untracked.
+
+## R125 — Complete initializer, IO, exception and signal graph
+
+R125 resolves all six initializer/startup handoff roots and five necessary
+exception/signal callees: eleven complete library bodies / 1,545 bytes /
+77 typed relocation fields. Existing raise cleanup candidate `0x0065378A` also
+receives library origin as a 13-byte overlapping label in its complete parent.
+Twelve candidates are resolved, with no standalone cleanup function or invented
+inventory entry. Replay `scripts/repo-python scripts/verify-initializer-startup-origins.py`;
+whole evidence is in `config/initializer-startup-origin-evidence.json`.
+
+| Complete body | Address | Source bytes |
+| --- | --- | ---: |
+| `__cinit` | `0x0064411D` | 106 |
+| `___sse2_available_init` | `0x00648052` | 206 |
+| `_has_osfxsr_set` | `0x0064801D` | 53 |
+| `?__CxxUnhandledExceptionFilter@@YGJPAU_EXCEPTION_POINTERS@@@Z` | `0x0064654C` | 78 |
+| `__RTC_Initialize` | `0x00649693` | 68 |
+| `__ioinit` | `0x00649449` | 510 |
+| `?terminate@@YAXXZ` | `0x00646478` | 53 |
+| `?_ValidateExecute@@YAHP6GHXZ@Z` | `0x0064FF58` | 24 |
+| `_abort` | `0x00650517` | 24 |
+| `_raise` | `0x0065364F` | 377 |
+| `_siglookup` | `0x0065346E` | 46 |
+
+Every own source COFF AUX extent, source/target byte, typed relocation,
+instruction, branch, return, trap, tail and indirect call is retained against
+the pinned supplied Japanese TH075 target and pinned VC7 CRT archive.
+All provisional primary extents already equal their full source definitions;
+none is truncated to improve a comparison. Abort retains its own terminal INT3.
+Raise retains the earlier EH head at +307 and actual shared cleanup entry +315,
+including the internal call to that entry and whole finally path. The existing
+13-byte label keeps a blank proposed name and does not become a standalone body.
+No game source/header, exact ledger, target or Ghidra database is changed.
+
+The complete 106-byte cinit is now library-owned through its actual closed
+FP/XI/XC/RTC graph. Six whole source registration cells / 24 bytes bind onexit,
+SSE2, stdio, multibyte, C++ exception-filter and security-cookie callbacks.
+Whole XI/XC and both RTC ranges / 100 bytes retain their actual pointers;
+eight complete source range markers / 32 bytes preserve CRT subsection identity.
+Both RTC ranges have only their two null marker cells. Seventeen full prior
+vendor anchors / 1,286 bytes / 98 fields retain independent cold R124 evidence.
+The whole FPinit carrier retains its real strong source definition and both
+fpclear pointers. Parent credit follows from the completed graph, not names,
+registration pointers or relocation-masked fingerprints alone.
+
+Two newly closed non-inventoried controls are initstdio `0x0064F08F` / 169 bytes /
+13 fields and C++ filter registration `0x0064659A` / 19 bytes / three fields.
+Two earlier R124 controls, fpclear / one byte and RTC termination / 68 bytes /
+five fields, also replay completely. These four controls / 257 bytes / 21 fields
+add no inventory candidates. Registration binds actual SetUnhandledExceptionFilter
+and its returned prior-handler storage. The complete 78-byte callback verifies
+C++ exception code, three parameters and both observed magic values before
+terminate, then validates and dispatches to any previous handler. Optional
+external handler implementations retain unknown ownership.
+
+All eleven XC compiler wrappers / 309 bytes retain their exact R024 evidence
+rows and independently reviewed compiler origins. The established natural
+VC7StaticLifetime fixture cold-builds with its original explicit profile and
+source/header hashes. Its complete emitted wrapper families and every actual
+startup/registration/object/callee field replay through verify-static-origins.
+The generic CRT runner does not classify those wrappers' game callees or
+establish original object types. No existing compiler or authored origin credit
+is changed or counted again.
+
+Six entire defining source sections / 824 bytes, seven actual COMMON objects /
+4,372 bytes, five whole EH scopes / 60 bytes and the complete 13-byte AuthenticAMD
+literal close the graph. The whole twenty-record iob carrier / 640 bytes keeps
+both stdin buffer pointers and all initial flags/file fields. The real stdin
+buffer COMMON is 4,096 bytes; the complete pioinfo COMMON has 64 pointers /
+256 bytes. Separate four-byte SSE2 COMMON definitions remain separate objects.
+Every COMMON has its actual defining record and complete PE loader zero-fill
+geometry, not an undefined reference or arbitrary zero region. The whole
+20-byte signal-action section includes all four actions and its control-handler
+installation flag. The entire 136-byte exception-action carrier includes ten
+12-byte records and four count/size/FPE-index fields; no record-only prefix is
+accepted. All initialized pointers bind complete definitions.
+
+Natural VC7InitializerLayout cold-builds 73 DWORDs / 292 bytes with pinned
+CRT/SDK headers and explicit reproducibility flags. IOINFO is 36 bytes with
+handle +0, flags +4, pipe character +5, lock-init +8 and critical section +12;
+32 records occupy 1,152 bytes and the maximum handle count is 2,048. FILE is
+32 bytes with file +16; twenty records occupy 640 bytes. STARTUPINFOA is 68
+with reserved count +50 and buffer +52. Full file, stream, signal and SDK
+constants retain their vendor values. Thread data is 140 bytes with terminate
++108 and exception table/info/FPE fields +84/+88/+92. Exception actions are
+12 bytes; EXCEPTION_RECORD is 80 with parameter count +16 and information +20,
+and EXCEPTION_POINTERS is eight bytes. These are vendor controls, not game
+layouts or executable-wide compiler settings.
+
+IO initialization retains every inherited-handle allocation, bounded copy,
+pipe/API guard, standard-handle lookup, type flag, critical-section path,
+allocation failure and cleanup exit. Stdio initialization retains the 512-stream
+allocation, 20-stream fallback, failure result and all initial stream/handle
+bindings. SSE2 detection retains CPUID availability, its actual feature bit,
+OSFXSR movapd probe and local exception filter/handler, full AMD comparison
+and family policy. Terminate retains the actual thread callback and caught
+exception path before its abort tail. Raise preserves global/per-thread actions,
+signal-lock finally cleanup, default/ignore cases, FPE two-argument dispatch,
+other one-argument handlers and temporary exception/FPE-state restoration.
+
+R121 and R124 preserve frozen pending cinit observations through narrowly bounded
+same-source guards requiring the new complete canonical R125 library record.
+Every original member, extent, byte and typed field identity remains checked;
+the earlier evidence manifests are not rewritten. Twenty-five regression checks
+reject truncated functions/carriers/COMMON, missing callbacks, invented cleanup
+credit, guessed offsets, changed historical fields and exact credit. All 372
+public checks pass. Origin totals are 3,216 resolved (919 authored, 1,722 library,
+575 compiler), with 1,135 pending. Exact/source/mapping stays 60 / 9,883 bytes;
+recorded authored extents stay 872 / 1,952,956 bytes. One final no-auth public
+HTTPS MCP acceptance replay passed R125 and all retained runtime/compiler/import/
+layout graphs, R114 dependencies, authored extents, target/project attestation,
+372 tests, progress freshness and git diff whitespace. All 60 exact units
+cold-replayed across eleven objects. Investigation and intermediate verification
+are local. PE entry remains pending until environment, argv, exception filtering
+and other actual startup bindings close. Private URLs/logs remain untracked.

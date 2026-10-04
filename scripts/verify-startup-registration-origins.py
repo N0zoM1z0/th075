@@ -107,7 +107,7 @@ def verify_plan(m):
 
 
 def check_ledger(row, function, origin):
-    if row['address'] == '0x0064411D' and origin.get('evidence_id') == 'R124':
+    if row['address'] == '0x0064411D' and origin.get('evidence_id') in ('R124', 'R125'):
         module('fp_startup_reconciliation', 'verify-floating-point-origins.py').check_historical_root(
             row, function, origin)
         return

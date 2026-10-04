@@ -3622,7 +3622,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006440D5,library,VC71CRT,exclude,complete-vendor-startup-registration-code-data-api-eh-provenance,R121
 0x006440DE,library,VC71CRT,exclude,complete-vendor-startup-registration-code-data-api-eh-provenance,R121
 0x006440E7,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
-0x0064411D,unknown,,review,crt-cinit-initializer-callback-dependencies-unresolved,R124
+0x0064411D,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x00644187,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00644236,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R120
 0x0064424A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3674,10 +3674,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00646339,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R122
 0x00646345,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R122
 0x00646389,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
-0x00646478,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00646478,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x006464C5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00646500,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064654C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064654C,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x006465BA,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
 0x00646603,library,VC71CRT,exclude,complete-vendor-startup-registration-code-data-api-eh-provenance,R121
 0x00646658,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
@@ -3728,8 +3728,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00647F98,library,VC71CRT,exclude,complete-vendor-runtime-cycle-with-code-data-api-eh-provenance,R120
 0x00647FA1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00647FAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064801D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00648052,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064801D,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
+0x00648052,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x00648140,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00648158,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064815E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3751,8 +3751,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00649119,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00649285,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00649327,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00649449,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00649693,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00649449,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
+0x00649693,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x0064971B,library,VC71CRT,exclude,complete-vendor-archive-with-independent-code-data-import-bindings,R115
 0x00649735,library,VC71CRT,exclude,complete-vendor-archive-with-independent-code-data-import-bindings,R115
 0x0064980B,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
@@ -3849,7 +3849,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064FCF7,library,VC71CRT,exclude,complete-vendor-security-eh-graph-with-independent-source-data-api-bindings,R117
 0x0064FF20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064FF3C,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064FF58,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064FF58,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x0064FFB6,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064FFE5,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x0065000E,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
@@ -3859,7 +3859,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006503A9,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x006504F0,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R123
 0x006504F9,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
-0x00650517,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00650517,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
 0x0065052F,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
 0x0065053F,library,VC71CRT,exclude,complete-vendor-lock-source-data-api-and-parent-range-bindings,R118
 0x006505CA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3901,9 +3901,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00652CD1,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
 0x00653105,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653151,library,VC71CRT,exclude,complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance,R124
-0x0065346E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0065364F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0065378A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0065346E,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
+0x0065364F,library,VC71CRT,exclude,complete-vendor-initializer-io-exception-signal-code-data-layout-provenance,R125
+0x0065378A,library,VC71CRT,exclude,interior-cleanup-label-in-complete-vendor-raise-primary,R125
 0x006537C8,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00653816,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006538A6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory

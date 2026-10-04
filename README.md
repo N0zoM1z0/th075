@@ -31,8 +31,8 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R124 checkpoint, origin review has classified 919 authored,
-1,710 library and 575 compiler-generated candidates; 1,147 remain pending.
+At the R125 checkpoint, origin review has classified 919 authored,
+1,722 library and 575 compiler-generated candidates; 1,135 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
 explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
@@ -61,9 +61,10 @@ dependencies close. R122 closes five complete locale/thread roots and the
 whole fiber cleanup control, while multibyte initialization remains pending.
 R123 closes the six multibyte/codepage roots and nine necessary NLS/locale
 callees, including three full cleanup extents and three existing interior labels.
-R124 closes 27 complete floating-point conversion/control bodies and retains
-cinit as unknown until actual initializer callbacks close. The next handoff
-targets six R125 initializer/startup candidates while preserving
+R124 closes 27 complete floating-point conversion/control bodies. R125 closes
+all six initializer roots and the necessary exception/signal graph, including
+cinit's actual callbacks and one existing raise cleanup label. The next handoff
+targets six R126 environment/PE-startup candidates while preserving
 the 60-function exact baseline.
 The complete-origin and 50%-exact milestones are unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and

@@ -107,6 +107,10 @@ def verify_plan(m):
 
 
 def check_ledger(row,function,origin):
+    if row['address']=='0x0064411D' and origin.get('evidence_id')=='R125':
+        module('initializer_cinit_reconciliation','verify-initializer-startup-origins.py').check_historical_root(
+            row,function,origin)
+        return
     if (int(function['size'])!=row['size'] or function['span_end']!=row['span_end']
             or function['source_file'] or function['match_percent']!='0.00'):
         raise ValueError('FP loses complete origin-only extent')
