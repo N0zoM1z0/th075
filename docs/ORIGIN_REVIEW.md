@@ -8054,3 +8054,72 @@ affected exact unit requires replay. Recorded authored extents remain
 The public MCP acceptance waiver remains in force, with the existing no-auth
 route/private random path unchanged. Private logs/objects/diagnostics remain
 untracked. The complete-origin objective remains unfinished.
+
+## R148 — Complete floor dispatch and defining source carrier
+
+R148 resolves the existing `0x006439C0` candidate as library origin `_floor`.
+Its complete own COFF AUX is 64 bytes through `0x006439FF`; the former
+289-byte extent is the entire defining carrier containing the contiguous
+225-byte `__floor_pentium4` at `0x00643A00`. The complete 289-byte carrier
+is compared without masking or truncation. The SSE owner has no inventory
+candidate and earns no additional credit. Replay
+`scripts/repo-python scripts/verify-floor-math-origins.py` with
+`config/floor-math-origin-evidence.json`. Exactly one existing origin row
+changes; every independently accepted owner is preserved. There is no
+source, mapping, private ABI or exact credit.
+
+**Whole operation and provenance.** The wrapper checks the actual SSE state,
+MXCSR mask `0x1F80` and x87 mask `0x7F`, restores its eight-byte scratch area,
+and selects the actual default tail or complete SSE owner. The default
+`0x0064E980` / 211-byte `__floor_default` retains R139; the complete 654-byte
+libm error owner retains R130. Their combined 865 bytes and 37 fields have
+independent retained source evidence. Full R146 and R139 cold controls replay
+before acceptance, preserving all prior origins. All ten wrapper/SSE fields
+bind independently defined whole code/data/COMMON owners before complete
+unmasked comparison. The unique whole-archive SSE COMMON definition remains
+the independently retained four-byte CPU-dispatch owner and actual loader
+zero-fill region; its original external inputs and live value remain unknown.
+
+The complete SSE control handles positive/negative exponent thresholds,
+truncation and negative fractional correction, both signed-zero routes,
+NaN classification and operation code 1005 (`0x3ED`) at the actual complete
+error worker. All six branches and five RET sites are retained. These are
+static source/target observations, not claims about runtime numerical
+accuracy, NaN payloads, live rounding state or matherr/exception outcomes.
+The two ordinary game callers establish no ownership by themselves.
+The complete 80-byte defining constant section begins at `0x00661190`:
+One, Bns, NegOne, NegZero and S occupy offsets 0/16/32/48/64. The actual Bns
+reference is an interior anchor at +16, not the start of a single-value
+comparison. All source definitions and every initialized byte are preserved.
+
+Complete ceil and modf alternatives retain their whole 285-/328-byte source
+carriers. Their wrappers have the same non-relocation shape, while their
+whole carrier bodies differ at 30/224 non-field positions. The floor identity
+therefore requires both the actual whole SSE operation and independently
+accepted default owner. A shared wrapper shape or reviewed child alone
+cannot substitute for the complete operation/source binding.
+
+**Cold controls and acceptance.** `probes/VC7FloorMathLayout.cpp` uses actual
+complete SDK exception/FP80 records and public math/classification/control
+word/SSE declarations. The complete 84-byte layout and six natural controls
+cover 180 bytes and six fields; all 77 included headers are pinned. Every
+emitted code/data section is accounted for, without an orphan carrier.
+Per-control VC7.1 build 3077 flags are reproducibility settings, not proof
+of an executable-wide compiler profile. Thirty-one regression checks guard
+whole extents/carriers/constants, actual masks/dispatch, signed fraction/zero,
+NaN/error paths, independent retained owners and unknown runtime/private ABI.
+
+The complete new and retained evidence cold-replay passed before canonical
+write/read-back; exactly one row changed and all unrelated rows were checked
+against HEAD. All 1,148 public checks, authored-extent verification,
+target/project/query attestation, scanner/progress freshness, exact-input
+preservation and whitespace checks pass locally. Totals are 3,444 resolved
+(919 authored, 1,950 library, 575 compiler), 907 pending and 2,525 excluded.
+The 60 source/mapped/exact functions / 9,883 bytes and every exact input
+remain unchanged from R139 db26a05, preserving its 60/60 cold replay across
+eleven objects; no affected exact unit needs another replay. Recorded
+authored extents remain 872 / 1,952,956 bytes, with the provisional exact
+coverage denominator 1,965,299. The public MCP waiver remains in force;
+the existing no-auth route and private random path remain unchanged.
+Private logs, generated objects and diagnostics remain untracked. The
+complete-origin objective remains unfinished.

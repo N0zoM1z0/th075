@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R147. The public
+review cohorts R108 through R148. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,443: 919 authored, 1,949 library and 575 compiler generated.
-There are 908 pending. Candidate count is not authored function count.
+has resolved 3,444: 919 authored, 1,950 library and 575 compiler generated.
+There are 907 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R148 floor wrapper/carrier cohort below.
+the bounded R149 deque-size cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R147; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R148; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R148 floor wrapper/carrier graph
+## Next agent objective — R149 deque-size source/context graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -725,30 +725,35 @@ Replay `scripts/repo-python scripts/verify-acos-math-origins.py`.
 All 1117 public checks pass. Totals are 3443 resolved and 908 pending; the
 60-function exact baseline and unchanged R139 cold proof remain preserved.
 
-The next bounded R148 cohort is the existing rounded-math wrapper/carrier:
+R148 resolves the floor handoff candidate as a complete 64-byte wrapper,
+retaining the entire original 289-byte defining carrier and contiguous
+225-byte non-inventory SSE owner. All ten fields, full signed/zero/NaN/error
+routes, whole 80-byte five-constant section, independent SSE COMMON and
+complete default/error owners replay. Full ceil/modf alternative carriers
+prevent the equal-shaped wrapper alone from proving operation identity.
+Six natural SDK controls, all generated sections and full retained R146/R139
+cold evidence pass. Exactly one origin row changed; prior owners remain
+unchanged. Replay `scripts/repo-python scripts/verify-floor-math-origins.py`.
+All 1148 public checks pass. Totals are 3444 resolved and 907 pending;
+the 60-function exact baseline and R139 cold proof remain preserved.
 
-| Candidate | Provisional / defining extents | Diagnostic source / fields | Required next evidence |
-| --- | ---: | --- | --- |
-| `0x006439C0` | 289 / wrapper 64 + SSE core 225 | Equal-shaped _modf/floor/ceil wrapper own AUX; __floor_pentium4 at +64 | Whole 289-byte defining carrier, actual complete operation through both paths, all whole constants/source alternatives, actual SSE COMMON and independent retained default/libm-error parents |
-
-Fresh bounded diagnostic `.analysis/r147-next-rounded-math-survey.json`
-compares complete supplied bodies at both actual contexts. The 225-byte
-`__floor_pentium4` at `0x00643A00` / +64 has zero differences outside all seven
-fields; full ceil and modf alternatives differ at 30 / 224 non-field positions.
-The actual default destination `0x0064E980` has the complete 211-byte
-`__floor_default` source association and is already independently accepted by
-R139. Preserve that prior origin and full replay; do not award it new credit.
-The similar ceil default differs at three positions; modf differs at 223.
-The source floor_pentium4 member is 2796320. The wrapper's three typed fields
-bind actual SSE state `0x0068FBA0` and both default transfers to `0x0064E980`.
-Its own AUX is 64 bytes; the contiguous 225-byte SSE owner has no existing
-candidate. Preserve the original whole-carrier observation and reconcile
-both own extents without inventing an additional inventory row. The five
-named floor constants and complete libm-error worker require full independent
-source/data provenance and cold actual SDK controls before acceptance.
-Earlier R138 equal-shaped modf/floor/ceil wrapper diagnostics alone establish
-no identity. Original private declarations and live rounding/exception outcomes
-remain unknown. Do not infer this parent origin from a reviewed child.
+The next bounded R149 cohort contains eight pending 17-byte deque-size-shaped
+candidates: `0x004094B0`, `0x00414430`, `0x00414620`, `0x00414810`,
+`0x0041DD50`, `0x00421550`, `0x0045BF50` and `0x0045DD50`.
+Their complete no-call bodies share a diagnostic hash with the independently
+reviewed R110 `0x005F8110` and R113 `0x00423D40` deque size controls. Identical
+getter bytes and reviewed game callers do not establish container ownership.
+Require each actual complete container context, independent source typing,
+producer/consumer and full caller/callee bindings, real complete VC7 deque
+source families and retained whole R110/R113 cold evidence before acceptance.
+Keep original element types, folding, private game declarations and incomplete
+owner layouts unknown; do not instantiate an incomplete reconstructed class.
+In particular `0x0045DD50` has no currently reviewed direct parent. Reject
+blanket classification by a matching hash or a library child. Accept only
+individually complete provenance and retain unresolved candidates otherwise.
+The large CRT diagnostic survey has no remaining independently unaccepted
+association after floor; select new context rather than reopening accepted
+power/acos/floor origins or repeating the known lifetime ambiguities.
 
 A bounded scan of the supplied rtti.obj member 423098 found no complete
 relocation-masked associations for its exported RTtypeid (156 bytes),
@@ -771,9 +776,8 @@ string/exception source-family review.
 
 The broader `.analysis/r138-next-crt-survey.json` preserves other diagnostic
 full-AUX associations, including conflicting floating wrappers and substantial
-provisional-extent mismatches. The equal-shaped modf/floor/ceil wrapper still requires its complete enclosing
-source carrier and actual operation fields. R146 and R147 now resolve the
-complete power and acos families; do not reopen those accepted owners from
+provisional-extent mismatches. R146–R148 resolve the power, acos and floor families with complete enclosing
+carriers and operation fields. Do not reopen those accepted owners from
 earlier scanner diagnostics alone.
 Preserve R129's abs ambiguity and earlier explicit/implicit lifetime
 alternatives. Do not infer parent origin from reviewed children.
@@ -792,7 +796,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R148 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R149 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

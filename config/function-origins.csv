@@ -3608,7 +3608,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006436FC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00643770,library,VC71CRT,exclude,complete-vendor-power-parent-carrier-table-dispatch-sdk-provenance,R146
 0x006437CD,library,VC71CRT,exclude,interior-entry-in-complete-vendor-power-parent,R146
-0x006439C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006439C0,library,VC71CRT,exclude,complete-vendor-floor-carrier-default-sse-common-sdk-provenance,R148
 0x00643AF0,library,VC71CRT,exclude,complete-pinned-archive-body,R107
 0x00643B10,library,VC71CRT,exclude,complete-vendor-acos-parent-shared-flags-data-sdk-provenance,R147
 0x00643B2D,library,VC71CRT,exclude,interior-entry-in-complete-vendor-acos-parent,R147
