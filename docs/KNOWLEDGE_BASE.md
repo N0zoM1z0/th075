@@ -7341,3 +7341,101 @@ and unfinished. Original R108 full explicit/implicit alternatives already leave
 as new acceptance candidates. The next bounded R175 review examines three
 resource-release parents, with genuine compiler-generated lifetime alternatives
 required wherever ownership remains ambiguous.
+
+## R175 — explicit resource-release policies and whole list cleanup graphs
+
+Three complete authored release policies / 286 bytes and ten complete library
+cleanup definitions / 644 bytes are accepted. Replay
+`scripts/repo-python scripts/verify-resource-release-policy-origins.py` with
+immutable `config/resource-release-policy-origin-evidence.json`. All candidate
+extents, returns, internal branches, actual direct/indirect calls and registered
+unwind state transitions are reconciled. Original R017 texture release / 434
+and R045 fighter release / 588 retain their full 1022 bytes, authored records,
+instructions, CFG and switch evidence. Three entire R037 scalar deleting
+parents / 132 bytes and their original evidence remain compiler-owned.
+
+| Address | Entire bytes | Origin and inferred role |
+| --- | ---: | --- |
+| `0x00412E50` | 83 | authored: SharedResource::ReleaseInterfaceAndTexturesAt00412E50 |
+| `0x0041D1F0` | 98 | authored: ArchiveResource::CloseHandleAndClearEntriesAt0041D1F0 |
+| `0x0052D020` | 105 | authored: CharacterResource::ClearEntriesAndReleaseBaseAt0052D020 |
+| `0x0041D9F0` | 153 | library: std::list::clearAt0041D9F0 |
+| `0x0041D930` | 19 | library: std::list::destructorAt0041D930 |
+| `0x0041E280` | 100 | library: std::list::_TidyAt0041E280 |
+| `0x0041E360` | 25 | library: std::list::allocator::destroyNodeAt0041E360 |
+| `0x0041F130` | 25 | library: std::list::allocator::destroyNodePointerAt0041F130 |
+| `0x00531CE0` | 153 | library: std::list::clearAt00531CE0 |
+| `0x00531C40` | 19 | library: std::list::destructorAt00531C40 |
+| `0x00532010` | 100 | library: std::list::_TidyAt00532010 |
+| `0x005320F0` | 25 | library: std::list::allocator::destroyNodeAt005320F0 |
+| `0x005322E0` | 25 | library: std::list::allocator::destroyNodePointerAt005322E0 |
+
+Target observation: the 83-byte shared resource policy invokes the third
+interface slot through the pointer at offset zero, then destroys the texture
+subobject at +40. The 98-byte archive policy tests its handle, calls the actual
+KERNEL32.dll CloseHandle import at `0x00657138`, explicitly clears its list at
++4 and then invokes member destruction. The 105-byte character policy writes
+one observed vtable address, explicitly clears its list at +0xFEC, destroys
+that member and calls the complete independently authored fighter base release.
+Whole original R020 frames preserve complete cleanup tables and registration.
+These explicit release/clear operations distinguish the bodies from a generated
+sequence that only destroys members and bases. Original class declarations,
+method spelling, private owner layouts and the selected virtual target remain
+independent and unresolved where previously unresolved.
+
+Compiler/source observation: complete natural archive and shared resource
+destructors reproduce all 98 and 83 target bytes, including their genuine
+exception registration fields, whole 21-byte cleanup/handler carriers and
+36-byte unwind/FuncInfo carriers. Explicitly documented synthetic intervening
+scalars test only the observed shared-resource +40 subobject spacing. Complete
+compiler-generated alternatives are 22 bytes each and lack the explicit handle
+close/list clear or interface release. They retain their entire unique defining
+code COMDAT and actual missing primary AUX metadata, rather than receiving an
+invented function size or a sliced source prefix.
+
+The character policy is accepted from its whole target CFG and actual explicit
+clear-before-member/base destruction. A complete small synthetic base tests
+source call order without reproducing the +0xFEC original layout. Its complete
+explicit 99-byte and implicit 75-byte destructors show the additional clear call
+and subsequent automatic member/base destruction. Neither control is a positive
+byte match for the 105-byte target; no authored source-match credit is claimed.
+The exact source profile is a reproducibility setting, not an executable-wide
+compiler inference.
+
+The two complete SDK list cleanup graphs use independent existing R169/R170
+108-/16-byte value-node contexts. Full clear, tidy, list destructor and node/
+node-pointer allocator destruction definitions compare with their actual
+entire children and real fields. Both whole ordinary 19-byte tidy wrappers are
+byte-equal. Library ownership is an inference from the closed typed graph and
+whole explicit game policies; short method spelling remains provisional.
+Eight-/eleven-byte node-link getters and five-byte destruction children stay
+unknown. All other protected opaque ownership stays unchanged.
+
+All 28 entire positive custom/SDK/ordinary/EH/data controls / 1085 bytes compare
+unmasked with 56 genuine fields through one coherent defining-symbol catalog.
+All 52 cold ordinary sections / 1858 bytes, 28 actual SDK headers and whole
+44-byte readonly layout `[108,16,12,12,16,16,44,44,4,16,16]` are frozen.
+Four whole compiler/source alternatives preserve 218 bytes of explicit/implicit
+emission. Sixty-eight canonical/body snapshots, five full previous node/deleting
+records and three whole original registered frames preserve historical evidence.
+Only one observed four-byte virtual slot is frozen; no whole vtable extent or
+complete original owner is inferred. The actual PE import directory is read back.
+
+Cold full-source replay preceded canonical acceptance. Strict R174 HEAD 4f6a698
+readback permits exactly thirteen function/origin changes with unchanged extents
+and exactly three new full authored records. All 880 original authored rows/order
+and earlier tracked configurations remain unchanged. Thirty-five new guards and
+all 1932 public checks pass, together with full authored extent validation, fresh
+scanning, pinned target/local Ghidra attestation and whitespace checks. All prior
+source/header/build/ABI/mapping/match inputs remain unchanged; no exact replay
+is required for this origin-only addition.
+
+Totals are 3608 resolved (930 authored, 2103 library, 575 compiler), 743 pending
+and 2678 excluded. Authored evidence is 883 whole bodies / 1953997 bytes.
+Exact stays 60 functions / 9883 bytes, with provisional coverage
+9883 / 1966340 (0.50%). The earlier R139 cold 60/60 exact replay across eleven
+objects remains applicable. No reconstructed source/private ABI/mapping/exact
+credit is added. Public MCP acceptance remains waived; the complete-origin
+goal remains active and unfinished. The next bounded R176 diagnostic cohort
+is four iterator arithmetic wrappers through independent whole R078/R083 SDK
+parent/child evidence; derive each actual type-width/argument flow independently.

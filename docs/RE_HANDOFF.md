@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R174. The public
+review cohorts R108 through R175. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,61 +11,63 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,595: 927 authored, 2,093 library and 575 compiler generated.
-There are 756 pending. Candidate count is not authored function count.
+has resolved 3,608: 930 authored, 2,103 library and 575 compiler generated.
+There are 743 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,966,054 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,966,340 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R175 game-context cohort below.
+the bounded R176 iterator-wrapper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R174; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R175; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R175 resource-release parents
+## Next agent objective — R176 iterator arithmetic wrappers
 
-R174 accepts two complete secondary vector-access definitions / 68 bytes.
-Replay `scripts/repo-python scripts/verify-secondary-texture-access-origins.py`.
-Full R017 resource policies / 611 bytes retain five actual index calls and
-independent four-byte slot accesses. Eleven full SDK/ordinary controls / 343
-bytes compare unmasked with twelve genuine fields; complete ordinary 31/49/19
-alternatives preserve method-name uncertainty. All fifteen cold ordinary
-sections / 414 bytes, 27 SDK headers, whole 24-byte layout, 43 canonical/body
-snapshots and two prior R161 records are frozen. The 16-byte const getter stays
-unknown. All 1897 public checks pass. Existing evidence, 880 authored bodies
-and 60 exact functions stay intact. Public MCP acceptance remains waived;
-the full remaining-origin goal remains active and unfinished.
+R175 accepts three whole explicit resource-release policies / 286 bytes and
+ten whole SDK list cleanup definitions / 644 bytes. Replay
+`scripts/repo-python scripts/verify-resource-release-policy-origins.py`.
+Full R017/R045 policies / 1022 bytes, three original R020 frames and three
+whole R037 deleting parents preserve independent context. Two complete custom
+destructors reproduce all 98/83 target bytes; the entire 105-byte character
+policy is reviewed from target control flow and complete small 99/75-byte
+source call-order alternatives, with no source-byte-match credit. All 28 whole
+positive controls / 1085 bytes compare unmasked with 56 real fields. All 52 cold
+ordinary sections / 1858 bytes, 28 SDK headers, whole 44-byte layout, 68 canonical/
+body snapshots and five prior records are frozen. Opaque node-link getters,
+five-byte destruction children and all previously protected owners remain
+independently unknown. All 1932 public checks pass; 883 authored bodies and all
+60 exact functions are preserved. Public MCP acceptance remains waived; the
+full remaining-origin goal remains active and unfinished.
 
-The fresh `.analysis/origin-scan/r174-triage.json` has 756 pending. Original
-R108 whole explicit/implicit lifetime alternatives already leave 0x00411C10,
-0x004251C0 and 0x00449DE0 indistinguishable. Preserve those conclusions rather
-than repeating them as new acceptance candidates. The next bounded diagnostic
-cohort is three release parents / 286 provisional bytes:
+The fresh `.analysis/origin-scan/r175-triage.json` has 743 pending. The next
+bounded diagnostic cohort is four iterator wrappers / 108 provisional bytes:
 
-| Candidate | Complete provisional bytes | Original independent context |
+| Candidate | Entire provisional bytes | Whole original R078 parent / R083 child |
 | --- | ---: | --- |
-| `0x00412E50` | 83 | full R017 resource release `0x0040AE40` / 434 and R037 compiler deleting parent `0x0041A110` / 44; inspect actual indirect release |
-| `0x0041D1F0` | 98 | R037 deleting parent `0x0041D8C0` / 44; independent unresolved children `0x0041D9F0` / 153 and `0x0041D930` / 19 |
-| `0x0052D020` | 105 | full R045 FighterState resource release `0x00456910` / 588 and R037 deleting parent `0x00531BD0` / 44; preserve unresolved children `0x00531CE0` / 153 and `0x00531C40` / 19 |
+| `0x0041F650` | 27 | `0x0041ED00` / 57 and `0x0041F630` / 31 |
+| `0x0041F6F0` | 27 | `0x0041EE60` / 57 and `0x0041F6D0` / 31 |
+| `0x00455D10` | 27 | `0x00455C60` / 57 and `0x0042E2D0` / 31 |
+| `0x005F9530` | 27 | `0x005F8D70` / 57 and `0x005F9510` / 31 |
 
-These are candidates, not promised acceptances. Read original evidence and
-full candidate CFG, every direct/indirect call, real field, shared tail and
-independent context. A game child or compiler deleting parent does not classify
-the body. Distinguish explicit release policy from generated member/base
-destruction using genuine complete source alternatives where relevant. Do not
-instantiate an incomplete original owner. Preserve protected opaque ownership
-and every earlier manifest; only permit exact later ledger transitions if
-independently justified. Continue origin review; exact credit remains 60.
+These are candidates, not promised acceptances. Inspect complete CFG, actual
+arithmetic/argument propagation and full existing evidence before selecting
+SDK and ordinary alternatives. Parent/child classifications or shared shapes
+alone do not establish origin. Derive each vector/deque family and element
+width from its own entire source and target graph; do not inherit widths from
+adjacent review cohorts. Compare entire source extents with every genuine field
+and preserve all earlier manifests, opaque ownership and exact inputs. Continue
+origin review; exact credit remains 60.
 
 ## R165 checkpoint and the completed R166 shortlist
 
