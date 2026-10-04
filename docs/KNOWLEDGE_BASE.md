@@ -6966,3 +6966,96 @@ Public MCP acceptance stays waived; the full remaining-origin goal is active
 and unfinished. The next bounded R170 cohort is five character-list dependencies
 / 160 bytes through the complete R049 1008-byte game policy, recorded in the
 current handoff. Its value width must be established independently.
+
+## R170 — character-list graph with independently observed value width
+
+Twelve complete library definitions / 720 bytes are accepted through the five
+character-list roots and necessary complete SDK dependencies. Replay
+`scripts/repo-python scripts/verify-character-list-policy-origins.py` with immutable
+`config/character-list-policy-origin-evidence.json`. The unchanged independently
+authored R049 game policy `0x005301B0` / 1008 bytes retains every instruction,
+original authored record, complete CFG and switch records. Actual push-back and
+size calls at `0x00530225` / `0x00530233` provide independent argument/value
+context. Caller labels, mapped types and short byte shapes alone prove no owner.
+
+| Address | Complete bytes | Inferred SDK role |
+| --- | ---: | --- |
+| `0x00531DA0` | 42 | list begin |
+| `0x00531DD0` | 31 | list end |
+| `0x00531C60` | 17 | list size |
+| `0x00531CB0` | 42 | list push-back |
+| `0x00532300` | 28 | mutable iterator node constructor |
+| `0x00531DF0` | 115 | list insertion |
+| `0x00532110` | 186 | complete value-node allocation with catch and shared tail |
+| `0x005321D0` | 126 | size growth with full length-error path |
+| `0x005322A0` | 27 | node allocator allocation |
+| `0x005323E0` | 64 | node constructor with complete four-word value copy |
+| `0x00532360` | 22 | list maximum size |
+| `0x005324A0` | 20 | node allocation with actual 24-byte multiplier |
+
+Target observation: actual node placement requests 24 bytes at `0x0053214D`;
+the node constructor copies the complete observed 16-byte value. Capacity uses
+value width 16. The complete primary `0x00532110..0x005321C9` is 186 bytes,
+including its local catch at +134 and shared tail; the previous 134-byte extent
+stops before catch. Source primary AUX independently covers all 186 bytes.
+The whole 27-byte cleanup/handler carrier `0x00656520` and 88-byte unwind/catch/
+try/FuncInfo carrier `0x00669E5C` retain every real field and R020 registration
+`0x00656531`. The separate 52-byte interior `0x00532196` stays unknown; its
+local-label membership supplies no separate primary AUX or ownership evidence.
+
+Compiler/source observation: a complete synthetic 16-byte value produces a
+24-byte node and the genuine SDK list/iterator/insertion/allocation graph. The
+64-byte node constructor differs naturally from the previous larger-record
+copy strategy. All eighty complete positive source/code/EH/throw/RTTI/data
+controls / 3763 bytes compare unmasked with 189 genuine fields through one
+coherent actual defining-symbol catalog. Full string/length-error, throw and
+catchable-type/type metadata retain independent exception/runtime boundaries.
+Existing R106 const-iterator construction `0x005323C0` / 24 and deallocation,
+R032 allocator maximum size `0x00532420` / 44, R160 placement delete,
+R004/R005 string/exception/compiler, R142 exception/frame/throw/delete,
+R154 scalar new and R006/R025 string/memory records remain unchanged. Six
+original R020 frames are verified. Existing 37-/100-byte implicit exception
+copies retain their complete unique defining COMDATs despite lacking primary
+AUX; every regular positive has its own full primary AUX.
+
+The whole ordinary size alternative / 17 bytes is byte-equal, so original
+method spelling remains provisional. Two entire prior-108 and unsigned node
+allocation negatives / 20 bytes each compare against the entire 20-byte target,
+retaining actual scalar new. Each differs at genuine node-width immediate byte
++8. Neither negatives nor short equivalent shapes earn positive/exact credit.
+Widths 16/24 are observations of this list, independent of earlier 164/172 and
+108/116 observations; original character-entry declaration, packing, fields and
+private game layout remain unknown. The complete synthetic observer establishes
+no original owner, and uses no target arrays, assembly, fake returns or inert
+padding. One four-byte readonly external type-info slot establishes no whole
+vtable extent.
+
+All 275 cold ordinary sections / 12330 bytes, 29 actual SDK headers plus four
+unchanged pinned R166/R167/R168/R169 probe includes, and the entire 100-byte
+combined layout are frozen. Its 25 words are
+`[20,20,84,84,40,4,4,12,20,164,20,12,1,16,4,4,12,1,4,108,12,4,16,12,4]`.
+Eleven prior records, including the complete R169 node allocation, and 227
+complete canonical/body snapshots preserve existing context. R162's manifest
+stays immutable. Only two exact accepted-pending to R170 library transitions
+and two exact separate original-to-R170 snapshot transitions are allowed. Both
+old ordinary and cookie-negative profiles cold-replay. R168/R169 transitions
+remain exact; all unrelated historical pending decisions stay unchanged.
+
+Link accessors `0x00531D80` / 8 and `0x00531D90` / 11, node getter
+`0x00532350` / 16 and the catch interior remain unknown. All prior opaque
+getters, empty destruction children and lifetime/copy/math policies are preserved.
+Full cold evidence preceded canonical changes. Strict R169 HEAD e9ba039 readback
+verifies exactly twelve function/origin changes, only the one full primary extent
+refinement and no authored additions. All 880 original authored rows/order,
+previous manifests and source/header/build/ABI/mapping/match inputs remain
+intact. Thirty-six new regression checks and all 1771 public checks pass, with
+fresh scanning, full authored extents, local attestation and whitespace checks.
+
+Totals are 3571 resolved (927 authored, 2069 library, 575 compiler), 780 pending
+and 2644 excluded. Authored evidence stays 880 complete bodies / 1953711 bytes.
+Exact stays 60 functions / 9883 bytes with provisional coverage
+9883 / 1966054 (0.50%); the earlier R139 cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added. Public
+MCP acceptance stays waived. The full remaining-origin goal is active and
+unfinished; the next bounded cohort is the three complete default deque
+const-iterator candidates and their actual whole producer/consumer contexts.
