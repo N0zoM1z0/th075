@@ -7223,3 +7223,100 @@ extents, progress/scanner freshness, tests and whitespace checks pass locally.
 All 60 exact units cold-replay across eleven objects. The user's 2026-10-04
 public MCP acceptance waiver remains in force. Private evidence stays
 untracked and shared tools read-only.
+
+## R140 — Complete stream finalization and path-access graph
+
+R140 resolves all four stream finalization/path-access handoff candidates as
+library origin: four complete own-AUX primaries / 282 bytes / 11 typed fields.
+Replay `scripts/repo-python scripts/verify-stream-finalization-origins.py` with
+`config/stream-finalization-origin-evidence.json`. Every defining member,
+source/target hash, typed field, complete branch and exit is retained. No
+source, mapping or exact reconstruction credit is added, and no auxiliary,
+interior, COMMON, data or exception-scope inventory entries are fabricated.
+
+| Complete vendor primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__freebuf` | `0x00654953` | 43 | 1 |
+| `__fclose_lk` | `0x00653E01` | 76 | 4 |
+| `__flush` | `0x00652588` | 93 | 1 |
+| `__access` | `0x00641B37` | 70 | 5 |
+
+**Target observations and original source.** Freebuf is void and assumes its
+caller holds the stream lock. It acts only when inuse / 0x83 and the CRT-owned
+buffer bit / eight are both set. It frees the actual base pointer, clears
+IOMYBUF and IOSETVBUF / 0x408 (the target uses WORD mask 0xFBF7), and clears
+base, current pointer and count. It does not free the user's buffer or add
+an invented return value. The complete original `_freebuf.c` is supplied.
+
+Flush checks that the read/write direction bits select writing, bigbuf /
+0x108 is set and ptr-minus-base is positive. It passes descriptor, base and
+full requested count to the complete write worker, with twelve caller bytes.
+Only an equal returned count is success; on a read/write stream success clears
+IOWRT, while any unequal result sets IOERR / 0x20 and returns EOF. Every path
+resets ptr to base and count to zero, including errors and no-write paths.
+No retry, added count normalization or disk-commit policy is introduced.
+
+Fclose_lk initializes its result to EOF. If the stream is in use, it orders
+flush, buffer release and low-level close. A negative close result forces EOF;
+a nonnegative close frees a non-null temporary filename and clears that pointer.
+If close fails, the temporary filename is not freed by this owner. The final
+flag reset occurs on every path, and a successful close preserves an earlier
+flush error. All original fclose.c/fflush.c branches and exits remain inside
+their own 76-/93-byte owners. The helpers assume a caller-held stream lock;
+runtime locking, stream/handle validity, buffer/name ownership and IO results
+remain unknown. A zero ordinary caller count for fclose_lk is not unused-code
+or export/callback evidence.
+
+Access calls the actual GetFileAttributesA import. An invalid attribute result
+calls GetLastError and dosmaperr and returns minus one. Otherwise it rejects
+the combination of FILE_ATTRIBUTE_READONLY / one and the caller's write-mode
+bit / two, setting CRT errno / EACCES / thirteen and DOS error / five. Other
+cases return zero. This is the original attribute test, without added ACL or
+mode validation. The real caller at `0x00414300` retains its independently
+accepted R035 ReplayRecords::FindAvailablePath origin; the library child does
+not establish or reclassify caller ownership. Caller paths/modes, ACP and
+current error state remain unknown.
+
+**Independent dependency and variant closure.** Six complete anchors / 572
+bytes / 42 fields retain free, close, write, dosmaperr, errno and doserrno's
+prior R120/R132/R133 origins. Every defining source and typed field replays,
+along with the full R139 and older stream/handle/thread/heap/error/FP/game
+chains. The new primaries need no standalone data carrier or COMMON definition;
+their runtime data belongs to caller-provided streams and retained dependencies.
+
+The complete seventy-byte waccess alternative / five fields has the same code
+shape outside relocations. It is retained as a diagnostic rejected variant,
+including its own AUX, full defining member, hashes and all typed fields. The
+actual PE IAT slot `0x0065718C` imports GetFileAttributesA, whereas its source
+requires GetFileAttributesW. That independent contradiction rejects the wide
+association even though patching relocation numbers makes its full bytes
+congruent. The verifier binds both actual indirect API instruction fields and
+all helpers. No masked comparison, convenient prefix or imported database name
+supplies acceptance.
+
+**Compiler observations and local acceptance.** The natural
+`probes/VC7StreamFinalizationLayout.cpp` cold-builds a complete 112-byte layout
+array. It preserves complete FILE / 32 and actual ptr/count/base/flag/file/
+tmpfname offsets 0/4/8/12/16/28, char/wchar widths one/two, all ownership/error
+masks, DWORD attribute sentinel, distinct CRT/DOS errors and EOF. Five complete
+92-/172-/131-/92-/92-byte controls use real pinned declarations and natural
+buffer/flush/close/A/W policies. Five full original vendor files and nine
+headers replay; available source is not replaced with guessed private types.
+These are ownership/type/ABI controls, without exact reconstruction credit.
+VC7.1 build 3077 and explicit flags are per-probe reproducibility settings.
+
+Thirty-six regression checks reject incomplete owners, invented scope/data
+credit, wrong masks/offsets/ABI, lost short-write/reset/close/error policies,
+unexplained dispatch, omitted sources/headers, guessed runtime ownership and
+an unsupported wide variant rejection. All 869 public checks pass. Canonical
+totals are 3393 resolved (919 authored, 1899 library, 575 compiler), with 958
+pending. Exact/source/mapping remains 60 / 9883 bytes; recorded authored
+extents remain 872 / 1952956 bytes and the provisional denominator is 1965299.
+Full new/retained cold origin replay, canonical guards, target/project/query
+attestation, authored extents, progress/scanner freshness, tests and whitespace
+checks pass locally. All sixty exact function records and tracked source,
+header, build and match inputs are unchanged from R139 `db26a05`; that batch's
+60/60 cold exact replay across eleven objects remains applicable. No affected
+exact unit needs another replay. The user's 2026-10-04 public MCP acceptance
+waiver remains in force. Private evidence stays untracked and shared tools
+read-only.
