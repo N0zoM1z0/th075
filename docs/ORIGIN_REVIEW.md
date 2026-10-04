@@ -10984,3 +10984,80 @@ D3DX8 survey finds 291 pending source-body diagnostic associations. Next review
 the bounded fifteen-candidate / 7667-byte cohort whose observed fields have
 accepted library, actual import or same-member scalar-constant context. Old
 masked survey hits are discovery only and never new acceptance evidence.
+
+## R184 — complete D3DX8 file/image objects and independent real fields
+
+Fifteen complete vendor functions / 7667 bytes are classified library/exclude.
+The historical masked SDK survey supplied discovery addresses only. Fresh
+extraction from the read-only pinned d3dx8.lib archive independently derives
+every complete single-function COMDAT extent, reopens each source member and
+compares all original bytes after binding every genuine relocation field.
+The archive SHA-256 remains
+`39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28`.
+
+| Address | Whole bytes | Vendor operation |
+| --- | ---: | --- |
+| `0x0061FF67` | 269 | CD3DXStringBuffer::AddString |
+| `0x0060BF05` | 272 | CD3DXFile::Open |
+| `0x0060C015` | 202 | CD3DXFile::Create |
+| `0x0060C0DF` | 65 | CD3DXFile::Close |
+| `0x0061FB45` | 110 | CD3DXDwStack::Push |
+| `0x0061FC33` | 179 | CD3DXSzStack::Push |
+| `0x00618EC7` | 224 | CD3DXCodec_D3DX_A16R16G16B16::Decode |
+| `0x006111EA` | 701 | TF_SetupTriangle |
+| `0x0060EC42` | 195 | CD3DXImage::Initialize |
+| `0x0060ED05` | 1814 | CD3DXImage::LoadDIB |
+| `0x0060F41B` | 740 | CD3DXImage::SaveDIB |
+| `0x0060F9D1` | 1191 | CD3DXImage::LoadTGA |
+| `0x0060FE78` | 646 | CD3DXImage::LoadPPM |
+| `0x0063B803` | 993 | D3DX::jpeg_idct_float |
+| `0x00629921` | 66 | D3DX::png_create_struct |
+
+All 83 code fields are explicit: 35 REL32 calls to ten independently accepted
+complete source records, 20 actual PE IAT fields with exact DLL/name and source
+symbol spelling, and 28 complete same-member readonly scalar fields. Nothing
+is masked. The shared symbol catalogue forbids inconsistent destinations.
+Complete native decoding retains all returns and internal branches, including
+the genuine final internal jump, and 24 byte-identical indirect dispatches.
+There are no unresolved external jumps, switch transfers or interior inventory
+entries in these accepted extents. Indirect callees receive no new credit.
+
+Ten immutable original library records are retained, with every full own source
+primary and complete native ledger carrier. `_floor` keeps its original whole
+289-byte wrapper/SSE carrier and the independent 64-byte primary plus complete
+225-byte SSE owner; no new 64-byte canonical boundary is invented. The actual
+`__alloca_probe` alias is freshly proved at the same source section/offset as
+the complete 61-byte `__chkstk` primary, with its real untyped external symbol
+metadata. The two names are not treated as separate function AUX definitions.
+Original new/delete/character-classifier/malloc/helper records, every source
+member hash, native carrier hash and prior manifest are frozen.
+
+Replay `scripts/repo-python scripts/verify-sdk-file-image-origins.py`. Its
+`--evidence-only` mode passes before acceptance; accepted-state replay reopens
+all actual archive members, full bodies, own extents, fields and target CFG.
+For a changed retained dependency, `--replay-dependencies` runs the six complete
+provenance roots serially. These roots passed in this batch: runtime, runtime
+leaves, allocation API, standard exception, floor math and the original SDK
+validator. R148 already recursively cold-replays the complete input-format,
+floating-point and runtime-cycle graphs; their duplicate second invocation
+was stopped after the first complete PASS. A fresh private call-graph readback
+records that coverage. No parallel compiler or writable Ghidra session is used.
+
+Strict R183 HEAD a535ae3 readback changes exactly fifteen function/origin rows
+and preserves every original extent, all 902 authored records and all previous
+configuration/source/ABI/mapping/match inputs. Full authored checks still cover
+902 bodies / 1956112 bytes. Target/tracking/project attestation, query completion
+marker, fresh scanning, 22 meaningful field/extent/provenance regression checks,
+all 2265 public checks, progress and whitespace checks pass. The supplied target
+is unchanged. Compiler build/flags for these archived bodies and complete game
+class layouts remain unknown. Origin evidence adds no source, ABI, mapping or
+exact credit; the prior cold sixty-unit replay remains applicable to unchanged
+inputs. Public MCP acceptance remains waived.
+
+Totals are 3654 resolved (949 authored, 2130 library, 575 compiler), 697 pending
+and 2705 excluded. Exact remains 60 functions / 9883 bytes, with provisional
+coverage 9883 / 1968455 (0.50%). The whole remaining-origin goal is active and
+unfinished. The next bounded cohort is six newly anchored D3DX parents/leaves
+/ 762 bytes: 0x0060D11A, 0x0060D044, 0x0061FC02, 0x00610F96, 0x0061FE1F and
+0x006255A0. Reopen complete source members and bind all seventeen actual calls
+through the immutable R184/earlier source bodies; survey hits remain diagnostic.

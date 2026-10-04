@@ -2764,9 +2764,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0060BD3C,177,0x0060BDEC,FUN_0060bd3c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060BE10,227,0x0060BEF2,FUN_0060be10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060BEF3,18,0x0060BF04,FUN_0060bef3,??0CD3DXFile@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
-0x0060BF05,272,0x0060C014,FUN_0060bf05,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060C015,202,0x0060C0DE,FUN_0060c015,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060C0DF,65,0x0060C11F,FUN_0060c0df,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060BF05,272,0x0060C014,FUN_0060bf05,CD3DXFile::Open,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+0x0060C015,202,0x0060C0DE,FUN_0060c015,CD3DXFile::Create,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+0x0060C0DF,65,0x0060C11F,FUN_0060c0df,CD3DXFile::Close,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0060C120,11,0x0060C12A,FUN_0060c120,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060C12B,169,0x0060C1D3,FUN_0060c12b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060C1D4,143,0x0060C262,FUN_0060c1d4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2790,14 +2790,14 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0060EBB4,25,0x0060EBCC,FUN_0060ebb4,??0CD3DXImage@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0060EBCD,89,0x0060EC25,FUN_0060ebcd,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060EC26,28,0x0060EC41,FUN_0060ec26,VC7::OptimizedScalarDeletingDestructor_0060EC26,VC71Compiler,excluded,0.00,,,false,,R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit
-0x0060EC42,195,0x0060ED04,FUN_0060ec42,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060ED05,1814,0x0060F41A,FUN_0060ed05,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060F41B,740,0x0060F6FE,FUN_0060f41b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060EC42,195,0x0060ED04,FUN_0060ec42,CD3DXImage::Initialize,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+0x0060ED05,1814,0x0060F41A,FUN_0060ed05,CD3DXImage::LoadDIB,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+0x0060F41B,740,0x0060F6FE,FUN_0060f41b,CD3DXImage::SaveDIB,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0060F6FF,27,0x0060F719,FUN_0060f6ff,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060F71C,29,0x0060F738,FUN_0060f71c,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0060F761,624,0x0060F9D0,FUN_0060f761,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060F9D1,1191,0x0060FE77,FUN_0060f9d1,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0060FE78,646,0x006100FD,FUN_0060fe78,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0060F9D1,1191,0x0060FE77,FUN_0060f9d1,CD3DXImage::LoadTGA,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+0x0060FE78,646,0x006100FD,FUN_0060fe78,CD3DXImage::LoadPPM,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0061014E,1430,0x006106E3,FUN_0061014e,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006106E4,833,0x00610A24,FUN_006106e4,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00610A25,680,0x00610CCC,FUN_00610a25,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -2806,7 +2806,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00610FC6,469,0x0061119A,FUN_00610fc6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061119B,10,0x006111A4,FUN_0061119b,??0CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x006111A5,30,0x006111C2,FUN_006111a5,??1CD3DXBlt@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
-0x006111EA,701,0x006114A6,FUN_006111ea,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x006111EA,701,0x006114A6,FUN_006111ea,TF_SetupTriangle,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x006114A7,76,0x006114F2,FUN_006114a7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006114F3,1140,0x00611966,FUN_006114f3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00611967,398,0x00611AF4,FUN_00611967,?BltSame_DXTn@CD3DXBlt@@IAEJXZ,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
@@ -2915,7 +2915,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00618D3D,112,0x00618DAC,FUN_00618d3d,?Decode@CD3DXCodec_D16_LOCKABLE@@UAEXIIPAUD3DXCOLOR@@@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00618DAD,142,0x00618E3A,FUN_00618dad,?Decode@CD3DXCodec_D3DX_A16L16@@UAEXIIPAUD3DXCOLOR@@@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00618E3B,140,0x00618EC6,FUN_00618e3b,?Decode@CD3DXCodec_D3DX_R16G16B16@@UAEXIIPAUD3DXCOLOR@@@Z,D3DX8SDK,excluded,0.00,,,false,,R010,,"R010; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
-0x00618EC7,224,0x00618FA6,FUN_00618ec7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00618EC7,224,0x00618FA6,FUN_00618ec7,CD3DXCodec_D3DX_A16R16G16B16::Decode,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x00618FA7,28,0x00618FC2,FUN_00618fa7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00618FC3,248,0x006190BA,FUN_00618fc3,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006190BB,28,0x006190D6,FUN_006190bb,VC7::OptimizedScalarDeletingDestructor_006190BB,VC71Compiler,excluded,0.00,,,false,,R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit
@@ -3128,12 +3128,12 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0061FAB2,117,0x0061FB26,FUN_0061fab2,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FB27,16,0x0061FB36,FUN_0061fb27,??0CD3DXDwStack@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0061FB37,14,0x0061FB44,FUN_0061fb37,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0061FB45,110,0x0061FBB2,FUN_0061fb45,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FB45,110,0x0061FBB2,FUN_0061fb45,CD3DXDwStack::Push,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0061FBB3,52,0x0061FBE6,FUN_0061fbb3,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0061FBE7,8,0x0061FBEE,FUN_0061fbe7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FBEF,19,0x0061FC01,FUN_0061fbef,??0CD3DXSzStack@@QAE@XZ,D3DX8SDK,excluded,0.00,,,false,,R026,library,Whole relocation-free SDK COMDAT; independent typed source caller confirms short-symbol identity; no caller/source/exact credit
 0x0061FC02,49,0x0061FC32,FUN_0061fc02,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0061FC33,179,0x0061FCE5,FUN_0061fc33,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FC33,179,0x0061FCE5,FUN_0061fc33,CD3DXSzStack::Push,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0061FCE6,52,0x0061FD19,FUN_0061fce6,?Pop@CD3DXDwStack@@QAEJPAK@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0061FD1A,8,0x0061FD21,FUN_0061fd1a,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FD22,232,0x0061FE09,FUN_0061fd22,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3141,7 +3141,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0061FE1F,38,0x0061FE44,FUN_0061fe1f,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FEDB,27,0x0061FEF5,FUN_0061fedb,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0061FEF6,28,0x0061FF11,FUN_0061fef6,VC7::OptimizedScalarDeletingDestructor_0061FEF6,VC71Compiler,excluded,0.00,,,false,,R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit
-0x0061FF67,269,0x00620073,FUN_0061ff67,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0061FF67,269,0x00620073,FUN_0061ff67,CD3DXStringBuffer::AddString,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x00620074,28,0x0062008F,FUN_00620074,VC7::OptimizedScalarDeletingDestructor_00620074,VC71Compiler,excluded,0.00,,,false,,R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls,compiler,Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit
 0x00620093,71,0x006200D9,FUN_00620093,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006200DA,24,0x006200F1,FUN_006200da,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3318,7 +3318,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00629471,815,0x0062979F,FUN_00629471,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006297D8,121,0x00629850,FUN_006297d8,?inflateSetDictionary@D3DX@@YAHPAUz_stream_s@1@PBEI@Z,D3DX8SDK,excluded,0.00,,,false,,R009,,"R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00629851,174,0x006298FE,FUN_00629851,?inflateSync@D3DX@@YAHPAUz_stream_s@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R029,library,Whole pinned SDK COMDAT and completely bound readonly/call fields; no source/exact inheritance
-0x00629921,66,0x00629962,FUN_00629921,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00629921,66,0x00629962,FUN_00629921,D3DX::png_create_struct,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x00629963,13,0x0062996F,FUN_00629963,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00629970,54,0x006299A5,FUN_00629970,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006299A6,25,0x006299BE,FUN_006299a6,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3467,7 +3467,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0063B72E,61,0x0063B76A,FUN_0063b72e,?jpeg_idct_1x1@D3DX@@YAXPAUjpeg_decompress_struct@1@PAUjpeg_component_info@1@PAFPAPAEI@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x0063B76B,76,0x0063B7B6,FUN_0063b76b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063B7B7,76,0x0063B802,FUN_0063b7b7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063B803,993,0x0063BBE3,FUN_0063b803,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063B803,993,0x0063BBE3,FUN_0063b803,D3DX::jpeg_idct_float,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
 0x0063C1C0,492,0x0063C3AB,FUN_0063c1c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063C8A0,232,0x0063C987,FUN_0063c8a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063C990,329,0x0063CAD8,FUN_0063c990,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

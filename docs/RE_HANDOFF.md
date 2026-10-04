@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R183. The public
+review cohorts R108 through R184. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,639: 949 authored, 2,115 library and 575 compiler generated.
-There are 712 pending. Candidate count is not authored function count.
+has resolved 3,654: 949 authored, 2,130 library and 575 compiler generated.
+There are 697 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,79 +20,64 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R184 complete D3DX8 cohort below.
+the bounded R185 complete D3DX8 parent/leaf cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R183; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R184; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R184 full D3DX8 objects and independently bound fields
+## Next agent objective — R185 complete D3DX8 parents and leaves
 
-R183 accepts the entire 85-byte font decoder and 64-byte resource initializer.
-Replay `scripts/repo-python scripts/verify-font-byte-policy-origins.py`.
-The source decoder / 74 is a whole negative with 44 positional differences
-and 11 extra original bytes. Both native DWORD reads and signed fallback stay
-explicit. The source constructor / 64 has a genuine storage-offset difference
-at byte 50; no padding or recovered original 56-byte owner is claimed. Two
-complete 77-byte lead-classifier alternatives are equal; the helper remains
-unknown. The full 25-byte SDK macro keeps its actual unresolved table field.
+R184 accepts fifteen whole pinned D3DX8 COMDAT bodies / 7667 bytes, with all
+83 genuine fields independently bound: 35 complete source-callee calls, 20
+actual PE imports and 28 complete same-member readonly scalars. Replay
+`scripts/repo-python scripts/verify-sdk-file-image-origins.py`. Its immutable
+manifest SHA-256 is
+`7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6`.
+Ten prior source/native carriers and the actual __alloca_probe/__chkstk alias
+are retained; `_floor` keeps its original complete 289-byte carrier. The six
+complete provenance roots passed; R148 recursively cold-replays R135/R125/R119
+and their full independent dependencies. Avoid duplicate cold graph replays
+when the same retained inputs have already passed.
 
-Four whole source comparisons / 292 bytes, five SDK/default/caller controls
-/ 196 bytes, all 14 ordinary sections / 588 bytes, ten SDK headers, whole 24-byte
-layout, 187 snapshots, 42 protected unknowns, complete authored game/release
-anchors / 2967 bytes, two original release records, two full EH frames and
-three actual imports are frozen. R178 cold replay passes before and after
-acceptance. Strict R182 b2c365e readback changes exactly two function/origin
-rows and appends two whole authored records, preserving all 900 earlier rows
-and every original extent. All 2243 public checks pass. Authored evidence totals
-902 bodies / 1956112 bytes; all sixty exact units and inputs are unchanged.
-Public MCP acceptance remains waived; the full remaining-origin goal is active.
+Exactly fifteen function/origin rows change from a535ae3, with no original
+extent change. All 902 authored bodies / 1956112 bytes, all previous manifests
+and all sixty exact units/inputs are unchanged. All 2265 public checks, fresh
+697-pending scan, target/tracking/project/query markers, progress and whitespace
+checks pass. The full remaining-origin goal remains active. Public MCP acceptance
+is waived. R183's complete font/default controls stay valid; 0x0041CA30 and all
+previous protected ambiguities stay unknown.
 
-The fresh `.analysis/origin-scan/r183-triage.json` has 712 pending. A fresh
-canonical filter of the historical `.analysis/sdk-origin-survey.json` identifies
-291 still-pending D3DX source-body associations. Those masked survey results
-are only discovery pointers. The pinned SDK archives are read-only under
-`.tools/msvc710/Vc7/PlatformSDK/Lib/`; d3dx8.lib SHA-256 is
-`39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28`.
+The next bounded cohort is six source-survey candidates / 762 bytes, with
+seventeen observed genuine calls to independently retained R184/earlier bodies:
 
-The next bounded diagnostic cohort is fifteen complete candidates / 7667 bytes:
-
-| Candidate | Provisional bytes | Source-survey operation |
+| Candidate | Provisional bytes | Vendor operation |
 | --- | ---: | --- |
-| `0x0061FF67` | 269 | CD3DXStringBuffer::AddString |
-| `0x0060BF05` | 272 | CD3DXFile::Open |
-| `0x0060C015` | 202 | CD3DXFile::Create |
-| `0x0060C0DF` | 65 | CD3DXFile::Close |
-| `0x0061FB45` | 110 | CD3DXDwStack::Push |
-| `0x0061FC33` | 179 | CD3DXSzStack::Push |
-| `0x00618EC7` | 224 | CD3DXCodec_D3DX_A16R16G16B16::Decode |
-| `0x006111EA` | 701 | TF_SetupTriangle |
-| `0x0060EC42` | 195 | CD3DXImage::Initialize |
-| `0x0060ED05` | 1814 | CD3DXImage::LoadDIB |
-| `0x0060F41B` | 740 | CD3DXImage::SaveDIB |
-| `0x0060F9D1` | 1191 | CD3DXImage::LoadTGA |
-| `0x0060FE78` | 646 | CD3DXImage::LoadPPM |
-| `0x0063B803` | 993 | jpeg_idct_float |
-| `0x00629921` | 66 | png_create_struct |
+| `0x0060D11A` | 375 | CD3DXAssembler::UpdateDebugFileLine |
+| `0x0060D044` | 214 | CD3DXAssembler::UpdateDebugText |
+| `0x0061FC02` | 49 | CD3DXSzStack destructor |
+| `0x00610F96` | 48 | CD3DXImage::LoadBMP |
+| `0x0061FE1F` | 38 | CD3DXBuffer::Init |
+| `0x006255A0` | 38 | D3DX::png_create_info_struct |
 
-Re-open actual pinned archive members; independently derive each complete own
-primary/AUX or COMDAT extent, full source bytes and every genuine field. Read
-full original CFG/exits/tables and reconcile extents before accepting. Bind all
-fields without masking to independently accepted whole library source records,
-actual PE imports or complete same-member readonly scalar constants. Freeze
-source/member/archive identity, a coherent symbol catalogue and every prior
-ledger/source record. Existing library classification alone does not establish
-a requested source symbol. If a dependency or scalar provenance is not complete,
-keep that candidate pending and proceed with independently complete evidence.
-Preserve every previous manifest/record and protected ambiguity. No source,
-ABI, mapping or exact-reconstruction credit is authorized by an archive match.
-Do not patch shared tools or target bytes and do not add exact scope.
+The complete source children are CD3DXDwStack::Push (0x0061FB45),
+CD3DXImage::LoadDIB (0x0060ED05), D3DX::png_create_struct (0x00629921),
+operator delete (0x00640F15) and operator new (0x0064159D). Their existing whole
+source records and every actual field must be freshly replayed, not inferred
+from names alone. Reopen the same read-only pinned d3dx8.lib, SHA-256
+`39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28`.
+Derive each complete own COMDAT extent independently, reconcile all native
+branches/exits/tables/shared tails, preserve the coherent source catalogue and
+compare every byte with no masked fields. Freeze full prior records and old
+canonical rows. Source/compiler profile, full game layouts, ABI, mapping and
+exact credit are independent; do not expand exact scope. The historical survey
+and fresh private `.analysis/r185-candidate-discovery.json` are discovery only.
 
 ## R165 checkpoint and the completed R166 shortlist
 

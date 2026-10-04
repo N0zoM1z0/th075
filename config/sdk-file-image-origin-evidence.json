@@ -1,0 +1,4422 @@
+{
+  "evidence_id": "R184",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "library": "d3dx8.lib",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "functions": [
+    {
+      "address": "0x0061FF67",
+      "size": 269,
+      "symbol": "?AddString@CD3DXStringBuffer@@QAEJPAD@Z",
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "member_offset": 380178,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "2f49a2877120aa951c21b2ecda55cd253e1c05c306833974e61a0d6de0253344",
+      "body_sha256": "46a5bdca8dc24dabb6ca30366922163fc52c63fa577990e02740ee39101f6d7a",
+      "fields": [
+        {
+          "offset": 63,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 69,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 74,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 105,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 195,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 63,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 69,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065834C",
+          "kind": "scalar",
+          "literal_hex": "9a99993f"
+        },
+        {
+          "offset": 74,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 105,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 195,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        9
+      ],
+      "original_function": {
+        "address": "0x0061FF67",
+        "size": "269",
+        "span_end": "0x00620073",
+        "current_name": "FUN_0061ff67",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FF67",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FF67",
+        "size": "269",
+        "span_end": "0x00620073",
+        "current_name": "FUN_0061ff67",
+        "proposed_name": "CD3DXStringBuffer::AddString",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0061FF67",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060BF05",
+      "size": 272,
+      "symbol": "?Open@CD3DXFile@@QAEJPBXH@Z",
+      "member": "obj\\i386\\cd3dxfile.obj",
+      "member_offset": 389060,
+      "member_sha256": "a4af59e41929301c618fb94727e8a576081fb28677c02d8a635ed89c1dda59c6",
+      "source_sha256": "e84d39edb00ce88dff6ddd2d6c050ede31ecb14a1fc634df1e539dd5d8dd799c",
+      "body_sha256": "be2be008c7f20d176f087271fd254d74a1935b66475a8fb7cabd2cd74685aea1",
+      "fields": [
+        {
+          "offset": 51,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetVersionExA@4",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 63,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WideCharToMultiByte@32",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 90,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 149,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileW@28",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 176,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 196,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileMappingA@24",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 216,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__MapViewOfFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 232,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 246,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetLastError@0",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 51,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetVersionExA@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657090",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "GetVersionExA"
+        },
+        {
+          "offset": 63,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WideCharToMultiByte@32",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657078",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WideCharToMultiByte"
+        },
+        {
+          "offset": 90,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642510",
+          "kind": "callee"
+        },
+        {
+          "offset": 149,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileW@28",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065708C",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CreateFileW"
+        },
+        {
+          "offset": 176,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657130",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CreateFileA"
+        },
+        {
+          "offset": 196,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileMappingA@24",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657088",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CreateFileMappingA"
+        },
+        {
+          "offset": 216,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__MapViewOfFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657084",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "MapViewOfFile"
+        },
+        {
+          "offset": 232,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657058",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "GetFileSize"
+        },
+        {
+          "offset": 246,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetLastError@0",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657080",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "GetLastError"
+        }
+      ],
+      "indirect_call_count": 9,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        11
+      ],
+      "original_function": {
+        "address": "0x0060BF05",
+        "size": "272",
+        "span_end": "0x0060C014",
+        "current_name": "FUN_0060bf05",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060BF05",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060BF05",
+        "size": "272",
+        "span_end": "0x0060C014",
+        "current_name": "FUN_0060bf05",
+        "proposed_name": "CD3DXFile::Open",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060BF05",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060C015",
+      "size": 202,
+      "symbol": "?Create@CD3DXFile@@QAEJPBXH@Z",
+      "member": "obj\\i386\\cd3dxfile.obj",
+      "member_offset": 389060,
+      "member_sha256": "a4af59e41929301c618fb94727e8a576081fb28677c02d8a635ed89c1dda59c6",
+      "source_sha256": "c31cc6de07ff514528063e855332838d9d572fd249cfb0c323ce86140921ccab",
+      "body_sha256": "bcf2096b6d82c9080219e446ca886ef71c1f3dc20f280e6c984287f5e20c0e94",
+      "fields": [
+        {
+          "offset": 56,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetVersionExA@4",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 68,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WideCharToMultiByte@32",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 93,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 143,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileW@28",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 163,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 176,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetLastError@0",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 56,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetVersionExA@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657090",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "GetVersionExA"
+        },
+        {
+          "offset": 68,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WideCharToMultiByte@32",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657078",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WideCharToMultiByte"
+        },
+        {
+          "offset": 93,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__alloca_probe",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642510",
+          "kind": "callee"
+        },
+        {
+          "offset": 143,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileW@28",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065708C",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CreateFileW"
+        },
+        {
+          "offset": 163,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657130",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CreateFileA"
+        },
+        {
+          "offset": 176,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__GetLastError@0",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657080",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "GetLastError"
+        }
+      ],
+      "indirect_call_count": 6,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        8
+      ],
+      "original_function": {
+        "address": "0x0060C015",
+        "size": "202",
+        "span_end": "0x0060C0DE",
+        "current_name": "FUN_0060c015",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060C015",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060C015",
+        "size": "202",
+        "span_end": "0x0060C0DE",
+        "current_name": "FUN_0060c015",
+        "proposed_name": "CD3DXFile::Create",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060C015",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060C0DF",
+      "size": 65,
+      "symbol": "?Close@CD3DXFile@@QAEJXZ",
+      "member": "obj\\i386\\cd3dxfile.obj",
+      "member_offset": 389060,
+      "member_sha256": "a4af59e41929301c618fb94727e8a576081fb28677c02d8a635ed89c1dda59c6",
+      "source_sha256": "ab80dbcb8f64f6679fc6bc338f7482aee2563f82fa454490c9d069adc6f35c94",
+      "body_sha256": "1fa16870df934b0c69499136f714e594bdb5cf760beefb465e4ac3d6759661a9",
+      "fields": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__UnmapViewOfFile@4",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 34,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__UnmapViewOfFile@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657094",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "UnmapViewOfFile"
+        },
+        {
+          "offset": 34,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657138",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "CloseHandle"
+        }
+      ],
+      "indirect_call_count": 3,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        3
+      ],
+      "original_function": {
+        "address": "0x0060C0DF",
+        "size": "65",
+        "span_end": "0x0060C11F",
+        "current_name": "FUN_0060c0df",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060C0DF",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060C0DF",
+        "size": "65",
+        "span_end": "0x0060C11F",
+        "current_name": "FUN_0060c0df",
+        "proposed_name": "CD3DXFile::Close",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060C0DF",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0061FB45",
+      "size": 110,
+      "symbol": "?Push@CD3DXDwStack@@QAEJK@Z",
+      "member": "obj\\i386\\cd3dxstack.obj",
+      "member_offset": 420216,
+      "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+      "source_sha256": "d8a471afdd1bb448b7d9fd7aafc3df1c889ac55eab316804f76cea23890e1987",
+      "body_sha256": "c1ee9add0f5ca1dba9306f1f2d03d055d7c2b78edf7416b62907de34c6820fd1",
+      "fields": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 75,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 75,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        4
+      ],
+      "original_function": {
+        "address": "0x0061FB45",
+        "size": "110",
+        "span_end": "0x0061FBB2",
+        "current_name": "FUN_0061fb45",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FB45",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FB45",
+        "size": "110",
+        "span_end": "0x0061FBB2",
+        "current_name": "FUN_0061fb45",
+        "proposed_name": "CD3DXDwStack::Push",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0061FB45",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0061FC33",
+      "size": 179,
+      "symbol": "?Push@CD3DXSzStack@@QAEJPAD@Z",
+      "member": "obj\\i386\\cd3dxstack.obj",
+      "member_offset": 420216,
+      "member_sha256": "c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49",
+      "source_sha256": "776adb99acb4c9cf7bd17114b6fd364ee8c0cfe57a27ba62e834f5eec511067e",
+      "body_sha256": "db8046b9ec5dd6ce19ee0157eacf64f0a3922f99c92778e317a61d1bedcbcb4b",
+      "fields": [
+        {
+          "offset": 23,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 65,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 104,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 23,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 65,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        },
+        {
+          "offset": 104,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        8
+      ],
+      "original_function": {
+        "address": "0x0061FC33",
+        "size": "179",
+        "span_end": "0x0061FCE5",
+        "current_name": "FUN_0061fc33",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FC33",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FC33",
+        "size": "179",
+        "span_end": "0x0061FCE5",
+        "current_name": "FUN_0061fc33",
+        "proposed_name": "CD3DXSzStack::Push",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0061FC33",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x00618EC7",
+      "size": 224,
+      "symbol": "?Decode@CD3DXCodec_D3DX_A16R16G16B16@@UAEXIIPAUD3DXCOLOR@@@Z",
+      "member": "obj\\i386\\cd3dxcodec.obj",
+      "member_offset": 1376096,
+      "member_sha256": "f7e31f5ccd68527623b211afc1c27ecdabc4858dd7f8f09d61d6a132ea422f4e",
+      "source_sha256": "fa93de2b7c284a04ff79571ddb775a29f00480d0b014807a50fb2b738b6b67ab",
+      "body_sha256": "7e79a178ea787f8ee02cb3ab121af2d3173b94c1c8842651f6734404ff2ed024",
+      "fields": [
+        {
+          "offset": 71,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__aullshr",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 77,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@37800080",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 95,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 129,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 154,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 214,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 71,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__aullshr",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00643AF0",
+          "kind": "callee"
+        },
+        {
+          "offset": 77,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@37800080",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DAA4",
+          "kind": "scalar",
+          "literal_hex": "80008037"
+        },
+        {
+          "offset": 95,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 129,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 154,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 214,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00615FB7",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        6
+      ],
+      "original_function": {
+        "address": "0x00618EC7",
+        "size": "224",
+        "span_end": "0x00618FA6",
+        "current_name": "FUN_00618ec7",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00618EC7",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00618EC7",
+        "size": "224",
+        "span_end": "0x00618FA6",
+        "current_name": "FUN_00618ec7",
+        "proposed_name": "CD3DXCodec_D3DX_A16R16G16B16::Decode",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x00618EC7",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x006111EA",
+      "size": 701,
+      "symbol": "?TF_SetupTriangle@@YAPAEIIH@Z",
+      "member": "obj\\i386\\cd3dxblt.obj",
+      "member_offset": 1477738,
+      "member_sha256": "2180cb784f19c5f329ba2682ab3e95ae6fed8195bd3b7ca0852c91ed0146195a",
+      "source_sha256": "b6eb50e0967728991d576545792d5f83df56d10079b54c59b90ac43c950bbe61",
+      "body_sha256": "1ff3a9929a11291cded84315f9e1996b760b7808fc99f39f14e26ea3cc8dd093",
+      "fields": [
+        {
+          "offset": 45,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 64,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 96,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 119,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 135,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 141,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 157,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 162,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 186,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 251,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 270,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 283,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 308,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 351,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_floor",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 358,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 401,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 436,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3727c5ac",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 513,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 533,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 633,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3727c5ac",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 45,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 64,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 96,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657478",
+          "kind": "scalar",
+          "literal_hex": "0000003f"
+        },
+        {
+          "offset": 119,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 135,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 141,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657478",
+          "kind": "scalar",
+          "literal_hex": "0000003f"
+        },
+        {
+          "offset": 157,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065747C",
+          "kind": "scalar",
+          "literal_hex": "0000803f"
+        },
+        {
+          "offset": 162,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 186,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 251,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 270,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@4f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D334",
+          "kind": "scalar",
+          "literal_hex": "0000804f"
+        },
+        {
+          "offset": 283,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657478",
+          "kind": "scalar",
+          "literal_hex": "0000003f"
+        },
+        {
+          "offset": 308,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065782C",
+          "kind": "scalar",
+          "literal_hex": "00000000"
+        },
+        {
+          "offset": 351,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_floor",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006439C0",
+          "kind": "callee"
+        },
+        {
+          "offset": 358,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 401,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065747C",
+          "kind": "scalar",
+          "literal_hex": "0000803f"
+        },
+        {
+          "offset": 436,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3727c5ac",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DA50",
+          "kind": "scalar",
+          "literal_hex": "acc52737"
+        },
+        {
+          "offset": 513,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065782C",
+          "kind": "scalar",
+          "literal_hex": "00000000"
+        },
+        {
+          "offset": 533,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065747C",
+          "kind": "scalar",
+          "literal_hex": "0000803f"
+        },
+        {
+          "offset": 633,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3727c5ac",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DA50",
+          "kind": "scalar",
+          "literal_hex": "acc52737"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        35
+      ],
+      "original_function": {
+        "address": "0x006111EA",
+        "size": "701",
+        "span_end": "0x006114A6",
+        "current_name": "FUN_006111ea",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x006111EA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x006111EA",
+        "size": "701",
+        "span_end": "0x006114A6",
+        "current_name": "FUN_006111ea",
+        "proposed_name": "TF_SetupTriangle",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x006111EA",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060EC42",
+      "size": 195,
+      "symbol": "?Initialize@CD3DXImage@@QAEJPAUD3DX_BLT@@@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "85d8e91423b7aaf5fd8ad3cade5844e0e7e01472731bf622291d6f88e5f6579b",
+      "body_sha256": "217dad479a95cd64f39cbbd2194664d537962998de0ceadaacc4cbb535b1b6d5",
+      "fields": [
+        {
+          "offset": 18,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 38,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 18,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        },
+        {
+          "offset": 38,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        12
+      ],
+      "original_function": {
+        "address": "0x0060EC42",
+        "size": "195",
+        "span_end": "0x0060ED04",
+        "current_name": "FUN_0060ec42",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060EC42",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060EC42",
+        "size": "195",
+        "span_end": "0x0060ED04",
+        "current_name": "FUN_0060ec42",
+        "proposed_name": "CD3DXImage::Initialize",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060EC42",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060ED05",
+      "size": 1814,
+      "symbol": "?LoadDIB@CD3DXImage@@AAEJPBXK@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "e1f4e52d2873de99154fdc08c21a59860ede6068c31e0d4a8a7e814104b76b88",
+      "body_sha256": "a301f9c11aeb21d63fe28796b96c2126df581404e787d53581ae145f7ea11a41",
+      "fields": [
+        {
+          "offset": 842,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 1122,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 842,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 1122,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        146
+      ],
+      "original_function": {
+        "address": "0x0060ED05",
+        "size": "1814",
+        "span_end": "0x0060F41A",
+        "current_name": "FUN_0060ed05",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060ED05",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060ED05",
+        "size": "1814",
+        "span_end": "0x0060F41A",
+        "current_name": "FUN_0060ed05",
+        "proposed_name": "CD3DXImage::LoadDIB",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060ED05",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060F41B",
+      "size": 740,
+      "symbol": "?SaveDIB@CD3DXImage@@AAEJPAXH@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "d18fe6a01f23337603e91e7fb872decb0ec1df168ccaeebe698fc7368705604a",
+      "body_sha256": "c89cafa137f4dcef5ea689ecc339587ffa114dcf6cc0ccdef29e423f4a0fee9c",
+      "fields": [
+        {
+          "offset": 554,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 562,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 661,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 692,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 724,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 554,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657124",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WriteFile"
+        },
+        {
+          "offset": 562,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657124",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WriteFile"
+        },
+        {
+          "offset": 661,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657124",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WriteFile"
+        },
+        {
+          "offset": 692,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657124",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WriteFile"
+        },
+        {
+          "offset": 724,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657124",
+          "kind": "import",
+          "dll": "KERNEL32.dll",
+          "name": "WriteFile"
+        }
+      ],
+      "indirect_call_count": 6,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        17
+      ],
+      "original_function": {
+        "address": "0x0060F41B",
+        "size": "740",
+        "span_end": "0x0060F6FE",
+        "current_name": "FUN_0060f41b",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060F41B",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060F41B",
+        "size": "740",
+        "span_end": "0x0060F6FE",
+        "current_name": "FUN_0060f41b",
+        "proposed_name": "CD3DXImage::SaveDIB",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060F41B",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060F9D1",
+      "size": 1191,
+      "symbol": "?LoadTGA@CD3DXImage@@AAEJPBXK@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "6c4eef8d179fabe4b3d44c09fca9057b0ee2629e065bf81bdd4d8aeb59bf9536",
+      "body_sha256": "eecdce0a6370196a0b3b335a0d9715a15220586e2219acb3a1ae93d04b4098cc",
+      "fields": [
+        {
+          "offset": 421,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 896,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 421,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        },
+        {
+          "offset": 896,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        73
+      ],
+      "original_function": {
+        "address": "0x0060F9D1",
+        "size": "1191",
+        "span_end": "0x0060FE77",
+        "current_name": "FUN_0060f9d1",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060F9D1",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060F9D1",
+        "size": "1191",
+        "span_end": "0x0060FE77",
+        "current_name": "FUN_0060f9d1",
+        "proposed_name": "CD3DXImage::LoadTGA",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060F9D1",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0060FE78",
+      "size": 646,
+      "symbol": "?LoadPPM@CD3DXImage@@AAEJPBXK@Z",
+      "member": "obj\\i386\\cd3dximage.obj",
+      "member_offset": 1516190,
+      "member_sha256": "1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87",
+      "source_sha256": "b14b9faae974311552caa773ba36c6df0dc3dcdc05f195515e9613da6cd5262a",
+      "body_sha256": "5fc5280132d1bcbf614e4bf01342ad47a1f04a54e2374144d2b54dc690683da4",
+      "fields": [
+        {
+          "offset": 129,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isspace",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 184,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isspace",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 198,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isdigit",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 395,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 129,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isspace",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642879",
+          "kind": "callee"
+        },
+        {
+          "offset": 184,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isspace",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642879",
+          "kind": "callee"
+        },
+        {
+          "offset": 198,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_isdigit",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642800",
+          "kind": "callee"
+        },
+        {
+          "offset": 395,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        47
+      ],
+      "original_function": {
+        "address": "0x0060FE78",
+        "size": "646",
+        "span_end": "0x006100FD",
+        "current_name": "FUN_0060fe78",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060FE78",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060FE78",
+        "size": "646",
+        "span_end": "0x006100FD",
+        "current_name": "FUN_0060fe78",
+        "proposed_name": "CD3DXImage::LoadPPM",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0060FE78",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x0063B803",
+      "size": 993,
+      "symbol": "?jpeg_idct_float@D3DX@@YAXPAUjpeg_decompress_struct@1@PAUjpeg_component_info@1@PAFPAPAEI@Z",
+      "member": "obj\\i386\\jidctflt.obj",
+      "member_offset": 1686724,
+      "member_sha256": "b92eebbc22aebd0a5dff0c06c35281f5a134c7bfd4cd9d19ec67967fa4471ec5",
+      "source_sha256": "91cfd8a3c782578a423499681bc3bf1eb8c4924809a018b536f3c54a957a8b8b",
+      "body_sha256": "73edad014bf9f98a595d7ce314239aad1d1fd60c2e1c43fe13d291b57feef171",
+      "fields": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3fb504f3",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 26,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3fec835e",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 424,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@40273d75",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 450,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f8a8bd4",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 703,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@40273d75",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 734,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f8a8bd4",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 755,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 781,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 811,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 839,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 866,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 891,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 919,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 947,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3fb504f3",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609C4",
+          "kind": "scalar",
+          "literal_hex": "f304b53f"
+        },
+        {
+          "offset": 26,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3fec835e",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609C0",
+          "kind": "scalar",
+          "literal_hex": "5e83ec3f"
+        },
+        {
+          "offset": 424,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@40273d75",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609BC",
+          "kind": "scalar",
+          "literal_hex": "753d2740"
+        },
+        {
+          "offset": 450,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f8a8bd4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609B8",
+          "kind": "scalar",
+          "literal_hex": "d48b8a3f"
+        },
+        {
+          "offset": 703,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@40273d75",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609BC",
+          "kind": "scalar",
+          "literal_hex": "753d2740"
+        },
+        {
+          "offset": 734,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__real@3f8a8bd4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006609B8",
+          "kind": "scalar",
+          "literal_hex": "d48b8a3f"
+        },
+        {
+          "offset": 755,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 781,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 811,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 839,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 866,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 891,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 919,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        },
+        {
+          "offset": 947,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__ftol",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006436FC",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        1,
+        4
+      ],
+      "original_function": {
+        "address": "0x0063B803",
+        "size": "993",
+        "span_end": "0x0063BBE3",
+        "current_name": "FUN_0063b803",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0063B803",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0063B803",
+        "size": "993",
+        "span_end": "0x0063BBE3",
+        "current_name": "FUN_0063b803",
+        "proposed_name": "D3DX::jpeg_idct_float",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x0063B803",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    },
+    {
+      "address": "0x00629921",
+      "size": 66,
+      "symbol": "?png_create_struct@D3DX@@YAPAXH@Z",
+      "member": "obj\\i386\\pngmem.obj",
+      "member_offset": 1882814,
+      "member_sha256": "d032988cc07ec6785c5e3df65cb9487a3746ff01f31261d69b152d950f3f3326",
+      "source_sha256": "c45f7106751fad06256988d1360c9fa2ff08c9717a3040153239294fabd28d1c",
+      "body_sha256": "3018f4c1fe9e072946cb4c0178c78fddf532ef1f379624783c5734fce148bae4",
+      "fields": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 27,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644331",
+          "kind": "callee"
+        }
+      ],
+      "indirect_call_count": 0,
+      "extent_basis": "single-function-complete-code-section",
+      "cfg": [
+        2,
+        4
+      ],
+      "original_function": {
+        "address": "0x00629921",
+        "size": "66",
+        "span_end": "0x00629962",
+        "current_name": "FUN_00629921",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00629921",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00629921",
+        "size": "66",
+        "span_end": "0x00629962",
+        "current_name": "FUN_00629921",
+        "proposed_name": "D3DX::png_create_struct",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields",
+        "owner": "library",
+        "notes": "Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
+      },
+      "accepted_origin": {
+        "address": "0x00629921",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields",
+        "evidence_id": "R184"
+      }
+    }
+  ],
+  "retained": [
+    {
+      "file": "config/sdk-origin-evidence.csv",
+      "address": "0x00615FB7",
+      "record": {
+        "address": "0x00615FB7",
+        "size": "112",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxcodec.obj",
+        "member_offset": "1376096",
+        "coff_symbol": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+        "body_sha256": "7fb5924b14f1ade09408701cdc67970494ffa5bf7d8d8341ba78aee7dedff5eb",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R008"
+      },
+      "requested_symbol": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+      "primary_symbol": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+      "library": "d3dx8.lib",
+      "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+      "member_sha256": "f7e31f5ccd68527623b211afc1c27ecdabc4858dd7f8f09d61d6a132ea422f4e",
+      "source_size": 112,
+      "source_sha256": "7fb5924b14f1ade09408701cdc67970494ffa5bf7d8d8341ba78aee7dedff5eb",
+      "fields": [],
+      "bindings": [],
+      "function": {
+        "address": "0x00615FB7",
+        "size": "112",
+        "span_end": "0x00616026",
+        "current_name": "FUN_00615fb7",
+        "proposed_name": "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x00615FB7",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "ledger_body_sha256": "7fb5924b14f1ade09408701cdc67970494ffa5bf7d8d8341ba78aee7dedff5eb"
+    },
+    {
+      "file": "config/runtime-origin-evidence.csv",
+      "address": "0x006436FC",
+      "record": {
+        "address": "0x006436FC",
+        "size": "39",
+        "library": "libcmt.lib",
+        "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+        "member": "..\\build\\intel\\mt_obj\\ftol.obj",
+        "member_offset": "2658734",
+        "coff_symbol": "__ftol",
+        "body_sha256": "d0a2aca68648a0ae9d5cbfae1b276d4a64d4f797fc0c60f28b64096cdfa3148c",
+        "relocation_count": "0",
+        "extent_basis": "function-auxiliary-record",
+        "evidence_id": "R006"
+      },
+      "requested_symbol": "__ftol",
+      "primary_symbol": "__ftol",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "7e963d1d1a05662ce35b8cc93b79e4c4061a75fccdfdf24a50a6310f80c3178d",
+      "source_size": 39,
+      "source_sha256": "d0a2aca68648a0ae9d5cbfae1b276d4a64d4f797fc0c60f28b64096cdfa3148c",
+      "fields": [],
+      "bindings": [],
+      "function": {
+        "address": "0x006436FC",
+        "size": "39",
+        "span_end": "0x00643722",
+        "current_name": "__ftol",
+        "proposed_name": "__ftol",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R006; complete COFF function-auxiliary extent and all-byte runtime archive identity",
+        "owner": "library",
+        "notes": "Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names"
+      },
+      "origin": {
+        "address": "0x006436FC",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "vendor-archive-corroborated",
+        "evidence_id": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+      },
+      "ledger_body_sha256": "d0a2aca68648a0ae9d5cbfae1b276d4a64d4f797fc0c60f28b64096cdfa3148c"
+    },
+    {
+      "file": "config/floor-math-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x006439C0",
+      "record": {
+        "member_offset": 2796320,
+        "member": "..\\build\\intel\\mt_obj\\floor_pentium4.obj",
+        "member_sha256": "dd163f45e5351678ae34315539578c924ab1ee95f049467fcdd9845bbaf78e20",
+        "address": "0x006439C0",
+        "coff_symbol": "_floor",
+        "size": 64,
+        "code_size": 64,
+        "code_regions": [
+          {
+            "offset": 0,
+            "size": 64
+          }
+        ],
+        "span_end": "0x006439FF",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "3c9a4e1210413bea0a0515de8c616aac6809352db37fe44fb7c5dae0ba78a6d7",
+        "body_sha256": "ad90295c2305cc509b43002ba8c052260ba8c69d296c07e9d9c8c79024144925",
+        "relocation_bindings": [
+          {
+            "offset": 2,
+            "type": "DIR32",
+            "symbol": "___use_sse2_mathfcns",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0068FBA0",
+            "target_kind": "state"
+          },
+          {
+            "offset": 9,
+            "type": "REL32",
+            "symbol": "__floor_default",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064E980",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x0064E980",
+              "source_member_offset": 2648162,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__floor_default",
+                "offset": 0,
+                "section": 3,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "offset": 58,
+            "type": "REL32",
+            "symbol": "__floor_default",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064E980",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x0064E980",
+              "source_member_offset": 2648162,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__floor_default",
+                "offset": 0,
+                "section": 3,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [],
+          "direct_calls": [],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x006439C7",
+            "target": "0x0064E980"
+          },
+          {
+            "site": "0x006439E3",
+            "target": "0x006439F4"
+          },
+          {
+            "site": "0x006439F8",
+            "target": "0x0064E980"
+          },
+          {
+            "site": "0x006439FE",
+            "target": "0x00643A00"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x006439C7",
+            "target": "0x0064E980",
+            "basis": "typed-REL32",
+            "field_offset": 9,
+            "code_entry": {
+              "owner": "0x0064E980",
+              "source_member_offset": 2648162,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__floor_default",
+                "offset": 0,
+                "section": 3,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "site": "0x006439F8",
+            "target": "0x0064E980",
+            "basis": "typed-REL32",
+            "field_offset": 58,
+            "code_entry": {
+              "owner": "0x0064E980",
+              "source_member_offset": 2648162,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__floor_default",
+                "offset": 0,
+                "section": 3,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "site": "0x006439FE",
+            "target": "0x00643A00",
+            "basis": "same-section-shared-entry",
+            "owner": "0x00643A00",
+            "source_section": 1,
+            "source_target_offset": 64,
+            "source_offset": 0
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x006439C0",
+            "mnemonic": "cmp",
+            "operands": "dword ptr [0x68fba0], 0"
+          },
+          {
+            "site": "0x006439C7",
+            "mnemonic": "je",
+            "operands": "0x64e980"
+          },
+          {
+            "site": "0x006439CD",
+            "mnemonic": "sub",
+            "operands": "esp, 8"
+          },
+          {
+            "site": "0x006439D0",
+            "mnemonic": "stmxcsr",
+            "operands": "dword ptr [esp + 4]"
+          },
+          {
+            "site": "0x006439D5",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [esp + 4]"
+          },
+          {
+            "site": "0x006439D9",
+            "mnemonic": "and",
+            "operands": "eax, 0x1f80"
+          },
+          {
+            "site": "0x006439DE",
+            "mnemonic": "cmp",
+            "operands": "eax, 0x1f80"
+          },
+          {
+            "site": "0x006439E3",
+            "mnemonic": "jne",
+            "operands": "0x6439f4"
+          },
+          {
+            "site": "0x006439E5",
+            "mnemonic": "fnstcw",
+            "operands": "word ptr [esp]"
+          },
+          {
+            "site": "0x006439E8",
+            "mnemonic": "mov",
+            "operands": "ax, word ptr [esp]"
+          },
+          {
+            "site": "0x006439EC",
+            "mnemonic": "and",
+            "operands": "ax, 0x7f"
+          },
+          {
+            "site": "0x006439F0",
+            "mnemonic": "cmp",
+            "operands": "ax, 0x7f"
+          },
+          {
+            "site": "0x006439F4",
+            "mnemonic": "lea",
+            "operands": "esp, [esp + 8]"
+          },
+          {
+            "site": "0x006439F8",
+            "mnemonic": "jne",
+            "operands": "0x64e980"
+          },
+          {
+            "site": "0x006439FE",
+            "mnemonic": "jmp",
+            "operands": "0x643a00"
+          }
+        ],
+        "source_definition": {
+          "symbol": "_floor",
+          "offset": 0,
+          "section": 1,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 289
+      },
+      "requested_symbol": "_floor",
+      "primary_symbol": "_floor",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "dd163f45e5351678ae34315539578c924ab1ee95f049467fcdd9845bbaf78e20",
+      "source_size": 64,
+      "source_sha256": "3c9a4e1210413bea0a0515de8c616aac6809352db37fe44fb7c5dae0ba78a6d7",
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "___use_sse2_mathfcns",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 9,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__floor_default",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 58,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__floor_default",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "___use_sse2_mathfcns",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068FBA0",
+          "target_kind": "state"
+        },
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "__floor_default",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064E980",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x0064E980",
+            "source_member_offset": 2648162,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "__floor_default",
+              "offset": 0,
+              "section": 3,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        },
+        {
+          "offset": 58,
+          "type": "REL32",
+          "symbol": "__floor_default",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064E980",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x0064E980",
+            "source_member_offset": 2648162,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "__floor_default",
+              "offset": 0,
+              "section": 3,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        }
+      ],
+      "function": {
+        "address": "0x006439C0",
+        "size": "64",
+        "span_end": "0x006439FF",
+        "current_name": "FUN_006439c0",
+        "proposed_name": "_floor",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R148; config/floor-math-origin-evidence.json; complete floor own AUX and whole defining wrapper/SSE carrier, independently bound whole default/error/code/data/COMMON context and actual SDK controls",
+        "owner": "library",
+        "notes": "Complete 64-byte _floor own AUX reconciles the original 289-byte carrier; the entire contiguous 225-byte __floor_pentium4 owner at +64 is retained without inventing an inventory candidate. All 289 carrier bytes, ten independently bound fields, five SSE returns, both dispatch routes and signed-fraction/zero/NaN/error paths compare unmasked. The whole 80-byte five-constant section is bound from its actual base, retaining the interior Bns anchor. Whole ceil/modf alternative carriers prevent identical wrapper shape from proving operation identity. Independently retained SSE COMMON and complete R139 default/R130 libm-error owners preserve their origins through full R146/R139 cold replay. Actual SDK records and six complete natural controls cold-build with every emitted code/data section covered. Original private declarations, external inputs, live rounding/exception state and numerical/runtime outcomes remain unknown; no game owner layout, source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x006439C0",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-floor-carrier-default-sse-common-sdk-provenance",
+        "evidence_id": "R148"
+      },
+      "ledger_body_sha256": "ad90295c2305cc509b43002ba8c052260ba8c69d296c07e9d9c8c79024144925"
+    },
+    {
+      "file": "config/input-format-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00642879",
+      "record": {
+        "member_offset": 132622,
+        "member": "build\\intel\\mt_obj\\_ctype.obj",
+        "member_sha256": "fbfc59a1abe4092678bac498961a4835b76a5d3981a26bd9334e55514b1a7fed",
+        "address": "0x00642879",
+        "coff_symbol": "_isspace",
+        "size": 58,
+        "code_size": 58,
+        "span_end": "0x006428B2",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "fe9472ef5c3e944a67fa70b922fa2a8d9af8342480f42dc951f6c0f0ccbe4881",
+        "body_sha256": "8a3001644f561957d17d8f9512b02f14d1b8b419f0e0de02b1bdb9b683097bd2",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "__getptd",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00646196",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00646196",
+              "source_member_offset": 1724384,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__getptd",
+                "offset": 0,
+                "section": 13,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "offset": 10,
+            "type": "DIR32",
+            "symbol": "___ptlocinfo",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0066FF7C",
+            "target_kind": "state"
+          },
+          {
+            "offset": 17,
+            "type": "REL32",
+            "symbol": "___updatetlocinfo",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642DEB",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00642DEB",
+              "source_member_offset": 1444790,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "___updatetlocinfo",
+                "offset": 0,
+                "section": 38,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "offset": 35,
+            "type": "REL32",
+            "symbol": "___isctype_mt",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064980B",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x0064980B",
+              "source_member_offset": 166568,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "___isctype_mt",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [
+            {
+              "site": "0x006428A3",
+              "cleanup": 0
+            },
+            {
+              "site": "0x006428B2",
+              "cleanup": 0
+            }
+          ],
+          "direct_calls": [
+            {
+              "site": "0x00642879",
+              "target": "0x00646196"
+            },
+            {
+              "site": "0x00642889",
+              "target": "0x00642DEB"
+            },
+            {
+              "site": "0x0064289B",
+              "target": "0x0064980B"
+            }
+          ],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x00642887",
+            "target": "0x0064288E"
+          },
+          {
+            "site": "0x00642892",
+            "target": "0x006428A4"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x00642879",
+            "target": "0x00646196",
+            "basis": "typed-REL32",
+            "field_offset": 1,
+            "code_entry": {
+              "owner": "0x00646196",
+              "source_member_offset": 1724384,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "__getptd",
+                "offset": 0,
+                "section": 13,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "site": "0x00642889",
+            "target": "0x00642DEB",
+            "basis": "typed-REL32",
+            "field_offset": 17,
+            "code_entry": {
+              "owner": "0x00642DEB",
+              "source_member_offset": 1444790,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "___updatetlocinfo",
+                "offset": 0,
+                "section": 38,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          },
+          {
+            "site": "0x0064289B",
+            "target": "0x0064980B",
+            "basis": "typed-REL32",
+            "field_offset": 35,
+            "code_entry": {
+              "owner": "0x0064980B",
+              "source_member_offset": 166568,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "___isctype_mt",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00642879",
+            "mnemonic": "call",
+            "operands": "0x646196"
+          },
+          {
+            "site": "0x0064287E",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax + 0x64]"
+          },
+          {
+            "site": "0x00642881",
+            "mnemonic": "cmp",
+            "operands": "eax, dword ptr [0x66ff7c]"
+          },
+          {
+            "site": "0x00642887",
+            "mnemonic": "je",
+            "operands": "0x64288e"
+          },
+          {
+            "site": "0x00642889",
+            "mnemonic": "call",
+            "operands": "0x642deb"
+          },
+          {
+            "site": "0x0064288E",
+            "mnemonic": "cmp",
+            "operands": "dword ptr [eax + 0x28], 1"
+          },
+          {
+            "site": "0x00642892",
+            "mnemonic": "jle",
+            "operands": "0x6428a4"
+          },
+          {
+            "site": "0x00642894",
+            "mnemonic": "push",
+            "operands": "8"
+          },
+          {
+            "site": "0x00642896",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "site": "0x0064289A",
+            "mnemonic": "push",
+            "operands": "eax"
+          },
+          {
+            "site": "0x0064289B",
+            "mnemonic": "call",
+            "operands": "0x64980b"
+          },
+          {
+            "site": "0x006428A0",
+            "mnemonic": "add",
+            "operands": "esp, 0xc"
+          },
+          {
+            "site": "0x006428A3",
+            "mnemonic": "ret",
+            "operands": ""
+          },
+          {
+            "site": "0x006428A4",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax + 0x48]"
+          },
+          {
+            "site": "0x006428A7",
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [esp + 4]"
+          },
+          {
+            "site": "0x006428AB",
+            "mnemonic": "movzx",
+            "operands": "eax, byte ptr [eax + ecx*2]"
+          },
+          {
+            "site": "0x006428AF",
+            "mnemonic": "and",
+            "operands": "eax, 8"
+          },
+          {
+            "site": "0x006428B2",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "source_definition": {
+          "symbol": "_isspace",
+          "offset": 0,
+          "section": 17,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 58
+      },
+      "requested_symbol": "_isspace",
+      "primary_symbol": "_isspace",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "fbfc59a1abe4092678bac498961a4835b76a5d3981a26bd9334e55514b1a7fed",
+      "source_size": 58,
+      "source_sha256": "fe9472ef5c3e944a67fa70b922fa2a8d9af8342480f42dc951f6c0f0ccbe4881",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__getptd",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 10,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "___ptlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "___updatetlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 35,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "___isctype_mt",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "__getptd",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646196",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x00646196",
+            "source_member_offset": 1724384,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "__getptd",
+              "offset": 0,
+              "section": 13,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        },
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___ptlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066FF7C",
+          "target_kind": "state"
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "___updatetlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642DEB",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x00642DEB",
+            "source_member_offset": 1444790,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "___updatetlocinfo",
+              "offset": 0,
+              "section": 38,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "___isctype_mt",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064980B",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x0064980B",
+            "source_member_offset": 166568,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "___isctype_mt",
+              "offset": 0,
+              "section": 2,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        }
+      ],
+      "function": {
+        "address": "0x00642879",
+        "size": "58",
+        "span_end": "0x006428B2",
+        "current_name": "_isspace",
+        "proposed_name": "_isspace",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R135; config/input-format-origin-evidence.json; scripts/repo-python scripts/verify-input-format-origins.py",
+        "owner": "library",
+        "notes": "Origin only; complete own AUX, full scan/NLS source-defined data and SEH/FP callbacks, all typed fields and retained output/stream/locale/runtime graph; runtime mutable state unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00642879",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-input-format-code-data-seh-nls-api-abi-provenance",
+        "evidence_id": "R135"
+      },
+      "ledger_body_sha256": "8a3001644f561957d17d8f9512b02f14d1b8b419f0e0de02b1bdb9b683097bd2"
+    },
+    {
+      "file": "config/standard-exception-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00640F15",
+      "record": {
+        "member_offset": 852956,
+        "member": "build\\intel\\mt_obj\\delete.obj",
+        "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+        "address": "0x00640F15",
+        "coff_symbol": "??3@YAXPAX@Z",
+        "size": 5,
+        "code_size": 5,
+        "code_regions": [
+          {
+            "offset": 0,
+            "size": 5
+          }
+        ],
+        "span_end": "0x00640F19",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+        "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "_free",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642A61",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [],
+          "direct_calls": [],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61",
+            "basis": "typed-REL32",
+            "field_offset": 1,
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00640F15",
+            "mnemonic": "jmp",
+            "operands": "0x642a61"
+          }
+        ],
+        "source_definition": {
+          "symbol": "??3@YAXPAX@Z",
+          "offset": 0,
+          "section": 2,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 5
+      },
+      "requested_symbol": "??3@YAXPAX@Z",
+      "primary_symbol": "??3@YAXPAX@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+      "source_size": 5,
+      "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642A61",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x00642A61",
+            "source_member_offset": 794604,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "_free",
+              "offset": 0,
+              "section": 2,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        }
+      ],
+      "function": {
+        "address": "0x00640F15",
+        "size": "5",
+        "span_end": "0x00640F19",
+        "current_name": "_free",
+        "proposed_name": "??3@YAXPAX@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "R142; config/standard-exception-origin-evidence.json; complete pinned own-AUX code, every typed field, full template/vtable/RTTI/scope graph and actual register/stack ABI",
+        "owner": "library",
+        "notes": "Complete 5-byte own AUX in build\\intel\\mt_obj\\delete.obj at archive member 852956; 1 independently bound fields. Complete standard exception/throw/frame graph, whole vtable/RTTI data, actual weak source records and full finally scope plus real SDK/natural controls replay. Original private implementations, throw record identities and linker input/search decisions remain unknown; no inferred complete private layout or conventional ABI, no source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00640F15",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-standard-exception-throw-frame-rtti-weak-scope-abi-provenance",
+        "evidence_id": "R142"
+      },
+      "ledger_body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002"
+    },
+    {
+      "file": "config/allocation-api-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x0064159D",
+      "record": {
+        "address": "0x0064159D",
+        "symbol": "??2@YAPAXI@Z",
+        "size": 14,
+        "span_end": "0x006415AA",
+        "decision": "library",
+        "member_offset": 856822,
+        "member": "build\\intel\\mt_obj\\new.obj",
+        "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+        "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+        "body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1",
+        "fields": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00644305"
+          }
+        ],
+        "instructions": [
+          {
+            "address": "0x0064159D",
+            "mnemonic": "push",
+            "operands": "1"
+          },
+          {
+            "address": "0x0064159F",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "address": "0x006415A3",
+            "mnemonic": "call",
+            "operands": "0x644305"
+          },
+          {
+            "address": "0x006415A8",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415A9",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415AA",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ]
+      },
+      "requested_symbol": "??2@YAPAXI@Z",
+      "primary_symbol": "??2@YAPAXI@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+      "source_size": 14,
+      "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+      "fields": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305"
+        }
+      ],
+      "function": {
+        "address": "0x0064159D",
+        "size": "14",
+        "span_end": "0x006415AA",
+        "current_name": "operator_new",
+        "proposed_name": "??2@YAPAXI@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R154; config/allocation-api-origin-evidence.json; complete vendor allocation API source, independently typed runtime fields, cold SDK operations and retained game context",
+        "owner": "library",
+        "notes": "Complete own COFF AUX extent, every return/tail, archive member and actual typed field compare unmasked. The 14-byte scalar-new owner passes actual flag 1 and the original size to independently accepted complete R120 __nh_malloc; complete array-new and array-delete tails route to different independently sourced scalar owners. Eight whole natural SDK call controls / 196 bytes, every ordinary code/data section / 212 bytes, full 16-byte observation layout and eight actual headers cold-build. Complete R120 allocator/handler/data/API/EH provenance and R153 game buffer lifetime/source profiles cold-replay; original accepted evidence, extents and game declarations remain unchanged. Source ownership is library; original linker inputs, user handlers and live allocation outcomes remain unknown. No source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0064159D",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-allocation-api-typed-sdk-runtime-and-game-context",
+        "evidence_id": "R154"
+      },
+      "ledger_body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1"
+    },
+    {
+      "file": "config/floating-point-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00642800",
+      "record": {
+        "member_offset": 132622,
+        "member": "build\\intel\\mt_obj\\_ctype.obj",
+        "member_sha256": "fbfc59a1abe4092678bac498961a4835b76a5d3981a26bd9334e55514b1a7fed",
+        "code_size": 58,
+        "address": "0x00642800",
+        "coff_symbol": "_isdigit",
+        "size": 58,
+        "span_end": "0x00642839",
+        "decision": "library",
+        "extent_basis": "function-auxiliary-record",
+        "source_sha256": "db8a89d32ccb2cef49b0c75b808c11966d98ce94c610d6502a1bd7fda779ac2e",
+        "body_sha256": "113b1dc69a2c3cc4f38587ce8aee5b326b36fb16f88a567bd4bf6d4c3dba4aca",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "__getptd",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00646196",
+            "target_kind": "callee"
+          },
+          {
+            "offset": 10,
+            "type": "DIR32",
+            "symbol": "___ptlocinfo",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0066FF7C",
+            "target_kind": "state"
+          },
+          {
+            "offset": 17,
+            "type": "REL32",
+            "symbol": "___updatetlocinfo",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642DEB",
+            "target_kind": "callee"
+          },
+          {
+            "offset": 35,
+            "type": "REL32",
+            "symbol": "___isctype_mt",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0064980B",
+            "target_kind": "callee"
+          }
+        ],
+        "body_facts": {
+          "returns": [
+            {
+              "site": "0x0064282A",
+              "cleanup": 0
+            },
+            {
+              "site": "0x00642839",
+              "cleanup": 0
+            }
+          ],
+          "direct_calls": [
+            {
+              "site": "0x00642800",
+              "target": "0x00646196"
+            },
+            {
+              "site": "0x00642810",
+              "target": "0x00642DEB"
+            },
+            {
+              "site": "0x00642822",
+              "target": "0x0064980B"
+            }
+          ],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x0064280E",
+            "target": "0x00642815"
+          },
+          {
+            "site": "0x00642819",
+            "target": "0x0064282B"
+          }
+        ],
+        "indirect_calls": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00642800",
+            "mnemonic": "call",
+            "operands": "0x646196"
+          },
+          {
+            "site": "0x00642805",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax + 0x64]"
+          },
+          {
+            "site": "0x00642808",
+            "mnemonic": "cmp",
+            "operands": "eax, dword ptr [0x66ff7c]"
+          },
+          {
+            "site": "0x0064280E",
+            "mnemonic": "je",
+            "operands": "0x642815"
+          },
+          {
+            "site": "0x00642810",
+            "mnemonic": "call",
+            "operands": "0x642deb"
+          },
+          {
+            "site": "0x00642815",
+            "mnemonic": "cmp",
+            "operands": "dword ptr [eax + 0x28], 1"
+          },
+          {
+            "site": "0x00642819",
+            "mnemonic": "jle",
+            "operands": "0x64282b"
+          },
+          {
+            "site": "0x0064281B",
+            "mnemonic": "push",
+            "operands": "4"
+          },
+          {
+            "site": "0x0064281D",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "site": "0x00642821",
+            "mnemonic": "push",
+            "operands": "eax"
+          },
+          {
+            "site": "0x00642822",
+            "mnemonic": "call",
+            "operands": "0x64980b"
+          },
+          {
+            "site": "0x00642827",
+            "mnemonic": "add",
+            "operands": "esp, 0xc"
+          },
+          {
+            "site": "0x0064282A",
+            "mnemonic": "ret",
+            "operands": ""
+          },
+          {
+            "site": "0x0064282B",
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax + 0x48]"
+          },
+          {
+            "site": "0x0064282E",
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [esp + 4]"
+          },
+          {
+            "site": "0x00642832",
+            "mnemonic": "movzx",
+            "operands": "eax, byte ptr [eax + ecx*2]"
+          },
+          {
+            "site": "0x00642836",
+            "mnemonic": "and",
+            "operands": "eax, 4"
+          },
+          {
+            "site": "0x00642839",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "ledger_size": 58,
+        "indirect_jumps": []
+      },
+      "requested_symbol": "_isdigit",
+      "primary_symbol": "_isdigit",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "fbfc59a1abe4092678bac498961a4835b76a5d3981a26bd9334e55514b1a7fed",
+      "source_size": 58,
+      "source_sha256": "db8a89d32ccb2cef49b0c75b808c11966d98ce94c610d6502a1bd7fda779ac2e",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__getptd",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 10,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "___ptlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "___updatetlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 35,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "___isctype_mt",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "__getptd",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00646196",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___ptlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066FF7C",
+          "target_kind": "state"
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "___updatetlocinfo",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642DEB",
+          "target_kind": "callee"
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "___isctype_mt",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064980B",
+          "target_kind": "callee"
+        }
+      ],
+      "function": {
+        "address": "0x00642800",
+        "size": "58",
+        "span_end": "0x00642839",
+        "current_name": "_isdigit",
+        "proposed_name": "_isdigit",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R124; config/floating-point-origin-evidence.json; scripts/repo-python scripts/verify-floating-point-origins.py",
+        "owner": "library",
+        "notes": "Complete own source extent, code, fields and defining dependencies reviewed; origin only; name follows vendor symbol"
+      },
+      "origin": {
+        "address": "0x00642800",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-fp-conversion-control-code-data-layout-api-eh-provenance",
+        "evidence_id": "R124"
+      },
+      "ledger_body_sha256": "113b1dc69a2c3cc4f38587ce8aee5b326b36fb16f88a567bd4bf6d4c3dba4aca"
+    },
+    {
+      "file": "config/runtime-cycle-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00644331",
+      "record": {
+        "member_offset": 816374,
+        "member": "build\\intel\\mt_obj\\malloc.obj",
+        "member_sha256": "d3b26ef5497560a5e2ffa46a36f5426f6c3bee71f50a0e8ec98c067ef97647d8",
+        "address": "0x00644331",
+        "coff_symbol": "_malloc",
+        "size": 18,
+        "span_end": "0x00644342",
+        "decision": "library",
+        "extent_basis": "function-auxiliary-record",
+        "source_sha256": "7f388340df849960003a441cc927c3ded189f49d9ea02af2e49fdd7ade73df0a",
+        "body_sha256": "107fe45d68df613d95e4e95f1f6840fb12af76a534519573067abb76f3aaa920",
+        "relocation_bindings": [
+          {
+            "offset": 2,
+            "type": "DIR32",
+            "symbol": "__newmode",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0068E700",
+            "target_kind": "state"
+          },
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00644305",
+            "target_kind": "callee"
+          }
+        ],
+        "body_facts": {
+          "returns": [
+            {
+              "site": "0x00644342",
+              "cleanup": 0
+            }
+          ],
+          "direct_calls": [
+            {
+              "site": "0x0064433B",
+              "target": "0x00644305"
+            }
+          ],
+          "vtable_writes": []
+        },
+        "branches": [],
+        "indirect_calls": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00644331",
+            "mnemonic": "push",
+            "operands": "dword ptr [0x68e700]"
+          },
+          {
+            "site": "0x00644337",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "site": "0x0064433B",
+            "mnemonic": "call",
+            "operands": "0x644305"
+          },
+          {
+            "site": "0x00644340",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "site": "0x00644341",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "site": "0x00644342",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ]
+      },
+      "requested_symbol": "_malloc",
+      "primary_symbol": "_malloc",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "d3b26ef5497560a5e2ffa46a36f5426f6c3bee71f50a0e8ec98c067ef97647d8",
+      "source_size": 18,
+      "source_sha256": "7f388340df849960003a441cc927c3ded189f49d9ea02af2e49fdd7ade73df0a",
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__newmode",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type": "DIR32",
+          "symbol": "__newmode",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0068E700",
+          "target_kind": "state"
+        },
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305",
+          "target_kind": "callee"
+        }
+      ],
+      "function": {
+        "address": "0x00644331",
+        "size": "18",
+        "span_end": "0x00644342",
+        "current_name": "_malloc",
+        "proposed_name": "_malloc",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R120; config/runtime-cycle-origin-evidence.json; complete source, typed code/data/import bindings and actual EH parent labels; scripts/verify-runtime-cycle-origins.py",
+        "owner": "library",
+        "notes": "Complete vendor runtime-cycle source and defining code/data/API/EH provenance; optional callback implementations and executable debug names remain unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00644331",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-runtime-cycle-with-code-data-api-eh-provenance",
+        "evidence_id": "R120"
+      },
+      "ledger_body_sha256": "107fe45d68df613d95e4e95f1f6840fb12af76a534519573067abb76f3aaa920"
+    },
+    {
+      "file": "config/runtime-origin-evidence.csv",
+      "address": "0x00642510",
+      "record": {
+        "address": "0x00642510",
+        "size": "61",
+        "library": "libcmt.lib",
+        "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+        "member": "build\\intel\\mt_obj\\chkstk.obj",
+        "member_offset": "1654494",
+        "coff_symbol": "__chkstk",
+        "body_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+        "relocation_count": "0",
+        "extent_basis": "function-auxiliary-record",
+        "evidence_id": "R006"
+      },
+      "requested_symbol": "__alloca_probe",
+      "primary_symbol": "__chkstk",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "247d433c8c3aa18924897bb2e9af619e0a038a524a8c266a4ccf44fc854fbe1a",
+      "source_size": 61,
+      "source_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+      "fields": [],
+      "bindings": [],
+      "function": {
+        "address": "0x00642510",
+        "size": "61",
+        "span_end": "0x0064254C",
+        "current_name": "__chkstk",
+        "proposed_name": "__chkstk",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R006; complete COFF function-auxiliary extent and all-byte runtime archive identity",
+        "owner": "library",
+        "notes": "Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names"
+      },
+      "origin": {
+        "address": "0x00642510",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "vendor-archive-corroborated",
+        "evidence_id": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+      },
+      "ledger_body_sha256": "f36f56e85a3b8f0b9f0aaa3f1a49f9bda1143c728ff69d6c27517e4f359a69b8",
+      "alias_definitions": [
+        {
+          "symbol": "__alloca_probe",
+          "offset": 0,
+          "section": 1,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "__chkstk",
+          "offset": 0,
+          "section": 1,
+          "type": 32,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "file": "config/runtime-leaf-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00643AF0",
+      "record": {
+        "address": "0x00643AF0",
+        "size": 31,
+        "library": "libcmt.lib",
+        "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+        "member": "build\\intel\\mt_obj\\ullshr.obj",
+        "member_offset": 883212,
+        "coff_symbol": "__aullshr",
+        "body_sha256": "909b1a39b7337f2fa8d8626167f578bf92643cf163ee37f401893b5b813db166",
+        "relocations": []
+      },
+      "requested_symbol": "__aullshr",
+      "primary_symbol": "__aullshr",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "8b8533531012b6212e580766d934370f47ccd46f9fadee44292694cb51a07d13",
+      "source_size": 31,
+      "source_sha256": "909b1a39b7337f2fa8d8626167f578bf92643cf163ee37f401893b5b813db166",
+      "fields": [],
+      "bindings": [],
+      "function": {
+        "address": "0x00643AF0",
+        "size": "31",
+        "span_end": "0x00643B0E",
+        "current_name": "__aullshr",
+        "proposed_name": "__aullshr",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R107; scripts/repo-python scripts/verify-runtime-leaf-origins.py",
+        "owner": "library",
+        "notes": "Complete pinned libcmt archive definition and target body; all COFF relocations explicit; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00643AF0",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-pinned-archive-body",
+        "evidence_id": "R107"
+      },
+      "ledger_body_sha256": "909b1a39b7337f2fa8d8626167f578bf92643cf163ee37f401893b5b813db166"
+    }
+  ],
+  "retained_sha256": {
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "config/runtime-origin-evidence.csv": "06e7b4d9ab9985ebecc0947b8df990af029145cdd1ce2e26ca3d2910ae67ed3b",
+    "config/floor-math-origin-evidence.json": "6280edfc7cc5e18c5ee48cdecdb0ae9a985ff3cc51462a549494aea20c30553a",
+    "config/input-format-origin-evidence.json": "903840c1618688e6d49e87aaada539815308f43fafb472a5ad30d560756bf4dc",
+    "config/standard-exception-origin-evidence.json": "13e2334a626c64d5cd3c32a08b5de968e88a0bc99c2761c86828573998514aa6",
+    "config/allocation-api-origin-evidence.json": "88471391a30ca23574ab4409b5504df592fee47d2e23c368bbc71b204eb6531c",
+    "config/floating-point-origin-evidence.json": "46f8cd47de1c6e1b5ab0e4bcf4a37661923d9fca94c7818902603ec00ace7102",
+    "config/runtime-cycle-origin-evidence.json": "221d67912ecbc23e87a25b09a0073f867a2bde1ceec995ad57a15342dc7d9420",
+    "config/runtime-leaf-origin-evidence.json": "30aa2df61561787fc739034fc1dba83f8010891f1de594fde11404bfa0fd6c23",
+    "scripts/verify-runtime-origins.py": "39cdee072566ed458ac46673bff9e0b480e3a3a8952808710e4a8d46a9428c62",
+    "scripts/verify-runtime-leaf-origins.py": "a0575fd6d7c120452985cf694897e134824210114f0b87ef2c69518bcd4339ae",
+    "scripts/verify-allocation-api-origins.py": "c6e96e6529a213f0e0d6f274ac0b21244112fc06136dff1a2aabda70ecad494d",
+    "scripts/verify-standard-exception-origins.py": "82722d368ecc40c2119b4ee9aca22c414d982ff87a52944546dfcd8f90dd74c4",
+    "scripts/verify-floor-math-origins.py": "873d4af84cb6cd3b29bb84edab5502e8a0cc5b5ebcc2d0389f502ca0508eec13",
+    "scripts/verify-input-format-origins.py": "80e1c7e5dc54610e9be3bb0bebdbab983ea0620eab8eb7eebf78103c081dff3d",
+    "scripts/verify-floating-point-origins.py": "cd7a2d70cf8f764104a20e8234bb479781e66e3977817450ce99f8eba4351237",
+    "scripts/verify-runtime-cycle-origins.py": "10a8c0551b07665ffacf00c2e8364b7d9536c4ec41e178634f44aec6dd499a4e",
+    "scripts/verify-sdk-origins.py": "bdacba65c26820bd33d67614d8cc92ccdb52b0ef8c6ce8e66898421c72c85f80"
+  },
+  "catalog": {
+    "??2@YAPAXI@Z": "0x0064159D",
+    "??3@YAXPAX@Z": "0x00640F15",
+    "?ColorKey@CD3DXCodec@@IAEXPAUD3DXCOLOR@@@Z": "0x00615FB7",
+    "__alloca_probe": "0x00642510",
+    "__aullshr": "0x00643AF0",
+    "__ftol": "0x006436FC",
+    "__imp__CloseHandle@4": "0x00657138",
+    "__imp__CreateFileA@28": "0x00657130",
+    "__imp__CreateFileMappingA@24": "0x00657088",
+    "__imp__CreateFileW@28": "0x0065708C",
+    "__imp__GetFileSize@8": "0x00657058",
+    "__imp__GetLastError@0": "0x00657080",
+    "__imp__GetVersionExA@4": "0x00657090",
+    "__imp__MapViewOfFile@20": "0x00657084",
+    "__imp__UnmapViewOfFile@4": "0x00657094",
+    "__imp__WideCharToMultiByte@32": "0x00657078",
+    "__imp__WriteFile@20": "0x00657124",
+    "__real@00000000": "0x0065782C",
+    "__real@3727c5ac": "0x0065DA50",
+    "__real@37800080": "0x0065DAA4",
+    "__real@3f000000": "0x00657478",
+    "__real@3f800000": "0x0065747C",
+    "__real@3f8a8bd4": "0x006609B8",
+    "__real@3f99999a": "0x0065834C",
+    "__real@3fb504f3": "0x006609C4",
+    "__real@3fec835e": "0x006609C0",
+    "__real@40273d75": "0x006609BC",
+    "__real@4f800000": "0x0065D334",
+    "_floor": "0x006439C0",
+    "_isdigit": "0x00642800",
+    "_isspace": "0x00642879",
+    "_malloc": "0x00644331"
+  },
+  "dependency_verifiers": [
+    "runtime",
+    "runtime-leaf",
+    "allocation-api",
+    "standard-exception",
+    "floor-math",
+    "sdk"
+  ]
+}
