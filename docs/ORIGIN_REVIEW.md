@@ -7586,3 +7586,110 @@ extents remain 872 / 1,952,956 bytes and the provisional denominator is
 from R139 `db26a05`, preserving its 60/60 cold replay across eleven objects.
 No affected exact unit needs another replay. The user's public MCP acceptance
 waiver remains in force. Private evidence is untracked; shared tools are read-only.
+
+## R143 — Complete derived RTTI-exception lifetime families
+
+R143 resolves the three existing handoff candidates as library origins:
+`0x00640D38`, `0x00640D74` and `0x00640DAF`. Each retains its complete
+11-byte own-AUX extent and both typed fields: 33 bytes and six fields in all.
+Replay `scripts/repo-python scripts/verify-derived-exception-origins.py` with
+`config/derived-exception-origin-evidence.json`. No source, mapping or exact
+credit is assigned. Original target names remain provisional.
+
+| Provisional source role | Destructor | Constructed vtable address point | Destruction-stage address point | Retained R038 compiler caller |
+| --- | --- | --- | --- | --- |
+| bad_cast | `0x00640D38` | `0x00660EB8` | `0x00660EB8` | `0x00640DF5` |
+| bad_typeid | `0x00640D74` | `0x00660EC4` | `0x00660EC4` | `0x00640E11` |
+| __non_rtti_object | `0x00640DAF` | `0x00660ED0` | `0x00660EC4` | `0x00640E2D` |
+
+**Target observations and whole source alternatives.** Each complete
+primary writes the destruction-stage vtable through ECX and tail-jumps
+straight to the complete R142 base exception destructor `0x00640CE4`.
+There is no standalone RET or fabricated intermediate bad_typeid destructor
+call. The last two source COFF bodies, including their two source relocation
+records, are identical. Their linked target bytes differ in the address-
+dependent REL32 tail displacement. This corrects the preceding handoff's
+statement that all eleven target bytes were equal. Both full source owners
+match both targets after independent relocation; the bad_cast owner matches
+only `0x00640D38` when its real vtable object is bound. All three complete
+source alternatives are retained and cold-read, with full own AUX extents,
+source definitions, every typed field and complete relocated results.
+Neither relocation masking nor a short destructor shape chooses class identity.
+
+The paired graph supplies context independently of that equal body. Six
+non-inventory message/copy constructors retain their own complete AUX:
+`0x00640D07` / 25, `0x00640D20` / 24, `0x00640D43` / 25,
+`0x00640D5C` / 24, `0x00640D7F` / 24 and `0x00640D97` / 24 bytes.
+The first two classes call complete base exception message/copy constructors;
+non-rtti construction calls the complete bad_typeid message/copy pair and
+then installs its own constructed vtable. Each preserves RET 4 and ECX member
+calling behavior. The whole 61-byte base message constructor at `0x00640C5D`
+allocates strlen-plus-one storage, conditionally copies the message and sets
+ownership to one even if allocation fails. The complete thirteen-byte what
+control at `0x00640CFA` retains the whole fallback literal. These eight
+non-inventory bodies / 220 bytes / seventeen fields gain no invented rows.
+
+**Complete defining data and callbacks.** Thirty-one whole vtable/RTTI/literal
+sections / 543 bytes / 48 fields close the three derived classes and the
+exception/type_info base metadata. The three constructed vtables occupy whole
+12-byte sections at `0x00660EB4`, `0x00660EC0` and `0x00660ECC`; their real
+address points are +4 and their locator prefixes and both callback slots are
+compared. Derived type descriptors preserve all 23, 25 and 32 source bytes and
+initial writable state. Base arrays preserve all nine, nine and thirteen bytes,
+including the byte after their last pointer. The non-rtti base sequence is
+non-rtti, bad_typeid, exception. Every locator, hierarchy, base descriptor,
+base-array pointer, type_info vtable and literal retains its actual full
+source section, typed fields and storage mutability.
+
+Five actual weak E records retain storage class 105, one AUX, their real
+fallback tags and search-characteristics two. Their corresponding G symbols
+have strong definitions in complete no-AUX code sections; the supplied whole
+archive has no strong E definition. Search mode two is not rewritten as a
+forced alias mode three. Actual derived vtable callbacks land on the three
+whole 28-byte R038 compiler controls, and each control's full source-bound
+REL32 field calls its paired destructor. The complete constructed vtable,
+RTTI and constructor graph identifies the source role context even where the
+standalone destructor owners remain equal alternatives. Original link inputs
+and search decisions beyond this supplied archive remain unknown.
+
+Ten complete anchors / 400 bytes / eighteen fields preserve five existing
+library origins (base destructor/copy constructor, strlen, malloc and strcpy)
+and five existing R038 compiler origins (the three derived deleting controls,
+exception and type_info). R142 replays its entire older dependency chain and
+the independent 53-body R038 cold proof. No compiler control is reclassified.
+
+**Compiler observations and acceptance.** The original stdexcpt.cpp is absent.
+The real supplied typeinfo.h declares complete SDK bad_cast and bad_typeid
+classes deriving from exception, and __non_rtti_object deriving from
+bad_typeid. The natural `probes/VC7DerivedExceptionLayout.cpp` uses those actual
+complete interfaces and separate complete inheritance models; it does not
+instantiate an incomplete reconstructed game owner. A cold 32-byte array
+reports four-byte pointers and twelve-byte SDK/model class sizes. All eleven
+actual included headers are hash-pinned. The explicit final /GR enables RTTI
+for this independent model, while /Zc:wchar_t satisfies the actual header;
+these are probe reproducibility settings, not a target-wide compiler profile.
+
+Twenty-three complete natural SDK constructor/copy/destructor/delete/member
+controls and model bodies / 1,017 bytes / 33 fields replay. All twenty generated
+RTTI/vtable data sections / 406 bytes / 33 fields replay from their complete
+bases. All three no-AUX generated scalar code sections / 132 bytes / six fields
+also replay. No short scalar, vtable address point or base-array pointer is
+substituted for its defining section.
+
+Thirty-one regression checks reject truncated extents, lost compiler ownership,
+swapped incoming destructor callbacks, wrong destruction-stage vtables, omitted
+locator prefixes/trailing array bytes, false intermediate calls, incorrect
+constructor/copy/cleanup ABI, changed weak search semantics, removed full
+source alternatives, partial generated sections and invented SDK/runtime
+claims. All 982 public checks pass. The full new/retained cold evidence replay
+passes once, followed by canonical ledger write/read-back guards; it was not
+repeated merely for the ledger update. Target/project/query attestation, all
+872 recorded authored extents, exact-input preservation, progress/scanner
+freshness and whitespace checks pass locally. Totals are 3,434 resolved
+(919 authored, 1,940 library, 575 compiler), 917 pending and 2,515 excluded.
+Source/mapping/exact remains 60 / 9,883 bytes; recorded authored extents remain
+872 / 1,952,956 bytes and the provisional denominator is 1,965,299. All exact
+inputs/rows are unchanged from R139 db26a05, preserving its 60/60 cold proof
+across eleven objects. No affected exact unit requires another cold build.
+The user's public MCP acceptance waiver remains in force; the no-auth route
+and private random path remain unchanged. Private evidence is untracked.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R142. The public
+review cohorts R108 through R143. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,431: 919 authored, 1,937 library and 575 compiler generated.
-There are 920 pending. Candidate count is not authored function count.
+has resolved 3,434: 919 authored, 1,940 library and 575 compiler generated.
+There are 917 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R143 derived RTTI-exception lifetime cohort below.
+the bounded R144 longjmp/read-probe unwind cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R142; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R143; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R143 derived RTTI-exception lifetime graph
+## Next agent objective — R144 longjmp/read-probe unwind graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -653,21 +653,45 @@ All 951 public checks pass. Totals are 3431 resolved and 920 pending; the
 60-function exact inputs/records preserve R139's 60/60 cold proof across eleven
 objects. Public MCP acceptance remains waived.
 
-The next bounded cohort is three existing derived RTTI-exception destructor
-candidates from the same full stdexcpt.obj member / 442622:
+R143 resolves all three derived RTTI-exception destructor candidates: complete
+11-byte own-AUX bodies / 33 bytes / six fields. Eight non-inventory complete
+constructor/what bodies, ten whole retained anchors and 31 whole defining
+vtable/RTTI/literal sections close the paired family graph. Five compiler
+anchors retain R038 ownership. Bad_typeid and non-rtti source COFF bodies are
+identical alternatives; their linked target REL32 bytes differ by address.
+Full independently relocated comparisons retain both source owners, while
+whole constructed vtables, RTTI, constructors and incoming compiler callback
+fields support provisional source roles. The non-rtti destructor writes the
+bad_typeid destruction-stage vtable and tail-jumps straight to exception.
+Cold real SDK layouts, all natural model code/data sections and the full
+R142/R038 chain pass. Replay
+`scripts/repo-python scripts/verify-derived-exception-origins.py`.
+All 982 public checks pass. Totals are 3434 resolved and 917 pending; the exact
+baseline and R139's 60/60 cold proof remain unchanged. Public MCP is waived.
+
+The next bounded R144 cohort is two existing unwind/read-probe candidates:
 
 | Candidate | Provisional / own AUX bytes | Diagnostic symbol / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00640D38` | 11 / 11 | bad_cast destructor / two | Whole actual derived vtable/locator/type/base graph, weak callback and complete paired lifetime context; bind the real base destructor |
-| `0x00640D74` | 11 / 11 | bad_typeid destructor / two | Full class/callback/source parent graph and original class/type uncertainty; complete source-alternative check |
-| `0x00640DAF` | 11 / 11 | __non_rtti_object destructor / two | Complete inheritance/vtable/callback parents; its two fields and all eleven bytes equal the bad_typeid body, so standalone shape/name cannot distinguish the role |
+| `0x00643604` | 120 / 121 | _longjmp / five | Entire own AUX including its last byte, FS/absolute symbol provenance, complete unwind/NLG parents and actual indirect saved-context callback; truthful supplied SDK jump-buffer/calling controls |
+| `0x0064DC10` | 66 / 66 | __rt_probe_read4@4 / three | Full source owner including exception filter/handler path, entire scope data and callbacks, retained SEH prolog/epilog, independent real SDK/SEH controls |
 
-Use `.analysis/r142-next-rtti-family-survey.json` diagnostically. Resolve the
-complete derived source/data/callback/constructor/copy parents when required,
-without inventing candidate entries or reclassifying existing R038 compiler
-controls. Preserve the complete supplied SDK interface and full R142/R141/R038
-chain. Names remain provisional even if complete bytes match; no private
-implementation or original TH075 owner layout follows from the header alone.
+Use `.analysis/r143-next-unwind-survey.json` and the read-only attested query
+`.analysis/r143-next-unwind-disassemble.txt` diagnostically. Neither source
+span contains an existing interior inventory candidate. Ghidra's ordinary
+read-probe path skips its exception filter/handler region; decode and reconcile
+the full source owner and scope graph before acceptance. Do not truncate the
+121-byte longjmp AUX to its provisional 120-byte ledger extent, guess an FS
+absolute relocation, or invent conventional prototypes for private unwind/NLG
+register contracts. No ownership follows from the already reviewed children.
+Keep all existing source/exact inputs and prior ownership unchanged.
+
+A bounded scan of the supplied rtti.obj member 423098 found no complete
+relocation-masked associations for its exported RTtypeid (156 bytes),
+RTCastToVoid (93) or RTDynamicCast (224). This private diagnostic in
+`.analysis/r143-next-rtti-survey.json` grants no origin and does not exclude
+other original source/compiler variants. Do not force these source owners
+onto the separate string-throw workers below.
 
 The two existing 64-byte workers `0x00654ACE` / `0x00654B0E` are separate
 standard string/exception throw contexts, not bad_cast/bad_typeid evidence.
@@ -703,7 +727,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R143 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R144 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
