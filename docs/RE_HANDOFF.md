@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R134. The public
+review cohorts R108 through R135. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,337: 919 authored, 1,843 library and 575 compiler generated.
-There are 1,014 pending. Candidate count is not authored function count.
+has resolved 3,347: 919 authored, 1,853 library and 575 compiler generated.
+There are 1,004 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R135 input formatting cohort below.
+the bounded R136 locale construction cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R134; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R135; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R135 input formatting graph
+## Next agent objective — R136 locale construction graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -530,28 +530,43 @@ real vendor types and actual private helper register contracts. Replay
 checks and one final public MCP acceptance pass; all 60 exact units cold-replay
 across eleven objects. Canonical totals are 3337 resolved, with 1014 pending.
 
-The next bounded cohort is six existing input formatting/locale candidates:
+R135 resolves all six input-format/locale roots and four required existing
+classification/NLS dependencies: ten full primaries / 4801 bytes / 129 fields.
+Input retains all 3452 bytes, including its filter and allocation handler.
+Three full SEH records bind actual -1/filter/handler entries, stack restoration
+and the full R123 reset worker. Fifty-nine whole data sections / 2327 bytes /
+72 fields and twenty-three independent anchors / 2021 bytes / 71 fields replay.
+The six-slot FP view retains initial stubs and actual initialized callbacks;
+input uses +8 / fassign. Natural format/SDK layouts / 136 and 112 and complete
+44-/26-/21-/42-byte ABI controls preserve pointer-varargs, real RET 16 multiply,
+PF2 and SDK multibyte declarations. Replay
+`scripts/repo-python scripts/verify-input-format-origins.py`. All 702 public
+checks and one final public MCP acceptance pass; all 60 exact units cold-replay
+across eleven objects. Canonical totals are 3347 resolved, with 1004 pending.
+
+The next bounded cohort is six existing locale construction/category candidates:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00642A2D` | 52 | `_sscanf`, own AUX 52 / two fields | Full read-only string FILE setup, va_list, strlen and entire input dependency |
-| `0x0064993C` | 3452 | `__input`, own AUX 3452 / sixty fields | Entire scan policy, SEH scope/cleanup, character classification, integer/FP conversion, allocation failure and all code/data/API bindings |
-| `0x006498FC` | 22 | `__inc`, own AUX 22 / one field | Actual complete source-local helper owner, byte input/counter contract and full filbuf binding |
-| `0x006517CE` | 192 | `___mbtowc_mt`, own AUX 192 / three fields | Complete locale/multibyte conversion paths, every API/error binding and current-state uncertainty |
-| `0x0065188E` | 43 | `_mbtowc`, own AUX 43 / four fields | Actual thread locale/update graph and complete converter contract |
-| `0x006519EE` | 295 | `___getlocaleinfo`, own AUX 295 / fifteen fields | Full locale query, allocation/failure/cleanup, imports and code/data bindings |
+| `0x0064C25F` | 871 | `__get_lc_time`, own AUX 871 / 46 fields | Full time-locale allocation, all NLS strings, record fields, failure cleanup and complete freeing graph |
+| `0x0064C847` | 461 | `___init_numeric`, own AUX 461 / 39 fields | Full numeric/lconv ownership, NLS/grouping conversion, refcounts, failure paths and complete defining state |
+| `0x0064CB20` | 575 | `___init_monetary`, own AUX 575 / 42 fields | Every monetary string/numeric query, grouping, complete lconv layout and allocation/free/refcount paths |
+| `0x0064CD5F` | 490 | `___init_ctype`, own AUX 490 / 26 fields | Whole classification allocations, codepage metadata, actual NLS APIs, full tables and error/refcount behavior |
+| `0x00642EE5` | 348 | `__expandlocale`, own AUX 348 / 24 fields | Complete source-defined cache, locale parsing/qualification, output conversion and every binding |
+| `0x00643041` | 655 | `__setlocale_set_cat`, own AUX 655 / 42 fields | Full category callback array and actual initializer entries, locale globals, allocation, commit/rollback and type/layout graph |
 
-Use `.analysis/r134-next-input-survey.json` and
-`.analysis/r134-next-input-survey.log` diagnostically. All six complete source
-bodies match outside fields; this fact earns no origin credit. The full input
-parent needs all sixty typed fields, its scope and interior cleanup extents,
-actual private inc source definition, FP table slot +8, locale data and actual
-complete R123 stack-overflow reset anchor `0x006518B9` / 227 bytes. Do not grant parent
-ownership merely from reviewed children or from a relocation-masked source.
-Preserve R134's full output table/FP/locale graph, R133's complete FILE/handle
-objects and R132's entire low-level graph. Keep hooks/CallSettingFrame,
-read/write validators and other locale parents pending for later bounded review.
-Preserve R129's abs ambiguity without promoting an equal source alternative.
+Use `.analysis/r135-next-locale-survey.json` and
+`.analysis/r135-next-locale-survey.log` diagnostically. All six whole source
+bodies match outside fields; no origin follows from that fact. The complete
+category owner requires its actual callback registration and original candidate
+extent, not inferred ownership through accepted NLS/locale children. Keep full
+non-inventoried helpers as controls without creating candidates. Qualification
+at `0x0064D853`, parsing/string conversion and grouping dependencies need full
+source/data/API/callback closure before accepting a caller that uses them.
+Preserve R135's full scopes, distinct BSS caches, complete locale/CTYPE carriers
+and R134's entire FP/output graph. Keep hooks/CallSettingFrame, read/write
+validators and unrelated locale/time parents pending for later bounded review.
+Preserve R129's abs ambiguity without selecting an indistinguishable alternative.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -567,7 +582,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 The user authorized local investigation and verification for speed, followed
 by one public MCP acceptance replay at the end. Preserve the no-auth route,
-private path and 60-function exact baseline. R135 adds no exact scope. Update
+private path and 60-function exact baseline. R136 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
@@ -924,7 +939,7 @@ remap dispatch, even though Ghidra did not recover it. Preserve unknown
 classifications until a complete
 source/target binding or game-owner witness is available.
 
-Continue the bounded R135 input formatting cohort described above. F008 and F009 remain
+Continue the bounded R136 locale construction cohort described above. F008 and F009 remain
 the accepted exact baseline; do not infer ownership from scanner hits alone.
 The R105 rectangle-corner builder at `0x00427500` remains diagnostic: its
 natural source differs at two local stack-slot bytes and has no exact credit.

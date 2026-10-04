@@ -6636,3 +6636,121 @@ authored extents, target/project attestation, progress freshness, 659 tests and
 whitespace checks. All 60 exact units cold-replay across eleven objects. Local
 tools perform investigation and intermediate verification; private evidence
 stays untracked and shared tools remain read-only.
+
+## R135 — Complete input scanning, multibyte and NLS query graph
+
+R135 resolves all six input-format/locale handoff roots and four required
+existing dependencies: ten complete library primaries / 4801 bytes / 129 typed
+fields. Replay `scripts/repo-python scripts/verify-input-format-origins.py`;
+the manifest is `config/input-format-origin-evidence.json`. Every primary
+retains its entire own AUX from the hash-pinned libcmt.lib, with all source,
+code/data/API/SEH fields and full control flow compared. No source, mapping or
+exact reconstruction credit is added. Reviewed children alone prove no parent.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `_sscanf` | `0x00642A2D` | 52 | 2 |
+| `__input` | `0x0064993C` | 3452 | 60 |
+| `__inc` | `0x006498FC` | 22 | 1 |
+| `___mbtowc_mt` | `0x006517CE` | 192 | 3 |
+| `_mbtowc` | `0x0065188E` | 43 | 4 |
+| `___getlocaleinfo` | `0x006519EE` | 295 | 15 |
+| `_isxdigit` | `0x0064283A` | 63 | 4 |
+| `_isspace` | `0x00642879` | 58 | 4 |
+| `___crtGetLocaleInfoW` | `0x00653B2C` | 304 | 18 |
+| `___crtGetLocaleInfoA` | `0x00653C5C` | 320 | 18 |
+
+**Target behavior and complete boundaries.** Sscanf constructs a local stack
+FILE / 32 with READ|STRG|MYBUF / 73, original string pointer/base, complete
+strlen-derived count and actual pointer va_list at EBP+16. The stale source
+comment about static storage does not override the declaration or emitted
+stack object. Its entire input call and return replay. The source-local inc
+helper belongs to the same actual defining input member, passes FILE in EDX,
+loads an unsigned byte on its fast path and calls the full R133 filbuf on
+exhaustion. Its private optimized register contract is preserved without
+inventing an external cdecl declaration. Both returns have zero callee cleanup.
+
+The complete 3452-byte input owner retains width/length/suppression policies,
+whitespace, literal matching, character/string/scanset conversion, decimal,
+hex/octal/int64 parsing, floating text, `%n`, pushback, matched-versus-assigned
+EOF policy and every final exit. It contains a four-byte exception filter and
+its real handler, with no separate inventory candidate or new origin credit.
+The narrow scanset is 32 bytes / 256 bits, allocated on the stack with real
+resetstkoflw and heap fallback after an exception; fallback allocation failure
+and final conditional free remain inside the full extent. Float text storage
+is `_CVTBUFSIZE + 1` / 350 bytes, with width limit 349, distinct from the prior
+output buffer / 512. The int64 multiplication binds full R006 allmul / 52,
+including both actual RET 16 exits. No instruction prefix or masked field earns
+acceptance; no game caller gains ownership from this association.
+
+Mbtowc retains thread lookup / locale update and the full four-argument worker
+call. The worker handles null/zero-length input, null-character output, optional
+destination, C-locale unsigned-byte conversion, lead-byte classification,
+signed count comparisons and all actual MultiByteToWideChar calls. Flags are
+MB_PRECOMPOSED|MB_ERR_INVALID_CHARS / 9; failures retain the source's distinct
+lead-byte validation policy and EILSEQ / 42. Isxdigit/isspace retain actual
+thread locale and complete isctype worker bindings, including the single-byte
+raw classification masks / 128 and 8. Runtime codepage and allocated locale
+state remain unknown.
+
+Getlocaleinfo retains its full string and integer query branches. The string
+branch starts with 128 bytes, checks ERROR_INSUFFICIENT_BUFFER / 122, queries
+size, allocates a temporary when required, allocates the returned string,
+binds the complete strncpy / 292 and frees only its owned temporary on every
+success/failure path. The integer branch retains all four wide characters /
+eight bytes, low-byte extraction, digit tests and unsigned-byte accumulation.
+Both complete A/W wrappers probe the real GetLocaleInfoW API, distinguish
+ERROR_CALL_NOT_IMPLEMENTED / 120, retain separate flavor caches, use the
+source's default-codepage fallback, and preserve direct and converted queries,
+size-only paths, SEH stack allocation, heap fallback and cleanup. Their actual
+GetLocaleInfoA/W and multibyte/wide conversion IAT identities replay. API
+availability, cached runtime flavors and returned locale values are unknown.
+
+**Whole data, SEH and callback provenance.** Fifty-nine complete defining
+sections / 2327 bytes / 72 fields retain the full mb_cur_max/decimal carrier /
+12, complete CTYPE / 1284, default locale / 403, full C time/lconv objects and
+all recursively bound literals. Complete source-defined BSS retains integer
+query storage / 8, distinct W/A flavor caches / 4 each and full locale-handle
+carrier / 32, with actual writable PE loader zero-fill geometry.
+
+Three whole twelve-byte scope records retain enclosing level -1 and both actual
+filter/handler code pointers. Input's entries are +1578/+1582, W query's are
++184/+188 and A query's are +175/+179. Every filter's four bytes return one;
+each handler restores ESP from EBP-24 and calls the real full R123 stack reset.
+Source labels, full parent extents and actual instruction starts replay; none
+are promoted into invented standalone candidates. All direct source branches,
+full returns and indirect calls remain in the complete comparison.
+
+The full six-slot FP table / 24 retains initial fatal stubs and the actual R124
+initializer's six supported callback stores. Input's one actual indirect call
+uses slot +8 / fassign. All six owners replay; current runtime slot contents
+remain unknown. Three non-inventoried FP helper controls / 161 bytes / five
+fields retain R124/R134 evidence without new candidate credit. Twenty-three
+complete independent anchors / 2021 bytes / 71 fields preserve prior origins.
+The verifier replays the entire R134 output/FP graph, R133 streams, R132 handles
+and retained locale, heap, security, import and initialization chains.
+
+**Compiler observations and limits.** Two independent natural probes preserve
+real types: format / 136 and SDK/thread/locale / 112. Controls verify FILE / 32,
+va_list and destination pointers / 4, wchar_t / 2, locale / 84, thread / 140,
+actual locale pointer/field offsets, 32-byte scanset and 349/350 float limits.
+The full 44-byte variadic pointer control advances by four; the full 26-byte
+int64 multiply control emits the actual allmul symbol and its callee cleanup
+contract. A full 21-byte typed PF2 control removes twelve caller bytes. The
+full 42-byte SDK API control uses the real stdcall import, six arguments and
+flags / 9. Vendor FP and SDK DOUBLE contexts remain separate. Nine complete
+vendor source files and pinned headers replay. VC7.1 build 3077 and explicit
+flags are reproducibility settings, without a global executable compiler claim.
+
+Forty-three regression checks reject truncated owners, invented filter/auxiliary
+credit, lost or misbound scope entries, wrong filter/handler execution, incomplete
+locale/CTYPE/BSS/FP carriers, conflated NLS caches, unsupported current runtime
+claims, incorrect scanset/float/ABI layouts and lost API/error policy. All 702
+public checks pass. Canonical totals are 3347 resolved (919 authored, 1853
+library, 575 compiler), with 1004 pending. Exact/source/mapping remains 60 /
+9883 bytes; recorded authored extents remain 872 / 1952956 bytes and the
+provisional denominator is 1965299. One final no-auth public HTTPS MCP request
+replays R135 and retained graphs, authored extents, target/project attestation,
+progress freshness, 702 tests and whitespace checks. All 60 exact units
+cold-replay across eleven objects. Investigation and intermediate verification
+use local tools; private evidence stays untracked and shared tools read-only.
