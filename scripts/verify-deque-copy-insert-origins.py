@@ -151,12 +151,12 @@ def main():
     for row in m['functions']:
         check_ledger(row, functions[row['address']], origins[row['address']], args.evidence_only)
     for parent in m['parents']:
-        if functions[parent['address']] != parent['function'] or origins[parent['address']] != parent['origin']:
+        if not PAIRED.preserved_snapshot(dict(function=parent['function'], origin=parent['origin']), functions[parent['address']], origins[parent['address']]):
             raise ValueError('copy/insertion changes its independent original parent evidence')
     for alignment in m['alignment']:
         actual = c.pe_bytes_at(target, int(alignment['address'], 16), alignment['size'])
         if (PAIRED.digest(actual) != alignment['sha256'] or any(b != 0xCC for b in actual)
-                or functions[alignment['next_address']] != alignment['next_function'] or origins[alignment['next_address']] != alignment['next_origin']):
+                or not PAIRED.preserved_snapshot(dict(function=alignment['next_function'], origin=alignment['next_origin']), functions[alignment['next_address']], origins[alignment['next_address']])):
             raise ValueError('copy/insertion includes alignment or changes unrelated adjacent owners')
     for frame in m['frames']:
         if frame not in PAIRED.BUFFER.PRIOR.PRIOR.rows('compiler-eh-frames.csv'):

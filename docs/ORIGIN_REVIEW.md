@@ -8891,3 +8891,94 @@ owners unchanged. The eleven-byte category body's shape alone cannot identify
 an original tag declaration; use independently whole real overload dispatch
 and retain original type/name uncertainty. No next-cohort classification
 follows from these already retained source controls or reviewed children.
+
+## R159 — Complete deque endpoints and actual category/operation dispatch
+
+R159 accepts eight library owners / 296 bytes: const begin `0x00422B50` / 35,
+const end `0x00422B80` / 41, insert dispatcher `0x00422CB0` / 67, distance
+dispatcher `0x00423680` / 55, advance dispatcher `0x004236C0` / 43, category
+helper `0x00422D60` / 11, distance operation `0x004237E0` / 27 and advance
+operation `0x00423800` / 17. Replay
+`scripts/repo-python scripts/verify-deque-endpoint-dispatch-origins.py` with
+`config/deque-endpoint-dispatch-origin-evidence.json`. All eight retain their
+full positive own COFF AUX extents and canonical size/span_end; all bytes
+and genuine typed fields compare without masking. Names remain provisional
+SDK source associations, with no recovered original function/type declaration.
+
+The entire R158 copy / 241 bytes actually calls both const endpoints and
+insert dispatch; the full R158 insertion / 1545 bytes actually calls distance
+and advance dispatch. Those three dispatchers call the actual category helper.
+The selected distance/advance operations bind original whole const-iterator
+difference `0x004235F0` / 66 (R084) and addition-assignment `0x004239A0` / 31
+(R106). Both endpoints bind the unchanged complete R081 const-iterator
+constructor `0x00422660` / 33. Independent original source/field/owner records
+remain preserved, including R085 copy/copy-backward algorithms. Complete
+R158/R157/R156 source/code/data/EH/runtime evidence cold-replays, preserving
+original shared tails/interior source policies, opaque boundaries and the
+independently authored R153 destruction policy. A library child alone does
+not establish any new parent's ownership.
+
+**Category ambiguity and real operations.** Actual SDK category instantiations
+for complete forward and bidirectional traits observations emit the same
+entire eleven bytes as the target. Input-category source emits a different
+complete eleven-byte body, including different return transport in this
+compiler's source ABI. No ledger ABI or original tag declaration follows.
+The shape of an eleven-byte helper cannot uniquely identify category/type
+or ownership; library origin is inferred from the independently complete
+accepted SDK parents and their real overload/source relationship. Real SDK
+random-access tag inheritance permits the selected bidirectional insertion,
+while its distance/advance operations use difference and addition-assignment.
+The original category and element declarations remain unknown.
+
+Natural SDK input-distance / 49 bytes and bidirectional-advance / 59 bytes
+are full different operation controls, compared as complete source extents,
+never against truncated 27-/17-byte target prefixes. Their whole definitions
+and actual source fields remain in cold emission evidence. The input-category
+control is compared at its complete equal length and fails whole byte equality;
+it is not a masked or partial target association. These bounded alternatives
+do not exclude every possible original source/compiler variant.
+
+`probes/VC7DequeEndpointDispatch.cpp` cold-builds all 197 ordinary emission
+sections / 12245 bytes, twelve complete linked code controls / 2104 bytes and
+all 76 actual fields. Every linked owner has full positive own AUX. The entire
+72-byte SDK/traits layout is `[8,20,60,20,20,4,8,8,20,8,4,1,1,1,1,1,1,1]`;
+all 27 SDK headers and the actual included unchanged R156 observation source
+are pinned. Complete observations are source controls, not reconstructed
+game records/iterators. Build 3077 and explicit flags are reproducibility
+settings per probe; original flags/spelling/linker inputs, live range/offset
+values, allocation/lifetime and iterator outcomes remain unknown.
+
+Exactly eight origin rows and eight function evidence rows change against
+R158 HEAD c9fe356. All unrelated rows, every authored record, prior R085
+algorithm and original extents remain unchanged. R156/R157/R158 manifests
+stay immutable. The R156 snapshot guard permits only eight additional exact
+hash-pinned R159 transitions. R158's original insert-parent and adjacent
+const-begin snapshot checks use that same exact guard, rather than skipping
+classification/name/extent metadata; both read back after acceptance. The
+final summary wording changes after the unchanged cold proof, without source,
+profile/header/relocation or comparison changes. Thirty regression checks
+protect whole ownership/dispatch, actual field routes, full differing and
+byte-equal controls, layout/header/emission coverage, original algorithms,
+bounded parent/alignment follow-ups and false source/private ABI/exact credit.
+
+All 1404 public tests, local target/project/query attestation, authored extents,
+fresh scanner/progress, exact-input preservation and whitespace checks pass.
+Totals are 3488 resolved (922 authored, 1991 library, 575 compiler), 863 pending
+and 2566 excluded. Authored evidence remains 875 records / 1953089 bytes;
+provisional exact coverage stays 9883 / 1965432. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs remain unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No affected exact
+unit needs replay. Public MCP acceptance remains waived; the private no-auth
+route is unchanged. Private queries, diagnostics and objects stay untracked.
+The complete-origin objective remains unfinished.
+
+The next bounded R160 cohort is five remaining full source-associated unknowns:
+file allocator max_size / 44, iterator indexing / 38, iterator subtraction-
+assignment / 27, inner element destruction / 15 and placement delete / 5.
+Keep the R158 28-byte record-copy ambiguity protected. Source controls and
+reviewed children alone grant none of these remaining owners origin credit.
+In particular, `_Destroy` calls the complete unchanged R037 generated scalar
+deleting wrapper / 44 bytes, which then calls authored R153 destruction;
+do not bind its field directly to the authored destructor or conflate origins.
+The five-byte placement-delete body needs ordinary no-op alternatives plus
+its independent complete SDK placement/construction and EH cleanup protocol.
