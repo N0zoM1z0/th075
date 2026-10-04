@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R170. The public
+review cohorts R108 through R171. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,571: 927 authored, 2,069 library and 575 compiler generated.
-There are 780 pending. Candidate count is not authored function count.
+has resolved 3,583: 927 authored, 2,081 library and 575 compiler generated.
+There are 768 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,55 +20,51 @@ bytes is 9,883 / 1,966,054 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R171 deque const-iterator cohort below.
+the bounded R172 deque-front cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R170; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R171; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R171 default deque const iterators
+## Next agent objective — R172 complete deque front helpers
 
-R170 accepts twelve whole character-list dependencies / 720 bytes. Replay
-`scripts/repo-python scripts/verify-character-list-policy-origins.py` and immutable
-`config/character-list-policy-origin-evidence.json`. The full `0x00532110` primary
-is 186 bytes, refining 134 and retaining local catch/shared tail; the separate
-`0x00532196` / 52 remains unknown. Independent observed value/node widths 16/24
-and unchanged whole R049 game policy / 1008 do not recover private entry layout.
-Eighty whole positive controls / 3763 bytes retain 189 real unmasked fields;
-two whole node-allocation negatives total 40 bytes. All 275 cold ordinary sections
-/ 12330 bytes, 33 actual includes and whole 100-byte layout are frozen. Six R020
-frames, 11 original records and 227 full canonical/body snapshots are preserved.
-Only four exact bounded R162 transitions are added; both old source profiles
-cold-replay. All 1771 public checks pass. Previous evidence, 880 authored bodies,
-all opaque ownership decisions and 60 exact functions remain intact. Public MCP
-acceptance stays waived; no exact scope is added.
+R171 accepts twelve complete SDK iterator/endpoint definitions / 381 bytes.
+Replay `scripts/repo-python scripts/verify-replay-deque-iterator-origins.py` with
+immutable `config/replay-deque-iterator-origin-evidence.json`. The unchanged full
+R035 replay append policy / 1252 bytes retains its original record/CFG and 26
+actual iterator consumer edges. Observed scalar widths 1/2/4 do not recover
+original types/private layout. Thirty-eight whole SDK/ordinary controls / 1492
+bytes compare unmasked with 22 real fields; ordinary 22/33-byte construction
+alternatives are byte-equal. All 43 cold ordinary sections / 1903 bytes, 27
+actual SDK headers and entire 48-byte layout are frozen. Seventy canonical/body
+snapshots and both original R110/R113 peer records preserve prior owners. No
+historical transition is needed. All 1803 public checks pass. Existing evidence,
+880 authored bodies and 60 exact functions stay intact. Public MCP acceptance
+remains waived; the full origin goal is active and unfinished.
 
-The fresh `.analysis/origin-scan/r170-triage.json` has 780 pending. The next
-bounded R171 cohort is three complete default deque const-iterator candidates
-/ 99 bytes, together with their necessary complete producer/consumer context:
+The fresh `.analysis/origin-scan/r171-triage.json` has 768 pending. The next
+bounded cohort is three front candidates / 96 provisional bytes:
 
-| Candidate | Full provisional extent | Actual whole context to reconcile |
+| Candidate | Full provisional extent | Actual complete SDK and game contexts |
 | --- | ---: | --- |
-| `0x004155A0` | 33 | unknown producer `0x00414930`; complete accepted SDK peers `0x00424500` and `0x00445530` |
-| `0x004156B0` | 33 | unknown producer `0x004149E0`; actual direct-call and consumer/owner graph |
-| `0x004157C0` | 33 | unknown producer `0x00414A90`; actual direct-call and consumer/owner graph |
+| `0x00454D50` | 32 | actual begin `0x004143D0` and dereference `0x00414950`; full R045 control policy `0x00452F10` / 2815 |
+| `0x00454E10` | 32 | actual begin `0x004145C0` and dereference `0x00414A00`; same R045 parent and R109 random-range policy `0x00455580` / 139 |
+| `0x004464C0` | 32 | actual begin `0x004147B0` and dereference `0x00414AB0`; full R065 battle sequence policy `0x00445A00` / 1958 |
 
-Whole byte-equal peers are diagnostic, not origin acceptance. Read the relevant
-R110/R113 complete deque evidence and actual producer/consumer/game contexts;
-obtain each specialization independently. Require whole SDK and ordinary
-controls, real unmasked fields, complete primary AUX extents, and truthful
-original-owner uncertainty. Extend only to necessary fully evidenced dependencies.
-Do not classify from tiny zero stores, caller labels or copied peer identity.
-Preserve all prior manifests and allow only exact original-to-accepted changes.
-All getters, empty destruction children and catch/lifetime/copy/math policies
-retain independent pending evidence. The full origin goal remains active and
-unfinished. Continue bounded reviews; exact credit remains 60.
+These are diagnostic candidates, not promised acceptances. Preserve full original
+parent records/CFG/switches and independently obtain actual field/argument/element
+context. Use complete natural SDK and ordinary alternatives and all actual fields.
+Do not infer ownership from small wrappers or simply extend R171's observed
+types to new callers. Freeze all prior evidence; allow only exact bounded
+original-to-accepted transitions if needed. Protected getters, empty destruction
+children and catch/lifetime/copy/math policies retain independent pending evidence.
+Continue bounded origin review; exact credit remains 60.
 
 ## R165 checkpoint and the completed R166 shortlist
 

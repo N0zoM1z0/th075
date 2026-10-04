@@ -10026,3 +10026,81 @@ remains applicable. No source/private ABI/mapping/exact credit is added. Public
 MCP acceptance stays waived. The full remaining-origin goal is active and
 unfinished; the next bounded cohort is the three complete default deque
 const-iterator candidates and their actual whole producer/consumer contexts.
+
+## R171 — complete replay deque iterator graphs
+
+Twelve whole SDK definitions / 381 bytes are accepted through the three default
+const-iterator candidates and necessary complete construction/endpoint context.
+Replay `scripts/repo-python scripts/verify-replay-deque-iterator-origins.py` with
+immutable `config/replay-deque-iterator-origin-evidence.json`. The independently
+authored R035 `ReplayRecords::AppendRecord` at `0x00413DE0` / 1252 remains
+unchanged, with its original full record, instructions, fourteen branches, one
+return and switch rows. Its 26 actual iterator construction/endpoint/step/
+comparison/dereference edges are frozen. Default temporaries feed the actual
+iteration and write loops; observed stream widths 1/2/4 supply independent
+context for the three entire specialization graphs. Caller labels, mapped
+names and two zero stores alone are insufficient ownership evidence.
+
+| Address | Complete bytes | Inferred SDK role |
+| --- | ---: | --- |
+| `0x00414930` | 22 | default iterator |
+| `0x004149E0` | 22 | default iterator |
+| `0x004145C0` | 35 | begin |
+| `0x004145F0` | 41 | end |
+| `0x00414A90` | 22 | default iterator |
+| `0x004147B0` | 35 | begin |
+| `0x004147E0` | 41 | end |
+| `0x004155A0` | 33 | default const iterator |
+| `0x004156B0` | 33 | default const iterator |
+| `0x00415670` | 32 | node iterator constructor |
+| `0x004157C0` | 33 | default const iterator |
+| `0x00415780` | 32 | node iterator constructor |
+
+Compiler/source observation: complete `std::deque<unsigned char>`,
+`std::deque<unsigned short>` and `std::deque<unsigned long>` observers emit
+three natural default/endpoint/postfix/prefix/comparison/dereference graphs.
+All 36 entire genuine SDK definitions / 1437 bytes retain 21 real call fields
+and compare unmasked through one coherent actual defining-symbol catalog.
+This includes the already accepted R111 byte endpoints/node construction,
+R112 postfix operations, R085/R106 prefix operations and const-node constructors,
+R032 inequality, R084 equality and R078 complete dereference bodies. The
+three specializations independently retain their actual destinations; widths
+and synthetic types do not recover original signedness, declarations, method
+spelling or private replay/game owner layout.
+
+Entire ordinary base/default and derived constructors / 33 and 22 bytes are
+byte-equal to the byte iterator construction pair, including the one actual
+base-construction field. These expose short-shape ambiguity rather than proving
+original ownership. With these controls the whole positive comparison is
+38 bodies / 1492 bytes and 22 genuine unmasked fields. Every regular positive
+has its full own primary AUX extent and complete CFG. No external call or data
+field is guessed or masked. No target byte arrays, assembly, fake returns,
+inert padding or incomplete original game owner are used.
+
+All 43 cold ordinary sections / 1903 bytes, including complete observer/ordinary
+code and readonly layout, and 27 actual SDK headers are frozen. The whole
+48-byte layout is `[1,2,4,20,20,20,8,8,8,8,8,8]`. Seventy canonical/body snapshots
+preserve all prior protected unknowns and complete existing SDK/game bodies.
+The full original R110 and R113 peer records at `0x00445530` / `0x00424500`
+and their immutable manifests remain unchanged. Those peers are diagnostic
+context and never replace the independent whole R035 parent or genuine new
+source graph. The prior R170 manifest is pinned; no historical transition or
+relaxed pending-ledger exception is needed for this cohort.
+
+Full cold evidence preceded canonical acceptance. Strict R170 HEAD f68a5d0
+readback checks exactly twelve function/origin transitions, unchanged extents,
+all 880 original authored rows/order and all prior tracked configuration.
+All previous evidence and source/header/build/ABI/mapping/match inputs stay
+unchanged. Thirty-two new regression checks and all 1803 public checks pass,
+with fresh scanning, full authored extents, local Ghidra attestation and
+whitespace checks. Every protected getter, empty destruction child and
+catch/lifetime/copy/math policy retains its independent unknown origin.
+
+Totals are 3583 resolved (927 authored, 2081 library, 575 compiler), 768 pending
+and 2656 excluded. Authored evidence stays 880 complete bodies / 1953711 bytes.
+Exact stays 60 functions / 9883 bytes; provisional coverage remains
+9883 / 1966054 (0.50%). The prior R139 cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added.
+Public MCP acceptance stays waived. The full remaining-origin goal is active
+and unfinished. The next bounded R172 cohort is three complete front helpers
+through these actual SDK graphs and independent full fighter/battle policies.
