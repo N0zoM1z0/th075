@@ -7716,3 +7716,77 @@ Exact remains 60 functions / 9883 bytes with provisional coverage
 is added. Public MCP acceptance remains waived; the full remaining-origin goal
 is active and unfinished. The next bounded cohort investigates two directional
 binding copies, explicit queue cleanup and archive construction defaults.
+
+## R180 — directional indexed copies and explicit owner policies
+
+Four entire authored policies / 343 bytes are accepted. Replay
+`scripts/repo-python scripts/verify-indexed-owner-policy-origins.py` with
+immutable `config/indexed-owner-policy-origin-evidence.json`.
+
+| Address | Complete bytes | Inferred operation |
+| --- | ---: | --- |
+| `0x00416E20` | 84 | store working eight bytes into the selected nested record |
+| `0x00416E80` | 85 | load selected nested eight bytes into working storage |
+| `0x004204D0` | 84 | explicitly clear the member queue before automatic destruction |
+| `0x0041D190` | 90 | initialize the scalar state and clear the constructed archive list |
+
+Target observation: both copies preserve signed byte selectors at owner
++0x16AC4/+0x16AC5 and the incoming signed byte index. The actual bank/category
+strides are 0x17F0/0x5FC, the record stride is sixteen and payload base is +0x55C.
+Working storage is +0x16A94. Both call the complete R025 memcpy / 829 with length
+eight, in opposite directions. Complete R052 replay initializer / 315 and R040
+name-entry update / 541 independently supply game context. Original field
+meaning and complete owner layout remain unknown; the provisional binding
+shortlist title does not recover an input-binding type.
+
+The queue policy at +0x7D0 first performs an explicit clear and then automatic
+member destruction. Both complete 19-byte SDK callees share the same entire
+177-byte _Tidy; their historical R077 destructor-shaped aliases are unchanged.
+Complete natural clear/destruction controls distinguish two explicit/automatic
+calls from one automatic call. The whole R045 fighter release / 588 is preserved.
+The archive constructor first constructs the list at +4, explicitly sets the
+scalar at +0 to zero and calls the entire R175 list clear / 153. Whole R053
+archive registration / 245 and the original one-state EH frames independently
+preserve owner context. Constructor dependency ownership is not borrowed.
+
+Compiler/source observation: six complete small-owner controls / 268 bytes
+observe copy direction, explicit queue clear and explicit archive defaults,
+with full generated alternatives. They grant no target-byte positive. The
+queue source owner has no original +0x7D0 layout; source queue value width four
+is not an original element-type claim. The synthetic archive constructor is
+also 90 bytes, but equal length earns no match. Complete source record/list
+widths 108/12 and owner sizeof 16 are source observations, not complete original
+owner declarations. No padding, incomplete original owner or target byte source
+is introduced.
+
+Four separate construction dependencies remain unknown: `0x0041D8F0` / 56,
+`0x0041E330` / 14, `0x0041E2F0` / 53 and `0x0041E1A0` / 143. The last provisional
+span ends in an external jump at `0x0041E22D` to `0x0041E264`. Its cold source
+section is 223 bytes, including local exception cleanup and the shared tail.
+The separate `Catch@0041e22f` ledger span / 80 includes subsequent owner code;
+its own extent also needs reconciliation. These are pending context observations,
+not accepted prefixes or truncated comparisons.
+
+All 61 ordinary source sections / 2497 bytes, 29 actual SDK headers and the
+whole 40-byte readonly layout are frozen. Every explicit source body retains
+its own full primary AUX extent; generated alternatives retain their unique
+whole defining COMDAT. The verifier preserves 157 full canonical/body snapshots,
+40 protected unknowns, four whole authored anchors / 1689 bytes with all original
+switch records, three entire R025/R175 library records and two original full
+R020 EH frames. The unchanged R025 runtime proof passes all three entire vendor
+bodies / 1762 bytes with 93 genuine local fields. New evidence-only cold replay
+precedes canonical mutation; accepted-state cold replay, full authored checks,
+local Ghidra attestation, target/tracking and fresh scanning pass. Strict R179
+HEAD 0f62552 readback permits exactly four function/origin changes and four full
+new authored records, preserving all 891 prior rows/order and every earlier
+configuration. Thirty-eight new regression guards and all 2106 public checks
+pass; progress/whitespace checks pass. All sixty exact inputs remain unchanged,
+so the earlier R139 cold 60/60 replay across eleven objects remains applicable.
+
+Totals are 3628 resolved (942 authored, 2111 library, 575 compiler), 723 pending
+and 2686 excluded. Authored evidence totals 895 whole bodies / 1955637 bytes.
+Exact remains 60 functions / 9883 bytes with provisional coverage
+9883 / 1967980 (0.50%). No reconstructed source/private ABI/mapping/exact credit
+is added. Public MCP acceptance remains waived; the full remaining-origin goal
+is active and unfinished. Next reconcile the whole default-list construction
+graph, local exception entry and shared tail before assigning any new ownership.
