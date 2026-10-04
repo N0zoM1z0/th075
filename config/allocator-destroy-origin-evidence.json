@@ -1,0 +1,6334 @@
+{
+  "evidence_id": "R165",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "probe": "probes/VC7AllocatorDestroyContexts.cpp",
+  "probe_sha256": "c63b60441d7b3602f506f491dafa70bbe2873ec10e98aaf18626ceebe67fd2da",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/I",
+    "src",
+    "/showIncludes"
+  ],
+  "headers": {
+    "probes/VC7SDKDependencyContexts.cpp": "740cbeb0193c7959ea251feb2916e09b3fa541c37453553e785ed3b067ea35c3",
+    ".tools/msvc710/Vc7/include/deque": "8180a844c7f3948ab6daae2ce2f117fbaf5636590c7b50cd06110ed714ebb585",
+    ".tools/msvc710/Vc7/include/memory": "81895e7a4ef1c432ec68484b072bcd14f953a75d99af77c0f83667c1c7cf9bf4",
+    ".tools/msvc710/Vc7/include/iterator": "030f894a4ba6cb78bd1c98ca20a28bcab7443697eafc740c1162eb41a73c48d6",
+    ".tools/msvc710/Vc7/include/xutility": "177f47d09110228013374513e62a9de2e9be2f9bd22e4ae15bb31c584da4db7b",
+    ".tools/msvc710/Vc7/include/climits": "ccd3e243fd3d9b28d7ef487c6c203ff39e7fbc039eadd28384f7ae8f8e133a0e",
+    ".tools/msvc710/Vc7/include/yvals.h": "b9340f3de0fd2f1c0e0b81b99e9f42252a0ec5652267536e9c62b0b4f1bf8980",
+    ".tools/msvc710/Vc7/include/use_ansi.h": "56ba75ecabe4ff0af0ab227d88ce407c31e0f0c8d05c1e42423186da04069fdc",
+    ".tools/msvc710/Vc7/include/limits.h": "d3ad33ce7c8eb1c3f7c5f151339efdcd44ae1d76506a314f0b91daf26c004522",
+    ".tools/msvc710/Vc7/include/utility": "77d42e02d0abc5e8aceefe893c2fad9fe7b55dce409a88c3bc2e3f3809ad12d4",
+    ".tools/msvc710/Vc7/include/iosfwd": "ceb0247fc75f4fe840dcef2b04f41eb71c115d57748ad6eb0e9416713f658cd9",
+    ".tools/msvc710/Vc7/include/cstdio": "0ce255cdf0ff57258ea2ecc8b203658f9945f17eedd9c6366bc5caa227c8df96",
+    ".tools/msvc710/Vc7/include/stdio.h": "96f0b2c746b580b6a5d9a13f9a221275d210de79ef832e2265e0ed70b0c914e1",
+    ".tools/msvc710/Vc7/include/cstring": "363e4858a9b1d3fd3ef07d300f7b384615b8af48c0d1e9e4c294ea86a1d7d620",
+    ".tools/msvc710/Vc7/include/string.h": "b68e9db97d695655abe65dd36d9fc0f92e5bc304371eb9c8a9d2144e55eb8c37",
+    ".tools/msvc710/Vc7/include/cwchar": "13448c9868fdc9b220822f2433ee52c6af825dde539707377c10572af2133820",
+    ".tools/msvc710/Vc7/include/wchar.h": "85e9bfe575fa70bd37eb694cb8b8ca5ca2ca9d0fb811d983054a42afc06ecfa1",
+    ".tools/msvc710/Vc7/include/xstddef": "e3b1fa3dcb3281ee2f22f79150303d943362263ea0b95874cd313b2798112a27",
+    ".tools/msvc710/Vc7/include/cstddef": "f83f50123dd77e05f5b112abcf7f47b2a9e7076727955f91db471ae273e67430",
+    ".tools/msvc710/Vc7/include/stddef.h": "491ce357cd01c533b07664fb9a97403a172e277096ee58a924696c0046a96afe",
+    ".tools/msvc710/Vc7/include/xmemory": "e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94",
+    ".tools/msvc710/Vc7/include/cstdlib": "e7c431e5c256b9458bb31bce7e770d99481b23ff22f609b4b6a91c50f183ec24",
+    ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946",
+    ".tools/msvc710/Vc7/include/new": "bd97c3f682c039eb7ee00c9acfc2d4cf44c55671b373fba777af7652faf15fd9",
+    ".tools/msvc710/Vc7/include/exception": "994d4a23a837d92100205d89ac38c13c317cfb1851c2ae1fdc4d80b0e052c40c",
+    ".tools/msvc710/Vc7/include/eh.h": "6ee4653126d60011021b2c57abe3e01b3030c3103248346da5299ecdf8e9d932",
+    ".tools/msvc710/Vc7/include/stdexcept": "bc3e7b40b6413b1aa2a2cc011057ca42aa03a714f409f927734c4f507aaea2a7",
+    ".tools/msvc710/Vc7/include/xstring": "c715ae6f152ca41d73e701c5d77dd5da0b61832250c967d2a8376b9471656943",
+    ".tools/msvc710/Vc7/include/algorithm": "36a6b5634df850c0c63d821f69114a6dcdc0b716fc96fcbb938f9e2dccb2b2eb"
+  },
+  "functions": [
+    {
+      "address": "0x00422610",
+      "size": 25,
+      "decision": "library",
+      "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+      "original_function": {
+        "address": "0x00422610",
+        "size": "25",
+        "span_end": "0x00422628",
+        "current_name": "FUN_00422610",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00422610",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00422610",
+        "size": "25",
+        "span_end": "0x00422628",
+        "current_name": "FUN_00422610",
+        "proposed_name": "VC7::allocator_destroy_00422610",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R165; config/allocator-destroy-origin-evidence.json; scripts/repo-python scripts/verify-allocator-destroy-origins.py",
+        "owner": "library",
+        "notes": "Complete genuine SDK allocator destruction source and real field compare unmasked through unchanged whole R164 deque-pop parent. Whole ordinary allocator/destruction controls are byte-equal and do not recover original declarations or independent child ownership. Actual 15-/5-byte destruction children, opaque 72-byte game lifetime and protected copy/math/lifetime alternatives remain unknown; original R037 compiler deleting wrapper and R142 runtime delete retain independent ownership. Synthetic observations are complete probe ABI inputs only, not reconstructed game layouts; no source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x00422610",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-allocator-destroy-with-independent-whole-deque-parent-fields",
+        "evidence_id": "R165"
+      }
+    },
+    {
+      "address": "0x0042E390",
+      "size": 25,
+      "decision": "library",
+      "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+      "original_function": {
+        "address": "0x0042E390",
+        "size": "25",
+        "span_end": "0x0042E3A8",
+        "current_name": "std::allocator<std::_Container_proxy>::destroy",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0042E390",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0042E390",
+        "size": "25",
+        "span_end": "0x0042E3A8",
+        "current_name": "std::allocator<std::_Container_proxy>::destroy",
+        "proposed_name": "VC7::allocator_destroy_0042E390",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R165; config/allocator-destroy-origin-evidence.json; scripts/repo-python scripts/verify-allocator-destroy-origins.py",
+        "owner": "library",
+        "notes": "Complete genuine SDK allocator destruction source and real field compare unmasked through unchanged whole R164 deque-pop parent. Whole ordinary allocator/destruction controls are byte-equal and do not recover original declarations or independent child ownership. Actual 15-/5-byte destruction children, opaque 72-byte game lifetime and protected copy/math/lifetime alternatives remain unknown; original R037 compiler deleting wrapper and R142 runtime delete retain independent ownership. Synthetic observations are complete probe ABI inputs only, not reconstructed game layouts; no source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0042E390",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-allocator-destroy-with-independent-whole-deque-parent-fields",
+        "evidence_id": "R165"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "address": "0x00422610",
+      "size": 25,
+      "role": "candidate-sdk-owner",
+      "source_definition": {
+        "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+        "offset": 0,
+        "section": 75,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 75,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+        "fields": [
+          {
+            "offset": 12,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+              "offset": 0,
+              "section": 107,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 75,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 75,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 75,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 75,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 75,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "454d6eed367217b67ea159c1a4bbcd2357073fd63d42e17b7d0ebf2954b4b702",
+      "bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x004229C0"
+        }
+      ]
+    },
+    {
+      "address": "0x0042E390",
+      "size": 25,
+      "role": "candidate-sdk-owner",
+      "source_definition": {
+        "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+        "offset": 0,
+        "section": 81,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 81,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+        "fields": [
+          {
+            "offset": 12,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+              "offset": 0,
+              "section": 109,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 81,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 81,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 81,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 81,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 81,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "8e65817568e0090aee06707f0ba7da2ac68609aca266b5efd49611b5b685769d",
+      "bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x0042E580"
+        }
+      ]
+    },
+    {
+      "address": "0x00422290",
+      "size": 151,
+      "role": "retained-whole-library-parent",
+      "source_definition": {
+        "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+        "offset": 0,
+        "section": 51,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 51,
+        "name": ".text",
+        "size": 151,
+        "flags": 1615859744,
+        "source_sha256": "f58de4225c6ec9defc7159ca1247c20ee756db1361989a9e72f51fea5b84eeca",
+        "fields": [
+          {
+            "offset": 14,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+              "offset": 0,
+              "section": 71,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 108,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+              "offset": 0,
+              "section": 75,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 51,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 51,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 51,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 10,
+            "section": 51,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 151,
+            "section": 51,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "f58de4225c6ec9defc7159ca1247c20ee756db1361989a9e72f51fea5b84eeca",
+      "body_sha256": "54ff33fd8528ca2ba7cd39bc21c0b946446511324ff60babffdea0c39cbb07c6",
+      "bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x00422270"
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x00422610"
+        }
+      ]
+    },
+    {
+      "address": "0x0042E120",
+      "size": 151,
+      "role": "retained-whole-library-parent",
+      "source_definition": {
+        "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+        "offset": 0,
+        "section": 55,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 55,
+        "name": ".text",
+        "size": 151,
+        "flags": 1615859744,
+        "source_sha256": "994327966ee26238b22d9d02b87173fabed45b2593648fe2dd0cd14b163e9c50",
+        "fields": [
+          {
+            "offset": 14,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+              "offset": 0,
+              "section": 77,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 108,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+              "offset": 0,
+              "section": 81,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 55,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 55,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 55,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 10,
+            "section": 55,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 151,
+            "section": 55,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "994327966ee26238b22d9d02b87173fabed45b2593648fe2dd0cd14b163e9c50",
+      "body_sha256": "9551b5e81b315c0cf57ade59e8bc388441d81aafbdae2bd45ed39e4a7627d1e3",
+      "bindings": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target_address": "0x0042E100"
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x0042E390"
+        }
+      ]
+    },
+    {
+      "address": "0x00422270",
+      "size": 25,
+      "role": "whole-operation-context",
+      "source_definition": {
+        "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+        "offset": 0,
+        "section": 71,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 71,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 71,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 71,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 71,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 71,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 71,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "bindings": []
+    },
+    {
+      "address": "0x0042E100",
+      "size": 25,
+      "role": "whole-operation-context",
+      "source_definition": {
+        "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+        "offset": 0,
+        "section": 77,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 77,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 77,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 77,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 77,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 77,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 77,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "bindings": []
+    },
+    {
+      "address": "0x004229C0",
+      "size": 15,
+      "role": "whole-operation-context",
+      "source_definition": {
+        "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+        "offset": 0,
+        "section": 107,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 107,
+        "name": ".text",
+        "size": 15,
+        "flags": 1615859744,
+        "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+        "fields": [
+          {
+            "offset": 9,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+              "offset": 0,
+              "section": 45,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 107,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 107,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 107,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 107,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 15,
+            "section": 107,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "body_sha256": "b6ec5eb04b9b6eaff1fcca9a85f62489ffba61d83455af012ee12efcd1579eec",
+      "bindings": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+          "addend": 0,
+          "target_address": "0x00422A20"
+        }
+      ]
+    },
+    {
+      "address": "0x0042E580",
+      "size": 5,
+      "role": "whole-operation-context",
+      "source_definition": {
+        "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+        "offset": 0,
+        "section": 109,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 109,
+        "name": ".text",
+        "size": 5,
+        "flags": 1615859744,
+        "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 109,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 109,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 109,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 2,
+            "section": 109,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 5,
+            "section": 109,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "bindings": []
+    },
+    {
+      "address": "0x00422A20",
+      "size": 44,
+      "role": "retained-compiler-wrapper",
+      "source_definition": {
+        "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+        "offset": 0,
+        "section": 45,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 45,
+        "name": ".text",
+        "size": 44,
+        "flags": 1615859744,
+        "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+        "fields": [
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??1Queue20Observation@@QAE@XZ",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 28,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??3@YAXPAX@Z",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 45,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 45,
+            "type": 32,
+            "storage": 2
+          }
+        ]
+      },
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "body_sha256": "3365ca124116dad1010b6416980fc5806d0377cdbab848b8867c0a333b0a8700",
+      "bindings": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??1Queue20Observation@@QAE@XZ",
+          "addend": 0,
+          "target_address": "0x004212A0"
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target_address": "0x00640F15"
+        }
+      ]
+    },
+    {
+      "address": "0x00422610",
+      "size": 25,
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?destroy@?$OrdinaryAllocatorObservation@UQueue20Observation@@@@QAEXPAUQueue20Observation@@@Z",
+        "offset": 0,
+        "section": 65,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 65,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+        "fields": [
+          {
+            "offset": 12,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+              "offset": 0,
+              "section": 107,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 65,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?destroy@?$OrdinaryAllocatorObservation@UQueue20Observation@@@@QAEXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 65,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 65,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 65,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 65,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "454d6eed367217b67ea159c1a4bbcd2357073fd63d42e17b7d0ebf2954b4b702",
+      "bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x004229C0"
+        }
+      ]
+    },
+    {
+      "address": "0x0042E390",
+      "size": 25,
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?destroy@?$OrdinaryAllocatorObservation@UFile60Observation@@@@QAEXPAUFile60Observation@@@Z",
+        "offset": 0,
+        "section": 67,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 67,
+        "name": ".text",
+        "size": 25,
+        "flags": 1615859744,
+        "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+        "fields": [
+          {
+            "offset": 12,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+              "offset": 0,
+              "section": 109,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 67,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?destroy@?$OrdinaryAllocatorObservation@UFile60Observation@@@@QAEXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 67,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 67,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 67,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 25,
+            "section": 67,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "body_sha256": "8e65817568e0090aee06707f0ba7da2ac68609aca266b5efd49611b5b685769d",
+      "bindings": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+          "addend": 0,
+          "target_address": "0x0042E580"
+        }
+      ]
+    },
+    {
+      "address": "0x004229C0",
+      "size": 15,
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?OrdinaryQueueDestroy@@YAXPAUQueue20Observation@@@Z",
+        "offset": 0,
+        "section": 43,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 43,
+        "name": ".text",
+        "size": 15,
+        "flags": 1615859744,
+        "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+        "fields": [
+          {
+            "offset": 9,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+              "offset": 0,
+              "section": 45,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 43,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?OrdinaryQueueDestroy@@YAXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 43,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 43,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 43,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 15,
+            "section": 43,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "body_sha256": "b6ec5eb04b9b6eaff1fcca9a85f62489ffba61d83455af012ee12efcd1579eec",
+      "bindings": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+          "addend": 0,
+          "target_address": "0x00422A20"
+        }
+      ]
+    },
+    {
+      "address": "0x0042E580",
+      "size": 5,
+      "role": "byte-equal-ordinary-alternative",
+      "source_definition": {
+        "symbol": "?OrdinaryFileDestroy@@YAXPAUFile60Observation@@@Z",
+        "offset": 0,
+        "section": 47,
+        "type": 32,
+        "storage": 2
+      },
+      "section": {
+        "section": 47,
+        "name": ".text",
+        "size": 5,
+        "flags": 1615859744,
+        "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 47,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?OrdinaryFileDestroy@@YAXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 47,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 47,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 47,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 5,
+            "section": 47,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "bindings": []
+    }
+  ],
+  "emission": [
+    {
+      "section": 3,
+      "name": ".rdata",
+      "size": 68,
+      "flags": 1076887616,
+      "source_sha256": "bece7c70e794c6f5c672cf4b43f3cc90f75c0a46c695d63c0229e23be015a85e",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_AllocatorDestroyLayout",
+          "offset": 60,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        },
+        {
+          "symbol": "_SDKDependencyLayout",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 4,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?max_size@?$deque@UTwoByteObservation@@V?$allocator@UTwoByteObservation@@@std@@@std@@QBEIXZ",
+            "offset": 0,
+            "section": 49,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveMax@@YAIABV?$deque@UTwoByteObservation@@V?$allocator@UTwoByteObservation@@@std@@@std@@@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 6,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 51,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveQueuePop@@YAXAAV?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@@Z",
+          "offset": 0,
+          "section": 6,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 8,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?clear@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 53,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveQueueClear@@YAXAAV?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@@Z",
+          "offset": 0,
+          "section": 8,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 8,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 10,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 55,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveFilePop@@YAXAAV?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@@Z",
+          "offset": 0,
+          "section": 10,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 12,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?clear@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 57,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveFileClear@@YAXAAV?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@@Z",
+          "offset": 0,
+          "section": 12,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 14,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "62ebf47293d861ba6638462ba31f6f3ef8842ad965e70d1b1c186904d054fdee",
+      "fields": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$copy@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00@Z",
+            "offset": 0,
+            "section": 99,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveCopy@@YAPAUCopy116Observation@@PAU1@00@Z",
+          "offset": 0,
+          "section": 14,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 14,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 16,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "62ebf47293d861ba6638462ba31f6f3ef8842ad965e70d1b1c186904d054fdee",
+      "fields": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$copy_backward@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00@Z",
+            "offset": 0,
+            "section": 101,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveCopyBackward@@YAPAUCopy116Observation@@PAU1@00@Z",
+          "offset": 0,
+          "section": 16,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 18,
+      "name": ".text",
+      "size": 21,
+      "flags": 1615859744,
+      "source_sha256": "882e1260ff231f85def375fa95d23381bbd3cc795efce3850d160c683b11f2c4",
+      "fields": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?construct@?$allocator@UCopy116Observation@@@std@@QAEXPAUCopy116Observation@@ABU3@@Z",
+            "offset": 0,
+            "section": 59,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveConstruct@@YAXAAV?$allocator@UCopy116Observation@@@std@@PAUCopy116Observation@@ABU3@@Z",
+          "offset": 0,
+          "section": 18,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 21,
+          "section": 18,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 20,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?capacity@OrdinaryCapacityObservation@@QBEIXZ",
+            "offset": 0,
+            "section": 22,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinaryCapacity@@YAIABUOrdinaryCapacityObservation@@@Z",
+          "offset": 0,
+          "section": 20,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 20,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 22,
+      "name": ".text",
+      "size": 44,
+      "flags": 1615859744,
+      "source_sha256": "9802b55c60d7c8ad8534f448a28485e20cc45f3b18fd13a64b444463d9aa797d",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?capacity@OrdinaryCapacityObservation@@QBEIXZ",
+          "offset": 0,
+          "section": 22,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 4,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 44,
+          "section": 22,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 24,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?popBack@?$OrdinaryDequeObservation@UQueue20Observation@@@@QAEXXZ",
+            "offset": 0,
+            "section": 61,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinaryQueuePop@@YAXAAU?$OrdinaryDequeObservation@UQueue20Observation@@@@@Z",
+          "offset": 0,
+          "section": 24,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 24,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 26,
+      "name": ".text",
+      "size": 13,
+      "flags": 1615859744,
+      "source_sha256": "335eabc521ee75e310b387b9a3c8f286b54701b327955b0befef345664a706f6",
+      "fields": [
+        {
+          "offset": 7,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?popBack@?$OrdinaryDequeObservation@UFile60Observation@@@@QAEXXZ",
+            "offset": 0,
+            "section": 63,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinaryFilePop@@YAXAAU?$OrdinaryDequeObservation@UFile60Observation@@@@@Z",
+          "offset": 0,
+          "section": 26,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 13,
+          "section": 26,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 28,
+      "name": ".text",
+      "size": 50,
+      "flags": 1615859744,
+      "source_sha256": "13ae873edc46eb5c8a2091975112733a7decd4a752ae0ee5f7467dfec5487b2b",
+      "fields": [
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??4Copy116Observation@@QAEAAU0@ABU0@@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?OrdinaryCopy@@YAPAUCopy116Observation@@PAU1@00U_Nonscalar_ptr_iterator_tag@std@@@Z",
+          "offset": 0,
+          "section": 28,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 5,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 50,
+          "section": 28,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 30,
+      "name": ".text",
+      "size": 108,
+      "flags": 1615859744,
+      "source_sha256": "6313347ce8aaae3a64f4bc417a27b72d366a48fb6cca2aee1a886599563dbf5f",
+      "fields": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__ehhandler$?OrdinaryConstruct@@YAXPAUCopy116Observation@@ABU1@@Z",
+            "offset": 17,
+            "section": 32,
+            "type": 32,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??2@YAPAXIPAX@Z",
+            "offset": 0,
+            "section": 35,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??0Copy116Observation@@QAE@ABU0@@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?OrdinaryConstruct@@YAXPAUCopy116Observation@@ABU1@@Z",
+          "offset": 0,
+          "section": 30,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 108,
+          "section": 30,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 32,
+      "name": ".text$x",
+      "size": 27,
+      "flags": 1615859744,
+      "source_sha256": "e51322fa62cb6d2f8ef2e20873eedafc7b74167fa2a9e83e78e18b4188ad2571",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX0@Z",
+            "offset": 0,
+            "section": 37,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$T7760",
+            "offset": 8,
+            "section": 33,
+            "type": 0,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "___CxxFrameHandler",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text$x",
+          "offset": 0,
+          "section": 32,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$L7756",
+          "offset": 0,
+          "section": 32,
+          "type": 32,
+          "storage": 3
+        },
+        {
+          "symbol": "__ehhandler$?OrdinaryConstruct@@YAXPAUCopy116Observation@@ABU1@@Z",
+          "offset": 17,
+          "section": 32,
+          "type": 32,
+          "storage": 3
+        }
+      ]
+    },
+    {
+      "section": 33,
+      "name": ".xdata$x",
+      "size": 36,
+      "flags": 1076891712,
+      "source_sha256": "0d3e5c3b04c134726c1292aaa03d3b3720e4e095ca105e0158a66b8340d15010",
+      "fields": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$L7756",
+            "offset": 0,
+            "section": 32,
+            "type": 32,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$T7763",
+            "offset": 0,
+            "section": 33,
+            "type": 0,
+            "storage": 3
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".xdata$x",
+          "offset": 0,
+          "section": 33,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T7760",
+          "offset": 8,
+          "section": 33,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T7763",
+          "offset": 0,
+          "section": 33,
+          "type": 0,
+          "storage": 3
+        }
+      ]
+    },
+    {
+      "section": 35,
+      "name": ".text",
+      "size": 8,
+      "flags": 1615859744,
+      "source_sha256": "a88b542608dec5bd7f04897050a7ac52f6da1375a7d97d0db7ac5ab21c137b21",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 35,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??2@YAPAXIPAX@Z",
+          "offset": 0,
+          "section": 35,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 35,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 35,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 8,
+          "section": 35,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 37,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 37,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??3@YAXPAX0@Z",
+          "offset": 0,
+          "section": 37,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 37,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 37,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 37,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 39,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "8fed375e56aadc6feee24dab9337bda72e45f0c8ae2c3209c6741363fde7cf91",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$OrdinaryAllocatorObservation@UQueue20Observation@@@@QAEXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 65,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 39,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinaryQueueAllocator@@YAXAAU?$OrdinaryAllocatorObservation@UQueue20Observation@@@@PAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 39,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 39,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 39,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 39,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 41,
+      "name": ".text",
+      "size": 17,
+      "flags": 1615859744,
+      "source_sha256": "8fed375e56aadc6feee24dab9337bda72e45f0c8ae2c3209c6741363fde7cf91",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$OrdinaryAllocatorObservation@UFile60Observation@@@@QAEXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 67,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 41,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveOrdinaryFileAllocator@@YAXAAU?$OrdinaryAllocatorObservation@UFile60Observation@@@@PAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 41,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 41,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 41,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 17,
+          "section": 41,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 43,
+      "name": ".text",
+      "size": 15,
+      "flags": 1615859744,
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 45,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 43,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?OrdinaryQueueDestroy@@YAXPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 43,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 43,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 43,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 15,
+          "section": 43,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 45,
+      "name": ".text",
+      "size": 44,
+      "flags": 1615859744,
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??1Queue20Observation@@QAE@XZ",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 45,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+          "offset": 0,
+          "section": 45,
+          "type": 32,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 47,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 47,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?OrdinaryFileDestroy@@YAXPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 47,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 47,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 47,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 47,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 49,
+      "name": ".text",
+      "size": 22,
+      "flags": 1615859744,
+      "source_sha256": "036ac8295c572d4c8b872d83a60757d79e408d2f452ee1bad9de69a885252f44",
+      "fields": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?max_size@?$allocator@UTwoByteObservation@@@std@@QBEIXZ",
+            "offset": 0,
+            "section": 69,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 49,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?max_size@?$deque@UTwoByteObservation@@V?$allocator@UTwoByteObservation@@@std@@@std@@QBEIXZ",
+          "offset": 0,
+          "section": 49,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 49,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 49,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 22,
+          "section": 49,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 51,
+      "name": ".text",
+      "size": 151,
+      "flags": 1615859744,
+      "source_sha256": "f58de4225c6ec9defc7159ca1247c20ee756db1361989a9e72f51fea5b84eeca",
+      "fields": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 71,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 75,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 51,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "section": 51,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 51,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 10,
+          "section": 51,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 151,
+          "section": 51,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 53,
+      "name": ".text",
+      "size": 19,
+      "flags": 1615859744,
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?_Tidy@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@IAEXXZ",
+            "offset": 0,
+            "section": 73,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 53,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?clear@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "section": 53,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 53,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 53,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 19,
+          "section": 53,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 55,
+      "name": ".text",
+      "size": 151,
+      "flags": 1615859744,
+      "source_sha256": "994327966ee26238b22d9d02b87173fabed45b2593648fe2dd0cd14b163e9c50",
+      "fields": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 77,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 81,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 55,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "section": 55,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 55,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 10,
+          "section": 55,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 151,
+          "section": 55,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 57,
+      "name": ".text",
+      "size": 19,
+      "flags": 1615859744,
+      "source_sha256": "34d6af46dd3338abf5d997f2e605a0321d87bfe083118d27838b6e494535d81a",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?_Tidy@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@IAEXXZ",
+            "offset": 0,
+            "section": 79,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 57,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?clear@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "section": 57,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 57,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 57,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 19,
+          "section": 57,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 59,
+      "name": ".text",
+      "size": 29,
+      "flags": 1615859744,
+      "source_sha256": "7c6d9fb49bf679d9ce24e0ea5fcdcc441c4a612bbc57f5c6c01fdb7e501bdce0",
+      "fields": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Construct@UCopy116Observation@@U1@@std@@YAXPAUCopy116Observation@@ABU1@@Z",
+            "offset": 0,
+            "section": 103,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 59,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?construct@?$allocator@UCopy116Observation@@@std@@QAEXPAUCopy116Observation@@ABU3@@Z",
+          "offset": 0,
+          "section": 59,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 59,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 59,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 29,
+          "section": 59,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 61,
+      "name": ".text",
+      "size": 151,
+      "flags": 1615859744,
+      "source_sha256": "326ec552289859aee4f7e67231fe42f030ae7ae35699ed0bab4416a7e29b2b7b",
+      "fields": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$OrdinaryDequeObservation@UQueue20Observation@@@@QBE_NXZ",
+            "offset": 0,
+            "section": 83,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 75,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 61,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?popBack@?$OrdinaryDequeObservation@UQueue20Observation@@@@QAEXXZ",
+          "offset": 0,
+          "section": 61,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 61,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 10,
+          "section": 61,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 151,
+          "section": 61,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 63,
+      "name": ".text",
+      "size": 151,
+      "flags": 1615859744,
+      "source_sha256": "3e7a38b96651b0378c57627f4edad2de6119f002358cd55ef7d35040fe65bd5f",
+      "fields": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$OrdinaryDequeObservation@UFile60Observation@@@@QBE_NXZ",
+            "offset": 0,
+            "section": 85,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 81,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 63,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?popBack@?$OrdinaryDequeObservation@UFile60Observation@@@@QAEXXZ",
+          "offset": 0,
+          "section": 63,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 63,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 10,
+          "section": 63,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 151,
+          "section": 63,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 65,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 107,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 65,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$OrdinaryAllocatorObservation@UQueue20Observation@@@@QAEXPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 65,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 65,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 65,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 65,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 67,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 109,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 67,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$OrdinaryAllocatorObservation@UFile60Observation@@@@QAEXPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 67,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 67,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 67,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 67,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 69,
+      "name": ".text",
+      "size": 44,
+      "flags": 1615859744,
+      "source_sha256": "9802b55c60d7c8ad8534f448a28485e20cc45f3b18fd13a64b444463d9aa797d",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 69,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?max_size@?$allocator@UTwoByteObservation@@@std@@QBEIXZ",
+          "offset": 0,
+          "section": 69,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 69,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 4,
+          "section": 69,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 44,
+          "section": 69,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 71,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 71,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+          "offset": 0,
+          "section": 71,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 71,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 71,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 71,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 73,
+      "name": ".text",
+      "size": 177,
+      "flags": 1615859744,
+      "source_sha256": "95fe927eb2698cbd9c0a9a25b182fc3deee19bf4280304c4f0b9370e976c2857",
+      "fields": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 71,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 51,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?deallocate@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@I@Z",
+            "offset": 0,
+            "section": 87,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@PAUQueue20Observation@@@std@@QAEXPAPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 91,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?deallocate@?$allocator@PAUQueue20Observation@@@std@@QAEXPAPAUQueue20Observation@@I@Z",
+            "offset": 0,
+            "section": 89,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 73,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?_Tidy@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@IAEXXZ",
+          "offset": 0,
+          "section": 73,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 73,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 13,
+          "section": 73,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 177,
+          "section": 73,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 75,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 107,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 75,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 75,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 75,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 75,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 75,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 77,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 77,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+          "offset": 0,
+          "section": 77,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 77,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 77,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 77,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 79,
+      "name": ".text",
+      "size": 177,
+      "flags": 1615859744,
+      "source_sha256": "95fe927eb2698cbd9c0a9a25b182fc3deee19bf4280304c4f0b9370e976c2857",
+      "fields": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?empty@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QBE_NXZ",
+            "offset": 0,
+            "section": 77,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+            "offset": 0,
+            "section": 55,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?deallocate@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@I@Z",
+            "offset": 0,
+            "section": 93,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?destroy@?$allocator@PAUFile60Observation@@@std@@QAEXPAPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 97,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "?deallocate@?$allocator@PAUFile60Observation@@@std@@QAEXPAPAUFile60Observation@@I@Z",
+            "offset": 0,
+            "section": 95,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 79,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?_Tidy@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@IAEXXZ",
+          "offset": 0,
+          "section": 79,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 79,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 13,
+          "section": 79,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 177,
+          "section": 79,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 81,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 109,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 81,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 81,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 81,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 81,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 81,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 83,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 83,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?empty@?$OrdinaryDequeObservation@UQueue20Observation@@@@QBE_NXZ",
+          "offset": 0,
+          "section": 83,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 83,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 83,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 83,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 85,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 85,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?empty@?$OrdinaryDequeObservation@UFile60Observation@@@@QBE_NXZ",
+          "offset": 0,
+          "section": 85,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 85,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 1,
+          "section": 85,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 85,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 87,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 87,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?deallocate@?$allocator@UQueue20Observation@@@std@@QAEXPAUQueue20Observation@@I@Z",
+          "offset": 0,
+          "section": 87,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 87,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 87,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 87,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 89,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 89,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?deallocate@?$allocator@PAUQueue20Observation@@@std@@QAEXPAPAUQueue20Observation@@I@Z",
+          "offset": 0,
+          "section": 89,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 89,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 89,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 89,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 91,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@PAUQueue20Observation@@@std@@YAXPAPAUQueue20Observation@@@Z",
+            "offset": 0,
+            "section": 111,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 91,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$allocator@PAUQueue20Observation@@@std@@QAEXPAPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 91,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 91,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 91,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 91,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 93,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 93,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?deallocate@?$allocator@UFile60Observation@@@std@@QAEXPAUFile60Observation@@I@Z",
+          "offset": 0,
+          "section": 93,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 93,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 93,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 93,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 95,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "98d8393a76ac9fbc41250c6069af9c5f734d1f3529f958ca7e72be42b1585abc",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 95,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?deallocate@?$allocator@PAUFile60Observation@@@std@@QAEXPAPAUFile60Observation@@I@Z",
+          "offset": 0,
+          "section": 95,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 95,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 95,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 95,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 97,
+      "name": ".text",
+      "size": 25,
+      "flags": 1615859744,
+      "source_sha256": "f15b6ab0bb8c123fee8171d5aa3537e37ca40958350e515dc8a11a0d87089971",
+      "fields": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Destroy@PAUFile60Observation@@@std@@YAXPAPAUFile60Observation@@@Z",
+            "offset": 0,
+            "section": 113,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 97,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?destroy@?$allocator@PAUFile60Observation@@@std@@QAEXPAPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 97,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 97,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 97,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 25,
+          "section": 97,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 99,
+      "name": ".text",
+      "size": 51,
+      "flags": 1615859744,
+      "source_sha256": "05f7dc3c84a14f069c77b3c3968b95227eb499f80ef40f704e13025365bc70e8",
+      "fields": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Ptr_cat@PAUCopy116Observation@@PAU1@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAPAUCopy116Observation@@0@Z",
+            "offset": 0,
+            "section": 115,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Copy_opt@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+            "offset": 0,
+            "section": 117,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 99,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$copy@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00@Z",
+          "offset": 0,
+          "section": 99,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 99,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 99,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 51,
+          "section": 99,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 101,
+      "name": ".text",
+      "size": 51,
+      "flags": 1615859744,
+      "source_sha256": "05f7dc3c84a14f069c77b3c3968b95227eb499f80ef40f704e13025365bc70e8",
+      "fields": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Ptr_cat@PAUCopy116Observation@@PAU1@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAPAUCopy116Observation@@0@Z",
+            "offset": 0,
+            "section": 115,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??$_Copy_backward_opt@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+            "offset": 0,
+            "section": 119,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 101,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$copy_backward@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00@Z",
+          "offset": 0,
+          "section": 101,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 101,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 101,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 51,
+          "section": 101,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 103,
+      "name": ".text",
+      "size": 108,
+      "flags": 1615859744,
+      "source_sha256": "6313347ce8aaae3a64f4bc417a27b72d366a48fb6cca2aee1a886599563dbf5f",
+      "fields": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__ehhandler$??$_Construct@UCopy116Observation@@U1@@std@@YAXPAUCopy116Observation@@ABU1@@Z",
+            "offset": 17,
+            "section": 105,
+            "type": 32,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??2@YAPAXIPAX@Z",
+            "offset": 0,
+            "section": 35,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??0Copy116Observation@@QAE@ABU0@@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "__except_list",
+            "offset": 0,
+            "section": 0,
+            "type": 0,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 103,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Construct@UCopy116Observation@@U1@@std@@YAXPAUCopy116Observation@@ABU1@@Z",
+          "offset": 0,
+          "section": 103,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 103,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 103,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 108,
+          "section": 103,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 105,
+      "name": ".text$x",
+      "size": 27,
+      "flags": 1615859744,
+      "source_sha256": "e51322fa62cb6d2f8ef2e20873eedafc7b74167fa2a9e83e78e18b4188ad2571",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX0@Z",
+            "offset": 0,
+            "section": 37,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$T7847",
+            "offset": 8,
+            "section": 106,
+            "type": 0,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "___CxxFrameHandler",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text$x",
+          "offset": 0,
+          "section": 105,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$L7845",
+          "offset": 0,
+          "section": 105,
+          "type": 32,
+          "storage": 3
+        },
+        {
+          "symbol": "__ehhandler$??$_Construct@UCopy116Observation@@U1@@std@@YAXPAUCopy116Observation@@ABU1@@Z",
+          "offset": 17,
+          "section": 105,
+          "type": 32,
+          "storage": 3
+        }
+      ]
+    },
+    {
+      "section": 106,
+      "name": ".xdata$x",
+      "size": 36,
+      "flags": 1076891712,
+      "source_sha256": "0d3e5c3b04c134726c1292aaa03d3b3720e4e095ca105e0158a66b8340d15010",
+      "fields": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$L7845",
+            "offset": 0,
+            "section": 105,
+            "type": 32,
+            "storage": 3
+          },
+          "addend": 0
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": {
+            "symbol": "$T7849",
+            "offset": 0,
+            "section": 106,
+            "type": 0,
+            "storage": 3
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".xdata$x",
+          "offset": 0,
+          "section": 106,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T7847",
+          "offset": 8,
+          "section": 106,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T7849",
+          "offset": 0,
+          "section": 106,
+          "type": 0,
+          "storage": 3
+        }
+      ]
+    },
+    {
+      "section": 107,
+      "name": ".text",
+      "size": 15,
+      "flags": 1615859744,
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_GQueue20Observation@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 45,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 107,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Destroy@UQueue20Observation@@@std@@YAXPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 107,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 107,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 107,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 15,
+          "section": 107,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 109,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 109,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Destroy@UFile60Observation@@@std@@YAXPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 109,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 109,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 109,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 109,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 111,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 111,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Destroy@PAUQueue20Observation@@@std@@YAXPAPAUQueue20Observation@@@Z",
+          "offset": 0,
+          "section": 111,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 111,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 111,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 111,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 113,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 113,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Destroy@PAUFile60Observation@@@std@@YAXPAPAUFile60Observation@@@Z",
+          "offset": 0,
+          "section": 113,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 113,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 113,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 113,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 115,
+      "name": ".text",
+      "size": 11,
+      "flags": 1615859744,
+      "source_sha256": "125af26ed15ea5e17205bbf1df6e31eeb82f0d79055557b9a04ec8a39e8679a8",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 115,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Ptr_cat@PAUCopy116Observation@@PAU1@@std@@YA?AU_Nonscalar_ptr_iterator_tag@0@AAPAUCopy116Observation@@0@Z",
+          "offset": 0,
+          "section": 115,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 115,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 115,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 11,
+          "section": 115,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 117,
+      "name": ".text",
+      "size": 50,
+      "flags": 1615859744,
+      "source_sha256": "13ae873edc46eb5c8a2091975112733a7decd4a752ae0ee5f7467dfec5487b2b",
+      "fields": [
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??4Copy116Observation@@QAEAAU0@ABU0@@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 117,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Copy_opt@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+          "offset": 0,
+          "section": 117,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 117,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 5,
+          "section": 117,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 50,
+          "section": 117,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 119,
+      "name": ".text",
+      "size": 48,
+      "flags": 1615859744,
+      "source_sha256": "7729fa06026d8f5f02f472ab7b73f7d7cc2f315790f5498f3fa944957e616616",
+      "fields": [
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??4Copy116Observation@@QAEAAU0@ABU0@@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 119,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??$_Copy_backward_opt@PAUCopy116Observation@@PAU1@@std@@YAPAUCopy116Observation@@PAU1@00U_Nonscalar_ptr_iterator_tag@0@@Z",
+          "offset": 0,
+          "section": 119,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 119,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 5,
+          "section": 119,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 48,
+          "section": 119,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    }
+  ],
+  "layout": {
+    "section": 3,
+    "name": ".rdata",
+    "size": 68,
+    "flags": 1076887616,
+    "source_sha256": "bece7c70e794c6f5c672cf4b43f3cc90f75c0a46c695d63c0229e23be015a85e",
+    "fields": [],
+    "definitions": [
+      {
+        "symbol": ".rdata",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "_AllocatorDestroyLayout",
+        "offset": 60,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      },
+      {
+        "symbol": "_SDKDependencyLayout",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      }
+    ]
+  },
+  "layout_values": [
+    2,
+    20,
+    60,
+    116,
+    20,
+    20,
+    20,
+    1,
+    1,
+    1,
+    1,
+    1,
+    20,
+    20,
+    1,
+    1,
+    1
+  ],
+  "snapshots": [
+    {
+      "address": "0x004063D0",
+      "size": 8,
+      "function": {
+        "address": "0x004063D0",
+        "size": "8",
+        "span_end": "0x004063D7",
+        "current_name": "FUN_004063d0",
+        "proposed_name": "void * __cdecl operator new(unsigned int,void *)",
+        "module": "VC71STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R005; vendor source, full compiler span and exception metadata corroboration",
+        "owner": "library",
+        "notes": "Full vendor/compiler helper extent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x004063D0",
+        "origin": "library",
+        "subsystem": "VC71STL",
+        "disposition": "exclude",
+        "confidence": "vendor-source-corroborated",
+        "evidence_id": "R005; docs/ORIGIN_REVIEW.md; complete vendor spans and generated helper fingerprints"
+      },
+      "body_sha256": "a88b542608dec5bd7f04897050a7ac52f6da1375a7d97d0db7ac5ab21c137b21"
+    },
+    {
+      "address": "0x0040D8E0",
+      "size": 19,
+      "function": {
+        "address": "0x0040D8E0",
+        "size": "19",
+        "span_end": "0x0040D8F2",
+        "current_name": "FUN_0040d8e0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R108; scripts/repo-python scripts/verify-game-lifetime-origins.py",
+        "owner": "",
+        "notes": "Complete extent, calls, RET and lifetime context reviewed; cold explicit and implicit source alternatives are indistinguishable; origin remains unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0040D8E0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "explicit-implicit-source-ambiguity",
+        "evidence_id": "R108"
+      },
+      "body_sha256": "37746225131fdffa9b1ebd4b9457eae2d85941fedc717f5f12eb86ba781e6d8a"
+    },
+    {
+      "address": "0x0040E000",
+      "size": 158,
+      "function": {
+        "address": "0x0040E000",
+        "size": "158",
+        "span_end": "0x0040E09D",
+        "current_name": "FUN_0040e000",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R162; config/vector-producer-origin-evidence.json; scripts/repo-python scripts/verify-vector-producer-origins.py",
+        "owner": "",
+        "notes": "Complete SDK and actual fields are retained as source observations, without ownership acceptance. Nontrivial assignments / 158 and / 167 and their entire EH code / 18 and state / 36 have byte-equal ordinary C++ member alternatives. Reviewed game callers or library children do not alone identify an original endpoint/constructor/assignment owner; related whole 42-byte producer and 8-byte bridge contexts remain unknown. No truncated 96-byte parent or relocation-masked acceptance. Original declarations/types/lifetime policy remain unknown. No origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040E000",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9e102e0112d5c289365582bf63d44f751c454a7c350ed24f4375cf47ba8b6ad6"
+    },
+    {
+      "address": "0x0040F9F0",
+      "size": 15,
+      "function": {
+        "address": "0x0040F9F0",
+        "size": "15",
+        "span_end": "0x0040F9FE",
+        "current_name": "FUN_0040f9f0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R161; config/vector-endpoint-origin-evidence.json; scripts/repo-python scripts/verify-vector-endpoint-origins.py",
+        "owner": "",
+        "notes": "Complete SDK destruction / 15 and ordinary explicit destructor wrapper / 15 are byte-equal through the full unchanged R037 deleting wrapper / 44. The original independently protected R108 lifetime policy at 0x0040D8E0 / 19 remains an explicit/implicit source ambiguity. Full SDK allocator parent / 25 and actual fields associate the operation but do not resolve the original surrounding lifetime declaration; this candidate remains unknown. No origin, source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040F9F0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8d2236534a334c285a1b80d62cb93b8cdb981acc7182f20dc84840e274b18c6a"
+    },
+    {
+      "address": "0x00412300",
+      "size": 5,
+      "function": {
+        "address": "0x00412300",
+        "size": "5",
+        "span_end": "0x00412304",
+        "current_name": "FUN_00412300",
+        "proposed_name": "VC7::placement_delete_00412300",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R160; config/deque-leaf-origin-evidence.json; complete SDK leaf/source parents and whole construction/cleanup protocol with byte-equal ordinary capacity/destruction/no-op controls; scripts/repo-python scripts/verify-deque-leaf-origins.py",
+        "owner": "library",
+        "notes": "Complete full SDK source owners / 129 bytes compare without masking. Ownership is inferred from independently accepted full typed deque/max_size/growth, insertion/index/subtraction and allocator/destruction parents plus the complete placement construction and actual exception cleanup protocol. Ordinary capacity / 44, explicit destruction / 15 and two-argument no-op / 5 controls are fully byte-equal; their shape alone cannot establish library provenance or original source spelling. Destruction passes zero flags to the unchanged full R037 generated scalar deleting wrapper / 44, which calls independently authored R153 destruction / 43 and R142 scalar delete; no child or compiler origin is conflated. Whole source/EH code, all genuine fields, entire registered construction state data, pinned SDK headers and complete observation layout are retained. Original declarations/compiler/linker inputs and live capacity/index/offset/construction/exception/lifetime outcomes remain unknown. All unrelated origins, pending copy ambiguity, source/private ABI/mapping/exact credit and exact inputs remain unchanged."
+      },
+      "origin": {
+        "address": "0x00412300",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance",
+        "evidence_id": "R160"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x00415A80",
+      "size": 22,
+      "function": {
+        "address": "0x00415A80",
+        "size": "22",
+        "span_end": "0x00415A95",
+        "current_name": "FUN_00415a80",
+        "proposed_name": "VC7::max_size_00415A80",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00415A80",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "e3fb772c0001caf07bdf748c5caeeff473ed82c5d75312ea495ac5d29835d130"
+    },
+    {
+      "address": "0x00415F60",
+      "size": 44,
+      "function": {
+        "address": "0x00415F60",
+        "size": "44",
+        "span_end": "0x00415F8B",
+        "current_name": "max_size",
+        "proposed_name": "VC7::allocator_max_size_00415F60",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+        "owner": "library",
+        "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00415F60",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+        "evidence_id": "R164"
+      },
+      "body_sha256": "9802b55c60d7c8ad8534f448a28485e20cc45f3b18fd13a64b444463d9aa797d"
+    },
+    {
+      "address": "0x004212A0",
+      "size": 72,
+      "function": {
+        "address": "0x004212A0",
+        "size": "72",
+        "span_end": "0x004212E7",
+        "current_name": "ATL::CAtlWinModule::~CAtlWinModule",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004212A0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "58b0cefa9912f04c5d4205de469f31f814cd4e45d59304c44a77ad10cacb4c68"
+    },
+    {
+      "address": "0x00421DD0",
+      "size": 177,
+      "function": {
+        "address": "0x00421DD0",
+        "size": "177",
+        "span_end": "0x00421E80",
+        "current_name": "FUN_00421dd0",
+        "proposed_name": "VC7::deque__Tidy_00421DD0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations",
+        "owner": "library",
+        "notes": "Template body origin verified; original record type and bound callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00421DD0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-operation-family",
+        "evidence_id": "R072"
+      },
+      "body_sha256": "c0a0f6281fe8cbcb67f43597f243bdd74609fd48cc5f23f95187705df8ba72fa"
+    },
+    {
+      "address": "0x00422270",
+      "size": 25,
+      "function": {
+        "address": "0x00422270",
+        "size": "25",
+        "span_end": "0x00422288",
+        "current_name": "Empty",
+        "proposed_name": "VC7::deque_Empty_00422270",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R086; complete cold VC7 deque::empty COMDAT; source-typed call from cold-verified deque operation parent",
+        "owner": "library",
+        "notes": "All 25 bytes match with no source relocations; original game element types remain unknown; no source or exact credit."
+      },
+      "origin": {
+        "address": "0x00422270",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-access",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R086"
+      },
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3"
+    },
+    {
+      "address": "0x00422290",
+      "size": 151,
+      "function": {
+        "address": "0x00422290",
+        "size": "151",
+        "span_end": "0x00422326",
+        "current_name": "FUN_00422290",
+        "proposed_name": "VC7::deque_pop_back_00422290",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+        "owner": "library",
+        "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00422290",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+        "evidence_id": "R164"
+      },
+      "body_sha256": "54ff33fd8528ca2ba7cd39bc21c0b946446511324ff60babffdea0c39cbb07c6"
+    },
+    {
+      "address": "0x004223C0",
+      "size": 25,
+      "function": {
+        "address": "0x004223C0",
+        "size": "25",
+        "span_end": "0x004223D8",
+        "current_name": "FUN_004223c0",
+        "proposed_name": "VC7::deallocate_004223C0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x004223C0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "6fbe48b6b04cefd68094b68435e70fc8a64615910c802596e6f36d2d0afb5903"
+    },
+    {
+      "address": "0x004223E0",
+      "size": 25,
+      "function": {
+        "address": "0x004223E0",
+        "size": "25",
+        "span_end": "0x004223F8",
+        "current_name": "FUN_004223e0",
+        "proposed_name": "VC7::deallocate_004223E0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x004223E0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "779838fc59fe4a0ae7bc01b36d5b6fd7881433d603a9f562fbe52e24939cf9ac"
+    },
+    {
+      "address": "0x00422420",
+      "size": 25,
+      "function": {
+        "address": "0x00422420",
+        "size": "25",
+        "span_end": "0x00422438",
+        "current_name": "std::allocator<std::_Container_proxy>::destroy",
+        "proposed_name": "VC7::destroy_00422420",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00422420",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "947fd0e8331f9401c8989960acf97f6feb4085c51b7521d509e509b568a16e43"
+    },
+    {
+      "address": "0x00422610",
+      "size": 25,
+      "function": {
+        "address": "0x00422610",
+        "size": "25",
+        "span_end": "0x00422628",
+        "current_name": "FUN_00422610",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00422610",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "454d6eed367217b67ea159c1a4bbcd2357073fd63d42e17b7d0ebf2954b4b702"
+    },
+    {
+      "address": "0x004229A0",
+      "size": 5,
+      "function": {
+        "address": "0x004229A0",
+        "size": "5",
+        "span_end": "0x004229A4",
+        "current_name": "FUN_004229a0",
+        "proposed_name": "VC7::deque_TrivialDestroy_004229A0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R088; complete cold VC7 short helper COMDAT; exact source-typed call from cold-verified R074 template parent",
+        "owner": "library",
+        "notes": "Full no-relocation source/target body match with independent caller witness; original game types remain unknown; no source or exact credit."
+      },
+      "origin": {
+        "address": "0x004229A0",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R088"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x004229C0",
+      "size": 15,
+      "function": {
+        "address": "0x004229C0",
+        "size": "15",
+        "span_end": "0x004229CE",
+        "current_name": "FUN_004229c0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004229C0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "b6ec5eb04b9b6eaff1fcca9a85f62489ffba61d83455af012ee12efcd1579eec"
+    },
+    {
+      "address": "0x004229D0",
+      "size": 28,
+      "function": {
+        "address": "0x004229D0",
+        "size": "28",
+        "span_end": "0x004229EB",
+        "current_name": "FUN_004229d0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R158; config/deque-copy-insert-origin-evidence.json; entire SDK copy/insertion source and registered catch/shared-return reconciliation; scripts/repo-python scripts/verify-deque-copy-insert-origins.py",
+        "owner": "",
+        "notes": "Pending after R158: the entire 28-byte implicit copy constructor defining code section compares unmasked, but a natural ordinary explicit copy constructor of a complete observation record emits all 28 identical bytes and the same actual SDK deque-copy field. Complete R157 construction context and full 241-byte SDK child establish operation, not implicit-versus-authored ownership. Original record type/declaration and original source ownership remain unknown. No source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x004229D0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "262fa7d1254d13d46408d9f3b601c5249d3f708c0997caf7e1a75360d7f41c3e"
+    },
+    {
+      "address": "0x00422A20",
+      "size": 44,
+      "function": {
+        "address": "0x00422A20",
+        "size": "44",
+        "span_end": "0x00422A4B",
+        "current_name": "FUN_00422a20",
+        "proposed_name": "VC7::ScalarDeletingDestructor_00422A20",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x00422A20",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      },
+      "body_sha256": "3365ca124116dad1010b6416980fc5806d0377cdbab848b8867c0a333b0a8700"
+    },
+    {
+      "address": "0x0042DEF0",
+      "size": 177,
+      "function": {
+        "address": "0x0042DEF0",
+        "size": "177",
+        "span_end": "0x0042DFA0",
+        "current_name": "FUN_0042def0",
+        "proposed_name": "VC7::deque__Tidy_0042DEF0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R072; cold VC7 complete deque operation COMDAT and typed relocations",
+        "owner": "library",
+        "notes": "Template body origin verified; original record type and bound callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0042DEF0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-operation-family",
+        "evidence_id": "R072"
+      },
+      "body_sha256": "ff3e71f0ea773cdceaa19e601cc4ea87eae2f8e6280da89eda3120cf5dd2adce"
+    },
+    {
+      "address": "0x0042E100",
+      "size": 25,
+      "function": {
+        "address": "0x0042E100",
+        "size": "25",
+        "span_end": "0x0042E118",
+        "current_name": "Empty",
+        "proposed_name": "VC7::deque_Empty_0042E100",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R086; complete cold VC7 deque::empty COMDAT; source-typed call from cold-verified deque operation parent",
+        "owner": "library",
+        "notes": "All 25 bytes match with no source relocations; original game element types remain unknown; no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0042E100",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-access",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R086"
+      },
+      "body_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3"
+    },
+    {
+      "address": "0x0042E120",
+      "size": 151,
+      "function": {
+        "address": "0x0042E120",
+        "size": "151",
+        "span_end": "0x0042E1B6",
+        "current_name": "FUN_0042e120",
+        "proposed_name": "VC7::deque_pop_back_0042E120",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+        "owner": "library",
+        "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0042E120",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+        "evidence_id": "R164"
+      },
+      "body_sha256": "9551b5e81b315c0cf57ade59e8bc388441d81aafbdae2bd45ed39e4a7627d1e3"
+    },
+    {
+      "address": "0x0042E250",
+      "size": 25,
+      "function": {
+        "address": "0x0042E250",
+        "size": "25",
+        "span_end": "0x0042E268",
+        "current_name": "FUN_0042e250",
+        "proposed_name": "VC7::deallocate_0042E250",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0042E250",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "1fecef63118f1f3b764a31e8d8514e98435de6cc02737a18e9c61e3576714111"
+    },
+    {
+      "address": "0x0042E270",
+      "size": 25,
+      "function": {
+        "address": "0x0042E270",
+        "size": "25",
+        "span_end": "0x0042E288",
+        "current_name": "FUN_0042e270",
+        "proposed_name": "VC7::deallocate_0042E270",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0042E270",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "b023c1084296a93f4cd2ab095f375a3e48f38b9832b4696a0267bf90094e90b2"
+    },
+    {
+      "address": "0x0042E2B0",
+      "size": 25,
+      "function": {
+        "address": "0x0042E2B0",
+        "size": "25",
+        "span_end": "0x0042E2C8",
+        "current_name": "std::allocator<std::_Container_proxy>::destroy",
+        "proposed_name": "VC7::destroy_0042E2B0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R074; cold VC7 whole helper body, typed binding and reviewed parent call",
+        "owner": "library",
+        "notes": "Template body and same-family parent call verified; original record type and callee origin unknown; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0042E2B0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      },
+      "body_sha256": "05eecb9c4af2b677c6d2aa54893293eccaa2a9cb652aede7f33ae299a44e4d85"
+    },
+    {
+      "address": "0x0042E390",
+      "size": 25,
+      "function": {
+        "address": "0x0042E390",
+        "size": "25",
+        "span_end": "0x0042E3A8",
+        "current_name": "std::allocator<std::_Container_proxy>::destroy",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0042E390",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "8e65817568e0090aee06707f0ba7da2ac68609aca266b5efd49611b5b685769d"
+    },
+    {
+      "address": "0x0042E570",
+      "size": 5,
+      "function": {
+        "address": "0x0042E570",
+        "size": "5",
+        "span_end": "0x0042E574",
+        "current_name": "FUN_0042e570",
+        "proposed_name": "VC7::deque_TrivialDestroy_0042E570",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R088; complete cold VC7 short helper COMDAT; exact source-typed call from cold-verified R074 template parent",
+        "owner": "library",
+        "notes": "Full no-relocation source/target body match with independent caller witness; original game types remain unknown; no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0042E570",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R088"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x0042E580",
+      "size": 5,
+      "function": {
+        "address": "0x0042E580",
+        "size": "5",
+        "span_end": "0x0042E584",
+        "current_name": "FUN_0042e580",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0042E580",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087"
+    },
+    {
+      "address": "0x004591E0",
+      "size": 417,
+      "function": {
+        "address": "0x004591E0",
+        "size": "417",
+        "span_end": "0x00459380",
+        "current_name": "FUN_004591e0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x004591E0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9b9961143c8b16c6a373eb5d781f01c3c9be91546579f616f3f1956e2b954035"
+    },
+    {
+      "address": "0x0045A7E0",
+      "size": 51,
+      "function": {
+        "address": "0x0045A7E0",
+        "size": "51",
+        "span_end": "0x0045A812",
+        "current_name": "FUN_0045a7e0",
+        "proposed_name": "VC7 STL generic ??$copy",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R033",
+        "owner": "library",
+        "notes": "Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit"
+      },
+      "origin": {
+        "address": "0x0045A7E0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-template-typed-caller",
+        "evidence_id": "R033"
+      },
+      "body_sha256": "a12f2200d81404db4b9ca420f7ba3446526c561bbe6082e76f7cd11581a42436"
+    },
+    {
+      "address": "0x0045AAE0",
+      "size": 368,
+      "function": {
+        "address": "0x0045AAE0",
+        "size": "368",
+        "span_end": "0x0045AC4F",
+        "current_name": "FUN_0045aae0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0045AAE0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "3be1079eff71381f3fec84f669fe938f04349d8ac36608c3ab015f050e556a71"
+    },
+    {
+      "address": "0x0045AFA0",
+      "size": 11,
+      "function": {
+        "address": "0x0045AFA0",
+        "size": "11",
+        "span_end": "0x0045AFAA",
+        "current_name": "FUN_0045afa0",
+        "proposed_name": "VC7 STL generic ??$_Ptr_cat",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R033",
+        "owner": "library",
+        "notes": "Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit"
+      },
+      "origin": {
+        "address": "0x0045AFA0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-template-typed-caller",
+        "evidence_id": "R033"
+      },
+      "body_sha256": "125af26ed15ea5e17205bbf1df6e31eeb82f0d79055557b9a04ec8a39e8679a8"
+    },
+    {
+      "address": "0x0045AFB0",
+      "size": 50,
+      "function": {
+        "address": "0x0045AFB0",
+        "size": "50",
+        "span_end": "0x0045AFE1",
+        "current_name": "FUN_0045afb0",
+        "proposed_name": "VC7::copy_nonscalar_forward_0045AFB0",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+        "owner": "library",
+        "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0045AFB0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+        "evidence_id": "R164"
+      },
+      "body_sha256": "ba1842f6eb62227df98237d44e063a282247583ddb301258c6dd71b9d77208f5"
+    },
+    {
+      "address": "0x0045B2B0",
+      "size": 29,
+      "function": {
+        "address": "0x0045B2B0",
+        "size": "29",
+        "span_end": "0x0045B2CC",
+        "current_name": "FUN_0045b2b0",
+        "proposed_name": "VC7 STL generic ?construct",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R033",
+        "owner": "library",
+        "notes": "Whole VC7 STL probe COMDAT and separately verified typed caller witness; synthetic record name is not original type; no source/exact credit"
+      },
+      "origin": {
+        "address": "0x0045B2B0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-template-typed-caller",
+        "evidence_id": "R033"
+      },
+      "body_sha256": "0356cba4aa4d7bf2692bd6520ad94435fd42d98055e644a394d167aeddb469fc"
+    },
+    {
+      "address": "0x0045B640",
+      "size": 108,
+      "function": {
+        "address": "0x0045B640",
+        "size": "108",
+        "span_end": "0x0045B6AB",
+        "current_name": "FUN_0045b640",
+        "proposed_name": "VC7::placement_construct_0045B640",
+        "module": "VC7STL",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+        "owner": "library",
+        "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0045B640",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+        "evidence_id": "R164"
+      },
+      "body_sha256": "d412f3d773ca02a38416e8f3ba951df59ff18ae781bfeae46f28e9416d6b5fe5"
+    },
+    {
+      "address": "0x005F84B0",
+      "size": 167,
+      "function": {
+        "address": "0x005F84B0",
+        "size": "167",
+        "span_end": "0x005F8556",
+        "current_name": "FUN_005f84b0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R162; config/vector-producer-origin-evidence.json; scripts/repo-python scripts/verify-vector-producer-origins.py",
+        "owner": "",
+        "notes": "Complete SDK and actual fields are retained as source observations, without ownership acceptance. Nontrivial assignments / 158 and / 167 and their entire EH code / 18 and state / 36 have byte-equal ordinary C++ member alternatives. Reviewed game callers or library children do not alone identify an original endpoint/constructor/assignment owner; related whole 42-byte producer and 8-byte bridge contexts remain unknown. No truncated 96-byte parent or relocation-masked acceptance. Original declarations/types/lifetime policy remain unknown. No origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x005F84B0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "b5bb58cceb81f7049b228a59bebf502d6ef116f1f4e427aeb15f97a4cb177ddf"
+    },
+    {
+      "address": "0x006407B8",
+      "size": 54,
+      "function": {
+        "address": "0x006407B8",
+        "size": "54",
+        "span_end": "0x006407ED",
+        "current_name": "___CxxFrameHandler",
+        "proposed_name": "___CxxFrameHandler",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R142; config/standard-exception-origin-evidence.json; complete pinned own-AUX code, every typed field, full template/vtable/RTTI/scope graph and actual register/stack ABI",
+        "owner": "library",
+        "notes": "Complete 54-byte own AUX in ..\\build\\intel\\mt_obj\\trnsctrl.obj at archive member 670506; 1 independently bound fields. Complete standard exception/throw/frame graph, whole vtable/RTTI data, actual weak source records and full finally scope plus real SDK/natural controls replay. Original private implementations, throw record identities and linker input/search decisions remain unknown; no inferred complete private layout or conventional ABI, no source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x006407B8",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-standard-exception-throw-frame-rtti-weak-scope-abi-provenance",
+        "evidence_id": "R142"
+      },
+      "body_sha256": "650af25ec0b5b0c24cd4debc4f55234dddc360b0271d29991ca5af865a8398c8"
+    },
+    {
+      "address": "0x00640F15",
+      "size": 5,
+      "function": {
+        "address": "0x00640F15",
+        "size": "5",
+        "span_end": "0x00640F19",
+        "current_name": "_free",
+        "proposed_name": "??3@YAXPAX@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "R142; config/standard-exception-origin-evidence.json; complete pinned own-AUX code, every typed field, full template/vtable/RTTI/scope graph and actual register/stack ABI",
+        "owner": "library",
+        "notes": "Complete 5-byte own AUX in build\\intel\\mt_obj\\delete.obj at archive member 852956; 1 independently bound fields. Complete standard exception/throw/frame graph, whole vtable/RTTI data, actual weak source records and full finally scope plus real SDK/natural controls replay. Original private implementations, throw record identities and linker input/search decisions remain unknown; no inferred complete private layout or conventional ABI, no source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00640F15",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-standard-exception-throw-frame-rtti-weak-scope-abi-provenance",
+        "evidence_id": "R142"
+      },
+      "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002"
+    },
+    {
+      "address": "0x00641DAA",
+      "size": 11,
+      "function": {
+        "address": "0x00641DAA",
+        "size": "11",
+        "span_end": "0x00641DB4",
+        "current_name": "FUN_00641daa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R129; config/short-runtime-origin-evidence.json; scripts/repo-python scripts/verify-short-runtime-origins.py",
+        "owner": "",
+        "notes": "Pending: full abs/labs vendor alternatives and cold ordinary int/long expression controls emit identical 11-byte bodies; nearby complete runtime context and game callers do not distinguish source ownership, original symbol or type"
+      },
+      "origin": {
+        "address": "0x00641DAA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+    },
+    {
+      "address": "0x00641FB8",
+      "size": 11,
+      "function": {
+        "address": "0x00641FB8",
+        "size": "11",
+        "span_end": "0x00641FC2",
+        "current_name": "FUN_00641fb8",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00641FB8",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "body_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+    },
+    {
+      "address": "0x00656380",
+      "size": 17,
+      "function": {
+        "address": "0x00656380",
+        "size": "17",
+        "span_end": "0x00656390",
+        "current_name": "Unwind@00656380",
+        "proposed_name": "VC7EH::Unwind_placement_allocation_00656380",
+        "module": "VC7EH",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R020",
+        "owner": "compiler",
+        "notes": "R020; generated EH cleanup dispatch, complete registered FunctionInfo/unwind map and full body hash/decoded template; callee and parent ownership independent; origin only, no authored/source/exact credit."
+      },
+      "origin": {
+        "address": "0x00656380",
+        "origin": "compiler",
+        "subsystem": "VC7EH",
+        "disposition": "exclude",
+        "confidence": "compiler-metadata-backed",
+        "evidence_id": "R020"
+      },
+      "body_sha256": "ff444d316558f708d36d289c77abfaa0b4185a9c9cfda300c3c0655e2ec052a1"
+    }
+  ],
+  "retained": [
+    {
+      "file": "config/sdk-dependency-origin-evidence.json",
+      "address": "0x00422290",
+      "record": {
+        "address": "0x00422290",
+        "size": 151,
+        "decision": "library",
+        "symbol": "?pop_back@?$deque@UQueue20Observation@@V?$allocator@UQueue20Observation@@@std@@@std@@QAEXXZ",
+        "original_function": {
+          "address": "0x00422290",
+          "size": "151",
+          "span_end": "0x00422326",
+          "current_name": "FUN_00422290",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x00422290",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x00422290",
+          "size": "151",
+          "span_end": "0x00422326",
+          "current_name": "FUN_00422290",
+          "proposed_name": "VC7::deque_pop_back_00422290",
+          "module": "VC7STL",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+          "owner": "library",
+          "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+        },
+        "accepted_origin": {
+          "address": "0x00422290",
+          "origin": "library",
+          "subsystem": "VC7STL",
+          "disposition": "exclude",
+          "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+          "evidence_id": "R164"
+        }
+      }
+    },
+    {
+      "file": "config/sdk-dependency-origin-evidence.json",
+      "address": "0x0042E120",
+      "record": {
+        "address": "0x0042E120",
+        "size": 151,
+        "decision": "library",
+        "symbol": "?pop_back@?$deque@UFile60Observation@@V?$allocator@UFile60Observation@@@std@@@std@@QAEXXZ",
+        "original_function": {
+          "address": "0x0042E120",
+          "size": "151",
+          "span_end": "0x0042E1B6",
+          "current_name": "FUN_0042e120",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "original_origin": {
+          "address": "0x0042E120",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "accepted_function": {
+          "address": "0x0042E120",
+          "size": "151",
+          "span_end": "0x0042E1B6",
+          "current_name": "FUN_0042e120",
+          "proposed_name": "VC7::deque_pop_back_0042E120",
+          "module": "VC7STL",
+          "status": "excluded",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "R164; config/sdk-dependency-origin-evidence.json; scripts/repo-python scripts/verify-sdk-dependency-origins.py",
+          "owner": "library",
+          "notes": "Entire genuine SDK own-AUX source and all real fields compare unmasked through unchanged complete R074/R072/R033 library parents. Complete ordinary capacity, copy, placement and empty controls are byte-equal; two entire ordinary deque-pop controls differ in eight stack-local displacement bytes each; source shape alone does not recover ownership or original declarations. Actual observations use widths 2,20,60,116, with genuine forward-copy and complete placement EH/data; no truncated source extent or relocation-masked acceptance. Unknown allocator/destruction, record assignment/copy, protected R108/R158/R161/R162/R163 lifetime/math contexts remain independent. Original game types/layouts/compiler/linker inputs and live outcomes remain unknown; no source/private ABI/mapping/exact credit."
+        },
+        "accepted_origin": {
+          "address": "0x0042E120",
+          "origin": "library",
+          "subsystem": "VC7STL",
+          "disposition": "exclude",
+          "confidence": "complete-vc7-sdk-dependency-with-independent-whole-library-parent-fields",
+          "evidence_id": "R164"
+        }
+      }
+    },
+    {
+      "file": "config/scalar-deleting-origin-evidence.csv",
+      "address": "0x00422A20",
+      "record": {
+        "address": "0x00422A20",
+        "size": "44",
+        "body_sha256": "3365ca124116dad1010b6416980fc5806d0377cdbab848b8867c0a333b0a8700",
+        "inferred_role": "VC7::ScalarDeletingDestructor_00422A20",
+        "destructor_address": "0x004212A0",
+        "delete_address": "0x00640F15",
+        "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "file": "config/standard-exception-origin-evidence.json",
+      "address": "0x00640F15",
+      "record": {
+        "member_offset": 852956,
+        "member": "build\\intel\\mt_obj\\delete.obj",
+        "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+        "address": "0x00640F15",
+        "coff_symbol": "??3@YAXPAX@Z",
+        "size": 5,
+        "code_size": 5,
+        "code_regions": [
+          {
+            "offset": 0,
+            "size": 5
+          }
+        ],
+        "span_end": "0x00640F19",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+        "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "_free",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642A61",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [],
+          "direct_calls": [],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61",
+            "basis": "typed-REL32",
+            "field_offset": 1,
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00640F15",
+            "mnemonic": "jmp",
+            "operands": "0x642a61"
+          }
+        ],
+        "source_definition": {
+          "symbol": "??3@YAXPAX@Z",
+          "offset": 0,
+          "section": 2,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 5
+      }
+    }
+  ],
+  "retained_sha256": {
+    "config/scalar-deleting-origin-evidence.csv": "04fa98c3776a943c421846ee0311cfe5f3eeae7d22f7a72475575f8284fc64aa",
+    "config/sdk-dependency-origin-evidence.json": "5d824965f665db683f064d0ea5d2e90d7acb3bcbabc347af8c34dbe33d26ba77",
+    "config/standard-exception-origin-evidence.json": "13e2334a626c64d5cd3c32a08b5de968e88a0bc99c2761c86828573998514aa6",
+    "probes/VC7SDKDependencyContexts.cpp": "740cbeb0193c7959ea251feb2916e09b3fa541c37453553e785ed3b067ea35c3"
+  },
+  "unknowns": [
+    "Library inferences require complete genuine SDK source and the independent accepted full deque parent, not a caller label or ordinary shape.",
+    "Ordinary allocator and destruction controls are complete and byte-equal; original declarations and independent destruction policy ownership remain unknown.",
+    "All observer sizes are compiler/probe inputs; no incomplete game owner is instantiated and no original layout is recovered.",
+    "No source/private ABI/mapping/exact or live outcome credit."
+  ]
+}

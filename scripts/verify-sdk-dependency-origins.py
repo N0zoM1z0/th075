@@ -122,6 +122,14 @@ def verify_plan(m):
 def check_ledger(row,function,origin,evidence_only=False):ENDPOINT.check_ledger(row,function,origin,evidence_only)
 
 
+def preserved_snapshot(row,function,origin):
+    if function==row['function'] and origin==row['origin']:return True
+    if row['address'] not in ('0x00422610','0x0042E390'):return False
+    if not (ROOT/'config/allocator-destroy-origin-evidence.json').is_file():return False
+    later=module('sdk_allocator_transition','verify-allocator-destroy-origins.py')
+    return later.accepted_snapshot(dict(function=row['function'],origin=row['origin']),function,origin)
+
+
 def accepted_snapshot(snapshot,function,origin):
     m=manifest()
     if digest((ROOT/'config/sdk-dependency-origin-evidence.json').read_bytes())!=MANIFEST_SHA256:
@@ -143,7 +151,7 @@ def main():
     for r in m['snapshots']:
         a=r['address']
         if a in records:check_ledger(records[a],functions[a],origins[a],args.evidence_only)
-        elif functions[a]!=r['function'] or origins[a]!=r['origin']:raise ValueError('SDK dependency changes original accepted/protected canonical boundary')
+        elif not preserved_snapshot(r,functions[a],origins[a]):raise ValueError('SDK dependency changes original accepted/protected canonical boundary')
         body=c.pe_bytes_at(target,int(a,16),r['size'])
         if digest(body)!=r['body_sha256']:raise ValueError('SDK dependency entire independent boundary differs')
         if a in ('0x004591E0','0x0045AAE0','0x004212A0'):cfg.verify_body(body,int(a,16))

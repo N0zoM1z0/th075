@@ -6564,3 +6564,57 @@ unknown 15-/5-byte children and the separate 72-byte lifetime policy. Retain
 R164's immutable evidence and allow only exact future bounded snapshot
 transitions after a complete acceptance. The full remaining-origin goal is active
 and unfinished; no exact-reconstruction scope is added.
+
+## R165: Allocator wrappers and independent destruction policies
+
+Two complete 25-byte allocator.destroy wrappers, `0x00422610` and
+`0x0042E390`, are now library through genuine full SDK source, every actual
+field and the unchanged full R164 deque-pop parents / 151 bytes each.
+Actual children `0x004229C0` / 15 and `0x0042E580` / 5 remain independently
+unknown. Their scalar-deleting compiler wrapper and its separate 72-byte
+game lifetime child retain their original compiler/unknown ownership.
+Ghidra's earlier proxy label does not establish the original element type.
+
+Replay `scripts/repo-python scripts/verify-allocator-destroy-origins.py` with
+`config/allocator-destroy-origin-evidence.json`. One cold source includes the
+unchanged hash-pinned R164 complete observations and adds ordinary allocator
+and direct-destruction controls. All 61 ordinary sections / 2472 bytes, 28
+SDK headers and the actual original probe include are retained. Both observation
+arrays inhabit one whole 68-byte readonly section with definitions at zero
+and 60; all seventeen values `[2,20,60,116,20,20,20,1,1,1,1,1,20,20,1,1,1]`
+are checked without slicing. These are compiler/probe facts, not original
+private game layouts or declarations.
+
+Thirteen whole controls / 536 bytes and twelve actual fields compare unmasked,
+with complete own-AUX extents or the entire unique generated-wrapper COMDAT.
+Four ordinary controls / 70 bytes are byte-equal. These alternatives alone
+do not establish source ownership, original destructor spelling or child policy.
+The library inferences require independent coherent full accepted deque parents.
+No incomplete reconstructed owner is instantiated. R037's 44-byte deleting
+wrapper and R142's five-byte runtime delete remain independently accepted;
+the 72-byte `0x004212A0` policy remains unknown.
+
+Four exact original evidence records and 41 canonical/body snapshots retain
+all unrelated owners and protected lifetime/copy/math ambiguities. R164's
+manifest stays immutable; its verifier allows only the two exact accepted
+R165 row transitions after checking the new immutable manifest. Changed
+original or unrelated rows remain rejected. Its entire cold source/code/EH/
+data replay passes after acceptance. Full cold comparison precedes the canonical
+update; R164 HEAD d172412 readback verifies exactly two function/origin changes
+and unchanged previous evidence, authored records and exact inputs.
+
+Thirty new regression guards and all 1591 public checks pass. Local target,
+project/query completion, fresh scanner, 875 authored extents / 1953089 bytes,
+exact preservation and whitespace checks pass. Public MCP acceptance stays
+waived. Totals are 3511 resolved (922 authored, 2014 library, 575 compiler),
+840 pending and 2589 excluded. The 60 source/mapped/exact functions / 9883
+bytes and all R139 db26a05 exact inputs remain unchanged; its earlier cold
+60/60 replay across eleven objects remains applicable. Provisional coverage
+stays 0.50%, with no new source/private ABI/mapping/exact credit.
+
+The next bounded R166 cohort is four diagnostic game-parent context candidates
+/ 600 provisional bytes (`0x00410F30`, `0x0045B760`, `0x0045B920`,
+`0x005F7140`) with complete R045/R050/R065 parents listed in the handoff.
+Game callers or library children alone grant no origin. Preserve independently
+unknown destruction/lifetime/copy/math policies. The full goal remains active
+and unfinished, without exact-reconstruction scope.

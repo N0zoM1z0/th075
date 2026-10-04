@@ -9518,3 +9518,58 @@ No reconstructed source, private ABI, mapping or exact credit is added.
 The next R165 cohort is the two 25-byte allocator-destruction wrappers reached
 from the newly accepted full deque-pop parents. Their 15-/5-byte children and
 separate game lifetime ownership remain independent. The full goal is unfinished.
+
+## R165 — Allocator destruction wrappers with independent full deque parents
+
+R165 accepts two library wrappers / 50 bytes: `0x00422610` / 25 and
+`0x0042E390` / 25. Their complete genuine SDK allocator.destroy bodies call
+`0x004229C0` / 15 and `0x0042E580` / 5 respectively, with the observed
+thiscall return cleanup. The unchanged full R164 deque-pop parents
+`0x00422290` and `0x0042E120` / 151 each supply independent coherent library
+context. Ghidra's preexisting container-proxy label is not element-type evidence.
+
+Replay `scripts/repo-python scripts/verify-allocator-destroy-origins.py` using
+immutable `config/allocator-destroy-origin-evidence.json`. One new cold probe
+includes the original hash-pinned R164 complete observations and adds natural
+ordinary allocator/destruction controls. All 61 ordinary sections / 2472 bytes,
+28 actual SDK headers and the actual original probe include are checked.
+The two readonly observation arrays share one whole 68-byte section, with
+definitions at offsets zero and 60. The complete seventeen-word layout is
+`[2,20,60,116,20,20,20,1,1,1,1,1,20,20,1,1,1]`; no array prefix or
+fabricated separate section is accepted. These remain compiler/probe inputs,
+not recovered original game types or layouts.
+
+Thirteen full own-AUX/unique defining-section controls / 536 bytes compare
+unmasked with twelve real fields. They retain both full candidates, both full
+deque parents, actual empty/destruction children, and the entire R037 compiler
+deleting wrapper. Four complete ordinary allocator/destruction alternatives
+/ 70 bytes are byte-equal. This does not identify original declarations or
+resolve the two independently unknown 15-/5-byte destruction children. The
+72-byte lifetime callee `0x004212A0` remains unknown; R037 `0x00422A20` / 44
+stays compiler generated and R142 `0x00640F15` / 5 stays library.
+
+Four exact retained evidence records and 41 full canonical/body snapshots
+preserve independent parents, runtime and protected policies. All prior
+manifests stay byte-identical. R164's verifier gains only the two exact
+original-to-accepted R165 snapshot transitions, guarded by the immutable new
+manifest and exact row equality; unrelated or altered original rows fail.
+Its entire source/code/EH/data cold replay passes after acceptance. No broader
+historical snapshot exemption or recursive replay of unaffected batches is added.
+
+Cold comparison precedes acceptance. Readback against R164 HEAD d172412 confirms
+exactly two function and two origin changes, with unrelated rows, previous
+evidence, authored records and exact inputs preserved. Thirty new regression
+checks and all 1591 public checks pass, along with local target/project/query
+attestation, fresh scanning, authored extents and whitespace checks.
+Public MCP acceptance remains waived. Totals are 3511 resolved (922 authored,
+2014 library, 575 compiler), 840 pending and 2589 excluded. Authored evidence
+remains 875 bodies / 1953089 bytes. All 60 source/mapped/exact functions / 9883
+bytes and R139 db26a05 exact inputs remain unchanged; its earlier cold 60/60
+replay across eleven objects remains applicable. No source/private ABI/mapping/
+exact credit is added; provisional exact coverage remains 0.50%.
+
+The next R166 cohort is four diagnostic game-parent context candidates / 600
+bytes: `0x00410F30` / 104, `0x0045B760` / 203, `0x0045B920` / 131 and
+`0x005F7140` / 162. Retain the complete R045/R050/R065 authored parents and
+actual calls listed in the handoff. Parent/child relationships alone do not
+resolve ownership. The full remaining-origin goal is active and unfinished.
