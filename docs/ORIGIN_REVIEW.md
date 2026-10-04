@@ -8693,3 +8693,90 @@ allocator/construction parents as independent context and explicitly retain
 ordinary authored allocation/placement/copy alternatives. Preserve the unknown
 record-copy wrapper and full-copy/insertion parents; do not infer their origin
 from these operations or treat the observations as recovered element types.
+
+## R157 — Element operations with byte-equal ordinary source alternatives
+
+R157 accepts four complete library owners / 213 bytes: SDK `_Allocate`
+associations `0x004228A0` and `0x0042E4D0` / 20 bytes each, plus `_Construct`
+associations `0x004228C0` / 108 and `0x0042E4F0` / 65. Replay
+`scripts/repo-python scripts/verify-deque-element-origins.py` with
+`config/deque-element-origin-evidence.json`. Every SDK owner and ordinary
+control has its full positive own COFF AUX extent, without a size override.
+All original extents, source/ABI fields and exact percentages remain unchanged.
+
+**Positive provenance and explicit ambiguity.** Each actual original helper
+has one observed caller: respectively the complete R156 element allocator
+`0x00421EE0`, construction wrapper `0x00421F00`, element allocator
+`0x0042E000` and construction wrapper `0x0042E020`. Independent full parent
+source fields name the actual SDK element operation, distinguishing it from
+the pointer-map allocator. The scalar operations call the unchanged whole
+R154 scalar-new owner; construction routes through actual placement-new,
+the full original queue-copy dependency and registered exception state, or
+the complete fifteen-word file-record copy. Full R156 parent/source/code/data/
+EH/runtime evidence cold-replays, including R154/R142 dependencies, unchanged
+game/growth context and independently authored R153 inner destruction.
+
+Four ordinary natural allocation and placement-copy controls in
+`probes/VC7DequeElementAlternatives.cpp` cold-emit all 213 identical bytes.
+Every real field is linked and compared unmasked. Body equality alone thus
+cannot determine ownership. Library classification is an inference from
+the independently complete accepted SDK parents, their real source-typed
+calls and the unchanged full SDK source family, rather than from a short
+body, adjacency or a library child alone. No original symbol, spelling or
+record declaration is recovered, and untested original source/compiler
+alternatives are not excluded. This evidence is stronger than the unrelated
+R129/R155 leaf ambiguities that lack independent owning context; those prior
+pending rows remain untouched.
+
+**Whole ordinary EH and source.** The ordinary queue construction also
+retains its full 27-byte cleanup/dispatch carrier and whole 36-byte exception
+data, including unwind storage before its embedded 28-byte FuncInfo.
+Together the six complete code/data controls cover 276 bytes and fourteen
+genuine typed fields. The entire defining EH carrier is used where an
+individual positive own function AUX is unavailable. Source definitions,
+local-label offsets, field roles and destinations follow independently whole
+retained owners; compiler-local labels belong to their own COFF object and
+their generated numbers are not treated as cross-object global identities.
+The new cold source freezes all 193 ordinary emission sections / 12193 bytes,
+all 27 actual SDK headers and its actual included R156 observation source.
+The original full 32-byte layout, 162 whole linked code/EH owners / 11016
+bytes, 22 data owners / 835 bytes, 436 actual fields and ten full registered
+frames remain protected by the retained cold verifier. These are origin
+controls, not new exact units or reconstructed game owner layouts.
+
+**Bounded canonical follow-up.** R156 retains its original immutable manifest.
+Its snapshot verifier now permits only these four exact R157 transitions,
+requiring the hash-pinned follow-up manifest, exact original snapshots and
+exact new function/origin records. It does not skip arbitrary auxiliary
+metadata or permit other new classifications. The transition guards and all
+auxiliary snapshots are read back after acceptance. Only the final summary
+wording changes after the unchanged cold proof; no source/profile/header/
+relocation input or comparison behavior changes. Whole shared-tail copy/
+insertion controls, record-copy ownership, interior catch rows, opaque throw
+workers and authored lifetime policy keep their original classifications and
+canonical extents. Ordinary source controls do not classify those owners.
+
+Exactly four origin rows and their four function rows change against R156
+HEAD 4608784; all unrelated rows and every authored record remain unchanged.
+Twenty-eight regression checks protect full AUX/code/data/emission/header/
+layout extents, real parent/operation roles, byte-equal alternatives, exact
+bounded follow-up transitions and false source/private ABI/exact credit.
+All 1340 public tests, local target/project/query attestation, authored extents,
+fresh scanner/progress, exact-input preservation and whitespace checks pass.
+Totals are 3475 resolved (922 authored, 1978 library, 575 compiler), 876 pending
+and 2553 excluded. Authored evidence remains 875 records / 1953089 bytes;
+provisional exact coverage remains 9883 / 1965432. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs are unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No affected exact
+unit needs replay. Public MCP acceptance remains waived and the private
+no-auth route is unchanged. Private logs, queries and objects stay untracked.
+The complete-origin objective remains unfinished.
+
+The next bounded R158 cohort is the complete queue copy/insertion source
+family and its interior catch/shared-return candidates, plus the unresolved
+record-copy wrapper. The original 195-/1483-byte parent candidates must be
+reconciled against their whole 241-/1545-byte source owners before acceptance;
+the 46-/48-/62-byte catch entries are interior source spans, not independent
+whole functions. The 28-byte record-copy wrapper requires genuine implicit
+versus ordinary explicit source controls. No classification follows merely
+from these existing full source associations or the SDK children.

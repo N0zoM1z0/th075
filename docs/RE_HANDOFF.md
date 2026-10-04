@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R156. The public
+review cohorts R108 through R157. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,471: 922 authored, 1,974 library and 575 compiler generated.
-There are 880 pending. Candidate count is not authored function count.
+has resolved 3,475: 922 authored, 1,978 library and 575 compiler generated.
+There are 876 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R157 typed deque dependency cohort below.
+the bounded R158 deque copy/insertion cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R156; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R157; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R157 complete lower-level typed deque dependencies
+## Next agent objective — R158 complete deque copy/insertion extents and interior entries
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -854,26 +854,47 @@ canonical rows retain their provisional 195-/1483-byte extents. Full EH source
 carriers do not revise old compiler entry extents. Source/data/typed-call
 association alone grants none of these auxiliary parents origin credit.
 
-The next bounded R157 cohort is four retained unknown lower-level dependencies:
+R157 accepts the four complete lower-level SDK element allocation/construction
+owners / 213 bytes. Replay
+`scripts/repo-python scripts/verify-deque-element-origins.py`.
+Their ordinary natural allocation/placement-copy controls emit all 213
+identical bytes; complete ordinary EH/data carriers expand those controls to
+276 bytes with fourteen actual unmasked fields. Library origin is inferred
+from independently complete R156 typed parents and the whole retained SDK
+source family; body equality alone is explicitly insufficient. The source
+freezes all 193 ordinary sections / 12193 bytes, 27 SDK headers and its actual
+included observation source. Full R156 and R154/R142 dependencies cold-replay.
+R156's immutable original snapshots permit only the four exact hash-pinned
+R157 transitions; all other original rows remain unchanged. All 1340 public
+checks pass. Totals are 3475 resolved and 876 pending; all 60 exact functions
+and R139 cold proof remain preserved. No game element declaration is recovered.
 
-| Candidate | Complete provisional extent | Actual investigation context |
+The next bounded R158 cohort is six still-unknown copy/insertion candidates:
+
+| Candidate | Original provisional extent | Complete investigation owner/context |
 | --- | ---: | --- |
-| `0x004228A0` | 20 | complete R156 element allocator `0x00421EE0`; actual scalar-new call to R154 `0x0064159D` |
-| `0x004228C0` | 108 | complete R156 construction wrapper `0x00421F00`; actual placement-new `0x004063D0`, original full EH and unknown record-copy wrapper `0x004229D0` |
-| `0x0042E4D0` | 20 | complete R156 element allocator `0x0042E000`; same independently whole scalar-new operation |
-| `0x0042E4F0` | 65 | complete R156 construction wrapper `0x0042E020`; actual placement-new and full fifteen-word copy |
+| `0x004229D0` | 28 | original record-copy wrapper called by full R157 queue construction; actual SDK copy dependency `0x00422A50`; implicit/explicit ownership requires controls |
+| `0x00422A50` | 195 | full SDK deque-copy source owner is 241 bytes through `0x00422B40`; normal branch at `0x00422B11` reaches shared epilogue `0x00422B24` |
+| `0x00422B13` | 46 | interior catch plus shared normal return inside that whole copy owner; not a separate whole source function |
+| `0x00422D70` | 1483 | full SDK insertion source owner is 1545 bytes through `0x00423378`, including both registered catches and final shared epilogue |
+| `0x0042308D` | 48 | first interior insertion catch; original full EH evidence and actual source policy must be reconciled |
+| `0x0042333B` | 62 | second insertion catch plus shared normal return; normal branch at `0x00423339` reaches `0x0042335F` |
 
-R156 retains full SDK source controls and every actual code/data/EH field for
-these four owners, but does not classify them. Reconcile whole own-AUX extents,
-actual typed parent/operation roles, state and alignment. Preserve ordinary
-authored allocation, placement and copy alternatives explicitly: equal complete
-bytes alone are insufficient, while independent accepted SDK parent/source
-roles may supply evidence unavailable to unrelated leaf candidates. Distinguish
-the scalar element allocator from the pointer-map allocator and retain the
-original record types as unknown. Preserve the unknown 28-byte record-copy
-wrapper, complete copy/insertion shared-tail controls, authored destruction
-policy, opaque throw boundaries and all original accepted metadata. No exact
-scope or reconstructed game element declaration is authorized.
+R156/R157 retain complete source, all actual typed fields and original full
+EH registrations for these parents but grant them no classification. Query
+the entire parents, catch associations, actual callers, shared tails and
+adjacent alignment locally. Cold-replay complete natural SDK source and
+independent implicit/explicit record-copy alternatives. Never compare only
+the old 195-/1483-byte prefixes or treat interior catch spans as standalone
+whole AUX functions. Reconcile the canonical parent extents explicitly before
+accepting either owner; preserve overlapping interior entries and distinguish
+the source catch policy from compiler frame/dispatch mechanics. Each interior
+origin requires its own evidence, rather than a Ghidra Catch name or presumed
+inheritance. Preserve original record/lifetime uncertainty, opaque throw
+workers and all accepted SDK/runtime/game evidence. If a canonical snapshot
+must change, allow only a new exact bounded hash-pinned follow-up transition
+and retain the original immutable R156/R157 manifests. No exact scope is
+authorized; complete observations do not recover original game element types.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -925,7 +946,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R157 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R158 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

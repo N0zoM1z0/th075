@@ -125,6 +125,15 @@ def source_catalog(m, definitions):
     return result
 
 
+def preserved_snapshot(snapshot, function, origin):
+    if function == snapshot['function'] and origin == snapshot['origin']:
+        return True
+    # R157 independently reviews only four original lower-level snapshots.
+    # Its immutable manifest permits those exact transitions and no others.
+    followup = module('paired_element_followup', 'verify-deque-element-origins.py')
+    return followup.accepted_snapshot(snapshot, function, origin)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence-only', action='store_true')
@@ -148,7 +157,7 @@ def main():
     for row in m['code']:
         for snapshot in row['canonical_rows']:
             key = snapshot['function']['address']
-            if key not in KEYS and (functions[key] != snapshot['function'] or origins[key] != snapshot['origin']):
+            if key not in KEYS and not preserved_snapshot(snapshot, functions[key], origins[key]):
                 raise ValueError('paired auxiliary association changes original accepted/provisional extent/origin')
     for row in m['retained_growth']:
         if (row not in BUFFER.PRIOR.PRIOR.rows('vendor-deque-growmap-origins.csv')
@@ -234,7 +243,7 @@ def main():
         source, _ = coff.readonly_section(data, layout['section'], c.coff_name)
         if list(struct.unpack('<8I', source)) != LAYOUT:
             raise ValueError('paired full actual SDK/observation layout differs')
-    print('R156 origins OK: six complete library producer/allocator owners / 534 bytes; 162 whole linked code/EH carriers / 11016 bytes, 22 whole data owners / 835 bytes and 436 actual unmasked fields; all 187 ordinary cold emission sections / 11917 bytes, 27 actual headers and full 32-byte layout; two unchanged whole growth owners, two complete original game parents and ten original full registered frames; independently authored inner destruction and complete runtime/weak/opaque boundaries; all auxiliary/shared-tail classifications preserved; original game types and runtime outcomes unknown; no source/mapping/private ABI/exact credit.')
+    print('R156 origins OK: six complete library producer/allocator owners / 534 bytes; 162 whole linked code/EH carriers / 11016 bytes, 22 whole data owners / 835 bytes and 436 actual unmasked fields; all 187 ordinary cold emission sections / 11917 bytes, 27 actual headers and full 32-byte layout; two unchanged whole growth owners, two complete original game parents and ten original full registered frames; independently authored inner destruction and complete runtime/weak/opaque boundaries; unrelated auxiliary/shared-tail classifications preserved, with only exact hash-pinned independently reviewed R157 follow-up snapshots permitted; original game types and runtime outcomes unknown; no source/mapping/private ABI/exact credit.')
     return 0
 
 
