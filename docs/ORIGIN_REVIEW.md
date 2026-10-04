@@ -7693,3 +7693,107 @@ inputs/rows are unchanged from R139 db26a05, preserving its 60/60 cold proof
 across eleven objects. No affected exact unit requires another cold build.
 The user's public MCP acceptance waiver remains in force; the no-auth route
 and private random path remain unchanged. Private evidence is untracked.
+
+## R144 — Complete longjmp and SEH read-probe graph
+
+R144 resolves both handoff candidates as library origins:
+`0x00643604` / complete 121-byte `_longjmp` and `0x0064DC10` / complete
+66-byte `__rt_probe_read4@4`. Their eight typed fields retain full code,
+actual defining source/absolute/scope/API context and independent SDK controls.
+Replay `scripts/repo-python scripts/verify-jump-unwind-origins.py` with
+`config/jump-unwind-origin-evidence.json`. No source, mapping or exact credit
+is assigned. Original executable names and private declarations remain
+provisional even where the supplied source/target bodies agree completely.
+
+**Complete target extents and behavior.** Longjmp's own COFF AUX is 121 bytes,
+including the real RET at `0x0064367C` after the indirect saved-return jump.
+The provisional 120-byte ledger omitted that byte; its complete extent now
+ends at `0x0064367C`. The RET is present in the pinned source and target, not
+invented to obtain a match. No existing interior inventory candidate is inside
+either complete primary, and no standalone label row is invented.
+
+Longjmp loads the saved EBP and exception registration before comparing the
+registration to FS:[0]. When they differ it calls the complete global unwind
+worker. For a nonzero registration it probes the cookie at +32; a readable
+VC20 cookie (`0x56433230`) permits the opaque +36 UnwindFunc callback, invoked
+with the buffer pointer on the stack. A null callback skips local unwind;
+a missing/unreadable/wrong cookie takes the complete old local-unwind path
+with saved TryLevel +28. The saved EIP +20 is passed in EAX to the complete
+NLG notify worker with saved EBP and stack code zero. Longjmp then restores
+EBX, EDI, ESI and ESP, adds four to the restored stack and jumps to saved EIP.
+CMP-one/ADC-zero maps zero return input to one while preserving every nonzero
+input, including negative values. The saved callback identity/ABI, live
+registrations, valid saved state and runtime outcomes remain unknown.
+The two ordinary callers gain no ownership from this reviewed library child.
+
+The read probe's entire 66-byte own AUX includes its ordinary load/success
+path, filter at +29 and exception handler at +49. Ghidra's ordinary flow skips
+that filter/handler region; the full source and target decode does not.
+Successful DWORD access returns one. Its filter follows the exception-pointer
+chain and returns one only for access violation `0xC0000005`; other exception
+codes return zero, preserving continue-search semantics. The handler restores
+saved ESP and returns zero through the common epilog. The filter has RET 0;
+the callable primary has RET 4. The one whole readonly 12-byte `$T19221`
+section at `0x006639E8` has enclosing level -1 and typed filter/handler pointers
+`0x0064DC2D` / `0x0064DC41`. Both land on actual defining source entries in the
+complete primary, with no guessed same-address label or partial callback body.
+
+**Actual ABS and retained dependency provenance.** Longjmp's first field is
+DIR32 `__except_list` at +12 in its FS comparison, resolved to zero. This is
+not an object at PE virtual address zero. The whole supplied libcmt archive
+has one external defining symbol: exsup.obj member 1210238, storage class two,
+section -1 (ABS), value zero. The longjmp member retains the actual external
+undefined referring record. The verifier rereads the defining member identity,
+scans the whole archive for competing strong definitions, checks the exact
+symbol record and proves the field is the displacement of the FS instruction.
+No undefined/static symbol, guessed zero binding or GS instruction substitutes
+for this independent ABS provenance.
+
+Five whole anchors / 236 bytes / five fields preserve prior library origins:
+global unwind 32, local unwind 104, NLG notify 24, SEH prolog 59 and SEH epilog
+17 bytes. The full R141 replay retains their R117/R025 source owners, actual
+shared tails, scope/NLG state and unwind import route through its dependency
+chain. Private unwind/NLG register contracts are kept explicit: NLG receives
+EAX destination, EBP saved frame and a stack code, rather than an invented
+three-stack-argument prototype. Canonical private calling declarations remain
+unset. Complete source/body comparisons and every typed code/data/absolute
+field are required; relocation masking is never acceptance evidence.
+
+**Compiler observations and acceptance.** Original longjmp.asm/sehsupp.c
+implementation files are unavailable. The supplied exsup.inc preserves the
+jump-buffer fields and VC20 cookie, while the real SDK setjmp.h supplies a
+complete 64-byte x86 `_JUMP_BUFFER`/jmp_buf and cdecl longjmp declaration.
+The probed cookie and old-unwind fallback do not establish the version or
+extent of a live original saved buffer. The natural `probes/VC7JumpUnwindLayout.cpp` cold-builds an 88-byte layout array
+with all eleven buffer offsets, six-word unwind-data size, real NT_TIB FS
+exception-list offset and SDK exception/filter constants. All 72 actual
+included headers and the complete exsup.inc are hash-pinned. The probe uses
+complete actual SDK types and independent behavior controls, without defining
+an original game owner or inventing private callback layouts.
+
+Eight complete natural SDK jump/capture/result/member/SEH/filter/finally
+controls / 338 bytes / twelve fields replay. Both generated whole scope data
+sections / 24 bytes / three fields replay. All generated code sections are
+covered by complete own AUX extents; there are no orphan code carriers in
+this probe. Debug controls can retain source-emitted returns even under a
+noreturn declaration; emitted body observations are recorded faithfully.
+VC7.1 build 3077 and all explicit flags remain per-probe reproducibility
+settings, not an executable-wide target compiler profile.
+
+Thirty-six regression checks reject omitted final RET/filter/handler code,
+wrong cleanup or exception policies, incomplete scopes, lost saved-register/
+return/cookie/normalization behavior, invented callback identity and wrong ABS
+provenance. Synthetic real COFF records and decoded segment instructions
+exercise absent/undefined/static/duplicate/nonzero ABS definitions, referring
+record identity, FS-versus-GS and actual displacement placement. All 1,018
+public checks pass. The complete new/retained cold evidence replay passes once,
+followed by canonical ledger write/read-back guards. Target/project/query
+attestation, all 872 recorded authored extents, unchanged exact inputs,
+progress/scanner freshness and whitespace checks pass locally. Totals are
+3,436 resolved (919 authored, 1,942 library, 575 compiler), 915 pending and
+2,517 excluded. Source/mapping/exact remains 60 / 9,883 bytes; recorded authored
+extents remain 872 / 1,952,956 bytes and the provisional denominator is
+1,965,299. All exact inputs/rows remain unchanged from R139 db26a05, preserving
+its 60/60 cold proof across eleven objects. No affected exact unit needs a
+repeat build. The public MCP acceptance waiver remains in force; the no-auth
+route and private random path remain unchanged. Private evidence is untracked.

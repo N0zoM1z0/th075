@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R143. The public
+review cohorts R108 through R144. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,434: 919 authored, 1,940 library and 575 compiler generated.
-There are 917 pending. Candidate count is not authored function count.
+has resolved 3,436: 919 authored, 1,942 library and 575 compiler generated.
+There are 915 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R144 longjmp/read-probe unwind cohort below.
+the bounded R145 small-block heap integrity cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R143; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R144; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R144 longjmp/read-probe unwind graph
+## Next agent objective — R145 small-block heap integrity graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -669,22 +669,39 @@ R142/R038 chain pass. Replay
 All 982 public checks pass. Totals are 3434 resolved and 917 pending; the exact
 baseline and R139's 60/60 cold proof remain unchanged. Public MCP is waived.
 
-The next bounded R144 cohort is two existing unwind/read-probe candidates:
+R144 resolves both longjmp/read-probe roots / complete 187 bytes / eight fields.
+Longjmp's extent expands from 120 to its full 121-byte AUX, including the real
+final RET after its saved-EIP jump. The read probe retains all filter/handler
+code and its whole 12-byte scope with both actual defining source entries.
+The FS zero field has a real external ABS definition in whole exsup.obj,
+checked against the full archive and actual segment/displacement. Five whole
+retained unwind/NLG/SEH anchors, real SDK jump-buffer/SEH layouts and all
+natural code/scope sections replay with R141's complete dependency chain.
+Private saved callbacks, live registrations and original declarations remain
+unknown. Replay `scripts/repo-python scripts/verify-jump-unwind-origins.py`.
+All 1018 public checks pass. Totals are 3436 resolved and 915 pending; the
+exact baseline and R139's 60/60 cold proof remain unchanged. MCP is waived.
+
+The next bounded R145 cohort is the existing small-block integrity worker:
 
 | Candidate | Provisional / own AUX bytes | Diagnostic symbol / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00643604` | 120 / 121 | _longjmp / five | Entire own AUX including its last byte, FS/absolute symbol provenance, complete unwind/NLG parents and actual indirect saved-context callback; truthful supplied SDK jump-buffer/calling controls |
-| `0x0064DC10` | 66 / 66 | __rt_probe_read4@4 / three | Full source owner including exception filter/handler path, entire scope data and callbacks, retained SEH prolog/epilog, independent real SDK/SEH controls |
+| `0x0064AFC5` | 793 / 793 | ___sbh_heap_check / eight | Entire own AUX and all exits/loops, actual IsBadWritePtr import, both COMMON globals with whole definition/zero-fill and retained heap provenance; supplied sbheap.c/winheap.h source and independent real SDK/model controls |
 
-Use `.analysis/r143-next-unwind-survey.json` and the read-only attested query
-`.analysis/r143-next-unwind-disassemble.txt` diagnostically. Neither source
-span contains an existing interior inventory candidate. Ghidra's ordinary
-read-probe path skips its exception filter/handler region; decode and reconcile
-the full source owner and scope graph before acceptance. Do not truncate the
-121-byte longjmp AUX to its provisional 120-byte ledger extent, guess an FS
-absolute relocation, or invent conventional prototypes for private unwind/NLG
-register contracts. No ownership follows from the already reviewed children.
-Keep all existing source/exact inputs and prior ownership unchanged.
+Use `.analysis/r144-next-heap-check-survey.json` and the read-only attested
+caller query `.analysis/r144-next-heap-check-callers.txt` diagnostically.
+The worker has no ordinary Ghidra callers; that does not establish ownership
+or prove it unused. The supplied complete sbheap.c contains __sbh_heap_check
+at line 1274 and winheap.h supplies its internal source structures/interface.
+Both __sbh_cntHeaderList and __sbh_pHeaderList have four-byte COMMON definitions
+in member 827680, targeting `0x0068FA60` / `0x0068FA64`; independently reconcile
+all strong alternatives, retained R120 heap state and actual loader storage.
+The three IsBadWritePtr fields target actual IAT slot `0x00657154`.
+Treat supplied source/header types as independent vendor evidence, not an
+original complete game-owner layout. Current allocator state and runtime
+integrity outcomes remain unknown. No origin follows from API identity alone.
+A bounded full-body scan found no association for the supplied 143-byte
+__heapchk source owner; do not invent a wrapper candidate or infer its origin.
 
 A bounded scan of the supplied rtti.obj member 423098 found no complete
 relocation-masked associations for its exported RTtypeid (156 bytes),
@@ -727,7 +744,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R144 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R145 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
