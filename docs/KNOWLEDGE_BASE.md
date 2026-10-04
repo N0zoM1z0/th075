@@ -5022,3 +5022,88 @@ objects. No affected exact unit requires replay. Recorded authored extents
 remain 872 / 1,952,956 bytes; the provisional denominator is 1,965,299.
 The public MCP acceptance waiver remains in force. The no-auth route/private
 random path remain unchanged; private logs, objects and diagnostics are untracked.
+
+## R147 — Complete acos parent and actual shared core
+
+R147 resolves the two handoff candidates as library origins: `0x00643B10` /
+complete 203-byte `__CIacos`, and `0x00643B2D` / actual source static `start`
++29 with its entire 174-byte shared continuation. Replay
+`scripts/repo-python scripts/verify-acos-math-origins.py` with
+`config/acos-math-origin-evidence.json`. No source, mapping or exact credit is
+assigned; original private declarations and executable symbol names remain
+provisional. The core is an actual entry in the complete parent, without an
+invented independent AUX or complete game-owner layout.
+
+**Extent reconciliation and target behavior.** The provisional parent was a
+20-byte CI prefix; its complete own AUX is 203 bytes through `0x00643BDA`.
+The real exported `_acos` C entry is +20, and static `start` is +29. The CI
+path stores ST0 without popping into twelve-byte scratch space, calls the
+complete checkTOS helper, calls static start and restores the scratch stack.
+The C entry points EDX at its stack argument, calls the complete fload helper
+and falls through the same static entry. The core's former 12,494-byte span
+was a provisional Ghidra boundary running through many unrelated contexts.
+The actual complete shared continuation is 174 bytes through the parent's
+final RET. Exactly these two ledger rows change; every other origin row,
+candidate and independently accepted extent is preserved. The complete
+203-byte parent is compared, not a shortened selection from the huge span.
+
+Incoming helper EAX/EDX and ZF are part of the actual private protocol.
+PUSH EDX / WAIT / FNSTCW preserve the flags before the actual JE special-value
+route; no ordinary C prototype is invented for that flags-dependent entry.
+The full default-control-word check uses `0x027F`. The observed ordinary path
+computes `(1+x)*(1-x)`, takes SQRT, exchanges the x87 pair and uses FPATAN.
+Complete high/fraction/sign tests select FLDPI for the -1 endpoint and FLDZ
+for +1. NaN conversion calls the actual complete helper, while invalid/range
+paths load the extended-precision indefinite constant and retain complete
+one-argument error handling. The two fastflag routes reach the same complete
+fast-exit owner. Operation code 13 and the actual operation-name context are
+preserved. Both RET sites and all fourteen branches replay. These are static
+source/target observations; numerical accuracy, live classification/control
+state, NaN payloads and runtime matherr/exception outcomes remain unknown.
+The lack of ordinary callers grants no unused-code or ownership inference.
+
+**Independent complete ownership and data evidence.** All thirteen typed
+fields are linked from independently defined whole code/data owners, then
+every relocated source byte is compared unmasked with the target. Seven
+whole retained FP anchors / 252 bytes / three fields preserve checkTOS,
+fload, load-CW, fast-exit, math-exit, QNaN conversion and one-argument error
+owners. Their canonical origins remain unchanged. The non-inventory fast-exit
+source retains its actual complete R146/R130 context, without new candidate
+credit. Full R146 and its independent math/runtime dependency chain cold-replay.
+
+Three whole defining source data sections / 60 bytes are preserved: the
+complete eight-byte loader-zero fastflag storage at `0x0068E2C0`, complete
+eight-byte operation-name section at `0x00670110`, and whole 44-byte x87
+constant/classification section at `0x00670270`. No four-byte fastflag, name
+prefix or single ten-byte indefinite value substitutes for its whole defining
+section. Complete initialized bytes, source records, actual writable target
+storage and loader zero-fill are checked. Original handwritten acos source is
+unavailable; complete pinned archive COFF and independent SDK controls supply
+the evidence without claims about original external inputs or live state.
+
+**Compiler controls and acceptance.** `probes/VC7AcosMathLayout.cpp` uses
+complete actual SDK math/exception/FP80 records and public acos/matherr/
+controlfp declarations. Its 88-byte layout and five complete public ABI/range/
+NaN/control-word controls / 157 bytes / five fields cold-build. Both generated
+whole eight-byte positive/negative-unit sections are covered; all code/data
+sections are accounted for and no orphan code carriers are emitted. All 74
+actual included headers are pinned. Private intrinsic/helper declarations
+remain unset. Explicit flags under VC7.1 build 3077 are per-control
+reproducibility settings, not an executable-wide compiler profile.
+Thirty regression checks reject prefix/huge-span acceptance, missing shared
+entries/returns, partial state, lost helper flags, wrong endpoint/NaN/error
+routes, incomplete generated constants and invented runtime/private ABI claims.
+
+The complete new/retained cold evidence replay passes, followed by canonical
+ledger write/read-back and exact two-row/prior-origin preservation guards.
+All 1,117 public checks, authored-extent verification, target/project/query
+attestation, unchanged exact inputs, progress/scanner freshness and whitespace
+checks pass locally. Totals are 3,443 resolved (919 authored, 1,949 library,
+575 compiler), 908 pending and 2,524 excluded. Source/mapping/exact remains
+60 / 9,883 bytes. All exact inputs and sixty accepted rows remain unchanged
+from R139 db26a05, preserving its 60/60 cold proof over eleven objects; no
+affected exact unit requires replay. Recorded authored extents remain
+872 / 1,952,956 bytes; the provisional denominator remains 1,965,299.
+The public MCP acceptance waiver remains in force, with the existing no-auth
+route/private random path unchanged. Private logs/objects/diagnostics remain
+untracked. The complete-origin objective remains unfinished.

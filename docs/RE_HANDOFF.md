@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R146. The public
+review cohorts R108 through R147. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,441: 919 authored, 1,947 library and 575 compiler generated.
-There are 910 pending. Candidate count is not authored function count.
+has resolved 3,443: 919 authored, 1,949 library and 575 compiler generated.
+There are 908 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R147 acos parent/core cohort below.
+the bounded R148 floor wrapper/carrier cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R146; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R147; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R147 acos parent/core graph
+## Next agent objective — R148 floor wrapper/carrier graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -712,25 +712,43 @@ Replay `scripts/repo-python scripts/verify-power-math-origins.py`.
 All 1087 public checks pass. Totals are 3441 resolved and 910 pending; the
 60-function exact baseline and unchanged R139 cold proof remain preserved.
 
-The next bounded R147 cohort is the two existing acos parent/core candidates:
+R147 resolves both acos handoff candidates. The entire 203-byte own AUX
+replaces the 20-byte intrinsic prefix, preserving exported C +20 and actual
+static start +29. The core's provisional 12494-byte span is reconciled to
+its complete 174-byte shared continuation, preserving every unrelated prior
+candidate/origin row. All thirteen independent fields, fourteen branches,
+both RET sites and complete endpoint/NaN/error/flags-dependent routes replay.
+Seven complete independent FP anchors, three whole defining data sections,
+real SDK/public ABI/range/NaN controls and full R146 dependency replay pass.
+Original private declarations and live numerical/runtime state remain unknown.
+Replay `scripts/repo-python scripts/verify-acos-math-origins.py`.
+All 1117 public checks pass. Totals are 3443 resolved and 908 pending; the
+60-function exact baseline and unchanged R139 cold proof remain preserved.
 
-| Candidate | Provisional / defining extent | Diagnostic source / fields | Required next evidence |
+The next bounded R148 cohort is the existing rounded-math wrapper/carrier:
+
+| Candidate | Provisional / defining extents | Diagnostic source / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x00643B10` | 20 / 203 | __CIacos own AUX / 13 | Whole parent including actual exported C +20 entry, static start +29, all range/NaN/error/exit tails and independently bound full FP helpers/state |
-| `0x00643B2D` | 12494 / parent +29 | Actual static start in complete acos source | Reconcile the huge provisional span to the true shared continuation of the entire 203-byte parent; preserve all other candidates and prior accepted owners |
+| `0x006439C0` | 289 / wrapper 64 + SSE core 225 | Equal-shaped _modf/floor/ceil wrapper own AUX; __floor_pentium4 at +64 | Whole 289-byte defining carrier, actual complete operation through both paths, all whole constants/source alternatives, actual SSE COMMON and independent retained default/libm-error parents |
 
-Fresh diagnostic `.analysis/r146-next-acos-survey.json` compares the complete
-203-byte supplied own AUX with zero differences outside all thirteen typed
-fields. Source member 2697474 exports `_acos` at +20, contains actual static
-`start` at +29 and has only the existing `0x00643B2D` candidate in its own
-extent. This is a diagnostic association only. The original 12494-byte core
-span runs through many unrelated FP contexts; do not accept it as a complete
-acos owner or truncate the comparison to the original 20-byte prefix.
-Use full independent retained R130/R129/R127 helper context where applicable,
-resolve every own operation-name/constants/fastflag definition and validate
-all source/target shared branch entries and complete real SDK controls.
-No caller or already-reviewed library child alone grants origin. Original
-private calling declarations, control state and runtime inputs remain unknown.
+Fresh bounded diagnostic `.analysis/r147-next-rounded-math-survey.json`
+compares complete supplied bodies at both actual contexts. The 225-byte
+`__floor_pentium4` at `0x00643A00` / +64 has zero differences outside all seven
+fields; full ceil and modf alternatives differ at 30 / 224 non-field positions.
+The actual default destination `0x0064E980` has the complete 211-byte
+`__floor_default` source association and is already independently accepted by
+R139. Preserve that prior origin and full replay; do not award it new credit.
+The similar ceil default differs at three positions; modf differs at 223.
+The source floor_pentium4 member is 2796320. The wrapper's three typed fields
+bind actual SSE state `0x0068FBA0` and both default transfers to `0x0064E980`.
+Its own AUX is 64 bytes; the contiguous 225-byte SSE owner has no existing
+candidate. Preserve the original whole-carrier observation and reconcile
+both own extents without inventing an additional inventory row. The five
+named floor constants and complete libm-error worker require full independent
+source/data provenance and cold actual SDK controls before acceptance.
+Earlier R138 equal-shaped modf/floor/ceil wrapper diagnostics alone establish
+no identity. Original private declarations and live rounding/exception outcomes
+remain unknown. Do not infer this parent origin from a reviewed child.
 
 A bounded scan of the supplied rtti.obj member 423098 found no complete
 relocation-masked associations for its exported RTtypeid (156 bytes),
@@ -753,10 +771,10 @@ string/exception source-family review.
 
 The broader `.analysis/r138-next-crt-survey.json` preserves other diagnostic
 full-AUX associations, including conflicting floating wrappers and substantial
-provisional-extent mismatches. CIacos 20/203 and the equal-shaped modf/floor/ceil wrappers still require
-complete enclosing owners, tables/shared tails and actual operation fields.
-R146 now resolves the complete power family while retaining its full source
-alternatives; do not reopen it from the earlier scanner diagnostic alone.
+provisional-extent mismatches. The equal-shaped modf/floor/ceil wrapper still requires its complete enclosing
+source carrier and actual operation fields. R146 and R147 now resolve the
+complete power and acos families; do not reopen those accepted owners from
+earlier scanner diagnostics alone.
 Preserve R129's abs ambiguity and earlier explicit/implicit lifetime
 alternatives. Do not infer parent origin from reviewed children.
 
@@ -774,7 +792,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R147 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R148 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
