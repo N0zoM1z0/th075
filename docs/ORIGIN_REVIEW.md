@@ -10829,3 +10829,80 @@ Exact remains 60 functions / 9883 bytes, with provisional authored denominator
 1967980 (0.50%). Public MCP acceptance remains waived; the whole remaining-origin
 goal is active and unfinished. Next investigate the complete shared math-table
 operations and indexed counter policy with independent game parents.
+
+## R182 — shared math-table policies and signed indexed word counter
+
+Five complete authored policies / 326 bytes are accepted. Replay
+`scripts/repo-python scripts/verify-math-table-policy-origins.py` with immutable
+`config/math-table-policy-origin-evidence.json`.
+
+| Address | Complete bytes | Inferred operation |
+| --- | ---: | --- |
+| `0x0041CAE0` | 82 | build the used 3600-entry cosine table |
+| `0x0041CB40` | 43 | absolute converted index modulo 3600 into that table |
+| `0x0041CB70` | 49 | same table with the actual 900.0f phase subtraction |
+| `0x0041CBB0` | 73 | zero-divisor guard, phase lookup and ratio against the ordinary lookup |
+| `0x00454D00` | 79 | increment the selected native word counter using signed bank/index selectors |
+
+Target observation: the build iterates indices 0 through 3599, computes
+index / 10.0 * 3.1415926535 / 180.0, calls the actual R128 `_cos` C entry and
+stores floats at `0x006884C0` with stride four. The two lookups multiply by
+10.0f, retain the distinct phase subtraction, call complete R006 `__ftol2`
+and the still-unknown 11-byte integer absolute-value helper, then use remainder
+3600. The ratio retains the actual x87 equality/zero branch, one phase call
+and two ordinary lookup calls. This shared explicit table policy, whole startup
+R113 application parent / 2987 and whole R048 character consumer / 43845
+support the authored inference. A CRT callee or game caller alone is not used
+as ownership proof. All original parent switch records and complete CFG remain
+frozen; selected witnesses preserve the actual call sites.
+
+The counter retains signed byte bank/index loads, native bank stride 0x17F0,
+word load/add/store with index stride two and counter base +0x394. Actual whole
+R109 resource-selection parent / 215 sets ECX to `0x006718F8` before the call.
+Whole R052 replay initialization / 315 and immutable R180 indexed-copy evidence
+supply independent context. Original field meanings, word signedness and
+complete game owner layout remain provisional. The complete small observer
+uses two three-word banks and sizeof 14; its entire increment / 67 and caller
+/ 17 are operation controls, not an original owner declaration or a target-byte
+match. The target's 79-byte body is never shortened to the source model.
+
+Compiler/source observation: three whole natural table functions / 174 bytes
+match byte-for-byte with every actual field. The full 73-byte ratio control is
+a negative: six bytes at offsets 48–53 differ because the live float store and
+argument-stack cleanup exchange instruction order. Both complete bodies retain
+the same explicit operations and CFG. All five ratio fields are compared
+unmasked; equal length or semantic behavior earns no exact credit. No padding,
+inert local, fake return, assembly, conditional source body or invented ABI is
+introduced. Ten whole code/constant controls / 283 bytes freeze all 19 genuine
+fields; the three positives are not generalized into a four-function match.
+
+The source table is an external complete array declaration. Its 14400-byte
+used range fits the loaded virtual `.data` extent, including zero-filled bytes
+beyond file-backed data. The verifier reads PE virtual sizes for this writable,
+non-executable range, rather than assuming a file-backed span. This is a used
+range claim, not the whole original allocation or a runtime-content hash.
+All six complete readonly float/double constants / 36 bytes are independently
+verified. The complete R128 cosine primary / 174 and its original nine-byte C
+entry record, R006 conversion / 117 and R129 abs diagnostic / 11 stay unchanged.
+R129 replays before and after acceptance, including vendor abs/labs and cold
+ordinary alternatives that preserve the integer helper's unknown ownership.
+
+All 13 cold ordinary sections / 383 bytes, two actual SDK headers and whole
+16-byte readonly layout are frozen. Evidence-only cold replay precedes canonical
+mutation; accepted-state cold replay passes. The verifier retains 179 complete
+canonical/body snapshots, 41 protected unknowns, four entire authored parents
+/ 47362 bytes and four original runtime/interior/opaque records. Strict R181
+HEAD bf663e0 readback changes exactly five function/origin rows, preserves
+all extents and appends five complete authored records while retaining all
+895 prior rows/header/order. Full authored verification now covers 900 bodies
+/ 1955963 bytes. Local target/tracking/Ghidra query completion, fresh scanning,
+47 new regression guards and all 2197 public checks pass; generated progress
+and whitespace checks pass. Every prior configuration manifest/record and all
+sixty exact inputs are preserved. No source/private ABI/mapping/exact credit
+is added; prior R139 cold 60/60 replay across eleven objects remains applicable.
+
+Totals are 3637 resolved (947 authored, 2115 library, 575 compiler), 714 pending
+and 2690 excluded. Exact remains 60 functions / 9883 bytes, with provisional
+coverage 9883 / 1968306 (0.50%). Public MCP acceptance remains waived; the whole
+remaining-origin goal is active and unfinished. Next investigate the complete
+font byte-decoding/classification and graphic-resource initialization cohort.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R181. The public
+review cohorts R108 through R182. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,73 +11,73 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,632: 942 authored, 2,115 library and 575 compiler generated.
-There are 719 pending. Candidate count is not authored function count.
+has resolved 3,637: 947 authored, 2,115 library and 575 compiler generated.
+There are 714 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,967,980 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,968,306 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R182 math-table/indexed-counter cohort below.
+the bounded R183 font-byte/resource-initialization cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R181; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R182; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R182 shared math table and indexed counter
+## Next agent objective — R183 font bytes and graphic-resource initialization
 
-R181 accepts four complete SDK list-construction/exception-entry origins.
-Replay `scripts/repo-python scripts/verify-list-construction-origins.py`.
-The node at `0x0041E1A0` is reconciled from 143 to its full 223-byte defining
-owner, including the local catch at +143 and shared exit at +196. The 80-byte
-entry at `0x0041E22F` retains a supported shared-owner view. Four ledger extents
-sum to 412 bytes, including 80 overlapping bytes; distinct primary code totals
-332 bytes. No standalone catch AUX, prefix comparison or distinct-byte credit
-is claimed. Every real EH/data/code field is linked and compared unmasked.
-The original R020 frame and complete actual handler table independently prove
-the local entry. The 14-byte empty allocator remains unknown because its SDK
-and ordinary alternatives are byte-equal; opaque node links/destruction remain
-unknown. Original game type meanings and full owner layouts remain provisional.
+R182 accepts five entire authored math-table/counter policies / 326 bytes.
+Replay `scripts/repo-python scripts/verify-math-table-policy-origins.py`.
+Three whole natural math functions / 174 bytes are byte-equal with real fields;
+the complete 73-byte ratio source has six live store/argument-cleanup order
+differences, preserved as a full negative. The native 79-byte word-counter
+policy is reviewed independently; the complete 67-byte small owner and 17-byte
+caller are controls with no target or original-layout credit. Actual bank/index
+selectors are signed bytes, bank stride is 0x17F0 and counter base is +0x394.
+The counter's direct parent is R109 `0x00452B30` / 215; R052 `0x0042A180` / 315
+and the R180 indexed-copy evidence remain independent context.
 
-The new cold verifier freezes 22 whole controls / 795 bytes, 35 genuine fields,
-65 ordinary sections / 2690 bytes, 30 actual includes, whole 52-byte coalesced
-layout, 168 snapshots, 41 protected unknowns, full authored anchors / 223 bytes
-and four original R169 records. R180 evidence stays immutable; narrow verifier
-transitions permit only the three exact R181 resolutions and sole 143-to-223
-extent change, while preserving every original prefix byte and external tail.
-R180 cold replay passes before and after acceptance. Strict original R180 HEAD
-7ab03b1 readback changes exactly four function/origin rows, preserving all 895
-prior authored rows/order and every previous configuration record. All 2150
-public checks pass. Authored evidence remains 895 bodies / 1955637 bytes; all
-sixty exact units and inputs are unchanged. Public MCP acceptance is waived;
+Ten whole code/constant controls / 283 bytes preserve 19 genuine fields. All
+13 cold ordinary sections / 383 bytes, two SDK headers, complete 16-byte layout,
+179 snapshots, 41 protected unknowns, whole authored parents / 47362 bytes and
+four original runtime/interior/opaque records are frozen. The observed table
+claim is its 14400-byte used writable virtual range, including loader zero-fill,
+not a full original allocation/runtime-content hash. R129 cold replay passes
+before and after acceptance; the 11-byte absolute-value helper remains unknown
+because full vendor and ordinary alternatives are byte-equal. No existing
+opaque node/link/empty-constructor ownership is borrowed. Strict R181 bf663e0
+readback changes exactly five function/origin rows, preserves every extent and
+all 895 earlier authored rows/order, and adds five whole authored bodies.
+All 2197 public checks pass. Authored evidence totals 900 bodies / 1955963 bytes;
+all sixty exact units/inputs are unchanged. Public MCP acceptance is waived;
 the full remaining-origin goal is active and unfinished.
 
-The fresh `.analysis/origin-scan/r181-triage.json` has 719 pending. The next
-bounded diagnostic cohort is five entire operations / 326 provisional bytes:
+The fresh `.analysis/origin-scan/r182-triage.json` has 714 pending. The next
+bounded diagnostic cohort is three entries / 226 provisional bytes:
 
 | Candidate | Full provisional bytes | Required original whole context |
 | --- | ---: | --- |
-| `0x0041CAE0` | 82 | full startup parent `0x00602A60`; actual 3600-entry writable float table at `0x006884C0`, all source constants and complete math callee |
-| `0x0041CB40` | 43 | actual conversion, integer absolute-value and remainder route into that same complete table; preserve independently opaque integer helper |
-| `0x0041CB70` | 49 | full distinct phase-offset lookup, every float constant and identical table linkage |
-| `0x0041CBB0` | 73 | actual zero-divisor branch and both lookup calls; retain a full original game consumer and its accepted switch evidence |
-| `0x00454D00` | 79 | full R052 parent `0x00452B30`, signed bank/index selectors, stride 0x17F0, native word counter base +0x394; preserve R180 indexed-copy context |
+| `0x0041C9D0` | 85 | full R052 `FontSurface::RasterizeText` at `0x0041C2E0` / 1766, actual byte-classifier call and both one-/two-byte output routes; preserve actual input load widths |
+| `0x0041CA30` | 77 | actual unsigned lead-byte ranges 0x81–0x9F and 0xE0–0xFE; independent full font context and complete SDK/ordinary alternatives before ownership inference |
+| `0x0041BF90` | 64 | full R052 `FontSurface::RenderTextToTexture` at `0x00413460` / 398 and R040 music-room text parent `0x00426670` / 555; incoming window value and explicit zero state, retaining R178 release and R109 resource context |
 
-Read complete code, exits, actual data/table bounds and full independent parents.
-Use complete natural source controls where they improve ownership evidence;
-do not infer a library origin from a CRT call or authored ownership merely
-from a game caller. Preserve every protected ambiguity, including the original
-integer absolute-value helper, and all earlier immutable manifests. Freeze all
-original authored rows/order instead of hashing the growing authored registry.
-Do not instantiate incomplete original owners or add exact-reconstruction scope.
+These are candidates, not promised acceptances. Read whole original CFG/exits,
+all actual data/API fields and complete independent parents. Distinguish explicit
+resource defaults and font policy from generated member construction and generic
+byte classifiers. A game caller or equal short alternative alone proves no
+ownership. Preserve original ABI/type/layout uncertainty and all protected
+ambiguities. Reuse accepted release controls where useful, but never instantiate
+an incomplete original owner or add arbitrary storage to force a source match.
+Freeze old authored rows/order rather than hashing the growing registry. Do not
+add exact-reconstruction scope.
 
 ## R165 checkpoint and the completed R166 shortlist
 
