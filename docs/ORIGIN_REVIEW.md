@@ -8982,3 +8982,107 @@ deleting wrapper / 44 bytes, which then calls authored R153 destruction;
 do not bind its field directly to the authored destructor or conflate origins.
 The five-byte placement-delete body needs ordinary no-op alternatives plus
 its independent complete SDK placement/construction and EH cleanup protocol.
+
+## R160 — Remaining deque leaves and byte-equal ordinary alternatives
+
+R160 accepts five library owners / 129 bytes: file allocator max_size
+`0x0042E3B0` / 44, iterator indexing `0x00423550` / 38, subtraction-assignment
+`0x00422480` / 27, element destruction `0x004229B0` / 15 and two-argument
+placement delete `0x00412300` / 5. Replay
+`scripts/repo-python scripts/verify-deque-leaf-origins.py` with
+`config/deque-leaf-origin-evidence.json`. All five have complete positive own
+COFF AUX extents and unchanged canonical size/span_end. Every actual field
+compares unmasked; no source/private ABI/mapping/exact credit follows. Names
+are provisional SDK associations, not recovered original declarations.
+
+**Byte-equal alternatives.** A complete ordinary capacity observation emits
+all 44 target bytes, an ordinary explicit destructor call emits all 15 bytes
+and a natural two-argument empty function emits all five placement-delete
+bytes. None of these leaf shapes proves library ownership or uniquely identifies
+original source. The source-level library inference uses the independently
+accepted entire typed SDK parent/source relationships and actual protocol:
+R074 deque max_size / 22 in complete R071 file growth / 511; entire R158
+insertion / 1545 calling indexing; whole R078 iterator subtraction / 57
+calling subtraction-assignment; and whole R074 allocator destruction / 25.
+Indexing really calls addition `0x00421F40` and dereference `0x00421F20`;
+subtraction-assignment negates the supplied offset before actual addition-
+assignment `0x00422460`. Every reviewed callee remains independently classified.
+
+Destruction passes zero flags to the unchanged complete R037 generated scalar
+deleting wrapper `0x004229F0` / 44. That wrapper calls independently authored
+R153 destructor `0x00421220` / 43 and gates R142 scalar delete `0x00640F15`
+/ 5 on flag bit one. Its origin is compiler, the actual destruction policy is
+authored, and the SDK leaf is library; no call bypasses the intervening wrapper.
+No new compiler or authored credit is awarded.
+
+Placement delete follows the independently whole R157 SDK `_Construct`
+`0x004228C0` / 108, with actual R005 placement new `0x004063D0` / 8 and
+its original complete 27-byte cleanup/frame carrier `0x00655690` and entire
+36-byte state-data section `0x006688D8`. Actual cleanup loads the placement
+address from `[ebp+8]` and the placement-new result from `[ebp-0x14]`, pushes
+both, calls `0x00412300` and removes eight stack bytes. The separate registered
+frame entry remains at carrier offset 17. No live constructor failure or
+exception outcome is observed. The whole R158 28-byte implicit/ordinary copy
+ambiguity remains unknown and unchanged; constructing its record does not
+establish the original constructor declaration.
+
+`probes/VC7DequeLeafAlternatives.cpp` cold-builds all 191 ordinary sections
+/ 12034 bytes. Seventeen full linked controls contain sixteen code carriers
+/ 2532 bytes, entire construction EH data / 36 bytes and 88 actual fields.
+All accepted leaves, ordinary alternatives and applicable SDK parents retain
+positive own AUX; compiler/EH/data carriers retain their independently whole
+defining sections. The full 72-byte observation layout is
+`[8,20,60,20,20,4,8,8,8,20,60,20,20,4,8,8,1,1]`.
+All 27 SDK headers and the actual unchanged included R156 observation source
+are pinned. Complete synthetic observations do not recover game records.
+Generated local `$` labels are resolved from this object's actual sections,
+including the cleanup's actual state-data field; equal names in a prior object
+cannot establish local ownership. Build 3077 and explicit flags are per-probe
+reproducibility settings. Original source/type/compiler/linker inputs and live
+capacity/index/offset/construction/lifetime outcomes remain unknown.
+
+Exactly five function evidence rows and five origin rows change against
+R159 HEAD e8f059e. All unrelated rows, every authored record and protected
+copy ambiguity remain unchanged. R156/R157/R158/R159 manifests stay immutable.
+The R156 snapshot guard permits only the exact five hash-pinned R160 follow-up
+transitions and reads every full original snapshot back after acceptance.
+Twenty-five regression checks protect full source/protocol extents, actual
+fields/local offsets, ordinary alternatives, distinct compiler/authored roles,
+protected copy uncertainty, layout/header/emission coverage and false credit.
+The unchanged complete R159/R158/R157/R156/runtime source chain cold-replays
+before canonical acceptance; only its final follow-up summary wording changes
+after that proof. All 1429 public tests, local target/project/query attestation,
+fresh scanner/progress, authored extents, exact-input preservation and whitespace
+checks pass. Public MCP acceptance remains waived; no-auth/private route and
+untracked private diagnostics remain unchanged.
+
+Totals are 3493 resolved (922 authored, 1996 library, 575 compiler), 858 pending
+and 2571 excluded. Authored evidence remains 875 bodies / 1953089 bytes;
+provisional exact coverage stays 9883 / 1965432. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs remain unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No affected exact unit
+needs replay. The complete-origin objective remains unfinished. The closed
+R156 primary source graph now has only its protected R158 record-copy owner
+remaining unknown; this does not exhaust the wider 858-function backlog.
+
+The next bounded R161 cohort is nine unknown STL source-context candidates / 237 bytes:
+
+| Candidate | Full provisional extent | Actual investigation context |
+| --- | ---: | --- |
+| `0x00409760`, `0x00409E60` | 31 each | first vector begin/end pair in the unchanged whole R034 assign / 96 and R095 assign-wrapper source family; actual iterator construction `0x0040A120` |
+| `0x0040E1F0`, `0x0040E680` | 31 each | second vector begin/end pair in the unchanged whole R034 assign / 96 and R095 wrapper family; actual iterator construction `0x0040E9E0` |
+| `0x0040A120`, `0x0040E9E0` | 28 each | corresponding still-unknown iterator constructors; reconcile complete source/extent/type and ordinary constructor alternatives, not a reviewed-child inference |
+| `0x0040A190` | 27 | iterator subtraction-assignment in the accepted whole iterator-subtraction parent `0x00409DF0`; actual independently accepted R106 addition-assignment `0x0040A5E0` / 31 |
+| `0x0040A830`, `0x0040F9F0` | 15 each | actual SDK destruction in unchanged allocator parents R074 `0x00409D60` / 25 and R033 `0x0040F860` / 25; respective unchanged R037 generated deleting wrappers `0x0040A9F0`, `0x0040FA00` / 44 |
+
+This cohort is a diagnostic investigation scope, not nine promised acceptances.
+Build complete natural SDK observation families, retain each entire accepted
+parent and every genuine field/source operation, and establish independent
+compiler/authored destructor policy before any library decision. Constructor
+or destructor shapes and accepted children alone do not identify ownership,
+original element kinds/declarations or source. Ordinary byte-equal alternatives
+must remain explicit. Keep the R158 record-copy ambiguity and all other protected
+lifetime/leaf ambiguities unchanged. Preserve R156/R157/R158/R159/R160 manifests;
+any follow-up canonical transition needs its own exact bounded hash-pinned
+snapshot evidence. The private route and all 60-function exact inputs remain
+preserved. No exact scope or recovered game layout is authorized.

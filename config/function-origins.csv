@@ -572,7 +572,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00412220,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x00412240,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004122C9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00412300,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00412300,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x00412310,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00412390,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x004123D0,library,vc7-stl-deque-helpers,exclude,high,R087
@@ -1091,7 +1091,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00422420,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
 0x00422440,library,VC7STL,exclude,complete-vc7-deque-iterator-family,R080
 0x00422460,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
-0x00422480,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00422480,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x004224A0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x00422500,library,VC7STL,exclude,complete-vc7-deque-iterator-family,R080
 0x00422520,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
@@ -1119,7 +1119,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00422970,library,vc7-stl-deque-helpers,exclude,high,R088
 0x00422980,library,VC7STL,exclude,complete-vc7-deque-allocation-family,R075
 0x004229A0,library,vc7-stl-deque-helpers,exclude,high,R088
-0x004229B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004229B0,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x004229C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004229D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004229F0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
@@ -1146,7 +1146,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00423380,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00423470,library,VC7STL,exclude,complete-vc7-deque-operation-family,R072
 0x00423520,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
-0x00423550,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00423550,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x00423580,library,vc7-stl-deque-algorithms,exclude,high,R085
 0x004235A0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x004235C0,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -1348,7 +1348,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0042E310,library,VC7STL,exclude,complete-vc7-deque-iterator-advance-family,R083
 0x0042E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0042E390,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0042E3B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0042E3B0,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x0042E3E0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0042E410,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0042E450,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073

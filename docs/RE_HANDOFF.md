@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R159. The public
+review cohorts R108 through R160. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,488: 922 authored, 1,991 library and 575 compiler generated.
-There are 863 pending. Candidate count is not authored function count.
+has resolved 3,493: 922 authored, 1,996 library and 575 compiler generated.
+There are 858 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R160 remaining deque source cohort below.
+the bounded R161 STL iterator/destruction source cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R159; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R160; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R160 remaining deque source owners and no-op ownership controls
+## Next agent objective — R161 vector iterator endpoints and paired destruction source context
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -909,29 +909,43 @@ snapshots without skipping unrelated evidence. All 1404 public checks pass;
 totals are 3488 resolved and 863 pending, with all 60 exact functions and
 R139 cold proof preserved.
 
-The next bounded R160 cohort is five still-unknown source-associated owners:
+R160 accepts the five remaining deque leaves / 129 bytes. Replay
+`scripts/repo-python scripts/verify-deque-leaf-origins.py`. Complete SDK max_size,
+indexing/subtraction/destruction parents and actual whole placement construction
+/EH cleanup supply ownership context. Full ordinary capacity / 44, explicit
+destruction / 15 and two-argument no-op / 5 are byte-equal, so shapes alone
+identify none of their original sources. The unchanged R037 generated wrapper
+and R153 authored destruction remain separately classified. Seventeen full
+controls / 2568 bytes and 88 fields include the entire 27-byte construction
+cleanup/frame carrier and 36-byte state data. All 191 cold ordinary sections
+/ 12034 bytes, full 72-byte layout and 28 actual source/SDK includes are pinned.
+Only five new exact hash-pinned transitions are permitted; original R156–R159
+manifests and the 28-byte record-copy ambiguity remain unchanged. The R156
+primary graph now has only that protected unknown; the full backlog remains
+858. All 1429 public checks pass; totals are 3493 resolved, with unchanged
+60-function exact inputs and preserved R139 cold proof.
+
+The next bounded R161 cohort is nine unknown STL source-context candidates / 237 bytes:
 
 | Candidate | Full provisional extent | Actual investigation context |
 | --- | ---: | --- |
-| `0x0042E3B0` | 44 | actual SDK file-element allocator max_size; complete R071 file growth and unchanged 60-byte observation/source allocation family |
-| `0x00423550` | 38 | mutable iterator indexing called by full R158 insertion; actual addition `0x00421F40` and dereference `0x00421F20` |
-| `0x00422480` | 27 | mutable iterator subtraction-assignment; actual addition-assignment `0x00422460`; preserve source operation/sign/overload roles |
-| `0x004229B0` | 15 | SDK inner element destruction; actual full R037 scalar deleting wrapper `0x004229F0` / 44, then authored R153 destructor `0x00421220` / 43 and R142 scalar delete |
-| `0x00412300` | 5 | actual two-argument placement-delete operation in whole SDK construction cleanup/EH controls; no-op shape alone grants no ownership |
+| `0x00409760`, `0x00409E60` | 31 each | first vector begin/end pair in the unchanged whole R034 assign / 96 and R095 assign-wrapper source family; actual iterator construction `0x0040A120` |
+| `0x0040E1F0`, `0x0040E680` | 31 each | second vector begin/end pair in the unchanged whole R034 assign / 96 and R095 wrapper family; actual iterator construction `0x0040E9E0` |
+| `0x0040A120`, `0x0040E9E0` | 28 each | corresponding still-unknown iterator constructors; reconcile complete source/extent/type and ordinary constructor alternatives, not a reviewed-child inference |
+| `0x0040A190` | 27 | iterator subtraction-assignment in the accepted whole iterator-subtraction parent `0x00409DF0`; actual independently accepted R106 addition-assignment `0x0040A5E0` / 31 |
+| `0x0040A830`, `0x0040F9F0` | 15 each | actual SDK destruction in unchanged allocator parents R074 `0x00409D60` / 25 and R033 `0x0040F860` / 25; respective unchanged R037 generated deleting wrappers `0x0040A9F0`, `0x0040FA00` / 44 |
 
-Reconcile complete own-AUX or entire defining-source extents, every real
-field, final returns and actual whole parents/source protocols. Cold-build
-natural SDK and ordinary operation/no-op alternatives; preserve genuine
-source ABI and original record/type uncertainty. A byte-equal ordinary
-placement no-op requires explicit context assessment, not leaf-shape credit.
-Keep R037 compiler wrapper ownership separate from authored R153 policy and
-SDK destruction; never bypass its actual intervening call. Preserve R158's
-28-byte implicit/explicit copy ambiguity and all other lifetime/leaf ambiguities.
-Keep R156/R157/R158/R159 manifests immutable and permit any future snapshot
-change only as a new exact bounded hash-pinned follow-up transition. Existing
-R085 algorithms, reviewed iterator operations, game/growth/runtime evidence,
-private route and 60-function exact inputs remain preserved. No exact scope
-or recovered original game element declaration is authorized.
+This cohort is a diagnostic investigation scope, not nine promised acceptances.
+Build complete natural SDK observation families, retain each entire accepted
+parent and every genuine field/source operation, and establish independent
+compiler/authored destructor policy before any library decision. Constructor
+or destructor shapes and accepted children alone do not identify ownership,
+original element kinds/declarations or source. Ordinary byte-equal alternatives
+must remain explicit. Keep the R158 record-copy ambiguity and all other protected
+lifetime/leaf ambiguities unchanged. Preserve R156/R157/R158/R159/R160 manifests;
+any follow-up canonical transition needs its own exact bounded hash-pinned
+snapshot evidence. The private route and all 60-function exact inputs remain
+preserved. No exact scope or recovered game layout is authorized.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -983,7 +997,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R160 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R161 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.

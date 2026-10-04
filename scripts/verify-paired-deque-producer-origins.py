@@ -140,7 +140,10 @@ def preserved_snapshot(snapshot, function, origin):
     if copy_followup.accepted_snapshot(snapshot, function, origin):
         return True
     endpoint_followup = module('paired_endpoint_followup', 'verify-deque-endpoint-dispatch-origins.py')
-    return endpoint_followup.accepted_snapshot(snapshot, function, origin)
+    if endpoint_followup.accepted_snapshot(snapshot, function, origin):
+        return True
+    leaf_followup = module('paired_leaf_followup', 'verify-deque-leaf-origins.py')
+    return leaf_followup.accepted_snapshot(snapshot, function, origin)
 
 
 def main():
@@ -252,7 +255,7 @@ def main():
         source, _ = coff.readonly_section(data, layout['section'], c.coff_name)
         if list(struct.unpack('<8I', source)) != LAYOUT:
             raise ValueError('paired full actual SDK/observation layout differs')
-    print('R156 origins OK: six complete library producer/allocator owners / 534 bytes; 162 whole linked code/EH carriers / 11016 bytes, 22 whole data owners / 835 bytes and 436 actual unmasked fields; all 187 ordinary cold emission sections / 11917 bytes, 27 actual headers and full 32-byte layout; two unchanged whole growth owners, two complete original game parents and ten original full registered frames; independently authored inner destruction and complete runtime/weak/opaque boundaries; unrelated auxiliary/shared-tail classifications preserved, with only exact hash-pinned independently reviewed R157/R158/R159 follow-up snapshots permitted; original game types and runtime outcomes unknown; no source/mapping/private ABI/exact credit.')
+    print('R156 origins OK: six complete library producer/allocator owners / 534 bytes; 162 whole linked code/EH carriers / 11016 bytes, 22 whole data owners / 835 bytes and 436 actual unmasked fields; all 187 ordinary cold emission sections / 11917 bytes, 27 actual headers and full 32-byte layout; two unchanged whole growth owners, two complete original game parents and ten original full registered frames; independently authored inner destruction and complete runtime/weak/opaque boundaries; unrelated auxiliary/shared-tail classifications preserved, with only exact hash-pinned independently reviewed R157/R158/R159/R160 follow-up snapshots permitted; original game types and runtime outcomes unknown; no source/mapping/private ABI/exact credit.')
     return 0
 
 
