@@ -6329,3 +6329,111 @@ MCP acceptance replays R131 and retained graphs, all authored extents, project
 attestation, progress freshness, 555 tests and whitespace checks. All 60 exact
 units cold-replay across eleven objects. Investigation and intermediate checks
 are local; private evidence stays untracked and shared tools remain read-only.
+
+## R132 — Complete low-level file I/O, handle locking and error graph
+
+R132 resolves all six handoff roots and twelve necessary existing entries:
+fourteen complete library primaries / 2,338 bytes / 109 typed fields and four
+existing cleanup entries / 33 overlapping bytes. Replay
+`scripts/repo-python scripts/verify-low-io-origins.py`; the manifest is
+`config/low-io-origin-evidence.json`. Every primary uses its complete own COFF
+AUX from the hash-pinned libcmt.lib. No source, mapping or exact credit is added.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__lseek_lk` | `0x0064EC83` | 116 | 6 |
+| `__lseek` | `0x0064ECF7` | 171 | 12 |
+| `__lseeki64_lk` | `0x006523AC` | 131 | 6 |
+| `__write` | `0x0064EF70` | 171 | 12 |
+| `__read` | `0x00653A81` | 171 | 12 |
+| `__close_lk` | `0x00654835` | 131 | 9 |
+| `__get_osfhandle` | `0x00652066` | 65 | 4 |
+| `__dosmaperr` | `0x00647FAA` | 115 | 7 |
+| `__lock_fhandle` | `0x006520A7` | 160 | 10 |
+| `___doserrno` | `0x00647FA1` | 9 | 1 |
+| `__unlock_fhandle` | `0x00652147` | 34 | 2 |
+| `__write_lk` | `0x0064EDA2` | 462 | 13 |
+| `__read_lk` | `0x006538A6` | 475 | 9 |
+| `__free_osfhnd` | `0x00651FE7` | 127 | 6 |
+
+**Complete extent and EH observations.** The lock initializer expands the old
+148-byte provisional span to its entire 160-byte AUX. Its exceptional cleanup
+includes three stack-adjustment bytes at +148 before the existing nine-byte
+entry `0x0065213E` / +151 / `$L20250`. The three 171-byte lseek/write/read
+wrappers each retain both error paths, the normal return and the cleanup at
++135. Their existing eight-byte entries are `0x0064ED7E` / `$L20662`,
+`0x0064EFF7` / `$L20376` and `0x00653B08` / `$L20375`. The complete twelve-byte
+scopes point at +132, before the three-byte stack adjustment; the scope entry
+and normal cleanup subentry must remain distinct. All cleanup names stay
+blank. Their bytes overlap full owners and gain no standalone exact credit.
+The verifier reads back actual source definitions, complete target instructions,
+all branches/exits and every typed field. Library children alone confer no
+origin on remaining stream parents.
+
+**Target operations and ABI.** Handle validation uses unsigned bounds against
+_nhandle, group selection by shift 5 / mask 31, and 36-byte ioinfo stride. The
+FOPEN flag lives at +4, pipech at +5, lock initialization at +8 and the complete
+24-byte CRITICAL_SECTION at +12. Lock creation preserves its double check,
+lock-table guard, failure return, finally release and eventual handle lock.
+Unlock uses the same actual critical-section field. The complete thread object
+is 140 bytes; errno and OS errno occupy +8/+12. The nine-byte OS-errno accessor
+returns the actual getptd result plus twelve.
+
+Both seeks bind actual SetFilePointer and GetLastError IAT slots, retain the
+all-ones low-word sentinel plus OS-error check, and clear FEOFLAG on success.
+The 64-bit seek uses a truthful eight-byte low/high union, passes the high-word
+address to SetFilePointer and returns EDX:EAX. The complete write parent retains
+append seek, text CRLF conversion, binary write, short writes, device/control-Z
+and error mapping. The read parent retains pipe lookahead, CRLF translation,
+control-Z EOF, broken-pipe behavior, one-byte lookahead/seek restoration and
+all failure/success paths. Close preserves stdout/stderr handle alias handling,
+CloseHandle failure, handle release, flag clearing and OS-error mapping. The
+free-handle helper resets standard handles only for application type 1;
+the observed target has initial GUI application type 2. Runtime handles,
+buffer contents and file/device state remain unknown; no game I/O is executed.
+
+**Whole data and definition provenance.** Seven complete defining sections /
+420 bytes / five DIR32 fields retain all four scopes / 48, the whole 45-entry
+OS-error map / 360, cookie / 4 and application-state/exit-pointer carrier / 8.
+The ordered error map retains both occurrences of OS code 6, including the
+second source entry whose comment says 124. The source definition and target
+bytes govern acceptance; the table is not silently repaired. Both access-error
+and execution-error fallback ranges and default EINVAL stay in the whole
+115-byte error mapper. The complete source COMMON declarations retain all
+64 handle-array pointers / 256 and nhandle / 4 in their actual writable loader
+zero-fill region. Runtime allocated arrays are not guessed from initial zeros.
+
+Application state has five strong archive definitions. The retained full
+469-byte GUI entry at `0x0064232C` independently binds R126's wincrt0 source
+member. That same member defines the entire two-word carrier, with app_type at
++4 and a typed exit pointer at +0 to the independently reviewed __exit owner.
+All five actual definitions remain recorded and are read back from the whole
+archive. Selection does not use the first masked match and does not establish
+original source spelling, source-unit identity or folding. Eleven complete
+anchors / 1,011 bytes / 72 fields retain independent origins; their complete
+code/data/EH dependencies replay through the full R131 chain, including R125
+I/O initialization. No new origin is inherited from these anchors.
+
+**Compiler observations and limits.** Natural VC7LowIoLayout cold-builds
+48 DWORDs / 192 bytes with complete pinned CRT/SDK types. It verifies pointer,
+int and long / 4, int64 / 8, ioinfo / 36 and all actual fields, critical section
+/ 24, handle geometry, whole pointer/group storage sizes, thread offsets,
+error-entry layout and file/error/standard-handle constants. The independent
+11-byte cdecl file-offset identity body loads low/high into EAX/EDX and returns
+without callee argument cleanup. Its full AUX and all instructions replay.
+The offset union and error-entry pair are synthetic layout controls, not
+reconstructed game objects. Nine vendor source files and eight headers remain
+hash-pinned. Probe flags and VC7.1 build 3077 are reproducibility settings;
+no executable-wide compiler profile is inferred.
+
+Thirty-three regression checks reject truncated owners, conflated cleanup
+entries, incomplete error/handle/application carriers, wrong thread/SDK/int64
+layouts, missing text/EOF policies and arbitrary application-state definitions.
+All 588 public checks pass. Canonical totals are 3,320 resolved (919 authored,
+1,826 library, 575 compiler), with 1,031 pending. Exact/source/mapping remains
+60 / 9,883 bytes; recorded authored extents remain 872 / 1,952,956 bytes and
+the provisional denominator remains 1,965,299. One final no-auth public HTTPS
+MCP acceptance replays R132 and retained graphs, authored extents, project
+attestation, progress freshness, 588 tests and whitespace checks. All 60 exact
+units cold-replay across eleven objects. Investigation and intermediate checks
+use local tools; private evidence stays untracked and shared tools read-only.
