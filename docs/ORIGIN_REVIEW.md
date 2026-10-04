@@ -9840,3 +9840,96 @@ objects remains applicable. No source/private ABI/mapping/exact credit is added.
 Public MCP acceptance remains waived and the full remaining-origin goal is active
 and unfinished. The next bounded R169 cohort is five archive-list dependencies
 / 160 bytes with full R052 write/index policies, recorded in the current handoff.
+
+## R169 — complete archive-list graph and independent value width
+
+Thirteen library definitions / 753 bytes are accepted through the five-candidate
+archive-list cohort and necessary complete SDK dependencies. Replay
+`scripts/repo-python scripts/verify-archive-list-policy-origins.py` with immutable
+`config/archive-list-policy-origin-evidence.json`. Full unchanged R052 archive
+write/index policies `0x0041D260` / 686 and `0x0041D510` / 429 retain complete
+instructions, actual field/value/argument context, original authored records
+and CFG. Their archive-specific behavior provides independent ownership context;
+caller labels, mapped types and short byte shapes alone prove no ownership.
+
+| Address | Complete bytes | Inferred SDK role |
+| --- | ---: | --- |
+| `0x0041D950` | 42 | list begin |
+| `0x0041D980` | 31 | list end |
+| `0x0041D9A0` | 17 | list size |
+| `0x0041D9C0` | 42 | list push-back |
+| `0x0041EF00` | 28 | iterator node constructor |
+| `0x0041E120` | 115 | list insertion |
+| `0x0041EF60` | 186 | complete value-node allocation, catch and shared tail |
+| `0x0041F020` | 126 | size growth with full length-error path |
+| `0x0041F0F0` | 27 | node allocator allocation |
+| `0x0041F980` | 53 | SDK node constructor and whole value copy |
+| `0x0041F800` | 22 | list maximum size |
+| `0x0041FD90` | 20 | node allocation with actual 116-byte multiplier |
+| `0x0041F9C0` | 44 | value allocator maximum size |
+
+Target observation: the archive reader processes an observed 108-byte stride;
+actual node placement allocates 116 bytes. This list's capacity calculation uses
+value width 108. The complete allocation is `0x0041EF60..0x0041F019` / 186
+bytes, including local catch at +134 and shared tail. Its previous provisional
+134-byte entry stops before catch. Source primary AUX covers the whole 186
+bytes. The complete 27-byte cleanup/handler carrier at `0x006554C0` and 88-byte
+unwind/catch/try/FuncInfo carrier at `0x00668690` retain every actual field and
+R020 registration `0x006554D1`. The separate 52-byte catch candidate
+`0x0041EFE6` remains unknown; no independent primary AUX/ownership is claimed.
+
+Compiler/source observation: a complete synthetic 108-byte record produces the
+116-byte node and genuine list/iterator/insertion/allocation graph. All eighty
+whole positive source/code/EH/throw/RTTI/data controls / 3752 bytes compare
+unmasked with 189 real fields through one coherent actual defining-symbol
+catalog. These include full string/length-error, throw/catchable-type/type
+metadata and actual exception/runtime boundaries. Existing R106 constructor/
+deallocation, R160 placement delete, R004/R005 string/exception/compiler,
+R142 exception/frame/throw/delete, R154 scalar new and R006/R025 string/memory
+owners remain independent. Six original R020 frames are verified. The existing
+37-/100-byte implicit exception copies are checked as complete unique code
+COMDATs despite lacking primary AUX; all regular positives have full own AUX.
+
+The entire ordinary size alternative / 17 bytes is byte-equal. Original method
+spelling stays unknown. The full previous 164-byte-payload node allocation /
+23 bytes is negative against the entire 20-byte target; the full unsigned-node
+allocation / 20 bytes differs at its genuine node-width immediate. Together these
+two negatives / 43 bytes retain actual scalar new, never compare target prefixes
+and earn no positive source/exact credit. Neither the 108-byte observation nor
+the complete source emission recovers the original archive entry declaration,
+packing, member identity or private game layout. No incomplete original owner
+is instantiated and no target byte array, assembly, fake return or inert padding
+is used. One actual four-byte readonly external type-info slot establishes no
+whole vtable extent.
+
+All 250 cold ordinary sections / 11163 bytes, 29 actual SDK headers plus the
+unchanged pinned R166/R167/R168 probe includes, and entire combined 88-byte
+layout `[20,20,84,84,40,4,4,12,20,164,20,12,1,16,4,4,12,1,4,108,12,4]` are
+frozen. Eleven prior records and 205 complete canonical/body snapshots preserve
+existing context. R162's manifest remains immutable; its two relevant pending
+candidate records allow only exact accepted-pending to R169 library transitions,
+and two separate snapshots allow only exact original-to-R169 transitions.
+Both old ordinary and cookie-negative profiles cold-replay. Previous R168
+transitions remain exact and intact; all other historical pending decisions and
+protected opaque owners stay unchanged.
+
+Link accessors `0x0041E100` / 8 and `0x0041E110` / 11, node getter
+`0x0041F7E0` / 16 and the catch interior receive no origin from source-equal
+short bodies. Earlier independent getters, empty destruction children and
+lifetime/copy/math policies are preserved. Complete cold evidence preceded
+canonical changes. Strict R168 HEAD ca7566f readback verifies exactly thirteen
+function/origin changes, only one full primary extent refinement and no authored
+additions. All 880 original authored rows/order, previous manifests and exact
+source/header/build/ABI/mapping/match inputs remain intact. Thirty-six new
+regression checks and all 1735 public checks pass, with fresh scanning, full
+authored extents, local attestation and whitespace checks.
+
+Totals are 3559 resolved (927 authored, 2057 library, 575 compiler), 792 pending
+and 2632 excluded. Authored evidence remains 880 complete bodies / 1953711
+bytes. Exact stays 60 functions / 9883 bytes, with provisional coverage
+9883 / 1966054 (0.50%); R139's earlier cold 60/60 replay across eleven objects
+remains applicable. No source/private ABI/mapping/exact credit is added.
+Public MCP acceptance stays waived; the full remaining-origin goal is active
+and unfinished. The next bounded R170 cohort is five character-list dependencies
+/ 160 bytes through the complete R049 1008-byte game policy, recorded in the
+current handoff. Its value width must be established independently.

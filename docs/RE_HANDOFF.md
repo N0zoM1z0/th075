@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R168. The public
+review cohorts R108 through R169. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,546: 927 authored, 2,044 library and 575 compiler generated.
-There are 805 pending. Candidate count is not authored function count.
+has resolved 3,559: 927 authored, 2,057 library and 575 compiler generated.
+There are 792 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,66 +20,66 @@ bytes is 9,883 / 1,966,054 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R169 archive-list policy cohort below.
+the bounded R170 character-list policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R168; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R169; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R169 complete archive-list policies
+## Next agent objective — R170 complete character-list policies
 
-R168 accepts nineteen complete library iterator/insert/erase/allocator
-dependencies / 1097 bytes. Replay
-`scripts/repo-python scripts/verify-list-iterator-policy-origins.py` with
-immutable `config/list-iterator-policy-origin-evidence.json`. The complete
-value-node allocation `0x00412240` is 189 bytes, replacing its provisional
-137-byte entry extent and retaining catch/shared tail. The separate 52-byte
-interior at `0x004122C9` stays unknown. The original seven roots are SDK begin,
-end, size, pop-front, push-back, iterator arrow and postincrement; the earlier
-next-task description's comparison association was provisional. Complete 164-byte
-payload and 172-byte node observations establish no original private game layout.
+R169 accepts thirteen whole library archive-list/iterator/insertion/allocation
+dependencies / 753 bytes. Replay
+`scripts/repo-python scripts/verify-archive-list-policy-origins.py` with
+immutable `config/archive-list-policy-origin-evidence.json`. The complete
+value-node allocation at `0x0041EF60` is 186 bytes, refining the provisional
+134-byte entry extent and retaining catch at +134/shared tail. The separate
+52-byte interior at `0x0041EFE6` stays unknown. Observed value/node widths are
+108/116, supported independently by actual node allocation and complete R052
+archive write/index policies / 1115 bytes. Original archive entry format/private
+layout remains unknown; the previous 164-byte value observation is not inherited.
 
-Ninety-three whole source/code/EH/throw/RTTI/data controls / 4248 bytes retain
-210 real unmasked fields. Three ordinary size/arrow/postincrement controls /
-78 bytes are byte-equal. All 225 cold ordinary sections / 10007 bytes, 29 actual
-SDK headers plus both pinned prior probe includes and the entire combined
-76-byte layout are frozen. Whole unchanged R035 authored parents / 929 bytes,
-six registered R020 frames, sixteen prior records and 182 complete canonical/body
-snapshots preserve independent ownership and actual argument/control context.
-The R162 manifest is immutable; its verifier permits only the exact R168
-transitions for two previously pending candidates and two separate snapshots,
-and cold-replays both ordinary and cookie-negative profiles. All 1699 public
-checks pass. The full R167/R166 evidence and every old opaque pointer/value/node/
-destruction/catch/lifetime/copy/math policy stay unchanged. Public MCP acceptance
-remains waived, with no exact scope added.
+Eighty full source/code/EH/throw/RTTI/data controls / 3752 bytes compare unmasked
+with 189 real fields. The whole 17-byte ordinary size control is byte-equal;
+entire prior-164 and unsigned node-allocation negatives / 43 bytes retain actual
+scalar new. All 250 cold ordinary sections / 11163 bytes, 29 actual SDK headers
+plus three pinned prior probe includes and whole combined 88-byte layout are
+frozen. Six original R020 frames, eleven prior records and 205 complete canonical/
+body snapshots preserve independent owners. The immutable R162 manifest retains
+its historical decisions; only two exact pending-ledger and two exact separate
+snapshot R169 transitions are allowed. Both old source profiles cold-replay.
+All 1735 public checks pass. Existing R168/R167/R166/R162 evidence, opaque getters,
+destruction/catch/lifetime/copy/math policies and 60 exact functions stay intact.
+Public MCP acceptance remains waived; no exact scope is added.
 
-The fresh `.analysis/origin-scan/r168-triage.json` has 805 pending candidates.
-The next bounded R169 cohort is five archive-list policies / 160 provisional
-bytes reached through the independently authored R052 archive policies:
+The fresh `.analysis/origin-scan/r169-triage.json` has 792 pending candidates.
+The next bounded R170 cohort is five character-list policies / 160 provisional
+bytes through independently authored R049 character policy `0x005301B0` / 1008:
 
 | Candidate | Full provisional extent | Actual independent whole context |
 | --- | ---: | --- |
-| `0x0041D950` | 42 | R052 `0x0041D260` / 686 calls at `0x0041D2AD`; retain node-link accessor and iterator constructor independently |
-| `0x0041D980` | 31 | same full R052 write policy calls at `0x0041D2BC`; actual iterator constructor `0x0041EF00` |
-| `0x0041D9A0` | 17 | same full R052 write policy calls at `0x0041D2C7` and `0x0041D2FB`; whole identical size peers are diagnostic |
-| `0x0041D9C0` | 42 | R052 `0x0041D510` / 429 calls at `0x0041D690`; retain actual end and insertion destinations |
-| `0x0041EF00` | 28 | complete actual begin/end operations, independently retained R106 constructor `0x0041F770` / 24 |
+| `0x00531CB0` | 42 | R049 parent calls at `0x00530225`; retain actual end and insertion `0x00531DD0` / `0x00531DF0` |
+| `0x00531C60` | 17 | same full R049 parent calls at `0x00530233`; whole size peers remain diagnostic |
+| `0x00531DD0` | 31 | whole actual push-back and its independent parent, real iterator constructor `0x00532300` |
+| `0x00532300` | 28 | whole actual end/begin graph, unchanged R106 constructor `0x005323C0` / 24 |
+| `0x00531DA0` | 42 | necessary complete begin/node/iterator context; retain actual unknown link accessor `0x00531D80` independently |
 
-These are diagnostic candidates, not promised acceptances. Preserve whole R052
-parent records/CFG and all actual argument/value context. Build complete typed
-SDK and ordinary controls, reconcile the entire allocation/insertion/EH graph,
-and retain real fields and independent lower owners. Do not infer archive entry
-identity or layout from the previous list's 164-byte observer or from source-name
-aliases. Extend only to necessary complete dependencies after evidence. Preserve
-R168/R167/R166/R162 manifests and allow only exact later bounded transitions.
-Short source-equal accessors and destruction/catch interiors remain independent.
-The full remaining-origin goal is active and unfinished; exact credit stays 60.
+These are diagnostic candidates, not promised acceptances. Preserve the complete
+R049 game parent record/CFG and actual field/argument/value context. Build whole
+SDK and ordinary controls, retaining all real code/EH/throw/data destinations.
+Reconcile the complete allocation/insertion graph before acceptance; obtain this
+list's own value/node widths, rather than inheriting 164 or 108 from prior
+observations. No original character-entry identity or private layout is inferred.
+Extend only to necessary complete dependencies with independent evidence. Preserve
+all R169/R168/R167/R166/R162 manifests and allow only exact later transitions.
+Short source-equal getters and destruction/catch interiors remain independent.
+The full remaining-origin goal remains active and unfinished; exact credit is 60.
 
 ## R165 checkpoint and the completed R166 shortlist
 
