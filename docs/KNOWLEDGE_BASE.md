@@ -4501,3 +4501,141 @@ exact unit needs another replay. Public MCP acceptance remains waived by the
 user's 2026-10-04 instruction. Private evidence stays untracked; shared tools
 remain read-only. Original private types, current exception/frame/thread state
 and opaque callback behavior remain explicitly unknown.
+
+## R142 — Complete C++ throw/frame and standard exception graph
+
+R142 resolves all four C++ throw/frame/standard-exception handoff roots and
+the required lifetime/delete closure: eight complete own-AUX library primaries /
+331 bytes / twenty typed fields, plus the existing nine-byte type_info finally
+entry. Replay `scripts/repo-python scripts/verify-standard-exception-origins.py`
+with `config/standard-exception-origin-evidence.json`. Nine candidates gain
+library origin only. The thirteen-byte non-inventory what control gains no
+invented candidate. Two deleting-destructor controls retain their existing
+R038 compiler origins; they are not reclassified as library functions.
+
+| Complete primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__CxxThrowException@8` | `0x00640C12` | 58 | 2 |
+| exception copy constructor | `0x00640C9A` | 74 | 4 |
+| type_info destructor | `0x00640E49` | 70 | 7 |
+| `___CxxFrameHandler` | `0x006407B8` | 54 | 1 |
+| exception default constructor | `0x00640C4C` | 17 | 1 |
+| exception assignment | `0x00640DD6` | 31 | 2 |
+| exception destructor | `0x00640CE4` | 22 | 2 |
+| operator delete | `0x00640F15` | 5 | 1 |
+
+**Complete target extents and behavior.** The type_info destructor expands
+from the provisional 61-byte prefix to its whole seventy-byte own AUX. The
+existing `0x00640E86` / nine-byte candidate is its actual source-defined
+$L19209 finally entry at +61, which pushes lock fourteen, calls the complete
+unlock worker, pops the caller argument and returns. The parent acquires that
+same lock before checking/freeing cached-name storage at +4, invokes finally
+on its normal path and retains the complete scope entry/tail. It does not
+reset the dying object's cached pointer. This finally label starts at its
+scope callback, unlike R141's six-byte-later body labels. No standalone source,
+exact or mapping credit is assigned to it.
+
+The complete frame shim saves incoming EAX as opaque function metadata and
+forwards four stack handler inputs, that saved metadata and three zeros to the
+whole retained InternalCxxFrameHandler. It cleans 32 caller bytes, restores its
+registers and returns the handler result. Zero ordinary Ghidra callers does
+not imply unused code: independent compiler EH carriers load metadata in EAX
+and transfer to this symbol. Its private ABI cannot be replaced by a five-stack-
+argument conventional prototype; canonical declarations remain unset.
+
+Throw copies exactly eight DWORDs from its whole readonly 32-byte template at
+`0x00660E74`. Complete values are exception code E06D7363, noncontinuable flag
+one, zero record/address, parameter count three, magic 19930520 and two zero
+input slots. It fills the object/opaque descriptor slots at template +24/+28,
+passes code/flags/count and the three-word parameter address at +20 to the
+actual KERNEL32.dll!RaiseException IAT slot `0x00657184`, and retains its real
+RET 8. The supplied SDK EXCEPTION_RECORD is eighty bytes, with fifteen maximum
+parameters; it does not establish an invented complete private 32-byte type.
+Original private throw descriptors and exception delivery outcomes remain
+unknown. The 84 observed callers gain no ownership from the reviewed worker;
+older unresolved catch/parent extents remain pending.
+
+Exception default construction clears message +4 and ownership flag +8 and
+writes the actual exception vtable. Copy construction copies the ownership
+flag: an unowned message pointer is borrowed directly; an owned message gets
+strlen-plus-one allocation and strcpy only when allocation succeeds. A failed
+allocation leaves the copied ownership flag and a null message, matching the
+whole original body. Assignment guards self-assignment, destroys the current
+object and invokes the complete copy constructor on the same storage. The
+ordinary destructor frees +4 only when the ownership flag is nonzero. The
+complete thirteen-byte what control returns +4 or the complete original
+18-byte literal `Unknown exception`. Copy/assignment return with four callee
+bytes. The five-byte operator delete is a source-bound tail transfer to the
+independently reviewed free worker, without a fake return or a new allocation
+policy. Runtime object/message ownership and allocation outcomes stay unknown.
+
+**Whole vtable, RTTI and weak-reference provenance.** Fifteen complete defining
+source data sections / 260 bytes / eighteen fields close both classes' vtables,
+locators, descriptors, hierarchy/base graphs, the throw template, finally scope
+and fallback literal. The exception vtable address point is +4 inside a whole
+12-byte section at `0x00660E94`; type_info's is +4 inside a whole eight-byte
+section at `0x00660ED8`. Each prefix is a real typed locator pointer, not omitted
+padding. A source anchor at +4 selects the whole section; every definition,
+byte and field is compared from its actual base. The two base arrays are five
+bytes each, including the real byte after their pointer; four-byte prefixes
+are rejected. All initial writable type descriptors and readonly metadata
+retain complete source/target extents and actual storage mutability.
+
+The vtable fields reference weak `??_Eexception` / `??_Etype_info` symbols.
+Their actual storage-class-105 COFF records each have one AUX, fallback tag 17
+and search-characteristics value two. The referenced external scalar symbol
+also has a complete strong definition in that same pinned member. The full
+archive has no strong definition of the weak E symbol. This evidence is not
+rewritten as an unconditional alias/search-mode-three claim. Actual vtable
+pointers land on complete 28-byte scalar controls at `0x00640DBA` and
+`0x00640E8F`, whose whole defining sections have no function AUX. Their full
+COFF topology, flags, bytes and both fields replay, along with the independent
+53-body R038 cold compiler control. R038 names/origins remain unchanged.
+Original link inputs/search decisions beyond the supplied archive evidence
+remain unknown. Every weak callback still requires a real strong source code
+entry in the complete catalog, never a guessed same-address label.
+
+Eleven full anchors / 641 bytes / 26 fields retain nine prior library owners
+(strlen, malloc, strcpy, SEH prolog/epilog, lock/unlock, free and the complete
+internal EH handler) and the two compiler controls. R141 and its full older
+EH/thread/heap/error/stream/FP/game chain replay, together with R038. The seven-
+byte strcpy entry retains its independently reviewed full shared parent through
+that chain. Current RTTI caches and private handler behavior are not inferred
+from complete initialized metadata or raw API identity.
+
+**Compiler observations and local acceptance.** The original private
+throw.cpp/stdexcpt.cpp/typinfo.cpp/trnsctrl.cpp implementation files are absent
+from the supplied tree. Real stdexcpt.h delegates to the supplied complete
+exception header; typeinfo.h supplies the real SDK type_info interface. The
+natural `probes/VC7StandardExceptionLayout.cpp` cold-builds an 88-byte layout
+array and all 81 actual included headers are hash-pinned. SDK exception,
+type_info and the RTTI exception classes are twelve bytes; the independent
+complete message owner is twelve bytes with its own public +4/+8 fields.
+This independent model does not instantiate an incomplete TH075 game owner.
+The required /Zc:wchar_t satisfies the actual internal yvals.h requirement;
+VC7.1 build 3077 and all flags remain per-probe reproducibility settings,
+not an executable-wide compiler profile.
+
+Twenty-two complete SDK/placement/member/delete/raise/ownership/integer-throw/
+catch controls / 1,010 bytes / 36 fields replay. Eight complete generated data
+sections / 219 bytes / thirteen fields include both the whole 36-byte ownership
+EH metadata section and the whole 80-byte catch metadata section. Three no-AUX
+code carriers / 81 bytes / seven fields replay whole: a 44-byte independent
+scalar control, the complete 27-byte section containing a cleanup funclet and
+its following EH handler, and the separate ten-byte integer-catch EH handler.
+No cleanup prefix or FuncInfo-only view substitutes for its defining section.
+These are compiler/source-family controls without target exact credit.
+
+Forty-two regression checks reject incomplete parents, omitted locator prefixes,
+wrong weak AUX tags/search modes, invented source/private ABI, lost ownership/
+self-assignment/unlock policies, wrong cleanup/API identity and partial model
+metadata/carriers. All 951 public checks pass. Full new/retained cold origin
+replays, canonical guards, target/project/query attestation, all 872 authored
+extents, progress/scanner freshness and whitespace checks pass locally. Totals
+are 3,431 resolved (919 authored, 1,937 library, 575 compiler), 920 pending and
+2,512 excluded. Source/mapping/exact remains 60 / 9,883 bytes; recorded authored
+extents remain 872 / 1,952,956 bytes and the provisional denominator is
+1,965,299. Exact rows and all source/header/build/match inputs are unchanged
+from R139 `db26a05`, preserving its 60/60 cold replay across eleven objects.
+No affected exact unit needs another replay. The user's public MCP acceptance
+waiver remains in force. Private evidence is untracked; shared tools are read-only.

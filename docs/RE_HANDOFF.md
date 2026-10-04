@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R141. The public
+review cohorts R108 through R142. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,422: 919 authored, 1,928 library and 575 compiler generated.
-There are 929 pending. Candidate count is not authored function count.
+has resolved 3,431: 919 authored, 1,937 library and 575 compiler generated.
+There are 920 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R142 C++ throw/frame/standard-exception cohort below.
+the bounded R143 derived RTTI-exception lifetime cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R141; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R142; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R142 C++ throw/frame/standard-exception graph
+## Next agent objective — R143 derived RTTI-exception lifetime graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -637,26 +637,49 @@ All 909 public checks pass; totals are 3422 resolved and 929 pending. Exact
 inputs/records remain unchanged from R139 `db26a05`, preserving its 60/60 cold
 replay across eleven objects. Public MCP acceptance remains waived.
 
-The next bounded cohort is four existing C++ throw/frame/standard-exception
-candidates. Use `.analysis/r141-next-cxx-survey.json` only diagnostically:
+R142 resolves all four C++ throw/frame/standard-exception roots and their
+required closure: eight whole own-AUX primaries / 331 bytes / twenty fields,
+one existing nine-byte finally entry, a thirteen-byte non-inventory what
+control, eleven whole anchors / 641 bytes / 26 fields and fifteen complete
+template/vtable/RTTI/scope/literal data sections / 260 bytes / eighteen fields.
+Two scalar controls retain R038 compiler origin. Complete vtable locator
+prefixes, actual weak AUX/search/fallback records, full five-byte base arrays
+and the 32-byte throw template replay; no private throw type or conventional
+EAX-metadata shim ABI is invented. Cold 88-byte layouts, 22 whole natural
+controls and every complete generated model data/code section replay with
+R141's entire older chain and the independent R038 compiler proof. Replay
+`scripts/repo-python scripts/verify-standard-exception-origins.py`.
+All 951 public checks pass. Totals are 3431 resolved and 920 pending; the
+60-function exact inputs/records preserve R139's 60/60 cold proof across eleven
+objects. Public MCP acceptance remains waived.
 
-| Candidate | Provisional bytes | Diagnostic own AUX / fields | Required next evidence |
+The next bounded cohort is three existing derived RTTI-exception destructor
+candidates from the same full stdexcpt.obj member / 442622:
+
+| Candidate | Provisional / own AUX bytes | Diagnostic symbol / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x006407B8` | 54 | `___CxxFrameHandler`, 54 / one | Complete EAX/registration/context shim and actual eight-argument InternalCxxFrameHandler binding; do not invent a conventional private ABI |
-| `0x00640C12` | 58 | `__CxxThrowException@8`, 58 / two | Whole exception template, every RaiseException argument/import and real throw descriptor contract; no template prefix or guessed private typedef |
-| `0x00640C9A` | 74 | exception copy constructor, 74 / four | Whole vtable, exact copy/allocation/string dependencies, actual SDK class identity and paired lifetime graph |
-| `0x00640E49` | 61 | type_info destructor, 70 / seven | Complete scope/filter/finally tail, whole vtable, locked cached-name lifetime and all fields; no 61-byte prefix acceptance |
+| `0x00640D38` | 11 / 11 | bad_cast destructor / two | Whole actual derived vtable/locator/type/base graph, weak callback and complete paired lifetime context; bind the real base destructor |
+| `0x00640D74` | 11 / 11 | bad_typeid destructor / two | Full class/callback/source parent graph and original class/type uncertainty; complete source-alternative check |
+| `0x00640DAF` | 11 / 11 | __non_rtti_object destructor / two | Complete inheritance/vtable/callback parents; its two fields and all eleven bytes equal the bad_typeid body, so standalone shape/name cannot distinguish the role |
 
-Close all required standard exception/type_info constructor, copy, assignment,
-virtual/destructor and handler/callback/data owners without inventing inventory
-entries. The original private throw.cpp/stdexcpt.cpp/typinfo.cpp/trnsctrl.cpp
-files are unavailable in the supplied tree; real stdexcpt.h is available.
-Use actual supplied headers, full source COFF owners and independent natural
-models. A full header declaration or independent complete probe class does
-not recover an unknown TH075 object owner. Preserve R141's complete private
-register ABI, all scope callbacks and the full R140/older EH/thread/heap/error/
-stream/FP/game evidence chain. Unknown game parents gain no origin from a
-reviewed library callee.
+Use `.analysis/r142-next-rtti-family-survey.json` diagnostically. Resolve the
+complete derived source/data/callback/constructor/copy parents when required,
+without inventing candidate entries or reclassifying existing R038 compiler
+controls. Preserve the complete supplied SDK interface and full R142/R141/R038
+chain. Names remain provisional even if complete bytes match; no private
+implementation or original TH075 owner layout follows from the header alone.
+
+The two existing 64-byte workers `0x00654ACE` / `0x00654B0E` are separate
+standard string/exception throw contexts, not bad_cast/bad_typeid evidence.
+Their read-only attested diagnostic query is
+`.analysis/r142-next-rtti-disassemble.txt`. They construct through `0x004053E0`
+and `0x00404B40`, write whole exception/EH context and call the reviewed throw
+worker; their origins and full parent/EH extents remain unaccepted. Do not
+classify them from that library child or force an association to rtti.obj.
+No `_Xlength_error`/`_Xout_of_range` whole source association was found in the
+supplied libcpmt diagnostic; this is bounded negative evidence, not a claim
+that no original source exists. Preserve these contexts for a later complete
+string/exception source-family review.
 
 The broader `.analysis/r138-next-crt-survey.json` preserves other diagnostic
 full-AUX associations, including conflicting floating wrappers and substantial
@@ -680,7 +703,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R142 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R143 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
