@@ -8780,3 +8780,114 @@ the 46-/48-/62-byte catch entries are interior source spans, not independent
 whole functions. The 28-byte record-copy wrapper requires genuine implicit
 versus ordinary explicit source controls. No classification follows merely
 from these existing full source associations or the SDK children.
+
+## R158 — Whole deque copy/insertion, interior catch policy and copy ambiguity
+
+R158 reviews all six handoff candidates. Five gain library origin: the complete
+SDK copy owner `0x00422A50` / 241 bytes, insertion owner `0x00422D70` / 1545
+bytes, and three interior catch/source-policy candidates `0x00422B13` / 46,
+`0x0042308D` / 48 and `0x0042333B` / 62. The complete 28-byte record-copy
+wrapper `0x004229D0` remains unknown/pending. Replay
+`scripts/repo-python scripts/verify-deque-copy-insert-origins.py` with
+`config/deque-copy-insert-origin-evidence.json`. The two whole SDK owners
+cover 1786 distinct bytes; the catch spans overlap them and are neither three
+new whole functions nor additional source byte credit. Candidate counts and
+complete function counts remain distinct.
+
+**Required extent reconciliation.** The copy row's original 195-byte boundary
+ended after the normal branch at `0x00422B11`, omitting its return through
+`0x00422B24`. The full positive own COFF AUX and defining section cover all
+241 bytes through `0x00422B40`. Insertion's old 1483-byte boundary similarly
+omitted the final shared normal epilogue at `0x0042335F`; the complete positive
+own AUX covers all 1545 bytes through `0x00423378`. The first insertion catch
+also branches from `0x004230B8` to that same return. Both full owners decode
+completely, end in their real RET and retain every internal branch target.
+Canonical size/span_end change only for these two original parent rows.
+Observed fifteen-/seven-byte CC alignment after the owners and the following
+original candidates remain outside the accepted extents and unchanged.
+The private Ghidra project is queried read-only and retains its original
+split inventory; accepted canonical extents come from complete target CFG,
+source AUX, actual state and byte comparison, not the initial Ghidra boundary.
+
+**Interior library policy and compiler mechanics.** Original full R020 frames
+`0x006556B0` / FuncInfo `0x00668930` and `0x006556C0` / `0x006689B4`
+retain complete unwind, try, catch and parent registration evidence. Whole
+80-/132-byte source data carriers include all state and handler tables.
+Their three actual catch-all records name exactly the interior candidates,
+with ranges 0/0/1, 0/0/1 and 2/2/3. Each candidate's entire observed span is
+verified inside its whole compared parent; the 48-byte insertion span reaches
+a shared epilogue beyond its own provisional span, which remains part of the
+full 1545-byte owner. No individual full-function AUX is fabricated for a
+catch label and no isolated prefix is accepted as a standalone function.
+
+The SDK copy constructor explicitly calls `_Tidy` and rethrows on failure;
+the bidirectional insertion source explicitly restores the old size by
+`pop_front` or `pop_back` and rethrows. Whole source/body and all typed fields
+establish that these are library source policies. Ghidra Catch names, absence
+of direct callers and registration alone establish no origin. The compiler
+frame/dispatch mechanics retain their independently reviewed compiler evidence;
+the source rollback policy is not relabeled compiler-owned merely because
+the compiler creates a local catch entry. Original game element destruction
+retains its independent authored R153 provenance, with no inferred copy policy
+or original record layout. Live success/failure and unwind outcomes remain
+unknown.
+
+**Complete implicit/explicit ambiguity.** The entire implicit record-copy
+defining code section / 28 bytes agrees unmasked with the target. An ordinary
+explicit copy constructor of a complete observation record emits all 28
+identical bytes and the same real SDK deque-copy call. The latter has a full
+positive own AUX; the implicit source control is compared as its entire
+defining section where a complete positive function AUX is unavailable.
+Full R157 construction and the whole SDK copy dependency establish operation,
+not implicit-versus-authored ownership. The original record declaration and
+source ownership therefore remain unknown. Only durable function evidence/
+notes change; its origin row, empty name/owner/source/ABI fields and full
+extent remain unchanged. Do not revisit it from a library child, scanner rank
+or another same-shaped control without new independent ownership evidence.
+
+`probes/VC7DequeCopyAlternatives.cpp` cold-builds all 194 ordinary sections /
+12303 bytes and the whole 48-byte SDK/observation layout
+`[8,20,60,20,20,4,8,8,20,20,20,8]`. Fourteen complete code/data/EH controls /
+2416 bytes and all 104 genuine typed fields compare unmasked. This includes
+the two whole SDK owners, full state/dispatch carriers, implicit/explicit
+record constructors and complete ordinary placement-copy controls with their
+entire exception carriers. All 27 SDK headers and the actual included R156
+observation source are pinned. Complete R157/R156 source/code/data/EH/runtime
+evidence cold-replays, including independent R154/R142 dependencies. Original
+source spelling/compiler/linker choices and game types remain unknown;
+build 3077 and the explicit flags are per-probe reproducibility settings.
+
+R156/R157 manifests remain immutable. The R156 snapshot guard now permits
+only the existing four exact R157 transitions and six exact hash-pinned R158
+transitions, including the pending row's evidence-only update. It requires
+exact original snapshots and exact accepted function/origin records; all
+other canonical snapshots remain unchanged. These guards read back after
+acceptance. A subsequent pure catch-all guard strengthens the already checked
+actual handler schema; summary wording changes without altering any source,
+profile/header/relocation input or cold comparison. Exactly five origin rows,
+six function evidence rows and two parent extents change against R157 HEAD
+42e9466. Every unrelated row, authored record, opaque boundary and exact input
+remains preserved.
+
+Thirty-four regression checks protect whole parents, actual registered catches,
+source policy versus compiler mechanics, shared returns, alignment, entire
+state/emission/layout/header evidence, pending ambiguity and exact bounded
+follow-up transitions. All 1374 public tests, local target/project/query
+attestation, authored extents, fresh scanner/progress, exact-input preservation
+and whitespace checks pass. Totals are 3480 resolved (922 authored, 1983
+library, 575 compiler), 871 pending and 2558 excluded. Authored evidence remains
+875 records / 1953089 bytes; provisional exact coverage stays 9883 / 1965432.
+All 60 source/mapped/exact functions / 9883 bytes and exact inputs are unchanged
+from R139 db26a05, preserving its 60/60 cold replay across eleven objects.
+No affected exact unit needs replay. Public MCP acceptance remains waived;
+the private no-auth route is unchanged. Private queries, logs and objects
+remain untracked. The complete-origin objective remains unfinished.
+
+The next bounded R159 cohort is eight still-unknown SDK endpoint/dispatch
+dependencies / 296 bytes exposed by the complete copy/insertion parents:
+const begin/end, insert dispatch, distance/advance wrappers and their actual
+category/distance/advance callees. Retain the existing R085 copy/copy-backward
+owners unchanged. The eleven-byte category body's shape alone cannot identify
+an original tag declaration; use independently whole real overload dispatch
+and retain original type/name uncertainty. No next-cohort classification
+follows from these already retained source controls or reviewed children.

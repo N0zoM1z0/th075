@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R157. The public
+review cohorts R108 through R158. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,475: 922 authored, 1,978 library and 575 compiler generated.
-There are 876 pending. Candidate count is not authored function count.
+has resolved 3,480: 922 authored, 1,983 library and 575 compiler generated.
+There are 871 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,432 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R158 deque copy/insertion cohort below.
+the bounded R159 deque endpoint/dispatch cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R157; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R158; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R158 complete deque copy/insertion extents and interior entries
+## Next agent objective — R159 complete deque endpoint and category dispatch dependencies
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -848,9 +848,10 @@ retained R150 nested-deque source cold-replay. All 1312 public checks pass;
 totals are 3471 resolved and 880 pending, with all 60 exact functions and
 R139 cold proof preserved. See the R156 knowledge-base entry for boundaries.
 
-The whole copy and insertion controls at `0x00422A50` / 241 bytes and
+At R156, the whole copy and insertion controls at `0x00422A50` / 241 bytes and
 `0x00422D70` / 1545 bytes include shared tails. Their original unknown
-canonical rows retain their provisional 195-/1483-byte extents. Full EH source
+canonical rows retained their provisional 195-/1483-byte extents. R158 reconciles
+those parent extents and interior source policy below. Full EH source
 carriers do not revise old compiler entry extents. Source/data/typed-call
 association alone grants none of these auxiliary parents origin credit.
 
@@ -869,32 +870,54 @@ R157 transitions; all other original rows remain unchanged. All 1340 public
 checks pass. Totals are 3475 resolved and 876 pending; all 60 exact functions
 and R139 cold proof remain preserved. No game element declaration is recovered.
 
-The next bounded R158 cohort is six still-unknown copy/insertion candidates:
+R158 reviews all six copy/insertion candidates. Five gain library origin:
+two whole SDK owners / 1786 distinct bytes and three overlapping interior
+catch/source-policy candidates. Canonical copy/insertion extents are now
+241 and 1545 bytes, reconciling the former 195-/1483-byte prefixes with
+required shared normal returns. The interior spans retain their original
+46-/48-/62-byte candidate extents; they are not standalone whole functions
+or additional source byte credit. Source rollback/rethrow policy is library
+evidence, while original compiler dispatch/frame provenance remains unchanged.
+Replay `scripts/repo-python scripts/verify-deque-copy-insert-origins.py`.
+Fourteen entire code/data/EH controls / 2416 bytes, 104 actual unmasked fields,
+all 194 ordinary cold sections / 12303 bytes and the whole 48-byte layout
+retain complete R157/R156 and independent runtime/policy/source evidence.
+All 1374 public checks pass. Totals are 3480 resolved and 871 pending;
+all 60 exact functions and R139 cold proof remain preserved.
 
-| Candidate | Original provisional extent | Complete investigation owner/context |
+Preserve `0x004229D0` / 28 bytes as unknown: ordinary explicit and implicit
+record-copy controls emit all 28 identical bytes and the same full SDK child.
+Actual R157 construction context establishes operation, not original source
+ownership. Only its durable function evidence/notes change. Preserve its
+unknown origin and empty name/owner/source/ABI fields; do not re-review it
+from a library child or another same-shaped control without independent
+ownership evidence. Preserve the prior R129/R155/lifetime ambiguities too.
+
+The next bounded R159 cohort is eight still-unknown SDK dependencies:
+
+| Candidate | Full provisional extent | Actual source investigation role |
 | --- | ---: | --- |
-| `0x004229D0` | 28 | original record-copy wrapper called by full R157 queue construction; actual SDK copy dependency `0x00422A50`; implicit/explicit ownership requires controls |
-| `0x00422A50` | 195 | full SDK deque-copy source owner is 241 bytes through `0x00422B40`; normal branch at `0x00422B11` reaches shared epilogue `0x00422B24` |
-| `0x00422B13` | 46 | interior catch plus shared normal return inside that whole copy owner; not a separate whole source function |
-| `0x00422D70` | 1483 | full SDK insertion source owner is 1545 bytes through `0x00423378`, including both registered catches and final shared epilogue |
-| `0x0042308D` | 48 | first interior insertion catch; original full EH evidence and actual source policy must be reconciled |
-| `0x0042333B` | 62 | second insertion catch plus shared normal return; normal branch at `0x00423339` reaches `0x0042335F` |
+| `0x00422B50` | 35 | const begin called by complete R158 copy; actual const-iterator constructor `0x00422660` |
+| `0x00422B80` | 41 | const end called by that full copy; same actual constructor with combined end offset |
+| `0x00422CB0` | 67 | complete insert dispatcher called by full copy; actual category `0x00422D60` and full R158 insertion `0x00422D70` |
+| `0x00423680` | 55 | distance wrapper called by full R158 insertion; actual category and `_Distance2` `0x004237E0` |
+| `0x004236C0` | 43 | advance wrapper called by full insertion; actual category and `_Advance` `0x00423800` |
+| `0x00422D60` | 11 | actual iterator category helper of the three complete dispatch parents; byte shape alone cannot recover an original tag |
+| `0x004237E0` | 27 | complete random-access distance operation; actual const-iterator difference `0x004235F0` |
+| `0x00423800` | 17 | complete random-access advance operation; actual const-iterator addition-assignment `0x004239A0` |
 
-R156/R157 retain complete source, all actual typed fields and original full
-EH registrations for these parents but grant them no classification. Query
-the entire parents, catch associations, actual callers, shared tails and
-adjacent alignment locally. Cold-replay complete natural SDK source and
-independent implicit/explicit record-copy alternatives. Never compare only
-the old 195-/1483-byte prefixes or treat interior catch spans as standalone
-whole AUX functions. Reconcile the canonical parent extents explicitly before
-accepting either owner; preserve overlapping interior entries and distinguish
-the source catch policy from compiler frame/dispatch mechanics. Each interior
-origin requires its own evidence, rather than a Ghidra Catch name or presumed
-inheritance. Preserve original record/lifetime uncertainty, opaque throw
-workers and all accepted SDK/runtime/game evidence. If a canonical snapshot
-must change, allow only a new exact bounded hash-pinned follow-up transition
-and retain the original immutable R156/R157 manifests. No exact scope is
-authorized; complete observations do not recover original game element types.
+Reconcile complete own-AUX/defining source extents, every real field and
+actual whole parent/source context before accepting a row. Cold-replay natural
+SDK endpoint/algorithm families, include relevant operation/dispatch alternatives
+and retain original element, category and source-name uncertainty. Do not
+infer a tag from an eleven-byte getter shape, overload name or reviewed child.
+Actual random-access tag inheritance and selected bidirectional insertion
+must come from the full SDK/source/typed-field relation. Preserve the existing
+R085 copy/copy-backward owners `0x004236F0`, `0x00423740`, `0x00423790`
+and all independently accepted source/runtime/authored policy evidence.
+Keep R156/R157/R158 manifests immutable; permit any future canonical snapshot
+change only as an exact new bounded hash-pinned follow-up transition. No exact
+scope or recovered game record declaration is authorized.
 
 The unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
 `0x004204D0` lifetime contexts remain non-accepting diagnostics. Preserve
@@ -946,7 +969,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R158 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R159 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
