@@ -8323,3 +8323,67 @@ neither its model nor these SDK helpers recover the complete game owner.
 Public MCP acceptance remains waived; the private no-auth route is unchanged.
 Private logs, generated output and objects remain untracked. The complete
 origin objective remains unfinished.
+
+## R152 — Complete script count map policy and independent game context
+
+R152 resolves the complete 66-byte `0x0045DD00` as authored, provisionally
+named `FighterScript::CountPatternEntries`. Replay
+`scripts/repo-python scripts/verify-script-count-origins.py` with
+`config/script-count-origin-evidence.json`. This supersedes the unknown
+ownership recorded for the synthetic R150 count observation; that earlier
+complete source control and its original metadata remain unchanged.
+
+**Observed target policy.** The actual signed-short argument indexes the
+owner's short map. A negative mapped value returns zero in AX. Otherwise
+the mapped value is passed to the actual outer at owner +0x7D0; returned
+EAX becomes ECX for the complete inner size owner. Both internal branches,
+the final RET 4, the full 66-byte extent and fourteen following alignment
+bytes are checked. This is a domain-specific missing-entry policy over the
+script map, not origin inferred from a reviewed SDK child or matching wrapper
+shape. The provisional role describes observed behavior, not an original name.
+
+**Independent producers and consumers.** Six entire previously authored
+owners / 5729 bytes preserve their own hashes, complete CFG, original roles,
+origin evidence and guarded switch tables: script initializer `0x00420440`
+(R076), byte/word accessors `0x00420530` / `0x00420570` (R076), full parser
+`0x00420880` (R070), action processor `0x0045CE10` (R065) and pattern chooser
+`0x0045D810` (R045). Initializer iteration writes -1 to 1000 actual short
+entries. Parser decimal accumulation checks ASCII digits and multiplies the
+short label by ten; after appending an outer entry it stores outer size minus
+one in that label's map slot. The two complete game parents contain eleven
+actual count calls, three and eight respectively. Uninterrupted instructions
+preserve their short arguments, the actual fighter owner +0x714 receiver and
+signed AX result used in loop/range comparisons. Neither an accepted game
+caller alone nor the old natural model decides ownership: the combined
+independent producer/domain/consumer policy supports authored classification.
+
+**Compiler observations and unknowns.** Complete R150 cold source/code/data/EH
+provenance replays, including its whole natural synthetic Count body and
+independently linked actual SDK callees. No new source or compiler profile is
+introduced. Ordinary special-member synthesis does not supply this label-map
+and missing-entry/count policy. This is a semantic ownership inference from
+actual independent game state, not proof of original source spelling. Original
+types, folding, declarations and complete game layouts remain unknown. The
+count body has no local index bounds guard; the parser's short accumulation
+does not prove malformed-input or overflow safety. No complete game owner is
+instantiated. The old R150 unknown context is retained as historical evidence,
+without rewriting prior accepted sources or origins.
+
+Exactly one existing canonical origin/function row changes, and one complete
+authored body/CFG record is appended. Read-back guards preserve every unrelated
+row against R151 HEAD and require the unique new authored extent record.
+The additional pure registration guard leaves all cold source/profile/fields
+unchanged. Twenty regression checks guard complete bodies, real signed ABI,
+map sentinel/domain/decimal writes, independent parent ownership, actual
+returned-inner receiver, all game uses and unique authored registration.
+All 1221 public checks, target/project/query attestation, authored extents,
+fresh scanner/progress, exact-input preservation and whitespace checks pass.
+Totals are 3457 resolved (920 authored, 1962 library, 575 compiler), 894
+pending and 2537 excluded. Recorded authored extents are 873 / 1953022 bytes;
+the provisional exact denominator is 1965365 bytes. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs remain unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No exact unit needs
+replay; no source, mapping, private ABI or exact credit is added. Public MCP
+acceptance remains waived and the private no-auth route is unchanged.
+Private queries, logs and objects remain untracked. The complete-origin
+objective remains unfinished.

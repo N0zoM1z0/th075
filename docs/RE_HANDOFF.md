@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R151. The public
+review cohorts R108 through R152. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,28 +11,28 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,456: 919 authored, 1,962 library and 575 compiler generated.
-There are 895 pending. Candidate count is not authored function count.
+has resolved 3,457: 920 authored, 1,962 library and 575 compiler generated.
+There are 894 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,965,365 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R152 count-parent cohort below.
+the bounded R153 script-record lifetime cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R151; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R152; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R152 game count-parent context
+## Next agent objective — R153 script record ownership controls
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -775,19 +775,40 @@ Replay `scripts/repo-python scripts/verify-nested-deque-helper-origins.py`.
 All 1201 public checks pass. Totals are 3456 resolved and 895 pending;
 the 60-function exact baseline and R139 cold proof remain preserved.
 
-The next bounded R152 task is the single unknown 66-byte count candidate
-`0x0045DD00`. Its full natural R150 observation follows the signed-short
-index map and real outer-at/returned-inner-size policy, but does not decide
-original authored/compiler ownership or recover a complete game layout.
-The attested caller query identifies two independently accepted authored
-parents: `0x0045CE10` / 1926 bytes (R065) and `0x0045D810` / 1264 bytes
-(R045). Review their entire control flow and actual call/argument/receiver
-context, then independently trace the real index-map producers/domain before
-considering game-policy ownership. Keep both prior parent origins/extents
-unchanged. Review natural compiler/generated alternatives where relevant;
-the reviewed SDK child or synthetic model alone is insufficient. Preserve
-the original count extent and uncertainty if independent policy evidence
-does not distinguish ownership. Do not add exact-reconstruction scope.
+R152 resolves `0x0045DD00` / 66 bytes as authored script count policy.
+Six complete independent authored owners / 5729 bytes preserve their original
+switch/CFG proofs. The actual 1000-short missing-map initializer and decimal
+label-to-outer-index producer independently supply the domain; eleven complete
+game receiver/argument/result windows show its use as a signed count bound.
+Full R150 cold code/data/EH and synthetic count source replay. Original
+types, game layouts and malformed-input/overflow safety remain unknown;
+there is no local count-index bounds guard. Exactly one canonical row and
+one authored evidence record change; all prior owners/extents are preserved.
+Replay `scripts/repo-python scripts/verify-script-count-origins.py`.
+All 1221 public checks pass. Totals are 3457 resolved and 894 pending;
+the 60-function exact baseline and R139 cold proof remain preserved.
+
+The next bounded R153 cohort is two previously unreviewed script-record
+lifetime candidates, independently used by the complete R070 parser:
+
+| Candidate | Complete provisional extent | Actual observed behavior |
+| --- | ---: | --- |
+| `0x00421200` | 24 | writes zero to owner +4 and returns the receiver |
+| `0x00421220` | 43 | conditionally releases the nonzero owner +4 buffer through `0x0064169D` |
+
+The attested caller query identifies the parser as the initializer's caller;
+the release helper is also used by `0x004229F0` and eight actual parser unwind
+entries `0x00655570` through `0x006555A8`. Review complete allocation/store/use
+and cleanup context, SDK ownership alternatives and actual own source/COFF
+extents before accepting either origin. Build natural explicit/implicit/raw
+and SDK-owned buffer controls where appropriate; do not grant ownership from
+a null write, delete worker, EH use or Ghidra's imported names. Keep any
+indistinguishable complete alternatives pending. Original record types and
+complete game layouts remain unknown; use only clearly synthetic observation
+models and do not instantiate an incomplete reconstructed game owner.
+Preserve the unrelated 75/72-byte `0x00421250` / `0x004212A0` and 84-byte
+`0x004204D0` lifetime contexts as non-accepting diagnostics. Do not expand
+this pair into exact-reconstruction scope or revisit known prior ambiguities.
 
 The two original string throw workers `0x00654ACE` / `0x00654B0E` remain
 unresolved external snapshots; R150 gives them no additional source or origin
@@ -835,7 +856,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R152 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R153 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
