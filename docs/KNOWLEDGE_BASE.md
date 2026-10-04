@@ -4186,3 +4186,93 @@ progress/scanner freshness, tests and whitespace checks pass locally. All 60
 exact units cold-replay across eleven objects. The user's 2026-10-04 waiver of
 public MCP acceptance remains in force. Private evidence stays untracked and
 shared tools read-only.
+
+## R139 — Complete floating conversion and operation graph
+
+R139 resolves all six floating conversion/operation handoff candidates as
+library origin: six complete own-AUX primaries / 1750 bytes / 52 typed fields.
+Replay `scripts/repo-python scripts/verify-floating-operation-origins.py` with
+`config/floating-operation-origin-evidence.json`. Full defining COFF members,
+source/target hashes, every relocation, branch and exit are preserved. No
+source, mapping or exact reconstruction credit is added, and no auxiliary,
+interior, COMMON or exception-scope inventory entries are fabricated.
+
+| Complete vendor primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__atoldbl` | `0x0064F7F0` | 62 | 4 |
+| `___STRINGTOLD` | `0x00653105` | 76 | 4 |
+| `__floor_default` | `0x0064E980` | 211 | 9 |
+| `__logb` | `0x00643C38` | 235 | 10 |
+| `__nextafter` | `0x00643D23` | 675 | 10 |
+| `_ldexp` | `0x0064EA53` | 491 | 15 |
+
+**Target observations.** Both conversion wrappers use the local storage between
+EBP-16 and the security cookie at EBP-4. They pass seven stack arguments / 28
+bytes to strgtold12, then two / eight bytes to ld12told, and remove the combined
+36 caller bytes. Atoldbl passes flag one and a local end-pointer slot, then
+returns the converter's status. STRINGTOLD preserves the parser's status and
+ORs bit two when the converter returns one. Neither status policy is replaced
+with a guessed Boolean result. The retained converter reads input through
+word offset ten and writes output DWORDs at zero/four and a WORD at eight:
+twelve-byte input storage and ten-byte output span are distinct observations.
+Original private record typedefs and signedness remain unknown.
+
+Floor_default saves/restores the raw x87 control word, uses its actual newcw
+object, retains all special-value/error paths, and calls the complete frnd
+worker. Frnd is an ordinary stack-double / ST0-return worker: it loads the
+argument at ESP+12 after two pushes, executes FRNDINT, stores/reloads a double
+and returns with no callee cleanup. It is not assigned an invented ST0-input
+ABI. Logb, nextafter and ldexp retain raw operation control 0x133F and mask
+0xFFFF, complete classification/decomposition/exponent helpers, NaN/error
+paths and control restoration. Nextafter retains both exponent scaling paths
+(+0x600 and -0x600), sign/mantissa updates and the full two-argument error
+policy. Ldexp retains integer-limit and both range paths, copysign, set_exp and
+exception handling. All six complete returns are caller cleaned. Runtime
+operands, current control/status and error-handler behavior remain unknown.
+Attested Ghidra reports no ordinary callers for these six roots; that does
+not establish unused code or callback/export status.
+
+**Whole dependencies and data.** Thirteen complete independent anchors / 2184
+bytes / 59 fields preserve their existing origins, including the full parser,
+converter, cookie checker, x87 controls, decomposition, rounding and error
+workers. The parser's own AUX is 1076 bytes: 1028 real code bytes followed by
+one 48-byte table with twelve DIR32 cases. Its defining $L1157 label, selector
+field, every case definition and actual instruction entry replay. Data is not
+decoded as instructions, and the comparison still covers all 1076 bytes and
+26 fields. The entire R138 and retained R137/R136/runtime/FP/locale/heap/game
+chains replay independently; reviewed children do not grant origin to parents.
+
+Eight whole defining data sections / 88 bytes / zero relocations retain the
+complete cookie, four-byte newcw carrier, forty-byte d_inf carrier and folded
+double constants. Source newcw initially contains 0x173F; runtime contents
+are unknown. Repeated COMDAT constants from separate defining members are
+checked separately: 88 is the sum of defining source sections, not unique
+target coverage. No eight-byte infinity prefix substitutes for its forty-byte
+owner. Source/target hashes, defining symbols and mutability are retained.
+
+**Compiler observations and acceptance.** The natural
+`probes/VC7FloatingOperationLayout.cpp` cold-builds a complete 108-byte layout
+array using pinned math.h, float.h and fpieee.h. It establishes pointers/int /
+four, double and C long double / eight, complete SDK FP80 / ten, exception /
+32 with its offsets, and abstract CRT control/status macros. Those macros are
+distinct from raw x87 words. Five complete 20-/29-/24-/19-/88-byte natural
+function-pointer controls retain unary/binary/scaling caller cleanup of eight,
+sixteen/twelve, pointer output, meaningful twelve-byte parser storage and the
+status merge. They model ABI/storage and do not assert recovered private C
+types. Original private math/conversion C files are absent in the supplied
+source tree; ownership rests on pinned full COFF definitions and typed fields,
+not invented recovered source. VC7.1 build 3077 and explicit flags remain
+per-probe reproducibility settings, without an executable-wide compiler claim.
+
+Thirty-four regression checks reject truncated owners, missing fields/cases,
+data entries treated as code, unavailable source claims, incorrect widths,
+status/stack/control policies, guessed runtime state and incomplete retained
+graphs. All 833 public checks pass. Canonical totals are 3389 resolved (919
+authored, 1895 library, 575 compiler), with 962 pending. Exact/source/mapping
+remains 60 / 9883 bytes; recorded authored extents remain 872 / 1952956 bytes
+and the provisional denominator is 1965299. Full new/retained cold origin
+replay, canonical ledger guards, target/project/query attestation, authored
+extents, progress/scanner freshness, tests and whitespace checks pass locally.
+All 60 exact units cold-replay across eleven objects. The user's 2026-10-04
+public MCP acceptance waiver remains in force. Private evidence stays
+untracked and shared tools read-only.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R138. The public
+review cohorts R108 through R139. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,383: 919 authored, 1,889 library and 575 compiler generated.
-There are 968 pending. Candidate count is not authored function count.
+has resolved 3,389: 919 authored, 1,895 library and 575 compiler generated.
+There are 962 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R139 floating conversion/operation cohort below.
+the bounded R140 stream finalization/path-access cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R138; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R139; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R139 floating conversion/operation graph
+## Next agent objective — R140 stream finalization/path-access graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -590,33 +590,49 @@ All 799 public checks and local final acceptance pass; all 60 exact units
 cold-replay across eleven objects. Totals are 3383 resolved and 968 pending.
 No source/mapping/exact credit is added. The public MCP acceptance waiver applies.
 
-The next bounded cohort is six existing floating conversion/operation candidates:
+R139 resolves all six floating conversion/operation roots: six full own-AUX
+primaries / 1750 bytes / 52 fields, thirteen independently retained anchors /
+2184 bytes / 59 fields and eight whole defining data sections / 88 bytes /
+zero fields. The parser keeps all 1076 bytes, split into 1028 code bytes and
+one 48-byte twelve-case table, with every actual defining case entry. Natural
+108-byte SDK layouts and complete 20-/29-/24-/19-/88-byte controls distinguish
+the twelve-byte parser storage, ten-byte output/SDK FP80 and eight-byte C long
+double. Original private C sources/typedefs are unavailable; complete pinned
+COFF definitions and typed fields prove ownership, without a guessed private
+type or ST0-input ABI. Replay
+`scripts/repo-python scripts/verify-floating-operation-origins.py`.
+All 833 public checks and local acceptance pass; all 60 exact units cold-replay
+across eleven objects. Totals are 3389 resolved and 962 pending. No source,
+mapping or exact credit is added. Public MCP acceptance remains waived.
+
+The next bounded cohort is four existing stream finalization/path-access
+candidates, closing stream flush/free/close and actual Win32 path/error policy:
 
 | Candidate | Provisional bytes | Diagnostic source association | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0064F7F0` | 62 | `__atoldbl`, own AUX 62 / four fields | Whole long-double parsing/conversion ABI, actual record widths and complete callee/data/FP graph |
-| `0x00653105` | 76 | `___STRINGTOLD`, own AUX 76 / four fields | Full internal parser contract, real argument/register handling, special/failure paths and every binding |
-| `0x0064E980` | 211 | `__floor_default`, own AUX 211 / nine fields | Whole floating operation, source-defined constants/state, actual dispatcher/error controls and all exits |
-| `0x00643C38` | 235 | `__logb`, own AUX 235 / ten fields | Complete exponent/special-value behavior, FP control/error state, helper ABI and full defining data |
-| `0x00643D23` | 675 | `__nextafter`, own AUX 675 / ten fields | Full adjacent-value branches, signs/exponent/mantissa policies, exceptions and complete helper/constant graph |
-| `0x0064EA53` | 491 | `_ldexp`, own AUX 491 / fifteen fields | Whole exponent scaling, limits/special values, control word/error/callback policies and every typed field |
+| `0x00654953` | 43 | `__freebuf`, own AUX 43 / one field | Whole buffer ownership flags, actual stream layout, free contract and all exits |
+| `0x00653E01` | 76 | `__fclose_lk`, own AUX 76 / four fields | Complete flush/free/close ordering, temporary filename ownership, return/failure policy and field closure |
+| `0x00652588` | 93 | `__flush`, own AUX 93 / one field | Whole stream pointer/count/flag paths, real write ABI, short-write/error behavior and reset policy |
+| `0x00641B37` | 70 | `__access` / `__waccess`, both own AUX 70 / five fields | Independently bind actual A/W import; whole path/attribute/mode/error behavior and reject the incompatible vendor variant |
 
-Use `.analysis/r138-next-math-survey.json` and
-`.analysis/r138-next-math-survey.log` diagnostically. All six complete source
+Use `.analysis/r139-next-stream-access-survey.json` diagnostically. Complete
 bodies match outside typed fields; independently close every binding before
-accepting origin. The broader `.analysis/r138-next-crt-survey.json` preserves
-other full-AUX diagnostic associations, including conflicting operation wrappers
-and substantial provisional-extent mismatches. Do not treat its masked fields,
-names or source extents as accepted ownership. In particular, CIacos 20/203,
-CIpow_pentium4 25/2886 and equal-shaped CIatan/log/log10/pow and modf/floor/ceil
-wrappers require their own complete owner, shared-tail/table and actual operation
-provenance. Preserve R129's abs ambiguity and all earlier explicit/implicit
-lifetime alternatives. New natural FP type/ABI probes must use real pinned
-vendor/SDK declarations; no target byte arrays, assembly matching bodies, fake
-returns or executable-wide compiler profile. Retain the complete R138/R137
-snapshot, classification, time, locale and older runtime graphs. Keep
-hooks/CallSettingFrame, read/write validators and unrelated parents pending for
-later bounded review without automatic game-parent origin from library children.
+accepting origin. Both path variants have equal-shaped code but different
+Win32 imports: masked similarity does not choose the actual variant. Complete
+free, close, write, dosmaperr, errno and doserrno anchors already have R120,
+R132 or R133 provenance; retain the entire R139 and older stream/handle/error
+chains. Use available pinned fclose/fflush/access sources and real stream/SDK
+headers, preserving uncertainty where original private source is absent.
+
+The broader `.analysis/r138-next-crt-survey.json` preserves other diagnostic
+full-AUX associations, including conflicting floating wrappers and substantial
+provisional-extent mismatches. CIacos 20/203, CIpow_pentium4 25/2886 and
+equal-shaped CIatan/log/log10/pow and modf/floor/ceil wrappers require their
+complete enclosing owners, tables/shared tails and actual operation fields.
+Keep hooks/CallSettingFrame, read/write validators and unrelated EH parents
+pending for later bounded review. Preserve R129's abs ambiguity and earlier
+explicit/implicit lifetime alternatives. Do not accept prefixes, unavailable
+source declarations or infer parent origin from reviewed children.
 
 Retain the R108 five lifetime ambiguities, R114 26-byte initializer ambiguity,
 unknown external string/throw/allocation contexts and unresolved insertion/
@@ -632,7 +648,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R139 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R140 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
