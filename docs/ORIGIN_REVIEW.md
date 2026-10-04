@@ -7797,3 +7797,76 @@ extents remain 872 / 1,952,956 bytes and the provisional denominator is
 its 60/60 cold proof across eleven objects. No affected exact unit needs a
 repeat build. The public MCP acceptance waiver remains in force; the no-auth
 route and private random path remain unchanged. Private evidence is untracked.
+
+## R145 — Complete small-block heap integrity worker
+
+R145 resolves `0x0064AFC5` / complete 793-byte `___sbh_heap_check` as a
+library origin. Replay `scripts/repo-python scripts/verify-small-heap-integrity-origins.py`
+with `config/small-heap-integrity-origin-evidence.json`. The complete own COFF
+AUX agrees with the provisional extent through `0x0064B2DD`: all 61 branches,
+both early/shared epilogues and every final error-return tail are retained.
+No interior candidate is present, no wrapper is invented and no source,
+mapping or exact reconstruction credit is assigned.
+
+**Target and source observations.** The worker checks the full header range,
+each REGION, committed groups and their eight pages, entry front/back tags,
+allocated counters, 64 free-list size classes, links/counts/closure and final
+group/header allocation vectors. Actual supplied winheap.h defines HEADER
+20 bytes, REGION 16,836 bytes, GROUP 516 bytes, ENTRY 12 bytes, LISTHEAD eight
+bytes and ENTRYEND four bytes. The allocation group spans 32,768 bytes, each
+page 4,096 bytes and each region 32 groups. Page entries start at +12; valid
+sizes are aligned to 16 bytes with a 16-byte minimum and 4,080-byte maximum.
+Allocated entries are limited to 1,024 bytes. A clear most-significant commit
+bit selects a committed group; low front-tag bit one marks an allocated entry.
+Free-list class is `(size >> 4) - 1`, upper-clamped to 63. Source returns zero,
+-1, -2 and -4 through -17; no -3 result is invented. These are static target/
+vendor observations, not an assertion that the live game heap is valid.
+
+All eight DIR32 fields have independent complete provenance. Three real
+indirect calls target IsBadWritePtr's KERNEL32.dll IAT slot `0x00657154`:
+header count times 20, REGION size 16,836 and group range 32,768. Five fields
+bind `___sbh_cntHeaderList` / `0x0068FA60` and `___sbh_pHeaderList` /
+`0x0068FA64`. Each has one actual external four-byte tentative COMMON record
+in the entire pinned archive, sbheap.obj member 827680. The verifier scans
+all members for nonzero COMMON/strong alternatives and rereads complete
+source/member records. These are not initialized source pointers. Their
+actual complete PE storage is in the writable loader zero-fill tail of .data.
+Both independent bindings retain R120's already accepted heap provenance and
+its full cold dependency replay. Original external linker inputs beyond the
+supplied archive, live pointers/counts/contents and API outcomes remain unknown.
+The absence of ordinary Ghidra callers grants no ownership or unused-code claim.
+
+**Independent compiler evidence.** The supplied complete read-only sbheap.c
+was cold-built with pinned VC7.1 build 3077 using explicit `/O1 /Ob1 /Gy /Zi
+/GS /D_CRTBLD /D_MT` and the actual CRT source include path. Its selected
+complete own-AUX function reproduces all 793 source bytes and all eight typed
+field records from the archive. Both archive and cold C bodies are linked
+from the independently resolved COMMON/API destinations and compared against
+every target byte, with no masked or prefix acceptance. The other functions
+and data emitted by that translation unit gain no reviewed origin credit.
+The complete source, winheap.h and all 72 actual included headers are pinned.
+These flags are per-control reproducibility settings, not an executable-wide
+compiler profile or a claim about original private declarations.
+
+The natural `probes/VC7SmallHeapIntegrityLayout.cpp` independently cold-builds
+a complete 152-byte layout array and six complete range/entry/class/commit
+controls / 217 bytes / three API fields. Every allocated probe code/data
+section is accounted for; no orphan data or no-AUX code carrier is present.
+Its complete actual vendor/SDK types do not define a reconstructed game owner.
+Thirty regression checks reject shortened extents, missing epilogues/branches/
+API calls, wrong COMMON definitions/storage/alternatives, lost retained heap
+context, changed vendor reproduction inputs/layout/bit/class semantics and
+invented runtime knowledge. Independent linker fixtures exercise actual
+addends, full extents, wrong destinations, overlaps and missing provenance.
+
+The complete new/retained cold evidence replay passes, followed by canonical
+ledger write/read-back. All 1,048 public checks, authored-extent verification,
+target/project/query attestation, progress/scanner freshness and whitespace
+checks pass locally. Totals are 3,437 resolved (919 authored, 1,943 library,
+575 compiler), 914 pending and 2,518 excluded. Source/mapping/exact remains
+60 / 9,883 bytes. All tracked exact inputs and 60 accepted rows remain
+unchanged from R139 db26a05, preserving its 60/60 cold proof over eleven
+objects; no affected exact unit requires replay. Recorded authored extents
+remain 872 / 1,952,956 bytes and the provisional denominator is 1,965,299.
+Public MCP acceptance remains waived. The no-auth route and private random
+path remain unchanged; private logs/objects/diagnostics remain untracked.

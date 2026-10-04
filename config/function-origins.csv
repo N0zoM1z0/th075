@@ -3765,7 +3765,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064AA58,library,VC71CRT,exclude,complete-vendor-heap-source-data-api-and-closed-dependencies,R119
 0x0064AB0F,library,VC71CRT,exclude,complete-vendor-body-with-imports-scalars-and-callees,R098
 0x0064AC15,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064AFC5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064AFC5,library,VC71CRT,exclude,complete-vendor-small-heap-common-sdk-cold-source-provenance,R145
 0x0064B339,library,VC71CRT,exclude,complete-vendor-heap-source-data-api-and-closed-dependencies,R119
 0x0064B635,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138
 0x0064B6B4,library,VC71CRT,exclude,complete-vendor-locale-snapshot-classification-code-data-abi-provenance,R138

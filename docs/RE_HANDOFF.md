@@ -2,7 +2,7 @@
 
 Updated 2026-10-04. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R144. The public
+review cohorts R108 through R145. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,436: 919 authored, 1,942 library and 575 compiler generated.
-There are 915 pending. Candidate count is not authored function count.
+has resolved 3,437: 919 authored, 1,943 library and 575 compiler generated.
+There are 914 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +20,19 @@ bytes is 9,883 / 1,965,299 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R145 small-block heap integrity cohort below.
+the bounded R146 pow wrapper/parent cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R144; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R145; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R145 small-block heap integrity graph
+## Next agent objective — R146 pow wrapper/parent graph
 
 R108 reviewed all six lifetime candidates. Only `0x00449D40` gained authored
 origin: its complete 31-byte explicit virtual destructor differs from the
@@ -682,26 +682,41 @@ unknown. Replay `scripts/repo-python scripts/verify-jump-unwind-origins.py`.
 All 1018 public checks pass. Totals are 3436 resolved and 915 pending; the
 exact baseline and R139's 60/60 cold proof remain unchanged. MCP is waived.
 
-The next bounded R145 cohort is the existing small-block integrity worker:
+R145 resolves the complete 793-byte small-block heap integrity worker, with
+all 61 branches, both epilogues, eight independent fields and all final error
+tails. Its two COMMON globals retain unique whole-archive tentative records,
+complete loader zero-fill and independently accepted R120 bindings; three
+real API calls bind IsBadWritePtr. Cold supplied full sbheap.c reproduces the
+selected entire own AUX and every relocated target byte. Actual winheap.h/SDK
+layout and six whole natural controls replay with the full R120 dependency
+chain. Other emitted vendor functions/data gain no review credit. Live heap
+state, runtime outcomes and original private declarations remain unknown.
+Replay `scripts/repo-python scripts/verify-small-heap-integrity-origins.py`.
+All 1048 public checks pass. Totals are 3437 resolved and 914 pending; the
+60-function exact baseline and unchanged R139 cold proof remain preserved.
 
-| Candidate | Provisional / own AUX bytes | Diagnostic symbol / fields | Required next evidence |
+The next bounded R146 cohort is three existing power wrapper/parent entries:
+
+| Candidate | Provisional / defining extent | Diagnostic source / fields | Required next evidence |
 | --- | ---: | --- | --- |
-| `0x0064AFC5` | 793 / 793 | ___sbh_heap_check / eight | Entire own AUX and all exits/loops, actual IsBadWritePtr import, both COMMON globals with whole definition/zero-fill and retained heap provenance; supplied sbheap.c/winheap.h source and independent real SDK/model controls |
+| `0x00643770` | 84 / 59 | __CIatan/log/log10/pow equal-shaped own AUX / two | Actual typed operation through the complete parent; full wrapper/source alternatives and surrounding alignment/extent |
+| `0x0064DC60` | 25 / 2886 | __CIpow_pentium4 own AUX / 59 | Whole parent, all special-value/error/shared tails, every whole constant/table field and independent complete libm error worker |
+| `0x0064DC79` | 2861 / parent +25 | Actual __pow_pentium4 exported source entry | Whole 2886-byte parent and actual interior source definition/ABI; no independent 2861-byte AUX or prefix acceptance |
 
-Use `.analysis/r144-next-heap-check-survey.json` and the read-only attested
-caller query `.analysis/r144-next-heap-check-callers.txt` diagnostically.
-The worker has no ordinary Ghidra callers; that does not establish ownership
-or prove it unused. The supplied complete sbheap.c contains __sbh_heap_check
-at line 1274 and winheap.h supplies its internal source structures/interface.
-Both __sbh_cntHeaderList and __sbh_pHeaderList have four-byte COMMON definitions
-in member 827680, targeting `0x0068FA60` / `0x0068FA64`; independently reconcile
-all strong alternatives, retained R120 heap state and actual loader storage.
-The three IsBadWritePtr fields target actual IAT slot `0x00657154`.
-Treat supplied source/header types as independent vendor evidence, not an
-original complete game-owner layout. Current allocator state and runtime
-integrity outcomes remain unknown. No origin follows from API identity alone.
-A bounded full-body scan found no association for the supplied 143-byte
-__heapchk source owner; do not invent a wrapper candidate or infer its origin.
+Fresh bounded diagnostic `.analysis/r145-next-power-survey.json` compares each
+complete supplied own AUX: the four 59-byte wrappers have zero differences
+outside their two typed fields, and the 2886-byte pow parent has zero outside
+all 59 fields. These are diagnostic associations only. The wrapper's actual
+REL32 destination is `0x0064DC60`; parent source member 2835570 exports the
+real `__pow_pentium4` entry at +25 and calls `___libm_error_support` at
+`0x006485D7`. Retain its complete R130 origin/provenance and all independently
+accepted SSE dispatch state. Bind all whole pow constants/tables and reconcile
+every branch/entry before narrowing wrapper identity to pow. R130's already
+reviewed math methods supply a workflow, not missing pow data layouts.
+The 25-byte prefix is not an acceptable parent comparison. Preserve all three
+existing candidates and the original wrapper/parent extent observations.
+Original private declarations and numerical/runtime inputs remain unknown.
+A diagnostic exact-looking body or accepted child grants no parent origin.
 
 A bounded scan of the supplied rtti.obj member 423098 found no complete
 relocation-masked associations for its exported RTtypeid (156 bytes),
@@ -744,7 +759,7 @@ tail candidate until its enclosing function and EH extent are reconciled.
 
 On 2026-10-04 the user authorized local investigation and final acceptance,
 waiving public MCP replay to accelerate origin review. Preserve the existing
-no-auth route, private path and 60-function exact baseline. R145 adds no exact scope. Update
+no-auth route, private path and 60-function exact baseline. R146 adds no exact scope. Update
 the origin journal, knowledge base, progress card and handoff after acceptance;
 run `scripts/repo-python scripts/ci.py` and `git diff --check` before committing
 with `gpt-6.1-sol: ...`.
