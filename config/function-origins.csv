@@ -842,7 +842,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041D750,authored,DataArchive,authored,target-observed,R053
 0x0041D800,authored,DataArchive,authored,target-observed,R053
 0x0041D8C0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x0041D8F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041D8F0,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
 0x0041D930,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
 0x0041D950,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041D980,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
@@ -878,10 +878,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041E100,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E110,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E120,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
-0x0041E1A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0041E22F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E1A0,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
+0x0041E22F,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
 0x0041E280,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
-0x0041E2F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041E2F0,library,VC7STL,exclude,complete-header-owned-default-list-code-data-and-shared-catch-graph,R181
 0x0041E330,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041E340,library,VC7STL,exclude,complete-source-family-peer,R106
 0x0041E360,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175

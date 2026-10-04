@@ -25,6 +25,10 @@ POLICIES=[('store-eight-bytes',31,'?store@IndexedWorkingObservation@@QAEXAAUInde
 
 def manifest():return json.loads((ROOT/EVIDENCE).read_text())
 
+def accepted_pending_snapshot(snapshot,function,origin):
+    if function['address'] not in {'0x0041D8F0','0x0041E2F0','0x0041E1A0'}:return False
+    return module('indexed_list_transition','verify-list-construction-origins.py').accepted_snapshot(snapshot,function,origin)
+
 def verify_plan(m):
     if (m['evidence_id']!='R180' or m['target_sha256']!=PRIOR.manifest()['target_sha256']
             or m['probe']!='probes/VC7IndexedOwnerPolicies.cpp' or m['profile']!=SDK.PROFILE
@@ -90,9 +94,12 @@ def main():
         if not args.evidence_only and authored[a]!=r['accepted_authored_record']:raise ValueError('indexed owner accepted authored record differs')
     for r in m['snapshots']:
         a=r['address']
+        accepted_pending=False
         if a in records:SDK.check_ledger(records[a],functions[a],origins[a],args.evidence_only)
-        elif functions[a]!=r['function'] or origins[a]!=r['origin']:raise ValueError('indexed owner changes unrelated canonical context')
-        if int(functions[a]['size'])!=r['size'] or digest(c.pe_bytes_at(target,int(a,16),r['size']))!=r['body_sha256']:raise ValueError('indexed owner entire target snapshot differs')
+        elif functions[a]!=r['function'] or origins[a]!=r['origin']:
+            accepted_pending=accepted_pending_snapshot(dict(function=r['function'],origin=r['origin']),functions[a],origins[a])
+            if not accepted_pending:raise ValueError('indexed owner changes unrelated canonical context')
+        if (int(functions[a]['size'])!=r['size'] and not accepted_pending) or digest(c.pe_bytes_at(target,int(a,16),r['size']))!=r['body_sha256']:raise ValueError('indexed owner entire target snapshot differs')
     for r in [*m['functions'],*m['anchors']]:
         a=r['address'];raw=c.pe_bytes_at(target,int(a,16),r['size'])
         if digest(raw)!=r['body_sha256'] or witness(raw,a)!=r['witnesses'] or list(cfg.verify_body(raw,int(a,16),r['switches'],lambda a,n:c.pe_bytes_at(target,a,n),r['direct_switches']))!=r['cfg']:raise ValueError('indexed owner whole policy/anchor/CFG differs')
@@ -124,7 +131,7 @@ def main():
             elif extent.complete_aux_section_size(data,r['source_definition']['symbol'],c.coff_name)!=r['size']:raise ValueError('indexed owner loses own entire primary AUX')
         raw,_=coff.readonly_section(data,m['layout']['section'],c.coff_name)
         if list(struct.unpack('<10I',raw))!=LAYOUT:raise ValueError('indexed owner entire readonly source layout differs')
-    print('R180 origins OK: four entire custom copy/owner policies /343 bytes; six whole small-owner operation/implicit controls /268 bytes with no target-byte-positive claim;61 ordinary sections /2497 bytes,29 SDK headers and40-byte layout;157 snapshots,40 protected unknowns,1689 bytes of whole authored anchors,three original library records and two full EH frames preserved; separate constructor dependencies remain unknown and143-byte node prefix is never credited; no source/private ABI/mapping/exact credit, exact stays60.')
+    print('R180 origins OK: four entire custom copy/owner policies /343 bytes; six whole small-owner operation/implicit controls /268 bytes with no target-byte-positive claim;61 ordinary sections /2497 bytes,29 SDK headers and40-byte layout;157 snapshots,40 protected unknowns,1689 bytes of whole authored anchors,three original library records and two full EH frames preserved; original pending observations retain every byte and external tail, permitting only exact complete R181 transitions;143-byte node prefix is never credited; no source/private ABI/mapping/exact credit, exact stays60.')
     return 0
 
 if __name__=='__main__':

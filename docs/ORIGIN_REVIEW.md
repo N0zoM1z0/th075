@@ -10757,3 +10757,75 @@ Exact remains 60 functions / 9883 bytes with provisional coverage
 is added. Public MCP acceptance remains waived; the full remaining-origin goal
 is active and unfinished. Next reconcile the whole default-list construction
 graph, local exception entry and shared tail before assigning any new ownership.
+
+## R181 — complete list construction and source-owned shared exception entry
+
+Four library entries are accepted through cold
+`scripts/repo-python scripts/verify-list-construction-origins.py` and immutable
+`config/list-construction-origin-evidence.json`.
+
+| Address | Complete ledger bytes | Inferred source owner |
+| --- | ---: | --- |
+| `0x0041D8F0` | 56 | default list constructor |
+| `0x0041E2F0` | 53 | list value-base constructor |
+| `0x0041E1A0` | 223, reconciled from 143 | complete default-node allocation, local catch and shared owner exit |
+| `0x0041E22F` | 80 | source-local catch entry including shared owner exit |
+
+The four ledger extents total 412 bytes, including 80 overlapping bytes.
+Distinct primary code totals 332 bytes. No distinct-byte or exact-reconstruction
+credit is inferred from the overlap. Target observation: the old node prefix
+ends with JMP at `0x0041E22D` to the owner exit `0x0041E264`. Its complete defining
+source function owns 223 bytes through `0x0041E27E`, with the local entry at
++143 and shared exit at +196. The source-local entry has a unique static typed
+COFF definition and is named by the actual complete handler table. Full parent
+primary AUX/COMDAT metadata, all 223 bytes, both branches and return reconcile
+the owner; the entire 80-byte entry view is supported through that owner. No
+standalone callback primary AUX or convenient prefix is claimed.
+
+Compiler/source observation: the pinned SDK list header defines the allocation,
+link construction, catch cleanup, deallocation and rethrow policy. The original
+R020 frame at `0x00655470` registers owner `0x0041E1A0`; the complete 80-byte
+readonly EH carrier starts at `0x006685F8`, with FuncInfo at `0x0066862C` and
+try map at `0x00668618`. Its actual catch-all handler table points to
+`0x0041E22F`. The generated ten-byte handler has its own unique complete COMDAT
+and retains its observed static definition without inventing primary AUX.
+Full data/code linkage and every genuine field are replayed without masking.
+The library inference belongs to the SDK source-defined catch policy;
+compiler exception-entry ABI alone would not establish that ownership.
+
+Independent game observations retain the complete R180 archive constructor
+/ 90 and R179 file-record append / 133, all prior rows and switch evidence.
+The latter's 108-byte record copy and original R169 node-allocation records
+supply width context; source value/node widths 108/116 do not identify original
+field names or complete game owner layout. The SDK empty allocator constructor
+and distinct ordinary empty-class constructor both emit the same entire
+14 bytes at `0x0041E330`; this entry remains unknown. Original eight-/eleven-byte
+node-link helpers and five-byte no-op destruction also remain unknown.
+
+Evidence-only cold replay precedes canonical mutation; accepted-state cold
+replay matches 22 full SDK/code/EH/data/ordinary controls / 795 bytes and all
+35 genuine fields. All 65 ordinary sections / 2690 bytes, 29 SDK headers plus
+the pinned prior probe include, and the entire coalesced 52-byte readonly layout
+are frozen. The verifier preserves 168 canonical/body snapshots, 41 protected
+unknowns, two full authored anchors / 223 bytes, four complete R169 records
+and the original R020 frame. The old R180 manifest stays byte-for-byte immutable;
+its verifier permits only the three exact original-to-R181 row transitions,
+including the sole 143-to-223 extent correction. All old 143-byte observations,
+external jump and pending source controls remain replayed as historical context,
+without prefix acceptance. R180 cold replay passes before and after acceptance.
+
+Strict R180 HEAD 7ab03b1 readback permits exactly four function/origin changes,
+only the complete node size/span correction, and no authored additions. All
+895 prior authored rows/order and previous configuration evidence are preserved.
+Local target/Ghidra preflight, tracking, full authored verification, fresh scan,
+44 new regression guards and all 2150 public checks pass. Generated progress
+and whitespace checks pass. All sixty exact inputs remain unchanged, retaining
+the prior R139 60/60 cold replay across eleven objects. No source/private ABI,
+mapping, reconstructed owner layout or exact credit is added.
+
+Totals are 3632 resolved (942 authored, 2115 library, 575 compiler), 719 pending
+and 2690 excluded. Authored evidence remains 895 whole bodies / 1955637 bytes.
+Exact remains 60 functions / 9883 bytes, with provisional authored denominator
+1967980 (0.50%). Public MCP acceptance remains waived; the whole remaining-origin
+goal is active and unfinished. Next investigate the complete shared math-table
+operations and indexed counter policy with independent game parents.
