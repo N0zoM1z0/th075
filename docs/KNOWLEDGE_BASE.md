@@ -5176,3 +5176,68 @@ coverage denominator 1,965,299. The public MCP waiver remains in force;
 the existing no-auth route and private random path remain unchanged.
 Private logs, generated objects and diagnostics remain untracked. The
 complete-origin objective remains unfinished.
+
+## R149 — Complete deque size families and shared receivers
+
+R149 resolves six library origins / 102 bytes: `0x004094B0`, `0x00414430`,
+`0x00414620`, `0x00414810`, `0x0041DD50` and `0x0045BF50`. Each complete
+17-byte no-field body compares unmasked with all thirteen actual VC7 deque
+size source alternatives. Replay
+`scripts/repo-python scripts/verify-deque-size-context-origins.py` with
+`config/deque-size-context-origin-evidence.json`. Original element types,
+folding/aliasing, private declarations and complete game owner layouts remain
+unknown. There is no source, mapping, private ABI or exact credit.
+
+**Independent ownership context.** Identical getter bytes alone are
+insufficient. Six complete independently authored parents / 5,610 bytes
+retain their full extents, control flow and original ownership. Exact,
+uninterrupted receiver-producing instruction sequences bind each candidate
+to the same object as a separately complete, independently reviewed library
+producer/consumer. Five contexts use their actual fixed global receivers;
+the sixth proves equal owner/index/stride/field expressions through two
+register variants. The observed twenty-byte container stride and +4 member
+position do not establish a complete game class layout. Changing the owner,
+index, field, direct destination or receiver-producing sequence invalidates
+the proof. No origin follows from a game caller or reviewed child by itself.
+
+The four complete push_back and two complete at anchors retain R072/R078
+source and origin records. Their full cold verifiers replay serially, together
+with the independent complete R110/R113 source-typed game/deque graphs.
+No existing anchor is reclassified, renamed or assigned additional credit.
+The target caller observations remain separate from the natural complete
+SDK source controls and original-type inference.
+
+**Compiler controls and acceptance.** `probes/VC7DequeSizeContexts.cpp` uses
+thirteen real complete SDK deque specializations and natural const-receiver
+size calls. All 26 emitted functions / 390 bytes cold-build with their own
+complete AUX, source hashes and every typed field retained. The complete
+32-byte readonly defining layout section establishes actual SDK container,
+iterator and size-type records. Every emitted code/data carrier is accounted
+for; all 27 actual included headers are pinned and checked against the cold
+compiler include list. Per-probe VC7.1 build 3077 flags remain reproducibility
+settings, not an executable-wide compiler inference. Fifteen regression
+checks guard the full source family/layout, uninterrupted equal receivers,
+independent anchors/cold proofs and pending nested origins.
+
+Exactly six existing canonical rows changed after the complete new and
+retained cold proof passed; write/read-back preserves every unrelated row
+and all candidate extents. All 1,163 public checks, authored-extent verification,
+target/project/query attestation, scanner/progress freshness, unchanged exact
+inputs and whitespace checks pass locally. Totals are 3,450 resolved
+(919 authored, 1,956 library, 575 compiler), 901 pending and 2,531 excluded.
+The 60 source/mapped/exact functions / 9,883 bytes and all exact inputs remain
+unchanged from R139 db26a05, preserving its 60/60 cold replay over eleven
+objects; no affected exact unit needs replay. Recorded authored extents remain
+872 / 1,952,956 bytes; the provisional coverage denominator is 1,965,299.
+The public MCP waiver and existing private no-auth route remain unchanged.
+
+**Retained nested uncertainty.** `0x00421550` and `0x0045DD50` remain pending.
+A separate private natural nested-deque source control reproduces the entire
+66-byte `0x0045DD00` parent and complete 45-byte `0x004215C0` back worker,
+then follows a diagnostic graph of 43 complete bodies / 2,562 bytes / 103
+fields and nine original external snapshots. This is source association,
+not accepted independent provenance: nested/EH code/data bindings still
+need complete reconciliation. The parent, back worker and other unknown
+iterator controls receive no ownership credit. Their actual complete bodies,
+original ledger extents, private declarations and prior owners are preserved.
+The complete-origin objective remains unfinished.
