@@ -9086,3 +9086,129 @@ lifetime/leaf ambiguities unchanged. Preserve R156/R157/R158/R159/R160 manifests
 any follow-up canonical transition needs its own exact bounded hash-pinned
 snapshot evidence. The private route and all 60-function exact inputs remain
 preserved. No exact scope or recovered game layout is authorized.
+
+## R161 — Vector endpoints, explicit constructors and genuine deque operation context
+
+R161 reviews all nine candidates / 237 bytes and accepts eight library owners
+/ 222 bytes: begin/end pairs `0x00409760`, `0x00409E60`, `0x0040E1F0`,
+`0x0040E680` / 31 each; mutable iterator constructors `0x0040A120`,
+`0x0040E9E0` / 28 each; deque subtraction-assignment `0x0040A190` / 27; and
+SDK destruction `0x0040A830` / 15. SDK/ordinary destruction `0x0040F9F0`
+/ 15 remains unknown. Replay
+`scripts/repo-python scripts/verify-vector-endpoint-origins.py` with
+`config/vector-endpoint-origin-evidence.json`. Every accepted candidate has
+its complete positive own COFF AUX extent and unchanged size/span_end. All
+bytes and genuine fields compare unmasked. Original declarations remain
+unknown; provisional SDK names grant no source/private ABI/mapping/exact credit.
+
+Entire original R034 assignment parents `0x00409780` and `0x0040E210`
+/ 96 actually call both endpoint pairs. Their complete R095 assign wrappers
+`0x00409470`, `0x0040DF20` / 29, R032 erase contexts / 99 and insert contexts
+/ 33 remain independently retained and compare as whole source variants with
+all real fields. SDK endpoint constructors call actual independently accepted
+R106 const-iterator constructors `0x0040A590`, `0x0040F120` / 24. Source
+observations use two complete four-byte records; their matching whole generic
+assignment does not recover the original element type or a game container
+layout. The actual SDK observations have vector size 16 and mutable/const
+iterator sizes four; the offset-deque iterator observation is eight bytes.
+These are source/compiler observations, not inferred original declarations.
+
+**Operation refinement without new origin credit.** The original R078
+`0x00409DF0` / 57 association used whole SDK deque addition `??Hiterator`,
+whose recorded source field `??Yiterator` was bound to the then-unreviewed
+`0x0040A190`. That original evidence remains byte-identical and is retained
+as source-shape evidence. The actual leaf `0x0040A190` negates its argument
+before calling full addition-assignment `0x0040A5E0` / 31. New complete SDK
+subtraction `??Giterator` / 57 binds its genuine `??Ziterator` field to that
+27-byte leaf and compares unmasked. Full SDK addition / 57 instead binds
+its real `??Yiterator` to the independently complete 31-byte addition leaf;
+linking that actual operation differs from the target only within the real
+four-byte call field. Neither comparison truncates a function or masks an
+accepted field. The parent's provisional role/evidence is refined to
+subtraction; its R078 library origin, extent and origin credit remain unchanged.
+The earlier masked/direct-binding shape alone could not distinguish operations.
+
+Complete ordinary begin/end / 31 each, derived pointer constructor / 28,
+base pointer constructor / 24 and two explicit destructor wrappers / 15 each
+are fully byte-equal to their corresponding SDK target controls. Those six
+ordinary controls / 144 bytes show that endpoint/constructor/destruction
+shapes alone cannot identify original ownership or source. Library inference
+uses the independent whole typed SDK parents, constructor/base and actual
+operation relationships. No incomplete reconstructed game owner is instantiated.
+
+The first destruction leaf compares through full unchanged R074 allocator
+destruction `0x00409D60` / 25 and complete R037 generated deleting wrapper
+`0x0040A9F0` / 44, with independently authored R017 resource policy
+`0x004092F0` / 87 and R142 scalar delete `0x00640F15` / 5. The second
+allocator parent is unchanged R033 `0x0040F860` / 25, whose SDK/ordinary
+15-byte child calls full R037 wrapper `0x0040FA00` / 44. That wrapper calls
+protected R108 lifetime policy `0x0040D8E0` / 19. Its original explicit/implicit
+source ambiguity remains unresolved. The complete SDK/ordinary operation and
+parent association do not resolve surrounding lifetime declarations; the
+second 15-byte candidate remains unknown and receives evidence notes only.
+Generated wrappers, authored policy and unknown policy remain separately
+classified. No library leaf is bound directly past the intervening wrapper.
+
+`probes/VC7VectorEndpointAlternatives.cpp` cold-builds all 176 ordinary
+sections / 9404 bytes. Thirty-one full code controls / 1169 bytes and 41 actual
+fields compare unmasked, including four whole original erase/insert variants
+and six ordinary controls. Applicable owners have full positive own AUX;
+both generated wrappers retain their whole unique defining COMDAT. The entire
+68-byte layout is `[4,4,16,16,4,4,4,4,1,1,4,4,16,1,8,1,1]` and all 28 actual
+SDK headers are pinned. Fourteen original parent/helper/compiler/policy records
+are retained. Source evidence files remain immutable; the growing authored
+evidence registry is checked by exact membership of its original R017 record,
+not by freezing unrelated future additions. Only declared full selected
+controls compare to target bytes; all ordinary emission is cold inventory
+coverage, not an executable-wide match. Build 3077 and explicit flags are
+per-probe reproducibility settings. Original source/type/compiler/linker inputs
+and live count/range/offset/iterator/lifetime outcomes remain unknown.
+
+Exactly eight origin rows and ten function-evidence rows change against
+R160 HEAD ea7d1c0: eight library candidates, one pending destruction evidence
+update and one retained R078 parent operation refinement. All unrelated and
+protected rows, every authored record and previous evidence manifests remain
+unchanged. Thirty-five regression checks protect full source/parent extents,
+actual constructor/operation fields, immutable historical shape evidence,
+whole genuine addition/subtraction controls, ordinary alternatives, independent
+compiler/authored/unknown roles, pending-origin conservation and false credit.
+Cold comparison precedes canonical acceptance; exact bounded rows read back
+afterward. All 1464 public tests, local target/project/query attestation,
+fresh scanner/progress, authored extents, exact-input and whitespace checks
+pass. Public MCP acceptance remains waived, with the no-auth/private route
+unchanged and private diagnostics/objects untracked.
+
+Totals are 3501 resolved (922 authored, 2004 library, 575 compiler), 850 pending
+and 2579 excluded. Authored evidence remains 875 bodies / 1953089 bytes;
+provisional exact coverage stays 9883 / 1965432. All 60 source/mapped/exact
+functions / 9883 bytes and exact inputs remain unchanged from R139 db26a05,
+preserving its 60/60 cold replay across eleven objects. No affected exact unit
+needs replay. The complete-origin objective remains unfinished. A fresh private
+whole own-AUX source survey finds 258 relocation-excluding diagnostic
+associations; these are not origin or exact acceptance. Genuine destination,
+complete independent parent/context and full extent evidence remain necessary.
+
+The next bounded R162 cohort is fifteen remaining vector endpoint/constructor
+source-context candidates / 447 bytes. These are diagnostic associations, not
+promised origin acceptances:
+
+| Candidate group | Full provisional extents | Independent context to retain |
+| --- | ---: | --- |
+| `0x0040DCE0`, `0x0040DD00`, `0x0040E4A0` | 31, 31, 28 | whole R019 game parents `0x0040B280` / 727 and `0x0040B560` / 575; actual const-iterator constructor `0x0040E990`; pending assignment `0x0040E000` / 158 must not be truncated to the R034 96-byte source variant |
+| `0x00411CC0`, `0x004121C0` | 31, 28 | whole R035 game parent `0x00411110` / 746; actual const-iterator constructor `0x00412440`; preserve the related still-unknown 42-byte iterator-producing helpers |
+| `0x0041D980`, `0x0041EF00` | 31, 28 | whole R052 parent `0x0041D260` / 686 and R053 parent `0x0041D750` / 164; actual const-iterator constructor `0x0041F770`; preserve adjacent 42-byte source contexts |
+| `0x00531DD0`, `0x00532300` | 31, 28 | actual const-iterator constructor `0x005323C0`; surrounding 42-byte producers remain unknown, so a source shape or reviewed child alone grants no origin |
+| `0x005F8490`, `0x005F8EF0`, `0x005F95B0` | 31, 31, 28 | actual const-iterator constructor `0x005F9DB0`; pending assignment `0x005F84B0` / 167 and its lifetime/EH extent require independent full reconciliation, never a 96-byte prefix match |
+| `0x005F8B50`, `0x005F9350`, `0x005F9600` | 31, 31, 28 | unchanged whole R034 assignment `0x005F8B70` / 96; actual const-iterator constructor `0x005F9E00`; freeze every real source/call field and original parent evidence |
+
+Build natural complete SDK and ordinary alternatives, reconcile full own-AUX
+or entire defining-source extents, and retain entire independently reviewed
+game/library parents. Source parameter/return roles and all actual field
+owners matter; the six R161 ordinary controls demonstrate that short endpoint
+and constructor shapes alone do not establish original ownership or declarations.
+A pending parent is not accepted because its child is library. Original record
+sizes/kinds, container layouts and live outcomes remain unknown. Keep all R108
+lifetime ambiguities, R158 record-copy ambiguity and R161 second destruction
+leaf `0x0040F9F0` / 15 protected. Keep original R078 source-shape evidence and
+R161 genuine operation refinement intact. All prior manifests, the private
+route and 60-function exact inputs remain preserved; no exact scope is added.
