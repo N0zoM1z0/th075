@@ -3597,12 +3597,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00642D9D,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x00642DEB,library,VC71CRT,exclude,complete-vendor-codepage-nls-code-data-layout-api-eh-provenance,R123
 0x00642E1D,library,VC71CRT,exclude,complete-interior-label-of-reviewed-vendor-parent,R123
-0x00642E26,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00642E26,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
 0x00642EE5,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x00643041,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
-0x006432D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006434A9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006435F2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006432D0,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
+0x006434A9,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
+0x006435F2,library,VC71CRT,exclude,complete-source-defined-finally-in-reviewed-locale-parent,R137
 0x00643604,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00643680,library,VC71CRT,exclude,complete-pinned-archive-body,R107
 0x006436FC,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
@@ -3772,10 +3772,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0064B749,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0064B97C,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x0064B9D2,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
-0x0064BA4B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064BCB1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064C13B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0064C200,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0064BA4B,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
+0x0064BCB1,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
+0x0064C13B,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
+0x0064C200,library,VC71CRT,exclude,complete-vendor-locale-time-parent-code-data-seh-api-abi-provenance,R137
 0x0064C25F,library,VC71CRT,exclude,complete-vendor-locale-construction-code-data-callback-api-abi-provenance,R136
 0x0064C5C6,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122
 0x0064C7E8,library,VC71CRT,exclude,complete-vendor-locale-thread-code-data-layout-api-eh-provenance,R122

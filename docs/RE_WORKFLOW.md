@@ -33,8 +33,10 @@ R111 resolved complete erase graphs, related wrappers and necessary helpers.
 The current bounded cohort is recorded in the handoff.
 Scanner output is only a shortlist: accept each origin only after a durable
 verifier freezes its complete extent, body, control flow and independent
-ownership context. Run investigation and local verification directly, then
-perform one public MCP acceptance replay at the end, as authorized by the user.
+ownership context. Run investigation and final acceptance locally. On
+2026-10-04 the user waived public MCP acceptance to accelerate continued origin
+review. Preserve complete evidence, necessary cold builds and required local
+checks.
 Recorded name aliases preserve earlier origin roles after exact reconstruction
 renames a function; a matching ledger state does not invalidate its origin.
 `report-reconstruction-status.py --summary` continues to report the incomplete

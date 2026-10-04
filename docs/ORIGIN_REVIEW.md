@@ -6903,3 +6903,131 @@ extents, target/project attestation, progress freshness, tests and whitespace.
 All 60 exact units cold-replay across eleven objects. Investigation and
 intermediate checks use local tools; private evidence stays untracked and
 shared tools read-only.
+
+## R137 — Complete locale parents and time-formatting graph
+
+R137 resolves all six locale/time-parent handoff roots and the required existing
+expandtime worker: seven complete library primaries / 3033 bytes / 100 typed
+fields. One existing nine-byte finally candidate gains library origin within
+its complete 346-byte parent. This resolves eight existing candidates, without
+counting overlapping bytes twice. Replay
+`scripts/repo-python scripts/verify-locale-time-parent-origins.py`; its manifest
+is `config/locale-time-parent-origin-evidence.json`. Every primary retains its
+complete own AUX and all source/code/data/API fields, branches and exits. No
+source, mapping or exact reconstruction credit is added.
+
+| Complete source primary | Address | Whole bytes | Fields |
+| --- | --- | ---: | ---: |
+| `__setlocale_get_all` | `0x00642E26` | 191 | 21 |
+| `__setlocale_lk` | `0x006432D0` | 473 | 24 |
+| `_setlocale` | `0x006434A9` | 346 | 30 |
+| `__store_winword` | `0x0064BCB1` | 1162 | 14 |
+| `__Strftime_mt` | `0x0064C13B` | 197 | 1 |
+| `__Strftime` | `0x0064C200` | 50 | 4 |
+| `__expandtime` | `0x0064BA4B` | 614 | 6 |
+
+**Target behavior and boundaries.** Get-all retains allocation and construction
+of all category name/value strings and separators, full strcmp/free paths,
+same-locale selection and all returns. Its full strcat / 232 anchor retains
+its own AUX; the entire 248-byte strcpy/strcat shared carrier remains protected
+by independent R116 evidence through the retained graph.
+
+The locked locale interpreter retains category-specific query/set behavior,
+LC_ALL compound parsing, known-category matching, ignored unknown categories,
+full strpbrk/strncmp/strlen/strcspn/strncpy dependencies, stack locale buffer /
+131, locale expansion, category updates and every success/failure exit. Its
+source accepts partial category success; it does not establish an all-or-nothing
+transaction. Original copy-length behavior is preserved without added bounds
+checks or claims about arbitrary caller inputs.
+
+Public setlocale validates categories 0 through 5 and uses the actual
+SETLOCALE lock / 12. The entire 346-byte owner retains query-only local unwind,
+allocation of threadlocinfo / 84, six handles, locale/codepage/classification,
+lconv and time pointer/refcount snapshots, old-object freeing, new-global
+pointer installation, thread update, failed-allocation cleanup and both final
+returns. The nine-byte existing entry at `0x006435F2` is source label `$L20503`
+/ parent +329. Its actual PUSH 12 / unlock / POP / RET is shared by normal
+execution and the full finally scope; it is not a standalone source body.
+Runtime allocations, reference counts and thread locale remain unknown.
+
+Strftime retains the real thread locale at `_tiddata` +100, comparison with
+the independent global locale, update and full six-argument worker call. The
+worker / 197 retains explicit-or-thread time locale selection, zero-capacity
+exit, percent/hash alternate formatting, inline lead-byte classification,
+invalid trailing lead-byte failure, remaining-count tracking and final NUL
+termination/zero-on-failure policy. Expandtime / 614 retains all conversion
+cases, actual string/number helper contracts, locale day/month/AMPM strings,
+numeric year/hour/week behavior, recursion into the full WinWord worker,
+timezone initialization/name selection, literal percent, invalid-specifier
+exit and all original capacity decisions. The compiler emitted conditional
+branches rather than an unaccounted indirect switch table.
+
+WinWord formatting retains all 1162 bytes, including the four-byte exception
+filter, handler, API branch and every localized fallback branch after its
+ordinary return. Gregorian formatting preserves repetition-based date/time
+specifier selection, AM/PM spellings, quoted literals, source-defined alternate
+form, multibyte handling, output pointer/count changes and recursive expansion.
+No successful decompile or prefix match substitutes for full source comparison.
+
+**SDK dispatch, scopes and defining state.** Non-Gregorian formatting uses
+GetDateFormatA at IAT `0x0065714C` or GetTimeFormatA at `0x00657150`, selected
+by the actual clock field / 2. The selected pointer is saved at EBP-48. The
+real capacity query at `0x0064BD58` passes null output and zero count; the
+output call at `0x0064BDCD` uses the saved pointer and allocated buffer/count.
+Both actual six-argument sequences and real stdcall @24 imports replay.
+SYSTEMTIME is a complete sixteen-byte SDK type. The source writes year +1900,
+month +1, day/hour/minute/second and zero milliseconds; no initialization of
+its day-of-week field is claimed. Runtime calendar, selected API and returned
+values remain unknown. Stack allocation, reset after exception, heap fallback,
+conditional freeing, output-copy loop and localized fallback remain complete.
+
+Two full twelve-byte scope records retain enclosing level -1. Finally at
+`0x00661180` has a null filter and handler at parent +329. Exception scope at
+`0x006626A0` binds actual filter +211 and handler +215 in the WinWord owner.
+The filter's entire four-byte body returns one; the handler restores ESP from
+EBP-24 and calls the full R123 reset worker. Actual defining COFF labels,
+parent field references and instruction starts replay. No new filter/handler
+candidate is fabricated.
+
+Seventy whole defining sections / 2582 bytes / 83 typed fields retain the
+full six-record category table / 72 / 17 fields, initial locale plus caches /
+403, all C time strings and full time record / 184, whole CTYPE / 1284,
+lconv/default/locale-handle carriers, two complete scopes and the complete
+152-byte timezone carrier with both defining name pointers. Five actual COMMON
+pointer/refcount declarations / 20 bytes retain source identities and PE loader
+zero-fill geometry. Whole data is compared after independently binding every
+field, without carrier prefixes or assumed current mutable values.
+
+Thirty-four full independent anchors / 6576 bytes / 358 fields preserve their
+origins. The six actual category callbacks and three non-inventoried controls
+/ 101 bytes / ten fields retain R136 evidence without new inventory credit.
+The full R136 locale construction/enumeration graph and all retained R135
+input/NLS/FP/SEH, output, stream, handle, heap, security and lifetime evidence
+replay. Reviewed children alone grant no parent or game-caller origin.
+
+**Compiler observations and local acceptance.** The natural probe
+`probes/VC7LocaleTimeParentLayout.cpp` cold-builds a full 260-byte layout array:
+tm / 36 and all nine fields, SYSTEMTIME / 16 and all fields, thread locale /
+84 and its full snapshot offsets, thread / 140 with locale pointer +100,
+time locale / 184 and fields, actual category/cache/lock and private format
+selector constants. Complete 19-/35-/39-/66-byte controls preserve two-argument
+locale cdecl cleanup / 8, six-argument format cdecl cleanup / 24, seven-argument
+expansion cleanup / 28 and real six-argument SDK stdcall / 24 dispatch. Two
+whole defining vendor sources and seven pinned headers replay. VC7.1 build
+3077 and explicit flags are reproducibility settings, without a global target
+compiler-profile claim.
+
+Thirty-one regression checks reject shortened owners, invented interior credit,
+missing or misbound scope fields, wrong actual filter/finally/reset execution,
+incomplete state and category carriers, ABI/layout/import mistakes, guessed
+runtime selection and lost actual API sizing/output contracts. All 771 public
+checks pass. Canonical totals are 3378 resolved (919 authored, 1884 library,
+575 compiler), with 973 pending. Exact/source/mapping remains 60 / 9883 bytes;
+recorded authored extents remain 872 / 1952956 bytes and the provisional
+denominator is 1965299. Full new and retained origin evidence, ledger guards,
+authored extents, target/project attestation, progress freshness, tests and
+whitespace checks pass locally. All 60 exact units cold-replay across eleven
+objects. On 2026-10-04 the user waived public MCP acceptance to accelerate
+continued review; R137 uses local final verification. Existing no-auth route
+and private path remain unchanged. Private evidence stays untracked and shared
+tools read-only.
