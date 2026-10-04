@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R176. The public
+review cohorts R108 through R177. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,59 +11,63 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,612: 930 authored, 2,107 library and 575 compiler generated.
-There are 739 pending. Candidate count is not authored function count.
+has resolved 3,620: 934 authored, 2,111 library and 575 compiler generated.
+There are 731 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,966,340 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,966,935 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R177 static resource-parent cohort below.
+the bounded R178 lifetime-policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R176; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R177; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R177 static resource parents and release helper
+## Next agent objective — R178 remaining lifetime policies
 
-R176 accepts four whole deque subtraction-assignment definitions / 108 bytes.
-Replay `scripts/repo-python scripts/verify-deque-retreat-origins.py`. Twenty
-whole SDK/ordinary controls / 796 bytes compare unmasked with sixteen real
-fields; four complete 57-byte genuine-addition negatives preserve their actual
-destinations and distinguish subtraction despite identical wrapper shapes.
-Ordinary 27-byte alternatives are byte-equal. Width 1/2/4/64 variants expose the
-original width/type uncertainty. All 33 cold ordinary sections / 1152 bytes,
-27 SDK headers, whole 48-byte layout, 84 canonical/body snapshots and twelve
-prior R078/R083 records remain frozen. Prior proofs cold-replay; all 1960 public
-checks pass. Existing 883 authored bodies and all 60 exact functions are preserved.
-Public MCP acceptance remains waived; the full remaining-origin goal is active.
+R177 accepts four whole game policies / 595 bytes and four vector dependencies
+/ 106 bytes. Replay
+`scripts/repo-python scripts/verify-static-resource-policy-origins.py`.
+The four game roots have whole explicit-policy evidence and complete small-layout
+source-operation controls, not source-byte-positive comparisons. Nine complete
+order controls / 988 bytes contrast explicit and implicit construction/cleanup
+under two serial cold profiles. Twenty-two SDK/compiler/ordinary controls /
+724 bytes compare unmasked with 23 genuine fields. Four ordinary alternatives
+are byte-equal; original method names and complete owner layouts stay unknown.
+The actual vector pointer slots are independently four bytes. The const getter
+`0x005F9640` / 16 and pointed-owner destructor `0x005F7ED0` / 72 stay unknown.
+All primary/secondary ordinary sections, SDK includes, readonly layout, 121
+full snapshots, 39 protected unknowns, three EH frames, five prior records and
+two authored anchors / 596 bytes remain frozen. Strict R176 f81d4f2 readback
+preserves all 883 prior authored rows and adds four complete records.
+All 1997 public checks pass. Authored evidence totals 887 bodies / 1954592 bytes;
+all sixty exact units and their inputs are preserved. Public MCP acceptance
+remains waived; the full remaining-origin goal is active and unfinished.
 
-The fresh `.analysis/origin-scan/r176-triage.json` has 739 pending. The next
-bounded diagnostic cohort is three static resource parents and the direct
-release helper / 595 provisional bytes:
+The fresh `.analysis/origin-scan/r177-triage.json` has 731 pending. The next
+bounded diagnostic cohort is three lifetime-policy candidates / 298 provisional
+bytes. These are candidates, not promised acceptances:
 
 | Candidate | Entire provisional bytes | Original independent context |
 | --- | ---: | --- |
-| `0x00413650` | 132 | complete R024 static initializer `0x00656DC0` / 28 and entire R073 deque constructor children; distinguish explicit custom defaults from automatic member construction |
-| `0x004136E0` | 161 | complete R024 finalizer `0x00656EC0` / 15 and R077 deque destruction children; inspect actual indirect release, guard and helper call |
-| `0x00413880` | 67 | actual direct child of `0x004136E0`; retain full loop/exit/indirect-call context before proposing origin |
-| `0x005F6FF0` | 235 | complete R024 finalizer `0x00656EB0` / 15, authored R166 pointer queue release `0x005F7140` / 162 and R017 texture release `0x0040AE40` / 434; preserve R037 deleting child and independent vector helper ownership |
+| `0x005F6F60` | 142 | whole R024 initializer `0x00656D90` / 28 and static object `0x006716C8`; distinguish explicit clears/defaults from automatic construction, retaining R177 destructor evidence |
+| `0x004170B0` | 27 | whole R037 deleting parent `0x0041A140` / 44; reconcile actual indirect lifetime operation and explicit/implicit alternatives |
+| `0x0041BFD0` | 129 | whole R037 deleting parent `0x00413620` / 44; inspect all three indirect calls, real delete call and full branch/exit context |
 
-These are candidates, not promised acceptances. Read original evidence and
-whole candidate control flow, real data/call fields, every direct/indirect call,
-registered unwind state and shared tail. A compiler parent or library child
-does not classify the body. Compare complete explicit/implicit lifetime
-alternatives where ownership is ambiguous; do not instantiate an incomplete
-original owner or inherit widths from another cohort. Preserve historical
-evidence and all protected opaque owners. Continue origin review; exact stays 60.
+Read original records, full CFG, actual call/data fields, registered EH and
+shared tails before proposing origin. A compiler parent or known library child
+alone grants no ownership. Preserve all protected unknown owners, earlier
+accepted evidence and exact inputs. Do not instantiate incomplete original
+owners or add exact-reconstruction scope.
 
 ## R165 checkpoint and the completed R166 shortlist
 

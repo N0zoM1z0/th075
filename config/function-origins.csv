@@ -609,10 +609,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00413460,authored,FontSurface,authored,target-observed,R052
 0x004135F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00413620,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x00413650,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x004136E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00413650,authored,StaticResourcePolicy,authored,complete-explicit-static-resource-policy-and-whole-source-order-controls,R177
+0x004136E0,authored,StaticResourcePolicy,authored,complete-explicit-static-resource-policy-and-whole-source-order-controls,R177
 0x00413790,authored,ReplayRecords,authored,target-observed,R035
-0x00413880,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00413880,authored,StaticResourcePolicy,authored,complete-explicit-static-resource-policy-and-whole-source-order-controls,R177
 0x004138D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004138E0,authored,ReplayRecords,authored,target-observed,R035
 0x00413A60,authored,GameState,authored,complete-game-policy-with-batch-context,R103
@@ -2443,7 +2443,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005EB520,authored,CharacterObject,authored,target-observed,R048
 0x005F3D60,authored,MeilingFighter,authored,target-observed,R064
 0x005F6F60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F6FF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F6FF0,authored,StaticResourcePolicy,authored,complete-explicit-static-resource-policy-and-whole-source-order-controls,R177
 0x005F70E0,authored,Effects,authored,target-observed-game-policy-and-reviewed-callees,R100
 0x005F7140,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
 0x005F71F0,authored,Effects,authored,target-observed,R067
@@ -2470,11 +2470,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8290,library,VC7STL,exclude,complete-source-typed-game-dependency,R110
 0x005F82D0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x005F82F0,library,vc7-stl-vector-helpers,exclude,high,R090
-0x005F8320,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8320,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F8340,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
-0x005F8380,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8380,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F83C0,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
-0x005F83E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F83E0,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F8400,library,VC7STL,exclude,complete-vc7-deque-dereference-family,R082
 0x005F8420,library,VC7STL,exclude,complete-source-typed-game-dependency,R110
 0x005F8460,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2506,7 +2506,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8E10,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x005F8E50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F8E70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F8EA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8EA0,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F8EC0,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x005F8EF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F8F10,library,vc7-stl-vector-helpers,exclude,high,R090

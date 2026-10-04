@@ -7501,3 +7501,88 @@ goal is active and unfinished. The next bounded R177 diagnostic cohort is
 three static resource parent bodies and their direct release helper, preserving
 whole original R024/R073/R077 and R017/R166 evidence without granting ownership
 from those labels.
+
+## R177 — explicit static resource policies and owned vector cleanup
+
+Eight complete bodies / 701 bytes are accepted: four authored policies / 595
+bytes and four library dependencies / 106 bytes. Replay
+`scripts/repo-python scripts/verify-static-resource-policy-origins.py` with
+immutable `config/static-resource-policy-origin-evidence.json`.
+
+| Address | Complete bytes | Inferred ownership and policy |
+| --- | ---: | --- |
+| `0x00413650` | 132 | authored: initialize the handle after four deque constructions |
+| `0x004136E0` | 161 | authored: clear four queues, guard CloseHandle, zero the handle, then destroy members |
+| `0x00413880` | 67 | authored: explicit ascending-order clear of the four queues |
+| `0x005F6FF0` | 235 | authored: release queue entries, delete nonnull vector entries and clear the vector before automatic member cleanup |
+| `0x005F8380` | 49 | library: pointer-vector unchecked index |
+| `0x005F8320` | 19 | library: pointer-vector destructor |
+| `0x005F83E0` | 19 | library: pointer-vector clear |
+| `0x005F8EA0` | 19 | library: mutable pointer-iterator dereference |
+
+Target observation: the 132-byte constructor constructs deque members at
++0x154, +0x168, +0x17C and +0x190, then explicitly writes zero to the handle at
++0. The 161-byte destructor first calls the entire 67-byte helper, tests that
+handle, calls actual KERNEL32.dll CloseHandle through IAT slot `0x00657138`,
+and zeros the handle inside the nonzero branch. Automatic deque destruction
+then visits +0x190, +0x17C, +0x168 and +0x154. The helper visits those members in
+ascending construction order and performs four clear calls. Historical R077
+source-shape destructor labels remain unchanged; labels do not establish the
+meaning of these explicit clear operations. Whole R024 initializer/finalizer
+registrations independently retain the same static object at `0x00671750`.
+
+The whole 235-byte policy starts with authored R166 `0x005F7140` / 162, then
+iterates the vector at +0x78 with unsigned indices. Each nonnull pointer slot
+is deleted through complete R037 `0x005F7EA0` / 44 with flags 1. Explicit vector
+clear precedes automatic vector destruction, R017 texture release and the
+whole compiler array-destruction helper for two 20-byte deque members.
+The static finalizer independently binds global `0x006716C8`. Complete vector
+size and iterator-add bodies establish four-byte pointer slots; that width is
+also independently observed in this policy's actual pointer loads.
+
+Source/compiler observation: complete small synthetic owners distinguish
+explicit defaults, ascending queue clear, guarded handle release and explicit
+owned-pointer deletion from automatic construction/destruction. They preserve
+natural member ordering under both /GX and the otherwise identical profile
+without /GX. Nine whole operation-order controls total 988 bytes. These are
+source-operation observations, not byte-positive comparisons of the four game
+roots. Their layouts differ from the unrecovered original layouts. In
+particular, the synthetic pointer-owner destructor is also 235 bytes, but its
+vector offset is 44 rather than the target's 120; equal size earns no match.
+No padding, incomplete original owner, invented ABI or target-byte source is
+used. The two 55-byte no-EH queue controls still have different forward-clear
+and reverse-destruction call orders. The actual whole constructor/destructor
+establish the original member order independently.
+
+Twenty-two complete SDK/compiler/ordinary controls / 724 bytes compare
+unmasked with 23 genuine fields through one defining-symbol catalog. Four
+ordinary index/begin/dereference/cleanup alternatives / 118 bytes are byte-equal;
+original method names remain provisional. Ownership is inferred from the
+whole typed vector graph and independent explicit game policy. The 16-byte
+const getter `0x005F9640` and separate 72-byte pointed-owner destructor
+`0x005F7ED0` remain unknown. The five-byte scalar destruction child
+`0x005FA700` retains its previously accepted R087 library evidence.
+
+All 112 primary ordinary sections / 4968 bytes, 96 secondary sections / 3879
+bytes, 28 actual SDK headers in each build and the complete 48-byte readonly
+layout are frozen. The verifier retains 121 full canonical/body snapshots,
+39 protected unknown bodies, five complete prior compiler/deleting records,
+three entire registered R020 EH frames and two authored anchors / 596 bytes.
+Earlier immutable manifests and all prior authored rows/order are preserved.
+Both source profiles cold-build serially. Evidence-only replay passes before
+canonical mutation; accepted-state cold replay, old static evidence, full
+authored validation, target/tracking, fresh scanning and local Ghidra attestation
+pass afterwards. Strict R176 HEAD f81d4f2 readback permits only eight function/
+origin changes and four complete new authored records. Thirty-seven new
+regression guards and all 1997 public checks pass; progress and whitespace
+checks pass. All sixty source/header/build/ABI/mapping/match inputs remain
+unchanged from R139 db26a05, so its earlier cold 60/60 replay across eleven
+objects remains applicable.
+
+Totals are 3620 resolved (934 authored, 2111 library, 575 compiler), 731 pending
+and 2686 excluded. Authored evidence totals 887 whole bodies / 1954592 bytes.
+Exact remains 60 functions / 9883 bytes, with provisional coverage
+9883 / 1966935 (0.50%). No reconstruction source/private ABI/mapping/exact
+credit is added. Public MCP acceptance remains waived. The full remaining-origin
+goal remains active and unfinished. Continue with fresh whole lifetime-policy
+candidates; a compiler parent alone grants no ownership.
