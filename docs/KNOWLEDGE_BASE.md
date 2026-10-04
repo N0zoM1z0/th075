@@ -7939,3 +7939,81 @@ and 2690 excluded. Exact remains 60 functions / 9883 bytes, with provisional
 coverage 9883 / 1968306 (0.50%). Public MCP acceptance remains waived; the whole
 remaining-origin goal is active and unfinished. Next investigate the complete
 font byte-decoding/classification and graphic-resource initialization cohort.
+
+## R183 — complete font byte policy and explicit resource defaults
+
+Two complete authored policies / 149 bytes are accepted through cold
+`scripts/repo-python scripts/verify-font-byte-policy-origins.py` and immutable
+`config/font-byte-policy-origin-evidence.json`. The 85-byte entry at
+`0x0041C9D0` decodes a packed text unit; the 64-byte entry at `0x0041BF90`
+stores the incoming window value and explicitly clears resource state.
+The 77-byte fixed-range classifier at `0x0041CA30` remains unknown.
+
+Target observation: the double-byte route performs two DWORD loads, masks
+0xFF/0xFF00, shifts and combines the first two bytes, writes a full integer
+output and returns two. The fallback sign-extends one byte and returns one.
+Complete R052 rasterizer / 1766 uses this result to advance text, distinguish
+backslash control sequences, parse game formatting through the existing hex
+helper and render either pixel-width path. All three original decoder calls,
+backslash comparison and full original parent CFG are frozen. These explicit
+operations and independent font/texture/music-room game context support the
+outer authored inference; callee ownership is kept separate.
+
+The initializer preserves the incoming value at +0 and zero stores at
++4/+8/+0xC/+0x14. The complete R052 texture parent / 398 allocates 0x38 bytes,
+passes zero to the constructor and uses the resulting owner in the original
+rasterizer. Full R040 music-room text parent / 555 independently calls the same
+initializer. Complete R178 release / 129 and R109 release / 119 preserve the
+actual guarded storage delete, GDI selection/deletion and DC release, including
+three original PE imports. A 56-byte allocation and partial field interface do
+not recover the full original owner or license instantiating it.
+
+Compiler/source observation: the natural char-input decoder emits 74 bytes,
+against all 85 original bytes. Its one real classifier-call field is linked
+unmasked; 44 positions in the shorter source span differ and the original has
+11 additional bytes. Both complete CFGs are checked separately. No target prefix
+or memory-read equivalence is claimed: the original DWORD reads remain distinct
+from the model's byte loads. The complete small resource owner has five live
+fields and sizeof 20. Its 64-byte constructor has one difference at offset 50:
+source storage offset 0x10 versus original 0x14. Equal length is not a match;
+no arbitrary field/padding is added to remove the difference. Generated default
+POD construction is retained as a full 25-byte caller with no explicit field
+initialization, independently of the explicit constructor/caller controls.
+
+The full 77-byte member classifier and distinct ordinary member classifier are
+byte-equal to the original helper. Both implement the actual unsigned ranges
+0x81–0x9F and 0xE0–0xFE; their equality does not distinguish ownership or recover
+original class/type/charset identity. A complete 25-byte pinned SDK `_ismbblead`
+macro observer retains its genuine DIR32 `_mbctype` table field with addend one.
+It is source context only, with no invented original table binding. This
+negative SDK shape does not prove the other helper is custom authored. The
+classifier's original canonical rows remain unchanged and unknown.
+
+Four complete source comparisons / 292 bytes preserve both whole negatives
+and two equal opaque-classifier alternatives. Five complete SDK/implicit/caller
+controls / 196 bytes retain their own primary AUX extents. All 14 cold ordinary
+code/EH/data sections / 588 bytes, ten actual SDK headers and the entire 24-byte
+readonly layout are frozen. The verifier preserves 187 complete canonical/body
+snapshots, 42 protected unknowns, five entire authored game/release anchors
+/ 2967 bytes, two full R178/R109 release records and two original R020 frames.
+R178 cold replay passes before and after acceptance; all earlier manifests stay
+immutable. Evidence-only cold replay precedes canonical mutation; accepted-state
+cold replay passes. No root target-byte-positive claim is made.
+
+Strict R182 HEAD b2c365e readback changes exactly two function/origin rows and
+adds two full authored records, preserving every original extent, all 900 prior
+rows/header/order and all earlier configuration evidence. Full authored checks
+now cover 902 bodies / 1956112 bytes. Local target/tracking/Ghidra attestation
+and both query completion markers, fresh scanning, 46 new regression guards
+and all 2243 public checks pass; progress and whitespace checks pass. All sixty
+exact inputs are unchanged, retaining the earlier R139 cold 60/60 replay across
+eleven objects. No source/private ABI/mapping/exact credit is added.
+
+Totals are 3639 resolved (949 authored, 2115 library, 575 compiler), 712 pending
+and 2690 excluded. Exact remains 60 functions / 9883 bytes with provisional
+coverage 9883 / 1968455 (0.50%). Public MCP acceptance remains waived; the whole
+remaining-origin goal is active and unfinished. A fresh read of the pinned
+D3DX8 survey finds 291 pending source-body diagnostic associations. Next review
+the bounded fifteen-candidate / 7667-byte cohort whose observed fields have
+accepted library, actual import or same-member scalar-constant context. Old
+masked survey hits are discovery only and never new acceptance evidence.

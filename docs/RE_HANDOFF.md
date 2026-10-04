@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R182. The public
+review cohorts R108 through R183. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,73 +11,88 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,637: 947 authored, 2,115 library and 575 compiler generated.
-There are 714 pending. Candidate count is not authored function count.
+has resolved 3,639: 949 authored, 2,115 library and 575 compiler generated.
+There are 712 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,968,306 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R183 font-byte/resource-initialization cohort below.
+the bounded R184 complete D3DX8 cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R182; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R183; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R183 font bytes and graphic-resource initialization
+## Next agent objective — R184 full D3DX8 objects and independently bound fields
 
-R182 accepts five entire authored math-table/counter policies / 326 bytes.
-Replay `scripts/repo-python scripts/verify-math-table-policy-origins.py`.
-Three whole natural math functions / 174 bytes are byte-equal with real fields;
-the complete 73-byte ratio source has six live store/argument-cleanup order
-differences, preserved as a full negative. The native 79-byte word-counter
-policy is reviewed independently; the complete 67-byte small owner and 17-byte
-caller are controls with no target or original-layout credit. Actual bank/index
-selectors are signed bytes, bank stride is 0x17F0 and counter base is +0x394.
-The counter's direct parent is R109 `0x00452B30` / 215; R052 `0x0042A180` / 315
-and the R180 indexed-copy evidence remain independent context.
+R183 accepts the entire 85-byte font decoder and 64-byte resource initializer.
+Replay `scripts/repo-python scripts/verify-font-byte-policy-origins.py`.
+The source decoder / 74 is a whole negative with 44 positional differences
+and 11 extra original bytes. Both native DWORD reads and signed fallback stay
+explicit. The source constructor / 64 has a genuine storage-offset difference
+at byte 50; no padding or recovered original 56-byte owner is claimed. Two
+complete 77-byte lead-classifier alternatives are equal; the helper remains
+unknown. The full 25-byte SDK macro keeps its actual unresolved table field.
 
-Ten whole code/constant controls / 283 bytes preserve 19 genuine fields. All
-13 cold ordinary sections / 383 bytes, two SDK headers, complete 16-byte layout,
-179 snapshots, 41 protected unknowns, whole authored parents / 47362 bytes and
-four original runtime/interior/opaque records are frozen. The observed table
-claim is its 14400-byte used writable virtual range, including loader zero-fill,
-not a full original allocation/runtime-content hash. R129 cold replay passes
-before and after acceptance; the 11-byte absolute-value helper remains unknown
-because full vendor and ordinary alternatives are byte-equal. No existing
-opaque node/link/empty-constructor ownership is borrowed. Strict R181 bf663e0
-readback changes exactly five function/origin rows, preserves every extent and
-all 895 earlier authored rows/order, and adds five whole authored bodies.
-All 2197 public checks pass. Authored evidence totals 900 bodies / 1955963 bytes;
-all sixty exact units/inputs are unchanged. Public MCP acceptance is waived;
-the full remaining-origin goal is active and unfinished.
+Four whole source comparisons / 292 bytes, five SDK/default/caller controls
+/ 196 bytes, all 14 ordinary sections / 588 bytes, ten SDK headers, whole 24-byte
+layout, 187 snapshots, 42 protected unknowns, complete authored game/release
+anchors / 2967 bytes, two original release records, two full EH frames and
+three actual imports are frozen. R178 cold replay passes before and after
+acceptance. Strict R182 b2c365e readback changes exactly two function/origin
+rows and appends two whole authored records, preserving all 900 earlier rows
+and every original extent. All 2243 public checks pass. Authored evidence totals
+902 bodies / 1956112 bytes; all sixty exact units and inputs are unchanged.
+Public MCP acceptance remains waived; the full remaining-origin goal is active.
 
-The fresh `.analysis/origin-scan/r182-triage.json` has 714 pending. The next
-bounded diagnostic cohort is three entries / 226 provisional bytes:
+The fresh `.analysis/origin-scan/r183-triage.json` has 712 pending. A fresh
+canonical filter of the historical `.analysis/sdk-origin-survey.json` identifies
+291 still-pending D3DX source-body associations. Those masked survey results
+are only discovery pointers. The pinned SDK archives are read-only under
+`.tools/msvc710/Vc7/PlatformSDK/Lib/`; d3dx8.lib SHA-256 is
+`39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28`.
 
-| Candidate | Full provisional bytes | Required original whole context |
+The next bounded diagnostic cohort is fifteen complete candidates / 7667 bytes:
+
+| Candidate | Provisional bytes | Source-survey operation |
 | --- | ---: | --- |
-| `0x0041C9D0` | 85 | full R052 `FontSurface::RasterizeText` at `0x0041C2E0` / 1766, actual byte-classifier call and both one-/two-byte output routes; preserve actual input load widths |
-| `0x0041CA30` | 77 | actual unsigned lead-byte ranges 0x81–0x9F and 0xE0–0xFE; independent full font context and complete SDK/ordinary alternatives before ownership inference |
-| `0x0041BF90` | 64 | full R052 `FontSurface::RenderTextToTexture` at `0x00413460` / 398 and R040 music-room text parent `0x00426670` / 555; incoming window value and explicit zero state, retaining R178 release and R109 resource context |
+| `0x0061FF67` | 269 | CD3DXStringBuffer::AddString |
+| `0x0060BF05` | 272 | CD3DXFile::Open |
+| `0x0060C015` | 202 | CD3DXFile::Create |
+| `0x0060C0DF` | 65 | CD3DXFile::Close |
+| `0x0061FB45` | 110 | CD3DXDwStack::Push |
+| `0x0061FC33` | 179 | CD3DXSzStack::Push |
+| `0x00618EC7` | 224 | CD3DXCodec_D3DX_A16R16G16B16::Decode |
+| `0x006111EA` | 701 | TF_SetupTriangle |
+| `0x0060EC42` | 195 | CD3DXImage::Initialize |
+| `0x0060ED05` | 1814 | CD3DXImage::LoadDIB |
+| `0x0060F41B` | 740 | CD3DXImage::SaveDIB |
+| `0x0060F9D1` | 1191 | CD3DXImage::LoadTGA |
+| `0x0060FE78` | 646 | CD3DXImage::LoadPPM |
+| `0x0063B803` | 993 | jpeg_idct_float |
+| `0x00629921` | 66 | png_create_struct |
 
-These are candidates, not promised acceptances. Read whole original CFG/exits,
-all actual data/API fields and complete independent parents. Distinguish explicit
-resource defaults and font policy from generated member construction and generic
-byte classifiers. A game caller or equal short alternative alone proves no
-ownership. Preserve original ABI/type/layout uncertainty and all protected
-ambiguities. Reuse accepted release controls where useful, but never instantiate
-an incomplete original owner or add arbitrary storage to force a source match.
-Freeze old authored rows/order rather than hashing the growing registry. Do not
-add exact-reconstruction scope.
+Re-open actual pinned archive members; independently derive each complete own
+primary/AUX or COMDAT extent, full source bytes and every genuine field. Read
+full original CFG/exits/tables and reconcile extents before accepting. Bind all
+fields without masking to independently accepted whole library source records,
+actual PE imports or complete same-member readonly scalar constants. Freeze
+source/member/archive identity, a coherent symbol catalogue and every prior
+ledger/source record. Existing library classification alone does not establish
+a requested source symbol. If a dependency or scalar provenance is not complete,
+keep that candidate pending and proceed with independently complete evidence.
+Preserve every previous manifest/record and protected ambiguity. No source,
+ABI, mapping or exact-reconstruction credit is authorized by an archive match.
+Do not patch shared tools or target bytes and do not add exact scope.
 
 ## R165 checkpoint and the completed R166 shortlist
 
