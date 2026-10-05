@@ -1,0 +1,5 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x00421250,75,2af60239adf019113ca295ff289861c9772955d2f27874058b946d7d7f5bfcfb,ContainerRecord::ConstructAndResetDeque [provisional],1,0,0,R212
+0x005F7F20,75,843b826afc1a53f1527f499d9079fb185a561ac1701afe2cfe5c0ff84bb2d736,ContainerRecord::ConstructAndResetVector [provisional],1,0,0,R212
+0x00416D50,111,80bec46af6336cbc8ff58afcaae24fabcba30471bff7421809a9ab9263f28b27,GameProgress::ClearUnlockBitAt00416D50,1,4,0,R212
+0x0044E8D0,94,327c942b1d382f9e49d8d90d587ca8182bd4d1ede781dba95744273c4851a670,BackgroundStage::AdvanceBG05bCounters [provisional],1,2,0,R212

@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R211. The public
+review cohorts R108 through R212. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,88 +11,101 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,109: 954 authored, 2,575 library and 580 compiler generated.
-There are 242 pending. Candidate count is not authored function count.
+has resolved 4,113: 958 authored, 2,575 library and 580 compiler generated.
+There are 238 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,968,926 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,969,281 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R212 construction and no-call policy cohort below.
+the bounded R213 frame-index and script-policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R211; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R212; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R212 paired construction and no-call game policies
+## Next agent objective — R213 frame indexing and script-policy composition
 
-R211 accepts four whole entries with unchanged extents: authored 458790/70 and
-458960/93, library 458E70/195 `_Assign_n` and 458B30/29 public `assign`. The
-195-byte worker copies nested 116, erases the current range, inserts count copies
-then destroys the temporary. Whole single-insert 114 rejected the preliminary
-insertion hypothesis. Default 22 and member-zero 40 constructors lack the explicit
-clear in the actual 93-byte initialization policy. Replay
-`scripts/repo-python scripts/verify-neighbor-policy-origins.py`;
-manifest SHA is `fc61cbd578dd4a0a44dd6a724d34502520888a19e3064ec212a05e656781decf`.
-Three complete scoped graphs retain 170 code/data sections / 9,581, all 402 fields,
-143 CFGs, full 454 ordinary emissions / 28,704, 29 original includes and combined
-observation 96 (prior 64 plus new 32, not cropped). Each replay runs full retained
-R210/R209/R208/R150 proofs, retains original scalar-new 14 and reopens memset 96.
-Two whole game parents / 5,418 and three actual calls remain. Separate two-row
-authored evidence leaves all earlier 902 general and additional authored records
-unchanged. All 2,902 CI tests pass, including 33 new guards. Original/accepted cold
-states, target, project/query, earlier authored, exact preservation, bounded
-readback, fresh 242 triage, progress and whitespace pass. MCP acceptance stays waived.
+R212 accepts four complete authored policies / 355 with every original extent
+preserved: 421250 / 75 explicit deque construction/clear, 5F7F20 / 75 explicit
+vector construction/clear, 416D50 / 111 signed-short unlock-bit clear and
+44E8D0 / 94 BG05b counter update. Full implicit constructor controls are 22 each;
+the first constructor's actual first callee is deque construction 72. The deque
+requires a nontrivial eight-byte observation carrier and a complete generated
+scalar-deleting wrapper 44 calling R153's full accepted external cleanup 43.
+Trivial one-byte and eight-byte alternatives fail the full policy/protocol.
+Each replay independently runs the entire R153 cold proof before admitting the
+compatible receiver/no-stack-argument declaration into its source-owned catalog.
+No original private declaration or linker folding is inferred from the fixture.
 
-Thirteen whole private/short controls remain unknown: 458B50/19,458AD0/19,
-45B6B0/15,458A80/19,4589F0/19,4588B0/43,45B630/5,4591E0/417,459890/31,
-459C60/31,459C40/31,45AAE0/368 and 45B6F0/27. Known callers and generic full
-source emission do not settle original declarations. R208/R209 retain explicit
-R161/R162 historical extent successors. Preserve every prior manifest, verifier,
-accepted source and protected ambiguous policy; no generic complete fixture is
-an original private declaration or complete target layout.
+The bit clear retains inclusive 0..320, signed division/remainder 32 and field
+16A9C, checked against full accepted set/test policies. BG05b's actual selected
+readonly slot 658B28 points to the updater; full accepted load/destroy owners
+write table base 658B24, and load zeroes all three counters and uses the complete
+`data\background\BG05b.dat` literal. The proof claims only the selected slot,
+not a full table extent. Coordinate 455770 / 111 remains unknown: full 640/480
+arithmetic and relative fields agree with the full timer writer, but common
+receiver and original writable-global ownership are not independently proved.
+Four short controls 5F8020 / 19, 5F7FA0 / 19, 5FAAD0 / 15 and 4588B0 / 43 also
+remain unchanged unknown. Preserve all earlier unresolved controls and manifests.
 
-The original 1,311 goal has 1,069 classified / 242 left and remains active. Exact
-stays 60 functions / 9,883 bytes / 60 units across eleven objects; authored bytes
-are 1,968,926 and exact 0.50% of the provisional set. No later project phase or
+Replay `scripts/repo-python scripts/verify-paired-clear-policy-origins.py`;
+manifest SHA is `13478d1b711301bca5523c3a2bb2be0728caf55d077581ab01f2b1479b4bc3d7`.
+Two whole scoped graphs retain 58 code/data carriers / 2184, all 100 fields,
+49 normal/EH/unwind CFGs, all 381 ordinary emissions / 22,716, 29 original includes
+and full combined observation 60 (prior 40 plus new 20). Seven complete game
+contexts / 6129, two actual parent calls and separate external destructor 43
+remain verified. Each replay runs the entire retained R211/R210/R209/R208/R150
+chain plus R153. All 2937 CI tests pass, including 35 new guards. Original/accepted
+cold states, target, project/query markers, earlier authored proof, exact
+preservation, bounded readback, fresh 238 triage, progress and whitespace pass.
+MCP acceptance remains waived. All previous 902 general and additional authored
+records remain immutable; new native evidence uses a separate four-row CSV.
+
+The original 1311 goal has 1073 classified / 238 left and remains active. Exact
+stays 60 functions / 9883 bytes / 60 units across eleven objects; authored bytes
+are 1,969,281 and exact 0.50% of the provisional set. No later project phase or
 source/private ABI/mapping/exact expansion is authorized. The user's shell
 `git push` succeeded through f8e9b79; later local commits are not implicitly pushed.
 
-Next review five roots / 466 provisional bytes:
+Next review four roots / 302 provisional bytes:
 
-| Candidate | Current bytes | Full context to reconcile |
+| Candidate | Current bytes | Complete evidence to reconcile |
 | --- | ---: | --- |
-| `0x00421250` |75| constructor-like whole body calls212F0 then214C0; full authored parent420880 calls420CCB |
-| `0x005F7F20` |75| analogous construction calls5F7F70 then5F8020; full authored parent5F71F0 calls5F7373 |
-| `0x00416D50` |111| signed-short guard allows 0..320 inclusive; clears one indexed bit at receiver+16A9C; no scanner-owned parent |
-| `0x0044E8D0` |94| decrements/wraps field+68 at 0F00, increments/wraps field+6C at 42, increments+70; no scanner-owned parent |
-| `0x00455770` |111| float coordinate transform through four receiver fields, two readonly scalars and two absolute writable globals; no scanner-owned parent |
+| `0x005FAC60` | 101 | composed two-index frame selection from pointer+7C, words+60/+62; writes pointer+8, words+72/+70; full authored parent 5FAB10 / 116 calls 5FAB76 |
+| `0x005FACD0` | 70 | unsigned checked indexing through size 5F9E90, exception 5FAD70, begin 5F8490, iterator+5F8E70 and dereference 5F8E50; full original public source required |
+| `0x005FAD20` | 70 | parallel unsigned checked indexing through size 5F8340, exception 5FADD0, begin 5F8B50, iterator+5F8EC0 and dereference 5F8EA0; full original public source required |
+| `0x00454BC0` | 61 | writes receiver+47C then calls setters 410FA0/410FE0 through receiver+480; many complete character action-state owners call it |
 
-Fresh `.analysis/r212-construction-policy-shortlist.json` retains full current
-extents/calls/parent evidence. Read-only preliminary complete disassemblies are
-`.analysis/r212-record-preliminary.txt` and `.analysis/r212-game-preliminary.txt`,
-with both wrapper/query markers. Reopen complete original public constructor/
-clear/destructor source for the first pair; test natural complete explicit-clear
-versus default controls and every field/normal/EH/data owner. Preserve short
-lifetime/helper unknowns. The three no-call roots require full independent game
-owner/use evidence, actual raw scalar/global identities and complete CFG before
-classification. Scanner absence of a parent is not evidence of dead code or
-ownership; investigate raw code/data/vtable references. Preserve the exact
-inclusive signed bit index 320 and wrapping constants as target observations.
-Do not use arbitrary padding or instantiate incomplete game owners to force
-source comparisons. Existing 41CA30 byte classifier was already reviewed in
-R183/font-byte evidence and remains ambiguous; its fresh diagnostic disassembly
-adds no classification. Freeze original rows, audit all prior selected snapshots
-and preserve the 60-function exact baseline. Continue the full remaining review
-after this bounded cohort.
+Fresh `.analysis/r213-frame-script-shortlist.json` retains the actual current
+extents, full calls and independent parent associations. Complete native
+instruction diagnostics are `.analysis/r213-native-diagnostic.json`. None of
+these four roots appears in a previous origin evidence JSON selected-record
+search. Audit all prior protected snapshots again before acceptance. The first
+policy passes two indices on the stack across the outer RET4, then the inner
+RET4 consumes the remaining argument; preserve the actual ABI rather than
+inventing two-argument member declarations. The pair looks like public checked
+container indexing, but original header source, all actual fields, definitions,
+normal/EH/data owners and complete error policy must prove it. Prior generic
+`_Xlen` names are provisional and do not settle header API identity.
+
+Preserve unknown short controls 5F8490 / 31, 5F8E70 / 45, 5F8E50 / 19 and
+410FA0 / 22, 410FE0 / 22 unless full independent original source or game ownership
+resolves them. Reviewed generic peers do not supply private declarations.
+The game-policy roots require full original authored parents, receiver domains,
+actual call sites and every exit; a game caller alone grants no authorship.
+The separate unresolved 455CA0 / 108 range-composition policy depends on a
+1459-byte extent-question root 455E40 and is deferred from this bounded cohort.
+Existing 41CA30 classifier remains protected unknown under R183/font-byte
+evidence. Continue the full remaining review after this cohort.
 
 ## R165 checkpoint and the completed R166 shortlist
 

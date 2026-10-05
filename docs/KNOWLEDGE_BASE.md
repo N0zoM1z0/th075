@@ -10235,3 +10235,80 @@ The checkpoint is 4,109 resolved: 954 authored, 2,575 library and 580 compiler;
 left and remains active. Authored bytes add 163 to 1,968,926; exact stays 60
 functions / 9,883 bytes / 60 units across eleven objects, 0.50% of the provisional
 set. No source/private ABI/mapping/exact credit is added.
+
+## R212 — paired explicit construction, unlock-bit clear and BG05b counters
+
+R212 accepts four complete authored policies / 355 bytes, preserving every
+original extent. The two 75-byte constructors at `0x00421250` and `0x005F7F20`
+construct a container and explicitly clear it. The first is a deque, not a vector:
+its complete 72-byte first callee and all descendants reproduce from the pinned
+original deque header. Both full implicit constructor controls are 22 bytes and
+lack the clear and its exception scaffold. Full authored game parents
+420880 / 2301 and 5F71F0 / 1722 retain actual calls 420CCB and 5F7373; the parser's
+complete switch remap and data remain verified.
+
+The deque needs a nontrivial eight-byte observation carrier. A trivial one-byte
+trial selects the wrong block-size immediate, and a trivial eight-byte trial
+emits a five-byte destroy helper instead of the actual 15-byte protocol. The
+natural external destructor declaration emits the complete scalar-deleting
+wrapper 44, which binds the independently accepted R153 game cleanup 421220 / 43.
+Each replay runs that entire original cold proof, validates the complete native
+record/body/CFG/instructions and receiver/no-stack-argument ABI, then admits the
+external declaration into the source catalog. No observed relocation destination
+supplies its own ownership. The fixture is a compatible complete observation
+carrier, not an original class declaration or complete private owner layout.
+Separate complete deque clear and destructor bodies can bind the same accepted
+214C0 / 19 library address; this does not establish the original API spelling or
+linker folding. Four short/private controls remain unchanged unknown:
+5F8020 / 19, 5F7FA0 / 19, 5FAAD0 / 15 and 4588B0 / 43.
+
+The complete 111-byte bit-clear policy at `0x00416D50` preserves the actual signed
+short guard 0..320 inclusive, signed quotient/remainder by 32, complement mask,
+indexed field+16A9C write and RET 4. Independently complete authored set/test
+policies 416CE0 / 108 and 416DC0 / 93 use the same guard, division and indexed
+storage. No missing direct caller is treated as evidence of dead code, and no
+incomplete game owner is instantiated merely to encode the large field offset.
+
+The complete 94-byte policy at `0x0044E8D0` decrements field+68, resets a negative
+value to 3840, increments field+6C with reset at 42, and increments field+70. The
+actual readonly slot 658B28 is table base 658B24 plus four and points to this
+whole updater. Complete accepted BG05b load 44E810 / 181 and destroy 44F2E0 / 28
+write that table address. The loader zeroes all three counters and pushes the
+complete literal `data\background\BG05b.dat` including its terminator. The proof
+checks those actual instructions, selected slot, raw literal and permissions;
+it does not claim an independently established extent for the whole table.
+
+Coordinate transform 455770 / 111 remains unknown. Its full native body/CFG,
+readonly 640/480 scalar definitions, four receiver-relative fields and two actual
+writable output destinations are retained. The complete reviewed fighter timer
+452490 / 1696 writes the same relative fields, but this does not prove a shared
+receiver or original writable-global identity. Raw address/caller absence is
+only diagnostic. These observations do not justify original declarations,
+arbitrary padding or a new authored classification.
+
+Replay `scripts/repo-python scripts/verify-paired-clear-policy-origins.py`.
+Manifest `config/paired-clear-policy-origin-evidence.json` SHA-256:
+`13478d1b711301bca5523c3a2bb2be0728caf55d077581ab01f2b1479b4bc3d7`. A separate four-row
+`config/paired-clear-policy-authored-origins.csv` preserves the native bodies,
+full instructions, calls and CFGs without modifying any earlier authored record.
+Two scoped whole graphs retain 58 code/data carriers / 2184, all 100 actual fields
+and 49 normal/EH/unwind CFGs. Their complete source definitions, real local
+indices, AUX/debug-line records, independent data/weak/absolute owners, image
+permissions and unmasked bodies reproduce. The natural fixture emits all 381
+ordinary sections / 22,716 with 29 actual original includes. The whole combined
+readonly observation is 60 bytes, including prior 40 and new 20 at an interior
+symbol; it is never cropped to the new array. Every replay runs the full retained
+R211/R210/R209/R208/R150 chain and R153 destructor proof. All prior manifests,
+verifiers, source, private settings and exact inputs remain unchanged; a recursive
+prior selected-record audit finds no older protected snapshot for these four roots.
+
+Original-state and accepted-state cold replays pass. All 2937 CI tests pass,
+including 35 new boundary/provenance/ABI/native-context guards. Target,
+project/query markers, full earlier authored proof, exact preservation, bounded
+readback, fresh 238 triage, progress and whitespace pass. Public MCP acceptance
+remains waived by the user. Exactly four function/origin rows change with no
+extent change. The checkpoint is 4113 resolved: 958 authored, 2575 library and
+580 compiler; 238 pending and 3155 excluded. The original 1311 goal has 1073
+classified / 238 left and remains active. Authored bytes add 355 to 1,969,281;
+exact stays 60 functions / 9883 bytes / 60 units across eleven objects, 0.50% of
+the provisional set. No source/private ABI/mapping/exact credit is added.
