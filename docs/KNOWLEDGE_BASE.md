@@ -10403,3 +10403,72 @@ The original 1311 goal has 1083 classified / 228 left and remains active.
 Authored bytes add 162 to 1,969,443; exact remains 60 functions / 9883 bytes /
 60 units across eleven objects, 0.50% of the provisional set. No reconstruction
 source/private ABI/mapping/exact credit is added.
+
+## R214 — deque count policies and source-owned insertion recoveries
+
+R214 resolves six library entries: public count assign 455C40 / 29, protected
+`_Assign_n` 455CA0 / 108, protected `_Insert_n` 455E40 / 1521, front recovery
+456137 / 48, back recovery/shared exit 4563F3 / 62 and iterator subscript
+456560 / 38. The insertion extent alone changes from provisional 1459 to complete
+1521, ending at 456430 inclusive. The two recovery inventory entries are interiors
+of that complete original source owner, not independent source functions.
+Six ledger extents sum to 1806; four unique source policies cover 1696 bytes.
+The overlapping 48/62 interiors earn no extra unique byte or exact credit.
+
+The original VC7.1 deque header copies the assignment value to an alias-safe local,
+erases the old range, then inserts count copies from begin. Its public assign
+wrapper is 29 bytes; its protected assignment worker is 108. The public insert
+control is separately 37 bytes and calls the protected insertion worker. It must
+not replace the complete 1521-byte source policy. Insertion selects the nearer
+front/back side and both count cases, with push/fill/copy/copy_backward operations,
+original rollback loops and rethrow behavior. Generic unsigned-byte controls
+establish compatibility, not the original element declaration or private owner
+layout. The full readonly observation is 16 bytes, values [1,20,8,8].
+
+Complete original insertion source has normal root 0 and actual local recovery
+roots 759 and 1459. Real storage-class-3/type-32 local definitions in the whole
+COFF source section own both entries. Full 132-byte EH data at 6695B8 supplies
+actual DIR32 fields at offsets 44 and 60 referring to those same source-local
+indices, offsets and section; ownership never derives merely from observed
+native pointer destinations. The 48-byte front recovery loops through accepted
+pop_front 454D70, rethrows through CxxThrowException 640C12 and jumps to the shared
+exit 456417 inside the complete parent. The 62-byte back recovery loops through
+accepted pop_back 4158D0, rethrows, restores the exception frame and ends with the
+actual RET 16. Front's outgoing edge is external to its interior view but internal
+to the full source owner. Do not truncate either recovery at the rethrow or treat
+these mixed source/compiler recovery paths as independent compiler-only tails.
+
+All normal/recovery/shared-exit paths, actual function AUX length, complete debug
+line records, real symbol indices and whole code/data permissions are retained.
+The 15 bytes at 456431–45643F are exactly CC alignment and remain outside the
+source extent. The next independently complete source owner, deque push_front
+456440 / 226, is frozen in full and keeps its prior canonical records. Existing
+R111 erase-range/begin/end evidence is replayed cold in its entirety without any
+old extent change. No selected paired historical JSON snapshot was found in the
+structured audit across all six candidates; earlier manifests remain immutable.
+
+Replay `scripts/repo-python scripts/verify-byte-deque-count-origins.py`.
+Manifest `config/byte-deque-count-origin-evidence.json` SHA-256:
+`13c86296cc9f4b42fd09474f9dabcef5c9fba40b855a1150eb73f24c5d8b20f3`. One full scoped graph retains 70 whole code/data owners / 5500,
+all 178 actual fields and 62 complete normal/EH CFGs. Complete throw metadata,
+exception literals, the actual weak AUX/strong length_error fallback and the
+independently retained source-owned shared catalog are verified. Every real field
+links without masked byte differences. The entire 121 ordinary code/data emissions
+/ 8145 bytes, 27 original includes and full layout 16 are frozen. The verifier
+cold-replays full R213 and its retained chain plus R111 before rebuilding this
+natural source with pinned compiler build 3077. Flags are probe reproducibility
+settings, not a target-wide profile. Shared tools and all earlier source/ABI/exact
+inputs remain unchanged.
+
+Original-state and accepted-state complete cold replays pass. All 2995 CI tests
+pass, including 21 new extent/owned-recovery/EH/shared-exit/source guards. Target,
+project/query markers, earlier complete authored proof, exact preservation,
+bounded readback, fresh 222 triage, progress and whitespace pass. MCP acceptance
+remains waived. Exactly six function/origin rows change; only the insertion
+head extent changes. Earlier source, authored evidence and accepted origin records
+remain intact. Current totals are 4129 resolved: 960 authored, 2589 library and
+580 compiler, with 222 pending and 3169 excluded. The original 1311 goal has
+1089 classified / 222 left and remains active. Authored denominator remains
+1,969,443; exact remains 60 functions / 9883 bytes / 60 units across eleven
+objects, provisional coverage 0.50%. No reconstruction source/private ABI/mapping/
+exact credit is added.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R213. The public
+review cohorts R108 through R214. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,123: 960 authored, 2,583 library and 580 compiler generated.
-There are 228 pending. Candidate count is not authored function count.
+has resolved 4,129: 960 authored, 2,589 library and 580 compiler generated.
+There are 222 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,108 +20,85 @@ bytes is 9,883 / 1,969,443 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R214 byte-deque count-policy cohort below.
+the bounded R215 game switch-policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R213; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R214; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R214 byte-deque count assignment and insertion extent
+## Next agent objective — R215 complete game switch-policy cohort
 
-R213 resolves ten complete entries / 457 with unchanged extents: eight public
-vector/iterator library policies / 295 and two game compositions / 162.
-Checked indexing 5FACD0 / 70 and 5FAD20 / 70 retains independent stride-16/4
-source-owned graphs. Six whole typed iterator descendants become library:
-5F8490 / 31, 5F8E70 / 45, 5F8E50 / 19, 5F95B0 / 28, 5F95F0 / 16 and 5F9640 / 16.
-Original `_Xran` / out_of_range source supersedes the provisional `_Xlen`
-interpretation without rewriting old ledger names. Whole exception constructor 37
-and throw metadata 16 are reopened through independently retained original owners
-and every actual field, not borrowed native destinations.
+R214 resolves six library entries: public count assign 455C40 / 29, protected
+`_Assign_n` 455CA0 / 108, protected `_Insert_n` 455E40 / 1521, front recovery 456137 / 48,
+back recovery/shared exit 4563F3 / 62 and iterator subscript 456560 / 38. Only insertion
+extent changes, from 1459 to 1521, ending 456430. Recovery entries are source-owned
+interiors of that parent, not independent source functions. Six ledger extents
+sum 1806; four unique policies total 1696. No overlapping byte/exact credit is added.
+Public insert is a complete 37-byte control calling the protected 1521-byte worker.
+Original element types/private declarations remain unknown.
 
-Game refresh 5FAC60 / 101 passes two signed-short indices across outer/inner RET 4,
-then stores pointer+8 and words+72/+70. Full initializer 5FAB10 / 116 establishes
-pointer+7C from input resource+78 and zeroes indices. Game command selection
-454BC0 / 61 stores field+47C and calls two setters through pointer+480; full
-resource loader 456B60 / 1186 independently creates that command owner through
-accepted 410F30 / 104. Full Reimu action-state owner 45DD70 / 60999 retains seven
-actual three-argument call/receiver sequences, full CFG [1,1690] and all 16,837
-instructions by complete digest. Four independent contexts total 62,405 and nine
-actual calls. Setters 410FA0 / 22 and 410FE0 / 22 remain unchanged unknown.
+The whole insertion owner retains normal root 0 and actual source-local recovery
+roots 759/1459, real COFF local definitions and complete 132-byte EH data 6695B8,
+whose actual fields 44/60 reference those same definitions. Front 48 loops pop_front,
+rethrows and jumps to shared exit 456417 inside the full parent. Back 62 loops
+pop_back, rethrows, restores the exception frame and returns with RET 16. Complete
+normal/EH/recovery CFGs and every actual field reproduce unmasked. Alignment 15 at
+456431–45643F is CC, excluded from the extent; next whole push_front 456440 / 226
+preserves its prior records. All old R111 erase-range/begin/end extents remain intact.
 
-Replay `scripts/repo-python scripts/verify-frame-index-policy-origins.py`;
-manifest SHA is `bb5d5d550cf326252c7bf9a83961a4a90334bc75196f2c460ef2cc7a29236a22`.
-Two scoped complete graphs retain 26 code/data carriers / 978, all 46 fields,
-22 normal/EH CFGs, plus two retained exception owners / 53 and four fields.
-All 130 ordinary cold emissions / 5568, 28 actual includes and full combined
-readonly observation 56 (prior 36 plus new 20) are retained. Complete alternative
-stride 32/32 and const-at 70/70 controls reject replacement by a cropped prefix,
-wrong stride or wrong dereference route. Every replay runs the full retained
-R212/R211/R210/R209/R208/R150 chain and R153 cleanup proof.
+Replay `scripts/repo-python scripts/verify-byte-deque-count-origins.py`;
+manifest SHA `13c86296cc9f4b42fd09474f9dabcef5c9fba40b855a1150eb73f24c5d8b20f3`.
+Complete cold graph: 70 code/data owners / 5500, all 178 fields and 62 CFGs;
+full 121 ordinary emissions / 8145, 27 actual original
+includes and complete readonly layout 16 [1,20,8,8]. The real weak length_error
+fallback, complete exception data and independently source-owned shared definitions
+are retained. Full R213 and its existing retained chain plus the complete R111
+proof replay cold before rebuilding the current natural count controls. Structured
+historical paired-record audit found no selected old snapshots. Preserve all
+prior manifests, evidence, authored records, private declaration unknowns and
+exact inputs; new source compatibility establishes no original element identity.
 
-Ten literal old snapshots remain immutable: eight unknown 5F9640 / 16 records
-and two R162 snapshots for 5F8490 / 31 and 5F95B0 / 28. The original R162 snapshots
-precede its evidence/notes annotations; its unchanged explicit accepted-function
-records supply those annotations while keeping origin unknown. R213 admits only
-these exact full-body successors. Old standalone verifiers expecting those
-unknown current states are historical; R213 reads and verifies their literal
-records and complete unchanged extents. Preserve all old manifests, verifiers,
-other unresolved controls and original metadata; do not rewrite earlier unknowns
-merely because generic source emits a similar short body.
+All 2995 CI tests pass, including 21 new guards. Both original/accepted complete
+cold replays, target, project/query, full earlier authored proof, exact preservation,
+bounded readback, fresh 222 triage, progress and whitespace pass. MCP acceptance
+remains waived. The original 1311 goal has 1089 classified / 222 left and remains
+active. Current 4129 resolved = 960 authored + 2589 library + 580 compiler; 3169 excluded.
+Exact stays 60 / 9883 bytes / 60 units across eleven objects; authored denominator
+1,969,443 and provisional exact coverage 0.50%. The user's push succeeded through
+f8e9b79; later commits remain local unless independently pushed.
 
-All 2974 CI tests pass, including 37 new guards. Original/accepted complete cold
-states, target, project/query, full earlier authored proof, exact preservation,
-bounded readback, fresh 228 triage, progress and whitespace pass. MCP acceptance
-remains waived. Earlier 902 general and additional authored records remain
-immutable; the new two game records use their own CSV. The original 1311 goal
-has 1083 classified / 228 left and remains active. Exact stays 60 / 9883 bytes /
-60 units across eleven objects; authored bytes 1,969,443 and provisional exact 0.50%.
-No later project phase or reconstruction source/private ABI/mapping/exact expansion
-is authorized. The user's shell `git push` succeeded through f8e9b79; later local
-commits are not implicitly pushed.
-
-Next review five roots / 1696 provisional bytes:
+Next inspect three game-policy candidates / 1191 provisional bytes:
 
 | Candidate | Current bytes | Complete evidence to reconcile |
 | --- | ---: | --- |
-| `0x00455C40` |29| public count `assign` wrapper calls the complete protected `_Assign_n` worker 455CA0 |
-| `0x00455CA0` |108| protected count-assignment worker copies a byte; calls reviewed deque end 414400, begin 4143D0, erase-range 455D30 / 262, then begin and the insertion worker 455E40 |
-| `0x00455E40` |1459| large count-insertion-shaped root; provisional extent stops immediately before the separate 62-byte continuation 4563F3 |
-| `0x004563F3` |62| rollback loop and rethrow, followed by shared normal exception-frame restoration/RET 16; reconcile within the complete original head |
-| `0x00456560` |38| public iterator subscript source reaches independently whole iterator addition/dereference owners |
+| `0x00444650` |230| authored callees 40FAC0, 4079C0, 4424E0 and two whole reviewed game parents; indirect switch at +48 through table 444736 after RET 12 |
+| `0x004483F0` |768| indirect switch at +99 through table 4486F0 after RET; unresolved callee 438A60 and repeated authored 4079C0 calls; parent 4461D0 is reviewed |
+| `0x00454C20` |193| indirect switch at +31 through table 454CE1 after RET; reviewed parent 452F10; game virtual dispatch/state stores require complete context |
 
-Fresh `.analysis/r214-deque-count-shortlist.json` freezes all five current
-candidate rows, full hashes/calls/instructions and scanner questions. Private
-natural fixture `.analysis/probes/R214ByteDequeCount.cpp` and serial object
-`build/probes/R214ByteDequeCount.obj` already supply a complete diagnostic graph
-at `.analysis/r214-diagnostic-graph.json`: 70 whole code/data sections / 5500,
-all 178 fields and 62 full CFGs. Whole original header source matches public
-assign 29, protected `_Assign_n` 108, protected `_Insert_n` 1521 and iterator
-subscript 38. The first public-assign hypothesis for the 108-byte root was rejected:
-that API's complete body is 29 and calls this protected worker. Two-word byte-deque
-iterator returns are 8 bytes; the complete natural public controls retain the
-actual ABI. Preliminary read-only complete disassembly is
-`.analysis/r214-deque-preliminary.txt`, with both project/query completion markers.
-
-The 1459-byte provisional insertion root plus its 62-byte continuation is within
-the diagnostic complete 1521-byte source body, with every unmasked field linked
-and complete normal/recovery/EH/data owners. This is diagnostic evidence only;
-freeze the full source/AUX/debug-line records, cold-replay a new durable proof,
-audit every inventory interior and explicitly reconcile the head/continuation
-before acceptance. No new origin, boundary or exact credit has been accepted.
-Public insert itself is a separate complete 37-byte header wrapper; do not
-mistake that API for the protected 1521-byte worker or truncate either source.
-Existing R111 full erase-range/begin/end owners remain independent accepted
-evidence. An initial prior JSON search finds no selected snapshot for the first
-three roots; audit every structured snapshot again across all five roots.
-Preserve unresolved private declarations and every old R111 extent. Do not count
-an overlapping head and its recovery interior as additional unique byte credit.
-Continue the full remaining review after this bounded cohort.
+Fresh `.analysis/origin-scan/r214-triage.json` records all 222 remaining candidates.
+Private `.analysis/r215-switch-shortlist.json` freezes the three current rows and
+scanner context; `.analysis/r215-native-preliminary.json` retains full native
+bodies/instructions. `.analysis/r215-switch-preliminary.json` retains all three
+complete tables, the 38-byte selector for 444650 and trailing alignment observations.
+Diagnostic `.analysis/r215-cfg-preliminary.json` records complete guarded CFGs
+[1,5], [1,26] and [1,10] through the existing native switch verifier; no origin
+has been accepted. Each provisional span ends with a real return and all direct
+branches remain within it. The scanner's unresolved CFG appears to arise from
+an unrecorded indirect jump table rather than a cropped direct shared tail. This
+is preliminary observation only: reconcile the full guard, selector mapping,
+all switch entries, data/code boundaries and alignment before accepting; do not
+extend or crop merely to make verification pass. Follow the established complete
+native authored-proof workflow with independent full game receiver contexts and
+switch evidence. Do not classify an unknown callee just because a game parent
+calls it. Protect earlier short constructor/destructor ambiguities, coordinate
+455770 / 111 and all retained declaration controls. Continue the entire remaining
+origin review after this bounded cohort; no exact or later-phase expansion.
 
 ## R165 checkpoint and the completed R166 shortlist
 
