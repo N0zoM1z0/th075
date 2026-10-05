@@ -10472,3 +10472,77 @@ remain intact. Current totals are 4129 resolved: 960 authored, 2589 library and
 1,969,443; exact remains 60 functions / 9883 bytes / 60 units across eleven
 objects, provisional coverage 0.50%. No reconstruction source/private ABI/mapping/
 exact credit is added.
+
+## R215 — complete game reaction and mode-5 switch policies
+
+R215 accepts three authored game policies / 1191 bytes with unchanged extents:
+444650 / 230, 4483F0 / 768 and 454C20 / 193. Their former unresolved CFGs arise
+from unrecorded guarded switch tables, not missing code or shared external tails.
+All code bytes decode through each real final return, and every direct branch
+stays within its complete instruction boundaries. Complete guarded CFGs are
+[1,5], [1,26] and [1,10]. The two direct tables contain six and four entries;
+the reaction table contains five entries and a complete 38-byte selector.
+All 15 destinations are real instruction starts inside their respective owners.
+The tables and selector total 98 bytes and stay separate from the code extents.
+Following alignment is exactly zero, eight and fifteen CC bytes, respectively;
+the next independently full owners at 444770 / 219, 448710 / 2766 and
+454D00 / 79 retain their accepted records and complete bodies/CFGs.
+
+Reaction policy 444650 reads the third argument's signed word at+60, subtracts
+50 and guards the resulting selector against 37. Role names remain provisional. Observed case actions advance animation state, multiply two floats
+at+94/+98 by the actual readonly 1.25 scalar, double the word at+3C8 or set it to
+0x7FFF before selecting state 0x58. The shared path plays sound 0x19 and spawns effect 0x36
+using the first argument's byte+66. These numeric state/effect/sound values are
+native observations, not recovered enum declarations. Full accepted animation
+reset 40FAC0 / 52, sound player 4079C0 / 142 and midpoint-effect 4424E0 / 96 provide
+independent complete callee context. Two whole R065 battle policies 4331D0 / 1982
+and 444850 / 1877 preserve the actual three-argument pushes and same game receiver.
+The complete policy returns with RET 12; no extra argument or private ABI is added.
+
+Menu policy 4483F0 consumes the original scene receiver from full accepted pause
+handler 4461D0 / 751 only when global 6714B4 equals 5. Its six-case selector updates
+signed byte options 52C/52D/52F/52E/530/531 through receiver+48, with observed
+cyclic moduli 6/10/4/2/4/2. Confirm/exit input branches change active byte+A0,
+word+3A0 through receiver+44 or transition byte+18; cursor+118 wraps across nine
+rows in either direction. The final path mirrors option 52C into byte+39D and
+words+398/+39A through receiver+44. Actual sound calls and input-global comparisons
+are retained. Original option names, mode spelling, button mapping and complete
+scene/fighter layouts remain unknown. The 17-byte forwarding function 438A60
+and 11-byte integer absolute-value worker 641FB8 keep their complete R163 unknown
+records, native hashes/CFGs and original alternative evidence. A game menu call
+does not resolve library/ordinary-expression ownership or original int/long spelling.
+
+Direction policy 454C20 is called with the same fighter receiver from complete
+accepted input policy 452F10 / 2815 under that same mode 5 guard. Its four cases
+for byte+530 set DWORD+4E0 to 0/1/-1 or invoke the observed virtual slot+2C.
+Byte+531 controls the subsequent x87 comparisons of float+44 with observed
+readonly 620/660 cells and writes to DWORD+4DC. The menu writes both selector
+fields through its fighter pointer. Only the actual virtual dispatch offset and
+three readonly four-byte scalar cells are observed; no complete vtable, original
+allocation, private class declaration or simplified NaN semantics is claimed.
+
+Replay `scripts/repo-python scripts/verify-game-switch-policy-origins.py`.
+Manifest `config/game-switch-policy-origin-evidence.json` SHA-256:
+`f72ea7b37b4de087dc4f69dfb6adf3585a86ea66d0f97143b46dd9a1efea5a05`. Ten complete independent accepted native contexts retain 10779
+bytes and four actual member receiver/argument sequences, with all prior switch
+records, hashes, instructions and CFGs checked. Three dedicated authored rows,
+one remapped switch and two direct switches use their own CSVs; all earlier
+902 general authored records and switch registries remain immutable. A structured
+prior paired-record audit found no selected historical snapshots. This batch's
+ownership evidence is the complete custom native game policy and independent
+whole game composition; it introduces no compiler/source comparison or new
+reconstruction body. Existing source, ABI, flags, relocations and exact inputs
+remain unchanged, so unaffected cold source trees and exact units need no rebuild.
+
+Original-state and accepted-state complete native replays pass. All 3017 CI tests
+pass, including 22 new boundary/table/receiver/state/unknown-preservation guards.
+The full earlier 902 authored proof and all eight R065 dispatchers / 19028 with
+75 table entries and both loader literals also pass. Target, project/query
+attestations, bounded canonical readback, exact-input preservation, fresh 219
+triage, progress and whitespace pass. MCP acceptance remains waived. Exactly
+three function/origin rows change, with no extent change. Current totals are 4132
+resolved: 963 authored, 2589 library and 580 compiler; 219 pending and 3169 excluded.
+The original 1311 goal has 1092 classified / 219 left and remains active. Authored
+bytes add 1191 to 1,970,634; exact stays 60 functions / 9883 bytes / 60 units across
+eleven objects, provisional coverage 0.50%. No source/private ABI/mapping/exact
+credit is added.

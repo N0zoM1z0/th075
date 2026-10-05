@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R214. The public
+review cohorts R108 through R215. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,94 +11,97 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,129: 960 authored, 2,589 library and 580 compiler generated.
-There are 222 pending. Candidate count is not authored function count.
+has resolved 4,132: 963 authored, 2,589 library and 580 compiler generated.
+There are 219 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,969,443 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,970,634 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R215 game switch-policy cohort below.
+the bounded R216 Youmu list-construction/erase cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R214; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R215; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R215 complete game switch-policy cohort
+## Next agent objective — R216 complete Youmu list construction and erase cohort
 
-R214 resolves six library entries: public count assign 455C40 / 29, protected
-`_Assign_n` 455CA0 / 108, protected `_Insert_n` 455E40 / 1521, front recovery 456137 / 48,
-back recovery/shared exit 4563F3 / 62 and iterator subscript 456560 / 38. Only insertion
-extent changes, from 1459 to 1521, ending 456430. Recovery entries are source-owned
-interiors of that parent, not independent source functions. Six ledger extents
-sum 1806; four unique policies total 1696. No overlapping byte/exact credit is added.
-Public insert is a complete 37-byte control calling the protected 1521-byte worker.
-Original element types/private declarations remain unknown.
+R215 accepts three authored game switches / 1191 with unchanged extents:
+reaction 444650 / 230, mode-5 options menu 4483F0 / 768 and mode-5 direction policy
+454C20 / 193. Complete guarded CFGs [1,5], [1,26] and [1,10] retain all 15 switch
+targets, the whole 38-byte selector and 98 total table/selector bytes. Tables begin
+immediately after real returns and stay outside code extents. Alignment 0/8/15
+and next full accepted owners 444770 / 219, 448710 / 2766, 454D00 / 79 are preserved.
 
-The whole insertion owner retains normal root 0 and actual source-local recovery
-roots 759/1459, real COFF local definitions and complete 132-byte EH data 6695B8,
-whose actual fields 44/60 reference those same definitions. Front 48 loops pop_front,
-rethrows and jumps to shared exit 456417 inside the full parent. Back 62 loops
-pop_back, rethrows, restores the exception frame and returns with RET 16. Complete
-normal/EH/recovery CFGs and every actual field reproduce unmasked. Alignment 15 at
-456431–45643F is CC, excluded from the extent; next whole push_front 456440 / 226
-preserves its prior records. All old R111 erase-range/begin/end extents remain intact.
+Reaction state is the third argument's signed word+60 minus 50, bounded by 37.
+Actual case effects include animation changes, multiplying floats+94/+98 by 1.25
+and custom word+3C8 changes, followed by sound 0x19/effect 0x36. Independent whole
+animation reset 52, sound 142, midpoint-effect 96 and two battle parents 1982/1877
+retain the actual three-argument pushes and RET 12. Original enum/type names stay
+provisional. Full pause handler 4461D0 / 751 and fighter input 452F10 / 2815 establish
+the same mode 5 guard through global 6714B4 and original member receivers. Menu
+option fields 52C/52D/52F/52E/530/531 use observed moduli 6/10/4/2/4/2; cursor+118
+wraps over 9 rows. It updates game receiver+44/+48 state. Direction reads the same
+530/531 options, sets DWORD+4E0 or calls observed virtual slot+2C, and compares
+float+44 against readonly 620/660 before writing DWORD+4DC. No full vtable, private
+layout, original option/button names or NaN simplification is claimed.
 
-Replay `scripts/repo-python scripts/verify-byte-deque-count-origins.py`;
-manifest SHA `13c86296cc9f4b42fd09474f9dabcef5c9fba40b855a1150eb73f24c5d8b20f3`.
-Complete cold graph: 70 code/data owners / 5500, all 178 fields and 62 CFGs;
-full 121 ordinary emissions / 8145, 27 actual original
-includes and complete readonly layout 16 [1,20,8,8]. The real weak length_error
-fallback, complete exception data and independently source-owned shared definitions
-are retained. Full R213 and its existing retained chain plus the complete R111
-proof replay cold before rebuilding the current natural count controls. Structured
-historical paired-record audit found no selected old snapshots. Preserve all
-prior manifests, evidence, authored records, private declaration unknowns and
-exact inputs; new source compatibility establishes no original element identity.
+Replay `scripts/repo-python scripts/verify-game-switch-policy-origins.py`;
+manifest SHA `f72ea7b37b4de087dc4f69dfb6adf3585a86ea66d0f97143b46dd9a1efea5a05`. Ten complete accepted native
+contexts / 10779 retain four actual receiver/argument sequences and all original
+body/CFG/guarded-table records. Three authored rows, one remapped switch and two
+direct switches use their own CSVs. Earlier 902 general authored rows and old switch
+registries remain immutable. No selected historical paired snapshot was found.
+Protected R163 abs wrapper 438A60 / 17 and worker 641FB8 / 11 remain unknown, with
+literal old annotations/evidence and complete native bodies checked. Game calls
+do not resolve original library/expression ownership or int/long spelling.
 
-All 2995 CI tests pass, including 21 new guards. Both original/accepted complete
-cold replays, target, project/query, full earlier authored proof, exact preservation,
-bounded readback, fresh 222 triage, progress and whitespace pass. MCP acceptance
-remains waived. The original 1311 goal has 1089 classified / 222 left and remains
-active. Current 4129 resolved = 960 authored + 2589 library + 580 compiler; 3169 excluded.
-Exact stays 60 / 9883 bytes / 60 units across eleven objects; authored denominator
-1,969,443 and provisional exact coverage 0.50%. The user's push succeeded through
-f8e9b79; later commits remain local unless independently pushed.
+All 3017 CI tests pass, including 22 new guards. Original/accepted native states,
+all earlier 902 authored bodies and eight complete R065 dispatchers 19028/75 table
+entries/both loader literals, target, project/query, exact preservation, bounded
+readback, fresh 219 triage, progress and whitespace pass. MCP acceptance remains
+waived. Unaffected compiler/source trees are unchanged; this batch adds only
+native game policy evidence, so no redundant cold tree or exact rebuild is needed.
+Current 4132 resolved = 963 authored + 2589 library + 580 compiler; 219 pending, 3169 excluded.
+The original 1311 goal has 1092 classified / 219 left and remains active. Authored
+denominator 1,970,634; exact 60 / 9883 bytes / 60 units/eleven objects, provisional 0.50%.
+The user's push succeeded through f8e9b79; later commits remain local.
 
-Next inspect three game-policy candidates / 1191 provisional bytes:
+Next reconcile nine currently unknown entries / 691 provisional bytes:
 
 | Candidate | Current bytes | Complete evidence to reconcile |
 | --- | ---: | --- |
-| `0x00444650` |230| authored callees 40FAC0, 4079C0, 4424E0 and two whole reviewed game parents; indirect switch at +48 through table 444736 after RET 12 |
-| `0x004483F0` |768| indirect switch at +99 through table 4486F0 after RET; unresolved callee 438A60 and repeated authored 4079C0 calls; parent 4461D0 is reviewed |
-| `0x00454C20` |193| indirect switch at +31 through table 454CE1 after RET; reviewed parent 452F10; game virtual dispatch/state stores require complete context |
+| `0x00531C00` |56| list-shaped constructor used by full accepted Youmu initializer 52CEE0; calls by-value allocator 14, allocator conversion 53 and head-node worker 531F30 |
+| `0x00531C80` |40| begin 531DA0 and two-argument worker 531E70; test whole original public pop/erase route rather than a guessed name |
+| `0x00531D80` / `0x00531D90` |8 / 11| tiny next/previous link-field alternatives reached by independently accepted clear/begin/insert/Tidy; require typed source ownership, not shape alone |
+| `0x00531E70` |186| iterator/range-node erase-shaped policy; closes through link helpers, allocator destroy and deallocate; compare complete public/protected original source |
+| `0x00531F30` |143| provisional head-node allocation function ends in a direct jump to 531FF4 within following recovery fragment; reconcile full normal/EH source extent |
+| `0x00531FBF` |80| rollback/rethrow followed by shared normal exception-frame epilogue/RET; likely interior of complete 223-byte head worker, not a standalone source function |
+| `0x00532080` |53| allocator-conversion/init family with actual constructors/accessors; generic element/allocator declarations remain unknown |
+| `0x005320C0` |14| by-value allocator-shaped control in constructor; test complete original allocator source and preserve missing declarations |
 
-Fresh `.analysis/origin-scan/r214-triage.json` records all 222 remaining candidates.
-Private `.analysis/r215-switch-shortlist.json` freezes the three current rows and
-scanner context; `.analysis/r215-native-preliminary.json` retains full native
-bodies/instructions. `.analysis/r215-switch-preliminary.json` retains all three
-complete tables, the 38-byte selector for 444650 and trailing alignment observations.
-Diagnostic `.analysis/r215-cfg-preliminary.json` records complete guarded CFGs
-[1,5], [1,26] and [1,10] through the existing native switch verifier; no origin
-has been accepted. Each provisional span ends with a real return and all direct
-branches remain within it. The scanner's unresolved CFG appears to arise from
-an unrecorded indirect jump table rather than a cropped direct shared tail. This
-is preliminary observation only: reconcile the full guard, selector mapping,
-all switch entries, data/code boundaries and alignment before accepting; do not
-extend or crop merely to make verification pass. Follow the established complete
-native authored-proof workflow with independent full game receiver contexts and
-switch evidence. Do not classify an unknown callee just because a game parent
-calls it. Protect earlier short constructor/destructor ambiguities, coordinate
-455770 / 111 and all retained declaration controls. Continue the entire remaining
-origin review after this bounded cohort; no exact or later-phase expansion.
+Private `.analysis/r216-list-preliminary.json` freezes full current rows, hashes,
+calls and decoded provisional bodies around this family. Existing library evidence
+includes destructor 531C40 / 19, size 531C60 / 17, begin 531DA0 / 42, end 531DD0 / 31,
+insert 531DF0 / 115, clear 531CE0 / 153, Tidy 532010 / 100, value-node Buynode 532110 / 186
+and allocator destroy 5320F0 / 25/deallocate 5320D0 / 25. Preserve every accepted extent
+and old ownership record. The 143+80 head/recovery inventory reaches normal RET at
+53200E and next Tidy 532010; reconcile full 223-byte source, actual EH local definition,
+metadata and alignment before any new extent/owner acceptance. Do not double-count
+the overlapping recovery, infer an original element type or classify a generic
+private element lifetime merely because a game initializer calls it. Reopen the
+original deque/list allocator headers and existing full list proofs, freeze the
+complete natural controls, audit historical snapshots, and close every genuine
+COFF field from independently owned definitions. Continue the remaining origin
+review after this bounded cohort; no later phase or exact expansion is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

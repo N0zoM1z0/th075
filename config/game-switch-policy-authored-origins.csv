@@ -1,0 +1,4 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x00444650,230,52166d74d7bcbefea9725e915f539a33d25b59e6f607b4f4d10a8bc7dace181a,BattleState::ApplyReactionModeAt00444650 [provisional],1,5,0,R215
+0x004483F0,768,3660ae583e80f9f5226c58bbfaafacbe24492e9c1cdb4b420b9167f931fef88a,BattleScene::HandleMode5OptionsAt004483F0 [provisional],1,26,0,R215
+0x00454C20,193,472903565f3878afe463d107ae1350fd879aac1ebb9a7c870568a15b120ce915,FighterState::ApplyMode5DirectionAt00454C20 [provisional],1,10,0,R215
