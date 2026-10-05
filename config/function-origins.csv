@@ -398,7 +398,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040DD00,library,VC7STL,exclude,complete-vc7-texture-vector-access-size-erase-and-whole-game-context,R173
 0x0040DD20,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040DD60,library,VC7STL,exclude,complete-vc7-texture-vector-access-size-erase-and-whole-game-context,R173
-0x0040DDA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040DDA0,library,VC71STL,exclude,complete-original-vector-count-assignment-scoped-source-and-independent-game-receivers,R223
 0x0040DDC0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040DE30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0040DE50,library,vc7-stl-vector-helpers,exclude,high,R090
@@ -410,7 +410,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040DF60,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040DFB0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
 0x0040DFD0,library,VC7STL,exclude,complete-vc7-texture-vector-access-size-erase-and-whole-game-context,R173
-0x0040E000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040E000,library,VC71STL,exclude,complete-original-vector-count-assignment-scoped-source-and-independent-game-receivers,R223
 0x0040E0A0,library,vc7-stl-vector-storage,exclude,high,R089
 0x0040E120,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0040E150,library,vc7-stl-vector-storage,exclude,high,R089
@@ -2457,7 +2457,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F7F70,library,vc7-stl-vector-helpers,exclude,high,R090
 0x005F7FA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F7FC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F8000,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8000,library,VC71STL,exclude,complete-original-vector-count-assignment-scoped-source-and-independent-game-receivers,R223
 0x005F8020,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F8040,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x005F8090,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077
@@ -2479,7 +2479,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8420,library,VC7STL,exclude,complete-source-typed-game-dependency,R110
 0x005F8460,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005F8490,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
-0x005F84B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F84B0,library,VC71STL,exclude,complete-original-vector-count-assignment-scoped-source-and-independent-game-receivers,R223
 0x005F8560,library,vc7-stl-vector-storage,exclude,high,R089
 0x005F85E0,library,vc7-stl-vector-storage,exclude,high,R089
 0x005F8650,library,vc7-stl-vector-helpers,exclude,high,R090
@@ -2508,7 +2508,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8E70,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F8EA0,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F8EC0,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
-0x005F8EF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8EF0,library,VC71STL,exclude,complete-original-vector-count-assignment-scoped-source-and-independent-game-receivers,R223
 0x005F8F10,library,vc7-stl-vector-helpers,exclude,high,R090
 0x005F8F30,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005F8F60,library,VC7STL,exclude,complete-vc7-template-family,R032

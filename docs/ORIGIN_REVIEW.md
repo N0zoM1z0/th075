@@ -13966,3 +13966,66 @@ progress and whitespace pass. Current4156 resolved =971 authored+2605 library+
 60 units across eleven objects and provisional0.50% stay unchanged. One complete
 Web MCP acceptance remains required after the full remaining review finishes;
 intermediate cohorts continue locally. No later phase or exact expansion is added.
+
+## R223 — complete vector count-assignment graphs and independent receivers
+
+R223 resolves five library origins /414 with every original extent unchanged:
+`0x0040E000` /158 and `0x005F84B0` /167 are the original vector `_Assign_n`
+policy; `0x0040DDA0` /29 and `0x005F8000` /29 are its public count/value wrappers;
+`0x005F8EF0` /31 is the original end endpoint. The genuine original vector header
+614–617 and762–767 defines public assign forwarding to private `_Assign_n`,
+copying a complete temporary, erasing begin/end, inserting count copies at begin,
+and destroying the temporary. The source bodies and actual six ordered worker
+calls reproduce through whole source-owned descendants. Native44-byte copying
+uses REP MOVSD count11; native16-byte copying preserves all four dwords. Both
+workers keep their complete exception scaffold and RET8. No prefix is accepted.
+
+Two original scoped graphs retain122 complete code/data carriers7023, all296
+actual fields and100 normal/EH/unwind CFGs. Complete manual member alternatives
+retain120 carriers6965,294 fields and98 CFGs, including their complete cleanup
+code and FuncInfo/unwind data. All242 scoped carriers13988/every590 fields/198
+CFGs reproduce with no masked bytes. These scopes overlap physical target
+owners; their bytes do not add duplicate function or exact credit. Defining
+COFF sections, genuine local indices, AUX/debug-line records, weak fallback,
+source-owned exception/runtime providers, absolute original FS definition and
+actual image permissions are checked independently of field destination proposals.
+
+Whole previously authored parents40B000 /261,40B110 /184,40B1D0 /128 and5F71F0
+/1722 retain all2295 bytes, complete instructions/CFGs and four actual argument/
+receiver windows at40B06F,40B18A,40B212 and5F73D1. The first three pass the incoming
+count and full local value to receiver+8. The catalog loader obtains an inner
+receiver through the existing outer container operation before calling assign.
+The actual scoped original public/private policy and this complete independent
+container context support a library-family inference. Whole byte-equal manual
+alternatives remain possible; absence of an original replacement is not proved.
+A game caller, known child or short getter shape alone does not grant ownership.
+
+Every replay cold-reopens complete original R150/R149/R119 exception/runtime
+source evidence, then cold-builds the new natural probe using unchanged original
+R208 complete generic payload definitions. All366 ordinary sections22274 and28
+actual original includes remain frozen. The whole merged readonly carrier64
+retains all16 dwords, including the prior40 bytes; it is never cropped at the
+new layout symbol's interior offset. Whole implicit value-copy controls22/33
+have no erase/insert/lifetime policy. Generic44/16 values and16-byte containers
+are observations, not original private declarations or complete game layouts.
+
+Four independently unresolved private lifetime/destroy policies remain unknown:
+40D8E0 /19,4588B0 /43,40F9F0 /15 and5FAAD0 /15. Compatible complete generic cleanup
+and actual original game disposal41A380 /75 do not identify explicit/implicit
+original lifetime declarations. All43 literal historical unknown snapshots stay
+immutable; only evidence/notes differ between some older reviewed snapshots and
+the final pre-transition rows. All136 scoped canonical rows are checked, together
+with external alignment and unrelated protected SDK/game ambiguities.
+
+Replay `scripts/repo-python scripts/verify-vector-count-assignment-origins.py`;
+manifest SHA-256 `f410ceed8099574af4d9fe71546474c3aecfc5a2d3fbf76ac942f817046419c5`. Original-state and accepted-state complete
+cold replays pass. All3148 CI tests pass, including17 new complete extent/source/
+EH/data/weak/receiver/history/lifetime/ABI/exact guards. Earlier902 authored bodies,
+target/tracking, local Ghidra target/query markers, exact-input preservation,
+exactly-five-row acceptance/readback, coherent fresh190 triage, progress and
+whitespace pass. Current4161 resolved =971 authored+2610 library+580 compiler;
+190 pending and3190 excluded. Original1311 goal has1121 classified /190 left and
+remains active. Authored denominator1,971,032; exact60 /9883 bytes /60 units across
+eleven objects and provisional0.50% stay unchanged. Final complete Web MCP
+acceptance remains required after all remaining review finishes. No source,
+private ABI, mapping, exact expansion or later project phase is added.
