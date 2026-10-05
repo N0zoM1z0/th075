@@ -13703,3 +13703,78 @@ remains waived. Current4147 resolved =964 authored+2603 library+580 compiler;
 204 pending and3183 excluded. Original1311 goal has1107 classified /204 left and
 remains active. Authored denominator1,970,691; exact60 functions /9883 bytes /
 60 units across eleven objects and provisional0.50% remain unchanged.
+
+## R219 — original string exception providers and independent SDK callers
+
+R219 resolves two library entries /128 ledger bytes: `0x00654ACE` /64 as
+`std::_String_base::_Xran`, and `0x00654B0E` /64 as `_Xlen`. Both extents stay
+unchanged. This is origin review; no reconstructed source, private ABI, mapping
+or exact credit is added. The original supplied SDK `crt/src/string.cpp` implements
+these two external provider declarations using `_THROW(out_of_range, "invalid
+string position")` and `_THROW(length_error, "string too long")`. Active original
+`xstddef`/`yvals` headers select a language throw expression. The public probe
+includes the genuine source; shared tools/source remain read-only.
+
+Original `libcpmt.lib` mt string.obj and `libcp.lib` st string.obj each retain
+32 whole code/data sections /786 bytes and every70 actual relocation fields.
+Whole archive/member hashes, positive storage-class-2/type-32 definitions, full
+64-byte sections, own64-byte primary AUX and complete COFF line records are frozen.
+No archive choice or executable-wide compiler profile is inferred. Every field is
+resolved through actual source-owned sections or independently complete retained
+code winners; native pointer destinations only propose placements. All unmasked
+bytes compare. Full RTTI vtable sections are12 bytes at `0x00667678` and
+`0x0066766C`, with public address points at offset4. Their RTTI prefixes are retained;
+they are not cropped to the8-byte GR- views from earlier public controls.
+
+Both bodies bind real EH registration at `0x006425A4` /31, string constructor
+`0x004053E0` /58, logic_error constructor `0x00404B40` /93 and throwing runtime
+`0x00640C12` /58. Complete literals24/16, ThrowInfo16, catchable arrays16,
+catchable types28, complete type descriptors and RTTI inheritance graph are
+retained. Actual weak COFF AUX/search-characteristics2 for deleting entries bind
+their real strong scalar fallback definitions through independently complete
+cold COMDAT winners. Full original EH sections at `0x00656CD0` /18 and
+`0x00656CE2` /18 retain cleanup/handler roots [0,8], entire36-byte state data and
+all fields. Existing library/compiler runtime and EH decisions remain unchanged.
+
+The terminal call is at provider offset58, with real REL32 field59 referring to
+`__CxxThrowException@8`. Original source and complete retained throwing runtime
+establish the throw operation; a name alone is not a nonreturn proof. Complete
+64-byte bodies contain17 instructions:16 on the normal prefix through throw,
+then the original one-byte INT3 at63. There is no normal RET. The suffix is
+compared as a source byte, never dropped or replaced by a fabricated return.
+
+Ordinary member functions throwing the same two standard exceptions reproduce
+both complete provider bodies and their entire22-section /584-byte /52-field
+GR- graphs. This remains an explicit alternative: byte shape, exception strings,
+RTTI or successful compilation alone do not prove origin. The distinguishing
+context is the independently accepted whole original SDK string parents:
+assign `0x00404D30` /178 calls Xran at `0x00404D49`; erase `0x00404EF0` /141 calls
+Xran at `0x00404F07`; `_Grow` `0x00405010` /151 calls Xlen at `0x00405029`. Their
+actual source REL32 indices reference the original external `_String_base`
+declarations. Every parent byte, CFG and dependency field is cold-replayed.
+Library classification is this contextual provider-source inference, not proof
+of physical archive selection or an original user-defined replacement's absence.
+Names and private layouts remain provisional.
+
+Three serial cold builds retain the original R216105-section /5126-byte parent
+closure, the original R150 complete out_of_range code/data/EH source and the new
+original-provider/ordinary probe. The new probe retains119 ordinary sections
+/2712 bytes, all42 original include hashes and complete readonly observations
+[1,1,28,40,40] for the public base, ordinary control, string and exception objects.
+These are public SDK observations, not a private game layout. All124 scoped
+canonical owners/interiors are frozen; eight literal historical unknown snapshots
+remain immutable. Old source manifests and verifiers are unchanged; the new proof
+checks current canonical entries without rewriting their earlier snapshots.
+
+Replay `scripts/repo-python scripts/verify-string-exception-origins.py`.
+Manifest `config/string-exception-origin-evidence.json` SHA-256:
+`3ca89a95bdb3fff016ed80a9c7f4d0caea42023d8fcabb1766192af56c1318ff`. Original-state and accepted-state complete cold replays pass.
+All3080 CI tests pass, including17 new source/field/weak/RTTI-prefix/full-extent/
+nonreturn/caller/ordinary-alternative guards. Earlier902 authored body extents,
+target/tracking, local Ghidra identity/query markers, exact-input preservation,
+exactly-two-row readback, coherent fresh202 triage, progress and whitespace pass.
+Public/Web MCP acceptance remains waived. Current4149 resolved =964 authored+
+2605 library+580 compiler;202 pending and3185 excluded. Original1311 goal has1109
+classified /202 left and remains active. Authored denominator1,970,691 and exact
+60 functions /9883 bytes /60 units across eleven objects, provisional0.50%, stay
+unchanged. No later project phase or exact expansion is authorized.

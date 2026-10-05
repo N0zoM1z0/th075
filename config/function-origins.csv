@@ -3925,8 +3925,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0065492F,library,VC71CRT,exclude,interior-cleanup-in-complete-vendor-stream-buffer-primary,R133
 0x00654953,library,VC71CRT,exclude,complete-vendor-stream-finalization-path-api-code-layout-abi-provenance,R140
 0x0065497E,library,VC71CRT,exclude,complete-vendor-time-zone-calendar-environment-code-data-api-eh-abi-provenance,R131
-0x00654ACE,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00654B0E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00654ACE,library,VC71STL,exclude,complete-original-string-provider-source-and-independent-sdk-callers,R219
+0x00654B0E,library,VC71STL,exclude,complete-original-string-provider-source-and-independent-sdk-callers,R219
 0x00654B54,compiler,PEImportThunk,exclude,complete-PE-import-thunk,R030
 0x00654D00,compiler,VC7EH,exclude,compiler-metadata-backed,R020
 0x00654D20,compiler,VC7EH,exclude,compiler-metadata-backed,R020
