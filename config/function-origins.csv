@@ -1923,12 +1923,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00458710,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00458740,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00458770,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00458790,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00458790,authored,GameInitialization,authored,complete-target-explicit-allocation-and-word-initialization-with-whole-default-source-discrimination,R211
 0x004587E0,authored,GameInitialization,authored,complete-target-explicit-initialization-policy-with-whole-default-source-discrimination,R210
 0x00458880,authored,GameInitialization,authored,complete-target-explicit-initialization-policy-with-whole-default-source-discrimination,R210
 0x004588B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x004588E0,authored,GameLifetime,authored,complete-target-nested-clear-policy-with-whole-explicit-implicit-source-discrimination,R209
-0x00458960,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00458960,authored,GameInitialization,authored,complete-target-explicit-allocation-and-word-initialization-with-whole-default-source-discrimination,R211
 0x004589C0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x004589F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458A10,library,vc7-stl-vector-operations,exclude,high,R091
@@ -1936,7 +1936,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00458AA0,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00458AD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458AF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00458B30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00458B30,library,VC71STL,exclude,complete-original-count-assignment-policy-and-typed-public-wrapper-source-graph,R211
 0x00458B50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00458B70,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00458BA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1951,7 +1951,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00458E10,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x00458E40,library,vc7-stl-vector-helpers,exclude,high,R090
 0x00458E60,library,vc7-stl-vector-helpers,exclude,high,R090
-0x00458E70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00458E70,library,VC71STL,exclude,complete-original-count-assignment-policy-and-typed-public-wrapper-source-graph,R211
 0x00458F40,library,vc7-stl-vector-storage,exclude,high,R089
 0x00458FC0,library,vc7-stl-vector-storage,exclude,high,R089
 0x00459030,library,vc7-stl-vector-helpers,exclude,high,R090

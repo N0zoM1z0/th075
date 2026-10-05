@@ -10167,3 +10167,71 @@ The checkpoint is 4,105 resolved: 952 authored, 2,573 library and 580 compiler;
 246 left and remains active. Reviewed authored bytes add 192 to 1,968,763. Exact
 stays 60 functions / 9,883 bytes / 60 units across eleven objects, 0.50% of the
 provisional authored set. No source/private ABI/mapping/exact credit is added.
+
+## R211 — neighboring allocation, explicit word initialization and count assignment
+
+R211 resolves four entries with all original complete extents preserved: two
+authored policies / 163 and two library policies / 224. The 70-byte policy at
+`0x00458790` clears byte+12, conditionally scalar-news 36 bytes through pointer+8,
+then zeroes all 36 bytes. The 93-byte initializer at `0x00458960` constructs its
+vector, explicitly clears it, then zeroes words+16/+18. Whole default 22 and
+member-zero 40 constructors lack the clear and the resulting exception scaffold.
+Original private types, member names and allocation outcomes remain unknown.
+
+The 195-byte body at `0x00458E70` is the original public `_Assign_n` policy:
+copy a complete nested 116 value, erase begin/end, insert count copies at begin,
+then destroy the temporary. The full public `assign(count, value)` parent at
+`0x00458B30` / 29 binds this independently complete worker and returns with RET 8.
+The initial single-insertion hypothesis was rejected: the original complete
+single-insert control is 114, with different policy/fields. Neither a cropped
+source prefix nor inferred names supports these accepted origins.
+
+Replay `scripts/repo-python scripts/verify-neighbor-policy-origins.py`.
+Manifest `config/neighbor-policy-origin-evidence.json` SHA-256:
+`fc61cbd578dd4a0a44dd6a724d34502520888a19e3064ec212a05e656781decf`. Separate two-row
+`config/neighbor-policy-authored-origins.csv` retains complete authored target
+bodies, instructions, ordered calls and CFGs. All earlier 902 general records,
+additional authored evidence, declarations and exact inputs remain unchanged.
+
+Three scoped complete graphs supply 170 code/data carriers / 9,581, all 402 actual
+fields and 143 full normal/EH/unwind CFGs. The groups are 1/50/119 carriers,
+70/1861/7650 bytes and 2/95/305 fields. Shared physical owners may occur in more
+than one scoped graph; these counts do not add duplicate function/byte credit.
+All definitions, AUX/debug-line records, real local indices, whole EH/data
+owners, actual permissions and unmasked target bytes reproduce. Fields bind
+independently owned full source definitions, not native destination observations.
+The actual standalone weak reference/fallback is required only in the two
+groups that use it; the allocation-only group does not borrow exception owners.
+
+The complete natural generic source includes unchanged pinned R209/R208
+fixtures and emits 454 ordinary sections / 28,704 with 29 actual includes. The
+full readonly observation carrier 96 contains prior 64 plus new 32; it is never
+cropped at the new symbol's interior address point. The complete default 22,
+member-zero 40 and single-insert 114 controls retain their own definitions, AUX,
+all fields, bodies and instructions. Generic sizeof/offset observations do not
+recover original private inheritance, complete layouts or declarations.
+
+Each replay runs complete retained R210/R209/R208/R150 cold proofs. Original
+CRT memset 96 is reopened with its own complete AUX/body/CFG; scalar-new 14 is
+independently retained through the original source-defined CRT graph. Complete
+reviewed game parents 457660/3696 and 5F71F0/1722 retain all 5,418 bytes and three
+actual calls at 457AEB/457875/5F7547. No target bytes, assembly, arbitrary padding
+or conditional reconstruction bodies are added to source.
+
+Thirteen whole private/short controls remain unknown: 458B50/19,458AD0/19,
+45B6B0/15,458A80/19,4589F0/19,4588B0/43,45B630/5,4591E0/417,459890/31,
+459C60/31,459C40/31,45AAE0/368 and 45B6F0/27. Complete generic emission and
+known callers do not settle original explicit/implicit declarations. A recursive
+prior JSON selected-record audit finds no older protected snapshot for these
+four newly accepted entries. All prior manifests and verifiers are preserved.
+
+Original-state and accepted-state cold replays pass. All 2,902 CI tests pass,
+including 33 new boundary/provenance/dispatch/ownership guards. Target,
+project/query markers, earlier authored proof, exact preservation, bounded
+readback, fresh 242 triage, progress and whitespace pass. Public MCP acceptance
+stays waived. Exactly four function/origin rows change, with no extent change.
+The checkpoint is 4,109 resolved: 954 authored, 2,575 library and 580 compiler;
+242 pending and 3,155 excluded. The original 1,311 goal has 1,069 classified / 242
+left and remains active. Authored bytes add 163 to 1,968,926; exact stays 60
+functions / 9,883 bytes / 60 units across eleven objects, 0.50% of the provisional
+set. No source/private ABI/mapping/exact credit is added.
