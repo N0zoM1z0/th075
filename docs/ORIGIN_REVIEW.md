@@ -11854,3 +11854,116 @@ Next reconcile three graphics SDK gateways /326 provisional bytes at0x00604C82,
 independent accepted Graphics parents. The private structural discovery is
 only a shortlist; every real field must be independently bound before an
 unmasked whole comparison can support any new origin decision.
+
+## R195 — complete graphics SDK gateways, shader parser and texture policy
+
+R195 accepts eighteen library candidates /9276 code bytes. Exactly eighteen
+function/origin row pairs change from b2a1750; every provisional code extent
+stays fixed. Their complete original source sections total9643 bytes, including
+367 inline parser jump/selector bytes outside the independently derived code
+extents. These tables are compared in full, never masked away or truncated.
+
+| Entry | Code bytes | Original SDK source association |
+| --- | ---: | --- |
+| `0x00604C82` | 100 | `_D3DXAssembleShader@24` |
+| `0x0060508B` | 124 | `_D3DXCreateRenderToSurface@28` |
+| `0x00605B61` | 102 | `_D3DXCreateTexture@32` |
+| `0x0060E599` | 1219 | `?Assemble@CD3DXAssembler@@QAEJPBXIPBDIKPAPAUID3DXBuffer@@22@Z` |
+| `0x00605AE8` | 40 | `_D3DXCheckTextureRequirements@28` |
+| `0x0060E0E0` | 1013 | `?d3dxasm_parse@@YAHXZ` |
+| `0x0060C263` | 310 | `?Error@CD3DXAssembler@@QAAXPADZZ` |
+| `0x0061FD22` | 232 | `?GenerateStringBuffer@CD3DXSzStack@@QAEJPAPAUID3DXBuffer@@@Z` |
+| `0x006057BE` | 810 | `?CheckTextureRequirements@@YAJPAUIDirect3DDevice8@@PAI111KPAW4_D3DFORMAT@@W4_D3DPOOL@@W4_D3DRESOURCETYPE@@@Z` |
+| `0x0060D291` | 1304 | `?Token@CD3DXAssembler@@QAEHXZ` |
+| `0x0060D7A9` | 2188 | `?Production@CD3DXAssembler@@QAEXI@Z` |
+| `0x006051B8` | 36 | `?D3DXGetFormatInfo@@YAPBU_D3DXFORMAT_INFO@@W4_D3DFORMAT@@@Z` |
+| `0x006052BF` | 226 | `?D3DXFindClosestDeviceFormat@@YA?AW4_D3DFORMAT@@PAUIDirect3DDevice8@@KW4_D3DRESOURCETYPE@@PBU_D3DXFORMAT_INFO@@@Z` |
+| `0x0060CF9B` | 169 | `?SetConstant@CD3DXAssembler@@QAEXKPAUD3DXVECTOR4@@@Z` |
+| `0x0060CAB0` | 169 | `?DecodeMask@CD3DXAssembler@@QAEKPAD@Z` |
+| `0x0060CB59` | 161 | `?DecodeSwizzle@CD3DXAssembler@@QAEKPAD@Z` |
+| `0x0060CBFA` | 929 | `?DecodeRegister@CD3DXAssembler@@QAEKPADKH@Z` |
+| `0x0060EB24` | 144 | `?D3DXDebugMute@@YAXH@Z` |
+
+**Original source and target observations.** The source graph reopens the pinned
+d3dx8.lib, original member names/offsets, full section/AUX/definition metadata,
+and every real relocation. Thirty complete code sections /10340 bytes, sixty-six
+initialized source data sections /4902 bytes and three complete BSS sections
+/3044 bytes retain all bytes, actual source definitions and PE permissions.
+These are source-carrier comparison totals, not claims of disjoint native
+coverage. All511 genuine fields bind through independently owned complete
+source sections, prior accepted anchors, real PE imports or the original
+absolute CRT __except_list definition. FS displacement0 is not fabricated
+PE data. The full shader parser tables and its original mutable state are
+preserved, alongside the full format table1588 and its genuine end-pointer.
+No private FORMAT_INFO or assembler object layout is declared or instantiated.
+
+AssembleShader100 calls original assembler constructor169, Assemble1219 and
+destructor143. The substantive library policy, tokenizer1304, error reporting310,
+production2188, parser1013, register/mask/swizzle decoders929/169/161 and constant
+policy169 have complete source-defined call/data graphs. Their normal returns,
+shared branches and generated EH cleanup/resume roots are reconciled. Four
+whole EH code carriers /240 bytes retain fifteen already accepted interior
+compiler candidates unchanged; no duplicate compiler credit is added.
+The parser has a guarded EAX0..48 table49 /196 bytes. Production has a guarded
+EAX0..46 byte selector47 and full table31 /124 bytes:171 bytes together. CFG
+traversal starts at the actual function entry, discovers every switch case,
+and verifies every decoded instruction; table labels are not invented roots.
+
+CreateRenderToSurface124 retains argument validation, allocation54, original
+constructor39, Init79, deleting wrapper28, failure cleanup and output publication.
+CreateTexture102 and the public requirements wrapper40 retain complete standard
+COM calls and the full internal requirements810, format lookup36 and closest-
+device-format226 policies. The original mutable DebugMute144 preserves its
+actual loader/lookup/cache guards, both callback slots and its indirect tail.
+Assemble's ValidatePixelShader/ValidateVertexShader lookups and calls remain
+dynamic; no final runtime callee or private callback ABI is invented.
+
+Twenty-seven independent full SDK/CRT source anchors are reopened from their
+immutable original evidence, with full original primary extents and unmasked
+fields. The old complete RenderToSurface36 and Buffer28 owning vtables retain
+all actual entries, including previously proved weak fallbacks. Eight actual
+import identities are parsed independently. R184/R185 debug, file and buffer
+source graphs, R186 full interface/GUID graph, R187 explicit destructor controls
+and R190 natural EH evidence replay. Prior library/compiler decisions and all
+original evidence files stay fixed. The five original complete authored game
+parents at0x00401540,0x00401110,0x004017A0,0x00401B20 and0x00401C20 retain their
+whole CFG/body snapshots and actual gateway call sites; they supply context,
+not standalone SDK ownership or new game acceptance.
+
+**Compiler observations and limits.** A cold pinned build of
+`tests/origin_probes/GraphicsSdkGatewayProbe.cpp` supplies eleven whole natural
+public-interface controls /454 bytes and the entire readonly section64, with
+all85 actual header hashes. The original public declarations independently
+confirm four SDK WINAPI entries. Public COM controls observe Device slots
+24/28/32/36/80, Direct3D CheckDeviceFormat40, Buffer pointer/size12/16 and
+IUnknown Release8. The complete48-byte observer records real D3DCAPS8 size212,
+TextureCaps60, texture/volume maxima88/92/96, display-mode size16/format12,
+creation-parameters size16/device-type4 and public resource/capability enums.
+A separate guarded cdecl callback control observes GetProcAddress and an
+indirect call without fixing any runtime destination. Probe flags are explicit
+reproducibility settings; no executable-wide historical compiler profile or
+new target byte equality is inferred from these compiler observations.
+
+Seven original unknown snapshots /405 bytes stay unchanged:assembler
+constructor169/destructor143, RenderToSurface constructor39, Buffer constructor24,
+DwStack destructor14, and the two GetLastError accessors8/8. Whole source
+association and a library caller do not resolve their compiler-versus-explicit
+lifetime or short-body alternatives. No private owner instance, target patch,
+C++ reconstruction, ABI declaration, mapping or exact unit is introduced.
+
+**Acceptance.** Replay `scripts/repo-python scripts/verify-sdk-graphics-origins.py`;
+manifest SHA `922cd31ed6c986c5719c42d8a342b38b4ce0e0a722f11e3b6e42ed48e92a5998`.
+Original-state evidence replay passed before the bounded canonical write, and
+accepted-state full source/callee/data/EH/switch/public-ABI replay passes after
+readback. All2444 public checks pass, including fifteen new guards against
+partial tables/data, omitted/fabricated fields, false lifetime/source/private-
+ABI/exact credit, missing previous interior entries and fixed dynamic callees.
+Target/tracking/project/query attestations, the unchanged exact-input guard,
+902 authored bodies /1956112 bytes, fresh580-pending scan, progress and whitespace
+checks pass. Public MCP acceptance remains waived.
+
+Totals are3771 resolved:949 authored,2246 library and576 compiler;580 pending
+and2822 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal and50%-exact milestone remain unfinished.
+Next reconcile the five R196 cube/volume/render-to-env SDK gateways identified
+in the handoff; their private masked associations are diagnostic only.
