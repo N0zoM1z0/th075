@@ -2843,9 +2843,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00614BC6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00614BCC,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x00614BE2,library,D3DX8SDK,exclude,complete-vendor-body-typed-forward,R039
-0x00614BE7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00614BE7,library,D3DX8,exclude,whole-original-sdk-resource-lock-policy-complete-guid-com-and-extent-proof,R197
 0x00614FFA,library,D3DX8SDK,exclude,complete-vendor-body-typed-forward,R039
-0x00614FFF,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00614FFF,library,D3DX8,exclude,whole-original-sdk-resource-lock-policy-complete-guid-com-and-extent-proof,R197
 0x0061535A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00615373,library,D3DX8SDK,exclude,complete-vendor-body,R010
 0x0061566A,library,D3DX8SDK,exclude,complete-vendor-body,R010

@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R196. The public
+review cohorts R108 through R197. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,777: 949 authored, 2,252 library and 576 compiler generated.
-There are 574 pending. Candidate count is not authored function count.
+has resolved 3,779: 949 authored, 2,254 library and 576 compiler generated.
+There are 572 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,84 +20,98 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R197 software filter/lock/blit/codec prerequisite graph below.
+the bounded R198 software blit/codec prerequisite graph below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R196; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R197; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R197 software filter/lock/blit/codec prerequisites
+## Next agent objective — R198 software blit/codec source closure
 
-R196 accepts six complete library gateways/initializer /545 bytes. Replay
-`scripts/repo-python scripts/verify-sdk-cube-volume-origins.py`; manifest SHA
-`1f6e40980b678af117d09e65999e3506b437e7dec4f81c47630a2eefe3d39ad1`.
-Twelve original code sections1905,five initialized source sections1624,two BSS8,
-all39 genuine fields,three full source anchors and the entire52-byte EnvMap
-table /13 entries replay through the unchanged R195/R186 source evidence.
-New eight whole public controls305 plus readonly28 and85 headers verify five
-WINAPI declarations and Cube88/Volume84/GetDesc16. Actual public EnvMap descriptor
-is16 bytes with four fields; there is no public MipLevels or extra factory
-argument. All2459 CI checks, attestations, exact/authored guards, progress and
-whitespace pass. Exactly six row pairs change from118e93e. Public MCP acceptance
-remains waived; the full origin goal stays active.
+R197 accepts the two complete library Lock policies /1902 bytes. Replay
+`scripts/repo-python scripts/verify-sdk-resource-lock-origins.py`; manifest SHA
+`18b992174e5b4d8c86ef8e3a37a85c3041dadaf363e8e476fa15e09f1d594751`.
+Whole SDK COMDATs at0x00614BE7 /1043 and0x00614FFF /859 contain684 reachable
+instructions,17 public indirect calls and one RET24 each. All11 genuine fields
+resolve to three complete original/public GUID carriers48 and three complete
+accepted anchors271. The two earlier Unlock bodies105/22 also have complete
+CFGs with65 instructions/five indirect calls. The cold original public control
+has15 whole functions354,47 full GUID definitions752 and readonly layout124;
+all63 ordinary sections and84 included headers replay. GetLevelCount is slot52;
+GetSurfaceLevel/GetVolumeLevel are slot60 and are not these observed calls.
 
-Retain EnvMap constructor0x0060B728 /104 as unknown. Preserve original R186
-Face35 at0x0060BDED as non-inventory and End227 at0x0060BE10 as unknown; their
-unresolved-callee-context-only records and whole source/body fingerprints are
-unchanged. No acceptance is claimed for the expanded callback/filter graph.
-Also retain the R195 seven lifetime/getter alternatives405, all earlier
-protected game/CRT/math lifetime/copy/short-body cases, and every exact input.
+Exactly two row pairs change from1b51fe7. Previous manifests, retained unknown
+cases,902 authored bodies /1956112 bytes and every exact input are unchanged.
+Public MCP acceptance remains waived. The full origin goal stays active.
 
-The bounded next work is the complete prerequisite chain behind those callbacks:
+Retain EnvMap constructor0x0060B728 /104 as unknown, original R186 Face35
+at0x0060BDED as non-inventory and End227 at0x0060BE10 as unknown. Their original
+opaque records are unchanged. Also retain R195 seven lifetime/getter
+alternatives405 and all earlier protected game/CRT/math short-body cases.
 
-| Entry | Original complete source bytes | Diagnostic association |
-| --- | ---: | --- |
-| `0x0060BD3C` | 177 | CD3DXRenderToEnvMap::EndScene |
-| `0x0060B7AF` | 1421 | CD3DXRenderToEnvMap::Render |
-| `0x0060A7F4` | 3892 | CD3DXRenderToEnvMap::Setup |
-| `0x0060779F` | 740 | D3DXFilterTexture |
-| `0x006070BD` | 422 | D3DXLoadSurfaceFromSurface |
-| `0x0060731F` | 134 | D3DXLoadVolumeFromVolume |
-| `0x00614BE7` | 1043 | CD3DXLockSurface::Lock |
-| `0x00614FFF` | 859 | CD3DXLockVolume::Lock |
-| `0x00614A33` | 282 | CD3DXBlt::Blt |
-| `0x0061A4CC` | 1884 source section, code/table split to reconcile | CD3DXCodec::Create |
+The next chain remains EndScene177 at0x0060BD3C, Render1421 at0x0060B7AF,
+Setup3892 at0x0060A7F4, D3DXFilterTexture740 at0x0060779F,
+LoadSurfaceFromSurface422 at0x006070BD, LoadVolumeFromVolume134 at0x0060731F,
+CD3DXBlt::Blt282 at0x00614A33 and CD3DXCodec::Create1884 at0x0061A4CC.
+Codec::Create has a provisional1824-byte ledger extent; derive the remaining
+60-byte selector table from the original code/guard/fields, without truncation.
+BltBox2D at0x006131C5 similarly has whole source1059 versus provisional1027.
 
-Private `.analysis/r196-filter-discovery.json` /log reopen actual original SDK
-sections and fields:172 discovered sections /27710 bytes,45 unresolved cases.
-This is structural discovery only and cannot supply origin or exact acceptance.
-Retain the entire chain rather than accepting pointer destinations by name.
-Close external IID_IDirect3DBaseTexture8 and IID_IDirect3DVolumeTexture8 from
-original public SDK GUID definitions and whole natural controls. Parse actual
-COFF weak records for every codec vector-deleting reference; never infer _E/_G
-aliasing by spelling or assume linker folding. Reopen original CRT vector-
-iteration helpers such as ??_L with full own extents and ABI/callee evidence.
-Reconcile all guarded codec selectors/jump tables, EH roots, shared entries,
-alignment and actual COM methods; preserve ambiguous codec constructors and
-base/derived lifetime routines until independent natural controls establish
-ownership. No incomplete SDK owner may be instantiated or embedded.
+Private `.analysis/r198-expanded-discovery.json` /log now discovers371 whole
+source carriers /43875 bytes:233 code41451,135 initialized data2412,three
+BSS12. It parses40 actual same-member COFF storage105/AUX weak references from
+member1376096:every codec _E references its actual _G fallback28. All diagnostic
+source/field-image failures are closed; these observations remain diagnostic
+and do not independently establish relocation ownership or origin acceptance.
 
-The private generic graph over-expands references without respecting all
-existing specialized source carriers. Reuse the unchanged full R192 dispatch
-and R193 math provenance for public slots, C banks and actual math aliases.
-In particular, do not turn mutable slot/weak fallback destinations into one
-fixed global function mapping. R195 provides complete texture requirements,
-format data and debug state, not proof of the unresolved software blit graph.
-Keep earlier manifests immutable; any accepted old-context transition must be
-narrowly frozen and independently read back, without creating hash cycles.
+F2IBegin at0x00615BC6 (member1376096/section40) and0x0062572C
+(member1355416/section19) are actual storage3 static function definitions,
+each35 bytes with the same original source hash. The diagnostic now keys
+these functions by actual owner/section/symbol index, preserving each native
+placement. Do not collapse them into one global name or infer linker folding.
+Original CRT vector-destruction ??_M is96 at0x00641D4A from member370224;
+__ftol is39 at0x006436FC from member2658734 and the immutable R006 runtime CSV.
+Reopen and replay their complete original source/CFG/dependencies independently
+when normalizing acceptance provenance.
 
-Fresh `.analysis/origin-scan/r196-triage.json` has574 pending:58 vendor-or-
-compiler-parent,74 game-parent,378 unresolved-context,57 reconcile-extent,
-six game-callees-and-parent and one game-callees. Continue the full
-remaining review after this graph; no exact reconstruction or later phase is
-authorized. All902 authored bodies /1956112 bytes and60 exact functions /9883
-bytes remain unchanged.
+Private `.analysis/r198-cfg-discovery.json` verifies whole normal reachability
+for229 code carriers, but four carriers need independent extent/flow work:
+
+- Codec::Create1884 at0x0061A4CC contains embedded selector data; derive all
+  guarded entries, source field ownership and EH roots before splitting code.
+- BltBox2D1059 at0x006131C5 needs its guarded eight-entry switch32 and full CFG.
+- Helpers56 at0x00611E9C and47 at0x00611F00 need complete source evidence for
+  their indirect tail destinations, including every runtime alternative.
+
+The diagnostic has located original CRT ??_L in unchanged game-parent evidence:
+whole defining section98 at0x00641C78, versus its provisional74-byte ledger
+extent. Preserve its cleanup/unwind region. The _floor primary AUX body64 at
+0x006439C0 belongs to a complete289-byte source carrier including the225-byte
+SSE entry at0x00643A00; replay the complete immutable floor carrier/dependencies,
+not just the64-byte gateway. Use `config/floor-math-origin-evidence.json` and
+`config/game-parent-policy-origin-evidence.json` as independent prior evidence.
+The private diagnostic anchor reader is not an acceptance verifier.
+All2475 CI checks pass, including16 resource-lock provenance guards; original
+and accepted full replays, target/query attestations, exact/authored guards,
+572-pending fresh triage, progress and whitespace pass.
+
+Reuse R197 original GUID sections from SDK init.obj member333374 and cold
+public header definitions; do not rediscover them from names. Reuse unchanged
+full R192/R193 mutable math dispatch and alias provenance, R195 graphics policy,
+and the accepted R197 Lock bodies. Independently replay all actual weak records,
+complete fallback bodies, guarded switches, EH roots and source-scoped data;
+keep codec constructors/base/derived lifetime methods unknown until ordinary
+independent controls establish ownership. Never instantiate an incomplete SDK
+owner or declare a speculative D3DX_BLT/codec layout. Keep earlier manifests
+immutable and freeze any accepted old-context transition narrowly, avoiding
+hash cycles. Continue the full remaining origin review after this chain; no
+exact reconstruction or subsequent phase is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

@@ -9091,3 +9091,69 @@ and2828 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal and50%-exact milestone are unfinished. The next
 bounded R197 task closes the software filter/lock/blit/codec prerequisite graph,
 retaining all lifetime, weak-reference and callback alternatives until proven.
+
+## R197 — whole resource-lock policies and original public COM/GUID evidence
+
+R197 accepts two library candidates /1902 bytes. Exactly two function/origin
+row pairs change from1b51fe7. The immutable manifest is
+`config/sdk-resource-lock-origin-evidence.json`, SHA
+`18b992174e5b4d8c86ef8e3a37a85c3041dadaf363e8e476fa15e09f1d594751`;
+replay with `scripts/repo-python scripts/verify-sdk-resource-lock-origins.py`.
+
+| Target | Whole source/code bytes | Original symbol |
+| --- | ---: | --- |
+| `0x00614BE7` | 1043 | CD3DXLockSurface::Lock |
+| `0x00614FFF` | 859 | CD3DXLockVolume::Lock |
+
+Both complete function COMDATs come from original SDK member1511402, with
+actual source definitions/AUX metadata, all11 genuine fields and complete
+unmasked source/target equality. All684 instructions are reachable from the
+real entries, including every branch and error path. Each method returns with
+24-byte cleanup. The source symbols identify thiscall methods; no canonical
+ABI or private owner/D3DX_BLT layout is declared or instantiated.
+
+The source graph independently owns three complete16-byte GUID sections from
+SDK init.obj member333374:IID_IDirect3DBaseTexture8 at0x0065C3FC,
+IID_IDirect3DTexture8 at0x0065C3EC and IID_IDirect3DVolumeTexture8 at0x0065C3CC.
+Their full immutable source bytes equal cold INITGUID definitions from the
+original public header and the complete readonly native objects. The three
+accepted source anchors are UnlockSurface105, UnlockVolume22 and DebugMute144;
+all271 original bytes and genuine fields replay independently from existing
+records. Both Unlock bodies additionally have complete reachable CFGs65 and
+five indirect calls. Original R008 hashes retain their source-hash meaning.
+Unchanged R196/R195 full source graphs and ordinary controls replay first.
+
+`tests/origin_probes/ResourceLockProbe.cpp` cold-builds15 whole natural public
+COM controls354 bytes,47 complete GUID definitions752 bytes and readonly
+layout124 bytes. All63 ordinary emitted sections and84 original included
+headers are pinned and compared. Complete public declarations verify
+GetDesc32, GetContainer28, GetDevice12, LockRect/LockBox36,
+UnlockRect/UnlockBox40, GetLevelCount52, CreateImageSurface108, CopyRects112
+and Release8. The actual Lock methods contain17 indirect calls. These are
+public slot/type observations; no concrete runtime COM callee is asserted.
+GetLevelCount52 is distinct from GetSurfaceLevel/GetVolumeLevel60. Structure
+observations include complete32-byte surface/volume descriptors, locked rect8,
+locked box12, RECT16 and D3DBOX24 with original field offsets and enum values.
+All cold public data is retained even when not a selected target GUID.
+
+The larger filter/blit/codec chain remains unresolved. Private expansion parses
+40 actual COFF weak records with same-member scalar-deleting fallback bodies28,
+then reaches371 source carriers /43875 bytes with no diagnostic field-image
+failures. F2IBegin has two actual source-static storage3 owners and placements;
+their scoped identities are preserved. Full CFG discovery succeeds for229
+carriers; Codec::Create, BltBox2D and two indirect-tail helpers still need
+independent whole switch/EH/dispatch evidence. All original anchor dependencies
+must be replayed independently before acceptance. The full CRT ??_L carrier98 and _floor carrier289 must remain
+complete; their short primary/provisional extents cannot replace the retained
+unwind/shared-entry context. These discovery observations receive no origin
+credit. All earlier protected lifetime/getter alternatives remain unchanged.
+
+Original-state and accepted-state complete replays, canonical readback,
+attested local Ghidra/query identity, exact/authored guards, all2475 CI checks
+including16 provenance guards, fresh triage, generated progress and whitespace
+pass before handoff. Public
+MCP acceptance remains waived. Totals are3779 resolved:949 authored,2254
+library and576 compiler;572 pending and2830 excluded. Exact remains60
+functions /9883 bytes /60 units across eleven objects; all902 authored bodies
+/1956112 bytes, source/header/build/match inputs and previous evidence remain
+unchanged. The full origin goal is active; R198 continues the software chain.
