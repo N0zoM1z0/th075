@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R204. The public
+review cohorts R108 through R205. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,047: 949 authored, 2,520 library and 578 compiler generated.
-There are 304 pending. Candidate count is not authored function count.
+has resolved 4,065: 949 authored, 2,538 library and 578 compiler generated.
+There are 286 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,77 +20,73 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R205 vector access and iterator cohort below.
+the bounded R206 vector/list leaf cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R204; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R205; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R205 bounded vector access and iterator context
+## Next agent objective — R206 bounded vector/list leaves
 
-R204 reviews six SDK roots / 503 and accepts the whole 38-byte PNG destruction
-policy at `0x006255C6`. Five original lifetime roots / 465 and the 19-byte base
-codec destructor stay unknown: complete original archive/class association does
-not settle explicit versus implicit outer lifetime generation. Replay
-`scripts/repo-python scripts/verify-sdk-lifetime-alternatives-origins.py`;
+R205 accepts 18 complete original public vector/iterator policies / 615 bytes
+through four whole source graphs. Replay
+`scripts/repo-python scripts/verify-vector-at-policy-origins.py`;
 manifest SHA
-`551ee19c54232b82c06f5c261470dd1b0dc22069a895026c2e108aa2b68b0162`.
+`50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c`.
+Fifty-two source section instances / 1961 retain all 92 actual fields and 44
+complete normal/EH CFGs. The two stride4 groups use separate actual native
+owners, even where source symbols coincide. Full EH18/data36 carriers preserve
+prior R022 unwind8 rows. Three shared code owners / 118 and throw-type data16
+retain literal R150 evidence; two actual CRT throw/frame helpers / 112 and the
+original absolute definition reopen complete original source. Actual `_Xran` /
+out_of_range routes must not inherit historical generic `_Xlen` meaning.
 
-Seventeen whole source sections / 762 retain all 54 actual fields, twelve full
-CFGs, seventeen complete anchors / 3098 with 70 fields, two prior complete
-render-interface vtables / 88 and three real weak vector-to-scalar deleting
-fallbacks. Full 18-byte EH carriers retain unchanged eight-byte R022 unwind
-rows. Original 28-byte R038 wrapper rows stay compiler-owned; the YUV wrapper
-has no inventory entry and receives no function credit.
+All 130 ordinary cold sections / 5548, 27 original headers and full generic
+layout36 remain. Four full wrong-stride size alternatives and four const at70 /
+dereference16 routes are retained; actual mutable dereference19 calls its whole
+const dependency. Original element types remain unknown. COFF debug line file
+pointers are validated against complete own line tables and retained relatively;
+no source/native bytes, actual fields, function AUX sizes or symbol indices are
+masked. Original/accepted replay, full retained R150 regression, prior snapshot
+audit, canonical readback, target/project/query, authored/exact guards, fresh
+286-pending triage, generated progress and whitespace pass. All 2730 CI tests
+pass, including 34 new guards. Prior manifests/verifiers and all exact inputs
+remain unchanged. Public MCP acceptance stays waived.
 
-Three complete generic explicit/implicit outer-owner pairs cold-emit equal
-23-/10-/21-byte unlinked bodies. The constructor's actual vtable field symbols
-remain distinct; no fields are masked or generic controls mapped to private
-owners. All 27 ordinary sections / 470, 24 complete emitted functions / 430,
-eight original public headers, two generic vtables and full generic layout / 32
-remain. Direct/conditional cleanup is not alone proof of an explicit outer
-SDK destructor. Preserve all six unknown alternatives / 484 and original
-member/layout unknowns; the controls do not reproduce complete target policies.
+The original 1311 goal has 1025 resolved / 286 left and remains active. Exact
+remains 60 functions / 9883 bytes / 60 units across eleven objects. R204's six
+SDK lifetime alternatives / 484 remain unknown; complete original SDK ownership
+does not distinguish implicit versus explicit outer lifetime generation.
 
-Original/accepted full replay, full R203 regression, actual transition's prior
-snapshot audit, canonical readback, target/project/query attestations, authored/
-exact guards, 304-pending triage, progress and whitespace pass. All 2696 CI tests
-pass, including 30 new evidence guards. Earlier manifests and verifiers remain
-unchanged. Public MCP acceptance stays waived. The original 1311 goal has
-1007 resolved / 304 left and remains active. Exact remains 60 functions /
-9883 bytes / 60 units across eleven objects.
+The next six-candidate cohort / 96 provisional bytes remains unknown. Fresh
+`.analysis/r206-iterator-leaf-shortlist.json` preserves complete scanner extent/
+CFG diagnostics, real calls and reviewed parent sites. These complete 16-byte
+bodies occur under different template families; identical raw shapes are not
+interchangeable ownership evidence:
 
-The next bounded six-candidate cohort / 318 provisional bytes remains unknown.
-The fresh `.analysis/r205-vector-at-shortlist.json` contains all native
-instructions, complete scanner CFG diagnostics, actual callees and game caller
-contexts. Four 70-byte parents share a size/bounds-error/begin/iterator-add/
-dereference sequence; the two 19-byte helpers call actual separate dependencies.
-Shape and reviewed callees do not grant ownership:
-
-| Candidate | Provisional bytes | Actual context to reopen |
+| Candidate | Provisional bytes | Actual retained context to reopen |
 | --- | ---: | --- |
-| `0x004093E0` | 70 | SoundBank load/play; size 4093A0, bounds error 4098D0, begin 409760, iterator add 409DA0, helper 409D80 |
-| `0x00442060` | 70 | BattleHud/FighterBase; size 442120, bounds error 442160, begin 442100, iterator add 4422A0, helper 442280 |
-| `0x004420B0` | 70 | BattleHud/character dispatch; size 4421E0, bounds error 442220, begin 4421C0, iterator add 4422F0, helper 4422D0 |
-| `0x00445310` | 70 | BattleCombat hitbox/body contact; size 4452D0, bounds error 445490, begin 445470, iterator add 445620, helper 445600 |
-| `0x00409D80` | 19 | Whole root 4093E0 and actual helper 40A160 |
-| `0x00442280` | 19 | Whole root 442060 and actual helper 442360 |
+| `0x0040E9B0` | 16 | vector mutable dereference19 at 40E4C0, actual call 40E4CA |
+| `0x0040EA20` | 16 | vector mutable dereference19 at 40E530, actual call 40E53A |
+| `0x004124B0` | 16 | list insertion 411EA0 and erase 411F20, actual calls 411EAC and 411F3A |
+| `0x0041F7E0` | 16 | list insertion 41E120, actual call 41E12C |
+| `0x00532350` | 16 | list insertion 531DF0, actual call 531DFC |
+| `0x005F9640` | 16 | vector mutable dereference19 at 5F8EA0, actual call 5F8EAA |
 
-Cold-build natural original public VC7.1 template alternatives and retain full
-ordinary emissions, actual included headers, all original fields and independently
-reviewed owners. Reopen complete parent extents, branch/return exits and related
-callee policies; do not populate provenance from native call destinations.
-Actual target element types and complete private owners remain unknown; generic
-probe element shapes must not become private target declarations. Source bodies
-and semantic choices, not mapped names or source fingerprints, determine origin.
-Continue every remaining review after this cohort. No exact expansion or later
-project phase is authorized, and this checkpoint does not complete the goal.
+Reopen complete typed parent source, owning definitions and full source/native
+leaves; cold-build natural original public alternatives and retain every
+ordinary emission/header/field. Preserve library/compiler ambiguity for implicit
+allocator or outer lifetime bodies until actual source policies settle it.
+Do not turn generic shapes into private target declarations, derive catalogs
+from native destinations, or grant credit from mapped names. Continue all
+remaining review after this bounded cohort. No exact expansion or later project
+phase is authorized; this checkpoint does not complete the goal.
 
 ## R165 checkpoint and the completed R166 shortlist
 

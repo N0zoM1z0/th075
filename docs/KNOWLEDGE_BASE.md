@@ -9719,3 +9719,89 @@ objects. The original 1311-candidate goal has 1007 resolved and 304 left and
 remains active. R205 next investigates four bounded vector access parents and
 two actual iterator helpers, with complete cold public-template alternatives;
 its diagnostic shortlist grants no origin or target element-type declaration.
+
+## R205 — complete vector bounds and source-scoped iterator policies
+
+R205 expands the six-root / 318-byte shortlist through actual dependencies and
+accepts 18 complete public VC7.1 vector/iterator policies / 615 bytes as library.
+Replay `scripts/repo-python scripts/verify-vector-at-policy-origins.py`.
+`config/vector-at-policy-origin-evidence.json` SHA-256 is
+`50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c`.
+Exactly 18 function and origin rows change; every extent, original source/ABI/
+mapping field and exact state remains unchanged. Generic element observations
+do not identify private game types or permit instantiating incomplete owners.
+
+The four whole at70 roots are `0x004093E0`, `0x00442060`, `0x004420B0` and
+`0x00445310`. Newly accepted dependencies are mutable dereference19 at
+`0x00409D80`, `0x00442280`, `0x004422D0` and `0x00445600`; const dereference16
+at `0x0040A160`, `0x00442360`, `0x004423B0` and `0x004456C0`; begin31 at
+`0x00442100` and `0x004421C0`; iterator addition45 at `0x004422A0`; iterator
+construction28 at `0x00442320` and `0x00442370`; and iterator advancement32 at
+`0x00442340`. Proposed names explicitly retain unknown element types.
+
+**Whole source and ownership.** Four independently scoped source graphs retain
+52 section instances / 1961 bytes: 44 code / 1705 and eight data / 256, all 92
+actual fields and 44 complete normal/EH CFGs. Source section, numeric symbol
+index, actual AUX records, definitions and every relocation remain. Identical
+generic source symbols for the two stride4 groups do not share a native owner:
+scoped local keys and complete owning sections determine addresses. Observed
+native call destinations cannot populate the accepted source catalog. Complete
+18-byte EH code carriers keep both cleanup and handler roots; existing R022
+unwind8 rows remain unchanged. Full 36-byte EH data sections retain the FuncInfo
+label at offset8 and unwind-map label at offset0; neither label crops the carrier.
+Full bounds-message sections / 28 remain, even where groups share native data.
+
+Three whole string/out_of_range code owners / 118 and full throw-type data / 16
+retain literal R150 records and replay their cold original public source against
+independently retained owning definitions. Original CRT throw58 and frame54
+helpers reopen their hash-pinned archive members and complete own-AUX extents;
+the real absolute __except_list definition is also reopened. Full R150 replay,
+including its retained R149/R119 controls, passes. Prior accepted evidence is
+preserved rather than deriving ownership from these new call observations.
+
+Actual source uses `_Xran`, the invalid vector-subscript message and
+`std::out_of_range`. Historical R032 generic `_Xlen` names and helper mappings
+remain unchanged provenance records, not proof that these actual bounds-error
+routes construct length_error. The new typed graph uses the real complete
+out_of_range constructor and throw-type owners. Whole independent game contexts
+retain SoundBank::Play142, FighterBase::BindAnimation149 with both actual calls,
+and BattleCombat::ResolveBodyContact897 with complete authored CFG/switch proof.
+
+**Cold controls and rejected alternatives.** Natural original public `<vector>`
+source supplies mutable/const routes for generic element sizes4/8/16/116. All
+130 ordinary sections / 5548, 27 actual original headers and complete generic
+layout observations / 36 remain. Explicit flags are reproducibility settings,
+not an executable-wide compiler claim. Four complete wrong-stride size bodies
+fail whole comparison; the 52-byte alternative cannot replace the native57 by
+cropping. Four complete const at70 alternatives retain their distinct typed
+begin/add/dereference fields. Direct const dereference16 cannot replace the
+native mutable wrapper19 with its actual separate const-dereference call. Raw
+parent shape alone is insufficient; complete source policies and independently
+owned destinations establish the library classification.
+
+COFF function AUX PointerToLinenumber is debug file metadata: temporary object
+placement shifts its absolute file offset. R205 validates that each nonzero
+pointer lies on its own complete six-byte line-table entry and identifies its
+actual function symbol index, then retains its relative table offset and every
+line record. Other AUX values, complete function extents, all symbol indices,
+source bytes, real fields and native bytes remain compared without masking.
+Tests reject misaligned, foreign-symbol and truncated line tables, and show that
+changed line records or function sizes remain observable. This normalization
+does not alter earlier immutable evidence or native byte comparisons.
+
+**Acceptance and preservation.** Original and accepted cold full source/field/
+CFG/retained-owner/negative-control/game-context replay passes. The accepted
+transition affects no prior literal original function/origin snapshot. Canonical
+readback preserves all unrelated ledgers and evidence, 902 authored bodies /
+1956112 bytes and all source/header/build/match inputs. Target/project/query
+attestations, authored/exact guards, fresh 286-pending triage, generated progress
+and whitespace checks pass. All 2730 CI tests pass, including 34 new guards.
+Public MCP acceptance remains waived by the user.
+
+Totals are 4065 resolved: 949 authored, 2538 library and 578 compiler; 286 pending
+and 3116 excluded. Exact remains 60 functions / 9883 bytes / 60 units across
+11 objects. The original 1311-candidate goal has 1025 resolved and 286 left and
+remains active. R206 next reopens six complete 16-byte leaves under retained
+vector dereference and list allocation/insertion contexts. Identical body shape
+and reviewed parents are diagnostic only; original typed source and ownership
+alternatives must settle each leaf separately.
