@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R223. The public
+review cohorts R108 through R224. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,161: 971 authored, 2,610 library and 580 compiler generated.
-There are 190 pending. Candidate count is not authored function count.
+has resolved 4,162: 971 authored, 2,611 library and 580 compiler generated.
+There are 189 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,83 +20,93 @@ bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R224 SDK buffer adjustment/forwarding cohort below.
+the bounded R225 paired unchecked-indexing cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R223; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R224; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R224 SDK buffer adjustment/forwarding cohort
+## Next agent objective — R225 paired unchecked-indexing source cohort
 
-R223 resolves five complete library owners414:40E000 /158 and5F84B0 /167 original
-vector `_Assign_n`, public29-byte callers40DDA0/5F8000 and end5F8EF0 /31. Their
-whole44/16 value copies, erase/insert/temporary cleanup, FS scaffold and RET8
-are verified. Two scoped original graphs122 carriers7023/296 fields/100 CFGs and
-complete manual alternatives120 carriers6965/294 fields/98 CFGs retain every
-normal/EH/state owner. Manual policies remain fully byte-equal; source-family
-attribution does not prove absence of an original replacement. Four independent
-whole game parents2295 retain actual count/value/receiver calls at40B06F,40B18A,
-40B212 and5F73D1. No original private value/owner declaration is inferred.
+R224 resolves library61FEDB /27, original `CD3DXBufferA16` prefix-recovery cleanup.
+Its eight full instructions retain pointer+C, conditional pointer-1 byte recovery,
+pointer rewrite and real external tail to accepted61FE0A /21; no RET is invented.
+Complete paired original Init61FF12 /49 writes the same delta after requesting
+count+16, and factory620188 /87 installs the owning table and dispatches actual
+Init/deleting slots18/14. All15 original defining code/data carriers494/30 fields/
+13 CFGs, two complete seven-slot tables, actual weak fallbacks and complete source
+AUX/debug provenance reproduce unmasked. Contexts absent from the provisional
+inventory receive no new ledger rows or origin credit.
 
-Cold original R150/R149/R119 source/exception/runtime proof and new natural probe
-retain every defining source/AUX/local/weak/FS field. All366 ordinary sections
-22274,28 includes and complete merged readonly64/16 dwords remain frozen. Whole
-implicit value-copy controls22/33 lack the count-assignment policy. Four private
-lifetime/destroy operations40D8E0 /19,4588B0 /43,40F9F0 /15 and5FAAD0 /15 stay
-unknown. All43 literal old unknown snapshots remain unchanged; current acceptance
-is checked separately. Full136 scoped canonical rows, alignment, prior authored,
-exact-input preservation, exactly-five-row readback and coherent fresh190 triage
-pass. Replay `scripts/repo-python scripts/verify-vector-count-assignment-origins.py`;
-manifest SHA `f410ceed8099574af4d9fe71546474c3aecfc5a2d3fbf76ac942f817046419c5`. Original/accepted complete cold states and all3148 CI tests
-pass, including17 new guards. Progress and whitespace pass.
-Current4161 resolved =971 authored+2610 library+580 compiler;190 pending and3190
-excluded. Original1311 goal has1121 classified /190 left and remains active.
+Whole original scalar-new14/delete5 and their source-owned runtime bindings are
+retained through complete R120/R115–R119 proof18 bodies1928/all166 fields and
+actual code/data/API/EH owners. Fresh original SDK GUID object47 sections752/84
+includes and original Uuid.Lib prove both complete readonly16-byte identities.
+New natural generic controls13 methods267 retain17 ordinary sections315/25 fields,
+eight actual includes and whole readonly24. Prefix27/allocation49, generic base16,
+default5 and explicit-empty11 remain observations, not recovered private SDK
+classes/compiler flags. Three compiler deleting wrappers and eight unresolved
+SDK lifetime/forwarding policies, including620132 /5,60C120 /11,6200DA /24, remain
+unchanged. Full19 scoped canonical rows and all previous config/evidence/exact
+inputs are preserved. No prior selected snapshot for61FEDB exists.
+
+Replay `scripts/repo-python scripts/verify-sdk-aligned-buffer-origins.py`;
+manifest SHA `fba0048154169ef4e4eefa7cd13a321635bf6a6cf450a0df0ff39e016bb53297`. Original/accepted complete source and cold controls pass.
+All3164 CI tests, including16 new guards, target/tracking/project/query markers,
+earlier902 authored bodies, exact preservation, exactly-one-row readback,
+coherent fresh189 triage, progress and whitespace pass.
+Current4162 resolved =971 authored+2611 library+580 compiler;189 pending and3191
+excluded. Original1311 goal has1122 classified /189 left and remains active.
 Exact60 /9883 bytes /60 units across eleven objects; authored bytes1,971,032 and
-provisional0.50% remain unchanged. User push reached68d9258; later commits are local.
+provisional0.50% are unchanged. Push reached68d9258; subsequent commits are local.
 
-The user requires one complete Web MCP acceptance after the remaining origin
-review finishes. Continue bounded local investigation/acceptance; do not run
-Web MCP after each cohort. The final complete run remains outstanding.
+The final complete Web MCP acceptance is required only after the remaining origin
+review finishes. Continue bounded local evidence/acceptance; do not add intermediate
+Web MCP runs, exact reconstruction or later project phases.
 
-Next reopen the complete original SDK buffer source and its independent virtual
-allocation/cleanup context, starting with one nontrivial unknown policy:
+Next inspect eight complete49-byte indexing hypotheses /392. Private
+`.analysis/r225-preliminary.json` freezes all eight whole native bodies, actual
+instructions/calls/hashes and current canonical states as diagnostics only:
 
-| Candidate | Complete provisional bytes | Original defining source observation | Required external owner |
-| --- | ---: | --- | --- |
-| `0x0061FEDB` |27| `??1CD3DXBufferA16@@UAE@XZ` | base destructor61FE0A /21, acceptedR187 |
-| `0x00620132` |5| `??1CD3DXStringBuffer@@UAE@XZ` | same base; forwarding/implicit ambiguity |
-| `0x0060C120` |11| `??1CD3DXFile@@QAE@XZ` | Close60C0DF /65, acceptedR184; protected lifetime ambiguity |
+| Candidate | Provisional source family | Actual begin / plus / dereference |
+| --- | --- | --- |
+| `0x00409430` | vector, observed4-byte iterator stride |409760 /409DA0 /409D80 |
+| `0x0041DB40` | deque, offset at iterator+4 |41DA90 /41EE20 /41E000 |
+| `0x0041DDC0` | deque, offset at iterator+4 |41DCF0 /41ECC0 /41DF70 |
+| `0x0042DAF0` | deque, offset at iterator+4 |4143D0 /42E040 /414950 |
+| `0x0042DBA0` | deque, offset at iterator+4 |42DCC0 /42E0A0 /42E080 |
+| `0x00458AF0` | vector, observed116-byte iterator stride |442100 /4422A0 /442280 |
+| `0x00458BC0` | vector, observed4-byte iterator stride |4421C0 /4422F0 /4422D0 |
+| `0x005F7FC0` | vector, observed16-byte iterator stride |5F8490 /5F8E70 /5F8E50 |
 
-Only the27-byte first candidate supplies currently new nontrivial policy:
-load pointer+C, conditionally recover its prefix-byte offset, rewrite pointer+C
-and tail-jump to the complete base cleanup. The original pinned d3dx8.lib member
-`obj\i386\cd3dxbuffer.obj` at380178 has SHA
-`9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7`;
-its complete defining27-byte source has exactly two real fields, DIR32 at7 to
-its own original vtable and REL32 at23 to the base destructor. Reopen the whole
-vtable, constructor/allocation/prefix-write policy and actual tail before deciding
-ownership. No final RET exists in the27-byte entry: its genuine external shared
-cleanup must be reconciled, not cropped or padded. Compiler deleting wrapper
-61FEF6 /28 has independent R038 evidence and stays separately owned.
+Do not conflate the byte-equal vector/deque49-byte heads. Deque arithmetic updates
+an offset at iterator+4 and its whole const-dereference descendant must resolve
+map/block/stride policy. Vector arithmetic updates its pointer directly and
+retains its own4/116/16 scaling. Original public header definitions and full scoped
+source owners, AUX/normal/EH/data fields and independent complete game argument/
+receiver/result contexts must support any classification. A known child or game
+caller alone is insufficient; complete ordinary/manual alternatives and all old
+unknown snapshots must remain literal. Natural full generic values are allowed
+only as observations, never original private layouts.
 
-The five-byte string-buffer entry forwards directly to the base, and11-byte
-file cleanup conditionally tails to Close. Those source shapes alone do not
-settle explicit/implicit original declarations; preserve their unknown origins
-unless genuinely distinguishing new context arrives. Do not repeat unchanged
-R196/R201/R204 SDK lifetime alternatives merely to force classification.
-Private `.analysis/r224-preliminary.json` freezes all three complete native
-bodies/actual instructions and canonical states as diagnostics only.
+Unknown begin42DCC0 /31 and dereference42E080 /19 require their own complete source
+and context proof, not automatic acceptance through a prospective parent. Actual
+whole game parents include407270,41CE50,42CA60,42C670,457660,456910 and5F71F0; reopen
+all relevant complete CFGs and parameter/result uses. The preliminary native
+source-family proposals are not new acceptance evidence. R205/R213 source probes
+and original deque probes supply methodology and retained actual defining owners;
+recompile relevant unchanged source rather than blindly running old stateful
+validators whose protected snapshots transitioned later.
 
-Fresh `.analysis/origin-scan/r223-triage.json` records190 pending candidates and
-matches both ledger hashes. Original R108, short/private getters, library node
-accessors and other lifetime/math ambiguities still need distinguishing evidence.
-No exact or later-phase scope expansion is authorized.
+Fresh `.analysis/origin-scan/r224-triage.json` has189 pending and both current
+ledger hashes. Preserve R108 and other short/private lifetime, getter, node and
+math ambiguities unless distinguishing new evidence resolves them.
 
 ## R165 checkpoint and the completed R166 shortlist
 

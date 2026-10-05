@@ -11062,3 +11062,74 @@ remains active. Authored denominator1,971,032; exact60 /9883 bytes /60 units acr
 eleven objects and provisional0.50% stay unchanged. Final complete Web MCP
 acceptance remains required after all remaining review finishes. No source,
 private ABI, mapping, exact expansion or later project phase is added.
+
+## R224 — original SDK aligned-buffer prefix recovery and complete base tail
+
+R224 resolves one library origin /27 at `0x0061FEDB`, the complete original
+`??1CD3DXBufferA16@@UAE@XZ` source policy. It loads pointer+C, writes its actual
+own vtable, skips recovery when the pointer is null, reads the unsigned prefix
+byte at pointer-1, subtracts that offset, writes pointer+C and tail-jumps to the
+complete independently accepted21-byte `CD3DXBuffer` base destructor61FE0A.
+All eight instructions and both actual fields are retained. There is no RET
+inside the27-byte entry; the genuine external base cleanup owns the return.
+The original Ghidra extent is preserved, with no cropping, padding or invented RET.
+
+Independent complete original49-byte Init61FF12 sets the length, requests count
+plus16 from base Init61FE1F /38, skips alignment on a negative status, computes
+16 minus the low four pointer bits, advances pointer+C and writes the same offset
+byte at pointer-1. The complete87-byte factory620188 allocates16, calls the
+unchanged observed base constructor6200DA /24, installs the actual aligned table,
+dispatches Init through slot18 and dispatches generated cleanup through slot14
+on failure. These complete paired policies establish the SDK resource adjustment
+and release context; a destructor name or deleting wrapper alone would not do so.
+Allocation outcomes, valid input ranges and complete private declarations stay
+unknown. Source-family attribution does not prove historical linker selection.
+
+The pinned d3dx8.lib original member `obj\i386\cd3dxbuffer.obj` at380178 has SHA
+`9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7`.
+Fifteen whole original code/data carriers494, all30 actual fields and13 complete
+CFGs retain both28-byte/seven-slot owning tables, all callbacks, two real weak
+AUX/fallbacks, original QueryInterface71 and both original allocation/cleanup
+policies. Every defining section, AUX/debug-line record, source local index,
+actual code/readonly permissions and full unmasked native body is checked.
+Native contexts absent from the provisional inventory receive no added rows or
+separate origin credit. Three R038 compiler deleting wrappers remain unchanged
+and separately owned, including aligned61FEF6 /28.
+
+Original scalar-new14 and scalar-delete5 are reopened with their actual own
+function AUX/sections and both real fields. Their binding destinations derive
+from independently defining complete original runtime owners __nh_malloc44 and
+free113. Every replay runs the unchanged full R120 proof:18 whole library bodies
+1928,166 typed code/data/API/EH fields, original heap/handler/scope provenance and
+cold R115–R119 controls. The two interface GUIDs are independently read from
+original Uuid.Lib and fresh original SDK headers, then compared as complete16-byte
+readonly target owners. The GUID cold object retains all47 ordinary sections752
+and84 actual SDK/CRT includes. Windows include spellings resolve to unique actual
+host case mappings; no shared tool or SDK header is modified.
+
+A natural complete generic probe emits13 complete methods267, all17 ordinary
+code/data sections315/every25 fields, eight actual includes and whole readonly24
+[16,16,16,16,4,4]. Its explicit prefix recovery27 and allocation49 are policy
+observations; its base cleanup16 is not claimed as the original21-byte base.
+Default derived cleanup5 and explicit empty cleanup11 remain distinct complete
+source observations under this probe profile. They do not recover the original
+SDK compiler profile or settle private explicit/implicit declarations. No
+incomplete original owner is instantiated and no source-byte exact unit is added.
+
+Eight protected private lifetime/forwarding policies remain unknown, including
+string-buffer620132 /5, file60C120 /11 and base construction6200DA /24. All19 scoped
+canonical rows and every older configuration artifact are checked unchanged
+except the one selected transition. A recursive prior snapshot audit finds no
+older selected/snapshot record for61FEDB. Original/accepted complete source and
+cold-control replays pass. Replay
+`scripts/repo-python scripts/verify-sdk-aligned-buffer-origins.py`;
+manifest SHA-256 `fba0048154169ef4e4eefa7cd13a321635bf6a6cf450a0df0ff39e016bb53297`. All3164 CI tests pass, including16 new full
+source/tail/prefix/virtual-slot/weak/runtime/GUID/lifetime/ABI/exact guards.
+Target/tracking, local project/query markers, earlier902 authored bodies, exact
+inputs, exactly-one-row readback, coherent fresh189 triage, progress and whitespace
+pass. Current4162 resolved =971 authored+2611 library+580 compiler;189 pending and
+3191 excluded. Original1311 goal has1122 classified /189 left and remains active.
+Authored denominator1,971,032; exact60 /9883 bytes /60 units across eleven objects
+and provisional0.50% stay unchanged. Complete final Web MCP acceptance remains
+required after all remaining review finishes. No later phase or exact expansion
+is added.
