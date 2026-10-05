@@ -11723,3 +11723,70 @@ They are diagnostic candidates only; reopen their whole original source and
 independent accepted dependencies before deciding ownership. Then continue
 through the fresh602-pending lanes, preserving all earlier unresolved lifetime,
 copy, math, allocator and short-CRT alternatives.
+
+## R193 — complete SDK math companions and corrected operator identity
+
+R193 accepts three complete library companions /373 bytes. Every original
+canonical extent remains unchanged. The original d3dxmath.obj at archive
+offset684528 supplies three whole COMDATs, actual definitions/AUX metadata and
+four genuine fields. Every code byte, full CFG, return and indirect tail compares
+without masking. The complete independent R192 default-table/CPU/callback graph
+is replayed before accepting the companions; no prior evidence is loosened.
+
+| Address | Whole bytes | Original source association |
+| --- | ---: | --- |
+| `0x0061C89D` | 6 | _D3DXMatrixTransformation@28 |
+| `0x0061CB7B` | 328 | _D3DXMatrixLookAtLH@16 |
+| `0x0061E853` | 39 | ??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z, quaternion operator* |
+
+**Target/source observations.** The Transformation wrapper has one genuine
+DIR32 field with source addend156 into g_D3DXFastTable at0x0066D070. Its original
+absolute indirect tail uses slot0x0066D10C; selection remains mutable at runtime.
+The complete228-byte bank and corresponding independently owned default callback
+are retained through R192's whole460-byte initialized table. The wrapper does
+not establish a fixed final callback or instantiate a private table type.
+
+The complete328-byte LookAtLH matrix policy has130 reachable instructions and
+two genuine REL32 fields to the whole accepted Normalize6 entry. Its full
+original handedness/vector/matrix policy is retained; adjacency to LookAtRH is
+not acceptance evidence. The39-byte quaternion operator has21 instructions and
+one original REL32 field to whole accepted QuaternionMultiply6. Its complete
+source primary definition is the multiplication operator, not C MatrixRotation-
+Quaternion. The prior handoff's tentative association was incorrect and is
+superseded here. The actual C MatrixRotationQuaternion carrier is226 bytes.
+
+Two entire original SDK header files are hash-pinned read-only. The exact public
+Transformation/LookAtLH declaration region and explicit quaternion multiplication
+body region are independently retained by complete region digests. The latter
+creates a quaternion result and calls D3DXQuaternionMultiply before returning it;
+this is explicit SDK policy rather than a name-only compiler-generated wrapper
+claim. Original source objects and public header policy are evidence, not new
+reconstructed source. No decompile, target-byte source body or private layout is
+introduced and no original compiler profile is inferred.
+
+**Inference and limits.** The three complete explicit SDK companions are
+library-owned through their actual pinned source definitions, independent
+accepted callees, whole mutable dispatch graph and original header policy.
+Original target symbol names and runtime-selected final callbacks remain
+unknown. No source presence, ABI declaration, mapping or reconstruction exact
+credit is added. No new compiler-emission claim requires a cold probe.
+
+**Acceptance.** Replay
+`scripts/repo-python scripts/verify-sdk-companion-origins.py`; manifest SHA
+`979517c54be5b7787e8558af22c4d067207619388fe9d20be6ed5d9c3e5d0180`.
+Exactly three function/origin rows change from4aad114. All earlier configuration
+evidence files,902 authored bodies /1956112 bytes and every exact input remain
+unchanged. All2417 public checks pass, including twelve adversarial companion
+checks rejecting the wrong historical operator association, truncated policy,
+wrong callees/slot, fixed-callee substitution and false source/ABI/exact credit.
+Local target/tracking/project/query markers, full original source/CFG and R192
+replay, exact guard, fresh599-pending scan, progress and whitespace pass. Public
+MCP acceptance remains waived.
+
+Origin totals are3752 resolved:949 authored,2227 library and576 compiler;
+599 pending and2803 excluded. Exact remains60 functions /9883 bytes and60 units
+across eleven objects. The full origin goal and50%-exact milestone are unfinished.
+Next close the distinct original MMX registry/cache policy153 at0x00620A70 and
+its non-inventory source CPUID helper37 at0x00620A4B. These are diagnostic only;
+reopen all genuine fields, complete initial state/literals, actual imported APIs,
+CPUID branches/returns and source definitions before deciding ownership.

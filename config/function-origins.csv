@@ -3068,10 +3068,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0061C763,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061C770,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061C88C,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
-0x0061C89D,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061C89D,library,D3DX8,exclude,whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy,R193
 0x0061C8BB,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061CA33,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
-0x0061CB7B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061CB7B,library,D3DX8,exclude,whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy,R193
 0x0061CCF1,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0061CD5D,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0061CDC9,library,D3DX8SDK,exclude,complete-vendor-body,R010
@@ -3109,7 +3109,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0061E467,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061E5F4,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061E79A,library,D3DX8SDK,exclude,complete-vendor-body,R012
-0x0061E853,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061E853,library,D3DX8,exclude,whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy,R193
 0x0061E87A,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061E8B3,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192
 0x0061EB67,library,D3DX8,exclude,whole-original-sdk-default-table-callbacks-runtime-dispatch-and-independent-crt-callers,R192

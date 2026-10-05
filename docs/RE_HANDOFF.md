@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R192. The public
+review cohorts R108 through R193. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,749: 949 authored, 2,224 library and 576 compiler generated.
-There are 602 pending. Candidate count is not authored function count.
+has resolved 3,752: 949 authored, 2,227 library and 576 compiler generated.
+There are 599 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,68 +20,65 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R193 adjacent public/C companion cohort below.
+the bounded R194 MMX registry/cache cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R192; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R193; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R193 adjacent public/C companions
+## Next agent objective — R194 MMX registry/cache closure
 
-R192 accepts53 complete library functions /3468 bytes and closes the default
-mutable-table/CPU/public cohort. Replay
-`scripts/repo-python scripts/verify-sdk-dispatch-origins.py`; manifest SHA
-`41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51`.
-All129 original code carriers /14378 bytes /298 fields and18 whole initialized
-data images /544 bytes compare unmasked. The full460-byte table retains112
-pointer fields; all57 C defaults have independent full source owners. Original
-CPU copy paths fill the two genuinely empty first-bank Ln/Exp slots. Actual
-runtime-selected calls/tails remain mutable-slot dispatch, not fixed callees.
-Two C switches retain their full64 table bytes apart from code365/390.
+R193 accepts three complete SDK math companions /373 bytes, with all four
+actual fields and original COMDAT/CFG/return/tail evidence. Replay
+`scripts/repo-python scripts/verify-sdk-companion-origins.py`; manifest SHA
+`979517c54be5b7787e8558af22c4d067207619388fe9d20be6ed5d9c3e5d0180`.
+The full R192 default-table/CPU/callback graph replays independently and every
+prior manifest/source input remains unchanged. Transformation6 at0x0061C89D
+retains runtime slot0x0066D10C; LookAtLH328 at0x0061CB7B retains both actual
+Normalize calls. The39-byte0x0061E853 entry is the explicit SDK quaternion
+multiplication operator, superseding the prior handoff's erroneous tentative
+C MatrixRotationQuaternion association. The real latter source carrier is226.
+Original public headers and exact declaration/operator regions are hash-pinned.
+No source/private ABI/mapping/exact credit or compiler-profile assumption is added.
 
-Original SDK MatrixInverse909 and PlaneIntersectLine162 have genuine fields
-to the complete CRT finite21 owner. Its previous natural20 alternative remains
-different; FillZeroMan12 stays unknown. The complete203-byte acos owner and all
-R188/R189/R190/R191 graphs remain independent immutable anchors. Only four
-historical pending snapshots may advance through exact R192 transitions; R189
-pins the exact revised R188 verifier source. All prior manifests are unchanged.
-
-Exactly53 function/origin rows change from7e6967f, preserving every original
-extent, all902 authored bodies /1956112 bytes,68 non-inventory entries and all
-sixty exact inputs. All2405 public checks, target/tracking/project/query markers,
-full source/CFG replay, affected historical evidence and R155 postaccept ledger
-readback, exact guard, fresh602-pending scan, progress and whitespace pass.
-No source/private ABI/mapping/exact scope is added. Public MCP acceptance remains
-waived; the full origin goal is active and unfinished.
+Exactly three function/origin rows change from4aad114; all earlier configuration
+evidence files,902 authored bodies /1956112 bytes and sixty exact inputs stay
+unchanged. All2417 public checks, local target/tracking/project/query markers,
+full source/CFG and R192 replay, exact guard, fresh599-pending scan, progress
+and whitespace pass. Public MCP acceptance remains waived; full origins and
+50%-exact milestones are unfinished.
 
 The next bounded diagnostic cohort is:
 
-| Candidate | Full provisional bytes | Source association to reopen |
+| Entry | Whole provisional/source bytes | Required evidence |
 | --- | ---: | --- |
-| `0x0061C89D` | 6 | _D3DXMatrixTransformation@28, original mutable slot0x0066D10C |
-| `0x0061CB7B` | 328 | _D3DXMatrixLookAtLH@16, all Normalize/public math dependencies |
-| `0x0061E853` | 39 | c_D3DXMatrixRotationQuaternion, all direct callee fields |
+| `0x00620A70` | 153 | isMMXprocessor, full registry/cache policy and all12 real fields |
+| `0x00620A4B` | 37 | _asm_isMMX, required non-inventory CPUID helper; do not add a canonical candidate |
 
-Original source is d3dxmath.obj at SDK archive offset684528. Private
-`.analysis/r193-public-discovery.json` contains one complete six-byte slot
-association, diagnostic only. Reopen every actual COMDAT/field/definition,
-whole CFG and accepted dependency before accepting; the scanner cannot establish
-ownership or turn a mutable slot into a fixed destination. None of these three
-may be accepted merely for adjacency to R192. Inspect historical snapshot pins
-before any concrete transition and preserve complete origin/exact baselines.
+Original source is cpudetect.obj at SDK archive offset776284. Private
+`.analysis/r194-mmx-context.json` freshly confirms both complete source images
+and actual field destinations, diagnostic only. The policy's one real REL32
+field at125 targets helper0x00620A4B. It reads the whole Software\Microsoft\Direct3D
+literal at0x0065DE70, DisableMMX at0x0065DE8C, and initialized _isMMX cache at
+0x0066D23C. Source also uses the actual RegOpenKeyA/RegQueryValueExA/RegCloseKey
+IAT slots0x00657004/0x00657000/0x00657008. These observations are not ownership
+credit; reopen source definitions/sections and independently accepted API/data
+contexts. R188 already retains whole registry path28/APIs; R192's full CPU state8
+includes the _isMMX source definition. Keep those manifests and snapshots fixed.
 
-Fresh `.analysis/origin-scan/r192-triage.json` records602 pending:53 vendor-or-
-compiler-parent,77 game-parent,404 unresolved-context,61 reconcile-extent,
-six game-callees-and-parent and one game-callees. Continue bounded cohorts from
-those lanes after the three companions. Preserve accepted evidence and all
-protected lifetime/copy/math/allocator/short-CRT alternatives; no source or exact
-reconstruction strategy change is authorized.
+Reconcile all153 policy bytes, every guard/cached return/cleanup path, the complete
+37-byte helper's CPUID/branch/return behavior, full DisableMMX11 readonly image
+and source/PE permissions. Distinguish original initialized cache from zero-fill
+and runtime mutation. Preserve non-inventory state and infer no executable-wide
+compiler profile. No matching or private source/ABI/mapping scope is authorized.
+After the cohort, continue the fresh599-pending lanes while preserving protected
+lifetime/copy/math/allocator/short-CRT alternatives.
 
 ## R165 checkpoint and the completed R166 shortlist
 

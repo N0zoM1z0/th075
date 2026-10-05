@@ -1,0 +1,801 @@
+{
+  "evidence_id": "R193",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "functions": [
+    {
+      "address": "0x0061C89D",
+      "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit.",
+      "original_function": {
+        "address": "0x0061C89D",
+        "size": "6",
+        "span_end": "0x0061C8A2",
+        "current_name": "thunk_FUN_0061c88c",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061C89D",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061C89D",
+        "size": "6",
+        "span_end": "0x0061C8A2",
+        "current_name": "thunk_FUN_0061c88c",
+        "proposed_name": "_D3DXMatrixTransformation@28",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "R193",
+        "owner": "library",
+        "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0061C89D",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy",
+        "evidence_id": "R193"
+      }
+    },
+    {
+      "address": "0x0061CB7B",
+      "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit.",
+      "original_function": {
+        "address": "0x0061CB7B",
+        "size": "328",
+        "span_end": "0x0061CCC2",
+        "current_name": "FUN_0061cb7b",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061CB7B",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061CB7B",
+        "size": "328",
+        "span_end": "0x0061CCC2",
+        "current_name": "FUN_0061cb7b",
+        "proposed_name": "_D3DXMatrixLookAtLH@16",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R193",
+        "owner": "library",
+        "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0061CB7B",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy",
+        "evidence_id": "R193"
+      }
+    },
+    {
+      "address": "0x0061E853",
+      "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit.",
+      "original_function": {
+        "address": "0x0061E853",
+        "size": "39",
+        "span_end": "0x0061E879",
+        "current_name": "FUN_0061e853",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061E853",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061E853",
+        "size": "39",
+        "span_end": "0x0061E879",
+        "current_name": "FUN_0061e853",
+        "proposed_name": "??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R193",
+        "owner": "library",
+        "notes": "R193; complete original SDK companion COMDAT, every actual field/return/tail and independent whole R192 default/CPU/callback graph. Transformation remains a runtime-selected slot. Whole LookAtLH policy and actual explicit SDK quaternion multiplication operator39 are retained; prior handoff C RotationQuaternion association corrected. No source/private ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0061E853",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-original-sdk-companions-independent-dispatch-graph-and-explicit-header-policy",
+        "evidence_id": "R193"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "address": "0x0061C89D",
+      "symbol": "_D3DXMatrixTransformation@28",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "size": 6,
+      "source": {
+        "primary": {
+          "symbol": "_D3DXMatrixTransformation@28",
+          "offset": 0,
+          "section": 268,
+          "type": 32,
+          "storage": 2
+        },
+        "section": 268,
+        "flags": 1611665440,
+        "size": 6,
+        "peers": [
+          {
+            "symbol": "_D3DXMatrixTransformation@28",
+            "offset": 0,
+            "section": 268,
+            "type": 32,
+            "storage": 2
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": "_D3DXMatrixTransformation@28",
+            "index": 681,
+            "aux_count": 0,
+            "aux_hex": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 156,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 156,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2,
+          "source_base": "0x0066D070",
+          "target_address": "0x0066D10C"
+        }
+      ],
+      "source_sha256": "32f1d3b7f80093570cca36f798422767b28d3f290093467e724f45f814851d55",
+      "body_sha256": "3d91e6f7c48e645cf5bd2fc832952142fbf861a7e149e369267d65aabdecc61e",
+      "flow": {
+        "extent": 6,
+        "table_size": 0,
+        "alignment_size": 0,
+        "alignment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "padding": [],
+        "internal_padding": [],
+        "roots": [
+          0
+        ],
+        "reachable_instruction_count": 1,
+        "external_tails": [
+          {
+            "site": 0,
+            "slot": "0x0066D10C",
+            "runtime_selected": true
+          }
+        ],
+        "indirect_call_count": 0
+      },
+      "function": {
+        "address": "0x0061C89D",
+        "size": "6",
+        "span_end": "0x0061C8A2",
+        "current_name": "thunk_FUN_0061c88c",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061C89D",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "address": "0x0061CB7B",
+      "symbol": "_D3DXMatrixLookAtLH@16",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "size": 328,
+      "source": {
+        "primary": {
+          "symbol": "_D3DXMatrixLookAtLH@16",
+          "offset": 0,
+          "section": 288,
+          "type": 32,
+          "storage": 2
+        },
+        "section": 288,
+        "flags": 1611665440,
+        "size": 328,
+        "peers": [
+          {
+            "symbol": "_D3DXMatrixLookAtLH@16",
+            "offset": 0,
+            "section": 288,
+            "type": 32,
+            "storage": 2
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": "_D3DXMatrixLookAtLH@16",
+            "index": 731,
+            "aux_count": 0,
+            "aux_hex": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "offset": 49,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 139,
+          "symbol_section": 52,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2
+        },
+        {
+          "offset": 123,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 139,
+          "symbol_section": 52,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 49,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 139,
+          "symbol_section": 52,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2,
+          "source_base": "0x0061AF34",
+          "target_address": "0x0061AF34"
+        },
+        {
+          "offset": 123,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 139,
+          "symbol_section": 52,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2,
+          "source_base": "0x0061AF34",
+          "target_address": "0x0061AF34"
+        }
+      ],
+      "source_sha256": "d921a4d09509c56a4ff2ed2dc065505e1c99a725a4971261add70a9443373ebd",
+      "body_sha256": "af831f8e0c2b9d679d377b8a2abc383482e37435e23788f57a994334552093fd",
+      "flow": {
+        "extent": 328,
+        "table_size": 0,
+        "alignment_size": 0,
+        "alignment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "padding": [],
+        "internal_padding": [],
+        "roots": [
+          0
+        ],
+        "reachable_instruction_count": 130,
+        "external_tails": [],
+        "indirect_call_count": 0
+      },
+      "function": {
+        "address": "0x0061CB7B",
+        "size": "328",
+        "span_end": "0x0061CCC2",
+        "current_name": "FUN_0061cb7b",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061CB7B",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "address": "0x0061E853",
+      "symbol": "??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "size": 39,
+      "source": {
+        "primary": {
+          "symbol": "??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z",
+          "offset": 0,
+          "section": 476,
+          "type": 32,
+          "storage": 2
+        },
+        "section": 476,
+        "flags": 1611665440,
+        "size": 39,
+        "peers": [
+          {
+            "symbol": "??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z",
+            "offset": 0,
+            "section": 476,
+            "type": 32,
+            "storage": 2
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": "??DD3DXQUATERNION@@QBE?AU0@ABU0@@Z",
+            "index": 1223,
+            "aux_count": 0,
+            "aux_hex": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXQuaternionMultiply@12",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 925,
+          "symbol_section": 365,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXQuaternionMultiply@12",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "symbol_index": 925,
+          "symbol_section": 365,
+          "symbol_offset": 0,
+          "symbol_type": 32,
+          "symbol_storage": 2,
+          "source_base": "0x0061D6EE",
+          "target_address": "0x0061D6EE"
+        }
+      ],
+      "source_sha256": "c182bc80aa7f0acaa7f1b98328ab169902f349507b785ce95a1f261815ebcf73",
+      "body_sha256": "7e5deeeabf420b5bf19c2e5adb994125e584d3f7163a69af32454bf5a0ada850",
+      "flow": {
+        "extent": 39,
+        "table_size": 0,
+        "alignment_size": 0,
+        "alignment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "padding": [],
+        "internal_padding": [],
+        "roots": [
+          0
+        ],
+        "reachable_instruction_count": 21,
+        "external_tails": [],
+        "indirect_call_count": 0
+      },
+      "function": {
+        "address": "0x0061E853",
+        "size": "39",
+        "span_end": "0x0061E879",
+        "current_name": "FUN_0061e853",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061E853",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    }
+  ],
+  "dependencies": {
+    "_D3DXVec3Normalize@8": {
+      "address": "0x0061AF34",
+      "symbol": "_D3DXVec3Normalize@8",
+      "archive": "d3dx8",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "size": 6,
+      "source_sha256": "bd0bee10431b0cab2da09b874c1ba3d0b02d48351b0d59fc89668e6d1ba1ff52",
+      "body_sha256": "6766db5192d6558f946a73f0235203501f40f7ac84426c2c6ce8276af2393449",
+      "source": {
+        "primary": {
+          "symbol": "_D3DXVec3Normalize@8",
+          "offset": 0,
+          "section": 52,
+          "type": 32,
+          "storage": 2
+        },
+        "section": 52,
+        "flags": 1611665440,
+        "size": 6,
+        "peers": [
+          {
+            "symbol": "_D3DXVec3Normalize@8",
+            "offset": 0,
+            "section": 52,
+            "type": 32,
+            "storage": 2
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": "_D3DXVec3Normalize@8",
+            "index": 139,
+            "aux_count": 0,
+            "aux_hex": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 28,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 28,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2,
+          "target_address": "0x0066D08C",
+          "source_base": "0x0066D070"
+        }
+      ],
+      "flow": {
+        "extent": 6,
+        "table_size": 0,
+        "alignment_size": 0,
+        "alignment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "padding": [],
+        "internal_padding": [],
+        "roots": [
+          0
+        ],
+        "reachable_instruction_count": 1,
+        "external_tails": [
+          {
+            "site": 0,
+            "slot": "0x0066D08C",
+            "runtime_selected": true
+          }
+        ],
+        "indirect_call_count": 0
+      },
+      "switch": null,
+      "function": {
+        "address": "0x0061AF34",
+        "size": "6",
+        "span_end": "0x0061AF39",
+        "current_name": "thunk_FUN_0061af27",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061AF34",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    "_D3DXQuaternionMultiply@12": {
+      "address": "0x0061D6EE",
+      "symbol": "_D3DXQuaternionMultiply@12",
+      "archive": "d3dx8",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "size": 6,
+      "source_sha256": "d4648f403f8cb1c103d0516eedfea99c0ca2b007fb8946f040e1979346754fd8",
+      "body_sha256": "34b9bd4828cef8a2c4852f23166899ecceb758bfa7790c25122e09bfcc8f2baa",
+      "source": {
+        "primary": {
+          "symbol": "_D3DXQuaternionMultiply@12",
+          "offset": 0,
+          "section": 365,
+          "type": 32,
+          "storage": 2
+        },
+        "section": 365,
+        "flags": 1611665440,
+        "size": 6,
+        "peers": [
+          {
+            "symbol": "_D3DXQuaternionMultiply@12",
+            "offset": 0,
+            "section": 365,
+            "type": 32,
+            "storage": 2
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": "_D3DXQuaternionMultiply@12",
+            "index": 925,
+            "aux_count": 0,
+            "aux_hex": ""
+          }
+        ]
+      },
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 76,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 76,
+          "local_symbol_offset": null,
+          "symbol_index": 10,
+          "symbol_section": 3,
+          "symbol_offset": 0,
+          "symbol_type": 0,
+          "symbol_storage": 2,
+          "target_address": "0x0066D0BC",
+          "source_base": "0x0066D070"
+        }
+      ],
+      "flow": {
+        "extent": 6,
+        "table_size": 0,
+        "alignment_size": 0,
+        "alignment_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "padding": [],
+        "internal_padding": [],
+        "roots": [
+          0
+        ],
+        "reachable_instruction_count": 1,
+        "external_tails": [
+          {
+            "site": 0,
+            "slot": "0x0066D0BC",
+            "runtime_selected": true
+          }
+        ],
+        "indirect_call_count": 0
+      },
+      "switch": null,
+      "function": {
+        "address": "0x0061D6EE",
+        "size": "6",
+        "span_end": "0x0061D6F3",
+        "current_name": "thunk_FUN_0061d6e1",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061D6EE",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    }
+  },
+  "header_evidence": {
+    "math-declarations": {
+      "path": ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.h",
+      "sha256": "bfdca3f289819c319375c9052d192f1d05aed71ada6547b1b576d97b95fe91c1",
+      "first_line": 791,
+      "last_line": 812,
+      "region_sha256": "1d17f7db795608651f1ef603accddc35cc6e5e6207112708106e0699c68a6de1"
+    },
+    "quaternion-multiply-body": {
+      "path": ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.inl",
+      "sha256": "fc3d59fe5db1ccdbdceb3179f1d28f05a1bbd4d1b5d03a95d41a7603319f5688",
+      "first_line": 765,
+      "last_line": 772,
+      "region_sha256": "5c4d88bb22f3fd8af5277d19b2e64ccb19a0231047db80d6e8df76a54ae6dd79"
+    }
+  },
+  "retained_sha256": {
+    "config/sdk-dispatch-origin-evidence.json": "41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51",
+    "scripts/verify-sdk-dispatch-origins.py": "cfa87dc479c3db211f8c126ca85e2f0ebc22d94955f8eadcb5b1ddbd63aa6195",
+    "scripts/sdk_code_carriers.py": "60c6ebcde3bd10b0f642b1216f3a13e2279ad3b62b8e9ed0669e65964d0ef9cf",
+    "scripts/sdk_dispatch_carriers.py": "7762faa894a9aec188b5745d8d75e820c70fbd23a451c197a3aacaeadfd88f2f"
+  },
+  "interpretation": {
+    "target": "Complete source sizes6/328/39, runtime Transformation tail and three actual direct callee fields.",
+    "source": "Original d3dxmath.obj definitions bind public SDK math declarations and explicit quaternion multiplication header policy. Actual39-byte source symbol is operator*, not c_MatrixRotationQuaternion.",
+    "inference": "Three full explicit library companions are owned by D3DX8; adjacency, Ghidra names and byte equality alone are not the decision.",
+    "unknown": "Original target names, original compiler profile and final runtime callback remain unknown; no new source/private ABI/mapping/exact credit."
+  }
+}
