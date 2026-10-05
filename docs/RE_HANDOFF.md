@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R193. The public
+review cohorts R108 through R194. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,752: 949 authored, 2,227 library and 576 compiler generated.
-There are 599 pending. Candidate count is not authored function count.
+has resolved 3,753: 949 authored, 2,228 library and 576 compiler generated.
+There are 598 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,65 +20,81 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R194 MMX registry/cache cohort below.
+the bounded R195 graphics SDK gateway cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R193; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R194; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R194 MMX registry/cache closure
+## Next agent objective — R195 graphics SDK gateways
 
-R193 accepts three complete SDK math companions /373 bytes, with all four
-actual fields and original COMDAT/CFG/return/tail evidence. Replay
-`scripts/repo-python scripts/verify-sdk-companion-origins.py`; manifest SHA
-`979517c54be5b7787e8558af22c4d067207619388fe9d20be6ed5d9c3e5d0180`.
-The full R192 default-table/CPU/callback graph replays independently and every
-prior manifest/source input remains unchanged. Transformation6 at0x0061C89D
-retains runtime slot0x0066D10C; LookAtLH328 at0x0061CB7B retains both actual
-Normalize calls. The39-byte0x0061E853 entry is the explicit SDK quaternion
-multiplication operator, superseding the prior handoff's erroneous tentative
-C MatrixRotationQuaternion association. The real latter source carrier is226.
-Original public headers and exact declaration/operator regions are hash-pinned.
-No source/private ABI/mapping/exact credit or compiler-profile assumption is added.
+R194 accepts the complete MMX registry/cache policy153 at0x00620A70 with all12
+real fields, four imported call sites and its full37-byte original CPUID helper.
+Replay `scripts/repo-python scripts/verify-sdk-mmx-origins.py`; manifest SHA
+`1c7a8cae02c86607aa0ce6013e4dad6ad74a8c1e4507069f348c6c4337b79820`.
+The helper0x00620A4B is already accepted R008 library evidence; the prior
+handoff's non-inventory description was incorrect and is superseded. Its whole
+source/body/entry and original canonical/evidence rows are retained with no
+new credit. Actual original function definitions are type32/storage2, while
+the shared _isMMX cache uses a scoped type0/storage3 definition.
 
-Exactly three function/origin rows change from4aad114; all earlier configuration
-evidence files,902 authored bodies /1956112 bytes and sixty exact inputs stay
-unchanged. All2417 public checks, local target/tracking/project/query markers,
-full source/CFG and R192 replay, exact guard, fresh599-pending scan, progress
-and whitespace pass. Public MCP acceptance remains waived; full origins and
-50%-exact milestones are unfinished.
+Full initial CPU state8, registry path28 and DisableMMX11 images /47 bytes
+retain source/PE permissions and all nonpointer bytes. Original cache-1, every
+registry disabling/handle-cleanup/cached-return path and the complete CPUID/
+EMMS protocol are preserved. R188/R192 complete source/ownership graphs replay
+independently; their manifests and all earlier configuration evidence stay fixed.
+Exactly one function/origin row changes fromaee5fd3. All2429 public checks,
+target/tracking/project/query markers, whole source/CFG/API/import/data replay,
+exact guard, fresh598-pending scan, progress and whitespace pass. All902 authored
+bodies /1956112 bytes and60 exact functions /9883 bytes remain unchanged.
+No source/private ABI/mapping/exact scope or executable-wide profile is added.
+Public MCP acceptance remains waived; the full origin goal is active.
 
 The next bounded diagnostic cohort is:
 
-| Entry | Whole provisional/source bytes | Required evidence |
+| Candidate | Whole provisional bytes | Original source association to reconcile |
 | --- | ---: | --- |
-| `0x00620A70` | 153 | isMMXprocessor, full registry/cache policy and all12 real fields |
-| `0x00620A4B` | 37 | _asm_isMMX, required non-inventory CPUID helper; do not add a canonical candidate |
+| `0x00604C82` | 100 | _D3DXAssembleShader@24, d3dx8core.obj member338212 |
+| `0x0060508B` | 124 | _D3DXCreateRenderToSurface@28, same core member |
+| `0x00605B61` | 102 | _D3DXCreateTexture@32, d3dx8tex.obj member1540360 |
 
-Original source is cpudetect.obj at SDK archive offset776284. Private
-`.analysis/r194-mmx-context.json` freshly confirms both complete source images
-and actual field destinations, diagnostic only. The policy's one real REL32
-field at125 targets helper0x00620A4B. It reads the whole Software\Microsoft\Direct3D
-literal at0x0065DE70, DisableMMX at0x0065DE8C, and initialized _isMMX cache at
-0x0066D23C. Source also uses the actual RegOpenKeyA/RegQueryValueExA/RegCloseKey
-IAT slots0x00657004/0x00657000/0x00657008. These observations are not ownership
-credit; reopen source definitions/sections and independently accepted API/data
-contexts. R188 already retains whole registry path28/APIs; R192's full CPU state8
-includes the _isMMX source definition. Keep those manifests and snapshots fixed.
+Private `.analysis/r195-graphics-discovery.json` reopens actual whole original
+carriers and true source fields but compares code with their relocation fields
+masked. Its three matches are diagnostic structural associations only, never
+origin/exact acceptance. Reopen every complete carrier/entry/field and all
+independent source-defined callees, data and EH before a full unmasked replay.
+Do not turn observed relocation destinations into source owners by name alone.
 
-Reconcile all153 policy bytes, every guard/cached return/cleanup path, the complete
-37-byte helper's CPUID/branch/return behavior, full DisableMMX11 readonly image
-and source/PE permissions. Distinguish original initialized cache from zero-fill
-and runtime mutation. Preserve non-inventory state and infer no executable-wide
-compiler profile. No matching or private source/ABI/mapping scope is authorized.
-After the cohort, continue the fresh599-pending lanes while preserving protected
-lifetime/copy/math/allocator/short-CRT alternatives.
+AssembleShader has three real calls to original CD3DXAssembler constructor
+at0x0060C12B, Assemble at0x0060E599 and destructor at0x0060C1D4. RenderToSurface
+has four fields to operator-new0x0064159D, constructor0x00609F58, Init0x00609AC2
+and deleting entry0x006049D8. CreateTexture has one actual field to the original
+same-object CheckTextureRequirements0x00605AE8. Unknown compiler-versus-explicit
+lifetime policies need independent complete controls, not new library credit
+merely from a public SDK caller. Preserve all original ownership snapshots;
+private SDK classes must not be instantiated from incomplete layouts.
+
+Retain independent complete game parents and actual call sites:
+Graphics::SetDefaultStates0x00401540 calls AssembleShader at0x0040171B;
+Graphics::Initialize0x00401110 and ResetDevice0x004017A0 call RenderToSurface
+at0x00401438/0x0040188A; Create16BitTexture0x00401B20 and CreateTexture0x00401C20
+call the SDK texture gateway at0x00401BF3/0x00401D05. A game parent or a public
+prototype alone cannot classify the callee. Original SDK header declarations
+and existing accepted runtime anchors must be reopened without changing exact
+source/ABI/match inputs. Reconcile full switches, shared tails and alignment,
+including any candidate sizes that Ghidra misidentifies.
+
+Fresh `.analysis/origin-scan/r194-triage.json` has598 pending:53 vendor-or-
+compiler-parent,77 game-parent,401 unresolved-context,60 reconcile-extent,
+six game-callees-and-parent and one game-callees. Continue the full remaining
+review after this graph, preserving all protected lifetime/copy/math/allocator/
+short-CRT alternatives. No reconstruction strategy change is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

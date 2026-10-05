@@ -8820,6 +8820,70 @@ Origin totals are3752 resolved:949 authored,2227 library and576 compiler;
 599 pending and2803 excluded. Exact remains60 functions /9883 bytes and60 units
 across eleven objects. The full origin goal and50%-exact milestone are unfinished.
 Next close the distinct original MMX registry/cache policy153 at0x00620A70 and
-its non-inventory source CPUID helper37 at0x00620A4B. These are diagnostic only;
+its previously accepted R008 CPUID helper37 at0x00620A4B. These are diagnostic only;
 reopen all genuine fields, complete initial state/literals, actual imported APIs,
 CPUID branches/returns and source definitions before deciding ownership.
+
+## R194 — complete MMX registry/cache policy and unchanged R008 helper
+
+R194 accepts one complete153-byte library policy at0x00620A70, associated with
+?isMMXprocessor@@YAHXZ in original cpudetect.obj at archive offset776284.
+Its full original code section, type32/storage2 primary definition, complete
+AUX metadata and all12 genuine fields compare unmasked. The original candidate
+extent153 and every other canonical row remain unchanged.
+
+**Target/source observations.** The full policy opens the Direct3D registry path
+and checks DisableMMX. A successful query with type4 and nonzero value closes
+the handle, writes cache0 and returns0. Other successful-open paths also close
+the handle before checking the cached result. A negative cache initializes to0
+and calls the whole CPUID helper; a positive helper result executes original
+EMMS and sets cache1. The shared complete return path and all guards are retained.
+Four actual imported call sites bind independently to three API identities:
+RegOpenKeyA, RegQueryValueExA and two RegCloseKey paths. The sole genuine REL32
+field at125 targets the complete37-byte helper0x00620A4B.
+
+That helper is previously accepted R008 library evidence, not a non-inventory
+entry. The prior handoff mistakenly called it non-inventory; this is corrected
+without changing its original R008 function/origin/source-evidence row or giving
+it new acceptance credit. Its actual type32/storage2 source definition and all37
+bytes are freshly reopened. The observed protocol retains four outer register
+saves, original PUSHAL/POPAL, CPUID inputEAX1, TEST EDX,0x800000, SETNE AL and
+complete stack/register restoration/RET. No target or source assembly is added.
+
+Three whole initialized data images /47 bytes retain actual original definitions,
+AUX metadata and source/PE permissions:shared CPU state8 at0x0066D23C, complete
+Software\Microsoft\Direct3D literal28 at0x0065DE70 and complete DisableMMX11
+at0x0065DE8C. The scoped type0/storage3 _isMMX field has original signed initial
+value-1; it is not BSS/zero-fill and is not claimed runtime-immutable. The whole
+8-byte source image also preserves the independent CPU-optimization field.
+R188's registry path/import graph and R192's whole dispatch/state graph replay
+independently, preserving their immutable manifests and canonical decisions.
+
+**Inference and limits.** The explicit registry disabling, cached processor
+policy and complete independently associated original helper support library
+ownership. Original source symbols remain associations, not recovered target
+names. Original compiler/assembler profiles, runtime environment and later cache
+values remain unknown. No compiler-emission claim, reconstructed C++/assembly,
+private type instance, ABI declaration, mapping or exact unit is introduced.
+The original COFF/source facts are checked directly; no new cold probe is needed.
+
+**Acceptance.** Replay `scripts/repo-python scripts/verify-sdk-mmx-origins.py`;
+manifest SHA `1c7a8cae02c86607aa0ce6013e4dad6ad74a8c1e4507069f348c6c4337b79820`.
+Exactly one function/origin row changes fromaee5fd3. All prior configuration
+evidence files, all902 authored bodies /1956112 bytes, the complete R008 helper
+snapshot and sixty exact inputs stay unchanged. All2429 public checks pass,
+including twelve guards for duplicate helper acceptance, false non-inventory/
+compiler helper classification, truncated policy/CPUID/literal, omitted fields,
+wrong helper/API identity and false source/exact credit. Local target/tracking/
+project/query markers, complete source/CFG/API/import/data and R188/R192 replay,
+exact guard, fresh598-pending scan, progress and whitespace checks pass. Public
+MCP acceptance remains waived.
+
+Origin totals are3753 resolved:949 authored,2228 library and576 compiler;
+598 pending and2804 excluded. Exact stays60 functions /9883 bytes and60 units
+across eleven objects. Full origins and50%-exact milestones remain unfinished.
+Next reconcile three graphics SDK gateways /326 provisional bytes at0x00604C82,
+0x0060508B and0x00605B61 through whole original source/callee/data/EH graphs and
+independent accepted Graphics parents. The private structural discovery is
+only a shortlist; every real field must be independently bound before an
+unmasked whole comparison can support any new origin decision.
