@@ -12519,3 +12519,86 @@ and3091 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. One thousand of the original1311 remaining candidates are now resolved;
 the full goal remains active. R203 next reviews six original PNG/read/quantize/
 YCbCr conversion policies and their complete dependency/source data graph.
+
+## R203 — whole PNG read/quantization policies and source-scoped packed conversion data
+
+R203 accepts six library policies / 2807 bytes with no extent changes. Replay
+`scripts/repo-python scripts/verify-sdk-png-packed-origins.py`; the immutable
+`config/sdk-png-packed-origin-evidence.json` SHA-256 is
+`c3112e66bfce14d918e18c666ba26220ee70bae92b79875fa02f8ffbbb13d532`.
+The pinned original SDK archive and complete member identities reopen; names
+and native relocation destinations alone do not establish ownership.
+
+| Address | Whole bytes | Original SDK policy | Member offset |
+| --- | ---: | --- | ---: |
+| `0x006227F1` | 192 | D3DX::png_read_init | 1828564 |
+| `0x00622DFD` | 122 | D3DX::png_read_rows | 1828564 |
+| `0x00622EC4` | 256 | D3DX::png_read_end | 1828564 |
+| `0x006235B9` | 1619 | D3DX::png_set_dither | 1842088 |
+| `0x0062E461` | 302 | D3DX::MYCbCrA2RGBA | 1602398 |
+| `0x0062E58F` | 316 | D3DX::MYCbCrA2RGBALegacy | 1602398 |
+
+**Complete source and flow.** Fourteen complete original sections / 3056 bytes
+retain six code bodies / 2807, seven initialized data sections / 241 and one
+BSS section / 8. Every one of the 72 genuine fields binds through independently
+owned definitions and its actual COFF addend, type, member, section and symbol
+index. Full unmasked linked code/data bytes and all six complete CFGs replay.
+Twenty complete retained SDK anchors / 3376 bytes and 161 fields remain literal
+prior records, including the entire 30-byte png_error nonreturn source suffix.
+There are no new interior compiler rows, import aliases or lifetime exclusions.
+All earlier protected alternatives and accepted evidence remain unchanged.
+
+**Mutable initial data and MMX state.** The whole writable initialized 48-byte
+bank at `0x0066E2A8` belongs to original member 1602398, section 2. Source-static
+labels retain offsets 0 (_const_sub128), 8 (_const_VUmul), 16 (_const_YVmul),
+24 (_const_YUmul), 32 (_mask_highd) and 40 (_const_invert). The unused mask label
+remains in the full carrier. Writable BSS / 8 at `0x0068E280` is the same member's
+section 3, source-static _const_0. These prove initial images and allocation,
+not runtime immutability; label spelling does not change writable source flags.
+The complete 121-byte readonly PNG label bank at `0x0065F240`, all version/error
+strings and their scoped definitions remain whole. The string 1.1.3 identifies
+this zlib source observation, not the game's self-reported version.
+
+Both entire packed kernels retain their original mnemonic observations and
+11/13 actual DIR32 fields. Each has six PMADDWD and six PSRAD instructions;
+legacy has two actual _const_invert fields at source offset 40, absent from the
+other kernel. Neither source kernel contains EMMS; both return with MMX state
+retained. A generated clear/reset sequence must not be substituted into either
+original body. Pointer argument meanings and private PNG layouts remain unknown.
+
+**Cold interface and intrinsic observations.** `PngPackedPolicyProbe.cpp`
+cold-builds all 13 ordinary sections: twelve complete controls / 359 bytes and
+the whole readonly scalar observation / 24 bytes. Two original public headers,
+mmintrin.h and stddef.h, retain their file hashes. Six complete five-byte JMP
+forwarders preserve the actual original COFF free-function signatures. Private
+PNG tags stay opaque pointers. png_read_rows retains unsigned long (COFF K),
+not unsigned int (I); conversion parameters keep neutral pointer names.
+No private owner is instantiated, embedded or assigned a layout.
+
+Six independent generic public-intrinsic controls observe saturated subtraction,
+packed multiply-add, a shift-by-one policy, narrowing and interleave, plus the
+separate subtraction control preserving MMX state. Five explicit _mm_empty
+controls emit EMMS; the preserve-state control emits none. Complete bodies,
+actual security-cookie fields, stores, returns and all emitted sections replay.
+These controls establish compiler/interface observations, not a reconstructed
+conversion implementation or an executable-wide compiler profile.
+
+**Acceptance and preservation.** Original-state and accepted-state complete
+source/data/field/CFG/anchor/cold-control replays pass. Full R202 regression and
+R199's direct complete source/field/CFG/anchor replay with its own cold controls
+pass; unchanged recursive earlier cold trees were not rerun. The prior-snapshot
+audit finds no earlier exact original function/origin row affected by these six
+transitions. Canonical readback changes exactly six function and origin rows,
+with no size changes. Local target/project/query attestations, 902 authored
+bodies / 1956112 bytes, all 60 exact-input guards, fresh 305-pending triage,
+progress and whitespace checks pass. All 2666 CI tests pass, including 32 new
+evidence guards. Public MCP acceptance remains waived by the user.
+No reconstructed source, private layout, canonical ABI, mapping or exact credit
+is added.
+
+Totals are 4046 resolved: 949 authored, 2519 library and 578 compiler; 305 pending
+and 3097 excluded. Exact remains 60 functions / 9883 bytes / 60 units across
+11 objects. Of the original 1311 remaining candidates, 1006 are now resolved;
+the full origin-review goal remains active. R204 next revisits the bounded six
+SDK lifetime/PNG ownership alternatives documented in the handoff, preserving
+unknown origin until whole source and independent ownership evidence suffice.

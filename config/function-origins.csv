@@ -3192,13 +3192,13 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006226A4,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x006226C9,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x006226EE,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
-0x006227F1,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006227F1,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
 0x006228B1,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x00622A24,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x00622A56,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
-0x00622DFD,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00622DFD,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
 0x00622E77,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
-0x00622EC4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00622EC4,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
 0x00622FC4,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x006230F6,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x00623177,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
@@ -3216,7 +3216,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006233F8,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00623445,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00623472,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x006235B9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006235B9,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
 0x00623C0C,library,D3DX8SDK,exclude,complete-vendor-body,R010
 0x00623C54,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x00623C5D,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
@@ -3396,8 +3396,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0062E1CF,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x0062E1F2,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0062E325,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
-0x0062E461,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0062E58F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0062E461,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
+0x0062E58F,library,D3DX8,exclude,whole-original-sdk-png-read-quantize-and-packed-ycbcr-policy-with-scoped-fields-complete-source-data-and-cold-pointer-only-interfaces,R203
 0x0062E6CB,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x0062E8E9,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
 0x0062EA0A,library,D3DX8SDK,exclude,complete-vendor-body,R008
