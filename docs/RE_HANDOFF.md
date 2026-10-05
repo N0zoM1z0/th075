@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R198. The public
+review cohorts R108 through R199. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,887: 949 authored, 2,362 library and 576 compiler generated.
-There are 464 pending. Candidate count is not authored function count.
+has resolved 3,982: 949 authored, 2,457 library and 576 compiler generated.
+There are 369 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,81 +20,76 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R199 image load/save source graph below.
+the bounded R200 SDK texture/error/text/sprite graph below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R198; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R199; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R199 complete image load/save source graph
+## Next agent objective — R200 remaining SDK texture/error/text/sprite policies
 
-R198 accepts108 whole library entries /36143 code bytes plus92 real table
-bytes. Replay `scripts/repo-python scripts/verify-sdk-blit-origins.py`; manifest
-SHA `6d537daa5c3605c37ac3e72ba1d09eba6702689f040f6b34f20ae3ba2a3d3b10`.
-The complete source graph,
-constructor ownership inference, switch extents and public controls are recorded
-in R198 of the knowledge base and origin review. All2505 CI checks, original
-and accepted whole replays, canonical readback, local target/project/query
-attestations, authored/exact guards,464-pending triage and progress pass.
-Public MCP acceptance remains waived; the full remaining-origin goal is active.
+R199 accepts95 whole library policies /23926 code bytes plus136 actual table
+bytes. Replay `scripts/repo-python scripts/verify-sdk-image-chain-origins.py`;
+manifest SHA
+`77ea2fe0c65ac983a29b752f1724a6648a2472021fa474074c80c55fceb5504a`.
+Six initial image load/save entries expand into the full JPEG/PNG/zlib source
+chain. Complete original source definitions and all real fields establish SDK
+carrier provenance; source names do not establish complete private layouts.
 
-Only Codec::Create1884 and BltBox2D1059 expand their provisional code-only
-extents to include guarded60-/32-byte selector tables. Source-static F2IBegin
-placements retain scoped owner/section/index identities. Two callback policies
-retain both actual CPU alternatives and mutable slots. Forty actual COFF weak
-records,81 complete independent anchors and49 unchanged interior compiler rows
-replay. Source-carrier233 does not mean233 distinct native functions:two source
-owners share one D3DXCOLOR constructor placement. Original CRT vector helpers
-retain whole98/96 cleanup paths; floor retains the entire289-byte shared carrier.
+The graph contains449 whole original sections62866/all904 fields,212 complete
+normal/EH/state/nonreturn CFGs and109 complete retained anchors26174/268 fields.
+Three canonical zlib extents expand to include34 actual table entries136.
+Inflate EBP definitions13/31/13/13 retain every path:31 is a division constant;
+only13 reaches the comparison/indexed table. Blocks has two actual unsigned
+bounds; codes indexes ECX. Do not replace path proof with one nearby CMP.
+Four nonreturn callbacks retain full source POP ESI/INT3 suffixes separately from
+normal reachability. Three canonical extents expand by one byte; no fake RET
+or padding is introduced. R107 setjmp3 and the absolute CRT FS symbol retain
+their original records. One interior R022 compiler row8 remains unchanged.
 
-The40 accepted constructors take an explicit external input pointer and have
-whole source/caller/field evidence plus independently cold-built pointer/default/
-copy controls using complete generic observer classes. No private SDK owner or
-layout is declared or instantiated. Six other lifetime alternatives /438 remain
-unknown:EnvMap104 at0x0060B728, LockVolume6 at0x00614BC6, TF_Row vector-deleting76
-at0x006114A7, Codec19 at0x0061535A, CodecDXT160 at0x0061572C and CodecYUV73 at
-0x0061A453. Retain R195's seven cases405 and every earlier protected alternative.
-Original R186 opaque Face35/End227 records remain immutable:Face is non-inventory;
-End now has separate full R198 library evidence. Historical verifiers allow only
-the exact frozen End transition. Seven script content hash transitions are fixed
-original/accepted pairs; do not loosen them or introduce hash cycles.
+Six complete ordinary/public controls132, seven emitted sections,86 original
+headers and readonly observation68 replay cold. The observer68 is a complete
+generic type, not a private JPEG/PNG layout. Public jmp_buf64, image-info28,
+actual setjmp lowering, original longjmp/exit noreturn declarations and WINAPI
+image-info12/surface-save20 retain independent source/header evidence. All2541
+CI checks pass, including36 guards; original/accepted whole replays, canonical
+readback, local target/project/query attestations, authored/exact guards,
+369-pending triage and progress pass. Public MCP acceptance remains waived.
 
-The fresh `.analysis/origin-scan/r198-triage.json` has464 pending, including196
-in the SDK/CRT region. The next bounded six-candidate cohort /4749 provisional
-bytes is diagnostic original SDK image source from member1516190:
+Retain CD3DXFile destructor11 at0x0060C120 and CD3DXImage destructor89 at0x0060EBCD
+as unknown. Retain R198 six lifetime alternatives438, R195 seven cases405 and
+all earlier protected game/compiler/library alternatives. Previous manifests
+and verifier sources remain unchanged by R199. The full origin goal is active;
+exact remains60 functions /9883 bytes /60 units across eleven objects.
 
-| Candidate | Provisional whole bytes | Original survey symbol |
-| --- | ---: | --- |
-| `0x0061014E` | 1430 | CD3DXImage::LoadPNG |
-| `0x006106E4` | 833 | CD3DXImage::LoadDDS |
-| `0x00610CCD` | 713 | CD3DXImage::Save |
-| `0x00610A25` | 680 | CD3DXImage::SaveDDS |
-| `0x0060F761` | 624 | CD3DXImage::LoadJPG |
-| `0x00610FC6` | 469 | CD3DXImage::Load |
+The next bounded six-candidate cohort /5069 provisional bytes is diagnostic
+original SDK source. Own complete COMDAT extents currently equal these values:
 
-Private `.analysis/r199-image-discovery.json` /log reopens all six complete
-original source carriers /4749 bytes and108 genuine fields. Each matches the
-native image structurally and has a complete normal CFG in this diagnostic.
-Observed field destinations are not independent source bindings; these results
-receive no origin or exact credit.
+| Candidate | Whole source bytes | Original survey symbol | SDK member |
+| --- | ---: | --- | ---: |
+| `0x00607F32` | 1651 | CreateTextureFromFileInMemoryEx | 1540360 |
+| `0x006073A5` | 960 | SaveTextureToFile | 1540360 |
+| `0x00604CE6` | 623 | D3DXGetErrorStringA | 338212 |
+| `0x0061F45E` | 321 | CD3DXText::Initialize | 360280 |
+| `0x0061F59F` | 1299 | CD3DXText::DrawTextAW | 360280 |
+| `0x006095FA` | 215 | CD3DXSprite::Draw | 368042 |
 
-Reopen `.analysis/sdk-origin-survey.json` only for discovery. Independently
-reconcile complete original COMDATs, all source fields/data/EH/CFGs, accepted
-anchors and image/PNG/JPEG/zlib dependency carriers. If the graph exposes more
-whole policy candidates, accept only a bounded frozen cohort with independent
-ownership evidence; source fingerprints and survey destinations are diagnostic.
-Preserve source-static identities, actual weak AUX/fallbacks and every runtime
-callback alternative. Never instantiate an incomplete CD3DXImage/codec owner or
-invent a JPEG/PNG private layout. SDK provenance may cover bundled third-party
-code; distinguish observed original carrier ownership from inferred function
-meaning. Continue all remaining origin review after the cohort. No exact
-reconstruction or subsequent project phase is authorized.
+Use `.analysis/sdk-origin-survey.json` only for discovery. Independently reopen
+complete original source/data carriers, every actual relocation, switch/EH/
+indirect path and accepted anchor. Reuse the whole accepted image load/save and
+blit graphs as independent sources, preserving original records and every
+unknown context. These six source fingerprints are not accepted origins.
+Freeze any further ordinary policy cohort only after full independent source
+closure. Keep source-static identities, actual weak AUX references and runtime
+callback/COM destinations explicit. Never instantiate incomplete SDK owners or
+invent text/sprite/image object layouts. Continue all remaining origin review;
+no exact reconstruction or subsequent project phase is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

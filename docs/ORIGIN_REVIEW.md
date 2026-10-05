@@ -12218,3 +12218,85 @@ and2938 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal is active. R199 next reviews the six image
 load/save source candidates and their original dependency graph; the source
 survey is diagnostic until every real field/whole owner is independently closed.
+
+## R199 — whole image/JPEG/PNG/zlib policies and state/nonreturn source flow
+
+R199 accepts95 library candidates /24062 whole source bytes:23926 code and
+136 genuine state-table bytes. Exactly95 function/origin row pairs change from
+863a06a. The immutable manifest is
+`config/sdk-image-chain-origin-evidence.json`, SHA
+`77ea2fe0c65ac983a29b752f1724a6648a2472021fa474074c80c55fceb5504a`. Replay
+`scripts/repo-python scripts/verify-sdk-image-chain-origins.py`.
+
+**Source observations and ownership inference.** Six initial image load/save
+methods /4749 bytes from original SDK member1516190 close through89 additional
+ordinary source policies:JPEG memory/error/decompression, PNG read/transform/
+CRC/allocation and zlib inflate workers. Ninety-five complete source function
+definitions, full target images and genuine typed source references establish
+library ownership. Namespace/function meanings remain source-based inferences;
+SDK archive provenance includes bundled third-party code. Short global C-style
+policies retain complete incoming call or initialized function-pointer fields;
+an empty/constant-return byte shape alone supplies no ownership. Names remain
+provisional; no canonical private signature or object layout is declared.
+
+The graph reopens449 complete original source carriers /62866 bytes:
+212 code47056,236 initialized data15802 and one BSS8, with all904 genuine
+fields. Every real original section definition/AUX record, scoped static field,
+source image, permission and complete unmasked linked image replays. All212
+whole normal/EH/state/nonreturn CFGs consume their code/table fields. There are
+109 complete independently accepted SDK/CRT anchors /26174 bytes and268 fields,
+one actual imported API, no guessed weak aliases and one unchanged R022
+interior compiler row8. The complete original JPEG message-pointer/string bank,
+zlib fixed tables/masks and initial MMX state remain full source carriers;
+writable initial values do not identify runtime state.
+
+**Three complete state tables.** Inflate at0x00629471 expands815 to871,
+blocks at0x0063A903 expands1907 to1947 and codes at0x0063D7EC expands1340 to1380.
+The full source tables own14/10/10 actual local-label DIR32 fields, totaling
+56/40/40 bytes. Full root-to-index path analysis verifies unsigned bounds13/9/9
+and actual EAX/EAX/ECX indexes. The blocks dispatcher preserves both separately
+reaching bounds. Inflate's nonvolatile EBP has four source push/pop definitions:
+13,31,13,13. The31 division constant does not reach the table comparison or
+indexed jump; both restoration paths are retained. All paths reaching the
+comparison/indexed dispatch carry13. Rewriting the index or flags after a guard
+invalidates the proof. No extra label is treated as a root, inferred selector
+is introduced, or body is cropped to a code-only extent.
+
+**Whole nonreturn source tails.** The original callbacks at0x0060F6FF /28,
+0x00610141 /12 (non-inventory),0x0062245E /27 and0x00622671 /30 bind complete
+longjmp121 or exit17 anchors and original public noreturn declarations. Their
+complete source suffix is one actual POP ESI or INT3 after the terminal call.
+It remains in source/target comparison and instruction counts, separately from
+normal reachability; it is not an invented return, alignment or padding.
+Exactly three canonical callback extents expand by one byte:27->28,26->27 and
+29->30. Together with the three table expansions these are the only six extent
+changes. Original setjmp3 /123 from R107 retains its exact old source/relocation
+record; its FS:[0] field owns the actual absolute CRT __except_list symbol.
+
+`ImageJumpPolicyProbe.cpp` cold-builds six whole ordinary/public controls132
+bytes, all seven ordinary emitted sections,86 original headers and readonly
+observation68. Complete generic notify/jump and notify/destroy/exit policies
+independently reproduce a saved-register POP ESI source suffix; direct jump
+reproduces INT3. Original setjmp lowers to __setjmp3. Public image-info and
+surface-save declarations retain WINAPI12/20. Public jmp_buf64 and
+D3DXIMAGE_INFO28/its seven offsets are observed independently. The generic
+observer68/state offset4 is a complete observation class, not the JPEG/PNG
+private layout; actual private pointer/field semantics remain incomplete.
+Compiler profiles are reproducibility controls, not executable-wide claims.
+
+**Retained alternatives and acceptance.** CD3DXFile destructor11 at0x0060C120
+and CD3DXImage destructor89 at0x0060EBCD remain unknown; whole source/calls alone
+do not distinguish explicit from compiler-generated member cleanup. All earlier
+protected alternatives, previous manifests/records and prior verifier sources
+remain unchanged. Full R198 and R107 replays pass, then both original-state and
+accepted-state whole R199 source/CFG/field/public-control replays pass. Canonical
+readback, target/project/query attestations,902 authored bodies /1956112 bytes,
+all60 exact-input guards, fresh369-pending triage, progress and whitespace pass.
+All2541 CI checks pass, including36 new provenance/state/nonreturn guards.
+Public MCP acceptance remains waived. No reconstructed source, private owner/
+layout, canonical ABI, mapping or exact credit is added.
+
+Totals are3982 resolved:949 authored,2457 library and576 compiler;369 pending
+and3033 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal stays active. R200 reviews six remaining SDK
+texture/error/text/sprite policies and their complete original dependency graph.
