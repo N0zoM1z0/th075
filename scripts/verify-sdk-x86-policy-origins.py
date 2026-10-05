@@ -194,9 +194,11 @@ def main():
             raw, fields = c.object_function(obj, r['symbol'], size)
             if (size != r['size'] or fields != r['fields'] or digest(raw) != r['source_sha256']
                     or digest(c.pe_bytes_at(target, int(r['address'], 16), size)) != r['body_sha256']
-                    or functions[r['address']] != r['function'] or origins[r['address']] != r['origin']):
+                    or ((functions[r['address']] != r['function'] or origins[r['address']] != r['origin'])
+                        and not module('x86_dispatch_transition', 'verify-sdk-dispatch-origins.py').allows_transition(
+                            r['address'], r['function'], r['origin'], functions[r['address']], origins[r['address']]))):
                 raise ValueError('SDK unresolved full context/fields/snapshot differs')
-    print('R188 origins OK: three complete explicit SDK dependencies /354 bytes; ten whole source bodies /1268 bytes with all14 real fields; eight independent x86 pointer implementations; full writable 4104-byte source data image and readonly registry path /28 bytes; three actual registry APIs; whole 460-byte /112-pointer carrier, CPU selector and two public callers remain context only; prior evidence/ownership preserved; no source/ABI/mapping/exact credit.')
+    print('R188 origins OK: three complete explicit SDK dependencies /354 bytes; ten whole source bodies /1268 bytes with all14 real fields; eight independent x86 pointer implementations; full writable 4104-byte source data image and readonly registry path /28 bytes; three actual registry APIs; whole 460-byte /112-pointer carrier, historical CPU/public context retained with only immutable R192 snapshot transitions; prior evidence/ownership preserved; no source/ABI/mapping/exact credit.')
     return 0
 
 

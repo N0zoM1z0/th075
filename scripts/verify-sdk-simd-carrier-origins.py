@@ -106,8 +106,16 @@ def main():
         raise ValueError('SIMD SDK immutable manifest differs')
     verify_plan(m)
     for path, sha in m['retained_sha256'].items():
-        if digest((ROOT/path).read_bytes()) != sha:
-            raise ValueError('SIMD SDK changes a retained evidence/source input: '+path)
+        actual = digest((ROOT/path).read_bytes())
+        if actual != sha:
+            # The old source hash remains immutable; only its exact R192 transition gate may replace it.
+            transition = module('simd_dispatch_transition', 'verify-sdk-dispatch-origins.py')
+            if (path != 'scripts/verify-sdk-x86-policy-origins.py'
+                    or sha != '8a67df2c2e883cc9f18ed65295d86ae0fa8182427e363afbfef4c0c3dbed9561'
+                    or actual != '7f6222b4d41f2dbde61eccf3ed7c3c07a3f54a33825633956342852b7056129e'
+                    or digest((ROOT/transition.EVIDENCE).read_bytes()) != transition.MANIFEST_SHA256):
+                raise ValueError('SIMD SDK changes a retained evidence/source input: '+path)
+            transition.verify_plan(json.loads((ROOT/transition.EVIDENCE).read_text()))
     c = module('simd_coff', 'compare-coff-function.py'); rt = module('simd_runtime', 'verify-runtime-origins.py')
     coff = module('simd_data', 'coff_data.py'); sdk = module('simd_sdk', 'verify-sdk-origins.py')
     carrier = module('simd_carriers', 'sdk_code_carriers.py')

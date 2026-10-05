@@ -8658,3 +8658,101 @@ Origin totals are3696 resolved:949 authored,2171 library and576 compiler;
 across eleven object inputs. Both the full-origin and50%-exact milestones
 remain unfinished. Next close the default C table dependencies and then the
 remaining CPU selector/public Normalize/LookAtRH cohort.
+
+## R192 — complete default table, CPU selector and runtime dispatch
+
+R192 accepts53 complete library functions /3468 bytes:31 initialization policies
+/907 bytes,14 public functions /406 bytes, six C math functions /1913 bytes,
+CPU selector221 and CRT finite21. The complete original source graph closes the
+R192 handoff cohort and every required default callback dependency. All53 original
+canonical extents stay unchanged; no source, ABI, mapping or exact credit is added.
+
+| Key source association | Address | Function bytes |
+| --- | --- | ---: |
+| D3DXCpuOptimizations | `0x00620C9A` | 221 |
+| D3DXVec3Normalize | `0x0061AF34` | 6 |
+| D3DXMatrixLookAtRH | `0x0061CA33` | 328 |
+| c_D3DXVec3Project | `0x0061E467` | 365 |
+| c_D3DXVec3Unproject | `0x0061E5F4` | 390 |
+| c_D3DXMatrixShadow | `0x0061EB67` | 218 |
+| c_D3DXMatrixReflect | `0x0061EC41` | 191 |
+| c_D3DXMatrixTransformation | `0x0061E8B3` | 692 |
+| c_D3DXMatrixRotationYawPitchRoll | `0x0061E87A` | 57 |
+| __finite | `0x00643FC6` | 21 |
+
+**Target and original-source observations.** All129 original code carriers
+/14378 bytes and298 genuine fields compare unmasked. The whole397-/422-byte
+C projection carriers include eight-way switch tables32/32 after code365/390.
+The actual table/case definitions, unsigned EAX0..7 guards, indexed jumps and all
+sixteen original DIR32 entries are retained separately from function code.
+No comparison is truncated to the provisional code-only extents.
+
+The full initialized mutable table460 at0x0066D070 retains112 original function
+pointer fields and all nonpointer bytes. Source definitions place g_D3DXFastTable
+at offset0 and g_D3DXFastTableC at232. The selector's two original REP MOVSD paths
+copy57 DWORDs /228 bytes from the C bank. All57 default callbacks have separately
+whole source owners. The first bank has55 original pointers; its Ln/Exp slots
+at220/224 are genuinely zero initially and are filled by the copy. The four-byte
+source gap at228 is preserved. These observations do not establish a complete
+private C++ type or authorize instantiating it.
+
+Every indirect call/tail is tied to an actual original table-slot field in that
+228-byte bank. The verifier requires absolute memory dispatch and preserves
+runtime-selected behavior; a slot is never rewritten as a fixed final callee.
+The CPU selector retains its original default/reset state, registry disabling
+policy, feature tests, x86 initialization and 3DNow/SSE2/SSE precedence. Seven
+independent prior anchors retain their complete R188/R189/R190/R191/R147 source
+and target images and immutable dependency evidence. All68 non-inventory entries
+and eight previously accepted inventoried owners stay unchanged.
+
+All18 original initialized data sections /544 bytes retain full definitions,
+source AUX records, actual fields and source/PE permissions:table460, CPU state8,
+DisableD3DXPSGP16 and fifteen readonly scalar sections /60 bytes. Writable image
+equality describes initialization only. No BSS/COMMON/virtual zero-fill is
+invented or substituted for an initialized image.
+
+Two complete non-inventory SDK callers independently resolve the historical
+R155 finite ambiguity: c_MatrixInverse909 at0x0061BE75 has its actual REL32 field
+at756 to0x00643FC6; c_PlaneIntersectLine162 at0x0061DD91 has the genuine field
+at98 to the same owner. The original ieeemisc.obj member2915526 supplies the
+whole21-byte __finite function AUX with no relocations. Its complete byte image,
+all branches/returns and source definitions are preserved. R155's natural20-byte
+exponent alternative remains different and does not obtain a prefix match.
+R155's earlier bounded caller absence remains historical, not a timeless claim.
+The separate FillZeroMan12 explicit/ordinary ambiguity stays unknown. Complete
+C AxisAngle157 and Ln126 retain actual calls to the independently accepted
+whole203-byte __CIacos graph; intrinsic names alone grant no ownership.
+
+**Inference and limits.** The complete explicit SDK initialization/dispatch and
+math policies are library-owned through the pinned original COFF graph. The
+finite leaf now has two independent whole original SDK callers as corroboration,
+beyond its short byte image or source symbol. Source names remain associations;
+original target names and compiler/assembler profiles are unknown. No compiler
+emission hypothesis, reconstructed C++/assembly body, private layout or new
+probe is introduced. The retained natural R155 controls are cold-replayed.
+
+**Acceptance.** Replay `scripts/repo-python scripts/verify-sdk-dispatch-origins.py`.
+Manifest SHA `41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51`.
+Exactly53 function/origin rows change from7e6967f; all previous configuration
+evidence files,902 authored bodies /1956112 bytes and sixty exact inputs remain
+unchanged. R155/R188/R191 permit only four exact original-to-R192 snapshot
+transitions; R189 permits only the exact R188 replacement source hash and new
+immutable transition evidence. Older manifests are never rewritten or broadly
+relaxed. Thirty new adversarial checks reject omitted callbacks/fields, truncated
+data/switch extents, false source/ABI/exact credit, changed historical snapshots,
+unbound/out-of-bank dispatch, register calls/tails and hidden fields.
+
+All2405 public checks, local target/tracking/project checks, bounded Ghidra query
+markers, full source/CFG replay, affected historical evidence, postaccept R155
+canonical readback, fresh602-pending scan, exact-input preservation, progress
+and whitespace checks pass. Public MCP acceptance remains waived. Origin totals
+are3749 resolved:949 authored,2224 library and576 compiler;602 pending and2800
+excluded. Exact stays60 functions /9883 bytes and60 units across eleven objects.
+Both the full-origin and50%-exact milestones remain unfinished.
+
+Next review three adjacent public/C companions:0x0061C89D6 (Transformation
+runtime slot),0x0061CB7B328 (LookAtLH) and0x0061E85339 (C RotationQuaternion).
+They are diagnostic candidates only; reopen their whole original source and
+independent accepted dependencies before deciding ownership. Then continue
+through the fresh602-pending lanes, preserving all earlier unresolved lifetime,
+copy, math, allocator and short-CRT alternatives.

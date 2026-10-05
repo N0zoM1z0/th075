@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R191. The public
+review cohorts R108 through R192. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,696: 949 authored, 2,171 library and 576 compiler generated.
-There are 655 pending. Candidate count is not authored function count.
+has resolved 3,749: 949 authored, 2,224 library and 576 compiler generated.
+There are 602 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,78 +20,68 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R192 default-table/CPU/public dispatch cohort below.
+the bounded R193 adjacent public/C companion cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R191; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R192; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R192 default-table/CPU/public dispatch closure
+## Next agent objective — R193 adjacent public/C companions
 
-R191 closes the complete x3d initializer/callback/math graph and accepts seventeen
-library functions /7194 bytes. Replay
-`scripts/repo-python scripts/verify-sdk-x3d-origins.py`; manifest SHA
-`d2a7ef2eeb860ae2e392456a64a59df935f108b95b894a171f8a37a8fa0ca22d`.
-All69 original code carriers /30525 bytes and498 fields compare unmasked.
-The initializer550 retains all62 callback fields, including five K7 overrides.
-Three inline eight-way switches retain all96 table bytes separately from
-code360/518/307. The entire non-COMDAT math3256 section retains20 actual names
-at19 entries, the cos/sincos source alias, one encoded non-relocation internal
-call and254 original trailing alignment bytes. No source padding is changed.
+R192 accepts53 complete library functions /3468 bytes and closes the default
+mutable-table/CPU/public cohort. Replay
+`scripts/repo-python scripts/verify-sdk-dispatch-origins.py`; manifest SHA
+`41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51`.
+All129 original code carriers /14378 bytes /298 fields and18 whole initialized
+data images /544 bytes compare unmasked. The full460-byte table retains112
+pointer fields; all57 C defaults have independent full source owners. Original
+CPU copy paths fill the two genuinely empty first-bank Ln/Exp slots. Actual
+runtime-selected calls/tails remain mutable-slot dispatch, not fixed callees.
+Two C switches retain their full64 table bytes apart from code365/390.
 
-Whole readonly8, writable initialized344 and prior readonly314 images retain
-their actual definitions/permissions. Ten old R008 library owners and sixty
-non-inventory function entries remain unchanged. No private table/class is
-instantiated and original tool profiles/runtime-selected callbacks are unknown.
-Exactly seventeen function/origin rows change from df3ea16; every extent,
-all902 authored bodies /1956112 bytes and every earlier configuration evidence
-file remain unchanged. All2375 public checks, local target/tracking/project,
-bounded query markers, complete independent source/CFG replay, exact-input
-preservation, fresh655-pending scan, progress and whitespace checks pass.
-Public MCP acceptance remains waived; the full origin goal remains active.
+Original SDK MatrixInverse909 and PlaneIntersectLine162 have genuine fields
+to the complete CRT finite21 owner. Its previous natural20 alternative remains
+different; FillZeroMan12 stays unknown. The complete203-byte acos owner and all
+R188/R189/R190/R191 graphs remain independent immutable anchors. Only four
+historical pending snapshots may advance through exact R192 transitions; R189
+pins the exact revised R188 verifier source. All prior manifests are unchanged.
 
-The next bounded pending inventory cohort is:
+Exactly53 function/origin rows change from7e6967f, preserving every original
+extent, all902 authored bodies /1956112 bytes,68 non-inventory entries and all
+sixty exact inputs. All2405 public checks, target/tracking/project/query markers,
+full source/CFG replay, affected historical evidence and R155 postaccept ledger
+readback, exact guard, fresh602-pending scan, progress and whitespace pass.
+No source/private ABI/mapping/exact scope is added. Public MCP acceptance remains
+waived; the full origin goal is active and unfinished.
 
-| Candidate | Provisional function bytes | Required remaining evidence |
+The next bounded diagnostic cohort is:
+
+| Candidate | Full provisional bytes | Source association to reopen |
 | --- | ---: | --- |
-| `0x0061E467` | 365 | c_D3DXVec3Project, complete source397 including local switch32 |
-| `0x0061E5F4` | 390 | c_D3DXVec3Unproject, complete source422 including local switch32 |
-| `0x00620C9A` | 221 | D3DXCpuOptimizations, full mutable table/state/default-callback graph |
-| `0x0061AF34` | 6 | Public Normalize dispatch, complete independently typed mutable slot |
-| `0x0061CA33` | 328 | Public LookAtRH policy and all actual direct/indirect dependencies |
+| `0x0061C89D` | 6 | _D3DXMatrixTransformation@28, original mutable slot0x0066D10C |
+| `0x0061CB7B` | 328 | _D3DXMatrixLookAtLH@16, all Normalize/public math dependencies |
+| `0x0061E853` | 39 | c_D3DXMatrixRotationQuaternion, all direct callee fields |
 
-Private `.analysis/r192-default-context.json` confirms both complete default C
-projection source extents from d3dxmath.obj, offset684528. Four required C controls
-are non-inventory: c_MatrixInverse at0x0061BE75/source909 and c_PlaneIntersectLine
-at0x0061DD91/source162 call __finite; c_QuaternionToAxisAngle at0x0061D36E/source157
-and c_QuaternionLn at0x0061D930/source126 call __CIacos. Their full CRT owners
-must be reopened and bound from the pinned runtime archive; do not create
-canonical candidates or derive origin from intrinsic names. The private older
-`.analysis/r188-fast-discovery.json` is diagnostic only: its193 bodies cannot
-be promoted without reopening every complete extent, original carrier/entry,
-data image, genuine field and old/pending canonical snapshot. Its old x3d/SSE/
-Intel errors now have R189/R190/R191 evidence, not new acceptance credit.
+Original source is d3dxmath.obj at SDK archive offset684528. Private
+`.analysis/r193-public-discovery.json` contains one complete six-byte slot
+association, diagnostic only. Reopen every actual COMDAT/field/definition,
+whole CFG and accepted dependency before accepting; the scanner cannot establish
+ownership or turn a mutable slot into a fixed destination. None of these three
+may be accepted merely for adjacency to R192. Inspect historical snapshot pins
+before any concrete transition and preserve complete origin/exact baselines.
 
-R188 freezes CPU221 and the two public entries as pending context. Accepting
-them requires only exact hash-pinned original-to-accepted snapshot transitions;
-retain R188's manifest and every unrelated row. R189 additionally pins the
-original R188 verifier source hash. If that verifier changes to admit concrete
-new snapshots, R189's verifier must recognize only the exact new source hash
-and new immutable transition evidence, retaining R189's manifest unchanged.
-Avoid a circular source/manifest hash dependency or a broad pending-state bypass.
-
-The original mutable pointer carrier460 has112 real fields. Close all default
-callback implementations and distinguish original initialized images from BSS/
-COMMON and PE virtual zero-fill. Public indirect dispatch proves a typed slot,
-not a fixed final runtime-selected callee. R189 and R190 whole SIMD/CPU/EH graphs
-and exact inputs remain immutable; replay affected provenance after concrete
-anchor transitions. No source/private ABI/mapping/exact scope is added.
+Fresh `.analysis/origin-scan/r192-triage.json` records602 pending:53 vendor-or-
+compiler-parent,77 game-parent,404 unresolved-context,61 reconcile-extent,
+six game-callees-and-parent and one game-callees. Continue bounded cohorts from
+those lanes after the three companions. Preserve accepted evidence and all
+protected lifetime/copy/math/allocator/short-CRT alternatives; no source or exact
+reconstruction strategy change is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

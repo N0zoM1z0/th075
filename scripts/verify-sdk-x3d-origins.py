@@ -197,9 +197,12 @@ def main():
         if any(address<int(a,16)<address+extent and a not in known for a in functions):raise ValueError('3DNow whole source extent hides an inventoried entry')
         if r['old_sdk_record'] is not None and old_sdk.get(r['address'])!=r['old_sdk_record']:raise ValueError('3DNow original R008 implementation owner changes')
     for r in m['pending']:
-        if functions[r['address']]!=r['function'] or origins[r['address']]!=r['origin'] or digest(c.pe_bytes_at(target,int(r['address'],16),r['size']))!=r['body_sha256']:
+        snapshots_differ=functions[r['address']]!=r['function'] or origins[r['address']]!=r['origin']
+        if ((snapshots_differ and not module('x3d_dispatch_transition','verify-sdk-dispatch-origins.py').allows_transition(
+                r['address'],r['function'],r['origin'],functions[r['address']],origins[r['address']]))
+                or digest(c.pe_bytes_at(target,int(r['address'],16),r['size']))!=r['body_sha256']):
             raise ValueError('3DNow changes deferred CPU/table/public context')
-    print('R191 origins OK:17 whole library functions /7194 bytes;69 full source carriers /30525 bytes and498 actual fields;initializer550 with62 callback fields;three full local eight-way switches /96 bytes;whole math code3256/writable data344 with20 real names at19 entries,one source alias and one encoded internal call;whole readonly8 and three prior readonly sections;CPU221/public6/328 unchanged and unknown;no source/ABI/mapping/exact credit.')
+    print('R191 origins OK:17 whole library functions /7194 bytes;69 full source carriers /30525 bytes and498 actual fields;initializer550 with62 callback fields;three full local eight-way switches /96 bytes;whole math code3256/writable data344 with20 real names at19 entries,one source alias and one encoded internal call;whole readonly8 and three prior readonly sections;historical CPU221/public6/328 source/body context retained with immutable R192 snapshot transitions;no source/ABI/mapping/exact credit.')
     return 0
 
 
