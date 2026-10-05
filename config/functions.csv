@@ -3303,8 +3303,8 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x00628569,429,0x00628715,FUN_00628569,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00628864,99,0x006288C6,FUN_00628864,?jpeg_new_colormap@D3DX@@YAXPAUjpeg_decompress_struct@1@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
 0x006288C7,48,0x006288F6,FUN_006288c7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00628900,262,0x00628A05,FUN_00628900,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x00628A10,266,0x00628B19,FUN_00628a10,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00628900,262,0x00628A05,FUN_00628900,?sse_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
+0x00628A10,266,0x00628B19,FUN_00628a10,?sse2_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
 0x00628B20,213,0x00628BF4,FUN_00628b20,?get_feature_flags@@YAIXZ,D3DX8SDK,excluded,0.00,,,false,,R013,,"R013; complete SDK COMDAT, independently verified call/scalar or whole readonly-section fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
 0x00628BF5,550,0x00628E1A,FUN_00628bf5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00629081,202,0x0062914A,FUN_00629081,?x86_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z,D3DX8,excluded,0.00,,,false,,R188,library,"R188; complete pinned SDK source policy, all real pointer/import/data fields, entire source definitions and native CFG; origin only, no source/ABI/mapping/exact credit."
@@ -3433,7 +3433,7 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x006308E6,202,0x006309AF,FUN_006308e6,?start_pass_1_quant@D3DX@@YAXPAUjpeg_decompress_struct@1@E@Z,D3DX8SDK,excluded,0.00,,,false,,R029,library,Whole pinned SDK COMDAT and completely bound readonly/call fields; no source/exact inheritance
 0x006309C5,135,0x00630A4B,FUN_006309c5,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x00630A50,64,0x00630A8F,FUN_00630a50,?sse_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z,D3DX8SDK,excluded,0.00,,,false,,R008,,"R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
-0x00630A90,89,0x00630AE8,FUN_00630a90,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x00630A90,89,0x00630AE8,FUN_00630a90,?sse_D3DXVec2TransformCoord@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
 0x00633C36,179,0x00633CE8,FUN_00633c36,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x006341DF,108,0x0063424A,FUN_006341df,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063424B,311,0x00634381,FUN_0063424b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
@@ -3468,9 +3468,9 @@ address,size,span_end,current_name,proposed_name,module,status,match_percent,cal
 0x0063B76B,76,0x0063B7B6,FUN_0063b76b,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063B7B7,76,0x0063B802,FUN_0063b7b7,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063B803,993,0x0063BBE3,FUN_0063b803,D3DX::jpeg_idct_float,D3DX8,excluded,0.00,,,false,,R184; complete pinned D3DX8 COMDAT and all real unmasked callee/import/scalar fields,library,"Whole archived library origin only; compiler profile, ABI and runtime state not inferred"
-0x0063C1C0,492,0x0063C3AB,FUN_0063c1c0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063C8A0,232,0x0063C987,FUN_0063c8a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
-0x0063C990,329,0x0063CAD8,FUN_0063c990,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
+0x0063C1C0,492,0x0063C3AB,FUN_0063c1c0,?sse_SinCos4@@YAXQBMQAM1@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
+0x0063C8A0,232,0x0063C987,FUN_0063c8a0,?sse2_sincos@@YG_K_K@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
+0x0063C990,329,0x0063CAD8,FUN_0063c990,?sse2_SinCos4@@YAXQBMQAM1@Z,D3DX8,excluded,0.00,,,false,,R189,library,"R189; complete pinned SDK SIMD source carriers, all actual pointer/callee/data fields and source entries; reachable function extent independently excludes verified alignment; library origin only, no source/ABI/mapping/exact credit."
 0x0063CBC0,245,0x0063CCB4,FUN_0063cbc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063CCC0,247,0x0063CDB6,FUN_0063ccc0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,
 0x0063D2A0,281,0x0063D3B8,FUN_0063d2a0,,,unclassified,0.00,,,false,,Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed,,

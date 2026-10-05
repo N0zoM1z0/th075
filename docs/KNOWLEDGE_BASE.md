@@ -8396,3 +8396,86 @@ the reachable function extent and that alignment; compare the full carriers,
 every pointer and each whole source callback including any genuine local $$1
 entry/shared body. Do not cut a source section to fit the provisional native
 extent or treat its padding as executable function credit.
+
+
+## R189 — entire SIMD code carriers, real entries and independent alignment
+
+The complete SSE/SSE2 initializer graph closes through 56 entire original SDK
+code carriers / 12960 bytes and all 264 genuine fields. Six inventoried
+candidates / 1670 function bytes are classified library/exclude; four newly
+closed mathematical dependencies join the original two-initializer cohort.
+
+| Address | Complete function bytes | Original source association |
+| --- | ---: | --- |
+| `0x00628900` | 262 | sse_D3DXInitFastTable |
+| `0x00628A10` | 266 | sse2_D3DXInitFastTable |
+| `0x00630A90` | 89 | sse_D3DXVec2TransformCoord |
+| `0x0063C1C0` | 492 | sse_SinCos4 |
+| `0x0063C990` | 329 | sse2_SinCos4 |
+| `0x0063C8A0` | 232 | sse2_sincos |
+
+Both initializer COMDAT carriers are 272 bytes. Whole carriers / 544 bytes,
+including all 67 real pointer fields and actual post-RET bytes, compare without
+masking. Each pointer binds its separately complete correct source callback;
+the full graph retains 51 callback owners and three SinCos dependency owners.
+The source/native reachable CFG independently ends the two functions at their
+real RETs, excluding ten and six original alignment bytes. This is not an
+aux-less extraction using target candidate sizes: the entire own source
+section is always reopened and compared. None of the 497 independently
+decoded alignment bytes across the graph receives function or exact credit.
+Complete function extents total 12463 bytes; all former canonical extents stay
+unchanged. Alignment includes actual self-MOV and self-LEA instructions.
+Register writes, hidden fields and branch targets cannot become padding.
+
+Real local $$1 and TAG_PACKET source entries remain in the exact COFF symbol,
+storage, section, offset and AUX records. Every entry participates in complete
+CFG reconciliation. They are not removed to satisfy a single-function source
+extractor or introduced as fictitious independently inventoried functions.
+All native branches/exits and all three direct mathematical callee symbols
+remain bound through the complete source catalogue. The prior 64-byte R008
+sse_D3DXVec2Transform owner and 49 non-inventory source controls retain their
+canonical presence/absence and original records. No extra candidate rows are
+created for the callback controls.
+
+Nine whole initialized source data sections / 2816 bytes retain every source
+definition, complete original/native image and writable permissions. These
+are original file-image observations, with no runtime-immutability claim.
+Member/section/symbol-index keys distinguish genuine local .data/.data1 names;
+identical textual section names from different objects are not name aliases.
+The full 32-byte source BSS allocation and three shared COMMON allocations
+/ 36 bytes have separate proofs. Six actual original COFF COMMON declarations
+from two source owners preserve the genuine 4-/16-/16-byte allocation sizes.
+Their entire ranges lie in independently recorded writable PE virtual
+zero-fill storage. They are not initialized file bytes, readonly constants,
+guessed addresses or invented private class layouts. Every allocated source
+definition is observed by a real field. The full Shadow and PlaneIntersectLine
+callbacks remain present instead of dropping unresolved data fields.
+
+Replay `scripts/repo-python scripts/verify-sdk-simd-carrier-origins.py`.
+Manifest SHA-256:
+`6edf1ccbd7727169fe70054fb036f5bb3d36cc3b44cc77ce036e417425fd7ec1`.
+The reusable `scripts/sdk_code_carriers.py` source reader is hash-pinned by the
+manifest. Evidence-only replay before mutation and accepted-state replay pass;
+each reopens actual complete source members and real allocations from the
+pinned archive. Strict R188 HEAD c402756 readback changes exactly six function/
+origin rows. Every original extent, all 902 authored records / 1956112 bytes,
+all earlier manifests and all sixty source/header/build/match inputs remain
+unchanged from the prior cold replay. Target/tracking/project/query markers,
+full authored verification, fresh scanning, eighteen meaningful carrier/entry/
+alignment/COMMON/data-scope guards, all 2331 public checks, progress and
+whitespace pass. No target/database write, reconstructed private layout,
+source, ABI, mapping or exact credit is added. Public MCP acceptance is waived.
+
+Totals are 3675 resolved (949 authored, 2151 library, 575 compiler), 676 pending
+and 2726 excluded. Exact stays 60 functions / 9883 bytes and provisional
+coverage 9883 / 1968455 (0.50%). The whole origin goal remains active and
+unfinished. Next reconcile R190's complete Intel CPU probe and its feature
+caller. The source IsIntelSSEProcessor extent is 165 bytes, while inventory
+splits it at 0x00620B41 / 58, Catch@00620B7B / 12 and 0x00620B87 / 95.
+The source's actual resume/catch labels and ten-byte EH frame helper must be
+retained with complete C++ EH metadata and prior runtime owners. Resolve the
+180-byte D3DXIsProcessorFeaturePresent at 0x00620BE6 only after that whole
+parent/label topology and both actual PE imports are proven. Do not accept
+the convenient 58-byte prefix or reinterpret catch/resume entries as unrelated
+authored functions. The 221-byte CPU optimizer and public math callers remain
+unchanged and unknown in R188's immutable context snapshots.

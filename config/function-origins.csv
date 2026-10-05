@@ -3303,8 +3303,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00628569,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00628864,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x006288C7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00628900,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00628A10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00628900,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
+0x00628A10,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
 0x00628B20,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x00628BF5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00629081,library,D3DX8,exclude,whole-pinned-sdk-explicit-x86-dispatch-math-and-registry-policy-with-complete-data-imports,R188
@@ -3433,7 +3433,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006308E6,library,D3DX8SDK,exclude,complete-vendor-body-bound-readonly,R029
 0x006309C5,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00630A50,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x00630A90,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00630A90,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
 0x00633C36,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006341DF,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063424B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3468,9 +3468,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0063B76B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063B7B7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063B803,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R184
-0x0063C1C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0063C8A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0063C990,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0063C1C0,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
+0x0063C8A0,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
+0x0063C990,library,D3DX8,exclude,whole-pinned-sdk-simd-carriers-with-reachable-cfg-alignment-and-complete-data-provenance,R189
 0x0063CBC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063CCC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0063D2A0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
