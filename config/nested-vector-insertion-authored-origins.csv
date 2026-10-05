@@ -1,0 +1,2 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x004588E0,116,ef02fc449982e288778cbbd5440618eed86c01325124689e2e6cb8d05797620c,NestedRecord116::ClearVectorsBeforeDestruction [provisional],1,0,0,R209

@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R208. The public
+review cohorts R108 through R209. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,80 +11,85 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,085: 949 authored, 2,556 library and 580 compiler generated.
-There are 266 pending. Candidate count is not authored function count.
+has resolved 4,103: 950 authored, 2,573 library and 580 compiler generated.
+There are 248 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,968,571 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R209 vector insertion/copy cohort below.
+the bounded R210 nested initialization/lifetime cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R208; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R209; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R209 remaining vector insertion/copy carriers
+## Next agent objective — R210 nested initialization and short lifetime context
 
-R208 accepts 20 origin entries: six complete library insertion heads / 4,866,
-twelve overlapping library catch/continuation interiors and two shared compiler
-restoration epilogues / 19 each. Full head extents are796/796/796/814/834/830,
-reconciled from 4,722 provisional bytes. Replay
-`scripts/repo-python scripts/verify-vector-insertion-carrier-origins.py`;
+R209 resolves 18 entries: 17 library entries across eight whole public policies
+/ 2,812 and nine overlapping recovery interiors; one authored nested clear-before-
+destruction policy / 116. Four extents reconcile to 796/1101/208/189 rather
+than 777/1064/162/120. Replay
+`scripts/repo-python scripts/verify-nested-vector-insertion-origins.py`;
 manifest SHA is
-`fe3ac742c24edcbdd5d3f5d5f938071edf8eac728c1ef8f3016bf45b0a5468cd`.
-All 263 complete scoped code/data sections / 15,334,638 actual fields,209 CFGs,
-334 ordinary cold emissions / 20,598,27 original headers and generic layout 40
-replay. Each replay runs the full independent retained R150/R149/R119 cold proof.
-Actual weak/absolute CRT definitions and entire authored receiver policy 75 remain.
-All 2,810 tests pass,including 39 new guards. Original/accepted cold state, target,
-project/query, authored/exact, canonical readback, fresh 266 triage, progress and
-whitespace pass. Public MCP acceptance stays waived.
+`8ad6c5215a55ea15f175f800f8f7045bc1bdf8fcedace6aa392f4234438ce97c`.
+All 144 whole source sections / 9,160, 367 actual fields, 119 CFGs, 413 ordinary
+cold emissions / 26,626, 28 actual includes and complete combined layout 64 replay.
+Each replay runs full R208 and retained R150/R149/R119 cold proofs. All 2,841
+CI tests pass, including 31 new guards. Original/accepted cold state, target,
+project/query, earlier authored plus new own authored evidence, exact preservation,
+canonical readback, fresh 248 triage, progress and whitespace pass. Public MCP
+acceptance stays waived.
 
-Five short public/ordinary or generic private cleanup alternatives remain unknown
-and unchanged:45B630/5,40F9F0/15,5FAAD0/15,40D8E0/19 and4588B0/43.
-The generic complete payload fixtures do not identify private target declarations,
-original mangled symbols or full layouts. R206's six getters /96,R207's seven
-node helpers /68 and R204's six SDK lifetimes /484 also remain unknown. Preserve
-all accepted evidence and these ownership alternatives. Exact stays 60 functions
-/9883 bytes / 60 units across eleven objects. The original 1,311 goal has 1,045
-classified / 266 left and remains active.
+The explicit whole 116-byte policy at 4588E0 clears both nested vectors before
+automatic vector/prefix destruction; the full implicit alternative 90 lacks both
+clear calls. The separate single-row
+`config/nested-vector-insertion-authored-origins.csv` retains its complete target
+body/CFG without changing any of the 902 earlier general authored records.
+The full generic 116-byte fixture is a source observation, not a complete original
+private declaration/layout. Ten whole private/short entries remain unknown:
+4591E0/417,45AAE0/368,458A80/19,4589F0/19,4588B0/43,459C60/31,459C40/31,
+45B6B0/15,45B6F0/27 and 45B630/5. R206/R207 getters/node helpers and R204 SDK
+lifetimes also remain unknown. Known library/authored parents do not settle
+original declaration alternatives. Preserve every prior accepted source/context.
 
-Four literal R161/R162 protected insertion snapshots remain history. Their
-standalone verifiers expect the former ledger state; R208 is the audited
-successor for 40A210/40EDB0 / 777 each and 40EA30 / 800,5F9650 / 796. It checks the
-original records/bytes and entire current796/796/834/830 carriers. No historical
-evidence/verifier is rewritten and no fresh replay of all R161/R162 native
-controls is claimed. Current R208 full graphs provide the proof.
+R162's literal protected 5F9A10 / 777 snapshot remains history; R209 is its audited
+796-byte successor. Its historical standalone verifier expects the former ledger
+state. R208 similarly covers the four earlier R161/R162 insertion transitions.
+No old evidence/verifier is rewritten and no fresh replay of every historical
+R161/R162 native control is claimed. Current whole cold graphs provide proof.
 
-Next,review two remaining insertion-like roots / 1,841 provisional bytes together
-with their pending nontrivial copy/lifetime context. Fresh
-`.analysis/r209-vector-insert-shortlist.json` contains the complete scanner
-observations and retained parent/callee addresses:
+The original 1,311 goal has 1,063 classified / 248 left and remains active. Exact
+stays 60 functions / 9,883 bytes / 60 units across eleven objects. Reviewed authored
+bytes are 1,968,571, with the new 116-byte policy; exact remains 0.50% of this
+provisional set. No source/private ABI/mapping/exact expansion is authorized.
 
-| Candidate | Provisional bytes | Context to reconcile |
+Next review the four-root nested initialization/lifetime cohort / 230 bytes:
+
+| Candidate | Current bytes | Whole context to reconcile |
 | --- | ---: | --- |
-| `0x00459CB0` |1064| whole insert parent4598D0; first pending417-byte callee 4591E0; catches/shared returns |
-| `0x005F9A10` |777| whole insert parent5F9390; catches5F9B4B/5F9C53; scalar/pointer source alternatives |
-| `0x004591E0` |417| pending nontrivial copy/lifetime policy called by459CB0; no original declaration established |
-| `0x00459390` |162| neighboring pending exception/copy continuation; reconcile actual owner and shared extent |
+| `0x004587E0` |145| authored parent457660; prefix initializer458880, whole vector constructors4589C0, memset640490, two clears458A80 |
+| `0x00458880` |47| authored parent5F71F0; actual memset field and post-zero initialization; original private declaration unknown |
+| `0x00458A80` |19| whole R209 clear source; calls458DA0; exact body matches short destructor shape |
+| `0x004589F0` |19| whole R209 vector destructor source; calls458DA0; clear/destructor declaration distinction unresolved |
 
-Reopen original public implementation and complete natural payload alternatives.
-Use full own AUX/code/data sections, real local catch/EH symbols, all control-flow
-roots and exits, actual field definitions and whole independently reviewed private
-callees. Mapped names and old generic Record aliases do not identify target width
-or ownership. Derive accepted catalogs from source owners, never solved native
-field observations. Preserve previous snapshots or explicitly audit a successor
-transition before changing canonical state. Continue all remaining review after
-this bounded cohort; no exact expansion or later project phase is authorized.
+Fresh `.analysis/r210-nested-initialization-shortlist.json` retains full scanner
+extents/calls/reviewed parents. Reopen complete original memset/constructor/
+lifetime source controls and full independently reviewed game parents. Retain
+whole source AUX/sections, all fields, exception data, normal/unwind roots and
+current snapshots. Test natural complete generic initialization and lifetime
+alternatives without declaring original private layouts. In particular, do not
+classify the two 19-byte wrappers from known callers or identical bytes alone.
+Freeze original records before any bounded successor transition. Continue all
+remaining review after this cohort; no later project phase is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 

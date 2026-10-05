@@ -12979,3 +12979,98 @@ remain. Public MCP acceptance stays waived. The checkpoint is 4,085 resolved:
 949 authored, 2,556 library, 580 compiler; 266 pending and 3,136 excluded.
 The original 1,311 goal has 1,045 classified / 266 left and remains active. Exact
 remains 60 functions / 9,883 bytes / 60 units across eleven objects; no exact credit.
+
+
+## R209 — complete nested vector insertion, copy and explicit clear lifetime
+
+R209 resolves 18 existing inventory entries: 17 library entries across eight
+complete public policies and nine overlapping recovery/continuation entries,
+plus one authored 116-byte clear-before-destruction policy. Eight whole public
+policies cover 2,812 physical bytes; interiors add no independent source function
+or additional physical coverage. No compiler classification is added.
+
+| Whole public policy | Complete bytes | Reconciliation |
+| --- | ---: | --- |
+| `0x005F9A10` insertion |796| provisional 777 omitted the final 19-byte shared epilogue |
+| `0x00459CB0` nested insertion |1101| provisional 1,064 omitted 37-byte temporary cleanup/shared return |
+| `0x00459390` vector copy constructor |208| provisional 162 omitted the complete 46-byte catch region |
+| `0x0045B300` uninitialized iterator copy |189| provisional 120 omitted full recovery entries 2/9/58 |
+| `0x0045A950` fill |38| original whole extent preserved |
+| `0x0045A980` copy backward |51| original whole extent preserved |
+| `0x0045B0C0` copy dispatch |48| original whole extent preserved |
+| `0x0045AC50` vector assignment |381| original whole extent preserved |
+
+Only four whole extents change, adding 171 previously omitted bytes. The 37-byte
+insertion tail calls the temporary's destructor before restoring the exception
+frame; it is a library-policy continuation, unlike R208's pure 19-byte compiler
+restoration tails. The 2-/9-/58-byte existing uninitialized-copy entries are
+parts of one complete recovery loop/rethrow/shared-return carrier, with no own
+AUX. Their original inventory extents are preserved inside the full 189 bytes.
+
+Replay `scripts/repo-python scripts/verify-nested-vector-insertion-origins.py`.
+Manifest `config/nested-vector-insertion-origin-evidence.json` SHA-256 is
+`8ad6c5215a55ea15f175f800f8f7045bc1bdf8fcedace6aa392f4234438ce97c`.
+Two scoped complete graphs retain 144 whole source sections / 9,160,all 367 actual
+fields, 119 full normal/catch/unwind CFGs and 25 whole data owners / 1,148.
+The pointer graph has 38 sections / 2,166 with 89 fields; the nested graph has 106
+/6,994 with 278 fields. Whole public insert parents 33 each also replay. Scope,
+real local indices, every definition/AUX/debug line record, actual permissions,
+full EH state/literals/RTTI and all unmasked native bytes are checked.
+
+Every replay runs the full independent R208 cold graph and its full retained
+R150/R149/R119 proof. Shared fields come from original complete retained source
+owners, never observed destination values. Actual CRT absolute and standalone
+weak AUX definitions remain. All previous R208 selections and protected unknowns
+replay unchanged. The new complete source includes the unchanged pinned R208
+fixture; it emits 413 ordinary sections / 26,626 with 28 actual includes. The full
+combined readonly observation carrier 64 includes both the old 40 bytes and new 24
+bytes; it is not cropped at the new symbol's interior address point.
+
+The complete generic 116-byte element combines observed scalar widths, one
+owned generic 16-byte prefix, a trivial 16-byte value and two complete public
+vectors. Natural compiler alignment supplies the gaps; no arbitrary padding,
+fake returns, assembly or alternative reconstruction bodies are introduced.
+Its observed member offsets 16/20/68/84/100 and sizeof 116 do not recover original
+private types, member names, ownership declarations or a complete target layout.
+These are complete generic source fixtures, not instantiated partial game owners.
+
+The target at`0x004588E0` /116 explicitly calls both nested clear operations
+before automatic right/left vector destruction and prefix cleanup. Its complete
+natural explicit fixture retains both clear calls at458909/458914 and all three
+following automatic calls. The complete implicit alternative 90 lacks both clear
+calls. Entire source/target/AUX/field/CFG evidence distinguishes this authored
+policy from default lifetime machinery. The provisional role is
+`NestedRecord116::ClearVectorsBeforeDestruction [provisional]`; original name,
+private declarations and runtime contents/outcomes remain unknown. A separate
+single-row `config/nested-vector-insertion-authored-origins.csv` freezes the
+entire 116-byte body and return/branch counts. The 902 earlier general authored
+records and all their pins remain unchanged; the new verifier checks this
+additional authored policy directly, including its complete target instruction
+list and actual ordered call destinations.
+
+Ten private/short entries remain unknown and unchanged: copy 417 at4591E0,
+assignment 368 at45AAE0,clear 19 at458A80,vector destructor 19 at4589F0,prefix cleanup 43
+at4588B0,const endpoints 31 at459C60/459C40,destruction 15 at45B6B0,const increment 27
+at45B6F0 and trivial destruction 5 at45B630. Their whole source bodies and actual
+fields participate in the verified graph; generic emission and known parents do
+not establish original explicit/implicit declarations or short-helper ownership.
+
+The original R162 protected 5F9A10 / 777 snapshot remains literal history. R209
+checks its entire original bytes/unknown record and the audited full 796-byte
+successor. The historical R162 standalone verifier expects the former ledger
+state; use the explicit R209 successor for this transition. No old evidence,
+verifier or accepted declaration is rewritten. Full historical R162 native
+controls are not claimed as freshly rerun; the complete new graphs and retained
+R208/R150 graph provide the current cold proof.
+
+Original-state and accepted-state cold replays pass. All 2,841 CI tests pass,
+including 31 new complete-boundary/provenance/history/lifetime guards. Target,
+project/query attestations, earlier complete authored verification plus the new
+whole authored policy, exact preservation, bounded canonical readback, fresh
+248-pending triage, progress and whitespace pass. Exactly 18 function/origin rows
+change; only the four reconciled extents change. Public MCP acceptance remains
+waived. The checkpoint is 4,103 resolved: 950 authored, 2,573 library, 580 compiler;
+248 pending and 3,153 excluded. The original 1,311 goal has 1063 classified / 248 left
+and remains active. Exact stays 60 functions / 9,883 bytes / 60 units across eleven
+objects. Reviewed authored bytes increase by 116 to 1,968,571; exact remains 0.50%
+of that provisional set. No new source/private ABI/mapping/exact credit.
