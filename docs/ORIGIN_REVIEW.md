@@ -12444,3 +12444,78 @@ Totals are4008 resolved:949 authored,2481 library and578 compiler;343 pending
 and3059 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal stays active. R202 next reviews six image-info/
 surface/volume source entries and their complete original dependency graph.
+
+## R202 — whole image-entry policies, backward cleanup exits and source peer distinctions
+
+R202 accepts32 library candidates /3121 bytes. Exactly32 function/origin row
+pairs change from8499a7e, with no extent changes. The immutable manifest is
+`config/sdk-image-entry-origin-evidence.json`, SHA
+`8a89de63380fd8916fcede566c1fbf241f775c45db4f5873f7921b623ca2d8a7`. Replay
+`scripts/repo-python scripts/verify-sdk-image-entry-origins.py`.
+
+**Source observations and ownership inference.** Six image-info/file/resource
+and surface/volume memory-load roots expand through the same complete source
+family to image-info-memory, surface/volume-save, file/resource-load and
+texture/cube/volume-texture extended creation entries. Full original SDK
+function definitions, all genuine fields and complete policy control flow
+establish library ownership. Thirty-two initial candidate addresses have one
+independently closed source association each. Source names do not declare
+private owner layouts or grant byte-match/source/mapping credit.
+
+The graph reopens44 whole original sections5899:41 code5775 and3 EH state/data
+carriers124, with all174 genuine fields and41 complete normal/EH/indirect CFGs.
+Twenty-three whole retained SDK/CRT anchors5415/all92 fields, the actual GDI
+DeleteObject import and absolute CRT __except_list definition reopen. Private
+source-static SaveSurface/SaveVolume and CreateTexture/CheckTextureRequirements
+identities retain real member/section/symbol-index scope. The latter two whole
+library policies1651/810 retain their R200/R195 snapshots. Two interior R022
+compiler rows16 remain unchanged. Every source definition/AUX, entire raw
+image, permission and unmasked linked comparison replays; no native observed
+field destination populates the final source catalog.
+
+**Whole backward cleanup exits.** Surface memory-load184 at0x00607005 ends
+with JMP at182 to its internal cleanup instruction116. Volume memory-load188
+at0x00607263 ends with JMP at186 to120. Their actual RET36 is earlier, at
+130/133. Full source COMDAT extents and all-path CFGs consume every instruction
+and field. The authored-only scanner's final-RET diagnostic does not indicate
+an invalid SDK boundary:both complete trailing branches reach the original
+cleanup/return block. No source tail is cropped, RET inserted or padding added.
+
+**Eight real peer alternatives.** A shape-only survey associated each surface/
+volume A/W file/resource wrapper with both public source names. Whole incoming
+source fields distinguish the actual surface memory-load at0x00607005 from
+volume memory-load at0x00607263. All eight wrong associations reopen their
+complete original81/86-byte source and whole native counterpart, rebase every
+actual field through independently owned definitions, and fail only in their
+real mismatching callee fields. Complete positive and negative bodies remain
+retained; masks, callee guesses and convenient cropped comparisons grant no
+origin. The source-static namespace does not merge equal names across members.
+
+`ImageEntryPolicyProbe.cpp` cold-builds32 complete original public API controls
+1832,all80 ordinary emitted sections,85 original headers and readonly public
+observation92. Image-info declarations retain8/12; surface/volume load variants
+retain32/36 and public save20. Texture/cube/volume creation distinguishes memory
+60/56/64, file56/52/60 and resource60/56/64 cleanup bytes. Original public
+image-info28/all seven offsets, RECT16, BOX24, palette4, WCHAR2, GUID16,
+resource-type values1/2/3/4/5 and relevant public enums remain independent
+header facts. No incomplete SDK class is declared, instantiated or embedded.
+Profiles are reproducibility controls, not executable-wide compiler claims.
+
+**Retained alternatives and acceptance.** Image destructor89 at0x0060EBCD,
+LockVolume constructor6 at0x00614BC6, File destructor11 at0x0060C120 and Resource
+destructor14 at0x0060EA69 remain unknown120. All earlier protected alternatives,
+previous manifests/records and prior verifier sources remain unchanged.
+Original/accepted complete source/CFG/field/peer/backward-exit/public-control
+replays and full R201/R200 regression replays pass. The prior-snapshot audit
+finds no earlier exact original function/origin snapshot affected by the32
+transitions. Canonical readback, local target/project/query attestations,
+902 authored bodies1956112, all60 exact-input guards, fresh311-pending triage,
+progress and whitespace pass. All2634 CI tests pass, including33 new guards.
+Public MCP acceptance remains waived. No reconstructed source, private layout,
+canonical ABI, mapping or exact credit is added.
+
+Totals are4040 resolved:949 authored,2513 library and578 compiler;311 pending
+and3091 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. One thousand of the original1311 remaining candidates are now resolved;
+the full goal remains active. R203 next reviews six original PNG/read/quantize/
+YCbCr conversion policies and their complete dependency/source data graph.
