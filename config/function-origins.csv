@@ -1557,7 +1557,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00449DC0,authored,BackgroundStage,authored,target-observed,R057
 0x00449DE0,unknown,,review,explicit-implicit-source-ambiguity,R108
 0x00449E10,authored,BackgroundStage,authored,target-observed,R055
-0x00449EC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00449EC0,authored,BackgroundStage,authored,whole-background-counter-callback-and-independent-asset-vtable-render-context,R220
 0x00449EE0,authored,BattleEffect,authored,target-observed,R042
 0x0044A160,authored,BackgroundStage,authored,target-observed,R058
 0x0044A170,authored,BackgroundStage,authored,target-observed,R058
@@ -1717,7 +1717,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044D970,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044D9A0,authored,BackgroundStage,authored,target-observed,R057
 0x0044D9C0,authored,BackgroundStage,authored,target-observed,R055
-0x0044DA70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044DA70,authored,BackgroundStage,authored,whole-background-counter-callback-and-independent-asset-vtable-render-context,R220
 0x0044DA90,authored,BattleEffect,authored,target-observed,R042
 0x0044DDA0,authored,BackgroundStage,authored,target-observed,R058
 0x0044DDB0,authored,BackgroundStage,authored,target-observed,R058
@@ -1773,7 +1773,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044F730,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044F760,authored,BackgroundStage,authored,target-observed,R057
 0x0044F780,authored,BackgroundStage,authored,target-observed,R055
-0x0044F830,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044F830,authored,BackgroundStage,authored,whole-background-counter-callback-and-independent-asset-vtable-render-context,R220
 0x0044F850,authored,BattleEffect,authored,target-observed,R042
 0x0044FAF0,authored,BattleEffect,authored,target-observed,R042
 0x0044FD40,authored,BattleEffect,authored,target-observed,R042
@@ -1821,7 +1821,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00451320,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00451350,authored,BackgroundStage,authored,target-observed,R057
 0x00451370,authored,BackgroundStage,authored,target-observed,R055
-0x00451420,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00451420,authored,BackgroundStage,authored,whole-background-counter-callback-and-independent-asset-vtable-render-context,R220
 0x00451440,authored,BattleEffect,authored,target-observed,R042
 0x004519F0,authored,BackgroundStage,authored,target-observed,R058
 0x00451A00,authored,FighterState,authored,target-observed,R045

@@ -13778,3 +13778,76 @@ Public/Web MCP acceptance remains waived. Current4149 resolved =964 authored+
 classified /202 left and remains active. Authored denominator1,970,691 and exact
 60 functions /9883 bytes /60 units across eleven objects, provisional0.50%, stay
 unchanged. No later project phase or exact expansion is authorized.
+
+## R220 — background animation counter callbacks and retained SDK lifetimes
+
+R220 resolves four authored callbacks /104 bytes: `0x00449EC0`, `0x0044DA70`,
+`0x0044F830` and `0x00451420`, each26 bytes. Their complete twelve-instruction,
+one-block bodies increment the observed DWORD at receiver offset `0x68`, preserve
+the complete epilogue and return with RET0. All four extents stay unchanged.
+`BackgroundStage::AdvanceAnimationCounterAt...` is an inferred role, not an
+original name, private layout or canonical ABI declaration.
+
+The four callbacks occupy ordinary slot1 in the six observed background callback
+slots at `0x006584A4`, `0x006589E4`, `0x00658BFC` and `0x00658DC0`. Independently
+accepted whole asset constructors `0x00449E10`, `0x0044D9C0`, `0x0044F780` and
+`0x00451370` /161 each install those same tables and clear the same counter at
+constructor offset130. Original path evidence is `data\background\BG00b.dat`,
+`BG04b.dat`, `BG06a.dat` and `BG09a.dat`. Complete render callbacks at `0x00449EE0`
+/640, `0x0044DA90` /781, `0x0044F850` /662 and `0x00451440` /1449 consume that
+field:2/5/4/4 accesses, including integer-to-FPU animation inputs. Existing R042
+render names are provisional and remain unchanged. Classification follows this
+combined game ownership and explicit regular-callback policy, not a table
+pointer, preexisting name or short byte shape alone.
+
+All28 complete constructor/callback owners /6647 bytes, their full native hashes,
+instructions, reachable CFGs and prior authored records are retained. Every six-
+slot observation includes the distinct generated deleting callback at slot0,
+other actual methods and the renderer at4. Four complete24-byte callback windows
+and eight following noncallback bytes are retained. This bounds the observed
+pointer runs; it does not declare a complete private class interface. Four actual
+six-byte alignment regions remain outside the26-byte callbacks and before the
+complete next render owners. All37 scoped canonical owner/alternative rows are
+frozen; every earlier ownership decision stays unchanged.
+
+A fresh cold natural generic probe emits two identical26-byte counter/reference-
+count increment methods, a complete15-byte virtual-call observer and the full
+12-byte readonly [8,8,4] layout:four ordinary sections /79 bytes. Neither generic
+class declares or instantiates a partial private game owner. Its real member is
+at4, while the target accesses68; two ordinary nonrelocation displacement bytes
+at12/21 differ. No target comparison is made exact by changing the source layout
+or inserting padding. The generic reference-count shape is a retained alternative,
+so ownership relies on the independent complete asset/table/render context.
+Flags are reproducibility controls; no executable-wide compiler profile is inferred.
+
+The originally bounded six D3DX lifetime candidates /282 remain unknown:
+Font destructor608D8E /58 and constructor608F7B /27, Sprite constructor609AA4 /30,
+RenderToSurface constructor609F58 /39, RenderToEnvMap constructor60B728 /104 and
+Buffer constructor6200DA /24. Their earlier whole original SDK records, actual
+source definitions/section bounds, every nine fields and complete CFGs are reopened
+as scoped retained checkpoints. This is not a new source-owner catalog or a fresh
+replay of all earlier SDK dependency trees. Original complete source/caller/vtable
+provenance still does not distinguish explicit source from implicit member
+lifetime. The R196/R201/R204 uncertainty and generic lifetime alternatives remain
+in force; no archive/class-name inference overrides them.
+
+Five original `d3dx8dt.lib` members for these SDK owners are hash-pinned and their
+entire debug-section inventories are frozen. They provide compilation/object and
+frame records, with no `.debug$T` private type declarations. No missing private
+owner/member layout is invented. Fourteen literal historical unknown snapshots
+remain immutable; R108 base-constructor alternatives411C10/4251C0/449DE0 also stay
+unknown. Future discovery should seek genuinely distinguishing evidence rather
+than repeat these same unchanged lifecycle candidates as new acceptances.
+
+Replay `scripts/repo-python scripts/verify-background-counter-origins.py`.
+Manifest `config/background-counter-origin-evidence.json` SHA-256:
+`494fbb61c77d06cdb21f97916909aa023e6bdb05703688feb13f491dc9512e37`. Original-state and accepted-state full callback/context,
+scoped SDK checkpoint and cold generic replays pass. All3097 CI tests pass,
+including17 new slot/asset/field/reader/full-extent/ordinary-alternative/lifetime/
+private-type/ABI/exact guards. Earlier902 authored body extents, target/tracking,
+local project/query markers, exact-input preservation, exactly-four-row readback,
+coherent fresh198 triage, progress and whitespace pass. Public/Web MCP acceptance
+remains waived. Current4153 resolved =968 authored+2605 library+580 compiler;
+198 pending and3185 excluded. Original1311 goal has1113 classified /198 left and
+remains active. Authored denominator1,970,795; exact60 functions /9883 bytes /
+60 units across eleven objects and provisional0.50% remain unchanged.

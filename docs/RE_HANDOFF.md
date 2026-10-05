@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R219. The public
+review cohorts R108 through R220. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,89 +11,91 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,149: 964 authored, 2,605 library and 580 compiler generated.
-There are 202 pending. Candidate count is not authored function count.
+has resolved 4,153: 968 authored, 2,605 library and 580 compiler generated.
+There are 198 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,970,691 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,970,795 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R220 original D3DX object-provider cohort below.
+the bounded R221 integer random-range policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R219; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R220; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R220 original D3DX object providers
+## Next agent objective — R221 integer random-range policies
 
-R219 resolves two library providers /128 bytes:654ACE /64 `_String_base::_Xran`
-and654B0E /64 `_Xlen`; both extents stay unchanged. Original supplied SDK string.cpp
-and active _THROW language source are pinned. Both original mt/st string.obj
-members retain32 whole sections /786/all70 actual fields. Full provider AUX64,
-throw/RTTI/type/literals, complete18-byte EH sections with roots [0,8] and whole36
-state data compare. Full12-byte RTTI vtables retain their prefixes/address points.
-Actual weak AUX resolves complete independently cold strong COMDAT winners.
+R220 resolves four authored26-byte background counter callbacks /104:
+449EC0,44DA70,44F830,451420. Complete twelve-instruction bodies increment the
+observed field+68 and RET0. Ordinary slot1 in game callback tables6584A4,6589E4,
+658BFC,658DC0 is bound to full asset constructors449E10,44D9C0,44F780,451370 /161,
+which install the same tables and clear the field at130. Original BG00b/BG04b/
+BG06a/BG09a paths and full render owners449EE0 /640,44DA90 /781,44F850 /662,
+451440 /1449 independently establish game animation use of the same field.
 
-Ordinary same-exception methods reproduce both entire64-byte bodies and full
-22-section /584/all52-field graphs. Keep this explicit ambiguity. Library identity
-is inferred from full source-owned SDK parents:404D30 /178 assign call404D49,
-404EF0 /141 erase call404F07 and405010 /151 _Grow call405029, with actual external
-provider declaration fields. Whole bodies include the terminal throw at58 and
-original INT3 at63. Never truncate the suffix, invent RET or infer physical
-archive choice, executable-wide flags or private layouts from these observations.
+All28 complete owners6647 and37 scoped canonical rows are retained. Six observed
+callback slots include distinct generated deleting slot0 and complete neighbor
+methods; native24-byte pointer windows and following data do not declare a full
+private interface. Four six-byte alignment regions stay outside the callbacks.
+Fresh generic counter/reference-counter methods are identical26-byte shapes,
+with real field+4 and two displacement differences12/21 from the target+68.
+Four ordinary emissions79 and readonly [8,8,4] are frozen. No source padding,
+private owner, canonical ABI, mapping or exact credit is added.
 
-Replay `scripts/repo-python scripts/verify-string-exception-origins.py`;
-manifest SHA `3ca89a95bdb3fff016ed80a9c7f4d0caea42023d8fcabb1766192af56c1318ff`. Three serial cold probes retain
-original R216105-section /5126-byte closure, full original R150 source and new119
-ordinary sections /2712 with42 original includes and readonly [1,1,28,40,40]. All124
-scoped canonical owners/interiors and eight literal historical unknown snapshots
-are retained. Earlier source manifests/verifiers remain unchanged.
+The six initial SDK lifetime candidates608D8E /58,608F7B /27,609AA4 /30,
+609F58 /39,60B728 /104 and6200DA /24 stay unknown. Earlier complete source/context
+and all9 actual fields are retained scoped checkpoints, not newly accepted
+library/compiler origins. Five original d3dx8dt members expose no private type
+sections. Do not repeat these candidates without distinguishing explicit versus
+implicit member lifetime. All14 literal historical unknown snapshots and R108
+411C10/4251C0/449DE0 alternatives remain immutable.
 
-All3080 CI tests pass, including17 new guards; both complete cold states, earlier902
-authored body extents, target/tracking, local project/query markers, exact-input
-preservation, bounded readback, coherent fresh202 triage, progress and whitespace
-pass. Public/Web MCP acceptance remains waived. Current4149 resolved =964 authored+
-2605 library+580 compiler;202 pending and3185 excluded. Original1311 goal has1109
-classified /202 left and remains active. Exact60 /9883 bytes /60 units across eleven
-objects; authored bytes1,970,691 and provisional0.50%. The user's push succeeded
-through f8e9b79; subsequent commits remain local unless separately pushed.
+Replay `scripts/repo-python scripts/verify-background-counter-origins.py`;
+manifest SHA `494fbb61c77d06cdb21f97916909aa023e6bdb05703688feb13f491dc9512e37`. Both original/accepted full native/context,
+scoped SDK and cold generic states pass. All3097 CI tests pass, including17 new
+guards; earlier902 authored bodies, target/tracking, local project/query markers,
+exact-input preservation, bounded readback, coherent fresh198 triage, progress
+and whitespace pass. Public/Web MCP acceptance remains waived.
+Current4153 resolved =968 authored+2605 library+580 compiler;198 pending and3185
+excluded. Original1311 goal has1113 classified /198 left and remains active.
+Exact60 /9883 bytes /60 units across eleven objects; authored bytes1,970,795 and
+provisional0.50%. The user's push succeeded through68d9258; this next commit stays
+local unless separately pushed.
 
-Next reconcile six original D3DX object-provider candidates /282 provisional bytes:
+Next review two integer random-range candidates /88 provisional bytes:
 
-| Candidate | Provisional bytes | Original complete defining source section |
+| Candidate | Complete provisional bytes | Independent whole game parent |
 | --- | ---: | --- |
-| `0x00608D8E` |58| cd3dxfont.obj `CD3DXFont::~CD3DXFont`; four actual fields |
-| `0x00608F7B` |27| cd3dxfont.obj `CD3DXFont::CD3DXFont`; one actual field |
-| `0x00609AA4` |30| cd3dxsprite.obj `CD3DXSprite::CD3DXSprite`; one actual field |
-| `0x00609F58` |39| cd3dxrendertosurface.obj `CD3DXRenderToSurface::CD3DXRenderToSurface`; one actual field |
-| `0x0060B728` |104| cd3dxrendertoenvmap.obj `CD3DXRenderToEnvMap::CD3DXRenderToEnvMap`; one actual field |
-| `0x006200DA` |24| cd3dxbuffer.obj `CD3DXBuffer::CD3DXBuffer`; one actual field |
+| `0x00410F00` |44| R064 action31352 at `0x005FAE30`;63 actual calls, including endpoint arguments0/45 whose results feed floating object fields |
+| `0x00455610` |44| R047 AI8871 at `0x00472890`;six actual calls, including endpoint arguments0/45 and0/30 whose results store at observed word field+512 |
 
-Private `.analysis/r220-preliminary.json` freezes original d3dx8.lib/member hashes,
-actual primary source definitions and complete section descriptions. Diagnostic
-nonfield differences are zero for each whole section. No own primary AUX length
-is available; use complete original section bounds and independently reconcile
-all exits/tables/shared tails/next owners. These are candidates, not acceptances.
-Do not classify them from class names, a pointer destination or a matching prefix.
-Reopen full vtables/RTTI, real weak/strong/deleting/lifetime entries, constructor/
-destructor policy and actual full previously accepted SDK callers; bind all fields
-through independently whole source owners. Consider ordinary operation/lifetime
-alternatives and preserve all earlier unknown and compiler decisions unless new
-distinguishing evidence supports a bounded change.
+Private `.analysis/r221-preliminary.json` retains both complete native candidates,
+whole-parent hashes/CFGs, complete switch registries and actual call sequences.
+Both bodies call accepted R129 `_rand`34 at6418AB, multiply the endpoint difference
+and scale by2^15 with signed rounding before adding the lower endpoint; actual
+RET8 remains. Receiver storage is observed but unused by the range arithmetic.
+These observations are diagnostic, not new origin/ABI/exact acceptance. Retain
+full native parent switch tables/guards, all parameter/result paths, complete
+original rand/thread-state source and current canonical evidence. Distinguish
+library/compiler/generic range alternatives in the actual game contexts; do not
+infer uniformity, valid input bounds or signed-overflow source behavior from a
+short shape. A cold natural observation control may support compiler lowering,
+without instantiating an incomplete game class or forcing an exact body.
 
-Fresh `.analysis/origin-scan/r219-triage.json` records202 remaining candidates and
-matches both canonical ledger hashes. Continue the full remaining-origin goal after
-this bounded task. Preserve prior R18341CA30 /77,R212455770 /111, abs helpers,
-generic getters and R196/R201 lifetime ambiguities until new distinguishing
-evidence changes them. Later phases and exact expansion remain deferred.
+Fresh `.analysis/origin-scan/r220-triage.json` records198 pending candidates and
+matches both canonical ledger hashes. Continue the full remaining-origin goal.
+Preserve prior R18341CA30 /77,R212455770 /111, abs helpers, generic getters and
+all R196/R201/R204 lifetime ambiguities until new evidence distinguishes them.
+Later phases and exact expansion remain deferred.
 
 ## R165 checkpoint and the completed R166 shortlist
 
