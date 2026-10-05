@@ -522,7 +522,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040FAC0,authored,AnimationState,authored,complete-game-policy-with-batch-context,R104
 0x0040FB00,authored,AnimationState,authored,complete-game-policy-with-batch-context,R104
 0x0040FB40,authored,AnimationState,authored,complete-game-policy-with-batch-context,R104
-0x0040FB70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040FB70,authored,GameObjectMotion,authored,complete-game-polar-table-composition-and-independent-receiver-policies,R217
 0x0040FBB0,authored,SpriteScene,authored,target-observed,R036
 0x0040FC50,authored,AnimationState,authored,complete-game-policy-with-batch-context,R104
 0x0040FC70,authored,SpriteScene,authored,target-observed,R036

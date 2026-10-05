@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R216. The public
+review cohorts R108 through R217. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,87 +11,81 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,142: 963 authored, 2,599 library and 580 compiler generated.
-There are 209 pending. Candidate count is not authored function count.
+has resolved 4,143: 964 authored, 2,599 library and 580 compiler generated.
+There are 208 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,970,634 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,970,691 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R217 game polar-velocity policy below.
+the bounded R218 source-owned list recovery cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R216; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R217; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R217 game polar-velocity policy
+## Next agent objective — R218 source-owned list recovery cohort
 
-R216 accepts ten library entries /751 ledger bytes, nine unique source policies
-/671. Only head Buynode531F30 changes extent143->223, ending53200E. The80-byte
-rollback/shared exit531FBF is source-owned interior offset143, not an independent
-source function. Full original source/actual EH pointer/normal and recovery roots
-[0,143] and real RET are preserved; no overlapping unique byte/exact credit.
-Single-iterator erase531E70 is186; it is not range erase. Constructor, pop_front,
-allocator conversions and three iterator increments complete the accepted cohort.
+R217 accepts authored polar-velocity40FB70 /57, with unchanged extent and actual
+RET8. Full original game lookup/phase composition, x87 multiplication/negation,
+and float stores at receiver+50/+54 are frozen. Two complete independent game
+parents4F4170 /855 and4A80F0 /3935 retain all six actual two-float argument and
+receiver sequences, signed-word input observations and full guarded CFGs [1,26]
+and[1,117]. No original name/private layout or instantiated owner is established.
+Original numeric types/outcomes remain unknown. Seven CC alignment40FBA9–40FBAF
+is excluded; next whole overlap-policy40FBB0 /158 stays accepted.
 
-Replay `scripts/repo-python scripts/verify-list-head-erase-origins.py`;
-manifest SHA `d60078dcb47d90103d3ae25fe1e8645cde568c35f1947567a0fffaf83de74274`. Complete cold current source
-owns105 whole code/data sections5126/all254 actual fields/86 CFGs. Full110 ordinary
-emissions5222/28 original includes/layout16 [16,12,4,4] and two real weak AUX/strong
-owners are frozen. Available standard exception/string definitions are reopened
-in the fresh current object. Thirteen external checkpoint inputs retain full
-native/source-catalog records, original scoped CRT members and the actual absolute
-FS symbol. Vtable address point660EDC is offset4 in full8-byte source660ED8; never
-substitute an address-point prefix for the full section. Unrelated earlier cold
-trees are immutable/pinned rather than newly replayed. Generic element16/node24
-does not identify original element types. Whole game initializer52CEE0 /314 has
-actual constructor receiver this+FEC. Next full Tidy532010 /100 remains accepted;
-single CC53200F remains alignment outside the extent.
+Replay `scripts/repo-python scripts/verify-polar-velocity-origins.py`;
+manifest SHA `2ff12ea5f76cf08ee66b4b5a19a4f8ddf286577c0d85e647b05236728b922310`. Six entire authored contexts5122,
+full cosine source owner174/actual interior C-entry20+9, complete conversion117,
+nine readonly observed scalars48 and used writable virtual table14400 are verified.
+Actual abs-shaped helper641DAA /11 remains unknown with original vendor/ordinary
+alternatives. Earlier math and source evidence stay immutable; no unrelated cold
+tree is newly claimed. All3046 CI tests pass, including14 new guards; both complete
+native/source-archive states,902 earlier authored bodies, target, project/query,
+exact preservation, bounded readback, fresh208 triage, progress and whitespace pass.
+Public/Web MCP acceptance remains waived. Current4143 resolved =964 authored+
+2599 library+580 compiler;208 pending and3179 excluded. The original1311 goal
+has1103 classified /208 left and remains active. Exact60 /9883 bytes /60 units/
+eleven objects; authored denominator1,970,691 and provisional0.50%. The user's
+push succeeded through f8e9b79; later commits remain local unless pushed separately.
 
-Protected getters531D80 /8,531D90 /11,532350 /16 and empty destroys532480 /5,
-532500 /5 remain unknown. Both original R206/R207 public alternative probes replay
-cold, including complete six/twelve alternatives and ordinary emissions/headers/
-layouts. All64 literal historical paired snapshots stay immutable. Source closure
-and game callers do not resolve competing ordinary getters, intrusive nodes or
-empty destruction. Preserve original evidence, private declarations and exact
-inputs. R18341CA30 /77, R212455770 /111, R163 abs helpers and R196/R201 lifetime
-alternatives likewise require new distinguishing evidence before another review.
+Next reconcile four still-unknown list recovery interiors /236 ledger bytes:
 
-All3032 CI tests pass, including15 new guards; original/accepted full cold states,
-902 earlier authored bodies, exact preservation, target, project/query markers,
-bounded readback, fresh209 triage, progress and whitespace pass. Public/Web MCP
-acceptance remains waived. The original1311 goal has1102 classified /209 left and
-remains active. Current4142 resolved =963 authored+2599 library+580 compiler;
-3179 excluded. Exact60 /9883 bytes /60 units across eleven objects, authored
-bytes1,970,634, provisional0.50%. The user's push succeeded through f8e9b79; later
-commits remain local unless independently pushed.
+| Candidate | Bytes | Complete accepted source owner |
+| --- | ---: | --- |
+| `0x0041206F` |80| head Buynode411FE0 /223; actual local catch+143 and complete EH80 at668194 documented by R167 |
+| `0x004122C9` |52| value-node Buynode412240 /189; preserve original R168 node construction and recovery evidence |
+| `0x0041EFE6` |52| value-node Buynode41EF60 /186; original R169 archive-node family |
+| `0x00532196` |52| value-node Buynode532110 /186; original R170 character-list family and fresh R216 natural graph |
 
-Next inspect `0x0040FB70` /57, an unaccepted game polar-velocity candidate. Its
-complete native body calls accepted authored table-index helpers41CB40 /43 and
-41CB70 /49 with the first argument, multiplies the x87 results by the second
-argument, and writes float members+50 and+54, negating the second result. Actual
-RET8 and the complete observed receiver/argument sequences need independent
-whole game-parent evidence and historical snapshot audit. Original angle units,
-types/names and full owner layout must remain provisional. Freeze accepted helper
-records and their complete table/index/phase evidence; do not introduce a private
-instance or source/ABI/exact credit. Existing math helpers' unknown abs ownership
-must stay unknown. Select bounded whole accepted parents from the twenty observed
-battle/fighter callers rather than treating caller names as proof.
+These inventory entries are fully contained in their existing library owners.
+Containment alone is not acceptance. Reopen the original full source controls,
+actual local COFF definitions and every full EH field, distinguish mixed source
+rollback/shared exit from compiler-only labels, and replay the complete normal/
+EH/shared-exit parents unmasked. R216 provides the method for head rollback/shared
+exit531FBF /80. Freeze every existing owner extent and ledger/evidence record;
+accept an interior only through its own complete source parent's actual definition
+and metadata. Interiors earn no new unique source bytes or exact credit. Audit
+literal historical paired unknown snapshots; retain old annotations rather than
+rewriting prior evidence. Tiny link getters and empty destruction alternatives
+still remain unknown, regardless of these source closures.
 
-Fresh `.analysis/origin-scan/r216-triage.json` records all209 pending candidates.
-Private `.analysis/r217-shortlist.json` includes full native instructions and
-scanner context for this candidate and six other diagnostic leaves. Those six
-initializer/member-lifetime shapes have prior alternative evidence and must not
-be automatically classified from authored callees or parents. Continue the full
-remaining-origin goal after R217; later phases/exact expansion remain deferred.
+Fresh `.analysis/origin-scan/r217-triage.json` records208 pending. Use the complete
+R167/R168/R169/R170 and R216 manifests as evidence locations, not automatic claims.
+All four source owners are already accepted and need no extent revision. Continue
+the complete remaining-origin goal after this bounded cohort; no later phase or
+exact expansion is authorized. Preserve R18341CA30 /77, R212455770 /111, all math
+abs helpers, generic getter alternatives and R196/R201 lifetime ambiguities until
+new distinguishing evidence changes the review.
 
 ## R165 checkpoint and the completed R166 shortlist
 

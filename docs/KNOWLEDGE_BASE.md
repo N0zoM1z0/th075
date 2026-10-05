@@ -10614,3 +10614,60 @@ source/private ABI/mapping/exact credit is added. Current4142 resolved =963 auth
 1102 classified /209 left and remains active. Authored denominator1,970,634 and
 exact60 functions /9883 bytes /60 units across eleven objects remain unchanged;
 provisional coverage0.50%.
+
+## R217 — complete game polar-velocity composition
+
+R217 accepts authored `0x0040FB70` /57 with unchanged extent ending40FBA8.
+The complete native member contract passes the first stack DWORD separately to
+accepted game lookup41CB40 /43 and phase lookup41CB70 /49. Each x87 result is
+multiplied by the second stack DWORD; the second result is negated. Actual float
+stores target receiver+50 and+54, followed by RET8. This custom game-table and
+motion composition, independently observed in whole game updates, supports the
+origin inference. An authored caller or math callee alone does not supply it.
+`GameObject::SetPolarVelocity` is a provisional role, not an original name or a
+private class/prototype declaration. Original field/argument types and numeric
+outcomes remain unknown; preserve actual x87 order, conversion and rounding.
+
+Whole authored projectile update4F4170 /855 retains two calls; whole auxiliary
+update4A80F0 /3935 retains four. All six actual two-float argument/receiver
+sequences are frozen and read back from their complete parents. The projectile
+caller converts signed words+DA/+DC and scales the second argument by observed
+0.01f; the other update uses signed word fields+DA/+D8, and one path uses+DC/+DE
+with observed readonly constants0.5f and5.0f. These are native field observations,
+not a full original allocation/layout. All original guarded switch records and
+full CFGs [1,26]/[1,117] remain unchanged. No private instance is introduced.
+
+Accepted R182 table builder41CAE0 /82 and both lookup bodies retain their complete
+original authored records, instructions, CFGs and literal provenance. The builder
+uses the original cosine C entry at641754, which is source offset20 in the full
+174-byte cosine owner641740. Both lookups call complete __ftol2 /117 and the actual
+unknown abs-shaped helper641DAA /11. Its independent ordinary/vendor abs/labs
+ambiguity remains unknown; a game caller does not establish library ownership.
+Scoped static verification reads both whole defining source sections from the
+hash-pinned original CRT archive and compares every actual field without masking.
+Original library ledgers, the actual interior C-entry record and all old evidence
+remain immutable. The new batch does not claim to replay unrelated cold trees.
+
+Six complete authored contexts total5122 bytes, including next full overlap-policy
+owner40FBB0 /158. Seven CC bytes40FBA9–40FBAF stay outside the candidate extent.
+Nine complete observed readonly scalar cells total48 bytes. The14400-byte used
+3600-entry table range6884C0 is checked against loaded writable/non-executable
+virtual data, including the loader-zero-filled tail. It is not a claim of full
+original allocation, initial runtime contents or runtime-content hash. Structured
+historical paired-snapshot audit found no selected old record. A dedicated one-row
+authored CSV preserves all earlier general and dedicated authored evidence.
+
+Replay `scripts/repo-python scripts/verify-polar-velocity-origins.py`.
+Manifest `config/polar-velocity-origin-evidence.json` SHA-256:
+`2ff12ea5f76cf08ee66b4b5a19a4f8ddf286577c0d85e647b05236728b922310`. Original-state and accepted-state full native/source-archive
+verification pass. All3046 CI tests pass, including14 new full-extent, x87 order,
+receiver/argument, source-owner/C-entry and ambiguity guards. Earlier902 general
+authored bodies /1956112, target/tracking, local project/query markers, exact
+preservation, bounded readback, fresh208 triage, progress and whitespace pass.
+Only one canonical function/origin row changes; no extent changes. No compiler,
+ABI, header, relocation or existing exact input changes require cold exact replay.
+Public/Web MCP acceptance remains waived. Current4143 resolved =964 authored
++2599 library+580 compiler;208 pending and3179 excluded. The original1311 goal
+has1103 classified /208 left and remains active. Authored denominator1,970,691;
+exact stays60 functions /9883 bytes /60 units across eleven objects, provisional
+coverage0.50%. No reconstruction source/private ABI/mapping/exact credit is added.
