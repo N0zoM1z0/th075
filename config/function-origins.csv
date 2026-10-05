@@ -1864,7 +1864,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004549C0,authored,FighterState,authored,complete-game-policy-with-batch-context,R102
 0x00454A70,authored,FighterState,authored,complete-game-policy-with-batch-context,R103
 0x00454AA0,authored,FighterState,authored,target-observed,R045
-0x00454BC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00454BC0,authored,FighterState,authored,complete-native-game-composition-with-independent-whole-context,R213
 0x00454C00,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00454C20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00454D00,authored,ProfileSelection,authored,complete-explicit-game-table-and-indexed-counter-policy,R182
@@ -2478,7 +2478,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8400,library,VC7STL,exclude,complete-vc7-deque-dereference-family,R082
 0x005F8420,library,VC7STL,exclude,complete-source-typed-game-dependency,R110
 0x005F8460,library,VC7STL,exclude,complete-vc7-template-family,R032
-0x005F8490,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8490,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F84B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x005F8560,library,vc7-stl-vector-storage,exclude,high,R089
 0x005F85E0,library,vc7-stl-vector-storage,exclude,high,R089
@@ -2504,8 +2504,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F8D70,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x005F8DB0,library,VC7STL,exclude,complete-vc7-deque-access-family,R078
 0x005F8E10,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
-0x005F8E50,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005F8E70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F8E50,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
+0x005F8E70,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F8EA0,library,VC7STL,exclude,complete-vc7-owned-pointer-vector-and-whole-static-game-policy,R177
 0x005F8EC0,library,vc7-stl-vector-wrappers,exclude,complete-source-and-typed-callee,R095
 0x005F8EF0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2541,12 +2541,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005F9530,library,VC7STL,exclude,complete-vc7-deque-retreat-and-whole-addition-subtraction-context,R176
 0x005F9550,library,VC7STL,exclude,complete-vc7-deque-comparison-family,R084
 0x005F9580,library,VC7STL,exclude,complete-vc7-deque-const-iterator-family,R081
-0x005F95B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F95B0,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F95D0,library,VC7STL,exclude,complete-source-family-peer,R106
-0x005F95F0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F95F0,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F9600,library,VC7STL,exclude,complete-vc7-vector-endpoint-with-whole-independent-assignment-and-constructor-context,R162
 0x005F9620,library,VC7STL,exclude,vendor-source-corroborated,R051
-0x005F9640,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005F9640,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005F9650,library,VC71STL,exclude,complete-original-vector-insertion-source-scoped-normal-eh-graph,R208
 0x005F97A1,library,VC71STL,exclude,complete-original-vector-insertion-source-scoped-normal-eh-graph,R208
 0x005F98A6,library,VC71STL,exclude,complete-original-vector-insertion-source-scoped-normal-eh-graph,R208
@@ -2634,9 +2634,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005FABD0,authored,EffectForwarders,authored,complete-game-transform-or-effect-policy,R101
 0x005FAC20,authored,AuxEffect,authored,complete-game-policy-with-batch-context,R104
 0x005FAC40,authored,AuxEffect,authored,complete-game-policy-with-batch-context,R102
-0x005FAC60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005FACD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x005FAD20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x005FAC60,authored,CharacterAuxObject,authored,complete-native-game-composition-with-independent-whole-context,R213
+0x005FACD0,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
+0x005FAD20,library,VC71STL,exclude,complete-original-public-vector-bounds-and-iterator-source-scoped-graph,R213
 0x005FAD70,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FADD0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x005FAE30,authored,CharacterAuxObject,authored,target-observed,R064

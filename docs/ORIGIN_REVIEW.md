@@ -13279,3 +13279,94 @@ extent change. The checkpoint is 4113 resolved: 958 authored, 2575 library and
 classified / 238 left and remains active. Authored bytes add 355 to 1,969,281;
 exact stays 60 functions / 9883 bytes / 60 units across eleven objects, 0.50% of
 the provisional set. No source/private ABI/mapping/exact credit is added.
+
+## R213 — checked frame indexing and game command composition
+
+R213 resolves ten complete entries / 457 bytes without changing any extent:
+eight library policies / 295 and two authored game policies / 162. Complete
+original `std::vector::at` bodies 5FACD0 / 70 and 5FAD20 / 70 use unsigned bounds
+checks and RET 4. Their independent whole source graphs establish strides 16
+and 4. Six related public iterator entries also become library: begin 5F8490 / 31,
+addition 5F8E70 / 45, mutable dereference 5F8E50 / 19, iterator construction
+5F95B0 / 28 and const dereferences 5F95F0 / 16 and 5F9640 / 16. Original element
+types, private declarations and target class layouts remain unknown.
+
+Actual error workers 5FAD70 and 5FADD0 / 90 reproduce original `_Xran`, including
+the complete `invalid vector<T> subscript` literal and out_of_range policy.
+Earlier provisional `_Xlen` ledger labels are preserved as historical evidence;
+they do not override this complete original header observation. The independently
+retained out_of_range constructor 409930 / 37 and whole throw metadata
+667D60 / 16 are reopened in the current cold object with all four actual fields,
+real source definitions/AUX/line metadata, native permissions and unmasked bytes.
+Their ownership derives from immutable complete R150 records and R205 retained
+source records, after the entire R212/R211/R210/R209/R208/R150 chain has replayed.
+A recorded native relocation destination never supplies its own source owner.
+
+Whole wrong-stride 8/116-byte iterator-advance controls are 32 bytes each and
+are byte-distinct from the actual stride-16/4 advances. Both complete const-at
+routes are 70 bytes but bind const iterator addition and 16-byte direct
+const dereference, instead of the observed mutable 19-byte dereference route.
+These complete alternatives retain actual fields and source records; matching
+head shape alone does not identify the actual API or iterator declaration.
+
+The 101-byte authored policy 5FAC60 refreshes selected frame state. Its two signed
+short indices at receiver+60/+62 are passed across two one-argument public
+index calls: the second argument stays on the stack across outer RET 4, then
+inner RET 4 consumes it after the outer result supplies the inner receiver.
+The policy stores selected pointer+8 and word+72, then selects the same outer
+entry and stores its size at word+70. Full accepted initializer 5FAB10 / 116
+establishes pointer+7C from input resource+78, zeroes index words+60/+62/+64 and
+calls this whole refresh policy. No two-argument member ABI is invented, and
+generic four-/sixteen-byte observations do not recover the original records.
+
+Authored 454BC0 / 61 stores command selection at receiver+47C and calls two
+short setters through receiver+480, returning with RET 12. Independently full
+fighter resource loader 456B60 / 1186 creates the command owner through accepted
+410F30 / 104 and stores its result at+480. Full reviewed Reimu action-state
+policy 45DD70 / 60999 preserves seven actual calls and their three argument
+pushes plus original game receiver. Every replay reads the entire 60,999-byte
+owner, verifies its original record/hash, complete CFG [1,1690], all 16,837
+instructions by complete normalized digest, and all seven actual argument/
+receiver sequences. No prefix comparison replaces that whole parent. Together
+with frame initializer and command initializer, the four whole independent
+contexts retain 62,405 bytes and nine actual calls. Primitive setters
+410FA0 / 22 and 410FE0 / 22 remain unchanged unknown; their full bodies,
+instructions and CFGs are frozen without claiming original private declarations.
+
+Replay `scripts/repo-python scripts/verify-frame-index-policy-origins.py`.
+Manifest `config/frame-index-policy-origin-evidence.json` SHA-256:
+`bb5d5d550cf326252c7bf9a83961a4a90334bc75196f2c460ef2cc7a29236a22`. Two separate authored rows in
+`config/frame-index-policy-authored-origins.csv` preserve the new native game
+bodies/CFGs without modifying any earlier authored evidence. Two scoped complete
+graphs retain 26 code/data carriers / 978, all 46 actual fields and 22 normal/EH
+CFGs, plus the two complete independent exception owners / 53 with four fields.
+All actual code/data/normal/EH owners, source definitions, real indices and
+unmasked bodies reproduce. The unchanged R205 probe is included naturally;
+all 130 ordinary emissions / 5568 and 28 actual includes are retained. The full
+combined readonly observation is 56 bytes, prior 36 plus new 20 at an interior
+symbol, never cropped to the new array. Flags are probe reproducibility settings,
+not an executable-wide compiler claim; source and shared tool installations
+remain unchanged.
+
+Ten literal prior snapshots remain intact: eight older records retain the
+16-byte 5F9640 unknown, and R162's original snapshots retain begin 5F8490 / 31
+and iterator constructor 5F95B0 / 28. R162's later canonical evidence/notes are
+independently read from its unchanged explicit accepted-function records, which
+still left those origins unknown. R213 freezes both historical states and admits
+only its bounded complete-source successors, with identical full extents/body
+hashes and no private ABI/source/mapping/exact change. The new proof supplies
+context absent from the earlier short or endpoint alternatives. Prior manifests
+and verifiers remain immutable; old standalone proofs expecting those unknown
+canonical states are historical, and R213 audits their literal records directly.
+
+Original-state and accepted-state complete cold replays pass. All 2974 CI tests
+pass, including 37 new full-boundary/field/ownership/history/native-ABI guards.
+Target, project/query markers, full earlier authored proof, exact preservation,
+bounded readback, fresh 228 triage, progress and whitespace pass. MCP acceptance
+remains waived. Exactly ten function/origin rows change; all earlier accepted
+source and exact inputs are preserved. The checkpoint is 4123 resolved:
+960 authored, 2583 library and 580 compiler; 228 pending and 3163 excluded.
+The original 1311 goal has 1083 classified / 228 left and remains active.
+Authored bytes add 162 to 1,969,443; exact remains 60 functions / 9883 bytes /
+60 units across eleven objects, 0.50% of the provisional set. No reconstruction
+source/private ABI/mapping/exact credit is added.

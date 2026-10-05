@@ -1,0 +1,3 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x005FAC60,101,48fbc5bb262da84b5d364b97768f5c558ebae89864d348cbd7229a45a9887b37,CharacterAuxObject::RefreshSelectedFrameAt005FAC60,1,0,0,R213
+0x00454BC0,61,17b419f239480baf5fb73354cbe01c7da887f8d78450002f4de294ce67727262,FighterState::SetCommandSelectionAt00454BC0 [provisional],1,0,0,R213
