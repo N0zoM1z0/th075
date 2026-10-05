@@ -8162,3 +8162,93 @@ interface. Independently prove each complete SDK GUID, retain full negatives
 for incompatible interface constants, and reconcile complete owning vtables/
 callers/source members before assigning any new owner. Do not infer an IID
 from a name, same-shaped COM body or memory region.
+
+## R186 — full SDK GUID identities and D3DX interface-owner context
+
+Four whole candidates / 251 bytes are classified library/exclude. The old
+masked CD3DXBuffer QueryInterface survey hid two different interface GUIDs.
+The full original values independently identify ID3DXRenderToSurface at
+0x0065DDCC, ID3DXRenderToEnvMap at 0x0065DDBC, and ID3DXBuffer at 0x0065DDFC.
+Each complete 71-byte query is freshly extracted from its correct original
+SDK member, rather than retaining the wrong buffer association.
+
+| Address | Whole bytes | Vendor operation |
+| --- | ---: | --- |
+| `0x00609F11` | 71 | CD3DXRenderToSurface::QueryInterface |
+| `0x0060A1FA` | 71 | CD3DXRenderToEnvMap::QueryInterface |
+| `0x00620093` | 71 | CD3DXBuffer::QueryInterface |
+| `0x0061FE1F` | 38 | CD3DXBuffer::Init |
+
+The natural probe `probes/VC7D3DXInterfaceGuids.cpp` includes actual initguid
+and d3dx8 headers. Cold compilation freezes all 47 ordinary readonly GUID
+sections / 752 bytes and all 84 actual included headers. The three entire
+interface GUID COMDATs / 48 bytes agree with their complete original readonly
+values. IUnknown at 0x00660E58 is independently proved by the entire 16-byte
+readonly definition in Uuid.Lib member obj\i386\unknwn_i.obj, offset 328782.
+The UUID archive SHA-256 is
+`91e2caa3832f1574ee317ca53fe3db8b389856d2da5e138a20805ac1399b4bab`.
+Compiler settings describe the GUID observation only, not an original
+executable-wide build profile or a reconstructed game layout.
+
+All three owning source/native pointer carriers are retained in full: 36 bytes
+at 0x0065D39C, 52 bytes at 0x0065D3C0 and 28 bytes at 0x0065DE1C, totaling
+116 bytes / 29 genuine slots. Source pointer definitions, every real field and
+every original pointer value are frozen. Thirty-three entire source functions
+/ 2693 bytes are compared without masking, with all 25 real code fields bound
+through a coherent complete source catalogue, actual GUIDs and complete own
+vtables. All native branches/exits and 73 unchanged indirect dispatches remain
+explicit. The buffer's genuine weak `_E` deleting-pointer reference is verified
+from its real COFF AUX/search/fallback metadata and complete same-member `_G`
+primary; no fictitious standalone weak function extent is introduced.
+
+The original full GetDesc/scene/lost-device/Cube/Sphere/Hemisphere/Parabolic
+SDK owners and their complete typed records provide independent library peer
+context. The full buffer callback/destructor/init graph closes through the
+actual seven-slot buffer vtable, its real QueryInterface GUID and full earlier
+new/delete owners. This supplies the previously missing owning context for the
+whole 38-byte initializer. No full original object layout or private ABI is
+declared or instantiated. Non-inventory callback controls receive no new
+canonical rows or origin credit. Existing compiler deleting wrappers retain
+their original compiler classification.
+
+The entire 35-byte EnvMap Face and 227-byte EnvMap End source/native controls
+are read and frozen, including their real unsolved fields and full native CFG.
+Their downstream EndScene/filter linkage is unresolved: no positive body/linkage
+claim is made, no field is masked and no owner is accepted from those controls.
+The full 52-byte owning carrier still retains both slots, rather than dropping
+them to compare a convenient prefix. Independently established EnvMap query/
+GUID and the complete existing library peers support only the bounded query
+decision. All other original anchor rows stay unchanged.
+
+Two entire wrong-buffer QueryInterface comparisons / 142 bytes remain negative:
+each has its actual interface pointer difference at code byte 35, plus the
+complete sixteen-byte GUID difference. A source IID_ID3DXBuffer field is never
+relabelled as another interface merely because solved native fields fit.
+Replay `scripts/repo-python scripts/verify-sdk-interface-origins.py`; its
+`--evidence-only` cold replay passes before mutation, and accepted-state cold
+replay passes. It reopens the complete original R185/R184/SDK graphs serially,
+with unchanged already-passed cold dependency inputs. R185's manifest remains
+immutable. Its validator permits only the exact new buffer transition, guarded
+by frozen whole original/accepted record digest
+`84329381c12dbf07a0af4e12a907fba7eb7b03253e21439873e6cf2c3f8b5658`.
+R186 also pins the updated R185 validator. All former pending-byte comparisons
+and original extent/source facts remain checked.
+
+Strict R185 HEAD 5d6dbb6 readback changes exactly four function/origin rows and
+preserves every original extent, all 902 authored records / 1956112 bytes and
+all previous configuration manifests. All sixty source/header/build/match
+inputs remain unchanged from the prior cold exact replay. Target/tracking/
+project/query attestations, full authored replay, fresh scanning, fourteen new
+meaningful GUID/table/opaque-field/transition guards, all 2287 public checks,
+progress and whitespace checks pass. No target or database write occurs.
+No source, ABI, mapping or exact credit is added. Public MCP acceptance is waived.
+
+Totals are 3663 resolved (949 authored, 2139 library, 575 compiler), 688 pending
+and 2714 excluded. Exact stays 60 functions / 9883 bytes and provisional
+coverage 9883 / 1968455 (0.50%). The whole remaining-origin goal remains active
+and unfinished. Next review the three complete source-owner destructors
+/ 89 bytes already read as original context: 0x0061FE0A / 21, 0x00609EEF / 34,
+and 0x0060A7D2 / 34. Retain the entire R186 GUID/table/callback graph and all
+original R038 generated wrapper facts. Apply only an explicitly frozen narrow
+anchor transition if new independent destructor evidence is accepted; do not
+rewrite the R186 manifest or promote the two opaque EnvMap controls.

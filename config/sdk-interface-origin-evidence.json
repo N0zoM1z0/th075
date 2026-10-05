@@ -1,0 +1,4163 @@
+{
+  "evidence_id": "R186",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "functions": [
+    {
+      "address": "0x00609F11",
+      "size": 71,
+      "body_sha256": "8f30459a9c86f6dd662022e13f0b96a05d59882bb9bb9197323ac4212f743716",
+      "original_function": {
+        "address": "0x00609F11",
+        "size": "71",
+        "span_end": "0x00609F57",
+        "current_name": "FUN_00609f11",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00609F11",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00609F11",
+        "size": "71",
+        "span_end": "0x00609F57",
+        "current_name": "FUN_00609f11",
+        "proposed_name": "CD3DXRenderToSurface::QueryInterface",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R186; complete vendor interface and independently proved actual SDK GUIDs/owning source-vtable context",
+        "owner": "library",
+        "notes": "Complete archived source and original interface context; class layout and original compiler profile remain unknown"
+      },
+      "accepted_origin": {
+        "address": "0x00609F11",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context",
+        "evidence_id": "R186"
+      }
+    },
+    {
+      "address": "0x0060A1FA",
+      "size": 71,
+      "body_sha256": "3cfa953213f8b60211aeb9832d81462e6f208b8bff502d67cb3ef385580c551d",
+      "original_function": {
+        "address": "0x0060A1FA",
+        "size": "71",
+        "span_end": "0x0060A240",
+        "current_name": "FUN_0060a1fa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060A1FA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060A1FA",
+        "size": "71",
+        "span_end": "0x0060A240",
+        "current_name": "FUN_0060a1fa",
+        "proposed_name": "CD3DXRenderToEnvMap::QueryInterface",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R186; complete vendor interface and independently proved actual SDK GUIDs/owning source-vtable context",
+        "owner": "library",
+        "notes": "Complete archived source and original interface context; class layout and original compiler profile remain unknown"
+      },
+      "accepted_origin": {
+        "address": "0x0060A1FA",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context",
+        "evidence_id": "R186"
+      }
+    },
+    {
+      "address": "0x00620093",
+      "size": 71,
+      "body_sha256": "785fb4949dd8afb41502254454c87be57b39295485c6d6f467fa27f4852be6af",
+      "original_function": {
+        "address": "0x00620093",
+        "size": "71",
+        "span_end": "0x006200D9",
+        "current_name": "FUN_00620093",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00620093",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00620093",
+        "size": "71",
+        "span_end": "0x006200D9",
+        "current_name": "FUN_00620093",
+        "proposed_name": "CD3DXBuffer::QueryInterface",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R186; complete vendor interface and independently proved actual SDK GUIDs/owning source-vtable context",
+        "owner": "library",
+        "notes": "Complete archived source and original interface context; class layout and original compiler profile remain unknown"
+      },
+      "accepted_origin": {
+        "address": "0x00620093",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context",
+        "evidence_id": "R186"
+      }
+    },
+    {
+      "address": "0x0061FE1F",
+      "size": 38,
+      "body_sha256": "58afecb1aaf0e6cbe4a4f18004603abf6f06c94757be69bfe10d8ac0e573b070",
+      "original_function": {
+        "address": "0x0061FE1F",
+        "size": "38",
+        "span_end": "0x0061FE44",
+        "current_name": "FUN_0061fe1f",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FE1F",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FE1F",
+        "size": "38",
+        "span_end": "0x0061FE44",
+        "current_name": "FUN_0061fe1f",
+        "proposed_name": "CD3DXBuffer::Init",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R186; complete vendor interface and independently proved actual SDK GUIDs/owning source-vtable context",
+        "owner": "library",
+        "notes": "Complete archived source and original interface context; class layout and original compiler profile remain unknown"
+      },
+      "accepted_origin": {
+        "address": "0x0061FE1F",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context",
+        "evidence_id": "R186"
+      }
+    }
+  ],
+  "code": [
+    {
+      "address": "0x00609F11",
+      "symbol": "?QueryInterface@CD3DXRenderToSurface@@UAGJABU_GUID@@PAPAX@Z",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 71,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "7915eaa325ba4afa41f23a300712443dc2f197de780a6243a469e76e85c5c5ed",
+      "body_sha256": "8f30459a9c86f6dd662022e13f0b96a05d59882bb9bb9197323ac4212f743716",
+      "fields": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXRenderToSurface",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00660E58"
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXRenderToSurface",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DDCC"
+        }
+      ],
+      "indirect_call_count": 1,
+      "function": {
+        "address": "0x00609F11",
+        "size": "71",
+        "span_end": "0x00609F57",
+        "current_name": "FUN_00609f11",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00609F11",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        3
+      ]
+    },
+    {
+      "address": "0x00609B11",
+      "symbol": "?AddRef@CD3DXRenderToSurface@@UAGKXZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 13,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "body_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x00609F7F",
+      "symbol": "?Release@CD3DXRenderToSurface@@UAGKXZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 31,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "712a792532c4a4e755ae71ceb7b176cf1e8497f7d8b4a8d71ea6bc2fcc849ec6",
+      "body_sha256": "3bd6095262452faf868a003f5e7f704bdb3d5a4ebb2f7bc6a8ca845132d1772d",
+      "fields": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GCD3DXRenderToSurface@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GCD3DXRenderToSurface@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006049D8"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x00609B35",
+      "symbol": "?GetDevice@CD3DXRenderToSurface@@UAGJPAPAUIDirect3DDevice8@@@Z",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 38,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "8defa08c6a65d79e5db27bfa984d2e35e35e92e3c823c9992cec98c2b254473c",
+      "body_sha256": "8defa08c6a65d79e5db27bfa984d2e35e35e92e3c823c9992cec98c2b254473c",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 1,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        2
+      ]
+    },
+    {
+      "address": "0x00609B5B",
+      "symbol": "?GetDesc@CD3DXRenderToSurface@@UAGJPAU_D3DXRTS_DESC@@@Z",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 36,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "2fe46ac72129feeb661f29b3fd419d95b2776df97fcd347b0b3b41e33eb4efbf",
+      "body_sha256": "2fe46ac72129feeb661f29b3fd419d95b2776df97fcd347b0b3b41e33eb4efbf",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x00609B5B",
+        "size": "36",
+        "span_end": "0x00609B7E",
+        "current_name": "FUN_00609b5b",
+        "proposed_name": "?GetDesc@CD3DXRenderToSurface@@UAGJPAU_D3DXRTS_DESC@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x00609B5B",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x00609B5B",
+        "size": "36",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertosurface.obj",
+        "member_offset": "393840",
+        "coff_symbol": "?GetDesc@CD3DXRenderToSurface@@UAGJPAU_D3DXRTS_DESC@@@Z",
+        "body_sha256": "2fe46ac72129feeb661f29b3fd419d95b2776df97fcd347b0b3b41e33eb4efbf",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        2
+      ]
+    },
+    {
+      "address": "0x00609B7F",
+      "symbol": "?BeginScene@CD3DXRenderToSurface@@UAGJPAUIDirect3DSurface8@@PBU_D3DVIEWPORT8@@@Z",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 570,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "44b839f4f59e7ed3d802b666073723e50b6e394ca62168844b55fc99faa30cc0",
+      "body_sha256": "44b839f4f59e7ed3d802b666073723e50b6e394ca62168844b55fc99faa30cc0",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 20,
+      "function": {
+        "address": "0x00609B7F",
+        "size": "570",
+        "span_end": "0x00609DB8",
+        "current_name": "FUN_00609b7f",
+        "proposed_name": "?BeginScene@CD3DXRenderToSurface@@UAGJPAUIDirect3DSurface8@@PBU_D3DVIEWPORT8@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x00609B7F",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x00609B7F",
+        "size": "570",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertosurface.obj",
+        "member_offset": "393840",
+        "coff_symbol": "?BeginScene@CD3DXRenderToSurface@@UAGJPAUIDirect3DSurface8@@PBU_D3DVIEWPORT8@@@Z",
+        "body_sha256": "44b839f4f59e7ed3d802b666073723e50b6e394ca62168844b55fc99faa30cc0",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "20",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        29
+      ]
+    },
+    {
+      "address": "0x00609DB9",
+      "symbol": "?EndScene@CD3DXRenderToSurface@@UAGJXZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 184,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "7cd86ed61d43f62d962cb2c4c757785804b30c0e029aadcd41a5cbdf6b4ef2f9",
+      "body_sha256": "7cd86ed61d43f62d962cb2c4c757785804b30c0e029aadcd41a5cbdf6b4ef2f9",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 7,
+      "function": {
+        "address": "0x00609DB9",
+        "size": "184",
+        "span_end": "0x00609E70",
+        "current_name": "FUN_00609db9",
+        "proposed_name": "?EndScene@CD3DXRenderToSurface@@UAGJXZ",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x00609DB9",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x00609DB9",
+        "size": "184",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertosurface.obj",
+        "member_offset": "393840",
+        "coff_symbol": "?EndScene@CD3DXRenderToSurface@@UAGJXZ",
+        "body_sha256": "7cd86ed61d43f62d962cb2c4c757785804b30c0e029aadcd41a5cbdf6b4ef2f9",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "7",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        6
+      ]
+    },
+    {
+      "address": "0x00609E71",
+      "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 118,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "5c62307d9f671b1f7a6555f32abcc5e9761073227af6300766c3086a756c7cf8",
+      "body_sha256": "5c62307d9f671b1f7a6555f32abcc5e9761073227af6300766c3086a756c7cf8",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 6,
+      "function": {
+        "address": "0x00609E71",
+        "size": "118",
+        "span_end": "0x00609EE6",
+        "current_name": "FUN_00609e71",
+        "proposed_name": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x00609E71",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x00609E71",
+        "size": "118",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertosurface.obj",
+        "member_offset": "393840",
+        "coff_symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+        "body_sha256": "5c62307d9f671b1f7a6555f32abcc5e9761073227af6300766c3086a756c7cf8",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "6",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        6
+      ]
+    },
+    {
+      "address": "0x00609EE7",
+      "symbol": "?OnResetDevice@CD3DXRenderToSurface@@UAGJXZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 5,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "5fed5afb29946811bf02359627a94bc01d08d31b779528feaadde3866af9c855",
+      "body_sha256": "5fed5afb29946811bf02359627a94bc01d08d31b779528feaadde3866af9c855",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0060A1FA",
+      "symbol": "?QueryInterface@CD3DXRenderToEnvMap@@UAGJABU_GUID@@PAPAX@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 71,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "7915eaa325ba4afa41f23a300712443dc2f197de780a6243a469e76e85c5c5ed",
+      "body_sha256": "3cfa953213f8b60211aeb9832d81462e6f208b8bff502d67cb3ef385580c551d",
+      "fields": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXRenderToEnvMap",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00660E58"
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXRenderToEnvMap",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DDBC"
+        }
+      ],
+      "indirect_call_count": 1,
+      "function": {
+        "address": "0x0060A1FA",
+        "size": "71",
+        "span_end": "0x0060A240",
+        "current_name": "FUN_0060a1fa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0060A1FA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        3
+      ]
+    },
+    {
+      "address": "0x0060A241",
+      "symbol": "?AddRef@CD3DXRenderToEnvMap@@UAGKXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 13,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "body_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0060B790",
+      "symbol": "?Release@CD3DXRenderToEnvMap@@UAGKXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 31,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "712a792532c4a4e755ae71ceb7b176cf1e8497f7d8b4a8d71ea6bc2fcc849ec6",
+      "body_sha256": "44f5b2315e2d9519dbecc5a5287cfc2070a70edb6756bff8db36cdb9db387499",
+      "fields": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GCD3DXRenderToEnvMap@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 21,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GCD3DXRenderToEnvMap@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x006049F4"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0060A24E",
+      "symbol": "?GetDevice@CD3DXRenderToEnvMap@@UAGJPAPAUIDirect3DDevice8@@@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 38,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "8defa08c6a65d79e5db27bfa984d2e35e35e92e3c823c9992cec98c2b254473c",
+      "body_sha256": "8defa08c6a65d79e5db27bfa984d2e35e35e92e3c823c9992cec98c2b254473c",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 1,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        2
+      ]
+    },
+    {
+      "address": "0x0060A274",
+      "symbol": "?GetDesc@CD3DXRenderToEnvMap@@UAGJPAU_D3DXRTE_DESC@@@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 35,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "ee224d27b1c140a752bca62e00ef636d7d4c26cf1ee9d508cb9f673d6ee5e5f3",
+      "body_sha256": "ee224d27b1c140a752bca62e00ef636d7d4c26cf1ee9d508cb9f673d6ee5e5f3",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0060A274",
+        "size": "35",
+        "span_end": "0x0060A296",
+        "current_name": "FUN_0060a274",
+        "proposed_name": "?GetDesc@CD3DXRenderToEnvMap@@UAGJPAU_D3DXRTE_DESC@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A274",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A274",
+        "size": "35",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?GetDesc@CD3DXRenderToEnvMap@@UAGJPAU_D3DXRTE_DESC@@@Z",
+        "body_sha256": "ee224d27b1c140a752bca62e00ef636d7d4c26cf1ee9d508cb9f673d6ee5e5f3",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        2
+      ]
+    },
+    {
+      "address": "0x0060A297",
+      "symbol": "?BeginCube@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DCubeTexture8@@@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 112,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "0fe662cbb66eafc777f3ac247df35dd54f33b36c91d3f61398dee012dd44f65e",
+      "body_sha256": "491425b06383fa79c0cccf981c743b0b46988ea08668e52af52736a813365237",
+      "fields": [
+        {
+          "offset": 70,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 70,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A024"
+        }
+      ],
+      "indirect_call_count": 2,
+      "function": {
+        "address": "0x0060A297",
+        "size": "112",
+        "span_end": "0x0060A306",
+        "current_name": "FUN_0060a297",
+        "proposed_name": "?BeginCube@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DCubeTexture8@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R009",
+        "owner": "",
+        "notes": "R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A297",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R009"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A297",
+        "size": "112",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?BeginCube@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DCubeTexture8@@@Z",
+        "body_sha256": "0fe662cbb66eafc777f3ac247df35dd54f33b36c91d3f61398dee012dd44f65e",
+        "relocation_count": "1",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "2",
+        "evidence_id": "R009"
+      },
+      "cfg": [
+        1,
+        8
+      ]
+    },
+    {
+      "address": "0x0060A307",
+      "symbol": "?BeginSphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 132,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "ccb94dc5d26e0b3ecb51c398e63ca1a9233c4b3828e5c0a70612598c9c944100",
+      "body_sha256": "8a770690a6e53be30a024476f33deb8551151c0478034b7ef89d3e5c31d04568",
+      "fields": [
+        {
+          "offset": 86,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 86,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A024"
+        }
+      ],
+      "indirect_call_count": 2,
+      "function": {
+        "address": "0x0060A307",
+        "size": "132",
+        "span_end": "0x0060A38A",
+        "current_name": "FUN_0060a307",
+        "proposed_name": "?BeginSphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R009",
+        "owner": "",
+        "notes": "R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A307",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R009"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A307",
+        "size": "132",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?BeginSphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@@Z",
+        "body_sha256": "ccb94dc5d26e0b3ecb51c398e63ca1a9233c4b3828e5c0a70612598c9c944100",
+        "relocation_count": "1",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "2",
+        "evidence_id": "R009"
+      },
+      "cfg": [
+        1,
+        9
+      ]
+    },
+    {
+      "address": "0x0060A38B",
+      "symbol": "?BeginHemisphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 213,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "58754bb963fce8101a63e246cc3f811f7ff463ead8e28e3510a57ada78fa64a7",
+      "body_sha256": "c9e3f7d77ecb6b2396d45a6099d0139039c79dada8a7701f3648354f82137c2f",
+      "fields": [
+        {
+          "offset": 157,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 157,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A024"
+        }
+      ],
+      "indirect_call_count": 4,
+      "function": {
+        "address": "0x0060A38B",
+        "size": "213",
+        "span_end": "0x0060A45F",
+        "current_name": "FUN_0060a38b",
+        "proposed_name": "?BeginHemisphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R009",
+        "owner": "",
+        "notes": "R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A38B",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R009"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A38B",
+        "size": "213",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?BeginHemisphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+        "body_sha256": "58754bb963fce8101a63e246cc3f811f7ff463ead8e28e3510a57ada78fa64a7",
+        "relocation_count": "1",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "4",
+        "evidence_id": "R009"
+      },
+      "cfg": [
+        1,
+        17
+      ]
+    },
+    {
+      "address": "0x0060A460",
+      "symbol": "?BeginParabolic@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 213,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "5bf1cc6a95aab09f4a52c1a52b7368b595ce6f6db3467bb73d2b66e73fb0a1f8",
+      "body_sha256": "53b52c704aa9b86df54bde56e0c4e84f0f2aae890acb3606213ec1b5efe74b13",
+      "fields": [
+        {
+          "offset": 157,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 157,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A024"
+        }
+      ],
+      "indirect_call_count": 4,
+      "function": {
+        "address": "0x0060A460",
+        "size": "213",
+        "span_end": "0x0060A534",
+        "current_name": "FUN_0060a460",
+        "proposed_name": "?BeginParabolic@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R009",
+        "owner": "",
+        "notes": "R009; complete SDK COMDAT, independently anchored call/scalar fields and full CFG; original executable name unknown; origin only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A460",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R009"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A460",
+        "size": "213",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?BeginParabolic@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+        "body_sha256": "5bf1cc6a95aab09f4a52c1a52b7368b595ce6f6db3467bb73d2b66e73fb0a1f8",
+        "relocation_count": "1",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "4",
+        "evidence_id": "R009"
+      },
+      "cfg": [
+        1,
+        17
+      ]
+    },
+    {
+      "address": "0x0060BDED",
+      "symbol": "?Face@CD3DXRenderToEnvMap@@UAGJW4_D3DCUBEMAP_FACES@@@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 35,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "1257809e01eaaec7d9fbb195c7c7841f18f9d4d3e4e52b1688a349f6494c8f79",
+      "body_sha256": "d2e109413b7a92875a82a1d66cd9d837c083ec90581256b2be179193bbe5f5d4",
+      "fields": [
+        {
+          "offset": 5,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?EndScene@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 22,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?BeginScene@CD3DXRenderToEnvMap@@QAEJW4_D3DCUBEMAP_FACES@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "function": null,
+      "origin": null,
+      "comparison": "unresolved-callee-context-only",
+      "cfg": [
+        1,
+        2
+      ]
+    },
+    {
+      "address": "0x0060BE10",
+      "symbol": "?End@CD3DXRenderToEnvMap@@UAGJXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 227,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "4e017a1284ad527966a2e5e0fe345a3ca7379f64bb9e06de22e41099adbb1be3",
+      "body_sha256": "3aecdee655100873fcc6fcb9f38a083cae3a99d442285e5ff83caa1e05654a0f",
+      "fields": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?EndScene@CD3DXRenderToEnvMap@@QAEJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "function": {
+        "address": "0x0060BE10",
+        "size": "227",
+        "span_end": "0x0060BEF2",
+        "current_name": "FUN_0060be10",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0060BE10",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "comparison": "unresolved-callee-context-only",
+      "cfg": [
+        1,
+        12
+      ]
+    },
+    {
+      "address": "0x0060A535",
+      "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 290,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "a3a7ae20ab0f7c026395e574bed529f8d273822c0dfabef7b55c0538e4e00f8a",
+      "body_sha256": "a3a7ae20ab0f7c026395e574bed529f8d273822c0dfabef7b55c0538e4e00f8a",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 13,
+      "function": {
+        "address": "0x0060A535",
+        "size": "290",
+        "span_end": "0x0060A656",
+        "current_name": "FUN_0060a535",
+        "proposed_name": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A535",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A535",
+        "size": "290",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+        "body_sha256": "a3a7ae20ab0f7c026395e574bed529f8d273822c0dfabef7b55c0538e4e00f8a",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "13",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        17
+      ]
+    },
+    {
+      "address": "0x0060A657",
+      "symbol": "?OnResetDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 5,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "5fed5afb29946811bf02359627a94bc01d08d31b779528feaadde3866af9c855",
+      "body_sha256": "5fed5afb29946811bf02359627a94bc01d08d31b779528feaadde3866af9c855",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x00620093",
+      "symbol": "?QueryInterface@CD3DXBuffer@@UAGJABU_GUID@@PAPAX@Z",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 71,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "7915eaa325ba4afa41f23a300712443dc2f197de780a6243a469e76e85c5c5ed",
+      "body_sha256": "785fb4949dd8afb41502254454c87be57b39295485c6d6f467fa27f4852be6af",
+      "fields": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXBuffer",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 18,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_IUnknown",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00660E58"
+        },
+        {
+          "offset": 35,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_IID_ID3DXBuffer",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DDFC"
+        }
+      ],
+      "indirect_call_count": 1,
+      "function": {
+        "address": "0x00620093",
+        "size": "71",
+        "span_end": "0x006200D9",
+        "current_name": "FUN_00620093",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00620093",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        3
+      ]
+    },
+    {
+      "address": "0x0061FE45",
+      "symbol": "?AddRef@CD3DXBuffer@@UAGKXZ",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 13,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "body_sha256": "18d4f9d178484a2e144b9aa457ea743833c330fc460f529003dc8a8e6b93e6f9",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0061FE52",
+      "symbol": "?Release@CD3DXBuffer@@UAGKXZ",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 32,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "fd98f108ad90bcad8a27946d8c2351d4a20156210d5a4d1aa198f93fc9675293",
+      "body_sha256": "fd98f108ad90bcad8a27946d8c2351d4a20156210d5a4d1aa198f93fc9675293",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 1,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0061FE72",
+      "symbol": "?GetBufferPointer@CD3DXBuffer@@UAGPAXXZ",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 10,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "688381b35e2008a7fd7b33f9da2c5ccb883831e156d091e6e795e95df034eca5",
+      "body_sha256": "688381b35e2008a7fd7b33f9da2c5ccb883831e156d091e6e795e95df034eca5",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x0061FE7C",
+      "symbol": "?GetBufferSize@CD3DXBuffer@@UAGKXZ",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 10,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "bed1917a7a9d46812e1463da79ce3b76126e3c2f2be1e20c65b7524ba836e54d",
+      "body_sha256": "bed1917a7a9d46812e1463da79ce3b76126e3c2f2be1e20c65b7524ba836e54d",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x00620074",
+      "symbol": "??_GCD3DXBuffer@@UAEPAXI@Z",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 28,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+      "body_sha256": "d406811f4d237438715112e95cf1850d02737e32a96df739b2334636ef8cc4d7",
+      "fields": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXBuffer@@UAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXBuffer@@UAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0061FE0A"
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x00620074",
+        "size": "28",
+        "span_end": "0x0062008F",
+        "current_name": "FUN_00620074",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_00620074",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x00620074",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0061FE1F",
+      "symbol": "?Init@CD3DXBuffer@@UAEJK@Z",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 38,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "27061408787d8681bd4140f7c563a74fdeb7b3fa8066e67a53d9f9d097037a6a",
+      "body_sha256": "58afecb1aaf0e6cbe4a4f18004603abf6f06c94757be69bfe10d8ac0e573b070",
+      "fields": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 12,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0064159D"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0061FE1F",
+        "size": "38",
+        "span_end": "0x0061FE44",
+        "current_name": "FUN_0061fe1f",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061FE1F",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        0
+      ]
+    },
+    {
+      "address": "0x006049D8",
+      "symbol": "??_GCD3DXRenderToSurface@@QAEPAXI@Z",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 28,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+      "body_sha256": "1bc3624c93848e0806a77fe4fd9a3bbaec045bad6d5fb6753e6a9b0807096bff",
+      "fields": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXRenderToSurface@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXRenderToSurface@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00609EEF"
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x006049D8",
+        "size": "28",
+        "span_end": "0x006049F3",
+        "current_name": "FUN_006049d8",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_006049D8",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x006049D8",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x006049F4",
+      "symbol": "??_GCD3DXRenderToEnvMap@@QAEPAXI@Z",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 28,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+      "body_sha256": "b4724f5e43d8fd7e588c4a3d73ad797455126d78d01b429653080eb3582b6d01",
+      "fields": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXRenderToEnvMap@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 4,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1CD3DXRenderToEnvMap@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A7D2"
+        },
+        {
+          "offset": 17,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x006049F4",
+        "size": "28",
+        "span_end": "0x00604A0F",
+        "current_name": "FUN_006049f4",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_006049F4",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x006049F4",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0060A024",
+      "symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 127,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "3eeb2454792c04a81a87be49af01e1051d50f193bf31e479f278e334b9cb091b",
+      "body_sha256": "3eeb2454792c04a81a87be49af01e1051d50f193bf31e479f278e334b9cb091b",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 7,
+      "function": {
+        "address": "0x0060A024",
+        "size": "127",
+        "span_end": "0x0060A0A2",
+        "current_name": "FUN_0060a024",
+        "proposed_name": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0060A024",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x0060A024",
+        "size": "127",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "member_offset": "400146",
+        "coff_symbol": "?Begin@CD3DXRenderToEnvMap@@QAEJXZ",
+        "body_sha256": "3eeb2454792c04a81a87be49af01e1051d50f193bf31e479f278e334b9cb091b",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "7",
+        "evidence_id": "R008"
+      },
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0061FE0A",
+      "symbol": "??1CD3DXBuffer@@UAE@XZ",
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "size": 21,
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "source_sha256": "e9fdb341a07950d267dfb2fc560b5413be5df3760f2db54b62f546876ca12212",
+      "body_sha256": "7894aa41f560a9f5651f735b0aecef790d48ea7713413d82bc4c93e8a9250715",
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXBuffer@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 15,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXBuffer@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DE1C"
+        },
+        {
+          "offset": 15,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00640F15"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0061FE0A",
+        "size": "21",
+        "span_end": "0x0061FE1E",
+        "current_name": "FUN_0061fe0a",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061FE0A",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x00609EEF",
+      "symbol": "??1CD3DXRenderToSurface@@QAE@XZ",
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "size": 34,
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "source_sha256": "002a8d53aa423236297939c1d7b996840e9c7a8b57df257c44805b002d19b3f1",
+      "body_sha256": "a28d776d85c24ed4cdc63d41a0f173b6c636a8efd67bdd1ad2fd24275d9180fe",
+      "fields": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXRenderToSurface@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXRenderToSurface@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D39C"
+        },
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00609E71"
+        }
+      ],
+      "indirect_call_count": 1,
+      "function": {
+        "address": "0x00609EEF",
+        "size": "34",
+        "span_end": "0x00609F10",
+        "current_name": "FUN_00609eef",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00609EEF",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    },
+    {
+      "address": "0x0060A7D2",
+      "symbol": "??1CD3DXRenderToEnvMap@@QAE@XZ",
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "size": 34,
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "source_sha256": "002a8d53aa423236297939c1d7b996840e9c7a8b57df257c44805b002d19b3f1",
+      "body_sha256": "f0d7029572e710b7c772b6544a985a760e9ebc0e69f1dfd9040b873060f863ff",
+      "fields": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065D3C0"
+        },
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0060A535"
+        }
+      ],
+      "indirect_call_count": 1,
+      "function": {
+        "address": "0x0060A7D2",
+        "size": "34",
+        "span_end": "0x0060A7F3",
+        "current_name": "FUN_0060a7d2",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0060A7D2",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null,
+      "cfg": [
+        1,
+        1
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "member_offset": 393840,
+      "member": "obj\\i386\\cd3dxrendertosurface.obj",
+      "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+      "symbol": "??_7CD3DXRenderToSurface@@6B@",
+      "definition": {
+        "symbol": "??_7CD3DXRenderToSurface@@6B@",
+        "offset": 0,
+        "section": 28,
+        "type": 0,
+        "storage": 2
+      },
+      "section": 28,
+      "size": 36,
+      "source_sha256": "6db65fd59fd356f6729140571b5bcd6bb3b83492a16e1bf0a3884442fc3c8a0e",
+      "body_sha256": "a04dc36c6076247d77bca20016ef894d147d1ff94aeeb2814162dd5e4c1fe18a",
+      "address": "0x0065D39C",
+      "fields": [
+        {
+          "offset": 0,
+          "type_id": 6,
+          "symbol": "?QueryInterface@CD3DXRenderToSurface@@UAGJABU_GUID@@PAPAX@Z",
+          "target_address": "0x00609F11"
+        },
+        {
+          "offset": 4,
+          "type_id": 6,
+          "symbol": "?AddRef@CD3DXRenderToSurface@@UAGKXZ",
+          "target_address": "0x00609B11"
+        },
+        {
+          "offset": 8,
+          "type_id": 6,
+          "symbol": "?Release@CD3DXRenderToSurface@@UAGKXZ",
+          "target_address": "0x00609F7F"
+        },
+        {
+          "offset": 12,
+          "type_id": 6,
+          "symbol": "?GetDevice@CD3DXRenderToSurface@@UAGJPAPAUIDirect3DDevice8@@@Z",
+          "target_address": "0x00609B35"
+        },
+        {
+          "offset": 16,
+          "type_id": 6,
+          "symbol": "?GetDesc@CD3DXRenderToSurface@@UAGJPAU_D3DXRTS_DESC@@@Z",
+          "target_address": "0x00609B5B"
+        },
+        {
+          "offset": 20,
+          "type_id": 6,
+          "symbol": "?BeginScene@CD3DXRenderToSurface@@UAGJPAUIDirect3DSurface8@@PBU_D3DVIEWPORT8@@@Z",
+          "target_address": "0x00609B7F"
+        },
+        {
+          "offset": 24,
+          "type_id": 6,
+          "symbol": "?EndScene@CD3DXRenderToSurface@@UAGJXZ",
+          "target_address": "0x00609DB9"
+        },
+        {
+          "offset": 28,
+          "type_id": 6,
+          "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+          "target_address": "0x00609E71"
+        },
+        {
+          "offset": 32,
+          "type_id": 6,
+          "symbol": "?OnResetDevice@CD3DXRenderToSurface@@UAGJXZ",
+          "target_address": "0x00609EE7"
+        }
+      ]
+    },
+    {
+      "member_offset": 400146,
+      "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+      "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+      "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+      "definition": {
+        "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+        "offset": 0,
+        "section": 66,
+        "type": 0,
+        "storage": 2
+      },
+      "section": 66,
+      "size": 52,
+      "source_sha256": "7955cb2de90dd9efc6df9fdbf5f5d10c114f4135a9a6b52db1003be749e32f7a",
+      "body_sha256": "08b659547e351065ada59131f8fa11988635ace087de861618ccea9ae7e88c13",
+      "address": "0x0065D3C0",
+      "fields": [
+        {
+          "offset": 0,
+          "type_id": 6,
+          "symbol": "?QueryInterface@CD3DXRenderToEnvMap@@UAGJABU_GUID@@PAPAX@Z",
+          "target_address": "0x0060A1FA"
+        },
+        {
+          "offset": 4,
+          "type_id": 6,
+          "symbol": "?AddRef@CD3DXRenderToEnvMap@@UAGKXZ",
+          "target_address": "0x0060A241"
+        },
+        {
+          "offset": 8,
+          "type_id": 6,
+          "symbol": "?Release@CD3DXRenderToEnvMap@@UAGKXZ",
+          "target_address": "0x0060B790"
+        },
+        {
+          "offset": 12,
+          "type_id": 6,
+          "symbol": "?GetDevice@CD3DXRenderToEnvMap@@UAGJPAPAUIDirect3DDevice8@@@Z",
+          "target_address": "0x0060A24E"
+        },
+        {
+          "offset": 16,
+          "type_id": 6,
+          "symbol": "?GetDesc@CD3DXRenderToEnvMap@@UAGJPAU_D3DXRTE_DESC@@@Z",
+          "target_address": "0x0060A274"
+        },
+        {
+          "offset": 20,
+          "type_id": 6,
+          "symbol": "?BeginCube@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DCubeTexture8@@@Z",
+          "target_address": "0x0060A297"
+        },
+        {
+          "offset": 24,
+          "type_id": 6,
+          "symbol": "?BeginSphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@@Z",
+          "target_address": "0x0060A307"
+        },
+        {
+          "offset": 28,
+          "type_id": 6,
+          "symbol": "?BeginHemisphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+          "target_address": "0x0060A38B"
+        },
+        {
+          "offset": 32,
+          "type_id": 6,
+          "symbol": "?BeginParabolic@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z",
+          "target_address": "0x0060A460"
+        },
+        {
+          "offset": 36,
+          "type_id": 6,
+          "symbol": "?Face@CD3DXRenderToEnvMap@@UAGJW4_D3DCUBEMAP_FACES@@@Z",
+          "target_address": "0x0060BDED"
+        },
+        {
+          "offset": 40,
+          "type_id": 6,
+          "symbol": "?End@CD3DXRenderToEnvMap@@UAGJXZ",
+          "target_address": "0x0060BE10"
+        },
+        {
+          "offset": 44,
+          "type_id": 6,
+          "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+          "target_address": "0x0060A535"
+        },
+        {
+          "offset": 48,
+          "type_id": 6,
+          "symbol": "?OnResetDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+          "target_address": "0x0060A657"
+        }
+      ]
+    },
+    {
+      "member_offset": 380178,
+      "member": "obj\\i386\\cd3dxbuffer.obj",
+      "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+      "symbol": "??_7CD3DXBuffer@@6B@",
+      "definition": {
+        "symbol": "??_7CD3DXBuffer@@6B@",
+        "offset": 0,
+        "section": 6,
+        "type": 0,
+        "storage": 2
+      },
+      "section": 6,
+      "size": 28,
+      "source_sha256": "3addfb141cd7c9c4c6543a82191a3707ac29c7a041217782e61d4d91c691aee8",
+      "body_sha256": "b4c4577088535050d4723c5636b19410cf66dc3e566a0fa73e68652c13e7a296",
+      "address": "0x0065DE1C",
+      "fields": [
+        {
+          "offset": 0,
+          "type_id": 6,
+          "symbol": "?QueryInterface@CD3DXBuffer@@UAGJABU_GUID@@PAPAX@Z",
+          "target_address": "0x00620093"
+        },
+        {
+          "offset": 4,
+          "type_id": 6,
+          "symbol": "?AddRef@CD3DXBuffer@@UAGKXZ",
+          "target_address": "0x0061FE45"
+        },
+        {
+          "offset": 8,
+          "type_id": 6,
+          "symbol": "?Release@CD3DXBuffer@@UAGKXZ",
+          "target_address": "0x0061FE52"
+        },
+        {
+          "offset": 12,
+          "type_id": 6,
+          "symbol": "?GetBufferPointer@CD3DXBuffer@@UAGPAXXZ",
+          "target_address": "0x0061FE72"
+        },
+        {
+          "offset": 16,
+          "type_id": 6,
+          "symbol": "?GetBufferSize@CD3DXBuffer@@UAGKXZ",
+          "target_address": "0x0061FE7C"
+        },
+        {
+          "offset": 20,
+          "type_id": 6,
+          "symbol": "??_ECD3DXBuffer@@UAEPAXI@Z",
+          "target_address": "0x00620074"
+        },
+        {
+          "offset": 24,
+          "type_id": 6,
+          "symbol": "?Init@CD3DXBuffer@@UAEJK@Z",
+          "target_address": "0x0061FE1F"
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    {
+      "reference": {
+        "member_offset": 380178,
+        "symbol": "??_ECD3DXBuffer@@UAEPAXI@Z",
+        "source_definition": {
+          "symbol": "??_ECD3DXBuffer@@UAEPAXI@Z",
+          "offset": 0,
+          "section": 0,
+          "type": 32,
+          "storage": 105
+        },
+        "symbol_index": 16,
+        "auxiliary_count": 1,
+        "fallback_symbol": "??_GCD3DXBuffer@@UAEPAXI@Z",
+        "fallback_symbol_index": 15,
+        "fallback_reference": {
+          "symbol": "??_GCD3DXBuffer@@UAEPAXI@Z",
+          "offset": 0,
+          "section": 0,
+          "type": 32,
+          "storage": 2
+        },
+        "fallback_definition": {
+          "symbol": "??_GCD3DXBuffer@@UAEPAXI@Z",
+          "offset": 0,
+          "section": 37,
+          "type": 32,
+          "storage": 2
+        },
+        "search_characteristics": 2,
+        "strong_archive_definitions": []
+      },
+      "address": "0x00620074"
+    }
+  ],
+  "catalog": {
+    "??1CD3DXBuffer@@UAE@XZ": "0x0061FE0A",
+    "??1CD3DXRenderToEnvMap@@QAE@XZ": "0x0060A7D2",
+    "??1CD3DXRenderToSurface@@QAE@XZ": "0x00609EEF",
+    "??2@YAPAXI@Z": "0x0064159D",
+    "??3@YAXPAX@Z": "0x00640F15",
+    "??_7CD3DXBuffer@@6B@": "0x0065DE1C",
+    "??_7CD3DXRenderToEnvMap@@6B@": "0x0065D3C0",
+    "??_7CD3DXRenderToSurface@@6B@": "0x0065D39C",
+    "??_ECD3DXBuffer@@UAEPAXI@Z": "0x00620074",
+    "??_GCD3DXBuffer@@UAEPAXI@Z": "0x00620074",
+    "??_GCD3DXRenderToEnvMap@@QAEPAXI@Z": "0x006049F4",
+    "??_GCD3DXRenderToSurface@@QAEPAXI@Z": "0x006049D8",
+    "?AddRef@CD3DXBuffer@@UAGKXZ": "0x0061FE45",
+    "?AddRef@CD3DXRenderToEnvMap@@UAGKXZ": "0x0060A241",
+    "?AddRef@CD3DXRenderToSurface@@UAGKXZ": "0x00609B11",
+    "?Begin@CD3DXRenderToEnvMap@@QAEJXZ": "0x0060A024",
+    "?BeginCube@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DCubeTexture8@@@Z": "0x0060A297",
+    "?BeginHemisphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z": "0x0060A38B",
+    "?BeginParabolic@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@0@Z": "0x0060A460",
+    "?BeginScene@CD3DXRenderToSurface@@UAGJPAUIDirect3DSurface8@@PBU_D3DVIEWPORT8@@@Z": "0x00609B7F",
+    "?BeginSphere@CD3DXRenderToEnvMap@@UAGJPAUIDirect3DTexture8@@@Z": "0x0060A307",
+    "?End@CD3DXRenderToEnvMap@@UAGJXZ": "0x0060BE10",
+    "?EndScene@CD3DXRenderToSurface@@UAGJXZ": "0x00609DB9",
+    "?Face@CD3DXRenderToEnvMap@@UAGJW4_D3DCUBEMAP_FACES@@@Z": "0x0060BDED",
+    "?GetBufferPointer@CD3DXBuffer@@UAGPAXXZ": "0x0061FE72",
+    "?GetBufferSize@CD3DXBuffer@@UAGKXZ": "0x0061FE7C",
+    "?GetDesc@CD3DXRenderToEnvMap@@UAGJPAU_D3DXRTE_DESC@@@Z": "0x0060A274",
+    "?GetDesc@CD3DXRenderToSurface@@UAGJPAU_D3DXRTS_DESC@@@Z": "0x00609B5B",
+    "?GetDevice@CD3DXRenderToEnvMap@@UAGJPAPAUIDirect3DDevice8@@@Z": "0x0060A24E",
+    "?GetDevice@CD3DXRenderToSurface@@UAGJPAPAUIDirect3DDevice8@@@Z": "0x00609B35",
+    "?Init@CD3DXBuffer@@UAEJK@Z": "0x0061FE1F",
+    "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ": "0x0060A535",
+    "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ": "0x00609E71",
+    "?OnResetDevice@CD3DXRenderToEnvMap@@UAGJXZ": "0x0060A657",
+    "?OnResetDevice@CD3DXRenderToSurface@@UAGJXZ": "0x00609EE7",
+    "?QueryInterface@CD3DXBuffer@@UAGJABU_GUID@@PAPAX@Z": "0x00620093",
+    "?QueryInterface@CD3DXRenderToEnvMap@@UAGJABU_GUID@@PAPAX@Z": "0x0060A1FA",
+    "?QueryInterface@CD3DXRenderToSurface@@UAGJABU_GUID@@PAPAX@Z": "0x00609F11",
+    "?Release@CD3DXBuffer@@UAGKXZ": "0x0061FE52",
+    "?Release@CD3DXRenderToEnvMap@@UAGKXZ": "0x0060B790",
+    "?Release@CD3DXRenderToSurface@@UAGKXZ": "0x00609F7F",
+    "_IID_ID3DXBuffer": "0x0065DDFC",
+    "_IID_ID3DXRenderToEnvMap": "0x0065DDBC",
+    "_IID_ID3DXRenderToSurface": "0x0065DDCC",
+    "_IID_IUnknown": "0x00660E58"
+  },
+  "external_symbols": {
+    "??3@YAXPAX@Z": "0x00640F15",
+    "??2@YAPAXI@Z": "0x0064159D"
+  },
+  "external_records": [
+    {
+      "file": "config/standard-exception-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x00640F15",
+      "record": {
+        "member_offset": 852956,
+        "member": "build\\intel\\mt_obj\\delete.obj",
+        "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+        "address": "0x00640F15",
+        "coff_symbol": "??3@YAXPAX@Z",
+        "size": 5,
+        "code_size": 5,
+        "code_regions": [
+          {
+            "offset": 0,
+            "size": 5
+          }
+        ],
+        "span_end": "0x00640F19",
+        "extent_basis": "function-auxiliary-record",
+        "decision": "library",
+        "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+        "body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002",
+        "relocation_bindings": [
+          {
+            "offset": 1,
+            "type": "REL32",
+            "symbol": "_free",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00642A61",
+            "target_kind": "callee",
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "body_facts": {
+          "returns": [],
+          "direct_calls": [],
+          "vtable_writes": []
+        },
+        "branches": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61"
+          }
+        ],
+        "direct_edges": [
+          {
+            "site": "0x00640F15",
+            "target": "0x00642A61",
+            "basis": "typed-REL32",
+            "field_offset": 1,
+            "code_entry": {
+              "owner": "0x00642A61",
+              "source_member_offset": 794604,
+              "source_offset": 0,
+              "source_definition": {
+                "symbol": "_free",
+                "offset": 0,
+                "section": 2,
+                "type": 32,
+                "storage": 2
+              }
+            }
+          }
+        ],
+        "indirect_calls": [],
+        "indirect_jumps": [],
+        "instruction_witnesses": [
+          {
+            "site": "0x00640F15",
+            "mnemonic": "jmp",
+            "operands": "0x642a61"
+          }
+        ],
+        "source_definition": {
+          "symbol": "??3@YAXPAX@Z",
+          "offset": 0,
+          "section": 2,
+          "type": 32,
+          "storage": 2
+        },
+        "ledger_size": 5
+      },
+      "requested_symbol": "??3@YAXPAX@Z",
+      "primary_symbol": "??3@YAXPAX@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "93a30f12e56b6d776254cd68227b348dd71f8043a7e8d436c18ad3d4be3b119e",
+      "source_size": 5,
+      "source_sha256": "e8ebd827d1f36d7cfa5e5220610aa6370284d1589989363f48ac40166362d449",
+      "fields": [
+        {
+          "offset": 1,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 1,
+          "type": "REL32",
+          "symbol": "_free",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00642A61",
+          "target_kind": "callee",
+          "code_entry": {
+            "owner": "0x00642A61",
+            "source_member_offset": 794604,
+            "source_offset": 0,
+            "source_definition": {
+              "symbol": "_free",
+              "offset": 0,
+              "section": 2,
+              "type": 32,
+              "storage": 2
+            }
+          }
+        }
+      ],
+      "function": {
+        "address": "0x00640F15",
+        "size": "5",
+        "span_end": "0x00640F19",
+        "current_name": "_free",
+        "proposed_name": "??3@YAXPAX@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "R142; config/standard-exception-origin-evidence.json; complete pinned own-AUX code, every typed field, full template/vtable/RTTI/scope graph and actual register/stack ABI",
+        "owner": "library",
+        "notes": "Complete 5-byte own AUX in build\\intel\\mt_obj\\delete.obj at archive member 852956; 1 independently bound fields. Complete standard exception/throw/frame graph, whole vtable/RTTI data, actual weak source records and full finally scope plus real SDK/natural controls replay. Original private implementations, throw record identities and linker input/search decisions remain unknown; no inferred complete private layout or conventional ABI, no source/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00640F15",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-standard-exception-throw-frame-rtti-weak-scope-abi-provenance",
+        "evidence_id": "R142"
+      },
+      "ledger_body_sha256": "3905175cf1f43f63f8437941ed315037adf3e82fa11350313f2b657b1dda8002"
+    },
+    {
+      "file": "config/allocation-api-origin-evidence.json",
+      "collection": "functions",
+      "address": "0x0064159D",
+      "record": {
+        "address": "0x0064159D",
+        "symbol": "??2@YAPAXI@Z",
+        "size": 14,
+        "span_end": "0x006415AA",
+        "decision": "library",
+        "member_offset": 856822,
+        "member": "build\\intel\\mt_obj\\new.obj",
+        "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+        "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+        "body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1",
+        "fields": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 7,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__nh_malloc",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00644305"
+          }
+        ],
+        "instructions": [
+          {
+            "address": "0x0064159D",
+            "mnemonic": "push",
+            "operands": "1"
+          },
+          {
+            "address": "0x0064159F",
+            "mnemonic": "push",
+            "operands": "dword ptr [esp + 8]"
+          },
+          {
+            "address": "0x006415A3",
+            "mnemonic": "call",
+            "operands": "0x644305"
+          },
+          {
+            "address": "0x006415A8",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415A9",
+            "mnemonic": "pop",
+            "operands": "ecx"
+          },
+          {
+            "address": "0x006415AA",
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ]
+      },
+      "requested_symbol": "??2@YAPAXI@Z",
+      "primary_symbol": "??2@YAPAXI@Z",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member_sha256": "2e8696b5eb8b2bc31f7e9edc6e1b9bacfb026c9382d5dc0e172ec7832cc9c1ea",
+      "source_size": 14,
+      "source_sha256": "f936ff6b84ea25652eff3ee78740def510e3767ede1a6483f6e65df32b6412e1",
+      "fields": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 7,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "__nh_malloc",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00644305"
+        }
+      ],
+      "function": {
+        "address": "0x0064159D",
+        "size": "14",
+        "span_end": "0x006415AA",
+        "current_name": "operator_new",
+        "proposed_name": "??2@YAPAXI@Z",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R154; config/allocation-api-origin-evidence.json; complete vendor allocation API source, independently typed runtime fields, cold SDK operations and retained game context",
+        "owner": "library",
+        "notes": "Complete own COFF AUX extent, every return/tail, archive member and actual typed field compare unmasked. The 14-byte scalar-new owner passes actual flag 1 and the original size to independently accepted complete R120 __nh_malloc; complete array-new and array-delete tails route to different independently sourced scalar owners. Eight whole natural SDK call controls / 196 bytes, every ordinary code/data section / 212 bytes, full 16-byte observation layout and eight actual headers cold-build. Complete R120 allocator/handler/data/API/EH provenance and R153 game buffer lifetime/source profiles cold-replay; original accepted evidence, extents and game declarations remain unchanged. Source ownership is library; original linker inputs, user handlers and live allocation outcomes remain unknown. No source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0064159D",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-allocation-api-typed-sdk-runtime-and-game-context",
+        "evidence_id": "R154"
+      },
+      "ledger_body_sha256": "912a394f064217c0fb31354a5ed665e6bfb9cbab0c66424410efbaa3ae301cc1"
+    }
+  ],
+  "archives": [
+    {
+      "library": "d3dx8.lib",
+      "path": ".tools/msvc710/Vc7/PlatformSDK/Lib/d3dx8.lib",
+      "sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28"
+    },
+    {
+      "library": "Uuid.Lib",
+      "path": ".tools/msvc710/Vc7/PlatformSDK/Lib/Uuid.Lib",
+      "sha256": "91e2caa3832f1574ee317ca53fe3db8b389856d2da5e138a20805ac1399b4bab"
+    }
+  ],
+  "guids": [
+    {
+      "symbol": "_IID_IUnknown",
+      "address": "0x00660E58",
+      "section": 4,
+      "source_sha256": "c0b8112a8998b72d19d314c4b80a0734cdd386cb917d2627cd68cc17d6080b65",
+      "definitions": [
+        {
+          "symbol": "_IID_IUnknown",
+          "offset": 0
+        }
+      ],
+      "member_offset": 328782,
+      "member": "obj\\i386\\unknwn_i.obj",
+      "member_sha256": "b6c13255e45edd60429710604f923631dd13afc4f183f66a0742e2a5bffc81cf"
+    },
+    {
+      "symbol": "_IID_ID3DXBuffer",
+      "address": "0x0065DDFC",
+      "section": 22,
+      "source_sha256": "74e514fb6a180198ecd7f3fdcbb928a735a73753104e9f1b6a92824881abf7a7",
+      "definitions": [
+        {
+          "symbol": "_IID_ID3DXBuffer",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "symbol": "_IID_ID3DXRenderToSurface",
+      "address": "0x0065DDCC",
+      "section": 19,
+      "source_sha256": "c85cd91cd1bd62991d4f88294d11876e379960700f5bbd15aa919add0115c137",
+      "definitions": [
+        {
+          "symbol": "_IID_ID3DXRenderToSurface",
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "symbol": "_IID_ID3DXRenderToEnvMap",
+      "address": "0x0065DDBC",
+      "section": 18,
+      "source_sha256": "06f91dd0728e9a1e6b893d56e1fc7a3716729fcd2043c691dd0ffb4b7e95221e",
+      "definitions": [
+        {
+          "symbol": "_IID_ID3DXRenderToEnvMap",
+          "offset": 0
+        }
+      ]
+    }
+  ],
+  "probe": "probes/VC7D3DXInterfaceGuids.cpp",
+  "probe_sha256": "4f5a9fa27ca3191c92566e49882f1cb7a19037415376dc53c1b96443d88d39ed",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/showIncludes"
+  ],
+  "headers": {
+    ".tools/msvc710/Vc7/PlatformSDK/Include/InitGuid.h": "422ebcf50b8e8ad2f21a06e7281540f759237eabe37e445605fc45cc45d88314",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Guiddef.h": "acfa27cc0b8b66d475f26808a51698ccf6c37c526220b0b97271cf788afe3db2",
+    ".tools/msvc710/Vc7/include/string.h": "b68e9db97d695655abe65dd36d9fc0f92e5bc304371eb9c8a9d2144e55eb8c37",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8.h": "67abeede962f8d5ea879d45617d17265be883abf547cb7af7ab8b679874fc8af",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8.h": "f7aa8a20fc0cf04e30e0faa8d2954c5a2bf9d34a1471a093e7cb36bbb0cba1df",
+    ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ObjBase.h": "cfea0883750e286d00f5b2cf31e9e2ff5cf2201a04852eef0c7d70dcd524242b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Rpc.h": "769cd17b4992b2297f5d662832ca1bf20f83f00245e68f0825d0d5857de8dffd",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Windows.h": "c5ae461b1a3cbee914eec883ef55bd7dfd3eb287a8f178c0ed71eb3d1b1fb6f1",
+    ".tools/msvc710/Vc7/include/excpt.h": "6a357ada5e2ac00e45396f7a228740d1b4cbea4e4dd6159a4b61d12efd120fbd",
+    ".tools/msvc710/Vc7/include/stdarg.h": "adf6c92304eb851dc17249502e2437f70347138396d824ec8a5e5135fc128134",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinDef.h": "7b4cafb8b26c0d5aa94cd26d62cbdbb878501acf7b4b68a9e835f815f7f4b0a6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNT.h": "3aec4a87873489d4ea3987c117c7d1a37c2198f5f07d953031d47bc4a28da106",
+    ".tools/msvc710/Vc7/include/ctype.h": "b1aeb8f4c91ed630b87acf94a5a4f16d21ff4bfc9eaa7eed85bb562eb64dbca0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/BaseTsd.h": "3a7f51ff361adc74a3c024ab98a71be437599770d7ece60c2370f18db3e85257",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack4.h": "73595d2f1bdc362ddf962cc9721832960df69dd53221820053d83e9466ed239d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PopPack.h": "829888e896f9400c936d4afb89e070160e2a9626c9ecece624ed3f6943b7868b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack2.h": "8c3a4e2bab10c86d007c872ef0196599beb892f793cc3a92bd09866886e72e2c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack8.h": "d9195e68f7a9e618533d1dfb5917cde890aa1a4f47c32e3a7ed0dd7b542636ce",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinBase.h": "64cc1b2b5682376c4fdd66ff80fc994899e76c897333c263a9d742f8f99150e3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinError.h": "d17ebc1cd84e9257c92fbdf6198f34c126ee8b8c71fda453a4bc3f3005326304",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinGDI.h": "8c6f9233f4e5c5e2f8a76e0c45bd6d778cf92931ffc78bea8de9510349afd44f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack1.h": "32f8fb0648db4564c4e0501b2a5b1f1bcac3f89aa808bbd873f327561d184dbb",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinUser.h": "eae72e5e7ee5b13132ce059a0de42fa9ee956aafdec64436eabddfb91193fa49",
+    ".tools/msvc710/Vc7/include/tvout.h": "0856762e9e868c79bfa6fe6a80c5bf860ea6c45110d327329cdf5a7eb9dd527e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNls.h": "e238ea0081d76d191b67f284725d44eb2914f4d0ff1876d4a102b8bfad3ac1c5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinCon.h": "83dfa7a50ae3d554f7974f49b04c5c8c1ff6cd8d35e6f38fdc052478eb389980",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinVer.h": "309a8a70df284f20c4f98ca4383e30e19784159a7e5bf3fbc64258d07cd46135",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinReg.h": "9d0f87a485048dbe975e97acb18da429f2bdb70605220b7dc10a65890632c614",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Reason.h": "1a48dbfb6ff5f811ff813537e86b55063999e9c1c945dbe132c3c2ad859060e0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNetWk.h": "58574effaaffe97ee2708501b6965012e54a9a65a1bb46362bcb3d50ee61892b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/CdErr.h": "bf32afdc975ba03781b01dfc7b3a450787cc213257a3f4b7f53ec168ce07dd7c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Dde.h": "b6cb1b3bdb2e0538f4d632b23fe0cc14b783bf38ef89b19a80407ab98fd201fc",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Ddeml.h": "dc22392cdafe53ee531017b58d22075f1ca747b9124c36b88a7f031763fc2c94",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Dlgs.h": "5e71a1cf7217ff00f008eed8abef8b63d2308b1afeb4a6274ad55104a17a679d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/LZExpand.h": "9e14cae95284c4b5cf5272aab41d50b9dfe2d413041815e9aad86dc890a247a6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/MMSystem.h": "71688839895a783fc4a6630c314050d7c66f06daf8037ed8bb96e4fe1dda9bc5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Nb30.h": "06ea9809f8ab6c0fc57f89b225b70c1a254310e7c16b8c4ec9626fd718fc543b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcDce.h": "a0b8c160dea649319433b2e0c528814948a1ee00da9d4bb1695e44d848b7ec94",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcDceP.h": "ccea8395d2ff01ae4343f75f260855f4c288d940b5ed43ab5ae9685f511990e3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNsi.h": "0ea9d4546b524a4f220d108d10c041d820f2b6fbc56338cc72d460e04b7af2f5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNtErr.h": "777beed6d3eaaa39ee0f9b08fe64093649378ad8a69d93bcf844c1c213a2d28c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcAsync.h": "3913bc4f052254618cb5ed406e3194ef7d6618182160bcc8460f2cf5e1039c0e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ShellAPI.h": "5f297b959a6c4b84f5fb01ae3dcb6c2d463b1a50a83bfb37aea2dd59b3ee9412",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinPerf.h": "5e4cd5db368ed6206edeb88ea751fe93bceec0b74fb33c557ace62d576129a9f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSock.h": "20c03a2620b1f3d551cc1cb65d88259a3bdb9444d07336fce093e0846197dfaf",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinCrypt.h": "2c74c1f53f960a797fa46ab992455983076d92e05e5ce2398216ddd186552597",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinEFS.h": "cf511a3ffb14e27c24216f0ab03e659dbf035fe4767bfe5d4f6cdd6e24a33ed9",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSCard.h": "d2aca4b69f798781f265caec4a667cb564f67fff589fbb4ea7c9fd10ce82b3d7",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WTypes.h": "4a4c90553322c02da3f5fb1fd8ca3038cc0deb36dc0519f84c335ac1bfe6b72a",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNdr.h": "34b462cce7b757a669f7c56d5ad426ea662a5a525e9c842e680c49c2e71fe2f5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNsip.h": "081c562c4dcdce78cf4904b30e08baa10364c5c7dace5d8ee005344029fb8f0e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinIoCtl.h": "3edf8e5b991e20a679b3f88cbdc00771b7ee8d6777d58c8b9c06cac4e9cb3693",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSmCrd.h": "d76aa6f2bec67a388de742be4cfe37e97d8955694bc4d39fb9dfd15a77fcbff1",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSpool.h": "d61bbcb12a93d7500ff3a334882cc99b30a49eec7602e83e15f9d6c16e8d2296",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PrSht.h": "4804afd5bbf595504ce4f292f86197d55216fe18db2b4b55eb1b56225ed1f43b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Ole2.h": "7118421e3ea038e85fc40c925326e78cde7b3026b493e030a6eca18fc63aa2c0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Unknwn.h": "0e183686cd36bdeb55aa85e3f2c11f2738379fd0d7616f003766996dbcaadd48",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ObjIdl.h": "4964e618dd33e0cfab32bb630c729efc17ecb8569aeab1aa5a74a907f5477b0c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/UrlMon.h": "670abb5352dfccd3dc30ae975f6fdc85c23a6ad734f301012d26f8449f704fec",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OleIdl.h": "ec5ddecf7fb986326ecfb680b32f58dd0db4b9fad4ed8041e93833930d4696b6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ServProv.h": "0730ed10ab4fbdbc31dca0191e37cb9712ac0f8d61fb6b2ba79a43077ce8ac7d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/MsXml.h": "ec4cf0af0d6f00453d2cae45e31d4c8c18f80036581a0d6ec3c196d36aeec755",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OAIdl.h": "b326e4828dc5e1d0abac635f77b111dc4fde6730643d80217e20c252b07d7f16",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PropIdl.h": "c737984bb1072e3219daab49251da318c3b139491b2bae48639cca9b59562d02",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OleAuto.h": "75f9d08192505cf21d6f73c271b74ce7088d8dbb5235cc15596546536408e5c3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/CommDlg.h": "ec208105e7409f324c8997592415421debedcc4ea4c2665aaae2734b0c897ec9",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/StrAlign.h": "791fd09c603ea4636b275982f322a2a0459410ed3570514c5a8b9f69266936bf",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSvc.h": "20a2cf9c5f245eebf0f6e2527dedb8be599bfe7b87c20aa52693b4b15d57d2e8",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Mcx.h": "a01f5381c7d65fc7a0b8945821d2f02ef953814a243e92237bad97b5239921a2",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Imm.h": "db0a714c28b8d636d155eada238e324db83935d0a887ece6eec580902e6d0124",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8types.h": "5fb192baaf08da895ec37e367d9e5e97dde5fb59ecf353d48aa93455abd968ef",
+    ".tools/msvc710/Vc7/include/float.h": "5b6fc758e006653443d8372e45f530072183e145d4031787b2e43cba6ff1d84f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8caps.h": "62ac869f16080b54185fd68b80a7d2829c49881adb6be6dc901cd99e7548fcc4",
+    ".tools/msvc710/Vc7/include/limits.h": "d3ad33ce7c8eb1c3f7c5f151339efdcd44ae1d76506a314f0b91daf26c004522",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.h": "bfdca3f289819c319375c9052d192f1d05aed71ada6547b1b576d97b95fe91c1",
+    ".tools/msvc710/Vc7/include/math.h": "776b7b9c45c5aed0e355109ab7f3435971d833d2228dd4f2b16aad4fe6bf96c8",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.inl": "fc3d59fe5db1ccdbdceb3179f1d28f05a1bbd4d1b5d03a95d41a7603319f5688",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8core.h": "31dc4b256fa533ea2dcdf2b80bf1d5a52f247ec5e2b647cec137e6ed619e9ef0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8tex.h": "758a424d3b22264fd9d2cb6ae9be1d2e3589ef5e95321db8f25afc6a4b3d60be",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8mesh.h": "f8352e32755f8245a571cb01edc5ca5c630718ff67fe632f41a36022cf254e89",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/dxfile.h": "058f336ccf0af82b21112086306fe8b51610eab3ad47ba586711d49a313cf045",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8shape.h": "4e6cb1a06dc360af7c50ada9d60bce21772028dea13d10f82fae4ee42ac7c2c7",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8effect.h": "5c62ffbd8b584f0a281f9f9acbf9be568016146d163926d1cb8f43963e917f59"
+  },
+  "emission": [
+    {
+      "section": 3,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "b8761689f88331452f238056c84f2d1468e0d7d17f2c62b3093f4bd6ed280f5e",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXEffect",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 4,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "b130d8c4113e10510346f68a36a5abbb9c3e34cfefc8b128d7fc2fd91a0b61c3",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXSkinMesh",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 5,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "288a81e4b789d02244f3e3e6af761b0e778257108bf9eb068b69138993efc38a",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 5,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXSPMesh",
+          "offset": 0,
+          "section": 5,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 6,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "fb4f620beeef0ef5d8be6c537122aaef08fbeb5141df7bc248a49a987b27c9e1",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXPMesh",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 7,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "a3e254c1e6e9ec691b0fd940083fb8f2cc9748d5a4ec567a1f53dfdcd640fdf9",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 7,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXMesh",
+          "offset": 0,
+          "section": 7,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 8,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "05b8fee7a9f131101eeb46001d52dda701cfef95c88864951720e2c1d27a74f7",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXBaseMesh",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 9,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "e6c13e6d095368f92b91b59b5a26dff4f07b5bb46186985d88a83f051804a7a2",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 9,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_TID_DXFILEHeader",
+          "offset": 0,
+          "section": 9,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 10,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "a1f7aa28be3e0dbd6e6af2d4bb1b3a73b5d8317d888263e733000db621d43c99",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileBinary",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 11,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "c503c5a990e5e2029f0977c3869d551542c603919a10cc4c6d80ccfda81d3799",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 11,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileDataReference",
+          "offset": 0,
+          "section": 11,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 12,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "345bba74d6bd350d689e75c0aa63ff59f962e920d1f856210b76ab6c9fa40332",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileData",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 13,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "e6c13e6d095368f92b91b59b5a26dff4f07b5bb46186985d88a83f051804a7a2",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 13,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileObject",
+          "offset": 0,
+          "section": 13,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 14,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "1b30701f9daea7c1cbb08fd5e713611c77816bf34eafcd0d41347175b39c0f31",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileSaveObject",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 15,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "406b85a2f94cf40b45afcecd8e95950b6ccbd6e85ee36e680de16e1dd268e6cb",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 15,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFileEnumObject",
+          "offset": 0,
+          "section": 15,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 16,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "10bca33c95dbcc2eb644b5d64536b432f402a96a73c75996840c89503bfaffdb",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirectXFile",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 17,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "b5d16db76fa50de04f8a2cd3ba38f491a0a84a294dcdbb51949afa898deab6ed",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 17,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_CLSID_CDirectXFile",
+          "offset": 0,
+          "section": 17,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 18,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "06f91dd0728e9a1e6b893d56e1fc7a3716729fcd2043c691dd0ffb4b7e95221e",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXRenderToEnvMap",
+          "offset": 0,
+          "section": 18,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 19,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "c85cd91cd1bd62991d4f88294d11876e379960700f5bbd15aa919add0115c137",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 19,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXRenderToSurface",
+          "offset": 0,
+          "section": 19,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 20,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "ceeb0eb21a64dc8093d926e62fc8e3893e9e3204a963259beecb1724645d34af",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXSprite",
+          "offset": 0,
+          "section": 20,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 21,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "f0bd1ce62b6f05ddee8928f6a70ba1fd9d4cfc9e395bfe6b775e8e57d231eff1",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 21,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXFont",
+          "offset": 0,
+          "section": 21,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 22,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "74e514fb6a180198ecd7f3fdcbb928a735a73753104e9f1b6a92824881abf7a7",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXBuffer",
+          "offset": 0,
+          "section": 22,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 23,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "3323dba59c9401eb336eaeaa551e47f4536d5d95165d978d6c9f9d136a588b16",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 23,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_ID3DXMatrixStack",
+          "offset": 0,
+          "section": 23,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 24,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "fcc820c0bd12ce1fa9269d6a65d155e695ef2c4152b83cbd9812ad48f8be93f7",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DSwapChain8",
+          "offset": 0,
+          "section": 24,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 25,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "821f9d7b7cea778a1073c148cd4a08210eae13be438877063ddc0a3d9f798206",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 25,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DVolume8",
+          "offset": 0,
+          "section": 25,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 26,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "e1992d67704998ad3649a95b0f6a78a56e0ba3cae5767f2d3b2387e92d10d124",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DSurface8",
+          "offset": 0,
+          "section": 26,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 27,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "9436995296ef7697304e7af3646bafd951c068e2da4397eff31c8536763ac99c",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 27,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DIndexBuffer8",
+          "offset": 0,
+          "section": 27,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 28,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "d3aa85d4c5a074d117d95ad7822e8c9c8d0c25a787b6876004b2fd3a7f2bf9c0",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DVertexBuffer8",
+          "offset": 0,
+          "section": 28,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 29,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "2cafa6e10ddc794d22c1e9a234dfc31c5566341343f00973964e4e7aa3435e4c",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 29,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DVolumeTexture8",
+          "offset": 0,
+          "section": 29,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 30,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "6b261a0e07bd161957c224c9252ee7503cee579f3e20c5583a758ebe1a14823c",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DCubeTexture8",
+          "offset": 0,
+          "section": 30,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 31,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "41909d2f4b3422eef0684fc6de24e0918f21b4709c81a0568887d54556946ff9",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 31,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DTexture8",
+          "offset": 0,
+          "section": 31,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 32,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "381c46e2ebd56fb603cac300310a23b48d784bfecd729852c31d0bcf138a1833",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 32,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DBaseTexture8",
+          "offset": 0,
+          "section": 32,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 33,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "ee2bb18a0688710e9e1b8b18d329b76025275f78337a2909b5a76da6a8e2a3ba",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 33,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DResource8",
+          "offset": 0,
+          "section": 33,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 34,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "d059badf49e80badd5d2729071e9873d4c45963c59536321cda13bac0c7e4465",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 34,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3DDevice8",
+          "offset": 0,
+          "section": 34,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 35,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "c958bb30cde409f78cd916f329370b506f97d0971dc24da4b89c67590ccb19dd",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 35,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IDirect3D8",
+          "offset": 0,
+          "section": 35,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 36,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "629fd3ca6f8920bb74ede468cd4b8c9b1a2abdc7e57da446975f49f2bc92a882",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 36,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IPrintDialogServices",
+          "offset": 0,
+          "section": 36,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 37,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "9267abbcf5402e1acce3642c79549f1299c4a2044280f9b04795ef0850d7726d",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 37,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_IID_IPrintDialogCallback",
+          "offset": 0,
+          "section": 37,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 38,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "95affafc856e21124c40446cd13cbfcb2f0677128c38913a7ac815e27bddf7d4",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 38,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR",
+          "offset": 0,
+          "section": 38,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 39,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "518b268c0258e9953f19fbc560f2f23090237f1d996f9473e0ce8bd260299767",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 39,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_COMPORT",
+          "offset": 0,
+          "section": 39,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 40,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "87280db4308e07091d47ab86266b5b11bd7a01537c9051375c8ade8f622da8dd",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 40,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_STORAGEPORT",
+          "offset": 0,
+          "section": 40,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 41,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "164a6c6675966640390dd1966f0790082e0df5bcb7ce154418b5e798d2ed18af",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 41,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_CDCHANGER",
+          "offset": 0,
+          "section": 41,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 42,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "8896440e9928f3b7cc1103b7b1db64913c1471b42cefe83f1d81906e55cbd459",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 42,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_FLOPPY",
+          "offset": 0,
+          "section": 42,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 43,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "b151ae2699cbc47a0e76a88672cdd4cb8ae33862b3cbe98b0151b95a4e9a5939",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 43,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_MEDIUMCHANGER",
+          "offset": 0,
+          "section": 43,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 44,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "676dd3161c540ba33255b93439f75b5b8a1a1b592d5fcbfa9d23ddd8a64216ab",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 44,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_VOLUME",
+          "offset": 0,
+          "section": 44,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 45,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "a3a36ef74a76c7c33e7a1485cae97dabaac1923dcbd876067251562c4aa4e37a",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 45,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_WRITEONCEDISK",
+          "offset": 0,
+          "section": 45,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 46,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "30f6bb7e5ca3b42bcbd520a3ea100cb367196b75fcd6fd81172ed975a56afd0a",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 46,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_TAPE",
+          "offset": 0,
+          "section": 46,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 47,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "8f682adf6ef945b6db2bebbb99444503390ff4c2595f4932212945e1eec24e54",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 47,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_PARTITION",
+          "offset": 0,
+          "section": 47,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 48,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "1992d5da512f3e5716885577a0a7da0897e89575f6b14bff567b73d90d16b53e",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 48,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_CDROM",
+          "offset": 0,
+          "section": 48,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 49,
+      "name": ".rdata",
+      "size": 16,
+      "flags": 1076891712,
+      "source_sha256": "77875d8cea7bd6f2325651928e23a74c11e954f9c65001b72777452a0e985e38",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 49,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_GUID_DEVINTERFACE_DISK",
+          "offset": 0,
+          "section": 49,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    }
+  ],
+  "negatives": [
+    {
+      "address": "0x00609F11",
+      "size": 71,
+      "source_symbol": "?QueryInterface@CD3DXBuffer@@UAGJABU_GUID@@PAPAX@Z",
+      "differences": [
+        {
+          "offset": 35,
+          "source": 252,
+          "target": 204
+        }
+      ],
+      "native_guid_address": "0x0065DDCC",
+      "guid_differences": [
+        {
+          "offset": 0,
+          "source": 126,
+          "target": 144
+        },
+        {
+          "offset": 1,
+          "source": 106,
+          "target": 91
+        },
+        {
+          "offset": 2,
+          "source": 46,
+          "target": 223
+        },
+        {
+          "offset": 3,
+          "source": 147,
+          "target": 130
+        },
+        {
+          "offset": 4,
+          "source": 142,
+          "target": 78
+        },
+        {
+          "offset": 5,
+          "source": 198,
+          "target": 227
+        },
+        {
+          "offset": 6,
+          "source": 221,
+          "target": 110
+        },
+        {
+          "offset": 7,
+          "source": 69,
+          "target": 73
+        },
+        {
+          "offset": 8,
+          "source": 167,
+          "target": 172
+        },
+        {
+          "offset": 9,
+          "source": 191,
+          "target": 28
+        },
+        {
+          "offset": 10,
+          "source": 83,
+          "target": 98
+        },
+        {
+          "offset": 11,
+          "source": 209,
+          "target": 17
+        },
+        {
+          "offset": 12,
+          "source": 156,
+          "target": 122
+        },
+        {
+          "offset": 13,
+          "source": 134,
+          "target": 106
+        },
+        {
+          "offset": 14,
+          "source": 219,
+          "target": 89
+        },
+        {
+          "offset": 15,
+          "source": 31,
+          "target": 19
+        }
+      ]
+    },
+    {
+      "address": "0x0060A1FA",
+      "size": 71,
+      "source_symbol": "?QueryInterface@CD3DXBuffer@@UAGJABU_GUID@@PAPAX@Z",
+      "differences": [
+        {
+          "offset": 35,
+          "source": 252,
+          "target": 188
+        }
+      ],
+      "native_guid_address": "0x0065DDBC",
+      "guid_differences": [
+        {
+          "offset": 0,
+          "source": 126,
+          "target": 35
+        },
+        {
+          "offset": 1,
+          "source": 106,
+          "target": 198
+        },
+        {
+          "offset": 2,
+          "source": 46,
+          "target": 66
+        },
+        {
+          "offset": 3,
+          "source": 147,
+          "target": 78
+        },
+        {
+          "offset": 4,
+          "source": 142,
+          "target": 81
+        },
+        {
+          "offset": 5,
+          "source": 198,
+          "target": 148
+        },
+        {
+          "offset": 6,
+          "source": 221,
+          "target": 183
+        },
+        {
+          "offset": 7,
+          "source": 69,
+          "target": 68
+        },
+        {
+          "offset": 8,
+          "source": 167,
+          "target": 140
+        },
+        {
+          "offset": 9,
+          "source": 191,
+          "target": 134
+        },
+        {
+          "offset": 10,
+          "source": 83,
+          "target": 171
+        },
+        {
+          "offset": 11,
+          "source": 209,
+          "target": 204
+        },
+        {
+          "offset": 12,
+          "source": 156,
+          "target": 222
+        },
+        {
+          "offset": 13,
+          "source": 134,
+          "target": 93
+        },
+        {
+          "offset": 14,
+          "source": 219,
+          "target": 82
+        },
+        {
+          "offset": 15,
+          "source": 31,
+          "target": 200
+        }
+      ]
+    }
+  ],
+  "retained_sha256": {
+    "config/sdk-debug-parent-origin-evidence.json": "aa0b86119baf570d7308dfe0cca2123e2ef646a20ad108c862adea7b062d4a1c",
+    "config/sdk-file-image-origin-evidence.json": "7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6",
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "config/sdk-origin-relocations.csv": "ca358d1b40336465dce2ebaa897b7f6f5ec0cc25ba3003d06b5c964625dca669",
+    "config/sdk-origin-data.csv": "f17930a2f64106bfff6e8501b3996c68bbbab554dd61521510afc90366ef7c78",
+    "config/optimized-deleting-origin-evidence.csv": "545331d585fc73f5ddc94da637a5fce1c370d19cc939bd402cf781f504f02c0b",
+    "scripts/verify-sdk-file-image-origins.py": "870eecd4f031cd76aef2c5ba66bec00f37502554bb14b39087d8622c1dee7aae",
+    "scripts/verify-sdk-origins.py": "bdacba65c26820bd33d67614d8cc92ccdb52b0ef8c6ce8e66898421c72c85f80",
+    "scripts/verify-sdk-debug-parent-origins.py": "902e11226bf2281d45fd3f4946422bea0d29bacc8aeaad9b9bafecb108419564"
+  }
+}

@@ -28,6 +28,19 @@ def verify_plan(m):
             or 'reviewed complete vendor constructor and push context' not in m['functions'][2]['accepted_function']['notes']):
         raise ValueError('SDK debug loses full typed owner context or resolves ambiguous buffer initialization')
 
+def pending_ledger_matches(p,function,origin):
+    if function==p['function'] and origin==p['origin']:return True
+    # R186 independently closes the complete GUID/owning-buffer graph. The old
+    # positive diagnostic remains frozen; permit only this exact new transition.
+    path=ROOT/'config/sdk-interface-origin-evidence.json'
+    if not path.exists():return False
+    m=json.loads(path.read_text());rows=[r for r in m['functions'] if r['address']=='0x0061FE1F']
+    return (m['evidence_id']=='R186' and len(rows)==1
+            and BASE.digest(json.dumps(rows[0],sort_keys=True,separators=(',',':')).encode())=='84329381c12dbf07a0af4e12a907fba7eb7b03253e21439873e6cf2c3f8b5658'
+            and rows[0]['original_function']==p['function']
+            and rows[0]['original_origin']==p['origin'] and rows[0]['body_sha256']==p['comparison']['body_sha256']
+            and rows[0]['size']==38 and function==rows[0]['accepted_function'] and origin==rows[0]['accepted_origin'])
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
@@ -42,7 +55,7 @@ def main():
     BASE.replay_manifest(m,args.evidence_only)
     c=BASE.module('debug_pending_target','compare-coff-function.py');runtime=BASE.module('debug_pending_archive','verify-runtime-origins.py');sdk=BASE.module('debug_pending_extent','verify-sdk-origins.py');target=c.verified_target()
     p=m['pending'];r=p['comparison'];functions={q['address']:q for q in BASE.rows('config/functions.csv')};origins={q['address']:q for q in BASE.rows('config/function-origins.csv')}
-    if functions[p['address']]!=p['function'] or origins[p['address']]!=p['origin']:raise ValueError('SDK debug changes original pending buffer-init row')
+    if not pending_ledger_matches(p,functions[p['address']],origins[p['address']]):raise ValueError('SDK debug changes original pending buffer-init row')
     archive=(ROOT/'.tools/msvc710/Vc7/PlatformSDK/Lib/d3dx8.lib').read_bytes()
     if BASE.digest(archive)!=m['archive_sha256']:raise ValueError('SDK debug pending archive differs')
     name,body=next((name,body) for off,name,body in runtime.archive_members(archive) if off==r['member_offset'])
@@ -57,7 +70,8 @@ def main():
         actual=c.pe_bytes_at(target,int(p['address'],16),r['size'])
         if linked!=actual or BASE.digest(actual)!=r['body_sha256'] or BASE.flow_counts(actual,int(p['address'],16))!=r['cfg'] or sdk.verify_control_flow(linked,int(p['address'],16),calls,data)!=r['indirect_call_count']:
             raise ValueError('SDK debug pending full unmasked comparison differs')
-    print('R185 origins OK: five whole D3DX parents/leaves /724 bytes,all16 genuine calls unmasked;six full retained source records including complete SDK stack constructor;complete38-byte buffer initializer matches but stays unknown without independent owning context;R184 and original typed SDK provenance preserved;no source/ABI/mapping/exact credit.')
+    pending_state='stays unknown' if origins[p['address']]['origin']=='unknown' else 'has separate R186 library provenance, with original R185 diagnostic facts preserved'
+    print('R185 origins OK: five whole D3DX parents/leaves /724 bytes,all16 genuine calls unmasked;six full retained source records including complete SDK stack constructor;complete38-byte buffer comparison '+pending_state+';R184 and original typed SDK provenance preserved;no source/ABI/mapping/exact credit.')
     return 0
 
 if __name__=='__main__':
