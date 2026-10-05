@@ -11528,3 +11528,100 @@ bytes, 60 units and eleven object inputs remain unchanged. Public MCP
 acceptance remains waived. Original private game layouts, the actual original
 compiler profile and later CPU/public dispatch candidates remain unknown.
 Both the full-origin and 50%-exact milestones remain unfinished.
+
+## R191 — complete 3DNow callback graph and original shared math section
+
+R191 resolves seventeen complete library functions / 7194 bytes. Closing the
+550-byte x3d initializer required its original quaternion, matrix, projection
+and math dependencies; those complete dependent functions are accepted in the
+same bounded graph. The CPU selector and two public dispatch candidates remain
+unchanged and unknown until the default mutable-table graph closes.
+
+| Address | Function bytes | Original source association |
+| --- | ---: | --- |
+| `0x00628BF5` | 550 | x3d_D3DXInitFastTable |
+| `0x00633C36` | 179 | x3d_D3DXQuaternionToAxisAngle |
+| `0x006341DF` | 108 | x3d_D3DXQuaternionRotationAxis |
+| `0x0063424B` | 311 | x3d_D3DXQuaternionSlerp |
+| `0x00634382` | 141 | x3d_D3DXQuaternionBaryCentric |
+| `0x0063440F` | 146 | x3d_D3DXQuaternionSquad |
+| `0x00634505` | 167 | x3d_D3DXQuaternionLn |
+| `0x006346F3` | 2649 | x3d_D3DXQuaternionSquadSetup |
+| `0x00636B8C` | 421 | x3d_D3DXMatrixRotationYawPitchRoll |
+| `0x00637265` | 281 | x3d_D3DXMatrixRotationAxis |
+| `0x00639897` | 360 | x3d_D3DXVec3Project |
+| `0x00639A1F` | 518 | x3d_D3DXVec3Unproject |
+| `0x00639C45` | 307 | x3d_D3DXVec3Unproject_K7 |
+| `0x0063CBC0` | 245 | _a_atan2 |
+| `0x0063CCC0` | 247 | _a_acos |
+| `0x0063D2A0` | 281 | _a_sincos, actual source alias _a_cos |
+| `0x0063D3C0` | 283 | _a_sin |
+
+**Target and original-source observations.** All 69 complete original code
+carriers / 30525 bytes compare without masking, retaining all 498 genuine
+fields, actual definitions and original AUX metadata. There are 68 original
+COMDAT carriers / 27269 bytes and one complete non-COMDAT math section / 3256
+bytes. The full x3d initializer has one get_feature_flags call and 62 real
+callback pointer fields: 57 ordinary assignments and five K7 replacement
+fields. Every callback and direct callee is associated with a separately
+complete source carrier/entry; no pointer destination is accepted merely from
+an observed address or the presence of 3DNow instructions.
+
+The three projection COMDATs have whole extents392/550/339, each including an
+actual 32-byte eight-entry local switch table after code360/518/307. These are
+switch tables, not exception handlers, code or alignment. The real type0/
+storage3 table label, all eight type0/storage6 case labels, every DIR32 field,
+decoded unsigned CMP EAX,7 / JA guard and indexed EAX*4 jump are retained.
+Every table entry targets an independently decoded instruction in its own
+complete parent. Comparison includes all 96 table bytes; canonical function
+extents retain their complete code only. The separate five-byte TransformCoord
+wrapper preserves its actual external tail to the whole inline implementation.
+
+The original `.\Release\math.obj` at archive offset2074212 has one full 3256-
+byte code section, twenty real public source definitions at nineteen unique
+entries, and 138 real DIR32 fields into its full writable data344 section.
+_a_cos and _a_sincos share source offset1952 and target0x0063D2A0; they do not
+create duplicate functions or exact units. All nineteen source-defined regions
+are reconciled independently, yielding3002 complete function-span bytes and
+254 separately preserved trailing alignment bytes. Internal identity LEAs are
+also recorded explicitly. The actual unreachable five-byte ADD EAX,0 after
+_a_sin's RET is retained as original alignment; it changes EFLAGS and is not
+claimed as an executed no-op. No padding is inserted or edited in source.
+The single encoded log10-to-log call is an original same-section direct call
+without a COFF relocation; it remains distinct from the 138 genuine fields.
+
+The full readonly _const3dn_NegQuarters8 image and writable math344 initial
+image retain original flags, definitions and every source offset. Writable
+image equality does not imply runtime immutability. Three prior readonly
+source sections /314 bytes retain AuthenticAMD, UnknownVendr and the complete
+shared 3DNow constants. All ten old R008 library owners and sixty non-inventory
+function entries stay unchanged; no additional canonical candidate is created.
+
+**Inference and limits.** Ownership is library because the complete explicit
+policies close through the pinned original SDK source-object graph. Source
+symbols remain associations, not recovered original target names. Original
+compiler/assembler profiles and runtime-selected callbacks remain unknown.
+No reconstructed C++/assembly body, private class/table instance, ABI declaration,
+mapping or exact unit is supplied by this batch. No new compiler-emission claim
+needs a compiler probe; the acceptance replay freshly reopens the actual pinned
+source carriers, data definitions, fields and target bytes.
+
+**Acceptance.** Replay `scripts/repo-python scripts/verify-sdk-x3d-origins.py`.
+Manifest SHA `d2a7ef2eeb860ae2e392456a64a59df935f108b95b894a171f8a37a8fa0ca22d`.
+Exactly seventeen function/origin rows change from df3ea16; every original
+extent, all 902 authored bodies /1956112 bytes, earlier evidence manifests
+and all sixty exact inputs remain unchanged. All 2375 public checks pass,
+including24 new adversarial guards for omitted K7 callbacks, truncated tables,
+false aliases, wrong source/storage keys, changed readonly/writable images,
+unsupported padding, hidden fields and false CPU/public/source/exact credit.
+Target/tracking/project checks, bounded Ghidra query markers, full independent
+source/Capstone reconciliation, fresh655-pending scan, progress and whitespace
+checks pass. Ghidra's 500-instruction query limit truncates the large SquadSetup
+display; complete code/field/CFG coverage comes from the whole-source verifier,
+not that bounded display. Public MCP acceptance remains waived.
+
+Origin totals are3696 resolved:949 authored,2171 library and576 compiler;
+655 pending,2747 excluded. Exact remains60 functions /9883 bytes and60 units
+across eleven object inputs. Both the full-origin and50%-exact milestones
+remain unfinished. Next close the default C table dependencies and then the
+remaining CPU selector/public Normalize/LookAtRH cohort.
