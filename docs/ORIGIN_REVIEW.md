@@ -12895,3 +12895,87 @@ R208 next investigates six complete vector insertion carriers /4722 provisional
 bytes, including their catch entries, shared tails and real EH metadata. Their
 known parent mappings are diagnostic; reconcile the complete source/control-flow
 extent and independently owned fields before accepting any classification.
+
+
+## R208 — whole vector insertion carriers and shared exception interiors
+
+The six complete public `std::vector::_Insert_n` carriers establish library
+origin for six heads and twelve existing catch/continuation inventory entries.
+Two existing 19-byte shared exception-frame/register-restoration epilogues are
+compiler generated. These are 20 origin transitions, not 20 independent source
+functions. Interior entries have no independent own AUX or additional physical
+coverage. Their original inventory spans are preserved.
+
+| Whole head | Provisional bytes | Complete bytes | Source element observation |
+| --- | ---: | ---: | --- |
+| `0x0040A210` |777|796| scalar/pointer4; original declaration unknown |
+| `0x0040EDB0` |777|796| scalar/pointer4; original declaration unknown |
+| `0x0045A130` |777|796| scalar/pointer4; original declaration unknown |
+| `0x004594B0` |795|814| generic aggregate16; private declaration unknown |
+| `0x0040EA30` |800|834| generic cleanup44; private lifetime declaration unknown |
+| `0x005F9650` |796|830| generic owned aggregate16; private declaration unknown |
+
+The heads cover 4,866 physical bytes, 144 more than the provisional records.
+Complete own AUX/sections, two real local catch symbols per head, all normal,
+catch and unwind roots, shared returns, alignment and complete defining data
+reconcile the extents. No comparison is cropped to a first RET, catch entry or
+old ledger span. The compiler interiors at`0x0045A439` and`0x004597CB` restore
+`FS:[0]`,saved registers/frame and return with 12-byte cleanup; they have no
+independent source symbol/AUX. Their full 19 bytes remain inside library parents.
+
+Replay `scripts/repo-python scripts/verify-vector-insertion-carrier-origins.py`.
+Manifest`config/vector-insertion-carrier-origin-evidence.json` SHA-256 is
+`fe3ac742c24edcbdd5d3f5d5f938071edf8eac728c1ef8f3016bf45b0a5468cd`.
+The new cold public source supplies 334 ordinary sections / 20,598,27 actual
+original headers and complete generic layout 40. The accepted six scoped graphs
+retain 263 whole code/data sections / 15,334,all 638 actual fields,209 complete CFGs
+and 54 full data carriers / 2,212. All six whole public insert parents also replay
+inside these graphs: five count-insert parents 33 and one single-insert parent 114.
+Group-local COFF indices, source definitions, actual AUX/debug line records,
+permissions and every unmasked native byte are checked. Only a validated debug
+line-file pointer is made relative to its own complete COFF line table.
+
+The field catalog comes from complete scoped source owners and independent
+retained definitions, not recorded native field destinations. All 15 used R150
+owners retain literal original records/current canonical state. Every replay
+runs the complete independent R150 cold graph, including its retained R149/R119
+proofs. Actual CRT archive member/AUX ownership supplies absolute`__except_list`;
+the actual cold standalone weak AUX selects the complete strong length-error
+fallback. Its full 18-byte AUX is retained; no archive-selection claim is made.
+Full EH state/unwind/try/catch sections and throw/literal/RTTI owners remain.
+
+The generic44-byte cleanup fixture binds a no-stack-argument ECX-receiver call
+to the independently reviewed entire authored`0x0041A380` /75 policy. Its R021
+record, full native instructions, actual receiver protocol and CFG replay. The
+fixture name is an opaque compatible source interface; it does not recover an
+original mangled symbol, private class or complete target layout.
+
+Two whole alternative insertion heads 796 are byte-equal before binding, but
+that alone is insufficient: a generic aggregate 4 has a complete fill 36 differing
+at five bytes from the selected scalar/pointer source. Direct delete 34 also
+differs from guarded delete 43. Whole public/ordinary destruction 15 alternatives
+retain the same actual private callee; the trivial destruction 5 alternative is
+also completely byte-equal. Five canonical entries remain unknown and unchanged:
+`0x0045B630` /5,`0x0040F9F0` /15,`0x005FAAD0` /15,`0x0040D8E0` / 19 and
+`0x004588B0` /43. Generic fixtures and library parents do not establish their
+original private declarations or owner. R108/R161 lifetime ambiguity is preserved.
+
+Four literal protected snapshots remain history: R161 heads40A210/40EDB0 / 777
+each and R162 heads40EA30 / 800 and5F9650 / 796. This successor checks all original
+bytes and unknown records against the audited full796/796/834/830 transitions.
+The historical R161/R162 standalone verifiers expect their old protected ledger
+state; use the R208 successor for these four transitions. No old manifest/verifier
+or accepted source evidence is rewritten. This does not claim a fresh replay of
+all R161/R162 native controls; the new six whole graphs and independent R150
+graph are the current cold proof.
+
+Original-state and accepted-state cold replays pass. All 2,810 CI tests pass,
+including 39 new provenance/boundary/transition guards. Target/project/query
+attestations, complete authored verification, exact preservation, bounded
+canonical readback, fresh 266-pending triage, progress and whitespace pass.
+Exactly 20 function/origin rows change; only the six head extents change.
+All prior authored records, protected unknowns and mapping/source/ABI/exact inputs
+remain. Public MCP acceptance stays waived. The checkpoint is 4,085 resolved:
+949 authored, 2,556 library, 580 compiler; 266 pending and 3,136 excluded.
+The original 1,311 goal has 1,045 classified / 266 left and remains active. Exact
+remains 60 functions / 9,883 bytes / 60 units across eleven objects; no exact credit.
