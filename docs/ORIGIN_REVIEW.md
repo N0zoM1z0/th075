@@ -13904,3 +13904,65 @@ Authored denominator1,970,883; exact60 functions /9883 bytes /60 units across el
 objects and provisional0.50% remain unchanged. On2026-10-06 the user requested
 one complete Web MCP acceptance after the remaining review is finished; bounded
 intermediate cohorts continue locally. No later phase or exact expansion is added.
+
+## R222 — virtual frame selection with game resource and dispatch provenance
+
+R222 resolves authored149-byte `0x0045B880`, preserving its original extent,
+all48 instructions, one-block CFG and RET0. Five actual direct fields bind the
+complete original vector policies4420B0 /70,442060 /70 and442120 /57. The first
+index remains on the stack while the outer RET4 returns the inner receiver;
+each public at consumes one argument. The candidate reads word indices60/62
+and lookup pointer+C4, stores the selected record at74 and8, copies record word+4
+to72, stores the sequence size's low word at70 and caches the sequence pointer78.
+These are native observations, not a recovered original prototype or element type.
+
+Independent whole game initialization4769B0 /134 installs readonly callback
+address659210 and writes its resource-owner argument+468 to the same receiver+C4.
+Whole accepted base initialization45B760 /203 installs659064. Both observed
+24-byte windows retain five callback pointers and a following zero word, with
+45B880 at the first slot. This does not recover a complete private interface.
+Whole accepted fighter peer453D80 /149 selects through its inline container+468
+and performs the same output composition; pointer and inline ownership are kept
+distinct. The names and actual inheritance declarations remain provisional.
+
+Whole accepted counter operations40FA30 /142,40FAC0 /52,40FB00 /56 and40FB40 /43
+use the same word counters and actual first-slot virtual call. Complete accepted
+character action476A40 /50915 calls those operations132 times on its game receiver.
+All13357 decoded instructions are hash-frozen, together with its full CFG,
+199-byte guarded remap and264-byte table. Eight complete independent owners51694,
+27 scoped canonical rows and the actual eleven-byte external alignment are
+retained. This explicit game selection/dispatch context distinguishes regular
+policy from automatic construction; library children or a vtable word alone do
+not grant ownership.
+
+Every replay cold-reopens the complete original R205 vector proof:four source-
+scoped graphs52 sections1961, all92 actual fields and44 normal/EH CFGs, actual
+exception/runtime/source owners, four wrong-stride and four const-route controls.
+The original public probe retains130 ordinary sections5548 and27 original includes.
+No old source manifest or accepted library classification changes.
+
+A new natural generic probe supplies two identical140-byte explicit frame/resource
+views, five container fields each, complete31-/23-byte implicit constructions,
+15-byte virtual invocation and53-byte placement observer. The generic record is8
+bytes and both complete owners28, with no padding or private owner declarations.
+These are alternatives, not native matches or original-layout evidence. Full
+readonly [8,16,16,28,28,28], all91 ordinary code/data/EH sections4179 and every207
+actual fields are retained with27 actual include hashes and full COFF/AUX/line
+provenance. No generic source shape alone establishes original authorship.
+
+All18 literal historical unknown snapshots of45B880 remain unchanged. The new
+bounded transition is checked separately against the complete original record;
+old ledgers are not rewritten. Independent constructors458650 /31 and458670 /23,
+R108 lifetimes and other protected short/private policies remain unknown.
+Replay `scripts/repo-python scripts/verify-virtual-frame-origins.py`;
+manifest SHA-256 `c896dc1c16528a6fe448cc6430910322890e63844b52c2291aa8be2787c58199`. Original-state and accepted-state
+complete cold replays pass. All3131 CI tests pass, including17 new whole-policy/
+receiver/call/table/stack/source-alternative/lifetime/history/ABI/exact guards.
+Earlier902 authored bodies, target/tracking, local Ghidra attestation/query markers,
+exact-input preservation, exactly-one-row readback, coherent fresh195 triage,
+progress and whitespace pass. Current4156 resolved =971 authored+2605 library+
+580 compiler;195 pending and3185 excluded. Original1311 goal has1116 classified
+/195 left and remains active. Authored denominator1,971,032; exact60 /9883 bytes /
+60 units across eleven objects and provisional0.50% stay unchanged. One complete
+Web MCP acceptance remains required after the full remaining review finishes;
+intermediate cohorts continue locally. No later phase or exact expansion is added.

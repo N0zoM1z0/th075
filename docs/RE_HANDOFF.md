@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R221. The public
+review cohorts R108 through R222. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,83 +11,94 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,155: 970 authored, 2,605 library and 580 compiler generated.
-There are 196 pending. Candidate count is not authored function count.
+has resolved 4,156: 971 authored, 2,605 library and 580 compiler generated.
+There are 195 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,970,883 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R222 virtual frame-selection policy below.
+the bounded R223 vector count-assignment source cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R221; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R222; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R222 virtual frame-selection policy
+## Next agent objective — R223 vector count-assignment source cohort
 
-R221 resolves two authored44-byte integer range policies /88 at410F00 and455610.
-Whole18-instruction bodies call original CRT rand6418AB /34 and scale the signed
-endpoint-difference product by32768 with CDQ/AND/ADD/SAR truncation before adding
-the lower endpoint; actual RET8 stays. Receiver storage does not identify an
-original private prototype. Endpoint bounds, uniformity and source signed-overflow
-behavior remain unproved. No source/private ABI/mapping/exact credit is added.
+R222 resolves authored45B880 /149 with all48 native instructions and RET0.
+Actual nested at calls4420B0/442060 each consume one argument; the second index
+stays on the stack until the outer RET4 returns an inner receiver. Lookup+C4,
+word indices60/62 and outputs74/8/72/70/78 stay observed, not private type claims.
+Complete accepted initialization4769B0 /134 binds resource argument+468 to+C4
+and installs659210, whose first observed callback is45B880. Whole45B760 /203
+installs659064 with the same first slot. Two observed24-byte pointer/zero windows
+do not declare a complete interface. Complete fighter peer453D80 /149 uses inline
+container+468; pointer and inline ownership remain distinct.
 
-Whole independent R064 action5FAE30 /31352 and R047 AI472890 /8871 retain all69
-actual parameter/result call windows, full40223 native bytes, CFGs and prior
-records. Action has63 calls with floating result uses; AI has six and observed
-word+512 stores. Guarded action remap145 and table280 stay complete. Two four-byte
-alignment gaps are outside the helpers;20 scoped canonical rows are frozen.
-Cold generic range methods are equal31-byte IDIV alternatives, not44-byte target
-matches. Original SDK shuffle is a distinct modulo/swap loop. All ten ordinary
-sections267, nine fields, nine code bodies,25 include hashes and full16-byte
-readonly observations are retained. Every proof replays the complete original
-R129 rand/thread-state source and its retained dependencies.
+Complete counter operations40FA30 /142,40FAC0 /52,40FB00 /56,40FB40 /43 dispatch
+slot0 through the same receiver after actual counter updates. Whole game action
+476A40 /50915 retains all13357 instructions, CFG, guarded remap199/table264 and
+132 real calls to those operations. Eight complete owners51694,27 scoped canonical
+rows and external alignment11 are frozen. Cold original R205 four source graphs
+52 sections1961/all92 fields and44 normal/EH CFGs retain complete library providers,
+exception data, runtime/absolute owners, original ordinary/const/stride controls.
+New generic frame/resource views are identical140-byte alternatives; whole
+implicit controls31/23 do not select frames. All91 ordinary sections4179,207fields,
+27 includes and full readonly [8,16,16,28,28,28] stay observations, not game layouts.
 
-Replay `scripts/repo-python scripts/verify-integer-range-origins.py`;
-manifest SHA `8a70ff4514cff6d1d5a686d4ddb7e5ef50f1b3905267e3ba367a1a848c6ab7d2`. Original/accepted cold states and all3114 CI
+All18 literal historical unknown snapshots of45B880 remain immutable. New current
+acceptance is checked separately without rewriting older manifests. Independent
+constructors458650/458670, R108 lifetimes, SDK lifetime ambiguities and short/private
+getters/copy policies retain unknown origins. Replay
+`scripts/repo-python scripts/verify-virtual-frame-origins.py`;
+manifest SHA `c896dc1c16528a6fe448cc6430910322890e63844b52c2291aa8be2787c58199`. Original/accepted cold states and all3131 CI
 tests pass, including17 new guards. Earlier902 authored bodies, target/tracking,
 local project/query markers, exact-input preservation, bounded readback, coherent
-fresh196 triage, progress freshness and whitespace pass.
-Current4155 resolved =970 authored+2605 library+580 compiler;196 pending and3185
-excluded. Original1311 goal has1115 classified /196 left and remains active.
-Exact60 /9883 bytes /60 units across eleven objects; authored bytes1,970,883 and
-provisional0.50%. User push reached68d9258; later commits are local until pushed.
+fresh195 triage, progress and whitespace pass.
+Current4156 resolved =971 authored+2605 library+580 compiler;195 pending and3185
+excluded. Original1311 goal has1116 classified /195 left and remains active.
+Exact60 /9883 bytes /60 units across eleven objects; authored bytes1,971,032 and
+provisional0.50%. User push reached68d9258; subsequent commits remain local.
 
 On2026-10-06 the user requested one complete Web MCP acceptance after all remaining
-origin review is finished. Continue bounded investigation/acceptance locally;
-do not run a Web MCP acceptance after each cohort. The final complete run remains
-outstanding and must not be forgotten when the full goal reaches its final state.
+origin review finishes. Continue bounded investigation/acceptance locally;
+do not run Web MCP after each cohort. The final complete run remains outstanding.
 
-Next review the whole149-byte unknown virtual policy at `0x0045B880`.
-Private `.analysis/r222-preliminary.json` freezes its diagnostic whole native hash,
-instructions and five actual calls. The observed readonly slot659064 was retained
-in R166; complete authored initializer45B760 /203 and its actual vtable/callback
-invocation are independent starting context. The candidate uses word fields60/62,
-lookup owner+C4, original container accesses4420B0/442060/442120 and writes receiver
-fields74/8/72/70/78. Reconcile all actual parameter and result paths and the complete
-callee source owners; a library callee alone does not classify its caller. Reopen
-original complete frame-selection game contexts and distinguish a regular virtual
-policy from member lifetime, generic/library and compiler alternatives. A single
-slot does not declare a complete private vtable or layout. Do not instantiate an
-incomplete owner or add source/exact scope.
+Next inspect two complete unresolved count-assignment roots /325:
 
-R220's six SDK lifetimes608D8E/608F7B/609AA4/609F58/60B728/6200DA and R108
-411C10/4251C0/449DE0 remain unknown. Preserve literal old manifests/snapshots and
-all prior accepted ownership. The setters410FA0/410FE0 have earlier complete
-R211 diagnostic evidence; do not accept unchanged short shapes as new attribution.
-Fresh `.analysis/origin-scan/r221-triage.json` records196 pending candidates and
-matches both canonical ledger hashes. Protected R18341CA30 /77,R212455770 /111,
-abs helpers, generic getters and lifecycle ambiguities need distinguishing new
-evidence. Later phases and exact expansion remain deferred.
+| Candidate | Full provisional bytes | Actual thin caller | Independent unresolved cleanup |
+| --- | ---: | --- | --- |
+| `0x0040E000` |158| `0x0040DDA0` /29, actual call40DDB2 | `0x0040D8E0` /19 |
+| `0x005F84B0` |167| `0x005F8000` /29, actual call5F8012 | `0x004588B0` /43 |
+
+The genuine original vector header at762–767 defines `_Assign_n`:copy `_Val` to
+`_Tmp`, erase(begin,end), insert(begin,count,_Tmp). Its public assign wrapper at614
+forwards to that helper. This is a new focused source hypothesis, not acceptance.
+Private `.analysis/r223-preliminary.json` retains both whole roots, both callers
+and the31-byte5F8EF0 end helper, all native instructions/hashes and actual calls.
+Both roots copy a full input value, preserve EH cleanup and RET8. Reconcile whole
+source extents/AUX, every normal/EH/data field and all defining dependency owners;
+never grant unknown cleanup ownership through a typed fixture declaration.
+Natural complete44-/16-byte observation carriers may test original templates,
+without claiming original private types or padding an incomplete owner. Compare
+ordinary/manual alternatives and complete implicit assignment controls. Full
+source provenance and actual independent context must distinguish origin; prior
+library children or scanner rank alone are insufficient. Preserve old unknown
+snapshots and source manifests, including R166/R173/R212/R213 evidence.
+
+Fresh `.analysis/origin-scan/r222-triage.json` records195 pending candidates and
+matches both canonical ledger hashes. Protected41CA30 /77,455770 /111, abs helpers,
+generic getters and SDK lifetimes require distinguishing new evidence. Exact
+expansion and later project phases remain deferred.
 
 ## R165 checkpoint and the completed R166 shortlist
 
