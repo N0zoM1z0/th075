@@ -12372,3 +12372,75 @@ Totals are3993 resolved:949 authored,2466 library and578 compiler;358 pending
 and3044 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal stays active; the next R201 bounded SDK public
 shader/error/font entries require independent complete source closure.
+
+## R201 — whole shader/resource/font policies and original public declarations
+
+R201 accepts15 library candidates /1403 bytes. Exactly15 function/origin row
+pairs change from6caffec, with no extent changes. The immutable manifest is
+`config/sdk-shader-font-origin-evidence.json`, SHA
+`ac84edce06f5a9b4381dfe01d3f8f74db3ff087301b77edf7f6a2e484ffed584`. Replay
+`scripts/repo-python scripts/verify-sdk-shader-font-origins.py`.
+
+**Source observations and ownership inference.** Six public shader file/
+resource A/W, wide error-text and indirect-font entries close through nine
+resource/font/text policies. Full original SDK source definitions, complete
+normal/EH/indirect control flow and genuine incoming call/vtable fields establish
+library ownership. Five short policies12/31/35/38/38 retain their complete typed
+incoming source references; matching byte shape alone grants no origin.
+Private owner names remain source observations, without reconstructed layouts.
+
+The graph reopens41 complete original sections5781:35 code2497,4 initialized
+data244 and2 BSS3040, with all152 genuine fields. Thirty-five complete source
+CFGs map34 native bases:two genuine scalar-deleting CD3DXFont source COMDAT
+owners fold at0x006049A0, with both retained separately. Seven whole
+non-inventory font methods remain source evidence without new candidate credit.
+The full font vtable44, two original EH state/data images92 each, Font GUID16,
+assembler BSS3036 and text-list BSS4 retain every actual definition, source
+image, permission, scoped owner and unmasked comparison. Initial zero-fill
+establishes original storage, not its runtime state. Fourteen interior R022
+compiler rows154 remain unchanged. Twenty-two independently accepted whole
+SDK/CRT anchors4688/all121 fields and12 actual Kernel32/GDI32 imports reopen.
+
+**Independent UUID, alias and public controls.** The entire original UUID
+IID_IUnknown16 source/readonly target at0x00660E58 and the full R006 chkstk61/
+R184 alloca alias record at0x00642510 retain their original provenance. Actual
+same-section/same-offset primary/alias definitions close the genuine field;
+no stack-helper ABI is invented. `ShaderFontPolicyProbe.cpp` cold-builds all66
+ordinary sections,17 complete controls437,86 original headers and full readonly
+public observation88. The public __uuidof(IUnknown) and Font GUID definitions
+independently agree with original UUID/SDK data sources.
+
+Original SDK shader file/resource declarations retain WINAPI20/24; wide
+error-text and font-create retain12. Original resource API observations retain
+FindResourceA/W12, LoadResource/SizeofResource8 and LockResource4. GDI font-create/
+delete retain4; original ANSI/WCHAR conversion declarations retain24/32.
+Font DrawTextW uses public COM slot28, distinct from DrawTextA24. Natural
+WCHAR allocation supplies EAX count*2 and actual alignment/alloca lowering.
+Original public WCHAR2 and LOGFONTA60/all14 field offsets, LF_FACESIZE32 and
+public enums remain independent header facts. No incomplete SDK owner is
+declared, instantiated or embedded. Profiles are reproducibility settings,
+not executable-wide compiler claims.
+
+**Retained alternatives and acceptance.** Eight lifetime cases685 remain
+unknown:Assembler constructor169/dtor143 at0x0060C12B/0x0060C1D4, File dtor11
+at0x0060C120, Resource dtor14 at0x0060EA69, Font constructor27/dtor58 at
+0x00608F7B/0x00608D8E, DwStack dtor14 at0x0061FB37 and Text dtor249 at
+0x0061F125. Complete source/calls alone do not distinguish explicit policies
+from compiler-generated member lifetime. All earlier protected alternatives,
+previous manifests/records and prior verifier sources remain unchanged.
+
+Original-state and accepted-state complete source/CFG/field/cold-public
+replays pass, together with full R200 regression replay. Shared original
+replay reopens all owned sources without populating its catalog from native
+relocation destinations; immutable previous inputs remain pinned, without
+redundant unaffected recursive cold trees. Canonical readback, local target/
+project/query attestations,902 authored bodies1956112, all60 exact-input guards,
+fresh343-pending triage, progress and whitespace pass. All2601 CI tests pass,
+including30 new provenance/import/alias/UUID/scope guards. Public MCP
+acceptance remains waived. No source/private layout/canonical ABI/mapping/
+exact credit is added.
+
+Totals are4008 resolved:949 authored,2481 library and578 compiler;343 pending
+and3059 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal stays active. R202 next reviews six image-info/
+surface/volume source entries and their complete original dependency graph.

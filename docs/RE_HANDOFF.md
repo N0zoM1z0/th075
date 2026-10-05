@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R200. The public
+review cohorts R108 through R201. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,993: 949 authored, 2,466 library and 578 compiler generated.
-There are 358 pending. Candidate count is not authored function count.
+has resolved 4,008: 949 authored, 2,481 library and 578 compiler generated.
+There are 343 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,68 +20,69 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R201 SDK shader/error/font graph below.
+the bounded R202 SDK image-info/surface/volume graph below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R200; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R201; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R201 remaining SDK shader/error/font entry graph
+## Next agent objective — R202 remaining SDK image-info/surface/volume graph
 
-R200 accepts9 whole SDK policies5431 and2 generated vector-deleting wrappers150.
-Replay `scripts/repo-python scripts/verify-sdk-presentation-origins.py`;
+R201 accepts15 whole library policies /1403 bytes, with no extent changes.
+Replay `scripts/repo-python scripts/verify-sdk-shader-font-origins.py`;
 manifest SHA
-`771ae0e2e563cdb35dfbaf46ed752a59f29f15ba6274badb88c621a28a1a4eb1`.
-Seventy whole original source sections8745/all175 fields,25 source CFGs/24
-native code bases and33 complete retained anchors6911/93 fields reopen.
-Two scalar-deleting source owners fold at0x006049BC and remain separate;
-five non-inventory source bodies grant no new candidate credit. Four interior
-R022 compiler rows40 remain unchanged. Original UUID IID_IUnknown16 and full
-R006 chkstk61/R184 alloca alias definitions independently close genuine fields.
+`ac84edce06f5a9b4381dfe01d3f8f74db3ff087301b77edf7f6a2e484ffed584`.
+Forty-one complete source sections5781/all152 fields retain35 source CFGs/34
+native code bases,22 complete anchors4688/121 fields and12 original imports.
+The full font vtable, both EH state/data images, Font GUID, assembler BSS3036
+and text-list BSS4 retain all definitions and actual fields. Two original
+Font scalar-deleting source owners fold at0x006049A0; seven non-inventory
+font methods grant no new candidate credit. Fourteen interior compiler rows154
+remain unchanged. Original UUID IUnknown16 and chkstk61/R184 alloca alias
+records independently close genuine fields.
 
-All69 cold ordinary emitted sections,17 code controls727,86 original headers
-and complete public observation40 replay. Font DrawTextA slot24 and sprite
-Draw slot20 are distinct. Natural _alloca uses its EAX protocol. Complete
-generic virtual/nonvirtual array classes independently demonstrate the full
-array/scalar flags, cookie/destructor iterator and optional-free protocol;
-84-byte cold wrappers establish generated role, not75-byte exact credit.
-All2571 CI tests and original/accepted complete replays, canonical readback,
-local target/project/query attestations, authored/exact guards,358-pending
-triage, progress and whitespace pass. Public MCP acceptance remains waived.
+All66 cold ordinary sections,17 public controls437,86 original headers and
+full public observation88 replay. Font DrawTextW uses slot28, distinct from
+DrawTextA24. WCHAR2/LOGFONTA60/all14 offsets are independent header facts.
+Natural wide allocation uses EAX count*2/alignment and actual alloca lowering.
+All2601 CI tests, original/accepted complete replays and full R200 regression,
+canonical readback, local target/project/query attestations, authored/exact
+guards,343-pending triage, progress and whitespace pass. Public MCP
+acceptance remains waived.
 
-Retain LockVolume constructor6 at0x00614BC6, Image destructor89 at0x0060EBCD,
-Sprite constructor30 at0x00609AA4 and Sprite destructor64 at0x00608F96 as
-unknown189. Retain CD3DXFile destructor11 at0x0060C120, R198 six lifetime cases,
-R195 seven cases and all earlier protected alternatives. Previous manifests
-and verifier sources remain unchanged. Exact remains60 functions /9883 bytes
-/60 units across eleven objects; the full origin goal is active.
+Retain all eight R201 lifetime cases685 as unknown:Assembler ctor/dtor169/143,
+File dtor11, Resource dtor14, Font ctor/dtor27/58, DwStack dtor14 and Text
+dtor249. Retain all R200/R199/R198/R195 and earlier protected alternatives.
+Previous manifests/records and verifier sources remain unchanged. Exact stays
+60 functions /9883 bytes /60 units across eleven objects; the full goal is active.
 
-The next bounded six-candidate cohort /828 provisional bytes is diagnostic
-original SDK source. Complete COMDAT extents currently equal these values:
+The next bounded six-candidate cohort /634 provisional bytes is diagnostic
+original SDK source. Complete own COMDAT extents currently equal these values:
 
 | Candidate | Whole source bytes | Original survey symbol | SDK member |
 | --- | ---: | --- | ---: |
-| `0x00604A10` | 140 | D3DXAssembleShaderFromFileA | 338212 |
-| `0x00604A9C` | 201 | D3DXAssembleShaderFromFileW | 338212 |
-| `0x00604B65` | 142 | D3DXAssembleShaderFromResourceA | 338212 |
-| `0x00604BF3` | 143 | D3DXAssembleShaderFromResourceW | 338212 |
-| `0x00604F55` | 91 | D3DXGetErrorStringW | 338212 |
-| `0x00604FB0` | 111 | D3DXCreateFontIndirect | 338212 |
+| `0x00606EFF` | 63 | D3DXGetImageInfoFromFileA | 1540360 |
+| `0x00606F3E` | 63 | D3DXGetImageInfoFromFileW | 1540360 |
+| `0x00606F7D` | 68 | D3DXGetImageInfoFromResourceA | 1540360 |
+| `0x00606FC1` | 68 | D3DXGetImageInfoFromResourceW | 1540360 |
+| `0x00607005` | 184 | D3DXLoadSurfaceFromFileInMemory | 1540360 |
+| `0x00607263` | 188 | D3DXLoadVolumeFromFileInMemory | 1540360 |
 
-Use `.analysis/sdk-origin-survey.json` only for discovery. Reopen full original
-code/data owners, every actual field, complete normal/EH/indirect flow and
-accepted anchors. Keep CD3DXFile/Assembler/Text lifetime alternatives separate
-from policy provenance. Actual helper aliases, scope-bound statics and external
-UUID owners must have independent complete evidence. Do not instantiate
-incomplete SDK owners or introduce private class layouts. Freeze further
-policies only after full independent source closure. Continue all remaining
-origin review; no exact expansion or later project phase is authorized.
+Use `.analysis/sdk-origin-survey.json` only for discovery. Reopen complete
+original code/data owners, every genuine field, normal/EH/shared-tail/indirect
+flow and accepted anchors. The last two provisional extents need actual source
+exit reconciliation:an authored-only scanner's final-RET failure is diagnostic,
+not permission to crop a source tail or insert a return. Keep File/Resource/
+Image lifetime alternatives independent from policy provenance. Preserve scoped
+statics, actual aliases and runtime destinations. Do not instantiate incomplete
+SDK owners or invent private layouts. Continue all remaining origin review;
+no exact expansion or subsequent project phase is authorized.
 
 ## R165 checkpoint and the completed R166 shortlist
 
