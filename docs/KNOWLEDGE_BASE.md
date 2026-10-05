@@ -9000,3 +9000,94 @@ and2822 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal and50%-exact milestone remain unfinished.
 Next reconcile the five R196 cube/volume/render-to-env SDK gateways identified
 in the handoff; their private masked associations are diagnostic only.
+
+## R196 — cube/volume gateways and complete EnvMap initializer
+
+R196 accepts six library candidates /545 bytes. Exactly six function/origin row
+pairs change from118e93e; all extents and all earlier evidence remain unchanged.
+
+| Entry | Complete bytes | Original SDK source association |
+| --- | ---: | --- |
+| `0x00605B10` | 40 | `_D3DXCheckCubeTextureRequirements@24` |
+| `0x00605B38` | 41 | `_D3DXCheckVolumeTextureRequirements@32` |
+| `0x00605BC7` | 95 | `_D3DXCreateCubeTexture@28` |
+| `0x00605C26` | 109 | `_D3DXCreateVolumeTexture@36` |
+| `0x00605107` | 126 | `_D3DXCreateRenderToEnvMap@24` |
+| `0x00609F9E` | 134 | `?Init@CD3DXRenderToEnvMap@@QAEJPAUIDirect3DDevice8@@IIW4_D3DFORMAT@@H1@Z` |
+
+**Original source and target observations.** Twelve complete original SDK code
+sections /1905 bytes, five initialized source sections /1624 bytes and two
+whole BSS slots /8 bytes compare unmasked with all39 genuine fields. Actual
+source definitions/AUX, section bounds and PE permissions are retained. The
+four cube/volume gateways preserve parameter forwarding to the independently
+accepted R195 requirements810 and their actual standard device creation slots.
+Every return, guard, failure path and instruction is reached from the original
+entry; no padding or switch table is invented. Source-carrier totals may share
+native data with earlier proof graphs and are not new exact coverage.
+
+CreateRenderToEnvMap126 retains argument validation, allocation, original
+constructor104, Init134, generated deleting wrapper28, failure cleanup and output
+publication. Init134 performs complete texture-requirements validation before
+retaining the device through the actual AddRef protocol and publishing its
+original state/descriptor fields. It calls the previously accepted public
+CheckTextureRequirements40. The whole EnvMap owning table52 retains all13 actual
+source fields, original weak-fallback metadata and prior interface context;
+this is initialized-data provenance, not new ownership for every callback.
+Operator-new14, deleting wrapper28 and ScoreFormat117 are independent full
+original source anchors. Three actual PE imports and both mutable debug slots
+retain their original loader/lookup/guard/indirect-tail behavior through R195.
+
+The unchanged R195 manifest and verifier independently replay its full shader,
+parser, format and debug graph, prior interface/EH/destructor evidence, and all
+old accepted ownership decisions. Its pinned shared replay also checks this
+new bounded source graph. The original absolute CRT definition and eleven
+natural public controls are retained provenance, not new actual FS fields or
+new compiler/ABI credit. All prior configuration evidence stays byte-identical.
+
+**Compiler observations.** The new
+`tests/origin_probes/CubeVolumeGatewayProbe.cpp` cold-builds eight whole public
+controls /305 bytes and the entire readonly observer28 with85 real header hashes.
+Five original declarations confirm SDK WINAPI decoration24/32/28/36/24. Actual
+public COM controls confirm CreateCubeTexture slot88, CreateVolumeTexture slot84
+and EnvMap GetDesc slot16. The seven original public observer values are
+[5,4,16,0,4,8,12]:cube/volume resource enums, complete D3DXRTE_DESC size16 and its
+Size/Format/DepthStencil/DepthStencilFormat offsets. This original EnvMap API
+has no MipLevels field or extra factory argument. The private Init prototype
+and any extra owner fields stay separate from those public declaration facts.
+Probe flags are reproducibility settings, not an executable-wide compiler
+profile. No private owner is instantiated or embedded.
+
+**Retained unknowns and next dependency graph.** Constructor0x0060B728 /104
+stays unknown; a public factory and original vtable do not distinguish automatic
+member initialization from explicit lifetime policy. Original R186 Face35 at
+0x0060BDED remains non-inventory and End227 at0x0060BE10 remains unknown. Their
+original unresolved-callee-context records, source/body fingerprints and
+canonical snapshots remain untouched; no partial comparison becomes acceptance.
+
+A separate private diagnostic expanded their source chain through EndScene177
+at0x0060BD3C, Render1421 at0x0060B7AF, Setup3892 at0x0060A7F4, FilterTexture740
+at0x0060779F, surface/volume loading, blit selection and pixel codecs. The private
+`.analysis/r196-filter-discovery.json` retains172 discovered source sections
+/27710 bytes and45 unresolved source-owner/binding cases. These totals are
+structural discovery only. External GUIDs, real weak vector-deleting fallbacks,
+CRT vector-iteration helpers, codec switch tables and existing math aliases need
+independent source closure. Do not guess weak aliases, cold-compare an incomplete
+owner, or grant End/render/filter/codec origins from a public factory alone.
+No origin decision is made for any of this incomplete expanded chain.
+
+**Acceptance.** Replay `scripts/repo-python scripts/verify-sdk-cube-volume-origins.py`;
+manifest SHA `1f6e40980b678af117d09e65999e3506b437e7dec4f81c47630a2eefe3d39ad1`.
+Original-state evidence replay passes before the bounded write and accepted-state
+whole source/CFG/field/data/previous-evidence/public-ABI replay passes after
+readback. All2459 public checks pass, including fifteen guards for false
+constructor/callback/source/private-ABI/exact credit, incomplete fields/bindings,
+wrong requirement target, incomplete table and invented public descriptor fields.
+Target/tracking/project/query attestations, exact-input guard,902 original
+authored bodies /1956112 bytes, fresh574-pending scan, progress and whitespace
+checks pass. Public MCP acceptance remains waived.
+
+Totals are3777 resolved:949 authored,2252 library and576 compiler;574 pending
+and2828 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal and50%-exact milestone are unfinished. The next
+bounded R197 task closes the software filter/lock/blit/codec prerequisite graph,
+retaining all lifetime, weak-reference and callback alternatives until proven.

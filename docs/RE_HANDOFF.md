@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R195. The public
+review cohorts R108 through R196. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,771: 949 authored, 2,246 library and 576 compiler generated.
-There are 580 pending. Candidate count is not authored function count.
+has resolved 3,777: 949 authored, 2,252 library and 576 compiler generated.
+There are 574 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,74 +20,84 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R196 cube/volume/render-to-env SDK cohort below.
+the bounded R197 software filter/lock/blit/codec prerequisite graph below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R195; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R196; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R196 cube/volume/render-to-env SDK gateways
+## Next agent objective — R197 software filter/lock/blit/codec prerequisites
 
-R195 accepts eighteen complete SDK library policies /9276 code bytes through
-whole original carriers9643, including both parser jump/selector tails367.
-Replay `scripts/repo-python scripts/verify-sdk-graphics-origins.py`; manifest SHA
-`922cd31ed6c986c5719c42d8a342b38b4ce0e0a722f11e3b6e42ed48e92a5998`.
-Thirty complete code sections10340,sixty-six initialized source sections4902,
-three whole BSS3044,all511 genuine fields,27 independent complete anchors,
-eight actual imports,five whole game parents and the former interface/EH/
-destructor graphs replay. Source-carrier totals may include shared native data.
-The cold public SDK control has eleven code sections454 and readonly64 with
-85 actual headers. All2444 CI checks, attestations, exact guard, authored-body
-check, progress and whitespace pass. Exactly eighteen row pairs change from
-b2a1750; no extent, source/private ABI/mapping/exact inputs change. Public MCP
-acceptance remains waived; the full origin goal is active.
+R196 accepts six complete library gateways/initializer /545 bytes. Replay
+`scripts/repo-python scripts/verify-sdk-cube-volume-origins.py`; manifest SHA
+`1f6e40980b678af117d09e65999e3506b437e7dec4f81c47630a2eefe3d39ad1`.
+Twelve original code sections1905,five initialized source sections1624,two BSS8,
+all39 genuine fields,three full source anchors and the entire52-byte EnvMap
+table /13 entries replay through the unchanged R195/R186 source evidence.
+New eight whole public controls305 plus readonly28 and85 headers verify five
+WINAPI declarations and Cube88/Volume84/GetDesc16. Actual public EnvMap descriptor
+is16 bytes with four fields; there is no public MipLevels or extra factory
+argument. All2459 CI checks, attestations, exact/authored guards, progress and
+whitespace pass. Exactly six row pairs change from118e93e. Public MCP acceptance
+remains waived; the full origin goal stays active.
 
-Preserve the seven unchanged unknown lifetime/getter alternatives405 bytes:
-assembler constructor `0x0060C12B` /169, assembler destructor `0x0060C1D4` /143,
-RenderToSurface constructor `0x00609F58` /39, Buffer constructor `0x006200DA` /24,
-DwStack destructor `0x0061FB37` /14, and the GetLastError accessors
-`0x0061FD1A` /8 and `0x0061FBE7` /8. Original code/source ownership associations do not
-supply independent compiler-versus-explicit lifetime or short-body provenance.
-Fifteen old interior compiler entries in the whole EH carriers remain fixed.
-Original parser function code extents1013/2188 stay independent of their entire
-source sections1209/2359; all196/171 table bytes must always be compared.
-Dynamic debug/validation callback slots remain mutable and runtime-unknown.
+Retain EnvMap constructor0x0060B728 /104 as unknown. Preserve original R186
+Face35 at0x0060BDED as non-inventory and End227 at0x0060BE10 as unknown; their
+unresolved-callee-context-only records and whole source/body fingerprints are
+unchanged. No acceptance is claimed for the expanded callback/filter graph.
+Also retain the R195 seven lifetime/getter alternatives405, all earlier
+protected game/CRT/math lifetime/copy/short-body cases, and every exact input.
 
-The next bounded diagnostic cohort is:
+The bounded next work is the complete prerequisite chain behind those callbacks:
 
-| Candidate | Whole provisional bytes | Original source association to reconcile |
+| Entry | Original complete source bytes | Diagnostic association |
 | --- | ---: | --- |
-| `0x00605B10` | 40 | `_D3DXCheckCubeTextureRequirements@24`, d3dx8tex.obj member1540360 |
-| `0x00605B38` | 41 | `_D3DXCheckVolumeTextureRequirements@32`, same tex member |
-| `0x00605BC7` | 95 | `_D3DXCreateCubeTexture@28`, same tex member |
-| `0x00605C26` | 109 | `_D3DXCreateVolumeTexture@36`, same tex member |
-| `0x00605107` | 126 | `_D3DXCreateRenderToEnvMap@24`, d3dx8core.obj member338212 |
+| `0x0060BD3C` | 177 | CD3DXRenderToEnvMap::EndScene |
+| `0x0060B7AF` | 1421 | CD3DXRenderToEnvMap::Render |
+| `0x0060A7F4` | 3892 | CD3DXRenderToEnvMap::Setup |
+| `0x0060779F` | 740 | D3DXFilterTexture |
+| `0x006070BD` | 422 | D3DXLoadSurfaceFromSurface |
+| `0x0060731F` | 134 | D3DXLoadVolumeFromVolume |
+| `0x00614BE7` | 1043 | CD3DXLockSurface::Lock |
+| `0x00614FFF` | 859 | CD3DXLockVolume::Lock |
+| `0x00614A33` | 282 | CD3DXBlt::Blt |
+| `0x0061A4CC` | 1884 source section, code/table split to reconcile | CD3DXCodec::Create |
 
-Private `.analysis/r196-gateway-discovery.json` reopens whole original sections
-and genuine fields but masks those fields for association. The five candidates
-/411 bytes are structural diagnostics only. Reopen every actual source entry,
-field and complete CFG; bind all source-defined callees/data/vtables independently
-before an unmasked whole replay. Reuse R195's complete internal requirements810,
-format/DebugMute policy and the prior owning-interface/source graph without
-changing earlier manifests. Reconcile all actual standard COM methods through
-original public headers/natural controls. EnvMap's private constructor/lifetime
-and the two opaque Face/End controls are independent questions; a public factory
-or class vtable alone must not grant them library credit. Do not instantiate an
-incomplete reconstructed owner or convert a dynamic slot into a fixed callee.
+Private `.analysis/r196-filter-discovery.json` /log reopen actual original SDK
+sections and fields:172 discovered sections /27710 bytes,45 unresolved cases.
+This is structural discovery only and cannot supply origin or exact acceptance.
+Retain the entire chain rather than accepting pointer destinations by name.
+Close external IID_IDirect3DBaseTexture8 and IID_IDirect3DVolumeTexture8 from
+original public SDK GUID definitions and whole natural controls. Parse actual
+COFF weak records for every codec vector-deleting reference; never infer _E/_G
+aliasing by spelling or assume linker folding. Reopen original CRT vector-
+iteration helpers such as ??_L with full own extents and ABI/callee evidence.
+Reconcile all guarded codec selectors/jump tables, EH roots, shared entries,
+alignment and actual COM methods; preserve ambiguous codec constructors and
+base/derived lifetime routines until independent natural controls establish
+ownership. No incomplete SDK owner may be instantiated or embedded.
 
-Fresh `.analysis/origin-scan/r195-triage.json` has580 pending:57 vendor-or-
-compiler-parent,74 game-parent,385 unresolved-context,57 reconcile-extent,
+The private generic graph over-expands references without respecting all
+existing specialized source carriers. Reuse the unchanged full R192 dispatch
+and R193 math provenance for public slots, C banks and actual math aliases.
+In particular, do not turn mutable slot/weak fallback destinations into one
+fixed global function mapping. R195 provides complete texture requirements,
+format data and debug state, not proof of the unresolved software blit graph.
+Keep earlier manifests immutable; any accepted old-context transition must be
+narrowly frozen and independently read back, without creating hash cycles.
+
+Fresh `.analysis/origin-scan/r196-triage.json` has574 pending:58 vendor-or-
+compiler-parent,74 game-parent,378 unresolved-context,57 reconcile-extent,
 six game-callees-and-parent and one game-callees. Continue the full
-remaining review after this bounded cohort, preserving all protected lifetime,
-copy,math,allocator and short-CRT alternatives. All902 accepted authored bodies
-/1956112 bytes and60 exact functions /9883 bytes stay unchanged. No exact
-reconstruction scope or subsequent project phase is authorized.
+remaining review after this graph; no exact reconstruction or later phase is
+authorized. All902 authored bodies /1956112 bytes and60 exact functions /9883
+bytes remain unchanged.
 
 ## R165 checkpoint and the completed R166 shortlist
 

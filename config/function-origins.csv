@@ -2658,7 +2658,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00604FB0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0060501F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0060508B,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
-0x00605107,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00605107,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
 0x00605185,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006051B8,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x006051DC,library,D3DX8SDK,exclude,complete-vendor-body,R013
@@ -2676,11 +2676,11 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0060579E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x006057BE,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x00605AE8,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
-0x00605B10,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00605B38,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00605B10,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
+0x00605B38,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
 0x00605B61,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
-0x00605BC7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00605C26,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00605BC7,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
+0x00605C26,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
 0x00605C93,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00605CDF,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00605D2A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2744,7 +2744,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00609EEF,library,D3DX8,exclude,whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context,R187
 0x00609F11,library,D3DX8,exclude,whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context,R186
 0x00609F58,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00609F9E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00609F9E,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
 0x0060A024,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0060A0A3,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0060A1FA,library,D3DX8,exclude,whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context,R186
