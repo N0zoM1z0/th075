@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R224. The public
+review cohorts R108 through R225. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,162: 971 authored, 2,611 library and 580 compiler generated.
-There are 189 pending. Candidate count is not authored function count.
+has resolved 4,174: 971 authored, 2,623 library and 580 compiler generated.
+There are 177 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,91 +20,82 @@ bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R225 paired unchecked-indexing cohort below.
+the bounded R226 deque front/back access cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R224; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R225; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R225 paired unchecked-indexing source cohort
+## Next agent objective — R226 deque front/back access source cohort
 
-R224 resolves library61FEDB /27, original `CD3DXBufferA16` prefix-recovery cleanup.
-Its eight full instructions retain pointer+C, conditional pointer-1 byte recovery,
-pointer rewrite and real external tail to accepted61FE0A /21; no RET is invented.
-Complete paired original Init61FF12 /49 writes the same delta after requesting
-count+16, and factory620188 /87 installs the owning table and dispatches actual
-Init/deleting slots18/14. All15 original defining code/data carriers494/30 fields/
-13 CFGs, two complete seven-slot tables, actual weak fallbacks and complete source
-AUX/debug provenance reproduce unmasked. Contexts absent from the provisional
-inventory receive no new ledger rows or origin credit.
+R225 resolves twelve complete library origins561: eight public unchecked-indexing
+heads49 and four complete60-byte-deque begin35/mutable-dereference19/explicit
+iterator-constructor32/const-dereference83 dependencies. All original8 and manual8
+scopes128 sections4694/112 fields/128 CFGs reproduce unmasked through genuine
+source-owned catalogs. Actual vector4/116/4/16 strides and deque4/4/1/60 widths,
+block sizes4/16/1, mutable/const routes and whole89/86/83 dereferences remain
+distinct. Whole fresh emission97 sections3393/108 fields,28 includes and whole
+readonly48 are retained. Preliminary deque31/45 descriptions are corrected to
+full35/57 observations without any canonical extent change. Eight complete manual
+member alternatives are byte-equal; attribution is a source-family inference and
+does not prove historical replacement absence or original private declarations.
 
-Whole original scalar-new14/delete5 and their source-owned runtime bindings are
-retained through complete R120/R115–R119 proof18 bodies1928/all166 fields and
-actual code/data/API/EH owners. Fresh original SDK GUID object47 sections752/84
-includes and original Uuid.Lib prove both complete readonly16-byte identities.
-New natural generic controls13 methods267 retain17 ordinary sections315/25 fields,
-eight actual includes and whole readonly24. Prefix27/allocation49, generic base16,
-default5 and explicit-empty11 remain observations, not recovered private SDK
-classes/compiler flags. Three compiler deleting wrappers and eight unresolved
-SDK lifetime/forwarding policies, including620132 /5,60C120 /11,6200DA /24, remain
-unchanged. Full19 scoped canonical rows and all previous config/evidence/exact
-inputs are preserved. No prior selected snapshot for61FEDB exists.
-
-Replay `scripts/repo-python scripts/verify-sdk-aligned-buffer-origins.py`;
-manifest SHA `fba0048154169ef4e4eefa7cd13a321635bf6a6cf450a0df0ff39e016bb53297`. Original/accepted complete source and cold controls pass.
-All3164 CI tests, including16 new guards, target/tracking/project/query markers,
-earlier902 authored bodies, exact preservation, exactly-one-row readback,
-coherent fresh189 triage, progress and whitespace pass.
-Current4162 resolved =971 authored+2611 library+580 compiler;189 pending and3191
-excluded. Original1311 goal has1122 classified /189 left and remains active.
-Exact60 /9883 bytes /60 units across eleven objects; authored bytes1,971,032 and
-provisional0.50% are unchanged. Push reached68d9258; subsequent commits are local.
+Seven complete independently accepted game parents9720 and143 actual
+receiver/index/result windows are reopened. All97 canonical rows, protected
+unknowns and every earlier configuration/source/exact input stay unchanged except
+the twelve transitions. The recursive prior selected snapshot audit finds none.
+Original/accepted cold replays and3179 CI tests, including15 new guards, pass.
+Replay `scripts/repo-python scripts/verify-unchecked-indexing-origins.py`;
+manifest SHA `9ff22d92b72073bc8ab0d1a62b127ebc6ba1adc6507e2b14f11cadbd2d544113`. Target/tracking/project/query markers, earlier902 authored
+bodies, all60 exact inputs, exactly-twelve-row readback, coherent fresh177 triage,
+progress and whitespace pass. Current4174 resolved =971 authored+2623 library
++580 compiler;177 pending and3203 excluded. Original1311 goal has1134 classified
+/177 left and remains active. Exact60 /9883 bytes /60 units across eleven objects;
+authored bytes1,971,032 and provisional0.50% are unchanged. Push reached68d9258;
+subsequent commits are local.
 
 The final complete Web MCP acceptance is required only after the remaining origin
 review finishes. Continue bounded local evidence/acceptance; do not add intermediate
 Web MCP runs, exact reconstruction or later project phases.
 
-Next inspect eight complete49-byte indexing hypotheses /392. Private
-`.analysis/r225-preliminary.json` freezes all eight whole native bodies, actual
-instructions/calls/hashes and current canonical states as diagnostics only:
+Next inspect six complete deque front/back hypotheses /257. Private
+`.analysis/r226-preliminary.json` retains all full instructions, native hashes,
+current canonical states and fresh triage, as diagnostics only:
 
-| Candidate | Provisional source family | Actual begin / plus / dereference |
-| --- | --- | --- |
-| `0x00409430` | vector, observed4-byte iterator stride |409760 /409DA0 /409D80 |
-| `0x0041DB40` | deque, offset at iterator+4 |41DA90 /41EE20 /41E000 |
-| `0x0041DDC0` | deque, offset at iterator+4 |41DCF0 /41ECC0 /41DF70 |
-| `0x0042DAF0` | deque, offset at iterator+4 |4143D0 /42E040 /414950 |
-| `0x0042DBA0` | deque, offset at iterator+4 |42DCC0 /42E0A0 /42E080 |
-| `0x00458AF0` | vector, observed116-byte iterator stride |442100 /4422A0 /442280 |
-| `0x00458BC0` | vector, observed4-byte iterator stride |4421C0 /4422F0 /4422D0 |
-| `0x005F7FC0` | vector, observed16-byte iterator stride |5F8490 /5F8E70 /5F8E50 |
+| Candidate | Complete provisional extent | Actual begin/end / subtraction / dereference |
+| --- | ---: | --- |
+| `0x004094D0` |32|4099E0 / none /409DD0 |
+| `0x004094F0` |45|409A10 /409DF0 /409DD0 |
+| `0x0041DB80` |45|41DAC0 /41EE60 /41E000 |
+| `0x0041DE00` |45|41DD20 /41ED00 /41DF70 |
+| `0x004213B0` |45|421720 /421F80 /421F20 |
+| `0x005F8180` |45|5F80E0 /5F8D70 /5F8400 |
 
-Do not conflate the byte-equal vector/deque49-byte heads. Deque arithmetic updates
-an offset at iterator+4 and its whole const-dereference descendant must resolve
-map/block/stride policy. Vector arithmetic updates its pointer directly and
-retains its own4/116/16 scaling. Original public header definitions and full scoped
-source owners, AUX/normal/EH/data fields and independent complete game argument/
-receiver/result contexts must support any classification. A known child or game
-caller alone is insufficient; complete ordinary/manual alternatives and all old
-unknown snapshots must remain literal. Natural full generic values are allowed
-only as observations, never original private layouts.
+Actual45-byte heads pass immediate1 through whole iterator subtraction, then
+dereference its result. Resolve full original front/back header definitions,
+complete scoped iterator construction/subtraction/dereference source owners,
+all actual fields/CFGs and observed widths/block policy. Some retained ledger
+names describe subtraction as plus; mapped names alone do not establish policy.
+Unknown begin4099E0 /35, end409A10 /41 and iterator-constructor40A170 /32 need
+independent complete source/context proof. Reconcile any additional required
+whole dependency before credit; preserve private lifetime policies and ordinary
+member alternatives.
 
-Unknown begin42DCC0 /31 and dereference42E080 /19 require their own complete source
-and context proof, not automatic acceptance through a prospective parent. Actual
-whole game parents include407270,41CE50,42CA60,42C670,457660,456910 and5F71F0; reopen
-all relevant complete CFGs and parameter/result uses. The preliminary native
-source-family proposals are not new acceptance evidence. R205/R213 source probes
-and original deque probes supply methodology and retained actual defining owners;
-recompile relevant unchanged source rather than blindly running old stateful
-validators whose protected snapshots transitioned later.
+Independent complete game parents include407CC0,407A50,41CF80,42D470,420880 and
+5F78B0, with other full audio/effects callers available in fresh triage. Retain
+actual receiver/index/result uses, exits and switch data. A game caller, byte
+shape or known child alone is insufficient. R225 supplies the original-header
+and ordinary-control methodology; compile fresh complete generic observations.
+Do not instantiate incomplete original owners or blindly run historical stateful
+validators whose protected rows transitioned later.
 
-Fresh `.analysis/origin-scan/r224-triage.json` has189 pending and both current
+Fresh `.analysis/origin-scan/r225-triage.json` has177 pending and both current
 ledger hashes. Preserve R108 and other short/private lifetime, getter, node and
 math ambiguities unless distinguishing new evidence resolves them.
 

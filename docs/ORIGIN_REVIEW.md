@@ -14100,3 +14100,70 @@ Authored denominator1,971,032; exact60 /9883 bytes /60 units across eleven objec
 and provisional0.50% stay unchanged. Complete final Web MCP acceptance remains
 required after all remaining review finishes. No later phase or exact expansion
 is added.
+
+## R225 — complete paired vector/deque unchecked indexing and iterator ownership
+
+R225 resolves twelve library origins /561. Eight complete49-byte public indexing
+heads /392 are409430,41DB40,41DDC0,42DAF0,42DBA0,458AF0,458BC0 and5F7FC0.
+Their complete source-owned begin/arithmetic/dereference graphs distinguish vector
+pointer arithmetic with4/116/4/16-byte strides from deque owner+offset iterators
+with4/4/1/60-byte elements. Four additional complete60-byte-deque dependencies
+/169 are begin42DCC0 /35, mutable dereference42E080 /19, explicit offset/owner
+iterator construction42E2F0 /32 and const dereference42E330 /83. Each has its own
+original defining section, full field/CFG proof and independent whole game
+receiver/index/result context. A known child alone earns no classification.
+
+The whole deque const-dereference policies use four elements per block at width4,
+sixteen at width1 and one at width60. They retain the actual map pointer at owner+4,
+map size at owner+8, offset at iterator+4, conditional block wrap and final1/4/60
+scaling. Complete lengths89/86/83 are observed separately. Deque begin is35 and
+iterator addition57, while vector begin is31 and addition45. Earlier preliminary
+31-byte/45-byte deque descriptions were diagnostic hypotheses; the canonical
+extents already contained the correct complete35/57-byte bodies and are unchanged.
+The adjacent32-byte constructor ends exactly where accepted arithmetic42E310
+starts. Other selected extents retain their external INT3 alignment separately;
+no extent is shortened or expanded to obtain a comparison.
+
+One natural complete generic source probe emits all97 ordinary sections3393,
+all108 fields,28 actual SDK includes and the whole48-byte readonly observation
+[4,16,116,1,4,60,16,4,4,20,8,8]. Reference observers instantiate no incomplete game
+owner and introduce no global lifetime/exception policy. Eight original-header
+and eight manual-member graphs retain all128 whole defining sections4694,
+all112 actual fields and128 complete CFGs, with full COFF definitions/AUX/debug
+line provenance and source-owned scoped catalogs. Every actual source field is
+bound through a genuine defining owner before complete unmasked comparison.
+All reachable owners are present in the fresh object; no external CRT or EH
+owner is inferred from a destination. Six complete const-route controls preserve
+distinct defining symbols; six wrong-width controls preserve the entire differing
+stride/block bodies, including unequal lengths. Ten actual original header
+excerpts and whole include hashes retain the original public/member definitions.
+
+Seven independently accepted whole game parents /9720 are407270,41CE50,42CA60,
+42C670,457660,456910 and5F71F0. All instructions, exits, switch data, original
+authored records and143 actual receiver/index/result windows are reopened. Audio
+release dereferences pointer elements, archive release selects paired pointer
+queues, replay selection/rendering reads width60 metadata and width1 values,
+fighter resource loading uses width116 records/width4 pointers, and effects
+loading writes into width16 records. These are observed uses, not original private
+type declarations or recovered complete object layouts. All eight entire manual
+member alternatives also reproduce byte-equal: classification is a library-family
+inference from original source relationships and complete independent contexts;
+historical replacement absence cannot be established. No extra function credit
+is taken for overlapping scopes or alternatives.
+
+All97 scoped canonical rows and every prior configuration/source/exact input are
+preserved except the twelve bounded origin transitions. A recursive prior JSON
+snapshot audit finds no old selected/snapshot record for these twelve addresses.
+Protected private lifetime/forwarding/copy policies stay unknown. Cold original
+and accepted replays pass:
+`scripts/repo-python scripts/verify-unchecked-indexing-origins.py`;
+manifest SHA-256 `9ff22d92b72073bc8ab0d1a62b127ebc6ba1adc6507e2b14f11cadbd2d544113`. All3179 CI tests pass, including15 new
+extent/source-catalog/AUX/manual/const/stride/game-context/alignment/ABI/exact guards.
+Target/tracking, local Ghidra identity/query completion, all earlier902 authored
+bodies,60-unit exact-input preservation, exactly-twelve-row readback, coherent
+fresh177 triage, progress and whitespace pass. Current4174 resolved =971 authored
++2623 library+580 compiler;177 pending and3203 excluded. Original1311 goal has1134
+classified /177 left and remains active. Exact60 /9883 bytes /60 units across
+eleven objects, authored denominator1,971,032 and provisional0.50% are unchanged.
+Final complete Web MCP acceptance remains required after the remaining review
+finishes. No exact reconstruction or later project phase is added.
