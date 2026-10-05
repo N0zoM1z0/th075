@@ -10107,3 +10107,63 @@ waived. The checkpoint is 4,103 resolved: 950 authored, 2,573 library, 580 compi
 and remains active. Exact stays 60 functions / 9,883 bytes / 60 units across eleven
 objects. Reviewed authored bytes increase by 116 to 1,968,571; exact remains 0.50%
 of that provisional set. No new source/private ABI/mapping/exact credit.
+
+## R210 — explicit nested initialization with complete default controls
+
+R210 resolves two authored policies / 192 bytes. The complete 145-byte body at
+`0x004587E0` constructs a prefix and both nested vectors, zeroes the entire
+116-byte receiver, explicitly clears both vectors, then resets the pointer at
++8. The complete 47-byte prefix initializer at `0x00458880` zeroes 16 bytes,
+resets the pointer at +8 and writes byte flag=1 at +12. Their complete extents
+are preserved. Names remain provisional: `NestedRecord116::InitializeAndClear`
+and `RecordPrefix16::ZeroAndSetFlag`; no private constructor/type/layout claim.
+
+Replay `scripts/repo-python scripts/verify-nested-initialization-origins.py`.
+Manifest `config/nested-initialization-origin-evidence.json` SHA-256:
+`0b693e67bc49d4618028f5b9d4a1d61142abfa0911167207bfa0a77bc9403c47`. A separate two-row
+`config/nested-initialization-authored-origins.csv` retains complete native
+bodies, instructions, ordered actual calls and return/branch counts. The original
+902 general authored records, all additional prior authored evidence and exact
+inputs stay unchanged.
+
+The natural complete generic fixture uses actual scalar widths and ordinary
+alignment. It emits the two whole policies 145/47, a complete implicit nested
+constructor 93 and whole value-initialization/explicit-prefix observers 81/104.
+The implicit nested constructor lacks the whole-object memset and both explicit
+clears. Scalar value initialization does not produce the prefix flag=1 policy.
+These are source-policy controls, not recovered original private declarations,
+inheritance, member names or runtime state. No partial game owner is instantiated,
+no target bytes or assembly are put in source, and no conditional bodies or
+arbitrary padding are used.
+
+All 37 complete code/data carriers / 1,400, 73 actual fields and 29 complete
+normal/EH/unwind CFGs reproduce without masking. Every source definition, real
+local symbol index, AUX/debug-line record, data owner, permissions and actual
+weak fallback is checked. The cold object retains all 100 ordinary emissions /
+4,743, 27 actual original headers and the whole 40-byte observation carrier.
+Two independently authored game parents at 457660/3696 and 5F71F0/1722 retain their
+entire native bodies, CFGs and actual calls at 457692/5F7214. Original CRT
+`_memset` at 640490/96 is reopened from the pinned libcmt.lib member at 2184292;
+its own function AUX, all instructions, full two-return/seven-branch CFG and
+complete native bytes agree. Every replay also runs the complete retained
+R209/R208/R150 cold proof. Public/CRT bindings derive from independently owned
+full source definitions, never native field destinations alone.
+
+Four short/private controls remain unknown and unchanged: clear 458A80/19,
+vector destruction 4589F0/19, prefix cleanup 4588B0/43 and trivial destruction
+45B630/5. The short clear/destructor shapes and their known parents do not settle
+original declarations. Other R209 private copy/assignment and recovery evidence
+remain intact. A complete prior-manifest selected-record audit finds no older
+protected snapshot for the two newly accepted initializers; all prior evidence
+and verifiers are preserved.
+
+Original-state and accepted-state cold replays pass; all 2,869 CI tests pass,
+including 28 new truncation/provenance/default-policy/ownership guards. Target,
+project/query markers, earlier authored proof, exact preservation, canonical
+readback, fresh 246 triage, progress and whitespace pass. Public MCP acceptance
+remains waived. Exactly two function/origin rows change, with no extent change.
+The checkpoint is 4,105 resolved: 952 authored, 2,573 library and 580 compiler;
+246 pending and 3,153 excluded. The original 1,311 goal has 1,065 classified /
+246 left and remains active. Reviewed authored bytes add 192 to 1,968,763. Exact
+stays 60 functions / 9,883 bytes / 60 units across eleven objects, 0.50% of the
+provisional authored set. No source/private ABI/mapping/exact credit is added.
