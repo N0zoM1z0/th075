@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R187. The public
+review cohorts R108 through R188. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,666: 949 authored, 2,142 library and 575 compiler generated.
-There are 685 pending. Candidate count is not authored function count.
+has resolved 3,669: 949 authored, 2,145 library and 575 compiler generated.
+There are 682 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,67 +20,72 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R188 SDK dispatcher/matrix cohort below.
+the bounded R189 SIMD initializer cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R187; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R188; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R188 runtime SDK dispatcher and matrix caller
+## Next agent objective — R189 full SIMD initializer carriers and alignment
 
-R187 resolves three entire explicit SDK destructors / 89 bytes. Replay
-`scripts/repo-python scripts/verify-sdk-destructor-origins.py`. Its manifest
-SHA-256 is
-`506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1`.
-All six real fields bind through independently proved R186 interface/GUID/
-owner carriers and earlier complete delete/OnLostDevice implementations.
-Seven natural full source controls / 193 bytes, eight ordinary sections / 205
-bytes, 84 actual included headers and the complete twelve-byte observer layout
-distinguish default raw-pointer destruction, explicit public cleanup and
-generated flag/delete policy. The generated probe wrappers are full 44-byte
-functions; original R038 wrappers remain their full 28-byte compiler bodies.
-All 53 R038 wrappers / 1484 bytes cold-replay unchanged. No original private
-object layout is instantiated or inferred from the observer classes.
+R188 accepts three complete SDK dependencies / 354 bytes: x86 initializer
+0x006292BC / 60, Direct3D registry helper 0x006209EF / 92 and x86 normalizer
+0x00629081 / 202. Replay
+`scripts/repo-python scripts/verify-sdk-x86-policy-origins.py`. Manifest SHA-256:
+`dfba474686f4032271ad6ba4f2f9fde62ed221590e40c13f354bf7086e2872f1`.
+Ten full source bodies / 1268 bytes bind fourteen actual fields, including all
+eight separately complete initializer pointer implementations. The old 227-
+and 142-byte matrix SDK records and five non-inventory controls are preserved.
+The entire initialized writable 4104-byte source data image retains _invSqrtTab
+and both neighboring _a1/_a2 definitions; source addends 0/+4 remain distinct.
+The original file-image comparison does not assert runtime immutability.
+The entire 28-byte readonly Direct3D registry path and three independently
+identified ADVAPI32 IAT entries support the explicit registry policy.
 
-The complete R186 owner graph cold-replays: actual SDK GUIDs, whole UUID
-IUnknown, all 29 original table slots / 116 bytes, 33 complete unmasked code
-controls / 2693 bytes, 25 real fields and 73 indirect calls. Its manifest remains
-immutable. Only three actual hash-pinned destructor transitions are allowed
-by the updated R186 validator; its two opaque EnvMap controls remain pending.
-R185/R184/SDK source archives and earlier accepted facts are preserved.
+All 112 fields and intervening bytes in the full 460-byte original source
+carrier are frozen as observed context. It is not an independently linked
+positive for unrelated callback owners. The whole CPU selector at 0x00620C9A
+/ 221, public Normalize 0x0061AF34 / 6 and public LookAtRH 0x0061CA33 / 328
+remain unknown, with full source/native hashes and real fields. Private graph
+discovery `.analysis/r188-fast-discovery.json` records entire source observations
+and exposes unresolved Intel exception paths, guarded projection tables and
+SIMD/assembly shared entries. It is diagnostic and grants no additional origin.
+The complete earlier R186 GUID/interface and R187 explicit/generated destructor
+facts remain accepted and immutable.
 
-Exactly three function/origin rows change from 0151132. All original extents,
-all 902 authored bodies / 1956112 bytes, every prior configuration manifest and
-all sixty exact inputs remain unchanged. All 2301 public checks, fresh
-685-pending scan, target/tracking/project/query markers, progress and whitespace
+Exactly three function/origin rows change from 53cd473. All other extents,
+all 902 authored bodies / 1956112 bytes, every prior configuration manifest
+and all sixty exact inputs remain unchanged. All 2313 public checks, fresh
+682-pending scan, target/tracking/project/query markers, progress and whitespace
 checks pass. Public MCP acceptance remains waived. The whole origin goal is
 active and incomplete; no source/ABI/mapping/exact credit is added.
 
-The next bounded cohort has two pending functions / 334 bytes:
+The next bounded R189 cohort is two pending initializers / 528 bytes:
 
-| Candidate | Whole provisional bytes | Actual source linkage |
+| Candidate | Whole provisional bytes | Source owner |
 | --- | ---: | --- |
-| `0x0061AF34` | 6 | public D3DXVec3Normalize runtime dispatcher |
-| `0x0061CA33` | 328 | D3DXMatrixLookAtRH, two real Normalize calls |
+| `0x00628900` | 262 | sse_D3DXInitFastTable, member ssefasttable.obj at 2113406 |
+| `0x00628A10` | 266 | sse2_D3DXInitFastTable, member ssefasttable2.obj at 2143792 |
 
-Fresh private discovery `.analysis/r188-discovery.json` reaches these through
-the complete original EnvMap End 227 -> EndScene 177 -> Render 1421 -> Setup
-3892 graph. Face 35 remains a non-inventory control. The actual Normalize
-dispatcher uses a nonzero +28 field in `g_D3DXFastTable`; prove the entire
-carrier, original data extent and separate initialized/default/selected source
-implementation context before accepting it. Verify both matrix call targets
-and complete scalar definitions. All full source/native extents and CFG must
-remain present. Do not mask the dispatch field or instantiate an incomplete
-original owner. The larger EndScene texture/filter/lock/codec graph still has
-unsolved GUIDs, local data and shared tails, so discovery grants no parent
-acceptance. Preserve the immutable R186 opaque records until their complete
-downstream evidence is independently established.
+Both source COMDATs are 272 bytes and lack function definition AUX records.
+The first original source/native RET is followed by ten LEA alignment bytes;
+the second by six. Reconcile the complete reachable CFG, own primary symbol,
+all genuine fields, exits and alignment independently. Retain and compare both
+entire 272-byte carriers / 544 bytes, rather than supplying native candidate
+sizes to truncate aux-less source extraction. No padding receives function
+credit. Every pointer must bind a separately complete correct SIMD callback.
+Some source callback sections have real local $$1 function entries; preserve
+their exact symbol metadata and full shared source bodies instead of dropping
+them to satisfy the single-function extractor. Other assembly math extents
+and local projection tables remain unresolved. Preserve all pending CPU/public
+records until their downstream proof closes; any future accepted transition
+must be explicit and hash-pinned in the earlier verifier.
 
 ## R165 checkpoint and the completed R166 shortlist
 

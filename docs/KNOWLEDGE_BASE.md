@@ -8318,3 +8318,81 @@ dispatch carrier, its real nonzero +28 field and implementation/initializer
 context before accepting either function. Do not treat a relocated pointer
 as an independent symbol identity or promote the still-unresolved texture/
 lock/codec graph. This discovery does not change any additional canonical row.
+
+
+## R188 — complete x86 SDK pointer policies, lookup data and registry imports
+
+The planned public Normalize/matrix cohort exposed unresolved CPU selection,
+shared source entries and guarded projection tables. Both original public
+rows remain unknown. This bounded dependency batch instead accepts three
+entire explicit SDK policies / 354 bytes, with no convenient parent promotion.
+
+| Address | Whole bytes | Vendor operation |
+| --- | ---: | --- |
+| `0x006292BC` | 60 | x86_D3DXInitFastTable |
+| `0x006209EF` | 92 | GetD3DRegValue |
+| `0x00629081` | 202 | x86_D3DXVec3Normalize |
+
+Ten full own COMDAT source/native comparisons / 1268 bytes bind all fourteen
+genuine fields. The initializer writes eight real function pointers, each
+bound to its separately complete original x86 implementation. The full 227-
+and 142-byte matrix implementations retain their R008 library records; five
+other vector implementations remain non-inventory controls. No new canonical
+rows are created for them. The complete pointer-writing policy is explicit SDK
+selection code, rather than a generated lifetime/template operation.
+
+The normalizer retains its entire x87 zero/unit/lookup/scale paths, all branch
+targets and final RET 8. Its indexed data reads use the actual source symbol
+_invSqrtTab at 0x0066D2A0 with distinct source addends 0 and +4. The whole
+initialized source data section is 4104 bytes, including _invSqrtTab and the
+neighboring _a1/_a2 definitions at offsets 4096/4100. All original bytes,
+definitions and source permissions agree. This source section is writable:
+the observation compares the original file image and does not assert runtime
+immutability. The index mask 0xFF8 bounds the paired reads within the first
+4096 bytes; the remaining source definitions are still retained and compared.
+The public D3DXVec3Normalize dispatcher at 0x0061AF34 is a separate unknown
+candidate; this accepted implementation does not grant its wrapper credit.
+
+The registry helper's whole 28-byte readonly source definition is
+Software\Microsoft\Direct3D at 0x0065DE70. All three real IAT fields independently
+resolve through the actual PE import directory to ADVAPI32 RegOpenKeyA,
+RegQueryValueExA and RegCloseKey, with their genuine decorated source symbols.
+The complete helper preserves success/error exits and handle cleanup. These
+full SDK registry and lookup/implementation source owners establish library
+policy independently of auto-analysis names, nearby code or masked similarity.
+
+The entire 460-byte writable original D3DX source pointer carrier / 112 fields
+is retained as observed context. Every source definition, source field, actual
+pointer and intervening byte remains present. Unrelated pointers receive no
+false independently proved linkage claim. The whole 221-byte CPU selector
+and public Normalize 6-/LookAtRH 328-byte original/source snapshots likewise
+remain unresolved context with their real fields, hashes and unknown rows.
+Private discovery identifies unresolved Intel exception/filter paths, local
+projection tables and SIMD source aliases/assembly tails. No dynamic CPU
+selection or unrelated implementation is inferred from the initial carrier.
+
+Replay `scripts/repo-python scripts/verify-sdk-x86-policy-origins.py`. Its
+manifest SHA-256 is
+`dfba474686f4032271ad6ba4f2f9fde62ed221590e40c13f354bf7086e2872f1`.
+Evidence-only replay before mutation and accepted-state replay pass. Every
+source body is freshly extracted from the pinned original archive, with all
+fields included; this archive-only origin batch adds no reconstructed source
+or exact compilation credit. Strict R187 HEAD 53cd473 readback changes exactly
+three function/origin rows and preserves every other extent, all 902 authored
+records / 1956112 bytes and every earlier configuration manifest. Source,
+headers, flags, ABI, mapping and all sixty exact inputs remain unchanged from
+the prior cold replay. Target/tracking/project/query markers, full authored
+verification, fresh scanning, twelve meaningful whole-data/addend/import/
+pointer/scope guards, all 2313 public checks, progress and whitespace pass.
+Public MCP acceptance remains waived. No target/database write occurs.
+
+Totals are 3669 resolved (949 authored, 2145 library, 575 compiler), 682 pending
+and 2720 excluded. Exact stays 60 functions / 9883 bytes and provisional
+coverage 9883 / 1968455 (0.50%). The whole origin goal remains active and
+unfinished. Next review the bounded R189 SSE/SSE2 initializer pair at
+0x00628900 / 262 and 0x00628A10 / 266. Each complete source COMDAT carrier is
+272 bytes, retaining its actual post-RET LEA alignment. Independently reconcile
+the reachable function extent and that alignment; compare the full carriers,
+every pointer and each whole source callback including any genuine local $$1
+entry/shared body. Do not cut a source section to fit the provisional native
+extent or treat its padding as executable function credit.

@@ -1,0 +1,2062 @@
+{
+  "evidence_id": "R188",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "functions": [
+    {
+      "address": "0x006292BC",
+      "size": 60,
+      "original_function": {
+        "address": "0x006292BC",
+        "size": "60",
+        "span_end": "0x006292F7",
+        "current_name": "FUN_006292bc",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x006292BC",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x006292BC",
+        "size": "60",
+        "span_end": "0x006292F7",
+        "current_name": "FUN_006292bc",
+        "proposed_name": "?x86_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R188",
+        "owner": "library",
+        "notes": "R188; complete pinned SDK source policy, all real pointer/import/data fields, entire source definitions and native CFG; origin only, no source/ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x006292BC",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-explicit-x86-dispatch-math-and-registry-policy-with-complete-data-imports",
+        "evidence_id": "R188"
+      }
+    },
+    {
+      "address": "0x006209EF",
+      "size": 92,
+      "original_function": {
+        "address": "0x006209EF",
+        "size": "92",
+        "span_end": "0x00620A4A",
+        "current_name": "FUN_006209ef",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x006209EF",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x006209EF",
+        "size": "92",
+        "span_end": "0x00620A4A",
+        "current_name": "FUN_006209ef",
+        "proposed_name": "?GetD3DRegValue@@YAHKPADPAXK@Z",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R188",
+        "owner": "library",
+        "notes": "R188; complete pinned SDK source policy, all real pointer/import/data fields, entire source definitions and native CFG; origin only, no source/ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x006209EF",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-explicit-x86-dispatch-math-and-registry-policy-with-complete-data-imports",
+        "evidence_id": "R188"
+      }
+    },
+    {
+      "address": "0x00629081",
+      "size": 202,
+      "original_function": {
+        "address": "0x00629081",
+        "size": "202",
+        "span_end": "0x0062914A",
+        "current_name": "FUN_00629081",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00629081",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00629081",
+        "size": "202",
+        "span_end": "0x0062914A",
+        "current_name": "FUN_00629081",
+        "proposed_name": "?x86_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R188",
+        "owner": "library",
+        "notes": "R188; complete pinned SDK source policy, all real pointer/import/data fields, entire source definitions and native CFG; origin only, no source/ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x00629081",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-explicit-x86-dispatch-math-and-registry-policy-with-complete-data-imports",
+        "evidence_id": "R188"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "address": "0x006292BC",
+      "symbol": "?x86_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 60,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "bbc4bda7b220549c69de1fb44473d7ea05761d26ffcd0aecf4762c46d82bdc14",
+      "body_sha256": "db8a2a84a042240a5102e56853d6954c442ff0647609f2d8e03838fee0736c87",
+      "fields": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 13,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR3@@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 20,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec4Transform@@YGPAUD3DXVECTOR4@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 27,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 34,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 41,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec2TransformNormal@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 48,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3TransformNormal@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 55,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 6,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00628E1B",
+          "source_base": "0x00628E1B"
+        },
+        {
+          "offset": 13,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR3@@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00628EB9",
+          "source_base": "0x00628EB9"
+        },
+        {
+          "offset": 20,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec4Transform@@YGPAUD3DXVECTOR4@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00628FA3",
+          "source_base": "0x00628FA3"
+        },
+        {
+          "offset": 27,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0062914B",
+          "source_base": "0x0062914B"
+        },
+        {
+          "offset": 34,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0062922E",
+          "source_base": "0x0062922E"
+        },
+        {
+          "offset": 41,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec2TransformNormal@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00628E84",
+          "source_base": "0x00628E84"
+        },
+        {
+          "offset": 48,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3TransformNormal@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00628F44",
+          "source_base": "0x00628F44"
+        },
+        {
+          "offset": 55,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?x86_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00629081",
+          "source_base": "0x00629081"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x006292BC",
+        "size": "60",
+        "span_end": "0x006292F7",
+        "current_name": "FUN_006292bc",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x006292BC",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x006209EF",
+      "symbol": "?GetD3DRegValue@@YAHKPADPAXK@Z",
+      "member_offset": 776284,
+      "member": "obj\\i386\\cpudetect.obj",
+      "size": 92,
+      "member_sha256": "904acda956bf017833bc406a715811e877616ab5e1c8719e34456e859f991820",
+      "source_sha256": "41d761ea32a5cfbdedefc6287911eb4a9eb566018431ce81531683ff9c66411a",
+      "body_sha256": "6bed0a11ae90ae395b386f4a3a0b7c9daeaca212689f12d14ad7a9545176ce63",
+      "fields": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_C@_0BM@IHHDGEAJ@Software?2Microsoft?2Direct3D?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 25,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegOpenKeyA@12",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 55,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegQueryValueExA@24",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 66,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegCloseKey@4",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 14,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "??_C@_0BM@IHHDGEAJ@Software?2Microsoft?2Direct3D?$AA@",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0065DE70",
+          "source_base": "0x0065DE70"
+        },
+        {
+          "offset": 25,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegOpenKeyA@12",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657004",
+          "source_base": "0x00657004"
+        },
+        {
+          "offset": 55,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegQueryValueExA@24",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657000",
+          "source_base": "0x00657000"
+        },
+        {
+          "offset": 66,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "__imp__RegCloseKey@4",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x00657008",
+          "source_base": "0x00657008"
+        }
+      ],
+      "indirect_call_count": 3,
+      "function": {
+        "address": "0x006209EF",
+        "size": "92",
+        "span_end": "0x00620A4A",
+        "current_name": "FUN_006209ef",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x006209EF",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x00629081",
+      "symbol": "?x86_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 202,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "bb46f4cbced292b6f81fcea51a3b1f53d5ed500c6cde2391f5c0b88365e1e260",
+      "body_sha256": "2ffa57ddd38a83136ad5953853199ff29b4559016d4c228928cc86906e7d1f5d",
+      "fields": [
+        {
+          "offset": 135,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_invSqrtTab",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 149,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_invSqrtTab",
+          "addend": 4,
+          "local_symbol_offset": null
+        }
+      ],
+      "bindings": [
+        {
+          "offset": 135,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_invSqrtTab",
+          "addend": 0,
+          "local_symbol_offset": null,
+          "target_address": "0x0066D2A0",
+          "source_base": "0x0066D2A0"
+        },
+        {
+          "offset": 149,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "_invSqrtTab",
+          "addend": 4,
+          "local_symbol_offset": null,
+          "target_address": "0x0066D2A4",
+          "source_base": "0x0066D2A0"
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x00629081",
+        "size": "202",
+        "span_end": "0x0062914A",
+        "current_name": "FUN_00629081",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x00629081",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x00628E1B",
+      "symbol": "?x86_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 105,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "f0aedbc843d5238c7e83d1e7469715ac8befb94e989f78280bbfea95da5346ac",
+      "body_sha256": "f0aedbc843d5238c7e83d1e7469715ac8befb94e989f78280bbfea95da5346ac",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x00628EB9",
+      "symbol": "?x86_D3DXVec3Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR3@@PBUD3DXMATRIX@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 139,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "7cb3e78dce201353fae9a1ead4f6393fc05a7b862f199e37b7ed2d7c47de6465",
+      "body_sha256": "7cb3e78dce201353fae9a1ead4f6393fc05a7b862f199e37b7ed2d7c47de6465",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x00628FA3",
+      "symbol": "?x86_D3DXVec4Transform@@YGPAUD3DXVECTOR4@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 153,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "9c8ef8f1b2207d973324d8d7fe2e793cfc3d486a931a5a18ac75cb75817beb9b",
+      "body_sha256": "9c8ef8f1b2207d973324d8d7fe2e793cfc3d486a931a5a18ac75cb75817beb9b",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x0062914B",
+      "symbol": "?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 227,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "7045ca54660b7851e8281e7e4e478343850b97b2f370d8d3b08cfe34e15b2463",
+      "body_sha256": "7045ca54660b7851e8281e7e4e478343850b97b2f370d8d3b08cfe34e15b2463",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0062914B",
+        "size": "227",
+        "span_end": "0x0062922D",
+        "current_name": "FUN_0062914b",
+        "proposed_name": "?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0062914B",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x0062914B",
+        "size": "227",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\d3dxmathx86.obj",
+        "member_offset": "767378",
+        "coff_symbol": "?x86_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "body_sha256": "7045ca54660b7851e8281e7e4e478343850b97b2f370d8d3b08cfe34e15b2463",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R008"
+      }
+    },
+    {
+      "address": "0x0062922E",
+      "symbol": "?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 142,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "c5460c1f7daa2fcc48f2a017531339da74482482dd594d66807efb5872be90d4",
+      "body_sha256": "c5460c1f7daa2fcc48f2a017531339da74482482dd594d66807efb5872be90d4",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0062922E",
+        "size": "142",
+        "span_end": "0x006292BB",
+        "current_name": "FUN_0062922e",
+        "proposed_name": "?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "module": "D3DX8SDK",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R008",
+        "owner": "",
+        "notes": "R008; complete read-only vendor body and reconciled control flow; vendor symbol association, original executable name unknown; origin evidence only, no reconstruction exact credit."
+      },
+      "origin": {
+        "address": "0x0062922E",
+        "origin": "library",
+        "subsystem": "D3DX8SDK",
+        "disposition": "exclude",
+        "confidence": "complete-vendor-body",
+        "evidence_id": "R008"
+      },
+      "old_sdk_record": {
+        "address": "0x0062922E",
+        "size": "142",
+        "library": "d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "member": "obj\\i386\\d3dxmathx86.obj",
+        "member_offset": "767378",
+        "coff_symbol": "?x86_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "body_sha256": "c5460c1f7daa2fcc48f2a017531339da74482482dd594d66807efb5872be90d4",
+        "relocation_count": "0",
+        "extent_basis": "single-function-complete-code-section",
+        "indirect_call_count": "0",
+        "evidence_id": "R008"
+      }
+    },
+    {
+      "address": "0x00628E84",
+      "symbol": "?x86_D3DXVec2TransformNormal@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 53,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "825b455c144e7dd2e779c3c337fd8eecb21543580239e8ced0ab34abb4f2223e",
+      "body_sha256": "825b455c144e7dd2e779c3c337fd8eecb21543580239e8ced0ab34abb4f2223e",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null
+    },
+    {
+      "address": "0x00628F44",
+      "symbol": "?x86_D3DXVec3TransformNormal@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+      "member_offset": 767378,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "size": 95,
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "source_sha256": "b91d66da66baa5048ca7c1f09fd8763ec7e8396094cf465b7eb0811eeae50be9",
+      "body_sha256": "b91d66da66baa5048ca7c1f09fd8763ec7e8396094cf465b7eb0811eeae50be9",
+      "fields": [],
+      "bindings": [],
+      "indirect_call_count": 0,
+      "function": null,
+      "origin": null,
+      "old_sdk_record": null
+    }
+  ],
+  "data": [
+    {
+      "symbol": "_invSqrtTab",
+      "definition": {
+        "symbol": "_invSqrtTab",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 3
+      },
+      "member_offset": 767378,
+      "section": 3,
+      "base": "0x0066D2A0",
+      "size": 4104,
+      "source_sha256": "a88d8eb7cbad491377e76dcfc13993a2e7bc715a1dda044c9658a7ea9d272f2b",
+      "flags": 3225419840,
+      "member": "obj\\i386\\d3dxmathx86.obj",
+      "member_sha256": "d310389042a180b5ab60fa6ea01e8433b59f42c512be4931ee1fc223778a664f",
+      "definitions": [
+        {
+          "symbol": "_a2",
+          "offset": 4100,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_a1",
+          "offset": 4096,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_invSqrtTab",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "body_sha256": "a88d8eb7cbad491377e76dcfc13993a2e7bc715a1dda044c9658a7ea9d272f2b",
+      "writable": true
+    },
+    {
+      "symbol": "??_C@_0BM@IHHDGEAJ@Software?2Microsoft?2Direct3D?$AA@",
+      "definition": {
+        "symbol": "??_C@_0BM@IHHDGEAJ@Software?2Microsoft?2Direct3D?$AA@",
+        "offset": 0,
+        "section": 5,
+        "type": 0,
+        "storage": 2
+      },
+      "member_offset": 776284,
+      "section": 5,
+      "base": "0x0065DE70",
+      "size": 28,
+      "source_sha256": "349e1b8db4d1a8829e548848efedcd9b72a96fdf3fd33e7200c9c4e98f680e95",
+      "flags": 1076891712,
+      "member": "obj\\i386\\cpudetect.obj",
+      "member_sha256": "904acda956bf017833bc406a715811e877616ab5e1c8719e34456e859f991820",
+      "definitions": [
+        {
+          "symbol": "??_C@_0BM@IHHDGEAJ@Software?2Microsoft?2Direct3D?$AA@",
+          "offset": 0,
+          "section": 5,
+          "type": 0,
+          "storage": 2
+        }
+      ],
+      "body_sha256": "349e1b8db4d1a8829e548848efedcd9b72a96fdf3fd33e7200c9c4e98f680e95",
+      "writable": false
+    }
+  ],
+  "imports": [
+    {
+      "symbol": "__imp__RegOpenKeyA@12",
+      "address": "0x00657004",
+      "dll": "ADVAPI32.dll",
+      "name": "RegOpenKeyA"
+    },
+    {
+      "symbol": "__imp__RegQueryValueExA@24",
+      "address": "0x00657000",
+      "dll": "ADVAPI32.dll",
+      "name": "RegQueryValueExA"
+    },
+    {
+      "symbol": "__imp__RegCloseKey@4",
+      "address": "0x00657008",
+      "dll": "ADVAPI32.dll",
+      "name": "RegCloseKey"
+    }
+  ],
+  "carrier": {
+    "base": "0x0066D070",
+    "fields": [
+      {
+        "offset": 0,
+        "symbol": "?init_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061AEEE",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 4,
+        "symbol": "?init_D3DXVec3Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR3@@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B1B8",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 8,
+        "symbol": "?init_D3DXVec4Transform@@YGPAUD3DXVECTOR4@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B7A1",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 12,
+        "symbol": "?init_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "address": "0x0061B930",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 16,
+        "symbol": "?init_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "address": "0x0061BBF9",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 20,
+        "symbol": "?init_D3DXVec2TransformNormal@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061AF14",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 24,
+        "symbol": "?init_D3DXVec3TransformNormal@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B26C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 28,
+        "symbol": "?init_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+        "address": "0x0061AF27",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 32,
+        "symbol": "?init_D3DXVec4Normalize@@YGPAUD3DXVECTOR4@@PAU1@PBU1@@Z",
+        "address": "0x0061B491",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 36,
+        "symbol": "?init_D3DXVec2TransformCoord@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061AF01",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 40,
+        "symbol": "?init_D3DXVec3TransformCoord@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B256",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 44,
+        "symbol": "?init_D3DXMatrixfDeterminant@@YGMPBUD3DXMATRIX@@@Z",
+        "address": "0x0061B853",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 48,
+        "symbol": "?init_D3DXPlaneFromPointNormal@@YGPAUD3DXPLANE@@PAU1@PBUD3DXVECTOR3@@1@Z",
+        "address": "0x0061DE33",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 52,
+        "symbol": "?init_D3DXPlaneFromPoints@@YGPAUD3DXPLANE@@PAU1@PBUD3DXVECTOR3@@11@Z",
+        "address": "0x0061DE7E",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 56,
+        "symbol": "?init_D3DXVec3Project@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBU_D3DVIEWPORT8@@PBUD3DXMATRIX@@33@Z",
+        "address": "0x0061B2E5",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 60,
+        "symbol": "?init_D3DXVec3Unproject@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBU_D3DVIEWPORT8@@PBUD3DXMATRIX@@33@Z",
+        "address": "0x0061B330",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 64,
+        "symbol": "?init_D3DXVec4Cross@@YGPAUD3DXVECTOR4@@PAU1@PBU1@11@Z",
+        "address": "0x0061B347",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 68,
+        "symbol": "?init_D3DXVec2Hermite@@YGPAUD3DXVECTOR2@@PAU1@PBU1@111M@Z",
+        "address": "0x0061ACD9",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 72,
+        "symbol": "?init_D3DXMatrixInverse@@YGPAUD3DXMATRIX@@PAU1@PAMPBU1@@Z",
+        "address": "0x0061BE62",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 76,
+        "symbol": "?init_D3DXQuaternionMultiply@@YGPAUD3DXQUATERNION@@PAU1@PBU1@1@Z",
+        "address": "0x0061D6E1",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 80,
+        "symbol": "?init_D3DXQuaternionNormalize@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D78A",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 84,
+        "symbol": "?init_D3DXPlaneNormalize@@YGPAUD3DXPLANE@@PAU1@PBU1@@Z",
+        "address": "0x0061DCC7",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 88,
+        "symbol": "?init_D3DXPlaneIntersectLine@@YGPAUD3DXVECTOR3@@PAU1@PBUD3DXPLANE@@PBU1@2@Z",
+        "address": "0x0061DD7E",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 92,
+        "symbol": "?init_D3DXQuaternionToAxisAngle@@YGXPBUD3DXQUATERNION@@PAUD3DXVECTOR3@@PAM@Z",
+        "address": "0x0061D35B",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 96,
+        "symbol": "?init_D3DXQuaternionRotationMatrix@@YGPAUD3DXQUATERNION@@PAU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061D40B",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 100,
+        "symbol": "?init_D3DXQuaternionRotationYawPitchRoll@@YGPAUD3DXQUATERNION@@PAU1@MMM@Z",
+        "address": "0x0061D5D4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 104,
+        "symbol": "?init_D3DXMatrixTranslation@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061C38F",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 108,
+        "symbol": "?init_D3DXMatrixShadow@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR4@@PBUD3DXPLANE@@@Z",
+        "address": "0x0061D335",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 112,
+        "symbol": "?init_D3DXMatrixReflect@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXPLANE@@@Z",
+        "address": "0x0061D348",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 116,
+        "symbol": "?init_D3DXQuaternionRotationAxis@@YGPAUD3DXQUATERNION@@PAU1@PBUD3DXVECTOR3@@M@Z",
+        "address": "0x0061D552",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 120,
+        "symbol": "?init_D3DXMatrixRotationX@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C464",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 124,
+        "symbol": "?init_D3DXMatrixRotationY@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C500",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 128,
+        "symbol": "?init_D3DXMatrixRotationZ@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C59D",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 132,
+        "symbol": "?init_D3DXMatrixScaling@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061C2FF",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 136,
+        "symbol": "?init_D3DXPlaneTransform@@YGPAUD3DXPLANE@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061DF33",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 140,
+        "symbol": "?init_D3DXQuaternionSlerp@@YGPAUD3DXQUATERNION@@PAU1@PBU1@1M@Z",
+        "address": "0x0061DA5C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 144,
+        "symbol": "?init_D3DXQuaternionBaryCentric@@YGPAUD3DXQUATERNION@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061DC07",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 148,
+        "symbol": "?init_D3DXMatrixTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@@Z",
+        "address": "0x0061BB79",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 152,
+        "symbol": "?init_D3DXMatrixRotationQuaternion@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXQUATERNION@@@Z",
+        "address": "0x0061C763",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 156,
+        "symbol": "?init_D3DXMatrixTransformation@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR3@@PBUD3DXQUATERNION@@1121@Z",
+        "address": "0x0061C88C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 160,
+        "symbol": "?init_D3DXMatrixRotationYawPitchRoll@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061C858",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 164,
+        "symbol": "?init_D3DXMatrixAffineTransformation@@YGPAUD3DXMATRIX@@PAU1@MPBUD3DXVECTOR3@@PBUD3DXQUATERNION@@1@Z",
+        "address": "0x0061C8BB",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 168,
+        "symbol": "?init_D3DXMatrixRotationAxis@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR3@@M@Z",
+        "address": "0x0061C63B",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 172,
+        "symbol": "?init_D3DXQuaternionSquad@@YGPAUD3DXQUATERNION@@PAU1@PBU1@111M@Z",
+        "address": "0x0061DB69",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 176,
+        "symbol": "?init_D3DXQuaternionInverse@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D856",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 180,
+        "symbol": "?init_D3DXQuaternionSquadSetup@@YGXPAUD3DXQUATERNION@@00PBU1@111@Z",
+        "address": "0x0061DBF0",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 184,
+        "symbol": "?init_D3DXVec2Normalize@@YGPAUD3DXVECTOR2@@PAU1@PBU1@@Z",
+        "address": "0x0061ACC6",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 188,
+        "symbol": "?init_D3DXVec2CatmullRom@@YGPAUD3DXVECTOR2@@PAU1@PBU1@111M@Z",
+        "address": "0x0061AD97",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 192,
+        "symbol": "?init_D3DXVec2BaryCentric@@YGPAUD3DXVECTOR2@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061AE76",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 196,
+        "symbol": "?init_D3DXVec3Hermite@@YGPAUD3DXVECTOR3@@PAU1@PBU1@111M@Z",
+        "address": "0x0061AF44",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 200,
+        "symbol": "?init_D3DXVec3CatmullRom@@YGPAUD3DXVECTOR3@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B022",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 204,
+        "symbol": "?init_D3DXVec3BaryCentric@@YGPAUD3DXVECTOR3@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061B123",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 208,
+        "symbol": "?init_D3DXVec4Hermite@@YGPAUD3DXVECTOR4@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B4A4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 212,
+        "symbol": "?init_D3DXVec4CatmullRom@@YGPAUD3DXVECTOR4@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B5A5",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 216,
+        "symbol": "?init_D3DXVec4BaryCentric@@YGPAUD3DXVECTOR4@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061B6C8",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 232,
+        "symbol": "?c_D3DXVec2Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR2@@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061E1E1",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 236,
+        "symbol": "?c_D3DXVec3Transform@@YGPAUD3DXVECTOR4@@PAU1@PBUD3DXVECTOR3@@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B1CB",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 240,
+        "symbol": "?c_D3DXVec4Transform@@YGPAUD3DXVECTOR4@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B7B4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 244,
+        "symbol": "?c_D3DXMatrixMultiply@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "address": "0x0061B943",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 248,
+        "symbol": "?c_D3DXMatrixMultiplyTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@1@Z",
+        "address": "0x0061BC0C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 252,
+        "symbol": "?c_D3DXVec2TransformNormal@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061E2CC",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 256,
+        "symbol": "?c_D3DXVec3TransformNormal@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061B27F",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 260,
+        "symbol": "?c_D3DXVec3Normalize@@YGPAUD3DXVECTOR3@@PAU1@PBU1@@Z",
+        "address": "0x0061E308",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 264,
+        "symbol": "?c_D3DXVec4Normalize@@YGPAUD3DXVECTOR4@@PAU1@PBU1@@Z",
+        "address": "0x0061E79A",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 268,
+        "symbol": "?c_D3DXVec2TransformCoord@@YGPAUD3DXVECTOR2@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061E24C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 272,
+        "symbol": "?c_D3DXVec3TransformCoord@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061E3A8",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 276,
+        "symbol": "?c_D3DXMatrixfDeterminant@@YGMPBUD3DXMATRIX@@@Z",
+        "address": "0x0061B866",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 280,
+        "symbol": "?c_D3DXPlaneFromPointNormal@@YGPAUD3DXPLANE@@PAU1@PBUD3DXVECTOR3@@1@Z",
+        "address": "0x0061DE46",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 284,
+        "symbol": "?c_D3DXPlaneFromPoints@@YGPAUD3DXPLANE@@PAU1@PBUD3DXVECTOR3@@11@Z",
+        "address": "0x0061DE91",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 288,
+        "symbol": "?c_D3DXVec3Project@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBU_D3DVIEWPORT8@@PBUD3DXMATRIX@@33@Z",
+        "address": "0x0061E467",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 292,
+        "symbol": "?c_D3DXVec3Unproject@@YGPAUD3DXVECTOR3@@PAU1@PBU1@PBU_D3DVIEWPORT8@@PBUD3DXMATRIX@@33@Z",
+        "address": "0x0061E5F4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 296,
+        "symbol": "?c_D3DXVec4Cross@@YGPAUD3DXVECTOR4@@PAU1@PBU1@11@Z",
+        "address": "0x0061B379",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 300,
+        "symbol": "?c_D3DXVec2Hermite@@YGPAUD3DXVECTOR2@@PAU1@PBU1@111M@Z",
+        "address": "0x0061AD09",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 304,
+        "symbol": "?c_D3DXMatrixInverse@@YGPAUD3DXMATRIX@@PAU1@PAMPBU1@@Z",
+        "address": "0x0061BE75",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 308,
+        "symbol": "?c_D3DXQuaternionMultiply@@YGPAUD3DXQUATERNION@@PAU1@PBU1@1@Z",
+        "address": "0x0061D6F4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 312,
+        "symbol": "?c_D3DXQuaternionNormalize@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D79D",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 316,
+        "symbol": "?c_D3DXPlaneNormalize@@YGPAUD3DXPLANE@@PAU1@PBU1@@Z",
+        "address": "0x0061DCDA",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 320,
+        "symbol": "?c_D3DXPlaneIntersectLine@@YGPAUD3DXVECTOR3@@PAU1@PBUD3DXPLANE@@PBU1@2@Z",
+        "address": "0x0061DD91",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 324,
+        "symbol": "?c_D3DXQuaternionToAxisAngle@@YGXPBUD3DXQUATERNION@@PAUD3DXVECTOR3@@PAM@Z",
+        "address": "0x0061D36E",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 328,
+        "symbol": "?c_D3DXQuaternionRotationMatrix@@YGPAUD3DXQUATERNION@@PAU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061D41E",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 332,
+        "symbol": "?c_D3DXQuaternionRotationYawPitchRoll@@YGPAUD3DXQUATERNION@@PAU1@MMM@Z",
+        "address": "0x0061D608",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 336,
+        "symbol": "?c_D3DXMatrixTranslation@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061C3E3",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 340,
+        "symbol": "?c_D3DXMatrixShadow@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR4@@PBUD3DXPLANE@@@Z",
+        "address": "0x0061EB67",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 344,
+        "symbol": "?c_D3DXMatrixReflect@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXPLANE@@@Z",
+        "address": "0x0061EC41",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 348,
+        "symbol": "?c_D3DXQuaternionRotationAxis@@YGPAUD3DXQUATERNION@@PAU1@PBUD3DXVECTOR3@@M@Z",
+        "address": "0x0061D578",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 352,
+        "symbol": "?c_D3DXMatrixRotationX@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C486",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 356,
+        "symbol": "?c_D3DXMatrixRotationY@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C522",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 360,
+        "symbol": "?c_D3DXMatrixRotationZ@@YGPAUD3DXMATRIX@@PAU1@M@Z",
+        "address": "0x0061C5BF",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 364,
+        "symbol": "?c_D3DXMatrixScaling@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061C333",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 368,
+        "symbol": "?c_D3DXPlaneTransform@@YGPAUD3DXPLANE@@PAU1@PBU1@PBUD3DXMATRIX@@@Z",
+        "address": "0x0061DF46",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 372,
+        "symbol": "?c_D3DXQuaternionSlerp@@YGPAUD3DXQUATERNION@@PAU1@PBU1@1M@Z",
+        "address": "0x0061DA86",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 376,
+        "symbol": "?c_D3DXQuaternionBaryCentric@@YGPAUD3DXQUATERNION@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061DC3C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 380,
+        "symbol": "?c_D3DXMatrixTranspose@@YGPAUD3DXMATRIX@@PAU1@PBU1@@Z",
+        "address": "0x0061BB8C",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 384,
+        "symbol": "?c_D3DXMatrixRotationQuaternion@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXQUATERNION@@@Z",
+        "address": "0x0061C776",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 388,
+        "symbol": "?c_D3DXMatrixTransformation@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR3@@PBUD3DXQUATERNION@@1121@Z",
+        "address": "0x0061E8B3",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 392,
+        "symbol": "?c_D3DXMatrixRotationYawPitchRoll@@YGPAUD3DXMATRIX@@PAU1@MMM@Z",
+        "address": "0x0061E87A",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 396,
+        "symbol": "?c_D3DXMatrixAffineTransformation@@YGPAUD3DXMATRIX@@PAU1@MPBUD3DXVECTOR3@@PBUD3DXQUATERNION@@1@Z",
+        "address": "0x0061C90B",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 400,
+        "symbol": "?c_D3DXMatrixRotationAxis@@YGPAUD3DXMATRIX@@PAU1@PBUD3DXVECTOR3@@M@Z",
+        "address": "0x0061C661",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 404,
+        "symbol": "?c_D3DXQuaternionSquad@@YGPAUD3DXQUATERNION@@PAU1@PBU1@111M@Z",
+        "address": "0x0061DB99",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 408,
+        "symbol": "?c_D3DXQuaternionInverse@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D869",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 412,
+        "symbol": "?c_D3DXQuaternionSquadSetup@@YGXPAUD3DXQUATERNION@@00PBU1@111@Z",
+        "address": "0x0061ED00",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 416,
+        "symbol": "?c_D3DXVec2Normalize@@YGPAUD3DXVECTOR2@@PAU1@PBU1@@Z",
+        "address": "0x0061E154",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 420,
+        "symbol": "?c_D3DXVec2CatmullRom@@YGPAUD3DXVECTOR2@@PAU1@PBU1@111M@Z",
+        "address": "0x0061ADC7",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 424,
+        "symbol": "?c_D3DXVec2BaryCentric@@YGPAUD3DXVECTOR2@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061AEAB",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 428,
+        "symbol": "?c_D3DXVec3Hermite@@YGPAUD3DXVECTOR3@@PAU1@PBU1@111M@Z",
+        "address": "0x0061AF74",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 432,
+        "symbol": "?c_D3DXVec3CatmullRom@@YGPAUD3DXVECTOR3@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B052",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 436,
+        "symbol": "?c_D3DXVec3BaryCentric@@YGPAUD3DXVECTOR3@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061B158",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 440,
+        "symbol": "?c_D3DXVec4Hermite@@YGPAUD3DXVECTOR4@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B4D4",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 444,
+        "symbol": "?c_D3DXVec4CatmullRom@@YGPAUD3DXVECTOR4@@PAU1@PBU1@111M@Z",
+        "address": "0x0061B5D5",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 448,
+        "symbol": "?c_D3DXVec4BaryCentric@@YGPAUD3DXVECTOR4@@PAU1@PBU1@11MM@Z",
+        "address": "0x0061B6FD",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 452,
+        "symbol": "?c_D3DXQuaternionLn@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D930",
+        "owners": [
+          684528
+        ]
+      },
+      {
+        "offset": 456,
+        "symbol": "?c_D3DXQuaternionExp@@YGPAUD3DXQUATERNION@@PAU1@PBU1@@Z",
+        "address": "0x0061D9C1",
+        "owners": [
+          684528
+        ]
+      }
+    ],
+    "size": 460,
+    "source_sha256": "7479649f4176c2a256e12d26259cba094d654d57dc58cf51fbe25c14e67c7fd9",
+    "body_sha256": "4d2f14f8295aec9afcbf851a6ea77e07969ad674a75865c9c160567479bfe30a",
+    "member_offset": 684528,
+    "member": "obj\\i386\\d3dxmath.obj",
+    "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+    "section": 3,
+    "flags": 3225419840,
+    "definitions": [
+      {
+        "symbol": "?g_D3DXFastTableC@@3UD3DXFASTTABLE@@A",
+        "offset": 232,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      },
+      {
+        "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      }
+    ],
+    "comparison": "full-original-pointer-context-only-no-unrelated-callee-acceptance"
+  },
+  "cpu_context": {
+    "address": "0x00620C9A",
+    "symbol": "_D3DXCpuOptimizations@4",
+    "member_offset": 776284,
+    "member": "obj\\i386\\cpudetect.obj",
+    "size": 221,
+    "member_sha256": "904acda956bf017833bc406a715811e877616ab5e1c8719e34456e859f991820",
+    "source_sha256": "516f457baa1856dbd7bfd81f74e97d8d082d9bb3a7e4b22e762ab82e230b5d13",
+    "body_sha256": "421b10ebfd3512dbc21615b65c07a52b97c76669f8c3c06617f17fb07b54f478",
+    "fields": [
+      {
+        "offset": 15,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_D3DXFastTableC@@3UD3DXFASTTABLE@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 20,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 26,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 43,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 59,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 68,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 74,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_D3DXFastTableC@@3UD3DXFASTTABLE@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 84,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?x86_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 95,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "??_C@_0BA@MHCFIELB@DisableD3DXPSGP?$AA@",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 102,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?GetD3DRegValue@@YAHKPADPAXK@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 127,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?D3DXIsProcessorFeaturePresent@@YAHI@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 138,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?x3d_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 144,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 153,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?D3DXIsProcessorFeaturePresent@@YAHI@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 164,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?sse2_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 170,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 183,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?D3DXIsProcessorFeaturePresent@@YAHI@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 194,
+        "type_id": 20,
+        "type": "REL32",
+        "symbol": "?sse_D3DXInitFastTable@@YAXPAUD3DXFASTTABLE@@@Z",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 200,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      },
+      {
+        "offset": 211,
+        "type_id": 6,
+        "type": "DIR32",
+        "symbol": "?g_CpuOptimization@@3W4_D3DX_CPU_OPTIMIZATION@@A",
+        "addend": 0,
+        "local_symbol_offset": null
+      }
+    ],
+    "indirect_call_count": 0,
+    "function": {
+      "address": "0x00620C9A",
+      "size": "221",
+      "span_end": "0x00620D76",
+      "current_name": "FUN_00620c9a",
+      "proposed_name": "",
+      "module": "",
+      "status": "unclassified",
+      "match_percent": "0.00",
+      "calling_convention": "",
+      "signature": "",
+      "is_thunk": "false",
+      "source_file": "",
+      "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+      "owner": "",
+      "notes": ""
+    },
+    "origin": {
+      "address": "0x00620C9A",
+      "origin": "unknown",
+      "subsystem": "",
+      "disposition": "review",
+      "confidence": "unknown",
+      "evidence_id": "ghidra-12.1.3-initial-inventory"
+    },
+    "comparison": "unresolved-downstream-source-context-only"
+  },
+  "pending": [
+    {
+      "address": "0x0061AF34",
+      "symbol": "_D3DXVec3Normalize@8",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "size": 6,
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "source_sha256": "bd0bee10431b0cab2da09b874c1ba3d0b02d48351b0d59fc89668e6d1ba1ff52",
+      "body_sha256": "6766db5192d6558f946a73f0235203501f40f7ac84426c2c6ce8276af2393449",
+      "fields": [
+        {
+          "offset": 2,
+          "type_id": 6,
+          "type": "DIR32",
+          "symbol": "?g_D3DXFastTable@@3UD3DXFASTTABLE@@A",
+          "addend": 28,
+          "local_symbol_offset": null
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0061AF34",
+        "size": "6",
+        "span_end": "0x0061AF39",
+        "current_name": "thunk_FUN_0061af27",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "true",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061AF34",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "comparison": "unresolved-runtime-selector-context-only"
+    },
+    {
+      "address": "0x0061CA33",
+      "symbol": "_D3DXMatrixLookAtRH@16",
+      "member_offset": 684528,
+      "member": "obj\\i386\\d3dxmath.obj",
+      "size": 328,
+      "member_sha256": "e1be1ced1b28175c071fd8d6fda60f5b01f8d21158a45224a50d254d4c944358",
+      "source_sha256": "21668d8caa45c2231e8dde7c5cddbff764e01141694d2476e6b7c2a2a39f3dd2",
+      "body_sha256": "7d39345c1f1fe8f22dcfa8dfacdec28156b9d3e784f8b873c9169e1a17c102ab",
+      "fields": [
+        {
+          "offset": 49,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 123,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "_D3DXVec3Normalize@8",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "indirect_call_count": 0,
+      "function": {
+        "address": "0x0061CA33",
+        "size": "328",
+        "span_end": "0x0061CB7A",
+        "current_name": "FUN_0061ca33",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061CA33",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "comparison": "unresolved-runtime-selector-context-only"
+    }
+  ],
+  "retained_sha256": {
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "config/sdk-origin-data.csv": "f17930a2f64106bfff6e8501b3996c68bbbab554dd61521510afc90366ef7c78",
+    "config/sdk-origin-relocations.csv": "ca358d1b40336465dce2ebaa897b7f6f5ec0cc25ba3003d06b5c964625dca669",
+    "config/sdk-interface-origin-evidence.json": "4fb78070d97506d8a9604dd860090cce66bf4e6a67946cfc24e241954df886f4",
+    "config/sdk-destructor-origin-evidence.json": "506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1",
+    "scripts/verify-sdk-interface-origins.py": "57f9ded32b394ddff62911e474b269da98c90152fff9a79c2c0a170059f1464c",
+    "scripts/verify-sdk-destructor-origins.py": "f48e108a3017def56fb2b69b1e54e72a9d6930277a41806ba7d301d45a58168a"
+  }
+}
