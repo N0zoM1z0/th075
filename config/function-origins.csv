@@ -560,7 +560,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00411EA0,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168
 0x00411F20,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168
 0x00411FE0,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
-0x0041206F,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041206F,library,VC71STL,exclude,actual-source-local-list-rollback-and-shared-exit-in-complete-owner,R218
 0x004120C0,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
 0x00412130,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
 0x00412170,library,VC7STL,exclude,complete-vc7-list-dependency-with-whole-parent-source-eh-graph,R167
@@ -571,7 +571,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00412200,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168
 0x00412220,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x00412240,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168
-0x004122C9,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004122C9,library,VC71STL,exclude,actual-source-local-list-rollback-and-shared-exit-in-complete-owner,R218
 0x00412300,library,VC7STL,exclude,complete-vc7-deque-leaf-whole-parent-eh-protocol-and-ordinary-alternative-provenance,R160
 0x00412310,library,VC7STL,exclude,complete-vc7-list-iterator-with-whole-game-parents-and-closed-source-eh-graph,R168
 0x00412390,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -912,7 +912,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0041EF20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041EF40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0041EF60,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
-0x0041EFE6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0041EFE6,library,VC71STL,exclude,actual-source-local-list-rollback-and-shared-exit-in-complete-owner,R218
 0x0041F020,library,VC7STL,exclude,complete-vc7-archive-list-with-whole-game-parents-and-closed-source-eh-graph,R169
 0x0041F0A0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0041F0E0,library,vc7-stl-deque-helpers,exclude,high,R087
@@ -2309,7 +2309,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x005320D0,library,VC7STL,exclude,complete-source-family-peer,R106
 0x005320F0,library,VC7STL,exclude,complete-vc7-list-cleanup-graph-and-whole-explicit-game-policy,R175
 0x00532110,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
-0x00532196,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00532196,library,VC71STL,exclude,actual-source-local-list-rollback-and-shared-exit-in-complete-owner,R218
 0x005321D0,library,VC7STL,exclude,complete-vc7-character-list-with-whole-game-parent-and-closed-source-eh-graph,R170
 0x00532250,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x00532290,library,vc7-stl-deque-helpers,exclude,high,R087

@@ -13638,3 +13638,68 @@ Public/Web MCP acceptance remains waived. Current4143 resolved =964 authored
 has1103 classified /208 left and remains active. Authored denominator1,970,691;
 exact stays60 functions /9883 bytes /60 units across eleven objects, provisional
 coverage0.50%. No reconstruction source/private ABI/mapping/exact credit is added.
+
+## R218 — actual source-owned list recovery interiors
+
+R218 resolves four library inventory entries /236 ledger bytes: head recovery
+41206F /80 in unchanged list Buynode411FE0 /223; value-node recoveries4122C9 /52,
+41EFE6 /52 and532196 /52 in unchanged owners412240 /189,41EF60 /186 and532110 /186.
+These are actual source-owned interiors, not independent source functions. Existing
+parents already cover every byte; no extra unique source byte or exact credit is
+added. All four child extents and all parent extents remain unchanged.
+
+Four real storage-class-3/type-32 local catch definitions lie at source offsets
+143,137,134,134. Complete EH data at668194 /80,6681E4 /88,668690 /88 and669E5C /88
+has actual DIR32 fields at28,36,36,36 referring to those same actual symbol indices,
+source sections and offsets. Source ownership does not derive from a native
+pointer destination or a mapped function name. Full normal/recovery roots [0,143],
+[0,137],[0,134],[0,134] retain all76/63/63/63 reachable instructions and real exits.
+All four source parents retain their own complete primary function AUX lengths.
+
+Head rollback tests the link construction count, gets the first link, destroys
+it conditionally, deallocates the one node and rethrows at recovery offset48.
+Normal jump at parent offset141 reaches shared exit4120A4, recovery offset53.
+The whole80-byte interior restores the exception frame and returns with RET0.
+Each52-byte value rollback deallocates one node through its actual allocator at
+recovery offset9, rethrows at18 and shares the state reset/normal exit at23.
+Actual shared exits are4122E0,41EFFD and5321AD. Complete epilogues end in RET12.
+Do not truncate at rethrow, detach the common exit or classify these mixed
+source/compiler paths as independent compiler-only entries.
+
+Cold replay rebuilds the original public R167,R168,R169 and R216 probes separately
+and serially, using their exact original flags/includes and full ordinary outputs.
+Four scoped complete dependency closures own40 whole code/data sections /1866,
+all85 actual fields and36 complete normal/catch/cleanup/handler CFGs. Available
+allocation, node construction/copy, placement allocation/cleanup, deallocation,
+full10-/27-byte EH sections and entire80-/88-byte state sections are linked from
+actual source definitions; every field and every unmasked byte compares. Full767
+ordinary emissions /34542, original include counts30/31/32/28 and complete layouts
+56/76/88/16 are frozen. Generic payload widths164/108/16 and nodes172/116/24 are
+observations, not original element/private owner declarations. Four original
+R020 EH registrations remain unchanged and retain their actual source field.
+Shared tools remain read-only; compiler3077 flags are reproducibility settings.
+
+The unchanged external checkpoint/source catalog is checked through scoped R216
+native/original CRT-source proof. No unrelated full cold proof tree is claimed.
+Structured audit retains63 literal paired historical unknown snapshots; old
+annotations/decisions are historical and remain immutable. New acceptance is
+recorded separately. The three unknown shapes reached by these closures—411E80
+/8,411E90 /11 and412600 /5—retain their getter/intrusive-link or empty-destruction
+alternatives. Other tiny getters, empty bodies and protected lifetime/math
+ambiguities likewise receive no origin from this source closure. Alignment1/3/6/6
+stays outside the existing parents. Next full accepted owners4120C0 /100,412300 /5,
+41F020 /126 and5321D0 /126 retain their complete native bodies and canonical rows.
+
+Replay `scripts/repo-python scripts/verify-list-recovery-origins.py`.
+Manifest `config/list-recovery-origin-evidence.json` SHA-256:
+`51cf1923801853c8952f25135a57d198b65e49c896a3e90da892c40f077988bf`. Both original-state and accepted-state complete scoped cold
+replays pass. All3063 CI tests pass, including17 new source-local/EH/whole-extent/
+shared-exit/return/inventory/ambiguity guards. Earlier902 general authored bodies
+/1956112, target/tracking, project/query completion markers, exact preservation,
+bounded readback, coherent fresh204 triage, progress and whitespace pass. Exactly
+four canonical function/origin rows change; no prior configuration/evidence,
+authored/source/header/ABI/mapping/exact input changes. Public/Web MCP acceptance
+remains waived. Current4147 resolved =964 authored+2603 library+580 compiler;
+204 pending and3183 excluded. Original1311 goal has1107 classified /204 left and
+remains active. Authored denominator1,970,691; exact60 functions /9883 bytes /
+60 units across eleven objects and provisional0.50% remain unchanged.

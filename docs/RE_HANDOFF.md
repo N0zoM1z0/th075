@@ -1,8 +1,8 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
+Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R217. The public
+review cohorts R108 through R218. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,143: 964 authored, 2,599 library and 580 compiler generated.
-There are 208 pending. Candidate count is not authored function count.
+has resolved 4,147: 964 authored, 2,603 library and 580 compiler generated.
+There are 204 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,72 +20,86 @@ bytes is 9,883 / 1,970,691 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R218 source-owned list recovery cohort below.
+the bounded R219 original string exception-helper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R217; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R218; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R218 source-owned list recovery cohort
+## Next agent objective — R219 original string exception helpers
 
-R217 accepts authored polar-velocity40FB70 /57, with unchanged extent and actual
-RET8. Full original game lookup/phase composition, x87 multiplication/negation,
-and float stores at receiver+50/+54 are frozen. Two complete independent game
-parents4F4170 /855 and4A80F0 /3935 retain all six actual two-float argument and
-receiver sequences, signed-word input observations and full guarded CFGs [1,26]
-and[1,117]. No original name/private layout or instantiated owner is established.
-Original numeric types/outcomes remain unknown. Seven CC alignment40FBA9–40FBAF
-is excluded; next whole overlap-policy40FBB0 /158 stays accepted.
+R218 resolves four library recovery interiors /236 ledger bytes:41206F /80 in
+complete accepted head411FE0 /223,4122C9 /52 in value owner412240 /189,41EFE6 /52
+in archive owner41EF60 /186 and532196 /52 in character owner532110 /186. Every
+child/parent extent stays unchanged. Interiors add no unique source or exact bytes.
+Actual storage-class-3/type-32 definitions at parent offsets143/137/134/134 and
+entire EH80/88/88/88 fields28/36/36/36 establish source-local ownership. Full
+normal/recovery CFGs, complete AUX, link rollback, deallocation/rethrow/shared
+exits and actual RET0/RET12 are frozen. Head shared exit4120A4 is recovery+53;
+value shared exits4122E0/41EFFD/5321AD are recovery+23. Never stop at rethrow or
+assign these mixed source/compiler paths to independent compiler-only functions.
 
-Replay `scripts/repo-python scripts/verify-polar-velocity-origins.py`;
-manifest SHA `2ff12ea5f76cf08ee66b4b5a19a4f8ddf286577c0d85e647b05236728b922310`. Six entire authored contexts5122,
-full cosine source owner174/actual interior C-entry20+9, complete conversion117,
-nine readonly observed scalars48 and used writable virtual table14400 are verified.
-Actual abs-shaped helper641DAA /11 remains unknown with original vendor/ordinary
-alternatives. Earlier math and source evidence stay immutable; no unrelated cold
-tree is newly claimed. All3046 CI tests pass, including14 new guards; both complete
-native/source-archive states,902 earlier authored bodies, target, project/query,
-exact preservation, bounded readback, fresh208 triage, progress and whitespace pass.
-Public/Web MCP acceptance remains waived. Current4143 resolved =964 authored+
-2599 library+580 compiler;208 pending and3179 excluded. The original1311 goal
-has1103 classified /208 left and remains active. Exact60 /9883 bytes /60 units/
-eleven objects; authored denominator1,970,691 and provisional0.50%. The user's
-push succeeded through f8e9b79; later commits remain local unless pushed separately.
+Replay `scripts/repo-python scripts/verify-list-recovery-origins.py`;
+manifest SHA `51cf1923801853c8952f25135a57d198b65e49c896a3e90da892c40f077988bf`. Four fresh original R167/R168/
+R169/R216 cold probes retain full767 ordinary emissions34542, original include
+counts30/31/32/28 and complete layouts56/76/88/16. Scoped source closures:40 whole
+code/data owners1866/all85 actual fields/36 full normal/catch/cleanup/handler CFGs,
+with four actual original R020 frame registrations. Existing scoped external
+native/CRT-source catalog is verified; unrelated cold trees are not newly claimed.
+Generic value/node widths do not identify original private elements or layouts.
+All63 literal historical unknown snapshots remain immutable; R218 acceptance is
+separate evidence. Getters411E80 /8,411E90 /11 and empty destroy412600 /5 remain
+unknown, as do all other protected leaf/lifetime/math alternatives. Alignment1/3/
+6/6 stays outside parent extents; next full owners100/5/126/126 preserve prior rows.
 
-Next reconcile four still-unknown list recovery interiors /236 ledger bytes:
+All3063 CI tests pass, including17 new guards; both complete scoped cold states,
+902 earlier authored bodies, target, project/query markers, exact preservation,
+bounded readback, coherent fresh204 triage, progress and whitespace pass. Public/
+Web MCP acceptance remains waived. Current4147 resolved =964 authored+2603 library+
+580 compiler;204 pending and3183 excluded. Original1311 goal has1107 classified /
+204 left and remains active. Exact60 /9883 bytes /60 units across eleven objects;
+authored bytes1,970,691 and provisional0.50%. The user's push succeeded through
+f8e9b79; subsequent commits remain local unless separately pushed.
 
-| Candidate | Bytes | Complete accepted source owner |
+Next reconcile two original string exception-helper candidates:
+
+| Candidate | Provisional bytes | Source evidence to reconcile |
 | --- | ---: | --- |
-| `0x0041206F` |80| head Buynode411FE0 /223; actual local catch+143 and complete EH80 at668194 documented by R167 |
-| `0x004122C9` |52| value-node Buynode412240 /189; preserve original R168 node construction and recovery evidence |
-| `0x0041EFE6` |52| value-node Buynode41EF60 /186; original R169 archive-node family |
-| `0x00532196` |52| value-node Buynode532110 /186; original R170 character-list family and fresh R216 natural graph |
+| `0x00654ACE` |64| `_String_base::_Xran` whole vendor definition; eight actual COFF fields; actual terminal throw and EH cleanup need complete source-owned proof |
+| `0x00654B0E` |64| `_String_base::_Xlen` whole vendor definition; eight actual COFF fields; original string/length_error context and full throw metadata need closure |
 
-These inventory entries are fully contained in their existing library owners.
-Containment alone is not acceptance. Reopen the original full source controls,
-actual local COFF definitions and every full EH field, distinguish mixed source
-rollback/shared exit from compiler-only labels, and replay the complete normal/
-EH/shared-exit parents unmasked. R216 provides the method for head rollback/shared
-exit531FBF /80. Freeze every existing owner extent and ledger/evidence record;
-accept an interior only through its own complete source parent's actual definition
-and metadata. Interiors earn no new unique source bytes or exact credit. Audit
-literal historical paired unknown snapshots; retain old annotations rather than
-rewriting prior evidence. Tiny link getters and empty destruction alternatives
-still remain unknown, regardless of these source closures.
+Private `.analysis/r219-string-preliminary.json` locates both definitions in
+original `libcpmt.lib` mt string.obj and `libcp.lib` st string.obj. Both whole source
+sections and actual primary AUX extents are64. Diagnostic comparisons currently
+find zero differences outside eight relocation fields in each source. This is
+only structural evidence and grants no origin/exact acceptance. Do not infer the
+original multithreaded/single-threaded archive choice or compiler profile from
+these equivalent sections. Original archive/member hashes and actual positive
+source definitions must be frozen before use. Reconcile every field, complete
+literals/type/throw/EH data, actual weak/fallback or cleanup entries and normal/
+nonreturn flow. The ordinary authored-throw alternative must be considered in
+context; a public class name or old external snapshot alone establishes no origin.
 
-Fresh `.analysis/origin-scan/r217-triage.json` records208 pending. Use the complete
-R167/R168/R169/R170 and R216 manifests as evidence locations, not automatic claims.
-All four source owners are already accepted and need no extent revision. Continue
-the complete remaining-origin goal after this bounded cohort; no later phase or
-exact expansion is authorized. Preserve R18341CA30 /77, R212455770 /111, all math
-abs helpers, generic getter alternatives and R196/R201 lifetime ambiguities until
-new distinguishing evidence changes the review.
+The older scanner marks these64-byte candidates as lacking final RET; verify the
+actual terminal nonreturn operation from original source/metadata and control
+flow rather than adding a fake return, cropping the extent or assuming any call
+named throw cannot return. Preserve every existing std::string parent, real EH
+prolog/runtime/callee record and prior library/compiler decision. Use bounded
+actual callers and full original source parents to distinguish declaration
+identity and unsupported short source alternatives. Keep names/private layouts
+provisional. No reconstructed source/private ABI/mapping/exact credit is authorized.
+
+Fresh `.analysis/origin-scan/r218-triage.json` records204 remaining candidates.
+Continue the full remaining-origin goal after this bounded task. Preserve prior
+R18341CA30 /77,R212455770 /111, abs helpers, generic getters and R196/R201 lifetime
+ambiguities until new distinguishing evidence changes them. Later phases and
+exact expansion remain deferred.
 
 ## R165 checkpoint and the completed R166 shortlist
 
