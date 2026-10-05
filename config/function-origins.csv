@@ -3163,10 +3163,10 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00620A4B,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00620A70,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00620B09,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x00620B41,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00620B7B,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00620B87,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00620BE6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00620B41,library,D3DX8,exclude,whole-pinned-sdk-cpu-parent-with-complete-eh-source-abi,R190
+0x00620B7B,compiler,VC7EH,exclude,generated-catch-return-entry-in-complete-sdk-cpu-parent,R190
+0x00620B87,library,D3DX8,exclude,continuation-in-complete-sdk-cpu-parent,R190
+0x00620BE6,library,D3DX8,exclude,whole-pinned-sdk-feature-policy-with-closed-cpu-eh-and-imports,R190
 0x00620C9A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00620D77,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00620E05,library,D3DX8SDK,exclude,complete-vendor-body,R009

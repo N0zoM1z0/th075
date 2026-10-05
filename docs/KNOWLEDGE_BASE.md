@@ -8479,3 +8479,85 @@ parent/label topology and both actual PE imports are proven. Do not accept
 the convenient 58-byte prefix or reinterpret catch/resume entries as unrelated
 authored functions. The 221-byte CPU optimizer and public math callers remain
 unchanged and unknown in R188's immutable context snapshots.
+
+## R190 — whole CPU parent, subordinate catch/resume entries and source ABI
+
+R190 resolves four inventory entries: three library decisions and one compiler
+decision. There are two complete library functions / 345 bytes; the catch12
+and continuation95 are overlapping subordinate entries, not two additional
+independent functions. The primary at `0x00620B41` changes from an incomplete
+58-byte inventory prefix to its independently derived complete 165-byte COMDAT.
+Only that primary extent changes; all other canonical extents remain unchanged.
+
+| Entry | Accepted span | Origin and source relationship |
+| --- | ---: | --- |
+| `0x00620B41` | 165 | Library IsIntelSSEProcessor, complete original source parent |
+| `0x00620B7B` | 12 | Compiler catch-return/resume entry inside that parent |
+| `0x00620B87` | 95 | Library parent continuation, including catch resume at +76 |
+| `0x00620BE6` | 180 | Library D3DXIsProcessorFeaturePresent, complete feature policy |
+
+**Target and original-source observations.** The actual archive member is
+`obj\i386\cpudetect.obj`, offset 776284. The previous handoff's d3dxinit.obj
+label for this cohort was incorrect; actual COFF ownership supplies the name
+here. The parent has one real type32/storage3 definition at section14 offset0,
+the actual catch `$L48085` at +58 and resume `$L48087` at +76, both type0/storage6.
+The normal prefix jumps to +70. All instructions are accounted for from the
+independent normal, catch and resume roots; the complete parent ends at its
+final RET at `0x00620BE5`. The whole source165 and caller180 compare unmasked
+with every genuine field. The caller's two actual Intel-parent calls and its
+retained complete isX3Dprocessor56 owner remain distinct.
+
+The complete readonly `GenuineIntel` source literal is 13 bytes. The parent
+copies all 13 bytes locally, but contains no vendor-string comparison: the
+source name/literal does not establish an Intel-only predicate. It executes
+CPUID leaf0, guards leaf availability, then tests leaf1 EDX bits 0x02000000
+and 0x04000000 to set return bits4/8. The catch transfers the saved return
+value to a temporary and returns the actual resume address in EAX. The explicit
+fault-return policy remains part of the SDK parent; generated entry ownership
+does not establish a second authored/library function.
+
+The entire separate .text$x helper10 at `0x00656CC6` is an actual source
+type0/storage6 label, not an invented standalone function/AUX extent. It binds
+FuncInfo at `0x0066A94C` and tail-jumps to the retained CxxFrameHandler54.
+All 80 bytes of .xdata$x compare without masking: UnwindMap16, HandlerType16,
+TryBlockMap20 and FuncInfo28 retain both state entries, catch-all handler,
+try/catch state ranges, magic 0x19930520 and all four source-local pointers.
+The zero FS:[0] displacement binds the genuine `__except_list` absolute
+section-1/value0 definition in pinned CRT exsup.obj; it is not a fabricated
+undefined or PE-data symbol. The retained __EH_prolog31 stays compiler-owned;
+CxxFrameHandler54 and InternalCxxFrameHandler162 stay library-owned, with
+their complete old source/body/real-field evidence reopened unchanged.
+
+GetVersionExA and IsProcessorFeaturePresent are independently parsed from the
+actual KERNEL32 IAT at `0x00657090` and `0x006570C0`. The full old-Windows caller
+policy uses feature selectors6/7/10, OSVERSIONINFOA148 and the actual major,
+minor, build and platform offsets4/8/12/16. Its build threshold compares the
+low 16-bit build field against 1373; this is observed historical policy.
+
+**Compiler observations and inference.** Natural C++ saved-flag and fixed-zero
+catch-return controls cold-build with `/O1 /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes`.
+All seven ordinary emitted code/EH/data sections / 328 bytes, all actual fields
+and definitions, 85 actual included header hashes, and the complete 36-byte
+feature/layout observer are retained. Both controls emit a six-byte generated
+catch that returns a resume address; their distinct explicit return policies
+appear at the respective resume labels. This supports the generated ABI role
+of the original anonymous catch entry. It does not byte-match that twelve-byte
+entry or establish the original SDK compiler profile. Complete ordinary code
+and metadata are retained rather than selecting an equal fragment.
+
+**Acceptance and limits.** Replay
+`scripts/repo-python scripts/verify-sdk-cpu-eh-origins.py`; manifest SHA
+`9eaa1c1ae5d532e9982f9b582cb77b4f2a98839f5bd88eae078674576e54433c`.
+The five full original source sections / 448 bytes retain all16 real fields.
+Exactly four function/origin rows change from d004662. The complete 902 authored
+bodies / 1956112 bytes and every earlier configuration evidence file remain
+unchanged. Twenty new adversarial checks reject incomplete prefixes, hidden
+entries, fake absolute symbols, incorrect catch/resume bindings, truncated EH,
+changed prior compiler ownership and duplicate/source/ABI/exact credit.
+
+Origin totals are 3679 resolved: 949 authored, 2154 library, 576 compiler;
+672 pending and 2730 excluded. The 60 exact/source-present functions, 9883
+bytes, 60 units and eleven object inputs remain unchanged. Public MCP
+acceptance remains waived. Original private game layouts, the actual original
+compiler profile and later CPU/public dispatch candidates remain unknown.
+Both the full-origin and 50%-exact milestones remain unfinished.
