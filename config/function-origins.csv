@@ -3249,7 +3249,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00625575,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00625583,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x006255A0,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R185
-0x006255C6,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006255C6,library,D3DX8,exclude,whole-original-sdk-png-pointer-destruction-policy-with-full-lifetime-alternatives-and-independent-source-fields,R204
 0x006255EC,library,D3DX8SDK,exclude,complete-vendor-body,R010
 0x00625638,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x006256B6,library,D3DX8SDK,exclude,complete-vendor-body,R008

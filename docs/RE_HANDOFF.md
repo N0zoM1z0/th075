@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R203. The public
+review cohorts R108 through R204. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,046: 949 authored, 2,519 library and 578 compiler generated.
-There are 305 pending. Candidate count is not authored function count.
+has resolved 4,047: 949 authored, 2,520 library and 578 compiler generated.
+There are 304 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,72 +20,77 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R204 SDK lifetime/PNG ownership cohort below.
+the bounded R205 vector access and iterator cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R203; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R204; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R204 SDK lifetime/PNG ownership alternatives
+## Next agent objective — R205 bounded vector access and iterator context
 
-R203 accepts six complete library policies / 2807 bytes, with no extent changes.
-Replay `scripts/repo-python scripts/verify-sdk-png-packed-origins.py`; manifest
-SHA `c3112e66bfce14d918e18c666ba26220ee70bae92b79875fa02f8ffbbb13d532`.
-Fourteen complete sections / 3056 retain all 72 fields, six full CFGs and twenty
-whole retained anchors / 3376 bytes with 161 fields. The entire writable
-coefficient bank / 48 and BSS / 8 retain source-static member/section/index
-ownership and initial state; do not infer runtime constants from their labels.
-Keep all readonly carriers, including the whole 121-byte PNG label bank.
+R204 reviews six SDK roots / 503 and accepts the whole 38-byte PNG destruction
+policy at `0x006255C6`. Five original lifetime roots / 465 and the 19-byte base
+codec destructor stay unknown: complete original archive/class association does
+not settle explicit versus implicit outer lifetime generation. Replay
+`scripts/repo-python scripts/verify-sdk-lifetime-alternatives-origins.py`;
+manifest SHA
+`551ee19c54232b82c06f5c261470dd1b0dc22069a895026c2e108aa2b68b0162`.
 
-Both complete packed kernels / 302 and 316 contain no EMMS. Legacy has two
-source-static _const_invert references at offset 40. Do not insert a reset or
-crop either body. Six cold original COFF pointer-only forwarders and six
-independent complete intrinsic alternatives / 359 bytes retain all thirteen
-ordinary sections, two original public headers and the whole scalar layout / 24.
-Opaque PNG pointers and neutral conversion arguments do not declare private
-layouts or parameter meanings. png_read_rows preserves unsigned long COFF K.
+Seventeen whole source sections / 762 retain all 54 actual fields, twelve full
+CFGs, seventeen complete anchors / 3098 with 70 fields, two prior complete
+render-interface vtables / 88 and three real weak vector-to-scalar deleting
+fallbacks. Full 18-byte EH carriers retain unchanged eight-byte R022 unwind
+rows. Original 28-byte R038 wrapper rows stay compiler-owned; the YUV wrapper
+has no inventory entry and receives no function credit.
 
-All 2666 CI tests pass, including 32 new provenance guards. Original/accepted
-complete replays, full R202 regression, R199's direct whole graph and its own
-cold controls, prior-snapshot audit, canonical readback, local target/project/
-query attestations, authored/exact guards, 305-pending triage, progress and
-whitespace pass. Unchanged recursive R199 prerequisite cold trees were not
-rerun. Public MCP acceptance remains waived. Original goal progress is
-1006 resolved / 305 left, out of 1311. Exact remains 60 functions / 9883 bytes /
-60 units across eleven objects; complete origin review remains active.
+Three complete generic explicit/implicit outer-owner pairs cold-emit equal
+23-/10-/21-byte unlinked bodies. The constructor's actual vtable field symbols
+remain distinct; no fields are masked or generic controls mapped to private
+owners. All 27 ordinary sections / 470, 24 complete emitted functions / 430,
+eight original public headers, two generic vtables and full generic layout / 32
+remain. Direct/conditional cleanup is not alone proof of an explicit outer
+SDK destructor. Preserve all six unknown alternatives / 484 and original
+member/layout unknowns; the controls do not reproduce complete target policies.
 
-The next bounded six-candidate cohort / 503 provisional bytes remains unknown.
-Fresh original COMDAT discovery confirms these complete source lengths and
-all 24 field locations; observed native field values are diagnostic, not an
-independent source catalog or acceptance evidence:
+Original/accepted full replay, full R203 regression, actual transition's prior
+snapshot audit, canonical readback, target/project/query attestations, authored/
+exact guards, 304-pending triage, progress and whitespace pass. All 2696 CI tests
+pass, including 30 new evidence guards. Earlier manifests and verifiers remain
+unchanged. Public MCP acceptance stays waived. The original 1311 goal has
+1007 resolved / 304 left and remains active. Exact remains 60 functions /
+9883 bytes / 60 units across eleven objects.
 
-| Candidate | Whole source bytes | Original survey symbol | SDK member |
-| --- | ---: | --- | ---: |
-| `0x00609F58` | 39 | CD3DXRenderToSurface constructor | 393840 |
-| `0x0060B728` | 104 | CD3DXRenderToEnvMap constructor | 400146 |
-| `0x0061572C` | 160 | CD3DXCodecDXT destructor | 1376096 |
-| `0x0061A453` | 73 | CD3DXCodecYUV destructor | 1376096 |
-| `0x0060EBCD` | 89 | CD3DXImage destructor | 1516190 |
-| `0x006255C6` | 38 | D3DX::png_destroy_info_struct | 1815914 |
+The next bounded six-candidate cohort / 318 provisional bytes remains unknown.
+The fresh `.analysis/r205-vector-at-shortlist.json` contains all native
+instructions, complete scanner CFG diagnostics, actual callees and game caller
+contexts. Four 70-byte parents share a size/bounds-error/begin/iterator-add/
+dereference sequence; the two 19-byte helpers call actual separate dependencies.
+Shape and reviewed callees do not grant ownership:
 
-Private `.analysis/r204-root-discovery.json` preserves full diagnostic source
-metadata and fields, not accepted origins. Reopen actual complete code/data/
-vtable owners, member-scoped static identities, every genuine field, independent
-anchors and full normal/EH/indirect exits. A constructor/destructor-shaped body
-or mapped name alone gives no origin; distinguish game lifetime policy from
-an original SDK owner through independent source provenance and callers.
-Retain the separate R201/R200/R199/R198/R195 and earlier protected alternatives
-unless new complete evidence resolves their actual ownership. Never instantiate
-an incomplete owner, invent a private layout, or replace full comparisons with
-masked source fingerprints. No exact expansion or later project phase is
-authorized. Continue reviewing every remaining candidate after this bounded
-cohort; this checkpoint does not complete the goal.
+| Candidate | Provisional bytes | Actual context to reopen |
+| --- | ---: | --- |
+| `0x004093E0` | 70 | SoundBank load/play; size 4093A0, bounds error 4098D0, begin 409760, iterator add 409DA0, helper 409D80 |
+| `0x00442060` | 70 | BattleHud/FighterBase; size 442120, bounds error 442160, begin 442100, iterator add 4422A0, helper 442280 |
+| `0x004420B0` | 70 | BattleHud/character dispatch; size 4421E0, bounds error 442220, begin 4421C0, iterator add 4422F0, helper 4422D0 |
+| `0x00445310` | 70 | BattleCombat hitbox/body contact; size 4452D0, bounds error 445490, begin 445470, iterator add 445620, helper 445600 |
+| `0x00409D80` | 19 | Whole root 4093E0 and actual helper 40A160 |
+| `0x00442280` | 19 | Whole root 442060 and actual helper 442360 |
+
+Cold-build natural original public VC7.1 template alternatives and retain full
+ordinary emissions, actual included headers, all original fields and independently
+reviewed owners. Reopen complete parent extents, branch/return exits and related
+callee policies; do not populate provenance from native call destinations.
+Actual target element types and complete private owners remain unknown; generic
+probe element shapes must not become private target declarations. Source bodies
+and semantic choices, not mapped names or source fingerprints, determine origin.
+Continue every remaining review after this cohort. No exact expansion or later
+project phase is authorized, and this checkpoint does not complete the goal.
 
 ## R165 checkpoint and the completed R166 shortlist
 

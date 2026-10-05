@@ -12602,3 +12602,87 @@ and 3097 excluded. Exact remains 60 functions / 9883 bytes / 60 units across
 the full origin-review goal remains active. R204 next revisits the bounded six
 SDK lifetime/PNG ownership alternatives documented in the handoff, preserving
 unknown origin until whole source and independent ownership evidence suffice.
+
+## R204 — whole PNG destruction and explicit/implicit SDK lifetime alternatives
+
+R204 reviews all six SDK roots / 503 bytes. It accepts the entire 38-byte
+D3DX::png_destroy_info_struct at `0x006255C6` as library policy and preserves
+five lifetime roots / 465 bytes as unknown. The independently reopened 19-byte
+base codec destructor also stays unknown. Replay
+`scripts/repo-python scripts/verify-sdk-lifetime-alternatives-origins.py`;
+`config/sdk-lifetime-alternatives-origin-evidence.json` SHA-256 is
+`551ee19c54232b82c06f5c261470dd1b0dc22069a895026c2e108aa2b68b0162`.
+No extent, reconstructed source, canonical ABI, mapping or exact state changes.
+
+**Complete original source.** Seventeen whole sections / 762 bytes retain
+12 code carriers / 642 and five data carriers / 120, all 54 actual fields and
+12 full normal/EH CFGs. Every field binds through actual independently owned
+original definitions and complete unmasked source/native comparison. Three
+whole codec vtables / 48 and two EH data carriers / 72 remain source-scoped.
+Two prior render-interface vtables / 88 retain literal accepted records.
+Seventeen complete anchors / 3098 bytes and 70 fields reopen their original
+SDK/CRT source and all prior bindings. The original absolute CRT __except_list
+is independently retained; native FS zero storage is not a fabricated owner.
+
+Three actual codec vector-deleting weak references reopen their COFF AUX
+fallbacks to complete scalar-deleting source sections / 28 each. The R038 DXT
+and base wrappers stay compiler-owned with unchanged canonical rows; the YUV
+wrapper at `0x0061AC28` has no inventory candidate and earns no function credit.
+Two full 18-byte EH code carriers retain complete cleanup and handler roots;
+existing eight-byte R022 unwind rows remain unchanged. No source tail is cropped
+at a first return or matched against a convenient shorter ledger span.
+
+The accepted PNG policy guards both the info pointer-to-pointer and its value,
+clears sixteen DWORDs, calls the independently owned whole png_destroy_struct
+and resets the caller's pointer. The 64-byte clearing observation does not
+establish a complete private png_info_struct layout. Its original mangled free
+function signature is observed by a cold opaque-pointer five-byte JMP forwarder;
+no PNG owner is instantiated or embedded.
+
+**Evidence that preserves unknown origin.** Complete original source ownership
+identifies the SDK class association, but a constructor/destructor symbol does
+not establish explicit source policy versus compiler-generated outer lifetime
+machinery. `SdkLifetimeAlternatives.cpp` supplies three independent generic
+explicit/implicit outer-owner pairs. Original VC7.1 cold compilation emits
+23-byte constructors with identical complete unlinked bodies but different real
+owning-vtable symbols, and 10-/21-byte direct/conditional cleanup destructors
+with identical whole bodies and actual operator-delete fields. No fields are
+masked or cropped, and these generic bodies are never mapped to native owners.
+The implicit alternatives contain independently defined member policies; their
+outer constructor/destructor is implicit. Cleanup calls and conditional stores
+therefore do not alone prove an explicit outer SDK lifetime body.
+
+The target DXT nested cleanup loop, YUV Commit call, image recursive cleanup
+and render initialization stores remain full target/source observations.
+These generic controls do not reproduce those complete target policies or
+prove a particular implicit implementation. Original C++ member declarations
+and the corresponding outer lifetime source remain unknown. The five root
+lifetimes and base codec destructor retain their canonical unknown rows; the
+full six alternatives / 484 bytes and reasons are frozen for later evidence.
+Do not infer that original SDK archive ownership settles the library/compiler
+boundary, or repeatedly accept the same bodies from their mapped names.
+
+All 27 ordinary cold sections / 470 bytes retain 24 complete emitted functions /
+430, two complete generic vtables / 8, eight original public headers and the
+full generic layout observation / 32. Placement-new helpers, implicit member
+functions and generated deleting wrappers remain in the emission. Probe owners
+are generic complete C++ classes, not partial private SDK owners. Compiler flags
+are explicit reproducibility settings, not an executable-wide profile claim.
+
+**Acceptance and preservation.** Original and accepted full source/data/field/
+CFG/anchor/weak/public-control replays pass. Full R203 regression passes.
+The actual accepted PNG transition affects no prior exact original function/
+origin snapshot; potential lifetime snapshot impacts remain private audit
+records, with no canonical transition for those unknowns. Exactly one function
+and origin row changes; all previous manifests, source/ABI/mapping/match inputs,
+902 authored bodies / 1956112 bytes and the 60-function exact baseline remain
+unchanged. Target/project/query attestations, canonical readback, 304-pending
+triage, progress and whitespace checks pass. All 2696 CI tests pass, including
+30 new guards. The user continues to waive public MCP acceptance.
+
+Totals are 4047 resolved: 949 authored, 2520 library and 578 compiler; 304 pending
+and 3098 excluded. Exact stays 60 functions / 9883 bytes / 60 units across eleven
+objects. The original 1311-candidate goal has 1007 resolved and 304 left and
+remains active. R205 next investigates four bounded vector access parents and
+two actual iterator helpers, with complete cold public-template alternatives;
+its diagnostic shortlist grants no origin or target element-type declaration.
