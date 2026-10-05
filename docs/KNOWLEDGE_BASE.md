@@ -9333,3 +9333,75 @@ Totals are3982 resolved:949 authored,2457 library and576 compiler;369 pending
 and3033 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
 objects. The full origin goal stays active. R200 reviews six remaining SDK
 texture/error/text/sprite policies and their complete original dependency graph.
+
+## R200 — whole texture/text/sprite policies and independent UUID/stack/array evidence
+
+R200 accepts11 candidates /5581 bytes:9 library policies5431 and2 compiler
+vector-deleting wrappers150. Exactly11 function/origin row pairs change from
+777099e, with no extent changes. The immutable manifest is
+`config/sdk-presentation-origin-evidence.json`, SHA
+`771ae0e2e563cdb35dfbaf46ed752a59f29f15ba6274badb88c621a28a1a4eb1`. Replay
+`scripts/repo-python scripts/verify-sdk-presentation-origins.py`.
+
+**Source observations and ownership inference.** The six texture-load/save,
+error-text, text-initialize/draw and sprite-draw roots expand to text reset,
+sprite creation and sprite QueryInterface policies. Full original SDK source,
+genuine typed references and complete policy control flow establish library
+ownership; source names do not declare complete private owner layouts.
+The two complete original vector-deleting wrappers at0x00605CDF and0x00605D2A
+retain array/scalar flag2, optional-free flag1, actual array cookie, whole
+vector destructor iterator, destructor pointer/direct call, both delete paths
+and thiscall ret4. Their observed stride16/4 is a compiler operand, not a
+reconstructed SDK class layout. Natural complete generic virtual/nonvirtual
+array classes independently emit the same generated protocol and distinguish
+virtual/nonvirtual declarations. Cold wrappers are84 bytes versus original75;
+this establishes generated role, without exact credit or forcing byte identity.
+
+The graph reopens70 whole original source sections8745:25 code7777,44 data964
+and one BSS4, with all175 genuine fields and25 complete normal/EH/indirect CFGs.
+The25 source code carriers map24 native bases:two genuine scalar-deleting
+source COMDAT owners fold at0x006049BC, each retained separately. Five whole
+non-inventory sprite methods remain source evidence without added candidate
+credit. All original definitions/AUX, scoped field owners, full raw images,
+permissions and unmasked linked images replay. Thirty-three complete retained
+SDK/CRT anchors6911/all93 fields retain their original records. Four interior
+R022 compiler rows40 remain unchanged; no source extent hides an inventory row.
+
+**Independent foreign UUID and actual stack alias.** IID_IUnknown16 at0x00660E58
+comes from original UUID library member328782/section4, not d3dx8.lib. Its full
+source definitions/hash and readonly target bytes reopen independently. The
+cold public __uuidof(IUnknown) constant agrees with that source; the whole
+public ID3DXSprite GUID also agrees with its SDK source. DrawTextAW's
+__alloca_probe binds the actual same-section/same-offset alias of the complete
+R006 __chkstk61 at0x00642510. Original primary/alias definitions and the entire
+R184 retained record are unchanged. Natural _alloca lowering independently
+observes EAX size rounding/alignment and the actual helper relocation; no fake
+cdecl stack-helper declaration is introduced.
+
+`PresentationPolicyProbe.cpp` cold-builds all69 ordinary emitted sections,
+17 complete code controls727,86 original headers and full public observation40.
+Original public error-text/save-texture calls retain WINAPI12/16. Font DrawTextA
+uses COM slot24; sprite Draw uses slot20. Complete generic array classes have
+observed sizes8/4; GUID16, RECT16, VECTOR2 8 and MATRIX64 remain public facts.
+No incomplete SDK owner is declared, instantiated or embedded. The compiler
+profile is a reproducibility setting, not an executable-wide compiler claim.
+
+**Retained alternatives and acceptance.** LockVolume constructor6 at0x00614BC6,
+Image destructor89 at0x0060EBCD, Sprite constructor30 at0x00609AA4 and Sprite
+destructor64 at0x00608F96 remain unknown189. Complete source/calls alone do not
+resolve their explicit/implicit lifetime ownership. All earlier protected
+alternatives, previous manifests/records and prior verifier sources remain
+unchanged. Both original-state and accepted-state complete source/CFG/field/
+cold-control replays pass. Prior anchors are reopened directly and their
+immutable source/provenance inputs are pinned; unaffected recursive cold trees
+are not redundantly rebuilt. Canonical readback, local target/project/query
+attestations,902 authored bodies1956112,all60 exact-input guards,358-pending
+triage, progress and whitespace pass. All2571 CI tests pass, including30 new
+source/field/alias/UUID/compiler preservation guards. Public MCP acceptance
+remains waived. No reconstructed source, private layout, canonical ABI,
+mapping or exact credit is added.
+
+Totals are3993 resolved:949 authored,2466 library and578 compiler;358 pending
+and3044 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal stays active; the next R201 bounded SDK public
+shader/error/font entries require independent complete source closure.
