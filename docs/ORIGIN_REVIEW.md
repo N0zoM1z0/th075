@@ -12772,3 +12772,70 @@ remains active. R206 next reopens six complete 16-byte leaves under retained
 vector dereference and list allocation/insertion contexts. Identical body shape
 and reviewed parents are diagnostic only; original typed source and ownership
 alternatives must settle each leaf separately.
+
+## R206 — complete public/ordinary vector and list getter alternatives
+
+R206 reviews all six whole 16-byte leaves / 96 bytes and retains unknown origin:
+`0x0040E9B0`, `0x0040EA20`, `0x004124B0`, `0x0041F7E0`, `0x00532350` and
+`0x005F9640`. No canonical ledger, extent, source, ABI, mapping or exact input
+changes. Replay `scripts/repo-python scripts/verify-vector-list-leaf-alternatives-origins.py`.
+`config/vector-list-leaf-alternatives-origin-evidence.json` SHA-256 is
+`42c0eee2fd8764c7871e8a251c0e0dba789b1c850849a1182493f294cbbe7209`.
+The six existing unknown records and their protected historical observations
+remain literal evidence. This review supplies alternatives, not six resolved
+ownership classifications or exact credit.
+
+**Target and original source observations.** All six complete native bodies are
+byte-identical, with one return, no internal branch and no relocation fields.
+Three have original public vector const_iterator::operator* source counterparts;
+three have public list const_iterator::_Mynode counterparts. The latter returns
+a node pointer rather than an element reference. Original source method spelling
+and returned types are source observations, not confirmed private target types.
+
+Seven whole retained typed parents / 588 bytes reopen their complete original
+source, actual function AUX/definitions and all 34 actual fields: vector mutable
+dereference19 at 40E4C0, 40E530 and 5F8EA0; list insertion115 at 411EA0, 41E120
+and 531DF0; and list erase186 at 411F20. Every field binds through complete
+retained source-owner definitions and frozen independent external evidence,
+not newly collected native destinations. All full unmasked parent/leaf byte
+comparisons, normal CFGs, permissions, boundaries and unchanged canonical rows
+pass. The complete source catalog rejects conflicting owners.
+
+All six original public probes are cold-built again. Their 912 ordinary
+code/data/EH/RTTI section instances / 40011 bytes, actual original includes and
+complete original observation layouts are retained. The selected parent/leaf
+source sections replay against complete current target bodies. This is a fresh
+replay of the selected whole source graph and all ordinary compiler emissions,
+not a claim that every historical native control or recursive dependency tree
+has been rerun. Earlier source probes, manifests and verifiers remain unchanged.
+
+**What the new controls establish.** Natural `<vector>` and `<list>` source
+supplies four explicit public getters for independent generic element sizes4
+and16. Two ordinary complete C++ classes supply a pointer getter and a reference
+getter. Each of these six definitions emits the same complete 16-byte body as
+all six native leaves, with no field masking, padding, truncation or fake return.
+Their actual defining symbols, AUX records and complete line-table provenance
+remain distinct. All 13 ordinary new sections / 206 bytes retain twelve emitted
+functions / 174, six real forwarder fields, 29 actual original public headers
+and the full generic layout / 32. Generic owner declarations are complete and
+are not mapped to private game types. Compiler flags are explicit settings.
+
+The retained parent graphs suggest public collection roles, but the new leaf
+controls do not independently determine ownership of these opaque getter bodies.
+Neither an identical short body, a historical name, nor a previously reviewed
+parent alone resolves that question. The two ordinary getters demonstrate why
+source-byte equality does not establish a unique source owner. Preserve the
+six original unknown classifications until additional independent ownership
+context distinguishes the alternatives; do not mechanically copy classifications
+from R205's separate bounds-policy graphs or rewrite prior accepted provenance.
+
+**Checks and continuation.** Complete original/new cold replay and 2751 CI tests
+pass, including 21 new guards. Target/project/query attestations, authored/exact
+guards, canonical readback and whitespace checks pass. All canonical ledger
+records and exact inputs are unchanged from R205; the 902 authored bodies /
+1956112 bytes and 60-function / 9883-byte / 60-unit exact baseline remain.
+Public MCP acceptance stays waived. Totals remain 4065 resolved: 949 authored,
+2538 library and 578 compiler, with 286 pending and 3116 excluded. The original
+1311 goal remains active, with 1025 resolved and 286 left. R207 next reopens six
+whole list node-link/value helpers / 57 provisional bytes under the retained
+list policy graphs, preserving source and ownership alternatives individually.

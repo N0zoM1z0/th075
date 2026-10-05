@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R205. The public
+review cohorts R108 through R206. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,73 +20,71 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R206 vector/list leaf cohort below.
+the bounded R207 list node-helper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R205; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R206; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R206 bounded vector/list leaves
+## Next agent objective — R207 bounded list node-link/value helpers
 
-R205 accepts 18 complete original public vector/iterator policies / 615 bytes
-through four whole source graphs. Replay
-`scripts/repo-python scripts/verify-vector-at-policy-origins.py`;
-manifest SHA
-`50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c`.
-Fifty-two source section instances / 1961 retain all 92 actual fields and 44
-complete normal/EH CFGs. The two stride4 groups use separate actual native
-owners, even where source symbols coincide. Full EH18/data36 carriers preserve
-prior R022 unwind8 rows. Three shared code owners / 118 and throw-type data16
-retain literal R150 evidence; two actual CRT throw/frame helpers / 112 and the
-original absolute definition reopen complete original source. Actual `_Xran` /
-out_of_range routes must not inherit historical generic `_Xlen` meaning.
+R205 accepts 18 complete vector bounds/iterator library policies / 615 bytes.
+Replay `scripts/repo-python scripts/verify-vector-at-policy-origins.py`;
+manifest SHA `50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c`.
+Its four independently scoped whole source graphs retain52 sections /1961,
+all92 real fields and44 full normal/EH CFGs; all130 ordinary cold sections /
+5548,27 original headers, full generic layout36 and wrong-stride/const-route
+alternatives remain. Exact and prior origin evidence are unchanged.
 
-All 130 ordinary cold sections / 5548, 27 original headers and full generic
-layout36 remain. Four full wrong-stride size alternatives and four const at70 /
-dereference16 routes are retained; actual mutable dereference19 calls its whole
-const dependency. Original element types remain unknown. COFF debug line file
-pointers are validated against complete own line tables and retained relatively;
-no source/native bytes, actual fields, function AUX sizes or symbol indices are
-masked. Original/accepted replay, full retained R150 regression, prior snapshot
-audit, canonical readback, target/project/query, authored/exact guards, fresh
-286-pending triage, generated progress and whitespace pass. All 2730 CI tests
-pass, including 34 new guards. Prior manifests/verifiers and all exact inputs
-remain unchanged. Public MCP acceptance stays waived.
+R206 reviews six whole opaque vector/list getters /96 and retains unknown
+origin. Replay
+`scripts/repo-python scripts/verify-vector-list-leaf-alternatives-origins.py`;
+manifest SHA `42c0eee2fd8764c7871e8a251c0e0dba789b1c850849a1182493f294cbbe7209`.
+Seven complete retained parents /588 and all34 actual fields replay from six
+original cold probes. Their912 ordinary section instances /40011, actual
+headers and full layouts remain. New complete generic public vector/list and
+ordinary pointer/reference getters all emit identical16-byte bodies. All13 new
+ordinary sections /206, twelve functions /174,29 actual headers and full layout32
+remain; no alternative is mapped to private owners or given canonical credit.
+The selected whole source/native/CFG/canonical proof passes; this does not claim
+that every historical native control or recursive dependency was rerun. Preserve
+all six original unknown classifications and earlier manifests/verifiers.
 
-The original 1311 goal has 1025 resolved / 286 left and remains active. Exact
-remains 60 functions / 9883 bytes / 60 units across eleven objects. R204's six
-SDK lifetime alternatives / 484 remain unknown; complete original SDK ownership
-does not distinguish implicit versus explicit outer lifetime generation.
+All2751 CI tests pass, including21 new guards; target/project/query attestations,
+authored/exact guards, canonical readback and whitespace pass. R206 changes no
+canonical ledger or exact input. Public MCP acceptance stays waived. The original
+1311 goal has1025 resolved /286 left and remains active. Exact remains60 functions
+/9883 bytes /60 units across eleven objects. R204's six SDK lifetime alternatives
+/484 also stay unknown without additional original declaration evidence.
 
-The next six-candidate cohort / 96 provisional bytes remains unknown. Fresh
-`.analysis/r206-iterator-leaf-shortlist.json` preserves complete scanner extent/
-CFG diagnostics, real calls and reviewed parent sites. These complete 16-byte
-bodies occur under different template families; identical raw shapes are not
-interchangeable ownership evidence:
+The next six-candidate cohort /57 provisional bytes remains unknown. Fresh
+`.analysis/r207-list-node-shortlist.json` retains complete scanner CFG/extents,
+real caller sites and reviewed contexts. Original cold list sources suggest
+node-link/value roles; these source symbols are observations, not target type
+or ownership acceptance:
 
-| Candidate | Provisional bytes | Actual retained context to reopen |
+| Candidate | Provisional bytes | Original source counterpart to reopen |
 | --- | ---: | --- |
-| `0x0040E9B0` | 16 | vector mutable dereference19 at 40E4C0, actual call 40E4CA |
-| `0x0040EA20` | 16 | vector mutable dereference19 at 40E530, actual call 40E53A |
-| `0x004124B0` | 16 | list insertion 411EA0 and erase 411F20, actual calls 411EAC and 411F3A |
-| `0x0041F7E0` | 16 | list insertion 41E120, actual call 41E12C |
-| `0x00532350` | 16 | list insertion 531DF0, actual call 531DFC |
-| `0x005F9640` | 16 | vector mutable dereference19 at 5F8EA0, actual call 5F8EAA |
+| `0x00411E80` | 8 | list::_Nextnode under list iterator/erase policies |
+| `0x00411E90` | 11 | list::_Prevnode under list iterator/insertion policies |
+| `0x004124C0` | 11 | list::_Myval under value-node allocation policy |
+| `0x0041E100` | 8 | list::_Nextnode under archive list policies |
+| `0x0041E110` | 11 | list::_Prevnode under archive list policies |
+| `0x00531D80` | 8 | list::_Nextnode under character list policies |
 
-Reopen complete typed parent source, owning definitions and full source/native
-leaves; cold-build natural original public alternatives and retain every
-ordinary emission/header/field. Preserve library/compiler ambiguity for implicit
-allocator or outer lifetime bodies until actual source policies settle it.
-Do not turn generic shapes into private target declarations, derive catalogs
-from native destinations, or grant credit from mapped names. Continue all
-remaining review after this bounded cohort. No exact expansion or later project
-phase is authorized; this checkpoint does not complete the goal.
+Reopen whole typed original parent/source/field graphs and independently owned
+context. Retain complete cold ordinary alternatives, actual headers and all
+source fields; reconcile full control flow and extents. Short byte equality or
+reviewed callers alone cannot determine origin. Preserve unknown ownership when
+ordinary or implicit alternatives remain indistinguishable. Continue all remaining
+review after this bounded cohort. No exact expansion or later project phase is
+authorized; these checkpoints do not complete the goal.
 
 ## R165 checkpoint and the completed R166 shortlist
 
