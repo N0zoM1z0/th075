@@ -36,7 +36,9 @@ verifier freezes its complete extent, body, control flow and independent
 ownership context. Run investigation and final acceptance locally. On
 2026-10-04 the user waived public MCP acceptance to accelerate continued origin
 review. Preserve complete evidence, necessary cold builds and required local
-checks.
+checks. On 2026-10-06 the user requested one complete Web MCP acceptance after
+all remaining origin review is finished; intermediate bounded cohorts continue
+locally, and that final complete run remains outstanding.
 Recorded name aliases preserve earlier origin roles after exact reconstruction
 renames a function; a matching ledger state does not invalidate its origin.
 `report-reconstruction-status.py --summary` continues to report the incomplete

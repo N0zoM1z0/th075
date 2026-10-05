@@ -13851,3 +13851,56 @@ remains waived. Current4153 resolved =968 authored+2605 library+580 compiler;
 198 pending and3185 excluded. Original1311 goal has1113 classified /198 left and
 remains active. Authored denominator1,970,795; exact60 functions /9883 bytes /
 60 units across eleven objects and provisional0.50% remain unchanged.
+
+## R221 — integer random-range policies in action and AI contexts
+
+R221 resolves two authored policies /88 bytes: `0x00410F00` and `0x00455610`,
+each44 bytes with18 complete instructions and RET8. All original extents stay
+unchanged. Both save the incoming receiver, load two stack endpoints, call the
+complete R129 CRT `_rand` at6418AB /34, multiply the endpoint difference by its
+result and divide the signed32-bit product by32768 with truncation toward zero.
+The native CDQ/AND7FFF/ADD/SAR15 sequence retains the sign bias before adding the
+lower endpoint. Receiver storage is observed; the arithmetic does not use it.
+Names remain inferred; no private declaration or signed-overflow source contract
+is recovered. Uniformity and valid input bounds are not asserted.
+
+The independent full R064 action at5FAE30 /31352 has63 actual calls to410F00.
+The independent full R047 AI at472890 /8871 has six to455610. All40223 parent
+bytes, complete instructions/CFGs, prior authored records and all69 parameter/
+result instruction windows are retained. The action's guarded switch keeps the
+whole145-byte remap and280-byte table. Observed endpoint arguments include0/45
+and0/30; action results feed floating fields, while AI results store in the
+observed word field+512. Two four-byte alignment gaps remain outside the helpers.
+Twenty scoped canonical candidate/parent/provider/unknown rows are frozen.
+
+Authored classification is the explicit endpoint policy in these independently
+established game contexts, not a rand symbol, a game caller alone or a short
+shape. The original SDK `random_shuffle` is a distinct modulo/swap loop. Generic
+range classes can express the same arithmetic; this alternative prevents any
+claim of original source spelling, complete owner layout or physical library
+selection. Compiler-generated lifetime or copy behavior does not supply this
+argument-dependent random policy.
+
+A natural cold probe includes the genuine original algorithm header, two
+ordinary range alternatives and an ordinary modulo alternative. The two range
+methods emit identical31-byte IDIV bodies, rather than the target44-byte shift/
+bias lowering. Every nine actual fields, all nine complete code sections and
+whole readonly [1,1,4,32767] observation are frozen:ten ordinary sections267,
+with25 original includes and full COFF definition/AUX/line provenance. No bytes
+are masked into exact evidence; no incomplete game owner is declared or padded.
+Every replay also runs the complete original R129 rand/thread-state source graph
+and its retained dependencies, rather than trusting mapped names or destinations.
+
+Replay `scripts/repo-python scripts/verify-integer-range-origins.py`.
+Manifest SHA-256 `8a70ff4514cff6d1d5a686d4ddb7e5ef50f1b3905267e3ba367a1a848c6ab7d2`. Original-state and accepted-state
+cold proofs pass. All3114 CI tests pass, including17 new full-extent/field/sign-
+bias/call/guarded-table/ordinary-SDK-alternative/ABI/exact guards. The progress card
+is regenerated after the two accepted transitions. Earlier902 authored bodies,
+target/tracking, local Ghidra attestation/query markers, exact-input preservation,
+exactly-two-row readback, coherent fresh196 triage and whitespace pass.
+Current4155 resolved =970 authored+2605 library+580 compiler;196 pending and3185
+excluded. Original1311 goal has1115 classified /196 left and remains active.
+Authored denominator1,970,883; exact60 functions /9883 bytes /60 units across eleven
+objects and provisional0.50% remain unchanged. On2026-10-06 the user requested
+one complete Web MCP acceptance after the remaining review is finished; bounded
+intermediate cohorts continue locally. No later phase or exact expansion is added.
