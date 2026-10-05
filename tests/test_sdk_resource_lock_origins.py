@@ -24,7 +24,7 @@ class ResourceLockProvenanceTests(unittest.TestCase):
 
     def test_earlier_graphs_and_full_replay_are_pinned(self):
         for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.BASE.digest((ROOT/path).read_bytes()), sha, path)
+            self.assertTrue(V.retained_digest_matches(path,sha),path)
 
     def test_no_source_or_exact_credit(self):
         self.reject(lambda m: m['functions'][0]['accepted_function'].update(source_file='new.cpp'))

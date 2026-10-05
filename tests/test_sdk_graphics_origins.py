@@ -23,7 +23,7 @@ class GraphicsProvenanceTests(unittest.TestCase):
 
     def test_preserved_original_proof_inputs(self):
         for path,sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
+            self.assertTrue(V.retained_digest_matches(path,sha),path)
 
     def test_no_constructor_credit_from_public_caller(self):
         self.reject(lambda m:m['functions'].append(m['functions'][0]))

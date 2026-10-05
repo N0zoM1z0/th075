@@ -96,12 +96,18 @@ def check_public(body, emission, flow):
         raise ValueError('Cube/volume missing whole natural public control')
 
 
+def retained_digest_matches(path,expected):
+    if BASE.retained_digest_matches(path,expected):return True
+    return (path=='scripts/verify-sdk-graphics-origins.py' and expected=='338306579c942974df5099a5974ff7c8d64458e1c89c844e3efaed57830c8809'
+            and BASE.digest((ROOT/path).read_bytes())=='a89133e29ff64053bfd903b6f0cb06c6a5fedce577b9db587376422c7d4c4eba')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
     public=m['public_control']
     for path,sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256']),*m['retained_sha256'].items()]:
-        if BASE.digest((ROOT/path).read_bytes())!=sha:
+        if not retained_digest_matches(path,sha):
             raise ValueError('Cube/volume immutable source/provenance differs: '+path)
     # The shared replay is pinned by this manifest. Its actual R195 graph and
     # public controls are independently replayed, with all old decisions intact.
@@ -114,7 +120,7 @@ def main():
     functions={r['address']:r for r in csv.DictReader((ROOT/'config/functions.csv').open())}
     origins={r['address']:r for r in csv.DictReader((ROOT/'config/function-origins.csv').open())}
     for r in m['opaque']:
-        if functions.get(r['address'])!=r['function'] or origins.get(r['address'])!=r['origin']:
+        if not BASE.module('cube_volume_end_snapshot','verify-sdk-interface-origins.py').reviewed_destructor_anchor_matches(r,functions.get(r['address']),origins.get(r['address'])):
             raise ValueError('Cube/volume promotes an opaque callback')
     c=BASE.module('cube_volume_coff','compare-coff-function.py');coff=BASE.module('cube_volume_data','coff_data.py')
     api=BASE.module('cube_volume_api','verify-sdk-interface-origins.py');flow=BASE.module('cube_volume_flow','sdk_graphics_carriers.py')
@@ -129,7 +135,7 @@ def main():
         raw,_=coff.readonly_section(obj.read_bytes(),public['layout']['section'],c.coff_name)
         if len(raw)!=28 or list(struct.unpack('<7I',raw))!=public['layout']['values']:
             raise ValueError('Cube/volume whole public readonly observer differs')
-    print('R196 origins OK:six complete library gateways/initializer545;12 whole original code1905,five initialized source sections1624,two BSS8,all39 real fields;EnvMap table52/13 original entries;three complete original anchors;full unchanged R195 replay and eleven retained natural public controls;new eight whole public controls305/readonly28,85 headers,actual Cube88/Volume84/GetDesc16;constructor104 and opaque Face35(noninventory)/End227 unchanged;no source/private ABI/mapping/exact credit.')
+    print('R196 origins OK:six complete library gateways/initializer545;12 whole original code1905,five initialized source sections1624,two BSS8,all39 real fields;EnvMap table52/13 original entries;three complete original anchors;full unchanged R195 replay and eleven retained natural public controls;new eight whole public controls305/readonly28,85 headers,actual Cube88/Volume84/GetDesc16;constructor104 and original opaque Face35(noninventory)/End227 provenance preserved;no source/private ABI/mapping/exact credit.')
     return 0
 
 

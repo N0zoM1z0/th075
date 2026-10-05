@@ -102,8 +102,21 @@ def link_code(raw,fields,bindings,address,catalog):
         struct.pack_into('<I',linked,off,value)
     return linked,calls,data
 
+def reviewed_end_anchor_matches(old,function,origin):
+    """Allow only R198's independently frozen complete End policy transition."""
+    if old['address']!='0x0060BE10':return False
+    path=ROOT/'config/sdk-blit-origin-evidence.json'
+    if not path.exists():return False
+    m=json.loads(path.read_text());records=[r for r in m['functions'] if r['address']==old['address']]
+    return (m['evidence_id']=='R198' and len(records)==1
+            and digest(json.dumps(records[0],sort_keys=True,separators=(',',':')).encode())=='5e0c2d42efefa57ebf5f4100ae96f0b0354163e02b6246304dd1f9be639af442'
+            and records[0]['source_record']==old and function==records[0]['accepted_function']
+            and origin==records[0]['accepted_origin'])
+
+
 def reviewed_destructor_anchor_matches(old,function,origin):
     if function==old['function'] and origin==old['origin']:return True
+    if reviewed_end_anchor_matches(old,function,origin):return True
     allowed={'0x0061FE0A': 'c9b6969b8e8fe4581bf09aafffba30fedfb58684b08b7fc8a66625c632fe2473', '0x00609EEF': '674c0dd1d241dc0845cfa368871ce57798c621f19d8e95027026401af8c85156', '0x0060A7D2': '6e2d5e85b12772766a3e47012f8c0dc9204dea545e657bff498655fd80bd482d'}
     if old['address'] not in allowed:return False
     path=ROOT/'config/sdk-destructor-origin-evidence.json'

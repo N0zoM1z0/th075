@@ -9157,3 +9157,97 @@ library and576 compiler;572 pending and2830 excluded. Exact remains60
 functions /9883 bytes /60 units across eleven objects; all902 authored bodies
 /1956112 bytes, source/header/build/match inputs and previous evidence remain
 unchanged. The full origin goal is active; R198 continues the software chain.
+
+## R198 — complete software blit/codec graph and explicit input constructors
+
+R198 accepts108 library entries:68 complete policies and40 explicit input
+constructors. Exactly108 function/origin row pairs change from31117d6. The
+immutable manifest is `config/sdk-blit-origin-evidence.json`, SHA
+`6d537daa5c3605c37ac3e72ba1d09eba6702689f040f6b34f20ae3ba2a3d3b10`. Replay with
+`scripts/repo-python scripts/verify-sdk-blit-origins.py`.
+
+**Whole source and extent observations.** Accepted entries cover36143 code
+bytes plus92 actual selector-table bytes. Codec::Create at0x0061A4CC expands
+from1824 to1884:the original unsigned EAX<=14 guard owns15 real local-label
+DIR32 fields and60 table bytes. BltBox2D at0x006131C5 expands from1027 to1059:
+its unsigned ECX<=7 guard owns eight real local labels and32 table bytes. These
+are the only canonical extent changes. End227 at0x0060BE10, EndScene177,
+Render1421, Setup3892, Filter740, surface/volume loads, software blits, pixel
+conversions, DXT policies and helper routines retain their entire original
+source bodies, all exits, switch targets and EH roots.
+
+The graph reopens371 complete original source sections /43875 bytes:
+233 code carriers41451,135 initialized-data carriers2412 and three BSS
+carriers12, with all1363 genuine relocation fields. Complete unmasked images,
+actual COFF definitions/AUX metadata and whole reachable CFGs replay for every
+code carrier. These are source-carrier counts:two original D3DXCOLOR default
+constructor carriers share native0x0060559F, so233 carriers represent232 unique
+native bases. This overlap earns no additional acceptance. Forty actual
+storage105 weak references preserve AUX search characteristic2 and their
+same-member scalar-deleting fallback definitions28; no spelling-derived alias
+is substituted. Forty-nine interior compiler rows stay unchanged. All81
+independently accepted anchors replay their original source provenance.
+
+Source-static F2IBegin placements0x00615BC6 and0x0062572C each retain35 bytes,
+actual storage3 owner/section/symbol-index identity and source hash
+`53abbe0cd64d7ead94c4b5bf02740b215e87f8ca636971454d363fe2fbf3b9c8`.
+They are distinct source placements; neither a global-name binding nor folding
+is inferred. Initial callbacks56/47 at0x00611E9C/0x00611F00 own the complete
+initialized8-byte callback carrier0x0066CF68. Full zero/nonzero CPU paths bind
+the accepted isMMX policy and actual scalar/packed function fields, stores and
+memory/register tails. Both runtime alternatives remain represented; the
+runtime CPU result and mutable slot contents are unknown.
+
+**Constructor ownership inference.** Thirty-seven derived constructors /1008
+bytes and three base constructors /1334 bytes have complete original source
+bodies, genuine fields and whole typed callers. Their source definitions take
+an external `D3DX_BLT*` input; the base Codec also takes UINT/DWORD and returns
+with12-byte cleanup, while the other39 return with4-byte cleanup. Ownership
+is inferred from this combined source/ABI/caller evidence and independent cold
+controls, not from a short matching body, symbol spelling or RET4 alone.
+`CodecConstructorRoleProbe.cpp` uses complete generic observation classes with
+real pointer/format/flag members. Five whole constructor controls distinguish
+explicit pointer-base52/RET12 and derived41/RET4 from explicit default33/RET0,
+implicit default31/RET0 and implicit copy37/RET4. All23 ordinary emitted
+sections,85 original headers and the full28-byte generic observation layout
+are retained. These generic sizes16/8 do not declare the private SDK layout.
+
+Six lifetime alternatives remain unknown /438 bytes:EnvMap constructor104,
+LockVolume constructor6, TF_Row vector-deleting helper76 and Codec/CodecDXT/
+CodecYUV destructors19/160/73. All earlier protected lifetime/getter/game/CRT
+alternatives, including R195 seven cases405, retain their accepted evidence.
+
+**Public and retained evidence.** `PixelCodecPolicyProbe.cpp` cold-builds eight
+whole public API/COM/cdecl controls332 bytes, the initialized callback carrier8
+and readonly public observation layout72. All ten ordinary emitted sections
+and85 original headers replay. WINAPI cleanup is16/32/32/40/44 for the five
+public functions; EnvMap End is public COM slot40. Ordinary callback controls
+retain both function choices and genuine lazy-initialization stores/tails.
+Compiler profiles are reproducibility controls, not an executable-wide claim.
+
+Original CRT vector construction/destruction anchors independently replay
+whole COMDATs98/96, including real source-internal cleanup entry roots74/72.
+Their original provisional ledgers and records remain unchanged. The entire
+289-byte floor carrier, including its225-byte SSE entry, and the original
+39-byte __ftol source replay independently. Absolute __except_list remains an
+actual absolute source symbol, not invented PE data. R186's opaque Face/End
+records and every previous evidence manifest stay immutable. Only the exact
+frozen End original-to-R198 accepted row pair can pass historical readback;
+R198 supplies separate complete positive evidence. Seven reviewed replay-script
+content transitions use fixed original/accepted hash pairs, never arbitrary
+new digests or broad ownership exceptions.
+
+**Acceptance.** Original-state whole replay passes before the bounded write;
+accepted-state whole replay and exact canonical readback pass afterward.
+Retained floor, x86 dispatch, MMX and R197/R196/R195 source graphs and cold
+controls replay. All2505 CI checks pass, including30 new provenance guards.
+Target/project/query attestations,902 original authored bodies /1956112 bytes,
+all exact-input guards, fresh464-pending triage, progress and whitespace pass.
+Public MCP acceptance remains waived. No reconstructed source, private SDK
+owner/layout, canonical ABI, mapping or exact credit is added.
+
+Totals are3887 resolved:949 authored,2362 library and576 compiler;464 pending
+and2938 excluded. Exact remains60 functions /9883 bytes /60 units across eleven
+objects. The full origin goal is active. R199 next reviews the six image
+load/save source candidates and their original dependency graph; the source
+survey is diagnostic until every real field/whole owner is independently closed.

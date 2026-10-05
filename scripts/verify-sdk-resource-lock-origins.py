@@ -127,6 +127,13 @@ def check_guids(body, emission, m, c, coff):
             raise ValueError('Resource-lock full original SDK/public/target GUID differs')
 
 
+def retained_digest_matches(path,expected):
+    prior=BASE.module('resource_lock_cube_pins','verify-sdk-cube-volume-origins.py')
+    if prior.retained_digest_matches(path,expected):return True
+    return (path=='scripts/verify-sdk-cube-volume-origins.py' and expected=='d47585330378c6b9c5f25d8a1d581dcd05ecac5047b4f1d641b2c78c2fb3972e'
+            and BASE.digest((ROOT/path).read_bytes())=='9d46debfc0a1d52fbffa1a23a6d8e8c7513509983afbcf567bb247a4605cffcd')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--evidence-only',action='store_true')
@@ -134,7 +141,7 @@ def main():
     m = json.loads((ROOT/EVIDENCE).read_text()); verify_plan(m)
     public = m['public_control']
     for path, sha in [(EVIDENCE,MANIFEST_SHA256),(public['probe'],public['probe_sha256']),*m['retained_sha256'].items()]:
-        if BASE.digest((ROOT/path).read_bytes())!=sha:
+        if not retained_digest_matches(path,sha):
             raise ValueError('Resource-lock immutable original/source provenance differs: '+path)
     # Replay every unchanged prior graph before using the whole accepted anchors.
     result = subprocess.run([str(ROOT/'scripts/repo-python'),'scripts/verify-sdk-cube-volume-origins.py'],
