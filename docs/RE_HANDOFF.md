@@ -2,7 +2,7 @@
 
 Updated 2026-10-05. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R186. The public
+review cohorts R108 through R187. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 3,663: 949 authored, 2,139 library and 575 compiler generated.
-There are 688 pending. Candidate count is not authored function count.
+has resolved 3,666: 949 authored, 2,142 library and 575 compiler generated.
+There are 685 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,80 +20,67 @@ bytes is 9,883 / 1,968,455 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R187 D3DX8 destructor cohort below.
+the bounded R188 SDK dispatcher/matrix cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R186; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R187; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R187 complete D3DX source-owner destructors
+## Next agent objective — R188 runtime SDK dispatcher and matrix caller
 
-R186 resolves all four interface/buffer candidates / 251 bytes through complete
-source owners and actual full SDK GUIDs. The old same-shaped 71-byte buffer
-survey hit was incorrect for two interfaces: 0x00609F11 is RenderToSurface,
-0x0060A1FA is RenderToEnvMap, and 0x00620093 is Buffer. All real fields are
-unmasked. Replay `scripts/repo-python scripts/verify-sdk-interface-origins.py`.
-Its immutable manifest SHA-256 is
-`4fb78070d97506d8a9604dd860090cce66bf4e6a67946cfc24e241954df886f4`.
+R187 resolves three entire explicit SDK destructors / 89 bytes. Replay
+`scripts/repo-python scripts/verify-sdk-destructor-origins.py`. Its manifest
+SHA-256 is
+`506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1`.
+All six real fields bind through independently proved R186 interface/GUID/
+owner carriers and earlier complete delete/OnLostDevice implementations.
+Seven natural full source controls / 193 bytes, eight ordinary sections / 205
+bytes, 84 actual included headers and the complete twelve-byte observer layout
+distinguish default raw-pointer destruction, explicit public cleanup and
+generated flag/delete policy. The generated probe wrappers are full 44-byte
+functions; original R038 wrappers remain their full 28-byte compiler bodies.
+All 53 R038 wrappers / 1484 bytes cold-replay unchanged. No original private
+object layout is instantiated or inferred from the observer classes.
 
-Cold real SDK headers emit all 47 ordinary GUID sections / 752 bytes; 84 actual
-headers and the entire UUID IUnknown source member are pinned. Three entire
-owning pointer carriers / 116 bytes / 29 slots and 35 full original/source
-function controls / 2955 bytes are frozen. Thirty-three whole code comparisons
-/ 2693 bytes bind all 25 actual fields through coherent full source definitions
-and preserve 73 indirect calls. The genuine buffer weak `_E` pointer/AUX uses
-the same-member complete `_G` fallback, with no invented alias extent. The
-buffer's full seven-slot callback graph now supplies independent owner context
-for the whole 38-byte initializer. R185's original manifest remains immutable;
-only its exact new buffer transition is allowed, with record SHA-256
-`84329381c12dbf07a0af4e12a907fba7eb7b03253e21439873e6cf2c3f8b5658`.
-The updated R185 validator is pinned by R186.
+The complete R186 owner graph cold-replays: actual SDK GUIDs, whole UUID
+IUnknown, all 29 original table slots / 116 bytes, 33 complete unmasked code
+controls / 2693 bytes, 25 real fields and 73 indirect calls. Its manifest remains
+immutable. Only three actual hash-pinned destructor transitions are allowed
+by the updated R186 validator; its two opaque EnvMap controls remain pending.
+R185/R184/SDK source archives and earlier accepted facts are preserved.
 
-The entire 35-byte EnvMap Face and 227-byte EnvMap End bodies are context only:
-the actual downstream EndScene/filter source linkage is still unresolved.
-Their complete original table slots, full source/native bodies, genuine fields
-and CFG remain present, with no false body-positive, masked field or new origin
-claim. Do not remove those slots or promote those unresolved callees. Two full
-wrong-buffer QueryInterface comparisons / 142 bytes retain their real code
-byte-35 pointer difference and all sixteen GUID bytes. Complete original SDK
-scene/descriptor/lost-device/EnvMap peers and the R184/R185 archives replay.
-Already passed unchanged cold dependency roots need no duplicate invocation.
-
-Exactly four function/origin rows change from 5d6dbb6. All original extents,
-all 902 authored bodies / 1956112 bytes, every prior configuration manifest
-and all sixty exact inputs are unchanged. All 2287 public checks, fresh
-688-pending scan, target/tracking/project/query markers, progress and whitespace
+Exactly three function/origin rows change from 0151132. All original extents,
+all 902 authored bodies / 1956112 bytes, every prior configuration manifest and
+all sixty exact inputs remain unchanged. All 2301 public checks, fresh
+685-pending scan, target/tracking/project/query markers, progress and whitespace
 checks pass. Public MCP acceptance remains waived. The whole origin goal is
-active and incomplete.
+active and incomplete; no source/ABI/mapping/exact credit is added.
 
-The next bounded cohort is three pending source-owner destructors / 89 bytes:
+The next bounded cohort has two pending functions / 334 bytes:
 
-| Candidate | Whole provisional bytes | R186 complete original source association |
+| Candidate | Whole provisional bytes | Actual source linkage |
 | --- | ---: | --- |
-| `0x0061FE0A` | 21 | CD3DXBuffer destructor |
-| `0x00609EEF` | 34 | CD3DXRenderToSurface destructor |
-| `0x0060A7D2` | 34 | CD3DXRenderToEnvMap destructor |
+| `0x0061AF34` | 6 | public D3DXVec3Normalize runtime dispatcher |
+| `0x0061CA33` | 328 | D3DXMatrixLookAtRH, two real Normalize calls |
 
-All three already appear as complete unmasked source/native controls in the
-immutable R186 `code` collection. Their canonical rows remain unknown. Each
-real vtable write uses its full independently retained R186 owner table.
-The buffer destructor reaches the entire five-byte delete source owner; the
-render destructors reach complete already accepted OnLostDevice owners.
-Original complete R038 generated deleting wrappers use the same explicit
-destructor entries; preserve their compiler ownership and full template facts.
-Reopen full source own COMDATs, every real field and native branches/exits before
-accepting explicit SDK library policy. Distinguish each explicit operation from
-a merely same-shaped generated alternative. Freeze original R186 records and
-prior canonical rows; if acceptance changes the three pending snapshots, add
-only a concrete hash-pinned R187 transition to the R186 validator and read it
-back. The R186 manifest itself must remain immutable. Do not instantiate an
-incomplete original class or expand exact-reconstruction scope.
+Fresh private discovery `.analysis/r188-discovery.json` reaches these through
+the complete original EnvMap End 227 -> EndScene 177 -> Render 1421 -> Setup
+3892 graph. Face 35 remains a non-inventory control. The actual Normalize
+dispatcher uses a nonzero +28 field in `g_D3DXFastTable`; prove the entire
+carrier, original data extent and separate initialized/default/selected source
+implementation context before accepting it. Verify both matrix call targets
+and complete scalar definitions. All full source/native extents and CFG must
+remain present. Do not mask the dispatch field or instantiate an incomplete
+original owner. The larger EndScene texture/filter/lock/codec graph still has
+unsolved GUIDs, local data and shared tails, so discovery grants no parent
+acceptance. Preserve the immutable R186 opaque records until their complete
+downstream evidence is independently established.
 
 ## R165 checkpoint and the completed R166 shortlist
 

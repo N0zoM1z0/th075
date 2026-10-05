@@ -2741,7 +2741,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00609B7F,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00609DB9,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00609E71,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x00609EEF,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00609EEF,library,D3DX8,exclude,whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context,R187
 0x00609F11,library,D3DX8,exclude,whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context,R186
 0x00609F58,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00609F9E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -2757,7 +2757,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0060A6C3,library,D3DX8SDK,exclude,complete-vendor-body,R010
 0x0060A770,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0060A798,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x0060A7D2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0060A7D2,library,D3DX8,exclude,whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context,R187
 0x0060A7F4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0060B728,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0060B7AF,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -3137,7 +3137,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0061FCE6,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x0061FD1A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0061FD22,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0061FE0A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061FE0A,library,D3DX8,exclude,whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context,R187
 0x0061FE1F,library,D3DX8,exclude,whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context,R186
 0x0061FEDB,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0061FEF6,compiler,VC71Compiler,exclude,compiler-template-backed,R038

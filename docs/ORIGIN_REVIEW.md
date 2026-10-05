@@ -11219,3 +11219,69 @@ and 0x0060A7D2 / 34. Retain the entire R186 GUID/table/callback graph and all
 original R038 generated wrapper facts. Apply only an explicitly frozen narrow
 anchor transition if new independent destructor evidence is accepted; do not
 rewrite the R186 manifest or promote the two opaque EnvMap controls.
+
+
+## R187 — explicit SDK destructor policy and generated wrapper ownership
+
+Three complete D3DX8 source-owner destructors / 89 bytes are classified
+library/exclude, independently of the existing compiler deleting wrappers.
+
+| Address | Whole bytes | Vendor operation |
+| --- | ---: | --- |
+| `0x0061FE0A` | 21 | CD3DXBuffer::~CD3DXBuffer |
+| `0x00609EEF` | 34 | CD3DXRenderToSurface::~CD3DXRenderToSurface |
+| `0x0060A7D2` | 34 | CD3DXRenderToEnvMap::~CD3DXRenderToEnvMap |
+
+All three original SDK COMDAT extents, source/native hashes, six actual fields
+and complete branches/exits are reopened. Each real vtable write binds its
+entire R186 owning pointer carrier and independently proved interface GUID.
+The buffer releases its storage through the complete earlier delete owner.
+The two render destructors call their distinct complete OnLostDevice owners,
+then release the COM member through slot +8 and clear that member. The
+same-shaped render source bodies do not merge their distinct source symbols,
+vtable definitions or cleanup targets. All fields remain unmasked.
+
+The natural `probes/VC7SDKReleasePolicies.cpp` uses complete observer classes
+and real public SDK interfaces, with no incomplete original owner instance.
+Cold VC7.1 compilation with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes`
+retains eight entire ordinary sections / 205 bytes, seven full code controls
+/ 193 bytes, 84 actual SDK/CRT headers and the whole twelve-byte observer
+layout [4, 4, 4]. Default raw-pointer lifetime end emits no cleanup call.
+Explicit Surface/EnvMap observer policies reach the actual public cleanup
+slots +28/+44. Their natural generated deleting wrappers are complete
+44-byte bodies, including the real destructor and delete fields; they are not
+truncated to the original 28-byte wrapper shape. These controls establish the
+explicit/default/generated distinction, with no false target-positive claim,
+invented original ABI, object layout or reconstructed source presence.
+
+The three original R038 deleting-wrapper records and canonical compiler rows
+remain unchanged. All 53 R038 wrappers / 1484 bytes cold-replay successfully.
+The entire R186 interface/GUID/owner graph and R185/R184/SDK dependencies also
+replay serially. R186's manifest remains immutable; its validator permits only
+the three complete hash-pinned original-to-R187 accepted transitions, with
+record digests checked against the actual new manifest. The two opaque EnvMap
+controls cannot use that transition. Replay
+`scripts/repo-python scripts/verify-sdk-destructor-origins.py`.
+Manifest SHA-256:
+`506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1`.
+Both evidence-only cold replay before mutation and accepted-state cold replay
+pass. Strict R186 HEAD 0151132 readback changes exactly three function/origin
+rows, preserving every original extent, all 902 authored records / 1956112
+bytes and every earlier configuration manifest. All sixty exact inputs remain
+unchanged from the prior cold replay. Fourteen meaningful source-policy,
+interface-field, wrapper and anchor-transition guards bring public checks to
+2301. Target/tracking/project/query markers, complete authored verification,
+fresh scanning, progress and whitespace checks pass. No target/database write
+or new source/ABI/mapping/exact credit occurs. Public MCP acceptance is waived.
+
+Totals are 3666 resolved (949 authored, 2142 library, 575 compiler), 685 pending
+and 2717 excluded. Exact stays 60 functions / 9883 bytes and provisional
+coverage 9883 / 1968455 (0.50%). The whole origin goal remains active and
+unfinished. The next bounded R188 cohort is the full six-byte public
+D3DXVec3Normalize dispatcher at 0x0061AF34 and 328-byte D3DXMatrixLookAtRH
+at 0x0061CA33. Their actual linkage was freshly reached through the complete
+pending EnvMap End/EndScene/Render/Setup graph. Prove the complete runtime
+dispatch carrier, its real nonzero +28 field and implementation/initializer
+context before accepting either function. Do not treat a relocated pointer
+as an independent symbol identity or promote the still-unresolved texture/
+lock/codec graph. This discovery does not change any additional canonical row.

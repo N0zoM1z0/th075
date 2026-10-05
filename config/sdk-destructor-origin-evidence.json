@@ -1,0 +1,2020 @@
+{
+  "evidence_id": "R187",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+  "functions": [
+    {
+      "address": "0x0061FE0A",
+      "size": 21,
+      "body_sha256": "7894aa41f560a9f5651f735b0aecef790d48ea7713413d82bc4c93e8a9250715",
+      "source_record": {
+        "address": "0x0061FE0A",
+        "symbol": "??1CD3DXBuffer@@UAE@XZ",
+        "member_offset": 380178,
+        "member": "obj\\i386\\cd3dxbuffer.obj",
+        "size": 21,
+        "member_sha256": "9548a984a3d527878dc5313785cce8bb1808ac2f533d5998f30b73d0204f9ae7",
+        "source_sha256": "e9fdb341a07950d267dfb2fc560b5413be5df3760f2db54b62f546876ca12212",
+        "body_sha256": "7894aa41f560a9f5651f735b0aecef790d48ea7713413d82bc4c93e8a9250715",
+        "fields": [
+          {
+            "offset": 2,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXBuffer@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null
+          },
+          {
+            "offset": 15,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??3@YAXPAX@Z",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 2,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXBuffer@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0065DE1C"
+          },
+          {
+            "offset": 15,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "??3@YAXPAX@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00640F15"
+          }
+        ],
+        "indirect_call_count": 0,
+        "function": {
+          "address": "0x0061FE0A",
+          "size": "21",
+          "span_end": "0x0061FE1E",
+          "current_name": "FUN_0061fe0a",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x0061FE0A",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "old_sdk_record": null,
+        "cfg": [
+          1,
+          1
+        ]
+      },
+      "original_function": {
+        "address": "0x0061FE0A",
+        "size": "21",
+        "span_end": "0x0061FE1E",
+        "current_name": "FUN_0061fe0a",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0061FE0A",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0061FE0A",
+        "size": "21",
+        "span_end": "0x0061FE1E",
+        "current_name": "FUN_0061fe0a",
+        "proposed_name": "CD3DXBuffer::~CD3DXBuffer",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R187; whole vendor destructor,all real fields and independently proved complete SDK owner/cleanup context",
+        "owner": "library",
+        "notes": "Explicit SDK library cleanup; generated deleting wrapper remains separately compiler-owned; original complete class layout unknown"
+      },
+      "accepted_origin": {
+        "address": "0x0061FE0A",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context",
+        "evidence_id": "R187"
+      }
+    },
+    {
+      "address": "0x00609EEF",
+      "size": 34,
+      "body_sha256": "a28d776d85c24ed4cdc63d41a0f173b6c636a8efd67bdd1ad2fd24275d9180fe",
+      "source_record": {
+        "address": "0x00609EEF",
+        "symbol": "??1CD3DXRenderToSurface@@QAE@XZ",
+        "member_offset": 393840,
+        "member": "obj\\i386\\cd3dxrendertosurface.obj",
+        "size": 34,
+        "member_sha256": "8c4de897c73cc4623b12bdcc55246cbb9189315672b4a5b950bf2c3d8c75080f",
+        "source_sha256": "002a8d53aa423236297939c1d7b996840e9c7a8b57df257c44805b002d19b3f1",
+        "body_sha256": "a28d776d85c24ed4cdc63d41a0f173b6c636a8efd67bdd1ad2fd24275d9180fe",
+        "fields": [
+          {
+            "offset": 6,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXRenderToSurface@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null
+          },
+          {
+            "offset": 11,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 6,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXRenderToSurface@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0065D39C"
+          },
+          {
+            "offset": 11,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?OnLostDevice@CD3DXRenderToSurface@@UAGJXZ",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x00609E71"
+          }
+        ],
+        "indirect_call_count": 1,
+        "function": {
+          "address": "0x00609EEF",
+          "size": "34",
+          "span_end": "0x00609F10",
+          "current_name": "FUN_00609eef",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x00609EEF",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "old_sdk_record": null,
+        "cfg": [
+          1,
+          1
+        ]
+      },
+      "original_function": {
+        "address": "0x00609EEF",
+        "size": "34",
+        "span_end": "0x00609F10",
+        "current_name": "FUN_00609eef",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x00609EEF",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00609EEF",
+        "size": "34",
+        "span_end": "0x00609F10",
+        "current_name": "FUN_00609eef",
+        "proposed_name": "CD3DXRenderToSurface::~CD3DXRenderToSurface",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R187; whole vendor destructor,all real fields and independently proved complete SDK owner/cleanup context",
+        "owner": "library",
+        "notes": "Explicit SDK library cleanup; generated deleting wrapper remains separately compiler-owned; original complete class layout unknown"
+      },
+      "accepted_origin": {
+        "address": "0x00609EEF",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context",
+        "evidence_id": "R187"
+      }
+    },
+    {
+      "address": "0x0060A7D2",
+      "size": 34,
+      "body_sha256": "f0d7029572e710b7c772b6544a985a760e9ebc0e69f1dfd9040b873060f863ff",
+      "source_record": {
+        "address": "0x0060A7D2",
+        "symbol": "??1CD3DXRenderToEnvMap@@QAE@XZ",
+        "member_offset": 400146,
+        "member": "obj\\i386\\cd3dxrendertoenvmap.obj",
+        "size": 34,
+        "member_sha256": "843523782769a75ca7847af19d93345dcbb43178b03b28f0bdd51c772ea83564",
+        "source_sha256": "002a8d53aa423236297939c1d7b996840e9c7a8b57df257c44805b002d19b3f1",
+        "body_sha256": "f0d7029572e710b7c772b6544a985a760e9ebc0e69f1dfd9040b873060f863ff",
+        "fields": [
+          {
+            "offset": 6,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null
+          },
+          {
+            "offset": 11,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+            "addend": 0,
+            "local_symbol_offset": null
+          }
+        ],
+        "bindings": [
+          {
+            "offset": 6,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "??_7CD3DXRenderToEnvMap@@6B@",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0065D3C0"
+          },
+          {
+            "offset": 11,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?OnLostDevice@CD3DXRenderToEnvMap@@UAGJXZ",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "target_address": "0x0060A535"
+          }
+        ],
+        "indirect_call_count": 1,
+        "function": {
+          "address": "0x0060A7D2",
+          "size": "34",
+          "span_end": "0x0060A7F3",
+          "current_name": "FUN_0060a7d2",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x0060A7D2",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        },
+        "old_sdk_record": null,
+        "cfg": [
+          1,
+          1
+        ]
+      },
+      "original_function": {
+        "address": "0x0060A7D2",
+        "size": "34",
+        "span_end": "0x0060A7F3",
+        "current_name": "FUN_0060a7d2",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0060A7D2",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0060A7D2",
+        "size": "34",
+        "span_end": "0x0060A7F3",
+        "current_name": "FUN_0060a7d2",
+        "proposed_name": "CD3DXRenderToEnvMap::~CD3DXRenderToEnvMap",
+        "module": "D3DX8",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R187; whole vendor destructor,all real fields and independently proved complete SDK owner/cleanup context",
+        "owner": "library",
+        "notes": "Explicit SDK library cleanup; generated deleting wrapper remains separately compiler-owned; original complete class layout unknown"
+      },
+      "accepted_origin": {
+        "address": "0x0060A7D2",
+        "origin": "library",
+        "subsystem": "D3DX8",
+        "disposition": "exclude",
+        "confidence": "whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context",
+        "evidence_id": "R187"
+      }
+    }
+  ],
+  "wrappers": [
+    {
+      "record": {
+        "address": "0x006049D8",
+        "size": "28",
+        "body_sha256": "1bc3624c93848e0806a77fe4fd9a3bbaec045bad6d5fb6753e6a9b0807096bff",
+        "inferred_role": "VC7::OptimizedScalarDeletingDestructor_006049D8",
+        "destructor_address": "0x00609EEF",
+        "delete_address": "0x00640F15",
+        "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+        "evidence_id": "R038"
+      },
+      "function": {
+        "address": "0x006049D8",
+        "size": "28",
+        "span_end": "0x006049F3",
+        "current_name": "FUN_006049d8",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_006049D8",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x006049D8",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      }
+    },
+    {
+      "record": {
+        "address": "0x006049F4",
+        "size": "28",
+        "body_sha256": "b4724f5e43d8fd7e588c4a3d73ad797455126d78d01b429653080eb3582b6d01",
+        "inferred_role": "VC7::OptimizedScalarDeletingDestructor_006049F4",
+        "destructor_address": "0x0060A7D2",
+        "delete_address": "0x00640F15",
+        "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+        "evidence_id": "R038"
+      },
+      "function": {
+        "address": "0x006049F4",
+        "size": "28",
+        "span_end": "0x00604A0F",
+        "current_name": "FUN_006049f4",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_006049F4",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x006049F4",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      }
+    },
+    {
+      "record": {
+        "address": "0x00620074",
+        "size": "28",
+        "body_sha256": "d406811f4d237438715112e95cf1850d02737e32a96df739b2334636ef8cc4d7",
+        "inferred_role": "VC7::OptimizedScalarDeletingDestructor_00620074",
+        "destructor_address": "0x0061FE0A",
+        "delete_address": "0x00640F15",
+        "source_sha256": "b1f2dfffceac86ab8070b4d17a9fcf4af9f50f15a3b19837426400bbb57a3a22",
+        "evidence_id": "R038"
+      },
+      "function": {
+        "address": "0x00620074",
+        "size": "28",
+        "span_end": "0x0062008F",
+        "current_name": "FUN_00620074",
+        "proposed_name": "VC7::OptimizedScalarDeletingDestructor_00620074",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R038; cold VC7 /O1 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated optimized scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x00620074",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R038"
+      }
+    }
+  ],
+  "probe": "probes/VC7SDKReleasePolicies.cpp",
+  "probe_sha256": "e13366f66d68870597f6395ebc71e80cb425f5f8878d596a77efc8e1305a2bb8",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/Zi",
+    "/GS",
+    "/showIncludes"
+  ],
+  "controls": [
+    {
+      "symbol": "?ObserveRawSurfaceEnd@@YAXPAURawSurfaceLease@@@Z",
+      "size": 5,
+      "section": {
+        "section": 4,
+        "name": ".text",
+        "size": 5,
+        "flags": 1615859744,
+        "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ObserveRawSurfaceEnd@@YAXPAURawSurfaceLease@@@Z",
+            "offset": 0,
+            "section": 4,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 2,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 5,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "cfg": [
+        1,
+        0
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 4,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "calls": [],
+      "call_symbols": [],
+      "indirect_calls": 0,
+      "api_slots": []
+    },
+    {
+      "symbol": "?ObserveExplicitSurfaceEnd@@YAXPAUExplicitSurfaceLease@@@Z",
+      "size": 15,
+      "section": {
+        "section": 6,
+        "name": ".text",
+        "size": 15,
+        "flags": 1615859744,
+        "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+        "fields": [
+          {
+            "offset": 9,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+              "offset": 0,
+              "section": 8,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ObserveExplicitSurfaceEnd@@YAXPAUExplicitSurfaceLease@@@Z",
+            "offset": 0,
+            "section": 6,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 15,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": 5,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp + 8]"
+        },
+        {
+          "site": 8,
+          "mnemonic": "call",
+          "operands": "0xd"
+        },
+        {
+          "site": 13,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 14,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "calls": [
+        {
+          "site": 8,
+          "target": 13
+        }
+      ],
+      "call_symbols": [
+        "??_GExplicitSurfaceLease@@QAEPAXI@Z"
+      ],
+      "indirect_calls": 0,
+      "api_slots": []
+    },
+    {
+      "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+      "size": 44,
+      "section": {
+        "section": 8,
+        "name": ".text",
+        "size": 44,
+        "flags": 1615859744,
+        "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+        "fields": [
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+              "offset": 0,
+              "section": 10,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 28,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??3@YAXPAX@Z",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 8,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 8,
+            "type": 32,
+            "storage": 2
+          }
+        ]
+      },
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "fields": [
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 28,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "cfg": [
+        1,
+        1
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 4,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "site": 7,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 10,
+          "mnemonic": "call",
+          "operands": "0xf"
+        },
+        {
+          "site": 15,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": 18,
+          "mnemonic": "and",
+          "operands": "eax, 1"
+        },
+        {
+          "site": 21,
+          "mnemonic": "je",
+          "operands": "0x23"
+        },
+        {
+          "site": 23,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 26,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 27,
+          "mnemonic": "call",
+          "operands": "0x20"
+        },
+        {
+          "site": 32,
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "site": 35,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 38,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": 40,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 41,
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "calls": [
+        {
+          "site": 10,
+          "target": 15
+        },
+        {
+          "site": 27,
+          "target": 32
+        }
+      ],
+      "call_symbols": [
+        "??1ExplicitSurfaceLease@@QAE@XZ",
+        "??3@YAXPAX@Z"
+      ],
+      "indirect_calls": 0,
+      "api_slots": []
+    },
+    {
+      "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+      "size": 35,
+      "section": {
+        "section": 10,
+        "name": ".text",
+        "size": 35,
+        "flags": 1615859744,
+        "source_sha256": "2e88ece16d7662605ff651901857d0e4714bb8da59c84a0aa57d7ad4366deccb",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+            "offset": 0,
+            "section": 10,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 35,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "2e88ece16d7662605ff651901857d0e4714bb8da59c84a0aa57d7ad4366deccb",
+      "fields": [],
+      "cfg": [
+        1,
+        1
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 4,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "site": 7,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 10,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": 13,
+          "mnemonic": "je",
+          "operands": "0x1f"
+        },
+        {
+          "site": 15,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 18,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx]"
+        },
+        {
+          "site": 20,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 23,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": 25,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [edx]"
+        },
+        {
+          "site": 27,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 28,
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 0x1c]"
+        },
+        {
+          "site": 31,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": 33,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 34,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "calls": [],
+      "call_symbols": [],
+      "indirect_calls": 1,
+      "api_slots": [
+        28
+      ]
+    },
+    {
+      "symbol": "?ObserveExplicitEnvMapEnd@@YAXPAUExplicitEnvMapLease@@@Z",
+      "size": 15,
+      "section": {
+        "section": 12,
+        "name": ".text",
+        "size": 15,
+        "flags": 1615859744,
+        "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+        "fields": [
+          {
+            "offset": 9,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+              "offset": 0,
+              "section": 14,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 12,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ObserveExplicitEnvMapEnd@@YAXPAUExplicitEnvMapLease@@@Z",
+            "offset": 0,
+            "section": 12,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 12,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 12,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 15,
+            "section": 12,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "site": 5,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp + 8]"
+        },
+        {
+          "site": 8,
+          "mnemonic": "call",
+          "operands": "0xd"
+        },
+        {
+          "site": 13,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 14,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "calls": [
+        {
+          "site": 8,
+          "target": 13
+        }
+      ],
+      "call_symbols": [
+        "??_GExplicitEnvMapLease@@QAEPAXI@Z"
+      ],
+      "indirect_calls": 0,
+      "api_slots": []
+    },
+    {
+      "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+      "size": 44,
+      "section": {
+        "section": 14,
+        "name": ".text",
+        "size": 44,
+        "flags": 1615859744,
+        "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+        "fields": [
+          {
+            "offset": 11,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+              "offset": 0,
+              "section": 16,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 28,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "??3@YAXPAX@Z",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 14,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 14,
+            "type": 32,
+            "storage": 2
+          }
+        ]
+      },
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "fields": [
+        {
+          "offset": 11,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+          "addend": 0,
+          "local_symbol_offset": null
+        },
+        {
+          "offset": 28,
+          "type_id": 20,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "local_symbol_offset": null
+        }
+      ],
+      "cfg": [
+        1,
+        1
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 4,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "site": 7,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 10,
+          "mnemonic": "call",
+          "operands": "0xf"
+        },
+        {
+          "site": 15,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "site": 18,
+          "mnemonic": "and",
+          "operands": "eax, 1"
+        },
+        {
+          "site": 21,
+          "mnemonic": "je",
+          "operands": "0x23"
+        },
+        {
+          "site": 23,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 26,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 27,
+          "mnemonic": "call",
+          "operands": "0x20"
+        },
+        {
+          "site": 32,
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "site": 35,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 38,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": 40,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 41,
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "calls": [
+        {
+          "site": 10,
+          "target": 15
+        },
+        {
+          "site": 27,
+          "target": 32
+        }
+      ],
+      "call_symbols": [
+        "??1ExplicitEnvMapLease@@QAE@XZ",
+        "??3@YAXPAX@Z"
+      ],
+      "indirect_calls": 0,
+      "api_slots": []
+    },
+    {
+      "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+      "size": 35,
+      "section": {
+        "section": 16,
+        "name": ".text",
+        "size": 35,
+        "flags": 1615859744,
+        "source_sha256": "b9e25150ade938e66186bca3a1343c118d5d13a81e0be70810286c97c4df55bd",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 16,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+            "offset": 0,
+            "section": 16,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 35,
+            "section": 16,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      "source_sha256": "b9e25150ade938e66186bca3a1343c118d5d13a81e0be70810286c97c4df55bd",
+      "fields": [],
+      "cfg": [
+        1,
+        1
+      ],
+      "witnesses": [
+        {
+          "site": 0,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "site": 1,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "site": 3,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 4,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "site": 7,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 10,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax], 0"
+        },
+        {
+          "site": 13,
+          "mnemonic": "je",
+          "operands": "0x1f"
+        },
+        {
+          "site": 15,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 18,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ecx]"
+        },
+        {
+          "site": 20,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "site": 23,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax]"
+        },
+        {
+          "site": 25,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [edx]"
+        },
+        {
+          "site": 27,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "site": 28,
+          "mnemonic": "call",
+          "operands": "dword ptr [edx + 0x2c]"
+        },
+        {
+          "site": 31,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "site": 33,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "site": 34,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "calls": [],
+      "call_symbols": [],
+      "indirect_calls": 1,
+      "api_slots": [
+        44
+      ]
+    }
+  ],
+  "emission": [
+    {
+      "section": 3,
+      "name": ".rdata",
+      "size": 12,
+      "flags": 1076887616,
+      "source_sha256": "2afc299ae2c44dbad6b479482d2d7467d7defd66041659ed28ca5e8d83236e82",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".rdata",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "_SDKReleasePolicyLayout",
+          "offset": 0,
+          "section": 3,
+          "type": 0,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 4,
+      "name": ".text",
+      "size": 5,
+      "flags": 1615859744,
+      "source_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveRawSurfaceEnd@@YAXPAURawSurfaceLease@@@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 2,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 5,
+          "section": 4,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 6,
+      "name": ".text",
+      "size": 15,
+      "flags": 1615859744,
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 8,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveExplicitSurfaceEnd@@YAXPAUExplicitSurfaceLease@@@Z",
+          "offset": 0,
+          "section": 6,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 15,
+          "section": 6,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 8,
+      "name": ".text",
+      "size": 44,
+      "flags": 1615859744,
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+            "offset": 0,
+            "section": 10,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??_GExplicitSurfaceLease@@QAEPAXI@Z",
+          "offset": 0,
+          "section": 8,
+          "type": 32,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 10,
+      "name": ".text",
+      "size": 35,
+      "flags": 1615859744,
+      "source_sha256": "2e88ece16d7662605ff651901857d0e4714bb8da59c84a0aa57d7ad4366deccb",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??1ExplicitSurfaceLease@@QAE@XZ",
+          "offset": 0,
+          "section": 10,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 35,
+          "section": 10,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 12,
+      "name": ".text",
+      "size": 15,
+      "flags": 1615859744,
+      "source_sha256": "aad0d5f705b9b5f3320bfa637ef0d77c844c371ba1ee71cebfd926a8ade29a55",
+      "fields": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+            "offset": 0,
+            "section": 14,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "?ObserveExplicitEnvMapEnd@@YAXPAUExplicitEnvMapLease@@@Z",
+          "offset": 0,
+          "section": 12,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 15,
+          "section": 12,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    },
+    {
+      "section": 14,
+      "name": ".text",
+      "size": 44,
+      "flags": 1615859744,
+      "source_sha256": "1a562ca7f40844e50930f177dbd23d5cb292417109a62638ef4ba29ac34b61d2",
+      "fields": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+            "offset": 0,
+            "section": 16,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": {
+            "symbol": "??3@YAXPAX@Z",
+            "offset": 0,
+            "section": 0,
+            "type": 32,
+            "storage": 2
+          },
+          "addend": 0
+        }
+      ],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 14,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??_GExplicitEnvMapLease@@QAEPAXI@Z",
+          "offset": 0,
+          "section": 14,
+          "type": 32,
+          "storage": 2
+        }
+      ]
+    },
+    {
+      "section": 16,
+      "name": ".text",
+      "size": 35,
+      "flags": 1615859744,
+      "source_sha256": "b9e25150ade938e66186bca3a1343c118d5d13a81e0be70810286c97c4df55bd",
+      "fields": [],
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "??1ExplicitEnvMapLease@@QAE@XZ",
+          "offset": 0,
+          "section": 16,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 3,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 35,
+          "section": 16,
+          "type": 0,
+          "storage": 101
+        }
+      ]
+    }
+  ],
+  "headers": {
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8.h": "67abeede962f8d5ea879d45617d17265be883abf547cb7af7ab8b679874fc8af",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8.h": "f7aa8a20fc0cf04e30e0faa8d2954c5a2bf9d34a1471a093e7cb36bbb0cba1df",
+    ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ObjBase.h": "cfea0883750e286d00f5b2cf31e9e2ff5cf2201a04852eef0c7d70dcd524242b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Rpc.h": "769cd17b4992b2297f5d662832ca1bf20f83f00245e68f0825d0d5857de8dffd",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Windows.h": "c5ae461b1a3cbee914eec883ef55bd7dfd3eb287a8f178c0ed71eb3d1b1fb6f1",
+    ".tools/msvc710/Vc7/include/excpt.h": "6a357ada5e2ac00e45396f7a228740d1b4cbea4e4dd6159a4b61d12efd120fbd",
+    ".tools/msvc710/Vc7/include/stdarg.h": "adf6c92304eb851dc17249502e2437f70347138396d824ec8a5e5135fc128134",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinDef.h": "7b4cafb8b26c0d5aa94cd26d62cbdbb878501acf7b4b68a9e835f815f7f4b0a6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNT.h": "3aec4a87873489d4ea3987c117c7d1a37c2198f5f07d953031d47bc4a28da106",
+    ".tools/msvc710/Vc7/include/ctype.h": "b1aeb8f4c91ed630b87acf94a5a4f16d21ff4bfc9eaa7eed85bb562eb64dbca0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/BaseTsd.h": "3a7f51ff361adc74a3c024ab98a71be437599770d7ece60c2370f18db3e85257",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Guiddef.h": "acfa27cc0b8b66d475f26808a51698ccf6c37c526220b0b97271cf788afe3db2",
+    ".tools/msvc710/Vc7/include/string.h": "b68e9db97d695655abe65dd36d9fc0f92e5bc304371eb9c8a9d2144e55eb8c37",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack4.h": "73595d2f1bdc362ddf962cc9721832960df69dd53221820053d83e9466ed239d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PopPack.h": "829888e896f9400c936d4afb89e070160e2a9626c9ecece624ed3f6943b7868b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack2.h": "8c3a4e2bab10c86d007c872ef0196599beb892f793cc3a92bd09866886e72e2c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack8.h": "d9195e68f7a9e618533d1dfb5917cde890aa1a4f47c32e3a7ed0dd7b542636ce",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinBase.h": "64cc1b2b5682376c4fdd66ff80fc994899e76c897333c263a9d742f8f99150e3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinError.h": "d17ebc1cd84e9257c92fbdf6198f34c126ee8b8c71fda453a4bc3f3005326304",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinGDI.h": "8c6f9233f4e5c5e2f8a76e0c45bd6d778cf92931ffc78bea8de9510349afd44f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PshPack1.h": "32f8fb0648db4564c4e0501b2a5b1f1bcac3f89aa808bbd873f327561d184dbb",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinUser.h": "eae72e5e7ee5b13132ce059a0de42fa9ee956aafdec64436eabddfb91193fa49",
+    ".tools/msvc710/Vc7/include/tvout.h": "0856762e9e868c79bfa6fe6a80c5bf860ea6c45110d327329cdf5a7eb9dd527e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNls.h": "e238ea0081d76d191b67f284725d44eb2914f4d0ff1876d4a102b8bfad3ac1c5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinCon.h": "83dfa7a50ae3d554f7974f49b04c5c8c1ff6cd8d35e6f38fdc052478eb389980",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinVer.h": "309a8a70df284f20c4f98ca4383e30e19784159a7e5bf3fbc64258d07cd46135",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinReg.h": "9d0f87a485048dbe975e97acb18da429f2bdb70605220b7dc10a65890632c614",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Reason.h": "1a48dbfb6ff5f811ff813537e86b55063999e9c1c945dbe132c3c2ad859060e0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinNetWk.h": "58574effaaffe97ee2708501b6965012e54a9a65a1bb46362bcb3d50ee61892b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/CdErr.h": "bf32afdc975ba03781b01dfc7b3a450787cc213257a3f4b7f53ec168ce07dd7c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Dde.h": "b6cb1b3bdb2e0538f4d632b23fe0cc14b783bf38ef89b19a80407ab98fd201fc",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Ddeml.h": "dc22392cdafe53ee531017b58d22075f1ca747b9124c36b88a7f031763fc2c94",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Dlgs.h": "5e71a1cf7217ff00f008eed8abef8b63d2308b1afeb4a6274ad55104a17a679d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/LZExpand.h": "9e14cae95284c4b5cf5272aab41d50b9dfe2d413041815e9aad86dc890a247a6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/MMSystem.h": "71688839895a783fc4a6630c314050d7c66f06daf8037ed8bb96e4fe1dda9bc5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Nb30.h": "06ea9809f8ab6c0fc57f89b225b70c1a254310e7c16b8c4ec9626fd718fc543b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcDce.h": "a0b8c160dea649319433b2e0c528814948a1ee00da9d4bb1695e44d848b7ec94",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcDceP.h": "ccea8395d2ff01ae4343f75f260855f4c288d940b5ed43ab5ae9685f511990e3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNsi.h": "0ea9d4546b524a4f220d108d10c041d820f2b6fbc56338cc72d460e04b7af2f5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNtErr.h": "777beed6d3eaaa39ee0f9b08fe64093649378ad8a69d93bcf844c1c213a2d28c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcAsync.h": "3913bc4f052254618cb5ed406e3194ef7d6618182160bcc8460f2cf5e1039c0e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ShellAPI.h": "5f297b959a6c4b84f5fb01ae3dcb6c2d463b1a50a83bfb37aea2dd59b3ee9412",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinPerf.h": "5e4cd5db368ed6206edeb88ea751fe93bceec0b74fb33c557ace62d576129a9f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSock.h": "20c03a2620b1f3d551cc1cb65d88259a3bdb9444d07336fce093e0846197dfaf",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinCrypt.h": "2c74c1f53f960a797fa46ab992455983076d92e05e5ce2398216ddd186552597",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinEFS.h": "cf511a3ffb14e27c24216f0ab03e659dbf035fe4767bfe5d4f6cdd6e24a33ed9",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSCard.h": "d2aca4b69f798781f265caec4a667cb564f67fff589fbb4ea7c9fd10ce82b3d7",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WTypes.h": "4a4c90553322c02da3f5fb1fd8ca3038cc0deb36dc0519f84c335ac1bfe6b72a",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNdr.h": "34b462cce7b757a669f7c56d5ad426ea662a5a525e9c842e680c49c2e71fe2f5",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/RpcNsip.h": "081c562c4dcdce78cf4904b30e08baa10364c5c7dace5d8ee005344029fb8f0e",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinIoCtl.h": "3edf8e5b991e20a679b3f88cbdc00771b7ee8d6777d58c8b9c06cac4e9cb3693",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSmCrd.h": "d76aa6f2bec67a388de742be4cfe37e97d8955694bc4d39fb9dfd15a77fcbff1",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSpool.h": "d61bbcb12a93d7500ff3a334882cc99b30a49eec7602e83e15f9d6c16e8d2296",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PrSht.h": "4804afd5bbf595504ce4f292f86197d55216fe18db2b4b55eb1b56225ed1f43b",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Ole2.h": "7118421e3ea038e85fc40c925326e78cde7b3026b493e030a6eca18fc63aa2c0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Unknwn.h": "0e183686cd36bdeb55aa85e3f2c11f2738379fd0d7616f003766996dbcaadd48",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ObjIdl.h": "4964e618dd33e0cfab32bb630c729efc17ecb8569aeab1aa5a74a907f5477b0c",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/CGuid.h": "8d50856479fe2fc4d14430b4b3c940487919d391a4312bf298835770e31f7a44",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/UrlMon.h": "670abb5352dfccd3dc30ae975f6fdc85c23a6ad734f301012d26f8449f704fec",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OleIdl.h": "ec5ddecf7fb986326ecfb680b32f58dd0db4b9fad4ed8041e93833930d4696b6",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/ServProv.h": "0730ed10ab4fbdbc31dca0191e37cb9712ac0f8d61fb6b2ba79a43077ce8ac7d",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/MsXml.h": "ec4cf0af0d6f00453d2cae45e31d4c8c18f80036581a0d6ec3c196d36aeec755",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OAIdl.h": "b326e4828dc5e1d0abac635f77b111dc4fde6730643d80217e20c252b07d7f16",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/PropIdl.h": "c737984bb1072e3219daab49251da318c3b139491b2bae48639cca9b59562d02",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/OleAuto.h": "75f9d08192505cf21d6f73c271b74ce7088d8dbb5235cc15596546536408e5c3",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/CommDlg.h": "ec208105e7409f324c8997592415421debedcc4ea4c2665aaae2734b0c897ec9",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/StrAlign.h": "791fd09c603ea4636b275982f322a2a0459410ed3570514c5a8b9f69266936bf",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/WinSvc.h": "20a2cf9c5f245eebf0f6e2527dedb8be599bfe7b87c20aa52693b4b15d57d2e8",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Mcx.h": "a01f5381c7d65fc7a0b8945821d2f02ef953814a243e92237bad97b5239921a2",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/Imm.h": "db0a714c28b8d636d155eada238e324db83935d0a887ece6eec580902e6d0124",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8types.h": "5fb192baaf08da895ec37e367d9e5e97dde5fb59ecf353d48aa93455abd968ef",
+    ".tools/msvc710/Vc7/include/float.h": "5b6fc758e006653443d8372e45f530072183e145d4031787b2e43cba6ff1d84f",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3d8caps.h": "62ac869f16080b54185fd68b80a7d2829c49881adb6be6dc901cd99e7548fcc4",
+    ".tools/msvc710/Vc7/include/limits.h": "d3ad33ce7c8eb1c3f7c5f151339efdcd44ae1d76506a314f0b91daf26c004522",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.h": "bfdca3f289819c319375c9052d192f1d05aed71ada6547b1b576d97b95fe91c1",
+    ".tools/msvc710/Vc7/include/math.h": "776b7b9c45c5aed0e355109ab7f3435971d833d2228dd4f2b16aad4fe6bf96c8",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8math.inl": "fc3d59fe5db1ccdbdceb3179f1d28f05a1bbd4d1b5d03a95d41a7603319f5688",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8core.h": "31dc4b256fa533ea2dcdf2b80bf1d5a52f247ec5e2b647cec137e6ed619e9ef0",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8tex.h": "758a424d3b22264fd9d2cb6ae9be1d2e3589ef5e95321db8f25afc6a4b3d60be",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8mesh.h": "f8352e32755f8245a571cb01edc5ca5c630718ff67fe632f41a36022cf254e89",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/dxfile.h": "058f336ccf0af82b21112086306fe8b51610eab3ad47ba586711d49a313cf045",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8shape.h": "4e6cb1a06dc360af7c50ada9d60bce21772028dea13d10f82fae4ee42ac7c2c7",
+    ".tools/msvc710/Vc7/PlatformSDK/Include/d3dx8effect.h": "5c62ffbd8b584f0a281f9f9acbf9be568016146d163926d1cb8f43963e917f59"
+  },
+  "layout": {
+    "section": 3,
+    "name": ".rdata",
+    "size": 12,
+    "flags": 1076887616,
+    "source_sha256": "2afc299ae2c44dbad6b479482d2d7467d7defd66041659ed28ca5e8d83236e82",
+    "fields": [],
+    "definitions": [
+      {
+        "symbol": ".rdata",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 3
+      },
+      {
+        "symbol": "_SDKReleasePolicyLayout",
+        "offset": 0,
+        "section": 3,
+        "type": 0,
+        "storage": 2
+      }
+    ]
+  },
+  "layout_values": [
+    4,
+    4,
+    4
+  ],
+  "retained_sha256": {
+    "config/sdk-interface-origin-evidence.json": "4fb78070d97506d8a9604dd860090cce66bf4e6a67946cfc24e241954df886f4",
+    "config/sdk-file-image-origin-evidence.json": "7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6",
+    "config/sdk-debug-parent-origin-evidence.json": "aa0b86119baf570d7308dfe0cca2123e2ef646a20ad108c862adea7b062d4a1c",
+    "config/optimized-deleting-origin-evidence.csv": "545331d585fc73f5ddc94da637a5fce1c370d19cc939bd402cf781f504f02c0b",
+    "scripts/verify-optimized-deleting-origins.py": "6ec5df6cc9ca20585bdd981d60c729baf7dd435f3da92b1e8784d5dcc5d865cf",
+    "probes/VC7DeletingDestructor.cpp": "7e76aae72843b9ba21d673d58145d320b9217576328ffa80a774388d816b37bf",
+    "scripts/verify-sdk-interface-origins.py": "57f9ded32b394ddff62911e474b269da98c90152fff9a79c2c0a170059f1464c"
+  }
+}

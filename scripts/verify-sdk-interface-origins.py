@@ -102,6 +102,17 @@ def link_code(raw,fields,bindings,address,catalog):
         struct.pack_into('<I',linked,off,value)
     return linked,calls,data
 
+def reviewed_destructor_anchor_matches(old,function,origin):
+    if function==old['function'] and origin==old['origin']:return True
+    allowed={'0x0061FE0A': 'c9b6969b8e8fe4581bf09aafffba30fedfb58684b08b7fc8a66625c632fe2473', '0x00609EEF': '674c0dd1d241dc0845cfa368871ce57798c621f19d8e95027026401af8c85156', '0x0060A7D2': '6e2d5e85b12772766a3e47012f8c0dc9204dea545e657bff498655fd80bd482d'}
+    if old['address'] not in allowed:return False
+    path=ROOT/'config/sdk-destructor-origin-evidence.json'
+    if not path.exists():return False
+    m=json.loads(path.read_text());records=[r for r in m['functions'] if r['address']==old['address']]
+    return (m['evidence_id']=='R187' and len(records)==1
+            and digest(json.dumps(records[0],sort_keys=True,separators=(',',':')).encode())==allowed[old['address']]
+            and records[0]['source_record']==old and function==records[0]['accepted_function'] and origin==records[0]['accepted_origin'])
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--evidence-only',action='store_true');args=parser.parse_args()
     m=json.loads((ROOT/EVIDENCE).read_text());verify_plan(m)
@@ -148,7 +159,7 @@ def main():
                 state='original' if args.evidence_only else 'accepted';r0=primary[a]
                 if functions[a]!=r0[state+'_function'] or origins[a]!=r0[state+'_origin']:raise ValueError('SDK interface bounded canonical acceptance differs')
                 if any(int(a,16)<int(q,16)<int(a,16)+size for q in functions):raise ValueError('SDK interface hides an interior inventory entry')
-            elif functions.get(a)!=r['function'] or origins.get(a)!=r['origin']:raise ValueError('SDK interface changes another original source/native anchor')
+            elif not reviewed_destructor_anchor_matches(r,functions.get(a),origins.get(a)):raise ValueError('SDK interface changes another original source/native anchor')
             if 'bindings' not in r:
                 # Entire source/native bodies remain context, with actual unsolved fields.
                 # They receive no body-positive, callee linkage or origin credit.
