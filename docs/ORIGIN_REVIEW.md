@@ -13513,3 +13513,71 @@ The original 1311 goal has 1092 classified / 219 left and remains active. Author
 bytes add 1191 to 1,970,634; exact stays 60 functions / 9883 bytes / 60 units across
 eleven objects, provisional coverage 0.50%. No source/private ABI/mapping/exact
 credit is added.
+
+## R216 — complete list head construction, single erase and iterator increments
+
+R216 resolves ten library entries /751 ledger bytes: list constructor531C00 /56,
+pop_front531C80 /40, allocator constructor5320C0 /14, List_val constructor532080 /53,
+head Buynode531F30 /223, single-iterator erase531E70 /186, iterator postincrement
+532320 /42, iterator preincrement5323A0 /22, const_iterator preincrement532450 /35,
+and head rollback/shared exit531FBF /80. Only head extent changes, from143 to223,
+ending53200E inclusive. The recovery starts at parent offset143 and is contained
+in that complete source owner. Nine unique source policies cover671 bytes;
+overlapping recovery80 earns no additional unique byte or exact credit.
+
+The original VC7.1 list header allocates one head node, constructs its next link,
+increments a local construction count, then constructs its previous link. The
+catch conditionally destroys the first constructed link, deallocates the node,
+rethrows and shares the normal exception-frame exit. The actual storage-class-3,
+type-32 local definition at offset143 belongs to the complete223-byte COFF section.
+The full80-byte EH data669E0C references that same source-local definition with an
+actual DIR32 field. Normal jump at parent offset141 reaches shared exit531FF4;
+the recovery calls CxxThrowException at its offset48 and continues through the
+actual final RET. Full roots [0,143], all76 reachable instructions, every exit,
+real function AUX length and complete source debug records are retained. A single
+CC at53200F is alignment; next full Tidy532010 /100 keeps prior accepted records.
+
+Single erase is the original public one-iterator overload, not range erase. It
+advances the return iterator, reconnects both links, destroys/deallocates the node
+and decrements count. Pop_front calls erase(begin()). Natural SDK controls also
+reproduce three iterator increment policies. The full readonly observation is
+16 bytes [16,12,4,4]; the carrier element is16 bytes and node allocation24. These
+observations do not identify original element types or a private game layout.
+Complete accepted game initializer52CEE0 /314 retains its actual list constructor
+receiver at this+FEC. No incomplete game class is instantiated or declared.
+
+Five independently ambiguous leaves remain unchanged and unknown: next getter
+531D80 /8, previous getter531D90 /11, allocator getter532350 /16 and empty destroy
+bodies532480 /5 and532500 /5. Original R206/R207 public ordinary alternatives are
+rebuilt cold with full source/AUX/emission/includes/layout. All six pointer getter
+and twelve link/value alternatives are preserved. A structured audit retains64
+literal paired historical snapshots; they concern only these protected unknowns.
+Current source closure does not resolve their ordinary getter/intrusive-link or
+empty-destruction alternatives. All prior evidence and annotations stay immutable.
+
+Replay `scripts/repo-python scripts/verify-list-head-erase-origins.py`.
+Manifest `config/list-head-erase-origin-evidence.json` SHA-256:
+`d60078dcb47d90103d3ae25fe1e8645cde568c35f1947567a0fffaf83de74274`. A fresh natural-source graph owns105 complete code/data sections /5126,
+all254 actual fields and86 full normal/EH CFGs, including complete available
+standard exception/string definitions, throw metadata and two real weak AUX/strong
+fallback owners. Whole unmasked linked bytes match. Entire110 ordinary emissions
+/5222,28 original includes and layout16 are frozen. Pinned compiler3077 flags are
+reproducibility settings, not an executable-wide inference. Shared tools remain
+read-only. Thirteen unchanged external checkpoint inputs retain original records,
+whole native hashes and source-catalog provenance. Scoped original CRT members
+and absolute FS offset are verified from the complete pinned archive. The
+retained type_info vtable's symbol address660EDC is offset4 inside its full8-byte
+section at660ED8; compare/hash the whole section, not eight bytes at its address
+point. Existing unrelated cold proof trees are pinned, not newly replayed here.
+
+Original-state and accepted-state complete cold replays pass. All3032 CI tests
+pass, including15 new source-ownership/extent/recovery/ambiguity guards. Earlier
+902 authored bodies /1956112, exact baseline preservation, target, project/query
+completion markers, bounded canonical readback, fresh209 triage, progress and
+whitespace pass. Public/Web MCP acceptance remains waived by the user. Exactly
+ten function/origin rows change, with only one extent revision. No reconstruction
+source/private ABI/mapping/exact credit is added. Current4142 resolved =963 authored
++2599 library+580 compiler;209 pending and3179 excluded. The original1311 goal has
+1102 classified /209 left and remains active. Authored denominator1,970,634 and
+exact60 functions /9883 bytes /60 units across eleven objects remain unchanged;
+provisional coverage0.50%.
