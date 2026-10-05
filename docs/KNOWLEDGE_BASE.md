@@ -9872,3 +9872,59 @@ Public MCP acceptance stays waived. Totals remain 4065 resolved: 949 authored,
 1311 goal remains active, with 1025 resolved and 286 left. R207 next reopens six
 whole list node-link/value helpers / 57 provisional bytes under the retained
 list policy graphs, preserving source and ownership alternatives individually.
+
+## R207 — complete list node-link/value source alternatives
+
+R207 expands the six-root /57-byte shortlist to the related character-list
+previous-link helper at `0x00531D90`, reviewing seven whole leaves /68 bytes.
+All seven retain unknown origin: `0x00411E80`8, `0x00411E90`11,
+`0x004124C0`11, `0x0041E100`8, `0x0041E110`11, `0x00531D80`8 and
+`0x00531D90`11. Replay
+`scripts/repo-python scripts/verify-list-node-link-alternatives-origins.py`;
+`config/list-node-link-alternatives-origin-evidence.json` SHA-256 is
+`19c05f902093e46d3d85daf6c95ea5d2a477ea66049d9a8398b4e5fe6c4b85db`.
+No canonical classification, extent, source, ABI, mapping or exact input changes.
+
+**Complete evidence.** Three original cold list probes retain all750 ordinary
+section instances /33500 bytes, actual original includes and full layouts through
+literal R206 source references. Five whole typed parents /556 bytes retain all32
+actual fields and complete normal CFGs: list insertion115 at411EA0,41E120 and
+531DF0, erase186 at411F20 and value-node cleanup25 at412460. Each whole selected
+source/field/native/permission/AUX/CFG/unchanged-canonical comparison passes.
+Source catalogs derive from complete retained source owners and original
+independent externals, not newly observed native field destinations. This replays
+the selected whole source graphs and every ordinary compiler emission; it does
+not claim to rerun all historical native controls or recursive dependencies.
+
+Natural original public `<list>` const iterators instantiate `_Nextnode`,
+`_Prevnode` and `_Myval` for independent generic payload sizes4 and16. Complete
+generic intrusive nodes separately supply next-link, previous-link and value
+accessors. Twelve real definitions retain whole AUX records, source symbol
+indices and full debug-line provenance. Each four-member policy group emits
+byte-identical complete bodies: next8, previous11 and value11. The three roles
+have distinct bytes; matching one role cannot substitute another. No field is
+masked, body cropped, node padding invented or private target node instantiated.
+All31 ordinary new sections /526 bytes,30 complete functions /490,28 actual
+original headers,18 real forwarder/dependency fields and full generic layout36
+remain. The generic node sizes12/24 and member offsets0/4/8 are control
+observations, not declarations of private game payload or node layouts.
+
+The original source and retained callers suggest list roles, but ordinary
+intrusive-node policies reproduce the complete short helpers. These alternatives
+do not independently settle the opaque target helper owners. All seven original
+unknown rows and protected prior observations stay unchanged; source-byte
+identity does not grant library/compiler ownership or exact credit. The new
+proof supplies durable reasons and controls for those decisions.
+
+**Checks and continuation.** Complete cold replay, target/project/query,
+canonical readback, authored/exact guards, fresh286-pending triage, generated
+progress and whitespace pass. All2771 CI tests pass, including20 new guards.
+Prior ledgers, manifests, verifiers and exact inputs remain unchanged. Public MCP
+acceptance remains waived. Totals remain4065 resolved:949 authored,2538 library
+and578 compiler;286 pending and3116 excluded. Exact stays60 functions /9883
+bytes /60 units across eleven objects; all902 authored bodies /1956112 bytes
+remain. The original1311 goal has1025 resolved and286 left and remains active.
+R208 next investigates six complete vector insertion carriers /4722 provisional
+bytes, including their catch entries, shared tails and real EH metadata. Their
+known parent mappings are diagnostic; reconcile the complete source/control-flow
+extent and independently owned fields before accepting any classification.
