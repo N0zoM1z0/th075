@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246 and bounded unresolved reviews/audit R247–R249. The public
+review cohorts R108 through R246 and bounded unresolved reviews/audit R247–R250. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,43 +20,50 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R250 zeroing-source context investigation below.
+the bounded R251 remaining review matrix below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R249; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R250; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R250 zeroing-source context
+## Next agent objective — R251 remaining review matrix
 
-R249 audits all116 pending whole extents4094 bytes and preserves their literal
-canonical pairs.114 pass the ordinary RET-based verifier; the two tail cases
-60C120 /11 and620132 /5 are accounted for by complete original source/native
-tails and independent whole destinations65/21. The unchanged entire R224 CLI
-cold-replays. Discovery finds structured source/control/retention references
-for78 candidates, but snapshots/text hits do not prove full review or ownership.
+R250 retains625575 /14 and64F513 /12 as unknown after complete824-member
+source-reference coverage,whole mapped PE value scans,attested Ghidra queries,
+genuine complete ordinary14/12 equality and unchanged entire R155 cold replay.
+All five source incoming fields are debug/FPO records, not code/data references.
+FillZeroMan12 was already reviewed in R155; this rediscovery is not new credit.
 The full goal remains1195 classified /116 left and active. The user pushed
 throughc9b8efa; subsequent commits remain local. Preserve all accepted origins
 and exact60. One complete Web MCP acceptance remains due after all remaining
-origin review; the coverage audit is not completion or acceptance.
+origin review. No scope clarification is presumed.
 
-Next investigate the new complete zeroing-source leads625575 /14 and64F513 /12.
-Private `.analysis/r249-zero-source-survey.json` and
-`.analysis/r249-source-tail-check.json` retain whole SDK png_info_init14 and
-pinned multithread CRT __FillZeroMan12 source sections with actual definitions/
-AUX and no fields. They reproduce whole target bytes, but currently have no
-independently established target namespace/linker-selection witness. The
-single-thread CRT observation is additional diagnostic data, not the selected
-archive/profile. Reconcile whole original object context, genuine source
-incoming code/data fields, complete accepted dependency bindings and current
-native/PE references before any transition. Short zeroing fingerprints and
-neighbor placement alone do not settle ownership. Preserve protected original
-alternatives; do not invent an original declaration or pad a generic layout.
+Next assemble a complete116-row review matrix of whole observed behavior,
+original source/context evidence,retained alternatives and each missing
+independent witness. Reconcile every row against the current target/canonical
+state and old literal records. Keep ownership unresolved wherever evidence is
+non-identifying; snapshots,source equality,library parents and metadata hits do
+not themselves establish origin. The user has been asked whether completed
+review may retain documented unknowns before final MCP acceptance, or must
+resolve all origins. That clarification is pending; do not shrink the goal or
+run final MCP as if it had been answered. Continue independent review work.
+
+R250 private `.analysis/r250-reference-survey.json` retains all ordinary source
+objects/fields for both function names. Exactly five references are debug/FPO;
+35 PNG source sections1121 and38 intrncvt sections6289 are complete source
+inventories, not invented target mappings. `.analysis/r250-compare.json` freezes
+whole ordinary14/12 controls and layout[64,12,4]; both are source positives only.
+The unchanged full R155 CLI cold-replays. `.analysis/r250-remaining-pointers.json`
+records raw value occurrences for all116 pending extents; no-candidate-caller
+rows have no absolute occurrences in mapped file-backed sections, but computed/
+interior/runtime reachability remains unproven. All canonical and exact inputs
+stay unchanged. Do not repeat these same zeroing controls as a new distinction.
 
 R249 private `.analysis/r249-evidence-map.json` records all116 current pairs,
 full instructions/hashes/CFG limitations, original structured record trails and

@@ -15847,3 +15847,52 @@ left and active; exact60 /9883 bytes /60 units /eleven objects and provisional
 authored bytes1973300 are unchanged. The evidence coverage audit is not full
 origin acceptance. One complete Web MCP acceptance remains due after all
 remaining origin review.
+
+## R250 — zeroing reference closure and ordinary source equality
+
+R250 retains625575 /14 and64F513 /12 as unknown. Reading back R155 establishes
+that FillZeroMan12 already had a complete unmasked ordinary-source positive;
+R249's rediscovered archive association was not a new ownership witness. The
+original R155 and R192 records remain unchanged and authoritative.
+
+Private `.analysis/r250-reference-survey.json` scans146 normal i386 SDK COFF
+members and678 multithread CRT COFF members from the original pinned archives.
+The two literal source function names have five actual incoming fields:one PNG
+FPO field and four CRT debug-symbol/FPO fields. None is an incoming source
+code/data field. The resource COFF with an empty string table is handled only
+through its fully bounded inline symbols; no malformed input silently falls
+back to a different library or parser. Both complete original source-object
+inventories retain all definitions/AUX/raw-section hashes/fields:35 PNG sections
+1121 bytes and38 intrncvt sections6289. These inventories are source context;
+only the previously specified whole14/12 carriers compare to their target
+counterparts, not every source/debug section to an invented target address.
+
+All mapped file-backed PE sections are scanned for both complete absolute
+address values, with no occurrences. Both read-only Ghidra xrefs queries return
+no recorded references and independently complete with target attestation and
+TH075_QUERY_OK. Current candidate-based direct-call triage likewise supplies
+no incoming calls. These bounded observations do not rule out computed,
+interior, runtime or unmodeled references and do not prove historical linker
+selection. A second private whole pending value-discovery scan finds no
+absolute-address occurrence for any pending candidate lacking a candidate
+caller; this is discovery, not typed pointer or ownership evidence.
+
+Natural `.analysis/probes/R250ZeroWords.cpp` declares two complete ordinary
+word-storage observations64/12 and clears each through memset. Serial pinned3077
+/O1 /Oi /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes emits exactly three ordinary
+code/data sections38 bytes. Full fresh ClearSixteenWords14 and ClearThreeWords12
+compare unmasked with all target bytes; there are no relocation fields. The
+complete readonly layout is[64,12,4]. No original PNG, floating or game type,
+private layout, ABI or compiler profile is reconstructed from these generic
+observations. The equality proves compatible source alternatives, not origin
+or exact-reconstruction credit. The unchanged complete R155 CLI cold-replays
+its four retained full provenance trees and fresh original short controls,
+including the existing12-byte ambiguity and original265-byte SEH carrier.
+
+Target/tracking,readonly Ghidra attestations and query completion,strict
+unchanged4351 canonical pairs,all60 exact-input guards,fresh116-row triage,
+progress freshness and whitespace checks pass. All 3,436 local CI tests pass. Counts remain4235 resolved =999 authored+2655
+library+581 compiler,116 pending and3236 excluded. Original1311 remains1195
+classified /116 left and active. Exact60 /9883 bytes /60 units /eleven objects
+and provisional authored denominator1973300 are unchanged. The full remaining
+review and requested final complete Web MCP acceptance remain outstanding.
