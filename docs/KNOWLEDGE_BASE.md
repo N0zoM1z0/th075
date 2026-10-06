@@ -14090,3 +14090,36 @@ exact60 /9883 bytes /60 units /eleven objects stay unchanged. No private source,
 complete original layout, canonical transition or exact credit is inferred.
 The original goal remains active; final complete Web MCP acceptance stays due
 after the requested remaining review. No push was authorized.
+
+## R267 — local PDB identity coverage without recovered original symbols
+
+**Target-observed:** The pinned EXE's entire R266 RSDS reference still agrees
+through RVA/file-pointer reads: GUID `9306058f-6d68-4650-b80b-1e0d05dd1e18`, age 3.
+
+**Local artifact-observed:** The fresh bounded local inventory contains 3,224
+unique named PDBs: 3,203 MSF7 and 21 Portable PDB files. Complete bounded identity
+metadata rejects every current candidate. Fourteen MSF physical files exceed
+their declared extent; explicitly permitted identity-only reads preserve that
+anomaly and never access undeclared pages or establish full PDB validity.
+Portable identity has GUID+stamp and no native age; all current GUIDs differ.
+Equal portable GUIDs would remain unresolved conversion candidates. The initial
+3,227-path inventory lost three unrelated temporary PDBs before final discovery;
+those initial-snapshot gaps are retained separately from the error-free current
+inventory. Shared tools were read only and their resolved compiler root is
+inside the enumerated root.
+
+**Unknown:** No original private symbol/type/declaration witness was recovered.
+Other extensions, external directory symlink targets and nested/renamed archive
+content are outside this bounded scan. No global PDB absence is inferred. The
+97 pending functions and their existing alternatives remain unknown; all 60
+exact functions and 28 exact/production inputs remain unchanged.
+
+Replay `scripts/repo-python scripts/audit-local-pdb-identities.py --root /home/pentester/coding/codex_ida --output .analysis/r267-current-pdb-identity-audit.json`.
+The public R267 manifest freezes counts, complete identity-witness digest,
+source pins, private report hashes and exclusions; later discovery must not
+rewrite that historical observation. Fifteen new regression checks and all
+3,584 CI checks pass, with complete current unknown hashes/pairs and 3,088 old
+trails retained. No compiler build, canonical transition or exact acceptance
+occurs. Original 1,311 progress remains 1,214/97; final Web MCP acceptance is
+still due after the remaining review. R268 addresses the actual supplied RAR's
+16 entry content/header signatures, including renamed/nested symbol candidates.

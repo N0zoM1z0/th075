@@ -17057,3 +17057,65 @@ exact60 /9883 bytes /60 units /eleven objects stay unchanged. No private source,
 complete original layout, canonical transition or exact credit is inferred.
 The original goal remains active; final complete Web MCP acceptance stays due
 after the requested remaining review. No push was authorized.
+
+## R267 — bounded exact original-PDB identity lookup
+
+The genuine R266 target reference is read again from the pinned Japanese EXE,
+including whole RSDS/RVA/file-pointer agreement. Required GUID is
+`9306058f-6d68-4650-b80b-1e0d05dd1e18`, age 3. Read-only enumeration under the local
+`codex_ida` workspace includes the resolved shared compiler root, uppercase PDB
+extensions and arbitrary basenames. The final current inventory has 3,224 paths
+and unique physical files, with no enumeration or parsing errors: 3,203 MSF7
+and 21 Portable PDB files. All identity comparisons reject; none supplies the
+original private declaration witness. This is bounded local evidence, not proof
+that the original PDB does not exist elsewhere.
+
+`scripts/pdb_identity.py` follows the actual MSF superblock, directory page map,
+complete stream-size/page directory and full GUID-bearing info header. Native
+matching requires GUID and age; filenames, timestamps and compiler profiles
+cannot replace them. Fourteen files contain physical pages beyond the declared
+extent. Default reads reject that discrepancy; the audit explicitly allows
+identity-only extraction, reads exclusively within declared pages and records
+surplus bytes. Truncation remains an error, and full PDB validity is unclaimed.
+See the [MSF format](https://llvm.org/docs/PDB/MsfFile.html) and
+[PDB identity stream](https://llvm.org/docs/PDB/PdbStream.html).
+
+Portable files are parsed through their metadata root, bounded stream directory
+and complete `#Pdb` stream. Their identity is GUID+stamp, with no native age field.
+All 21 GUIDs differ from the native target. An equal portable GUID remains an
+unsupported conversion candidate, rather than receiving an invented age or
+becoming a false nonmatch. See Microsoft's
+[Portable PDB format](https://github.com/dotnet/runtime/blob/main/docs/design/specs/PortablePdb-Metadata.md)
+and [PE/COFF addendum](https://github.com/dotnet/runtime/blob/main/docs/design/specs/PE-COFF.md).
+No DBI/TPI/private source/type inspection is claimed for any nonmatching file.
+
+Initial discovery listed 3,227 paths: 3,192 parsed files, 21 unsupported Portable
+PDBs and 14 anomalous MSF extents. The latter 35 format gaps are now resolved for
+identity lookup. Three unrelated temporary build PDBs disappeared between
+inventories, leaving explicit gaps in the initial snapshot. The fresh 3,224-file
+snapshot has no errors; it does not retroactively classify those missing files.
+The reader does not follow directory symlinks, scan other extensions or expand
+nested/renamed archive data. The controlled compiler target lies within the root.
+
+`config/local-pdb-identity-audit-evidence.json` retains the exact target reference,
+coverage/counts, sorted complete metadata-witness digest with multiplicity,
+private report hashes, source/parser pins, exclusions and unchanged totals.
+Candidate paths, complete identities and failures stay in `.analysis/`. The
+read-only replay is:
+
+```bash
+scripts/repo-python scripts/audit-local-pdb-identities.py --root /home/pentester/coding/codex_ida --output .analysis/r267-current-pdb-identity-audit.json
+```
+
+This creates a current corpus report; R267's frozen observation must remain
+historical when unrelated local files change. Fifteen regression checks cover
+GUID byte order, age mismatch, noncontiguous directory pages, nil/truncated
+streams, declared versus physical extents, portable framing, converted-format
+ambiguity, alias deduplication and missing-file coverage. All 3,584 CI checks,
+target-required tracking, all 97 complete unknown bodies/pairs and 3,088 original
+trails, all 60 exact pairs/28 unchanged inputs and whitespace pass. Canonical
+counts remain 4,254 resolved /97 pending /3,608 pending bytes, original 1,311
+progress 1,214/97 and exact 60 /9,883 bytes. No origin/source/ABI/mapping/exact
+credit follows. Final Web MCP acceptance remains due after the requested review;
+no push was authorized. R268 next audits all 16 supplied-archive entry contents
+for renamed PDB/nested archive framing, without replacing the target.

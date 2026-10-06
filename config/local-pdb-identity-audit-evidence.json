@@ -1,0 +1,79 @@
+{
+  "evidence_id": "R267",
+  "baseline_commit": "fba0d4a6d7ac336a886b1056f20f114fb0b82579",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "target_reference_manifest": "config/sdk-inline-special-member-review-evidence.json",
+  "target_reference_manifest_sha256": "399e138ed205302ab549415671a8ce3d00212b19ee6e84d1b2bd8ebf6259d48d",
+  "required_guid": "9306058f-6d68-4650-b80b-1e0d05dd1e18",
+  "required_age": 3,
+  "scope": {
+    "root_description": "Local codex_ida workspace, including the resolved shared compiler installation inside that root.",
+    "glob": "*.[pP][dD][bB]",
+    "follow_directory_symlinks": false,
+    "shared_compiler_resolution": "Resolved compiler root is inside enumerated root; no separate alias traversal.",
+    "exclusions": [
+      "Files with other extensions",
+      "Directory symlink targets outside the root",
+      "Nested/renamed archive contents",
+      "Historical candidates removed during the scan",
+      "Full DBI/TPI/symbol/source validation"
+    ]
+  },
+  "summary": {
+    "path_count": 3224,
+    "unique_physical_files": 3224,
+    "enumeration_errors": 0,
+    "statuses": {
+      "parsed-nonmatch": 3224
+    },
+    "formats": {
+      "MSF7": 3203,
+      "PortablePDB": 21
+    },
+    "msf_trailing_extents": 14,
+    "identity_witnesses_sha256": "53b4154bdc5757be8d6e59d90b723152a7836200897619525366fc18e7737488"
+  },
+  "initial_inventory": {
+    "path_count": 3227,
+    "initial_parsed": 3192,
+    "initial_unsupported_portable": 21,
+    "initial_unparsed_msf_trailing": 14,
+    "subsequently_missing": 3,
+    "limitation": "Three unrelated temporary build PDBs disappeared between inventories; retained as gaps in the initial snapshot, not parsed nonmatches."
+  },
+  "private_reports": {
+    ".analysis/r267-pdb-identity-scan.json": "bee3cf294914d49850e411db7fb92b1b8badd0ac2e01c0f22106ba736775da1f",
+    ".analysis/r267-current-pdb-identity-audit.json": "e9333446482324ef3a75119c224eab8c6869f5808f644b7362e99bb29b89d1c0",
+    ".analysis/r267-pdb-paths.txt": "ec46ac47c60148fc8ce6c729fe623be395ee64535b4aed6701daae812f647aba",
+    ".analysis/r267-scan.log": "2f9ff8ab273d92e81994b2b713e0f330b4d99d2ba9db40f80a7bf2c08fdcd865"
+  },
+  "reader_sha256": {
+    "scripts/pdb_identity.py": "7dab7070094b511bed8cab0512f124ab04345a3f7edd4acceb659a178ded8864",
+    "scripts/audit-local-pdb-identities.py": "860be90850bafd36af9ee833db76458e33ce3c993c71975c3f4b79ee248fa919",
+    "tests/test_pdb_identity.py": "d9a1301d0079be429778c1d533218a1164ab6e325f0216b2bcdbf17dd5e1992c"
+  },
+  "format_methodology": {
+    "native": "Bounded MSF7 superblock, full stream-size/page directory and complete info-stream header; GUID+age; unsupported framing is a gap.",
+    "trailing": "Explicit identity-only mode retains undeclared surplus bytes, reads only declared pages, rejects truncation; never asserts full PDB validity.",
+    "portable": "Bounded metadata root/stream directory and full #Pdb stream; GUID+stamp, native age unavailable; unequal GUID rejects, equal GUID remains an unresolved conversion candidate."
+  },
+  "canonical_state": {
+    "resolved": 4254,
+    "pending": 97,
+    "pending_bytes": 3608,
+    "original_review_progress": 1214,
+    "original_review_pending": 97,
+    "exact": 60,
+    "exact_bytes": 9883,
+    "exact_units": 60,
+    "exact_objects": 11
+  },
+  "decision": "No matching identity in the current bounded named corpus; no origin transition, source, ABI, mapping or exact credit.",
+  "sources": [
+    "https://llvm.org/docs/PDB/MsfFile.html",
+    "https://llvm.org/docs/PDB/PdbStream.html",
+    "https://github.com/dotnet/runtime/blob/main/docs/design/specs/PortablePdb-Metadata.md",
+    "https://github.com/dotnet/runtime/blob/main/docs/design/specs/PE-COFF.md"
+  ],
+  "next_bounded_task": "R268 supplied-archive content/header audit: all sixteen original entries, renamed MSF/portable PDB and nested-archive signatures; preserve unknowns and no substitute target."
+}

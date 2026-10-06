@@ -3,7 +3,7 @@
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
-R247–R252, R258, R259, R264, R265 and R266. The public
+R247–R252, R258, R259, R264, R265, R266 and R267. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,20 +21,65 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R267 exact original-PDB identity lookup below.
+the bounded R268 supplied-archive content/header audit below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R266; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
+R001–R267; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
 explicitly unresolved observations.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R267 exact original-PDB identity lookup
+## Next agent objective — R268 supplied-archive content/header audit
+
+R267 completes a bounded read-only identity lookup under the local `codex_ida`
+workspace, including the resolved shared compiler installation inside that root.
+The current inventory has 3,224 named PDBs: 3,203 MSF7 and 21 Portable PDB files.
+Every current candidate has identity metadata read; none matches the original
+target identity. Fourteen MSF files have surplus physical pages: explicit
+identity-only reads remain inside declared pages, retain the discrepancy and
+do not establish complete PDB validity. Portable metadata has GUID+stamp and no
+native age; unequal GUIDs reject these 21 candidates, while an equal GUID would
+remain a conversion question. Initial discovery listed 3,227 paths; three
+unrelated temporary build PDBs disappeared before the final inventory and remain
+gaps in that initial snapshot. No global absence or ownership conclusion follows.
+
+`config/local-pdb-identity-audit-evidence.json` records format/count coverage,
+the complete metadata-witness digest, private report hashes, parser/source pins,
+the original required GUID/age and unchanged canonical totals. Candidate paths
+and full metadata reports remain in `.analysis/`. Repeat the current lookup with:
+
+```bash
+scripts/repo-python scripts/audit-local-pdb-identities.py --root /home/pentester/coding/codex_ida --output .analysis/r267-current-pdb-identity-audit.json
+```
+
+This produces a new current report; the frozen R267 manifest is historical and
+must not be rewritten to hide later corpus changes. Directory symlink targets
+outside the enumerated root, other extensions and nested archives are excluded.
+All 15 new regression checks and all 3,584 CI checks pass. Target-required
+tracking, all 97 complete unknown bodies/pairs and 3,088 old evidence trails,
+all 60 exact pairs and 28 unchanged inputs pass. No compilation/source/ABI/flags
+changed and no new exact acceptance is claimed.
+
+The next bounded R268 task is the original supplied RAR's complete 16-entry
+content/header audit. R266 verified its Japanese target member and entry names,
+but did not inspect renamed PDB or nested-archive content signatures. Read each
+entry without replacing the target or writing shared tools. Preserve complete
+entry sizes/hashes and identify actual MSF/portable/nested archive framing; a
+signature alone is discovery, requiring full bounded identity validation before
+any claim. Keep content and paths private and record unresolved nested formats.
+Do not repeat ordinary compiler controls without a new discriminatory witness.
+
+Counts remain 4,254 resolved /97 pending /3,608 pending bytes; original 1,311
+progress is 1,214/97 and exact remains 60 /9,883 bytes. The original goal is
+active and incomplete. One final complete Web MCP acceptance remains due after
+the requested remaining review. No push was authorized.
+
+### Historical R266 checkpoint and R267 identity-lookup objective
 
 R266 closes the inline declaration/linkage alternative and retains both original
 special members as unknown. Replay
