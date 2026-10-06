@@ -59,6 +59,28 @@ ordinary policies with genuine compiler/library alternatives. Preserve every
 exit/extent and truthful ABI; do not instantiate or pad incomplete game owners.
 Do not attribute these preliminary bodies before those independent checks.
 
+R233 local preflight and attested incoming-reference query now pass. No actual
+code/data incoming reference is found for454C00 or454F70; their ownership remains
+unproved. Setter4557E0 also has no incoming reference, but actual671628 references
+lead to independently accepted R04443B610 /4,764 BattleScene state policy. Private
+`.analysis/r233-shared-value-diagnostic.json` reopens that full parent, its original
+switch data/CFG and source ledger record. It reads671628 as float, subtracts the
+original approximately0.01 float at658044 when positive and clamps negatives to
+zero against65782C. This establishes the actual writable-value use without naming
+an original global or recovering a shared receiver.
+
+Fresh private natural unsigned and float setters both reproduce all21 target
+bytes unmasked after one independently identified data binding; their source
+signatures are therefore alternatives. The complete private probe also includes
+an implicit-copy client and compact sizeof observations, without padding or fake
+returns. Private source/object/profile hashes are retained in the diagnostic.
+This is not acceptance: move a natural fixture to its tracked path, cold-build
+there, freeze all complete source/native/normal/switch/data evidence, audit prior
+snapshots and freeze an immutable bounded verifier before canonical changes.
+The old snapshot audit presently finds no selected4557E0 canonical pair. Keep
+both unresolved no-reference bodies and every other row literal. Full original/
+accepted cold proof, bounded readback, CI and all60 baseline checks remain due.
+
 Two inventory extent questions remain in fresh triage (60C120 /11 and620132 /5).
 Reopen full defining source owners and metadata before any reconciliation; existing
 R198/R204 lifetime uncertainty is protected. A full symbol/AUX/normal/EH graph may
