@@ -13953,3 +13953,75 @@ old structured-record trails, all60 exact pairs/28 unchanged inputs and whitespa
 checks pass. Counts remain4254 resolved /97 pending /3608 pending bytes, original
 1311 progress1214/97 and exact60 /9883 bytes. Final complete Web MCP acceptance
 remains due after the requested remaining review; no push is authorized.
+
+## R265 — complete original SDK compilation/frame witness audit
+
+The R264 metadata lead is exhausted against the entire pinned D3DX8 archive,
+not a selected source subset. Manifest
+`config/sdk-compilation-witness-audit-evidence.json` covers all146 i386 COFF
+members, each complete member identity, all137 symbol-debug streams and all2751
+frame-debug records. The136 C11 streams each contain exactly one object-name
+and one compiler record, with no type/member/source declaration records.
+No `.debug$T` exists. Nine math/SSE objects have no symbol-debug stream; their
+absence is recorded and supplies no ownership conclusion. The original compiler
+records report134 C++ and one C unit with FE13.0.9176/BE13.0.9178, plus one C unit
+with FE/BE13.0.8685. These remain per-source-unit observations, not a global TH075
+compiler profile or the pinned3077 probe's profile. CodeView framing and payloads
+follow Microsoft's [record schema](https://github.com/microsoft/microsoft-pdb/blob/master/include/cvinfo.h).
+
+The previously unparsed resource member2148824 `obj\i386\d3dx.res` is reconciled
+in full. Its76-byte C7 stream contains only the object-name and compiler records;
+the latter identifies `Microsoft (R) CVTRES`, frontend0.0.0/backend7.0.9111.
+That tool version is not a C++ code-generator version. The complete three-section
+resource COFF has no code section. Its initialized extents/hashes, all short-name
+symbols/AUX, actual resource relocation and literal zero-sized string table are
+retained without forcing it through the normal vendor string-table parser.
+It supplies no private class declaration or generated-member marker.
+
+Every `.debug$F` is a complete16-byte FPO record with one actual DIR32NB field
+at offset0. Each resolves to exactly one same-unit static or external function
+definition at offset0; all2751 procedure sizes agree with the entire defining
+code sections, totaling507699 source bytes. The decoder retains parameter/local
+DWORD counts, prolog, saved registers, SEH/BP/reserved bits and frame type using
+Microsoft's [FPO layout](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-fpo_data).
+These fields describe source extents and stack frames, not original source
+syntax or ownership. Public per-unit count/full-metadata digests compactly pin
+every decoded field; each replay reconstructs all2751 full records from the
+original archive before comparing those digests. Full local decoded inventories
+remain private in `.analysis/r265-full-corpus.json`.
+
+All19 pending SDK lifetime candidates /1298 bytes, in13 defining objects, are
+paired with their own complete source section, actual definition, typed fields,
+FPO record and compiler stream. All19 source units report FE13.0.9176/BE13.0.9178.
+The cohort spans Font, Sprite, RenderToSurface/EnvMap, File, Assembler, Resource,
+Image, LockVolume, Codec/DXT/YUV, Text, DwStack and Buffer/StringBuffer. Whole
+non-field bytes and current complete body hashes are reread. This diagnostic
+comparison excludes only genuine four-byte DIR32/REL32 fields and earns neither
+origin nor exact credit. Small forwarding/folded alternatives remain possible;
+the original StringBuffer association remains anchored by R264's separate
+complete contribution rather than a five-byte signature alone. All480 original
+structured alternative trails across15 unchanged manifests are reread. Existing
+complete ordinary explicit/implicit alternatives stay intact; this metadata audit
+does not claim to cold-replay all historical proof trees.
+
+Replay `scripts/repo-python scripts/verify-sdk-compilation-witness-audit.py`.
+The immutable manifest, literal19 unknown pairs, full canonical ledger digests
+and unchanged original proof inputs are checked. Nine regression checks protect
+full corpus/frame/candidate coverage, precise framing/bit fields, complete-field
+compact hashes, and the distinction between diagnostic comparison and ownership
+acceptance. Local replay, all3560 CI checks, target-required tracking, all97
+current pairs/full hashes and3088 prior structured records, all60 exact pairs/
+28 unchanged production and exact inputs and whitespace checks pass.
+Counts remain4254 resolved /97 pending /3608 pending bytes; original1311 progress
+remains1214 classified /97 left, and exact60 /9883 bytes is unchanged.
+No original private type/declaration witness was recovered. Repeating this same
+SDK debug inventory or the retained ordinary controls cannot resolve the missing
+source syntax. A focused source/control readback also identifies an untested linkage
+alternative:original Buffer ctor24 and StringBuffer dtor5 have ANY selection2,
+while R264's explicit out-of-line ctor24/dtor11 controls have NODUPLICATES
+selection1. R266 must check complete explicitly inline declarations and actual
+emission/AUX, preserving whole Ob0/Ob1 alternatives and the original compiler
+disparity. COMDAT selection alone never identifies explicit/generated syntax.
+Do not force ownership, add exact scope or treat reviewed-but-unknown status
+as completion. The original goal is active and incomplete; the requested final
+complete Web MCP acceptance remains outstanding. No push was authorized.

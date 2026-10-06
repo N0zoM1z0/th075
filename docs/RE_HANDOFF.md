@@ -3,7 +3,7 @@
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
-R247–R252, R258, R259 and R264. The public
+R247–R252, R258, R259, R264 and R265. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,20 +21,67 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R265 original SDK compilation/type-witness audit below.
+the bounded R266 inline special-member declaration alternatives below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R264; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
+R001–R265; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
 explicitly unresolved observations.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R265 original SDK compilation and type witnesses
+## Next agent objective — R266 complete inline declaration alternatives
+
+R265 completes the entire original SDK compilation/frame witness audit without
+an origin transition. Replay
+`scripts/repo-python scripts/verify-sdk-compilation-witness-audit.py`; see
+[R265 review](ORIGIN_REVIEW.md#r265--complete-original-sdk-compilationframe-witness-audit).
+All146 COFF member identities,136 whole C11 object/compiler streams and the
+complete C7 CVTRES resource stream are reconciled. All2751 whole FPO16 records
+bind actual same-unit static/external offset0 definitions and match complete
+code section sizes, totaling507699 source bytes. Every frame/field is pinned by
+per-unit complete-metadata digests and reconstructed on every replay. Nineteen
+whole pending SDK members1298 in13 objects,480 original structured alternative
+records across15 unchanged manifests and every current unknown pair/body hash
+are retained. No private declaration/type record or generated-member marker
+exists in this corpus. Resource CVTRES7.0.9111 is not a C++ compiler profile.
+Missing source/type metadata and FPO stack fields cannot decide ownership.
+
+A focused original/control AUX readback identifies a precise untested source-
+level alternative. Original Buffer constructor24 at6200DA and StringBuffer
+destructor5 at620132 use ANY selection2. R264's explicitly written out-of-line
+ordinary base constructor24 and explicit derived destructor11 use NODUPLICATES
+selection1; its implicit derived destructor5 uses ANY2. These are actual COFF
+records, not names or inferred global compiler flags. Do not conclude that ANY2
+means compiler generated:an explicitly inline member can also emit an ANY body.
+
+The next bounded action is to add a complete natural explicit-inline declaration
+control for this same two-member cohort. Keep all generic owners fully defined,
+meaningful fields and truthful public-interface ABI. Retain complete Ob0/Ob1
+emission, actual includes, definition/AUX/selection, vtables and every genuine
+field. Compare full constructor/destructor bodies and keep any changed inlining
+extent as a whole negative; do not crop or introduce noinline/assembly/padding
+to restore a convenient size. This is a specific linkage/declaration-control gap,
+not a repeat of the unchanged out-of-line family. Original FE13.0.9176/BE13.0.9178
+versus pinned3077 disparity remains. No canonical transition or exact scope is
+preauthorized by a new ordinary match. Keep both special members unknown until
+new independent evidence actually distinguishes original source ownership.
+
+Current counts remain4254 resolved =1002 authored+2671 library+581 compiler,
+97 pending /3608 bytes and3252 excluded; original1311 progress1214/97. Exact60 /
+9883 bytes /60 units /eleven objects and authored1973516 are unchanged. R265
+local replay, all3560 CI checks, target-required tracking, all97 current pairs/
+full hashes and3088 original trails, all60 exact pairs/28 unchanged inputs and
+whitespace pass. The original goal stays active and incomplete; the unanswered
+reviewed-but-unknown end-state question does not authorize shrinking it. Final
+complete Web MCP acceptance remains due after the requested remaining review.
+These commits stay local; no push was authorized.
+
+### Historical R264 checkpoint and R265 metadata discovery
 
 R264 completes the whole StringBuffer source contribution review while retaining
 620132 /5 and6200DA /24 as unknown. Replay
