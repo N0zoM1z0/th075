@@ -15791,3 +15791,59 @@ and whitespace checks pass. All 3,436 local CI tests pass. Counts remain4235 res
 Exact60 /9883 bytes /60 units across eleven objects and provisional authored
 bytes1973300 remain unchanged. One complete Web MCP acceptance remains due
 after all remaining origin review.
+
+## R249 — whole pending coverage audit and new zeroing-source leads
+
+R249 audits all116 pending candidates /4094 bytes without changing canonical
+state. Private `.analysis/r249-evidence-map.json` records every current literal
+function/origin pair, full unmasked body hash, every decoded instruction,
+complete RET-based control flow or its explicit limitation, current direct-call
+triage, structured evidence locations and documentation discovery locations.
+All116 whole extents decode;114 pass the ordinary RET-based verifier. These
+checks do not establish ownership or account for unobserved table/EH/dynamic
+references. The map pins original manifest hashes and exact record trails;
+no previous record or private class declaration is rewritten.
+
+Structured discovery finds whole-control/decision records for9 candidates,
+source-carrier context for50,retention/pending references for71 and canonical/
+other context for89. Categories overlap and do not count accepted reviews.
+Thirty-eight candidates have no discovered structured source/control/retention
+reference beyond canonical/context snapshots;37 have no discovered address
+mention in the two searched review documents. These are coverage limitations,
+not proof that the candidate was never investigated. Text hits and unknown
+snapshots are not accepted ownership evidence. Existing literal protected
+alternatives and their required original cold verifiers remain authoritative.
+
+Private `.analysis/r249-source-tail-check.json` accounts for the two ordinary
+RET-verifier limitations. Original CD3DXFile destructor11 at60C120 retains its
+conditional return and actual external tail to complete Close65 at60C0DF.
+The whole original source/COFF/AUX/field and Close65 including both actual PE
+imports recompare unmasked. Native forwarding620132 /5 ends in a complete JMP
+to original CD3DXBuffer destructor61FE0A /21. No original source definition
+for that native forwarding body is invented. The unchanged entire R224 CLI
+cold-replays its complete base/table/runtime/interface/source-control graph,
+including the independently complete21-byte destination. Neither scanner
+complaint justifies expanding or cropping these extents, or changing origin.
+
+A new whole zero-field code-section survey finds SDK `png_info_init`14 in
+`obj\i386\png.obj`, member1815914, and CRT `__FillZeroMan`12 in both original
+single-thread and multithread intrncvt objects. The independent reopen uses
+only pinned SDK archive39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28
+and pinned libcmt archive6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8.
+The full source definitions/AUX and zero-field14/12 sections reproduce all
+bytes at625575 and64F513 respectively. These observations are diagnostic
+source identity leads; they do not establish historical target namespace,
+linker selection or ownership. In particular, the matching single-thread
+variant does not prove a global thread/compiler profile. These two candidates
+remain unknown pending an independent complete target-context witness.
+
+Target/tracking,readonly Ghidra attestation,strict unchanged4351 canonical
+pairs,all60 exact-input guards,progress freshness and whitespace checks pass.
+All3436 local CI tests passed this turn; tracked implementation,verifier,test
+and ledger inputs are unchanged after that run. R249 changes documentation
+only. Counts remain4235 resolved =999 authored+2655 library+581 compiler,
+116 pending and3236 excluded. Original1311 goal remains1195 classified /116
+left and active; exact60 /9883 bytes /60 units /eleven objects and provisional
+authored bytes1973300 are unchanged. The evidence coverage audit is not full
+origin acceptance. One complete Web MCP acceptance remains due after all
+remaining origin review.
