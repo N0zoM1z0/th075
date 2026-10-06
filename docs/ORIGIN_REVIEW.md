@@ -16992,3 +16992,68 @@ disparity. COMDAT selection alone never identifies explicit/generated syntax.
 Do not force ownership, add exact scope or treat reviewed-but-unknown status
 as completion. The original goal is active and incomplete; the requested final
 complete Web MCP acceptance remains outstanding. No push was authorized.
+
+## R266 — complete inline special-member alternatives and original PDB identity
+
+The source/control linkage gap from R265 is closed with a complete natural
+public-interface control in
+`tests/origin_probes/InlineStringBufferSpecialMembers.cpp`. Fully defined generic
+owners have an explicitly class-inline base constructor, an explicitly inline
+derived constructor/destructor and a separate derived owner with no destructor
+declaration. Meaningful reference/storage/capacity and length/available state,
+truthful COM calling conventions and ordinary allocation/destruction are retained.
+No original incomplete private owner is declared or instantiated.
+
+Both `/O1 /Oi /Ob0|Ob1 /Gy /GR- /GX /Zi /GS` profiles cold-build with pinned3077.
+Each retains all32 initialized ordinary sections /672 and681 bytes,92 actual
+header hashes, all definitions/AUX/fields, vtables and layout[16,24,24]. The
+explicitly inline base ctor24 compares completely with6200DA after its one real
+vtable relocation; its actual COMDAT selection is ANY2, matching the original
+source selection. The explicitly inline derived destructor is a complete11-byte
+ANY2 negative against620132 /5, while the compiler-generated derived destructor
+is a complete5-byte ANY2 positive with its genuine base-destructor relocation.
+The entire generic base dtor16 stays negative against original21. Both derived
+ctors are complete26-byte negatives under Ob0 and30-byte negatives under Ob1
+against original22; all fields and instruction extents are preserved without
+cropping or noinline/assembly/padding changes. ANY2 therefore does not identify
+compiler-generated source syntax. The original compiler differs from3077, and
+neither the explicit11 negative nor the implicit5 positive determines original
+declarations. Both original members remain unknown. R264's unchanged whole
+original1030-code/92-data contribution, CRT providers, debug metadata, actual
+fields and full CFGs replay; its earlier complete out-of-line cold controls remain
+pinned, rather than being claimed as newly cold-replayed.
+
+An independent original-input audit finds a new actionable witness:the supplied
+JP executable contains a complete28-byte CodeView debug directory and78-byte
+RSDS payload. RVA and file-pointer payloads agree. It names
+`D:\nonotaro\works\東方萃夢想\東方萃夢想.pdb`, encoded as UTF-8, with
+GUID `9306058f-6d68-4650-b80b-1e0d05dd1e18` and age3. The complete directory/payload
+hashes, exact original path bytes and decoded identity are frozen in
+`config/sdk-inline-special-member-review-evidence.json`. The empty COFF symbol
+table does not imply an absent debug reference. This external PDB identity is
+not recovered private type/declaration information or ownership evidence. A
+candidate PDB must match both GUID and age before its contents can be relied on;
+see the [PDB identity stream](https://llvm.org/docs/PDB/PdbStream.html).
+
+The local supplied RAR is independently read with `unrar` and its Japanese
+`th075.exe` member matches the pinned target hash; no executable is substituted.
+Its16 archive entries have no named PDB/DBG/MAP/C/C++/header entry. This is an
+entry-name audit, not proof about renamed/nested symbol data. Private records
+`.analysis/r266-supplied-archive-symbol-audit.json` and
+`.analysis/r266-symbol-artifact-paths.txt` retain that input audit and12840 bounded
+local symbol/archive paths. No Japanese-title PDB was found by that initial
+filename check; renamed files and exact GUID/age matching remain untested. Those
+are the next bounded R267 action, not a new origin assignment.
+
+Replay `scripts/repo-python scripts/verify-sdk-inline-special-member-review.py`.
+Nine regression checks protect complete emission/extents, the explicit positive
+and implicit alternative, actual ANY2 rather than inferred ownership, retained
+whole inline negatives, and precise UTF-8 RSDS identity/RVA-file agreement.
+Full current local cold replay, all3569 CI checks, target-required tracking,
+all97 current pairs/full body hashes and3088 original structured trails,
+all60 exact pairs/28 unchanged inputs and whitespace pass. Counts remain4254
+resolved /97 pending /3608 pending bytes; original1311 progress1214/97 and
+exact60 /9883 bytes /60 units /eleven objects stay unchanged. No private source,
+complete original layout, canonical transition or exact credit is inferred.
+The original goal remains active; final complete Web MCP acceptance stays due
+after the requested remaining review. No push was authorized.

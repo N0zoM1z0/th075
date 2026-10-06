@@ -3,7 +3,7 @@
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
-R247–R252, R258, R259, R264 and R265. The public
+R247–R252, R258, R259, R264, R265 and R266. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,20 +21,74 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R266 inline special-member declaration alternatives below.
+the bounded R267 exact original-PDB identity lookup below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R265; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
+R001–R266; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
 explicitly unresolved observations.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R266 complete inline declaration alternatives
+## Next agent objective — R267 exact original-PDB identity lookup
+
+R266 closes the inline declaration/linkage alternative and retains both original
+special members as unknown. Replay
+`scripts/repo-python scripts/verify-sdk-inline-special-member-review.py`; see
+[R266 review](ORIGIN_REVIEW.md#r266--complete-inline-special-member-alternatives-and-original-pdb-identity).
+Both complete cold profiles retain32 ordinary sections672/681,92 header hashes,
+all actual definitions/AUX/fields/vtables and layout[16,24,24]. Explicit inline
+base ctor24 is a whole positive with ANY2; explicit inline derived dtor11 is a
+whole negative with ANY2, while implicit derived dtor5 is a whole ANY2 positive.
+Derived ctors26/30 remain whole negatives against22. Source selection alone
+therefore cannot identify generated syntax. Original compiler disparity and
+all old out-of-line controls remain intact. No canonical or exact credit follows.
+
+The new original-input witness is the pinned Japanese EXE's genuine external
+PDB reference. Its whole debug directory28 and RSDS payload78 agree through
+both RVA and file-pointer reads. Exact original UTF-8 path:
+`D:\nonotaro\works\東方萃夢想\東方萃夢想.pdb`.
+Required GUID:`9306058f-6d68-4650-b80b-1e0d05dd1e18`; age:`3`.
+All fields, hashes and raw path bytes are frozen in the R266 manifest. Its COFF
+symbol table is empty, but the debug reference is present. This is an identity
+for a possible external witness, not recovered private declarations or a
+classification. Do not infer absence of debug information from an empty COFF
+symbol table or confuse generated3077 probe PDBs with this original identity.
+
+The actual supplied RAR at the sibling `game_exe/` path was read with `unrar`;
+its Japanese member again hashes to the pinned executable. Private
+`.analysis/r266-supplied-archive-symbol-audit.json` retains full archive identity,
+all16 entry names and zero named PDB/DBG/MAP/C/C++/header entries. This does not
+exclude renamed/nested data. The bounded initial path inventory
+`.analysis/r266-symbol-artifact-paths.txt` has12840 local symbol/archive paths
+under `/home/pentester/coding/codex_ida`; no Japanese-title PDB was found by name.
+It is discovery only:exact PDB GUID/age matching, renamed candidates, uppercase
+extensions, controlled symlink targets and metadata formats remain untested.
+
+R267 must inspect local candidate PDB identity streams read-only, regardless of
+basename. Use actual MSF/PDB framing, bounded stream/page reads and strict GUID
+plus age comparison. Record corpus roots, unique physical files, format coverage
+and failures; do not turn skipped/unparsed files into an absence conclusion.
+Shared tools stay read-only. Preserve the exact target and all97 unknown pairs.
+If a matching file exists, validate its complete identity and inspect actual
+DBI/TPI/symbol/source metadata before relying on any type or origin claim; public
+and private symbol variants may share an identity. A match alone earns no origin,
+source, mapping, ABI or exact credit. Keep any recovered metadata private until
+bounded independently checked evidence is ready. No exact scope is added.
+
+R266 current cold replay, all3569 CI checks, target-required tracking, all97
+current pairs/full body hashes and3088 original trails, all60 exact pairs/28
+unchanged inputs and whitespace pass. Counts remain4254 resolved /97 pending /
+3608 pending bytes, original1311 progress1214/97 and exact60 /9883 bytes. The
+original goal stays active and incomplete; reviewed-but-unknown completion is
+not presumed. One final complete Web MCP acceptance remains due after the
+requested remaining review. These commits stay local; no push was authorized.
+
+### Historical R265 checkpoint and R266 inline-control objective
 
 R265 completes the entire original SDK compilation/frame witness audit without
 an origin transition. Replay
