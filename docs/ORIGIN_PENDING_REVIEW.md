@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 104 pending candidates, covering 3,707 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 104
+This report records the current 102 pending candidates, covering 3,681 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 102
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -27,7 +27,10 @@ R257 classifies one72-byte deque outer cleanup as inferred authored through
 coherent whole construction/destruction, real providers and independent game
 parser same-local/state8 ownership. Genuine implicit72 positives and their
 incompatible full construction/provider/EH chains remain preserved.
-The current remaining projection has102
+R260 classifies two zeroing leaves14/12 as inferred library through complete
+source-ordered object contributions and defining-data/provider topology.
+Genuine byte-positive ordinary leaf alternatives remain preserved.
+The current remaining projection has100
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -37,7 +40,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r257-remaining-review.json` retains the current literal
+Private `.analysis/r260-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -77,7 +80,7 @@ scope clarification is presumed.
 | `0x00412600` | 5 | empty-body | 4 instructions; 0 branches; RET 0; 0 calls | [list-recovery-origin-evidence.json](../config/list-recovery-origin-evidence.json) | Original empty-operation signature and owner. |
 | `0x00412D90` | 17 | floating-or-geometry | 8 instructions; 0 branches; RET 0; 1 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x00412DB0` | 28 | floating-or-geometry | 12 instructions; 0 branches; RET 0; 1 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
-| `0x004135F0` | 40 | receiver-or-output-without-identity | 16 instructions; 0 branches; RET 0xc; 0 calls | No discovered structured record; full target audit retained. | Independent same-owner/destination identity. |
+| `0x004135F0` | 40 | receiver-or-output-without-identity | 16 instructions; 0 branches; RET 0xc; 0 calls | No discovered structured record; full target audit and R259 FontSurface store-pattern/context retained. | Independent same-owner/destination identity. |
 | `0x004138D0` | 11 | empty-body | 7 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Original empty-operation signature and owner. |
 | `0x004169D0` | 11 | empty-body | 7 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Original empty-operation signature and owner. |
 | `0x004170B0` | 27 | default-or-lifetime | 14 instructions; 0 branches; RET 0; 1 calls | [remaining-lifetime-policy-origin-evidence.json](../config/remaining-lifetime-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
@@ -152,10 +155,8 @@ scope clarification is presumed.
 | `0x0061FD1A` | 8 | sdk-error-or-ordinary | 3 instructions; 0 branches; RET 0; 0 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json) | Typed namespace for read-and-reset error leaf. |
 | `0x006200DA` | 24 | sdk-private-lifetime | 6 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00620132` | 5 | sdk-private-lifetime | 1 instructions; 1 branches; RET tail only; 0 calls | [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x00625575` | 14 | zeroing-or-ordinary | 8 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Independent namespace/linker-selection witness. |
 | `0x00641DAA` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json); [polar-velocity-origin-evidence.json](../config/polar-velocity-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x00641FB8` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [game-switch-policy-origin-evidence.json](../config/game-switch-policy-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
-| `0x0064F513` | 12 | zeroing-or-ordinary | 8 instructions; 0 branches; RET 0; 0 calls | [short-crt-origin-evidence.json](../config/short-crt-origin-evidence.json) | Independent namespace/linker-selection witness. |
 
 Totals: 114 pending candidates /4,056 bytes; 114 unknown origins.
 

@@ -1,5 +1,6 @@
 """Reject incomplete CRT provenance and unsupported short-leaf ownership."""
 import csv
+import json
 import importlib.util
 from pathlib import Path
 import unittest
@@ -108,8 +109,21 @@ class ShortCrtTests(unittest.TestCase):
 
     def test_pending_leaf_cannot_gain_library_ledger_credit(self):
         row = self.m['functions'][3]
-        functions = {r['address']: r for r in csv.DictReader((ROOT / 'config/functions.csv').read_text().splitlines())}
-        origins = {r['address']: r for r in csv.DictReader((ROOT / 'config/function-origins.csv').read_text().splitlines())}
-        origin = dict(origins[row['address']], origin='library', disposition='exclude')
+        transition = REVIEW.module('short_crt_test_transition', 'verify-vendor-zeroing-contribution-origins.py')
+        plan = json.loads((ROOT / transition.EVIDENCE).read_text())
+        transition.verify_plan(plan)
+        original = next(r for r in plan['functions'] if r['address'] == row['address'])
+        origin = dict(original['original_origin'], origin='library', disposition='exclude')
         with self.assertRaises(ValueError):
-            REVIEW.check_ledger(row, functions[row['address']], origin, evidence_only=True)
+            REVIEW.check_ledger(row, original['original_function'], origin, evidence_only=True)
+
+    def test_contribution_successor_requires_the_complete_literal_accepted_pair(self):
+        row = self.m['functions'][3]
+        transition = REVIEW.module('short_crt_test_accepted_transition', 'verify-vendor-zeroing-contribution-origins.py')
+        plan = json.loads((ROOT / transition.EVIDENCE).read_text())
+        transition.verify_plan(plan)
+        accepted = next(r for r in plan['functions'] if r['address'] == row['address'])
+        REVIEW.check_ledger(row, accepted['accepted_function'], accepted['accepted_origin'])
+        bad = dict(accepted['accepted_function'], notes='unapproved substitute')
+        with self.assertRaises(ValueError):
+            REVIEW.check_ledger(row, bad, accepted['accepted_origin'])

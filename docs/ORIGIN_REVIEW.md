@@ -16552,3 +16552,88 @@ Find complete real owner/producer/consumer context before using a source control
 or assigning ownership. Do not repeat the unchanged
 R165 ordinary15 equality as a new distinction. The full remaining-review goal
 and final complete Web MCP acceptance remain outstanding.
+
+## R259 — whole receiver-output and FontSurface context without owner identity
+
+`0x004135F0` /40 remains unknown. Its complete RET12 body stores the byte
+argument at receiver+24 and two four-byte arguments at+1c/+20. Fresh attested
+caller and entry-reference queries find no recorded references. A raw encoding
+survey covers all2,449,167 mapped executable bytes and finds no direct relative
+transfer into any byte of the complete40 extent. This does not prove dead code,
+exclude computed/runtime reachability or identify ownership.
+
+Candidate decoding discovers exactly two functions with this three-store
+pattern:the pending40 and independently accepted FontSurface text rendering398
+at413460. Complete configuration64 at413420 and game rasterizer1766
+at41C2E0 remain original authored context. All four complete native bodies2268,
+CFGs, whole instructions, original authored records and switches are frozen in
+private `.analysis/r259-whole-font-context.json`; the discovery scan separately
+records seven incomplete provisional decodes among4351 candidates. The unique
+field-pattern lead and adjacency do not establish a shared original object,
+source inlining, namespace, types or complete layout. No padding control,
+incomplete owner instantiation, canonical transition or exact credit is added.
+
+## R260 — complete source-ordered vendor contributions with leaf alternatives retained
+
+R260 accepts625575 /14 (`D3DX::png_info_init`) and64F513 /12 (`__FillZeroMan`)
+as **inferred library**. R155/R249/R250 isolated vendor/ordinary equality and
+absence of incoming references remain non-identifying. The new witness is the
+complete source-ordered contribution of each original object, rather than a
+short body or a named neighboring function.
+
+The pinned SDK `obj\i386\png.obj`, member1815914, has all15 whole code sections
+packed in actual section order across625433..6255EC /441. Every original
+COMDAT/alignment/AUX definition and all12 fields compare, including source-local
+check_sig -> sig_cmp and whole original signature8, version52, error34 and
+copyright198 data. Six genuine external symbols resolve to independently
+accepted complete PNG allocation/error/free/CRC/struct providers. The six
+non-inventoried native bodies remain auxiliary context; no candidates or
+additional origin credits are created.
+
+The pinned CRT `..\build\intel\mt_obj\intrncvt.obj`, member2436458, supplies
+all14 whole code sections in source order across64F407..64F86B /1124, including
+FillZeroMan between complete CopyMan27 and IsZeroMan25. All30 real fields
+resolve to the actual section-local mantissa/conversion functions, complete
+DoubleFormat/FloatFormat defining section48 and original addl/security/parser
+providers. Neither a single-thread/multithread equality nor this local object
+identity establishes an executable-wide compiler or thread profile.
+
+The durable [manifest](../config/vendor-zeroing-contribution-origin-evidence.json)
+retains all35/1121 and38/6289 initialized original sections, including debug
+records. Debug sections are inventoried, never mapped as target evidence.
+The [verifier](../scripts/verify-vendor-zeroing-contribution-origins.py) reopens
+both hash-pinned archives, checks all29 full native code/CFG extents1565,
+all42 fields without masking and all defining data340. Ten independently
+preserved original provider records are read back at literal trails and
+recompare their entire code1576/data4 and every actual field. Original names,
+source identities and canonical provider rows remain preserved.
+
+Fresh [ordinary controls](../tests/origin_probes/VendorZeroWords.cpp) still
+produce byte-positive14/12 through genuine memset on complete observation
+storage64/12. All three ordinary sections38, actual header and readonly
+layout[64,12,4] remain checked. These alternatives are not erased or mistaken
+for reconstructed PNG/floating types. The inference relies on the joint whole
+object contribution and source/data/provider topology; it does not uniquely
+prove an original linker map or exclude every possible equivalent program.
+Only these two literal canonical pairs transition; source/ABI/mapping/exact
+ledgers receive no credit.
+
+The entire unchanged original R155 CLI cold-replays at fixed revision9734107
+in a read-only same-length worktree with original pending FillZeroMan12 and
+finite21 snapshots. All four complete retained provenance trees, original
+SEH265 and natural ordinary alternatives remain present. The current R155
+verifier allows only the literal independently frozen R260 FillZeroMan pair,
+alongside existing R192 finite acceptance. Earlier vector tests supply only
+these two literal predecessors before their existing strict views; original
+manifests and unrelated-row predicates are unchanged. The original-state and accepted-state full CLIs both cold-replay successfully.
+All3519 final public CI tests, target-required tracking, current102-row
+whole-hash/literal-pair readback, all60 exact full-row/input guards, progress
+freshness and whitespace checks pass. The original pending-leaf regression
+checks its frozen unknown predecessor; a separate test allows only the exact
+validated successor and rejects substituted notes.
+
+Counts are4249 resolved =1002 authored+2666 library+581 compiler,
+102 pending /3681 bytes and3247 excluded. Original1311 progress is1209 classified
+/102 left. Exact60 /9883 bytes /60 units /eleven objects and authored
+bytes1973516 remain unchanged. The original goal stays active; final complete
+Web MCP acceptance remains due after the requested remaining-review end state.

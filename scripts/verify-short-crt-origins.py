@@ -119,6 +119,13 @@ def check_ledger(row, function, origin, evidence_only=False):
             or function['match_percent'] != '0.00'):
         raise ValueError('short CRT changes complete extent or grants source/ABI/exact')
     if row['decision'] == 'pending':
+        if row['address'] == '0x0064F513' and origin['evidence_id'] == 'R260':
+            transition = module('short_crt_contribution_transition', 'verify-vendor-zeroing-contribution-origins.py')
+            plan = json.loads((ROOT / transition.EVIDENCE).read_text())
+            previous = next(r for r in plan['functions'] if r['address'] == row['address'])
+            if transition.allows_transition(row['address'], previous['original_function'],
+                    previous['original_origin'], function, origin):
+                return
         if row['address'] == '0x00643FC6' and origin['evidence_id'] == 'R192':
             transition = module('short_crt_dispatch_transition', 'verify-sdk-dispatch-origins.py')
             manifest = json.loads((ROOT/transition.EVIDENCE).read_text())
@@ -240,7 +247,7 @@ def main():
         source, _ = coff.readonly_section(data, layout['section'], c.coff_name)
         if list(struct.unpack('<11I', source)) != LAYOUT:
             raise ValueError('short CRT whole actual SDK/observation layout differs')
-    print('R155 origins OK: three complete library owners / 59 bytes; historical pending finite21/FillZeroMan12 controls retained, with only immutable R192 finite acceptance allowed; actual typed fields linked unmasked through unchanged independent atol/unwind/wide-format owners; entire 265-byte SEH carrier/header/handler/longjmp and all six fields; eight cold complete SDK/source controls / 109 bytes, nine whole code/data sections / 153 bytes and real 44-byte layout; complete ordinary memset control equals all twelve pending bytes; no prefix/source/private ABI/mapping/exact credit.')
+    print('R155 origins OK: three complete library owners / 59 bytes; historical pending finite21/FillZeroMan12 controls retained, with only immutable R192 finite and R260 complete-contribution acceptance allowed; actual typed fields linked unmasked through unchanged independent atol/unwind/wide-format owners; entire 265-byte SEH carrier/header/handler/longjmp and all six fields; eight cold complete SDK/source controls / 109 bytes, nine whole code/data sections / 153 bytes and real 44-byte layout; complete ordinary memset control equals all twelve pending bytes; no prefix/source/private ABI/mapping/exact credit.')
     return 0
 
 

@@ -143,6 +143,15 @@ class MemberVectorLifetimeTests(unittest.TestCase):
         newest = json.loads((ROOT / next_view.EVIDENCE).read_text())
         next_view.verify_plan(newest)
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        contribution_spec = importlib.util.spec_from_file_location(
+            'vendor_zeroing_successor_view', ROOT / 'scripts/verify-vendor-zeroing-contribution-origins.py')
+        contribution = importlib.util.module_from_spec(contribution_spec)
+        contribution_spec.loader.exec_module(contribution)
+        contribution_plan = json.loads((ROOT / contribution.EVIDENCE).read_text())
+        contribution.verify_plan(contribution_plan)
+        original_contribution = all(q['original_function'] in source['functions.csv'] for q in contribution_plan['functions'])
+        source = {name: contribution.historical_rows(contribution_plan, name, actual, original_contribution)
+                  for name, actual in source.items()}
         deque_spec = importlib.util.spec_from_file_location(
             'deque_outer_successor_view', ROOT / 'scripts/verify-deque-outer-policy-origins.py')
         deque_view = importlib.util.module_from_spec(deque_spec)
