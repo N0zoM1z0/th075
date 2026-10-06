@@ -14460,3 +14460,77 @@ The original1,311 goal has1,157 classified /154 left and remains active. Exact60
 functions /9,883 bytes /60 units across eleven objects, authored denominator
 1,971,032 and provisional0.50% remain unchanged. Complete Web MCP acceptance is
 required after all remaining origin review finishes.
+
+## R230 complete background cycle callbacks and independent asset context
+
+R230 accepts six complete authored origins /314 bytes, preserving current names,
+original extents and the separate60-function exact baseline:
+
+| Address | Whole bytes | Observed runtime policy and independent asset |
+| --- | ---: | --- |
+| `0x0044B600` | 48 | BG02a: increment+0x68, signed >360 resets zero |
+| `0x0044BB20` | 48 | BG02b: same complete policy with its own asset/table/renderer |
+| `0x0044C040` | 48 | BG02c: same complete policy with its own asset/table/renderer |
+| `0x0044D5E0` | 55 | BG04a: increment+0x68, ordered x87 >2500 resets zero |
+| `0x004503E0` | 55 | BG07a: increment+0x68, ordered x87 >=15360 resets zero |
+| `0x00450BD0` | 60 | BG08a: increment+0x68/+0x6C; signed second field >71 resets only that field |
+
+Replay `scripts/repo-python scripts/verify-background-cycle-origins.py` with
+immutable `config/background-cycle-origin-evidence.json`, SHA-256
+`bc73e46ff1a7ebcb839b61caf3f51917d41b11d9a6d066285222ad06c885033a`.
+Each whole callback ends in RET0 and has one internal conditional branch, with
+no unresolved shared tail or switch. The three48-byte bodies are byte-equal;
+independent game context, rather than that equality, supports their attribution.
+The two full readonly double definitions at658960 and658CA8 are2500 and15360,
+respectively. Native `TEST AH,0x41` and `TEST AH,1` preserve distinct ordered
+strict-greater and greater/equal policies; unordered comparisons retain the
+incremented value. Native32-bit ADD observations do not claim portable C++
+signed-overflow behavior.
+
+Forty-two whole callback/constructor/renderer/peer owners /7,683 bytes, including
+the six selected callbacks, are reopened with complete hashes, instructions,
+CFGs and existing switch records. Six independent accepted game asset loaders
+/976 and six accepted renderers /4,910 are checked in full. The original loaders
+push `data\background\BG02a.dat`, BG02b, BG02c, BG04a, BG07a and BG08a paths,
+install their respective tables at instruction offset46 and clear+0x68 at130.
+BG08a also clears+0x6C at140. Actual readonly slot-one references point to each
+whole selected updater; slot four points to the independently accepted renderer
+that consumes the same receiver field. Real receiver accesses exclude unrelated
+EBP stack locals whose displacement happens to be0x68/0x6C. All six actual
+callback words and the following eight bytes are checked independently; this is
+a bounded table observation, not a recovered complete private interface. The
+remaining peers retain their own accepted or unknown origin decisions.
+
+The natural fixture `tests/origin_probes/BackgroundCyclePolicies.cpp` contains
+four compact ordinary counter policies and two ordinary implicit-copy clients.
+Cold build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` emits
+all nine code/data sections /273 bytes /two real double fields, six complete
+functions /241 and the whole16-byte readonly `[8,8,4,8]` observation. No SDK header
+is needed. The four policy bodies are44/51/51/58; the implicit-copy clients are
+24/13 and lack increment/compare/reset branches. Every ordinary policy instruction,
+including branch destination indices, stack accesses, field roles, actual
+source-defined double owners and RET, agrees with its corresponding complete
+native policy after interpreting the two observed receiver fields. Raw bytes
+and whole extents differ. No padded game owner, inert local, fabricated return,
+private signature or exact comparison is introduced. These natural source
+alternatives explain the explicit runtime policy; they do not identify original
+type spelling, source text or executable-wide compiler settings.
+
+The exhaustive old snapshot audit finds no selected canonical pair. All old
+manifests, authored CSV rows, verifiers and protected ambiguities remain literal;
+this new manifest holds the six complete origin-specific records. All42 scoped
+canonical pairs are checked. Original-state unselected digests and strict bounded
+HEAD ab3d829 readback permit exactly six origin/function-row changes, retaining
+all extents and every unrelated row. External INT3 gaps0/0/0/9/9/4 remain outside
+the full selected functions. Source presence, ABI, mappings and exact credit stay
+unchanged.
+
+Original and accepted cold replays and3,257 CI tests, including14 new guards,
+pass. Target/tracking, local Ghidra target/mapping attestation and query completion,
+full original body-address readback, unchanged60 exact inputs, fresh148-candidate
+triage, progress and whitespace pass. Current4,203 resolved =977 authored+2,646
+library+580 compiler;148 pending and3,226 excluded. The original1,311 goal has
+1,163 classified /148 left and remains active. Exact60 /9,883 bytes /60 units
+across eleven objects are unchanged; authored byte denominator1,971,346 and
+provisional0.50%. Complete Web MCP acceptance remains required after all remaining
+origin review finishes.

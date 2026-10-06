@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R229. The public
+review cohorts R108 through R230. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,65 +11,139 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,197: 971 authored, 2,646 library and 580 compiler generated.
-There are 154 pending. Candidate count is not authored function count.
+has resolved 4,203: 977 authored, 2,646 library and 580 compiler generated.
+There are 148 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,971,346 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R230 runtime counter-policy investigation below.
+the bounded R231 background blend-callback investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R229; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R230; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R230 runtime counter-policy context
+## Next agent objective — R231 background blend callbacks and retained context
 
-R229 accepts the five complete SDK public wrappers below. Original and accepted
-cold proofs and3,243 CI tests pass; all prior evidence and60 exact inputs remain
-unchanged. Current4,197 resolved =971 authored+2,646 library+580 compiler;
-154 pending and3,226 excluded. The original1,311 goal has1,157 classified /154
+R230 accepts six whole background cycle origins below. Original and accepted
+cold proofs and3,257 CI tests pass; prior evidence and all60 exact inputs remain
+unchanged. Current4,203 resolved =977 authored+2,646 library+580 compiler;
+148 pending and3,226 excluded. The original1,311 goal has1,163 classified /148
 left and remains active. Push reached68d9258; subsequent commits are local.
 Full Web MCP acceptance is required after all remaining origin review finishes.
 Continue local investigation and necessary cold builds in one writable session.
 
-A fresh whole-native diagnostic `.analysis/r230-native-game-shortlist.json`
-records ten pending game-context hypotheses without granting acceptance. Prioritize
-these six runtime counter updates /314 bytes:
+Next investigate three complete60-byte virtual callback hypotheses /180:
+44B980,44BEA0 and44C3C0, selected by actual slot two in the corresponding BG02a,
+BG02b and BG02c tables. Their whole bodies are already retained as unknown peers
+in R230. Each reads671404, adds readonly657834, calls the whole117-byte original
+CRT `__ftol2` at6406AC, then converts6713C4 through that same runtime owner. The
+results are stored to native locals but not passed to the final call. All three
+then pass zero to complete independently accepted65-byte40C7F0 SetBlendMode
+with observed receiver+0x18. These observations alone are not acceptance.
 
-| Candidate | Whole provisional bytes | Observed native policy, meaning unproved |
+Reopen the original complete CRT archive definition and SetBlendMode/game resource
+context. Establish the writable values and same receiver/resource use through
+actual native readers/writers, rather than guessed global names. Preserve all
+native calculations without inventing inert C++ locals to imitate their bytes.
+Use natural ordinary policy/implicit alternatives and full whole-function/CFG
+checks; no exact scope or private padded owner is authorized. Because R230 stores
+these three literal unknown pairs, any later acceptance needs a bounded successor
+current canonical view that changes only those exact pairs while retaining the
+entire old source/native plan and cold compiler controls. Do not overwrite old
+R230 evidence or relax its source hashes.
+
+The earlier text classifier41CA30 /77 and coordinate transform455770 /111 have
+already been reviewed in R183/R212 and remain unknown. Consult those full prior
+reasons before investigating them again; the latter lacks proof of a shared
+receiver and original writable-output identity. Private R230 preliminary native
+files are diagnostic, not acceptance evidence for those entries. Preserve all
+prior lifetime/getter/node/math and opaque reference uncertainty. Fresh
+`.analysis/origin-scan/r230-triage.json` has148 pending with both current ledger
+hashes. Shared tools remain read-only.
+
+## R230 complete background cycle callbacks and independent asset context
+
+R230 accepts six complete authored origins /314 bytes, preserving current names,
+original extents and the separate60-function exact baseline:
+
+| Address | Whole bytes | Observed runtime policy and independent asset |
 | --- | ---: | --- |
-| `0x0044B600` | 48 | increment receiver+0x68; signed >360 resets zero |
-| `0x0044BB20` | 48 | same whole policy at a distinct candidate |
-| `0x0044C040` | 48 | same whole policy at a distinct candidate |
-| `0x0044D5E0` | 55 | increment+0x68; x87 compare658960, status mask0x41 |
-| `0x004503E0` | 55 | increment+0x68; x87 compare658CA8, status mask1 |
-| `0x00450BD0` | 60 | increment+0x68/+0x6C; signed+0x6C >71 resets only+0x6C |
+| `0x0044B600` | 48 | BG02a: increment+0x68, signed >360 resets zero |
+| `0x0044BB20` | 48 | BG02b: same complete policy with its own asset/table/renderer |
+| `0x0044C040` | 48 | BG02c: same complete policy with its own asset/table/renderer |
+| `0x0044D5E0` | 55 | BG04a: increment+0x68, ordered x87 >2500 resets zero |
+| `0x004503E0` | 55 | BG07a: increment+0x68, ordered x87 >=15360 resets zero |
+| `0x00450BD0` | 60 | BG08a: increment+0x68/+0x6C; signed second field >71 resets only that field |
 
-All six remain unknown. Reopen complete native CFGs, extents, constants and actual
-game callers or virtual-dispatch data before attributing ownership. The two x87
-predicates differ; preserve ordered/unordered behavior rather than merging them.
-Inspect independent receiver initialization and field consumers, and contrast
-ordinary game policies with plausible compiler/library alternatives. Runtime
-policy inference must not recover a private class layout or source signature.
-Another future hypothesis is41CA30 /77, an unsigned-byte range predicate for
-[0x81,0x9F] or[0xE0,0xFE]; its encoding meaning needs independent use evidence.
-Do not treat this native diagnostic as a source match or acceptance plan.
+Replay `scripts/repo-python scripts/verify-background-cycle-origins.py` with
+immutable `config/background-cycle-origin-evidence.json`, SHA-256
+`bc73e46ff1a7ebcb839b61caf3f51917d41b11d9a6d066285222ad06c885033a`.
+Each whole callback ends in RET0 and has one internal conditional branch, with
+no unresolved shared tail or switch. The three48-byte bodies are byte-equal;
+independent game context, rather than that equality, supports their attribution.
+The two full readonly double definitions at658960 and658CA8 are2500 and15360,
+respectively. Native `TEST AH,0x41` and `TEST AH,1` preserve distinct ordered
+strict-greater and greater/equal policies; unordered comparisons retain the
+incremented value. Native32-bit ADD observations do not claim portable C++
+signed-overflow behavior.
 
-Preserve R198/R204 lifetime/getter uncertainty, seven list8/11-byte node-link
-alternatives, five R163 math overload chains and the five opaque R206 pointer/
-reference leaves. Repeated byte shapes or known callers/callees alone do not
-resolve those origins. Fresh `.analysis/origin-scan/r229-triage.json` has154
-pending with both current ledger hashes. Shared tools remain read-only.
+Forty-two whole callback/constructor/renderer/peer owners /7,683 bytes, including
+the six selected callbacks, are reopened with complete hashes, instructions,
+CFGs and existing switch records. Six independent accepted game asset loaders
+/976 and six accepted renderers /4,910 are checked in full. The original loaders
+push `data\background\BG02a.dat`, BG02b, BG02c, BG04a, BG07a and BG08a paths,
+install their respective tables at instruction offset46 and clear+0x68 at130.
+BG08a also clears+0x6C at140. Actual readonly slot-one references point to each
+whole selected updater; slot four points to the independently accepted renderer
+that consumes the same receiver field. Real receiver accesses exclude unrelated
+EBP stack locals whose displacement happens to be0x68/0x6C. All six actual
+callback words and the following eight bytes are checked independently; this is
+a bounded table observation, not a recovered complete private interface. The
+remaining peers retain their own accepted or unknown origin decisions.
+
+The natural fixture `tests/origin_probes/BackgroundCyclePolicies.cpp` contains
+four compact ordinary counter policies and two ordinary implicit-copy clients.
+Cold build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` emits
+all nine code/data sections /273 bytes /two real double fields, six complete
+functions /241 and the whole16-byte readonly `[8,8,4,8]` observation. No SDK header
+is needed. The four policy bodies are44/51/51/58; the implicit-copy clients are
+24/13 and lack increment/compare/reset branches. Every ordinary policy instruction,
+including branch destination indices, stack accesses, field roles, actual
+source-defined double owners and RET, agrees with its corresponding complete
+native policy after interpreting the two observed receiver fields. Raw bytes
+and whole extents differ. No padded game owner, inert local, fabricated return,
+private signature or exact comparison is introduced. These natural source
+alternatives explain the explicit runtime policy; they do not identify original
+type spelling, source text or executable-wide compiler settings.
+
+The exhaustive old snapshot audit finds no selected canonical pair. All old
+manifests, authored CSV rows, verifiers and protected ambiguities remain literal;
+this new manifest holds the six complete origin-specific records. All42 scoped
+canonical pairs are checked. Original-state unselected digests and strict bounded
+HEAD ab3d829 readback permit exactly six origin/function-row changes, retaining
+all extents and every unrelated row. External INT3 gaps0/0/0/9/9/4 remain outside
+the full selected functions. Source presence, ABI, mappings and exact credit stay
+unchanged.
+
+Original and accepted cold replays and3,257 CI tests, including14 new guards,
+pass. Target/tracking, local Ghidra target/mapping attestation and query completion,
+full original body-address readback, unchanged60 exact inputs, fresh148-candidate
+triage, progress and whitespace pass. Current4,203 resolved =977 authored+2,646
+library+580 compiler;148 pending and3,226 excluded. The original1,311 goal has
+1,163 classified /148 left and remains active. Exact60 /9,883 bytes /60 units
+across eleven objects are unchanged; authored byte denominator1,971,346 and
+provisional0.50%. Complete Web MCP acceptance remains required after all remaining
+origin review finishes.
 
 ## R229 complete SDK public font and save wrappers
 

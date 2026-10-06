@@ -1629,7 +1629,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044B500,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044B530,authored,BackgroundStage,authored,target-observed,R057
 0x0044B550,authored,BackgroundStage,authored,target-observed,R055
-0x0044B600,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044B600,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044B630,authored,BattleEffect,authored,target-observed,R042
 0x0044B970,authored,BackgroundStage,authored,target-observed,R058
 0x0044B980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1637,7 +1637,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044BA20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044BA50,authored,BackgroundStage,authored,target-observed,R057
 0x0044BA70,authored,BackgroundStage,authored,target-observed,R055
-0x0044BB20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044BB20,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044BB50,authored,BattleEffect,authored,target-observed,R042
 0x0044BE90,authored,BackgroundStage,authored,target-observed,R058
 0x0044BEA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1645,7 +1645,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044BF40,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044BF70,authored,BackgroundStage,authored,target-observed,R057
 0x0044BF90,authored,BackgroundStage,authored,target-observed,R055
-0x0044C040,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044C040,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044C070,authored,BattleEffect,authored,target-observed,R042
 0x0044C3B0,authored,BackgroundStage,authored,target-observed,R058
 0x0044C3C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
@@ -1709,7 +1709,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044D4E0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044D510,authored,BackgroundStage,authored,target-observed,R057
 0x0044D530,authored,BackgroundStage,authored,target-observed,R055
-0x0044D5E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044D5E0,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044D620,authored,BattleEffect,authored,target-observed,R042
 0x0044D8F0,authored,BackgroundStage,authored,target-observed,R058
 0x0044D900,authored,BackgroundStage,authored,target-observed,R058
@@ -1789,7 +1789,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x004502E0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00450310,authored,BackgroundStage,authored,target-observed,R057
 0x00450330,authored,BackgroundStage,authored,target-observed,R055
-0x004503E0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004503E0,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x00450420,authored,BattleEffect,authored,target-observed,R042
 0x00450810,authored,BackgroundStage,authored,target-observed,R058
 0x00450820,authored,BackgroundStage,authored,target-observed,R058
@@ -1805,7 +1805,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00450AD0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x00450B00,authored,BackgroundStage,authored,target-observed,R057
 0x00450B20,authored,BackgroundStage,authored,target-observed,R059
-0x00450BD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00450BD0,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x00450C10,authored,BattleEffect,authored,target-observed,R042
 0x00450ED0,authored,BackgroundStage,authored,target-observed,R059
 0x00450EE0,authored,BattleEffect,authored,target-observed,R042
