@@ -45,15 +45,41 @@ Next inspect whole244-byte pending scene cleanup4258D0 and its actual50-/82-byte
 record lifetime callbacks427430/427470. The full native cleanup observes four
 unconditional virtual releases, the conditional resource deletion already seen
 in R234/R235, independent game manager/mode operations, a CRT array destruction
-call with count16/stride60 and observed record destructor427470, then base cleanup.
+call with count60/stride16 and observed record destructor427470, then base cleanup.
 Those preliminary native facts are not origin evidence. Reopen the entire paired
 independently accepted initializer, all installed scene table peers, actual array
 construction/destruction and record/resource consumers before attribution.
 Contrast complete natural policy/compiler/library alternatives. Do not fabricate
-record fields or padding to obtain a60-byte private layout, instantiate an
+record fields or padding to invent a private layout, instantiate an
 incomplete game class, crop an array/EH carrier or infer original source/ABI from
 a paired compiler wrapper alone. If independently supported, accept only bounded
 whole origin decisions and preserve exact/source state.
+
+Private R236 observations are now retained in
+`.analysis/r236-record-shortlist.json` and
+`.analysis/r236-music-source-diagnostic.json`. The full372-byte MusicRoomScene
+initializer425750 and whole catalog426DD0 /916 are reopened. The catalog indexes
+records with SHL4, allocates/copies/NUL-terminates three buffers at record+4/+8/+C
+and uses record+0 as the active flag. Full original CRT constructor98 reads
+size[EBP+0xC] and count[EBP+0x10]; caller order confirms60 records /16 bytes, and
+destruction uses the same contract. The earlier reverse count/stride hypothesis
+has been corrected, not promoted into a private layout.
+
+Fresh natural compact record initialization50 agrees in full. The record
+cleanup82 differs at six bytes in its three actual call fields: pinned3077
+lowers natural delete[] char* through scalar ??3 at640F15, while native uses the
+separately reviewed array ??_V at64169D forwarding to that scalar owner. Do not
+bind the scalar source symbol directly to the array owner or mask these fields.
+The earlier private record diagnostic obtained equality with that invalid
+rebinding and is explicitly superseded. Retain the proper full difference and
+complete independent deallocation routes; original compiler/source type remain
+unknown. Natural complete music scene observation244 agrees under private
+observed code/data bindings, with all four real public-D3D8 releases, mode
+notifications and60-record member destruction. This remains diagnostic and does
+not instantiate or recover the original private owner/tail layout. Full actual
+binding ownership, complete normal/EH/data extents, genuine implicit alternatives,
+tracked-path cold fixture, immutable plan, old snapshot audit and formal bounded
+original/accepted cold/CI/readback are still due. No R236 canonical change exists.
 
 Keep no-reference receiver policies454C00 /24 and454F70 /31 unknown. Two inventory
 extent questions remain (60C120 /11 and620132 /5). Reopen complete defining source
