@@ -70,6 +70,22 @@ Reopen full frozen R201/R202 graphs and full original source/AUX/CFG extents, in
 all paths/RET cleanup, cold-build natural original SDK declarations and ordinary
 controls, audit every old snapshot/hash consumer, then freeze a bounded verifier.
 
+Private `.analysis/r229-resume-plan.json` now records full diagnostic unmasked
+agreement for all five roots179/all6 fields through three independently retained
+source owners463 and the actual named GDI32 GetObjectA import. Complete frozen
+R201/R202 code/data/normal/EH/anchor/import graphs pass from fresh archive extraction.
+Five natural ordinary members also agree unmasked. Full cold emission is11
+sections330/all11 fields,88 original headers and the whole32-byte readonly layout
+`[60,16,24,4,4,28,4,4]`. Eight whole32-byte original peer controls reject wrong
+surface/volume helper routes and wrong A/W byte4, without field masking in the
+final comparison. All five remain unknown. No retained cached object is acceptance.
+A durable plan/verifier, new cold build from the actual tracked fixture path,
+formal original/accepted checks and bounded canonical readback remain required.
+The resume plan preserves actual profile/source/object/diagnostic hashes and the
+no-selected-history audit. Its private font control initially used an ignored
+`/GS-` option; the final valid profile omits that option and naturally emits the
+whole51-byte font body. Preserve complete bodies and truthful compiler observations.
+
 Most other diagnostic SDK hits are previously reviewed lifetime/getter alternatives.
 Preserve R198/R204 uncertainty and the original explicit/implicit compiler controls;
 no repeat source shape grants ownership. Likewise seven list8/11-byte node links
