@@ -534,7 +534,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00410FC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00410FE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00411000,authored,SpriteSequence,authored,target-observed,R035
-0x004110C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004110C0,authored,SpriteSequence,authored,whole-guarded-sprite-record-consumption-with-independent-append-render-repeated-pop-and-original-list-context,R238
 0x004110F0,authored,GameContextPolicy,authored,complete-custom-list-wrapper-with-whole-parent-and-sdk-graph,R167
 0x00411110,authored,SpriteSequence,authored,target-observed,R035
 0x00411400,authored,SpriteTransform,authored,target-observed,R035

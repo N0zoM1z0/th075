@@ -14959,3 +14959,86 @@ Current4,218 resolved =992 authored+2,646 library+580 compiler;133 pending and
 3,226 excluded. The original1,311 goal has1,178 classified /133 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,813 and provisional0.50%.
+
+## R238 — guarded sprite-record list consumption
+
+R238 accepts authored `0x004110C0` /37, preserving its entire CFG, sole
+conditional exit and eleven following external INT3 bytes. It tests the list
+at receiver+4 using complete public size411CE0 /17, then calls complete public
+pop_front411D00 /40 only when nonempty. The inferred name is
+SpriteSequence::RemoveFrontIfPresentAt004110C0; current database name, extent,
+source/ABI declarations, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-guarded-sprite-list-origins.py` with
+immutable `config/guarded-sprite-list-origin-evidence.json`, SHA-256
+`7928ef70065b69fc93c49265ac3324b6e822cfe3a6a3879e67c6b8fe5d984482`.
+The independent whole R035 AppendElement411000 /183 constructs a complete
+164-byte packet, including the original132-byte copy, appends it to the same
+receiver+4 list and enforces the observed signed-word limit. Full
+RenderElements411110 /746 iterates and draws that list. Full R045
+FighterState::Render453F70 /2246 appends to owner pointer at actor+0x480 and,
+under its original condition, calls the selected removal twice consecutively
+on that same receiver. Each call rechecks nonempty. The condition observes
+66C237 and actor+0x47C; it does not assign a meaning to the byte or trust its
+unrelated Ghidra string alias. Whole R167 ClearEntries4110F0 /22, its complete
+R166 parent104 and R045 game anchor1186 retain independent custom ownership.
+Thirteen full anchors /4,992 bytes and 21 scoped canonical pairs are frozen.
+The complete25-byte member constructor411C10 remains unknown: its forwarding
+shape also fits generated member construction.
+
+Original VC7 list429–432 and474–477 retain genuine size/pop_front definitions;
+queue69–72 forwards pop unconditionally. Complete new source-owned providers17
+and40 reproduce their full target bodies through original typed public
+begin411C90 and erase411F20 children, with both genuine fields retained. The
+natural complete `tests/origin_probes/GuardedSpriteList.cpp` reuses the immutable
+generic R167/R166 model, cold-building with locked3077
+`/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /I probes /showIncludes`. It keeps all34
+actual include owners,196 whole emitted code/data sections /8,712 bytes,
+all414 genuine fields, complete COFF/AUX/line provenance and both actual weak
+aliases with their full fallback ownership. The actual relative probe include
+is bound to the fixed repository cwd; no include-log conversion or fallback
+parser is used.
+
+The ordinary member guard37 reproduces all bytes and its actual size/pop
+fields at14/29. Entire original queue::pop19 and borrowed-list guard25 remain
+negative against all37 target bytes; explicit trailing missing-source bytes
+are retained. No relocation masking or comparison prefix is used. The entire
+72-byte combined readonly sizeof section, including both old arrays and the
+new [164,20,20,12] observations, is preserved. These are complete generic
+observations, not a recovered private sprite owner/layout. Source equality
+alone cannot prove authorship, original spelling/type/template/compiler
+profile or ABI. The independent custom packet/render/driver policy supplies
+the source-family inference; no original incomplete owner, padding, inert
+local, fake return, source/mapping or exact credit is added.
+
+Both original and accepted cold replays reopen the unchanged complete R167
+and R168 source proofs, including all182 /8,150 and225 /10,007 emitted
+sections/bytes,
+31 /1,288 and93 /4,248 whole positive controls, two original R167 negatives,
+all genuine call/data fields, full node catch/shared tails, original registered
+frames and whole56-/76-byte layout arrays. Their old standalone canonical
+checks reject four/seven literal unknown snapshots subsequently accepted by
+R218/R219/R222/R223. R238 therefore provides an explicit historical ledger
+view only while invoking each unchanged whole verifier in a fresh process.
+Every projected pair must equal both the immutable old unknown snapshot and
+the successor's original pair; the live pair must exactly equal that
+successor's immutable accepted pair. Complete successor manifests/scripts,
+plans and transitions are checked. All unrelated rows and other datasets
+remain literal. Source bytes, compiler/subprocess behavior and generated
+artifacts are never projected or patched. The actual current accepted owners
+remain unchanged; old proof summaries describe their historical snapshots.
+The earlier standalone rejection remains recorded in private diagnostics.
+
+An empty selected historical-record audit, original full unselected digests
+and strict HEAD3985108 readback permit exactly one row in each canonical
+function/origin ledger to change. Every previous accepted record/manifest,
+protected unknown and sixty exact input remains literal. Original and accepted
+cold replays,3,340 CI tests including15 new guards, target/tracking, readonly
+Ghidra identity/query completion, fresh132-row triage, generated progress and
+whitespace pass. The complete Web MCP acceptance remains due after all
+remaining origin review finishes.
+
+Current4,219 resolved =993 authored+2,646 library+580 compiler;132 pending and
+3,226 excluded. The original1,311 goal has1,179 classified /132 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,850 and provisional0.50%.
