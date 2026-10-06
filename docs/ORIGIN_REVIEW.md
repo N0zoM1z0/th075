@@ -16158,3 +16158,102 @@ No exact scope is added. Local commits are not pushed without authorization.
 All3464 public CI tests pass. Target identity, required tracking validation,
 all60 exact input/row guards, remaining111-row triage, progress freshness and
 whitespace checks pass. Complete accepted-state cold replay passes before handoff.
+
+## R255 — complete neighboring vector destruction and ordinary parent counterexamples
+
+R255 accepts only four complete 19-byte library vector destructors:
+`0x004589F0`, `0x00458AD0`, `0x00458BA0` and `0x005F7FA0` (76 bytes).
+Four distinct ordinary clears, `0x00458A80`, `0x00458B50`, `0x00458C20` and
+`0x005F8020`, remain unknown. All eight extents are complete, followed by
+external alignment. Ownership uses independently accepted R090 vector
+construction, immediate completed-state stores, actual receiver offsets and
+the corresponding original EH cleanup. Equal short bodies or a library Tidy
+callee alone do not supply that ownership context.
+
+| Whole original parent | Constructor / completed state / receiver | Actual cleanup | Library destructor |
+| --- | --- | --- | --- |
+| Fighter Initialize `0x004567B0` /345 | `0x00458B70` /42; state0; saved receiver+1128 | `0x00656080` /14 | `0x00458BA0` /19 |
+| Nested Initialize `0x004587E0` /145 | `0x004589C0` /42; state1; receiver+84 | `0x006561C8` /11 | `0x004589F0` /19 |
+| Same whole parent | same constructor; state2; receiver+100 | `0x006561D3` /11 | same destructor |
+| Vector Record Initialize `0x00458960` /93 | `0x00458AA0` /42; state0; receiver+0 | `0x00656220` /8 | `0x00458AD0` /19 |
+| Container Record Initialize `0x005F7F20` /75 | `0x005F7F70` /42; state0; receiver+0 | `0x006566D0` /8 | `0x005F7FA0` /19 |
+
+The immutable `config/neighbor-vector-lifetime-origin-evidence.json` retains
+the four literal original/accepted pairs, every unselected canonical-row hash,
+93 complete native bodies /10,838 bytes, all nine original EH frames and
+352 bytes of whole compiler code plus 436 bytes of complete unwind/FunctionInfo
+data. Full callbacks include both direct CALL and tail JMP destinations.
+Original frame owners, state transitions, constructor records, authored
+anchors, unknown mixed-copy alternatives and four separate 13-byte INT3
+alignments are preserved. Receiver locals differ (-52 versus -16); state0
+uses a dword store, while the two later member states use byte stores.
+The verifier checks these actual forms rather than guessing from offsets.
+
+One natural public fixture cold-builds with pinned VC7.1 build3077 and explicit
+/Od /Ob0 /Gy /GR- /GX /Zi /GS. Its 27 complete header hashes, all 166 ordinary
+initialized sections /6,857 bytes, separate 148-byte BSS storage, genuine
+definitions/AUX records/fields and two weak references are inventoried.
+All 82 complete unmasked comparisons /3,230 bytes retain all 136 real fields.
+They include the four constructors42, four destructors19, their complete
+library provider graphs, four ordinary Cleanup19 positives, two entire
+compiler code18/data36 pairs and two complete ordinary policy parents.
+Capacity-failure carriers and original exception/runtime provenance remain
+explicit retained boundaries. No chosen callback prefix earns credit.
+
+The inherited ordinary LargeVectorPolicy constructor93 and SixteenVectorPolicy
+constructor75 compare with the complete accepted R211/R212 game parents.
+Their real base constructor42 and own ordinary Cleanup19 definitions remain
+distinct source providers. The former zeroes two actual unsigned-short fields
+at offsets16/18; the latter explicitly clears after base construction.
+These complete positives strengthen the ordinary-clear counterexample while
+preserving the prior authored decisions. Source sizes16/116/4 and owner sizes
+16/20/16/48 are generic observations, not recovered original element types or
+complete game layouts. The natural three-vector owner retains its full
+constructor/destructor and EH differences.
+
+Trivial generic element destruction5 differs from both original endpoints
+`0x0045B6B0` /15 and `0x005FAAD0` /15. These and original record44 endpoint
+`0x0040F9F0` /15 remain unknown. Their actual scalar deleting44 callees retain
+their independent R037 compiler evidence; that does not classify the callers
+or the ultimate game destructors. R158 mixed-copy bodies and earlier implicit/
+explicit lifetime alternatives receive no new credit.
+
+The accepted-state CLI runs the entire unchanged R254, original R212 and
+original R227 verifiers in read-only, fixed-revision Git worktrees. Those
+complete CLIs retain the full R253 controls/static and R024/R090/R089,
+R142/R141/R038/R121/R120, reconciled R208/R150 and full R161 graphs, the
+R212/R211/R210/R209 source trees and R153 external destructor evidence,
+and the complete original R227 endpoint routes. The three compiler-template
+prerequisites are freshly compiled before the R254 compiler CLI; cached
+objects cannot substitute for these cold prerequisites.
+
+Historical roots preserve the source path length because VC7 .file debug AUX
+counts shift raw symbol indexes. Historical CSV CRLF is restored only when
+the historical manifest pins that exact hash and normalized bytes equal the
+actual Git blob. Every tracked historical blob is checked before and after
+replay; other code, JSON and ledger content cannot change. Full original
+acceptance predicates and manifests remain untouched. No reduced manifest,
+global CSV/argument patch or cached receipt replaces a whole proof. Eighteen
+focused tests reject missing states, receiver/provider substitutions, cropped
+code/data, erased ordinary parents and unauthorized history/EOL changes.
+The retained R253/R254 tests use only R255's four validated literal historical
+transitions; their strict unrelated-row checks remain intact.
+
+Current counts are 4244 resolved =999 authored+2664 library+581 compiler,
+107 pending /3,923 bytes and3245 excluded. Original1311 progress is1204
+classified /107 left. Exact60 /9883 bytes /60 units /eleven objects and authored
+denominator1973300 remain unchanged. Every remaining whole body hash/current
+pair is reread; the original R251116-row artifact and all original trails stay
+preserved. All3482 public CI tests, target/tracking, exact ledger/full-row
+guards, progress freshness and whitespace checks pass. Complete accepted-state
+cold replay passes before handoff.
+
+Next bounded R256 examines the complete 72-byte outer policies at
+`0x004586C0` and `0x005F7ED0`, whose two same-receiver calls now reach separate
+ordinary clears and independently accepted library vector destructors.
+Assess explicit cleanup versus genuine implicit/member/empty-base alternatives
+using complete source parents, actual defining providers and full EH metadata.
+The new library base evidence does not automatically classify either outer
+policy. Preserve the original snapshots, unknown clear roles and exact scope.
+The remaining-review goal stays active; final complete Web MCP acceptance is
+due only when the requested end state is satisfied. No push was authorized.

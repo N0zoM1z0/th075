@@ -105,6 +105,15 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
 
     def test_original_and_accepted_views_allow_only_literal_selected_pairs(self):
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        next_spec = importlib.util.spec_from_file_location(
+            'global_neighbor_successor', ROOT / 'scripts/verify-neighbor-vector-lifetime-origins.py')
+        next_view = importlib.util.module_from_spec(next_spec)
+        next_spec.loader.exec_module(next_view)
+        newest = json.loads((ROOT / next_view.EVIDENCE).read_text())
+        next_view.verify_plan(newest)
+        original_next = all(q['original_function'] in source['functions.csv'] for q in newest['functions'])
+        source = {name: next_view.historical_rows(newest, name, actual, original_next)
+                  for name, actual in source.items()}
         # R254 projects only its literal, independently verified three transitions.
         # Preserve the original R253 manifest and strict unrelated-row assertion.
         spec = importlib.util.spec_from_file_location(

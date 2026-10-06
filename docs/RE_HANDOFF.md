@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246, R253 and R254, with bounded unresolved reviews/audits
+review cohorts R108 through R246, R253, R254 and R255, with bounded unresolved reviews/audits
 R247–R252. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
@@ -12,8 +12,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,240: 999 authored, 2,660 library and 581 compiler generated.
-There are 111 pending. Candidate count is not authored function count.
+has resolved 4,244: 999 authored, 2,664 library and 581 compiler generated.
+There are 107 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -21,66 +21,60 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R255 neighbor/file vector cohort below.
+the bounded R256 outer-policy cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R254; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R255; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R255 neighbor/file vector lifetimes
+## Next agent objective — R256 complete outer policies
 
-R254 accepts only409380/DCC0/DE80, three complete vector destructor19 bodies.
-Independent R090 construction42, immediate completed-state stores and the real
-EH cleanup of each same receiver/subobject supply ownership context. All four
-original Audio/Texture frames, native parents and callbacks,57 whole fresh
-source comparisons2195 bytes and137 ordinary initialized sections5714 bytes
-are preserved. Ordinary clear409490/DE30/DF40 remain unknown: genuine inherited
-user Cleanup19 methods also match completely. The original record44 element
-endpoint40F9F0 /15 and protected lifetime40D8E0 /19 remain unknown; the trivial
-source element5 does not match. Original classes/types/layouts stay unrecovered.
+R255 accepts only4589F0/458AD0/458BA0/5F7FA0, four complete vector destructor19
+bodies. Five independently accepted construction42/state/receiver links and
+nine complete original EH frames identify those library lifetimes. All93
+native bodies10838 bytes, complete compiler code352/data436,82 fresh unmasked
+source comparisons3230 bytes and166 ordinary initialized sections6857 bytes
+are preserved. Four ordinary clear aliases458A80/458B50/458C20/5F8020 stay
+unknown. Actual inherited policy constructor93/75 positives reproduce the
+complete accepted R211/R212 game parents while calling genuine ordinary clear
+and library base providers. Original element types and owner layouts remain
+unrecovered. Both generic element5 versus original15 boundaries are retained.
 
-The accepted-state `verify-member-vector-lifetime-origins.py` CLI cold-builds
-its fixture and replays the entire unchanged R253 proof, all five controls and
-retained static source, full R024, R090/R089, R142/R141/R038 and R121/R120 trees.
-Only the three literal approved R254 transitions are projected to R253's
-strict original canonical view. Its manifest/verifier are unchanged. Whole
-R161 additionally replays with only the two explicit R208 historical transitions;
-the entire current R208 proof separately validates reconciled796 carriers and
-its full R150 graph. The authored/compiler CLIs and16 negative-control tests
-pass. Preserve complete proofs and fail-closed historical views. Details:
-[R254 review](ORIGIN_REVIEW.md#r254--complete-same-receiver-vector-subobject-destruction).
+The accepted-state CLI replays the entire unchanged R254, original R212 and
+original R227 proofs in fixed-revision read-only Git worktrees. Full R253 and
+R161/R208/R150, the R212/R211/R210/R209 trees, R153 external destruction and
+R227 endpoint routes remain complete. Three compiler-template prerequisites
+are cold-built before the full R254 compiler proof. Original source path/AUX
+identity and hash-pinned CSV EOL representations are verified against every
+historical Git blob, before and after replay. Canonical predicates, source and
+manifests are unchanged. Details:
+[R255 review](ORIGIN_REVIEW.md#r255--complete-neighboring-vector-destruction-and-ordinary-parent-counterexamples).
 
-Next review these eight complete19-byte wrappers:
+Next examine `0x004586C0` /72 and `0x005F7ED0` /72. Their full native bodies and
+original EH frames are already in the R255 context/evidence. Each starts with
+state0, calls a pending ordinary clear on receiver+0, switches to state-1,
+then calls the independently accepted library vector destructor on receiver+0.
+This is new base-ownership context; it is not an automatic outer-origin gain.
+Assess genuine explicit cleanup versus implicit/member/empty-base alternatives
+with complete source parents, actual local providers and whole EH code/data.
+Preserve original snapshots, all four unknown clears and the R158 mixed-copy
+alternatives. Do not infer complete original classes or add exact scope.
 
-- `0x004589F0` and `0x00458A80`, reaching vector Tidy103 at `0x00458DA0`.
-- `0x00458AD0` and `0x00458B50`, reaching vector Tidy110 at `0x00458FC0`.
-- `0x00458BA0` and `0x00458C20`, reaching vector Tidy103 at `0x00459140`.
-- `0x005F7FA0` and `0x005F8020`, reaching vector Tidy103 at `0x005F85E0`.
-
-Private `.analysis/r255-context.json` freezes28 whole native bodies8461 bytes,
-nine original EH frames and24 actual constructor/cleanup call contexts. The
-four independently accepted constructors42 are4589C0,458AA0,458B70 and5F7F70.
-Inspect the complete source and native graph before classifying any outer body.
-EH-connected destruction is a lead; ordinary clear aliases and R158 mixed-copy
-syntax remain protected alternatives. All eight rows are unknown. No exact
-scope is added, and no source or complete owner layout should be inferred from
-these provisional numeric offsets.
-
-Current counts:4240 resolved =999 authored+2660 library+581 compiler,
-111 pending /3999 bytes,3241 excluded. Original1311 progress is1200 classified
-/111 left. The [current pending matrix](ORIGIN_PENDING_REVIEW.md) rereads every
-remaining whole hash/literal pair; original R251116-row evidence is preserved.
+Current counts:4244 resolved =999 authored+2664 library+581 compiler,
+107 pending /3923 bytes,3245 excluded. Original1311 progress is1204 classified
+/107 left. The [current pending matrix](ORIGIN_PENDING_REVIEW.md) rereads all107
+whole hashes/current pairs and preserves the original R251116-row artifact.
 The reviewed-but-unknown end-state question remains unanswered; do not presume
-a scope change or falsely complete the goal. One complete Web MCP acceptance
-is due after the requested remaining-review end state is satisfied. Exact60
-/9883 bytes /60 units /eleven objects and denominator1973300 stay unchanged.
-All3464 CI tests, target/tracking, exact input guards, progress and whitespace
+a scope change or falsely complete the goal. Final complete Web MCP acceptance
+remains due after the requested remaining-review end state. Exact60 /9883 bytes
+/60 units /eleven objects and denominator1973300 stay unchanged. All3482 public
+CI tests, target/tracking, exact full-row/input guards, progress and whitespace
 checks pass. Complete accepted-state cold replay passes before handoff.
 These commits remain local; no push was authorized.
 

@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 111 pending candidates, covering 3,999 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 111
+This report records the current 107 pending candidates, covering 3,923 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 107
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -16,7 +16,9 @@ CFGs and both complete11-/5-byte native tail cases. R253 classifies two19-byte
 library lifetimes through the complete paired same-global chain. R254 classifies
 three19-byte vector destructors through independently accepted construction42
 and actual completed-state EH cleanup of the same subobject. Their original
-unknown snapshots remain preserved. The current remaining projection has109
+unknown snapshots remain preserved. R255 additionally classifies four19-byte
+neighboring vector destructors through five independent construction-state links
+and nine complete original EH frames; all four ordinary clear aliases stay unknown. The current remaining projection has105
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -26,7 +28,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r254-remaining-review.json` retains the current literal
+Private `.analysis/r255-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -101,12 +103,9 @@ scope clarification is presumed.
 | `0x004586C0` | 72 | default-or-lifetime | 20 instructions; 0 branches; RET 0; 2 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
 | `0x00458770` | 22 | default-or-lifetime | 10 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
 | `0x004588B0` | 43 | default-or-lifetime | 17 instructions; 1 branches; RET 0; 1 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json); [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x004589F0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x00458A80` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x00458AD0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x00458B50` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x00458BA0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
-| `0x00458C20` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
+| `0x00458A80` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-vector-lifetime-origin-evidence.json](../config/neighbor-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; whole inherited Cleanup19 and parent93/75 counterexamples preserved. |
+| `0x00458B50` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-vector-lifetime-origin-evidence.json](../config/neighbor-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; whole inherited Cleanup19 and parent93/75 counterexamples preserved. |
+| `0x00458C20` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-vector-lifetime-origin-evidence.json](../config/neighbor-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; whole inherited Cleanup19 and parent93/75 counterexamples preserved. |
 | `0x004591E0` | 417 | mixed-member-copy | 128 instructions; 0 branches; RET 4; 2 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Original copy syntax and member types. |
 | `0x0045AAE0` | 368 | mixed-member-copy | 118 instructions; 0 branches; RET 4; 2 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Original copy syntax and member types. |
 | `0x0045B630` | 5 | empty-body | 4 instructions; 0 branches; RET 0; 0 calls | [neighbor-policy-origin-evidence.json](../config/neighbor-policy-origin-evidence.json) | Original empty-operation signature and owner. |
@@ -122,8 +121,7 @@ scope clarification is presumed.
 | `0x00532500` | 5 | empty-body | 4 instructions; 0 branches; RET 0; 0 calls | [list-head-erase-origin-evidence.json](../config/list-head-erase-origin-evidence.json) | Original empty-operation signature and owner. |
 | `0x00540280` | 11 | container-or-ordinary-leaf | 6 instructions; 0 branches; RET 0; 0 calls | [character-list-front-origin-evidence.json](../config/character-list-front-origin-evidence.json) | Original receiver/element and leaf source identity. |
 | `0x005F7ED0` | 72 | default-or-lifetime | 20 instructions; 0 branches; RET 0; 2 calls | [file-resource-policy-origin-evidence.json](../config/file-resource-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x005F7FA0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [paired-clear-policy-origin-evidence.json](../config/paired-clear-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
-| `0x005F8020` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [paired-clear-policy-origin-evidence.json](../config/paired-clear-policy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
+| `0x005F8020` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-vector-lifetime-origin-evidence.json](../config/neighbor-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; whole inherited Cleanup19 and parent93/75 counterexamples preserved. |
 | `0x005FAAD0` | 15 | default-or-lifetime | 7 instructions; 0 branches; RET 0; 1 calls | [paired-clear-policy-origin-evidence.json](../config/paired-clear-policy-origin-evidence.json); [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x00608D8E` | 58 | sdk-private-lifetime | 22 instructions; 3 branches; RET 0; 4 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00608E33` | 23 | interface-id-or-ordinary | 12 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Typed target namespace/reachability. |
@@ -169,4 +167,9 @@ clear aliases remain in the matrix, with whole inherited Cleanup19 positives.
 See [the R254 review](ORIGIN_REVIEW.md#r254--complete-same-receiver-vector-subobject-destruction)
 and [its immutable evidence](../config/member-vector-lifetime-origin-evidence.json).
 The original element endpoint40F9F0 /15 and protected40D8E0 /19 remain unknown.
-Current total:111 candidates /3999 bytes, all with unresolved origins.
+R255 removes four complete vector destructor19 bodies, while the four
+ordinary clear aliases remain unknown. Complete ordinary parent93/75 positives
+and both original element destruction15 boundaries are retained.
+See [the R255 review](ORIGIN_REVIEW.md#r255--complete-neighboring-vector-destruction-and-ordinary-parent-counterexamples)
+and [its immutable evidence](../config/neighbor-vector-lifetime-origin-evidence.json).
+Current total:107 candidates /3923 bytes, all with unresolved origins.
