@@ -15662,3 +15662,71 @@ Current 4,235 resolved = 999 authored + 2,655 library + 581 compiler;
 116 pending and 3,236 excluded. Original 1,311 goal has 1,195 classified /
 116 left and remains active. Exact60 /9,883 bytes /60 units across eleven
 objects and authored denominator1,973,300 remain unchanged (provisional0.50%).
+
+## R247 — environment-map default construction remains unresolved
+
+R247 reviews complete pending60B728 /104 and retains its unknown origin. No
+canonical function/origin, extent, source, mapping, ABI or exact row changes.
+The original1311 goal remains active with1195 classified /116 left.
+
+Original R198 source identifies `??0CD3DXRenderToEnvMap@@QAE@XZ` in pinned
+`obj\i386\cd3dxrendertoenvmap.obj` (20,010 bytes). Private
+`.analysis/r247-diagnostic.json` re-reads its complete104-byte defining COFF/
+AUX source and single actual vtable field, and separately replays the entire
+original52-byte thirteen-slot table65D3C0 with every actual method provider.
+Both original source comparisons are unmasked; the old manifests remain
+literal. Full native data is in `.analysis/r247-native.json`. Complete public
+creation605107 /126 validates inputs, allocates1172 bytes, calls this constructor,
+then passes the same receiver and original public arguments to complete
+initialization609F9E /134, including its additional fixed level argument1.
+On initialization failure it deletes that receiver; successful creation returns
+it to the caller. These are observed ownership/extent facts, not original
+private type or constructor-syntax evidence.
+
+Whole Init134 writes the device at+8, the public four-word D3DXRTE_DESC at+0x0C,
+and an extra level word at+0x1C; it initializes a D3DVIEWPORT8 at+0x474. Original
+header sizes are16 and24 respectively. Source allocation0x494 is1172 bytes;
+it is unrelated to the80-byte texture child in R245. Constructor104 establishes
+reference count1, null resource/storage state, two paired pointer arrays and
+260 zero words beginning+0x50. The bulk-clear observation alone cannot prove
+that the original owner constructor is explicit SDK code.
+
+Natural complete generic private observations in
+`.analysis/probes/R247EnvironmentLifetimeFlat.cpp` and
+`.analysis/probes/R247EnvironmentLifetime.cpp` use the real public interface,
+meaningful default reference/pointer/state helpers, the public descriptor and
+viewport, and a complete saved-word storage member. They do not instantiate a
+partial original SDK class. Both genuine implicit and empty explicit constructors
+are emitted through real array creation. Serial pinned3077 profiles retain
+whole paired118 bodies (/O1 /Ob1),91 bodies with grouped surface helpers
+(/O1 /Ob2),122 bodies (/O1 /Ob2 /Oi),97 grouped bodies (/O1 /Ob2 /Oi), and99
+bodies (/O2 /Ob2 /Oi), with /Gy /GR- /GX /Zi /GS /showIncludes explicit.
+These profiles are compiler observations, not original or executable-wide flags.
+
+The complete implicit99 and empty explicit99 bodies are equal after their
+actual vptr fields link to the independent full observed table. Each preserves
+all67 differences against all104 target bytes, including all five absent tail
+bytes. Both current complete52-byte source tables compare against the original
+whole52 using actual public method signatures and complete original providers;
+no prefix table is treated as whole. Their full generic layout is
+[1172,1172,16,24,1040]. Automatic member construction emits reference-count1,
+null resources and REP STOSD over the entire260-word saved storage. This is
+semantic compatibility and a negative target comparison, not recovery of the
+original grouping/types/layout/default syntax. Private diagnostics add no
+canonical or exact credit and are not a new accepted public reconstruction unit.
+
+Private `.analysis/r247-sdk-type-availability.json` records all original debug
+section extents. The object contains a156-byte debug$S compile record and
+thirty-nine debug$F FPO records, but no debug$T type section or source-file definitions.
+Compiler/FPO metadata therefore supplies no missing complete private member
+interface. Source names, a reviewed create caller, a zeroing fingerprint or a
+natural generic fixture do not settle compiler-versus-explicit SDK ownership.
+The R198 unknown snapshot remains authoritative; stronger original private
+source/type evidence or a distinguishing whole observation is still required.
+
+Target/tracking,readonly Ghidra attestation,fresh private116-row triage,
+progress freshness,all60 exact-input preservation,strict unchanged canonical
+readback and whitespace checks pass. All 3,436 local CI tests pass. Counts remain4235 resolved =999 authored+2655 library+581 compiler,
+116 pending and3236 excluded. Exact60 /9883 bytes /60 units across eleven
+objects and provisional authored denominator1973300 stay unchanged.
+One complete Web MCP acceptance remains due after all remaining origin review.

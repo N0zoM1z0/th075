@@ -1,8 +1,8 @@
 # TH075 function reconstruction handoff
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
-exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R246. The public
+exact reconstruction for F008 and F009, and has now completed accepted origin
+review cohorts R108 through R246 and bounded unresolved review R247. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,50 +20,52 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R247 SDK lifetime investigation below.
+the bounded R248 resource-lifetime investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R246; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R247; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R247 SDK lifetime evidence
+## Next agent objective — R248 resource lifetime
 
-R246 accepts one complete compiler vector deleting helper6114A7 /76.
-There are116 origins pending; original1,311 goal has1,195 classified /116 left
-and remains active. The user pushed throughc9b8efa; subsequent commits remain
-local. Continue serial local investigation while preserving every accepted
-origin and all60 exact functions. One complete Web MCP acceptance is required
-after all remaining review and remains due.
+R247 retains environment-map constructor60B728 /104 as unknown after whole
+original104/table52/creation126/initialization134 evidence and natural implicit/
+empty alternatives. Counts remain116 pending; original1311 goal has1195
+classified /116 left and remains active. The user pushed throughc9b8efa;
+subsequent commits remain local. Preserve all accepted origins and exact60.
+One complete Web MCP acceptance remains due after all remaining origin review.
 
-Next investigate whole pending60B728 /104 and its original SDK source context.
-R198's immutable `config/sdk-blit-origin-evidence.json` retains that defining
-constructor and the complete original object, vtable/fields/callers alongside
-five other original lifecycle alternatives. Current private
-`.analysis/r246-runtime-triage-native.json` records its complete native body
-and reviewed library parent605107. It writes vtable65D3C0 and explicit-looking
-initial values; this alone does not establish source ownership or distinguish
-implicit member construction from an explicit default constructor. Reconcile
-whole original source owners, complete actual source/caller/data fields and
-natural emitted alternatives before any transition. Do not classify it from
-its SDK name, a parent or a convenient constructor fingerprint. Preserve all
-previous constructor/copy/destructor and no-reference ambiguities.
+Next investigate complete pending60EBCD /89. Private
+`.analysis/r246-runtime-triage-native.json` retains its full native body and
+reviewed parents. It conditionally frees owned buffer state and recursively
+cleans two child resources. Original R195/R196 source and lifetime ambiguities
+remain authoritative. Reconcile its complete original SDK source/fields, full
+actual producer/consumer/allocator context, implicit versus explicit member
+cleanup and source/AUX/whole CFG before any transition. A source-owned SDK name
+or a reviewed parent alone does not prove library-versus-generated lifetime
+ownership. Do not overwrite any original snapshot, infer a complete private
+owner or classify a convenient cropped template.
 
-Private `.analysis/r247-sdk-default-constructor-context.json` now identifies
-60B728 as complete original `??0CD3DXRenderToEnvMap@@QAE@XZ`, with its actual
-single vtable field and complete public create caller605107. Its archive member
-is `obj\i386\cd3dxrendertoenvmap.obj` (20,010 bytes). Private
-`.analysis/r247-sdk-type-availability.json` confirms the object retains a
-156-byte debug$S compile record and FPO debug$F entries, but no debug$T type
-section or source-file definitions. This is no original private member-type
-proof; do not reinterpret the compiler/FPO records as a complete class layout.
-Resolve original table/provider placements through R198's anchors/definitions
-and retain all public-interface and ordinary constructor alternatives.
+R247 private `.analysis/r247-diagnostic.json`/log re-read original constructor104
+and full13-slot table52 unmasked. Complete factory126 allocates1172 and invokes
+constructor then Init134 on the same owner; actual public descriptor is16,
+level word+0x1C and viewport24 at+0x474. The original object has debug$S/F but
+no private type debug$T or source-file definitions. Complete natural generic
+implicit and empty99 constructors are equal and automatically perform refcount1,
+null initialization and260-word bulk clearing; both retain all67 differences to
+all104 target bytes and full source tables52 compare. Generic layouts/profiles
+are observations, not original private layouts/default syntax/compiler flags.
+The five paired profiles and grouped/un-grouped helpers remain private diagnostic
+data; the original SDK candidate stays unknown. Fresh
+`.analysis/origin-scan/r247-triage.json` records116 pending/current ledger hashes.
+Move to other eligible candidates rather than repeatedly treating this same
+bulk-zeroing observation as a new ownership distinction.
 
 R246's whole original SDK E76 and callback9 reproduce unmasked from pinned
 `obj\i386\cd3dxblt.obj`. Genuine fresh compiler E76 has three differences at
