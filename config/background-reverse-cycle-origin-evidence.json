@@ -1,0 +1,3717 @@
+{
+  "evidence_id": "R232",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "functions": [
+    {
+      "address": "0x0044E3A0",
+      "size": 45,
+      "body_sha256": "a40e84c57fc5666420a04a6fd25f71dccfee33833b1abfb4b273e3c601d21f76",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "offset": 4,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "offset": 7,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "offset": 10,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [eax + 0x68]"
+        },
+        {
+          "offset": 13,
+          "size": 3,
+          "mnemonic": "sub",
+          "operands": "ecx, 1"
+        },
+        {
+          "offset": 16,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp - 4]"
+        },
+        {
+          "offset": 19,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [edx + 0x68], ecx"
+        },
+        {
+          "offset": 22,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp - 4]"
+        },
+        {
+          "offset": 25,
+          "size": 4,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [eax + 0x68], 0"
+        },
+        {
+          "offset": 29,
+          "size": 2,
+          "mnemonic": "jge",
+          "operands": "0x44e3c9"
+        },
+        {
+          "offset": 31,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 4]"
+        },
+        {
+          "offset": 34,
+          "size": 7,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ecx + 0x68], 0xf00"
+        },
+        {
+          "offset": 41,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 43,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 44,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        1
+      ],
+      "original_function": {
+        "address": "0x0044E3A0",
+        "size": "45",
+        "span_end": "0x0044E3CC",
+        "current_name": "FUN_0044e3a0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0044E3A0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0044E3A0",
+        "size": "45",
+        "span_end": "0x0044E3CC",
+        "current_name": "FUN_0044e3a0",
+        "proposed_name": "BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R232; config/background-reverse-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-reverse-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback decrements constructor-cleared and renderer-consumed counter at observed offset0x68, resetting signed-negative results to3840. Actual BG05a asset/table/renderer context supports authored inference; compact ordinary and implicit-copy controls do not recover original names/type/layout/ABI or source, no exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0044E3A0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R232"
+      },
+      "ordinary_symbol": "?Advance@ReverseCycleObservation@@QAEXXZ",
+      "policy": [
+        [
+          "push",
+          [
+            [
+              "reg",
+              "ebp"
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "ebp"
+            ],
+            [
+              "reg",
+              "esp"
+            ]
+          ]
+        ],
+        [
+          "push",
+          [
+            [
+              "reg",
+              "ecx"
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "mem",
+              4,
+              "ebp",
+              null,
+              1,
+              -4
+            ],
+            [
+              "reg",
+              "ecx"
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "eax"
+            ],
+            [
+              "mem",
+              4,
+              "ebp",
+              null,
+              1,
+              -4
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "ecx"
+            ],
+            [
+              "mem",
+              4,
+              "eax",
+              null,
+              1,
+              "counter"
+            ]
+          ]
+        ],
+        [
+          "sub",
+          [
+            [
+              "reg",
+              "ecx"
+            ],
+            [
+              "imm",
+              1
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "edx"
+            ],
+            [
+              "mem",
+              4,
+              "ebp",
+              null,
+              1,
+              -4
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "mem",
+              4,
+              "edx",
+              null,
+              1,
+              "counter"
+            ],
+            [
+              "reg",
+              "ecx"
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "eax"
+            ],
+            [
+              "mem",
+              4,
+              "ebp",
+              null,
+              1,
+              -4
+            ]
+          ]
+        ],
+        [
+          "cmp",
+          [
+            [
+              "mem",
+              4,
+              "eax",
+              null,
+              1,
+              "counter"
+            ],
+            [
+              "imm",
+              0
+            ]
+          ]
+        ],
+        [
+          "jge",
+          [
+            [
+              "branch",
+              14
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "ecx"
+            ],
+            [
+              "mem",
+              4,
+              "ebp",
+              null,
+              1,
+              -4
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "mem",
+              4,
+              "ecx",
+              null,
+              1,
+              "counter"
+            ],
+            [
+              "imm",
+              3840
+            ]
+          ]
+        ],
+        [
+          "mov",
+          [
+            [
+              "reg",
+              "esp"
+            ],
+            [
+              "reg",
+              "ebp"
+            ]
+          ]
+        ],
+        [
+          "pop",
+          [
+            [
+              "reg",
+              "ebp"
+            ]
+          ]
+        ],
+        [
+          "ret",
+          []
+        ]
+      ]
+    }
+  ],
+  "contexts": [
+    {
+      "callback": "0x0044E3A0",
+      "constructor": "0x0044E2F0",
+      "renderer": "0x0044E3D0",
+      "asset_witness": {
+        "address": "0x0044E2F0",
+        "kind": "asset-constructor",
+        "asset_path": "data\\background\\BG05a.dat",
+        "evidence_id": "R055"
+      },
+      "owners": [
+        {
+          "address": "0x0044E2F0",
+          "size": 161,
+          "body_sha256": "d616b02d96469e71aeed45b90ab04a19e532a791fa09dae015b603c2e7872c20",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 5,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x655ef8"
+            },
+            {
+              "offset": 10,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr fs:[0]"
+            },
+            {
+              "offset": 16,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "eax"
+            },
+            {
+              "offset": 17,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr fs:[0], esp"
+            },
+            {
+              "offset": 24,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 25,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x10], ecx"
+            },
+            {
+              "offset": 28,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 31,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x449de0"
+            },
+            {
+              "offset": 36,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], 0"
+            },
+            {
+              "offset": 43,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 46,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [eax], 0x658ac4"
+            },
+            {
+              "offset": 52,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 55,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x6c"
+            },
+            {
+              "offset": 58,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40d990"
+            },
+            {
+              "offset": 63,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "4"
+            },
+            {
+              "offset": 65,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 68,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 71,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40b1d0"
+            },
+            {
+              "offset": 76,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x658aa0"
+            },
+            {
+              "offset": 81,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x658aa8"
+            },
+            {
+              "offset": 86,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 89,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 92,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40bb80"
+            },
+            {
+              "offset": 97,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 100,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ecx + 0xc], 0x44200000"
+            },
+            {
+              "offset": 107,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "edx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 110,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [edx + 0x10], 0x42c80000"
+            },
+            {
+              "offset": 117,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 120,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [eax + 0x14], 0x42c80000"
+            },
+            {
+              "offset": 127,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 130,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ecx + 0x68], 0"
+            },
+            {
+              "offset": 137,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], 0xffffffff"
+            },
+            {
+              "offset": 144,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x10]"
+            },
+            {
+              "offset": 147,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0xc]"
+            },
+            {
+              "offset": 150,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr fs:[0], ecx"
+            },
+            {
+              "offset": 157,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 159,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 160,
+              "size": 1,
+              "mnemonic": "ret",
+              "operands": ""
+            }
+          ],
+          "cfg": [
+            1,
+            0
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": {
+            "address": "0x0044E2F0",
+            "size": "161",
+            "body_sha256": "d616b02d96469e71aeed45b90ab04a19e532a791fa09dae015b603c2e7872c20",
+            "inferred_role": "BackgroundStage::LoadBG05a",
+            "return_count": "1",
+            "internal_branch_count": "0",
+            "external_branch_count": "0",
+            "evidence_id": "R055"
+          }
+        },
+        {
+          "address": "0x0044E7C0",
+          "size": 44,
+          "body_sha256": "4499ce55c372c003cbe4894e8689e81abb64ebc07f222081cbb2480db58d8ba3",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 4,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], ecx"
+            },
+            {
+              "offset": 7,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 10,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x44e7f0"
+            },
+            {
+              "offset": 15,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp + 8]"
+            },
+            {
+              "offset": 18,
+              "size": 3,
+              "mnemonic": "and",
+              "operands": "eax, 1"
+            },
+            {
+              "offset": 21,
+              "size": 2,
+              "mnemonic": "je",
+              "operands": "0x44e7e3"
+            },
+            {
+              "offset": 23,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 26,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 27,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x640f15"
+            },
+            {
+              "offset": 32,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "esp, 4"
+            },
+            {
+              "offset": 35,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 38,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 40,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 41,
+              "size": 3,
+              "mnemonic": "ret",
+              "operands": "4"
+            }
+          ],
+          "cfg": [
+            1,
+            1
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": null
+        },
+        {
+          "address": "0x0044E3A0",
+          "size": 45,
+          "body_sha256": "a40e84c57fc5666420a04a6fd25f71dccfee33833b1abfb4b273e3c601d21f76",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 4,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], ecx"
+            },
+            {
+              "offset": 7,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 10,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [eax + 0x68]"
+            },
+            {
+              "offset": 13,
+              "size": 3,
+              "mnemonic": "sub",
+              "operands": "ecx, 1"
+            },
+            {
+              "offset": 16,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "edx, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 19,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [edx + 0x68], ecx"
+            },
+            {
+              "offset": 22,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 25,
+              "size": 4,
+              "mnemonic": "cmp",
+              "operands": "dword ptr [eax + 0x68], 0"
+            },
+            {
+              "offset": 29,
+              "size": 2,
+              "mnemonic": "jge",
+              "operands": "0x44e3c9"
+            },
+            {
+              "offset": 31,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 4]"
+            },
+            {
+              "offset": 34,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ecx + 0x68], 0xf00"
+            },
+            {
+              "offset": 41,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 43,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 44,
+              "size": 1,
+              "mnemonic": "ret",
+              "operands": ""
+            }
+          ],
+          "cfg": [
+            1,
+            1
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": null
+        },
+        {
+          "address": "0x0044E750",
+          "size": 11,
+          "body_sha256": "012a7b6ce927f083ba98a546e3d3f750b2a1d82f350ca27efbd30a9c3c7718a5",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 4,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], ecx"
+            },
+            {
+              "offset": 7,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 9,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 10,
+              "size": 1,
+              "mnemonic": "ret",
+              "operands": ""
+            }
+          ],
+          "cfg": [
+            1,
+            0
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": {
+            "address": "0x0044E750",
+            "size": "11",
+            "body_sha256": "012a7b6ce927f083ba98a546e3d3f750b2a1d82f350ca27efbd30a9c3c7718a5",
+            "inferred_role": "BackgroundStage::NoOpVirtualAt0044E750",
+            "return_count": "1",
+            "internal_branch_count": "0",
+            "external_branch_count": "0",
+            "evidence_id": "R058"
+          }
+        },
+        {
+          "address": "0x0044E740",
+          "size": 11,
+          "body_sha256": "012a7b6ce927f083ba98a546e3d3f750b2a1d82f350ca27efbd30a9c3c7718a5",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 4,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], ecx"
+            },
+            {
+              "offset": 7,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 9,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 10,
+              "size": 1,
+              "mnemonic": "ret",
+              "operands": ""
+            }
+          ],
+          "cfg": [
+            1,
+            0
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": {
+            "address": "0x0044E740",
+            "size": "11",
+            "body_sha256": "012a7b6ce927f083ba98a546e3d3f750b2a1d82f350ca27efbd30a9c3c7718a5",
+            "inferred_role": "BackgroundStage::NoOpVirtualAt0044E740",
+            "return_count": "1",
+            "internal_branch_count": "0",
+            "external_branch_count": "0",
+            "evidence_id": "R058"
+          }
+        },
+        {
+          "address": "0x0044E3D0",
+          "size": 872,
+          "body_sha256": "d84f2e890beb796ce170b5e80fd5f887810a32455af71b5dde399f9c2f0b48e1",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 6,
+              "mnemonic": "sub",
+              "operands": "esp, 0x168"
+            },
+            {
+              "offset": 9,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x134], ecx"
+            },
+            {
+              "offset": 15,
+              "size": 6,
+              "mnemonic": "fld",
+              "operands": "dword ptr [0x671404]"
+            },
+            {
+              "offset": 21,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "dword ptr [0x657834]"
+            },
+            {
+              "offset": 27,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x6406ac"
+            },
+            {
+              "offset": 32,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x130], eax"
+            },
+            {
+              "offset": 38,
+              "size": 6,
+              "mnemonic": "fld",
+              "operands": "dword ptr [0x6713c4]"
+            },
+            {
+              "offset": 44,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x6406ac"
+            },
+            {
+              "offset": 49,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x14], eax"
+            },
+            {
+              "offset": 52,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 54,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 60,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 63,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40c840"
+            },
+            {
+              "offset": 68,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 70,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 76,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 79,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40c7f0"
+            },
+            {
+              "offset": 84,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 86,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 88,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x40400000"
+            },
+            {
+              "offset": 93,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43c00000"
+            },
+            {
+              "offset": 98,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x44400000"
+            },
+            {
+              "offset": 103,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 105,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x14]"
+            },
+            {
+              "offset": 108,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x658478]"
+            },
+            {
+              "offset": 114,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658470]"
+            },
+            {
+              "offset": 120,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x138]"
+            },
+            {
+              "offset": 126,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 127,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 130,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x130]"
+            },
+            {
+              "offset": 136,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x658478]"
+            },
+            {
+              "offset": 142,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658468]"
+            },
+            {
+              "offset": 148,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x13c]"
+            },
+            {
+              "offset": 154,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 155,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 158,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "2"
+            },
+            {
+              "offset": 160,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 166,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 169,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40ca80"
+            },
+            {
+              "offset": 174,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 176,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 178,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x3f800000"
+            },
+            {
+              "offset": 183,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43480000"
+            },
+            {
+              "offset": 188,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x442f0000"
+            },
+            {
+              "offset": 193,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 195,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x14]"
+            },
+            {
+              "offset": 198,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 204,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658af8]"
+            },
+            {
+              "offset": 210,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x140]"
+            },
+            {
+              "offset": 216,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 217,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 220,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x130]"
+            },
+            {
+              "offset": 226,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 232,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658468]"
+            },
+            {
+              "offset": 238,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x144]"
+            },
+            {
+              "offset": 244,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 245,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 248,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "1"
+            },
+            {
+              "offset": 250,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 256,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 259,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40ca80"
+            },
+            {
+              "offset": 264,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 270,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [eax + 0x68]"
+            },
+            {
+              "offset": 273,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x658af0]"
+            },
+            {
+              "offset": 279,
+              "size": 6,
+              "mnemonic": "fsubr",
+              "operands": "qword ptr [0x658ae8]"
+            },
+            {
+              "offset": 285,
+              "size": 6,
+              "mnemonic": "fdiv",
+              "operands": "qword ptr [0x658ae0]"
+            },
+            {
+              "offset": 291,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x6406ac"
+            },
+            {
+              "offset": 296,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x12c], eax"
+            },
+            {
+              "offset": 302,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x10], 0"
+            },
+            {
+              "offset": 309,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0xc], 0"
+            },
+            {
+              "offset": 316,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x12c]"
+            },
+            {
+              "offset": 322,
+              "size": 3,
+              "mnemonic": "shl",
+              "operands": "ecx, 7"
+            },
+            {
+              "offset": 325,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 8], ecx"
+            },
+            {
+              "offset": 328,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], 0x80"
+            },
+            {
+              "offset": 335,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "2"
+            },
+            {
+              "offset": 337,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 343,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 346,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40c860"
+            },
+            {
+              "offset": 351,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43800000"
+            },
+            {
+              "offset": 356,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "edx, dword ptr [ebp - 0x12c]"
+            },
+            {
+              "offset": 362,
+              "size": 3,
+              "mnemonic": "shl",
+              "operands": "edx, 7"
+            },
+            {
+              "offset": 365,
+              "size": 3,
+              "mnemonic": "imul",
+              "operands": "edx, edx, 3"
+            },
+            {
+              "offset": 368,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x148], edx"
+            },
+            {
+              "offset": 374,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x148]"
+            },
+            {
+              "offset": 380,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 381,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 384,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 386,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 388,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0x128]"
+            },
+            {
+              "offset": 394,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40da00"
+            },
+            {
+              "offset": 399,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 401,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x14]"
+            },
+            {
+              "offset": 404,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 410,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658978]"
+            },
+            {
+              "offset": 416,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x14c]"
+            },
+            {
+              "offset": 422,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 423,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 426,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x130]"
+            },
+            {
+              "offset": 432,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 438,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 444,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [eax + 0x68]"
+            },
+            {
+              "offset": 447,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x658af0]"
+            },
+            {
+              "offset": 453,
+              "size": 2,
+              "mnemonic": "faddp",
+              "operands": "st(1)"
+            },
+            {
+              "offset": 455,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x150]"
+            },
+            {
+              "offset": 461,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 462,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 465,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0x128]"
+            },
+            {
+              "offset": 471,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x411500"
+            },
+            {
+              "offset": 476,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 478,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x44bb8000"
+            },
+            {
+              "offset": 483,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43700000"
+            },
+            {
+              "offset": 488,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43a00000"
+            },
+            {
+              "offset": 493,
+              "size": 3,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0x10]"
+            },
+            {
+              "offset": 496,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 497,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "edx, [ebp - 0x128]"
+            },
+            {
+              "offset": 503,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "edx"
+            },
+            {
+              "offset": 504,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "3"
+            },
+            {
+              "offset": 506,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 512,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 515,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40ca20"
+            },
+            {
+              "offset": 520,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x10], 0"
+            },
+            {
+              "offset": 527,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0xc], 0"
+            },
+            {
+              "offset": 534,
+              "size": 5,
+              "mnemonic": "mov",
+              "operands": "eax, 5"
+            },
+            {
+              "offset": 539,
+              "size": 6,
+              "mnemonic": "sub",
+              "operands": "eax, dword ptr [ebp - 0x12c]"
+            },
+            {
+              "offset": 545,
+              "size": 3,
+              "mnemonic": "shl",
+              "operands": "eax, 7"
+            },
+            {
+              "offset": 548,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 8], eax"
+            },
+            {
+              "offset": 551,
+              "size": 7,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], 0x80"
+            },
+            {
+              "offset": 558,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43800000"
+            },
+            {
+              "offset": 563,
+              "size": 5,
+              "mnemonic": "mov",
+              "operands": "ecx, 5"
+            },
+            {
+              "offset": 568,
+              "size": 6,
+              "mnemonic": "sub",
+              "operands": "ecx, dword ptr [ebp - 0x12c]"
+            },
+            {
+              "offset": 574,
+              "size": 3,
+              "mnemonic": "shl",
+              "operands": "ecx, 7"
+            },
+            {
+              "offset": 577,
+              "size": 3,
+              "mnemonic": "imul",
+              "operands": "ecx, ecx, 3"
+            },
+            {
+              "offset": 580,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x154], ecx"
+            },
+            {
+              "offset": 586,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x154]"
+            },
+            {
+              "offset": 592,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 593,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 596,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 598,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 600,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0xa0]"
+            },
+            {
+              "offset": 606,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40da00"
+            },
+            {
+              "offset": 611,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 613,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x14]"
+            },
+            {
+              "offset": 616,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 622,
+              "size": 6,
+              "mnemonic": "fadd",
+              "operands": "qword ptr [0x658978]"
+            },
+            {
+              "offset": 628,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x158]"
+            },
+            {
+              "offset": 634,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 635,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 638,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x130]"
+            },
+            {
+              "offset": 644,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x6583e8]"
+            },
+            {
+              "offset": 650,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "edx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 656,
+              "size": 3,
+              "mnemonic": "fild",
+              "operands": "dword ptr [edx + 0x68]"
+            },
+            {
+              "offset": 659,
+              "size": 6,
+              "mnemonic": "fmul",
+              "operands": "qword ptr [0x658af0]"
+            },
+            {
+              "offset": 665,
+              "size": 2,
+              "mnemonic": "faddp",
+              "operands": "st(1)"
+            },
+            {
+              "offset": 667,
+              "size": 5,
+              "mnemonic": "mov",
+              "operands": "eax, 5"
+            },
+            {
+              "offset": 672,
+              "size": 6,
+              "mnemonic": "sub",
+              "operands": "eax, dword ptr [ebp - 0x12c]"
+            },
+            {
+              "offset": 678,
+              "size": 3,
+              "mnemonic": "shl",
+              "operands": "eax, 7"
+            },
+            {
+              "offset": 681,
+              "size": 3,
+              "mnemonic": "imul",
+              "operands": "eax, eax, 3"
+            },
+            {
+              "offset": 684,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x15c], eax"
+            },
+            {
+              "offset": 690,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x15c]"
+            },
+            {
+              "offset": 696,
+              "size": 2,
+              "mnemonic": "fsubp",
+              "operands": "st(1)"
+            },
+            {
+              "offset": 698,
+              "size": 6,
+              "mnemonic": "fst",
+              "operands": "dword ptr [ebp - 0x160]"
+            },
+            {
+              "offset": 704,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 705,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 708,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0xa0]"
+            },
+            {
+              "offset": 714,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x411500"
+            },
+            {
+              "offset": 719,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 721,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x44bb8000"
+            },
+            {
+              "offset": 726,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43700000"
+            },
+            {
+              "offset": 731,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43a00000"
+            },
+            {
+              "offset": 736,
+              "size": 3,
+              "mnemonic": "lea",
+              "operands": "ecx, [ebp - 0x10]"
+            },
+            {
+              "offset": 739,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 740,
+              "size": 6,
+              "mnemonic": "lea",
+              "operands": "edx, [ebp - 0xa0]"
+            },
+            {
+              "offset": 746,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "edx"
+            },
+            {
+              "offset": 747,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "3"
+            },
+            {
+              "offset": 749,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 755,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 758,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40ca20"
+            },
+            {
+              "offset": 763,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "1"
+            },
+            {
+              "offset": 765,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 771,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 774,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40c860"
+            },
+            {
+              "offset": 779,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 781,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 783,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x3f800000"
+            },
+            {
+              "offset": 788,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x441b0000"
+            },
+            {
+              "offset": 793,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x442f0000"
+            },
+            {
+              "offset": 798,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "-1"
+            },
+            {
+              "offset": 800,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp - 0x14]"
+            },
+            {
+              "offset": 803,
+              "size": 5,
+              "mnemonic": "add",
+              "operands": "eax, 0xf0"
+            },
+            {
+              "offset": 808,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x164], eax"
+            },
+            {
+              "offset": 814,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x164]"
+            },
+            {
+              "offset": 820,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 821,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 824,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x130]"
+            },
+            {
+              "offset": 830,
+              "size": 6,
+              "mnemonic": "add",
+              "operands": "ecx, 0x140"
+            },
+            {
+              "offset": 836,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 0x168], ecx"
+            },
+            {
+              "offset": 842,
+              "size": 6,
+              "mnemonic": "fild",
+              "operands": "dword ptr [ebp - 0x168]"
+            },
+            {
+              "offset": 848,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 849,
+              "size": 3,
+              "mnemonic": "fstp",
+              "operands": "dword ptr [esp]"
+            },
+            {
+              "offset": 852,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 854,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp - 0x134]"
+            },
+            {
+              "offset": 860,
+              "size": 3,
+              "mnemonic": "add",
+              "operands": "ecx, 0x18"
+            },
+            {
+              "offset": 863,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x40ca80"
+            },
+            {
+              "offset": 868,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 870,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 871,
+              "size": 1,
+              "mnemonic": "ret",
+              "operands": ""
+            }
+          ],
+          "cfg": [
+            1,
+            0
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": {
+            "address": "0x0044E3D0",
+            "size": "872",
+            "body_sha256": "d84f2e890beb796ce170b5e80fd5f887810a32455af71b5dde399f9c2f0b48e1",
+            "inferred_role": "BattleEffect::RenderPattern07",
+            "return_count": "1",
+            "internal_branch_count": "0",
+            "external_branch_count": "0",
+            "evidence_id": "R042"
+          }
+        },
+        {
+          "address": "0x0044E760",
+          "size": 91,
+          "body_sha256": "e75373c8094774d5a024bb406dfc3c70e1505f3b05606d943f89036d36054f37",
+          "instructions": [
+            {
+              "offset": 0,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ebp"
+            },
+            {
+              "offset": 1,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "ebp, esp"
+            },
+            {
+              "offset": 3,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "ecx"
+            },
+            {
+              "offset": 4,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "esi"
+            },
+            {
+              "offset": 5,
+              "size": 1,
+              "mnemonic": "push",
+              "operands": "edi"
+            },
+            {
+              "offset": 6,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "dword ptr [ebp - 4], ecx"
+            },
+            {
+              "offset": 9,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x3f800000"
+            },
+            {
+              "offset": 14,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x3e99999a"
+            },
+            {
+              "offset": 19,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x3f800000"
+            },
+            {
+              "offset": 24,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 26,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 28,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 30,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp + 0x10]"
+            },
+            {
+              "offset": 33,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x4115c0"
+            },
+            {
+              "offset": 38,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 40,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 42,
+              "size": 5,
+              "mnemonic": "push",
+              "operands": "0x43200000"
+            },
+            {
+              "offset": 47,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 49,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 51,
+              "size": 2,
+              "mnemonic": "push",
+              "operands": "0"
+            },
+            {
+              "offset": 53,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "ecx, dword ptr [ebp + 0x10]"
+            },
+            {
+              "offset": 56,
+              "size": 5,
+              "mnemonic": "call",
+              "operands": "0x4116f0"
+            },
+            {
+              "offset": 61,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "esi, dword ptr [ebp + 0x10]"
+            },
+            {
+              "offset": 64,
+              "size": 5,
+              "mnemonic": "mov",
+              "operands": "ecx, 0x21"
+            },
+            {
+              "offset": 69,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "edi, dword ptr [ebp + 8]"
+            },
+            {
+              "offset": 72,
+              "size": 2,
+              "mnemonic": "rep movsd",
+              "operands": "dword ptr es:[edi], dword ptr [esi]"
+            },
+            {
+              "offset": 74,
+              "size": 3,
+              "mnemonic": "mov",
+              "operands": "eax, dword ptr [ebp + 0xc]"
+            },
+            {
+              "offset": 77,
+              "size": 6,
+              "mnemonic": "mov",
+              "operands": "dword ptr [eax], 0x80000000"
+            },
+            {
+              "offset": 83,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "edi"
+            },
+            {
+              "offset": 84,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "esi"
+            },
+            {
+              "offset": 85,
+              "size": 2,
+              "mnemonic": "mov",
+              "operands": "esp, ebp"
+            },
+            {
+              "offset": 87,
+              "size": 1,
+              "mnemonic": "pop",
+              "operands": "ebp"
+            },
+            {
+              "offset": 88,
+              "size": 3,
+              "mnemonic": "ret",
+              "operands": "0xc"
+            }
+          ],
+          "cfg": [
+            1,
+            0
+          ],
+          "switches": [],
+          "direct_switches": [],
+          "authored_record": {
+            "address": "0x0044E760",
+            "size": "91",
+            "body_sha256": "e75373c8094774d5a024bb406dfc3c70e1505f3b05606d943f89036d36054f37",
+            "inferred_role": "BackgroundStage::ApplyTransformAt0044E760",
+            "return_count": "1",
+            "internal_branch_count": "0",
+            "external_branch_count": "0",
+            "evidence_id": "R056"
+          }
+        }
+      ],
+      "counter_readers": [
+        {
+          "offset": 270,
+          "mnemonic": "fild",
+          "operands": "dword ptr [eax + 0x68]"
+        },
+        {
+          "offset": 444,
+          "mnemonic": "fild",
+          "operands": "dword ptr [eax + 0x68]"
+        },
+        {
+          "offset": 656,
+          "mnemonic": "fild",
+          "operands": "dword ptr [edx + 0x68]"
+        }
+      ],
+      "table": {
+        "address": "0x00658AC4",
+        "size": 24,
+        "words": [
+          4515776,
+          4514720,
+          4515664,
+          4515648,
+          4514768,
+          4515680
+        ],
+        "sha256": "d6f333e83dc54a1d43778fb596348ca1641e76f11eb13b7eec5fece30f33db1c",
+        "following_sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+        "extent_basis": "Six actual readonly callback words, separately checked following bytes and whole game constructor installation; no complete private class/interface inference."
+      }
+    }
+  ],
+  "constants": [],
+  "boundaries": [
+    {
+      "address": "0x0044E3CD",
+      "size": 3,
+      "hex": "cccccc",
+      "sha256": "e668f0a1b72560ced14c54488a25335d11336448950bb6485267ebc5eb3fecee",
+      "next_owner": "0x0044E3D0"
+    }
+  ],
+  "canonical": [
+    {
+      "function": {
+        "address": "0x0044E3A0",
+        "size": "45",
+        "span_end": "0x0044E3CC",
+        "current_name": "FUN_0044e3a0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0044E3A0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E2F0",
+        "size": "161",
+        "span_end": "0x0044E390",
+        "current_name": "FUN_0044e2f0",
+        "proposed_name": "BackgroundStage::LoadBG05a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044E2F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E7C0",
+        "size": "44",
+        "span_end": "0x0044E7EB",
+        "current_name": "FUN_0044e7c0",
+        "proposed_name": "VC7::ScalarDeletingDestructor_0044E7C0",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044E7C0",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E750",
+        "size": "11",
+        "span_end": "0x0044E75A",
+        "current_name": "FUN_0044e750",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044E750",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044E750",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E740",
+        "size": "11",
+        "span_end": "0x0044E74A",
+        "current_name": "FUN_0044e740",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044E740",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044E740",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E3D0",
+        "size": "872",
+        "span_end": "0x0044E737",
+        "current_name": "FUN_0044e3d0",
+        "proposed_name": "BattleEffect::RenderPattern07",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x0044E3D0",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044E760",
+        "size": "91",
+        "span_end": "0x0044E7BA",
+        "current_name": "FUN_0044e760",
+        "proposed_name": "BackgroundStage::ApplyTransformAt0044E760",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044E760",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    }
+  ],
+  "unselected_sha256": {
+    "functions.csv": "55e7949a2972df56f6b7a193e33ec51335a5ca9708cedba7ce6b629a0990246e",
+    "function-origins.csv": "5b42061c4a53271e8d84703a18499e80228312d8a257c1422a86ceb3c94111f9"
+  },
+  "public_control": {
+    "probe": "tests/origin_probes/BackgroundReverseCycle.cpp",
+    "profile": [
+      "/Od",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/I",
+      "src",
+      "/showIncludes"
+    ],
+    "headers": {},
+    "emission": [
+      {
+        "section": 3,
+        "name": ".rdata",
+        "size": 12,
+        "flags": 1076887616,
+        "source_sha256": "2afc299ae2c44dbad6b479482d2d7467d7defd66041659ed28ca5e8d83236e82",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".rdata",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?BackgroundReverseCycleLayout@@3QBKB",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "name": ".text",
+        "size": 41,
+        "flags": 1615859744,
+        "source_sha256": "ef17adc6284f99f751dccdb892b5c8a2ef5c89a766ae0d8625bf1ec439657f23",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?Advance@ReverseCycleObservation@@QAEXXZ",
+            "offset": 0,
+            "section": 4,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 4,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 41,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 6,
+        "name": ".text",
+        "size": 10,
+        "flags": 1615859744,
+        "source_sha256": "2246c2c753eab0352c11de33f3694e58f3791bda511313fe11bacdca6b59777d",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?CopyReverseCounter@@YA?AUReverseCopyObservation@@ABU1@@Z",
+            "offset": 0,
+            "section": 6,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 10,
+            "section": 6,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "symbol": "?Advance@ReverseCycleObservation@@QAEXXZ",
+        "role": "ordinary-policy-alternative",
+        "size": 41,
+        "sha256": "ef17adc6284f99f751dccdb892b5c8a2ef5c89a766ae0d8625bf1ec439657f23",
+        "source": {
+          "section": 4,
+          "flags": 1615859744,
+          "size": 41,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?Advance@ReverseCycleObservation@@QAEXXZ",
+              "offset": 0,
+              "section": 4,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 4,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 41,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 17,
+              "aux_count": 1,
+              "aux_hex": "29000000000004006e2816d8000001000000"
+            },
+            {
+              "symbol": "?Advance@ReverseCycleObservation@@QAEXXZ",
+              "index": 29,
+              "aux_count": 1,
+              "aux_hex": "1f0000002900000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 31,
+              "aux_count": 1,
+              "aux_hex": "000000000600000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 33,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 34,
+              "aux_count": 1,
+              "aux_hex": "000000000900000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              29,
+              0
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              20,
+              2
+            ],
+            [
+              37,
+              3
+            ]
+          ]
+        },
+        "fields": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ecx"
+          },
+          {
+            "offset": 4,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ebp - 4], ecx"
+          },
+          {
+            "offset": 7,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 10,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [eax]"
+          },
+          {
+            "offset": 12,
+            "size": 3,
+            "mnemonic": "sub",
+            "operands": "ecx, 1"
+          },
+          {
+            "offset": 15,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "edx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 18,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "dword ptr [edx], ecx"
+          },
+          {
+            "offset": 20,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 23,
+            "size": 3,
+            "mnemonic": "cmp",
+            "operands": "dword ptr [eax], 0"
+          },
+          {
+            "offset": 26,
+            "size": 2,
+            "mnemonic": "jge",
+            "operands": "0x25"
+          },
+          {
+            "offset": 28,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 31,
+            "size": 6,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ecx], 0xf00"
+          },
+          {
+            "offset": 37,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "esp, ebp"
+          },
+          {
+            "offset": 39,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 40,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          1
+        ],
+        "policy": [
+          [
+            "push",
+            [
+              [
+                "reg",
+                "ebp"
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "ebp"
+              ],
+              [
+                "reg",
+                "esp"
+              ]
+            ]
+          ],
+          [
+            "push",
+            [
+              [
+                "reg",
+                "ecx"
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "mem",
+                4,
+                "ebp",
+                null,
+                1,
+                -4
+              ],
+              [
+                "reg",
+                "ecx"
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "eax"
+              ],
+              [
+                "mem",
+                4,
+                "ebp",
+                null,
+                1,
+                -4
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "ecx"
+              ],
+              [
+                "mem",
+                4,
+                "eax",
+                null,
+                1,
+                "counter"
+              ]
+            ]
+          ],
+          [
+            "sub",
+            [
+              [
+                "reg",
+                "ecx"
+              ],
+              [
+                "imm",
+                1
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "edx"
+              ],
+              [
+                "mem",
+                4,
+                "ebp",
+                null,
+                1,
+                -4
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "mem",
+                4,
+                "edx",
+                null,
+                1,
+                "counter"
+              ],
+              [
+                "reg",
+                "ecx"
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "eax"
+              ],
+              [
+                "mem",
+                4,
+                "ebp",
+                null,
+                1,
+                -4
+              ]
+            ]
+          ],
+          [
+            "cmp",
+            [
+              [
+                "mem",
+                4,
+                "eax",
+                null,
+                1,
+                "counter"
+              ],
+              [
+                "imm",
+                0
+              ]
+            ]
+          ],
+          [
+            "jge",
+            [
+              [
+                "branch",
+                14
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "ecx"
+              ],
+              [
+                "mem",
+                4,
+                "ebp",
+                null,
+                1,
+                -4
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "mem",
+                4,
+                "ecx",
+                null,
+                1,
+                "counter"
+              ],
+              [
+                "imm",
+                3840
+              ]
+            ]
+          ],
+          [
+            "mov",
+            [
+              [
+                "reg",
+                "esp"
+              ],
+              [
+                "reg",
+                "ebp"
+              ]
+            ]
+          ],
+          [
+            "pop",
+            [
+              [
+                "reg",
+                "ebp"
+              ]
+            ]
+          ],
+          [
+            "ret",
+            []
+          ]
+        ]
+      },
+      {
+        "symbol": "?CopyReverseCounter@@YA?AUReverseCopyObservation@@ABU1@@Z",
+        "role": "implicit-copy-alternative",
+        "size": 10,
+        "sha256": "2246c2c753eab0352c11de33f3694e58f3791bda511313fe11bacdca6b59777d",
+        "source": {
+          "section": 6,
+          "flags": 1615859744,
+          "size": 10,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 6,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?CopyReverseCounter@@YA?AUReverseCopyObservation@@ABU1@@Z",
+              "offset": 0,
+              "section": 6,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 6,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 6,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 10,
+              "section": 6,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 36,
+              "aux_count": 1,
+              "aux_hex": "0a000000000001008f0c96bd000001000000"
+            },
+            {
+              "symbol": "?CopyReverseCounter@@YA?AUReverseCopyObservation@@ABU1@@Z",
+              "index": 40,
+              "aux_count": 1,
+              "aux_hex": "2a0000000a00000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 42,
+              "aux_count": 1,
+              "aux_hex": "000000000b00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 44,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 45,
+              "aux_count": 1,
+              "aux_hex": "000000000b00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              40,
+              0
+            ]
+          ]
+        },
+        "fields": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ebp + 8]"
+          },
+          {
+            "offset": 6,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax]"
+          },
+          {
+            "offset": 8,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 9,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ]
+      }
+    ],
+    "layout_section": 3,
+    "layout_values": [
+      4,
+      4,
+      4
+    ],
+    "comparison": "Full compact ordinary method retains every normalized instruction, field role, actual branch destination and RET. Native45 and source41 differ in observed field displacement encodings. Ordinary implicit-copy client10 has no decrement/compare/reset. No source/private layout/ABI/exact match is claimed."
+  },
+  "historical_snapshots": [],
+  "retained_sha256": {
+    "config/acos-math-origin-evidence.json": "ad061084cbe53bcd792ae770d0b0910441a45cd8b752aaf7442e297fcb97b870",
+    "config/allocation-api-origin-evidence.json": "88471391a30ca23574ab4409b5504df592fee47d2e23c368bbc71b204eb6531c",
+    "config/allocator-destroy-origin-evidence.json": "e4128317328d7680988551c6fbe71e3779cd82a0d8366ff35df4d562900ca78b",
+    "config/allocator-thread-origin-evidence.json": "20184f6003b356c5ea9491904215aa87d94958a08666cb660180f6a250bba78e",
+    "config/archive-list-policy-origin-evidence.json": "0bc13da2b999040d7ce8e9c895f2cbb0db0c5e76a046ffb353bd7976e00ecfc8",
+    "config/authored-origin-direct-switches.csv": "61cb54b096a988dfe3d602b8a687a41ded6afdd944b838fcf20e92a6019f4011",
+    "config/authored-origin-evidence.csv": "065ee3aff636c398831104cfd9031cfaeaab764ac6ff1970c6ab7a0120007790",
+    "config/authored-origin-name-aliases.csv": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
+    "config/authored-origin-switches.csv": "d94ab9c7faf89b03d92375dd6e83a089f407b332c79c1b2cd018853403ed0d3c",
+    "config/background-blend-origin-evidence.json": "4d8e713940a8f69d4f10bc25a159ddf9e4c550094735cfbd59ffff74a3a82449",
+    "config/background-counter-origin-evidence.json": "494fbb61c77d06cdb21f97916909aa023e6bdb05703688feb13f491dc9512e37",
+    "config/background-cycle-origin-evidence.json": "bc73e46ff1a7ebcb839b61caf3f51917d41b11d9a6d066285222ad06c885033a",
+    "config/background-destructor-origin-evidence.csv": "0bc463e14e3073d2059683b210b81f552f1de171842216aaf09454b5950f6e23",
+    "config/background-noop-origin-evidence.csv": "fe730458d37a01ce87ce9b2441704c81ad81fac2df51b5bf7d0d069604440d61",
+    "config/background-origin-evidence.csv": "7e16870df63d00d3b7d5e6016651daba9208acbcc537d66543777f782a69e89d",
+    "config/background-transform-origin-evidence.csv": "0968dfa83ab4856f812e7de913e402f0bd56dafd2da389283cefd5c82e3c7560",
+    "config/batch-closure-origin-evidence.json": "810abdfc033d3d98a2f83c9b517445c7fcd850682fb86604e3480424a8557a5f",
+    "config/batch-game-origin-evidence.json": "20ae3c5a6dc769a8b8fa2a9a7fd3fbe38d451c640d9340e0a521fd2bccad4f38",
+    "config/batch-helper-origin-evidence.json": "6dfe261432e5009c238a62bd48b5c800bcb7747e6571488ec85b266416393374",
+    "config/batch-state-origin-evidence.json": "f0f4622bcbbf1c48fc4bd6ba9960a0b0053ee2f4e18e3200fdcaf61058912d7d",
+    "config/byte-deque-count-origin-evidence.json": "13c86296cc9f4b42fd09474f9dabcef5c9fba40b855a1150eb73f24c5d8b20f3",
+    "config/character-implicit-destructor-origins.csv": "d855d86420964ca32298f61446876452baf5095ddc203211090093ccdf15eb57",
+    "config/character-list-policy-origin-evidence.json": "f9d78ebb35c4e1ff3e04da7a05e38928a2918fed3d8a1047f2f6c5579be95466",
+    "config/claims.csv": "0502dfefc2a6c76ff97d47cda7369c686eb84023018b77cce84747b07eebd26c",
+    "config/codepage-nls-origin-evidence.json": "2738f392791748fa9e7435ace12fb3d4f4ef4b91e9a0e23887aaca33426b63b6",
+    "config/compiler-eh-frames.csv": "51c503bf7b7c072cfd9de80099cf9840c1b8091443ad808178bc392caad98dce",
+    "config/compiler-origin-evidence.csv": "f0b9ed2045f380a20204986c8373d1b309e52c74e56b28bfd22c47eb2a7b7cb7",
+    "config/compiler-static-evidence.csv": "1aa8ebe9006d0ce9a517137d6ad4b91ab0cfce16323a4647f76883f3103b3e80",
+    "config/deque-copy-insert-origin-evidence.json": "52f3cdecfb551119616e920bbce11dd7bf795724b4bd0862046dbb5ebf8e5d81",
+    "config/deque-element-origin-evidence.json": "889339904d8c194624a5b2ad59335cbefd96eb2f6ad6ae5545bdd91bcbee89ab",
+    "config/deque-endpoint-dispatch-origin-evidence.json": "9dc0301feef6a7847244ef93221fb171ae4e488b91cc77d794b69c921dd3a6d4",
+    "config/deque-front-back-origin-evidence.json": "1ac140821d2f2aec5d30ceab655de636f28eff6aa6215d1b8d49b6ffa0764e10",
+    "config/deque-game-dependency-origin-evidence.json": "2872c4c93e0aa8da01b708e8a989383637ab74346eaa45c38406d97e4fb8e585",
+    "config/deque-leaf-origin-evidence.json": "6360156350feac7c88f7756e073b43dd1d5ab84abf6a3ac5f2bf2548119cb2b6",
+    "config/deque-postfix-context-origins.json": "28a6f01d385704ea2cb92364c319cf3b47df30285e8da1bf15ca8f90026bdb93",
+    "config/deque-retreat-origin-evidence.json": "52df1cfdeb68bb07a9b2e8b01503cff48522a028319c7eaa19f1f59713a17a30",
+    "config/deque-size-context-origin-evidence.json": "a65f343268cfc960130c420b2b9cc3061986f4ad2db1ecd23a23285a47a24c3b",
+    "config/derived-exception-origin-evidence.json": "07ec63f61cd12eb8a14c0d950e9e282f7104264d3febb4d794f02b6a0ae2c905",
+    "config/effect-forwarder-origin-context.json": "e77d99ebc6df6eedccfd6ee7bb0b523c98c13ac081a5e13ddca4a515c62e5b05",
+    "config/effect-forwarder-origin-evidence.csv": "8a48fac45cb943deeffbce1a1af14541408f071488c5a253bd44e16ecdf44658",
+    "config/elementary-math-origin-evidence.json": "9e1e85cb0bf0b34db1f5b5a3e4fca1b9a606abfa5ed22d2509e55200d470ca5a",
+    "config/environment-startup-origin-evidence.json": "b9664975277952430f63f6c236998dd1855ffad39e5ecec3469dc3bf7bfa2634",
+    "config/event-queue-origin-evidence.json": "8257658debc89fc667741c98c64235ab2d669b4f8464b84b2acc1c0690837233",
+    "config/exception-frame-origin-evidence.json": "874d46e24df59af2d2a34b5f37fe0e6aa92a53782cd7bfbd010dcd852377cb3e",
+    "config/fighter-virtual-origin-evidence.csv": "0f6d52798d517e79120c354e2b3fab584b5f85d8695547621f1f759ceeb86c69",
+    "config/file-resource-policy-origin-evidence.json": "35ad6c3a092b0e7ced612e6629fddd935b47fcd13c04d9bce40e604057f117f6",
+    "config/floating-operation-origin-evidence.json": "6fd50e93e1237aa029c0d57d3337319e7319da413c3cf192cbcab12493213d16",
+    "config/floating-point-origin-evidence.json": "46f8cd47de1c6e1b5ab0e4bcf4a37661923d9fca94c7818902603ec00ace7102",
+    "config/floor-math-origin-evidence.json": "6280edfc7cc5e18c5ee48cdecdb0ae9a985ff3cc51462a549494aea20c30553a",
+    "config/font-byte-policy-origin-evidence.json": "c426f7d1024c3bd35a6b26d6f497062fa21a2aded92479ca28acacb64bbd3cc2",
+    "config/fp-dispatch-origin-evidence.json": "8b3aa0cd44cbf68d28c41016eef12c2db655e03467b3e9473d9afbc9b7234aef",
+    "config/frame-index-policy-authored-origins.csv": "b2f6e2cbd1a1d5a4ff73e272111cc4ff8ed2dce5934834d71def2898ceadf91b",
+    "config/frame-index-policy-origin-evidence.json": "bb5d5d550cf326252c7bf9a83961a4a90334bc75196f2c460ef2cc7a29236a22",
+    "config/game-context-origin-evidence.json": "ec549c656703ea3ccb6e164a66838bc3fb7e1acf6a28a566dcff16a3e080b548",
+    "config/game-lifetime-origin-evidence.json": "b5b1a1626e19bb6aff846105b38e674c62015d7d04b4d5298e010a53a3109b71",
+    "config/game-parent-policy-origin-evidence.json": "9d81bb9ab16f401bfcc986f59b091479813279e9f7f130dd42f31715a74c5900",
+    "config/game-switch-policy-authored-origins.csv": "0451150849fb2f607863fda17680c2eb1b39f4c27694f67286db95f4f4c9ae0d",
+    "config/game-switch-policy-direct-switches.csv": "102fd38b3049ddcd4683f89dc73b4994efd416295a01429f911e8d600ea12c94",
+    "config/game-switch-policy-origin-evidence.json": "f72ea7b37b4de087dc4f69dfb6adf3585a86ea66d0f97143b46dd9a1efea5a05",
+    "config/game-switch-policy-switches.csv": "aa9f5fd45812bb7f679355203dd152c9650187644487b28b62c24c34a3ddba0c",
+    "config/implemented.csv": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
+    "config/import-origin-evidence.csv": "1e4ac0e067b0782503d2803babb90309e7c8a55b6b29adde3f3acd9c8bb2cfc1",
+    "config/indexed-owner-policy-origin-evidence.json": "d425763795da7d53ca1d403d8576471bd85501b6fc76f0c3355e002b546b59dc",
+    "config/initializer-startup-origin-evidence.json": "a00f9418c96bd1ed537862700351de01920d9dd318440ce794a3bca7c1fb03c1",
+    "config/input-format-origin-evidence.json": "903840c1618688e6d49e87aaada539815308f43fafb472a5ad30d560756bf4dc",
+    "config/integer-range-origin-evidence.json": "8a70ff4514cff6d1d5a686d4ddb7e5ef50f1b3905267e3ba367a1a848c6ab7d2",
+    "config/integral-assignment-dispatch-origin-evidence.json": "f95e13955f5707d534f1125fc44d7c4217a1a08744a2a41274ac270b601c2cf7",
+    "config/jump-unwind-origin-evidence.json": "c41e153d14fabc7af6ff9860dd615f26f626a3fe452dd55ee5d1721d1d59290b",
+    "config/known-globals.csv": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
+    "config/known-symbols.csv": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
+    "config/list-construction-origin-evidence.json": "5aef9d6a4703aca9bc9a5bcd8df95e874258917fd409f21588f434f3d0630d66",
+    "config/list-head-erase-origin-evidence.json": "d60078dcb47d90103d3ae25fe1e8645cde568c35f1947567a0fffaf83de74274",
+    "config/list-iterator-policy-origin-evidence.json": "55c6b19bff1713585d9617cf418deeee7d2f0bddfce7d42d27f3f15cccb3f394",
+    "config/list-node-link-alternatives-origin-evidence.json": "19c05f902093e46d3d85daf6c95ea5d2a477ea66049d9a8398b4e5fe6c4b85db",
+    "config/list-policy-dependency-origin-evidence.json": "86ca07a2553872893e906a10b1f93da6fbd45da103d94a191aee610c1b32b9f0",
+    "config/list-recovery-origin-evidence.json": "51cf1923801853c8952f25135a57d198b65e49c896a3e90da892c40f077988bf",
+    "config/locale-construction-origin-evidence.json": "4a33cce1f96577b7a467278eb2b8c7550aa689efe6c46a9b757d0e9fe13a8c7d",
+    "config/locale-snapshot-origin-evidence.json": "7b9d8932d2be72e6cc3e3269eec592cbce9bb4cc8642a559c52bb63871a2ebdd",
+    "config/locale-thread-origin-evidence.json": "ef32b373f98c2cdf076261413d479b459424983ea0ae2bbcded7bb3c58a9b0e9",
+    "config/locale-time-parent-origin-evidence.json": "7fb061d7da43ac4d833d67dd5696e37426b688d14f9df64112c4160ff2e0d533",
+    "config/low-io-origin-evidence.json": "2ea7a0cf7df33c9baabb2ab720c652e7f7f7b785b9a7e10c19eee05eb63a1c0c",
+    "config/match-units.toml": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
+    "config/matches.csv": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
+    "config/math-overload-origin-evidence.json": "370786e3232ada4f77a32f1840086273c09d9d2deef44302d0c3b8960c4b1fa9",
+    "config/math-table-policy-origin-evidence.json": "98325bcd58a9dbb8c9ede7bde4820abfd95a1ecd37b22baa6936b76a9f80b2ef",
+    "config/mcp.env.example": "5f76521b77adb922532475bb44718ffbe6a0d332620596600fc2c83c8dc5cd76",
+    "config/neighbor-policy-authored-origins.csv": "8762a5825a78da522f2b4738a51d38f73a9645c12be8525afaaa5c4312c2f44c",
+    "config/neighbor-policy-origin-evidence.json": "fc61cbd578dd4a0a44dd6a724d34502520888a19e3064ec212a05e656781decf",
+    "config/nested-deque-helper-origin-evidence.json": "26621b960371d69a3cc15d07a070cf0d65cc19cc1f96eba54fc5c95ed05cf7b3",
+    "config/nested-deque-size-origin-evidence.json": "5e6ccb4a95135d5cdb202e2511dc4594cac09b672d545ae258d26ffa5729ed42",
+    "config/nested-initialization-authored-origins.csv": "1cc6d1b6a4253d9967427650d24f2f36e98391115dbe30d860439dcb43d0cee1",
+    "config/nested-initialization-origin-evidence.json": "0b693e67bc49d4618028f5b9d4a1d61142abfa0911167207bfa0a77bc9403c47",
+    "config/nested-vector-insertion-authored-origins.csv": "e79cf07c183afbf0abda958293bb5374e7573f67ce7c07391e64b62bc216fa01",
+    "config/nested-vector-insertion-origin-evidence.json": "8ad6c5215a55ea15f175f800f8f7045bc1bdf8fcedace6aa392f4234438ce97c",
+    "config/optimized-deleting-origin-evidence.csv": "545331d585fc73f5ddc94da637a5fce1c370d19cc939bd402cf781f504f02c0b",
+    "config/output-format-origin-evidence.json": "01936f0c369bf0949ae8bd8c61253ab83f1b2240f93fa0eabd98704399a74119",
+    "config/paired-clear-policy-authored-origins.csv": "d491dcbbd4837fbb3c430c495adcd34f6d6ac960b3d930d999059751e7a34644",
+    "config/paired-clear-policy-origin-evidence.json": "13478d1b711301bca5523c3a2bb2be0728caf55d077581ab01f2b1479b4bc3d7",
+    "config/paired-deque-producer-origin-evidence.json": "3657c5e0c147c4db60c81463bb648f29bf8c79d522d5be15b83563d495892017",
+    "config/polar-velocity-authored-origin-evidence.csv": "c406bad0d0f8d3c859e9cc9b074745308724d73c07d981058e18e70db885613e",
+    "config/polar-velocity-origin-evidence.json": "2ff12ea5f76cf08ee66b4b5a19a4f8ddf286577c0d85e647b05236728b922310",
+    "config/power-math-origin-evidence.json": "68380e32007ff9a7122e04ce2fc27e4e58b1fbb7f4362058ded2d6444d58eb71",
+    "config/python-requirements.txt": "5abdb3020b644c221592135452cc8f5e3e20998cee0ae3c6d4dfa2b40ebabd8d",
+    "config/queue-lifetime-origin-evidence.json": "99258a0c2b32a64c462376c9f50ad91f5f7508665776bb63b1d41badd5d4cc4d",
+    "config/reccmp-floats.csv": "ec6aa0752874d1221f7e09d38647293682df2ad7b37bcd22cfedba4448439982",
+    "config/reccmp-functions.csv": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
+    "config/reccmp-globals.csv": "0612332a68e9511f74e4b990ce2b595ba93e60d061d368e90bbf2e5e1006b492",
+    "config/reccmp-relocations.csv": "4ceb0a2ee0431b3ad0994a2ad3f61ef709276b043187e85e8f0348e029cfeaf5",
+    "config/reccmp-strings.csv": "ec6aa0752874d1221f7e09d38647293682df2ad7b37bcd22cfedba4448439982",
+    "config/remaining-lifetime-policy-origin-evidence.json": "05d51c763ba642659a651a3c3a8dfbaba3cb9a87d15b682265d12df0d225a1f9",
+    "config/replay-deque-front-origin-evidence.json": "b96e349e1284ca20adde1a3fa512593ebc6aab968a9051b1c6f2add9f2252354",
+    "config/replay-deque-iterator-origin-evidence.json": "16750d50025a197b097c494ff49f6778fa490f4303669871f45ad3e8aa18d83e",
+    "config/resource-release-policy-origin-evidence.json": "294b8efee42b9276eb0135e3b3006591d0d2096d02c9698cf64d48e1aec0fc23",
+    "config/runtime-cycle-origin-evidence.json": "221d67912ecbc23e87a25b09a0073f867a2bde1ceec995ad57a15342dc7d9420",
+    "config/runtime-error-origin-evidence.json": "5d99a48f40cbdbeca1713507b5a735262a803f4ec561ae5627f71c5018d2d42a",
+    "config/runtime-external-origin-evidence.json": "21b1342df9de87bb5a285ea9ef550c520ed1db73032d4c1134e9c799c02b78a9",
+    "config/runtime-leaf-origin-evidence.json": "30aa2df61561787fc739034fc1dba83f8010891f1de594fde11404bfa0fd6c23",
+    "config/runtime-local-evidence.csv": "47e6c8637a2016ce08d5aae708a85dd90d379d7bef8dbc07f54e62adc2209663",
+    "config/runtime-origin-evidence.csv": "06e7b4d9ab9985ebecc0947b8df990af029145cdd1ce2e26ca3d2910ae67ed3b",
+    "config/runtime-origin-relocations.csv": "307759c83c4b2a16c3130aac87e65ba31b0df2701f62bf1f32d9cf6aa2edb49e",
+    "config/scalar-deleting-origin-evidence.csv": "04fa98c3776a943c421846ee0311cfe5f3eeae7d22f7a72475575f8284fc64aa",
+    "config/script-buffer-origin-evidence.json": "5cd6870dd2339ac7bd536914492765f22d5c3208789866d63113196bc6280329",
+    "config/script-count-origin-evidence.json": "e2c2c76072de2d0190849ce4604b50c73402a899aa4228458a64510c9bb2c789",
+    "config/sdk-aligned-buffer-origin-evidence.json": "fba0048154169ef4e4eefa7cd13a321635bf6a6cf450a0df0ff39e016bb53297",
+    "config/sdk-blit-origin-evidence.json": "6d537daa5c3605c37ac3e72ba1d09eba6702689f040f6b34f20ae3ba2a3d3b10",
+    "config/sdk-companion-origin-evidence.json": "979517c54be5b7787e8558af22c4d067207619388fe9d20be6ed5d9c3e5d0180",
+    "config/sdk-cpu-eh-origin-evidence.json": "9eaa1c1ae5d532e9982f9b582cb77b4f2a98839f5bd88eae078674576e54433c",
+    "config/sdk-cube-volume-origin-evidence.json": "1f6e40980b678af117d09e65999e3506b437e7dec4f81c47630a2eefe3d39ad1",
+    "config/sdk-debug-parent-origin-evidence.json": "aa0b86119baf570d7308dfe0cca2123e2ef646a20ad108c862adea7b062d4a1c",
+    "config/sdk-dependency-origin-evidence.json": "5d824965f665db683f064d0ea5d2e90d7acb3bcbabc347af8c34dbe33d26ba77",
+    "config/sdk-destructor-origin-evidence.json": "506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1",
+    "config/sdk-dispatch-origin-evidence.json": "41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51",
+    "config/sdk-file-image-origin-evidence.json": "7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6",
+    "config/sdk-graphics-origin-evidence.json": "922cd31ed6c986c5719c42d8a342b38b4ce0e0a722f11e3b6e42ed48e92a5998",
+    "config/sdk-image-chain-origin-evidence.json": "77ea2fe0c65ac983a29b752f1724a6648a2472021fa474074c80c55fceb5504a",
+    "config/sdk-image-entry-origin-evidence.json": "8a89de63380fd8916fcede566c1fbf241f775c45db4f5873f7921b623ca2d8a7",
+    "config/sdk-interface-origin-evidence.json": "4fb78070d97506d8a9604dd860090cce66bf4e6a67946cfc24e241954df886f4",
+    "config/sdk-jump-groups.json": "45a488e597b7f70036d5ebb34aa37040e5ad4521c76b8a7c77ebf7cbb1be3ae4",
+    "config/sdk-jump-origin-evidence.csv": "14cc72fa12a9a5f86415c33e08a741e8b1dfaf0f00d73e56718674448b8faab3",
+    "config/sdk-lifetime-alternatives-origin-evidence.json": "551ee19c54232b82c06f5c261470dd1b0dc22069a895026c2e108aa2b68b0162",
+    "config/sdk-mmx-origin-evidence.json": "1c7a8cae02c86607aa0ce6013e4dad6ad74a8c1e4507069f348c6c4337b79820",
+    "config/sdk-origin-data.csv": "f17930a2f64106bfff6e8501b3996c68bbbab554dd61521510afc90366ef7c78",
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "config/sdk-origin-relocations.csv": "ca358d1b40336465dce2ebaa897b7f6f5ec0cc25ba3003d06b5c964625dca669",
+    "config/sdk-png-packed-origin-evidence.json": "c3112e66bfce14d918e18c666ba26220ee70bae92b79875fa02f8ffbbb13d532",
+    "config/sdk-presentation-origin-evidence.json": "771ae0e2e563cdb35dfbaf46ed752a59f29f15ba6274badb88c621a28a1a4eb1",
+    "config/sdk-public-wrapper-origin-evidence.json": "7995f491ec17ac705a543d8cc32d3ede2e72bf429d47e103d3c4138d2553195c",
+    "config/sdk-resource-lock-origin-evidence.json": "18b992174e5b4d8c86ef8e3a37a85c3041dadaf363e8e476fa15e09f1d594751",
+    "config/sdk-shader-font-origin-evidence.json": "ac84edce06f5a9b4381dfe01d3f8f74db3ff087301b77edf7f6a2e484ffed584",
+    "config/sdk-short-origin-witnesses.csv": "027f4dd323f52805be93c1db0a6240722a90fe0474bd0a5844366a474e961943",
+    "config/sdk-simd-carrier-origin-evidence.json": "6edf1ccbd7727169fe70054fb036f5bb3d36cc3b44cc77ce036e417425fd7ec1",
+    "config/sdk-x3d-origin-evidence.json": "d2a7ef2eeb860ae2e392456a64a59df935f108b95b894a171f8a37a8fa0ca22d",
+    "config/sdk-x86-policy-origin-evidence.json": "dfba474686f4032271ad6ba4f2f9fde62ed221590e40c13f354bf7086e2872f1",
+    "config/secondary-texture-access-origin-evidence.json": "4727bd2e3809b9c7c4de52e24044d35167402bc11eb660ea87a538a31d65b2c0",
+    "config/security-eh-origin-evidence.json": "4761b1d4dd3bea4508dc4b0beb3715f40f8d5fa56e51b059bf4a4184d0e2d79a",
+    "config/short-crt-origin-evidence.json": "f46b071ab92cb29e63c03d9f18af025ddfc5100b07fd2e3079b76376edd11c1d",
+    "config/short-game-origin-evidence.json": "bb1b01f1ce66bd5586e0ce4cc76718e84584abe17b6e1d7ac84381fbc7be446d",
+    "config/short-runtime-origin-evidence.json": "d861fd27d8f069e1dd23ce07f57bc2d28189e5ee773e89a5a4ad758c5a7b41fc",
+    "config/small-heap-integrity-origin-evidence.json": "eddfa717569f53247d73c76ae3f66966f611ea8b66e435127223addf138cdc7a",
+    "config/standard-exception-origin-evidence.json": "13e2334a626c64d5cd3c32a08b5de968e88a0bc99c2761c86828573998514aa6",
+    "config/startup-dependency-origin-evidence.json": "e7af85c75596e44dab5409ded406ecc36352d1273bf9d9ab1cee1077ea7e8e13",
+    "config/startup-registration-origin-evidence.json": "345bd5bac872c1823bfea9875d565c523ec223927e73803f0453c1ed55b5e324",
+    "config/static-resource-policy-origin-evidence.json": "8c0beafe33c5b79a6b0d6cb8f135427cf225fe7890de98cfc37f3e81da69fb41",
+    "config/stream-buffer-origin-evidence.json": "c7cb9f4e8626ff1b7046a065aba12787c0ace19b024af757f83a70286b346a71",
+    "config/stream-finalization-origin-evidence.json": "1ca7d6ed0da4f672b0a1db1ab9e96ea11cf262cadf23c5a8feb196278985da01",
+    "config/string-exception-origin-evidence.json": "3ca89a95bdb3fff016ed80a9c7f4d0caea42023d8fcabb1766192af56c1318ff",
+    "config/target.toml": "6680082450dbead6fdbcefa37af35c52169d4e4186c830a34f6e12b86320cb1f",
+    "config/termination-lock-origin-evidence.json": "044e1ee241a47c0e64f7ed8d007449a4f84a4fcb46e1c33e84f6b2f2b351d535",
+    "config/texture-vector-access-origin-evidence.json": "69e2d6a01358b088121cef02d4153cf307429921dc0b1ac8d2891ccb732297a3",
+    "config/time-zone-origin-evidence.json": "233fc1e9d8989809c1df82588f4a655a485433e62d895c45008a7429270a1226",
+    "config/tools.lock.toml": "feb61ea689c7824b10fd58547ff2b88bc16ac807ec019eb724f0c12b6a31b312",
+    "config/unchecked-indexing-origin-evidence.json": "9ff22d92b72073bc8ab0d1a62b127ebc6ba1adc6507e2b14f11cadbd2d544113",
+    "config/vector-at-policy-origin-evidence.json": "50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c",
+    "config/vector-count-assignment-origin-evidence.json": "f410ceed8099574af4d9fe71546474c3aecfc5a2d3fbf76ac942f817046419c5",
+    "config/vector-endpoint-origin-evidence.json": "afe1d3136b9d1ce15d370b11234b8bfa4b6be877032c76ba4623df3ecb8a11fe",
+    "config/vector-endpoint-route-origin-evidence.json": "f60a3fdfad9c7cf1ffddfe902114059102b9c26d06e4f5c63709a8346af313ec",
+    "config/vector-insertion-carrier-origin-evidence.json": "fe3ac742c24edcbdd5d3f5d5f938071edf8eac728c1ef8f3016bf45b0a5468cd",
+    "config/vector-list-leaf-alternatives-origin-evidence.json": "42c0eee2fd8764c7871e8a251c0e0dba789b1c850849a1182493f294cbbe7209",
+    "config/vector-math-parent-origin-evidence.json": "a95a6015229b0673965a192a4dececf37c329ee7eda01b9f28092adfbfad4956",
+    "config/vector-producer-origin-evidence.json": "60d5970525df0c05cb0a5ae603daac196e565668fa96a3f88612ed8ffe2dbdd3",
+    "config/vendor-additional-record-origins.csv": "7921fac417c536e6de0208d6f7e4805ad35af1da29f2ee211b17521f2d432e90",
+    "config/vendor-deque-access-origins.csv": "1c8896140997d89e466a6a33fef6bda592da2c93e6d4b941df63aab081191a7c",
+    "config/vendor-deque-algorithm-origins.csv": "f816f2024f46c325ee63c911c2e4647f67d689139ccbc7f04b406e1b94f8d9eb",
+    "config/vendor-deque-allocation-origins.csv": "38a92126833fcac2aa3ef0e0c4082d32ee8584e17017de86416b9a211138a645",
+    "config/vendor-deque-begin-origins.csv": "10e3d5b77452b8a7862f5531cc440e5c6f2b19244ea59efde9501ecfcdeb72a0",
+    "config/vendor-deque-callee-origins.csv": "50293ede1964ee534ce3fe22b14b2110bdffff637954389c716f75e0e59fe9fb",
+    "config/vendor-deque-cleanup-origins.csv": "82429466bb5a5690f260dea1d01dc6c4a97fedfe84aaf1854df411b96c8578dd",
+    "config/vendor-deque-comparison-origins.csv": "2b0e586d116190954102c202e17876e93cb42b11ef7cfcd120857003e4c9ea26",
+    "config/vendor-deque-const-iterator-origins.csv": "dab73cb6c443f9f1dea84b1c0c10ea73a5335d959e9a6f623c243e8c83166d7e",
+    "config/vendor-deque-dereference-origins.csv": "7d69b86c17ceeff8bcb4647eacfe0c6405539bb3cc0146ff5b49f4df725a2685",
+    "config/vendor-deque-destructor-origins.csv": "ae56503af666738813c5ae2b9f19cc48022e221e35fc4240b20aaa3661019e1f",
+    "config/vendor-deque-empty-origins.csv": "94ccdfb8bc3baa7c3104d18919162a0e1bfb141fb6d4b06b06f6e8129cdb0211",
+    "config/vendor-deque-erase-origins.json": "646ecbd53ee0dd418440b1dd3f224299f6bd99d8159cc05d98ebcabe4d800721",
+    "config/vendor-deque-growmap-origins.csv": "002be70bc59eb59073848f0959364551846e92ffe19891c937abb996f9346797",
+    "config/vendor-deque-helper-origins.csv": "2afda08568e16742b636bd9064b3816afcd0a30e6214917f5e4f2eb98f546958",
+    "config/vendor-deque-iterator-advance-origins.csv": "c48b2cb00afee9cd5f99446d64cacb8b46a6d57692687e200c9408d66707d339",
+    "config/vendor-deque-iterator-origins.csv": "3577aaf8063db81206daea51f45b530295101b2de86ae033c0b3f16478cbe5fa",
+    "config/vendor-deque-leaf-origins.csv": "62616fceef43ea83fcd96339d9c662c9b0bcbf9a9fda278724cb8b26108b0eee",
+    "config/vendor-deque-operation-origins.csv": "a9a824683d6ab07ff88a36a2b806655da82c89eb327dc46dc288ded7e0bc69d3",
+    "config/vendor-exception-groups.json": "0bb622c82d48cf78907c0168fe473bd6c99dfac89a723dd303007b9b56f71971",
+    "config/vendor-identical-origin-evidence.csv": "6aca3c40cad04d9f6262132162521efa774b5e0c9f419457f62d523aa3c4ccb9",
+    "config/vendor-origin-evidence.csv": "0ef96ddfab93dc66f896f01851cdea58010d65023859cfd6e79dc18f6433a128",
+    "config/vendor-origin-spans.csv": "0e45a6aae65597214cdc219b7a8e7373541544ffa04733ae5bff07f9bb84b481",
+    "config/vendor-peer-origin-evidence.json": "066492f33f855e3c7acc6bfa4b8f15a888ea110b08b7fdc668421e0579083790",
+    "config/vendor-record-helper-origins.csv": "938d1ec9c4ac5eab7a44b964bbcd96ac94fc1996c572343e1303897ed12bf3d2",
+    "config/vendor-record-origin-spans.csv": "12f2c3fa03ce3cd873f4083876e04be0435cc3323e4005263d97ef950dbc95d2",
+    "config/vendor-record-witness-origins.csv": "459dcda55d644cbc59d410ea2cccd1add07b017d4d67d6cae399c97be9056017",
+    "config/vendor-vector-callee-origins.csv": "8f626a55938222b1542bae80188c53749a04467b5f4cb7254730913d40eafabd",
+    "config/vendor-vector-copy-origins.csv": "8d8a4375b093bf1832df84031d8fb10b6d8c8bf4037038291742561b44c5c616",
+    "config/vendor-vector-helper-origins.csv": "74e3b58438e5c5c63aaad24d8b54f9c6e9294ab0c299714adbbf6073ffff3c8a",
+    "config/vendor-vector-operation-origins.csv": "0e7619cf5819f8b6cb702d2dc82a34cb8c29f8d8217f7f21146338270260edab",
+    "config/vendor-vector-storage-origins.csv": "486d5d70e734ee0adef59bf1182672d182a6e91c1290901262c08c2627761d6e",
+    "config/vendor-vector-wrapper-origins.csv": "d29340b2170effdbf99acb8bf3b04d3a1fa2b1e63d3ec5ef6c507b3a08386a7a",
+    "config/virtual-frame-origin-evidence.json": "c896dc1c16528a6fe448cc6430910322890e63844b52c2291aa8be2787c58199",
+    "tests/origin_probes/BackgroundReverseCycle.cpp": "b1aeba8df355c5b504f7ebf74126ed87e31d68254f2552887ba5c580433a63d2",
+    "scripts/verify-background-origins.py": "53fe71844332a1f06eb037473ca239a8b30f5291df3d05611e6aa318d4e5b7c0",
+    "scripts/verify-authored-origins.py": "3e1f29f18511e0a4e8766b6b74999a5bf12b34f66df32828512d3513dd061af9",
+    "scripts/verify-vector-insertion-carrier-origins.py": "c8e33d0ff04c249fa9e0479a23f3645e33246c1a09b76bbb9f12517d989a092a",
+    "scripts/sdk_x3d_carriers.py": "4e41353ce669f12f06038afb66e849fb91db39254146df81d70345c03c4cb131",
+    "scripts/sdk_image_carriers.py": "548858d41821033d76955d40a69a498136ef82c57972bdbff72c865b4cb8562e",
+    "scripts/coff_data.py": "deb9205d1cc9c859a9537c1fcdb7198f5d26328a6035f27be9366fc226d83dc1"
+  },
+  "interpretation": "Authored inference from complete signed decrement/reset runtime policy selected by the installed BG05a callback table, independently initialized by its whole real asset loader and consumed by its whole renderer. All actual table peers retain their existing decisions. Compact ordinary code explains the full normalized policy but not original source/private types/layout/ABI/compiler flags. No implicit compiler copy control supplies the runtime conditional policy. Initial zero and signed-negative reset3840 imply reachable counter values0..3840 under this update, without asserting arbitrary signed-overflow C++ behavior. Earlier R212 BG05b multi-counter origin and all prior uncertainty remain literal. No old authored CSV is rewritten and no source/mapping/exact or later-phase credit is added."
+}

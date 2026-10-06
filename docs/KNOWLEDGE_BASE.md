@@ -11645,3 +11645,56 @@ Current4,206 resolved =980 authored+2,646 library+580 compiler;145 pending and
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,971,526 and provisional0.50%. Full Web MCP
 acceptance is required after all remaining origin review finishes.
+
+## R232 complete BG05a reverse-cycle callback
+
+R232 accepts the complete45-byte authored callback at `0x0044E3A0`. It decrements
+the observed receiver+0x68 counter, resets a signed-negative result to3840 and
+returns with RET0. The sole internal branch and full extent are preserved;
+current name, source presence, ABI, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-background-reverse-cycle-origins.py`
+with immutable `config/background-reverse-cycle-origin-evidence.json`, SHA-256
+`b14741ea79891926aa530c1c731cab38766524086998fc778114907299f29b86`.
+The actual readonly pointer at658AC8 is slot one of the six observed words at
+658AC4. Complete independently accepted BG05a loader44E2F0 /161 installs that
+table at instruction offset46, clears the same counter at130 and pushes the real
+`data\background\BG05a.dat` asset path. Full renderer44E3D0 /872 reads that same
+field at270,444 and656 through integer-to-floating conversion. All seven whole
+constructor/callback/renderer/peer owners total1,235 bytes, including the selected
+callback, with complete hashes, instructions, CFGs and prior authored records.
+The six actual callback words and following eight bytes are checked separately;
+no complete private table or class layout is inferred. Every other peer retains
+its existing origin. Local Ghidra references independently confirm the selected
+pointer and both real table-installation sites. The earlier R212 BG05b94-byte
+multi-counter decision remains literal.
+
+The natural fixture `tests/origin_probes/BackgroundReverseCycle.cpp` uses a
+complete compact one-counter observation and an ordinary implicit-copy client.
+Cold build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` emits all
+three code/data sections /63 bytes, two whole41/10-byte functions, no relocation
+field and the full12-byte readonly `[4,4,4]` observation. Every ordinary reverse
+policy instruction agrees after interpreting the actual receiver-field role and
+branch destination index. Native45 and source41 differ in field displacement
+encodings; neither is cropped. The implicit-copy client lacks the decrement,
+comparison and reset. No game owner is padded or instantiated, and no inert local,
+fake return, original source text, private ABI or exact match is claimed.
+Initial zero and this update keep the reachable counter in0..3840; a full
+3,841-update cycle returns to zero. This describes the observed policy rather
+than asserting arbitrary portable signed-overflow behavior.
+
+The old snapshot audit finds no selected canonical pair. All earlier authored
+CSVs, manifests, verifiers and explicit ambiguities remain literal. Seven scoped
+canonical owners, full original-state unselected digests and bounded HEAD1357715
+readback allow exactly one row in each origin/function ledger to change, retaining
+the full45-byte extent and every unrelated row. Three external INT3 bytes at
+44E3CD stay outside the function. Original and accepted cold replays,3,279 CI tests
+including eight new guards, target/tracking, local Ghidra identity and query
+completion, unchanged60 exact inputs, fresh144-candidate triage, progress and
+whitespace pass.
+
+Current4,207 resolved =981 authored+2,646 library+580 compiler;144 pending and
+3,226 excluded. The original1,311 goal has1,167 classified /144 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects are
+unchanged; authored denominator1,971,571 and provisional0.50%. Complete Web MCP
+acceptance remains required after all remaining origin review finishes.
