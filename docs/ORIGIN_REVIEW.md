@@ -15123,3 +15123,79 @@ Current4,221 resolved =995 authored+2,646 library+580 compiler;130 pending and
 3,226 excluded. The original1,311 goal has1,181 classified /130 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,894 and provisional0.50%.
+
+## R240 — primary replay-input queue exhaustion
+
+R240 accepts authored `0x004142D0` /35 with its complete CFG, both branches,
+AL result and13 following external INT3 bytes preserved. It adjusts the receiver
+by0x154, calls the complete public deque size414430 /17 and returns false in AL
+when nonempty, true in AL otherwise. The inferred name is
+ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0. Ghidra's uint/fastcall recovery
+does not establish an original ABI: the upper EAX bytes are not a normalized
+Boolean. Current name, extent, source/ABI, mappings and exact state stay unchanged.
+
+Replay `scripts/repo-python scripts/verify-replay-queue-empty-origins.py` using
+immutable `config/replay-queue-empty-origin-evidence.json`, SHA-256
+`3dbbcaea7887bab375cc8a5f0d37dc6d2746199992ec94058ca78f684deb4cb5`.
+Full R035 LoadRecord413AC0 /792 reads replay-file metadata and four distinct
+queues atowner+0x154/0x168/0x17C/0x190 with actual1-/2-/1-/4-byte records. The
+first queue receives complete one-byte entries after its clear. Full
+AppendRecord413DE0 /1252 serializes the same first queue's count and one-byte
+entries, retaining its complete iterator loop and real WriteFile calls.
+BeginCapture413790 /225, FinalizeFile4138E0 /375 and FindAvailablePath414300 /89
+preserve independent custom replay/file provenance. Actual raw-PE imports bind
+CreateFileA, ReadFile, WriteFile, CloseHandle and SetFilePointer.
+
+Full R045 FighterState::UpdateControls452F10 /2815 tests and consumes first global
+queue6718A4, reads its front byte through complete library454D50 /32 and removes
+it through pop_front454D70 /157. Each bit updates actual direction/button
+counters. Its recording path appends the produced byte to that identical queue.
+Global6718A4 equals owner671750+0x154. Whole R044
+BattleScene::AdvanceState43B610 /4764 invokes the selected query on671750 in
+observed mode2, explicitly MOVZXes AL and uses true to assign battle state6
+under the original guards. It does not consume a presumed uint return.
+Twelve complete anchors /10,568 bytes and13 scoped canonical pairs are frozen,
+including the whole pop-front empty/destruction children. All original exits,
+switches, records, fields and ownership remain literal.
+
+The writable PE section/header and entire actual file-backed420-byte minimum
+observed range at671750 are hashed. This is a bounded observed footprint, not
+an inferred complete private sizeof/layout or an invented BSS image. No initial
+runtime state or extra fields are inferred. Original deque490–493 exposes size;
+500–503 exposes empty as a direct _Mysize comparison; queue34–37 forwards empty
+to c.empty. Thus the selected custom owner-size policy differs from the genuine
+public library operations. Full original R149 size17 and R086 empty25 providers
+reproduce, with no source fields and every original typed library record retained.
+The unsigned-char size control is one original R149 whole alternative; payload
+spelling remains unknown. Genuine queue::empty calls bind the whole original
+empty25, never a convenient size17 alias.
+
+Natural `tests/origin_probes/ReplayQueueEmpty.cpp` cold-builds with locked3077
+`/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`. It retains all31 include
+owners,9 whole code/data sections /182 bytes,5 actual fields, full COFF/AUX/line
+provenance, real absence of weak aliases and entire16-byte sizeof[24,20,20,4].
+The compact complete generic owner keeps a meaningful fileHandle and deque at+4.
+Its32-byte guard, borrowed23-byte guard, genuine deque::empty25 and
+queue::empty19 remain whole negatives against all35 selected bytes, including
+trailing missing-source bytes and every real public call field. The actual
+original +0x154 offset is never reproduced with filler or a false complete
+private owner. Full native replay-byte production, consumption and battle
+completion establish the authored source-family inference. Original
+owner/type/spelling/layout/compiler profile/ABI remain unknown; there is no
+source, mapping or exact credit.
+
+Original and accepted cold proofs also reopen the entire R149 source/context
+family, its complete retained R072/R078/R110/R113 graphs, and the entire R086
+13-body /325-byte empty family with13 source-typed parent calls. An empty
+selected historical audit, original full unselected digests and strict
+HEADc9b8efa readback permit exactly one canonical function/origin pair to change.
+Every previous accepted evidence file, protected unknown and60 exact input is
+unchanged. Both-state cold proofs,12 new guards and3,367 CI tests, target/tracking,
+readonly Ghidra identity/query completion, fresh129-row triage, progress freshness
+and whitespace pass. Final complete Web MCP acceptance remains due after all
+remaining origin review finishes.
+
+Current4,222 resolved =996 authored+2,646 library+580 compiler;129 pending and
+3,226 excluded. The original1,311 goal has1,182 classified /129 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects are
+unchanged; authored denominator1,972,929 and provisional0.50%.

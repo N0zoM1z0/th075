@@ -618,7 +618,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00413A60,authored,GameState,authored,complete-game-policy-with-batch-context,R103
 0x00413AC0,authored,ReplayRecords,authored,target-observed,R035
 0x00413DE0,authored,ReplayRecords,authored,target-observed,R035
-0x004142D0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x004142D0,authored,ReplayRecords,authored,whole-primary-replay-input-queue-exhaustion-with-independent-serialized-byte-load-live-consumption-and-battle-completion-context,R240
 0x00414300,authored,ReplayRecords,authored,target-observed,R035
 0x00414360,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x004143B0,library,VC7STL,exclude,complete-vc7-deque-destructor-family,R077

@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R239. The public
+review cohorts R108 through R240. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,79 +11,156 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,221: 995 authored, 2,646 library and 580 compiler generated.
-There are 130 pending. Candidate count is not authored function count.
+has resolved 4,222: 996 authored, 2,646 library and 580 compiler generated.
+There are 129 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,894 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,929 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R240 replay-record queue investigation below.
+the bounded R241 scene/base initialization investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R239; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R240; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R240 replay-record queue emptiness
+## Next agent objective — R241 scene/base initialization
 
-R239 accepts two complete sprite parameter methods below. Original and accepted
-cold proofs and3,355 local CI tests pass. There are130 origins pending; the
-original1,311 goal has1,181 classified /130 left and remains active. Push
-reached68d9258; later commits remain local. Continue local investigation and
-serial cold builds while preserving all accepted origins and60 exact functions.
+R239 and R240 accepted three complete origins in this goal turn. R240 original
+and accepted cold proofs,12 new guards and3,367 local CI tests pass. There are129
+origins pending; the original1,311 goal has1,182 classified /129 left and remains
+active. The user pushed throughc9b8efa; later commits remain local. Continue local serial
+investigation while preserving every accepted origin and60 exact functions.
 The user requires one complete Web MCP acceptance after all remaining origin
-review finishes. That final run remains outstanding.
+review finishes. The final full run remains outstanding.
 
-Next inspect complete pending4142D0 /35. It returns whether the deque at
-receiver+0x154 has zero size through reviewed414430 /17. Whole
-BattleScene::AdvanceState43B610 /4764 calls it. It lies beside complete authored
-R035 ReplayRecords::LoadRecord413AC0 /792 and AppendRecord413DE0 /1252, plus
-BeginCapture413790 /225, FinalizeFile4138E0 /375 and FindAvailablePath414300 /89.
-Reopen those whole receiver/record/file contexts, genuine R149 size source and
-R072/R073/R077/R111 original deque graphs before deciding ownership. Private
-`.analysis/r239-policy-native.json` already contains the complete candidate,
-size provider and battle caller. Verify the actual record-queue semantics and
-receiver identity; the nearby names and large member offset are not proof.
-Contrast complete original deque/queue empty definitions with natural complete
-generic and borrowed-owner controls. Do not invent filler to reproduce+0x154,
-instantiate an incomplete original replay owner, crop comparisons or infer
-ownership merely from known calls. Audit all selected historical snapshots
-before a bounded transition.
+Next inspect complete pending4251C0 /34. It stores actual vtable657B88, invokes
+whole authored GameGlobals::Initialize417210 /531 on receiver+4 and returns
+its own receiver. Five whole independently accepted scene initializers call
+it: BattleEnd424E00 /308, Loading4251F0 /181, Logo425490 /183, MusicRoom425750
+/372 and Opening4275D0 /219. Complete raw private diagnostics are in
+`.analysis/r241-resource-reset-native.json`. Reopen actual constructor/copy/
+lifetime evidence, complete vtable slots and called owner/subobject operations;
+contrast natural explicit, implicit and original/library source controls.
+A vptr store plus member construction can fit generated initialization, and
+a known game child alone does not resolve ownership. Preserve unknown unless
+new complete evidence distinguishes the source family. Do not instantiate an
+incomplete original scene/base owner or add fake ABI/source/exact credit.
 
-R239 independently reopens the complete original R213 native game-context
-proof, including all60,999 action bytes, all original switches/CFG, the full
-16,837-instruction digest and seven parameter sequences. Relevant R238/R167/
-R168 list source graphs are fully cold-replayed. The unrelated R213 standalone
-vector cold CLI still stops in R211 on three later R227 successors459890,
-459C60 and459C40; original scripts/manifests are unchanged. Its two setter
-unknown snapshots likewise remain literal despite the explicit R239 successor
-pairs. The immutable R239 proof documents the exact native-only scope and
-never claims that old standalone CLI passed. Do not rewrite these old records
-or silently relax their canonical checks. The no-reference word setter410FC0
-and implicit member constructor411C10 remain unknown.
+Other private leaf diagnostics are in `.analysis/r241-game-leaf-native.json`.
+45B850 /13 is a no-op RET4;4073A0 and438CF0 /11 are no-op RET0 bodies;45BA10 /21
+writes its incoming dword to receiver offset0 and returns with RET4. These
+shapes alone cannot distinguish hooks, lifetime/member/allocator operations or
+ordinary scalar methods. `.analysis/r241-replay-helper-native.json` likewise
+shows no-op4138D0 /11 and no-reference FontSurface-adjacent4135F0 /40 writing
+a byte at+0x24 and dwords at+0x1C/+0x20 with RET12. Adjacency is not owner proof.
+Do not promote these fingerprints without full independent type/caller/data
+context and explicit source alternatives. Fresh `.analysis/origin-scan/r240-triage.json` contains129 pending with current
+ledger hashes.
 
-R238 keeps original R167/R168 snapshots and scripts literal; their full cold
-proofs run through exactly checked four/seven later successor pairs recorded
-below. R236 preserves all six actual scalar/array-delete route differences;
-R237 preserves R077 destructor-family aliases alongside full public clear
-alternatives. The GUID equality candidates608E33 and609B1E remain unknown:
-eight original _IsEqualGUID COMDATs and ordinary memcmp both reproduce23 bytes,
-but all twelve original references are only.debug$F, with no ordinary source
-code/data caller. Preserve no-reference454C00 /24 and454F70 /31, R108/R198/R204
-lifetimes, R18341CA30 /77, R212455770 /111, five R163 math chains, opaque/node
-policies and constructors458650 /31 and458670 /23 as unknown. DwStack61FB37
-and codec61A453 retain protected R195/R198 alternatives; extent questions
-60C120 /11 and620132 /5 need complete original defining source/metadata.
-Fresh `.analysis/origin-scan/r239-triage.json` contains130 pending with current
-ledger hashes. Shared tools remain read-only.
+R240 ties primary replay byte queue6718A4 to actual owner671750+0x154, complete
+file loading/serialization, live direction/button consumption and battle
+completion. It preserves AL-only result use, all four distinct queues and
+actual file-backed minimum storage; no fake uint ABI, BSS bytes, private
+layout or offset filler is introduced. Its entire ordinary32/borrowed23/
+deque25/queue19 alternatives remain negative. R239 independently reopens
+complete R213 native game context while the unrelated old vector cold CLI
+retains its R211/R227 snapshot rejection; no old plan/runtime is patched.
+R238's complete R167/R168 cold views retain exactly checked four/seven later
+successor pairs. R236 retains six actual scalar/array-delete differences;
+R237 retains R077 destructor-family aliases beside public clear alternatives.
+
+Preserve two no-reference GUID23 candidates608E33/609B1E: both original SDK
+and ordinary memcmp forms reproduce, but original archive references are only
+.debug$F. Preserve no-reference454C00 /24 and454F70 /31, R108/R198/R204 lifetimes,
+R18341CA30 /77, R212455770 /111, five R163 math chains, opaque/node policies and
+constructors458650 /31 and458670 /23 as unknown. DwStack61FB37 and codec61A453
+retain protected R195/R198 alternatives. Extent questions60C120 /11 and620132
+/5 need complete defining source/metadata. Shared tools remain read-only.
+
+## R240 — primary replay-input queue exhaustion
+
+R240 accepts authored `0x004142D0` /35 with its complete CFG, both branches,
+AL result and13 following external INT3 bytes preserved. It adjusts the receiver
+by0x154, calls the complete public deque size414430 /17 and returns false in AL
+when nonempty, true in AL otherwise. The inferred name is
+ReplayRecords::IsPrimaryInputQueueEmptyAt004142D0. Ghidra's uint/fastcall recovery
+does not establish an original ABI: the upper EAX bytes are not a normalized
+Boolean. Current name, extent, source/ABI, mappings and exact state stay unchanged.
+
+Replay `scripts/repo-python scripts/verify-replay-queue-empty-origins.py` using
+immutable `config/replay-queue-empty-origin-evidence.json`, SHA-256
+`3dbbcaea7887bab375cc8a5f0d37dc6d2746199992ec94058ca78f684deb4cb5`.
+Full R035 LoadRecord413AC0 /792 reads replay-file metadata and four distinct
+queues atowner+0x154/0x168/0x17C/0x190 with actual1-/2-/1-/4-byte records. The
+first queue receives complete one-byte entries after its clear. Full
+AppendRecord413DE0 /1252 serializes the same first queue's count and one-byte
+entries, retaining its complete iterator loop and real WriteFile calls.
+BeginCapture413790 /225, FinalizeFile4138E0 /375 and FindAvailablePath414300 /89
+preserve independent custom replay/file provenance. Actual raw-PE imports bind
+CreateFileA, ReadFile, WriteFile, CloseHandle and SetFilePointer.
+
+Full R045 FighterState::UpdateControls452F10 /2815 tests and consumes first global
+queue6718A4, reads its front byte through complete library454D50 /32 and removes
+it through pop_front454D70 /157. Each bit updates actual direction/button
+counters. Its recording path appends the produced byte to that identical queue.
+Global6718A4 equals owner671750+0x154. Whole R044
+BattleScene::AdvanceState43B610 /4764 invokes the selected query on671750 in
+observed mode2, explicitly MOVZXes AL and uses true to assign battle state6
+under the original guards. It does not consume a presumed uint return.
+Twelve complete anchors /10,568 bytes and13 scoped canonical pairs are frozen,
+including the whole pop-front empty/destruction children. All original exits,
+switches, records, fields and ownership remain literal.
+
+The writable PE section/header and entire actual file-backed420-byte minimum
+observed range at671750 are hashed. This is a bounded observed footprint, not
+an inferred complete private sizeof/layout or an invented BSS image. No initial
+runtime state or extra fields are inferred. Original deque490–493 exposes size;
+500–503 exposes empty as a direct _Mysize comparison; queue34–37 forwards empty
+to c.empty. Thus the selected custom owner-size policy differs from the genuine
+public library operations. Full original R149 size17 and R086 empty25 providers
+reproduce, with no source fields and every original typed library record retained.
+The unsigned-char size control is one original R149 whole alternative; payload
+spelling remains unknown. Genuine queue::empty calls bind the whole original
+empty25, never a convenient size17 alias.
+
+Natural `tests/origin_probes/ReplayQueueEmpty.cpp` cold-builds with locked3077
+`/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`. It retains all31 include
+owners,9 whole code/data sections /182 bytes,5 actual fields, full COFF/AUX/line
+provenance, real absence of weak aliases and entire16-byte sizeof[24,20,20,4].
+The compact complete generic owner keeps a meaningful fileHandle and deque at+4.
+Its32-byte guard, borrowed23-byte guard, genuine deque::empty25 and
+queue::empty19 remain whole negatives against all35 selected bytes, including
+trailing missing-source bytes and every real public call field. The actual
+original +0x154 offset is never reproduced with filler or a false complete
+private owner. Full native replay-byte production, consumption and battle
+completion establish the authored source-family inference. Original
+owner/type/spelling/layout/compiler profile/ABI remain unknown; there is no
+source, mapping or exact credit.
+
+Original and accepted cold proofs also reopen the entire R149 source/context
+family, its complete retained R072/R078/R110/R113 graphs, and the entire R086
+13-body /325-byte empty family with13 source-typed parent calls. An empty
+selected historical audit, original full unselected digests and strict
+HEADc9b8efa readback permit exactly one canonical function/origin pair to change.
+Every previous accepted evidence file, protected unknown and60 exact input is
+unchanged. Both-state cold proofs,12 new guards and3,367 CI tests, target/tracking,
+readonly Ghidra identity/query completion, fresh129-row triage, progress freshness
+and whitespace pass. Final complete Web MCP acceptance remains due after all
+remaining origin review finishes.
+
+Current4,222 resolved =996 authored+2,646 library+580 compiler;129 pending and
+3,226 excluded. The original1,311 goal has1,182 classified /129 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects are
+unchanged; authored denominator1,972,929 and provisional0.50%.
 
 ## R239 — sprite sampling and color-mask parameter writes
 
