@@ -88,9 +88,18 @@ class SdkIdentifierContributionTests(unittest.TestCase):
 
     def test_global_unselected_guard_remains_strict(self):
         selected = {r['address']: r for r in self.plan['functions']}
+        source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        absolute_spec = importlib.util.spec_from_file_location(
+            'crt_absolute_successor_view', ROOT / 'scripts/verify-crt-absolute-contribution-origins.py')
+        absolute = importlib.util.module_from_spec(absolute_spec)
+        absolute_spec.loader.exec_module(absolute)
+        absolute_plan = json.loads((ROOT / absolute.EVIDENCE).read_text())
+        original_absolute = all(q['original_function'] in source['functions.csv'] for q in absolute_plan['functions'])
+        source = {name: absolute.historical_rows(absolute_plan, name, actual, original_absolute)
+                  for name, actual in source.items()}
         for original in [True, False]:
             state = 'original_' if original else 'accepted_'
-            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in V.rows(name)] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

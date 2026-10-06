@@ -2,7 +2,7 @@
 
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261 and R262, with bounded unresolved reviews/audits
+review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
 R247–R252, R258 and R259. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
@@ -12,8 +12,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,253: 1,002 authored, 2,670 library and 581 compiler generated.
-There are 98 pending. Candidate count is not authored function count.
+has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
+There are 97 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -21,65 +21,82 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R263 CRT absolute-value contribution cohort below.
+the bounded R264 StringBuffer contribution and special-member cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R262; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R263; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R263 CRT absolute-value source contribution
+## Next agent objective — R264 StringBuffer contribution and special-member context
 
-R262 accepts two inferred library identifier comparison23 leaves at608E33 and
-609B1E through complete source-ordered Font523/Surface1244 contributions,
-separate deleting wrappers56 and source-order-compatible duplicate placements.
-All35 complete source code sections1849 /33 unique native bodies1823, vtables80,
-all46 genuine fields and full original inventories76/2884 are retained. Full
-unchanged R201/R186 CLIs and all their public/retained proof trees cold-replay.
-Details:[R262 review](ORIGIN_REVIEW.md#r262--complete-sdk-identifier-contributions-with-ordinary-equality-retained).
+R263 accepts only641DAA /11 as inferred library through the complete source-
+ordered abs11/abs64 auxiliary28 contribution39 at641DAA..641DD1. Source object
+member1282072 `build\intel\mt_obj\abs.obj` retains all eight initialized
+sections642, real definitions/AUX/COMDAT and full native CFGs. The auxiliary28
+is untracked context and gains no candidate or exact credit. Details:
+[R263 review](ORIGIN_REVIEW.md#r263--complete-crt-abs-contribution-with-separate-labs-ambiguity-retained).
 
-Original `_IsEqualGUID` and literal `_==` associations and duplicate placements
-remain provisional without a link map. The full12-source-definition/eight-object
-archive survey remains present. Genuine ordinary equality23 cold-builds from
-four-word storage with layout[16,4]; its entire body agrees at both addresses.
-No unique GUID type, target call reachability, private ABI, source or exact
-credit is claimed. Font constructor27/destructor58, Surface constructor39 and
-all other unresolved special members remain unknown. R261's coherent implicit
-ctor16/dtor14 positive and unknown Stack destructor14 are preserved.
+The fresh full824-member survey retains both original abs/labs whole11
+alternatives. Separate641FB8 /11 stays unknown:the one-function labs object and
+nearby complete memcmp alone supply no independent source-owner witness.
+New whole ordinary int/long positives11 agree at both addresses. Complete wide
+expression28/four branch-order differences and intrinsic public wide22 remain
+whole negatives. All five ordinary sections84, actual stdlib include and
+layout[4,4,8] are retained. No original declaration or global compiler profile
+is inferred. The full unchanged original R129/R128 and R163 graphs cold-replay
+in read-only same-length676e346 Git state, preserving every old unknown snapshot,
+source/predicate/manifest and complete public controls.
 
-Next investigate CRT absolute-value leaves641DAA /11 and641FB8 /11. Fresh
-private `.analysis/r263-absolute-source-survey.json` scans all146 SDK and678 CRT
-normal i386 source objects:SDK has no whole11 positive; CRT has `_abs` in
-member1282072 `build\intel\mt_obj\abs.obj` and `_labs` in member1395380
-`build\intel\mt_obj\labs.obj`. Both11 bodies match both candidates. The
-complete abs object also defines whole `__abs64`28, freshly equal to adjacent
-native641DB5..641DD1. This previously untracked auxiliary body is a contribution
-witness, not a new candidate or exact unit. Reconcile the full source-order39
-contribution, all definitions/AUX/fields and native CFGs, complete original
-R129/R163 runtime/caller controls, and genuine ordinary int/long/64-bit
-alternatives before deciding a bounded inferred origin. The one-function labs
-object alone supplies no stronger witness for641FB8; do not infer it from
-nearby memcmp or isolated body equality. Preserve original operation/name/type
-ambiguity and all unselected rows. No exact scope is added.
+Fresh private `.analysis/r264-contribution-survey.json` compares all97 full
+candidate extents against all4400 initialized code sections from824 original
+SDK/CRT objects. It retains86 whole-section discoveries covering20 candidates
+and complete initialized inventories for39 original source units. Field-free
+matches are whole byte comparisons; relocated matches exclude only genuine
+four-byte fields and record observed destinations as discovery, never an
+independent provider catalog. The77 candidates without a source-section match
+gain no authored/compiler conclusion from absence.
 
-Current counts:4253 resolved =1002 authored+2670 library+581 compiler,
-98 pending /3619 bytes and3251 excluded. Original1311 progress is1213 classified
-/98 left. The matrix rereads all98 full hashes/current pairs and3170 original
-structured record trails, preserving the original R251116-row evidence. The
+One new lead is620132 /5:source member380178 `obj\i386\cd3dxbuffer.obj`,
+section52, actually defines `??1CD3DXStringBuffer@@UAE@XZ`, with a genuine REL32
+tail to the same member's complete Buffer destructor21 at61FE0A. Earlier R249
+had only a whole ordinary forwarding observation without this archived source
+association. Private `.analysis/r264-string-buffer-discovery.json` freezes the
+actual definition/AUX/field and the full original object inventory. Its25
+original whole code sections also include StringBuffer constructor22, Init36,
+AddString269, deleting wrapper28 and CreateStringBuffer81. Reconcile every
+whole native contribution/data/provider/CFG and original canonical/auxiliary
+boundary before relying on this lead. Preserve all compiler-versus-library
+special-member alternatives:the source mangling, vtable, parent destructor and
+source-unit placement alone do not decide whether this derived destructor was
+explicit or compiler generated. No canonical transition or exact credit is
+assigned to this discovery.
+
+Do not mechanically promote opaque list node-link/value leaves41E100/41F7F0/
+531D80/540280. Fresh prior-record review confirms R207/R229/R242/R243 already
+retain full typed construction/insertion/erase/consumer chains and genuine
+ordinary/intrusive alternatives; those old complete witnesses are not new
+ownership distinctions. The fresh whole-source survey and this source-owned
+StringBuffer lead are new evidence to pursue. No exact scope is added.
+
+Current counts:4254 resolved =1002 authored+2671 library+581 compiler,
+97 pending /3608 bytes and3252 excluded. Original1311 progress is1214 classified
+/97 left. The matrix rereads all97 full hashes/current pairs and3088 original
+structured record trails, preserving original R251116-row evidence. The
 reviewed-but-unknown end-state question is unanswered; do not shrink or falsely
 complete the original goal. Final complete Web MCP acceptance remains due
 after the requested remaining review.
 Exact60 /9883 bytes /60 units /eleven objects and authored denominator1973516
-are unchanged. All3534 CI tests, target-required tracking, current-pair/hash,
+are unchanged. All3542 CI tests, target-required tracking, current-pair/hash,
 exact full-row/input, progress and whitespace guards pass. Complete original/
-accepted R262 and retained R201/R186 cold replays pass. These commits remain
-local; no push was authorized. Use unchanged historical Git replays for old
-strict unknown snapshots rather than rewriting their verifiers or manifests.
+accepted R263 and full retained R129/R128/R163 cold replays pass. These commits
+remain local; no push was authorized. Use unchanged historical Git replays for
+old strict unknown snapshots rather than rewriting their verifiers/manifests.
 
 ### Historical R251/R252 context before R253 acceptance
 

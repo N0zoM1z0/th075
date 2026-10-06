@@ -13812,3 +13812,76 @@ Exact60 /9883 bytes /60 units /eleven objects and authored bytes1973516 remain
 unchanged. The original goal stays active. Final complete Web MCP acceptance
 remains due after the requested remaining-review end state; these commits
 remain local and no push was authorized.
+
+## R263 — complete CRT abs contribution with separate labs ambiguity retained
+
+R263 accepts only641DAA /11 as **inferred library** origin. The new witness is
+the whole original `abs.obj` contribution, not the isolated absolute-value body
+or nearby CRT functions. The source-associated name `_abs` remains provisional;
+int versus long declarations, original linker choices and an executable-wide
+compiler profile are not recovered. Separate641FB8 /11 and its long overload
+remain unknown despite matching the same two complete CRT alternatives.
+
+Pinned `libcmt.lib` member1282072 `build\intel\mt_obj\abs.obj`, SHA
+4c632f25febfd52d98ae13744634f8cc40db879ee39ce10d26741c82a31bac14,
+defines `_abs`11 and `__abs64`28 in sections2/5. Both full function-AUX extents
+and whole defining sections agree unmasked with contiguous native641DAA..
+641DD1,39 bytes in source order. The full28-byte auxiliary at641DB5 was not an
+existing canonical candidate; it gains no candidate, source or exact credit.
+All actual definitions, AUX records, selectionNODUPLICATES/alignment1 and whole
+normal CFGs/RET0 exits are retained. The [manifest](../config/crt-absolute-contribution-origin-evidence.json)
+inventories all eight initialized original source sections642, including debug
+metadata without invented target placement. Both actual code functions are
+field-free; source debug fields remain in their own full inventories.
+
+The archive survey reopens all146 normal SDK and678 CRT objects. SDK has no
+whole11 positive. CRT has the complete abs object and the separate single-code-
+function `labs.obj`, member1395380, SHA
+86696f544898d82669d95de2f5e199c684f0d5fee1bf4330d604cdd457251992.
+Its whole11 function and five-section source inventory remain alternatives at
+both native addresses. The isolated labs object does not supply the stronger
+multi-function contribution witness; no second origin is inferred from its
+match or proximity to independently accepted memcmp184.
+
+Fresh [ordinary controls](../tests/origin_probes/AbsoluteValueContribution.cpp)
+cold-build with pinned3077 /O1 /Oi /Ob0. All five ordinary initialized sections84,
+all actual source definitions/AUX/fields, one actual stdlib header and readonly
+layout12 `[4,4,8]` are preserved. The ordinary int/long11 expressions agree with
+both native candidates, four complete comparisons44. The complete ordinary
+wide expression28 instead retains four branch-order byte differences to the
+whole native auxiliary28. The public `_abs64` call is intrinsically lowered to
+its entire22-byte body under this profile; it remains a whole different extent,
+never padded or compared against a target prefix. These negatives do not erase
+the original int/long positives or identify the original compiler flags/type.
+
+The [CLI](../scripts/verify-crt-absolute-contribution-origins.py) replays entire
+unchanged R129 and R163 CLIs in the actual676e346 Git state with a read-only
+same-length source root and before/after verification of every tracked blob.
+R129 preserves all eight complete runtime primaries839/38 fields, cleanup24,
+14 anchors1762/43 fields,35 whole state sections423/32 fields, natural layout80/
+callback13, abs/labs/expression alternatives and the full retained R128/runtime/
+compiler/game/import graph. R163 preserves all12 original unknown candidates253,
+22 full SDK/ordinary controls484/22 fields, all29 sections602/six headers/layout16,
+five full runtime owners775 and five game parents8610/20 call windows. Old abs
+unknown snapshots and all original acceptance predicates remain immutable.
+Only pin-matching CSV EOL representations can be restored by the historical
+helper; no semantic ledger, source, predicate or manifest is projected or patched.
+
+Original-state and accepted-state R263 CLIs pass with these full cold graphs
+and the new whole controls. Only one literal canonical function/origin pair
+transitions. Seven earlier unrelated-row regression guards restore that exact
+validated predecessor before their existing R262/R261/R260/vector views; all
+unselected rows stay protected. Eight new checks reject losing the auxiliary,
+truncating/reordering the contribution, invented auxiliary credit, substituted
+COMDAT/returns, erased ordinary negatives, false labs/lifetime credit, altered
+old proof scopes, duplicate/substituted selected pairs and unrelated changes.
+
+All3542 CI checks, target-required tracking, all97 complete pending body hashes/
+literal pairs,3088 original structured record trails, all60 exact pairs/28
+unchanged source and exact inputs, progress freshness and whitespace guards
+pass. Counts are4254 resolved =1002 authored+2671 library+581 compiler,
+97 pending /3608 bytes and3252 excluded. Original1311 progress is1214 classified
+/97 left. Exact60 /9883 bytes /60 units /eleven objects and authored bytes1973516
+remain unchanged. The original goal stays active; final complete Web MCP
+acceptance remains due after the requested remaining-review end state. These
+commits stay local and no push was authorized.

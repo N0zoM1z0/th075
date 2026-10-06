@@ -1,0 +1,2617 @@
+{
+  "evidence_id": "R263",
+  "baseline_commit": "676e346fd905e65487cf1694eecdb2bbdcbfb70b",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "source": {
+    "archive": ".tools/msvc710/Vc7/lib/libcmt.lib",
+    "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+    "member_offset": 1282072,
+    "member": "build\\intel\\mt_obj\\abs.obj",
+    "member_sha256": "4c632f25febfd52d98ae13744634f8cc40db879ee39ce10d26741c82a31bac14",
+    "inventory": [
+      {
+        "source": {
+          "section": 1,
+          "flags": 1108344896,
+          "size": 239,
+          "definitions": [
+            {
+              "symbol": ".debug$S",
+              "offset": 0,
+              "section": 1,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$S",
+              "index": 4,
+              "aux_count": 1,
+              "aux_hex": "ef0000000000000000000000000000000000"
+            }
+          ]
+        },
+        "fields": [],
+        "source_sha256": "775d93bff375b189cb7ecb3b5340f1484b0d9a96bc58b639f6d6310012f6382e"
+      },
+      {
+        "source": {
+          "section": 2,
+          "flags": 1611665440,
+          "size": 11,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 2,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "_abs",
+              "offset": 0,
+              "section": 2,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 2,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 2,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 11,
+              "section": 2,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 6,
+              "aux_count": 1,
+              "aux_hex": "0b0000000000030008464c03000001000000"
+            },
+            {
+              "symbol": "_abs",
+              "index": 14,
+              "aux_count": 1,
+              "aux_hex": "100000000b0000004e020000000000000000"
+            },
+            {
+              "symbol": ".bf",
+              "index": 16,
+              "aux_count": 1,
+              "aux_hex": "000000002400000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 18,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 19,
+              "aux_count": 1,
+              "aux_hex": "000000002600000000000000000000000000"
+            }
+          ]
+        },
+        "fields": [],
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+      },
+      {
+        "source": {
+          "section": 3,
+          "flags": 1108348992,
+          "size": 122,
+          "definitions": [
+            {
+              "symbol": ".debug$S",
+              "offset": 0,
+              "section": 3,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$S",
+              "index": 8,
+              "aux_count": 1,
+              "aux_hex": "7a0000000300000000000000020005000000"
+            }
+          ]
+        },
+        "fields": [
+          {
+            "offset": 12,
+            "type_id": 7,
+            "type": "0x0007",
+            "symbol": "_abs",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 14,
+            "symbol_section": 2,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 88,
+            "type_id": 11,
+            "type": "0x000B",
+            "symbol": "_abs",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 14,
+            "symbol_section": 2,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 92,
+            "type_id": 10,
+            "type": "0x000A",
+            "symbol": "_abs",
+            "addend": 1627389952,
+            "local_symbol_offset": null,
+            "symbol_index": 14,
+            "symbol_section": 2,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "source_sha256": "d0601f2946a834d36a528d1a6b24001acff615cec2e8b102c8a88518f652e415"
+      },
+      {
+        "source": {
+          "section": 4,
+          "flags": 1108348992,
+          "size": 16,
+          "definitions": [
+            {
+              "symbol": ".debug$F",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$F",
+              "index": 21,
+              "aux_count": 1,
+              "aux_hex": "100000000100000000000000020005000000"
+            }
+          ]
+        },
+        "fields": [
+          {
+            "offset": 0,
+            "type_id": 7,
+            "type": "0x0007",
+            "symbol": "_abs",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 14,
+            "symbol_section": 2,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "source_sha256": "e12568ceca5a2cb56e8f0ca91f8b390d27ece98ec287a09b927d65ef588fa6ce"
+      },
+      {
+        "source": {
+          "section": 5,
+          "flags": 1611665440,
+          "size": 28,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 5,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "__abs64",
+              "offset": 0,
+              "section": 5,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 5,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 5,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 28,
+              "section": 5,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 23,
+              "aux_count": 1,
+              "aux_hex": "1c00000000000300c937303f000001000000"
+            },
+            {
+              "symbol": "__abs64",
+              "index": 27,
+              "aux_count": 1,
+              "aux_hex": "1d0000001c0000002e030000000000000000"
+            },
+            {
+              "symbol": ".bf",
+              "index": 29,
+              "aux_count": 1,
+              "aux_hex": "000000002a00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 31,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 32,
+              "aux_count": 1,
+              "aux_hex": "000000002c00000000000000000000000000"
+            }
+          ]
+        },
+        "fields": [],
+        "source_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49"
+      },
+      {
+        "source": {
+          "section": 6,
+          "flags": 1108348992,
+          "size": 122,
+          "definitions": [
+            {
+              "symbol": ".debug$S",
+              "offset": 0,
+              "section": 6,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$S",
+              "index": 25,
+              "aux_count": 1,
+              "aux_hex": "7a0000000300000000000000050005000000"
+            }
+          ]
+        },
+        "fields": [
+          {
+            "offset": 12,
+            "type_id": 7,
+            "type": "0x0007",
+            "symbol": "__abs64",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 27,
+            "symbol_section": 5,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 88,
+            "type_id": 11,
+            "type": "0x000B",
+            "symbol": "__abs64",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 27,
+            "symbol_section": 5,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 92,
+            "type_id": 10,
+            "type": "0x000A",
+            "symbol": "__abs64",
+            "addend": 1593835520,
+            "local_symbol_offset": null,
+            "symbol_index": 27,
+            "symbol_section": 5,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "source_sha256": "ac3fab0a0dc359401945ed9197225eb685d07959c6c6b58b3e78b118457a823a"
+      },
+      {
+        "source": {
+          "section": 7,
+          "flags": 1108348992,
+          "size": 16,
+          "definitions": [
+            {
+              "symbol": ".debug$F",
+              "offset": 0,
+              "section": 7,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$F",
+              "index": 34,
+              "aux_count": 1,
+              "aux_hex": "100000000100000000000000050005000000"
+            }
+          ]
+        },
+        "fields": [
+          {
+            "offset": 0,
+            "type_id": 7,
+            "type": "0x0007",
+            "symbol": "__abs64",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 27,
+            "symbol_section": 5,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "source_sha256": "a16110562d664d5af7d22d7f1f0391a2180b9ff80e3b22b16cb4bfdcff5d9607"
+      },
+      {
+        "source": {
+          "section": 8,
+          "flags": 1108344896,
+          "size": 88,
+          "definitions": [
+            {
+              "symbol": ".debug$T",
+              "offset": 0,
+              "section": 8,
+              "type": 0,
+              "storage": 3
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".debug$T",
+              "index": 36,
+              "aux_count": 1,
+              "aux_hex": "580000000000000000000000000000000000"
+            }
+          ]
+        },
+        "fields": [],
+        "source_sha256": "68d9297cf019a242822b73338871c22de62f95ebd389e3f1d284faa9e4ac18bf"
+      }
+    ]
+  },
+  "code": [
+    {
+      "address": "0x00641DAA",
+      "size": 11,
+      "symbol": "_abs",
+      "source": {
+        "section": 2,
+        "flags": 1611665440,
+        "size": 11,
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "_abs",
+            "offset": 0,
+            "section": 2,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 2,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 2,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 11,
+            "section": 2,
+            "type": 0,
+            "storage": 101
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": ".text",
+            "index": 6,
+            "aux_count": 1,
+            "aux_hex": "0b0000000000030008464c03000001000000"
+          },
+          {
+            "symbol": "_abs",
+            "index": 14,
+            "aux_count": 1,
+            "aux_hex": "100000000b0000004e020000000000000000"
+          },
+          {
+            "symbol": ".bf",
+            "index": 16,
+            "aux_count": 1,
+            "aux_hex": "000000002400000000000000000000000000"
+          },
+          {
+            "symbol": ".lf",
+            "index": 18,
+            "aux_count": 0,
+            "aux_hex": ""
+          },
+          {
+            "symbol": ".ef",
+            "index": 19,
+            "aux_count": 1,
+            "aux_hex": "000000002600000000000000000000000000"
+          }
+        ]
+      },
+      "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+      "body_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+      "fields": [],
+      "flow": {
+        "code_size": 11,
+        "whole_size": 11,
+        "roots": [
+          0
+        ],
+        "instruction_count": 5,
+        "table_size": 0,
+        "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "returns": [
+          {
+            "offset": 10,
+            "cleanup": 0
+          }
+        ],
+        "tails": [],
+        "indirect_calls": []
+      },
+      "function": {
+        "address": "0x00641DAA",
+        "size": "11",
+        "span_end": "0x00641DB4",
+        "current_name": "FUN_00641daa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R129; config/short-runtime-origin-evidence.json; scripts/repo-python scripts/verify-short-runtime-origins.py",
+        "owner": "",
+        "notes": "Pending: full abs/labs vendor alternatives and cold ordinary int/long expression controls emit identical 11-byte bodies; nearby complete runtime context and game callers do not distinguish source ownership, original symbol or type"
+      },
+      "origin": {
+        "address": "0x00641DAA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "address": "0x00641DB5",
+      "size": 28,
+      "symbol": "__abs64",
+      "source": {
+        "section": 5,
+        "flags": 1611665440,
+        "size": 28,
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 5,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "__abs64",
+            "offset": 0,
+            "section": 5,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 5,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 5,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 28,
+            "section": 5,
+            "type": 0,
+            "storage": 101
+          }
+        ],
+        "aux_records": [
+          {
+            "symbol": ".text",
+            "index": 23,
+            "aux_count": 1,
+            "aux_hex": "1c00000000000300c937303f000001000000"
+          },
+          {
+            "symbol": "__abs64",
+            "index": 27,
+            "aux_count": 1,
+            "aux_hex": "1d0000001c0000002e030000000000000000"
+          },
+          {
+            "symbol": ".bf",
+            "index": 29,
+            "aux_count": 1,
+            "aux_hex": "000000002a00000000000000000000000000"
+          },
+          {
+            "symbol": ".lf",
+            "index": 31,
+            "aux_count": 0,
+            "aux_hex": ""
+          },
+          {
+            "symbol": ".ef",
+            "index": 32,
+            "aux_count": 1,
+            "aux_hex": "000000002c00000000000000000000000000"
+          }
+        ]
+      },
+      "source_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49",
+      "body_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49",
+      "fields": [],
+      "flow": {
+        "code_size": 28,
+        "whole_size": 28,
+        "roots": [
+          0
+        ],
+        "instruction_count": 12,
+        "table_size": 0,
+        "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "returns": [
+          {
+            "offset": 27,
+            "cleanup": 0
+          }
+        ],
+        "tails": [],
+        "indirect_calls": []
+      },
+      "function": null,
+      "origin": null
+    }
+  ],
+  "span": {
+    "address": "0x00641DAA",
+    "end": "0x00641DD1",
+    "size": 39,
+    "order": [
+      2,
+      5
+    ]
+  },
+  "functions": [
+    {
+      "address": "0x00641DAA",
+      "size": 11,
+      "original_function": {
+        "address": "0x00641DAA",
+        "size": "11",
+        "span_end": "0x00641DB4",
+        "current_name": "FUN_00641daa",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R129; config/short-runtime-origin-evidence.json; scripts/repo-python scripts/verify-short-runtime-origins.py",
+        "owner": "",
+        "notes": "Pending: full abs/labs vendor alternatives and cold ordinary int/long expression controls emit identical 11-byte bodies; nearby complete runtime context and game callers do not distinguish source ownership, original symbol or type"
+      },
+      "original_origin": {
+        "address": "0x00641DAA",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x00641DAA",
+        "size": "11",
+        "span_end": "0x00641DB4",
+        "current_name": "FUN_00641daa",
+        "proposed_name": "_abs",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R263",
+        "owner": "library",
+        "notes": "Inferred library origin from complete original abs.obj source-order contribution: whole abs11 plus adjacent abs64 auxiliary28, actual definitions/AUX/COMDAT and full CFGs. Original spelling and int/long declaration remain provisional; complete abs/labs and ordinary expressions are retained. The auxiliary28 gains no candidate or exact credit; the separate labs-shaped11 remains unknown. No source/ABI/mapping/exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x00641DAA",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "inferred-whole-source-ordered-crt-abs-object-with-complete-abs64-auxiliary-and-retained-ordinary-int-long-wide-alternatives",
+        "evidence_id": "R263"
+      }
+    }
+  ],
+  "survey": {
+    "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+    "archives": [
+      {
+        "archive": ".tools/msvc710/Vc7/PlatformSDK/Lib/d3dx8.lib",
+        "archive_sha256": "39a8e21889a7c1f0b966f04a9e7d392de14ddebb3e091dfa1e5ce3e19564fc28",
+        "scanned_coff_members": 146,
+        "matches": []
+      },
+      {
+        "archive": ".tools/msvc710/Vc7/lib/libcmt.lib",
+        "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+        "scanned_coff_members": 678,
+        "matches": [
+          {
+            "member_offset": 1282072,
+            "member": "build\\intel\\mt_obj\\abs.obj",
+            "member_sha256": "4c632f25febfd52d98ae13744634f8cc40db879ee39ce10d26741c82a31bac14",
+            "source": {
+              "section": 2,
+              "flags": 1611665440,
+              "size": 11,
+              "definitions": [
+                {
+                  "symbol": ".text",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 3
+                },
+                {
+                  "symbol": "_abs",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 32,
+                  "storage": 2
+                },
+                {
+                  "symbol": ".bf",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                },
+                {
+                  "symbol": ".lf",
+                  "offset": 3,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                },
+                {
+                  "symbol": ".ef",
+                  "offset": 11,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                }
+              ],
+              "aux_records": [
+                {
+                  "symbol": ".text",
+                  "index": 6,
+                  "aux_count": 1,
+                  "aux_hex": "0b0000000000030008464c03000001000000"
+                },
+                {
+                  "symbol": "_abs",
+                  "index": 14,
+                  "aux_count": 1,
+                  "aux_hex": "100000000b0000004e020000000000000000"
+                },
+                {
+                  "symbol": ".bf",
+                  "index": 16,
+                  "aux_count": 1,
+                  "aux_hex": "000000002400000000000000000000000000"
+                },
+                {
+                  "symbol": ".lf",
+                  "index": 18,
+                  "aux_count": 0,
+                  "aux_hex": ""
+                },
+                {
+                  "symbol": ".ef",
+                  "index": 19,
+                  "aux_count": 1,
+                  "aux_hex": "000000002600000000000000000000000000"
+                }
+              ]
+            },
+            "fields": [],
+            "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+            "targets": [
+              "0x00641DAA",
+              "0x00641FB8"
+            ],
+            "inventory": [
+              {
+                "source": {
+                  "section": 1,
+                  "flags": 1108344896,
+                  "size": 239,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$S",
+                      "offset": 0,
+                      "section": 1,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$S",
+                      "index": 4,
+                      "aux_count": 1,
+                      "aux_hex": "ef0000000000000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "775d93bff375b189cb7ecb3b5340f1484b0d9a96bc58b639f6d6310012f6382e"
+              },
+              {
+                "source": {
+                  "section": 2,
+                  "flags": 1611665440,
+                  "size": 11,
+                  "definitions": [
+                    {
+                      "symbol": ".text",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 3
+                    },
+                    {
+                      "symbol": "_abs",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 32,
+                      "storage": 2
+                    },
+                    {
+                      "symbol": ".bf",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".lf",
+                      "offset": 3,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".ef",
+                      "offset": 11,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".text",
+                      "index": 6,
+                      "aux_count": 1,
+                      "aux_hex": "0b0000000000030008464c03000001000000"
+                    },
+                    {
+                      "symbol": "_abs",
+                      "index": 14,
+                      "aux_count": 1,
+                      "aux_hex": "100000000b0000004e020000000000000000"
+                    },
+                    {
+                      "symbol": ".bf",
+                      "index": 16,
+                      "aux_count": 1,
+                      "aux_hex": "000000002400000000000000000000000000"
+                    },
+                    {
+                      "symbol": ".lf",
+                      "index": 18,
+                      "aux_count": 0,
+                      "aux_hex": ""
+                    },
+                    {
+                      "symbol": ".ef",
+                      "index": 19,
+                      "aux_count": 1,
+                      "aux_hex": "000000002600000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+              },
+              {
+                "source": {
+                  "section": 3,
+                  "flags": 1108348992,
+                  "size": 122,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$S",
+                      "offset": 0,
+                      "section": 3,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$S",
+                      "index": 8,
+                      "aux_count": 1,
+                      "aux_hex": "7a0000000300000000000000020005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 12,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "_abs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 88,
+                    "type_id": 11,
+                    "type": "0x000B",
+                    "symbol": "_abs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 92,
+                    "type_id": 10,
+                    "type": "0x000A",
+                    "symbol": "_abs",
+                    "addend": 1627389952,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "d0601f2946a834d36a528d1a6b24001acff615cec2e8b102c8a88518f652e415"
+              },
+              {
+                "source": {
+                  "section": 4,
+                  "flags": 1108348992,
+                  "size": 16,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$F",
+                      "offset": 0,
+                      "section": 4,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$F",
+                      "index": 21,
+                      "aux_count": 1,
+                      "aux_hex": "100000000100000000000000020005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 0,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "_abs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "e12568ceca5a2cb56e8f0ca91f8b390d27ece98ec287a09b927d65ef588fa6ce"
+              },
+              {
+                "source": {
+                  "section": 5,
+                  "flags": 1611665440,
+                  "size": 28,
+                  "definitions": [
+                    {
+                      "symbol": ".text",
+                      "offset": 0,
+                      "section": 5,
+                      "type": 0,
+                      "storage": 3
+                    },
+                    {
+                      "symbol": "__abs64",
+                      "offset": 0,
+                      "section": 5,
+                      "type": 32,
+                      "storage": 2
+                    },
+                    {
+                      "symbol": ".bf",
+                      "offset": 0,
+                      "section": 5,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".lf",
+                      "offset": 3,
+                      "section": 5,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".ef",
+                      "offset": 28,
+                      "section": 5,
+                      "type": 0,
+                      "storage": 101
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".text",
+                      "index": 23,
+                      "aux_count": 1,
+                      "aux_hex": "1c00000000000300c937303f000001000000"
+                    },
+                    {
+                      "symbol": "__abs64",
+                      "index": 27,
+                      "aux_count": 1,
+                      "aux_hex": "1d0000001c0000002e030000000000000000"
+                    },
+                    {
+                      "symbol": ".bf",
+                      "index": 29,
+                      "aux_count": 1,
+                      "aux_hex": "000000002a00000000000000000000000000"
+                    },
+                    {
+                      "symbol": ".lf",
+                      "index": 31,
+                      "aux_count": 0,
+                      "aux_hex": ""
+                    },
+                    {
+                      "symbol": ".ef",
+                      "index": 32,
+                      "aux_count": 1,
+                      "aux_hex": "000000002c00000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49"
+              },
+              {
+                "source": {
+                  "section": 6,
+                  "flags": 1108348992,
+                  "size": 122,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$S",
+                      "offset": 0,
+                      "section": 6,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$S",
+                      "index": 25,
+                      "aux_count": 1,
+                      "aux_hex": "7a0000000300000000000000050005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 12,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "__abs64",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 27,
+                    "symbol_section": 5,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 88,
+                    "type_id": 11,
+                    "type": "0x000B",
+                    "symbol": "__abs64",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 27,
+                    "symbol_section": 5,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 92,
+                    "type_id": 10,
+                    "type": "0x000A",
+                    "symbol": "__abs64",
+                    "addend": 1593835520,
+                    "local_symbol_offset": null,
+                    "symbol_index": 27,
+                    "symbol_section": 5,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "ac3fab0a0dc359401945ed9197225eb685d07959c6c6b58b3e78b118457a823a"
+              },
+              {
+                "source": {
+                  "section": 7,
+                  "flags": 1108348992,
+                  "size": 16,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$F",
+                      "offset": 0,
+                      "section": 7,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$F",
+                      "index": 34,
+                      "aux_count": 1,
+                      "aux_hex": "100000000100000000000000050005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 0,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "__abs64",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 27,
+                    "symbol_section": 5,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "a16110562d664d5af7d22d7f1f0391a2180b9ff80e3b22b16cb4bfdcff5d9607"
+              },
+              {
+                "source": {
+                  "section": 8,
+                  "flags": 1108344896,
+                  "size": 88,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$T",
+                      "offset": 0,
+                      "section": 8,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$T",
+                      "index": 36,
+                      "aux_count": 1,
+                      "aux_hex": "580000000000000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "68d9297cf019a242822b73338871c22de62f95ebd389e3f1d284faa9e4ac18bf"
+              }
+            ]
+          },
+          {
+            "member_offset": 1395380,
+            "member": "build\\intel\\mt_obj\\labs.obj",
+            "member_sha256": "86696f544898d82669d95de2f5e199c684f0d5fee1bf4330d604cdd457251992",
+            "source": {
+              "section": 2,
+              "flags": 1611665440,
+              "size": 11,
+              "definitions": [
+                {
+                  "symbol": ".text",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 3
+                },
+                {
+                  "symbol": "_labs",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 32,
+                  "storage": 2
+                },
+                {
+                  "symbol": ".bf",
+                  "offset": 0,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                },
+                {
+                  "symbol": ".lf",
+                  "offset": 3,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                },
+                {
+                  "symbol": ".ef",
+                  "offset": 11,
+                  "section": 2,
+                  "type": 0,
+                  "storage": 101
+                }
+              ],
+              "aux_records": [
+                {
+                  "symbol": ".text",
+                  "index": 6,
+                  "aux_count": 1,
+                  "aux_hex": "0b0000000000030008464c03000001000000"
+                },
+                {
+                  "symbol": "_labs",
+                  "index": 14,
+                  "aux_count": 1,
+                  "aux_hex": "100000000b000000d6010000000000000000"
+                },
+                {
+                  "symbol": ".bf",
+                  "index": 16,
+                  "aux_count": 1,
+                  "aux_hex": "000000002600000000000000000000000000"
+                },
+                {
+                  "symbol": ".lf",
+                  "index": 18,
+                  "aux_count": 0,
+                  "aux_hex": ""
+                },
+                {
+                  "symbol": ".ef",
+                  "index": 19,
+                  "aux_count": 1,
+                  "aux_hex": "000000002800000000000000000000000000"
+                }
+              ]
+            },
+            "fields": [],
+            "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+            "targets": [
+              "0x00641DAA",
+              "0x00641FB8"
+            ],
+            "inventory": [
+              {
+                "source": {
+                  "section": 1,
+                  "flags": 1108344896,
+                  "size": 239,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$S",
+                      "offset": 0,
+                      "section": 1,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$S",
+                      "index": 4,
+                      "aux_count": 1,
+                      "aux_hex": "ef0000000000000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "0aaaecbd9d292d0500f6072b7d1ce70924c1b2b3bb5946b9dee966419031b76d"
+              },
+              {
+                "source": {
+                  "section": 2,
+                  "flags": 1611665440,
+                  "size": 11,
+                  "definitions": [
+                    {
+                      "symbol": ".text",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 3
+                    },
+                    {
+                      "symbol": "_labs",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 32,
+                      "storage": 2
+                    },
+                    {
+                      "symbol": ".bf",
+                      "offset": 0,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".lf",
+                      "offset": 3,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    },
+                    {
+                      "symbol": ".ef",
+                      "offset": 11,
+                      "section": 2,
+                      "type": 0,
+                      "storage": 101
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".text",
+                      "index": 6,
+                      "aux_count": 1,
+                      "aux_hex": "0b0000000000030008464c03000001000000"
+                    },
+                    {
+                      "symbol": "_labs",
+                      "index": 14,
+                      "aux_count": 1,
+                      "aux_hex": "100000000b000000d6010000000000000000"
+                    },
+                    {
+                      "symbol": ".bf",
+                      "index": 16,
+                      "aux_count": 1,
+                      "aux_hex": "000000002600000000000000000000000000"
+                    },
+                    {
+                      "symbol": ".lf",
+                      "index": 18,
+                      "aux_count": 0,
+                      "aux_hex": ""
+                    },
+                    {
+                      "symbol": ".ef",
+                      "index": 19,
+                      "aux_count": 1,
+                      "aux_hex": "000000002800000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0"
+              },
+              {
+                "source": {
+                  "section": 3,
+                  "flags": 1108348992,
+                  "size": 124,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$S",
+                      "offset": 0,
+                      "section": 3,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$S",
+                      "index": 8,
+                      "aux_count": 1,
+                      "aux_hex": "7c0000000300000000000000020005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 12,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "_labs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 88,
+                    "type_id": 11,
+                    "type": "0x000B",
+                    "symbol": "_labs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  },
+                  {
+                    "offset": 92,
+                    "type_id": 10,
+                    "type": "0x000A",
+                    "symbol": "_labs",
+                    "addend": 1811939328,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "3f097f3bfc88457b6b3a1cae3224c5f730670780b7bb2ae06625bebcc8ba2840"
+              },
+              {
+                "source": {
+                  "section": 4,
+                  "flags": 1108348992,
+                  "size": 16,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$F",
+                      "offset": 0,
+                      "section": 4,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$F",
+                      "index": 21,
+                      "aux_count": 1,
+                      "aux_hex": "100000000100000000000000020005000000"
+                    }
+                  ]
+                },
+                "fields": [
+                  {
+                    "offset": 0,
+                    "type_id": 7,
+                    "type": "0x0007",
+                    "symbol": "_labs",
+                    "addend": 0,
+                    "local_symbol_offset": null,
+                    "symbol_index": 14,
+                    "symbol_section": 2,
+                    "symbol_offset": 0,
+                    "symbol_type": 32,
+                    "symbol_storage": 2
+                  }
+                ],
+                "source_sha256": "e12568ceca5a2cb56e8f0ca91f8b390d27ece98ec287a09b927d65ef588fa6ce"
+              },
+              {
+                "source": {
+                  "section": 5,
+                  "flags": 1108344896,
+                  "size": 88,
+                  "definitions": [
+                    {
+                      "symbol": ".debug$T",
+                      "offset": 0,
+                      "section": 5,
+                      "type": 0,
+                      "storage": 3
+                    }
+                  ],
+                  "aux_records": [
+                    {
+                      "symbol": ".debug$T",
+                      "index": 23,
+                      "aux_count": 1,
+                      "aux_hex": "580000000000000000000000000000000000"
+                    }
+                  ]
+                },
+                "fields": [],
+                "source_sha256": "865f4d705a764a2cecc37f49d99ef49a55fe20fa5bbc7187b90372be9ce6eecb"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "limitation": "Complete11 source equality and original object inventories are discovery only. No canonical transition, namespace, caller or complete native placement proof."
+  },
+  "control": {
+    "source": "tests/origin_probes/AbsoluteValueContribution.cpp",
+    "source_sha256": "ef21ec5309fc45365af87d4a77901bca39b67d0c8ccd0d5fe166135e8479d187",
+    "profile": [
+      "/O1",
+      "/Oi",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/showIncludes"
+    ],
+    "headers": {
+      ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946"
+    },
+    "emission": [
+      {
+        "section": 3,
+        "name": ".rdata",
+        "size": 12,
+        "flags": 1076887616,
+        "source_sha256": "ec9c5e20719b0af2be05341b8334645de19bd812f21e25708d2075f37a3af558",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".rdata",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?AbsoluteValueLayout@@3QBKB",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "name": ".text",
+        "size": 11,
+        "flags": 1611665440,
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+            "offset": 0,
+            "section": 4,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 11,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 7,
+        "name": ".text",
+        "size": 11,
+        "flags": 1611665440,
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 7,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+            "offset": 0,
+            "section": 7,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 11,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 10,
+        "name": ".text",
+        "size": 28,
+        "flags": 1611665440,
+        "source_sha256": "0a7ace34410cfe262fcba18f6474d2fa449d2ea4ed8819384afacb7e145e9a5c",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?OrdinaryAbsoluteWide@@YA_J_J@Z",
+            "offset": 0,
+            "section": 10,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 28,
+            "section": 10,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 13,
+        "name": ".text",
+        "size": 22,
+        "flags": 1611665440,
+        "source_sha256": "7e23455f0caa1ff26a58556e7b9138d4ce01486e0f04b2b727b564c82a66ebac",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 13,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?PublicAbsoluteWide@@YA_J_J@Z",
+            "offset": 0,
+            "section": 13,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 3,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 22,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "section": 3,
+        "source": {
+          "section": 3,
+          "flags": 1076887616,
+          "size": 12,
+          "definitions": [
+            {
+              "symbol": ".rdata",
+              "offset": 0,
+              "section": 3,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?AbsoluteValueLayout@@3QBKB",
+              "offset": 0,
+              "section": 3,
+              "type": 0,
+              "storage": 2
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".rdata",
+              "index": 14,
+              "aux_count": 1,
+              "aux_hex": "0c000000000000006a1df842000000000000"
+            },
+            {
+              "symbol": "?AbsoluteValueLayout@@3QBKB",
+              "index": 16,
+              "aux_count": 0,
+              "aux_hex": ""
+            }
+          ],
+          "coff_line_table": []
+        },
+        "source_sha256": "ec9c5e20719b0af2be05341b8334645de19bd812f21e25708d2075f37a3af558",
+        "fields": []
+      },
+      {
+        "section": 4,
+        "source": {
+          "section": 4,
+          "flags": 1611665440,
+          "size": 11,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+              "offset": 0,
+              "section": 4,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 11,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 17,
+              "aux_count": 1,
+              "aux_hex": "0b0000000000030008464c03000001000000"
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+              "index": 29,
+              "aux_count": 1,
+              "aux_hex": "1f0000000b00000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 31,
+              "aux_count": 1,
+              "aux_hex": "000000000400000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 33,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 34,
+              "aux_count": 1,
+              "aux_hex": "000000000600000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              29,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              10,
+              2
+            ]
+          ]
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      },
+      {
+        "section": 7,
+        "source": {
+          "section": 7,
+          "flags": 1611665440,
+          "size": 11,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 7,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+              "offset": 0,
+              "section": 7,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 11,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 38,
+              "aux_count": 1,
+              "aux_hex": "0b0000000000030008464c03000001000000"
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+              "index": 42,
+              "aux_count": 1,
+              "aux_hex": "2c0000000b00000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 44,
+              "aux_count": 1,
+              "aux_hex": "000000000800000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 46,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 47,
+              "aux_count": 1,
+              "aux_hex": "000000000a00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              42,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              10,
+              2
+            ]
+          ]
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      },
+      {
+        "section": 10,
+        "source": {
+          "section": 10,
+          "flags": 1611665440,
+          "size": 28,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 10,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteWide@@YA_J_J@Z",
+              "offset": 0,
+              "section": 10,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 10,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 10,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 28,
+              "section": 10,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 51,
+              "aux_count": 1,
+              "aux_hex": "1c00000000000300de897c1d000001000000"
+            },
+            {
+              "symbol": "?OrdinaryAbsoluteWide@@YA_J_J@Z",
+              "index": 55,
+              "aux_count": 1,
+              "aux_hex": "390000001c00000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 57,
+              "aux_count": 1,
+              "aux_hex": "000000000c00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 59,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 60,
+              "aux_count": 1,
+              "aux_hex": "000000000e00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              55,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              27,
+              2
+            ]
+          ]
+        },
+        "source_sha256": "0a7ace34410cfe262fcba18f6474d2fa449d2ea4ed8819384afacb7e145e9a5c",
+        "fields": []
+      },
+      {
+        "section": 13,
+        "source": {
+          "section": 13,
+          "flags": 1611665440,
+          "size": 22,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 13,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?PublicAbsoluteWide@@YA_J_J@Z",
+              "offset": 0,
+              "section": 13,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 3,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 22,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 64,
+              "aux_count": 1,
+              "aux_hex": "1600000000000300603ef53a000001000000"
+            },
+            {
+              "symbol": "?PublicAbsoluteWide@@YA_J_J@Z",
+              "index": 68,
+              "aux_count": 1,
+              "aux_hex": "460000001600000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 70,
+              "aux_count": 1,
+              "aux_hex": "000000001000000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 72,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 73,
+              "aux_count": 1,
+              "aux_hex": "000000001200000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              68,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              21,
+              2
+            ]
+          ]
+        },
+        "source_sha256": "7e23455f0caa1ff26a58556e7b9138d4ce01486e0f04b2b727b564c82a66ebac",
+        "fields": []
+      }
+    ],
+    "comparisons": [
+      {
+        "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+        "address": "0x00641DAA",
+        "size": 11,
+        "definition": {
+          "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      },
+      {
+        "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+        "address": "0x00641FB8",
+        "size": 11,
+        "definition": {
+          "symbol": "?OrdinaryAbsoluteInt@@YAHH@Z",
+          "offset": 0,
+          "section": 4,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      },
+      {
+        "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+        "address": "0x00641DAA",
+        "size": 11,
+        "definition": {
+          "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+          "offset": 0,
+          "section": 7,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      },
+      {
+        "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+        "address": "0x00641FB8",
+        "size": 11,
+        "definition": {
+          "symbol": "?OrdinaryAbsoluteLong@@YAJJ@Z",
+          "offset": 0,
+          "section": 7,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "9fd340a4dcfae5ef63930c2ebb8409a9e976e17debb6337eb89f2d844582cef0",
+        "fields": []
+      }
+    ],
+    "alternatives": [
+      {
+        "symbol": "?OrdinaryAbsoluteWide@@YA_J_J@Z",
+        "size": 28,
+        "definition": {
+          "symbol": "?OrdinaryAbsoluteWide@@YA_J_J@Z",
+          "offset": 0,
+          "section": 10,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "0a7ace34410cfe262fcba18f6474d2fa449d2ea4ed8819384afacb7e145e9a5c",
+        "fields": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [esp + 8]"
+          },
+          {
+            "offset": 4,
+            "mnemonic": "test",
+            "operands": "ecx, ecx"
+          },
+          {
+            "offset": 6,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [esp + 4]"
+          },
+          {
+            "offset": 10,
+            "mnemonic": "jg",
+            "operands": "0x19"
+          },
+          {
+            "offset": 12,
+            "mnemonic": "jl",
+            "operands": "0x12"
+          },
+          {
+            "offset": 14,
+            "mnemonic": "test",
+            "operands": "eax, eax"
+          },
+          {
+            "offset": 16,
+            "mnemonic": "jae",
+            "operands": "0x19"
+          },
+          {
+            "offset": 18,
+            "mnemonic": "neg",
+            "operands": "eax"
+          },
+          {
+            "offset": 20,
+            "mnemonic": "adc",
+            "operands": "ecx, 0"
+          },
+          {
+            "offset": 23,
+            "mnemonic": "neg",
+            "operands": "ecx"
+          },
+          {
+            "offset": 25,
+            "mnemonic": "mov",
+            "operands": "edx, ecx"
+          },
+          {
+            "offset": 27,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "target": "0x00641DB5",
+        "target_size": 28,
+        "target_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49",
+        "whole_equal": false,
+        "whole_same_size_differences": 4
+      },
+      {
+        "symbol": "?PublicAbsoluteWide@@YA_J_J@Z",
+        "size": 22,
+        "definition": {
+          "symbol": "?PublicAbsoluteWide@@YA_J_J@Z",
+          "offset": 0,
+          "section": 13,
+          "type": 32,
+          "storage": 2
+        },
+        "source_sha256": "7e23455f0caa1ff26a58556e7b9138d4ce01486e0f04b2b727b564c82a66ebac",
+        "fields": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [esp + 8]"
+          },
+          {
+            "offset": 4,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [esp + 4]"
+          },
+          {
+            "offset": 8,
+            "mnemonic": "cdq",
+            "operands": ""
+          },
+          {
+            "offset": 9,
+            "mnemonic": "xor",
+            "operands": "eax, edx"
+          },
+          {
+            "offset": 11,
+            "mnemonic": "xor",
+            "operands": "ecx, edx"
+          },
+          {
+            "offset": 13,
+            "mnemonic": "sub",
+            "operands": "ecx, edx"
+          },
+          {
+            "offset": 15,
+            "mnemonic": "sbb",
+            "operands": "eax, edx"
+          },
+          {
+            "offset": 17,
+            "mnemonic": "mov",
+            "operands": "edx, eax"
+          },
+          {
+            "offset": 19,
+            "mnemonic": "mov",
+            "operands": "eax, ecx"
+          },
+          {
+            "offset": 21,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "target": "0x00641DB5",
+        "target_size": 28,
+        "target_sha256": "b1fb78a7a0609721c0522bb778e7a03116b0640533a49ea555072a4a439e4f49",
+        "whole_equal": false,
+        "whole_same_size_differences": null
+      }
+    ],
+    "layout": [
+      4,
+      4,
+      8
+    ]
+  },
+  "history": [
+    {
+      "evidence_id": "R129",
+      "commit": "676e346fd905e65487cf1694eecdb2bbdcbfb70b",
+      "root_name": "r263b",
+      "source_root_characters": 59,
+      "verifier": "scripts/verify-short-runtime-origins.py",
+      "input_sha256": {
+        "scripts/verify-short-runtime-origins.py": "ab3ac94cadf02901da8fcc825d1f137a3d1686c593f90b98a1b2405bfbed3eba",
+        "config/short-runtime-origin-evidence.json": "d861fd27d8f069e1dd23ce07f57bc2d28189e5ee773e89a5a4ad758c5a7b41fc",
+        "probes/VC7ShortRuntimeLayout.cpp": "ce91806f72ba8eb68fc0370a8dcd3c6221d5377408c56542135b60c0118f9449",
+        "probes/VC7AbsOriginAlternatives.cpp": "2591dfc40e67edeca47d98193acefce5aa78ba8cb887c1a952ab047d2af241da"
+      },
+      "cold_prerequisites": []
+    },
+    {
+      "evidence_id": "R163",
+      "commit": "676e346fd905e65487cf1694eecdb2bbdcbfb70b",
+      "root_name": "r263b",
+      "source_root_characters": 59,
+      "verifier": "scripts/verify-math-overload-origins.py",
+      "input_sha256": {
+        "scripts/verify-math-overload-origins.py": "b5d44c359b068496ed59d030573859d5cd895b044216bb1c5e1f615396d03d81",
+        "config/math-overload-origin-evidence.json": "370786e3232ada4f77a32f1840086273c09d9d2deef44302d0c3b8960c4b1fa9",
+        "probes/VC7MathOverloadContexts.cpp": "2ecce1fdb27510097f9a19d7f551e5cb324a6863a547ba7c4efb8f9da1109e72",
+        "probes/VC7AbsOriginAlternatives.cpp": "2591dfc40e67edeca47d98193acefce5aa78ba8cb887c1a952ab047d2af241da"
+      },
+      "cold_prerequisites": []
+    }
+  ],
+  "retained_sha256": {
+    "config/short-runtime-origin-evidence.json": "d861fd27d8f069e1dd23ce07f57bc2d28189e5ee773e89a5a4ad758c5a7b41fc",
+    "scripts/verify-short-runtime-origins.py": "ab3ac94cadf02901da8fcc825d1f137a3d1686c593f90b98a1b2405bfbed3eba",
+    "config/math-overload-origin-evidence.json": "370786e3232ada4f77a32f1840086273c09d9d2deef44302d0c3b8960c4b1fa9",
+    "scripts/verify-math-overload-origins.py": "b5d44c359b068496ed59d030573859d5cd895b044216bb1c5e1f615396d03d81",
+    "probes/VC7AbsOriginAlternatives.cpp": "2591dfc40e67edeca47d98193acefce5aa78ba8cb887c1a952ab047d2af241da",
+    "config/sdk-identifier-contribution-origin-evidence.json": "611d872cdf46766f61eba3abdbed4190158e45726c5a9ef295b8d574c502db6d",
+    "scripts/verify-sdk-identifier-contribution-origins.py": "fbe4ff467c3f9a0c0c0ab1dad62f7c5dff0976625e9b5f34980f1935f75a9b4e",
+    "scripts/origin_history.py": "aaf7cd0a5894ff4e6e1c6b26d1028a4f550928a0ed0e69e71ae746e107dc906a"
+  },
+  "unselected_sha256": {
+    "functions.csv": "2128d35e2bec6effe46a63525c8550b9b22982b0ec7f8ba2b1c6791abbaeeb57",
+    "function-origins.csv": "fa1b34bb6082d92fcf70ff8f11ffd993c25aae03e834af9f0baf4dff9f324153"
+  },
+  "protected_pairs": [
+    {
+      "function": {
+        "address": "0x00641FB8",
+        "size": "11",
+        "span_end": "0x00641FC2",
+        "current_name": "FUN_00641fb8",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00641FB8",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00438A60",
+        "size": "17",
+        "span_end": "0x00438A70",
+        "current_name": "FUN_00438a60",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x00438A60",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0040D900",
+        "size": "17",
+        "span_end": "0x0040D910",
+        "current_name": "FUN_0040d900",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040D900",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0040D920",
+        "size": "28",
+        "span_end": "0x0040D93B",
+        "current_name": "FUN_0040d920",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R163; config/math-overload-origin-evidence.json; scripts/repo-python scripts/verify-math-overload-origins.py",
+        "owner": "",
+        "notes": "Whole target CFG and actual runtime destinations refute the R162 diagnostic string-length label: five float overload/worker chains widen float to double and narrow the result, while the sixth overload calls an integer absolute-value body. Full genuine SDK and ordinary C++ alternatives are byte-equal through every real field; complete abs/labs and ordinary int/long expressions also match the whole 11-byte worker. Existing full runtime owners/shared entries and authored game call windows are independently retained, but neither target spelling/type nor library versus authored wrapper/expression ownership is established. Original declarations and compiler/linker choices remain unknown; no origin/source/private ABI/mapping/exact credit."
+      },
+      "origin": {
+        "address": "0x0040D920",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0061FB37",
+        "size": "14",
+        "span_end": "0x0061FB44",
+        "current_name": "FUN_0061fb37",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0061FB37",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    }
+  ],
+  "interpretation": "Only641DAA11 receives inferred library ownership from the complete original two-function abs39 source contribution, including a previously untracked contiguous independent abs64 auxiliary28. No new auxiliary candidate, exact unit, private type or executable-wide compiler profile is inferred. All full CRT abs/labs alternatives and complete ordinary int/long11 positives remain, as do full ordinary wide28 and intrinsic public wide22 negatives. Original symbol/int-versus-long declaration/link map remain provisional. The isolated one-function labs11 source does not establish the separate641FB8 origin; it and the genuine long wrapper remain unknown. Entire unchanged R129/R163 and their retained graphs/cold controls replay in the actual fixed676e346 Git state without rewriting unknown predicates, old records or canonical snapshots."
+}

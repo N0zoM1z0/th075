@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 98 pending candidates, covering 3,619 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 98
+This report records the current 97 pending candidates, covering 3,608 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 97
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -36,7 +36,10 @@ ctor16/dtor14 positive preserves the related destructor as unknown.
 R262 classifies two identifier comparison23 leaves as inferred library through
 complete Font/Surface source contributions and independently replayed GUID/
 vtable/provider context; complete ordinary equality23 remains preserved.
-The current remaining projection has96
+R263 classifies only641DAA /11 as inferred library through complete original
+abs11/abs64 auxiliary28 source-order contribution39. Separate labs-shaped11
+and original ordinary int/long/wide alternatives remain unresolved.
+The current remaining projection has95
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -46,7 +49,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r262-remaining-review.json` retains the current literal
+Private `.analysis/r263-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -157,10 +160,9 @@ scope clarification is presumed.
 | `0x0061FB37` | 14 | sdk-private-lifetime | 7 instructions; 1 branches; RET 0; 1 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json); [sdk-shader-font-origin-evidence.json](../config/sdk-shader-font-origin-evidence.json) | Original explicit versus generated special-member declaration; R261 preserves coherent implicit ctor16/dtor14 equality. |
 | `0x006200DA` | 24 | sdk-private-lifetime | 6 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00620132` | 5 | sdk-private-lifetime | 1 instructions; 1 branches; RET tail only; 0 calls | [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x00641DAA` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json); [polar-velocity-origin-evidence.json](../config/polar-velocity-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x00641FB8` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [game-switch-policy-origin-evidence.json](../config/game-switch-policy-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 
-Totals: 98 pending candidates /3,619 bytes; 98 unknown origins.
+Totals: 97 pending candidates /3,608 bytes; 97 unknown origins.
 
 R253 resolves the former `0x004065D0` /19 and `0x004065F0` /19 rows as library
 lifetimes using [the complete paired global-vector proof](ORIGIN_REVIEW.md#r253--complete-paired-global-vector-library-lifetimes)

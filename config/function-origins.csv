@@ -3561,7 +3561,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00641CEC,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
 0x00641D4A,library,VC71CRT,exclude,complete-vendor-short-runtime-fp-exception-eh-code-data-abi-provenance,R129
 0x00641D92,library,VC71CRT,exclude,interior-entry-in-complete-vendor-array-destruction-primary,R129
-0x00641DAA,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00641DAA,library,VC71CRT,exclude,inferred-whole-source-ordered-crt-abs-object-with-complete-abs64-auxiliary-and-retained-ordinary-int-long-wide-alternatives,R263
 0x00641DE0,library,VC71CRT,exclude,vendor-archive-corroborated,R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG
 0x00641E40,library,VC71CRT,exclude,complete-vendor-elementary-math-code-data-entry-abi-provenance,R128
 0x00641E54,library,VC71CRT,exclude,interior-entry-in-complete-vendor-elementary-math-primary,R128
