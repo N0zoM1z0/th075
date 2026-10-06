@@ -306,7 +306,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A630,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A670,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0040A6A0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
-0x0040A6C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040A6C0,library,VC71STL,exclude,complete-original-integral-assignment-dispatch-and-count-value-game-context,R228
 0x0040A700,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040A740,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040A780,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
@@ -323,8 +323,8 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0040A970,library,VC7 STL vector/iterator/copy templates,exclude,vendor-source-byte-confirmed,R092
 0x0040A9B0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040A9F0,compiler,VC71Compiler,exclude,compiler-template-backed,R037
-0x0040AA20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0040AA30,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0040AA20,library,VC71STL,exclude,complete-original-integral-assignment-dispatch-and-count-value-game-context,R228
+0x0040AA30,library,VC71STL,exclude,complete-original-integral-assignment-dispatch-and-count-value-game-context,R228
 0x0040AA60,library,vc7-stl-deque-helpers,exclude,high,R087
 0x0040AA70,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0040AAB0,library,VC7STL,exclude,complete-vc7-deque-callee-family,R074
@@ -2015,7 +2015,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045A5B0,library,VC7STL,exclude,complete-vc7-additional-record-family,R034
 0x0045A5E0,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045A600,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
-0x0045A620,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045A620,library,VC71STL,exclude,complete-original-integral-assignment-dispatch-and-count-value-game-context,R228
 0x0045A660,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A6A0,library,VC7STL,exclude,complete-vc7-template-family,R032
 0x0045A6D0,library,VC7STL,exclude,complete-vc7-template-family,R032
@@ -2039,7 +2039,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045AAA0,library,VC7STL,exclude,complete-vc7-deque-helper-family,R073
 0x0045AAE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0045AC50,library,VC71STL,exclude,complete-original-nested-vector-insertion-copy-assignment-and-recovery-source-graph,R209
-0x0045ADD0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045ADD0,library,VC71STL,exclude,complete-original-integral-assignment-dispatch-and-count-value-game-context,R228
 0x0045AE00,library,VC7STL,exclude,complete-vc7-template-typed-caller,R033
 0x0045AE10,library,VC7STL,exclude,complete-vc7-template-probe,R031
 0x0045AE6B,library,VC7STL,exclude,complete-vc7-template-probe,R031

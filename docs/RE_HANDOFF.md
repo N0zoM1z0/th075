@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R227. The public
+review cohorts R108 through R228. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,187: 971 authored, 2,636 library and 580 compiler generated.
-There are 164 pending. Candidate count is not authored function count.
+has resolved 4,192: 971 authored, 2,641 library and 580 compiler generated.
+There are 159 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,90 +20,148 @@ bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R228 integral assignment dispatch cohort below.
+the bounded R229 SDK public font/save wrapper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R227; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R228; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R228 integral assignment dispatch cohort
+## Next agent objective — R229 complete SDK public font/save wrappers
 
-R227 accepts four complete vector endpoints /124 with eight full original/manual
-source scopes20 sections552/12 fields/20 CFGs and eight whole route controls.
-All55 ordinary sections1416/51 fields/27 includes/layout36 are retained. Three
-whole library receivers499 and four actual calls are checked. R209/R211 literal
-unknown expectations and all old scripts stay immutable; the strict successor
-view projects only checked canonical expectations and retains the full cold
-R211/R210/R209/R208/R150 ancestry. Original/accepted cold proofs and3,215 CI tests,
-including18 new guards, pass. Replay the successor verifier recorded below.
+R228 accepts five complete integral assignment dispatch origins /185 with221 whole
+source/code/data sections13561/all545 fields/185 CFGs, two real weak/fallback owners,
+four byte-equal ordinary members and six whole distinct pointer-range controls.
+Three full authored game receivers996 and their actual count/value windows are
+checked. Original/accepted cold replay and3,229 CI tests pass. Prior evidence and
+all60 exact inputs remain unchanged. Replay the R228 verifier below.
 
-Current4,187 resolved =971 authored+2,636 library+580 compiler;164 pending and
-3,216 excluded. The original1,311 goal has1,147 classified /164 left and remains
-active. Exact60 /9883 bytes /60 units across eleven objects, all original source/
-header/build/match inputs, authored denominator1,971,032 and provisional0.50% are
-unchanged. Target/tracking, local project/query attestation, bounded readback,
-coherent fresh triage, progress and whitespace pass. Push reached68d9258;
-subsequent commits are local. All15 protected private/opaque policies remain
-unknown, including the five16-byte R206 leaves and the417/368-byte copy bodies.
+Current4,192 resolved =971 authored+2,641 library+580 compiler;159 pending and
+3,221 excluded. The original1,311 review goal has1,152 classified /159 left and
+remains active. Exact60 /9883 bytes /60 units across eleven objects, authored
+byte denominator1,971,032 and provisional0.50% are unchanged. Push reached68d9258;
+subsequent commits are local. Full Web MCP acceptance is required only after all
+remaining origin review finishes. Continue bounded local review and necessary cold
+builds, preserving R167 and prior explicit uncertainty decisions.
 
-The final complete Web MCP acceptance is required only after all remaining origin
-review finishes. Continue bounded local source/evidence review and necessary cold
-builds. Preserve the already accepted R167 cohort and60-exact baseline. Do not add
-exact reconstruction or later project phases.
+Next investigate five whole public SDK wrapper hypotheses /179:
 
-Next investigate five complete integral-assignment dispatch hypotheses /185:
-
-| Candidate | Whole provisional bytes | Actual native calls / diagnostic context |
+| Candidate | Whole provisional bytes | Original source hypothesis / real target |
 | --- | ---: | --- |
-| `0x0040A6C0` |50| tag40AA20; adapter40AA30; game parents407540/4076A0 |
-| `0x0040AA20` |11| returns an empty-tag-shaped byte; shared caller40A6C0/45A620 |
-| `0x0040AA30` |37| copies whole four-byte value to local; Assign_n409780 /96 |
-| `0x0045A620` |50| tag40AA20; adapter45ADD0; game parent4567B0 |
-| `0x0045ADD0` |37| narrows value to byte/local; Assign_n455CA0 /108 |
+| `0x00605185` | 51 | D3DXCreateFont@12; GDI GetObjectA and604FB0 FontIndirect |
+| `0x006055A2` | 32 | D3DXSaveSurfaceToFileA@20;6054EF surface helper, flag0 |
+| `0x006055C2` | 32 | D3DXSaveSurfaceToFileW@20;6054EF surface helper, flag1 |
+| `0x0060577E` | 32 | D3DXSaveVolumeToFileA@20;6056CE volume helper, flag0 |
+| `0x0060579E` | 32 | D3DXSaveVolumeToFileW@20;6056CE volume helper, flag1 |
 
-Private `.analysis/r228-native-preliminary.json` and its text retain complete
-native roots and the two whole independently accepted library count-assignment
-callees. These are diagnostic, not accepted source identities. The initial copy/
-pointer-category guess is corrected: actual37-byte adapters forward a count and
-converted value by reference into `_Assign_n`. Reopen original vector/deque
-`assign(_Iter,_Iter)` / `_Assign(...,_Int_iterator_tag)` and xutility integral
-`_Iter_cat` definitions, then compile natural complete generic SDK observations.
-Retain the50/37/11 whole extents, every field, the two distinct value widths,
-byte narrowing, actual tag route and full source-owned callee closures. An empty
-11-byte shape or known library callee alone is insufficient. Keep ordinary
-member/count and actual iterator-range alternatives distinct; no artificial
-uninitialized return, ABI declaration or padding is permitted.
+Private `.analysis/r229-sdk-shape-diagnostic.json` records103 whole original SDK
+section shape candidates at30 pending native addresses. It masks genuine fields
+only for discovery and supplies no acceptance. The four save wrappers have both
+surface/volume source alternatives under masked discovery; independently source-
+defined helper destinations and full unmasked fields must separate them. Font
+wrapper has an actual named GDI import and an independently accepted111-byte R201
+FontIndirect helper. The two176-byte R202 save helpers retain distinct source names.
+Reopen full frozen R201/R202 graphs and full original source/AUX/CFG extents, inspect
+all paths/RET cleanup, cold-build natural original SDK declarations and ordinary
+controls, audit every old snapshot/hash consumer, then freeze a bounded verifier.
 
-Private `.analysis/r228-resume-plan.json` now records a fresh natural SDK
-integral-assignment control and closed diagnostic graph. Vector scopes retain97
-whole sections5232/all231 fields; unsigned-byte deque scopes retain118 whole
-sections8067/all304 fields. Together215 whole sections13299/all535 fields and
-179 code CFGs agree unmasked through defining source catalogs, with one actual
-weak/fallback reference. The five candidates remain unknown. No cached object
-supplies new acceptance. Retained R150 owners still require their own cold proof,
-and complete game context, ordinary/range controls, immutable history audit and
-a durable successor verifier remain required.
+Most other diagnostic SDK hits are previously reviewed lifetime/getter alternatives.
+Preserve R198/R204 uncertainty and the original explicit/implicit compiler controls;
+no repeat source shape grants ownership. Likewise seven list8/11-byte node links
+remain protected by whole byte-equal ordinary controls, and the five math overload
+chains remain R163 unknown. Native preliminary files under `.analysis/r229-` are
+diagnostic only; their old guesses are not a next acceptance shortlist. Do not
+relabel those ambiguous bodies merely from a known library caller/callee. Fresh
+`.analysis/origin-scan/r228-triage.json` has159 pending with both current ledger
+hashes. Shared tool installations remain read-only.
 
-A plain-char control collided with separately scoped basic_string<char> allocator
-owners. The unsigned-byte model produces a coherent entire source graph; this does
-not recover original type spelling or signedness. Prefer actual object definitions
-over retained shared prototypes; never resolve a conflicting source owner merely
-from its observed target field. The source probe, explicit profile, object/input
-hashes and exact resume steps are in the private plan.
+## R228 complete integral assignment dispatch and count-value receivers
 
-Reopen complete independently accepted game parents407540/4076A0/4567B0 and
-actual count/value/receiver uses. Freeze their whole CFGs, exits and any switch
-records. Audit every old canonical snapshot and pinned verifier consumer before
-accepting a transition; preserve all unrelated private lifetime/leaf/copy policies.
-Fresh `.analysis/origin-scan/r227-triage.json` has164 pending with both current
-ledger hashes. Use supported private compiler/Ghidra state below `.analysis/`
-when needed; shared tool installations remain read-only.
+R228 accepts five complete library source-family origins /185 bytes. Original
+extents and current database names are preserved:
+
+| Address | Whole bytes | Source-family role |
+| --- | ---: | --- |
+| `0x0040A6C0` | 50 | vector integral-template assign dispatch |
+| `0x0040AA20` | 11 | xutility integer iterator category |
+| `0x0040AA30` | 37 | vector count/value conversion to `_Assign_n` |
+| `0x0045A620` | 50 | deque integral-template assign dispatch |
+| `0x0045ADD0` | 37 | deque byte-value conversion to `_Assign_n` |
+
+Replay `scripts/repo-python scripts/verify-integral-assignment-dispatch-origins.py`
+with immutable `config/integral-assignment-dispatch-origin-evidence.json`, SHA-256
+`f95e13955f5707d534f1125fc44d7c4217a1a08744a2a41274ac270b601c2cf7`.
+The natural fixture `tests/origin_probes/IntegralAssignmentDispatch.cpp` uses
+complete original SDK vector/deque owners and four compatible ordinary members.
+Original vector/deque/xutility definitions and all28 included headers are pinned.
+Build3077 and `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` are explicit
+per-probe reproducibility settings, not an executable-wide compiler assertion.
+
+Two scoped graphs retain221 complete code/data sections /13,561 bytes /545 actual
+fields and185 full normal/catch/unwind CFGs. Vector scope100 sections5363/236
+fields and deque scope121 sections8198/309 fields include every actual defining
+COFF/AUX/line/readonly owner. Actual cold-object definitions take precedence over
+retained prototypes. Both actual weak references have their own AUX/search tags
+and complete current fallback bodies. The initial diagnostic retained a logic_error
+weak alias from R150; final acceptance instead includes this object's whole44-byte
+fallback and its complete source-owned destructor, without field-derived aliases.
+All13 remaining external symbols use independently defined R150 owners, whose
+whole retained R149/R119 ancestry cold-replays. The absolute `__except_list` owner
+is independently reopened from the pinned original CRT archive. No code/data field
+is masked in the final complete source/native comparison.
+
+Full ordinary emission retains204 sections /14,612 bytes /547 fields, all28
+included headers and the entire28-byte readonly observation
+`[4,4,1,16,20,1,1]`. All four ordinary dispatch/conversion members reproduce the
+whole50/37-byte target bodies. Six complete pointer-range controls retain51-byte
+assign dispatches,11-byte random-access category bodies and88/100-byte range
+policies. All differ from the integral alternatives: the integer and pointer
+category bodies have equal lengths but different instructions. Actual pointer
+routes have their own defining category/policy symbols and are not resolved through
+the integer owner catalog. The eleven-byte integer tag is a genuine SDK empty-class
+return; no artificial uninitialized scalar return or ABI declaration is introduced.
+
+Three complete independently accepted authored game callers /996 bytes are reopened
+with full hashes, instructions, CFGs, exits, switch records and actual argument
+windows. The341-byte407540 and310-byte4076A0 callers pass their read count and zero
+value at4075AD/4076F8 into vector dispatch. The345-byte4567B0 caller passes count
+0x5A and zero at456875 into its receiver+0x518 deque. Original37-byte adapters pass
+whole four-byte or narrowed byte values by reference into the full accepted96-byte
+409780 and108-byte455CA0 `_Assign_n` owners. These are included in the complete
+source closures, rather than relying on their earlier labels alone.
+
+Attribution is an explicit library-family inference from the original whole
+source/category/conversion graph and independent game count/value context.
+Compatible ordinary members are byte-equal; historical replacement absence is not
+proved. Unsigned-long/unsigned-byte controls do not recover original type spelling,
+signedness, private element declarations or complete game owner layouts. The initial
+plain-char control's allocator placement conflict is diagnostic, not a reason to
+invent an alias. None of the incomplete game owners is instantiated. The five
+opaque R206 pointer/reference leaves and all prior lifetime/copy ambiguities remain
+unknown. No reconstructed source, private ABI, mapping or exact credit is added.
+
+The exhaustive old snapshot audit finds no selected canonical pair in prior JSON.
+All earlier evidence/manifests/verifiers remain literal. All150 canonical owners
+inside the complete source scopes and adjacent boundaries are checked; the frozen
+unselected ledger digests check the original transition and bounded before/after
+readback protects every unrelated row. Accepted-state cold replay checks every
+owner in this complete source graph; later independently accepted cohorts outside
+these scopes can progress without rewriting historical source evidence. Only the five approved rows in each origin/function ledger change. Observed
+INT3 gaps remain outside the selected full extents. Original and accepted cold
+replays,3,229 CI tests including14 new guards, target/tracking, local Ghidra identity
+and query completion markers, fresh159-candidate triage, unchanged60 exact inputs,
+progress and whitespace pass.
+
+Current4,192 resolved =971 authored+2,641 library+580 compiler;159 pending and
+3,221 excluded. The original1,311 review goal has1,152 classified /159 left and
+remains active. Exact60 functions /9,883 bytes /60 units across eleven objects,
+authored denominator1,971,032 and provisional0.50% remain unchanged. Final full
+Web MCP acceptance remains required after all remaining origin review finishes.
 
 ## R227 complete vector endpoint routes and strict retained cold graphs
 
