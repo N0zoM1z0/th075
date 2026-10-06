@@ -13513,3 +13513,75 @@ defined source element lifetime and whole actual caller/provider chain while
 preserving every original ordinary alternative and full R165/R164 proof.
 Do not automatically classify the helper or add exact scope. The full remaining
 review goal and requested final complete Web MCP acceptance remain outstanding.
+
+## R258 — fully defined deque element destruction with namespace ambiguity retained
+
+Reviewed 2026-10-07. `0x004229C0` /15 remains unknown. The newly inferred
+R257 outer72 strengthens its element-lifetime context, but does not identify
+this helper's original namespace. A fresh attested Ghidra query finds exactly
+one current candidate caller, the accepted allocator.destroy25 at
+`0x00422610`. This is a bounded database caller observation, not proof excluding
+computed, interior or runtime reachability.
+
+New private `.analysis/probes/R258DefinedDequeDestroy.cpp` includes the complete
+natural R257 member/base/default/empty-base fixtures. It adds vendor Destroy,
+allocator.destroy and deque-pop observations plus ordinary explicit element
+destruction, all against the same fully defined `ExplicitMember` observation.
+This replaces an opaque destruction-only element hypothesis with a coherent
+source construction75/destruction72, real deleting44 and whole local EH18/36
+cohort. It does not instantiate a reconstructed original owner or recover any
+original complete class layout.
+
+The genuine vendor `std::_Destroy<ExplicitMember>` and ordinary
+`OrdinaryDestroy(ExplicitMember*)` both emit whole15 and compare unmasked with
+`0x004229C0`, through the same actual defining scalarDeleting44 source body
+mapped to `0x00422A20`. The whole accepted deque `pop_back151` at
+`0x00422290`, empty25 at `0x00422270` and allocator.destroy25 at `0x00422610`
+also compare through their complete actual defining source/provider graph.
+Full actual game construction75 and cleanup72, both complete compiler18/36
+pairs, real library clear19/destructor19/Tidy177 and recursive element/allocator
+providers remain present. The source symbol difference between vendor and
+ordinary15 has no byte or defining-callee distinction; new authored status for
+the outer72 does not resolve it. No origin gain is accepted from that association.
+
+Private `.analysis/r258-defined-destruction-context.json` freezes30 complete
+source comparisons1286 bytes and51 actual fields, plus all88 initialized
+ordinary sections3455 bytes, separate whole BSS144, every real definition/AUX/
+field and all28 actual include hashes. The pinned3077 `/Od /Ob0 /Gy /GR- /GX
+/Zi /GS /showIncludes` build is fresh. The emitted unrelated `pop_front154`
+remains an unselected complete source inventory, never cropped or mapped to
+original pop_back151. The whole original namespace-ambiguous15 and distinct
+ordinary source definition are both retained. All original target bodies,
+CFGs, old literal canonical pairs and whole source fields remain preserved.
+This is private discovery evidence, not a new accepted source or exact unit.
+
+The entire unchanged original R165 CLI cold-replays at fixed revision
+646a2f3 in a read-only same-length Git worktree, with its complete original
+R164 source/code/data context and four original ordinary allocator/destruction
+alternatives. Its historical snapshot still records the then-unknown72; current
+R257 status is separately guarded. Every historical Git blob, source path/AUX
+identity and permitted hash-pinned CSV EOL representation is verified before
+and after replay. No reduced manifest, global CSV/argument override or rewritten
+historical unknown snapshot substitutes for that whole original proof.
+Private `.analysis/r258-original-r165-cold.log` completes successfully.
+
+All4351 current canonical pairs, old evidence manifests, reconstructed source/
+ABI declarations, exact ledger inputs and header-only claims remain unchanged
+from R257 HEAD3795356. The latest3512 public CI checks, target/required tracking,
+progress freshness, complete exact-row/input guards and whitespace pass. Counts
+stay4247 resolved =1002 authored+2664 library+581 compiler,104 pending /3707
+bytes and3245 excluded. Original1311 progress stays1207 classified /104 left;
+exact60 /9883 bytes /60 units /eleven objects and denominator1973516 stay
+unchanged. No project phase or exact scope is added.
+
+Next bounded R259 investigates receiver-output helper `0x004135F0` /40,
+which has no discovered original structured source/control record in the R251
+matrix. Its whole body stores an observed byte argument at receiver+24 and
+two four-byte arguments at receiver+1c/+20, returns RET12 and makes no calls.
+These are target memory/ABI observations, not recovered original field types
+or class layout. The fresh attested caller query returns zero current candidate callers;
+that does not prove dead code or exclude computed/interior/runtime reachability.
+Find complete real owner/producer/consumer context before using a source control
+or assigning ownership. Do not repeat the unchanged
+R165 ordinary15 equality as a new distinction. The full remaining-review goal
+and final complete Web MCP acceptance remain outstanding.

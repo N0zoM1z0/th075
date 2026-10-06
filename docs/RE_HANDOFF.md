@@ -1,9 +1,9 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
+Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256 and R257, with bounded unresolved reviews/audits
-R247–R252. The public
+R247–R252 and R258. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,19 +21,19 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R258 typed destruction-helper cohort below.
+the bounded R259 receiver-output cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R257; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R258; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R258 typed destruction-helper context
+## Next agent objective — R259 receiver-output ownership context
 
 R257 accepts one inferred authored outer cleanup72 at `0x004212A0`. Complete
 paired construction75 at421250, actual library construction72 at4212F0,
@@ -66,17 +66,31 @@ R255/R254/R212/R227 accepted-state cold replay passed in this turn; its source,
 header, ABI and exact inputs remain unchanged. Preserve all earlier accepted
 origins and original unknown snapshots; do not weaken historical predicates.
 
-Next examine `0x004229C0` /15. Its real caller is accepted allocator.destroy25
-at `0x00422610` within whole deque-pop151 at `0x00422290`; it calls genuine
-compiler deleting44 at `0x00422A20` with zero flags, which reaches the newly
-inferred authored outer72 at `0x004212A0`. R165 already retains genuine whole
-vendor15 and ordinary15 equality, two accepted allocator wrappers, original
-whole R164 parents, runtime deletion and a separate empty5 boundary. The new
-outer origin alone does not identify the helper's namespace. Test a coherent
-fully defined generic element lifetime and full actual source caller/provider
-chain, preserving all original ordinary alternatives and the complete R165/
-R164 proof. Neither callee association nor an isolated source positive earns
-origin credit. Do not add exact scope or infer a complete original private type.
+R258 keeps `0x004229C0` /15 unknown after a coherent fully defined generic
+source element replaces the old opaque destruction hypothesis. Whole vendor15
+and ordinary15 both compare through the same actual defining deleting44,
+newly inferred game cleanup72 and construction75, real library/Tidy providers
+and two whole local compiler18/36 pairs. All30 whole comparisons1286/51 fields,
+88 initialized ordinary sections3455, BSS144 and28 includes remain private
+observations. The entire unchanged original R165/R164 CLI cold-replays in a
+read-only fixed-revision646a2f3 worktree with full original ordinary alternatives.
+The historical unknown72 snapshot is preserved; current R257 status is guarded
+separately. No canonical, source/ABI, evidence manifest or exact input changes.
+Details: [R258 review](ORIGIN_REVIEW.md#r258--fully-defined-deque-element-destruction-with-namespace-ambiguity-retained).
+
+Next examine `0x004135F0` /40. It stores the observed byte argument at receiver
++24 and two four-byte arguments at+1c/+20, returns RET12 and makes no calls.
+The current matrix has no discovered structured source/control record for it;
+that is a discovery limitation, not proof that it was never investigated.
+The fresh attested caller query `.analysis/r259-record-callers.txt` returns
+zero current candidate callers. That does not prove dead code or exclude
+computed/interior/runtime reachability. Seek whole independent owner/producer/
+consumer context before assigning an origin. Numeric offsets and argument widths
+do not recover original types, signatures or complete object layouts. Do not
+add placeholder padding to manufacture a source match, instantiate incomplete
+reconstructed owners, or infer namespace from an isolated source positive.
+Preserve all accepted origins and unknown boundaries. Do not repeat unchanged
+R165 ordinary15 equality as a new distinction or add exact scope.
 
 Current counts:4247 resolved =1002 authored+2664 library+581 compiler,
 104 pending /3707 bytes,3245 excluded. Original1311 progress is1207 classified
@@ -85,8 +99,7 @@ whole hashes/current pairs and preserves the original R251116-row artifact.
 The reviewed-but-unknown end-state question remains unanswered; do not presume
 a scope change or falsely complete the goal. Final complete Web MCP acceptance
 remains due after the requested remaining-review end state. Exact60 /9883 bytes
-/60 units /eleven objects stay unchanged; the authored denominator grows only72
-to1973516. All3512 public CI tests, target/tracking, exact full-row/input guards,
+/60 units /eleven objects stay unchanged; the authored denominator stays1973516. All3512 public CI tests, target/tracking, exact full-row/input guards,
 progress and whitespace checks pass. Complete accepted-state cold replay passes
 before handoff. These commits remain local; no push was authorized.
 
