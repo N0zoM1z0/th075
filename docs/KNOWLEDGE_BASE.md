@@ -12296,3 +12296,81 @@ Current4,223 resolved =997 authored+2,646 library+580 compiler;128 pending and
 3,226 excluded. The original1,311 goal has1,183 classified /128 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects are
 unchanged; authored denominator1,972,950 and provisional0.50%.
+
+## R242 — complete archive iterator access and advancement
+
+R242 accepts library `0x0041E060` / 19, `0x0041E080` / 42,
+`0x0041EF20` / 19, `0x0041EF40` / 22, `0x0041F790` / 25 and
+`0x0041F7B0` / 35: six whole methods / 162 bytes. Their original extents,
+current names, source/ABI, mappings and exact state are unchanged. Their six
+following INT3 gaps / 62 bytes remain external. The inferred operations are
+mutable iterator arrow, postfix increment, mutable dereference, mutable prefix
+increment, const dereference and const prefix increment.
+
+Replay `scripts/repo-python scripts/verify-archive-iterator-operation-origins.py`
+with immutable `config/archive-iterator-operation-origin-evidence.json`, SHA-256
+`f371d0c970a5a893cd3ce367c8a8a9267af0fb7de3739ed8930bd884ff5a366c`.
+The entire independently accepted R169 list begin/end, insertion, allocation,
+node and exception graph establishes the archive container and its cursors.
+Whole R052 archive writer41D260 / 686 builds108-byte index records, consumes
+actual names, sizes and offsets, reads source files and serializes their data.
+Full R053 named seeks41D750 / 164 and41D800 / 180 construct begin/end from the
+same archive owner+4, compare the actual cursor, use arrow19 for name matching,
+read payload+0x68 for file positioning and payload+0x64 for returned size, and
+advance through postfix42. Whole R052 index reader41D510 / 429 preserves the
+independent record-production context. Twenty complete anchors / 2,264 bytes
+and twenty-six scoped canonical pairs are checked with full CFGs/instructions,
+original switches and independently accepted authored records.
+
+Fresh `tests/origin_probes/ArchiveIteratorOperations.cpp` instantiates the
+original VC7.1 list definitions using the complete generic108-byte archive
+observation and pinned3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /I probes
+/showIncludes`. Full arrow19 calls mutable dereference19, which calls const
+dereference25 and the entire payload helper11. Postfix42 calls mutable prefix22,
+which calls const prefix35 and the entire nextnode8. Each real field binds its
+complete fresh defining owner, coherently across the graph; equal-shaped arrow
+and dereference bodies are never interchangeable. Postfix preserves the old
+cursor in its hidden output buffer and retains RET8 for that buffer and integer
+argument. Ghidra's missing return/argument recovery earns no original ABI claim.
+
+Complete ordinary108-byte arrow19 and postfix42 observations remain byte-equal
+after explicitly compatible payload-reference/prefix bindings. Their genuine
+external declarations are retained, not claimed as recovered original private
+definitions. Ten entire linked source comparisons / 242 bytes and all eight
+real call fields are checked unmasked. The8-/11-byte node helpers only supply
+whole context and keep their original unknown classifications. Original method
+spelling, element type, private layout/compiler profile/ABI remain unknown.
+No reconstructed source, mapping or exact credit is added.
+
+All260 fresh ordinary code/data sections / 11,499 bytes,551 actual fields,
+complete COFF/AUX/line provenance,33 include owners,three real weak aliases and
+the whole108-byte combined27-word sizeof section are frozen. The old88-byte
+observer arrays remain literal; the additional generic sizes are[108,4,4,4,4].
+No incomplete original owner, padding, target source arrays or cropped bodies
+are introduced.
+
+Both-state cold proofs also run the entire unchanged original R169 main with
+a guarded historical metadata view. Exactly eight literal unknown snapshot
+pairs later accepted by R218/R219/R222/R223 are checked against their immutable
+original/accepted successor records before projecting old rows at the existing
+metadata-provider seam. No old manifest, source, compiler/artifact, standard
+library or subprocess behavior is patched. All13 original library methods /
+753 bytes,205 snapshots,80 source/code/EH/throw/RTTI/data comparisons / 3,752
+bytes,189 real fields,two complete node-width negatives / 43 bytes,250 original
+cold sections / 11,163 bytes,32 original include owners,all six registered
+frames and the whole88-byte layout replay. The old standalone current-state
+CLI still rejects its historical snapshots; this historical view is not a
+claim about current canonical labels.
+
+An empty selected historical audit, strict HEADdeff036 readback and full
+unselected-row digests permit exactly six canonical pairs to change. Every
+earlier evidence file, protected unknown and all60 exact inputs are unchanged.
+Original and accepted cold proofs,seventeen new guards,3,396 local CI tests,
+target/tracking,readonly Ghidra attestation/query completion,fresh122-row triage,
+progress freshness and whitespace checks pass. Final complete Web MCP acceptance
+remains due after all remaining origin review finishes.
+
+Current4,229 resolved =997 authored+2,652 library+580 compiler;122 pending and
+3,232 excluded. The original1,311 goal has1,189 classified /122 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,950 and provisional0.50%.
