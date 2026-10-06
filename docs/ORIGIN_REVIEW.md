@@ -14398,3 +14398,65 @@ Current4,192 resolved =971 authored+2,641 library+580 compiler;159 pending and
 remains active. Exact60 functions /9,883 bytes /60 units across eleven objects,
 authored denominator1,971,032 and provisional0.50% remain unchanged. Final full
 Web MCP acceptance remains required after all remaining origin review finishes.
+
+## R229 complete SDK public font and save wrappers
+
+R229 accepts five complete library source-family origins /179 bytes. Current
+Ghidra names and original extents are preserved, including the two erroneous
+`RFX_Text_Bulk` names; the proposed names identify the independently recovered
+SDK definitions without adding source, private ABI, mapping or exact credit.
+
+| Address | Whole bytes | Original SDK definition and independent route |
+| --- | ---: | --- |
+| `0x00605185` | 51 | `_D3DXCreateFont@12`: named GDI32 `GetObjectA`, then604FB0 FontIndirect |
+| `0x006055A2` | 32 | `_D3DXSaveSurfaceToFileA@20`: surface helper6054EF, flag0 |
+| `0x006055C2` | 32 | `_D3DXSaveSurfaceToFileW@20`: surface helper6054EF, flag1 |
+| `0x0060577E` | 32 | `_D3DXSaveVolumeToFileA@20`: volume helper6056CE, flag0 |
+| `0x0060579E` | 32 | `_D3DXSaveVolumeToFileW@20`: volume helper6056CE, flag1 |
+
+Replay `scripts/repo-python scripts/verify-sdk-public-wrapper-origins.py` with
+immutable `config/sdk-public-wrapper-origin-evidence.json`, SHA-256
+`7995f491ec17ac705a543d8cc32d3ede2e72bf429d47e103d3c4138d2553195c`.
+All six genuine fields are bound through three independently retained whole
+source owners /463 bytes and the unique named GDI import. Static surface/volume
+helper identities use the actual archive member, section and symbol index,
+including storage/type/offset metadata; encoded target call destinations do not
+create owners. Fresh original archive extraction verifies every complete source
+COFF/AUX record, permissions, full unmasked body and normal exit/CFG. The complete
+R201 and R202 original source graphs and their public controls cold-replay.
+Their lifetime/interior alternatives and all earlier uncertainty remain unchanged.
+
+The natural tracked fixture `tests/origin_probes/SdkPublicWrappers.cpp` includes
+original `d3dx8.h`, five real public clients and five compatible ordinary members.
+Build3077 with `/O1 /Ob0 /Gy /Oy- /GR- /GX /I src /showIncludes` is a probe
+reproducibility profile, not a universal target compiler assertion. Full cold
+emission retains11 sections /330 bytes /all11 fields,88 original included headers
+and the complete32-byte readonly layout `[60,16,24,4,4,28,4,4]`. All five ordinary
+members reproduce whole native bodies, so historical replacement absence remains
+unproved. Library attribution is a source-family inference from the independent
+original SDK owners and distinct routes. Eight whole32-byte original peer controls
+reject the wrong surface/volume helper and wrong A/W flag without masking fields.
+The font body retains its real invalid-call error path and full RET12; all save
+wrappers retain full RET20. No ignored compiler option, crop or artificial padding
+is used for acceptance.
+
+The gap6055E2–6055FA is25 bytes of complete noninventory code, not alignment.
+The original same-member section38 defines the full fieldless three-float
+`D3DXVECTOR3` constructor, whose whole native bytes and CFG are checked. This
+adjacent observation adds no function, origin or reconstructed layout credit and
+does not enlarge the32-byte wrapper extent. Other zero-length boundaries are
+recorded literally. Eleven scoped canonical owners are checked. The old snapshot
+audit finds no selected canonical pair; all older evidence remains literal.
+Original-state full unselected digests and bounded before/after readback prove
+that only these five rows in each canonical ledger change. Accepted-state replay
+checks every owner in the complete scoped graph, permitting independent future
+cohorts to progress.
+
+Original and accepted cold replays,3,243 CI tests including14 new guards,
+target/tracking, local Ghidra identity/completion markers, unchanged60 exact
+inputs, fresh154-candidate triage, progress and whitespace pass. Current4,197
+resolved =971 authored+2,646 library+580 compiler;154 pending and3,226 excluded.
+The original1,311 goal has1,157 classified /154 left and remains active. Exact60
+functions /9,883 bytes /60 units across eleven objects, authored denominator
+1,971,032 and provisional0.50% remain unchanged. Complete Web MCP acceptance is
+required after all remaining origin review finishes.

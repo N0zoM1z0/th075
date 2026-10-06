@@ -2659,7 +2659,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0060501F,library,D3DX8,exclude,whole-original-sdk-texture-text-sprite-policy-with-scoped-fields-public-abi-and-independent-uuid-stack-alias,R200
 0x0060508B,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x00605107,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196
-0x00605185,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00605185,library,D3DX8,exclude,whole-original-sdk-public-wrapper-scoped-source-import-and-distinct-save-owner-routes,R229
 0x006051B8,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x006051DC,library,D3DX8SDK,exclude,complete-vendor-body,R013
 0x00605251,library,D3DX8,exclude,whole-original-sdk-image-png-jpeg-zlib-source-scoped-fields-state-switch-and-nonreturn-policy,R199
@@ -2668,12 +2668,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006053D2,library,D3DX8,exclude,whole-original-sdk-image-surface-volume-texture-entry-policy-with-scoped-source-fields-complete-backward-exits-and-cold-public-abi,R202
 0x00605410,library,D3DX8,exclude,whole-original-sdk-blit-codec-policy-complete-scoped-source-weak-switch-dispatch-and-public-abi,R198
 0x006054EF,library,D3DX8,exclude,whole-original-sdk-image-surface-volume-texture-entry-policy-with-scoped-source-fields-complete-backward-exits-and-cold-public-abi,R202
-0x006055A2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x006055C2,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006055A2,library,D3DX8,exclude,whole-original-sdk-public-wrapper-scoped-source-import-and-distinct-save-owner-routes,R229
+0x006055C2,library,D3DX8,exclude,whole-original-sdk-public-wrapper-scoped-source-import-and-distinct-save-owner-routes,R229
 0x006055FB,library,D3DX8,exclude,whole-original-sdk-blit-codec-policy-complete-scoped-source-weak-switch-dispatch-and-public-abi,R198
 0x006056CE,library,D3DX8,exclude,whole-original-sdk-image-surface-volume-texture-entry-policy-with-scoped-source-fields-complete-backward-exits-and-cold-public-abi,R202
-0x0060577E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x0060579E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0060577E,library,D3DX8,exclude,whole-original-sdk-public-wrapper-scoped-source-import-and-distinct-save-owner-routes,R229
+0x0060579E,library,D3DX8,exclude,whole-original-sdk-public-wrapper-scoped-source-import-and-distinct-save-owner-routes,R229
 0x006057BE,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x00605AE8,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x00605B10,library,D3DX8,exclude,whole-original-sdk-cube-volume-env-gateway-policy-and-public-abi,R196

@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R228. The public
+review cohorts R108 through R229. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,192: 971 authored, 2,641 library and 580 compiler generated.
-There are 159 pending. Candidate count is not authored function count.
+has resolved 4,197: 971 authored, 2,646 library and 580 compiler generated.
+There are 154 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,81 +20,118 @@ bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R229 SDK public font/save wrapper cohort below.
+the bounded R230 runtime counter-policy investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R228; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R229; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R229 complete SDK public font/save wrappers
+## Next agent objective — R230 runtime counter-policy context
 
-R228 accepts five complete integral assignment dispatch origins /185 with221 whole
-source/code/data sections13561/all545 fields/185 CFGs, two real weak/fallback owners,
-four byte-equal ordinary members and six whole distinct pointer-range controls.
-Three full authored game receivers996 and their actual count/value windows are
-checked. Original/accepted cold replay and3,229 CI tests pass. Prior evidence and
-all60 exact inputs remain unchanged. Replay the R228 verifier below.
+R229 accepts the five complete SDK public wrappers below. Original and accepted
+cold proofs and3,243 CI tests pass; all prior evidence and60 exact inputs remain
+unchanged. Current4,197 resolved =971 authored+2,646 library+580 compiler;
+154 pending and3,226 excluded. The original1,311 goal has1,157 classified /154
+left and remains active. Push reached68d9258; subsequent commits are local.
+Full Web MCP acceptance is required after all remaining origin review finishes.
+Continue local investigation and necessary cold builds in one writable session.
 
-Current4,192 resolved =971 authored+2,641 library+580 compiler;159 pending and
-3,221 excluded. The original1,311 review goal has1,152 classified /159 left and
-remains active. Exact60 /9883 bytes /60 units across eleven objects, authored
-byte denominator1,971,032 and provisional0.50% are unchanged. Push reached68d9258;
-subsequent commits are local. Full Web MCP acceptance is required only after all
-remaining origin review finishes. Continue bounded local review and necessary cold
-builds, preserving R167 and prior explicit uncertainty decisions.
+A fresh whole-native diagnostic `.analysis/r230-native-game-shortlist.json`
+records ten pending game-context hypotheses without granting acceptance. Prioritize
+these six runtime counter updates /314 bytes:
 
-Next investigate five whole public SDK wrapper hypotheses /179:
-
-| Candidate | Whole provisional bytes | Original source hypothesis / real target |
+| Candidate | Whole provisional bytes | Observed native policy, meaning unproved |
 | --- | ---: | --- |
-| `0x00605185` | 51 | D3DXCreateFont@12; GDI GetObjectA and604FB0 FontIndirect |
-| `0x006055A2` | 32 | D3DXSaveSurfaceToFileA@20;6054EF surface helper, flag0 |
-| `0x006055C2` | 32 | D3DXSaveSurfaceToFileW@20;6054EF surface helper, flag1 |
-| `0x0060577E` | 32 | D3DXSaveVolumeToFileA@20;6056CE volume helper, flag0 |
-| `0x0060579E` | 32 | D3DXSaveVolumeToFileW@20;6056CE volume helper, flag1 |
+| `0x0044B600` | 48 | increment receiver+0x68; signed >360 resets zero |
+| `0x0044BB20` | 48 | same whole policy at a distinct candidate |
+| `0x0044C040` | 48 | same whole policy at a distinct candidate |
+| `0x0044D5E0` | 55 | increment+0x68; x87 compare658960, status mask0x41 |
+| `0x004503E0` | 55 | increment+0x68; x87 compare658CA8, status mask1 |
+| `0x00450BD0` | 60 | increment+0x68/+0x6C; signed+0x6C >71 resets only+0x6C |
 
-Private `.analysis/r229-sdk-shape-diagnostic.json` records103 whole original SDK
-section shape candidates at30 pending native addresses. It masks genuine fields
-only for discovery and supplies no acceptance. The four save wrappers have both
-surface/volume source alternatives under masked discovery; independently source-
-defined helper destinations and full unmasked fields must separate them. Font
-wrapper has an actual named GDI import and an independently accepted111-byte R201
-FontIndirect helper. The two176-byte R202 save helpers retain distinct source names.
-Reopen full frozen R201/R202 graphs and full original source/AUX/CFG extents, inspect
-all paths/RET cleanup, cold-build natural original SDK declarations and ordinary
-controls, audit every old snapshot/hash consumer, then freeze a bounded verifier.
+All six remain unknown. Reopen complete native CFGs, extents, constants and actual
+game callers or virtual-dispatch data before attributing ownership. The two x87
+predicates differ; preserve ordered/unordered behavior rather than merging them.
+Inspect independent receiver initialization and field consumers, and contrast
+ordinary game policies with plausible compiler/library alternatives. Runtime
+policy inference must not recover a private class layout or source signature.
+Another future hypothesis is41CA30 /77, an unsigned-byte range predicate for
+[0x81,0x9F] or[0xE0,0xFE]; its encoding meaning needs independent use evidence.
+Do not treat this native diagnostic as a source match or acceptance plan.
 
-Private `.analysis/r229-resume-plan.json` now records full diagnostic unmasked
-agreement for all five roots179/all6 fields through three independently retained
-source owners463 and the actual named GDI32 GetObjectA import. Complete frozen
-R201/R202 code/data/normal/EH/anchor/import graphs pass from fresh archive extraction.
-Five natural ordinary members also agree unmasked. Full cold emission is11
-sections330/all11 fields,88 original headers and the whole32-byte readonly layout
-`[60,16,24,4,4,28,4,4]`. Eight whole32-byte original peer controls reject wrong
-surface/volume helper routes and wrong A/W byte4, without field masking in the
-final comparison. All five remain unknown. No retained cached object is acceptance.
-A durable plan/verifier, new cold build from the actual tracked fixture path,
-formal original/accepted checks and bounded canonical readback remain required.
-The resume plan preserves actual profile/source/object/diagnostic hashes and the
-no-selected-history audit. Its private font control initially used an ignored
-`/GS-` option; the final valid profile omits that option and naturally emits the
-whole51-byte font body. Preserve complete bodies and truthful compiler observations.
+Preserve R198/R204 lifetime/getter uncertainty, seven list8/11-byte node-link
+alternatives, five R163 math overload chains and the five opaque R206 pointer/
+reference leaves. Repeated byte shapes or known callers/callees alone do not
+resolve those origins. Fresh `.analysis/origin-scan/r229-triage.json` has154
+pending with both current ledger hashes. Shared tools remain read-only.
 
-Most other diagnostic SDK hits are previously reviewed lifetime/getter alternatives.
-Preserve R198/R204 uncertainty and the original explicit/implicit compiler controls;
-no repeat source shape grants ownership. Likewise seven list8/11-byte node links
-remain protected by whole byte-equal ordinary controls, and the five math overload
-chains remain R163 unknown. Native preliminary files under `.analysis/r229-` are
-diagnostic only; their old guesses are not a next acceptance shortlist. Do not
-relabel those ambiguous bodies merely from a known library caller/callee. Fresh
-`.analysis/origin-scan/r228-triage.json` has159 pending with both current ledger
-hashes. Shared tool installations remain read-only.
+## R229 complete SDK public font and save wrappers
+
+R229 accepts five complete library source-family origins /179 bytes. Current
+Ghidra names and original extents are preserved, including the two erroneous
+`RFX_Text_Bulk` names; the proposed names identify the independently recovered
+SDK definitions without adding source, private ABI, mapping or exact credit.
+
+| Address | Whole bytes | Original SDK definition and independent route |
+| --- | ---: | --- |
+| `0x00605185` | 51 | `_D3DXCreateFont@12`: named GDI32 `GetObjectA`, then604FB0 FontIndirect |
+| `0x006055A2` | 32 | `_D3DXSaveSurfaceToFileA@20`: surface helper6054EF, flag0 |
+| `0x006055C2` | 32 | `_D3DXSaveSurfaceToFileW@20`: surface helper6054EF, flag1 |
+| `0x0060577E` | 32 | `_D3DXSaveVolumeToFileA@20`: volume helper6056CE, flag0 |
+| `0x0060579E` | 32 | `_D3DXSaveVolumeToFileW@20`: volume helper6056CE, flag1 |
+
+Replay `scripts/repo-python scripts/verify-sdk-public-wrapper-origins.py` with
+immutable `config/sdk-public-wrapper-origin-evidence.json`, SHA-256
+`7995f491ec17ac705a543d8cc32d3ede2e72bf429d47e103d3c4138d2553195c`.
+All six genuine fields are bound through three independently retained whole
+source owners /463 bytes and the unique named GDI import. Static surface/volume
+helper identities use the actual archive member, section and symbol index,
+including storage/type/offset metadata; encoded target call destinations do not
+create owners. Fresh original archive extraction verifies every complete source
+COFF/AUX record, permissions, full unmasked body and normal exit/CFG. The complete
+R201 and R202 original source graphs and their public controls cold-replay.
+Their lifetime/interior alternatives and all earlier uncertainty remain unchanged.
+
+The natural tracked fixture `tests/origin_probes/SdkPublicWrappers.cpp` includes
+original `d3dx8.h`, five real public clients and five compatible ordinary members.
+Build3077 with `/O1 /Ob0 /Gy /Oy- /GR- /GX /I src /showIncludes` is a probe
+reproducibility profile, not a universal target compiler assertion. Full cold
+emission retains11 sections /330 bytes /all11 fields,88 original included headers
+and the complete32-byte readonly layout `[60,16,24,4,4,28,4,4]`. All five ordinary
+members reproduce whole native bodies, so historical replacement absence remains
+unproved. Library attribution is a source-family inference from the independent
+original SDK owners and distinct routes. Eight whole32-byte original peer controls
+reject the wrong surface/volume helper and wrong A/W flag without masking fields.
+The font body retains its real invalid-call error path and full RET12; all save
+wrappers retain full RET20. No ignored compiler option, crop or artificial padding
+is used for acceptance.
+
+The gap6055E2–6055FA is25 bytes of complete noninventory code, not alignment.
+The original same-member section38 defines the full fieldless three-float
+`D3DXVECTOR3` constructor, whose whole native bytes and CFG are checked. This
+adjacent observation adds no function, origin or reconstructed layout credit and
+does not enlarge the32-byte wrapper extent. Other zero-length boundaries are
+recorded literally. Eleven scoped canonical owners are checked. The old snapshot
+audit finds no selected canonical pair; all older evidence remains literal.
+Original-state full unselected digests and bounded before/after readback prove
+that only these five rows in each canonical ledger change. Accepted-state replay
+checks every owner in the complete scoped graph, permitting independent future
+cohorts to progress.
+
+Original and accepted cold replays,3,243 CI tests including14 new guards,
+target/tracking, local Ghidra identity/completion markers, unchanged60 exact
+inputs, fresh154-candidate triage, progress and whitespace pass. Current4,197
+resolved =971 authored+2,646 library+580 compiler;154 pending and3,226 excluded.
+The original1,311 goal has1,157 classified /154 left and remains active. Exact60
+functions /9,883 bytes /60 units across eleven objects, authored denominator
+1,971,032 and provisional0.50% remain unchanged. Complete Web MCP acceptance is
+required after all remaining origin review finishes.
 
 ## R228 complete integral assignment dispatch and count-value receivers
 
