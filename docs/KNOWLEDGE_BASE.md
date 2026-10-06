@@ -12444,3 +12444,95 @@ Current4,232 resolved =997 authored+2,655 library+580 compiler;119 pending and
 3,235 excluded. Original1,311 goal has1,192 classified /119 left and stays
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,950 and provisional0.50%.
+
+## R244 — custom owned-effect cleanup before member destruction
+
+R244 accepts authored `0x0045B9B0` / 85 only, inferred as
+BattleEffectManager::DestroyOwnedEffectsAt0045B9B0. The complete CFG[1,0],
+original extent and eleven following external INT3 bytes are preserved.
+Original name, source/private ABI, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-effect-manager-lifetime-origins.py`
+with immutable `config/effect-manager-lifetime-origin-evidence.json`, SHA-256
+`116da4a1fc4c1bbc5547cb4d84b7dcfa414b579b0c3113b8d4f10b4d462e375e`.
+The whole target first calls independently accepted R109 custom cleanup45BA30
+/ 221 on its receiver. That policy deletes nonzero pointer entries from four
+queues and clears them. It then marks the user body complete and destroys the
+member array at+4 with count4, stride20 and genuine deque destructor45BF30 / 19
+through the complete96-byte runtime array-destructor helper. The registered
+exception frame cleans the same array if the user cleanup throws. Original
+scalar deleting wrapper458740 / 44 calls this exact85 and scalar delete640F15
+/ 5; the latter's bound jump to whole free642A61 / 113 is preserved rather
+than treated as a final-RET body. These are authored ownership observations,
+not proof that the original explicit method spelling has been recovered.
+
+Independent whole R166 initialization45B920 / 131 and fighter initialization
+4567B0 / 345 retain the same four queues, member offsets and observed84-byte
+allocation. Existing R241 binding21 and whole effect spawn282 retain the live
+fighter relationship. Eighteen complete anchors / 2,207 bytes and nineteen
+canonical pairs are frozen, including original authored/library/compiler
+records and three complete registered frames. No earlier owner or extent is
+changed. The array destruction helper, EH cleanup and deleting wrapper keep
+their independently accepted library/compiler classifications.
+
+Fresh `tests/origin_probes/EffectManagerLifetime.cpp` includes the unchanged
+original R166 probe and uses a complete generic84-byte owner with a meaningful
+reference word and four genuine SDK deques. Generic float values preserve the
+old four-byte payload observation; they are not a claim that original owned
+pointers were floats. A compatible external ClearOwned declaration binds only
+to the independently verified full221-byte game policy; it is not a recovered
+private source declaration. Pinned3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+/I probes /showIncludes` emits the entire85-byte explicit cleanup destructor.
+The ordinary implicit and explicit-empty destructor alternatives are32 bytes;
+each retains all53 missing target tail bytes and every other difference.
+Neither contains the observed custom cleanup call.
+
+Seven full comparisons / 280 source bytes and all twenty genuine fields retain
+main85, one whole32-byte source EH carrier with cleanup22 and handler10 roots,
+one whole36-byte source metadata carrier with unwind8 and FunctionInfo28,
+deque destructor19, deleting wrapper44, and both32-byte negatives against the
+whole85-byte target. The handler definition at source offset22 and FunctionInfo
+at offset8 never justify slicing their original sections. Every actual local
+field binds its fresh defining source section/offset; external runtime and
+custom-policy bindings retain complete independent original owners. No mask,
+source-body patch, fabricated AUX, target byte array or cropped comparison is
+used. All155 fresh code/data sections / 7,060 bytes,343 fields,complete COFF/AUX/
+line provenance,30 actual include owners,two real weak aliases and the entire
+52-byte thirteen-word layout are frozen. The old36-byte layout is literal;
+additional current sizes are[84,84,84,20]. They are generic observations, not a
+recovered original class size or private layout.
+
+Both-state cold proofs also run the entire unchanged original R166 main with
+exactly twelve checked historical successor pairs. Nine belong to R167; two
+40E000/5F84B0 belong to R223;45B880 belongs to R222. Each original/accepted pair
+is checked against its immutable successor before a read-only projection of
+literal historical metadata at the old module-provider seam. All four original
+custom policies /600 bytes,three full source positives /397 bytes and the
+independent sparse-default203-byte policy,nineteen whole source/code/EH/data
+comparisons /1,340 bytes,63 real fields,three complete implicit negatives /
+96 bytes,four whole parents /4,897 bytes and both guarded switch tables /
+64 bytes,146 old code/data sections /6,709 bytes,29 old SDK include owners,
+registered frames and full old36-byte layout replay unchanged. No original
+manifest/source/compiler/object,standard-library or subprocess behavior is
+patched. The standalone current-state R166 CLI retains its historical snapshot
+rejection; the historical view is not a claim about current canonical labels.
+
+Pending40D980 /14 and40D9F0 /14 remain unknown. Full geometry initializers85 /
+259 /305 ignore their return values and invoke them at member offsets0/16/32/
+48/64 before initializing storage. Private fresh SDK observations reproduce
+both14-byte empty constructors and the entire85-byte enclosing initialization;
+ordinary empty constructors also reproduce. The original SDK-versus-ordinary
+owner/type is not proved, so these diagnostics add no canonical credit and do
+not alter the existing exact four-dword helper40DB10 /51.
+
+An empty selected historical audit and strict HEAD16d8007 readback allow exactly
+one function/origin pair to change. Original and accepted full cold proofs,
+ten new guards,target/tracking,readonly Ghidra attestation and query completion,
+fresh118-row triage,progress freshness,all60 exact input preservation and
+whitespace checks pass. All 3,416 local CI tests pass.
+One complete Web MCP acceptance remains due after all remaining origin review.
+
+Current4,233 resolved =998 authored+2,655 library+580 compiler;118 pending and
+3,235 excluded. Original1,311 goal has1,193 classified /118 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects stay
+unchanged; authored denominator1,973,035 and provisional0.50%.

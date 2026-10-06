@@ -2099,7 +2099,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0045B860,authored,BattleEffect,authored,complete-game-policy-with-batch-context,R102
 0x0045B880,authored,BattleObject,authored,whole-virtual-frame-selection-and-independent-game-resource-receiver-dispatch-context,R222
 0x0045B920,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
-0x0045B9B0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0045B9B0,authored,BattleEffectManager,authored,whole-custom-owned-effect-cleanup-before-member-array-destruction-with-independent-pair-and-registered-eh,R244
 0x0045BA10,authored,BattleEffectManager,authored,whole-post-construction-fighter-reference-binding-with-independent-effect-allocation-initialization-and-spawn-consumption,R241
 0x0045BA30,authored,BattleEffectManager,authored,complete-game-policy-with-mixed-context,R109
 0x0045BB10,authored,BattleEffect,authored,target-observed,R045

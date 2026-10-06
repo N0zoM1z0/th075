@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R243. The public
+review cohorts R108 through R244. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,55 +11,96 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,232: 997 authored, 2,655 library and 580 compiler generated.
-There are 119 pending. Candidate count is not authored function count.
+has resolved 4,233: 998 authored, 2,655 library and 580 compiler generated.
+There are 118 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,950 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,973,035 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R244 bounded access investigation below.
+the bounded R245 scene-lifetime investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R243; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R244; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R244 bounded access investigation
+## Next agent objective — R245 scene lifetime
 
-R243 accepted three character-list front/dereference methods /76 bytes after
-complete original and accepted cold proofs,ten new guards and unchanged full
-R170 replay with nine verified later historical pairs. There are119 origins
-pending; the original1,311 goal has1,192 classified /119 left and remains active.
-The user pushed throughc9b8efa; later commits remain local. Continue local serial
-investigation while preserving all accepted origins and60 exact functions.
-One complete Web MCP acceptance is required after all remaining origin review
-finishes; that final full run remains outstanding.
+R244 accepted one authored effect-manager destructor85 after whole original and
+accepted cold proofs,ten new guards and unchanged full R166 replay with twelve
+verified historical successor pairs. There are118 origins pending; original
+1,311 goal has1,193 classified /118 left and remains active. The user pushed
+throughc9b8efa; later commits remain local. Continue serial local investigation
+while preserving every accepted origin and60 exact functions. One complete Web
+MCP acceptance is required after all remaining review; that run remains due.
 
-Reopen pending 40D980 / 14 and 40D9F0 / 14 with complete geometry parents.
-Private `.analysis/r244-geometry-native.json` and the attested complete Ghidra
-query `.analysis/r244-geometry.c` show that zero initialization85, rectangle
-initialization259 and RECT initialization305 ignore their return values and
-call them at offsets0/16/32/48 and64 before initializing storage. They are
-lifetime candidates, rather than established pointer accessors. Preserve both
-unknown until whole genuine SDK and ordinary construction alternatives plus
-independent defining ownership are checked. Existing exact51-byte four-dword
-helper40DB10 remains unchanged; do not infer a complete private geometry type.
+Next investigate pending42C560 /265. Fresh private
+`.analysis/r245-lifetime-native.json` freezes its entire body/instructions,
+original switch records and CFG[1,6], plus paired compiler deleting wrapper
+42DAC0 /44. The265-byte body writes vtable658008, stores receiver+0x48 to global
+67162C, iterates the receiver+0x0C deque, deletes each pointed array through
+actual array delete64169D, clears it through19-byte destructor/clear alias
+41DF50, conditionally deletes the child at+8 through compiler425460, then
+destroys members at+0x34/+0x20/+0x0C and calls base431F40. This is a promising
+explicit game cleanup policy. Reconcile its complete registered EH and source
+carriers, independently accepted container/index/runtime/base contexts, actual
+vtable scope and full explicit/implicit alternatives before accepting it.
+Do not change array delete to scalar delete or infer complete private layouts.
 
-Private `.analysis/r244-native.json` also preserves full integer-abs and
-float atan2 forwarding chains. The complete10-byte accepted atan2 runtime
-entry642240 ends in an independently bound jump; an authored final-RET CFG
-checker correctly rejects that runtime entry. Its explicit CFG question is
-retained, not replaced with a truncated body. Preserve R163 SDK/ordinary math
-alternatives, R108 constructor411C10 and allocator lifetime4212A0 as unknown.
-No new canonical origin or exact scope is accepted by these diagnostics.
+Private `.analysis/probes/R245SceneLifetime.cpp` cold-compiles a natural complete
+generic cleanup observation. `.analysis/r245-scene-diagnostic.json` records a
+whole265-byte positive diagnostic and whole114-byte explicit-empty alternative;
+the implicit destructor is not yet emitted and must be genuinely instantiated
+before using it as a control. Diagnostic fields are explicitly target-derived,
+so this adds no ownership or exact acceptance. Freeze independent full defining
+providers,all source code/data/AUX/fields,registered EH/shared sections and cold
+proof before any transition. Current generic virtual-destructor declaration is
+an observation,not recovered original virtuality. Actual first three slots at
+658008 are42DAC0/42C670/42CA60: the deleting entry is in the observed table.
+The current generic source has only two slots; do not compare a table prefix
+as a whole source match. Reconcile full source declarations and original table
+context while keeping private class/vtable extent and original ABI unknown.
+
+The attested readonly query `.analysis/r245-selection-xrefs.txt` reports the
+actual read42C531 in complete initializer42C3D0 /395 and write42C595 in the
+candidate to global67162C. Full candidate/paired wrapper,initializer395,file
+scanner613 and selector1005 are decompiled in
+`.analysis/r245-replay-browser.c`,with attestation/completion in
+`.analysis/r245-browser-ghidra.log`. Read native full owners and actual archive/
+filename production/selection use before relying on these decompiles.
+
+The same private survey retains protected copy4591E0 /417,assignment45AAE0 /
+368, cleanup45B6B0 /15 and5FAAD0 /15, and composite lifetime4586C0/5F7ED0 /72
+as unknown. Earlier R158/R161/R162/R212/R226/R233 evidence remains authoritative;
+do not promote them from a reviewed callee or deleting wrapper alone.
+
+R244's fresh whole explicit destructor85 calls custom owned-pointer cleanup221
+before automatic four-deque array destruction. Normal and exceptional cleanup
+share the same count4/stride20/member+4/callback19. Complete scalar deleting44,
+cleanup/handler32 and metadata36 replay without slicing original source sections;
+whole implicit/empty32 alternatives remain negative. The entire original R166
+cold main retains all original source/EH/data/parent/control evidence with exactly
+twelve checked literal historical pairs. Fresh private
+`.analysis/origin-scan/r244-triage.json` records118 pending/current ledger hashes.
+
+Geometry14 at40D980/40D9F0 stays unknown. Private whole native/attested Ghidra
+context is in `.analysis/r244-geometry-native.json` and
+`.analysis/r244-geometry.c`; fresh `.analysis/probes/R244GeometrySDK.cpp` and
+`.analysis/r244-sdk-outline.log` retain genuine SDK and ordinary empty14
+observations plus the entire85-byte SDK enclosing initialization. These are
+compatible alternatives, not proven original ownership. Existing exact51-byte
+four-dword helper40DB10 remains unchanged. Whole integer-abs/float-atan2
+forwarding diagnostics in `.analysis/r244-native.json` retain prior R163
+ambiguities and the explicitly recorded bound-jump runtime CFG question.
+No exact reconstruction scope is added.
 
 R243's whole front32 calls independently accepted begin531DA0 /42 and mutable
 dereference540240 /19,which calls const dereference540260 /25 and opaque
@@ -135,6 +176,98 @@ constructors458650 /31 and458670 /23 as unknown. DwStack61FB37 and codec61A453
 retain protected R195/R198 alternatives. Extent questions60C120 /11 and620132
 /5 need complete defining source/metadata. Shared tools remain read-only.
 
+## R244 — custom owned-effect cleanup before member destruction
+
+R244 accepts authored `0x0045B9B0` / 85 only, inferred as
+BattleEffectManager::DestroyOwnedEffectsAt0045B9B0. The complete CFG[1,0],
+original extent and eleven following external INT3 bytes are preserved.
+Original name, source/private ABI, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-effect-manager-lifetime-origins.py`
+with immutable `config/effect-manager-lifetime-origin-evidence.json`, SHA-256
+`116da4a1fc4c1bbc5547cb4d84b7dcfa414b579b0c3113b8d4f10b4d462e375e`.
+The whole target first calls independently accepted R109 custom cleanup45BA30
+/ 221 on its receiver. That policy deletes nonzero pointer entries from four
+queues and clears them. It then marks the user body complete and destroys the
+member array at+4 with count4, stride20 and genuine deque destructor45BF30 / 19
+through the complete96-byte runtime array-destructor helper. The registered
+exception frame cleans the same array if the user cleanup throws. Original
+scalar deleting wrapper458740 / 44 calls this exact85 and scalar delete640F15
+/ 5; the latter's bound jump to whole free642A61 / 113 is preserved rather
+than treated as a final-RET body. These are authored ownership observations,
+not proof that the original explicit method spelling has been recovered.
+
+Independent whole R166 initialization45B920 / 131 and fighter initialization
+4567B0 / 345 retain the same four queues, member offsets and observed84-byte
+allocation. Existing R241 binding21 and whole effect spawn282 retain the live
+fighter relationship. Eighteen complete anchors / 2,207 bytes and nineteen
+canonical pairs are frozen, including original authored/library/compiler
+records and three complete registered frames. No earlier owner or extent is
+changed. The array destruction helper, EH cleanup and deleting wrapper keep
+their independently accepted library/compiler classifications.
+
+Fresh `tests/origin_probes/EffectManagerLifetime.cpp` includes the unchanged
+original R166 probe and uses a complete generic84-byte owner with a meaningful
+reference word and four genuine SDK deques. Generic float values preserve the
+old four-byte payload observation; they are not a claim that original owned
+pointers were floats. A compatible external ClearOwned declaration binds only
+to the independently verified full221-byte game policy; it is not a recovered
+private source declaration. Pinned3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src
+/I probes /showIncludes` emits the entire85-byte explicit cleanup destructor.
+The ordinary implicit and explicit-empty destructor alternatives are32 bytes;
+each retains all53 missing target tail bytes and every other difference.
+Neither contains the observed custom cleanup call.
+
+Seven full comparisons / 280 source bytes and all twenty genuine fields retain
+main85, one whole32-byte source EH carrier with cleanup22 and handler10 roots,
+one whole36-byte source metadata carrier with unwind8 and FunctionInfo28,
+deque destructor19, deleting wrapper44, and both32-byte negatives against the
+whole85-byte target. The handler definition at source offset22 and FunctionInfo
+at offset8 never justify slicing their original sections. Every actual local
+field binds its fresh defining source section/offset; external runtime and
+custom-policy bindings retain complete independent original owners. No mask,
+source-body patch, fabricated AUX, target byte array or cropped comparison is
+used. All155 fresh code/data sections / 7,060 bytes,343 fields,complete COFF/AUX/
+line provenance,30 actual include owners,two real weak aliases and the entire
+52-byte thirteen-word layout are frozen. The old36-byte layout is literal;
+additional current sizes are[84,84,84,20]. They are generic observations, not a
+recovered original class size or private layout.
+
+Both-state cold proofs also run the entire unchanged original R166 main with
+exactly twelve checked historical successor pairs. Nine belong to R167; two
+40E000/5F84B0 belong to R223;45B880 belongs to R222. Each original/accepted pair
+is checked against its immutable successor before a read-only projection of
+literal historical metadata at the old module-provider seam. All four original
+custom policies /600 bytes,three full source positives /397 bytes and the
+independent sparse-default203-byte policy,nineteen whole source/code/EH/data
+comparisons /1,340 bytes,63 real fields,three complete implicit negatives /
+96 bytes,four whole parents /4,897 bytes and both guarded switch tables /
+64 bytes,146 old code/data sections /6,709 bytes,29 old SDK include owners,
+registered frames and full old36-byte layout replay unchanged. No original
+manifest/source/compiler/object,standard-library or subprocess behavior is
+patched. The standalone current-state R166 CLI retains its historical snapshot
+rejection; the historical view is not a claim about current canonical labels.
+
+Pending40D980 /14 and40D9F0 /14 remain unknown. Full geometry initializers85 /
+259 /305 ignore their return values and invoke them at member offsets0/16/32/
+48/64 before initializing storage. Private fresh SDK observations reproduce
+both14-byte empty constructors and the entire85-byte enclosing initialization;
+ordinary empty constructors also reproduce. The original SDK-versus-ordinary
+owner/type is not proved, so these diagnostics add no canonical credit and do
+not alter the existing exact four-dword helper40DB10 /51.
+
+An empty selected historical audit and strict HEAD16d8007 readback allow exactly
+one function/origin pair to change. Original and accepted full cold proofs,
+ten new guards,target/tracking,readonly Ghidra attestation and query completion,
+fresh118-row triage,progress freshness,all60 exact input preservation and
+whitespace checks pass. All 3,416 local CI tests pass.
+One complete Web MCP acceptance remains due after all remaining origin review.
+
+Current4,233 resolved =998 authored+2,655 library+580 compiler;118 pending and
+3,235 excluded. Original1,311 goal has1,193 classified /118 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects stay
+unchanged; authored denominator1,973,035 and provisional0.50%.
+
 ## R243 — complete character-list front and dereference closure
 
 R243 accepts library `0x00540220` / 32, `0x00540240` / 19 and
@@ -203,7 +336,7 @@ remains due after all remaining review finishes.
 Current4,232 resolved =997 authored+2,655 library+580 compiler;119 pending and
 3,235 excluded. Original1,311 goal has1,192 classified /119 left and stays
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
-unchanged; authored denominator1,972,950 and provisional0.50%.
+unchanged; authored denominator1,973,035 and provisional0.50%.
 
 ## R242 — complete archive iterator access and advancement
 
@@ -281,7 +414,7 @@ remains due after all remaining origin review finishes.
 Current4,229 resolved =997 authored+2,652 library+580 compiler;122 pending and
 3,232 excluded. The original1,311 goal has1,189 classified /122 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
-unchanged; authored denominator1,972,950 and provisional0.50%.
+unchanged; authored denominator1,973,035 and provisional0.50%.
 
 ## R241 — binding a constructed effect manager to its fighter
 
@@ -345,7 +478,7 @@ acceptance remains due after all remaining origin review finishes.
 Current4,223 resolved =997 authored+2,646 library+580 compiler;128 pending and
 3,226 excluded. The original1,311 goal has1,183 classified /128 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects are
-unchanged; authored denominator1,972,950 and provisional0.50%.
+unchanged; authored denominator1,973,035 and provisional0.50%.
 
 ## R240 — primary replay-input queue exhaustion
 
