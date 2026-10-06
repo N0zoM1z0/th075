@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246 and bounded unresolved reviews/audit R247–R250. The public
+review cohorts R108 through R246 and bounded unresolved reviews/audits R247–R252. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,19 +20,64 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R251 remaining review matrix below.
+the bounded R253 global-vector ownership context below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R250; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R252; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R251 remaining review matrix
+## Next agent objective — R253 global-vector ownership context
+
+R251 completes the [116-row pending review matrix](ORIGIN_PENDING_REVIEW.md).
+Every whole target body and original structured record trail/hash was read
+back; 114 RET-based CFGs and both complete native tail cases are retained.
+This is an evidence/missing-witness report, not an origin transition or full
+replay of every historical source proof. The R251 attested global queries for
+the coordinate helper's two destinations find only its own writes, supplying
+no new consumer identity. Preserve that bounded limitation.
+
+R252 supplies stronger new context for `0x004065D0` /19 and `0x004065F0` /19:
+fresh genuine direct-vector global initialization28/finalization15, complete
+constructor42 and its allocator children, storage126, destructor19/clear19
+alternatives and cleanup103/110 compare unmasked with all selected target
+bytes. The four actual static wrappers use the same two globals as the
+corresponding accepted library constructor and pending cleanup. Whole natural
+single-member implicit/explicit owners instead construct through another22
+and destroy through the vector destructor19, not directly through Tidy103.
+This is a new ownership-context lead, not merely the old callee association.
+
+Next assess whether this complete same-global source/context chain identifies
+the two outer bodies as vendor library lifetimes, accounting for inherited or
+ordinary explicit wrappers and the limited per-unit compiler inference. If it
+does, freeze a durable whole verifier and original-to-accepted transition,
+replay the complete retained static/vector/cleanup provider graph, and run the
+required checks before accepting either origin. Do not count the private
+comparison as accepted now. Neither original element type nor arbitrary game
+owner layout has been recovered. No exact scope is added.
+
+Private `.analysis/r252-global-vector-context.json` retains all213 initialized
+sections25,241 bytes including debug records, the separate complete64-byte
+BSS section, all definitions/AUX/fields, all27 header hashes and layout
+[4,80,16,16,16,16]. Its ordinary initialized code/data subset is117 sections /
+4,722 bytes. Twenty whole comparisons /827 bytes include two same-target
+clear/destructor alternatives; the distinct target set is18 extents /789
+bytes. Unselected source sections are inventories, not invented target
+mappings. The entire unchanged R090 CLI cold-replays its retained R089 graph;
+this does not replay every R004 or CRT provider. All canonical and exact
+inputs remain unchanged. R252 source and objects are private observations.
+
+The full goal remains1195 classified /116 left and active. The pending user
+clarification about an end state retaining documented unknowns is unanswered;
+do not presume a scope change. The requested final complete Web MCP acceptance
+remains due after the remaining-review end state is satisfied.
+
+### Retained R250 and R249 discovery
 
 R250 retains625575 /14 and64F513 /12 as unknown after complete824-member
 source-reference coverage,whole mapped PE value scans,attested Ghidra queries,
@@ -44,10 +89,10 @@ throughc9b8efa; subsequent commits remain local. Preserve all accepted origins
 and exact60. One complete Web MCP acceptance remains due after all remaining
 origin review. No scope clarification is presumed.
 
-Next assemble a complete116-row review matrix of whole observed behavior,
-original source/context evidence,retained alternatives and each missing
-independent witness. Reconcile every row against the current target/canonical
-state and old literal records. Keep ownership unresolved wherever evidence is
+The complete116-row review matrix records whole observed behavior,
+original source/context evidence and each missing independent witness.
+Every row is reconciled against the current target/canonical state and old
+literal records. Keep ownership unresolved wherever evidence is
 non-identifying; snapshots,source equality,library parents and metadata hits do
 not themselves establish origin. The user has been asked whether completed
 review may retain documented unknowns before final MCP acceptance, or must

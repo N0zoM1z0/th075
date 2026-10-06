@@ -12929,3 +12929,90 @@ library+581 compiler,116 pending and3236 excluded. Original1311 remains1195
 classified /116 left and active. Exact60 /9883 bytes /60 units /eleven objects
 and provisional authored denominator1973300 are unchanged. The full remaining
 review and requested final complete Web MCP acceptance remain outstanding.
+
+## R251 — complete pending target and evidence review matrix
+
+The new [pending review matrix](ORIGIN_PENDING_REVIEW.md) records all 116
+current unknown candidates / 4,094 bytes. Every literal canonical pair and
+whole target hash/instruction stream is read back against R249. The independent
+CFG check covers 114 RET-based bodies; the original complete 11-/5-byte native
+conditional/tail carriers cover the other two without cropping or inventing
+source definitions. Original structured references are read back at their
+exact JSON trails and record hashes; current artifact hashes are retained.
+
+Private `.analysis/r251-review-matrix.json` retains full behavior, control
+flow, calls/non-stack writes, all source/context discovery trails, documentary
+locations and whole mapped PE value observations. The 116-row table names the
+missing distinguishing witness for every body. Categories describe evidence
+gaps, not origins; all 116 remain underdetermined. Missing discovered references
+do not prove a body was never investigated. Reading old literal source records
+is not a fresh cold replay of all their original policies and provider graphs.
+
+The two SDK 8-byte GetLastError leaves61FBE7/61FD1A are correctly categorized as
+read-and-reset error operations, not constructors/destructors. Their original
+SDK symbols and all target bytes remain recorded; no typed target namespace
+witness is gained. For coordinate helper `0x00455770` /111, fresh read-only Ghidra
+queries at `0x006714A8` and `0x0067142C` find only its own writes `0x004557B8` and `0x004557D3`. Both
+queries complete with target attestation and TH075_QUERY_OK. There is no new
+consumer identity; computed/interior/runtime aliases remain possible.
+
+The matrix does not complete or reduce the original 1311 goal. Counts remain
+4235 resolved = 999 authored + 2655 library + 581 compiler, 116 pending and 3236
+excluded. Original1311 remains 1195 classified /116 left. Exact 60 /9883 bytes /
+60 units /eleven objects and provisional authored denominator 1973300 remain
+unchanged. The question about a reviewed-but-unknown end state is pending;
+no answer or authorization is inferred from elapsed time. Final complete Web
+MCP acceptance is still outstanding after the required review end state.
+
+## R252 — paired global-vector source and lifetime context
+
+R252 investigates pending `0x004065D0` /19 and `0x004065F0` /19 using new complete natural
+source `.analysis/probes/R252GlobalVectorLifetimes.cpp`. It declares actual
+std::vector globals of unsigned-long and complete 80-byte observation values,
+plus complete implicit and explicit-empty owners with a single vector member.
+These are ordinary source controls, not recovered game class declarations.
+Serial pinned 3077 /Od /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes cold-compiles
+this source. All 27 actual header paths/hashes are retained.
+
+Private `.analysis/r252-global-vector-context.json` inventories all 213
+initialized section25,241 bytes, including debug sections, with definitions,
+AUX and all fields. The ordinary initialized code/data subset is 117 sections /
+4,722 bytes. The separate whole BSS section /64 has four genuine 16-byte globals
+at its actual symbol offsets; it is not compared as an invented contiguous
+64-byte target object. Complete readonly sizes are[4,80,16,16,16,16].
+
+Twenty full unmasked comparisons /827 bytes include two same-target
+clear/destructor alternatives; the distinct target set is 18 extents /789 bytes.
+For each pending 19-byte body, the real target initializer28 and finalizer15 refer to the
+same writable global, its original accepted R090 constructor42 and the pending
+cleanup body. The fresh direct-vector constructor42, allocator14/value28/copy16
+children, complete storage126, pending destructor19/clear19 alternatives and
+original R004 cleanup103/110 all match their selected whole target extents and
+all actual selected source fields. Independent source symbols and whole
+providers are retained; no comparison truncates or masks relocation bytes.
+
+The natural implicit/explicit single-member owners emit constructor22 calling
+the complete vector constructor42 and destructor19 calling the complete vector
+destructor19. Those genuine provider identities differ from the pending 19-byte body
+calling Tidy103/110 directly. Their bodies are not made positive by substituting
+Tidy for their actual vector-destructor source field. This paired construction/
+termination context is stronger than a short fingerprint or reviewed callee
+alone. It merits a bounded ownership decision with original declaration and
+compiler-profile limitations kept explicit; no new origin is accepted yet.
+
+The entire unchanged R090 CLI cold-replays its retained R089 complete storage
+proof. Every other freshly emitted section is inventoried, not claimed as a
+mapped target body; the R090 replay does not replace complete retained R004,
+static startup/registration or CRT provider replays required for acceptance.
+The failed generic initialized-section inventory correctly rejected BSS; the
+new private inventory separately validates that real uninitialized section,
+rather than silently dropping storage or replacing the repository parser.
+
+Target/tracking, original 4351 canonical pairs, exact 60 input preservation,
+progress freshness and whitespace checks pass. R250's 3,436-test local CI run
+remains applicable: no tracked implementation/test/ledger input changed after
+it. R251/R252 add documentation and private observations only. Counts remain
+4235 resolved, 116 pending; original 1311 remains 1195 classified /116 left and
+active. Exact 60 /9883 bytes /60 units /eleven objects and authored denominator
+1973300 are unchanged. The full review and requested final complete Web MCP
+acceptance remain outstanding.
