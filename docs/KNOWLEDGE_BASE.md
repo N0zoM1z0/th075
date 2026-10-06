@@ -12763,3 +12763,64 @@ readback and whitespace checks pass. All 3,436 local CI tests pass. Counts remai
 116 pending and3236 excluded. Exact60 /9883 bytes /60 units across eleven
 objects and provisional authored denominator1973300 stay unchanged.
 One complete Web MCP acceptance remains due after all remaining origin review.
+
+## R248 — complete image-resource cleanup retains outer lifetime ambiguity
+
+R248 reviews pending0x0060EBCD /89 without a canonical transition. The entire
+original `??1CD3DXImage@@QAE@XZ` COMDAT, all38 instructions and all six actual
+REL32 fields reproduce unmasked from pinned `obj\i386\cd3dximage.obj`, member
+offset1516190, SHA1b06191aa0fc5e9603988f955f935288e2eefee18726655b230359575fd26a87.
+Buffer words+4/+8 are freed only when nonnull and their separate ownership words
++0x38/+0x3C are set. Child links+0x4C/+0x50 each receive the genuine recursive
+same-owner destructor and scalar delete640F15. Both child-null exits, both
+buffer guards and the final return remain in the complete89-byte extent.
+
+Private `.analysis/r248-diagnostic.json` reopens eight whole original source
+carriers1852 bytes: constructor25, destructor89, scalar-deleting wrapper28,
+public image-info56, surface-save176, volume-save176, LoadDDS833 and Load469.
+Every original COFF definition/AUX, field, full normal CFG and target binding
+is checked. The genuine non-inventory constructor25 at60EBB4 has no fields;
+it clears the kind, both buffers/ownership words and both child links. Full
+LoadDDS833 independently allocates84 bytes at both real new sites, invokes that
+constructor, and stores the created owners into the same +0x50/+0x4C links.
+These facts establish resource ownership behavior and allocation84, without
+recovering all private member types or the original outer destructor syntax.
+No non-inventory function receives new candidate credit. The original object
+contains no debug$T section that supplies the missing complete private types.
+
+Complete generic `.analysis/probes/R248RecursiveOwnership.cpp` uses two
+conditional-buffer members and two genuinely owning child members. Implicit
+and empty outer destructors perform both guarded scalar releases and both
+recursive child deletes. The generic owner is24 bytes, buffer member8; its
+layout observation is [24,24,24,8,16,8,4,0,16,8,4,0]. It is not the original
+84-byte image owner, and no incomplete SDK class is instantiated or embedded.
+
+Serial pinned3077 /O2 /Ob2 /GX emits whole implicit/empty122 bodies with genuine
+member/EH fields and a whole explicit98 control. /O1 /Ob2 /GX- emits whole
+implicit/empty35 bodies with their genuine member-helper calls and explicit88.
+Both profiles additionally use /Gy /GR- /Zi /GS /showIncludes. The absence of
+an original frame motivates a no-EH diagnostic; it does not prove original
+flags or an executable-wide compiler profile. In each profile the complete
+implicit and empty raw source bodies agree with corresponding genuine class/
+member field names. Their helper/EH fields have no independently established
+original target providers; no complete unmasked target match is asserted for
+those outer bodies. Both complete explicit comparisons bind all four actual
+scalar-delete fields and both actual own recursive fields and retain all88
+or25 differences respectively against all89 target bytes, including extent
+differences. No field is masked, retargeted to force equality or omitted.
+
+The unchanged entire R204 CLI passes, including all original17 sections762/
+54 fields,12 whole CFGs,17 anchors3098/70 fields,two tables88,three weak
+fallbacks and its fresh temporary cold source observations. Its six literal
+unknown lifetime snapshots remain unchanged. These observations preserve the
+explicit-versus-member-cleanup uncertainty; source naming, recursive policy
+and a reviewed parent alone do not settle that distinction. R248 grants no
+origin, reconstructed source, private layout/ABI, mapping or exact credit.
+
+Target/tracking,readonly Ghidra attestation,strict unchanged4351 canonical
+pairs,all60 exact-input guards,fresh116-row private triage,progress freshness
+and whitespace checks pass. All 3,436 local CI tests pass. Counts remain4235 resolved =999 authored+2655 library+581 compiler,
+116 pending and3236 excluded; original1311 goal remains1195 classified /116 left.
+Exact60 /9883 bytes /60 units across eleven objects and provisional authored
+bytes1973300 remain unchanged. One complete Web MCP acceptance remains due
+after all remaining origin review.

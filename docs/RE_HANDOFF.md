@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246 and bounded unresolved review R247. The public
+review cohorts R108 through R246 and bounded unresolved reviews R247–R248. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -20,37 +20,51 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R248 resource-lifetime investigation below.
+the bounded R249 pending-evidence audit below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R247; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R248; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R248 resource lifetime
+## Next agent objective — R249 pending-evidence audit
 
-R247 retains environment-map constructor60B728 /104 as unknown after whole
-original104/table52/creation126/initialization134 evidence and natural implicit/
-empty alternatives. Counts remain116 pending; original1311 goal has1195
-classified /116 left and remains active. The user pushed throughc9b8efa;
-subsequent commits remain local. Preserve all accepted origins and exact60.
-One complete Web MCP acceptance remains due after all remaining origin review.
+R248 retains image destructor60EBCD /89 as unknown. Eight complete original
+carriers1852 bytes establish both buffer guards and recursive child ownership,
+including original constructor25 and full DDS allocation84/child-link writes.
+Generic implicit/empty122 or35 bodies and explicit98/88 controls preserve
+actual helper/EH fields and whole negatives. The unchanged entire R204 cold
+CLI passes. Counts remain116 pending; original1311 goal has1195 classified /
+116 left and remains active. The user pushed throughc9b8efa; subsequent commits
+remain local. Preserve all accepted origins and exact60. One complete Web MCP
+acceptance remains due after all remaining origin review.
 
-Next investigate complete pending60EBCD /89. Private
-`.analysis/r246-runtime-triage-native.json` retains its full native body and
-reviewed parents. It conditionally frees owned buffer state and recursively
-cleans two child resources. Original R195/R196 source and lifetime ambiguities
-remain authoritative. Reconcile its complete original SDK source/fields, full
-actual producer/consumer/allocator context, implicit versus explicit member
-cleanup and source/AUX/whole CFG before any transition. A source-owned SDK name
-or a reviewed parent alone does not prove library-versus-generated lifetime
-ownership. Do not overwrite any original snapshot, infer a complete private
-owner or classify a convenient cropped template.
+Next audit the entire116-row pending evidence coverage before another narrow
+probe. Identify whole target/CFG records, actual retained ownership decisions,
+prior cold controls and each missing distinguishing witness. Canonical unknown
+snapshots or textual address hits are not accepted ownership evidence and do
+not by themselves prove a candidate was fully reviewed. Use the current fresh
+triage and full bodies; distinguish prior protected alternatives from eligible
+unexplored context. Reconcile source fields, whole extents and actual ownership
+witnesses before any transition. Preserve earlier literal records; do not
+infer a complete private owner or classify a convenient cropped template.
+Move to a genuinely new eligible context after recording each unresolved result,
+rather than repeating the same generic-cleanup ambiguity as a new distinction.
+
+R248 private `.analysis/r248-diagnostic.json`/log freezes the entire original
+constructor25/destructor89/deleting28/public56+176+176/DDS833/Load469 context,
+all COFF/AUX/fields and whole linked CFGs. Fresh generic24-byte owners are not
+the original84-byte image object. Implicit/empty122 and35 source pairs retain
+genuine member/EH fields without invented original providers; entire explicit98
+and88 controls keep all88/25 differences to target89. Original private types,
+outer default syntax and profiles remain unknown. The entire unchanged R204
+main cold-replays. All4351 canonical pairs and exact60 inputs are unchanged.
+Fresh `.analysis/origin-scan/r248-triage.json` records116 pending/current hashes.
 
 R247 private `.analysis/r247-diagnostic.json`/log re-read original constructor104
 and full13-slot table52 unmasked. Complete factory126 allocates1172 and invokes
