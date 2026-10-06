@@ -16257,3 +16257,119 @@ The new library base evidence does not automatically classify either outer
 policy. Preserve the original snapshots, unknown clear roles and exact scope.
 The remaining-review goal stays active; final complete Web MCP acceptance is
 due only when the requested end state is satisfied. No push was authorized.
+
+## R256 — coherent outer vector cleanup policies and implicit lifetime alternatives
+
+R256 accepts two inferred authored game cleanup policies, `0x004586C0` /72
+and `0x005F7ED0` /72 (144 bytes). Each calls an additional cleanup on the
+unchanged receiver while destruction state0 protects an independently accepted
+vector base, then sets state-1 and invokes that vector destructor. The paired
+construction policies93/75 and original game allocation20/16 supply independent
+context. This is an ownership inference from the complete cohort, not proof
+that no possible equivalent source program exists. Original private types,
+complete layouts, declarations and historical source remain unknown.
+
+| Whole game producer | Observed allocation / paired construction | Outer cleanup / base destruction |
+| --- | --- | --- |
+| Fighter LoadPattern `0x00457660` /3696 | new20; saved pointer at ebp-484; `0x00458960` /93 | `0x004586C0` /72: `0x00458B50` /19 then accepted `0x00458AD0` /19 |
+| Effects LoadPatternCatalog `0x005F71F0` /1722 | new16; saved pointer at ebp-84; `0x005F7F20` /75 | `0x005F7ED0` /72: `0x005F8020` /19 then accepted `0x005F7FA0` /19 |
+
+Both whole producers call the accepted allocation entry `0x0064159D`, save
+its actual returned pointer and pass that same local to the construction
+policy after the null check. The original compiler deleting44 callers at
+`0x00458690` and `0x005F7EA0` independently reach the corresponding outer
+policy and retain R037 compiler ownership. They do not receive authored credit.
+Imported database names, including the misleading ATL name at5F7ED0, remain
+literal evidence only and are not used to establish ownership.
+
+`config/outer-vector-policy-origin-evidence.json` freezes both literal
+original/accepted transitions, every unselected canonical-row hash,95 whole
+native bodies /10,926 bytes, six complete original construction/destruction/
+producer frames,136 bytes of whole compiler code and232 bytes of complete
+unwind/FunctionInfo data. Original registrations, owners, every real callback
+and separate8-byte INT3 alignments are preserved. The new dedicated authored
+CSV records complete hashes, extents and CFG counts; the earlier generic
+authored ledger and all compiler/library evidence remain unchanged.
+
+One natural public fixture contains complete explicit, implicit single-base,
+member-wrapper and both empty-base-order controls. All three cold objects
+use pinned VC7.1 build3077, with /Od /Ob0, /Od /Ob1 and /O1 /Ob0 profiles;
+the remaining settings are explicit. These are reproducibility observations,
+not an executable-wide compiler/flag claim. Each profile retains27 complete
+header hashes, full ordinary definitions/AUX/fields/storage and real weak
+references. Ordinary initialized inventories are197 sections /7987 bytes,
+134 /7660 and166 /3795, each with separate188-byte BSS storage. No original
+class is instantiated or embedded in these generic source observations.
+
+The baseline60 complete unmasked comparisons /2641 bytes bind all144 actual
+fields. They include both explicit destruction72 policies, paired constructors
+93/75, compiler deleting44, ordinary Cleanup19, real vector construction42/
+destruction19 and the complete vendor provider graph. Four entire compiler
+code18/data36 pairs compare with real source definitions and local offsets;
+no chosen cleanup prefix is accepted. Capacity-failure and runtime/exception
+boundaries retain their original provenance. Generic destruction5 still
+differs from original nontrivial element15 at45B6B0 and5FAAD0; neither endpoint,
+the two ordinary clears or the unrelated opaque deque72 receives new credit.
+
+The genuine alternatives are retained completely, including byte positives:
+
+- Implicit single-base policies reproduce the whole construction parents but
+  destroy through a complete19-byte wrapper, rather than the observed72.
+- Member-wrapper constructors also reproduce isolated93/75 bytes when their
+  fields are rebound. Their actual defining constructor is22, calling the
+  vector constructor42, rather than the direct42 source provider in the real
+  cohort. The source22 definition cannot be replaced by a desired42 provider.
+- Empty bases after the vector yield owner sizes20/24, destruction98 and a
+  complete45-byte cleanup with the real pointer adjustment. The observed game
+  allocations are16/20. Equal constructor lengths do not establish equality;
+  the actual completed-state and short-field observations are retained.
+- Empty bases before the vector yield complete implicit destruction72 byte
+  positives. Their first call is the vector destructor and their second is
+  the empty-base destructor, preserving the actual source provider order.
+  Their constructors79/97 and two-state EH code26 differ from the complete
+  observed75/93, one-state code18/data36 cohort. The destructor72 positive is
+  not discarded, truncated or silently relabeled as an explicit source body.
+
+The verifier checks the whole construction/destruction/provider/state/
+allocation combination. A short callee, matching length, isolated parent
+positive or imported class name cannot bootstrap an outer ownership decision.
+The alternative controls bound this inference; they do not recover the
+historical private declarations or claim exhaustive source impossibility.
+
+Accepted-state replay cold-builds all three new objects, rereads every source
+carrier and native context, and invokes the entire unchanged R255 CLI at its
+fixed Git revision. All R255 controls and original R254/R212/R227 trees remain
+complete, including the R253 static/vector, R161/R208/R150, R212/R211/R210/R209,
+R153 and runtime/compiler source proofs. Historical roots, original hashes,
+source path/AUX identity and permitted CSV EOL representations retain their
+full Git-blob checks. No reduced manifest, cached object or global CSV/argument
+patch substitutes for a proof. Current-state canonical checks project only
+the two independently validated literal R256 transitions, restoring the full
+unchanged predecessor view and retaining strict unrelated-row rejection.
+
+Eighteen focused tests reject missing game allocation/receiver context,
+changed order/state, substituted actual providers, cropped compiler code/data,
+erased whole default/empty-base alternatives, false member22-to42 substitution
+and unsupported historical pairs. All3500 public CI tests pass. Target,
+required tracking, exact input/full-row guards, remaining whole-body readback,
+progress freshness and whitespace checks pass. Complete accepted-state cold
+replay passes before handoff.
+
+Current counts are4246 resolved =1001 authored+2664 library+581 compiler,
+105 pending /3779 bytes and3245 excluded. Original1311 progress is1206
+classified /105 left. Exact60 /9883 bytes /60 units /eleven objects stay
+unchanged; the authored denominator increases only144 to1973444 bytes.
+The current matrix rereads every remaining whole hash/current literal pair
+and preserves the original R251116-row audit without rewriting it.
+
+Next bounded R257 examines the analogous deque outer72 at `0x004212A0`,
+paired with accepted construction/reset75 at `0x00421250`, constructor at
+`0x004212F0`, two separate19-byte library aliases at4214C0/421340 and their
+shared complete cleanup at4219C0. The constructor calls the first alias after
+base construction; the outer calls that alias before the second base lifetime.
+Private `.analysis/r257-deque-lifetime-leads.json` freezes the initial four
+whole bodies and two original frames. Source-family names and opacity are
+historical evidence, not acceptance. Test the complete actual provider graph,
+game producers and genuine default/member/empty-base alternatives before any
+transition. Exact scope remains deferred. The full remaining-review goal and
+the requested final complete Web MCP acceptance remain outstanding.

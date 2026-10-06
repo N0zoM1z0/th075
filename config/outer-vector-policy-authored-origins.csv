@@ -1,0 +1,3 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x004586C0,72,6b6ae7975f89ff339af0550d2f9dd8625770b5a477446687fa203f7b51f5090d,VectorRecord::ClearBeforeVectorBaseDestructionAt004586C0 [provisional],1,0,0,R256
+0x005F7ED0,72,f1236d392bef5a123af15e3988e4385d631ce18850f9dd3c4ddcf27147f44093,ContainerRecord::ClearBeforeVectorBaseDestructionAt005F7ED0 [provisional],1,0,0,R256

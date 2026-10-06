@@ -138,8 +138,18 @@ class NeighborVectorLifetimeTests(unittest.TestCase):
         prior = V.module('neighbor_test_prior', 'verify-member-vector-lifetime-origins.py')
         old = json.loads((ROOT / prior.EVIDENCE).read_text())
         selected = {r['address']: r for r in self.plan['functions']}
+        source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        outer_spec = importlib.util.spec_from_file_location(
+            'outer_successor_view', ROOT / 'scripts/verify-outer-vector-policy-origins.py')
+        outer_view = importlib.util.module_from_spec(outer_spec)
+        outer_spec.loader.exec_module(outer_view)
+        newest_outer = json.loads((ROOT / outer_view.EVIDENCE).read_text())
+        outer_view.verify_plan(newest_outer)
+        original_outer = all(q['original_function'] in source['functions.csv'] for q in newest_outer['functions'])
+        source = {name: outer_view.historical_rows(newest_outer, name, actual, original_outer)
+                  for name, actual in source.items()}
         view = {name: V.historical_rows(self.plan, name, [selected[r['address']]['accepted_' + kind]
-                    if r['address'] in selected else r for r in V.rows(name)])
+                    if r['address'] in selected else r for r in source[name]])
                 for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
         with patch.object(prior, 'rows', side_effect=lambda name: view[name]):
             prior.verify_canonical(old)
