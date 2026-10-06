@@ -15983,3 +15983,81 @@ it. R251/R252 add documentation and private observations only. Counts remain
 active. Exact 60 /9883 bytes /60 units /eleven objects and authored denominator
 1973300 are unchanged. The full review and requested final complete Web MCP
 acceptance remain outstanding.
+
+## R253 — complete paired global-vector library lifetimes
+
+R253 accepts `0x004065D0` /19 and `0x004065F0` /19 as library lifetimes.
+The deciding evidence is their complete paired same-global construction and
+termination chain, rather than their short cleanup bodies or a library callee
+alone. The library family is inferred with high confidence; original element
+types and the precise destructor/clear source alias remain provisional.
+No game owner layout, reconstructed source/ABI, mapping or exact credit is added.
+
+`config/global-vector-lifetime-origin-evidence.json` freezes the original and
+accepted literal pairs, every unselected canonical-row hash, 33 complete native
+extents /1,238 bytes, external alignment and original static/CRT source records.
+`scripts/verify-global-vector-lifetime-origins.py` independently checks actual
+source provider definitions, template specialization identity and the complete
+same-global construction/finalization chain. The existing compiler startup
+records bind each real global to its original accepted vector constructor42,
+registered finalizer15, pending destructor19 and full library cleanup103/110.
+The complete fresh cleanup graph includes all range/category/destruction/
+deallocation providers, ending at separately complete scalar delete5 and
+CRT free113. The latter retains its original interior finally label at+83;
+the nine overlapping bytes receive no new function or origin credit.
+
+Two natural source fixtures cold-build five complete control objects: direct
+vectors with implicit/explicit single-member owners, and inherited/ordinary
+cleanup alternatives under /Od /Ob0, /Od /Ob1, /O1 /Ob0 and /O1 /Ob1. All
+actual included headers, ordinary initialized code/data/directive sections,
+whole BSS storage, definitions/AUX/fields and both actual weak references per
+object are retained. The initialized source inventories total 459 sections /
+17,741 bytes; separate BSS storage totals256 bytes. All34 selected source
+comparisons /1,174 bytes link unmasked, including the two same-target
+clear/destructor alternatives and ordinary policy positives. Each original
+19-byte target body ends before its separate 13-byte INT3 alignment.
+
+The ordinary inherited Cleanup19 and global callback15 match the full target
+bodies, proving that neither short equality can decide ownership alone. Their
+actual compiler-generated lifetime chain differs: default inherited
+constructor/destructor22/19 call vector constructor42/destructor19; explicit
+Tidy cleanup additionally emits a complete 72-byte destructor with real EH and
+base destruction. The other natural profiles emit outer constructor/destructor
+pairs26/21,12/5 and14/5; explicit Tidy destructors are74/16/16. Their real
+providers and whole bytes are preserved, without replacing vector destruction
+with Tidy or cropping a body. These controls bound this source investigation;
+they do not establish one executable-wide compiler profile or prove that
+arbitrary differently written source is impossible. Ownership acceptance uses
+the independently typed, complete paired target/source chain.
+
+The accepted-state CLI cold-builds every control and the original static
+fixture, then runs the entire unchanged R024 static proof, R090/R089 vector
+proof, R142 including R141/R038, and R121 including R120. All complete retained
+provenance trees pass. Original library/source/target records and unselected
+ledger rows remain unchanged; only the two frozen origin pairs transition.
+Twelve focused tests cover same-global/source-provider substitutions, missing
+constructors, genuine ordinary positives, all four profiles, full BSS storage,
+free113's retained interior label and strict original/accepted ledger views.
+
+The [remaining review matrix](ORIGIN_PENDING_REVIEW.md) now has 114 pending
+candidates /4,056 bytes. Private `.analysis/r253-remaining-review.json` rereads
+all remaining whole hashes and canonical pairs; the original 116-row R251
+artifact is preserved. Current counts are 4237 resolved = 999 authored + 2657
+library + 581 compiler, 114 pending and 3238 excluded. Original 1311 progress is
+1197 classified /114 left. Exact 60 /9883 bytes /60 units /eleven objects and
+authored denominator 1973300 remain unchanged. Full remaining origin review
+and the requested final complete Web MCP acceptance are still outstanding.
+
+For the next bounded cohort, private `.analysis/r254-context.json` freezes all
+18 native bodies /2,020 bytes for six remaining 19-byte wrappers, six complete
+game parents, three accepted constructors and three full storage-cleanup
+anchors. Audio paths use the same receiver through constructor, clear and
+lifetime calls. Texture paths connect constructor, clear and lifetime calls at
+observed offsets8/24/40. Original authored records, R090/R089 records and EH
+frame discovery are retained; this is context discovery, not acceptance or a
+complete replay of those original proofs. The six unknown rows are unchanged.
+
+All 3,448 local CI tests pass, including the twelve new source/context guard
+tests. Target/tracking, exact 60 input preservation, fresh 114-row triage,
+progress freshness and whitespace checks pass. The accepted-state complete
+cold CLI passed before this documentation-only final update.

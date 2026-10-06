@@ -2,7 +2,8 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246 and bounded unresolved reviews/audits R247–R252. The public
+review cohorts R108 through R246 and R253, with bounded unresolved reviews/audits
+R247–R252. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +12,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,235: 999 authored, 2,655 library and 581 compiler generated.
-There are 116 pending. Candidate count is not authored function count.
+has resolved 4,237: 999 authored, 2,657 library and 581 compiler generated.
+There are 114 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,19 +21,66 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R253 global-vector ownership context below.
+the bounded R254 same-receiver vector cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R252; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R253; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R253 global-vector ownership context
+## Next agent objective — R254 same-receiver vector cohort
+
+R253 accepts only `0x004065D0` /19 and `0x004065F0` /19 as library lifetimes
+through a complete paired same-global source/context chain. The accepted-state
+`verify-global-vector-lifetime-origins.py` CLI cold-builds all five natural
+control objects and the retained static fixture, then replays the entire R024,
+R090/R089, R142/R141/R038 and R121/R120 proofs. All pass. The two library
+transitions preserve every unselected row and all60 exact inputs. The current
+[pending matrix](ORIGIN_PENDING_REVIEW.md) has114 candidates /4056 bytes;
+original116-row R251 evidence is retained without rewriting unknown snapshots.
+Library family confidence is high; original element types and the precise
+destructor/clear alias remain provisional. Full details and limitations are in
+[R253 origin review](ORIGIN_REVIEW.md#r253--complete-paired-global-vector-library-lifetimes).
+
+Next review these six complete19-byte wrappers:
+
+- `0x00409380` and `0x00409490`, both reaching vector Tidy103 at `0x00409860`.
+- `0x0040DCC0` and `0x0040DE30`, reaching record44-vector Tidy110 at `0x0040E150`.
+- `0x0040DE80` and `0x0040DF40`, reaching word-width-vector Tidy103 at `0x0040E2F0`.
+
+Private `.analysis/r254-context.json` freezes18 whole native bodies /2020
+bytes,19 receiver call contexts and four original EH-frame discovery records.
+The six game parents cover complete Audio AcquireClient161, ReleaseClient292,
+LoadWaveDirectory367 and Texture Initialize177, ReleaseResources434,
+ClearSlots33 bodies. Audio construction/clear/lifetime paths reuse the same
+receiver; texture paths connect these operations at offsets8/24/40. Accepted
+R090 vector constructors42 at409350/DC90/DE50 and their R089 storage anchors
+are retained as original records. These are observed relationships, not
+recovered original types or complete game owner layouts.
+
+Apply the complete source/context criterion: compare genuine vector
+constructor/clear/destructor and every provider, inspect the original EH
+cleanup connections, and retain inherited/ordinary alternatives with actual
+source declarations and fields. A library callee, neighboring name or short
+body equality cannot classify an outer wrapper alone. If acceptance is
+supported, freeze the exact original transition and full retained proof;
+replay affected retained views without rewriting old evidence. The six rows
+remain unknown now. No exact-reconstruction scope is added.
+
+Counts are4237 resolved =999 authored+2657 library+581 compiler,114 pending,
+3238 excluded. Original1311 progress is1197 classified /114 left and active.
+The question about a reviewed-but-unknown end state remains unanswered; no
+scope change is presumed. One final complete Web MCP acceptance is due after
+the requested remaining-review end state is satisfied. All3448 local CI tests
+pass; exact60 /9883 bytes /60 units /eleven objects and authored denominator
+1973300 remain unchanged. These commits remain local; no push was authorized.
+
+### Historical R251/R252 context before R253 acceptance
 
 R251 completes the [116-row pending review matrix](ORIGIN_PENDING_REVIEW.md).
 Every whole target body and original structured record trail/hash was read

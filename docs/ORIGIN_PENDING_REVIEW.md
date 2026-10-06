@@ -1,41 +1,45 @@
 # Pending origin review matrix
 
-This report records the current 116 pending candidates, covering 4,094 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 116
+This report records the current 114 pending candidates, covering 4,056 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 114
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
 The target remains the supplied Japanese `th075.exe`, self-reporting version
 1.11, SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
-The exact baseline remains 60 functions / 9,883 bytes / 60 units across eleven
-objects. No target, source/ABI declaration, mapping, origin or exact ledger
-changes are made for this matrix.
+The exact baseline remains 60 functions /9,883 bytes /60 units across eleven
+objects. No target, reconstruction source/ABI declaration, mapping or exact
+ledger changes are made for this matrix.
 
-Every full target body is re-read, hash-checked and completely decoded against
-the current canonical pair. The 114 RET-based CFGs and both complete 11-/5-byte
-tail cases are retained. Each original structured reference is read back by
-its exact JSON trail and original record hash; current artifact file hashes
-are retained. Source/control/context references below are representative discovery locations; a link is not proof
+The original R251 audit covered all 116 whole target bodies, 114 RET-based
+CFGs and both complete 11-/5-byte native tail cases. R253 classifies two19-byte
+library lifetimes through the complete paired same-global source/context
+proof recorded below; their original unknown snapshots are preserved in the
+private R251 artifact. The current remaining projection has112 RET-based
+bodies and the same two native tail cases. Every remaining whole body hash and
+literal canonical pair is read back after the bounded R253 transition.
+
+Original structured references are read back by exact JSON trail and original
+record hash; current artifact file hashes are retained. Source/control/context
+references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r251-review-matrix.json` retains all literal canonical pairs,
-full body hashes/instructions/control flow, calls, non-stack writes, all
-structured record trails/hashes, documentation locations and whole file-backed
-PE absolute-value discovery. Numeric offsets and unused argument observations
-do not establish complete original C++ types or signatures. Raw value occurrence
-scans and candidate/Ghidra reference observations do not rule out computed,
-interior, runtime or unmodeled reachability.
+Private `.analysis/r253-remaining-review.json` retains the current literal
+pairs, full body hashes/instructions/control flow, calls, non-stack writes,
+all original structured trails/hashes and mapped PE absolute-value discovery.
+Numeric offsets and unused argument observations do not establish complete
+original C++ types or signatures. Raw value occurrence scans and candidate/
+Ghidra reference observations do not rule out computed, interior, runtime or
+unmodeled reachability. The original R251 artifact is retained without rewriting.
 
-The categories group evidence gaps, not origins. All rows have the outcome
-**underdetermined origin**. The final complete Web MCP acceptance is still due
-after the requested remaining-review end state is satisfied; no scope
-clarification is presumed.
+The categories group evidence gaps, not origins. All remaining rows have the
+outcome **underdetermined origin**. The final complete Web MCP acceptance is
+still due after the requested remaining-review end state is satisfied; no
+scope clarification is presumed.
 
 | Address | Bytes | Evidence gap category | Whole target observation | Representative prior evidence | Required distinguishing witness |
 | --- | ---: | --- | --- | --- | --- |
-| `0x004065D0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [R252 paired global-vector context](ORIGIN_REVIEW.md#r252--paired-global-vector-source-and-lifetime-context) | Durable whole same-global library/outer-lifetime decision. |
-| `0x004065F0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [R252 paired global-vector context](ORIGIN_REVIEW.md#r252--paired-global-vector-source-and-lifetime-context) | Durable whole same-global library/outer-lifetime decision. |
 | `0x004073A0` | 11 | empty-body | 7 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Original empty-operation signature and owner. |
 | `0x00409380` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
 | `0x00409490` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
@@ -151,4 +155,12 @@ clarification is presumed.
 | `0x00641FB8` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [game-switch-policy-origin-evidence.json](../config/game-switch-policy-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x0064F513` | 12 | zeroing-or-ordinary | 8 instructions; 0 branches; RET 0; 0 calls | [short-crt-origin-evidence.json](../config/short-crt-origin-evidence.json) | Independent namespace/linker-selection witness. |
 
-Totals: 116 candidates / 4,094 bytes; 116 unknown origins.
+Totals: 114 pending candidates /4,056 bytes; 114 unknown origins.
+
+R253 resolves the former `0x004065D0` /19 and `0x004065F0` /19 rows as library
+lifetimes using [the complete paired global-vector proof](ORIGIN_REVIEW.md#r253--complete-paired-global-vector-library-lifetimes)
+and [the immutable evidence manifest](../config/global-vector-lifetime-origin-evidence.json).
+Ordinary19-byte cleanup and15-byte global callback source positives are
+retained explicitly; they do not establish ownership alone. The accepted
+confidence concerns the library family, with original element types and the
+precise destructor/clear source alias remaining provisional.
