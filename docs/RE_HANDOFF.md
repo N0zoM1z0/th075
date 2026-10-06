@@ -80,6 +80,23 @@ byte narrowing, actual tag route and full source-owned callee closures. An empty
 member/count and actual iterator-range alternatives distinct; no artificial
 uninitialized return, ABI declaration or padding is permitted.
 
+Private `.analysis/r228-resume-plan.json` now records a fresh natural SDK
+integral-assignment control and closed diagnostic graph. Vector scopes retain97
+whole sections5232/all231 fields; unsigned-byte deque scopes retain118 whole
+sections8067/all304 fields. Together215 whole sections13299/all535 fields and
+179 code CFGs agree unmasked through defining source catalogs, with one actual
+weak/fallback reference. The five candidates remain unknown. No cached object
+supplies new acceptance. Retained R150 owners still require their own cold proof,
+and complete game context, ordinary/range controls, immutable history audit and
+a durable successor verifier remain required.
+
+A plain-char control collided with separately scoped basic_string<char> allocator
+owners. The unsigned-byte model produces a coherent entire source graph; this does
+not recover original type spelling or signedness. Prefer actual object definitions
+over retained shared prototypes; never resolve a conflicting source owner merely
+from its observed target field. The source probe, explicit profile, object/input
+hashes and exact resume steps are in the private plan.
+
 Reopen complete independently accepted game parents407540/4076A0/4567B0 and
 actual count/value/receiver uses. Freeze their whole CFGs, exits and any switch
 records. Audit every old canonical snapshot and pinned verifier consumer before
