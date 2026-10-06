@@ -11698,3 +11698,49 @@ Current4,207 resolved =981 authored+2,646 library+580 compiler;144 pending and
 active. Exact60 functions /9,883 bytes /60 units across eleven objects are
 unchanged; authored denominator1,971,571 and provisional0.50%. Complete Web MCP
 acceptance remains required after all remaining origin review finishes.
+
+## R233 complete shared scene-value setter
+
+R233 accepts the whole21-byte authored setter at `0x004557E0`. It stores the
+incoming DWORD at writable671628 and returns with RET4; its saved receiver is
+unused. The original current name, extent, source/ABI, mappings and exact state
+remain unchanged. Proposed scene-value naming is inference.
+
+Replay `scripts/repo-python scripts/verify-scene-shared-value-origins.py` with
+immutable `config/scene-shared-value-origin-evidence.json`, SHA-256
+`d6d0f4579f374515459d797980f94ff2a8f3d5d868f7c36a396b769f1d5a23fe`.
+Independent R044 BattleScene state policy43B610 /4,764 consumes and updates this
+same global. Its full body, all158 branches, original authored record and entire
+60-byte guarded state table remain pinned. It treats the value as float,
+subtracts the original approximately0.01 float at658044 when ordered-positive,
+and clamps a negative result to zero against65782C. Complete four-byte data
+extents, permissions and float values are checked. The data binding comes from
+the independent parent's actual FSTP writer, rather than the selected encoded
+address. Local attested Ghidra queries confirm these references; no setter
+incoming reference is found, which does not establish dead code.
+
+The natural tracked fixture `tests/origin_probes/SceneSharedValue.cpp` cold-builds
+with pinned3077 and `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`.
+Unsigned and float setter alternatives each emit21 bytes, and each reproduces
+all native bytes after its sole actual DIR32 data field binds to the independent
+owner. Full source COFF/AUX, normal instructions, linked flow and all four emitted
+code/data sections /64 bytes are checked. The ordinary implicit-copy client10
+has no shared-state write. The complete compact readonly sizeof observations
+are `[1,4,4]`; no private game class is instantiated or padded. Byte-equal type
+alternatives leave original type/name/private owner/layout/ABI/compiler profile
+and source unrecovered. Authored source-family inference adds no exact credit.
+
+The complete24/31-byte no-reference receiver policies454C00 and454F70 remain
+unknown. Five scoped canonical pairs, full original-state unselected digests,
+an empty prior selected-snapshot audit and bounded HEAD759d440 readback allow
+exactly one origin/function row to change. Eleven external INT3 bytes at4557F5
+stay outside the function. All previous evidence, explicit ambiguities and
+60 exact source/header/build/match inputs remain literal. Original and accepted
+cold proofs,3,287 CI tests including eight new guards, target/tracking, progress,
+fresh143-candidate triage and whitespace pass. Full Web MCP acceptance is reserved
+until all remaining origin review finishes.
+
+Current4,208 resolved =982 authored+2,646 library+580 compiler;143 pending and
+3,226 excluded. The original1,311 goal has1,168 classified /143 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,971,592 and provisional0.50%.

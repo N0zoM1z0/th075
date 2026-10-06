@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R232. The public
+review cohorts R108 through R233. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,84 +11,100 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,207: 981 authored, 2,646 library and 580 compiler generated.
-There are 144 pending. Candidate count is not authored function count.
+has resolved 4,208: 982 authored, 2,646 library and 580 compiler generated.
+There are 143 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,971,571 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,971,592 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R233 slot/ABI investigation below.
+the bounded R234 scene resource-lifetime investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R232; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R233; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R233 actual-slot and ABI triage
+## Next agent objective — R234 explicit scene resource cleanup
 
-R232 accepts the whole BG05a reverse-cycle callback below. Original and accepted
-cold proofs and3,279 CI tests pass; prior evidence and all60 exact inputs remain
-unchanged. Current4,207 resolved =981 authored+2,646 library+580 compiler;
-144 pending and3,226 excluded. The original1,311 goal has1,167 classified /144
-left and remains active. Push reached68d9258; subsequent commits are local.
-Full Web MCP acceptance remains required after all origin review finishes.
-Continue local investigation and necessary cold builds in one writable session.
+R233 accepts the whole shared scene-value setter below. Original and accepted
+cold proofs and3,287 CI tests pass. Current4,208 resolved =982 authored+2,646
+library+580 compiler;143 pending and3,226 excluded. The original1,311 goal has
+1,168 classified /143 left and remains active. Push reached68d9258; subsequent
+commits are local. Full Web MCP acceptance remains required after all origin
+review finishes. Continue local investigation and serial cold builds.
 
-Next find actual code/data ownership for three bounded game-policy hypotheses
-already recorded diagnostically in `.analysis/r232-native-shortlist.json`:
+Next investigate five complete127-byte scene cleanup candidates4252B0,425550,
+42A2C0,42B300 and42E870. Fresh native observations show the same outer nonnull
+guard, deletion of observed receiver+8 resource, and base cleanup431F40. Their
+independently accepted initializers4251F0 /181,425490 /183,42A180 /315,42B1F0 /260
+and42E640 /547 install distinct actual scene tables and construct/configure the
+same observed resource field through game asset loading40BB80. Full initializer
+observations are retained privately in `.analysis/r234-ctor-shortlist.json`.
+These are diagnostic, not accepted: inspect complete paired table/deleting/
+resource/exception context and contrast natural explicit and implicit lifetime
+models before attribution. A compiler deleting wrapper or a known callee alone
+is insufficient. Preserve full extents and truthful ABI; no fake private layout.
 
-| Candidate | Whole provisional bytes | Observed behavior, ownership unproved |
-| --- | ---: | --- |
-| `0x00454C00` | 24 | clears receiver-relative DWORD+0x47C; RET0 |
-| `0x00454F70` | 31 | reads receiver+0x74 pointer, tests record+0x3C bit0x20; RET0 |
-| `0x004557E0` | 21 | copies one stack DWORD to writable671628; RET4 |
+Keep no-reference receiver policies454C00 /24 and454F70 /31 unknown. Two
+inventory extent questions remain in fresh triage (60C120 /11 and620132 /5).
+Reopen full defining source owners and metadata before reconciliation. Preserve
+R198/R204 lifetime uncertainty, R18341CA30 /77 and R212455770 /111, prior node,
+math and opaque R206 decisions. Fresh `.analysis/origin-scan/r233-triage.json`
+has143 pending with current ledger hashes. Shared tools remain read-only.
 
-Query real incoming references and inspect independently established constructors,
-callers, tables and data consumers. A sole known caller, an apparent matching field
-offset or a guessed global name is not ownership evidence. If actual installed
-game callback context exists, reopen it in full and contrast natural compact
-ordinary policies with genuine compiler/library alternatives. Preserve every
-exit/extent and truthful ABI; do not instantiate or pad incomplete game owners.
-Do not attribute these preliminary bodies before those independent checks.
+## R233 complete shared scene-value setter
 
-R233 local preflight and attested incoming-reference query now pass. No actual
-code/data incoming reference is found for454C00 or454F70; their ownership remains
-unproved. Setter4557E0 also has no incoming reference, but actual671628 references
-lead to independently accepted R04443B610 /4,764 BattleScene state policy. Private
-`.analysis/r233-shared-value-diagnostic.json` reopens that full parent, its original
-switch data/CFG and source ledger record. It reads671628 as float, subtracts the
-original approximately0.01 float at658044 when positive and clamps negatives to
-zero against65782C. This establishes the actual writable-value use without naming
-an original global or recovering a shared receiver.
+R233 accepts the whole21-byte authored setter at `0x004557E0`. It stores the
+incoming DWORD at writable671628 and returns with RET4; its saved receiver is
+unused. The original current name, extent, source/ABI, mappings and exact state
+remain unchanged. Proposed scene-value naming is inference.
 
-Fresh private natural unsigned and float setters both reproduce all21 target
-bytes unmasked after one independently identified data binding; their source
-signatures are therefore alternatives. The complete private probe also includes
-an implicit-copy client and compact sizeof observations, without padding or fake
-returns. Private source/object/profile hashes are retained in the diagnostic.
-This is not acceptance: move a natural fixture to its tracked path, cold-build
-there, freeze all complete source/native/normal/switch/data evidence, audit prior
-snapshots and freeze an immutable bounded verifier before canonical changes.
-The old snapshot audit presently finds no selected4557E0 canonical pair. Keep
-both unresolved no-reference bodies and every other row literal. Full original/
-accepted cold proof, bounded readback, CI and all60 baseline checks remain due.
+Replay `scripts/repo-python scripts/verify-scene-shared-value-origins.py` with
+immutable `config/scene-shared-value-origin-evidence.json`, SHA-256
+`d6d0f4579f374515459d797980f94ff2a8f3d5d868f7c36a396b769f1d5a23fe`.
+Independent R044 BattleScene state policy43B610 /4,764 consumes and updates this
+same global. Its full body, all158 branches, original authored record and entire
+60-byte guarded state table remain pinned. It treats the value as float,
+subtracts the original approximately0.01 float at658044 when ordered-positive,
+and clamps a negative result to zero against65782C. Complete four-byte data
+extents, permissions and float values are checked. The data binding comes from
+the independent parent's actual FSTP writer, rather than the selected encoded
+address. Local attested Ghidra queries confirm these references; no setter
+incoming reference is found, which does not establish dead code.
 
-Two inventory extent questions remain in fresh triage (60C120 /11 and620132 /5).
-Reopen full defining source owners and metadata before any reconciliation; existing
-R198/R204 lifetime uncertainty is protected. A full symbol/AUX/normal/EH graph may
-supply new evidence, but repeated source shapes and proposed names cannot. Keep
-R18341CA30 /77 and R212455770 /111 unknown, and preserve all prior lifetime/getter/
-node/math and opaque R206 decisions. Fresh
-`.analysis/origin-scan/r232-triage.json` has144 pending with current ledger hashes.
-Shared tools remain read-only.
+The natural tracked fixture `tests/origin_probes/SceneSharedValue.cpp` cold-builds
+with pinned3077 and `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`.
+Unsigned and float setter alternatives each emit21 bytes, and each reproduces
+all native bytes after its sole actual DIR32 data field binds to the independent
+owner. Full source COFF/AUX, normal instructions, linked flow and all four emitted
+code/data sections /64 bytes are checked. The ordinary implicit-copy client10
+has no shared-state write. The complete compact readonly sizeof observations
+are `[1,4,4]`; no private game class is instantiated or padded. Byte-equal type
+alternatives leave original type/name/private owner/layout/ABI/compiler profile
+and source unrecovered. Authored source-family inference adds no exact credit.
+
+The complete24/31-byte no-reference receiver policies454C00 and454F70 remain
+unknown. Five scoped canonical pairs, full original-state unselected digests,
+an empty prior selected-snapshot audit and bounded HEAD759d440 readback allow
+exactly one origin/function row to change. Eleven external INT3 bytes at4557F5
+stay outside the function. All previous evidence, explicit ambiguities and
+60 exact source/header/build/match inputs remain literal. Original and accepted
+cold proofs,3,287 CI tests including eight new guards, target/tracking, progress,
+fresh143-candidate triage and whitespace pass. Full Web MCP acceptance is reserved
+until all remaining origin review finishes.
+
+Current4,208 resolved =982 authored+2,646 library+580 compiler;143 pending and
+3,226 excluded. The original1,311 goal has1,168 classified /143 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,971,592 and provisional0.50%.
 
 ## R232 complete BG05a reverse-cycle callback
 
