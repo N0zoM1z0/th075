@@ -11274,40 +11274,77 @@ the authored denominator 1,971,032 and provisional 0.50% are unchanged. Final
 complete Web MCP acceptance remains outstanding until all origin review finishes.
 No source, private ABI, exact-reconstruction or later-phase credit is added.
 
-## R227 investigation in progress — endpoint identities corrected
+## R227 complete vector endpoint routes and strict retained cold graphs
 
-No additional origins are accepted after R226. All nine current candidates /204
-remain unknown. Full native calls and original header definitions correct the
-initial shortlist:40E9B0/40EA20 are vector const iterator dereference shapes;
-4124B0/41F7E0/532350 are list iterator `_Mynode` shapes; 459890/459A50 are
-mutable vector end;459C40/459C60 are const vector begin/end. The five16-byte
-opaque leaves retain R206's public/ordinary byte-equal alternatives; source
-shape alone does not resolve their ownership.
+Four complete vector endpoints /124 bytes are accepted as library source-family
+origins. All31-byte extents and current database names are unchanged:
 
-The natural private fixture `.analysis/probes/R227VectorEndpoints.cpp` compiles
-with the pinned VC7.1 profile. Complete original/manual endpoint scopes retain
-20 sections /552 bytes /12 actual fields /20 CFGs through defining source
-catalogs. All four compatible ordinary endpoint members are byte-equal. Complete
-emission retains55 sections /1416 bytes /51 fields,27 original includes and the
-whole 36-byte readonly observation. These are diagnostic source controls, not
-acceptance or recovery of original private declarations. Fresh attested Ghidra
-callers find 459390 for both const endpoints; its complete208-byte copied vector
-construction was missed by the scanner's parent list. The full
-normal/catch/unwind source owner and original accepted extent must be preserved;
-do not return to the initial162.
+| Address | Source-family role | Complete constructor closure |
+| --- | --- | --- |
+| `0x00459890` | mutable vector end | iterator442320 /28; const iterator4423C0 /24 |
+| `0x00459A50` | mutable vector end | iterator442370 /28; const iterator4423E0 /24 |
+| `0x00459C40` | const vector begin | const iterator4456D0 /24 |
+| `0x00459C60` | const vector end | const iterator4456D0 /24 |
 
-Private `.analysis/r227-native.json` retains22 whole native owners /1538 bytes
-and four actual endpoint call windows. Fifteen immutable R209/R211 selected
-snapshots are retained separately. Continue the complete receiver/source-family
-assessment and durable cold verifier before any bounded canonical transition.
-Audit strict successor support and all older verifier consumers before changing
-protected rows: three later immutable manifests pin the R211 verifier script.
-Keep168 pending, all60 exact functions /9883 bytes and the full active
-origin-review goal unchanged.
+The immutable manifest is `config/vector-endpoint-route-origin-evidence.json`,
+SHA-256 `f60a3fdfad9c7cf1ffddfe902114059102b9c26d06e4f5c63709a8346af313ec`.
+Replay `scripts/repo-python scripts/verify-vector-endpoint-route-origins.py`.
+The natural fixture `tests/origin_probes/VectorEndpointRoutes.cpp` uses complete
+original SDK owners and ordinary compatible members. The explicit VC7.1 profile
+`/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` is per-probe reproducibility
+settings, not an executable-wide compiler assertion. Four original vector header
+spans and all27 included headers are retained.
 
-The fresh diagnostic recheck `.analysis/r227-recheck-cold.py` passes using a new
-temporary object and no cached fallback. Full retained R209 and R211 cold
-replays pass, including their mandatory R210/R208/R150 dependency chains.
-Current CI passes all 3,197 tests; target/tracking and whitespace checks pass.
-These checks preserve the accepted R226 checkpoint and supply no additional
-origin credit.
+Four original and four compatible ordinary scopes retain20 whole defining
+sections /552 bytes /12 actual fields and all20 CFGs. Every field binds through
+its actual complete source owner and full COFF/AUX record before unmasked native
+comparison. Full ordinary emission retains55 sections /1416 bytes /51 fields and
+the whole36-byte readonly layout observation. Source widths4/116/16 are generic
+controls, without recovery of original private element declarations or complete
+game owner layouts. No incomplete game owner is instantiated.
+
+Eight complete31-byte negative controls preserve distinct first/last fields and
+mutable/const constructor routes. Known positive source owners resolve the
+first/last and mutable-to-const alternatives before whole comparison; the const-
+to-mutable controls retain different defining constructor symbols. All four
+compatible ordinary endpoint members are byte-equal. Attribution is an explicit
+library-family inference from the complete original source/constructor hierarchy
+and coupled assignment/copy receivers, without proof of historical replacement
+absence. This does not resolve the five opaque16-byte pointer/reference leaves
+studied in R206; their public and ordinary alternatives remain byte-equal.
+
+Three complete independently accepted library receivers /499 bytes and four
+actual call windows are reopened. Both const endpoints occur in the full208-byte
+459390 vector copy constructor, including its normal/catch/unwind extent; the
+scanner omitted this parent. Preserve the reconciled208 extent, without returning
+to the initial162. The195-byte458E70 assignment and208-byte459390 copy have full
+retained cold source graphs. The96-byte459060 assignment keeps its independently
+accepted R034 origin and complete native context; no new cold source comparison
+of that parent is claimed. The joint first/last fields and returned iterator
+construction remain distinct. All30 scoped canonical rows and15 protected
+unknowns are checked; observed one-byte INT3 gaps stay outside the four extents.
+
+Fifteen literal old unknown expectations in R209/R211 remain immutable. Three
+later manifests pin the old R211 verifier script, so no old verifier or source
+file is edited. The successor first validates each whole old plan and every old
+source/script hash. It creates an in-memory current canonical view changing only
+the exact four approved function/origin pairs at the exhaustively frozen trails.
+Every old source, field, CFG, extent, compiler profile and ordinary-control record
+stays literal. The isolated verifier modules route only the declared retained
+R211 -> R210 -> R209 calls through the same checked view. Other dependency calls
+and all compiler commands run normally; failed compilation has no cached fallback.
+The entire mandatory R208/R150 ancestry and original CRT/typed owners still cold-
+replay. Use the new successor verifier to reopen these historical source graphs
+in the current state; their standalone old canonical checks intentionally expect
+the historical unknowns. No old accepted source evidence is reclassified or weakened.
+
+Original and accepted R227 cold replays pass, together with3,215 CI tests including
+18 new guards. Target/tracking, local Ghidra identity/query markers, unchanged
+60-unit exact inputs, exactly-four-row readback, fresh164-candidate triage,
+progress and whitespace pass. Current4,187 resolved =971 authored+2,636 library
++580 compiler;164 pending and3,216 excluded. The original1,311 goal has1,147
+classified /164 left and remains active. Exact60 functions /9,883 bytes /60 units
+across eleven objects, authored denominator1,971,032 and provisional0.50% stay
+unchanged. Final complete Web MCP acceptance remains required after all remaining
+origin review finishes. No source/private ABI/mapping/exact or later-phase credit
+is added.
