@@ -2721,7 +2721,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00608B1D,library,D3DX8,exclude,whole-original-sdk-image-surface-volume-texture-entry-policy-with-scoped-source-fields-complete-backward-exits-and-cold-public-abi,R202
 0x00608D8E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00608DD5,library,D3DX8,exclude,whole-original-sdk-shader-resource-font-policy-with-scoped-fields-original-public-headers-and-independent-uuid-stack-alias,R201
-0x00608E33,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00608E33,library,D3DX8,exclude,inferred-whole-source-ordered-sdk-font-surface-contributions-with-duplicate-comdat-placement-all-fields-and-complete-guid-vtable-provider-context-ordinary-equality-retained,R262
 0x00608E70,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00608EB2,library,D3DX8,exclude,whole-original-sdk-shader-resource-font-policy-with-scoped-fields-original-public-headers-and-independent-uuid-stack-alias,R201
 0x00608ED8,library,D3DX8,exclude,whole-original-sdk-shader-resource-font-policy-with-scoped-fields-original-public-headers-and-independent-uuid-stack-alias,R201
@@ -2736,7 +2736,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x006095FA,library,D3DX8,exclude,whole-original-sdk-texture-text-sprite-policy-with-scoped-fields-public-abi-and-independent-uuid-stack-alias,R200
 0x00609AA4,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00609AC2,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x00609B1E,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00609B1E,library,D3DX8,exclude,inferred-whole-source-ordered-sdk-font-surface-contributions-with-duplicate-comdat-placement-all-fields-and-complete-guid-vtable-provider-context-ordinary-equality-retained,R262
 0x00609B5B,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00609B7F,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00609DB9,library,D3DX8SDK,exclude,complete-vendor-body,R008

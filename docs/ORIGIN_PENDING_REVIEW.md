@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 100 pending candidates, covering 3,665 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 100
+This report records the current 98 pending candidates, covering 3,619 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 98
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -33,7 +33,10 @@ Genuine byte-positive ordinary leaf alternatives remain preserved.
 R261 classifies two SDK stack read/reset8 policies as inferred library through
 complete primary739/EH20/data36 source contributions. A coherent implicit
 ctor16/dtor14 positive preserves the related destructor as unknown.
-The current remaining projection has98
+R262 classifies two identifier comparison23 leaves as inferred library through
+complete Font/Surface source contributions and independently replayed GUID/
+vtable/provider context; complete ordinary equality23 remains preserved.
+The current remaining projection has96
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -43,7 +46,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r261-remaining-review.json` retains the current literal
+Private `.analysis/r262-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -136,11 +139,9 @@ scope clarification is presumed.
 | `0x005F8020` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [neighbor-vector-lifetime-origin-evidence.json](../config/neighbor-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; whole inherited Cleanup19 and parent93/75 counterexamples preserved. |
 | `0x005FAAD0` | 15 | default-or-lifetime | 7 instructions; 0 branches; RET 0; 1 calls | [paired-clear-policy-origin-evidence.json](../config/paired-clear-policy-origin-evidence.json); [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x00608D8E` | 58 | sdk-private-lifetime | 22 instructions; 3 branches; RET 0; 4 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x00608E33` | 23 | interface-id-or-ordinary | 12 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Typed target namespace/reachability. |
 | `0x00608F7B` | 27 | sdk-private-lifetime | 8 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00608F96` | 64 | sdk-private-lifetime | 27 instructions; 3 branches; RET 0; 3 calls | [sdk-presentation-origin-evidence.json](../config/sdk-presentation-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00609AA4` | 30 | sdk-private-lifetime | 9 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x00609B1E` | 23 | interface-id-or-ordinary | 12 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Typed target namespace/reachability. |
 | `0x00609F58` | 39 | sdk-private-lifetime | 12 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x0060B728` | 104 | sdk-private-lifetime | 34 instructions; 1 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x0060C120` | 11 | sdk-private-lifetime | 4 instructions; 2 branches; RET 0; 0 calls | [sdk-image-chain-origin-evidence.json](../config/sdk-image-chain-origin-evidence.json); [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
@@ -159,7 +160,7 @@ scope clarification is presumed.
 | `0x00641DAA` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json); [polar-velocity-origin-evidence.json](../config/polar-velocity-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x00641FB8` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [game-switch-policy-origin-evidence.json](../config/game-switch-policy-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 
-Totals: 114 pending candidates /4,056 bytes; 114 unknown origins.
+Totals: 98 pending candidates /3,619 bytes; 98 unknown origins.
 
 R253 resolves the former `0x004065D0` /19 and `0x004065F0` /19 rows as library
 lifetimes using [the complete paired global-vector proof](ORIGIN_REVIEW.md#r253--complete-paired-global-vector-library-lifetimes)

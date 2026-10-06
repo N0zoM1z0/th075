@@ -13740,3 +13740,75 @@ whitespace checks pass. Counts are4251 resolved =1002 authored+2668 library+
 is1211 classified /100 left. Exact60 /9883 bytes /60 units /eleven objects and
 authored bytes1973516 remain unchanged. The original goal stays active; final
 complete Web MCP acceptance remains due after the requested remaining review.
+
+## R262 — complete SDK identifier contributions with ordinary equality retained
+
+R262 accepts608E33 /23 and609B1E /23 as **inferred library** origins. The
+source-order-compatible associations are `_IsEqualGUID` and the original
+literal `_==`, respectively. Original executable names and linker choices
+remain provisional. Identical ordinary storage equality23 does not establish
+a GUID parameter, namespace or ownership by itself.
+
+The [complete manifest](../config/sdk-identifier-contribution-origin-evidence.json)
+reopens pinned `d3dx8.lib` and both complete original objects:Font member354064
+and RenderToSurface member393840. Font contributes all17 primary code sections
+523 across608D8B..608F96; its whole deleting wrapper28 is separately located
+at6049A0. Surface contributes all14 primary code sections1244 across609AC2..
+609F9E; its whole deleting wrapper28 is separately located at6049D8. Original
+source section order and alignment1 are retained without cropping, invented
+padding or auxiliary candidate additions. Surface's original IUnknown3 and
+IsEqualGUID23 reuse Font placements608D8B and608E33, while source `_==` occupies
+609B1E. This is a coherent inferred contribution/duplicate placement, not a
+recovered unique link map or target call-reachability proof.
+
+All35 original whole code sections1849 have complete native CFGs. Reused
+placements yield33 distinct native bodies1823. Whole owning vtables44/36,
+all46 real code/data fields, actual source definitions/AUX/COMDAT records and
+all76 initialized source inventory sections2884 are retained. Debug records
+have no invented target mapping. The three relevant source23 COMDAT records
+use selectionANY, and each whole native body retains its actual cdecl RET0.
+The archive-wide survey independently scans all146 normal i386 SDK objects:
+12 whole source23 definitions occur in eight objects, with both source symbols
+and all duplicate alternatives preserved. No extra origin is assigned to
+those other objects or same-code aliases.
+
+Every external field obtains its source namespace from the unchanged complete
+R201 or R186 proof:the real CD3DXText producer/consumer policies, CRT delete,
+Font/Surface/IUnknown GUID definitions and named GDI imports. The [CLI](../scripts/verify-sdk-identifier-contribution-origins.py)
+replays both entire original CLIs and all their retained source/interface/
+provider graphs and public cold controls. No native relocation destination is
+used to populate that independent provider catalog. Full original-state and
+accepted-state R262 CLIs pass; original manifests, old acceptance predicates
+and historical unknown snapshots remain untouched.
+
+The new [ordinary observation](../tests/origin_probes/IdentifierComparison.cpp)
+uses a complete four-word storage type and natural memcmp equality. Fresh
+pinned3077 /O1 /Oi /Ob0 emission contains the whole23-byte function and readonly
+layout8, values[16,4], with its one actual included header. Every target byte
+agrees at both addresses. The full ordinary definition, all source metadata
+and complete emitted sections remain present; this counterexample is not
+removed by the stronger contribution inference. Private Font constructor27/
+destructor58, Surface constructor39, Stack destructor14 and Buffer constructor24
+remain unknown. Complete library object membership cannot distinguish explicit
+from generated special-member definitions. No source, private layout, ABI,
+mapping or reconstruction exact credit is added.
+
+Only the two immutable canonical pairs transition. Earlier regression tests
+restore those two validated literal predecessors before their existing R261/
+R260/vector views; full unrelated-row checks remain strict. Seven new tests
+reject truncated owner graphs, reordered primary sections, altered duplicate/
+wrapper placements, substituted COMDAT selection/returns, erased ordinary
+storage alternatives, unsupported lifetime credit and altered literal rows.
+All3534 CI tests, target-required tracking, all98 full pending body hashes/
+literal pairs,3170 original structured record trails, all60 exact canonical
+pairs and28 unchanged source/exact inputs, progress and whitespace guards pass.
+The pending matrix's old stale table-total line is corrected to its current
+98 rows /3619 bytes; original historical review counts remain in their own
+chronological sections.
+
+Counts are4253 resolved =1002 authored+2670 library+581 compiler,98 pending
+/3619 bytes and3251 excluded. Original1311 progress is1213 classified /98 left.
+Exact60 /9883 bytes /60 units /eleven objects and authored bytes1973516 remain
+unchanged. The original goal stays active. Final complete Web MCP acceptance
+remains due after the requested remaining-review end state; these commits
+remain local and no push was authorized.

@@ -60,6 +60,14 @@ class VendorZeroingContributionTests(unittest.TestCase):
         stack = V.module('zeroing_test_stack_successor', 'verify-sdk-stack-contribution-origins.py')
         stack_plan = json.loads((ROOT / stack.EVIDENCE).read_text())
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        identifier_spec = importlib.util.spec_from_file_location(
+            'sdk_identifier_successor_view', ROOT / 'scripts/verify-sdk-identifier-contribution-origins.py')
+        identifier = importlib.util.module_from_spec(identifier_spec)
+        identifier_spec.loader.exec_module(identifier)
+        identifier_plan = json.loads((ROOT / identifier.EVIDENCE).read_text())
+        original_identifier = all(q['original_function'] in source['functions.csv'] for q in identifier_plan['functions'])
+        source = {name: identifier.historical_rows(identifier_plan, name, actual, original_identifier)
+                  for name, actual in source.items()}
         original_stack = all(q['original_function'] in source['functions.csv'] for q in stack_plan['functions'])
         source = {name: stack.historical_rows(stack_plan, name, actual, original_stack)
                   for name, actual in source.items()}

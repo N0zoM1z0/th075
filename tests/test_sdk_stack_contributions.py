@@ -84,9 +84,18 @@ class SdkStackContributionTests(unittest.TestCase):
 
     def test_unrelated_rows_stay_protected_in_original_and_accepted_views(self):
         selected = {r['address']: r for r in self.plan['functions']}
+        source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        identifier_spec = importlib.util.spec_from_file_location(
+            'sdk_identifier_successor_view', ROOT / 'scripts/verify-sdk-identifier-contribution-origins.py')
+        identifier = importlib.util.module_from_spec(identifier_spec)
+        identifier_spec.loader.exec_module(identifier)
+        identifier_plan = json.loads((ROOT / identifier.EVIDENCE).read_text())
+        original_identifier = all(q['original_function'] in source['functions.csv'] for q in identifier_plan['functions'])
+        source = {name: identifier.historical_rows(identifier_plan, name, actual, original_identifier)
+                  for name, actual in source.items()}
         for original in [True, False]:
             state = 'original_' if original else 'accepted_'
-            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in V.rows(name)] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)
