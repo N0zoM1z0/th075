@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R238. The public
+review cohorts R108 through R239. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,106 +11,160 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,219: 993 authored, 2,646 library and 580 compiler generated.
-There are 132 pending. Candidate count is not authored function count.
+has resolved 4,221: 995 authored, 2,646 library and 580 compiler generated.
+There are 130 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,850 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,894 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R239 sprite render-parameter investigation below.
+the bounded R240 replay-record queue investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R238; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R239; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R239 sprite render parameters
+## Next agent objective — R240 replay-record queue emptiness
 
-R238 accepts the complete guarded sprite-list consumption policy below.
-Original and accepted cold proofs and3,340 local CI tests pass. There are132
-origins pending; the original1,311 goal has1,179 classified /132 left and
-remains active. Push reached68d9258; subsequent commits remain local. The user
-requires one complete Web MCP acceptance after all remaining origin review
-finishes. Continue local investigation and serial cold builds while preserving
-all accepted origins and the sixty-function exact baseline.
+R239 accepts two complete sprite parameter methods below. Original and accepted
+cold proofs and3,355 local CI tests pass. There are130 origins pending; the
+original1,311 goal has1,181 classified /130 left and remains active. Push
+reached68d9258; later commits remain local. Continue local investigation and
+serial cold builds while preserving all accepted origins and60 exact functions.
+The user requires one complete Web MCP acceptance after all remaining origin
+review finishes. That final run remains outstanding.
 
-Next inspect the two complete pending22-byte writes410FA0 and410FE0. Both are
-called by independently accepted R213 FighterState::SetCommandSelection454BC0
-/61 on the same actor+0x480 receiver. They write the incoming byte atowner+0x10
-and dword atowner+0x14, respectively, each retaining RET4. Reopen entire game
-selection callers, whole sprite draw411110 /746 (which reads those same
-fields), whole R166 parent initialization and current R238 source graph.
-Complete private native diagnostics are in `.analysis/r239-policy-native.json`.
-Build complete natural generic source controls with meaningful existing fields,
-contrast original/library/template alternatives, and audit all old selected
-snapshots before any bounded transition. Names and source-family inference
-must rest on the full independent custom draw/selection policy, not just tiny
-write shapes or known calls. Do not declare or instantiate an incomplete
-original sprite owner. The no-reference24-byte word write410FC0 and member
-construction411C10 /25 remain pending until independent evidence warrants a
-decision. No exact reconstruction is authorized by this origin work.
+Next inspect complete pending4142D0 /35. It returns whether the deque at
+receiver+0x154 has zero size through reviewed414430 /17. Whole
+BattleScene::AdvanceState43B610 /4764 calls it. It lies beside complete authored
+R035 ReplayRecords::LoadRecord413AC0 /792 and AppendRecord413DE0 /1252, plus
+BeginCapture413790 /225, FinalizeFile4138E0 /375 and FindAvailablePath414300 /89.
+Reopen those whole receiver/record/file contexts, genuine R149 size source and
+R072/R073/R077/R111 original deque graphs before deciding ownership. Private
+`.analysis/r239-policy-native.json` already contains the complete candidate,
+size provider and battle caller. Verify the actual record-queue semantics and
+receiver identity; the nearby names and large member offset are not proof.
+Contrast complete original deque/queue empty definitions with natural complete
+generic and borrowed-owner controls. Do not invent filler to reproduce+0x154,
+instantiate an incomplete original replay owner, crop comparisons or infer
+ownership merely from known calls. Audit all selected historical snapshots
+before a bounded transition.
 
-The R239 local preflight and five whole readonly decompiles have now passed
-with both Ghidra attestation and query completion markers. Private
-`.analysis/r239-sprite-setter-context.c` shows the mode byte consumed in signed
-sampling guards/modulo and the dword at+0x14 used as a color mask with the
-packet word at+0x9C. The complete generic diagnostic
-`.analysis/r239-SpriteRenderParameters.cpp` cold-builds with the original R167
-model and meaningful derived colorMask field, without arbitrary offset filler.
-Its full189 emitted sections /8,309 bytes,392 actual fields,31 includes and two
-weak aliases are in `.analysis/r239-sprite-parameter-source-diagnostic.json`.
-Both ordinary and genuine template22-byte setters reproduce all bytes with
-zero source fields; both complete borrowed-field writes are13 bytes. This
-remains diagnostic: original template spelling and private layout are unknown,
-and neither selected origin has changed.
+R239 independently reopens the complete original R213 native game-context
+proof, including all60,999 action bytes, all original switches/CFG, the full
+16,837-instruction digest and seven parameter sequences. Relevant R238/R167/
+R168 list source graphs are fully cold-replayed. The unrelated R213 standalone
+vector cold CLI still stops in R211 on three later R227 successors459890,
+459C60 and459C40; original scripts/manifests are unchanged. Its two setter
+unknown snapshots likewise remain literal despite the explicit R239 successor
+pairs. The immutable R239 proof documents the exact native-only scope and
+never claims that old standalone CLI passed. Do not rewrite these old records
+or silently relax their canonical checks. The no-reference word setter410FC0
+and implicit member constructor411C10 remain unknown.
 
-The attempted unchanged R213 CLI stops inside its R212/R211 dependency chain
-before the new source proof. R211's frozen retained unknowns459890,459C60 and
-459C40 were subsequently accepted by R227. Each literal old pair equals the
-complete R227 transition's original pair; current records are its accepted
-pairs. The exact three successor records are captured in private
-`.analysis/r239-r211-successors.json`; the actual failure is retained in
-`.analysis/r239-retained-r213-cold.log`. R213 itself also keeps the two selected
-setters as literal retained unknowns, audited in `.analysis/r239-history.json`.
-Reconcile these explicitly checked historical views or reopen the needed
-complete source proof independently before acceptance. Preserve all original
-scripts/manifests and do not claim the old standalone CLI currently passes.
+R238 keeps original R167/R168 snapshots and scripts literal; their full cold
+proofs run through exactly checked four/seven later successor pairs recorded
+below. R236 preserves all six actual scalar/array-delete route differences;
+R237 preserves R077 destructor-family aliases alongside full public clear
+alternatives. The GUID equality candidates608E33 and609B1E remain unknown:
+eight original _IsEqualGUID COMDATs and ordinary memcmp both reproduce23 bytes,
+but all twelve original references are only.debug$F, with no ordinary source
+code/data caller. Preserve no-reference454C00 /24 and454F70 /31, R108/R198/R204
+lifetimes, R18341CA30 /77, R212455770 /111, five R163 math chains, opaque/node
+policies and constructors458650 /31 and458670 /23 as unknown. DwStack61FB37
+and codec61A453 retain protected R195/R198 alternatives; extent questions
+60C120 /11 and620132 /5 need complete original defining source/metadata.
+Fresh `.analysis/origin-scan/r239-triage.json` contains130 pending with current
+ledger hashes. Shared tools remain read-only.
 
-The35-byte pending4142D0 returns whether the complete deque atreceiver+0x154
-has zero size via reviewed414430 /17; whole BattleScene::AdvanceState43B610
-/4764 calls it. It is also in the private diagnostics. That large member offset
-alone does not justify padding or identify a private owner. Review genuine
-source/layout alternatives and full event-queue producer/consumer context
-before considering a separate bounded cohort.
+## R239 — sprite sampling and color-mask parameter writes
 
-R238 preserves original R167/R168 frozen scripts and snapshots. Their complete
-cold proofs now run through the explicitly checked historical ledger view
-recorded below, for exactly four/seven later independently accepted pairs.
-Do not claim their old standalone canonical CLI checks pass on today's
-accepted state, rewrite those manifests, or relax unapproved snapshot checks.
-All current R218/R219/R222/R223 records remain literal.
+R239 accepts authored `0x00410FA0` /22 and `0x00410FE0` /22. Each complete
+body writes its incoming byte or dword to the same sprite receiver at+0x10
+or+0x14 and retains RET4. Each following ten-byte INT3 gap is external. Names
+SpriteSequence::SetSamplingModeAt00410FA0 and SetColorMaskAt00410FE0 are inferred;
+current names, extents, source/ABI declarations, mappings and exact state stay
+unchanged.
 
-The two whole23-byte GUID equality candidates608E33 and609B1E remain unknown:
-eight original zero-field _IsEqualGUID COMDATs and ordinary four-word memcmp
-both reproduce23 bytes, but all twelve original source references are only
-.debug$F. No ordinary code/data caller establishes ownership. Preserve
-no-reference454C00 /24 and454F70 /31, R108/R198/R204 lifetimes, R18341CA30 /77,
-R212455770 /111, five R163 math chains, node/opaque policies and constructors
-458650 /31 and458670 /23 as unknown. DwStack61FB37 /14 and codec61A453 /73
-retain protected R195/R198 alternatives. Extent questions60C120 /11 and
-620132 /5 need complete original defining source/metadata. Fresh
-`.analysis/origin-scan/r238-triage.json` has132 pending with current ledger
-hashes. Shared tools remain read-only. R236 retains all six actual
-scalar/array-delete differences; R237 retains original R077 destructor-family
-aliases beside genuine byte-equal public clear alternatives.
+Replay `scripts/repo-python scripts/verify-sprite-render-parameter-origins.py`
+with immutable `config/sprite-render-parameter-origin-evidence.json`, SHA-256
+`c0045f055de670c4e8f69649ff1f0f31535af4149f547e4ea3f9ad424b218c8c`.
+Independent R213 FighterState::SetCommandSelection454BC0 /61 sets actor+0x47C,
+then forwards the byte and mask on the same actor+0x480 receiver. Complete
+R045 resource installation456B60 /1186 initializes that pointer using the
+whole custom R166 constructor410F30 /104. The original constructor assigns
+mode5 and limit15, constructs the list at+4 and clears it. Whole
+ReimuFighter::AdvanceActionStatesAt0045DD70 /60,999 supplies seven real
+selection sequences,
+all with selection3, sampling4 and mask0xFF. All seven preserve the identical
+actor receiver and three-argument call sequence. The entire action extent,
+original guarded switches, all exits/1,690 branches and16,837 decoded
+instructions are checked; its full decoded instruction digest avoids storing
+a partial disassembly. No comparison crops the action to its call windows.
+
+Full R035 SpriteSequence::RenderElements411110 /746 reads the byte signed,
+guards positive sampling and uses signed division/remainder to select records.
+It combines the dword at+0x14 by AND with the packet color word at+0x9C, then
+ORs the separately computed alpha. Full append411000 /183 produces164-byte
+packets on the same list; full fighter draw453F70 /2246 establishes the same
+owner pointer and previous R238 removal policy. Twenty complete native anchors
+/66,108 bytes and22 scoped canonical pairs are checked. This includes every
+original R213 native policy and its four complete game parents /62,405 bytes.
+The original short member constructor411C10 /25 and no-reference word setter
+410FC0 /24 remain unknown.
+
+The unchanged original R213 pure native game-context verifier is called
+independently after its entire original plan/script identities, all complete
+native bodies/CFGs, game records and current accepted ownership are checked.
+Its four selected historical function/origin snapshots remain literal
+unknowns and are compared to the new transitions' original pairs. No old plan,
+CSV provider, standard library, subprocess behavior, compiler artifact or
+source is patched. The old R213 standalone vector cold CLI still stops in its
+R212/R211 chain on three unknown snapshots subsequently accepted by R227;
+that actual private failure remains documented. R239 does not claim a new
+cold replay of that unrelated vector source graph. Instead, the relevant
+whole R238 original sprite/list source proof is cold-replayed, including
+unchanged complete R167 and R168 code/EH/data graphs and their explicitly
+checked historical views. Every original source and accepted record remains
+unchanged.
+
+Natural `tests/origin_probes/SpriteRenderParameters.cpp` cold-builds with
+locked3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /I probes /showIncludes`.
+It reuses the original complete generic R167 model and adds a meaningful
+colorMask field. All31 actual include owners,189 emitted code/data sections
+/8,309 bytes,392 genuine fields, full COFF/AUX/line provenance and both actual
+weak aliases/fallback owners are frozen. Four entire22-byte ordinary and
+genuine-template methods /88 bytes reproduce all bytes with zero source
+fields. Both complete borrowed-field writes13 remain distinct against all22
+target bytes, including their missing-source trailing bytes. The entire
+72-byte combined readonly sizeof section preserves both old arrays and new
+[20,24,24,1] observations. There is no arbitrary filler or incomplete original
+owner. Equality cannot identify original spelling/template, parameter
+signedness/type, complete private layout or compiler profile. The independent
+custom sampling/color parameter production and consumption establish the
+source-family inference; no source/private ABI/mapping or exact credit is
+added.
+
+Strict HEAD35ec5f3 readback, original full unselected digests and all22 scoped
+pairs allow exactly two canonical function/origin rows to change. All previous
+accepted evidence, original snapshots, protected unknowns and60 exact inputs
+remain literal. Original and accepted cold proofs,3,355 CI tests including15
+new guards, target/tracking, Ghidra identity/query completion, fresh130-row
+triage, progress freshness and whitespace pass. One complete Web MCP acceptance
+remains due after all remaining origin review finishes.
+
+Current4,221 resolved =995 authored+2,646 library+580 compiler;130 pending and
+3,226 excluded. The original1,311 goal has1,181 classified /130 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,894 and provisional0.50%.
 
 ## R238 — guarded sprite-record list consumption
 

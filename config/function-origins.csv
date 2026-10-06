@@ -530,9 +530,9 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00410A00,authored,SpriteScene,authored,target-observed,R035
 0x00410F00,authored,CharacterAuxObject,authored,whole-integer-range-policy-and-independent-action-ai-parameter-result-context,R221
 0x00410F30,authored,GameContextPolicy,authored,complete-custom-game-policy-with-whole-authored-parent-and-source-controls,R166
-0x00410FA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00410FA0,authored,SpriteSequence,authored,whole-sprite-sampling-and-color-mask-writes-with-independent-created-owner-selection-action-and-draw-context,R239
 0x00410FC0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
-0x00410FE0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00410FE0,authored,SpriteSequence,authored,whole-sprite-sampling-and-color-mask-writes-with-independent-created-owner-selection-action-and-draw-context,R239
 0x00411000,authored,SpriteSequence,authored,target-observed,R035
 0x004110C0,authored,SpriteSequence,authored,whole-guarded-sprite-record-consumption-with-independent-append-render-repeated-pop-and-original-list-context,R238
 0x004110F0,authored,GameContextPolicy,authored,complete-custom-list-wrapper-with-whole-parent-and-sdk-graph,R167

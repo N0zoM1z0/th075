@@ -15042,3 +15042,84 @@ Current4,219 resolved =993 authored+2,646 library+580 compiler;132 pending and
 3,226 excluded. The original1,311 goal has1,179 classified /132 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,850 and provisional0.50%.
+
+## R239 — sprite sampling and color-mask parameter writes
+
+R239 accepts authored `0x00410FA0` /22 and `0x00410FE0` /22. Each complete
+body writes its incoming byte or dword to the same sprite receiver at+0x10
+or+0x14 and retains RET4. Each following ten-byte INT3 gap is external. Names
+SpriteSequence::SetSamplingModeAt00410FA0 and SetColorMaskAt00410FE0 are inferred;
+current names, extents, source/ABI declarations, mappings and exact state stay
+unchanged.
+
+Replay `scripts/repo-python scripts/verify-sprite-render-parameter-origins.py`
+with immutable `config/sprite-render-parameter-origin-evidence.json`, SHA-256
+`c0045f055de670c4e8f69649ff1f0f31535af4149f547e4ea3f9ad424b218c8c`.
+Independent R213 FighterState::SetCommandSelection454BC0 /61 sets actor+0x47C,
+then forwards the byte and mask on the same actor+0x480 receiver. Complete
+R045 resource installation456B60 /1186 initializes that pointer using the
+whole custom R166 constructor410F30 /104. The original constructor assigns
+mode5 and limit15, constructs the list at+4 and clears it. Whole
+ReimuFighter::AdvanceActionStatesAt0045DD70 /60,999 supplies seven real
+selection sequences,
+all with selection3, sampling4 and mask0xFF. All seven preserve the identical
+actor receiver and three-argument call sequence. The entire action extent,
+original guarded switches, all exits/1,690 branches and16,837 decoded
+instructions are checked; its full decoded instruction digest avoids storing
+a partial disassembly. No comparison crops the action to its call windows.
+
+Full R035 SpriteSequence::RenderElements411110 /746 reads the byte signed,
+guards positive sampling and uses signed division/remainder to select records.
+It combines the dword at+0x14 by AND with the packet color word at+0x9C, then
+ORs the separately computed alpha. Full append411000 /183 produces164-byte
+packets on the same list; full fighter draw453F70 /2246 establishes the same
+owner pointer and previous R238 removal policy. Twenty complete native anchors
+/66,108 bytes and22 scoped canonical pairs are checked. This includes every
+original R213 native policy and its four complete game parents /62,405 bytes.
+The original short member constructor411C10 /25 and no-reference word setter
+410FC0 /24 remain unknown.
+
+The unchanged original R213 pure native game-context verifier is called
+independently after its entire original plan/script identities, all complete
+native bodies/CFGs, game records and current accepted ownership are checked.
+Its four selected historical function/origin snapshots remain literal
+unknowns and are compared to the new transitions' original pairs. No old plan,
+CSV provider, standard library, subprocess behavior, compiler artifact or
+source is patched. The old R213 standalone vector cold CLI still stops in its
+R212/R211 chain on three unknown snapshots subsequently accepted by R227;
+that actual private failure remains documented. R239 does not claim a new
+cold replay of that unrelated vector source graph. Instead, the relevant
+whole R238 original sprite/list source proof is cold-replayed, including
+unchanged complete R167 and R168 code/EH/data graphs and their explicitly
+checked historical views. Every original source and accepted record remains
+unchanged.
+
+Natural `tests/origin_probes/SpriteRenderParameters.cpp` cold-builds with
+locked3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /I probes /showIncludes`.
+It reuses the original complete generic R167 model and adds a meaningful
+colorMask field. All31 actual include owners,189 emitted code/data sections
+/8,309 bytes,392 genuine fields, full COFF/AUX/line provenance and both actual
+weak aliases/fallback owners are frozen. Four entire22-byte ordinary and
+genuine-template methods /88 bytes reproduce all bytes with zero source
+fields. Both complete borrowed-field writes13 remain distinct against all22
+target bytes, including their missing-source trailing bytes. The entire
+72-byte combined readonly sizeof section preserves both old arrays and new
+[20,24,24,1] observations. There is no arbitrary filler or incomplete original
+owner. Equality cannot identify original spelling/template, parameter
+signedness/type, complete private layout or compiler profile. The independent
+custom sampling/color parameter production and consumption establish the
+source-family inference; no source/private ABI/mapping or exact credit is
+added.
+
+Strict HEAD35ec5f3 readback, original full unselected digests and all22 scoped
+pairs allow exactly two canonical function/origin rows to change. All previous
+accepted evidence, original snapshots, protected unknowns and60 exact inputs
+remain literal. Original and accepted cold proofs,3,355 CI tests including15
+new guards, target/tracking, Ghidra identity/query completion, fresh130-row
+triage, progress freshness and whitespace pass. One complete Web MCP acceptance
+remains due after all remaining origin review finishes.
+
+Current4,221 resolved =995 authored+2,646 library+580 compiler;130 pending and
+3,226 excluded. The original1,311 goal has1,181 classified /130 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,894 and provisional0.50%.
