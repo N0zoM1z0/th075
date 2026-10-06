@@ -15503,3 +15503,91 @@ Current4,233 resolved =998 authored+2,655 library+580 compiler;118 pending and
 3,235 excluded. Original1,311 goal has1,193 classified /118 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects stay
 unchanged; authored denominator1,973,035 and provisional0.50%.
+
+## R245 — replay-browser saved selection and owned resource cleanup
+
+R245 accepts authored `0x0042C560` / 265 only, inferred as
+ReplayBrowserScene::DestroyOwnedReplayFilesAt0042C560. Its entire CFG [1, 6],
+original extent and seven following external INT3 bytes are preserved.
+Replay `scripts/repo-python scripts/verify-replay-browser-lifetime-origins.py`
+with `config/replay-browser-lifetime-origin-evidence.json`, SHA-256
+`429dd162e34b2aa7f3762686ca535af31d782e6a70f94b2cbfc3502ebbee790a`.
+The inferred name does not recover the original spelling or private ABI.
+
+The whole target stores the receiver's selection word at +0x48 into 67162C,
+iterates the filename deque at +0x0C, deletes each pointed array, clears the
+queue and conditionally deletes the resource child at +8. It then destroys
+members at +0x34, +0x20 and +0x0C and calls the independently reviewed base
+release31. Array delete64169D / 5 jumps to scalar delete640F15 / 5, which jumps
+to entire free642A61 / 113. The actual distinct entry symbols and complete
+bound jumps are retained; array delete is never bound directly to scalar delete.
+
+Independent whole initializer42C3D0 / 395 reads the same saved selection and
+constructs the same three member queues. Whole scanner42D470 / 613 passes
+`replay\*.rep` to FindFirstFileA, allocates 260-byte filename arrays through
+actual array-new6416A2 / 5, inserts them into the same +0x0C deque, builds
+`replay\` paths and scans actual files. Both iterations, FindNextFileA,
+FindClose, CreateFileA and ReadFile retain native receivers, imports and full
+strings. Actual array-new jumps to scalar-new64159D / 14. Whole selector1005
+and render2246 consume this replay state. The child deleting wrapper425460 /
+44 calls TextureManager::ReleaseResources40AE40 / 434, independently accepted
+R017; initializer395 allocates its 80-byte child and calls whole texture
+initialization40AD80 / 177. The adjacent LogoScene initializer425490 / 183 is
+not this child destructor and is not used as a provider. Earlier accepted
+names and owners remain literal. Thirty-five full anchors / 6,195 bytes and
+thirty-six canonical pairs freeze the independent original context.
+
+The complete four-state registered exception frame uses handler655997,
+FunctionInfo668D78 and unwind668D58. Fresh source preserves one whole51-byte
+cleanup/handler carrier with roots [0, 8, 19, 30, 41] and one whole60-byte
+metadata carrier with FunctionInfo at offset32. All four native cleanup tail
+jumps bind to complete original member/base owners. No handler, table prefix
+or cleanup component is sliced from its defining source section.
+
+Fresh `tests/origin_probes/ReplayBrowserLifetime.cpp` cold-builds with pinned
+3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /showIncludes`. Its natural explicit
+destructor reproduces all 265 target bytes including every real field.
+A real heap construction emits the genuine implicit destructor105; the
+ordinary explicit-empty destructor114 is also emitted. Both whole controls
+retain every difference against all 265 target bytes, including the missing
+160 and 151 tail bytes. They do not perform saved-selection, owned-array or
+child cleanup. This distinguishes the explicit custom policy from automatic
+member destruction, without claiming original source syntax.
+
+Twenty-one complete comparisons / 1,133 source bytes retain all 61 fields:
+explicit265, shared EH51, metadata60, whole current three-slot source table12,
+root and child deleting wrappers44 each, SDK size17, clear19, three member
+destructors19 each, eight complete SDK indexing providers / 345 bytes, and
+both full negatives. Every field retains its actual source definition,
+section, offset and coherent original provider. The table's weak E symbol has
+no body: its actual COFF storage105/AUX fallback resolves to the genuine fresh
+G44 definition. Original observed slots are42DAC0/42C670/42CA60. The whole
+12-byte current source table, observed original12 and following4 bytes are
+retained; original private interface and table extent remain unknown.
+
+All 82 current code/data sections / 3,855 bytes, 173 actual fields, full
+COFF/AUX/line provenance, 27 SDK include owners and four genuine weak aliases
+are frozen. The whole generic six-word layout is [8, 4, 76, 20, 20, 20].
+These are complete generic observations, not the game's private class sizes:
+initializer395 writes through +0x51 and allocates an 80-byte resource child.
+Generic unsigned records and byte scratch explain destructor emission only;
+they do not establish original element types. Independently accepted complete
+Tidy177 owners and the entire unchanged R072/R077 operation/destructor cold
+graph retain the original typed cleanup. The new probe does not claim fresh
+Tidy byte equality for those generic element types. The eight-node filename
+indexing closure also compares complete fresh pointer SDK bodies against the
+literal R225 original source/context; its const pointer reference has its real
+mangled type. No old source, manifest, compiler, object or library is patched.
+
+An empty selected historical audit and strict HEADa32fa5a readback allow
+exactly one function/origin pair to change. Both original and accepted cold
+proofs, ten new guards, target/tracking, readonly Ghidra attestation and query
+completion, fresh117-row triage, progress freshness, all 60 exact input
+preservation and whitespace checks pass. All 3,426 local CI tests pass. No source, mapping, private ABI or exact credit is added.
+One complete Web MCP acceptance remains due after all remaining origin review.
+
+Current 4,234 resolved = 999 authored + 2,655 library + 580 compiler;
+117 pending and 3,235 excluded. Original 1,311 goal has 1,194 classified /
+117 left and remains active. Exact 60 functions / 9,883 bytes / 60 units
+across eleven objects remain unchanged; authored denominator 1,973,300 and
+provisional 0.50%.
