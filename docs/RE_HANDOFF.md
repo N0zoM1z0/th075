@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R234. The public
+review cohorts R108 through R235. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,54 +11,112 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,213: 987 authored, 2,646 library and 580 compiler generated.
-There are 138 pending. Candidate count is not authored function count.
+has resolved 4,214: 988 authored, 2,646 library and 580 compiler generated.
+There are 137 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,227 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,381 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R235 scene texture-lifetime investigation below.
+the bounded R236 scene record-lifetime investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R234; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R235; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R235 paired texture scene cleanup
+## Next agent objective — R236 complete scene record lifetime context
 
-R234 accepts five complete scene resource cleanup policies below. Original and
-accepted cold proofs and3,295 CI tests pass. Current4,213 resolved =987 authored+
-2,646 library+580 compiler;138 pending and3,226 excluded. The original1,311 goal
-has1,173 classified /138 left and remains active. Push reached68d9258; subsequent
-commits are local. Full Web MCP acceptance remains required after all origin
-review finishes. Continue local investigation and serial cold builds.
+R235 accepts the whole options texture/resource cleanup below. Original and
+accepted cold proofs and3,303 local CI tests pass. Current4,214 resolved =988
+authored+2,646 library+580 compiler;137 pending and3,226 excluded. The original
+1,311 goal has1,174 classified /137 left and remains active. Push reached68d9258;
+subsequent commits are local. Full Web MCP acceptance remains required after all
+origin review finishes. Continue local investigation and serial cold builds.
 
-Next investigate complete154-byte options scene cleanup428E60. Its independently
-accepted251-byte initializer428D60 installs table657F38, clears the observed
-texture pointer+0xC, constructs/configures resource+8 from real game assets and
-calls whole texture creation401C20 with the texture destination. Native cleanup
-preserves the conditional resource delete and an additional guarded texture
-virtual release through observed slot8. The fresh private natural public-D3D8
-fixture is `.analysis/R235SceneTextureCleanup.cpp`; its compiler log and object
-are diagnostic. Reopen full paired asset/table/texture producer/base/resource/
-exception evidence and natural implicit alternatives before canonical changes.
-Original source/type/layout/ABI remain unknown. No incomplete game owner or
-artificial padding is authorized.
+Next inspect whole244-byte pending scene cleanup4258D0 and its actual50-/82-byte
+record lifetime callbacks427430/427470. The full native cleanup observes four
+unconditional virtual releases, the conditional resource deletion already seen
+in R234/R235, independent game manager/mode operations, a CRT array destruction
+call with count16/stride60 and observed record destructor427470, then base cleanup.
+Those preliminary native facts are not origin evidence. Reopen the entire paired
+independently accepted initializer, all installed scene table peers, actual array
+construction/destruction and record/resource consumers before attribution.
+Contrast complete natural policy/compiler/library alternatives. Do not fabricate
+record fields or padding to obtain a60-byte private layout, instantiate an
+incomplete game class, crop an array/EH carrier or infer original source/ABI from
+a paired compiler wrapper alone. If independently supported, accept only bounded
+whole origin decisions and preserve exact/source state.
 
 Keep no-reference receiver policies454C00 /24 and454F70 /31 unknown. Two inventory
-extent questions remain (60C120 /11 and620132 /5). Reopen full defining source
+extent questions remain (60C120 /11 and620132 /5). Reopen complete defining source
 owners and metadata before reconciliation. Preserve R108/R198/R204 lifetime
 uncertainty, R18341CA30 /77 and R212455770 /111, prior node/math/opaque decisions.
-Fresh `.analysis/origin-scan/r234-triage.json` has138 pending with current ledger
+Fresh `.analysis/origin-scan/r235-triage.json` has137 pending with current ledger
 hashes. Shared tools remain read-only.
+
+## R235 complete options texture/resource cleanup
+
+R235 accepts the complete154-byte authored options scene cleanup428E60. It
+conditionally deletes observed resource+8 and releases texture+0xC through
+observed virtual slot8 before base cleanup431F40. All four branches, RET0 and
+six external INT3 bytes outside428EFA are preserved. The current name, full
+extent, source/ABI, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-scene-texture-cleanup-origins.py`
+with immutable `config/scene-texture-cleanup-origin-evidence.json`, SHA-256
+`8f95d8f7c90fbeba274e24cb2ce06be539144b4dbec11e07f6318c0e4108ae19`.
+Independent R109 options initializer428D60 /251 installs the same actual table,
+clears texture+0xC, constructs/configures resource+8 with the full original
+`data\system\option.dat` string and passes the texture field's address to
+Graphics::CreateTexture401C20 /340. This complete game producer normalizes
+dimensions/formats and calls the whole independently reviewed original
+`_D3DXCreateTexture@32` at605B61 /102. Full retained R195 graph cold-replay re-extracts
+its pinned original archive and checks every original code/data/API/source field,
+all lifetime/getter uncertainties and public ABI controls. An observed virtual
+slot alone does not prove a concrete original interface or runtime callee.
+
+All15 complete initializer/table-peer/producer/resource/base/deleting/runtime
+anchors total5,385 bytes. Three observed readonly scene table words and following
+four bytes retain full paired owner context without recovering a complete class
+interface. The original exception/unwind18 and map/FuncInfo36 carriers and their
+following next-owner data stay separate. R1084251C0 /34 remains unknown.
+
+The complete natural fixture `tests/origin_probes/SceneTextureCleanup.cpp`
+uses the actual pinned public D3D8 declarations and compact generic lifecycle,
+resource and scene observations. Cold3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I
+src /showIncludes` checks all73 original included-header hashes,15 whole emitted
+code/data sections /522 bytes, all30 actual fields, three genuine weak deleting
+aliases/fallbacks, full source COFF/AUX/instructions and readonly `[1,8,16,16]`
+sizeof observations. Five complete unmasked comparisons /296 bytes cover the
+ordinary154-byte policy, paired deleting44, exception18, data36 and resource
+scalar deleting44. The whole raw-pointer implicit destructor19 remains distinct.
+The public Release declaration is a natural alternative, not a recovered private
+receiver interface. No incomplete game owner is instantiated or padded, and no
+original type/name/layout/source spelling/ABI/compiler profile or exact match is
+claimed. Authored source-family inference rests on the full independent actual
+game asset/texture-production and paired lifetime context.
+
+An empty old selected-snapshot audit,16 scoped canonical pairs, full original
+unselected digests and bounded HEADdba4abc readback allow exactly one row in each
+function/origin ledger to change. All previous evidence, explicit lifetime/node/
+math ambiguities and60 exact inputs remain literal. Original and accepted cold
+proofs including the retained whole SDK graph,3,303 local CI tests including
+eight new guards, target/tracking, local Ghidra identity, progress, fresh137-row
+triage and whitespace pass. Complete Web MCP acceptance remains reserved until
+all origin review finishes.
+
+Current4,214 resolved =988 authored+2,646 library+580 compiler;137 pending and
+3,226 excluded. The original1,311 goal has1,174 classified /137 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,381 and provisional0.50%.
 
 ## R234 complete paired scene resource cleanup
 

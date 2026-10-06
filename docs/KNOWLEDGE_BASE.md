@@ -11801,3 +11801,59 @@ Current4,213 resolved =987 authored+2,646 library+580 compiler;138 pending and
 3,226 excluded. The original1,311 goal has1,173 classified /138 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,227 and provisional0.50%.
+
+## R235 complete options texture/resource cleanup
+
+R235 accepts the complete154-byte authored options scene cleanup428E60. It
+conditionally deletes observed resource+8 and releases texture+0xC through
+observed virtual slot8 before base cleanup431F40. All four branches, RET0 and
+six external INT3 bytes outside428EFA are preserved. The current name, full
+extent, source/ABI, mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-scene-texture-cleanup-origins.py`
+with immutable `config/scene-texture-cleanup-origin-evidence.json`, SHA-256
+`8f95d8f7c90fbeba274e24cb2ce06be539144b4dbec11e07f6318c0e4108ae19`.
+Independent R109 options initializer428D60 /251 installs the same actual table,
+clears texture+0xC, constructs/configures resource+8 with the full original
+`data\system\option.dat` string and passes the texture field's address to
+Graphics::CreateTexture401C20 /340. This complete game producer normalizes
+dimensions/formats and calls the whole independently reviewed original
+`_D3DXCreateTexture@32` at605B61 /102. Full retained R195 graph cold-replay re-extracts
+its pinned original archive and checks every original code/data/API/source field,
+all lifetime/getter uncertainties and public ABI controls. An observed virtual
+slot alone does not prove a concrete original interface or runtime callee.
+
+All15 complete initializer/table-peer/producer/resource/base/deleting/runtime
+anchors total5,385 bytes. Three observed readonly scene table words and following
+four bytes retain full paired owner context without recovering a complete class
+interface. The original exception/unwind18 and map/FuncInfo36 carriers and their
+following next-owner data stay separate. R1084251C0 /34 remains unknown.
+
+The complete natural fixture `tests/origin_probes/SceneTextureCleanup.cpp`
+uses the actual pinned public D3D8 declarations and compact generic lifecycle,
+resource and scene observations. Cold3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I
+src /showIncludes` checks all73 original included-header hashes,15 whole emitted
+code/data sections /522 bytes, all30 actual fields, three genuine weak deleting
+aliases/fallbacks, full source COFF/AUX/instructions and readonly `[1,8,16,16]`
+sizeof observations. Five complete unmasked comparisons /296 bytes cover the
+ordinary154-byte policy, paired deleting44, exception18, data36 and resource
+scalar deleting44. The whole raw-pointer implicit destructor19 remains distinct.
+The public Release declaration is a natural alternative, not a recovered private
+receiver interface. No incomplete game owner is instantiated or padded, and no
+original type/name/layout/source spelling/ABI/compiler profile or exact match is
+claimed. Authored source-family inference rests on the full independent actual
+game asset/texture-production and paired lifetime context.
+
+An empty old selected-snapshot audit,16 scoped canonical pairs, full original
+unselected digests and bounded HEADdba4abc readback allow exactly one row in each
+function/origin ledger to change. All previous evidence, explicit lifetime/node/
+math ambiguities and60 exact inputs remain literal. Original and accepted cold
+proofs including the retained whole SDK graph,3,303 local CI tests including
+eight new guards, target/tracking, local Ghidra identity, progress, fresh137-row
+triage and whitespace pass. Complete Web MCP acceptance remains reserved until
+all origin review finishes.
+
+Current4,214 resolved =988 authored+2,646 library+580 compiler;137 pending and
+3,226 excluded. The original1,311 goal has1,174 classified /137 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,381 and provisional0.50%.

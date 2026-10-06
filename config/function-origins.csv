@@ -1284,7 +1284,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x00428D20,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00428D40,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x00428D60,authored,OptionsScene,authored,complete-game-policy-with-mixed-context,R109
-0x00428E60,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x00428E60,authored,OptionsScene,authored,whole-game-scene-texture-release-with-independent-public-sdk-producer-and-paired-lifetime-graph,R235
 0x00428F00,authored,OptionsScene,authored,target-observed,R066
 0x004292E0,authored,SceneRenderer,authored,target-observed,R065
 0x00429DC0,authored,ReplayScene,authored,target-observed,R053
