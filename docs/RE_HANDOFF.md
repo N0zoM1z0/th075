@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R240. The public
+review cohorts R108 through R241. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,60 +11,84 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,222: 996 authored, 2,646 library and 580 compiler generated.
-There are 129 pending. Candidate count is not authored function count.
+has resolved 4,223: 997 authored, 2,646 library and 580 compiler generated.
+There are 128 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,929 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,950 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R241 scene/base initialization investigation below.
+the bounded R242 archive member-policy investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R240; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R241; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R241 scene/base initialization
+## Next agent objective — R242 archive member-policy investigation
 
-R239 and R240 accepted three complete origins in this goal turn. R240 original
-and accepted cold proofs,12 new guards and3,367 local CI tests pass. There are129
-origins pending; the original1,311 goal has1,182 classified /129 left and remains
-active. The user pushed throughc9b8efa; later commits remain local. Continue local serial
-investigation while preserving every accepted origin and60 exact functions.
+R241 accepted one complete fighter-reference binding / 21 bytes and retained
+the scene/base constructor ambiguity after full original R108 cold replay.
+There are 128 origins pending; the original 1,311 goal has 1,183 classified /
+128 left and remains active. Original and accepted R241 cold proofs and twelve
+new guards pass. The accepted local CI run covers 3,379 tests. The user pushed
+through c9b8efa; later commits remain local. Continue local serial investigation
+while preserving every accepted origin and all 60 exact functions.
 The user requires one complete Web MCP acceptance after all remaining origin
-review finishes. The final full run remains outstanding.
+review finishes. That final full run remains outstanding.
 
-Next inspect complete pending4251C0 /34. It stores actual vtable657B88, invokes
-whole authored GameGlobals::Initialize417210 /531 on receiver+4 and returns
-its own receiver. Five whole independently accepted scene initializers call
-it: BattleEnd424E00 /308, Loading4251F0 /181, Logo425490 /183, MusicRoom425750
-/372 and Opening4275D0 /219. Complete raw private diagnostics are in
-`.analysis/r241-resource-reset-native.json`. Reopen actual constructor/copy/
-lifetime evidence, complete vtable slots and called owner/subobject operations;
-contrast natural explicit, implicit and original/library source controls.
-A vptr store plus member construction can fit generated initialization, and
-a known game child alone does not resolve ownership. Preserve unknown unless
-new complete evidence distinguishes the source family. Do not instantiate an
-incomplete original scene/base owner or add fake ABI/source/exact credit.
+Next inspect the bounded archive helper neighborhood: pending 41E060 / 19,
+41E080 / 42, their four whole forwarding/iterator dependencies41EF20 / 19,
+41EF40 / 22,41F790 / 25 and41F7B0 / 35, and the complete independently accepted
+archive parents. Reconcile the
+actual calls and receiver fields against original library, implicit and explicit
+source alternatives. A library child or game parent alone is not ownership
+proof. Preserve unknown when whole alternatives remain indistinguishable.
+Private `.analysis/r242-archive-neighbor-native.json` retains fourteen complete
+bodies with current canonical pairs, and `.analysis/r242-archive-neighbors.c`
+contains seven attested readonly decompiles. Fresh generic108-byte archive
+iteration in `.analysis/probes/R242ArchiveIterator.cpp` cold-builds. Ten complete
+field-normalized diagnostic hits are in
+`.analysis/r242-archive-source-diagnostic.json`; they grant no origin or exact
+credit. The source call graph distinguishes outer arrow19, mutable dereference19,
+const dereference25, postfix42, mutable prefix22 and const prefix35. Resolve
+every real defining owner/field through the whole graph before classification.
+Opaque _Nextnode8 at41E100 and _Myval11 at41F7F0 remain independently unknown;
+do not convert their fingerprints into ownership. Original R169/R168 source,
+manifests, ordinary alternatives and historical snapshots must remain literal.
+
+R241's immutable proof accepts 45BA10 / 21 only. The complete fighter initializer
+allocates 84 bytes, finishes four-queue construction, stores the manager at
+fighter+0x2EC and then supplies that same fighter to the manager binding.
+Complete effect spawn consumes the bound pointer for virtual allocation and
+copies fighter+0xA4. Ordinary/template 21-byte members reproduce, while complete
+pointer constructor24, real implicit assignment26, assignment caller15 and
+borrowed pointer13 remain distinct. The observed allocation is not a recovered
+original private sizeof or class declaration.
+
+Complete 4251C0 / 34 remains unknown. Child GameGlobals::Initialize417210 / 531
+returns its receiver; the whole original vtable657B88 contains three purecall
+slots. Five complete scene initializers and paired release431F40 / 31 do not
+distinguish explicit empty construction from implicit member construction.
+The entire original R108 cold proof still checks six candidates, 103 anchors,
+98 parent calls and both vtables without changing its source or manifest.
 
 Other private leaf diagnostics are in `.analysis/r241-game-leaf-native.json`.
-45B850 /13 is a no-op RET4;4073A0 and438CF0 /11 are no-op RET0 bodies;45BA10 /21
-writes its incoming dword to receiver offset0 and returns with RET4. These
-shapes alone cannot distinguish hooks, lifetime/member/allocator operations or
-ordinary scalar methods. `.analysis/r241-replay-helper-native.json` likewise
-shows no-op4138D0 /11 and no-reference FontSurface-adjacent4135F0 /40 writing
-a byte at+0x24 and dwords at+0x1C/+0x20 with RET12. Adjacency is not owner proof.
-Do not promote these fingerprints without full independent type/caller/data
-context and explicit source alternatives. Fresh `.analysis/origin-scan/r240-triage.json` contains129 pending with current
-ledger hashes.
+45B850 / 13 is a no-op RET4;4073A0 and438CF0 / 11 are no-op RET0 bodies.
+These shapes alone cannot distinguish hooks, lifetime/member/allocator
+operations or ordinary methods. `.analysis/r241-replay-helper-native.json`
+likewise shows no-op4138D0 / 11 and no-reference FontSurface-adjacent4135F0 / 40
+writing a byte at+0x24 and dwords at+0x1C/+0x20 with RET12. Adjacency is not owner
+proof. Do not promote these fingerprints without complete independent context
+and source alternatives. Fresh `.analysis/origin-scan/r241-triage.json` records
+128 pending with current canonical ledger hashes.
 
 R240 ties primary replay byte queue6718A4 to actual owner671750+0x154, complete
 file loading/serialization, live direction/button consumption and battle
@@ -85,6 +109,70 @@ R18341CA30 /77, R212455770 /111, five R163 math chains, opaque/node policies and
 constructors458650 /31 and458670 /23 as unknown. DwStack61FB37 and codec61A453
 retain protected R195/R198 alternatives. Extent questions60C120 /11 and620132
 /5 need complete defining source/metadata. Shared tools remain read-only.
+
+## R241 — binding a constructed effect manager to its fighter
+
+R241 accepts authored `0x0045BA10` / 21 only, with its complete CFG [1,0],
+incoming pointer store at receiver offset zero, RET4 and eleven following
+external INT3 bytes preserved. The inferred name is
+BattleEffectManager::BindFighterAt0045BA10. Original name, extent, source/ABI,
+mapping and exact state stay unchanged.
+
+Replay `scripts/repo-python scripts/verify-effect-owner-binding-origins.py`
+with immutable `config/effect-owner-binding-origin-evidence.json`, SHA-256
+`f05fcecfb44b753f2061a0d04b3562941563922e1ddee7f92be525a444b1e0e2`.
+Whole R045 FighterState initialization4567B0 / 345 allocates84 bytes, invokes
+the independently accepted R166 four-queue initialization45B920 / 131 and
+stores its returned manager atfighter+0x2EC. It then pushes that identical
+fighter and invokes selected21 on the initialized manager. This is an observed
+binding after construction. Whole R045 effect spawn45BB10 / 282 reads the
+manager's first field as the fighter receiver, invokes its vtable+0x1C to obtain
+an animation object, copies fighter+0xA4 to the created object and appends the
+result through a selected20-byte queue. Complete cleanup221, original deque
+construction72, release19/19, append217 and exact animation reset52 retain their
+previous independent evidence. Seventeen full anchors / 3,217 bytes and eighteen
+scoped canonical pairs are checked, including complete switches, exits and
+instruction records. Original complete R166131/345 native records and both
+actual registered lifetime frames are reopened without patching any historical
+source graph; a new full R166 cold replay is not claimed.
+
+Natural `tests/origin_probes/EffectOwnerBinding.cpp` cold-builds with pinned3077
+`/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`. Complete ordinary and
+template pointer-binding members each reproduce all21 bytes without fields.
+The entire natural pointer constructor24, genuine implicit assignment26,
+ordinary assignment caller15 and borrowed pointer write13 remain negative
+against the whole target21, including every missing tail byte. The real
+member-function pointer forces the compiler's implicit assignment definition;
+its actual DIR32 field is retained. All nine ordinary code/data sections /
+161 bytes, both real fields, complete COFF/AUX/line provenance, real absence of
+includes and weak aliases and the entire20-byte sizeof[4,4,4,4,4] are frozen.
+These are complete generic observations, not original private game owners.
+The84-byte target allocation does not establish a complete original layout.
+Original class/type/spelling/compiler profile/ABI remain unknown; no source,
+mapping or exact credit is added.
+
+The investigated scene-base constructor4251C0 / 34 remains unknown. Its whole
+GameGlobals child417210 / 531 returns its receiver. The complete readonly
+vtable657B88 contains three purecall slots, and five whole independently
+accepted scene initializers plus paired release431F40 / 31 preserve the complete
+lifetime context. Natural explicit empty and implicit construction remain
+indistinguishable. Original and accepted R241 proofs cold-replay the unchanged
+entire R108 evidence-only verifier: six complete candidate bodies /176 bytes,
+103 whole/candidate anchors,98 parent edges, both vtables and whole typed source
+alternatives. All five original lifetime ambiguities remain pending.
+
+An empty selected historical audit, all original unselected-row digests and
+strict HEAD530846a bounded readback permit exactly one canonical pair to change.
+Every prior evidence file, protected unknown and all60 exact inputs remain
+unchanged. Original and accepted cold proofs, twelve new guards,3,379 local CI
+tests, target/tracking, readonly Ghidra attestation/query completion, fresh128-row
+triage, progress freshness and whitespace checks pass. The final full Web MCP
+acceptance remains due after all remaining origin review finishes.
+
+Current4,223 resolved =997 authored+2,646 library+580 compiler;128 pending and
+3,226 excluded. The original1,311 goal has1,183 classified /128 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects are
+unchanged; authored denominator1,972,950 and provisional0.50%.
 
 ## R240 — primary replay-input queue exhaustion
 
