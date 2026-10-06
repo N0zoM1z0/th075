@@ -1,0 +1,4646 @@
+{
+  "evidence_id": "R231",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "functions": [
+    {
+      "address": "0x0044B980",
+      "size": 60,
+      "body_sha256": "d840c9b1051ac3549ef7c72fc342a4f6cc6f3444ec22bbaa007d38530ddfa095",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 3,
+          "mnemonic": "sub",
+          "operands": "esp, 0xc"
+        },
+        {
+          "offset": 6,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0xc], ecx"
+        },
+        {
+          "offset": 9,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x671404]"
+        },
+        {
+          "offset": 15,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x657834]"
+        },
+        {
+          "offset": 21,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 26,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 8], eax"
+        },
+        {
+          "offset": 29,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 35,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 40,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], eax"
+        },
+        {
+          "offset": 43,
+          "size": 2,
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "offset": 45,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "offset": 48,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "offset": 51,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x40c7f0"
+        },
+        {
+          "offset": 56,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 58,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 59,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "original_function": {
+        "address": "0x0044B980",
+        "size": "60",
+        "span_end": "0x0044B9BB",
+        "current_name": "FUN_0044b980",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0044B980",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0044B980",
+        "size": "60",
+        "span_end": "0x0044B9BB",
+        "current_name": "FUN_0044b980",
+        "proposed_name": "BackgroundStage::ApplyBG02aBlendAt0044B980",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R231; config/background-blend-origin-evidence.json; scripts/repo-python scripts/verify-background-blend-origins.py",
+        "owner": "authored",
+        "notes": "Whole regular BG02 callback reads independently written camera globals, retains both original x87 conversions and their unused native result stores, and passes zero to the full game render-state helper with receiver+0x18. The real asset constructor installs its selected table and loads the same observed resource member. Natural source controls avoid inert locals and padded private layouts; names/ABI/source remain provisional, no exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0044B980",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-blend-callback-and-independent-asset-camera-render-state-provenance",
+        "evidence_id": "R231"
+      }
+    },
+    {
+      "address": "0x0044BEA0",
+      "size": 60,
+      "body_sha256": "49bfa3ecf1fbb5a65682807edc82a21174533deeadc36a288c3b463952129f38",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 3,
+          "mnemonic": "sub",
+          "operands": "esp, 0xc"
+        },
+        {
+          "offset": 6,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0xc], ecx"
+        },
+        {
+          "offset": 9,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x671404]"
+        },
+        {
+          "offset": 15,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x657834]"
+        },
+        {
+          "offset": 21,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 26,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 8], eax"
+        },
+        {
+          "offset": 29,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 35,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 40,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], eax"
+        },
+        {
+          "offset": 43,
+          "size": 2,
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "offset": 45,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "offset": 48,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "offset": 51,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x40c7f0"
+        },
+        {
+          "offset": 56,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 58,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 59,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "original_function": {
+        "address": "0x0044BEA0",
+        "size": "60",
+        "span_end": "0x0044BEDB",
+        "current_name": "FUN_0044bea0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0044BEA0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0044BEA0",
+        "size": "60",
+        "span_end": "0x0044BEDB",
+        "current_name": "FUN_0044bea0",
+        "proposed_name": "BackgroundStage::ApplyBG02bBlendAt0044BEA0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R231; config/background-blend-origin-evidence.json; scripts/repo-python scripts/verify-background-blend-origins.py",
+        "owner": "authored",
+        "notes": "Whole regular BG02 callback reads independently written camera globals, retains both original x87 conversions and their unused native result stores, and passes zero to the full game render-state helper with receiver+0x18. The real asset constructor installs its selected table and loads the same observed resource member. Natural source controls avoid inert locals and padded private layouts; names/ABI/source remain provisional, no exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0044BEA0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-blend-callback-and-independent-asset-camera-render-state-provenance",
+        "evidence_id": "R231"
+      }
+    },
+    {
+      "address": "0x0044C3C0",
+      "size": 60,
+      "body_sha256": "eab49a1a72fbed66caeb0170f2b4ceb91c315fee4517fd5176f1a7eb620737c6",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 3,
+          "mnemonic": "sub",
+          "operands": "esp, 0xc"
+        },
+        {
+          "offset": 6,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 0xc], ecx"
+        },
+        {
+          "offset": 9,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x671404]"
+        },
+        {
+          "offset": 15,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x657834]"
+        },
+        {
+          "offset": 21,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 26,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 8], eax"
+        },
+        {
+          "offset": 29,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 35,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x6406ac"
+        },
+        {
+          "offset": 40,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], eax"
+        },
+        {
+          "offset": 43,
+          "size": 2,
+          "mnemonic": "push",
+          "operands": "0"
+        },
+        {
+          "offset": 45,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp - 0xc]"
+        },
+        {
+          "offset": 48,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "ecx, 0x18"
+        },
+        {
+          "offset": 51,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x40c7f0"
+        },
+        {
+          "offset": 56,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 58,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 59,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "original_function": {
+        "address": "0x0044C3C0",
+        "size": "60",
+        "span_end": "0x0044C3FB",
+        "current_name": "FUN_0044c3c0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "original_origin": {
+        "address": "0x0044C3C0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      },
+      "accepted_function": {
+        "address": "0x0044C3C0",
+        "size": "60",
+        "span_end": "0x0044C3FB",
+        "current_name": "FUN_0044c3c0",
+        "proposed_name": "BackgroundStage::ApplyBG02cBlendAt0044C3C0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R231; config/background-blend-origin-evidence.json; scripts/repo-python scripts/verify-background-blend-origins.py",
+        "owner": "authored",
+        "notes": "Whole regular BG02 callback reads independently written camera globals, retains both original x87 conversions and their unused native result stores, and passes zero to the full game render-state helper with receiver+0x18. The real asset constructor installs its selected table and loads the same observed resource member. Natural source controls avoid inert locals and padded private layouts; names/ABI/source remain provisional, no exact credit."
+      },
+      "accepted_origin": {
+        "address": "0x0044C3C0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-blend-callback-and-independent-asset-camera-render-state-provenance",
+        "evidence_id": "R231"
+      }
+    }
+  ],
+  "owners": [
+    {
+      "address": "0x0040C7F0",
+      "size": 65,
+      "body_sha256": "2467d2b6602e886b8b642b208773eb89ea06722bcd50d1bcda7f27abb5ed9c26",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ecx"
+        },
+        {
+          "offset": 4,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "dword ptr [ebp - 4], ecx"
+        },
+        {
+          "offset": 7,
+          "size": 4,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 8], 2"
+        },
+        {
+          "offset": 11,
+          "size": 2,
+          "mnemonic": "je",
+          "operands": "0x40c809"
+        },
+        {
+          "offset": 13,
+          "size": 4,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 8], 3"
+        },
+        {
+          "offset": 17,
+          "size": 2,
+          "mnemonic": "je",
+          "operands": "0x40c809"
+        },
+        {
+          "offset": 19,
+          "size": 4,
+          "mnemonic": "cmp",
+          "operands": "dword ptr [ebp + 8], 6"
+        },
+        {
+          "offset": 23,
+          "size": 2,
+          "mnemonic": "jne",
+          "operands": "0x40c815"
+        },
+        {
+          "offset": 25,
+          "size": 2,
+          "mnemonic": "push",
+          "operands": "3"
+        },
+        {
+          "offset": 27,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x402250"
+        },
+        {
+          "offset": 32,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 35,
+          "size": 2,
+          "mnemonic": "jmp",
+          "operands": "0x40c81f"
+        },
+        {
+          "offset": 37,
+          "size": 2,
+          "mnemonic": "push",
+          "operands": "2"
+        },
+        {
+          "offset": 39,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x402250"
+        },
+        {
+          "offset": 44,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 47,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 50,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "eax"
+        },
+        {
+          "offset": 51,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x401f50"
+        },
+        {
+          "offset": 56,
+          "size": 3,
+          "mnemonic": "add",
+          "operands": "esp, 4"
+        },
+        {
+          "offset": 59,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "esp, ebp"
+        },
+        {
+          "offset": 61,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 62,
+          "size": 3,
+          "mnemonic": "ret",
+          "operands": "4"
+        }
+      ],
+      "cfg": [
+        1,
+        4
+      ],
+      "authored_record": {
+        "address": "0x0040C7F0",
+        "size": "65",
+        "body_sha256": "2467d2b6602e886b8b642b208773eb89ea06722bcd50d1bcda7f27abb5ed9c26",
+        "inferred_role": "TextureManager::SetBlendMode",
+        "return_count": "1",
+        "internal_branch_count": "4",
+        "external_branch_count": "0",
+        "evidence_id": "R014"
+      }
+    },
+    {
+      "address": "0x00412660",
+      "size": 96,
+      "body_sha256": "1acd6ac7d0659f87135f94093d04d8d5c059e169eb39a1d79d525491397bb2c8",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 8]"
+        },
+        {
+          "offset": 6,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713c8], eax"
+        },
+        {
+          "offset": 11,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [ebp + 0xc]"
+        },
+        {
+          "offset": 14,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713d0], ecx"
+        },
+        {
+          "offset": 20,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [ebp + 0x10]"
+        },
+        {
+          "offset": 23,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713cc], edx"
+        },
+        {
+          "offset": 29,
+          "size": 3,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [ebp + 0x14]"
+        },
+        {
+          "offset": 32,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713d4], eax"
+        },
+        {
+          "offset": 37,
+          "size": 5,
+          "mnemonic": "call",
+          "operands": "0x4126c0"
+        },
+        {
+          "offset": 42,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x6713f0]"
+        },
+        {
+          "offset": 48,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713e4], ecx"
+        },
+        {
+          "offset": 54,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [0x671400]"
+        },
+        {
+          "offset": 60,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671408], edx"
+        },
+        {
+          "offset": 66,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6713e4]"
+        },
+        {
+          "offset": 71,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671404], eax"
+        },
+        {
+          "offset": 76,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x671408]"
+        },
+        {
+          "offset": 82,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x65784c]"
+        },
+        {
+          "offset": 88,
+          "size": 6,
+          "mnemonic": "fstp",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 94,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 95,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        0
+      ],
+      "authored_record": {
+        "address": "0x00412660",
+        "size": "96",
+        "body_sha256": "1acd6ac7d0659f87135f94093d04d8d5c059e169eb39a1d79d525491397bb2c8",
+        "inferred_role": "CameraMotion::InitializeAt00412660",
+        "return_count": "1",
+        "internal_branch_count": "0",
+        "external_branch_count": "0",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "address": "0x00412CF0",
+      "size": 146,
+      "body_sha256": "e08b5cc06d6429ce014407d34d97c3bd4a0014c880bda3157df532f1481e46d4",
+      "instructions": [
+        {
+          "offset": 0,
+          "size": 1,
+          "mnemonic": "push",
+          "operands": "ebp"
+        },
+        {
+          "offset": 1,
+          "size": 2,
+          "mnemonic": "mov",
+          "operands": "ebp, esp"
+        },
+        {
+          "offset": 3,
+          "size": 7,
+          "mnemonic": "movzx",
+          "operands": "eax, byte ptr [0x671414]"
+        },
+        {
+          "offset": 10,
+          "size": 2,
+          "mnemonic": "test",
+          "operands": "eax, eax"
+        },
+        {
+          "offset": 12,
+          "size": 2,
+          "mnemonic": "je",
+          "operands": "0x412d40"
+        },
+        {
+          "offset": 14,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x6713e8]"
+        },
+        {
+          "offset": 20,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671404], ecx"
+        },
+        {
+          "offset": 26,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x6713bc]"
+        },
+        {
+          "offset": 32,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x65784c]"
+        },
+        {
+          "offset": 38,
+          "size": 6,
+          "mnemonic": "fstp",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 44,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [0x6713e8]"
+        },
+        {
+          "offset": 50,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713e4], edx"
+        },
+        {
+          "offset": 56,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6713bc]"
+        },
+        {
+          "offset": 61,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671408], eax"
+        },
+        {
+          "offset": 66,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x6713f4]"
+        },
+        {
+          "offset": 72,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713dc], ecx"
+        },
+        {
+          "offset": 78,
+          "size": 2,
+          "mnemonic": "jmp",
+          "operands": "0x412d80"
+        },
+        {
+          "offset": 80,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [0x6713f0]"
+        },
+        {
+          "offset": 86,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671404], edx"
+        },
+        {
+          "offset": 92,
+          "size": 6,
+          "mnemonic": "fld",
+          "operands": "dword ptr [0x671400]"
+        },
+        {
+          "offset": 98,
+          "size": 6,
+          "mnemonic": "fadd",
+          "operands": "dword ptr [0x65784c]"
+        },
+        {
+          "offset": 104,
+          "size": 6,
+          "mnemonic": "fstp",
+          "operands": "dword ptr [0x6713c4]"
+        },
+        {
+          "offset": 110,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "eax, dword ptr [0x6713f0]"
+        },
+        {
+          "offset": 115,
+          "size": 5,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713e4], eax"
+        },
+        {
+          "offset": 120,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "ecx, dword ptr [0x671400]"
+        },
+        {
+          "offset": 126,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x671408], ecx"
+        },
+        {
+          "offset": 132,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "edx, dword ptr [0x6713c0]"
+        },
+        {
+          "offset": 138,
+          "size": 6,
+          "mnemonic": "mov",
+          "operands": "dword ptr [0x6713dc], edx"
+        },
+        {
+          "offset": 144,
+          "size": 1,
+          "mnemonic": "pop",
+          "operands": "ebp"
+        },
+        {
+          "offset": 145,
+          "size": 1,
+          "mnemonic": "ret",
+          "operands": ""
+        }
+      ],
+      "cfg": [
+        1,
+        2
+      ],
+      "authored_record": {
+        "address": "0x00412CF0",
+        "size": "146",
+        "body_sha256": "e08b5cc06d6429ce014407d34d97c3bd4a0014c880bda3157df532f1481e46d4",
+        "inferred_role": "CameraMotion::Snap",
+        "return_count": "1",
+        "internal_branch_count": "2",
+        "external_branch_count": "0",
+        "evidence_id": "R035"
+      }
+    }
+  ],
+  "runtime": {
+    "archive": ".tools/msvc710/Vc7/lib/libcmt.lib",
+    "record": {
+      "address": "0x006406AC",
+      "size": "117",
+      "library": "libcmt.lib",
+      "archive_sha256": "6e2b3742e58245de52149137f64281b73db1487a07a31e165fff269fbf9b2ee8",
+      "member": "..\\build\\intel\\mt_obj\\ftol2.obj",
+      "member_offset": "2659968",
+      "coff_symbol": "__ftol2",
+      "body_sha256": "5333b186c02836974c6f792303aeb2c00d856316b93ccbbe65f51def6ae661b4",
+      "relocation_count": "0",
+      "extent_basis": "function-auxiliary-record",
+      "evidence_id": "R006"
+    },
+    "member_sha256": "05c7b01e8288a69be901f1e3d673ca618f9e02da9886c3bfa0bafb0eff30741d",
+    "source": {
+      "section": 1,
+      "flags": 1613758496,
+      "size": 117,
+      "definitions": [
+        {
+          "symbol": ".text",
+          "offset": 0,
+          "section": 1,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "__ftol2",
+          "offset": 0,
+          "section": 1,
+          "type": 32,
+          "storage": 2
+        },
+        {
+          "symbol": ".bf",
+          "offset": 0,
+          "section": 1,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".lf",
+          "offset": 38,
+          "section": 1,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": ".ef",
+          "offset": 117,
+          "section": 1,
+          "type": 0,
+          "storage": 101
+        },
+        {
+          "symbol": "arg_is_not_integer_QnaN",
+          "offset": 35,
+          "section": 1,
+          "type": 0,
+          "storage": 6
+        },
+        {
+          "symbol": "positive",
+          "offset": 71,
+          "section": 1,
+          "type": 0,
+          "storage": 6
+        },
+        {
+          "symbol": "integer_QnaN_or_zero",
+          "offset": 95,
+          "section": 1,
+          "type": 0,
+          "storage": 6
+        },
+        {
+          "symbol": "localexit",
+          "offset": 115,
+          "section": 1,
+          "type": 0,
+          "storage": 6
+        }
+      ],
+      "aux_records": [
+        {
+          "symbol": ".text",
+          "index": 7,
+          "aux_count": 1,
+          "aux_hex": "750000000000260000000000000000000000"
+        },
+        {
+          "symbol": "__ftol2",
+          "index": 25,
+          "aux_count": 1,
+          "aux_hex": "1b000000750000002a010000000000000000"
+        },
+        {
+          "symbol": ".bf",
+          "index": 27,
+          "aux_count": 1,
+          "aux_hex": "000000001900000000000000000000000000"
+        },
+        {
+          "symbol": ".lf",
+          "index": 29,
+          "aux_count": 0,
+          "aux_hex": ""
+        },
+        {
+          "symbol": ".ef",
+          "index": 30,
+          "aux_count": 1,
+          "aux_hex": "000000004d00000000000000000000000000"
+        },
+        {
+          "symbol": "arg_is_not_integer_QnaN",
+          "index": 32,
+          "aux_count": 0,
+          "aux_hex": ""
+        },
+        {
+          "symbol": "positive",
+          "index": 33,
+          "aux_count": 0,
+          "aux_hex": ""
+        },
+        {
+          "symbol": "integer_QnaN_or_zero",
+          "index": 34,
+          "aux_count": 0,
+          "aux_hex": ""
+        },
+        {
+          "symbol": "localexit",
+          "index": 35,
+          "aux_count": 0,
+          "aux_hex": ""
+        }
+      ]
+    },
+    "fields": [],
+    "instructions": [
+      {
+        "offset": 0,
+        "size": 1,
+        "mnemonic": "push",
+        "operands": "ebp"
+      },
+      {
+        "offset": 1,
+        "size": 2,
+        "mnemonic": "mov",
+        "operands": "ebp, esp"
+      },
+      {
+        "offset": 3,
+        "size": 3,
+        "mnemonic": "sub",
+        "operands": "esp, 0x20"
+      },
+      {
+        "offset": 6,
+        "size": 3,
+        "mnemonic": "and",
+        "operands": "esp, 0xfffffff0"
+      },
+      {
+        "offset": 9,
+        "size": 2,
+        "mnemonic": "fld",
+        "operands": "st(0)"
+      },
+      {
+        "offset": 11,
+        "size": 4,
+        "mnemonic": "fst",
+        "operands": "dword ptr [esp + 0x18]"
+      },
+      {
+        "offset": 15,
+        "size": 4,
+        "mnemonic": "fistp",
+        "operands": "qword ptr [esp + 0x10]"
+      },
+      {
+        "offset": 19,
+        "size": 4,
+        "mnemonic": "fild",
+        "operands": "qword ptr [esp + 0x10]"
+      },
+      {
+        "offset": 23,
+        "size": 4,
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esp + 0x18]"
+      },
+      {
+        "offset": 27,
+        "size": 4,
+        "mnemonic": "mov",
+        "operands": "eax, dword ptr [esp + 0x10]"
+      },
+      {
+        "offset": 31,
+        "size": 2,
+        "mnemonic": "test",
+        "operands": "eax, eax"
+      },
+      {
+        "offset": 33,
+        "size": 2,
+        "mnemonic": "je",
+        "operands": "0x64070b"
+      },
+      {
+        "offset": 35,
+        "size": 2,
+        "mnemonic": "fsubp",
+        "operands": "st(1)"
+      },
+      {
+        "offset": 37,
+        "size": 2,
+        "mnemonic": "test",
+        "operands": "edx, edx"
+      },
+      {
+        "offset": 39,
+        "size": 2,
+        "mnemonic": "jns",
+        "operands": "0x6406f3"
+      },
+      {
+        "offset": 41,
+        "size": 3,
+        "mnemonic": "fstp",
+        "operands": "dword ptr [esp]"
+      },
+      {
+        "offset": 44,
+        "size": 3,
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [esp]"
+      },
+      {
+        "offset": 47,
+        "size": 6,
+        "mnemonic": "xor",
+        "operands": "ecx, 0x80000000"
+      },
+      {
+        "offset": 53,
+        "size": 6,
+        "mnemonic": "add",
+        "operands": "ecx, 0x7fffffff"
+      },
+      {
+        "offset": 59,
+        "size": 3,
+        "mnemonic": "adc",
+        "operands": "eax, 0"
+      },
+      {
+        "offset": 62,
+        "size": 4,
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esp + 0x14]"
+      },
+      {
+        "offset": 66,
+        "size": 3,
+        "mnemonic": "adc",
+        "operands": "edx, 0"
+      },
+      {
+        "offset": 69,
+        "size": 2,
+        "mnemonic": "jmp",
+        "operands": "0x64071f"
+      },
+      {
+        "offset": 71,
+        "size": 3,
+        "mnemonic": "fstp",
+        "operands": "dword ptr [esp]"
+      },
+      {
+        "offset": 74,
+        "size": 3,
+        "mnemonic": "mov",
+        "operands": "ecx, dword ptr [esp]"
+      },
+      {
+        "offset": 77,
+        "size": 6,
+        "mnemonic": "add",
+        "operands": "ecx, 0x7fffffff"
+      },
+      {
+        "offset": 83,
+        "size": 3,
+        "mnemonic": "sbb",
+        "operands": "eax, 0"
+      },
+      {
+        "offset": 86,
+        "size": 4,
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esp + 0x14]"
+      },
+      {
+        "offset": 90,
+        "size": 3,
+        "mnemonic": "sbb",
+        "operands": "edx, 0"
+      },
+      {
+        "offset": 93,
+        "size": 2,
+        "mnemonic": "jmp",
+        "operands": "0x64071f"
+      },
+      {
+        "offset": 95,
+        "size": 4,
+        "mnemonic": "mov",
+        "operands": "edx, dword ptr [esp + 0x14]"
+      },
+      {
+        "offset": 99,
+        "size": 6,
+        "mnemonic": "test",
+        "operands": "edx, 0x7fffffff"
+      },
+      {
+        "offset": 105,
+        "size": 2,
+        "mnemonic": "jne",
+        "operands": "0x6406cf"
+      },
+      {
+        "offset": 107,
+        "size": 4,
+        "mnemonic": "fstp",
+        "operands": "dword ptr [esp + 0x18]"
+      },
+      {
+        "offset": 111,
+        "size": 4,
+        "mnemonic": "fstp",
+        "operands": "dword ptr [esp + 0x18]"
+      },
+      {
+        "offset": 115,
+        "size": 1,
+        "mnemonic": "leave",
+        "operands": ""
+      },
+      {
+        "offset": 116,
+        "size": 1,
+        "mnemonic": "ret",
+        "operands": ""
+      }
+    ],
+    "cfg": [
+      1,
+      5
+    ]
+  },
+  "data": [
+    {
+      "address": "0x00671404",
+      "size": 4,
+      "role": "camera-x-output",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "permissions": 3221225472
+    },
+    {
+      "address": "0x006713C4",
+      "size": 4,
+      "role": "camera-y-output",
+      "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+      "permissions": 3221225472
+    },
+    {
+      "address": "0x00657834",
+      "size": 4,
+      "role": "readonly-x-offset",
+      "sha256": "0cdfd18d7eb08099473e8d2b5b92b2d7769b9a2b80793af7a8ec4e66b9e3cbe6",
+      "permissions": 1073741824
+    }
+  ],
+  "boundaries": [
+    {
+      "address": "0x0044B9BC",
+      "size": 4,
+      "hex": "cccccccc",
+      "sha256": "8843b54d2df63ca265cf4a05d27dd2b29a74fb476d296dd44a0e171d74b441ca",
+      "next_owner": "0x0044B9C0"
+    },
+    {
+      "address": "0x0044BEDC",
+      "size": 4,
+      "hex": "cccccccc",
+      "sha256": "8843b54d2df63ca265cf4a05d27dd2b29a74fb476d296dd44a0e171d74b441ca",
+      "next_owner": "0x0044BEE0"
+    },
+    {
+      "address": "0x0044C3FC",
+      "size": 4,
+      "hex": "cccccccc",
+      "sha256": "8843b54d2df63ca265cf4a05d27dd2b29a74fb476d296dd44a0e171d74b441ca",
+      "next_owner": "0x0044C400"
+    }
+  ],
+  "canonical": [
+    {
+      "function": {
+        "address": "0x0044B600",
+        "size": "48",
+        "span_end": "0x0044B62F",
+        "current_name": "FUN_0044b600",
+        "proposed_name": "BackgroundStage::AdvanceBG02aCycleAt0044B600",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x0044B600",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044B550",
+        "size": "161",
+        "span_end": "0x0044B5F0",
+        "current_name": "FUN_0044b550",
+        "proposed_name": "BackgroundStage::LoadBG02a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044B550",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BA20",
+        "size": "44",
+        "span_end": "0x0044BA4B",
+        "current_name": "FUN_0044ba20",
+        "proposed_name": "VC7::ScalarDeletingDestructor_0044BA20",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044BA20",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044B980",
+        "size": "60",
+        "span_end": "0x0044B9BB",
+        "current_name": "FUN_0044b980",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0044B980",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044B970",
+        "size": "11",
+        "span_end": "0x0044B97A",
+        "current_name": "FUN_0044b970",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044B970",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044B970",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044B630",
+        "size": "830",
+        "span_end": "0x0044B96D",
+        "current_name": "FUN_0044b630",
+        "proposed_name": "BattleEffect::RenderPattern02",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x0044B630",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044B9C0",
+        "size": "91",
+        "span_end": "0x0044BA1A",
+        "current_name": "FUN_0044b9c0",
+        "proposed_name": "BackgroundStage::ApplyTransformAt0044B9C0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044B9C0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BB20",
+        "size": "48",
+        "span_end": "0x0044BB4F",
+        "current_name": "FUN_0044bb20",
+        "proposed_name": "BackgroundStage::AdvanceBG02bCycleAt0044BB20",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x0044BB20",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BA70",
+        "size": "161",
+        "span_end": "0x0044BB10",
+        "current_name": "FUN_0044ba70",
+        "proposed_name": "BackgroundStage::LoadBG02b",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044BA70",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BF40",
+        "size": "44",
+        "span_end": "0x0044BF6B",
+        "current_name": "FUN_0044bf40",
+        "proposed_name": "VC7::ScalarDeletingDestructor_0044BF40",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044BF40",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BEA0",
+        "size": "60",
+        "span_end": "0x0044BEDB",
+        "current_name": "FUN_0044bea0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0044BEA0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BE90",
+        "size": "11",
+        "span_end": "0x0044BE9A",
+        "current_name": "FUN_0044be90",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044BE90",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044BE90",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BB50",
+        "size": "830",
+        "span_end": "0x0044BE8D",
+        "current_name": "FUN_0044bb50",
+        "proposed_name": "BattleEffect::RenderPattern03",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x0044BB50",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BEE0",
+        "size": "91",
+        "span_end": "0x0044BF3A",
+        "current_name": "FUN_0044bee0",
+        "proposed_name": "BackgroundStage::ApplyTransformAt0044BEE0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044BEE0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C040",
+        "size": "48",
+        "span_end": "0x0044C06F",
+        "current_name": "FUN_0044c040",
+        "proposed_name": "BackgroundStage::AdvanceBG02cCycleAt0044C040",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x0044C040",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044BF90",
+        "size": "161",
+        "span_end": "0x0044C030",
+        "current_name": "FUN_0044bf90",
+        "proposed_name": "BackgroundStage::LoadBG02c",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044BF90",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C460",
+        "size": "44",
+        "span_end": "0x0044C48B",
+        "current_name": "FUN_0044c460",
+        "proposed_name": "VC7::ScalarDeletingDestructor_0044C460",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044C460",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C3C0",
+        "size": "60",
+        "span_end": "0x0044C3FB",
+        "current_name": "FUN_0044c3c0",
+        "proposed_name": "",
+        "module": "",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+        "owner": "",
+        "notes": ""
+      },
+      "origin": {
+        "address": "0x0044C3C0",
+        "origin": "unknown",
+        "subsystem": "",
+        "disposition": "review",
+        "confidence": "unknown",
+        "evidence_id": "ghidra-12.1.3-initial-inventory"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C3B0",
+        "size": "11",
+        "span_end": "0x0044C3BA",
+        "current_name": "FUN_0044c3b0",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044C3B0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044C3B0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C070",
+        "size": "830",
+        "span_end": "0x0044C3AD",
+        "current_name": "FUN_0044c070",
+        "proposed_name": "BattleEffect::RenderPattern04",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x0044C070",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044C400",
+        "size": "91",
+        "span_end": "0x0044C45A",
+        "current_name": "FUN_0044c400",
+        "proposed_name": "BackgroundStage::ApplyTransformAt0044C400",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044C400",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D5E0",
+        "size": "55",
+        "span_end": "0x0044D616",
+        "current_name": "FUN_0044d5e0",
+        "proposed_name": "BackgroundStage::AdvanceBG04aCycleAt0044D5E0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x0044D5E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D530",
+        "size": "161",
+        "span_end": "0x0044D5D0",
+        "current_name": "FUN_0044d530",
+        "proposed_name": "BackgroundStage::LoadBG04a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044D530",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D970",
+        "size": "44",
+        "span_end": "0x0044D99B",
+        "current_name": "FUN_0044d970",
+        "proposed_name": "VC7::ScalarDeletingDestructor_0044D970",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044D970",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D900",
+        "size": "11",
+        "span_end": "0x0044D90A",
+        "current_name": "FUN_0044d900",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044D900",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044D900",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D8F0",
+        "size": "11",
+        "span_end": "0x0044D8FA",
+        "current_name": "FUN_0044d8f0",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt0044D8F0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x0044D8F0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D620",
+        "size": "716",
+        "span_end": "0x0044D8EB",
+        "current_name": "FUN_0044d620",
+        "proposed_name": "BattleEffect::RenderPattern05",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x0044D620",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0044D910",
+        "size": "88",
+        "span_end": "0x0044D967",
+        "current_name": "FUN_0044d910",
+        "proposed_name": "BackgroundTransform::CopyDarkAt0044D910",
+        "module": "BackgroundTransform",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "origin": {
+        "address": "0x0044D910",
+        "origin": "authored",
+        "subsystem": "BackgroundTransform",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "function": {
+        "address": "0x004503E0",
+        "size": "55",
+        "span_end": "0x00450416",
+        "current_name": "FUN_004503e0",
+        "proposed_name": "BackgroundStage::AdvanceBG07aCycleAt004503E0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x004503E0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450330",
+        "size": "161",
+        "span_end": "0x004503D0",
+        "current_name": "FUN_00450330",
+        "proposed_name": "BackgroundStage::LoadBG07a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R055; full body hash, complete CFG and replayed asset/call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450330",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R055"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450890",
+        "size": "44",
+        "span_end": "0x004508BB",
+        "current_name": "FUN_00450890",
+        "proposed_name": "VC7::ScalarDeletingDestructor_00450890",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x00450890",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450820",
+        "size": "11",
+        "span_end": "0x0045082A",
+        "current_name": "FUN_00450820",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt00450820",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450820",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450810",
+        "size": "11",
+        "span_end": "0x0045081A",
+        "current_name": "FUN_00450810",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt00450810",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R058; cold VC7 empty virtual source, complete body, CFG and game vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; method role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450810",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R058"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450420",
+        "size": "1005",
+        "span_end": "0x0045080C",
+        "current_name": "FUN_00450420",
+        "proposed_name": "BattleEffect::RenderPattern12",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x00450420",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450830",
+        "size": "91",
+        "span_end": "0x0045088A",
+        "current_name": "FUN_00450830",
+        "proposed_name": "BackgroundStage::ApplyTransformAt00450830",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450830",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450BD0",
+        "size": "60",
+        "span_end": "0x00450C0B",
+        "current_name": "FUN_00450bd0",
+        "proposed_name": "BackgroundStage::AdvanceBG08aCycleAt00450BD0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R230; config/background-cycle-origin-evidence.json; scripts/repo-python scripts/verify-background-cycle-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular callback increments and conditionally resets constructor-cleared, renderer-consumed game background counters. Independent asset path and installed six callback words establish game runtime context; whole natural ordinary and implicit-copy alternatives preserve source uncertainty. Observed fields and provisional roles do not establish a complete private owner/layout/ABI; no source/exact credit."
+      },
+      "origin": {
+        "address": "0x00450BD0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
+        "evidence_id": "R230"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450B20",
+        "size": "171",
+        "span_end": "0x00450BCA",
+        "current_name": "FUN_00450b20",
+        "proposed_name": "BackgroundStage::LoadBG08a",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450B20",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "function": {
+        "address": "0x004510E0",
+        "size": "44",
+        "span_end": "0x0045110B",
+        "current_name": "FUN_004510e0",
+        "proposed_name": "VC7::ScalarDeletingDestructor_004510E0",
+        "module": "VC71Compiler",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R037; cold VC7 whole-COMDAT deleting-destructor template and both direct calls",
+        "owner": "compiler",
+        "notes": "Generated scalar deleting destructor; called destructor origin independent; no authored source or exact credit"
+      },
+      "origin": {
+        "address": "0x004510E0",
+        "origin": "compiler",
+        "subsystem": "VC71Compiler",
+        "disposition": "exclude",
+        "confidence": "compiler-template-backed",
+        "evidence_id": "R037"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450EE0",
+        "size": "408",
+        "span_end": "0x00451077",
+        "current_name": "FUN_00450ee0",
+        "proposed_name": "BattleEffect::RenderPattern14",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x00450EE0",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450ED0",
+        "size": "11",
+        "span_end": "0x00450EDA",
+        "current_name": "FUN_00450ed0",
+        "proposed_name": "BackgroundStage::NoOpVirtualAt00450ED0",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R059; complete body, CFG, paired vtable and family source/path witness",
+        "owner": "authored",
+        "notes": "Origin reviewed; background role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00450ED0",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R059"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00450C10",
+        "size": "699",
+        "span_end": "0x00450ECA",
+        "current_name": "FUN_00450c10",
+        "proposed_name": "BattleEffect::RenderPattern13",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x00450C10",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00451080",
+        "size": "91",
+        "span_end": "0x004510DA",
+        "current_name": "FUN_00451080",
+        "proposed_name": "BackgroundStage::ApplyTransformAt00451080",
+        "module": "BackgroundStage",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R056; complete body hash, CFG, normalized family and game-call witnesses",
+        "owner": "authored",
+        "notes": "Origin reviewed; transform role inferred; source and exact state independent"
+      },
+      "origin": {
+        "address": "0x00451080",
+        "origin": "authored",
+        "subsystem": "BackgroundStage",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R056"
+      }
+    },
+    {
+      "function": {
+        "address": "0x0040C7F0",
+        "size": "65",
+        "span_end": "0x0040C830",
+        "current_name": "FUN_0040c7f0",
+        "proposed_name": "TextureManager::SetBlendMode",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R014",
+        "owner": "",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "origin": {
+        "address": "0x0040C7F0",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R014"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00412660",
+        "size": "96",
+        "span_end": "0x004126BF",
+        "current_name": "FUN_00412660",
+        "proposed_name": "CameraMotion::InitializeAt00412660",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "origin": {
+        "address": "0x00412660",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00412CF0",
+        "size": "146",
+        "span_end": "0x00412D81",
+        "current_name": "FUN_00412cf0",
+        "proposed_name": "CameraMotion::Snap",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "origin": {
+        "address": "0x00412CF0",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "function": {
+        "address": "0x006406AC",
+        "size": "117",
+        "span_end": "0x00640720",
+        "current_name": "FUN_006406ac",
+        "proposed_name": "__ftol2",
+        "module": "VC71CRT",
+        "status": "excluded",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R006; complete COFF function-auxiliary extent and all-byte runtime archive identity",
+        "owner": "library",
+        "notes": "Vendor runtime body; all branches resolved internally; no authored source or canonical exact credit; archive symbol association does not recover executable debug names"
+      },
+      "origin": {
+        "address": "0x006406AC",
+        "origin": "library",
+        "subsystem": "VC71CRT",
+        "disposition": "exclude",
+        "confidence": "vendor-archive-corroborated",
+        "evidence_id": "R006; docs/ORIGIN_REVIEW.md; config/runtime-origin-evidence.csv; complete archive identity and CFG"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00402250",
+        "size": "344",
+        "span_end": "0x004023A7",
+        "current_name": "FUN_00402250",
+        "proposed_name": "Graphics::SetDepthMode",
+        "module": "Graphics",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void SetDepthMode(int mode)",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsState.cpp",
+        "evidence": "F002; complete cold replay including all relocations and switch tables",
+        "owner": "authored",
+        "notes": "Inferred name; complete target extent reconciled; external globals retained"
+      },
+      "origin": {
+        "address": "0x00402250",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "high",
+        "evidence_id": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs"
+      }
+    },
+    {
+      "function": {
+        "address": "0x00401F50",
+        "size": "495",
+        "span_end": "0x0040213E",
+        "current_name": "FUN_00401f50",
+        "proposed_name": "Graphics::SetBlendMode",
+        "module": "Graphics",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void SetBlendMode(int mode)",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsState.cpp",
+        "evidence": "F002; complete cold replay including all relocations and switch tables",
+        "owner": "authored",
+        "notes": "Inferred name; complete target extent reconciled; external globals retained"
+      },
+      "origin": {
+        "address": "0x00401F50",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "high",
+        "evidence_id": "F002; custom D3D8/DirectInput policy wrappers; SDK calls and shared-state xrefs"
+      }
+    }
+  ],
+  "unselected_sha256": {
+    "functions.csv": "14671d0a39e9f48948b9cff191fff3a3aa6814e81d5c0c7022a223e8726b57b9",
+    "function-origins.csv": "1821e8d57dd9ae9efc60c1268ba674b30ec313b548d5a1eab7e15362ae23982c"
+  },
+  "retained_checkpoint": {
+    "path": "config/background-cycle-origin-evidence.json",
+    "script": "scripts/verify-background-cycle-origins.py",
+    "manifest_sha256": "bc73e46ff1a7ebcb839b61caf3f51917d41b11d9a6d066285222ad06c885033a",
+    "script_sha256": "b6ea73a5580888e0398e390339b2c38da17ca0fa165272fac0ec7f901298762e",
+    "plan_sha256": "898bc6240fb1a8ba9f1070fd9211145d87613268c509a0bd3eab1af66dc8e042",
+    "contexts": [
+      {
+        "index": 0,
+        "sha256": "d881fd9005ccfdf50b7d7db5392171d0b42a8da4ea68e5876e396dba3479c951",
+        "callback": "0x0044B980"
+      },
+      {
+        "index": 1,
+        "sha256": "6cd888a219d1a9c756b5ed1ec43d8421f0c558438a36e7e475720cb87f406583",
+        "callback": "0x0044BEA0"
+      },
+      {
+        "index": 2,
+        "sha256": "1b8321c1ad7b8366e9c418f483cfff21d44378c2e001b0b43b601c420960e101",
+        "callback": "0x0044C3C0"
+      }
+    ],
+    "projection": "The isolated original R230 module reads a checked current canonical view projecting only the three full approved original/accepted pairs to their literal retained unknowns. Every other row and every source/hash/field/CFG/constant/profile/ordinary control remain literal; old replay and cold compiler execute normally. No stdlib monkeypatch or artifact write is used."
+  },
+  "historical_snapshots": [
+    {
+      "path": "config/background-cycle-origin-evidence.json",
+      "trail": [
+        "canonical",
+        3
+      ],
+      "record": {
+        "function": {
+          "address": "0x0044B980",
+          "size": "60",
+          "span_end": "0x0044B9BB",
+          "current_name": "FUN_0044b980",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x0044B980",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        }
+      }
+    },
+    {
+      "path": "config/background-cycle-origin-evidence.json",
+      "trail": [
+        "canonical",
+        10
+      ],
+      "record": {
+        "function": {
+          "address": "0x0044BEA0",
+          "size": "60",
+          "span_end": "0x0044BEDB",
+          "current_name": "FUN_0044bea0",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x0044BEA0",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        }
+      }
+    },
+    {
+      "path": "config/background-cycle-origin-evidence.json",
+      "trail": [
+        "canonical",
+        17
+      ],
+      "record": {
+        "function": {
+          "address": "0x0044C3C0",
+          "size": "60",
+          "span_end": "0x0044C3FB",
+          "current_name": "FUN_0044c3c0",
+          "proposed_name": "",
+          "module": "",
+          "status": "unclassified",
+          "match_percent": "0.00",
+          "calling_convention": "",
+          "signature": "",
+          "is_thunk": "false",
+          "source_file": "",
+          "evidence": "Ghidra 12.1.3 auto-analysis candidate; boundary unreviewed",
+          "owner": "",
+          "notes": ""
+        },
+        "origin": {
+          "address": "0x0044C3C0",
+          "origin": "unknown",
+          "subsystem": "",
+          "disposition": "review",
+          "confidence": "unknown",
+          "evidence_id": "ghidra-12.1.3-initial-inventory"
+        }
+      }
+    }
+  ],
+  "public_control": {
+    "probe": "tests/origin_probes/BackgroundBlendPolicies.cpp",
+    "profile": [
+      "/Od",
+      "/Ob0",
+      "/Gy",
+      "/GR-",
+      "/GX",
+      "/Zi",
+      "/GS",
+      "/I",
+      "src",
+      "/showIncludes"
+    ],
+    "headers": {},
+    "emission": [
+      {
+        "section": 3,
+        "name": ".rdata",
+        "size": 16,
+        "flags": 1076887616,
+        "source_sha256": "d595ce03f1f3bf795ee6730d0a005bd805f1ed8bb18fb0eba1457796e155946e",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".rdata",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?BackgroundBlendLayout@@3QBKB",
+            "offset": 0,
+            "section": 3,
+            "type": 0,
+            "storage": 2
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "name": ".text",
+        "size": 22,
+        "flags": 1615859744,
+        "source_sha256": "671aaa53865028be361ef61f9ed62892364dcc05fe44576c7bd09f201907ebfa",
+        "fields": [
+          {
+            "offset": 5,
+            "type": "DIR32",
+            "symbol": {
+              "symbol": "?ObservedBackgroundX@@3MA",
+              "offset": 0,
+              "section": 0,
+              "type": 0,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 11,
+            "type": "DIR32",
+            "symbol": {
+              "symbol": "__real@43200000",
+              "offset": 0,
+              "section": 6,
+              "type": 0,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 16,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "__ftol2",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ConvertBackgroundX@@YAHXZ",
+            "offset": 0,
+            "section": 4,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 22,
+            "section": 4,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 6,
+        "name": ".rdata",
+        "size": 4,
+        "flags": 1076891712,
+        "source_sha256": "0cdfd18d7eb08099473e8d2b5b92b2d7769b9a2b80793af7a8ec4e66b9e3cbe6",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".rdata",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "__real@43200000",
+            "offset": 0,
+            "section": 6,
+            "type": 0,
+            "storage": 2
+          }
+        ]
+      },
+      {
+        "section": 7,
+        "name": ".text",
+        "size": 16,
+        "flags": 1615859744,
+        "source_sha256": "f76ce57d3b66483ed80f342e043aea477f17dc26ffde6f5c36da1aaec005e015",
+        "fields": [
+          {
+            "offset": 5,
+            "type": "DIR32",
+            "symbol": {
+              "symbol": "?ObservedBackgroundY@@3MA",
+              "offset": 0,
+              "section": 0,
+              "type": 0,
+              "storage": 2
+            },
+            "addend": 0
+          },
+          {
+            "offset": 10,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "__ftol2",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 7,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ConvertBackgroundY@@YAHXZ",
+            "offset": 0,
+            "section": 7,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 16,
+            "section": 7,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 9,
+        "name": ".text",
+        "size": 21,
+        "flags": 1615859744,
+        "source_sha256": "69b1ff8c9b290ae1365f34650da35f7e37d22176805925efbcb09a80a26ccfdc",
+        "fields": [
+          {
+            "offset": 13,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?SetBlendMode@TextureObservation@@QAEXH@Z",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 9,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ApplyZero@BackgroundBlendObservation@@QAEXXZ",
+            "offset": 0,
+            "section": 9,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 9,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 9,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 21,
+            "section": 9,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 11,
+        "name": ".text",
+        "size": 21,
+        "flags": 1615859744,
+        "source_sha256": "fd8b11ff8a02ad7b89e7692d7eeb4421f3d7b7db5f1c31105f0ca28c4825542e",
+        "fields": [
+          {
+            "offset": 13,
+            "type": "REL32",
+            "symbol": {
+              "symbol": "?SetBlendMode@TextureObservation@@QAEXH@Z",
+              "offset": 0,
+              "section": 0,
+              "type": 32,
+              "storage": 2
+            },
+            "addend": 0
+          }
+        ],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 11,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?ApplyOne@BackgroundBlendObservation@@QAEXXZ",
+            "offset": 0,
+            "section": 11,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 11,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 11,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 21,
+            "section": 11,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      },
+      {
+        "section": 13,
+        "name": ".text",
+        "size": 10,
+        "flags": 1615859744,
+        "source_sha256": "2246c2c753eab0352c11de33f3694e58f3791bda511313fe11bacdca6b59777d",
+        "fields": [],
+        "definitions": [
+          {
+            "symbol": ".text",
+            "offset": 0,
+            "section": 13,
+            "type": 0,
+            "storage": 3
+          },
+          {
+            "symbol": "?CopyBlendObservation@@YA?AUBlendCopyObservation@@ABU1@@Z",
+            "offset": 0,
+            "section": 13,
+            "type": 32,
+            "storage": 2
+          },
+          {
+            "symbol": ".bf",
+            "offset": 0,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".lf",
+            "offset": 1,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          },
+          {
+            "symbol": ".ef",
+            "offset": 10,
+            "section": 13,
+            "type": 0,
+            "storage": 101
+          }
+        ]
+      }
+    ],
+    "methods": [
+      {
+        "symbol": "?ConvertBackgroundX@@YAHXZ",
+        "role": "convert-x",
+        "size": 22,
+        "sha256": "671aaa53865028be361ef61f9ed62892364dcc05fe44576c7bd09f201907ebfa",
+        "source": {
+          "section": 4,
+          "flags": 1615859744,
+          "size": 22,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?ConvertBackgroundX@@YAHXZ",
+              "offset": 0,
+              "section": 4,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 22,
+              "section": 4,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 17,
+              "aux_count": 1,
+              "aux_hex": "16000000030001009a18397b000001000000"
+            },
+            {
+              "symbol": "?ConvertBackgroundX@@YAHXZ",
+              "index": 29,
+              "aux_count": 1,
+              "aux_hex": "250000001600000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 37,
+              "aux_count": 1,
+              "aux_hex": "000000000400000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 39,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 40,
+              "aux_count": 1,
+              "aux_hex": "000000000400000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              29,
+              0
+            ]
+          ]
+        },
+        "fields": [
+          {
+            "offset": 5,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "?ObservedBackgroundX@@3MA",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 34,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 0,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 11,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "__real@43200000",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 33,
+            "symbol_section": 6,
+            "symbol_offset": 0,
+            "symbol_type": 0,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 16,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__ftol2",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 36,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 6,
+            "mnemonic": "fld",
+            "operands": "dword ptr [0]"
+          },
+          {
+            "offset": 9,
+            "size": 6,
+            "mnemonic": "fadd",
+            "operands": "dword ptr [0]"
+          },
+          {
+            "offset": 15,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x14"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 21,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ],
+        "linked_instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 6,
+            "mnemonic": "fld",
+            "operands": "dword ptr [0x671404]"
+          },
+          {
+            "offset": 9,
+            "size": 6,
+            "mnemonic": "fadd",
+            "operands": "dword ptr [0x657834]"
+          },
+          {
+            "offset": 15,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x6406ac"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 21,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "linked_flow": {
+          "code_size": 22,
+          "whole_size": 22,
+          "roots": [
+            0
+          ],
+          "instruction_count": 7,
+          "reachable_instruction_count": 7,
+          "nonreturn_suffix": null,
+          "table_size": 0,
+          "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "returns": [
+            {
+              "offset": 21,
+              "cleanup": 0
+            }
+          ],
+          "tails": [],
+          "indirect_calls": []
+        }
+      },
+      {
+        "symbol": "?ConvertBackgroundY@@YAHXZ",
+        "role": "convert-y",
+        "size": 16,
+        "sha256": "f76ce57d3b66483ed80f342e043aea477f17dc26ffde6f5c36da1aaec005e015",
+        "source": {
+          "section": 7,
+          "flags": 1615859744,
+          "size": 16,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 7,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?ConvertBackgroundY@@YAHXZ",
+              "offset": 0,
+              "section": 7,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 16,
+              "section": 7,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 42,
+              "aux_count": 1,
+              "aux_hex": "10000000020001002c85c98c000001000000"
+            },
+            {
+              "symbol": "?ConvertBackgroundY@@YAHXZ",
+              "index": 46,
+              "aux_count": 1,
+              "aux_hex": "310000001000000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 49,
+              "aux_count": 1,
+              "aux_hex": "000000000500000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 51,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 52,
+              "aux_count": 1,
+              "aux_hex": "000000000500000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              46,
+              0
+            ]
+          ]
+        },
+        "fields": [
+          {
+            "offset": 5,
+            "type_id": 6,
+            "type": "DIR32",
+            "symbol": "?ObservedBackgroundY@@3MA",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 48,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 0,
+            "symbol_storage": 2
+          },
+          {
+            "offset": 10,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "__ftol2",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 36,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 6,
+            "mnemonic": "fld",
+            "operands": "dword ptr [0]"
+          },
+          {
+            "offset": 9,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0xe"
+          },
+          {
+            "offset": 14,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 15,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ],
+        "linked_instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 6,
+            "mnemonic": "fld",
+            "operands": "dword ptr [0x6713c4]"
+          },
+          {
+            "offset": 9,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x6406ac"
+          },
+          {
+            "offset": 14,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 15,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "linked_flow": {
+          "code_size": 16,
+          "whole_size": 16,
+          "roots": [
+            0
+          ],
+          "instruction_count": 6,
+          "reachable_instruction_count": 6,
+          "nonreturn_suffix": null,
+          "table_size": 0,
+          "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "returns": [
+            {
+              "offset": 15,
+              "cleanup": 0
+            }
+          ],
+          "tails": [],
+          "indirect_calls": []
+        }
+      },
+      {
+        "symbol": "?ApplyZero@BackgroundBlendObservation@@QAEXXZ",
+        "role": "zero-mode",
+        "size": 21,
+        "sha256": "69b1ff8c9b290ae1365f34650da35f7e37d22176805925efbcb09a80a26ccfdc",
+        "source": {
+          "section": 9,
+          "flags": 1615859744,
+          "size": 21,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 9,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?ApplyZero@BackgroundBlendObservation@@QAEXXZ",
+              "offset": 0,
+              "section": 9,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 9,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 9,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 21,
+              "section": 9,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 54,
+              "aux_count": 1,
+              "aux_hex": "1500000001000100a9a559b1000001000000"
+            },
+            {
+              "symbol": "?ApplyZero@BackgroundBlendObservation@@QAEXXZ",
+              "index": 58,
+              "aux_count": 1,
+              "aux_hex": "3d0000001500000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 61,
+              "aux_count": 1,
+              "aux_hex": "000000000c00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 63,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 64,
+              "aux_count": 1,
+              "aux_hex": "000000000c00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              58,
+              0
+            ]
+          ]
+        },
+        "fields": [
+          {
+            "offset": 13,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?SetBlendMode@TextureObservation@@QAEXH@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 60,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ecx"
+          },
+          {
+            "offset": 4,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ebp - 4], ecx"
+          },
+          {
+            "offset": 7,
+            "size": 2,
+            "mnemonic": "push",
+            "operands": "0"
+          },
+          {
+            "offset": 9,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 12,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x11"
+          },
+          {
+            "offset": 17,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "esp, ebp"
+          },
+          {
+            "offset": 19,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ],
+        "linked_instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ecx"
+          },
+          {
+            "offset": 4,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ebp - 4], ecx"
+          },
+          {
+            "offset": 7,
+            "size": 2,
+            "mnemonic": "push",
+            "operands": "0"
+          },
+          {
+            "offset": 9,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 12,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x40c7f0"
+          },
+          {
+            "offset": 17,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "esp, ebp"
+          },
+          {
+            "offset": 19,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "linked_flow": {
+          "code_size": 21,
+          "whole_size": 21,
+          "roots": [
+            0
+          ],
+          "instruction_count": 10,
+          "reachable_instruction_count": 10,
+          "nonreturn_suffix": null,
+          "table_size": 0,
+          "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "returns": [
+            {
+              "offset": 20,
+              "cleanup": 0
+            }
+          ],
+          "tails": [],
+          "indirect_calls": []
+        }
+      },
+      {
+        "symbol": "?ApplyOne@BackgroundBlendObservation@@QAEXXZ",
+        "role": "one-mode",
+        "size": 21,
+        "sha256": "fd8b11ff8a02ad7b89e7692d7eeb4421f3d7b7db5f1c31105f0ca28c4825542e",
+        "source": {
+          "section": 11,
+          "flags": 1615859744,
+          "size": 21,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 11,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?ApplyOne@BackgroundBlendObservation@@QAEXXZ",
+              "offset": 0,
+              "section": 11,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 11,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 11,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 21,
+              "section": 11,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 66,
+              "aux_count": 1,
+              "aux_hex": "15000000010001002c7ccf6c000001000000"
+            },
+            {
+              "symbol": "?ApplyOne@BackgroundBlendObservation@@QAEXXZ",
+              "index": 70,
+              "aux_count": 1,
+              "aux_hex": "480000001500000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 72,
+              "aux_count": 1,
+              "aux_hex": "000000000d00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 74,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 75,
+              "aux_count": 1,
+              "aux_hex": "000000000d00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              70,
+              0
+            ]
+          ]
+        },
+        "fields": [
+          {
+            "offset": 13,
+            "type_id": 20,
+            "type": "REL32",
+            "symbol": "?SetBlendMode@TextureObservation@@QAEXH@Z",
+            "addend": 0,
+            "local_symbol_offset": null,
+            "symbol_index": 60,
+            "symbol_section": 0,
+            "symbol_offset": 0,
+            "symbol_type": 32,
+            "symbol_storage": 2
+          }
+        ],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ecx"
+          },
+          {
+            "offset": 4,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ebp - 4], ecx"
+          },
+          {
+            "offset": 7,
+            "size": 2,
+            "mnemonic": "push",
+            "operands": "1"
+          },
+          {
+            "offset": 9,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 12,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x11"
+          },
+          {
+            "offset": 17,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "esp, ebp"
+          },
+          {
+            "offset": 19,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ],
+        "linked_instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ecx"
+          },
+          {
+            "offset": 4,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "dword ptr [ebp - 4], ecx"
+          },
+          {
+            "offset": 7,
+            "size": 2,
+            "mnemonic": "push",
+            "operands": "1"
+          },
+          {
+            "offset": 9,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "ecx, dword ptr [ebp - 4]"
+          },
+          {
+            "offset": 12,
+            "size": 5,
+            "mnemonic": "call",
+            "operands": "0x40c7f0"
+          },
+          {
+            "offset": 17,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "esp, ebp"
+          },
+          {
+            "offset": 19,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 20,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "linked_flow": {
+          "code_size": 21,
+          "whole_size": 21,
+          "roots": [
+            0
+          ],
+          "instruction_count": 10,
+          "reachable_instruction_count": 10,
+          "nonreturn_suffix": null,
+          "table_size": 0,
+          "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "returns": [
+            {
+              "offset": 20,
+              "cleanup": 0
+            }
+          ],
+          "tails": [],
+          "indirect_calls": []
+        }
+      },
+      {
+        "symbol": "?CopyBlendObservation@@YA?AUBlendCopyObservation@@ABU1@@Z",
+        "role": "implicit-copy",
+        "size": 10,
+        "sha256": "2246c2c753eab0352c11de33f3694e58f3791bda511313fe11bacdca6b59777d",
+        "source": {
+          "section": 13,
+          "flags": 1615859744,
+          "size": 10,
+          "definitions": [
+            {
+              "symbol": ".text",
+              "offset": 0,
+              "section": 13,
+              "type": 0,
+              "storage": 3
+            },
+            {
+              "symbol": "?CopyBlendObservation@@YA?AUBlendCopyObservation@@ABU1@@Z",
+              "offset": 0,
+              "section": 13,
+              "type": 32,
+              "storage": 2
+            },
+            {
+              "symbol": ".bf",
+              "offset": 0,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".lf",
+              "offset": 1,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            },
+            {
+              "symbol": ".ef",
+              "offset": 10,
+              "section": 13,
+              "type": 0,
+              "storage": 101
+            }
+          ],
+          "aux_records": [
+            {
+              "symbol": ".text",
+              "index": 77,
+              "aux_count": 1,
+              "aux_hex": "0a000000000001008f0c96bd000001000000"
+            },
+            {
+              "symbol": "?CopyBlendObservation@@YA?AUBlendCopyObservation@@ABU1@@Z",
+              "index": 81,
+              "aux_count": 1,
+              "aux_hex": "530000000a00000000000000000000000000",
+              "line_pointer_basis": "own-section-coff-line-table-offset"
+            },
+            {
+              "symbol": ".bf",
+              "index": 83,
+              "aux_count": 1,
+              "aux_hex": "000000000f00000000000000000000000000"
+            },
+            {
+              "symbol": ".lf",
+              "index": 85,
+              "aux_count": 0,
+              "aux_hex": ""
+            },
+            {
+              "symbol": ".ef",
+              "index": 86,
+              "aux_count": 1,
+              "aux_hex": "000000000f00000000000000000000000000"
+            }
+          ],
+          "coff_line_table": [
+            [
+              81,
+              0
+            ]
+          ]
+        },
+        "fields": [],
+        "instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ebp + 8]"
+          },
+          {
+            "offset": 6,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax]"
+          },
+          {
+            "offset": 8,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 9,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "cfg": [
+          1,
+          0
+        ],
+        "linked_instructions": [
+          {
+            "offset": 0,
+            "size": 1,
+            "mnemonic": "push",
+            "operands": "ebp"
+          },
+          {
+            "offset": 1,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "ebp, esp"
+          },
+          {
+            "offset": 3,
+            "size": 3,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [ebp + 8]"
+          },
+          {
+            "offset": 6,
+            "size": 2,
+            "mnemonic": "mov",
+            "operands": "eax, dword ptr [eax]"
+          },
+          {
+            "offset": 8,
+            "size": 1,
+            "mnemonic": "pop",
+            "operands": "ebp"
+          },
+          {
+            "offset": 9,
+            "size": 1,
+            "mnemonic": "ret",
+            "operands": ""
+          }
+        ],
+        "linked_flow": {
+          "code_size": 10,
+          "whole_size": 10,
+          "roots": [
+            0
+          ],
+          "instruction_count": 6,
+          "reachable_instruction_count": 6,
+          "nonreturn_suffix": null,
+          "table_size": 0,
+          "table_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "returns": [
+            {
+              "offset": 9,
+              "cleanup": 0
+            }
+          ],
+          "tails": [],
+          "indirect_calls": []
+        }
+      }
+    ],
+    "independent_routes": {
+      "?ObservedBackgroundX@@3MA": "0x00671404",
+      "?ObservedBackgroundY@@3MA": "0x006713C4",
+      "__real@43200000": "0x00657834",
+      "__ftol2": "0x006406AC",
+      "?SetBlendMode@TextureObservation@@QAEXH@Z": "0x0040C7F0"
+    },
+    "layout_section": 3,
+    "layout_values": [
+      1,
+      1,
+      4,
+      4
+    ],
+    "comparison": "Full ordinary code/data/COFF/AUX/fields/CFG controls, not target source matches. Returned coordinate conversions have meaningful results and emit actual __ftol2 fields. Generic zero/one blend wrappers differ in byte8, and the implicit copy lacks the game policy. No inert locals mimic the selected original unused result stores; no owner is padded to observed receiver+0x18. Generic declarations are compatible alternatives, not recovered original private prototypes."
+  },
+  "retained_sha256": {
+    "config/acos-math-origin-evidence.json": "ad061084cbe53bcd792ae770d0b0910441a45cd8b752aaf7442e297fcb97b870",
+    "config/allocation-api-origin-evidence.json": "88471391a30ca23574ab4409b5504df592fee47d2e23c368bbc71b204eb6531c",
+    "config/allocator-destroy-origin-evidence.json": "e4128317328d7680988551c6fbe71e3779cd82a0d8366ff35df4d562900ca78b",
+    "config/allocator-thread-origin-evidence.json": "20184f6003b356c5ea9491904215aa87d94958a08666cb660180f6a250bba78e",
+    "config/archive-list-policy-origin-evidence.json": "0bc13da2b999040d7ce8e9c895f2cbb0db0c5e76a046ffb353bd7976e00ecfc8",
+    "config/authored-origin-direct-switches.csv": "61cb54b096a988dfe3d602b8a687a41ded6afdd944b838fcf20e92a6019f4011",
+    "config/authored-origin-evidence.csv": "065ee3aff636c398831104cfd9031cfaeaab764ac6ff1970c6ab7a0120007790",
+    "config/authored-origin-name-aliases.csv": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
+    "config/authored-origin-switches.csv": "d94ab9c7faf89b03d92375dd6e83a089f407b332c79c1b2cd018853403ed0d3c",
+    "config/background-counter-origin-evidence.json": "494fbb61c77d06cdb21f97916909aa023e6bdb05703688feb13f491dc9512e37",
+    "config/background-cycle-origin-evidence.json": "bc73e46ff1a7ebcb839b61caf3f51917d41b11d9a6d066285222ad06c885033a",
+    "config/background-destructor-origin-evidence.csv": "0bc463e14e3073d2059683b210b81f552f1de171842216aaf09454b5950f6e23",
+    "config/background-noop-origin-evidence.csv": "fe730458d37a01ce87ce9b2441704c81ad81fac2df51b5bf7d0d069604440d61",
+    "config/background-origin-evidence.csv": "7e16870df63d00d3b7d5e6016651daba9208acbcc537d66543777f782a69e89d",
+    "config/background-transform-origin-evidence.csv": "0968dfa83ab4856f812e7de913e402f0bd56dafd2da389283cefd5c82e3c7560",
+    "config/batch-closure-origin-evidence.json": "810abdfc033d3d98a2f83c9b517445c7fcd850682fb86604e3480424a8557a5f",
+    "config/batch-game-origin-evidence.json": "20ae3c5a6dc769a8b8fa2a9a7fd3fbe38d451c640d9340e0a521fd2bccad4f38",
+    "config/batch-helper-origin-evidence.json": "6dfe261432e5009c238a62bd48b5c800bcb7747e6571488ec85b266416393374",
+    "config/batch-state-origin-evidence.json": "f0f4622bcbbf1c48fc4bd6ba9960a0b0053ee2f4e18e3200fdcaf61058912d7d",
+    "config/byte-deque-count-origin-evidence.json": "13c86296cc9f4b42fd09474f9dabcef5c9fba40b855a1150eb73f24c5d8b20f3",
+    "config/character-implicit-destructor-origins.csv": "d855d86420964ca32298f61446876452baf5095ddc203211090093ccdf15eb57",
+    "config/character-list-policy-origin-evidence.json": "f9d78ebb35c4e1ff3e04da7a05e38928a2918fed3d8a1047f2f6c5579be95466",
+    "config/claims.csv": "0502dfefc2a6c76ff97d47cda7369c686eb84023018b77cce84747b07eebd26c",
+    "config/codepage-nls-origin-evidence.json": "2738f392791748fa9e7435ace12fb3d4f4ef4b91e9a0e23887aaca33426b63b6",
+    "config/compiler-eh-frames.csv": "51c503bf7b7c072cfd9de80099cf9840c1b8091443ad808178bc392caad98dce",
+    "config/compiler-origin-evidence.csv": "f0b9ed2045f380a20204986c8373d1b309e52c74e56b28bfd22c47eb2a7b7cb7",
+    "config/compiler-static-evidence.csv": "1aa8ebe9006d0ce9a517137d6ad4b91ab0cfce16323a4647f76883f3103b3e80",
+    "config/deque-copy-insert-origin-evidence.json": "52f3cdecfb551119616e920bbce11dd7bf795724b4bd0862046dbb5ebf8e5d81",
+    "config/deque-element-origin-evidence.json": "889339904d8c194624a5b2ad59335cbefd96eb2f6ad6ae5545bdd91bcbee89ab",
+    "config/deque-endpoint-dispatch-origin-evidence.json": "9dc0301feef6a7847244ef93221fb171ae4e488b91cc77d794b69c921dd3a6d4",
+    "config/deque-front-back-origin-evidence.json": "1ac140821d2f2aec5d30ceab655de636f28eff6aa6215d1b8d49b6ffa0764e10",
+    "config/deque-game-dependency-origin-evidence.json": "2872c4c93e0aa8da01b708e8a989383637ab74346eaa45c38406d97e4fb8e585",
+    "config/deque-leaf-origin-evidence.json": "6360156350feac7c88f7756e073b43dd1d5ab84abf6a3ac5f2bf2548119cb2b6",
+    "config/deque-postfix-context-origins.json": "28a6f01d385704ea2cb92364c319cf3b47df30285e8da1bf15ca8f90026bdb93",
+    "config/deque-retreat-origin-evidence.json": "52df1cfdeb68bb07a9b2e8b01503cff48522a028319c7eaa19f1f59713a17a30",
+    "config/deque-size-context-origin-evidence.json": "a65f343268cfc960130c420b2b9cc3061986f4ad2db1ecd23a23285a47a24c3b",
+    "config/derived-exception-origin-evidence.json": "07ec63f61cd12eb8a14c0d950e9e282f7104264d3febb4d794f02b6a0ae2c905",
+    "config/effect-forwarder-origin-context.json": "e77d99ebc6df6eedccfd6ee7bb0b523c98c13ac081a5e13ddca4a515c62e5b05",
+    "config/effect-forwarder-origin-evidence.csv": "8a48fac45cb943deeffbce1a1af14541408f071488c5a253bd44e16ecdf44658",
+    "config/elementary-math-origin-evidence.json": "9e1e85cb0bf0b34db1f5b5a3e4fca1b9a606abfa5ed22d2509e55200d470ca5a",
+    "config/environment-startup-origin-evidence.json": "b9664975277952430f63f6c236998dd1855ffad39e5ecec3469dc3bf7bfa2634",
+    "config/event-queue-origin-evidence.json": "8257658debc89fc667741c98c64235ab2d669b4f8464b84b2acc1c0690837233",
+    "config/exception-frame-origin-evidence.json": "874d46e24df59af2d2a34b5f37fe0e6aa92a53782cd7bfbd010dcd852377cb3e",
+    "config/fighter-virtual-origin-evidence.csv": "0f6d52798d517e79120c354e2b3fab584b5f85d8695547621f1f759ceeb86c69",
+    "config/file-resource-policy-origin-evidence.json": "35ad6c3a092b0e7ced612e6629fddd935b47fcd13c04d9bce40e604057f117f6",
+    "config/floating-operation-origin-evidence.json": "6fd50e93e1237aa029c0d57d3337319e7319da413c3cf192cbcab12493213d16",
+    "config/floating-point-origin-evidence.json": "46f8cd47de1c6e1b5ab0e4bcf4a37661923d9fca94c7818902603ec00ace7102",
+    "config/floor-math-origin-evidence.json": "6280edfc7cc5e18c5ee48cdecdb0ae9a985ff3cc51462a549494aea20c30553a",
+    "config/font-byte-policy-origin-evidence.json": "c426f7d1024c3bd35a6b26d6f497062fa21a2aded92479ca28acacb64bbd3cc2",
+    "config/fp-dispatch-origin-evidence.json": "8b3aa0cd44cbf68d28c41016eef12c2db655e03467b3e9473d9afbc9b7234aef",
+    "config/frame-index-policy-authored-origins.csv": "b2f6e2cbd1a1d5a4ff73e272111cc4ff8ed2dce5934834d71def2898ceadf91b",
+    "config/frame-index-policy-origin-evidence.json": "bb5d5d550cf326252c7bf9a83961a4a90334bc75196f2c460ef2cc7a29236a22",
+    "config/game-context-origin-evidence.json": "ec549c656703ea3ccb6e164a66838bc3fb7e1acf6a28a566dcff16a3e080b548",
+    "config/game-lifetime-origin-evidence.json": "b5b1a1626e19bb6aff846105b38e674c62015d7d04b4d5298e010a53a3109b71",
+    "config/game-parent-policy-origin-evidence.json": "9d81bb9ab16f401bfcc986f59b091479813279e9f7f130dd42f31715a74c5900",
+    "config/game-switch-policy-authored-origins.csv": "0451150849fb2f607863fda17680c2eb1b39f4c27694f67286db95f4f4c9ae0d",
+    "config/game-switch-policy-direct-switches.csv": "102fd38b3049ddcd4683f89dc73b4994efd416295a01429f911e8d600ea12c94",
+    "config/game-switch-policy-origin-evidence.json": "f72ea7b37b4de087dc4f69dfb6adf3585a86ea66d0f97143b46dd9a1efea5a05",
+    "config/game-switch-policy-switches.csv": "aa9f5fd45812bb7f679355203dd152c9650187644487b28b62c24c34a3ddba0c",
+    "config/implemented.csv": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
+    "config/import-origin-evidence.csv": "1e4ac0e067b0782503d2803babb90309e7c8a55b6b29adde3f3acd9c8bb2cfc1",
+    "config/indexed-owner-policy-origin-evidence.json": "d425763795da7d53ca1d403d8576471bd85501b6fc76f0c3355e002b546b59dc",
+    "config/initializer-startup-origin-evidence.json": "a00f9418c96bd1ed537862700351de01920d9dd318440ce794a3bca7c1fb03c1",
+    "config/input-format-origin-evidence.json": "903840c1618688e6d49e87aaada539815308f43fafb472a5ad30d560756bf4dc",
+    "config/integer-range-origin-evidence.json": "8a70ff4514cff6d1d5a686d4ddb7e5ef50f1b3905267e3ba367a1a848c6ab7d2",
+    "config/integral-assignment-dispatch-origin-evidence.json": "f95e13955f5707d534f1125fc44d7c4217a1a08744a2a41274ac270b601c2cf7",
+    "config/jump-unwind-origin-evidence.json": "c41e153d14fabc7af6ff9860dd615f26f626a3fe452dd55ee5d1721d1d59290b",
+    "config/known-globals.csv": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
+    "config/known-symbols.csv": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
+    "config/list-construction-origin-evidence.json": "5aef9d6a4703aca9bc9a5bcd8df95e874258917fd409f21588f434f3d0630d66",
+    "config/list-head-erase-origin-evidence.json": "d60078dcb47d90103d3ae25fe1e8645cde568c35f1947567a0fffaf83de74274",
+    "config/list-iterator-policy-origin-evidence.json": "55c6b19bff1713585d9617cf418deeee7d2f0bddfce7d42d27f3f15cccb3f394",
+    "config/list-node-link-alternatives-origin-evidence.json": "19c05f902093e46d3d85daf6c95ea5d2a477ea66049d9a8398b4e5fe6c4b85db",
+    "config/list-policy-dependency-origin-evidence.json": "86ca07a2553872893e906a10b1f93da6fbd45da103d94a191aee610c1b32b9f0",
+    "config/list-recovery-origin-evidence.json": "51cf1923801853c8952f25135a57d198b65e49c896a3e90da892c40f077988bf",
+    "config/locale-construction-origin-evidence.json": "4a33cce1f96577b7a467278eb2b8c7550aa689efe6c46a9b757d0e9fe13a8c7d",
+    "config/locale-snapshot-origin-evidence.json": "7b9d8932d2be72e6cc3e3269eec592cbce9bb4cc8642a559c52bb63871a2ebdd",
+    "config/locale-thread-origin-evidence.json": "ef32b373f98c2cdf076261413d479b459424983ea0ae2bbcded7bb3c58a9b0e9",
+    "config/locale-time-parent-origin-evidence.json": "7fb061d7da43ac4d833d67dd5696e37426b688d14f9df64112c4160ff2e0d533",
+    "config/low-io-origin-evidence.json": "2ea7a0cf7df33c9baabb2ab720c652e7f7f7b785b9a7e10c19eee05eb63a1c0c",
+    "config/match-units.toml": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
+    "config/matches.csv": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
+    "config/math-overload-origin-evidence.json": "370786e3232ada4f77a32f1840086273c09d9d2deef44302d0c3b8960c4b1fa9",
+    "config/math-table-policy-origin-evidence.json": "98325bcd58a9dbb8c9ede7bde4820abfd95a1ecd37b22baa6936b76a9f80b2ef",
+    "config/mcp.env.example": "5f76521b77adb922532475bb44718ffbe6a0d332620596600fc2c83c8dc5cd76",
+    "config/neighbor-policy-authored-origins.csv": "8762a5825a78da522f2b4738a51d38f73a9645c12be8525afaaa5c4312c2f44c",
+    "config/neighbor-policy-origin-evidence.json": "fc61cbd578dd4a0a44dd6a724d34502520888a19e3064ec212a05e656781decf",
+    "config/nested-deque-helper-origin-evidence.json": "26621b960371d69a3cc15d07a070cf0d65cc19cc1f96eba54fc5c95ed05cf7b3",
+    "config/nested-deque-size-origin-evidence.json": "5e6ccb4a95135d5cdb202e2511dc4594cac09b672d545ae258d26ffa5729ed42",
+    "config/nested-initialization-authored-origins.csv": "1cc6d1b6a4253d9967427650d24f2f36e98391115dbe30d860439dcb43d0cee1",
+    "config/nested-initialization-origin-evidence.json": "0b693e67bc49d4618028f5b9d4a1d61142abfa0911167207bfa0a77bc9403c47",
+    "config/nested-vector-insertion-authored-origins.csv": "e79cf07c183afbf0abda958293bb5374e7573f67ce7c07391e64b62bc216fa01",
+    "config/nested-vector-insertion-origin-evidence.json": "8ad6c5215a55ea15f175f800f8f7045bc1bdf8fcedace6aa392f4234438ce97c",
+    "config/optimized-deleting-origin-evidence.csv": "545331d585fc73f5ddc94da637a5fce1c370d19cc939bd402cf781f504f02c0b",
+    "config/output-format-origin-evidence.json": "01936f0c369bf0949ae8bd8c61253ab83f1b2240f93fa0eabd98704399a74119",
+    "config/paired-clear-policy-authored-origins.csv": "d491dcbbd4837fbb3c430c495adcd34f6d6ac960b3d930d999059751e7a34644",
+    "config/paired-clear-policy-origin-evidence.json": "13478d1b711301bca5523c3a2bb2be0728caf55d077581ab01f2b1479b4bc3d7",
+    "config/paired-deque-producer-origin-evidence.json": "3657c5e0c147c4db60c81463bb648f29bf8c79d522d5be15b83563d495892017",
+    "config/polar-velocity-authored-origin-evidence.csv": "c406bad0d0f8d3c859e9cc9b074745308724d73c07d981058e18e70db885613e",
+    "config/polar-velocity-origin-evidence.json": "2ff12ea5f76cf08ee66b4b5a19a4f8ddf286577c0d85e647b05236728b922310",
+    "config/power-math-origin-evidence.json": "68380e32007ff9a7122e04ce2fc27e4e58b1fbb7f4362058ded2d6444d58eb71",
+    "config/python-requirements.txt": "5abdb3020b644c221592135452cc8f5e3e20998cee0ae3c6d4dfa2b40ebabd8d",
+    "config/queue-lifetime-origin-evidence.json": "99258a0c2b32a64c462376c9f50ad91f5f7508665776bb63b1d41badd5d4cc4d",
+    "config/reccmp-floats.csv": "ec6aa0752874d1221f7e09d38647293682df2ad7b37bcd22cfedba4448439982",
+    "config/reccmp-functions.csv": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
+    "config/reccmp-globals.csv": "0612332a68e9511f74e4b990ce2b595ba93e60d061d368e90bbf2e5e1006b492",
+    "config/reccmp-relocations.csv": "4ceb0a2ee0431b3ad0994a2ad3f61ef709276b043187e85e8f0348e029cfeaf5",
+    "config/reccmp-strings.csv": "ec6aa0752874d1221f7e09d38647293682df2ad7b37bcd22cfedba4448439982",
+    "config/remaining-lifetime-policy-origin-evidence.json": "05d51c763ba642659a651a3c3a8dfbaba3cb9a87d15b682265d12df0d225a1f9",
+    "config/replay-deque-front-origin-evidence.json": "b96e349e1284ca20adde1a3fa512593ebc6aab968a9051b1c6f2add9f2252354",
+    "config/replay-deque-iterator-origin-evidence.json": "16750d50025a197b097c494ff49f6778fa490f4303669871f45ad3e8aa18d83e",
+    "config/resource-release-policy-origin-evidence.json": "294b8efee42b9276eb0135e3b3006591d0d2096d02c9698cf64d48e1aec0fc23",
+    "config/runtime-cycle-origin-evidence.json": "221d67912ecbc23e87a25b09a0073f867a2bde1ceec995ad57a15342dc7d9420",
+    "config/runtime-error-origin-evidence.json": "5d99a48f40cbdbeca1713507b5a735262a803f4ec561ae5627f71c5018d2d42a",
+    "config/runtime-external-origin-evidence.json": "21b1342df9de87bb5a285ea9ef550c520ed1db73032d4c1134e9c799c02b78a9",
+    "config/runtime-leaf-origin-evidence.json": "30aa2df61561787fc739034fc1dba83f8010891f1de594fde11404bfa0fd6c23",
+    "config/runtime-local-evidence.csv": "47e6c8637a2016ce08d5aae708a85dd90d379d7bef8dbc07f54e62adc2209663",
+    "config/runtime-origin-evidence.csv": "06e7b4d9ab9985ebecc0947b8df990af029145cdd1ce2e26ca3d2910ae67ed3b",
+    "config/runtime-origin-relocations.csv": "307759c83c4b2a16c3130aac87e65ba31b0df2701f62bf1f32d9cf6aa2edb49e",
+    "config/scalar-deleting-origin-evidence.csv": "04fa98c3776a943c421846ee0311cfe5f3eeae7d22f7a72475575f8284fc64aa",
+    "config/script-buffer-origin-evidence.json": "5cd6870dd2339ac7bd536914492765f22d5c3208789866d63113196bc6280329",
+    "config/script-count-origin-evidence.json": "e2c2c76072de2d0190849ce4604b50c73402a899aa4228458a64510c9bb2c789",
+    "config/sdk-aligned-buffer-origin-evidence.json": "fba0048154169ef4e4eefa7cd13a321635bf6a6cf450a0df0ff39e016bb53297",
+    "config/sdk-blit-origin-evidence.json": "6d537daa5c3605c37ac3e72ba1d09eba6702689f040f6b34f20ae3ba2a3d3b10",
+    "config/sdk-companion-origin-evidence.json": "979517c54be5b7787e8558af22c4d067207619388fe9d20be6ed5d9c3e5d0180",
+    "config/sdk-cpu-eh-origin-evidence.json": "9eaa1c1ae5d532e9982f9b582cb77b4f2a98839f5bd88eae078674576e54433c",
+    "config/sdk-cube-volume-origin-evidence.json": "1f6e40980b678af117d09e65999e3506b437e7dec4f81c47630a2eefe3d39ad1",
+    "config/sdk-debug-parent-origin-evidence.json": "aa0b86119baf570d7308dfe0cca2123e2ef646a20ad108c862adea7b062d4a1c",
+    "config/sdk-dependency-origin-evidence.json": "5d824965f665db683f064d0ea5d2e90d7acb3bcbabc347af8c34dbe33d26ba77",
+    "config/sdk-destructor-origin-evidence.json": "506e7fac5ff1cc392d381c1e16373fc15f9d0285158793ddfff0d5658262ccd1",
+    "config/sdk-dispatch-origin-evidence.json": "41530c573f88cd39b09d53051ed9c5268f4efbafd53ec92cfeb16c2364416b51",
+    "config/sdk-file-image-origin-evidence.json": "7765c1d0980044422c8f3e287707930e3327d089e61e7211f257c6732a3c78b6",
+    "config/sdk-graphics-origin-evidence.json": "922cd31ed6c986c5719c42d8a342b38b4ce0e0a722f11e3b6e42ed48e92a5998",
+    "config/sdk-image-chain-origin-evidence.json": "77ea2fe0c65ac983a29b752f1724a6648a2472021fa474074c80c55fceb5504a",
+    "config/sdk-image-entry-origin-evidence.json": "8a89de63380fd8916fcede566c1fbf241f775c45db4f5873f7921b623ca2d8a7",
+    "config/sdk-interface-origin-evidence.json": "4fb78070d97506d8a9604dd860090cce66bf4e6a67946cfc24e241954df886f4",
+    "config/sdk-jump-groups.json": "45a488e597b7f70036d5ebb34aa37040e5ad4521c76b8a7c77ebf7cbb1be3ae4",
+    "config/sdk-jump-origin-evidence.csv": "14cc72fa12a9a5f86415c33e08a741e8b1dfaf0f00d73e56718674448b8faab3",
+    "config/sdk-lifetime-alternatives-origin-evidence.json": "551ee19c54232b82c06f5c261470dd1b0dc22069a895026c2e108aa2b68b0162",
+    "config/sdk-mmx-origin-evidence.json": "1c7a8cae02c86607aa0ce6013e4dad6ad74a8c1e4507069f348c6c4337b79820",
+    "config/sdk-origin-data.csv": "f17930a2f64106bfff6e8501b3996c68bbbab554dd61521510afc90366ef7c78",
+    "config/sdk-origin-evidence.csv": "44922f08d7cfe338c74d202a462dd990b49c6792d24070aa4299f8fd1365a1ef",
+    "config/sdk-origin-relocations.csv": "ca358d1b40336465dce2ebaa897b7f6f5ec0cc25ba3003d06b5c964625dca669",
+    "config/sdk-png-packed-origin-evidence.json": "c3112e66bfce14d918e18c666ba26220ee70bae92b79875fa02f8ffbbb13d532",
+    "config/sdk-presentation-origin-evidence.json": "771ae0e2e563cdb35dfbaf46ed752a59f29f15ba6274badb88c621a28a1a4eb1",
+    "config/sdk-public-wrapper-origin-evidence.json": "7995f491ec17ac705a543d8cc32d3ede2e72bf429d47e103d3c4138d2553195c",
+    "config/sdk-resource-lock-origin-evidence.json": "18b992174e5b4d8c86ef8e3a37a85c3041dadaf363e8e476fa15e09f1d594751",
+    "config/sdk-shader-font-origin-evidence.json": "ac84edce06f5a9b4381dfe01d3f8f74db3ff087301b77edf7f6a2e484ffed584",
+    "config/sdk-short-origin-witnesses.csv": "027f4dd323f52805be93c1db0a6240722a90fe0474bd0a5844366a474e961943",
+    "config/sdk-simd-carrier-origin-evidence.json": "6edf1ccbd7727169fe70054fb036f5bb3d36cc3b44cc77ce036e417425fd7ec1",
+    "config/sdk-x3d-origin-evidence.json": "d2a7ef2eeb860ae2e392456a64a59df935f108b95b894a171f8a37a8fa0ca22d",
+    "config/sdk-x86-policy-origin-evidence.json": "dfba474686f4032271ad6ba4f2f9fde62ed221590e40c13f354bf7086e2872f1",
+    "config/secondary-texture-access-origin-evidence.json": "4727bd2e3809b9c7c4de52e24044d35167402bc11eb660ea87a538a31d65b2c0",
+    "config/security-eh-origin-evidence.json": "4761b1d4dd3bea4508dc4b0beb3715f40f8d5fa56e51b059bf4a4184d0e2d79a",
+    "config/short-crt-origin-evidence.json": "f46b071ab92cb29e63c03d9f18af025ddfc5100b07fd2e3079b76376edd11c1d",
+    "config/short-game-origin-evidence.json": "bb1b01f1ce66bd5586e0ce4cc76718e84584abe17b6e1d7ac84381fbc7be446d",
+    "config/short-runtime-origin-evidence.json": "d861fd27d8f069e1dd23ce07f57bc2d28189e5ee773e89a5a4ad758c5a7b41fc",
+    "config/small-heap-integrity-origin-evidence.json": "eddfa717569f53247d73c76ae3f66966f611ea8b66e435127223addf138cdc7a",
+    "config/standard-exception-origin-evidence.json": "13e2334a626c64d5cd3c32a08b5de968e88a0bc99c2761c86828573998514aa6",
+    "config/startup-dependency-origin-evidence.json": "e7af85c75596e44dab5409ded406ecc36352d1273bf9d9ab1cee1077ea7e8e13",
+    "config/startup-registration-origin-evidence.json": "345bd5bac872c1823bfea9875d565c523ec223927e73803f0453c1ed55b5e324",
+    "config/static-resource-policy-origin-evidence.json": "8c0beafe33c5b79a6b0d6cb8f135427cf225fe7890de98cfc37f3e81da69fb41",
+    "config/stream-buffer-origin-evidence.json": "c7cb9f4e8626ff1b7046a065aba12787c0ace19b024af757f83a70286b346a71",
+    "config/stream-finalization-origin-evidence.json": "1ca7d6ed0da4f672b0a1db1ab9e96ea11cf262cadf23c5a8feb196278985da01",
+    "config/string-exception-origin-evidence.json": "3ca89a95bdb3fff016ed80a9c7f4d0caea42023d8fcabb1766192af56c1318ff",
+    "config/target.toml": "6680082450dbead6fdbcefa37af35c52169d4e4186c830a34f6e12b86320cb1f",
+    "config/termination-lock-origin-evidence.json": "044e1ee241a47c0e64f7ed8d007449a4f84a4fcb46e1c33e84f6b2f2b351d535",
+    "config/texture-vector-access-origin-evidence.json": "69e2d6a01358b088121cef02d4153cf307429921dc0b1ac8d2891ccb732297a3",
+    "config/time-zone-origin-evidence.json": "233fc1e9d8989809c1df82588f4a655a485433e62d895c45008a7429270a1226",
+    "config/tools.lock.toml": "feb61ea689c7824b10fd58547ff2b88bc16ac807ec019eb724f0c12b6a31b312",
+    "config/unchecked-indexing-origin-evidence.json": "9ff22d92b72073bc8ab0d1a62b127ebc6ba1adc6507e2b14f11cadbd2d544113",
+    "config/vector-at-policy-origin-evidence.json": "50d18e8f574de56e427454e9eaaabfd257d0567a4fa9d5c68a463150a4bf635c",
+    "config/vector-count-assignment-origin-evidence.json": "f410ceed8099574af4d9fe71546474c3aecfc5a2d3fbf76ac942f817046419c5",
+    "config/vector-endpoint-origin-evidence.json": "afe1d3136b9d1ce15d370b11234b8bfa4b6be877032c76ba4623df3ecb8a11fe",
+    "config/vector-endpoint-route-origin-evidence.json": "f60a3fdfad9c7cf1ffddfe902114059102b9c26d06e4f5c63709a8346af313ec",
+    "config/vector-insertion-carrier-origin-evidence.json": "fe3ac742c24edcbdd5d3f5d5f938071edf8eac728c1ef8f3016bf45b0a5468cd",
+    "config/vector-list-leaf-alternatives-origin-evidence.json": "42c0eee2fd8764c7871e8a251c0e0dba789b1c850849a1182493f294cbbe7209",
+    "config/vector-math-parent-origin-evidence.json": "a95a6015229b0673965a192a4dececf37c329ee7eda01b9f28092adfbfad4956",
+    "config/vector-producer-origin-evidence.json": "60d5970525df0c05cb0a5ae603daac196e565668fa96a3f88612ed8ffe2dbdd3",
+    "config/vendor-additional-record-origins.csv": "7921fac417c536e6de0208d6f7e4805ad35af1da29f2ee211b17521f2d432e90",
+    "config/vendor-deque-access-origins.csv": "1c8896140997d89e466a6a33fef6bda592da2c93e6d4b941df63aab081191a7c",
+    "config/vendor-deque-algorithm-origins.csv": "f816f2024f46c325ee63c911c2e4647f67d689139ccbc7f04b406e1b94f8d9eb",
+    "config/vendor-deque-allocation-origins.csv": "38a92126833fcac2aa3ef0e0c4082d32ee8584e17017de86416b9a211138a645",
+    "config/vendor-deque-begin-origins.csv": "10e3d5b77452b8a7862f5531cc440e5c6f2b19244ea59efde9501ecfcdeb72a0",
+    "config/vendor-deque-callee-origins.csv": "50293ede1964ee534ce3fe22b14b2110bdffff637954389c716f75e0e59fe9fb",
+    "config/vendor-deque-cleanup-origins.csv": "82429466bb5a5690f260dea1d01dc6c4a97fedfe84aaf1854df411b96c8578dd",
+    "config/vendor-deque-comparison-origins.csv": "2b0e586d116190954102c202e17876e93cb42b11ef7cfcd120857003e4c9ea26",
+    "config/vendor-deque-const-iterator-origins.csv": "dab73cb6c443f9f1dea84b1c0c10ea73a5335d959e9a6f623c243e8c83166d7e",
+    "config/vendor-deque-dereference-origins.csv": "7d69b86c17ceeff8bcb4647eacfe0c6405539bb3cc0146ff5b49f4df725a2685",
+    "config/vendor-deque-destructor-origins.csv": "ae56503af666738813c5ae2b9f19cc48022e221e35fc4240b20aaa3661019e1f",
+    "config/vendor-deque-empty-origins.csv": "94ccdfb8bc3baa7c3104d18919162a0e1bfb141fb6d4b06b06f6e8129cdb0211",
+    "config/vendor-deque-erase-origins.json": "646ecbd53ee0dd418440b1dd3f224299f6bd99d8159cc05d98ebcabe4d800721",
+    "config/vendor-deque-growmap-origins.csv": "002be70bc59eb59073848f0959364551846e92ffe19891c937abb996f9346797",
+    "config/vendor-deque-helper-origins.csv": "2afda08568e16742b636bd9064b3816afcd0a30e6214917f5e4f2eb98f546958",
+    "config/vendor-deque-iterator-advance-origins.csv": "c48b2cb00afee9cd5f99446d64cacb8b46a6d57692687e200c9408d66707d339",
+    "config/vendor-deque-iterator-origins.csv": "3577aaf8063db81206daea51f45b530295101b2de86ae033c0b3f16478cbe5fa",
+    "config/vendor-deque-leaf-origins.csv": "62616fceef43ea83fcd96339d9c662c9b0bcbf9a9fda278724cb8b26108b0eee",
+    "config/vendor-deque-operation-origins.csv": "a9a824683d6ab07ff88a36a2b806655da82c89eb327dc46dc288ded7e0bc69d3",
+    "config/vendor-exception-groups.json": "0bb622c82d48cf78907c0168fe473bd6c99dfac89a723dd303007b9b56f71971",
+    "config/vendor-identical-origin-evidence.csv": "6aca3c40cad04d9f6262132162521efa774b5e0c9f419457f62d523aa3c4ccb9",
+    "config/vendor-origin-evidence.csv": "0ef96ddfab93dc66f896f01851cdea58010d65023859cfd6e79dc18f6433a128",
+    "config/vendor-origin-spans.csv": "0e45a6aae65597214cdc219b7a8e7373541544ffa04733ae5bff07f9bb84b481",
+    "config/vendor-peer-origin-evidence.json": "066492f33f855e3c7acc6bfa4b8f15a888ea110b08b7fdc668421e0579083790",
+    "config/vendor-record-helper-origins.csv": "938d1ec9c4ac5eab7a44b964bbcd96ac94fc1996c572343e1303897ed12bf3d2",
+    "config/vendor-record-origin-spans.csv": "12f2c3fa03ce3cd873f4083876e04be0435cc3323e4005263d97ef950dbc95d2",
+    "config/vendor-record-witness-origins.csv": "459dcda55d644cbc59d410ea2cccd1add07b017d4d67d6cae399c97be9056017",
+    "config/vendor-vector-callee-origins.csv": "8f626a55938222b1542bae80188c53749a04467b5f4cb7254730913d40eafabd",
+    "config/vendor-vector-copy-origins.csv": "8d8a4375b093bf1832df84031d8fb10b6d8c8bf4037038291742561b44c5c616",
+    "config/vendor-vector-helper-origins.csv": "74e3b58438e5c5c63aaad24d8b54f9c6e9294ab0c299714adbbf6073ffff3c8a",
+    "config/vendor-vector-operation-origins.csv": "0e7619cf5819f8b6cb702d2dc82a34cb8c29f8d8217f7f21146338270260edab",
+    "config/vendor-vector-storage-origins.csv": "486d5d70e734ee0adef59bf1182672d182a6e91c1290901262c08c2627761d6e",
+    "config/vendor-vector-wrapper-origins.csv": "d29340b2170effdbf99acb8bf3b04d3a1fa2b1e63d3ec5ef6c507b3a08386a7a",
+    "config/virtual-frame-origin-evidence.json": "c896dc1c16528a6fe448cc6430910322890e63844b52c2291aa8be2787c58199",
+    "tests/origin_probes/BackgroundBlendPolicies.cpp": "2d0ae45785e864835b9be273e6a803e0e8ff2b2a94aef85970e01087f2ea7f34",
+    "scripts/verify-background-cycle-origins.py": "b6ea73a5580888e0398e390339b2c38da17ca0fa165272fac0ec7f901298762e",
+    "scripts/verify-runtime-origins.py": "39cdee072566ed458ac46673bff9e0b480e3a3a8952808710e4a8d46a9428c62",
+    "scripts/verify-authored-origins.py": "3e1f29f18511e0a4e8766b6b74999a5bf12b34f66df32828512d3513dd061af9",
+    "scripts/verify-vector-insertion-carrier-origins.py": "c8e33d0ff04c249fa9e0479a23f3645e33246c1a09b76bbb9f12517d989a092a",
+    "scripts/sdk_x3d_carriers.py": "4e41353ce669f12f06038afb66e849fb91db39254146df81d70345c03c4cb131",
+    "scripts/sdk_image_carriers.py": "548858d41821033d76955d40a69a498136ef82c57972bdbff72c865b4cb8562e",
+    "scripts/coff_data.py": "deb9205d1cc9c859a9537c1fcdb7198f5d26328a6035f27be9366fc226d83dc1"
+  },
+  "interpretation": "Authored inference from original runtime camera reads/conversions and zero-mode graphics policy with independent full asset installation/resource-member provenance and same-address camera writers. Complete real CRT source identity establishes the conversion provider without circular field destinations. The old R230 graph and cold controls are replayed through a checked three-pair canonical current view; every old source/native plan remains immutable. Original converted integers are stored but unused: no reconstruction inserts inert source locals to force those bytes. Private original names/types/layout/ABI and absence of historical replacement are unproved; no source/mapping/exact or later-phase credit."
+}

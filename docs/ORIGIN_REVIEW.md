@@ -14534,3 +14534,81 @@ library+580 compiler;148 pending and3,226 excluded. The original1,311 goal has
 across eleven objects are unchanged; authored byte denominator1,971,346 and
 provisional0.50%. Complete Web MCP acceptance remains required after all remaining
 origin review finishes.
+
+## R231 complete BG02 blend callbacks and bounded retained canonical view
+
+R231 accepts three complete authored virtual callbacks /180 bytes at44B980,
+44BEA0 and44C3C0, each60 bytes. They preserve current Ghidra names, whole extents,
+RET0, original calculation/result stores and separate source/ABI/mapping/exact
+state. Proposed BG02a/BG02b/BG02c blend roles remain inference.
+
+Replay `scripts/repo-python scripts/verify-background-blend-origins.py` with
+immutable `config/background-blend-origin-evidence.json`, SHA-256
+`4d8e713940a8f69d4f10bc25a159ddf9e4c550094735cfbd59ffff74a3a82449`.
+The actual readonly slot-two words in6586E8,65872C and658768 select the three
+callbacks. Complete independently accepted BG02 asset constructors install those
+same tables and load resources through observed receiver+0x18; their whole
+renderers and other callback peers remain part of the retained R230 graph.
+Every original native callback loads671404, adds the readonly160.0f at657834,
+converts through6406AC, stores that integer locally, then similarly converts
+6713C4 and stores the second integer. Neither result is passed to the final
+zero-mode call. The whole final call uses receiver+0x18 and independently accepted
+40C7F0 /65 SetBlendMode with its actual render-state calls and RET4. These observed
+unused stores are retained as target facts; no inert source locals imitate them.
+
+Complete accepted camera initializer412660 /96 and camera snap412CF0 /146
+independently write both671404 and6713C4. Their full bodies/CFGs/old authored
+records are reopened, including the actual `FSTP` Y stores. Decoder operand-access
+annotations alone missed those x87 writes in preliminary triage; full instruction
+semantics establish them. The two four-byte writable owners remain distinct from
+the full readonly160 float. All three helper/camera owners total307 bytes. Global
+addresses, receiver/resource use and callback installation are actual independent
+observations; they do not recover original variable names or a complete class.
+
+Fresh extraction of the pinned original `libcmt.lib` reopens complete `ftol2.obj`
+and its `__ftol2` source definition. The whole117-byte, fieldless native/source
+body is unmasked byte-equal, with all original COFF/AUX definitions, full CFG and
+instructions retained. The function's own auxiliary extent is read again from a
+fresh temporary object; no selected section prefix supplies a convenient size.
+This remains the original R006 library owner, with no new runtime or exact credit.
+Its source identity, camera writes and full game helper establish independent
+routes rather than defining owners from selected encoded call fields.
+
+Three literal old unknown function/origin pairs in R230 remain unchanged on disk.
+The successor first verifies the full old manifest, source/script hashes, complete
+plan and three actual slot-two contexts. Its isolated R230 module receives a
+checked current canonical view projecting only the exact three approved original/
+accepted pairs back to those literal unknown snapshots. Every other row, source,
+field, native body, CFG, double, layout, compiler profile and ordinary control stays
+literal. The entire R230 native proof and real cold compiler commands execute
+normally; the module-local reader is restored afterwards. No stdlib monkeypatch,
+source/hash relaxation, cached build fallback or old artifact write is used.
+Standalone R230 canonical checks intentionally retain their historical unknowns;
+use this R231 successor to replay that complete graph in the current state.
+
+The natural tracked fixture `tests/origin_probes/BackgroundBlendPolicies.cpp`
+returns meaningful coordinate conversions, forwards zero/one blend modes through
+a complete compact observation owner and includes an implicit-copy alternative.
+Cold build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` emits all
+seven code/data sections /110 bytes /seven actual fields, five whole functions
+22/16/21/21/10 and the complete16-byte readonly `[1,1,4,4]` observation. No SDK
+header is needed. The real generated conversion fields name `__ftol2`; every call/
+data field binds through independently verified owners and has a whole unmasked
+source CFG. The whole21-byte zero/one controls differ at byte8, while the10-byte
+implicit copy lacks floating/render calls. These are compatible source alternatives,
+not original private prototypes or full native source matches. No arbitrary padding,
+inert local, fake return or game-owner instantiation is introduced.
+
+All48 scoped canonical pairs and four-byte external INT3 gaps are checked. Original
+unselected digests and bounded HEAD f9948e5 before/after readback permit exactly
+three rows in each canonical ledger to change, with every extent and unrelated row
+preserved. Old authored CSVs/manifests/verifiers and protected ambiguities remain
+literal. Original and accepted cold replays,3,271 CI tests including14 new guards,
+target/tracking, local Ghidra identity/completion, unchanged60 exact inputs,
+fresh145-candidate triage, progress and whitespace pass.
+
+Current4,206 resolved =980 authored+2,646 library+580 compiler;145 pending and
+3,226 excluded. The original1,311 goal has1,166 classified /145 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,971,526 and provisional0.50%. Full Web MCP
+acceptance is required after all remaining origin review finishes.

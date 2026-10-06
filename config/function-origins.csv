@@ -1632,7 +1632,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044B600,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044B630,authored,BattleEffect,authored,target-observed,R042
 0x0044B970,authored,BackgroundStage,authored,target-observed,R058
-0x0044B980,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044B980,authored,BackgroundStage,authored,whole-background-blend-callback-and-independent-asset-camera-render-state-provenance,R231
 0x0044B9C0,authored,BackgroundStage,authored,target-observed,R056
 0x0044BA20,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044BA50,authored,BackgroundStage,authored,target-observed,R057
@@ -1640,7 +1640,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044BB20,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044BB50,authored,BattleEffect,authored,target-observed,R042
 0x0044BE90,authored,BackgroundStage,authored,target-observed,R058
-0x0044BEA0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044BEA0,authored,BackgroundStage,authored,whole-background-blend-callback-and-independent-asset-camera-render-state-provenance,R231
 0x0044BEE0,authored,BackgroundStage,authored,target-observed,R056
 0x0044BF40,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044BF70,authored,BackgroundStage,authored,target-observed,R057
@@ -1648,7 +1648,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0044C040,authored,BackgroundStage,authored,whole-background-cycle-policy-and-independent-asset-callback-render-provenance,R230
 0x0044C070,authored,BattleEffect,authored,target-observed,R042
 0x0044C3B0,authored,BackgroundStage,authored,target-observed,R058
-0x0044C3C0,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0044C3C0,authored,BackgroundStage,authored,whole-background-blend-callback-and-independent-asset-camera-render-state-provenance,R231
 0x0044C400,authored,BackgroundStage,authored,target-observed,R056
 0x0044C460,compiler,VC71Compiler,exclude,compiler-template-backed,R037
 0x0044C490,authored,BackgroundStage,authored,target-observed,R057

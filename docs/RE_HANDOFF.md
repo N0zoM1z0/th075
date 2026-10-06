@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R230. The public
+review cohorts R108 through R231. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,65 +11,137 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,203: 977 authored, 2,646 library and 580 compiler generated.
-There are 148 pending. Candidate count is not authored function count.
+has resolved 4,206: 980 authored, 2,646 library and 580 compiler generated.
+There are 145 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,971,346 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,971,526 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R231 background blend-callback investigation below.
+the bounded R232 BG05a reverse-cycle investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R230; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R231; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R231 background blend callbacks and retained context
+## Next agent objective — R232 BG05a reverse cycle
 
-R230 accepts six whole background cycle origins below. Original and accepted
-cold proofs and3,257 CI tests pass; prior evidence and all60 exact inputs remain
-unchanged. Current4,203 resolved =977 authored+2,646 library+580 compiler;
-148 pending and3,226 excluded. The original1,311 goal has1,163 classified /148
-left and remains active. Push reached68d9258; subsequent commits are local.
-Full Web MCP acceptance is required after all remaining origin review finishes.
+R231 accepts three complete BG02 blend callbacks below, including the entire
+retained R230 native/cold graph through a bounded three-pair current view.
+Original and accepted cold proofs and3,271 CI tests pass; prior evidence and all60
+exact inputs remain unchanged. Current4,206 resolved =980 authored+2,646 library
++580 compiler;145 pending and3,226 excluded. The original1,311 goal has1,166
+classified /145 left and remains active. Push reached68d9258; later commits are
+local. Full Web MCP acceptance remains required after all origin review finishes.
 Continue local investigation and necessary cold builds in one writable session.
 
-Next investigate three complete60-byte virtual callback hypotheses /180:
-44B980,44BEA0 and44C3C0, selected by actual slot two in the corresponding BG02a,
-BG02b and BG02c tables. Their whole bodies are already retained as unknown peers
-in R230. Each reads671404, adds readonly657834, calls the whole117-byte original
-CRT `__ftol2` at6406AC, then converts6713C4 through that same runtime owner. The
-results are stored to native locals but not passed to the final call. All three
-then pass zero to complete independently accepted65-byte40C7F0 SetBlendMode
-with observed receiver+0x18. These observations alone are not acceptance.
+Next investigate complete45-byte44E3A0. Private
+`.analysis/r232-native-shortlist.json` records its full diagnostic body: decrement
+receiver+0x68, then reset a signed-negative result to3840, RET0. A separate private
+readonly scan finds a prospective real pointer at658AC8, table base658AC4 with
+six words `[44E7C0,44E3A0,44E750,44E740,44E3D0,44E760]`. The independently accepted
+BG05a loader44E2F0 /161 and renderer44E3D0 are promising game context. Confirm actual
+Ghidra references, full table installation, same-field initialization/consumption,
+whole extents and all exits before attribution. Cold-build natural compact
+reverse-cycle and compiler alternatives; do not pad a game owner. Compare the
+complete earlier R212 BG05b94-byte multi-counter policy if useful, while retaining
+its literal evidence. The prospective BG05a reverse policy remains unknown.
 
-Reopen the original complete CRT archive definition and SetBlendMode/game resource
-context. Establish the writable values and same receiver/resource use through
-actual native readers/writers, rather than guessed global names. Preserve all
-native calculations without inventing inert C++ locals to imitate their bytes.
-Use natural ordinary policy/implicit alternatives and full whole-function/CFG
-checks; no exact scope or private padded owner is authorized. Because R230 stores
-these three literal unknown pairs, any later acceptance needs a bounded successor
-current canonical view that changes only those exact pairs while retaining the
-entire old source/native plan and cold compiler controls. Do not overwrite old
-R230 evidence or relax its source hashes.
+The same private shortlist contains twelve other pending shapes, including
+50/82-byte initialization/freeing bodies427430/427470, predicate454F70 /31 and
+writable-global setter4557E0 /21. They are diagnostic, not an acceptance shortlist;
+find independent ownership/context and review prior ambiguity before selecting
+another cohort. No implicit constructor, getter or sole known callee proves origin.
+Preserve R18341CA30 /77 and R212455770 /111 uncertainty, all lifetime/getter/node/
+math decisions and the opaque R206 leaves. Fresh
+`.analysis/origin-scan/r231-triage.json` has145 pending with current ledger hashes.
+Shared tools remain read-only.
 
-The earlier text classifier41CA30 /77 and coordinate transform455770 /111 have
-already been reviewed in R183/R212 and remain unknown. Consult those full prior
-reasons before investigating them again; the latter lacks proof of a shared
-receiver and original writable-output identity. Private R230 preliminary native
-files are diagnostic, not acceptance evidence for those entries. Preserve all
-prior lifetime/getter/node/math and opaque reference uncertainty. Fresh
-`.analysis/origin-scan/r230-triage.json` has148 pending with both current ledger
-hashes. Shared tools remain read-only.
+## R231 complete BG02 blend callbacks and bounded retained canonical view
+
+R231 accepts three complete authored virtual callbacks /180 bytes at44B980,
+44BEA0 and44C3C0, each60 bytes. They preserve current Ghidra names, whole extents,
+RET0, original calculation/result stores and separate source/ABI/mapping/exact
+state. Proposed BG02a/BG02b/BG02c blend roles remain inference.
+
+Replay `scripts/repo-python scripts/verify-background-blend-origins.py` with
+immutable `config/background-blend-origin-evidence.json`, SHA-256
+`4d8e713940a8f69d4f10bc25a159ddf9e4c550094735cfbd59ffff74a3a82449`.
+The actual readonly slot-two words in6586E8,65872C and658768 select the three
+callbacks. Complete independently accepted BG02 asset constructors install those
+same tables and load resources through observed receiver+0x18; their whole
+renderers and other callback peers remain part of the retained R230 graph.
+Every original native callback loads671404, adds the readonly160.0f at657834,
+converts through6406AC, stores that integer locally, then similarly converts
+6713C4 and stores the second integer. Neither result is passed to the final
+zero-mode call. The whole final call uses receiver+0x18 and independently accepted
+40C7F0 /65 SetBlendMode with its actual render-state calls and RET4. These observed
+unused stores are retained as target facts; no inert source locals imitate them.
+
+Complete accepted camera initializer412660 /96 and camera snap412CF0 /146
+independently write both671404 and6713C4. Their full bodies/CFGs/old authored
+records are reopened, including the actual `FSTP` Y stores. Decoder operand-access
+annotations alone missed those x87 writes in preliminary triage; full instruction
+semantics establish them. The two four-byte writable owners remain distinct from
+the full readonly160 float. All three helper/camera owners total307 bytes. Global
+addresses, receiver/resource use and callback installation are actual independent
+observations; they do not recover original variable names or a complete class.
+
+Fresh extraction of the pinned original `libcmt.lib` reopens complete `ftol2.obj`
+and its `__ftol2` source definition. The whole117-byte, fieldless native/source
+body is unmasked byte-equal, with all original COFF/AUX definitions, full CFG and
+instructions retained. The function's own auxiliary extent is read again from a
+fresh temporary object; no selected section prefix supplies a convenient size.
+This remains the original R006 library owner, with no new runtime or exact credit.
+Its source identity, camera writes and full game helper establish independent
+routes rather than defining owners from selected encoded call fields.
+
+Three literal old unknown function/origin pairs in R230 remain unchanged on disk.
+The successor first verifies the full old manifest, source/script hashes, complete
+plan and three actual slot-two contexts. Its isolated R230 module receives a
+checked current canonical view projecting only the exact three approved original/
+accepted pairs back to those literal unknown snapshots. Every other row, source,
+field, native body, CFG, double, layout, compiler profile and ordinary control stays
+literal. The entire R230 native proof and real cold compiler commands execute
+normally; the module-local reader is restored afterwards. No stdlib monkeypatch,
+source/hash relaxation, cached build fallback or old artifact write is used.
+Standalone R230 canonical checks intentionally retain their historical unknowns;
+use this R231 successor to replay that complete graph in the current state.
+
+The natural tracked fixture `tests/origin_probes/BackgroundBlendPolicies.cpp`
+returns meaningful coordinate conversions, forwards zero/one blend modes through
+a complete compact observation owner and includes an implicit-copy alternative.
+Cold build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes` emits all
+seven code/data sections /110 bytes /seven actual fields, five whole functions
+22/16/21/21/10 and the complete16-byte readonly `[1,1,4,4]` observation. No SDK
+header is needed. The real generated conversion fields name `__ftol2`; every call/
+data field binds through independently verified owners and has a whole unmasked
+source CFG. The whole21-byte zero/one controls differ at byte8, while the10-byte
+implicit copy lacks floating/render calls. These are compatible source alternatives,
+not original private prototypes or full native source matches. No arbitrary padding,
+inert local, fake return or game-owner instantiation is introduced.
+
+All48 scoped canonical pairs and four-byte external INT3 gaps are checked. Original
+unselected digests and bounded HEAD f9948e5 before/after readback permit exactly
+three rows in each canonical ledger to change, with every extent and unrelated row
+preserved. Old authored CSVs/manifests/verifiers and protected ambiguities remain
+literal. Original and accepted cold replays,3,271 CI tests including14 new guards,
+target/tracking, local Ghidra identity/completion, unchanged60 exact inputs,
+fresh145-candidate triage, progress and whitespace pass.
+
+Current4,206 resolved =980 authored+2,646 library+580 compiler;145 pending and
+3,226 excluded. The original1,311 goal has1,166 classified /145 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,971,526 and provisional0.50%. Full Web MCP
+acceptance is required after all remaining origin review finishes.
 
 ## R230 complete background cycle callbacks and independent asset context
 
