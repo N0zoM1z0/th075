@@ -16637,3 +16637,73 @@ Counts are4249 resolved =1002 authored+2666 library+581 compiler,
 /102 left. Exact60 /9883 bytes /60 units /eleven objects and authored
 bytes1973516 remain unchanged. The original goal stays active; final complete
 Web MCP acceptance remains due after the requested remaining-review end state.
+
+## R261 — whole SDK stack error policies with coherent special-member ambiguity retained
+
+R261 accepts61FBE7 /8 and61FD1A /8 as **inferred library** read-and-reset error
+policies. Their original source definitions are CD3DXDwStack/CD3DXSzStack
+GetLastError, not constructors or pure getters. Isolated vendor/ordinary byte
+equality remains non-identifying; the new witness is the complete original
+stack object's code order, real error-state producers/consumers and full
+source/data/provider lifetime graph.
+
+Pinned SDK `obj\i386\cd3dxstack.obj`, member420216, SHA
+c408d992d338ee5ee22114334311632ef9909ca69d33ae318d3bdaef39d1ea49,
+contributes all11 primary functions739 in source order across61FB27..61FE0A.
+The paired source constructor/Push/Pop/Generate policies and actual error-field
+read/reset bodies are checked as whole extents/CFGs. Separate associated
+compiler20 at656CB2 retains both real roots0/10, full state cleanup and frame
+dispatch; complete one-state data36 at66A8F4 binds its actual callback and
+FunctionInfo without masking any field. All18 genuine code/data fields remain
+present. The original R022 one-state frame is checked against its complete
+native metadata, including independently verified external EH prolog31.
+
+The [manifest](../config/sdk-stack-contribution-origin-evidence.json) inventories
+all26 initialized original source sections1164, including debug records that
+receive no invented target placement. Four complete original allocator/EH
+providers104, Buffer constructor24 and real owning vtable28 recompare through
+literal original records and every typed field. The actual FS displacement
+has the original CRT ABS `__except_list` definition; it is not fabricated as
+an address-zero function or data object. Buffer constructor24 remains unknown
+and is never an accepted-library premise. Its vtable does not establish a
+complete private object layout or authorize a private owner instance.
+
+New complete [ordinary observations](../tests/origin_probes/SdkStackStateAlternatives.cpp)
+retain explicit and implicit owners of a meaningful four-field stack state.
+Fresh pinned3077 /O1 /Oi /Ob0 and/Ob1 profiles each retain all14 ordinary
+initialized sections196/203, all actual definitions/AUX/fields, eight headers
+and complete readonly layout[4,4,16,16,16,16,12,12]. All18 whole byte-positive
+comparisons214 /five fields include both ordinary read/reset8 alternatives at
+both native addresses, explicit construction16/destruction14 and actual state
+subobject lifetimes. The /Ob1 compiler-generated implicit outer constructor16
+and destructor14 also compare completely with the same native pair. Their
+real non-inlined /Ob0 alternatives12/5 and all remaining complete source
+sections remain present, never cropped or padded.
+
+Consequently DwStack destructor14 at61FB37 stays unknown:complete vendor unit
+placement does not decide explicit versus compiler-generated special-member
+origin. No new destructor, compiler, private layout, ABI, reconstruction source,
+mapping or exact credit is added. Only the two non-special-member getter
+canonical pairs transition. Library ownership is a bounded source-contribution
+inference, not unique original linker-map or declaration proof; genuine
+ordinary getter8 equality remains recorded.
+
+The [CLI](../scripts/verify-sdk-stack-contribution-origins.py) cold-builds both
+ordinary profiles and replays the entire unchanged original R195 at118e93e
+in its read-only same-length Git worktree. Original unknown snapshots, all
+four retained full source/interface/debug/destructor/CPU-EH proof trees,
+all511 fields, complete game parents and public ABI controls remain present.
+Original-state and accepted-state full CLIs pass. The preceding entire R260/
+R155 also cold-replays unchanged at63058c0 in a separate read-only historical
+worktree. Earlier tests restore only the two immutable getter predecessors
+before their existing literal R260/vector views and strict unrelated-row
+guards. Original verifiers/manifests/predicates and unknown snapshots are not
+rewritten or globally patched.
+
+All3527 public CI tests, target-required tracking, all100 current full hashes/
+literal pairs, all60 exact full-row/input guards, progress freshness and
+whitespace checks pass. Counts are4251 resolved =1002 authored+2668 library+
+581 compiler,100 pending /3665 bytes and3249 excluded. Original1311 progress
+is1211 classified /100 left. Exact60 /9883 bytes /60 units /eleven objects and
+authored bytes1973516 remain unchanged. The original goal stays active; final
+complete Web MCP acceptance remains due after the requested remaining review.

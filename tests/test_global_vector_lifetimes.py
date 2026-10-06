@@ -105,6 +105,15 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
 
     def test_original_and_accepted_views_allow_only_literal_selected_pairs(self):
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        stack_spec = importlib.util.spec_from_file_location(
+            'sdk_stack_successor_view', ROOT / 'scripts/verify-sdk-stack-contribution-origins.py')
+        stack = importlib.util.module_from_spec(stack_spec)
+        stack_spec.loader.exec_module(stack)
+        stack_plan = json.loads((ROOT / stack.EVIDENCE).read_text())
+        stack.verify_plan(stack_plan)
+        original_stack = all(q['original_function'] in source['functions.csv'] for q in stack_plan['functions'])
+        source = {name: stack.historical_rows(stack_plan, name, actual, original_stack)
+                  for name, actual in source.items()}
         contribution_spec = importlib.util.spec_from_file_location(
             'vendor_zeroing_successor_view', ROOT / 'scripts/verify-vendor-zeroing-contribution-origins.py')
         contribution = importlib.util.module_from_spec(contribution_spec)

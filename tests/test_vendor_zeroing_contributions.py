@@ -57,9 +57,15 @@ class VendorZeroingContributionTests(unittest.TestCase):
 
     def test_full_unrelated_canonical_guard_remains_strict(self):
         selected = {r['address']: r for r in self.plan['functions']}
+        stack = V.module('zeroing_test_stack_successor', 'verify-sdk-stack-contribution-origins.py')
+        stack_plan = json.loads((ROOT / stack.EVIDENCE).read_text())
+        source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        original_stack = all(q['original_function'] in source['functions.csv'] for q in stack_plan['functions'])
+        source = {name: stack.historical_rows(stack_plan, name, actual, original_stack)
+                  for name, actual in source.items()}
         for original in [False, True]:
             state = 'original_' if original else 'accepted_'
-            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in V.rows(name)] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

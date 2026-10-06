@@ -2,7 +2,7 @@
 
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246, R253, R254, R255, R256, R257 and R260, with bounded unresolved reviews/audits
+review cohorts R108 through R246, R253, R254, R255, R256, R257, R260 and R261, with bounded unresolved reviews/audits
 R247–R252, R258 and R259. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
@@ -12,8 +12,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,249: 1,002 authored, 2,666 library and 581 compiler generated.
-There are 102 pending. Candidate count is not authored function count.
+has resolved 4,251: 1,002 authored, 2,668 library and 581 compiler generated.
+There are 100 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -21,75 +21,70 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R261 SDK stack contribution cohort below.
+the bounded R262 interface-ID source-contribution cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R260; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R261; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R261 SDK stack contribution context
+## Next agent objective — R262 interface-ID source-contribution context
 
-R260 accepts two inferred library zeroing leaves625575 /14 and64F513 /12
-through complete source-ordered contributions29 functions1565, all42 actual
-fields and defining data340. All initialized original source sections, AUX/
-COMDAT/alignment topology, ten complete external providers and byte-positive
-ordinary14/12 controls remain preserved. This is a bounded inference from
-whole object/source/data/provider placement, not unique original linker-map
-proof. Details: [R260 review](ORIGIN_REVIEW.md#r260--complete-source-ordered-vendor-contributions-with-leaf-alternatives-retained).
+R261 accepts two inferred library read/reset error8 policies at61FBE7 and
+61FD1A through all11 primary SDK stack functions739 in source order, separate
+two-root compiler20/state data36 and every18 actual field. Complete allocator/
+EH providers104, unknown Buffer constructor24, owning vtable28 and real CRT
+ABS FS definition are preserved. Source unit inventory26/1164 includes debug
+records without target mappings. Details:
+[R261 review](ORIGIN_REVIEW.md#r261--whole-sdk-stack-error-policies-with-coherent-special-member-ambiguity-retained).
 
-The accepted-state CLI cold-builds the ordinary control and replays the entire
-unchanged original R155 at9734107 in a read-only same-length Git worktree.
-Original unknown12/21 snapshots and all four retained complete proof trees
-remain present. The current R155 predicate adds only immutable R260 FillZeroMan
-acceptance alongside original R192 finite acceptance. Earlier vector tests
-restore only the two validated literal predecessors before their existing
-strict views. Do not relax historical predicates, rewrite their manifests,
-remove genuine ordinary alternatives or infer a global toolchain profile.
+Both fresh ordinary profiles keep full14-section emissions196/203, all eight
+headers and layout[4,4,16,16,16,16,12,12]. All18 complete positives214/five fields
+preserve ordinary getter8 equality and explicit ctor16/dtor14 controls. Real
+/Ob1 compiler-generated implicit ctor16/dtor14 also agree with the same actual
+native pair; non-inlined /Ob0 bodies12/5 remain whole. Thus61FB37 /14 stays
+unknown between explicit and generated special-member origin. Buffer ctor24
+also stays unknown. Do not infer either origin from vendor namespace/unit
+placement or erase these coherent alternatives.
 
-R259 retains4135F0 /40 unknown. An exhaustive executable-byte direct relative
-encoding scan has zero hits into its full extent; candidate decoding discovers
-only the pending40 and accepted FontSurface398 with the same three relative
-stores. Complete FontSurface64/398/rasterizer1766 context and original authored
-records are retained. This does not prove same owner, inlining or namespace.
-No placeholder layout/control or source/ABI/exact credit is introduced.
-Details: [R259 review](ORIGIN_REVIEW.md#r259--whole-receiver-output-and-fontsurface-context-without-owner-identity).
+The accepted-state CLI cold-builds both profiles and replays the entire
+unchanged original R195 at118e93e in a read-only same-length worktree. All four
+full retained proof trees, original unknown snapshots and public controls
+remain present. Entire original R260/R155 at63058c0 also cold-replays in a
+separate read-only fixed-state worktree. Earlier tests restore only literal
+validated getter predecessors before their existing strict R260/vector views;
+no old verifier, predicate, manifest or ledger snapshot is rewritten. Use
+these whole historical replays rather than invoking a frozen unknown snapshot
+against a later canonical state or bypassing its checks.
 
-Next inspect the two read-and-reset GetLastError8 leaves at61FBE7 and61FD1A,
-with the unresolved DwStack destructor14 at61FB37 in the same source object.
-Original R195 `config/sdk-graphics-origin-evidence.json` sections65/64 identifies
-CD3DXDwStack/CD3DXSzStack source definitions in `obj\i386\cd3dxstack.obj`,
-member420216. Isolated vendor and ordinary equality were non-identifying.
-Determine whether the complete original object's actual code/data contribution,
-source section order, real fields and independently preserved providers offer
-new ownership context. Private `.analysis/r261-stack-source-order.json`
-inventories11 named code sections739 plus the separate associated handler20.
-The named sections predict61FB27..61FE0A in source order, matching known anchors;
-Private `.analysis/r261-stack-contribution-discovery.json` additionally
-recompares all12 code sections759 with16 actual fields included. The defining
-data36/two fields, independent external providers, ABS FS symbol and genuine
-ordinary alternatives still need full reconciliation. This is a discovery
-lead, not a completed ownership proof.
-Reconcile all code extents/CFGs, weak/folded/skipped
-contributions and genuine alternatives; do not transfer R260 inference merely
-from proximity or mapped names. Keep all three unknown until a full bounded
-witness is accepted. No exact scope is added.
+Next investigate the two whole interface-ID/ordinary comparison23 leaves at
+608E33 and609B1E. Private `.analysis/r262-guid-source-survey.json` freshly reads
+all146 normal i386 SDK members and finds12 whole field-free23 positives in eight
+source objects. Source names include `_IsEqualGUID` and original `_==`; both
+native bodies match every positive. This is discovery, not namespace/linker
+or typed-pointer proof. Reconcile complete original object contributions,
+source section order, all real fields/data and actual weak/folded/skipped
+placements. Preserve the ordinary comparison alternatives and original names;
+do not transfer R260/R261 inference from proximity alone. Keep both unknown
+until a complete independent bounded witness is accepted. No exact scope is
+added.
 
-Current counts:4249 resolved =1002 authored+2666 library+581 compiler,
-102 pending /3681 bytes and3247 excluded. Original1311 progress is1209 classified
-/102 left. The current matrix rereads all102 full hashes/literal pairs and
-preserves original R251116-row evidence. The reviewed-but-unknown end-state
-question remains unanswered; do not shrink or falsely complete the goal.
-Final complete Web MCP acceptance remains due after the requested remaining
-review. Exact60 /9883 bytes /60 units /eleven objects and authored denominator
-1973516 are unchanged. All3519 public CI tests, target-required tracking, exact full-row/input guards,
-current102 whole hashes/pairs, progress freshness and whitespace checks pass.
-Original-state and accepted-state full R260/R155 cold CLIs both pass. These commits remain local; no push was authorized.
+Current counts:4251 resolved =1002 authored+2668 library+581 compiler,
+100 pending /3665 bytes and3249 excluded. Original1311 progress is1211 classified
+/100 left. The matrix rereads all100 full hashes/current pairs and preserves
+original R251116-row evidence. The reviewed-but-unknown end-state question is
+unanswered; do not shrink or falsely complete the original goal. Final complete
+Web MCP acceptance remains due after the requested remaining review.
+Exact60 /9883 bytes /60 units /eleven objects and authored denominator1973516
+are unchanged. All3527 CI tests, target-required tracking, current-pair/hash,
+exact full-row/input, progress and whitespace guards pass. Complete original/
+accepted R261/R195 and retained R260/R155 cold replays pass. These commits
+remain local; no push was authorized.
 
 ### Historical R251/R252 context before R253 acceptance
 

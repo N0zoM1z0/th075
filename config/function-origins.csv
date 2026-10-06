@@ -3130,12 +3130,12 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0061FB37,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
 0x0061FB45,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R184
 0x0061FBB3,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x0061FBE7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061FBE7,library,D3DX8,exclude,inferred-whole-source-ordered-sdk-stack-object-with-error-state-producers-all-fields-and-complete-eh-data-ordinary-leaf-alternatives-retained,R261
 0x0061FBEF,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x0061FC02,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R185
 0x0061FC33,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R184
 0x0061FCE6,library,D3DX8SDK,exclude,complete-vendor-body,R008
-0x0061FD1A,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x0061FD1A,library,D3DX8,exclude,inferred-whole-source-ordered-sdk-stack-object-with-error-state-producers-all-fields-and-complete-eh-data-ordinary-leaf-alternatives-retained,R261
 0x0061FD22,library,D3DX8,exclude,whole-original-sdk-graphics-policy-with-complete-source-callees-data-eh-switches-and-public-abi,R195
 0x0061FE0A,library,D3DX8,exclude,whole-pinned-sdk-destructor-with-independent-interface-and-explicit-cleanup-context,R187
 0x0061FE1F,library,D3DX8,exclude,whole-pinned-sdk-interface-with-independent-guids-and-complete-owner-context,R186

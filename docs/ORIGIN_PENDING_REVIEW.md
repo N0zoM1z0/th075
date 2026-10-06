@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 102 pending candidates, covering 3,681 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 102
+This report records the current 100 pending candidates, covering 3,665 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 100
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -30,7 +30,10 @@ incompatible full construction/provider/EH chains remain preserved.
 R260 classifies two zeroing leaves14/12 as inferred library through complete
 source-ordered object contributions and defining-data/provider topology.
 Genuine byte-positive ordinary leaf alternatives remain preserved.
-The current remaining projection has100
+R261 classifies two SDK stack read/reset8 policies as inferred library through
+complete primary739/EH20/data36 source contributions. A coherent implicit
+ctor16/dtor14 positive preserves the related destructor as unknown.
+The current remaining projection has98
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -40,7 +43,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r260-remaining-review.json` retains the current literal
+Private `.analysis/r261-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -150,9 +153,7 @@ scope clarification is presumed.
 | `0x0061572C` | 160 | sdk-private-lifetime | 49 instructions; 6 branches; RET 0; 5 calls | [sdk-blit-origin-evidence.json](../config/sdk-blit-origin-evidence.json); [sdk-lifetime-alternatives-origin-evidence.json](../config/sdk-lifetime-alternatives-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x0061A453` | 73 | sdk-private-lifetime | 23 instructions; 1 branches; RET 0; 4 calls | [sdk-blit-origin-evidence.json](../config/sdk-blit-origin-evidence.json); [sdk-lifetime-alternatives-origin-evidence.json](../config/sdk-lifetime-alternatives-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x0061F125` | 249 | sdk-private-lifetime | 104 instructions; 17 branches; RET 0; 10 calls | [sdk-shader-font-origin-evidence.json](../config/sdk-shader-font-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x0061FB37` | 14 | sdk-private-lifetime | 7 instructions; 1 branches; RET 0; 1 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json); [sdk-shader-font-origin-evidence.json](../config/sdk-shader-font-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
-| `0x0061FBE7` | 8 | sdk-error-or-ordinary | 3 instructions; 0 branches; RET 0; 0 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json) | Typed namespace for read-and-reset error leaf. |
-| `0x0061FD1A` | 8 | sdk-error-or-ordinary | 3 instructions; 0 branches; RET 0; 0 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json) | Typed namespace for read-and-reset error leaf. |
+| `0x0061FB37` | 14 | sdk-private-lifetime | 7 instructions; 1 branches; RET 0; 1 calls | [sdk-graphics-origin-evidence.json](../config/sdk-graphics-origin-evidence.json); [sdk-shader-font-origin-evidence.json](../config/sdk-shader-font-origin-evidence.json) | Original explicit versus generated special-member declaration; R261 preserves coherent implicit ctor16/dtor14 equality. |
 | `0x006200DA` | 24 | sdk-private-lifetime | 6 instructions; 0 branches; RET 0; 0 calls | [background-counter-origin-evidence.json](../config/background-counter-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00620132` | 5 | sdk-private-lifetime | 1 instructions; 1 branches; RET tail only; 0 calls | [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Private member/outer lifetime or native forwarding declarations. |
 | `0x00641DAA` | 11 | floating-or-geometry | 5 instructions; 1 branches; RET 0; 0 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json); [polar-velocity-origin-evidence.json](../config/polar-velocity-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
