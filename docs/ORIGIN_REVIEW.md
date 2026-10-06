@@ -14167,3 +14167,76 @@ classified /177 left and remains active. Exact60 /9883 bytes /60 units across
 eleven objects, authored denominator1,971,032 and provisional0.50% are unchanged.
 Final complete Web MCP acceptance remains required after the remaining review
 finishes. No exact reconstruction or later project phase is added.
+
+## R226 complete deque front/back access and iterator dependencies
+
+Nine complete origins / 365 bytes are accepted as library code. Six front/back
+heads cover 257 bytes and their three necessary begin/end/explicit iterator
+constructor dependencies cover 108 bytes. All canonical extents are preserved.
+
+| Address | Whole bytes | Source-family role | Observed element width |
+| --- | ---: | --- | ---: |
+| `0x004094D0` | 32 | `std::deque::front` | 64 |
+| `0x004094F0` | 45 | `std::deque::back` | 64 |
+| `0x0041DB80` | 45 | `std::deque::back` | 4 |
+| `0x0041DE00` | 45 | `std::deque::back` | 4 |
+| `0x004213B0` | 45 | `std::deque::back` | 8 |
+| `0x005F8180` | 45 | `std::deque::back` | 4 |
+| `0x004099E0` | 35 | `std::deque::begin` | 64 |
+| `0x00409A10` | 41 | `std::deque::end` | 64 |
+| `0x0040A170` | 32 | explicit iterator constructor | 64 |
+
+The immutable evidence is `config/deque-front-back-origin-evidence.json`, SHA-256
+`1ac140821d2f2aec5d30ceab655de636f28eff6aa6215d1b8d49b6ffa0764e10`.
+Replay with `scripts/repo-python scripts/verify-deque-front-back-origins.py`.
+The verifier cold-builds the natural complete generic SDK fixture with the pinned
+VC7.1 compiler and explicit `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`
+profile. These are per-probe reproducibility settings, not an executable-wide
+compiler assertion. Five original header definition spans and all 27 included
+headers are retained. No incomplete game owner is instantiated.
+
+Six original SDK scopes retain 51 entire defining sections / 2,096 bytes / 45
+actual fields. Six ordinary manual member alternatives reproduce the same complete
+closures. Together all 12 scopes retain 102 entire sections / 4,192 bytes / 90
+fields and all 102 control-flow graphs. Every relocation resolves through its
+actual defining source owner and complete COFF/AUX record before unmasked target
+comparison. Fresh ordinary emission retains all 88 sections / 2,873 bytes / 105
+fields and the whole 40-byte readonly layout observation. No prefix, excluded
+relocation field, cached object or fabricated source body earns acceptance.
+
+The observed deque widths 64/4/8 have distinct block sizes 1/4/2 and full const
+iterator dereference extents 83/89/87. The back heads pass immediate one through
+iterator subtraction before mutable dereference; older plus-shaped mapped names
+remain provisional. Six const-route controls preserve distinct defining callees.
+Three compatible-member prefix-decrement controls emit whole 41-byte bodies,
+different from the 45-byte SDK back route. Three wrong-width controls preserve
+whole unequal dereference bodies without cropping. The ordinary first/last
+members are byte-equal in all six scopes: library attribution remains an explicit
+source-family inference, without claiming absence of historical replacements or
+recovering the original game element declaration or complete private layout.
+
+Fourteen independently accepted complete game parents / 6,811 bytes and all 90
+actual call windows bind receiver and result use across audio queue/start/stop/
+volume/fade/worker policies, archive registration, replay/card loading, fighter
+script parsing and effect spawning. Their complete exits, switches and original
+authored evidence are reopened. All 84 scoped canonical rows and 16 protected
+unknowns are checked. The explicit iterator constructor ends immediately before
+`0x0040A190`; its complete `RET 8` needs no added alignment. Other observed INT3
+alignment remains outside the accepted extents.
+
+Two selected addresses, `0x0041DB80` and `0x0041DE00`, occur as literal unknown
+snapshots in the immutable R225 manifest. Those old records remain unchanged.
+The R225 verifier now accepts only these two exact original-to-R226 transitions,
+validated through the pinned complete successor plan; unrelated row, ABI, extent
+and exact-credit changes remain rejected. The retained R225 cold replay passes.
+
+Original and accepted R226 cold replays pass, as do 3,197 CI tests including 18
+new guards. Target/tracking, attested local Ghidra check/query, all earlier 902
+authored bodies, all 60 unchanged exact inputs, exactly-nine-row readback, fresh
+168-candidate triage, progress and whitespace pass. Current 4,183 resolved = 971
+authored + 2,632 library + 580 compiler; 168 pending and 3,212 excluded. The
+original 1,311-origin goal has 1,143 classified / 168 remaining and is active.
+Exact coverage stays 60 functions / 9,883 bytes / 60 units across eleven objects;
+the authored denominator 1,971,032 and provisional 0.50% are unchanged. Final
+complete Web MCP acceptance remains outstanding until all origin review finishes.
+No source, private ABI, exact-reconstruction or later-phase credit is added.
