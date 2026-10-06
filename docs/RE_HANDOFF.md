@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R236. The public
+review cohorts R108 through R237. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,75 +11,141 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,217: 991 authored, 2,646 library and 580 compiler generated.
-There are 134 pending. Candidate count is not authored function count.
+has resolved 4,218: 992 authored, 2,646 library and 580 compiler generated.
+There are 133 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,757 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,813 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R237 archive-catalog first-user investigation below.
+the bounded R238 guarded sprite-list consumption investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R236; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R237; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R237 archive-catalog first-user policy
+## Next agent objective — R238 guarded sprite-list consumption
 
-R236 accepts the three whole music scene/record policies below. Original and
-accepted cold proofs and 3,313 local CI tests pass. There are 134 origins pending;
-the original 1,311 goal has 1,177 classified / 134 left and remains active. Push
+R237 accepts the complete archive catalog first-user policy below. Original and
+accepted cold proofs and 3,325 local CI tests pass. There are 133 origins pending;
+the original 1,311 goal has 1,178 classified /133 left and remains active. Push
 reached68d9258; subsequent commits remain local. The user requires one complete
 Web MCP acceptance after all remaining origin review finishes. Continue local
-investigation and serial cold builds while preserving every accepted origin and
-the sixty-function exact baseline.
+investigation and serial cold builds, preserving every accepted origin and the
+sixty-function exact baseline. The previous goal turn accepted one whole origin;
+the full objective remains unfinished.
 
-Next inspect the complete 56-byte pending body `0x0041CE10`. Full native
-instructions and its CFG are in `.analysis/r237-next-shortlist.json`. It tests
-shared count68BE04, calls complete deque-family operations41DCD0 /19 and41DF50 /19
-on the two observed global receivers68BE08 and68BE1C only for the first user,
-then increments that count and returns the incoming receiver. These observations
-alone are not acceptance. Reopen whole independent ArchiveCatalog::Release
-41CE50 /171, named archive registration41CF80 /245 and closure41D080 /264, actual
-GameApplication::Run602A60 /2987 call/receiver and complete original deque source
-owners. Retained R077 and R225 give source and independent archive use context;
-do not infer the original member spelling from a destructor-shaped library alias.
-Contrast full natural explicit count/first-user policy and compiler/library
-alternatives, preserve actual call ownership and all normal/exception/data
-extents, and audit old selected snapshots before any bounded transition. No old
-evidence, ambiguity, private layout/ABI, exact input or later phase may change.
+Next inspect the complete 37-byte pending body `0x004110C0`. It tests list size
+411CE0 /17 at receiver+4 and calls list pop_front411D00 /40 only when nonempty.
+Full native candidate/callees, independent FighterState::Render453F70 /2246,
+SpriteSequence::AppendElement411000 /183 and pending member construction411C10 /25
+are in `.analysis/r238-list-consume-native.json`; bounded readonly Ghidra context
+is in `.analysis/r238-list-consume-context.c`. Those observations alone are not
+acceptance. Reopen the entire independently authored SpriteSequence::RenderElements
+411110 /746, full append/render/driver receiver and packet-consumption context,
+accepted sibling ClearEntries4110F0 /22 with whole R167 proof and genuine R168
+list size/pop/erase source owners. Original queue header69–72 forwards pop
+unconditionally; the candidate has a genuine guard. Contrast full original
+library/adaptor, explicit natural policy and implicit lifetime alternatives.
+Do not use padding to reproduce offset4, instantiate an incomplete original
+sprite owner, infer authorship from small shapes/callees alone, or change the
+pending25-byte member constructor merely because implicit construction fits.
+Audit old selected snapshots before any bounded transition and preserve all
+original normal/exception/data extents and typed call ownership.
 
-The two whole 23-byte SDK GUID equality candidates608E33 and609B1E remain unknown.
-Private `.analysis/r237-guid-archive.json` reopens all eight original zero-field
-_IsEqualGUID COMDATs; twelve source references are only associative .debug$F,
-with no ordinary code/data caller. Fresh whole natural SDK and generic four-word
-memcmp equalities both reproduce the entire 23 bytes under cold3077 /O1 /Ob0 /Oi.
-`.analysis/r237-guid-control.json` retains all seven ordinary source sections /75,
-all fields/COFF/AUX, readonly sizeof[16,16] and69 original included headers.
-`.analysis/R237GuidComparison.cpp` and compile log remain diagnostic. SDK byte
-identity and absent callers do not distinguish ownership from this genuine
-ordinary alternative. Do not spend another cohort promoting that fingerprint
-without new independent original caller/data evidence.
+The two whole23-byte GUID equality candidates608E33 and609B1E remain unknown.
+Private `.analysis/r237-guid-archive.json` reopens eight original zero-field
+_IsEqualGUID COMDATs; all twelve source references are only .debug$F, with no
+ordinary code/data caller. Fresh cold natural SDK and ordinary four-word
+memcmp equality controls both reproduce all23 bytes. Their full seven sections75,
+actual fields/AUX, sizeof[16,16] and69 includes are preserved in private
+`.analysis/r237-guid-control.json`. Do not promote that fingerprint without
+new independent original source/caller/data evidence.
 
 Preserve no-reference receiver policies454C00 /24 and454F70 /31, R108/R198/R204
 lifetimes, R18341CA30 /77, R212455770 /111, five R163 math overload chains,
-node/opaque policies and independent constructors458650 /31 and458670 /23 as
-unknown. Preliminary DwStack cleanup61FB37 /14 and codec cleanup61A453 /73
-reopen protected R195/R198 source alternatives; do not promote old fingerprints
-or rewrite their accepted uncertainty. Inventory extent questions60C120 /11 and
-620132 /5 require complete defining source/metadata reconciliation.
-Fresh `.analysis/origin-scan/r236-triage.json` has134 pending and current ledger
-hashes. Shared tools stay read-only. Private R236 scalar-to-array false-binding
-history is explicitly superseded; preserve the six genuine call-field differences
-in the accepted R236 proof.
+node/opaque policies and constructors458650 /31 and458670 /23 as unknown.
+DwStack61FB37 /14 and codec61A453 /73 reopen protected R195/R198 source
+alternatives; do not rewrite their accepted uncertainty. Inventory extent
+questions60C120 /11 and620132 /5 need complete defining source/metadata.
+Fresh `.analysis/origin-scan/r237-triage.json` has133 pending and current ledger
+hashes. Shared tools remain read-only. The actual R236 six scalar/array-delete
+route bytes remain different; the private false-binding diagnostic stays
+explicitly superseded. R237 preserves original R077 destructor-family labels
+while genuine public clear alternatives also reproduce those entire wrappers.
+
+## R237 — shared archive catalog first-user policy
+
+R237 accepts authored `0x0041CE10` /56 with its complete CFG, receiver return,
+sole conditional branch and eight external INT3 bytes preserved. The function
+checks shared count68BE04, tidies both global queues68BE08/68BE1C only for the
+first user, then increments the count. Current name, extent, source/ABI,
+mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-archive-catalog-use-origins.py` with
+immutable `config/archive-catalog-use-origin-evidence.json`, SHA-256
+`33292559e16ded74fa505961ada05d361ccca98edf9a2310a3f6edae52249e2c`.
+Independent ArchiveCatalog::Release41CE50 /171 decrements the same count and,
+for the last user, deletes registered archive objects, array-deletes stored
+names and tidies both same queues. Registration41CF80 /245 appends an object
+pointer and copied name to those queues; named closure41D080 /264 searches
+names and erases the paired entries. Full object initialization41D190 /90,
+file-index loading41D510 /429 and resource cleanup41D1F0 /98 retain their
+independent game provenance. Actual raw-PE imports bind CreateFileA, ReadFile
+and CloseHandle. Whole main602A60 /2987 uses the identical [EBP-0x35] receiver
+for enter/exit and registers the real name/path pairs data/th075.dat,
+sound/th075bgm.dat and datab/th075b.dat. Its complete guarded dispatch data,
+all exits and original authored records remain literal.
+
+Twenty-eight complete independent anchors total 5,466 bytes; 29 scoped
+canonical pairs preserve every accepted owner. Original VC7 deque header
+412–415 and 797–800 show both destructor and clear forwarding to _Tidy949–969.
+Existing R077 destructor-family aliases and old evidence remain unchanged;
+identical 19-byte wrappers do not establish original operation spelling or
+object lifetime. Every source field binds its independently recorded _Tidy
+owner and typed descendant, rather than inventing a destructor declaration for
+clear. The writable PE virtual section/header is checked for shared storage.
+These BSS addresses are not file-backed; no raw bytes, initial counter value
+or complete private global layout are fabricated.
+
+The complete natural `tests/origin_probes/ArchiveCatalogUse.cpp` cold-builds
+with locked3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`, retaining
+all 27 original includes, 50 whole emitted code/data sections /2,045 bytes,
+all 88 actual fields, full COFF/AUX/line provenance and the real absence of
+weak aliases. Eight complete unmasked comparisons /542 bytes /28 fields
+cover ordinary and genuine template constructors56, four actual public
+clear/destructor wrappers19 and both whole _Tidy owners177. The two constructor
+forms agree through every real field; source equality cannot determine the
+original template spelling or establish authorship without the full independent
+custom file/catalog/count context. Genuine implicit two-deque member
+construction78 and destruction75 remain distinct, with all their full normal,
+exception and data carriers retained. The whole readonly sizeof section
+[1,1,20,20,40,4] describes complete compact generic observations only. There is
+no incomplete original owner, filler, inert local, fake return, private layout,
+original source/type/ABI/compiler-profile claim or exact credit.
+
+Original and accepted cold proofs also reopen the entire retained R077 deque
+cleanup and R225 original/manual unchecked-indexing source graphs. An empty
+historical selected-record audit, full original unselected digests, 29 scoped
+pairs and strict HEAD02ffaf7 readback allow exactly one row in each canonical
+function/origin ledger to change. All previous evidence, protected unknowns and
+sixty exact inputs remain literal. Local cold proofs, 3,325 CI tests including
+12 new guards, target/tracking, Ghidra identity/query completion, fresh133-row
+triage, generated progress and whitespace pass. The complete Web MCP acceptance
+remains due after all remaining origin review finishes.
+
+Current4,218 resolved =992 authored+2,646 library+580 compiler;133 pending and
+3,226 excluded. The original1,311 goal has1,178 classified /133 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,813 and provisional0.50%.
 
 ## R236 — whole music scene and record lifetime policies
 

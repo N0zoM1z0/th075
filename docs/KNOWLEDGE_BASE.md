@@ -11927,3 +11927,68 @@ Current4,217 resolved =991 authored+2,646 library+580 compiler;134 pending and
 3,226 excluded. The original1,311 goal has1,177 classified /134 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,757 and provisional0.50%.
+
+## R237 — shared archive catalog first-user policy
+
+R237 accepts authored `0x0041CE10` /56 with its complete CFG, receiver return,
+sole conditional branch and eight external INT3 bytes preserved. The function
+checks shared count68BE04, tidies both global queues68BE08/68BE1C only for the
+first user, then increments the count. Current name, extent, source/ABI,
+mappings and exact state remain unchanged.
+
+Replay `scripts/repo-python scripts/verify-archive-catalog-use-origins.py` with
+immutable `config/archive-catalog-use-origin-evidence.json`, SHA-256
+`33292559e16ded74fa505961ada05d361ccca98edf9a2310a3f6edae52249e2c`.
+Independent ArchiveCatalog::Release41CE50 /171 decrements the same count and,
+for the last user, deletes registered archive objects, array-deletes stored
+names and tidies both same queues. Registration41CF80 /245 appends an object
+pointer and copied name to those queues; named closure41D080 /264 searches
+names and erases the paired entries. Full object initialization41D190 /90,
+file-index loading41D510 /429 and resource cleanup41D1F0 /98 retain their
+independent game provenance. Actual raw-PE imports bind CreateFileA, ReadFile
+and CloseHandle. Whole main602A60 /2987 uses the identical [EBP-0x35] receiver
+for enter/exit and registers the real name/path pairs data/th075.dat,
+sound/th075bgm.dat and datab/th075b.dat. Its complete guarded dispatch data,
+all exits and original authored records remain literal.
+
+Twenty-eight complete independent anchors total 5,466 bytes; 29 scoped
+canonical pairs preserve every accepted owner. Original VC7 deque header
+412–415 and 797–800 show both destructor and clear forwarding to _Tidy949–969.
+Existing R077 destructor-family aliases and old evidence remain unchanged;
+identical 19-byte wrappers do not establish original operation spelling or
+object lifetime. Every source field binds its independently recorded _Tidy
+owner and typed descendant, rather than inventing a destructor declaration for
+clear. The writable PE virtual section/header is checked for shared storage.
+These BSS addresses are not file-backed; no raw bytes, initial counter value
+or complete private global layout are fabricated.
+
+The complete natural `tests/origin_probes/ArchiveCatalogUse.cpp` cold-builds
+with locked3077 `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`, retaining
+all 27 original includes, 50 whole emitted code/data sections /2,045 bytes,
+all 88 actual fields, full COFF/AUX/line provenance and the real absence of
+weak aliases. Eight complete unmasked comparisons /542 bytes /28 fields
+cover ordinary and genuine template constructors56, four actual public
+clear/destructor wrappers19 and both whole _Tidy owners177. The two constructor
+forms agree through every real field; source equality cannot determine the
+original template spelling or establish authorship without the full independent
+custom file/catalog/count context. Genuine implicit two-deque member
+construction78 and destruction75 remain distinct, with all their full normal,
+exception and data carriers retained. The whole readonly sizeof section
+[1,1,20,20,40,4] describes complete compact generic observations only. There is
+no incomplete original owner, filler, inert local, fake return, private layout,
+original source/type/ABI/compiler-profile claim or exact credit.
+
+Original and accepted cold proofs also reopen the entire retained R077 deque
+cleanup and R225 original/manual unchecked-indexing source graphs. An empty
+historical selected-record audit, full original unselected digests, 29 scoped
+pairs and strict HEAD02ffaf7 readback allow exactly one row in each canonical
+function/origin ledger to change. All previous evidence, protected unknowns and
+sixty exact inputs remain literal. Local cold proofs, 3,325 CI tests including
+12 new guards, target/tracking, Ghidra identity/query completion, fresh133-row
+triage, generated progress and whitespace pass. The complete Web MCP acceptance
+remains due after all remaining origin review finishes.
+
+Current4,218 resolved =992 authored+2,646 library+580 compiler;133 pending and
+3,226 excluded. The original1,311 goal has1,178 classified /133 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,813 and provisional0.50%.
