@@ -13885,3 +13885,71 @@ pass. Counts are4254 resolved =1002 authored+2671 library+581 compiler,
 remain unchanged. The original goal stays active; final complete Web MCP
 acceptance remains due after the requested remaining-review end state. These
 commits stay local and no push was authorized.
+
+## R264 — complete StringBuffer contribution with special-member ownership unresolved
+
+The new whole-source association for `0x00620132` /5 is reconciled against
+all25 original code sections /1030 bytes in member380178,
+`obj\i386\cd3dxbuffer.obj`, of the pinned D3DX8 archive. The primary contribution
+is the complete source-ordered981-byte interval61FE0A..6201DF; the remaining
+IUnknown constructor3 and two identifier comparisons23 each have separate,
+provisional reused placements. All57 initialized source sections /1716 bytes,
+actual external definitions, section/function AUX, COMDAT and54 genuine fields
+across code and data are retained. Full CFGs consume every field and instruction.
+Three complete seven-slot vtables /84 bytes and both actual float constants /8
+bytes compare unmasked. Original new14/delete5/ftol39 providers retain their
+whole own-AUX extents and complete initialized inventories. A separate cold
+public SDK GUID control and original UUID member independently recheck both
+whole16-byte interface identities. This bounded replay preserves earlier proof
+manifests; it does not claim to replay every historical verifier.
+
+The actual StringBuffer chain includes constructor22 at620100, initializer36
+at61FF43, AddString269 at61FF67, deleting wrapper28 at620116, destructor5 at
+620132 and factory81 at620137. The factory allocates24 bytes and dispatches
+through the owner's Init/deleting slots. The destructor has no RET and its
+single real REL32 transfers to the entire21-byte base destructor at61FE0A.
+Base constructor24 at6200DA remains unknown. The untracked derived constructors
+and factories stay auxiliary context; no new canonical candidates are added.
+All three source weak `_E` declarations retain their actual fallback indices,
+18-byte AUX and search characteristic2. Their native vtable entries resolve to
+the complete `_G` bodies. This records the observed fallback resolution, not an
+unconditional alias or recovered linker search order; see Microsoft's
+[weak-external format](https://learn.microsoft.com/en-us/windows/win32/debug/pe-format#auxiliary-format-3-weak-externals).
+
+A new complete ordinary public-interface control,
+`tests/origin_probes/StringBufferSpecialMembers.cpp`, has fully defined generic
+owners and meaningful fields. Two explicit `/O1 /Oi /Ob1|Ob0 /Gy /GR- /GX /Zi /GS`
+profiles cold-build with the pinned3077 compiler. Their full46 initialized
+ordinary sections /941 and975 bytes, all92 actual header hashes and complete
+layout[16,8,24,24,24,24] are retained. In both profiles the generic base ctor24,
+user-written direct-POD derived ctor22 and compiler-generated derived dtor5
+compare completely after binding only genuine callee/vtable relocations.
+The same direct-POD constructor also pairs with a user-written empty dtor11;
+that whole11-byte emission is a negative against target5. Generic base dtor16
+is a whole negative against original21. The separate StringState member model
+retains reordered ctor22 /13 byte differences under Ob1 and full non-inlined
+ctor26 under Ob0; neither is cropped. Binding a generic call to an independently
+checked original provider does not recover that provider's private class ABI.
+
+The original object's entire148-byte C11 `.debug$S` contains only the object-name
+and `S_COMPILE2_ST` records. The archived source unit reports frontend13.0.9176,
+backend13.0.9178 and `fNoDbgInfo`, while both actual cold controls report
+13.10.3077. The decoder preserves framing, full payloads, flags and compiler
+strings using Microsoft's [COMPILESYM schema](https://github.com/microsoft/microsoft-pdb/blob/master/include/cvinfo.h).
+This is archived compilation metadata, not an executable-wide compiler fact.
+No private declaration or explicit/generated destructor syntax is present.
+The coherent implicit family strengthens the compiler-generated hypothesis;
+the explicit11 negative under a different compiler cannot settle original
+source syntax. Both620132 /5 and6200DA /24 remain unknown.
+
+Replay `scripts/repo-python scripts/verify-sdk-string-buffer-review.py`.
+Manifest `config/sdk-string-buffer-review-evidence.json` is immutable and pins
+literal unknown pairs, all canonical ledger digests and original proof inputs.
+Nine regression checks reject omitted/cropped contributions and data, compiler
+conflation, erased implicit positives or explicit negatives, unsupported origin
+credit and ignored source/type debug records. Local cold replay, all3551 CI
+checks, target-required tracking, full97 pending hashes/current pairs and3088
+old structured-record trails, all60 exact pairs/28 unchanged inputs and whitespace
+checks pass. Counts remain4254 resolved /97 pending /3608 pending bytes, original
+1311 progress1214/97 and exact60 /9883 bytes. Final complete Web MCP acceptance
+remains due after the requested remaining review; no push is authorized.

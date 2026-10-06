@@ -3,7 +3,7 @@
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
-R247–R252, R258 and R259. The public
+R247–R252, R258, R259 and R264. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,19 +21,70 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R264 StringBuffer contribution and special-member cohort below.
+the bounded R265 original SDK compilation/type-witness audit below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R263; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R264; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
+explicitly unresolved observations.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R264 StringBuffer contribution and special-member context
+## Next agent objective — R265 original SDK compilation and type witnesses
+
+R264 completes the whole StringBuffer source contribution review while retaining
+620132 /5 and6200DA /24 as unknown. Replay
+`scripts/repo-python scripts/verify-sdk-string-buffer-review.py`; see
+[R264 review](ORIGIN_REVIEW.md#r264--complete-stringbuffer-contribution-with-special-member-ownership-unresolved).
+All25 code sections1030, packed primary981, full57 initialized sections1716,
+three vtables84, constants8 and54 actual fields compare unmasked with complete
+CFGs. Complete new14/delete5/ftol39 providers and independent cold SDK/UUID
+GUID identities are retained. Original weak entries have search characteristic2
+and real `_G` fallbacks; do not silently reinterpret them as unconditional aliases.
+
+Two cold3077 profiles retain all46 ordinary sections941/975 and92 header hashes.
+Both have coherent base ctor24/user-written direct-POD ctor22/implicit dtor5
+positives. Whole explicit empty dtor11 and generic base dtor16 stay negatives.
+The separate StringState model retains reordered ctor22 /13 differences under
+Ob1 and full non-inlined ctor26 under Ob0. No original private layout or source
+syntax is recovered by these generic complete owners or genuine field bindings.
+
+The archived Buffer object's entire148-byte C11 debug stream has only object-name
+and compiler records:FE13.0.9176/BE13.0.9178 with no debug information, versus
+actual cold3077 FE/BE13.10.3077. This is a unit-specific archive observation,
+not an executable-wide compiler identification. Different probe-version explicit
+negatives cannot settle original explicit/generated source syntax. Do not reopen
+this same ordinary family without a genuinely new declaration/compiler witness.
+
+Fresh private `.analysis/r265-sdk-debug-survey.json` inventories all146 original
+SDK COFF members:137 `.debug$S` sections and2751 `.debug$F` sections, no `.debug$T`.
+136 complete C11 streams have only one object-name and one compiler record each;
+all report no debug information. Profiles are134 C++ and one C unit with
+FE13.0.9176/BE13.0.9178, plus one C unit with FE/BE13.0.8685. The resource
+member2148824 `obj\i386\d3dx.res` has signature1 and remains explicitly unparsed
+in this discovery. Reconcile this complete metadata survey, the resource's actual
+extent/record format and the19 pending SDK lifetime candidates against their
+own defining objects and prior complete ordinary alternatives. This is a bounded
+search for new original type/declaration witnesses, not an origin transition.
+Absent records do not prove compiler ownership or permit forced classification.
+The whole824-member code survey, opaque list-policy alternatives and all97
+original pending review trails remain intact. No exact scope is added.
+
+Current counts remain4254 resolved =1002 authored+2671 library+581 compiler,
+97 pending /3608 bytes and3252 excluded. Original1311 progress1214 classified
+/97 left; exact60 /9883 bytes /60 units /eleven objects and authored1973516 are
+unchanged. R264 cold replay, all3551 CI checks, target-required tracking, all97
+current pairs/full body hashes and3088 old structured trails, all60 exact pairs/
+28 unchanged inputs and whitespace pass. The reviewed-but-unknown end-state
+question is still unanswered; do not shrink or falsely complete the original
+goal. One final complete Web MCP acceptance remains due after the requested
+remaining review. These commits stay local; no push was authorized.
+
+### Historical R263 checkpoint and R264 discovery
 
 R263 accepts only641DAA /11 as inferred library through the complete source-
 ordered abs11/abs64 auxiliary28 contribution39 at641DAA..641DD1. Source object
