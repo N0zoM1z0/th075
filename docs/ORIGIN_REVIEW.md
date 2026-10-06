@@ -14240,3 +14240,41 @@ Exact coverage stays 60 functions / 9,883 bytes / 60 units across eleven objects
 the authored denominator 1,971,032 and provisional 0.50% are unchanged. Final
 complete Web MCP acceptance remains outstanding until all origin review finishes.
 No source, private ABI, exact-reconstruction or later-phase credit is added.
+
+## R227 investigation in progress — endpoint identities corrected
+
+No additional origins are accepted after R226. All nine current candidates /204
+remain unknown. Full native calls and original header definitions correct the
+initial shortlist:40E9B0/40EA20 are vector const iterator dereference shapes;
+4124B0/41F7E0/532350 are list iterator `_Mynode` shapes; 459890/459A50 are
+mutable vector end;459C40/459C60 are const vector begin/end. The five16-byte
+opaque leaves retain R206's public/ordinary byte-equal alternatives; source
+shape alone does not resolve their ownership.
+
+The natural private fixture `.analysis/probes/R227VectorEndpoints.cpp` compiles
+with the pinned VC7.1 profile. Complete original/manual endpoint scopes retain
+20 sections /552 bytes /12 actual fields /20 CFGs through defining source
+catalogs. All four compatible ordinary endpoint members are byte-equal. Complete
+emission retains55 sections /1416 bytes /51 fields,27 original includes and the
+whole 36-byte readonly observation. These are diagnostic source controls, not
+acceptance or recovery of original private declarations. Fresh attested Ghidra
+callers find 459390 for both const endpoints; its complete208-byte copied vector
+construction was missed by the scanner's parent list. The full
+normal/catch/unwind source owner and original accepted extent must be preserved;
+do not return to the initial162.
+
+Private `.analysis/r227-native.json` retains22 whole native owners /1538 bytes
+and four actual endpoint call windows. Fifteen immutable R209/R211 selected
+snapshots are retained separately. Continue the complete receiver/source-family
+assessment and durable cold verifier before any bounded canonical transition.
+Audit strict successor support and all older verifier consumers before changing
+protected rows: three later immutable manifests pin the R211 verifier script.
+Keep168 pending, all60 exact functions /9883 bytes and the full active
+origin-review goal unchanged.
+
+The fresh diagnostic recheck `.analysis/r227-recheck-cold.py` passes using a new
+temporary object and no cached fallback. Full retained R209 and R211 cold
+replays pass, including their mandatory R210/R208/R150 dependency chains.
+Current CI passes all 3,197 tests; target/tracking and whitespace checks pass.
+These checks preserve the accepted R226 checkpoint and supply no additional
+origin credit.

@@ -20,7 +20,7 @@ bytes is 9,883 / 1,971,032 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R227 vector iterator dereference/offset cohort below.
+the bounded R227 vector endpoint and opaque-leaf cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
@@ -32,7 +32,7 @@ The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R227 vector iterator dereference/offset cohort
+## Next agent objective — R227 vector endpoints and retained opaque leaves
 
 R226 accepts nine complete deque front/back/begin/end/explicit iterator origins
 /365. The immutable manifest and cold verifier are recorded below. The complete
@@ -57,29 +57,65 @@ review finishes. Continue local bounded evidence and necessary cold builds.
 Preserve the R167 cohort already accepted in canonical records; its old next-step
 wording is historical. Do not add exact reconstruction or later project phases.
 
-Next inspect these nine complete vector iterator hypotheses /204:
+Continue these nine complete candidates /204. The initial offset/dereference
+shortlist is corrected by complete native calls and original SDK definitions:
 
 | Candidate | Whole provisional bytes | Diagnostic context |
 | --- | ---: | --- |
 | `0x0040E9B0` |16| const dereference; complete parent40E4C0 |
 | `0x0040EA20` |16| const dereference; complete parent40E530 |
-| `0x004124B0` |16| const dereference; complete parents411EA0/411F20 |
-| `0x0041F7E0` |16| const dereference; complete parent41E120 |
-| `0x00532350` |16| const dereference; complete parents531DF0/531E70 |
-| `0x00459890` |31| iterator offset; actual call442320; parent458E70 |
-| `0x00459A50` |31| iterator offset; actual call442370; parent459060 |
-| `0x00459C40` |31| iterator offset; actual call4456D0; receiver context unresolved |
-| `0x00459C60` |31| iterator offset; actual call4456D0; receiver context unresolved |
+| `0x004124B0` |16| list iterator `_Mynode`; complete parents411EA0/411F20 |
+| `0x0041F7E0` |16| list iterator `_Mynode`; complete parent41E120 |
+| `0x00532350` |16| list iterator `_Mynode`; complete parents531DF0/531E70 |
+| `0x00459890` |31| mutable vector end; actual constructor442320; parent458E70 |
+| `0x00459A50` |31| mutable vector end; actual constructor442370; parent459060 |
+| `0x00459C40` |31| const vector begin; constructor4456D0; parent459390 |
+| `0x00459C60` |31| const vector end; constructor4456D0; parent459390 |
 
 These are diagnostic hypotheses, not accepted source identities. Preserve each
 complete body, fields and control flow; reopen full original vector iterator
-header definitions and source-owned callee closures. Resolve actual increment/
-decrement policy, stride and const/member route from complete new cold source
+header definitions and source-owned callee closures. Resolve actual first/last
+field and mutable/const constructor route from complete new cold source
 controls. Identical short getter bytes or a known library child alone do not
 prove ownership. Reopen complete independently accepted source/context parents
-and their actual argument/result uses, including indirect references for the two
-unresolved offset heads. Retain whole manual and wrong-route alternatives and
-explicit uncertainty about original element declarations/private layouts.
+and their actual argument/result uses. The two const heads have direct calls in
+the complete208-byte459390 copy constructor; the scanner omitted those callers.
+Its full normal/catch/unwind extent supersedes the original162-byte inventory.
+Retain whole manual and wrong-route alternatives and explicit uncertainty about
+original element declarations/private layouts.
+
+The investigation remains diagnostic. Private natural observations in
+`.analysis/probes/R227VectorEndpoints.cpp` compiled with the pinned compiler.
+`.analysis/r227-endpoint-source-plan.json` retains eight full original/manual
+scopes20 sections552/all12 fields/20 CFGs, through actual defining source
+owners. All four compatible ordinary endpoint members are byte-equal. Complete
+ordinary emission is55 sections1416/all51 fields,27 includes and whole36-byte
+readonly layout `[4,116,16,16,16,16,4,4,16]`. The source-width choices are
+generic controls, not recovery of original private types. These comparisons do
+not yet grant origin credit. Attested Ghidra callers and complete native query
+pass. Private `.analysis/r227-native.json` retains22 whole owners1538 and four
+actual endpoint call windows, including the complete208-byte459390 body. Fifteen
+literal selected snapshots in R209/R211 are in
+`.analysis/r227-historical-snapshots.json`.
+
+The five16-byte pointer/reference leaves remain protected by R206's byte-equal
+public and ordinary alternatives. Reopen its recorded uncertainty before any
+classification. For the four31-byte endpoints, finish independent
+receiver/source family assessment, compatible/wrong-route controls and a durable
+cold verifier. Keep all old R209/R211 JSON literal. Their current direct
+canonical checks are coherent before any transition; acceptance must provide
+strictly bounded successor support and retained cold source verification. Before
+editing an older verifier, audit its immutable consumers: three later manifests
+pin the R211 verifier's current script hash. Do not relax those pins or silently
+break retained replays. All nine candidates and168 total pending are unchanged
+during this investigation.
+
+The fresh diagnostic recheck `.analysis/r227-recheck-cold.py` passes using a new
+temporary object and no cached fallback. Full retained R209 and R211 cold
+replays pass, including their mandatory R210/R208/R150 dependency chains.
+Current CI passes all 3,197 tests; target/tracking and whitespace checks pass.
+These checks preserve the accepted R226 checkpoint and supply no additional
+origin credit. Resume details are in `.analysis/r227-resume-plan.json`.
 
 Fresh `.analysis/origin-scan/r226-triage.json` has168 pending and both current
 ledger hashes. Audit old immutable snapshots before accepting any selected row;
