@@ -15591,3 +15591,74 @@ Current 4,234 resolved = 999 authored + 2,655 library + 580 compiler;
 117 left and remains active. Exact 60 functions / 9,883 bytes / 60 units
 across eleven objects remain unchanged; authored denominator 1,973,300 and
 provisional 0.50%.
+
+## R246 — complete original SDK vector deleting scaffold
+
+R246 accepts compiler `0x006114A7` / 76 only, inferred as
+VC7::VectorDeletingDestructor_TF_Row_006114A7. The whole CFG [1, 4], extent,
+original name and source/ABI/mapping/exact state remain unchanged. Replay
+`scripts/repo-python scripts/verify-sdk-row-deleting-helper-origins.py` with
+`config/sdk-row-deleting-helper-origin-evidence.json`, SHA-256
+`7f434aaf7577199ef70489680d45cbd4732a1140c3e67c032cca0fe5afa3da6d`.
+
+The complete original D3DX8 object `obj\i386\cd3dxblt.obj` defines
+`??_ETF_Row@@QAEPAXI@Z` in a whole76-byte COMDAT and destructor
+`??1TF_Row@@QAE@XZ` in a separate whole9-byte COMDAT. Both are re-read from
+the pinned archive with complete COFF definitions/AUX, all six real fields
+and unmasked target equality. The deleting scaffold tests flags2/1, uses the
+array cookie at receiver-4 and stride12, invokes the entire96-byte array
+destructor iterator with the actual9-byte callback, retains normal inline
+member cleanup, and returns with RET4. The internal branch to6114EE reaches
+its own epilogue; it is not a separate called owner. Whole SDK triangle
+parents1140/930 and independent complete runtime96/array-delete5/scalar-delete5/
+free113 retain source context. Callback9 is not added as a new ledger candidate.
+Seven complete anchors / 2,298 bytes and seven canonical pairs are frozen.
+
+Natural complete `tests/origin_probes/RowArrayDeletion.cpp` initializes a
+meaningful storage pointer/count/capacity, allocates an array and deletes it.
+Pinned3077 `/O1 /Ob1 /Gy /GR- /GX /Zi /GS /showIncludes` genuinely emits
+compiler E76, callback9, scalar deleting31 and ordinary array/scalar callers16.
+No handwritten deletion flags, array iterator, target bytes, padding or
+conditional reconstruction body generates the helper. The entire callback9
+matches. Fresh E76 differs at offsets39/40/41: its actual array-delete field
+names `??_V@YAXPAX@Z` and binds64169D, while original SDK E76 field39 names
+scalar delete `??3@YAXPAX@Z` and binds640F15. Both entries remain distinct,
+including array JMPscalar JMPfree. The three genuine differences are retained;
+there is no fresh E76 positive or exact claim. The independent original SDK
+artifact and genuine compiler emission support compiler-scaffold ownership,
+without inferring original private source spelling or an executable-wide profile.
+
+Five whole fresh comparisons / 148 bytes retain all ten fields: callback9
+positive, E76 negative, scalar31 negative and both ordinary16 negatives against
+all76 target bytes. Every absent tail byte and other difference is retained.
+All ten current code/data sections / 312 bytes,22 actual fields,complete COFF/
+AUX/line provenance,eight SDK include owners and whole generic layout[12,4]
+are frozen. There are no weak aliases in this new source. Original SDK source
+artifacts and generic observations are separate; the generic12 layout does
+not recover a private SDK class declaration, element semantics or original ABI.
+
+The entire unchanged original R198 main cold-verifies before transition,
+including four retained predecessor proofs. Original-state fresh-source cold
+verification checks every current native/source/provider/header/layout field
+without a cached-object fallback. Accepted-state verification runs that entire
+unchanged R198 main again under one explicitly checked read-only ledger view:
+only this exact accepted function/origin pair is returned as its literal old
+unknown pair at the old module's CSV-provider seam. The real standard CSV
+reader, argument parser, source, archive, compiler, object and subprocess
+behavior remain unchanged. This preserves all371 old source sections /43,875
+bytes,233 normal/EH/switch/dispatch CFGs,1,363 fields,40 real weak aliases,
+81 complete anchors,49 interior compiler records,cold original public and
+constructor-role controls,full runtime array/EH paths and layouts. Both old
+selected snapshots remain literal. The historical view is not today's label.
+The five other R198 retained lifetime candidates remain unknown.
+
+Strict HEAD76fc9e7 readback allows exactly one function/origin pair to change.
+Ten new guards,target/tracking,readonly Ghidra attestation,progress freshness,
+fresh116-row triage,all60 exact input preservation and whitespace checks pass.
+Accepted full cold verification passes; all 3,436 local CI tests pass.
+One complete Web MCP acceptance remains due after all remaining origin review.
+
+Current 4,235 resolved = 999 authored + 2,655 library + 581 compiler;
+116 pending and 3,236 excluded. Original 1,311 goal has 1,195 classified /
+116 left and remains active. Exact60 /9,883 bytes /60 units across eleven
+objects and authored denominator1,973,300 remain unchanged (provisional0.50%).

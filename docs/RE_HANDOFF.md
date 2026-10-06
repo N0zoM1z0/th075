@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R245. The public
+review cohorts R108 through R246. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,234: 999 authored, 2,655 library and 580 compiler generated.
-There are 117 pending. Candidate count is not authored function count.
+has resolved 4,235: 999 authored, 2,655 library and 581 compiler generated.
+There are 116 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,55 +20,64 @@ bytes is 9,883 / 1,973,300 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R246 compiler lifetime investigation below.
+the bounded R247 SDK lifetime investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R245; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R246; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R246 complete lifetime scaffolding
+## Next agent objective — R247 SDK lifetime evidence
 
-R245 accepted one authored replay-browser cleanup265 after both-state cold
-proofs and ten new guards. There are 117 origins pending; original 1,311 goal
-has 1,194 classified / 117 left and remains active. The user pushed through
-c9b8efa; subsequent commits remain local. Continue serial local investigation
-while preserving every accepted origin and all 60 exact functions. One complete
-Web MCP acceptance is required after all remaining review; it remains due.
+R246 accepts one complete compiler vector deleting helper6114A7 /76.
+There are116 origins pending; original1,311 goal has1,195 classified /116 left
+and remains active. The user pushed throughc9b8efa; subsequent commits remain
+local. Continue serial local investigation while preserving every accepted
+origin and all60 exact functions. One complete Web MCP acceptance is required
+after all remaining review and remains due.
 
-Next investigate complete pending6114A7 / 76. Private
-`.analysis/r246-runtime-triage-native.json` retains its whole instructions,
-original candidate record and reviewed parents, alongside the other large
-pending candidates. It branches on deletion flags, invokes the actual
-array-destructor runtime with callback6111E1, and reaches its internal
-epilogue6114EE after scalar cleanup. This is a possible complete compiler deleting scaffold, not yet an
-origin result. Reconcile source AUX/extents, full normal/array paths, every
-actual field, called owners and original flags; do not classify it from a
-reviewed parent or cropped fingerprint. Preserve previous lifetime/copy,
-no-reference and SDK-versus-ordinary ambiguities.
+Next investigate whole pending60B728 /104 and its original SDK source context.
+R198's immutable `config/sdk-blit-origin-evidence.json` retains that defining
+constructor and the complete original object, vtable/fields/callers alongside
+five other original lifecycle alternatives. Current private
+`.analysis/r246-runtime-triage-native.json` records its complete native body
+and reviewed library parent605107. It writes vtable65D3C0 and explicit-looking
+initial values; this alone does not establish source ownership or distinguish
+implicit member construction from an explicit default constructor. Reconcile
+whole original source owners, complete actual source/caller/data fields and
+natural emitted alternatives before any transition. Do not classify it from
+its SDK name, a parent or a convenient constructor fingerprint. Preserve all
+previous constructor/copy/destructor and no-reference ambiguities.
 
-Private `.analysis/r246-array-diagnostic.json` and its log re-read complete
-original SDK `??_ETF_Row@@QAEPAXI@Z` / 76 and callback destructor9 from pinned
-D3DX8 archive member `obj\i386\cd3dxblt.obj`, retaining whole source COFF/AUX,
-every real field and unmasked target equality. The original R198 records remain
-literal unknown snapshots; no new transition is accepted. Natural complete
-`.analysis/probes/R246ArrayDeletion.cpp` cold-builds pinned3077 with
-`/O1 /Ob1 /Gy /GR- /GX /Zi /GS /showIncludes`, genuinely emits nonvirtual
-compiler E76 and matches the entire callback9. Fresh E76 has three byte
-differences at offsets39/40/41: its real array-delete symbol binds64169D while
-the original SDK E's actual field names scalar-delete640F15. Do not change that
-binding to obtain equality or infer an executable-wide compiler profile.
-Whole scalar deleting31 and both ordinary callers16 also retain all differences
-against76. The source12 layout is a complete generic observation, not an
-original private SDK declaration. Next freeze full source providers, original
-library/array-runtime context and the historical selected snapshots before a
-possible compiler-origin inference. Current R246 readonly Ghidra preflight is
-attested in `.analysis/r246-preflight-ghidra.log`; no database write occurred.
+Private `.analysis/r247-sdk-default-constructor-context.json` now identifies
+60B728 as complete original `??0CD3DXRenderToEnvMap@@QAE@XZ`, with its actual
+single vtable field and complete public create caller605107. Its archive member
+is `obj\i386\cd3dxrendertoenvmap.obj` (20,010 bytes). Private
+`.analysis/r247-sdk-type-availability.json` confirms the object retains a
+156-byte debug$S compile record and FPO debug$F entries, but no debug$T type
+section or source-file definitions. This is no original private member-type
+proof; do not reinterpret the compiler/FPO records as a complete class layout.
+Resolve original table/provider placements through R198's anchors/definitions
+and retain all public-interface and ordinary constructor alternatives.
+
+R246's whole original SDK E76 and callback9 reproduce unmasked from pinned
+`obj\i386\cd3dxblt.obj`. Genuine fresh compiler E76 has three differences at
+39/40/41 because its real array-delete symbol binds64169D and original SDK E
+actually uses scalar-delete640F15. This field remains honest; fresh E76 is a
+whole negative, while callback9 matches. Full scalar31 and ordinary callers16
+retain every difference. Complete SDK parents1140/930 and entire array runtime96
+retain context. The new generic12 layout is not an original private SDK layout
+or a global compiler profile. The entire unchanged R198 main runs under a
+single validated read-only selected historical pair, preserving all original
+source/weak/fields/public/constructor/default/copy/layout/predecessor proofs;
+old manifests and their two literal selected unknown snapshots stay unchanged.
+The five other R198 lifetime candidates remain unknown. Fresh
+`.analysis/origin-scan/r246-triage.json` records116 pending/current ledger hashes.
 
 R245 freezes full explicit265, cleanup/handler51, metadata60, observed current
 three-slot table12, both deleting wrappers44, SDK size/index/member closures

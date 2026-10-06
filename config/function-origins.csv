@@ -2807,7 +2807,7 @@ address,origin,subsystem,disposition,confidence,evidence_id
 0x0061119B,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x006111A5,library,D3DX8SDK,exclude,complete-vendor-body-typed-caller,R026
 0x006111EA,library,D3DX8,exclude,whole-pinned-sdk-comdat-with-independent-callee-import-and-scalar-fields,R184
-0x006114A7,unknown,,review,unknown,ghidra-12.1.3-initial-inventory
+0x006114A7,compiler,VC71Compiler,exclude,whole-original-sdk-compiler-vector-deleting-scaffold-and-independent-cold-emission-with-real-array-delete-entry-difference,R246
 0x006114F3,library,D3DX8,exclude,whole-original-sdk-blit-codec-policy-complete-scoped-source-weak-switch-dispatch-and-public-abi,R198
 0x00611967,library,D3DX8SDK,exclude,complete-vendor-body,R008
 0x00611AFB,library,D3DX8SDK,exclude,complete-vendor-body,R008
