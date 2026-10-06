@@ -12374,3 +12374,73 @@ Current4,229 resolved =997 authored+2,652 library+580 compiler;122 pending and
 3,232 excluded. The original1,311 goal has1,189 classified /122 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,950 and provisional0.50%.
+
+## R243 — complete character-list front and dereference closure
+
+R243 accepts library `0x00540220` / 32, `0x00540240` / 19 and
+`0x00540260` / 25: three whole methods / 76 bytes. Their inferred operations
+are list front, mutable iterator dereference and const iterator dereference.
+Original extents, names, source/private ABI, mappings and exact state remain
+unchanged. The following external INT3 gaps are0/13/7 bytes; no padding is
+credited. Opaque payload540280 / 11 and prior nextnode531D80 / 8 remain unknown.
+
+Replay `scripts/repo-python scripts/verify-character-list-front-origins.py`
+with immutable `config/character-list-front-origin-evidence.json`, SHA-256
+`2cdf210897cd45171f52cddccd7440d31959ec116356281f435cf39bdd29d818`.
+The independently accepted complete R170 character-list begin/end, insertion,
+value-node allocation and original R0491008-byte policy establish actor+0xFEC
+as the same list with observed value16/node24/cursor4. The complete39,999-byte
+CharacterObject::Advance536400 has10,573 instructions, original guarded switch
+records and full CFG[1,968]. It loads the actor through receiver+0xE4, adds0xFEC,
+calls front32 and consumes the returned record at offsets0/2/4/8/12/14 for
+action identifiers, coordinates and direction. All17 whole native anchors /
+41,770 bytes and20 canonical pairs are frozen and rechecked. A contextual
+instruction window never substitutes for the full owner comparison.
+
+Fresh `tests/origin_probes/CharacterListFront.cpp` includes the unchanged
+original character-list policy source and instantiates genuine VC7.1 list
+definitions with a complete generic16-byte record. Pinned3077 `/Od /Ob0 /Gy
+/GR- /GX /Zi /GS /I src /I probes /showIncludes` emits full front32 calling
+genuine begin42 and mutable dereference19; the latter calls const dereference25
+and entire opaque payload11. Fresh full begin42, nextnode8 and iterator28 /
+const-iterator24 constructors close every real call with its actual defining
+source owner. Nine entire unmasked comparisons /221 bytes and nine real fields
+include the ordinary First32 spelling, `return *entries.begin()`, which remains
+byte-equal. Source-family inference does not prove original method spelling.
+Ghidra's void/fastcall recovery for reference-returning methods is not an
+original ABI declaration. The original element type, private layout and
+executable-wide compiler profile remain unknown; no source or exact credit.
+
+All281 cold code/data sections /12,482 bytes,600 actual fields,complete COFF/AUX/
+line provenance,34 actual include owners and three real weak aliases are
+frozen. The whole120-byte thirty-word sizeof section preserves all literal
+old100-byte arrays and appends[16,12,4,4,12]. The complete ordinary observer
+contains a real list member; its size12 is a generic observation, not a recovered
+private character type. No incomplete original owner, padding, source byte
+arrays, target edits or cropped bodies are introduced.
+
+Both original and accepted cold proofs run the entire unchanged original R170
+main with exactly nine checked historical successor pairs. These are
+40E000/R223,41206F/4122C9/41EFE6/532196/R218,45B880/R222,5F84B0/R223 and
+654ACE/654B0E/R219. Each immutable successor original and accepted pair must
+equal its literal old snapshot and today's canonical pair before projection
+at the read-only metadata-provider seam. No old manifest/source/compiler/object,
+standard-library or subprocess behavior is patched. All twelve old library
+dependencies /720 bytes,227 snapshots,80 original source/code/EH/throw/RTTI/data
+comparisons /3,763 bytes,189 genuine fields,two whole node-width negatives /
+40 bytes,275 old ordinary sections /12,330 bytes,33 old include owners,six
+registered frames and whole100-byte layout replay unchanged. The original
+standalone current-state CLI still rejects its historical snapshots; the
+historical view is not a claim about today's canonical labels.
+
+An empty selected historical audit and strict HEADff7ca2a readback permit only
+three canonical pairs to change. All previous origin evidence,protected unknowns
+and60 exact inputs remain unchanged. Original/accepted cold proofs,ten new
+guards,target/tracking,readonly Ghidra attestation and query completion,fresh
+119-row triage,progress freshness and whitespace checks pass. All 3,406 local CI tests pass. One complete Web MCP acceptance
+remains due after all remaining review finishes.
+
+Current4,232 resolved =997 authored+2,655 library+580 compiler;119 pending and
+3,235 excluded. Original1,311 goal has1,192 classified /119 left and stays
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,950 and provisional0.50%.

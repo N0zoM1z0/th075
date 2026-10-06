@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R242. The public
+review cohorts R108 through R243. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,8 +11,8 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,229: 997 authored, 2,652 library and 580 compiler generated.
-There are 122 pending. Candidate count is not authored function count.
+has resolved 4,232: 997 authored, 2,655 library and 580 compiler generated.
+There are 119 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
@@ -20,39 +20,57 @@ bytes is 9,883 / 1,972,950 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R243 character-list access investigation below.
+the bounded R244 bounded access investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R242; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R243; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R243 character-list access
+## Next agent objective — R244 bounded access investigation
 
-R242 accepted six complete archive iterator methods / 162 bytes. There are 122
-origins pending; the original 1,311 goal has 1,189 classified / 122 left and
-remains active. Original and accepted R242 cold proofs and seventeen new guards
-pass. The accepted local CI run covers 3,396 tests. The user pushed through
-c9b8efa; later commits remain local. Continue local serial investigation while
-preserving every accepted origin and all 60 exact functions.
-The user requires one complete Web MCP acceptance after all remaining origin
-review finishes. That final full run remains outstanding.
+R243 accepted three character-list front/dereference methods /76 bytes after
+complete original and accepted cold proofs,ten new guards and unchanged full
+R170 replay with nine verified later historical pairs. There are119 origins
+pending; the original1,311 goal has1,192 classified /119 left and remains active.
+The user pushed throughc9b8efa; later commits remain local. Continue local serial
+investigation while preserving all accepted origins and60 exact functions.
+One complete Web MCP acceptance is required after all remaining origin review
+finishes; that final full run remains outstanding.
 
-Next inspect pending540220 / 32,540240 / 19 and540260 / 25. The first invokes
-independently accepted R170 list begin531DA0 / 42 and then540240 / 19; the latter
-forwards to540260 / 25 and opaque payload helper540280 / 11. Whole independently
-accepted CharacterObject::Advance536400 / 39,999 calls the32-byte entry. Reopen
-its entire original guarded switches, receiver/return use and complete R170
-list source/context. Contrast genuine public list::front and ordinary forms;
-do not infer a method from a32-byte shape. The character payload width16 is an
-observation, not a recovered original declaration. Keep opaque540280 / 11 and
-other short node helpers unknown unless independent complete evidence resolves
-their ownership. No source/private ABI/mapping or exact scope is added.
+Reopen pending 40D980 / 14 and 40D9F0 / 14 with complete geometry parents.
+Private `.analysis/r244-geometry-native.json` and the attested complete Ghidra
+query `.analysis/r244-geometry.c` show that zero initialization85, rectangle
+initialization259 and RECT initialization305 ignore their return values and
+call them at offsets0/16/32/48 and64 before initializing storage. They are
+lifetime candidates, rather than established pointer accessors. Preserve both
+unknown until whole genuine SDK and ordinary construction alternatives plus
+independent defining ownership are checked. Existing exact51-byte four-dword
+helper40DB10 remains unchanged; do not infer a complete private geometry type.
+
+Private `.analysis/r244-native.json` also preserves full integer-abs and
+float atan2 forwarding chains. The complete10-byte accepted atan2 runtime
+entry642240 ends in an independently bound jump; an authored final-RET CFG
+checker correctly rejects that runtime entry. Its explicit CFG question is
+retained, not replaced with a truncated body. Preserve R163 SDK/ordinary math
+alternatives, R108 constructor411C10 and allocator lifetime4212A0 as unknown.
+No new canonical origin or exact scope is accepted by these diagnostics.
+
+R243's whole front32 calls independently accepted begin531DA0 /42 and mutable
+dereference540240 /19,which calls const dereference540260 /25 and opaque
+payload540280 /11. Entire39,999-byte CharacterObject::Advance536400 loads the
+same actor+0xFEC list and consumes returned record offsets0/2/4/8/12/14. Original
+R170/R049 complete insertion/allocation/context independently establish generic
+value16/node24/cursor4. Fresh source closes every call through actual full
+defining begin and both iterator constructors. Entire ordinary First32 remains
+equivalent; original spelling/private element/layout/ABI/profile remain unknown.
+Opaque540280 /11 and531D80 /8 retain unknown. Fresh private
+`.analysis/origin-scan/r243-triage.json` records119 pending/current ledger hashes.
 
 R242's whole archive arrow19, mutable dereference19 and const dereference25
 form one source-owned chain; postfix42, mutable prefix22 and const prefix35
@@ -116,6 +134,76 @@ R18341CA30 /77, R212455770 /111, five R163 math chains, opaque/node policies and
 constructors458650 /31 and458670 /23 as unknown. DwStack61FB37 and codec61A453
 retain protected R195/R198 alternatives. Extent questions60C120 /11 and620132
 /5 need complete defining source/metadata. Shared tools remain read-only.
+
+## R243 — complete character-list front and dereference closure
+
+R243 accepts library `0x00540220` / 32, `0x00540240` / 19 and
+`0x00540260` / 25: three whole methods / 76 bytes. Their inferred operations
+are list front, mutable iterator dereference and const iterator dereference.
+Original extents, names, source/private ABI, mappings and exact state remain
+unchanged. The following external INT3 gaps are0/13/7 bytes; no padding is
+credited. Opaque payload540280 / 11 and prior nextnode531D80 / 8 remain unknown.
+
+Replay `scripts/repo-python scripts/verify-character-list-front-origins.py`
+with immutable `config/character-list-front-origin-evidence.json`, SHA-256
+`2cdf210897cd45171f52cddccd7440d31959ec116356281f435cf39bdd29d818`.
+The independently accepted complete R170 character-list begin/end, insertion,
+value-node allocation and original R0491008-byte policy establish actor+0xFEC
+as the same list with observed value16/node24/cursor4. The complete39,999-byte
+CharacterObject::Advance536400 has10,573 instructions, original guarded switch
+records and full CFG[1,968]. It loads the actor through receiver+0xE4, adds0xFEC,
+calls front32 and consumes the returned record at offsets0/2/4/8/12/14 for
+action identifiers, coordinates and direction. All17 whole native anchors /
+41,770 bytes and20 canonical pairs are frozen and rechecked. A contextual
+instruction window never substitutes for the full owner comparison.
+
+Fresh `tests/origin_probes/CharacterListFront.cpp` includes the unchanged
+original character-list policy source and instantiates genuine VC7.1 list
+definitions with a complete generic16-byte record. Pinned3077 `/Od /Ob0 /Gy
+/GR- /GX /Zi /GS /I src /I probes /showIncludes` emits full front32 calling
+genuine begin42 and mutable dereference19; the latter calls const dereference25
+and entire opaque payload11. Fresh full begin42, nextnode8 and iterator28 /
+const-iterator24 constructors close every real call with its actual defining
+source owner. Nine entire unmasked comparisons /221 bytes and nine real fields
+include the ordinary First32 spelling, `return *entries.begin()`, which remains
+byte-equal. Source-family inference does not prove original method spelling.
+Ghidra's void/fastcall recovery for reference-returning methods is not an
+original ABI declaration. The original element type, private layout and
+executable-wide compiler profile remain unknown; no source or exact credit.
+
+All281 cold code/data sections /12,482 bytes,600 actual fields,complete COFF/AUX/
+line provenance,34 actual include owners and three real weak aliases are
+frozen. The whole120-byte thirty-word sizeof section preserves all literal
+old100-byte arrays and appends[16,12,4,4,12]. The complete ordinary observer
+contains a real list member; its size12 is a generic observation, not a recovered
+private character type. No incomplete original owner, padding, source byte
+arrays, target edits or cropped bodies are introduced.
+
+Both original and accepted cold proofs run the entire unchanged original R170
+main with exactly nine checked historical successor pairs. These are
+40E000/R223,41206F/4122C9/41EFE6/532196/R218,45B880/R222,5F84B0/R223 and
+654ACE/654B0E/R219. Each immutable successor original and accepted pair must
+equal its literal old snapshot and today's canonical pair before projection
+at the read-only metadata-provider seam. No old manifest/source/compiler/object,
+standard-library or subprocess behavior is patched. All twelve old library
+dependencies /720 bytes,227 snapshots,80 original source/code/EH/throw/RTTI/data
+comparisons /3,763 bytes,189 genuine fields,two whole node-width negatives /
+40 bytes,275 old ordinary sections /12,330 bytes,33 old include owners,six
+registered frames and whole100-byte layout replay unchanged. The original
+standalone current-state CLI still rejects its historical snapshots; the
+historical view is not a claim about today's canonical labels.
+
+An empty selected historical audit and strict HEADff7ca2a readback permit only
+three canonical pairs to change. All previous origin evidence,protected unknowns
+and60 exact inputs remain unchanged. Original/accepted cold proofs,ten new
+guards,target/tracking,readonly Ghidra attestation and query completion,fresh
+119-row triage,progress freshness and whitespace checks pass. All 3,406 local CI tests pass. One complete Web MCP acceptance
+remains due after all remaining review finishes.
+
+Current4,232 resolved =997 authored+2,655 library+580 compiler;119 pending and
+3,235 excluded. Original1,311 goal has1,192 classified /119 left and stays
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,950 and provisional0.50%.
 
 ## R242 — complete archive iterator access and advancement
 
