@@ -16061,3 +16061,100 @@ All 3,448 local CI tests pass, including the twelve new source/context guard
 tests. Target/tracking, exact 60 input preservation, fresh 114-row triage,
 progress freshness and whitespace checks pass. The accepted-state complete
 cold CLI passed before this documentation-only final update.
+
+## R254 — complete same-receiver vector subobject destruction
+
+R254 accepts only `0x00409380` /19, `0x0040DCC0` /19 and `0x0040DE80` /19
+as library vector destructors. `0x00409490`, `0x0040DE30` and `0x0040DF40`,
+all19 bytes, remain unknown. The deciding evidence is independently accepted
+vector construction42 followed by the real completed-construction EH state
+and compiler cleanup of the same receiver/subobject. A library Tidy callee
+or equal19-byte body alone cannot classify a wrapper.
+
+| Original constructor | Completed state / receiver | Actual unwind cleanup | Library destructor |
+| --- | --- | --- | --- |
+| `0x00409350` /42 in Audio AcquireClient161 | state0; saved receiver | `0x00654DE0` /8 | `0x00409380` /19 |
+| `0x0040DC90` /42 in Texture Initialize177 | state1; receiver+8 | `0x00654EA8` /11 | `0x0040DCC0` /19 |
+| `0x0040DE50` /42 in Texture Initialize177 | state2; receiver+24 | `0x00654EB3` /11 | `0x0040DE80` /19 |
+| `0x0040DE50` /42 in Texture Initialize177 | state3; receiver+40 | `0x00654EBE` /11 | `0x0040DE80` /19 |
+
+The complete original Audio ReleaseClient292 and Texture ReleaseResources434
+paths and their own EH frames corroborate subobject destruction. All four
+original frame owners, registrations, full unwind tables/FunctionInfo and
+every actual cleanup callback are retained. Each constructor call is followed
+immediately by its state store; receiver loads and offsets agree with the
+corresponding actual compiler cleanup. This identifies the library lifetime
+role without recovering the game owner or original element declarations.
+
+`config/member-vector-lifetime-origin-evidence.json` freezes all three literal
+original/accepted transitions, every unrelated canonical-row hash,69 whole
+native bodies /4,073 bytes, four whole compiler code/data carriers /368 bytes,
+three separate13-byte INT3 alignments and complete original evidence records.
+`scripts/verify-member-vector-lifetime-origins.py` checks all selected source
+bytes and actual defining providers, not masked relocation fields. One natural
+public fixture cold-builds under pinned3077 /Od /Ob0 /Gy /GR- /GX /Zi /GS;
+all included headers,137 ordinary initialized sections /5,714 bytes, separate
+112-byte BSS storage, actual definitions/AUX/fields and both genuine weak
+references are inventoried. The57 whole unmasked comparisons cover2,195
+source bytes; duplicates are alternatives, not additional target credit.
+
+The complete source EH carrier18 includes callback8 and dispatch10, with
+roots0/8; its entire corresponding source unwind/FunctionInfo carrier36 also
+compares. Local source definitions retain their actual offsets and defining
+sections. No chosen8-/11-byte prefix is credited. Natural inherited policy
+constructors72 and destructors69 use actual vector constructor/destructor
+providers plus an independently declared policy operation. Their ordinary
+Cleanup19 methods compare completely with all three pending clear wrappers.
+Thus a policy owner can construct through the library base42 and still own a
+byte-equal ordinary Cleanup19. These clears remain unknown. The natural
+three-vector owner emits constructor102/destructor99 and complete EH carriers40;
+the original texture handlers62 and observed offsets8/24/40 are retained as
+actual differences. No original class size/layout is fabricated or padded.
+
+The selected provider graph includes the complete vector construction,
+storage, cleanup, category/range/deallocation and allocation carriers. Its
+explicit retained boundaries include whole capacity-failure90 carriers and
+original exception provenance, plus the record44 element destruction endpoint
+`0x0040F9F0` /15. A genuine trivial generic element destruction5 differs from
+that original15. The full R161 SDK/ordinary alternatives still leave that
+endpoint and its protected R108 lifetime `0x0040D8E0` /19 unknown. Neither
+receives origin credit or an invented private element declaration here.
+Unselected emitted sections are inventories, not invented target mappings.
+
+The accepted-state CLI cold-builds the new fixture and replays the entire
+unchanged R253 proof, including all five natural control objects, the retained
+static fixture and full R024, R090/R089, R142/R141/R038 and R121/R120 trees.
+R253's strict canonical view projects only the three exact validated R254
+pairs to their original unknown snapshots. Its manifest/verifier remain
+unchanged, and unrelated rows are still rejected. Full R161 replay additionally
+uses only its two independently validated original-to-R208 insertion transitions:
+the historical777-byte snapshots are preserved, while the entire current R208
+proof verifies the reconciled796-byte carriers and its complete R150 graph.
+The original authored and compiler CLI proofs also pass. No reduced manifest,
+cached object fallback or global CSV/argument monkeypatch is used. Sixteen
+focused tests reject missing construction states, wrong receiver/state/provider,
+cropped EH carriers, substituted local metadata, erased ordinary positives
+and unsupported historical transitions. The retained R253 canonical-view test
+uses the same explicitly validated successor projection.
+
+Current counts are4240 resolved =999 authored+2660 library+581 compiler,
+111 pending /3,999 bytes and3241 excluded. Original1311 progress is1200
+classified /111 left. Exact60 /9883 bytes /60 units /eleven objects and authored
+denominator1973300 stay unchanged. The remaining matrix rereads all111 whole
+hashes/current literal pairs and preserves the original116-row R251 artifact.
+The full remaining-review goal remains active; the reviewed-but-unknown end-state
+question is unanswered. One final complete Web MCP acceptance remains due
+when the requested remaining-review end state is satisfied.
+
+Next bounded R255 covers eight19-byte vector wrappers: `0x004589F0`,
+`0x00458A80`, `0x00458AD0`, `0x00458B50`, `0x00458BA0`, `0x00458C20`,
+`0x005F7FA0` and `0x005F8020`. Private `.analysis/r255-context.json` freezes
+28 whole native bodies /8,461 bytes, nine real EH frames and24 original
+constructor/cleanup calls. Four accepted vector constructors42 and four
+cleanup103/110 anchors are retained. All eight remain unknown pending full
+source/context review; preserve ordinary clear and R158 mixed-copy alternatives.
+No exact scope is added. Local commits are not pushed without authorization.
+
+All3464 public CI tests pass. Target identity, required tracking validation,
+all60 exact input/row guards, remaining111-row triage, progress freshness and
+whitespace checks pass. Complete accepted-state cold replay passes before handoff.

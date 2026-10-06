@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 114 pending candidates, covering 4,056 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 114
+This report records the current 111 pending candidates, covering 3,999 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 111
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -11,13 +11,14 @@ The exact baseline remains 60 functions /9,883 bytes /60 units across eleven
 objects. No target, reconstruction source/ABI declaration, mapping or exact
 ledger changes are made for this matrix.
 
-The original R251 audit covered all 116 whole target bodies, 114 RET-based
-CFGs and both complete 11-/5-byte native tail cases. R253 classifies two19-byte
-library lifetimes through the complete paired same-global source/context
-proof recorded below; their original unknown snapshots are preserved in the
-private R251 artifact. The current remaining projection has112 RET-based
-bodies and the same two native tail cases. Every remaining whole body hash and
-literal canonical pair is read back after the bounded R253 transition.
+The original R251 audit covered all116 whole target bodies,114 RET-based
+CFGs and both complete11-/5-byte native tail cases. R253 classifies two19-byte
+library lifetimes through the complete paired same-global chain. R254 classifies
+three19-byte vector destructors through independently accepted construction42
+and actual completed-state EH cleanup of the same subobject. Their original
+unknown snapshots remain preserved. The current remaining projection has109
+RET-based bodies and the same two native tail cases. Every remaining whole
+body hash and literal canonical pair is read back after these bounded transitions.
 
 Original structured references are read back by exact JSON trail and original
 record hash; current artifact file hashes are retained. Source/control/context
@@ -25,7 +26,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r253-remaining-review.json` retains the current literal
+Private `.analysis/r254-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -41,8 +42,7 @@ scope clarification is presumed.
 | Address | Bytes | Evidence gap category | Whole target observation | Representative prior evidence | Required distinguishing witness |
 | --- | ---: | --- | --- | --- | --- |
 | `0x004073A0` | 11 | empty-body | 7 instructions; 0 branches; RET 0; 0 calls | No discovered structured record; full target audit retained. | Original empty-operation signature and owner. |
-| `0x00409380` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
-| `0x00409490` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
+| `0x00409490` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [member-vector-lifetime-origin-evidence.json](../config/member-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; paired EH identifies a separate destructor. |
 | `0x0040D8C0` | 22 | default-or-lifetime | 10 instructions; 0 branches; RET 0; 1 calls | [game-lifetime-origin-evidence.json](../config/game-lifetime-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x0040D8E0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [game-lifetime-origin-evidence.json](../config/game-lifetime-origin-evidence.json); [vector-count-assignment-origin-evidence.json](../config/vector-count-assignment-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x0040D900` | 17 | floating-or-geometry | 8 instructions; 0 branches; RET 0; 1 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
@@ -51,10 +51,8 @@ scope clarification is presumed.
 | `0x0040D960` | 28 | floating-or-geometry | 12 instructions; 0 branches; RET 0; 1 calls | [math-overload-origin-evidence.json](../config/math-overload-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x0040D980` | 14 | floating-or-geometry | 8 instructions; 0 branches; RET 0; 0 calls | [effect-manager-lifetime-origin-evidence.json](../config/effect-manager-lifetime-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
 | `0x0040D9F0` | 14 | floating-or-geometry | 8 instructions; 0 branches; RET 0; 0 calls | [effect-manager-lifetime-origin-evidence.json](../config/effect-manager-lifetime-origin-evidence.json) | Typed operation/owner beyond ordinary math alternatives. |
-| `0x0040DCC0` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
-| `0x0040DE30` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
-| `0x0040DE80` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
-| `0x0040DF40` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | No discovered structured record; full target audit retained. | Outer lifetime/declaration and receiver identity. |
+| `0x0040DE30` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [member-vector-lifetime-origin-evidence.json](../config/member-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; paired EH identifies a separate destructor. |
+| `0x0040DF40` | 19 | default-or-lifetime | 9 instructions; 0 branches; RET 0; 1 calls | [member-vector-lifetime-origin-evidence.json](../config/member-vector-lifetime-origin-evidence.json); original whole audit | Original ordinary-clear versus vendor namespace; paired EH identifies a separate destructor. |
 | `0x0040E9B0` | 16 | container-or-ordinary-leaf | 9 instructions; 0 branches; RET 0; 0 calls | [vector-list-leaf-alternatives-origin-evidence.json](../config/vector-list-leaf-alternatives-origin-evidence.json); [vector-endpoint-route-origin-evidence.json](../config/vector-endpoint-route-origin-evidence.json) | Original receiver/element and leaf source identity. |
 | `0x0040EA20` | 16 | container-or-ordinary-leaf | 9 instructions; 0 branches; RET 0; 0 calls | [vector-list-leaf-alternatives-origin-evidence.json](../config/vector-list-leaf-alternatives-origin-evidence.json); [vector-endpoint-route-origin-evidence.json](../config/vector-endpoint-route-origin-evidence.json) | Original receiver/element and leaf source identity. |
 | `0x0040F9F0` | 15 | default-or-lifetime | 7 instructions; 0 branches; RET 0; 1 calls | [vector-count-assignment-origin-evidence.json](../config/vector-count-assignment-origin-evidence.json); [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
@@ -164,3 +162,11 @@ Ordinary19-byte cleanup and15-byte global callback source positives are
 retained explicitly; they do not establish ownership alone. The accepted
 confidence concerns the library family, with original element types and the
 precise destructor/clear source alias remaining provisional.
+
+R254 removes three complete vector destructor19 bodies through independent
+same-receiver construction states and actual EH cleanup. The three ordinary
+clear aliases remain in the matrix, with whole inherited Cleanup19 positives.
+See [the R254 review](ORIGIN_REVIEW.md#r254--complete-same-receiver-vector-subobject-destruction)
+and [its immutable evidence](../config/member-vector-lifetime-origin-evidence.json).
+The original element endpoint40F9F0 /15 and protected40D8E0 /19 remain unknown.
+Current total:111 candidates /3999 bytes, all with unresolved origins.
