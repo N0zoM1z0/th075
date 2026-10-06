@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed bounded origin
-review cohorts R108 through R235. The public
+review cohorts R108 through R236. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -11,82 +11,145 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,214: 988 authored, 2,646 library and 580 compiler generated.
-There are 137 pending. Candidate count is not authored function count.
+has resolved 4,217: 991 authored, 2,646 library and 580 compiler generated.
+There are 134 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,972,381 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,972,757 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R236 scene record-lifetime investigation below.
+the bounded R237 archive-catalog first-user investigation below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R235; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R236; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R236 complete scene record lifetime context
+## Next agent objective — R237 archive-catalog first-user policy
 
-R235 accepts the whole options texture/resource cleanup below. Original and
-accepted cold proofs and3,303 local CI tests pass. Current4,214 resolved =988
-authored+2,646 library+580 compiler;137 pending and3,226 excluded. The original
-1,311 goal has1,174 classified /137 left and remains active. Push reached68d9258;
-subsequent commits are local. Full Web MCP acceptance remains required after all
-origin review finishes. Continue local investigation and serial cold builds.
+R236 accepts the three whole music scene/record policies below. Original and
+accepted cold proofs and 3,313 local CI tests pass. There are 134 origins pending;
+the original 1,311 goal has 1,177 classified / 134 left and remains active. Push
+reached68d9258; subsequent commits remain local. The user requires one complete
+Web MCP acceptance after all remaining origin review finishes. Continue local
+investigation and serial cold builds while preserving every accepted origin and
+the sixty-function exact baseline.
 
-Next inspect whole244-byte pending scene cleanup4258D0 and its actual50-/82-byte
-record lifetime callbacks427430/427470. The full native cleanup observes four
-unconditional virtual releases, the conditional resource deletion already seen
-in R234/R235, independent game manager/mode operations, a CRT array destruction
-call with count60/stride16 and observed record destructor427470, then base cleanup.
-Those preliminary native facts are not origin evidence. Reopen the entire paired
-independently accepted initializer, all installed scene table peers, actual array
-construction/destruction and record/resource consumers before attribution.
-Contrast complete natural policy/compiler/library alternatives. Do not fabricate
-record fields or padding to invent a private layout, instantiate an
-incomplete game class, crop an array/EH carrier or infer original source/ABI from
-a paired compiler wrapper alone. If independently supported, accept only bounded
-whole origin decisions and preserve exact/source state.
+Next inspect the complete 56-byte pending body `0x0041CE10`. Full native
+instructions and its CFG are in `.analysis/r237-next-shortlist.json`. It tests
+shared count68BE04, calls complete deque-family operations41DCD0 /19 and41DF50 /19
+on the two observed global receivers68BE08 and68BE1C only for the first user,
+then increments that count and returns the incoming receiver. These observations
+alone are not acceptance. Reopen whole independent ArchiveCatalog::Release
+41CE50 /171, named archive registration41CF80 /245 and closure41D080 /264, actual
+GameApplication::Run602A60 /2987 call/receiver and complete original deque source
+owners. Retained R077 and R225 give source and independent archive use context;
+do not infer the original member spelling from a destructor-shaped library alias.
+Contrast full natural explicit count/first-user policy and compiler/library
+alternatives, preserve actual call ownership and all normal/exception/data
+extents, and audit old selected snapshots before any bounded transition. No old
+evidence, ambiguity, private layout/ABI, exact input or later phase may change.
 
-Private R236 observations are now retained in
-`.analysis/r236-record-shortlist.json` and
-`.analysis/r236-music-source-diagnostic.json`. The full372-byte MusicRoomScene
-initializer425750 and whole catalog426DD0 /916 are reopened. The catalog indexes
-records with SHL4, allocates/copies/NUL-terminates three buffers at record+4/+8/+C
-and uses record+0 as the active flag. Full original CRT constructor98 reads
-size[EBP+0xC] and count[EBP+0x10]; caller order confirms60 records /16 bytes, and
-destruction uses the same contract. The earlier reverse count/stride hypothesis
-has been corrected, not promoted into a private layout.
+The two whole 23-byte SDK GUID equality candidates608E33 and609B1E remain unknown.
+Private `.analysis/r237-guid-archive.json` reopens all eight original zero-field
+_IsEqualGUID COMDATs; twelve source references are only associative .debug$F,
+with no ordinary code/data caller. Fresh whole natural SDK and generic four-word
+memcmp equalities both reproduce the entire 23 bytes under cold3077 /O1 /Ob0 /Oi.
+`.analysis/r237-guid-control.json` retains all seven ordinary source sections /75,
+all fields/COFF/AUX, readonly sizeof[16,16] and69 original included headers.
+`.analysis/R237GuidComparison.cpp` and compile log remain diagnostic. SDK byte
+identity and absent callers do not distinguish ownership from this genuine
+ordinary alternative. Do not spend another cohort promoting that fingerprint
+without new independent original caller/data evidence.
 
-Fresh natural compact record initialization50 agrees in full. The record
-cleanup82 differs at six bytes in its three actual call fields: pinned3077
-lowers natural delete[] char* through scalar ??3 at640F15, while native uses the
-separately reviewed array ??_V at64169D forwarding to that scalar owner. Do not
-bind the scalar source symbol directly to the array owner or mask these fields.
-The earlier private record diagnostic obtained equality with that invalid
-rebinding and is explicitly superseded. Retain the proper full difference and
-complete independent deallocation routes; original compiler/source type remain
-unknown. Natural complete music scene observation244 agrees under private
-observed code/data bindings, with all four real public-D3D8 releases, mode
-notifications and60-record member destruction. This remains diagnostic and does
-not instantiate or recover the original private owner/tail layout. Full actual
-binding ownership, complete normal/EH/data extents, genuine implicit alternatives,
-tracked-path cold fixture, immutable plan, old snapshot audit and formal bounded
-original/accepted cold/CI/readback are still due. No R236 canonical change exists.
+Preserve no-reference receiver policies454C00 /24 and454F70 /31, R108/R198/R204
+lifetimes, R18341CA30 /77, R212455770 /111, five R163 math overload chains,
+node/opaque policies and independent constructors458650 /31 and458670 /23 as
+unknown. Preliminary DwStack cleanup61FB37 /14 and codec cleanup61A453 /73
+reopen protected R195/R198 source alternatives; do not promote old fingerprints
+or rewrite their accepted uncertainty. Inventory extent questions60C120 /11 and
+620132 /5 require complete defining source/metadata reconciliation.
+Fresh `.analysis/origin-scan/r236-triage.json` has134 pending and current ledger
+hashes. Shared tools stay read-only. Private R236 scalar-to-array false-binding
+history is explicitly superseded; preserve the six genuine call-field differences
+in the accepted R236 proof.
 
-Keep no-reference receiver policies454C00 /24 and454F70 /31 unknown. Two inventory
-extent questions remain (60C120 /11 and620132 /5). Reopen complete defining source
-owners and metadata before reconciliation. Preserve R108/R198/R204 lifetime
-uncertainty, R18341CA30 /77 and R212455770 /111, prior node/math/opaque decisions.
-Fresh `.analysis/origin-scan/r235-triage.json` has137 pending with current ledger
-hashes. Shared tools remain read-only.
+## R236 — whole music scene and record lifetime policies
+
+R236 accepts three complete authored origins: scene cleanup `0x004258D0` /244,
+record initialization `0x00427430` /50 and record cleanup `0x00427470` /82.
+The full 376 bytes retain all exits and external alignment; current names,
+source/ABI declarations, mappings and exact state stay unchanged.
+
+Replay `scripts/repo-python scripts/verify-music-scene-lifetime-origins.py` with
+immutable `config/music-scene-lifetime-origin-evidence.json`, SHA-256
+`3585911a97c2dfb713892494cfb5a7c0b3549bd215f326b3425e24acaa74c09e`.
+Independent MusicRoomScene initialization425750 /372 installs the same three
+observed readonly table slots, loads `data\system\music.dat`, creates all four
+textures and constructs sixty records at sixteen-byte spacing. The complete
+original constructor iterator641C78 /98 reads size[EBP+0xC], count[EBP+0x10];
+actual pushes60 then16 and full destructor iterator641D4A /96 confirm that
+contract. Both helpers retain their normal and exceptional entries and exits.
+Whole catalog426DD0 /916 opens `datab` / `musicroom.dat`, sets the byte flag and
+separately allocates, copies and NUL-terminates buffers at record+4/+8/+C.
+All three complete text renderers426670 /555,4268A0 /452 and426A70 /860 use SHL4
+and consume those fields. This independently establishes record spacing and
+buffer policy without padding an invented private layout.
+
+The full scene cleanup releases four textures, conditionally deletes its
+resource, stops audio407D70 /88, selects track40 through419CB0 /318, restores fade
+through419DF0 /27, destroys all sixty records and calls base cleanup431F40 /31.
+Twenty-nine whole independent anchors total9,276 bytes. The mixed code/table
+_memcpy640F20 /829 is not linearly decoded or cropped: its complete vendor
+source record and all46 typed fields are independently replayed by the original
+R025 three-body /1,762-byte /93-field proof. Complete ordinary, exception and
+readonly carriers remain separate, including whole EH code6557C3 /40 with
+roots[0,8,30], two-state map/FuncInfo668B10 /44 and following next-owner bytes.
+
+Cold VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`
+rebuilds `tests/origin_probes/MusicSceneLifetime.cpp` from its tracked path,
+checks all73 original included headers,18 complete emitted sections /796 bytes,
+all actual source fields, COFF/AUX provenance and three genuine weak deleting
+aliases/fallbacks. Seven complete comparisons /548 bytes retain six positive
+ordinary/deleting/EH/data carriers /466 and the entire82-byte negative record
+cleanup. Natural `delete[] char*` emits scalar ??3 bound to its real640F15 owner;
+native calls the distinct array ??_V64169D forwarding to that scalar owner and
+whole free642A61 /113. All six different bytes in the three actual call fields
+remain explicit. Binding scalar source to the array owner, masking fields or
+truncating the comparison is rejected. The superseded private equality diagnostic
+used that invalid binding and grants no evidence. Original source type and
+compiler lowering remain unknown.
+
+Genuine implicit raw-pointer record and scene lifetimes remain5 and19 bytes,
+compared with ordinary50-/82-/244-byte policies. The entire24-byte readonly
+sizeof section `[1,16,8,988,16,988]` preserves both definitions, including the
+second at offset16. Compact complete generic models use meaningful lifecycle
+members and actual public D3D8 releases; no incomplete original owner, filler,
+inert local, private tail layout, signature or original compiler profile is
+claimed. Whole independent game catalog/render/asset/audio context supports
+source-family authorship; normalized source controls add no exact credit.
+
+Every original and accepted cold proof also replays the full retained R130 array,
+R154 allocation and R195 graphics dependency graphs. Thirty-two scoped canonical
+pairs, original unselected digests, an empty historical selected-record audit and
+strict HEADffff98e readback bound the transition to exactly three rows in each
+function/origin ledger. All prior evidence, protected uncertainties and sixty
+exact inputs remain literal. Local cold proofs,3,313 CI tests including ten new
+guards, target/tracking, Ghidra identity, fresh134-row triage, generated progress
+and whitespace pass. Full Web MCP acceptance remains due after every remaining
+origin review finishes.
+
+Current4,217 resolved =991 authored+2,646 library+580 compiler;134 pending and
+3,226 excluded. The original1,311 goal has1,177 classified /134 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,757 and provisional0.50%.
 
 ## R235 complete options texture/resource cleanup
 

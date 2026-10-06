@@ -14824,3 +14824,73 @@ Current4,214 resolved =988 authored+2,646 library+580 compiler;137 pending and
 3,226 excluded. The original1,311 goal has1,174 classified /137 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,972,381 and provisional0.50%.
+
+## R236 — whole music scene and record lifetime policies
+
+R236 accepts three complete authored origins: scene cleanup `0x004258D0` /244,
+record initialization `0x00427430` /50 and record cleanup `0x00427470` /82.
+The full 376 bytes retain all exits and external alignment; current names,
+source/ABI declarations, mappings and exact state stay unchanged.
+
+Replay `scripts/repo-python scripts/verify-music-scene-lifetime-origins.py` with
+immutable `config/music-scene-lifetime-origin-evidence.json`, SHA-256
+`3585911a97c2dfb713892494cfb5a7c0b3549bd215f326b3425e24acaa74c09e`.
+Independent MusicRoomScene initialization425750 /372 installs the same three
+observed readonly table slots, loads `data\system\music.dat`, creates all four
+textures and constructs sixty records at sixteen-byte spacing. The complete
+original constructor iterator641C78 /98 reads size[EBP+0xC], count[EBP+0x10];
+actual pushes60 then16 and full destructor iterator641D4A /96 confirm that
+contract. Both helpers retain their normal and exceptional entries and exits.
+Whole catalog426DD0 /916 opens `datab` / `musicroom.dat`, sets the byte flag and
+separately allocates, copies and NUL-terminates buffers at record+4/+8/+C.
+All three complete text renderers426670 /555,4268A0 /452 and426A70 /860 use SHL4
+and consume those fields. This independently establishes record spacing and
+buffer policy without padding an invented private layout.
+
+The full scene cleanup releases four textures, conditionally deletes its
+resource, stops audio407D70 /88, selects track40 through419CB0 /318, restores fade
+through419DF0 /27, destroys all sixty records and calls base cleanup431F40 /31.
+Twenty-nine whole independent anchors total9,276 bytes. The mixed code/table
+_memcpy640F20 /829 is not linearly decoded or cropped: its complete vendor
+source record and all46 typed fields are independently replayed by the original
+R025 three-body /1,762-byte /93-field proof. Complete ordinary, exception and
+readonly carriers remain separate, including whole EH code6557C3 /40 with
+roots[0,8,30], two-state map/FuncInfo668B10 /44 and following next-owner bytes.
+
+Cold VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`
+rebuilds `tests/origin_probes/MusicSceneLifetime.cpp` from its tracked path,
+checks all73 original included headers,18 complete emitted sections /796 bytes,
+all actual source fields, COFF/AUX provenance and three genuine weak deleting
+aliases/fallbacks. Seven complete comparisons /548 bytes retain six positive
+ordinary/deleting/EH/data carriers /466 and the entire82-byte negative record
+cleanup. Natural `delete[] char*` emits scalar ??3 bound to its real640F15 owner;
+native calls the distinct array ??_V64169D forwarding to that scalar owner and
+whole free642A61 /113. All six different bytes in the three actual call fields
+remain explicit. Binding scalar source to the array owner, masking fields or
+truncating the comparison is rejected. The superseded private equality diagnostic
+used that invalid binding and grants no evidence. Original source type and
+compiler lowering remain unknown.
+
+Genuine implicit raw-pointer record and scene lifetimes remain5 and19 bytes,
+compared with ordinary50-/82-/244-byte policies. The entire24-byte readonly
+sizeof section `[1,16,8,988,16,988]` preserves both definitions, including the
+second at offset16. Compact complete generic models use meaningful lifecycle
+members and actual public D3D8 releases; no incomplete original owner, filler,
+inert local, private tail layout, signature or original compiler profile is
+claimed. Whole independent game catalog/render/asset/audio context supports
+source-family authorship; normalized source controls add no exact credit.
+
+Every original and accepted cold proof also replays the full retained R130 array,
+R154 allocation and R195 graphics dependency graphs. Thirty-two scoped canonical
+pairs, original unselected digests, an empty historical selected-record audit and
+strict HEADffff98e readback bound the transition to exactly three rows in each
+function/origin ledger. All prior evidence, protected uncertainties and sixty
+exact inputs remain literal. Local cold proofs,3,313 CI tests including ten new
+guards, target/tracking, Ghidra identity, fresh134-row triage, generated progress
+and whitespace pass. Full Web MCP acceptance remains due after every remaining
+origin review finishes.
+
+Current4,217 resolved =991 authored+2,646 library+580 compiler;134 pending and
+3,226 excluded. The original1,311 goal has1,177 classified /134 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,757 and provisional0.50%.
