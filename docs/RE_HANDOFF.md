@@ -3,7 +3,7 @@
 Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
-R247–R252, R258, R259, R264, R265, R266 and R267. The public
+R247–R252, R258, R259, R264, R265, R266, R267 and R268. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
 
@@ -21,20 +21,69 @@ bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R268 supplied-archive content/header audit below.
+the original-declaration evidence blocker below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R267; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
+R001–R268; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts and
 explicitly unresolved observations.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R268 supplied-archive content/header audit
+## Current blocker — original declaration evidence after R268
+
+R268 closes the supplied-archive route for directly stored original symbols.
+All 16 original entries are reconciled: 12 complete file streams /1,682,913,434
+bytes, four empty directory entries, full length/CRC/SHA-256 checks and the
+Japanese EXE member matching the pinned target. No game file or target is
+written. Full cross-chunk scans find no MSF7, Portable PDB, RAR, ZIP, 7z or CAB
+signature. The two RSDS/original-GUID occurrences are executable inventory,
+not recovered PDBs. All 54 gzip markers reject after 131,072-byte bounded
+validation; two initial 4,096-byte gaps are retained and resolved explicitly.
+
+A TH75-specific directory hypothesis from pinned upstream thtk source fits all
+four actual DAT tables. Counts are 215/34/122/37, totaling 408 entries. Entire
+rolling-XOR tables and fixed-name/size/offset records are decoded read-only;
+every payload range exactly covers its parent file after the table, without
+gaps, overlap or trailing bytes. Directory extensions are DAT/PAT/SCE/WAV,
+with no named symbol/source entry. No resource payload schema is reconstructed.
+Arbitrary inner encoding remains outside this symbol-discovery audit; there is
+no global symbol-absence conclusion or ownership/exact credit.
+
+`config/supplied-symbol-archive-audit-evidence.json` freezes all sixteen complete
+metadata witnesses, file hashes/CRCs, all four whole directory/table digests,
+408-row metadata digests, signature coverage and source/parser pins. Private
+reports and names stay in `.analysis/`. Reproduce the complete immutable audit:
+
+```bash
+scripts/repo-python scripts/audit-supplied-symbol-archive.py --archive '<supplied-rar>' --output .analysis/r268-frozen-complete-replay.json --expected config/supplied-symbol-archive-audit-evidence.json
+```
+
+All 3,593 CI checks, the full frozen archive replay, target-required tracking,
+all 97 complete unknown bodies/pairs and 3,088 original trails, all 60 exact
+pairs/28 unchanged inputs and whitespace pass. No compiler build is needed
+because production source, ABI, flags, relocations and exact inputs are intact.
+Counts remain 4,254 resolved /97 pending /3,608 pending bytes; original 1,311
+progress 1,214/97 and exact 60 /9,883 bytes remain unchanged.
+
+The same missing original declaration/type/compiler-generated-member syntax
+has remained explicit through R264, R265, R266, R267 and R268. Whole ordinary,
+generated and library alternatives cannot be distinguished by more identical
+machine-code comparisons. The available local symbol corpus and actual supplied
+archive now yield no original declaration witness. An asynchronous question asks
+whether an additional original PDB/source/map path exists; no answer is presumed.
+Without that new evidence or an explicit user strategy change, further canonical
+ownership transitions are blocked. Do not invent another generic control or
+resource-decoding phase merely to leave the original goal active. The original
+goal is incomplete, and reviewed-but-unknown completion is not presumed.
+One final complete Web MCP acceptance remains due after the requested remaining
+review. No push was authorized.
+
+### Historical R267 checkpoint and R268 supplied-archive objective
 
 R267 completes a bounded read-only identity lookup under the local `codex_ida`
 workspace, including the resolved shared compiler installation inside that root.

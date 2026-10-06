@@ -14123,3 +14123,38 @@ trails retained. No compiler build, canonical transition or exact acceptance
 occurs. Original 1,311 progress remains 1,214/97; final Web MCP acceptance is
 still due after the remaining review. R268 addresses the actual supplied RAR's
 16 entry content/header signatures, including renamed/nested symbol candidates.
+
+## R268 — complete supplied input coverage and original-declaration blocker
+
+**Input-observed:** The original RAR hash is pinned. All sixteen entries are
+reconciled: twelve complete file streams /1,682,913,434 bytes and four directories.
+Every size/CRC/SHA-256 agrees, including the Japanese target member. No MSF7,
+Portable PDB, RAR, ZIP, 7z or CAB signature is present in those raw entry streams.
+All 54 incidental gzip markers reject within 131,072-byte windows; two initial
+short-window gaps are preserved and resolved. No game file is written, and
+other executable inventory is never reconstruction evidence.
+
+**Inferred and independently checked:** A TH75-specific upstream format
+hypothesis fits all four actual DAT directories. Counts 215/34/122/37 yield
+408 complete fixed-name/size/offset records. Their payload ranges exactly
+cover each parent after the table, with no gaps, overlap or trailing bytes.
+Whole encrypted/decoded table hashes and complete record digests are frozen.
+No named PDB/source entry is present; names and bytes stay private. Resource
+schemas and arbitrary inner encoding remain outside this bounded audit.
+
+**Unknown:** No original private declaration/type/member-syntax witness is
+recovered. Identical ordinary/generated/library source alternatives still
+prevent the 97 pending canonical assignments. This same condition remains
+explicit through R264–R268. The local named PDB corpus and actual supplied
+archive routes are exhausted for directly stored symbols. Additional original
+PDB/source/map evidence or an explicit user strategy change is needed; a
+pending asynchronous availability question is not an answer or authorization.
+No global symbol absence or reviewed-but-unknown completion is presumed.
+
+Replay `scripts/repo-python scripts/audit-supplied-symbol-archive.py --archive '<supplied-rar>' --output .analysis/r268-frozen-complete-replay.json --expected config/supplied-symbol-archive-audit-evidence.json`.
+Nine new regressions and all 3,593 CI checks pass, together with the complete
+frozen input replay, target-required tracking, all current unknown bodies/pairs,
+3,088 old trails, all 60 exact pairs/28 unchanged inputs and whitespace. Original
+1,311 progress remains 1,214/97; exact remains 60 /9,883 bytes. No compiler build,
+origin/source/ABI/mapping/exact credit or push occurs. The full original goal
+remains incomplete and final Web MCP acceptance stays due after the review.

@@ -1,0 +1,261 @@
+{
+  "evidence_id": "R268",
+  "baseline_commit": "e31af2c345cc3b154305269732f82c1c15df15bf",
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "required_guid": "9306058f-6d68-4650-b80b-1e0d05dd1e18",
+  "required_age": 3,
+  "archive_projection": {
+    "archive_sha256": "943590ba77a32e7d52e545370b35363bd5e9c83d49d7a8d0f0a5f0fb395fc15e",
+    "archive_size": 603682563,
+    "entry_count": 16,
+    "file_count": 12,
+    "directory_count": 4,
+    "decompressed_bytes": 1682913434,
+    "entries": [
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/config.exe",
+        "directory": false,
+        "size": 73728,
+        "metadata_sha256": "8aef8b3b7e460d6107e57c96a37c7a72dbad1597de80e81d27675907e345f23d",
+        "sha256": "bc61984b8878e58a77a1284bca6763bba47ae70aed8d1708c1a1351280046cb7",
+        "crc": "12F32575",
+        "header_sha256": "ddf171d06458a2ce2fd45b0da6e463b7dd2c04de7564dedf785a09a0bca8b9de"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/config.ini",
+        "directory": false,
+        "size": 90,
+        "metadata_sha256": "4d863ddde0ce8f87af1f5cf69b9d22a2017308a06339d5d7680adf0cdc115f2d",
+        "sha256": "b9d92897d24505521e32e70617baa7653718663870995e64ce49982be78d5d44",
+        "crc": "9BA89947",
+        "header_sha256": "db013b5df35ffa44718c7a6e9f65e0fa9438ace5589ba1b0283d9160f3b5ad0d"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/configCN.exe",
+        "directory": false,
+        "size": 205824,
+        "metadata_sha256": "f54dc118c5384056d6b6455f674a0a45b282dcfb724a81fab64cc2511c484024",
+        "sha256": "4438e704065e86b4d2d99bc082b8b47a7a68de2710a529f9e0b95f80fcf5de21",
+        "crc": "614BE43F",
+        "header_sha256": "ddf171d06458a2ce2fd45b0da6e463b7dd2c04de7564dedf785a09a0bca8b9de"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/replay/readme.txt",
+        "directory": false,
+        "size": 156,
+        "metadata_sha256": "44c9f769f65a2b92e4835533816a63c7dcd0cc0da75299e3cd2fc48bfe9a0170",
+        "sha256": "2146e6fd69a3a8516f7da35ad74342616baecc4f235ea7a5781ae64a4340fc10",
+        "crc": "328BBBF2",
+        "header_sha256": "d4bfcf73b4d9bce6ec9aeb80562befe3ef9a4eb624066bf9ff761a2a541d88a9"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075.dat",
+        "directory": false,
+        "size": 749862735,
+        "metadata_sha256": "e8e985699301d98cf1c035c7de6e483f2aed9d8bc4f92a458f6016040be6e60a",
+        "sha256": "258d7176fa2596a9f8f0acae1d5704c476fd33f653528dbebff946bf46494e15",
+        "crc": "6A20B220",
+        "header_sha256": "ad41e1f008a14924d4ee0251d1234de74d9b95a14f35006ef3c90d1a99af9e84",
+        "dat_directory": {
+          "count": 215,
+          "header_size": 23222,
+          "encrypted_sha256": "220c0489c768d1b95dc75e9e90fb715bc6caa6056830d9970fd617ac7fb98f32",
+          "decoded_sha256": "dfda7b2c52fe887290ea2f4b89a32d551f94a061e87346fb39bdc7f310e57d45",
+          "rows_sha256": "a21382d098ee3deb565b64effac973173bad872f176d1042b3a01734aa4c9546"
+        }
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075.exe",
+        "directory": false,
+        "size": 2576384,
+        "metadata_sha256": "1038241c86229c4ff4043652b373ba96cbe60abacc7afe9ffd387e6bbaafaa7a",
+        "sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+        "crc": "5A089153",
+        "header_sha256": "33cc50221df1c8aee2754de118240236c8ea6a122a036014586cab8050e6aab8"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075bgm.dat",
+        "directory": false,
+        "size": 428003126,
+        "metadata_sha256": "2819013103cb3bd5f24e432771a774f396584f99767b543dc02a89379d0681f1",
+        "sha256": "028653f0d485e55cebc59dedabc6a56b0f9d6f106b4892c51d1f6bf76edd912a",
+        "crc": "918511B0",
+        "header_sha256": "6a306e2be6b9be7217eea383b3fe8bc22c917584ae72debdb06f151b70fccffd",
+        "dat_directory": {
+          "count": 34,
+          "header_size": 3674,
+          "encrypted_sha256": "c54f5b3bd6e563e0d63590f34b3f90055d9fbf2f7bb4ef557dc2be6070d0c100",
+          "decoded_sha256": "1fcc644ed6792d94c3b09a8d50151045829e82fcb0c63eb0bf3a47e3901641d0",
+          "rows_sha256": "b64a0ea9aef73ef382974a59644f3ae56f852234a1890246f90b63c1efb25411"
+        }
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075c.dat",
+        "directory": false,
+        "size": 349795026,
+        "metadata_sha256": "2abcbfcbc1f97ddd052ef98de8a2f5efa8dfbcf84c0b6674cd7f3e38a90d1be2",
+        "sha256": "c1460767115e8f8900f6ce4707da2edb6112290f0abadf2a16d8d50ac6db94d2",
+        "crc": "5614D160",
+        "header_sha256": "0f91abbe87672605afbece81da56b5295daf99b495b38e995f6a1f58ff675779",
+        "dat_directory": {
+          "count": 122,
+          "header_size": 13178,
+          "encrypted_sha256": "fe1fa1906b403cdf99187a67e0da0b8ca97e195afe1aa0ecabc9d981dc41f0ec",
+          "decoded_sha256": "14a112597355aaaad3a64b1e5a49dcb6b22d2bc5dba25407a99b8a2dac3324d6",
+          "rows_sha256": "e0515487467e5a33d76bffe288667e46c14b7207c6b35083a0b91835caeb6858"
+        }
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075c.exe",
+        "directory": false,
+        "size": 2580480,
+        "metadata_sha256": "57a903324d9ac96e6af26fbed17a02fffbce8ba42e94843461d9c66b273876e2",
+        "sha256": "f34b8613b7f300dd3250bc1a3212a37f3971b4555a76d1adc8b4d1647d863951",
+        "crc": "2BB8FE9F",
+        "header_sha256": "33cc50221df1c8aee2754de118240236c8ea6a122a036014586cab8050e6aab8"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/全开档/score.dat",
+        "directory": false,
+        "size": 93124,
+        "metadata_sha256": "2e2e1af3ae34070f36563dc445c3d17e48639212fc482ba7622e32e0dff06c71",
+        "sha256": "fd2d68cccf37adac66d40eef74d29c0040bea2e182d6a6d00806abcbeb7e14bc",
+        "crc": "B51B437C",
+        "header_sha256": "550a1b51f78c92060c321c540c70766b6305c34d34aedfaad9876cf2dd9aaae1"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/附带文档/上海アリス通信（日文版）.txt",
+        "directory": false,
+        "size": 29056,
+        "metadata_sha256": "88affd7d0fe364bfc3e181b3552b4a48018b8c7be747d33569c5d0e4aa00c240",
+        "sha256": "4b7ec88b6b749fd066ddfe338233aca32ca217533f61b9e5c04b57b02a773d0a",
+        "crc": "CD728029",
+        "header_sha256": "d164134b9d5bc18eca918fc3d3d06df2f64b6417d99a5761b0d0e3e594d8d254"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/replay",
+        "directory": true,
+        "size": 0,
+        "metadata_sha256": "8dd3f0e2be551c6d5e65b253fe1512a47289015df16df79a61de6cdd0fd7ba4e"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/全开档",
+        "directory": true,
+        "size": 0,
+        "metadata_sha256": "dddf4446e65ee0947984cc4fd8e09c90a687789b0f94c411d12ef11de2491158"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/附带文档",
+        "directory": true,
+        "size": 0,
+        "metadata_sha256": "583ef654b5a2cc37863c41d51f9ba5739cfa416de7a5c6145cb4b36a1410fcfb"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)",
+        "directory": true,
+        "size": 0,
+        "metadata_sha256": "7b0d2fa7e91dda523fc65c28a2298775973257533ecef206a6288190521fd565"
+      },
+      {
+        "member": "[th075] 东方萃梦想 (汉化版+日文版)/th075b.dat",
+        "directory": false,
+        "size": 149693705,
+        "metadata_sha256": "a48a068790e0605b8de9079117141b9daca816dccec7f3099e28f5c4a352e6cc",
+        "sha256": "577889faf8f9b2d9b8d69a517e11ddc36759a73e7e410a81fad3f65982ff6177",
+        "crc": "BA43ADE7",
+        "header_sha256": "0d9ca6299d29eec99ae92c61b18fc2e68a520c88854a3a4a9100074fce1d7c1b",
+        "dat_directory": {
+          "count": 37,
+          "header_size": 3998,
+          "encrypted_sha256": "39e139a1d6e25842a21319b9f1a286df55c53ba90487c9e3ca5ec4a4d2e11c61",
+          "decoded_sha256": "74f8dae5a9445c3f4a82395f8181689c9e7ca62875516752e3682f57ff84beb4",
+          "rows_sha256": "7bc4f2ec90c36a776ab3474d3806a5ed99f803f23fc0dc2ec5c37f921c3f42c6"
+        }
+      }
+    ],
+    "signature_counts": {
+      "msf7": 0,
+      "portable": 0,
+      "rsds": 2,
+      "original_guid": 2,
+      "rar3": 0,
+      "rar5": 0,
+      "zip_local": 0,
+      "zip_end": 0,
+      "seven_zip": 0,
+      "cabinet": 0,
+      "gzip": 54
+    },
+    "gzip_statuses": {
+      "invalid": 54
+    },
+    "whole_report_sha256": "cdd79271f4b24eaf5ad0cd062b5b45e5f82585b3a270f70c374137523dc7d6e4"
+  },
+  "dat_extensions": {
+    "th075.dat": {
+      ".dat": 194,
+      ".pat": 11,
+      ".sce": 10
+    },
+    "th075bgm.dat": {
+      ".wav": 34
+    },
+    "th075c.dat": {
+      ".dat": 111,
+      ".sce": 11
+    },
+    "th075b.dat": {
+      ".pat": 11,
+      ".sce": 11,
+      ".dat": 15
+    }
+  },
+  "methodology": {
+    "outer": "Whole sixteen-entry listing; twelve complete unrar stdout streams, lengths/CRC/SHA256 and Japanese target member identity. Directory entries have no extracted payload.",
+    "directories": "TH75-specific independent format hypothesis; uint16 count and 108-byte rows; closed-form rolling-XOR key; complete null-terminated 100-byte names and uint32 size/offset pairs. All four directories and all408 payload extents exactly cover their files without gaps/overlaps/trailing data.",
+    "discovery": "Complete cross-chunk signature search over every decompressed byte. Signatures are discovery only. All54 gzip windows reject with zlib errors within131072 bytes; initial4096-byte windows left two gaps, now explicitly resolved. Future incomplete or output-limited windows remain gaps.",
+    "limits": "No arbitrary resource-specific decoding, no global symbol-absence claim; no foreign executable supplies reconstruction evidence."
+  },
+  "reader_sha256": {
+    "scripts/audit-supplied-symbol-archive.py": "76176dace19b4595240579247f9821b71338d567be0dd1ac8cc97355a279e98a",
+    "tests/test_supplied_symbol_archive.py": "ec82d4b09c40086ddc9eb56b568dd208dcc728e2478ae0d8aafc7ae91e47a795"
+  },
+  "private_reports": {
+    ".analysis/r268-archive-content-audit.json": "7c785944cb455ed05398f08fed68e20d00fe66783ae1ad1810c9a44a116a46ec",
+    ".analysis/r268-first-gzip-window-audit.json": "328c56d083fa6b15683bce05d82d6769f7b064df42d5066eafae551dfeb284fe",
+    ".analysis/r268-complete-archive-audit.json": "8833a2b3be2872d4524ba7205b3f9286e8f1fcce1a9360f9ff64a32fa90c0c6d",
+    ".analysis/r268-dat-directory-probe.json": "1054384c33585c51fd7a7b682ae497e9219a3da7af9e9a46915a2d7d0b40a207"
+  },
+  "canonical_state": {
+    "resolved": 4254,
+    "pending": 97,
+    "pending_bytes": 3608,
+    "original_review_progress": 1214,
+    "original_review_pending": 97,
+    "exact": 60,
+    "exact_bytes": 9883,
+    "exact_units": 60,
+    "exact_objects": 11
+  },
+  "decision": "No recovered original declaration/symbol witness; all97 origins remain unknown; no source, ABI, mapping or exact credit.",
+  "sources": [
+    "https://www.rarlab.com/technote.htm",
+    "https://pkware.cachefly.net/webdocs/casestudies/APPNOTE.TXT",
+    "https://www.rfc-editor.org/info/rfc1952/",
+    "https://docs.python.org/3/library/zlib.html"
+  ],
+  "blocking_condition": "Original declarations/compiler-generated member syntax remain unavailable. Byte-equivalent ordinary/generated/library source alternatives are retained. Further ownership transitions require discriminatory original evidence or an explicit user strategy change.",
+  "external_format_methodology": {
+    "commit": "892114a0fcaa0bbdaaecf3cb4ad56f758683fb40",
+    "sources": [
+      {
+        "url": "https://raw.githubusercontent.com/thpatch/thtk/892114a0fcaa0bbdaaecf3cb4ad56f758683fb40/thtk/thdat105.c",
+        "sha256": "513d11bf4759627dac535a83bacb7c3409813d6146e1d2b0285c7c944c043e54"
+      },
+      {
+        "url": "https://raw.githubusercontent.com/thpatch/thtk/892114a0fcaa0bbdaaecf3cb4ad56f758683fb40/thtk/thcrypt105.c",
+        "sha256": "5dee379a86e6b17904d20a48d39ac2e3c8c01ef6badc62351e6e0077db0fdd36"
+      }
+    ]
+  }
+}

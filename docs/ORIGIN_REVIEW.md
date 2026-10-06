@@ -17119,3 +17119,75 @@ progress 1,214/97 and exact 60 /9,883 bytes. No origin/source/ABI/mapping/exact
 credit follows. Final Web MCP acceptance remains due after the requested review;
 no push was authorized. R268 next audits all 16 supplied-archive entry contents
 for renamed PDB/nested archive framing, without replacing the target.
+
+## R268 — complete supplied-archive symbol-witness audit
+
+The exact original supplied RAR is pinned by SHA-256
+`943590ba77a32e7d52e545370b35363bd5e9c83d49d7a8d0f0a5f0fb395fc15e`.
+Its entire sixteen-entry technical listing is reconciled: twelve file bodies
+and four empty directory entries. Read-only `unrar` stdout streams retain every
+byte for SHA-256/CRC computation and cross-chunk signature discovery, totaling
+1,682,913,434 decompressed bytes. Every complete entry length and CRC agrees
+with the listing. The Japanese `th075.exe` member again matches the pinned
+JP1.11 target hash. Other executable members are inventory only and never
+replace the reconstruction target. No decompressed game file is written.
+
+No MSF7, Portable PDB, RAR3/5, ZIP-local/end, 7z or CAB signature appears in
+any outer entry byte. Two RSDS/original-GUID occurrences are in executable
+members and are not recovered PDB metadata. Fifty-four short gzip markers
+are explicitly investigated instead of being labeled nested archives. Initial
+4,096-byte reads reject 52 and leave two incomplete optional-header windows.
+The final 131,072-byte bounded reads reject all 54 with zlib errors. A genuine
+end marker would require complete stream/trailer validation; incomplete or
+output-limited windows always remain gaps. The entire initial report is
+preserved separately. See [gzip framing](https://www.rfc-editor.org/info/rfc1952/)
+and [bounded zlib decompression](https://docs.python.org/3/library/zlib.html).
+
+**Independent format hypothesis:** Upstream thtk's TH75-specific reader and
+rolling-XOR metadata method are pinned at commit
+`892114a0fcaa0bbdaaecf3cb4ad56f758683fb40`; original sources/hashes remain private.
+See [TH75 directory reader](https://github.com/thpatch/thtk/blob/892114a0fcaa0bbdaaecf3cb4ad56f758683fb40/thtk/thdat105.c)
+and [metadata transform](https://github.com/thpatch/thtk/blob/892114a0fcaa0bbdaaecf3cb4ad56f758683fb40/thtk/thcrypt105.c).
+The audit independently expresses the rolling key as a closed-form byte
+sequence and parses the complete two-byte count plus fixed 108-byte records.
+Each record retains the complete null-terminated 100-byte name and uint32
+size/offset. This is an original supplied-data observation after a format
+hypothesis, not original private C++ declarations or executable ownership.
+
+All four actual DAT tables validate: `th075.dat` has 215 entries, `th075bgm.dat`
+34, `th075c.dat` 122 and `th075b.dat` 37, totaling 408. Every sorted payload range
+starts after its complete table and joins the next exactly; their last extents
+reach the complete parent size. There are no gaps, overlaps or unexplained
+trailing bytes. Name extensions are DAT/PAT/SCE/WAV with no named symbol/source
+entry. Exact decoded name bytes, tables, rows and extents stay private. Resource
+schemas and arbitrary inner encoding remain uninterpreted; global symbol
+absence is not inferred and no resource-reconstruction phase is added.
+
+`config/supplied-symbol-archive-audit-evidence.json` freezes complete per-entry
+metadata digests, file length/CRC/SHA-256, all four encrypted/decoded table
+hashes, complete 408-row metadata hashes, signature coverage, source/parser
+pins and unchanged canonical totals. Replay the actual entire immutable input:
+
+```bash
+scripts/repo-python scripts/audit-supplied-symbol-archive.py --archive '<supplied-rar>' --output .analysis/r268-frozen-complete-replay.json --expected config/supplied-symbol-archive-audit-evidence.json
+```
+
+Nine regression checks protect full-byte hashing, chunk-boundary signatures,
+real gzip/trailer validation, long optional-header gaps, invalid and incomplete
+streams, independent rolling-key recurrence, complete table/payload coverage,
+fixed-name termination and complete unencrypted archive listings. All 3,593 CI
+checks, full frozen archive replay, target-required tracking, all 97 complete
+unknown bodies/pairs and 3,088 old structured trails, all 60 exact pairs and
+28 unchanged inputs and whitespace pass. No compiler build, ownership/source/
+ABI/mapping/exact credit occurs. Counts remain 4,254 resolved /97 pending /
+3,608 pending bytes; original 1,311 progress remains 1,214/97 and exact 60 /
+9,883 bytes remains intact.
+
+The original private-declaration blocker remains explicit across R264–R268.
+The available local PDB corpus and supplied archive do not supply the missing
+witness. An asynchronous question requests any additional original PDB/source/
+map path; no answer is presumed. Further canonical transitions require new
+discriminatory evidence or an explicit strategy change. The original goal is
+incomplete; do not invent extra generic controls or a resource-decoding phase.
+Final complete Web MCP acceptance stays due after the requested remaining
+review. No push was authorized.
