@@ -143,6 +143,15 @@ class MemberVectorLifetimeTests(unittest.TestCase):
         newest = json.loads((ROOT / next_view.EVIDENCE).read_text())
         next_view.verify_plan(newest)
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        deque_spec = importlib.util.spec_from_file_location(
+            'deque_outer_successor_view', ROOT / 'scripts/verify-deque-outer-policy-origins.py')
+        deque_view = importlib.util.module_from_spec(deque_spec)
+        deque_spec.loader.exec_module(deque_view)
+        newest_deque = json.loads((ROOT / deque_view.EVIDENCE).read_text())
+        deque_view.verify_plan(newest_deque)
+        original_deque = all(q['original_function'] in source['functions.csv'] for q in newest_deque['functions'])
+        source = {name: deque_view.historical_rows(newest_deque, name, actual, original_deque)
+                  for name, actual in source.items()}
         outer_spec = importlib.util.spec_from_file_location(
             'outer_successor_view', ROOT / 'scripts/verify-outer-vector-policy-origins.py')
         outer_view = importlib.util.module_from_spec(outer_spec)

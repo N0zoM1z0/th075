@@ -1,7 +1,7 @@
 # Pending origin review matrix
 
-This report records the current 105 pending candidates, covering 3,779 bytes.
-It records reviewed evidence and required distinguishing witnesses; all 105
+This report records the current 104 pending candidates, covering 3,707 bytes.
+It records reviewed evidence and required distinguishing witnesses; all 104
 origins remain unknown. It does not mark the complete-origin milestone achieved
 or replace the original 1,311-candidate goal with a smaller objective.
 
@@ -23,7 +23,11 @@ unknown. R256 classifies two72-byte outer game cleanup policies as inferred auth
 through coherent whole construction/destruction, independent game allocation
 and actual source-provider/EH context. Complete byte-positive implicit alternatives
 and their incompatible construction/provider chains remain quarantined.
-The current remaining projection has103
+R257 classifies one72-byte deque outer cleanup as inferred authored through
+coherent whole construction/destruction, real providers and independent game
+parser same-local/state8 ownership. Genuine implicit72 positives and their
+incompatible full construction/provider/EH chains remain preserved.
+The current remaining projection has102
 RET-based bodies and the same two native tail cases. Every remaining whole
 body hash and literal canonical pair is read back after these bounded transitions.
 
@@ -33,7 +37,7 @@ references below are representative discovery locations; a link is not proof
 of ownership and does not replace that artifact's full original replay. A
 missing discovered reference does not imply no previous investigation.
 
-Private `.analysis/r256-remaining-review.json` retains the current literal
+Private `.analysis/r257-remaining-review.json` retains the current literal
 pairs, full body hashes/instructions/control flow, calls, non-stack writes,
 all original structured trails/hashes and mapped PE absolute-value discovery.
 Numeric offsets and unused argument observations do not establish complete
@@ -85,7 +89,6 @@ scope clarification is presumed.
 | `0x0041F7F0` | 11 | container-or-ordinary-leaf | 6 instructions; 0 branches; RET 0; 0 calls | [archive-iterator-operation-origin-evidence.json](../config/archive-iterator-operation-origin-evidence.json) | Original receiver/element and leaf source identity. |
 | `0x0041F9F0` | 5 | empty-body | 4 instructions; 0 branches; RET 0; 0 calls | [deque-retreat-origin-evidence.json](../config/deque-retreat-origin-evidence.json) | Original empty-operation signature and owner. |
 | `0x0041FDF0` | 5 | empty-body | 4 instructions; 0 branches; RET 0; 0 calls | [deque-retreat-origin-evidence.json](../config/deque-retreat-origin-evidence.json) | Original empty-operation signature and owner. |
-| `0x004212A0` | 72 | default-or-lifetime | 20 instructions; 0 branches; RET 0; 2 calls | [deque-front-back-origin-evidence.json](../config/deque-front-back-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x004229C0` | 15 | default-or-lifetime | 7 instructions; 0 branches; RET 0; 1 calls | [allocator-destroy-origin-evidence.json](../config/allocator-destroy-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x004229D0` | 28 | default-or-lifetime | 12 instructions; 0 branches; RET 4; 1 calls | [deque-copy-insert-origin-evidence.json](../config/deque-copy-insert-origin-evidence.json); [deque-leaf-origin-evidence.json](../config/deque-leaf-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |
 | `0x00423B20` | 26 | default-or-lifetime | 11 instructions; 0 branches; RET 0; 2 calls | [queue-lifetime-origin-evidence.json](../config/queue-lifetime-origin-evidence.json) | Outer lifetime/declaration and receiver identity. |

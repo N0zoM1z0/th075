@@ -2,7 +2,7 @@
 
 Updated 2026-10-06. Work resumed with origin-review batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
-review cohorts R108 through R246, R253, R254, R255 and R256, with bounded unresolved reviews/audits
+review cohorts R108 through R246, R253, R254, R255, R256 and R257, with bounded unresolved reviews/audits
 R247–R252. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 `main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
@@ -12,81 +12,83 @@ repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
 The pinned target is the supplied Japanese `th075.exe` (reported `ver1.11`),
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 The initial Ghidra inventory has 4,351 provisional candidates. Origin review
-has resolved 4,246: 1,001 authored, 2,664 library and 581 compiler generated.
-There are 105 pending. Candidate count is not authored function count.
+has resolved 4,247: 1,002 authored, 2,664 library and 581 compiler generated.
+There are 104 pending. Candidate count is not authored function count.
 
 The exact baseline is 60 source-present and exact functions, covering 9,883
 bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,973,444 (0.50%). This denominator is provisional because
+bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is origin review. Preserve the exact baseline while resolving
-the bounded R257 deque-policy cohort below.
+the bounded R258 typed destruction-helper cohort below.
 Both the complete-origin and 50%-exact milestones remain unfinished.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
 match-unit manifests. The progress SVG is generated from those ledgers.
 [Origin review](ORIGIN_REVIEW.md) records the evidence and boundaries for
-R001–R256; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
+R001–R257; the [knowledge base](KNOWLEDGE_BASE.md) records accepted facts.
 The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Next agent objective — R257 coherent deque outer policy
+## Next agent objective — R258 typed destruction-helper context
 
-R256 accepts two inferred authored cleanup policies, `0x004586C0` /72 and
-`0x005F7ED0` /72. Complete original construction93/75, two independent game
-allocation/receiver chains with sizes20/16, actual ordinary clear19 and library
-base destruction19, genuine deleting44 and four whole local EH pairs identify
-coherent explicit cleanup. The inference remains bounded: original declarations,
-element types and complete owner layouts are unknown. It does not prove the
-absence of every possible equivalent program.
+R257 accepts one inferred authored outer cleanup72 at `0x004212A0`. Complete
+paired construction75 at421250, actual library construction72 at4212F0,
+clear19 at4214C0 and separate destruction19 at421340 form a coherent explicit
+source cohort. Complete parser2301 constructs, uses and destroys the same local
+`[ebp-0x70]`; the whole original nine-state frame also destroys that exact local
+in state8 through the outer72. Original library/deleting/compiler origins stay
+unchanged. Member versus base syntax, element names and complete original
+layouts remain unknown; ownership is a bounded inference, not proof excluding
+every possible equivalent program.
 
-Three fresh whole source profiles preserve all initialized sections, BSS188,
-60 unmasked comparisons2641 bytes/144 fields and complete implicit/member/
-empty-base alternatives. Empty-first implicit destructor72 is genuinely byte
-positive, but its defining provider order, construction97/79 and two-state EH
-code26 differ from the actual complete construction93/75 and one-state18/36.
-Implicit-member constructors93/75 are also byte positive; their actual defining
-constructor22 differs from the required library construction42. Both positives
-are quarantined rather than erased or credited. Default outer destruction19
-and empty-after destruction98 retain their complete source differences.
+Three fresh profiles preserve all77/2966,62/2857 and77/2054 ordinary sections/
+bytes, BSS144 and27 headers each. All34 whole unmasked positives1560/90 fields,
+complete negative parent75/6 fields/one state difference,25 whole native bodies
+3519 and three original EH frames code118/data172 remain frozen. Genuine implicit
+default19 and two byte-positive empty-first destructor72 alternatives keep full
+construction79 and two-state compiler26/44 differences. Their real cleanup19
+would also require source clear19 to define original Tidy177, an incompatible
+whole provider boundary. Empty-after98 remains complete. Details:
+[R257 review](ORIGIN_REVIEW.md#r257--coherent-deque-cleanup-with-complete-implicit-lifetime-alternatives).
 
-The accepted-state CLI cold-builds all three profiles and invokes the entire
-unchanged R255 at fixed revision25016a9. R255's entire R254 and original
-R212/R227 trees, all R253 static/vector and R161/R208/R150, R211/R210/R209,
-R153 and runtime/compiler providers remain complete. Historical Git blobs,
-source path/AUX identity and explicitly pinned CSV EOL restoration are verified
-before and after replay. Current canonical projections allow only the two
-literal validated R256 transitions; no reduced manifest or global CSV/argument
-patch replaces any predecessor proof. Details:
-[R256 review](ORIGIN_REVIEW.md#r256--coherent-outer-vector-cleanup-policies-and-implicit-lifetime-alternatives).
+The accepted-state CLI cold-builds all three profiles and replays the entire
+unchanged original R212 at fixed revision92720dc in its read-only same-length
+Git worktree. Whole R211/R210/R209/R208/R150, original carrier/runtime providers
+and external destruction R153 remain present. Full Git-blob/path/AUX identity
+and only explicitly pinned CSV EOL representations are verified before and
+after replay. Earlier vector tests allow only the literal independently checked
+R257 successor before their existing strict views. The preceding entire R256/
+R255/R254/R212/R227 accepted-state cold replay passed in this turn; its source,
+header, ABI and exact inputs remain unchanged. Preserve all earlier accepted
+origins and original unknown snapshots; do not weaken historical predicates.
 
-Next examine `0x004212A0` /72, paired with accepted construction/reset75 at
-`0x00421250`. Construction calls accepted deque constructor `0x004212F0`,
-then alias `0x004214C0` /19. The outer calls that alias on receiver+0 in state0,
-then switches to state-1 and calls separate alias `0x00421340` /19 on the same
-receiver. Both library aliases call shared complete cleanup `0x004219C0`.
-Private `.analysis/r257-deque-lifetime-leads.json` freezes four initial whole
-bodies and two original frames. These are native discovery, not acceptance.
-Assess the complete actual source/provider graph, game producer identity and
-genuine default/member/empty-base alternatives before any transition. Preserve
-all previously accepted origins and unknown clear/element boundaries. Source
-family names and relative offsets do not recover original complete C++ types.
-Do not add exact-reconstruction scope.
+Next examine `0x004229C0` /15. Its real caller is accepted allocator.destroy25
+at `0x00422610` within whole deque-pop151 at `0x00422290`; it calls genuine
+compiler deleting44 at `0x00422A20` with zero flags, which reaches the newly
+inferred authored outer72 at `0x004212A0`. R165 already retains genuine whole
+vendor15 and ordinary15 equality, two accepted allocator wrappers, original
+whole R164 parents, runtime deletion and a separate empty5 boundary. The new
+outer origin alone does not identify the helper's namespace. Test a coherent
+fully defined generic element lifetime and full actual source caller/provider
+chain, preserving all original ordinary alternatives and the complete R165/
+R164 proof. Neither callee association nor an isolated source positive earns
+origin credit. Do not add exact scope or infer a complete original private type.
 
-Current counts:4246 resolved =1001 authored+2664 library+581 compiler,
-105 pending /3779 bytes,3245 excluded. Original1311 progress is1206 classified
-/105 left. The [current pending matrix](ORIGIN_PENDING_REVIEW.md) rereads all105
+Current counts:4247 resolved =1002 authored+2664 library+581 compiler,
+104 pending /3707 bytes,3245 excluded. Original1311 progress is1207 classified
+/104 left. The [current pending matrix](ORIGIN_PENDING_REVIEW.md) rereads all104
 whole hashes/current pairs and preserves the original R251116-row artifact.
 The reviewed-but-unknown end-state question remains unanswered; do not presume
 a scope change or falsely complete the goal. Final complete Web MCP acceptance
 remains due after the requested remaining-review end state. Exact60 /9883 bytes
-/60 units /eleven objects stay unchanged; the authored denominator increases
-only144 to1973444. All3500 public CI tests, target/tracking, exact full-row/input
-guards, progress and whitespace checks pass. Complete accepted-state cold
-replay passes before handoff. These commits remain local; no push was authorized.
+/60 units /eleven objects stay unchanged; the authored denominator grows only72
+to1973516. All3512 public CI tests, target/tracking, exact full-row/input guards,
+progress and whitespace checks pass. Complete accepted-state cold replay passes
+before handoff. These commits remain local; no push was authorized.
 
 ### Historical R251/R252 context before R253 acceptance
 

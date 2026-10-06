@@ -1,0 +1,2 @@
+address,size,body_sha256,inferred_role,return_count,internal_branch_count,external_branch_count,evidence_id
+0x004212A0,72,58b0cefa9912f04c5d4205de469f31f814cd4e45d59304c44a77ad10cacb4c68,ContainerRecord::ClearBeforeDequeSubobjectDestructionAt004212A0 [provisional],1,0,0,R257

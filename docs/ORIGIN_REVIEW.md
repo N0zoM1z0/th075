@@ -16373,3 +16373,110 @@ historical evidence, not acceptance. Test the complete actual provider graph,
 game producers and genuine default/member/empty-base alternatives before any
 transition. Exact scope remains deferred. The full remaining-review goal and
 the requested final complete Web MCP acceptance remain outstanding.
+
+## R257 — coherent deque cleanup with complete implicit lifetime alternatives
+
+R257 accepts one inferred authored outer cleanup policy, `0x004212A0` /72,
+provisionally `ContainerRecord::ClearBeforeDequeSubobjectDestructionAt004212A0`.
+The complete existing construction/reset75 at `0x00421250`, independently
+accepted deque construction72 at `0x004212F0`, library clear19 at `0x004214C0`
+and separate destructor19 at `0x00421340` form a coherent explicit cleanup
+cohort. Both library aliases call the full `0x004219C0` /177 Tidy. Their existing
+R073/R077/R072 origins and historical names remain unchanged; a destructor
+label is not evidence that a clear alias has a different observed operation.
+
+The whole original outer72 enters state0, calls clear19 on receiver+0 at38,
+switches to state-1 at43 and calls the separate base/member lifetime19 on the
+same receiver at53. Its final RET at71 and separate eight INT3 bytes are kept.
+The original game script parser `0x00420880` /2301 constructs the local at
+`[ebp-0x70]` through `0x00421250` at1099, records state8, supplies that same
+local to the accepted nested deque producer at1124, then destroys it through
+`0x004212A0` at1177 after state-1. The complete original nine-state parser frame
+also uses exactly that local in state8: `0x006555B0` /8 tail-transfers to the
+outer72. All eight other parser cleanups remain present. Original scalar
+Deleting44 at `0x00422A20` keeps its independent R037 classification and record.
+This is whole independent game/receiver/EH context, not a source-name inference.
+
+The natural `tests/origin_probes/DequeOuterPolicies.cpp` supplies complete
+explicit member and base owners with construction75/destruction72. Both whole
+cohorts use the actual complete library constructor72, clear19, destructor19
+and recursive vendor providers, with full compiler cleanup/dispatch18 and
+unwind/FunctionInfo36 for each original lifetime. Member versus base syntax,
+original element names and complete game layouts remain unknown. The generic
+eight-byte record's external destruction protocol reaches the independently
+accepted whole R153 script-buffer destructor43; its genuine scalarDeleting44
+and typed Destroy15 are retained. Runtime deletion keeps its prior library
+status. No incomplete reconstructed owner is instantiated as a game declaration.
+
+Default member and base controls retain genuinely byte-positive complete
+construction75 but their whole implicit destruction19 differs from outer72.
+Two real empty-first implicit destructors72 are also full byte positives.
+Their actual first provider is deque destruction and second is empty-base
+cleanup, reversing the explicit source roles. Full construction79 and two-state
+compiler code26/data44 differ from actual construction75 and one-state18/36.
+Moreover the real empty cleanup19 calls a library clear19; mapping that complete
+source chain to original second alias19 would require clear19 to define actual
+Tidy177. The whole defining-provider mismatch remains visible; no substitute
+provider or cropped body creates a coherent implicit source cohort. Empty-after
+construction75 retains its complete one-byte completed-state difference,
+destruction98 and cleanup45, with observed synthetic size24. Other controls
+observe size20. These are source/compiler observations, not recovered original
+allocation sizes or complete owner layouts.
+
+Three fresh pinned3077 profiles, `/Od /Ob0`, `/Od /Ob1` and `/O1 /Ob0`, keep one
+natural source body. Their full ordinary initialized inventories contain77/
+2966,62/2857 and77/2054 sections/bytes, separate whole BSS144 and all27 actual
+header hashes each. All definitions, AUX records and real fields remain frozen.
+The baseline retains34 complete unmasked positives /1560 bytes /90 fields,
+plus the complete negative parent75 with all six real fields and one difference.
+Unselected emissions are source inventories, not invented target mappings.
+
+The immutable `config/deque-outer-policy-origin-evidence.json`, SHA-256
+`13d995130f18671b9463070aa66f089cbef6cccc248690e82c4a0f849eb15c20`,
+retains25 whole native bodies3519 bytes, three complete original compiler frames
+/code118/data172, and the one original-to-accepted canonical transition. The
+full extent, CFG, parser switch/remap tables, original provenance, original
+unknown pair and all unrelated canonical rows remain guarded. The dedicated
+`config/deque-outer-policy-authored-origins.csv` records only that inferred72;
+old authored evidence and all previous manifests stay unchanged.
+
+The accepted-state `scripts/repo-python scripts/verify-deque-outer-policy-origins.py`
+cold-builds all three whole profiles, compares every selected source field,
+checks all original native/parser/EH context and invokes the entire unchanged
+original R212 CLI at fixed revision92720dc in a read-only same-length Git
+worktree. Full R211/R210/R209/R208/R150, original carrier/runtime proofs and
+external destruction R153 remain present. Historical Git blobs, source path/AUX
+identity and only explicitly hash-pinned CSV EOL representations are verified
+before and after replay. No reduced manifest, cached object or global CSV/argument
+patch replaces a proof. Earlier vector tests project only the independently
+validated literal R257 transition before their existing strict successor views.
+The preceding full R256/R255/R254/R212/R227 acceptance remains recorded; none
+of its source/header/ABI inputs changed.
+
+Twelve focused tests reject different parser locals or state8 cleanup, cropped
+parser frames, changed receiver/state order, substituted source definitions,
+missing recursive providers, erased implicit positives, cropped two-state
+metadata, a false19-to177 provider, erased complete negative state differences
+and unsupported historical pairs. All3512 public CI tests pass. Target/required
+tracking, exact full-row/input guards, remaining whole-body readback, progress
+freshness and whitespace pass. Complete accepted-state cold replay passes
+before handoff.
+
+Authored ownership remains a bounded inference from this coherent explicit
+cleanup cohort and independent game/local/EH identity. It does not prove the
+absence of every possible equivalent program or recover original declarations.
+Only one72-byte origin changes:4247 resolved =1002 authored+2664 library+581
+compiler,104 pending /3707 bytes and3245 excluded. Original1311 progress is1207
+classified /104 left. Exact60 /9883 bytes /60 units /eleven objects remain
+unchanged; the authored denominator grows only72 to1973516 bytes. The original
+R251116-row audit and every remaining literal pair/full target hash remain kept.
+
+Next bounded R258 examines `0x004229C0` /15 with accepted allocator.destroy25
+at `0x00422610`, whole deque-pop151 at `0x00422290`, deleting44 at `0x00422A20`
+and the newly inferred complete outer72. R165 already retains genuine vendor
+and ordinary15 positives plus a separate empty5 boundary; changing the outer's
+origin alone does not resolve this helper's namespace. Test a coherent fully
+defined source element lifetime and whole actual caller/provider chain while
+preserving every original ordinary alternative and full R165/R164 proof.
+Do not automatically classify the helper or add exact scope. The full remaining
+review goal and requested final complete Web MCP acceptance remain outstanding.
