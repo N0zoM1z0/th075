@@ -11744,3 +11744,60 @@ Current4,208 resolved =982 authored+2,646 library+580 compiler;143 pending and
 3,226 excluded. The original1,311 goal has1,168 classified /143 left and remains
 active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
 unchanged; authored denominator1,971,592 and provisional0.50%.
+
+## R234 complete paired scene resource cleanup
+
+R234 accepts five complete127-byte authored policies /635 bytes at4252B0,
+425550,42A2C0,42B300 and42E870. Each conditionally deletes the observed
+receiver+8 resource and performs base cleanup431F40, preserving all three
+branches and RET0. Current names, full extents, source/ABI, mappings and exact
+state remain unchanged; proposed scene resource roles are inference.
+
+Replay `scripts/repo-python scripts/verify-scene-resource-cleanup-origins.py`
+with immutable `config/scene-resource-cleanup-origin-evidence.json`, SHA-256
+`63e3d06ca902c40cfe7fa767639ba697f5705bb4bd048494adac7cab3157ceec`.
+Five independently accepted complete initializers /1,486 bytes install the same
+actual tables, construct/store the same observed resource field and load actual
+`data\system\load.dat`, `logo.dat`, `replay.dat` and `result.dat` assets. The
+name-entry initializer's actual directory string is `datab`, preserved literally.
+Each observed readonly table retains three original code words, all whole peer
+bodies and separately checked following data. The first slot's complete44-byte
+compiler deleting wrapper binds the selected cleanup. These observed slots do
+not recover a complete original interface or game class layout.
+
+All29 whole independent initializer/table-peer/resource/base/deleting/runtime
+anchors total10,482 bytes, including all original switch records and authored
+records. The previously ambiguous R1084251C0 /34 remains unknown. Complete
+original handler/unwind carriers18 and unwind-map/FuncInfo carriers36 retain
+all source fields, actual entry roots and external base/frame destinations.
+Following next-owner unwind data stays outside each36-byte extent.
+
+The natural complete fixture `tests/origin_probes/SceneResourceCleanup.cpp`
+cold-builds with pinned3077 and `/Od /Ob0 /Gy /GR- /GX /Zi /GS /I src /showIncludes`.
+It emits all24 code/data sections /809 bytes. Twenty-one complete unmasked
+comparisons /1,169 bytes bind all five ordinary cleanup127, paired deleting44,
+exception18 and data36 carriers, plus the shared resource deleting44 carrier.
+Actual COFF/AUX, every relocation, four genuine weak deleting aliases/fallbacks,
+normal instructions, linked flows and compact readonly `[1,8,12,12]` sizeof
+observations are checked. A complete empty lifecycle member models the observed
+base-relative lifetime role without adding a fabricated state word or padding.
+Natural raw-pointer implicit cleanup19 and owning-member implicit75 differ from
+the ordinary cleanup127; the owning member's own63-byte policy remains visible.
+These are source alternatives, not a universal proof of original source spelling
+or compiler flags. Authored source-family inference rests on independent actual
+game asset/paired owner context. No original owner/layout/ABI/source or exact
+credit is claimed, and no incomplete game class is instantiated.
+
+An empty prior selected-snapshot audit,34 scoped canonical pairs, full original
+unselected digests and bounded HEAD8cffcb1 readback permit exactly five rows in
+each function/origin ledger to change. Each external INT3 byte remains outside
+its127-byte function. Earlier evidence, lifetime/math/node uncertainties and all
+60 exact inputs remain literal. Original and accepted cold proofs,3,295 local CI
+tests including eight new guards, target/tracking, local Ghidra identity,
+progress, fresh138-candidate triage and whitespace pass. Complete Web MCP
+acceptance remains reserved until all origin review finishes.
+
+Current4,213 resolved =987 authored+2,646 library+580 compiler;138 pending and
+3,226 excluded. The original1,311 goal has1,173 classified /138 left and remains
+active. Exact60 functions /9,883 bytes /60 units across eleven objects remain
+unchanged; authored denominator1,972,227 and provisional0.50%.
