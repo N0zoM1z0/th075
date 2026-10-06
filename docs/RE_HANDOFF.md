@@ -58,6 +58,32 @@ original sprite owner. The no-reference24-byte word write410FC0 and member
 construction411C10 /25 remain pending until independent evidence warrants a
 decision. No exact reconstruction is authorized by this origin work.
 
+The R239 local preflight and five whole readonly decompiles have now passed
+with both Ghidra attestation and query completion markers. Private
+`.analysis/r239-sprite-setter-context.c` shows the mode byte consumed in signed
+sampling guards/modulo and the dword at+0x14 used as a color mask with the
+packet word at+0x9C. The complete generic diagnostic
+`.analysis/r239-SpriteRenderParameters.cpp` cold-builds with the original R167
+model and meaningful derived colorMask field, without arbitrary offset filler.
+Its full189 emitted sections /8,309 bytes,392 actual fields,31 includes and two
+weak aliases are in `.analysis/r239-sprite-parameter-source-diagnostic.json`.
+Both ordinary and genuine template22-byte setters reproduce all bytes with
+zero source fields; both complete borrowed-field writes are13 bytes. This
+remains diagnostic: original template spelling and private layout are unknown,
+and neither selected origin has changed.
+
+The attempted unchanged R213 CLI stops inside its R212/R211 dependency chain
+before the new source proof. R211's frozen retained unknowns459890,459C60 and
+459C40 were subsequently accepted by R227. Each literal old pair equals the
+complete R227 transition's original pair; current records are its accepted
+pairs. The exact three successor records are captured in private
+`.analysis/r239-r211-successors.json`; the actual failure is retained in
+`.analysis/r239-retained-r213-cold.log`. R213 itself also keeps the two selected
+setters as literal retained unknowns, audited in `.analysis/r239-history.json`.
+Reconcile these explicitly checked historical views or reopen the needed
+complete source proof independently before acceptance. Preserve all original
+scripts/manifests and do not claim the old standalone CLI currently passes.
+
 The35-byte pending4142D0 returns whether the complete deque atreceiver+0x154
 has zero size via reviewed414430 /17; whole BattleScene::AdvanceState43B610
 /4764 calls it. It is also in the private diagnostics. That large member offset
