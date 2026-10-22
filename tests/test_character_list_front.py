@@ -1,3 +1,4 @@
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -20,7 +21,7 @@ class CharacterListFrontTests(unittest.TestCase):
     def test_all_pinned_inputs_and_bounded_scope(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest((ROOT/p).read_bytes()),h,p)
+        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
         self.assertEqual(sum(r['size'] for r in self.plan['functions']),76)
         self.assertEqual(self.plan['historical_snapshots'],[])
 

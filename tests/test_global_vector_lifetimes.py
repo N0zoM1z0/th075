@@ -1,4 +1,5 @@
 """Reject ambiguous short-body shortcuts and incomplete global lifetime proofs."""
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -21,7 +22,7 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, value in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), value, path)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), value, path)
 
     def test_only_two_library_origins_without_abi_source_extent_or_exact_credit(self):
         self.assertEqual({r['address']: r['size'] for r in self.plan['functions']}, V.WHOLE)
@@ -184,6 +185,7 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
             view = {name: [selected[r['address']][state + '_' + ('function' if name == 'functions.csv' else 'origin')]
                            if r['address'] in selected else r for r in rows]
                     for name, rows in source.items()}
+            view['functions.csv'] = historical_functions(view['functions.csv'])
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

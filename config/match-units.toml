@@ -1169,3 +1169,191 @@ size = 73
 relocations = [
   { offset = 0x3F, type = "REL32", symbol = "?ConfigureNoticeText@FighterState@@QAEXE@Z", target = 0x0045D650 },
 ]
+
+[units.graphics-initialize]
+source = "src/GraphicsDevice.cpp"
+object = "build/matching/GraphicsDevice.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["Graphics::Initialize"]
+symbol = "?Initialize@Graphics@@YA_NPAUHWND__@@GG_N11@Z"
+target_address = 0x00401110
+size = 1059
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x13, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x24, type = "REL32", symbol = "_Direct3DCreate8@4", target = 0x0060499A },
+  { offset = 0x29, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x2F, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x37, type = "DIR32", symbol = "?g_CreateDirect3DError@Graphics@@3QBDB", target = 0x006572BC },
+  { offset = 0x3C, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x57, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x5E, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x6B, type = "DIR32", symbol = "?g_GetDeviceCapsError@Graphics@@3QBDB", target = 0x006572D8 },
+  { offset = 0x70, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x8D, type = "DIR32", symbol = "$SG62254", target = 0x006572F4 },
+  { offset = 0x96, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0xA2, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
+  { offset = 0xB1, type = "DIR32", symbol = "$SG62255", target = 0x00657318 },
+  { offset = 0xBA, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0xC6, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
+  { offset = 0xCE, type = "DIR32", symbol = "?g_DisplayMode@Graphics@@3U_D3DDISPLAYMODE@@A", target = 0x006711E8 },
+  { offset = 0xD6, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0xDE, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0xEB, type = "DIR32", symbol = "?g_GetDisplayModeError@Graphics@@3QBDB", target = 0x00657334 },
+  { offset = 0xF0, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x100, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x110, type = "DIR32", symbol = "?g_Window@Graphics@@3PAUHWND__@@A", target = 0x00671214 },
+  { offset = 0x116, type = "DIR32", symbol = "?g_Windowed@Graphics@@3_NA", target = 0x00671238 },
+  { offset = 0x120, type = "DIR32", symbol = "?g_ClientWidth@Graphics@@3HA", target = 0x00671218 },
+  { offset = 0x12A, type = "DIR32", symbol = "?g_ClientHeight@Graphics@@3HA", target = 0x0067121C },
+  { offset = 0x133, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x138, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0x141, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x14F, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x158, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x15E, type = "DIR32", symbol = "?g_DisplayMode@Graphics@@3U_D3DDISPLAYMODE@@A", target = 0x006711E8 },
+  { offset = 0x164, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x16A, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x174, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x17E, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x188, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x192, type = "DIR32", symbol = "?g_Window@Graphics@@3PAUHWND__@@A", target = 0x00671214 },
+  { offset = 0x198, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x19E, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x1A8, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x1BD, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x1C4, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x1D9, type = "DIR32", symbol = "$SG62261", target = 0x00657354 },
+  { offset = 0x1DE, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
+  { offset = 0x1E7, type = "DIR32", symbol = "?g_PixelShaderSupport@Graphics@@3CA", target = 0x006711F8 },
+  { offset = 0x1EF, type = "DIR32", symbol = "$SG62263", target = 0x0065736C },
+  { offset = 0x1F4, type = "REL32", symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z", target = 0x0041CC50 },
+  { offset = 0x1FD, type = "DIR32", symbol = "?g_PixelShaderSupport@Graphics@@3CA", target = 0x006711F8 },
+  { offset = 0x203, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x208, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x210, type = "DIR32", symbol = "?g_Window@Graphics@@3PAUHWND__@@A", target = 0x00671214 },
+  { offset = 0x21B, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x223, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x230, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x235, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x23D, type = "DIR32", symbol = "?g_Window@Graphics@@3PAUHWND__@@A", target = 0x00671214 },
+  { offset = 0x247, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x24F, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x25C, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x261, type = "DIR32", symbol = "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A", target = 0x0067119C },
+  { offset = 0x268, type = "DIR32", symbol = "?g_Window@Graphics@@3PAUHWND__@@A", target = 0x00671214 },
+  { offset = 0x273, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x27A, type = "DIR32", symbol = "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A", target = 0x0067122C },
+  { offset = 0x287, type = "DIR32", symbol = "?g_CreateDeviceError@Graphics@@3QBDB", target = 0x00657384 },
+  { offset = 0x28C, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x2CB, type = "DIR32", symbol = "?g_TargetTextures@Graphics@@3PAPAUIDirect3DTexture8@@A", target = 0x006711D4 },
+  { offset = 0x2E4, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x2EB, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x2F8, type = "DIR32", symbol = "?g_CreateTargetTextureError@Graphics@@3QBDB", target = 0x0065739C },
+  { offset = 0x2FD, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x30D, type = "DIR32", symbol = "?g_TargetRenderers@Graphics@@3PAPAUID3DXRenderToSurface@@A", target = 0x006711FC },
+  { offset = 0x323, type = "DIR32", symbol = "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A", target = 0x00671230 },
+  { offset = 0x329, type = "REL32", symbol = "_D3DXCreateRenderToSurface@28", target = 0x0060508B },
+  { offset = 0x332, type = "DIR32", symbol = "?g_CreateTargetRendererError@Graphics@@3QBDB", target = 0x006573B8 },
+  { offset = 0x337, type = "REL32", symbol = "?ShowError@Graphics@@YAXPBD@Z", target = 0x00401A00 },
+  { offset = 0x347, type = "DIR32", symbol = "?g_PresentCallback@Graphics@@3P6AXPAPAUIDirect3DTexture8@@@ZA", target = 0x00671198 },
+  { offset = 0x356, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x364, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x36A, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x377, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x37D, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x387, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x395, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x39F, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x3A5, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x3AF, type = "DIR32", symbol = "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A", target = 0x00671180 },
+  { offset = 0x3B8, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x3BD, type = "DIR32", symbol = "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A", target = 0x006711D8 },
+  { offset = 0x3C3, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x3C9, type = "DIR32", symbol = "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A", target = 0x006711D8 },
+  { offset = 0x3CF, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x3D5, type = "DIR32", symbol = "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A", target = 0x006711D8 },
+  { offset = 0x3DA, type = "DIR32", symbol = "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A", target = 0x00671200 },
+  { offset = 0x3DF, type = "DIR32", symbol = "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A", target = 0x006711D8 },
+  { offset = 0x3E8, type = "DIR32", symbol = "?g_RequireSquareTextures@Graphics@@3_NA", target = 0x0067123A },
+  { offset = 0x3F1, type = "DIR32", symbol = "?g_Use16BitBackBuffer@Graphics@@3_NA", target = 0x00671239 },
+  { offset = 0x3FE, type = "REL32", symbol = "?ToggleWindowMode@Graphics@@YAXXZ", target = 0x004018A0 },
+  { offset = 0x403, type = "REL32", symbol = "?SetDefaultStates@Graphics@@YAXXZ", target = 0x00401540 },
+  { offset = 0x40E, type = "REL32", symbol = "?SetClearColor@Graphics@@YAXEEE@Z", target = 0x00401AB0 },
+  { offset = 0x41B, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units.diagnostic-log-initialize-file]
+source = "src/DiagnosticLog.cpp"
+object = "build/matching/DiagnosticLog.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DiagnosticLog::InitializeFile"]
+symbol = "?InitializeFile@DiagnosticLog@@YAXPBD@Z"
+target_address = 0x0041CC00
+size = 67
+relocations = [
+  { offset = 0x9, type = "DIR32", symbol = "?g_Path@DiagnosticLog@@3PADA", target = 0x0068BD00 },
+  { offset = 0xE, type = "REL32", symbol = "_strcpy", target = 0x00641B80 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_Path@DiagnosticLog@@3PADA", target = 0x0068BD00 },
+  { offset = 0x2E, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x3B, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+]
+
+[units.diagnostic-log-append-string]
+source = "src/DiagnosticLog.cpp"
+object = "build/matching/DiagnosticLog.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DiagnosticLog::AppendString"]
+symbol = "?AppendString@DiagnosticLog@@YAXPBD@Z"
+target_address = 0x0041CC50
+size = 115
+relocations = [
+  { offset = 0xB, type = "REL32", symbol = "_strlen", target = 0x00640620 },
+  { offset = 0x28, type = "DIR32", symbol = "?g_Path@DiagnosticLog@@3PADA", target = 0x0068BD00 },
+  { offset = 0x2E, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x49, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x61, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x6B, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+]
+
+[units.diagnostic-log-append-integer]
+source = "src/DiagnosticLog.cpp"
+object = "build/matching/DiagnosticLog.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DiagnosticLog::AppendInteger"]
+symbol = "?AppendInteger@DiagnosticLog@@YAXH@Z"
+target_address = 0x0041CCD0
+size = 152
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x13, type = "DIR32", symbol = "$SG55563", target = 0x00657B2C },
+  { offset = 0x1C, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0x28, type = "REL32", symbol = "_strlen", target = 0x00640620 },
+  { offset = 0x45, type = "DIR32", symbol = "?g_Path@DiagnosticLog@@3PADA", target = 0x0068BD00 },
+  { offset = 0x4B, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x66, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x7E, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x88, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x90, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units.diagnostic-log-append-float]
+source = "src/DiagnosticLog.cpp"
+object = "build/matching/DiagnosticLog.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DiagnosticLog::AppendFloat"]
+symbol = "?AppendFloat@DiagnosticLog@@YAXM@Z"
+target_address = 0x0041CD70
+size = 157
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x18, type = "DIR32", symbol = "$SG55574", target = 0x00657B30 },
+  { offset = 0x21, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0x2D, type = "REL32", symbol = "_strlen", target = 0x00640620 },
+  { offset = 0x4A, type = "DIR32", symbol = "?g_Path@DiagnosticLog@@3PADA", target = 0x0068BD00 },
+  { offset = 0x50, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x6B, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x83, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x8D, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x95, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]

@@ -59,3 +59,8 @@ FighterState::ConfigureNoticeText,0x0045D650,function
 FighterState::BeginNoticeTransition,0x0045D6A0,function
 FighterState::ClearNoticeTransition,0x0045D6F0,function
 AuxEffect::ClearField8,0x005FAC20,function
+Graphics::Initialize,0x00401110,function
+DiagnosticLog::InitializeFile,0x0041CC00,function
+DiagnosticLog::AppendString,0x0041CC50,function
+DiagnosticLog::AppendInteger,0x0041CCD0,function
+DiagnosticLog::AppendFloat,0x0041CD70,function

@@ -1,4 +1,5 @@
 """Keep full contribution provenance and literal transitions distinct from leaf equality."""
+from exact_checkpoint import historical_functions
 import copy
 import importlib.util
 import json
@@ -82,6 +83,7 @@ class VendorZeroingContributionTests(unittest.TestCase):
         for original in [False, True]:
             state = 'original_' if original else 'accepted_'
             view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view['functions.csv'] = historical_functions(view['functions.csv'])
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

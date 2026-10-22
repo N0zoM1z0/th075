@@ -58,3 +58,8 @@ FighterState::IsGroundedStateWindow
 FighterState::InitializeNotice
 FighterState::ConfigureNoticeText
 FighterState::BeginNoticeTransition
+Graphics::Initialize
+DiagnosticLog::InitializeFile
+DiagnosticLog::AppendString
+DiagnosticLog::AppendInteger
+DiagnosticLog::AppendFloat

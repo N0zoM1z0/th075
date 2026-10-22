@@ -1,4 +1,5 @@
 """Guard whole archived SDK wrappers, defining routes and cold compatibility scope."""
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -21,7 +22,7 @@ class SdkPublicWrapperTests(unittest.TestCase):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, sha in M['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT/path).read_bytes()), sha, path)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha, path)
         self.assertEqual(sum(V.WHOLE.values()), 179)
         self.reject(lambda m: m['functions'][0]['accepted_function'].update(size='50'))
         self.reject(lambda m: m['functions'][0]['instructions'].pop())

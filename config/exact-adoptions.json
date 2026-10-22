@@ -1,0 +1,1182 @@
+{
+  "schema_version": 1,
+  "checkpoint": "a57b43e",
+  "batch": "F010",
+  "baseline_exact_functions": 60,
+  "baseline_exact_bytes": 9883,
+  "files": {
+    "config/implemented.csv": {
+      "size": 1692,
+      "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
+      "current_sha256": "61054c389a377035bf343aca9428585961d195f40a07dbce5e59b5e7f59c7116"
+    },
+    "config/known-globals.csv": {
+      "size": 8096,
+      "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
+      "current_sha256": "21c9c5ca6e87d055013260d3bd3f540af1261176035950820166286ce7615a05"
+    },
+    "config/known-symbols.csv": {
+      "size": 5783,
+      "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
+      "current_sha256": "04f4fa2f193071f246be5f1fa73c727c6956abae0730e86828d661209b88491f"
+    },
+    "config/match-units.toml": {
+      "size": 79348,
+      "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
+      "current_sha256": "51d80e1930f9d76fab7a0a150486d017fe402eb5e43aee835dfc1b008bef8c43"
+    },
+    "config/matches.csv": {
+      "size": 11363,
+      "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
+      "current_sha256": "08b889ffdf20c8be45409a63d10486b9737c563e12951b15244c159302e49711"
+    },
+    "config/reccmp-functions.csv": {
+      "size": 2910,
+      "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
+      "current_sha256": "8bdffcfba122af1edd2760bcd799dcfd8a23d046d220e7626d6798752a8cde14"
+    }
+  },
+  "functions": [
+    {
+      "before": {
+        "address": "0x00401110",
+        "size": "1059",
+        "span_end": "0x00401532",
+        "current_name": "FUN_00401110",
+        "proposed_name": "Graphics::Initialize",
+        "module": "Graphics",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00401110",
+        "size": "1059",
+        "span_end": "0x00401532",
+        "current_name": "FUN_00401110",
+        "proposed_name": "Graphics::Initialize",
+        "module": "Graphics",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "bool Graphics::Initialize(HWND window; unsigned short width; unsigned short height; bool windowed; bool squareTextures; bool use16BitBackBuffer)",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsDevice.cpp",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed; F010; scripts/repo-python scripts/replay-exact-units.py --unit graphics-initialize",
+        "owner": "authored",
+        "notes": "Complete extent and every relocation cold-replayed; SDK ABI and original control flow reviewed; names and declaration syntax inferred"
+      },
+      "origin": {
+        "address": "0x00401110",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CC00",
+        "size": "67",
+        "span_end": "0x0041CC42",
+        "current_name": "FUN_0041cc00",
+        "proposed_name": "DiagnosticLog::InitializeFile",
+        "module": "DiagnosticLog",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041CC00",
+        "size": "67",
+        "span_end": "0x0041CC42",
+        "current_name": "FUN_0041cc00",
+        "proposed_name": "DiagnosticLog::InitializeFile",
+        "module": "DiagnosticLog",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void DiagnosticLog::InitializeFile(const char *path)",
+        "is_thunk": "false",
+        "source_file": "src/DiagnosticLog.cpp",
+        "evidence": "R011; F010; scripts/repo-python scripts/replay-exact-units.py --unit diagnostic-log-initialize-file",
+        "owner": "authored",
+        "notes": "Complete extent and every relocation cold-replayed; SDK ABI and original control flow reviewed; names and declaration syntax inferred"
+      },
+      "origin": {
+        "address": "0x0041CC00",
+        "origin": "authored",
+        "subsystem": "DiagnosticLog",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CC50",
+        "size": "115",
+        "span_end": "0x0041CCC2",
+        "current_name": "FUN_0041cc50",
+        "proposed_name": "DiagnosticLog::AppendString",
+        "module": "DiagnosticLog",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041CC50",
+        "size": "115",
+        "span_end": "0x0041CCC2",
+        "current_name": "FUN_0041cc50",
+        "proposed_name": "DiagnosticLog::AppendString",
+        "module": "DiagnosticLog",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void DiagnosticLog::AppendString(const char *message)",
+        "is_thunk": "false",
+        "source_file": "src/DiagnosticLog.cpp",
+        "evidence": "R011; F010; scripts/repo-python scripts/replay-exact-units.py --unit diagnostic-log-append-string",
+        "owner": "authored",
+        "notes": "Complete extent and every relocation cold-replayed; SDK ABI and original control flow reviewed; names and declaration syntax inferred"
+      },
+      "origin": {
+        "address": "0x0041CC50",
+        "origin": "authored",
+        "subsystem": "DiagnosticLog",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CCD0",
+        "size": "152",
+        "span_end": "0x0041CD67",
+        "current_name": "FUN_0041ccd0",
+        "proposed_name": "DiagnosticLog::AppendInteger",
+        "module": "DiagnosticLog",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041CCD0",
+        "size": "152",
+        "span_end": "0x0041CD67",
+        "current_name": "FUN_0041ccd0",
+        "proposed_name": "DiagnosticLog::AppendInteger",
+        "module": "DiagnosticLog",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void DiagnosticLog::AppendInteger(int value)",
+        "is_thunk": "false",
+        "source_file": "src/DiagnosticLog.cpp",
+        "evidence": "R011; F010; scripts/repo-python scripts/replay-exact-units.py --unit diagnostic-log-append-integer",
+        "owner": "authored",
+        "notes": "Complete extent and every relocation cold-replayed; SDK ABI and original control flow reviewed; names and declaration syntax inferred"
+      },
+      "origin": {
+        "address": "0x0041CCD0",
+        "origin": "authored",
+        "subsystem": "DiagnosticLog",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CD70",
+        "size": "157",
+        "span_end": "0x0041CE0C",
+        "current_name": "FUN_0041cd70",
+        "proposed_name": "DiagnosticLog::AppendFloat",
+        "module": "DiagnosticLog",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041CD70",
+        "size": "157",
+        "span_end": "0x0041CE0C",
+        "current_name": "FUN_0041cd70",
+        "proposed_name": "DiagnosticLog::AppendFloat",
+        "module": "DiagnosticLog",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void DiagnosticLog::AppendFloat(float value)",
+        "is_thunk": "false",
+        "source_file": "src/DiagnosticLog.cpp",
+        "evidence": "R011; F010; scripts/repo-python scripts/replay-exact-units.py --unit diagnostic-log-append-float",
+        "owner": "authored",
+        "notes": "Complete extent and every relocation cold-replayed; SDK ABI and original control flow reviewed; names and declaration syntax inferred"
+      },
+      "origin": {
+        "address": "0x0041CD70",
+        "origin": "authored",
+        "subsystem": "DiagnosticLog",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    }
+  ],
+  "added_units": {
+    "graphics-initialize": {
+      "source": "src/GraphicsDevice.cpp",
+      "object": "build/matching/GraphicsDevice.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Graphics::Initialize"
+      ],
+      "symbol": "?Initialize@Graphics@@YA_NPAUHWND__@@GG_N11@Z",
+      "target_address": 4198672,
+      "size": 1059,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "_Direct3DCreate8@4",
+          "target": 6310298
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 55,
+          "type": "DIR32",
+          "symbol": "?g_CreateDirect3DError@Graphics@@3QBDB",
+          "target": 6648508
+        },
+        {
+          "offset": 60,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "?g_GetDeviceCapsError@Graphics@@3QBDB",
+          "target": 6648536
+        },
+        {
+          "offset": 112,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "$SG62254",
+          "target": 6648564
+        },
+        {
+          "offset": 150,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 162,
+          "type": "REL32",
+          "symbol": "?AppendString@DiagnosticLog@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "$SG62255",
+          "target": 6648600
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?AppendString@DiagnosticLog@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_DisplayMode@Graphics@@3U_D3DDISPLAYMODE@@A",
+          "target": 6754792
+        },
+        {
+          "offset": 214,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 222,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "?g_GetDisplayModeError@Graphics@@3QBDB",
+          "target": 6648628
+        },
+        {
+          "offset": 240,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 272,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 278,
+          "type": "DIR32",
+          "symbol": "?g_Windowed@Graphics@@3_NA",
+          "target": 6754872
+        },
+        {
+          "offset": 288,
+          "type": "DIR32",
+          "symbol": "?g_ClientWidth@Graphics@@3HA",
+          "target": 6754840
+        },
+        {
+          "offset": 298,
+          "type": "DIR32",
+          "symbol": "?g_ClientHeight@Graphics@@3HA",
+          "target": 6754844
+        },
+        {
+          "offset": 307,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 312,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 321,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 335,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 344,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 350,
+          "type": "DIR32",
+          "symbol": "?g_DisplayMode@Graphics@@3U_D3DDISPLAYMODE@@A",
+          "target": 6754792
+        },
+        {
+          "offset": 356,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 362,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 372,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 382,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 392,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 402,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 408,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 414,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 424,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 445,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 452,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 473,
+          "type": "DIR32",
+          "symbol": "$SG62261",
+          "target": 6648660
+        },
+        {
+          "offset": 478,
+          "type": "REL32",
+          "symbol": "?AppendString@DiagnosticLog@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 487,
+          "type": "DIR32",
+          "symbol": "?g_PixelShaderSupport@Graphics@@3CA",
+          "target": 6754808
+        },
+        {
+          "offset": 495,
+          "type": "DIR32",
+          "symbol": "$SG62263",
+          "target": 6648684
+        },
+        {
+          "offset": 500,
+          "type": "REL32",
+          "symbol": "?AppendString@DiagnosticLog@@YAXPBD@Z",
+          "target": 4312144
+        },
+        {
+          "offset": 509,
+          "type": "DIR32",
+          "symbol": "?g_PixelShaderSupport@Graphics@@3CA",
+          "target": 6754808
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 520,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 528,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 539,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 547,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 565,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 573,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 583,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 591,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 604,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 609,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 616,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 627,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 634,
+          "type": "DIR32",
+          "symbol": "?g_Direct3D@Graphics@@3PAUIDirect3D8@@A",
+          "target": 6754860
+        },
+        {
+          "offset": 647,
+          "type": "DIR32",
+          "symbol": "?g_CreateDeviceError@Graphics@@3QBDB",
+          "target": 6648708
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 715,
+          "type": "DIR32",
+          "symbol": "?g_TargetTextures@Graphics@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6754772
+        },
+        {
+          "offset": 740,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 747,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 760,
+          "type": "DIR32",
+          "symbol": "?g_CreateTargetTextureError@Graphics@@3QBDB",
+          "target": 6648732
+        },
+        {
+          "offset": 765,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 781,
+          "type": "DIR32",
+          "symbol": "?g_TargetRenderers@Graphics@@3PAPAUID3DXRenderToSurface@@A",
+          "target": 6754812
+        },
+        {
+          "offset": 803,
+          "type": "DIR32",
+          "symbol": "?g_Device@Graphics@@3PAUIDirect3DDevice8@@A",
+          "target": 6754864
+        },
+        {
+          "offset": 809,
+          "type": "REL32",
+          "symbol": "_D3DXCreateRenderToSurface@28",
+          "target": 6312075
+        },
+        {
+          "offset": 818,
+          "type": "DIR32",
+          "symbol": "?g_CreateTargetRendererError@Graphics@@3QBDB",
+          "target": 6648760
+        },
+        {
+          "offset": 823,
+          "type": "REL32",
+          "symbol": "?ShowError@Graphics@@YAXPBD@Z",
+          "target": 4200960
+        },
+        {
+          "offset": 839,
+          "type": "DIR32",
+          "symbol": "?g_PresentCallback@Graphics@@3P6AXPAPAUIDirect3DTexture8@@@ZA",
+          "target": 6754712
+        },
+        {
+          "offset": 854,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 868,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 874,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 887,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 893,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 903,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 917,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 927,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 933,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 943,
+          "type": "DIR32",
+          "symbol": "?g_TargetViewport@Graphics@@3U_D3DVIEWPORT8@@A",
+          "target": 6754688
+        },
+        {
+          "offset": 952,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 957,
+          "type": "DIR32",
+          "symbol": "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A",
+          "target": 6754776
+        },
+        {
+          "offset": 963,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 969,
+          "type": "DIR32",
+          "symbol": "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A",
+          "target": 6754776
+        },
+        {
+          "offset": 975,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A",
+          "target": 6754776
+        },
+        {
+          "offset": 986,
+          "type": "DIR32",
+          "symbol": "?g_PresentationSourceRect@Graphics@@3UtagRECT@@A",
+          "target": 6754816
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "?g_PresentationDestinationRect@Graphics@@3UtagRECT@@A",
+          "target": 6754776
+        },
+        {
+          "offset": 1000,
+          "type": "DIR32",
+          "symbol": "?g_RequireSquareTextures@Graphics@@3_NA",
+          "target": 6754874
+        },
+        {
+          "offset": 1009,
+          "type": "DIR32",
+          "symbol": "?g_Use16BitBackBuffer@Graphics@@3_NA",
+          "target": 6754873
+        },
+        {
+          "offset": 1022,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+          "target": 4200608
+        },
+        {
+          "offset": 1027,
+          "type": "REL32",
+          "symbol": "?SetDefaultStates@Graphics@@YAXXZ",
+          "target": 4199744
+        },
+        {
+          "offset": 1038,
+          "type": "REL32",
+          "symbol": "?SetClearColor@Graphics@@YAXEEE@Z",
+          "target": 4201136
+        },
+        {
+          "offset": 1051,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "diagnostic-log-initialize-file": {
+      "source": "src/DiagnosticLog.cpp",
+      "object": "build/matching/DiagnosticLog.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DiagnosticLog::InitializeFile"
+      ],
+      "symbol": "?InitializeFile@DiagnosticLog@@YAXPBD@Z",
+      "target_address": 4312064,
+      "size": 67,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "?g_Path@DiagnosticLog@@3PADA",
+          "target": 6864128
+        },
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "_strcpy",
+          "target": 6560640
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?g_Path@DiagnosticLog@@3PADA",
+          "target": 6864128
+        },
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
+    },
+    "diagnostic-log-append-string": {
+      "source": "src/DiagnosticLog.cpp",
+      "object": "build/matching/DiagnosticLog.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DiagnosticLog::AppendString"
+      ],
+      "symbol": "?AppendString@DiagnosticLog@@YAXPBD@Z",
+      "target_address": 4312144,
+      "size": 115,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "target": 6555168
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?g_Path@DiagnosticLog@@3PADA",
+          "target": 6864128
+        },
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
+    },
+    "diagnostic-log-append-integer": {
+      "source": "src/DiagnosticLog.cpp",
+      "object": "build/matching/DiagnosticLog.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DiagnosticLog::AppendInteger"
+      ],
+      "symbol": "?AppendInteger@DiagnosticLog@@YAXH@Z",
+      "target_address": 4312272,
+      "size": 152,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "$SG55563",
+          "target": 6650668
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "target": 6555168
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?g_Path@DiagnosticLog@@3PADA",
+          "target": 6864128
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 102,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 126,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 144,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "diagnostic-log-append-float": {
+      "source": "src/DiagnosticLog.cpp",
+      "object": "build/matching/DiagnosticLog.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DiagnosticLog::AppendFloat"
+      ],
+      "symbol": "?AppendFloat@DiagnosticLog@@YAXM@Z",
+      "target_address": 4312432,
+      "size": 157,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "$SG55574",
+          "target": 6650672
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "_strlen",
+          "target": 6555168
+        },
+        {
+          "offset": 74,
+          "type": "DIR32",
+          "symbol": "?g_Path@DiagnosticLog@@3PADA",
+          "target": 6864128
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    }
+  },
+  "source_sha256": {
+    "src/GraphicsDevice.cpp": "97f3769994867306f36704bfb28f3c4cf78dd9b8dd979c692f6bfb82ca408ead",
+    "src/GraphicsDevice.hpp": "4abce39cc1bd6b1eb68d0bce0eb09e01e17687b1ab63deb4689e6ae29e616a8a",
+    "src/DiagnosticLog.cpp": "20a479bc4b62c6904397f367b944feedb800d9433924b220d7fa3bff1c5f38bf",
+    "src/DiagnosticLog.hpp": "2dcc3034b13b95db4685ec735ad690d8a14dc24211f36a95b0bebf9506f62582"
+  }
+}

@@ -1,3 +1,4 @@
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -18,7 +19,7 @@ class SceneSharedValueTests(unittest.TestCase):
     def test_whole_manifest_and_retained_inputs(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest((ROOT/p).read_bytes()),h,p)
+        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_whole_independent_game_state_and_guarded_table(self):
         p=self.plan['parent']

@@ -1,4 +1,5 @@
 """Reject origin gains from isolated lifetime fingerprints or substituted providers."""
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -22,7 +23,7 @@ class OuterVectorPolicyTests(unittest.TestCase):
         V.verify_context(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, sha in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha, path)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha, path)
 
     def test_only_two_authored_origins_without_extent_layout_abi_or_exact_gain(self):
         self.assertEqual(sum(V.WHOLE.values()), 144)
@@ -212,6 +213,7 @@ class OuterVectorPolicyTests(unittest.TestCase):
         view = {name: V.historical_rows(self.plan, name, [selected[r['address']]['accepted_' + kind]
                     if r['address'] in selected else r for r in source[name]])
                 for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+        view['functions.csv'] = historical_functions(view['functions.csv'])
         with patch.object(V.PREVIOUS, 'rows', side_effect=lambda name: view[name]):
             V.PREVIOUS.verify_canonical(old)
         bad = copy.deepcopy(view)

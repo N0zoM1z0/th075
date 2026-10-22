@@ -1,4 +1,5 @@
 """Distinguish whole stack-policy provenance from special-member source ambiguity."""
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -21,7 +22,7 @@ class SdkStackContributionTests(unittest.TestCase):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, sha in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha)
         for ctl in self.plan['controls']:
             self.assertEqual(V.digest((ROOT / ctl['source']).read_bytes()), ctl['source_sha256'])
 
@@ -104,6 +105,7 @@ class SdkStackContributionTests(unittest.TestCase):
         for original in [True, False]:
             state = 'original_' if original else 'accepted_'
             view = {name: [selected[r['address']][state + kind] if r['address'] in selected else r for r in source[name]] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view['functions.csv'] = historical_functions(view['functions.csv'])
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

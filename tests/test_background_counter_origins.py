@@ -1,4 +1,5 @@
 """Guard game callback identity and preserve explicit/implicit SDK alternatives."""
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -19,7 +20,7 @@ class CounterPlanTests(unittest.TestCase):
     def test_complete_plan_and_prior_inputs(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
+        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/path)),sha,path)
 
     def test_four_complete_callback_extents_stay26(self):
         self.assertEqual(sum(r['size'] for r in M['functions']),104)

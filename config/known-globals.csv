@@ -52,3 +52,15 @@ address,name,module,confidence,evidence
 0x0067143C,g_TextRenderer,TextRenderer,inferred,F009; exact HUD draw and text-configuration relocations; original symbol name unknown
 0x00671618,g_SoundBank,SoundBank,inferred,F009; exact sound-manager pointer relocation and reviewed Play call; original symbol name unknown
 0x0067161E,g_NoticeSelection,FighterState,inferred,F009; exact signed-byte relocation used by the notice configuration policy; original symbol name unknown
+0x006572BC,Graphics::g_CreateDirect3DError,Graphics,inferred,F010; target error string passed on null Direct3DCreate8 result; all source fields cold exact
+0x006572D8,Graphics::g_GetDeviceCapsError,Graphics,inferred,F010; target error string passed on failed GetDeviceCaps; all source fields cold exact
+0x00657334,Graphics::g_GetDisplayModeError,Graphics,inferred,F010; target error string passed on failed GetAdapterDisplayMode; all source fields cold exact
+0x00657384,Graphics::g_CreateDeviceError,Graphics,inferred,F010; target error string after all three failed device-creation attempts; all source fields cold exact
+0x0065739C,Graphics::g_CreateTargetTextureError,Graphics,inferred,F010; target error string on target texture creation failure; all source fields cold exact
+0x006573B8,Graphics::g_CreateTargetRendererError,Graphics,inferred,F010; target error string on render-to-surface creation failure; all source fields cold exact
+0x006711E8,Graphics::g_DisplayMode,Graphics,inferred,F010; SDK D3DDISPLAYMODE filled by GetAdapterDisplayMode; Format at +12; all source fields cold exact
+0x00671218,Graphics::g_ClientWidth,Graphics,inferred,F010; 32-bit client width assigned from unsigned short argument; all source fields cold exact
+0x0067121C,Graphics::g_ClientHeight,Graphics,inferred,F010; 32-bit client height assigned from unsigned short argument; all source fields cold exact
+0x0067122C,Graphics::g_Direct3D,Graphics,inferred,F010; SDK IDirect3D8 pointer from Direct3DCreate8 and complete caps/display/device calls; all source fields cold exact
+0x00671239,Graphics::g_Use16BitBackBuffer,Graphics,inferred,F010; one-byte policy assigned by initialization and read by window toggle; all source fields cold exact
+0x0068BD00,DiagnosticLog::g_Path,DiagnosticLog,inferred,F010; mutable path written by InitializeFile and used by all four file calls; capacity unknown; all source fields cold exact

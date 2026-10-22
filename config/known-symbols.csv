@@ -41,3 +41,8 @@ address,name,module,confidence,evidence
 0x00403F40,Input::PollJoysticks,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
 0x00404010,Input::EnumerateJoystickDevice,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
 0x00404120,Input::ConfigureJoystickAxis,Input,inferred,F005; complete target behavior and SDK ABI; original name and full owner layout unknown
+0x00401110,Graphics::Initialize,Graphics,inferred,F010; complete cold exact replay and target control flow; original name unknown
+0x0041CC00,DiagnosticLog::InitializeFile,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
+0x0041CC50,DiagnosticLog::AppendString,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
+0x0041CCD0,DiagnosticLog::AppendInteger,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
+0x0041CD70,DiagnosticLog::AppendFloat,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown

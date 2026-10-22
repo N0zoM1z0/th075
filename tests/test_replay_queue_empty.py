@@ -1,3 +1,4 @@
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -17,7 +18,7 @@ class ReplayQueueEmptyTests(unittest.TestCase):
     def test_whole_immutable_plan_and_every_retained_input(self):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest((ROOT/p).read_bytes()),h,p)
+        for p,h in self.plan['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/p)),h,p)
 
     def test_one_whole_origin_without_original_abi_source_mapping_or_exact(self):
         self.assertEqual({r['address']:r['size'] for r in self.plan['functions']},V.WHOLE)

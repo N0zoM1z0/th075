@@ -1,4 +1,5 @@
 """Reject false origin gains from clear aliases, missing states or partial EH carriers."""
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -22,7 +23,7 @@ class NeighborVectorLifetimeTests(unittest.TestCase):
         V.verify_context(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, value in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), value, path)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), value, path)
 
     def test_origin_transition_has_no_extent_abi_source_or_exact_gain(self):
         bad = copy.deepcopy(self.plan)
@@ -194,6 +195,7 @@ class NeighborVectorLifetimeTests(unittest.TestCase):
         view = {name: V.historical_rows(self.plan, name, [selected[r['address']]['accepted_' + kind]
                     if r['address'] in selected else r for r in source[name]])
                 for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+        view['functions.csv'] = historical_functions(view['functions.csv'])
         with patch.object(prior, 'rows', side_effect=lambda name: view[name]):
             prior.verify_canonical(old)
         bad = copy.deepcopy(view)

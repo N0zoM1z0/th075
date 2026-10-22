@@ -9,11 +9,28 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-The first F010 investigation covers the remaining shared graphics initialization
-and state policies, starting with `Graphics::Initialize` at `0x00401110` /1,059.
-These are candidates only until complete cold exact replay. Large character
-action/render dispatchers dominate the later byte backlog; rank future cohorts
-by byte contribution as well as recovered ABI/dependency evidence.
+F010 accepts five complete functions /1,550 bytes /133 relocations: graphics
+initialization and the four diagnostic file policies. All five units cold-replay
+exact across two new objects. The original 60 units and their inputs are intact;
+they were not needlessly rebuilt. Current exact coverage is 65 functions /
+11,433 bytes (0.58% of reviewed authored bytes).
+Target-required tracking, all 3,602 public CI tests and whitespace checks pass.
+`config/exact-adoptions.json` freezes the five complete metadata transitions
+and the six original exact-ledger prefixes. Historical origin evidence and
+verifier sources remain unchanged. Public tests validate the current additions
+before reading the frozen prefixes or projecting those five literal pairs.
+Original strict CLI origin proofs still replay in their recorded read-only Git
+checkpoints; do not weaken their immutable snapshots for later exact batches.
+Obsolete F010 diagnostic objects were removed (41,642 bytes); accepted objects,
+source probes, reports, required Wine prefix and all original inputs remain.
+
+The next F011 cohort is the shared sprite transform/drawing family at
+`0x0040CA80` /1,132, `0x0040CEF0` /994 and `0x0040D2E0` /970. Reuse the accepted
+graphics pipeline and reviewed R011 ownership, but recover full extents, actual
+SDK/math dependencies and truthful partial owner interfaces before acceptance.
+Do not instantiate incomplete owners. Large character action/render dispatchers
+dominate the byte backlog; carry their required common interfaces forward and
+rank later cohorts by byte contribution as well as recovered ABI evidence.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -30,9 +47,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact baseline is 60 source-present and exact functions, covering 9,883
-bytes across 60 match units. Exact coverage of the currently reviewed authored
-bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
+The exact total is 65 source-present and exact functions, covering 11,433
+bytes across 65 match units. Exact coverage of the currently reviewed authored
+bytes is 11,433 / 1,973,516 (0.58%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

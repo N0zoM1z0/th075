@@ -14158,3 +14158,75 @@ frozen input replay, target-required tracking, all current unknown bodies/pairs,
 1,311 progress remains 1,214/97; exact remains 60 /9,883 bytes. No compiler build,
 origin/source/ABI/mapping/exact credit or push occurs. The full original goal
 remains incomplete and final Web MCP acceptance stays due after the review.
+
+## F010 — graphics initialization and diagnostic file policies
+
+Accepted 2026-10-22 after the user resumed authored exact reconstruction with
+a 95% byte target and authorized frequent commits and pushes. Goal accounting
+conservatively includes all 3,608 pending bytes; none of the 97 unknown origins
+changes. The separate historical 50%/complete-origin metric remains available
+for historical consumers, but no longer drives the progress card.
+
+| Address | Complete bytes | Inferred function | Relocations |
+| --- | ---: | --- | ---: |
+| `0x00401110` | 1,059 | `Graphics::Initialize` | 102 |
+| `0x0041CC00` | 67 | `DiagnosticLog::InitializeFile` | 5 |
+| `0x0041CC50` | 115 | `DiagnosticLog::AppendString` | 6 |
+| `0x0041CCD0` | 152 | `DiagnosticLog::AppendInteger` | 10 |
+| `0x0041CD70` | 157 | `DiagnosticLog::AppendFloat` | 10 |
+
+**Target-observed:** All five extents decode completely. Initialization has
+254 instructions, 20 internal branches and one final RET. The four log bodies
+have 23/42/53/54 instructions, 0/2/2/2 internal branches and one final RET each.
+Every branch destination is an instruction within its full extent; no switch
+table, shared tail or external jump is omitted. Following INT3 alignment is
+13/13/13/8/3 bytes and receives no credit. Initialization's complete body hash
+is `ad85e4c5d6f5a710b7a1bde0ab9eeba7720e6282b3d1fa326260cc8fe45fe2be`;
+all four log hashes agree with their unchanged R011 evidence rows.
+
+Initialization uses SDK `IDirect3D8`, `D3DCAPS8`, `D3DDISPLAYMODE` and
+`D3DPRESENT_PARAMETERS`, with hardware-HAL, software-HAL and software-REF
+fallbacks. It builds one target texture and renderer, initializes the viewport
+and source RECT, copies that complete RECT to the destination, and applies the
+window/texture policies. Raw instructions establish the complete RECT copy;
+Ghidra's overlapping-global presentation alone is insufficient. SDK vtable
+slots and field offsets account for all accesses. The one-slot callback reset
+uses the independently established scalar at `0x00671198` and index zero.
+
+The log initializer copies the selected path and unconditionally closes the
+CREATE_ALWAYS result, preserving the target's failure behavior. Append bodies
+open an existing file, return on INVALID_HANDLE_VALUE, seek to FILE_END, write
+the string length and close. Integer/float wrappers format `%d`/`%f`; float is
+promoted to double for sprintf. The four IAT bindings independently decode as
+CreateFileA, SetFilePointer, WriteFile and CloseHandle from KERNEL32.dll. All
+six generated NUL-terminated literals agree with complete target strings.
+
+**Compiler-observed:** Natural C++ in `GraphicsDevice.cpp` and `DiagnosticLog.cpp`
+uses pinned VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src`.
+Lexical scopes retain actual handle, length, formatting and API-output locals;
+there are no dummy locals or padding objects. The selected 20-/100-byte
+formatting buffers and 80-byte initialization message buffer reproduce the
+compiler's full stack frames. Exact emission does not recover original buffer
+capacities, declaration scopes, symbol names or executable-wide flags. No
+incomplete reconstructed owner is instantiated or embedded.
+
+**Acceptance:** `replay-exact-units.py` cold-builds two new objects and reports
+5/5 complete exact units /1,550 bytes /133 explicitly bound relocations. Units
+are `graphics-initialize` and `diagnostic-log-{initialize-file,append-string,
+append-integer,append-float}`. Every relocation field is compared. The original
+60 unit definitions, sources and headers are unchanged and need no replay.
+Totals become 65 exact functions /11,433 bytes /65 units, 0.58% of the
+provisional 1,973,516 authored bytes. Source presence, mapping and names remain
+separate from origin evidence, which is unchanged through R268.
+
+Historical origin tests previously pinned the exact ledgers to F009's 60-unit
+state. `config/exact-adoptions.json` now freezes the six original byte prefixes,
+the current complete file hashes, five full before/after function pairs and
+the new units/source hashes. The public test adapter checks those complete
+additions before returning a historical prefix or literal function pair. All
+original origin manifests, their hashes and verifier source files remain
+unchanged; strict historical CLI proofs continue to use their recorded
+read-only Git checkpoints. New regressions reject unapproved appended mappings,
+old-unit edits and partial function transitions, while keeping unrelated rows
+and unknown ownership outside the projection. All 3,602 public tests pass,
+together with target-required tracking, progress freshness and whitespace.

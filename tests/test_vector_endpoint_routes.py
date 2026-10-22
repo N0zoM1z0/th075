@@ -1,4 +1,5 @@
 """Guard complete endpoint routes and bounded historical canonical projections."""
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -19,7 +20,7 @@ class VectorEndpointRouteTests(unittest.TestCase):
     def test_immutable_current_and_original_inputs(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
+        for path,sha in M['retained_sha256'].items():self.assertEqual(V.digest(retained_bytes(ROOT/path)),sha,path)
 
     def test_four_whole31_extents_and_no_partial_credit(self):
         self.assertEqual(sum(V.WHOLE.values()),124)

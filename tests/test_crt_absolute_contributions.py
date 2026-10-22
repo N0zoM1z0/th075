@@ -1,4 +1,5 @@
 """Keep complete auxiliary contribution evidence and strict unresolved alternatives."""
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -21,7 +22,7 @@ class CrtAbsoluteContributionTests(unittest.TestCase):
         V.verify_plan(self.plan)
         self.assertEqual(V.digest((ROOT / V.EVIDENCE).read_bytes()), V.MANIFEST_SHA256)
         for path, sha in self.plan['retained_sha256'].items():
-            self.assertEqual(V.digest((ROOT / path).read_bytes()), sha)
+            self.assertEqual(V.digest(retained_bytes(ROOT/path)), sha)
         ctl = self.plan['control']
         self.assertEqual(V.digest((ROOT / ctl['source']).read_bytes()), ctl['source_sha256'])
 
@@ -92,6 +93,7 @@ class CrtAbsoluteContributionTests(unittest.TestCase):
         for original in [True, False]:
             state = 'original_' if original else 'accepted_'
             view = {name: [r[state + kind] if q['address'] == r['address'] else q for q in V.rows(name)] for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
+            view['functions.csv'] = historical_functions(view['functions.csv'])
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view); next(q for q in bad['functions.csv'] if q['address'] != r['address'])['notes'] = 'unapproved'

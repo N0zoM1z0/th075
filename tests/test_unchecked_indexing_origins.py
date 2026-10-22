@@ -1,4 +1,5 @@
 """Guard whole unchecked indexing, original ownership and route/stride separation."""
+from exact_checkpoint import retained_bytes
 import copy
 import importlib.util
 import json
@@ -19,7 +20,7 @@ class UncheckedIndexingPlanTests(unittest.TestCase):
     def test_complete_review_and_immutable_inputs(self):
         V.verify_plan(M)
         self.assertEqual(V.digest((ROOT/V.EVIDENCE).read_bytes()),V.MANIFEST_SHA256)
-        for path,sha in M['retained_sha256'].items(): self.assertEqual(V.digest((ROOT/path).read_bytes()),sha,path)
+        for path,sha in M['retained_sha256'].items(): self.assertEqual(V.digest(retained_bytes(ROOT/path)),sha,path)
 
     def test_all_twelve_complete_extents561(self):
         self.assertEqual(sum(V.WHOLE.values()),561)
