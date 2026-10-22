@@ -69,3 +69,6 @@ address,name,module,confidence,evidence
 0x00442400,BattleCollision::IncludePair,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x004492C0,BattleCollision::TestOverlap,BattleCollision,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x004491E0,BattleCollision::TransformBounds,BattleGeometry,inferred,F014; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442A70,BattleCollisionDispatch::ResolveAttackHitboxes,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00442E40,BattleCollisionDispatch::ResolveBodyContact,BattleCombat,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00455500,CollisionActor::SaveCollisionFields,FighterState,inferred,F015; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown

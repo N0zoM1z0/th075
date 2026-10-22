@@ -86,3 +86,6 @@ BattleCollision::ClearBounds
 BattleCollision::IncludePair
 BattleCollision::TestOverlap
 BattleCollision::TransformBounds
+BattleCollisionDispatch::ResolveAttackHitboxes
+BattleCollisionDispatch::ResolveBodyContact
+CollisionActor::SaveCollisionFields

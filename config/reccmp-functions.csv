@@ -87,3 +87,6 @@ BattleCollision::ClearBounds,0x00442540,function
 BattleCollision::IncludePair,0x00442400,function
 BattleCollision::TestOverlap,0x004492C0,function
 BattleCollision::TransformBounds,0x004491E0,function
+BattleCollisionDispatch::ResolveAttackHitboxes,0x00442A70,function
+BattleCollisionDispatch::ResolveBodyContact,0x00442E40,function
+CollisionActor::SaveCollisionFields,0x00455500,function

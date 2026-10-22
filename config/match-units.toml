@@ -1888,3 +1888,67 @@ relocations = [
   { offset = 0xB9, type = "REL32", symbol = "?CeilCollisionCoordinate@@YAMM@Z", target = 0x00449A60 },
   { offset = 0xC7, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
 ]
+
+[units.battle-collision-resolve-attack-hitboxes]
+source = "src/BattleCollisionDispatch.cpp"
+object = "build/matching/BattleCollisionDispatch.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCollisionDispatch::ResolveAttackHitboxes"]
+symbol = "?ResolveAttackHitboxes@BattleCollisionDispatch@@QAEXPAVCombatActor@@00@Z"
+target_address = 0x00442A70
+size = 975
+relocations = [
+  { offset = 0x32, type = "REL32", symbol = "?IsGroundedStateWindow@FighterState@@QAE_NXZ", target = 0x00455010 },
+  { offset = 0xEE, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
+  { offset = 0x102, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
+  { offset = 0x139, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x153, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x189, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x1A3, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x1C8, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x1D3, type = "REL32", symbol = "?ClearBounds@BattleCollision@@QAEXXZ", target = 0x00442540 },
+  { offset = 0x247, type = "REL32", symbol = "?TestOverlap@BattleCollision@@QAEHPBUtagRECT@@0@Z", target = 0x004492C0 },
+  { offset = 0x2A3, type = "REL32", symbol = "?IncludePair@BattleCollision@@QAEXPBUtagRECT@@0@Z", target = 0x00442400 },
+  { offset = 0x2EE, type = "REL32", symbol = "?ResolveSpecialHit@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z", target = 0x00444FC0 },
+  { offset = 0x311, type = "REL32", symbol = "?ApplyConditionalHit@BattleCombat@@QAE_NPAVCombatActor@@00@Z", target = 0x00444850 },
+  { offset = 0x334, type = "REL32", symbol = "?ResolveContact@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z", target = 0x004450E0 },
+  { offset = 0x365, type = "REL32", symbol = "?ResolveGuard@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z", target = 0x00444770 },
+  { offset = 0x385, type = "REL32", symbol = "?ApplyHitResponse@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z", target = 0x004439A0 },
+  { offset = 0x3A5, type = "REL32", symbol = "?ApplyAttackHit@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z", target = 0x00444020 },
+  { offset = 0x3C5, type = "REL32", symbol = "?ApplyHit@BattleCombat@@QAEXPAVCombatActor@@00@Z", target = 0x004431D0 },
+]
+
+[units.battle-collision-resolve-body-contact]
+source = "src/BattleCollisionDispatch.cpp"
+object = "build/matching/BattleCollisionDispatch.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCollisionDispatch::ResolveBodyContact"]
+symbol = "?ResolveBodyContact@BattleCollisionDispatch@@QAEXPAVCombatActor@@0@Z"
+target_address = 0x00442E40
+size = 897
+relocations = [
+  { offset = 0x8A, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
+  { offset = 0x9B, type = "REL32", symbol = "?Size@CollisionRectSequence@@QAEIXZ", target = 0x004452D0 },
+  { offset = 0xCF, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0xE9, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x11C, type = "REL32", symbol = "?At@CollisionRectSequence@@QAEAAUtagRECT@@I@Z", target = 0x00445310 },
+  { offset = 0x133, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x15D, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x182, type = "REL32", symbol = "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z", target = 0x004491E0 },
+  { offset = 0x18D, type = "REL32", symbol = "?ClearBounds@BattleCollision@@QAEXXZ", target = 0x00442540 },
+  { offset = 0x1FA, type = "REL32", symbol = "?TestOverlap@BattleCollision@@QAEHPBUtagRECT@@0@Z", target = 0x004492C0 },
+  { offset = 0x22E, type = "REL32", symbol = "?IncludePair@BattleCollision@@QAEXPBUtagRECT@@0@Z", target = 0x00442400 },
+  { offset = 0x263, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0x2A2, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+]
+
+[units.collision-actor-save-collision-fields]
+source = "src/BattleCollisionDispatch.cpp"
+object = "build/matching/BattleCollisionDispatch.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CollisionActor::SaveCollisionFields"]
+symbol = "?SaveCollisionFields@CollisionActor@@QAEXXZ"
+target_address = 0x00455500
+size = 118
+relocations = [
+]

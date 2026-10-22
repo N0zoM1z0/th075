@@ -10,31 +10,31 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F014 accepts five complete functions /855 code and compared bytes /16
-relocations: impact response, collision bounds reset, pair accumulation,
-rectangle overlap and facing-dependent bounds transformation. All five units
-cold-replay exact across one new object. The original 83 units and all 34
-tracked source/header inputs are unchanged and were not rebuilt. Current exact
-coverage is 88 functions /22,038 bytes (1.12% of reviewed authored bytes).
-`config/exact-adoptions.json` freezes twenty-eight F010-F014 transitions,
-seven original ledger prefixes and fourteen new source/header hashes.
-Historical origin evidence and verifier sources remain unchanged.
+F015 accepts three complete functions /1,990 code and compared bytes /31
+relocations: attack-hitbox dispatch, body-contact dispatch and actor collision
+field snapshots. All three units cold-replay exact across one new object.
+Original 88 units and all 36 tracked source/header inputs are unchanged and
+were not rebuilt. Current exact coverage is 91 functions /24,028 bytes
+(1.22% of reviewed authored bytes). `config/exact-adoptions.json` freezes
+31 F010-F015 transitions, seven original ledger prefixes and sixteen new
+source/header hashes. Historical origin evidence remains unchanged.
 
-The complete geometry callees establish four signed 32-bit rectangle fields.
-Source uses complete SDK RECT values and partial existing-owner interfaces.
-The float wrapper at `0x00449A60` forwards through `0x00449A80` to ceil;
-its unknown origin is preserved. Direct float lvalues retain the actual
-four-byte argument transfer, without misdeclaring the ABI.
-
-
-The five cold report source hashes agree with final source. Three obsolete
-F014 diagnostic objects (27,401 bytes) were removed, preserving the latest
-parent-layout diagnostic, accepted objects, reports and original inputs.
-Serial low-priority builds kept observed available memory above 8 GiB.
+The two previously unmatched collision dispatchers now have complete natural
+source. Bounded compiler controls establish that local names/declaration order
+influence VC7.1 frame allocation. Semantic local names reproduce the full layout
+without padding, inert locals, artificial returns or incomplete owners. Exact
+stack arrays contain complete SDK RECT values; original name spelling remains
+unknown. Existing grounded-state and geometry interfaces are reused unchanged.
 
 
-Target-required tracking, all 3,603 public CI tests (68.7 seconds), progress
-freshness and whitespace checks pass. Prior exact units were not rebuilt.
+All three cold report source hashes match final source. Four superseded
+diagnostic objects (42,946 bytes) were removed, preserving final objects,
+compiler controls, source probes and original evidence. Builds stayed serial
+and low priority, with about 8 GiB or more available system memory observed.
+
+
+Target-required tracking, all 3,603 public CI tests (97.7 seconds), progress
+freshness and whitespace checks pass. No prior exact unit was rebuilt.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -50,19 +50,20 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F015 cohort continues collision dispatchers `0x00442580`
-/1,249, `0x00442A70` /975 and `0x00442E40` /897. Fresh whole native and
-Ghidra reads are retained in `.analysis/f014-*`. The attack dispatcher probe
-reproduces the native operation order but remains non-exact: local result
-matrix, rectangle arrays and count/index allocation differ. Reversing natural
-local declaration order changed frame allocation, without solving the layout.
-The private probe `.analysis/probes/F014Collision.cpp` is diagnostic only;
-its tentative array capacities and local organization are not accepted source.
-Do not introduce padding, inert locals or an incomplete owner to force a match.
-Continue recovering real local values/lifetimes and the public STL iterator
-interfaces for active-list dispatch. F012-F014 now provide the actual shared
-combat and geometry dependencies. Large character action/render dispatchers
-still dominate the byte backlog; preserve the full 95% objective.
+The next bounded F016 cohort completes active-object collision dispatch at
+`0x00442580` /1,249. Full native and decompiled reads are retained in
+`.analysis/f014-442580.asm` and `.analysis/f015-list.c`. Despite historical
+"list" terminology, begin/end at `0x00445360` /35 and `0x00445390` use the
+reviewed VC7 deque family (R079), not std::list. Their existing-owner containers
+have 20-byte strides and public 8-byte iterator values. Recover the exact SDK
+iterator constructor/dereference/postincrement/comparison implementations and
+use public template source; do not invent a private owner layout.
+F015 now supplies both child dispatchers and the 118-byte actor snapshot.
+Then complete remaining response policies `0x00444770` /219,
+`0x00444FC0` /280 and `0x004450E0` /239, whose full native AL results and
+RET 12 are retained in `.analysis/f015-response-callee-abi.asm`.
+Keep serial low-priority builds and rank larger callers by byte contribution;
+the full 95% objective and all 97 unknown origins remain unchanged.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -80,9 +81,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 88 source-present and exact functions, covering 22,038
-bytes across 88 match units. Exact coverage of the currently reviewed authored
-bytes is 22,038 / 1,973,516 (1.12%). This denominator is provisional because
+The exact total is 91 source-present and exact functions, covering 24,028
+bytes across 91 match units. Exact coverage of the currently reviewed authored
+bytes is 24,028 / 1,973,516 (1.22%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

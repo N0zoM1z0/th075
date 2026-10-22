@@ -36,3 +36,6 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00442400,CollisionBounds::IncludePair,BattleCollision::IncludePair,R045,battle-collision-include-pair
 0x004492C0,BattleCollision::TestRectangleOverlapAt004492C0,BattleCollision::TestOverlap,R103,battle-collision-test-overlap
 0x004491E0,BattleGeometry::TransformBoundsByFacingAt004491E0,BattleCollision::TransformBounds,R109,battle-collision-transform-bounds
+0x00442A70,BattleCombat::ResolveAttackHitboxes,BattleCollisionDispatch::ResolveAttackHitboxes,R042,battle-collision-resolve-attack-hitboxes
+0x00442E40,BattleCombat::ResolveBodyContact,BattleCollisionDispatch::ResolveBodyContact,R042,battle-collision-resolve-body-contact
+0x00455500,FighterState::SaveCollisionFieldsAt00455500,CollisionActor::SaveCollisionFields,R103,collision-actor-save-collision-fields

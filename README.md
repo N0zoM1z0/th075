@@ -26,17 +26,17 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 88
-functions have reconstructed source and complete exact matches covering 22,038
+Ghidra analysis found 4,351 provisional function candidates. 91
+functions have reconstructed source and complete exact matches covering 24,028
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
 The active target is **95% authored bytes exact**. At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 22,038 / 1,973,516
-bytes (1.12%). F014 adds impact response and collision-bound transformation,
-overlap, accumulation and reset: five complete cold exact functions /855 code
-bytes /16 relocations. Original object layouts remain
+classified; 97 remain unknown. Reviewed authored coverage is 24,028 / 1,973,516
+bytes (1.22%). F015 adds the attack-hitbox and body-contact dispatchers plus
+collision-field snapshots: three complete cold exact functions /1,990 code
+bytes /31 relocations. Original object layouts remain
 partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of

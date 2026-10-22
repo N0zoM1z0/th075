@@ -14556,3 +14556,71 @@ Serial low-priority builds kept observed available memory above 8 GiB.
 
 Target-required tracking, all 3,603 public CI tests (68.7 seconds), progress
 freshness and whitespace checks pass. Prior exact units were not rebuilt.
+
+
+## F015 — Complete collision dispatch and actor snapshots (2026-10-22)
+
+**Target observations:** Attack-hitbox dispatch `0x00442A70` /975 and
+body-contact dispatch `0x00442E40` /897 retain their independent R042 origin.
+Actor snapshot `0x00455500` /118 retains R103. Whole-body hashes and complete
+CFG checks reproduce one return each with 44/29/0 internal branches. There
+are no tables or external branches. Alignment gaps of 1/15/10 INT3 bytes are
+excluded from coverage. All prior origins and extents remain unchanged.
+
+Attack dispatch checks activity, the existing grounded-state predicate, timers
+and frame flags before transforming attack/defense rectangles. It records each
+overlap in a 4-by-5 result matrix, accumulates bounds and invokes the actual
+ordered response chain. It retains the extra body-rectangle transform call,
+whose destination is a real output argument even though the caller does not
+subsequently read it. Body contact transforms two six-rectangle buffers,
+appends the body rectangles at the observed counts, checks the inclusive pair
+loops and updates both midpoint snapshots and collision state/count fields.
+Snapshot copies the actual state, frame/record pointers, positions, direction
+and animation state into the collision snapshot fields, preserving widths.
+
+**Compiler and source evidence:** The initial F014 attack source emitted
+1,062 bytes. A bounded semantic renaming probe emitted 990. Two separate
+local-allocation compiler controls expose local CodeView offsets and show that
+name ordering and declaration order affect VC7.1 frame allocation. Selecting
+clear semantic names for the same real variables reproduces the complete 975
+bytes; the body dispatch then reproduces all 897 bytes with its actual arrays,
+indices, signed-byte counts and hit flags. Eight-byte placement of rectangle
+arrays is compiler behavior, not explicit padding in source. Controls are
+private diagnostic artifacts; none of their variables is copied into game
+source. No target byte arrays, assembly, inert locals, ABI misdeclarations or
+conditional matching bodies are introduced. Original local spelling remains
+unknown, and matching does not establish a complete game owner layout.
+
+`BattleCollisionDispatch.cpp/.hpp` use partial existing-owner interfaces and
+complete SDK RECT temporaries. Only the observed container Size/At ABI is
+exposed; no container layout or original template argument is claimed. Full
+native Size/At reads and retained R032/R205 public-source evidence establish
+unsigned size/index and reference-return behavior over 16-byte elements.
+Actual transform accesses establish signed four-dword rectangle semantics.
+The grounded-state call reuses accepted `FighterState::IsGroundedStateWindow`
+and all accepted combat/geometry interfaces remain unchanged. Full native
+response callees at `0x00444770`, `0x00444FC0` and `0x004450E0` establish
+AL boolean results and thiscall RET 12. Those bindings earn no new exact credit.
+
+**Next-parent evidence:** Fresh active-object begin/end and iterator queries
+confirm the reviewed VC7 deque family, not the earlier informal list label.
+The active dispatch remains unaccepted; it needs public SDK iterator source
+and complete receiver/temporary ABI reconciliation. Its exact child policies
+and field snapshot are now available, removing those prior dependencies.
+
+**Acceptance:** Pinned VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`
+cold-builds one object. All three units compare exactly across 1,990 bytes and
+31 relocations, including the complete float 2.0 constant. Totals become 91
+exact functions /24,028 bytes /91 units (1.22%). All 88 prior unit definitions
+and 36 source/header files are unchanged. The cumulative manifest freezes 31
+transitions /14,145 added bytes and sixteen new source/header hashes. All 97
+unknown origins and the conservative 1,977,124-byte denominator remain intact;
+the 95% objective is still incomplete.
+
+All three cold report source hashes match final source. Four superseded
+diagnostic objects (42,946 bytes) were removed, preserving final objects,
+compiler controls, source probes and original evidence. Builds stayed serial
+and low priority, with about 8 GiB or more available system memory observed.
+
+Target-required tracking, all 3,603 public CI tests (97.7 seconds), progress
+freshness and whitespace checks pass. No prior exact unit was rebuilt.
