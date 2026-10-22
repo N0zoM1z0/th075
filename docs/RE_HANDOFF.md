@@ -1,6 +1,21 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-07. Work resumed with origin-review batches R070–R107, moved to
+Updated 2026-10-22. The user resumed authored exact reconstruction with a 95%
+byte target and authorized frequent commits and pushes using `gpt-6.1-sol: ...`.
+Cold-replay only new/affected units, keep compiler builds serial, monitor
+CPU/memory, and periodically remove obsolete reproducible outputs. Preserve
+all accepted origins and the 97 documented unknowns. The goal denominator
+conservatively includes all 3,608 pending bytes (1,977,124 total possible
+authored bytes); at least 1,878,268 exact authored bytes are required under
+that bound. Do not reduce the authored set to improve coverage.
+
+The first F010 investigation covers the remaining shared graphics initialization
+and state policies, starting with `Graphics::Initialize` at `0x00401110` /1,059.
+These are candidates only until complete cold exact replay. Large character
+action/render dispatchers dominate the later byte backlog; rank future cohorts
+by byte contribution as well as recovered ABI/dependency evidence.
+
+Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
 R247–R252, R258, R259, R264, R265, R266, R267 and R268. The public
@@ -20,9 +35,9 @@ bytes across 60 match units. Exact coverage of the currently reviewed authored
 bytes is 9,883 / 1,973,516 (0.50%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
-current strategy is origin review. Preserve the exact baseline while resolving
-the original-declaration evidence blocker below.
-Both the complete-origin and 50%-exact milestones remain unfinished.
+current strategy is authored exact reconstruction. Preserve this baseline and
+the original-declaration uncertainties below. The 95%-exact goal is incomplete;
+origin review remains separately incomplete.
 
 The canonical state lives in `config/functions.csv`,
 `config/function-origins.csv`, the origin evidence CSVs and the exact
@@ -34,7 +49,7 @@ The former chronological handoff is preserved in
 [handoff history](RE_HANDOFF_HISTORY.md); its earlier counts and next-step
 notes are historical snapshots.
 
-## Current blocker — original declaration evidence after R268
+## Retained origin-review blocker — original declaration evidence after R268
 
 R268 closes the supplied-archive route for directly stored original symbols.
 All 16 original entries are reconciled: 12 complete file streams /1,682,913,434
@@ -76,12 +91,11 @@ generated and library alternatives cannot be distinguished by more identical
 machine-code comparisons. The available local symbol corpus and actual supplied
 archive now yield no original declaration witness. An asynchronous question asks
 whether an additional original PDB/source/map path exists; no answer is presumed.
-Without that new evidence or an explicit user strategy change, further canonical
-ownership transitions are blocked. Do not invent another generic control or
-resource-decoding phase merely to leave the original goal active. The original
-goal is incomplete, and reviewed-but-unknown completion is not presumed.
-One final complete Web MCP acceptance remains due after the requested remaining
-review. No push was authorized.
+Further canonical ownership transitions require new evidence. The user has now
+changed strategy to exact reconstruction of reviewed authored functions;
+unresolved origins receive no ownership credit. The former final Web MCP run
+after complete origin review remains a historical outstanding request, not an
+intermediate exact-batch gate. Pushes are now authorized by the new instruction.
 
 ### Historical R267 checkpoint and R268 supplied-archive objective
 

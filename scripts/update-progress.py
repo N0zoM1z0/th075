@@ -21,7 +21,7 @@ def main() -> int:
     review_ratio = 100 * reviewed / count if count else 0
     authored_ratio = status["authored_exact_percent"] or 0
     authored_label = "Confirmed authored bytes" if status["origin_review_complete"] else "Reviewed authored bytes (provisional set)"
-    goal_label = "Goal achieved" if status["fifty_percent_goal_complete"] else "Goal incomplete: all origins reviewed and at least 50% authored bytes exact."
+    goal_label = "95% authored-byte goal achieved (pending bytes included)." if status["authored_exact_goal_complete"] else "Goal: 95% authored bytes exact; pending bytes count conservatively."
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="560" height="258" role="img" aria-label="TH075: {exact:,} exact functions, {status['exact_bytes']:,} exact bytes; {reviewed:,} of {count:,} candidates reviewed; {goal_label}">
   <rect width="560" height="258" rx="8" fill="#1f2335"/>
   <text x="24" y="28" fill="#f4f4f5" font-family="sans-serif" font-size="16" font-weight="600">TH075 function reconstruction</text>

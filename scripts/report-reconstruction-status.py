@@ -79,12 +79,24 @@ def load() -> tuple[list[dict[str, object]], dict[str, object]]:
     authored_bytes = sum(int(row["size"]) for row in result if row["category"] == "authored")
     exact_authored_bytes = sum(int(row["size"]) for row in result
                                if row["category"] == "authored" and row["exact"])
+    pending_bytes = sum(int(row["size"]) for row in result if row["category"] == "review")
+    authored_upper_bound = authored_bytes + pending_bytes
     summary.update({
         "reviewed": summary["authored"] + summary["excluded"],
         "authored_bytes": authored_bytes,
         "exact_authored_bytes": exact_authored_bytes,
         "authored_exact_percent": 100.0 * exact_authored_bytes / authored_bytes if authored_bytes else None,
         "origin_review_complete": summary["review"] == 0,
+        "pending_bytes": pending_bytes,
+        "authored_upper_bound_bytes": authored_upper_bound,
+        "authored_exact_lower_bound_percent": 100.0 * exact_authored_bytes / authored_upper_bound
+                                               if authored_upper_bound else None,
+        "authored_exact_goal_percent": 95,
+        # Pending origins can only increase the authored denominator. Use their
+        # entire extents so unresolved ownership cannot inflate goal credit.
+        "authored_exact_goal_complete": authored_bytes > 0
+                                        and exact_authored_bytes * 100 >= authored_upper_bound * 95,
+        # Retained for historical consumers of the original, separate milestone.
         "fifty_percent_goal_complete": summary["review"] == 0 and authored_bytes > 0
                                       and exact_authored_bytes * 2 >= authored_bytes,
     })
@@ -149,8 +161,12 @@ def main() -> int:
         label = "final denominator" if summary["origin_review_complete"] else "provisional denominator; origin review incomplete"
         print(f"Authored bytes: {summary['exact_authored_bytes']}/{summary['authored_bytes']} exact "
               f"({percentage:.2f}%; {label})" if percentage is not None else "Authored bytes: denominator unknown")
-        print("Goal (all origins reviewed and authored exact bytes >=50%): "
-              + ("achieved" if summary["fifty_percent_goal_complete"] else "incomplete"))
+        lower_bound = summary["authored_exact_lower_bound_percent"]
+        print("Goal (authored exact bytes >=95%, including all pending bytes in the denominator): "
+              + ("achieved" if summary["authored_exact_goal_complete"] else "incomplete"))
+        if lower_bound is not None:
+            print(f"Conservative authored coverage: {lower_bound:.2f}% "
+                  f"({summary['pending_bytes']} pending bytes)")
     else:
         for row in selected:
             unit_names = ",".join(row["units"]) or "-"

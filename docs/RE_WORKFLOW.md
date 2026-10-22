@@ -23,14 +23,22 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-After exact batches F008 and F009, the user resumed origin review on
+On 2026-10-22 the user resumed authored exact reconstruction with a 95% byte
+target, authorizing frequent commits and pushes. Reconstruct independently
+reviewed authored bodies while preserving all 97 pending origins. Goal
+accounting includes every pending byte in a conservative denominator; the
+displayed reviewed-authored percentage remains provisional. Cold-build only
+new or affected units. A shared header change requires replay of its dependent
+units. Keep builds serial and remove only obsolete reproducible outputs.
+
+Historical strategy: after exact batches F008 and F009, the user resumed origin review on
 2026-10-03. Preserve the 60-function exact baseline while reviewing bounded
 candidate cohorts. R108 resolved one explicit destructor and retained five
 complete explicit/implicit lifetime ambiguities. R109 resolved thirteen game
 policies and exposed the six-callee R110 cohort recorded in `RE_HANDOFF.md`.
 R110 resolved those dependencies through complete source-typed game loops;
 R111 resolved complete erase graphs, related wrappers and necessary helpers.
-The current bounded cohort is recorded in the handoff.
+The current exact-reconstruction cohort is recorded in the handoff.
 Scanner output is only a shortlist: accept each origin only after a durable
 verifier freezes its complete extent, body, control flow and independent
 ownership context. Run investigation and final acceptance locally. On

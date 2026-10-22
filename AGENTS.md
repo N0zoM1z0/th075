@@ -2,11 +2,15 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-Work resumed after R069. Following exact batches F008 and F009, on 2026-10-03
-the user resumed origin review. Preserve the 60-function exact baseline and
-prior accepted origin evidence. The next bounded task is the four-candidate
-R167 list-policy dependency cohort documented in `docs/RE_HANDOFF.md`;
-do not add exact-reconstruction scope unless the user changes strategy again.
+On 2026-10-22 the user resumed exact reconstruction, targeting 95% of authored
+bytes, and authorized frequent commits and pushes. Preserve all accepted exact
+units and origin evidence through R268. The 97 unresolved origins remain
+unknown; they do not block reconstruction of independently reviewed authored
+functions. Include all pending bytes in the conservative goal denominator.
+Use the current cohort in `docs/RE_HANDOFF.md`. Cold-replay affected units only;
+do not rebuild all accepted units without a relevant dependency change. Keep
+compiler builds serial and periodically remove only obsolete reproducible
+outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
 Use the user-required commit subject format `gpt-6.1-sol: ...`.

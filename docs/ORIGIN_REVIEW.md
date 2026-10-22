@@ -1,9 +1,10 @@
 # Origin review journal
 
-Work resumed after R069. Finish evidence-backed origin review of every
-candidate before resuming exact reconstruction, then target at least 50% exact coverage of
-the confirmed authored-byte set. This order supersedes the earlier
-alternating workflow. Percentages remain provisional until no origin is pending.
+This journal preserves origin evidence through R268. On 2026-10-22 the user
+resumed authored exact reconstruction with a 95% byte target. The 97 unresolved
+origins remain unknown while independently reviewed authored functions proceed.
+Percentages remain provisional until no origin is pending; goal completion
+conservatively includes all pending bytes in the denominator.
 Auto-analysis names, adjacency, and small size do not establish origin.
 
 ## R001 — remaining shared graphics family

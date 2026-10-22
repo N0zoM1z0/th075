@@ -31,7 +31,15 @@ functions have reconstructed source and complete exact matches covering 9,883
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-At the R129 checkpoint, origin review has classified 919 authored,
+The active target is **95% authored bytes exact**. At the R268 checkpoint,
+1,002 authored, 2,671 library and 581 compiler-generated candidates are
+classified; 97 remain unknown. Reviewed authored coverage is 9,883 / 1,973,516
+bytes (0.50%). Goal completion conservatively includes all 3,608 pending bytes
+in the denominator, preserving uncertainty without delaying reconstruction of
+reviewed authored functions. Only new or affected units require cold replay.
+The user authorized frequent commits and pushes on 2026-10-22.
+
+Historical R129 checkpoint: origin review had classified 919 authored,
 1,774 library and 575 compiler-generated candidates; 1,083 remain pending.
 The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
 provisional denominator. R108 resolved one destructor and retained five
@@ -74,7 +82,7 @@ the full math exception/name graph and vector destruction/unwind, retaining an
 abs ownership ambiguity against cold ordinary expression controls. The next
 handoff targets six R130 vector-construction/two-argument math candidates while preserving
 the 60-function exact baseline.
-The complete-origin and 50%-exact milestones are unfinished. See the
+The current 95%-exact goal and separate origin review remain unfinished. See the
 [current handoff](docs/RE_HANDOFF.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md).
 
