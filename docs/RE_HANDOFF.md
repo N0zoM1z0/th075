@@ -1,7 +1,8 @@
 # TH075 function reconstruction handoff
 
 Updated 2026-10-22. The user resumed authored exact reconstruction with a 95%
-byte target and authorized frequent commits and pushes using `gpt-6.1-sol: ...`.
+byte target and authorized frequent commits and pushes. The current user-required
+commit subject format is `gpt-6-astra-medium: ...` (updated on 2026-10-22).
 Cold-replay only new/affected units, keep compiler builds serial, monitor
 CPU/memory, and periodically remove obsolete reproducible outputs. Preserve
 all accepted origins and the 97 documented unknowns. The goal denominator
@@ -9,35 +10,48 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F010 accepts five complete functions /1,550 bytes /133 relocations: graphics
-initialization and the four diagnostic file policies. All five units cold-replay
-exact across two new objects. The original 60 units and their inputs are intact;
-they were not needlessly rebuilt. Current exact coverage is 65 functions /
-11,433 bytes (0.58% of reviewed authored bytes).
-Target-required tracking, all 3,602 public CI tests and whitespace checks pass.
-`config/exact-adoptions.json` freezes the five complete metadata transitions
-and the six original exact-ledger prefixes. Historical origin evidence and
-verifier sources remain unchanged. Public tests validate the current additions
-before reading the frozen prefixes or projecting those five literal pairs.
+F011 accepts nine complete functions /2,394 bytes /37 relocations: five
+coordinate-transform methods and four shared math-table policies. All nine
+units cold-replay exact across two new objects. The original 65 units and their
+source/header inputs are intact and were not rebuilt. Current exact coverage
+is 74 functions /13,827 bytes (0.70% of reviewed authored bytes).
+`config/exact-adoptions.json` freezes all fourteen F010-F011 metadata transitions
+and seven original ledger prefixes, including the original name aliases.
+Historical origin evidence and verifier sources remain unchanged. Public tests
+validate the current additions before reading those prefixes or projecting
+the complete literal function pairs.
 Original strict CLI origin proofs still replay in their recorded read-only Git
 checkpoints; do not weaken their immutable snapshots for later exact batches.
-Obsolete F010 diagnostic objects were removed (41,642 bytes); accepted objects,
-source probes, reports, required Wine prefix and all original inputs remain.
+Target-required tracking, all 3,603 public CI tests, the recorded authored
+extent checks and whitespace checks pass. Obsolete F011 diagnostic objects
+were removed (20,003 bytes); accepted objects, reports, source probes, required
+Wine prefix and original inputs remain. Builds stayed serial and at low
+priority; CI used about one CPU core and 313 MiB RSS with over 8 GiB available.
 
-The next F011 cohort is the shared sprite transform/drawing family at
-`0x0040CA80` /1,132, `0x0040CEF0` /994 and `0x0040D2E0` /970. Reuse the accepted
-graphics pipeline and reviewed R011 ownership, but recover full extents, actual
-SDK/math dependencies and truthful partial owner interfaces before acceptance.
-Do not instantiate incomplete owners. Large character action/render dispatchers
-dominate the byte backlog; carry their required common interfaces forward and
-rank later cohorts by byte contribution as well as recovered ABI evidence.
+The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
+`0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
+F011 confirms only its first four 16-byte coordinate records; the call at +64
+does not establish a fifth coordinate record or a complete matrix owner.
+Those drawing bodies and the related HUD renderers remain deferred. The new
+partial `SpriteTransform` interface is only used through existing receivers;
+complete SDK point temporaries do not establish the original class identity.
+Both empty helpers and the integer abs helper retain their unknown origins.
+
+The next bounded F012 investigation is the reviewed R065 battle-state cohort:
+`0x00445A00` /1,958, then `0x004431D0` /1,982 and `0x00444850` /1,877. Recover
+their full guarded switches, tables, exits and actual dependency interfaces
+before selecting source or accepting an extent. Keep builds serial and avoid
+instantiating incomplete owners. Large character action/render dispatchers
+dominate the byte backlog; rank subsequent cohorts by byte contribution as
+well as recovered ABI evidence.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
 review cohorts R108 through R246, R253, R254, R255, R256, R257, R260, R261, R262 and R263, with bounded unresolved reviews/audits
 R247–R252, R258, R259, R264, R265, R266, R267 and R268. The public
 repository is [N0zoM1z0/th075](https://github.com/N0zoM1z0/th075) on
-`main`. Commit subjects use `gpt-6.1-sol: ...`. Keep documentation in English.
+`main`. That checkpoint used `gpt-6.1-sol: ...`; the current required format is
+recorded above. Keep documentation in English.
 
 ## Verified checkpoint
 
@@ -47,9 +61,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 65 source-present and exact functions, covering 11,433
-bytes across 65 match units. Exact coverage of the currently reviewed authored
-bytes is 11,433 / 1,973,516 (0.58%). This denominator is provisional because
+The exact total is 74 source-present and exact functions, covering 13,827
+bytes across 74 match units. Exact coverage of the currently reviewed authored
+bytes is 13,827 / 1,973,516 (0.70%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

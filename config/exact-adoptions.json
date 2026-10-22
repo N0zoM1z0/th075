@@ -1,39 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010",
+  "batch": "F010-F011",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "61054c389a377035bf343aca9428585961d195f40a07dbce5e59b5e7f59c7116"
+      "current_sha256": "53f4dea58e1a782a2b72432276cf4fac42cb36495e61616bb139d299bda1fa1a"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "21c9c5ca6e87d055013260d3bd3f540af1261176035950820166286ce7615a05"
+      "current_sha256": "202887b7412a4afa6a2c107963f58cf4b3facc4f854b13a838221fe1234121ca"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "04f4fa2f193071f246be5f1fa73c727c6956abae0730e86828d661209b88491f"
+      "current_sha256": "6039abb02276a5d8e8306730d4a8986c6634150861055fdae52b0fc192959182"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "51d80e1930f9d76fab7a0a150486d017fe402eb5e43aee835dfc1b008bef8c43"
+      "current_sha256": "d97cfd96533ea1b385aadbe56b8c681da578450abc504c327b34307c1d4443ef"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "08b889ffdf20c8be45409a63d10486b9737c563e12951b15244c159302e49711"
+      "current_sha256": "dd000dd9e65dc37895e7ac449b70c84140d54587a2b86adc95195c12544c02de"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "8bdffcfba122af1edd2760bcd799dcfd8a23d046d220e7626d6798752a8cde14"
+      "current_sha256": "bf7ea76310ea21e98140b0d79fcf5afaecc0af4947c843a24db552e7c9f424d4"
+    },
+    "config/authored-origin-name-aliases.csv": {
+      "size": 2202,
+      "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
+      "current_sha256": "e9b196c592a84a4cacc03983b6a9b1cbb6c6ab9a0896686139965362695bd0b6"
     }
   },
   "functions": [
@@ -79,6 +84,358 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00411400",
+        "size": "250",
+        "span_end": "0x004114F9",
+        "current_name": "FUN_00411400",
+        "proposed_name": "SpriteTransform::BuildQuadFromRect",
+        "module": "SpriteTransform",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00411400",
+        "size": "250",
+        "span_end": "0x004114F9",
+        "current_name": "FUN_00411400",
+        "proposed_name": "SpriteTransform::BuildQuadFromRect",
+        "module": "SpriteTransform",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform::BuildQuadFromRect(const RECT *rectangle)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F011; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-build-quad-from-rect",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F011: complete extent and every relocation cold-replayed exact. Only the four-coordinate prefix is represented; enclosing 132-byte owner remains incomplete and is never instantiated or embedded."
+      },
+      "origin": {
+        "address": "0x00411400",
+        "origin": "authored",
+        "subsystem": "SpriteTransform",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00411500",
+        "size": "191",
+        "span_end": "0x004115BE",
+        "current_name": "FUN_00411500",
+        "proposed_name": "SpriteTransform::TranslateQuad",
+        "module": "SpriteTransform",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00411500",
+        "size": "191",
+        "span_end": "0x004115BE",
+        "current_name": "FUN_00411500",
+        "proposed_name": "SpriteTransform::TranslateQuad",
+        "module": "SpriteTransform",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform::TranslateQuad(float x; float y; float z)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F011; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-translate-quad",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F011: complete extent and every relocation cold-replayed exact. Only the four-coordinate prefix is represented; enclosing 132-byte owner remains incomplete and is never instantiated or embedded."
+      },
+      "origin": {
+        "address": "0x00411500",
+        "origin": "authored",
+        "subsystem": "SpriteTransform",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004115C0",
+        "size": "290",
+        "span_end": "0x004116E1",
+        "current_name": "FUN_004115c0",
+        "proposed_name": "SpriteTransform::ScaleQuad",
+        "module": "SpriteTransform",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004115C0",
+        "size": "290",
+        "span_end": "0x004116E1",
+        "current_name": "FUN_004115c0",
+        "proposed_name": "SpriteTransform::ScaleQuad",
+        "module": "SpriteTransform",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform::ScaleQuad(float x; float y; float z; float scaleX; float scaleY; float scaleZ)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F011; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-scale-quad",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F011: complete extent and every relocation cold-replayed exact. Only the four-coordinate prefix is represented; enclosing 132-byte owner remains incomplete and is never instantiated or embedded."
+      },
+      "origin": {
+        "address": "0x004115C0",
+        "origin": "authored",
+        "subsystem": "SpriteTransform",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004116F0",
+        "size": "1212",
+        "span_end": "0x00411BAB",
+        "current_name": "FUN_004116f0",
+        "proposed_name": "SpriteTransform::RotateQuad",
+        "module": "SpriteTransform",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004116F0",
+        "size": "1212",
+        "span_end": "0x00411BAB",
+        "current_name": "FUN_004116f0",
+        "proposed_name": "SpriteTransform::RotateQuad",
+        "module": "SpriteTransform",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform::RotateQuad(float x; float y; float z; float angleX; float angleY; float angleZ)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F011; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-rotate-quad",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F011: complete extent and every relocation cold-replayed exact. Only the four-coordinate prefix is represented; enclosing 132-byte owner remains incomplete and is never instantiated or embedded."
+      },
+      "origin": {
+        "address": "0x004116F0",
+        "origin": "authored",
+        "subsystem": "SpriteTransform",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CAE0",
+        "size": "82",
+        "span_end": "0x0041CB31",
+        "current_name": "FUN_0041cae0",
+        "proposed_name": "MathLookup::BuildCosTableAt0041CAE0",
+        "module": "MathLookup",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041CAE0",
+        "size": "82",
+        "span_end": "0x0041CB31",
+        "current_name": "FUN_0041cae0",
+        "proposed_name": "MathLookup::BuildCosTable",
+        "module": "MathLookup",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void MathLookup::BuildCosTable()",
+        "is_thunk": "false",
+        "source_file": "src/MathLookup.cpp",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py; F011; scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-build-cos-table",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit.; F011: complete extent and every relocation cold-replayed exact. New natural source is complete cold exact; original R182 diagnostic negatives remain historical. Only the used table range is established."
+      },
+      "origin": {
+        "address": "0x0041CAE0",
+        "origin": "authored",
+        "subsystem": "MathLookup",
+        "disposition": "authored",
+        "confidence": "complete-explicit-game-table-and-indexed-counter-policy",
+        "evidence_id": "R182"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CB40",
+        "size": "43",
+        "span_end": "0x0041CB6A",
+        "current_name": "FUN_0041cb40",
+        "proposed_name": "MathLookup::ReadCosTableAt0041CB40",
+        "module": "MathLookup",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041CB40",
+        "size": "43",
+        "span_end": "0x0041CB6A",
+        "current_name": "FUN_0041cb40",
+        "proposed_name": "MathLookup::ReadCosTable",
+        "module": "MathLookup",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "float MathLookup::ReadCosTable(float angle)",
+        "is_thunk": "false",
+        "source_file": "src/MathLookup.cpp",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py; F011; scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-cos-table",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit.; F011: complete extent and every relocation cold-replayed exact. New natural source is complete cold exact; original R182 diagnostic negatives remain historical. Only the used table range is established."
+      },
+      "origin": {
+        "address": "0x0041CB40",
+        "origin": "authored",
+        "subsystem": "MathLookup",
+        "disposition": "authored",
+        "confidence": "complete-explicit-game-table-and-indexed-counter-policy",
+        "evidence_id": "R182"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CB70",
+        "size": "49",
+        "span_end": "0x0041CBA0",
+        "current_name": "FUN_0041cb70",
+        "proposed_name": "MathLookup::ReadPhaseTableAt0041CB70",
+        "module": "MathLookup",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041CB70",
+        "size": "49",
+        "span_end": "0x0041CBA0",
+        "current_name": "FUN_0041cb70",
+        "proposed_name": "MathLookup::ReadPhaseTable",
+        "module": "MathLookup",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "float MathLookup::ReadPhaseTable(float angle)",
+        "is_thunk": "false",
+        "source_file": "src/MathLookup.cpp",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py; F011; scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-phase-table",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit.; F011: complete extent and every relocation cold-replayed exact. New natural source is complete cold exact; original R182 diagnostic negatives remain historical. Only the used table range is established."
+      },
+      "origin": {
+        "address": "0x0041CB70",
+        "origin": "authored",
+        "subsystem": "MathLookup",
+        "disposition": "authored",
+        "confidence": "complete-explicit-game-table-and-indexed-counter-policy",
+        "evidence_id": "R182"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041CBB0",
+        "size": "73",
+        "span_end": "0x0041CBF8",
+        "current_name": "FUN_0041cbb0",
+        "proposed_name": "MathLookup::ReadRatioAt0041CBB0",
+        "module": "MathLookup",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0041CBB0",
+        "size": "73",
+        "span_end": "0x0041CBF8",
+        "current_name": "FUN_0041cbb0",
+        "proposed_name": "MathLookup::ReadRatio",
+        "module": "MathLookup",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "float MathLookup::ReadRatio(float angle)",
+        "is_thunk": "false",
+        "source_file": "src/MathLookup.cpp",
+        "evidence": "R182; config/math-table-policy-origin-evidence.json; scripts/repo-python scripts/verify-math-table-policy-origins.py; F011; scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-ratio",
+        "owner": "authored",
+        "notes": "Complete explicit game math-table build/lookup/guarded ratio or signed indexed word-counter policy. Three whole natural math source functions reproduce174 bytes; the full73-byte ratio source has six instruction-order differences. All19 genuine code/data fields remain unmasked and fixed; target lookup table claims only the14400-byte used writable range, not a recovered original allocation/runtime contents. The full79-byte counter is reviewed from native code and independent whole game context; small synthetic67-byte owner/control grants no target match or original layout. Complete cos primary/C entry and ftol2 are retained independently; the11-byte integer absolute-value helper stays unknown despite vendor/ordinary alternatives. Original names/types/field meanings remain provisional. No source/private ABI/mapping/exact credit.; F011: complete extent and every relocation cold-replayed exact. New natural source is complete cold exact; original R182 diagnostic negatives remain historical. Only the used table range is established."
+      },
+      "origin": {
+        "address": "0x0041CBB0",
+        "origin": "authored",
+        "subsystem": "MathLookup",
+        "disposition": "authored",
+        "confidence": "complete-explicit-game-table-and-indexed-counter-policy",
+        "evidence_id": "R182"
       }
     },
     {
@@ -255,6 +612,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00427500",
+        "size": "204",
+        "span_end": "0x004275CB",
+        "current_name": "FUN_00427500",
+        "proposed_name": "SceneText::BuildRectangleCornersAt00427500",
+        "module": "SceneText",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R105; scripts/repo-python scripts/verify-short-game-origins.py --cohort R105",
+        "owner": "authored",
+        "notes": "Batch closure from newly reviewed game callees; whole body, complete direct calls and independently reviewed parent; inferred name/layout, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00427500",
+        "size": "204",
+        "span_end": "0x004275CB",
+        "current_name": "FUN_00427500",
+        "proposed_name": "SpriteTransform::BuildQuad",
+        "module": "SpriteTransform",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform::BuildQuad(float left; float top; float right; float bottom)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform.cpp",
+        "evidence": "R105; scripts/repo-python scripts/verify-short-game-origins.py --cohort R105; F011; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-build-quad",
+        "owner": "authored",
+        "notes": "Batch closure from newly reviewed game callees; whole body, complete direct calls and independently reviewed parent; inferred name/layout, no source or exact credit; F011: complete extent and every relocation cold-replayed exact. Only the four-coordinate prefix is represented; enclosing 132-byte owner remains incomplete and is never instantiated or embedded."
+      },
+      "origin": {
+        "address": "0x00427500",
+        "origin": "authored",
+        "subsystem": "SceneText",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R105"
       }
     }
   ],
@@ -1171,12 +1572,438 @@
           "target": 6555153
         }
       ]
+    },
+    "sprite-transform-build-quad-from-rect": {
+      "source": "src/SpriteTransform.cpp",
+      "object": "build/matching/SpriteTransform.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform::BuildQuadFromRect"
+      ],
+      "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+      "target_address": 4264960,
+      "size": 250,
+      "relocations": [
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 93,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 153,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 212,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        }
+      ]
+    },
+    "sprite-transform-build-quad": {
+      "source": "src/SpriteTransform.cpp",
+      "object": "build/matching/SpriteTransform.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform::BuildQuad"
+      ],
+      "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+      "target_address": 4355328,
+      "size": 204,
+      "relocations": [
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 70,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 118,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@MMMM@Z",
+          "target": 4250384
+        }
+      ]
+    },
+    "sprite-transform-translate-quad": {
+      "source": "src/SpriteTransform.cpp",
+      "object": "build/matching/SpriteTransform.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform::TranslateQuad"
+      ],
+      "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+      "target_address": 4265216,
+      "size": 191,
+      "relocations": []
+    },
+    "sprite-transform-scale-quad": {
+      "source": "src/SpriteTransform.cpp",
+      "object": "build/matching/SpriteTransform.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform::ScaleQuad"
+      ],
+      "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+      "target_address": 4265408,
+      "size": 290,
+      "relocations": []
+    },
+    "sprite-transform-rotate-quad": {
+      "source": "src/SpriteTransform.cpp",
+      "object": "build/matching/SpriteTransform.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform::RotateQuad"
+      ],
+      "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+      "target_address": 4265712,
+      "size": 1212,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?g_ZeroFloat@@3MA",
+          "target": 6649900
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+          "target": 4311920
+        },
+        {
+          "offset": 415,
+          "type": "DIR32",
+          "symbol": "?g_ZeroFloat@@3MA",
+          "target": 6649900
+        },
+        {
+          "offset": 440,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        },
+        {
+          "offset": 455,
+          "type": "REL32",
+          "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+          "target": 4311920
+        },
+        {
+          "offset": 811,
+          "type": "DIR32",
+          "symbol": "?g_ZeroFloat@@3MA",
+          "target": 6649900
+        },
+        {
+          "offset": 836,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        },
+        {
+          "offset": 851,
+          "type": "REL32",
+          "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+          "target": 4311920
+        }
+      ]
+    },
+    "math-lookup-build-cos-table": {
+      "source": "src/MathLookup.cpp",
+      "object": "build/matching/MathLookup.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MathLookup::BuildCosTable"
+      ],
+      "symbol": "?BuildCosTable@MathLookup@@YAXXZ",
+      "target_address": 4311776,
+      "size": 82,
+      "relocations": [
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "__real@4024000000000000",
+          "target": 6650656
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "__real@400921fb54411744",
+          "target": 6650648
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "__real@4066800000000000",
+          "target": 6650640
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "_cos",
+          "target": 6559572
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "?g_CosineTable@MathLookup@@3PAMA",
+          "target": 6849728
+        }
+      ]
+    },
+    "math-lookup-read-cos-table": {
+      "source": "src/MathLookup.cpp",
+      "object": "build/matching/MathLookup.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MathLookup::ReadCosTable"
+      ],
+      "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+      "target_address": 4311872,
+      "size": 43,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "_abs",
+          "target": 6561194
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?g_CosineTable@MathLookup@@3PAMA",
+          "target": 6849728
+        }
+      ]
+    },
+    "math-lookup-read-phase-table": {
+      "source": "src/MathLookup.cpp",
+      "object": "build/matching/MathLookup.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MathLookup::ReadPhaseTable"
+      ],
+      "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+      "target_address": 4311920,
+      "size": 49,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "_abs",
+          "target": 6561194
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "?g_CosineTable@MathLookup@@3PAMA",
+          "target": 6849728
+        }
+      ]
+    },
+    "math-lookup-read-ratio": {
+      "source": "src/MathLookup.cpp",
+      "object": "build/matching/MathLookup.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MathLookup::ReadRatio"
+      ],
+      "symbol": "?ReadRatio@MathLookup@@YAMM@Z",
+      "target_address": 4311984,
+      "size": 73,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+          "target": 4311920
+        },
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        }
+      ]
     }
   },
   "source_sha256": {
     "src/GraphicsDevice.cpp": "97f3769994867306f36704bfb28f3c4cf78dd9b8dd979c692f6bfb82ca408ead",
     "src/GraphicsDevice.hpp": "4abce39cc1bd6b1eb68d0bce0eb09e01e17687b1ab63deb4689e6ae29e616a8a",
     "src/DiagnosticLog.cpp": "20a479bc4b62c6904397f367b944feedb800d9433924b220d7fa3bff1c5f38bf",
-    "src/DiagnosticLog.hpp": "2dcc3034b13b95db4685ec735ad690d8a14dc24211f36a95b0bebf9506f62582"
+    "src/DiagnosticLog.hpp": "2dcc3034b13b95db4685ec735ad690d8a14dc24211f36a95b0bebf9506f62582",
+    "src/SpriteTransform.cpp": "92dc1334e27868016abae5413eb0f3b17b7ca95773b12ffe59cee94e4d3ece95",
+    "src/SpriteTransform.hpp": "494e0bcfd24a6e65fc71545e75177ba2301d3b420f57ec179d85b7ba7e60cb60",
+    "src/MathLookup.cpp": "1f47723438ad85c21830a7cc0ec968bcfdebfdbd91481d3e7b453daec2f15490",
+    "src/MathLookup.hpp": "4c77cb7084c8bd1cc948a7ae419b6d587502b1cb3ca411977b84966962c40480"
   }
 }

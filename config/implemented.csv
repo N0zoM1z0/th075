@@ -63,3 +63,12 @@ DiagnosticLog::InitializeFile
 DiagnosticLog::AppendString
 DiagnosticLog::AppendInteger
 DiagnosticLog::AppendFloat
+SpriteTransform::BuildQuadFromRect
+SpriteTransform::BuildQuad
+SpriteTransform::TranslateQuad
+SpriteTransform::ScaleQuad
+SpriteTransform::RotateQuad
+MathLookup::BuildCosTable
+MathLookup::ReadCosTable
+MathLookup::ReadPhaseTable
+MathLookup::ReadRatio

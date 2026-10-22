@@ -31,6 +31,16 @@ class ExactCheckpointTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 E.retained_bytes(path)
 
+    def test_unapproved_origin_alias_is_rejected(self):
+        path = E.ROOT / "config/authored-origin-name-aliases.csv"
+        read_bytes = Path.read_bytes
+        def changed(current):
+            raw = read_bytes(current)
+            return raw.replace(b"sprite-transform-build-quad\n", b"unapproved\n") if current == path else raw
+        with patch.object(Path, "read_bytes", changed):
+            with self.assertRaises(ValueError):
+                E.retained_bytes(path)
+
     def test_only_complete_function_pairs_can_be_projected(self):
         item = E.plan()["functions"][0]
         self.assertEqual(E.historical_functions([item["after"]]), [item["before"]])
@@ -45,7 +55,7 @@ class ExactCheckpointTests(unittest.TestCase):
 
     def test_unknown_origins_receive_no_adoption_credit(self):
         plan = E.plan()
-        self.assertEqual(len(plan["functions"]), 5)
+        self.assertEqual(len(plan["functions"]), 14)
         self.assertTrue(all(item["origin"]["disposition"] == "authored"
                             for item in plan["functions"]))
-        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 1550)
+        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 3944)

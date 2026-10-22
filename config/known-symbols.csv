@@ -46,3 +46,12 @@ address,name,module,confidence,evidence
 0x0041CC50,DiagnosticLog::AppendString,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
 0x0041CCD0,DiagnosticLog::AppendInteger,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
 0x0041CD70,DiagnosticLog::AppendFloat,DiagnosticLog,inferred,F010; complete cold exact replay and target control flow; original name unknown
+0x00411400,SpriteTransform::BuildQuadFromRect,SpriteTransform,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x00427500,SpriteTransform::BuildQuad,SpriteTransform,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x00411500,SpriteTransform::TranslateQuad,SpriteTransform,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x004115C0,SpriteTransform::ScaleQuad,SpriteTransform,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x004116F0,SpriteTransform::RotateQuad,SpriteTransform,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x0041CAE0,MathLookup::BuildCosTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x0041CB40,MathLookup::ReadCosTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x0041CB70,MathLookup::ReadPhaseTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x0041CBB0,MathLookup::ReadRatio,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown

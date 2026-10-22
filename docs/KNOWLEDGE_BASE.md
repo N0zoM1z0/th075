@@ -14230,3 +14230,105 @@ read-only Git checkpoints. New regressions reject unapproved appended mappings,
 old-unit edits and partial function transitions, while keeping unrelated rows
 and unknown ownership outside the projection. All 3,602 public tests pass,
 together with target-required tracking, progress freshness and whitespace.
+
+## F011 — coordinate transforms and shared math-table policies
+
+Accepted 2026-10-22 under the active 95% authored-byte goal. The user changed
+the required subject format to `gpt-6-astra-medium: ...`. Ownership remains
+unchanged through R268, including all 97 unknowns /3,608 pending bytes.
+
+| Address | Complete bytes | Inferred function | Relocations |
+| --- | ---: | --- | ---: |
+| `0x00411400` | 250 | `SpriteTransform::BuildQuadFromRect` | 4 |
+| `0x00427500` | 204 | `SpriteTransform::BuildQuad` | 4 |
+| `0x00411500` | 191 | `SpriteTransform::TranslateQuad` | 0 |
+| `0x004115C0` | 290 | `SpriteTransform::ScaleQuad` | 0 |
+| `0x004116F0` | 1,212 | `SpriteTransform::RotateQuad` | 10 |
+| `0x0041CAE0` | 82 | `MathLookup::BuildCosTable` | 5 |
+| `0x0041CB40` | 43 | `MathLookup::ReadCosTable` | 4 |
+| `0x0041CB70` | 49 | `MathLookup::ReadPhaseTable` | 5 |
+| `0x0041CBB0` | 73 | `MathLookup::ReadRatio` | 5 |
+
+**Target-observed extents and behavior:** All nine complete bodies decode
+without gaps, with 94/78/67/97/414/24/14/14/27 instructions and
+0/0/0/3/3/3/0/0/2 internal branches in table order. Every branch target is an
+internal instruction boundary. Each body has one final return; no external
+tail, switch table or alignment is omitted. Following INT3 alignment is
+6/4/1/14/4/14/5/15/7 bytes and receives no credit. Whole body hashes agree
+with the unchanged authored evidence rows from R035, R105 and R182.
+
+The builders assign top-left, top-right, bottom-right and bottom-left
+coordinates, with zero z/w. Translation, scaling and rotation visit points
+in order 0,3,1,2. Scaling guards each axis against 1.0. Rotation guards each
+angle against the existing zero scalar and applies Z, Y, then X, snapshotting
+each complete coordinate before updating its two affected components. The
+source preserves the target's x87 expression order; algebraically equivalent
+reassociation is insufficient evidence for the same emitted instructions.
+
+The cosine builder writes 3,600 floats using the target's double constants
+10.0, 3.1415926535 and 180.0. Lookup bodies truncate float-scaled angles via
+the existing ftol2 entry, take integer absolute value and reduce modulo 3,600.
+The phase reader subtracts 900.0f before truncation. Ratio returns zero if the
+first cosine lookup is zero, otherwise divides phase by a fresh cosine lookup.
+The table claim is only the 14,400-byte used writable range at `0x006884C0`;
+its original allocation and runtime contents remain unknown.
+
+**Bounded owner investigation:** The initially proposed three sprite drawing
+bodies and both related HUD renderers create a 132-byte local geometry owner.
+Fresh constructor/callee reads establish four 16-byte coordinate records at
+offsets 0/16/32/48. The separate constructor call at +64 does not establish
+a fifth such record. R011's earlier five-member description therefore cannot
+serve as a complete layout witness. The remaining 68 bytes stay unresolved;
+a matrix-shaped size alone does not recover an SDK matrix or its scalar tail.
+Those drawing/rendering bodies remain deferred, with no new credit.
+
+The accepted methods operate on an existing receiver through a partial
+64-byte coordinate prefix. No `SpriteTransform` object is instantiated,
+embedded or sized as the original owner. Local `D3DXVECTOR4` values are complete
+SDK types used as ABI-compatible coordinate snapshots. Whole independent
+constructor diagnostics agree at `0x0040DB10` /51 and `0x0040D980` /14, but
+this does not identify the original SDK class, special-member declaration or
+ownership. The 51-byte F008 unit is unchanged and counted once; both empty
+helpers, including the +64 constructor, retain their unknown origins. The
+11-byte abs entry remains unknown as documented by R182.
+
+**Compiler-observed:** `SpriteTransform.cpp` uses pinned VC7.1 build3077 with
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`; `MathLookup.cpp` uses the R182 reproducible
+profile `/Od /Ob0 /Gy /GR- /GX /GS /Zi /I src`. These per-object settings are
+not an executable-wide compiler claim. The new ratio source uses one natural
+quotient expression after its guard. Its complete 73 bytes cold-reproduce;
+the original R182 probe with a named phase local and six instruction-order
+differences remains unchanged as a distinct historical negative. No target
+bytes, padding, dummy locals, assembly or alternate source bodies are added.
+
+All 37 code/data relocations are explicitly bound and compared. The six unique
+readonly float/double constants at `0x00657B20`, `0x00657B18`, `0x00657B10`,
+`0x00657850`, `0x00657B28` and `0x0065782C` independently agree over their full
+36 bytes with the compiled COFF readonly sections. The genuine stack-double
+cos entry at `0x00641754`, ftol2, abs, table base, constructor aliases, zero
+scalar and shared lookup calls retain their actual ABI and target addresses.
+Binding a callee grants neither extra exact coverage nor a new origin claim.
+
+**Acceptance:** `replay-exact-units.py` cold-builds only the two new objects
+and reports 9/9 exact units /2,394 bytes /37 relocations. Units are
+`sprite-transform-{build-quad-from-rect,build-quad,translate-quad,scale-quad,
+rotate-quad}` and `math-lookup-{build-cos-table,read-cos-table,read-phase-table,
+read-ratio}`. All original 65 definitions and source/header inputs remain
+unchanged, so they require no additional replay. Totals become 74 exact
+functions /13,827 bytes /74 units, 0.70% of 1,973,516 reviewed authored bytes.
+The conservative goal denominator remains 1,977,124 and the goal is incomplete.
+
+Five appended name aliases preserve the original R105/R182 roles. The
+cumulative exact-adoption manifest retains the original F009 checkpoint,
+seven whole byte prefixes, fourteen complete F010-F011 before/after pairs,
+fourteen added units and eight source/header hashes. Original origin manifests,
+verifier sources and accepted F010 transitions stay unchanged. The public
+adapter verifies current additions before projecting complete historical
+pairs; the added alias regression rejects unapproved alias edits.
+All 3,603 public CI tests, target-required tracking, recorded authored extent
+checks, progress freshness and whitespace checks pass. Original 65 unit
+definitions and all 26 previously tracked source/header files are unchanged.
+Only the two obsolete new diagnostic objects are removed (20,003 bytes);
+accepted objects, cold reports, source probes and prior evidence are retained.
+Builds stayed serial and low priority. CI used about one CPU core /313 MiB RSS,
+with over 8 GiB system memory available; no shared tool installation changed.

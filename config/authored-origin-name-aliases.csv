@@ -17,3 +17,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0045D6A0,FighterState::BeginNoticeTransitionAt0045D6A0,FighterState::BeginNoticeTransition,R104,fighter-begin-notice-transition
 0x0045D6F0,FighterState::ClearNoticeTransitionAt0045D6F0,FighterState::ClearNoticeTransition,R104,fighter-clear-notice-transition
 0x005FAC20,AuxEffect::ClearField8At005FAC20,AuxEffect::ClearField8,R104,aux-effect-clear-field8
+0x00427500,SceneText::BuildRectangleCornersAt00427500,SpriteTransform::BuildQuad,R105,sprite-transform-build-quad
+0x0041CAE0,MathLookup::BuildCosTableAt0041CAE0,MathLookup::BuildCosTable,R182,math-lookup-build-cos-table
+0x0041CB40,MathLookup::ReadCosTableAt0041CB40,MathLookup::ReadCosTable,R182,math-lookup-read-cos-table
+0x0041CB70,MathLookup::ReadPhaseTableAt0041CB70,MathLookup::ReadPhaseTable,R182,math-lookup-read-phase-table
+0x0041CBB0,MathLookup::ReadRatioAt0041CBB0,MathLookup::ReadRatio,R182,math-lookup-read-ratio

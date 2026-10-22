@@ -64,3 +64,12 @@ DiagnosticLog::InitializeFile,0x0041CC00,function
 DiagnosticLog::AppendString,0x0041CC50,function
 DiagnosticLog::AppendInteger,0x0041CCD0,function
 DiagnosticLog::AppendFloat,0x0041CD70,function
+SpriteTransform::BuildQuadFromRect,0x00411400,function
+SpriteTransform::BuildQuad,0x00427500,function
+SpriteTransform::TranslateQuad,0x00411500,function
+SpriteTransform::ScaleQuad,0x004115C0,function
+SpriteTransform::RotateQuad,0x004116F0,function
+MathLookup::BuildCosTable,0x0041CAE0,function
+MathLookup::ReadCosTable,0x0041CB40,function
+MathLookup::ReadPhaseTable,0x0041CB70,function
+MathLookup::ReadRatio,0x0041CBB0,function

@@ -13,7 +13,8 @@ compiler builds serial and periodically remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
-Use the user-required commit subject format `gpt-6.1-sol: ...`.
+Use the user-required commit subject format `gpt-6-astra-medium: ...`
+(updated by the user on 2026-10-22).
 Use `scripts/repo-python` for repository Python commands, including public
 MCP Bash requests. It checks the private environment and hash-pinned decoder;
 do not replace it with a shell-dependent Python or silent fallback.
