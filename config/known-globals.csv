@@ -65,3 +65,7 @@ address,name,module,confidence,evidence
 0x00671239,Graphics::g_Use16BitBackBuffer,Graphics,inferred,F010; one-byte policy assigned by initialization and read by window toggle; all source fields cold exact
 0x0068BD00,DiagnosticLog::g_Path,DiagnosticLog,inferred,F010; mutable path written by InitializeFile and used by all four file calls; capacity unknown; all source fields cold exact
 0x006884C0,MathLookup::g_CosineTable,MathLookup,inferred,R182; F011; complete build and lookup bodies establish the used 3600-float writable range only; original allocation and runtime contents unknown; all source relocation fields cold exact
+0x006714B4,g_CombatMode,BattleState,inferred,F012; signed byte mode compared with 3; original symbol unknown; no allocation or original complete layout claimed
+0x006714C0,g_MaxComboCount,BattleState,inferred,F012; signed word maximum updated from the actor combo count; original symbol unknown; no allocation or original complete layout claimed
+0x006714B0,g_MaxCombatScore,BattleState,inferred,F012; unsigned dword maximum updated from actor score; original symbol unknown; no allocation or original complete layout claimed
+0x006718F8,g_BattleRecords,BattleState,inferred,F012; existing receiver address and four getter/setter interfaces only; complete owner extent unknown; original symbol unknown; no allocation or original complete layout claimed

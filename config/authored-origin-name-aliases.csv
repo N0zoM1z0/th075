@@ -22,3 +22,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0041CB40,MathLookup::ReadCosTableAt0041CB40,MathLookup::ReadCosTable,R182,math-lookup-read-cos-table
 0x0041CB70,MathLookup::ReadPhaseTableAt0041CB70,MathLookup::ReadPhaseTable,R182,math-lookup-read-phase-table
 0x0041CBB0,MathLookup::ReadRatioAt0041CBB0,MathLookup::ReadRatio,R182,math-lookup-read-ratio
+0x004431D0,BattleState::ProcessAt004431D0,BattleCombat::ApplyHit,R065,battle-combat-apply-hit
+0x00444850,BattleState::ProcessAt00444850,BattleCombat::ApplyConditionalHit,R065,battle-combat-apply-conditional-hit
+0x00455640,FighterState::ResolveOpponentValue,CombatActor::CalculateDamage,R045,combat-actor-calculate-damage
+0x004550B0,FighterState::UpdateFacingFromOpponentAt004550B0,CombatActor::UpdateFacingFromOpponent,R103,combat-actor-update-facing

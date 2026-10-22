@@ -10,23 +10,26 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F011 accepts nine complete functions /2,394 bytes /37 relocations: five
-coordinate-transform methods and four shared math-table policies. All nine
-units cold-replay exact across two new objects. The original 65 units and their
-source/header inputs are intact and were not rebuilt. Current exact coverage
-is 74 functions /13,827 bytes (0.70% of reviewed authored bytes).
-`config/exact-adoptions.json` freezes all fourteen F010-F011 metadata transitions
+F012 accepts four complete functions /4,283 code bytes /136 relocations: two
+combat policies, their damage calculation and opponent-facing update. All four
+units cold-replay exact across one new object, comparing 4,315 bytes including
+both complete 16-byte switch tables. Tables receive no extra coverage credit.
+The original 74 units and all 30 tracked source/header inputs are unchanged and
+were not rebuilt. Current exact coverage is 78 functions /18,110 bytes
+(0.92% of reviewed authored bytes).
+`config/exact-adoptions.json` freezes all eighteen F010-F012 metadata transitions
 and seven original ledger prefixes, including the original name aliases.
 Historical origin evidence and verifier sources remain unchanged. Public tests
 validate the current additions before reading those prefixes or projecting
 the complete literal function pairs.
 Original strict CLI origin proofs still replay in their recorded read-only Git
 checkpoints; do not weaken their immutable snapshots for later exact batches.
-Target-required tracking, all 3,603 public CI tests, the recorded authored
-extent checks and whitespace checks pass. Obsolete F011 diagnostic objects
-were removed (20,003 bytes); accepted objects, reports, source probes, required
-Wine prefix and original inputs remain. Builds stayed serial and at low
-priority; CI used about one CPU core and 313 MiB RSS with over 8 GiB available.
+Seven obsolete F012 diagnostic objects were removed (80,297 bytes); accepted
+objects, reports, source probes, required Wine prefix and original inputs remain.
+Builds stayed serial and at low priority, with over 8 GiB system memory available.
+Target-required tracking, all 3,603 public CI tests, current origin-alias checks,
+progress freshness and whitespace checks pass. CI took 58.1 seconds and used
+about one CPU core /362 MiB RSS; the four cold reports match the current source.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -37,13 +40,20 @@ partial `SpriteTransform` interface is only used through existing receivers;
 complete SDK point temporaries do not establish the original class identity.
 Both empty helpers and the integer abs helper retain their unknown origins.
 
-The next bounded F012 investigation is the reviewed R065 battle-state cohort:
-`0x00445A00` /1,958, then `0x004431D0` /1,982 and `0x00444850` /1,877. Recover
-their full guarded switches, tables, exits and actual dependency interfaces
-before selecting source or accepting an extent. Keep builds serial and avoid
-instantiating incomplete owners. Large character action/render dispatchers
-dominate the byte backlog; rank subsequent cohorts by byte contribution as
-well as recovered ABI evidence.
+The sequence policy `0x00445A00` /1,958 remains deferred. Its entire body has
+one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
+no reads of that local. An original declaration or natural purpose for this
+discarded snapshot is unproven; do not add an inert local to obtain a match.
+
+The next bounded F013 cohort continues the actual combat graph at
+`0x004439A0` /1,185, `0x00444020` /898 and `0x004443B0` /664, together with
+the required reaction/midpoint interfaces at `0x00444650` /230 and
+`0x004424E0` /96. Recover complete code, switch/remap data and real call ABIs.
+F012 supplies the shared damage and facing implementations. Continue next
+to the collision dispatchers `0x00442580` /1,249, `0x00442A70` /975 and
+`0x00442E40` /897. Keep builds serial and avoid instantiating incomplete owners.
+Large character action/render dispatchers dominate the byte backlog; carry
+these verified dependencies forward and rank cohorts by byte contribution.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -61,9 +71,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 74 source-present and exact functions, covering 13,827
-bytes across 74 match units. Exact coverage of the currently reviewed authored
-bytes is 13,827 / 1,973,516 (0.70%). This denominator is provisional because
+The exact total is 78 source-present and exact functions, covering 18,110
+bytes across 78 match units. Exact coverage of the currently reviewed authored
+bytes is 18,110 / 1,973,516 (0.92%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

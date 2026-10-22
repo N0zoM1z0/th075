@@ -1493,3 +1493,185 @@ relocations = [
   { offset = 0x2C, type = "REL32", symbol = "?ReadPhaseTable@MathLookup@@YAMM@Z", target = 0x0041CB70 },
   { offset = 0x3B, type = "REL32", symbol = "?ReadCosTable@MathLookup@@YAMM@Z", target = 0x0041CB40 },
 ]
+
+[units.battle-combat-apply-hit]
+source = "src/BattleCombat.cpp"
+object = "build/matching/BattleCombat.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombat::ApplyHit"]
+symbol = "?ApplyHit@BattleCombat@@QAEXPAVCombatActor@@00@Z"
+target_address = 0x004431D0
+size = 1982
+compare_size = 1998
+relocations = [
+  { offset = 0x58, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x64, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0xA3, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xAF, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xDB, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x11B, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x136, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x162, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x206, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x226, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x235, type = "DIR32", symbol = "__real@3f000000", target = 0x00657478 },
+  { offset = 0x256, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x2AD, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x2F0, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x2FF, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x316, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x33E, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x34D, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x364, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x388, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x397, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x3AE, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x3C6, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x3D5, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x3EB, type = "DIR32", symbol = "__real@3fc999999999999a", target = 0x006583C8 },
+  { offset = 0x3F1, type = "DIR32", symbol = "__real@408f400000000000", target = 0x006583C0 },
+  { offset = 0x3F7, type = "DIR32", symbol = "__real@3fe999999999999a", target = 0x006583B8 },
+  { offset = 0x410, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x42E, type = "REL32", symbol = "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z", target = 0x00444650 },
+  { offset = 0x43F, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x476, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x4A9, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x4D0, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x4EF, type = "DIR32", symbol = "__real@3fc999999999999a", target = 0x006583C8 },
+  { offset = 0x4F5, type = "DIR32", symbol = "__real@408f400000000000", target = 0x006583C0 },
+  { offset = 0x4FB, type = "DIR32", symbol = "__real@3fe999999999999a", target = 0x006583B8 },
+  { offset = 0x514, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x579, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x581, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x58D, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x595, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x60A, type = "DIR32", symbol = "__real@447a0000", target = 0x006583B4 },
+  { offset = 0x60F, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x631, type = "REL32", symbol = "?UpdateCounter@ComboDisplay@@QAEXFFF@Z", target = 0x0043D4D0 },
+  { offset = 0x639, type = "REL32", symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ", target = 0x004550B0 },
+  { offset = 0x656, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x66A, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x66F, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x68F, type = "DIR32", symbol = "$L1155", target = 0x0044398E },
+  { offset = 0x6F9, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x723, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x728, type = "REL32", symbol = "?GetComboDamage@BattleRecords@@QAEHXZ", target = 0x00445290 },
+  { offset = 0x73C, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x741, type = "REL32", symbol = "?SetComboDamage@BattleRecords@@QAEXH@Z", target = 0x00445210 },
+  { offset = 0x750, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x755, type = "REL32", symbol = "?GetComboCount@BattleRecords@@QAEHXZ", target = 0x00445250 },
+  { offset = 0x769, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x76E, type = "REL32", symbol = "?SetComboCount@BattleRecords@@QAEXH@Z", target = 0x004451D0 },
+  { offset = 0x77F, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
+  { offset = 0x794, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
+  { offset = 0x7A3, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
+  { offset = 0x7B3, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
+  { offset = 0x7BE, type = "DIR32", symbol = "$L763", target = 0x00443863 },
+  { offset = 0x7C2, type = "DIR32", symbol = "$L766", target = 0x0044387A },
+  { offset = 0x7C6, type = "DIR32", symbol = "$L769", target = 0x00443894 },
+  { offset = 0x7CA, type = "DIR32", symbol = "$L772", target = 0x004438AE },
+]
+
+[units.battle-combat-apply-conditional-hit]
+source = "src/BattleCombat.cpp"
+object = "build/matching/BattleCombat.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombat::ApplyConditionalHit"]
+symbol = "?ApplyConditionalHit@BattleCombat@@QAE_NPAVCombatActor@@00@Z"
+target_address = 0x00444850
+size = 1877
+compare_size = 1893
+relocations = [
+  { offset = 0x184, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1C7, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x1D6, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x1DC, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
+  { offset = 0x1F3, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x21B, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x22A, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x230, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
+  { offset = 0x247, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x26B, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x27A, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x280, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
+  { offset = 0x297, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x2AF, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x2BE, type = "DIR32", symbol = "__real@3ff4000000000000", target = 0x006583D0 },
+  { offset = 0x2D4, type = "DIR32", symbol = "__real@3fd0000000000000", target = 0x006583E0 },
+  { offset = 0x2DA, type = "DIR32", symbol = "__real@408f400000000000", target = 0x006583C0 },
+  { offset = 0x2E0, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0x2E8, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
+  { offset = 0x2FF, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x31D, type = "REL32", symbol = "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z", target = 0x00444650 },
+  { offset = 0x32E, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x36A, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x3A2, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x3CE, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x3ED, type = "DIR32", symbol = "__real@3fd0000000000000", target = 0x006583E0 },
+  { offset = 0x3F3, type = "DIR32", symbol = "__real@408f400000000000", target = 0x006583C0 },
+  { offset = 0x3F9, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0x401, type = "DIR32", symbol = "__real@4000000000000000", target = 0x006583F0 },
+  { offset = 0x418, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x47D, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x485, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x491, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x499, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x50E, type = "DIR32", symbol = "__real@447a0000", target = 0x006583B4 },
+  { offset = 0x513, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x535, type = "REL32", symbol = "?UpdateCounter@ComboDisplay@@QAEXFFF@Z", target = 0x0043D4D0 },
+  { offset = 0x569, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x589, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x598, type = "DIR32", symbol = "__real@3e800000", target = 0x00657F74 },
+  { offset = 0x5B9, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x5EA, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x5FE, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x603, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0x623, type = "DIR32", symbol = "$L1167", target = 0x00444FA5 },
+  { offset = 0x68A, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x6B4, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x6B9, type = "REL32", symbol = "?GetComboDamage@BattleRecords@@QAEHXZ", target = 0x00445290 },
+  { offset = 0x6CD, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x6D2, type = "REL32", symbol = "?SetComboDamage@BattleRecords@@QAEXH@Z", target = 0x00445210 },
+  { offset = 0x6E1, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x6E6, type = "REL32", symbol = "?GetComboCount@BattleRecords@@QAEHXZ", target = 0x00445250 },
+  { offset = 0x6FA, type = "DIR32", symbol = "?g_BattleRecords@@3VBattleRecords@@A", target = 0x006718F8 },
+  { offset = 0x6FF, type = "REL32", symbol = "?SetComboCount@BattleRecords@@QAEXH@Z", target = 0x004451D0 },
+  { offset = 0x710, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
+  { offset = 0x724, type = "DIR32", symbol = "?g_MaxComboCount@@3FA", target = 0x006714C0 },
+  { offset = 0x733, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
+  { offset = 0x744, type = "DIR32", symbol = "?g_MaxCombatScore@@3KA", target = 0x006714B0 },
+  { offset = 0x755, type = "DIR32", symbol = "$L1011", target = 0x00444E77 },
+  { offset = 0x759, type = "DIR32", symbol = "$L1014", target = 0x00444E8E },
+  { offset = 0x75D, type = "DIR32", symbol = "$L1017", target = 0x00444EA7 },
+  { offset = 0x761, type = "DIR32", symbol = "$L1020", target = 0x00444EC0 },
+]
+
+[units.combat-actor-calculate-damage]
+source = "src/BattleCombat.cpp"
+object = "build/matching/BattleCombat.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CombatActor::CalculateDamage"]
+symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z"
+target_address = 0x00455640
+size = 294
+relocations = [
+  { offset = 0x24, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x80, type = "DIR32", symbol = "__real@40800000", target = 0x00657D14 },
+  { offset = 0xAD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB4, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x109, type = "DIR32", symbol = "__real@40800000", target = 0x00657D14 },
+  { offset = 0x10F, type = "DIR32", symbol = "__real@461c4000", target = 0x00658034 },
+  { offset = 0x115, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0x11C, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+]
+
+[units.combat-actor-update-facing]
+source = "src/BattleCombat.cpp"
+object = "build/matching/BattleCombat.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CombatActor::UpdateFacingFromOpponent"]
+symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ"
+target_address = 0x004550B0
+size = 130
+relocations = [
+]

@@ -14332,3 +14332,105 @@ Only the two obsolete new diagnostic objects are removed (20,003 bytes);
 accepted objects, cold reports, source probes and prior evidence are retained.
 Builds stayed serial and low priority. CI used about one CPU core /313 MiB RSS,
 with over 8 GiB system memory available; no shared tool installation changed.
+
+## F012 — complete combat hit policies and actor dependencies
+
+Accepted 2026-10-22 under the 95% authored-byte goal. Ownership and all
+historical origin evidence remain unchanged, including 97 pending origins.
+The commit subject format remains `gpt-6-astra-medium: ...`.
+
+| Address | Code bytes | Compared bytes | Inferred function | Relocations |
+| --- | ---: | ---: | --- | ---: |
+| `0x004431D0` | 1,982 | 1,998 | `BattleCombat::ApplyHit` | 66 |
+| `0x00444850` | 1,877 | 1,893 | `BattleCombat::ApplyConditionalHit` | 62 |
+| `0x00455640` | 294 | 294 | `CombatActor::CalculateDamage` | 8 |
+| `0x004550B0` | 130 | 130 | `CombatActor::UpdateFacingFromOpponent` | 0 |
+
+**Target-observed extent evidence:** All four body hashes agree with the
+unchanged R065/R045/R103 authored records. Complete code contains
+508/472/69/46 instructions, 45/38/3/4 branches and one final return per body.
+The first two guarded switches each have four complete destinations, stored
+in 16-byte tables immediately after RET at `0x0044398E` and `0x00444FA5`.
+Their existing direct-switch records retain full table hashes and all range,
+default and destination checks. The cold manifest uses `compare_size` to
+include both whole tables while preserving the original code-only ledger
+sizes. No table data is masked or counted twice. Subsequent INT3 alignment
+is 2/11/10/14 bytes and receives no credit. There are no omitted shared tails.
+
+The hit policy selects reaction states, consumes an attack counter, copies
+frame timing/vector fields, applies meter limits, updates damage and recovery
+values, clamps the defender's remaining value according to battle policy,
+and publishes combo, effect, sound and record updates. Its score switch adds
+100/200/300/500 for selectors 0/1/2/3. The conditional policy gates the same
+family of updates on actual attack/defender flags and a signed word counter.
+It preserves integer division by two on the ordinary path and double-precision
+1.25/2.0 expressions on the special path. Both policies keep the target's
+separate damage-helper calls and the exact order of state mutations.
+
+Damage calculation multiplies the signed frame word at +0x10 by the observed
+attack/actor float factors. The opponent word at +0x328 is divided by 4.0f,
+then either the actual signed-word table entry selected by opponent byte+0x39D
+or 10000.0f, before adding 0.75 and applying the factor. The returned low word
+and its caller sign-extension establish the selected short-result ABI.
+Facing update saves the old signed direction byte, compares the two x
+coordinates, writes +1 or -1 and returns whether direction changed; equality
+and unordered comparisons return false. Native AL writes establish both this
+boolean result and the conditional hit's boolean result. Ghidra's widened
+return presentation alone does not establish those types.
+
+**Source and ABI evidence:** `BattleCombat.cpp` uses pinned VC7.1 build3077
+with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. Named scalar views describe observed
+combat roles; byte offsets and load/store widths come from complete native
+bodies. Explicit scalar lvalues reproduce the x87 memory-operand order in the
+rate product and facing comparisons. Earlier field-view expressions produced
+a different instruction order; the final single source body passes the full
+comparison. No target byte arrays, assembly, padding, dummy locals or alternate
+conditional bodies are introduced. Names and original declaration spelling
+remain inferred.
+
+All receiver declarations are partial interfaces used on existing objects.
+No reconstructed owner is allocated, embedded or sized. The source reuses the
+existing `SoundBank` interface and pointer without changing that header.
+Native callees independently support thiscall stack cleanup, low-word/byte
+consumption in the midpoint effect, the combo display's three word arguments,
+and the record getter/setter widths. The reaction policy remains a declared
+callee with its original complete R215 evidence; binding it grants no new
+exact coverage. Existing F008 reset/clear functions remain counted once.
+
+All 136 code/data relocations are bound, including ten same-section switch
+fields. Cold comparison checks each local label against the newly built COFF
+layout. Fourteen distinct complete readonly constants /84 bytes agree with
+COFF readonly sections and their target destinations. Four appended global
+records describe the mode byte, maximum combo word, unsigned score dword and
+existing records receiver address. The complete records owner remains unknown.
+Original origin roles are preserved through four appended name aliases.
+
+**Bounded sequence deferral:** Fresh whole-body inspection of `0x00445A00`
+finds only a write to [ebp-4] at `0x00445A50`, after the first deque-front
+load. There is no subsequent read of that local in the complete 1,958-byte
+body. The purpose and original declaration of this discarded snapshot remain
+unproven. No inert local is introduced for matching; the sequence body earns
+no credit. This does not prevent reconstruction of the remaining combat graph.
+Fresh pattern-loader/record-prefix reads provide additional field context but
+establish no new complete original layout or ownership transition.
+
+**Acceptance:** `replay-exact-units.py` cold-builds one new object and reports
+4/4 exact units /4,283 coverage bytes /4,315 compared bytes /136 relocations.
+The units are `battle-combat-apply-hit`, `battle-combat-apply-conditional-hit`,
+`combat-actor-calculate-damage` and `combat-actor-update-facing`. Original 74
+unit definitions and all 30 previously tracked source/header files remain
+unchanged and require no replay. Totals become 78 exact functions /18,110
+bytes /78 units, 0.92% of the provisional 1,973,516 authored bytes. Conservative
+goal accounting retains all pending bytes in the 1,977,124-byte denominator;
+the 95% goal remains incomplete.
+
+The cumulative exact-adoption manifest preserves the F009 checkpoint and seven
+original ledger prefixes. It now records eighteen complete F010-F012 metadata
+transitions, eighteen added units and ten source/header hashes. Every earlier
+transition, origin manifest and verifier source is unchanged. Seven obsolete
+F012 diagnostic objects are removed (80,297 bytes), retaining the accepted
+matching object, source probes, full reports and all original inputs.
+Target-required tracking, all 3,603 public CI tests, all four current origin
+aliases, progress freshness and whitespace checks pass. Cold report source
+hashes match the current production source. Serial low-priority CI took
+58.1 seconds, using about one CPU core /362 MiB RSS with 8.5 GiB available.

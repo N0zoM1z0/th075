@@ -55,3 +55,7 @@ address,name,module,confidence,evidence
 0x0041CB40,MathLookup::ReadCosTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
 0x0041CB70,MathLookup::ReadPhaseTable,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
 0x0041CBB0,MathLookup::ReadRatio,MathLookup,inferred,F011; complete cold exact replay and full target control flow; original names and class identity unknown
+0x004431D0,BattleCombat::ApplyHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444850,BattleCombat::ApplyConditionalHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00455640,CombatActor::CalculateDamage,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004550B0,CombatActor::UpdateFacingFromOpponent,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown

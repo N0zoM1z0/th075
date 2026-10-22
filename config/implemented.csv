@@ -72,3 +72,7 @@ MathLookup::BuildCosTable
 MathLookup::ReadCosTable
 MathLookup::ReadPhaseTable
 MathLookup::ReadRatio
+BattleCombat::ApplyHit
+BattleCombat::ApplyConditionalHit
+CombatActor::CalculateDamage
+CombatActor::UpdateFacingFromOpponent

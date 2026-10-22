@@ -73,3 +73,7 @@ address,name,size,status,match_percent,unit,evidence
 0x0041CB40,MathLookup::ReadCosTable,43,matching,100.00,math-lookup-read-cos-table,scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-cos-table; F011
 0x0041CB70,MathLookup::ReadPhaseTable,49,matching,100.00,math-lookup-read-phase-table,scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-phase-table; F011
 0x0041CBB0,MathLookup::ReadRatio,73,matching,100.00,math-lookup-read-ratio,scripts/repo-python scripts/replay-exact-units.py --unit math-lookup-read-ratio; F011
+0x004431D0,BattleCombat::ApplyHit,1982,matching,100.00,battle-combat-apply-hit,scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-hit; F012; full comparison includes trailing switch data
+0x00444850,BattleCombat::ApplyConditionalHit,1877,matching,100.00,battle-combat-apply-conditional-hit,scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-conditional-hit; F012; full comparison includes trailing switch data
+0x00455640,CombatActor::CalculateDamage,294,matching,100.00,combat-actor-calculate-damage,scripts/repo-python scripts/replay-exact-units.py --unit combat-actor-calculate-damage; F012; full comparison includes trailing switch data
+0x004550B0,CombatActor::UpdateFacingFromOpponent,130,matching,100.00,combat-actor-update-facing,scripts/repo-python scripts/replay-exact-units.py --unit combat-actor-update-facing; F012; full comparison includes trailing switch data

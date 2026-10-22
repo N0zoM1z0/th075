@@ -73,3 +73,7 @@ MathLookup::BuildCosTable,0x0041CAE0,function
 MathLookup::ReadCosTable,0x0041CB40,function
 MathLookup::ReadPhaseTable,0x0041CB70,function
 MathLookup::ReadRatio,0x0041CBB0,function
+BattleCombat::ApplyHit,0x004431D0,function
+BattleCombat::ApplyConditionalHit,0x00444850,function
+CombatActor::CalculateDamage,0x00455640,function
+CombatActor::UpdateFacingFromOpponent,0x004550B0,function

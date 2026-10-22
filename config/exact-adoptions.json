@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F011",
+  "batch": "F010-F012",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "53f4dea58e1a782a2b72432276cf4fac42cb36495e61616bb139d299bda1fa1a"
+      "current_sha256": "87782915c9e067eb624e06fc5e040d5ad77991f4f763e273face9f9752dd57b3"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "202887b7412a4afa6a2c107963f58cf4b3facc4f854b13a838221fe1234121ca"
+      "current_sha256": "fd2f019585b17cb38c107a0c54924dc7a992cde5f86e307e5de54b038f3b7bdd"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6039abb02276a5d8e8306730d4a8986c6634150861055fdae52b0fc192959182"
+      "current_sha256": "a95d1d5fe7815a7c88fe160666d1bc6739e8cbf09dc4f682c27acb4c43d5d6a0"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d97cfd96533ea1b385aadbe56b8c681da578450abc504c327b34307c1d4443ef"
+      "current_sha256": "6c86a5effefa59f3aac69928d9dde2f9a8684a68cb8c98f3059dc4ad2ff76be3"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "dd000dd9e65dc37895e7ac449b70c84140d54587a2b86adc95195c12544c02de"
+      "current_sha256": "6147bf3d1f9fc31d20eef90818c259777a072684b0359915e35225dd36723545"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "bf7ea76310ea21e98140b0d79fcf5afaecc0af4947c843a24db552e7c9f424d4"
+      "current_sha256": "76ee0c06f43a4ae25cfd9a283766bc99103012506a1279f217baa558af80d60a"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "e9b196c592a84a4cacc03983b6a9b1cbb6c6ab9a0896686139965362695bd0b6"
+      "current_sha256": "52c102de08caf309dd8c98645bee3f4e4e219572c292e29de8d3f430ecc2a810"
     }
   },
   "functions": [
@@ -656,6 +656,182 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R105"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004431D0",
+        "size": "1982",
+        "span_end": "0x0044398D",
+        "current_name": "FUN_004431d0",
+        "proposed_name": "BattleState::ProcessAt004431D0",
+        "module": "BattleState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004431D0",
+        "size": "1982",
+        "span_end": "0x0044398D",
+        "current_name": "FUN_004431d0",
+        "proposed_name": "BattleCombat::ApplyHit",
+        "module": "BattleState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCombat::ApplyHit(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombat.cpp",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior; F012; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-hit",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F012: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004431D0",
+        "origin": "authored",
+        "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00444850",
+        "size": "1877",
+        "span_end": "0x00444FA4",
+        "current_name": "FUN_00444850",
+        "proposed_name": "BattleState::ProcessAt00444850",
+        "module": "BattleState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00444850",
+        "size": "1877",
+        "span_end": "0x00444FA4",
+        "current_name": "FUN_00444850",
+        "proposed_name": "BattleCombat::ApplyConditionalHit",
+        "module": "BattleState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCombat::ApplyConditionalHit(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombat.cpp",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior; F012; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-conditional-hit",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F012: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00444850",
+        "origin": "authored",
+        "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004550B0",
+        "size": "130",
+        "span_end": "0x00455131",
+        "current_name": "FUN_004550b0",
+        "proposed_name": "FighterState::UpdateFacingFromOpponentAt004550B0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004550B0",
+        "size": "130",
+        "span_end": "0x00455131",
+        "current_name": "FUN_004550b0",
+        "proposed_name": "CombatActor::UpdateFacingFromOpponent",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool CombatActor::UpdateFacingFromOpponent()",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombat.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F012; scripts/repo-python scripts/replay-exact-units.py --unit combat-actor-update-facing",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F012: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004550B0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00455640",
+        "size": "294",
+        "span_end": "0x00455765",
+        "current_name": "FUN_00455640",
+        "proposed_name": "FighterState::ResolveOpponentValue",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00455640",
+        "size": "294",
+        "span_end": "0x00455765",
+        "current_name": "FUN_00455640",
+        "proposed_name": "CombatActor::CalculateDamage",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "short CombatActor::CalculateDamage(CombatActor *attack)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombat.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F012; scripts/repo-python scripts/replay-exact-units.py --unit combat-actor-calculate-damage",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F012: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00455640",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -1994,6 +2170,911 @@
           "target": 4311872
         }
       ]
+    },
+    "battle-combat-apply-hit": {
+      "source": "src/BattleCombat.cpp",
+      "object": "build/matching/BattleCombat.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombat::ApplyHit"
+      ],
+      "symbol": "?ApplyHit@BattleCombat@@QAEXPAVCombatActor@@00@Z",
+      "target_address": 4469200,
+      "size": 1982,
+      "compare_size": 1998,
+      "relocations": [
+        {
+          "offset": 88,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 163,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 175,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 219,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 283,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 310,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 354,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 518,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 550,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 565,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 598,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 685,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 752,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 767,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 790,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 830,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 845,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 868,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 904,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 942,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 966,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 1003,
+          "type": "DIR32",
+          "symbol": "__real@3fc999999999999a",
+          "target": 6652872
+        },
+        {
+          "offset": 1009,
+          "type": "DIR32",
+          "symbol": "__real@408f400000000000",
+          "target": 6652864
+        },
+        {
+          "offset": 1015,
+          "type": "DIR32",
+          "symbol": "__real@3fe999999999999a",
+          "target": 6652856
+        },
+        {
+          "offset": 1040,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1070,
+          "type": "REL32",
+          "symbol": "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z",
+          "target": 4474448
+        },
+        {
+          "offset": 1087,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1142,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1193,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1232,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1263,
+          "type": "DIR32",
+          "symbol": "__real@3fc999999999999a",
+          "target": 6652872
+        },
+        {
+          "offset": 1269,
+          "type": "DIR32",
+          "symbol": "__real@408f400000000000",
+          "target": 6652864
+        },
+        {
+          "offset": 1275,
+          "type": "DIR32",
+          "symbol": "__real@3fe999999999999a",
+          "target": 6652856
+        },
+        {
+          "offset": 1300,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1401,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1409,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 1421,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1429,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 1546,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 1551,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1585,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        },
+        {
+          "offset": 1593,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 1622,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 1642,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1647,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1679,
+          "type": "DIR32",
+          "symbol": "$L1155",
+          "target": 4471182
+        },
+        {
+          "offset": 1785,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1827,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1832,
+          "type": "REL32",
+          "symbol": "?GetComboDamage@BattleRecords@@QAEHXZ",
+          "target": 4477584
+        },
+        {
+          "offset": 1852,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1857,
+          "type": "REL32",
+          "symbol": "?SetComboDamage@BattleRecords@@QAEXH@Z",
+          "target": 4477456
+        },
+        {
+          "offset": 1872,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1877,
+          "type": "REL32",
+          "symbol": "?GetComboCount@BattleRecords@@QAEHXZ",
+          "target": 4477520
+        },
+        {
+          "offset": 1897,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1902,
+          "type": "REL32",
+          "symbol": "?SetComboCount@BattleRecords@@QAEXH@Z",
+          "target": 4477392
+        },
+        {
+          "offset": 1919,
+          "type": "DIR32",
+          "symbol": "?g_MaxComboCount@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 1940,
+          "type": "DIR32",
+          "symbol": "?g_MaxComboCount@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 1955,
+          "type": "DIR32",
+          "symbol": "?g_MaxCombatScore@@3KA",
+          "target": 6755504
+        },
+        {
+          "offset": 1971,
+          "type": "DIR32",
+          "symbol": "?g_MaxCombatScore@@3KA",
+          "target": 6755504
+        },
+        {
+          "offset": 1982,
+          "type": "DIR32",
+          "symbol": "$L763",
+          "target": 4470883
+        },
+        {
+          "offset": 1986,
+          "type": "DIR32",
+          "symbol": "$L766",
+          "target": 4470906
+        },
+        {
+          "offset": 1990,
+          "type": "DIR32",
+          "symbol": "$L769",
+          "target": 4470932
+        },
+        {
+          "offset": 1994,
+          "type": "DIR32",
+          "symbol": "$L772",
+          "target": 4470958
+        }
+      ]
+    },
+    "battle-combat-apply-conditional-hit": {
+      "source": "src/BattleCombat.cpp",
+      "object": "build/matching/BattleCombat.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombat::ApplyConditionalHit"
+      ],
+      "symbol": "?ApplyConditionalHit@BattleCombat@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4474960,
+      "size": 1877,
+      "compare_size": 1893,
+      "relocations": [
+        {
+          "offset": 388,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 455,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 470,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 476,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 499,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 539,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 554,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 583,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 619,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 634,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 640,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 663,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 687,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 702,
+          "type": "DIR32",
+          "symbol": "__real@3ff4000000000000",
+          "target": 6652880
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "__real@3fd0000000000000",
+          "target": 6652896
+        },
+        {
+          "offset": 730,
+          "type": "DIR32",
+          "symbol": "__real@408f400000000000",
+          "target": 6652864
+        },
+        {
+          "offset": 736,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 744,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 767,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 797,
+          "type": "REL32",
+          "symbol": "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z",
+          "target": 4474448
+        },
+        {
+          "offset": 814,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 874,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 930,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 974,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1005,
+          "type": "DIR32",
+          "symbol": "__real@3fd0000000000000",
+          "target": 6652896
+        },
+        {
+          "offset": 1011,
+          "type": "DIR32",
+          "symbol": "__real@408f400000000000",
+          "target": 6652864
+        },
+        {
+          "offset": 1017,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 1025,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 1048,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1149,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1157,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 1169,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1177,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 1294,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 1299,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1333,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        },
+        {
+          "offset": 1385,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 1417,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 1432,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 1465,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 1514,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 1534,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1539,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1571,
+          "type": "DIR32",
+          "symbol": "$L1167",
+          "target": 4476837
+        },
+        {
+          "offset": 1674,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1716,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1721,
+          "type": "REL32",
+          "symbol": "?GetComboDamage@BattleRecords@@QAEHXZ",
+          "target": 4477584
+        },
+        {
+          "offset": 1741,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1746,
+          "type": "REL32",
+          "symbol": "?SetComboDamage@BattleRecords@@QAEXH@Z",
+          "target": 4477456
+        },
+        {
+          "offset": 1761,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1766,
+          "type": "REL32",
+          "symbol": "?GetComboCount@BattleRecords@@QAEHXZ",
+          "target": 4477520
+        },
+        {
+          "offset": 1786,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 1791,
+          "type": "REL32",
+          "symbol": "?SetComboCount@BattleRecords@@QAEXH@Z",
+          "target": 4477392
+        },
+        {
+          "offset": 1808,
+          "type": "DIR32",
+          "symbol": "?g_MaxComboCount@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 1828,
+          "type": "DIR32",
+          "symbol": "?g_MaxComboCount@@3FA",
+          "target": 6755520
+        },
+        {
+          "offset": 1843,
+          "type": "DIR32",
+          "symbol": "?g_MaxCombatScore@@3KA",
+          "target": 6755504
+        },
+        {
+          "offset": 1860,
+          "type": "DIR32",
+          "symbol": "?g_MaxCombatScore@@3KA",
+          "target": 6755504
+        },
+        {
+          "offset": 1877,
+          "type": "DIR32",
+          "symbol": "$L1011",
+          "target": 4476535
+        },
+        {
+          "offset": 1881,
+          "type": "DIR32",
+          "symbol": "$L1014",
+          "target": 4476558
+        },
+        {
+          "offset": 1885,
+          "type": "DIR32",
+          "symbol": "$L1017",
+          "target": 4476583
+        },
+        {
+          "offset": 1889,
+          "type": "DIR32",
+          "symbol": "$L1020",
+          "target": 4476608
+        }
+      ]
+    },
+    "combat-actor-calculate-damage": {
+      "source": "src/BattleCombat.cpp",
+      "object": "build/matching/BattleCombat.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CombatActor::CalculateDamage"
+      ],
+      "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+      "target_address": 4544064,
+      "size": 294,
+      "relocations": [
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 180,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 265,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 271,
+          "type": "DIR32",
+          "symbol": "__real@461c4000",
+          "target": 6651956
+        },
+        {
+          "offset": 277,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 284,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        }
+      ]
+    },
+    "combat-actor-update-facing": {
+      "source": "src/BattleCombat.cpp",
+      "object": "build/matching/BattleCombat.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CombatActor::UpdateFacingFromOpponent"
+      ],
+      "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+      "target_address": 4542640,
+      "size": 130,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -2004,6 +3085,8 @@
     "src/SpriteTransform.cpp": "92dc1334e27868016abae5413eb0f3b17b7ca95773b12ffe59cee94e4d3ece95",
     "src/SpriteTransform.hpp": "494e0bcfd24a6e65fc71545e75177ba2301d3b420f57ec179d85b7ba7e60cb60",
     "src/MathLookup.cpp": "1f47723438ad85c21830a7cc0ec968bcfdebfdbd91481d3e7b453daec2f15490",
-    "src/MathLookup.hpp": "4c77cb7084c8bd1cc948a7ae419b6d587502b1cb3ca411977b84966962c40480"
+    "src/MathLookup.hpp": "4c77cb7084c8bd1cc948a7ae419b6d587502b1cb3ca411977b84966962c40480",
+    "src/BattleCombat.cpp": "165d70a16d00fd6a0e01b1322a15fa6e26b29799a7460d943fbaecebb4c44ec0",
+    "src/BattleCombat.hpp": "444da7e618e72d2b37a51fc6a4b59dfc5a6fbbcc441ab156280b08cdf9b8ed11"
   }
 }

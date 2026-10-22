@@ -26,18 +26,19 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 74
-functions have reconstructed source and complete exact matches covering 13,827
+Ghidra analysis found 4,351 provisional function candidates. 78
+functions have reconstructed source and complete exact matches covering 18,110
 bytes, including reviewed switch tables. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
 The active target is **95% authored bytes exact**. At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 13,827 / 1,973,516
-bytes (0.70%). F011 adds five coordinate-transform methods and four shared
-math-table policies: nine complete cold exact functions /2,394 bytes /37
-relocations. The enclosing 132-byte geometry owner remains incomplete and is
-never instantiated or embedded by the reconstructed source.
+classified; 97 remain unknown. Reviewed authored coverage is 18,110 / 1,973,516
+bytes (0.92%). F012 adds two combat policies, their damage calculation and
+opponent-facing update: four complete cold exact functions /4,283 code bytes
+/136 relocations. Comparison also covers both complete switch tables /32 bytes,
+which receive no additional coverage credit. Original object layouts remain
+partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of
 reviewed authored functions. Only new or affected units require cold replay.
