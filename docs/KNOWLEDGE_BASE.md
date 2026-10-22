@@ -14792,3 +14792,53 @@ and whitespace checks pass. Builds were serial and low priority; sampled
 available memory stayed above 8 GiB with no active swapping. Storage remains
 154 MiB in build/ and 1.6 GiB in .analysis/; retained outputs support current
 evidence or replay, so no additional deletion was needed in this batch.
+
+## F019 — Complete battle state machine (2026-10-22)
+
+**Target observations:** The R041 authored body at `0x0043B610` spans 4,764
+code bytes, one shared return and 158 internal branches. R044 independently
+pins its complete 60-byte direct-switch table at `0x0043C8AC`; the following
+eight INT3 bytes are alignment only. All 15 destinations, including the state-1
+default, are accepted with the complete comparison rather than excluded.
+Case bodies appear in native order 0,2,3,4,5,6,7,8,14,9,10,11,12,13.
+
+The body updates score maxima, round notices, recoveries, text sequences,
+replay and capture transitions, mode-dependent exits, stage fades and resets,
+training refills, timeout handling, input snapshots and several countdowns.
+Status exits write AX (2201/2202/2203/2205/2207/220A/FF06/0). Unsigned
+countdowns and signed selection indices follow actual extensions/comparisons.
+Native x87 instructions recover the two fade expressions omitted by the
+bounded decompile: 255 - (timer - 150) * 5.1, and timer * 5.1. Unsigned-to-float
+conversion uses compiler scratch qwords and the real `__ftol2` helper.
+
+**Source and ABI:** `BattleStateMachine.cpp/.hpp` provide a single natural
+source body and receiver-only dependency interfaces. No reconstructed owner
+is instantiated or embedded. The existing seven-dword snapshot value covers
+only each observed 28-byte copy. Existing globals for text, records, effects,
+mode and score are reused; thirteen newly named globals bind the observed
+fields or existing receiver addresses, without claiming complete owner sizes.
+Native dependency reads confirm byte notice/text arguments, signed byte record
+indices, cdecl audio cleanup and AL replay predicate. Original names, byte
+signedness where only copied, and unused dependency return values remain
+inferred. Virtual slot +0x18 and scene slot +8 preserve observed dispatch.
+
+Whole comparison initially differed in indexed-byte evaluation order and four
+real loop-index stack slots. A bounded twelve-name compiler control retained
+identical logic and no inert objects. The final i/resetPlayer/k/j indices use
+slots -4/-8/-12/-16; receiver and compiler-generated conversion temporaries
+also match. No target byte arrays, fake returns, arbitrary padding, assembly
+or conditional matching body was used.
+
+**Acceptance:** VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`
+cold-builds the sole new unit. All 4,824 comparison bytes match, including
+146 relocation fields, 15 switch destinations and seven full readonly
+constants. Coverage adds 4,764 authored code bytes, becoming 106 exact
+functions /34,500 bytes (1.75% reviewed; 1.74% conservative). All 105 prior
+units and 44 source/header inputs remain unchanged and were not rebuilt.
+The cumulative adoption manifest freezes 46 transitions /24,617 added bytes.
+All 97 pending origins and the full 95% objective remain unchanged.
+
+All 3,603 CI tests pass (66.8 seconds), as do target-required tracking,
+progress freshness and whitespace checks. Serial low-priority builds preserved
+more than 8 GiB sampled available memory. Two superseded diagnostic objects
+were removed (138,152 bytes); final objects, naming controls and evidence remain.

@@ -76,3 +76,16 @@ address,name,module,confidence,evidence
 0x00671404,g_CombatViewOffsetX,BattleScene,inferred,F018; float read as horizontal view offset; exact native reads/writes and bound relocations; original symbol unknown
 0x006713DC,g_CombatViewSpan,BattleScene,inferred,F018; float read as view span; exact native reads/writes and bound relocations; original symbol unknown
 0x006713C4,g_CombatViewOffsetY,BattleScene,inferred,F018; float read as vertical view offset; exact native reads/writes and bound relocations; original symbol unknown
+0x006714C4,g_StateCapture,BattleScene,inferred,F019; existing frame capture receiver pointer; exact native reads/writes and bound relocations; original symbol unknown
+0x00671623,g_StateContinueCount,BattleScene,inferred,F019; signed byte continue count gate; exact native reads/writes and bound relocations; original symbol unknown
+0x006714D1,g_StateFadeAlpha,BattleScene,inferred,F019; byte fade alpha; exact native reads/writes and bound relocations; original symbol unknown
+0x00671628,g_StateFadeValue,BattleScene,inferred,F019; float fading value; exact native reads/writes and bound relocations; original symbol unknown
+0x006714C8,g_StatePlayerIds,BattleScene,inferred,F019; two signed byte selected player IDs; exact native reads/writes and bound relocations; original symbol unknown
+0x0067161F,g_StateRecordLimit,BattleScene,inferred,F019; signed byte record selection limit; exact native reads/writes and bound relocations; original symbol unknown
+0x00671750,g_StateReplay,BattleScene,inferred,F019; existing replay receiver; complete owner extent unknown; exact native reads/writes and bound relocations; original symbol unknown
+0x00671632,g_StateReplayChanged,BattleScene,inferred,F019; byte replay mode-change flag; exact native reads/writes and bound relocations; original symbol unknown
+0x00671866,g_StateReplayLimit,BattleScene,inferred,F019; signed byte replay selection limit; exact native reads/writes and bound relocations; original symbol unknown
+0x0067149C,g_StateResetCounter,BattleScene,inferred,F019; dword cleared during stage fade; exact native reads/writes and bound relocations; original symbol unknown
+0x006714CE,g_StateReturnFlag,BattleScene,inferred,F019; signed byte return/record flag; exact native reads/writes and bound relocations; original symbol unknown
+0x00671420,g_StateScoreThreshold,BattleScene,inferred,F019; unsigned dword score threshold; exact native reads/writes and bound relocations; original symbol unknown
+0x006714BC,g_StateStageTotal,BattleScene,inferred,F019; dword sum of stage entries; exact native reads/writes and bound relocations; original symbol unknown

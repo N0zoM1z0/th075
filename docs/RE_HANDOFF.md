@@ -10,27 +10,26 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F018 accepts the complete actor counter update at `0x00452490` /1,696
-bytes /40 relocations. The new unit cold-replays exact; all 104 prior units
-and 42 prior source/header inputs remain unchanged. Current exact coverage is
-105 functions /29,736 bytes (1.51%). The cumulative manifest freezes 45
-F010-F018 transitions and twenty-two added source/header hashes.
+F019 accepts the complete battle state machine at `0x0043B610`: 4,764
+code bytes plus its complete 60-byte switch table, 146 relocations and seven
+readonly constants. The sole new unit cold-replays exact. All 105 prior units
+and 44 prior source/header inputs remain unchanged. Current exact coverage is
+106 functions /34,500 code bytes (1.75%; conservative denominator 1.74%).
+The cumulative manifest freezes 46 F010-F019 transitions and twenty-four
+added source/header hashes. No pending origin receives exact credit.
 
-Opponent freeze skips counter policies while view bounds and the frame counter
-continue updating. Complete native callee reads confirm the sound wrapper's
-signed short parameter and the range predicate's AL return. Fifteen complete
-readonly constants and three new float global bindings are verified. Partial
-receiver interfaces remain non-instantiable by reconstruction convention.
+The actual AX status returns, unsigned countdowns, signed player IDs, float
+fade conversion, 14 case bodies and default path are preserved. The 15 table
+entries include the default for state 1. Four real loop indices retain their
+independent lifetimes; compiler name-sensitive local allocation was diagnosed
+with twelve natural naming controls, without inert locals, padding or assembly.
+Existing text-renderer, score, effects and record mappings are reused. Two
+28-byte input snapshots remain bounded copied values, not complete owners.
 
-Target-required tracking, all 3,603 CI tests (74.2 seconds), progress freshness
-and whitespace checks pass. Builds were serial and low priority; sampled
-available memory stayed above 8 GiB with no active swapping. Storage remains
-154 MiB in build/ and 1.6 GiB in .analysis/; retained outputs support current
-evidence or replay, so no additional deletion was needed in this batch.
-
-The main-state decompile is retained in `.analysis/f018-state.c` with its
-completion marker in `.analysis/f018-state.log`; native evidence remains in
-`.analysis/f017-43b610.asm`. No state-machine exact credit is claimed yet.
+All 3,603 CI tests pass (66.8 seconds), as do target-required tracking,
+progress freshness and whitespace checks. Serial low-priority builds preserved
+more than 8 GiB sampled available memory. Two superseded diagnostic objects
+were removed (138,152 bytes); final objects, naming controls and evidence remain.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -46,18 +45,18 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F019 cohort advances the main
-battle state machine `0x0043B610` /4,764 (R041). Complete native reads are in
-`.analysis/f017-452490.asm` and
-`.analysis/f017-43b610.asm`; the timers decompile is retained in
-`.analysis/f017-actor-policies.c`. The direct-switch ledger pins a 60-byte table at `0x0043C8AC`; the complete
-comparison must include 4,824 bytes, followed by eight INT3 alignment bytes.
-Reconcile all state-machine tables and
-low-word status exits, and preserve the existing ApplySequence deferral above.
-Also carry forward body separation `0x00449310` /1,861. These actual callers
-lead toward larger character updates; the 44-83 KiB authored handlers dominate
-the byte backlog. Preserve full extents, truthful ABI and natural source.
-All 97 unknown origins and the complete 95% objective remain unchanged.
+The next bounded F020 cohort advances the remaining battle dependencies:
+body separation `0x00449310` /1,861, followed by round-transition update
+`0x0043D010` /847 and overlay timeline `0x00446D80` /1,461. The complete
+state machine is now accepted, not a deferred dependency. Its final object,
+whole relocation/CFG evidence and original native reads remain private under
+`.analysis/f019-*` and `.analysis/f017-43b610.asm`. Preserve the ApplySequence
+deferral above. These callers lead toward the larger character updates; the
+44-83 KiB authored handlers dominate the backlog. Keep the full 95% byte goal.
+The next three full native reads are `.analysis/f020-449310.asm`,
+`.analysis/f020-43d010.asm`, and `.analysis/f020-446d80.asm`. The attested
+bounded decompile `.analysis/f020-dependencies.c` completed successfully; its
+log is `.analysis/f020-decompile.log`.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -75,9 +74,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 105 source-present and exact functions, covering 29,736
-bytes across 105 match units. Exact coverage of the currently reviewed authored
-bytes is 29,736 / 1,973,516 (1.51%). This denominator is provisional because
+The exact total is 106 source-present and exact functions, covering 34,500
+bytes across 106 match units. Exact coverage of the currently reviewed authored
+bytes is 34,500 / 1,973,516 (1.75%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

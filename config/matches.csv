@@ -104,3 +104,4 @@ address,name,size,status,match_percent,unit,evidence
 0x00454EE0,FrameActor::CheckHorizontalLimits,133,matching,100.00,frame-actor-check-horizontal-limits,scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-check-horizontal-limits; F017; full comparison includes trailing switch data
 0x00452360,FrameActor::ChooseAction,304,matching,100.00,frame-actor-choose-action,scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-choose-action; F017; full comparison includes trailing switch data
 0x00452490,FrameActor::UpdateCounters,1696,matching,100.00,frame-actor-update-counters,scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-update-counters; F018; full comparison includes trailing switch data
+0x0043B610,BattleFrame::AdvanceState,4764,matching,100.00,battle-frame-advance-state,scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-advance-state; F019; full comparison includes trailing switch data

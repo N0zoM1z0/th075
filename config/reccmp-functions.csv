@@ -104,3 +104,4 @@ FrameActor::AdvancePosition,0x00452230,function
 FrameActor::CheckHorizontalLimits,0x00454EE0,function
 FrameActor::ChooseAction,0x00452360,function
 FrameActor::UpdateCounters,0x00452490,function
+BattleFrame::AdvanceState,0x0043B610,function

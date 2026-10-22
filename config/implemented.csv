@@ -103,3 +103,4 @@ FrameActor::AdvancePosition
 FrameActor::CheckHorizontalLimits
 FrameActor::ChooseAction
 FrameActor::UpdateCounters
+BattleFrame::AdvanceState

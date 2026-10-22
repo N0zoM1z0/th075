@@ -86,3 +86,4 @@ address,name,module,confidence,evidence
 0x00454EE0,FrameActor::CheckHorizontalLimits,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00452360,FrameActor::ChooseAction,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00452490,FrameActor::UpdateCounters,FighterState,inferred,F018; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x0043B610,BattleFrame::AdvanceState,BattleScene,inferred,F019; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
