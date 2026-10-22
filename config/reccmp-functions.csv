@@ -105,3 +105,6 @@ FrameActor::CheckHorizontalLimits,0x00454EE0,function
 FrameActor::ChooseAction,0x00452360,function
 FrameActor::UpdateCounters,0x00452490,function
 BattleFrame::AdvanceState,0x0043B610,function
+BattleFrame::ResolveBodySeparation,0x00449310,function
+StateFramePolicies::UpdateTransition,0x0043D010,function
+StateFramePolicies::AdvanceOverlay,0x00446D80,function

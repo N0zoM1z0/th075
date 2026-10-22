@@ -26,16 +26,16 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 106
-functions have reconstructed source and complete exact matches covering 34,500
-bytes, including reviewed switch tables. Names remain inferred. Candidate
+Ghidra analysis found 4,351 provisional function candidates. 109
+functions have reconstructed source and complete exact matches covering 38,669
+code bytes, with reviewed switch tables included in full comparisons. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
 The active target is **95% authored bytes exact**. At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 34,500 / 1,973,516
-bytes (1.75%). F019 adds the complete battle state machine:
-4,764 code bytes plus its 60-byte switch table /146 relocations, cold-replayed exactly. Original object layouts remain
+classified; 97 remain unknown. Reviewed authored coverage is 38,669 / 1,973,516
+bytes (1.96%). F020 adds complete body separation, round-transition and
+overlay timeline policies: 4,169 code bytes /101 relocations, cold-replayed exactly. Original object layouts remain
 partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of

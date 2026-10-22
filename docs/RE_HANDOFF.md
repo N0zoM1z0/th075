@@ -10,26 +10,27 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F019 accepts the complete battle state machine at `0x0043B610`: 4,764
-code bytes plus its complete 60-byte switch table, 146 relocations and seven
-readonly constants. The sole new unit cold-replays exact. All 105 prior units
-and 44 prior source/header inputs remain unchanged. Current exact coverage is
-106 functions /34,500 code bytes (1.75%; conservative denominator 1.74%).
-The cumulative manifest freezes 46 F010-F019 transitions and twenty-four
-added source/header hashes. No pending origin receives exact credit.
+F020 accepts three complete battle dependencies: body separation at
+`0x00449310` /1,861, round-transition update at `0x0043D010` /847 and overlay
+timeline at `0x00446D80` /1,461. All three units cold-replay exact across one
+new object: 4,169 bytes /101 relocations /16 readonly constants. All 106 prior
+units and 46 prior source/header inputs remain unchanged and were not rebuilt.
+Current exact coverage is 109 functions /38,669 code bytes (1.96%). The
+cumulative manifest freezes 49 F010-F020 transitions and twenty-six new inputs.
 
-The actual AX status returns, unsigned countdowns, signed player IDs, float
-fade conversion, 14 case bodies and default path are preserved. The 15 table
-entries include the default for state 1. Four real loop indices retain their
-independent lifetimes; compiler name-sensitive local allocation was diagnosed
-with twelve natural naming controls, without inert locals, padding or assembly.
-Existing text-renderer, score, effects and record mappings are reused. Two
-28-byte input snapshots remain bounded copied values, not complete owners.
+Body separation uses complete SDK RECT values and existing exact collision
+helpers. Two observed edge-result bytes are a bounded local array, not an owner.
+The +1 limit result corresponds to the left boundary and -1 to the right;
+globals retain player 0/1 or -1. Natural scalar float lvalues preserve native
+x87 evaluation and copy instructions; real local naming controls reproduce
+stack allocation without padding, inert locals or assembly.
+Round-transition and overlay reuse F019 receiver interfaces unchanged. The
+2-case overlay switch is a linear decision tree, with no omitted data table.
 
-All 3,603 CI tests pass (66.8 seconds), as do target-required tracking,
-progress freshness and whitespace checks. Serial low-priority builds preserved
-more than 8 GiB sampled available memory. Two superseded diagnostic objects
-were removed (138,152 bytes); final objects, naming controls and evidence remain.
+All 3,603 CI tests pass (63.1 seconds), together with target-required
+tracking, progress freshness and whitespace checks. Serial low-priority
+builds kept sampled available memory above 8 GiB. Two obsolete diagnostic
+objects were removed (21,918 bytes); final objects and original evidence remain.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -45,18 +46,20 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F020 cohort advances the remaining battle dependencies:
-body separation `0x00449310` /1,861, followed by round-transition update
-`0x0043D010` /847 and overlay timeline `0x00446D80` /1,461. The complete
-state machine is now accepted, not a deferred dependency. Its final object,
-whole relocation/CFG evidence and original native reads remain private under
-`.analysis/f019-*` and `.analysis/f017-43b610.asm`. Preserve the ApplySequence
-deferral above. These callers lead toward the larger character updates; the
-44-83 KiB authored handlers dominate the backlog. Keep the full 95% byte goal.
-The next three full native reads are `.analysis/f020-449310.asm`,
-`.analysis/f020-43d010.asm`, and `.analysis/f020-446d80.asm`. The attested
-bounded decompile `.analysis/f020-dependencies.c` completed successfully; its
-log is `.analysis/f020-decompile.log`.
+The next F021 task enters the large reviewed Reimu action-state handler at
+`0x0045DD70` /60,999 code bytes (R063). Its whole native read is
+`.analysis/f021-45dd70.asm`; the bounded decompile completed as
+`.analysis/f021-reimu.c` with attestation/completion in
+`.analysis/f021-decompile.log`. Reconcile all six guarded switch tables: two
+direct tables and four remapped tables, including every remap byte. Preserve
+all 1,690 internal branches and the full extent; no partial comparison earns
+credit. The 44-83 KiB character handlers dominate the remaining byte backlog,
+so continue into this larger body rather than limiting work to short helpers.
+Retain the explicit ApplySequence deferral above and all 97 pending origins.
+The independently hash-checked six-table map is `.analysis/f021-switch-map.json`:
+1,090 contiguous table/remap bytes, a 62,089-byte complete comparison, seven
+following INT3 bytes, and 143 distinct non-default destinations. Native
+dispatch order, rather than decompiler case order, must drive the source switch.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -74,9 +77,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 106 source-present and exact functions, covering 34,500
-bytes across 106 match units. Exact coverage of the currently reviewed authored
-bytes is 34,500 / 1,973,516 (1.75%). This denominator is provisional because
+The exact total is 109 source-present and exact functions, covering 38,669
+bytes across 109 match units. Exact coverage of the currently reviewed authored
+bytes is 38,669 / 1,973,516 (1.96%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

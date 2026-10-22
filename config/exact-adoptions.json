@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F019",
+  "batch": "F010-F020",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1628984191da3b17dfc25d0d3bdd78a2deab96c49c33842ec389d1831be5bf08"
+      "current_sha256": "f754971c859ea28000556fcca1dc0a69c5b1d31cebc19333eb71eb21b9c2a89b"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "e52138b73f08cb68c64a030d784cb75fb995e8ead23c4935820b5391d2880e00"
+      "current_sha256": "3209246100aad221c780117512378915dda0a81ea77422924b640c13111c2b2f"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c33ecd9df231e0eac4ec6cab3908f8ead7c070860458807f8449f8f3559b1547"
+      "current_sha256": "4d023f0e44b4c85797307f7a59c1647728d95586ebb5c4a63be0601f3f0a43a1"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "f6d8c5a0b64fdd66fb5bddf8385c8099c1c45d1cd45ce846a7df92ba37d319e0"
+      "current_sha256": "845bf9289bebac95ec1f9f3009a40ce2bf5bbdb95fac8baba7e6122afde5b1ce"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "bccb19bfbcb24e75b7eb2ecd21d6eb99b30b85c59fb847251f78fbb8e058193d"
+      "current_sha256": "9a66c8f6967575596cb6e6db956b13587f54a850bf16d4783d171f9f6f1d68af"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "1f97ea5369b892a63596b1c73d6c98fa85d291f5388bdd6c990dcf8fb8a29cb4"
+      "current_sha256": "31a76a1c87d92090825b7df94ed74d5ae15856aec79c0f5e83429e3082f694bb"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "fcb74387956b0e651009c48e627df035c78a7b1fdd5c9c89cf770a5f27281a12"
+      "current_sha256": "515e7ccba15b238597c166f5677ffde4afdcd169b96783d9e7a21b363959d5fa"
     }
   },
   "functions": [
@@ -880,6 +880,50 @@
     },
     {
       "before": {
+        "address": "0x0043D010",
+        "size": "847",
+        "span_end": "0x0043D35E",
+        "current_name": "FUN_0043d010",
+        "proposed_name": "BattleScene::UpdateRoundTransition",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D010",
+        "size": "847",
+        "span_end": "0x0043D35E",
+        "current_name": "FUN_0043d010",
+        "proposed_name": "StateFramePolicies::UpdateTransition",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void StateFramePolicies::UpdateTransition()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrameDependencies.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F020; scripts/repo-python scripts/replay-exact-units.py --unit state-frame-update-transition",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F020: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x0043D010",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
         "address": "0x00442400",
         "size": "217",
         "span_end": "0x004424D8",
@@ -1584,6 +1628,50 @@
     },
     {
       "before": {
+        "address": "0x00446D80",
+        "size": "1461",
+        "span_end": "0x00447334",
+        "current_name": "FUN_00446d80",
+        "proposed_name": "BattleScene::AdvanceOverlayTimeline",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00446D80",
+        "size": "1461",
+        "span_end": "0x00447334",
+        "current_name": "FUN_00446d80",
+        "proposed_name": "StateFramePolicies::AdvanceOverlay",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void StateFramePolicies::AdvanceOverlay()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrameDependencies.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F020; scripts/repo-python scripts/replay-exact-units.py --unit state-frame-advance-overlay",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F020: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00446D80",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
         "address": "0x004491E0",
         "size": "215",
         "span_end": "0x004492B6",
@@ -1668,6 +1756,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00449310",
+        "size": "1861",
+        "span_end": "0x00449A54",
+        "current_name": "FUN_00449310",
+        "proposed_name": "BattleCombat::ResolveBodySeparation",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00449310",
+        "size": "1861",
+        "span_end": "0x00449A54",
+        "current_name": "FUN_00449310",
+        "proposed_name": "BattleFrame::ResolveBodySeparation",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleFrame::ResolveBodySeparation()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrameDependencies.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F020; scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-resolve-body-separation",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F020: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00449310",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
       }
     },
     {
@@ -7494,6 +7626,678 @@
           "target": 4439654
         }
       ]
+    },
+    "battle-frame-resolve-body-separation": {
+      "source": "src/BattleFrameDependencies.cpp",
+      "object": "build/matching/BattleFrameDependencies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleFrame::ResolveBodySeparation"
+      ],
+      "symbol": "?ResolveBodySeparation@BattleFrame@@QAEXXZ",
+      "target_address": 4494096,
+      "size": 1861,
+      "relocations": [
+        {
+          "offset": 43,
+          "type": "REL32",
+          "symbol": "?CheckHorizontalLimits@FrameActor@@QAECXZ",
+          "target": 4542176
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?CheckHorizontalLimits@FrameActor@@QAECXZ",
+          "target": 4542176
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 114,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 122,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 149,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 169,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 186,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 196,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 225,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 242,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 252,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 271,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 346,
+          "type": "REL32",
+          "symbol": "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z",
+          "target": 4493792
+        },
+        {
+          "offset": 378,
+          "type": "REL32",
+          "symbol": "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z",
+          "target": 4493792
+        },
+        {
+          "offset": 394,
+          "type": "REL32",
+          "symbol": "?TestOverlap@BattleCollision@@QAEHPBUtagRECT@@0@Z",
+          "target": 4494016
+        },
+        {
+          "offset": 422,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 509,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 541,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 619,
+          "type": "DIR32",
+          "symbol": "?g_RightBoundaryOwner@@3CA",
+          "target": 6734413
+        },
+        {
+          "offset": 707,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 739,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 817,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 905,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 937,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1015,
+          "type": "DIR32",
+          "symbol": "?g_LeftBoundaryOwner@@3CA",
+          "target": 6734412
+        },
+        {
+          "offset": 1102,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1134,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1338,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 1365,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 1435,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 1649,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 1676,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 1746,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        }
+      ]
+    },
+    "state-frame-update-transition": {
+      "source": "src/BattleFrameDependencies.cpp",
+      "object": "build/matching/BattleFrameDependencies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StateFramePolicies::UpdateTransition"
+      ],
+      "symbol": "?UpdateTransition@StateFramePolicies@@QAEXXZ",
+      "target_address": 4444176,
+      "size": 847,
+      "relocations": [
+        {
+          "offset": 21,
+          "type": "DIR32",
+          "symbol": "__real@3ea8f5c3",
+          "target": 6652760
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "__real@3ca3d70a",
+          "target": 6652756
+        },
+        {
+          "offset": 346,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 433,
+          "type": "DIR32",
+          "symbol": "__real@3f400000",
+          "target": 6652752
+        },
+        {
+          "offset": 633,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 681,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 713,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 739,
+          "type": "DIR32",
+          "symbol": "__real@3e4ccccd",
+          "target": 6652744
+        },
+        {
+          "offset": 771,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        }
+      ]
+    },
+    "state-frame-advance-overlay": {
+      "source": "src/BattleFrameDependencies.cpp",
+      "object": "build/matching/BattleFrameDependencies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StateFramePolicies::AdvanceOverlay"
+      ],
+      "symbol": "?AdvanceOverlay@StateFramePolicies@@QAEXXZ",
+      "target_address": 4484480,
+      "size": 1461,
+      "relocations": [
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 186,
+          "type": "DIR32",
+          "symbol": "__real@428c0000",
+          "target": 6652928
+        },
+        {
+          "offset": 204,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 236,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 254,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 272,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 320,
+          "type": "DIR32",
+          "symbol": "__real@3d4ccccd",
+          "target": 6650048
+        },
+        {
+          "offset": 355,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 391,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 409,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 430,
+          "type": "DIR32",
+          "symbol": "__real@3e4ccccd",
+          "target": 6652744
+        },
+        {
+          "offset": 465,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 483,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 501,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 519,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 540,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 575,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 593,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 611,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 629,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 650,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 703,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 721,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 739,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 760,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 792,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 810,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 828,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 846,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 864,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 995,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 1013,
+          "type": "DIR32",
+          "symbol": "__real@428c0000",
+          "target": 6652928
+        },
+        {
+          "offset": 1031,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1063,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1081,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1099,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1120,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 1155,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1173,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1191,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1209,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1230,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 1265,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1283,
+          "type": "DIR32",
+          "symbol": "__real@3e99999a",
+          "target": 6652924
+        },
+        {
+          "offset": 1301,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1319,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1340,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        },
+        {
+          "offset": 1372,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1390,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1408,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1429,
+          "type": "DIR32",
+          "symbol": "__real@3e19999a",
+          "target": 6652920
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -7520,6 +8324,8 @@
     "src/CombatTimers.cpp": "9c9dc62c177dfd14a332346489fc22207b18b50708c73dce50103b5795ce39fb",
     "src/CombatTimers.hpp": "84de08601645aa1614f50db451272007d322206d3c6a8d29f69b486b615decdf",
     "src/BattleStateMachine.cpp": "3e5301777fab76174cefc2de7f8165b3ef7a6a2a3baf9d4752cec44e7ba99849",
-    "src/BattleStateMachine.hpp": "5b5417740123f9394dd53b7d56bef75d9fccc16154161d8716d82c2bb18b8b66"
+    "src/BattleStateMachine.hpp": "5b5417740123f9394dd53b7d56bef75d9fccc16154161d8716d82c2bb18b8b66",
+    "src/BattleFrameDependencies.cpp": "4fa8206fffebf25706a85338a208219f1e2ab3c67bc2e4f191107f7f946f00be",
+    "src/BattleFrameDependencies.hpp": "c7ff7f8705f9b9fedd182bc96a40d5f2ebfc2d0f568eff7cb2f25f22612d8f77"
   }
 }

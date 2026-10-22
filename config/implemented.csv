@@ -104,3 +104,6 @@ FrameActor::CheckHorizontalLimits
 FrameActor::ChooseAction
 FrameActor::UpdateCounters
 BattleFrame::AdvanceState
+BattleFrame::ResolveBodySeparation
+StateFramePolicies::UpdateTransition
+StateFramePolicies::AdvanceOverlay

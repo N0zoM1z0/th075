@@ -14842,3 +14842,47 @@ All 3,603 CI tests pass (66.8 seconds), as do target-required tracking,
 progress freshness and whitespace checks. Serial low-priority builds preserved
 more than 8 GiB sampled available memory. Two superseded diagnostic objects
 were removed (138,152 bytes); final objects, naming controls and evidence remain.
+
+## F020 — Body separation and battle transition timelines (2026-10-22)
+
+**Target observations:** Complete authored bodies at `0x00449310` /1,861,
+`0x0043D010` /847 and `0x00446D80` /1,461 retain their original hashes and
+CFGs: one return each and 45/19/31 internal branches. Their following gaps are
+11/1/11 INT3 bytes; none receives coverage. No trailing switch data exists.
+Overlay uses a two-case linear switch rather than a direct jump table.
+
+Body separation snapshots two float speeds, reconciles two signed edge-owner
+globals and transforms two complete SDK RECT values through the already-exact
+collision helpers. It resolves overlap against claimed boundaries or divides
+the separation between actors while averaging signed horizontal velocities.
+The existing exact limit helper returns +1 on the left and -1 on the right.
+Globals `0x0066C24C` and `0x0066C24D` retain the corresponding owner index
+0/1, or -1 when unclaimed. Names are inferred; no complete owner is recovered.
+
+Round-transition initializes per-player overlay fields, updates bounded byte
+ramps and float motion/scaling, and advances the actual short timer. Overlay
+advances two distinct notice modes across the observed signed countdown
+thresholds, preserving operation order and its final decrement. The repeated
++0x7C additions in the final case-0 interval are actual field updates, not
+padding. Existing F019 dependency declarations remain unchanged.
+
+**Source/ABI:** `BattleFrameDependencies.cpp/.hpp` use receiver-only views,
+complete SDK RECT temporaries, a two-byte edge-result array, real float locals
+and the separation distance. Bounded naming controls reproduce their natural
+VC7.1 stack ordering. Direct scalar lvalues preserve integer float-copy
+instructions and x87 operand evaluation; neither inert locals nor fake returns,
+byte arrays, padding, assembly or alternative matching bodies were introduced.
+Original names and enclosing private layouts remain unknown.
+
+**Acceptance:** VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`
+cold-builds one object and exactly reproduces all three complete units, 4,169
+bytes, 101 relocation fields and sixteen full readonly constants. Coverage is
+109 functions /38,669 code bytes (1.96%). All 106 prior unit definitions and
+46 source/header inputs are unchanged and were not rebuilt. The cumulative
+manifest freezes 49 later transitions /28,786 bytes beyond the original
+60-function baseline. All 97 pending origins and the 95% objective remain.
+
+All 3,603 CI tests pass (63.1 seconds), together with target-required
+tracking, progress freshness and whitespace checks. Serial low-priority
+builds kept sampled available memory above 8 GiB. Two obsolete diagnostic
+objects were removed (21,918 bytes); final objects and original evidence remain.

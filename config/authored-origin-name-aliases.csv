@@ -54,3 +54,6 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00452360,FighterState::ChooseAction,FrameActor::ChooseAction,R045,frame-actor-choose-action
 0x00452490,FighterState::AdvanceCombatTimers,FrameActor::UpdateCounters,R045,frame-actor-update-counters
 0x0043B610,BattleScene::AdvanceState,BattleFrame::AdvanceState,R044,battle-frame-advance-state
+0x00449310,BattleCombat::ResolveBodySeparation,BattleFrame::ResolveBodySeparation,R042,battle-frame-resolve-body-separation
+0x0043D010,BattleScene::UpdateRoundTransition,StateFramePolicies::UpdateTransition,R041,state-frame-update-transition
+0x00446D80,BattleScene::AdvanceOverlayTimeline,StateFramePolicies::AdvanceOverlay,R042,state-frame-advance-overlay
