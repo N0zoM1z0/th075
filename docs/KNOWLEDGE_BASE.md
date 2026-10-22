@@ -14899,8 +14899,9 @@ non-default destinations. Direct and indirect calls are exported as evidence;
 this does not assert their original signatures or reconstruct the body.
 
 Three diagnostic mutations (body size, remap hash and direct-table hash) are
-rejected. This audit changes no origins or exact ledgers. The 23 drafted cases
-0..10, 50..53, 56..59 and 62..65 remain private hypotheses with a compiler-only syntax preview,
+rejected. This audit changes no origins or exact ledgers. The 42 drafted cases
+0..10, 50..53, 56..59, 62..65, 70..74, 76, 88..89, 93..95, 97..99, 140,
+143..145 and 150 remain private hypotheses with a compiler-only syntax preview,
 not accepted source. Full function and table reconstruction remains pending.
 The exact baseline is unchanged at 109 functions /38,669 bytes (1.96%).
 
@@ -14911,8 +14912,28 @@ four motion fields cleared by `0x00453E20`. Existing exact short-argument
 reset/sound and signed-AL boundary interfaces remain consistent. No padding,
 inert locals, assembly, target byte arrays or partial exact credit is used.
 
-All 3,603 CI tests pass (56.6 seconds), along with target-required tracking
-and whitespace checks. No accepted source, ABI, flags or relocations changed;
-no cold replay was necessary. Serial low-priority preview builds used the pinned
-compiler. Sampled available memory remained above 8 GiB; the latest CPU sample
-was 99% idle with no swapping. No obsolete retained artifacts required deletion.
+All 3,603 CI tests pass (65.3 seconds), along with target-required tracking,
+Ghidra attestation, the complete dispatch audit and whitespace checks. No
+accepted source, ABI, flags or relocations changed; no cold replay was necessary.
+Serial low-priority preview builds used the pinned compiler. Sampled available
+memory remained above 8 GiB; interval CPU samples were 73-93% idle without
+swap-in/out. The current preview object was replaced in place. Build outputs
+occupy 155 MiB and private analysis 1.6 GiB; no obsolete retained outputs were
+identified for deletion.
+
+The latest nineteen cases retain distinct airborne and recovery policies.
+States 73/88 do not subtract gravity before the landing test; state 97 tests
+strictly below zero. States 97/98 use short-circuit unsigned input comparisons,
+not a bitwise aggregate. State 76 plays sound before velocity snapshots;
+state 89 plays it after disabling the transform; state 145 has no landing sound.
+States 140/143/144 have repeat limits 5/7/7. Effect calls use short state and
+two byte arguments; the layer byte is sign-extended in the complete downstream
+callee. Transform setup copies three float arguments and clears its observed
+transform fields; no complete receiver layout is inferred.
+
+The private `.analysis/f021-check-draft-calls.py` compares all 225 direct calls
+in the 42 drafted native case regions plus the common/default tail against
+compiler relocations. Callee counts and static order agree. The receipt is
+`.analysis/f021-draft-call-check.json`. This is a diagnostic completeness check,
+not control-flow equivalence, byte comparison or exact acceptance. Two genuine
+effect-loop counters are now present; no unused stack-slot locals were added.

@@ -74,17 +74,36 @@ contiguous table/remap extent, and inventories direct/indirect call sites.
 It grants no exact credit. Three negative controls reject a truncated body
 size, altered remap hash and altered direct-table hash.
 
-Natural source drafting covers states 0..10, 50..53, 56..59 and 62..65 (23 of 143 distinct
+Natural source drafting covers states 0..10, 50..53, 56..59, 62..65, 70..74, 76,
+88..89, 93..95, 97..99, 140, 143..145 and 150 (42 of 143 distinct
 non-default destinations). Drafts are `.analysis/reimu/cases-000-010.inc` and
 `.analysis/reimu/cases-050-053.inc`, plus
-`.analysis/reimu/cases-056-065.inc`, with a compiler-only partial preview in
+`.analysis/reimu/cases-056-065.inc`, `.analysis/reimu/cases-070-099.inc` and
+`.analysis/reimu/cases-140-150.inc`, with a compiler-only partial preview in
 `.analysis/reimu/Preview.cpp`. The preview compiles with the normal VC7.1
 profile but must never be executed, registered or used for acceptance; omitted
 cases are not implemented. `.analysis/f021-draft-progress.json` freezes these
 private drafts and their status. No function/source/match ledger changed.
-Continue with state 70 at `0x0045F1F4`, preserving native case-body order.
+Continue with state 151 at `0x00460D86`, preserving native case-body order.
 States 62..64 reset to state 2; state 65 resets to 0 and retains its one-repeat
 frame loop. Do not infer all four endings from their otherwise similar bodies.
+
+The latest nineteen cases retain distinct airborne and recovery policies.
+States 73/88 do not subtract gravity before the landing test; state 97 tests
+strictly below zero. States 97/98 use short-circuit unsigned input comparisons,
+not a bitwise aggregate. State 76 plays sound before velocity snapshots;
+state 89 plays it after disabling the transform; state 145 has no landing sound.
+States 140/143/144 have repeat limits 5/7/7. Effect calls use short state and
+two byte arguments; the layer byte is sign-extended in the complete downstream
+callee. Transform setup copies three float arguments and clears its observed
+transform fields; no complete receiver layout is inferred.
+
+The private `.analysis/f021-check-draft-calls.py` compares all 225 direct calls
+in the 42 drafted native case regions plus the common/default tail against
+compiler relocations. Callee counts and static order agree. The receipt is
+`.analysis/f021-draft-call-check.json`. This is a diagnostic completeness check,
+not control-flow equivalence, byte comparison or exact acceptance. Two genuine
+effect-loop counters are now present; no unused stack-slot locals were added.
 
 The entry gates join one return. States 0/2/4/5 break to a shared final
 AdvanceNestedFrame call, while other drafted states return directly. The
@@ -95,11 +114,14 @@ at `0x00453E20` clears four observed motion dwords. Its misleading historical
 Ghidra ContextBase name is not ownership evidence. Do not introduce locals to
 imitate the final function's as-yet-unreconstructed stack slots.
 
-All 3,603 CI tests pass (56.6 seconds), along with target-required tracking
-and whitespace checks. No accepted source, ABI, flags or relocations changed;
-no cold replay was necessary. Serial low-priority preview builds used the pinned
-compiler. Sampled available memory remained above 8 GiB; the latest CPU sample
-was 99% idle with no swapping. No obsolete retained artifacts required deletion.
+All 3,603 CI tests pass (65.3 seconds), along with target-required tracking,
+Ghidra attestation, the complete dispatch audit and whitespace checks. No
+accepted source, ABI, flags or relocations changed; no cold replay was necessary.
+Serial low-priority preview builds used the pinned compiler. Sampled available
+memory remained above 8 GiB; interval CPU samples were 73-93% idle without
+swap-in/out. The current preview object was replaced in place. Build outputs
+occupy 155 MiB and private analysis 1.6 GiB; no obsolete retained outputs were
+identified for deletion.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
