@@ -14899,10 +14899,11 @@ non-default destinations. Direct and indirect calls are exported as evidence;
 this does not assert their original signatures or reconstruct the body.
 
 Three diagnostic mutations (body size, remap hash and direct-table hash) are
-rejected. This audit changes no origins or exact ledgers. The 87 drafted cases
+rejected. This audit changes no origins or exact ledgers. The 121 drafted cases
 0..10, 50..53, 56..59, 62..65, 70..74, 76, 88..89, 93..95, 97..99, 140,
 143..145, 150..152, 154..156, 158..161, 163..165, 167..168, 180..181 and
-200..210, 300..310, 390..393 and 400..402 remain private hypotheses with a
+200..210, 300..310, 390..393, 400..402, 404..408, 410..414, 416..417,
+500..504, 506..507, 594..596 and 600..611 remain private hypotheses with a
 compiler-only syntax preview,
 not accepted source. Full function and table reconstruction remains pending.
 The exact baseline is unchanged at 109 functions /38,669 bytes (1.96%).
@@ -14914,15 +14915,16 @@ four motion fields cleared by `0x00453E20`. Existing exact short-argument
 reset/sound and signed-AL boundary interfaces remain consistent. No padding,
 inert locals, assembly, target byte arrays or partial exact credit is used.
 
-All 3,603 CI tests pass (75.0 seconds), along with target-required tracking,
+All 3,603 CI tests pass (91.7 seconds), along with target-required tracking,
 Ghidra attestation, the complete dispatch audit and whitespace checks. No
 accepted source, ABI, flags or relocations changed; no cold replay was necessary.
 Serial low-priority preview builds used the pinned compiler. Sampled available
-memory remained above 8 GiB; the interval CPU sample was 76% idle without
-swap-in/out. The current preview object was replaced in place. Six obsolete
-one-time composition scripts were removed (34,401 bytes); current drafts,
-control receipts and target evidence remain. The previous checkpoint removed
-the obsolete objdump rendering (340,942 bytes).
+memory ranged from 7.9 to 8.4 GiB; the interval CPU sample was 82% idle
+without swap-in/out.
+The preview object was replaced in place. Two obsolete one-time composition
+scripts were removed (9,161 bytes); current drafts, control receipts
+and target evidence remain. Earlier checkpoints removed six other composition
+scripts (34,401 bytes) and the obsolete objdump rendering (340,942 bytes).
 
 The preceding nineteen-case cohort retains distinct airborne and recovery policies.
 States 73/88 do not subtract gravity before the landing test; state 97 tests
@@ -14936,7 +14938,7 @@ transform fields; no complete receiver layout is inferred.
 
 The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
 target body and reads the freshly compiled COFF function and relocations. All
-470 direct calls and six indirect slot-zero calls in the 87 drafted native
+784 direct calls and six indirect slot-zero calls in the 121 drafted native
 case regions plus the common/default tail agree in static sequence. The
 receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
 completeness check, not control-flow equivalence, byte comparison or exact
@@ -14956,7 +14958,7 @@ vertical-speed transition found in 204/205. States 209/210 compare the
 resource against 2 before subtracting 3 and use an unsigned input counter.
 No semantic simplification or helper substitution is justified by these shapes.
 
-The next eighteen cases (300..310, 390..393 and 400..402) are now drafted.
+The preceding eighteen cases (300..310, 390..393 and 400..402) are drafted.
 State 309 retains the observed consecutive frame-equals-3 and frame-equals-5
 conditions at 0x004639D2..0x00463A31. Their original intent is unknown; do not
 repair them into alternatives. The pinned compiler retains their static call
@@ -14979,3 +14981,31 @@ complete receiver layout. A fresh preview build preserves all 28,661 compiler
 function bytes and all 916 relocations across the 54 zero-store spelling
 changes; `.analysis/f021-preview-before-field-type.json` retains the control.
 This compares two partial preview builds, not the target, and earns no credit.
+
+The latest 34-case cohort adds 404..408, 410..414, 416..417, 500..504,
+506..507, 594..596 and 600..611. State 412 has resource costs 30/20/30;
+416 changes its random range after the first shot and has costs 30/30/20.
+State 413 emits before frame advancement. The complete 0x00455580 callee
+confirms two 32-bit range arguments and an EAX result; the draft signature
+is a bounded ABI observation, not new exact credit.
+
+States 500/502 use a strict below-zero landing test and return after the
+secondary reset. States 501/504 use a nonpositive test and continue after
+landing; their one-repeat secondary loop increments F00 after resetting.
+State 503 additionally restricts gravity to frames above 3. States 506/507
+initialize three motion fields explicitly, retain their distinct launch
+speeds, and return immediately after the secondary landing reset. They do
+not call the four-field ClearMotion helper. States 594/595 conditionally
+write +3B0; 596 omits that write. All three decrement the byte at +366 and
+clear the opponent's +EFA word after the shared effect and sound calls.
+
+States 600..603 explicitly emit four effects with parameter indices 0..3;
++318 captures height only before the first shot. Airborne initialization
+scales both velocities by 0.25f. Ground states 604/605/608/609 emit before
+frame advancement, whereas airborne 606/607/610/611 advance first. State
+605 uses outer angles +/-70; 607 uses +/-60. State 606 emits -30 before
++30, reversing state 604's order. State 608 has no shared-sound call;
+609..611 call sound 41 before resource consumption. No normalization of
+these observed differences is justified.
+
+Continue with state 700 at `0x0046939C`, preserving native case-body order.
