@@ -39,3 +39,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00442A70,BattleCombat::ResolveAttackHitboxes,BattleCollisionDispatch::ResolveAttackHitboxes,R042,battle-collision-resolve-attack-hitboxes
 0x00442E40,BattleCombat::ResolveBodyContact,BattleCollisionDispatch::ResolveBodyContact,R042,battle-collision-resolve-body-contact
 0x00455500,FighterState::SaveCollisionFieldsAt00455500,CollisionActor::SaveCollisionFields,R103,collision-actor-save-collision-fields
+0x00442580,BattleCombat::ResolveActiveCollisions,BattleActiveCollision::ResolveActiveCollisions,R042,battle-active-resolve-collisions
+0x00444770,BattleCollision::ResolveGuard,BattleCollisionDispatch::ResolveGuard,R045,battle-collision-resolve-guard
+0x00444FC0,BattleCollision::ResolveSpecialHit,BattleCollisionDispatch::ResolveSpecialHit,R045,battle-collision-resolve-special-hit
+0x004450E0,BattleCollision::ResolveContact,BattleCollisionDispatch::ResolveContact,R045,battle-collision-resolve-contact
+0x00454F90,FighterState::IsState50To149At00454F90,FighterState::IsState50To149,R103,fighter-is-state-50-to-149

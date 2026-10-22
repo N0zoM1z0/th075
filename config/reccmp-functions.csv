@@ -90,3 +90,8 @@ BattleCollision::TransformBounds,0x004491E0,function
 BattleCollisionDispatch::ResolveAttackHitboxes,0x00442A70,function
 BattleCollisionDispatch::ResolveBodyContact,0x00442E40,function
 CollisionActor::SaveCollisionFields,0x00455500,function
+BattleActiveCollision::ResolveActiveCollisions,0x00442580,function
+BattleCollisionDispatch::ResolveGuard,0x00444770,function
+BattleCollisionDispatch::ResolveSpecialHit,0x00444FC0,function
+BattleCollisionDispatch::ResolveContact,0x004450E0,function
+FighterState::IsState50To149,0x00454F90,function

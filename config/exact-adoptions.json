@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F015",
+  "batch": "F010-F016",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "11f29bac8c25a28033e782f58e6b054cfd112e444fc4c8338f493c54f1efd6d9"
+      "current_sha256": "5b8e067dad194769894193e48293cacbf5329b04afdee9866c767e2ab1c05783"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "f01a811c88102b94fc5d4e453e42521e4484845bd540b92f040e4bca65a40b52"
+      "current_sha256": "d6eb26d797bfcc186a995889e407cc38e94509e1640faefec3066d894b822fa6"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4933d24a41223bdaf998e8587c8986162c7e79f68db71558cc07fbd1bc3bb3cf"
+      "current_sha256": "0331c1ac79d3f13473b5cc416fc3b083dbcd65753e896e27ca360a60a2f319d5"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "40a83e8a0136a31ff09241adf649653677b6b881857fbdd41ab4b86cab032e2d"
+      "current_sha256": "9efbd7cec96a212185df901fbae87b7dbc29e6ce24bdc18b20323540e826e968"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "9deb9ddb8cf82a44076d3d2e07d5b6f4d015f6fc531cf3dfdd6e96c5bc7e9f81"
+      "current_sha256": "0e65c2ec953ec0311772b5e405d041438f892adc92121403dc22eeb52dd04624"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "4c195f9bfd8655b5a4373faec13e6de19619e9453cc6271c7bab67984eef244b"
+      "current_sha256": "7558625baa63f130332bcf2241f288270b88d60e8417bb4d6065f61b6f129e68"
     }
   },
   "functions": [
@@ -792,6 +792,50 @@
     },
     {
       "before": {
+        "address": "0x00442580",
+        "size": "1249",
+        "span_end": "0x00442A60",
+        "current_name": "FUN_00442580",
+        "proposed_name": "BattleCombat::ResolveActiveCollisions",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00442580",
+        "size": "1249",
+        "span_end": "0x00442A60",
+        "current_name": "FUN_00442580",
+        "proposed_name": "BattleActiveCollision::ResolveActiveCollisions",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleActiveCollision::ResolveActiveCollisions()",
+        "is_thunk": "false",
+        "source_file": "src/BattleActiveCollision.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F016; scripts/repo-python scripts/replay-exact-units.py --unit battle-active-resolve-collisions",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F016: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00442580",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
         "address": "0x00442A70",
         "size": "975",
         "span_end": "0x00442E3E",
@@ -1144,6 +1188,50 @@
     },
     {
       "before": {
+        "address": "0x00444770",
+        "size": "219",
+        "span_end": "0x0044484A",
+        "current_name": "FUN_00444770",
+        "proposed_name": "BattleCollision::ResolveGuard",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00444770",
+        "size": "219",
+        "span_end": "0x0044484A",
+        "current_name": "FUN_00444770",
+        "proposed_name": "BattleCollisionDispatch::ResolveGuard",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCollisionDispatch::ResolveGuard(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleActiveCollision.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F016; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-resolve-guard",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F016: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00444770",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
         "address": "0x00444850",
         "size": "1877",
         "span_end": "0x00444FA4",
@@ -1184,6 +1272,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00444FC0",
+        "size": "280",
+        "span_end": "0x004450D7",
+        "current_name": "FUN_00444fc0",
+        "proposed_name": "BattleCollision::ResolveSpecialHit",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00444FC0",
+        "size": "280",
+        "span_end": "0x004450D7",
+        "current_name": "FUN_00444fc0",
+        "proposed_name": "BattleCollisionDispatch::ResolveSpecialHit",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCollisionDispatch::ResolveSpecialHit(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleActiveCollision.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F016; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-resolve-special-hit",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F016: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00444FC0",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004450E0",
+        "size": "239",
+        "span_end": "0x004451CE",
+        "current_name": "FUN_004450e0",
+        "proposed_name": "BattleCollision::ResolveContact",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004450E0",
+        "size": "239",
+        "span_end": "0x004451CE",
+        "current_name": "FUN_004450e0",
+        "proposed_name": "BattleCollisionDispatch::ResolveContact",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCollisionDispatch::ResolveContact(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleActiveCollision.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F016; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-resolve-contact",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F016: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004450E0",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     },
     {
@@ -1269,6 +1445,50 @@
         "address": "0x004492C0",
         "origin": "authored",
         "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454F90",
+        "size": "58",
+        "span_end": "0x00454FC9",
+        "current_name": "FUN_00454f90",
+        "proposed_name": "FighterState::IsState50To149At00454F90",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00454F90",
+        "size": "58",
+        "span_end": "0x00454FC9",
+        "current_name": "FUN_00454f90",
+        "proposed_name": "FighterState::IsState50To149",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool FighterState::IsState50To149()",
+        "is_thunk": "false",
+        "source_file": "src/BattleActiveCollision.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F016; scripts/repo-python scripts/replay-exact-units.py --unit fighter-is-state-50-to-149",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F016: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00454F90",
+        "origin": "authored",
+        "subsystem": "FighterState",
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
@@ -4723,6 +4943,402 @@
       "target_address": 4543744,
       "size": 118,
       "relocations": []
+    },
+    "battle-active-resolve-collisions": {
+      "source": "src/BattleActiveCollision.cpp",
+      "object": "build/matching/BattleActiveCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleActiveCollision::ResolveActiveCollisions"
+      ],
+      "symbol": "?ResolveActiveCollisions@BattleActiveCollision@@QAEXXZ",
+      "target_address": 4466048,
+      "size": 1249,
+      "relocations": [
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 43,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?SaveCollisionFields@CollisionActor@@QAEXXZ",
+          "target": 4543744
+        },
+        {
+          "offset": 195,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 244,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 271,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        },
+        {
+          "offset": 283,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 298,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBEAAPAVCombatActor@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 305,
+          "type": "REL32",
+          "symbol": "?SaveCollisionFields@CollisionActor@@QAEXXZ",
+          "target": 4543744
+        },
+        {
+          "offset": 379,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 424,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 451,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        },
+        {
+          "offset": 463,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 536,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 581,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 608,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        },
+        {
+          "offset": 620,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 635,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBEAAPAVCombatActor@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 646,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBEAAPAVCombatActor@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 660,
+          "type": "REL32",
+          "symbol": "?ResolveBodyContact@BattleCollisionDispatch@@QAEXPAVCombatActor@@0@Z",
+          "target": 4468288
+        },
+        {
+          "offset": 793,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 842,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 872,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        },
+        {
+          "offset": 884,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 899,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBEAAPAVCombatActor@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 906,
+          "type": "REL32",
+          "symbol": "?SaveCollisionFields@CollisionActor@@QAEXXZ",
+          "target": 4543744
+        },
+        {
+          "offset": 947,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVCombatActor@@V?$allocator@PAVCombatActor@@@std@@@std@@QBEAAPAVCombatActor@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 961,
+          "type": "REL32",
+          "symbol": "?ResolveAttackHitboxes@BattleCollisionDispatch@@QAEXPAVCombatActor@@00@Z",
+          "target": 4467312
+        },
+        {
+          "offset": 1032,
+          "type": "REL32",
+          "symbol": "?ResolveAttackHitboxes@BattleCollisionDispatch@@QAEXPAVCombatActor@@00@Z",
+          "target": 4467312
+        },
+        {
+          "offset": 1091,
+          "type": "REL32",
+          "symbol": "?ResolveAttackHitboxes@BattleCollisionDispatch@@QAEXPAVCombatActor@@00@Z",
+          "target": 4467312
+        },
+        {
+          "offset": 1112,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 1117,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1166,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        },
+        {
+          "offset": 1187,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 1192,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1241,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        }
+      ]
+    },
+    "battle-collision-resolve-guard": {
+      "source": "src/BattleActiveCollision.cpp",
+      "object": "build/matching/BattleActiveCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollisionDispatch::ResolveGuard"
+      ],
+      "symbol": "?ResolveGuard@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4474736,
+      "size": 219,
+      "relocations": [
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+          "target": 4542352
+        },
+        {
+          "offset": 129,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 190,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 203,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "battle-collision-resolve-special-hit": {
+      "source": "src/BattleActiveCollision.cpp",
+      "object": "build/matching/BattleActiveCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollisionDispatch::ResolveSpecialHit"
+      ],
+      "symbol": "?ResolveSpecialHit@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4476864,
+      "size": 280,
+      "relocations": []
+    },
+    "battle-collision-resolve-contact": {
+      "source": "src/BattleActiveCollision.cpp",
+      "object": "build/matching/BattleActiveCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollisionDispatch::ResolveContact"
+      ],
+      "symbol": "?ResolveContact@BattleCollisionDispatch@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4477152,
+      "size": 239,
+      "relocations": [
+        {
+          "offset": 91,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?ApplyImpact@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+          "target": 4472464
+        },
+        {
+          "offset": 203,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 223,
+          "type": "REL32",
+          "symbol": "?ApplyImpact@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+          "target": 4472464
+        }
+      ]
+    },
+    "fighter-is-state-50-to-149": {
+      "source": "src/BattleActiveCollision.cpp",
+      "object": "build/matching/BattleActiveCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::IsState50To149"
+      ],
+      "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+      "target_address": 4542352,
+      "size": 58,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -4741,6 +5357,8 @@
     "src/BattleCollision.cpp": "a2b859779c6399f0852239cb85c8518ec3cffe924b19709d2d0bd48a1f149a1e",
     "src/BattleCollision.hpp": "021f4d749dd8f91350741e0cfd5461f2b42453c5462246030f29e66c4b0c03f7",
     "src/BattleCollisionDispatch.cpp": "76b35ef4b834be509f52c15ad9f2a6c49f722e98d5c9f1c80b2103321b902671",
-    "src/BattleCollisionDispatch.hpp": "f5cbbd6947c87b8eb5f37834aa2b1c4263810211223070fa63d396ecb3244e06"
+    "src/BattleCollisionDispatch.hpp": "f5cbbd6947c87b8eb5f37834aa2b1c4263810211223070fa63d396ecb3244e06",
+    "src/BattleActiveCollision.cpp": "f0658e8b1411b6dbc36e9861b9c7ece599e83a5714c7c9f14ade829b3946c729",
+    "src/BattleActiveCollision.hpp": "9cf31bdded9a7482f0e88a0b739a1e0abe0b4d979c1f7f866d212d2019c62458"
   }
 }

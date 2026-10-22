@@ -89,3 +89,8 @@ BattleCollision::TransformBounds
 BattleCollisionDispatch::ResolveAttackHitboxes
 BattleCollisionDispatch::ResolveBodyContact
 CollisionActor::SaveCollisionFields
+BattleActiveCollision::ResolveActiveCollisions
+BattleCollisionDispatch::ResolveGuard
+BattleCollisionDispatch::ResolveSpecialHit
+BattleCollisionDispatch::ResolveContact
+FighterState::IsState50To149

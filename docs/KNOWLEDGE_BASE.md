@@ -14624,3 +14624,65 @@ and low priority, with about 8 GiB or more available system memory observed.
 
 Target-required tracking, all 3,603 public CI tests (97.7 seconds), progress
 freshness and whitespace checks pass. No prior exact unit was rebuilt.
+
+
+## F016 — Active collision traversal and response closure (2026-10-22)
+
+**Target observations:** Five complete authored bodies are accepted: active
+collision traversal `0x00442580` /1,249 (R042), guard response `0x00444770`
+/219, special-hit response `0x00444FC0` /280, contact response `0x004450E0`
+/239 (R045), and state predicate `0x00454F90` /58 (R103). Whole target hashes
+and complete CFG checks reproduce one return per function and 30/6/9/6/3
+internal branches. There are no switch tables. Alignment gaps of 15/5/8/1/6
+INT3 bytes are excluded. Earlier origins and boundaries are unchanged.
+
+Active traversal snapshots both players and their two active-object ranges,
+checks cross-player body contacts, selects each player's combo display and
+resolves active attacks followed by direct player attacks. It finally updates
+both combo displays. Guard response tests flags/state/timer, consumes an attack,
+adds 0.5 to the observed defender field with a 900 cap, and plays effect 52 and
+sound 37. Special-hit handles three paired frame-bit cases with state 3.
+Contact handles two paired bits, consumes an attack, plays effect 51 and calls
+the accepted impact policy. The state predicate tests signed state >=50 and
+<150. Original semantic names remain inferred.
+
+**Public SDK and ABI evidence:** `BattleActiveCollision.cpp/.hpp` use the real
+pinned VC7 std::deque<CombatActor *> and its iterator values. Compile-time size
+checks establish the public 20-byte container and 8-byte iterator layout used
+by native strides and hidden returns. Only existing containers are accessed;
+no private game owner is instantiated or embedded. The actual native element
+uses are four-byte actor pointers. This compatible specialization does not
+recover original type spelling or a complete game owner layout.
+
+Recursive whole comparison covers twelve SDK bodies /480 bytes: begin/end,
+iterator and const_iterator constructors, dereferences, pre/post increment,
+equality and inequality. Every relocation remains inside that complete
+specialization closure. These bodies are library dependency evidence, not new
+exact units or authored coverage. The final source object reproduces all twelve
+complete bodies and their relocation reports. R079 and related retained public
+SDK origin evidence remain unchanged. A diagnostic local-name control explains
+the iterator frame ordering; final source has four real iterators, two indices
+and actual SDK temporaries only. No padding, inert locals, embedded target
+bytes, assembly, fake returns or alternate conditional bodies are introduced.
+
+All response thiscall stack cleanup and AL results are retained, including the
+actual bool state predicate. Existing actor snapshots, collision dispatch,
+geometry, impact, midpoint-effect and sound interfaces are unchanged. Three
+complete float constants (1000, 0.5 and 900) and all 48 relocations are bound.
+The pinned VC7.1 build3077 profile is `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+
+**Acceptance:** Five units cold-build one object and compare all 2,045 bytes
+with zero differences. Totals become 96 exact functions /26,073 bytes /96
+units (1.32%). All 91 prior unit definitions and 38 source/header files remain
+unchanged. The cumulative manifest freezes 36 transitions /16,190 added bytes
+and eighteen new source/header hashes. All 97 unknown origins and the
+conservative 1,977,124-byte denominator remain intact; 95% is incomplete.
+
+Cold report source hashes match final source; all twelve complete SDK helper
+bodies and closure relocations also reproduce from the cold object. Three
+obsolete F016 diagnostic objects (54,856 bytes) were removed, preserving
+final objects, controls, source probes and original evidence. Builds stayed
+serial and low priority, with over 8 GiB available memory observed.
+
+Target-required tracking, all 3,603 public CI tests (72.1 seconds), progress
+freshness and whitespace checks pass. No prior exact unit was rebuilt.
