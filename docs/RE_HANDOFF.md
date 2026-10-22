@@ -76,17 +76,18 @@ size, altered remap hash and altered direct-table hash.
 
 Natural source drafting covers states 0..10, 50..53, 56..59, 62..65, 70..74, 76,
 88..89, 93..95, 97..99, 140, 143..145, 150..152, 154..156, 158..161,
-163..165, 167..168, 180..181 and 200..210 (69 of 143 distinct
-non-default destinations). Drafts are `.analysis/reimu/cases-000-010.inc` and
+163..165, 167..168, 180..181, 200..210, 300..310, 390..393 and 400..402
+(87 of 143 distinct non-default destinations). Drafts are `.analysis/reimu/cases-000-010.inc` and
 `.analysis/reimu/cases-050-053.inc`, plus
 `.analysis/reimu/cases-056-065.inc`, `.analysis/reimu/cases-070-099.inc` and
-`.analysis/reimu/cases-140-150.inc`, plus `.analysis/reimu/cases-151-181.inc`
-and `.analysis/reimu/cases-200-210.inc`, with a compiler-only partial preview in
+`.analysis/reimu/cases-140-150.inc`, plus `.analysis/reimu/cases-151-181.inc`,
+`.analysis/reimu/cases-200-210.inc`, `.analysis/reimu/cases-300-393.inc` and
+`.analysis/reimu/cases-400-402.inc`, with a compiler-only partial preview in
 `.analysis/reimu/Preview.cpp`. The preview compiles with the normal VC7.1
 profile but must never be executed, registered or used for acceptance; omitted
 cases are not implemented. `.analysis/f021-draft-progress.json` freezes these
 private drafts and their status. No function/source/match ledger changed.
-Continue with state 300 at `0x00462D90`, preserving native case-body order.
+Continue with state 404 at `0x00464BD0`, preserving native case-body order.
 States 62..64 reset to state 2; state 65 resets to 0 and retains its one-repeat
 frame loop. Do not infer all four endings from their otherwise similar bodies.
 
@@ -102,14 +103,14 @@ transform fields; no complete receiver layout is inferred.
 
 The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
 target body and reads the freshly compiled COFF function and relocations. All
-352 direct calls and six indirect slot-zero calls in the 69 drafted native
+470 direct calls and six indirect slot-zero calls in the 87 drafted native
 case regions plus the common/default tail agree in static sequence. The
 receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
 completeness check, not control-flow equivalence, byte comparison or exact
 acceptance. Two genuine effect-loop counters are present; no unused stack-slot
 locals were added. The old objdump rendering is no longer used.
 
-The latest 27-case cohort retains the per-state reset destinations and gates.
+The preceding 27-case cohort retains the per-state reset destinations and gates.
 States 154..156 and 163..165 reset to 2; 151..152 and 159..161 reset to 0.
 State 158 applies gravity at nonnegative height, whereas 180/181 require
 positive height and loop at secondary frame 7/5. States 163..165 omit the
@@ -122,6 +123,30 @@ vertical-speed transition found in 204/205. States 209/210 compare the
 resource against 2 before subtracting 3 and use an unsigned input counter.
 No semantic simplification or helper substitution is justified by these shapes.
 
+The next eighteen cases (300..310, 390..393 and 400..402) are now drafted.
+State 309 retains the observed consecutive frame-equals-3 and frame-equals-5
+conditions at 0x004639D2..0x00463A31. Their original intent is unknown; do not
+repair them into alternatives. The pinned compiler retains their static call
+sequence without volatile qualifiers or assembly. State 304 bounds its landing
+transition to frames 6..11; 305/306 perform the gravity/landing check before
+initialization and retain horizontal speed on that landing path. States 307
+and 391 use different airborne deceleration and launch parameters. The four
+sound checks in 303/392 remain separate post-update conditions.
+
+States 400/401 each contain two explicit five-shot sequences, with per-shot
+parameter writes and repeated coordinate reads. First/continuation resource
+costs are 100/25 and continuation requires an unsigned input counter plus a
+two-repeat bound. State 402 uses a distinct sound, cost 250 and secondary-frame
+loop. The complete character-sound wrapper at 0x00453D40 reads a signed short;
+shared and character sound receivers remain distinct.
+
+The +7C dword's zero assignments use integer spelling consistently with its
+observed immediate-one stores. This remains a field-type inference, not a
+complete receiver layout. A fresh preview build preserves all 28,661 compiler
+function bytes and all 916 relocations across the 54 zero-store spelling
+changes; `.analysis/f021-preview-before-field-type.json` retains the control.
+This compares two partial preview builds, not the target, and earns no credit.
+
 The entry gates join one return. States 0/2/4/5 break to a shared final
 AdvanceNestedFrame call, while other drafted states return directly. The
 positive-speed decrement is float 0.5f; the negative-speed increment is double
@@ -131,14 +156,15 @@ at `0x00453E20` clears four observed motion dwords. Its misleading historical
 Ghidra ContextBase name is not ownership evidence. Do not introduce locals to
 imitate the final function's as-yet-unreconstructed stack slots.
 
-All 3,603 CI tests pass (77.8 seconds), along with target-required tracking,
+All 3,603 CI tests pass (75.0 seconds), along with target-required tracking,
 Ghidra attestation, the complete dispatch audit and whitespace checks. No
 accepted source, ABI, flags or relocations changed; no cold replay was necessary.
 Serial low-priority preview builds used the pinned compiler. Sampled available
-memory remained above 8 GiB; the interval CPU sample was 87% idle without
-swap-in/out. The current preview object was replaced in place. The obsolete
-objdump rendering was removed (340,942 bytes); the diagnostic reads COFF directly.
-Build outputs occupy 155 MiB and private analysis 1.6 GiB.
+memory remained above 8 GiB; the interval CPU sample was 76% idle without
+swap-in/out. The current preview object was replaced in place. Six obsolete
+one-time composition scripts were removed (34,401 bytes); current drafts,
+control receipts and target evidence remain. The previous checkpoint removed
+the obsolete objdump rendering (340,942 bytes).
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
