@@ -14686,3 +14686,74 @@ serial and low priority, with over 8 GiB available memory observed.
 
 Target-required tracking, all 3,603 public CI tests (72.1 seconds), progress
 freshness and whitespace checks pass. No prior exact unit was rebuilt.
+
+
+## F017 — Battle frame update and actor movement policies (2026-10-22)
+
+**Target observations:** Eight complete independently authored bodies are
+accepted: frame update `0x0043B1B0` /859 (R041), presentation `0x0043B5D0`
+/16 (R062), round-end dispatch `0x0043C8F0` /55 and player counters
+`0x0043B510` /179 (R043), guarded update `0x004521A0` /132 (R102), position
+`0x00452230` /289 and action choice `0x00452360` /304 (R045), and horizontal
+limits `0x00454EE0` /133 (R103). Whole native hashes and CFG checks reproduce
+one return each and 25/0/4/2/6/6/18/6 internal branches in that order. There
+are no switch tables in these eight bodies. Alignment gaps are 5/0/9/13/12/
+15/0/11 INT3 bytes respectively and receive no coverage credit.
+
+Frame update polls pause state, invokes the actual frame-start virtual slot,
+advances counters/effects/sequence, conditionally updates actors and collision,
+then position, player timers, virtual finishing callbacks and scene effects.
+Presentation cadence and pause fading retain their exact branches. Normal
+completion returns the low-word battle state result; paused completion clears
+AX. The short source signature is compatible with that observed low-word ABI;
+original signedness and declaration spelling remain inferred. The two restore
+operations each copy seven complete dwords from the observed battle snapshot
+into an actor. `FrameInputSnapshot` represents only those bounded copied values,
+not the complete original input type or any enclosing owner.
+
+Guarded actor update invokes observed virtual slots only when both relevant
+timers are clear, and chooses an action for airborne states 50..149. Position
+update checks signed direction/limits, adds the observed velocity terms in
+native x87 order, clamps x to [40,1240] and y to nonnegative. Horizontal limits
+return signed AL values 1/-1/0 from the exact edge/distance predicates. Action
+choice preserves frame/health/timer gates, signed rand()%2 behavior and the
+actual bitwise OR of four input dwords. It selects state 180/181 through the
+existing reset interface. Player counters call the real timer helper, snapshot
+the current words and decrement positive values. Presentation reuses the
+already-exact Graphics::Present.
+
+**Source and ABI evidence:** `BattleFrame.cpp/.hpp` use partial receiver-only
+interfaces. Scene virtual offset +8, actor offsets +4/+0x20/+0x28/+0x40/+0x4C,
+and the existing global scene offset +4 are preserved by complete comparison.
+Unused slot declarations preserve position only, and do not recover original
+signatures. No reconstructed game owner is instantiated or embedded. Existing
+g_DrawDispatcher and g_CombatEffects mappings are reused; three new byte globals
+record clock mode and presentation cadence with inferred names.
+
+Complete native reads cover direct dependencies, including the larger sequence,
+state, separation and timer bodies without accepting them. State return sites
+write AX; horizontal-limit callers sign-extend AL. The source explicitly
+promotes the presentation toggle's normalized boolean to int before narrowing
+to its byte storage, preserving the observed full-register normalization.
+Direct float lvalues and operand ordering retain the target's x87 operations;
+an earlier probe evaluated the velocity sum before the limit call and introduced
+an extra spill. No padding, inert locals, fake returns, assembly, embedded
+bytes or alternate matching body was introduced. The existing sequence
+uncertainty remains explicit and receives no new exact credit.
+
+**Acceptance:** Pinned VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`
+cold-builds one object. All eight units compare exactly across 1,967 bytes and
+63 relocations, with five complete readonly constants. Totals become 104 exact
+functions /28,040 bytes /104 units (1.42%). All 96 prior unit definitions and
+40 source/header files remain unchanged. The cumulative manifest freezes 44
+transitions /18,157 added bytes and twenty new source/header hashes. All 97
+unknown origins and the conservative 1,977,124-byte denominator remain intact;
+the 95% objective is still incomplete.
+
+All eight cold report source hashes match final source. Five obsolete F017
+diagnostic objects (66,374 bytes) were removed, preserving final objects,
+source probes and original evidence. Builds stayed serial and low priority;
+observed available memory remained above 8 GiB.
+
+Target-required tracking, all 3,603 public CI tests (73.9 seconds), progress
+freshness and whitespace checks pass. No prior exact unit was rebuilt.

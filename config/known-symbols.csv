@@ -77,3 +77,11 @@ address,name,module,confidence,evidence
 0x00444FC0,BattleCollisionDispatch::ResolveSpecialHit,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x004450E0,BattleCollisionDispatch::ResolveContact,BattleCollision,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00454F90,FighterState::IsState50To149,FighterState,inferred,F016; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x0043B1B0,BattleFrame::UpdateFrame,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x0043B5D0,BattleFrame::Present,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x0043C8F0,BattleFrame::ResolveRoundEndMode,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x0043B510,BattleFrame::UpdatePlayerCounters,BattleScene,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004521A0,FrameActor::AdvanceGuardedState,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00452230,FrameActor::AdvancePosition,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00454EE0,FrameActor::CheckHorizontalLimits,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00452360,FrameActor::ChooseAction,FighterState,inferred,F017; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown

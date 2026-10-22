@@ -44,3 +44,11 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00444FC0,BattleCollision::ResolveSpecialHit,BattleCollisionDispatch::ResolveSpecialHit,R045,battle-collision-resolve-special-hit
 0x004450E0,BattleCollision::ResolveContact,BattleCollisionDispatch::ResolveContact,R045,battle-collision-resolve-contact
 0x00454F90,FighterState::IsState50To149At00454F90,FighterState::IsState50To149,R103,fighter-is-state-50-to-149
+0x0043B1B0,BattleScene::UpdateFrame,BattleFrame::UpdateFrame,R041,battle-frame-update
+0x0043B5D0,BattleScene::PresentAt0043B5D0,BattleFrame::Present,R062,battle-frame-present
+0x0043C8F0,BattleScene::ResolveRoundEndMode,BattleFrame::ResolveRoundEndMode,R043,battle-frame-resolve-round-end-mode
+0x0043B510,BattleScene::UpdatePlayerCounters,BattleFrame::UpdatePlayerCounters,R043,battle-frame-update-player-counters
+0x004521A0,FighterState::AdvanceGuardedStateAt004521A0,FrameActor::AdvanceGuardedState,R102,frame-actor-advance-guarded-state
+0x00452230,FighterState::AdvancePosition,FrameActor::AdvancePosition,R045,frame-actor-advance-position
+0x00454EE0,FighterState::CheckHorizontalLimitsAt00454EE0,FrameActor::CheckHorizontalLimits,R103,frame-actor-check-horizontal-limits
+0x00452360,FighterState::ChooseAction,FrameActor::ChooseAction,R045,frame-actor-choose-action

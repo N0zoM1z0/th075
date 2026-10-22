@@ -70,3 +70,6 @@ address,name,module,confidence,evidence
 0x006714B0,g_MaxCombatScore,BattleState,inferred,F012; unsigned dword maximum updated from actor score; original symbol unknown; no allocation or original complete layout claimed
 0x006718F8,g_BattleRecords,BattleState,inferred,F012; existing receiver address and four getter/setter interfaces only; complete owner extent unknown; original symbol unknown; no allocation or original complete layout claimed
 0x006716C8,g_CombatEffects,BattleState,inferred,F013; existing effect-system receiver only; complete owner extent unknown; original symbol unknown; no allocation or original complete layout claimed
+0x0066C238,g_FrameClockMode,BattleScene,inferred,F017; signed byte controlling the second frame counter; exact native reads/writes and bound relocations; original symbol unknown
+0x0066C237,g_FramePresentToggle,BattleScene,inferred,F017; unsigned byte gating presentation and normalized alternating updates; exact native reads/writes and bound relocations; original symbol unknown
+0x00671430,g_FramePresentEveryTick,BattleScene,inferred,F017; unsigned byte enabling presentation on every tick; exact native reads/writes and bound relocations; original symbol unknown

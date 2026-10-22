@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F016",
+  "batch": "F010-F017",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5b8e067dad194769894193e48293cacbf5329b04afdee9866c767e2ab1c05783"
+      "current_sha256": "01adf211ef63d7db9ded5a70bba3c4c344790d404771397a440179fe7ee15ffb"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "79abeebe3d65a897f8002789e50bff997f6e31739ae8a28d58ceb42e700715de"
+      "current_sha256": "8b2369d429bf4c3e555ff5aba3a9eecf4837f028c739d3fa093a507ef2e2568d"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d6eb26d797bfcc186a995889e407cc38e94509e1640faefec3066d894b822fa6"
+      "current_sha256": "771ae30501065349636767433b69e1dd227bdf083b1e9d5355298e87f9269357"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0331c1ac79d3f13473b5cc416fc3b083dbcd65753e896e27ca360a60a2f319d5"
+      "current_sha256": "365d0235e38d85c0e55e2b1baaea34f28ebeed1bf57db45474f8ae9ec676b3bb"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "9efbd7cec96a212185df901fbae87b7dbc29e6ce24bdc18b20323540e826e968"
+      "current_sha256": "622d7e4c68df67bc39afb54eda1a2e2064f64175e64e6a52d281b1f72af92ab8"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0e65c2ec953ec0311772b5e405d041438f892adc92121403dc22eeb52dd04624"
+      "current_sha256": "51e80768be5dbf497df08e2abaeee3a1e3ce6099f0529d58b3e41ba16179e07f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "7558625baa63f130332bcf2241f288270b88d60e8417bb4d6065f61b6f129e68"
+      "current_sha256": "53d3f23031be655a86a7577e3d28b1567b5091cc33456969bf61688ecf1e07a3"
     }
   },
   "functions": [
@@ -656,6 +656,182 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R105"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043B1B0",
+        "size": "859",
+        "span_end": "0x0043B50A",
+        "current_name": "FUN_0043b1b0",
+        "proposed_name": "BattleScene::UpdateFrame",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043B1B0",
+        "size": "859",
+        "span_end": "0x0043B50A",
+        "current_name": "FUN_0043b1b0",
+        "proposed_name": "BattleFrame::UpdateFrame",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "short BattleFrame::UpdateFrame()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F017; scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-update",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x0043B1B0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043B510",
+        "size": "179",
+        "span_end": "0x0043B5C2",
+        "current_name": "FUN_0043b510",
+        "proposed_name": "BattleScene::UpdatePlayerCounters",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043B510",
+        "size": "179",
+        "span_end": "0x0043B5C2",
+        "current_name": "FUN_0043b510",
+        "proposed_name": "BattleFrame::UpdatePlayerCounters",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleFrame::UpdatePlayerCounters()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F017; scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-update-player-counters",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x0043B510",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043B5D0",
+        "size": "16",
+        "span_end": "0x0043B5DF",
+        "current_name": "FUN_0043b5d0",
+        "proposed_name": "BattleScene::PresentAt0043B5D0",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0043B5D0",
+        "size": "16",
+        "span_end": "0x0043B5DF",
+        "current_name": "FUN_0043b5d0",
+        "proposed_name": "BattleFrame::Present",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleFrame::Present()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R062; complete target body and CFG with reviewed game-specific scene lifecycle calls; F017; scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-present",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x0043B5D0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R062"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043C8F0",
+        "size": "55",
+        "span_end": "0x0043C926",
+        "current_name": "FUN_0043c8f0",
+        "proposed_name": "BattleScene::ResolveRoundEndMode",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043C8F0",
+        "size": "55",
+        "span_end": "0x0043C926",
+        "current_name": "FUN_0043c8f0",
+        "proposed_name": "BattleFrame::ResolveRoundEndMode",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleFrame::ResolveRoundEndMode()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F017; scripts/repo-python scripts/replay-exact-units.py --unit battle-frame-resolve-round-end-mode",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x0043C8F0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     },
     {
@@ -1445,6 +1621,182 @@
         "address": "0x004492C0",
         "origin": "authored",
         "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004521A0",
+        "size": "132",
+        "span_end": "0x00452223",
+        "current_name": "FUN_004521a0",
+        "proposed_name": "FighterState::AdvanceGuardedStateAt004521A0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004521A0",
+        "size": "132",
+        "span_end": "0x00452223",
+        "current_name": "FUN_004521a0",
+        "proposed_name": "FrameActor::AdvanceGuardedState",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameActor::AdvanceGuardedState()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F017; scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-advance-guarded-state",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004521A0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00452230",
+        "size": "289",
+        "span_end": "0x00452350",
+        "current_name": "FUN_00452230",
+        "proposed_name": "FighterState::AdvancePosition",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00452230",
+        "size": "289",
+        "span_end": "0x00452350",
+        "current_name": "FUN_00452230",
+        "proposed_name": "FrameActor::AdvancePosition",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameActor::AdvancePosition()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F017; scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-advance-position",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00452230",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00452360",
+        "size": "304",
+        "span_end": "0x0045248F",
+        "current_name": "FUN_00452360",
+        "proposed_name": "FighterState::ChooseAction",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00452360",
+        "size": "304",
+        "span_end": "0x0045248F",
+        "current_name": "FUN_00452360",
+        "proposed_name": "FrameActor::ChooseAction",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameActor::ChooseAction()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F017; scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-choose-action",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00452360",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454EE0",
+        "size": "133",
+        "span_end": "0x00454F64",
+        "current_name": "FUN_00454ee0",
+        "proposed_name": "FighterState::CheckHorizontalLimitsAt00454EE0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00454EE0",
+        "size": "133",
+        "span_end": "0x00454F64",
+        "current_name": "FUN_00454ee0",
+        "proposed_name": "FrameActor::CheckHorizontalLimits",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "signed char FrameActor::CheckHorizontalLimits()",
+        "is_thunk": "false",
+        "source_file": "src/BattleFrame.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F017; scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-check-horizontal-limits",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F017: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00454EE0",
+        "origin": "authored",
+        "subsystem": "FighterState",
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
@@ -5339,6 +5691,560 @@
       "target_address": 4542352,
       "size": 58,
       "relocations": []
+    },
+    "battle-frame-update": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleFrame::UpdateFrame"
+      ],
+      "symbol": "?UpdateFrame@BattleFrame@@QAEFXZ",
+      "target_address": 4436400,
+      "size": 859,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?PollPauseShortcut@BattleFrame@@QAEXXZ",
+          "target": 4478704
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 122,
+          "type": "REL32",
+          "symbol": "?UpdatePlayerEffects@BattleFrame@@QAEXXZ",
+          "target": 4479024
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?ApplySequence@BattleFrame@@QAEXXZ",
+          "target": 4479488
+        },
+        {
+          "offset": 156,
+          "type": "REL32",
+          "symbol": "?AdvanceGuardedState@FrameActor@@QAEXXZ",
+          "target": 4530592
+        },
+        {
+          "offset": 167,
+          "type": "REL32",
+          "symbol": "?AdvanceGuardedState@FrameActor@@QAEXXZ",
+          "target": 4530592
+        },
+        {
+          "offset": 253,
+          "type": "REL32",
+          "symbol": "?AdvanceAll@FrameEffectOwner@@QAEXXZ",
+          "target": 4570544
+        },
+        {
+          "offset": 270,
+          "type": "REL32",
+          "symbol": "?AdvanceAll@FrameEffectOwner@@QAEXXZ",
+          "target": 4570544
+        },
+        {
+          "offset": 278,
+          "type": "REL32",
+          "symbol": "?ResolveBodySeparation@BattleFrame@@QAEXXZ",
+          "target": 4494096
+        },
+        {
+          "offset": 336,
+          "type": "REL32",
+          "symbol": "?AdvanceAll@FrameEffectOwner@@QAEXXZ",
+          "target": 4570544
+        },
+        {
+          "offset": 353,
+          "type": "REL32",
+          "symbol": "?AdvanceAll@FrameEffectOwner@@QAEXXZ",
+          "target": 4570544
+        },
+        {
+          "offset": 396,
+          "type": "REL32",
+          "symbol": "?ResolveActiveCollisions@BattleActiveCollision@@QAEXXZ",
+          "target": 4466048
+        },
+        {
+          "offset": 404,
+          "type": "REL32",
+          "symbol": "?ResolveBodySeparation@BattleFrame@@QAEXXZ",
+          "target": 4494096
+        },
+        {
+          "offset": 411,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 424,
+          "type": "REL32",
+          "symbol": "?ResolveRoundEndMode@BattleFrame@@QAEXXZ",
+          "target": 4442352
+        },
+        {
+          "offset": 435,
+          "type": "REL32",
+          "symbol": "?AdvancePosition@FrameActor@@QAEXXZ",
+          "target": 4530736
+        },
+        {
+          "offset": 446,
+          "type": "REL32",
+          "symbol": "?AdvancePosition@FrameActor@@QAEXXZ",
+          "target": 4530736
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?UpdatePlayerCounters@BattleFrame@@QAEXXZ",
+          "target": 4437264
+        },
+        {
+          "offset": 495,
+          "type": "DIR32",
+          "symbol": "?g_CombatEffects@@3VCombatEffects@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 500,
+          "type": "REL32",
+          "symbol": "?AdvanceAndPrune@FrameAuxEffects@@QAEXXZ",
+          "target": 6258048
+        },
+        {
+          "offset": 505,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 513,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 543,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 555,
+          "type": "REL32",
+          "symbol": "?Present@BattleFrame@@QAEXXZ",
+          "target": 4437456
+        },
+        {
+          "offset": 562,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentEveryTick@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 572,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 582,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 593,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 601,
+          "type": "REL32",
+          "symbol": "?AdvanceState@BattleFrame@@QAEFXZ",
+          "target": 4437520
+        },
+        {
+          "offset": 614,
+          "type": "REL32",
+          "symbol": "?HandlePauseMenu@BattleFrame@@QAEXXZ",
+          "target": 4481488
+        },
+        {
+          "offset": 712,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 724,
+          "type": "REL32",
+          "symbol": "?Present@BattleFrame@@QAEXXZ",
+          "target": 4437456
+        },
+        {
+          "offset": 731,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentEveryTick@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 741,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 751,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 762,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        }
+      ]
+    },
+    "battle-frame-present": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleFrame::Present"
+      ],
+      "symbol": "?Present@BattleFrame@@QAEXXZ",
+      "target_address": 4437456,
+      "size": 16,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?Present@Graphics@@YAXXZ",
+          "target": 4204784
+        }
+      ]
+    },
+    "battle-frame-resolve-round-end-mode": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleFrame::ResolveRoundEndMode"
+      ],
+      "symbol": "?ResolveRoundEndMode@BattleFrame@@QAEXXZ",
+      "target_address": 4442352,
+      "size": 55,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "?ResolveSpecialRoundEnd@BattleFrame@@QAEXXZ",
+          "target": 4442416
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?ResolveNormalRoundEnd@BattleFrame@@QAEXXZ",
+          "target": 4443568
+        }
+      ]
+    },
+    "battle-frame-update-player-counters": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleFrame::UpdatePlayerCounters"
+      ],
+      "symbol": "?UpdatePlayerCounters@BattleFrame@@QAEXXZ",
+      "target_address": 4437264,
+      "size": 179,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?UpdateCounters@FrameActor@@QAEXXZ",
+          "target": 4531344
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?UpdateCounters@FrameActor@@QAEXXZ",
+          "target": 4531344
+        }
+      ]
+    },
+    "frame-actor-advance-guarded-state": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameActor::AdvanceGuardedState"
+      ],
+      "symbol": "?AdvanceGuardedState@FrameActor@@QAEXXZ",
+      "target_address": 4530592,
+      "size": 132,
+      "relocations": [
+        {
+          "offset": 98,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 113,
+          "type": "REL32",
+          "symbol": "?ChooseAction@FrameActor@@QAEXXZ",
+          "target": 4531040
+        }
+      ]
+    },
+    "frame-actor-advance-position": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameActor::AdvancePosition"
+      ],
+      "symbol": "?AdvancePosition@FrameActor@@QAEXXZ",
+      "target_address": 4530736,
+      "size": 289,
+      "relocations": [
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "?CheckHorizontalLimits@FrameActor@@QAECXZ",
+          "target": 4542176
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 188,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "__real@449b0000",
+          "target": 6655596
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        }
+      ]
+    },
+    "frame-actor-check-horizontal-limits": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameActor::CheckHorizontalLimits"
+      ],
+      "symbol": "?CheckHorizontalLimits@FrameActor@@QAECXZ",
+      "target_address": 4542176,
+      "size": 133,
+      "relocations": [
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 21,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "__real@445c0000",
+          "target": 6649968
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "__real@44a00000",
+          "target": 6655616
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "__real@445c0000",
+          "target": 6649968
+        }
+      ]
+    },
+    "frame-actor-choose-action": {
+      "source": "src/BattleFrame.cpp",
+      "object": "build/matching/BattleFrame.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameActor::ChooseAction"
+      ],
+      "symbol": "?ChooseAction@FrameActor@@QAEXXZ",
+      "target_address": 4531040,
+      "size": 304,
+      "relocations": [
+        {
+          "offset": 70,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 127,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 151,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 180,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 195,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 281,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 296,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -5359,6 +6265,8 @@
     "src/BattleCollisionDispatch.cpp": "76b35ef4b834be509f52c15ad9f2a6c49f722e98d5c9f1c80b2103321b902671",
     "src/BattleCollisionDispatch.hpp": "f5cbbd6947c87b8eb5f37834aa2b1c4263810211223070fa63d396ecb3244e06",
     "src/BattleActiveCollision.cpp": "f0658e8b1411b6dbc36e9861b9c7ece599e83a5714c7c9f14ade829b3946c729",
-    "src/BattleActiveCollision.hpp": "9cf31bdded9a7482f0e88a0b739a1e0abe0b4d979c1f7f866d212d2019c62458"
+    "src/BattleActiveCollision.hpp": "9cf31bdded9a7482f0e88a0b739a1e0abe0b4d979c1f7f866d212d2019c62458",
+    "src/BattleFrame.cpp": "593fcdc263e8367d43ea7af1caafe4759cb86497faeed5b39139f370840bd61e",
+    "src/BattleFrame.hpp": "d2f8dc50734b2faaeddc0a4aee0f3c36e0999d9546b32337d9bbaf054ad505e6"
   }
 }

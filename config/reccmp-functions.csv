@@ -95,3 +95,11 @@ BattleCollisionDispatch::ResolveGuard,0x00444770,function
 BattleCollisionDispatch::ResolveSpecialHit,0x00444FC0,function
 BattleCollisionDispatch::ResolveContact,0x004450E0,function
 FighterState::IsState50To149,0x00454F90,function
+BattleFrame::UpdateFrame,0x0043B1B0,function
+BattleFrame::Present,0x0043B5D0,function
+BattleFrame::ResolveRoundEndMode,0x0043C8F0,function
+BattleFrame::UpdatePlayerCounters,0x0043B510,function
+FrameActor::AdvanceGuardedState,0x004521A0,function
+FrameActor::AdvancePosition,0x00452230,function
+FrameActor::CheckHorizontalLimits,0x00454EE0,function
+FrameActor::ChooseAction,0x00452360,function

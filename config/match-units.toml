@@ -2055,3 +2055,154 @@ target_address = 0x00454F90
 size = 58
 relocations = [
 ]
+
+[units.battle-frame-update]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleFrame::UpdateFrame"]
+symbol = "?UpdateFrame@BattleFrame@@QAEFXZ"
+target_address = 0x0043B1B0
+size = 859
+relocations = [
+  { offset = 0xD, type = "REL32", symbol = "?PollPauseShortcut@BattleFrame@@QAEXXZ", target = 0x004456F0 },
+  { offset = 0x52, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x5E, type = "DIR32", symbol = "?g_FrameClockMode@@3CA", target = 0x0066C238 },
+  { offset = 0x7A, type = "REL32", symbol = "?UpdatePlayerEffects@BattleFrame@@QAEXXZ", target = 0x00445830 },
+  { offset = 0x82, type = "REL32", symbol = "?ApplySequence@BattleFrame@@QAEXXZ", target = 0x00445A00 },
+  { offset = 0x9C, type = "REL32", symbol = "?AdvanceGuardedState@FrameActor@@QAEXXZ", target = 0x004521A0 },
+  { offset = 0xA7, type = "REL32", symbol = "?AdvanceGuardedState@FrameActor@@QAEXXZ", target = 0x004521A0 },
+  { offset = 0xFD, type = "REL32", symbol = "?AdvanceAll@FrameEffectOwner@@QAEXXZ", target = 0x0045BDB0 },
+  { offset = 0x10E, type = "REL32", symbol = "?AdvanceAll@FrameEffectOwner@@QAEXXZ", target = 0x0045BDB0 },
+  { offset = 0x116, type = "REL32", symbol = "?ResolveBodySeparation@BattleFrame@@QAEXXZ", target = 0x00449310 },
+  { offset = 0x150, type = "REL32", symbol = "?AdvanceAll@FrameEffectOwner@@QAEXXZ", target = 0x0045BDB0 },
+  { offset = 0x161, type = "REL32", symbol = "?AdvanceAll@FrameEffectOwner@@QAEXXZ", target = 0x0045BDB0 },
+  { offset = 0x18C, type = "REL32", symbol = "?ResolveActiveCollisions@BattleActiveCollision@@QAEXXZ", target = 0x00442580 },
+  { offset = 0x194, type = "REL32", symbol = "?ResolveBodySeparation@BattleFrame@@QAEXXZ", target = 0x00449310 },
+  { offset = 0x19B, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x1A8, type = "REL32", symbol = "?ResolveRoundEndMode@BattleFrame@@QAEXXZ", target = 0x0043C8F0 },
+  { offset = 0x1B3, type = "REL32", symbol = "?AdvancePosition@FrameActor@@QAEXXZ", target = 0x00452230 },
+  { offset = 0x1BE, type = "REL32", symbol = "?AdvancePosition@FrameActor@@QAEXXZ", target = 0x00452230 },
+  { offset = 0x1C6, type = "REL32", symbol = "?UpdatePlayerCounters@BattleFrame@@QAEXXZ", target = 0x0043B510 },
+  { offset = 0x1EF, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
+  { offset = 0x1F4, type = "REL32", symbol = "?AdvanceAndPrune@FrameAuxEffects@@QAEXXZ", target = 0x005F7D80 },
+  { offset = 0x1F9, type = "DIR32", symbol = "?g_DrawDispatcher@@3PAVDrawDispatcher@@A", target = 0x00671424 },
+  { offset = 0x201, type = "DIR32", symbol = "?g_DrawDispatcher@@3PAVDrawDispatcher@@A", target = 0x00671424 },
+  { offset = 0x21F, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x22B, type = "REL32", symbol = "?Present@BattleFrame@@QAEXXZ", target = 0x0043B5D0 },
+  { offset = 0x232, type = "DIR32", symbol = "?g_FramePresentEveryTick@@3EA", target = 0x00671430 },
+  { offset = 0x23C, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x246, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x251, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x259, type = "REL32", symbol = "?AdvanceState@BattleFrame@@QAEFXZ", target = 0x0043B610 },
+  { offset = 0x266, type = "REL32", symbol = "?HandlePauseMenu@BattleFrame@@QAEXXZ", target = 0x004461D0 },
+  { offset = 0x2C8, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x2D4, type = "REL32", symbol = "?Present@BattleFrame@@QAEXXZ", target = 0x0043B5D0 },
+  { offset = 0x2DB, type = "DIR32", symbol = "?g_FramePresentEveryTick@@3EA", target = 0x00671430 },
+  { offset = 0x2E5, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x2EF, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+  { offset = 0x2FA, type = "DIR32", symbol = "?g_FramePresentToggle@@3EA", target = 0x0066C237 },
+]
+
+[units.battle-frame-present]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleFrame::Present"]
+symbol = "?Present@BattleFrame@@QAEXXZ"
+target_address = 0x0043B5D0
+size = 16
+relocations = [
+  { offset = 0x8, type = "REL32", symbol = "?Present@Graphics@@YAXXZ", target = 0x004028F0 },
+]
+
+[units.battle-frame-resolve-round-end-mode]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleFrame::ResolveRoundEndMode"]
+symbol = "?ResolveRoundEndMode@BattleFrame@@QAEXXZ"
+target_address = 0x0043C8F0
+size = 55
+relocations = [
+  { offset = 0x18, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x25, type = "REL32", symbol = "?ResolveSpecialRoundEnd@BattleFrame@@QAEXXZ", target = 0x0043C930 },
+  { offset = 0x2F, type = "REL32", symbol = "?ResolveNormalRoundEnd@BattleFrame@@QAEXXZ", target = 0x0043CDB0 },
+]
+
+[units.battle-frame-update-player-counters]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleFrame::UpdatePlayerCounters"]
+symbol = "?UpdatePlayerCounters@BattleFrame@@QAEXXZ"
+target_address = 0x0043B510
+size = 179
+relocations = [
+  { offset = 0xE, type = "REL32", symbol = "?UpdateCounters@FrameActor@@QAEXXZ", target = 0x00452490 },
+  { offset = 0x19, type = "REL32", symbol = "?UpdateCounters@FrameActor@@QAEXXZ", target = 0x00452490 },
+]
+
+[units.frame-actor-advance-guarded-state]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameActor::AdvanceGuardedState"]
+symbol = "?AdvanceGuardedState@FrameActor@@QAEXXZ"
+target_address = 0x004521A0
+size = 132
+relocations = [
+  { offset = 0x62, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0x71, type = "REL32", symbol = "?ChooseAction@FrameActor@@QAEXXZ", target = 0x00452360 },
+]
+
+[units.frame-actor-advance-position]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameActor::AdvancePosition"]
+symbol = "?AdvancePosition@FrameActor@@QAEXXZ"
+target_address = 0x00452230
+size = 289
+relocations = [
+  { offset = 0x37, type = "REL32", symbol = "?CheckHorizontalLimits@FrameActor@@QAECXZ", target = 0x00454EE0 },
+  { offset = 0x70, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0xBC, type = "DIR32", symbol = "__real@42200000", target = 0x00657858 },
+  { offset = 0xD9, type = "DIR32", symbol = "__real@449b0000", target = 0x00658E6C },
+  { offset = 0x108, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+]
+
+[units.frame-actor-check-horizontal-limits]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameActor::CheckHorizontalLimits"]
+symbol = "?CheckHorizontalLimits@FrameActor@@QAECXZ"
+target_address = 0x00454EE0
+size = 133
+relocations = [
+  { offset = 0xF, type = "DIR32", symbol = "__real@42200000", target = 0x00657858 },
+  { offset = 0x15, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0x34, type = "DIR32", symbol = "__real@445c0000", target = 0x00657870 },
+  { offset = 0x4B, type = "DIR32", symbol = "__real@42200000", target = 0x00657858 },
+  { offset = 0x51, type = "DIR32", symbol = "__real@44a00000", target = 0x00658E80 },
+  { offset = 0x70, type = "DIR32", symbol = "__real@445c0000", target = 0x00657870 },
+]
+
+[units.frame-actor-choose-action]
+source = "src/BattleFrame.cpp"
+object = "build/matching/BattleFrame.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["FrameActor::ChooseAction"]
+symbol = "?ChooseAction@FrameActor@@QAEXXZ"
+target_address = 0x00452360
+size = 304
+relocations = [
+  { offset = 0x46, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0x7F, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x97, type = "REL32", symbol = "_rand", target = 0x006418AB },
+  { offset = 0xB4, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xC3, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x119, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x128, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+]

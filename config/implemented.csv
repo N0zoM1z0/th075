@@ -94,3 +94,11 @@ BattleCollisionDispatch::ResolveGuard
 BattleCollisionDispatch::ResolveSpecialHit
 BattleCollisionDispatch::ResolveContact
 FighterState::IsState50To149
+BattleFrame::UpdateFrame
+BattleFrame::Present
+BattleFrame::ResolveRoundEndMode
+BattleFrame::UpdatePlayerCounters
+FrameActor::AdvanceGuardedState
+FrameActor::AdvancePosition
+FrameActor::CheckHorizontalLimits
+FrameActor::ChooseAction

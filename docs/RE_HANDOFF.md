@@ -10,31 +10,31 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F016 accepts five complete functions /2,045 code and compared bytes /48
-relocations: active-object collision traversal, guard/special/contact responses
-and the state-50-to-149 predicate. All five units cold-replay exact across one
-new object. Original 91 units and all 38 tracked source/header inputs are
-unchanged and were not rebuilt. Current exact coverage is 96 functions /26,073
-bytes (1.32%). The cumulative manifest freezes 36 F010-F016 transitions, seven
-original ledger prefixes and eighteen new source/header hashes.
+F017 accepts eight complete functions /1,967 code and compared bytes /63
+relocations: battle frame update, presentation, round-end dispatch, player
+counter updates, guarded actor update, position update, horizontal limits and
+action choice. All eight units cold-replay exact across one new object.
+Original 96 units and all 40 tracked source/header inputs are unchanged and
+were not rebuilt. Current exact coverage is 104 functions /28,040 bytes
+(1.42%). The cumulative manifest freezes 44 F010-F017 transitions, seven
+original ledger prefixes and twenty new source/header hashes.
 
-The active dispatcher uses the actual public VC7 std::deque<CombatActor *>
-iterator implementation. Twelve complete SDK bodies /480 bytes, including
-all constructors, begin/end, dereference, increment and comparisons, reproduce
-the observed native helper closure. They are ABI evidence only and receive no
-authored/exact credit. Existing container receivers are never instantiated;
-only complete public iterator values are local objects. Original template
-argument spelling and game owner layouts remain inferred/unknown.
-
-
-Cold report source hashes match final source; all twelve complete SDK helper
-bodies and closure relocations also reproduce from the cold object. Three
-obsolete F016 diagnostic objects (54,856 bytes) were removed, preserving
-final objects, controls, source probes and original evidence. Builds stayed
-serial and low priority, with over 8 GiB available memory observed.
+The frame update returns the actual low 16-bit status from the larger state
+machine; the decompiler's widened return is not authoritative. The paused
+return is zero. Two observed 28-byte restore operations are represented as
+bounded seven-dword values, not complete game owners. Only observed virtual
+slots are called; unused slot declarations do not establish original signatures.
+Direct float lvalues retain target x87 memory ordering and the toggle explicitly
+promotes its normalized boolean to int before storing the observed byte.
 
 
-Target-required tracking, all 3,603 public CI tests (72.1 seconds), progress
+All eight cold report source hashes match final source. Five obsolete F017
+diagnostic objects (66,374 bytes) were removed, preserving final objects,
+source probes and original evidence. Builds stayed serial and low priority;
+observed available memory remained above 8 GiB.
+
+
+Target-required tracking, all 3,603 public CI tests (73.9 seconds), progress
 freshness and whitespace checks pass. No prior exact unit was rebuilt.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
@@ -51,15 +51,17 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F017 cohort follows the unique caller of the now-exact
-active collision dispatcher: `BattleScene::UpdateFrame` at `0x0043B1B0` /859
-(R041). Read `.analysis/f016-active-callers.txt` and reconcile that complete
-update body and its real state/virtual dependencies.
-The selected collision subtree is now covered through F012-F016, including
-all three response policies. Continue toward larger game update and character
-action bodies: the largest authored handlers are 44-83 KiB each, and dominate
-the remaining byte total. Keep full extents, all tables, truthful interfaces
-and serial low-priority builds. All 97 unknown origins remain unchanged.
+The next bounded F018 cohort advances the remaining frame dependencies:
+`FrameActor::UpdateCounters` at `0x00452490` /1,696 (R045), then the main
+battle state machine `0x0043B610` /4,764 (R041). Complete native reads are in
+`.analysis/f017-452490.asm` and
+`.analysis/f017-43b610.asm`; the timers decompile is retained in
+`.analysis/f017-actor-policies.c`. Reconcile all state-machine tables and
+low-word status exits, and preserve the existing ApplySequence deferral above.
+Also carry forward body separation `0x00449310` /1,861. These actual callers
+lead toward larger character updates; the 44-83 KiB authored handlers dominate
+the byte backlog. Preserve full extents, truthful ABI and natural source.
+All 97 unknown origins and the complete 95% objective remain unchanged.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -77,9 +79,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 96 source-present and exact functions, covering 26,073
-bytes across 96 match units. Exact coverage of the currently reviewed authored
-bytes is 26,073 / 1,973,516 (1.32%). This denominator is provisional because
+The exact total is 104 source-present and exact functions, covering 28,040
+bytes across 104 match units. Exact coverage of the currently reviewed authored
+bytes is 28,040 / 1,973,516 (1.42%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and
