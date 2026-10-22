@@ -82,3 +82,8 @@ BattleCombatResponses::ApplyAttackHit,0x00444020,function
 BattleCombatResponses::ApplyGuardHit,0x004443B0,function
 BattleCombat::ApplyReactionMode,0x00444650,function
 BattleCombat::SpawnMidpointEffect,0x004424E0,function
+BattleCombatResponses::ApplyImpact,0x00443E90,function
+BattleCollision::ClearBounds,0x00442540,function
+BattleCollision::IncludePair,0x00442400,function
+BattleCollision::TestOverlap,0x004492C0,function
+BattleCollision::TransformBounds,0x004491E0,function

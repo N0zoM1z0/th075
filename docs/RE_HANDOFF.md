@@ -10,31 +10,31 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F013 accepts five complete functions /3,073 code bytes /85 relocations:
-hit-response, attack-hit, guard-hit, reaction-mode and midpoint-effect policies.
-All five cold-replay exact across one new object, comparing 3,198 bytes including
-all 125 bytes of switch/remap data. Tables receive no extra coverage credit.
-The original 78 units and all 32 tracked source/header inputs are unchanged and
-were not rebuilt. Current exact coverage is 83 functions /21,183 bytes
-(1.07% of reviewed authored bytes).
-`config/exact-adoptions.json` freezes all twenty-three F010-F013 metadata
-transitions and seven original ledger prefixes, including original name aliases.
-Historical origin evidence and verifier sources remain unchanged. Public tests
-validate the additions before projecting historical metadata snapshots.
-The effect-system receiver remains a partial interface. Full callee inspection
-establishes a signed-byte layer selector and two final byte arguments, rather
-than the initial probe's unsupported word arguments. No owner is instantiated.
+F014 accepts five complete functions /855 code and compared bytes /16
+relocations: impact response, collision bounds reset, pair accumulation,
+rectangle overlap and facing-dependent bounds transformation. All five units
+cold-replay exact across one new object. The original 83 units and all 34
+tracked source/header inputs are unchanged and were not rebuilt. Current exact
+coverage is 88 functions /22,038 bytes (1.12% of reviewed authored bytes).
+`config/exact-adoptions.json` freezes twenty-eight F010-F014 transitions,
+seven original ledger prefixes and fourteen new source/header hashes.
+Historical origin evidence and verifier sources remain unchanged.
+
+The complete geometry callees establish four signed 32-bit rectangle fields.
+Source uses complete SDK RECT values and partial existing-owner interfaces.
+The float wrapper at `0x00449A60` forwards through `0x00449A80` to ceil;
+its unknown origin is preserved. Direct float lvalues retain the actual
+four-byte argument transfer, without misdeclaring the ABI.
 
 
-All five cold report source hashes match the committed source. Two obsolete
-F013 diagnostic objects (23,224 bytes) were removed; final diagnostic and cold
-objects, full comparison reports, source probes and original inputs remain.
-Builds stayed serial at low priority; observed available memory stayed above
-8 GiB.
+The five cold report source hashes agree with final source. Three obsolete
+F014 diagnostic objects (27,401 bytes) were removed, preserving the latest
+parent-layout diagnostic, accepted objects, reports and original inputs.
+Serial low-priority builds kept observed available memory above 8 GiB.
 
 
-Target-required tracking, all 3,603 public CI tests (83.3 seconds), progress
-freshness and whitespace checks pass. No prior exact unit was rebuilt.
+Target-required tracking, all 3,603 public CI tests (68.7 seconds), progress
+freshness and whitespace checks pass. Prior exact units were not rebuilt.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -50,13 +50,19 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F014 cohort continues the combat graph with the now-observed
-impact policy `0x00443E90` /304 and collision dispatchers `0x00442580` /1,249,
-`0x00442A70` /975 and `0x00442E40` /897. F012-F013 supply the shared damage,
-facing, hit-response and effect dependencies. Preserve complete code/tables and
-real call ABIs. Keep compiler builds serial and avoid incomplete owner objects.
-Large character action/render dispatchers dominate the byte backlog; carry
-these verified dependencies forward and rank cohorts by byte contribution.
+The next bounded F015 cohort continues collision dispatchers `0x00442580`
+/1,249, `0x00442A70` /975 and `0x00442E40` /897. Fresh whole native and
+Ghidra reads are retained in `.analysis/f014-*`. The attack dispatcher probe
+reproduces the native operation order but remains non-exact: local result
+matrix, rectangle arrays and count/index allocation differ. Reversing natural
+local declaration order changed frame allocation, without solving the layout.
+The private probe `.analysis/probes/F014Collision.cpp` is diagnostic only;
+its tentative array capacities and local organization are not accepted source.
+Do not introduce padding, inert locals or an incomplete owner to force a match.
+Continue recovering real local values/lifetimes and the public STL iterator
+interfaces for active-list dispatch. F012-F014 now provide the actual shared
+combat and geometry dependencies. Large character action/render dispatchers
+still dominate the byte backlog; preserve the full 95% objective.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin
@@ -74,9 +80,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 83 source-present and exact functions, covering 21,183
-bytes across 83 match units. Exact coverage of the currently reviewed authored
-bytes is 21,183 / 1,973,516 (1.07%). This denominator is provisional because
+The exact total is 88 source-present and exact functions, covering 22,038
+bytes across 88 match units. Exact coverage of the currently reviewed authored
+bytes is 22,038 / 1,973,516 (1.12%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

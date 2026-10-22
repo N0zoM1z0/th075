@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F013",
+  "batch": "F010-F014",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "bac647e8e713fb413b1f6122d921189b9d642dc0754b3a17eced80917068ca23"
+      "current_sha256": "c759800170b02b13c7e3b1128ceaaf920cf5997244c728453c10d09bdd7c0a72"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "659beeee04ef9d36a2ae09f63f35d79d6d257666fa01a516fe0ced64976260c8"
+      "current_sha256": "002060b043ccc8e57eef6eaa282055addae2c77199df60754f3ae1304e0c472a"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "79aadd78c50269973e1b32d78a37fcd6239b4e039f74bf8e81539bc42e0342bf"
+      "current_sha256": "a92f97c2078afbcc5e589af1360df230cf4c3e7f652c88df6572e9c4cc0d1e6e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5e014163c89acdc33e9d0eea6810dffe53ad22cb00114ef47e8c33a490ace741"
+      "current_sha256": "28210ac2d30c177952c17fcd6d881cb923329b7c01459626f36805eb68ed35fb"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "22d6a3fa7561541fd75cd9d3c7e76b333d5486718ea9a3ba735be2a2fbc9a12c"
+      "current_sha256": "b48d3805391d91c963390b33e1aa23e9ab83c79b77358de84810a71c1a37697b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "71cc78fd65099e8ff258bfc6c8c76e6f7fd51aa7dcd9693c26239ac25f89df97"
+      "current_sha256": "1faec7073b49ca6e815d08f8e47ad8a767cb375c856dd5a2a030284b78b25378"
     }
   },
   "functions": [
@@ -660,6 +660,50 @@
     },
     {
       "before": {
+        "address": "0x00442400",
+        "size": "217",
+        "span_end": "0x004424D8",
+        "current_name": "FUN_00442400",
+        "proposed_name": "CollisionBounds::IncludePair",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00442400",
+        "size": "217",
+        "span_end": "0x004424D8",
+        "current_name": "FUN_00442400",
+        "proposed_name": "BattleCollision::IncludePair",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCollision::IncludePair(const RECT *first; const RECT *second)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCollision.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F014; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-include-pair",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F014: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00442400",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
         "address": "0x004424E0",
         "size": "96",
         "span_end": "0x0044253F",
@@ -700,6 +744,50 @@
         "disposition": "authored",
         "confidence": "complete-game-transform-or-effect-policy",
         "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00442540",
+        "size": "51",
+        "span_end": "0x00442572",
+        "current_name": "Concurrency::details::ContextBase::ClearCancel",
+        "proposed_name": "BattleCollision::ResetBoundsAt00442540",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00442540",
+        "size": "51",
+        "span_end": "0x00442572",
+        "current_name": "Concurrency::details::ContextBase::ClearCancel",
+        "proposed_name": "BattleCollision::ClearBounds",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCollision::ClearBounds()",
+        "is_thunk": "false",
+        "source_file": "src/BattleCollision.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F014; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-clear-bounds",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F014: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00442540",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     },
     {
@@ -788,6 +876,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R069"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00443E90",
+        "size": "304",
+        "span_end": "0x00443FBF",
+        "current_name": "FUN_00443e90",
+        "proposed_name": "BattleCollision::ApplyImpact",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00443E90",
+        "size": "304",
+        "span_end": "0x00443FBF",
+        "current_name": "FUN_00443e90",
+        "proposed_name": "BattleCombatResponses::ApplyImpact",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCombatResponses::ApplyImpact(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCollision.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F014; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-impact",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F014: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00443E90",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     },
     {
@@ -964,6 +1096,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004491E0",
+        "size": "215",
+        "span_end": "0x004492B6",
+        "current_name": "FUN_004491e0",
+        "proposed_name": "BattleGeometry::TransformBoundsByFacingAt004491E0",
+        "module": "BattleGeometry",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004491E0",
+        "size": "215",
+        "span_end": "0x004492B6",
+        "current_name": "FUN_004491e0",
+        "proposed_name": "BattleCollision::TransformBounds",
+        "module": "BattleGeometry",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCollision::TransformBounds(RECT *destination; const RECT *source; CombatActor *actor)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCollision.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F014; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-transform-bounds",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F014: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004491E0",
+        "origin": "authored",
+        "subsystem": "BattleGeometry",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004492C0",
+        "size": "68",
+        "span_end": "0x00449303",
+        "current_name": "FUN_004492c0",
+        "proposed_name": "BattleCollision::TestRectangleOverlapAt004492C0",
+        "module": "BattleCollision",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004492C0",
+        "size": "68",
+        "span_end": "0x00449303",
+        "current_name": "FUN_004492c0",
+        "proposed_name": "BattleCollision::TestOverlap",
+        "module": "BattleCollision",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "int BattleCollision::TestOverlap(const RECT *first; const RECT *second)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCollision.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F014; scripts/repo-python scripts/replay-exact-units.py --unit battle-collision-test-overlap",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F014: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004492C0",
+        "origin": "authored",
+        "subsystem": "BattleCollision",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     },
     {
@@ -3917,6 +4137,209 @@
           "target": 6256816
         }
       ]
+    },
+    "battle-combat-apply-impact": {
+      "source": "src/BattleCollision.cpp",
+      "object": "build/matching/BattleCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombatResponses::ApplyImpact"
+      ],
+      "symbol": "?ApplyImpact@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+      "target_address": 4472464,
+      "size": 304,
+      "relocations": [
+        {
+          "offset": 253,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 281,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 289,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 294,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "battle-collision-clear-bounds": {
+      "source": "src/BattleCollision.cpp",
+      "object": "build/matching/BattleCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollision::ClearBounds"
+      ],
+      "symbol": "?ClearBounds@BattleCollision@@QAEXXZ",
+      "target_address": 4465984,
+      "size": 51,
+      "relocations": []
+    },
+    "battle-collision-include-pair": {
+      "source": "src/BattleCollision.cpp",
+      "object": "build/matching/BattleCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollision::IncludePair"
+      ],
+      "symbol": "?IncludePair@BattleCollision@@QAEXPBUtagRECT@@0@Z",
+      "target_address": 4465664,
+      "size": 217,
+      "relocations": []
+    },
+    "battle-collision-test-overlap": {
+      "source": "src/BattleCollision.cpp",
+      "object": "build/matching/BattleCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollision::TestOverlap"
+      ],
+      "symbol": "?TestOverlap@BattleCollision@@QAEHPBUtagRECT@@0@Z",
+      "target_address": 4494016,
+      "size": 68,
+      "relocations": []
+    },
+    "battle-collision-transform-bounds": {
+      "source": "src/BattleCollision.cpp",
+      "object": "build/matching/BattleCollision.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCollision::TransformBounds"
+      ],
+      "symbol": "?TransformBounds@BattleCollision@@QAEXPAUtagRECT@@PBU2@PAVCombatActor@@@Z",
+      "target_address": 4493792,
+      "size": 215,
+      "relocations": [
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 91,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 105,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 122,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 135,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 153,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 167,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 185,
+          "type": "REL32",
+          "symbol": "?CeilCollisionCoordinate@@YAMM@Z",
+          "target": 4495968
+        },
+        {
+          "offset": 199,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -3931,6 +4354,8 @@
     "src/BattleCombat.cpp": "165d70a16d00fd6a0e01b1322a15fa6e26b29799a7460d943fbaecebb4c44ec0",
     "src/BattleCombat.hpp": "444da7e618e72d2b37a51fc6a4b59dfc5a6fbbcc441ab156280b08cdf9b8ed11",
     "src/BattleCombatResponses.cpp": "a774cab385a74748b7c1a53b3139d1ffbb489f8bd32e83a2e446082bad787cc3",
-    "src/BattleCombatResponses.hpp": "a41939fa4c8285741fcd7f84eeb624a7c2400a77569e9971c962d0afe60482f1"
+    "src/BattleCombatResponses.hpp": "a41939fa4c8285741fcd7f84eeb624a7c2400a77569e9971c962d0afe60482f1",
+    "src/BattleCollision.cpp": "a2b859779c6399f0852239cb85c8518ec3cffe924b19709d2d0bd48a1f149a1e",
+    "src/BattleCollision.hpp": "021f4d749dd8f91350741e0cfd5461f2b42453c5462246030f29e66c4b0c03f7"
   }
 }

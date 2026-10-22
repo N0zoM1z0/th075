@@ -14494,3 +14494,65 @@ Builds stayed serial at low priority; observed available memory stayed above
 
 Target-required tracking, all 3,603 public CI tests (83.3 seconds), progress
 freshness and whitespace checks pass. No prior exact unit was rebuilt.
+
+
+## F014 — Impact and complete collision geometry dependencies (2026-10-22)
+
+**Target observations:** Five independently reviewed authored functions are
+accepted: impact `0x00443E90` /304 (R045), bounds reset `0x00442540` /51
+(R103), bounds pair accumulation `0x00442400` /217 (R045), rectangle overlap
+`0x004492C0` /68 (R103), and facing-dependent transformation `0x004491E0`
+/215 (R109). Whole-body hashes and CFG checks reproduce one return per body
+and 4/0/8/0/2 internal branches. There are no switch tables. Post-body gaps
+are 0/13/7/12/9 INT3 bytes and receive no exact credit. Ghidra's unrelated
+ClearCancel library label at `0x00442540` does not override its accepted R103
+origin or actual four sentinel coordinate stores.
+
+Impact updates attack state and remaining count, copies frame response fields,
+clamps health, synchronizes recoverable health conditionally, adds meter with a
+2000 cap, updates facing and plays sound 20. Pair accumulation takes maximum
+left/top and minimum right/bottom values. Reset uses -10000 for left/top and
+10000 for right/bottom. Overlap returns the arithmetic sign of the bitwise AND
+of four signed coordinate differences; source preserves that actual operation,
+not a replacement geometric predicate with different overflow behavior.
+Transformation writes all four signed coordinate dwords, reverses horizontal
+bounds with facing, and uses the observed ceil wrapper before integer conversion.
+
+**Source and ABI evidence:** `BattleCollision.cpp/.hpp` use complete SDK RECT
+values and a partial receiver interface, never an instantiated reconstructed
+owner. Native callees establish thiscall receivers/cleanup, signed dword
+coordinate arithmetic, float argument transfer and x87 return. Full reads of
+`0x00449A60` /17 and `0x00449A80` /28 confirm the chain to ceil at `0x00642120`,
+consistent with R163. Both wrappers retain their unknown origins and receive
+no exact credit. The inferred float declaration is compatible with the observed
+four-byte input and output observation; original spelling remains unproven.
+An explicit float scalar lvalue retains the integer-register argument copy;
+the initial parenthesized field-view expression emitted an extra x87 load/store.
+No ABI change, assembly, target byte array, fake return, padding or inert local
+was used. The pinned VC7.1 build3077 profile remains `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All sixteen relocations and the complete 2000.0f constant are independently bound.
+
+**Pending parent work:** Complete reads cover the three collision dispatchers
+at `0x00442580`, `0x00442A70` and `0x00442E40`. The attack dispatcher probe
+retains early returns, ordered rectangle transforms, pair-result matrix and
+ordered response fallbacks, but its real local allocation is still unmatched.
+Changing declaration order changes frame allocation under this compiler; a
+second diagnostic still has 1,062 bytes versus the complete 975-byte target.
+Tentative array capacities do not establish an original declaration. No parent
+is accepted, cropped or credited. Continue this work with the now-exact actual
+geometry/combat dependencies and public STL provenance; no global blocker exists.
+
+**Acceptance:** Five units cold-build one object and compare all 855 bytes
+with zero differences. Coverage becomes 88 exact functions /22,038 bytes /88
+units (1.12%). Original 83 units and all 34 source/header inputs are unchanged.
+The cumulative manifest freezes 28 transitions /12,155 added code bytes and
+fourteen new source/header hashes. All 97 pending origins and the conservative
+1,977,124-byte denominator remain unchanged. The 95% goal remains incomplete.
+
+The five cold report source hashes agree with final source. Three obsolete
+F014 diagnostic objects (27,401 bytes) were removed, preserving the latest
+parent-layout diagnostic, accepted objects, reports and original inputs.
+Serial low-priority builds kept observed available memory above 8 GiB.
+
+Target-required tracking, all 3,603 public CI tests (68.7 seconds), progress
+freshness and whitespace checks pass. Prior exact units were not rebuilt.

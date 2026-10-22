@@ -31,3 +31,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004443B0,BattleCombat::ApplyGuardHit,BattleCombatResponses::ApplyGuardHit,R042,battle-combat-apply-guard-hit
 0x00444650,BattleState::ApplyReactionModeAt00444650 [provisional],BattleCombat::ApplyReactionMode,R215,battle-combat-apply-reaction-mode
 0x004424E0,BattleState::SpawnMidpointEffectAt004424E0,BattleCombat::SpawnMidpointEffect,R101,battle-combat-spawn-midpoint-effect
+0x00443E90,BattleCollision::ApplyImpact,BattleCombatResponses::ApplyImpact,R045,battle-combat-apply-impact
+0x00442540,BattleCollision::ResetBoundsAt00442540,BattleCollision::ClearBounds,R103,battle-collision-clear-bounds
+0x00442400,CollisionBounds::IncludePair,BattleCollision::IncludePair,R045,battle-collision-include-pair
+0x004492C0,BattleCollision::TestRectangleOverlapAt004492C0,BattleCollision::TestOverlap,R103,battle-collision-test-overlap
+0x004491E0,BattleGeometry::TransformBoundsByFacingAt004491E0,BattleCollision::TransformBounds,R109,battle-collision-transform-bounds

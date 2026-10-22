@@ -81,3 +81,8 @@ BattleCombatResponses::ApplyAttackHit
 BattleCombatResponses::ApplyGuardHit
 BattleCombat::ApplyReactionMode
 BattleCombat::SpawnMidpointEffect
+BattleCombatResponses::ApplyImpact
+BattleCollision::ClearBounds
+BattleCollision::IncludePair
+BattleCollision::TestOverlap
+BattleCollision::TransformBounds
