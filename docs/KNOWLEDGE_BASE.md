@@ -14434,3 +14434,63 @@ Target-required tracking, all 3,603 public CI tests, all four current origin
 aliases, progress freshness and whitespace checks pass. Cold report source
 hashes match the current production source. Serial low-priority CI took
 58.1 seconds, using about one CPU core /362 MiB RSS with 8.5 GiB available.
+
+
+## F013 — Complete combat responses and effect dependencies (2026-10-22)
+
+**Target observations:** Five independently authored bodies are accepted:
+`0x004439A0` /1,185 (R069), `0x00444020` /898 and `0x004443B0` /664 (R042),
+`0x00444650` /230 (R215), and `0x004424E0` /96 (R101). Complete CFG checks
+reproduce 1 return each and 27/17/7/5/0 internal branches. The response body
+has a complete 36-byte jump table and 31-byte remap; reaction has a 20-byte
+jump table and 38-byte remap. All same-section destinations are checked against
+the newly compiled object labels. Alignment gaps are 12/14/8/0/0 INT3 bytes;
+none is included in code coverage. Original body and table hashes are unchanged.
+
+The response classifier returns AL and the caller consumes it as signed byte.
+Positive response modes select guard depletion, animation states and effects.
+A real local signed-word damage value, omitted by the decompiler presentation,
+feeds the final health subtraction after multiplication by two attacker factors.
+Mode 41 delegates to guard-hit and returns early. Attack-hit checks frame flags
+and height, computes damage and recoverable health, updates combo/meter, and
+plays effects/sound. Guard-hit halves integer damage and the displayed combo
+rate. Reaction mode selects state transitions, 1.25 velocity multipliers and
+signed-promoted doubled word timers. Midpoint effect averages observed integer
+coordinates into float arguments. These semantic role names remain inferred.
+
+**ABI and compiler evidence:** New `BattleCombatResponses.cpp/.hpp` use the
+pinned VC7.1 build3077 profile `/Od /Ob0 /Gy /GR- /GX- /Zi /I src` and existing
+unchanged partial interfaces. Native bodies establish thiscall cleanup and
+AL boolean results for hit-response/attack-hit. Full native callee reads cover
+classifier `0x00455140` /944, impact `0x00443E90` /304 and effect spawning
+`0x005F78B0` /487. Effect spawning consumes a signed word ID, two coordinate
+dwords, direction byte, signed-byte layer and two final bytes, with RET 28.
+The float coordinate interpretation is supported by the midpoint caller's x87
+stores; byte signedness is unspecified where only a raw byte is copied.
+The inferred interface uses unsigned bytes for those raw copies. It does not
+claim original declaration spelling. Complete receiver layouts remain unknown.
+
+Two meaningful probe corrections reproduce target operations: guard display
+retains the explicit floating division by 2, and reaction timer assignment
+retains signed integer promotion before shifting. No fake returns, inert locals,
+assembly, embedded target bytes, padding or alternate bodies are introduced.
+Six complete readonly constants and all 85 code/data relocations are verified.
+The new global mapping identifies the effect receiver at `0x006716C8` only.
+
+**Acceptance:** Five new units cold-build one object and compare all 3,198
+bytes with zero differences. Coverage adds 3,073 code bytes, producing 83
+exact functions /21,183 bytes /83 units (1.07% of reviewed authored bytes).
+Prior 78 units and all 32 source/header inputs remain unchanged. Only these
+five new units are replayed. All 97 unresolved origins and the conservative
+1,977,124-byte goal denominator remain intact; the 95% goal is incomplete.
+The cumulative adoption manifest freezes 23 transitions /11,300 added bytes
+and twelve new source/header hashes, preserving every earlier transition.
+
+All five cold report source hashes match the committed source. Two obsolete
+F013 diagnostic objects (23,224 bytes) were removed; final diagnostic and cold
+objects, full comparison reports, source probes and original inputs remain.
+Builds stayed serial at low priority; observed available memory stayed above
+8 GiB.
+
+Target-required tracking, all 3,603 public CI tests (83.3 seconds), progress
+freshness and whitespace checks pass. No prior exact unit was rebuilt.

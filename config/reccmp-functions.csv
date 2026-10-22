@@ -77,3 +77,8 @@ BattleCombat::ApplyHit,0x004431D0,function
 BattleCombat::ApplyConditionalHit,0x00444850,function
 CombatActor::CalculateDamage,0x00455640,function
 CombatActor::UpdateFacingFromOpponent,0x004550B0,function
+BattleCombatResponses::ApplyHitResponse,0x004439A0,function
+BattleCombatResponses::ApplyAttackHit,0x00444020,function
+BattleCombatResponses::ApplyGuardHit,0x004443B0,function
+BattleCombat::ApplyReactionMode,0x00444650,function
+BattleCombat::SpawnMidpointEffect,0x004424E0,function

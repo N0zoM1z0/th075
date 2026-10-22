@@ -1675,3 +1675,145 @@ target_address = 0x004550B0
 size = 130
 relocations = [
 ]
+
+[units.battle-combat-apply-hit-response]
+source = "src/BattleCombatResponses.cpp"
+object = "build/matching/BattleCombatResponses.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombatResponses::ApplyHitResponse"]
+symbol = "?ApplyHitResponse@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z"
+target_address = 0x004439A0
+size = 1185
+compare_size = 1252
+relocations = [
+  { offset = 0x1B, type = "REL32", symbol = "?ClassifyResponse@CombatResponseActor@@QAECK@Z", target = 0x00455140 },
+  { offset = 0x54, type = "DIR32", symbol = "$L1078", target = 0x00443E65 },
+  { offset = 0x5B, type = "DIR32", symbol = "$L1080", target = 0x00443E41 },
+  { offset = 0xC5, type = "REL32", symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z", target = 0x00443FC0 },
+  { offset = 0xE2, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xF3, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x170, type = "REL32", symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z", target = 0x00443FC0 },
+  { offset = 0x18D, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x19E, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x1E6, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x1F7, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x266, type = "REL32", symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z", target = 0x00443FC0 },
+  { offset = 0x283, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x294, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x311, type = "REL32", symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z", target = 0x00443FC0 },
+  { offset = 0x32E, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x33F, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x387, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x398, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x3EB, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x40A, type = "REL32", symbol = "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z", target = 0x00443FC0 },
+  { offset = 0x419, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x42F, type = "REL32", symbol = "?ApplyGuardHit@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z", target = 0x004443B0 },
+  { offset = 0x472, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x490, type = "REL32", symbol = "?ApplyImpact@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z", target = 0x00443E90 },
+  { offset = 0x4A1, type = "DIR32", symbol = "$L581", target = 0x004439FF },
+  { offset = 0x4A5, type = "DIR32", symbol = "$L608", target = 0x00443A9C },
+  { offset = 0x4A9, type = "DIR32", symbol = "$L639", target = 0x00443B47 },
+  { offset = 0x4AD, type = "DIR32", symbol = "$L655", target = 0x00443BA0 },
+  { offset = 0x4B1, type = "DIR32", symbol = "$L682", target = 0x00443C3D },
+  { offset = 0x4B5, type = "DIR32", symbol = "$L713", target = 0x00443CE8 },
+  { offset = 0x4B9, type = "DIR32", symbol = "$L729", target = 0x00443D41 },
+  { offset = 0x4BD, type = "DIR32", symbol = "$L749", target = 0x00443DBF },
+  { offset = 0x4C1, type = "DIR32", symbol = "$L578", target = 0x00443DD7 },
+]
+
+[units.battle-combat-apply-attack-hit]
+source = "src/BattleCombatResponses.cpp"
+object = "build/matching/BattleCombatResponses.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombatResponses::ApplyAttackHit"]
+symbol = "?ApplyAttackHit@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z"
+target_address = 0x00444020
+size = 898
+relocations = [
+  { offset = 0x52, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0xAA, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xB2, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x146, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x1BA, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x1C2, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x1CE, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x1D6, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0x214, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x223, type = "DIR32", symbol = "__real@3fd0000000000000", target = 0x006583E0 },
+  { offset = 0x23A, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x268, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x2AE, type = "DIR32", symbol = "__real@447a0000", target = 0x006583B4 },
+  { offset = 0x2B3, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x2D5, type = "REL32", symbol = "?UpdateCounter@ComboDisplay@@QAEXFFF@Z", target = 0x0043D4D0 },
+  { offset = 0x309, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x33C, type = "REL32", symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ", target = 0x004550B0 },
+  { offset = 0x359, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x36D, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x372, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+]
+
+[units.battle-combat-apply-guard-hit]
+source = "src/BattleCombatResponses.cpp"
+object = "build/matching/BattleCombatResponses.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombatResponses::ApplyGuardHit"]
+symbol = "?ApplyGuardHit@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z"
+target_address = 0x004443B0
+size = 664
+relocations = [
+  { offset = 0x51, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x59, type = "REL32", symbol = "?ClearByte40@CombatActor@@QAEXXZ", target = 0x0040FC50 },
+  { offset = 0xF7, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x142, type = "DIR32", symbol = "__real@447a0000", target = 0x006583B4 },
+  { offset = 0x148, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0x14D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x16F, type = "REL32", symbol = "?UpdateCounter@ComboDisplay@@QAEXFFF@Z", target = 0x0043D4D0 },
+  { offset = 0x189, type = "REL32", symbol = "?CalculateDamage@CombatActor@@QAEFPAV1@@Z", target = 0x00455640 },
+  { offset = 0x225, type = "DIR32", symbol = "__real@44fa0000", target = 0x006583D8 },
+  { offset = 0x258, type = "REL32", symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ", target = 0x004550B0 },
+  { offset = 0x275, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0x289, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0x28E, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+]
+
+[units.battle-combat-apply-reaction-mode]
+source = "src/BattleCombatResponses.cpp"
+object = "build/matching/BattleCombatResponses.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombat::ApplyReactionMode"]
+symbol = "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z"
+target_address = 0x00444650
+size = 230
+compare_size = 288
+relocations = [
+  { offset = 0x2C, type = "DIR32", symbol = "$L1098", target = 0x0044474A },
+  { offset = 0x33, type = "DIR32", symbol = "$L1101", target = 0x00444736 },
+  { offset = 0x46, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0x57, type = "DIR32", symbol = "__real@3fa00000", target = 0x00657F70 },
+  { offset = 0x6F, type = "DIR32", symbol = "__real@3fa00000", target = 0x00657F70 },
+  { offset = 0xA6, type = "REL32", symbol = "?ResetPrimaryCounters@CombatActor@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xC6, type = "DIR32", symbol = "?g_SoundBank@@3PAVSoundBank@@A", target = 0x00671618 },
+  { offset = 0xCB, type = "REL32", symbol = "?Play@SoundBank@@QAEXH@Z", target = 0x004079C0 },
+  { offset = 0xDC, type = "REL32", symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z", target = 0x004424E0 },
+  { offset = 0xE6, type = "DIR32", symbol = "$L1032", target = 0x00444687 },
+  { offset = 0xEA, type = "DIR32", symbol = "$L1035", target = 0x0044469C },
+  { offset = 0xEE, type = "DIR32", symbol = "$L1044", target = 0x004446E4 },
+  { offset = 0xF2, type = "DIR32", symbol = "$L1047", target = 0x004446FC },
+  { offset = 0xF6, type = "DIR32", symbol = "$L1029", target = 0x00444712 },
+]
+
+[units.battle-combat-spawn-midpoint-effect]
+source = "src/BattleCombatResponses.cpp"
+object = "build/matching/BattleCombatResponses.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleCombat::SpawnMidpointEffect"]
+symbol = "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z"
+target_address = 0x004424E0
+size = 96
+relocations = [
+  { offset = 0x27, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0x43, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0x51, type = "DIR32", symbol = "?g_CombatEffects@@3VCombatEffects@@A", target = 0x006716C8 },
+  { offset = 0x56, type = "REL32", symbol = "?Spawn@CombatEffects@@QAEXFMMECEE@Z", target = 0x005F78B0 },
+]

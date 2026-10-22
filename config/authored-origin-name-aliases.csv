@@ -26,3 +26,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00444850,BattleState::ProcessAt00444850,BattleCombat::ApplyConditionalHit,R065,battle-combat-apply-conditional-hit
 0x00455640,FighterState::ResolveOpponentValue,CombatActor::CalculateDamage,R045,combat-actor-calculate-damage
 0x004550B0,FighterState::UpdateFacingFromOpponentAt004550B0,CombatActor::UpdateFacingFromOpponent,R103,combat-actor-update-facing
+0x004439A0,BattleCombat::ApplyHitResponseAt004439A0,BattleCombatResponses::ApplyHitResponse,R069,battle-combat-apply-hit-response
+0x00444020,BattleCombat::ApplyAttackHit,BattleCombatResponses::ApplyAttackHit,R042,battle-combat-apply-attack-hit
+0x004443B0,BattleCombat::ApplyGuardHit,BattleCombatResponses::ApplyGuardHit,R042,battle-combat-apply-guard-hit
+0x00444650,BattleState::ApplyReactionModeAt00444650 [provisional],BattleCombat::ApplyReactionMode,R215,battle-combat-apply-reaction-mode
+0x004424E0,BattleState::SpawnMidpointEffectAt004424E0,BattleCombat::SpawnMidpointEffect,R101,battle-combat-spawn-midpoint-effect

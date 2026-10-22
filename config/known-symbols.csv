@@ -59,3 +59,8 @@ address,name,module,confidence,evidence
 0x00444850,BattleCombat::ApplyConditionalHit,BattleState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00455640,CombatActor::CalculateDamage,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x004550B0,CombatActor::UpdateFacingFromOpponent,FighterState,inferred,F012; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004439A0,BattleCombatResponses::ApplyHitResponse,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444020,BattleCombatResponses::ApplyAttackHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004443B0,BattleCombatResponses::ApplyGuardHit,BattleCombat,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x00444650,BattleCombat::ApplyReactionMode,BattleState,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
+0x004424E0,BattleCombat::SpawnMidpointEffect,EffectForwarders,inferred,F013; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown

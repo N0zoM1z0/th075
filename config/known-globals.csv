@@ -69,3 +69,4 @@ address,name,module,confidence,evidence
 0x006714C0,g_MaxComboCount,BattleState,inferred,F012; signed word maximum updated from the actor combo count; original symbol unknown; no allocation or original complete layout claimed
 0x006714B0,g_MaxCombatScore,BattleState,inferred,F012; unsigned dword maximum updated from actor score; original symbol unknown; no allocation or original complete layout claimed
 0x006718F8,g_BattleRecords,BattleState,inferred,F012; existing receiver address and four getter/setter interfaces only; complete owner extent unknown; original symbol unknown; no allocation or original complete layout claimed
+0x006716C8,g_CombatEffects,BattleState,inferred,F013; existing effect-system receiver only; complete owner extent unknown; original symbol unknown; no allocation or original complete layout claimed

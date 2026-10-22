@@ -76,3 +76,8 @@ BattleCombat::ApplyHit
 BattleCombat::ApplyConditionalHit
 CombatActor::CalculateDamage
 CombatActor::UpdateFacingFromOpponent
+BattleCombatResponses::ApplyHitResponse
+BattleCombatResponses::ApplyAttackHit
+BattleCombatResponses::ApplyGuardHit
+BattleCombat::ApplyReactionMode
+BattleCombat::SpawnMidpointEffect

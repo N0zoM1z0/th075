@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F012",
+  "batch": "F010-F013",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "87782915c9e067eb624e06fc5e040d5ad77991f4f763e273face9f9752dd57b3"
+      "current_sha256": "bac647e8e713fb413b1f6122d921189b9d642dc0754b3a17eced80917068ca23"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "fd2f019585b17cb38c107a0c54924dc7a992cde5f86e307e5de54b038f3b7bdd"
+      "current_sha256": "79abeebe3d65a897f8002789e50bff997f6e31739ae8a28d58ceb42e700715de"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a95d1d5fe7815a7c88fe160666d1bc6739e8cbf09dc4f682c27acb4c43d5d6a0"
+      "current_sha256": "659beeee04ef9d36a2ae09f63f35d79d6d257666fa01a516fe0ced64976260c8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "6c86a5effefa59f3aac69928d9dde2f9a8684a68cb8c98f3059dc4ad2ff76be3"
+      "current_sha256": "79aadd78c50269973e1b32d78a37fcd6239b4e039f74bf8e81539bc42e0342bf"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6147bf3d1f9fc31d20eef90818c259777a072684b0359915e35225dd36723545"
+      "current_sha256": "5e014163c89acdc33e9d0eea6810dffe53ad22cb00114ef47e8c33a490ace741"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "76ee0c06f43a4ae25cfd9a283766bc99103012506a1279f217baa558af80d60a"
+      "current_sha256": "22d6a3fa7561541fd75cd9d3c7e76b333d5486718ea9a3ba735be2a2fbc9a12c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "52c102de08caf309dd8c98645bee3f4e4e219572c292e29de8d3f430ecc2a810"
+      "current_sha256": "71cc78fd65099e8ff258bfc6c8c76e6f7fd51aa7dcd9693c26239ac25f89df97"
     }
   },
   "functions": [
@@ -660,6 +660,50 @@
     },
     {
       "before": {
+        "address": "0x004424E0",
+        "size": "96",
+        "span_end": "0x0044253F",
+        "current_name": "FUN_004424e0",
+        "proposed_name": "BattleState::SpawnMidpointEffectAt004424E0",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004424E0",
+        "size": "96",
+        "span_end": "0x0044253F",
+        "current_name": "FUN_004424e0",
+        "proposed_name": "BattleCombat::SpawnMidpointEffect",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCombat::SpawnMidpointEffect(short effect; unsigned char direction)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombatResponses.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F013; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-spawn-midpoint-effect",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F013: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004424E0",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
         "address": "0x004431D0",
         "size": "1982",
         "span_end": "0x0044398D",
@@ -700,6 +744,182 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004439A0",
+        "size": "1185",
+        "span_end": "0x00443E40",
+        "current_name": "FUN_004439a0",
+        "proposed_name": "BattleCombat::ApplyHitResponseAt004439A0",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R069; complete target body/CFG, guarded switch and combat state",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004439A0",
+        "size": "1185",
+        "span_end": "0x00443E40",
+        "current_name": "FUN_004439a0",
+        "proposed_name": "BattleCombatResponses::ApplyHitResponse",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCombatResponses::ApplyHitResponse(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombatResponses.cpp",
+        "evidence": "R069; complete target body/CFG, guarded switch and combat state; F013; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-hit-response",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F013: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004439A0",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R069"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00444020",
+        "size": "898",
+        "span_end": "0x004443A1",
+        "current_name": "FUN_00444020",
+        "proposed_name": "BattleCombat::ApplyAttackHit",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00444020",
+        "size": "898",
+        "span_end": "0x004443A1",
+        "current_name": "FUN_00444020",
+        "proposed_name": "BattleCombatResponses::ApplyAttackHit",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BattleCombatResponses::ApplyAttackHit(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombatResponses.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F013; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-attack-hit",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F013: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00444020",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004443B0",
+        "size": "664",
+        "span_end": "0x00444647",
+        "current_name": "FUN_004443b0",
+        "proposed_name": "BattleCombat::ApplyGuardHit",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004443B0",
+        "size": "664",
+        "span_end": "0x00444647",
+        "current_name": "FUN_004443b0",
+        "proposed_name": "BattleCombatResponses::ApplyGuardHit",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCombatResponses::ApplyGuardHit(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombatResponses.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F013; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-guard-hit",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F013: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x004443B0",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00444650",
+        "size": "230",
+        "span_end": "0x00444735",
+        "current_name": "FUN_00444650",
+        "proposed_name": "BattleState::ApplyReactionModeAt00444650 [provisional]",
+        "module": "BattleState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R215; config/game-switch-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-switch-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete game animation-mode switch over states 50..87; custom multiplier 1.25 and word counters, independently reviewed animation/sound/midpoint-effect callees and two whole battle parents. Complete native code/tables, full independent game contexts and unchanged extents. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00444650",
+        "size": "230",
+        "span_end": "0x00444735",
+        "current_name": "FUN_00444650",
+        "proposed_name": "BattleCombat::ApplyReactionMode",
+        "module": "BattleState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleCombat::ApplyReactionMode(CombatActor *attack; CombatActor *attacker; CombatActor *defender)",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombatResponses.cpp",
+        "evidence": "R215; config/game-switch-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-switch-policy-origins.py; F013; scripts/repo-python scripts/replay-exact-units.py --unit battle-combat-apply-reaction-mode",
+        "owner": "authored",
+        "notes": "Complete game animation-mode switch over states 50..87; custom multiplier 1.25 and word counters, independently reviewed animation/sound/midpoint-effect callees and two whole battle parents. Complete native code/tables, full independent game contexts and unchanged extents. No source/private ABI/mapping/exact credit.; F013: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00444650",
+        "origin": "authored",
+        "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "complete-native-game-switch-and-independent-whole-receiver-context",
+        "evidence_id": "R215"
       }
     },
     {
@@ -3075,6 +3295,628 @@
       "target_address": 4542640,
       "size": 130,
       "relocations": []
+    },
+    "battle-combat-apply-hit-response": {
+      "source": "src/BattleCombatResponses.cpp",
+      "object": "build/matching/BattleCombatResponses.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombatResponses::ApplyHitResponse"
+      ],
+      "symbol": "?ApplyHitResponse@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4471200,
+      "size": 1185,
+      "compare_size": 1252,
+      "relocations": [
+        {
+          "offset": 27,
+          "type": "REL32",
+          "symbol": "?ClassifyResponse@CombatResponseActor@@QAECK@Z",
+          "target": 4542784
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "$L1078",
+          "target": 4472421
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "$L1080",
+          "target": 4472385
+        },
+        {
+          "offset": 197,
+          "type": "REL32",
+          "symbol": "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z",
+          "target": 4472768
+        },
+        {
+          "offset": 226,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 243,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 368,
+          "type": "REL32",
+          "symbol": "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z",
+          "target": 4472768
+        },
+        {
+          "offset": 397,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 414,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 486,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 503,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 614,
+          "type": "REL32",
+          "symbol": "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z",
+          "target": 4472768
+        },
+        {
+          "offset": 643,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 660,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 785,
+          "type": "REL32",
+          "symbol": "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z",
+          "target": 4472768
+        },
+        {
+          "offset": 814,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 903,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 920,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 1003,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 1034,
+          "type": "REL32",
+          "symbol": "?StartHitSequence@BattleState@@QAEXPAVAnimationState@@F@Z",
+          "target": 4472768
+        },
+        {
+          "offset": 1049,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1071,
+          "type": "REL32",
+          "symbol": "?ApplyGuardHit@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+          "target": 4473776
+        },
+        {
+          "offset": 1138,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1168,
+          "type": "REL32",
+          "symbol": "?ApplyImpact@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+          "target": 4472464
+        },
+        {
+          "offset": 1185,
+          "type": "DIR32",
+          "symbol": "$L581",
+          "target": 4471295
+        },
+        {
+          "offset": 1189,
+          "type": "DIR32",
+          "symbol": "$L608",
+          "target": 4471452
+        },
+        {
+          "offset": 1193,
+          "type": "DIR32",
+          "symbol": "$L639",
+          "target": 4471623
+        },
+        {
+          "offset": 1197,
+          "type": "DIR32",
+          "symbol": "$L655",
+          "target": 4471712
+        },
+        {
+          "offset": 1201,
+          "type": "DIR32",
+          "symbol": "$L682",
+          "target": 4471869
+        },
+        {
+          "offset": 1205,
+          "type": "DIR32",
+          "symbol": "$L713",
+          "target": 4472040
+        },
+        {
+          "offset": 1209,
+          "type": "DIR32",
+          "symbol": "$L729",
+          "target": 4472129
+        },
+        {
+          "offset": 1213,
+          "type": "DIR32",
+          "symbol": "$L749",
+          "target": 4472255
+        },
+        {
+          "offset": 1217,
+          "type": "DIR32",
+          "symbol": "$L578",
+          "target": 4472279
+        }
+      ]
+    },
+    "battle-combat-apply-attack-hit": {
+      "source": "src/BattleCombatResponses.cpp",
+      "object": "build/matching/BattleCombatResponses.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombatResponses::ApplyAttackHit"
+      ],
+      "symbol": "?ApplyAttackHit@BattleCombatResponses@@QAE_NPAVCombatActor@@00@Z",
+      "target_address": 4472864,
+      "size": 898,
+      "relocations": [
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 170,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 178,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 326,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 442,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 450,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 462,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 532,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 547,
+          "type": "DIR32",
+          "symbol": "__real@3fd0000000000000",
+          "target": 6652896
+        },
+        {
+          "offset": 570,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 616,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 686,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 691,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 725,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        },
+        {
+          "offset": 777,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 828,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 857,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 877,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 882,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "battle-combat-apply-guard-hit": {
+      "source": "src/BattleCombatResponses.cpp",
+      "object": "build/matching/BattleCombatResponses.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombatResponses::ApplyGuardHit"
+      ],
+      "symbol": "?ApplyGuardHit@BattleCombatResponses@@QAEXPAVCombatActor@@00@Z",
+      "target_address": 4473776,
+      "size": 664,
+      "relocations": [
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?ClearByte40@CombatActor@@QAEXXZ",
+          "target": 4258896
+        },
+        {
+          "offset": 247,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 322,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 367,
+          "type": "REL32",
+          "symbol": "?UpdateCounter@ComboDisplay@@QAEXFFF@Z",
+          "target": 4445392
+        },
+        {
+          "offset": 393,
+          "type": "REL32",
+          "symbol": "?CalculateDamage@CombatActor@@QAEFPAV1@@Z",
+          "target": 4544064
+        },
+        {
+          "offset": 549,
+          "type": "DIR32",
+          "symbol": "__real@44fa0000",
+          "target": 6652888
+        },
+        {
+          "offset": 600,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 629,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 649,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "battle-combat-apply-reaction-mode": {
+      "source": "src/BattleCombatResponses.cpp",
+      "object": "build/matching/BattleCombatResponses.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombat::ApplyReactionMode"
+      ],
+      "symbol": "?ApplyReactionMode@BattleCombat@@QAEXPAVCombatActor@@00@Z",
+      "target_address": 4474448,
+      "size": 230,
+      "compare_size": 288,
+      "relocations": [
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "$L1098",
+          "target": 4474698
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "$L1101",
+          "target": 4474678
+        },
+        {
+          "offset": 70,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "__real@3fa00000",
+          "target": 6651760
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "__real@3fa00000",
+          "target": 6651760
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CombatActor@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 203,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 220,
+          "type": "REL32",
+          "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+          "target": 4465888
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "$L1032",
+          "target": 4474503
+        },
+        {
+          "offset": 234,
+          "type": "DIR32",
+          "symbol": "$L1035",
+          "target": 4474524
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "$L1044",
+          "target": 4474596
+        },
+        {
+          "offset": 242,
+          "type": "DIR32",
+          "symbol": "$L1047",
+          "target": 4474620
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "$L1029",
+          "target": 4474642
+        }
+      ]
+    },
+    "battle-combat-spawn-midpoint-effect": {
+      "source": "src/BattleCombatResponses.cpp",
+      "object": "build/matching/BattleCombatResponses.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombat::SpawnMidpointEffect"
+      ],
+      "symbol": "?SpawnMidpointEffect@BattleCombat@@QAEXFE@Z",
+      "target_address": 4465888,
+      "size": 96,
+      "relocations": [
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_CombatEffects@@3VCombatEffects@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "?Spawn@CombatEffects@@QAEXFMMECEE@Z",
+          "target": 6256816
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -3087,6 +3929,8 @@
     "src/MathLookup.cpp": "1f47723438ad85c21830a7cc0ec968bcfdebfdbd91481d3e7b453daec2f15490",
     "src/MathLookup.hpp": "4c77cb7084c8bd1cc948a7ae419b6d587502b1cb3ca411977b84966962c40480",
     "src/BattleCombat.cpp": "165d70a16d00fd6a0e01b1322a15fa6e26b29799a7460d943fbaecebb4c44ec0",
-    "src/BattleCombat.hpp": "444da7e618e72d2b37a51fc6a4b59dfc5a6fbbcc441ab156280b08cdf9b8ed11"
+    "src/BattleCombat.hpp": "444da7e618e72d2b37a51fc6a4b59dfc5a6fbbcc441ab156280b08cdf9b8ed11",
+    "src/BattleCombatResponses.cpp": "a774cab385a74748b7c1a53b3139d1ffbb489f8bd32e83a2e446082bad787cc3",
+    "src/BattleCombatResponses.hpp": "a41939fa4c8285741fcd7f84eeb624a7c2400a77569e9971c962d0afe60482f1"
   }
 }
