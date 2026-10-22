@@ -14899,13 +14899,14 @@ non-default destinations. Direct and indirect calls are exported as evidence;
 this does not assert their original signatures or reconstruct the body.
 
 Three diagnostic mutations (body size, remap hash and direct-table hash) are
-rejected. This audit changes no origins or exact ledgers. The 121 drafted cases
+rejected. This audit changes no origins or exact ledgers. The 143 drafted cases
 0..10, 50..53, 56..59, 62..65, 70..74, 76, 88..89, 93..95, 97..99, 140,
 143..145, 150..152, 154..156, 158..161, 163..165, 167..168, 180..181 and
 200..210, 300..310, 390..393, 400..402, 404..408, 410..414, 416..417,
-500..504, 506..507, 594..596 and 600..611 remain private hypotheses with a
-compiler-only syntax preview,
-not accepted source. Full function and table reconstruction remains pending.
+500..504, 506..507, 594..596, 600..611, 700..707, 720..723, 731,
+735..736, 741, 751, 761, 771..772 and 795..796 remain private hypotheses
+with a compiler-only whole preview,
+not accepted source. Full function and table byte matching remains pending.
 The exact baseline is unchanged at 109 functions /38,669 bytes (1.96%).
 
 Native observations for these cases distinguish the shared final frame-update
@@ -14915,16 +14916,16 @@ four motion fields cleared by `0x00453E20`. Existing exact short-argument
 reset/sound and signed-AL boundary interfaces remain consistent. No padding,
 inert locals, assembly, target byte arrays or partial exact credit is used.
 
-All 3,603 CI tests pass (91.7 seconds), along with target-required tracking,
+All 3,603 CI tests pass (71.3 seconds), along with target-required tracking,
 Ghidra attestation, the complete dispatch audit and whitespace checks. No
 accepted source, ABI, flags or relocations changed; no cold replay was necessary.
 Serial low-priority preview builds used the pinned compiler. Sampled available
-memory ranged from 7.9 to 8.4 GiB; the interval CPU sample was 82% idle
-without swap-in/out.
-The preview object was replaced in place. Two obsolete one-time composition
-scripts were removed (9,161 bytes); current drafts, control receipts
-and target evidence remain. Earlier checkpoints removed six other composition
-scripts (34,401 bytes) and the obsolete objdump rendering (340,942 bytes).
+memory ranged from 8.0 to 8.8 GiB; the final interval CPU sample was 78% idle
+without swap-in/out. The preview object was replaced in place. Three obsolete
+composition scripts, one stale disassembly rendering and one reverted source
+control snapshot were removed (575,262 bytes); current drafts, diagnostic
+receipts and target/dependency evidence remain. Earlier checkpoints removed
+eight composition scripts (43,562 bytes) and an objdump rendering (340,942 bytes).
 
 The preceding nineteen-case cohort retains distinct airborne and recovery policies.
 States 73/88 do not subtract gravity before the landing test; state 97 tests
@@ -14938,11 +14939,11 @@ transform fields; no complete receiver layout is inferred.
 
 The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
 target body and reads the freshly compiled COFF function and relocations. All
-784 direct calls and six indirect slot-zero calls in the 121 drafted native
+1,020 direct calls and six indirect slot-zero calls in the 143 drafted native
 case regions plus the common/default tail agree in static sequence. The
 receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
 completeness check, not control-flow equivalence, byte comparison or exact
-acceptance. Two genuine effect-loop counters are present; no unused stack-slot
+acceptance. Twelve genuine effect-loop counters are present; no unused stack-slot
 locals were added. The old objdump rendering is no longer used.
 
 The preceding 27-case cohort retains the per-state reset destinations and gates.
@@ -14982,7 +14983,7 @@ function bytes and all 916 relocations across the 54 zero-store spelling
 changes; `.analysis/f021-preview-before-field-type.json` retains the control.
 This compares two partial preview builds, not the target, and earns no credit.
 
-The latest 34-case cohort adds 404..408, 410..414, 416..417, 500..504,
+The preceding 34-case cohort added 404..408, 410..414, 416..417, 500..504,
 506..507, 594..596 and 600..611. State 412 has resource costs 30/20/30;
 416 changes its random range after the first shot and has costs 30/30/20.
 State 413 emits before frame advancement. The complete 0x00455580 callee
@@ -15008,4 +15009,45 @@ frame advancement, whereas airborne 606/607/610/611 advance first. State
 609..611 call sound 41 before resource consumption. No normalization of
 these observed differences is justified.
 
-Continue with state 700 at `0x0046939C`, preserving native case-body order.
+The final 22 cases are now drafted: 700..707, 720..723, 731, 735..736,
+741, 751, 761, 771..772 and 795..796. States 700/701/706/707 retain the
+observed F02-equals-1 and F02-less-than-67 conjunction. State 705 omits
+state 704's 500-point resource consumption and uses a six-repeat bound
+instead of nine. States 722/723 reset secondary frame 9 at completion,
+retain horizontal speed on landing, and test a signed global byte at
+0x006714D0 for repeat limits. That global's semantic name remains provisional.
+
+State 731 samples a new angle both before selection and after each selected
+shot; the extra samples must remain because the sampler has stateful effects.
+Before frame 12 its gravity decrement is 0.01f, and the early landing path
+only clears horizontal speed. State 751 samples position relative to the
+opponent, uses a strict below-zero landing condition, and increments F00
+before emitting. State 772 may reset the opponent to state 95 and return
+before the subsequent counter increment and +490 writes. Its wait formula
+reads its own +324.
+States 771/772/796 contribute ten genuine local loop counters, making twelve
+in the complete function; the pinned build naturally uses the original
+0x380-byte frame and this slot at [ebp-0x34]. No filler locals were added.
+
+Whole-function diagnostics exposed terminal reset paths in 73/88 that the
+partial call-sequence check could not distinguish. Each nested reset branch
+now explicitly returns, matching the native terminal jumps. The complete
+preview is 62,090 bytes versus the required 62,089: it is a size mismatch,
+not exact. Both contain 16,837 code instructions. The private
+`.analysis/f021-align-diagnostic.py --register-classes` verifies the same
+instruction sequence after classifying EAX/ECX/EDX aliases together and
+binding readonly constant values/callees; it verifies all 1,684 direct
+branch destinations by instruction ordinal, all 142 internal table pointer
+destinations, and the remaining bytes of all 1,090 table/remap bytes.
+Its receipt is `.analysis/f021-alignment-register-classes.json`.
+
+This normalization deliberately hides physical register choices and does
+not prove register dataflow equivalence or exact bytes. There are still
+6,311 physical instruction-operand differences, beginning at 0x0045FDA9
+(state 89); five accumulator-specific encodings explain the net one-byte
+size difference. `.analysis/f021-whole-diagnostic.json` retains the failing
+whole-size comparison. Natural controls for the first loop counter's name,
+prefix/postfix increment and the angle addition's assignment spelling did
+not reduce the register differences; those controls were reverted.
+Continue with register-choice diagnosis, then bind every relocation and
+cold-replay the complete function and tables before changing exact ledgers.
