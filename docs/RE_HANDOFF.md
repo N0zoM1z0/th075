@@ -46,7 +46,7 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next F021 task enters the large reviewed Reimu action-state handler at
+F021 is in progress on the large reviewed Reimu action-state handler at
 `0x0045DD70` /60,999 code bytes (R063). Its whole native read is
 `.analysis/f021-45dd70.asm`; the bounded decompile completed as
 `.analysis/f021-reimu.c` with attestation/completion in
@@ -60,6 +60,46 @@ The independently hash-checked six-table map is `.analysis/f021-switch-map.json`
 1,090 contiguous table/remap bytes, a 62,089-byte complete comparison, seven
 following INT3 bytes, and 143 distinct non-default destinations. Native
 dispatch order, rather than decompiler case order, must drive the source switch.
+
+
+F021 checkpoint command:
+
+```bash
+scripts/repo-python scripts/audit-reimu-dispatch.py --output .analysis/f021-dispatch-audit.json
+```
+
+The audit reproduces the entire original body hash/CFG and six switch tables, validates
+native case-base subtraction and five isolated equality cases, checks the
+contiguous table/remap extent, and inventories direct/indirect call sites.
+It grants no exact credit. Three negative controls reject a truncated body
+size, altered remap hash and altered direct-table hash.
+
+Natural source drafting covers states 0..10, 50..53, 56..59 and 62..65 (23 of 143 distinct
+non-default destinations). Drafts are `.analysis/reimu/cases-000-010.inc` and
+`.analysis/reimu/cases-050-053.inc`, plus
+`.analysis/reimu/cases-056-065.inc`, with a compiler-only partial preview in
+`.analysis/reimu/Preview.cpp`. The preview compiles with the normal VC7.1
+profile but must never be executed, registered or used for acceptance; omitted
+cases are not implemented. `.analysis/f021-draft-progress.json` freezes these
+private drafts and their status. No function/source/match ledger changed.
+Continue with state 70 at `0x0045F1F4`, preserving native case-body order.
+States 62..64 reset to state 2; state 65 resets to 0 and retains its one-repeat
+frame loop. Do not infer all four endings from their otherwise similar bodies.
+
+The entry gates join one return. States 0/2/4/5 break to a shared final
+AdvanceNestedFrame call, while other drafted states return directly. The
+positive-speed decrement is float 0.5f; the negative-speed increment is double
+0.5, and boundary compensation uses double 0.75. Preserve these distinct
+constant widths. The frame helper at `0x0040FA30` returns AX, and ClearMotion
+at `0x00453E20` clears four observed motion dwords. Its misleading historical
+Ghidra ContextBase name is not ownership evidence. Do not introduce locals to
+imitate the final function's as-yet-unreconstructed stack slots.
+
+All 3,603 CI tests pass (56.6 seconds), along with target-required tracking
+and whitespace checks. No accepted source, ABI, flags or relocations changed;
+no cold replay was necessary. Serial low-priority preview builds used the pinned
+compiler. Sampled available memory remained above 8 GiB; the latest CPU sample
+was 99% idle with no swapping. No obsolete retained artifacts required deletion.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin

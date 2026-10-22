@@ -14886,3 +14886,33 @@ All 3,603 CI tests pass (63.1 seconds), together with target-required
 tracking, progress freshness and whitespace checks. Serial low-priority
 builds kept sampled available memory above 8 GiB. Two obsolete diagnostic
 objects were removed (21,918 bytes); final objects and original evidence remain.
+
+## F021 in progress — Reimu whole-dispatch audit (2026-10-22)
+
+`scripts/audit-reimu-dispatch.py` reproduces the immutable R063 body at
+`0x0045DD70`: 60,999 bytes, one return, 1,690 internal branches. It verifies
+all two direct and four remapped switch tables, their hashes, native guarded
+ranges, case-base subtractions and five separate equality-dispatched states.
+The 1,090 table/remap bytes are contiguous, giving a required 62,089-byte
+comparison followed by seven INT3 alignment bytes. There are 143 distinct
+non-default destinations. Direct and indirect calls are exported as evidence;
+this does not assert their original signatures or reconstruct the body.
+
+Three diagnostic mutations (body size, remap hash and direct-table hash) are
+rejected. This audit changes no origins or exact ledgers. The 23 drafted cases
+0..10, 50..53, 56..59 and 62..65 remain private hypotheses with a compiler-only syntax preview,
+not accepted source. Full function and table reconstruction remains pending.
+The exact baseline is unchanged at 109 functions /38,669 bytes (1.96%).
+
+Native observations for these cases distinguish the shared final frame-update
+call from direct returns, and distinguish float 0.5f from double 0.5 and 0.75
+constants. Complete dependency reads confirm the AX frame-helper result and
+four motion fields cleared by `0x00453E20`. Existing exact short-argument
+reset/sound and signed-AL boundary interfaces remain consistent. No padding,
+inert locals, assembly, target byte arrays or partial exact credit is used.
+
+All 3,603 CI tests pass (56.6 seconds), along with target-required tracking
+and whitespace checks. No accepted source, ABI, flags or relocations changed;
+no cold replay was necessary. Serial low-priority preview builds used the pinned
+compiler. Sampled available memory remained above 8 GiB; the latest CPU sample
+was 99% idle with no swapping. No obsolete retained artifacts required deletion.
