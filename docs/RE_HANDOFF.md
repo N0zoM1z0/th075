@@ -1,14 +1,19 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-22. The user resumed authored exact reconstruction with a 95%
-byte target and authorized frequent commits and pushes. The current user-required
-commit subject format is `gpt-6-astra-medium: ...` (updated on 2026-10-22).
-Cold-replay only new/affected units, keep compiler builds serial, monitor
-CPU/memory, and periodically remove obsolete reproducible outputs. Preserve
-all accepted origins and the 97 documented unknowns. The goal denominator
-conservatively includes all 3,608 pending bytes (1,977,124 total possible
-authored bytes); at least 1,878,268 exact authored bytes are required under
-that bound. Do not reduce the authored set to improve coverage.
+Updated 2026-10-22. The latest user request is cleanup and handoff; the
+active reconstruction goal was cleared. Do not resume matching automatically.
+The prior 95% authored-byte target remains historical context, not completed
+work. Accepted coverage is **109 functions /38,669 code bytes (1.96%)**.
+Preserve all accepted origins and the 97 documented unknowns.
+
+The current commit subject format is `gpt-6-astra-medium: ...`.
+Keep compiler builds serial and low priority, monitor CPU/memory, and cold-replay
+only new/affected units. No accepted source, ABI, flags or relocation changed
+in this handoff; accepted units did not need rebuilding.
+
+Start here, then consult `RE_WORKFLOW.md` for acceptance rules and the F021
+section at the end of `KNOWLEDGE_BASE.md` for detailed per-state observations.
+The historical origin checkpoints below remain evidence, not current tasks.
 
 F020 accepts three complete battle dependencies: body separation at
 `0x00449310` /1,861, round-transition update at `0x0043D010` /847 and overlay
@@ -27,7 +32,7 @@ stack allocation without padding, inert locals or assembly.
 Round-transition and overlay reuse F019 receiver interfaces unchanged. The
 2-case overlay switch is a linear decision tree, with no omitted data table.
 
-All 3,603 CI tests pass (63.1 seconds), together with target-required
+At the F020 checkpoint, all 3,603 CI tests passed (63.1 seconds), with target-required
 tracking, progress freshness and whitespace checks. Serial low-priority
 builds kept sampled available memory above 8 GiB. Two obsolete diagnostic
 objects were removed (21,918 bytes); final objects and original evidence remain.
@@ -46,203 +51,105 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-F021 is in progress on the large reviewed Reimu action-state handler at
-`0x0045DD70` /60,999 code bytes (R063). Its whole native read is
-`.analysis/f021-45dd70.asm`; the bounded decompile completed as
-`.analysis/f021-reimu.c` with attestation/completion in
-`.analysis/f021-decompile.log`. Reconcile all six guarded switch tables: two
-direct tables and four remapped tables, including every remap byte. Preserve
-all 1,690 internal branches and the full extent; no partial comparison earns
-credit. The 44-83 KiB character handlers dominate the remaining byte backlog,
-so continue into this larger body rather than limiting work to short helpers.
-Retain the explicit ApplySequence deferral above and all 97 pending origins.
-The independently hash-checked six-table map is `.analysis/f021-switch-map.json`:
-1,090 contiguous table/remap bytes, a 62,089-byte complete comparison, seven
-following INT3 bytes, and 143 distinct non-default destinations. Native
-dispatch order, rather than decompiler case order, must drive the source switch.
+## F021 handoff checkpoint (draft only)
 
+The Reimu action handler at `0x0045DD70` has 60,999 code bytes and 1,090
+contiguous switch/remap bytes: **62,089 bytes must be compared**. Seven trailing
+INT3 bytes are alignment. All 143 non-default destinations across six switches
+(two direct, four remapped) are drafted in `.analysis/reimu/Preview.cpp` and its
+18 case includes. These private sources are compiler-only: do not execute,
+register or award exact credit to the draft.
 
-F021 checkpoint command:
+The restored draft compiles to 62,090 bytes with 16,837 instructions. It still
+has 6,311 physical operand differences, first at `0x0045FDA9` in state 89.
+Five accumulator-specific encodings explain the net one-byte size difference;
+this is not a single-byte defect. Register-class normalization aligns every
+instruction, all 1,684 direct branch destinations and 142 table destinations,
+but does not prove register dataflow equivalence or byte equality.
+
+The final diagnostic binds all 1,824 relocations: 1,020 direct calls, 630
+readonly-constant references (45 unique constants), 142 switch destinations,
+10 switch/remap addresses and 22 references to two writable globals. Callees
+cover 20 distinct symbols; six indirect slot-zero calls also agree in static
+sequence. These are diagnostics, not acceptance. The full comparison still
+reports `size-mismatch`.
+
+| Local artifact | Purpose |
+| --- | --- |
+| `.analysis/f021-45dd70.asm`, `f021-reimu.c`, `f021-decompile.log` | Original target read and attested decompile |
+| `.analysis/f021-dispatch-audit.json`, `f021-switch-map.json` | Complete native extent, CFG and switch evidence |
+| `.analysis/f021-draft-progress.json` | Current source hashes, final object hash and unresolved task |
+| `.analysis/f021-draft-call-check.json` | Static direct/indirect call sequence |
+| `.analysis/f021-alignment-register-classes.json` | Normalized instruction, branch and table diagnostic |
+| `.analysis/f021-draft-relocation-bindings.json` | All relocation bindings, with target/object hashes |
+| `.analysis/f021-register-probes.json` | Reverted compiler controls and code hashes |
+| `.analysis/f021-whole-diagnostic.json` | Failing whole-function size comparison |
+
+All abbreviated artifact names in this table are below `.analysis/`. These
+ignored files and the draft are **not in a Git clone**. A local handoff must
+retain `.analysis/reimu/`, the F021 evidence/scripts/receipts, the pinned target,
+private Ghidra project, and final objects. Shared `.tools` installations remain
+read-only and may require provisioning separately on another machine.
+
+To reproduce the checkpoint, run from the repository root, serially:
 
 ```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+scripts/repo-python scripts/ghidra.py check
 scripts/repo-python scripts/audit-reimu-dispatch.py --output .analysis/f021-dispatch-audit.json
+nice -n 10 scripts/compile-probe.sh .analysis/reimu/Preview.cpp build/probes/F021Preview.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
+scripts/repo-python .analysis/f021-check-draft-calls.py
+scripts/repo-python .analysis/f021-align-diagnostic.py --register-classes
+scripts/repo-python .analysis/f021-bind-draft-relocations.py
+scripts/repo-python scripts/ci.py
+git diff --check
 ```
 
-The audit reproduces the entire original body hash/CFG and six switch tables, validates
-native case-base subtraction and five isolated equality cases, checks the
-contiguous table/remap extent, and inventories direct/indirect call sites.
-It grants no exact credit. Three negative controls reject a truncated body
-size, altered remap hash and altered direct-table hash.
+A new compile can change debug metadata and the whole-object hash; refresh the
+private progress receipt after rebuilding. The current compiled function hash
+is `e2b757b2007e18c766a2978cfcab4c03a97fbb05831b04264ad50e9b360fafe6`.
+If reconstruction is resumed, investigate natural register allocation from
+state 89, preserving the full CFG and real local lifetimes. Rebind relocations
+and cold-replay the complete function/tables before updating exact ledgers.
+Do not repeat reverted controls without new evidence; see the knowledge base.
 
-Natural source drafting covers states 0..10, 50..53, 56..59, 62..65, 70..74, 76,
-88..89, 93..95, 97..99, 140, 143..145, 150..152, 154..156, 158..161,
-163..165, 167..168, 180..181, 200..210, 300..310, 390..393, 400..402,
-404..408, 410..414, 416..417, 500..504, 506..507, 594..596, 600..611,
-700..707, 720..723, 731, 735..736, 741, 751, 761, 771..772 and 795..796.
-All 143 distinct non-default destinations are covered. Drafts are `.analysis/reimu/cases-000-010.inc` and
-`.analysis/reimu/cases-050-053.inc`, plus
-`.analysis/reimu/cases-056-065.inc`, `.analysis/reimu/cases-070-099.inc` and
-`.analysis/reimu/cases-140-150.inc`, plus `.analysis/reimu/cases-151-181.inc`,
-`.analysis/reimu/cases-200-210.inc`, `.analysis/reimu/cases-300-393.inc` and
-`.analysis/reimu/cases-400-402.inc`, `.analysis/reimu/cases-404-417.inc`,
-`.analysis/reimu/cases-500-504.inc`, `.analysis/reimu/cases-506-596.inc`,
-`.analysis/reimu/cases-600-604.inc`, `.analysis/reimu/cases-605-611.inc`,
-`.analysis/reimu/cases-700-707.inc`, `.analysis/reimu/cases-720-723.inc`,
-`.analysis/reimu/cases-731-741.inc` and `.analysis/reimu/cases-751-796.inc`,
-with a compiler-only whole draft in
-`.analysis/reimu/Preview.cpp`. The preview compiles with the normal VC7.1
-profile but must never be executed, registered or used for acceptance;
-complete byte equality and relocation verification remain pending.
-`.analysis/f021-draft-progress.json` freezes these
-private drafts and their status. No function/source/match ledger changed.
-Continue with the whole-function register-choice diagnosis described below.
-States 62..64 reset to state 2; state 65 resets to 0 and retains its one-repeat
-frame loop. Do not infer all four endings from their otherwise similar bodies.
+## Handoff validation
 
-The preceding nineteen-case cohort retains distinct airborne and recovery policies.
-States 73/88 do not subtract gravity before the landing test; state 97 tests
-strictly below zero. States 97/98 use short-circuit unsigned input comparisons,
-not a bitwise aggregate. State 76 plays sound before velocity snapshots;
-state 89 plays it after disabling the transform; state 145 has no landing sound.
-States 140/143/144 have repeat limits 5/7/7. Effect calls use short state and
-two byte arguments; the layer byte is sign-extended in the complete downstream
-callee. Transform setup copies three float arguments and clears its observed
-transform fields; no complete receiver layout is inferred.
+All 3,603 CI tests passed in 64.924 seconds. Target-required tracking, Ghidra
+attestation, the full dispatch audit, restored-draft call/alignment/relocation
+checks and `git diff --check` passed. Exact coverage remains 109 functions /
+38,669 bytes. No accepted source or acceptance ledger changed.
 
-The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
-target body and reads the freshly compiled COFF function and relocations. All
-1,020 direct calls and six indirect slot-zero calls in the 143 drafted native
-case regions plus the common/default tail agree in static sequence. The
-receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
-completeness check, not control-flow equivalence, byte comparison or exact
-acceptance. Twelve genuine effect-loop counters are present; no unused stack-slot
-locals were added. The old objdump rendering is no longer used.
+The final sampled available memory was 8.6 GiB; the sampled CPU interval was
+75% idle with no swap-in/out. Preview compilation and CI ran at low priority;
+no parallel compiler jobs or additional reconstruction work were started.
 
-The preceding 27-case cohort retains the per-state reset destinations and gates.
-States 154..156 and 163..165 reset to 2; 151..152 and 159..161 reset to 0.
-State 158 applies gravity at nonnegative height, whereas 180/181 require
-positive height and loop at secondary frame 7/5. States 163..165 omit the
-F00 initialization found in earlier similar policies. The 167/168 resource
-callee consumes a 32-bit argument, and their recoil decrement is a promoted
-short subtraction. State 200 tests speed above 8, subtracts 0.5f and clamps
-below 9; preserve both distinct thresholds. States 204..206 increment the
-frame counters manually and refresh through virtual slot zero; 206 omits the
-vertical-speed transition found in 204/205. States 209/210 compare the
-resource against 2 before subtracting 3 and use an unsigned input counter.
-No semantic simplification or helper substitution is justified by these shapes.
+## Cleanup and retention
 
-The preceding eighteen cases (300..310, 390..393 and 400..402) are drafted.
-State 309 retains the observed consecutive frame-equals-3 and frame-equals-5
-conditions at 0x004639D2..0x00463A31. Their original intent is unknown; do not
-repair them into alternatives. The pinned compiler retains their static call
-sequence without volatile qualifiers or assembly. State 304 bounds its landing
-transition to frames 6..11; 305/306 perform the gravity/landing check before
-initialization and retain horizontal speed on that landing path. States 307
-and 391 use different airborne deceleration and launch parameters. The four
-sound checks in 303/392 remain separate post-update conditions.
+This handoff removed 106,741,455 file bytes (108,679,168 allocated bytes,
+about 103.6 MiB) of obsolete outputs. The main item was the clean historical
+`build/origin-history/r255-baseline` worktree at
+`06a81fd59276ead6ff94a6ab05710627558db330`; its `.tools` symlink was unlinked
+without touching the shared target. Restore tracked contents if needed with:
 
-States 400/401 each contain two explicit five-shot sequences, with per-shot
-parameter writes and repeated coordinate reads. First/continuation resource
-costs are 100/25 and continuation requires an unsigned input counter plus a
-two-repeat bound. State 402 uses a distinct sound, cost 250 and secondary-frame
-loop. The complete character-sound wrapper at 0x00453D40 reads a signed short;
-shared and character sound receivers remain distinct.
+```bash
+git worktree add --detach build/origin-history/r255-baseline 06a81fd59276ead6ff94a6ab05710627558db330
+ln -s "$PWD/.tools" build/origin-history/r255-baseline/.tools
+```
 
-The +7C dword's zero assignments use integer spelling consistently with its
-observed immediate-one stores. This remains a field-type inference, not a
-complete receiver layout. A fresh preview build preserves all 28,661 compiler
-function bytes and all 916 relocations across the 54 zero-store spelling
-changes; `.analysis/f021-preview-before-field-type.json` retains the control.
-This compares two partial preview builds, not the target, and earns no credit.
+Five reverted/generated F021 control snapshots were also removed after
+restoring and hash-checking the final draft. `.analysis/handoff-cleanup.json`
+records paths, sizes, hashes or recoverable commit identity. Historical logs
+that refer to the removed worktree are retained as observations.
 
-The preceding 34-case cohort added 404..408, 410..414, 416..417, 500..504,
-506..507, 594..596 and 600..611. State 412 has resource costs 30/20/30;
-416 changes its random range after the first shot and has costs 30/30/20.
-State 413 emits before frame advancement. The complete 0x00455580 callee
-confirms two 32-bit range arguments and an EAX result; the draft signature
-is a bounded ABI observation, not new exact credit.
-
-States 500/502 use a strict below-zero landing test and return after the
-secondary reset. States 501/504 use a nonpositive test and continue after
-landing; their one-repeat secondary loop increments F00 after resetting.
-State 503 additionally restricts gravity to frames above 3. States 506/507
-initialize three motion fields explicitly, retain their distinct launch
-speeds, and return immediately after the secondary landing reset. They do
-not call the four-field ClearMotion helper. States 594/595 conditionally
-write +3B0; 596 omits that write. All three decrement the byte at +366 and
-clear the opponent's +EFA word after the shared effect and sound calls.
-
-States 600..603 explicitly emit four effects with parameter indices 0..3;
-+318 captures height only before the first shot. Airborne initialization
-scales both velocities by 0.25f. Ground states 604/605/608/609 emit before
-frame advancement, whereas airborne 606/607/610/611 advance first. State
-605 uses outer angles +/-70; 607 uses +/-60. State 606 emits -30 before
-+30, reversing state 604's order. State 608 has no shared-sound call;
-609..611 call sound 41 before resource consumption. No normalization of
-these observed differences is justified.
-
-The final 22 cases are now drafted: 700..707, 720..723, 731, 735..736,
-741, 751, 761, 771..772 and 795..796. States 700/701/706/707 retain the
-observed F02-equals-1 and F02-less-than-67 conjunction. State 705 omits
-state 704's 500-point resource consumption and uses a six-repeat bound
-instead of nine. States 722/723 reset secondary frame 9 at completion,
-retain horizontal speed on landing, and test a signed global byte at
-0x006714D0 for repeat limits. That global's semantic name remains provisional.
-
-State 731 samples a new angle both before selection and after each selected
-shot; the extra samples must remain because the sampler has stateful effects.
-Before frame 12 its gravity decrement is 0.01f, and the early landing path
-only clears horizontal speed. State 751 samples position relative to the
-opponent, uses a strict below-zero landing condition, and increments F00
-before emitting. State 772 may reset the opponent to state 95 and return
-before the subsequent counter increment and +490 writes. Its wait formula
-reads its own +324.
-States 771/772/796 contribute ten genuine local loop counters, making twelve
-in the complete function; the pinned build naturally uses the original
-0x380-byte frame and this slot at [ebp-0x34]. No filler locals were added.
-
-Whole-function diagnostics exposed terminal reset paths in 73/88 that the
-partial call-sequence check could not distinguish. Each nested reset branch
-now explicitly returns, matching the native terminal jumps. The complete
-preview is 62,090 bytes versus the required 62,089: it is a size mismatch,
-not exact. Both contain 16,837 code instructions. The private
-`.analysis/f021-align-diagnostic.py --register-classes` verifies the same
-instruction sequence after classifying EAX/ECX/EDX aliases together and
-binding readonly constant values/callees; it verifies all 1,684 direct
-branch destinations by instruction ordinal, all 142 internal table pointer
-destinations, and the remaining bytes of all 1,090 table/remap bytes.
-Its receipt is `.analysis/f021-alignment-register-classes.json`.
-
-This normalization deliberately hides physical register choices and does
-not prove register dataflow equivalence or exact bytes. There are still
-6,311 physical instruction-operand differences, beginning at 0x0045FDA9
-(state 89); five accumulator-specific encodings explain the net one-byte
-size difference. `.analysis/f021-whole-diagnostic.json` retains the failing
-whole-size comparison. Natural controls for the first loop counter's name,
-prefix/postfix increment and the angle addition's assignment spelling did
-not reduce the register differences; those controls were reverted.
-Continue with register-choice diagnosis, then bind every relocation and
-cold-replay the complete function and tables before changing exact ledgers.
-
-The entry gates join one return. States 0/2/4/5 break to a shared final
-AdvanceNestedFrame call, while other drafted states return directly. The
-positive-speed decrement is float 0.5f; the negative-speed increment is double
-0.5, and boundary compensation uses double 0.75. Preserve these distinct
-constant widths. The frame helper at `0x0040FA30` returns AX, and ClearMotion
-at `0x00453E20` clears four observed motion dwords. Its misleading historical
-Ghidra ContextBase name is not ownership evidence. Preserve the observed frame through real locals and expressions;
-do not add filler stack slots.
-
-All 3,603 CI tests pass (71.3 seconds), along with target-required tracking,
-Ghidra attestation, the complete dispatch audit and whitespace checks. No
-accepted source, ABI, flags or relocations changed; no cold replay was necessary.
-Serial low-priority preview builds used the pinned compiler. Sampled available
-memory ranged from 8.0 to 8.8 GiB; the final interval CPU sample was 78% idle
-without swap-in/out. The preview object was replaced in place. Three obsolete
-composition scripts, one stale disassembly rendering and one reverted source
-control snapshot were removed (575,262 bytes); current drafts, diagnostic
-receipts and target/dependency evidence remain. Earlier checkpoints removed
-eight composition scripts (43,562 bytes) and an objdump rendering (340,942 bytes).
+Retain the approximately 1.3 GiB `.analysis/vc71-wine` prefix: the historical
+`.analysis/r226-tool-env.sh` explicitly selects it. Current preview builds use
+the default Wine prefix, but that alone does not establish historical replay
+compatibility. Preserve origin evidence, PDB identity observations, accepted
+objects, target/game inputs and the private Ghidra database. Other worktrees
+outside this repository were not part of cleanup.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin

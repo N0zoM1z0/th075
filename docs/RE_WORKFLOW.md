@@ -23,7 +23,9 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-On 2026-10-22 the user resumed authored exact reconstruction with a 95% byte
+The latest 2026-10-22 request is cleanup and handoff, and the active goal was
+cleared. The reconstruction steps below apply when work is resumed.
+Earlier on that date, the user resumed authored exact reconstruction with a 95% byte
 target, authorizing frequent commits and pushes. Reconstruct independently
 reviewed authored bodies while preserving all 97 pending origins. Goal
 accounting includes every pending byte in a conservative denominator; the

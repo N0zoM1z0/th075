@@ -15049,5 +15049,35 @@ size difference. `.analysis/f021-whole-diagnostic.json` retains the failing
 whole-size comparison. Natural controls for the first loop counter's name,
 prefix/postfix increment and the angle addition's assignment spelling did
 not reduce the register differences; those controls were reverted.
-Continue with register-choice diagnosis, then bind every relocation and
-cold-replay the complete function and tables before changing exact ledgers.
+If reconstruction resumes after handoff, continue with register-choice diagnosis,
+then refresh all relocation bindings and cold-replay the complete function and
+tables before changing exact ledgers.
+
+
+### F021 handoff: complete diagnostic relocation binding
+
+The final restored draft retains all 143 cases and the recorded source hashes.
+A fresh serial build reproduces the 62,090-byte function hash
+`e2b757b2007e18c766a2978cfcab4c03a97fbb05831b04264ad50e9b360fafe6`.
+The private `.analysis/f021-bind-draft-relocations.py` binds every COFF relocation
+to a corresponding native operand or switch word, checking target section
+permissions, addends, constant bits and internal instruction destinations.
+`.analysis/f021-draft-relocation-bindings.json` records 1,824 bindings: 1,020
+calls, 630 readonly constants, 142 switch destinations, 10 switch/remap
+addresses and 22 writable globals. There are 45 unique constants, 20 callee
+symbols and two globals. The target/object hashes are included. This evidence
+is diagnostic only; the register mismatch and failed size comparison remain.
+
+Removing outer field-lvalue parentheses, selecting /G7, explicitly spelling
+the state-88 else branch, flattening the translation unit, and reusing the
+scoped name `i` for all twelve loop counters reproduced the baseline function
+hash. Moving counters to function scope instead introduced 58 normalized
+operand differences and 6,357 physical differences, with the first difference
+at 0x0045FC5E. All controls were reverted. Earlier return/spelling/division
+controls also failed to resolve state 89; division emitted FDIV rather than
+the native FMUL. Preserve the native state-89 local join. The restored final
+object, private receipts and source hashes agree; no exact ledger changed.
+
+The user then requested cleanup and handoff and cleared the active goal.
+See `RE_HANDOFF.md` for current reproduction commands, retained private inputs,
+and the recoverable historical worktree cleanup record.

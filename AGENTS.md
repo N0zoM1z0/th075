@@ -2,8 +2,10 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-On 2026-10-22 the user resumed exact reconstruction, targeting 95% of authored
-bytes, and authorized frequent commits and pushes. Preserve all accepted exact
+The latest 2026-10-22 request is cleanup and handoff; the active goal was
+cleared. Do not resume matching automatically. Previously the user resumed
+exact reconstruction, targeting 95% of authored bytes, and authorized frequent
+commits and pushes. Preserve all accepted exact
 units and origin evidence through R268. The 97 unresolved origins remain
 unknown; they do not block reconstruction of independently reviewed authored
 functions. Include all pending bytes in the conservative goal denominator.
