@@ -75,20 +75,22 @@ It grants no exact credit. Three negative controls reject a truncated body
 size, altered remap hash and altered direct-table hash.
 
 Natural source drafting covers states 0..10, 50..53, 56..59, 62..65, 70..74, 76,
-88..89, 93..95, 97..99, 140, 143..145 and 150 (42 of 143 distinct
+88..89, 93..95, 97..99, 140, 143..145, 150..152, 154..156, 158..161,
+163..165, 167..168, 180..181 and 200..210 (69 of 143 distinct
 non-default destinations). Drafts are `.analysis/reimu/cases-000-010.inc` and
 `.analysis/reimu/cases-050-053.inc`, plus
 `.analysis/reimu/cases-056-065.inc`, `.analysis/reimu/cases-070-099.inc` and
-`.analysis/reimu/cases-140-150.inc`, with a compiler-only partial preview in
+`.analysis/reimu/cases-140-150.inc`, plus `.analysis/reimu/cases-151-181.inc`
+and `.analysis/reimu/cases-200-210.inc`, with a compiler-only partial preview in
 `.analysis/reimu/Preview.cpp`. The preview compiles with the normal VC7.1
 profile but must never be executed, registered or used for acceptance; omitted
 cases are not implemented. `.analysis/f021-draft-progress.json` freezes these
 private drafts and their status. No function/source/match ledger changed.
-Continue with state 151 at `0x00460D86`, preserving native case-body order.
+Continue with state 300 at `0x00462D90`, preserving native case-body order.
 States 62..64 reset to state 2; state 65 resets to 0 and retains its one-repeat
 frame loop. Do not infer all four endings from their otherwise similar bodies.
 
-The latest nineteen cases retain distinct airborne and recovery policies.
+The preceding nineteen-case cohort retains distinct airborne and recovery policies.
 States 73/88 do not subtract gravity before the landing test; state 97 tests
 strictly below zero. States 97/98 use short-circuit unsigned input comparisons,
 not a bitwise aggregate. State 76 plays sound before velocity snapshots;
@@ -98,12 +100,27 @@ two byte arguments; the layer byte is sign-extended in the complete downstream
 callee. Transform setup copies three float arguments and clears its observed
 transform fields; no complete receiver layout is inferred.
 
-The private `.analysis/f021-check-draft-calls.py` compares all 225 direct calls
-in the 42 drafted native case regions plus the common/default tail against
-compiler relocations. Callee counts and static order agree. The receipt is
-`.analysis/f021-draft-call-check.json`. This is a diagnostic completeness check,
-not control-flow equivalence, byte comparison or exact acceptance. Two genuine
-effect-loop counters are now present; no unused stack-slot locals were added.
+The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
+target body and reads the freshly compiled COFF function and relocations. All
+352 direct calls and six indirect slot-zero calls in the 69 drafted native
+case regions plus the common/default tail agree in static sequence. The
+receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
+completeness check, not control-flow equivalence, byte comparison or exact
+acceptance. Two genuine effect-loop counters are present; no unused stack-slot
+locals were added. The old objdump rendering is no longer used.
+
+The latest 27-case cohort retains the per-state reset destinations and gates.
+States 154..156 and 163..165 reset to 2; 151..152 and 159..161 reset to 0.
+State 158 applies gravity at nonnegative height, whereas 180/181 require
+positive height and loop at secondary frame 7/5. States 163..165 omit the
+F00 initialization found in earlier similar policies. The 167/168 resource
+callee consumes a 32-bit argument, and their recoil decrement is a promoted
+short subtraction. State 200 tests speed above 8, subtracts 0.5f and clamps
+below 9; preserve both distinct thresholds. States 204..206 increment the
+frame counters manually and refresh through virtual slot zero; 206 omits the
+vertical-speed transition found in 204/205. States 209/210 compare the
+resource against 2 before subtracting 3 and use an unsigned input counter.
+No semantic simplification or helper substitution is justified by these shapes.
 
 The entry gates join one return. States 0/2/4/5 break to a shared final
 AdvanceNestedFrame call, while other drafted states return directly. The
@@ -114,14 +131,14 @@ at `0x00453E20` clears four observed motion dwords. Its misleading historical
 Ghidra ContextBase name is not ownership evidence. Do not introduce locals to
 imitate the final function's as-yet-unreconstructed stack slots.
 
-All 3,603 CI tests pass (65.3 seconds), along with target-required tracking,
+All 3,603 CI tests pass (77.8 seconds), along with target-required tracking,
 Ghidra attestation, the complete dispatch audit and whitespace checks. No
 accepted source, ABI, flags or relocations changed; no cold replay was necessary.
 Serial low-priority preview builds used the pinned compiler. Sampled available
-memory remained above 8 GiB; interval CPU samples were 73-93% idle without
-swap-in/out. The current preview object was replaced in place. Build outputs
-occupy 155 MiB and private analysis 1.6 GiB; no obsolete retained outputs were
-identified for deletion.
+memory remained above 8 GiB; the interval CPU sample was 87% idle without
+swap-in/out. The current preview object was replaced in place. The obsolete
+objdump rendering was removed (340,942 bytes); the diagnostic reads COFF directly.
+Build outputs occupy 155 MiB and private analysis 1.6 GiB.
 
 Historical origin checkpoint (2026-10-07): work resumed with batches R070–R107, moved to
 exact reconstruction for F008 and F009, and has now completed accepted origin

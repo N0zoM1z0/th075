@@ -14899,9 +14899,10 @@ non-default destinations. Direct and indirect calls are exported as evidence;
 this does not assert their original signatures or reconstruct the body.
 
 Three diagnostic mutations (body size, remap hash and direct-table hash) are
-rejected. This audit changes no origins or exact ledgers. The 42 drafted cases
+rejected. This audit changes no origins or exact ledgers. The 69 drafted cases
 0..10, 50..53, 56..59, 62..65, 70..74, 76, 88..89, 93..95, 97..99, 140,
-143..145 and 150 remain private hypotheses with a compiler-only syntax preview,
+143..145, 150..152, 154..156, 158..161, 163..165, 167..168, 180..181 and
+200..210 remain private hypotheses with a compiler-only syntax preview,
 not accepted source. Full function and table reconstruction remains pending.
 The exact baseline is unchanged at 109 functions /38,669 bytes (1.96%).
 
@@ -14912,16 +14913,16 @@ four motion fields cleared by `0x00453E20`. Existing exact short-argument
 reset/sound and signed-AL boundary interfaces remain consistent. No padding,
 inert locals, assembly, target byte arrays or partial exact credit is used.
 
-All 3,603 CI tests pass (65.3 seconds), along with target-required tracking,
+All 3,603 CI tests pass (77.8 seconds), along with target-required tracking,
 Ghidra attestation, the complete dispatch audit and whitespace checks. No
 accepted source, ABI, flags or relocations changed; no cold replay was necessary.
 Serial low-priority preview builds used the pinned compiler. Sampled available
-memory remained above 8 GiB; interval CPU samples were 73-93% idle without
-swap-in/out. The current preview object was replaced in place. Build outputs
-occupy 155 MiB and private analysis 1.6 GiB; no obsolete retained outputs were
-identified for deletion.
+memory remained above 8 GiB; the interval CPU sample was 87% idle without
+swap-in/out. The current preview object was replaced in place. The obsolete
+objdump rendering was removed (340,942 bytes); the diagnostic reads COFF directly.
+Build outputs occupy 155 MiB and private analysis 1.6 GiB.
 
-The latest nineteen cases retain distinct airborne and recovery policies.
+The preceding nineteen-case cohort retains distinct airborne and recovery policies.
 States 73/88 do not subtract gravity before the landing test; state 97 tests
 strictly below zero. States 97/98 use short-circuit unsigned input comparisons,
 not a bitwise aggregate. State 76 plays sound before velocity snapshots;
@@ -14931,9 +14932,24 @@ two byte arguments; the layer byte is sign-extended in the complete downstream
 callee. Transform setup copies three float arguments and clears its observed
 transform fields; no complete receiver layout is inferred.
 
-The private `.analysis/f021-check-draft-calls.py` compares all 225 direct calls
-in the 42 drafted native case regions plus the common/default tail against
-compiler relocations. Callee counts and static order agree. The receipt is
-`.analysis/f021-draft-call-check.json`. This is a diagnostic completeness check,
-not control-flow equivalence, byte comparison or exact acceptance. Two genuine
-effect-loop counters are now present; no unused stack-slot locals were added.
+The private `.analysis/f021-check-draft-calls.py` re-extracts the hash-checked
+target body and reads the freshly compiled COFF function and relocations. All
+352 direct calls and six indirect slot-zero calls in the 69 drafted native
+case regions plus the common/default tail agree in static sequence. The
+receipt is `.analysis/f021-draft-call-check.json`. This is a diagnostic
+completeness check, not control-flow equivalence, byte comparison or exact
+acceptance. Two genuine effect-loop counters are present; no unused stack-slot
+locals were added. The old objdump rendering is no longer used.
+
+The latest 27-case cohort retains the per-state reset destinations and gates.
+States 154..156 and 163..165 reset to 2; 151..152 and 159..161 reset to 0.
+State 158 applies gravity at nonnegative height, whereas 180/181 require
+positive height and loop at secondary frame 7/5. States 163..165 omit the
+F00 initialization found in earlier similar policies. The 167/168 resource
+callee consumes a 32-bit argument, and their recoil decrement is a promoted
+short subtraction. State 200 tests speed above 8, subtracts 0.5f and clamps
+below 9; preserve both distinct thresholds. States 204..206 increment the
+frame counters manually and refresh through virtual slot zero; 206 omits the
+vertical-speed transition found in 204/205. States 209/210 compare the
+resource against 2 before subtracting 3 and use an unsigned input counter.
+No semantic simplification or helper substitution is justified by these shapes.
