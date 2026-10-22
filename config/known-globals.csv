@@ -73,3 +73,6 @@ address,name,module,confidence,evidence
 0x0066C238,g_FrameClockMode,BattleScene,inferred,F017; signed byte controlling the second frame counter; exact native reads/writes and bound relocations; original symbol unknown
 0x0066C237,g_FramePresentToggle,BattleScene,inferred,F017; unsigned byte gating presentation and normalized alternating updates; exact native reads/writes and bound relocations; original symbol unknown
 0x00671430,g_FramePresentEveryTick,BattleScene,inferred,F017; unsigned byte enabling presentation on every tick; exact native reads/writes and bound relocations; original symbol unknown
+0x00671404,g_CombatViewOffsetX,BattleScene,inferred,F018; float read as horizontal view offset; exact native reads/writes and bound relocations; original symbol unknown
+0x006713DC,g_CombatViewSpan,BattleScene,inferred,F018; float read as view span; exact native reads/writes and bound relocations; original symbol unknown
+0x006713C4,g_CombatViewOffsetY,BattleScene,inferred,F018; float read as vertical view offset; exact native reads/writes and bound relocations; original symbol unknown

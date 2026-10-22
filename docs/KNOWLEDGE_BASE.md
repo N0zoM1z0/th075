@@ -14757,3 +14757,38 @@ observed available memory remained above 8 GiB.
 
 Target-required tracking, all 3,603 public CI tests (73.9 seconds), progress
 freshness and whitespace checks pass. No prior exact unit was rebuilt.
+
+## F018 — Actor counter and view-bound updates (2026-10-22)
+
+**Target observations:** The complete R045 authored body at `0x00452490`
+contains 1,696 code bytes, one return and 49 internal branches, with no switch
+table or following alignment gap. Its original body hash and CFG reproduce.
+Opponent timer +0x3BA gates the counter policies, while health clamps, other
+countdowns, four view bounds and the frame count continue updating. Recovery,
+meter drain and combat-mode branches preserve the original operation order.
+
+**Source and ABI:** `CombatTimers.cpp/.hpp` define the existing
+`FrameActor::UpdateCounters` through scalar accesses on an existing receiver.
+No complete owner layout is asserted or instantiated. The forward branch
+expresses the observed freeze skip without inert locals or fake returns.
+The sound dependency at `0x00453D60` sign-extends its word argument before
+calling the shared sound bank and returns with `ret 4`; the predicate at
+`0x00454FD0` returns its range comparison through AL. Three inferred float
+globals at `0x00671404`, `0x006713DC`, and `0x006713C4` supply view offsets
+and span. All fifteen referenced readonly constants are checked in full.
+Names, field roles and original declaration spelling remain inferred.
+
+**Acceptance:** VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`
+cold-builds the single new unit and reproduces all 1,696 bytes, including
+40 relocation fields. Totals are 105 exact functions /29,736 bytes (1.51%).
+All 104 previous units and their 42 source/header inputs remain unchanged;
+only the new unit was cold-replayed. The cumulative manifest preserves the
+60-function baseline and 45 later transitions /19,853 added bytes. All 97
+unknown origins and the conservative goal denominator remain unchanged.
+The 95% goal is incomplete; the 4,764-byte battle state machine is next.
+
+Target-required tracking, all 3,603 CI tests (74.2 seconds), progress freshness
+and whitespace checks pass. Builds were serial and low priority; sampled
+available memory stayed above 8 GiB with no active swapping. Storage remains
+154 MiB in build/ and 1.6 GiB in .analysis/; retained outputs support current
+evidence or replay, so no additional deletion was needed in this batch.

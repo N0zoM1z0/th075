@@ -52,3 +52,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00452230,FighterState::AdvancePosition,FrameActor::AdvancePosition,R045,frame-actor-advance-position
 0x00454EE0,FighterState::CheckHorizontalLimitsAt00454EE0,FrameActor::CheckHorizontalLimits,R103,frame-actor-check-horizontal-limits
 0x00452360,FighterState::ChooseAction,FrameActor::ChooseAction,R045,frame-actor-choose-action
+0x00452490,FighterState::AdvanceCombatTimers,FrameActor::UpdateCounters,R045,frame-actor-update-counters

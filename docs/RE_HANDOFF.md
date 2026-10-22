@@ -10,32 +10,27 @@ conservatively includes all 3,608 pending bytes (1,977,124 total possible
 authored bytes); at least 1,878,268 exact authored bytes are required under
 that bound. Do not reduce the authored set to improve coverage.
 
-F017 accepts eight complete functions /1,967 code and compared bytes /63
-relocations: battle frame update, presentation, round-end dispatch, player
-counter updates, guarded actor update, position update, horizontal limits and
-action choice. All eight units cold-replay exact across one new object.
-Original 96 units and all 40 tracked source/header inputs are unchanged and
-were not rebuilt. Current exact coverage is 104 functions /28,040 bytes
-(1.42%). The cumulative manifest freezes 44 F010-F017 transitions, seven
-original ledger prefixes and twenty new source/header hashes.
+F018 accepts the complete actor counter update at `0x00452490` /1,696
+bytes /40 relocations. The new unit cold-replays exact; all 104 prior units
+and 42 prior source/header inputs remain unchanged. Current exact coverage is
+105 functions /29,736 bytes (1.51%). The cumulative manifest freezes 45
+F010-F018 transitions and twenty-two added source/header hashes.
 
-The frame update returns the actual low 16-bit status from the larger state
-machine; the decompiler's widened return is not authoritative. The paused
-return is zero. Two observed 28-byte restore operations are represented as
-bounded seven-dword values, not complete game owners. Only observed virtual
-slots are called; unused slot declarations do not establish original signatures.
-Direct float lvalues retain target x87 memory ordering and the toggle explicitly
-promotes its normalized boolean to int before storing the observed byte.
+Opponent freeze skips counter policies while view bounds and the frame counter
+continue updating. Complete native callee reads confirm the sound wrapper's
+signed short parameter and the range predicate's AL return. Fifteen complete
+readonly constants and three new float global bindings are verified. Partial
+receiver interfaces remain non-instantiable by reconstruction convention.
 
+Target-required tracking, all 3,603 CI tests (74.2 seconds), progress freshness
+and whitespace checks pass. Builds were serial and low priority; sampled
+available memory stayed above 8 GiB with no active swapping. Storage remains
+154 MiB in build/ and 1.6 GiB in .analysis/; retained outputs support current
+evidence or replay, so no additional deletion was needed in this batch.
 
-All eight cold report source hashes match final source. Five obsolete F017
-diagnostic objects (66,374 bytes) were removed, preserving final objects,
-source probes and original evidence. Builds stayed serial and low priority;
-observed available memory remained above 8 GiB.
-
-
-Target-required tracking, all 3,603 public CI tests (73.9 seconds), progress
-freshness and whitespace checks pass. No prior exact unit was rebuilt.
+The main-state decompile is retained in `.analysis/f018-state.c` with its
+completion marker in `.analysis/f018-state.log`; native evidence remains in
+`.analysis/f017-43b610.asm`. No state-machine exact credit is claimed yet.
 
 The three proposed sprite drawing bodies at `0x0040CA80` /1,132,
 `0x0040CEF0` /994 and `0x0040D2E0` /970 instantiate a 132-byte geometry owner.
@@ -51,12 +46,13 @@ one write to local [ebp-4] at `0x00445A50` after the first deque-front call and
 no reads of that local. An original declaration or natural purpose for this
 discarded snapshot is unproven; do not add an inert local to obtain a match.
 
-The next bounded F018 cohort advances the remaining frame dependencies:
-`FrameActor::UpdateCounters` at `0x00452490` /1,696 (R045), then the main
+The next bounded F019 cohort advances the main
 battle state machine `0x0043B610` /4,764 (R041). Complete native reads are in
 `.analysis/f017-452490.asm` and
 `.analysis/f017-43b610.asm`; the timers decompile is retained in
-`.analysis/f017-actor-policies.c`. Reconcile all state-machine tables and
+`.analysis/f017-actor-policies.c`. The direct-switch ledger pins a 60-byte table at `0x0043C8AC`; the complete
+comparison must include 4,824 bytes, followed by eight INT3 alignment bytes.
+Reconcile all state-machine tables and
 low-word status exits, and preserve the existing ApplySequence deferral above.
 Also carry forward body separation `0x00449310` /1,861. These actual callers
 lead toward larger character updates; the 44-83 KiB authored handlers dominate
@@ -79,9 +75,9 @@ The initial Ghidra inventory has 4,351 provisional candidates. Origin review
 has resolved 4,254: 1,002 authored, 2,671 library and 581 compiler generated.
 There are 97 pending. Candidate count is not authored function count.
 
-The exact total is 104 source-present and exact functions, covering 28,040
-bytes across 104 match units. Exact coverage of the currently reviewed authored
-bytes is 28,040 / 1,973,516 (1.42%). This denominator is provisional because
+The exact total is 105 source-present and exact functions, covering 29,736
+bytes across 105 match units. Exact coverage of the currently reviewed authored
+bytes is 29,736 / 1,973,516 (1.51%). This denominator is provisional because
 origin review is incomplete. F008 adds nine reviewed game leaf helpers / 315
 bytes; F009 adds nine game policy and dependency helpers / 652 bytes. The
 current strategy is authored exact reconstruction. Preserve this baseline and

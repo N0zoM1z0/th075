@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F017",
+  "batch": "F010-F018",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "01adf211ef63d7db9ded5a70bba3c4c344790d404771397a440179fe7ee15ffb"
+      "current_sha256": "9336c57f2dd9527fb6a63e190e2f562391c7a0589c64eff3ebc2d9f0e8ce31d3"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "8b2369d429bf4c3e555ff5aba3a9eecf4837f028c739d3fa093a507ef2e2568d"
+      "current_sha256": "8b1429b63a96a8e614b39698e3d79166024abb45ea80e1cbdc03d5f0af1f290a"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "771ae30501065349636767433b69e1dd227bdf083b1e9d5355298e87f9269357"
+      "current_sha256": "4b3d71f2db9fda6bdd9ef03985aa5432bf3631fb2898f1e03314e5e10f986d83"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "365d0235e38d85c0e55e2b1baaea34f28ebeed1bf57db45474f8ae9ec676b3bb"
+      "current_sha256": "789e196696cfc102924c2d08ac908d9f8510a69d0616ad25a15b99d7042e33ff"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "622d7e4c68df67bc39afb54eda1a2e2064f64175e64e6a52d281b1f72af92ab8"
+      "current_sha256": "0a7ab6c59605bd1b5ca6ec70f3bc4b6d0867c89d25666aa333e292d963d3b32b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "51e80768be5dbf497df08e2abaeee3a1e3ce6099f0529d58b3e41ba16179e07f"
+      "current_sha256": "cf3390941a2e525dedd27f250b276d8dd247945fb46fdb90878947e921850e57"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "53d3f23031be655a86a7577e3d28b1567b5091cc33456969bf61688ecf1e07a3"
+      "current_sha256": "2c68a50dbdaa96f0ea9476342f36d02d063a95afb548a53e035f660e07c5a29f"
     }
   },
   "functions": [
@@ -1751,6 +1751,50 @@
       },
       "origin": {
         "address": "0x00452360",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00452490",
+        "size": "1696",
+        "span_end": "0x00452B2F",
+        "current_name": "FUN_00452490",
+        "proposed_name": "FighterState::AdvanceCombatTimers",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00452490",
+        "size": "1696",
+        "span_end": "0x00452B2F",
+        "current_name": "FUN_00452490",
+        "proposed_name": "FrameActor::UpdateCounters",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FrameActor::UpdateCounters()",
+        "is_thunk": "false",
+        "source_file": "src/CombatTimers.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F018; scripts/repo-python scripts/replay-exact-units.py --unit frame-actor-update-counters",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F018: complete cold exact replay with all relocations and any trailing switch table; no incomplete receiver is instantiated or embedded; role and field names remain inferred"
+      },
+      "origin": {
+        "address": "0x00452490",
         "origin": "authored",
         "subsystem": "FighterState",
         "disposition": "authored",
@@ -6245,6 +6289,268 @@
           "target": 4258496
         }
       ]
+    },
+    "frame-actor-update-counters": {
+      "source": "src/CombatTimers.cpp",
+      "object": "build/matching/CombatTimers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FrameActor::UpdateCounters"
+      ],
+      "symbol": "?UpdateCounters@FrameActor@@QAEXXZ",
+      "target_address": 4531344,
+      "size": 1696,
+      "relocations": [
+        {
+          "offset": 358,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 561,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 611,
+          "type": "DIR32",
+          "symbol": "__real@3ecccccd",
+          "target": 6651976
+        },
+        {
+          "offset": 635,
+          "type": "DIR32",
+          "symbol": "__real@3ca3d70a",
+          "target": 6652756
+        },
+        {
+          "offset": 661,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "__real@3e4ccccd",
+          "target": 6652744
+        },
+        {
+          "offset": 709,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 744,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 779,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 814,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1077,
+          "type": "REL32",
+          "symbol": "?PlaySharedSound@CombatTimerActor@@QAEXF@Z",
+          "target": 4537696
+        },
+        {
+          "offset": 1183,
+          "type": "REL32",
+          "symbol": "?IsState150To199@CombatTimerActor@@QAE_NXZ",
+          "target": 4542416
+        },
+        {
+          "offset": 1466,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 1474,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1480,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1492,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1498,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 1515,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 1523,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1529,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 1535,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1541,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1547,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 1564,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 1570,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1576,
+          "type": "DIR32",
+          "symbol": "__real@43d20000",
+          "target": 6649904
+        },
+        {
+          "offset": 1582,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1594,
+          "type": "DIR32",
+          "symbol": "__real@43520000",
+          "target": 6655600
+        },
+        {
+          "offset": 1600,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1617,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 1623,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1629,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1635,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1641,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1647,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 1653,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -6267,6 +6573,8 @@
     "src/BattleActiveCollision.cpp": "f0658e8b1411b6dbc36e9861b9c7ece599e83a5714c7c9f14ade829b3946c729",
     "src/BattleActiveCollision.hpp": "9cf31bdded9a7482f0e88a0b739a1e0abe0b4d979c1f7f866d212d2019c62458",
     "src/BattleFrame.cpp": "593fcdc263e8367d43ea7af1caafe4759cb86497faeed5b39139f370840bd61e",
-    "src/BattleFrame.hpp": "d2f8dc50734b2faaeddc0a4aee0f3c36e0999d9546b32337d9bbaf054ad505e6"
+    "src/BattleFrame.hpp": "d2f8dc50734b2faaeddc0a4aee0f3c36e0999d9546b32337d9bbaf054ad505e6",
+    "src/CombatTimers.cpp": "9c9dc62c177dfd14a332346489fc22207b18b50708c73dce50103b5795ce39fb",
+    "src/CombatTimers.hpp": "84de08601645aa1614f50db451272007d322206d3c6a8d29f69b486b615decdf"
   }
 }
