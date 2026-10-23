@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060",
+  "batch": "F010-F020; F022-F047; F049-F060; F062",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0022cce52ab68fafd0f6c236335196b72252a4304c03fdce10bce83eed4979de"
+      "current_sha256": "0f12235061e70522508ec7dead352522c12505d428710b59b3a892a5e00298f9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "bf207f4c569f1e09687f050284def8616cc8891b04f181bba26853bf9f88bbd8"
+      "current_sha256": "42c7c0952e0cb69f0ec4f64935cbb6384e24bd9317cd4b02fbdda578b726a99c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "1e8ca0774b1d154e207dc68d693da5030f4b6b3c8368d16b74a292bf7a7f3a76"
+      "current_sha256": "12bb30aa56d825cf59a705ab17733158869a2a1b524d0c3e85a8d930b4eb1d7b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6739689aaefa3f3145016b5a57ae9c9c329317ec953a28a8108f68de488ca846"
+      "current_sha256": "d6543b4bf5c056897edae42f1dd8f14fc1c1d44915868deab7a296181b031bf6"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "be757a8361f0ebc6821f70493a3d5d20d8cb6c7bc09175576149d1e7a37ad7db"
+      "current_sha256": "1dab001bcebcbe4a88738d3146bee290f81aaa33f674cb99f39ffb7a34e27fb0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "f0f0a64ae7f9c82ea752ff460a3f98ccbb3d7ede0044cd1329dc53bff5516538"
+      "current_sha256": "849d4cda741dcdc23f509cc89f115f374124db3b5de460014958ade39b6f914e"
     }
   },
   "functions": [
@@ -4132,6 +4132,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R064"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E5500",
+        "size": "1027",
+        "span_end": "0x005E5902",
+        "current_name": "FUN_005e5500",
+        "proposed_name": "CharacterAux::RunAt005E5500",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005E5500",
+        "size": "1027",
+        "span_end": "0x005E5902",
+        "current_name": "FUN_005e5500",
+        "proposed_name": "CharacterAux5E5500::AdvanceAuxiliary",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAux5E5500::AdvanceAuxiliary()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterAux5E5500.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F062; scripts/repo-python scripts/replay-exact-units.py --unit character-aux-policy-005e5500",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F062: cold exact complete1027-byte auxiliary policy,240 instructions and11 relocations; three current-receiver tracked-effect calls; R049 historical role preserved by alias; names and complete object layout remain unknown; never construct or embed this declaration-only view"
+      },
+      "origin": {
+        "address": "0x005E5500",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
       }
     }
   ],
@@ -86874,6 +86918,95 @@
           "target": 6301860
         }
       ]
+    },
+    "character-aux-policy-005e5500": {
+      "source": "src/CharacterAux5E5500.cpp",
+      "object": "build/matching/CharacterAux5E5500.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAux5E5500::AdvanceAuxiliary"
+      ],
+      "symbol": "?AdvanceAuxiliary@CharacterAux5E5500@@QAEXXZ",
+      "target_address": 6182144,
+      "size": 1027,
+      "compare_size": 1027,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "__real@42bc0000",
+          "target": 6656312
+        },
+        {
+          "offset": 313,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 526,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 569,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 764,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 807,
+          "type": "REL32",
+          "symbol": "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z",
+          "target": 4537024
+        },
+        {
+          "offset": 843,
+          "type": "DIR32",
+          "symbol": "__real@44070000",
+          "target": 6656308
+        },
+        {
+          "offset": 874,
+          "type": "DIR32",
+          "symbol": "__real@c4070000",
+          "target": 6656304
+        },
+        {
+          "offset": 917,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 948,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -86978,6 +87111,8 @@
     "src/MeilingSequence.cpp": "60c2ed2d7868a02575ad380ae10ca613d13be99d17ea1d0a0cda68f5cf052b8c",
     "src/MeilingSequence.hpp": "7a1e1da37dcebb3d87c0359e1296cc350e9db27abc186b907d0b5a80407f791e",
     "src/CharacterAuxAction.cpp": "a7e8dd830200ee1fc6ba3ee5f45890143111ecba86cba9dd57205b42ab1bca60",
-    "src/CharacterAuxAction.hpp": "38ef5c338cb021190b6e63f6bf8037653619d36f818348972c6af2aa4ddf17db"
+    "src/CharacterAuxAction.hpp": "38ef5c338cb021190b6e63f6bf8037653619d36f818348972c6af2aa4ddf17db",
+    "src/CharacterAux5E5500.cpp": "6fbb43847a42ffe529ce714c9e9341f045983feb9f2686b0b4223bca15a188be",
+    "src/CharacterAux5E5500.hpp": "4690972ccb7f46952c133f87039198e67b7780d11358f09f4cb03893d0142c38"
   }
 }

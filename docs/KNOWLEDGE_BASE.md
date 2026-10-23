@@ -19730,3 +19730,59 @@ manifest raw-byte pins, historical-prefix, progress-card and whitespace checks
 pass. No accepted units are rebuilt. Serial compiler builds use niceness 15
 and CI uses niceness 10; interval samples show no swap activity, with about
 8.7 to 9.1 GiB available memory.
+
+
+## F062 auxiliary policy cold acceptance (2026-10-23)
+
+R049 `0x005E5500..0x005E5902` cold-replays exact as
+`CharacterAux5E5500::AdvanceAuxiliary`, from `src/CharacterAux5E5500.cpp` / `.hpp`:
+1,027 complete bytes, 240 instructions, 14 internal branches, one return and
+11 physical relocations. There are no tables, shared tails or indirect calls.
+Thirteen following INT3 bytes are excluded. An explicit alias preserves
+historical `CharacterAux::RunAt005E5500`; origin evidence and the complete
+extent are unchanged. Original names, declarations and full layout stay unknown.
+
+All three tracked-effect calls use current, six slots and 24-byte cleanup.
+The complete 136-byte R102 callee pins argument widths and rejects incorrect
+20-byte cleanup at a stack join. The caller ignores its result; an original
+void return is not established. The last byte selects forwarding +2F0 draw
+state. No callee source or origin credit is added. Actual COFF readonly payloads,
+target permissions, widths, addends, all 11 relocations and all 14 branches are
+checked. Preview, independent canonical compile and separate cold replay match
+all 1,027 bytes with pinned VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+
+The body retains three independent 150..153 / 154..157 / 158 windows, observed
+setup fields and effect 998 offsets (direction*57+x, y+94/60/100). The +F0A guard
+stays outside these windows. Velocity zero clears a positive signed +3AC byte.
+Independent +/-540 and +/-320 distance tests preserve +F2A saturation, reset
+and integer-promoted short increment. Never construct or embed the partial
+receiver. There are no target arrays, assembly, inert locals, padding,
+ABI-result changes or alternate bodies.
+
+All 153 prior units and source inputs remain unchanged and are not rebuilt.
+The manifest preserves F009 plus 94 additions / 506,695 code bytes / 104 new
+source inputs; F061 stays excluded. Total exact coverage is 154 functions /
+516,578 bytes: 26.18% reviewed authored, 26.13% conservative including every
+pending byte. All 97 unresolved origins and evidence through R268 stay unchanged.
+
+The F061 float-angle postfix control emits identical whole code and bindings
+and is rejected; active07 stays unchanged and unaccepted. Do not repeat this
+or earlier byte-view/literal/return controls without new evidence. Continue
+the active 95% goal with independently reviewed F063 at `0x005E59C0`: 3,797 code
+bytes plus the complete 40-byte direct table, 3,837 compared bytes. Its four
+complete callees, all 935 instructions, 58 call sites and every stack join are
+reviewed: 37 record calls use current, seven primary resets use opponent at
++2E8, and 14 camera calls use cdecl. Wrong 28-byte record cleanup fails. All ten
+state effects, source and complete physical/cold comparison remain outstanding.
+Keep the f062/f063 native, ABI, replay, relocation and source receipts cited
+in the handoff. No REA or pause; serial low-priority builds and affected cold
+replays only.
+
+Full CI passes all 3,603 tests in 133.855 seconds. Tracking, progress-card,
+prior-unit/source/origin, historical-prefix and whitespace checks pass.
+`f062-obsolete-output-cleanup.json` records two reproducible preview objects /
+69,901 bytes removed after whole function-byte and physical binding equality
+checks against retained objects. Every source/control input and receipt,
+accepted object, unaccepted active object and shared tool remains. Interval
+samples show no swap activity and about 8.7 to 9.1 GiB available memory;
+compiler builds stay serial at niceness 15 and CI runs at niceness 10.

@@ -15655,3 +15655,26 @@ relocations = [
   { offset = 0x7B88, type = "DIR32", symbol = "$L4754", target = 0x0060272A },
   { offset = 0x7B8C, type = "DIR32", symbol = "$L304", target = 0x006028A4 },
 ]
+
+[units.character-aux-policy-005e5500]
+source = "src/CharacterAux5E5500.cpp"
+object = "build/matching/CharacterAux5E5500.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterAux5E5500::AdvanceAuxiliary"]
+symbol = "?AdvanceAuxiliary@CharacterAux5E5500@@QAEXXZ"
+target_address = 0x005E5500
+size = 1027
+compare_size = 1027
+relocations = [
+  { offset = 0xE, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0x10E, type = "DIR32", symbol = "__real@42bc0000", target = 0x00659138 },
+  { offset = 0x139, type = "REL32", symbol = "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z", target = 0x00453AC0 },
+  { offset = 0x20E, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x239, type = "REL32", symbol = "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z", target = 0x00453AC0 },
+  { offset = 0x2FC, type = "DIR32", symbol = "__real@42c80000", target = 0x00657888 },
+  { offset = 0x327, type = "REL32", symbol = "?SpawnTrackedEffect@CharacterAux5E5500@@QAEXFMMCCE@Z", target = 0x00453AC0 },
+  { offset = 0x34B, type = "DIR32", symbol = "__real@44070000", target = 0x00659134 },
+  { offset = 0x36A, type = "DIR32", symbol = "__real@c4070000", target = 0x00659130 },
+  { offset = 0x395, type = "DIR32", symbol = "__real@43a00000", target = 0x0065787C },
+  { offset = 0x3B4, type = "DIR32", symbol = "__real@c3a00000", target = 0x00657880 },
+]
