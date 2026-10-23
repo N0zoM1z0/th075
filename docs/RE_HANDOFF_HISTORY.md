@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F030. Counts, active
+This file preserves historical checkpoints through R268 and F031. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -5092,4 +5092,88 @@ low priority, without parallel compiler jobs. The 95% goal remains active.
 
 No prior accepted source/header, ABI, compiler flags or relocation changed in
 F030; cold-replay only new or affected units. Keep compiler builds serial and
+low priority, monitor CPU/memory, and preserve `config/claims.csv` header-only.
+
+## F031 checkpoint before F032 acceptance (2026-10-23)
+
+## Latest accepted cohort: F031
+
+`CharacterAction5E2310::DispatchActions` at `0x005E2310..0x005E54F8`
+cold-replays exact across all **12,777 code bytes**. Seven following INT3
+bytes are alignment. R047 ownership and the complete target body hash are
+unchanged. All 3,428 instructions, 686 internal branches, one return and 55
+ordered candidates are reconciled, without switch tables or external exits.
+
+Canonical source is `src/CharacterActionDispatch5E2310.cpp` / `.hpp`. Its
+separate pointer-only owner view reuses the unchanged slot-reference ABI in
+`ReimuActionDispatch.hpp`. Original character identity and complete layout
+remain unknown; no incomplete owner is instantiated or embedded. An explicit
+alias preserves the original R047 mapped role. All 118 prior units and their
+inputs remain unchanged and were not rebuilt.
+
+Unit `character-action-dispatch-005e2310` binds all **239 relocations**:
+173 calls and 66 references to nine readonly constants. Actual fresh COFF
+constant payloads were checked against target bytes. No writable global is
+referenced by this unit. Input 103 comes first, then six advanced policies,
+then the two ordinary input-102 policies. Several attacks clear input before
+rereading state: preserve their 300..326 transition branches, immediate returns
+and fallthrough into subsequent candidates. Do not cache state across callbacks.
+See the knowledge base for exact condition order, distance gates and reset IDs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-005e2310
+```
+
+Profile: pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+Private observations and receipts remain below `.analysis/`:
+`f031-5e2310.asm`, `f031-native-audit.py` / `.json`, `f031-dispatch.c`,
+`f031-decompile.log`, `f031-dispatch-diagnostic.py`, `f031-dispatch-audit.json`,
+`f031-bind-relocations.py`, `f031-relocation-bindings.json`,
+`f031-accepted-replay.json`, `f031-cold-replay.log` and `f031-progress.json`.
+Detailed F022-F031 observations are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md);
+previous dispatch handoff sections are preserved in the history archive.
+
+The next bounded R047 cohort is F032 at `0x0052D230..0x005301A1` /12,146 bytes.
+Its completed native audit checks 3,267 instructions, 646 internal branches,
+one return and 171 direct calls, without switch tables or external branch exits.
+Fourteen following INT3 bytes are alignment. Retain private `f032-native-audit.py`
+/ `.json`, `f032-52d230.asm`, `f032-dispatch.c`, `f032-decompile.log` and
+`f032-progress.json` below `.analysis/`. The read-only decompile is attested
+and complete. No source draft or exact credit is registered for F032. Continue
+its independent C++ reconstruction; do not assume F031 conditions apply.
+Native F032 has four separate MOVSX byte reads at 0x006714D0, comparing 0/1/2/3
+after packing and between possible resets. Reuse the already registered
+`g_StateRepeatLevelAt006714D0` signed-byte view, bind writable storage by address,
+and preserve fresh reads rather than treating the initial byte as a constant.
+Do not duplicate its existing global ledger row. Private
+`f032-absolute-memory.json` records the original load instructions.
+The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F031 final validation: all 3,603 CI tests passed in 76.890 seconds, including
+historical-prefix, complete adoption, name-alias, origin, tracking and progress
+freshness checks. Cold source/header and final-object hashes remain intact.
+Four superseded preview files were removed after canonical-source equality
+checks (107,173 bytes); `.analysis/f031-cleanup.json` records paths and hashes.
+Private `f030-compiler-control.json` and `f031-compiler-control.json` preserve
+hash-verified recipes for the initial rejected comparison/branch variants.
+Original evidence, canonical inputs, matching outputs and F021 remain preserved.
+The latest sampled available memory was 8.8 GiB, with CPU 94% idle and no
+swap-in/out in that host interval. Compiler builds and validation remained
+low priority, without parallel compiler jobs. The 95% goal remains active.
+
+No prior accepted source/header, ABI, compiler flags or relocation changed in
+F031; cold-replay only new or affected units. Keep compiler builds serial and
 low priority, monitor CPU/memory, and preserve `config/claims.csv` header-only.

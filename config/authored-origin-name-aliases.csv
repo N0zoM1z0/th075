@@ -65,3 +65,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004E2F20,CharacterAction::DispatchAt004E2F20,CharacterAction4E2F20::DispatchActions,R047,character-action-dispatch-004e2f20
 0x005C0D70,CharacterAction::DispatchAt005C0D70,CharacterAction5C0D70::DispatchActions,R047,character-action-dispatch-005c0d70
 0x005E2310,CharacterAction::DispatchAt005E2310,CharacterAction5E2310::DispatchActions,R047,character-action-dispatch-005e2310
+0x0052D230,CharacterAction::DispatchAt0052D230,CharacterAction52D230::DispatchActions,R047,character-action-dispatch-0052d230

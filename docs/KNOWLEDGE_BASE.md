@@ -16367,3 +16367,152 @@ The F026 global-aware diagnostic/binder is a reference for investigation, but
 its single-load/zero-test assumptions do not apply unchanged to these four
 comparisons. Continue full independent reconstruction with the existing Ghidra
 wrapper and local tools, without REA or pausing for cleanup/handoff.
+
+
+## F032: complete action dispatcher at 0x0052D230 (2026-10-23)
+
+The full R047 authored extent 0x0052D230..0x005301A1 contains 12,146 code bytes,
+SHA-256 `b2f5a2ee8b30cca7edfd85a1219cdcdefd32b9da2224f5f1fa222bc7165bae89`.
+Native review checks 3,267 instructions, 646 internal branches, one return and
+56 ordered policies. There are no switch tables or external branch exits;
+fourteen following INT3 bytes are alignment. Identity and decompile completion
+remain attested by the existing read-only Ghidra wrapper without target or
+database patches. Independent R047 body and ownership evidence are unchanged.
+
+Canonical source `src/CharacterActionDispatch52D230.cpp` / `.hpp` defines a
+separate pointer-only `CharacterAction52D230` view, reusing the unchanged slot-
+reference ABI and the already registered `g_StateRepeatLevelAt006714D0` signed-
+byte view. No prior source/header is edited and no duplicate global row is
+added. The original global declaration, semantic name, character identity and
+full owner layout remain unknown. No incomplete owner is instantiated or
+embedded; an explicit alias preserves the original R047 mapped role.
+
+The complete canonical cold command
+`scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-0052d230`
+returns exact after rebuilding the entire 12,146-byte function. The pinned
+VC7.1 build 3077 profile is `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 237
+relocations are bound: 171 direct calls, 62 readonly references and four
+writable-global loads. Actual fresh COFF constant payloads match original
+bytes; relocation patching makes the entire body byte-equal, including all
+branch encodings and destinations. Calls comprise 52 slot accesses
+(0x004420B0), 35 direction packs (0x00455B30), 63 resets (0x0040FAC0) and 21
+auxiliary clears (0x00453A10). Five readonly constants are 0, 60, 100 and
+320/-320. Diagnostic alignment alone earns no credit; acceptance is the fresh
+complete canonical cold replay. Source is natural C++, without assembly,
+byte arrays, inert locals, padding or alternate conditional bodies.
+
+Six leading special policies omit cancellation and check input, ground, flag
+and priority. Inputs 230/220 select 760/752. Input 210 looks up 745, packs,
+then independently checks the signed byte at 0x006714D0 for 0/1/2/3 and selects
+746/745/744/743 respectively. The original MOVSX loads are at 0x0052D393,
+0x0052D3AB, 0x0052D3C4 and 0x0052D3DD. The binder verifies each destination
+register, TEST/CMP immediate, conditional reset and next-load/exit destination,
+as well as the target's readable/writable .data section. Each reset may be
+followed by another fresh global read; a cached value, switch or else-if chain
+would change this callback-visible behavior. Other byte values perform no
+primary reset in this policy. Remaining leading inputs 202/201/200 select
+733/732/731. Input 103 then retains ground, +36C >=100, +39C zero, +3A0 <=0,
+flag, lookup 795 and cancellation.
+
+Six advanced policies precede both ordinary 102 policies. Mode 1 at +39A
+choices 0/1/2 selects 701/703/705; mode 2 at +398 selects 700/702/704. Choices
+0/1 start with resource >0, then input 13, ground, +3A0 >0, +36C >=100,
+selector, signed +39D mode, flag, priority and cancellation. Choice 2 starts
+with signed resource >250 and +F12 ==0, then input/ground/state resource gates,
+selector/mode, +F10 ==0, flag, priority and cancellation. Native 0x0052D85E
+compares resource against 250 with JLE. No advanced policy rereads height
+after reset. Both ordinary 102 policies begin with signed +366 >0, ground,
+input and flag. The first looks up 594 with cancellation, packs and selects
+595/594 on fresh ground height, or 599/598/597 on positive height using state
+150..158 / above 299 / otherwise. The second looks up 596, requires state <300,
+packs and selects 596 only after another fresh ground read.
+
+Simple inputs 50/51/31/30 select 509/510/501/500, using input, ground, resource,
+flag, priority and cancellation. Input 12 selects 600 with flag before resource.
+Inputs 21/20 select 513/502 with input, resource, flag and ground. Input 101
+selects 309 with flag before ground; 100 selects 310 with ground before flag.
+Seven movement policies and four final air direction fallbacks retain rank
+99/49 only, signed +3AD <2, direct byte increment, diagonal <=-1 / >=1 and the
+60.0f early-ascent rejection where observed. Complete native comparison checks
+their exact predicate, callback and branch order.
+
+Seven positive-vertical ground attacks retain specials 392/393, forward
+motion, state 200, flag and the shared +500 B buffer. Flat A selects 408 at
+320/-320 after resource/flag, then 302. Flat B checks +F12 ==0 before resource,
+flag and 320/-320 for 414, then selects 303 with current-state 300/303 priority
+exceptions. C checks flag before resource for 402. Nine neutral attacks retain
+specials 390/391. Flat long A repeats vertical zero before resource/flag and
+320/-320 for 406; the separate forward candidate selects 308. Ordinary A
+selects 300 with state 300/303 priority exceptions. Flat long B repeats vertical
+zero, then +F12 ==0, resource, flag and 320/-320 for 412; the separate forward
+candidate selects 307. Ordinary B selects 301. C checks flag before resource
+for 400. No extra forward-C or ordinary long-B candidate is introduced.
+
+Five air attacks precede the four direction fallbacks. A's outer input/flag
+group contains an inner resource/flag/320/-320 policy for 410 and a priority/
+cancellation fallback for 304 without another flag read. A failed lookup can
+therefore be followed by the fallback while retaining the original outer flag
+decision. Nested B checks +F12 ==0, resource, flag and 320/-320 for 416, then
+flag/priority for 305. C checks flag before resource for 404. All fresh reads,
+callback ordering and control flow agree with the complete target body.
+
+Private evidence remains below `.analysis/`: `f032-52d230.asm`,
+`f032-native-audit.py` / `.json`, `f032-dispatch.c`, `f032-decompile.log`,
+`f032-absolute-memory.json`, `f032-dispatch-diagnostic.py`,
+`f032-dispatch-audit.json`, `f032-bind-relocations.py`,
+`f032-relocation-bindings.json`, `f032-accepted-replay.json`,
+`f032-cold-replay.log` and `f032-progress.json`. Coverage becomes 120 exact
+functions /191,836 bytes (9.72% reviewed authored; 9.70% conservatively including
+all 3,608 pending bytes). The cumulative manifest preserves 60 additions
+/181,953 bytes above F009 and 48 new source/header inputs. All 119 prior units
+and inputs remain unchanged and were not rebuilt. Seven historical byte-prefix
+guards, the existing global row and origin evidence through R268 remain intact.
+All 97 unknown origins remain unknown; F021 earns no exact credit. F031 handoff
+and verification sections remain verbatim in the history archive. Continue with
+F033 at 0x00472890 /8,871 bytes, independently inspecting the full AI policy and
+its callees/ABI toward the active 95% goal, without REA or pausing for handoff.
+
+
+Final F032 validation passes all 3,603 CI tests in 77.264 seconds. Canonical
+cold source/header and final-object hashes remain intact. Four superseded
+previews were removed after canonical equality checks (96,373 bytes);
+`.analysis/f032-cleanup.json` preserves paths, sizes and hashes. Original
+evidence, canonical inputs, matching outputs and F021 remain preserved. The
+final host sample had 8.7 GiB available memory and CPU 91% idle, with 4 KiB/s
+swap-in and no swap-out in that interval. Builds remained serial and low priority.
+
+F033 preparation retains an attested decompile and full native audit of
+0x00472890..0x00474B36 /8,871 bytes, with R047 body SHA-256
+`1d4dd0b4baaaf100bc62d82ae014085f42f054bdbc6614caf0bf0badb0bf8ac9`.
+Its 2,274 instructions contain 496 internal branches, one return and 109 direct
+calls: two to 0x00412D90, 99 to CRT rand at 0x006418AB, two to the already exact
+state-50..149 predicate at 0x00454F90, and six to the R221 integer-range policy
+at 0x00455610. There are no switch tables or external exits; nine following
+INT3 bytes are alignment. `f033-native-audit.py` / `.json`, `f033-472890.asm`,
+`f033-ai.c`, `f033-decompile.log` and `f033-progress.json` retain original
+observations and target/completion markers. No source or exact credit is
+registered. Caller observations show 4-byte floating arguments and ST0 results
+stored to float locals for 0x00412D90. Its full 17-byte forwarding body and
+28-byte worker at 0x00412DB0 widen the argument to a double runtime call at
+0x006418CD; original declarations/spellings and origin ownership remain R163
+unknowns, without mapping or exact credit. The range policy's full 44-byte body
+receives ECX and two signed dword endpoints, scales CRT rand with the low 32-bit
+product and truncating division by32768, adds the lower endpoint and returns
+with RET 8. Establish any source ABI from full caller/callee evidence, retaining
+unknown declaration and valid-input assumptions.
+
+The complete private `f033-ai-family-audit.py` checks R047 body hashes and CFGs
+for six 8,871-byte functions: 0x00472890, 0x004E7DE0, 0x00579650, 0x0059D240,
+0x005C5D10 and 0x005E7370. All have 2,274 instructions and 496 branches, but
+call-target normalization does not make them identical. The full comparison
+reports selector read offsets at function offsets +08FA/+09CC/+0B36/+0C81/
++1DF4, a mode compare at +0910, and seven writable-counter references near
++2221..+229C. Counter addresses are 0x0068D61C/0x0068D634/0x0068D654/
+0x0068D65C/0x0068D664/0x0068D66C respectively. Private
+`f033-ai-family-survey.json` and `f033-ai-family-differences.json` preserve every
+reported difference; rerunning the detailed audit reproduced its pinned SHA-256.
+These are investigation evidence, not exact credit or proof of complete owner
+layouts. A shared natural source body would require behavior-bearing profiles,
+truthful ABI and an independent complete canonical cold replay for each target.
+Continue the full 95% objective using Ghidra/local tools without REA or pausing
+for cleanup/handoff.

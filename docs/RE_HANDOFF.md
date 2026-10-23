@@ -14,14 +14,14 @@ CPU/memory monitoring.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 119 / 119 / 119 |
-| Exact code bytes | 179,690 |
-| Reviewed authored coverage | 179,690 / 1,973,516 (9.11%) |
-| Conservative coverage, including every pending byte | 179,690 / 1,977,124 (9.09%) |
+| Source-present / exact functions / exact units | 120 / 120 / 120 |
+| Exact code bytes | 191,836 |
+| Reviewed authored coverage | 191,836 / 1,973,516 (9.72%) |
+| Conservative coverage, including every pending byte | 191,836 / 1,977,124 (9.70%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 59 reviewed additions /169,807 bytes,
-with 46 new source/header inputs through F031. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 60 reviewed additions /181,953 bytes,
+with 48 new source/header inputs through F032. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -31,57 +31,62 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F031
+## Latest accepted cohort: F032
 
-`CharacterAction5E2310::DispatchActions` at `0x005E2310..0x005E54F8`
-cold-replays exact across all **12,777 code bytes**. Seven following INT3
+`CharacterAction52D230::DispatchActions` at `0x0052D230..0x005301A1`
+cold-replays exact across all **12,146 code bytes**. Fourteen following INT3
 bytes are alignment. R047 ownership and the complete target body hash are
-unchanged. All 3,428 instructions, 686 internal branches, one return and 55
+unchanged. All 3,267 instructions, 646 internal branches, one return and 56
 ordered candidates are reconciled, without switch tables or external exits.
 
-Canonical source is `src/CharacterActionDispatch5E2310.cpp` / `.hpp`. Its
+Canonical source is `src/CharacterActionDispatch52D230.cpp` / `.hpp`. Its
 separate pointer-only owner view reuses the unchanged slot-reference ABI in
-`ReimuActionDispatch.hpp`. Original character identity and complete layout
-remain unknown; no incomplete owner is instantiated or embedded. An explicit
-alias preserves the original R047 mapped role. All 118 prior units and their
-inputs remain unchanged and were not rebuilt.
+`ReimuActionDispatch.hpp` and the existing signed-byte global symbol. Original
+character identity, full owner layout and original global declaration remain
+unknown; no incomplete owner is instantiated or embedded. An explicit alias
+preserves the R047 mapped role. All 119 prior units and their inputs remain
+unchanged and were not rebuilt. No duplicate global ledger row was added.
 
-Unit `character-action-dispatch-005e2310` binds all **239 relocations**:
-173 calls and 66 references to nine readonly constants. Actual fresh COFF
-constant payloads were checked against target bytes. No writable global is
-referenced by this unit. Input 103 comes first, then six advanced policies,
-then the two ordinary input-102 policies. Several attacks clear input before
-rereading state: preserve their 300..326 transition branches, immediate returns
-and fallthrough into subsequent candidates. Do not cache state across callbacks.
-See the knowledge base for exact condition order, distance gates and reset IDs.
+Unit `character-action-dispatch-0052d230` binds all **237 relocations**:
+171 calls, 62 references to five readonly constants and four writable-global
+loads. Actual fresh COFF constant payloads match their target bytes. The four
+MOVSX byte reads at 0x006714D0 compare 0/1/2/3 separately after packing and
+between possible resets 746/745/744/743. They remain fresh reads bound to the
+writable address, not its initial value. Advanced choice 2 in both modes uses
+resource >250 with +F12/+F10 guards. Air A retains its outer flag check and
+its distinct inner reads. See the knowledge base for exact policy order.
 
 ```bash
-scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-005e2310
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-0052d230
 ```
 
 Profile: pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
 Private observations and receipts remain below `.analysis/`:
-`f031-5e2310.asm`, `f031-native-audit.py` / `.json`, `f031-dispatch.c`,
-`f031-decompile.log`, `f031-dispatch-diagnostic.py`, `f031-dispatch-audit.json`,
-`f031-bind-relocations.py`, `f031-relocation-bindings.json`,
-`f031-accepted-replay.json`, `f031-cold-replay.log` and `f031-progress.json`.
-Detailed F022-F031 observations are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md);
-previous dispatch handoff sections are preserved in the history archive.
+`f032-52d230.asm`, `f032-native-audit.py` / `.json`, `f032-dispatch.c`,
+`f032-decompile.log`, `f032-absolute-memory.json`, `f032-dispatch-diagnostic.py`,
+`f032-dispatch-audit.json`, `f032-bind-relocations.py`,
+`f032-relocation-bindings.json`, `f032-accepted-replay.json`,
+`f032-cold-replay.log` and `f032-progress.json`. Detailed F022-F032 observations
+are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md); earlier handoffs are archived.
 
-The next bounded R047 cohort is F032 at `0x0052D230..0x005301A1` /12,146 bytes.
-Its completed native audit checks 3,267 instructions, 646 internal branches,
-one return and 171 direct calls, without switch tables or external branch exits.
-Fourteen following INT3 bytes are alignment. Retain private `f032-native-audit.py`
-/ `.json`, `f032-52d230.asm`, `f032-dispatch.c`, `f032-decompile.log` and
-`f032-progress.json` below `.analysis/`. The read-only decompile is attested
-and complete. No source draft or exact credit is registered for F032. Continue
-its independent C++ reconstruction; do not assume F031 conditions apply.
-Native F032 has four separate MOVSX byte reads at 0x006714D0, comparing 0/1/2/3
-after packing and between possible resets. Reuse the already registered
-`g_StateRepeatLevelAt006714D0` signed-byte view, bind writable storage by address,
-and preserve fresh reads rather than treating the initial byte as a constant.
-Do not duplicate its existing global ledger row. Private
-`f032-absolute-memory.json` records the original load instructions.
+The next bounded R047 cohort is F033 at `0x00472890..0x00474B36` /8,871 bytes,
+provisionally mapped as `CharacterAI::ChooseAt00472890`. Its complete native
+audit checks 2,274 instructions, 496 internal branches, one return and 109
+direct calls, with no switch tables or external exits. Nine following INT3
+bytes are alignment. The read-only Ghidra decompile is attested and complete.
+Retain private `f033-native-audit.py` / `.json`, `f033-472890.asm`, `f033-ai.c`,
+`f033-decompile.log`, `f033-ai-family-survey.json`,
+`f033-ai-family-differences.json` and `f033-progress.json` below `.analysis/`.
+No source draft or exact credit is registered for F033. Independently inspect
+callee ABI and full policy before authoring natural C++.
+
+Five other R047 bodies of the same length at 0x004E7DE0, 0x00579650,
+0x0059D240, 0x005C5D10 and 0x005E7370 have individually checked body hashes
+and full CFGs. The complete instruction comparison exposes selector offsets,
+mode constants and writable-counter addresses that differ. Preserve every
+reported difference; do not treat equal length or normalized calls as exact
+credit. A shared source body would require explicit, behavior-bearing profiles
+and a complete canonical cold replay for each function.
 The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
 
 ## Unaccepted work: F021
@@ -167,18 +172,18 @@ nice -n 10 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-F031 final validation: all 3,603 CI tests passed in 76.890 seconds, including
+F032 final validation: all 3,603 CI tests passed in 77.264 seconds, including
 historical-prefix, complete adoption, name-alias, origin, tracking and progress
 freshness checks. Cold source/header and final-object hashes remain intact.
 Four superseded preview files were removed after canonical-source equality
-checks (107,173 bytes); `.analysis/f031-cleanup.json` records paths and hashes.
-Private `f030-compiler-control.json` and `f031-compiler-control.json` preserve
-hash-verified recipes for the initial rejected comparison/branch variants.
+checks (96,373 bytes); `.analysis/f032-cleanup.json` records paths and hashes.
 Original evidence, canonical inputs, matching outputs and F021 remain preserved.
-The latest sampled available memory was 8.8 GiB, with CPU 94% idle and no
-swap-in/out in that host interval. Compiler builds and validation remained
-low priority, without parallel compiler jobs. The 95% goal remains active.
+The final host sample had 8.7 GiB available memory and CPU 91% idle, with
+4 KiB/s swap-in and no swap-out during that interval. Compiler builds and
+validation remained low priority without parallel compiler jobs. The 95% goal
+remains active. The reproducible private `f033-ai-family-audit.py` retains every
+reported difference between the six unaccepted R047 AI bodies.
 
 No prior accepted source/header, ABI, compiler flags or relocation changed in
-F031; cold-replay only new or affected units. Keep compiler builds serial and
+F032; cold-replay only new or affected units. Keep compiler builds serial and
 low priority, monitor CPU/memory, and preserve `config/claims.csv` header-only.
