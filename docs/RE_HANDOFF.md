@@ -119,23 +119,38 @@ checking does not complete the remaining cases' argument/behavior review.
 Retain `f048-abi-export.py` / `.json`, `f048-abi-review.py` / `.json`, all
 `f048-abi-*.asm` and `f048-contexts-*.json`.
 
-Private natural source fragments now cover **85/151 states**, representing
-24,719 bytes of native physical case regions. These are diagnostic partitions,
+Private natural source fragments now cover **109/151 states**, representing
+39,325 bytes of native physical case regions. These are diagnostic partitions,
 not accepted function extents or exact credit. The reviewed states are all
-nondefault entries through 393 plus singleton 596; 66 states remain. Retain
+nondefault entries through 503 plus singleton 596; 42 states remain. Retain
 `.analysis/character-action-4ac040/`, `f048-case-index.json`,
 `f048-case-review.json`, `f048-progress.json`, `f048-refresh-draft.py` and
 `f048-compose.py`. The index records every native entry and drafted fragment;
 the review/progress receipts pin the source hashes and outstanding work.
 
 `SyntaxOnly.cpp` passed pinned VC7.1 `/Zs /Od /Ob0 /GR- /GX- /I src` checking
-for the 85 reviewed cases (`f048-syntax-85.log`). It is incomplete, must never
+for the 109 reviewed cases (`f048-syntax-109.log`). It is incomplete, must never
 execute, and emits no object. No whole `Preview.cpp` is materialized until all
 151 states are present; the composer rejects incomplete inputs. No F048
 mapping, source-presence or exact ledger entry is accepted. The next source
-work starts at state 400, continues through the remaining 401..595 states,
+work starts at state 504, continues through the remaining 505..595 states,
 then 597..796. Preserve the phase-six/phase-four nested tests in state 392:
 both checks exist in native code despite their contradictory values.
+
+The 24 new shot-policy cases (400..503) account for 14,606 contiguous native
+bytes. `f048-shot-review.py` / `.json` pin their complete regions, actual
+literal payload widths and static call multiplicities. Keep all independent
+effect calls and both duplicate branches in 418. For random loops in
+416/417/419/420, native computes height+constant+index*spacing and stores a
+float before calling the y range helper; the decompile's arithmetic grouping
+is insufficient. The natural call arguments retain this order and independent
+x/y random calls. State 416 alone decrements F00 before advancement. States
+502/503 use actual qword 0.25/0.1 scaling; preserve double literals. State 501
+sets gravity after shared effect127, while 500 sets it before that call.
+Retain `f048-draft-shot-cases.py`, `f048-draft-paired-cases.py`,
+`f048-progress-85.json`, `f048-case-review-85.json`, and syntax input snapshots
+`f048-syntax-85.source`, `f048-syntax-105.source`, `f048-syntax-109.source`.
+All earlier 85-case fragments and accepted inputs remain unchanged.
 
 The decompile is a hypothesis, not source or exact evidence; its
 ContextBase/Concurrency labels establish no owner or origin. Complete the
@@ -242,17 +257,17 @@ outputs and F021 remain preserved. A host sample had 9.1 GiB available memory
 and CPU 92% idle, without interval swap activity. Builds and validation remained
 serial and low priority.
 
-F048 progress validation: all 3,603 CI tests passed in 100.558 seconds
-(`.analysis/f048-progress-ci.log`). The private evidence and draft hashes are
-checked in `f048-private-draft-check.json`; the incomplete-source control
-confirms that 85/151 cases cannot materialize a whole comparison input.
-No accepted source, header, descriptor, relocation or compiler profile changed,
-so no unchanged accepted unit was rebuilt. Documentation retains the earlier
-knowledge-base content verbatim and appends the new bounded investigation.
-The host had about 9 GiB available memory; interval CPU was 87% idle with no
-swap activity. The next-state checkpoints are in
-`.analysis/f048-next-state400-checkpoints.json`; they are unaccepted hypotheses
-requiring complete native review before source. Continue exploration.
+Latest F048 109-case validation: all 3,603 CI tests passed in 115.546 seconds
+(`.analysis/f048-state400-ci.log`). `f048-private-draft-check-109.json` checks
+all twenty native/decompile/draft input hashes; the incomplete-source control
+rejects a 109/151-case whole comparison input. No accepted source, header,
+descriptor, relocation, compiler profile or origin ledger changed, so no
+unchanged accepted unit was rebuilt. The earlier knowledge-base bytes remain
+verbatim. The host had about 9 GiB available memory; interval CPU was 85% idle
+with no swap activity. `f048-next-state504-checkpoints.json` retains the next
+native case's unsigned alpha gates, random order, six independent effect calls
+and genuine early exits for source work. State 504 is not yet drafted or
+accepted. Continue exploration; whole source/comparison/replay are outstanding.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,

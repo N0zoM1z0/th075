@@ -18184,3 +18184,81 @@ the actual 116/153/60/110 float payloads in
 `f048-next-state400-checkpoints.json`; these remain unaccepted decompile
 hypotheses until the complete native argument expressions and ordering are
 reviewed. Continue at state 400 without pausing the active goal.
+
+## F048 continuation: shot policies through state 503 (2026-10-23)
+
+The next 24 independently reviewed private cases cover all actual entries
+400..503, a contiguous 14,606-byte native region at
+`0x004B2167..0x004B5A74`. The partial natural source now covers 109/151 states
+and 39,325 native physical case bytes; 42 states remain, starting at 504.
+These partitions remain investigation evidence, never standalone comparison
+extents or partial exact credit. The complete acceptance extent stays 83,922
+bytes including all switch/remap tables, with the frozen R048 hashes unchanged.
+
+`f048-shot-review.py` / `.json` pin each new complete case region, source hashes,
+actual readonly payload widths and native static call multiplicities. The
+whole frozen code and comparison hashes are verified. Every earlier 85-case
+source fragment/header/prefix/suffix hash remains unchanged; syntax aggregate
+changes reflect only the additional includes. Generators
+`f048-draft-shot-cases.py` and `f048-draft-paired-cases.py` write reviewed natural
+statements, preserving one eventual function body. They do not translate the
+decompile or embed target bytes. No accepted shared header or source changed.
+
+The 400/401/402 policies keep three independent effect800 calls, re-reading
+F02 and coordinates after each call. Phase thresholds are >5/>4/>4; completion
+resets primary to 0/0/2. Air 404/405 omit initial motion clearing, decrement
+F00 before ordinary gravity, then advance/reset9 and separately re-read phases
+4/5 for effect821 or launch. The 406..410 burst policies retain five independent
+effect808 calls and spend 150 afterward; air 409/410 scale by float 0.25 and
+land before advancement without adding an absent gravity update. The 411..415
+policies use effect806/speed15 with their distinct phase gates and angles.
+
+Native 0x004B4179..0x004B41B9 provides a consequential correction to decompile
+arithmetic grouping: height+20+index*40 is computed and rounded through a float
+store before the y-range call. The random result is then converted and added
+to that stored value. This is expressed as the natural argument
+`RecordedRange(0, 20) + (height + 20.0f + index * 40)`, preserving the actual
+operand grouping and call boundary. It is not the decompile's apparent order
+of adding the random result before the index offset. Both five/eight loops
+in 416/417/419/420 retain independent y/x calls, facing capture before y,
+and x facing/position reads after x-random. Only 416 decrements F00; 417 has
+none. Air 419/420 apply gravity before advancing/reset9, with height offsets
+40/20. State 417 subtracts index*10 before x-random; 420 retains its positive
+index drift. Loop variables are functional counters, not frame-shaping locals.
+
+Both branches in 418 contain actual duplicated five-shot fans at angles
+65/55/45/35/25. Both are retained despite equivalent visible sequences. The
+500/501 launch policies retain different gravity-store order around shared127.
+The 502/503 scaling operations read actual qword constants 0.25/0.1; double
+literals preserve that width. All four keep independent tracked810/809 calls,
+explicit x+0.0f arithmetic, post-call re-reads and repetition limits1/3/2/4.
+Landing stores and primary versus secondary resets retain native order.
+
+The 105-case and 109-case aggregates pass pinned VC7.1 syntax-only checking
+with `/Zs /Od /Ob0 /GR- /GX- /I src`. No COFF object is emitted. Retained
+`f048-syntax-85.source` reproduces the earlier pinned aggregate hash;
+`f048-syntax-105.source` and `f048-syntax-109.source` retain subsequent input
+texts, alongside their compiler logs. These snapshots restore into the original
+fragment directory for reproduction. The 109-case incomplete-source control
+rejects whole Preview materialization, as required. Full source emission,
+all relocation review, whole physical comparison and canonical cold replay
+remain outstanding. Names, original declarations and complete layout remain
+unknown; both angle helpers retain unknown origins.
+
+Coverage is unchanged at 141 accepted functions /356,945 code bytes (18.05%
+conservatively). Preserve F021, all accepted units, the 97 unknown origins and
+R268 evidence. Continue the active 95% objective at state 504 using Ghidra/local
+tools, serial low-priority builds and CPU/memory monitoring, without REA or
+pausing for a partial draft, cleanup or handoff.
+
+Final validation for this continuation passes all 3,603 CI tests in 115.546
+seconds (`f048-state400-ci.log`). `f048-private-draft-check-109.json` verifies
+all twenty native/decompile/draft input hashes, the earlier knowledge-base
+prefix and unchanged accepted inputs/ledgers. The 109-case composer control
+rejects incomplete whole materialization; no COFF object or full Preview exists.
+No unchanged accepted unit was rebuilt. Available memory was about 9 GiB;
+interval CPU was 85% idle with no interval swap activity. Native state-504
+checkpoints are retained in `f048-next-state504-checkpoints.json`, including
+unsigned byte11 alpha thresholds, real landing/reset order, six independent
+tracked824..829 calls and the early return after the repeat reset. This next
+case still has no source/exact credit. The goal remains active and incomplete.
