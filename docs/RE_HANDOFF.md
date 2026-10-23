@@ -119,48 +119,81 @@ checking does not complete the remaining cases' argument/behavior review.
 Retain `f048-abi-export.py` / `.json`, `f048-abi-review.py` / `.json`, all
 `f048-abi-*.asm` and `f048-contexts-*.json`.
 
-Private natural source fragments now cover **109/151 states**, representing
-39,325 bytes of native physical case regions. These are diagnostic partitions,
-not accepted function extents or exact credit. The reviewed states are all
-nondefault entries through 503 plus singleton 596; 42 states remain. Retain
-`.analysis/character-action-4ac040/`, `f048-case-index.json`,
-`f048-case-review.json`, `f048-progress.json`, `f048-refresh-draft.py` and
-`f048-compose.py`. The index records every native entry and drafted fragment;
-the review/progress receipts pin the source hashes and outstanding work.
+Private natural source now covers **151/151 states**, representing 82,372
+bytes of native physical case regions. The final 42 cases add 43,047 native
+bytes. These partitions are diagnostic regions, never independent acceptance
+extents or partial credit. The composer now materializes one complete natural
+`Preview.cpp` below `.analysis/character-action-4ac040/`; it still rejects
+incomplete inputs. No F048 mapping, source-presence or exact entry is accepted.
 
-`SyntaxOnly.cpp` passed pinned VC7.1 `/Zs /Od /Ob0 /GR- /GX- /I src` checking
-for the 109 reviewed cases (`f048-syntax-109.log`). It is incomplete, must never
-execute, and emits no object. No whole `Preview.cpp` is materialized until all
-151 states are present; the composer rejects incomplete inputs. No F048
-mapping, source-presence or exact ledger entry is accepted. The next source
-work starts at state 504, continues through the remaining 505..595 states,
-then 597..796. Preserve the phase-six/phase-four nested tests in state 392:
-both checks exist in native code despite their contradictory values.
+The first full compile emitted 83,751 bytes /22,704 instructions with a 0x6DC
+frame. Native-supported expression and branch refinements now reproduce the
+entire **83,922-byte size, 22,721 instructions and 0x720 frame** with pinned
+VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 1,361 static calls,
+1,933 branch destinations and 151 relocated table destinations correspond.
+Every one of 2,352 relocations is reviewed: 1,355 calls, 811 readonly references,
+25 signed-byte global reads, ten table/remap references and 151 destinations.
+Actual COFF constant payloads, target widths/permissions, addends and local
+symbol offsets are checked. The only new private header declaration repeats
+the existing signed byte at `0x006714D0`; accepted headers remain unchanged.
 
-The 24 new shot-policy cases (400..503) account for 14,606 contiguous native
-bytes. `f048-shot-review.py` / `.json` pin their complete regions, actual
-literal payload widths and static call multiplicities. Keep all independent
-effect calls and both duplicate branches in 418. For random loops in
-416/417/419/420, native computes height+constant+index*spacing and stores a
-float before calling the y range helper; the decompile's arithmetic grouping
-is insufficient. The natural call arguments retain this order and independent
-x/y random calls. State 416 alone decrements F00 before advancement. States
-502/503 use actual qword 0.25/0.1 scaling; preserve double literals. State 501
-sets gravity after shared effect127, while 500 sets it before that call.
-Retain `f048-draft-shot-cases.py`, `f048-draft-paired-cases.py`,
-`f048-progress-85.json`, `f048-case-review-85.json`, and syntax input snapshots
-`f048-syntax-85.source`, `f048-syntax-105.source`, `f048-syntax-109.source`.
-All earlier 85-case fragments and accepted inputs remain unchanged.
+**Physical bytes are still different.** The current 03 draft has 7,209 differing
+instruction encodings despite equal total size, first at `0x004ADEFA` in
+state 89: native loads this into EAX, the draft into EDX. Twelve accumulator
+encoding size differences cancel. Instruction correspondence elides GPR
+classes and temporary displacements; it proves neither unrestricted semantic
+equivalence nor exact bytes. No canonical unit or acceptance is created.
+Continue evidence-based source investigation at the state 88/89 boundary,
+including the conversion/counter lifetime and the preserved F021 analogue.
+A bounded prefix-versus-postfix increment control for the first ten-effect
+loop emits identical whole code and relocations; it is rejected in
+`f048-postfix88-control.json`. The fresh attested Ghidra query resolves the
+containing function and emits its first 100 instructions, rather than the
+requested interior window; it is
+identity evidence only (`f048-state88-89-ghidra.*`). Use the complete frozen
+native export for the 88/89 boundary. Do not repeat these controls without new
+evidence, or add inert locals, padding, assembly, ABI result changes or
+alternate bodies to force registers.
 
-The decompile is a hypothesis, not source or exact evidence; its
-ContextBase/Concurrency labels establish no owner or origin. Complete the
-remaining behavior/argument review and natural source, then review all
-relocations, compare all 83,922 bytes and cold-replay the canonical unit before
-acceptance. Do not truncate at the code end or inherit a complete owner layout
-from a different character. F021 remains unaccepted and preserved, including
-its original draft. All 141 accepted units and inputs remain unchanged.
-Continue reconstruction with Ghidra/local tools, serial low-priority builds and
-resource monitoring, without REA or pausing for cohort completion/handoff.
+The whole compile corrects an earlier syntax-only claim about random operand
+order: `(height + constant + index * spacing) + RecordedRange(0, 20)` preserves
+the float store before the range call in all eight loops 416/417/419/420. The
+previous random-first spelling did not. Nine ambient 830 expressions similarly
+compute `(height - 15.0f)` before y-random. These seventeen meaningful compiler
+temporaries account for the 0x44-byte frame difference; no frame padding is
+introduced. The native call boundary and resulting float rounding matter.
+
+States 731/742/763 use ordered ownX > opponentX for facing-1, otherwise+1,
+including unordered values. The earlier <=-first draft had the wrong unordered
+outcome. The float-only opponent accessor retains native load order. State 99
+places the ordinary mode/flag path first. State 200 has separate genuine returns;
+416..420 retain native if/else joins and duplicate 418 fans. Keep all native
+integer threshold forms, independent calls, and the phase6/phase4 tests in 392.
+
+The final cases preserve unsigned fade thresholds and real returns in 504..509,
+all independent 36-shot 807 and nine-shot 834 calls, functional ten-shot 838/839
+loops, distinct spend/call order, and every level-specific card path. Preserve
+731's single reused functional angle counter, 741's separate F06<=0/F06<-30
+tests, all four independent level branches in 742/770, the opponent transform
+in 761, and 771's actual float divisor bits `33fa8e3c`. Both angle helpers remain
+unknown-origin. Never infer the complete owner layout or construct this view.
+
+Retain `f048-case-index.json`, `f048-case-review.json`, `f048-progress.json`,
+`f048-complete-review.py`, `f048-refresh-draft.py`, `f048-compose.py`,
+`f048-whole-diagnostic.py`, `f048-bind-draft.py` and
+`f048-draft-relocation-bindings.json`. `f048-probe-00/` through `f048-probe-03/`
+preserve complete source/header/object controls and receipts; restore them into
+the original private source location to reproduce their compiler paths. The
+current object is `build/probes/F048Preview.obj`. The initial-case generators
+predate the documented whole-emission refinements; compose the pinned current
+fragments instead of blindly regenerating them. Keep prior 85/109 receipts and
+syntax snapshots, including the successful 131-case syntax checkpoint.
+
+Complete physical comparison across all 83,922 bytes, then canonical cold replay,
+remain required. All 141 accepted units and inputs, R268 evidence, all 97 unknown
+origins and F021 remain unchanged. Continue the active 95% goal using Ghidra and
+local tools, serial low-priority builds and CPU/memory monitoring, without REA
+or pausing for draft completion, cleanup or handoff.
 
 ## Unaccepted work: F021
 

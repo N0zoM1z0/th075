@@ -18262,3 +18262,98 @@ checkpoints are retained in `f048-next-state504-checkpoints.json`, including
 unsigned byte11 alpha thresholds, real landing/reset order, six independent
 tracked824..829 calls and the early return after the repeat reset. This next
 case still has no source/exact credit. The goal remains active and incomplete.
+
+
+## F048 continuation: complete source and whole emission (2026-10-23)
+
+The remaining 42 cases complete 151/151 natural private source cases, adding
+43,047 native physical case bytes for a total 82,372. These regions are
+investigation partitions, not independently callable extents or partial exact
+credit. The required whole comparison remains 83,922 bytes, including 1,126
+switch/remap bytes. Complete `Preview.cpp` now materializes through the guarded
+composer, with no target execution and no accepted F048 ledger entry.
+`f048-complete-review.py` / `f048-case-review.json` freeze every physical case,
+source hash, native literal width and static call multiplicity. Keep the prior
+109-case receipt and all earlier native/ABI/dispatch evidence.
+
+The first whole compile produced 83,751 bytes /22,704 instructions and frame
+0x6DC. This exposes an error in the earlier syntax-only arithmetic claim:
+`RecordedRange(0, 20) + (height + constant + index * spacing)` does not preserve
+the observed float store before the range call with the pinned compiler. The
+correct natural expression puts the height sum first, then adds the range
+result. All eight loop sites 416/417/419/420 and nine ambient 830 height-minus15
+sites require this meaningful call/rounding order. The seventeen additional
+compiler float temporaries explain the actual 0x44 frame increase to 0x720;
+no padding or inert declarations are used. Keep rejected whole inputs/objects
+and receipts, rather than treating syntax success as behavioral evidence.
+
+The native ordered facing relation in 731/742/763 is ownX > opponentX => -1,
+otherwise+1. In particular unordered inputs select+1. The earlier <=-first
+draft selected-1 for unordered inputs; it is corrected. A float-only opponent
+accessor, matching the established source convention, retains native load
+order. Low states 93/94/95 preserve two independent ordered relations. State 99
+keeps the ordinary mode/flag path first; 200 has distinct genuine returns.
+416..420 preserve native if/else joins and the duplicated 418 effect fan.
+All complete branch destinations now correspond, not merely branch mnemonics.
+
+The final policies preserve 504..509 alpha gates and six independent 824..829
+calls, different 594/595 stock gates, 597/599 repeat paths, all 36 independent 807
+calls and nine independent 834 calls in their respective policies, and actual
+functional ten-shot 838/839 loops. Card paths 700..707 retain distinct spend,
+sound, shared/tracked calls, duplicate initial writes and reset limits.
+731 reuses one functional ring-angle counter. 741 retains both F06<=0 and
+F06<-30 tests; 742 and 770 retain four independent level branches. 751/752 keep
+five separate save/random/emit/restore paths and their different gravity,
+angle and launch values. 761's transform at 004BF0A0 uses the opponent. 762/763
+retain distinct launch, landing and random override paths. 771's actual float
+angle divisor is bits 33fa8e3c, not a substituted mathematical constant. Angle
+wrapper/worker origins, original names and complete owner layout remain unknown.
+
+The current 03 compile reproduces the entire 83,922-byte size, 22,721 instructions
+and 0x720 frame. `f048-bind-draft.py` verifies all 1,933 branch destinations,
+1,355 direct plus six virtual call sites, and 2,352 relocations: 1,355 calls,
+811 readonly references, 25 signed-byte global reads, ten table/remap addresses
+and 151 table destinations. Actual COFF payloads, target widths/permissions,
+zero external addends and local symbol offsets are checked. Writable globals
+are bound by address. The private header only repeats the existing narrow
+signed-byte declaration at 006714D0; no accepted header is changed.
+
+This remains unaccepted: 7,209 physical instruction encodings differ. The first
+non-branch difference is 004ADEFA at state 89, native receiver load EAX versus
+draft EDX. Twelve accumulator encoding size deltas cancel. Normalized shapes
+and destination correspondence do not prove physical equality or unrestricted
+semantic equivalence. No target bytes, assembly, padding, inert locals, fake
+returns, ABI result changes or conditional bodies are introduced. A complete
+zero-difference physical comparison and canonical cold replay are outstanding.
+`f048-probe-00/` through 03 preserve complete compiler controls; current source
+and object hashes are pinned in `f048-draft-relocation-bindings.json` and
+`f048-progress.json`. Initial generators predate the whole-source corrections;
+recompose the pinned current fragments instead of rerunning generators blindly.
+
+Next investigate the first GPR difference across the state 88/89 boundary with
+native conversion/counter-lifetime evidence and the preserved F021 analogue.
+Do not repeat rejected F021 controls without new evidence. All 141 accepted
+functions /356,945 code bytes, 18.05% conservative coverage, all 97 unknown
+origins and R268 evidence remain unchanged. Continue the active 95% goal with
+Ghidra/local tools, serial low-priority builds and CPU/memory monitoring,
+without REA or pausing for full-draft completion, cleanup or handoff.
+
+A new bounded control changes only the first functional ten-effect loop's
+increment from prefix to postfix. The complete unrelocated 83,922-byte function
+and every relocation record are identical. The hypothesis is rejected without
+changing the active 03 draft (`f048-postfix88-control.json`). The fresh attested
+Ghidra disassembly query resolves the containing function and prints its
+first 100 instructions. It does not cover the requested interior 88/89 window
+and supplies identity evidence only (`f048-state88-89-ghidra.txt` / `.log`).
+The boundary observations come from the complete frozen native export; do
+not claim additional Ghidra boundary evidence or repeat the increment control.
+
+Validation passes all 3,603 CI tests in 97.179 seconds
+(`f048-complete-ci.log`). Only the private F048 probe was compiled; no accepted
+unit input or descriptor changed, so no unchanged unit was rebuilt. The
+obsolete duplicate postfix-control object was removed after equality was
+recorded, reclaiming 150,696 bytes; complete source, compiler log, profile,
+hashes and receipts remain, as does the active 03 object. See
+`f048-obsolete-output-cleanup.json`. Available memory remained about 9 GiB;
+interval CPU was 92% idle and there was no interval swap activity. The goal
+remains active and incomplete.
