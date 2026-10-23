@@ -15641,3 +15641,128 @@ following INT3 bytes are alignment. Static calls comprise 61 vector accesses,
 attestation/completion and the next full reconstruction task. No source or
 exact credit has been registered for F026. Continue native-guided exploration
 without copying F025 behavior as its specification or pausing for handoff.
+
+## F026 — Complete action dispatcher at 00493470
+
+Accepted on 2026-10-23: `CharacterAction493470::DispatchActions`, complete
+extent 0x00493470..0x00496C57 /14,312 code bytes. Eight following INT3 bytes
+are alignment. R047 authored ownership and full target body SHA-256
+`3d8378ad1ccd31d621dfad6fa579ab71f40f7c07f76fe855674e642be9c7f560`
+remain unchanged. Full decoding checks 3,841 instructions, 764 internal branch
+destinations, one return, no switch tables and no external branch exits.
+
+Unit `character-action-dispatch-00493470`, symbol
+`?DispatchActions@CharacterAction493470@@QAEXXZ`, cold-replays all 14,312 bytes
+with zero differences, including every relocation. Canonical source is
+`src/CharacterActionDispatch493470.cpp` / `.hpp`. The separate pointer-only
+owner view does not establish original character identity or complete layout;
+no incomplete owner is instantiated or embedded. The unchanged
+`ReimuActionDispatch.hpp` supplies the existing slot-reference ABI view.
+An explicit alias preserves the reviewed role
+`CharacterAction::DispatchAt00493470`. Names and semantic field roles remain
+inferred. Profile: pinned VC7.1 build 3077 with
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, without executable-wide compiler inference.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00493470
+```
+
+All 269 relocations are bound: 198 direct calls, 70 readonly references to
+nine constants, and one writable global reference. Fresh COFF constant payloads
+were checked against original target bytes. Static calls comprise vector access
+0x004420B0 (61), input packing 0x00455B30 (39), primary reset 0x0040FAC0 (72),
+and auxiliary-input clearing 0x00453A10 (26). Callees receive no new exact credit;
+the vector helper retains its library classification.
+
+The single global relocation binds `?g_StateRepeatLevelAt006714D0@@3CA` to
+0x006714D0. Original 0x00493A17 is MOVSX ECX from that byte, followed by TEST
+ECX,ECX. Its target `.data` section has flags 0xC0000040 and is readable/writable.
+The verifier checks the actual signed byte load and access width rather than
+treating storage as a readonly constant or assuming its runtime value. The
+original declaration and semantic name remain unknown; the retained F021 draft
+uses the same provisional name. This corroborates a byte view, without proving
+the F021 body exact or granting credit to global data. An initial verifier-only
+CMP-shape assumption was corrected to the observed MOVSX/TEST sequence; the
+already matching C++ body did not change.
+
+All 65 ordered dispatch candidates are represented by handwritten natural C++.
+Input 103 and its ground/100.0f/selector policy 795 come first. Seven subsequent
+ground policies map 230/221/220/225/200/210/211 to 760/752/751/754/731/741/742.
+After resetting 742, the fresh global byte read may trigger reset 743. Both
+input-102 candidates preserve their separate condition ordering, post-pack
+height/state reads and unmatched-path fallthrough. The first uses ground
+595/594 and air 599/598/597; the second separately checks 596 and state <300.
+
+Ten resource-first advanced candidates retain distinct +39A/+398 modes and
+field-read order. Mode-one policies select 712, 704, 706, 715 and 714; mode-two
+selects 700, 703, 705, 708 and 707. The selector-one policies 704/703 have no
+ground condition. Regular selector-two policies 706/705 require +F14 =0 and
+the ordinary +3A0 /100.0f gates. Special selector-two policies replace those
+ordinary gates with +F14 =6 or =4 and +F12 =1, respectively. Input 13 tests
++F14 before +F12; input 23 reverses that order. All observed ground, flag,
+priority and cancellation conditions remain distinct.
+
+Simple inputs 51/50 select 625/624, with ground and flag checked before
+resource; 31/30 select 501/500 with resource before flag. Inputs 21/20 reject
+current state 526, look up 525/524, reset those states and reread height before
+possible 523/522 resets. Inputs 101/100 select 309/310 with their distinct
+flag/ground order. Seven movement policies and four final airborne fallbacks
+preserve unsigned press counts, signed facing products, diagonal <=-1 / >=1
+bounds, ranks 99/49, signed +3AD <2 and direct byte increment, with the native
+60.0f early-ascent checks.
+
+The positive-vertical ground group retains seven policies, including specials
+392/393 and their shared +500 B buffer. Nested ordinary A selects 402 at
+320/-320 distance or 302, with current-state 300/302 exceptions. B selects
+415 at 320/-320 or 303; C selects 409. The neutral group retains twelve
+policies, including specials 390/391. Forward A selects 400 at 360/-360 or
+307; ordinary A also selects 400, at 320/-320, or 300 with current 300/302
+exceptions. Forward B selects 413/308 and ordinary B 412/301, using 320/-320
+distance gates. Forward/ordinary C select 407/406 with flag before resource.
+
+Air A has two policies: 404 at 400/-400 distance and fallback 304. B tests
+current/remembered vertical before resource/flag/distance for 417, then selects
+416 at 360/-360 and fallback 305. C tests vertical before flag and resource
+>100 for 411, then selects 410 through the separate fallback. The seven air
+attack policies, fresh reads and all directional fallbacks remain complete.
+The full physical-operand and branch diagnosis agrees; canonical cold replay
+is the acceptance evidence.
+
+Private evidence remains below `.analysis/`: `f026-493470.asm`,
+`f026-native-audit.py` / `.json`, `f026-dispatch.c`, `f026-decompile.log`,
+`f026-dispatch-diagnostic.py`, `f026-dispatch-audit.json`,
+`f026-bind-relocations.py`, `f026-relocation-bindings.json`,
+`f026-accepted-replay.json`, `f026-cold-replay.log` and `f026-progress.json`.
+Target identity, complete original extent and decompile completion are retained.
+No target execution or database write was required.
+
+Coverage becomes 114 exact functions /113,769 code bytes (5.76% of reviewed
+authored bytes; 5.75% conservatively including all 3,608 pending bytes). The
+cumulative manifest preserves 54 additions /103,886 bytes above F009 and 36 new
+source/header inputs. All 113 prior units and their inputs remain unchanged and
+were not rebuilt. All 97 unknown origins remain unknown. F021 still receives
+no exact credit. Continue toward 95%, with F027 at 0x00502450 /13,839 bytes next.
+Previous F023-F025 dispatch handoff and validation sections are preserved
+verbatim in `RE_HANDOFF_HISTORY.md`, keeping the current handoff focused.
+
+
+Final F026 validation passes all 3,603 CI tests in 68.915 seconds, including
+complete adoption, immutable history, origin, name-alias, tracking and progress
+checks. Canonical cold source/header and final-object pins remain intact.
+Four superseded previews were removed after canonical-source equality checks
+(103,520 bytes); `.analysis/f026-cleanup.json` retains paths, sizes and hashes.
+All native/origin evidence, canonical inputs, matching outputs and F021 remain.
+The latest sampled available memory was 8.8 GiB and CPU was 84% idle, without
+swap-in/out in that interval. Compiler builds remained serial and low priority.
+
+F027 preparation retains a complete attested decompile and native audit of
+0x00502450..0x00505A5E /13,839 code bytes, preserving the R047 body hash.
+The full extent has 3,751 instructions, 734 internal branches, one return and
+200 direct calls, with no switch tables or external branch exits. One following
+INT3 byte is alignment. Calls comprise 62 vector accesses, 38 input packs,
+72 primary resets and 28 auxiliary-input clears. Private `f027-native-audit.py`
+/ `.json`, `f027-502450.asm`, `f027-dispatch.c`, `f027-decompile.log` and
+`f027-progress.json` retain original observations, identity/completion markers
+and the next full reconstruction task. No source or exact credit is registered
+for F027; continue its native-guided reconstruction without assuming F026's
+conditions or pausing for cleanup/handoff.

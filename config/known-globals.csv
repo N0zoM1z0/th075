@@ -91,3 +91,4 @@ address,name,module,confidence,evidence
 0x006714BC,g_StateStageTotal,BattleScene,inferred,F019; dword sum of stage entries; exact native reads/writes and bound relocations; original symbol unknown
 0x0066C24C,g_LeftBoundaryOwner,BattleScene,inferred,F020; signed byte owner of positive horizontal-limit result: player 0/1 or -1; exact native reads/writes and bound relocations; original symbol unknown
 0x0066C24D,g_RightBoundaryOwner,BattleScene,inferred,F020; signed byte owner of negative horizontal-limit result: player 0/1 or -1; exact native reads/writes and bound relocations; original symbol unknown
+0x006714D0,g_StateRepeatLevelAt006714D0,CharacterAction,inferred,"F026; original MOVSX byte read at 00493A17 after reset742, followed by zero test; writable .data reference; semantic name and original declaration unknown"
