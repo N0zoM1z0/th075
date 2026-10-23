@@ -130,6 +130,29 @@ target-required tracking, Ghidra attestation and whitespace checks passing.
 Builds were serial and low priority; sampled available memory was 8.6 GiB
 and CPU was 87% idle with no swap-in/out.
 
+Further F021 investigation: state-88 case scope, `/Zc:forScope`, separate
+counter declaration and `+= 1` all reproduce the baseline function hash.
+All controls were reverted. The new private
+`.analysis/f021-register-dataflow.py` / `.json` checks byte-lane register-use
+relations through the complete syntactic CFG: 16,837 reachable instructions,
+64,412 checked reads, zero unproven reads under explicit draft ABI assumptions.
+It excludes byte/short argument high bytes and 327 immediately overwritten
+float stack-slot values. Two negative controls reject a wrong receiver base
+that class normalization misses and an undefined high byte of an AL return.
+Moving only the first loop counter to function scope also reproduces the
+baseline hash. `.analysis/f021-physical-region-map.json` locates all 6,311
+physical operand differences in 70 of 143 non-default case regions; state 89
+has 19. See the latest knowledge-base entry for assumptions and limits. This provides
+no exact credit; 6,311 physical differences and the size mismatch remain.
+
+Latest verification: all 3,603 CI tests passed in 62.674 seconds. The restored
+preview was rebuilt serially; its source/function hashes and complete call,
+relocation, branch/table and byte-lane diagnostic receipts were refreshed.
+No accepted source or ledger changed, so accepted units were not replayed.
+Sampled available memory was 7.0–7.9 GiB; the latest interval CPU sample was
+88% idle without swap-in/out. Reverted source snapshots were removed after
+hash checking; private probe measurements and final artifacts remain.
+
 ## Handoff validation
 
 All 3,603 CI tests passed in 64.924 seconds. Target-required tracking, Ghidra

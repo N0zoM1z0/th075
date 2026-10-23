@@ -15111,3 +15111,61 @@ baseline function hash, and its final relocation, call and register-class
 alignment receipts were refreshed. Continue investigating natural expression
 and compiler-allocation causes before whole-function cold acceptance. No
 partial match or normalized alignment receives exact credit.
+
+
+### F021 byte-lane register-use diagnostic (2026-10-23)
+
+Five further serial controls reproduce the complete baseline function hash:
+adding an independent scope to state 88, enabling `/Zc:forScope`, declaring
+its real loop counter separately before the for statement, and spelling its
+increment as `+= 1`, and moving only that real counter to function scope.
+None changes the 6,311 physical operand differences or
+first difference at 0x0045FDA9. All controls were reverted; source hashes agree
+with the restored checkpoint. The first loop's scope/declaration/increment
+forms are therefore excluded as explanations under the tested compiler profile.
+This does not prove that every possible lifetime spelling is equivalent.
+
+The private `.analysis/f021-register-dataflow.py` strengthens the earlier
+register-class diagnostic. It constructs instruction successors, including
+all six indirect switch destination sets, and reaches a fixed point of
+native/compiled byte-lane equality relations at joins. All 16,837 instructions
+are reachable in this syntactic CFG; convergence takes 18,808 instruction
+visits. It checks explicit register reads, memory base/index registers,
+implicit integer reads and thiscall receiver values. Partial writes preserve
+only their unaffected lanes; calls kill EAX/ECX/EDX except the explicit observed
+return widths (AX for the frame helper, AL for the horizontal-limit helper,
+EAX for range sampling, EDX:EAX for __ftol2). Matching register copies preserve
+known relations. Remaining noncaller-saved lanes follow the paired instructions.
+
+The ABI parameter widths are explicit in the receipt, not inferred from the
+register proof. Byte/short arguments expose only their low parameter bytes.
+The target and compiled streams also contain 327 PUSH slots immediately and
+fully overwritten by FSTP dword [ESP]; their initial pushed values are dead
+stores. These exclusions concern the diagnostic's value-use obligation only;
+the original push bytes remain required by exact comparison.
+
+Under these assumptions, 64,412 register-byte reads have matching relations,
+with no unproven reads. Two negative controls pass: corrupting the compiled
+receiver base at native 0x0045FDAC from EDX to ECX remains register-class
+identical but produces four rejected address-byte reads; consuming the high
+byte of the horizontal-limit helper's AL return is rejected. Corruption is
+performed on an in-memory instruction copy only; no target or object file is
+modified. `.analysis/f021-register-dataflow.json` records target, function and
+object hashes, ABI assumptions, counts, controls and limitations.
+
+This is conditional diagnostic evidence, not byte equality or a general
+semantic-equivalence proof. Matching instruction semantics and prior full
+instruction/branch/table/relocation correspondence are prerequisites. Memory,
+flags and x87 states are not separately symbolically executed. Unknown call
+semantics and the draft ABI remain assumptions. In particular, zero unproven
+reads cannot earn exact credit. The physical allocation and size mismatch
+remain unresolved; complete cold replay is still required for acceptance.
+
+
+The private `.analysis/f021-physical-region-map.json` partitions the observed
+case bodies into 143 non-default address regions, using the existing switch
+map. Seventy regions contain all 6,311 normalized physical-operand differences;
+73 have none. State 89 has 19. This is an address-region diagnostic, not
+function acceptance or permission to compare only matching regions. The next
+allocation investigation should use this map and avoid the five excluded
+scope/declaration/increment controls.
