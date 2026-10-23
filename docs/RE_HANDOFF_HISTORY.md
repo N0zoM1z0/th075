@@ -7351,3 +7351,84 @@ Only its bit-identical obsolete preview duplicate was removed, reclaiming
 The separate canonical cold replay passed. Full CI passed all 3,603 tests in
 127.171 seconds. Target, tracking, progress-card and whitespace checks pass. No shared source/header dependency changed. CI ran at
 nice 10; the sampled worker used about 248 MiB RSS and one CPU core.
+
+
+## F059 sequence checkpoint (2026-10-23)
+
+## Latest accepted cohort: F059
+
+`MeilingFighter::DispatchSpecialStatesAt005F3D60` at `0x005F3D60`
+cold-replays exact from `src/MeilingSequence.cpp` / `.hpp`: **12,400 code
+bytes**, 2,882 instructions, 350 branches and one return. Its directly indexed
+98-entry / 392-byte table extends comparison through `0x005F6F57`:
+`size = 12400`, `compare_size = 12792`. All **12,792 bytes** and 451
+relocations physically match; eight following INT3 bytes align `0x005F6F60`.
+R064 evidence, complete bounds, hashes and historical role remain unchanged.
+The literal role is retained for the frozen R064 verifier; observed behavior
+belongs to the sequence family, without recovering original method names.
+
+All 71 states, defaults and common tail are reviewed. Twelve position/alpha
+offsets are 20 bytes above F051, while the phase counter remains WORD +EFC.
+These narrow observations do not establish a complete layout. Forty-seven
+native paths correspond after explicit offsets, GPR classes and actual readonly
+payloads; all 24 changed/new paths are independently reviewed. Diagnostic
+correspondence earns no exact credit. Complete physical equality and a separate
+canonical cold replay establish acceptance.
+
+States 38/39/41/42 are additional. State 34 resets phase after selecting 35.
+State 35 starts phase only when processing succeeds at zero, clears both
+receivers and flag fields, then increments positive phase independently of the
+processing result. Its stage-12 load at phase 60 and fade at phase >=90 retain
+the native order and genuine switch break after selecting 36. State 36 only
+initializes notice 11 / selects 37. State 37 retains the delayed clear/exit to
+38; 38 starts current (2,1) and opponent (8,0), then notice 12 / mode 39.
+State 39 sets +6EF =1, selects 40, then sets +713 =5. State 40 retains its own
+phase-230 launch and selects 41; 41 initializes 13 / selects 42; 42 processes,
+selects 43 and clears only opponent. Opponent speed in 43 is 7.8, whereas 3/33
+use 7.75. State 52 clears only current and resets phase. State 53 retains its
+stage-8 fade/load sequence but has no opponent primary-reset call. State 60
+resets **opponent** to 2 after phase +=60 and before notice initialization.
+State 62 first writes opponent +4E0 =1. All changed notice IDs, transition
+arguments, signed continue-count gates, actual stores and exits are reviewed.
+
+All 240 calls and stack joins pin fourteen complete existing-origin callees;
+incorrect cleanup is rejected. All 46 processing calls use current; primary
+resets, starts and clears split 6/6, 6/6 and 9/9 current/opponent. All 451
+physical bindings include 240 calls, 26 references to readonly floats, 84 writable global
+accesses, two distinct single NULs at `0x0065A074/0x0065A075`, one switch
+address and 98 table-entry relocations. Actual COFF payloads, PE/COFF permissions, widths,
+zero addends and local offsets are checked; globals bind by address. No alias,
+global declaration, accepted shared header or origin evidence changes.
+The declaration-only receiver must never be constructed or embedded; original
+declarations and complete layout remain unknown. Source is one natural body,
+without target arrays, assembly, padding, inert locals, fake returns, false ABI
+declarations or alternate bodies.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit meiling-special-states-005f3d60
+```
+
+The corrected full preview, independent canonical compilation and separate
+cold replay match with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+The first preview is retained: its two actual source differences were the
+state-35 >4 fade threshold and a missing genuine exit, not accepted evidence.
+All 151 earlier units/inputs remain unchanged and were not rebuilt. The manifest
+preserves 92 additions / 474,316 code bytes and 100 source/header inputs above
+F009, excluding F021/F048. F058 is preserved in
+[history](RE_HANDOFF_HISTORY.md#f058-sequence-checkpoint-2026-10-23).
+
+Retain `f059-native-audit.py` / `.json`, `f059-5f3d60.asm`, `f059-sequence.c`,
+`f059-decompile.log`, `f059-case-index.py` / `.json`,
+`f059-native-correspondence.py` / `.json`, `f059-abi-review.py` / `.json`, all
+fourteen `f059-callee-*.asm`, `f059-behavior-review.json`, `f059-compose.py`,
+`f059-sequence-diagnostic.py`, `f059-bind-draft.py`, `f059-family-bindings.json`,
+`f059-accepted-replay.json`, `f059-cold-replay.log`, `f059-evidence-check.py` /
+`.json`, `f059-progress.json` and both complete `f059-probe-00/` /
+`f059-probe-01/` snapshots. Canonical inputs/objects and all prior controls remain.
+Full CI passes all 3,603 tests in 137.387 seconds. Target, tracking,
+progress-card, historical-evidence and whitespace checks pass. Only obsolete
+reproducible preview/debug outputs were removed: six files / 344,268 bytes,
+with paths, hashes and retained-object pins in `f059-obsolete-output-cleanup.json`.
+All sources, manifests, canonical objects, native evidence, active drafts and
+shared tools remain. The scoped CI worker used about one CPU core and 334 MiB
+RSS at niceness 10; compiler builds remain serial at niceness 15.

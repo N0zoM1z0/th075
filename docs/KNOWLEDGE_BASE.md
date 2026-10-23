@@ -19575,3 +19575,109 @@ Preserve all 152 accepted units, F048/F021, R268 and all 97 unknown origins.
 Continue the full 95% goal without pausing for bounded acceptance, cleanup or
 handoff. Use existing Ghidra/local tools without REA, serial low-priority
 compiler builds and CPU/memory monitoring. Later project phases remain deferred.
+
+
+## F060 exact auxiliary action reconstruction (2026-10-23)
+
+`CharacterAuxObject::AdvanceActionAt005FAE30` cold-replays exact from
+`src/CharacterAuxAction.cpp` / `.hpp`: **31,352 code bytes**, 9,466 instructions,
+630 branches and one return. The contiguous 280-byte table and 145-byte remap
+extend comparison through `0x00602A50`, excluding fifteen INT3 bytes before
+`0x00602A60`. `size = 31352`, `compare_size = 31777`: all **31,777 bytes** and
+913 relocation fields match. R064 bounds, hashes and its literal historical
+role remain unchanged. Exactness does not establish original names or layout.
+
+All 69 nondefault states, guards, defaults, exits, actual receivers and arguments
+are reviewed. The signed-word selector subtracts one before its unsigned guard;
+the 145-byte remap selects 69 distinct nondefault entries and one default.
+All 533 calls and stack joins pin ten complete callees and reject incorrect
+20-to-16-byte peer-call cleanup. All seven member callees use current: frame
+69, secondary reset 4, polar velocity 15, transform 66, integer range 63,
+peer spawn 230 and clear-field8 75 calls. The five angle-wrapper calls are
+cdecl/two floats/ST0; the wrapper and worker stay unknown-origin. Four compiler
+conversions use the implicit ST0-to-EDX:EAX ABI through ordinary casts. Two
+direct rand calls stay library. No callee source or origin credit is added.
+
+All 913 physical bindings include 533 calls, 308 actual readonly references,
+two switch/remap addresses and 70 table-entry relocations. The target has no
+direct writable-global or string references. Full branch/table destinations,
+actual COFF payloads, PE/COFF permissions, widths, addends and local offsets
+are checked. The meaningful compiler-temporary frame is exactly 0x2EC.
+There is one functional 25-peer loop in 115, followed by five independent
+spawns; other repeated peer calls remain independent source calls.
+
+Preserve the observed conditions and operation order. States 51/105 test byte
++12 but decrement +14. States 63/65 have two independent +74==0 guards; the
+second is not repaired to==1. State 100 retains two independent rand calls and
+the observed double 0.0005 multiplication before float argument storage.
+The rounded angle divisor retains float payload `33fa8e3c`. The float-to-short
+decays in 102/107/110/114 remain genuine casts. Low-alpha exits in 123/124/135/
+136 bypass frame advancement; successful frame completion resets secondary
+counter 1 and increments +74. The six exits in 137/141/142/143/144/145 also
+bypass the later frame call; 137 does not additionally zero alpha. Repeated
+positive-factor growth curves and the native >=30 / >=10 gates are preserved.
+One natural body has no target arrays, assembly, filler locals, arbitrary
+padding, fake returns, false ABI declarations or alternate bodies. Never
+construct or embed the declaration-only owner; complete layout remains unknown.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-aux-action-005fae30
+```
+
+The corrected full preview, independent canonical compilation and separate
+cold replay match with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All 152 prior unit descriptors and sources remain unchanged and were not
+rebuilt. No accepted shared header, alias, global variable or origin ledger
+changes. The manifest preserves 93 additions / 505,668 code bytes and 102
+source/header inputs above F009. F021/F048 remain unaccepted; every pending
+byte remains in the goal denominator. F059 is retained in
+[history](RE_HANDOFF_HISTORY.md#f059-sequence-checkpoint-2026-10-23).
+
+Retain `f060-native-audit.py` / `.json`, `f060-5fae30.asm`, `f060-action.c`,
+`f060-decompile.log`, `f060-case-index.py` / `.json`, `f060-abi-review.py` /
+`.json`, all ten `f060-callee-*.asm`, `f060-behavior-review.json`,
+`f060-compose.py`, `f060-review-view.py`, `f060-whole-diagnostic.py`,
+`f060-bind-draft.py`, `f060-family-bindings.json`, `f060-accepted-replay.json`,
+`f060-cold-replay.log`, `f060-evidence-check.py` / `.json`, `f060-progress.json`
+and all three complete `f060-probe-00/` through `f060-probe-02/` controls.
+The first two retain their missing exits / different integer-gate forms;
+only the third preview is physically equal. Tracking rejected an incorrect
+percentage literal during adoption; it was corrected to 100.00 in the new row
+and manifest, without source, descriptor, relocation or old-row changes.
+Keep `f060-ledger-percent-negative-control.json` as the rejection receipt.
+Only obsolete reproducible preview/debug outputs were removed: two files /
+122,512 bytes with hash-pinned retained objects in
+`f060-obsolete-output-cleanup.json`. All inputs, canonical objects, original
+evidence, F048/F021 and shared tools remain. Full CI passes all 3,603 tests
+in 155.472 seconds; target, tracking, progress-card, historical-evidence and
+whitespace checks pass. CI runs at niceness 10 and compiler builds remain
+serial at niceness 15. Memory samples retained about 8.6 to 9.1 GiB available;
+the initial interval sample had 88% CPU idle and no swap activity.
+
+### Active continuation: F061
+
+Continue independently reviewed R048 `0x005EB520..0x005F3BA1`, historical role
+`CharacterObject::AdvanceAt005EB520`: 34,434 code bytes / 9,378 instructions,
+902 branches, one return, ten direct callees and 592 call sites, with no
+indirect calls or external branch exits. Its contiguous 244-byte table and
+199-byte remap extend comparison through `0x005F3D5C`, excluding three INT3
+bytes before `0x005F3D60`. Compare all **34,877 bytes**. The observed signed-word
+selector subtracts 800 before its unsigned guard and remap; entry guards read
+the actual +E4 owner/opponent fields and the object's +82 countdown. Do not
+infer a complete owner or reuse F060 layouts/receivers from names alone.
+Retain `f061-native-audit.py` / `.json`, `f061-5eb520.asm`, the fresh attested
+`f061-action.c` / `f061-decompile.log`, `f061-case-index.py` / `.json`, and
+`f061-progress.json`. The complete native index pins 60 nondefault states /
+60 distinct entries across selector values 800..998, plus the default frame
+advance at `0x005F3B96`. Callee ABI, state/field/argument/receiver/exit review,
+natural source, full physical comparison and canonical cold replay remain
+outstanding.
+Target inventory or normalization alone earns no source or exact credit.
+
+Preserve all 153 accepted units, unaccepted F048/F021, R268 and all 97 unknown
+origins. Continue the full 95% goal without pausing for bounded acceptance,
+cleanup or handoff. Use existing Ghidra/local tools without REA, affected cold
+replays only, serial low-priority compilation and CPU/memory monitoring.
+Later project phases remain deferred. The earlier F048 exclusions and active
+03 source/object remain preserved; do not repeat rejected controls without new
+native/compiler evidence.
