@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F044. Counts, active
+This file preserves historical checkpoints through R268 and F045. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -6368,6 +6368,103 @@ complete investigative source and receipt remain in `f044-probe-00.*`, with
 profile and diagnostic limits in `f044-control-manifest.json`. Original evidence,
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 8.9 GiB available memory and CPU 80% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F045 checkpoint before F046 acceptance (2026-10-23)
+
+## Latest accepted cohort: F045
+
+`CharacterAI5349B0::ChooseAction` at `0x005349B0..0x00536356` cold-replays
+exact from `src/CharacterAI5349B0.cpp` / `.hpp`: **6,567 code bytes**, 1,683
+instructions, 340 internal branches and one return. There are no switches or
+external branch exits; nine following INT3 bytes are alignment. The whole R047
+body hash and ownership evidence remain unchanged.
+
+Preserve type-3 bypass, type-2 range-before-timer<=-180 ordering, type-1 command
+210 fallthrough, and every type-0 separate range call, overwrite and real exit.
+The type-1 call at `0x00455580` is a distinct recording/replay policy. Its whole
+139-byte R109 body saves ECX, consumes two signed dword endpoints, returns EAX
+and RET 8. Mode 2 consumes a queued short or retains zero when empty; other modes
+use CRT rand and mode 1 appends the short value. Preserve that separate call on
+the current receiver. Its declaration is local to the new pointer-only class;
+no accepted shared ABI is changed and the helper earns no source or exact credit.
+
+Queued modes 1..5 and ordinary decisions reuse independently reviewed portions
+of our authored F036 statements. Preserve both +0xF12 checks, state-301 queued
+mode 2, the two inline Boolean threshold values and three command assignment
+chains. Five command-103 gates and all twelve command-13 spell gates are absent.
+The receiver is never constructed or embedded; both local separation floats are
+used. Original identity, declarations and complete layout remain unknown.
+No assembly, target arrays, padding, inert locals, fake returns, ABI
+misdeclarations or alternate bodies are used.
+
+All 189 relocations are bound: 92 calls, 90 readonly references to 22 actual
+float payloads, and seven dword counter accesses at `0x0068D648` (four reads,
+three writes). Actual COFF payloads, zero addends, widths and target section
+permissions are checked. Writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 77 CRT rand, ten range helpers, one distinct
+recorded-range helper and two opponent predicates. Eleven range calls use the
+current receiver. Wrapper ownership remains unresolved.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-005349b0
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and every
+relocation. All 138 earlier units and inputs remain unchanged and were not
+rebuilt. The new header includes unchanged `CharacterAIPolicy.hpp`; changing
+that header affects all prior dependent AI units plus F045, while its source
+affects the six F033 units. Replay affected units only.
+
+Private evidence below `.analysis/`: `f045-native-audit.py` / `.json`,
+`f045-5349b0.asm`, `f045-ai.c`, `f045-decompile.log`, `f045-review.py`,
+`f045-behavior-review.json`, `f045-recorded-range-455580.asm` / `.json`,
+`f045-compose.py`, `f045-ai-diagnostic.py`, `f045-dispatch-audit.json`,
+`f045-bind.py`, `f045-family-bindings-preview.json`, `f045-family-bindings.json`,
+`f045-accepted-replay.json`, `f045-cold-replay.log` and `f045-progress.json`.
+The first complete draft aligns all physical operands and branch destinations;
+diagnostic alignment alone earns no exact credit.
+
+The next bounded R047 AI candidate is F046 at `0x004C8CD0..0x004CA637`
+/6,504 bytes. Its full native audit checks 1,639 instructions, 343 internal
+branches, one return and 99 calls: two wrappers, 92 CRT rand, four range helpers
+and one predicate. There are no switches or external exits; eight following
+INT3 bytes are alignment. Retain `f046-*` native evidence and the attested
+read-only decompile. Full behavior and five receiver contexts are reviewed in
+`f046-behavior-review.json`; a private natural draft and composer are retained.
+Preserve type-2/0 distinct command exits, state-specific successive command
+overwrites and the absent command-103/13 gates. Full comparison and cold replay
+remain required. No source or exact credit is registered. The 95%
+goal remains active and incomplete; cleanup/handoff does not pause it. All 97
+unknown origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F045 final validation: all 3,603 CI tests passed in 93.719 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (86,197
+file bytes); `f045-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f045-probe-00.*`, with
+profile and diagnostic limits in `f045-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.9 GiB available memory and CPU 90% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve

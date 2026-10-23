@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F045",
+  "batch": "F010-F020; F022-F046",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b763a61d07da6d4896deeed5ad7c2cff8248ee001b1aca73db56a9315de2ec2c"
+      "current_sha256": "d25797c71fc7ec0f69a604806e0dfe6ab7173fcf75ff3c207f726c393a51750d"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "7185064cc99380deab24ca825a468400417ad083e87e295b070c445c83f80176"
+      "current_sha256": "4e2bda8893eb727fcbf5cc4eec20be30fa363c25dc2caf80d690b5ce226ea27b"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d79e2a4b41707d3b245124119d785942d51e69383b6cde07401243e0cd54375e"
+      "current_sha256": "3ee6577e6ef6b67b07d5ee389fb66344abef753204f47fa70d6296521323499f"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "17265d733a2d9030981565aa67c6412a175c6b4066d5febe63e491be3d211474"
+      "current_sha256": "527191ba9636c935b776a10f2987763209e217b5b65919d61517959b28b80df3"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "b6e150fe195ce97ad0f4c3992867b6f8b7d7670160f7f6b4042603c98b663c8e"
+      "current_sha256": "03fbe2d58be041627d1581522dac45ccea3091ecab6f6ea3ddb87d5ec065c48f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b4bf8c18664fe06be3311e0c458f68b8637b540f407b13a1acfd745a4912596e"
+      "current_sha256": "28f719bf89fe184753d7e87dbad0b60335f776eab4b742f7415aee7f0872799f"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "823477fe1700248084baae9d6e3fa0be188a68551f1fd42af8414753a4ca265b"
+      "current_sha256": "4e7001322ccd3c3e1a5bb8d6edceee273cf917587fbdf1db51d3ca90aa6cb90b"
     }
   },
   "functions": [
@@ -3511,6 +3511,50 @@
       },
       "origin": {
         "address": "0x005349B0",
+        "origin": "authored",
+        "subsystem": "CharacterAI",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R047"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C8CD0",
+        "size": "6504",
+        "span_end": "0x004CA637",
+        "current_name": "FUN_004c8cd0",
+        "proposed_name": "CharacterAI::ChooseAt004C8CD0",
+        "module": "CharacterAI",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C8CD0",
+        "size": "6504",
+        "span_end": "0x004CA637",
+        "current_name": "FUN_004c8cd0",
+        "proposed_name": "CharacterAI4C8CD0::ChooseAction",
+        "module": "CharacterAI",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAI4C8CD0::ChooseAction()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterAI4C8CD0.cpp",
+        "evidence": "R047; whole body hash, complete decoded CFG and game AI decision calls and character-specific branches reviewed; F046; scripts/repo-python scripts/replay-exact-units.py --unit character-ai-004c8cd0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F046: complete cold exact replay of 6504 bytes with all 183 relocations; one natural source body with observed decision and counter accesses; pointer-only owner objects are never constructed or embedded; original identities, declarations and complete layouts remain unknown"
+      },
+      "origin": {
+        "address": "0x004C8CD0",
         "origin": "authored",
         "subsystem": "CharacterAI",
         "disposition": "authored",
@@ -52332,6 +52376,1126 @@
           "target": 6870600
         }
       ]
+    },
+    "character-ai-004c8cd0": {
+      "source": "src/CharacterAI4C8CD0.cpp",
+      "object": "build/matching/CharacterAI4C8CD0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAI4C8CD0::ChooseAction"
+      ],
+      "symbol": "?ChooseAction@CharacterAI4C8CD0@@QAEXXZ",
+      "target_address": 5016784,
+      "size": 6504,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?AbsFloatAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?AbsFloatAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?ChooseIntegerRange@CharacterAI4C8CD0@@QAEHHH@Z",
+          "target": 4544016
+        },
+        {
+          "offset": 269,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 293,
+          "type": "REL32",
+          "symbol": "?ChooseIntegerRange@CharacterAI4C8CD0@@QAEHHH@Z",
+          "target": 4544016
+        },
+        {
+          "offset": 415,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 528,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 552,
+          "type": "REL32",
+          "symbol": "?ChooseIntegerRange@CharacterAI4C8CD0@@QAEHHH@Z",
+          "target": 4544016
+        },
+        {
+          "offset": 1351,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1371,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1388,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1415,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1442,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1476,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1488,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1531,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1612,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1642,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1703,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1719,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 1748,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1808,
+          "type": "DIR32",
+          "symbol": "__real@43e10000",
+          "target": 6656512
+        },
+        {
+          "offset": 1820,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1879,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1895,
+          "type": "DIR32",
+          "symbol": "__real@442f0000",
+          "target": 6656508
+        },
+        {
+          "offset": 1907,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1941,
+          "type": "REL32",
+          "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+          "target": 4542352
+        },
+        {
+          "offset": 2001,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 2013,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2058,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2119,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2135,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 2176,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2192,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 2236,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2296,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2356,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2406,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 2432,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2492,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2523,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 2549,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2594,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2628,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2650,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2672,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2694,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2716,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2760,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2803,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2846,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2877,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 2903,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2963,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2994,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 3020,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3061,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3106,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3140,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3162,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3184,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3206,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3228,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3272,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3309,
+          "type": "REL32",
+          "symbol": "?ChooseIntegerRange@CharacterAI4C8CD0@@QAEHHH@Z",
+          "target": 4544016
+        },
+        {
+          "offset": 3369,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3415,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 3427,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3473,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3507,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3529,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3551,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3573,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3595,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3640,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3671,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 3698,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3725,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3753,
+          "type": "DIR32",
+          "symbol": "__real@3f4ccccd",
+          "target": 6656144
+        },
+        {
+          "offset": 3759,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3777,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 3820,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3848,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3878,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 3906,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 3912,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3930,
+          "type": "DIR32",
+          "symbol": "__real@440c0000",
+          "target": 6656520
+        },
+        {
+          "offset": 3973,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4001,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4031,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4059,
+          "type": "DIR32",
+          "symbol": "__real@3ecccccd",
+          "target": 6651976
+        },
+        {
+          "offset": 4065,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4083,
+          "type": "DIR32",
+          "symbol": "__real@440c0000",
+          "target": 6656520
+        },
+        {
+          "offset": 4126,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4159,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4186,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4203,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4230,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4261,
+          "type": "DIR32",
+          "symbol": "__real@43c80000",
+          "target": 6656500
+        },
+        {
+          "offset": 4273,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4307,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4319,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4362,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4414,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 4426,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4454,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4501,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 4520,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4532,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4597,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 4613,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4630,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4695,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 4707,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4775,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4840,
+          "type": "DIR32",
+          "symbol": "__real@428c0000",
+          "target": 6652928
+        },
+        {
+          "offset": 4852,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4886,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 4898,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 4945,
+          "type": "DIR32",
+          "symbol": "__real@432a0000",
+          "target": 6657460
+        },
+        {
+          "offset": 4957,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5004,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 5020,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 5042,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5059,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5109,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 5125,
+          "type": "DIR32",
+          "symbol": "__real@447a0000",
+          "target": 6652852
+        },
+        {
+          "offset": 5137,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5187,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 5203,
+          "type": "DIR32",
+          "symbol": "__real@437a0000",
+          "target": 6656484
+        },
+        {
+          "offset": 5215,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5248,
+          "type": "DIR32",
+          "symbol": "__real@43af0000",
+          "target": 6656496
+        },
+        {
+          "offset": 5264,
+          "type": "DIR32",
+          "symbol": "__real@43fa0000",
+          "target": 6656488
+        },
+        {
+          "offset": 5276,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5315,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5336,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 5352,
+          "type": "DIR32",
+          "symbol": "__real@43c80000",
+          "target": 6656500
+        },
+        {
+          "offset": 5364,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5401,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5422,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 5438,
+          "type": "DIR32",
+          "symbol": "__real@43fa0000",
+          "target": 6656488
+        },
+        {
+          "offset": 5450,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5486,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5546,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 5571,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5599,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5627,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 5661,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 5673,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5689,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 5705,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 5752,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5773,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 5798,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5810,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5877,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 5893,
+          "type": "DIR32",
+          "symbol": "__real@43700000",
+          "target": 6656976
+        },
+        {
+          "offset": 5905,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 5936,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 5952,
+          "type": "DIR32",
+          "symbol": "__real@437a0000",
+          "target": 6656484
+        },
+        {
+          "offset": 5974,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5991,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6022,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 6034,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6083,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 6095,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6144,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 6156,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6196,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6227,
+          "type": "DIR32",
+          "symbol": "__real@43c80000",
+          "target": 6656500
+        },
+        {
+          "offset": 6239,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6300,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6322,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6344,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6372,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6394,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6403,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6411,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6432,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6440,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        },
+        {
+          "offset": 6447,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6465,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 6495,
+          "type": "DIR32",
+          "symbol": "?countdown@CharacterAI4C8CD0@@2HA",
+          "target": 6870576
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -52408,6 +53572,8 @@
     "src/CharacterAI557380.cpp": "ac7f753584e70b963cbfa92f11932d63f50edbf5730cc39541d504e8b9f43b75",
     "src/CharacterAI557380.hpp": "550be3902a43cca7dc427e003d3474ebfad9fa5c2938ca73c78f873bb351f84e",
     "src/CharacterAI5349B0.cpp": "babd2e363449c118282fc7ab9b7f80ebb62dd45b4eff39082b7b3d1d70a63f71",
-    "src/CharacterAI5349B0.hpp": "d11e6d4f8ab57de8ed3be8498716e6039d3de244b7a531c515499e0a9add21a6"
+    "src/CharacterAI5349B0.hpp": "d11e6d4f8ab57de8ed3be8498716e6039d3de244b7a531c515499e0a9add21a6",
+    "src/CharacterAI4C8CD0.cpp": "195b63b2e367ffa0e521d90faa2f499bcd4d0e63001efdff40fd5a1db098d6ca",
+    "src/CharacterAI4C8CD0.hpp": "d16747dfdefb8f4e0db3489bc210d8bbd41d488e9f58621d04219c3ce35e708e"
   }
 }
