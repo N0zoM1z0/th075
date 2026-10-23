@@ -154,3 +154,4 @@ MeilingFighter::DispatchSpecialStatesAt005F3D60,0x005F3D60,function
 CharacterAuxObject::AdvanceActionAt005FAE30,0x005FAE30,function
 CharacterAux5E5500::AdvanceAuxiliary,0x005E5500,function
 CharacterSpecial5E59C0::InitializeStage,0x005E59C0,function
+CharacterSpecial5E68C0::RenderStage,0x005E68C0,function

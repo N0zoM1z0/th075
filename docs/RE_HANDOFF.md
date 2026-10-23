@@ -14,14 +14,14 @@ CPU/memory monitoring.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 155 / 155 / 155 |
-| Exact code bytes | 520,375 |
-| Reviewed authored coverage | 520,375 / 1,973,516 (26.37%) |
-| Conservative coverage, including every pending byte | 520,375 / 1,977,124 (26.32%) |
+| Source-present / exact functions / exact units | 156 / 156 / 156 |
+| Exact code bytes | 521,959 |
+| Reviewed authored coverage | 521,959 / 1,973,516 (26.45%) |
+| Conservative coverage, including every pending byte | 521,959 / 1,977,124 (26.40%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 95 reviewed additions / 510,492 code bytes,
-with 106 new source/header inputs through F063. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 96 reviewed additions / 512,076 code bytes,
+with 108 new source/header inputs through F064. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -31,114 +31,126 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F063
+## Latest accepted cohort: F064
 
-`CharacterSpecial5E59C0::InitializeStage` cold-replays exact from
-`src/CharacterSpecial5E59C0.cpp` / `.hpp`: **3,797 code bytes**, 935 instructions,
-11 branches and one return. The contiguous 40-byte direct table extends
-comparison through `0x005E68BC`: **all 3,837 bytes and 164 relocations match**.
-Three following INT3 bytes before `0x005E68C0` stay outside comparison.
-The R049 historical role `CharacterSpecial::AdvanceAt005E59C0` is retained
-through an explicit alias; extent, body/table hashes and origin evidence stay
-unchanged. Original names, declarations and complete layouts remain unknown.
+`CharacterSpecial5E68C0::RenderStage` cold-replays exact from
+`src/CharacterSpecial5E68C0.cpp` / `.hpp`: **1,584 code bytes**, 353 instructions,
+13 branches and one ret4. The contiguous 12-byte table and ten-byte remap
+extend comparison through `0x005E6F05`: **all 1,606 bytes and 40 relocations
+match**. Ten following INT3 bytes stay outside comparison. The R049 historical
+role `CharacterSpecial::RenderAt005E68C0` is retained through an explicit alias;
+origin evidence, extents and body/table hashes remain unchanged.
 
-All ten states, field/global effects, arguments and actual receivers are
-reviewed. The signed global byte at `0x0067161E` subtracts one before unsigned
-guard 9 and all ten direct destinations. All four complete callees and every
-stack join pin 58 calls: 37 record calls use current with 32-byte cleanup,
-seven primary resets use opponent at +2E8 with 4-byte cleanup, seven camera
-overrides are cdecl with byte/three floats, and seven snaps are cdecl/no args.
-Incorrect 28-byte record cleanup is rejected. Ignored results establish no
-original void return; no callee source or origin credit is added.
+All ten states, rectangle/coordinate values, alpha channels, counter effects
+and actual receivers are reviewed. Five complete direct callees, the actual
+USER32!SetRect import at `0x00657210` and every stack join pin all 27 calls.
+Eight SetRect calls use stdcall/20-byte cleanup; wrong 16-byte cleanup fails.
+Two filter calls use current+4, eight draws use current+700, and nine
+constructor/build calls use local EBP-88. Current is saved at EBP-9C, the shared
+RECT at EBP-98 and the selector at EBP-A0; the native frame is exactly 0xA0.
+All 40 physical bindings include 19 callees, eight IAT references, eight actual
+readonly constants, two table/remap addresses and three table destinations.
+COFF/PE payloads and permissions, addends, operand fields and the complete
+physical body/tables are checked. No accepted header or global ledger changes.
 
-All 164 physical bindings include 58 calls, 95 references to five existing
-writable globals, one direct-table address and ten table destinations. Actual
-widths, signed-byte reads, PE/COFF permissions, addends, local offsets and
-every branch/table destination are checked. All five global names/types reuse
-existing narrow declarations; no global ledger or accepted shared header is
-changed. The native meaningful frame is exactly eight bytes.
+The owned local uses a distinct **complete physical packet view**. Target
+observations establish four 16-byte coordinate records at 0/10/20/30, a
+constructed subreceiver at +40, a 132-byte clear and independent 33-DWORD whole
+record copies in 40C9A0/40CA80/40CEF0/40D2E0. The source view groups the remaining
+68 initialized/copied bytes into a constructed 17-DWORD opaque payload. This
+is an inference about the observed data contract, not recovered original payload
+member types/partition, matrix identity, class identity or original sizeof.
+An independent natural aggregate probe reproduces all 85 constructor bytes
+with its six actual relocations; ordinary aggregate assignment copies all
+33 DWORDs. Compile-time offset/size guards check this complete representation.
+Both empty 14-byte dependencies remain unknown and earn no source/origin credit.
+The accepted 64-byte `SpriteTransform.hpp` prefix remains unchanged and is never
+instantiated or embedded. No raw owner buffer, arbitrary padding or inert local
+supplies storage; all 132 bytes participate in the real lifecycle/transfer.
 
-Keep the 37 record calls independent and preserve repeated signed-byte
-difficulty reads, integer arithmetic and signed division. The first state's
-camera/global order differs from states 2..6. State 7 omits their countdown and
-fade-byte clears, uses distinct current/opponent coordinates and camera y320.
-States 8..10 only set their observed byte fields. The record callee consumes
-only a byte for its fourth argument, so no decompiler CONCAT31 expression or
-inert quotient local is introduced. One natural body has no assembly, target
-arrays, filler locals, padding, fake returns, false ABI results or alternate
-bodies. Never instantiate or embed either partial receiver view.
+A single shared RECT belongs to the switch scope; each drawing branch uses it.
+Declaration-order/name controls did not resolve VC7 local allocation; three
+branch-local rectangles allocated three distinct slots. The actual short
+counter uses 16-bit increment. Keep the native ineffective unsigned-alpha
+lower clamp and zeroing block at `0x005E6CFF`, which Ghidra omits. Preserve the
+SDK ARGB channel expression, independent draw calls and all native fade
+conditions. One natural body has no assembly, target arrays, filler locals,
+fake returns, false ABI results or alternate bodies. Original names and full
+receiver layouts remain unknown; never construct or embed partial receivers.
 
 ```bash
-scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-005e59c0
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-005e68c0
 ```
 
-The complete preview, independent canonical compile and separate cold replay
-match physically with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
-All 154 prior units and accepted inputs remain unchanged and were not rebuilt.
-The manifest preserves F009 plus 95 additions / 510,492 code bytes / 106 new
+Complete preview, independent canonical compile and separate cold replay match
+physically with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All 155 prior units and accepted inputs remain unchanged and were not rebuilt.
+The manifest preserves F009 plus 96 additions / 512,076 code bytes / 108 new
 source/header inputs, excluding F021/F048/F061. Every pending byte stays in the
-conservative denominator. F062 is retained in
-[history](RE_HANDOFF_HISTORY.md#f062-auxiliary-policy-checkpoint-2026-10-23).
+conservative denominator. F063 is retained in
+[history](RE_HANDOFF_HISTORY.md#f063-ten-stage-policy-checkpoint-2026-10-24).
 
-Retain `f063-session-check.log`, `f062-r049-native.py` / `.json`,
-`f062-5e59c0.asm`, the attested `f062-r049-views.c` / `f062-decompile.log`,
-`f063-abi-review.py` / `.json`, all four `f063-callee-*.asm`,
-`f063-compose.py`, `f063-behavior-review.json`, `special-stage-5e59c0/`,
-`f063-whole-diagnostic.py` / `.json`, `f063-bind-draft.py`,
-`f063-family-bindings.json`, `f063-accepted-replay.json`,
-`f063-cold-replay.log`, `f063-adoption-parent.json`, `f063-progress.json`
-and `f063-evidence-check.json`. Continue the full 95% goal without pausing for
-this bounded acceptance, cleanup or handoff. Use existing Ghidra/local tools
-without REA, affected cold replays only, serial low-priority builds and
-CPU/memory monitoring.
-
-Full CI passes all 3,603 tests in 131.869 seconds. Tracking, progress-card,
-all 154 prior units/inputs, raw origin hashes, historical prefixes and
-whitespace checks pass. One obsolete reproducible preview object / 9,469 bytes
-is removed only after whole COFF function-byte and complete physical binding
-equality against the retained canonical cold object
-(`f063-obsolete-output-cleanup.json`). All sources, controls, manifests,
-accepted objects, unaccepted active objects and shared tools remain. Sampled
-intervals show no swap activity and about 8.5 to 9.1 GiB available memory.
-Compilation remains serial at niceness 15; CI uses niceness 10.
-
-## Current reconstruction cohort: F064
-
-Continue independently reviewed R049 `0x005E68C0..0x005E6EEF`, historical role
-`CharacterSpecial::RenderAt005E68C0`: **1,584 code bytes**, 353 instructions,
-13 branches, one ret4, 19 direct calls and eight import calls. The contiguous
-12-byte table and ten-byte remap extend comparison through `0x005E6F05`:
-compare all **1,606 bytes**, excluding ten following INT3 bytes. The signed
-byte argument at EBP+8 subtracts one before unsigned guard 9 and the remap.
-
-All five complete direct callees, the actual USER32!SetRect import at
-`0x00657210` and every caller stack/receiver path are pinned. Eight SetRect
-calls use stdcall/20-byte cleanup; an incorrect 16-byte cleanup is rejected.
-Two filter calls use current+4, eight draw calls use current+700, and nine
-constructor/build calls use local EBP-88. Current is saved at EBP-9C, the
-RECT at EBP-98 and the selector at EBP-A0; frame 0xA0. Keep
+Retain `f064-session-check.log`, `f062-r049-native.py` / `.json`,
+`f062-5e68c0.asm`, the attested `f062-r049-views.c` / `f062-decompile.log`,
 `f064-abi-review.py` / `.json`, `f064-imports.json`, all five
-`f064-callee-*.asm`, `f064-dependency-*.asm` and `f064-progress.json`.
+`f064-callee-*.asm`, `f064-dependency-*.asm`, attested constructor/subobject
+callers and layout exports/logs, `f064-layout-probe.cpp`,
+`f064-layout-constructor-check.json`, `f064-layout-model-review.py` / `.json`,
+`special-render-5e68c0/` and controls, `f064-bind.py`, both physical binding
+receipts, `f064-accepted-replay.json`, `f064-cold-replay.log`,
+`f064-adoption-parent.json`, `f064-progress.json` and `f064-evidence-check.json`.
+Continue the full 95% goal without pausing for acceptance, cleanup or handoff.
+Use Ghidra/local tools without REA, affected cold replays only, serial
+low-priority builds and CPU/memory monitoring.
 
-The decompile omits the raw zeroing block at `0x005E6CFF`. Native MOVZX,
-zero test and JGE retain an ineffective unsigned-alpha clamp; preserve these
-bytes and the actual counter/fade conditions rather than truncating the extent
-or copying the decompile. Preserve the native ARGB channel expression and
-all three table destinations. Constructor-like `0x0040D990` invokes four
-subreceivers at offsets 0/10/20/30 and one at 40, then zeros 132 bytes and returns
-current. The draw helper copies 132 bytes. The accepted `SpriteTransform.hpp`
-only represents the first 64 bytes and explicitly forbids instantiation.
-These clear/copy extents alone do not establish all local packet member types
-or original sizeof. Resolve the complete local value layout before source;
-do not force it with padding or raw owner buffers. Both 14-byte empty dependency
-origins remain unknown. The fresh attested constructor-callers query lists 85
-callers (`f064-constructor-callers.txt` / `.log`) as investigation context only.
-No renderer source, layout acceptance or exact credit is created.
+One obsolete reproducible preview object / **12,563 bytes** is removed after
+whole COFF function-byte and all-relocation equality with the retained
+canonical cold object (`f064-obsolete-output-cleanup.json`). All source/control
+inputs, manifests, accepted evidence/objects, unaccepted active objects and
+shared tools remain. Builds use niceness 15; CI uses niceness 10.
 
-Continue the full 95% goal without pausing for cleanup or handoff, preserving
-all 155 accepted units, F061 active07, F048 active03/F021, R268 and all 97 unknown
-origins. Use Ghidra/local tools without REA, serial low-priority compilation,
-affected cold replays only and CPU/memory monitoring.
+Full CI passes all **3,603 tests in 131.296 seconds**. Tracking, progress-card,
+all 155 prior units and inputs, raw origin hashes, historical prefixes and
+whitespace checks pass. Sampled intervals show no swap activity and about
+8.6 to 8.8 GiB available memory; CPU remains mostly idle. F065 private preview
+continues during validation without receiving acceptance credit.
+
+## Current reconstruction cohort: F065
+
+Continue independently reviewed R049 `0x005E6F70..0x005E736C`, historical role
+`CharacterAux::RunAt005E6F70`: **1,021 complete code/comparison bytes**, 294
+instructions, 51 internal branches, one return and 26 direct calls to
+`0x00455800`. There are no tables, indirect calls or external branch exits.
+Three following INT3 bytes before `0x005E7370` stay outside comparison.
+
+The fresh attested Ghidra matcher view and complete 695-byte R112 matcher,
+including all 108 switch bytes, pin the actual ABI: thiscall, pattern pointer,
+signed-byte length and signed-byte history window, ret12; its AL result is
+consumed by MOVSX. Terminal X can return 1..4, so do not declare a bool result.
+All 294 caller instructions, 26 current receivers, stack joins and original
+NUL-terminated string payloads/lengths/windows/outcome bytes are checked.
+Wrong 8-byte cleanup fails. The policy first clears current+511, evaluates
+26 patterns in native priority order, then writes the first successful
+pattern's outcome and skips the rest. All-negative leaves zero. Preserve
+original target strings, including `236236D`, `NRNR`, `NLNL` and the N-prefixed
+three-character forms; names/declarations and full owner layout remain unknown.
+
+Keep `f065-abi-review.py` / `.json`, `f065-callee-455800.asm`,
+`f065-matcher-view.c` / `f065-matcher-decompile.log`, and the frozen native
+`f062-5e6f70.asm` / `f062-r049-native.json`. The complete private draft is `aux-input-5e6f70/Preview.cpp` / `.hpp`,
+with active `build/probes/F065Preview.obj`. One natural ordered if/else chain
+preserves all original strings and outcome bytes. It reproduces all 294
+instructions and **1,021 complete bytes / 52 relocations** physically:
+26 actual readonly string payloads and 26 direct calls, with COFF/PE permissions,
+addends and operand fields checked. Keep `f065-bind-draft.py`,
+`f065-draft-relocation-bindings.json` and `f065-progress.json`.
+
+**F065 remains unaccepted.** The exact preview is diagnostic; independently
+compile canonical source, verify all bytes/relocations, register its complete
+descriptor and run a separate canonical cold replay before adding credit.
+Original declarations and full owner layout remain unknown; never construct
+or embed the partial receiver. Continue without pausing, preserving all 156
+exact units, F061 active07, F048 active03/F021, R268 and all 97 unknown origins.
 
 ## Unaccepted work: F061
 

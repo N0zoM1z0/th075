@@ -7575,3 +7575,76 @@ bindings against retained objects (`f062-obsolete-output-cleanup.json`). All
 inputs, control receipts, accepted objects, F061 active07, F048/F021 and shared
 tools remain. Interval samples show no swap activity and about 8.7 to 9.1 GiB
 available memory. Builds remain serial at niceness 15; CI uses niceness 10.
+
+
+## F063 ten-stage policy checkpoint (2026-10-24)
+
+
+`CharacterSpecial5E59C0::InitializeStage` cold-replays exact from
+`src/CharacterSpecial5E59C0.cpp` / `.hpp`: **3,797 code bytes**, 935 instructions,
+11 branches and one return. The contiguous 40-byte direct table extends
+comparison through `0x005E68BC`: **all 3,837 bytes and 164 relocations match**.
+Three following INT3 bytes before `0x005E68C0` stay outside comparison.
+The R049 historical role `CharacterSpecial::AdvanceAt005E59C0` is retained
+through an explicit alias; extent, body/table hashes and origin evidence stay
+unchanged. Original names, declarations and complete layouts remain unknown.
+
+All ten states, field/global effects, arguments and actual receivers are
+reviewed. The signed global byte at `0x0067161E` subtracts one before unsigned
+guard 9 and all ten direct destinations. All four complete callees and every
+stack join pin 58 calls: 37 record calls use current with 32-byte cleanup,
+seven primary resets use opponent at +2E8 with 4-byte cleanup, seven camera
+overrides are cdecl with byte/three floats, and seven snaps are cdecl/no args.
+Incorrect 28-byte record cleanup is rejected. Ignored results establish no
+original void return; no callee source or origin credit is added.
+
+All 164 physical bindings include 58 calls, 95 references to five existing
+writable globals, one direct-table address and ten table destinations. Actual
+widths, signed-byte reads, PE/COFF permissions, addends, local offsets and
+every branch/table destination are checked. All five global names/types reuse
+existing narrow declarations; no global ledger or accepted shared header is
+changed. The native meaningful frame is exactly eight bytes.
+
+Keep the 37 record calls independent and preserve repeated signed-byte
+difficulty reads, integer arithmetic and signed division. The first state's
+camera/global order differs from states 2..6. State 7 omits their countdown and
+fade-byte clears, uses distinct current/opponent coordinates and camera y320.
+States 8..10 only set their observed byte fields. The record callee consumes
+only a byte for its fourth argument, so no decompiler CONCAT31 expression or
+inert quotient local is introduced. One natural body has no assembly, target
+arrays, filler locals, padding, fake returns, false ABI results or alternate
+bodies. Never instantiate or embed either partial receiver view.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-005e59c0
+```
+
+The complete preview, independent canonical compile and separate cold replay
+match physically with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All 154 prior units and accepted inputs remain unchanged and were not rebuilt.
+The manifest preserves F009 plus 95 additions / 510,492 code bytes / 106 new
+source/header inputs, excluding F021/F048/F061. Every pending byte stays in the
+conservative denominator. F062 is retained in
+[history](RE_HANDOFF_HISTORY.md#f062-auxiliary-policy-checkpoint-2026-10-23).
+
+Retain `f063-session-check.log`, `f062-r049-native.py` / `.json`,
+`f062-5e59c0.asm`, the attested `f062-r049-views.c` / `f062-decompile.log`,
+`f063-abi-review.py` / `.json`, all four `f063-callee-*.asm`,
+`f063-compose.py`, `f063-behavior-review.json`, `special-stage-5e59c0/`,
+`f063-whole-diagnostic.py` / `.json`, `f063-bind-draft.py`,
+`f063-family-bindings.json`, `f063-accepted-replay.json`,
+`f063-cold-replay.log`, `f063-adoption-parent.json`, `f063-progress.json`
+and `f063-evidence-check.json`. Continue the full 95% goal without pausing for
+this bounded acceptance, cleanup or handoff. Use existing Ghidra/local tools
+without REA, affected cold replays only, serial low-priority builds and
+CPU/memory monitoring.
+
+Full CI passes all 3,603 tests in 131.869 seconds. Tracking, progress-card,
+all 154 prior units/inputs, raw origin hashes, historical prefixes and
+whitespace checks pass. One obsolete reproducible preview object / 9,469 bytes
+is removed only after whole COFF function-byte and complete physical binding
+equality against the retained canonical cold object
+(`f063-obsolete-output-cleanup.json`). All sources, controls, manifests,
+accepted objects, unaccepted active objects and shared tools remain. Sampled
+intervals show no swap activity and about 8.5 to 9.1 GiB available memory.
+Compilation remains serial at niceness 15; CI uses niceness 10.

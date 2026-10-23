@@ -99,3 +99,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005D4890,CharacterSequence::AdvanceAt005D4890,CharacterSequence5D4890::AdvanceSequence,R048,character-sequence-005d4890
 0x005E5500,CharacterAux::RunAt005E5500,CharacterAux5E5500::AdvanceAuxiliary,R049,character-aux-policy-005e5500
 0x005E59C0,CharacterSpecial::AdvanceAt005E59C0,CharacterSpecial5E59C0::InitializeStage,R049,character-special-stage-005e59c0
+0x005E68C0,CharacterSpecial::RenderAt005E68C0,CharacterSpecial5E68C0::RenderStage,R049,character-special-render-005e68c0
