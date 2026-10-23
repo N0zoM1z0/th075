@@ -109,10 +109,53 @@ git diff --check
 A new compile can change debug metadata and the whole-object hash; refresh the
 private progress receipt after rebuilding. The current compiled function hash
 is `e2b757b2007e18c766a2978cfcab4c03a97fbb05831b04264ad50e9b360fafe6`.
-The current task is to investigate natural register allocation from
-state 89, preserving the full CFG and real local lifetimes. Rebind relocations
+F021 remains pending natural register allocation from state 89, preserving
+the full CFG and real local lifetimes. The next bounded draft is F022 below. Rebind relocations
 and cold-replay the complete function/tables before updating exact ledgers.
 Do not repeat reverted controls without new evidence; see the knowledge base.
+
+## F022 current draft: related action-priority dispatcher
+
+The next bounded source task is the complete Reimu dispatcher at
+`0x0046D300` /14,141 bytes (R046). Preserve F021's full draft and unresolved
+physical differences. F022's complete target audit checks 3,801 instructions,
+749 internal branches, one return, 205 direct calls to four destinations, no
+switch tables and three following INT3 alignment bytes. This is reviewed
+authored code; the called vector helper remains library code.
+
+Fifteen ordered priority branches are drafted in
+`.analysis/reimu-dispatch/Preview.cpp`. The 3,299-byte partial preview compiles;
+49 static calls and 145 interior prefix branch destinations agree. Its first
+normalized instruction difference is the incomplete tail at native
+`0x0046DFDE`. Ten edges enter the undrafted next region, so this is explicitly
+incomplete and earns no exact credit. Do not execute or register the preview.
+No complete owner is instantiated or inferred.
+
+The next source region starts at `0x0046DFE3` (input 102 and follow-up choices).
+Retain the post-call height/state reads and unsigned +511 versus signed +39D
+byte loads. Read the F022 knowledge-base entry before extending the draft.
+Target evidence is `.analysis/f022-46d300.asm`, `.analysis/f022-dispatch.c` and
+`.analysis/f022-decompile.log`; the private audit/progress receipts are
+`.analysis/f022-dispatch-audit.json` and `.analysis/f022-draft-progress.json`.
+Reproduce locally, serially:
+
+```bash
+nice -n 10 scripts/compile-probe.sh .analysis/reimu-dispatch/Preview.cpp build/probes/F022Preview.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
+scripts/repo-python .analysis/f022-dispatch-diagnostic.py
+```
+
+Complete the full body and relocation bindings, then cold-replay all 14,141
+bytes before acceptance. The full target extent remains the comparison scope.
+F022 checkpoint verification: all 3,603 CI tests passed in 64.356 seconds.
+Target-required tracking, Ghidra attestation, the complete native extent/CFG
+audit and bounded draft diagnostics passed. All accepted sources and ledgers
+remain unchanged; exact coverage is still 109 functions /38,669 bytes. Builds
+were serial and low priority. Sampled available memory was 7.7–8.2 GiB and the
+latest CPU interval was 79% idle without swap-in/out.
+
+F021's latest expression, parameter and compiler-context controls were reverted;
+see the knowledge base for their bounded results. Its restored final receipts
+agree with the baseline source and function hashes.
 
 ## Resumed investigation (2026-10-23)
 

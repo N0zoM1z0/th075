@@ -15169,3 +15169,81 @@ map. Seventy regions contain all 6,311 normalized physical-operand differences;
 function acceptance or permission to compare only matching regions. The next
 allocation investigation should use this map and avoid the five excluded
 scope/declaration/increment controls.
+
+
+### F021 expression and compiler-context controls (2026-10-23)
+
+State-88 float truth tests and integer-zero spellings reproduce the baseline
+function hash. Double-zero spellings produce 6,318 physical and seven normalized
+operand differences, first at 0x0045FBE4, while retaining 62,090 bytes. An
+unsigned-word secondary-reset parameter and an intermediate int conversion
+before the two state-88 short stores each reproduce the baseline hash; the
+original draft declarations and conversions were restored. No accepted ABI or
+header changed. These controls do not recover the original formal signedness
+or source spelling.
+
+A separate `.analysis/probes/F021IgnoredReturn.cpp` compiler experiment emits
+four 51-byte callers of opaque void/int/short/unsigned-short-return methods.
+Their unrelocated function bytes agree; the callee relocation symbols differ.
+`.analysis/f021-ignored-return.json` records this bounded compiler observation;
+it is not target-callee ABI evidence. Including existing GameLeafHelpers source
+bodies before the preview in `.analysis/f021-context.cpp` also reproduces the
+baseline function hash. No unrelated body was added to reconstructed source.
+All target-draft controls were reverted and the final object/diagnostic hashes
+were refreshed. The 6,311 physical differences remain unresolved.
+
+## F022 — Reimu action-priority dispatch draft
+
+Started on 2026-10-23 as a related complete-function reconstruction, while
+F021 remains pending. Address 0x0046D300..0x00470A3C contains 14,141 code bytes,
+with body SHA-256
+`8c0006a51aaf1b2151a7f074257c68ee728a66081dc4a1b5895f460e3f6bf891`.
+The complete R046 authored evidence is preserved. A fresh decoder audit checks
+all 3,801 instructions, one return, 749 internal branches and no external
+branch exits. There are no switch tables; the following three INT3 bytes are
+alignment. The proposed function role remains inferred.
+
+All 205 static calls have four destinations: vector at 0x004420B0 (61), input
+bit packing at 0x00455B30 (38), primary-counter reset at 0x0040FAC0 (79), and
+auxiliary-input clearing at 0x00453A10 (27). R205 retains the vector helper's
+library origin. Its call sites use an existing receiver at +0x468 and consume
+an element-slot reference containing a pointer. The private draft expresses
+that bounded ABI through a pointer-only partial interface; it does not recover
+or instantiate the vector or complete fighter layout. The current record's
+signed priority word at +0x12 is read before the lookup and retained in ESI
+across the call; the selected record's signed word is at +0x10.
+
+Natural source drafting covers fifteen ordered priority branches. The initial
+input codes 230/220/210 select 761/751/741 and require zero height. Code 200
+selects 731 without that gate. Codes 205/206 select 735/736 on the ground.
+Code 207 selects 720, then rereads height for a possible 722 reset. Code 208
+requires positive height, checks priority for 723, initially resets to 721,
+and rereads height for a possible 723 reset. Preserve those distinct lookup
+and reset values and the post-call height reads.
+
+The next seven branches include input 103 and the six input-13 alternatives.
+They retain the 100.0f resource threshold, distinct +398/+39A selectors,
+signed +39D modes, and the duplicated +3B0 check around the +F22 gate.
++511 is loaded with MOVZX; +39D uses MOVSX. Every priority condition keeps the
+observed `state > 299` / gate-dword checks and the separate `state < 300`
+alternative. Do not hoist or cache the repeated field reads.
+
+`.analysis/reimu-dispatch/Preview.cpp` compiles under the pinned normal profile
+to 3,299 bytes. Its 49 static calls agree with the reviewed target prefix.
+The diagnostic retains physical registers and normalizes relocation values;
+the first differing instruction is at native 0x0046DFDE, where the full body
+jumps to its final epilogue and the incomplete draft begins its epilogue.
+Within the drafted prefix, 145 branch destinations agree by instruction
+ordinal. Fourteen exit edges and ten edges into the undrafted next region
+are explicitly separated; the latter do not establish full CFG equivalence.
+No prefix, static-call, compilation or instruction diagnostic earns credit.
+
+The attested decompile and native read are `.analysis/f022-dispatch.c`,
+`.analysis/f022-decompile.log` and `.analysis/f022-46d300.asm`. Run
+`scripts/repo-python .analysis/f022-dispatch-diagnostic.py` to reproduce the
+complete target audit and bounded draft observations. Receipts are
+`.analysis/f022-dispatch-audit.json` and `.analysis/f022-draft-progress.json`.
+These files, the source and object remain private, unregistered and never
+executed. Continue at native 0x0046DFE3 with input 102 and its distinct follow-up
+paths. Reconcile the entire function, bind all relocations, then cold-replay
+all 14,141 bytes before proposing acceptance. No tracking ledger changed.
