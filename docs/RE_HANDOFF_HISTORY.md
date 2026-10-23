@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F041. Counts, active
+This file preserves historical checkpoints through R268 and F042. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -6090,6 +6090,98 @@ investigative sources and receipts remain in `f041-probe-00.*` /
 outputs and F021 remain preserved. A host sample had 8.8 GiB available memory
 and CPU 88% idle, without interval swap activity. Builds and validation remained
 serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F042 checkpoint before F043 acceptance (2026-10-23)
+
+## Latest accepted cohort: F042
+
+`CharacterAI5C7FC0::ChooseAction` at `0x005C7FC0..0x005C9C1F` cold-replays
+exact from `src/CharacterAI5C7FC0.cpp` / `.hpp`: **7,264 code bytes**, 1,840
+instructions, 380 internal branches and one return. There are no switches,
+external branch exits or trailing alignment bytes. The complete R047 body hash
+and ownership evidence remain unchanged.
+
+Type 4 with stock decrements the short timer, writes command 230 and returns
+without an expiration test. Types 3/2 write 240/200 and return only when their
+short-circuit decrement expires. Type 1 writes 220 and returns without decrementing
+the timer. Type 0 first writes 211 after expiration, then conditionally overwrites
+with 210 after distance/range checks; it continues into queued/ordinary AI.
+Every access, call order and fallthrough remains in the natural source.
+
+The pointer-only receiver view is never constructed or embedded. Both floats
+in the source-defined local separation record are used. Original identity,
+declarations and complete layout remain unknown. No assembly, target arrays,
+padding, inert locals, fake returns, ABI misdeclarations or alternate bodies
+are used. Three assignment chains retain native command read/store repetitions.
+
+All 192 relocations are bound: 96 calls, 89 readonly references to 23 actual
+float payloads, and seven dword counter accesses at `0x0068D668` (four reads,
+three writes). Fresh COFF payloads, zero addends, access widths and target section
+permissions were checked. Writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 83 CRT rand, ten range helpers on the current
+receiver and one predicate on the opponent. Declaration-only callees earn no
+additional origin or exact credit; wrapper ownership stays unresolved.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-005c7fc0
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and every
+relocation. All 135 earlier units and inputs remain unchanged and were not
+rebuilt. Our authored F035 ordinary statements are reused with the whole F042
+emission independently verified. The new header includes unchanged
+`CharacterAIPolicy.hpp` for observed callee declarations. Changing that header
+affects all prior dependent AI units plus F042; its source affects the six F033
+units. Replay affected units only.
+
+Private receipts below `.analysis/`: `f042-native-audit.py` / `.json`,
+`f042-5c7fc0.asm`, `f042-ai.c`, `f042-decompile.log`,
+`f042-behavior-review.json`, `f042-compose.py`, `f042-ai-diagnostic.py`,
+`f042-dispatch-audit.json`, `f042-bind.py`, `f042-family-bindings-preview.json`,
+`f042-family-bindings.json`, `f042-accepted-replay.json`, `f042-cold-replay.log`
+and `f042-progress.json`. The first complete draft aligns all physical operands
+and branch destinations. Diagnostic alignment alone earns no exact credit.
+
+The next bounded R047 AI candidate is F043 at `0x0057B900..0x0057D4D4`
+/7,125 bytes. Its complete native audit checks 1,806 instructions, 375 internal
+branches, one return and 96 calls: two float wrappers, 83 CRT rand, ten range
+helpers and one predicate. There are no switches or external exits; eleven
+following INT3 bytes are alignment. The full decompile and receiver contexts
+are reviewed in `f043-behavior-review.json`. Type 3 bypasses ordinary AI even
+when its decremented timer remains positive; types 2/0 bypass only on expiration.
+Preserve the type-2 command-230 write before its possible overwrite to 231.
+No source or exact credit is registered. The 95% goal
+remains active and incomplete; cleanup/handoff does not pause it. All 97 unknown
+origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F042 final validation: all 3,603 CI tests passed in 114.701 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (89,003
+file bytes); `f042-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f042-probe-00.*`, with
+profile and diagnostic limits in `f042-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.5 GiB available memory and CPU 81% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,

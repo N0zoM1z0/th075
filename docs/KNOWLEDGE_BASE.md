@@ -17600,3 +17600,94 @@ profile and diagnostic limits in `f042-control-manifest.json`. Original evidence
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 8.5 GiB available memory and CPU 81% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
+
+## F043: complete AI policy at 0057B900 (2026-10-23)
+
+The whole R047 extent is `0x0057B900..0x0057D4D4` /7,125 bytes,
+SHA-256 `ab520d16c22a54e043c2db51b752730b1f87faaec75afe50de55769624432781`.
+Its complete CFG has 1,806 instructions, 375 internal branches, one return and
+no switches or external branch exits. Eleven following INT3 bytes are alignment.
+The attested read-only Ghidra decompile supplies hypotheses; original native
+bytes control reconstruction and acceptance.
+
+The natural `CharacterAI57B900::ChooseAction` body uses existing observed callee
+declarations and a fully used source-defined local two-float separation record.
+The pointer-only receiver view is never constructed or embedded. Original
+identity, declarations and complete layout remain unknown. No assembly, target
+arrays, padding, inert locals, fake returns, ABI misdeclarations or alternate
+conditional bodies are used.
+
+Own states 50..149 take the timer-refresh/reset/input path. Type 3 with stock
+decrements the secondary short timer, then writes command 240 if expired.
+Both successful and no-command paths bypass ordinary AI. Native exits at
+0x0057BA6A and 0x0057BA6F establish real distinct early returns; retain both.
+Type 2 with stock short-circuits the decrement and expiration test, then first
+writes 230; range threshold 50 can overwrite with 231 before return. Type 0
+with stock and expired decrement writes 200 and returns. Nonexpired type-2/0
+paths continue; there is no type-4/1 prefix. Preserve every short access,
+reload, overwrite, call order, fallthrough and genuine exit.
+
+Our authored F035 ordinary statements preserve queued modes 1..6 and the whole
+attack/state/resource/movement/ground/air/late-command sequence. Full physical
+F043 bytes are checked independently. Three assignment chains retain native
+command write/read/store repetitions. The signed counter at 0x0068D658 has four
+dword reads and three writes. Its original declaration, owner and semantic name
+remain unknown. Ten native range-helper contexts use the current receiver;
+the predicate uses the opponent at +0x2E8, loaded through ECX. Receiver review
+does not assume identical instruction registers across similar functions.
+Declaration-only callees gain no additional source, origin or exact credit;
+wrapper ownership remains unresolved.
+
+The first complete draft emits all 7,125 bytes /1,806 instructions /96 calls
+and aligns every physical operand and branch destination. The complete binder
+verifies 191 relocations: 96 calls (two wrappers, 83 CRT rand, ten range helpers
+and one predicate), 88 readonly references to 22 actual float payloads, and seven
+counter accesses. Actual COFF payloads, zero addends, offsets, access widths and
+target section permissions are checked. Writable storage is bound by address,
+not contents. The full relocated object equals every original R047 byte.
+Diagnostic alignment alone earns no exact credit.
+
+Canonical cold replay of `character-ai-0057b900` rebuilds
+`build/matching/CharacterAI57B900.obj` with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the complete comparison.
+The retained receipt pins source, object, target and all relocations. All 136
+prior units and inputs remain unchanged and were not rebuilt. The included
+`CharacterAIPolicy.hpp` affects all prior dependent AI units plus F043; its source
+affects the six F033 units. Replay only new or relevant dependencies.
+
+Coverage becomes 137 exact functions /330,664 bytes: 16.76% reviewed authored,
+or 16.72% conservatively including every pending byte. The cumulative manifest
+preserves 77 literal additions /320,781 bytes above F009 and 70 new source/header
+inputs. Historical prefixes and complete accepted descriptors remain guarded;
+R268 origin evidence and all 97 unknown origins remain unchanged. F021 remains
+unaccepted. F042 handoff/verification sections are archived verbatim. Continue
+independent reconstruction toward 95% using Ghidra/local tools, without REA or
+pausing for cleanup/handoff.
+
+F044 preparation retains the attested read-only decompile and complete native
+audit at `0x00557380..0x00558F48` /7,113 bytes, R047 body SHA-256
+`6f08096c6359a7fbac1a676a4152bbdf06dc4c2d99b12ca133d8cfce5dfbbfca`.
+The full CFG has 1,846 instructions, 397 internal branches, one return and
+90 calls (two wrappers, 86 CRT rand and two opponent predicates); no range calls,
+switches or external exits. Seven following INT3 bytes are alignment. Full
+behavior and receiver contexts are in `f044-behavior-review.json`; private source
+and composer remain in `.analysis/character-ai-557380/` and `f044-compose.py`.
+Only queued mode 1 remains. Preserve six early spell choices without +0xF10,
+weighted choices without +0xF12, no state-301 queued-mode-2 write, and the distinct
+late spell fields/modes and fallthrough writes. Ground vertical-one requires
+240<distance<360. No late distance-50/opponent-predicate path exists. The signed
+counter is observed at 0x0068D64C, without accepted declaration or mapping.
+Compile and verify all physical operands, branch destinations and relocations,
+then canonical cold-replay before any source or exact credit. Continue toward
+95% without REA or pausing for cleanup/handoff, preserving all 137 accepted units.
+
+F043 final validation: all 3,603 CI tests passed in 103.442 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (88,545
+file bytes); `f043-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f043-probe-00.*`, with
+profile and diagnostic limits in `f043-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.9 GiB available memory and CPU 83% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
