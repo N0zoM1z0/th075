@@ -150,3 +150,4 @@ CharacterSequence561D40::AdvanceSequence,0x00561D40,function
 CharacterSequence5882B0::AdvanceSequence,0x005882B0,function
 CharacterSequence5AC250::AdvanceSequence,0x005AC250,function
 CharacterSequence5D4890::AdvanceSequence,0x005D4890,function
+MeilingFighter::DispatchSpecialStatesAt005F3D60,0x005F3D60,function
