@@ -16756,3 +16756,121 @@ and a native MOVSX byte read of the existing global at 0x006714D0. Original
 declarations and full owner layouts remain unknown. No F035 source or exact
 credit is registered; continue full independent reconstruction toward 95%
 without REA or pausing for cleanup/handoff.
+
+## F035: complete card-indexed AI policy at 0059F4F0 (2026-10-23)
+
+The complete R047 body spans `0x0059F4F0..0x005A1555` /8,294 bytes,
+SHA-256 `83ce16aaee985b73a51c7b657cfacb1e7671c9a8fcac3083a1b7d2add6e6d49a`.
+Its 2,118 instructions contain 429 internal branches, one return and no switch
+tables or external branch exits. Ten following INT3 bytes are alignment.
+An attested read-only Ghidra decompile supplies hypotheses; the complete native
+body determines every access, call, branch and accepted byte.
+
+The pointer-only `CharacterAI59F4F0` view has one natural source body and a fully
+used source-defined two-float local separation record. It includes unchanged
+shared AI callee declarations and repeats an existing signed-byte global
+declaration consistently. Original character identity, declarations and complete
+owner layouts remain unknown; no owner is constructed or embedded. Card/type
+and timer names are inferred roles, not recovered original declarations.
+
+After computing the two absolute separations and decrementing the queued-input
+timer at 0x512, the native code indexes signed bytes at 0x370 using the signed
+byte at 0x39D. Own states 50..149 with selected type other than 4 refresh a
+negative short timer at 0x516 using range (30,90), clear pending input and its
+timer, choose horizontal input using range (0,100), and independently choose
+an attack input. This path returns before the later card policies.
+
+Selected type 4 with available stock uses range (0,100) to choose command 222
+or 250 at threshold 75. Type 3 conditionally decrements the short timer and
+requires the expired timer, ground height and health at least 3500 for command
+230. Type 2 decrements the timer before its random/ground checks, writes command
+221, then overwrites it with 222 if the existing global byte at 0x006714D0 is
+zero. The native instruction is MOVSX byte, consistent with the existing
+`g_StateRepeatLevelAt006714D0` view from F026/F032. Type 1 selects a command
+from range (0,3) plus 210; type 0 writes command 200. Every short-circuit test,
+read, decrement and call remains in observed order.
+
+Types 3 and 4 take a dedicated movement/counter path. Other types continue
+through queued modes 1..6, the ordinary attack-state policies and the opponent
+guarding/state-exclusion group. Resource-qualified choices queue charged input
+with range (0,30) or (0,45); an additional branch tests the int at offset 0x7C.
+Three independent weighted checks use resource multipliers 0.8f, 1.0f and 0.5f.
+Their exact write order differs: one queues mode 1 after range (0,45), another
+writes mode 6 before that range call, and the third writes a separate input.
+The later movement path is a second full native copy, followed by ground/air
+and late-command choices. Both copies must remain inline: introducing a helper
+call or merging them would change the emitted body and control flow.
+
+Six movement command assignment chains preserve native write/read/store
+repetitions. The signed dword counter at 0x0068D660 is accessed in both paths:
+eight reads and six writes in total, retaining positive, negative and zero
+policies. Its original declaration and semantic name remain unknown. The
+height/distance Boolean expression in a ground policy retains meaningful
+compiler temporaries without fabricated locals. No assembly, byte arrays,
+padding, inert locals, ABI misdeclarations or alternate conditional bodies
+are used.
+
+The first private composition accidentally omitted the already reviewed
+attack-state group and emitted 7,481 bytes /1,905 instructions /102 calls.
+It was rejected at native 0x0059FEB4. `f035-probe-00.cpp` / `.json` retain
+that negative observation. Correcting the source composition emits all 8,294
+bytes /2,118 instructions /113 calls, with identical physical operands and
+all branch destinations. This diagnostic alone earns no exact credit.
+
+The complete relocation binder verifies 229 fields: 113 direct calls (two
+float wrappers, 96 CRT rand calls, one predicate on the opponent and 14 thiscall
+range helpers on the current receiver), 101 readonly references to 22 actual
+float payloads and 15 writable-global references. Every counter reference has
+width four; the one existing-global reference has width one and uses MOVSX.
+All COFF payloads, addends, offsets and target section permissions are checked.
+Writable storage is bound by address rather than initial contents. The full
+relocated object equals every original R047 code byte.
+
+Canonical cold replay of `character-ai-0059f4f0` rebuilds
+`build/matching/CharacterAI59F4F0.obj` with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the complete function.
+The retained cold receipt pins source, object, target and every relocation.
+All 127 earlier units and source/header inputs remain unchanged and were not
+rebuilt. A change to shared `CharacterAIPolicy.hpp` affects the six F033 units,
+F034 and F035; a change to its source affects its six F033 units. Declaration-only
+callees earn no additional source, origin or exact credit.
+
+Coverage becomes 128 exact functions /261,928 bytes: 13.27% reviewed authored,
+or 13.25% conservatively including every pending byte. The cumulative manifest
+preserves 68 literal additions /252,045 bytes above F009 and 54 new source/header
+inputs. All historical prefix guards and complete descriptors remain enforced;
+origin evidence through R268 is unchanged, all 97 unknown origins stay unknown,
+and F021 remains unaccepted. The F034 handoff and verification sections are
+archived verbatim. Continue independent reconstruction toward the active 95%
+objective with Ghidra/local tools, without REA or pausing for cleanup/handoff.
+
+Final F035 validation passes all 3,603 CI tests in 88.236 seconds. Canonical
+cold source/object and header pins remain intact. Four superseded preview files
+were removed after equality and hash checks (101,634 bytes); `f035-cleanup.json`
+records their paths, sizes and hashes. Both investigative drafts and receipts
+remain in `f035-probe-00.*` and `f035-probe-01.*`, with profiles and diagnostic
+limits in `f035-control-manifest.json`. Original evidence, canonical inputs,
+matching outputs and F021 remain preserved. The host sample during CI had
+8.6 GiB available memory and CPU 72% idle, with 8 KiB/s swap-in and no swap-out
+in that interval. Compiler builds and validation remained serial and low priority.
+
+F036 preparation retains a complete attested read-only decompile and native
+audit at `0x00532950..0x005349A0` /8,273 bytes, R047 body SHA-256
+`85890b00fb92754df379f039b0982a2266a3d243a6e07ce99687b4079f5ea1d9`.
+The full CFG has 2,137 instructions, 457 internal branches, one return and
+98 direct calls: two float wrappers, 93 CRT rand calls and three predicates.
+There are no switches, external exits or range-helper calls; fifteen following
+INT3 bytes are alignment. Full decompile reading and native call-site checks
+confirm all three predicates use the opponent pointer at receiver +0x2E8.
+The native evidence and observations remain in `f036-native-audit.py` / `.json`,
+`f036-532950.asm`, `f036-ai.c`, `f036-decompile.log`,
+`f036-behavior-review.json` and `f036-progress.json`.
+
+The next source must preserve two late weighted choice-1 writes of command 13
+that fall through into later decisions, plus additional signed-short checks at
+0xF10/0xF12. Two different zero-choice late gates both test mode 1 in the
+decompile; confirm their native conditions and do not deduplicate them. The
+final signed counter is at 0x0068D644, with no accepted declaration, mapping or
+exact credit yet. The source remains undrafted. Preserve full call and access
+order, independently confirm behavior against native bytes, and continue the
+active 95% goal without REA or pausing for cleanup/handoff.

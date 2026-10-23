@@ -55,7 +55,7 @@ class ExactCheckpointTests(unittest.TestCase):
 
     def test_unknown_origins_receive_no_adoption_credit(self):
         plan = E.plan()
-        self.assertEqual(len(plan["functions"]), 67)
+        self.assertEqual(len(plan["functions"]), 68)
         self.assertTrue(all(item["origin"]["disposition"] == "authored"
                             for item in plan["functions"]))
-        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 243751)
+        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 252045)

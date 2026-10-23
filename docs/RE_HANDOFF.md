@@ -14,14 +14,14 @@ CPU/memory monitoring.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 127 / 127 / 127 |
-| Exact code bytes | 253,634 |
-| Reviewed authored coverage | 253,634 / 1,973,516 (12.85%) |
-| Conservative coverage, including every pending byte | 253,634 / 1,977,124 (12.83%) |
+| Source-present / exact functions / exact units | 128 / 128 / 128 |
+| Exact code bytes | 261,928 |
+| Reviewed authored coverage | 261,928 / 1,973,516 (13.27%) |
+| Conservative coverage, including every pending byte | 261,928 / 1,977,124 (13.25%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 67 reviewed additions /243,751 bytes,
-with 52 new source/header inputs through F034. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 68 reviewed additions /252,045 bytes,
+with 54 new source/header inputs through F035. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -31,58 +31,65 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F034
+## Latest accepted cohort: F035
 
-`CharacterAI4C6B50::ChooseAction` at `0x004C6B50..0x004C8CCB` cold-replays
-exact from `src/CharacterAI4C6B50.cpp` / `.hpp`: **8,572 code bytes**, 2,180
-instructions, 480 internal branches and one return. There are no switch tables
-or external branch exits. Four following INT3 bytes are alignment. The original
+`CharacterAI59F4F0::ChooseAction` at `0x0059F4F0..0x005A1555` cold-replays
+exact from `src/CharacterAI59F4F0.cpp` / `.hpp`: **8,294 code bytes**, 2,118
+instructions, 429 internal branches and one return. There are no switch tables
+or external branch exits. Ten following INT3 bytes are alignment. The original
 R047 body hash and ownership evidence remain unchanged.
 
-This is a separate natural source body because its decisions differ from F033.
-The receiver interface remains pointer-only; do not construct or embed it.
-The two-float local separation record is source-defined, with both components
-used. Three command assignment chains preserve observed read/store repetitions.
-No assembly, byte arrays, inert locals, padding or alternate bodies are used.
+The separate natural body preserves signed-byte indexed reads at offset 0x370,
+conditional short-timer decrements, command overwrites and two native copies of
+the movement/counter policy. The receiver interface remains pointer-only; do
+not construct or embed it. The local two-float separation record is source-defined
+and fully used. Six command assignment chains preserve observed read/store
+repetitions. No assembly, byte arrays, inert locals, padding or alternate bodies
+are used. Original identities, declarations and full owner layouts stay unknown.
 
-All 218 relocations are bound: 116 direct calls, 95 readonly references to 23
-float constants and seven accesses to the signed dword counter at `0x0068D62C`
-(four reads, three writes). Fresh COFF payloads and target section permissions
-were checked. Calls comprise two float-wrapper calls, 111 CRT rand calls, two
-state-predicate calls on the opponent, and one thiscall range-helper call on
-the current receiver. Callee declarations do not add origin or exact credit;
-the original wrapper declaration and ownership remain unknown. The counter is
-bound by address, without claiming data contents or a complete owner layout.
+All 229 relocations are bound: 113 direct calls, 101 readonly references to 22
+float constants and 15 writable-global references. The counter at `0x0068D660`
+has eight dword reads and six writes across the two paths. The existing global
+at `0x006714D0` has one MOVSX byte read, preserving its previously accepted
+signed-byte declaration. Fresh COFF payloads, access widths and target section
+permissions were checked; writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 96 CRT rand calls, one predicate on the
+opponent and 14 thiscall range-helper calls on the current receiver. These
+declaration-only callees earn no new origin or exact credit.
 
 ```bash
-scripts/repo-python scripts/replay-exact-units.py --unit character-ai-004c6b50
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-0059f4f0
 ```
 
-The canonical replay cold-builds the object with pinned VC7.1 build 3077,
+Canonical replay cold-builds the object with pinned VC7.1 build 3077,
 `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares all bytes and relocations.
-All 126 earlier units and their inputs remain unchanged and were not rebuilt.
-The new header includes the unchanged `CharacterAIPolicy.hpp` for observed
-callee declarations. Changing that shared header affects F034 and all six F033
-units; changing only `CharacterAIPolicy.cpp` affects its six F033 units. Replay
-affected units only. Preserve the unchanged `GameLeafHelpers.hpp` ABI.
+All 127 earlier units and inputs remain unchanged and were not rebuilt. The
+new header includes unchanged `CharacterAIPolicy.hpp` for observed callee
+declarations. Changing that header affects the six F033 units, F034 and F035;
+changing only `CharacterAIPolicy.cpp` affects its six F033 units. Replay affected
+units only, preserving the unchanged `GameLeafHelpers.hpp` ABI.
 
-Private receipts below `.analysis/`: `f034-native-audit.py` / `.json`,
-`f034-4c6b50.asm`, `f034-ai.c`, `f034-decompile.log`, `f034-compose.py`,
-`f034-ai-diagnostic.py`, `f034-dispatch-audit.json`, `f034-bind.py`,
-`f034-family-bindings-preview.json`, `f034-family-bindings.json`,
-`f034-accepted-replay.json`, `f034-cold-replay.log` and `f034-progress.json`.
-The first source draft already aligned all physical operands and branches;
-diagnostics alone earned no credit. Only canonical cold replay accepted it.
-See [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) for the observed decision behavior.
+Private receipts below `.analysis/`: `f035-native-audit.py` / `.json`,
+`f035-59f4f0.asm`, `f035-ai.c`, `f035-decompile.log`, `f035-compose.py`,
+`f035-ai-diagnostic.py`, `f035-dispatch-audit.json`, `f035-bind.py`,
+`f035-family-bindings-preview.json`, `f035-family-bindings.json`,
+`f035-accepted-replay.json`, `f035-cold-replay.log` and `f035-progress.json`.
+The rejected first draft omitted the reviewed attack-state group; its source
+and diagnostic remain in `f035-probe-00.*`. The corrected full draft aligns all
+physical operands and branches, but only canonical cold replay earns credit.
+See [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) for the observed behavior.
 
-The next bounded R047 AI candidate is F035 at `0x0059F4F0..0x005A1555`
-/8,294 bytes. Its full native audit checks 2,118 instructions, 429 internal
-branches, one return and 113 direct calls (including 14 range-helper calls).
-There are no switches or external branch exits; ten following INT3 bytes are
-alignment. Attested read-only Ghidra decompilation and private native evidence
-are retained in `f035-*`. Independently review the full policy before drafting
-source or claiming exact credit. The 95% goal remains active and incomplete;
-cleanup and handoff do not pause it. All 97 unknown origins remain unknown.
+The next bounded R047 AI candidate is F036 at `0x00532950..0x005349A0`
+/8,273 bytes. Its full native audit checks 2,137 instructions, 457 internal
+branches, one return and 98 direct calls, with no range-helper calls. There are
+no switches or external exits; fifteen following INT3 bytes are alignment.
+Attested read-only Ghidra decompilation and private native evidence are retained
+in `f036-*`. Full behavior reading and native receiver checks are recorded in
+`f036-behavior-review.json`: all three predicate calls use the opponent, and
+two late weighted spell writes continue into later decisions. Preserve those
+fallthroughs, signed-short checks at 0xF10/0xF12 and random-call ordering when
+drafting. No source or exact credit is registered. The 95% goal remains active and incomplete; cleanup and handoff
+do not pause it. All 97 unknown origins remain unknown.
 
 ## Unaccepted work: F021
 
@@ -167,16 +174,17 @@ nice -n 10 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-F034 final validation: all 3,603 CI tests passed in 85.090 seconds, including
+F035 final validation: all 3,603 CI tests passed in 88.236 seconds, including
 complete adoption, historical-prefix, alias, origin, tracking and progress
-freshness checks. The canonical cold source/object pins and both headers remain
-intact. Four superseded previews were removed after canonical equality checks
-(93,645 file bytes); `f034-cleanup.json` records paths, sizes and hashes. The
-first investigative source and receipt remain in `f034-probe-00.cpp` / `.json`,
-with its profile and limits in `f034-control-manifest.json`. Original evidence,
-canonical inputs, matching outputs and F021 remain preserved. The sampled host
-had 8.6 GiB available memory and CPU 88% idle, with no swap-in or swap-out in
-that interval. Builds and validation remained serial and low priority.
+freshness checks. Canonical cold source/object and header pins remain intact.
+Four superseded previews were removed after equality and cold-hash checks
+(101,634 file bytes); `f035-cleanup.json` records paths, sizes and hashes.
+Both investigative source drafts and receipts remain in `f035-probe-00.*` and
+`f035-probe-01.*`; `f035-control-manifest.json` records profiles and diagnostic
+limits. All original evidence, canonical inputs, matching outputs and F021 are
+preserved. A host sample during CI had 8.6 GiB available memory and CPU 72% idle,
+with 8 KiB/s swap-in and no swap-out in that interval. Builds and validation
+remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,
