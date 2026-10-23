@@ -17969,3 +17969,105 @@ profile and diagnostic limits in `f046-control-manifest.json`. Original evidence
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 9.0 GiB available memory and CPU 86% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
+
+## F047: complete AI policy at 0049B070 and R047 completion (2026-10-23)
+
+The whole R047 extent is `0x0049B070..0x0049C840` /6,097 bytes, SHA-256
+`a8666d61b2db1a5e6c96cc6e0e08513add98204c22a13f5e40ad0f5e4243075b`.
+Its CFG has 1,554 instructions, 316 internal branches, one return, no switches or
+external exits, and fifteen following INT3 alignment bytes. Original native
+bytes control acceptance; the attested read-only decompile supplies hypotheses.
+
+The natural body decrements both short timers before own-state checks. Own
+states 50..149 refresh/reset and choose independent inputs, then return. Types
+3/2/1 test secondary timer strictly negative before type and stock. Type 3 writes
+230. Type 2 range <10 writes 225, otherwise writes 220 before the existing signed
+byte ==3 overwrite to 221. Type 1 range <50 writes 210, otherwise 211. These
+paths bypass ordinary AI with genuine native exits. Type 0 with stock writes
+200 without a timer test. Queued modes 1..5 and all ordinary policies are fully
+reviewed, preserving separate calls, threshold order, duplicate later conditions,
+0.8/0.5/0.1 weighted policies, three command chains and both random vertical
+input paths. No source-defined owner object is constructed or embedded.
+
+The first draft emits the same 6,097 bytes /1,554 instructions /80-call sequence
+and all 316 branch destinations, but four physical bytes differ. Native
+0x0049C56B loads own height before comparing opponent height, then tests ordered
+> via 0x41/JNE. The first draft uses the equivalent opponent < own relation
+with opposite x87 operand order and test 5/JP. Natural own > opponent source
+matches every original physical byte, retaining the actual height test and false
+unordered result. `f047-probe-00.*` and `f047-height-comparison-review.json`
+retain the rejected observation; corrected probe 01 matches canonical source.
+No assembly, target arrays, padding, inert locals, fake returns, ABI changes or
+alternate bodies are used. Both local separation floats are used; original
+identity, declarations, counter meaning and complete owner layout remain unknown.
+
+The binder verifies all 165 relocations: 80 calls (two wrappers, 68 CRT rand,
+nine range, one predicate), 77 readonly references to 24 actual float payloads,
+seven signed-dword counter accesses at 0x0068D628 (four reads, three writes),
+and one existing MOVSX signed-byte read at 0x006714D0. COFF payloads, zero
+addends, offsets, widths and section permissions are checked. Writable storage
+is bound by address, not contents. Nine range contexts use current receiver;
+the predicate uses opponent at +0x2E8. The existing signed-byte declaration is
+repeated locally without widening it or changing accepted shared headers.
+Declaration-only callees gain no source/exact credit; wrapper ownership stays
+unresolved. The full relocated object equals every original byte; diagnostics
+alone earn no exact credit.
+
+Canonical cold replay of `character-ai-0049b070` rebuilds
+`build/matching/CharacterAI49B070.obj` using pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the whole comparison. The
+receipt pins source, object, target and every relocation. All 140 earlier units
+and inputs remain unchanged and were not rebuilt. Replay affected units only.
+
+Coverage becomes 141 exact functions /356,945 bytes: 18.09% reviewed authored,
+or 18.05% conservatively including every pending byte. The cumulative manifest
+preserves 81 literal additions /347,062 bytes above F009 and 78 new source/header
+inputs. Historical prefixes and complete descriptors remain guarded; R268
+origin evidence and all 97 unknown origins remain unchanged. All 31 R047 AI
+functions /304,135 bytes now have whole exact descriptors and matching ledgers;
+`f047-cohort-completion.json` checks the full cohort without rebuilding its
+unchanged accepted units. Cohort completion does not complete or pause the 95%
+goal. F021 stays unaccepted. F046 handoff/verification sections are archived
+verbatim. Continue with R048 state reconstruction using local Ghidra and serial
+low-priority builds, without REA or pausing for cleanup/handoff.
+
+F048 preparation audits the whole R048 code at `0x004AC040..0x004C03AB`
+/82,796 bytes, SHA-256
+`4dced8c8583edf4b8234505793e28732e19af2adb311d0d39a755f0036e59cfc`.
+Four remapped and two direct switch regions have ten contiguous table/remap
+chunks totaling 1,126 bytes through 0x004C0811. The required whole comparison is
+83,922 bytes, SHA-256
+`560f0a089b702386a508519dfbe6f9e42d7e896369f72754b6f11de0ea107445`;
+fourteen following INT3 bytes are alignment. The full native CFG has 22,721
+instructions, 1,933 branches, one return, no external exits and 146 nondefault
+table destinations; calls comprise 1,355 direct and six indirect. Frozen R048
+body/switch hashes and every guard/table target are verified. Retain
+`f048-native-audit.py` / `.json`, `f048-4ac040.asm`, `f048-action.c` and
+`f048-decompile.log`. Review full behavior and actual call ABIs before natural
+source; no source/exact credit yet. Do not truncate comparison at the code end
+or inherit an entire layout from another character.
+
+The F048 dispatch review verifies the two signed-short entry guards, signed
+state selector at receiver +0x60, five native singleton pivots and all six
+switch groups. There are 151 nondefault states with 151 distinct native entries,
+including five singleton destinations beyond the 146 table destinations.
+Default 0x004C037D calls 0x0040FA30, compares signed AX to receiver +0x70 and
+conditionally calls 0x0040FAC0 with zero. The distinct common tail 0x004C039F
+calls 0x0040FA30 before the epilogue. Preserve real exits that bypass that tail.
+`f048-dispatch-review.py` / `.json`, `f048-callee-inventory.json` and
+`f048-progress.json` retain this bounded review. The callee inventory is only a
+ledger join, not caller-specific ABI proof. Ghidra ContextBase/Concurrency labels
+establish no owner, layout or origin. Case behavior remains incompletely reviewed;
+no natural source is drafted and no exact credit is claimed.
+
+F047 final validation: all 3,603 CI tests passed in 97.043 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (91,980
+file bytes); `f047-cleanup.json` records paths, sizes and hashes. Rejected and
+corrected investigative sources/receipts remain in `f047-probe-00.*` /
+`f047-probe-01.*`, with profiles and diagnostic limits in
+`f047-control-manifest.json`. Original evidence, canonical inputs, matching
+outputs and F021 remain preserved. A host sample had 9.1 GiB available memory
+and CPU 92% idle, without interval swap activity. Builds and validation remained
+serial and low priority.

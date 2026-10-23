@@ -26,8 +26,8 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 140
-functions have reconstructed source and complete exact matches covering 350,848
+Ghidra analysis found 4,351 provisional function candidates. 141
+functions have reconstructed source and complete exact matches covering 356,945
 code bytes, with reviewed switch tables included in full comparisons. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
@@ -37,9 +37,10 @@ Use the existing Ghidra wrapper and local tools, without REA, and commit subject
 in the form `gpt-6.1-sol: ...`. The 95% objective remains incomplete.
 At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 350,848 / 1,973,516
-bytes (17.78%). F046 adds the complete AI policy at `0x004C8CD0`: 6,504 code bytes /183
-relocations, cold-replayed exactly. Original object layouts remain
+classified; 97 remain unknown. Reviewed authored coverage is 356,945 / 1,973,516
+bytes (18.09%). F047 adds the complete AI policy at `0x0049B070`: 6,097 code bytes /165
+relocations, cold-replayed exactly. All 31 R047 AI functions /304,135 code bytes
+are now exact. Original object layouts remain
 partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of

@@ -14,14 +14,14 @@ CPU/memory monitoring.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 140 / 140 / 140 |
-| Exact code bytes | 350,848 |
-| Reviewed authored coverage | 350,848 / 1,973,516 (17.78%) |
-| Conservative coverage, including every pending byte | 350,848 / 1,977,124 (17.75%) |
+| Source-present / exact functions / exact units | 141 / 141 / 141 |
+| Exact code bytes | 356,945 |
+| Reviewed authored coverage | 356,945 / 1,973,516 (18.09%) |
+| Conservative coverage, including every pending byte | 356,945 / 1,977,124 (18.05%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 80 reviewed additions /340,965 bytes,
-with 76 new source/header inputs through F046. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 81 reviewed additions /347,062 bytes,
+with 78 new source/header inputs through F047. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -31,68 +31,85 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F046
+## Latest accepted cohort: F047
 
-`CharacterAI4C8CD0::ChooseAction` at `0x004C8CD0..0x004CA637` cold-replays
-exact from `src/CharacterAI4C8CD0.cpp` / `.hpp`: **6,504 code bytes**, 1,639
-instructions, 343 internal branches and one return. There are no switches or
-external exits; eight following INT3 bytes are alignment. The whole R047 body
-hash and ownership evidence remain unchanged.
+`CharacterAI49B070::ChooseAction` at `0x0049B070..0x0049C840` cold-replays
+exact from `src/CharacterAI49B070.cpp` / `.hpp`: **6,097 code bytes**, 1,554
+instructions, 316 internal branches and one return. There are no switches or
+external exits; fifteen following INT3 bytes are alignment. R047 origin evidence
+and the complete original body hash remain unchanged.
 
-Own states 50..149 refresh a negative short timer with range (0,60), clear queued
-mode/timer and continue. Types 2/1/0 with stock, expired decrement and ground
-height bypass ordinary AI; type 2 chooses 221/220 and type 0 chooses 201/200,
-with native distinct command exits. Type 1 writes 211. Nonexpired paths continue.
-Queued modes 1..5 and ordinary policies reuse independently reviewed portions
-of our authored F034 source. Preserve state-specific successive command
-10/11/20/21 writes and C input, 0.8/1.0/0.4 weighted choices, three assignment
-chains, the meaningful inline height threshold and final 40/41/42 overwrites.
-Five command-103 and twelve early/late command-13 gates are absent.
+Both short timers decrement before own-state checks. Own states 50..149 take
+the refresh/reset/independent-input path and return. Types 3/2/1 test a strictly
+negative timer before type and stock; their successful paths bypass ordinary
+AI. Type 2 can overwrite command 220 with 221 using the existing signed byte at
+0x006714D0. Type 0 with stock writes 200 and bypasses without a timer test.
+Preserve queued modes 1..5 and every distinct attack/state/weighted/movement/
+ground/air/late decision, separate random call and genuine exit. Three command
+assignment chains retain native write/read/store repetitions.
 
-The pointer-only receiver is never constructed or embedded; both local separation
-floats are used. Original identity, declarations and complete layout remain
-unknown. No assembly, target arrays, padding, inert locals, fake returns, ABI
-misdeclarations or alternate bodies are used.
+The first whole draft differs in four float-comparison bytes despite matching
+length, instruction count, branch destinations and calls. Native 0x0049C56B
+loads own height then compares opponent height. Expressing the meaningful
+ordered relation as own > opponent reproduces that physical order, with the
+same false result for unordered values. Retain the rejected and corrected
+sources and `f047-height-comparison-review.json`; no diagnostic alone earns credit.
 
-All 183 relocations are bound: 99 calls, 77 readonly references to 23 actual
-float payloads, and seven dword counter accesses at `0x0068D630` (four reads,
-three writes). Actual COFF payloads, zero addends, widths and target section
-permissions are checked. Writable storage is bound by address, not contents.
-Calls comprise two float wrappers, 92 CRT rand, four range helpers on the current
-receiver and one predicate on the opponent. Declaration-only callees gain no
-source or exact credit; wrapper ownership stays unresolved.
+All 165 relocations are bound: 80 calls, 77 readonly references to 24 actual
+float payloads, seven dword counter accesses at `0x0068D628` (four reads, three
+writes) and one existing MOVSX byte read at `0x006714D0`. Actual COFF payloads,
+zero addends, offsets, widths and section permissions are checked. Writable
+storage is bound by address, not contents. Nine range calls use the current
+receiver; one predicate uses the opponent. The byte declaration stays signed
+and narrow. Declaration-only callees earn no source or exact credit; wrapper
+ownership and original declarations remain unresolved.
+
+The natural body uses a fully used local two-float record and a pointer-only
+receiver view, never constructed or embedded. No assembly, target arrays,
+padding, inert locals, fake returns, ABI misdeclarations or alternate bodies
+are used. Original identity and complete layout remain unknown.
 
 ```bash
-scripts/repo-python scripts/replay-exact-units.py --unit character-ai-004c8cd0
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-0049b070
 ```
 
-Canonical replay cold-builds one object with pinned VC7.1 build 3077,
-`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and every
-relocation. All 139 earlier units and inputs remain unchanged and were not
-rebuilt. The new header includes unchanged `CharacterAIPolicy.hpp`; changing
-that header affects all prior dependent AI units plus F046, while its source
-affects six F033 units. Replay affected units only.
+Canonical replay cold-builds one object with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and all
+relocations. All 140 earlier units and inputs remain unchanged and were not
+rebuilt. Shared AI declarations remain unchanged; replay only affected units.
+The new header repeats the existing signed-byte declaration without widening it.
 
-Private evidence below `.analysis/`: `f046-native-audit.py` / `.json`,
-`f046-4c8cd0.asm`, `f046-ai.c`, `f046-decompile.log`,
-`f046-behavior-review.json`, `f046-compose.py`, `f046-ai-diagnostic.py`,
-`f046-dispatch-audit.json`, `f046-bind.py`, `f046-family-bindings-preview.json`,
-`f046-family-bindings.json`, `f046-accepted-replay.json`, `f046-cold-replay.log`
-and `f046-progress.json`. The first whole draft aligns all physical operands
-and branch destinations; diagnostic alignment alone earns no exact credit.
+Private receipts below `.analysis/`: `f047-native-audit.py` / `.json`,
+`f047-49b070.asm`, `f047-ai.c`, `f047-decompile.log`, `f047-review.py`,
+`f047-behavior-review.json`, `f047-compose.py`, `f047-ai-diagnostic.py`,
+`f047-dispatch-audit.json`, `f047-height-comparison-review.json`, `f047-bind.py`,
+`f047-family-bindings-preview.json`, `f047-family-bindings.json`,
+`f047-accepted-replay.json`, `f047-cold-replay.log` and `f047-progress.json`.
 
-The last unaccepted R047 candidate is F047 at `0x0049B070..0x0049C840`
-/6,097 bytes. Its complete native audit checks 1,554 instructions, 316 internal
-branches, one return and 80 calls: two wrappers, 68 CRT rand, nine range helpers
-and one predicate. There are no switches or external exits; fifteen following
-INT3 bytes are alignment. Retain `f047-*` native evidence and the attested
-read-only decompile. The complete behavior, ten receiver contexts and existing
-signed-byte global read are reviewed in `f047-behavior-review.json`; a private
-natural source and composer are ready for compilation. Preserve both initial
-short decrements, strictly negative timer checks and timer-free type-0 bypass.
-No source or exact credit yet. The broader 95% goal remains active and incomplete; cohort
-completion or cleanup/handoff does not pause it. All 97 unknown origins remain
-unknown and receive no exact credit.
+All **31 R047 authored AI functions /304,135 code bytes** now have complete
+exact unit descriptors and matching ledgers. `f047-cohort-completion.json`
+checks the whole cohort; only F047 was rebuilt now. This milestone does not
+complete or pause the broader 95% goal. All 97 pending origins remain unknown.
+
+The next cohort is F048, the reviewed R048 state function at `0x004AC040`.
+Its code is `0x004AC040..0x004C03AB` /82,796 bytes; six guarded switch/remap
+regions occupy the next **1,126 bytes**, contiguously through `0x004C0811`.
+Compare the entire **83,922 bytes**, excluding fourteen following INT3 bytes.
+The full native audit verifies 22,721 instructions, 1,933 branches, one return,
+four remapped and two direct switches, 146 nondefault table destinations,
+1,355 direct calls and six indirect calls. There are no external branch exits.
+Retain `f048-native-audit.py` / `.json`, `f048-4ac040.asm`, `f048-action.c` and
+`f048-decompile.log`. `f048-dispatch-review.json` / `.py` verify the entry
+guards, all six groups and five singleton pivots: 151 nondefault states with
+151 distinct entries. `f048-callee-inventory.json` joins 1,355 direct calls to
+22 distinct target entries for discovery only; caller-specific ABIs remain
+unreviewed. The decompile is a hypothesis, not source or exact evidence; its
+ContextBase/Concurrency labels establish no owner or origin. Review all case
+behavior and actual call ABIs before
+writing natural source. Do not truncate at the code end or inherit a complete
+owner layout from a different character. F021 remains unaccepted and preserved.
+Continue reconstruction with Ghidra/local tools, serial low-priority builds and
+resource monitoring, without REA or pausing for cohort completion/handoff.
 
 ## Unaccepted work: F021
 
@@ -177,16 +194,17 @@ nice -n 10 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-F046 final validation: all 3,603 CI tests passed in 101.781 seconds,
+F047 final validation: all 3,603 CI tests passed in 97.043 seconds,
 including adoption, historical-prefix, alias, origin, tracking and progress
 freshness checks. Canonical cold source/object/header pins remain intact.
-Four superseded previews were removed after equality and hash checks (85,952
-file bytes); `f046-cleanup.json` records paths, sizes and hashes. The first
-complete investigative source and receipt remain in `f046-probe-00.*`, with
-profile and diagnostic limits in `f046-control-manifest.json`. Original evidence,
-canonical inputs, matching outputs and F021 remain preserved. A host sample had
-9.0 GiB available memory and CPU 86% idle, without interval swap activity. Builds
-and validation remained serial and low priority.
+Four superseded previews were removed after equality and hash checks (91,980
+file bytes); `f047-cleanup.json` records paths, sizes and hashes. Rejected and
+corrected investigative sources/receipts remain in `f047-probe-00.*` /
+`f047-probe-01.*`, with profiles and diagnostic limits in
+`f047-control-manifest.json`. Original evidence, canonical inputs, matching
+outputs and F021 remain preserved. A host sample had 9.1 GiB available memory
+and CPU 92% idle, without interval swap activity. Builds and validation remained
+serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,

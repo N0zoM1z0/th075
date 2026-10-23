@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F045. Counts, active
+This file preserves historical checkpoints through R268 and F046. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -6465,6 +6465,99 @@ complete investigative source and receipt remain in `f045-probe-00.*`, with
 profile and diagnostic limits in `f045-control-manifest.json`. Original evidence,
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 8.9 GiB available memory and CPU 90% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F046 checkpoint before F047 acceptance (2026-10-23)
+
+## Latest accepted cohort: F046
+
+`CharacterAI4C8CD0::ChooseAction` at `0x004C8CD0..0x004CA637` cold-replays
+exact from `src/CharacterAI4C8CD0.cpp` / `.hpp`: **6,504 code bytes**, 1,639
+instructions, 343 internal branches and one return. There are no switches or
+external exits; eight following INT3 bytes are alignment. The whole R047 body
+hash and ownership evidence remain unchanged.
+
+Own states 50..149 refresh a negative short timer with range (0,60), clear queued
+mode/timer and continue. Types 2/1/0 with stock, expired decrement and ground
+height bypass ordinary AI; type 2 chooses 221/220 and type 0 chooses 201/200,
+with native distinct command exits. Type 1 writes 211. Nonexpired paths continue.
+Queued modes 1..5 and ordinary policies reuse independently reviewed portions
+of our authored F034 source. Preserve state-specific successive command
+10/11/20/21 writes and C input, 0.8/1.0/0.4 weighted choices, three assignment
+chains, the meaningful inline height threshold and final 40/41/42 overwrites.
+Five command-103 and twelve early/late command-13 gates are absent.
+
+The pointer-only receiver is never constructed or embedded; both local separation
+floats are used. Original identity, declarations and complete layout remain
+unknown. No assembly, target arrays, padding, inert locals, fake returns, ABI
+misdeclarations or alternate bodies are used.
+
+All 183 relocations are bound: 99 calls, 77 readonly references to 23 actual
+float payloads, and seven dword counter accesses at `0x0068D630` (four reads,
+three writes). Actual COFF payloads, zero addends, widths and target section
+permissions are checked. Writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 92 CRT rand, four range helpers on the current
+receiver and one predicate on the opponent. Declaration-only callees gain no
+source or exact credit; wrapper ownership stays unresolved.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-004c8cd0
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and every
+relocation. All 139 earlier units and inputs remain unchanged and were not
+rebuilt. The new header includes unchanged `CharacterAIPolicy.hpp`; changing
+that header affects all prior dependent AI units plus F046, while its source
+affects six F033 units. Replay affected units only.
+
+Private evidence below `.analysis/`: `f046-native-audit.py` / `.json`,
+`f046-4c8cd0.asm`, `f046-ai.c`, `f046-decompile.log`,
+`f046-behavior-review.json`, `f046-compose.py`, `f046-ai-diagnostic.py`,
+`f046-dispatch-audit.json`, `f046-bind.py`, `f046-family-bindings-preview.json`,
+`f046-family-bindings.json`, `f046-accepted-replay.json`, `f046-cold-replay.log`
+and `f046-progress.json`. The first whole draft aligns all physical operands
+and branch destinations; diagnostic alignment alone earns no exact credit.
+
+The last unaccepted R047 candidate is F047 at `0x0049B070..0x0049C840`
+/6,097 bytes. Its complete native audit checks 1,554 instructions, 316 internal
+branches, one return and 80 calls: two wrappers, 68 CRT rand, nine range helpers
+and one predicate. There are no switches or external exits; fifteen following
+INT3 bytes are alignment. Retain `f047-*` native evidence and the attested
+read-only decompile. The complete behavior, ten receiver contexts and existing
+signed-byte global read are reviewed in `f047-behavior-review.json`; a private
+natural source and composer are ready for compilation. Preserve both initial
+short decrements, strictly negative timer checks and timer-free type-0 bypass.
+No source or exact credit yet. The broader 95% goal remains active and incomplete; cohort
+completion or cleanup/handoff does not pause it. All 97 unknown origins remain
+unknown and receive no exact credit.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F046 final validation: all 3,603 CI tests passed in 101.781 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (85,952
+file bytes); `f046-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f046-probe-00.*`, with
+profile and diagnostic limits in `f046-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+9.0 GiB available memory and CPU 86% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
