@@ -15385,7 +15385,7 @@ full call, relocation, branch/table and byte-lane receipts were refreshed.
 The first physical mismatch remains 0x0045FDA9, with 6,311 operand differences.
 No exact credit is granted to normalized diagnostics.
 
-The latest user request is cleanup and handoff, with commit subjects restored
+At the preceding cleanup checkpoint, the request was cleanup and handoff, with commit subjects restored
 to `gpt-6-astra-medium: ...`; matching must not resume automatically. The
 current handoff now separates accepted state, F021 diagnostics, private
 retention and recovery commands. Its previous full contents and the stale
@@ -15395,3 +15395,134 @@ accepted matching outputs, source, inputs, origin evidence, native analysis,
 the active F021 PDB, historical Wine environment and shared tools are retained.
 The cleanup receipt is `.analysis/handoff-cleanup-20261023.json`; final
 validation and reclaimed size are recorded in `RE_HANDOFF.md`.
+
+### Continuous reconstruction resumed (2026-10-23)
+
+The user explicitly rejected pausing and instructed continuous exploration
+toward the existing 95% authored-byte exact objective. Cleanup and handoff do
+not authorize stopping that work. The required commit subject format is
+`gpt-6.1-sol: ...`, superseding the preceding cleanup format. Use the existing
+Ghidra wrapper and local tools; the user explicitly excluded REA. Current
+rules, README, workflow and handoff now record those instructions. All 111
+accepted units and original evidence remain unchanged at this resumption.
+
+## F024 — Complete action dispatcher at 00597660
+
+Accepted on 2026-10-23: `CharacterAction597660::DispatchActions`, complete
+extent `0x00597660..0x0059B48D`, 15,918 code bytes. The following two INT3 bytes
+are alignment. R047 authored ownership and the complete target body SHA-256
+`de42bed5e9c7194e4fe1203722b2dbb0d0aa6118d10637e31e93f9781ce28496`
+remain unchanged. Full native decoding checks 4,294 instructions, 840 internal
+branch destinations, one return, no switch tables and no external branch exits.
+
+The sole canonical body is `src/CharacterActionDispatch597660.cpp`, with its
+pointer-only interface in the corresponding header. Original character identity,
+field roles and full owner layout are not established. The distinct owner view
+does not identify it with the F023 owner. Neither is instantiated or embedded.
+The unchanged `ReimuActionDispatch.hpp` supplies the existing slot-reference ABI
+view. The reviewed role `CharacterAction::DispatchAt00597660` is preserved by an
+explicit origin-name alias; mapped names remain inferred.
+
+Unit `character-action-dispatch-00597660`, symbol
+`?DispatchActions@CharacterAction597660@@QAEXXZ`, cold-replays all 15,918 bytes
+with zero differences, including every relocation. Reproducibility profile is
+pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`; these settings
+do not establish an executable-wide original compiler profile.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00597660
+```
+
+All 315 relocations are bound: 234 direct calls and 81 references to nine
+readonly constants. The binding checks actual fresh COFF section payloads
+against original target bytes. Calls comprise vector access 0x004420B0 (70),
+input packing 0x00455B30 (48), primary reset 0x0040FAC0 (81), transform setup
+0x0040FBB0 (9), and auxiliary-input clearing 0x00453A10 (26). The vector helper
+keeps its library classification and receives no authored credit. Transform
+setup keeps its independent R036 authored classification and receives no new
+exact credit in this cohort.
+
+The transform caller passes three zero four-byte values through the existing
+receiver. The entire 158-byte callee copies its three argument slots to owner
++34/+38/+3C and returns with RET 12. The float-coordinate interface follows
+the retained F021 observations, including nonzero float payloads at other
+call sites; original formal declarations and full layout remain unrecovered.
+This does not instantiate a geometry or matrix owner.
+
+The handwritten body implements all 74 ordered dispatch candidates. Eleven
+input policies preserve input/flag/ground/priority/cancellation order:
+250/240/241 select 772/770/771, 230 selects 760, 222/221/220 select 753/752/751,
+210/211/212 select 734/733/731, and 200 selects 741. Input 103 retains the
+100.0f gate and 795 policy. Both input-102 candidates precede the advanced
+selector policies. Their post-pack height/state rereads and fallthrough remain;
+the ground state-above-299 branch calls transform setup before resetting 595.
+
+Eight resource-first input-13/23 candidates use +39A/+398 and signed +39D.
+Ordered states are 703, 704, 705, 706, 700, 701, 702 and 702. The +F0E/+F10
+zero restrictions remain distinct. Each resets the primary state before
+transform setup; the last input-23 mode-two policy also negates the facing byte
+between those calls. The common movement policies retain unsigned press counts,
+signed facing products, diagonal <=-1 / >=1 bounds, ranks 99/49, the direct byte
+increment at +3AD and the native early-ascent 60.0f check.
+
+Simple ground policies retain their character-specific state IDs. Inputs
+42/41/40 select 505/504/503; 31/30 select 501/500; 12/11/10 select 604/603/602.
+Inputs 72/71/70 select 611/610/609, with resource and flag checks before ground.
+Input 21 looks up 601 but resets 606/608; input 20 looks up 600 but resets
+605/607, with fresh height checks after the first reset. Inputs 101/100 select
+309/310 and preserve their different ground/flag ordering.
+
+The positive-vertical ground group contains seven policies and nested ordinary
+A/B groups. A uses the 320/-320 distance gate; B uses 480/-480. The 302 policy
+also permits current state 300 or 302. Shared special B input still uses +500,
+while ordinary B input uses +504. The twelve neutral-vertical policies retain
+nested input groups, repeated vertical tests and a 420/-420 forward-A gate,
+followed by the ordinary A 320/-320 gate. Both select 406. Both ordinary B
+distance policies select 411 with 480/-480 gates. State 300 retains the current
+300/302 exceptions. Forward C checks flag before resource.
+
+Air A preserves the current-vertical-only 320 transition, then the 320/-320
+distance policy 410 and fallback 304. B uses 480/-480 for 415; fallback 305
+rereads vertical state after reset and may then select 321. Air C requires
+resource >100 and selects 405/404. Native instructions contain one resource
+read in the 404 condition even though the decompile displays a duplicated
+expression. Native operands and complete CFG override decompiler rewrites;
+the diagonal bounds likewise retain their original immediate -1/+1 checks.
+All four final airborne directional fallback policies remain complete.
+
+Private evidence remains below `.analysis/`: `f024-597660.asm`,
+`f024-native-audit.py` / `.json`, `f024-dispatch.c`, `f024-decompile.log`,
+`f024-dispatch-diagnostic.py`, `f024-dispatch-audit.json`,
+`f024-bind-relocations.py`, `f024-relocation-bindings.json`,
+`f024-accepted-replay.json`, `f024-cold-replay.log` and `f024-progress.json`.
+The native and decompile reads retain attestation/completion evidence.
+Acceptance is the canonical cold command, not the diagnostic comparison.
+
+Coverage becomes 112 exact functions /84,826 code bytes (4.30% of reviewed
+authored bytes; 4.29% conservatively including all 3,608 pending bytes).
+The cumulative manifest preserves 52 reviewed additions /74,943 bytes above
+F009 and 32 new inputs. All 111 prior units and their source/header inputs
+remain unchanged and were not rebuilt. All 97 unknown origins remain unknown.
+F021 remains unaccepted, and its full draft, genuine locals, diagnostic receipts
+and negative controls remain preserved. Continuous exploration toward 95%
+remains active; the next bounded R047 dispatcher is 0x00551C00 /14,631 bytes.
+
+
+Final F024 validation passes all 3,603 CI tests in 98.647 seconds. The source,
+header and final-object hashes remain tied to the canonical cold report.
+Four superseded preview files were removed after source-equality checks
+(116,911 bytes); `.analysis/f024-cleanup.json` preserves their hashes and sizes.
+All original native and origin observations, accepted outputs and F021 remain.
+Sampled available memory was 6.6–8.8 GiB; compiler builds remained serial and
+low priority. See the handoff for the latest host CPU/swap sample.
+
+F025 preparation has now attested and decompiled the complete 14,631-byte
+R047 dispatcher at 0x00551C00. The full native audit checks 3,944 instructions,
+772 internal branches, one return, no tables or external branch exits, and
+nine trailing INT3 alignment bytes. It contains 208 direct calls: 67 vector
+accesses, 44 input packs, 74 primary resets and 23 auxiliary-input clears.
+Private `f025-native-audit.py` / `.json`, `f025-551c00.asm`, `f025-dispatch.c`,
+`f025-decompile.log` and `f025-progress.json` retain the original extent,
+attestation/completion and current next task. These are observations only:
+no source or exact credit has been registered for F025. Continue its complete
+natural C++ reconstruction without treating F024 behavior as its specification.

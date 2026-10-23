@@ -1,9 +1,11 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-23. The current request is cleanup and handoff. Do not resume
-matching automatically. The previous 95% authored-byte objective is incomplete;
-subsequent project phases remain deferred. Commit subjects must use
-`gpt-6-astra-medium: ...`.
+Updated 2026-10-23. The latest user instruction resumes continuous exploration
+and reconstruction toward 95% authored bytes exact. Cleanup and handoff do not
+authorize pausing or stopping the goal. Subsequent project phases remain
+deferred. Commit subjects must use `gpt-6.1-sol: ...`. Use the existing Ghidra
+wrapper and local tools, without REA. Preserve serial low-priority builds and
+CPU/memory monitoring.
 
 ## Current verified state
 
@@ -12,14 +14,14 @@ subsequent project phases remain deferred. Commit subjects must use
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 111 / 111 / 111 |
-| Exact code bytes | 68,908 |
-| Reviewed authored coverage | 68,908 / 1,973,516 (3.49%) |
-| Conservative coverage, including every pending byte | 68,908 / 1,977,124 (3.49%) |
+| Source-present / exact functions / exact units | 112 / 112 / 112 |
+| Exact code bytes | 84,826 |
+| Reviewed authored coverage | 84,826 / 1,973,516 (4.30%) |
+| Conservative coverage, including every pending byte | 84,826 / 1,977,124 (4.29%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 51 reviewed additions /59,025 bytes,
-with 30 new source/header inputs through F023. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 52 reviewed additions /74,943 bytes,
+with 32 new source/header inputs through F024. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -29,7 +31,54 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F023
+## Latest accepted cohort: F024
+
+`CharacterAction597660::DispatchActions` at `0x00597660..0x0059B48D`
+cold-replays exact across all **15,918 code bytes**. Two following INT3 bytes
+are alignment. The R047 origin and complete target hash remain unchanged.
+All 4,294 instructions, 840 internal branches, one return and 74 ordered
+candidates were reconciled; there are no switch tables or external branch exits.
+
+Canonical source is `src/CharacterActionDispatch597660.cpp` / `.hpp`, with a
+separate pointer-only owner view. Original character identity and full layout
+remain unknown. The unchanged `ReimuActionDispatch.hpp` supplies the existing
+slot-reference ABI view. No incomplete owner is instantiated or embedded.
+
+Unit `character-action-dispatch-00597660` binds all **315 relocations**:
+234 direct calls and 81 references to nine readonly constants. Actual fresh
+COFF payloads and original target constants were checked. Calls comprise
+70 vector accesses, 48 input packs, 81 primary resets, nine three-argument
+transform calls, and 26 auxiliary-input clears. The original transform callee
+at `0x0040FBB0` retains its R036 origin and earns no new exact credit here.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00597660
+```
+
+Profile: pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+The 111 prior units and their inputs remain unchanged and were not rebuilt.
+The renamed mapped role preserves the original R047 role through
+`config/authored-origin-name-aliases.csv`.
+
+Private evidence remains below `.analysis/`: `f024-597660.asm`,
+`f024-native-audit.json`, `f024-dispatch.c`, `f024-decompile.log`,
+`f024-dispatch-audit.json`, `f024-relocation-bindings.json`,
+`f024-accepted-replay.json`, `f024-cold-replay.log` and `f024-progress.json`.
+The native audit, complete diagnostic and binding scripts retain reproducible
+checks. See the F024 knowledge-base entry for dispatch differences and limits.
+
+Current next cohort: continue reconstructing the complete R047 dispatcher at
+`0x00551C00` /14,631 bytes, independently of the unresolved full F021 draft.
+Its attested read-only decompile and full native audit are retained below
+`.analysis/` as `f025-dispatch.c`, `f025-decompile.log`, `f025-551c00.asm`,
+`f025-native-audit.py` / `.json` and `f025-progress.json`. The native extent has
+3,944 instructions, 772 internal branches, one return and 208 direct calls,
+with no switch tables or external branch exits. Nine trailing INT3 bytes are
+alignment. No source draft or exact credit has been registered for F025.
+Do not award credit to a partial comparison or normalized register diagnostic.
+The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
+
+## Previous accepted cohort: F023
 
 `CharacterAction::DispatchAt004C0AD0` compares exact across the complete
 16,098-byte function at `0x004C0AD0..0x004C49B1`. Fourteen following INT3 bytes
@@ -105,8 +154,8 @@ and `build/probes/F021Preview.obj` with its PDB. Start with
 `f021-draft-call-check.json`, `f021-draft-relocation-bindings.json`,
 `f021-alignment-register-classes.json`, `f021-register-dataflow.json` and
 `f021-whole-diagnostic.json`. Detailed compiler controls are in the knowledge
-base. A later explicit reconstruction request may revisit state 89 or another
-independently reviewed authored body; this handoff starts no further matching.
+base. Continue evidence-based investigation of state 89 or another independently
+reviewed authored body; do not repeat reverted controls without new evidence.
 
 ## Local retention and cleanup
 
@@ -123,7 +172,7 @@ Retain the approximately 1.3 GiB `.analysis/vc71-wine` environment:
 do not prove historical replay compatibility. The historical worktrees outside
 this repository were not part of cleanup.
 
-This cleanup removes obsolete compiler-generated PDB caches only from
+The preceding cleanup removed obsolete compiler-generated PDB caches only from
 `build/probes/` and `build/origin-probes/`, retaining the active F021 PDB, all
 COFF objects and all `build/matching/` contents. Each removed paired PDB has a
 retained corresponding object. The superseded F022 preview PDB and Python
@@ -155,7 +204,7 @@ nice -n 10 scripts/repo-python scripts/ci.py
 git diff --check
 ```
 
-All 3,603 CI tests passed in 76.899 seconds. Target-required tracking, pinned
+At the preceding cleanup checkpoint, all 3,603 CI tests passed in 76.899 seconds. Target-required tracking, pinned
 target identity, read-only Ghidra attestation and whitespace checks passed.
 F023 source/header and final-object hashes still agree with its cold receipt;
 all removed paired PDBs retain their unchanged COFF objects. The final sampled
@@ -167,4 +216,17 @@ No accepted source/header, ABI, compiler flags or relocation was changed during
 cleanup. Existing F023 cold evidence remains valid; no mass replay is needed.
 Compiler jobs must remain serial and low priority, with CPU/memory monitoring.
 `config/claims.csv` stays header-only. Read [RE_WORKFLOW.md](RE_WORKFLOW.md) and
-[AGENTS.md](../AGENTS.md) before explicitly resumed reconstruction.
+[AGENTS.md](../AGENTS.md) when continuing reconstruction.
+
+F024 final validation: all 3,603 CI tests passed in 98.647 seconds, including
+historical-prefix, complete adoption, name-alias, origin, tracking and progress
+freshness checks. The canonical source/header and final-object hashes still
+match the successful cold receipt. No prior accepted unit required replay.
+Four superseded preview files were removed after canonical-source equality
+checks (116,911 bytes); `.analysis/f024-cleanup.json` records paths and hashes.
+Original evidence, canonical inputs, final matching output and F021 remain.
+
+Sampled available memory during this work was 6.6–8.8 GiB; the final sample was
+6.9 GiB. The latest host CPU interval was 54% idle, with 8 KiB/s swap-in and
+548 KiB/s swap-out. Compiler builds and validation ran at low priority, with no
+parallel compiler jobs. The 95% goal remains active and incomplete.

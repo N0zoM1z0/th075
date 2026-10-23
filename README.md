@@ -26,18 +26,20 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 111
-functions have reconstructed source and complete exact matches covering 68,908
+Ghidra analysis found 4,351 provisional function candidates. 112
+functions have reconstructed source and complete exact matches covering 84,826
 code bytes, with reviewed switch tables included in full comparisons. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-The current request is **cleanup and handoff**; matching must not resume
-automatically. The previous **95% authored bytes exact** target is incomplete.
+The active goal is **95% authored bytes exact**, with continuous exploration
+and reconstruction. Cleanup and handoff do not authorize pausing the goal.
+Use the existing Ghidra wrapper and local tools, without REA, and commit subjects
+in the form `gpt-6.1-sol: ...`. The 95% objective remains incomplete.
 At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 68,908 / 1,973,516
-bytes (3.49%). F023 adds the complete dispatcher at `0x004C0AD0`:
-16,098 code bytes /322 relocations, cold-replayed exactly. Original object layouts remain
+classified; 97 remain unknown. Reviewed authored coverage is 84,826 / 1,973,516
+bytes (4.30%). F024 adds the complete dispatcher at `0x00597660`:
+15,918 code bytes /315 relocations, cold-replayed exactly. Original object layouts remain
 partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of
