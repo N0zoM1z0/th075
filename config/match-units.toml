@@ -15970,3 +15970,14 @@ relocations = [
   { offset = 0x3DC, type = "DIR32", symbol = "$SG412", target = 0x0065A048 },
   { offset = 0x3E4, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
 ]
+
+[units.animation-progress-0040fa30]
+source = "src/AnimationProgress40FA30.cpp"
+object = "build/matching/AnimationProgress40FA30.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["AnimationProgress40FA30::AdvanceNestedFrame"]
+symbol = "?AdvanceNestedFrame@AnimationProgress40FA30@@QAEFXZ"
+target_address = 0x0040FA30
+size = 142
+compare_size = 142
+relocations = []

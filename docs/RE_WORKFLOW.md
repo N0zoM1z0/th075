@@ -23,16 +23,15 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-The latest 2026-10-23 user instruction resumes continuous exploration and
-reconstruction toward 95% authored bytes exact. Cleanup and handoff do not
-authorize pausing or stopping the goal. Continue with independently reviewed
-authored bodies while preserving all 97 pending origins. Use the existing
-Ghidra wrapper and local tools, without REA. Commit subjects must use
-`gpt-6.1-sol: ...`. Goal
-accounting includes every pending byte in a conservative denominator; the
-displayed reviewed-authored percentage remains provisional. Cold-build only
-new or affected units. A shared header change requires replay of its dependent
-units. Keep builds serial and remove only obsolete reproducible outputs.
+The latest 2026-10-24 user request clears the active goal and prepares a cleanup
+and handoff checkpoint for a successor. The 95% authored-byte objective remains
+incomplete; continue reconstruction from `RE_HANDOFF.md` when resuming that
+work. Preserve all 97 pending origins and count every pending byte in the
+conservative denominator. Use existing Ghidra/local tools without REA and
+commit subjects `gpt-6.1-sol: ...`. Cold-build only new or affected units;
+shared header changes require replay of their dependent units. Keep compiler
+builds serial and remove only obsolete reproducible outputs while preserving
+source/control inputs, manifests, evidence, active drafts and shared tools.
 
 Historical strategy: after exact batches F008 and F009, the user resumed origin review on
 2026-10-03. Preserve the 60-function exact baseline while reviewing bounded

@@ -26,32 +26,28 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 141
-functions have reconstructed source and complete exact matches covering 356,945
-code bytes, with reviewed switch tables included in full comparisons. Names remain inferred. Candidate
-count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
+The current checkpoint has **158 exact functions / 523,122 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 26.51%; conservative
+coverage, including all 3,608 pending bytes, is **26.46%**. The objective of
+95% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
+library and 581 compiler-generated candidates are classified; 97 remain unknown.
+Unknown origins receive no exact credit. Candidate count does not establish
+ownership, and original names and complete object layouts remain provisional.
+Never construct or embed partial reconstructed owners.
 
-The active goal is **95% authored bytes exact**, with continuous exploration
-and reconstruction. Cleanup and handoff do not authorize pausing the goal.
-Use the existing Ghidra wrapper and local tools, without REA, and commit subjects
-in the form `gpt-6.1-sol: ...`. The 95% objective remains incomplete.
-At the R268 checkpoint,
-1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 356,945 / 1,973,516
-bytes (18.09%). F047 adds the complete AI policy at `0x0049B070`: 6,097 code bytes /165
-relocations, cold-replayed exactly. All 31 R047 AI functions /304,135 code bytes
-are now exact. Original object layouts remain
-partial and are never instantiated or embedded by the reconstructed source.
-Goal completion conservatively includes all 3,608 pending bytes
-in the denominator, preserving uncertainty without delaying reconstruction of
-reviewed authored functions. Only new or affected units require cold replay.
-The user authorized frequent commits and pushes on 2026-10-22.
+The latest user request prepares this workspace for a successor agent after
+clearing the active goal. Start with the [current handoff](docs/RE_HANDOFF.md)
+for F067 acceptance, the complete unaccepted F066 draft, retained F061/F048/F021
+work, cleanup receipts and the next investigation. Use the existing Ghidra
+wrapper and local tools without REA. Commit subjects must use
+`gpt-6.1-sol: ...`; frequent commits and pushes remain authorized. Cold-replay
+only new or affected units and keep compiler builds serial.
 
 Historical origin and reconstruction checkpoints are preserved in the
 [handoff archive](docs/RE_HANDOFF_HISTORY.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md). Start with the
-[current handoff](docs/RE_HANDOFF.md) for accepted units, the unaccepted F021
-draft, local-only retention requirements and validation commands.
+[current handoff](docs/RE_HANDOFF.md) for accepted units, all active drafts,
+local retention requirements and validation commands.
 
 ## Getting started
 

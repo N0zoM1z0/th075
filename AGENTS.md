@@ -2,15 +2,15 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-The latest 2026-10-23 user instruction resumes continuous exploration and
-reconstruction toward 95% authored bytes exact. Cleanup and handoff do not
-authorize pausing or stopping exploration. Do not pause the goal unless the
-user explicitly changes that instruction. Frequent commits and pushes remain
-authorized. Use the existing Ghidra wrapper and local tools; do not use REA.
+The latest 2026-10-24 user request is cleanup, documentation and handoff to a
+successor agent; the user cleared the active goal. This handoff checkpoint
+does not complete the 95% authored-byte objective. A successor continuing
+reconstruction should resume the current cohort in
+`docs/RE_HANDOFF.md`. Frequent commits and pushes remain authorized. Use the
+existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97
-unresolved origins remain
-unknown; they do not block reconstruction of independently reviewed authored
-functions. Include all pending bytes in the conservative goal denominator.
+unresolved origins remain unknown; they do not block reconstruction of
+independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.
 Use the current cohort in `docs/RE_HANDOFF.md`. Cold-replay affected units only;
 do not rebuild all accepted units without a relevant dependency change. Keep
 compiler builds serial and periodically remove only obsolete reproducible

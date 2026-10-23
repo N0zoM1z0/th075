@@ -20003,3 +20003,115 @@ Full CI passes all 3,603 tests in 145.951 seconds. Retained-unit/source/origin,
 historical-prefix, tracking, progress and whitespace checks pass. Recorded
 samples show about 8.5 to 8.8 GiB available memory, mostly idle CPU and zero
 interval swap-in/out. F066 exploration continues; the 95% goal stays active.
+
+## F066 full-draft checkpoint and F067 frame progress acceptance (2026-10-24)
+
+The latest user request clears the active goal and prepares cleanup/documentation
+for a successor agent. The 95% authored-byte objective remains incomplete;
+this checkpoint finishes the handoff task. The current handoff identifies the
+next investigation; later project phases remain deferred. Historical continuous
+exploration instructions above describe earlier checkpoints.
+
+**F066 target and review:** R048 `0x0055AC80..0x00561B8F` has 28,432 code bytes,
+7,653 instructions, 860 internal branches, 394 direct calls/14 callees, one ret0
+and no indirect calls or external branch exits. The contiguous 232-byte switch
+table and 198-byte remap make the complete comparison 28,862 bytes. Only two
+following INT3 bytes are excluded. All 57 native states, entry guards and the
+real default now have manual natural source; complete body and declaration-only
+header are `.analysis/object-action-55ac80/Preview.cpp` / `.hpp`, with `active03/`
+snapshot and hash-pinned state fragments/review notes. Native frame 0x19C,
+saved ESI and this at EBP-24 match without padding or inert locals.
+
+The full ABI audit checks all 394 call sites and stack joins against 14 complete
+callees, rejecting wrong 16-byte effect cleanup. Thirty-four owner-at-E4 calls
+include 25 effects, seven sounds, one gauge update and one shake; other thiscall
+receivers are current. Angle calls are cdecl/two floats/ST0. Eleven conversions
+use ordinary casts with the implicit ST0-to-EDX:EAX ABI. The gauge argument is a
+dword; real 3.0f shake reaches a field independently consumed by x87. Original
+names, declarations and full owner layouts remain unknown. Both angle origins
+remain unknown; do not construct or embed partial owners.
+
+**F066 compiler observations:** VC7.1 build 3077 with
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src` emits 7,653 instructions and the native frame.
+All 696 physical bindings are reviewed: 394 calls, 237 readonly constants,
+five signed-byte reads at existing global `0x006714D0`, two table/remap addresses
+and 58 destinations. Actual COFF/PE payloads, widths, permissions, addends and
+operand fields are checked. Every branch/table destination corresponds after
+preserving state 996's genuine positive-3B6 arm return directly to the epilogue.
+Preserve actual qword 0.85/998.9 literals, ordered floating comparisons, nested
+RNG evaluation, duplicate writes, field widths and all native exits.
+
+**F066 unknown and unaccepted:** the complete draft is 28,868 bytes, six too
+many, with 976 differing instruction encodings. The first nonbranch difference
+is `0x0055F711`, state 905: native ECX versus draft EAX for the saved-this load.
+Six later accumulator encodings explain the size difference. Normalization of
+register classes/temporary displacements is diagnostic only. Integer/float zero
+spelling, chained zero initialization and owner-failure return/break controls
+all emit identical full code and all relocations after the real 996 correction.
+Do not repeat these controls without new evidence or force registers with
+padding, inert locals, false ABI results, assembly or alternate bodies. F066
+receives no source-presence entry, canonical descriptor or exact credit.
+Continue native/compiler statement and temporary-lifetime investigation at 905.
+Keep native/ABI/attestation evidence, case/review/constant indexes, all source and
+revision intents, full binding receipts, active object and `f066-progress.json`.
+Cached pre-control whole-diagnostic snapshots are not fresh control evidence;
+use the correctly source/object-pinned physical binding receipts.
+
+**F067 target behavior and ABI:** R103 `0x0040FA30..0x0040FABD` cold-replays exact
+as `AnimationProgress40FA30::AdvanceNestedFrame`, from
+`src/AnimationProgress40FA30.cpp` / `.hpp`: all 142 bytes, 48 instructions,
+four internal branches, two actual virtual slot-zero calls and one ret0.
+No tables or relocations exist; two following INT3 bytes are excluded. The
+alias preserves `AnimationState::AdvanceNestedFrameAt0040FA30`, extent, hash
+and R103 origin evidence. The partial receiver is never constructed or embedded.
+
+The method increments tick+64 in16 bits and compares signed words against+72.
+On threshold it resets tick and advances phase+62 in16 bits. A wrapped phase
+resets to zero before the virtual call and returns freshly read+70 afterwards;
+an unwrapped phase calls the same slot and returns freshly read+62. Before the
+threshold AX is zero. Do not cache fields across callbacks. All58 F066 sites
+pass current,57 consume signed AX through MOVSX and the default ignores it.
+The four-byte frame saves this at EBP-4. Both virtual calls pass only this and
+ignore the result; the declaration-only void callback view matches the existing
+accepted F008 slot-zero view. Original callback targets/return declarations,
+method/class names and complete object layout remain unknown.
+
+**F067 acceptance:** preview, independent canonical compile and separate cold
+replay match the entire142-byte body with VC7.1 build3077 and the explicit
+profile above. Every branch, indirect-call operand and AX return path is
+included; no fields are omitted. Retain `f067-bind.py`, both binding receipts,
+`f067-abi-review.py` / `.json`, `f067-accepted-replay.json`, `f067-cold-replay.log`,
+`f067-adoption-parent.json`, `f067-progress.json`, private preview sources and
+canonical cold object. Full native and attested callee views remain under F066.
+No existing shared header or prior accepted source was modified. All157 earlier
+units/objects and origins remain unchanged and were not rebuilt.
+
+Total exact is158 functions /523,122 code bytes:26.51% reviewed authored and
+26.46% conservative, including all3,608 pending bytes. The manifest retains F009
+plus98 additions /513,239 code bytes /112 new source/header inputs, excluding
+F021/F048/F061/F066. Evidence through R268 and all97 unknown origins stay fixed.
+
+**Cleanup and handoff:** five redundant objects totaling335,907 bytes are removed
+only after complete COFF equality against retained outputs. F066 controls01/02
+equal active03 across all696 bindings; the F067 preview equals its canonical cold
+object after only explicit owner renaming. F048 probe03 and F061 active07 object
+snapshots are entire-file-identical copies of retained live build objects; the
+cleanup receipt maps removed paths to retained ones. All snapshot sources,
+headers, intents and evidence remain. Keep `f067-obsolete-output-cleanup.json`.
+After CI,375 generated Python cache files/8,282,484 bytes are removed from scripts
+and tests; source and private environments remain. `f067-bytecode-cleanup.json`
+records paths and hashes. Total reclaimed:8,618,391 bytes/about8.22MiB.
+
+The earlier detailed handoff is archived verbatim, with a compact current entry
+covering all active drafts. Private state is local-only; retain this workspace
+for the successor. The1.3GiB Wine compiler environment and origin/attestation
+evidence remain. No accepted source/shared header, active draft, canonical object,
+PDB, manifest, source/control input or shared tool is removed.
+
+Full CI passes all3,603 tests in135.949 seconds. Tracking, progress, historical
+prefixes and whitespace checks pass. `f067-evidence-check.json` confirms157 prior
+unit descriptors/canonical objects,110 prior manifest inputs,4,350 other function
+rows and218 origin files unchanged. F066 active03 and F061/F048 live inputs remain
+pinned; F021 is untouched. Builds use niceness15, CI10; sampled available memory
+is about8.5–9.0GiB with81–93% interval CPU idle and zero interval swap-in/out.
+The active goal was cleared by the user; this handoff does not complete95%.
