@@ -17530,3 +17530,73 @@ signed counter is at 0x0068D668 with no accepted declaration, mapping or exact
 credit yet. Source is undrafted. Continue independent reconstruction toward
 95% using Ghidra/local tools without REA or pausing for cleanup/handoff;
 preserve all 135 exact units, R268 evidence and unaccepted F021.
+
+## F042: complete AI policy at 005C7FC0 (2026-10-23)
+
+The whole R047 extent is `0x005C7FC0..0x005C9C1F` /7,264 bytes,
+SHA-256 `837e4f0cb50c50a38ce37eee00b7e8d728ad74509e380e6d29eccbfdf6a4dabb`.
+The complete CFG has 1,840 instructions, 380 internal branches, one return and
+no switches, external branch exits or trailing alignment. The attested read-only
+Ghidra decompile supplies hypotheses; original native bytes control acceptance.
+
+The natural `CharacterAI5C7FC0::ChooseAction` body uses existing observed callee
+declarations and a fully used source-defined local two-float separation record.
+The pointer-only receiver view is never constructed or embedded. Original
+identity, declarations and complete layout remain unknown. No assembly, target
+arrays, padding, inert locals, fake returns, ABI misdeclarations or alternate
+conditional bodies are used.
+
+Own states 50..149 take the timer-refresh/reset/input path. Type 4 with stock
+decrements the secondary short timer, writes command 230 without an expiration
+test and returns. Types 3/2 short-circuit on stock and decrement; expiration writes
+240/200 and returns, while nonexpired paths can continue. Type 1 with stock writes
+220 and returns without decrementing that timer. Type 0 with stock and expiration
+first writes 211, then distance below 480 and range threshold 50 can overwrite
+with 210; ordinary AI still follows. Preserve the first write even when subsequent
+conditions fail, and all short accesses, reloads, call order and genuine exits.
+
+Our authored F035 ordinary statements preserve queued modes 1..6 and the whole
+attack/state/resource/movement/ground/air/late-command sequence; full physical
+F042 bytes are independently checked. Three assignment chains retain native
+command write/read/store repetitions. The signed counter at 0x0068D668 has four
+dword reads and three writes. Its original declaration, owner and semantic name
+remain unknown. Ten native range-helper contexts use the current receiver, and
+the predicate uses the opponent at +0x2E8. Declaration-only callees gain no source,
+origin or exact credit; wrapper ownership remains unresolved.
+
+The first complete draft emits all 7,264 bytes /1,840 instructions /96 calls
+and aligns every physical operand and branch destination. The complete binder
+verifies 192 relocations: 96 calls (two wrappers, 83 CRT rand, ten range helpers
+and one predicate), 89 readonly references to 23 actual float payloads, and seven
+counter accesses. Actual COFF payloads, zero addends, offsets, access widths and
+target section permissions are checked. Writable storage is bound by address,
+not contents. The full relocated object equals every original R047 byte.
+Diagnostic alignment alone earns no exact credit.
+
+Canonical cold replay of `character-ai-005c7fc0` rebuilds
+`build/matching/CharacterAI5C7FC0.obj` with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the complete comparison.
+The retained receipt pins source, object, target and all relocations. All 135
+prior units and inputs remain unchanged and were not rebuilt. The included
+`CharacterAIPolicy.hpp` affects all prior dependent AI units plus F042; its source
+affects the six F033 units. Replay only new or relevant dependencies.
+
+Coverage becomes 136 exact functions /323,539 bytes: 16.39% reviewed authored,
+or 16.36% conservatively including every pending byte. The cumulative manifest
+preserves 76 literal additions /313,656 bytes above F009 and 68 new source/header
+inputs. Historical prefixes and complete accepted descriptors remain guarded;
+R268 origin evidence and all 97 unknown origins remain unchanged. F021 remains
+unaccepted. F041 handoff/verification sections are archived verbatim. Continue
+independent reconstruction toward 95% using Ghidra/local tools, without REA or
+pausing for cleanup/handoff.
+
+F042 final validation: all 3,603 CI tests passed in 114.701 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (89,003
+file bytes); `f042-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f042-probe-00.*`, with
+profile and diagnostic limits in `f042-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.5 GiB available memory and CPU 81% idle, without interval swap activity. Builds
+and validation remained serial and low priority.

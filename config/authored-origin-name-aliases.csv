@@ -81,3 +81,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005086E0,CharacterAI::ChooseAt005086E0,CharacterAI5086E0::ChooseAction,R047,character-ai-005086e0
 0x00558F50,CharacterAI::ChooseAt00558F50,CharacterAI558F50::ChooseAction,R047,character-ai-00558f50
 0x004EA090,CharacterAI::ChooseAt004EA090,CharacterAI4EA090::ChooseAction,R047,character-ai-004ea090
+0x005C7FC0,CharacterAI::ChooseAt005C7FC0,CharacterAI5C7FC0::ChooseAction,R047,character-ai-005c7fc0
