@@ -1,12 +1,11 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-22. The latest user request is cleanup and handoff; the
-active reconstruction goal was cleared. Do not resume matching automatically.
-The prior 95% authored-byte target remains historical context, not completed
-work. Accepted coverage is **109 functions /38,669 code bytes (1.96%)**.
+Updated 2026-10-23. The user explicitly resumed the authored exact-reconstruction
+goal after cleanup and handoff, with the prior 95% authored-byte target.
+Accepted coverage is **109 functions /38,669 code bytes (1.96%)**.
 Preserve all accepted origins and the 97 documented unknowns.
 
-The current commit subject format is `gpt-6-astra-medium: ...`.
+The current commit subject format is `gpt-6.1-sol: ...`.
 Keep compiler builds serial and low priority, monitor CPU/memory, and cold-replay
 only new/affected units. No accepted source, ABI, flags or relocation changed
 in this handoff; accepted units did not need rebuilding.
@@ -110,10 +109,26 @@ git diff --check
 A new compile can change debug metadata and the whole-object hash; refresh the
 private progress receipt after rebuilding. The current compiled function hash
 is `e2b757b2007e18c766a2978cfcab4c03a97fbb05831b04264ad50e9b360fafe6`.
-If reconstruction is resumed, investigate natural register allocation from
+The current task is to investigate natural register allocation from
 state 89, preserving the full CFG and real local lifetimes. Rebind relocations
 and cold-replay the complete function/tables before updating exact ledgers.
 Do not repeat reverted controls without new evidence; see the knowledge base.
+
+## Resumed investigation (2026-10-23)
+
+The state-88 void-return-expression control preserves the baseline function
+hash. Moving state-89 negation after floating multiplication adds four
+normalized instruction differences (FCHS replaces native integer NEG before
+FILD) and does not resolve the first register mismatch. Both were reverted;
+the final restored preview retains the baseline hash and full diagnostic
+bindings. See the latest F021 knowledge-base entry and private
+`.analysis/f021-register-probes.json` for bounded results. Exact coverage is
+unchanged; the 95% goal remains active and incomplete.
+
+Resume verification: all 3,603 CI tests passed in 60.894 seconds, with
+target-required tracking, Ghidra attestation and whitespace checks passing.
+Builds were serial and low priority; sampled available memory was 8.6 GiB
+and CPU was 87% idle with no swap-in/out.
 
 ## Handoff validation
 

@@ -15081,3 +15081,33 @@ object, private receipts and source hashes agree; no exact ledger changed.
 The user then requested cleanup and handoff and cleared the active goal.
 See `RE_HANDOFF.md` for current reproduction commands, retained private inputs,
 and the recoverable historical worktree cleanup record.
+
+
+### F021 resumed controls (2026-10-23)
+
+The user resumed the 95% authored-byte goal and changed the commit format to
+`gpt-6.1-sol: ...`. The 109-function /38,669-byte exact baseline is unchanged.
+The first mismatch is the state-89 entry at 0x0045FDA9: native EAX/ECX/EDX
+receiver and promoted-short temporaries initially correspond to compiled
+EDX/EAX/ECX. The preceding state-88 terminal call and jump sequence agrees.
+This local cyclic correspondence is an observation, not a proof of dataflow
+or a source-level cause of allocation differences.
+
+Two bounded natural-expression controls were compiled serially. Replacing
+state-88 terminal call/return pairs with void return expressions produced the
+identical baseline function hash and all 6,311 physical differences remained.
+Moving state-89 F02 negation outside its floating multiplication retained the
+62,090-byte size but introduced four normalized instruction differences and
+6,315 physical differences; the first mismatch remained 0x0045FDA9. Native
+0x0045FED9 performs integer NEG before the stack spill, FILD and FMUL. The
+alternative performs the spill, FILD, FMUL and FCHS, so retain integer negation
+before conversion. This excludes the tested alternative; it does not recover
+the original source spelling.
+
+Both controls were reverted. `.analysis/f021-register-probes.json` records
+source/function hashes and counts; `.analysis/f021-floating-negation-control.json`
+records the four differing instructions. The restored draft reproduces the
+baseline function hash, and its final relocation, call and register-class
+alignment receipts were refreshed. Continue investigating natural expression
+and compiler-allocation causes before whole-function cold acceptance. No
+partial match or normalized alignment receives exact credit.
