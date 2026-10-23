@@ -18071,3 +18071,116 @@ corrected investigative sources/receipts remain in `f047-probe-00.*` /
 outputs and F021 remain preserved. A host sample had 9.1 GiB available memory
 and CPU 92% idle, without interval swap activity. Builds and validation remained
 serial and low priority.
+
+## F048: caller ABI review and partial action source (2026-10-23)
+
+This extends the F048 preparation above without accepting a function. The R048
+body remains 82,796 code bytes; its complete required comparison includes all
+1,126 contiguous switch/remap bytes, totaling 83,922 bytes through 0x004C0811.
+Target, frozen body/switch hashes, all 151 dispatch entries and real exits stay
+unchanged. Ghidra check/decompile receipts retain identity/completion markers;
+the project is read-only and the target is never patched.
+
+**Target-observed ABI:** `f048-abi-export.py` / `.json` pin all 22 direct callee
+extents to the supplied target and existing origin evidence where available.
+All return sites and stack cleanup are inspected. `f048-abi-review.py` / `.json`
+follow all 22,721 native instructions and 1,361 call sites with consistent
+stack joins and restored epilogue state. A negative control changing the
+five-argument effect cleanup from 20 to 16 bytes fails the stack merge. Each
+direct call's surrounding native instructions are retained in
+`f048-contexts-*.json`; complete callees are in `f048-abi-*.asm`.
+
+The effect and shared-effect views consume five dword slots (20 bytes); the
+tracked-effect view consumes seven (28 bytes). They read a short effect ID,
+two float positions and narrow direction/layer values; tracked effects add
+two byte flags. Primary/secondary resets consume
+one slot; frame advancement returns signed AX. Horizontal-limit checks return
+AL. Polar velocity consumes two floats and transform consumes three. Mode
+selection consumes int/byte/int slots. Sound and nonnegative-timer calls read
+short arguments; resource spending reads an int. Range reads two ints and
+returns EAX. Narrow callee reads and actual x87 operations support these
+declaration-only caller views, without recovering original type spelling.
+
+All thiscall contexts use current except transform at 0x004BF0A0, which loads
+the opponent from +0x2E8; its other eleven sites use current. All six indirect
+calls use current and virtual slot zero. The implicit-ST0 conversion at
+0x006406AC consumes no ordinary stack argument and is represented by ordinary
+C++ casts, never an invented source signature. The angle wrapper 0x00483300
+forwards two float inputs to 0x00483320; the worker widens them for the CRT
+atan2 call, rounds through a float local and leaves ST0 as result. F048 removes
+eight caller stack bytes, divides that result and converts it to a short.
+Neither wrapper gains origin/source/exact credit: both remain among the 97
+unknown origins. Native 0x0041CB40/0x0041CB70 helpers confirm float-angle
+consumption in the polar-velocity dependency. Ignored return values do not
+identify original void return declarations. Stack/receiver proof does not
+prove all remaining case argument expressions or semantics.
+
+**Reviewed natural source:** Private fragments under
+`.analysis/character-action-4ac040/` cover 85 of the 151 nondefault states:
+all existing entries through 393, plus singleton 596. The 24,719-byte total
+describes native physical case regions solely for investigation; it earns no
+partial function credit. Every case entry, extent partition and source path is
+recorded in `f048-case-index.json`. `f048-case-review.json` pins the target,
+source files and bounded behavior observations; `f048-progress.json` records
+66 remaining states and the next work at state 400. No complete owner layout
+is inferred; the receiver view is never constructed or embedded.
+
+The low motion cases 50..65 agree with the corresponding F021 native paths in
+every instruction, GPR, operand width, field, constant and branch after only
+normalizing the observed receiver-frame slot and genuine common exit
+addresses. Thirteen middle cases also agree under those restrictions. Other
+cases retain their actual differences, including meaningful compiler temporary
+slots; no inert locals are added. The receipts are `f048-low-native-review.py`
+/ `.json` and `f048-mid-native-review.py` / `.json`. These target-to-target
+observations support reviewed source reuse; they establish no source compiler
+equality or unrestricted semantic equivalence. F021 and its original inputs
+remain untouched and unaccepted.
+
+Behavior differences retained in the draft include the following:
+
+- Motion 4/5 uses speed +/-6. Jump 7/8 clears byte 3AC before velocity stores.
+  State 70 clamps vertical speed to 6..25. The old F0C/effect951 gates are
+  absent from the reviewed F048 paths; state 89 uses transform(0,95,0).
+- States 93/94 retain different launch/landing phases. New 96 and existing 97
+  keep their ten-effect loops, optional 995 and different <= versus < landing
+  comparisons. State 98 omits old direction writes; 99 checks mode/flag first.
+- State 200 uses float constants 11.0 and 0.75 for drag, then speed 14.5.
+  State 201 preserves checks before advancement and re-reads after it.
+  States 202/203 complete through primary reset 9. States 204/205/206 trigger
+  at phases 3/2/3 and call shared effect60 before setting velocity. Only
+  204/205 retain the phase-four speed threshold. States 209/210 use effect998.
+- States 300..310 keep independent reads around sound/effect calls. State 308
+  retains the phase14 gravity gate and computed secondary(currentPhase-2).
+  State 310 updates airborne gravity before testing landing and phase<12.
+- Native 0x004B2039..0x004B2069 tests phase6, then re-reads and tests phase4
+  with no intervening call. State 392 retains both original nested tests.
+  Singleton 596 decrements byte366 before motion reset and performs shared55,
+  sound33, then opponent shortEFA zero after the post-advancement phase check.
+
+**Compiler-observed limits:** The private 85-case `SyntaxOnly.cpp` passes the
+pinned VC7.1 build 3077 syntax check with `/Zs /Od /Ob0 /GR- /GX- /I src`;
+`f048-syntax-85.log` records successful completion. It emits no COFF object and
+must never execute or enter a comparison. `f048-compose.py` refuses to create
+whole `Preview.cpp` until all 151 cases are present. Full source emission,
+relocation review, the whole 83,922-byte comparison and canonical cold replay
+remain outstanding. No mapping, source-presence or exact ledger changes are
+made. Original owner, complete layout and names remain unknown.
+
+All 141 accepted units /356,945 code bytes and their canonical inputs remain
+unchanged; conservative coverage stays 18.05%. Origin evidence through R268
+and all 97 pending origins remain unchanged. Continue the active 95% goal with
+Ghidra/local tools, serial low-priority builds and CPU/memory monitoring,
+without REA or pausing for a partial draft, cleanup or handoff.
+
+F048 progress validation passes all 3,603 CI tests in 100.558 seconds, with
+the receipt in `.analysis/f048-progress-ci.log`. `f048-private-draft-check.json`
+verifies all sixteen native/decompile/draft input hashes; the incomplete-source
+control rejects the 85/151-case composer input and confirms no whole preview or
+COFF object exists. No accepted source/header/descriptor/profile/relocation
+changed, so no unchanged accepted unit was rebuilt. The earlier knowledge-base
+bytes remain verbatim. The host had about 9 GiB available memory, CPU 87% idle
+in the interval, and no interval swap activity. New state-400 checkpoints pin
+the actual 116/153/60/110 float payloads in
+`f048-next-state400-checkpoints.json`; these remain unaccepted decompile
+hypotheses until the complete native argument expressions and ordering are
+reviewed. Continue at state 400 without pausing the active goal.

@@ -91,7 +91,9 @@ exact unit descriptors and matching ledgers. `f047-cohort-completion.json`
 checks the whole cohort; only F047 was rebuilt now. This milestone does not
 complete or pause the broader 95% goal. All 97 pending origins remain unknown.
 
-The next cohort is F048, the reviewed R048 state function at `0x004AC040`.
+## Current reconstruction cohort: F048
+
+Continue the reviewed R048 state function at `0x004AC040`.
 Its code is `0x004AC040..0x004C03AB` /82,796 bytes; six guarded switch/remap
 regions occupy the next **1,126 bytes**, contiguously through `0x004C0811`.
 Compare the entire **83,922 bytes**, excluding fourteen following INT3 bytes.
@@ -101,13 +103,47 @@ four remapped and two direct switches, 146 nondefault table destinations,
 Retain `f048-native-audit.py` / `.json`, `f048-4ac040.asm`, `f048-action.c` and
 `f048-decompile.log`. `f048-dispatch-review.json` / `.py` verify the entry
 guards, all six groups and five singleton pivots: 151 nondefault states with
-151 distinct entries. `f048-callee-inventory.json` joins 1,355 direct calls to
-22 distinct target entries for discovery only; caller-specific ABIs remain
-unreviewed. The decompile is a hypothesis, not source or exact evidence; its
-ContextBase/Concurrency labels establish no owner or origin. Review all case
-behavior and actual call ABIs before
-writing natural source. Do not truncate at the code end or inherit a complete
-owner layout from a different character. F021 remains unaccepted and preserved.
+151 distinct entries.
+
+The subsequent ABI audit pins all 22 complete direct callee extents and their
+actual RET cleanup, and checks every native instruction across all stack joins
+and 1,361 calls. An incorrect 20-to-16-byte effect cleanup is rejected as a
+negative control. All thiscall receivers are current except the transform call
+at `0x004BF0A0`, which uses the opponent. The six virtual slot-zero calls use
+current. The angle wrapper at `0x00483300` is cdecl with two float arguments and
+an ST0 result; its worker at `0x00483320` remains unknown-origin, as does the
+wrapper. The implicit-ST0 compiler conversion helper is expressed through
+ordinary casts. Caller views establish neither original declarations nor
+ownership; ignored results do not prove original void returns. Stack/receiver
+checking does not complete the remaining cases' argument/behavior review.
+Retain `f048-abi-export.py` / `.json`, `f048-abi-review.py` / `.json`, all
+`f048-abi-*.asm` and `f048-contexts-*.json`.
+
+Private natural source fragments now cover **85/151 states**, representing
+24,719 bytes of native physical case regions. These are diagnostic partitions,
+not accepted function extents or exact credit. The reviewed states are all
+nondefault entries through 393 plus singleton 596; 66 states remain. Retain
+`.analysis/character-action-4ac040/`, `f048-case-index.json`,
+`f048-case-review.json`, `f048-progress.json`, `f048-refresh-draft.py` and
+`f048-compose.py`. The index records every native entry and drafted fragment;
+the review/progress receipts pin the source hashes and outstanding work.
+
+`SyntaxOnly.cpp` passed pinned VC7.1 `/Zs /Od /Ob0 /GR- /GX- /I src` checking
+for the 85 reviewed cases (`f048-syntax-85.log`). It is incomplete, must never
+execute, and emits no object. No whole `Preview.cpp` is materialized until all
+151 states are present; the composer rejects incomplete inputs. No F048
+mapping, source-presence or exact ledger entry is accepted. The next source
+work starts at state 400, continues through the remaining 401..595 states,
+then 597..796. Preserve the phase-six/phase-four nested tests in state 392:
+both checks exist in native code despite their contradictory values.
+
+The decompile is a hypothesis, not source or exact evidence; its
+ContextBase/Concurrency labels establish no owner or origin. Complete the
+remaining behavior/argument review and natural source, then review all
+relocations, compare all 83,922 bytes and cold-replay the canonical unit before
+acceptance. Do not truncate at the code end or inherit a complete owner layout
+from a different character. F021 remains unaccepted and preserved, including
+its original draft. All 141 accepted units and inputs remain unchanged.
 Continue reconstruction with Ghidra/local tools, serial low-priority builds and
 resource monitoring, without REA or pausing for cohort completion/handoff.
 
@@ -205,6 +241,18 @@ corrected investigative sources/receipts remain in `f047-probe-00.*` /
 outputs and F021 remain preserved. A host sample had 9.1 GiB available memory
 and CPU 92% idle, without interval swap activity. Builds and validation remained
 serial and low priority.
+
+F048 progress validation: all 3,603 CI tests passed in 100.558 seconds
+(`.analysis/f048-progress-ci.log`). The private evidence and draft hashes are
+checked in `f048-private-draft-check.json`; the incomplete-source control
+confirms that 85/151 cases cannot materialize a whole comparison input.
+No accepted source, header, descriptor, relocation or compiler profile changed,
+so no unchanged accepted unit was rebuilt. Documentation retains the earlier
+knowledge-base content verbatim and appends the new bounded investigation.
+The host had about 9 GiB available memory; interval CPU was 87% idle with no
+swap activity. The next-state checkpoints are in
+`.analysis/f048-next-state400-checkpoints.json`; they are unaccepted hypotheses
+requiring complete native review before source. Continue exploration.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,
