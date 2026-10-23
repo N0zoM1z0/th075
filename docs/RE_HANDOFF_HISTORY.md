@@ -6624,3 +6624,57 @@ All **31 R047 authored AI functions /304,135 code bytes** now have complete
 exact unit descriptors and matching ledgers. `f047-cohort-completion.json`
 checks the whole cohort; only F047 was rebuilt now. This milestone does not
 complete or pause the broader 95% goal. All 97 pending origins remain unknown.
+
+
+## F049 sequence checkpoint (2026-10-23)
+
+`CharacterSequence4A9050::AdvanceSequence` at `0x004A9050` cold-replays exact
+from `src/CharacterSequence4A9050.cpp` / `.hpp`: **11,894 code bytes**, 2,765
+instructions, 331 branches and one return. Its 272-byte guarded jump table
+and 98-byte remap follow contiguously. The canonical descriptor distinguishes
+`size = 11894` from `compare_size = 12264`: all **12,264 bytes** compare,
+while only code earns coverage. Eight following INT3 bytes are alignment.
+R048 origin evidence and its complete code hash remain unchanged.
+
+The natural body preserves all 67 notice/sequence states, signed byte dispatch,
+independent counter and fade checks, repeated calls and actual current/opponent
+receivers. All 44 notice-processing calls use current, including duplicate
+initialization calls. Five primary resets, six transition starts, seven
+transition clears and the final level advancement use the opponent. The
+common music/countdown/level tail executes after every case. Twenty-nine
+native paths leave their case directly for that tail; local extra jumps were
+removed by expressing those genuine exits as `break`, without fake returns.
+State 61 alone uses an observed promoted increment before narrowing to short.
+
+All 398 relocations are bound and physically compared: 227 direct calls,
+26 readonly float references, 73 writable global references, two readonly
+empty-string references, two table/remap addresses and 68 table destinations.
+Actual COFF payloads, field widths, section permissions, addends and local
+symbol offsets are checked. Writable globals are bound by address. Both
+adjacent target strings are single NUL bytes; preserve their distinct binding
+addresses. The two new byte globals are narrow observed views only. Original
+declarations, identity, complete layout and semantic names remain unknown;
+never construct or embed the receiver view.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-004a9050
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares every configured byte and
+relocation. All 141 earlier units and canonical inputs remain unchanged and
+were not rebuilt. The cumulative adoption manifest has 82 literal additions /
+358,956 code bytes and 80 new source/header inputs above F009; F021 and F048
+remain unaccepted. The completed 31-function R047 AI cohort is preserved in
+[the earlier checkpoint](RE_HANDOFF_HISTORY.md#f047-ai-cohort-checkpoint-2026-10-23).
+
+Private receipts: `f049-native-audit.py` / `.json`, `f049-4a9050.asm`,
+`f049-sequence.c`, `f049-decompile.log`, `f049-compose.py`,
+`f049-sequence-diagnostic.py`, `f049-abi-review.py` / `.json`, all fifteen
+`f049-callee-*.asm`, `f049-bind-draft.py`, `f049-family-bindings.json`,
+`f049-accepted-replay.json`, `f049-cold-replay.log` and `f049-progress.json`.
+Keep rejected whole source/object controls 00..03 and the exact preview 04.
+The redundant probe object was removed; its identical copy remains in
+`f049-probe-04/`. The canonical cold object remains active.
+The native ABI audit covers all stack joins and 227 calls, rejecting an
+incorrect notice-text cleanup. No callee gains source or exact credit here.

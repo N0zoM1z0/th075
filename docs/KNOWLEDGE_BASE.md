@@ -18487,3 +18487,116 @@ activity was observed. No unchanged accepted unit was rebuilt.
 are additional to F049; the other 67 states still require independent review.
 No F050 source, mapping or exact credit is accepted yet. Continue the active
 95% goal from this reviewed boundary evidence, without REA or pause.
+
+
+## F050 exact sequence reconstruction (2026-10-23)
+
+R048 sequence `0x00483350..0x004863BF` now cold-replays exact as
+`CharacterSequence483350::AdvanceSequence`: 12,400 code bytes, 2,882
+instructions, 350 branches and one return. Its 392-byte direct jump table
+follows contiguously through `0x00486547`; eight INT3 bytes are alignment.
+The canonical descriptor records `size = 12400` and `compare_size = 12792`,
+so all 12,792 bytes are compared while only code earns coverage. Preserve
+original code hash `95e5f04a7adfbb758b62d7bf403bdc27c5e7db8e521de76dd31f2035f692ff7e`
+and comparison hash `fe5cecd851f54a5d52cc94d320f8993de8f848656cfced75cfd522090398161a`.
+Origin evidence, bounds and switch hashes remain unchanged.
+
+The whole native case review verifies 71 distinct entries. Twelve specific
+coordinate/alpha displacements are eight below F049; these observations do
+not establish a complete owner layout or identity. Complete native comparison
+finds 48 unchanged cases after that explicit shift, GPR classes and actual
+readonly-payload comparison. All 23 changed/new cases were reviewed separately
+with native widths, constants, call order and exits. Decompile comparison
+locates hypotheses; neither it nor normalized correspondence earns exact
+credit. The source is one natural C++ body with no target arrays, assembly,
+padding, inert locals, fake returns or conditional alternative bodies.
+
+The transition arguments in 6/16/26/46/56 differ from F049. Opponent horizontal
+speed in 13/23/43 is 7.8f. State 27 writes selection 4 before incrementing the
+existing byte at 00671622 and omits the F049 shared sound. State 34 clears EFC.
+State 35's notice predicate initializes a new stage sequence; its independent
+positive-counter path runs after the predicate, increments before fade tests,
+loads stage 12 at 60, restores positions and leaves into mode 36 after fading to 0.
+Do not nest the entire counter path under ProcessNotice. Stage 53 separately
+retains stage 8. All new 38/39/41/42 paths retain their independent calls.
+
+Native 00484EEE loads opponent through current+2E8 before clearing its notice
+transition in 42. Native 004858C2 resets opponent to 2 only after all eight own
+position stores and counter+=60; current notice initialization and two
+current processing calls follow. State 62 writes opponent+4E0=1 before camera
+and notices. State 61 retains the meaningful promoted dword increment before
+narrowing to short. Native direct exits to the common music/countdown/level
+tail remain genuine `break` statements; preserve the two exits in 35.
+
+The complete caller ABI audit covers all 240 calls and every stack join against
+fourteen full callee bodies pinned to prior origin hashes, rejecting an
+incorrect notice-text cleanup. All 46 processing calls use current, all six
+transition pairs use current/opponent, primary resets split 6/6 and transition
+clears 9/9. The preliminary 10/8 clear distribution was rejected by the actual
+state 42 opponent call before drafting. Ignored results do not identify original
+void returns; parameter/result views preserve actual observed low-bit widths.
+Declaration-only callees earn no source, origin or exact credit here.
+
+All 451 relocations are physically compared: 240 calls, 26 readonly float
+references, 84 writable global accesses, two readonly empty strings, one table
+address and 98 destinations, including every default slot. Actual COFF payloads,
+operand widths, target/COFF permissions, zero external addends and local symbol
+offsets are checked. Empty strings at 00659260 and 00659261 are adjacent single
+NUL bytes with distinct bindings. Writable storage is bound by address, not
+contents. Existing narrow global declarations are repeated without widening;
+no new global ownership or complete layout is claimed, and no shared header
+changes. The partial receiver is never constructed or embedded.
+
+The first complete preview already matched all 12,792 bytes. Canonical source
+`src/CharacterSequence483350.cpp` / `.hpp` was then independently built and
+bound, followed by the required separate cold replay with pinned VC7.1
+build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`:
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-00483350
+```
+
+All 12400 coverage bytes and 12792 comparison bytes match with zero differences.
+Only this new unit was cold-rebuilt; all 142 prior canonical units and inputs
+remain unchanged. Retain `f050-native-audit.py` / `.json`, `f050-483350.asm`,
+`f050-sequence.c`, `f050-decompile.log`, `f050-decompile-review.py` / `.json`,
+`f050-native-correspondence.py` / `.json`, `f050-abi-review.py` / `.json`, all
+`f050-callee-*.asm`, `f050-receiver-review.json`, `f050-behavior-review.json`,
+`f050-compose.py`, `f050-sequence-diagnostic.py`, `f050-bind-draft.py`,
+`f050-family-bindings.json`, `f050-accepted-replay.json`, `f050-cold-replay.log`,
+`f050-adopt.py`, `f050-progress.json` and exact private preview `f050-probe-00/`.
+
+The accepted total is 143 functions /381,239 code bytes: 19.32% reviewed authored
+coverage and 19.28% conservative coverage. The cumulative manifest preserves 83
+literal additions /371,356 code bytes and 82 new source/header inputs above
+F009, excluding unaccepted F021 and F048. Every prior descriptor, source,
+function transition and historical ledger prefix retains its guard. R268
+origin evidence and all 97 unknown origins remain unchanged.
+
+Continue F051, independently reviewed R048 sequence 004D4EA0 /11,859 code bytes,
+plus a 272-byte guarded table and 98-byte remap, comparing all 12,229 bytes.
+Eleven following INT3 bytes are alignment before 004D7E70. The new native audit
+verifies 2,756 instructions, 330 branches, one return, fourteen distinct direct
+callees and no external branch exits or indirect calls. Fresh attested Ghidra
+decompilation is retained with `f051-native-audit.py` / `.json`, `f051-4d4ea0.asm`,
+`f051-sequence.c`, `f051-decompile.log` and `f051-progress.json`. Review every
+state and actual receiver/argument before source reuse; do not infer layouts
+or dispatch representation from another character. The 95% goal remains active,
+with serial low-priority builds, CPU/memory monitoring, local Ghidra and no REA
+or pause for a bounded function, cleanup or handoff.
+
+
+F050 final validation passes all 3,603 CI tests in 125.561 seconds
+(`f050-ci.log`), plus target identity, tracking, progress-card and diff checks.
+`f050-evidence-check.json` verifies every earlier source/header/descriptor,
+all unrelated function rows, origin evidence and historical ledger prefixes,
+and the unchanged F048 source/object. Knowledge-base and handoff-history
+prefixes remain intact. No unchanged accepted unit was rebuilt.
+
+The duplicate F050 preview object was removed after checking its identical
+retained copy in `f050-probe-00/`, reclaiming 37,066 bytes; complete inputs,
+profiles, logs and receipts remain, as does the canonical cold object. See
+`f050-obsolete-output-cleanup.json`. Sampled available memory was about 8.5 GiB,
+interval CPU 76% idle, and interval swap activity was zero. F051's new case
+index pins 67 distinct native state entries, still unreviewed as source.
+Continue the active 95% goal with these complete boundary inputs.
