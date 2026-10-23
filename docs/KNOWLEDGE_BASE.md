@@ -15192,58 +15192,97 @@ baseline function hash. No unrelated body was added to reconstructed source.
 All target-draft controls were reverted and the final object/diagnostic hashes
 were refreshed. The 6,311 physical differences remain unresolved.
 
-## F022 — Reimu action-priority dispatch draft
+## F022 — Reimu action-priority dispatcher
 
-Started on 2026-10-23 as a related complete-function reconstruction, while
-F021 remains pending. Address 0x0046D300..0x00470A3C contains 14,141 code bytes,
-with body SHA-256
-`8c0006a51aaf1b2151a7f074257c68ee728a66081dc4a1b5895f460e3f6bf891`.
-The complete R046 authored evidence is preserved. A fresh decoder audit checks
-all 3,801 instructions, one return, 749 internal branches and no external
-branch exits. There are no switch tables; the following three INT3 bytes are
-alignment. The proposed function role remains inferred.
+Accepted on 2026-10-23: `ReimuFighter::DispatchActions`,
+0x0046D300..0x00470A3C, complete size 14,141 code bytes. The following three
+INT3 bytes are alignment. The R046 authored record and complete body SHA-256
+`8c0006a51aaf1b2151a7f074257c68ee728a66081dc4a1b5895f460e3f6bf891`
+remain unchanged. Full decoding checks 3,801 instructions, 749 internal branch
+destinations, one return and no switch tables or external branch exits.
 
-All 205 static calls have four destinations: vector at 0x004420B0 (61), input
-bit packing at 0x00455B30 (38), primary-counter reset at 0x0040FAC0 (79), and
+**Acceptance:** Unit `reimu-fighter-dispatch-actions`, source
+`src/ReimuActionDispatch.cpp`, symbol `?DispatchActions@ReimuFighter@@QAEXXZ`.
+The final canonical cold build compares all 14,141 bytes with zero differences,
+including every relocation field. Profile: pinned VC7.1 13.10.3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. These flags reproduce this function;
+they do not establish an executable-wide original compiler profile.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-dispatch-actions
+```
+
+All 278 relocations are bound: 205 direct calls and 73 readonly-constant
+references. Nine distinct constants are verified against both the fresh COFF
+section payloads and target bytes. Calls comprise vector at 0x004420B0 (61),
+input bit packing at 0x00455B30 (38), primary reset at 0x0040FAC0 (79), and
 auxiliary-input clearing at 0x00453A10 (27). R205 retains the vector helper's
-library origin. Its call sites use an existing receiver at +0x468 and consume
-an element-slot reference containing a pointer. The private draft expresses
-that bounded ABI through a pointer-only partial interface; it does not recover
-or instantiate the vector or complete fighter layout. The current record's
-signed priority word at +0x12 is read before the lookup and retained in ESI
-across the call; the selected record's signed word is at +0x10.
+library origin. Its existing receiver at +0x468 returns a pointer-element
+slot reference. The pointer-only interface recovers that bounded ABI, not
+the original template argument or complete vector/fighter layout. Neither
+owner is instantiated or embedded. Names and semantic field roles remain inferred.
 
-Natural source drafting covers fifteen ordered priority branches. The initial
-input codes 230/220/210 select 761/751/741 and require zero height. Code 200
-selects 731 without that gate. Codes 205/206 select 735/736 on the ground.
-Code 207 selects 720, then rereads height for a possible 722 reset. Code 208
-requires positive height, checks priority for 723, initially resets to 721,
-and rereads height for a possible 723 reset. Preserve those distinct lookup
-and reset values and the post-call height reads.
+All 65 ordered dispatch candidates are represented by natural scalar C++
+conditions and calls. The current record's signed word at +0x12 is read before
+the lookup and retained in ESI across the call; the selected record's signed
+word is at +0x10. Input +511 is loaded unsigned, while +39D, +366, +3AD and
+facing +66 are signed bytes. Preserve those distinctions and the fresh state,
+gate, priority and position reads at each observed condition.
 
-The next seven branches include input 103 and the six input-13 alternatives.
-They retain the 100.0f resource threshold, distinct +398/+39A selectors,
-signed +39D modes, and the duplicated +3B0 check around the +F22 gate.
-+511 is loaded with MOVZX; +39D uses MOVSX. Every priority condition keeps the
-observed `state > 299` / gate-dword checks and the separate `state < 300`
-alternative. Do not hoist or cache the repeated field reads.
+Input codes 230/220/210 select 761/751/741 on the ground. Code 200 selects 731
+without that gate; 205/206 select 735/736. Code 207 selects 720 and rereads
+height for a possible 722 reset. Code 208 requires positive height, checks
+priority 723, resets to 721, then rereads height for a possible 723 reset.
+Input 103 and the six input-13 alternatives preserve their 100.0f threshold,
+distinct +398/+39A selectors, signed +39D modes and duplicated +3B0 reads.
 
-`.analysis/reimu-dispatch/Preview.cpp` compiles under the pinned normal profile
-to 3,299 bytes. Its 49 static calls agree with the reviewed target prefix.
-The diagnostic retains physical registers and normalizes relocation values;
-the first differing instruction is at native 0x0046DFDE, where the full body
-jumps to its final epilogue and the incomplete draft begins its epilogue.
-Within the drafted prefix, 145 branch destinations agree by instruction
-ordinal. Fourteen exit edges and ten edges into the undrafted next region
-are explicitly separated; the latter do not establish full CFG equivalence.
-No prefix, static-call, compilation or instruction diagnostic earns credit.
+The two input-102 candidates preserve the post-pack height reads. The first
+selects 594/595 on the ground or 597/598/599 through later height/state tests,
+despite its initial zero-height gate. The second checks 596 and state <300,
+then rereads height before resetting. Their unmatched paths continue into
+later candidates. Other specials preserve distinct lookup/reset identifiers:
+for example, input 11 checks priority 600 but resets to 605 or 607.
 
-The attested decompile and native read are `.analysis/f022-dispatch.c`,
-`.analysis/f022-decompile.log` and `.analysis/f022-46d300.asm`. Run
-`scripts/repo-python .analysis/f022-dispatch-diagnostic.py` to reproduce the
-complete target audit and bounded draft observations. Receipts are
-`.analysis/f022-dispatch-audit.json` and `.analysis/f022-draft-progress.json`.
-These files, the source and object remain private, unregistered and never
-executed. Continue at native 0x0046DFE3 with input 102 and its distinct follow-up
-paths. Reconcile the entire function, bind all relocations, then cold-replay
-all 14,141 bytes before proposing acceptance. No tracking ledger changed.
+The directional predicates retain unsigned press-count tests, signed facing
+products, and the observed <=-1 / >=1 diagonal bounds. Early-ascent rejection
+uses the native height-60.0f and vertical-speed tests. The +3AD increment is a
+direct byte increment, rather than a promoted assignment. Priority ranks 99
+and 49 remain explicit exceptions. Do not cache or algebraically simplify
+these checks into different memory-read or branch sequences.
+
+Ground attacks preserve the shared +500 buffer in the two special state-200
+branches, while ordinary B input uses +504. Neutral vertical checks remain
+duplicated where observed. Both related B paths select 412; only the A/300
+policy has the additional current-state-300 exception. Airborne B paths both
+select 416. Distance gates reread both positions for each side of the 320,
+360 or 480 bounds. Plain float leaf lvalues preserve the observed x87 operand
+evaluation; a parenthesized opponent leaf emitted a different load ordering.
+Source is handwritten C++ with typed scalar accesses and ordinary control flow.
+
+Private receipts are `.analysis/f022-dispatch-audit.json`,
+`.analysis/f022-relocation-bindings.json` and `.analysis/f022-accepted-replay.json`.
+The attested decompile/read remain `.analysis/f022-dispatch.c`,
+`.analysis/f022-decompile.log` and `.analysis/f022-46d300.asm`. The earlier
+partial preview is superseded by the single canonical public source body.
+All 109 prior accepted units and source/header inputs are unchanged; only the
+new unit was cold-replayed. The cumulative adoption evidence now freezes 50
+function transitions and 28 new inputs, preserving all prior origin evidence.
+Coverage becomes 110 exact functions /52,810 bytes (2.68% of reviewed authored
+bytes; 2.67% conservatively including all 3,608 pending bytes). F021 remains
+unaccepted and the 95% goal remains incomplete.
+
+
+A follow-up F021 control changes the two state-88 velocity-to-short conversions
+to parenthesized C-style casts. It reproduces the baseline 62,090-byte function
+hash and all 6,311 physical differences. That control was reverted and the
+complete source/object diagnostic receipts were refreshed. F022's float-leaf
+evaluation observation does not by itself resolve F021 or identify its original
+source spelling.
+
+
+Final F022 validation passes all 3,603 CI tests in 74.179 seconds, together
+with target-required tracking, progress freshness and whitespace checks. The
+adoption invariant pins 50 authored additions /42,927 bytes above F009 while
+retaining every historical prefix and all 97 unknown origins. Obsolete partial
+preview artifacts were removed (28,619 bytes); canonical source, the final
+matching object and original target evidence remain.

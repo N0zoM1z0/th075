@@ -2,7 +2,7 @@
 
 Updated 2026-10-23. The user explicitly resumed the authored exact-reconstruction
 goal after cleanup and handoff, with the prior 95% authored-byte target.
-Accepted coverage is **109 functions /38,669 code bytes (1.96%)**.
+Accepted coverage is **110 functions /52,810 code bytes (2.68%)**.
 Preserve all accepted origins and the 97 documented unknowns.
 
 The current commit subject format is `gpt-6.1-sol: ...`.
@@ -14,13 +14,13 @@ Start here, then consult `RE_WORKFLOW.md` for acceptance rules and the F021
 section at the end of `KNOWLEDGE_BASE.md` for detailed per-state observations.
 The historical origin checkpoints below remain evidence, not current tasks.
 
-F020 accepts three complete battle dependencies: body separation at
+F020 accepted three complete battle dependencies: body separation at
 `0x00449310` /1,861, round-transition update at `0x0043D010` /847 and overlay
 timeline at `0x00446D80` /1,461. All three units cold-replay exact across one
 new object: 4,169 bytes /101 relocations /16 readonly constants. All 106 prior
 units and 46 prior source/header inputs remain unchanged and were not rebuilt.
-Current exact coverage is 109 functions /38,669 code bytes (1.96%). The
-cumulative manifest freezes 49 F010-F020 transitions and twenty-six new inputs.
+After F020, exact coverage was 109 functions /38,669 code bytes (1.96%). The
+cumulative manifest then froze 49 F010-F020 transitions and twenty-six new inputs.
 
 Body separation uses complete SDK RECT values and existing exact collision
 helpers. Two observed edge-result bytes are a bounded local array, not an owner.
@@ -114,48 +114,51 @@ the full CFG and real local lifetimes. The next bounded draft is F022 below. Reb
 and cold-replay the complete function/tables before updating exact ledgers.
 Do not repeat reverted controls without new evidence; see the knowledge base.
 
-## F022 current draft: related action-priority dispatcher
+## F022 accepted: Reimu action-priority dispatcher
 
-The next bounded source task is the complete Reimu dispatcher at
-`0x0046D300` /14,141 bytes (R046). Preserve F021's full draft and unresolved
-physical differences. F022's complete target audit checks 3,801 instructions,
-749 internal branches, one return, 205 direct calls to four destinations, no
-switch tables and three following INT3 alignment bytes. This is reviewed
-authored code; the called vector helper remains library code.
+`ReimuFighter::DispatchActions` at `0x0046D300` cold-replays **exact over all
+14,141 code bytes**. The following three INT3 bytes are alignment and earn
+no credit. The complete R046 origin and target hash remain unchanged.
+Canonical source is `src/ReimuActionDispatch.cpp` and its pointer-only partial
+interfaces are in `src/ReimuActionDispatch.hpp`; do not instantiate those owners.
+All 65 ordered dispatch candidates are implemented, with 3,801 instructions,
+749 internal branch destinations and no switch tables.
 
-Fifteen ordered priority branches are drafted in
-`.analysis/reimu-dispatch/Preview.cpp`. The 3,299-byte partial preview compiles;
-49 static calls and 145 interior prefix branch destinations agree. Its first
-normalized instruction difference is the incomplete tail at native
-`0x0046DFDE`. Ten edges enter the undrafted next region, so this is explicitly
-incomplete and earns no exact credit. Do not execute or register the preview.
-No complete owner is instantiated or inferred.
-
-The next source region starts at `0x0046DFE3` (input 102 and follow-up choices).
-Retain the post-call height/state reads and unsigned +511 versus signed +39D
-byte loads. Read the F022 knowledge-base entry before extending the draft.
-Target evidence is `.analysis/f022-46d300.asm`, `.analysis/f022-dispatch.c` and
-`.analysis/f022-decompile.log`; the private audit/progress receipts are
-`.analysis/f022-dispatch-audit.json` and `.analysis/f022-draft-progress.json`.
-Reproduce locally, serially:
+The manifest binds all 278 relocations: 205 direct calls and 73 references to
+nine readonly constants. Both freshly built COFF constant payloads and target
+constant bytes were checked. The vector helper retains its library origin and
+gets no reconstruction credit. All 109 prior units and their source/header
+inputs remain unchanged. The cumulative adoption manifest freezes 50 function
+transitions and 28 new inputs since F009; its historical prefixes and origin
+records remain guarded.
 
 ```bash
-nice -n 10 scripts/compile-probe.sh .analysis/reimu-dispatch/Preview.cpp build/probes/F022Preview.obj /Od /Ob0 /Gy /GR- /GX- /Zi /I src
-scripts/repo-python .analysis/f022-dispatch-diagnostic.py
+scripts/repo-python scripts/replay-exact-units.py --unit reimu-fighter-dispatch-actions
 ```
 
-Complete the full body and relocation bindings, then cold-replay all 14,141
-bytes before acceptance. The full target extent remains the comparison scope.
-F022 checkpoint verification: all 3,603 CI tests passed in 64.356 seconds.
-Target-required tracking, Ghidra attestation, the complete native extent/CFG
-audit and bounded draft diagnostics passed. All accepted sources and ledgers
-remain unchanged; exact coverage is still 109 functions /38,669 bytes. Builds
-were serial and low priority. Sampled available memory was 7.7–8.2 GiB and the
-latest CPU interval was 79% idle without swap-in/out.
+Private evidence: `.analysis/f022-46d300.asm`, `f022-dispatch.c`,
+`f022-decompile.log`, `f022-dispatch-audit.json`, `f022-relocation-bindings.json`,
+`f022-accepted-replay.json` and `f022-draft-progress.json` (all under `.analysis/`).
+The private audit and binding scripts reproduce complete diagnostic observations;
+acceptance is the canonical cold command above. The old partial source wrapper,
+first-cohort snapshot and preview object were removed after acceptance (28,619
+bytes); the final matching object and all native evidence remain.
 
-F021's latest expression, parameter and compiler-context controls were reverted;
-see the knowledge base for their bounded results. Its restored final receipts
-agree with the baseline source and function hashes.
+Final F022 verification: all 3,603 CI tests passed in 74.179 seconds, including
+retained-history, origin, tracking and progress-card checks. The adoption test
+now pins 50 reviewed additions /42,927 bytes above the F009 baseline; no unknown
+origin receives credit. Final sampled available memory was 8.7 GiB and CPU was
+87% idle, with 16 KiB/s swap-in and no swap-out in that interval. Compiler jobs
+remained serial and low priority.
+
+F021 remains the next pending large body. Its complete 143-case draft still
+has 6,311 physical operand differences and a size mismatch. F022 confirms a
+concrete compiler distinction worth investigating there: parenthesized float
+leaf lvalues can change x87 expression evaluation order. The two state-88
+C-style short-cast controls reproduce the baseline and were reverted; other
+float-expression grouping remains unresolved. Preserve the full F021
+extent, ABI, genuine locals and previous negative controls. No exact credit
+is granted to that draft.
 
 ## Resumed investigation (2026-10-23)
 

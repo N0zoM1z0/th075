@@ -107,3 +107,4 @@ BattleFrame::AdvanceState
 BattleFrame::ResolveBodySeparation
 StateFramePolicies::UpdateTransition
 StateFramePolicies::AdvanceOverlay
+ReimuFighter::DispatchActions
