@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F037. Counts, active
+This file preserves historical checkpoints through R268 and F038. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -5717,6 +5717,106 @@ with profiles and diagnostic limits in `f037-control-manifest.json`. Original
 evidence, canonical inputs, matching outputs and F021 remain preserved. A host
 sample during CI had 8.5 GiB available memory and CPU 89% idle, with no interval
 swap activity. Builds and validation remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F038 checkpoint before F039 acceptance (2026-10-23)
+
+## Latest accepted cohort: F038
+
+Two independently reviewed R047 AI methods cold-replay exact from one natural
+template body in `src/CharacterAICardPolicy.cpp` / `.hpp`:
+
+| Receiver alias | Complete target extent | Writable counter |
+| --- | --- | --- |
+| `CharacterAI474B40` | `0x00474B40..0x004769A3` | `0x0068D620` |
+| `CharacterAI5E9620` | `0x005E9620..0x005EB483` | `0x0068D670` |
+
+Each full body has **7,780 code bytes**, 1,985 instructions, 391 internal
+branches, one return and twelve following alignment INT3 bytes. Neither has
+switches or external branch exits. Original R047 hashes and ownership remain
+unchanged. Full native comparison differs only in seven counter-reference
+instructions; the source-defined profiles bind those counters independently.
+This reuse does not establish original templates, class identities or layouts.
+Only methods are emitted; never construct or embed an incomplete receiver.
+
+Signed-byte indexed type policies retain short-timer decrements, directional
+choices and command overwrites. Type-3/1/0 writes can continue into ordinary AI;
+type-4/2 stock-qualified paths bypass it. Own-x overrides use thresholds 320/960
+and the signed facing byte. Three observed command assignment chains and the
+fully used source-defined two-float separation record remain explicit. There is
+no assembly, target byte array, padding, inert local or alternate body.
+
+Each unit binds all 204 relocations: 102 calls, 95 readonly references to 23
+actual float payloads, and seven signed-dword counter accesses (four reads,
+three writes). Fresh COFF payloads, zero addends, access widths and target section
+permissions were checked. Writable storage is bound by address, not contents.
+Each has two float-wrapper calls, 83 CRT rand calls, sixteen range helpers on
+the current receiver and one predicate on the opponent. Declaration-only
+callees earn no new origin or exact credit; wrapper ownership remains unknown.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-00474b40 --unit character-ai-005e9620
+```
+
+Canonical replay cold-builds **one object**, then compares both complete units:
+15,560 bytes /408 relocations. Profile: pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 130 prior units and inputs remain
+unchanged and were not rebuilt. The new source reuses our independently authored
+F035 ordinary-policy statements, with full byte verification against both targets.
+Changing the shared card source/header affects both F038 units. The included
+`CharacterAIPolicy.hpp` affects the six F033 units, F034..F037 and both F038 units;
+its source affects its six F033 units. Replay affected units only.
+
+Private receipts below `.analysis/`: `f038-native-audit.py` / `.json`,
+`f038b-native-audit.py` / `.json`, `f038-474b40.asm`, `f038b-5e9620.asm`,
+combined `f038-ai.c`, `f038-decompile.log`, `f038-ai-family-audit.py`,
+`f038-ai-family-differences.json`, `f038-behavior-review.json`,
+`f038-compose.py`, `f038-ai-diagnostic.py`, `f038-dispatch-audit.json`,
+`f038-bind-family.py`, `f038-family-bindings-preview.json`,
+`f038-family-bindings.json`, `f038-accepted-replay.json`,
+`f038-cold-replay.log` and `f038-progress.json`. The initial six-byte-longer
+draft was rejected; the three left directional expressions were reconciled
+with native SUB/NEG/SBB emission. Diagnostics alone earn no exact credit.
+
+The next bounded R047 AI candidate is F039 at `0x005086E0..0x0050A4DB`
+/7,676 bytes. Its full audit checks 1,957 instructions, 405 internal branches,
+one return and 102 calls: two float wrappers, 83 CRT rand, sixteen range helpers
+and one predicate. There are no switches or external exits; four following INT3
+bytes are alignment. Retain `f039-*` native evidence and the attested read-only
+decompile. Full behavior reading, native receiver checks and a complete private
+draft are recorded in `f039-behavior-review.json`, `f039-progress.json` and
+`f039-compose.py`. All sixteen range calls use the current receiver and the
+predicate uses the opponent. Compile and diagnose the full source before
+canonical cold acceptance; no F039 credit is registered. The 95% goal remains active and incomplete; cleanup and
+handoff do not pause it. All 97 unknown origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F038 final validation: all 3,603 CI tests passed in 84.006 seconds, including
+complete adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Both canonical cold reports and source/object/header pins
+remain intact. Four superseded previews were removed after equality and hash
+checks (112,727 file bytes); `f038-cleanup.json` records paths, sizes and hashes.
+Both investigative sources and first-profile diagnostics remain in
+`f038-probe-00.*` / `f038-probe-01.*`, with profiles and diagnostic limits in
+`f038-control-manifest.json`. All original evidence, canonical inputs, matching
+outputs and F021 remain preserved. A host sample during CI had 8.7 GiB available
+memory and CPU 89% idle, without interval swap activity. Builds and validation
+remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,
