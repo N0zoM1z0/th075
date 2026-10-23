@@ -6743,3 +6743,73 @@ all fourteen `f050-callee-*.asm`, `f050-receiver-review.json`,
 `f050-cold-replay.log` and `f050-progress.json`. The exact private preview and
 its source/header/object receipt survive in `f050-probe-00/`. Declaration-only
 callees earn no additional source or exact credit.
+
+
+## F051 sequence checkpoint (2026-10-23)
+
+`CharacterSequence4D4EA0::AdvanceSequence` at `0x004D4EA0` cold-replays exact
+from `src/CharacterSequence4D4EA0.cpp` / `.hpp`: **11,859 code bytes**, 2,756
+instructions, 330 branches and one return. Its 272-byte guarded table and 98-byte
+remap follow contiguously through `0x004D7E64`. The canonical descriptor uses
+`size = 11859` and `compare_size = 12229`: all **12,229 bytes** compare, while
+only code earns coverage. Eleven following INT3 bytes are alignment. R048
+origin evidence, complete code hash and switch hashes remain unchanged.
+
+The natural body preserves all 67 signed-byte sequence states and the common
+music/countdown/current+opponent level tail. Twelve specifically observed
+coordinate/alpha fields are 28 bytes below F049, without inferring a complete
+owner layout or identity. Full native case comparison supports 52 paths after
+that explicit shift, GPR classes and readonly payload resolution; all 15 changed
+paths were reviewed separately. This diagnostic is not source compiler proof.
+Full physical equality and independent canonical cold replay establish acceptance.
+
+States 3/13/23/33 use opponent speed 7.8f; transition arguments differ in
+6/16/26/36/46/56. State 27 stores selection 4 before the shared byte increment,
+omitting the F049 sound call. State 40 omits the entire phase 230 launch block.
+State 52 clears current then opponent before zeroing the counter. State 53 writes
+stage 8, resets opponent to 0, then loads the stage and restores positions.
+State 60 writes eight own positions and adds 60 to the counter before current
+initialization and two current processing calls. Keep state 61's observed
+promoted increment before narrowing, native threshold forms and genuine exits.
+
+All 398 relocations are physically compared: 227 calls, 26 readonly float
+references, 73 writable global accesses, two readonly empty strings, two table/
+remap addresses and 68 table destinations. Actual COFF payloads, widths,
+permissions, addends and local offsets are checked. The adjacent single NUL
+strings at `0x006595F0/0x006595F1` retain distinct bindings. Writable globals
+are bound by address. Existing narrow declarations are repeated without
+widening; no shared header or wider data-ownership claim changes.
+
+All 227 calls and every stack join are audited against fourteen complete
+callee bodies, with a rejected cleanup control. All 44 processing calls use
+current; primary resets split 5/6 and transition clears 8/8 current/opponent.
+The extra clear in 52 and reset 0 in 53 use opponent despite implicit decompile
+calls. Original names, declarations, complete layouts and identities remain
+unknown. Never construct or embed the partial receiver view. Declaration-only
+callees earn no additional source, origin or exact credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-004d4ea0
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares all code/table bytes and
+relocations. All 143 earlier units and canonical inputs remain unchanged and
+were not rebuilt. The manifest preserves 84 literal additions /383,215 code
+bytes and 84 new source/header inputs above F009, explicitly excluding F021/F048.
+F050 is preserved in [the previous checkpoint](RE_HANDOFF_HISTORY.md#f050-sequence-checkpoint-2026-10-23).
+
+Retain `f051-native-audit.py` / `.json`, `f051-4d4ea0.asm`, `f051-sequence.c`,
+`f051-decompile.log`, `f051-case-index.json`, `f051-decompile-review.py` / `.json`,
+`f051-native-correspondence.py` / `.json`, `f051-abi-review.py` / `.json`, all
+fourteen `f051-callee-*.asm`, `f051-behavior-review.json`, `f051-compose.py`,
+`f051-sequence-diagnostic.py`, `f051-bind-draft.py`, `f051-family-bindings.json`,
+`f051-accepted-replay.json`, `f051-cold-replay.log` and `f051-progress.json`.
+The exact private preview source/header/object receipt survives in
+`f051-probe-00/`. Only its byte-identical obsolete duplicate
+`build/probes/F051Preview.obj` was removed, reclaiming 35,546 bytes with a
+hash-pinned cleanup receipt. Canonical objects and all inputs/evidence remain.
+The final CI passed all 3,603 tests in 100.150 seconds; target, tracking,
+progress-card and whitespace checks pass. The evidence check confirms all 143
+prior unit descriptors and inputs, historical ledger prefixes and function
+rows, R268 and all 97 unknown origins remain unchanged.
