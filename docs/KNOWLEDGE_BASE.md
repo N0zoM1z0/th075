@@ -18357,3 +18357,133 @@ hashes and receipts remain, as does the active 03 object. See
 `f048-obsolete-output-cleanup.json`. Available memory remained about 9 GiB;
 interval CPU was 92% idle and there was no interval swap activity. The goal
 remains active and incomplete.
+
+
+## F048 register evidence and F049 exact sequence (2026-10-23)
+
+The F048 source/object remains unchanged and unaccepted. A full residual
+profile finds zero EBP-displacement differences and 6,958 instructions using
+different explicit GPR names. Cases 95/96/97 and many later cases resynchronize;
+the first state 89 discrepancy is not a permanent one-register shift. The
+paired byte-lane diagnostic propagates argument push origins through nested
+calls and every CFG join, checks all 88,970 reads across 22,721 reachable
+instructions, and finds no unproven read under its explicit caller ABI views.
+A changed receiver in a decoder-only copy is rejected for four register bytes;
+a read of the undefined high byte of an AL return is also rejected. Target
+and object bytes are never mutated. Memory values, x87 and flags are not
+separately symbolically executed. This strengthens diagnostic correspondence,
+not exact bytes, unrestricted equivalence or original-declaration evidence.
+Keep `f048-register-profile.py` / `.json` and `f048-register-dataflow.py` / `.json`.
+
+The new bounded `/Op` profile control emits 87,934 bytes /23,366 instructions,
+compared with 83,922 /22,721. Its first normalized shape change is 004AE014,
+after the first GPR mismatch 004ADEFA. It is rejected without changing the
+active 03 source/profile/object. Keep `f048-consistency-control.json` and the
+compiler log; do not repeat it without new evidence. The earlier prefix/postfix,
+F021 case-scope, counter, cast, floating-negation and macro controls remain
+rejected. Reconstruction continues with independently reviewed authored bodies.
+
+F049 reconstructs R048 `CharacterSequence::AdvanceAt004A9050`, now mapped as
+`CharacterSequence4A9050::AdvanceSequence`. The frozen code extent is
+004A9050..004ABEC5 /11,894 bytes, hash
+`4984dee8e0b34c89a59bb5603da24a182efd58fdcd5802a025d88550beffeff4`.
+The guarded 272-byte jump table and 98-byte remap follow contiguously through
+004AC037. All 12,264 bytes are compared, hash
+`5eac4e1ed67bc86432ee8ca59e6448cbd2b43c8ebd84e16293ad5199fcd88bf5`;
+eight following INT3 bytes are alignment. The unit explicitly distinguishes
+11894 coverage bytes from 12264 compared bytes. Table bytes earn no code credit.
+The native audit verifies 2,765 instructions, 331 branches, one return and no
+external branch exits. Preserve the unchanged R048 origin record and switch
+hashes; imported Ghidra labels establish no owner or declarations.
+
+The natural single-body source retains all 67 signed-byte sequence states.
+Opening paths preserve separately initialized positions, a bool-masked float
+camera expression, independent fade/phase checks, duplicate notice-processing
+calls and each field re-read. All 44 ProcessNotice calls use current, including
+duplicates. The first draft incorrectly used opponent for ten second calls;
+receiver inventory rejected that control before acceptance. Five primary
+resets, six transition starts, seven clears and the final level advancement
+use opponent; other notices use current. All fifteen callee extents, all 227 calls
+and every stack join are audited. An incorrect notice-text cleanup is rejected.
+Cdecl camera/audio/stage calls, the low-byte processing result and existing
+text-surface signature retain their observed ABI widths; ignored results do
+not identify original void returns or grant callee source/exact credit.
+
+States 46/56 retain continue<3 fallback blocks before ordinary transitions.
+Threshold forms match native signed promotion. State 61 alone performs a
+promoted dword increment before narrowing to short, while other counters keep
+their observed short increments. Twenty-nine native paths leave their case
+immediately for common music/countdown/level work. Source expresses these as
+genuine `break` exits. Earlier if/else-local joins emitted the same instruction
+count but a shorter, wrong physical branch destination. No target arrays,
+assembly, padding, inert locals, fake returns, misleading ABI declarations or
+conditional alternative bodies are introduced. Partial receivers are never
+constructed or embedded; original names and complete layouts remain unknown.
+
+All 398 relocations are independently bound: 227 calls, 26 readonly float
+references, 73 writable global accesses, two readonly empty strings, two switch
+addresses and 68 table destinations. Actual COFF payloads, operand widths,
+section permissions, external zero addends and local symbol offsets are checked.
+The two target text pointers refer to adjacent single NUL bytes and retain
+distinct bindings. Writable storage is bound by address, not mutable contents.
+The two new globals at 00671622 and 0067161D are narrow one-byte views, without
+original signedness, owner or full data-layout claims. Existing shared headers
+and all earlier accepted units remain unchanged.
+
+The canonical source is `src/CharacterSequence4A9050.cpp` / `.hpp` and the unit
+is `character-sequence-004a9050`, with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. After preview physical equality, the
+canonical path is rebuilt and all 12,264 bytes /398 relocations compare with
+zero differences. Acceptance requires and passes a separate cold replay:
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-004a9050
+```
+
+Retain `f049-native-audit.py` / `.json`, `f049-4a9050.asm`, `f049-sequence.c`,
+`f049-decompile.log`, `f049-compose.py`, `f049-case-index.json`,
+`f049-sequence-diagnostic.py`, `f049-abi-review.py` / `.json`, all
+`f049-callee-*.asm`, `f049-bind-draft.py`, `f049-family-bindings.json`,
+`f049-accepted-replay.json`, `f049-cold-replay.log`, `f049-adopt.py` and
+`f049-progress.json`. Rejected whole controls 00..03 and exact preview 04 remain
+available for reproduction. Only the new canonical object was cold-rebuilt.
+
+The accepted total becomes 142 functions /368,839 code bytes: 18.69% of reviewed
+authored bytes and 18.66% conservatively. The cumulative adoption manifest now
+freezes 82 literal additions /358,956 code bytes and 80 new source/header inputs
+above F009. Its batch explicitly excludes unaccepted F021 and F048. Every
+historical source, descriptor, function transition and ledger prefix retains
+its guard. R268 evidence and all 97 unknown origins remain unchanged.
+
+Continue with F050, independently reviewed R048 sequence 00483350 /12,400 code
+bytes plus its 392-byte direct table, comparing all 12,792 bytes. A new native
+audit verifies 2,882 instructions, 350 branches, one return, fourteen distinct
+callees and no external branch exits or indirect calls. Fresh attested Ghidra
+decompilation exposes 71 states pending native argument/receiver/behavior review.
+It does not authorize inheriting F049 state sets, table representation, owner
+identity or layouts. Retain `f050-native-audit.py` / `.json`, `f050-483350.asm`,
+`f050-sequence.c`, `f050-decompile.log` and `f050-progress.json`. The 95% goal
+remains active; preserve F048/F021 and all 142 accepted units, keep builds serial
+and low priority, monitor CPU/memory, and use local Ghidra without REA or pause.
+
+
+Final validation passes all 3,603 CI tests in 97.164 seconds (`f049-ci.log`).
+The initial run detected a stale public progress card after acceptance; the
+card was regenerated from the ledgers and the complete suite rerun. Keep the
+initial failure receipt in `f049-ci-progress-badge-failure.log`. Full target
+identity, tracking and diff checks pass. `f049-evidence-check.json` verifies
+all 141 prior units/inputs, all origin evidence and unrelated function rows,
+every historical ledger prefix, and the unchanged F048 source/object. The
+knowledge-base and handoff-history prefixes remain intact.
+
+`f049-obsolete-output-cleanup.json` records 190,345 reclaimed bytes from the
+rejected `/Op` object and a duplicate F049 probe object. All inputs, logs,
+profiles and receipts remain; the exact preview object survives in
+`f049-probe-04/` and the canonical cold object remains active. During validation
+available memory was about 9 GiB, interval CPU 83% idle, and no interval swap
+activity was observed. No unchanged accepted unit was rebuilt.
+
+`f050-case-index.json` pins all 71 distinct native entries. States 38,39,41,42
+are additional to F049; the other 67 states still require independent review.
+No F050 source, mapping or exact credit is accepted yet. Continue the active
+95% goal from this reviewed boundary evidence, without REA or pause.

@@ -6563,3 +6563,64 @@ and validation remained serial and low priority.
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,
 profile or relocation changes. The active 95% goal remains incomplete.
+
+
+## F047 AI cohort checkpoint (2026-10-23)
+
+`CharacterAI49B070::ChooseAction` at `0x0049B070..0x0049C840` cold-replays
+exact from `src/CharacterAI49B070.cpp` / `.hpp`: **6,097 code bytes**, 1,554
+instructions, 316 internal branches and one return. There are no switches or
+external exits; fifteen following INT3 bytes are alignment. R047 origin evidence
+and the complete original body hash remain unchanged.
+
+Both short timers decrement before own-state checks. Own states 50..149 take
+the refresh/reset/independent-input path and return. Types 3/2/1 test a strictly
+negative timer before type and stock; their successful paths bypass ordinary
+AI. Type 2 can overwrite command 220 with 221 using the existing signed byte at
+0x006714D0. Type 0 with stock writes 200 and bypasses without a timer test.
+Preserve queued modes 1..5 and every distinct attack/state/weighted/movement/
+ground/air/late decision, separate random call and genuine exit. Three command
+assignment chains retain native write/read/store repetitions.
+
+The first whole draft differs in four float-comparison bytes despite matching
+length, instruction count, branch destinations and calls. Native 0x0049C56B
+loads own height then compares opponent height. Expressing the meaningful
+ordered relation as own > opponent reproduces that physical order, with the
+same false result for unordered values. Retain the rejected and corrected
+sources and `f047-height-comparison-review.json`; no diagnostic alone earns credit.
+
+All 165 relocations are bound: 80 calls, 77 readonly references to 24 actual
+float payloads, seven dword counter accesses at `0x0068D628` (four reads, three
+writes) and one existing MOVSX byte read at `0x006714D0`. Actual COFF payloads,
+zero addends, offsets, widths and section permissions are checked. Writable
+storage is bound by address, not contents. Nine range calls use the current
+receiver; one predicate uses the opponent. The byte declaration stays signed
+and narrow. Declaration-only callees earn no source or exact credit; wrapper
+ownership and original declarations remain unresolved.
+
+The natural body uses a fully used local two-float record and a pointer-only
+receiver view, never constructed or embedded. No assembly, target arrays,
+padding, inert locals, fake returns, ABI misdeclarations or alternate bodies
+are used. Original identity and complete layout remain unknown.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-0049b070
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and all
+relocations. All 140 earlier units and inputs remain unchanged and were not
+rebuilt. Shared AI declarations remain unchanged; replay only affected units.
+The new header repeats the existing signed-byte declaration without widening it.
+
+Private receipts below `.analysis/`: `f047-native-audit.py` / `.json`,
+`f047-49b070.asm`, `f047-ai.c`, `f047-decompile.log`, `f047-review.py`,
+`f047-behavior-review.json`, `f047-compose.py`, `f047-ai-diagnostic.py`,
+`f047-dispatch-audit.json`, `f047-height-comparison-review.json`, `f047-bind.py`,
+`f047-family-bindings-preview.json`, `f047-family-bindings.json`,
+`f047-accepted-replay.json`, `f047-cold-replay.log` and `f047-progress.json`.
+
+All **31 R047 authored AI functions /304,135 code bytes** now have complete
+exact unit descriptors and matching ledgers. `f047-cohort-completion.json`
+checks the whole cohort; only F047 was rebuilt now. This milestone does not
+complete or pause the broader 95% goal. All 97 pending origins remain unknown.

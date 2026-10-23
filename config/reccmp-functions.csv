@@ -140,3 +140,4 @@ CharacterAI557380::ChooseAction,0x00557380,function
 CharacterAI5349B0::ChooseAction,0x005349B0,function
 CharacterAI4C8CD0::ChooseAction,0x004C8CD0,function
 CharacterAI49B070::ChooseAction,0x0049B070,function
+CharacterSequence4A9050::AdvanceSequence,0x004A9050,function

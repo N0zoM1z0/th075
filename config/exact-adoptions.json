@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047",
+  "batch": "F010-F020; F022-F047; F049",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "943d98fefa8e1c848423830f49992e64a4fcad66220918006fd7f151b2d286e5"
+      "current_sha256": "a47ab12768179373fd47a5852874b9f4be596bdd55df649477d03378aa6cbff5"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "0a5bd54023a7352d92ca4c49f7045e9cc4ce72634855bd4c6d5a78bf7a37401d"
+      "current_sha256": "c891408d2a59304f773698156ccc68f9ef22f7ad4eeef6bbbb2155ec11df785b"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "cb1aebc0a0a7b7a6d2b9b3a8695ef49c806d46dcafa1976d55bd34362801e3fa"
+      "current_sha256": "8e8040595e4b1751c9f37cbb9838e8e0d14628f02446b980a275d805056b0f7e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "191f9da5707e86e5db6dd138cd340fed154d1c89dfe36d88660df8ee43415f6f"
+      "current_sha256": "d776271bb7cc6c19247767ddda480a3f633d53a2525f945b63f3489a667647b6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f455c74c47a959b697d99ce4f464d7016a3b57d550592f338ed404f0331ee2bf"
+      "current_sha256": "e18dfc786f2cb702b6a613cb6ba19d2de45aea031a5310fed473214f1a5412a5"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c96a71cbbd794df55cf18fb74b6435d4a7c2c2fb676377f51f4e96ad99c9997c"
+      "current_sha256": "77cd062902156a6fe81c5bda07aa4f368e03804ea95a25742b830d5283133aaa"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "a0c08a3cf3698c843513d4347f04726aae084dc8723a61fd9265ddd0543223ca"
+      "current_sha256": "fcf84f84dd01989f98a1fc84a2fc5cba50cf350b2d7b25a8c646b74cd2941ab0"
     }
   },
   "functions": [
@@ -3604,6 +3604,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R047"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004A9050",
+        "size": "11894",
+        "span_end": "0x004ABEC5",
+        "current_name": "FUN_004a9050",
+        "proposed_name": "CharacterSequence::AdvanceAt004A9050",
+        "module": "CharacterSequence",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004A9050",
+        "size": "11894",
+        "span_end": "0x004ABEC5",
+        "current_name": "FUN_004a9050",
+        "proposed_name": "CharacterSequence4A9050::AdvanceSequence",
+        "module": "CharacterSequence",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSequence4A9050::AdvanceSequence()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSequence4A9050.cpp",
+        "evidence": "R048; whole body hash, all guarded switch tables and complete decoded CFG reviewed; F049; scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-004a9050",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F049: complete cold exact replay of 11894 code bytes and all 370 guarded table/remap bytes, 12264 compared bytes and 398 relocations; one natural body with 67 sequence cases and actual current/opponent receivers; complete identity, declarations and owner layout remain unknown; no construction or embedding of the partial receiver view"
+      },
+      "origin": {
+        "address": "0x004A9050",
+        "origin": "authored",
+        "subsystem": "CharacterSequence",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R048"
       }
     }
   ],
@@ -54552,6 +54596,2417 @@
           "target": 6870568
         }
       ]
+    },
+    "character-sequence-004a9050": {
+      "source": "src/CharacterSequence4A9050.cpp",
+      "object": "build/matching/CharacterSequence4A9050.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSequence4A9050::AdvanceSequence"
+      ],
+      "symbol": "?AdvanceSequence@CharacterSequence4A9050@@QAEXXZ",
+      "target_address": 4886608,
+      "size": 11894,
+      "compare_size": 12264,
+      "relocations": [
+        {
+          "offset": 38,
+          "type": "DIR32",
+          "symbol": "$L57247",
+          "target": 4898774
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "$L57254",
+          "target": 4898502
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 256,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 266,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 274,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 312,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 336,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 352,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 364,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 381,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 596,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 825,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 881,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 891,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 904,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 921,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 956,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1048,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 1104,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 1114,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 1127,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 1160,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 1174,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 1219,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 1242,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1255,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 1327,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 1345,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 1370,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 1380,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 1434,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 1461,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 1506,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 1512,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 1552,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1687,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 1697,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 1705,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 1713,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 1743,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 1767,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 1783,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1795,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1803,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1811,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 2025,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2254,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2310,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 2320,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2333,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 2350,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2385,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2477,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2533,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 2543,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2556,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 2589,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 2603,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 2648,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 2671,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 2684,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2756,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 2774,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 2799,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 2809,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2863,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 2890,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 2935,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 2941,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 2980,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 3115,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 3125,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 3133,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 3141,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 3171,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 3195,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 3211,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 3223,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 3232,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 3240,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 3454,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3680,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 3736,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 3746,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 3759,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 3776,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 3811,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3903,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 3959,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 3969,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 3982,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 4015,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 4029,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 4074,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 4097,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 4110,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 4182,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 4200,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 4225,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 4235,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 4289,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 4316,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 4321,
+          "type": "DIR32",
+          "symbol": "?g_SequenceCounterAt00671622@@3EA",
+          "target": 6755874
+        },
+        {
+          "offset": 4328,
+          "type": "DIR32",
+          "symbol": "?g_SequenceCounterAt00671622@@3EA",
+          "target": 6755874
+        },
+        {
+          "offset": 4338,
+          "type": "REL32",
+          "symbol": "?PlaySharedSound@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4537696
+        },
+        {
+          "offset": 4383,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 4389,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 4429,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 4564,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 4574,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 4582,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 4590,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 4620,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 4644,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 4660,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 4672,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 4680,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 4688,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 4902,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5131,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5187,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 5197,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5210,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 5227,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5262,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5354,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5410,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 5420,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5433,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 5466,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 5480,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 5525,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 5548,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 5561,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5633,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 5651,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 5676,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 5686,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5740,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 5767,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 5812,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 5818,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 5857,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 5992,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 6002,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 6010,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 6018,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 6048,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 6072,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 6088,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 6100,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 6109,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 6117,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 6331,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 6557,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 6633,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 6725,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 6781,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 6791,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 6804,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 6837,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 6851,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 6896,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 6919,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 6932,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 6985,
+          "type": "DIR32",
+          "symbol": "?g_StateContinueCount@@3CA",
+          "target": 6755875
+        },
+        {
+          "offset": 7044,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 7095,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 7113,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 7138,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 7148,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 7202,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 7229,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 7274,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 7280,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 7320,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 7455,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 7465,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 7473,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 7481,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 7511,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 7535,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 7551,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 7563,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 7571,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 7579,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 7793,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8022,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8078,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 8088,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8101,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 8118,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8126,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 8149,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 8214,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8229,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8238,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8246,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8254,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8328,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 8334,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 8340,
+          "type": "REL32",
+          "symbol": "?Load@SequenceStage@@YAXXZ",
+          "target": 4293584
+        },
+        {
+          "offset": 8412,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8424,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8433,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8441,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8449,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 8475,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8490,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 8500,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8513,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 8546,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 8560,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 8605,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 8628,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 8641,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8694,
+          "type": "DIR32",
+          "symbol": "?g_StateContinueCount@@3CA",
+          "target": 6755875
+        },
+        {
+          "offset": 8753,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8804,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 8822,
+          "type": "REL32",
+          "symbol": "?BeginNoticeTransition@CharacterSequence4A9050@@QAEXEE@Z",
+          "target": 4576928
+        },
+        {
+          "offset": 8847,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 8857,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8911,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 8938,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 8981,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 8991,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 8999,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 9007,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 9167,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 9191,
+          "type": "DIR32",
+          "symbol": "__real@3e800000",
+          "target": 6651764
+        },
+        {
+          "offset": 9562,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 9649,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 9703,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 9736,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 9749,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 9759,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 9772,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 9805,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 9819,
+          "type": "REL32",
+          "symbol": "?ClearNoticeTransition@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577008
+        },
+        {
+          "offset": 9864,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 9887,
+          "type": "REL32",
+          "symbol": "?SetOverride@SequenceCamera@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 9900,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 9918,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 9959,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 9970,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 9983,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 9990,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 10127,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 10138,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10148,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 10156,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10164,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10174,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10257,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10284,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10294,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10307,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10387,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 10512,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 10523,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10533,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 10541,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10549,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10559,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10642,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10669,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10679,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10692,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10772,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 10897,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 10908,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10918,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 10926,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10934,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 10944,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10959,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 10986,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 10996,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 11019,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 11031,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 11063,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11078,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11087,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11095,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11133,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 11153,
+          "type": "DIR32",
+          "symbol": "$SG57158",
+          "target": 6657112
+        },
+        {
+          "offset": 11159,
+          "type": "DIR32",
+          "symbol": "?g_TextRenderer@@3PAVTextRenderer@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 11164,
+          "type": "REL32",
+          "symbol": "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z",
+          "target": 4273248
+        },
+        {
+          "offset": 11218,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11230,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11238,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11246,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11269,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 11284,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 11294,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 11317,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 11329,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 11361,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11375,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11384,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11392,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11430,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 11450,
+          "type": "DIR32",
+          "symbol": "$SG57188",
+          "target": 6657113
+        },
+        {
+          "offset": 11456,
+          "type": "DIR32",
+          "symbol": "?g_TextRenderer@@3PAVTextRenderer@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 11461,
+          "type": "REL32",
+          "symbol": "?Render@StateTextSurface@@QAEXPBDEEEEC_N@Z",
+          "target": 4273248
+        },
+        {
+          "offset": 11515,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11527,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11536,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11544,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11567,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 11582,
+          "type": "REL32",
+          "symbol": "?InitializeNotice@CharacterSequence4A9050@@QAEXF@Z",
+          "target": 4574656
+        },
+        {
+          "offset": 11592,
+          "type": "REL32",
+          "symbol": "?SetNoticeMode@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4574544
+        },
+        {
+          "offset": 11605,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 11622,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 11634,
+          "type": "REL32",
+          "symbol": "?ProcessNotice@CharacterSequence4A9050@@QAEEXZ",
+          "target": 4574736
+        },
+        {
+          "offset": 11664,
+          "type": "REL32",
+          "symbol": "?Stop@SequenceAudio@@YAXXZ",
+          "target": 4226416
+        },
+        {
+          "offset": 11671,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11686,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11694,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11702,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 11778,
+          "type": "REL32",
+          "symbol": "?ConfigureNoticeText@CharacterSequence4A9050@@QAEXE@Z",
+          "target": 4576848
+        },
+        {
+          "offset": 11818,
+          "type": "REL32",
+          "symbol": "?PlayTrack@StateAudio@@YAXH@Z",
+          "target": 4299952
+        },
+        {
+          "offset": 11826,
+          "type": "REL32",
+          "symbol": "?TransitionFade@StateAudio@@YAXXZ",
+          "target": 4300272
+        },
+        {
+          "offset": 11872,
+          "type": "REL32",
+          "symbol": "?AdvanceNoticeLevels@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577040
+        },
+        {
+          "offset": 11886,
+          "type": "REL32",
+          "symbol": "?AdvanceNoticeLevels@CharacterSequence4A9050@@QAEXXZ",
+          "target": 4577040
+        },
+        {
+          "offset": 11894,
+          "type": "DIR32",
+          "symbol": "$L55797",
+          "target": 4886657
+        },
+        {
+          "offset": 11898,
+          "type": "DIR32",
+          "symbol": "$L55900",
+          "target": 4887483
+        },
+        {
+          "offset": 11902,
+          "type": "DIR32",
+          "symbol": "$L55901",
+          "target": 4887508
+        },
+        {
+          "offset": 11906,
+          "type": "DIR32",
+          "symbol": "$L55903",
+          "target": 4887538
+        },
+        {
+          "offset": 11910,
+          "type": "DIR32",
+          "symbol": "$L55935",
+          "target": 4887706
+        },
+        {
+          "offset": 11914,
+          "type": "DIR32",
+          "symbol": "$L55936",
+          "target": 4887731
+        },
+        {
+          "offset": 11918,
+          "type": "DIR32",
+          "symbol": "$L55957",
+          "target": 4887913
+        },
+        {
+          "offset": 11922,
+          "type": "DIR32",
+          "symbol": "$L55971",
+          "target": 4888038
+        },
+        {
+          "offset": 11926,
+          "type": "DIR32",
+          "symbol": "$L55977",
+          "target": 4888088
+        },
+        {
+          "offset": 11930,
+          "type": "DIR32",
+          "symbol": "$L56080",
+          "target": 4888912
+        },
+        {
+          "offset": 11934,
+          "type": "DIR32",
+          "symbol": "$L56081",
+          "target": 4888937
+        },
+        {
+          "offset": 11938,
+          "type": "DIR32",
+          "symbol": "$L56083",
+          "target": 4888967
+        },
+        {
+          "offset": 11942,
+          "type": "DIR32",
+          "symbol": "$L56115",
+          "target": 4889135
+        },
+        {
+          "offset": 11946,
+          "type": "DIR32",
+          "symbol": "$L56116",
+          "target": 4889160
+        },
+        {
+          "offset": 11950,
+          "type": "DIR32",
+          "symbol": "$L56137",
+          "target": 4889342
+        },
+        {
+          "offset": 11954,
+          "type": "DIR32",
+          "symbol": "$L56151",
+          "target": 4889467
+        },
+        {
+          "offset": 11958,
+          "type": "DIR32",
+          "symbol": "$L56157",
+          "target": 4889517
+        },
+        {
+          "offset": 11962,
+          "type": "DIR32",
+          "symbol": "$L56260",
+          "target": 4890338
+        },
+        {
+          "offset": 11966,
+          "type": "DIR32",
+          "symbol": "$L56261",
+          "target": 4890363
+        },
+        {
+          "offset": 11970,
+          "type": "DIR32",
+          "symbol": "$L56263",
+          "target": 4890393
+        },
+        {
+          "offset": 11974,
+          "type": "DIR32",
+          "symbol": "$L56295",
+          "target": 4890561
+        },
+        {
+          "offset": 11978,
+          "type": "DIR32",
+          "symbol": "$L56296",
+          "target": 4890586
+        },
+        {
+          "offset": 11982,
+          "type": "DIR32",
+          "symbol": "$L56317",
+          "target": 4890768
+        },
+        {
+          "offset": 11986,
+          "type": "DIR32",
+          "symbol": "$L56331",
+          "target": 4890893
+        },
+        {
+          "offset": 11990,
+          "type": "DIR32",
+          "symbol": "$L56337",
+          "target": 4890965
+        },
+        {
+          "offset": 11994,
+          "type": "DIR32",
+          "symbol": "$L56440",
+          "target": 4891789
+        },
+        {
+          "offset": 11998,
+          "type": "DIR32",
+          "symbol": "$L56441",
+          "target": 4891814
+        },
+        {
+          "offset": 12002,
+          "type": "DIR32",
+          "symbol": "$L56443",
+          "target": 4891844
+        },
+        {
+          "offset": 12006,
+          "type": "DIR32",
+          "symbol": "$L56475",
+          "target": 4892012
+        },
+        {
+          "offset": 12010,
+          "type": "DIR32",
+          "symbol": "$L56476",
+          "target": 4892037
+        },
+        {
+          "offset": 12014,
+          "type": "DIR32",
+          "symbol": "$L56497",
+          "target": 4892219
+        },
+        {
+          "offset": 12018,
+          "type": "DIR32",
+          "symbol": "$L56511",
+          "target": 4892344
+        },
+        {
+          "offset": 12022,
+          "type": "DIR32",
+          "symbol": "$L56517",
+          "target": 4892394
+        },
+        {
+          "offset": 12026,
+          "type": "DIR32",
+          "symbol": "$L56620",
+          "target": 4893215
+        },
+        {
+          "offset": 12030,
+          "type": "DIR32",
+          "symbol": "$L56652",
+          "target": 4893383
+        },
+        {
+          "offset": 12034,
+          "type": "DIR32",
+          "symbol": "$L56653",
+          "target": 4893408
+        },
+        {
+          "offset": 12038,
+          "type": "DIR32",
+          "symbol": "$L56674",
+          "target": 4893590
+        },
+        {
+          "offset": 12042,
+          "type": "DIR32",
+          "symbol": "$L56698",
+          "target": 4893806
+        },
+        {
+          "offset": 12046,
+          "type": "DIR32",
+          "symbol": "$L56704",
+          "target": 4893856
+        },
+        {
+          "offset": 12050,
+          "type": "DIR32",
+          "symbol": "$L56807",
+          "target": 4894680
+        },
+        {
+          "offset": 12054,
+          "type": "DIR32",
+          "symbol": "$L56808",
+          "target": 4894705
+        },
+        {
+          "offset": 12058,
+          "type": "DIR32",
+          "symbol": "$L56812",
+          "target": 4894755
+        },
+        {
+          "offset": 12062,
+          "type": "DIR32",
+          "symbol": "$L56850",
+          "target": 4895092
+        },
+        {
+          "offset": 12066,
+          "type": "DIR32",
+          "symbol": "$L56851",
+          "target": 4895117
+        },
+        {
+          "offset": 12070,
+          "type": "DIR32",
+          "symbol": "$L56872",
+          "target": 4895299
+        },
+        {
+          "offset": 12074,
+          "type": "DIR32",
+          "symbol": "$L56896",
+          "target": 4895515
+        },
+        {
+          "offset": 12078,
+          "type": "DIR32",
+          "symbol": "$L56902",
+          "target": 4895565
+        },
+        {
+          "offset": 12082,
+          "type": "DIR32",
+          "symbol": "$L56987",
+          "target": 4896220
+        },
+        {
+          "offset": 12086,
+          "type": "DIR32",
+          "symbol": "$L56999",
+          "target": 4896332
+        },
+        {
+          "offset": 12090,
+          "type": "DIR32",
+          "symbol": "$L57000",
+          "target": 4896376
+        },
+        {
+          "offset": 12094,
+          "type": "DIR32",
+          "symbol": "$L57021",
+          "target": 4896565
+        },
+        {
+          "offset": 12098,
+          "type": "DIR32",
+          "symbol": "$L57028",
+          "target": 4896629
+        },
+        {
+          "offset": 12102,
+          "type": "DIR32",
+          "symbol": "$L57045",
+          "target": 4896791
+        },
+        {
+          "offset": 12106,
+          "type": "DIR32",
+          "symbol": "$L57059",
+          "target": 4896886
+        },
+        {
+          "offset": 12110,
+          "type": "DIR32",
+          "symbol": "$L57060",
+          "target": 4896911
+        },
+        {
+          "offset": 12114,
+          "type": "DIR32",
+          "symbol": "$L57075",
+          "target": 4897014
+        },
+        {
+          "offset": 12118,
+          "type": "DIR32",
+          "symbol": "$L57092",
+          "target": 4897176
+        },
+        {
+          "offset": 12122,
+          "type": "DIR32",
+          "symbol": "$L57106",
+          "target": 4897271
+        },
+        {
+          "offset": 12126,
+          "type": "DIR32",
+          "symbol": "$L57107",
+          "target": 4897296
+        },
+        {
+          "offset": 12130,
+          "type": "DIR32",
+          "symbol": "$L57122",
+          "target": 4897399
+        },
+        {
+          "offset": 12134,
+          "type": "DIR32",
+          "symbol": "$L57139",
+          "target": 4897561
+        },
+        {
+          "offset": 12138,
+          "type": "DIR32",
+          "symbol": "$L57142",
+          "target": 4897588
+        },
+        {
+          "offset": 12142,
+          "type": "DIR32",
+          "symbol": "$L57145",
+          "target": 4897625
+        },
+        {
+          "offset": 12146,
+          "type": "DIR32",
+          "symbol": "$L57172",
+          "target": 4897886
+        },
+        {
+          "offset": 12150,
+          "type": "DIR32",
+          "symbol": "$L57175",
+          "target": 4897923
+        },
+        {
+          "offset": 12154,
+          "type": "DIR32",
+          "symbol": "$L57202",
+          "target": 4898184
+        },
+        {
+          "offset": 12158,
+          "type": "DIR32",
+          "symbol": "$L57203",
+          "target": 4898209
+        },
+        {
+          "offset": 12162,
+          "type": "DIR32",
+          "symbol": "$L55794",
+          "target": 4898400
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -54632,6 +57087,8 @@
     "src/CharacterAI4C8CD0.cpp": "195b63b2e367ffa0e521d90faa2f499bcd4d0e63001efdff40fd5a1db098d6ca",
     "src/CharacterAI4C8CD0.hpp": "d16747dfdefb8f4e0db3489bc210d8bbd41d488e9f58621d04219c3ce35e708e",
     "src/CharacterAI49B070.cpp": "fcbf297110b89e834c2051c463266e332ecb1c1b273472a5cc81df8bd4d307e6",
-    "src/CharacterAI49B070.hpp": "c6e52c233a69e97c4c76bd99182a867efd38e2b429b0a0090617e374eb706e7a"
+    "src/CharacterAI49B070.hpp": "c6e52c233a69e97c4c76bd99182a867efd38e2b429b0a0090617e374eb706e7a",
+    "src/CharacterSequence4A9050.cpp": "9e29acfd2457fd7ff1501367bfe58aff59055243502d7d56b7c19c08b2d56d29",
+    "src/CharacterSequence4A9050.hpp": "c74fbe196e9c77828f27e4426a7a98b969b591a7ad88b842e37fcfc1de538178"
   }
 }
