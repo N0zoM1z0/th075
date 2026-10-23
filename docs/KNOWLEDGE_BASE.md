@@ -17107,3 +17107,112 @@ credit. Continue reconstructing both complete methods with one natural body if
 supported by the source/ABI evidence, bind every relocation independently and
 cold-replay both units. Preserve all 130 accepted units, R268 evidence and F021;
 use Ghidra/local tools without REA or pausing the active 95% goal for handoff.
+
+## F038: two complete card AI policies (2026-10-23)
+
+The independently reviewed R047 extents are `0x00474B40..0x004769A3` and
+`0x005E9620..0x005EB483`, each 7,780 bytes. Their original body SHA-256 values
+remain `071b4e36ca739d0e0ee511c0cad2b207943c959675c1cd3394e44c7474216da3`
+and `7487d98885871fc8ee59c72e7f4a755c31a832f295fc2655533e727761e4975c`.
+Each complete CFG has 1,985 instructions, 391 internal branches, one return,
+no switches or external branch exits and twelve following alignment INT3 bytes.
+An attested read-only Ghidra decompile supplies hypotheses; both full native
+bodies determine the accepted source and relocation bindings.
+
+Same-offset native comparison checks every instruction size and direct callee.
+Its only seven non-call differences are counter references at 0x0068D620 versus
+0x0068D670. One natural `CharacterAICardPolicy<Policy>::ChooseAction` body emits
+both methods using source-defined counter profiles. Receiver aliases remain
+provisional; reuse does not recover original templates, identities, declarations
+or complete class layouts. Only methods are emitted and no incomplete owner is
+constructed or embedded. The local two-float separation record is source-defined
+and both components are used. Existing float-wrapper and range-helper ABIs stay
+declaration-only; the wrapper's original declaration and ownership are unknown.
+
+After both absolute separations and queued-timer decrement, states 50..149
+refresh a negative secondary short timer using range (30,90), clear queued input
+and choose lateral/attack inputs. Other states enter signed-byte indexed type
+policies at offset 0x370 with signed-byte index 0x39D. Type 4 with stock decrements
+the secondary timer, may choose directional command 205/206, then exits the
+ordinary path. Own-x comparisons against 320 and 960 override that choice using
+signed facing. Type 3 may write command 230 and continue. Type 2 with stock
+chooses expired-ground command 210 or random directional variants, then bypasses
+ordinary AI. Type 1 may write 220 and continue; type 0 may write 200 and continue,
+unless its rare directional-choice branch returns. Preserve all fallthroughs,
+short decrements, range calls and possible command overwrites.
+
+The ordinary path retains queued modes 1..6 and independently reviewed attack,
+state, resource-weighted, movement, ground/air and late-command policies. Our
+authored F035 ordinary statements are reused with the full emitted bytes checked
+against both F038 targets. Three movement command assignment chains preserve
+native write/read/store repetitions. The final counter has four dword reads and
+three writes in each body; its original declaration, owner and semantic name
+remain unknown. No data contents or complete owner layout receive credit.
+
+The first draft emits 7,786 bytes /1,988 instructions with the complete call
+sequence, but is rejected at the first directional override. Its natural
+`206 - (facing != -1)` form emits SETNE and an extra instruction at each of the
+three left-side overrides. Native SUB/NEG/SBB plus ADD 206 instead follows
+`205 + (facing == -1)`. Rewriting that meaningful arithmetic expression emits
+the complete 7,780-byte body with every physical operand and branch destination
+aligned. Retained `f038-probe-00.*` records the rejected first-profile diagnostic;
+both full bindings and canonical cold reports are required for acceptance.
+No assembly, byte arrays, padding, inert locals, fake returns, ABI deception or
+alternate conditional bodies are used. Diagnostics alone earn no exact credit.
+
+The binder independently checks every field in both COFF methods: 204
+relocations each, comprising 102 calls (two float wrappers, 83 CRT rand, sixteen
+thiscall range helpers on the current receiver and one predicate on the opponent),
+95 readonly references to 23 actual float payloads and seven counter accesses.
+Every actual payload, zero addend, offset, access width and target section
+permission is verified. Writable storage is bound by address rather than its
+contents. Each entire relocated method equals its original R047 native body.
+
+Canonical cold replay of `character-ai-00474b40` and `character-ai-005e9620`
+rebuilds one `build/matching/CharacterAICardPolicy.obj` with pinned VC7.1 build
+3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then checks both complete units:
+15,560 code bytes and 408 relocations. The retained two-report receipt pins
+source, object, target and every binding. All 130 prior units and inputs remain
+unchanged and were not rebuilt. A card source/header change requires replay of
+both F038 units; the included `CharacterAIPolicy.hpp` also affects the six F033
+units and F034..F037. Its source affects its six F033 units. Declaration-only
+callees receive no additional origin or exact credit.
+
+Coverage becomes 132 exact functions /294,017 bytes: 14.90% reviewed authored,
+or 14.87% conservatively including every pending byte. The cumulative adoption
+manifest preserves 72 literal additions /284,134 bytes above F009 and 60 new
+source/header inputs. Every historical prefix and complete accepted descriptor
+remains guarded; origin evidence through R268 and all 97 unknown origins remain
+unchanged. F021 remains unaccepted. F037 handoff/verification sections are
+archived verbatim. Continue independent reconstruction toward the active 95%
+objective with Ghidra/local tools, without REA or pausing for cleanup/handoff.
+
+Final F038 validation passes all 3,603 CI tests in 84.006 seconds. Both canonical
+cold reports and source/object/header pins remain intact. Four superseded
+previews were removed after equality and hash checks (112,727 bytes), with
+paths, sizes and hashes in `f038-cleanup.json`. Both investigative source drafts
+and first-profile diagnostics remain in `f038-probe-00.*` / `f038-probe-01.*`,
+with compiler profiles and diagnostic limits in `f038-control-manifest.json`.
+All original evidence, canonical inputs, matching outputs and F021 remain
+preserved. The host sample during CI had 8.7 GiB available memory and CPU 89%
+idle, without interval swap activity. Builds and validation stayed serial and
+low priority.
+
+F039 preparation retains an attested complete decompile and native audit at
+`0x005086E0..0x0050A4DB` /7,676 bytes, R047 body SHA-256
+`49222abf59781b88268f24825024fc04e35712c7c234165f31af695b9f0882cd`.
+The full CFG has 1,957 instructions, 405 internal branches, one return and
+102 calls: two float wrappers, 83 CRT rand, sixteen range helpers on the current
+receiver and one predicate on the opponent. There are no switches or external
+exits; four following INT3 bytes are alignment. Full behavior reading identifies
+only type 2/1/0 special branches, own-x thresholds 240/1040 and a type-0 random
+choice that can fall through into queued/ordinary behavior. Preserve its early
+position/facing returns and all short decrements and separate random calls.
+The final signed counter is at 0x0068D640, with no accepted declaration or mapping.
+A complete handwritten private draft uses our authored ordinary F035 statements;
+compile and verify its complete physical body and every relocation before cold
+acceptance. Retain `f039-native-audit.py` / `.json`, `f039-5086e0.asm`,
+`f039-ai.c`, `f039-decompile.log`, `f039-behavior-review.json`,
+`f039-compose.py`, private `.analysis/character-ai-5086e0/` and
+`f039-progress.json`. F039 earns no exact credit yet. Continue the active 95%
+goal with Ghidra/local tools without REA or pausing for cleanup/handoff.

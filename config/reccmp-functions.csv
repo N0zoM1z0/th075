@@ -129,3 +129,5 @@ CharacterAI4C6B50::ChooseAction,0x004C6B50,function
 CharacterAI59F4F0::ChooseAction,0x0059F4F0,function
 CharacterAI532950::ChooseAction,0x00532950,function
 CharacterAI499030::ChooseAction,0x00499030,function
+CharacterAI474B40::ChooseAction,0x00474B40,function
+CharacterAI5E9620::ChooseAction,0x005E9620,function
