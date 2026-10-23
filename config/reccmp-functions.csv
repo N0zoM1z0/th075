@@ -109,3 +109,4 @@ BattleFrame::ResolveBodySeparation,0x00449310,function
 StateFramePolicies::UpdateTransition,0x0043D010,function
 StateFramePolicies::AdvanceOverlay,0x00446D80,function
 ReimuFighter::DispatchActions,0x0046D300,function
+CharacterAction::DispatchAt004C0AD0,0x004C0AD0,function

@@ -108,3 +108,4 @@ BattleFrame::ResolveBodySeparation
 StateFramePolicies::UpdateTransition
 StateFramePolicies::AdvanceOverlay
 ReimuFighter::DispatchActions
+CharacterAction::DispatchAt004C0AD0

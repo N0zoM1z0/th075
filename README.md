@@ -26,68 +26,29 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-Ghidra analysis found 4,351 provisional function candidates. 109
-functions have reconstructed source and complete exact matches covering 38,669
+Ghidra analysis found 4,351 provisional function candidates. 111
+functions have reconstructed source and complete exact matches covering 68,908
 code bytes, with reviewed switch tables included in full comparisons. Names remain inferred. Candidate
 count is not the number of confirmed authored functions. Scripts and the `config/` ledgers report current state.
 
-The active target is **95% authored bytes exact**. At the R268 checkpoint,
+The current request is **cleanup and handoff**; matching must not resume
+automatically. The previous **95% authored bytes exact** target is incomplete.
+At the R268 checkpoint,
 1,002 authored, 2,671 library and 581 compiler-generated candidates are
-classified; 97 remain unknown. Reviewed authored coverage is 38,669 / 1,973,516
-bytes (1.96%). F020 adds complete body separation, round-transition and
-overlay timeline policies: 4,169 code bytes /101 relocations, cold-replayed exactly. Original object layouts remain
+classified; 97 remain unknown. Reviewed authored coverage is 68,908 / 1,973,516
+bytes (3.49%). F023 adds the complete dispatcher at `0x004C0AD0`:
+16,098 code bytes /322 relocations, cold-replayed exactly. Original object layouts remain
 partial and are never instantiated or embedded by the reconstructed source.
 Goal completion conservatively includes all 3,608 pending bytes
 in the denominator, preserving uncertainty without delaying reconstruction of
 reviewed authored functions. Only new or affected units require cold replay.
 The user authorized frequent commits and pushes on 2026-10-22.
 
-Historical R129 checkpoint: origin review had classified 919 authored,
-1,774 library and 575 compiler-generated candidates; 1,083 remain pending.
-The reviewed authored-byte slice is 9,883 / 1,965,299 exact (0.50%), with a
-provisional denominator. R108 resolved one destructor and retained five
-explicit/implicit lifetime ambiguities; R109 resolved thirteen game policies.
-R110 resolves six deque dependencies and their complete range-erase callee
-through independently reviewed game policies and a cold source-typed graph.
-R111 resolves five range erases, four single-erase wrappers and three iterator
-helpers through complete, closed source graphs with 337 cold source alternatives.
-R112 resolves six postfix increments through their actual typed prefix callees
-and two complete game callers. R113 resolves five queue helpers and the
-unique enqueue/main-loop policies. R114 resolves four shared-lifetime/callback
-policies and retains a complete ordinary/generated initializer ambiguity;
-its CRT entry remained pending until the complete R126 graph closed. R115 resolves the
-complete heap initialization graph and vendor SEH epilog, retaining unresolved
-error, handler and multibyte chains. R116 resolves dynamic exit/message-box
-dispatch and the complete shared-copy entry while preserving unresolved cookie
-failure chains. R117 resolves the cookie initializer and complete SEH/NLG
-dependencies, retaining unresolved user-handler and termination chains.
-R118 resolves complete static locks, dynamic critical-section dispatch and
-the callback loop, retaining allocator/TLS and shared-cleanup uncertainty.
-R119 resolves six complete small-block/new-handler/TLS dependencies while
-retaining the allocator/lock/error cycle. R120 closes the complete allocator/
-lock/error/termination graph through eighteen whole source bodies and five
-existing interior labels. R121 resolves the complete onexit/heap-growth/
-teardown graph and retains two startup parents until locale and FP
-dependencies close. R122 closes five complete locale/thread roots and the
-whole fiber cleanup control, while multibyte initialization remains pending.
-R123 closes the six multibyte/codepage roots and nine necessary NLS/locale
-callees, including three full cleanup extents and three existing interior labels.
-R124 closes 27 complete floating-point conversion/control bodies. R125 closes
-all six initializer roots and the necessary exception/signal graph, including
-cinit's actual callbacks and one existing raise cleanup label. R126 closes
-eleven complete environment/argv/exception/exit bodies, including the full
-PE entry and its independently authored game callee. R127 closes nineteen
-complete x87 dispatch/IEEE exception primaries and four existing shared entries,
-including the full atan2 table and natural vendor layout controls. R128 closes
-three whole cos/sin/sqrt primaries and six existing C/shared entries, preserving
-the complete 174-/174-/186-byte source extents. R129 closes rand/srand, fabs,
-the full math exception/name graph and vector destruction/unwind, retaining an
-abs ownership ambiguity against cold ordinary expression controls. The next
-handoff targets six R130 vector-construction/two-argument math candidates while preserving
-the 60-function exact baseline.
-The current 95%-exact goal and separate origin review remain unfinished. See the
-[current handoff](docs/RE_HANDOFF.md) and
-[origin review journal](docs/ORIGIN_REVIEW.md).
+Historical origin and reconstruction checkpoints are preserved in the
+[handoff archive](docs/RE_HANDOFF_HISTORY.md) and
+[origin review journal](docs/ORIGIN_REVIEW.md). Start with the
+[current handoff](docs/RE_HANDOFF.md) for accepted units, the unaccepted F021
+draft, local-only retention requirements and validation commands.
 
 ## Getting started
 
@@ -128,7 +89,8 @@ Cold-build and replay the first accepted function:
 scripts/repo-python scripts/replay-exact-units.py --unit graphics-resource-client-constructor
 ```
 
-Replay all configured functions with `scripts/repo-python scripts/replay-exact-units.py`.
+Replay only new or affected units during normal work; a complete replay is
+available with `scripts/repo-python scripts/replay-exact-units.py` when required.
 See [toolchain and matching details](docs/BUILD_MATCHING.md).
 Run public checks with `scripts/repo-python scripts/ci.py`; these do not require the game
 executable or private Ghidra project.

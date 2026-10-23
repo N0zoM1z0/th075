@@ -15286,3 +15286,112 @@ adoption invariant pins 50 authored additions /42,927 bytes above F009 while
 retaining every historical prefix and all 97 unknown origins. Obsolete partial
 preview artifacts were removed (28,619 bytes); canonical source, the final
 matching object and original target evidence remain.
+
+## F023 — Complete character action dispatcher at 004C0AD0
+
+Accepted on 2026-10-23: `CharacterAction::DispatchAt004C0AD0`, complete extent
+0x004C0AD0..0x004C49B1 /16,098 code bytes. Fourteen following INT3 bytes are
+alignment. The existing R047 authored classification is unchanged, with body
+SHA-256 `2118cf9d41bbbb25cede2b919453b09e2dc1c4b48d0be7d865f4bf6f3c300ca4`.
+Full decoding checks 4,256 instructions, 830 internal branch destinations,
+one return, no switch tables and no external branch exits.
+
+Unit `character-action-dispatch-004c0ad0` uses canonical
+`src/CharacterActionDispatch.cpp` / `.hpp`, COFF symbol
+`?DispatchAt004C0AD0@CharacterAction@@QAEXXZ`, and pinned VC7.1 build 3077 with
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. Its canonical cold replay compares all
+16,098 bytes with zero differences, including every relocation:
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-004c0ad0
+```
+
+All 322 relocations are bound: 240 calls and 82 readonly references to nine
+constants. Both original PE bytes and freshly built COFF constant payloads
+were checked. Calls comprise vector access 0x004420B0 (63), input packing
+0x00455B30 (40), primary reset 0x0040FAC0 (110), and auxiliary-input clearing
+0x00453A10 (27). The vector helper retains its library classification and
+earns no authored credit. The shared slot-reference ABI view is reused through
+the unchanged `ReimuActionDispatch.hpp`. No incomplete owner is instantiated
+or embedded. Character identity, original names and complete layouts remain
+unknown; semantic field labels are inferences.
+
+The handwritten natural C++ body contains all 67 ordered dispatch candidates.
+The first six ground-only input policies preserve distinct lookup/reset pairs:
+221 selects 752/771, 220 selects 751/770, 211 selects 763/763, 210 selects
+762/762, 201 selects 742/742 and 200 selects 741/741. They do not acquire a
+generic cancellation condition. Input 103 retains the 100.0f resource gate,
+zero +39C and nonpositive +3A0 before priority/reset 795.
+
+Eight input-13/23 advanced candidates first test signed resource +3B0, then
+preserve selector +398/+39A, signed mode +39D, ground, +3A0 and 100.0f gates.
+Their ordered states are 701, 707, 706, 703, 700, 705, 704 and 702, with the
+distinct +F14, +F10 and +F0C restrictions retained. Input-102 candidates retain
+the additional owner +F12 zero check, post-pack height/state rereads,
+594/595/597/598/599 and 596 resets, and fallthrough after unmatched paths.
+
+Inputs 42/41/40 all inspect priority 504 but reset to 506/504/505, with fresh
+height tests selecting 509/508/507. Inputs 31 and 30 preserve their different
+resource/input/flag order and repeated +F12 reads. Their states are 501/503
+and 500/502. Inputs 12/11/10 select 604/606, 608/610 and 607/609; 21/20
+select 601/603 and 600/602; 101/100 select 309/310. Seven movement candidates
+reuse independently verified F022 scalar policies, retaining unsigned press
+counts, signed facing/axis products, diagonal bounds, ranks 99/49, signed-byte
++3AD increment and the early-ascent 60.0f test.
+
+Ground attack groups reread the signed owner field +F12 after each primary
+reset. The seven positive-vertical policies select 392/408/302/393/413/303/402
+with alternate 418 and 320/-320 distance gates. The neutral-vertical group is
+flat and preserves twelve policies, with alternates 417 or 416; it must not be
+replaced by F022's nested A/B groups. State 300 alone retains its current-state
+300 exception. Special B input uses the shared +500 buffer, while ordinary B
+input uses +504. C attack flag/resource ordering also differs from F022.
+
+Air A policies retain 400/-400 gates and 410/409/304 with alternates 420/419;
+B policies retain 480/-480 and 415/414/305. The 304/305 fallbacks contain two
+successive +F12 checks, allowing reset 419 and then reset 420 after a further
+vertical check. These are independent conditions with callback-visible rereads,
+not an else branch. Shared C input selects 405/404 with 420/419 alternates;
+its vertical policy reads current +4E0 only. All four final directional
+fallbacks and plain scalar float leaf lvalues are retained.
+
+Private observations and receipts are `.analysis/f023-4c0ad0.asm`,
+`f023-dispatch.c`, `f023-decompile.log`, `f023-dispatch-audit.json`,
+`f023-relocation-bindings.json`, `f023-accepted-replay.json` and
+`f023-progress.json` (all below `.analysis/`). The successful cold log is
+`f023-cold-replay.log`. Earlier preview/composition artifacts were removed
+after promotion (82,944 bytes); their receipt is `f023-cleanup.json`.
+
+Coverage becomes 111 exact functions /68,908 code bytes (3.49% of reviewed
+authored bytes and 3.49% conservatively including 3,608 pending bytes).
+The cumulative adoption manifest freezes 51 authored additions /59,025 bytes
+above F009 and 30 new inputs, retaining every historical prefix and all 97
+unknown origins. The 110 prior units and their inputs did not change and were
+not rebuilt. F021 remains unaccepted; the 95% objective is incomplete.
+
+### F021 final reverted controls and cleanup handoff (2026-10-23)
+
+Changing only the first landing-effect counter to `counter = counter + 1`
+or `counter = 1 + counter` reproduces the restored baseline function hash.
+Uniformly parenthesizing FLOAT leaf lvalues emits 62,282 bytes /16,900
+instructions, with its first native difference at 0x0045E293. That control
+adds instructions and is rejected; ordinal-zipped difference counts for
+different instruction counts are not reliable alignment measurements.
+
+All three controls were reverted. The final 62,090-byte F021 object retains
+baseline function hash
+`e2b757b2007e18c766a2978cfcab4c03a97fbb05831b04264ad50e9b360fafe6`;
+full call, relocation, branch/table and byte-lane receipts were refreshed.
+The first physical mismatch remains 0x0045FDA9, with 6,311 operand differences.
+No exact credit is granted to normalized diagnostics.
+
+The latest user request is cleanup and handoff, with commit subjects restored
+to `gpt-6-astra-medium: ...`; matching must not resume automatically. The
+current handoff now separates accepted state, F021 diagnostics, private
+retention and recovery commands. Its previous full contents and the stale
+README origin narrative are preserved in `RE_HANDOFF_HISTORY.md`.
+Only obsolete generated debug/bytecode caches are removed; all COFF objects,
+accepted matching outputs, source, inputs, origin evidence, native analysis,
+the active F021 PDB, historical Wine environment and shared tools are retained.
+The cleanup receipt is `.analysis/handoff-cleanup-20261023.json`; final
+validation and reclaimed size are recorded in `RE_HANDOFF.md`.

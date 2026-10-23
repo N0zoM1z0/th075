@@ -2,10 +2,10 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-On 2026-10-23 the user explicitly resumed the authored exact-reconstruction
-goal after cleanup and handoff, retaining the 95% authored-byte target and
-frequent commits and pushes. Preserve all accepted exact
-units and origin evidence through R268. The 97 unresolved origins remain
+The latest 2026-10-23 request is cleanup and handoff. Do not resume matching
+automatically. The previous 95% authored-byte target remains incomplete;
+frequent commits and pushes were authorized during reconstruction. Preserve
+all accepted exact units and origin evidence through R268. The 97 unresolved origins remain
 unknown; they do not block reconstruction of independently reviewed authored
 functions. Include all pending bytes in the conservative goal denominator.
 Use the current cohort in `docs/RE_HANDOFF.md`. Cold-replay affected units only;
@@ -14,7 +14,7 @@ compiler builds serial and periodically remove only obsolete reproducible
 outputs, preserving evidence, manifests, sources, inputs and shared tools.
 Write repository documentation, comments, and handoffs in English. Preserve
 original titles, filenames, and target strings where they are evidence.
-Use the user-required commit subject format `gpt-6.1-sol: ...`
+Use the user-required commit subject format `gpt-6-astra-medium: ...`
 (updated by the user on 2026-10-23).
 Use `scripts/repo-python` for repository Python commands, including public
 MCP Bash requests. It checks the private environment and hash-pinned decoder;

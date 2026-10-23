@@ -91,3 +91,4 @@ address,name,module,confidence,evidence
 0x0043D010,StateFramePolicies::UpdateTransition,BattleScene,inferred,F020; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x00446D80,StateFramePolicies::AdvanceOverlay,BattleScene,inferred,F020; complete cold exact replay and independently reviewed origin; original names and complete owner layouts unknown
 0x0046D300,ReimuFighter::DispatchActions,ReimuFighter,inferred,F022; complete cold exact replay with 278 relocations; role reviewed in R046; original name and complete owner layouts unknown
+0x004C0AD0,CharacterAction::DispatchAt004C0AD0,CharacterAction,inferred,F023; complete cold exact replay with 322 relocations; R047 role retained; original character identity and complete owner layouts unknown

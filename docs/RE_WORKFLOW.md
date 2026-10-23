@@ -23,9 +23,9 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-On 2026-10-23 the user explicitly resumed reconstruction after cleanup and
-handoff. Continue the previously authorized 95% authored exact-byte
-target, authorizing frequent commits and pushes. Reconstruct independently
+The latest 2026-10-23 request is cleanup and handoff; do not resume matching
+automatically. The previously authorized 95% authored exact-byte target is
+incomplete. If reconstruction is explicitly resumed, use independently
 reviewed authored bodies while preserving all 97 pending origins. Goal
 accounting includes every pending byte in a conservative denominator; the
 displayed reviewed-authored percentage remains provisional. Cold-build only
