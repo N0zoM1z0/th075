@@ -19681,3 +19681,52 @@ replays only, serial low-priority compilation and CPU/memory monitoring.
 Later project phases remain deferred. The earlier F048 exclusions and active
 03 source/object remain preserved; do not repeat rejected controls without new
 native/compiler evidence.
+
+
+## F061 complete-source checkpoint (2026-10-23, unaccepted)
+
+R048 `0x005EB520` has one independently reviewed natural draft covering all
+60 nondefault states, complete guards/defaults/exits and the full 34,877-byte
+comparison extent. No source-presence or exact entry is accepted. The complete
+callee/stack audit checks all 9,378 instructions and **492 calls**. This corrects
+the earlier 592-call prose above; native extents, hashes and origin evidence
+are unchanged. The 93 effect calls use the +E4 owner; all seven other member
+callees use current, including RecordedRange. Nine angle calls are cdecl with
+two float arguments and an ST0 result. Two float-to-integer conversions retain
+ordinary casts and both native rounded-angle divisions. Unknown origins stay
+unknown. A bad 20-to-16-byte effect cleanup fails at a stack join.
+
+`f061-compose.py` refuses incomplete state coverage. The active private body is
+`object-action-5eb520/Preview.cpp` / `.hpp`, pinned in `active07/`, with object
+`build/probes/F061Preview.obj`. The pinned VC7.1 profile reproduces all 9,378
+instructions and frame 0x210. The physical binder verifies all 806 relocations:
+492 callees, 251 actual readonly references, two table/remap addresses and
+61 destinations. Every branch/table destination agrees. Actual COFF payloads,
+PE/COFF permissions, widths, addends and local offsets are checked; there are
+no writable-global references.
+
+The draft is still two bytes too long: 34,879 compared bytes, with 324 differing
+instruction encodings. The first nonbranch difference is state 998 at
+`0x005F3904`, native EAX versus draft EDX; earlier forward-branch displacements
+also differ because their destination moved. GPR/temporary elision locates
+emission gaps and earns neither exact credit nor unrestricted equivalence.
+Byte-copy spelling/signedness, integer-versus-float doubling literals and the
+last state-997 return/break controls emitted identical whole code/relocations.
+Do not repeat them without new evidence. Continue natural-source investigation
+at 997/998 without inert locals, padding, assembly, ABI-result changes or
+alternate bodies. Canonical full physical equality and cold replay remain
+outstanding. The fresh attested Ghidra recheck reproduces the earlier complete
+export hash; native instructions remain authoritative over decompile guesses.
+
+`f061-obsolete-output-cleanup.json` records removal of two reproducible control
+objects /131,640 bytes after checking whole COFF function-byte and normalized
+relocation equality with the retained active object. All inputs/control receipts,
+active objects, accepted units, F048/F021, R268 and shared tools are preserved.
+All 153 accepted units /515,551 code bytes and 97 unresolved origins remain
+unchanged. The conservative goal is still 26.08%; the 95% goal remains active.
+
+Checkpoint CI passes all 3,603 tests in 144.960 seconds. Retained-unit,
+manifest raw-byte pins, historical-prefix, progress-card and whitespace checks
+pass. No accepted units are rebuilt. Serial compiler builds use niceness 15
+and CI uses niceness 10; interval samples show no swap activity, with about
+8.7 to 9.1 GiB available memory.

@@ -112,21 +112,71 @@ the initial interval sample had 88% CPU idle and no swap activity.
 
 Continue independently reviewed R048 `0x005EB520..0x005F3BA1`, historical role
 `CharacterObject::AdvanceAt005EB520`: 34,434 code bytes / 9,378 instructions,
-902 branches, one return, ten direct callees and 592 call sites, with no
+902 branches, one return, ten direct callees and 492 call sites, with no
 indirect calls or external branch exits. Its contiguous 244-byte table and
 199-byte remap extend comparison through `0x005F3D5C`, excluding three INT3
 bytes before `0x005F3D60`. Compare all **34,877 bytes**. The observed signed-word
 selector subtracts 800 before its unsigned guard and remap; entry guards read
 the actual +E4 owner/opponent fields and the object's +82 countdown. Do not
 infer a complete owner or reuse F060 layouts/receivers from names alone.
-Retain `f061-native-audit.py` / `.json`, `f061-5eb520.asm`, the fresh attested
-`f061-action.c` / `f061-decompile.log`, `f061-case-index.py` / `.json`, and
-`f061-progress.json`. The complete native index pins 60 nondefault states /
-60 distinct entries across selector values 800..998, plus the default frame
-advance at `0x005F3B96`. Callee ABI, state/field/argument/receiver/exit review,
-natural source, full physical comparison and canonical cold replay remain
-outstanding.
-Target inventory or normalization alone earns no source or exact credit.
+The complete native index pins 60 nondefault states / 60 distinct entries
+across selector values 800..998, plus default frame advance at `0x005F3B96`.
+All states, guards, field widths, arguments, receivers and exits now have a
+private natural source draft. All ten complete callees and every stack join
+are checked across 9,378 instructions and **492 calls**; incorrect 20-to-16-byte
+effect-call cleanup is rejected. The earlier 592-call prose was a counting
+error, not an extent or origin change. SpawnEffect's 93 calls use the +E4 owner.
+Current receives frame 61, secondary reset 31, polar velocity 24, transform 59,
+RecordedRange 57, clear-field74 154 and shared sound 2 calls. Nine angle calls
+use cdecl/two floats/ST0; two conversions use the implicit ST0-to-EDX:EAX ABI
+through ordinary casts. Unknown angle origins remain unknown.
+
+The complete draft is `.analysis/object-action-5eb520/Preview.cpp` / `.hpp`;
+the pinned snapshot is `active07/`, and the active object is
+`build/probes/F061Preview.obj`. With VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, it emits 9,378 instructions and the native
+0x210 frame. All 492 static calls and every branch/table destination correspond.
+All **806 relocations** are physically bound: 492 calls, 251 actual readonly
+references, two table/remap addresses and 61 table destinations. Actual COFF
+payloads, target/COFF permissions, widths, addends and local offsets are checked;
+there are no writable-global references. This correspondence is diagnostic.
+
+**F061 remains unaccepted.** The draft compares 34,879 bytes, two too many,
+and 324 instruction encodings differ. The first nonbranch difference is
+`0x005F3904` in state 998: native begins with EAX, the draft with EDX. Earlier
+forward-branch encodings also differ because the destination moved by two
+bytes. GPR classes and compiler-temporary displacements are elided only to
+locate gaps; they establish neither unrestricted equivalence nor exact bytes.
+No mapping, source-presence entry, canonical descriptor or exact credit is
+added. Preserve the native exits and operation order, including both rounded
+angle divisions before integer conversion. Byte-copy spelling/signedness,
+integer-versus-float doubling literals and the final state-997 return/break
+controls emitted identical whole code and relocation records. Do not repeat
+these controls without new evidence, or force registers with inert locals,
+padding, assembly, false ABI results or alternate source bodies.
+
+Continue native/compiler statement and temporary-lifetime investigation at
+997/998. Full physical equality and a separate canonical cold replay remain
+required. Retain `f061-native-audit.py` / `.json`, `f061-5eb520.asm`,
+`f061-action.c`, both attested decompile logs and `f061-recheck-action.c`,
+`f061-case-index.py` / `.json`, `f061-native-constants.json`,
+`f061-abi-review.py` / `.json`, all ten `f061-callee-*.asm`,
+`f061-native-correspondence.py` and its reports, `f061-compose.py`,
+`f061-review-view.py`, `f061-whole-diagnostic.py` / `.json`,
+`f061-bind-draft.py`, `f061-draft-relocation-bindings.json`,
+`f061-checkpoint.py`, `f061-progress.json`, and controls 01 through 06.
+The fresh Ghidra recheck has both completion and target attestation markers
+and reproduces the earlier complete export hash. Two obsolete control objects
+were removed only after their whole COFF function bytes and normalized
+relocations matched the retained active object: **131,640 bytes** reclaimed in
+`f061-obsolete-output-cleanup.json`. All source/control inputs and receipts,
+active objects, accepted evidence and shared tools remain.
+
+Checkpoint CI passes all 3,603 tests in 144.960 seconds. Retained-unit,
+manifest raw-byte pins, historical-prefix, progress-card and whitespace checks
+pass; all 153 accepted units remain unchanged and were not rebuilt. Available
+memory stayed about 8.7 to 9.1 GiB; interval samples had no swap activity.
+Compilation remains serial at niceness 15 and CI at niceness 10.
 
 Preserve all 153 accepted units, unaccepted F048/F021, R268 and all 97 unknown
 origins. Continue the full 95% goal without pausing for bounded acceptance,
