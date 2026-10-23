@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F026. Counts, active
+This file preserves historical checkpoints through R268 and F027. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -4784,6 +4784,83 @@ low priority, with no parallel compiler jobs. The 95% goal remains active.
 
 No prior accepted source/header, ABI, compiler flags or relocation changed in
 F026; cold-replay only new or affected units. Keep compiler builds serial and
+low priority, monitor CPU/memory, and preserve `config/claims.csv` header-only.
+Read [RE_WORKFLOW.md](RE_WORKFLOW.md) and [AGENTS.md](../AGENTS.md) when continuing
+reconstruction. The goal remains active until the full 95% objective is proved.
+
+## F027 checkpoint before F028 acceptance (2026-10-23)
+
+## Latest accepted cohort: F027
+
+`CharacterAction502450::DispatchActions` at `0x00502450..0x00505A5E`
+cold-replays exact across all **13,839 code bytes**. One following INT3 byte
+is alignment. R047 ownership and the complete target body hash are unchanged.
+All 3,751 instructions, 734 internal branches, one return and 66 ordered
+candidates are reconciled, with no switch tables or external branch exits.
+
+Canonical source is `src/CharacterActionDispatch502450.cpp` / `.hpp`. Its
+separate pointer-only owner view reuses the unchanged slot-reference ABI in
+`ReimuActionDispatch.hpp`. Original character identity and complete layout
+remain unknown; no incomplete owner is instantiated or embedded. An explicit
+alias preserves the original R047 mapped role. All 114 prior units and their
+inputs remain unchanged and were not rebuilt.
+
+Unit `character-action-dispatch-00502450` binds all **270 relocations**:
+200 calls and 70 references to 15 readonly constants. Actual fresh COFF
+constant payloads were checked against target bytes. No writable global is
+referenced by this unit. The first six special policies omit the ordinary
+cancellation gate; movement rank 39 is accepted only in five front policies,
+not the four final airborne fallbacks. See the knowledge base for the complete
+character-specific condition order, distance gates and reset IDs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00502450
+```
+
+Profile: pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+Private observations and receipts remain below `.analysis/`:
+`f027-502450.asm`, `f027-native-audit.py` / `.json`, `f027-dispatch.c`,
+`f027-decompile.log`, `f027-dispatch-diagnostic.py`, `f027-dispatch-audit.json`,
+`f027-bind-relocations.py`, `f027-relocation-bindings.json`,
+`f027-accepted-replay.json`, `f027-cold-replay.log` and `f027-progress.json`.
+Detailed F022-F027 observations are in [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md);
+previous dispatch handoff sections are preserved in the history archive.
+
+The next bounded R047 cohort is F028 at `0x00574370..0x0057774D` /13,278 bytes.
+Its completed native audit checks 3,578 instructions, 705 internal branches,
+one return and 187 direct calls, without switch tables or external branch exits.
+Two following INT3 bytes are alignment. Retain private `f028-native-audit.py` /
+`.json`, `f028-574370.asm`, `f028-dispatch.c`, `f028-decompile.log` and
+`f028-progress.json` below `.analysis/`. The read-only decompile is attested
+and complete. No source draft or exact credit is registered for F028. Continue
+its full C++ reconstruction independently of F021 and F027 behavior assumptions.
+The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F027 final validation: all 3,603 CI tests passed in 71.503 seconds, including
+historical-prefix, complete adoption, name-alias, origin, tracking and progress
+freshness checks. Cold source/header and final-object hashes remain intact.
+Four superseded preview files were removed after canonical-source equality
+checks (111,302 bytes); `.analysis/f027-cleanup.json` records paths and hashes.
+Original evidence, canonical inputs, matching outputs and F021 remain preserved.
+The latest sampled available memory was 8.8 GiB, with CPU 90% idle and no
+swap-in/out in that host interval. Compiler builds and validation remained
+low priority, without parallel compiler jobs. The 95% goal remains active.
+
+No prior accepted source/header, ABI, compiler flags or relocation changed in
+F027; cold-replay only new or affected units. Keep compiler builds serial and
 low priority, monitor CPU/memory, and preserve `config/claims.csv` header-only.
 Read [RE_WORKFLOW.md](RE_WORKFLOW.md) and [AGENTS.md](../AGENTS.md) when continuing
 reconstruction. The goal remains active until the full 95% objective is proved.

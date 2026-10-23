@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F027",
+  "batch": "F010-F020; F022-F028",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2226d6c43b96ce8f9846c6fd0330255a96c698467c2e96a568d203ca181ddefe"
+      "current_sha256": "888471ac8e9268df4b8475c580a9ffd72b302aa7a900499e9841d6c3573158cf"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "e0b84bb2d3332bb5e33b92647fa7ff94ea13a97de75fa8c0e50755f5b12d611d"
+      "current_sha256": "791e48cad052cd3f64e0d947ce539b5a3aea8050a9a776e042f15f9288cd8371"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "594d546d651ff3a7eb3952d5f00ab9af8eb5e4ca4e537b5b53cfce527844ac48"
+      "current_sha256": "f08e6a25b402d79c4ff97c2a58a05d4979eafc8c84651bb7410f76a25ac7d085"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f680cd2a2a76aa0b22bad8b02d640fc9942801421b7ce769d201dc6695c11c84"
+      "current_sha256": "e1d729b2d0a5e65ab72a9d7e1c6fe8f580bac8b9e262266b05d8b1ebd2ea792f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "270317d68f9283c1c0e1feaf7fd88257a5da9151505ef8c7d682b113814b1eed"
+      "current_sha256": "8906caab04f78ebe79c9c31a7377a5f306e3a49d7d560667b9832ce514e4637e"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "dc4ffa40e07e82a395e212dbd5d425effd5f3265499069135847f562a0013622"
+      "current_sha256": "396de953dba7c72715f9569185b293922cafd6ab408de836d195923fde05aae3"
     }
   },
   "functions": [
@@ -2455,6 +2455,50 @@
       },
       "origin": {
         "address": "0x00502450",
+        "origin": "authored",
+        "subsystem": "CharacterAction",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R047"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00574370",
+        "size": "13278",
+        "span_end": "0x0057774D",
+        "current_name": "FUN_00574370",
+        "proposed_name": "CharacterAction::DispatchAt00574370",
+        "module": "CharacterAction",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00574370",
+        "size": "13278",
+        "span_end": "0x0057774D",
+        "current_name": "FUN_00574370",
+        "proposed_name": "CharacterAction574370::DispatchActions",
+        "module": "CharacterAction",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAction574370::DispatchActions()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterActionDispatch574370.cpp",
+        "evidence": "R047; whole body hash, complete decoded CFG and action-ID lookup and game transition calls reviewed; F028; scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00574370",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F028: complete cold exact replay of 13278 code bytes with all 258 relocations; pointer-only owner view is not instantiated or embedded; original character identity and complete layouts remain unknown"
+      },
+      "origin": {
+        "address": "0x00574370",
         "origin": "authored",
         "subsystem": "CharacterAction",
         "disposition": "authored",
@@ -19152,6 +19196,1576 @@
           "target": 4258496
         }
       ]
+    },
+    "character-action-dispatch-00574370": {
+      "source": "src/CharacterActionDispatch574370.cpp",
+      "object": "build/matching/CharacterActionDispatch574370.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAction574370::DispatchActions"
+      ],
+      "symbol": "?DispatchActions@CharacterAction574370@@QAEXXZ",
+      "target_address": 5718896,
+      "size": 13278,
+      "relocations": [
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 94,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 159,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 238,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 316,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 370,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 411,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 476,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 489,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 542,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 583,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 649,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 662,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 728,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 794,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 807,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 840,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 871,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 957,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 1023,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 1036,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1068,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1150,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 1224,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 1233,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1273,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1291,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1308,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1358,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1390,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1408,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1440,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1514,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 1547,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 1556,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1581,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1595,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1681,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1776,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 1841,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 1854,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1866,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1886,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1900,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1986,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2081,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 2146,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 2159,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2171,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2191,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2205,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2291,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2379,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 2445,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 2458,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2472,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2558,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2634,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2675,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 2740,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 2753,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2767,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2853,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2929,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2970,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 3035,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 3048,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3062,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3148,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 3224,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3265,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 3331,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 3344,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3377,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3450,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 3516,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 3529,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3562,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3635,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 3701,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 3714,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3747,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3820,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 3886,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 3899,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3932,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4005,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4071,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 4084,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4117,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4190,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4256,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 4269,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4358,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4423,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 4436,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4448,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4468,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4557,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4622,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 4635,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4647,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4667,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4736,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4777,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4843,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 4856,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 4925,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4966,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 5032,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 5045,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5114,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5155,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 5221,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 5234,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5285,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5326,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 5391,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 5404,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5437,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5492,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 5557,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 5570,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 5713,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5787,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 5852,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 5865,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 6011,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 6034,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 6053,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 6130,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 6225,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 6258,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 6401,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 6456,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 6521,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 6534,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 6680,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 6757,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 6852,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 6886,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 7017,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7062,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 7157,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 7170,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 7321,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7366,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 7461,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 7474,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 7625,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7670,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 7766,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 7779,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 7793,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7944,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 7952,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8045,
+          "type": "DIR32",
+          "symbol": "__real@43d20000",
+          "target": 6649904
+        },
+        {
+          "offset": 8076,
+          "type": "DIR32",
+          "symbol": "__real@c3d20000",
+          "target": 6659024
+        },
+        {
+          "offset": 8112,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 8183,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8191,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8243,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 8329,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8337,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8449,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8457,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8550,
+          "type": "DIR32",
+          "symbol": "__real@43b40000",
+          "target": 6649956
+        },
+        {
+          "offset": 8581,
+          "type": "DIR32",
+          "symbol": "__real@c3b40000",
+          "target": 6656296
+        },
+        {
+          "offset": 8617,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 8688,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8696,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8744,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 8814,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8822,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 8912,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 8983,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 8991,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 9005,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 9156,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 9164,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 9319,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 9350,
+          "type": "DIR32",
+          "symbol": "__real@c3f00000",
+          "target": 6656300
+        },
+        {
+          "offset": 9386,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 9456,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 9464,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 9512,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 9582,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 9590,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 9683,
+          "type": "DIR32",
+          "symbol": "__real@43d20000",
+          "target": 6649904
+        },
+        {
+          "offset": 9714,
+          "type": "DIR32",
+          "symbol": "__real@c3d20000",
+          "target": 6659024
+        },
+        {
+          "offset": 9750,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 9820,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 9828,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 9900,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 9970,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 9978,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 10103,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 10111,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 10266,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 10297,
+          "type": "DIR32",
+          "symbol": "__real@c3f00000",
+          "target": 6656300
+        },
+        {
+          "offset": 10333,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 10404,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 10412,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 10460,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 10530,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 10538,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 10631,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 10662,
+          "type": "DIR32",
+          "symbol": "__real@c3f00000",
+          "target": 6656300
+        },
+        {
+          "offset": 10698,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 10769,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 10777,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 10825,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 10895,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 10903,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11055,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 11125,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 11133,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11223,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 11294,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 11302,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11319,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 11418,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 11449,
+          "type": "DIR32",
+          "symbol": "__real@c3f00000",
+          "target": 6656300
+        },
+        {
+          "offset": 11485,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 11556,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 11564,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11612,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 11682,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 11690,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11783,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 11814,
+          "type": "DIR32",
+          "symbol": "__real@c3f00000",
+          "target": 6656300
+        },
+        {
+          "offset": 11850,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 11921,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 11929,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 11977,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 12047,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 12055,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 12150,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 12221,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 12229,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryInput@CharacterAction574370@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 12337,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 12356,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 12396,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 12491,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 12525,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 12622,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 12717,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 12751,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 12858,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 12877,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 12917,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 13012,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 13045,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 13141,
+          "type": "REL32",
+          "symbol": "?At@ActionSequenceSlots@@QAEAAPAXI@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 13236,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@CharacterAction574370@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 13269,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@CharacterAction574370@@QAEXF@Z",
+          "target": 4258496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -19192,6 +20806,8 @@
     "src/CharacterActionDispatch493470.cpp": "10b9af46e26ffb9a1331a0fd0807ba709a547ac7e3fc16345ccafeaa29f4a321",
     "src/CharacterActionDispatch493470.hpp": "8f6e1bb28f602c48831f7fd6d584cd029bdf4c0f27de33c9ffb8dabb0fd32135",
     "src/CharacterActionDispatch502450.cpp": "e55cca4b1bc45b35b3d5e833186a2c026da4bc7210dffab189c457ad25e7f6bb",
-    "src/CharacterActionDispatch502450.hpp": "0ac476811c05f083ac5b8dc9d93b105d801000ae662a9b8c7851a185c39f4c93"
+    "src/CharacterActionDispatch502450.hpp": "0ac476811c05f083ac5b8dc9d93b105d801000ae662a9b8c7851a185c39f4c93",
+    "src/CharacterActionDispatch574370.cpp": "477e0d93befe93841451b663e5df90ca8ae3599f51a2c0e9a4750dbc1cf96bfa",
+    "src/CharacterActionDispatch574370.hpp": "300cb17f76effab85bce829230263efcb000f1e70da5f187396f99269923ad7b"
   }
 }
