@@ -111,3 +111,4 @@ StateFramePolicies::AdvanceOverlay,0x00446D80,function
 ReimuFighter::DispatchActions,0x0046D300,function
 CharacterAction::DispatchAt004C0AD0,0x004C0AD0,function
 CharacterAction597660::DispatchActions,0x00597660,function
+CharacterAction551C00::DispatchActions,0x00551C00,function

@@ -15526,3 +15526,118 @@ Private `f025-native-audit.py` / `.json`, `f025-551c00.asm`, `f025-dispatch.c`,
 attestation/completion and current next task. These are observations only:
 no source or exact credit has been registered for F025. Continue its complete
 natural C++ reconstruction without treating F024 behavior as its specification.
+
+## F025 — Complete action dispatcher at 00551C00
+
+Accepted on 2026-10-23: `CharacterAction551C00::DispatchActions`, complete
+extent 0x00551C00..0x00555526 /14,631 code bytes. Nine following INT3 bytes
+are alignment. R047 authored ownership and complete target body SHA-256
+`0bce8711213a81d151093a1f5d1d9bceb4202348f2a1d5e57be80038875157b4`
+remain unchanged. Full decoding checks 3,944 instructions, 772 internal branch
+destinations, one return, no switch tables and no external branch exits.
+
+Unit `character-action-dispatch-00551c00`, symbol
+`?DispatchActions@CharacterAction551C00@@QAEXXZ`, cold-replays the complete
+14,631 bytes with zero differences, including every relocation. Canonical
+source is `src/CharacterActionDispatch551C00.cpp` / `.hpp`. The separate
+pointer-only owner view does not establish original character identity or a
+complete layout, and is neither instantiated nor embedded. The unchanged
+`ReimuActionDispatch.hpp` supplies the existing slot-reference ABI view.
+An explicit alias preserves the original R047 reviewed role
+`CharacterAction::DispatchAt00551C00`; mapped names and semantic labels remain
+inferred. Profile is pinned VC7.1 build 3077 with
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, without executable-wide compiler inference.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00551c00
+```
+
+All 289 relocations are bound: 208 direct calls and 81 readonly references to
+nine constants. Fresh COFF section payloads were checked against original
+target bytes. Static calls comprise vector access 0x004420B0 (67), input packing
+0x00455B30 (44), primary reset 0x0040FAC0 (74) and auxiliary-input clearing
+0x00453A10 (23). The vector helper retains its library classification; none
+of these callees receives new exact credit in this cohort.
+
+The handwritten natural C++ body represents all 67 ordered candidates. Fourteen
+initial input policies preserve their character-specific gates and state IDs:
+240 selects 770, 232/231/230 select 762/760/761, 222/221/220 select 753/752/751,
+and 210 selects 741. Inputs 201/200 select 734/731 without a ground gate.
+Inputs 205/206 select ground states 720/721. Input 207 looks up and resets
+720, then rereads height for a possible 722 reset. Input 208 requires positive
+height and priority 723, resets 721, then rereads height for a possible 723.
+
+Input 103 retains the 100.0f resource policy and state 795. The first input-102
+candidate tests the input byte before signed +366 and the ground condition.
+After packing, it rereads height and current state. Ground states 150..158
+select 596 before the >299 /595 test and fallback 594; air branches select
+599/598/597. The second candidate retains its separate state <300 and post-pack
+height check before 596. No transform call or cached height is introduced.
+
+Six advanced candidates are resource-first input-13 policies, with +39A/+398
+choices and signed +39D modes. Ordered states are 705, 708, 709, 700, 703 and
+704. Simple inputs 31/30 select 511/510; input 12 tests resource before input
+and ground, selecting 600. Inputs 11/10 select 513/512. Inputs 22/21/20 select
+504/503/502: each writes word +F00 =0 before the primary reset, then rereads
+height before a possible +F00 =1. Those callback-visible stores are retained.
+Inputs 101/100 select 309/310 with distinct flag/ground order.
+
+Seven common movement policies retain unsigned press counts, signed facing
+products, diagonal <=-1 / >=1 bounds, priority exceptions 99/49 and the native
+early-ascent 60.0f rejection. This function uses signed +3AD <3 for airborne
+movement and all four final directional fallbacks, followed by direct byte
+increment. The limit differs from F024 and was reviewed independently.
+
+The positive-vertical ground group contains five ordinary policies, with no
+392/393 special states. Nested A input selects 408 at 300/-300 distance or
+302; nested B selects 414 at 480/-480 or 303; C selects 402. The neutral group
+contains ten policies, without 390/391 specials. Forward A selects 407/307,
+ordinary A 406/300, forward B 412/308, ordinary B 412/301, and C 401/400.
+Distance policies there use 320/-320; state 300 alone retains its current-state
+300 exception. C resource/flag order is preserved rather than copied from F024.
+
+Air A preserves 480/-480 distance checks before current/remembered vertical
+tests for 411, then 410 and 304. Air B similarly selects 417, then 416 and 305.
+The 305 fallback has no extra 321 reset. Air C tests resource and flag before
+vertical for 405, then selects 404. All eight attack policies and four final
+directional fallbacks preserve fresh reads, ordering and normal C++ control
+flow. Full physical operands and branch ordinals agree before relocation;
+canonical cold replay remains the acceptance evidence.
+
+Private evidence is retained below `.analysis/`: `f025-551c00.asm`,
+`f025-native-audit.py` / `.json`, `f025-dispatch.c`, `f025-decompile.log`,
+`f025-dispatch-diagnostic.py`, `f025-dispatch-audit.json`,
+`f025-bind-relocations.py`, `f025-relocation-bindings.json`,
+`f025-accepted-replay.json`, `f025-cold-replay.log` and `f025-progress.json`.
+The decompile and session-check logs retain target identity attestation and
+completion markers. No database write or target execution was required.
+
+Coverage becomes 113 exact functions /99,457 code bytes (5.04% of reviewed
+authored bytes; 5.03% conservatively including all 3,608 pending bytes). The
+cumulative manifest preserves 53 additions /89,574 bytes above F009 and 34 new
+source/header inputs. All 112 prior units and their inputs are unchanged and
+were not rebuilt. All 97 unknown origins remain unknown; F021 receives no exact
+credit. Continue toward the unchanged 95% objective, with F026 at 0x00493470
+/14,312 bytes as the next bounded R047 dispatcher.
+
+
+Final F025 validation passes all 3,603 CI tests in 71.303 seconds, with pinned
+target, historical-prefix, complete adoption, origin, name-alias, tracking and
+progress checks. Cold source/header and final-object hashes remain intact.
+Four superseded preview files were removed after canonical equality checks
+(104,149 bytes); `.analysis/f025-cleanup.json` retains paths, sizes and hashes.
+Canonical sources, matching outputs, original evidence and F021 remain.
+The latest sampled available memory was 6.9 GiB; compiler builds stayed serial
+and low priority. The handoff records the host CPU/swap interval.
+
+F026 preparation now retains a complete attested decompile and native audit
+of the R047 dispatcher at 0x00493470..0x00496C57 /14,312 bytes. All 3,841
+instructions, 764 internal branches, one return and 198 direct calls were
+reconciled; no switch tables or external branch exits are present. Eight
+following INT3 bytes are alignment. Static calls comprise 61 vector accesses,
+39 input packs, 72 primary resets and 26 auxiliary-input clears. Private
+`f026-native-audit.py` / `.json`, `f026-493470.asm`, `f026-dispatch.c`,
+`f026-decompile.log` and `f026-progress.json` preserve original hashes,
+attestation/completion and the next full reconstruction task. No source or
+exact credit has been registered for F026. Continue native-guided exploration
+without copying F025 behavior as its specification or pausing for handoff.

@@ -14,14 +14,14 @@ CPU/memory monitoring.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 112 / 112 / 112 |
-| Exact code bytes | 84,826 |
-| Reviewed authored coverage | 84,826 / 1,973,516 (4.30%) |
-| Conservative coverage, including every pending byte | 84,826 / 1,977,124 (4.29%) |
+| Source-present / exact functions / exact units | 113 / 113 / 113 |
+| Exact code bytes | 99,457 |
+| Reviewed authored coverage | 99,457 / 1,973,516 (5.04%) |
+| Conservative coverage, including every pending byte | 99,457 / 1,977,124 (5.03%) |
 
 Origin evidence through R268 remains unchanged. The cumulative exact-adoption
-manifest preserves the F009 baseline and 52 reviewed additions /74,943 bytes,
-with 32 new source/header inputs through F024. Unknown origins earn no credit.
+manifest preserves the F009 baseline and 53 reviewed additions /89,574 bytes,
+with 34 new source/header inputs through F025. Unknown origins earn no credit.
 The ledgers and status script are authoritative; historical counts are archived
 in [RE_HANDOFF_HISTORY.md](RE_HANDOFF_HISTORY.md).
 
@@ -31,7 +31,49 @@ The only target is the supplied Japanese `th075.exe`, self-reporting version
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe`.
 
-## Latest accepted cohort: F024
+## Latest accepted cohort: F025
+
+`CharacterAction551C00::DispatchActions` at `0x00551C00..0x00555526`
+cold-replays exact across all **14,631 code bytes**. Nine following INT3 bytes
+are alignment. R047 ownership and complete target body hash remain unchanged.
+All 3,944 instructions, 772 internal branches, one return and 67 ordered
+candidates are reconciled, with no switch tables or external branch exits.
+
+Canonical source is `src/CharacterActionDispatch551C00.cpp` / `.hpp`. Its
+separate pointer-only owner view reuses the unchanged slot-reference ABI in
+`ReimuActionDispatch.hpp`. Original character identity and complete layout
+remain unknown; no incomplete owner is instantiated or embedded. The mapped
+name preserves the original R047 role through the explicit origin-name alias.
+
+Unit `character-action-dispatch-00551c00` binds all **289 relocations**:
+208 direct calls and 81 references to nine readonly constants. Actual fresh
+COFF constant payloads and original target bytes were checked. Static calls
+comprise 67 vector accesses, 44 input packs, 74 primary resets and 23
+auxiliary-input clears. Callees receive no additional exact credit here.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00551c00
+```
+
+Profile is pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All 112 prior units and their source/header inputs remain unchanged and were
+not rebuilt. Private observations and receipts remain below `.analysis/`:
+`f025-551c00.asm`, `f025-native-audit.py` / `.json`, `f025-dispatch.c`,
+`f025-decompile.log`, `f025-dispatch-diagnostic.py`, `f025-dispatch-audit.json`,
+`f025-bind-relocations.py`, `f025-relocation-bindings.json`,
+`f025-accepted-replay.json`, `f025-cold-replay.log` and `f025-progress.json`.
+
+The next bounded R047 cohort is F026 at `0x00493470..0x00496C57` /14,312
+bytes. Its completed native audit checks 3,841 instructions, 764 internal
+branches, one return and 198 direct calls, without switch tables or external
+branch exits. Eight following INT3 bytes are alignment. Retain private
+`f026-native-audit.py` / `.json`, `f026-493470.asm`, `f026-dispatch.c`,
+`f026-decompile.log` and `f026-progress.json` below `.analysis/`. The read-only
+decompile is attested and complete. No source draft or exact credit is registered
+for F026. Continue its natural C++ reconstruction, independently of F021.
+The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
+
+## Previous accepted cohort: F024
 
 `CharacterAction597660::DispatchActions` at `0x00597660..0x0059B48D`
 cold-replays exact across all **15,918 code bytes**. Two following INT3 bytes
@@ -67,16 +109,9 @@ Private evidence remains below `.analysis/`: `f024-597660.asm`,
 The native audit, complete diagnostic and binding scripts retain reproducible
 checks. See the F024 knowledge-base entry for dispatch differences and limits.
 
-Current next cohort: continue reconstructing the complete R047 dispatcher at
-`0x00551C00` /14,631 bytes, independently of the unresolved full F021 draft.
-Its attested read-only decompile and full native audit are retained below
-`.analysis/` as `f025-dispatch.c`, `f025-decompile.log`, `f025-551c00.asm`,
-`f025-native-audit.py` / `.json` and `f025-progress.json`. The native extent has
-3,944 instructions, 772 internal branches, one return and 208 direct calls,
-with no switch tables or external branch exits. Nine trailing INT3 bytes are
-alignment. No source draft or exact credit has been registered for F025.
-Do not award credit to a partial comparison or normalized register diagnostic.
-The 95% objective remains active and incomplete; cleanup/handoff does not stop it.
+The F025 native observations recorded at this checkpoint are retained in the
+latest accepted cohort above and the knowledge base. Historical coverage and
+compiler observations for F024 remain unchanged.
 
 ## Previous accepted cohort: F023
 
@@ -230,3 +265,15 @@ Sampled available memory during this work was 6.6–8.8 GiB; the final sample wa
 6.9 GiB. The latest host CPU interval was 54% idle, with 8 KiB/s swap-in and
 548 KiB/s swap-out. Compiler builds and validation ran at low priority, with no
 parallel compiler jobs. The 95% goal remains active and incomplete.
+
+F025 final validation: all 3,603 CI tests passed in 71.303 seconds, including
+historical-prefix, complete adoption, name-alias, origin, tracking and progress
+freshness checks. Canonical source/header and final-object hashes still match
+the successful cold receipt. No prior accepted unit required replay.
+Four superseded preview files were removed after canonical-source equality
+checks (104,149 bytes); `.analysis/f025-cleanup.json` records their paths
+and hashes. Original evidence, canonical inputs, final matching output and F021
+remain preserved. The latest sampled available memory was 6.9 GiB, with CPU
+85% idle and 32 KiB/s swap-in / no swap-out in that host interval. Compiler
+builds and validation ran at low priority, without parallel compiler jobs.
+Continue reconstruction toward 95%; the goal remains active and incomplete.

@@ -110,3 +110,4 @@ StateFramePolicies::AdvanceOverlay
 ReimuFighter::DispatchActions
 CharacterAction::DispatchAt004C0AD0
 CharacterAction597660::DispatchActions
+CharacterAction551C00::DispatchActions
