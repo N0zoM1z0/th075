@@ -118,3 +118,9 @@ CharacterAction4E2F20::DispatchActions
 CharacterAction5C0D70::DispatchActions
 CharacterAction5E2310::DispatchActions
 CharacterAction52D230::DispatchActions
+CharacterAI472890::ChooseAction
+CharacterAI4E7DE0::ChooseAction
+CharacterAI579650::ChooseAction
+CharacterAI59D240::ChooseAction
+CharacterAI5C5D10::ChooseAction
+CharacterAI5E7370::ChooseAction

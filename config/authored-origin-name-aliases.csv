@@ -66,3 +66,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005C0D70,CharacterAction::DispatchAt005C0D70,CharacterAction5C0D70::DispatchActions,R047,character-action-dispatch-005c0d70
 0x005E2310,CharacterAction::DispatchAt005E2310,CharacterAction5E2310::DispatchActions,R047,character-action-dispatch-005e2310
 0x0052D230,CharacterAction::DispatchAt0052D230,CharacterAction52D230::DispatchActions,R047,character-action-dispatch-0052d230
+0x00472890,CharacterAI::ChooseAt00472890,CharacterAI472890::ChooseAction,R047,character-ai-00472890
+0x004E7DE0,CharacterAI::ChooseAt004E7DE0,CharacterAI4E7DE0::ChooseAction,R047,character-ai-004e7de0
+0x00579650,CharacterAI::ChooseAt00579650,CharacterAI579650::ChooseAction,R047,character-ai-00579650
+0x0059D240,CharacterAI::ChooseAt0059D240,CharacterAI59D240::ChooseAction,R047,character-ai-0059d240
+0x005C5D10,CharacterAI::ChooseAt005C5D10,CharacterAI5C5D10::ChooseAction,R047,character-ai-005c5d10
+0x005E7370,CharacterAI::ChooseAt005E7370,CharacterAI5E7370::ChooseAction,R047,character-ai-005e7370

@@ -119,3 +119,9 @@ CharacterAction4E2F20::DispatchActions,0x004E2F20,function
 CharacterAction5C0D70::DispatchActions,0x005C0D70,function
 CharacterAction5E2310::DispatchActions,0x005E2310,function
 CharacterAction52D230::DispatchActions,0x0052D230,function
+CharacterAI472890::ChooseAction,0x00472890,function
+CharacterAI4E7DE0::ChooseAction,0x004E7DE0,function
+CharacterAI579650::ChooseAction,0x00579650,function
+CharacterAI59D240::ChooseAction,0x0059D240,function
+CharacterAI5C5D10::ChooseAction,0x005C5D10,function
+CharacterAI5E7370::ChooseAction,0x005E7370,function

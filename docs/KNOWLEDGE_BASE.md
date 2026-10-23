@@ -16516,3 +16516,142 @@ layouts. A shared natural source body would require behavior-bearing profiles,
 truthful ABI and an independent complete canonical cold replay for each target.
 Continue the full 95% objective using Ghidra/local tools without REA or pausing
 for cleanup/handoff.
+
+
+## F033: six complete profiled AI policies (2026-10-23)
+
+Six full independently reviewed R047 bodies now cold-replay exact at 0x00472890,
+0x004E7DE0, 0x00579650, 0x0059D240, 0x005C5D10 and 0x005E7370. Each has 8,871
+code bytes, 2,274 instructions, 496 internal branches, one return, no switch
+tables or external exits, and nine following alignment INT3 bytes. Original
+R047 hashes and ownership evidence are unchanged; six explicit aliases preserve
+the reviewed mapped roles. The attested read-only Ghidra decompile of the first
+body and complete native comparison across all six preceded reconstruction.
+
+Canonical `src/CharacterAIPolicy.cpp` / `.hpp` uses one natural C++ template
+method with behavior-bearing profiles. Explicit method instantiations emit code;
+no incomplete owner object is constructed or embedded. The source alias names
+`CharacterAI472890` through `CharacterAI5E7370` identify these pointer-only
+receiver views. Original character identities, template use, full owner layouts
+and original declarations remain unknown. The source-defined `AISeparation`
+local contains exactly two observed, used floating components; it is not a game
+owner layout or a claim about the original local type. Existing
+`GameLeafHelpers.hpp` is unchanged and supplies the exact opponent state predicate.
+
+The profile constants correspond to complete native differences, not filename
+or address-based assumptions. The first/second/cancel/late selector names are
+provisional source labels. In order, they control reads at function offsets
++08FA, +09CC, +0B36/+0C81 and +1DF4. The first mode is compared at +0910.
+
+| Profile | First selector / mode | Second selector | Cancel selector | Late selector | Counter |
+| --- | --- | --- | --- | --- | --- |
+| `AI472890Policy` | +398 /2 | +39A | +398 | +39A | 0x0068D61C |
+| `AI4E7DE0Policy` | +39A /1 | +39A | +39A | +39A | 0x0068D634 |
+| `AI579650Policy` | +39A /1 | +398 | +398 | +39A | 0x0068D654 |
+| `AI59D240Policy` | +39A /1 | +39A | +39A | +398 | 0x0068D65C |
+| `AI5C5D10Policy` | +39A /1 | +39A | +39A | +39A | 0x0068D664 |
+| `AI5E7370Policy` | +398 /2 | +39A | +398 | +39A | 0x0068D66C |
+
+Six new global ledger rows describe only the observed signed dword counters,
+with original declarations/owners unknown. Each function has four counter reads
+and three writes in a readable/writable .data extent, verified through complete
+native operands. A positive counter emits horizontal input +1 and decrements;
+a negative counter emits -1 and increments; zero assigns
+`(rand()%90+10)*(1-2*(rand()%2))` without emitting a new horizontal value there.
+The binder never treats initial counter contents as readonly data or widens the
+observed four-byte view into a complete object layout.
+
+Every function calls the floating wrapper at 0x00412D90 twice with four-byte
+arguments and consumes ST0 into the local separation components. Complete
+wrapper/worker evidence remains R163 unknown ownership; a truthful observed
+call interface adds no source or exact credit for those callees. Two calls to
+0x00454F90 use the opponent receiver, preserving the already exact bool ABI.
+Six calls to 0x00455610 use the current receiver, two signed dword endpoints
+and RET 8, with a dword return narrowed to the observed short timer. That
+callee remains declaration-only, independently authored R221, with no new exact
+credit. All 99 CRT rand calls per function preserve their complete order and
+short-circuit gates, including unsuccessful decisions and callback-visible reads.
+
+The policy first computes absolute horizontal/vertical separation, decrements
+the short timer and clears queued state in the observed state-50..149 window.
+Queued modes 1 and 6 have an if/else followed by one shared return; the emitted
+short local jumps are retained. Modes 2..5 preserve their stop states,
+current-state-200 input writes and explicit non-200 direction path. Later
+ordered decisions cover transformation thresholds, authored state ranges,
+spell selectors, short hold timers, weighted resource/distance probabilities,
+ground/air movement, attacks and a final direction-counter fallback. All
+thresholds and state sets remain in the single canonical source body rather
+than being summarized into a different runtime policy.
+
+Target direction arithmetic uses boolean addition/subtraction, preserving the
+observed SBB sequences. Three native paths perform a command write followed by
+a separate read and store of that byte; natural assignment chains retain those
+actual accesses. Initial scalar-local, direction-expression and early-return
+drafts were rejected. Diagnostic frame-slot renaming was investigation only
+and earned no credit. A later family probe exposed a real missing profile use
+at +0C81 for the zero-choice cancel selector; the complete comparison rejected
+that one-byte mismatch before the shared body was corrected. Retained private
+`f033-probe-00` through `f033-probe-06` sources/receipts document these drafts;
+none substitute for canonical acceptance.
+
+Each unit binds all 225 relocations: 109 calls, 109 references to 22 actual
+readonly float payloads, and seven writable-counter accesses. All relocation
+offsets/types/symbols/targets and zero addends are checked against fresh COFF;
+target sections must have the expected read/write permissions. Each entire
+relocated 8,871-byte body equals its original R047 bytes, including every
+physical register, memory operand, branch encoding and destination. There is
+no excluded relocation field, register-class normalization or truncated extent
+in the accepted comparison.
+
+The canonical cold replay of units `character-ai-00472890`,
+`character-ai-004e7de0`, `character-ai-00579650`, `character-ai-0059d240`,
+`character-ai-005c5d10` and `character-ai-005e7370` cold-builds one shared object
+with pinned VC7.1 build 3077, `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then checks
+all six units: 53,226 code bytes and 1,350 relocations, with zero differences.
+Canonical source/header and the final object are pinned in the retained cold
+receipt. No prior accepted source/header, flags or relocation changed, so none
+of the 120 earlier units was rebuilt. A subsequent shared AI source/header
+change requires replay of all six dependent units, not unrelated units.
+
+Private receipts: `f033-native-audit.py` / `.json`, `f033-472890.asm`,
+`f033-ai.c`, `f033-decompile.log`, `f033-ai-family-audit.py`,
+`f033-ai-family-survey.json`, `f033-ai-family-differences.json`,
+`f033-bind-family.py`, `f033-family-bindings-preview.json`,
+`f033-family-bindings.json`, `f033-accepted-replay.json`, `f033-cold-replay.log`
+and `f033-progress.json`. The accepted receipt contains all six cold reports.
+Coverage becomes 126 exact functions /245,062 bytes (12.42% reviewed authored;
+12.39% conservatively including all 3,608 pending bytes). The cumulative manifest
+preserves 66 literal additions /235,179 bytes above F009 and 50 new source/header
+inputs. All seven historical byte-prefix guards and origin evidence through
+R268 remain intact. The 97 unknown origins remain unknown and F021 earns no
+exact credit. F032 handoff/verification sections remain verbatim in the history
+archive. Continue with F034 at 0x004C6B50 /8,572 bytes toward the full active
+95% objective, using Ghidra/local tools without REA or pausing for handoff.
+
+
+Final F033 validation passes all 3,603 CI tests in 95.813 seconds. All six
+canonical cold reports and source/header/final-object pins remain intact.
+Four superseded previews were removed after canonical equality checks
+(176,917 bytes); `.analysis/f033-cleanup.json` preserves paths, sizes and hashes.
+Seven private investigative/rejected source drafts and their diagnostics remain;
+`f033-control-manifest.json` records source hashes, compiler profiles and limits
+of their historical debug-object receipts. The private compose script regenerates
+the canonical source byte-for-byte. All original evidence, canonical inputs,
+matching outputs and F021 remain preserved. The final host sample had 8.9 GiB
+available memory and CPU 95% idle, with 4 KiB/s swap-in and no swap-out during
+that interval. Compiler builds and validation remained serial and low priority.
+
+F034 preparation retains an attested complete decompile and native audit at
+0x004C6B50..0x004C8CCB /8,572 code bytes. The original R047 body SHA-256 is
+`569c3417bd2125217119addaf53c939bce7605ca65ec61eb119c322f3e91f7ad`.
+Its 2,180 instructions contain 480 internal branches, one return and 116 direct
+calls: two floating-wrapper calls, 111 CRT rand calls, two state-predicate calls
+and one range-helper call. There are no switch tables or external branch exits;
+four following INT3 bytes are alignment. Private `f034-native-audit.py` / `.json`,
+`f034-4c6b50.asm`, `f034-ai.c`, `f034-decompile.log` and `f034-progress.json`
+preserve full native evidence and target/completion markers. No source draft or
+exact credit is registered. Its decision/call structure differs from F033;
+independently review the complete policy before extending shared source or
+authoring another body. Replay all six accepted AI profiles after any relevant
+shared-source/header change, while preserving unrelated accepted units. Continue
+toward the full active 95% goal using Ghidra/local tools without REA or pausing.

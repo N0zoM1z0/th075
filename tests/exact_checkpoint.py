@@ -1,7 +1,7 @@
 """Read the frozen F009 inputs while explicitly validating later exact additions.
 
 Origin evidence and verifier hashes stay unchanged. Only the seven reviewed
-append-only ledgers and the literal F010-F020 and F022-F032 function transitions have a
+append-only ledgers and the literal F010-F020 and F022-F033 function transitions have a
 historical view; all other bytes and rows retain their original guards.
 """
 from __future__ import annotations
@@ -13,7 +13,7 @@ from pathlib import Path
 import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
-MANIFEST_SHA256 = "4b4b07de353cfa5d19147a8b3f8542fef0e9ea47d57dbfa35efc2112e5e42335"
+MANIFEST_SHA256 = "549655455933f409f41553d62c7491e6234e53e8b30a1df2a8c4e8667b2742c2"
 
 
 def digest(data):
