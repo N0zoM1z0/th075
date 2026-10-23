@@ -19365,3 +19365,100 @@ their bit-identical obsolete duplicates were removed. The observed CI worker
 used about one CPU core and 270 MiB RSS at niceness 10; compiler builds retain
 the serial lock and niceness 15. The full 95% authored exact-byte goal remains
 active and incomplete, without pausing for cleanup or handoff.
+
+
+## F058 exact sequence reconstruction (2026-10-23)
+
+R048 `0x005D4890..0x005D7267` cold-replays exact as
+`CharacterSequence5D4890::AdvanceSequence`: 10,712 code bytes, 2,478
+instructions, 285 branches and one return. Its 232-byte table and 98-byte remap
+extend comparison through `0x005D73B1`, excluding fourteen INT3 alignment bytes
+before `0x005D73C0`. Descriptor coverage 10712 / comparison 11042 remain
+distinct. Original code hash
+`121801b08c7a2c65df4cc604671f7a0ad745318f49fb3ddfb36fbd75468646b7`
+and whole hash `56e5580425f051173849d85335ba31568c779efb3cb27e7fd2b6c2767fcfb18f`
+retain R048 evidence, complete bounds and switch hashes.
+
+All 57 native states, default and common tail are reviewed. Twelve position/alpha
+offsets are 20 bytes above F051; all 194 phase-counter operands use WORD +F28,
+with no +EFC access. These separate narrow observations do not establish a
+complete owner layout or original declaration. Thirty-one native paths
+correspond after explicit offsets, GPR classes and actual readonly payloads;
+all 26 changed/new paths were independently reviewed. Diagnostic correspondence
+grants no credit. Full physical equality and a separate canonical cold replay
+establish acceptance. States 1/2/3/11/12/13/21/22/23/31/32/33 are absent;
+0/10/20/30 select 4/14/24/34. Their phase-230 reset/launch, state-9 test and
+X-to-800 correction use opponent. Mode 50 omits launch/correction; 40 omits its
+own X correction and selects 41. Mode 41 initializes 8 / selects 42;
+42 processes / selects 43 / clears only opponent. Modes 46/56 omit signed
+continue-count gates. Current starts in 6/16/26/36/46/56 use
+(2,1)/(2,1)/(2,1)/(0,1)/(0,1)/(3,1); opponent in 46 uses (8,0).
+All notice IDs, thresholds and genuine exits are reviewed.
+
+Mode 52 processes / selects 53 / clears only opponent, with no phase reset.
+Mode 53 resets opponent to 9 at `0x005D64AF`, with vx 7.75 / vy 18 / gravity
+0.6; on departure it corrects X to 800 / selects 54 / resets phase and breaks,
+otherwise it increments phase. The former fade/stage block is absent. Mode 60
+initializes 106 / configures 0 / processes twice before eight position writes
+and phase += 60; 61 retains promoted increment before narrowing. Mode 64 first
+sets the observed reset global, then independently guards and decrements unsigned
+bytes at `0x0066C239` / `0x0066C23A` before fade/selection.
+
+All 202 calls and stack joins pin thirteen complete existing-origin callees
+and reject wrong cleanup. All 41 processing calls use current; resets use
+opponent six times; starts split 6/6 and clears 7/9 current/opponent. All 355
+physical bindings include 202 calls, 26 readonly floats, 65 writable global
+accesses, two distinct single NULs at `0x00659F34` / `0x00659F35`, two switch
+addresses and 58 destinations. Actual COFF payloads/permissions, widths, zero
+addends and local offsets are checked; globals bind by address. Two new aliases,
+`g_SequenceByteAt0066C239` / `g_SequenceByteAt0066C23A`, describe only observed
+MOVZX guards and byte load/decrement/store. Original symbols, declarations and
+data ownership remain unknown. Their canonical header contains only narrow
+unsigned-byte declarations. Shared headers remain unchanged; declarations earn
+no extra source, origin or exact credit. Ignored returns do not prove original
+void, and complete receiver layouts remain unknown. Never construct/embed
+partial owners. One natural body has no target arrays, assembly, padding,
+inert locals, fake returns, ABI misdeclarations or alternate bodies; its 0x3C
+frame contains functional compiler temporaries.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-005d4890
+```
+
+First preview, independent canonical compilation and separate cold replay match
+all 11,042 bytes / 355 relocations with VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. Keep `f058-native-audit.py` / `.json`,
+`f058-5d4890.asm`, `f058-sequence.c`, `f058-decompile.log`, `f058-case-index.py`
+/ `.json`, `f058-native-correspondence.py` / `.json`, `f058-abi-review.py` /
+`.json`, all thirteen `f058-callee-*.asm`, `f058-behavior-review.json`,
+`f058-compose.py`, `f058-sequence-diagnostic.py`, `f058-bind-draft.py`,
+`f058-family-bindings.json`, `f058-accepted-replay.json`, `f058-cold-replay.log`,
+`f058-evidence-check.py` / `.json`, `f058-progress.json` and complete
+`f058-probe-00/` inputs. Only the bit-identical obsolete preview duplicate was
+removed, reclaiming 32,756 bytes with a hash-pinned receipt; canonical objects,
+all inputs/evidence and older controls remain.
+
+Total: 151 functions / 471,799 code bytes, 23.91% reviewed and 23.86%
+conservative. The manifest records 91 additions / 461,916 code bytes and 98
+source/header inputs above F009. All 150 prior units/inputs, historical ledger
+and function rows, R268 and all 97 unknown origins remain unchanged. No prior
+unit was rebuilt. F021/F048 stay unaccepted; every pending byte remains in the
+goal denominator. Full CI passed all 3,603 tests in 127.171 seconds.
+CI used nice 10; the sampled worker used about 248 MiB RSS and one CPU core.
+
+Active continuation is F048 at `0x004AC040`, comparing all 83,922 bytes. A new
+constant-first equality control in state 89 emits identical whole code and
+all 2,352 relocation records; reject it and retain the complete private
+`.analysis/f048-equality89-control/` inputs/object/log/receipt. The original
+launcher exit status was not retained, so this is emitted-object diagnostic
+evidence only. The active 03 source/object remain unchanged. Native state 88
+exits directly to `0x004C03A7`. The source's final frame call corresponds to
+`0x004C039F` and is reachable after switch `break`; replacing the state-88
+return with `break` would change behavior and is invalid. Continue investigating
+the first physical GPR split at `0x004ADEFA` in state 89 with the actual state-88
+conversion/counter lifetime and the F021 analogue. Preserve all controls,
+151 accepted units and origins. Do not repeat rejected controls without new
+native/compiler evidence or add padding, inert locals, assembly, fake returns
+or ABI result changes. No cropped comparison earns credit. Continue the full
+95% goal with existing Ghidra/local tools, no REA or pause, serial low-priority
+builds and CPU/memory monitoring.

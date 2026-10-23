@@ -96,3 +96,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00561D40,CharacterSequence::AdvanceAt00561D40,CharacterSequence561D40::AdvanceSequence,R048,character-sequence-00561d40
 0x005882B0,CharacterSequence::AdvanceAt005882B0,CharacterSequence5882B0::AdvanceSequence,R048,character-sequence-005882b0
 0x005AC250,CharacterSequence::AdvanceAt005AC250,CharacterSequence5AC250::AdvanceSequence,R048,character-sequence-005ac250
+0x005D4890,CharacterSequence::AdvanceAt005D4890,CharacterSequence5D4890::AdvanceSequence,R048,character-sequence-005d4890

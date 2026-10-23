@@ -7194,3 +7194,84 @@ F056 and F057 subsequently passed their shared final CI: all 3,603 tests in
 169.935 seconds, plus target/tracking/progress-card/whitespace checks. Both cold
 replays and unchanged prior units/origins are checked by
 `f056-f057-evidence-check.py` / `.json`; F056 remains unchanged during F057.
+
+
+## F057 sequence checkpoint (2026-10-23)
+
+`CharacterSequence5AC250::AdvanceSequence` at `0x005AC250` cold-replays exact
+from `src/CharacterSequence5AC250.cpp` / `.hpp`: **10,998 code bytes**, 2,556
+instructions, 299 branches and one return. Its 280-byte table and 98-byte remap
+extend comparison through `0x005AEEBF`, directly adjoining the next function
+at `0x005AEEC0` without alignment. Descriptor `size = 10998` and
+`compare_size = 11376` compare all **11,376 bytes** and 379 relocations.
+R048 evidence, complete bounds and hashes remain unchanged.
+
+All 69 states, defaults and the common music/countdown/current+opponent level
+tail are reviewed. Twelve position/alpha offsets are 28 bytes above F051,
+without identifying a complete layout or original owner. Forty-five paths
+correspond after explicit shifts, GPR classes and actual readonly payloads;
+all 24 changed/new paths were independently reviewed. That diagnostic earns
+no source compiler or exact credit. Full physical equality and independent
+canonical cold replay establish acceptance.
+
+Own phase 230 launch/reset is absent in 0/10/20/30/50; ownX correction is absent
+in 0/10/20/30/40/50. Opponent speed in 3/13/33 is 7.75f. State 40 selects 41;
+41 initializes notice 12/selects 42; 42 processes/selects 43 and clears only
+opponent at `0x005ADA70`, without counter reset. States 46/56 omit the complete
+signed continue-count gates. Current transitions in 6/16/26/36/46/56 are
+(2,1)/(2,0)/(2,1)/(0,1)/(0,1)/(3,1); opponent in 16/46 uses (8,1)/(8,1).
+All notice IDs, thresholds and genuine exits remain native-supported.
+
+State 52 processes/selects 53 without clears or counter reset. State 53
+starts opponent state 9 at `0x005ADFC6`, writes vx 7.75 / vy 18 / gravity 0.6, then
+on departure writes opponentX 800, selects 54, resets the counter and breaks;
+otherwise it increments the counter. The entire old fade/stage block is
+absent. State 57 writes +6EF =1 then +713 =7 after processing, with no mode
+selection call. States 60/61 retain their meaningful counter/initialization
+order and promoted increment before narrowing.
+
+All 220 calls and stack joins pin thirteen complete callees and reject an
+incorrect cleanup. All 45 processing calls use current; primary resets use
+opponent six times, starts split 6/6 and clears 7/8 current/opponent. There
+is no stage-load call or stage-byte/continue-count access. All 379 physical
+bindings include 220 calls, 26 readonly floats, 59 writable global accesses,
+two distinct NULs at `0x00659E10/0x00659E11`, two switch addresses and 70
+destinations. Actual COFF payloads/permissions, widths, addends and local
+offsets are checked; globals bind by address. Only unused stage declarations
+were omitted from this new header; all shared headers remain unchanged.
+Original declarations, identity and complete layout remain unknown. Never
+construct/embed the partial receiver; declaration-only callees earn no credit.
+The single natural body has no target arrays, assembly, padding, inert locals,
+fake returns, ABI misdeclarations or alternate bodies.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-005ac250
+```
+
+The first preview, independent canonical compilation and separate cold replay
+all match with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+F056 separately cold-replays 11,102 code /11,428 compared bytes and 365
+relocations. Together F056/F057 add **22,100 code bytes**, comparing 22,804
+bytes and 744 relocations. All 148 earlier units/inputs remain unchanged and
+were not rebuilt; the saved F056 checkpoint also proves it unchanged during
+F057. The manifest preserves 90 additions /451,204 code bytes and 96 new
+source/header inputs above F009, excluding F021/F048. F056 is preserved in
+[history](RE_HANDOFF_HISTORY.md#f056-sequence-checkpoint-2026-10-23).
+
+Retain `f057-native-audit.py` / `.json`, `f057-5ac250.asm`, `f057-sequence.c`,
+`f057-decompile.log`, `f057-case-index.py` / `.json`,
+`f057-native-correspondence.py` / `.json`, `f057-abi-review.py` / `.json`, all
+thirteen `f057-callee-*.asm`, `f057-behavior-review.json`, `f057-compose.py`,
+`f057-sequence-diagnostic.py`, `f057-bind-draft.py`, `f057-family-bindings.json`,
+`f057-accepted-replay.json`, `f057-cold-replay.log`, `f057-progress.json`,
+`f056-checkpoint-before-f057.json` and `f056-f057-evidence-check.py` / `.json`.
+Both complete first-preview source/header/object snapshots survive in
+`f056-probe-00/` and `f057-probe-00/`. Only their bit-identical obsolete
+preview duplicates were removed, reclaiming 67,484 bytes with hash-pinned
+receipts. Canonical objects, inputs, evidence and all older controls remain.
+Shared full CI passes all 3,603 tests in 169.935 seconds. Target, tracking,
+progress-card and whitespace checks pass. Combined evidence checks preserve
+all 148 prior units/inputs, historical ledger/function rows, R268 and all 97
+unknown origins, and prove F056 unchanged during F057. The observed CI worker
+used about one CPU core and 270 MiB RSS at niceness 10. Compiler builds retain
+the serial lock and niceness 15.
