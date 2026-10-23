@@ -6887,3 +6887,84 @@ progress-card and whitespace checks pass. The evidence check preserves all
 144 prior unit descriptors and inputs, historical ledger prefixes and function
 rows, R268 and all 97 unknown origins. The observed low-priority CI worker used
 about one CPU core and 249 MiB RSS; compiler builds remain serial.
+
+
+## F053 sequence checkpoint (2026-10-23)
+
+`CharacterSequence51E640::AdvanceSequence` at `0x0051E640` cold-replays exact
+from `src/CharacterSequence51E640.cpp` / `.hpp`: **11,521 code bytes**, 2,669
+instructions, 317 branches and one return. Its 260-byte guarded table and
+98-byte remap follow contiguously through `0x005214A6`. The descriptor uses
+`size = 11521` and `compare_size = 11879`: all **11,879 bytes** compare,
+while only code earns coverage. Nine following INT3 bytes are alignment before
+`0x005214B0`. R048 origin evidence, complete bounds and hashes remain unchanged.
+
+The natural body preserves all 64 signed-byte sequence states, defaults and
+the common music/countdown/current+opponent level tail. Twelve specifically
+observed position/alpha fields are 4 bytes below F051; this does not identify
+a complete owner layout or original identity. Whole native case comparison
+supports 37 paths after those explicit shifts, GPR classes and actual readonly
+payloads. All 27 changed/new paths were reviewed separately. This diagnostic
+earns no compiler or exact credit; complete physical equality and independent
+canonical cold replay establish acceptance.
+
+Relative to F051, states 11/12/31/32/33 are absent, and 58/59 are present.
+States 3/13/23 use opponent speed 7.75f; 43 uses 8.0f. States 10/20/30 omit
+the complete phase 230 launch/reset block; 10/30/40 omit the ownX correction,
+while 20 retains it. Modes 10/30 advance to 13/34. Actual current transition
+arguments in 36/46/58 are (0,1)/(2,1)/(3,1); opponent in 46 uses (8,0).
+All notification IDs, native threshold forms and genuine breaks are checked.
+
+State 52 removes transition clears. State 53 starts opponent state 138, then
+writes opponentX 800, selects mode 54, initializes notice 13 and resets the
+counter when that opponent state ends. State 54 processes before mode 55,
+current/opponent clears and counter reset. State 55 holds the independent
+fade/counter gates: configure text, stage byte 8, load stage, opponent reset 0,
+opponentX 800, ownX 480. States 56/57 initialize/process before the timed clears
+and mode 58. State 58 holds the signed continue-count gate and transition;
+59 processes before mode 60/selection 7. State 60 preserves eight position
+writes and counter += 60 before initialization/two current processing calls;
+61 preserves its promoted increment before narrowing to short.
+
+All 387 relocations physically compare: 219 calls, 26 readonly float references,
+73 writable global accesses, two readonly empty strings, two table/remap
+addresses and 65 destinations. Actual COFF payloads, widths, permissions,
+addends and local offsets are checked. Distinct adjacent single NULs at
+`0x006598AC/0x006598AD` retain separate bindings. Globals bind by address;
+existing narrow declarations are repeated without widening. Shared headers
+and wider data-ownership claims remain unchanged.
+
+All 219 calls and every stack join are audited against fourteen complete
+callee bodies, rejecting an incorrect cleanup control. All 43 processing calls
+use current; primary resets split 2/6, transition starts 6/6 and clears 8/8
+current/opponent. Opponent reset 138 is at `0x005203B2`; stage load and reset 0
+are at `0x0052054E/0x0052055E`. Original names, declarations, identities and
+complete layouts remain unknown. Never construct/embed the partial receiver
+view. Declaration-only callees earn no extra source, origin or exact credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-sequence-0051e640
+```
+
+The first complete private preview, independent canonical compilation and
+separate canonical cold replay all physically match with pinned VC7.1 build
+3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 145 earlier units/inputs are
+unchanged and were not rebuilt. The manifest preserves 86 literal additions
+/405,748 code bytes and 88 new source/header inputs above F009, excluding
+F021/F048. F052 is preserved in [the previous checkpoint](RE_HANDOFF_HISTORY.md#f052-sequence-checkpoint-2026-10-23).
+
+Retain `f053-native-audit.py` / `.json`, `f053-51e640.asm`, `f053-sequence.c`,
+`f053-decompile.log`, `f053-case-index.py` / `.json`,
+`f053-native-correspondence.py` / `.json`, `f053-abi-review.py` / `.json`, all
+fourteen `f053-callee-*.asm`, `f053-behavior-review.json`, `f053-compose.py`,
+`f053-sequence-diagnostic.py`, `f053-bind-draft.py`, `f053-family-bindings.json`,
+`f053-accepted-replay.json`, `f053-cold-replay.log`, `f053-evidence-check.py` /
+`.json` and `f053-progress.json`. Complete exact preview source/header/object
+and receipts remain in `f053-probe-00/`. Only its byte-identical obsolete
+duplicate `build/probes/F053Preview.obj` was removed, reclaiming 34,777 bytes
+with a hash-pinned cleanup receipt. Canonical objects and all evidence remain.
+Final CI passes all 3,603 tests in 107.850 seconds; target, tracking,
+progress-card and whitespace checks pass. The evidence check preserves all 145
+prior unit descriptors and inputs, historical ledger prefixes/function rows,
+R268 and all 97 unknown origins. The observed low-priority CI worker used about
+one CPU core and 262 MiB RSS; compiler builds remain serial.
