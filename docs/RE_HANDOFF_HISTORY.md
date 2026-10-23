@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F043. Counts, active
+This file preserves historical checkpoints through R268 and F044. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -6275,6 +6275,99 @@ complete investigative source and receipt remain in `f043-probe-00.*`, with
 profile and diagnostic limits in `f043-control-manifest.json`. Original evidence,
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 8.9 GiB available memory and CPU 83% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F044 checkpoint before F045 acceptance (2026-10-23)
+
+## Latest accepted cohort: F044
+
+`CharacterAI557380::ChooseAction` at `0x00557380..0x00558F48` cold-replays
+exact from `src/CharacterAI557380.cpp` / `.hpp`: **7,113 code bytes**, 1,846
+instructions, 397 internal branches and one return. There are no switches or
+external branch exits; seven following INT3 bytes are alignment. The complete
+R047 body hash and ownership evidence remain unchanged.
+
+Only queued mode 1 remains. Preserve five command-103 gates, six early spell
+choices, the attack/state/weighted/movement/ground/air sequence and six distinct
+late spell gates. The late third gate reads +0x398 mode 0, fourth reads +0x39A
+mode 1, and sixth reads +0x398 mode 1. The second and sixth command-13 writes
+continue. No +0xF10/+0xF12 access or state-301 queued-mode-2 write is present.
+The ground B/vertical-one gate requires distance above 240 and below 360.
+Three assignment chains retain native command read/store repetitions.
+
+The pointer-only receiver view is never constructed or embedded. Both floats
+in the source-defined local separation record are used. Original identity,
+declarations and complete layout remain unknown. Six inline Boolean threshold
+values are meaningful compiler temporaries. No assembly, target arrays, padding,
+inert locals, fake returns, ABI misdeclarations or alternate bodies are used.
+
+All 198 relocations are bound: 90 calls, 101 readonly references to 25 actual
+float payloads, and seven dword counter accesses at `0x0068D64C` (four reads,
+three writes). Fresh COFF payloads, zero addends, access widths and target section
+permissions were checked. Writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 86 CRT rand and two predicates on the
+opponent. There are no range calls. Wrapper ownership stays unresolved.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-00557380
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the whole body and every
+relocation. All 137 earlier units and inputs remain unchanged and were not
+rebuilt. Independently reviewed portions of our authored F036 statements are
+reused with the whole F044 emission separately verified. The new header includes
+unchanged `CharacterAIPolicy.hpp` for observed callee declarations. Changing that
+header affects all prior dependent AI units plus F044; its source affects the
+six F033 units. Replay affected units only.
+
+Private receipts below `.analysis/`: `f044-native-audit.py` / `.json`,
+`f044-557380.asm`, `f044-ai.c`, `f044-decompile.log`,
+`f044-behavior-review.json`, `f044-compose.py`, `f044-ai-diagnostic.py`,
+`f044-dispatch-audit.json`, `f044-bind.py`, `f044-family-bindings-preview.json`,
+`f044-family-bindings.json`, `f044-accepted-replay.json`, `f044-cold-replay.log`
+and `f044-progress.json`. The first complete draft aligns all physical operands
+and branch destinations. Diagnostic alignment alone earns no exact credit.
+
+The next bounded R047 AI candidate is F045 at `0x005349B0..0x00536356`
+/6,567 bytes. Its whole native audit checks 1,683 instructions, 340 internal
+branches, one return and 92 calls: two float wrappers, 77 CRT rand, ten integer
+range helpers, one call at `0x00455580` and two predicates. There are no switches
+or external exits; nine following INT3 bytes are alignment. Retain `f045-*`
+evidence. The full decompile, behavior and thirteen receiver contexts are
+reviewed in `f045-behavior-review.json`; the complete R109 recorded-range helper
+at `0x00455580` is separately audited. Its observed ABI is ECX plus two dword
+endpoints, signed EAX result and RET 8, with distinct recording/replay behavior.
+Do not substitute plain rand/range. Source remains undrafted; full physical
+comparison and canonical cold replay are required before any exact credit. The 95% goal remains active and incomplete;
+cleanup/handoff does not pause it. All 97 unknown origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F044 final validation: all 3,603 CI tests passed in 108.042 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (87,594
+file bytes); `f044-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f044-probe-00.*`, with
+profile and diagnostic limits in `f044-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.9 GiB available memory and CPU 80% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve

@@ -137,3 +137,4 @@ CharacterAI4EA090::ChooseAction,0x004EA090,function
 CharacterAI5C7FC0::ChooseAction,0x005C7FC0,function
 CharacterAI57B900::ChooseAction,0x0057B900,function
 CharacterAI557380::ChooseAction,0x00557380,function
+CharacterAI5349B0::ChooseAction,0x005349B0,function

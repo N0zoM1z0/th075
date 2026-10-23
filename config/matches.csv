@@ -137,3 +137,4 @@ address,name,size,status,match_percent,unit,evidence
 0x005C7FC0,CharacterAI5C7FC0::ChooseAction,7264,matching,100.00,character-ai-005c7fc0,scripts/repo-python scripts/replay-exact-units.py --unit character-ai-005c7fc0; F042; complete body and all 192 relocations
 0x0057B900,CharacterAI57B900::ChooseAction,7125,matching,100.00,character-ai-0057b900,scripts/repo-python scripts/replay-exact-units.py --unit character-ai-0057b900; F043; complete body and all 191 relocations
 0x00557380,CharacterAI557380::ChooseAction,7113,matching,100.00,character-ai-00557380,scripts/repo-python scripts/replay-exact-units.py --unit character-ai-00557380; F044; complete body and all 198 relocations
+0x005349B0,CharacterAI5349B0::ChooseAction,6567,matching,100.00,character-ai-005349b0,scripts/repo-python scripts/replay-exact-units.py --unit character-ai-005349b0; F045; complete body and all 189 relocations

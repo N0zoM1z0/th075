@@ -17791,3 +17791,97 @@ profile and diagnostic limits in `f044-control-manifest.json`. Original evidence
 canonical inputs, matching outputs and F021 remain preserved. A host sample had
 8.9 GiB available memory and CPU 80% idle, without interval swap activity. Builds
 and validation remained serial and low priority.
+
+## F045: complete AI policy at 005349B0 (2026-10-23)
+
+The whole R047 extent is `0x005349B0..0x00536356` /6,567 bytes, SHA-256
+`512a4961ad527fcc6778910b971bf4096be38deed86b596cb520a4787ec3117a`.
+The full CFG has 1,683 instructions, 340 internal branches, one return and no
+switches or external exits. Nine following INT3 bytes are alignment. The
+attested read-only Ghidra decompile supplies hypotheses; native bytes control
+reconstruction and acceptance.
+
+The natural `CharacterAI5349B0::ChooseAction` body preserves every independently
+reviewed decision. Own states 50..149 refresh/reset timers and choose independent
+inputs, then return. Type 3 with stock and an expired decrement writes command
+230 only on the ground and returns. Type 2 with stock decrements the timer, then
+checks range <75 before timer<=-180, ground height and a distinct range <50 for
+command 220 and return. Type 1 with stock/expiration/ground/distance<240 calls
+the distinct recorded-range policy; result <30 writes 210 and continues.
+Type 0 with stock decrements, tests range <75 before expiration/ground, then
+range <50 before distance<240 for command 201 and return. Separate range <50
+and range <50 calls write 200/202 with real exits. The remaining range (0,3)
+plus 200 write continues ordinary AI. No independent random call is merged.
+
+The whole 139-byte R109 helper at 0x00455580 is independently checked against
+its frozen hash and observations. ECX is saved; two signed dword endpoints are
+stack inputs, signed EAX is the result, and RET 8 cleans them. Mode 2 consumes a
+queued signed short or keeps zero if empty; other modes use CRT rand, while mode
+1 appends the short. Signed scaling truncates toward zero. The new class's local
+declaration preserves the distinct call without changing accepted shared ABI.
+Original declaration and owner remain unknown; no helper source or exact credit.
+
+Queued modes 1..5, attack/state/resource/movement/ground/air/late decisions reuse
+independently reviewed portions of our authored F036 statements, with all F045
+physical bytes separately verified. Preserve both +0xF12 checks, state-301 queued
+mode 2, two meaningful inline Boolean thresholds and three command assignment
+chains. All five command-103 and twelve early/late command-13 gates are absent.
+The signed dword counter at 0x0068D648 has four reads and three writes; original
+declaration, owner and semantic name remain unknown. Both local separation
+floats are used; the pointer-only receiver is never constructed or embedded.
+No assembly, target arrays, padding, inert locals, fake returns, ABI
+misdeclarations or alternate conditional bodies are used.
+
+The first complete draft emits 6,567 bytes /1,683 instructions /92 calls and
+aligns every physical operand and branch destination. The binder verifies all
+189 relocations: 92 calls (two wrappers, 77 CRT rand, ten ordinary range, one
+recorded-range, two predicates), 90 readonly references to 22 actual float
+payloads, and seven counter accesses. Both range policies use the current
+receiver; predicates use the opponent at +0x2E8. COFF payloads, zero addends,
+offsets, widths and section permissions are checked. Writable storage is bound
+by address, not contents. The full relocated object equals every original byte;
+diagnostic alignment alone earns no credit. Wrapper ownership stays unresolved.
+
+Canonical cold replay of `character-ai-005349b0` rebuilds
+`build/matching/CharacterAI5349B0.obj` with pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the full comparison.
+The receipt pins source, object, target and all relocations. All 138 prior units
+and inputs remain unchanged and were not rebuilt. `CharacterAIPolicy.hpp`
+affects all dependent AI units including F045; its source affects six F033 units.
+
+Coverage becomes 139 exact functions /344,344 bytes: 17.45% reviewed authored,
+or 17.42% conservatively including every pending byte. The cumulative manifest
+preserves 79 literal additions /334,461 bytes above F009 and 74 new source/header
+inputs. Historical prefixes and complete descriptors remain guarded; R268
+origin evidence and all 97 unknown origins remain unchanged. F021 remains
+unaccepted. F044 handoff/verification sections are archived verbatim. Continue
+toward 95% with Ghidra/local tools, without REA or pausing for cleanup/handoff.
+
+F046 preparation retains the complete R047 extent at
+`0x004C8CD0..0x004CA637` /6,504 bytes, SHA-256
+`587f2c16622d2235fa735026d623cc7a7a5abe5f81fe1604801d530032523875`.
+The native CFG has 1,639 instructions, 343 internal branches, one return, no
+switches or external exits, eight trailing INT3 alignment bytes and 99 calls
+(two wrappers, 92 CRT rand, four range and one opponent predicate). The attested
+decompile, full behavior and five receiver contexts are retained in `f046-*`
+evidence; a private natural body and composer reuse independently reviewed
+parts of our authored F034 source. Refresh negative timer with range (0,60),
+then continue. Preserve the distinct type-2/0 successful exits and type-1 bypass,
+ordered state-specific overwrite groups, 0.8/1.0/0.4 weighted choices and the
+single meaningful inline height threshold. Five command-103 gates and twelve
+command-13 gates are absent. Signed counter at 0x0068D630 has no accepted
+mapping or original declaration. No source/exact credit yet; compile and verify
+the whole body, every relocation and canonical cold replay. Continue the active
+95% goal with local Ghidra and serial low-priority builds, without REA or pausing
+for cleanup/handoff, preserving all 139 accepted units and F021.
+
+F045 final validation: all 3,603 CI tests passed in 93.719 seconds,
+including adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (86,197
+file bytes); `f045-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f045-probe-00.*`, with
+profile and diagnostic limits in `f045-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.9 GiB available memory and CPU 90% idle, without interval swap activity. Builds
+and validation remained serial and low priority.
