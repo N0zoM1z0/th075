@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F034. Counts, active
+This file preserves historical checkpoints through R268 and F035. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -5443,6 +5443,97 @@ with its profile and limits in `f034-control-manifest.json`. Original evidence,
 canonical inputs, matching outputs and F021 remain preserved. The sampled host
 had 8.6 GiB available memory and CPU 88% idle, with no swap-in or swap-out in
 that interval. Builds and validation remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F035 checkpoint before F036 acceptance (2026-10-23)
+
+## Latest accepted cohort: F035
+
+`CharacterAI59F4F0::ChooseAction` at `0x0059F4F0..0x005A1555` cold-replays
+exact from `src/CharacterAI59F4F0.cpp` / `.hpp`: **8,294 code bytes**, 2,118
+instructions, 429 internal branches and one return. There are no switch tables
+or external branch exits. Ten following INT3 bytes are alignment. The original
+R047 body hash and ownership evidence remain unchanged.
+
+The separate natural body preserves signed-byte indexed reads at offset 0x370,
+conditional short-timer decrements, command overwrites and two native copies of
+the movement/counter policy. The receiver interface remains pointer-only; do
+not construct or embed it. The local two-float separation record is source-defined
+and fully used. Six command assignment chains preserve observed read/store
+repetitions. No assembly, byte arrays, inert locals, padding or alternate bodies
+are used. Original identities, declarations and full owner layouts stay unknown.
+
+All 229 relocations are bound: 113 direct calls, 101 readonly references to 22
+float constants and 15 writable-global references. The counter at `0x0068D660`
+has eight dword reads and six writes across the two paths. The existing global
+at `0x006714D0` has one MOVSX byte read, preserving its previously accepted
+signed-byte declaration. Fresh COFF payloads, access widths and target section
+permissions were checked; writable storage is bound by address, not contents.
+Calls comprise two float wrappers, 96 CRT rand calls, one predicate on the
+opponent and 14 thiscall range-helper calls on the current receiver. These
+declaration-only callees earn no new origin or exact credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-0059f4f0
+```
+
+Canonical replay cold-builds the object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares all bytes and relocations.
+All 127 earlier units and inputs remain unchanged and were not rebuilt. The
+new header includes unchanged `CharacterAIPolicy.hpp` for observed callee
+declarations. Changing that header affects the six F033 units, F034 and F035;
+changing only `CharacterAIPolicy.cpp` affects its six F033 units. Replay affected
+units only, preserving the unchanged `GameLeafHelpers.hpp` ABI.
+
+Private receipts below `.analysis/`: `f035-native-audit.py` / `.json`,
+`f035-59f4f0.asm`, `f035-ai.c`, `f035-decompile.log`, `f035-compose.py`,
+`f035-ai-diagnostic.py`, `f035-dispatch-audit.json`, `f035-bind.py`,
+`f035-family-bindings-preview.json`, `f035-family-bindings.json`,
+`f035-accepted-replay.json`, `f035-cold-replay.log` and `f035-progress.json`.
+The rejected first draft omitted the reviewed attack-state group; its source
+and diagnostic remain in `f035-probe-00.*`. The corrected full draft aligns all
+physical operands and branches, but only canonical cold replay earns credit.
+See [KNOWLEDGE_BASE.md](KNOWLEDGE_BASE.md) for the observed behavior.
+
+The next bounded R047 AI candidate is F036 at `0x00532950..0x005349A0`
+/8,273 bytes. Its full native audit checks 2,137 instructions, 457 internal
+branches, one return and 98 direct calls, with no range-helper calls. There are
+no switches or external exits; fifteen following INT3 bytes are alignment.
+Attested read-only Ghidra decompilation and private native evidence are retained
+in `f036-*`. Full behavior reading and native receiver checks are recorded in
+`f036-behavior-review.json`: all three predicate calls use the opponent, and
+two late weighted spell writes continue into later decisions. Preserve those
+fallthroughs, signed-short checks at 0xF10/0xF12 and random-call ordering when
+drafting. No source or exact credit is registered. The 95% goal remains active and incomplete; cleanup and handoff
+do not pause it. All 97 unknown origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F035 final validation: all 3,603 CI tests passed in 88.236 seconds, including
+complete adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object and header pins remain intact.
+Four superseded previews were removed after equality and cold-hash checks
+(101,634 file bytes); `f035-cleanup.json` records paths, sizes and hashes.
+Both investigative source drafts and receipts remain in `f035-probe-00.*` and
+`f035-probe-01.*`; `f035-control-manifest.json` records profiles and diagnostic
+limits. All original evidence, canonical inputs, matching outputs and F021 are
+preserved. A host sample during CI had 8.6 GiB available memory and CPU 72% idle,
+with 8 KiB/s swap-in and no swap-out in that interval. Builds and validation
+remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,
