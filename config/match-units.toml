@@ -15906,3 +15906,67 @@ relocations = [
   { offset = 0x634, type = "DIR32", symbol = "$L61989", target = 0x005E6D11 },
   { offset = 0x638, type = "DIR32", symbol = "$L61996", target = 0x005E6D89 },
 ]
+
+[units.character-input-policy-005e6f70]
+source = "src/CharacterInput5E6F70.cpp"
+object = "build/matching/CharacterInput5E6F70.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterInput5E6F70::PollCommands"]
+symbol = "?PollCommands@CharacterInput5E6F70@@QAEXXZ"
+target_address = 0x005E6F70
+size = 1021
+compare_size = 1021
+relocations = [
+  { offset = 0x16, type = "DIR32", symbol = "$SG287", target = 0x00659FA0 },
+  { offset = 0x1E, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3D, type = "DIR32", symbol = "$SG292", target = 0x00659FA8 },
+  { offset = 0x45, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x64, type = "DIR32", symbol = "$SG297", target = 0x00659FB0 },
+  { offset = 0x6C, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x8B, type = "DIR32", symbol = "$SG302", target = 0x00659FB8 },
+  { offset = 0x93, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0xB2, type = "DIR32", symbol = "$SG307", target = 0x00659FC0 },
+  { offset = 0xBA, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0xD9, type = "DIR32", symbol = "$SG312", target = 0x00659FC8 },
+  { offset = 0xE1, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x100, type = "DIR32", symbol = "$SG317", target = 0x00659FD0 },
+  { offset = 0x108, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x127, type = "DIR32", symbol = "$SG322", target = 0x00659FD8 },
+  { offset = 0x12F, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x14E, type = "DIR32", symbol = "$SG327", target = 0x00659FE0 },
+  { offset = 0x156, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x175, type = "DIR32", symbol = "$SG332", target = 0x00659FE8 },
+  { offset = 0x17D, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x19C, type = "DIR32", symbol = "$SG337", target = 0x00659FF0 },
+  { offset = 0x1A4, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x1C3, type = "DIR32", symbol = "$SG342", target = 0x00659FF8 },
+  { offset = 0x1CB, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x1EA, type = "DIR32", symbol = "$SG347", target = 0x0065A000 },
+  { offset = 0x1F2, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x211, type = "DIR32", symbol = "$SG352", target = 0x0065A008 },
+  { offset = 0x219, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x238, type = "DIR32", symbol = "$SG357", target = 0x0065A010 },
+  { offset = 0x240, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x25F, type = "DIR32", symbol = "$SG362", target = 0x0065A018 },
+  { offset = 0x267, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x286, type = "DIR32", symbol = "$SG367", target = 0x0065A020 },
+  { offset = 0x28E, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2AD, type = "DIR32", symbol = "$SG372", target = 0x0065A028 },
+  { offset = 0x2B5, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2D4, type = "DIR32", symbol = "$SG377", target = 0x0065A02C },
+  { offset = 0x2DC, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2FB, type = "DIR32", symbol = "$SG382", target = 0x0065A030 },
+  { offset = 0x303, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x322, type = "DIR32", symbol = "$SG387", target = 0x0065A034 },
+  { offset = 0x32A, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x349, type = "DIR32", symbol = "$SG392", target = 0x0065A038 },
+  { offset = 0x351, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x370, type = "DIR32", symbol = "$SG397", target = 0x0065A03C },
+  { offset = 0x378, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x394, type = "DIR32", symbol = "$SG402", target = 0x0065A040 },
+  { offset = 0x39C, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3B8, type = "DIR32", symbol = "$SG407", target = 0x0065A044 },
+  { offset = 0x3C0, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3DC, type = "DIR32", symbol = "$SG412", target = 0x0065A048 },
+  { offset = 0x3E4, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z", target = 0x00455800 },
+]

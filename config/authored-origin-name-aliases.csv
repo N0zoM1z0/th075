@@ -100,3 +100,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005E5500,CharacterAux::RunAt005E5500,CharacterAux5E5500::AdvanceAuxiliary,R049,character-aux-policy-005e5500
 0x005E59C0,CharacterSpecial::AdvanceAt005E59C0,CharacterSpecial5E59C0::InitializeStage,R049,character-special-stage-005e59c0
 0x005E68C0,CharacterSpecial::RenderAt005E68C0,CharacterSpecial5E68C0::RenderStage,R049,character-special-render-005e68c0
+0x005E6F70,CharacterAux::RunAt005E6F70,CharacterInput5E6F70::PollCommands,R049,character-input-policy-005e6f70

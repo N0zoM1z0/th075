@@ -7648,3 +7648,89 @@ equality against the retained canonical cold object
 accepted objects, unaccepted active objects and shared tools remain. Sampled
 intervals show no swap activity and about 8.5 to 9.1 GiB available memory.
 Compilation remains serial at niceness 15; CI uses niceness 10.
+
+
+## F064 complete stage renderer checkpoint (2026-10-24)
+
+
+`CharacterSpecial5E68C0::RenderStage` cold-replays exact from
+`src/CharacterSpecial5E68C0.cpp` / `.hpp`: **1,584 code bytes**, 353 instructions,
+13 branches and one ret4. The contiguous 12-byte table and ten-byte remap
+extend comparison through `0x005E6F05`: **all 1,606 bytes and 40 relocations
+match**. Ten following INT3 bytes stay outside comparison. The R049 historical
+role `CharacterSpecial::RenderAt005E68C0` is retained through an explicit alias;
+origin evidence, extents and body/table hashes remain unchanged.
+
+All ten states, rectangle/coordinate values, alpha channels, counter effects
+and actual receivers are reviewed. Five complete direct callees, the actual
+USER32!SetRect import at `0x00657210` and every stack join pin all 27 calls.
+Eight SetRect calls use stdcall/20-byte cleanup; wrong 16-byte cleanup fails.
+Two filter calls use current+4, eight draws use current+700, and nine
+constructor/build calls use local EBP-88. Current is saved at EBP-9C, the shared
+RECT at EBP-98 and the selector at EBP-A0; the native frame is exactly 0xA0.
+All 40 physical bindings include 19 callees, eight IAT references, eight actual
+readonly constants, two table/remap addresses and three table destinations.
+COFF/PE payloads and permissions, addends, operand fields and the complete
+physical body/tables are checked. No accepted header or global ledger changes.
+
+The owned local uses a distinct **complete physical packet view**. Target
+observations establish four 16-byte coordinate records at 0/10/20/30, a
+constructed subreceiver at +40, a 132-byte clear and independent 33-DWORD whole
+record copies in 40C9A0/40CA80/40CEF0/40D2E0. The source view groups the remaining
+68 initialized/copied bytes into a constructed 17-DWORD opaque payload. This
+is an inference about the observed data contract, not recovered original payload
+member types/partition, matrix identity, class identity or original sizeof.
+An independent natural aggregate probe reproduces all 85 constructor bytes
+with its six actual relocations; ordinary aggregate assignment copies all
+33 DWORDs. Compile-time offset/size guards check this complete representation.
+Both empty 14-byte dependencies remain unknown and earn no source/origin credit.
+The accepted 64-byte `SpriteTransform.hpp` prefix remains unchanged and is never
+instantiated or embedded. No raw owner buffer, arbitrary padding or inert local
+supplies storage; all 132 bytes participate in the real lifecycle/transfer.
+
+A single shared RECT belongs to the switch scope; each drawing branch uses it.
+Declaration-order/name controls did not resolve VC7 local allocation; three
+branch-local rectangles allocated three distinct slots. The actual short
+counter uses 16-bit increment. Keep the native ineffective unsigned-alpha
+lower clamp and zeroing block at `0x005E6CFF`, which Ghidra omits. Preserve the
+SDK ARGB channel expression, independent draw calls and all native fade
+conditions. One natural body has no assembly, target arrays, filler locals,
+fake returns, false ABI results or alternate bodies. Original names and full
+receiver layouts remain unknown; never construct or embed partial receivers.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-005e68c0
+```
+
+Complete preview, independent canonical compile and separate cold replay match
+physically with VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+All 155 prior units and accepted inputs remain unchanged and were not rebuilt.
+The manifest preserves F009 plus 96 additions / 512,076 code bytes / 108 new
+source/header inputs, excluding F021/F048/F061. Every pending byte stays in the
+conservative denominator. F063 is retained in
+[history](RE_HANDOFF_HISTORY.md#f063-ten-stage-policy-checkpoint-2026-10-24).
+
+Retain `f064-session-check.log`, `f062-r049-native.py` / `.json`,
+`f062-5e68c0.asm`, the attested `f062-r049-views.c` / `f062-decompile.log`,
+`f064-abi-review.py` / `.json`, `f064-imports.json`, all five
+`f064-callee-*.asm`, `f064-dependency-*.asm`, attested constructor/subobject
+callers and layout exports/logs, `f064-layout-probe.cpp`,
+`f064-layout-constructor-check.json`, `f064-layout-model-review.py` / `.json`,
+`special-render-5e68c0/` and controls, `f064-bind.py`, both physical binding
+receipts, `f064-accepted-replay.json`, `f064-cold-replay.log`,
+`f064-adoption-parent.json`, `f064-progress.json` and `f064-evidence-check.json`.
+Continue the full 95% goal without pausing for acceptance, cleanup or handoff.
+Use Ghidra/local tools without REA, affected cold replays only, serial
+low-priority builds and CPU/memory monitoring.
+
+One obsolete reproducible preview object / **12,563 bytes** is removed after
+whole COFF function-byte and all-relocation equality with the retained
+canonical cold object (`f064-obsolete-output-cleanup.json`). All source/control
+inputs, manifests, accepted evidence/objects, unaccepted active objects and
+shared tools remain. Builds use niceness 15; CI uses niceness 10.
+
+Full CI passes all **3,603 tests in 131.296 seconds**. Tracking, progress-card,
+all 155 prior units and inputs, raw origin hashes, historical prefixes and
+whitespace checks pass. Sampled intervals show no swap activity and about
+8.6 to 8.8 GiB available memory; CPU remains mostly idle. F065 private preview
+continues during validation without receiving acceptance credit.

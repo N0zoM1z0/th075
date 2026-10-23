@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F064",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "74ad9c5ad3a1be1ed6deecc610f2cea2ad954c5d71296d13ef6ae0758df71c0b"
+      "current_sha256": "358504653e7376b6988c3a3116dcea4ee28d4e74bdcca64b52a3624c94dd2f60"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "39be628e6f8e52e262a8d655153a47599d30f79a622e3599537b5d01e507aacf"
+      "current_sha256": "4fdb41f9df90833b9640dca41f13543a3cc36975b20284c2b05f62d622bdc67e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "561b15fe86455da94af67ec9c05ffa4a057b3d620e320b47e9db80d3bb97babe"
+      "current_sha256": "91ef799d649b036838091e28edd72d9949774152d8228c048f0b45da11b10bbf"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6e9a88057da16bb5fbe4c9459aaa1f39d12bede60246f003afcd86985da408a1"
+      "current_sha256": "aeeeb8bc2b89877109bcef495af2e3d49ba56f5e3d6b4dbd79aee6f91f2a17fb"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f805e2706b4f7c3deedda245a7ce1b2b72f1dbf2a1b02b48381ccb14bb68ffa1"
+      "current_sha256": "abe147e02c8691c120b70dfb600908a77ffeedb1f1b6be4071e6ed5d43a4f182"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "5689f95d598c0f8e2c8d3f38a64dd62fc74f1bb9c651d66526cd100c2c23cace"
+      "current_sha256": "95d59447d3b7787341f47674f2c260fce9d5580f7b9e36d6f28efcd252d90301"
     }
   },
   "functions": [
@@ -4261,6 +4261,50 @@
         "address": "0x005E68C0",
         "origin": "authored",
         "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E6F70",
+        "size": "1021",
+        "span_end": "0x005E736C",
+        "current_name": "FUN_005e6f70",
+        "proposed_name": "CharacterAux::RunAt005E6F70",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005E6F70",
+        "size": "1021",
+        "span_end": "0x005E736C",
+        "current_name": "FUN_005e6f70",
+        "proposed_name": "CharacterInput5E6F70::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput5E6F70::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInput5E6F70.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F065; scripts/repo-python scripts/replay-exact-units.py --unit character-input-policy-005e6f70",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F065: complete1021-byte cold exact input priority policy,294 instructions and52 relocations; all26 original NUL-terminated patterns, signed-byte matcher arguments/result, current receivers and byte511 outcomes retained; R049 historical role preserved by alias; original names/declarations and full owner layout remain unknown; never construct or embed this partial receiver"
+      },
+      "origin": {
+        "address": "0x005E6F70",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
@@ -88365,6 +88409,341 @@
           "target": 6188425
         }
       ]
+    },
+    "character-input-policy-005e6f70": {
+      "source": "src/CharacterInput5E6F70.cpp",
+      "object": "build/matching/CharacterInput5E6F70.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput5E6F70::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput5E6F70@@QAEXXZ",
+      "target_address": 6188912,
+      "size": 1021,
+      "compare_size": 1021,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG287",
+          "target": 6660000
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG292",
+          "target": 6660008
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG297",
+          "target": 6660016
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG302",
+          "target": 6660024
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG307",
+          "target": 6660032
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG312",
+          "target": 6660040
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG317",
+          "target": 6660048
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG322",
+          "target": 6660056
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG327",
+          "target": 6660064
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG332",
+          "target": 6660072
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG337",
+          "target": 6660080
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG342",
+          "target": 6660088
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG347",
+          "target": 6660096
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG352",
+          "target": 6660104
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG357",
+          "target": 6660112
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG362",
+          "target": 6660120
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG367",
+          "target": 6660128
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG372",
+          "target": 6660136
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG377",
+          "target": 6660140
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG382",
+          "target": 6660144
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG387",
+          "target": 6660148
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG392",
+          "target": 6660152
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG397",
+          "target": 6660156
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 916,
+          "type": "DIR32",
+          "symbol": "$SG402",
+          "target": 6660160
+        },
+        {
+          "offset": 924,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 952,
+          "type": "DIR32",
+          "symbol": "$SG407",
+          "target": 6660164
+        },
+        {
+          "offset": 960,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 988,
+          "type": "DIR32",
+          "symbol": "$SG412",
+          "target": 6660168
+        },
+        {
+          "offset": 996,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5E6F70@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -88475,6 +88854,8 @@
     "src/CharacterSpecial5E59C0.cpp": "eb93177b4691e69eb47cfea68d6a8598834c41ed39f6d15c07f313e8d573ac35",
     "src/CharacterSpecial5E59C0.hpp": "a5feb52970a5f1d32c526c22ddf608694d70fc54bb292c72cb0536b009d4c94f",
     "src/CharacterSpecial5E68C0.cpp": "36fd621a0845c495279b4247c863ed0d4954c78b42c8ccab2a2c9eb078f1094c",
-    "src/CharacterSpecial5E68C0.hpp": "33e5cfde35e9e3e95e043a2825fac04039b22601b3e892241259435708018278"
+    "src/CharacterSpecial5E68C0.hpp": "33e5cfde35e9e3e95e043a2825fac04039b22601b3e892241259435708018278",
+    "src/CharacterInput5E6F70.cpp": "bcc03c960eecbcbd0f210e5ff953db7a25c66c6b0e1d3bd225e0c49b4be9e545",
+    "src/CharacterInput5E6F70.hpp": "753cafed55615cd323b4f3377e6fc2a3de0fc02c6c65ee20725bfd551d10e589"
   }
 }

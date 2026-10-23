@@ -154,3 +154,4 @@ CharacterAuxObject::AdvanceActionAt005FAE30
 CharacterAux5E5500::AdvanceAuxiliary
 CharacterSpecial5E59C0::InitializeStage
 CharacterSpecial5E68C0::RenderStage
+CharacterInput5E6F70::PollCommands

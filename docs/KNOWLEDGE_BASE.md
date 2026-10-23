@@ -19928,3 +19928,78 @@ Retained-unit/source/origin, historical-prefix, tracking, progress and whitespac
 checks pass. Sampled intervals show no swap activity, about8.6 to8.8 GiB
 available memory and mostly idle CPU. F065 private exploration continues
 without changing exact credit.
+
+
+## F065 ordered input policy cold acceptance (2026-10-24)
+
+R049 `0x005E6F70..0x005E736C` cold-replays exact as
+`CharacterInput5E6F70::PollCommands`, from `src/CharacterInput5E6F70.cpp`
+/ `.hpp`: all 1,021 bytes, 294 instructions, 51 branches and 52 relocation
+fields match. One return, no tables/indirect calls/external branch exits;
+three following INT3 bytes are excluded. An explicit alias preserves
+`CharacterAux::RunAt005E6F70`; R049 extents and hashes stay fixed.
+
+Target behavior clears current+0x511, evaluates 26 original patterns in priority
+order and writes the first successful pattern's outcome byte, leaving zero
+on the all-negative path. All NUL-terminated payloads, lengths, windows,
+outcome bytes and current receivers are independently checked. The complete
+695-byte R112 matcher plus 108 switch bytes and attested Ghidra pin thiscall
+(pattern pointer,signed-byte length,signed-byte window), ret12 and signed AL
+result. Terminal X can return 1..4; do not substitute bool. Current is saved
+at EBP-4, frame four bytes. All stack joins agree; wrong 8-byte cleanup fails.
+No matcher source/origin credit is added. Original names, declarations and
+full owner layout remain unknown; never construct or embed this partial owner.
+
+All 52 bindings cover 26 direct calls and 26 original readonly strings.
+Actual COFF/PE payloads, permissions, addends and operand fields are checked;
+full physical equality includes every branch and byte. One natural ordered
+if/else body preserves target strings without decompile paste, target arrays,
+assembly, inert locals, padding, fake returns, ABI inventions or alternate
+bodies. Preview, independent canonical compile and separate cold replay match
+using VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+
+All 156 earlier exact units and accepted inputs remain unchanged and are not
+rebuilt. The manifest retains F009 plus 97 additions / 513,097 code bytes /
+110 source inputs, excluding F021/F048/F061. Total exact is 157 functions /
+522,980 code bytes: 26.50% reviewed authored, 26.45% conservative with every
+pending byte. All 97 unknown origins and evidence through R268 stay fixed.
+The 95% goal remains active; no REA or pause for acceptance, cleanup or handoff.
+
+Continue F066 R048 at 0x0055AC80, the next 28,432-code-byte action-state function:
+7,653 instructions, 860 internal branches, 394 direct calls/14 callees, one
+return, no indirect calls/external exits. All 232 table and 198 remap bytes
+extend comparison to 28,862 bytes; two following INT3 bytes excluded. Signed
+word selector at +0x60 subtracts 800 before unsigned guard 197; actual owner/opponent
+entry fields and countdown are retained. Frame 0x19C saves ESI; current EBP-24.
+The full native audit and fresh attested Ghidra view are retained. All 14 full
+callee bodies and all 7,653 instructions/394 calls/stack joins are checked;
+wrong 16-byte effect cleanup fails. Owner-at-E4 receives 25 effect, 7 sound, 1 gauge
+and 1 shake calls; all other thiscall calls receive current. Twelve angle calls
+use cdecl/two floats/ST0 and 11 conversions use implicit ST0-to-EDX:EAX casts.
+The full gauge body consumes a dword argument despite Ghidra short spelling;
+the 3.0f shake argument reaches a field independently read by x87. Extra full
+dependencies/consumer and attested global xrefs are retained in the ABI receipt.
+Angle wrapper/worker remain unknown and ftol2 stays library; no callee credit.
+
+The full57-state native index and 57 constant/data observations are materialized
+for review; the sole writable absolute reference is the existing signed byte
+at 0x006714D0. States 800/801 have natural handwritten review fragments and pinned
+behavior notes/source hashes. They preserve real exits/order/field widths;
+state 800 continues independent frame handling after its frame-result clear.
+No complete Preview.cpp or partial-switch compile is created. Continue state 802
+and the remaining 55 states, then compose one complete natural body, compare
+all 28,862 bytes/relocations and separately cold-replay canonical source.
+Physical state partitions earn no partial credit. No F066 source acceptance,
+descriptor or exact credit; keep `f066-progress.json` and state review index.
+
+One obsolete preview object / 4,207 bytes is removed only after whole COFF
+function-byte and equality of all 52 relocations against the retained canonical
+cold object, allowing only the explicit Draft-to-canonical owner rename.
+Both full physical receipts agree. Keep `f065-obsolete-output-cleanup.json`;
+all sources, controls, manifests, evidence, accepted objects, unaccepted active
+objects and shared tools remain. Builds stay serial at niceness 15; CI uses 10.
+
+Full CI passes all 3,603 tests in 145.951 seconds. Retained-unit/source/origin,
+historical-prefix, tracking, progress and whitespace checks pass. Recorded
+samples show about 8.5 to 8.8 GiB available memory, mostly idle CPU and zero
+interval swap-in/out. F066 exploration continues; the 95% goal stays active.
