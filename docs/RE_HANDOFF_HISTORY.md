@@ -1,6 +1,6 @@
 # Historical function reconstruction handoff notes
 
-This file preserves historical checkpoints through R268 and F038. Counts, active
+This file preserves historical checkpoints through R268 and F039. Counts, active
 goals and next-step notes below describe their original checkpoints and may
 be stale. Use [the current handoff](RE_HANDOFF.md) and the canonical ledgers
 for current status.
@@ -5817,6 +5817,97 @@ Both investigative sources and first-profile diagnostics remain in
 outputs and F021 remain preserved. A host sample during CI had 8.7 GiB available
 memory and CPU 89% idle, without interval swap activity. Builds and validation
 remained serial and low priority.
+
+Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
+`config/claims.csv` header-only. Replay only units with relevant source, ABI,
+profile or relocation changes. The active 95% goal remains incomplete.
+
+## F039 checkpoint before F040 acceptance (2026-10-23)
+
+## Latest accepted cohort: F039
+
+`CharacterAI5086E0::ChooseAction` at `0x005086E0..0x0050A4DB` cold-replays
+exact from `src/CharacterAI5086E0.cpp` / `.hpp`: **7,676 code bytes**, 1,957
+instructions, 405 internal branches and one return. There are no switches or
+external branch exits; four following INT3 bytes are alignment. The complete
+R047 body hash and ownership evidence remain unchanged.
+
+The separate natural body preserves signed-byte indexed type-2/1/0 decisions,
+short-timer decrements, own-x/facing early exits and a type-0 random command
+choice that continues into queued/ordinary behavior. Position gates use 240/1040
+and signed facing 1/-1. Three assignment chains retain observed command
+read/store repetitions. The receiver interface stays pointer-only; never
+construct or embed it. The fully used two-float local separation record is
+source-defined. No assembly, target arrays, padding, inert locals, fake returns,
+ABI misdeclarations or alternate bodies are used. Original names, declarations
+and complete owner layouts remain unknown.
+
+All 206 relocations are bound: 102 calls, 97 readonly references to 24 actual
+float payloads and seven dword counter accesses at `0x0068D640` (four reads,
+three writes). Fresh COFF payloads, zero addends, access widths and target
+section permissions were checked. Writable storage is bound by address, not
+contents. Calls comprise two float wrappers, 83 CRT rand, sixteen range helpers
+on the current receiver and one predicate on the opponent. Declaration-only
+callees earn no additional origin or exact credit; wrapper ownership is unknown.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-ai-005086e0
+```
+
+Canonical replay cold-builds one object with pinned VC7.1 build 3077,
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then compares the complete body and every
+relocation. All 132 earlier units and inputs remain unchanged and were not
+rebuilt, including both F038 card policies. Our authored ordinary F035 statements
+are reused, with the entire emitted F039 body independently verified. The new
+header includes unchanged `CharacterAIPolicy.hpp` for callee declarations; a
+change to that header affects the six F033 units, F034..F037, both F038 units
+and F039. Its source affects its six F033 units. Replay affected units only.
+
+Private receipts below `.analysis/`: `f039-native-audit.py` / `.json`,
+`f039-5086e0.asm`, `f039-ai.c`, `f039-decompile.log`,
+`f039-behavior-review.json`, `f039-compose.py`, `f039-ai-diagnostic.py`,
+`f039-dispatch-audit.json`, `f039-bind.py`, `f039-family-bindings-preview.json`,
+`f039-family-bindings.json`, `f039-accepted-replay.json`,
+`f039-cold-replay.log` and `f039-progress.json`. The first full draft aligns
+all physical operands and branch destinations; only canonical cold replay
+earns credit, not diagnostic alignment.
+
+The next bounded R047 AI candidate is F040 at `0x00558F50..0x0055ABD6`
+/7,303 bytes. Its complete native audit checks 1,903 instructions, 351 internal
+branches, one return and 106 calls: two float wrappers, 83 CRT rand, twenty range
+helpers and one predicate. There are no switches or external exits; nine
+following INT3 bytes are alignment. Retain `f040-*` native evidence and the
+attested read-only decompile. Full behavior reading and call-site checks are
+recorded in `f040-behavior-review.json` / `f040-call-contexts.json`. Twenty range
+calls use the current receiver and the predicate uses the opponent. Preserve
+the separate type-4 movement/counter path and type-3/2 command fallthroughs;
+only queued mode 1 appears in the ordinary path. No source or exact credit is
+registered; independently reconstruct the complete body before acceptance. The 95% goal remains active and incomplete;
+cleanup/handoff does not pause it. All 97 unknown origins remain unknown.
+
+## Verification and recovery
+
+Run from the repository root, serially, using the private Python wrapper:
+
+```bash
+scripts/repo-python scripts/verify-target.py
+scripts/repo-python scripts/validate-tracking.py --require-target
+scripts/repo-python scripts/report-reconstruction-status.py --summary
+nice -n 10 scripts/repo-python scripts/ghidra.py check
+nice -n 10 scripts/repo-python scripts/ci.py
+git diff --check
+```
+
+F039 final validation: all 3,603 CI tests passed in 90.471 seconds, including
+complete adoption, historical-prefix, alias, origin, tracking and progress
+freshness checks. Canonical cold source/object/header pins remain intact.
+Four superseded previews were removed after equality and hash checks (91,455
+file bytes); `f039-cleanup.json` records paths, sizes and hashes. The first
+complete investigative source and receipt remain in `f039-probe-00.*`, with
+profile and diagnostic limits in `f039-control-manifest.json`. Original evidence,
+canonical inputs, matching outputs and F021 remain preserved. A host sample had
+8.5 GiB available memory and CPU 89% idle, without interval swap activity.
+Builds and validation remained serial and low priority.
 
 Keep compiler builds serial and low priority, monitor CPU/memory, and preserve
 `config/claims.csv` header-only. Replay only units with relevant source, ABI,

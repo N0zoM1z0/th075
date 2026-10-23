@@ -17322,3 +17322,106 @@ The counter at 0x0068D650 has fourteen dword references across both paths, with
 no accepted source declaration, mapping or exact credit yet. Source is undrafted.
 Continue independent reconstruction toward 95% using Ghidra/local tools without
 REA or pausing for cleanup/handoff; preserve all 133 exact units and R268 evidence.
+
+## F040: complete AI policy at 00558F50 (2026-10-23)
+
+The whole R047 extent is `0x00558F50..0x0055ABD6` /7,303 bytes,
+SHA-256 `67ca3080ab1e0023a38249f3070ee207f557b7dfb85c4bb0bec97a5cff5ee332`.
+Its complete CFG has 1,903 instructions, 351 internal branches, one return and
+no switches or external branch exits. Nine following INT3 bytes are alignment.
+The attested read-only Ghidra decompile supplies hypotheses; all original native
+bytes control reconstruction and acceptance.
+
+The separate natural `CharacterAI558F50::ChooseAction` body uses existing
+observed callee declarations and a fully used source-defined local two-float
+separation record. The receiver view is pointer-only; never construct or embed
+it. Original identity, declarations and complete layout remain unknown. No
+assembly, target arrays, padding, inert locals, fake returns, ABI misdeclarations
+or alternate conditional bodies are introduced.
+
+Own states 50..149 take the reset/timer-refresh/input path only when selected
+type is not 4. Type 4 with stock decrements the short timer; expired timer writes
+command 240 and returns, otherwise a dedicated complete movement/counter path
+returns. Types 3/2/1 have separate initial random-direction branches using range
+(0,2) plus 205 and own-x overrides at 320/960 with signed facing. Expired type-3
+alternatives are commands 230/231/232; expired type-2 alternatives are 221/222/220.
+The final 232/220 writes fall through into later decisions. Nonexpired branches
+retain their separate range-(0,100) tests and directional choices. Type 1 can
+write 210 and continue. Expired type 0 chooses command 201 only when distance is
+below 480 and its range threshold succeeds, otherwise 200; that path returns.
+Every short decrement, conditional range call and possible overwrite is preserved.
+
+Only queued mode 1 remains in the ordinary path. Attack and state policies
+retain the reviewed subset of our F036 source without its spell gates, pending
+mode-2 write or 0xF10/0xF12 tests. Resource-weighted policies use 0.8f/0.5f/0.5f
+and preserve all horizontal/vertical choices. Both complete movement copies use
+distance/2+100 thresholds for commands 3/4 and 100+distance for command 5.
+Six command assignment chains retain native write/read/store repetitions. The
+ordinary ground B/vertical-one gate uses distance above 240 and below 360.
+Two inline opponent-height Boolean thresholds retain meaningful compiler
+temporaries without fabricated local variables.
+
+The signed counter at 0x0068D650 occurs in both movement paths, with eight dword
+reads and six writes. Its original declaration, owner and semantic name remain
+unknown. Twenty native range-helper call-site contexts use the current receiver;
+the one predicate uses the opponent pointer at receiver +0x2E8. Range and
+float-wrapper declarations receive no new origin or exact credit, and the
+wrapper's original declaration and ownership remain unresolved.
+
+The first complete draft emits all 7,303 bytes /1,903 instructions /106 calls
+and aligns every physical operand and all branch destinations. The complete
+binder independently verifies 222 relocations: 106 calls (two wrappers, 83 CRT
+rand, twenty range helpers and one predicate), 102 readonly references to 24
+actual float payloads, and fourteen counter accesses. Every COFF payload, zero
+addend, field offset, access width and target section permission is checked.
+Writable storage is bound by address rather than contents. The full relocated
+object equals every original R047 byte. Diagnostics alone earn no exact credit.
+
+Canonical cold replay of `character-ai-00558f50` rebuilds
+`build/matching/CharacterAI558F50.obj` using pinned VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`, then accepts the complete comparison.
+The retained receipt pins source, object, target and every relocation. All 133
+prior units and inputs remain unchanged and were not rebuilt. Independently
+reviewed portions of our authored F035/F036 statements are reused with the whole
+F040 emission verified separately. The included `CharacterAIPolicy.hpp` affects
+all prior dependent AI units plus F040; its source affects the six F033 units.
+Only new or relevant dependencies require cold replay.
+
+Coverage becomes 134 exact functions /308,996 bytes: 15.66% reviewed authored,
+or 15.63% conservatively including every pending byte. The cumulative adoption
+manifest preserves 74 literal additions /299,113 bytes above F009 and 64 new
+source/header inputs. All historical prefixes and complete accepted descriptors
+remain guarded; R268 origin evidence and all 97 unknown origins are unchanged.
+F021 stays unaccepted. The F039 handoff/verification sections are archived
+verbatim. Continue independent reconstruction toward the active 95% goal with
+Ghidra/local tools, without REA or pausing for cleanup/handoff.
+
+Final F040 validation passes all 3,603 CI tests in 92.011 seconds. Canonical
+cold source/object/header pins remain intact. Four superseded previews were
+removed after equality and hash checks (88,814 bytes), with paths, sizes and
+hashes in `f040-cleanup.json`. The first complete investigative source and receipt
+remain in `f040-probe-00.*`, with profile and diagnostic limits in
+`f040-control-manifest.json`. Original evidence, canonical inputs, matching
+outputs and F021 remain preserved. The host sample during CI had 8.5 GiB
+available memory and CPU 85% idle, without interval swap activity. Builds and
+validation stayed serial and low priority.
+
+F041 preparation retains an attested complete decompile and native audit at
+`0x004EA090..0x004EBCFE` /7,279 bytes, R047 body SHA-256
+`0017298a9af75b60f59bbc16dd788b847768592528d8ced3b4e64df22b8638ad`.
+The full CFG has 1,853 instructions, 383 internal branches, one return and
+101 calls: two float wrappers, 83 CRT rand, fifteen range helpers on the current
+receiver and one predicate on the opponent. There are no switches or external
+exits; one following INT3 byte is alignment. Full behavior reading identifies
+type-2/0 stock-qualified paths that bypass ordinary AI and type-1 command writes
+that can continue. Range checks precede the expired-timer/ground checks in the
+type-2 and type-0 paths; retain that order and every independent random call.
+The final signed counter is at 0x0068D638, with no accepted declaration or mapping.
+A complete handwritten private draft reuses our authored F035 ordinary statements.
+Compile and verify its full physical body and all relocations before canonical
+cold acceptance. Evidence remains in `f041-native-audit.py` / `.json`,
+`f041-4ea090.asm`, `f041-ai.c`, `f041-decompile.log`,
+`f041-behavior-review.json`, `f041-compose.py`, private
+`.analysis/character-ai-4ea090/` and `f041-progress.json`. No F041 credit yet.
+Continue the active 95% goal using Ghidra/local tools without REA or pausing
+for cleanup/handoff, preserving all 134 exact units and R268 evidence.
