@@ -16119,3 +16119,118 @@ Private `f030-native-audit.py` / `.json`, `f030-5c0d70.asm`, `f030-dispatch.c`,
 preserve complete observations and identity/completion markers. No source or
 exact credit is registered yet. Continue independent full reconstruction using
 the existing Ghidra wrapper and local tools, without REA or pausing for handoff.
+
+
+## F030: complete action dispatcher at 0x005C0D70 (2026-10-23)
+
+The complete R047 authored extent 0x005C0D70..0x005C3FA8 has 12,857 code bytes,
+SHA-256 `7379c30a0d20980598378743765e6d8775340b976f006c713b0f6958177e3712`.
+Native review checks 3,474 instructions, 680 internal branches, one return and
+61 ordered policies, without switch tables or external branch exits. Seven
+following INT3 bytes are alignment. Target identity and decompile completion
+remain attested by the existing read-only Ghidra wrapper; no target or database
+bytes were patched. R047 evidence is unchanged, independently of Ghidra names.
+
+Canonical `src/CharacterActionDispatch5C0D70.cpp` / `.hpp` defines a separate
+pointer-only `CharacterAction5C0D70` view and reuses the unchanged reference-
+return slot ABI. Original character identity and full owner layout remain
+unknown. No incomplete owner is instantiated or embedded, and an explicit alias
+preserves the original R047 mapped role. Natural C++ uses no assembly, target
+byte arrays, inert locals, artificial padding or alternate conditional bodies.
+
+The canonical cold command
+`scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-005c0d70`
+rebuilds and compares all 12,857 bytes exactly. Pinned VC7.1 build 3077 uses
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 252 relocations are bound: 186 calls
+and 66 readonly references. Actual fresh COFF payloads match the target bytes,
+and relocation patching makes the entire function byte-equal, including every
+branch encoding and destination. Calls comprise 57 slot accesses (0x004420B0),
+34 direction packs (0x00455B30), 68 primary resets (0x0040FAC0) and 27 auxiliary
+clears (0x00453A10). The nine readonly constants are 0, 60, 100, 420/-420,
+360/-360 and 400/-400. No writable global is referenced. Diagnostic alignment
+alone earns no credit; acceptance is the fresh complete canonical cold replay.
+
+Six leading input/reset policies omit cancellation: 230/751 and 240/780 check
+input, flag, ground and priority; 220/740 omits ground; 210/771 checks height
+only after its priority callback; 211/774 and 200/761 use ground before lookup.
+Input 103 checks ground, +36C >=100, byte +39C zero and signed short +3A0 ==0,
+then flag, lookup 795 and cancellation. The first input-102 policy starts with
+input, signed byte +366 >0, ground, flag, lookup 594 and cancellation. After
+packing it rereads height: ground states 150..158 select 596, above 299 select
+595 and remaining states select 594; positive height selects 599/598/597 by
+those state partitions. The second policy starts with signed +366 >0, ground,
+input, flag, lookup 596 and state <300, then packs and selects 596 only on a
+fresh ground read. Native 0x005C12B5 uses TEST/JLE; preserving >0 removes the
+initial one-byte draft surplus. The private initial diagnostic is retained.
+
+All six advanced policies use resource, input 13, ground, +3A0 >0, +36C >=100,
+selector, signed +39D mode, flag, priority and cancellation. Mode 1 at +39A
+choices 0/1/2 selects 720/722/724; mode 2 at +398 selects 700/702/704. There
+are no +F12 guards or post-reset height reads. Input 21 selects 601 with flag
+before resource; 20 selects 600 with resource before flag. Inputs 41/40 select
+603/602 with flag before resource; all four start with input and ground.
+Inputs 11/10 check input, flag, resource, priority and cancellation, select
+501/500, then select 503/502 if a fresh post-reset height read is positive.
+Input 101 selects 309 with flag before ground; 100 selects 310 with ground
+before flag. All seven front movement policies and four final air fallbacks
+retain only rank 99/49 exceptions, signed +3AD <2, direct byte increment,
+diagonal <=-1 / >=1 and the 60.0f early-ascent rejection where observed.
+
+The positive-vertical ground group has seven attacks, including specials
+392/393 with forward motion, state 200, flag and shared +500 B buffer. Nested
+A selects 408 at 360/-360 after resource/flag, then 302 without a current-state
+exception. Nested B selects 414 at 360/-360 after resource/flag, then 303. C
+checks resource before flag and selects 402.
+
+The twelve neutral attacks retain specials 390/391. Forward A selects 407 at
+360/-360 or 308; ordinary nested A selects 406 at 360/-360 or 300, without a
+current-state exception. Forward B selects 412 at 420/-420 or 307; ordinary
+nested B selects 412 at 420/-420 or 301, also without a current-state exception.
+Forward C retests input and forward motion, omitting the repeated vertical-zero
+read, then checks resource before flag for 401. Ordinary C uses resource before
+flag for 400. Full native comparison confirms the differing condition order.
+
+Eight air attacks precede the four directional fallbacks. The first nested A
+group checks resource, flag and 400/-400 before positive current/remembered
+vertical for 411; its separate fallback checks flag before vertical for 306.
+A second independently retested input group checks resource, flag and 400/-400
+for 410, then selects 304. Nested B selects 416 at 360/-360 after resource/flag,
+then 305. C checks forward motion before resource/flag for 405; the ordinary
+resource/flag fallback selects 404. Subsequent callback-visible reads remain
+fresh, matching the entire target instruction and control-flow sequence.
+
+Private evidence remains below `.analysis/`: `f030-5c0d70.asm`,
+`f030-native-audit.py` / `.json`, `f030-dispatch.c`, `f030-decompile.log`,
+`f030-absolute-memory.json`, `f030-dispatch-diagnostic.py`,
+`f030-initial-dispatch-audit.json`, `f030-dispatch-audit.json`,
+`f030-bind-relocations.py`, `f030-relocation-bindings.json`,
+`f030-accepted-replay.json`, `f030-cold-replay.log` and `f030-progress.json`.
+Coverage is now 118 exact functions /166,913 bytes (8.46% reviewed authored;
+8.44% conservatively including all 3,608 pending bytes). The manifest preserves
+58 additions /157,030 bytes above F009 and 44 new input files. All 117 prior
+units and inputs remain unchanged and were not rebuilt. Seven historical byte-
+prefix guards and origin evidence through R268 remain intact. All 97 unknown
+origins remain unknown; F021 earns no exact credit. F029 handoff/validation
+sections remain verbatim in the history archive. Continue with F031 at
+0x005E2310 /12,777 bytes toward the active full 95% objective, without REA.
+
+
+Final F030 validation passes all 3,603 CI tests in 73.158 seconds. Canonical
+cold source/header and final-object hashes remain intact. Four superseded
+previews were removed after canonical equality checks (107,418 bytes);
+`.analysis/f030-cleanup.json` preserves paths, sizes and hashes. Original
+evidence, canonical inputs, matching outputs and F021 remain preserved. The
+final host sample had 8.9 GiB available memory, CPU 89% idle and no swap-in/out.
+Compiler builds remained serial and low priority.
+
+F031 preparation retains an attested complete decompile and native audit at
+0x005E2310..0x005E54F8 /12,777 code bytes. The R047 body SHA-256 is
+`08d808097c0a68611e5114582c863bdd8623da75a114e8898412120941425dcc`.
+It has 3,428 instructions, 686 internal branches, one return, no switch tables
+or external branch exits, and seven following alignment INT3 bytes. Its 173
+direct calls comprise 51 slot accesses, 30 packs, 67 resets and 25 clears.
+Private `f031-native-audit.py` / `.json`, `f031-5e2310.asm`, `f031-dispatch.c`,
+`f031-decompile.log`, `f031-absolute-memory.json` and `f031-progress.json`
+preserve complete observations and identity/completion markers. No source or
+exact credit is registered yet. Continue full independent reconstruction with
+the existing Ghidra wrapper and local tools, without REA or pausing for handoff.
