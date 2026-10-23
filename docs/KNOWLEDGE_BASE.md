@@ -15766,3 +15766,126 @@ INT3 byte is alignment. Calls comprise 62 vector accesses, 38 input packs,
 and the next full reconstruction task. No source or exact credit is registered
 for F027; continue its native-guided reconstruction without assuming F026's
 conditions or pausing for cleanup/handoff.
+
+## F027 — Complete action dispatcher at 00502450
+
+Accepted on 2026-10-23: `CharacterAction502450::DispatchActions`, complete
+extent 0x00502450..0x00505A5E /13,839 code bytes. One following INT3 byte
+is alignment. R047 authored ownership and the full target body SHA-256
+`22e03df3beb868d86b37c90ce43a3b92ad172f1d339748cc57801cc0c30251c7`
+remain unchanged. Full decoding checks 3,751 instructions, 734 internal branch
+destinations, one return, no switch tables and no external branch exits.
+
+Unit `character-action-dispatch-00502450`, symbol
+`?DispatchActions@CharacterAction502450@@QAEXXZ`, cold-replays all 13,839 bytes
+with zero differences, including every relocation. Canonical source is
+`src/CharacterActionDispatch502450.cpp` / `.hpp`. Its separate pointer-only
+owner view does not establish original character identity or complete layout;
+no incomplete owner is instantiated or embedded. The unchanged
+`ReimuActionDispatch.hpp` supplies the existing slot-reference ABI view.
+An explicit alias preserves the reviewed role
+`CharacterAction::DispatchAt00502450`; names and semantic labels remain inferred.
+Profile is pinned VC7.1 build 3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`,
+without executable-wide compiler inference.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-action-dispatch-00502450
+```
+
+All 270 relocations are bound: 200 direct calls and 70 references to fifteen
+readonly constants. Fresh COFF section payloads were checked against original
+target bytes. Static calls comprise vector access 0x004420B0 (62), input packing
+0x00455B30 (38), primary reset 0x0040FAC0 (72), and auxiliary-input clearing
+0x00453A10 (28). No writable global reference occurs in this unit. Callees earn
+no new exact credit, and the vector helper keeps its library classification.
+
+All 66 ordered candidates are represented by handwritten natural C++.
+The first six special inputs 205/206/220/211/210/200 select 720/721/751/742/741/
+731, checking ground before flag and priority, without the generic cancellation
+gate. Input 103 retains its ground, 100.0f and selector policy 795. Six
+resource-first input-13 policies precede the two input-102 candidates: +39A
+mode-one choices select 703/704/705, and +398 mode-two choices select 700/701/
+702. Only mode-two choice one (701) omits the ground condition; the initial
+draft's extra ground check there added 19 bytes /seven instructions, and was
+removed after checking the native sequence. Other conditions remain distinct.
+
+Both input-102 candidates preserve signed +366, post-pack height/state rereads
+and unmatched-path fallthrough. The first uses ground 595/594 and air 599/598/
+597; the second separately checks 596 and state <300. Simple inputs 42/41/40
+select 610/609/608, 31/30 select 501/500, and 21/20 select 612/611, with their
+ground/resource/flag ordering preserved. Input 12 checks resource and flag
+before ground and selects 604. Inputs 11/10 look up and reset 601/600, then
+reread height: when positive they reset 602 and only then write word +F04 =45
+or =30. Inputs 101/100 select 309/310 with distinct flag/ground order.
+
+Seven movement policies retain unsigned press counts, signed facing products,
+diagonal <=-1 / >=1 bounds, signed +3AD <2 and direct byte increment, and the
+native early-ascent 60.0f rejection. Five front policies (202/203/204/206/205)
+permit record ranks 99, 49 and 39 after their priority check. The four final
+airborne directional fallbacks retain only 99/49. Separate scalar predicates
+preserve that scope difference instead of broadening the shared rank test.
+
+The positive-vertical ground group retains seven policies and specials 392/393
+with their shared +500 B buffer. Nested ordinary A uses resource/flag and
+320/-320 distance for 408, then 302 with current-state 300/302 exceptions.
+B checks flag and 240/-240 distance before resource for 414, then 303. C
+checks flag before resource for 402. The decompile displays a redundant +508
+condition; the complete native sequence at 0x00504610 shows just the ordinary
+press/buffer alternative, then flag and resource, so no extra source read is
+introduced from that decompiler rewrite.
+
+The neutral group retains twelve candidates and specials 390/391. Forward A
+has two distinct 307 policies, the first with a 480/-480 gate. The ordinary A
+406 distance policy is flat and repeats the vertical-zero test before resource,
+flag and 320/-320 distance. The following 300 policy retests input and flag
+without a current-state-300 exception. Forward B selects 407 at 480/-480 or
+308; ordinary B checks flag and 400/-400 distance before resource for 412, then
+301. Forward/ordinary C select 401/400 with flag before resource.
+
+Air A first checks flag and 540/-540 distance before resource for 410. Its
+three separate fallback candidates all look up 304: positive current vertical
+selects 312; zero current vertical with positive facing/current-horizontal
+product selects 311; the final fallback selects 304. Air B checks flag and
+460/-460 distance, then current/remembered vertical and resource for 416; its
+separate fallback distance policy selects 417, then 305. Air C tests flag and
+forward motion before resource for 405, then selects 404. All nine attack
+policies and four directional fallbacks preserve fresh reads and ordering.
+
+Private evidence remains below `.analysis/`: `f027-502450.asm`,
+`f027-native-audit.py` / `.json`, `f027-dispatch.c`, `f027-decompile.log`,
+`f027-dispatch-diagnostic.py`, `f027-dispatch-audit.json`,
+`f027-bind-relocations.py`, `f027-relocation-bindings.json`,
+`f027-accepted-replay.json`, `f027-cold-replay.log` and `f027-progress.json`.
+Original identity, full extent and decompile completion remain attested.
+Acceptance is the canonical cold command, not the diagnostic comparison.
+
+Coverage becomes 115 exact functions /127,608 code bytes (6.47% of reviewed
+authored bytes; 6.45% conservatively including all 3,608 pending bytes). The
+cumulative manifest preserves 55 additions /117,725 bytes above F009 and 38 new
+source/header inputs. All 114 prior units and their inputs remain unchanged
+and were not rebuilt. All 97 unknown origins remain unknown; F021 still earns
+no exact credit. Continue toward the full 95% objective, with F028 at 0x00574370
+/13,278 bytes next. The previous F026 handoff and validation sections are
+preserved verbatim in the history archive.
+
+
+Final F027 validation passes all 3,603 CI tests in 71.503 seconds, including
+complete adoption, immutable history, origin, name-alias, tracking and progress
+checks. Canonical cold source/header and final-object pins remain intact.
+Four superseded previews were removed after canonical-source equality checks
+(111,302 bytes); `.analysis/f027-cleanup.json` retains paths, sizes and hashes.
+All native/origin evidence, canonical inputs, matching outputs and F021 remain.
+The latest sampled available memory was 8.8 GiB and CPU was 90% idle, without
+swap-in/out in that interval. Compiler builds stayed serial and low priority.
+
+F028 preparation retains a complete attested decompile and native audit of
+0x00574370..0x0057774D /13,278 code bytes, preserving the R047 body hash.
+The full extent has 3,578 instructions, 705 internal branches, one return and
+187 direct calls, with no switch tables or external branch exits. Two following
+INT3 bytes are alignment. Calls comprise 57 vector accesses, 37 input packs,
+69 primary resets and 24 auxiliary-input clears. Private `f028-native-audit.py`
+/ `.json`, `f028-574370.asm`, `f028-dispatch.c`, `f028-decompile.log` and
+`f028-progress.json` retain original observations, identity/completion markers
+and the next full reconstruction task. No source or exact credit is registered
+for F028; continue native-guided reconstruction without assuming F027's
+conditions or pausing for cleanup/handoff.
