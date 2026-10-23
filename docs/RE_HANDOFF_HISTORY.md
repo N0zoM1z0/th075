@@ -7511,3 +7511,67 @@ in 155.472 seconds; target, tracking, progress-card, historical-evidence and
 whitespace checks pass. CI runs at niceness 10 and compiler builds remain
 serial at niceness 15. Memory samples retained about 8.6 to 9.1 GiB available;
 the initial interval sample had 88% CPU idle and no swap activity.
+
+
+## F062 auxiliary-policy checkpoint (2026-10-23)
+
+
+`CharacterAux5E5500::AdvanceAuxiliary` cold-replays exact from
+`src/CharacterAux5E5500.cpp` / `.hpp`: the complete **1,027 code bytes**,
+240 instructions, 14 internal branches, one return and all **11 relocations**.
+There are no tables, shared tails, indirect calls or external branch exits.
+The thirteen following INT3 bytes before `0x005E5910` stay outside comparison.
+The R049 historical role `CharacterAux::RunAt005E5500` is retained through an
+explicit alias; its extent, body hash and origin evidence remain unchanged.
+
+All three tracked-effect calls use current and six 4-byte argument slots.
+The complete 136-byte R102 callee at `0x00453AC0` pins 24-byte cleanup and
+the actual short/float/byte reads; an incorrect 20-byte cleanup fails at a
+stack join. The caller ignores any result, which does not prove an original
+void declaration. The last unsigned-byte nonzero test selects forwarding the
+observed +2F0 draw-state block. No callee source or origin credit is added.
+All eight readonly relocations bind actual COFF payloads to target float
+constants with checked widths, addends and PE/COFF permissions. All fourteen
+branch destinations and all three direct callees match physically.
+
+Preserve the three independent state windows: 150..153, 154..157 and 158.
+Each prepares the observed fields and creates effect 998 with direction*57
+plus x, and y offsets 94/60/100 respectively. The +F0A guard is read once
+before these independent windows. Velocity zero clears only a positive signed
+byte at +3AC. The independent distance tests at +/-540 and +/-320 retain the
+observed +F2A saturation/reset order and integer-promoted short increment.
+One natural body has no assembly, target arrays, filler locals, padding,
+false ABI results or alternate bodies. Never construct or embed this partial
+receiver view; complete layout and original names remain unknown.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-aux-policy-005e5500
+```
+
+The complete preview, independent canonical compile and separate cold replay
+are all physically equal with VC7.1 build 3077 and
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All 153 prior units and accepted source
+inputs remain unchanged and were not rebuilt. No accepted shared header or
+origin ledger changed. F021/F048/F061 remain unaccepted and all pending bytes
+remain in the conservative denominator. The cumulative manifest adds F062
+while excluding F061: 94 additions / 506,695 code bytes / 104 source inputs above
+F009. F060 is retained in [history](RE_HANDOFF_HISTORY.md#f060-auxiliary-action-checkpoint-2026-10-23).
+
+Retain `f062-r049-native.py` / `.json`, `f062-5e5500.asm`, the fresh attested
+`f062-r049-views.c` / `f062-decompile.log`, `f062-abi-review.py` / `.json`,
+`f062-callee-453ac0.asm`, `f062-compose.py`, `aux-policy-5e5500/`,
+`f062-whole-diagnostic.py` / `.json`, `f062-bind-draft.py`,
+`f062-family-bindings.json`, `f062-accepted-replay.json`,
+`f062-cold-replay.log`, `f062-adoption-parent.json`, `f062-progress.json`
+and `f062-evidence-check.json`. Continue the active 95% goal after this bounded
+acceptance; use Ghidra/local tools without REA, affected cold replays only,
+serial low-priority builds and CPU/memory monitoring.
+
+Full CI passes all 3,603 tests in 133.855 seconds. Tracking, progress-card,
+prior-unit/source/origin preservation, historical-prefix and whitespace checks
+pass. Two obsolete reproducible preview objects / 69,901 bytes are removed only
+after checking whole COFF function bytes and complete physical relocation
+bindings against retained objects (`f062-obsolete-output-cleanup.json`). All
+inputs, control receipts, accepted objects, F061 active07, F048/F021 and shared
+tools remain. Interval samples show no swap activity and about 8.7 to 9.1 GiB
+available memory. Builds remain serial at niceness 15; CI uses niceness 10.

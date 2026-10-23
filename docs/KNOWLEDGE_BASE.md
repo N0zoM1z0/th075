@@ -19786,3 +19786,64 @@ checks against retained objects. Every source/control input and receipt,
 accepted object, unaccepted active object and shared tool remains. Interval
 samples show no swap activity and about 8.7 to 9.1 GiB available memory;
 compiler builds stay serial at niceness 15 and CI runs at niceness 10.
+
+
+## F063 ten-stage policy cold acceptance (2026-10-24)
+
+R049 `0x005E59C0..0x005E6894` cold-replays exact as
+`CharacterSpecial5E59C0::InitializeStage`, from `src/CharacterSpecial5E59C0.cpp`
+/ `.hpp`: 3,797 code bytes, 935 instructions, 11 branches and one return.
+All 40 contiguous direct-table bytes are compared: all 3,837 bytes and
+164 relocation fields match. Three following INT3 bytes are excluded. An
+explicit alias retains `CharacterSpecial::AdvanceAt005E59C0`; original names,
+declarations and full layouts remain unknown. R049 extents and hashes stay fixed.
+
+The signed global selector subtracts one before unsigned guard 9 and all ten
+destinations. Every state, field/global effect and actual receiver is reviewed.
+Four complete callees and every stack join pin 58 calls: 37 current record
+calls/32-byte cleanup, seven opponent-at-2E8 primary resets/4-byte cleanup,
+seven cdecl camera overrides and seven cdecl/no-argument snaps. Wrong 28-byte
+record cleanup fails. Ignored results prove no original void declaration;
+no callee source/origin credit is added. Record calls retain all native byte,
+short and dword reads, repeated signed difficulty loads and signed divisions.
+
+All 164 physical bindings include 58 callees, 95 references to five existing
+writable globals, one table address and ten destinations. Actual widths,
+signed reads, PE/COFF permissions, addends, local offsets and every branch/table
+destination are checked. No global ledger or accepted shared header changes.
+Preview, independent canonical compile and separate cold replay match all
+3,837 bytes with pinned VC7.1 build 3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`;
+the native frame is eight bytes. All 37 record calls stay independent. State 1
+preserves its distinct camera/global order; 7 omits clears performed in 1..6
+and has distinct camera/current/opponent coordinates. States 8..10 only perform their
+observed field writes. Natural byte arguments replace the decompile CONCAT31
+artifact without inert locals. Partial owners are never constructed or embedded.
+
+All 154 prior units and inputs stay unchanged and are not rebuilt. F009 plus
+95 additions / 510,492 code bytes / 106 source inputs are preserved; F061 stays
+excluded. Total exact coverage is 155 functions / 520,375 code bytes: 26.37%
+reviewed authored, 26.32% conservative including every pending byte. All 97
+unknown origins and evidence through R268 stay unchanged. The full 95% goal
+remains active, without REA or pausing for bounded acceptance or handoff.
+
+Next is complete F064 at 0x005E68C0: 1,584 code bytes plus 12 table/10 remap bytes,
+1,606 compared bytes. Its five complete direct callees, eight USER32!SetRect
+calls and all 353 raw instructions/27 call sites/stack joins are pinned. SetRect
+uses stdcall/20-byte cleanup; wrong 16-byte cleanup fails. Receivers are current+4
+for two filter calls, current+700 for eight draws, and EBP-88 local for nine
+constructor/build calls. Keep the zeroing block at 0x005E6CFF omitted by Ghidra:
+native unsigned-alpha/zero/JGE makes it ineffective, but it remains in the full
+extent. The 132-byte clear/copy footprint alone does not close the owned packet
+layout. Never instantiate the accepted 64-byte SpriteTransform prefix or force
+owner storage with padding/raw buffers. Constructor-callers and complete
+dependency exports are retained for further layout review. Both 14-byte empty
+dependency origins remain unknown. No F064 source or exact credit is added.
+
+Full CI passes all 3,603 tests in 131.869 seconds. Tracking, progress-card,
+all prior-unit/source/origin, historical-prefix and whitespace checks pass.
+`f063-obsolete-output-cleanup.json` records one reproducible preview object /
+9,469 bytes removed after whole function-byte and physical binding equality
+with the retained canonical cold object. All inputs, controls, manifests,
+accepted evidence/objects, unaccepted active objects and shared tools remain.
+Sampled intervals show no swap activity and about 8.5 to 9.1 GiB available
+memory; builds stay serial at niceness 15 and CI runs at niceness 10.

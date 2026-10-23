@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F063",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0f12235061e70522508ec7dead352522c12505d428710b59b3a892a5e00298f9"
+      "current_sha256": "1375e1458bdc3cf7e0258d33735e6dfed325305ab96ca9dade9f0d2ac74956c4"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "42c7c0952e0cb69f0ec4f64935cbb6384e24bd9317cd4b02fbdda578b726a99c"
+      "current_sha256": "7fa94a3fe0218656b3ac2a31498d400184113e6d4d528b4413581faf50601c4c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "12bb30aa56d825cf59a705ab17733158869a2a1b524d0c3e85a8d930b4eb1d7b"
+      "current_sha256": "4983af865a8f27f4632765804ab99c787d6c0087dd41866cf49a6970ff115af1"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d6543b4bf5c056897edae42f1dd8f14fc1c1d44915868deab7a296181b031bf6"
+      "current_sha256": "5d5de0ad2f39fe031c3d0f0a95c31bc72916750c95a6fa0b3d2381b7bd586186"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "1dab001bcebcbe4a88738d3146bee290f81aaa33f674cb99f39ffb7a34e27fb0"
+      "current_sha256": "c9365462df23d656b6694f75463c142a049fd395a1ba05f3739997184c85cf37"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "849d4cda741dcdc23f509cc89f115f374124db3b5de460014958ade39b6f914e"
+      "current_sha256": "ce18f3d5d45134b433afabef6ee44103b1bcc580544166778c7921315a29c9e6"
     }
   },
   "functions": [
@@ -4173,6 +4173,50 @@
         "address": "0x005E5500",
         "origin": "authored",
         "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E59C0",
+        "size": "3797",
+        "span_end": "0x005E6894",
+        "current_name": "FUN_005e59c0",
+        "proposed_name": "CharacterSpecial::AdvanceAt005E59C0",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005E59C0",
+        "size": "3797",
+        "span_end": "0x005E6894",
+        "current_name": "FUN_005e59c0",
+        "proposed_name": "CharacterSpecial5E59C0::InitializeStage",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSpecial5E59C0::InitializeStage()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSpecial5E59C0.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F063; scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-005e59c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F063: complete cold exact 3797-code-byte ten-stage policy plus all 40 direct-table bytes; 3837 compared bytes and 164 relocations; 37 current record calls and 7 opponent primary resets; R049 historical role preserved by alias; original names/declarations and full object layouts remain unknown; never construct or embed these partial views"
+      },
+      "origin": {
+        "address": "0x005E59C0",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
@@ -87007,6 +87051,1013 @@
           "target": 6649984
         }
       ]
+    },
+    "character-special-stage-005e59c0": {
+      "source": "src/CharacterSpecial5E59C0.cpp",
+      "object": "build/matching/CharacterSpecial5E59C0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSpecial5E59C0::InitializeStage"
+      ],
+      "symbol": "?InitializeStage@CharacterSpecial5E59C0@@QAEXXZ",
+      "target_address": 6183360,
+      "size": 3797,
+      "compare_size": 3837,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "?g_NoticeSelection@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "$L535",
+          "target": 6187157
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 79,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 99,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 124,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 211,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 250,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 288,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 327,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 349,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 370,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 402,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 432,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 442,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 459,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 479,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 487,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 574,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 581,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 613,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 635,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 656,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 663,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 695,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 717,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 738,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 770,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 800,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 810,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 827,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 847,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 855,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 942,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 949,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1003,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1024,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1051,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1058,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1090,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1112,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1133,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1140,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1172,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1194,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1215,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1247,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1277,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 1287,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1304,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 1324,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1332,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 1419,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1426,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1458,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1480,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1501,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1528,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1535,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1567,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1589,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1610,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1617,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1649,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1671,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1692,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1724,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1754,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 1764,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1781,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 1801,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1809,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 1896,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1903,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1935,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1957,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1978,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1985,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2017,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2039,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2060,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2087,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2094,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2126,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2148,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2169,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2176,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2208,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2230,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2251,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2283,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2313,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 2323,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 2340,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 2360,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 2368,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 2455,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2462,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2494,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2516,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2537,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2544,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2576,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2598,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2619,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2646,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2653,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2685,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2707,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2728,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2735,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2767,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2789,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2810,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2817,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2849,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2871,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2892,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2924,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2964,
+          "type": "DIR32",
+          "symbol": "?g_SequenceStageAt0067161D@@3EA",
+          "target": 6755869
+        },
+        {
+          "offset": 2984,
+          "type": "REL32",
+          "symbol": "?SetCameraOverrideAt00412CC0@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 2992,
+          "type": "REL32",
+          "symbol": "?SnapCameraAt00412CF0@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 3079,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3086,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3118,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3140,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3161,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3168,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3200,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3222,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3243,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3270,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3277,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3309,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3331,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3352,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3359,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3391,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3413,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3434,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3441,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3473,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3495,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3516,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3523,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3555,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3577,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3598,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial5E59C0@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3630,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@StageOpponent5E59C0@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3797,
+          "type": "DIR32",
+          "symbol": "$L313",
+          "target": 6183408
+        },
+        {
+          "offset": 3801,
+          "type": "DIR32",
+          "symbol": "$L339",
+          "target": 6183771
+        },
+        {
+          "offset": 3805,
+          "type": "DIR32",
+          "symbol": "$L365",
+          "target": 6184139
+        },
+        {
+          "offset": 3809,
+          "type": "DIR32",
+          "symbol": "$L391",
+          "target": 6184616
+        },
+        {
+          "offset": 3813,
+          "type": "DIR32",
+          "symbol": "$L417",
+          "target": 6185093
+        },
+        {
+          "offset": 3817,
+          "type": "DIR32",
+          "symbol": "$L443",
+          "target": 6185652
+        },
+        {
+          "offset": 3821,
+          "type": "DIR32",
+          "symbol": "$L469",
+          "target": 6186293
+        },
+        {
+          "offset": 3825,
+          "type": "DIR32",
+          "symbol": "$L495",
+          "target": 6186999
+        },
+        {
+          "offset": 3829,
+          "type": "DIR32",
+          "symbol": "$L506",
+          "target": 6187051
+        },
+        {
+          "offset": 3833,
+          "type": "DIR32",
+          "symbol": "$L517",
+          "target": 6187103
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -87113,6 +88164,8 @@
     "src/CharacterAuxAction.cpp": "a7e8dd830200ee1fc6ba3ee5f45890143111ecba86cba9dd57205b42ab1bca60",
     "src/CharacterAuxAction.hpp": "38ef5c338cb021190b6e63f6bf8037653619d36f818348972c6af2aa4ddf17db",
     "src/CharacterAux5E5500.cpp": "6fbb43847a42ffe529ce714c9e9341f045983feb9f2686b0b4223bca15a188be",
-    "src/CharacterAux5E5500.hpp": "4690972ccb7f46952c133f87039198e67b7780d11358f09f4cb03893d0142c38"
+    "src/CharacterAux5E5500.hpp": "4690972ccb7f46952c133f87039198e67b7780d11358f09f4cb03893d0142c38",
+    "src/CharacterSpecial5E59C0.cpp": "eb93177b4691e69eb47cfea68d6a8598834c41ed39f6d15c07f313e8d573ac35",
+    "src/CharacterSpecial5E59C0.hpp": "a5feb52970a5f1d32c526c22ddf608694d70fc54bb292c72cb0536b009d4c94f"
   }
 }
