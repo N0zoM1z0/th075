@@ -18664,3 +18664,79 @@ relocations = [
   { offset = 0x127, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
   { offset = 0x154, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
 ]
+
+[units."shared-wave-load-00406820"]
+source = "src/WaveStreams406820.cpp"
+object = "build/matching/WaveStreams406820.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedWave406820::Load"]
+symbol = "?Load@SharedWave406820@@YA_NPBDPAPAUIDirectSoundBuffer8@@K@Z"
+target_address = 0x00406820
+size = 500
+compare_size = 500
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x4E, type = "REL32", symbol = "?Read@SharedPcm406B80@@YA_NPBDPAPADPAUtWAVEFORMATEX@@PAK@Z", target = 0x00406B80 },
+  { offset = 0x5D, type = "DIR32", symbol = "$SG56697", target = 0x006575DC },
+  { offset = 0x62, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x79, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0xA6, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0xAE, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0xC0, type = "DIR32", symbol = "$SG56700", target = 0x006575FC },
+  { offset = 0xC5, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0xDD, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0xF0, type = "DIR32", symbol = "_IID_IDirectSoundBuffer8", target = 0x0065B48C },
+  { offset = 0x115, type = "DIR32", symbol = "$SG56706", target = 0x0065761C },
+  { offset = 0x11A, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x132, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0x172, type = "DIR32", symbol = "$SG56711", target = 0x0065763C },
+  { offset = 0x177, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x18F, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0x1A7, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0x1DF, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0x1EC, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units."shared-pcm-read-00406b80"]
+source = "src/WaveStreams406820.cpp"
+object = "build/matching/WaveStreams406820.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedPcm406B80::Read"]
+symbol = "?Read@SharedPcm406B80@@YA_NPBDPAPADPAUtWAVEFORMATEX@@PAK@Z"
+target_address = 0x00406B80
+size = 559
+compare_size = 559
+relocations = [
+  { offset = 0x5B, type = "DIR32", symbol = "__imp__mmioOpenA@12", target = 0x0065726C },
+  { offset = 0x69, type = "DIR32", symbol = "$SG56727", target = 0x006576AC },
+  { offset = 0x6E, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x91, type = "DIR32", symbol = "__imp__mmioDescend@16", target = 0x0065725C },
+  { offset = 0xA1, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0xA6, type = "DIR32", symbol = "$SG56737", target = 0x006576C8 },
+  { offset = 0xAB, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0xD0, type = "DIR32", symbol = "__imp__mmioDescend@16", target = 0x0065725C },
+  { offset = 0xE0, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0xE5, type = "DIR32", symbol = "$SG56747", target = 0x006576E4 },
+  { offset = 0xEA, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x104, type = "DIR32", symbol = "__imp__mmioRead@12", target = 0x00657260 },
+  { offset = 0x115, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0x11A, type = "DIR32", symbol = "$SG56752", target = 0x00657700 },
+  { offset = 0x11F, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x140, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0x145, type = "DIR32", symbol = "$SG56754", target = 0x0065771C },
+  { offset = 0x14A, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x164, type = "DIR32", symbol = "__imp__mmioAscend@12", target = 0x00657274 },
+  { offset = 0x174, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0x179, type = "DIR32", symbol = "$SG56756", target = 0x0065773C },
+  { offset = 0x17E, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x1A3, type = "DIR32", symbol = "__imp__mmioDescend@16", target = 0x0065725C },
+  { offset = 0x1B3, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0x1B8, type = "DIR32", symbol = "$SG56766", target = 0x0065774C },
+  { offset = 0x1BD, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x1CD, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x1EF, type = "DIR32", symbol = "__imp__mmioRead@12", target = 0x00657260 },
+  { offset = 0x200, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+  { offset = 0x205, type = "DIR32", symbol = "$SG56771", target = 0x00657768 },
+  { offset = 0x20A, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x21D, type = "DIR32", symbol = "__imp__mmioClose@8", target = 0x00657270 },
+]

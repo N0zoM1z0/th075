@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F110 wave-reader investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F111 sound-bank investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 220 / 220 / 220 |
-| Exact code bytes | 583,325 |
-| Reviewed authored coverage | 583,325 / 1,973,516 (29.56%) |
-| Conservative coverage, including every pending byte | 583,325 / 1,977,124 (29.50%) |
+| Source-present / exact functions / exact units | 222 / 222 / 222 |
+| Exact code bytes | 584,384 |
+| Reviewed authored coverage | 584,384 / 1,973,516 (29.61%) |
+| Conservative coverage, including every pending byte | 584,384 / 1,977,124 (29.56%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **160 additions /
-573,442 code bytes / 176 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **162 additions /
+574,501 code bytes / 177 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,124 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F109
+## Latest accepted functions: F110
+
+The complete R015 wave loader `00406820..00406A13` (500 bytes) and PCM reader
+`00406B80..00406DAE` (559) independently pass canonical cold comparison.
+All **1,059 code bytes, 352 instructions, 42 calls and 52 real relocation
+fields** match. The following 12/1 INT3 bytes stay outside their extents.
+Two reports share one serial cold object build. No accepted source or shared
+header changed, so no old unit needs replay. Both complete ordinary CFGs and
+all stack joins agree, with actual frames of 108/48 bytes below EBP, one RET
+per body, and AL0/1 on every ordinary return path.
+
+The only actual loader caller keeps a literal zero across the checked vector
+at() call, pushes the returned buffer8 slot address and filename, and cleans
+three cdecl words. The loader body reads only its first two words. The source
+preserves that third zero with a compatible DWORD formal; its original type
+and name remain unknown. The reader receives four actual words and uses all
+four. Imported/decompiled parameter counts are not acceptance evidence.
+
+The reader owns two complete SDK MMCKINFO values of 20 bytes each: five real
+FOURCC/DWORD fields, all explicitly zero-initialized in the parent, then copied
+to the child before the parent receives WAVE. mmioOpenA receives a null
+MMIOINFO pointer; there is no fabricated MMIOINFO local. It opens with
+MMIO_READ | MMIO_ALLOCBUF, descends to FINDRIFF/WAVE, then descends to the next
+fmt chunk with the native flag value 0. It reads exactly 18 WAVEFORMATEX bytes,
+requires the PCM format tag, ascends, finds the data chunk with FINDCHUNK,
+allocates the actual chunk size and reads precisely that count. SDK import
+names, stdcall widths, field widths and packet order are independently checked.
+
+Open failure displays its diagnostic without closing a null handle. Every
+later failure closes the opened MMIO handle before displaying the exact
+Japanese text. A payload short read leaves the allocated pointer in the
+output and does not write the size. The loader immediately reports reader
+failure and returns without freeing that allocation, preserving the native
+leak. Later Create/Query/Lock failures and the successful copy path each
+conditionally delete the real payload. No rollback or validation is added.
+
+The loader releases and zeros a previous output before initializing its
+temporary buffer and payload pointers. Its real local WAVEFORMATEX is 18
+bytes, and its DSBUFFERDESC is the complete 36 byte SDK type. Reserved and
+GUID fields are zeroed; the ordinary two-byte alignment gap after the format
+is not an added source field. Device creation, Buffer8 QueryInterface followed
+by unconditional temporary Release, whole-buffer Lock, first-region copy and
+two-region Unlock preserve the native order and ignored results. The F109
+DS8 producer, SDK vtable/GUID and GS evidence remain unchanged and hash-checked.
+
+Natural new[]/delete[] expressions without including <new> emit the actual
+scalar entry symbols with this pinned VC7.1 implicit-declaration profile.
+The complete 14 byte scalar-new body passes flag1 and size to __nh_malloc;
+the five byte delete tail jumps to free. R153/R154 ownership evidence remains
+unchanged. Array-thunk substitutions fail full physical comparison. Library
+allocation, memset, memcpy and GS helper bytes receive no new exact credit.
+All original source names and the unused third formal's original type remain
+unknown. No incomplete reconstructed owner is instantiated or embedded.
+
+The first natural 500 byte loader already matches. The first reader uses an
+abbreviated {0} initializer that emits a register clear plus four stores and
+is 14 bytes shorter, with the two real chunk slots reversed. Explicit zeros
+for all five actual SDK fields and a bounded 46-used-name compiler measurement
+produce the correct complete body with the same real local values. No new
+storage, scopes, padding, inert locals, fake returns, manual EH, assembly,
+aliases, masks or truncated comparisons are introduced. Original CP932 payloads
+and NULs bind their actual native occurrences, including the duplicate open
+error texts. Four wrong physical bindings and three packet mutations fail.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit shared-wave-load-00406820 --unit shared-pcm-read-00406b80
+```
+
+All 220 prior units, 108 canonical objects, 176 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,349 other function rows stay
+unchanged. F009 plus 162 additions retains 574,501 code bytes and 177 new inputs.
+R015 historical roles remain through aliases. Keep every f110 source/control,
+attested/native/CFG/packet/SDK/allocator/GS/name/binding/cold/parent input and
+its results, logs and PDBs. All 97 unknown origins remain unknown.
+
+Full CI passes **3,603 tests in 129.572 seconds**; seven exact-checkpoint
+checks also pass. Target, tracking, progress and whitespace checks pass.
+No old unit was cold-rebuilt.
+
+Cleanup removes only two obsolete reproducible function probes and one
+local-name measurement object / 30,105 bytes, plus 375 Python bytecode caches /
+8,282,863 bytes, reclaiming 8,312,968 bytes. Canonical outputs, all compiler
+inputs, measurements, complete evidence, results, logs and PDBs remain.
+Hash receipts and preservation guards are in `.analysis/f110-object-cleanup.json`,
+`.analysis/f110-preservation-cleanup.json` and
+`.analysis/f110-final-compiler-inputs.json`. All 220 old units, 108 old objects,
+176 source inputs, 218 origin files, nine headers, 91 active drafts and 4,349
+other function rows pass unchanged checks. No compiler or CI job remains active.
+
+Current totals: **222 exact functions/units, 584,384 code bytes**, 29.61% of
+reviewed authored bytes and **29.56% conservatively**, including every pending
+byte. The 98% goal is active and incomplete.
+
+## Current reconstruction cohort: F111
+
+Further bounded raw exports for the three candidates and the assign/clear
+helpers are retained in `.analysis/f111-native-frontier.json` and
+`.analysis/f111-sound-bank/`. These exports alone do not establish their ABI,
+source layouts or acceptance; no F111 source or credit exists yet.
+
+
+Continue the complete R016 SoundBank disk cohort: LoadWaveDirectory `004073D0`
+(367 bytes), LoadSerializedFile `00407540` (341) and SaveSerializedFile
+`004077E0` (472). The wave loader, PCM reader, factory and device prerequisites
+are now exact. The full directory-loader native body is retained in
+`.analysis/f110-wave-streams/caller-004073d0.asm`. Review each full extent,
+its actual SDK descriptions/format/buffer calls, physical member accesses,
+true argument packets and meaningful filename bound before writing source.
+Preserve pointer-only owners and do not instantiate a partial sound bank.
+
+Retain all old exact units, shared headers, origins and active drafts. Replay
+only new or affected units, keep compiler builds serial, and remove only
+obsolete reproducible outputs after preserving inputs and evidence. The R045
+resource root 00456B60 remains unaccepted with the f107 texture80/layout and
+meaningful filename-bound frontier; its real frame is 588 bytes below EBP.
+Do not manufacture storage, padding or larger arrays to resolve that frontier.
+
+## Previous accepted functions: F109
 
 Five complete R015 sound functions independently pass canonical cold comparison:
 client constructor `00406610..00406647` (56 bytes), destructor
@@ -116,7 +233,7 @@ Current totals: **220 exact functions/units, 583,325 code bytes**, 29.56% of
 reviewed authored bytes and **29.50% conservatively**, including every pending
 byte. All 97 unknown origins remain unknown. The 98% goal is active and incomplete.
 
-## Current reconstruction cohort: F110
+## F110 investigation at the F109 checkpoint
 
 Continue the complete R015 wave-buffer loader `00406820` (500 bytes) and its
 reader `00406B80` (559). Full native exports are retained in

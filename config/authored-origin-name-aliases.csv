@@ -163,3 +163,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004066C0,SharedSound::ShowError,SharedSound4066C0::ShowError,R015,shared-sound-error-004066c0
 0x004066E0,SharedSound::Initialize,SharedSound4066C0::Initialize,R015,shared-sound-initialize-004066e0
 0x00406A20,SharedSound::CreateBuffer,SoundCreation406A20::Create,R015,shared-sound-create-00406a20
+0x00406820,SharedSound::LoadWaveBuffer,SharedWave406820::Load,R015,shared-wave-load-00406820
+0x00406B80,SharedSound::ReadPcmWave,SharedPcm406B80::Read,R015,shared-pcm-read-00406b80

@@ -219,3 +219,5 @@ SharedSoundClient406610::~SharedSoundClient406610,0x00406650,function
 SharedSound4066C0::ShowError,0x004066C0,function
 SharedSound4066C0::Initialize,0x004066E0,function
 SoundCreation406A20::Create,0x00406A20,function
+SharedWave406820::Load,0x00406820,function
+SharedPcm406B80::Read,0x00406B80,function

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F109",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F110",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1c0b07d864287da2883c42a4de4d311d54916f80e8ea671cd24baa0699e29eec"
+      "current_sha256": "e4053e97eb05231756796ea5e1c4ce75576fc6441e4dc4a36159e32dac929569"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a0a98eb33040a025f116056349bdde1fd63d4bfdeb5978f5b5e81617cc488629"
+      "current_sha256": "a74152b349639eabb7c027b5076ecc268daddd58561b85fd31b0b4f2faff5ca4"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "dfd5f59d9656fb55beca07d81f55ed462c60e9794f2104873ac324528f1c41b6"
+      "current_sha256": "b34846e16cad444431f19498d9ba4b2eeea85adb2d7ff7a13b793e49959e0f98"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "b8e5fbc7715fb8c252450613c5337f377640d9ccc95639d26eeedd3e37908e86"
+      "current_sha256": "eec9409b6c0fa75fd72b12aa16e73a21ad0cddfec6948699a1f53ab61391216b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "e05c8f9f502a50b37fbbf128946199a65955f49f3b3ba3a31b86dd1a0a440f6e"
+      "current_sha256": "2a53b71d9cbe2561d24f10f3ec0c24e262ec669403a84a50289cb3ef5b1ec31b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "58a7b3b59f37ab541846cdba39a4a890e4ca5768a71a55d2afa251adef1464d3"
+      "current_sha256": "d177da2dcda8684910dafb0afd63741209141f386503bbf322eba80f0e9e900b"
     }
   },
   "functions": [
@@ -7075,6 +7075,94 @@
       },
       "origin": {
         "address": "0x00406A20",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406820",
+        "size": "500",
+        "span_end": "0x00406A13",
+        "current_name": "FUN_00406820",
+        "proposed_name": "SharedSound::LoadWaveBuffer",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406820",
+        "size": "500",
+        "span_end": "0x00406A13",
+        "current_name": "FUN_00406820",
+        "proposed_name": "SharedWave406820::Load",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "bool SharedWave406820::Load(const char*, IDirectSoundBuffer8**, DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/WaveStreams406820.cpp",
+        "evidence": "R015; F110; scripts/repo-python scripts/replay-exact-units.py --unit shared-wave-load-00406820",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F110: complete 500 byte independent canonical cold exact; family500+559=1059 code bytes, 352 instructions, 42 actual packets and all52 real fields. Whole native CFG/stack joins/AL0-1 returns/RET0 and actual108/48 byte frames. Complete two20-byte SDK MMCKINFO values, five explicit real zero fields then full child copy; actual18-byte WAVEFORMATEX and36-byte SDK description, no MMIOINFO local because Open receives null. MMIO_ALLOCBUF|READ, FINDRIFF/WAVE, next fmt with native flags0/read18/PCM check, Ascend, FINDCHUNK/data, real chunk-sized array/new/read. All opened paths close before diagnostics or success; data short read leaves output allocation and unwritten size, immediate loader-failure exit preserves native leak. Later Create/Query/Lock failures and successful copy conditionally delete payload; no added rollback, bounds, input validation or output resets. Loader output Release/zero precedes two real zero initializers; QueryInterface Buffer8 then unconditional temporary Release; Lock entire/copy first region/Unlock both reported regions with ignored result. Native caller has three cdecl words and cleanup12 across real checked at() RET4; body reads only first two, unused third original type/name unknown, actual zero preserved by compatible DWORD; reader uses four words. SDK MMIO imports/packet widths/COM slots independently checked; F109 DS8 producer/GUID/GS helpers retained. Natural array expressions without <new> emit actual scalar new/delete entry symbols under pinned compiler, whole14-byte scalar-new and5-byte delete tail checked, R153/R154 vendor identities retained, no array-thunk aliases. First natural loader500 already exact; reader abbreviated {0} control shorter14 bytes, explicit initialization of all five real fields plus46-name bounded measurement resolves child/parent slots, same real local storage and no scope changes. CP932 diagnostic payloads/NUL bind actual native occurrences including duplicate open-error texts. Four wrong physical bindings and three packet mutations rejected, no inert locals/padding/fake returns/EH/assembly/masks/cropped extent. No incomplete owner instantiated; original function/local names remain unknown. All220 prior units/108 objects/176 inputs/97 unknown origins/headers/drafts unchanged, R015 roles retained by aliases."
+      },
+      "origin": {
+        "address": "0x00406820",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406B80",
+        "size": "559",
+        "span_end": "0x00406DAE",
+        "current_name": "FUN_00406b80",
+        "proposed_name": "SharedSound::ReadPcmWave",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406B80",
+        "size": "559",
+        "span_end": "0x00406DAE",
+        "current_name": "FUN_00406b80",
+        "proposed_name": "SharedPcm406B80::Read",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "bool SharedPcm406B80::Read(const char*, char**, WAVEFORMATEX*, DWORD*)",
+        "is_thunk": "false",
+        "source_file": "src/WaveStreams406820.cpp",
+        "evidence": "R015; F110; scripts/repo-python scripts/replay-exact-units.py --unit shared-pcm-read-00406b80",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F110: complete 559 byte independent canonical cold exact; family500+559=1059 code bytes, 352 instructions, 42 actual packets and all52 real fields. Whole native CFG/stack joins/AL0-1 returns/RET0 and actual108/48 byte frames. Complete two20-byte SDK MMCKINFO values, five explicit real zero fields then full child copy; actual18-byte WAVEFORMATEX and36-byte SDK description, no MMIOINFO local because Open receives null. MMIO_ALLOCBUF|READ, FINDRIFF/WAVE, next fmt with native flags0/read18/PCM check, Ascend, FINDCHUNK/data, real chunk-sized array/new/read. All opened paths close before diagnostics or success; data short read leaves output allocation and unwritten size, immediate loader-failure exit preserves native leak. Later Create/Query/Lock failures and successful copy conditionally delete payload; no added rollback, bounds, input validation or output resets. Loader output Release/zero precedes two real zero initializers; QueryInterface Buffer8 then unconditional temporary Release; Lock entire/copy first region/Unlock both reported regions with ignored result. Native caller has three cdecl words and cleanup12 across real checked at() RET4; body reads only first two, unused third original type/name unknown, actual zero preserved by compatible DWORD; reader uses four words. SDK MMIO imports/packet widths/COM slots independently checked; F109 DS8 producer/GUID/GS helpers retained. Natural array expressions without <new> emit actual scalar new/delete entry symbols under pinned compiler, whole14-byte scalar-new and5-byte delete tail checked, R153/R154 vendor identities retained, no array-thunk aliases. First natural loader500 already exact; reader abbreviated {0} control shorter14 bytes, explicit initialization of all five real fields plus46-name bounded measurement resolves child/parent slots, same real local storage and no scope changes. CP932 diagnostic payloads/NUL bind actual native occurrences including duplicate open-error texts. Four wrong physical bindings and three packet mutations rejected, no inert locals/padding/fake returns/EH/assembly/masks/cropped extent. No incomplete owner instantiated; original function/local names remain unknown. All220 prior units/108 objects/176 inputs/97 unknown origins/headers/drafts unchanged, R015 roles retained by aliases."
+      },
+      "origin": {
+        "address": "0x00406B80",
         "origin": "authored",
         "subsystem": "SharedSound",
         "disposition": "authored",
@@ -104620,6 +104708,366 @@
           "target": 6555153
         }
       ]
+    },
+    "shared-wave-load-00406820": {
+      "source": "src/WaveStreams406820.cpp",
+      "object": "build/matching/WaveStreams406820.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedWave406820::Load"
+      ],
+      "symbol": "?Load@SharedWave406820@@YA_NPBDPAPAUIDirectSoundBuffer8@@K@Z",
+      "target_address": 4220960,
+      "size": 500,
+      "compare_size": 500,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 78,
+          "type": "REL32",
+          "symbol": "?Read@SharedPcm406B80@@YA_NPBDPAPADPAUtWAVEFORMATEX@@PAK@Z",
+          "target": 4221824
+        },
+        {
+          "offset": 93,
+          "type": "DIR32",
+          "symbol": "$SG56697",
+          "target": 6649308
+        },
+        {
+          "offset": 98,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 121,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 166,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 174,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 192,
+          "type": "DIR32",
+          "symbol": "$SG56700",
+          "target": 6649340
+        },
+        {
+          "offset": 197,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 221,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "_IID_IDirectSoundBuffer8",
+          "target": 6665356
+        },
+        {
+          "offset": 277,
+          "type": "DIR32",
+          "symbol": "$SG56706",
+          "target": 6649372
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 306,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 370,
+          "type": "DIR32",
+          "symbol": "$SG56711",
+          "target": 6649404
+        },
+        {
+          "offset": 375,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 399,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 423,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 479,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 492,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "shared-pcm-read-00406b80": {
+      "source": "src/WaveStreams406820.cpp",
+      "object": "build/matching/WaveStreams406820.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedPcm406B80::Read"
+      ],
+      "symbol": "?Read@SharedPcm406B80@@YA_NPBDPAPADPAUtWAVEFORMATEX@@PAK@Z",
+      "target_address": 4221824,
+      "size": 559,
+      "compare_size": 559,
+      "relocations": [
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "__imp__mmioOpenA@12",
+          "target": 6648428
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "$SG56727",
+          "target": 6649516
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "__imp__mmioDescend@16",
+          "target": 6648412
+        },
+        {
+          "offset": 161,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 166,
+          "type": "DIR32",
+          "symbol": "$SG56737",
+          "target": 6649544
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 208,
+          "type": "DIR32",
+          "symbol": "__imp__mmioDescend@16",
+          "target": 6648412
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 229,
+          "type": "DIR32",
+          "symbol": "$SG56747",
+          "target": 6649572
+        },
+        {
+          "offset": 234,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 260,
+          "type": "DIR32",
+          "symbol": "__imp__mmioRead@12",
+          "target": 6648416
+        },
+        {
+          "offset": 277,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 282,
+          "type": "DIR32",
+          "symbol": "$SG56752",
+          "target": 6649600
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 320,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 325,
+          "type": "DIR32",
+          "symbol": "$SG56754",
+          "target": 6649628
+        },
+        {
+          "offset": 330,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 356,
+          "type": "DIR32",
+          "symbol": "__imp__mmioAscend@12",
+          "target": 6648436
+        },
+        {
+          "offset": 372,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 377,
+          "type": "DIR32",
+          "symbol": "$SG56756",
+          "target": 6649660
+        },
+        {
+          "offset": 382,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 419,
+          "type": "DIR32",
+          "symbol": "__imp__mmioDescend@16",
+          "target": 6648412
+        },
+        {
+          "offset": 435,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 440,
+          "type": "DIR32",
+          "symbol": "$SG56766",
+          "target": 6649676
+        },
+        {
+          "offset": 445,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 461,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 495,
+          "type": "DIR32",
+          "symbol": "__imp__mmioRead@12",
+          "target": 6648416
+        },
+        {
+          "offset": 512,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        },
+        {
+          "offset": 517,
+          "type": "DIR32",
+          "symbol": "$SG56771",
+          "target": 6649704
+        },
+        {
+          "offset": 522,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 541,
+          "type": "DIR32",
+          "symbol": "__imp__mmioClose@8",
+          "target": 6648432
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -104798,6 +105246,7 @@
     "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
     "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e",
     "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018",
-    "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492"
+    "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492",
+    "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f"
   }
 }
