@@ -24799,3 +24799,100 @@ still need a proved complete local record layout; resource00456B60 retains
 f107's actual588byte frame and unresolved texture80/layout/filename bound.
 Build serially, cold-replay only new/affected units and remove only obsolete
 reproducible outputs while preserving inputs/evidence. Later phases deferred.
+
+## F129 complete node/name drawing checkpoint (2026-10-25)
+
+R036 camera-node `0040FC70/1758`, R035 direct-node `00410350/1706` and
+R040 name-entry player/shared renderers `0042A560/1581`,`0042B570/1875`
+pass canonical cold comparison: **6,920 code bytes,1,685 instructions,123
+actual calls and all150 real relocation fields**. Each complete CFG,
+ESP/EBP/x87 join,272/260/224/184byte frame, plain RET and following INT3 is
+reviewed independently. No table, shared tail or cropped extent is present.
+Only the four new units were cold-built, across one canonical object.
+
+The nodes retain frame pointer this+8 and drawing pointer this+4, signed
+facing/words, unsigned guard/color bytes, the no-default pose switch and
+native transform order. NaN-aware projected drawing and the distinct camera
+versus direct position formulas remain. Flat/projected calls carry complete
+quad references and the actual three scalar projection floats.
+
+Name entry consumes the native BeginFrame wrapper's forwarded AL through the
+existing accepted consumed-result view, preserving its older ignored-result
+source. EndFrame runs only after successful begin. The unsigned timeGetTime
+DWORD is zero-extended to64 bits and loaded with FILDqword before float
+100division and sine*.25+1.25 pulse arithmetic. Player rendering retains all
+ten rows, signed selected slot, gray-before-white inequality branch, actual
+signed-byte rank argument/RET16 and eight signed glyph inputs. Number helpers
+retain RET20. Shared rendering keeps its prompt/cursor branches, signed
+metadata bytes and unsigned alternate byte.
+
+Only complete132byte SDK quads, RECT/D3DVECTOR and genuine scalars are local.
+All private nodes/frames/poses/scenes/drawing/profile owners remain pointer-only
+and are never instantiated or embedded. The player accesses observed16stride
+profile pointers, byte8/9 and int12; this does not establish a complete private
+row layout. No profile record value or guessed larger array is constructed.
+Helper constructors, cookies, strings and both unknown sine-wrapper origins
+are retained without helper/library/global/data/private-layout credit.
+
+Natural geometry from the accepted actor source is reused; no new compiler
+name fixture is needed. The second preview makes three bodies exact and the
+fourth differs only in seven branch/constant bytes. The third restores the
+actual inequality/gray-first branch ordering. No extra local/storage/scope/
+padding, pasted decompile/code array, fake return, assembly, ABI alias,
+masked field or shortened comparison is used. Six wrong real texture,
+projected/begin/import/glyph/flag bindings fail whole comparison.
+
+Replay the four new `sprite-node-camera-0040fc70`,`sprite-node-00410350`,
+`name-entry-player-render-0042a560`,`name-entry-shared-render-0042b570` units.
+`.analysis/f129-cold-replay.log` records4/4 exact across one object. All313
+prior units,127 canonical objects,195 source inputs,218 origin files,nine
+shared headers,91 active drafts and4,347 other function rows remain unchanged.
+F009 plus257 additions retains696,272 code bytes and196 new inputs. Historical
+R036/R035/R040 roles remain through aliases; all97 unknown origins remain
+unknown. Preserve all f129 attested/native/SDK/CFG/x87/receiver/frame/pose/profile/
+glyph/pulse/constant/negative/binding/cold/parent evidence, all three previews,
+sources, results, logs, PDBs and the canonical object.
+
+Current totals: **317 exact functions/units,706,155 code bytes**,35.78% of
+reviewed authored bytes and **35.72% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in175.906s; seven exact-checkpoint tests
+passed in0.547s; target/tracking/diff checks passed. Only four new units were
+cold-built. Evidence-preserving cleanup removed three obsolete own game
+probes(62,142bytes), plus375 reproducible Python bytecode files(8,283,506bytes).
+No new compiler name fixture was built. All actual compiler inputs/three
+previews/native/SDK/CFG/x87/receiver/frame/pose/profile/glyph/pulse/constant/
+negative/binding/cold/parent evidence, logs, PDBs and canonical objects remain.
+Receipts are retained under
+`.analysis/f129-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F130
+
+Independently review three authored candidates, **8,847 provisional code bytes**:
+
+| Candidate | Address / provisional size |
+| --- | --- |
+| CharacterSelectScene::UpdatePlayerSelection | `00433CF0/3045` |
+| FighterState::UpdateControls | `00452F10/2815` |
+| GameApplication::RunAt00602A60 | `00602A60/2987` |
+
+Native-only function/caller/callee/decompile queries under
+`.analysis/f130-selection-control-run/` are complete. Target attestation and
+all four query completion markers are verified. Complete native spans and
+`.analysis/f130-native-frontier-proof.json` retain the next investigation
+inputs; linear observations do not establish accepted boundaries or CFGs. No F130 source or exact
+credit is claimed. Reconcile every complete CFG/code/table/tail extent, real
+ABI, local-value contract, field width and helper packet before source.
+Only independently complete SDK/local values may be constructed. Preserve
+native input/state/timing/loop order; private owners stay pointer-only.
+
+All accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts/failed controls remain protected. No unchanged retries or relaxed full
+physical comparison. All97 unknown origins remain unknown and evidence
+throughR268 is immutable. Every incomplete private owner is never instantiated
+or embedded. QueueFile00407A50/QueueArchiveEntry00407B80 still need a proved
+complete local record layout; resource00456B60 retains f107's actual588byte
+frame and unresolved texture80/layout/filename bound. Keep compiler builds
+serial, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while preserving inputs/evidence. Later phases deferred.

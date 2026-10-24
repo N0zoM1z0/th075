@@ -256,3 +256,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0044AF00,BattleEffect::DrawLayerAt0044AF00,EffectLayer0044AF00::Draw,R054,effect-layer-0044af00
 0x0044CC20,BattleEffect::DrawLayerAt0044CC20,EffectLayer0044CC20::Draw,R054,effect-layer-0044cc20
 0x0044CEC0,BattleEffect::DrawLayerAt0044CEC0,EffectLayer0044CEC0::Draw,R054,effect-layer-0044cec0
+0x0040FC70,SpriteScene::RenderCameraNode,SpriteNodeCameraF129::Render,R036,sprite-node-camera-0040fc70
+0x00410350,SpriteScene::RenderNode,SpriteNodeF129::Render,R035,sprite-node-00410350
+0x0042A560,NameEntryScene::RenderPlayer,NameEntryPlayerF129::Render,R040,name-entry-player-render-0042a560
+0x0042B570,NameEntryScene::RenderShared,NameEntrySharedF129::Render,R040,name-entry-shared-render-0042b570

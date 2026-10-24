@@ -311,3 +311,7 @@ EffectLayer0044AC60::Draw
 EffectLayer0044AF00::Draw
 EffectLayer0044CC20::Draw
 EffectLayer0044CEC0::Draw
+SpriteNodeCameraF129::Render
+SpriteNodeF129::Render
+NameEntryPlayerF129::Render
+NameEntrySharedF129::Render

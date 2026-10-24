@@ -312,3 +312,7 @@ EffectLayer0044AC60::Draw,0x0044AC60,function
 EffectLayer0044AF00::Draw,0x0044AF00,function
 EffectLayer0044CC20::Draw,0x0044CC20,function
 EffectLayer0044CEC0::Draw,0x0044CEC0,function
+SpriteNodeCameraF129::Render,0x0040FC70,function
+SpriteNodeF129::Render,0x00410350,function
+NameEntryPlayerF129::Render,0x0042A560,function
+NameEntrySharedF129::Render,0x0042B570,function
