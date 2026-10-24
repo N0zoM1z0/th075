@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F090",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F091",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "84041b0219afc6d5c11605718a55ff0c9834dfa5b9f129857b53f863ac88bba7"
+      "current_sha256": "ebe5706dbef8ede5508bc7b2d973921b6b4fc3f61dba1a0cf9321ff6402914fe"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "63c840a7dc36939f8d7834f4665bf2e4d396a478b2266038eb5e77735e492e6b"
+      "current_sha256": "6d7dce9959f9b2eece107174019d417454ea61d17b7577e7215d543f593986f6"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "189e3d83ca81ab71c6061b123e14562ddd2e4eab050b7c27a6b1fcd0771774c0"
+      "current_sha256": "dc482d324df25e856da0c44c1eb5e80cda27e098df0a92aeea1a90a373cea471"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "3fb019674c1320ddab41ac72a1900bb7176a8b1a9e2855afaee25afcd1004395"
+      "current_sha256": "c1b3472aef654e548ee285bace5bf70be474e2b4cf650d1ddcc7644810f31947"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a72beaba18cfe5ac7cd299eefd3f22f08bb595172aaba7b9522bcad0a03dccbb"
+      "current_sha256": "5a2526870be3be401f54945715d338b767af4c0f7e4112e05135cfe9831a8c63"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -5496,6 +5496,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004018A0",
+        "size": "340",
+        "span_end": "0x004019F3",
+        "current_name": "FUN_004018a0",
+        "proposed_name": "Graphics::ToggleWindowMode",
+        "module": "Graphics",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004018A0",
+        "size": "340",
+        "span_end": "0x004019F3",
+        "current_name": "FUN_004018a0",
+        "proposed_name": "Graphics::ToggleWindowMode",
+        "module": "Graphics",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void Graphics::ToggleWindowMode()",
+        "is_thunk": "false",
+        "source_file": "src/GraphicsWindowMode4018A0.cpp",
+        "evidence": "R001; custom D3D8 globals/policies; full control flow and return reviewed; F091; scripts/repo-python scripts/replay-exact-units.py --unit graphics-window-mode-004018a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; inferred name; source and exact state remain independent; F091: complete340-byte canonical cold exact window-mode toggle,96 instructions/six branches/15 actual packets and32 physical fields; real SDK typed globals and six member addends retained; A8R8G8B8/R5G6B5 policies and exact GetSystemMetrics ordering checked; target-observed computed CY store remains while both final coordinates consume CX; all four real metric/centering computations and16-byte frame+ESI retained without spare storage; source spelling/scopes unknown; names and R001 role unchanged; all prior units/headers/97 pending origins and older large drafts preserved"
+      },
+      "origin": {
+        "address": "0x004018A0",
+        "origin": "authored",
+        "subsystem": "Graphics",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
       }
     }
   ],
@@ -97553,6 +97597,221 @@
           "target": 6754880
         }
       ]
+    },
+    "graphics-window-mode-004018a0": {
+      "source": "src/GraphicsWindowMode4018A0.cpp",
+      "object": "build/matching/GraphicsWindowMode4018A0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "Graphics::ToggleWindowMode"
+      ],
+      "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+      "target_address": 4200608,
+      "size": 340,
+      "compare_size": 340,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "?g_PresentCallback@Graphics@@3P6AXPAPAUIDirect3DTexture8@@@ZA",
+          "target": 6754712
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "?g_Windowed@Graphics@@3_NA",
+          "target": 6754872
+        },
+        {
+          "offset": 34,
+          "type": "DIR32",
+          "symbol": "?g_Windowed@Graphics@@3_NA",
+          "target": 6754872
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__ShowCursor@4",
+          "target": 6648328
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_Use16BitBackBuffer@Graphics@@3_NA",
+          "target": 6754873
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 91,
+          "type": "REL32",
+          "symbol": "?ResetDevice@Graphics@@YAXXZ",
+          "target": 4200352
+        },
+        {
+          "offset": 99,
+          "type": "DIR32",
+          "symbol": "?g_ClientHeight@Graphics@@3HA",
+          "target": 6754844
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "?g_ClientWidth@Graphics@@3HA",
+          "target": 6754840
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 125,
+          "type": "DIR32",
+          "symbol": "__imp__SetWindowPos@28",
+          "target": 6648324
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "?g_Windowed@Graphics@@3_NA",
+          "target": 6754872
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "__imp__ShowCursor@4",
+          "target": 6648328
+        },
+        {
+          "offset": 151,
+          "type": "DIR32",
+          "symbol": "?g_DisplayMode@Graphics@@3U_D3DDISPLAYMODE@@A",
+          "target": 6754792
+        },
+        {
+          "offset": 157,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 163,
+          "type": "DIR32",
+          "symbol": "?g_PresentationParameters@Graphics@@3U_D3DPRESENT_PARAMETERS_@@A",
+          "target": 6754716
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "?ResetDevice@Graphics@@YAXXZ",
+          "target": 4200352
+        },
+        {
+          "offset": 180,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 188,
+          "type": "DIR32",
+          "symbol": "?g_ClientWidth@Graphics@@3HA",
+          "target": 6754840
+        },
+        {
+          "offset": 196,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 219,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 227,
+          "type": "DIR32",
+          "symbol": "?g_ClientHeight@Graphics@@3HA",
+          "target": 6754844
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 245,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 255,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 268,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "__imp__GetSystemMetrics@4",
+          "target": 6648388
+        },
+        {
+          "offset": 324,
+          "type": "DIR32",
+          "symbol": "?g_Window@Graphics@@3PAUHWND__@@A",
+          "target": 6754836
+        },
+        {
+          "offset": 331,
+          "type": "DIR32",
+          "symbol": "__imp__SetWindowPos@28",
+          "target": 6648324
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -97708,6 +97967,7 @@
     "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541",
     "src/SelectionInput4388D0.cpp": "381a1d8fa3510e4118afb0e892f509d669c8c33d9be747b7f074896c3bcb3353",
     "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17",
-    "src/InputHeldCounts406E80.cpp": "f9775afe22272c4170ed2903282b194b44a49bbfb791cc708ec00d12091beb8d"
+    "src/InputHeldCounts406E80.cpp": "f9775afe22272c4170ed2903282b194b44a49bbfb791cc708ec00d12091beb8d",
+    "src/GraphicsWindowMode4018A0.cpp": "6b1befb9497e4c215f1c8f90ad864567d3f40228b1c84b67dc9d5382e16cb31d"
   }
 }

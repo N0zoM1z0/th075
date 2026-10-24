@@ -21390,3 +21390,52 @@ retained; the245-byte direct callee is unchanged accepted Graphics::ResetDevice.
 Target4019CB stores computed vertical centering atEBP-4,but4019D8/4019DC both
 load horizontal originEBP-C for the two SetWindowPos coordinates. Do not repair
 that behavior or invent unused storage. No F091 source/build/unit/credit yet.
+
+## F091 complete window-mode toggle checkpoint (2026-10-24)
+
+R001 004018A0..004019F3/340 bytes is independently cold exact as the unchanged
+Graphics::ToggleWindowMode name. Twelve following INT3 bytes are excluded.
+One new implementation file uses unchanged existing SDK headers/globals; no
+old units are rebuilt. All 96 instructions, six branches, 15 call packets and
+32 fields match physically. The two direct calls use accepted ResetDevice.
+The callback guard, mode/cursor policies and exact metric ordering remain.
+Format constants are R5G6B5=23 and A8R8G8B8=21; the initial X8R8G8B8=22
+hypothesis was rejected. No new globals or name alias are needed.
+
+All four actual metric/centering computations and the real 16-byte frame/ESI
+are retained. Target 4019CB stores computed CY at EBP-4, then both final window
+coordinates read CX at EBP-C. The source preserves this observed computed but
+discarded value and repeated CX arguments, without dummy alignment storage or
+repairing the target behavior. Original names/scopes are unknown. Twelve
+bounded meaningful-name controls and a declaration-order control preserve
+those four real computations; final screenHeight/declaration reproduces all
+frame operands. Separate standalone preview, independent canonical compilation
+and canonical cold comparison match every byte. Controls are diagnostic only.
+
+The 32 fields bind two direct calls, thirteen named USER32 imports and seventeen
+existing global fields. Six real member addends remain in COFF (presentation
+8/28, display mode12); the manifest pins bases and the cold comparator applies
+the actual addends. Widths, exact member offsets, permissions, import identities
+and operand positions are reviewed. All branch/stack joins and saved ESI pass;
+wrong SetWindowPos-ret24 and GetSystemMetrics-ret0 controls fail. No masks,
+aliases, fake returns, ABI changes or extent truncation. All184 old units,
+89 objects,153 inputs,218 origin files,nine headers,91 active drafts and4,350
+other rows remain unchanged. Unknown97 origins and all older unaccepted drafts
+get no credit. Current185 exact functions/units total557,962 bytes:28.27%
+reviewed,28.22% conservative. F009+125 additions retains548,079 bytes and154
+inputs. Goal98% active/incomplete. Next F092: complete4,749-byte R043 staff-roll
+timeline00438D00; independently reconcile before source. Preserve complete
+f091 native/attested/ABI/physical/cold/parent/progress/controls/input evidence.
+
+F091 final validation: 3,603 CI tests pass in 142.161s, plus target/
+tracking, progress and whitespace checks. Removed six obsolete reproducible
+probe/control objects (89,120 bytes) and scripts/tests bytecode
+(8,282,705 bytes), after whole final-preview/cold code and all32
+relocation equality. All sources, inputs, logs, PDBs, evidence, canonical
+objects and older active drafts remain. F092 fresh full native/attested root/
+callee/caller records reconcile1,215 instructions/48 branches/61 direct sites
+and seven complete callees, including47 DrawSprite calls/six implicit-ST0
+conversions. DrawSprite's nine arguments occupy36 bytes: index,x/y floats,
+DWORD color,two pivot floats,scale float,angle float,byte flags. It constructs
+the existing complete132-byte physical packet; no complete owner layout is
+implied. No F092 source/build/unit/credit at this checkpoint.

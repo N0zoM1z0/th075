@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F091 window-mode investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F092 staff-roll timeline investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 184 / 184 / 184 |
-| Exact code bytes | 557,622 |
-| Reviewed authored coverage | 557,622 / 1,973,516 (28.26%) |
-| Conservative coverage, including every pending byte | 557,622 / 1,977,124 (28.20%) |
+| Source-present / exact functions / exact units | 185 / 185 / 185 |
+| Exact code bytes | 557,962 |
+| Reviewed authored coverage | 557,962 / 1,973,516 (28.27%) |
+| Conservative coverage, including every pending byte | 557,962 / 1,977,124 (28.22%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **124 additions /
-547,739 code bytes / 153 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **125 additions /
+548,079 code bytes / 154 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,65 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F090
+## Latest accepted function: F091
+
+R001 window-mode toggle 004018A0..004019F3 is independently canonical cold exact
+as `Graphics::ToggleWindowMode`: all 340 bytes, 96 instructions, six branches,
+15 call packets and 32 physical fields. Twelve following INT3 bytes remain
+outside the extent. One new implementation file uses unchanged headers and
+existing SDK globals. The original R001 role/name stays unchanged; no alias
+is needed. Its two direct calls use the unchanged accepted ResetDevice body.
+
+The callback guard, windowed/fullscreen policy, cursor calls, exact metric-call
+order and both SetWindowPos packets are preserved. SDK format values are 23
+(R5G6B5) and 21 (A8R8G8B8); the first X8R8G8B8 hypothesis emitted 22 and was
+rejected. Four actual metric/centering computations produce the native 16-byte
+frame. The ninth GetSystemMetrics result is used to compute vertical centering
+and stored at EBP-4, although the final SetWindowPos loads horizontal centering
+at EBP-C for both coordinates. The source retains this observed computation
+and discarded result; no spare/alignment storage or coordinate repair is added.
+Original variable spelling and lexical scopes remain unknown.
+
+Twelve bounded meaningful-name controls and a declaration-order control
+preserve those four actual computations. The final screenHeight spelling and
+four-variable declaration reproduce every real frame operand. A separate
+standalone preview, independent canonical compile and canonical cold replay
+match physically. All 32 fields bind two direct calls, thirteen named USER32
+imports and seventeen existing global fields. Six real SDK member addends
+(8/28 in presentation parameters and 12 in display mode) remain in the COFF;
+the manifest pins their bases and cold comparison applies the actual addends.
+Widths, member offsets, permissions, import names and operand positions are
+checked. Every CFG/stack join and saved ESI passes; incorrect SetWindowPos-ret24
+and GetSystemMetrics-ret0 controls fail. No masks, frame aliases or cropping.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit graphics-window-mode-004018a0
+```
+
+All 184 old units, 89 canonical objects, 153 source/header inputs, 218 origin
+files, nine shared headers, 91 active draft inputs and 4,350 other function rows
+stay unchanged. No old units were rebuilt. F009 plus 125 additions retains
+548,079 bytes and 154 inputs. All 97 origins remain unknown; F085 and every
+older unaccepted draft receive no credit. Keep all f091 native/attested/ABI/
+physical/cold/parent/progress/name-control/input/preservation evidence and
+source inputs, logs and PDBs. Full CI passes **3,603 tests in 142.161
+seconds**, plus target/tracking, progress and whitespace checks. Removed six
+obsolete reproducible probe/control objects (89,120 bytes) and
+scripts/tests bytecode (8,282,705 bytes), after whole final-preview/
+cold-canonical code and all 32 relocation equality. All sources, inputs, logs,
+PDBs, evidence and canonical objects remain.
+Next F092: full 4,749-byte R043 StaffRollScene::RenderTimeline at 00438D00.
+Fresh native/attested root/callee/caller records reconcile 1,215 instructions,
+48 branches and 61 direct call sites to seven complete callees: accepted
+BeginFrame/EndFrame, three texture-state setters, DrawSprite and ftol2. There
+are 47 sprite calls and six implicit-ST0 conversions. DrawSprite has nine real
+arguments: texture index, x/y floats, DWORD color, two pivot floats, scale float,
+angle float and one byte of flags (36 stack bytes). Reconcile all timeline
+paths, signed float conversions and actual packets before source. No F092
+source, build, unit or credit yet.
+Goal 98% remains active and incomplete.
+
+## Previous accepted function: F090
 
 R015 held-input update00406E80..00407164 is independently canonical cold exact
 as `InputMapping4388D0::UpdateHeldCounts`: all741 bytes,211 instructions,
@@ -71,16 +129,6 @@ progress and whitespace checks. Removed one obsolete reproducible probe object
 (17,450 bytes) and scripts/tests bytecode(8,282,705 bytes),
 after whole preview/cold code and all15 relocation equality. All source/control
 inputs,logs,PDBs,evidence and canonical objects remain.
-Next F091: complete340-byte R001 Graphics::ToggleWindowMode004018A0 from F089's
-direct graph. Reconcile complete SDK/global effects and genuine call packets
-before source. Fresh complete96-instruction/six-branch/15-call native and
-attested root/callee/caller records are retained. Its245-byte direct callee is
-the unchanged accepted Graphics::ResetDevice. The target computes a vertical
-origin and stores it atEBP-4,but both SetWindowPos coordinate arguments load the
-horizontal origin atEBP-C. Preserve that target observation; do not invent
-unused storage or silently repair the coordinate behavior. No F091 source or
-credit exists. Goal98% remains active/incomplete.
-
 ## Previous accepted functions: F089
 
 R043 input poll004388D0..00438A29 (346 bytes) and R015 key query00407170..
