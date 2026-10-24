@@ -17630,3 +17630,49 @@ relocations = [
   { offset = 0x1280, type = "REL32", symbol = "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z", target = 0x0040C860 },
   { offset = 0x1285, type = "REL32", symbol = "?EndFrame@Graphics@@YAXXZ", target = 0x004027D0 },
 ]
+
+[units."sprite-draw-0040ca80"]
+source = "src/SpriteDraw40CA80.cpp"
+object = "build/matching/SpriteDraw40CA80.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TimelineDrawing438D00::DrawSprite"]
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target_address = 0x0040CA80
+size = 1132
+compare_size = 1132
+relocations = [
+  { offset = 0x18, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x3E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x59, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x75, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0xCD, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x11D, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x144, type = "DIR32", symbol = "__real@00000000", target = 0x0065782C },
+  { offset = 0x1A4, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x1FC, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x219, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
+  { offset = 0x222, type = "REL32", symbol = "?CameraCosineAt0040D900@@YAMM@Z", target = 0x0040D900 },
+  { offset = 0x237, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
+  { offset = 0x240, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
+  { offset = 0x36A, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+  { offset = 0x445, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0x45D, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."sprite-quad-clear-0040d990"]
+source = "src/SpriteDraw40CA80.cpp"
+object = "build/matching/SpriteDraw40CA80.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteQuad40CA80::SpriteQuad40CA80"]
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
+target_address = 0x0040D990
+size = 85
+compare_size = 85
+relocations = [
+  { offset = 0xB, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+  { offset = 0x16, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+  { offset = 0x21, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+  { offset = 0x2C, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@XZ", target = 0x0040D980 },
+  { offset = 0x37, type = "REL32", symbol = "??0RenderQuadPayload5E68C0@@QAE@XZ", target = 0x0040D9F0 },
+  { offset = 0x47, type = "REL32", symbol = "_memset", target = 0x00640490 },
+]

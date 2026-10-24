@@ -21495,3 +21495,58 @@ F064/CharacterSpecial5E68C0 and F083/AtlasQuad40DA00/BattleAtlasNumber446B90
 provide separate existing complete physical views; no original class identity
 is inferred. Shared-header edits require affected replays. Keep17-byte trig
 wrappers and97 pending origins unchanged. No F093 source/build/unit/credit.
+
+## F093 complete sprite draw and clear constructor checkpoint (2026-10-24)
+
+R0110040CA80..0040CEEB/1,132 bytes and0040D990..0040D9E4/85 bytes
+independently cold exact as TimelineDrawing438D00::DrawSprite and
+SpriteQuad40CA80::SpriteQuad40CA80. Four/eleven following INT3 bytes are
+excluded. One natural body per function shares two new inputs and one serial
+object build. Both R011 roles are retained by alias. Original class identities,
+complete manager/entry layouts and payload member partition remain unknown.
+The complete physical132-byte packet follows established F064/F083 evidence:
+four16-byte coordinate records,payload68 bytes at64,both constructor entries,
+actual33-dword assignment copies and whole132-byte clear. New interface leaves
+all accepted headers unchanged. Partial manager/entry views are pointer-only,
+never instantiated/embedded; entry returns EAX address and only+4/+8 signed
+DWORD dimensions are read. No guessed complete record size or array stride.
+
+All303 draw instructions/11 branches/12 packets/16 fields match. Nine real
+arguments occupy36 bytes. Exact scale/angle tests,flag1 paths,four genuine
+132-byte temporaries/copies,rotation arithmetic order and one real SDK vector
+swap are retained. Nested texture lookup feeds final cdecl16-byte draw packet.
+Initial outer RECT gives1,099 bytes with303 instructions; real nested RECT/
+drawing scope yields1,132 bytes/708-byte frame without added storage. Two
+rotation coefficients,one vector swap and four temporaries are genuine. Clear
+constructor has28 instructions/six fields and zeroes132 bytes after five
+member constructions. Its two14-byte dependencies stay unknown. No masks,
+register/frame aliasing,source splits,layout padding or shortened comparisons.
+
+All18 packets across both bodies,root/constructor joins,ESI/EDI saves and four
+132-byte copies pass ABI review. Wrong parameterized-ctor-ret12/final-draw-ret16
+controls fail. Both17/28-byte trig wrapper pairs,both174-byte runtime parents
+and13-byte auxiliary are rechecked against unchanged R163/R128 proofs,with
+existing cdecl(float)/ST0 declarations unchanged. Four wrappers stay unknown;
+no ownership/source/exact credit for helpers. All22 fields bind16 draw fields
+and six constructor calls,with exact readonly payload/width/permission/operand/
+zero-addend checks. Each unit passes its own canonical cold comparison from
+one rebuilt object. All186 old units,91 objects,156 inputs,218 origin files,
+nine shared headers,91 active drafts and4,349 other rows stay unchanged;
+no old cold builds. Unknown97 origins and all old unaccepted drafts get no
+credit. Current188 exact functions/units total563,928 bytes:28.57% reviewed,
+28.52% conservative. F009+128 additions retains554,045 bytes and158 inputs.
+Goal98% active/incomplete. Next F094: complete162-byte R014 ResolveTextureHandle
+0040C8C0; reconcile cache state/record flags/helper calls before source. Preserve
+all f093 native/attested/ABI/physical/packet-model/math/cold/parent/input evidence.
+
+F093 final validation:3,603 CI tests pass in 126.739s, plus target/
+tracking, progress and whitespace checks. Removed three obsolete reproducible
+probe objects (42,616 bytes) and scripts/tests bytecode
+(8,282,705 bytes), after complete final-preview/cold code and all22
+relocation equality across both functions. All sources, inputs, logs, PDBs,
+evidence, canonical objects and older active drafts remain. F094 fresh native/
+attested root/callee/caller records retain53 instructions/seven branches/five
+call sites/four whole callees. Cache dwords6713B8/6713B4 are previously unnamed;
+first-use flags/index update occurs before input-index validation. Entry flag
+byte+0x28 and palette/default pointer-vector selections must remain. No F094
+source/build/unit/credit at this checkpoint.

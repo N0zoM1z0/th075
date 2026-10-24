@@ -129,3 +129,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00407170,InputMapping::IsKeyDown,InputMapping4388D0::IsKeyDown,R015,input-key-down-00407170
 0x00406E80,InputMapping::UpdateHeldCounts,InputMapping4388D0::UpdateHeldCounts,R015,input-held-counts-00406e80
 0x00438D00,StaffRollScene::RenderTimeline,StaffTimeline438D00::RenderTimeline,R043,staff-timeline-00438d00
+0x0040CA80,SpriteDrawing::DrawSprite,TimelineDrawing438D00::DrawSprite,R011,sprite-draw-0040ca80
+0x0040D990,SpriteGeometry::ZeroInitialize,SpriteQuad40CA80::SpriteQuad40CA80,R011,sprite-quad-clear-0040d990

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F092",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F093",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "14d3181dba5eb59d5b57f46bf29f266d919c3b442a2c6a4230a595b727798f50"
+      "current_sha256": "5a156ca1bf5173c359e898043302a999bd47f223d117f4074b9895dc3fca989d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "227668f9571b2147bf48096398d2772a3de7fadc14548a45f7cea9f2441e6bf2"
+      "current_sha256": "60dfdf470197d25a3bc61ad71120158fea0296e58cca473f9a2567c6289351e3"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "73cd8b010cd3192867578c32f9622f989bf0c21a6113f163048d1d18e1b65ddb"
+      "current_sha256": "03b2ccbacb5dc537066ad73dab06ac4b1e615053eb3b1c9fa20871392709d395"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "fcf0c1943eea89ee452bf20dd1444d39e989ae86ee390c32eeaf7870e78bc925"
+      "current_sha256": "e4aebefd83ce71be73157a022109dca2e630ecb20b6b7a4305ec498954ed25dd"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "63a9af2bf459563efd5b64b503573006985a280e78fd4981eaa430c31c25b664"
+      "current_sha256": "02da93335cb44b1dfeae156fd67b0b7bccc172e0a0c8891dff87e0722dda1888"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "06f1609db7d5e5e7508911eb50d66f613ad66023d13a73e9a3b3e7a3c59897c7"
+      "current_sha256": "eccdc0a7b26ba60003ae03a4848b083c50f23699ce60df3fcdd8d9d42c513961"
     }
   },
   "functions": [
@@ -5584,6 +5584,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040CA80",
+        "size": "1132",
+        "span_end": "0x0040CEEB",
+        "current_name": "FUN_0040ca80",
+        "proposed_name": "SpriteDrawing::DrawSprite",
+        "module": "SpriteDrawing",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040CA80",
+        "size": "1132",
+        "span_end": "0x0040CEEB",
+        "current_name": "FUN_0040ca80",
+        "proposed_name": "TimelineDrawing438D00::DrawSprite",
+        "module": "SpriteDrawing",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TimelineDrawing438D00::DrawSprite(int, float, float, DWORD, float, float, float, float, unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteDraw40CA80.cpp",
+        "evidence": "R011; F093; scripts/repo-python scripts/replay-exact-units.py --unit sprite-draw-0040ca80",
+        "owner": "authored",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F093: complete1132-byte canonical cold exact sprite drawing/clear constructor; full303-instruction draw,11 branches,12 real packets and four132-byte constructor copies; real nine args occupy36 bytes,texture entry+4/+8 fields and pointer-only manager/entry views retain no complete owner layout claim; complete physical132-byte packet with both ctor entries reuses established F064/F083 storage model; rotation arithmetic,flag1 swaps,raw scale and ordered angle tests retained; SDK RECT nested drawing scope yields708-byte frame without padding; separate authored85-byte clear ctor has28 instructions/six fields and clears actual132 bytes after five real member constructions; both14-byte auxiliaries and four17/28-byte trig wrappers stay unknown,full R163/R128 math graphs retained; original classes/names/scopes/layout partitions unknown; all prior units/headers/97 origins and active drafts preserved"
+      },
+      "origin": {
+        "address": "0x0040CA80",
+        "origin": "authored",
+        "subsystem": "SpriteDrawing",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040D990",
+        "size": "85",
+        "span_end": "0x0040D9E4",
+        "current_name": "FUN_0040d990",
+        "proposed_name": "SpriteGeometry::ZeroInitialize",
+        "module": "SpriteGeometry",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R011",
+        "owner": "",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040D990",
+        "size": "85",
+        "span_end": "0x0040D9E4",
+        "current_name": "FUN_0040d990",
+        "proposed_name": "SpriteQuad40CA80::SpriteQuad40CA80",
+        "module": "SpriteGeometry",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SpriteQuad40CA80::SpriteQuad40CA80()",
+        "is_thunk": "false",
+        "source_file": "src/SpriteDraw40CA80.cpp",
+        "evidence": "R011; F093; scripts/repo-python scripts/replay-exact-units.py --unit sprite-quad-clear-0040d990",
+        "owner": "authored",
+        "notes": "R011; custom sprite/geometry or diagnostic-file policy, complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F093: complete85-byte canonical cold exact sprite drawing/clear constructor; full303-instruction draw,11 branches,12 real packets and four132-byte constructor copies; real nine args occupy36 bytes,texture entry+4/+8 fields and pointer-only manager/entry views retain no complete owner layout claim; complete physical132-byte packet with both ctor entries reuses established F064/F083 storage model; rotation arithmetic,flag1 swaps,raw scale and ordered angle tests retained; SDK RECT nested drawing scope yields708-byte frame without padding; separate authored85-byte clear ctor has28 instructions/six fields and clears actual132 bytes after five real member constructions; both14-byte auxiliaries and four17/28-byte trig wrappers stay unknown,full R163/R128 math graphs retained; original classes/names/scopes/layout partitions unknown; all prior units/headers/97 origins and active drafts preserved"
+      },
+      "origin": {
+        "address": "0x0040D990",
+        "origin": "authored",
+        "subsystem": "SpriteGeometry",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R011"
       }
     }
   ],
@@ -98581,6 +98669,184 @@
           "target": 4204496
         }
       ]
+    },
+    "sprite-draw-0040ca80": {
+      "source": "src/SpriteDraw40CA80.cpp",
+      "object": "build/matching/SpriteDraw40CA80.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TimelineDrawing438D00::DrawSprite"
+      ],
+      "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+      "target_address": 4246144,
+      "size": 1132,
+      "compare_size": 1132,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 62,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 117,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 205,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 285,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 324,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 508,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 546,
+          "type": "REL32",
+          "symbol": "?CameraCosineAt0040D900@@YAMM@Z",
+          "target": 4249856
+        },
+        {
+          "offset": 567,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?CameraSineAt0040D940@@YAMM@Z",
+          "target": 4249920
+        },
+        {
+          "offset": 874,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 1093,
+          "type": "REL32",
+          "symbol": "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 1117,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "sprite-quad-clear-0040d990": {
+      "source": "src/SpriteDraw40CA80.cpp",
+      "object": "build/matching/SpriteDraw40CA80.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteQuad40CA80::SpriteQuad40CA80"
+      ],
+      "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+      "target_address": 4250000,
+      "size": 85,
+      "compare_size": 85,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "??0D3DXVECTOR4@@QAE@XZ",
+          "target": 4249984
+        },
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPayload5E68C0@@QAE@XZ",
+          "target": 4250096
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -98739,6 +99005,8 @@
     "src/InputHeldCounts406E80.cpp": "f9775afe22272c4170ed2903282b194b44a49bbfb791cc708ec00d12091beb8d",
     "src/GraphicsWindowMode4018A0.cpp": "6b1befb9497e4c215f1c8f90ad864567d3f40228b1c84b67dc9d5382e16cb31d",
     "src/StaffTimeline438D00.cpp": "845ff485a6355657f3b172d7af71308c7df2d4b2ca976009fc01bcd4d176ec8d",
-    "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27"
+    "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27",
+    "src/SpriteDraw40CA80.cpp": "27c461e578eb8b620f9bb4da7284c018116c6d4a2d9a8e54a836f8dbf5e44690",
+    "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59"
   }
 }

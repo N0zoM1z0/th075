@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F093 sprite-drawing investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F094 texture-handle investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 186 / 186 / 186 |
-| Exact code bytes | 562,711 |
-| Reviewed authored coverage | 562,711 / 1,973,516 (28.51%) |
-| Conservative coverage, including every pending byte | 562,711 / 1,977,124 (28.46%) |
+| Source-present / exact functions / exact units | 188 / 188 / 188 |
+| Exact code bytes | 563,928 |
+| Reviewed authored coverage | 563,928 / 1,973,516 (28.57%) |
+| Conservative coverage, including every pending byte | 563,928 / 1,977,124 (28.52%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **126 additions /
-552,828 code bytes / 156 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **128 additions /
+554,045 code bytes / 158 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,77 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F092
+## Latest accepted functions: F093
+
+R011 DrawSprite 0040CA80..0040CEEB (1,132 bytes) and clear constructor
+0040D990..0040D9E4 (85 bytes) independently pass canonical cold comparison as
+`TimelineDrawing438D00::DrawSprite` and `SpriteQuad40CA80::SpriteQuad40CA80`.
+Four/eleven following INT3 bytes are excluded. Two new source/header inputs
+hold one natural body per function and one complete physical packet interface.
+Both previous R011 roles are retained by alias. Complete original manager,
+entry and class identities/layout partitions remain unknown.
+
+The draw retains all303 instructions,11 branches,12 packets and16 fields:
+twelve direct calls and four readonly scalar fields. Its nine arguments occupy
+36 bytes. Exact scale/angle tests keep unordered and signed-zero behavior.
+Mirrored/nonmirrored fast and scaled paths construct four real132-byte
+value temporaries and copy33 dwords each. The rotated path preserves both
+cdecl(float)/ST0 math calls and the native eight-field arithmetic order. One
+real SDK D3DXVECTOR4 swaps all four coordinate words for each flipped pair.
+Nested texture resolution feeds the actual cdecl16-byte final draw packet.
+
+The established F064/F083 complete132-byte physical model now has both
+constructor entries in a new interface, leaving old headers unchanged. It
+contains four16-byte coordinate records and the existing68-byte payload at64;
+size/offset guards and full constructor/copy evidence are retained. This is a
+physical value view, not a complete original manager/entry layout claim.
+Entry access returns an observed EAX address; only signedDWORD+4/+8 dimensions
+are read. Manager/entry views are pointer-only and never constructed/embedded.
+The authored clear constructor has28 instructions/six relocations and clears
+exactly132 bytes after four real SDK vector and one payload constructions.
+The two14-byte auxiliaries remain unknown and receive no credit.
+
+First probe is1,099 bytes with the same303 instructions because the outer RECT
+precedes the packet in the frame. Nesting the real RECT/drawing scope yields
+all1,132 bytes and the natural708-byte frame, with genuine rotation/swap locals
+and four constructor temporaries. Adding the independent clear body keeps the
+draw code unchanged and separately matches85 bytes. No spare storage, padding,
+conditional bodies, masks, aliases or shortened extents. Original names/scopes
+are not established by a compiler match.
+
+All18 packets across the two bodies, saved ESI/EDI, full frame joins, four132-
+byte copies and22 fields pass review. Wrong parameterized-ctor-ret12 and final-
+draw-ret16 controls fail. Both17/28-byte cosine/sine wrapper pairs, both complete
+174-byte runtime parents and13-byte auxiliary are rechecked against unchanged
+R163/R128 evidence. Existing declarations and all97 unknown origins stay fixed;
+no wrapper/runtime credit. Each new unit has its own canonical cold comparison,
+sharing one serial object build. Old units were not rebuilt.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit sprite-draw-0040ca80 --unit sprite-quad-clear-0040d990
+```
+
+All186 old units,91 canonical objects,156 inputs,218 origin files,nine shared
+headers,91 active draft inputs and4,349 other rows remain unchanged. F009+128
+additions retains554,045 bytes and158 inputs. Unknown97 origins and all old
+unaccepted drafts receive no credit. Keep f093 native/attested/ABI/physical/
+packet-model/math/cold/parent/progress/input/preservation evidence and all
+probe sources, logs and PDBs. Full CI passes **3,603 tests in 126.739
+seconds**, plus target/tracking, progress and whitespace checks. Removed three
+obsolete reproducible probe objects (42,616 bytes) and scripts/tests
+bytecode (8,282,705 bytes), after full final-preview/cold code and all22
+relocation equality across both functions. All sources, inputs, logs, PDBs,
+evidence and canonical objects remain.
+Next F094: complete162-byte R014 TextureManager::ResolveTextureHandle0040C8C0,
+using the existing pointer-only GetTexture interface. Reconcile cache globals,
+record flags and all helper calls before source. Fresh native/attested root/
+callee/caller records retain53 instructions,seven branches,five call sites and
+four complete callees(340-byte palette refresh,57-byte entry count and two49-
+byte index helpers). Cached flags/index at6713B8/6713B4 are previously unnamed
+writable dwords; preserve actual first-use/validation ordering. No F094 source,
+build, unit or credit yet. Goal98% remains incomplete.
+
+## Previous accepted function: F092
 
 R043 staff-roll timeline 00438D00..00439F8C is independently canonical cold
 exact as `StaffTimeline438D00::RenderTimeline`: all 4,749 bytes, 1,215
@@ -86,20 +156,7 @@ input/preservation evidence, all probe sources, logs and PDBs. Full CI passes
 and whitespace checks. Removed four obsolete reproducible probe objects
 (70,830 bytes) and scripts/tests bytecode (8,282,705 bytes),
 after whole final-preview/cold code and all117 relocation equality. All
-canonical objects, source/control inputs, logs, PDBs and evidence remain. Next F093: complete
-1,132-byte R011 SpriteDrawing::DrawSprite0040CA80, called47 times by F092.
-Fresh native/attested root/callee/caller records are retained:303 instructions,
-11 branches,12 calls to eight complete callees; RET36, followed by four INT3
-bytes. Reconcile all paths and nine arguments before source. Complete physical
-132-byte packet/default-constructor evidence is in F064/CharacterSpecial5E68C0;
-F083 AtlasQuad40DA00/BattleAtlasNumber446B90 supplies the parameterized
-constructor view. Their existing interfaces are separate: account for both
-constructors and real33-dword copies without constructing incomplete owners.
-Any shared-header change requires affected replays; prefer preserving accepted
-interfaces when a separately reviewed complete physical view suffices. Keep
-the two17-byte trigonometric wrappers and all97 pending origins unchanged.
-No F093 source, build, unit or exact credit yet.
-Goal98% remains active/incomplete.
+canonical objects, source/control inputs, logs, PDBs and evidence remain.
 
 ## Previous accepted function: F091
 
