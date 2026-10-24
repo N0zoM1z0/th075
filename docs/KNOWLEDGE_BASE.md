@@ -21042,3 +21042,73 @@ signed/unsigned byte guards, actual signed-short counter/cap, full packet scope,
 two placements and complete 0040D940 scalar wrapper/worker ST0 contract before
 one natural body. No F084 source, object, unit or credit exists. Preserve every
 accepted unit/header, the large active drafts and all 97 pending origins.
+
+## F084 complete combo counter and nested packet drawing scope cold acceptance (2026-10-24)
+
+R041 combo counter 0043D570..0043D9CA cold-replays exact as
+`HudCombo43E040::Render`: all 1,115 bytes, 272 instructions, nine branches,
+33 physical fields and thirteen actual call packets. Five subsequent INT3
+bytes are excluded. The complete five direct callees and USER32!SetRect are
+reviewed. The existing F075 HUD declaration and caller remain unchanged.
+
+One handwritten thiscall body retains the unsigned alpha and signed-short hit
+guards, actual short copy/cap99, signed-byte side test, both placements,
+repeated x87 offset/color/number operations and genuine timer updates. The
+short countdown decrement uses its observed 16-bit operation; unsigned alpha
+subtraction preserves the actual byte wrap and <=5 zero test. No new range
+guards or clamping are introduced. Motion uses the real integer spill and
+unchanged CameraSineAt0040D940(float/ST0) view, including negation before *200.
+
+Nineteen whole-function meaningful-name/simple-lifetime controls retain the
+initial 1,106-byte class/RECT ordering. Four nested-rectangle scope controls
+reproduce the entire target. The final body keeps the real short count and
+complete 132-byte packet outside the rectangle drawing scope, with the actual
+168-byte frame and conversion slot. No padding, inert local, frame alias,
+branch mask or shortened extent. Original local spelling/scope and complete
+private owner layout remain unknown. The partial HUD owner is pointer-only;
+only the complete F064 packet and SDK rectangle are constructed.
+
+Both whole 17/28-byte sine wrappers agree with the retained R163 SDK and
+ordinary C++ controls. The full R128 174-byte runtime parent, 13-byte auxiliary
+and frozen runtime/dispatch graphs are reused; the nine-byte C entry is an
+interior label, not a complete implementation. Original wrapper ownership and
+nominal return precision/type remain unknown. Both wrappers and all 97 pending
+origins stay unchanged. No runtime, dependency or data exact credit is added.
+
+Independent canonical compilation and separate canonical cold replay match
+every byte with build3077 and the explicit profile. All 33 fields bind twelve
+direct calls, twenty readonly float fields and one named import. Zero addends,
+operand positions, payloads, widths, permissions, import identity and all nine
+branches are checked. Whole CFG stack joins and the actual 0/16/20-byte callee
+cleanup or 4/16/20-byte caller cleanup pass; wrong draw/SetRect controls fail.
+All 176 prior units, 83 canonical objects, 143 previous manifest inputs, 218
+origin files, 4,350 other function rows and 84 active draft inputs remain
+unchanged and were not rebuilt. Every accepted header stays fixed. F009 plus
+117 additions retains 541,124 bytes and 144 new source/header inputs. The
+98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-combo-counter-0043d570
+```
+
+Full CI passes **3,603 tests in 121.179 seconds**, plus tracking, progress
+and whitespace checks.
+Keep f084 native/root/callee/caller/math/attested/ABI/physical/cold/parent/
+progress/preservation evidence, all full compiler-control input snapshots,
+profiles, results, scripts, logs and PDBs. Four obsolete reproducible objects and
+scripts/tests bytecode were removed after complete preview/cold-canonical
+code and relocation equality. Canonical objects, evidence, source/control
+inputs, PDBs, all older active drafts and shared tools remain.
+
+Next F085: complete R040 renderer 00435A70..00437373, 6,404 bytes, with twelve
+following INT3 bytes excluded. `.analysis/f085-native-index.json` pins 1,471
+instructions, nineteen branches and 124 calls: 99 direct calls to sixteen
+whole callees plus 25 named SetRect calls. Fresh attested root/callee/caller
+evidence is retained. Review all actual repeated drawing operations, blend/
+depth state, complete packet scope, 21 implicit ftol2 conversions and their
+pending outer packets, plus globals 006714B4/00671620/00671621. Float constants
+are separated from writable globals using PE permissions. Reconcile all
+remaining private interfaces before one complete natural body. Historical
+RenderBackground name remains provisional. No F085 source, object, unit or
+exact credit exists. Preserve all accepted units/headers, large drafts and
+all 97 pending origins.

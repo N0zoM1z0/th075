@@ -17173,3 +17173,48 @@ relocations = [
   { offset = 0xAA, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z", target = 0x0040DB10 },
   { offset = 0xDA, type = "REL32", symbol = "??0D3DXVECTOR4@@QAE@MMMM@Z", target = 0x0040DB10 },
 ]
+
+[units."battle-combo-counter-0043d570"]
+source = "src/BattleCombo43D570.cpp"
+object = "build/matching/BattleCombo43D570.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["HudCombo43E040::Render"]
+symbol = "?Render@HudCombo43E040@@QAEXXZ"
+target_address = 0x0043D570
+size = 1115
+compare_size = 1115
+relocations = [
+  { offset = 0x3B, type = "REL32", symbol = "??0RenderQuadPacket5E68C0@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x56, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x99, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
+  { offset = 0x9F, type = "DIR32", symbol = "__real@43080000", target = 0x0065836C },
+  { offset = 0xB7, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
+  { offset = 0xC6, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x104, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0x148, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
+  { offset = 0x14E, type = "DIR32", symbol = "__real@42820000", target = 0x00658368 },
+  { offset = 0x157, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x1A1, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
+  { offset = 0x1A7, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x1B0, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x1F6, type = "DIR32", symbol = "__real@41200000", target = 0x00657850 },
+  { offset = 0x1FC, type = "DIR32", symbol = "__real@42860000", target = 0x00658364 },
+  { offset = 0x205, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x223, type = "DIR32", symbol = "__real@43f70000", target = 0x00658360 },
+  { offset = 0x229, type = "DIR32", symbol = "__real@43080000", target = 0x0065836C },
+  { offset = 0x243, type = "DIR32", symbol = "__real@43f70000", target = 0x00658360 },
+  { offset = 0x252, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x294, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0x2D6, type = "DIR32", symbol = "__real@43f70000", target = 0x00658360 },
+  { offset = 0x2DC, type = "DIR32", symbol = "__real@42820000", target = 0x00658368 },
+  { offset = 0x2E5, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x331, type = "DIR32", symbol = "__real@43f70000", target = 0x00658360 },
+  { offset = 0x337, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x340, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x38C, type = "DIR32", symbol = "__real@43f70000", target = 0x00658360 },
+  { offset = 0x392, type = "DIR32", symbol = "__real@42860000", target = 0x00658364 },
+  { offset = 0x39B, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+  { offset = 0x3DF, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
+  { offset = 0x3E8, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
+  { offset = 0x3F3, type = "DIR32", symbol = "__real@43480000", target = 0x0065835C },
+]

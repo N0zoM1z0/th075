@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F083",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "447e2f530c996e7260f98822cdca472f2464d63904ecbfa8fce7967322666afd"
+      "current_sha256": "4e7946d1ccd8c44cc3e856291e31352a45c596aade42efe941c51d5e77062eaf"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "917283c24722a8559370abedd6ebf6bd9a8148f3942990b377d41961981a56c7"
+      "current_sha256": "a59c1888a8625ca06cfca0c2925598c11db1fbf57f23a017b948ba482013c9cf"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "47cc0c6a851acdacdf4f95a406cc8f071a64942adbfcd59630e8d501ca73adcb"
+      "current_sha256": "a7db4761454635e295c1e82f3421697c90e99069c04d9dd1065ffca9708b4c2b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c54672dd110a8bbb31ba5815717e0a0e2d36727f41df87096eecd8c8db7b6a5e"
+      "current_sha256": "1ecb1fab185d3f106783b9d6d2487f5b47e54a0bdca454d10262cda8e224c54f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "9b55a7d0fec980086c42bb6ff95ab23f225b625f138c56a5507ca7555fbfe7f2"
+      "current_sha256": "9064954a2965c04beafccaf45445993be4eef3753ce3881fad74a1fff3a625e5"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "bfb22536be8281abc0c32815009fba0c1096b56573e4f42288aa35bfb97ab34b"
+      "current_sha256": "f23a8369b6b1e771f428bac6f0d235be34a159d9d9798cb3f80b86919c4555ee"
     }
   },
   "functions": [
@@ -5144,6 +5144,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043D570",
+        "size": "1115",
+        "span_end": "0x0043D9CA",
+        "current_name": "FUN_0043d570",
+        "proposed_name": "BattleHud::RenderComboCounter",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D570",
+        "size": "1115",
+        "span_end": "0x0043D9CA",
+        "current_name": "FUN_0043d570",
+        "proposed_name": "HudCombo43E040::Render",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void HudCombo43E040::Render()",
+        "is_thunk": "false",
+        "source_file": "src/BattleCombo43D570.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F084; scripts/repo-python scripts/replay-exact-units.py --unit battle-combo-counter-0043d570",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F084: complete1115-byte cold exact combo counter,272 instructions/9 branches/33 fields and13 actual call packets; all5 direct callees and SetRect import reviewed; actual signed/unsigned byte guards,short count/cap99/timers,nested complete132-byte packet/RECT scope,two placements and repeated color/number operations retained; existing sine declaration and full R163/R128 wrapper/runtime evidence reused unchanged with both wrappers still unknown;168-byte frame and genuine conversion spill,no fake locals/alias/branch masking; R041 role preserved by alias; original names/declarations and complete private owner layout unknown; never instantiate/embed this partial owner"
+      },
+      "origin": {
+        "address": "0x0043D570",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -95884,6 +95928,227 @@
           "target": 4250384
         }
       ]
+    },
+    "battle-combo-counter-0043d570": {
+      "source": "src/BattleCombo43D570.cpp",
+      "object": "build/matching/BattleCombo43D570.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "HudCombo43E040::Render"
+      ],
+      "symbol": "?Render@HudCombo43E040@@QAEXXZ",
+      "target_address": 4445552,
+      "size": 1115,
+      "compare_size": 1115,
+      "relocations": [
+        {
+          "offset": 59,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 153,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 159,
+          "type": "DIR32",
+          "symbol": "__real@43080000",
+          "target": 6652780
+        },
+        {
+          "offset": 183,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 260,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "__real@42820000",
+          "target": 6652776
+        },
+        {
+          "offset": 343,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 417,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 423,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 432,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 502,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 508,
+          "type": "DIR32",
+          "symbol": "__real@42860000",
+          "target": 6652772
+        },
+        {
+          "offset": 517,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 547,
+          "type": "DIR32",
+          "symbol": "__real@43f70000",
+          "target": 6652768
+        },
+        {
+          "offset": 553,
+          "type": "DIR32",
+          "symbol": "__real@43080000",
+          "target": 6652780
+        },
+        {
+          "offset": 579,
+          "type": "DIR32",
+          "symbol": "__real@43f70000",
+          "target": 6652768
+        },
+        {
+          "offset": 594,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 660,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 726,
+          "type": "DIR32",
+          "symbol": "__real@43f70000",
+          "target": 6652768
+        },
+        {
+          "offset": 732,
+          "type": "DIR32",
+          "symbol": "__real@42820000",
+          "target": 6652776
+        },
+        {
+          "offset": 741,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 817,
+          "type": "DIR32",
+          "symbol": "__real@43f70000",
+          "target": 6652768
+        },
+        {
+          "offset": 823,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 832,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 908,
+          "type": "DIR32",
+          "symbol": "__real@43f70000",
+          "target": 6652768
+        },
+        {
+          "offset": 914,
+          "type": "DIR32",
+          "symbol": "__real@42860000",
+          "target": 6652772
+        },
+        {
+          "offset": 923,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 1000,
+          "type": "REL32",
+          "symbol": "?CameraSineAt0040D940@@YAMM@Z",
+          "target": 4249920
+        },
+        {
+          "offset": 1011,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -96029,6 +96294,7 @@
     "src/BattleRoundBanner441EA0.hpp": "6eaf4877b415af28586c2988dfbe33eadac62c466cc4569eecd9a8afee212418",
     "src/BattleAtlasNumber446B90.cpp": "e2043f61e88e1a27624598863e09481576b0327c1844af22cc9b6a87a15ea63b",
     "src/BattleAtlasNumber446B90.hpp": "744a3ca288d0241a54600c08ec0f01674f1abcc9b5657eee6052f1a16e70471b",
-    "src/AtlasQuad40DA00.cpp": "5227eb8167ca3dfe73fe7d19f9349cda528804ba80a194786f4bf9fe2f1c988c"
+    "src/AtlasQuad40DA00.cpp": "5227eb8167ca3dfe73fe7d19f9349cda528804ba80a194786f4bf9fe2f1c988c",
+    "src/BattleCombo43D570.cpp": "8e180a98bc7e67774c8a00c23bff9ce43acad7e603e576831af957a47ba6f417"
   }
 }
