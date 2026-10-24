@@ -173,3 +173,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStreamRecord408110::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
 0x00408900,AudioStreamRecord::ReadLoopPointsFromArchive,AudioStreamRecord408110::ReadLoopPointsFromArchive,R017,audio-record-loop-archive-00408900
 0x00408BD0,AudioStreamRecord::RefillBuffer,AudioStreamRefill408BD0::Refill,R017,audio-record-refill-00408bd0
+0x00407CA0,AudioStream::ClearPlayback,AudioControl407CA0::ClearPlayback,R016,stream-control-clearplayback-00407ca0
+0x00407CC0,AudioStream::Start,AudioControl407CA0::Start,R016,stream-control-start-00407cc0
+0x00407D70,AudioStream::Stop,AudioControl407CA0::Stop,R016,stream-control-stop-00407d70
+0x00407DD0,AudioStream::ApplyVolumeOffset,AudioControl407CA0::ApplyVolumeOffset,R016,stream-control-applyvolumeoffset-00407dd0
+0x00407E60,AudioStream::ScheduleFade,AudioControl407CA0::ScheduleFade,R016,stream-control-schedulefade-00407e60
+0x00407EF0,AudioStream::Worker,AudioControl407CA0::Worker,R016,stream-control-worker-00407ef0

@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F114 stream-control investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F115 audio-lifecycle investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 230 / 230 / 230 |
-| Exact code bytes | 589,999 |
-| Reviewed authored coverage | 589,999 / 1,973,516 (29.90%) |
-| Conservative coverage, including every pending byte | 589,999 / 1,977,124 (29.84%) |
+| Source-present / exact functions / exact units | 236 / 236 / 236 |
+| Exact code bytes | 591,087 |
+| Reviewed authored coverage | 591,087 / 1,973,516 (29.95%) |
+| Conservative coverage, including every pending byte | 591,087 / 1,977,124 (29.90%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **170 additions /
-580,116 code bytes / 180 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **176 additions /
+581,204 code bytes / 181 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,111 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F113
+## Latest accepted functions: F114
+
+The complete R016 controls independently pass canonical cold comparison in one
+new source/object: ClearPlayback `00407CA0/29`, Start `00407CC0/169`, Stop
+`00407D70/88`, ApplyVolumeOffset `00407DD0/129`, ScheduleFade `00407E60/138`,
+and Worker `00407EF0/535`. This adds **1,088 code bytes, 332 instructions,
+40 actual calls and all 77 real relocation fields**. All static CFG
+instructions, stack joins, physical returns and following INT3 boundaries
+are checked. There are no embedded data tables or cropped tails.
+
+Five functions are cdecl controls, rather than instance methods suggested by
+the earlier role names. The actual CreateThread producer at00407219 passes
+Worker00407EF0 as its callback with a null argument. The verified KERNEL32
+import and pinned WinBase PTHREAD_START_ROUTINE declaration independently
+prove DWORD WINAPI Worker(LPVOID), including its physical RET4. The native
+constant loop has a physical zero-result epilogue; its ordinary runtime exit
+is unreachable. That complete epilogue remains inside the comparison. The
+source contains the SDK callback completion return, without manufacturing
+an alternative exit, return value, or ABI to obtain a match.
+
+The master volume is a signed byte. Start sends MIN only when master is0;
+otherwise it sends (master-100)*50 without clamping, then Play(0,0,LOOPING).
+ApplyVolumeOffset adds the LONG offset and separately clamps below MIN or
+master0, then above0. Clear clears both flags and the queue. Stop clears both
+flags and pops the first entry only when its buffer is nonnull. Empty queues
+and null buffers retain the native differences between these functions.
+
+ScheduleFade retains separate Front calls for target/step LONG fields48/52
+and byte flags56/57. When already playing it marks fading only for a nonnull
+buffer; when stopped it clears fading and optionally starts immediately.
+The worker distinguishes streaming, explicit nonstream looping and ordinary
+nonstream playback. Streaming calls the accepted Refill(0x20000), checks
+GetStatus and invokes Stop when playback ends. Explicit looping queries the
+write cursor, not the play cursor, and subtracts loopLength once only when
+writeCursor exceeds loopEnd. Ordinary nonstream completion clears playing
+without adding the streaming Stop/fading cleanup.
+
+The current LONG fade is applied before current+=step*4. Negative steps stop
+fading below the target or at/below MIN. The positive branch preserves the
+native current<target or current>=0 condition, including its apparently
+counterintuitive direction; only the nonnegative value is clamped to0.
+Completion preserves Stop then Start order when both byte flags request it.
+The lazily created event and Wait80 polling, ignored SDK results, empty-queue
+playing-only reset and null-buffer behavior remain unchanged.
+
+Real SDK vtable slots and every actual argument packet are checked
+independently. Four incorrect physical queue/master/Front/refill bindings
+fail comparison. The first natural source is entirely exact with the genuine
+root DWORDs and scoped record pointer; no name-control build is needed.
+Separate pointer-only queue/record views preserve all accepted inputs. The
+external unsized BYTE address anchor defines no storage and allows the real
+queue object address to be passed without inventing a pointer global or
+allocatable owner. Neither partial owner is instantiated or embedded. Original
+names, full layouts, flag types and volatile spelling remain provisional.
+There is no padding, inert local, artificial array, manual EH, assembly, ABI
+alias, relocation mask or comparison truncation. /GS is an explicit
+reproducibility setting; these bodies do not prove an executable-wide profile.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit stream-control-clearplayback-00407ca0 --unit stream-control-start-00407cc0 --unit stream-control-stop-00407d70 --unit stream-control-applyvolumeoffset-00407dd0 --unit stream-control-schedulefade-00407e60 --unit stream-control-worker-00407ef0
+```
+
+All 230 prior units, 112 canonical objects, 180 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,345 other function rows stay
+unchanged. F009 plus176 additions retains581,204 code bytes and181 new inputs.
+The six R016 historical roles remain through aliases. All97 unknown origins
+remain unknown. Preserve all f114 inputs, attested/native/helper/SDK/CFG/
+packet/binding/cold/parent evidence, results, logs and PDBs. No helper, global
+data or complete private layout receives new credit.
+
+Validation: all six selected units pass canonical cold replay, seven checkpoint
+tests pass, and the full CI passes3,603 tests in127.617s. Target identity,
+tracking, progress and diff checks pass. Cleanup removes only one obsolete
+reproducible probe object (14,218 bytes) and375 Python bytecode files
+(8,282,863 bytes), total8,297,081 bytes. Canonical objects, compiler inputs,
+all sources, evidence, results, logs and PDBs remain. Hash receipts are
+`.analysis/f114-final-compiler-inputs.json`,
+`.analysis/f114-object-cleanup.json` and
+`.analysis/f114-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **236 exact functions/units, 591,087 code bytes**, 29.95% of
+reviewed authored bytes and **29.90% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F115
+
+Review the remaining independent audio lifecycle/control functions:
+SoundBank SetVolume `004073B0/13`, AudioStream SetVolume `004073C0/13`,
+SoundBank Play `004079C0/142`, AudioStreamRecord Initialize `00409290/83` and
+ReleaseResources `004092F0/87`, total338 bytes. Establish actual calling
+conventions, SDK slots, lifecycle field widths and return/constructor evidence
+before source. Preserve all accepted inputs through separate pointer-only
+views where necessary; never instantiate or embed a partial owner.
+
+QueueFile00407A50 and QueueArchiveEntry00407B80 still need independently proved
+complete local record construction before they can use a real local record.
+Do not infer that layout solely from an exact pointer-only method or the
+container stride. Keep wrapper00409490 and all old drafts unchanged. All97
+unknown origins stay unknown. Compiler builds remain serial; cold-replay only
+new or affected units and remove only obsolete reproducible outputs after
+retaining evidence and inputs. Resource root00456B60 remains unaccepted with
+f107's real588-byte frame and unresolved texture80/layout/meaningful filename
+bound. No invented padding, storage, buffers or incomplete owner allocation.
+
+## Previous accepted function: F113
 
 Complete R017 refill `00408BD0..0040928B` independently passes canonical cold
 comparison: **1,724 code bytes, 626 instructions, 25 calls and all 19 real
@@ -118,7 +222,7 @@ Current totals: **230 exact functions/units, 589,999 code bytes**, 29.90% of
 reviewed authored bytes and **29.84% conservatively**, including every pending
 byte. The 98% goal remains active and incomplete.
 
-## Current reconstruction cohort: F114
+## F114 investigation at the F113 checkpoint
 
 Bounded raw exports for all six candidates are retained in
 `.analysis/f114-native-frontier.json` and `.analysis/f114-stream-control/`.

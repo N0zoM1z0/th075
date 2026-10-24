@@ -229,3 +229,9 @@ AudioStreamRecord408110::OpenArchiveEntry,0x00408390,function
 AudioStreamRecord408110::ReadLoopPointsFromFile,0x00408670,function
 AudioStreamRecord408110::ReadLoopPointsFromArchive,0x00408900,function
 AudioStreamRefill408BD0::Refill,0x00408BD0,function
+AudioControl407CA0::ClearPlayback,0x00407CA0,function
+AudioControl407CA0::Start,0x00407CC0,function
+AudioControl407CA0::Stop,0x00407D70,function
+AudioControl407CA0::ApplyVolumeOffset,0x00407DD0,function
+AudioControl407CA0::ScheduleFade,0x00407E60,function
+AudioControl407CA0::Worker,0x00407EF0,function

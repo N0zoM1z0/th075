@@ -18964,3 +18964,152 @@ relocations = [
   { offset = 0x621, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
   { offset = 0x6B1, type = "DIR32", symbol = "?archiveReadActive@@3EA", target = 0x0067138D },
 ]
+
+[units."stream-control-clearplayback-00407ca0"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::ClearPlayback"]
+symbol = "?ClearPlayback@AudioControl407CA0@@YAXXZ"
+target_address = 0x00407CA0
+size = 29
+compare_size = 29
+relocations = [
+  { offset = 0x5, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0xC, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x12, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x17, type = "REL32", symbol = "?Clear@AudioQueue407CA0@@QAEXXZ", target = 0x00409740 },
+]
+
+[units."stream-control-start-00407cc0"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::Start"]
+symbol = "?Start@AudioControl407CA0@@YAXXZ"
+target_address = 0x00407CC0
+size = 169
+compare_size = 169
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0xC, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
+  { offset = 0x19, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x1E, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x2A, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
+  { offset = 0x33, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x38, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x55, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x5A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x66, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
+  { offset = 0x7E, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x83, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0xA0, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+]
+
+[units."stream-control-stop-00407d70"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::Stop"]
+symbol = "?Stop@AudioControl407CA0@@YAXXZ"
+target_address = 0x00407D70
+size = 88
+compare_size = 88
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0xD, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x13, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x18, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
+  { offset = 0x21, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x26, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x30, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x35, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x4B, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x50, type = "REL32", symbol = "?PopFront@AudioQueue407CA0@@QAEXXZ", target = 0x00409520 },
+]
+
+[units."stream-control-applyvolumeoffset-00407dd0"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::ApplyVolumeOffset"]
+symbol = "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z"
+target_address = 0x00407DD0
+size = 129
+compare_size = 129
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0xC, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
+  { offset = 0x15, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x1A, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x26, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
+  { offset = 0x42, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
+  { offset = 0x5F, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x64, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+]
+
+[units."stream-control-schedulefade-00407e60"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::ScheduleFade"]
+symbol = "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z"
+target_address = 0x00407E60
+size = 138
+compare_size = 138
+relocations = [
+  { offset = 0x4, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x9, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
+  { offset = 0x14, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0x1D, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x22, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x2C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x31, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x3C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x41, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x4C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x51, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x5C, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x61, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x6D, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x76, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x84, type = "REL32", symbol = "?Start@AudioControl407CA0@@YAXXZ", target = 0x00407CC0 },
+]
+
+[units."stream-control-worker-00407ef0"]
+source = "src/StreamControl407CA0.cpp"
+object = "build/matching/StreamControl407CA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioControl407CA0::Worker"]
+symbol = "?Worker@AudioControl407CA0@@YGKPAX@Z"
+target_address = 0x00407EF0
+size = 535
+compare_size = 535
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
+  { offset = 0x19, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
+  { offset = 0x1E, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
+  { offset = 0x32, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0x3F, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x44, type = "REL32", symbol = "?Size@AudioQueue407CA0@@QAEIXZ", target = 0x004094B0 },
+  { offset = 0x51, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x56, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x64, type = "DIR32", symbol = "?audioQueueStorage@@3PAEA", target = 0x006713A0 },
+  { offset = 0x69, type = "REL32", symbol = "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ", target = 0x004094D0 },
+  { offset = 0x82, type = "REL32", symbol = "?Refill@AudioStreamRefill408BD0@@QAEXK@Z", target = 0x00408BD0 },
+  { offset = 0xA4, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0xAB, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0xB1, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x124, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0x12C, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x148, type = "REL32", symbol = "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z", target = 0x00407DD0 },
+  { offset = 0x189, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x1BC, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x1C4, type = "DIR32", symbol = "?audioFading@@3EA", target = 0x0067138F },
+  { offset = 0x1E3, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x1E8, type = "REL32", symbol = "?Start@AudioControl407CA0@@YAXXZ", target = 0x00407CC0 },
+  { offset = 0x1EF, type = "REL32", symbol = "?Stop@AudioControl407CA0@@YAXXZ", target = 0x00407D70 },
+  { offset = 0x1F7, type = "DIR32", symbol = "?audioPlaying@@3EA", target = 0x0067138E },
+  { offset = 0x1FF, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
+  { offset = 0x206, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
+]

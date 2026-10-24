@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F113",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F114",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "14e8e8ae85657dfe63795cf9157ab656bdb184161f69793f80aa5ddbd1095d89"
+      "current_sha256": "7dc98f0be29b809c38f7951c65e744be5a4b77ea9360e5d2004ef4c946a0df32"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a5cc19ce676174d345818283bc6fd2b4c286848132745d61bbac908ba0d2daec"
+      "current_sha256": "fd009996117f5a48f345bd6aab68f2fd094f69e4852249ad3cdc53e734ca73e2"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "5a32908adb8eba0a98ffd11131471e0cfe5d04572216d81ed41090361428e8f0"
+      "current_sha256": "6fe0787cf4d776b943a9bf8a163672044dc0e7b1978cef154e6c3c006d03a001"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5d1c1e424f07c83c2bb0ffdf0291a26e5c43a4a9bba9f6cb2cfa6c74abac4538"
+      "current_sha256": "ad243fee7108c57e2bc63aca061b49b1f57c0be8b5651091849334e6bf497c4f"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f81d30df4bb1a205657dd046497404531f9ac7bff515f115f5b9cb369ee1921d"
+      "current_sha256": "dbd3bea8d12961ae6f4b7286a951422799fae44a44001f8eda9d9dc4480d199c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "d073d60de084ec47054a25d371f18bf91aaddaabc712e9908a4e48ea3113f6c8"
+      "current_sha256": "4eee32c883711350318dbcfc04b2344c8929f160dbb78e5b434a877aa3cba0ca"
     }
   },
   "functions": [
@@ -7520,6 +7520,270 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407CA0",
+        "size": "29",
+        "span_end": "0x00407CBC",
+        "current_name": "FUN_00407ca0",
+        "proposed_name": "AudioStream::ClearPlayback",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407CA0",
+        "size": "29",
+        "span_end": "0x00407CBC",
+        "current_name": "FUN_00407ca0",
+        "proposed_name": "AudioControl407CA0::ClearPlayback",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioControl407CA0::ClearPlayback()",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-clearplayback-00407ca0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 29 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407CA0",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407CC0",
+        "size": "169",
+        "span_end": "0x00407D68",
+        "current_name": "FUN_00407cc0",
+        "proposed_name": "AudioStream::Start",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407CC0",
+        "size": "169",
+        "span_end": "0x00407D68",
+        "current_name": "FUN_00407cc0",
+        "proposed_name": "AudioControl407CA0::Start",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioControl407CA0::Start()",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-start-00407cc0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 169 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407CC0",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407D70",
+        "size": "88",
+        "span_end": "0x00407DC7",
+        "current_name": "FUN_00407d70",
+        "proposed_name": "AudioStream::Stop",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407D70",
+        "size": "88",
+        "span_end": "0x00407DC7",
+        "current_name": "FUN_00407d70",
+        "proposed_name": "AudioControl407CA0::Stop",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioControl407CA0::Stop()",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-stop-00407d70",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 88 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407D70",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407DD0",
+        "size": "129",
+        "span_end": "0x00407E50",
+        "current_name": "FUN_00407dd0",
+        "proposed_name": "AudioStream::ApplyVolumeOffset",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407DD0",
+        "size": "129",
+        "span_end": "0x00407E50",
+        "current_name": "FUN_00407dd0",
+        "proposed_name": "AudioControl407CA0::ApplyVolumeOffset",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioControl407CA0::ApplyVolumeOffset(LONG)",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-applyvolumeoffset-00407dd0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 129 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407DD0",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407E60",
+        "size": "138",
+        "span_end": "0x00407EE9",
+        "current_name": "FUN_00407e60",
+        "proposed_name": "AudioStream::ScheduleFade",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407E60",
+        "size": "138",
+        "span_end": "0x00407EE9",
+        "current_name": "FUN_00407e60",
+        "proposed_name": "AudioControl407CA0::ScheduleFade",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl AudioControl407CA0::ScheduleFade(LONG, LONG, BYTE, BYTE)",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-schedulefade-00407e60",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 138 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407E60",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407EF0",
+        "size": "535",
+        "span_end": "0x00408106",
+        "current_name": "FUN_00407ef0",
+        "proposed_name": "AudioStream::Worker",
+        "module": "AudioStream",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407EF0",
+        "size": "535",
+        "span_end": "0x00408106",
+        "current_name": "FUN_00407ef0",
+        "proposed_name": "AudioControl407CA0::Worker",
+        "module": "AudioStream",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "stdcall",
+        "signature": "DWORD WINAPI AudioControl407CA0::Worker(LPVOID)",
+        "is_thunk": "false",
+        "source_file": "src/StreamControl407CA0.cpp",
+        "evidence": "R016; F114; scripts/repo-python scripts/replay-exact-units.py --unit stream-control-worker-00407ef0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F114: complete 535 byte independent canonical cold exact; whole332 instructions/40 actual packets/77 real fields across six controls. All static CFG instructions and stack joins verified, full returns and following INT3 excluded. Five actual cdecl controls, DWORD WINAPI Worker(LPVOID) independently proved by native CreateThread producer407219/import65713C and pinned WinBase callback declaration. Complete constant-loop physical zero-result RET4 epilogue retained; its ordinary runtime exit is unreachable, no fake return inserted to force bytes. Signed master BYTE; Start uses unclamped (master-100)*50 except master0 maps to MIN, while ApplyVolumeOffset clamps below MIN/master0 then above0. Clear only clears flags and queue, Stop pops only a nonnull first buffer; empty queue clears playing only in Worker. ScheduleFade stores target/step/LONG and two BYTE flags with separate Front calls, starts immediately only in native stopped/startNext path. Streaming worker calls accepted Refill0x20000, GetStatus; nonstream loop reads write cursor and subtracts loopLength once only above loopEnd. Current fade is applied before current+=step*4; positive-step branch retains native current<target or current>=0 condition. Fade completion preserves Stop then Start order, native ignored results and all null/empty/failure behavior. Real SDK vtables/arguments independently checked, four wrong physical bindings rejected. First natural probe exactly matches all fields/frames, no new name-control build. Separate pointer-only record/queue views and external unsized BYTE address anchor declare/allocate no queue storage, no incomplete owner instantiated or embedded. No guessed complete layout/padding/inert locals/manual EH/assembly/ABI aliases/masks/cropped extent. All230 prior units/112 objects/180 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R016 aliases preserve historical roles. Original names/complete queue and record layouts/volatile spelling and original flag types remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00407EF0",
+        "origin": "authored",
+        "subsystem": "AudioStream",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
       }
     }
   ],
@@ -106380,6 +106644,612 @@
           "target": 6755213
         }
       ]
+    },
+    "stream-control-clearplayback-00407ca0": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::ClearPlayback"
+      ],
+      "symbol": "?ClearPlayback@AudioControl407CA0@@YAXXZ",
+      "target_address": 4226208,
+      "size": 29,
+      "compare_size": 29,
+      "relocations": [
+        {
+          "offset": 5,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?Clear@AudioQueue407CA0@@QAEXXZ",
+          "target": 4233024
+        }
+      ]
+    },
+    "stream-control-start-00407cc0": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::Start"
+      ],
+      "symbol": "?Start@AudioControl407CA0@@YAXXZ",
+      "target_address": 4226240,
+      "size": 169,
+      "compare_size": 169,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "?Size@AudioQueue407CA0@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?masterVolume@@3CA",
+          "target": 6734356
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 56,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 85,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 90,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 102,
+          "type": "DIR32",
+          "symbol": "?masterVolume@@3CA",
+          "target": 6734356
+        },
+        {
+          "offset": 126,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 131,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        }
+      ]
+    },
+    "stream-control-stop-00407d70": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::Stop"
+      ],
+      "symbol": "?Stop@AudioControl407CA0@@YAXXZ",
+      "target_address": 4226416,
+      "size": 88,
+      "compare_size": 88,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 13,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "?Size@AudioQueue407CA0@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 48,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 80,
+          "type": "REL32",
+          "symbol": "?PopFront@AudioQueue407CA0@@QAEXXZ",
+          "target": 4232480
+        }
+      ]
+    },
+    "stream-control-applyvolumeoffset-00407dd0": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::ApplyVolumeOffset"
+      ],
+      "symbol": "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z",
+      "target_address": 4226512,
+      "size": 129,
+      "compare_size": 129,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "?Size@AudioQueue407CA0@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 21,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 26,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 38,
+          "type": "DIR32",
+          "symbol": "?masterVolume@@3CA",
+          "target": 6734356
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?masterVolume@@3CA",
+          "target": 6734356
+        },
+        {
+          "offset": 95,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        }
+      ]
+    },
+    "stream-control-schedulefade-00407e60": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::ScheduleFade"
+      ],
+      "symbol": "?ScheduleFade@AudioControl407CA0@@YAXJJEE@Z",
+      "target_address": 4226656,
+      "size": 138,
+      "compare_size": 138,
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 9,
+          "type": "REL32",
+          "symbol": "?Size@AudioQueue407CA0@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 29,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 34,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 49,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 81,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 132,
+          "type": "REL32",
+          "symbol": "?Start@AudioControl407CA0@@YAXXZ",
+          "target": 4226240
+        }
+      ]
+    },
+    "stream-control-worker-00407ef0": {
+      "source": "src/StreamControl407CA0.cpp",
+      "object": "build/matching/StreamControl407CA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioControl407CA0::Worker"
+      ],
+      "symbol": "?Worker@AudioControl407CA0@@YGKPAX@Z",
+      "target_address": 4226800,
+      "size": 535,
+      "compare_size": 535,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "?audioWorkerEvent@@3PAXA",
+          "target": 6755220
+        },
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "__imp__CreateEventA@16",
+          "target": 6647892
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?audioWorkerEvent@@3PAXA",
+          "target": 6755220
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 63,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 68,
+          "type": "REL32",
+          "symbol": "?Size@AudioQueue407CA0@@QAEIXZ",
+          "target": 4232368
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "?audioQueueStorage@@3PAEA",
+          "target": 6755232
+        },
+        {
+          "offset": 105,
+          "type": "REL32",
+          "symbol": "?Front@AudioQueue407CA0@@QAEAAVAudioStreamRefill408BD0@@XZ",
+          "target": 4232400
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?Refill@AudioStreamRefill408BD0@@QAEXK@Z",
+          "target": 4230096
+        },
+        {
+          "offset": 164,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 171,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 177,
+          "type": "REL32",
+          "symbol": "?Stop@AudioControl407CA0@@YAXXZ",
+          "target": 4226416
+        },
+        {
+          "offset": 292,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 300,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 328,
+          "type": "REL32",
+          "symbol": "?ApplyVolumeOffset@AudioControl407CA0@@YAXJ@Z",
+          "target": 4226512
+        },
+        {
+          "offset": 393,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 444,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 452,
+          "type": "DIR32",
+          "symbol": "?audioFading@@3EA",
+          "target": 6755215
+        },
+        {
+          "offset": 483,
+          "type": "REL32",
+          "symbol": "?Stop@AudioControl407CA0@@YAXXZ",
+          "target": 4226416
+        },
+        {
+          "offset": 488,
+          "type": "REL32",
+          "symbol": "?Start@AudioControl407CA0@@YAXXZ",
+          "target": 4226240
+        },
+        {
+          "offset": 495,
+          "type": "REL32",
+          "symbol": "?Stop@AudioControl407CA0@@YAXXZ",
+          "target": 4226416
+        },
+        {
+          "offset": 503,
+          "type": "DIR32",
+          "symbol": "?audioPlaying@@3EA",
+          "target": 6755214
+        },
+        {
+          "offset": 511,
+          "type": "DIR32",
+          "symbol": "?audioWorkerEvent@@3PAXA",
+          "target": 6755220
+        },
+        {
+          "offset": 518,
+          "type": "DIR32",
+          "symbol": "__imp__WaitForSingleObject@8",
+          "target": 6648096
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -106562,6 +107432,7 @@
     "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f",
     "src/SoundBank4073D0.cpp": "c69459a37ac3b84077c8c9c473dc1f6864cc86a0f4ce1a9e2e4f1385cb5f528e",
     "src/AudioRecord408110.cpp": "cc5c15ae67cf92e7dd7b21ec45b4f279bff839ac3f2736c8d29c21d13a3806e8",
-    "src/AudioRefill408BD0.cpp": "1a72d9fc0036812852b81088d1f047a55e223a46706ad1834c00cc7a599ec196"
+    "src/AudioRefill408BD0.cpp": "1a72d9fc0036812852b81088d1f047a55e223a46706ad1834c00cc7a599ec196",
+    "src/StreamControl407CA0.cpp": "295c7528de7a1f0f63c5ea10ac2e2cb375dca6d149af12e450df44040ece6d1d"
   }
 }
