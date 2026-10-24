@@ -21439,3 +21439,59 @@ conversions. DrawSprite's nine arguments occupy36 bytes: index,x/y floats,
 DWORD color,two pivot floats,scale float,angle float,byte flags. It constructs
 the existing complete132-byte physical packet; no complete owner layout is
 implied. No F092 source/build/unit/credit at this checkpoint.
+
+## F092 complete staff-roll timeline checkpoint (2026-10-24)
+
+R04300438D00..00439F8C/4,749 bytes independently cold exact as
+StaffTimeline438D00::RenderTimeline. Three following INT3 bytes are excluded.
+One natural body and new pointer-only header retain the complete1,215
+instructions/48 branches/61 real packets and117 fields. R043 role remains by
+alias; complete scene/drawing layouts and original names remain unknown.
+The25 genuine unsigned begin/end assignments, all bounded/unbounded tails,
+47 sprite calls, state changes, offsets and six byte-alpha conversions remain.
+Unsigned subtractions use zero-extended qword FILD temporaries. Phase-dependent
+multiply/divide ordering is preserved, including initial/last alpha forms.
+The final entry slide reuses the genuine offset local before320-offset;
+initial expressions lacked that actual store and gave4,739 bytes/1,213
+instructions. The actual pivot scalar is12. Third probe aligns every
+instruction/field but differs in159 real bound/alpha frame bytes. Fourth
+probe scopes bounds outer, offset to successful frame, alpha to drawing block;
+all292 frame bytes and real conversion temporaries match. No spare storage,
+padding, aliases, masks, shortened extents or conditional source bodies.
+
+Seven whole callees and all61 call packets are reviewed.47 DrawSprite calls
+use36 argument bytes: index, float x/y, DWORD color, float pivots, float
+scale/angle and byte flags. Six implicit-ST0 ftol2 calls have zero GP arguments;
+no decompiler-invented parameters. All branch/stack joins pass; wrong ftol2-
+ret4 and DrawSprite-ret32 controls fail. All117 physical fields bind61 direct
+calls and56 readonly scalars with exact payload/width/permission/operand/zero-
+addend checks. Separate preview, canonical compilation and canonical cold
+replay match every byte.
+
+The36-byte native402660 wrapper propagates accepted BeginTarget's AL bool
+through both exits; new caller explicitly tests AL. Existing accepted void
+BeginFrame interface/body stays unchanged. Address-named bool declaration
+views that observed x86 return contract without a replacement body, fabricated
+return or extra parameter. Original source prototype is unknown; older
+ignored-return interface never promised a value. All old headers/objects stay
+fixed; no old replays are required. All185 old units,90 objects,154 inputs,
+218 origin files,nine headers,91 active drafts and4,350 other rows remain
+unchanged. Unknown97 origins and every large unaccepted draft receive no
+credit. Current186 exact functions/units total562,711 bytes:28.51% reviewed,
+28.46% conservative. F009+126 additions retains552,828 bytes and156 inputs.
+Goal98% active/incomplete. Next F093: full1,132-byte R011 DrawSprite0040CA80;
+review all paths, nine arguments and complete packet models before source.
+
+F092 final validation: 3,603 CI tests pass in 118.147s, plus target/
+tracking, progress and whitespace checks. Removed four obsolete reproducible
+probe objects (70,830 bytes) and scripts/tests bytecode
+(8,282,705 bytes), after whole final-preview/cold code and all117
+relocation equality. All sources, inputs, logs, PDBs, evidence, canonical
+objects and old active drafts remain. F093 complete303-instruction/11-branch/
+12-call native/root/callee/caller evidence is retained with eight whole callees.
+Its RET36 ends40CEEB,then four INT3 bytes. Both default and parameterized132-byte
+packet constructors and real33-dword copies must be represented truthfully.
+F064/CharacterSpecial5E68C0 and F083/AtlasQuad40DA00/BattleAtlasNumber446B90
+provide separate existing complete physical views; no original class identity
+is inferred. Shared-header edits require affected replays. Keep17-byte trig
+wrappers and97 pending origins unchanged. No F093 source/build/unit/credit.

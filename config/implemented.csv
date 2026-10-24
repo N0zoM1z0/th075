@@ -183,3 +183,4 @@ SelectionInput4388D0::PollInput
 InputMapping4388D0::IsKeyDown
 InputMapping4388D0::UpdateHeldCounts
 Graphics::ToggleWindowMode
+StaffTimeline438D00::RenderTimeline

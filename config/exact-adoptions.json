@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F091",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F092",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ebe5706dbef8ede5508bc7b2d973921b6b4fc3f61dba1a0cf9321ff6402914fe"
+      "current_sha256": "14d3181dba5eb59d5b57f46bf29f266d919c3b442a2c6a4230a595b727798f50"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6d7dce9959f9b2eece107174019d417454ea61d17b7577e7215d543f593986f6"
+      "current_sha256": "227668f9571b2147bf48096398d2772a3de7fadc14548a45f7cea9f2441e6bf2"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "dc482d324df25e856da0c44c1eb5e80cda27e098df0a92aeea1a90a373cea471"
+      "current_sha256": "73cd8b010cd3192867578c32f9622f989bf0c21a6113f163048d1d18e1b65ddb"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c1b3472aef654e548ee285bace5bf70be474e2b4cf650d1ddcc7644810f31947"
+      "current_sha256": "fcf0c1943eea89ee452bf20dd1444d39e989ae86ee390c32eeaf7870e78bc925"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "5a2526870be3be401f54945715d338b767af4c0f7e4112e05135cfe9831a8c63"
+      "current_sha256": "63a9af2bf459563efd5b64b503573006985a280e78fd4981eaa430c31c25b664"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "016d8a776d98a23a5667e5d7c8d2ce7a8ff45634fde0886e4249c32d2850ddda"
+      "current_sha256": "06f1609db7d5e5e7508911eb50d66f613ad66023d13a73e9a3b3e7a3c59897c7"
     }
   },
   "functions": [
@@ -5540,6 +5540,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R001; docs/ORIGIN_REVIEW.md; shared D3D8 state and custom policy, complete branches/exit reviewed"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00438D00",
+        "size": "4749",
+        "span_end": "0x00439F8C",
+        "current_name": "FUN_00438d00",
+        "proposed_name": "StaffRollScene::RenderTimeline",
+        "module": "StaffRollScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00438D00",
+        "size": "4749",
+        "span_end": "0x00439F8C",
+        "current_name": "FUN_00438d00",
+        "proposed_name": "StaffTimeline438D00::RenderTimeline",
+        "module": "StaffRollScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void StaffTimeline438D00::RenderTimeline()",
+        "is_thunk": "false",
+        "source_file": "src/StaffTimeline438D00.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F092; scripts/repo-python scripts/replay-exact-units.py --unit staff-timeline-00438d00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F092: complete4749-byte canonical cold exact timeline,1215 instructions/48 branches/61 actual packets and117 physical fields; all25 genuine unsigned begin/end intervals,unsigned qword float temporaries and six alpha conversions preserve operator ordering; actual offset reused for phase21 and47 nine-argument sprite calls retained; four real locals,bounds outer/offset successful-frame/alpha drawing scope naturally match292-byte frame; new bool declaration views402660 AL pass-through from BeginTarget,without changing accepted void declaration/body/headers or introducing a replacement body; pointer-only scene/drawing views never construct/embed; all7 complete callees reviewed; original names/scopes/complete owner layouts unknown; R043 role retained by alias; all97 origins and old large drafts preserved without extra credit"
+      },
+      "origin": {
+        "address": "0x00438D00",
+        "origin": "authored",
+        "subsystem": "StaffRollScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -97812,6 +97856,731 @@
           "target": 6648324
         }
       ]
+    },
+    "staff-timeline-00438d00": {
+      "source": "src/StaffTimeline438D00.cpp",
+      "object": "build/matching/StaffTimeline438D00.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "StaffTimeline438D00::RenderTimeline"
+      ],
+      "symbol": "?RenderTimeline@StaffTimeline438D00@@QAEXXZ",
+      "target_address": 4427008,
+      "size": 4749,
+      "compare_size": 4749,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?BeginFrameValueAt00402660@Graphics@@YA_NXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 37,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 241,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 272,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 333,
+          "type": "DIR32",
+          "symbol": "__real@43820000",
+          "target": 6652644
+        },
+        {
+          "offset": 353,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 415,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 435,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 515,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 559,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 652,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 658,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 663,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 740,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 814,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 894,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 989,
+          "type": "DIR32",
+          "symbol": "__real@42800000",
+          "target": 6652640
+        },
+        {
+          "offset": 995,
+          "type": "DIR32",
+          "symbol": "__real@41800000",
+          "target": 6651072
+        },
+        {
+          "offset": 1001,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 1017,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1044,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 1066,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1093,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 1099,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 1121,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1148,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 1154,
+          "type": "DIR32",
+          "symbol": "__real@45000000",
+          "target": 6652636
+        },
+        {
+          "offset": 1176,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1203,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 1209,
+          "type": "DIR32",
+          "symbol": "__real@45400000",
+          "target": 6652632
+        },
+        {
+          "offset": 1231,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1244,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1337,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1372,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1392,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1424,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1444,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1524,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1568,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1661,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1667,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1702,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1722,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1754,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1774,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1867,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1902,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1922,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1954,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1974,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2054,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2098,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2206,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2212,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2247,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2267,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2299,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2319,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2418,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 2424,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 2446,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2501,
+          "type": "DIR32",
+          "symbol": "__real@41980000",
+          "target": 6651768
+        },
+        {
+          "offset": 2507,
+          "type": "DIR32",
+          "symbol": "__real@44580000",
+          "target": 6652628
+        },
+        {
+          "offset": 2529,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2584,
+          "type": "DIR32",
+          "symbol": "__real@41980000",
+          "target": 6651768
+        },
+        {
+          "offset": 2590,
+          "type": "DIR32",
+          "symbol": "__real@44ac0000",
+          "target": 6652624
+        },
+        {
+          "offset": 2612,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2667,
+          "type": "DIR32",
+          "symbol": "__real@41980000",
+          "target": 6651768
+        },
+        {
+          "offset": 2673,
+          "type": "DIR32",
+          "symbol": "__real@44e40000",
+          "target": 6652620
+        },
+        {
+          "offset": 2695,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2750,
+          "type": "DIR32",
+          "symbol": "__real@41980000",
+          "target": 6651768
+        },
+        {
+          "offset": 2756,
+          "type": "DIR32",
+          "symbol": "__real@45040000",
+          "target": 6652616
+        },
+        {
+          "offset": 2778,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2889,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 2894,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2971,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3040,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3151,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3156,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3233,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3313,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3424,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3430,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3435,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3512,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3623,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 3658,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 3678,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3710,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 3730,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3762,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 3782,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3870,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3914,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3958,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4069,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4075,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4110,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4162,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4182,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4214,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4234,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4341,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4376,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 4396,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4465,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4546,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 4581,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 4654,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4723,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4736,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 4741,
+          "type": "REL32",
+          "symbol": "?EndFrame@Graphics@@YAXXZ",
+          "target": 4204496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -97968,6 +98737,8 @@
     "src/SelectionInput4388D0.cpp": "381a1d8fa3510e4118afb0e892f509d669c8c33d9be747b7f074896c3bcb3353",
     "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17",
     "src/InputHeldCounts406E80.cpp": "f9775afe22272c4170ed2903282b194b44a49bbfb791cc708ec00d12091beb8d",
-    "src/GraphicsWindowMode4018A0.cpp": "6b1befb9497e4c215f1c8f90ad864567d3f40228b1c84b67dc9d5382e16cb31d"
+    "src/GraphicsWindowMode4018A0.cpp": "6b1befb9497e4c215f1c8f90ad864567d3f40228b1c84b67dc9d5382e16cb31d",
+    "src/StaffTimeline438D00.cpp": "845ff485a6355657f3b172d7af71308c7df2d4b2ca976009fc01bcd4d176ec8d",
+    "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27"
   }
 }

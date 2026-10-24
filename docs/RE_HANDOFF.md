@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F092 staff-roll timeline investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F093 sprite-drawing investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 185 / 185 / 185 |
-| Exact code bytes | 557,962 |
-| Reviewed authored coverage | 557,962 / 1,973,516 (28.27%) |
-| Conservative coverage, including every pending byte | 557,962 / 1,977,124 (28.22%) |
+| Source-present / exact functions / exact units | 186 / 186 / 186 |
+| Exact code bytes | 562,711 |
+| Reviewed authored coverage | 562,711 / 1,973,516 (28.51%) |
+| Conservative coverage, including every pending byte | 562,711 / 1,977,124 (28.46%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **125 additions /
-548,079 code bytes / 154 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **126 additions /
+552,828 code bytes / 156 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,78 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F091
+## Latest accepted function: F092
+
+R043 staff-roll timeline 00438D00..00439F8C is independently canonical cold
+exact as `StaffTimeline438D00::RenderTimeline`: all 4,749 bytes, 1,215
+instructions, 48 branches, 61 call packets and 117 physical fields. Three
+following INT3 bytes stay outside the extent. Two new source/header inputs
+contain one natural body and pointer-only scene/drawing interfaces. Original
+R043 role/name is retained by alias; complete owner layouts remain unknown.
+
+The complete timeline keeps 25 assignments to genuine unsigned begin/end
+bounds, four real locals, all interval and unbounded-tail tests, 47 sprite
+calls, state changes, scroll offsets and six byte-alpha conversions. Unsigned
+subtractions use the native zero-extended qword FILD temporaries. Fade-in
+multiply/divide ordering differs between actual phases and is preserved.
+The final entry slide reuses the real offset local before subtracting from320.
+Initial 4,739-byte/1,213-instruction expressions omitted that store; the genuine
+offset assignment restores the full extent. The actual pivot value is12.
+
+Third probe aligns every instruction/field but has159 actual bound/alpha frame
+operand differences. Fourth probe gives bounds their outer scope, offset the
+successful-frame scope and alpha a drawing scope. The full292-byte frame then
+matches naturally. No spare locals, array growth, padding, aliasing, masking,
+truncated comparisons or source splits. Original lexical scopes/names are not
+proved by the match. All four locals are used by the actual timeline.
+
+All seven complete callees and 61 packets are reviewed. Forty-seven DrawSprite
+calls have36 argument bytes: index, float x/y, DWORD color, float pivots,
+float scale/angle and byte flags. Six ftol2 calls consume ST0 without fabricated
+C parameters. Every CFG/stack join passes; wrong ftol2-ret4/DrawSprite-ret32
+controls fail. All117 fields bind61 direct calls and56 readonly scalar fields,
+with exact float payloads, widths, permissions, operand positions and zero
+addends. Standalone preview, independent canonical compilation and separate
+canonical cold comparison match physically.
+
+Native402660 propagates accepted BeginTarget's AL bool through both exits;
+this timeline consumes AL. Existing accepted BeginFrame remains a void caller
+interface/body and is unchanged. An address-named bool declaration views that
+observed native return for this new caller; it introduces no second body,
+wrapper, fake return or extra argument. Old header/source/object hashes stay
+fixed. Original source prototype remains unknown; the typed entry view states
+only the observed x86 return-register contract.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit staff-timeline-00438d00
+```
+
+All185 old units,90 canonical objects,154 inputs,218 origin files,nine shared
+headers,91 active draft inputs and4,350 other rows remain unchanged. No old
+units were rebuilt. F009+126 additions retains552,828 bytes and156 inputs.
+All97 origins remain unknown; F085 and every older large draft receive no
+credit. Preserve f092 full native/attested/ABI/physical/cold/parent/progress/
+input/preservation evidence, all probe sources, logs and PDBs. Full CI passes
+**3,603 tests in 118.147 seconds**, plus target/tracking, progress
+and whitespace checks. Removed four obsolete reproducible probe objects
+(70,830 bytes) and scripts/tests bytecode (8,282,705 bytes),
+after whole final-preview/cold code and all117 relocation equality. All
+canonical objects, source/control inputs, logs, PDBs and evidence remain. Next F093: complete
+1,132-byte R011 SpriteDrawing::DrawSprite0040CA80, called47 times by F092.
+Fresh native/attested root/callee/caller records are retained:303 instructions,
+11 branches,12 calls to eight complete callees; RET36, followed by four INT3
+bytes. Reconcile all paths and nine arguments before source. Complete physical
+132-byte packet/default-constructor evidence is in F064/CharacterSpecial5E68C0;
+F083 AtlasQuad40DA00/BattleAtlasNumber446B90 supplies the parameterized
+constructor view. Their existing interfaces are separate: account for both
+constructors and real33-dword copies without constructing incomplete owners.
+Any shared-header change requires affected replays; prefer preserving accepted
+interfaces when a separately reviewed complete physical view suffices. Keep
+the two17-byte trigonometric wrappers and all97 pending origins unchanged.
+No F093 source, build, unit or exact credit yet.
+Goal98% remains active/incomplete.
+
+## Previous accepted function: F091
 
 R001 window-mode toggle 004018A0..004019F3 is independently canonical cold exact
 as `Graphics::ToggleWindowMode`: all 340 bytes, 96 instructions, six branches,
@@ -77,17 +148,6 @@ obsolete reproducible probe/control objects (89,120 bytes) and
 scripts/tests bytecode (8,282,705 bytes), after whole final-preview/
 cold-canonical code and all 32 relocation equality. All sources, inputs, logs,
 PDBs, evidence and canonical objects remain.
-Next F092: full 4,749-byte R043 StaffRollScene::RenderTimeline at 00438D00.
-Fresh native/attested root/callee/caller records reconcile 1,215 instructions,
-48 branches and 61 direct call sites to seven complete callees: accepted
-BeginFrame/EndFrame, three texture-state setters, DrawSprite and ftol2. There
-are 47 sprite calls and six implicit-ST0 conversions. DrawSprite has nine real
-arguments: texture index, x/y floats, DWORD color, two pivot floats, scale float,
-angle float and one byte of flags (36 stack bytes). Reconcile all timeline
-paths, signed float conversions and actual packets before source. No F092
-source, build, unit or credit yet.
-Goal 98% remains active and incomplete.
-
 ## Previous accepted function: F090
 
 R015 held-input update00406E80..00407164 is independently canonical cold exact

@@ -128,3 +128,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004388D0,CharacterSelectScene::PollInput,SelectionInput4388D0::PollInput,R043,select-input-004388d0
 0x00407170,InputMapping::IsKeyDown,InputMapping4388D0::IsKeyDown,R015,input-key-down-00407170
 0x00406E80,InputMapping::UpdateHeldCounts,InputMapping4388D0::UpdateHeldCounts,R015,input-held-counts-00406e80
+0x00438D00,StaffRollScene::RenderTimeline,StaffTimeline438D00::RenderTimeline,R043,staff-timeline-00438d00
