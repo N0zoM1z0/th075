@@ -225,3 +225,17 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0042D980,ReplayScene::DrawReplayFilename,ReplayTextF125::DrawFilename,R052,replay-draw-filename-0042d980
 0x00453F70,FighterState::Render,FighterRender453F70::Render,R045,fighter-render-00453f70
 0x0044E930,BattleEffect::RenderPattern08,EffectPattern44E930::Render,R042,effect-render-pattern08-0044e930
+0x00449EE0,BattleEffect::RenderPattern01,EffectPattern00449EE0::Render,R042,effect-render-pattern01-00449ee0
+0x0044B630,BattleEffect::RenderPattern02,EffectPattern0044B630::Render,R042,effect-render-pattern02-0044b630
+0x0044BB50,BattleEffect::RenderPattern03,EffectPattern0044BB50::Render,R042,effect-render-pattern03-0044bb50
+0x0044C070,BattleEffect::RenderPattern04,EffectPattern0044C070::Render,R042,effect-render-pattern04-0044c070
+0x0044D620,BattleEffect::RenderPattern05,EffectPattern0044D620::Render,R042,effect-render-pattern05-0044d620
+0x0044DA90,BattleEffect::RenderPattern06,EffectPattern0044DA90::Render,R042,effect-render-pattern06-0044da90
+0x0044E3D0,BattleEffect::RenderPattern07,EffectPattern0044E3D0::Render,R042,effect-render-pattern07-0044e3d0
+0x0044F850,BattleEffect::RenderPattern09,EffectPattern0044F850::Render,R042,effect-render-pattern09-0044f850
+0x0044FAF0,BattleEffect::RenderPattern10,EffectPattern0044FAF0::Render,R042,effect-render-pattern10-0044faf0
+0x0044FD40,BattleEffect::RenderPattern11,EffectPattern0044FD40::Render,R042,effect-render-pattern11-0044fd40
+0x00450420,BattleEffect::RenderPattern12,EffectPattern00450420::Render,R042,effect-render-pattern12-00450420
+0x00450C10,BattleEffect::RenderPattern13,EffectPattern00450C10::Render,R042,effect-render-pattern13-00450c10
+0x00450EE0,BattleEffect::RenderPattern14,EffectPattern00450EE0::Render,R042,effect-render-pattern14-00450ee0
+0x00451440,BattleEffect::RenderPattern15,EffectPattern00451440::Render,R042,effect-render-pattern15-00451440

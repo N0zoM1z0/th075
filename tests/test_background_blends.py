@@ -1,4 +1,4 @@
-from exact_checkpoint import retained_bytes
+from exact_checkpoint import historical_functions, retained_bytes
 import copy
 import importlib.util
 import json
@@ -97,8 +97,12 @@ class BackgroundBlendTests(unittest.TestCase):
             for r in self.plan['functions']:self.assertEqual(projected[r['address']],r['original_origin'])
             for a,r in actual.items():
                 if a not in V.WHOLE:self.assertEqual(projected[a],r)
-        with patch.object(V,'module',return_value=old),patch.object(old,'replay',side_effect=replay):
+        def historical_rows(name):
+            values=reader(name)
+            return historical_functions(values) if name=='functions.csv' else values
+        with patch.object(old,'rows',side_effect=historical_rows) as retained_reader,patch.object(V,'module',return_value=old),patch.object(old,'replay',side_effect=replay):
             V.replay_retained(self.plan,original)
+            self.assertIs(old.rows,retained_reader)
         self.assertEqual(len(called),1);self.assertIs(old.rows,reader)
 
     def test_current_view_rejects_unapproved_row_and_restores_reader(self):

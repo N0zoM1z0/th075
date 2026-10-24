@@ -281,3 +281,17 @@ ReplayTextF125::DrawNameGlyphs,0x0042D860,function
 ReplayTextF125::DrawFilename,0x0042D980,function
 FighterRender453F70::Render,0x00453F70,function
 EffectPattern44E930::Render,0x0044E930,function
+EffectPattern00449EE0::Render,0x00449EE0,function
+EffectPattern0044B630::Render,0x0044B630,function
+EffectPattern0044BB50::Render,0x0044BB50,function
+EffectPattern0044C070::Render,0x0044C070,function
+EffectPattern0044D620::Render,0x0044D620,function
+EffectPattern0044DA90::Render,0x0044DA90,function
+EffectPattern0044E3D0::Render,0x0044E3D0,function
+EffectPattern0044F850::Render,0x0044F850,function
+EffectPattern0044FAF0::Render,0x0044FAF0,function
+EffectPattern0044FD40::Render,0x0044FD40,function
+EffectPattern00450420::Render,0x00450420,function
+EffectPattern00450C10::Render,0x00450C10,function
+EffectPattern00450EE0::Render,0x00450EE0,function
+EffectPattern00451440::Render,0x00451440,function

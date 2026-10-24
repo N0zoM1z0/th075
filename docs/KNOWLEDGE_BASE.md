@@ -24595,3 +24595,110 @@ still need a proved complete local record layout; resource00456B60 retains
 f107's actual588byte frame and unresolved texture80/layout/filename bound.
 Build serially, cold-replay only new/affected units and remove only obsolete
 reproducible outputs while preserving inputs/evidence. Later phases deferred.
+
+## F127 complete effect-pattern checkpoint (2026-10-25)
+
+The fourteen remaining R042 BattleEffect drawing patterns pass canonical cold
+comparison: **11,057 code bytes,2,652 instructions,208 actual calls and all447
+real relocation fields**. Each complete CFG, ESP/EBP/x87 join, actual local
+frame, plain RET and following INT3 is reviewed independently. No owned table,
+shared tail or cropped comparison is present. Only these fourteen new units
+were cold-built, across one canonical object.
+
+The drawing receiver remains this+24. The RECT constructor calls four vector
+member constructors, the complete payload constructor and four coordinate
+constructors; it establishes the same complete132byte physical SDK packet.
+Only those packets, complete RECT values, six known28byte ScreenVertex values
+and genuine scalars are local. Every private effect/drawing owner remains
+pointer-only and is never instantiated or embedded. Original packet identity,
+payload partition and complete private owner layouts remain unknown.
+
+The sprite variant retains ten arguments including its two actual byte flags;
+ordinary/projected quad helpers copy all33 DWORDs from references. Pattern05
+writes all42 DWORDs of six vertices and passes count6. Pattern15 writes only
+the observed fields of130 existing owner records through pointers. The
+accepted projected-strip consumer writes rhw before using it. No incomplete
+owner or guessed owner-sized array is constructed.
+
+All native double operations, float-promoted double constants, truncations,
+construction order and distinct float/integer camera carriers remain. Nested
+C sine calls retain three outer sprite-variant words or one scale word. The
+unchanged complete R128 sine primary/source-defined C entry earns no new
+credit. Pattern15 keeps its signed0..128 step2 loop, next-before-current
+chained stores, color mask/shift sequence and final signed modulo.
+
+Two bounded143/159address compiler fixtures select only names and POD
+declaration order for genuine values. The second preview makes thirteen
+whole functions exact; the third aligns the final genuine locals and chain
+store order. No additional local, scope, storage, padding, guessed larger
+array, pasted decompile/code array, fake return, assembly, ABI alias,
+relocation mask or shortened extent is used. Six wrong real RECT-constructor,
+projected/variant/strip/sine/camera bindings fail full comparison.
+
+Replay the fourteen `effect-render-pattern01..07/09..15-ADDRESS` units recorded
+with exact names in `config/match-units.toml`; select only those units. The
+retained `.analysis/f127-cold-replay.log` records14/14 exact across one object.
+All282 prior units,125 canonical objects,193 source inputs,218 origin files,
+nine shared headers,91 active drafts and4,337 other function rows remain
+unchanged. F009 plus236 additions retains684,348 code bytes and194 new inputs.
+R042 historical roles remain through aliases; all97 unknown origins remain
+unknown. Preserve all f127 attested/native/SDK/CFG/x87/receiver/vertex/constant/
+name/negative/binding/cold/parent evidence, all three previews, both compiler
+fixtures, sources, results, logs, PDBs and the canonical object. No helper,
+library, global, data or private layout receives new credit.
+
+One retained-history integration test now supplies the existing hash-checked
+`historical_functions` view to its mocked R230 replay, including restoration
+of that reader. The initial CI exposed newly exact renderer metadata in its
+literal historical canonical pairs. All14 background-blend tests pass after
+this test-only adapter; original origin manifests, scripts, current origin
+rows and their hashes are unchanged. The complete unapproved-row rejection
+remains. No source/ABI/extent/byte comparison is weakened.
+
+Current totals: **296 exact functions/units,694,231 code bytes**,35.18% of
+reviewed authored bytes and **35.11% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in154.985s; seven exact-checkpoint tests
+passed in0.668s and all14 background-blend tests passed in4.221s. Target,
+tracking and diff checks passed. Only fourteen new units were cold-built.
+Evidence-preserving cleanup removed three obsolete own game probes and two
+compiler name fixtures(149,857bytes), plus375 reproducible Python bytecode
+files(8,283,506bytes). All inputs/three previews/two fixtures/native/SDK/CFG/
+x87/receiver/vertex/constant/name/negative/binding/cold/parent evidence, logs,
+PDBs and canonical objects remain. Actual pre-comment diagnostic compiler
+inputs are separately retained; canonical sources and cold objects are
+unchanged. Receipts are retained under
+`.analysis/f127-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F128
+
+Independently review eleven authored SceneTransition render patterns and six
+BattleEffect layer drawing functions, **5,004 provisional code bytes**:
+
+| Group | Addresses / provisional sizes |
+| --- | --- |
+| Transition01–04 | `00432200/175`, `004322B0/172`, `00432360/168`, `00432410/189` |
+| Transition05–08 | `004324D0/389`, `00432660/396`, `004327F0/355`, `00432960/386` |
+| Transition09–11 | `00432AF0/325`, `00432C40/300`, `00432D70/297` |
+| Effect layers | `00449B50/358`, `0044A2E0/358`, `0044AC60/284`, `0044AF00/284`, `0044CC20/284`, `0044CEC0/284` |
+
+Native-only function/callee/decompile queries under
+`.analysis/f128-transition-layers/` are complete, separately bounded to
+eleven/six addresses for the wrapper's16address limit. Target attestation and
+each of the six query completion markers are verified. Complete native spans
+and `.analysis/f128-native-frontier-proof.json` retain the next investigation
+inputs. No F128 source or exact credit
+is claimed. Reconcile every complete CFG/code/table/tail extent, real ABI,
+local-value contract, field width and helper packet before source. Complete
+accepted SDK packet contracts supply methodology, not private owner layouts.
+
+All accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts/failed controls remain protected. No unchanged retries or relaxed full
+physical comparison. All97 unknown origins remain unknown and evidence
+throughR268 is immutable. Every incomplete private owner stays pointer-only
+and is never instantiated or embedded. QueueFile00407A50/QueueArchiveEntry00407B80
+still need a proved complete local record layout; resource00456B60 retains
+f107's actual588byte frame and unresolved texture80/layout/filename bound.
+Build serially, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while preserving inputs/evidence. Later phases deferred.
