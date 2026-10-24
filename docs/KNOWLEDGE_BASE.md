@@ -21921,3 +21921,83 @@ completed caller query and bounded ABI notes are retained privately; no F100
 source or exact credit yet. Three callers include both directory loaders and
 the accepted save policy. Its true scalar allocation symbols and all format/
 row-stride/return policies require independent reconciliation before source.
+
+
+## F100 complete bitmap-loader checkpoint (2026-10-24)
+
+R021 bitmap loader `0041A3D0..0041B276` independently passes canonical cold
+comparison as BitmapPackSource40BF60::LoadFile(const char*). All 3,751 code
+bytes, 1,001 instructions, 88 branches and 24 actual relocation fields match.
+The full comparison also includes 45 generated switch-data bytes: the 20-byte
+destination table at `0041B277` and 25-byte selector map at `0041B28B`.
+Only code earns coverage credit. Twelve following INT3 bytes stay outside.
+One new implementation file leaves all old headers and sources unchanged;
+the historical BitmapData::LoadBitmap role remains by an R021 alias.
+
+The pointer-only interface exactly repeats the accepted save header's class
+members; the incomplete owner is never constructed or embedded. Complete SDK
+BITMAPFILEHEADER/INFOHEADER/RGBQUAD views provide real file records. A separate
+complete four-byte RGBA temporary copies all four real channels and does not
+establish the bitmap owner layout. True scalar new/delete symbols bind nine
+allocations and four deletes. Minimal SDK headers naturally emit these scalar
+symbols for array expressions with VC7.1; an actual <new> control emits thirteen
+different array-operator identities. Their real thunks cannot be aliased.
+Four SDK imports are independently read from the actual target PE table.
+
+File-format precedence, depth minimum, palette ownership, four-byte row
+alignment and all 8/16/24/32 output paths remain as observed. Indexed paths,
+vertical row reversal, BGR conversion and black-pixel alpha tests preserve
+actual operations. Read results remain ignored. Invalid handle and bad BMP
+signature retain their direct failure exits and original cleanup behavior.
+There is no dimension validation, allocation check or odd-width repair added.
+
+One native zero byte is initialized but never loaded. A genuinely used const
+BYTE transparent palette index supplies a source-compatible explanation:
+VC7.1 retains its initialization while folding three zero-index uses into
+addresses. The complete index-one control changes that initializer and six
+actual palette load/store addresses; a small independent control confirms
+the same behavior. The constant is functionally used, with no inert local or
+padding. Its original declaration and name remain unknown. Ordinary local
+names and scopes reproduce the complete physical 200-byte frame plus ESI;
+private compiler ordering controls provide diagnostics, without exact credit.
+
+All seventeen packets, the complete switch CFG, AL0/AL1 exits and RET4 pass
+review. All three full callers pass filename/entry-receiver review; the two
+directory loaders actually test AL, while accepted Save ignores it. Four
+wrong-ABI and three wrong-binding controls are rejected. All seven local
+switch fields bind their newly emitted COFF offsets. There are no frame or
+register aliases, relocation masks, patched branches or cropped comparisons.
+Only this new unit is cold built; no old dependency replay is needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-load-0041a3d0
+```
+
+All 196 prior units, 98 canonical objects, 166 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,350 other function rows stay unchanged.
+F009 plus 137 additions retains 561,573 code bytes and 167 source/header inputs.
+Keep all f100 native/attested/ABI/policy/import/physical/cold/parent records and
+compiler control sources, results, logs and PDBs. Original names, scopes and
+whole owner layouts remain unknown. All 97 unknown origins and old drafts
+receive no credit. The progress card now takes its goal percentage from the
+same status result, replacing its stale literal 95% with the active 98% goal.
+
+Current totals: 197 exact functions/units, 571,456 code bytes, 28.96% of
+reviewed authored bytes and 28.90% conservatively including all pending bytes.
+
+Next F101 is the complete 1,383-byte R021 run encoder `0041B400` from accepted
+Save's graph. The native index retains 382 instructions, 31 branches, fifteen
+calls and all 41 associated switch-data bytes (1,424-byte comparison extent).
+No following INT3 gap exists before accepted `0041B990`. Six scalar new, six
+scalar delete and three complete memcpy calls need full run-count/color/type,
+allocation and ECX/no-argument/RET0 reconciliation before source. Existing
+attested F099 views contain the whole encoder; retain the own caller query.
+No F101 source or exact credit yet. The 98% goal remains active and incomplete.
+
+Final F100 CI passes 3,603 tests in 125.909s. Bounded cleanup
+removes ten obsolete reproducible probe/control objects (194,525 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, control sources/results, evidence, logs and PDBs remain.
+F101 own caller query completed with target attestation and its completion
+marker; complete native/callee/switch index and bounded ABI notes are retained
+privately. No F101 source or exact credit yet.

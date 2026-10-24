@@ -195,3 +195,4 @@ TextureUpload40C730::UploadByHandle,0x0040C6F0,function
 BitmapPalette40C380::Load,0x0040C380,function
 TexturePack40BF60::Save,0x0040BF60,function
 TexturePack40BF60::SaveDefault,0x0040BF40,function
+BitmapPackSource40BF60::LoadFile,0x0041A3D0,function

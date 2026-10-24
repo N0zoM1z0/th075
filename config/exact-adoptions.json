@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F099",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F100",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "db31bff52f64417427d02cba967f105ffcc86e051ec87a96ab9ea1cb245bad60"
+      "current_sha256": "8ca4342e5b2cb139ff0a2495a2dddda1ea87d6ebc17ca4edbddceed658ba9104"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "338a7d212c66c65b5cf21316ae5a07560157146afba645c19c534ba8d86fa37c"
+      "current_sha256": "0aafed166aab519f3fec1262ea502969ba992e154faa2afb725bf6ae5573a679"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "a4ec5cddda52cfd903bc8dbe0f985127675213a68df94f43bca0c8788baac73b"
+      "current_sha256": "55e1ea16b1a8b1086ceecab76a6c446709a511ff6f47356fbcb7983fe603ee27"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "38400045e2be444e5bb02d3236351071ac1793ec2e5ef3e21c71721fba77a827"
+      "current_sha256": "57ba6244de9f810efdb05b653cda90d894830a5b9a1c14020a06693f0c160c31"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "37287502234ff2c0aa0bea1cc19af7380280179bd0fd72dcc70b418050438984"
+      "current_sha256": "1fb501f0b18a620ed77f48cfa079d856cdddd3ba3d78a1b5d00d84a733333686"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "07bce0bea690b49b8caa4bd6dafc02ad9bfe80133ed4ca8c5b4e9e16990fd04c"
+      "current_sha256": "27eaf61ec4bf354db5f44094a8c17c2e3c1cd5c82356fbb9bbca62d18e676894"
     }
   },
   "functions": [
@@ -6024,6 +6024,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R019"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041A3D0",
+        "size": "3751",
+        "span_end": "0x0041B276",
+        "current_name": "FUN_0041a3d0",
+        "proposed_name": "BitmapData::LoadBitmap",
+        "module": "BitmapData",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041A3D0",
+        "size": "3751",
+        "span_end": "0x0041B276",
+        "current_name": "FUN_0041a3d0",
+        "proposed_name": "BitmapPackSource40BF60::LoadFile",
+        "module": "BitmapData",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool BitmapPackSource40BF60::LoadFile(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/BitmapLoad41A3D0.cpp",
+        "evidence": "R021; F100; scripts/repo-python scripts/replay-exact-units.py --unit bitmap-load-0041a3d0",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F100: complete3751-byte canonical cold exact plus45 bytes of actual generated switch data physically compared across3796 bytes; all1001 instructions/88 branches/17 true packets/24 physical fields agree with actual newly emitted localtable/case offsets; codecredit only3751; scalarnew64159D/nine sites andscalardelete640F15/four sites independently sourced,SDKfileimports read fromPE; minimalheader arrayexpressions naturallyemittrue scalar symbols,includeNew control emits13differentarrayidentities andcannotbealiased; complete SDK14/40/4-byte bitmap values andfour-used-fieldRGBA temporary,pointeronlyincompleteowner neverconstructed; truefileformat/palette/rowstride/four switchcase/blackalpha/verticalflip paths andoriginal failurecleanup retained; actual200-byteframe+ESI/onefilename/RET4/AL0+1 andallthreecallerfilenameentrypackets reviewed,two callers testAL; genuineusedconstBYTE transparententry index foldsaddressreads while retainingnativezero initializer,fullindexone control changesinitializer andsixactualpaletteaddresses,original declaration/name remains inference; no inertlocals,padding,assembly,layout growth,masks,aliases orcroppedextents; fourABI andthreebinding negativecontrols rejected; old196units/headers/97unknownorigins/drafts unchanged,R021role retainedbyalias"
+      },
+      "origin": {
+        "address": "0x0041A3D0",
+        "origin": "authored",
+        "subsystem": "BitmapData",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
       }
     }
   ],
@@ -99889,6 +99933,173 @@
           "target": 4243296
         }
       ]
+    },
+    "bitmap-load-0041a3d0": {
+      "source": "src/BitmapLoad41A3D0.cpp",
+      "object": "build/matching/BitmapLoad41A3D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BitmapPackSource40BF60::LoadFile"
+      ],
+      "symbol": "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z",
+      "target_address": 4301776,
+      "size": 3751,
+      "compare_size": 3796,
+      "relocations": [
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 114,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 126,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 168,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 531,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 835,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 987,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1219,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1410,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 1469,
+          "type": "DIR32",
+          "symbol": "$L55599",
+          "target": 4305547
+        },
+        {
+          "offset": 1476,
+          "type": "DIR32",
+          "symbol": "$L55600",
+          "target": 4305527
+        },
+        {
+          "offset": 1501,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1690,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 2495,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3278,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 3654,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 3681,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 3711,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 3735,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 3751,
+          "type": "DIR32",
+          "symbol": "$L55359",
+          "target": 4303256
+        },
+        {
+          "offset": 3755,
+          "type": "DIR32",
+          "symbol": "$L55388",
+          "target": 4303443
+        },
+        {
+          "offset": 3759,
+          "type": "DIR32",
+          "symbol": "$L55453",
+          "target": 4304247
+        },
+        {
+          "offset": 3763,
+          "type": "DIR32",
+          "symbol": "$L55518",
+          "target": 4305030
+        },
+        {
+          "offset": 3767,
+          "type": "DIR32",
+          "symbol": "$L55356",
+          "target": 4305424
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -100057,6 +100268,7 @@
     "src/TextureUpload40C730.hpp": "8b15a1211eadbf3cac823e8e2f11e0b7b2612b789da74ac9d90deb6542a8fcdd",
     "src/BitmapPalette40C380.cpp": "5a1ba93f0dc6e477edc56f40f3ad90a78ee3d2d85955672e446dae73e75a727f",
     "src/TexturePack40BF60.cpp": "efb625a36b8478c27fc8a38cd828f5f08b83b6ea85b60146b448227eeecb74e0",
-    "src/TexturePack40BF60.hpp": "fd96bf3ee5e1e0dcb24fd181c7600e980348577c43311089fb4ae3fac8a13e85"
+    "src/TexturePack40BF60.hpp": "fd96bf3ee5e1e0dcb24fd181c7600e980348577c43311089fb4ae3fac8a13e85",
+    "src/BitmapLoad41A3D0.cpp": "4684b2bef3b2b14393c1901d0aa7daa0b9522ddf57b2c8a0f8ef0956e5dfe55a"
   }
 }

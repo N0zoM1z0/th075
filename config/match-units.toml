@@ -17856,3 +17856,39 @@ compare_size = 31
 relocations = [
   { offset = 0x15, type = "REL32", symbol = "?Save@TexturePack40BF60@@QAEXPBD0C@Z", target = 0x0040BF60 },
 ]
+
+[units."bitmap-load-0041a3d0"]
+source = "src/BitmapLoad41A3D0.cpp"
+object = "build/matching/BitmapLoad41A3D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapPackSource40BF60::LoadFile"]
+symbol = "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z"
+target_address = 0x0041A3D0
+size = 3751
+compare_size = 3796
+relocations = [
+  { offset = 0x56, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x72, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0x7E, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0xA8, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x213, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x343, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x3DB, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x4C3, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x582, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0x5BD, type = "DIR32", symbol = "$L55599", target = 0x0041B28B },
+  { offset = 0x5C4, type = "DIR32", symbol = "$L55600", target = 0x0041B277 },
+  { offset = 0x5DD, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x69A, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x9BF, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0xCCE, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0xE46, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0xE61, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0xE7F, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0xE97, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0xEA7, type = "DIR32", symbol = "$L55359", target = 0x0041A998 },
+  { offset = 0xEAB, type = "DIR32", symbol = "$L55388", target = 0x0041AA53 },
+  { offset = 0xEAF, type = "DIR32", symbol = "$L55453", target = 0x0041AD77 },
+  { offset = 0xEB3, type = "DIR32", symbol = "$L55518", target = 0x0041B086 },
+  { offset = 0xEB7, type = "DIR32", symbol = "$L55356", target = 0x0041B210 },
+]
