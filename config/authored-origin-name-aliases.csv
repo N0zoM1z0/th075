@@ -136,3 +136,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0041B990,BitmapData::UploadDecodedPixels,BitmapUpload40C590::CopyTo,R021,bitmap-upload-0041b990
 0x0040C730,TextureManager::UploadTexture,TextureUpload40C730::Upload,R014,texture-upload-0040c730
 0x0040C6F0,TextureManager::UploadByHandle,TextureUpload40C730::UploadByHandle,R014,texture-upload-handle-0040c6f0
+0x0040C380,TextureManager::LoadBitmapPalette,BitmapPalette40C380::Load,R014,bitmap-palette-load-0040c380

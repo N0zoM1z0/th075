@@ -21784,3 +21784,69 @@ and 8,282,705 bytes of Python caches, with per-file hash receipts.
 Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
 F098 whole native index, root decompile, caller query and allocation-parent
 exports are retained privately; no F098 source or exact credit yet.
+
+## F098 complete bitmap palette loader checkpoint (2026-10-24)
+
+R014 bitmap-palette loader `0040C380..0040C58A` independently passes canonical
+cold comparison as BitmapPalette40C380::Load(const char*): all 523 bytes,
+161 instructions, ten branches and eight real fields. Five following INT3
+bytes remain outside the extent. One new implementation file leaves all old
+headers and sources unchanged. The historical TextureManager::LoadBitmapPalette
+role remains by alias. The partial owner is never constructed or embedded;
+its complete original layout, source names and prototype remain unknown.
+
+The old palette is array-deleted and cleared before opening the new file.
+CreateFileA/GetFileSize/ReadFile read a file-sized primitive byte array. Real
+complete SDK BITMAPFILEHEADER/INFOHEADER/RGBQUAD pointer views provide the
+14/40/4-byte records and observed offsets. The real unused bfOffBits snapshot
+is preserved. The low byte of biBitCount feeds an unmasked shift before the
+signed depth<=8/count-loop checks. Colors begin at fixed offset 54, rather than
+the snapshot offset. A real 256-WORD/512-byte array receives B/G/R five-bit
+conversion, with alpha OR0x8000 and first-entry AND0x7FFF. Width, file-read and
+format error behavior receive no repair. In particular bad BM exits directly
+with the native live file/buffer behavior; valid BM alone reaches deletion and
+CloseHandle. Ignored ReadFile byte count remains a genuine API output local.
+
+All four PE import names and stdcall packets (28/8/20/4 bytes) are independently
+read back. Both five-byte array-operator thunks and complete R154/R120/R142
+runtime parents/headers remain unchanged. Including the real <new> header
+naturally emits array new/delete symbols. The declaration-free control emits
+scalar symbols; binding those to their legitimate scalar entries fails four
+physical fields. Scalar symbols are never mapped onto array thunks to force
+a match. All 64-byte frame joins, eight packets and cdecl caller cleanup pass;
+wrong allocation-callee-ret4 and ReadFile-ret16 controls fail. The complete
+1,046-byte sole caller passes filename/owner and ignores the result.
+
+The first probe already reproduces all 161 instructions/ten branches. Bounded
+meaningful local-name controls reproduce the actual frame positions; final
+source keeps ordinary flat scopes and one body. Source names remain provisional.
+No padding, inert locals, symbol/frame/register aliases, masks or shortened
+comparison. Only the new unit is cold replayed; no old rebuilds are needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-palette-load-0040c380
+```
+
+All 193 old units, 96 canonical objects, 163 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,350 other function rows remain unchanged.
+F009 plus 134 additions retains 556,745 code bytes and 164 inputs. Preserve all
+f098 native/attested/ABI/allocation/import/physical/cold/parent evidence and
+compiler-control sources, logs and PDBs.
+Next F099 is the complete 1,046-byte R019 SaveTexturePack `0040BF60`, the sole
+palette-loader caller. Reconcile serialization, signed-byte palette count,
+real filename buffer/security cookie, nested bitmap load/encode and complete
+callee ABIs before source; never construct incomplete owner views. The 97
+unknown origins and old drafts receive no credit. Goal 98% stays incomplete.
+
+Current totals: 194 exact functions/units, 566,628 code bytes, 28.71% of
+reviewed authored bytes and 28.66% conservatively including all pending bytes.
+
+Final F098 CI passes 3,603 tests in 136.295s. Bounded cleanup
+removes seven obsolete reproducible probe objects (272,737 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F099 complete native/callee exports, root and seven-callee attested views,
+index and provisional ABI notes are retained privately; no F099 source or
+exact credit yet. A separate caller query is underway; check its own completion
+marker before use. Filename array size remains unknown; the distance to the
+security cookie alone does not prove an array extent or authorize padding.

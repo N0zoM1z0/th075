@@ -192,3 +192,4 @@ TexturePalette40C8C0::Refresh,0x0040C590,function
 BitmapUpload40C590::CopyTo,0x0041B990,function
 TextureUpload40C730::Upload,0x0040C730,function
 TextureUpload40C730::UploadByHandle,0x0040C6F0,function
+BitmapPalette40C380::Load,0x0040C380,function

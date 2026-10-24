@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F098 bitmap-palette investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F099 texture-pack serialization investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 193 / 193 / 193 |
-| Exact code bytes | 566,105 |
-| Reviewed authored coverage | 566,105 / 1,973,516 (28.69%) |
-| Conservative coverage, including every pending byte | 566,105 / 1,977,124 (28.63%) |
+| Source-present / exact functions / exact units | 194 / 194 / 194 |
+| Exact code bytes | 566,628 |
+| Reviewed authored coverage | 566,628 / 1,973,516 (28.71%) |
+| Conservative coverage, including every pending byte | 566,628 / 1,977,124 (28.66%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **133 additions /
-556,222 code bytes / 163 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **134 additions /
+556,745 code bytes / 164 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,69 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F097
+## Latest accepted function: F098
+
+R014 bitmap-palette loader `0040C380..0040C58A` independently passes canonical
+cold comparison as BitmapPalette40C380::Load(const char*): all 523 bytes,
+161 instructions, ten branches and eight real fields. Five following INT3
+bytes remain outside the extent. One new implementation file leaves all old
+headers and sources unchanged. The historical TextureManager::LoadBitmapPalette
+role remains by alias. The partial owner is never constructed or embedded;
+its complete original layout, source names and prototype remain unknown.
+
+The old palette is array-deleted and cleared before opening the new file.
+CreateFileA/GetFileSize/ReadFile read a file-sized primitive byte array. Real
+complete SDK BITMAPFILEHEADER/INFOHEADER/RGBQUAD pointer views provide the
+14/40/4-byte records and observed offsets. The real unused bfOffBits snapshot
+is preserved. The low byte of biBitCount feeds an unmasked shift before the
+signed depth<=8/count-loop checks. Colors begin at fixed offset 54, rather than
+the snapshot offset. A real 256-WORD/512-byte array receives B/G/R five-bit
+conversion, with alpha OR0x8000 and first-entry AND0x7FFF. Width, file-read and
+format error behavior receive no repair. In particular bad BM exits directly
+with the native live file/buffer behavior; valid BM alone reaches deletion and
+CloseHandle. Ignored ReadFile byte count remains a genuine API output local.
+
+All four PE import names and stdcall packets (28/8/20/4 bytes) are independently
+read back. Both five-byte array-operator thunks and complete R154/R120/R142
+runtime parents/headers remain unchanged. Including the real <new> header
+naturally emits array new/delete symbols. The declaration-free control emits
+scalar symbols; binding those to their legitimate scalar entries fails four
+physical fields. Scalar symbols are never mapped onto array thunks to force
+a match. All 64-byte frame joins, eight packets and cdecl caller cleanup pass;
+wrong allocation-callee-ret4 and ReadFile-ret16 controls fail. The complete
+1,046-byte sole caller passes filename/owner and ignores the result.
+
+The first probe already reproduces all 161 instructions/ten branches. Bounded
+meaningful local-name controls reproduce the actual frame positions; final
+source keeps ordinary flat scopes and one body. Source names remain provisional.
+No padding, inert locals, symbol/frame/register aliases, masks or shortened
+comparison. Only the new unit is cold replayed; no old rebuilds are needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-palette-load-0040c380
+```
+
+All 193 old units, 96 canonical objects, 163 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,350 other function rows remain unchanged.
+F009 plus 134 additions retains 556,745 code bytes and 164 inputs. Preserve all
+f098 native/attested/ABI/allocation/import/physical/cold/parent evidence and
+compiler-control sources, logs and PDBs.
+Final F098 CI passes 3,603 tests in 136.295s. Bounded cleanup
+removes seven obsolete reproducible probe objects (272,737 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F099 complete native/callee exports, root and seven-callee attested views,
+index and provisional ABI notes are retained privately; no F099 source or
+exact credit yet. A separate caller query is underway; check its own completion
+marker before use. Filename array size remains unknown; the distance to the
+security cookie alone does not prove an array extent or authorize padding.
+Next F099 is the complete 1,046-byte R019 SaveTexturePack `0040BF60`, the sole
+palette-loader caller. Reconcile serialization, signed-byte palette count,
+real filename buffer/security cookie, nested bitmap load/encode and complete
+callee ABIs before source; never construct incomplete owner views. The 97
+unknown origins and old drafts receive no credit. Goal 98% stays incomplete.
+
+## Previous accepted functions: F097
 
 R014 upload adapter `0040C730..0040C7DC` (173 bytes) and its sole static caller
 `0040C6F0..0040C725` (54 bytes) independently pass canonical cold comparison as

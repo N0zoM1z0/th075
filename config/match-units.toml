@@ -17773,3 +17773,23 @@ relocations = [
   { offset = 0x11, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
   { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
 ]
+
+[units."bitmap-palette-load-0040c380"]
+source = "src/BitmapPalette40C380.cpp"
+object = "build/matching/BitmapPalette40C380.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapPalette40C380::Load"]
+symbol = "?Load@BitmapPalette40C380@@QAEXPBD@Z"
+target_address = 0x0040C380
+size = 523
+compare_size = 523
+relocations = [
+  { offset = 0x27, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+  { offset = 0x50, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x6A, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0x76, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x9A, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x108, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x1F4, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+  { offset = 0x201, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+]

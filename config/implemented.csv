@@ -191,3 +191,4 @@ TexturePalette40C8C0::Refresh
 BitmapUpload40C590::CopyTo
 TextureUpload40C730::Upload
 TextureUpload40C730::UploadByHandle
+BitmapPalette40C380::Load
