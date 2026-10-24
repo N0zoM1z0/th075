@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F122",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F123",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "0eb0cfce0c88c822c0eba406ee135eb1de9b9c292503f742d07e4891d85bb23c"
+      "current_sha256": "1c4647b10bf907d0b600d60be1f46685e3275aeddbad7c11b7e55254dda2b2b2"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ebe3b7e33614346d1c2a8620a781a0b7df4160412a696d1175971da88d50c3d9"
+      "current_sha256": "ed83380b24c95cb4768368fdd7c42f54acdfb061136f154130d1876fd33c6338"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "a5e2915bb7e9c20887ca17c4b2362c2d9e1aa8a8fed3da8ba70d62de4dc2cd5e"
+      "current_sha256": "a3b268934ab8a95542836f1a99d0756deb7f74deb5721ec2ebcef48a459dbb0d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "780e546a14d70b9cda0f3882e4ac2d3fcc40e4c8d7cb7e4b04a4c5a735c71090"
+      "current_sha256": "bb06559ad0d53a7e68dfbf15c6d1e0e17460f2167f4204ce21f2e9e1bc1cfb81"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f44511c331cc10872f2641823a4b06cce12f6901a2892d5afcf25c45b2d10871"
+      "current_sha256": "3c32da68dc32e7dbcef187d6ec81190c382571f31ec72b260705ebdcd92c5a93"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "a5345344dd441b8e9d122233e333bb7901fc29739110d50063f91ef50a134a4a"
+      "current_sha256": "ada8f060590c7a4f95d79ef0fdfd75a93772ea177ff0f08cf06b08871906315e"
     }
   },
   "functions": [
@@ -9145,6 +9145,358 @@
         "address": "0x005C52D0",
         "origin": "authored",
         "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004724B0",
+        "size": "982",
+        "span_end": "0x00472885",
+        "current_name": "FUN_004724b0",
+        "proposed_name": "CharacterAux::RunAt004724B0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004724B0",
+        "size": "982",
+        "span_end": "0x00472885",
+        "current_name": "FUN_004724b0",
+        "proposed_name": "CharacterInput4724B0::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput4724B0::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-004724b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 982 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x004724B0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00498BE0",
+        "size": "1099",
+        "span_end": "0x0049902A",
+        "current_name": "FUN_00498be0",
+        "proposed_name": "CharacterAux::RunAt00498BE0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00498BE0",
+        "size": "1099",
+        "span_end": "0x0049902A",
+        "current_name": "FUN_00498be0",
+        "proposed_name": "CharacterInput498BE0::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput498BE0::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-00498be0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 1099 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x00498BE0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C6700",
+        "size": "1099",
+        "span_end": "0x004C6B4A",
+        "current_name": "FUN_004c6700",
+        "proposed_name": "CharacterAux::RunAt004C6700",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C6700",
+        "size": "1099",
+        "span_end": "0x004C6B4A",
+        "current_name": "FUN_004c6700",
+        "proposed_name": "CharacterInput4C6700::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput4C6700::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-004c6700",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 1099 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x004C6700",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E7A00",
+        "size": "982",
+        "span_end": "0x004E7DD5",
+        "current_name": "FUN_004e7a00",
+        "proposed_name": "CharacterAux::RunAt004E7A00",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004E7A00",
+        "size": "982",
+        "span_end": "0x004E7DD5",
+        "current_name": "FUN_004e7a00",
+        "proposed_name": "CharacterInput4E7A00::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput4E7A00::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-004e7a00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 982 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x004E7A00",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00556FA0",
+        "size": "982",
+        "span_end": "0x00557375",
+        "current_name": "FUN_00556fa0",
+        "proposed_name": "CharacterAux::RunAt00556FA0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00556FA0",
+        "size": "982",
+        "span_end": "0x00557375",
+        "current_name": "FUN_00556fa0",
+        "proposed_name": "CharacterInput556FA0::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput556FA0::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-00556fa0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 982 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x00556FA0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00579220",
+        "size": "1060",
+        "span_end": "0x00579643",
+        "current_name": "FUN_00579220",
+        "proposed_name": "CharacterAux::RunAt00579220",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00579220",
+        "size": "1060",
+        "span_end": "0x00579643",
+        "current_name": "FUN_00579220",
+        "proposed_name": "CharacterInput579220::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput579220::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-00579220",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 1060 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x00579220",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0059CDA0",
+        "size": "1177",
+        "span_end": "0x0059D238",
+        "current_name": "FUN_0059cda0",
+        "proposed_name": "CharacterAux::RunAt0059CDA0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0059CDA0",
+        "size": "1177",
+        "span_end": "0x0059D238",
+        "current_name": "FUN_0059cda0",
+        "proposed_name": "CharacterInput59CDA0::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput59CDA0::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-0059cda0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 1177 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x0059CDA0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C5980",
+        "size": "904",
+        "span_end": "0x005C5D07",
+        "current_name": "FUN_005c5980",
+        "proposed_name": "CharacterAux::RunAt005C5980",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005C5980",
+        "size": "904",
+        "span_end": "0x005C5D07",
+        "current_name": "FUN_005c5980",
+        "proposed_name": "CharacterInput5C5980::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput5C5980::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterInputPollingFamily.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F123; scripts/repo-python scripts/replay-exact-units.py --unit character-input-005c5980",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F123: complete 904 byte independently canonical cold exact; full cohort8285code bytes/2385instructions/211calls/all422real fields. Every own full CFG/4byte this-only frame/plainRET/shared exit/stack join and following INT3 checked; no table or cropped tail. Every native true edge stores its own command then exits; every false edge reaches next ordered packet or final shared exit. All211 actual this receivers/three-word packets/signed AL tests/literal strings/counts/windows/commands independently reread. Complete695byte helper proves signed-byte arguments/RET12 and true AL values including4; no guessed BOOL. Eight different natural if-else bodies preserve all per-character policy/order differences. No array/loop/table replacing native decisions, extra local/storage/name fixture or owner construction/embedding. First preview whole exact; five wrong real helper or string bindings each reject all eight units. No pasted decompile/nativecode array/assembly/manualEH/fake return/padding/ABIalias/mask/truncation. All267 prior units/121objects/189inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged, R049 aliases retained. Original identities/names/full layouts/unproved types provisional, no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x005C5980",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
@@ -124717,6 +125069,2730 @@
           "target": 6051737
         }
       ]
+    },
+    "character-input-004724b0": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput4724B0::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput4724B0@@QAEXXZ",
+      "target_address": 4662448,
+      "size": 982,
+      "compare_size": 982,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG370",
+          "target": 6656320
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG375",
+          "target": 6656328
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG380",
+          "target": 6656336
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG385",
+          "target": 6656344
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG390",
+          "target": 6656352
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG395",
+          "target": 6656360
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG400",
+          "target": 6656368
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG405",
+          "target": 6656376
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG410",
+          "target": 6656384
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG415",
+          "target": 6656392
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG420",
+          "target": 6656400
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG425",
+          "target": 6656408
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG430",
+          "target": 6656416
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG435",
+          "target": 6656424
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG440",
+          "target": 6656432
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG445",
+          "target": 6656440
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG450",
+          "target": 6656448
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG455",
+          "target": 6656452
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG460",
+          "target": 6656456
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG465",
+          "target": 6656460
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG470",
+          "target": 6656464
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG475",
+          "target": 6656468
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 877,
+          "type": "DIR32",
+          "symbol": "$SG480",
+          "target": 6656472
+        },
+        {
+          "offset": 885,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 913,
+          "type": "DIR32",
+          "symbol": "$SG485",
+          "target": 6656476
+        },
+        {
+          "offset": 921,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 949,
+          "type": "DIR32",
+          "symbol": "$SG490",
+          "target": 6656480
+        },
+        {
+          "offset": 957,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4724B0@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-00498be0": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput498BE0::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput498BE0@@QAEXXZ",
+      "target_address": 4819936,
+      "size": 1099,
+      "compare_size": 1099,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG499",
+          "target": 6656788
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG504",
+          "target": 6656796
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG509",
+          "target": 6656804
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG514",
+          "target": 6656812
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG519",
+          "target": 6656820
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG524",
+          "target": 6656828
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG529",
+          "target": 6656836
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG534",
+          "target": 6656844
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG539",
+          "target": 6656852
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG544",
+          "target": 6656860
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG549",
+          "target": 6656868
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG554",
+          "target": 6656876
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG559",
+          "target": 6656884
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG564",
+          "target": 6656892
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG569",
+          "target": 6656900
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG574",
+          "target": 6656908
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG579",
+          "target": 6656916
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG584",
+          "target": 6656924
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG589",
+          "target": 6656928
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG594",
+          "target": 6656932
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG599",
+          "target": 6656936
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG604",
+          "target": 6656940
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG609",
+          "target": 6656944
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "$SG614",
+          "target": 6656948
+        },
+        {
+          "offset": 927,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 958,
+          "type": "DIR32",
+          "symbol": "$SG619",
+          "target": 6656952
+        },
+        {
+          "offset": 966,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 994,
+          "type": "DIR32",
+          "symbol": "$SG624",
+          "target": 6656956
+        },
+        {
+          "offset": 1002,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1030,
+          "type": "DIR32",
+          "symbol": "$SG629",
+          "target": 6656960
+        },
+        {
+          "offset": 1038,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1066,
+          "type": "DIR32",
+          "symbol": "$SG634",
+          "target": 6656968
+        },
+        {
+          "offset": 1074,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput498BE0@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-004c6700": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput4C6700::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput4C6700@@QAEXXZ",
+      "target_address": 5007104,
+      "size": 1099,
+      "compare_size": 1099,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG643",
+          "target": 6657272
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG648",
+          "target": 6657280
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG653",
+          "target": 6657288
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG658",
+          "target": 6657296
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG663",
+          "target": 6657304
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG668",
+          "target": 6657312
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG673",
+          "target": 6657320
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG678",
+          "target": 6657328
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG683",
+          "target": 6657336
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG688",
+          "target": 6657344
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG693",
+          "target": 6657352
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG698",
+          "target": 6657360
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG703",
+          "target": 6657368
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG708",
+          "target": 6657376
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG713",
+          "target": 6657384
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG718",
+          "target": 6657392
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG723",
+          "target": 6657400
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG728",
+          "target": 6657408
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG733",
+          "target": 6657412
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG738",
+          "target": 6657416
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG743",
+          "target": 6657420
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG748",
+          "target": 6657424
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG753",
+          "target": 6657428
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "$SG758",
+          "target": 6657432
+        },
+        {
+          "offset": 927,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 958,
+          "type": "DIR32",
+          "symbol": "$SG763",
+          "target": 6657436
+        },
+        {
+          "offset": 966,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 994,
+          "type": "DIR32",
+          "symbol": "$SG768",
+          "target": 6657440
+        },
+        {
+          "offset": 1002,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1030,
+          "type": "DIR32",
+          "symbol": "$SG773",
+          "target": 6657444
+        },
+        {
+          "offset": 1038,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1066,
+          "type": "DIR32",
+          "symbol": "$SG778",
+          "target": 6657452
+        },
+        {
+          "offset": 1074,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4C6700@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-004e7a00": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput4E7A00::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput4E7A00@@QAEXXZ",
+      "target_address": 5143040,
+      "size": 982,
+      "compare_size": 982,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG787",
+          "target": 6657640
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG792",
+          "target": 6657648
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG797",
+          "target": 6657656
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG802",
+          "target": 6657664
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG807",
+          "target": 6657672
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG812",
+          "target": 6657680
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG817",
+          "target": 6657688
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG822",
+          "target": 6657696
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG827",
+          "target": 6657704
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG832",
+          "target": 6657712
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG837",
+          "target": 6657720
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG842",
+          "target": 6657728
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG847",
+          "target": 6657736
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG852",
+          "target": 6657744
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG857",
+          "target": 6657752
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG862",
+          "target": 6657756
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG867",
+          "target": 6657760
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG872",
+          "target": 6657764
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG877",
+          "target": 6657768
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG882",
+          "target": 6657772
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG887",
+          "target": 6657776
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG892",
+          "target": 6657780
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 877,
+          "type": "DIR32",
+          "symbol": "$SG897",
+          "target": 6657784
+        },
+        {
+          "offset": 885,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 913,
+          "type": "DIR32",
+          "symbol": "$SG902",
+          "target": 6657788
+        },
+        {
+          "offset": 921,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 949,
+          "type": "DIR32",
+          "symbol": "$SG907",
+          "target": 6657796
+        },
+        {
+          "offset": 957,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput4E7A00@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-00556fa0": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput556FA0::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput556FA0@@QAEXXZ",
+      "target_address": 5599136,
+      "size": 982,
+      "compare_size": 982,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG916",
+          "target": 6658704
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG921",
+          "target": 6658712
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG926",
+          "target": 6658720
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG931",
+          "target": 6658728
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG936",
+          "target": 6658736
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG941",
+          "target": 6658744
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG946",
+          "target": 6658752
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG951",
+          "target": 6658760
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG956",
+          "target": 6658768
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG961",
+          "target": 6658776
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG966",
+          "target": 6658784
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG971",
+          "target": 6658792
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG976",
+          "target": 6658800
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG981",
+          "target": 6658808
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG986",
+          "target": 6658816
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG991",
+          "target": 6658820
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG996",
+          "target": 6658824
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG1001",
+          "target": 6658828
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG1006",
+          "target": 6658832
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG1011",
+          "target": 6658836
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG1016",
+          "target": 6658840
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG1021",
+          "target": 6658844
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 877,
+          "type": "DIR32",
+          "symbol": "$SG1026",
+          "target": 6658848
+        },
+        {
+          "offset": 885,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 913,
+          "type": "DIR32",
+          "symbol": "$SG1031",
+          "target": 6658852
+        },
+        {
+          "offset": 921,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 949,
+          "type": "DIR32",
+          "symbol": "$SG1036",
+          "target": 6658860
+        },
+        {
+          "offset": 957,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput556FA0@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-00579220": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput579220::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput579220@@QAEXXZ",
+      "target_address": 5739040,
+      "size": 1060,
+      "compare_size": 1060,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG1045",
+          "target": 6659028
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG1050",
+          "target": 6659036
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG1055",
+          "target": 6659044
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG1060",
+          "target": 6659052
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG1065",
+          "target": 6659060
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG1070",
+          "target": 6659068
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG1075",
+          "target": 6659076
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG1080",
+          "target": 6659084
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG1085",
+          "target": 6659092
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG1090",
+          "target": 6659100
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG1095",
+          "target": 6659108
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG1100",
+          "target": 6659116
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG1105",
+          "target": 6659124
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG1110",
+          "target": 6659132
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG1115",
+          "target": 6659140
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG1120",
+          "target": 6659148
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG1125",
+          "target": 6659156
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG1130",
+          "target": 6659160
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG1135",
+          "target": 6659164
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG1140",
+          "target": 6659168
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG1145",
+          "target": 6659172
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG1150",
+          "target": 6659176
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG1155",
+          "target": 6659180
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "$SG1160",
+          "target": 6659184
+        },
+        {
+          "offset": 927,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 955,
+          "type": "DIR32",
+          "symbol": "$SG1165",
+          "target": 6659188
+        },
+        {
+          "offset": 963,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "$SG1170",
+          "target": 6659192
+        },
+        {
+          "offset": 999,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1027,
+          "type": "DIR32",
+          "symbol": "$SG1175",
+          "target": 6659200
+        },
+        {
+          "offset": 1035,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput579220@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-0059cda0": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput59CDA0::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput59CDA0@@QAEXXZ",
+      "target_address": 5885344,
+      "size": 1177,
+      "compare_size": 1177,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG1184",
+          "target": 6659344
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG1189",
+          "target": 6659352
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG1194",
+          "target": 6659360
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG1199",
+          "target": 6659368
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG1204",
+          "target": 6659376
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG1209",
+          "target": 6659384
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG1214",
+          "target": 6659392
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG1219",
+          "target": 6659400
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG1224",
+          "target": 6659408
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG1229",
+          "target": 6659416
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG1234",
+          "target": 6659424
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG1239",
+          "target": 6659432
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG1244",
+          "target": 6659440
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG1249",
+          "target": 6659448
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG1254",
+          "target": 6659456
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG1259",
+          "target": 6659464
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG1264",
+          "target": 6659472
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG1269",
+          "target": 6659480
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG1274",
+          "target": 6659488
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG1279",
+          "target": 6659496
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG1284",
+          "target": 6659500
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG1289",
+          "target": 6659504
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG1294",
+          "target": 6659508
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "$SG1299",
+          "target": 6659512
+        },
+        {
+          "offset": 927,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 958,
+          "type": "DIR32",
+          "symbol": "$SG1304",
+          "target": 6659516
+        },
+        {
+          "offset": 966,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 997,
+          "type": "DIR32",
+          "symbol": "$SG1309",
+          "target": 6659520
+        },
+        {
+          "offset": 1005,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1036,
+          "type": "DIR32",
+          "symbol": "$SG1314",
+          "target": 6659524
+        },
+        {
+          "offset": 1044,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1072,
+          "type": "DIR32",
+          "symbol": "$SG1319",
+          "target": 6659528
+        },
+        {
+          "offset": 1080,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1108,
+          "type": "DIR32",
+          "symbol": "$SG1324",
+          "target": 6659532
+        },
+        {
+          "offset": 1116,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1144,
+          "type": "DIR32",
+          "symbol": "$SG1329",
+          "target": 6659540
+        },
+        {
+          "offset": 1152,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput59CDA0@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
+    },
+    "character-input-005c5980": {
+      "source": "src/CharacterInputPollingFamily.cpp",
+      "object": "build/matching/CharacterInputPollingFamily.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput5C5980::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput5C5980@@QAEXXZ",
+      "target_address": 6052224,
+      "size": 904,
+      "compare_size": 904,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG1338",
+          "target": 6659712
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG1343",
+          "target": 6659720
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG1348",
+          "target": 6659728
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG1353",
+          "target": 6659736
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG1358",
+          "target": 6659744
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG1363",
+          "target": 6659752
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG1368",
+          "target": 6659760
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG1373",
+          "target": 6659768
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG1378",
+          "target": 6659776
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG1383",
+          "target": 6659784
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG1388",
+          "target": 6659792
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG1393",
+          "target": 6659800
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG1398",
+          "target": 6659808
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG1403",
+          "target": 6659812
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG1408",
+          "target": 6659816
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG1413",
+          "target": 6659820
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG1418",
+          "target": 6659824
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG1423",
+          "target": 6659828
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG1428",
+          "target": 6659832
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG1433",
+          "target": 6659836
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 799,
+          "type": "DIR32",
+          "symbol": "$SG1438",
+          "target": 6659840
+        },
+        {
+          "offset": 807,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 835,
+          "type": "DIR32",
+          "symbol": "$SG1443",
+          "target": 6659844
+        },
+        {
+          "offset": 843,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 871,
+          "type": "DIR32",
+          "symbol": "$SG1448",
+          "target": 6659852
+        },
+        {
+          "offset": 879,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5C5980@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -124908,6 +127984,7 @@
     "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1",
     "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
     "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc",
-    "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512"
+    "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512",
+    "src/CharacterInputPollingFamily.cpp": "b9f89f4f2ae74e20863230d18367880ba6b38ef50c76f8135a21eee0e41f690a"
   }
 }

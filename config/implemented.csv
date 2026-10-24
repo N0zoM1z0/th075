@@ -265,3 +265,11 @@ CharacterStageRendererF122<StageRender5568F0Policy>::Render
 CharacterStageRendererF122<StageRender578B70Policy>::Render
 CharacterStageRendererF122<StageRender59C6F0Policy>::Render
 CharacterStageRendererF122<StageRender5C52D0Policy>::Render
+CharacterInput4724B0::PollCommands
+CharacterInput498BE0::PollCommands
+CharacterInput4C6700::PollCommands
+CharacterInput4E7A00::PollCommands
+CharacterInput556FA0::PollCommands
+CharacterInput579220::PollCommands
+CharacterInput59CDA0::PollCommands
+CharacterInput5C5980::PollCommands

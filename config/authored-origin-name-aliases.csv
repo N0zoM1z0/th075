@@ -210,3 +210,11 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00578B70,CharacterSpecial::RenderAt00578B70,CharacterStageRendererF122<StageRender578B70Policy>::Render,R049,character-special-render-00578b70
 0x0059C6F0,CharacterSpecial::RenderAt0059C6F0,CharacterStageRendererF122<StageRender59C6F0Policy>::Render,R049,character-special-render-0059c6f0
 0x005C52D0,CharacterSpecial::RenderAt005C52D0,CharacterStageRendererF122<StageRender5C52D0Policy>::Render,R049,character-special-render-005c52d0
+0x004724B0,CharacterAux::RunAt004724B0,CharacterInput4724B0::PollCommands,R049,character-input-004724b0
+0x00498BE0,CharacterAux::RunAt00498BE0,CharacterInput498BE0::PollCommands,R049,character-input-00498be0
+0x004C6700,CharacterAux::RunAt004C6700,CharacterInput4C6700::PollCommands,R049,character-input-004c6700
+0x004E7A00,CharacterAux::RunAt004E7A00,CharacterInput4E7A00::PollCommands,R049,character-input-004e7a00
+0x00556FA0,CharacterAux::RunAt00556FA0,CharacterInput556FA0::PollCommands,R049,character-input-00556fa0
+0x00579220,CharacterAux::RunAt00579220,CharacterInput579220::PollCommands,R049,character-input-00579220
+0x0059CDA0,CharacterAux::RunAt0059CDA0,CharacterInput59CDA0::PollCommands,R049,character-input-0059cda0
+0x005C5980,CharacterAux::RunAt005C5980,CharacterInput5C5980::PollCommands,R049,character-input-005c5980

@@ -24204,3 +24204,94 @@ resource root00456B60 retains f107's real588byte frame and unresolved
 texture80/layout/filename bound. Build serially; cold-replay only new/affected
 units and remove only obsolete reproducible outputs with full inputs/evidence
 preserved. Later phases remain deferred.
+
+## F123 complete input-poll checkpoint (2026-10-25)
+
+Eight independently authored R049 command-poll routines pass canonical cold
+comparison: **8,285 code bytes,2,385 instructions,211 actual calls and all422
+real relocation fields**. Every own complete CFG,4byte this-only frame,
+plain RET, shared exit, stack join and following INT3 is checked. There are
+no tables or cropped tails. One new source/object contains eight natural
+if-else bodies, with all original per-character ordering retained:
+
+| Entry | Code bytes | Ordered decisions |
+| --- | --- | --- |
+| 004724B0 | 982 | 25 |
+| 00498BE0 | 1,099 | 28 |
+| 004C6700 | 1,099 | 28 |
+| 004E7A00 | 982 | 25 |
+| 00556FA0 | 982 | 25 |
+| 00579220 | 1,060 | 27 |
+| 0059CDA0 | 1,177 | 30 |
+| 005C5980 | 904 | 23 |
+
+Every native true edge stores its own command and exits. Every false edge
+continues to the next ordered packet or final shared exit. All211 actual this
+receivers, three-word packets, signed AL tests, literal bytes/counts/windows/
+command assignments and initial command0 are independently reconciled.
+The complete695byte helper confirms signed byte arguments, RET12 and actual
+AL values including4. Source uses a signed-byte result, without guessed BOOL
+or leftover-register return. Original strings remain unchanged.
+
+The natural bodies have no named local beyond this and no aggregate/array/
+loop/table replacing the actual decisions. Private owner declarations remain
+pointer-only; none is instantiated or embedded. The first preview and canonical
+object match every whole byte and real field. Five wrong real helper or
+string bindings each reject all eight whole units. No name fixture, extra
+storage/scope/padding, pasted decompiler body, native-code array, assembly,
+manual EH, fake return, ABI alias, relocation mask or truncated comparison is
+used. Original identities, names, full layouts and unproved types remain
+provisional; no helper/library/global/data/layout receives credit.
+
+Cold replay selected only the eight `character-input-ADDRESS` units above;
+one canonical object was built. All267 prior units,121 canonical objects,
+189 source inputs,218 origin files,nine shared headers,91 active drafts and
+4,343 other function rows remain unchanged. F009 plus215 additions retains
+662,771 code bytes and190 new inputs. R049 historical roles remain through
+aliases, all97 unknown origins remain unknown. Preserve all f123 complete
+native/attested/policy/CFG/receiver/byte-result/ordered-decision/string/binding/
+cold/parent evidence, first preview, source, results, logs and PDBs.
+
+Current totals: **275 exact functions/units,672,654 code bytes**,34.08% of
+reviewed authored bytes and **34.02% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in161.764s; seven exact-checkpoint tests
+passed in0.529s; target/tracking and diff checks passed. Only eight new units
+were cold-built. Evidence-preserving cleanup removed one obsolete own probe
+(26,274bytes) and375 reproducible Python bytecode files(8,282,863bytes),
+retaining all canonical objects, native/policy/CFG/receiver/string/binding/cold/
+parent evidence, first preview, source, results, logs and PDBs. Receipts are
+`.analysis/f123-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F124
+
+Review the complete independently authored scene drawing candidates:
+SceneRenderer::DrawAt004292E0 `004292E0/2759` and
+ReplayBrowserScene::RenderList `0042CA60/2246`, total5,005 code bytes.
+Reconcile each full native CFG, code/table/tail extent, real return/stack/FPU
+carrier, local-value contract, field widths and helper receivers/packets
+before source. Accepted SDK-based quad/RECT contracts supply methodology;
+they do not prove a private scene/container/row layout or automatic clone.
+Preserve every genuine native drawing and update order, original string and
+unproved declaration. Never instantiate or embed incomplete owner views.
+
+Native-only F124 exports under `.analysis/f124-scene-drawing/` retain
+attested function/callee/decompile results and both whole native spans. R065
+004292E0 linearly decodes675 instructions/79 calls, actual frame172bytes;
+R040 0042CA60 decodes546/49, actual frame240bytes plus savedESI. These are
+preliminary observations, not accepted CFG/local-value/type/source evidence.
+004292E0 owns a four-target16byte table at00429DA7 immediately after its RET;
+its full comparison must include2,759code+16table bytes, then nine INT3 bytes.
+The dispatch reads the signed global difficulty byte at006714D0. Do not crop
+this table or trust the decompiler to establish complete source/local layouts.
+
+Keep all accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts and failed controls. No unchanged retries or relaxed physical comparison.
+Unknown math overloads and all97 unknown origins remain unknown; evidence
+throughR268 is immutable. The F119 row projection is never an allocatable
+complete private owner. QueueFile00407A50/QueueArchiveEntry00407B80 still need
+a proved complete local record layout; resource root00456B60 retains f107's
+real588byte frame and unresolved texture80/layout/filename bound. Build
+serially; cold-replay only new/affected units and remove only obsolete
+reproducible outputs while retaining inputs/evidence. Later phases deferred.

@@ -266,3 +266,11 @@ CharacterStageRendererF122<StageRender5568F0Policy>::Render,0x005568F0,function
 CharacterStageRendererF122<StageRender578B70Policy>::Render,0x00578B70,function
 CharacterStageRendererF122<StageRender59C6F0Policy>::Render,0x0059C6F0,function
 CharacterStageRendererF122<StageRender5C52D0Policy>::Render,0x005C52D0,function
+CharacterInput4724B0::PollCommands,0x004724B0,function
+CharacterInput498BE0::PollCommands,0x00498BE0,function
+CharacterInput4C6700::PollCommands,0x004C6700,function
+CharacterInput4E7A00::PollCommands,0x004E7A00,function
+CharacterInput556FA0::PollCommands,0x00556FA0,function
+CharacterInput579220::PollCommands,0x00579220,function
+CharacterInput59CDA0::PollCommands,0x0059CDA0,function
+CharacterInput5C5980::PollCommands,0x005C5980,function
