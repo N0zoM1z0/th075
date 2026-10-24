@@ -121,3 +121,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00446B90,BattleHud::DrawAtlasNumber,DrawAtlasNumberAt00446B90,R042,battle-atlas-number-00446b90
 0x0040DA00,SpriteGeometry::InitializeRectangle,AtlasQuad446B90::AtlasQuad446B90,R011,atlas-quad-rectangle-constructor-0040da00
 0x0043D570,BattleHud::RenderComboCounter,HudCombo43E040::Render,R041,battle-combo-counter-0043d570
+0x00437380,CharacterSelectScene::RenderCharacterCards,CharacterSelectCards437380::RenderCards,R043,character-select-cards-00437380

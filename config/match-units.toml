@@ -17218,3 +17218,73 @@ relocations = [
   { offset = 0x3E8, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
   { offset = 0x3F3, type = "DIR32", symbol = "__real@43480000", target = 0x0065835C },
 ]
+
+[units."character-select-cards-00437380"]
+source = "src/CharacterSelectCards437380.cpp"
+object = "build/matching/CharacterSelectCards437380.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["CharacterSelectCards437380::RenderCards"]
+symbol = "?RenderCards@CharacterSelectCards437380@@QAEXXZ"
+target_address = 0x00437380
+size = 3769
+compare_size = 3769
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "??0RenderQuadPacket5E68C0@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x45, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x5F, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0xDC, type = "DIR32", symbol = "__real@41700000", target = 0x00657CBC },
+  { offset = 0xFB, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x11C, type = "DIR32", symbol = "__real@42340000", target = 0x00658294 },
+  { offset = 0x135, type = "DIR32", symbol = "__real@42340000", target = 0x00658294 },
+  { offset = 0x142, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0x147, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x168, type = "DIR32", symbol = "__real@42340000", target = 0x00658294 },
+  { offset = 0x16D, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x194, type = "DIR32", symbol = "__real@42340000", target = 0x00658294 },
+  { offset = 0x1D9, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x1F4, type = "DIR32", symbol = "__real@40c00000", target = 0x00658290 },
+  { offset = 0x1FA, type = "DIR32", symbol = "__real@42b40000", target = 0x006581DC },
+  { offset = 0x217, type = "REL32", symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004116F0 },
+  { offset = 0x230, type = "DIR32", symbol = "__real@41f00000", target = 0x00657878 },
+  { offset = 0x250, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x278, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x2A8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x2DC, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x3E0, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x3F9, type = "DIR32", symbol = "__real@41f00000", target = 0x00657878 },
+  { offset = 0x419, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x441, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x473, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x48A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x58F, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x5A8, type = "DIR32", symbol = "__real@41f00000", target = 0x00657878 },
+  { offset = 0x5C8, type = "DIR32", symbol = "__real@42700000", target = 0x00658264 },
+  { offset = 0x5F0, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x622, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x639, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x73E, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x757, type = "DIR32", symbol = "__real@42340000", target = 0x00658294 },
+  { offset = 0x79C, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x7CC, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x7FD, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x826, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x948, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x979, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x990, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x9D5, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xAF4, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0xB24, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xB3B, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xB7E, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xCA3, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0xD38, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xD51, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0xD82, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xDB8, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0xDE8, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xDFC, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xE32, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0xE62, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xE76, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0xEAC, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+]

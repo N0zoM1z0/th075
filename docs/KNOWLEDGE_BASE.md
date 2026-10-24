@@ -21112,3 +21112,106 @@ remaining private interfaces before one complete natural body. Historical
 RenderBackground name remains provisional. No F085 source, object, unit or
 exact credit exists. Preserve all accepted units/headers, large drafts and
 all 97 pending origins.
+
+## F086 complete character cards and preserved F085 draft checkpoint (2026-10-24)
+
+R043 character cards 00437380..00438238 cold-replay exact as
+`CharacterSelectCards437380::RenderCards`: all 3,769 bytes, 825 instructions,
+fifty branches, 58 physical fields and 41 real call packets. Seven following
+INT3 bytes are excluded. Six complete direct callees and twelve named SetRect
+calls are reviewed. The preserved F085 caller supplies one ECX owner and no
+stack arguments; the complete private owner layout and original names remain
+unknown. Never instantiate or embed this partial owner.
+
+The complete handwritten body keeps the actual two-side loop, independent
+mode-3/mode-4 side-1 breaks and signed-short badge continue path. Both tint
+arrays contain exactly two used entries. The full 132-byte F064 packet and one
+SDK RECT are constructed/reused. Ordered angle<=15/<=45 arms, byte truncation
+before integer division in the third arm, bool*128/bool*96 atlas arithmetic,
+shared ARGB stores, rotation, twelve translations and all nine drawings remain.
+No array growth, inert locals, padding, fake returns or assembly.
+
+Six full-body scope controls and eight meaningful index/normal/for-declaration
+controls resolve the initial 181 differing frame bytes. The final source gives
+normal[2] its per-pass scope, RECT its drawing scope, int i the for declaration,
+alpha/color/atlas values their per-iteration scope and the short its actual
+badge branch. The complete 228-byte frame, comparison temporaries and genuine
+conversion slots match naturally. This is compiler evidence, not proof of
+original variable spelling or lexical scopes.
+
+Standalone preview, independent canonical compilation and separate canonical
+cold replay match every byte with build3077 and the explicit profile. All 58
+fields bind 29 direct calls, twelve named imports, fifteen readonly float
+fields and two reads of the unchanged signed mode global. Widths, payloads,
+permissions, zero addends, operand positions, imports, every branch and all
+loop/continue/break stack joins are checked. The three implicit ftol2 calls
+consume ST0 without invented C parameters; wrong ftol2/SetRect cleanup controls
+fail. No branch masks, frame aliases or shortened comparison.
+
+All 177 previous units, 84 canonical objects, 144 prior manifest inputs, 218
+origin files, 4,350 other function rows and 91 active draft inputs remain
+unchanged and were not rebuilt. The latter includes seven protected F085
+source/object/ABI/physical/preservation records as well as all 84 older draft
+inputs. Every accepted header stays fixed; all 97 pending origins remain
+unknown. F009 plus 118 additions retains 544,893 bytes and 146 new source/header
+inputs. F085 receives no exact credit. The active 98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-select-cards-00437380
+```
+
+Full CI passes **3,603 tests in 131.386 seconds**, plus tracking, progress
+and whitespace checks. The indentation-only source cleanup was cold replayed
+again; all seven checkpoint guards pass against the final source and manifest.
+Keep f086 native/root/callee/caller/attested/ABI/physical/cold/parent/progress/
+preservation evidence and complete compiler-control source/profile/result/
+input/log/PDB records. Four obsolete reproducible F086 objects and
+scripts/tests bytecode were removed after full preview/cold-canonical code and
+relocation equality. Every canonical object, F085 active object, source/control
+input, PDB, evidence file, older active draft and shared tool remains.
+
+Next F087: complete R041 player options 00438240..0043866F, 1,072 bytes,
+immediately followed by the next function at00438670 without alignment bytes.
+Fresh f087 native/attested root/callee/caller records are retained. Reconcile
+all branch paths, byte/float consumers, actual packets and complete quad scope
+before one natural source body. No F087 source, object, unit or exact credit
+exists. Preserve every accepted unit/header, F085 and all older large drafts,
+and all 97 pending origins.
+
+### F085 whole unaccepted background draft retained at the F086 checkpoint
+
+The complete handwritten R040 00435A70..00437373 draft is retained privately in
+`.analysis/render-background-435a70/Preview.cpp` and Preview.hpp; its active
+object is build/probes/F085Preview01.obj. All 6,404 bytes, 1,471 instructions,
+nineteen branches and 124 real calls are reconciled. All 235 physical fields
+bind independently: 99 direct calls, 25 named SetRect imports, 103 readonly
+float fields and eight fields at three writable globals. Complete call packets,
+21 implicit conversions and two nested scalar calls pass the full stack graph.
+The runtime/wrapper proof and complete 132-byte physical packet model are reused
+unchanged, without helper, data or unknown-origin credit.
+
+The raw fully relocated comparison retains 115 real byte differences, all at
+four real locals: draft/native left tint -158/-144, right tint -137/-143,
+stage -157/-137 and RECT -156/-160. No aliases, branch masks or truncation are
+used. Whole-body meaningful-name/lifetime/real-storage/type/init controls and
+/G5,/G7 probes are retained; /G5 is code/relocation equal, /G7 has the wrong
+size/instruction/field counts. Best alternative real two-byte aggregate retains
+61 differences and still earns no credit. Do not repeat these unchanged
+controls or grow arrays/add storage/alignment merely to fill the observed gaps.
+
+Read-only PE/Ghidra references show its slot-2 virtual entry at00658254, in the
+three-entry table beginning0065824C (438A30 deleting destructor,433470 Advance,
+435A70 render). The adjacent `data\system\selectbg.dat` path and reviewed helpers support
+character-selection context; original class identity/layout and nominal private
+declarations remain unknown. Virtual and one-ECX-argument views did not resolve
+the frame difference and are diagnostic only. Existing R040 ledgers/names remain
+unchanged. No canonical F085 source, match unit, source-present or exact credit.
+
+Keep the f085 full source/headers, native/decompile/attestation, ABI/physical,
+vtable/xref and all control input/result/log/PDB evidence, including
+`.analysis/f085-draft-relocation-bindings.json`, f085-abi-notes.json and
+f085-output-cleanup.json. Twenty-one completed reproducible control objects
+were removed after pinning inputs/results; the active draft object and all
+older accepted objects/drafts/shared tools remain. Return when new source,
+compiler or lifetime evidence is available. Continue the independently reviewed
+cohort above while preserving the full 98% objective and conservative denominator.
