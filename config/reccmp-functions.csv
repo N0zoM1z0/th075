@@ -200,3 +200,5 @@ BitmapPackSource40BF60::Encode,0x0041B400,function
 BitmapSerialized41B2B0::Load,0x0041B2B0,function
 TexturePackLoad40B7C0::Load,0x0040B7C0,function
 TexturePackLoad40B7C0::LoadDefault,0x0040B7A0,function
+TexturePackArchive40BBA0::Load,0x0040BBA0,function
+TexturePackArchive40BBA0::LoadDefault,0x0040BB80,function

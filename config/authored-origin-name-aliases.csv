@@ -144,3 +144,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0041B2B0,BitmapData::LoadSerializedPixels,BitmapSerialized41B2B0::Load,R021,bitmap-serialized-load-0041b2b0
 0x0040B7C0,TextureManager::LoadTexturePack,TexturePackLoad40B7C0::Load,R019,texture-pack-load-0040b7c0
 0x0040B7A0,TextureManager::LoadTexturePackDefaultPalette,TexturePackLoad40B7C0::LoadDefault,R019,texture-pack-load-default-0040b7a0
+0x0040BBA0,TextureManager::LoadArchiveTexturePack,TexturePackArchive40BBA0::Load,R019,texture-pack-archive-0040bba0
+0x0040BB80,TextureManager::LoadArchiveTexturePackDefaultPalette,TexturePackArchive40BBA0::LoadDefault,R019,texture-pack-archive-default-0040bb80

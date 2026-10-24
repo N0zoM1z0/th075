@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F104 archive-loader investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F105 fighter resource-loader investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 201 / 201 / 201 |
-| Exact code bytes | 574,141 |
-| Reviewed authored coverage | 574,141 / 1,973,516 (29.09%) |
-| Conservative coverage, including every pending byte | 574,141 / 1,977,124 (29.04%) |
+| Source-present / exact functions / exact units | 203 / 203 / 203 |
+| Exact code bytes | 575,090 |
+| Reviewed authored coverage | 575,090 / 1,973,516 (29.14%) |
+| Conservative coverage, including every pending byte | 575,090 / 1,977,124 (29.09%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **141 additions /
-564,258 code bytes / 170 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **143 additions /
+565,207 code bytes / 171 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,97 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F103
+## Latest accepted functions: F104
+
+R019 archive texture-pack loader `0040BBA0..0040BF35` (918 bytes) and its
+default wrapper `0040BB80..0040BB9E` (31 bytes) independently pass canonical
+cold comparison as TexturePackArchive40BBA0::Load/LoadDefault. All 949 code
+bytes, 333 instructions and 38 real relocation fields match. Ten/one following
+INT3 bytes remain outside. The main has three parameters/RET12; the wrapper
+has two/RET8 and passes exactly zero for palette selection. Both historical
+R019 roles remain by aliases. One new implementation file leaves all old
+sources and headers intact.
+
+Entry count is obtained before archive lookup. The caller prepares filename,
+then calls a true one-argument cdecl archive-name lookup while that filename
+remains live on the stack. Lookup returns a borrowed context or null. Its
+result becomes ECX for a one-filename thiscall seek method with RET4. The older
+root decompile's apparent second lookup argument is disproved by the complete
+113-byte callee: only EBP+8 is read. The complete 164-byte seek method compares
+entry names, positions the existing handle from context+0 at the directory
+record's offset104, and returns that same handle or INVALID_HANDLE_VALUE.
+There is no added null guard, CreateFileA, redundant initial seek or CloseHandle.
+The context and handle remain borrowed; their complete layouts are unknown.
+
+The full normal lookup/list/deque/strcmp graph and two explicit existing
+library range-error boundaries retain 36 complete bodies/1,705 bytes. All
+34 normal support CFGs pass actual stack/return checks. Equality/inversion,
+iterator initialization/next-node/payload-address behavior and seek arguments
+are reviewed. The original range-error bodies retain their throw calls and
+prior library classification; their broader EH/runtime graph is not claimed
+as new source reconstruction. No helper/library byte receives new exact credit.
+
+The rest preserves signed palette count/selection, negative seek offsets,
+actual zero default, ignored SDK results and eleven ReadFile packets. The
+complete 24-byte descriptor repeats accepted definitions; metadata stays
+4/4/4/1/4 bytes and the three actual payload-size forms stay unchanged. Entry
+format/palette/flag initialization, serialized deep copy, temporary deletion,
+texture creation, palette refresh and final pixel deletion/clear remain in
+native order. All fourteen SDK calls, nine entry lookups and the texture-slot
+lookup preserve their real nested four/eight/twelve-byte packets. Word/byte
+factory values occupy the actual DWORD carriers without invented upper bits.
+Partial owner/context interfaces remain pointer-only and are never constructed.
+
+Both real callers are checked. The complete 1,186-byte fighter resource loader
+has two calls with the actual archive keys `datab` and `data`, a filename-local
+address and signed palette field+1. Literal bytes are verified from the target.
+The default wrapper forwards both string arguments and zero. Six wrong-ABI,
+three helper wrong-ABI and two wrong-binding controls fail. The first natural
+source already matches every byte, including complete 76/4-byte frames; no
+local-placement controls, padding, inert storage, assembly, aliases, masks or
+cropped extents. Separate cold reports cover both new units in one serial
+object build. No old dependency replay is needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-pack-archive-0040bba0 --unit texture-pack-archive-default-0040bb80
+```
+
+All 201 prior units, 102 canonical objects, 170 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,349 other function rows stay
+unchanged. F009 plus 143 additions retains 565,207 code bytes and 171 inputs.
+Keep all f104 native/attested/ABI/normal-graph/library-boundary/caller/import/
+physical/cold/parent records and source/control results/logs/PDBs. All 97 unknown
+origins and old drafts receive no credit. Original names/grouping/layouts stay
+provisional despite exact emitted bytes.
+
+Current totals: 203 exact functions/units, 575,090 code bytes, 29.14% of
+reviewed authored bytes and 29.09% conservatively including all pending bytes.
+
+Next F105 is the complete 1,186-byte fighter resource loader `00456B60` from
+these archive callers. Reconcile its full resource/filename setup graph,
+actual character/palette fields, SDK-sized buffers, physical frame and ABI
+before natural source. It has two real archive calls as reviewed above.
+No F105 source or exact credit yet. The 98% goal remains active and incomplete.
+
+Final F104 CI passes 3,603 tests in 135.054s. Bounded cleanup
+removes one obsolete reproducible probe object (13,919 bytes) and
+8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, all source inputs, complete evidence, logs and PDBs remain.
+Independent full R052 open/R175 release bodies corroborate responsibility for
+the context's stored handle; their observed open/store/close instructions are
+retained without new credit. F105 native/dependency index, completed own root
+decompile/caller query and bounded ABI notes are retained privately.
+
+F105 first requires complete allocatable 80-byte texture-owner and 24-byte
+command-owner types: two/one actual constructor new expressions have three
+EH cleanup states. Existing pointer-only interfaces cannot be instantiated.
+Also reconcile its real GS/EH scope graph and filename-buffer bounds; the
+decompiler's apparent 532-byte array is not a bound. Do not introduce padding
+classes, raw storage substitutes, artificial array growth or manual EH to
+force comparison. Continue the F105 cohort with these prerequisites before
+source; no F105 source or exact credit yet.
+
+## Previous accepted functions: F103
 
 R019 texture-pack loader `0040B7C0..0040BB74` (949 bytes) and its default
 wrapper `0040B7A0..0040B7BA` (27 bytes) independently pass canonical cold
