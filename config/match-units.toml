@@ -17676,3 +17676,26 @@ relocations = [
   { offset = 0x37, type = "REL32", symbol = "??0RenderQuadPayload5E68C0@@QAE@XZ", target = 0x0040D9F0 },
   { offset = 0x47, type = "REL32", symbol = "_memset", target = 0x00640490 },
 ]
+
+[units."texture-resolve-0040c8c0"]
+source = "src/TextureHandle40C8C0.cpp"
+object = "build/matching/TextureHandle40C8C0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteTextures40CA80::GetTexture"]
+symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z"
+target_address = 0x0040C8C0
+size = 162
+compare_size = 162
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x13, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x1C, type = "DIR32", symbol = "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA", target = 0x006713B8 },
+  { offset = 0x25, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x36, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
+  { offset = 0x4E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x5C, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x6D, type = "REL32", symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z", target = 0x0040C590 },
+  { offset = 0x76, type = "DIR32", symbol = "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA", target = 0x006713B4 },
+  { offset = 0x83, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x96, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+]

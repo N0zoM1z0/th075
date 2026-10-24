@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F094 texture-handle investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F095 palette-refresh investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 188 / 188 / 188 |
-| Exact code bytes | 563,928 |
-| Reviewed authored coverage | 563,928 / 1,973,516 (28.57%) |
-| Conservative coverage, including every pending byte | 563,928 / 1,977,124 (28.52%) |
+| Source-present / exact functions / exact units | 189 / 189 / 189 |
+| Exact code bytes | 564,090 |
+| Reviewed authored coverage | 564,090 / 1,973,516 (28.58%) |
+| Conservative coverage, including every pending byte | 564,090 / 1,977,124 (28.53%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **128 additions /
-554,045 code bytes / 158 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **129 additions /
+554,207 code bytes / 159 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,55 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F093
+## Latest accepted function: F094
+
+R014 texture resolver0040C8C0..0040C961 is independently canonical cold exact
+as `SpriteTextures40CA80::GetTexture(int)`: all162 bytes,53 instructions,
+seven branches,five real call packets and11 physical fields. Fourteen following
+INT3 bytes stay outside the extent. One new implementation file uses the
+existing unchanged F093 method declaration. Original R014 role is retained by
+alias; complete manager/vector/entry layouts and data ownership remain unknown.
+
+The first-use flag test/OR1 and cached index store precede signed input-index
+validation. Count is explicitly converted to signed32 for the actual JL
+comparison. Entry flagbyte+0x28 selects palette refresh/index update and handle0
+from receiver+0x28; normal handles use callerindex at receiver+0x18. Both index
+helpers return an EAX slot reference,then MOV EAX,[EAX] returns the actual SDK
+texture pointer. Invalid indices returnnull. No validation reordering or cache
+policy repair. Pointer-only helper views are never instantiated/embedded.
+
+The initial explicit-global model matched physically. A single function-local
+static cachedIndex=index emits identical raw162 function bytes with VC7.1 and
+is the sole final canonical body. Its guard/cache symbols bind independently;
+both compiler BSS cells are four zero bytes,matching target initial storage.
+Separate final canonical cold comparison passes; only this changed unit is
+replayed again. Original source spelling/scope/data ownership remains unknown. All11 fields bind five direct calls and six writable
+DWORD accesses at6713B8(flags)/6713B4(index). Two ledger names are physical aliases
+for those observed scalar addresses; they do not claim original source names,
+declarations or data ownership. Final source uses the compiler-generated guard
+and one genuine cached scalar; no manual guard or alternate body remains. All four whole callees,zero/4-byte helper cleanups,
+4-byte frame joins and finalRET4 are checked. Wrong count-ret4/index-ret0
+controls fail. No masks,aliases,padding or cropped comparison.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-resolve-0040c8c0
+```
+
+All188 old units,92 canonical objects,158 inputs,218 origin files,nine shared
+headers,91 active drafts and4,350 other rows remain unchanged; no old rebuilds.
+F009+129 additions retains554,207 bytes and159 inputs. Unknown97 origins and
+all old unaccepted drafts receive no credit. Preserve f094 native/attested/
+ABI/physical/cold/parent/progress/input/preservation evidence,source probes,
+logs and PDBs. Final full CI passes3,603 tests in140.355s. Bounded cleanup
+removes three obsolete reproducible F094 objects/35,120 bytes and8,282,705
+bytes of Python caches,with per-file hash receipts. Canonical objects and all
+source/evidence inputs remain. Fresh F095 root/callee/caller attested queries
+and native index are retained privately; no F095 source or credit yet. Next F095:
+complete340-byte R014 palette refresh0040C590 from this direct graph. Reconcile
+SDK surface/lock objects and entry/palette source data before natural source;
+never instantiate incomplete owners. Goal98% remains active/incomplete.
+
+## Previous accepted functions: F093
 
 R011 DrawSprite 0040CA80..0040CEEB (1,132 bytes) and clear constructor
 0040D990..0040D9E4 (85 bytes) independently pass canonical cold comparison as
@@ -91,15 +139,6 @@ obsolete reproducible probe objects (42,616 bytes) and scripts/tests
 bytecode (8,282,705 bytes), after full final-preview/cold code and all22
 relocation equality across both functions. All sources, inputs, logs, PDBs,
 evidence and canonical objects remain.
-Next F094: complete162-byte R014 TextureManager::ResolveTextureHandle0040C8C0,
-using the existing pointer-only GetTexture interface. Reconcile cache globals,
-record flags and all helper calls before source. Fresh native/attested root/
-callee/caller records retain53 instructions,seven branches,five call sites and
-four complete callees(340-byte palette refresh,57-byte entry count and two49-
-byte index helpers). Cached flags/index at6713B8/6713B4 are previously unnamed
-writable dwords; preserve actual first-use/validation ordering. No F094 source,
-build, unit or credit yet. Goal98% remains incomplete.
-
 ## Previous accepted function: F092
 
 R043 staff-roll timeline 00438D00..00439F8C is independently canonical cold

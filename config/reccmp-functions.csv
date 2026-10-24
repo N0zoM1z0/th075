@@ -187,3 +187,4 @@ Graphics::ToggleWindowMode,0x004018A0,function
 StaffTimeline438D00::RenderTimeline,0x00438D00,function
 TimelineDrawing438D00::DrawSprite,0x0040CA80,function
 SpriteQuad40CA80::SpriteQuad40CA80,0x0040D990,function
+SpriteTextures40CA80::GetTexture,0x0040C8C0,function

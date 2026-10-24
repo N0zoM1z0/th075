@@ -21550,3 +21550,47 @@ call sites/four whole callees. Cache dwords6713B8/6713B4 are previously unnamed;
 first-use flags/index update occurs before input-index validation. Entry flag
 byte+0x28 and palette/default pointer-vector selections must remain. No F094
 source/build/unit/credit at this checkpoint.
+
+## F094 complete texture-handle resolver checkpoint (2026-10-24)
+
+R0140040C8C0..0040C961/162 bytes independently cold exact as
+SpriteTextures40CA80::GetTexture(int). Fourteen following INT3 bytes are
+excluded. One new implementation uses the unchanged existing F093 declaration.
+R014 role stays by alias; original complete manager/vector/entry layouts and
+data ownership remain unknown. Initial explicit-global probe matched all53 instructions/seven branches/
+five packets/11 fields. Final source uses one genuine function-local static
+cachedIndex=index; VC7.1 naturally emits identical raw162 function bytes.
+Independent binding verifies both compiler guard/cache symbols and four-byte
+zero BSS cells against target initial storage. Final canonical cold replay
+passes; only this changed unit is replayed again. Original source spelling/
+scope/data ownership remains unknown. No manual guard or alternate body remains. First-use flagsAND1/OR1 and cached index store precede validation.
+Signed index/count comparison is preserved with explicit count conversion.
+Entry flagbyte+0x28 selects palette refresh/cached index update and handle0 at
+receiver+0x28;default handles use callerindex at receiver+0x18. Both handle
+helpers return an EAX slot reference,then actual MOV EAX,[EAX] yields the SDK
+texture pointer. Invalid indices returnnull. No reordered validation or repair.
+
+All four whole callees and0/4-byte cleanups,4-byte frame joins and finalRET4
+pass review. Wrong count-ret4/index-ret0 controls fail. Pointer-only helper
+views are never constructed/embedded and imply no whole record size/stride.
+All11 fields bind five direct calls and six writableDWORD accesses at6713B8/
+6713B4. Ledger names remain physical aliases for observed scalar addresses/cache use;
+original names/declarations and data ownership are unknown. Earlier explicit-
+global source,unit descriptor,accepted replay/bindings and CI are retained
+privately as compiler control inputs/evidence,without extra credit. Obsolete
+object snapshots have hash receipts and remain reproducible from those inputs. No masks,frame/
+register aliases,padding,shortened extents or alternate source bodies.
+All188 prior units,92 objects,158 inputs,218 origin files,nine headers,91 active
+drafts and4,350 other rows remain unchanged;no old cold builds. Unknown97
+origins and old large drafts receive no credit. Current189 exact functions/
+units total564,090 bytes:28.58% reviewed,28.53% conservative. F009+129 additions
+retains554,207 bytes and159 inputs. Goal98% active/incomplete. Next F095:
+complete340-byte R014 palette refresh0040C590;reconcile SDK surface/lock
+records and entry/palette data before natural source. Never construct incomplete
+owners. Keep all f094 native/attested/ABI/physical/cold/parent/input evidence.
+
+F094 final CI passes3,603 tests in140.355s. Cleanup removes three obsolete
+reproducible objects/35,120 bytes and8,282,705 bytes of Python caches,with
+per-file hash receipts. All canonical objects,source inputs,evidence,logs and
+PDBs remain. F095 fresh root/callee/caller attested queries and native index
+are preserved privately; no F095 source or exact credit yet.

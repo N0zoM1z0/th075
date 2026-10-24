@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F093",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F094",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5a156ca1bf5173c359e898043302a999bd47f223d117f4074b9895dc3fca989d"
+      "current_sha256": "48a4d47fecf1fbd0e2756208b0bc92952d6aac77f0be9d256be3746e6d8caf51"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "6e5cfb1db964bdf945ce77eb48612c1239bbb733d39c9d5c6dcf724e4023bc17"
+      "current_sha256": "273783a0719b7985e70d2118cb7fc29065ae05ea609fcee0a0e16688783668c8"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "60dfdf470197d25a3bc61ad71120158fea0296e58cca473f9a2567c6289351e3"
+      "current_sha256": "055c25ea35240e3901571e5ebae43ebb1dc5cc0d99edce2c3a2290a1fa7032c0"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "03b2ccbacb5dc537066ad73dab06ac4b1e615053eb3b1c9fa20871392709d395"
+      "current_sha256": "ff1d97dc714f7759dc533d55dfa1c04fc8ed1eda8d2965b33a98a8514f73782f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "e4aebefd83ce71be73157a022109dca2e630ecb20b6b7a4305ec498954ed25dd"
+      "current_sha256": "c07404541f17b161cef4a74c031d9d87e34c39db63859b685a1deab92df56096"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "02da93335cb44b1dfeae156fd67b0b7bccc172e0a0c8891dff87e0722dda1888"
+      "current_sha256": "087eef8a3c1f42df4ca1e8b2e16dde04ba9676c4262c345ac61a9a9ec3bc3ccc"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "eccdc0a7b26ba60003ae03a4848b083c50f23699ce60df3fcdd8d9d42c513961"
+      "current_sha256": "c8ab1fc5c7990fc14c00afed0a2c6212395a0a029657d066a67ae319650245da"
     }
   },
   "functions": [
@@ -5672,6 +5672,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R011"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040C8C0",
+        "size": "162",
+        "span_end": "0x0040C961",
+        "current_name": "FUN_0040c8c0",
+        "proposed_name": "TextureManager::ResolveTextureHandle",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R014",
+        "owner": "",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040C8C0",
+        "size": "162",
+        "span_end": "0x0040C961",
+        "current_name": "FUN_0040c8c0",
+        "proposed_name": "SpriteTextures40CA80::GetTexture",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "IDirect3DTexture8* SpriteTextures40CA80::GetTexture(int)",
+        "is_thunk": "false",
+        "source_file": "src/TextureHandle40C8C0.cpp",
+        "evidence": "R014; F094; scripts/repo-python scripts/replay-exact-units.py --unit texture-resolve-0040c8c0",
+        "owner": "authored",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F094: complete162-byte canonical cold exact texture resolver,53 instructions/seven branches/five real packets/11 fields; first-use flagOR1 and cached index write precede signed index/count validation; flagbyte+28hex selects palette refresh and cached handle0 versus normal handleindex; real reference slots atowner+28hex/+18hex are dereferenced for SDK texture pointer return; explicit signed count conversion retains native comparisons; all4 complete callees,zero/4-byte helper cleanups,4-byte frame and finalRET4 checked; sourcecompatible pointer-only count/vector/refresh views never instantiated; original manager/entry layouts,names,allocation/dataownership unknown; accepted header unchanged; R014 role retained by alias; all old units/97 origins/active drafts preserved; final source-compatible local static cachedIndex=index naturally emits guard/cache code and two four-byte zero BSS cells; original spelling/scope/data ownership unknown; earlier explicit-global control retained privately; only this changed unit re-cold-replayed"
+      },
+      "origin": {
+        "address": "0x0040C8C0",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R014"
       }
     }
   ],
@@ -98847,6 +98891,95 @@
           "target": 6554768
         }
       ]
+    },
+    "texture-resolve-0040c8c0": {
+      "source": "src/TextureHandle40C8C0.cpp",
+      "object": "build/matching/TextureHandle40C8C0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTextures40CA80::GetTexture"
+      ],
+      "symbol": "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z",
+      "target_address": 4245696,
+      "size": 162,
+      "compare_size": 162,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA",
+          "target": 6755256
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA",
+          "target": 6755256
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?$S1@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4IA",
+          "target": 6755256
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA",
+          "target": 6755252
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "?Size@TextureEntryCount40C8C0@@QAEIXZ",
+          "target": 4250912
+        },
+        {
+          "offset": 78,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA",
+          "target": 6755252
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "?Refresh@TexturePalette40C8C0@@QAEXH@Z",
+          "target": 4244880
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?cachedIndex@?1??GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z@4HA",
+          "target": 6755252
+        },
+        {
+          "offset": 131,
+          "type": "REL32",
+          "symbol": "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 150,
+          "type": "REL32",
+          "symbol": "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -99007,6 +99140,7 @@
     "src/StaffTimeline438D00.cpp": "845ff485a6355657f3b172d7af71308c7df2d4b2ca976009fc01bcd4d176ec8d",
     "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27",
     "src/SpriteDraw40CA80.cpp": "27c461e578eb8b620f9bb4da7284c018116c6d4a2d9a8e54a836f8dbf5e44690",
-    "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59"
+    "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59",
+    "src/TextureHandle40C8C0.cpp": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d"
   }
 }
