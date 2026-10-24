@@ -17378,3 +17378,55 @@ target_address = 0x00438A80
 size = 53
 compare_size = 53
 relocations = []
+
+[units."select-input-004388d0"]
+source = "src/SelectionInput4388D0.cpp"
+object = "build/matching/SelectionInput4388D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SelectionInput4388D0::PollInput"]
+symbol = "?PollInput@SelectionInput4388D0@@QAEXXZ"
+target_address = 0x004388D0
+size = 346
+compare_size = 346
+relocations = [
+  { offset = 0xA, type = "REL32", symbol = "?PollKeyboard@Input@@YAXXZ", target = 0x00403E50 },
+  { offset = 0xF, type = "REL32", symbol = "?PollJoysticks@Input@@YAXXZ", target = 0x00403F40 },
+  { offset = 0x14, type = "DIR32", symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A", target = 0x00671638 },
+  { offset = 0x19, type = "REL32", symbol = "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ", target = 0x00406E80 },
+  { offset = 0x29, type = "DIR32", symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A", target = 0x00671664 },
+  { offset = 0x32, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0x3C, type = "DIR32", symbol = "?g_InputMappingAt00671680@@3VInputMapping4388D0@@A", target = 0x00671680 },
+  { offset = 0x41, type = "REL32", symbol = "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ", target = 0x00406E80 },
+  { offset = 0x51, type = "DIR32", symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A", target = 0x006716AC },
+  { offset = 0x5A, type = "DIR32", symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A", target = 0x00671638 },
+  { offset = 0x5F, type = "REL32", symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z", target = 0x00407170 },
+  { offset = 0x6D, type = "DIR32", symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A", target = 0x00671638 },
+  { offset = 0x72, type = "REL32", symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z", target = 0x00407170 },
+  { offset = 0x83, type = "DIR32", symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A", target = 0x00671638 },
+  { offset = 0x88, type = "REL32", symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z", target = 0x00407170 },
+  { offset = 0x94, type = "REL32", symbol = "?ToggleWindowMode@Graphics@@YAXXZ", target = 0x004018A0 },
+  { offset = 0x9B, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0xA7, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0xB3, type = "DIR32", symbol = "?g_CombatMode@@3CA", target = 0x006714B4 },
+  { offset = 0xBF, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0xD8, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0xEA, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0x101, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0x10F, type = "DIR32", symbol = "?g_SelectActiveSideAt006714B8@@3CA", target = 0x006714B8 },
+  { offset = 0x11F, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0x129, type = "DIR32", symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A", target = 0x00671638 },
+  { offset = 0x12E, type = "REL32", symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z", target = 0x00407170 },
+]
+
+[units."input-key-down-00407170"]
+source = "src/SelectionInput4388D0.cpp"
+object = "build/matching/SelectionInput4388D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["InputMapping4388D0::IsKeyDown"]
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target_address = 0x00407170
+size = 38
+compare_size = 38
+relocations = [
+  { offset = 0xE, type = "DIR32", symbol = "?g_KeyboardState@Input@@3PAEA", target = 0x00671240 },
+]

@@ -179,3 +179,5 @@ CharacterSelectCards437380::RenderCards
 CharacterSelectOptions438240::RenderOptions
 SinglePlayerOptions438670::RenderOptions
 ProgressCard438A80::GetSelectedValue
+SelectionInput4388D0::PollInput
+InputMapping4388D0::IsKeyDown

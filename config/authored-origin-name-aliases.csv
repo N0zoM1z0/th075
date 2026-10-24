@@ -125,3 +125,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00438240,CharacterSelectScene::RenderPlayerOptions,CharacterSelectOptions438240::RenderOptions,R041,character-select-options-00438240
 0x00438670,CharacterSelectScene::RenderSinglePlayerOptions,SinglePlayerOptions438670::RenderOptions,R041,single-player-options-00438670
 0x00438A80,ProgressRecords::GetSelectedCardValue,ProgressCard438A80::GetSelectedValue,R043,progress-card-value-00438a80
+0x004388D0,CharacterSelectScene::PollInput,SelectionInput4388D0::PollInput,R043,select-input-004388d0
+0x00407170,InputMapping::IsKeyDown,InputMapping4388D0::IsKeyDown,R015,input-key-down-00407170

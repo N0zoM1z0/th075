@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F089 input-poll investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F090 held-input-count investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 181 / 181 / 181 |
-| Exact code bytes | 556,497 |
-| Reviewed authored coverage | 556,497 / 1,973,516 (28.20%) |
-| Conservative coverage, including every pending byte | 556,497 / 1,977,124 (28.15%) |
+| Source-present / exact functions / exact units | 183 / 183 / 183 |
+| Exact code bytes | 556,881 |
+| Reviewed authored coverage | 556,881 / 1,973,516 (28.22%) |
+| Conservative coverage, including every pending byte | 556,881 / 1,977,124 (28.17%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **121 additions /
-546,614 code bytes / 150 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **123 additions /
+546,998 code bytes / 152 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,65 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F088
+## Latest accepted functions: F089
+
+R043 input poll004388D0..00438A29 (346 bytes) and R015 key query00407170..
+00407195 (38 bytes) independently pass canonical cold comparison as
+`SelectionInput4388D0::PollInput` and `InputMapping4388D0::IsKeyDown`.
+Six/ten following INT3 bytes remain outside the whole extents. The two natural
+source bodies share one new source/header and one serial cold object build.
+Only these new units were rebuilt. No accepted headers changed.
+
+The input poll's101 instructions/ten branches/eleven actual call packets and
+all27 physical fields match. It preserves both complete seven-dword physical
+copies,mode!=3 polling,short-circuit Enter/Alt key tests,the5/1/3 mode filter,
+signed active-side selection/threshold,input transfer/reset and hold counter.
+The28-byte block names express complete copied storage,without establishing
+complete scene/mapping layouts or original member partition. Both copied
+subregions coincide with the respective input-mapping receivers+2C. All seven
+slots are used by the actual complete REP MOVSD operations.
+
+The key query has14 instructions/two branches/one field. Its actual receiver
+is in ECX,one unsigned-byte argument occupies a four-byte stack word,AL carries
+a bool and RET4 consumes that argument. Explicit natural if/else returns give
+the complete38 bytes; the earlier boolean-expression form has35 bytes and gets
+no credit. The existing keyboard buffer declaration remains unchanged.
+
+Seven whole callees are reviewed. Memcpy's829-byte R025 auxiliary extent has
+embedded dispatch tables and46 relocation fields; its674-byte linear decoded
+prefix is not its complete CFG. Preserve the whole pinned vendor-body evidence.
+Cdecl memcpy/memset each use12 argument bytes with explicit caller cleanup;
+other calls consume0/4 as observed. Saved ESI/EDI,all CFG stack joins,two28-byte
+copies and incorrect key-ret0/runtime-ret12 controls are checked. All28 fields
+across both accepted functions bind independently; no masks,aliases or cropping.
+New global views establish addresses and physical subregions,not data ownership
+or complete original types. Pointer-only owner interfaces must not be constructed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit select-input-004388d0 --unit input-key-down-00407170
+```
+
+All181 old units,87 canonical objects,150 source/header inputs,218 origin files,
+nine shared headers,91 active draft inputs and4,349 other function rows remain
+unchanged. F009 plus123 additions retains546,998 bytes and152 source/header
+inputs. All97 origins remain unknown; F085 and every older large draft receive
+no credit. Keep all f089 native/root/callee/caller/attested/ABI/physical/cold/
+parent/progress/compiler-input/preservation evidence,source inputs,logs/PDBs.
+Full CI passes **3,603 tests in131.440 seconds**, plus target/tracking,
+progress and whitespace checks. Removed two obsolete reproducible probe objects
+(21,407 bytes) and scripts/tests bytecode(8,282,705 bytes),
+after full preview/cold code and relocation equality for both accepted functions.
+All canonical objects,source/control inputs,logs,PDBs and evidence remain.
+Next F090: complete741-byte R015 InputMapping::UpdateHeldCounts00406E80,
+reviewing its whole paths and joystick-state accessor before source. Use the
+existing declared partial receiver without changing accepted headers. Fresh
+f090 whole native/attested root/callee/caller records and a handwritten private
+probe are retained. Its211 instructions/36 branches/five calls use the reviewed
+49-byte std::vector<DIJOYSTATE>::operator[] at00404320; vendor evidence and
+existing Input::g_JoystickStates remain unchanged. No F090 build/unit/credit at
+this checkpoint. Goal98% remains active/incomplete.
+
+## Previous accepted functions: F088
 
 R041 single-player options00438670..004388C3 (596 bytes) and R043 selected-card
 value00438A80..00438AB4 (53 bytes) are independently canonical cold exact as
@@ -71,13 +129,6 @@ progress and whitespace checks. Removed one obsolete reproducible probe object
 (11,062 bytes) and scripts/tests bytecode(8,282,705 bytes),
 after whole code and relocation equality for both preview/cold functions. All
 source/input/log/PDB/evidence records and canonical objects remain.
-Next F089: independently review full346-byte R043 input poll004388D0. Fresh
-whole native/attested root/callee/caller records are retained:101 instructions,
-ten branches,eleven calls to seven complete callees. Memcpy includes dispatch
-tables: retain its whole829-byte R025 auxiliary extent/46-relocation witness;
-a linear decoded prefix does not cover its CFG. No F089 source or exact credit. The active
-98% goal remains incomplete.
-
 ## Previous accepted function: F087
 
 R041 player options 00438240..0043866F is independently cold-replay exact as

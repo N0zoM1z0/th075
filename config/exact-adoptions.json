@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F088",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F089",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7e4c96ce1307cb2f98736d822d8b0d0b549186a6ee62508acf4dcbf352870a35"
+      "current_sha256": "c43f4f93f0ce4d0bf433f6196c663cb49635d3f0b411ace365209357661813ab"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "f57294b4f189783394a5fe2980fc0a1c35ad4ead7fbccceec3e5105e3aa6ab8a"
+      "current_sha256": "6e5cfb1db964bdf945ce77eb48612c1239bbb733d39c9d5c6dcf724e4023bc17"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "9a0d3f0a1716f4de5d498b3b0025ffaea94281a4e1b3a67f0e3897db420b6676"
+      "current_sha256": "3006be794084eca279df93035c3c78d6b12be5fc19f821cf90e4cb7878eb5ceb"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "f4ccbbcf463148f05fe274f0acc4f1e273ad62ef4fa3becb897425ee9f2ff956"
+      "current_sha256": "7ec52f09ac200bb067a5e61386fceb87713325a6fa0fd5180a985b4f0ff7bf74"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "51fcee76f58699a9b94509f87896989168d7824f0eb23d17a77d1e2f0d9560f0"
+      "current_sha256": "eea87ea18d250fbb18246f7047d208cab569860131093c9aa14d93f2bca48645"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a25f7bf8e141d12532fa64dc70ce4bc6c7151927d96f53e66aa19a9413fe67f7"
+      "current_sha256": "519ccfab0b682135b48e65bd72446d51a04797b15e3552517974a9933514f0f6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "80480fe79dd9a9946206f445f84ca47e494a522c7c7640366e1fd82f7a83c76c"
+      "current_sha256": "2458cba49091bd2e12bf068e62458e3d769f4598ed7898aad8ad985acdc0b002"
     }
   },
   "functions": [
@@ -5364,6 +5364,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004388D0",
+        "size": "346",
+        "span_end": "0x00438A29",
+        "current_name": "FUN_004388d0",
+        "proposed_name": "CharacterSelectScene::PollInput",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004388D0",
+        "size": "346",
+        "span_end": "0x00438A29",
+        "current_name": "FUN_004388d0",
+        "proposed_name": "SelectionInput4388D0::PollInput",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SelectionInput4388D0::PollInput()",
+        "is_thunk": "false",
+        "source_file": "src/SelectionInput4388D0.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F089; scripts/repo-python scripts/replay-exact-units.py --unit select-input-004388d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F089: complete346-byte canonical cold exact; full346-byte input poll keeps two whole7-dword physical copies,mode and active-side signed bytes,short-circuit key tests,conditional input transfer/reset and counter update; separate38-byte bool key getter consumes unsigned byte in4-byte stack slot and returns AL withret4; all28 fields,12 branches and11 real call packets checked; complete CRT extents and cdecl caller cleanup preserved; original layouts/declarations/names unknown; pointer-only owners never construct/embed; original authored role retained by alias; no credit to F085 or unknown origins"
+      },
+      "origin": {
+        "address": "0x004388D0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407170",
+        "size": "38",
+        "span_end": "0x00407195",
+        "current_name": "FUN_00407170",
+        "proposed_name": "InputMapping::IsKeyDown",
+        "module": "InputMapping",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407170",
+        "size": "38",
+        "span_end": "0x00407195",
+        "current_name": "FUN_00407170",
+        "proposed_name": "InputMapping4388D0::IsKeyDown",
+        "module": "InputMapping",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool InputMapping4388D0::IsKeyDown()",
+        "is_thunk": "false",
+        "source_file": "src/SelectionInput4388D0.cpp",
+        "evidence": "R015; F089; scripts/repo-python scripts/replay-exact-units.py --unit input-key-down-00407170",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F089: complete38-byte canonical cold exact; full346-byte input poll keeps two whole7-dword physical copies,mode and active-side signed bytes,short-circuit key tests,conditional input transfer/reset and counter update; separate38-byte bool key getter consumes unsigned byte in4-byte stack slot and returns AL withret4; all28 fields,12 branches and11 real call packets checked; complete CRT extents and cdecl caller cleanup preserved; original layouts/declarations/names unknown; pointer-only owners never construct/embed; original authored role retained by alias; no credit to F085 or unknown origins"
+      },
+      "origin": {
+        "address": "0x00407170",
+        "origin": "authored",
+        "subsystem": "InputMapping",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
       }
     }
   ],
@@ -97094,6 +97182,220 @@
       "size": 53,
       "compare_size": 53,
       "relocations": []
+    },
+    "select-input-004388d0": {
+      "source": "src/SelectionInput4388D0.cpp",
+      "object": "build/matching/SelectionInput4388D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SelectionInput4388D0::PollInput"
+      ],
+      "symbol": "?PollInput@SelectionInput4388D0@@QAEXXZ",
+      "target_address": 4425936,
+      "size": 346,
+      "compare_size": 346,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "?PollKeyboard@Input@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "?PollJoysticks@Input@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671680@@3VInputMapping4388D0@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 114,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 131,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 136,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+          "target": 4200608
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 179,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 216,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 234,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 257,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 271,
+          "type": "DIR32",
+          "symbol": "?g_SelectActiveSideAt006714B8@@3CA",
+          "target": 6755512
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 297,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 302,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        }
+      ]
+    },
+    "input-key-down-00407170": {
+      "source": "src/SelectionInput4388D0.cpp",
+      "object": "build/matching/SelectionInput4388D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "InputMapping4388D0::IsKeyDown"
+      ],
+      "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+      "target_address": 4223344,
+      "size": 38,
+      "compare_size": 38,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -97246,6 +97548,8 @@
     "src/CharacterSelectOptions438240.cpp": "9de58160ddbbad8d974285514e732dc0fb953dcbc622996d71d1c037170c90af",
     "src/CharacterSelectOptions438240.hpp": "97b41d20c8f684d38aa901d1ebe89052068e1cc6aa48f69ceee8a005c214a6d9",
     "src/SinglePlayerOptions438670.cpp": "8a3c5f676f5797a6dc3519dcd7217f31a38690318a9c3fd75fd8a2489379ab6f",
-    "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541"
+    "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541",
+    "src/SelectionInput4388D0.cpp": "381a1d8fa3510e4118afb0e892f509d669c8c33d9be747b7f074896c3bcb3353",
+    "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17"
   }
 }

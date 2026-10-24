@@ -21301,3 +21301,48 @@ older drafts remain. F089 fresh root/callee/caller/native records reconcile
 829-byte extent includes dispatch tables; the complete R025 auxiliary-body
 witness and46 relocations remain authoritative,not its674-byte linear prefix.
 No F089 source/unit/credit at this checkpoint.
+
+## F089 complete input poll and key query checkpoint (2026-10-24)
+
+R043004388D0..00438A29/346 bytes and R01500407170..00407195/38 bytes
+are independently cold exact as SelectionInput4388D0::PollInput and
+InputMapping4388D0::IsKeyDown. Six/ten following INT3 bytes are excluded. Two
+natural bodies share one new source/header and one cold object build. The
+input poll preserves101 instructions/ten branches/11 real packets and27 fields;
+the key query has14 instructions/two branches/one field. All384 bytes and28
+relocations compare physically,without masks,aliases or shortened extents.
+
+The poll retains both actual7-dword copies,mode!=3 second input update,
+short-circuit Enter/Alt tests,5/1/3 mode filter,signed active side/threshold,
+input transfer/reset and hold counter. The complete28-byte copied physical
+blocks coincide with receiver+2C and use all seven slots; they establish no
+complete mapping/scene layout or original member partition/data ownership.
+Pointer-only owner views must not be constructed. Key query consumes one
+unsigned-byte argument in a4-byte stack word,returns AL bool and cleans4 bytes;
+ECX is the actual mapping receiver even though the body does not dereference it.
+Explicit if/else true/false gives38 bytes; the earlier boolean expression yields
+35 bytes and has no exact credit. Existing keyboard-buffer declaration stays.
+
+All seven complete callees and actual0/4/12-byte argument packets are reviewed.
+Memcpy's829-byte R025 auxiliary body contains dispatch tables/46 relocation
+fields; its674-byte linear prefix is not complete CFG evidence. Full pinned
+vendor proof remains unchanged. Runtime memcpy/memset are cdecl and caller
+cleans12 bytes; all saved ESI/EDI and CFG joins pass. Wrong key-ret0/runtime-
+ret12 controls fail. All181 old units,87 canonical objects,150 inputs,218
+origin files,nine shared headers,91 active drafts and4,349 other rows stay
+unchanged. Only new units were cold replayed. Unknown97 origins and F085's
+115 real frame-byte differences receive no credit. Current183 exact functions/
+units total556,881 bytes:28.22% reviewed,28.17% conservative. F009+123 additions
+retains546,998 bytes and152 inputs. Goal98% active/incomplete. Next F090: full
+741-byte R015 UpdateHeldCounts00406E80 and its joystick-state accessor; review
+before source,using existing partial interface without changing accepted headers.
+
+F089 final validation:3,603 CI tests pass in131.440s,plus target/tracking,
+progress and diff checks. Removed two obsolete reproducible probes(21,407
+bytes) and scripts/tests bytecode(8,282,705 bytes),after complete
+preview/cold code and relocation equality for both functions. All sources,
+inputs,logs,PDBs,evidence,canonical objects and active older drafts remain.
+F090 fresh complete211-instruction/36-branch/five-call native/root/callee/caller
+records and handwritten private probe are retained without a build or credit.
+Its only direct callee is the49-byte vendor vector<DIJOYSTATE>::operator[]
+00404320; R003 vendor proof and existing joystick-state global remain unchanged.
