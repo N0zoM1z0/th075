@@ -18546,3 +18546,121 @@ relocations = [
   { offset = 0x36, type = "REL32", symbol = "??1?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAE@XZ", target = 0x00421340 },
   { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
 ]
+
+[units."shared-sound-client-constructor-00406610"]
+source = "src/SharedSound406610.cpp"
+object = "build/matching/SharedSound406610.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedSoundClient406610::SharedSoundClient406610"]
+symbol = "??0SharedSoundClient406610@@QAE@XZ"
+target_address = 0x00406610
+size = 56
+compare_size = 56
+relocations = [
+  { offset = 0x9, type = "DIR32", symbol = "?sharedSoundClients@@3IA", target = 0x00671378 },
+  { offset = 0x12, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x1C, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0x25, type = "DIR32", symbol = "?sharedSoundClients@@3IA", target = 0x00671378 },
+  { offset = 0x2D, type = "DIR32", symbol = "?sharedSoundClients@@3IA", target = 0x00671378 },
+]
+
+[units."shared-sound-client-destructor-00406650"]
+source = "src/SharedSound406610.cpp"
+object = "build/matching/SharedSound406610.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedSoundClient406610::~SharedSoundClient406610"]
+symbol = "??1SharedSoundClient406610@@QAE@XZ"
+target_address = 0x00406650
+size = 98
+compare_size = 98
+relocations = [
+  { offset = 0x8, type = "DIR32", symbol = "?sharedSoundClients@@3IA", target = 0x00671378 },
+  { offset = 0x10, type = "DIR32", symbol = "?sharedSoundClients@@3IA", target = 0x00671378 },
+  { offset = 0x18, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0x21, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0x28, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0x32, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0x3C, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x45, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x4C, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x56, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+]
+
+[units."shared-sound-error-004066c0"]
+source = "src/SharedSound406610.cpp"
+object = "build/matching/SharedSound406610.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedSound4066C0::ShowError"]
+symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z"
+target_address = 0x004066C0
+size = 29
+compare_size = 29
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "$SG56702", target = 0x00657540 },
+  { offset = 0x10, type = "DIR32", symbol = "?sharedSoundWindow@@3PAUHWND__@@A", target = 0x0067137C },
+  { offset = 0x17, type = "DIR32", symbol = "__imp__MessageBoxA@16", target = 0x0065720C },
+]
+
+[units."shared-sound-initialize-004066e0"]
+source = "src/SharedSound406610.cpp"
+object = "build/matching/SharedSound406610.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SharedSound4066C0::Initialize"]
+symbol = "?Initialize@SharedSound4066C0@@YA_NPAUHWND__@@@Z"
+target_address = 0x004066E0
+size = 311
+compare_size = 311
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x12, type = "DIR32", symbol = "?sharedSoundWindow@@3PAUHWND__@@A", target = 0x0067137C },
+  { offset = 0x17, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x1C, type = "DIR32", symbol = "_IID_IDirectSound8", target = 0x0065B4AC },
+  { offset = 0x25, type = "DIR32", symbol = "_CLSID_DirectSound8", target = 0x0065B54C },
+  { offset = 0x2B, type = "DIR32", symbol = "__imp__CoCreateInstance@20", target = 0x00657288 },
+  { offset = 0x39, type = "DIR32", symbol = "$SG56711", target = 0x00657550 },
+  { offset = 0x3E, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x50, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x57, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x69, type = "DIR32", symbol = "$SG56714", target = 0x00657574 },
+  { offset = 0x6E, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x80, type = "DIR32", symbol = "?sharedSoundWindow@@3PAUHWND__@@A", target = 0x0067137C },
+  { offset = 0x87, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x8F, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0xA4, type = "DIR32", symbol = "?sharedSoundWindow@@3PAUHWND__@@A", target = 0x0067137C },
+  { offset = 0xAA, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0xB2, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0xC4, type = "DIR32", symbol = "$SG56719", target = 0x0065759C },
+  { offset = 0xC9, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0xDD, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0xF5, type = "DIR32", symbol = "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A", target = 0x00671384 },
+  { offset = 0xFF, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x107, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x119, type = "DIR32", symbol = "$SG56722", target = 0x006575B4 },
+  { offset = 0x11E, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x12F, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units."shared-sound-create-00406a20"]
+source = "src/SharedSound406610.cpp"
+object = "build/matching/SharedSound406610.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SoundCreation406A20::Create"]
+symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z"
+target_address = 0x00406A20
+size = 348
+compare_size = 348
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x3F, type = "REL32", symbol = "_memset", target = 0x00640490 },
+  { offset = 0x6B, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x73, type = "DIR32", symbol = "?sharedSoundDevice@@3PAUIDirectSound8@@A", target = 0x00671380 },
+  { offset = 0x85, type = "DIR32", symbol = "$SG56741", target = 0x00657654 },
+  { offset = 0x8A, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x9D, type = "DIR32", symbol = "_IID_IDirectSoundBuffer8", target = 0x0065B48C },
+  { offset = 0xC2, type = "DIR32", symbol = "$SG56745", target = 0x00657674 },
+  { offset = 0xC7, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x10A, type = "DIR32", symbol = "$SG56749", target = 0x00657694 },
+  { offset = 0x10F, type = "REL32", symbol = "?ShowError@SharedSound4066C0@@YAXPBD@Z", target = 0x004066C0 },
+  { offset = 0x127, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0x154, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]

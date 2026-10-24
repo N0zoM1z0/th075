@@ -213,3 +213,8 @@ ScriptRecord421200::ScriptRecord421200
 ScriptRecord421200::~ScriptRecord421200
 ScriptSequence421250::ScriptSequence421250
 ScriptSequence421250::~ScriptSequence421250
+SharedSoundClient406610::SharedSoundClient406610
+SharedSoundClient406610::~SharedSoundClient406610
+SharedSound4066C0::ShowError
+SharedSound4066C0::Initialize
+SoundCreation406A20::Create

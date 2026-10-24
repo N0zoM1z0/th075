@@ -214,3 +214,8 @@ ScriptRecord421200::ScriptRecord421200,0x00421200,function
 ScriptRecord421200::~ScriptRecord421200,0x00421220,function
 ScriptSequence421250::ScriptSequence421250,0x00421250,function
 ScriptSequence421250::~ScriptSequence421250,0x004212A0,function
+SharedSoundClient406610::SharedSoundClient406610,0x00406610,function
+SharedSoundClient406610::~SharedSoundClient406610,0x00406650,function
+SharedSound4066C0::ShowError,0x004066C0,function
+SharedSound4066C0::Initialize,0x004066E0,function
+SoundCreation406A20::Create,0x00406A20,function

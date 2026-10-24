@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F108",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F109",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ec38130f3126aea9f9ec3e249e03d76a3c9b6d205719c5af1202f35b21a35aa7"
+      "current_sha256": "1c0b07d864287da2883c42a4de4d311d54916f80e8ea671cd24baa0699e29eec"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6cde56a71cf376d310b60d20eff88cc680e49625a561fd14e1635ad0a8e5b481"
+      "current_sha256": "a0a98eb33040a025f116056349bdde1fd63d4bfdeb5978f5b5e81617cc488629"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "33ae76410343c7d7573095b4a0f0b6f633fdf0f1b37aaac5fbfffcee8da99693"
+      "current_sha256": "dfd5f59d9656fb55beca07d81f55ed462c60e9794f2104873ac324528f1c41b6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "10a660ebe230145dadd4890cb0681b6b26f32ef1f20c646fc04f9b21577c271d"
+      "current_sha256": "b8e5fbc7715fb8c252450613c5337f377640d9ccc95639d26eeedd3e37908e86"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "9a332451ac6b71546f7c26ef0d2d5c45d66b637f2739e075b9a973ae53a19a11"
+      "current_sha256": "e05c8f9f502a50b37fbbf128946199a65955f49f3b3ba3a31b86dd1a0a440f6e"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "6fec2652fa1e1a1826cb3182ae00488c93ac2bccd7b80773c1cd45b70e093900"
+      "current_sha256": "58a7b3b59f37ab541846cdba39a4a890e4ca5768a71a55d2afa251adef1464d3"
     }
   },
   "functions": [
@@ -6860,6 +6860,226 @@
         "disposition": "authored",
         "confidence": "inferred-coherent-whole-explicit-deque-cleanup-with-independent-script-local-and-eh-provider-context",
         "evidence_id": "R257"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406610",
+        "size": "56",
+        "span_end": "0x00406647",
+        "current_name": "FUN_00406610",
+        "proposed_name": "SharedSound::AcquireClient",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406610",
+        "size": "56",
+        "span_end": "0x00406647",
+        "current_name": "FUN_00406610",
+        "proposed_name": "SharedSoundClient406610::SharedSoundClient406610",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SharedSoundClient406610::SharedSoundClient406610()",
+        "is_thunk": "false",
+        "source_file": "src/SharedSound406610.cpp",
+        "evidence": "R015; F109; scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-client-constructor-00406610",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F109: complete 56 byte independent canonical cold exact; family 56+98+29+311+348=842 code bytes, 273 instructions, 26 actual packets and all 58 real fields; full CFG/stack joins/RET0 and true 4/4/0/44/64 frames. Shared count first-client reset and last-client primary/device Release order; main caller uses a local lifetime, partial client interface never instantiated or embedded by reconstruction. CoCreateInstance actual CLSID/IID DirectSound8, flags3, Initialize, priority/normal cooperative fallback and primary deferred buffer; exact Japanese diagnostics/title. Two complete SDK DSBUFFERDESC36 values with zeroed reserved/GUID fields; full SDK vtable slots and packet widths independently derived, three complete GUID payloads and two PE imports checked. Create retains five cdecl words/first-four reads, prior output Release/zero before temporary0, QueryInterface Buffer8 then unconditional temporary Release, null data skips Lock/copy, nonnull copies full size to first region and Unlocks both reported regions with ignored result; native failure ownership/order unchanged, no extra cleanup/validation. AL0/1 returns and GS helper preserve real protocol; whole96-byte memset and retained829-byte memcpy vendor review receive no code credit. Explicit GS fixes missing16-byte cookie emission, then measured meaningful used-local names/declaration order resolve27 genuine factory frame fields, no padding/inert locals/fake returns/assembly/aliases/masks/truncation. Four whole physical wrong-binding and three packet mutation controls rejected. All215 old units/107 objects/175 inputs/97 unknown origins/headers/drafts unchanged; R015 roles retained by aliases. Original names/client extent/counter signedness/ShowError return declaration/unused fifth formal type remain unknown; compatible existing Create declaration unchanged."
+      },
+      "origin": {
+        "address": "0x00406610",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406650",
+        "size": "98",
+        "span_end": "0x004066B1",
+        "current_name": "FUN_00406650",
+        "proposed_name": "SharedSound::ReleaseClient",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406650",
+        "size": "98",
+        "span_end": "0x004066B1",
+        "current_name": "FUN_00406650",
+        "proposed_name": "SharedSoundClient406610::~SharedSoundClient406610",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "SharedSoundClient406610::~SharedSoundClient406610()",
+        "is_thunk": "false",
+        "source_file": "src/SharedSound406610.cpp",
+        "evidence": "R015; F109; scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-client-destructor-00406650",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F109: complete 98 byte independent canonical cold exact; family 56+98+29+311+348=842 code bytes, 273 instructions, 26 actual packets and all 58 real fields; full CFG/stack joins/RET0 and true 4/4/0/44/64 frames. Shared count first-client reset and last-client primary/device Release order; main caller uses a local lifetime, partial client interface never instantiated or embedded by reconstruction. CoCreateInstance actual CLSID/IID DirectSound8, flags3, Initialize, priority/normal cooperative fallback and primary deferred buffer; exact Japanese diagnostics/title. Two complete SDK DSBUFFERDESC36 values with zeroed reserved/GUID fields; full SDK vtable slots and packet widths independently derived, three complete GUID payloads and two PE imports checked. Create retains five cdecl words/first-four reads, prior output Release/zero before temporary0, QueryInterface Buffer8 then unconditional temporary Release, null data skips Lock/copy, nonnull copies full size to first region and Unlocks both reported regions with ignored result; native failure ownership/order unchanged, no extra cleanup/validation. AL0/1 returns and GS helper preserve real protocol; whole96-byte memset and retained829-byte memcpy vendor review receive no code credit. Explicit GS fixes missing16-byte cookie emission, then measured meaningful used-local names/declaration order resolve27 genuine factory frame fields, no padding/inert locals/fake returns/assembly/aliases/masks/truncation. Four whole physical wrong-binding and three packet mutation controls rejected. All215 old units/107 objects/175 inputs/97 unknown origins/headers/drafts unchanged; R015 roles retained by aliases. Original names/client extent/counter signedness/ShowError return declaration/unused fifth formal type remain unknown; compatible existing Create declaration unchanged."
+      },
+      "origin": {
+        "address": "0x00406650",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004066C0",
+        "size": "29",
+        "span_end": "0x004066DC",
+        "current_name": "FUN_004066c0",
+        "proposed_name": "SharedSound::ShowError",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004066C0",
+        "size": "29",
+        "span_end": "0x004066DC",
+        "current_name": "FUN_004066c0",
+        "proposed_name": "SharedSound4066C0::ShowError",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void SharedSound4066C0::ShowError(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/SharedSound406610.cpp",
+        "evidence": "R015; F109; scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-error-004066c0",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F109: complete 29 byte independent canonical cold exact; family 56+98+29+311+348=842 code bytes, 273 instructions, 26 actual packets and all 58 real fields; full CFG/stack joins/RET0 and true 4/4/0/44/64 frames. Shared count first-client reset and last-client primary/device Release order; main caller uses a local lifetime, partial client interface never instantiated or embedded by reconstruction. CoCreateInstance actual CLSID/IID DirectSound8, flags3, Initialize, priority/normal cooperative fallback and primary deferred buffer; exact Japanese diagnostics/title. Two complete SDK DSBUFFERDESC36 values with zeroed reserved/GUID fields; full SDK vtable slots and packet widths independently derived, three complete GUID payloads and two PE imports checked. Create retains five cdecl words/first-four reads, prior output Release/zero before temporary0, QueryInterface Buffer8 then unconditional temporary Release, null data skips Lock/copy, nonnull copies full size to first region and Unlocks both reported regions with ignored result; native failure ownership/order unchanged, no extra cleanup/validation. AL0/1 returns and GS helper preserve real protocol; whole96-byte memset and retained829-byte memcpy vendor review receive no code credit. Explicit GS fixes missing16-byte cookie emission, then measured meaningful used-local names/declaration order resolve27 genuine factory frame fields, no padding/inert locals/fake returns/assembly/aliases/masks/truncation. Four whole physical wrong-binding and three packet mutation controls rejected. All215 old units/107 objects/175 inputs/97 unknown origins/headers/drafts unchanged; R015 roles retained by aliases. Original names/client extent/counter signedness/ShowError return declaration/unused fifth formal type remain unknown; compatible existing Create declaration unchanged."
+      },
+      "origin": {
+        "address": "0x004066C0",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004066E0",
+        "size": "311",
+        "span_end": "0x00406816",
+        "current_name": "FUN_004066e0",
+        "proposed_name": "SharedSound::Initialize",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004066E0",
+        "size": "311",
+        "span_end": "0x00406816",
+        "current_name": "FUN_004066e0",
+        "proposed_name": "SharedSound4066C0::Initialize",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "bool SharedSound4066C0::Initialize(HWND)",
+        "is_thunk": "false",
+        "source_file": "src/SharedSound406610.cpp",
+        "evidence": "R015; F109; scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-initialize-004066e0",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F109: complete 311 byte independent canonical cold exact; family 56+98+29+311+348=842 code bytes, 273 instructions, 26 actual packets and all 58 real fields; full CFG/stack joins/RET0 and true 4/4/0/44/64 frames. Shared count first-client reset and last-client primary/device Release order; main caller uses a local lifetime, partial client interface never instantiated or embedded by reconstruction. CoCreateInstance actual CLSID/IID DirectSound8, flags3, Initialize, priority/normal cooperative fallback and primary deferred buffer; exact Japanese diagnostics/title. Two complete SDK DSBUFFERDESC36 values with zeroed reserved/GUID fields; full SDK vtable slots and packet widths independently derived, three complete GUID payloads and two PE imports checked. Create retains five cdecl words/first-four reads, prior output Release/zero before temporary0, QueryInterface Buffer8 then unconditional temporary Release, null data skips Lock/copy, nonnull copies full size to first region and Unlocks both reported regions with ignored result; native failure ownership/order unchanged, no extra cleanup/validation. AL0/1 returns and GS helper preserve real protocol; whole96-byte memset and retained829-byte memcpy vendor review receive no code credit. Explicit GS fixes missing16-byte cookie emission, then measured meaningful used-local names/declaration order resolve27 genuine factory frame fields, no padding/inert locals/fake returns/assembly/aliases/masks/truncation. Four whole physical wrong-binding and three packet mutation controls rejected. All215 old units/107 objects/175 inputs/97 unknown origins/headers/drafts unchanged; R015 roles retained by aliases. Original names/client extent/counter signedness/ShowError return declaration/unused fifth formal type remain unknown; compatible existing Create declaration unchanged."
+      },
+      "origin": {
+        "address": "0x004066E0",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406A20",
+        "size": "348",
+        "span_end": "0x00406B7B",
+        "current_name": "FUN_00406a20",
+        "proposed_name": "SharedSound::CreateBuffer",
+        "module": "SharedSound",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406A20",
+        "size": "348",
+        "span_end": "0x00406B7B",
+        "current_name": "FUN_00406a20",
+        "proposed_name": "SoundCreation406A20::Create",
+        "module": "SharedSound",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "bool SoundCreation406A20::Create(const WAVEFORMATEX*, const void*, DWORD, IDirectSoundBuffer8**, DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/SharedSound406610.cpp",
+        "evidence": "R015; F109; scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-create-00406a20",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F109: complete 348 byte independent canonical cold exact; family 56+98+29+311+348=842 code bytes, 273 instructions, 26 actual packets and all 58 real fields; full CFG/stack joins/RET0 and true 4/4/0/44/64 frames. Shared count first-client reset and last-client primary/device Release order; main caller uses a local lifetime, partial client interface never instantiated or embedded by reconstruction. CoCreateInstance actual CLSID/IID DirectSound8, flags3, Initialize, priority/normal cooperative fallback and primary deferred buffer; exact Japanese diagnostics/title. Two complete SDK DSBUFFERDESC36 values with zeroed reserved/GUID fields; full SDK vtable slots and packet widths independently derived, three complete GUID payloads and two PE imports checked. Create retains five cdecl words/first-four reads, prior output Release/zero before temporary0, QueryInterface Buffer8 then unconditional temporary Release, null data skips Lock/copy, nonnull copies full size to first region and Unlocks both reported regions with ignored result; native failure ownership/order unchanged, no extra cleanup/validation. AL0/1 returns and GS helper preserve real protocol; whole96-byte memset and retained829-byte memcpy vendor review receive no code credit. Explicit GS fixes missing16-byte cookie emission, then measured meaningful used-local names/declaration order resolve27 genuine factory frame fields, no padding/inert locals/fake returns/assembly/aliases/masks/truncation. Four whole physical wrong-binding and three packet mutation controls rejected. All215 old units/107 objects/175 inputs/97 unknown origins/headers/drafts unchanged; R015 roles retained by aliases. Original names/client extent/counter signedness/ShowError return declaration/unused fifth formal type remain unknown; compatible existing Create declaration unchanged."
+      },
+      "origin": {
+        "address": "0x00406A20",
+        "origin": "authored",
+        "subsystem": "SharedSound",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
       }
     }
   ],
@@ -103932,6 +104152,474 @@
           "target": 0
         }
       ]
+    },
+    "shared-sound-client-constructor-00406610": {
+      "source": "src/SharedSound406610.cpp",
+      "object": "build/matching/SharedSound406610.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedSoundClient406610::SharedSoundClient406610"
+      ],
+      "symbol": "??0SharedSoundClient406610@@QAE@XZ",
+      "target_address": 4220432,
+      "size": 56,
+      "compare_size": 56,
+      "relocations": [
+        {
+          "offset": 9,
+          "type": "DIR32",
+          "symbol": "?sharedSoundClients@@3IA",
+          "target": 6755192
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?sharedSoundClients@@3IA",
+          "target": 6755192
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "?sharedSoundClients@@3IA",
+          "target": 6755192
+        }
+      ]
+    },
+    "shared-sound-client-destructor-00406650": {
+      "source": "src/SharedSound406610.cpp",
+      "object": "build/matching/SharedSound406610.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedSoundClient406610::~SharedSoundClient406610"
+      ],
+      "symbol": "??1SharedSoundClient406610@@QAE@XZ",
+      "target_address": 4220496,
+      "size": 98,
+      "compare_size": 98,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "?sharedSoundClients@@3IA",
+          "target": 6755192
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "?sharedSoundClients@@3IA",
+          "target": 6755192
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 60,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 76,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        }
+      ]
+    },
+    "shared-sound-error-004066c0": {
+      "source": "src/SharedSound406610.cpp",
+      "object": "build/matching/SharedSound406610.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedSound4066C0::ShowError"
+      ],
+      "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+      "target_address": 4220608,
+      "size": 29,
+      "compare_size": 29,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "$SG56702",
+          "target": 6649152
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "?sharedSoundWindow@@3PAUHWND__@@A",
+          "target": 6755196
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__imp__MessageBoxA@16",
+          "target": 6648332
+        }
+      ]
+    },
+    "shared-sound-initialize-004066e0": {
+      "source": "src/SharedSound406610.cpp",
+      "object": "build/matching/SharedSound406610.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SharedSound4066C0::Initialize"
+      ],
+      "symbol": "?Initialize@SharedSound4066C0@@YA_NPAUHWND__@@@Z",
+      "target_address": 4220640,
+      "size": 311,
+      "compare_size": 311,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?sharedSoundWindow@@3PAUHWND__@@A",
+          "target": 6755196
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "_IID_IDirectSound8",
+          "target": 6665388
+        },
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "_CLSID_DirectSound8",
+          "target": 6665548
+        },
+        {
+          "offset": 43,
+          "type": "DIR32",
+          "symbol": "__imp__CoCreateInstance@20",
+          "target": 6648456
+        },
+        {
+          "offset": 57,
+          "type": "DIR32",
+          "symbol": "$SG56711",
+          "target": 6649168
+        },
+        {
+          "offset": 62,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "$SG56714",
+          "target": 6649204
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 128,
+          "type": "DIR32",
+          "symbol": "?sharedSoundWindow@@3PAUHWND__@@A",
+          "target": 6755196
+        },
+        {
+          "offset": 135,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 164,
+          "type": "DIR32",
+          "symbol": "?sharedSoundWindow@@3PAUHWND__@@A",
+          "target": 6755196
+        },
+        {
+          "offset": 170,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 196,
+          "type": "DIR32",
+          "symbol": "$SG56719",
+          "target": 6649244
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 221,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 245,
+          "type": "DIR32",
+          "symbol": "?sharedSoundPrimary@@3PAUIDirectSoundBuffer@@A",
+          "target": 6755204
+        },
+        {
+          "offset": 255,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 263,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "$SG56722",
+          "target": 6649268
+        },
+        {
+          "offset": 286,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "shared-sound-create-00406a20": {
+      "source": "src/SharedSound406610.cpp",
+      "object": "build/matching/SharedSound406610.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SoundCreation406A20::Create"
+      ],
+      "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+      "target_address": 4221472,
+      "size": 348,
+      "compare_size": 348,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 63,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "?sharedSoundDevice@@3PAUIDirectSound8@@A",
+          "target": 6755200
+        },
+        {
+          "offset": 133,
+          "type": "DIR32",
+          "symbol": "$SG56741",
+          "target": 6649428
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 157,
+          "type": "DIR32",
+          "symbol": "_IID_IDirectSoundBuffer8",
+          "target": 6665356
+        },
+        {
+          "offset": 194,
+          "type": "DIR32",
+          "symbol": "$SG56745",
+          "target": 6649460
+        },
+        {
+          "offset": 199,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 266,
+          "type": "DIR32",
+          "symbol": "$SG56749",
+          "target": 6649492
+        },
+        {
+          "offset": 271,
+          "type": "REL32",
+          "symbol": "?ShowError@SharedSound4066C0@@YAXPBD@Z",
+          "target": 4220608
+        },
+        {
+          "offset": 295,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 340,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -104109,6 +104797,7 @@
     "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3",
     "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
     "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e",
-    "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018"
+    "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018",
+    "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492"
   }
 }

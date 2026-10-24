@@ -158,3 +158,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00421220,FighterScript::ReleaseRecordBuffer,ScriptRecord421200::~ScriptRecord421200,R153,script-record-destructor-00421220
 0x00421250,ContainerRecord::ConstructAndResetDeque [provisional],ScriptSequence421250::ScriptSequence421250,R212,script-sequence-constructor-00421250
 0x004212A0,ContainerRecord::ClearBeforeDequeSubobjectDestructionAt004212A0 [provisional],ScriptSequence421250::~ScriptSequence421250,R257,script-sequence-destructor-004212a0
+0x00406610,SharedSound::AcquireClient,SharedSoundClient406610::SharedSoundClient406610,R015,shared-sound-client-constructor-00406610
+0x00406650,SharedSound::ReleaseClient,SharedSoundClient406610::~SharedSoundClient406610,R015,shared-sound-client-destructor-00406650
+0x004066C0,SharedSound::ShowError,SharedSound4066C0::ShowError,R015,shared-sound-error-004066c0
+0x004066E0,SharedSound::Initialize,SharedSound4066C0::Initialize,R015,shared-sound-initialize-004066e0
+0x00406A20,SharedSound::CreateBuffer,SoundCreation406A20::Create,R015,shared-sound-create-00406a20

@@ -22786,3 +22786,109 @@ The R045 resource root 00456B60 still has no accepted source or credit. Its
 80-byte texture base/layout and meaningful filename bound remain unresolved;
 retain the f107 frontier and 588 byte frame refinement. Do not instantiate the
 old partial graphics client or manufacture padding/raw storage/array growth.
+
+## F109 complete shared-sound checkpoint (2026-10-25)
+
+Five complete R015 sound functions independently pass canonical cold comparison:
+client constructor `00406610..00406647` (56 bytes), destructor
+`00406650..004066B1` (98), error display `004066C0..004066DC` (29), initialization
+`004066E0..00406816` (311), and buffer creation `00406A20..00406B7B` (348).
+All **842 code bytes, 273 instructions, 26 calls and 58 real relocation fields**
+match. Following INT3 alignment of 8/14/3/9/4 bytes stays outside each extent.
+One serial cold object build produces five independent reports; no old unit
+needs replay. All ordinary CFG edges and stack joins agree, with actual
+frames of 4/4/0/44/64 bytes below EBP and plain RET on every exit.
+
+The producer uses the actual CoCreateInstance import, CLSID_DirectSound8 and
+IID_IDirectSound8, with flags 3 (INPROC_SERVER | INPROC_HANDLER). It initializes
+the device, tries priority cooperative level with normal-level fallback, then
+creates the deferred primary buffer. The shared client count resets both
+pointers on its first acquisition and releases primary before device on its
+last destruction. The complete main caller supplies a local client address
+and explicit ordinary cleanup sites. The reconstruction only defines this
+partial owner's lifetime bodies; it never instantiates or embeds that owner.
+Original client extent, source names and counter signedness remain unknown.
+
+Both actual local descriptions are complete SDK DSBUFFERDESC values, including
+dwReserved and the GUID member, with a measured sizeof of 36. Their native
+memset clears all nine words. Primary flags are PRIMARYBUFFER | LOCDEFER;
+secondary flags are CTRLVOLUME | GLOBALFOCUS | GETCURRENTPOSITION2 | LOCDEFER.
+All three complete GUID payloads are checked against the pinned SDK. Every COM
+slot and packet width is independently derived from that SDK, including the
+receiver word. PE imports prove CoCreateInstance and MessageBoxA identities.
+The original Japanese diagnostic payloads and DSound-Error title remain exact;
+hex escapes preserve CP932 text without depending on the host source code page.
+
+Creation releases and zeros the previous output before initializing its
+temporary base buffer. It queries IID_IDirectSoundBuffer8, then releases that
+temporary even when QueryInterface fails. Null data skips Lock and copy.
+Nonnull data locks the entire buffer, copies exactly the supplied size into
+the first returned region, and passes both reported pointers and lengths to
+Unlock, ignoring its result. Failures preserve native ownership and ordering;
+no rollback or input validation is added. The five-word cdecl Create prototype
+in the old stream source remains unchanged. Native reads only four words;
+the unused fifth formal's original type/name remain unknown, and the compatible
+DWORD carrier preserves the observed zero. Both boolean functions return AL0/1
+on every ordinary path. ShowError ignores the SDK result; its original source
+return declaration remains unknown and no fake source return is introduced.
+
+An explicit /GS reproduces the two real cookie sequences. The complete 14 byte
+check helper preserves AL on its normal return; its failure tail remains in
+vendor code. /GX- is an explicit reproducibility setting, not proof of an
+executable-wide original profile. The first probe lacks the cookie and initializes
+the temporary too early; the second corrects those facts and leaves 27 actual
+factory frame fields. One bounded measurement of 78 genuinely observed local
+names supplies meaningful names and declaration order for the same seven real
+values. Final probe and canonical object agree on every physical operand.
+No padding, inert locals, extra storage, manual returns/EH, assembly, aliases,
+masks or cropped comparisons are used. Four wrong physical bindings and three
+explicit packet mutations fail. Whole memset96 and the retained complete
+memcpy829 review receive no new library/helper code credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit shared-sound-client-constructor-00406610 --unit shared-sound-client-destructor-00406650 --unit shared-sound-error-004066c0 --unit shared-sound-initialize-004066e0 --unit shared-sound-create-00406a20
+```
+
+All 215 prior units, 107 canonical objects, 175 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,346 other function rows stay
+unchanged. F009 plus 160 additions retains 573,442 code bytes and 176 new inputs.
+R015 roles remain through aliases. Keep f109 parent, native/attested/SDK/CFG/
+packet/GS/name/binding/cold evidence, compiler inputs, results, logs and PDBs.
+
+Full CI passes **3,603 tests in 143.571 seconds**, together with seven exact
+checkpoint tests and three runtime-origin tests. Target, tracking, progress and
+whitespace checks pass. No old unit was cold-rebuilt.
+
+Cleanup removes only three obsolete reproducible function probes and the one
+local-name measurement object / 48,766 bytes, plus 375 Python bytecode caches /
+8,282,863 bytes, reclaiming 8,331,629 bytes. Canonical outputs, all sources,
+complete evidence, measurements, results, logs and PDBs remain. Hash receipts
+and preservation guards are in `.analysis/f109-object-cleanup.json`,
+`.analysis/f109-preservation-cleanup.json` and
+`.analysis/f109-final-compiler-inputs.json`. The 215 old units, 107 old objects,
+175 source inputs, 218 origin files, nine headers, 91 active drafts and 4,346
+other function rows pass unchanged checks. No compiler or CI job remains active.
+
+Current totals: **220 exact functions/units, 583,325 code bytes**, 29.56% of
+reviewed authored bytes and **29.50% conservatively**, including every pending
+byte. All 97 unknown origins remain unknown. The 98% goal is active and incomplete.
+
+## Current reconstruction cohort: F110
+
+Continue the complete R015 wave-buffer loader `00406820` (500 bytes) and its
+reader `00406B80` (559). Full native exports are retained in
+`.analysis/f109-sound-factory/native-00406820.asm` and
+`.analysis/f109-sound-factory/callee-00406b80.asm`; the first reader export
+alone is not ABI/source/layout acceptance evidence. The underlying device,
+factory and shared lifetime policies are now exact in SharedSound406610.cpp.
+Reconcile the real MMIOINFO/chunk/WAVEFORMAT layouts, all SDK packets, source
+allocation/deallocation identities, native ignored results and failure ordering
+before accepting either new body. Preserve complete SDK values and meaningful
+locals, and never instantiate or embed an incomplete reconstructed owner.
+
+The R045 resource root 00456B60 remains unaccepted. Its texture80 base/layout
+and meaningful filename bound remain unresolved; retain the f107 frontier and
+588 byte frame refinement. Do not guess an array bound or fabricate storage.
+Preserve all old exact units, origins, headers and active drafts. Replay only
+new or affected units, keep compiler builds serial and remove only obsolete
+reproducible outputs after preserving their inputs and evidence.
