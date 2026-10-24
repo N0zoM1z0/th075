@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F088 single-player-options investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F089 input-poll investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 179 / 179 / 179 |
-| Exact code bytes | 555,848 |
-| Reviewed authored coverage | 555,848 / 1,973,516 (28.17%) |
-| Conservative coverage, including every pending byte | 555,848 / 1,977,124 (28.11%) |
+| Source-present / exact functions / exact units | 181 / 181 / 181 |
+| Exact code bytes | 556,497 |
+| Reviewed authored coverage | 556,497 / 1,973,516 (28.20%) |
+| Conservative coverage, including every pending byte | 556,497 / 1,977,124 (28.15%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **119 additions /
-545,965 code bytes / 148 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **121 additions /
+546,614 code bytes / 150 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,55 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F087
+## Latest accepted functions: F088
+
+R041 single-player options00438670..004388C3 (596 bytes) and R043 selected-card
+value00438A80..00438AB4 (53 bytes) are independently canonical cold exact as
+`SinglePlayerOptions438670::RenderOptions` and
+`ProgressCard438A80::GetSelectedValue`. The following twelve/eleven INT3 bytes
+stay outside their complete extents. One handwritten source body per function,
+one shared source/header and one serial object build feed two whole comparisons.
+No accepted headers changed and no old units were rebuilt.
+
+The renderer's149 instructions/two branches/21 real call packets and all25
+physical fields match. A signed scene-byte guard skips all packet construction;
+the 132-byte packet, inner RECT and all168 frame bytes match naturally on the
+first probe. Four drawings use this+8 with texture6; signed EC is converted to
+float for the cursor. The six complete direct callees are reviewed. Fields
+bind17 direct calls,four named SetRect imports and four existing g_BattleRecords
+receiver immediates. No receiver extent or data ownership is inferred.
+
+The whole15-instruction getter reads signed selectors at16AC4/16AC5, uses
+strides17F0/5FC and returns byte556 in AL. Its four renderer calls receive only
+ECX and consume zero stack bytes, including two calls preserving two already
+pushed SetRect/BuildQuad argument words. Signed-char return semantics match the
+actual MOVSX consumers. No fabricated parameters or complete records layout.
+Both owner views remain pointer-only. Every branch/exit stack join passes;
+wrong getter-ret4 and SetRect-ret16 controls fail. No masks, aliases or truncation.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit single-player-options-00438670 --unit progress-card-value-00438a80
+```
+
+All179 old units,86 canonical objects,148 source/header inputs,218 origin files,
+nine shared headers,91 active draft inputs and4,349 other function rows remain
+unchanged. F009 plus121 additions retains546,614 bytes and150 source/header
+inputs. All97 origins remain unknown. F085 and every older large draft receive
+no credit. Keep f088 native/root/callee/caller/attested/ABI/physical/cold/parent/
+progress/compiler-input/preservation evidence,complete input sources,logs/PDBs.
+Full CI passes **3,603 tests in140.235 seconds**, plus target/tracking,
+progress and whitespace checks. Removed one obsolete reproducible probe object
+(11,062 bytes) and scripts/tests bytecode(8,282,705 bytes),
+after whole code and relocation equality for both preview/cold functions. All
+source/input/log/PDB/evidence records and canonical objects remain.
+Next F089: independently review full346-byte R043 input poll004388D0. Fresh
+whole native/attested root/callee/caller records are retained:101 instructions,
+ten branches,eleven calls to seven complete callees. Memcpy includes dispatch
+tables: retain its whole829-byte R025 auxiliary extent/46-relocation witness;
+a linear decoded prefix does not cover its CFG. No F089 source or exact credit. The active
+98% goal remains incomplete.
+
+## Previous accepted function: F087
 
 R041 player options 00438240..0043866F is independently cold-replay exact as
 `CharacterSelectOptions438240::RenderOptions`: all 1,072 bytes, 255 instructions,
@@ -67,12 +115,6 @@ progress and whitespace checks. Three obsolete reproducible F087 probe objects
 (33,643 bytes) and scripts/tests bytecode (8,282,705 bytes)
 were removed after whole preview/cold-canonical code and relocation equality.
 All source/input/log/PDB/evidence records and canonical objects remain.
-
-Next F088: independently review the complete R041 candidate single-player
-options at00438670, provisional596 bytes. Reconcile its full extent, all paths,
-call packets, globals and quad scope before acceptance. A private handwritten renderer/getter probe and ABI notes
-are retained; no F088 canonical source, unit or exact credit yet.
-The active 98% goal remains incomplete.
 
 ## Previous accepted function: F086
 

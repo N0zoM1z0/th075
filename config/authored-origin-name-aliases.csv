@@ -123,3 +123,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0043D570,BattleHud::RenderComboCounter,HudCombo43E040::Render,R041,battle-combo-counter-0043d570
 0x00437380,CharacterSelectScene::RenderCharacterCards,CharacterSelectCards437380::RenderCards,R043,character-select-cards-00437380
 0x00438240,CharacterSelectScene::RenderPlayerOptions,CharacterSelectOptions438240::RenderOptions,R041,character-select-options-00438240
+0x00438670,CharacterSelectScene::RenderSinglePlayerOptions,SinglePlayerOptions438670::RenderOptions,R041,single-player-options-00438670
+0x00438A80,ProgressRecords::GetSelectedCardValue,ProgressCard438A80::GetSelectedValue,R043,progress-card-value-00438a80

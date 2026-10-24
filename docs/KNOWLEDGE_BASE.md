@@ -21257,3 +21257,47 @@ bytes),after complete preview/cold object code and all30 relocation equality.
 Canonical objects,all source/input/log/PDB/evidence and active older drafts
 remain. Private F088 full596-byte renderer and53-byte AL getter probes are
 handwritten but not built or accepted at this checkpoint.
+
+## F088 complete single-player options and selected-card getter checkpoint (2026-10-24)
+
+R04100438670..004388C3/596 bytes and R04300438A80..00438AB4/53 bytes are
+independently cold exact as SinglePlayerOptions438670::RenderOptions and
+ProgressCard438A80::GetSelectedValue. Twelve/eleven following INT3 bytes remain
+outside the complete extents. One handwritten body per function shares one new
+source/header and one serial compiler object. The first natural probe matches
+both functions physically. No source splits,aliases,masks,truncation or padding.
+
+The renderer retains149 instructions/two branches/21 call packets and all25
+fields:17 direct calls,four named SetRect imports,four existing records receiver
+immediates. Six whole direct callees are reviewed. Signed EA guards packet
+construction,which uses the complete132-byte physical packet and inner RECT;
+all168 frame bytes match. Four texture6 drawings use this+8. Signed EC is
+converted to float for the cursor. Full CFG joins and wrong getter-ret4 and
+SetRect-ret16 controls are checked. The getter reads signed selectors16AC4/
+16AC5,strides17F0/5FC and byte556,returning AL. It has15 complete instructions,
+no calls/relocations and no stack parameters. Four callers consume its signed
+byte with MOVSX,including two calls preserving two already pushed outer argument
+words. Those words are not getter parameters. Existing g_BattleRecords stays
+unchanged; a pointer-only view adds no complete records layout/data ownership.
+
+Both units separately pass canonical cold comparison from one rebuilt object.
+All179 old units,86 canonical objects,148 source/header inputs,218 origin files,
+nine shared headers,91 active draft inputs and4,349 other function rows stay
+unchanged. No old replay is needed. F085's complete draft still has115 actual
+frame differences and no credit; all97 pending origins remain unknown. Current
+181 exact functions/units total556,497 bytes,28.20% reviewed and28.15%
+conservative. F009+121 additions retains546,614 bytes and150 source/header
+inputs. Goal98% is active/incomplete. Next F089: complete346-byte R043 input
+poll004388D0; independently reconcile before source. Preserve full f088 native/
+attested/ABI/physical/cold/parent/progress/compiler-input/preservation evidence.
+
+F088 final validation:3,603 CI tests pass in140.235s,plus target/tracking,
+progress and whitespace checks. Removed only one obsolete reproducible probe
+object(11,062 bytes) and scripts/tests bytecode(8,282,705
+bytes),after complete code and relocation equality for both preview/cold
+functions. All sources,inputs,logs,PDBs,evidence,canonical objects and active
+older drafts remain. F089 fresh root/callee/caller/native records reconcile
+101 instructions,ten branches,eleven calls and seven whole callees. Memcpy's
+829-byte extent includes dispatch tables; the complete R025 auxiliary-body
+witness and46 relocations remain authoritative,not its674-byte linear prefix.
+No F089 source/unit/credit at this checkpoint.

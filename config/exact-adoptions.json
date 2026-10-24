@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F087",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F088",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "cacd116932efea3790784df0c26ec2da4280e90ea0897293e7e0111b3a883225"
+      "current_sha256": "7e4c96ce1307cb2f98736d822d8b0d0b549186a6ee62508acf4dcbf352870a35"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "b01e5ec62b745b762cde64ba0fbde85be14d556fb3777e4cadbb1febcee25924"
+      "current_sha256": "9a0d3f0a1716f4de5d498b3b0025ffaea94281a4e1b3a67f0e3897db420b6676"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "b0e241e260fc71c30487b7f62d7b9529c62545514f2b82b030413fdab611cb2f"
+      "current_sha256": "f4ccbbcf463148f05fe274f0acc4f1e273ad62ef4fa3becb897425ee9f2ff956"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "303e442c1371c209fd3961266ae20e8481564113cebac6a12d5cee98366558ba"
+      "current_sha256": "51fcee76f58699a9b94509f87896989168d7824f0eb23d17a77d1e2f0d9560f0"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a6cfb6c04847922e8252d2852264ac86b8741c6863b71bc6be0764ebc537ccbd"
+      "current_sha256": "a25f7bf8e141d12532fa64dc70ce4bc6c7151927d96f53e66aa19a9413fe67f7"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "140a2a4adad15ba705921265d8c47761b74ab161c847f29f406fe0a1acae1238"
+      "current_sha256": "80480fe79dd9a9946206f445f84ca47e494a522c7c7640366e1fd82f7a83c76c"
     }
   },
   "functions": [
@@ -5276,6 +5276,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00438670",
+        "size": "596",
+        "span_end": "0x004388C3",
+        "current_name": "FUN_00438670",
+        "proposed_name": "CharacterSelectScene::RenderSinglePlayerOptions",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00438670",
+        "size": "596",
+        "span_end": "0x004388C3",
+        "current_name": "FUN_00438670",
+        "proposed_name": "SinglePlayerOptions438670::RenderOptions",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SinglePlayerOptions438670::RenderOptions()",
+        "is_thunk": "false",
+        "source_file": "src/SinglePlayerOptions438670.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F088; scripts/repo-python scripts/replay-exact-units.py --unit single-player-options-00438670",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F088: complete596-byte canonical cold exact; renderer keeps signed disabled guard,complete132-byte packet/inner RECT scope,168-byte frame,25 physical fields and21 real call packets; four AL getter calls use existing records receiver and preserve0/2 outer argument words without fabricated parameters; getter has15 complete instructions,signed selector bytes16AC4/16AC5,strides17F0/5FC and final byte556; original owner layout/names/declarations unknown; pointer-only partial views never construct/embed; original authored role retained by alias; no credit to F085 or pending origins"
+      },
+      "origin": {
+        "address": "0x00438670",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00438A80",
+        "size": "53",
+        "span_end": "0x00438AB4",
+        "current_name": "FUN_00438a80",
+        "proposed_name": "ProgressRecords::GetSelectedCardValue",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00438A80",
+        "size": "53",
+        "span_end": "0x00438AB4",
+        "current_name": "FUN_00438a80",
+        "proposed_name": "ProgressCard438A80::GetSelectedValue",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "signed char ProgressCard438A80::GetSelectedValue()",
+        "is_thunk": "false",
+        "source_file": "src/SinglePlayerOptions438670.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F088; scripts/repo-python scripts/replay-exact-units.py --unit progress-card-value-00438a80",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F088: complete53-byte canonical cold exact; renderer keeps signed disabled guard,complete132-byte packet/inner RECT scope,168-byte frame,25 physical fields and21 real call packets; four AL getter calls use existing records receiver and preserve0/2 outer argument words without fabricated parameters; getter has15 complete instructions,signed selector bytes16AC4/16AC5,strides17F0/5FC and final byte556; original owner layout/names/declarations unknown; pointer-only partial views never construct/embed; original authored role retained by alias; no credit to F085 or pending origins"
+      },
+      "origin": {
+        "address": "0x00438A80",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
       }
     }
   ],
@@ -96811,6 +96899,201 @@
           "target": 4245920
         }
       ]
+    },
+    "single-player-options-00438670": {
+      "source": "src/SinglePlayerOptions438670.cpp",
+      "object": "build/matching/SinglePlayerOptions438670.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SinglePlayerOptions438670::RenderOptions"
+      ],
+      "symbol": "?RenderOptions@SinglePlayerOptions438670@@QAEXXZ",
+      "target_address": 4425328,
+      "size": 596,
+      "compare_size": 596,
+      "relocations": [
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 71,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@RenderQuadPacket5E68C0@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 112,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 144,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 149,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 154,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCard438A80@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 186,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 196,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCard438A80@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 238,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 261,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 293,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 308,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 313,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCard438A80@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 338,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 353,
+          "type": "DIR32",
+          "symbol": "?g_BattleRecords@@3VBattleRecords@@A",
+          "target": 6756600
+        },
+        {
+          "offset": 358,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@ProgressCard438A80@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 393,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 416,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 451,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 478,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 503,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 556,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 588,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        }
+      ]
+    },
+    "progress-card-value-00438a80": {
+      "source": "src/SinglePlayerOptions438670.cpp",
+      "object": "build/matching/SinglePlayerOptions438670.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressCard438A80::GetSelectedValue"
+      ],
+      "symbol": "?GetSelectedValue@ProgressCard438A80@@QAECXZ",
+      "target_address": 4426368,
+      "size": 53,
+      "compare_size": 53,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -96961,6 +97244,8 @@
     "src/CharacterSelectCards437380.cpp": "7b0c7647feb59eb895ab3c72251f89faeaca520040ea8e82654a04651afef706",
     "src/CharacterSelectCards437380.hpp": "cd61f5ae6dd182f0ec7f555c5d123dcb46620bcffba47eae485608bdff2ea1bd",
     "src/CharacterSelectOptions438240.cpp": "9de58160ddbbad8d974285514e732dc0fb953dcbc622996d71d1c037170c90af",
-    "src/CharacterSelectOptions438240.hpp": "97b41d20c8f684d38aa901d1ebe89052068e1cc6aa48f69ceee8a005c214a6d9"
+    "src/CharacterSelectOptions438240.hpp": "97b41d20c8f684d38aa901d1ebe89052068e1cc6aa48f69ceee8a005c214a6d9",
+    "src/SinglePlayerOptions438670.cpp": "8a3c5f676f5797a6dc3519dcd7217f31a38690318a9c3fd75fd8a2489379ab6f",
+    "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541"
   }
 }

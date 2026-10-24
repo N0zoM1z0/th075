@@ -178,3 +178,5 @@ AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
 HudCombo43E040::Render,0x0043D570,function
 CharacterSelectCards437380::RenderCards,0x00437380,function
 CharacterSelectOptions438240::RenderOptions,0x00438240,function
+SinglePlayerOptions438670::RenderOptions,0x00438670,function
+ProgressCard438A80::GetSelectedValue,0x00438A80,function
