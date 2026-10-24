@@ -165,3 +165,4 @@ FighterShake453E60::SetCameraShake,0x00453E60,function
 CameraShake412CB0::SetShakeAmount,0x00412CB0,function
 CameraUpdate4126C0::Advance,0x004126C0,function
 CameraInputs412660::Initialize,0x00412660,function
+BattleRender43D9D0::RenderFrame,0x0043D9D0,function

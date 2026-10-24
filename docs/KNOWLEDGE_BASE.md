@@ -20455,3 +20455,50 @@ view,not proof that the raw body lacks AL. A separate scoped status view must
 be grounded in full native/callee/caller evidence,not force matching or alter
 accepted headers without required dependent replay. No such F074 acceptance
 or source change is made at this checkpoint.
+
+
+## F074 complete render callback cold acceptance (2026-10-24)
+
+R041 render callback0043D9D0..0043E034 is cold-exact as
+`BattleRender43D9D0::RenderFrame`: all1,637 bytes,455 instructions,31 branches,
+91 physical fields and64 actual calls. The following11 INT3 bytes are excluded.
+All23 complete direct callees,14 virtual calls across11 recorded fighter
+families,and three named IAT calls are reviewed. The full data xref0065833C
+references this callback; there are no direct call xrefs in the current database.
+
+The caller consumes AL from the complete36-byte graphics wrapper. Its accepted
+bool worker supplies the status; the wrapper forwards AL unchanged. A natural
+independent bool-forwarding compiler proof matches all36 bytes/three fields.
+The new declaration-only status view leaves the older ignored-result body and
+all accepted shared headers unchanged. This does not recover the original
+nominal declaration or add dependency credit. Native DWORD timing,signed-byte
+selectors,true zero terms,real RECT local and saved ESI are retained. Partial
+receivers are pointer-only and never constructed or embedded. Unused virtual
+signatures,full owner layouts and live dispatcher identities remain unknown.
+
+Preview,independent canonical compile and separate cold replay match every
+byte with the explicit build3077 profile. All166 earlier units/objects,124
+prior manifest inputs,218 origin files,4,350 other function rows and84 active
+draft inputs remain unchanged. No older unit was rebuilt. Retain f074 native,
+attested,ABI,status-proof,virtual-family,physical-binding,cold,adoption-parent,
+progress and preservation/cleanup receipts under .analysis/.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-render-frame-0043d9d0
+```
+
+Full CI passes **3,603 tests in116.318 seconds**,plus tracking and progress.
+The duplicate preview object was removed after complete code/relocation equality;
+generated scripts/tests bytecode was removed after CI. Inputs,PDBs,evidence,
+active objects,the separate ABI proof and shared tools remain.
+
+Next F075: complete **R040** HUD renderer0043E040..004406B0,9,841 bytes.
+`.analysis/f075-native-index.json` records2,401 instructions,81 branches,
+189 calls (153 direct calls to13 complete callees,36 indirect calls). Full raw
+exports and an attested view are retained. There is no F075 source,object,
+canonical unit or credit yet. Audit nested vector lookup argument packets,
+quad constructor/transform/draw contracts,implicit ST0 integer conversions and
+all frame slots before writing one complete natural body. The accepted F064
+complete132-byte physical packet is available; Ghidra's140-byte local span
+does not prove an owner size. Never add padding,inert locals or raw owner
+buffers to force the apparent frame. Keep all97 pending origins unchanged.

@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F066 investigation below.
+is incomplete. Continue the F075 HUD investigation below; preserve the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 166 / 166 / 166 |
-| Exact code bytes | 525,159 |
-| Reviewed authored coverage | 525,159 / 1,973,516 (26.61%) |
-| Conservative coverage, including every pending byte | 525,159 / 1,977,124 (26.56%) |
+| Source-present / exact functions / exact units | 167 / 167 / 167 |
+| Exact code bytes | 526,796 |
+| Reviewed authored coverage | 526,796 / 1,973,516 (26.69%) |
+| Conservative coverage, including every pending byte | 526,796 / 1,977,124 (26.64%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **106 additions /
-515,276 code bytes / 124 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **107 additions /
+516,913 code bytes / 126 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,53 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F073
+## Latest accepted function: F074
+
+R041 render callback0043D9D0..0043E034 is cold-exact as
+`BattleRender43D9D0::RenderFrame`: all1,637 bytes,455 instructions,31 branches,
+91 physical fields and64 actual calls. The following11 INT3 bytes are excluded.
+All23 complete direct callees,14 virtual calls across11 recorded fighter
+families,and three named IAT calls are reviewed. The full data xref0065833C
+references this callback; there are no direct call xrefs in the current database.
+
+The caller consumes AL from the complete36-byte graphics wrapper. Its accepted
+bool worker supplies the status; the wrapper forwards AL unchanged. A natural
+independent bool-forwarding compiler proof matches all36 bytes/three fields.
+The new declaration-only status view leaves the older ignored-result body and
+all accepted shared headers unchanged. This does not recover the original
+nominal declaration or add dependency credit. Native DWORD timing,signed-byte
+selectors,true zero terms,real RECT local and saved ESI are retained. Partial
+receivers are pointer-only and never constructed or embedded. Unused virtual
+signatures,full owner layouts and live dispatcher identities remain unknown.
+
+Preview,independent canonical compile and separate cold replay match every
+byte with the explicit build3077 profile. All166 earlier units/objects,124
+prior manifest inputs,218 origin files,4,350 other function rows and84 active
+draft inputs remain unchanged. No older unit was rebuilt. Retain f074 native,
+attested,ABI,status-proof,virtual-family,physical-binding,cold,adoption-parent,
+progress and preservation/cleanup receipts under .analysis/.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-render-frame-0043d9d0
+```
+
+Full CI passes **3,603 tests in116.318 seconds**,plus tracking and progress.
+The duplicate preview object was removed after complete code/relocation equality;
+generated scripts/tests bytecode was removed after CI. Inputs,PDBs,evidence,
+active objects,the separate ABI proof and shared tools remain.
+
+Next F075: complete **R040** HUD renderer0043E040..004406B0,9,841 bytes.
+`.analysis/f075-native-index.json` records2,401 instructions,81 branches,
+189 calls (153 direct calls to13 complete callees,36 indirect calls). Full raw
+exports and an attested view are retained. There is no F075 source,object,
+canonical unit or credit yet. Audit nested vector lookup argument packets,
+quad constructor/transform/draw contracts,implicit ST0 integer conversions and
+all frame slots before writing one complete natural body. The accepted F064
+complete132-byte physical packet is available; Ghidra's140-byte local span
+does not prove an owner size. Never add padding,inert locals or raw owner
+buffers to force the apparent frame. Keep all97 pending origins unchanged.
+
+## Previous accepted function: F073
 
 R100 camera initializer00412660..004126BF is independently cold-exact as
 `CameraInputs412660::Initialize`: all96 bytes/22 instructions/14 physical fields.
@@ -65,18 +111,7 @@ object and scripts/tests bytecode are removed after full equality/CI; inputs,
 PDBs,evidence,active objects and shared tools remain. The prior next-cohort
 paragraph's mistaken R102 label is corrected to the ledger's actual R100.
 
-Next F074: complete R041 BattleScene::RenderFrame0043D9D0..0043E034,1637 bytes.
-The full raw export,fresh attested view and23 complete direct callee exports
-are retained. `.analysis/f074-native-index.json` records455 instructions,
-31 branches,64 call sites:47 direct calls to23 callees and17 indirect calls.
-There is no F074 source,object,canonical unit or exact credit. Review every
-callee/receiver/virtual/IAT/stack contract before writing one complete natural
-body. The raw caller consumes AL after00402660; its complete wrapper forwards
-the accepted bool BeginTarget result unchanged. The existing void declaration
-was an ignored-result view and does not prove that native AL is unavailable.
-Any new status view must be justified by those full bodies/callers; preserve
-all accepted units/headers and do not force a result or signature for matching.
-All97 pending origins and F066/F061/F048/F021 drafts remain unchanged.
+The subsequent F074 acceptance and current F075 cohort are recorded above.
 
 ## Previous accepted function: F072
 

@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F073",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F074",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "f9f3aaf8a761ad7d1b828fbacfebc2a56a77a9d6f48d7d2e9c1707c7eb4b13d1"
+      "current_sha256": "3ab0864d612c2c0a68888f6f95e66f8d371b6a8ed06fb984dcc3f7feb9aedabd"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "e458aed97434e019553bb4b799f1c514516727c48bec0060750b9a8475322efa"
+      "current_sha256": "cdd76d57e24ffabf32960e3912815726f34fd2652f308b721c9b545a6055a34d"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c7e2743f5baacfd58799b33437377746d1becf20a241ac540eac077e26d5c202"
+      "current_sha256": "d94921571a4e455b0b923d7fa823c04cbd21f821c35f5edb4f701eeb3c919082"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e2a21d491c3689c1df862227e6cc9a1bce21c9f99bbf4027c495efb67cd3b017"
+      "current_sha256": "3d5cc0d7ec65996eed844ae4d113ed19cc9b88e764beddffe6d02a8b2e177073"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "0a523b77356e225293bc09413da439b467353f7d56afae6f9ba247af37e455f9"
+      "current_sha256": "79af15b8646cb5d14a692c4b8b73449068e40f4725ef17b0a5a0cbbc23d12346"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "59223aa66145c59bee07cf75d5daf3c5f3713c333d84cda807cfb39774f28888"
+      "current_sha256": "cae9aa3d4ceaa1f78d4ec4d10f3c10de0d99e3ccd11e487d13f87ede4f569685"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "e2f4996a033c68d9e039b25dc99fb856c502e622cd164f99b9f4ac1a1f879265"
+      "current_sha256": "0e4f36760972d027ec70df98df9704dff62a4f8677e32dd7ab31e8da5bfe8ed3"
     }
   },
   "functions": [
@@ -4704,6 +4704,50 @@
         "disposition": "authored",
         "confidence": "target-observed-game-policy-and-reviewed-callees",
         "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043D9D0",
+        "size": "1637",
+        "span_end": "0x0043E034",
+        "current_name": "FUN_0043d9d0",
+        "proposed_name": "BattleScene::RenderFrame",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D9D0",
+        "size": "1637",
+        "span_end": "0x0043E034",
+        "current_name": "FUN_0043d9d0",
+        "proposed_name": "BattleRender43D9D0::RenderFrame",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleRender43D9D0::RenderFrame()",
+        "is_thunk": "false",
+        "source_file": "src/BattleRender43D9D0.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F074; scripts/repo-python scripts/replay-exact-units.py --unit battle-render-frame-0043d9d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F074: complete1637-byte cold exact render parent,455 instructions/31 branches/91 fields and64 actual call packets; all23 full direct callees,14 virtual and3 named IAT calls reviewed;11 vtable families; actual AL frame status, signed-byte selectors, DWORD timing and stack joins retained; no complete owner layout or construction; R041 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x0043D9D0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
       }
     }
   ],
@@ -90684,6 +90728,575 @@
           "target": 6755268
         }
       ]
+    },
+    "battle-render-frame-0043d9d0": {
+      "source": "src/BattleRender43D9D0.cpp",
+      "object": "build/matching/BattleRender43D9D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleRender43D9D0::RenderFrame"
+      ],
+      "symbol": "?RenderFrame@BattleRender43D9D0@@QAEXXZ",
+      "target_address": 4446672,
+      "size": 1637,
+      "compare_size": 1637,
+      "relocations": [
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?Advance@CameraUpdate4126C0@@YAXXZ",
+          "target": 4269760
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 119,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 205,
+          "type": "DIR32",
+          "symbol": "?g_RenderOrderAt0068C860@@3CA",
+          "target": 6867040
+        },
+        {
+          "offset": 232,
+          "type": "DIR32",
+          "symbol": "?g_RenderOrderAt0068C860@@3CA",
+          "target": 6867040
+        },
+        {
+          "offset": 239,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 245,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 251,
+          "type": "DIR32",
+          "symbol": "__real@c3700000",
+          "target": 6652788
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 263,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 269,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 275,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "__real@438c0000",
+          "target": 6652784
+        },
+        {
+          "offset": 293,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 305,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 311,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 323,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 333,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 345,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 351,
+          "type": "DIR32",
+          "symbol": "__real@40400000",
+          "target": 6651128
+        },
+        {
+          "offset": 357,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 366,
+          "type": "REL32",
+          "symbol": "?SetDrawTransform@Graphics@@YAXMMM@Z",
+          "target": 4201216
+        },
+        {
+          "offset": 374,
+          "type": "REL32",
+          "symbol": "?BeginGraphicsFrameWithStatusAt00402660@@YA_NXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 392,
+          "type": "DIR32",
+          "symbol": "?g_FramePresentToggle@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 421,
+          "type": "REL32",
+          "symbol": "?SetColorMultiplier@RenderStyle43D9D0@@QAEXM@Z",
+          "target": 4245664
+        },
+        {
+          "offset": 427,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 435,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 451,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 464,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 481,
+          "type": "REL32",
+          "symbol": "?DispatchFourLists@RenderLists43D9D0@@QAEXXZ",
+          "target": 4570336
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?DispatchFourLists@RenderLists43D9D0@@QAEXXZ",
+          "target": 4570336
+        },
+        {
+          "offset": 552,
+          "type": "REL32",
+          "symbol": "?SetColorMultiplier@RenderStyle43D9D0@@QAEXM@Z",
+          "target": 4245664
+        },
+        {
+          "offset": 558,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 566,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 582,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 595,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 614,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 633,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 646,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 659,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 676,
+          "type": "REL32",
+          "symbol": "?RenderElements@RenderSequence43D9D0@@QAEXXZ",
+          "target": 4264208
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?RenderElements@RenderSequence43D9D0@@QAEXXZ",
+          "target": 4264208
+        },
+        {
+          "offset": 700,
+          "type": "DIR32",
+          "symbol": "?g_CombatEffects@@3VCombatEffects@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 705,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderAux43D9D0@@QAEXC@Z",
+          "target": 6257920
+        },
+        {
+          "offset": 724,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 743,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 750,
+          "type": "DIR32",
+          "symbol": "?g_RenderOrderAt0068C860@@3CA",
+          "target": 6867040
+        },
+        {
+          "offset": 925,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 944,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 951,
+          "type": "DIR32",
+          "symbol": "?g_CombatEffects@@3VCombatEffects@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 956,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderAux43D9D0@@QAEXC@Z",
+          "target": 6257920
+        },
+        {
+          "offset": 977,
+          "type": "REL32",
+          "symbol": "?SetColorMultiplier@RenderStyle43D9D0@@QAEXM@Z",
+          "target": 4245664
+        },
+        {
+          "offset": 983,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "?g_DrawDispatcher@@3PAVDrawDispatcher@@A",
+          "target": 6755364
+        },
+        {
+          "offset": 1010,
+          "type": "REL32",
+          "symbol": "?SetColorMultiplier@RenderStyle43D9D0@@QAEXM@Z",
+          "target": 4245664
+        },
+        {
+          "offset": 1023,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 1030,
+          "type": "DIR32",
+          "symbol": "?g_RenderDamageFlashAt00671428@@3EA",
+          "target": 6755368
+        },
+        {
+          "offset": 1042,
+          "type": "REL32",
+          "symbol": "?DrawDamageFlash@BattleRender43D9D0@@QAEXXZ",
+          "target": 4458176
+        },
+        {
+          "offset": 1056,
+          "type": "REL32",
+          "symbol": "?SetDrawTransform@Graphics@@YAXMMM@Z",
+          "target": 4201216
+        },
+        {
+          "offset": 1066,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1094,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1107,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1114,
+          "type": "DIR32",
+          "symbol": "?g_StateFadeAlpha@@3EA",
+          "target": 6755537
+        },
+        {
+          "offset": 1123,
+          "type": "DIR32",
+          "symbol": "?g_StateResetCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 1133,
+          "type": "REL32",
+          "symbol": "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z",
+          "target": 4208912
+        },
+        {
+          "offset": 1144,
+          "type": "REL32",
+          "symbol": "?RenderHud@BattleRender43D9D0@@QAEXXZ",
+          "target": 4448320
+        },
+        {
+          "offset": 1163,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 1182,
+          "type": "REL32",
+          "symbol": "?DispatchSelected@RenderLists43D9D0@@QAEXC@Z",
+          "target": 4570160
+        },
+        {
+          "offset": 1210,
+          "type": "REL32",
+          "symbol": "?RenderFadeOverlay@RenderActor43D9D0@@QAEXXZ",
+          "target": 4541088
+        },
+        {
+          "offset": 1238,
+          "type": "REL32",
+          "symbol": "?RenderFadeOverlay@RenderActor43D9D0@@QAEXXZ",
+          "target": 4541088
+        },
+        {
+          "offset": 1246,
+          "type": "REL32",
+          "symbol": "?RenderStatusEffects@BattleRender43D9D0@@QAEXXZ",
+          "target": 4459344
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?DrawSelectedNotice@BattleHud@@QAEXXZ",
+          "target": 4459264
+        },
+        {
+          "offset": 1332,
+          "type": "REL32",
+          "symbol": "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ",
+          "target": 4540480
+        },
+        {
+          "offset": 1360,
+          "type": "REL32",
+          "symbol": "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ",
+          "target": 4540480
+        },
+        {
+          "offset": 1390,
+          "type": "REL32",
+          "symbol": "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ",
+          "target": 4540480
+        },
+        {
+          "offset": 1418,
+          "type": "REL32",
+          "symbol": "?RenderSideEffect@RenderActor43D9D0@@QAEXXZ",
+          "target": 4540480
+        },
+        {
+          "offset": 1441,
+          "type": "DIR32",
+          "symbol": "?g_TextRenderer@@3PAVTextRenderer@@A",
+          "target": 6755388
+        },
+        {
+          "offset": 1446,
+          "type": "REL32",
+          "symbol": "?DrawBox@TextRenderer@@QAEXXZ",
+          "target": 4271792
+        },
+        {
+          "offset": 1452,
+          "type": "DIR32",
+          "symbol": "?g_NoticeSelection@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 1487,
+          "type": "REL32",
+          "symbol": "?RenderOverlayTimeline@BattleRender43D9D0@@QAEXXZ",
+          "target": 4485952
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?RenderRoundBanner@BattleRender43D9D0@@QAEXXZ",
+          "target": 4464288
+        },
+        {
+          "offset": 1526,
+          "type": "REL32",
+          "symbol": "?RenderEndOverlay@BattleRender43D9D0@@QAEXXZ",
+          "target": 4462864
+        },
+        {
+          "offset": 1544,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        },
+        {
+          "offset": 1576,
+          "type": "DIR32",
+          "symbol": "__imp__timeGetTime@0",
+          "target": 6648420
+        },
+        {
+          "offset": 1620,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 1628,
+          "type": "REL32",
+          "symbol": "?EndFrame@Graphics@@YAXXZ",
+          "target": 4204496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -90810,6 +91423,8 @@
     "src/CameraUpdate4126C0.cpp": "69f4cbad45255066f59841e4a6e9b2690bcabad5c525ecad20bf8f808302c03d",
     "src/CameraUpdate4126C0.hpp": "d931097a0c8b01171ae54f75b6993c1b736d70e484b1f8c69f5fa00f2d896266",
     "src/CameraInputs412660.cpp": "d1375e001a91f3e837e77b883f961f9e55aa03021715323b188dd2339c147341",
-    "src/CameraInputs412660.hpp": "bb3f56a6982921b2c11df6ef8f9150a6b02e4c2f1ef6f599d50f7c93524d95dc"
+    "src/CameraInputs412660.hpp": "bb3f56a6982921b2c11df6ef8f9150a6b02e4c2f1ef6f599d50f7c93524d95dc",
+    "src/BattleRender43D9D0.cpp": "566ab440c2a6f03387e38d55253af218bdd4a30a094f5c2159536ed32dc7ebdc",
+    "src/BattleRender43D9D0.hpp": "c6e3e132b3ea5ea5d4b30337705e80e808c181e7f700ae73bf6e66904b18bb6c"
   }
 }

@@ -164,3 +164,4 @@ FighterShake453E60::SetCameraShake
 CameraShake412CB0::SetShakeAmount
 CameraUpdate4126C0::Advance
 CameraInputs412660::Initialize
+BattleRender43D9D0::RenderFrame
