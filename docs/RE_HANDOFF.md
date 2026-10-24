@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F102 serialized-record investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F103 texture-pack loader investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 198 / 198 / 198 |
-| Exact code bytes | 572,839 |
-| Reviewed authored coverage | 572,839 / 1,973,516 (29.03%) |
-| Conservative coverage, including every pending byte | 572,839 / 1,977,124 (28.97%) |
+| Source-present / exact functions / exact units | 199 / 199 / 199 |
+| Exact code bytes | 573,165 |
+| Reviewed authored coverage | 573,165 / 1,973,516 (29.04%) |
+| Conservative coverage, including every pending byte | 573,165 / 1,977,124 (28.99%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **138 additions /
-562,956 code bytes / 168 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **139 additions /
+563,282 code bytes / 169 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,79 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F101
+## Latest accepted function: F102
+
+R021 serialized-record loader `0041B2B0..0041B3F5` independently passes
+canonical cold comparison as BitmapSerialized41B2B0::Load(const
+TextureRecordSnapshot40BF60*). All 326 code bytes, 114 instructions, four
+branches and six physical REL32 fields match. Ten following INT3 bytes remain
+outside; there is no associated switch data. One new implementation file
+leaves all old headers and sources intact. The historical
+BitmapData::LoadSerializedPixels role remains by an R021 alias.
+
+The incoming descriptor supplies width/height/stride at offsets 0/4/8, byte
+depth at 12, encoded size at 16 and payload pointer at 20. These six actual
+fields support the complete 24-byte source-compatible descriptor already used
+by accepted Save; its definition is identical across the two translation units.
+Both full callers independently read 4/4/4/1/4 bytes into the metadata fields
+at EBP-32, then store/read the payload pointer at EBP-12. Their index at EBP-8
+lies outside this record. Original type names/grouping remain unknown. This
+value does not establish the complete bitmap owner layout. The new owner
+view stays pointer-only and is never constructed or embedded.
+
+All five metadata values are copied before the allocation branch. Unsigned
+encoded-size >0 copies exactly that many bytes. Otherwise depth>=24 allocates
+and copies stride*height*4; lower depths retain the actual unsigned
+(stride*height*depth)>>3 expression, repeated for allocation and copy. No old
+pixel deletion, format/dimension repair or validation is added. Three genuine
+scalar new calls and three memcpy calls bind independent library entries.
+The actual <new> compiler control emits three different array-new identities;
+those real thunks cannot be aliased. Full R025 memcpy provenance, all 46 local
+fields, six tables and eight RET0 routes are rechecked without a library build
+or dependency credit.
+
+The complete CFG and all six packets preserve the actual 16-byte frame,
+one descriptor parameter, ECX receiver and RET4. Both 949/918-byte callers
+preserve four bytes of outer descriptor argument during entry lookup, then
+pass the returned entry as ECX. Both ignore the loader result and delete
+their temporary payload after the copy. Three wrong-ABI and two wrong-binding
+controls fail. There are no fake returns, inert locals, padding, assembly,
+frame/register aliases, masks or cropped extents. Only this new unit is cold
+built; no accepted dependency replay is needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-serialized-load-0041b2b0
+```
+
+All 198 prior units, 100 canonical objects, 168 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows stay
+unchanged. F009 plus 139 additions retains 563,282 code bytes and 169 inputs.
+Keep all f102 native/attested/ABI/memcpy/physical/cold/parent records and source,
+compiler controls, results, logs and PDBs. All 97 unknown origins and old drafts
+receive no credit.
+
+Current totals: 199 exact functions/units, 573,165 code bytes, 29.04% of
+reviewed authored bytes and 28.99% conservatively including all pending bytes.
+
+Next F103 is the complete 949-byte R019 texture-pack loader `0040B7C0`, one of
+these two callers. The full native export and attested view already exist;
+reconcile signed palette count/selection, all file/metadata/payload lifetimes,
+complete local descriptor, actual texture/upload packets and the true ABI
+before natural source. Preserve the sibling archive loader `0040BBA0` for a
+later cohort. No F103 source or exact credit yet. The 98% goal remains active
+and incomplete.
+
+Final F102 CI passes 3,603 tests in 126.212s. Bounded cleanup
+removes two obsolete reproducible probe/control objects (18,052 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, source/control inputs, complete ABI evidence, logs and PDBs
+remain. F103 native/dependency index, sole-caller query, complete 27-byte
+default wrapper and bounded ABI notes are retained privately. The wrapper
+passes exactly zero, with RET4; the 949-byte main has RET8. Reconcile and
+cold-compare both independently if accepted together. No F103 source or
+exact credit yet.
+
+## Previous accepted function: F101
 
 R021 bitmap run encoder `0041B400..0041B966` independently passes canonical
 cold comparison as BitmapPackSource40BF60::Encode(). All 1,383 code bytes,

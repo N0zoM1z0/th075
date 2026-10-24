@@ -17925,3 +17925,21 @@ relocations = [
   { offset = 0x56F, type = "DIR32", symbol = "$L55318", target = 0x0041B7B8 },
   { offset = 0x573, type = "DIR32", symbol = "$L55211", target = 0x0041B963 },
 ]
+
+[units."bitmap-serialized-load-0041b2b0"]
+source = "src/BitmapSerialized41B2B0.cpp"
+object = "build/matching/BitmapSerialized41B2B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapSerialized41B2B0::Load"]
+symbol = "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z"
+target_address = 0x0041B2B0
+size = 326
+compare_size = 326
+relocations = [
+  { offset = 0x54, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x7D, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0xA6, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0xD9, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0xFD, type = "REL32", symbol = "??2@YAPAXI@Z", target = 0x0064159D },
+  { offset = 0x139, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+]

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F101",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F102",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "8ca4823aad362071e39eaf79698cdd16b50018f9fb58ce4ad2f6f8f0b1ba0edd"
+      "current_sha256": "9fd75143eeb65e3aa58375b690201b34ece4c6f00e9cf2cf31a348f0e08d0ac8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "86f36c2af2b951b7c4c807430d486e3a524f637be59e8e2f13c0ae258dfc92b7"
+      "current_sha256": "032a54886f8aef52809c3ec71e4676fe8b970281ffcaa136018c79c79e969a39"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "1f623c22243f9678fea0518d0ca99cccf557395230c422af55bf853679fded1d"
+      "current_sha256": "edbafdc5c9fc844152fdc3d9db438a52d4832a05a61f8e14625adbd7a9f272a8"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "193b0ad54a34be8290b5417a73914f45461b888b001ad7a696981e990670342d"
+      "current_sha256": "cc72e6fbe2b576e6179969c8357f8645075015c949765dd54af375ff784acb99"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "9f51494d0a93631f7f341ede9de19cab9eb00fff12b1fcfb89a360f6a296c469"
+      "current_sha256": "c214747fbd13965fa0bcb9dbbf80b7bed77e2ab83a266d3700a8a9f1a0c6b062"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "8a07cd1df45640c2cfc0c761a622ef5c6744ab7cb368b1a1c359602538e1ad9d"
+      "current_sha256": "4f2f56379bd996b2c6d60673e23d74e88e3cd2b71377f15f8cd1319fb2ea9a25"
     }
   },
   "functions": [
@@ -6107,6 +6107,50 @@
       },
       "origin": {
         "address": "0x0041B400",
+        "origin": "authored",
+        "subsystem": "BitmapData",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041B2B0",
+        "size": "326",
+        "span_end": "0x0041B3F5",
+        "current_name": "FUN_0041b2b0",
+        "proposed_name": "BitmapData::LoadSerializedPixels",
+        "module": "BitmapData",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041B2B0",
+        "size": "326",
+        "span_end": "0x0041B3F5",
+        "current_name": "FUN_0041b2b0",
+        "proposed_name": "BitmapSerialized41B2B0::Load",
+        "module": "BitmapData",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BitmapSerialized41B2B0::Load(const TextureRecordSnapshot40BF60*)",
+        "is_thunk": "false",
+        "source_file": "src/BitmapSerialized41B2B0.cpp",
+        "evidence": "R021; F102; scripts/repo-python scripts/replay-exact-units.py --unit bitmap-serialized-load-0041b2b0",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F102: complete 326-byte canonical cold exact; all 114 instructions/four branches/six real REL32 calls compare physically; three true scalar allocations and three independently verified R025 memcpy calls; complete 24-byte descriptor repeats accepted save value definition, with all six real fields independently read and initialized by both full 949/918-byte callers through 4/4/4/1/4 metadata reads and payload pointer; caller entry lookup preserves outer descriptor argument, then temporary payload is deleted after deep copy; unsigned encoded-size >0, byte format>=24 and unsigned raw-size SHR retained; actual 16-byte frame/one descriptor parameter/ECX/RET4 and three ABI/two binding negative controls pass; minimal SDK headers naturally emit scalar new, actual new-header control emits three different array-new identities and cannot be aliased; no old-pixel cleanup/validation repair/fake returns/inert locals/padding/assembly/masks/frame aliases/cropped extent; pointer-only owner never constructed, original names/grouping/complete owner layout unknown; 198 old units/headers/objects/inputs/97 unknown origins/drafts unchanged, R021 role retained by alias"
+      },
+      "origin": {
+        "address": "0x0041B2B0",
         "origin": "authored",
         "subsystem": "BitmapData",
         "disposition": "authored",
@@ -100293,6 +100337,65 @@
           "target": 4307299
         }
       ]
+    },
+    "bitmap-serialized-load-0041b2b0": {
+      "source": "src/BitmapSerialized41B2B0.cpp",
+      "object": "build/matching/BitmapSerialized41B2B0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BitmapSerialized41B2B0::Load"
+      ],
+      "symbol": "?Load@BitmapSerialized41B2B0@@QAEXPBUTextureRecordSnapshot40BF60@@@Z",
+      "target_address": 4305584,
+      "size": 326,
+      "compare_size": 326,
+      "relocations": [
+        {
+          "offset": 84,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 125,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 166,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 217,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 253,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 313,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -100463,6 +100566,7 @@
     "src/TexturePack40BF60.cpp": "efb625a36b8478c27fc8a38cd828f5f08b83b6ea85b60146b448227eeecb74e0",
     "src/TexturePack40BF60.hpp": "fd96bf3ee5e1e0dcb24fd181c7600e980348577c43311089fb4ae3fac8a13e85",
     "src/BitmapLoad41A3D0.cpp": "4684b2bef3b2b14393c1901d0aa7daa0b9522ddf57b2c8a0f8ef0956e5dfe55a",
-    "src/BitmapEncode41B400.cpp": "0a55f9c25327c406e748a206e2739d228551f8c05381ff6a552e30ff86f2d2f9"
+    "src/BitmapEncode41B400.cpp": "0a55f9c25327c406e748a206e2739d228551f8c05381ff6a552e30ff86f2d2f9",
+    "src/BitmapSerialized41B2B0.cpp": "8cadc25a61bc1f153c424aa3d44ffb8e1929fb0e893ac67fd2c9aa031efa2d8d"
   }
 }

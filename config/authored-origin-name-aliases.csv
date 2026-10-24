@@ -141,3 +141,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0040BF40,TextureManager::SaveTexturePackDefaultPalette,TexturePack40BF60::SaveDefault,R019,texture-pack-save-default-0040bf40
 0x0041A3D0,BitmapData::LoadBitmap,BitmapPackSource40BF60::LoadFile,R021,bitmap-load-0041a3d0
 0x0041B400,BitmapData::EncodeRuns,BitmapPackSource40BF60::Encode,R021,bitmap-encode-0041b400
+0x0041B2B0,BitmapData::LoadSerializedPixels,BitmapSerialized41B2B0::Load,R021,bitmap-serialized-load-0041b2b0

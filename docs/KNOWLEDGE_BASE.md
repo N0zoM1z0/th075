@@ -22085,3 +22085,76 @@ and PDBs remain. F102 own root/caller decompiles and caller query complete
 with target attestation and their completion markers; full native/dependency/
 caller indices and bounded ABI notes are retained privately. No F102 source
 or exact credit yet.
+
+
+## F102 complete serialized-record loader checkpoint (2026-10-24)
+
+R021 serialized-record loader `0041B2B0..0041B3F5` independently passes
+canonical cold comparison as BitmapSerialized41B2B0::Load(const
+TextureRecordSnapshot40BF60*). All 326 code bytes, 114 instructions, four
+branches and six physical REL32 fields match. Ten following INT3 bytes remain
+outside; there is no associated switch data. One new implementation file
+leaves all old headers and sources intact. The historical
+BitmapData::LoadSerializedPixels role remains by an R021 alias.
+
+The incoming descriptor supplies width/height/stride at offsets 0/4/8, byte
+depth at 12, encoded size at 16 and payload pointer at 20. These six actual
+fields support the complete 24-byte source-compatible descriptor already used
+by accepted Save; its definition is identical across the two translation units.
+Both full callers independently read 4/4/4/1/4 bytes into the metadata fields
+at EBP-32, then store/read the payload pointer at EBP-12. Their index at EBP-8
+lies outside this record. Original type names/grouping remain unknown. This
+value does not establish the complete bitmap owner layout. The new owner
+view stays pointer-only and is never constructed or embedded.
+
+All five metadata values are copied before the allocation branch. Unsigned
+encoded-size >0 copies exactly that many bytes. Otherwise depth>=24 allocates
+and copies stride*height*4; lower depths retain the actual unsigned
+(stride*height*depth)>>3 expression, repeated for allocation and copy. No old
+pixel deletion, format/dimension repair or validation is added. Three genuine
+scalar new calls and three memcpy calls bind independent library entries.
+The actual <new> compiler control emits three different array-new identities;
+those real thunks cannot be aliased. Full R025 memcpy provenance, all 46 local
+fields, six tables and eight RET0 routes are rechecked without a library build
+or dependency credit.
+
+The complete CFG and all six packets preserve the actual 16-byte frame,
+one descriptor parameter, ECX receiver and RET4. Both 949/918-byte callers
+preserve four bytes of outer descriptor argument during entry lookup, then
+pass the returned entry as ECX. Both ignore the loader result and delete
+their temporary payload after the copy. Three wrong-ABI and two wrong-binding
+controls fail. There are no fake returns, inert locals, padding, assembly,
+frame/register aliases, masks or cropped extents. Only this new unit is cold
+built; no accepted dependency replay is needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-serialized-load-0041b2b0
+```
+
+All 198 prior units, 100 canonical objects, 168 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows stay
+unchanged. F009 plus 139 additions retains 563,282 code bytes and 169 inputs.
+Keep all f102 native/attested/ABI/memcpy/physical/cold/parent records and source,
+compiler controls, results, logs and PDBs. All 97 unknown origins and old drafts
+receive no credit.
+
+Current totals: 199 exact functions/units, 573,165 code bytes, 29.04% of
+reviewed authored bytes and 28.99% conservatively including all pending bytes.
+
+Next F103 is the complete 949-byte R019 texture-pack loader `0040B7C0`, one of
+these two callers. The full native export and attested view already exist;
+reconcile signed palette count/selection, all file/metadata/payload lifetimes,
+complete local descriptor, actual texture/upload packets and the true ABI
+before natural source. Preserve the sibling archive loader `0040BBA0` for a
+later cohort. No F103 source or exact credit yet. The 98% goal remains active
+and incomplete.
+
+Final F102 CI passes 3,603 tests in 126.212s. Bounded cleanup
+removes two obsolete reproducible probe/control objects (18,052 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, source/control inputs, complete ABI evidence, logs and PDBs
+remain. F103 native/dependency index, sole-caller query, complete 27-byte
+default wrapper and bounded ABI notes are retained privately. The wrapper
+passes exactly zero, with RET4; the 949-byte main has RET8. Reconcile and
+cold-compare both independently if accepted together. No F103 source or
+exact credit yet.
