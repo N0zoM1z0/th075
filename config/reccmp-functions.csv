@@ -205,3 +205,4 @@ TexturePackArchive40BBA0::LoadDefault,0x0040BB80,function
 BitmapLifecycle41A2D0::ConstructDefault,0x0041A2D0,function
 BitmapLifecycle41A2D0::ConstructWithFormat,0x0041A310,function
 BitmapLifecycle41A2D0::Destroy,0x0041A380,function
+FighterPattern457660::Load,0x00457660,function

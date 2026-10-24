@@ -149,3 +149,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0041A2D0,BitmapData::Initialize,BitmapLifecycle41A2D0::ConstructDefault,R021,bitmap-default-constructor-0041a2d0
 0x0041A310,BitmapData::InitializeWithFormat,BitmapLifecycle41A2D0::ConstructWithFormat,R021,bitmap-format-constructor-0041a310
 0x0041A380,BitmapData::ReleaseResources,BitmapLifecycle41A2D0::Destroy,R021,bitmap-destructor-0041a380
+0x00457660,FighterState::LoadPattern,FighterPattern457660::Load,R045,fighter-pattern-load-00457660

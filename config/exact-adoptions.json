@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F105",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F106",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "db8bfa32398c9d0655bf455be7b4d67a91878f8efd5783a6f4935fabbd1a9667"
+      "current_sha256": "51cb388a37a6a1a0c91141d367b0c6d381c1a07095abdf473867d569d1d7016d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "11141cc9c12848d6cf3165ea35fad755b49508016d848f735d4a70fafeb29133"
+      "current_sha256": "99c62e8a8ffe5c334cbc18c62618d54507905d392bb88a04d52c8a286ee54e4b"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "13998bce2353a6fd3971c1841ccf307f349387f7a6fcd94a62e794dad9e86ff1"
+      "current_sha256": "0f53a1f67a6477aabe54d431489d3357aaed314f2d1151e7c48514124ba39b39"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6f4772e72315724ea8d17bce5498d2152f87ad1e1ad3ae4d7f115e538fa50344"
+      "current_sha256": "e75d177ae563aaad3891e37b0488b4262b918e2d9f20cbca95316947df111144"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a26aa7eee8719983f5e56a254b99ceaa803d29989f21adce38a61ebff1076cb7"
+      "current_sha256": "56ef462b6594e6ed71ef5885fc55abe692e9e872cbbeea8d5720bb35fe9dff23"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "1f6177378a870657e964200d88fd9c05f6fe8f384bfd9ce39189bf4e4c8a022b"
+      "current_sha256": "dd84987277ccaadd17282a97f53e76e35d3714463ae86792b227f95d9b187fca"
     }
   },
   "functions": [
@@ -6464,6 +6464,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00457660",
+        "size": "3696",
+        "span_end": "0x004584CF",
+        "current_name": "FUN_00457660",
+        "proposed_name": "FighterState::LoadPattern",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00457660",
+        "size": "3696",
+        "span_end": "0x004584CF",
+        "current_name": "FUN_00457660",
+        "proposed_name": "FighterPattern457660::Load",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterPattern457660::Load()",
+        "is_thunk": "false",
+        "source_file": "src/FighterPattern457660.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F106; scripts/repo-python scripts/replay-exact-units.py --unit fighter-pattern-load-00457660",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F106: complete3696byte independent canonical cold exact/all1091instructions/26branches/158calls/171realfields,actual568byteGS+EHframe/RET0,adjacentnextfunction4584D0notpadding; all47ReadFilepackets and18complete directcalleeABI contracts preserveouterfilename4bytes,borrowedarchivecontext/HANDLE,noCloseHandle; complete35bytecleanup+registration and44byteunwindmap/FuncInfo all7fields,twoEHstates0/1,pluswhole44bytegeneratedscalar-deletingCOMDAT/tworealfields independentlyexact,nocompiler/helpercredit; complete source-compatible16/116/20values fromallactualfields/memberconstructors,memset16/116,new20,iteratorstride116 andboxstride16; opaquevectorboxelementneverinstantiated,ordinaryalignmentonly,meaningfulSDKMAX_PATH260 andactualserialized16bytebuffers; signedmode0/1/2,overlappingextensionword/+1byte,onesignedwordscratchreusedthreepercentstores,threefreshword-to-floats,angle0.001/scales0.01,distinctboxvectors84/100 andignoredSDKresults retained; naturalusedlocalname/declarationcontrols thenliteralzero-to-pointerconst-reference reproducesactualtemporaryEBP-476,notfakeframestorage; threewrongbinding/threepacket-mutationcontrols rejected; no padding/inertlocals/rawnewsubstitutes/manualEH/assembly/framealiases/masks/croppedextent; all206oldunits/104objects/172inputs/97unknownorigins/headers/drafts unchanged,R045roleretainedbyalias; fighter/slot/helperinterfacespointeronly neverconstructed,originalnames/grouping/opaqueelementtypes/fullfighterlayoutunknown; resource-root456B60stillunaccepted"
+      },
+      "origin": {
+        "address": "0x00457660",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -101337,6 +101381,1056 @@
           "target": 6557461
         }
       ]
+    },
+    "fighter-pattern-load-00457660": {
+      "source": "src/FighterPattern457660.cpp",
+      "object": "build/matching/FighterPattern457660.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterPattern457660::Load"
+      ],
+      "symbol": "?Load@FighterPattern457660@@QAEXXZ",
+      "target_address": 4552288,
+      "size": 3696,
+      "compare_size": 3696,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?Load@FighterPattern457660@@QAEXXZ",
+          "target": 6644088
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "??0PatternFrame116@@QAE@XZ",
+          "target": 4556768
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "$SG60160",
+          "target": 6655900
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "$SG60161",
+          "target": 6655928
+        },
+        {
+          "offset": 120,
+          "type": "REL32",
+          "symbol": "?Find@ArchiveLookup41CF00@@YAPAVArchiveContext41D750@@PBD@Z",
+          "target": 4312832
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?SeekNamedEntry@ArchiveContext41D750@@QAEPAXPBD@Z",
+          "target": 4314960
+        },
+        {
+          "offset": 168,
+          "type": "REL32",
+          "symbol": "?Size@PatternSlots457660@@QAEIXZ",
+          "target": 4465120
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 224,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 231,
+          "type": "REL32",
+          "symbol": "?Clear@PatternSequence20@@QAEXXZ",
+          "target": 4557648
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 294,
+          "type": "REL32",
+          "symbol": "??_GPatternSequence20@@QAEPAXI@Z",
+          "target": 4556432
+        },
+        {
+          "offset": 334,
+          "type": "REL32",
+          "symbol": "?Clear@PatternSlots457660@@QAEXXZ",
+          "target": 4557856
+        },
+        {
+          "offset": 356,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 394,
+          "type": "REL32",
+          "symbol": "?Assign@PatternSlots457660@@QAEXIABQAVPatternSequence20@@@Z",
+          "target": 4557824
+        },
+        {
+          "offset": 416,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 468,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 489,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 501,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 534,
+          "type": "REL32",
+          "symbol": "??0PatternSequence20@@QAE@XZ",
+          "target": 4557152
+        },
+        {
+          "offset": 589,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 626,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 642,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 671,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 687,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 709,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 741,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 748,
+          "type": "REL32",
+          "symbol": "?Assign@PatternSequence20@@QAEXIABVPatternFrame116@@@Z",
+          "target": 4557616
+        },
+        {
+          "offset": 811,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 818,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 832,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 865,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 872,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 883,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 916,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 923,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 937,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 970,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 977,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1013,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1046,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1053,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1096,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1103,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1150,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1157,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1164,
+          "type": "REL32",
+          "symbol": "?ResetExtension@PatternPrefix16@@QAEXXZ",
+          "target": 4556688
+        },
+        {
+          "offset": 1197,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1204,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1218,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1251,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1258,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1275,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1308,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1315,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1332,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1365,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1372,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1389,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1422,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1429,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1446,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1471,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1496,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 1527,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1534,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1571,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 1602,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1609,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1646,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 1677,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1684,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1729,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1736,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1753,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1786,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1793,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1810,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1843,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1850,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1867,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1892,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1942,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 1949,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 1986,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2036,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2043,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2080,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2130,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2137,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2182,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2189,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2203,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2228,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2253,
+          "type": "DIR32",
+          "symbol": "__real@3a83126f",
+          "target": 6656096
+        },
+        {
+          "offset": 2284,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2291,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2333,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2340,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2354,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2387,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2394,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2408,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2441,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2448,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2462,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2495,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2502,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2516,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2549,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2556,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2570,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2603,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2610,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2624,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2657,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2664,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2678,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2711,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2718,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2732,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2765,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2772,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2786,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2819,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2826,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2840,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2865,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2890,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 2921,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 2928,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 2962,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 2987,
+          "type": "DIR32",
+          "symbol": "__real@3c23d70a",
+          "target": 6651972
+        },
+        {
+          "offset": 3018,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3025,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3067,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3074,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3088,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3121,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3128,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3142,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3175,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3182,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3196,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3229,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3236,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3250,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3283,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3290,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3304,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3337,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3344,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3358,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3383,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3449,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3481,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3488,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3498,
+          "type": "REL32",
+          "symbol": "?Append@PatternBoxWriter458A10@@QAEXPBE@Z",
+          "target": 4557328
+        },
+        {
+          "offset": 3525,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3591,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 3623,
+          "type": "REL32",
+          "symbol": "?At@PatternSlots457660@@QAEAAPAVPatternSequence20@@I@Z",
+          "target": 4557760
+        },
+        {
+          "offset": 3630,
+          "type": "REL32",
+          "symbol": "?At@PatternSequence20@@QAEAAVPatternFrame116@@I@Z",
+          "target": 4557552
+        },
+        {
+          "offset": 3640,
+          "type": "REL32",
+          "symbol": "?Append@PatternBoxWriter458A10@@QAEXPBE@Z",
+          "target": 4557328
+        },
+        {
+          "offset": 3670,
+          "type": "REL32",
+          "symbol": "??1PatternFrame116@@QAE@XZ",
+          "target": 4557024
+        },
+        {
+          "offset": 3680,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 3688,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -101511,6 +102605,7 @@
     "src/BitmapSerialized41B2B0.cpp": "8cadc25a61bc1f153c424aa3d44ffb8e1929fb0e893ac67fd2c9aa031efa2d8d",
     "src/TexturePackLoad40B7C0.cpp": "bb6050c110cb78571781b01dea2f433662a3350711ba0efc2e2efe9912c08a9d",
     "src/TexturePackArchive40BBA0.cpp": "9ed8e435429f338d2913058218ab52f0e135f026f850c3279bb520716d5287d5",
-    "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3"
+    "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3",
+    "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28"
   }
 }

@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F106 fighter resource-loader investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F107 fighter resource-loader investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 206 / 206 / 206 |
-| Exact code bytes | 575,327 |
-| Reviewed authored coverage | 575,327 / 1,973,516 (29.15%) |
-| Conservative coverage, including every pending byte | 575,327 / 1,977,124 (29.10%) |
+| Source-present / exact functions / exact units | 207 / 207 / 207 |
+| Exact code bytes | 579,023 |
+| Reviewed authored coverage | 579,023 / 1,973,516 (29.34%) |
+| Conservative coverage, including every pending byte | 579,023 / 1,977,124 (29.29%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **146 additions /
-565,444 code bytes / 172 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **147 additions /
+569,140 code bytes / 173 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,118 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F105
+## Latest accepted function: F106
+
+R045 fighter pattern loader `00457660..004584CF` (3,696 bytes) independently
+passes canonical cold comparison as FighterPattern457660::Load. All 1,091
+instructions, 26 branches, 158 calls and 171 real relocation fields match.
+The next function begins immediately at `004584D0`; no alignment or table byte
+is credited. One new implementation file leaves all prior sources and headers
+intact. The actual 568-byte GS/C++ EH frame and RET0 are preserved.
+
+The loader builds a default frame value, formats the character pattern path,
+and borrows the archive context/handle using the already reviewed one-name
+cdecl lookup and one-filename thiscall seek. Filename remains live on the stack
+during lookup. It clears and deletes existing sequences, clears/reassigns the
+slot vector, then reads each sequence and frame in native order. SDK results
+remain ignored; no CloseHandle or new archive ownership is added. All eighteen
+direct callees retain complete extents and real return cleanup. Every ordinary
+CFG edge is reachable and stack joins agree, including nested helper calls
+while outer SDK arguments remain live.
+
+All 47 ReadFile packets are independently traced. Modes 0/1/2, the extension's
+initial two-byte field followed by a one-byte read at overlapping offset1,
+its four one-byte reads, the signed short scratch and actual float
+conversions are retained. One short supplies three `0.01f` stores; three later
+reads convert separately to float. The frame angle uses the actual `0.001f`
+constant, and its scales use `0.01f`. Raw serialized 16-byte records feed two
+distinct vectors at offsets84/100. Complete source-compatible 16/116/20-byte
+values use real serialized fields, members and natural alignment. Their
+extents are independently anchored by full constructors, memset16/116,
+new20, the complete iterator's multiply-by116 and box capacity's divide-by16.
+The opaque box element is never instantiated; its vector uses the complete
+vendor layout with externally defined lifetimes. The fighter, slot and other
+helper owners remain pointer-only. No missing owner bytes are supplied as
+arbitrary storage. Original names, grouping and box element declarations stay
+unknown.
+
+The meaningful filename bound remains SDK MAX_PATH260 through every probe.
+The first full natural source emitted all 1,091 instructions and the full frame,
+with different real local positions. Bounded compiler controls measure genuine
+used names and declaration order. The final seven differences were a real
+pointer temporary: `assign(count, 0)` materializes a null pointer bound to the
+const reference at EBP-476 after the deletion temporaries. Directly passing
+zero reproduces this naturally. The accepted source adds no named null local,
+padding, inert storage, manual returns/EH, assembly, frame aliases, masked
+fields, array growth or cropped extent.
+
+The entire generated cleanup/registration section (35 bytes) and unwind map/
+FuncInfo (44 bytes) independently match all seven real fields. State0 destroys
+the default frame at EBP-444; state1 deletes a failed sequence allocation at
+EBP-484 and then unwinds to state0. The whole 44-byte generated scalar deleting
+CODECOMDAT independently matches its destructor/delete targets; it has no
+function definition AUX, so no AUX-sized extraction is claimed. Neither these
+compiler bodies nor support helpers receive code credit. Three actual wrong
+binding comparisons and three explicit SDK/call-packet mutation comparisons
+fail. The latter are packet controls, not compiled source variants.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit fighter-pattern-load-00457660
+```
+
+Only this new unit is cold-built. All 206 prior units, 104 canonical objects,
+172 source inputs, 218 origin files, nine shared headers, 91 active drafts and
+4,350 other function rows stay unchanged. F009 plus 147 additions retains
+569,140 code bytes and 173 inputs. Keep all f106 native/attested/CFG/packet/
+layout/EH/binding/cold/parent evidence, every compiler/source/name control and
+results/logs/PDBs. Existing frozen f105 root notes remain unchanged. All 97
+unknown origins and older drafts receive no credit.
+
+Current totals: 207 exact functions/units, 579,023 code bytes, 29.34% of
+reviewed authored bytes and 29.29% conservatively including all pending bytes.
+The 98% goal remains active and incomplete.
+
+Final F106 CI passes 3,603 tests in 124.209s. Bounded cleanup removes seven
+obsolete reproducible probe/control objects (108,444 bytes) and 8,282,705 bytes of
+Python caches, with per-file hash receipts. Canonical outputs, all source and
+compiler inputs, complete evidence, results, logs and PDBs remain. The refined
+final name-selection receipt explicitly distinguishes the earlier named-zero
+controls from the accepted literal-zero pointer-reference temporary.
+
+## Current reconstruction cohort: F107
+
+Continue the complete 1,186-byte R045 fighter resource loader `00456B60`.
+Its pattern-loading prerequisite is now accepted above; the F105 bitmap
+lifecycle prerequisites remain exact. The root still has no accepted source
+or exact credit. Preserve its original f105 exports/attestation/caller/index/
+ABI notes, together with the f106 dependency decompile and field scans.
+
+The 24-byte command owner now has independent complete member evidence:
+texture pointer0, actual list12 at4, signed sampling byte16, signed capacity
+word18 and DWORD color mask20. The constructor defaults byte16 to5 and word18
+to15 and leaves color mask20 untouched. Full setter `00410FE0` stores20 and
+full renderer `00411110` ANDs that mask with each element's color. The earlier
+missing-field question is resolved; this does not yet accept that owner's
+constructor or claim original type names. Its list element remains opaque.
+
+The 80-byte texture owner still needs an independently justified complete
+allocatable model. Its constructor calls the graphics client base and actual
+vectors at8/24/40, a deque at56, then sets palette pointer4 and format byte76.
+The first vector has a 44-byte stride; its 22-byte constructor wrapper calls
+the accepted bitmap constructor at0 but does not establish extra fields or the
+full base extent. The existing graphics client partial declaration still
+cannot be instantiated or embedded. Recover actual member/base evidence;
+do not invent a vptr, padding fields, raw storage substitutes, size-ignoring
+new, or opaque byte arrays to manufacture allocation80.
+
+Reconcile the root's real GS/EH cleanup/scope graph and meaningful filename
+bound. Its decompiled 532-byte array is not a proved bound. Keep actual three
+constructor new expressions/null checks/cleanup states, character/archive-key
+comparisons, signed palette+1, diagnostics, script loads, notice-mode call and
+final virtual slot0x18 in native order. Do not grow arrays to force a frame
+match. Preserve all old accepted units, origins, headers and draft inputs.
+
+## Previous accepted functions: F105
 
 The R021 bitmap lifecycle bodies at `0041A2D0..0041A308` (57 bytes),
 `0041A310..0041A378` (105 bytes) and `0041A380..0041A3CA` (75 bytes)
@@ -87,7 +198,7 @@ obsolete reproducible probe object (9,747 bytes) and 8,282,705 bytes of Python c
 with per-file hash receipts. Canonical outputs, source inputs, complete
 evidence, logs and PDBs remain.
 
-## Current reconstruction cohort: F106
+## F106 investigation at the F105 checkpoint
 
 Continue the complete 1,186-byte R045 fighter resource loader `00456B60`,
 retaining the original f105 root exports/attestation/caller/index/ABI notes.
