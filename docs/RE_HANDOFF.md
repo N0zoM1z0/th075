@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 161 / 161 / 161 |
-| Exact code bytes | 523,476 |
-| Reviewed authored coverage | 523,476 / 1,973,516 (26.53%) |
-| Conservative coverage, including every pending byte | 523,476 / 1,977,124 (26.48%) |
+| Source-present / exact functions / exact units | 164 / 164 / 164 |
+| Exact code bytes | 523,543 |
+| Reviewed authored coverage | 523,543 / 1,973,516 (26.53%) |
+| Conservative coverage, including every pending byte | 523,543 / 1,977,124 (26.48%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **101 additions /
-513,593 code bytes / 118 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **104 additions /
+513,660 code bytes / 120 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,52 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F070
+## Latest accepted cohort: F071
+
+Three complete service bodies from `src/EffectServices.cpp` / `.hpp` are
+independently cold-exact: shared sound0045B860 (29 bytes/11 instructions),
+fighter shake00453E60 (25/11), and shake amount00412CB0 (13/6). All67 bytes,
+four physical relocations, actual returns and adjacent alignment boundaries
+are checked. Explicit aliases preserve R102/R035 historical roles; ownership,
+native extents/hashes and all97 unknown origins remain unchanged.
+
+Sound sign-extends the actual short to the existing SoundBank::Play(int)
+contract and loads the real shared bank pointer. The actual142-byte bank
+callee uses a dword argument and ret4. Shake forwards the unchanged float word
+to the cdecl setter with four-byte caller cleanup; setter stores the same
+word at006713F8. Its float view is independently supported by six x87 uses in
+complete004126C0 and the real F0663.0f owner-at-E4 call. Both wrong-cleanup
+controls fail. Two sound callers pass current; one shake caller passes owner.
+Original declarations/names/full layouts remain unknown. Never construct/embed
+partial owners. The existing shared GameLeafHelpers header is unchanged.
+
+Preview, independent canonical compile and a separate cold build accept all
+three units across one new object with the existing explicit build3077 profile.
+All161 previous units/objects and118 previous source inputs are unchanged and
+were not rebuilt. Retain f071 binder, ABI review, both physical receipts,
+accepted replay/log, adoption-parent/progress, fresh attested views/log,
+candidate/native evidence and private preview sources. Reproduce only these:
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit effect-shared-sound-0045b860 --unit fighter-camera-shake-00453e60 --unit camera-shake-amount-00412cb0
+```
+
+Full CI passes **3,603 tests in126.719 seconds**; tracking, progress and
+whitespace checks pass. The evidence check retains all161 prior units/objects,
+118 inputs,218 origin files,4348 other function rows and every active draft.
+The redundant preview object and generated scripts/tests bytecode were removed
+after full equality/CI, preserving PDBs/inputs/evidence/shared tools.
+
+Next: R035 complete camera update004126C0,1520 bytes. Full raw native export
+and fresh attested view are retained. The natural preview at
+`.analysis/camera-update-4126c0/Preview.cpp` / `.hpp` and active
+`build/probes/F072Preview.obj` emits a1520-byte structural-exact body.
+No F072 source-presence entry, canonical unit or exact credit exists. Complete
+physical191-relocation/global/constant binding and ABI review are still required.
+All six small dependency origins remain unknown and receive no credit.
+Continue large F066 only from preserved active03, without repeating controls.
+
+## Previous accepted function: F070
 
 `RecordedRange455580::SelectRange` cold-replays exact across all 139 bytes at
 `0x00455580..0x0045560A`: 40 instructions, four branches, five actual calls,

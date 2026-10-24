@@ -20291,3 +20291,52 @@ These are diagnostic previews with no source-presence entry, canonical unit,
 new origin decision or exact credit. Complete ABI/source review, fresh attested
 views, independent canonical compile and separate cold replay remain required.
 The98% goal remains active; this bounded commit does not complete it.
+
+
+## F071 complete sound/shake services cold acceptance (2026-10-24)
+
+R102 sound0045B860/29 bytes and shake00453E60/25 bytes, plus R035 setter
+00412CB0/13 bytes, are independently canonical cold-exact from
+EffectServices.cpp/.hpp. All67 bytes/28 instructions/four actual relocations
+and ret4/ret4/ret0 are checked; alignment excludes3/7/3 following INT3 bytes.
+Explicit aliases retain each historical origin role, extent/hash and ownership.
+No origin or pending-byte denominator changes.
+
+Target observations: sound saves incoming this atEBP-4 but obtains the actual
+SoundBank receiver from00671618. It sign-extends its short into the actual
+int argument; complete142-byte bank callee compares dword[EBP+8] and ret4.
+Shake also saves unused this, passes unchanged float word to the complete
+cdecl setter and cleans its four-byte argument. Setter writes the same word
+to006713F8. Six native x87 consumer accesses in complete1520-byte004126C0 and
+F066's actual3.0f owner-at-E4 call support the float view. Two F066 sound calls
+use current. Linear stack checks reject zero cleanup for sound and callee
+cleanup4 for the cdecl shake call. Ghidra's inferred extra setter argument is
+rejected against real pushes, cleanup and the full setter body. Ignored results
+do not recover original void declarations; original names/types/full owners
+remain unknown. All views are pointer-only and never constructed/embedded.
+
+Compiler observations: natural C++ reuses unchanged accepted GameLeafHelpers
+SoundBank declarations. No layout, assembly, target arrays, inert locals,
+padding, fake returns or alternate bodies. Preview, independent canonical
+compile and separate one-object/three-unit cold replay match using build3077
+and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All161 earlier units/canonical objects,
+118 earlier manifest inputs,218 origin files and all4348 other function rows
+remain unchanged; no earlier unit is rebuilt. Active F021/F048/F061/F066 are
+retained without exact credit. Total164 exact functions/523,543 bytes gives
+26.53% reviewed authored/26.48% conservative coverage. F009 plus104 additions
+retains513,660 code bytes/120 inputs; all97 unknown origins remain unknown.
+
+Complete ABI/native/attested/source/cold/physical receipts stay below .analysis/.
+Full3603-test CI passes in126.719 seconds, tracking/progress/whitespace checks
+pass, and the preview object is removed after complete COFF byte/relocation
+equality allowing only the explicit owner/namespace renames. Generated Python
+bytecode under scripts/tests is removed after CI with per-file hashes. PDBs,
+inputs/evidence, active objects and shared tools remain. Goal98% stays active.
+
+Next F072 is complete1520-byte R035 camera policy004126C0. Native constants,
+global accesses and all six dependency wrapper/worker bodies are exported.
+One manually reviewed natural preview emits structural-exact1520 bytes with
+191 relocations. That is diagnostic only; no source presence/unit/exact credit.
+Keep camera-update-4126c0 inputs/F072Preview.obj and finish full physical bindings,
+callee ABI/source review and independent canonical cold replay. The six small
+wrapper/worker origins stay unknown and get no credit.

@@ -159,3 +159,6 @@ AnimationProgress40FA30::AdvanceNestedFrame
 SpriteTransform40FBB0::ResetNodeTransform
 ObjectMotion40FB70::SetPolarVelocity
 RecordedRange455580::SelectRange
+EffectSound45B860::PlaySharedSound
+FighterShake453E60::SetCameraShake
+CameraShake412CB0::SetShakeAmount
