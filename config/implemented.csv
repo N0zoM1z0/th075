@@ -227,3 +227,4 @@ AudioStreamRecord408110::OpenFile
 AudioStreamRecord408110::OpenArchiveEntry
 AudioStreamRecord408110::ReadLoopPointsFromFile
 AudioStreamRecord408110::ReadLoopPointsFromArchive
+AudioStreamRefill408BD0::Refill

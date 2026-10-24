@@ -228,3 +228,4 @@ AudioStreamRecord408110::OpenFile,0x00408110,function
 AudioStreamRecord408110::OpenArchiveEntry,0x00408390,function
 AudioStreamRecord408110::ReadLoopPointsFromFile,0x00408670,function
 AudioStreamRecord408110::ReadLoopPointsFromArchive,0x00408900,function
+AudioStreamRefill408BD0::Refill,0x00408BD0,function

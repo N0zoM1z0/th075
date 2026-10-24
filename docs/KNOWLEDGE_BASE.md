@@ -23256,3 +23256,116 @@ clear/destructor wrapper00409490. Keep compiler builds serial and remove only
 obsolete reproducible outputs after retaining inputs and evidence. Resource
 root00456B60 remains unaccepted with f107's real588-byte frame and unresolved
 texture80/layout/meaningful filename bound. No fabricated padding or storage.
+
+## F113 complete refill checkpoint (2026-10-25)
+
+Complete R017 refill `00408BD0..0040928B` independently passes canonical cold
+comparison: **1,724 code bytes, 626 instructions, 25 calls and all 19 real
+relocation fields**. Four following INT3 bytes stay outside the extent. One
+new source/object/unit preserves every old source and header, so no prior
+unit needs replay. The full ordinary/polling CFG and every stack join agree,
+with the actual 76 byte frame, one RET4 and no embedded data tables.
+
+The SDK call is GetCurrentPosition(null-play-cursor, &write-cursor), not a
+play-cursor query. Missing owner handle returns immediately. The nonloop EOF
+Stop windows retain their strict circular comparisons and continue into the
+refill gate. The gate uses the unsigned cursor interval and the actual
+bool-product/SBB-NEG-IMUL expression for its wrapped upper boundary. The sole
+reviewed caller pushes the fixed0x20000 block size and ignores the return.
+
+After the gate, CreateEventA(0,0,0,0) and Wait20 poll the request byte67138C.
+The event is closed before the active byte67138D becomes1. Every normal return
+after that claim necessarily passes the active=0 store. Each of the three
+Locks necessarily reaches its own Unlock. Early no-handle/gate exits leave
+the active byte untouched. The source preserves this actual protocol without
+claiming original volatile spelling or synchronization correctness.
+
+The three complete policies retain all native differences. Nonloop mode
+seeks to the current file position. A crossing that starts before EOF reads
+the valid prefix, zero-fills the overflow, advances the half boundary by that
+overflow (not the full count), wraps each ring boundary by at most one buffer
+size and advances the file position by the full count. Once already at/past
+EOF, the locked path performs no read or state update before Unlock. The
+noncrossing path reads the full count and advances normally.
+
+An explicit loop uses dataBegin+loopEnd as its limit. A crossing reads the
+first segment, seeks to dataBegin+loopEnd-loopLength, reads the overflow, and
+writes next=count-loopLength+next. With looping enabled but loopEnd0, the
+crossing has two consecutive reads without a second seek and writes
+next=count-absoluteDataEnd+next. Both use full-count ring advancement. These
+behaviors, inclusive crossing comparisons, zero-length boundary calls,
+ENTIREBUFFER2 flags and ignored SDK results remain unchanged.
+
+The source has two genuine root DWORDs, the actual scoped event, and three
+scoped groups of four SDK outputs plus one real overflow value each. Their
+observed slots are -4/-8/-12, -16..-32, -36..-52, -56..-72 and owner-76.
+The first natural source is entirely exact using retained compiler name
+measurements; no new name-control build or storage search is needed. A
+separate pointer-only owner view leaves the accepted input declarations
+unchanged. It is never instantiated, embedded or allocated. Full owner layout,
+original names/types and original return declaration remain provisional; the
+source uses a compatible void interface without inventing a return value.
+
+All actual SDK slots/packet widths/imports are independently checked. Four
+wrong physical bindings, three packet mutations and three native state-store
+mutations fail. The complete vendor memset evidence remains unchanged and
+receives no new credit. There is no padding, inert local, artificial array,
+extra scope/storage, manual EH, assembly, ABI alias, mask or cropped comparison.
+The /GS setting is explicit reproducibility configuration; this body has no
+eligible local array and no cookie sequence, so it does not distinguish an
+executable-wide original /GS profile.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit audio-record-refill-00408bd0
+```
+
+All 229 prior units, 111 canonical objects, 179 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows stay
+unchanged. F009 plus170 additions retains580,116 code bytes and180 new inputs.
+R017 historical role remains through its alias. All97 unknown origins remain
+unknown. Keep every f113 source, attested/native/CFG/SDK/packet/state/helper/
+name-selection/binding/cold/parent input and all results, logs and PDBs.
+
+Full CI passes **3,603 tests in 127.319 seconds**; seven exact-checkpoint
+checks also pass. Target, tracking, progress and whitespace checks pass.
+No old unit was cold-rebuilt.
+
+Cleanup removes only the one obsolete reproducible probe object / 11,939 bytes
+and375 Python bytecode caches / 8,282,863 bytes, reclaiming8,294,802 bytes.
+The first probe and canonical object agree on the full1724 bytes and all19
+relocation records. Canonical outputs, all source/compiler inputs, retained
+prior name measurements, complete native/CFG/SDK/packet/state/helper evidence,
+results, logs and PDBs remain. Hash receipts and preservation guards are in
+`.analysis/f113-object-cleanup.json`, `.analysis/f113-preservation-cleanup.json`
+and `.analysis/f113-final-compiler-inputs.json`. All229 old units,111 old objects,
+179 source inputs,218 origin files,nine headers,91 active drafts and4,350
+other function rows pass unchanged checks. No compiler or CI job remains active.
+
+Current totals: **230 exact functions/units, 589,999 code bytes**, 29.90% of
+reviewed authored bytes and **29.84% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F114
+
+Bounded raw exports for all six candidates are retained in
+`.analysis/f114-native-frontier.json` and `.analysis/f114-stream-control/`.
+These linear exports establish no source, ABI, layout or CFG acceptance;
+no F114 source or credit exists yet.
+
+
+Continue the complete R016 stream-control cohort: ClearPlayback `00407CA0`
+(29 bytes), Start `00407CC0` (169), Stop `00407D70` (88), ApplyVolumeOffset
+`00407DD0` (129), ScheduleFade `00407E60` (138), and Worker `00407EF0` (535),
+total1,088 bytes. The complete worker export is retained in
+`.analysis/f113-audio-refill/caller-00407ef0.asm`. Refill and the four input
+methods, factory and device prerequisites are now exact. Review the real SDK
+queue/control/fade packets, all fields and scalar arithmetic before source.
+Do not infer an allocatable stream/queue owner or complete private layout.
+
+Preserve accepted interfaces and dependencies, using a separate pointer-only
+view where needed. ABI/header changes require replay of affected units. Keep
+all old units,97 unknown origins and active drafts, including wrapper00409490.
+Compiler builds remain serial; remove only obsolete reproducible outputs after
+retaining inputs and evidence. Resource root00456B60 remains unaccepted with
+f107's real588-byte frame and unresolved texture80/layout/meaningful filename
+bound. No invented padding, storage, buffers or incomplete owner allocation.

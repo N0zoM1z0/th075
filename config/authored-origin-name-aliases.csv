@@ -172,3 +172,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00408390,AudioStreamRecord::OpenArchiveEntry,AudioStreamRecord408110::OpenArchiveEntry,R017,audio-record-open-archive-00408390
 0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStreamRecord408110::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
 0x00408900,AudioStreamRecord::ReadLoopPointsFromArchive,AudioStreamRecord408110::ReadLoopPointsFromArchive,R017,audio-record-loop-archive-00408900
+0x00408BD0,AudioStreamRecord::RefillBuffer,AudioStreamRefill408BD0::Refill,R017,audio-record-refill-00408bd0

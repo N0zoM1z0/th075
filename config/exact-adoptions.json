@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F112",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F113",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "6b1b725f86cc6588e6cd04e26dae16ad09f4126bc3d997fdb8b14cbaa3156305"
+      "current_sha256": "14e8e8ae85657dfe63795cf9157ab656bdb184161f69793f80aa5ddbd1095d89"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "0cc48acfcee87e8adb9f85d2b6548db2019827fb3f13d95b8145d781f62c7cb8"
+      "current_sha256": "a5cc19ce676174d345818283bc6fd2b4c286848132745d61bbac908ba0d2daec"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7ba2bf52771cfd83ac034c93b012ae2d535633383fd2024eba9c7c84632e9d3e"
+      "current_sha256": "5a32908adb8eba0a98ffd11131471e0cfe5d04572216d81ed41090361428e8f0"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "82b62f77336723761fef2c5a72e3ec619f8f2f123cf6826c9f1ecc5e027f9e51"
+      "current_sha256": "5d1c1e424f07c83c2bb0ffdf0291a26e5c43a4a9bba9f6cb2cfa6c74abac4538"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b1a50e527a2ddae9a2c65f7f3130738efef3510f277b6d12f07cd4f3e105b357"
+      "current_sha256": "f81d30df4bb1a205657dd046497404531f9ac7bff515f115f5b9cb369ee1921d"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "7125624b05a0c20c65fd551d7af1b836a01fb667f0261268ea6720768c2c2aec"
+      "current_sha256": "d073d60de084ec47054a25d371f18bf91aaddaabc712e9908a4e48ea3113f6c8"
     }
   },
   "functions": [
@@ -7471,6 +7471,50 @@
       },
       "origin": {
         "address": "0x00408900",
+        "origin": "authored",
+        "subsystem": "AudioStreamRecord",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00408BD0",
+        "size": "1724",
+        "span_end": "0x0040928B",
+        "current_name": "FUN_00408bd0",
+        "proposed_name": "AudioStreamRecord::RefillBuffer",
+        "module": "AudioStreamRecord",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00408BD0",
+        "size": "1724",
+        "span_end": "0x0040928B",
+        "current_name": "FUN_00408bd0",
+        "proposed_name": "AudioStreamRefill408BD0::Refill",
+        "module": "AudioStreamRecord",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioStreamRefill408BD0::Refill(DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/AudioRefill408BD0.cpp",
+        "evidence": "R017; F113; scripts/repo-python scripts/replay-exact-units.py --unit audio-record-refill-00408bd0",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F113: complete 1724 byte independent canonical cold exact; all626 instructions/25 actual packets/19 real fields, whole native ordinary and polling CFG/stack joins, real76-byte frame/RET4 and four following INT3 bytes excluded. Actual GetCurrentPosition(null-play,&write) SDK slot0x10 and unsigned circular gate preserve bool-product/SBB-NEG-IMUL range; two EOF Stop calls retain strict window boundaries and do not introduce return. Actual event/Wait20/Close polls request byte67138C, then sets active byte67138D; every normal return after claim clears active, all three Locks necessarily reach their corresponding Unlock. Three real scoped SDK output groups and inner overflow values occupy native12+3x20+4 owner frame; no invented locals, storage or scopes. Nonloop tail reads valid prefix, zero-fills overflow and increases boundary by overflow, not full count; already-past-end lock/unlock performs no read/state update. Explicit-loop crossing seeks begin+loopEnd-loopLength and sets next=count-loopLength+next; whole-file-loop crossing has no second seek, reads twice and sets next=count-absoluteEnd+next. All one-subtraction ring wraps, inclusive crossings, zero-length boundary calls, ENTIREBUFFER2 flags and ignored results preserved. First natural probe completely exact using retained prior real name measurements; no new search control build, Source input declarations unchanged via separate pointer-only view. Native caller pushes actual0x20000 block and ignores return. No partial owner instantiated/embedded or complete layout claim. Four wrong physical bindings, three packet mutations and three state-store controls rejected; no padding/inert locals/arrays/fake returns/manual EH/assembly/ABI aliases/masks/cropped extent. All229 prior units/111 objects/179 source inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R017 role retained by alias. Original names/full owner extent/member signedness and original volatile spelling remain unknown; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x00408BD0",
         "origin": "authored",
         "subsystem": "AudioStreamRecord",
         "disposition": "authored",
@@ -106198,6 +106242,144 @@
           "target": 6555153
         }
       ]
+    },
+    "audio-record-refill-00408bd0": {
+      "source": "src/AudioRefill408BD0.cpp",
+      "object": "build/matching/AudioRefill408BD0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStreamRefill408BD0::Refill"
+      ],
+      "symbol": "?Refill@AudioStreamRefill408BD0@@QAEXK@Z",
+      "target_address": 4230096,
+      "size": 1724,
+      "compare_size": 1724,
+      "relocations": [
+        {
+          "offset": 212,
+          "type": "DIR32",
+          "symbol": "__imp__CreateEventA@16",
+          "target": 6647892
+        },
+        {
+          "offset": 222,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "__imp__WaitForSingleObject@8",
+          "target": 6648096
+        },
+        {
+          "offset": 250,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "?archiveReadActive@@3EA",
+          "target": 6755213
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 447,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 588,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 813,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 898,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 934,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 967,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1111,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1323,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 1392,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1425,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1569,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 1713,
+          "type": "DIR32",
+          "symbol": "?archiveReadActive@@3EA",
+          "target": 6755213
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -106379,6 +106561,7 @@
     "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492",
     "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f",
     "src/SoundBank4073D0.cpp": "c69459a37ac3b84077c8c9c473dc1f6864cc86a0f4ce1a9e2e4f1385cb5f528e",
-    "src/AudioRecord408110.cpp": "cc5c15ae67cf92e7dd7b21ec45b4f279bff839ac3f2736c8d29c21d13a3806e8"
+    "src/AudioRecord408110.cpp": "cc5c15ae67cf92e7dd7b21ec45b4f279bff839ac3f2736c8d29c21d13a3806e8",
+    "src/AudioRefill408BD0.cpp": "1a72d9fc0036812852b81088d1f047a55e223a46706ad1834c00cc7a599ec196"
   }
 }
