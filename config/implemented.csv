@@ -176,3 +176,4 @@ DrawAtlasNumberAt00446B90
 AtlasQuad446B90::AtlasQuad446B90
 HudCombo43E040::Render
 CharacterSelectCards437380::RenderCards
+CharacterSelectOptions438240::RenderOptions

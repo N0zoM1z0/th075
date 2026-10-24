@@ -21215,3 +21215,45 @@ were removed after pinning inputs/results; the active draft object and all
 older accepted objects/drafts/shared tools remain. Return when new source,
 compiler or lifetime evidence is available. Continue the independently reviewed
 cohort above while preserving the full 98% objective and conservative denominator.
+
+## F087 complete player options checkpoint (2026-10-24)
+
+R041 00438240..0043866F is complete1,072-byte cold exact as
+CharacterSelectOptions438240::RenderOptions. All255 instructions/six branches,
+25 real call packets and30 fields match physically:19 direct calls to five
+complete reviewed callees,six named USER32 SetRect imports,one existing mode
+byte and four indexed fields. The two signed movsx reads at671434 and two
+unsigned movzx reads at671438 are indexed by the actual two-side loop. Their
+unknown-bound extern array views establish no original allocation/declaration
+or data ownership. The native index scanner now includes absolute displacement
+operands with a base register as well as a separate index register.
+
+The one natural body keeps signed side bytes atEA/EC/E0,disabled-side continue,
+five drawings through this+8 and one through this+44 when mode!=4. One complete
+132-byte packet surrounds an inner RECT/for scope; all192 frame bytes and real
+integer-to-float conversion spills match. Three bounded scopes yielded1033
+bytes,1072 bytes with30 actual frame differences,and whole equality. No inert
+locals,padding,alias/register substitution,branch masks or truncated extent.
+All call cleanups and CFG stack joins pass; wrong SetRect-ret16 and
+Translate-ret8 controls are rejected. Original owner/names/lexical scopes are
+unknown; the partial owner is pointer-only and must not be constructed.
+
+Independent canonical compile and separate cold replay pass every byte with
+build3077 and the explicit unchanged profile. All178 old unit descriptors,
+85 canonical objects,146 source/header inputs,218 origin files,nine shared
+headers and91 active draft inputs remain unchanged; older units were not
+rebuilt. F085's6404-byte/235-field draft still has115 actual frame differences
+and receives no credit. All97 pending origins remain unknown. Current179 exact
+functions/units total555,848 bytes:28.17% reviewed,28.11% conservative. Manifest
+F009+119 additions retains545,965 bytes and148 source/header inputs. Goal98%
+remains active/incomplete. Next F088: complete single-player options candidate
+00438670,provisional596 bytes; reconcile before source. Keep all f087 complete
+native/attested/ABI/physical/cold/parent/compiler-input/progress evidence.
+
+F087 final validation:3,603 CI tests pass in163.326s,plus target/tracking,
+progress and diff checks. Removed only three obsolete reproducible probe
+objects(33,643 bytes) and scripts/tests bytecode(8,282,705
+bytes),after complete preview/cold object code and all30 relocation equality.
+Canonical objects,all source/input/log/PDB/evidence and active older drafts
+remain. Private F088 full596-byte renderer and53-byte AL getter probes are
+handwritten but not built or accepted at this checkpoint.

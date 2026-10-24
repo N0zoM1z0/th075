@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F087 player-options investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F088 single-player-options investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 178 / 178 / 178 |
-| Exact code bytes | 554,776 |
-| Reviewed authored coverage | 554,776 / 1,973,516 (28.11%) |
-| Conservative coverage, including every pending byte | 554,776 / 1,977,124 (28.06%) |
+| Source-present / exact functions / exact units | 179 / 179 / 179 |
+| Exact code bytes | 555,848 |
+| Reviewed authored coverage | 555,848 / 1,973,516 (28.17%) |
+| Conservative coverage, including every pending byte | 555,848 / 1,977,124 (28.11%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **118 additions /
-544,893 code bytes / 146 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **119 additions /
+545,965 code bytes / 148 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,51 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F086
+## Latest accepted function: F087
+
+R041 player options 00438240..0043866F is independently cold-replay exact as
+`CharacterSelectOptions438240::RenderOptions`: all 1,072 bytes, 255 instructions,
+six branches, 30 physical fields and 25 actual call packets. The next function
+begins immediately at00438670. The complete five direct callees, six named
+SetRect calls and signed/unsigned byte operations are reviewed. The source keeps
+the two-side loop and disabled-side continue, five drawings through this+8 and
+one mode-dependent drawing through this+44. Integer-to-float spills remain real
+conversions. The 132-byte packet lives outside an inner RECT/for scope; the
+whole 192-byte frame follows naturally, without inert locals or padding.
+
+Three bounded source scopes produced 1,033 bytes, then 1,072 bytes with thirty
+actual frame-byte differences, then complete physical equality. All 30 fields
+bind nineteen direct calls, six imports, one existing mode global and four
+indexed fields at671434/671438. The former is read signed and the latter
+unsigned, both indexed by the actual side loop. New extern arrays have unknown
+bounds: no original allocation, data ownership or declaration is inferred.
+All branch/loop joins and call cleanups are checked; deliberately incorrect
+SetRect and translation cleanup controls fail. No aliases, masks or shortened
+comparison. The incomplete owner is pointer-only and must not be instantiated.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-select-options-00438240
+```
+
+All 178 previous units, 85 canonical objects, 146 source/header inputs, 218
+origin files, nine shared headers and 91 active draft inputs stay unchanged.
+Only this new unit was cold replayed. F085's complete unaccepted draft and all
+older large drafts remain protected; the 97 unknown origins receive no credit.
+F009 plus 119 additions retains 545,965 bytes and 148 new source/header inputs.
+Keep f087 native/root/callee/caller/attested/ABI/physical/cold/parent/progress/
+compiler-input/preservation evidence, probe inputs, logs and PDBs. Full CI passes **3,603 tests in 163.326 seconds**, plus tracking,
+progress and whitespace checks. Three obsolete reproducible F087 probe objects
+(33,643 bytes) and scripts/tests bytecode (8,282,705 bytes)
+were removed after whole preview/cold-canonical code and relocation equality.
+All source/input/log/PDB/evidence records and canonical objects remain.
+
+Next F088: independently review the complete R041 candidate single-player
+options at00438670, provisional596 bytes. Reconcile its full extent, all paths,
+call packets, globals and quad scope before acceptance. A private handwritten renderer/getter probe and ABI notes
+are retained; no F088 canonical source, unit or exact credit yet.
+The active 98% goal remains incomplete.
+
+## Previous accepted function: F086
 
 R043 character cards 00437380..00438238 cold-replay exact as
 `CharacterSelectCards437380::RenderCards`: all 3,769 bytes, 825 instructions,
@@ -86,14 +130,6 @@ input/log/PDB records. Four obsolete reproducible F086 objects and
 scripts/tests bytecode were removed after full preview/cold-canonical code and
 relocation equality. Every canonical object, F085 active object, source/control
 input, PDB, evidence file, older active draft and shared tool remains.
-
-Next F087: complete R041 player options 00438240..0043866F, 1,072 bytes,
-immediately followed by the next function at00438670 without alignment bytes.
-Fresh f087 native/attested root/callee/caller records are retained. Reconcile
-all branch paths, byte/float consumers, actual packets and complete quad scope
-before one natural source body. No F087 source, object, unit or exact credit
-exists. Preserve every accepted unit/header, F085 and all older large drafts,
-and all 97 pending origins.
 
 ## Preserved unaccepted function: F085
 

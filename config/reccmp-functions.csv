@@ -177,3 +177,4 @@ DrawAtlasNumberAt00446B90,0x00446B90,function
 AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function
 HudCombo43E040::Render,0x0043D570,function
 CharacterSelectCards437380::RenderCards,0x00437380,function
+CharacterSelectOptions438240::RenderOptions,0x00438240,function
