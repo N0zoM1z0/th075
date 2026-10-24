@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F121",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F122",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "7f48dae12d44a2106f32d79af7e7635a4a490f8fcb53f4b86c8426b5576a17bc"
+      "current_sha256": "0eb0cfce0c88c822c0eba406ee135eb1de9b9c292503f742d07e4891d85bb23c"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3b9bd0484cab5ee851c7d18e978e980b07aebd8ecc71b14618d83009cd2ab534"
+      "current_sha256": "ebe3b7e33614346d1c2a8620a781a0b7df4160412a696d1175971da88d50c3d9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e565d732d80727d18957a3f08df17c25d333fad1d34c4c4eecc2a435e6ee1a9b"
+      "current_sha256": "a5e2915bb7e9c20887ca17c4b2362c2d9e1aa8a8fed3da8ba70d62de4dc2cd5e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "01c0ca03570527f2eca6af842cca7e9043cb069aba5e4a7e465258f2675b2876"
+      "current_sha256": "780e546a14d70b9cda0f3882e4ac2d3fcc40e4c8d7cb7e4b04a4c5a735c71090"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2b8c9165ea6beec9ab4c27481fc56547a42dff4eae23cc67cddb30e4994478e0"
+      "current_sha256": "f44511c331cc10872f2641823a4b06cce12f6901a2892d5afcf25c45b2d10871"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "75749023d0a7a7accb785fde530e1a52e4ce6aff7869d5d4e53e9c0310a5cfb9"
+      "current_sha256": "a5345344dd441b8e9d122233e333bb7901fc29739110d50063f91ef50a134a4a"
     }
   },
   "functions": [
@@ -8749,6 +8749,402 @@
         "address": "0x005076F0",
         "origin": "authored",
         "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00471E00",
+        "size": "1584",
+        "span_end": "0x0047242F",
+        "current_name": "FUN_00471e00",
+        "proposed_name": "CharacterSpecial::RenderAt00471E00",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00471E00",
+        "size": "1584",
+        "span_end": "0x0047242F",
+        "current_name": "FUN_00471e00",
+        "proposed_name": "CharacterStageRendererF122<StageRender471E00Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender471E00Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00471e00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x00471E00",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00498540",
+        "size": "1584",
+        "span_end": "0x00498B6F",
+        "current_name": "FUN_00498540",
+        "proposed_name": "CharacterSpecial::RenderAt00498540",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00498540",
+        "size": "1584",
+        "span_end": "0x00498B6F",
+        "current_name": "FUN_00498540",
+        "proposed_name": "CharacterStageRendererF122<StageRender498540Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender498540Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00498540",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x00498540",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C6050",
+        "size": "1584",
+        "span_end": "0x004C667F",
+        "current_name": "FUN_004c6050",
+        "proposed_name": "CharacterSpecial::RenderAt004C6050",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C6050",
+        "size": "1584",
+        "span_end": "0x004C667F",
+        "current_name": "FUN_004c6050",
+        "proposed_name": "CharacterStageRendererF122<StageRender4C6050Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender4C6050Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-004c6050",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x004C6050",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E7350",
+        "size": "1584",
+        "span_end": "0x004E797F",
+        "current_name": "FUN_004e7350",
+        "proposed_name": "CharacterSpecial::RenderAt004E7350",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004E7350",
+        "size": "1584",
+        "span_end": "0x004E797F",
+        "current_name": "FUN_004e7350",
+        "proposed_name": "CharacterStageRendererF122<StageRender4E7350Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender4E7350Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-004e7350",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x004E7350",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00531570",
+        "size": "1584",
+        "span_end": "0x00531B9F",
+        "current_name": "FUN_00531570",
+        "proposed_name": "CharacterSpecial::RenderAt00531570",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00531570",
+        "size": "1584",
+        "span_end": "0x00531B9F",
+        "current_name": "FUN_00531570",
+        "proposed_name": "CharacterStageRendererF122<StageRender531570Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender531570Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00531570",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x00531570",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005568F0",
+        "size": "1584",
+        "span_end": "0x00556F1F",
+        "current_name": "FUN_005568f0",
+        "proposed_name": "CharacterSpecial::RenderAt005568F0",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005568F0",
+        "size": "1584",
+        "span_end": "0x00556F1F",
+        "current_name": "FUN_005568f0",
+        "proposed_name": "CharacterStageRendererF122<StageRender5568F0Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender5568F0Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-005568f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x005568F0",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00578B70",
+        "size": "1584",
+        "span_end": "0x0057919F",
+        "current_name": "FUN_00578b70",
+        "proposed_name": "CharacterSpecial::RenderAt00578B70",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00578B70",
+        "size": "1584",
+        "span_end": "0x0057919F",
+        "current_name": "FUN_00578b70",
+        "proposed_name": "CharacterStageRendererF122<StageRender578B70Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender578B70Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00578b70",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x00578B70",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0059C6F0",
+        "size": "1584",
+        "span_end": "0x0059CD1F",
+        "current_name": "FUN_0059c6f0",
+        "proposed_name": "CharacterSpecial::RenderAt0059C6F0",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0059C6F0",
+        "size": "1584",
+        "span_end": "0x0059CD1F",
+        "current_name": "FUN_0059c6f0",
+        "proposed_name": "CharacterStageRendererF122<StageRender59C6F0Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender59C6F0Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-0059c6f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x0059C6F0",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C52D0",
+        "size": "1584",
+        "span_end": "0x005C58FF",
+        "current_name": "FUN_005c52d0",
+        "proposed_name": "CharacterSpecial::RenderAt005C52D0",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005C52D0",
+        "size": "1584",
+        "span_end": "0x005C58FF",
+        "current_name": "FUN_005c52d0",
+        "proposed_name": "CharacterStageRendererF122<StageRender5C52D0Policy>::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterStageRendererF122<StageRender5C52D0Policy>::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterStageRendering.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F122; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-005c52d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F122: complete 1584 code bytes plus own22byte table/selector independently canonical cold exact; cohort14256code+198data bytes/3177instructions/243calls/360real fields. Each own160byte frame/RET4/signed stage byte/full CPU-x87 CFG and ESP-EBP joins/three-target12byte table/ten selectors/10following INT3 checked. Every native operand independently establishes five x/y/opacity field bases and005C52D0 timerF2A versus eightEFE timers; no character identity/layout/automatic clone assumption. Every SetRect/image/filter/draw order and true filter4/draw700 receiver verified; quad atEBP-136/RECT-152. Complete132byte SDK-based quad reference/RECT only local, incomplete owner interfaces never instantiated/embedded. Actual DrawQuad helper copies33DWORDs. Native signed timer/activation, unsigned opacity and impossible negative clamp after byte zero extension retained, no corrected bug/decompiler omission. One natural template/nine distinct source policy types naming observed offsets only; first preview whole exact with no name fixture/extra storage/scopes. Five wrong real constructor/filter/draw/builder/own-selector controls each reject all nine full units. No pasted decompile/code array/manualtable/fake return/EH/assembly/padding/ABIalias/mask/truncation. All258 prior units/120canonical objects/188source inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged; R049 aliases retained. Original identities/names/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x005C52D0",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
@@ -121945,6 +122341,2382 @@
           "target": 4544512
         }
       ]
+    },
+    "character-special-render-00471e00": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender471E00Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender471E00Policy@@@@QAEXC@Z",
+      "target_address": 4660736,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63683",
+          "target": 4662332
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63696",
+          "target": 4662320
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62345",
+          "target": 4660820
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L62445",
+          "target": 4661841
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L62453",
+          "target": 4661961
+        }
+      ]
+    },
+    "character-special-render-00498540": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender498540Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender498540Policy@@@@QAEXC@Z",
+      "target_address": 4818240,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63700",
+          "target": 4819836
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63701",
+          "target": 4819824
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62486",
+          "target": 4818324
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L62586",
+          "target": 4819345
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L62594",
+          "target": 4819465
+        }
+      ]
+    },
+    "character-special-render-004c6050": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender4C6050Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender4C6050Policy@@@@QAEXC@Z",
+      "target_address": 5005392,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63704",
+          "target": 5006988
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63705",
+          "target": 5006976
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62627",
+          "target": 5005476
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L62727",
+          "target": 5006497
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L62735",
+          "target": 5006617
+        }
+      ]
+    },
+    "character-special-render-004e7350": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender4E7350Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender4E7350Policy@@@@QAEXC@Z",
+      "target_address": 5141328,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63708",
+          "target": 5142924
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63709",
+          "target": 5142912
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62768",
+          "target": 5141412
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L62868",
+          "target": 5142433
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L62876",
+          "target": 5142553
+        }
+      ]
+    },
+    "character-special-render-00531570": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender531570Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender531570Policy@@@@QAEXC@Z",
+      "target_address": 5444976,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63712",
+          "target": 5446572
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63713",
+          "target": 5446560
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62909",
+          "target": 5445060
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L63009",
+          "target": 5446081
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L63017",
+          "target": 5446201
+        }
+      ]
+    },
+    "character-special-render-005568f0": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender5568F0Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender5568F0Policy@@@@QAEXC@Z",
+      "target_address": 5597424,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63716",
+          "target": 5599020
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63717",
+          "target": 5599008
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L63050",
+          "target": 5597508
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L63150",
+          "target": 5598529
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L63158",
+          "target": 5598649
+        }
+      ]
+    },
+    "character-special-render-00578b70": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender578B70Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender578B70Policy@@@@QAEXC@Z",
+      "target_address": 5737328,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63720",
+          "target": 5738924
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63721",
+          "target": 5738912
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L63191",
+          "target": 5737412
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L63291",
+          "target": 5738433
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L63299",
+          "target": 5738553
+        }
+      ]
+    },
+    "character-special-render-0059c6f0": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender59C6F0Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender59C6F0Policy@@@@QAEXC@Z",
+      "target_address": 5883632,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63724",
+          "target": 5885228
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63725",
+          "target": 5885216
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L63332",
+          "target": 5883716
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L63432",
+          "target": 5884737
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L63440",
+          "target": 5884857
+        }
+      ]
+    },
+    "character-special-render-005c52d0": {
+      "source": "src/CharacterStageRendering.cpp",
+      "object": "build/matching/CharacterStageRendering.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterStageRendererF122<StageRender5C52D0Policy>::Render"
+      ],
+      "symbol": "?Render@?$CharacterStageRendererF122@UStageRender5C52D0Policy@@@@QAEXC@Z",
+      "target_address": 6050512,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L63728",
+          "target": 6052108
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L63729",
+          "target": 6052096
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF122@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L63473",
+          "target": 6050596
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L63573",
+          "target": 6051617
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L63581",
+          "target": 6051737
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -122135,6 +124907,7 @@
     "src/OpeningTimeline4277A0.cpp": "d9bdbfc315dd70ff3a098a91dc3f090374ddd7cddb5ed8d6d97bed4d2e4aa8eb",
     "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1",
     "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
-    "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc"
+    "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc",
+    "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512"
   }
 }

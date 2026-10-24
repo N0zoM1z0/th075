@@ -257,3 +257,12 @@ AuxiliaryActor4A80F0::Update,0x004A80F0,function
 CharacterAI507B20::ChooseAction,0x00507B20,function
 CharacterSpecial507040::Render,0x00507040,function
 CharacterInput5076F0::PollCommands,0x005076F0,function
+CharacterStageRendererF122<StageRender471E00Policy>::Render,0x00471E00,function
+CharacterStageRendererF122<StageRender498540Policy>::Render,0x00498540,function
+CharacterStageRendererF122<StageRender4C6050Policy>::Render,0x004C6050,function
+CharacterStageRendererF122<StageRender4E7350Policy>::Render,0x004E7350,function
+CharacterStageRendererF122<StageRender531570Policy>::Render,0x00531570,function
+CharacterStageRendererF122<StageRender5568F0Policy>::Render,0x005568F0,function
+CharacterStageRendererF122<StageRender578B70Policy>::Render,0x00578B70,function
+CharacterStageRendererF122<StageRender59C6F0Policy>::Render,0x0059C6F0,function
+CharacterStageRendererF122<StageRender5C52D0Policy>::Render,0x005C52D0,function

@@ -256,3 +256,12 @@ AuxiliaryActor4A80F0::Update
 CharacterAI507B20::ChooseAction
 CharacterSpecial507040::Render
 CharacterInput5076F0::PollCommands
+CharacterStageRendererF122<StageRender471E00Policy>::Render
+CharacterStageRendererF122<StageRender498540Policy>::Render
+CharacterStageRendererF122<StageRender4C6050Policy>::Render
+CharacterStageRendererF122<StageRender4E7350Policy>::Render
+CharacterStageRendererF122<StageRender531570Policy>::Render
+CharacterStageRendererF122<StageRender5568F0Policy>::Render
+CharacterStageRendererF122<StageRender578B70Policy>::Render
+CharacterStageRendererF122<StageRender59C6F0Policy>::Render
+CharacterStageRendererF122<StageRender5C52D0Policy>::Render

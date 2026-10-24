@@ -201,3 +201,12 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00507B20,CharacterAux::RunAt00507B20,CharacterAI507B20::ChooseAction,R049,character-ai-policy-00507b20
 0x00507040,CharacterSpecial::RenderAt00507040,CharacterSpecial507040::Render,R049,character-special-render-00507040
 0x005076F0,CharacterAux::RunAt005076F0,CharacterInput5076F0::PollCommands,R049,character-input-005076f0
+0x00471E00,CharacterSpecial::RenderAt00471E00,CharacterStageRendererF122<StageRender471E00Policy>::Render,R049,character-special-render-00471e00
+0x00498540,CharacterSpecial::RenderAt00498540,CharacterStageRendererF122<StageRender498540Policy>::Render,R049,character-special-render-00498540
+0x004C6050,CharacterSpecial::RenderAt004C6050,CharacterStageRendererF122<StageRender4C6050Policy>::Render,R049,character-special-render-004c6050
+0x004E7350,CharacterSpecial::RenderAt004E7350,CharacterStageRendererF122<StageRender4E7350Policy>::Render,R049,character-special-render-004e7350
+0x00531570,CharacterSpecial::RenderAt00531570,CharacterStageRendererF122<StageRender531570Policy>::Render,R049,character-special-render-00531570
+0x005568F0,CharacterSpecial::RenderAt005568F0,CharacterStageRendererF122<StageRender5568F0Policy>::Render,R049,character-special-render-005568f0
+0x00578B70,CharacterSpecial::RenderAt00578B70,CharacterStageRendererF122<StageRender578B70Policy>::Render,R049,character-special-render-00578b70
+0x0059C6F0,CharacterSpecial::RenderAt0059C6F0,CharacterStageRendererF122<StageRender59C6F0Policy>::Render,R049,character-special-render-0059c6f0
+0x005C52D0,CharacterSpecial::RenderAt005C52D0,CharacterStageRendererF122<StageRender5C52D0Policy>::Render,R049,character-special-render-005c52d0
