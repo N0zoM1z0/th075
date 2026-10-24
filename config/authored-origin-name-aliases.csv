@@ -185,3 +185,12 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00409290,AudioStreamRecord::Initialize,AudioRecordLifecycle409290::AudioRecordLifecycle409290,R017,audio-record-ctor-00409290
 0x004092F0,AudioStreamRecord::ReleaseResources,AudioRecordLifecycle409290::~AudioRecordLifecycle409290,R017,audio-record-dtor-004092f0
 0x00470F00,CharacterSpecial::AdvanceAt00470F00,CharacterSpecial470F00::ConfigureStage,R049,character-special-stage-00470f00
+0x00497630,CharacterSpecial::AdvanceAt00497630,CharacterSpecialFamily::Configure497630,R049,character-special-stage-00497630
+0x004C5150,CharacterSpecial::AdvanceAt004C5150,CharacterSpecialFamily::Configure4C5150,R049,character-special-stage-004c5150
+0x004E6450,CharacterSpecial::AdvanceAt004E6450,CharacterSpecialFamily::Configure4E6450,R049,character-special-stage-004e6450
+0x00506140,CharacterSpecial::AdvanceAt00506140,CharacterSpecialFamily::Configure506140,R049,character-special-stage-00506140
+0x00530650,CharacterSpecial::AdvanceAt00530650,CharacterSpecialFamily::Configure530650,R049,character-special-stage-00530650
+0x005559F0,CharacterSpecial::AdvanceAt005559F0,CharacterSpecialFamily::Configure5559F0,R049,character-special-stage-005559f0
+0x00577C70,CharacterSpecial::AdvanceAt00577C70,CharacterSpecialFamily::Configure577C70,R049,character-special-stage-00577c70
+0x0059B7F0,CharacterSpecial::AdvanceAt0059B7F0,CharacterSpecialFamily::Configure59B7F0,R049,character-special-stage-0059b7f0
+0x005C43D0,CharacterSpecial::AdvanceAt005C43D0,CharacterSpecialFamily::Configure5C43D0,R049,character-special-stage-005c43d0

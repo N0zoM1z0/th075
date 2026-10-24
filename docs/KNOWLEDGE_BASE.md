@@ -23642,3 +23642,96 @@ frame and unresolved texture80/layout/meaningful filename bound. Keep all old
 drafts and97 unknown origins unchanged. Compiler builds remain serial; clean
 only obsolete reproducible outputs after retaining inputs and evidence.
 No padding, invented storage or incomplete owner allocation/embedding.
+
+## F117 complete special-stage family checkpoint (2026-10-25)
+
+The remaining nine R049 stage configurations independently pass canonical cold
+comparison: **34,230 code bytes plus all 360 bytes of their own switch tables**,
+8,423 instructions, 523 actual calls and all 1,479 real relocation fields.
+One new source/object contains nine natural C++ bodies; the first complete
+probe is entirely exact. Each complete code/table extent, all ten table edges,
+default exit, plain RET, actual eight-byte frame and every static CFG/stack
+join are checked separately. Following INT3 bytes remain outside each extent.
+
+| Address | Code bytes | Compared bytes | Instructions | Calls | Four flag bytes begin |
+| --- | ---: | ---: | ---: | ---: | --- |
+| 00497630 | 3,814 | 3,854 | 937 | 58 | 0xFFC |
+| 004C5150 | 3,800 | 3,840 | 935 | 58 | 0xFE0 |
+| 004E6450 | 3,800 | 3,840 | 935 | 58 | 0xFE0 |
+| 00506140 | 3,800 | 3,840 | 935 | 58 | 0xFDC |
+| 00530650 | 3,822 | 3,862 | 941 | 59 | 0xFE0 |
+| 005559F0 | 3,800 | 3,840 | 935 | 58 | 0xFD8 |
+| 00577C70 | 3,800 | 3,840 | 935 | 58 | 0xFDC |
+| 0059B7F0 | 3,797 | 3,837 | 935 | 58 | 0xFFC |
+| 005C43D0 | 3,797 | 3,837 | 935 | 58 | 0xFF4 |
+
+All 1,398 ordered policy events are re-read from the pinned native target:
+702 actor/borrowed-actor stores, 173 global stores and 523 calls. Every own
+intro selection, field offset, position, life, duration, scalar expression
+and write/call order is retained. The generic pointer view does not establish
+that these are the same original class, character or complete layout.
+
+00497630 really resets the transition timer and mode0 in stage7. 00530650
+really makes two override calls in stage7. Six methods reset the borrowed
+animation counter to137 in stage6; the other methods use0. 005C43D0 uses intro
+value9 in every configured stage and final life5000/duration2400. Individual
+round-life differences and the five actual flag bases remain distinct.
+No duplicate call, state policy or layout is corrected to fit a common template.
+
+Actual signed difficulty multiply/add/IDIV behavior and real byte/word/DWORD
+argument carriers follow the complete independently reviewed389-byte callee.
+Raw dirty upper register bits stay included unmasked in physical comparison;
+only the separate semantic packet audit normalizes genuinely consumed narrow
+arguments. All eleven own dispatch/table fields per function are checked.
+The accepted AnimationState declaration and every old header remain unchanged.
+
+Source uses ordinary typed scalar statements and natural switches authored
+from reviewed native behavior observations. It contains no pasted decompiler
+text, target-code array, manually supplied table, extra local, padding, fake
+return, manual EH, assembly, ABI alias, relocation mask or cropped extent.
+No incomplete owner is instantiated, embedded or allocated. Original names
+and types not proved by native reads remain provisional. No helper, global
+data or switch-table data byte receives new code credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-00497630 --unit character-special-stage-004c5150 --unit character-special-stage-004e6450 --unit character-special-stage-00506140 --unit character-special-stage-00530650 --unit character-special-stage-005559f0 --unit character-special-stage-00577c70 --unit character-special-stage-0059b7f0 --unit character-special-stage-005c43d0
+```
+
+All 242 prior units, 115 canonical objects, 183 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,342 other function rows remain
+unchanged. F009 plus191 additions retains619,569 code bytes and184 new inputs.
+R049 historical roles remain through aliases; all97 unknown origins remain
+unknown. Preserve all f117 native/attested/scalar-policy/authoring/CFG/packet/
+store/table/binding/cold/parent inputs, sources, results, logs and PDBs.
+
+Validation: all nine complete code/table units pass canonical cold replay,
+seven checkpoint tests pass, and full CI passes 3,603 tests in 139.432s.
+Target identity, tracking, progress and diff checks pass. Cleanup removes one
+obsolete reproducible probe object (70,336 bytes) and 375 Python bytecode files
+(8,282,863 bytes), total 8,353,199 bytes. Canonical objects, all sources,
+compiler inputs, evidence, results, logs and PDBs remain. Hash receipts are
+`.analysis/f117-final-compiler-inputs.json`,
+`.analysis/f117-object-cleanup.json` and
+`.analysis/f117-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **251 exact functions/units, 629,452 code bytes**, 31.89% of
+reviewed authored bytes and **31.84% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F118
+
+Review complete independently authored R035 OpeningScene::RenderTimeline
+`004277A0`, provisionally5,339 bytes. Establish every code/table extent, full
+CFG, actual calling convention, floating-point expression, renderer/font/
+helper packet and genuine SDK local value before source. Preserve accepted
+source/header inputs using separate pointer-only views where necessary.
+Do not allocate/embed partial owners or invent layout/stack storage.
+
+Large F048/F061/F066/F085 drafts remain unaccepted. Preserve every draft and
+its existing failed controls; do not repeat unchanged hypotheses or weaken
+whole physical exactness. QueueFile00407A50/QueueArchiveEntry00407B80 still need
+a proved complete local record layout. Resource root00456B60 retains f107's
+real588-byte frame and unresolved texture80/layout/meaningful filename bound.
+Keep all97 unknown origins and origin evidence throughR268 unchanged. Builds
+remain serial; replay only new or affected units and remove only obsolete
+reproducible outputs after retaining inputs and evidence.

@@ -240,3 +240,12 @@ SoundBankPlay4079C0::Play
 AudioRecordLifecycle409290::AudioRecordLifecycle409290
 AudioRecordLifecycle409290::~AudioRecordLifecycle409290
 CharacterSpecial470F00::ConfigureStage
+CharacterSpecialFamily::Configure497630
+CharacterSpecialFamily::Configure4C5150
+CharacterSpecialFamily::Configure4E6450
+CharacterSpecialFamily::Configure506140
+CharacterSpecialFamily::Configure530650
+CharacterSpecialFamily::Configure5559F0
+CharacterSpecialFamily::Configure577C70
+CharacterSpecialFamily::Configure59B7F0
+CharacterSpecialFamily::Configure5C43D0

@@ -241,3 +241,12 @@ SoundBankPlay4079C0::Play,0x004079C0,function
 AudioRecordLifecycle409290::AudioRecordLifecycle409290,0x00409290,function
 AudioRecordLifecycle409290::~AudioRecordLifecycle409290,0x004092F0,function
 CharacterSpecial470F00::ConfigureStage,0x00470F00,function
+CharacterSpecialFamily::Configure497630,0x00497630,function
+CharacterSpecialFamily::Configure4C5150,0x004C5150,function
+CharacterSpecialFamily::Configure4E6450,0x004E6450,function
+CharacterSpecialFamily::Configure506140,0x00506140,function
+CharacterSpecialFamily::Configure530650,0x00530650,function
+CharacterSpecialFamily::Configure5559F0,0x005559F0,function
+CharacterSpecialFamily::Configure577C70,0x00577C70,function
+CharacterSpecialFamily::Configure59B7F0,0x0059B7F0,function
+CharacterSpecialFamily::Configure5C43D0,0x005C43D0,function
