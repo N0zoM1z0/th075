@@ -20918,3 +20918,69 @@ retained. Reconcile indexed writable tables at 0068C868/0068C894/0068C8A0/
 and the parameterized complete-packet constructor. Existing zero-argument packet
 headers must stay fixed; do not instantiate a partial view. No F082 source,
 object, unit or exact credit exists. Preserve all previous units and large drafts.
+
+## F082 complete atlas number and parameterized physical packet cold acceptance (2026-10-24)
+
+R042 number worker 00446B90..00446D5E cold-replays exact as
+`DrawAtlasNumberAt00446B90`: all 463 bytes, 129 instructions, ten branches,
+13 physical fields and five real call packets. One following INT3 byte is
+excluded. All three direct callees are reviewed over their complete extents.
+
+The handwritten cdecl body preserves six real parameters, signed-byte style,
+negative-number early return, the actual boolean texture-bank expression,
+working number, signed division/modulo by ten, the positive fixed-digit loop
+and alternate sentinel loop. Real parameter decrements, four integer-to-float
+spills and the final per-digit translation remain. Twenty-one complete probes
+vary meaningful local names or drawing scope. Only textureIndex to textureId is
+needed for the actual remaining-4, packet-90, textureId-94 allocation, 164-byte
+frame and saved ESI. This is compiler evidence, not original spelling evidence.
+
+A separate full natural rectangle-constructor probe matches all 259 bytes and
+nine actual relocations at 0040DA00. It corroborates the unchanged F064 complete
+132-byte packet model: four SDK coordinate records and a constructed 68-byte
+payload, plus complete constructor/copy/consumer witnesses. The new physical
+packet view guards sizeof132/offsetof64 and preserves the real constructor
+lifetime. Original class identity and payload partition remain unknown; no
+partial owner is constructed or embedded. Every accepted shared header stays
+fixed, including the earlier zero-argument packet interface.
+
+Five inferred writable global access views cover signed-short advance/height/
+width, COM texture pointers and RECT rows of ten/stride160. All eight indexed
+fields have their actual widths, scales, base/index registers and permissions
+checked. Outer extents, original declarations/names and data ownership remain
+unknown. No data or dependency bytes receive exact credit. The two 14-byte
+constructor dependencies remain unknown; all 97 pending origins stay unchanged.
+
+Preview, independent canonical compile and separate canonical cold replay
+match every byte with build3077 and the explicit profile. All five direct-call
+fields and eight indexed globals bind with zero addends; no frame aliases,
+branch masks or extent truncation. Whole CFG stack joins and actual 16-byte
+constructor, 12-byte translation and caller-cleaned 16-byte draw packets pass.
+Wrong draw/translation cleanup controls fail. All 174 prior units, 81 canonical
+objects, 140 previous manifest inputs, 218 origin files, 4,350 other function
+rows and 84 active draft inputs remain unchanged and were not rebuilt. F009
+plus 115 additions retains 539,750 bytes and 142 new source/header inputs.
+The 98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-atlas-number-00446b90
+```
+
+Full CI passes **3,603 tests in 122.452 seconds**, plus tracking, progress and
+whitespace checks.
+Keep f082 native/attested/root/callee/caller/ABI/packet/physical/cold/parent/
+progress/preservation evidence, all compiler-control sources, profiles, logs,
+results, input snapshots and PDBs. Three obsolete reproducible objects and scripts/tests
+bytecode were removed after input pinning and whole-preview code/relocation
+equality with the cold canonical object. The constructor probe object remains
+for F083; canonical objects, PDBs, evidence, old drafts and shared tools remain.
+
+Next F083: entire R011 parameterized packet constructor 0040DA00..0040DB02,
+259 bytes. The RET16 instruction occupies 0040DB00..0040DB02; thirteen following
+INT3 bytes are excluded. `.analysis/f083-native-index.json` pins 93 instructions,
+zero branches and nine calls to three complete callees. Fresh attested root/
+callee/caller evidence and the already physically equal F082 natural constructor
+probe are retained. Adopt a separate canonical translation unit and cold replay;
+do not change the accepted F082 header or rebuild its unchanged body. Preserve
+the complete physical model, unknown helper dispositions and all prior units.
+No F083 canonical source, unit or exact credit exists yet.

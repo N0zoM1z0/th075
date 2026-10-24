@@ -118,3 +118,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00448710,BattleScene::RenderPauseMenu,BattleModeFive448710::RenderMenu,R042,battle-mode-five-menu-00448710
 0x004406C0,BattleScene::DrawDamageFlash,BattleDamageFlash4406C0::RenderFlash,R042,battle-damage-flash-004406c0
 0x00441EA0,BattleScene::RenderRoundBanner,BattleRoundBanner441EA0::RenderRoundBanner,R045,battle-round-banner-00441ea0
+0x00446B90,BattleHud::DrawAtlasNumber,DrawAtlasNumberAt00446B90,R042,battle-atlas-number-00446b90

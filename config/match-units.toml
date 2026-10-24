@@ -17127,3 +17127,28 @@ relocations = [
   { offset = 0xD2, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x124, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
 ]
+
+[units."battle-atlas-number-00446b90"]
+source = "src/BattleAtlasNumber446B90.cpp"
+object = "build/matching/BattleAtlasNumber446B90.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["DrawAtlasNumberAt00446B90"]
+symbol = "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z"
+target_address = 0x00446B90
+size = 463
+compare_size = 463
+relocations = [
+  { offset = 0x44, type = "DIR32", symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA", target = 0x0068C8A0 },
+  { offset = 0x6B, type = "DIR32", symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA", target = 0x0068C8CC },
+  { offset = 0x89, type = "REL32", symbol = "??0AtlasQuad446B90@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0xAA, type = "DIR32", symbol = "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A", target = 0x0068C894 },
+  { offset = 0xCE, type = "DIR32", symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A", target = 0x0068C8F8 },
+  { offset = 0xDB, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0xFC, type = "DIR32", symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA", target = 0x0068C868 },
+  { offset = 0x119, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x143, type = "DIR32", symbol = "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A", target = 0x0068C894 },
+  { offset = 0x167, type = "DIR32", symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A", target = 0x0068C8F8 },
+  { offset = 0x174, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0x1A4, type = "DIR32", symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA", target = 0x0068C868 },
+  { offset = 0x1C1, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+]

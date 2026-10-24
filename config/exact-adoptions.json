@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F081",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F082",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d81f8e92e5b78941f9f2b05668af226a3bc539b4d5cc410b4e0dab544546c600"
+      "current_sha256": "404583e39a3f7dcf12726b74fa7233c3a466ac512b27382fcb9fedec55343f56"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "096939f3950515e8a06403332dce480d92c58ccc5d862e34f2a3a953a278e270"
+      "current_sha256": "ef4bfe92dfa12efab35d65f676a2ccccc483f50d3cff1ac80bfecead2e46c94d"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "2ee28074b602caa7b606fcb07865931d4271e8f3addf55e12a5a18a57432b3e3"
+      "current_sha256": "8f66f88cd91a2f09918680deb4951bf596f3ad317eeb89a37d4578c93e699cd6"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "51ff4ef52e0ba11a623f36687c026bd1bfca43f25edcd44dfbba6da12d8349f1"
+      "current_sha256": "2e0785d36cb6496aaa7ca5f0b943ec35459afd1d00a4b0dcf7009a387cda9dfc"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "86290938dc5731d59659baf1d0464650312ec3aa46ce09963c0261896dcebb98"
+      "current_sha256": "df09aa8742a76b9029873c4d58ef1867a1081e1954b3d8f1bb3fda6170c39fcd"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "0d6f25a00e79ede8fae3a01d7557338ad691b0d8112574ba329f2fc653d424fa"
+      "current_sha256": "b622efff81ec5d4f299536821cb700c1b99742916f18f5acac2888db7f264da9"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "aa9b8c8b905ab0f182337ae745e4b036325650ba50f5eb4f2541366160b47e40"
+      "current_sha256": "55baef7d32a0a56fe222bdaeb63ad50d7c9ab463d36a9d71c5adc52f1245b13d"
     }
   },
   "functions": [
@@ -5056,6 +5056,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00446B90",
+        "size": "463",
+        "span_end": "0x00446D5E",
+        "current_name": "FUN_00446b90",
+        "proposed_name": "BattleHud::DrawAtlasNumber",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00446B90",
+        "size": "463",
+        "span_end": "0x00446D5E",
+        "current_name": "FUN_00446b90",
+        "proposed_name": "DrawAtlasNumberAt00446B90",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void DrawAtlasNumberAt00446B90(float x; float y; D3DCOLOR color; int number; signed char style; int digits)",
+        "is_thunk": "false",
+        "source_file": "src/BattleAtlasNumber446B90.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F082; scripts/repo-python scripts/replay-exact-units.py --unit battle-atlas-number-00446b90",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F082: complete463-byte cold exact atlas number,129 instructions/10 branches/13 fields and5 actual call packets; all3 direct callees,parameterized complete132-byte packet constructor and five indexed writable access views reviewed; actual signed-byte style,two integer division/modulo loops,working number and parameter decrement,164-byte frame plus ESI and4 real conversion slots preserved; R042 role preserved by alias; original names/declarations and complete outer table extents unknown; no data/helper exact credit"
+      },
+      "origin": {
+        "address": "0x00446B90",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
       }
     }
   ],
@@ -95618,6 +95662,107 @@
           "target": 4483936
         }
       ]
+    },
+    "battle-atlas-number-00446b90": {
+      "source": "src/BattleAtlasNumber446B90.cpp",
+      "object": "build/matching/BattleAtlasNumber446B90.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawAtlasNumberAt00446B90"
+      ],
+      "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+      "target_address": 4483984,
+      "size": 463,
+      "compare_size": 463,
+      "relocations": [
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 137,
+          "type": "REL32",
+          "symbol": "??0AtlasQuad446B90@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 170,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6867092
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 219,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 252,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 281,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 323,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6867092
+        },
+        {
+          "offset": 359,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 372,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 420,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 449,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -95760,6 +95905,8 @@
     "src/BattleDamageFlash4406C0.cpp": "6ee4fee1d9a6d0f23dc635ef418fcb0298ec876be67ba3d0f11888dbcf7c98dd",
     "src/BattleDamageFlash4406C0.hpp": "838d70caf830dcefb4e098cd63d02d731584214fafee71b7d501382ac6993b03",
     "src/BattleRoundBanner441EA0.cpp": "a2ec910381f9b453f2545bf54c7e6bad057d3e2d4ee4c5754e20038b1c832891",
-    "src/BattleRoundBanner441EA0.hpp": "6eaf4877b415af28586c2988dfbe33eadac62c466cc4569eecd9a8afee212418"
+    "src/BattleRoundBanner441EA0.hpp": "6eaf4877b415af28586c2988dfbe33eadac62c466cc4569eecd9a8afee212418",
+    "src/BattleAtlasNumber446B90.cpp": "e2043f61e88e1a27624598863e09481576b0327c1844af22cc9b6a87a15ea63b",
+    "src/BattleAtlasNumber446B90.hpp": "744a3ca288d0241a54600c08ec0f01674f1abcc9b5657eee6052f1a16e70471b"
   }
 }
