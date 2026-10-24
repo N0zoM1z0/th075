@@ -167,3 +167,4 @@ CameraUpdate4126C0::Advance,0x004126C0,function
 CameraInputs412660::Initialize,0x00412660,function
 BattleRender43D9D0::RenderFrame,0x0043D9D0,function
 BattleHud43E040::RenderHud,0x0043E040,function
+BattleStatus440B50::RenderStatus,0x00440B50,function

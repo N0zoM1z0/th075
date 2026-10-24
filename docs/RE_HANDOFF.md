@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F076 status-renderer investigation below; preserve the F066 draft.
+is incomplete. Continue the F077 overlay-timeline investigation below; preserve the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 168 / 168 / 168 |
-| Exact code bytes | 536,637 |
-| Reviewed authored coverage | 536,637 / 1,973,516 (27.19%) |
-| Conservative coverage, including every pending byte | 536,637 / 1,977,124 (27.14%) |
+| Source-present / exact functions / exact units | 169 / 169 / 169 |
+| Exact code bytes | 540,147 |
+| Reviewed authored coverage | 540,147 / 1,973,516 (27.37%) |
+| Conservative coverage, including every pending byte | 540,147 / 1,977,124 (27.32%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **108 additions /
-526,754 code bytes / 128 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **109 additions /
+530,264 code bytes / 130 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,64 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F075
+## Latest accepted function: F076
+
+R042 status renderer 00440B50..00441905 cold-replays exact as
+`BattleStatus440B50::RenderStatus`: all 3,510 bytes, 750 instructions, 13
+branches, 84 physical fields and 45 actual call packets. Ten complete direct
+callees and eight USER32!SetRect calls are checked; ten following INT3 bytes
+are excluded. The accepted F074 caller supplies this without stack arguments.
+
+The first complete handwritten preview is structural-exact. Independent
+canonical compilation and separate canonical cold replay match every byte.
+One initialized 132-byte F064 packet is reused across both loop sides. Its
+actual render-loop scope, two conversion slots, shared RECT, selected texture,
+group, index, float offset and saved ESI account for the full 184-byte frame.
+All accepted shared headers remain unchanged. Partial receivers are pointer-only
+and never constructed or embedded; original names/declarations and full owner
+layouts remain unknown. No Ghidra local-span value becomes an owner-size claim.
+
+The raw code keeps indexed coordinates and alpha arrays on side 0, although
+Ghidra folds them to fixed offsets in that branch. Nested directory lookups
+retain actual outer indices, including signed repeat-byte +5. Both complete
+44-byte record getters consume a signed-byte selector, return ret4, and define
+the whole EAX by zero-extending a word; each caller immediately pushes EAX to
+the full integer number worker. Their outer style/padding words remain pending.
+The new scoped integer-result declarations describe that observed behavior;
+original nominal declarations remain unknown and neither getter earns credit.
+The existing g_BattleRecords address and both byte globals are reused.
+
+Physical bindings include 37 direct calls, 33 readonly float fields, four byte
+global fields, two record-owner address fields and eight named imports. Actual
+payloads, permissions, operand widths, zero addends, all branch fields and whole
+CFG stack joins are checked. Wrong nested/getter cleanup controls fail. All 168
+older units/objects, 128 previous manifest inputs, 218 origin files, 4,350 other
+function rows and 84 active draft inputs remain unchanged and were not rebuilt.
+All 97 pending origins remain unknown. F009 plus 109 additions retains 530,264
+code bytes and 130 new source/header inputs. The 98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-status-render-00440b50
+```
+
+Full CI passes **3,603 tests in 119.952 seconds**, plus tracking, progress and
+whitespace. Keep f076 native/root/callee/attested/ABI/physical/cold/parent/progress/
+preservation evidence. The duplicate preview object was removed after complete
+code and all 84 relocations matched the cold canonical object. Scripts/tests
+bytecode was removed after CI; sources, headers, PDBs, evidence, active drafts,
+canonical objects and shared tools remain.
+
+Next F077: complete R042 overlay timeline 00447340..004480C2, 3,459 bytes.
+`.analysis/f077-native-index.json` pins 858 instructions, 25 branches and 72 calls:
+58 direct calls to eight complete callees plus 14 SetRect calls. Complete raw
+exports and fresh attested root/callee/caller views are retained. The native
+byte discriminator uses a two-case switch, despite Ghidra's if/else spelling.
+Audit all packets, the full 1,212-byte six-float rotation helper and three ST0
+alpha conversions before one complete natural body. Reuse the complete packet;
+never instantiate a partial transform prefix. No F077 source/object/unit/credit
+exists. Preserve every older unit and all large unaccepted drafts.
+
+## Previous accepted function: F075
 
 R040 HUD renderer 0043E040..004406B0 is independently cold-exact as
 `BattleHud43E040::RenderHud`: all 9,841 bytes, 2,401 instructions, 81 branches,
@@ -80,13 +137,7 @@ matched the cold canonical code and all 265 relocations before removal. Nearest
 whole draft06 and final scoped-local control remain. Generated scripts/tests
 bytecode was removed after CI; evidence, active objects and shared tools remain.
 
-Next F076: complete R042 status renderer 00440B50..00441905, 3,510 bytes.
-`.analysis/f076-native-index.json` pins 750 instructions, 13 branches and 45
-calls: 37 direct calls to ten full callees, plus eight SetRect calls. Full raw
-exports and fresh attested callee views/log are retained. There is no F076
-source, object, canonical unit or exact credit. Review dynamic nested lookups,
-selector widths and both 44-byte score helpers 00441FE0/00442010 before writing
-one complete natural body. Keep every older accepted unit and active draft.
+The subsequent F076 acceptance and current F077 cohort are recorded above.
 
 ## Previous accepted function: F074
 
