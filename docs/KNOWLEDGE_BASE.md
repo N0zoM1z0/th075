@@ -21346,3 +21346,47 @@ F090 fresh complete211-instruction/36-branch/five-call native/root/callee/caller
 records and handwritten private probe are retained without a build or credit.
 Its only direct callee is the49-byte vendor vector<DIJOYSTATE>::operator[]
 00404320; R003 vendor proof and existing joystick-state global remain unchanged.
+
+## F090 complete held-input update checkpoint (2026-10-24)
+
+R01500406E80..00407164/741 bytes is independently cold exact as
+InputMapping4388D0::UpdateHeldCounts. Eleven following INT3 bytes are excluded.
+Only one new implementation file uses the unchanged existing F089 partial
+receiver declaration. The first natural probe matches all211 instructions,
+36 branches,five call packets and15 physical fields. The signed device byte
+chooses joystick/keyboard. Axis counters preserve-500/+500 thresholds,
+opposite-sign resets,decrement/increment and idle zero. Independent real
+joystick/keyboard indices occupy the actual12-byte frame and both five-button
+loops remain. All CFG joins and incorrect0/8-byte subscript cleanup controls pass.
+
+Five actual vector calls receive existing ECX671358 and the signed byte at
+owner+4 promoted into a4-byte argument,then return a DIJOYSTATE reference with
+RET4. All15 fields bind:five direct calls,five existing joystick receiver
+immediates and five indexed keyboard accesses. Existing vendor vector and
+keyboard declarations remain unchanged. The generated49-byte vector subscript
+also compares physically after three iterator-family fields bind at404590/
+404740/404720. That dependency remains R003 library/exclude with zero authored
+credit. No inert locals,padding,alias/register substitution,masks or truncation.
+Original lexical scopes/names/complete owner layout remain unknown; pointer-only
+views must not be constructed or embedded.
+
+All183 old units,88 objects,152 inputs,218 origin files,nine shared headers,
+91 active drafts and4,350 other rows remain unchanged; no old cold builds.
+Unknown97 origins and all large unaccepted drafts including F085's115 physical
+differences receive no credit. Current184 exact functions/units total557,622
+bytes:28.26% reviewed,28.20% conservative. F009+124 additions retains547,739
+bytes and153 inputs. Goal98% active/incomplete. Next F091: full340-byte R001
+Graphics::ToggleWindowMode004018A0 from the F089 graph; independently reconcile
+whole SDK/global operations and actual call packets before source. Preserve all
+f090 full native/attested/ABI/physical/cold/parent/progress/input evidence.
+
+F090 final validation:3,603 CI tests pass in131.152s,plus target/tracking,
+progress and diff checks. Removed only one obsolete reproducible probe object
+(17,450 bytes) and scripts/tests bytecode(8,282,705 bytes),
+after whole preview/cold code and all15 relocation equality. All canonical
+objects,source/control inputs,logs,PDBs,evidence and active older drafts remain.
+F091 complete96-instruction/six-branch/15-call native and attested records are
+retained; the245-byte direct callee is unchanged accepted Graphics::ResetDevice.
+Target4019CB stores computed vertical centering atEBP-4,but4019D8/4019DC both
+load horizontal originEBP-C for the two SetWindowPos coordinates. Do not repair
+that behavior or invent unused storage. No F091 source/build/unit/credit yet.

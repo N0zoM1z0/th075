@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F090 held-input-count investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F091 window-mode investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 183 / 183 / 183 |
-| Exact code bytes | 556,881 |
-| Reviewed authored coverage | 556,881 / 1,973,516 (28.22%) |
-| Conservative coverage, including every pending byte | 556,881 / 1,977,124 (28.17%) |
+| Source-present / exact functions / exact units | 184 / 184 / 184 |
+| Exact code bytes | 557,622 |
+| Reviewed authored coverage | 557,622 / 1,973,516 (28.26%) |
+| Conservative coverage, including every pending byte | 557,622 / 1,977,124 (28.20%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **123 additions /
-546,998 code bytes / 152 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **124 additions /
+547,739 code bytes / 153 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,58 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F089
+## Latest accepted function: F090
+
+R015 held-input update00406E80..00407164 is independently canonical cold exact
+as `InputMapping4388D0::UpdateHeldCounts`: all741 bytes,211 instructions,
+36 branches,five real call packets and15 physical fields. Eleven following
+INT3 bytes stay outside the complete extent. Only one new implementation file
+is added; its existing F089 partial receiver/header stays unchanged,so no old
+units were rebuilt. The first natural probe matches physically.
+
+The signed device selector chooses joystick or keyboard. X/Y counters preserve
+-500/+500 thresholds,opposite-sign resets,decrement/increment and idle zero.
+Both five-button loops retain their genuine independent indices in the12-byte
+frame. Existing real std::vector<DIJOYSTATE> and keyboard-buffer declarations
+remain unchanged. Five vector subscripts receive ECX671358 and the signed byte
+at owner+4 promoted into one four-byte argument; their returned references and
+RET4 agree with the actual49-byte vendor helper. All CFG/loop joins and wrong
+0/8-byte cleanup controls pass. No inert storage,layout growth or aliases.
+
+Every field binds independently:five subscript calls,five existing joystick
+receiver immediates,five indexed keyboard-buffer accesses. The generated49-byte
+vendor subscript also matches physically after binding all three iterator-family
+calls at404590/404740/404720. This is diagnostic dependency evidence only;
+R003 library ownership/exclusion and zero authored credit remain unchanged.
+All original owner/type names,complete scene/mapping layouts and lexical scopes
+remain unknown; the pointer-only receiver must not be instantiated or embedded.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit input-held-counts-00406e80
+```
+
+All183 old units,88 canonical objects,152 source/header inputs,218 origin files,
+nine shared headers,91 active draft inputs and4,350 other function rows remain
+unchanged. F009 plus124 additions retains547,739 bytes and153 new inputs. All97
+pending origins remain unknown; F085 and all older large drafts receive no
+credit. Preserve f090 full native/root/callee/caller/attested/ABI/physical/cold/
+parent/progress/compiler-input/preservation evidence and all inputs/logs/PDBs.
+Full CI passes **3,603 tests in131.152 seconds**, plus target/tracking,
+progress and whitespace checks. Removed one obsolete reproducible probe object
+(17,450 bytes) and scripts/tests bytecode(8,282,705 bytes),
+after whole preview/cold code and all15 relocation equality. All source/control
+inputs,logs,PDBs,evidence and canonical objects remain.
+Next F091: complete340-byte R001 Graphics::ToggleWindowMode004018A0 from F089's
+direct graph. Reconcile complete SDK/global effects and genuine call packets
+before source. Fresh complete96-instruction/six-branch/15-call native and
+attested root/callee/caller records are retained. Its245-byte direct callee is
+the unchanged accepted Graphics::ResetDevice. The target computes a vertical
+origin and stores it atEBP-4,but both SetWindowPos coordinate arguments load the
+horizontal origin atEBP-C. Preserve that target observation; do not invent
+unused storage or silently repair the coordinate behavior. No F091 source or
+credit exists. Goal98% remains active/incomplete.
+
+## Previous accepted functions: F089
 
 R043 input poll004388D0..00438A29 (346 bytes) and R015 key query00407170..
 00407195 (38 bytes) independently pass canonical cold comparison as
@@ -79,15 +130,6 @@ progress and whitespace checks. Removed two obsolete reproducible probe objects
 (21,407 bytes) and scripts/tests bytecode(8,282,705 bytes),
 after full preview/cold code and relocation equality for both accepted functions.
 All canonical objects,source/control inputs,logs,PDBs and evidence remain.
-Next F090: complete741-byte R015 InputMapping::UpdateHeldCounts00406E80,
-reviewing its whole paths and joystick-state accessor before source. Use the
-existing declared partial receiver without changing accepted headers. Fresh
-f090 whole native/attested root/callee/caller records and a handwritten private
-probe are retained. Its211 instructions/36 branches/five calls use the reviewed
-49-byte std::vector<DIJOYSTATE>::operator[] at00404320; vendor evidence and
-existing Input::g_JoystickStates remain unchanged. No F090 build/unit/credit at
-this checkpoint. Goal98% remains active/incomplete.
-
 ## Previous accepted functions: F088
 
 R041 single-player options00438670..004388C3 (596 bytes) and R043 selected-card

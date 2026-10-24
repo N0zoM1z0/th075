@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F089",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F090",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "c43f4f93f0ce4d0bf433f6196c663cb49635d3f0b411ace365209357661813ab"
+      "current_sha256": "84041b0219afc6d5c11605718a55ff0c9834dfa5b9f129857b53f863ac88bba7"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3006be794084eca279df93035c3c78d6b12be5fc19f821cf90e4cb7878eb5ceb"
+      "current_sha256": "63c840a7dc36939f8d7834f4665bf2e4d396a478b2266038eb5e77735e492e6b"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7ec52f09ac200bb067a5e61386fceb87713325a6fa0fd5180a985b4f0ff7bf74"
+      "current_sha256": "189e3d83ca81ab71c6061b123e14562ddd2e4eab050b7c27a6b1fcd0771774c0"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "eea87ea18d250fbb18246f7047d208cab569860131093c9aa14d93f2bca48645"
+      "current_sha256": "3fb019674c1320ddab41ac72a1900bb7176a8b1a9e2855afaee25afcd1004395"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "519ccfab0b682135b48e65bd72446d51a04797b15e3552517974a9933514f0f6"
+      "current_sha256": "a72beaba18cfe5ac7cd299eefd3f22f08bb595172aaba7b9522bcad0a03dccbb"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "2458cba49091bd2e12bf068e62458e3d769f4598ed7898aad8ad985acdc0b002"
+      "current_sha256": "016d8a776d98a23a5667e5d7c8d2ce7a8ff45634fde0886e4249c32d2850ddda"
     }
   },
   "functions": [
@@ -5447,6 +5447,50 @@
       },
       "origin": {
         "address": "0x00407170",
+        "origin": "authored",
+        "subsystem": "InputMapping",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406E80",
+        "size": "741",
+        "span_end": "0x00407164",
+        "current_name": "FUN_00406e80",
+        "proposed_name": "InputMapping::UpdateHeldCounts",
+        "module": "InputMapping",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406E80",
+        "size": "741",
+        "span_end": "0x00407164",
+        "current_name": "FUN_00406e80",
+        "proposed_name": "InputMapping4388D0::UpdateHeldCounts",
+        "module": "InputMapping",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void InputMapping4388D0::UpdateHeldCounts()",
+        "is_thunk": "false",
+        "source_file": "src/InputHeldCounts406E80.cpp",
+        "evidence": "R015; F090; scripts/repo-python scripts/replay-exact-units.py --unit input-held-counts-00406e80",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F090: complete741-byte canonical cold exact held-input update,211 instructions/36 branches/five vector packets and15 physical fields; signed device selector chooses joystick or keyboard,axis thresholds -500/+500 and sign-reset counters retained; actual five-button loops use separate genuine indices in12-byte frame; real pinned vendor vector<DIJOYSTATE> interface and existing keyboard/global declarations retained; complete49-byte/three-field vector subscript independently binds physically but stays library/exclude with no authored credit; original owner layout/names/declarations unknown; never construct/embed partial owner; R015 role retained by alias; all97 pending origins and old large drafts preserved"
+      },
+      "origin": {
+        "address": "0x00406E80",
         "origin": "authored",
         "subsystem": "InputMapping",
         "disposition": "authored",
@@ -97396,6 +97440,119 @@
           "target": 6754880
         }
       ]
+    },
+    "input-held-counts-00406e80": {
+      "source": "src/InputHeldCounts406E80.cpp",
+      "object": "build/matching/InputHeldCounts406E80.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "InputMapping4388D0::UpdateHeldCounts"
+      ],
+      "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+      "target_address": 4222592,
+      "size": 741,
+      "compare_size": 741,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A",
+          "target": 6755160
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z",
+          "target": 4211488
+        },
+        {
+          "offset": 95,
+          "type": "DIR32",
+          "symbol": "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A",
+          "target": 6755160
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z",
+          "target": 4211488
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A",
+          "target": 6755160
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z",
+          "target": 4211488
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A",
+          "target": 6755160
+        },
+        {
+          "offset": 235,
+          "type": "REL32",
+          "symbol": "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z",
+          "target": 4211488
+        },
+        {
+          "offset": 327,
+          "type": "DIR32",
+          "symbol": "?g_JoystickStates@Input@@3V?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@A",
+          "target": 6755160
+        },
+        {
+          "offset": 332,
+          "type": "REL32",
+          "symbol": "??A?$vector@UDIJOYSTATE@@V?$allocator@UDIJOYSTATE@@@std@@@std@@QAEAAUDIJOYSTATE@@I@Z",
+          "target": 4211488
+        },
+        {
+          "offset": 410,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        },
+        {
+          "offset": 467,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        },
+        {
+          "offset": 533,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        },
+        {
+          "offset": 589,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        },
+        {
+          "offset": 684,
+          "type": "DIR32",
+          "symbol": "?g_KeyboardState@Input@@3PAEA",
+          "target": 6754880
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -97550,6 +97707,7 @@
     "src/SinglePlayerOptions438670.cpp": "8a3c5f676f5797a6dc3519dcd7217f31a38690318a9c3fd75fd8a2489379ab6f",
     "src/SinglePlayerOptions438670.hpp": "3896269e2591aec6147d0fc817475825b927eac117207dcb87958add72913541",
     "src/SelectionInput4388D0.cpp": "381a1d8fa3510e4118afb0e892f509d669c8c33d9be747b7f074896c3bcb3353",
-    "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17"
+    "src/SelectionInput4388D0.hpp": "0b8a31f293919acc446b3f0ea968d01e3d18bef111bab35a8f7bfbeecf270e17",
+    "src/InputHeldCounts406E80.cpp": "f9775afe22272c4170ed2903282b194b44a49bbfb791cc708ec00d12091beb8d"
   }
 }

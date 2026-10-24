@@ -164,3 +164,4 @@ address,name,module,confidence,evidence
 0x00438A80,ProgressCard438A80::GetSelectedValue,ProgressCard438A80,inferred,F088; complete53-byte canonical cold exact; whole renderer/getter ABI and shared source reviewed; original layout/declarations/names unknown
 0x004388D0,SelectionInput4388D0::PollInput,SelectionInput4388D0,inferred,F089; complete346-byte canonical cold exact; whole input poll/key getter ABI and shared source reviewed; original layout/declarations/names unknown
 0x00407170,InputMapping4388D0::IsKeyDown,InputMapping4388D0,inferred,F089; complete38-byte canonical cold exact; whole input poll/key getter ABI and shared source reviewed; original layout/declarations/names unknown
+0x00406E80,InputMapping4388D0::UpdateHeldCounts,InputMapping4388D0,inferred,"F090; complete741-byte canonical cold exact; whole signed-device/axis/button behavior,vector-call ABI and existing header reviewed; original layout/declarations/names unknown"

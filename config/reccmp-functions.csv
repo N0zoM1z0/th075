@@ -182,3 +182,4 @@ SinglePlayerOptions438670::RenderOptions,0x00438670,function
 ProgressCard438A80::GetSelectedValue,0x00438A80,function
 SelectionInput4388D0::PollInput,0x004388D0,function
 InputMapping4388D0::IsKeyDown,0x00407170,function
+InputMapping4388D0::UpdateHeldCounts,0x00406E80,function
