@@ -21847,6 +21847,9 @@ and 8,282,705 bytes of Python caches, with per-file hash receipts.
 Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
 F099 complete native/callee exports, root and seven-callee attested views,
 index and provisional ABI notes are retained privately; no F099 source or
-exact credit yet. A separate caller query is underway; check its own completion
-marker before use. Filename array size remains unknown; the distance to the
+exact credit yet. The separate caller query completed with its own attestation
+and completion marker, recording the 31-byte R019 default-palette caller
+0040BF40 (two arguments/RET8, passes count one). Its whole native export is
+retained; any later exact credit requires its own source and cold comparison.
+Filename array size remains unknown; the distance to the
 security cookie alone does not prove an array extent or authorize padding.
