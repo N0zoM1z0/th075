@@ -20403,3 +20403,55 @@ preview and14 relocation fields with structural-exact correspondence. No
 source presence,canonical unit or exact credit yet. Complete native/attested
 exports are retained. Finish bindings/ABI then separate canonical cold replay;
 then review complete1637-byte render parent0043D9D0 without changing origins.
+
+
+## F073 complete borrowed camera inputs cold acceptance (2026-10-24)
+
+R10000412660..004126BF cold-replays exact as CameraInputs412660::Initialize:
+all96 bytes/22 instructions/14 actual fields. Twelve fields reference existing
+camera globals,one calls the complete accepted1520-byte camera update and one
+binds actual readonly300.0f. COFF payload,operand width/location,PE permissions,
+zero addends,ret0 and immediate next-function adjacency are checked. No padding
+or next-body bytes credited. Alias retains the R100 historical role,extent/hash
+and unchanged origin. A previous next-cohort paragraph incorrectly saidR102;
+the actual ledger is R100 and the paragraph is corrected.
+
+Target observations: the complete004176F0 caller passes borrowed coordinate
+addresses left+44,left+48,right+44,right+48 and performs16-byte caller cleanup.
+Initializer stores these actual pointers,then invokes the complete camera
+update before copying the possibly changed targets into horizontal/vertical
+current fields. Final outputX uses currentX; outputY uses currentY+300.0f.
+No zoom/bias resets or invented defaults. There is no local frame storage or
+incoming this. The pointer-only view never constructs/embeds an actor and does
+not infer a full owner layout. Original declarations/names and nominal return
+types remain unrecovered; the actual caller ignores the result.
+
+One natural body reuses the unchanged accepted CameraUpdate4126C0 header and
+all existing global names. No alternate body,assembly,target arrays,fake
+returns,inert locals,padding or ABI inventions. Preview,independent canonical
+compile and separate cold replay match using build3077 and the explicit
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src` profile. All165 earlier units/canonical
+objects,122 inputs,218 origin files and4350 other rows remain unchanged and
+were not rebuilt. All active drafts/fragments and97 unknown origins remain
+pinned. F009 plus106 additions retains515,276 code bytes/124 new inputs.
+Total166 exact functions/525,159 bytes is26.61% reviewed authored/26.56%
+conservative. The98% goal remains active and incomplete.
+
+Full3603-test CI passes in125.315 seconds; tracking/progress/whitespace pass.
+All binder/ABI/physical/cold/parent/progress and complete native/caller/attested
+evidence are retained. One duplicate preview object is removed only after
+complete COFF byte/14-relocation equality with the cold canonical object,
+allowing explicit namespace rename. Generated scripts/tests bytecode is removed
+after CI. Source/header/PDB/evidence,active objects and shared tools remain.
+
+Next F074 is the complete1637-byte R041 render parent0043D9D0. Full native,
+fresh attested view and23 whole direct-callee bodies/index are retained:
+455 instructions,31 branches,64 calls including47 direct/17 indirect. No source,
+object,canonical unit or credit yet. Audit actual virtual/IAT/receiver/callee
+stack contracts before a complete natural body. New caller evidence consumes
+AL from00402660; its full wrapper passes through the accepted bool BeginTarget
+result unchanged. The old canonical void declaration was an ignored-result
+view,not proof that the raw body lacks AL. A separate scoped status view must
+be grounded in full native/callee/caller evidence,not force matching or alter
+accepted headers without required dependent replay. No such F074 acceptance
+or source change is made at this checkpoint.

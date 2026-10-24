@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 165 / 165 / 165 |
-| Exact code bytes | 525,063 |
-| Reviewed authored coverage | 525,063 / 1,973,516 (26.61%) |
-| Conservative coverage, including every pending byte | 525,063 / 1,977,124 (26.56%) |
+| Source-present / exact functions / exact units | 166 / 166 / 166 |
+| Exact code bytes | 525,159 |
+| Reviewed authored coverage | 525,159 / 1,973,516 (26.61%) |
+| Conservative coverage, including every pending byte | 525,159 / 1,977,124 (26.56%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **105 additions /
-515,180 code bytes / 122 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **106 additions /
+515,276 code bytes / 124 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,55 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F072
+## Latest accepted function: F073
+
+R100 camera initializer00412660..004126BF is independently cold-exact as
+`CameraInputs412660::Initialize`: all96 bytes/22 instructions/14 physical fields.
+Four coordinate pointer stores,one actual accepted camera update call,the real
+horizontal/vertical snapshots and outputX/currentY+300.0f are retained. The
+next byte starts the separate1520-byte camera update; no padding is credited.
+Alias preserves CameraMotion::InitializeAt00412660. All origins stay fixed.
+
+The complete004176F0 caller passes four scalar addresses in order left+44,
+left+48,right+44,right+48 and cleans16 bytes. The initializer is cdecl,ret0,
+with no user locals/frame storage. It borrows real float addresses without
+constructing/embedding any actor. Update runs before snapshots,so its actual
+shake/bias/override effects remain. No zoom or bias reset is invented. All
+existing camera globals/header are reused unchanged. Original names/types/
+full pointed owner layouts and nominal return declarations remain unknown.
+
+Preview,independent canonical compile and separate canonical cold replay match
+all96 bytes and14 fields with the explicit build3077 profile. Constant payload,
+COFF/PE permissions/widths and actual call/argument contracts are checked.
+All165 prior units/canonical objects and122 prior manifest inputs remain
+unchanged and were not rebuilt. Retain f073 binder/ABI/native/caller/attested/
+physical/cold/parent/progress evidence and private preview source/header.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit camera-inputs-00412660
+```
+
+Full CI passes **3,603 tests in125.315 seconds**,plus tracking,progress and
+whitespace. Evidence check retains165 prior units/objects,122 inputs,218 origin
+files,4350 other rows and every active draft/fragment. The duplicate preview
+object and scripts/tests bytecode are removed after full equality/CI; inputs,
+PDBs,evidence,active objects and shared tools remain. The prior next-cohort
+paragraph's mistaken R102 label is corrected to the ledger's actual R100.
+
+Next F074: complete R041 BattleScene::RenderFrame0043D9D0..0043E034,1637 bytes.
+The full raw export,fresh attested view and23 complete direct callee exports
+are retained. `.analysis/f074-native-index.json` records455 instructions,
+31 branches,64 call sites:47 direct calls to23 callees and17 indirect calls.
+There is no F074 source,object,canonical unit or exact credit. Review every
+callee/receiver/virtual/IAT/stack contract before writing one complete natural
+body. The raw caller consumes AL after00402660; its complete wrapper forwards
+the accepted bool BeginTarget result unchanged. The existing void declaration
+was an ignored-result view and does not prove that native AL is unavailable.
+Any new status view must be justified by those full bodies/callers; preserve
+all accepted units/headers and do not force a result or signature for matching.
+All97 pending origins and F066/F061/F048/F021 drafts remain unchanged.
+
+## Previous accepted function: F072
 
 R035 camera update004126C0..00412CAF is independently cold-exact as
 `CameraUpdate4126C0::Advance`: complete1520 bytes/336 instructions/36 branches,
@@ -81,7 +129,7 @@ New F066 controls/G5 and/Z7 on unchanged active03 also emit identical complete
 register difference. Keep `.analysis/f066-profile-controls/` source hashes,
 profiles/logs/results and retained active03; do not repeat without new evidence.
 
-Next F073: complete camera initializer00412660,96 bytes,R102. Natural private
+Next F073: complete camera initializer00412660,96 bytes,R100. Natural private
 source/header at `.analysis/camera-initialize-412660/Preview.cpp` / `.hpp`
 and active `build/probes/F073Preview.obj` are structural-exact with14 fields.
 This is diagnostic only,no source presence,unit or exact credit. Finish all

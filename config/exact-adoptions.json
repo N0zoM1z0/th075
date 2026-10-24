@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F072",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F073",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "627b851384b8e4b0946039f3d98535301151d91adaba2f913ea3ed24fb56adce"
+      "current_sha256": "f9f3aaf8a761ad7d1b828fbacfebc2a56a77a9d6f48d7d2e9c1707c7eb4b13d1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "041cc5a326d039aab4726566420742df32cc9a53a90bde88f6b01b40c456525e"
+      "current_sha256": "c7e2743f5baacfd58799b33437377746d1becf20a241ac540eac077e26d5c202"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "3830c118f3e9684d07dcab532c7bdd80e371ac5fcd0e445ccc921d51d83a76d2"
+      "current_sha256": "e2a21d491c3689c1df862227e6cc9a1bce21c9f99bbf4027c495efb67cd3b017"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "81fb0c9a09f69fea524b4db9ced70de5ec8ba9a2da48ff7af43d992eaf889ed1"
+      "current_sha256": "0a523b77356e225293bc09413da439b467353f7d56afae6f9ba247af37e455f9"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "204ca214b353f35c39bbdd8735cc866e4fab899b4dd13e0870707b05be80a70e"
+      "current_sha256": "59223aa66145c59bee07cf75d5daf3c5f3713c333d84cda807cfb39774f28888"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "3ea25a187eadc1f8da0f52b4b0f609f90f9a5f32c1134c13ebb1458772ac1f37"
+      "current_sha256": "e2f4996a033c68d9e039b25dc99fb856c502e622cd164f99b9f4ac1a1f879265"
     }
   },
   "functions": [
@@ -4660,6 +4660,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00412660",
+        "size": "96",
+        "span_end": "0x004126BF",
+        "current_name": "FUN_00412660",
+        "proposed_name": "CameraMotion::InitializeAt00412660",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00412660",
+        "size": "96",
+        "span_end": "0x004126BF",
+        "current_name": "FUN_00412660",
+        "proposed_name": "CameraInputs412660::Initialize",
+        "module": "CameraMotion",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void CameraInputs412660::Initialize(float* firstX, float* firstY, float* secondX, float* secondY)",
+        "is_thunk": "false",
+        "source_file": "src/CameraInputs412660.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F073; scripts/repo-python scripts/replay-exact-units.py --unit camera-inputs-00412660",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F073: complete96-byte cold exact camera initializer,22 instructions/14 actual call/global/constant fields; four borrowed scalar pointers, whole accepted update and actual post-update snapshots retained; one real caller/four pointer addresses/16-byte caller cleanup independently checked; no owner layout or construction; R100 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x00412660",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
       }
     }
   ],
@@ -90533,6 +90577,113 @@
           "target": 6755268
         }
       ]
+    },
+    "camera-inputs-00412660": {
+      "source": "src/CameraInputs412660.cpp",
+      "object": "build/matching/CameraInputs412660.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CameraInputs412660::Initialize"
+      ],
+      "symbol": "?Initialize@CameraInputs412660@@YAXPAM000@Z",
+      "target_address": 4269664,
+      "size": 96,
+      "compare_size": 96,
+      "relocations": [
+        {
+          "offset": 7,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstXAt006713C8@@3PAMA",
+          "target": 6755272
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstYAt006713D0@@3PAMA",
+          "target": 6755280
+        },
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondXAt006713CC@@3PAMA",
+          "target": 6755276
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondYAt006713D4@@3PAMA",
+          "target": 6755284
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "?Advance@CameraUpdate4126C0@@YAXXZ",
+          "target": 4269760
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 62,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 72,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 78,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetY@@3MA",
+          "target": 6755268
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -90657,6 +90808,8 @@
     "src/EffectServices.cpp": "6d7ea33cb779581cef1ae4e0b238865dec49e0e8fd54f6eb98973be6c25429d6",
     "src/EffectServices.hpp": "8d96d1198c4336ca62d70bdde5bc1a139e2a1ee86119d38d1d270da215c735e2",
     "src/CameraUpdate4126C0.cpp": "69f4cbad45255066f59841e4a6e9b2690bcabad5c525ecad20bf8f808302c03d",
-    "src/CameraUpdate4126C0.hpp": "d931097a0c8b01171ae54f75b6993c1b736d70e484b1f8c69f5fa00f2d896266"
+    "src/CameraUpdate4126C0.hpp": "d931097a0c8b01171ae54f75b6993c1b736d70e484b1f8c69f5fa00f2d896266",
+    "src/CameraInputs412660.cpp": "d1375e001a91f3e837e77b883f961f9e55aa03021715323b188dd2339c147341",
+    "src/CameraInputs412660.hpp": "bb3f56a6982921b2c11df6ef8f9150a6b02e4c2f1ef6f599d50f7c93524d95dc"
   }
 }

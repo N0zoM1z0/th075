@@ -109,3 +109,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00453E60,FighterState::SetCameraShakeAt00453E60,FighterShake453E60::SetCameraShake,R102,fighter-camera-shake-00453e60
 0x00412CB0,CameraMotion::SetShakeAmplitude,CameraShake412CB0::SetShakeAmount,R035,camera-shake-amount-00412cb0
 0x004126C0,CameraMotion::Update,CameraUpdate4126C0::Advance,R035,camera-update-004126c0
+0x00412660,CameraMotion::InitializeAt00412660,CameraInputs412660::Initialize,R100,camera-inputs-00412660

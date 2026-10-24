@@ -164,3 +164,4 @@ EffectSound45B860::PlaySharedSound,0x0045B860,function
 FighterShake453E60::SetCameraShake,0x00453E60,function
 CameraShake412CB0::SetShakeAmount,0x00412CB0,function
 CameraUpdate4126C0::Advance,0x004126C0,function
+CameraInputs412660::Initialize,0x00412660,function
