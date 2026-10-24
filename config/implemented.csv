@@ -169,3 +169,4 @@ BattleHud43E040::RenderHud
 BattleStatus440B50::RenderStatus
 BattleTimeline447340::RenderTimeline
 BattleEndOverlay441910::RenderEndOverlay
+BattleModeFive448710::RenderMenu

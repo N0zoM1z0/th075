@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F078",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F079",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "5f558e14480997173e8cb952f408fd60fd9dad9e5cd2f8a29f6e1faa3118c5bd"
+      "current_sha256": "744d8658c1dfacd893203144dd293cf4498df71a8a7a970852ebd668f5d44951"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "262cc3332ad9b1f381037c77195a2f51153537956b39bf5184757f46d41057c3"
+      "current_sha256": "211fe40f6f7d343dbcd03da5a4c5fccae68dfe6ba01c256442e360ac8ed4dcb5"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "14340b853d39e34bda4add74e57d8d964825ac81dc7c00e994caa43f0bcd520b"
+      "current_sha256": "c2a534383b2e717ba68d7871008b81e1fdc9080ae8afc2d511660135a5f16150"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "787009218e11c28b847d5b217e351d22298d3a33e55cf76fc059aa2212b1b317"
+      "current_sha256": "745e025622e78cdbdde6ed4cccf386d0c20ffb461e000354cfeb76384536da5e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f56586508b492ac9fae3c1e5b8d6e40c85909987c848f3046c490ed4a2a0450e"
+      "current_sha256": "19c3ba77f63594615035d4b99816c4c03969756581d41b20693b7d8a371f6ab4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "1232b139798b88bf47d4fa75c4af1e92379a64152ebbe321b66f64caea083c8a"
+      "current_sha256": "a38af217f6d4aa0e187dfff651c1a42370a27bd5b40de44d1878e52f6a661f8a"
     }
   },
   "functions": [
@@ -4919,6 +4919,50 @@
       },
       "origin": {
         "address": "0x00441910",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00448710",
+        "size": "2766",
+        "span_end": "0x004491DD",
+        "current_name": "FUN_00448710",
+        "proposed_name": "BattleScene::RenderPauseMenu",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00448710",
+        "size": "2766",
+        "span_end": "0x004491DD",
+        "current_name": "FUN_00448710",
+        "proposed_name": "BattleModeFive448710::RenderMenu",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleModeFive448710::RenderMenu()",
+        "is_thunk": "false",
+        "source_file": "src/BattleModeFive448710.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F079; scripts/repo-python scripts/replay-exact-units.py --unit battle-mode-five-menu-00448710",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F079: complete2766-byte cold exact mode5 menu,665 instructions/43 branches/65 fields and65 actual call packets; seven whole direct callees,16 named IAT calls,four loops and signed selector bytes reviewed; one shared index/color,actual alpha guard and four integer-to-float conversions retained; complete initialized132-byte packet reused; portrait uses left actor+534; R042 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x00448710",
         "origin": "authored",
         "subsystem": "BattleScene",
         "disposition": "authored",
@@ -94709,6 +94753,419 @@
           "target": 4245920
         }
       ]
+    },
+    "battle-mode-five-menu-00448710": {
+      "source": "src/BattleModeFive448710.cpp",
+      "object": "build/matching/BattleModeFive448710.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleModeFive448710::RenderMenu"
+      ],
+      "symbol": "?RenderMenu@BattleModeFive448710@@QAEXXZ",
+      "target_address": 4491024,
+      "size": 2766,
+      "compare_size": 2766,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 99,
+          "type": "REL32",
+          "symbol": "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z",
+          "target": 4208912
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 248,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@RenderQuadPacket5E68C0@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 274,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 297,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 334,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 496,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 521,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 566,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 603,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 719,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 784,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 807,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 844,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 918,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 943,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 966,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1003,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1076,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1101,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1124,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1161,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1231,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1256,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1279,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1316,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1389,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1414,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1437,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1474,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1585,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1610,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1655,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1692,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1766,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1791,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1814,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1851,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1924,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1949,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1972,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2009,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2079,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2104,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2127,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2164,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2237,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2262,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2285,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2322,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2391,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2416,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2439,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2476,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2549,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2574,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2597,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2634,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2661,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2679,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@RenderQuadPacket5E68C0@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 2702,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2758,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -94845,6 +95302,8 @@
     "src/BattleTimeline447340.cpp": "00efbc605d9e4a50b0dbc80323fb28112d13aa4d22f5e46c5ded773d775d4a1e",
     "src/BattleTimeline447340.hpp": "314bb2b2ad7a3895fdd1d019fa697d66e56540aca9e85003bb6a387d84411b43",
     "src/BattleEndOverlay441910.cpp": "41cf02c05c18fe54d8af5d36a7ff88bbf31238b99d44ac0f4ffe97bf24d26bca",
-    "src/BattleEndOverlay441910.hpp": "aa656fc5e09759d5197ca5af2abb4ba0322491ea78f66440bd9635a52779684a"
+    "src/BattleEndOverlay441910.hpp": "aa656fc5e09759d5197ca5af2abb4ba0322491ea78f66440bd9635a52779684a",
+    "src/BattleModeFive448710.cpp": "11bbb3754414aaea32a30579b3fdbbdff6d151cb7cfdcca54d238d0246c79a22",
+    "src/BattleModeFive448710.hpp": "e4139141b76c0a3b66af6f301d2b700f79c82d0615f43cf5d7de6c6dfa36a1a1"
   }
 }

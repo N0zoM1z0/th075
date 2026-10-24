@@ -20741,3 +20741,60 @@ loops, shared index/color and signed actor selectors before writing one complete
 natural body. The initialized packet precedes the alpha guard; portrait drawing
 uses left actor+534. No F079 source, object, canonical unit or credit exists.
 Keep all older units and large unaccepted drafts.
+
+
+## F079 complete mode-5 menu and shared-local allocation cold acceptance (2026-10-24)
+
+R042 mode-5 menu 00448710..004491DD cold-replays exact as
+`BattleModeFive448710::RenderMenu`: all 2,766 bytes, 665 instructions, 43 branches,
+65 physical fields and 65 real call packets. Two following INT3 bytes are excluded.
+Seven complete direct callees and 16 USER32!SetRect calls are checked. The accepted
+F078 caller supplies this with no stack arguments. Alias preserves the historical
+BattleScene::RenderPauseMenu role without claiming the original screen identity.
+
+Four loops reuse one real index, with nine/six/ten/two entries. Actual white/gray
+color stores, signed actor selectors, repeated integer expressions, four int-to-
+float conversions and the alpha early exit are retained. One initialized complete
+132-byte F064 packet precedes the guard and is reused. The final portrait uses
+left actor+534; ordinary atlas drawing uses current+8. No partial owner is
+constructed or embedded. All accepted shared headers stay unchanged.
+
+The first complete preview has the native size and instruction count; 76 bytes
+encode different color/RECT frame positions. A single meaningful local rename
+from rect to region reproduces the actual allocation; all 65 relocations remain
+unchanged. This is a compiler observation, not original local spelling or owner-
+layout evidence. The complete 184-byte frame contains the shared index, packet,
+color, RECT, this and four real conversion slots. No padding or inert locals.
+
+Independent canonical compilation and separate canonical cold replay match all
+bytes with the explicit build3077 profile. Physical bindings are 49 direct calls
+and 16 named imports; no globals or readonly data fields receive credit. Zero
+addends, operand positions, executable/import permissions, every branch and whole
+CFG stack joins are checked. Wrong SetRect/translation cleanup controls fail.
+All 171 prior units/objects, 134 previous manifest inputs, 218 origin files,
+4,350 other function rows and 84 active draft inputs remain unchanged and were
+not rebuilt. All 97 pending origins remain unknown. F009 plus 112 additions
+retains 537,903 bytes and 136 new source/header inputs. The 98% goal is incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-mode-five-menu-00448710
+```
+
+Full CI passes **3,603 tests in 119.171 seconds**, plus tracking, progress and
+whitespace. Keep f079 native/attested/ABI/physical/cold/parent/progress/preservation
+evidence and both complete compiler input snapshots. Two obsolete preview objects
+were removed after pinning inputs and whole cold-canonical code/relocation equality.
+PDBs, logs, source/control inputs, evidence, canonical objects, older active drafts
+and shared tools remain. Scripts/tests bytecode was removed after CI.
+
+Next F080: complete R042 damage flash 004406C0..00440AF8, 1,081 bytes.
+`.analysis/f080-native-index.json` pins 292 instructions, 20 branches and 23 calls:
+21 direct calls to five complete callees plus two SetRect calls. Fresh attested
+root/callee/caller views are retained. ABI review checks all packets and twelve
+implicit ST0 conversions; nested coordinate calls preserve zero/one/two/three
+outer SetRect words. Review the actual x87 formulas and shared byte/color local
+before one complete natural body. The original scan misclassified writable float
+00671404 as a constant; PE permission review corrects the index and preserves the
+old scan. Reuse existing g_CombatViewOffsetX/Y views without changing headers.
+No F080 source, object, canonical unit or credit exists. Keep all older units and
+large unaccepted drafts.

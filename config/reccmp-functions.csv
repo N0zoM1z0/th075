@@ -170,3 +170,4 @@ BattleHud43E040::RenderHud,0x0043E040,function
 BattleStatus440B50::RenderStatus,0x00440B50,function
 BattleTimeline447340::RenderTimeline,0x00447340,function
 BattleEndOverlay441910::RenderEndOverlay,0x00441910,function
+BattleModeFive448710::RenderMenu,0x00448710,function
