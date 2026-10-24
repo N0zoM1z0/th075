@@ -206,3 +206,6 @@ BitmapLifecycle41A2D0::ConstructDefault,0x0041A2D0,function
 BitmapLifecycle41A2D0::ConstructWithFormat,0x0041A310,function
 BitmapLifecycle41A2D0::Destroy,0x0041A380,function
 FighterPattern457660::Load,0x00457660,function
+ScriptResource4205F0::LoadArchive,0x004205F0,function
+ScriptResource4205F0::LoadFile,0x004206D0,function
+SoundArchive4076A0::Load,0x004076A0,function

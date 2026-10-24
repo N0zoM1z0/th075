@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F106",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F107",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "51cb388a37a6a1a0c91141d367b0c6d381c1a07095abdf473867d569d1d7016d"
+      "current_sha256": "d9739f65bba449a786c025ed78caa8d3f5e6f6e635f5499eb5cb0e79f9eeeda1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "99c62e8a8ffe5c334cbc18c62618d54507905d392bb88a04d52c8a286ee54e4b"
+      "current_sha256": "dba2aae7fe3da7465bc3a45dc22b7e59e1396ee3afe3a95ed8041b0a065230cf"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0f53a1f67a6477aabe54d431489d3357aaed314f2d1151e7c48514124ba39b39"
+      "current_sha256": "5ca5d2ce2a5bb459a7002c4e666044d6c5ba4f6055ae1db3f2a9654ac3788f96"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "e75d177ae563aaad3891e37b0488b4262b918e2d9f20cbca95316947df111144"
+      "current_sha256": "968eb5c73814d140b5241646258ef8838c6ee5c9981d4b9d212b750805c08ce8"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "56ef462b6594e6ed71ef5885fc55abe692e9e872cbbeea8d5720bb35fe9dff23"
+      "current_sha256": "28a0b6e65dc12f4cd6b17f0ad780fa5dee77825b8732ee23513aa277daf11ab8"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "dd84987277ccaadd17282a97f53e76e35d3714463ae86792b227f95d9b187fca"
+      "current_sha256": "4b19869c220d5a43d54f464d6e9858122bd12ead0914b7d81a3d5c1f8f9b63ce"
     }
   },
   "functions": [
@@ -6508,6 +6508,138 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004205F0",
+        "size": "217",
+        "span_end": "0x004206C8",
+        "current_name": "FUN_004205f0",
+        "proposed_name": "FighterScript::LoadArchiveEntryAt004205F0",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R070; complete target body/CFG, guarded parser switch and reviewed .sce caller",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004205F0",
+        "size": "217",
+        "span_end": "0x004206C8",
+        "current_name": "FUN_004205f0",
+        "proposed_name": "ScriptResource4205F0::LoadArchive",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ScriptResource4205F0::LoadArchive(const char*, const char*)",
+        "is_thunk": "false",
+        "source_file": "src/ResourceStreams4205F0.cpp",
+        "evidence": "R070; complete target body/CFG, guarded parser switch and reviewed .sce caller; F107; scripts/repo-python scripts/replay-exact-units.py --unit script-archive-load-004205f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F107: complete217byte independent canonical cold exact; family217/418/310bytes/all328instructions/29actualfields/29callpackets/13SDKpackets,real40/44/60byteframes/RET8/12/8 andwholeCFG/stackjoins; borrowedarchiveFind retainsouter4/8bytes,actualSizedSeek180 readsrecordsize100 andseekoffset104 thenreturnscontext0HANDLE; diskownedhandlesclosedbefore/aftermode1output,parserreceivessamebytebufferbeforereencoding/write,mode2decodes/archiveunconditionallydecodes; actualBYTE99/98/+66wrap/signedcharloads preserved; soundSDKWAVEFORMATEX18,nonzeropresence/count/header/payload,integralassign(count,0),actualslotreferenceandcdeclfifthliteralzero retained; whole348bytefactoryactualboolAL0/1 andSDKIID_IDirectSoundBuffer8 independentlychecked,originalunusedfifthformaltypeunknown,callerbytesalonecannotprovereturn/interface; full633instructionR070parser ordinaryCFG/all7switchtargets/100selectors/RET8 reviewedincluding128dispatchbytesoutsideold2301codeboundary,noparser/helper/data credit; naturalusedlocalname/declarationselection andexplicitXORstore,no padding/inertlocals/manualEH/assembly/framealiases/masks/croppedextent; threephysicalbinding/threepacketmutationcontrols rejected; all207oldunits/105objects/173inputs/97unknownorigins/headers/drafts unchanged,R070roleretainedbyalias; allownerinterfacespointeronly neverconstructed,onlygenuinefile-sizedchararrays/completeSDKformat instantiated; originalnames/fullownerlayoutsunknown; resource80bytebase/filenameboundremainunresolved,rootframecorrectedto588/this-576/lasttemp-588innewprivatefrontierwithoutoverwritingfrozennotes"
+      },
+      "origin": {
+        "address": "0x004205F0",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R070"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004206D0",
+        "size": "418",
+        "span_end": "0x00420871",
+        "current_name": "FUN_004206d0",
+        "proposed_name": "AssetFile::LoadAndTransform",
+        "module": "AssetFile",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004206D0",
+        "size": "418",
+        "span_end": "0x00420871",
+        "current_name": "FUN_004206d0",
+        "proposed_name": "ScriptResource4205F0::LoadFile",
+        "module": "AssetFile",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ScriptResource4205F0::LoadFile(const char*, signed char, const char*)",
+        "is_thunk": "false",
+        "source_file": "src/ResourceStreams4205F0.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F107; scripts/repo-python scripts/replay-exact-units.py --unit script-file-load-004206d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F107: complete418byte independent canonical cold exact; family217/418/310bytes/all328instructions/29actualfields/29callpackets/13SDKpackets,real40/44/60byteframes/RET8/12/8 andwholeCFG/stackjoins; borrowedarchiveFind retainsouter4/8bytes,actualSizedSeek180 readsrecordsize100 andseekoffset104 thenreturnscontext0HANDLE; diskownedhandlesclosedbefore/aftermode1output,parserreceivessamebytebufferbeforereencoding/write,mode2decodes/archiveunconditionallydecodes; actualBYTE99/98/+66wrap/signedcharloads preserved; soundSDKWAVEFORMATEX18,nonzeropresence/count/header/payload,integralassign(count,0),actualslotreferenceandcdeclfifthliteralzero retained; whole348bytefactoryactualboolAL0/1 andSDKIID_IDirectSoundBuffer8 independentlychecked,originalunusedfifthformaltypeunknown,callerbytesalonecannotprovereturn/interface; full633instructionR070parser ordinaryCFG/all7switchtargets/100selectors/RET8 reviewedincluding128dispatchbytesoutsideold2301codeboundary,noparser/helper/data credit; naturalusedlocalname/declarationselection andexplicitXORstore,no padding/inertlocals/manualEH/assembly/framealiases/masks/croppedextent; threephysicalbinding/threepacketmutationcontrols rejected; all207oldunits/105objects/173inputs/97unknownorigins/headers/drafts unchanged,R040roleretainedbyalias; allownerinterfacespointeronly neverconstructed,onlygenuinefile-sizedchararrays/completeSDKformat instantiated; originalnames/fullownerlayoutsunknown; resource80bytebase/filenameboundremainunresolved,rootframecorrectedto588/this-576/lasttemp-588innewprivatefrontierwithoutoverwritingfrozennotes"
+      },
+      "origin": {
+        "address": "0x004206D0",
+        "origin": "authored",
+        "subsystem": "AssetFile",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004076A0",
+        "size": "310",
+        "span_end": "0x004077D5",
+        "current_name": "FUN_004076a0",
+        "proposed_name": "SoundBank::LoadSerializedArchiveEntry",
+        "module": "SoundBank",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004076A0",
+        "size": "310",
+        "span_end": "0x004077D5",
+        "current_name": "FUN_004076a0",
+        "proposed_name": "SoundArchive4076A0::Load",
+        "module": "SoundBank",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SoundArchive4076A0::Load(const char*, const char*)",
+        "is_thunk": "false",
+        "source_file": "src/ResourceStreams4205F0.cpp",
+        "evidence": "R016; F107; scripts/repo-python scripts/replay-exact-units.py --unit sound-archive-load-004076a0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F107: complete310byte independent canonical cold exact; family217/418/310bytes/all328instructions/29actualfields/29callpackets/13SDKpackets,real40/44/60byteframes/RET8/12/8 andwholeCFG/stackjoins; borrowedarchiveFind retainsouter4/8bytes,actualSizedSeek180 readsrecordsize100 andseekoffset104 thenreturnscontext0HANDLE; diskownedhandlesclosedbefore/aftermode1output,parserreceivessamebytebufferbeforereencoding/write,mode2decodes/archiveunconditionallydecodes; actualBYTE99/98/+66wrap/signedcharloads preserved; soundSDKWAVEFORMATEX18,nonzeropresence/count/header/payload,integralassign(count,0),actualslotreferenceandcdeclfifthliteralzero retained; whole348bytefactoryactualboolAL0/1 andSDKIID_IDirectSoundBuffer8 independentlychecked,originalunusedfifthformaltypeunknown,callerbytesalonecannotprovereturn/interface; full633instructionR070parser ordinaryCFG/all7switchtargets/100selectors/RET8 reviewedincluding128dispatchbytesoutsideold2301codeboundary,noparser/helper/data credit; naturalusedlocalname/declarationselection andexplicitXORstore,no padding/inertlocals/manualEH/assembly/framealiases/masks/croppedextent; threephysicalbinding/threepacketmutationcontrols rejected; all207oldunits/105objects/173inputs/97unknownorigins/headers/drafts unchanged,R016roleretainedbyalias; allownerinterfacespointeronly neverconstructed,onlygenuinefile-sizedchararrays/completeSDKformat instantiated; originalnames/fullownerlayoutsunknown; resource80bytebase/filenameboundremainunresolved,rootframecorrectedto588/this-576/lasttemp-588innewprivatefrontierwithoutoverwritingfrozennotes"
+      },
+      "origin": {
+        "address": "0x004076A0",
+        "origin": "authored",
+        "subsystem": "SoundBank",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
       }
     }
   ],
@@ -102431,6 +102563,249 @@
           "target": 6555153
         }
       ]
+    },
+    "script-archive-load-004205f0": {
+      "source": "src/ResourceStreams4205F0.cpp",
+      "object": "build/matching/ResourceStreams4205F0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptResource4205F0::LoadArchive"
+      ],
+      "symbol": "?LoadArchive@ScriptResource4205F0@@QAEXPBD0@Z",
+      "target_address": 4326896,
+      "size": 217,
+      "compare_size": 217,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "?Find@SizedArchiveLookup41CF00@@YAPAVArchiveContextWithSize41D800@@PBD@Z",
+          "target": 4312832
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "?Seek@ArchiveContextWithSize41D800@@QAEPAXPBDPAK@Z",
+          "target": 4315136
+        },
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 189,
+          "type": "REL32",
+          "symbol": "?Parse@ScriptResource4205F0@@QAEXPADI@Z",
+          "target": 4327552
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        }
+      ]
+    },
+    "script-file-load-004206d0": {
+      "source": "src/ResourceStreams4205F0.cpp",
+      "object": "build/matching/ResourceStreams4205F0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptResource4205F0::LoadFile"
+      ],
+      "symbol": "?LoadFile@ScriptResource4205F0@@QAEXPBDC0@Z",
+      "target_address": 4327120,
+      "size": 418,
+      "compare_size": 418,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 107,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 214,
+          "type": "REL32",
+          "symbol": "?Parse@ScriptResource4205F0@@QAEXPADI@Z",
+          "target": 4327552
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 265,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 380,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 390,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 405,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        }
+      ]
+    },
+    "sound-archive-load-004076a0": {
+      "source": "src/ResourceStreams4205F0.cpp",
+      "object": "build/matching/ResourceStreams4205F0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SoundArchive4076A0::Load"
+      ],
+      "symbol": "?Load@SoundArchive4076A0@@QAEXPBD0@Z",
+      "target_address": 4224672,
+      "size": 310,
+      "compare_size": 310,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?Size@SoundArchive4076A0@@QAEIXZ",
+          "target": 4232096
+        },
+        {
+          "offset": 29,
+          "type": "REL32",
+          "symbol": "?Find@SoundArchiveLookup41CF00@@YAPAVArchiveContextWithoutSize41D750@@PBD@Z",
+          "target": 4312832
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?Seek@ArchiveContextWithoutSize41D750@@QAEPAXPBD@Z",
+          "target": 4314960
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?Assign@SoundArchive4076A0@@QAEXHH@Z",
+          "target": 4236992
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 175,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 197,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 206,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 242,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 256,
+          "type": "REL32",
+          "symbol": "?At@SoundArchive4076A0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 274,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 292,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -102606,6 +102981,7 @@
     "src/TexturePackLoad40B7C0.cpp": "bb6050c110cb78571781b01dea2f433662a3350711ba0efc2e2efe9912c08a9d",
     "src/TexturePackArchive40BBA0.cpp": "9ed8e435429f338d2913058218ab52f0e135f026f850c3279bb520716d5287d5",
     "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3",
-    "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28"
+    "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
+    "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e"
   }
 }

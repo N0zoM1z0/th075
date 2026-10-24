@@ -22534,3 +22534,132 @@ constructor new expressions/null checks/cleanup states, character/archive-key
 comparisons, signed palette+1, diagnostics, script loads, notice-mode call and
 final virtual slot0x18 in native order. Do not grow arrays to force a frame
 match. Preserve all old accepted units, origins, headers and draft inputs.
+
+## F107 complete resource-stream checkpoint (2026-10-24)
+
+R070 script archive loader `004205F0..004206C8` (217 bytes), R040 script
+file loader `004206D0..00420871` (418 bytes) and R016 sound archive loader
+`004076A0..004077D5` (310 bytes) independently pass canonical cold comparison.
+All 945 code bytes, 328 instructions, 29 calls and 29 actual relocation fields
+match. Seven/fourteen/ten following INT3 bytes remain outside. Actual frames
+are 40/44/60 bytes with RET8/RET12/RET8. One new source file leaves every prior
+source/header intact. Three independent reports share one serial cold object
+build; no old dependency replay is needed.
+
+Both archive lookups have one cdecl archive-name parameter. The sound caller
+retains filename on the stack; the script caller retains filename plus the
+size address. The 180-byte sized seek method returns the borrowed handle from
+context0 and writes the record's size at100 after seeking to record offset104.
+It has two parameters and RET8. The older decompile's extra apparent lookup
+arguments are disproved by complete bodies and actual stack cleanup. Archive
+handles are borrowed and are not closed by either loader. The script archive
+loader always applies the byte transform before parsing and deletes its array.
+
+The disk loader owns both CreateFileA handles. Mode2 decodes the input buffer;
+other input modes pass it directly to the parser. It closes the input handle
+before mode1 optionally creates an output, transforms the same post-parse
+buffer, writes it and closes the output. SDK results remain ignored and the
+native error/cleanup order stays unchanged. All three transform loops preserve
+unsigned byte keys99/98, key+=step, step+=66, wrapping stores and signed char
+payload loads. An explicit XOR assignment reproduces the target's load order;
+compound XOR is a retained same-size nonexact control.
+
+The sound loader retains its initial size call before lookup, then reads the
+signed entry count, assigns the slots to zero, reads each presence byte and,
+when nonzero, reads payload size, the complete SDK WAVEFORMATEX18 and payload.
+It passes the actual slot address to the creation helper, followed by temporary
+array deletion. No partial sound/script/archive owner is instantiated. The
+local SDK format is complete; file-sized char arrays are genuine payloads.
+No guessed complete owner or artificial storage is introduced.
+
+The entire 348-byte creation helper proves an AL0/1 return and its QueryInterface
+GUID matches the pinned SDK IID_IDirectSoundBuffer8. The final source declares
+bool and the correct interface pointer. The first probe's void/base-interface
+prototype was corrected from this independent callee evidence; ignored caller
+results and pointer width cannot prove those facts from matching caller bytes.
+There are five actual cdecl argument words and caller cleanup20. The native
+body reads only the first four; the original unused fifth formal type/name
+remains unknown, and its actual literal zero is retained with a compatible
+DWORD carrier. The 50-byte vector helper is integral assign, not a preserving
+resize; the final interface names it Assign.
+
+Every normal CFG edge/stack join and all 29 call packets, including thirteen
+SDK packets and nested outer arguments, are reviewed. The parser dependency's
+complete 2,301-byte/633-instruction ordinary CFG is recovered independently of
+the failed decompile: its seven DWORD targets and all100 selector bytes are
+bounded by the actual range guard. Its one RET8 and parameters at EBP+8/+12
+agree with both callers. The 128 dispatch bytes lie outside its old code extent
+and are explicitly retained. This is ABI/dependency evidence, not parser source,
+EH reconstruction or new code/data credit. Three actual physical binding
+controls and three explicit packet mutation controls fail; the latter are not
+compiled source variants. Native imports are checked from the pinned PE.
+
+Bounded compiler measurements select meaningful used local names/declarations.
+Final natural source matches all real bytes without padding, inert locals,
+manual EH/returns, assembly, frame aliases, masks, array growth or cropped
+extents. Actual array-new/delete entry identities are preserved, including
+their difference from scalar aliases. Original names and complete owner layouts
+remain provisional. All historical R070/R040/R016 roles remain by aliases.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit script-archive-load-004205f0 --unit script-file-load-004206d0 --unit sound-archive-load-004076a0
+```
+
+All 207 prior units, 105 canonical objects, 173 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,348 other function rows stay
+unchanged. F009 plus 150 additions retains 570,085 code bytes and 174 inputs.
+Keep all f107 source/prototype/name controls, native/attested/CFG/packet/import/
+ABI/binding/cold/parent/frontier evidence and results/logs/PDBs. All 97 unknown
+origins and older drafts receive no credit.
+
+Current totals: 210 exact functions/units, 579,968 code bytes, 29.39% of
+reviewed authored bytes and 29.33% conservatively including all pending bytes.
+The 98% goal remains active and incomplete.
+
+Final F107 CI passes 3,603 tests in 134.710s. The initial run exposed one
+R228 test fixture still comparing an exact parent against its historical
+unimplemented row. The fixture now uses the existing hash-pinned exact-adoption
+projection, which accepts only the complete approved before/after transitions
+and rejects other metadata. The immutable R228 verifier/evidence and all
+negative guards remain intact. Fourteen focused provenance tests and seven
+checkpoint tests pass before the full rerun; both CI logs remain. No source,
+header, ABI or compiler profile changed for this fixture correction, so no
+additional cold replay was needed.
+
+Bounded cleanup removes six obsolete reproducible probe/control objects
+(75,337 bytes) and 8,282,863 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, every source/control input, complete evidence, results,
+logs and PDBs remain.
+
+## Current reconstruction cohort: F108
+
+Continue the resource chain through the complete R070 parser `00420880`:
+2,301 code bytes /633 instructions, seven DWORD dispatch entries at `0042117D`
+and100 selector bytes at `00421199`. Code plus both tables span2,429 bytes,
+followed by three INT3 bytes before `00421200`. Reconcile the complete switch,
+all states/exits, true two-parameter thiscall ABI, ownership and EH graph before
+natural source. The old decompile failed at the indirect jump and exposed an
+incorrect extra parameter; use the attested query plus the f107 full native
+export/ordinary CFG/table evidence. No parser source or exact credit yet.
+
+Keep ScriptResource4205F0's interface identical if implementing Parse in a new
+source file; old caller bodies and headers need not change. Preserve all old
+accepted units, origins and draft inputs. This independently reviewed authored
+function can progress while the resource root's layout/buffer proof stays open.
+
+The complete1,186-byte R045 resource root `00456B60` remains unaccepted.
+The f107 frontier independently retains both texture-vector COM pointer
+carriers, actual deque element width4 from the complete177-byte Tidy/R072,
+and paired global-only graphics-client lifecycle bodies. Those methods alone
+do not prove the original base size or unused prefix; the old partial client
+interface still cannot be instantiated or embedded. Do not invent a vptr,
+padding fields, raw storage, size-ignoring new or byte arrays to make80.
+The 24-byte command model's color mask20 is proved and remains uninitialized
+by its constructor. Keep its other real members/defaults unchanged.
+
+Use the refined resource frame evidence: subESP0x240 reserves576 bytes after
+a12-byte EH registration, giving588 bytes belowEBP. This is atEBP-576 and the
+last temporary atEBP-588. Earlier frozen notes'576-byte whole-frame shorthand
+is superseded by the f107 refinement, without overwriting their pinned inputs.
+The532-byte span between filename EBP-548 and cookie EBP-16 is still not a
+proved array bound. No buffer growth or incomplete-owner allocation was used.

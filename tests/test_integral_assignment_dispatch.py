@@ -1,5 +1,5 @@
 """Guard whole integral dispatch ownership, controls and bounded canonical state."""
-from exact_checkpoint import retained_bytes
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -94,6 +94,7 @@ class IntegralAssignmentDispatchTests(unittest.TestCase):
 
     def test_unrelated_canonical_changes_and_unapproved_selected_states_rejected(self):
         actual = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        actual['functions.csv'] = historical_functions(actual['functions.csv'])
         for selected in [False, True]:
             changed = copy.deepcopy(actual)
             row = next(r for r in changed['functions.csv'] if (r['address'] in V.WHOLE) == selected)
@@ -103,6 +104,8 @@ class IntegralAssignmentDispatchTests(unittest.TestCase):
 
     def test_later_independent_cohorts_do_not_change_scoped_source_expectations(self):
         actual = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        # Keep R228's complete parent snapshots; project only approved exact transitions.
+        actual['functions.csv'] = historical_functions(actual['functions.csv'])
         scoped = {r['function']['address'] for r in M['canonical']}
         row = next(r for r in actual['function-origins.csv'] if r['address'] not in scoped and r['origin'] == 'unknown')
         row.update(origin='library', disposition='exclude', evidence_id='later-independent-cohort')

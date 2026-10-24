@@ -205,3 +205,6 @@ BitmapLifecycle41A2D0::ConstructDefault
 BitmapLifecycle41A2D0::ConstructWithFormat
 BitmapLifecycle41A2D0::Destroy
 FighterPattern457660::Load
+ScriptResource4205F0::LoadArchive
+ScriptResource4205F0::LoadFile
+SoundArchive4076A0::Load

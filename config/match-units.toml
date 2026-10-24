@@ -18289,3 +18289,68 @@ relocations = [
   { offset = 0xE60, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
   { offset = 0xE68, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
 ]
+
+[units."script-archive-load-004205f0"]
+source = "src/ResourceStreams4205F0.cpp"
+object = "build/matching/ResourceStreams4205F0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ScriptResource4205F0::LoadArchive"]
+symbol = "?LoadArchive@ScriptResource4205F0@@QAEXPBD0@Z"
+target_address = 0x004205F0
+size = 217
+compare_size = 217
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "?Find@SizedArchiveLookup41CF00@@YAPAVArchiveContextWithSize41D800@@PBD@Z", target = 0x0041CF00 },
+  { offset = 0x20, type = "REL32", symbol = "?Seek@ArchiveContextWithSize41D800@@QAEPAXPBDPAK@Z", target = 0x0041D800 },
+  { offset = 0x37, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x5B, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xBD, type = "REL32", symbol = "?Parse@ScriptResource4205F0@@QAEXPADI@Z", target = 0x00420880 },
+  { offset = 0xCC, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+]
+
+[units."script-file-load-004206d0"]
+source = "src/ResourceStreams4205F0.cpp"
+object = "build/matching/ResourceStreams4205F0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ScriptResource4205F0::LoadFile"]
+symbol = "?LoadFile@ScriptResource4205F0@@QAEXPBDC0@Z"
+target_address = 0x004206D0
+size = 418
+compare_size = 418
+relocations = [
+  { offset = 0x21, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x3B, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0x47, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x6B, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xD6, type = "REL32", symbol = "?Parse@ScriptResource4205F0@@QAEXPADI@Z", target = 0x00420880 },
+  { offset = 0xE0, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x109, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x17C, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x186, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x195, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+]
+
+[units."sound-archive-load-004076a0"]
+source = "src/ResourceStreams4205F0.cpp"
+object = "build/matching/ResourceStreams4205F0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SoundArchive4076A0::Load"]
+symbol = "?Load@SoundArchive4076A0@@QAEXPBD0@Z"
+target_address = 0x004076A0
+size = 310
+compare_size = 310
+relocations = [
+  { offset = 0xD, type = "REL32", symbol = "?Size@SoundArchive4076A0@@QAEIXZ", target = 0x004093A0 },
+  { offset = 0x1D, type = "REL32", symbol = "?Find@SoundArchiveLookup41CF00@@YAPAVArchiveContextWithoutSize41D750@@PBD@Z", target = 0x0041CF00 },
+  { offset = 0x27, type = "REL32", symbol = "?Seek@ArchiveContextWithoutSize41D750@@QAEPAXPBD@Z", target = 0x0041D750 },
+  { offset = 0x4B, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x59, type = "REL32", symbol = "?Assign@SoundArchive4076A0@@QAEXHH@Z", target = 0x0040A6C0 },
+  { offset = 0x8D, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xAF, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xC5, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xCE, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0xF2, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x100, type = "REL32", symbol = "?At@SoundArchive4076A0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x112, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
+  { offset = 0x124, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+]
