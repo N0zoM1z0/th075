@@ -168,3 +168,4 @@ BattleRender43D9D0::RenderFrame
 BattleHud43E040::RenderHud
 BattleStatus440B50::RenderStatus
 BattleTimeline447340::RenderTimeline
+BattleEndOverlay441910::RenderEndOverlay

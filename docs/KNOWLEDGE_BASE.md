@@ -20684,3 +20684,60 @@ all four actual globals before writing one complete natural body. Quad creation
 belongs only to the non-mode-5 path. Three globals already have ledger names;
 00671624 is an unsigned-byte access view not yet added to the ledger. No F078
 source, object, canonical unit or credit exists. Keep all older units and drafts.
+
+
+## F078 complete conditional end-overlay cold acceptance (2026-10-24)
+
+R042 end overlay 00441910..00441E95 cold-replays exact as
+`BattleEndOverlay441910::RenderEndOverlay`: all 1,414 bytes, 340 instructions,
+20 branches, 38 physical fields and 30 real call packets. Ten following INT3
+bytes are excluded. Eight complete direct callees and seven USER32!SetRect calls
+are checked. The accepted F074 caller supplies this with no stack arguments.
+
+The mode-5 path invokes the complete 2,766-byte 00448710 delegate and skips quad
+construction. The alternate path constructs the unchanged complete 132-byte
+F064 packet and shares one RECT within its render-pass scope. That scope accounts
+for the native 156-byte frame. Actual alpha/flag guards return along the native
+early-exit paths; no return value is invented. Single-side portrait branches
+retain native ordering. Portrait drawing uses actor+534, while ordinary UI uses
+current+8. All byte selectors and the actual repeated quad operations remain.
+Partial owners are pointer-only and never constructed or embedded. Original
+names, declarations and complete owner layouts remain unknown.
+
+Preview, independent canonical compile and separate canonical cold replay match
+the whole function with the explicit build3077 profile. All 38 physical fields
+bind 23 direct calls, seven named imports and eight fields at four globals.
+Widths, zero addends, permissions, import identity, all branch fields and whole
+CFG stack joins are checked; wrong SetRect/translation cleanup controls fail.
+Three global names are reused unchanged. New g_EndOverlayFlagAt00671624 is an
+inferred unsigned-byte access view supported by native MOVZX and the zero gate;
+its original declaration/name/data ownership remains unknown and earns no data
+credit. The delegate remains unimplemented and receives no exact credit.
+
+All 170 previous units/objects, 132 previous manifest inputs, 218 origin files,
+4,350 other function rows and 84 active draft inputs remain unchanged and were
+not rebuilt. Every accepted shared header stays fixed. All 97 pending origins
+remain unknown. F009 plus 111 additions retains 535,137 bytes and 134 new source/
+header inputs. The 98% conservative authored-byte goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-end-overlay-00441910
+```
+
+Full CI passes **3,603 tests in 127.667 seconds**, plus tracking, progress and
+whitespace. Keep f078 native/root/callee/caller/attested/ABI/physical/cold/parent/
+progress/preservation evidence. Three obsolete reproducible preview objects
+were removed after pinning source/header/profile snapshots. The last preview
+matched all canonical code and 38 relocations after the explicit Draft-to-
+canonical owner rename. Inputs, PDBs, logs, evidence, canonical objects, older
+active drafts and shared tools remain. Scripts/tests bytecode was removed after CI.
+
+Next F079: complete R042 mode-5 menu 00448710..004491DD, 2,766 bytes.
+`.analysis/f079-native-index.json` pins 665 instructions, 43 branches and 65 calls:
+49 direct calls to seven complete callees plus 16 SetRect calls. Fresh attested
+root/callee/caller evidence is retained. `.analysis/f079-abi-review.json` checks
+all packets, whole CFG joins and both cleanup-negative controls. Review the four
+loops, shared index/color and signed actor selectors before writing one complete
+natural body. The initialized packet precedes the alpha guard; portrait drawing
+uses left actor+534. No F079 source, object, canonical unit or credit exists.
+Keep all older units and large unaccepted drafts.
