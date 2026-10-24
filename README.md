@@ -29,14 +29,14 @@ identity and cannot substitute for the target.
 The current checkpoint has **158 exact functions / 523,122 code bytes** from
 4,351 provisional candidates. Reviewed authored coverage is 26.51%; conservative
 coverage, including all 3,608 pending bytes, is **26.46%**. The objective of
-95% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
+98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
 ownership, and original names and complete object layouts remain provisional.
 Never construct or embed partial reconstructed owners.
 
-The latest user request prepares this workspace for a successor agent after
-clearing the active goal. Start with the [current handoff](docs/RE_HANDOFF.md)
+The latest user request resumes reconstruction with an active 98% goal after
+the cleanup/handoff checkpoint. Start with the [current handoff](docs/RE_HANDOFF.md)
 for F067 acceptance, the complete unaccepted F066 draft, retained F061/F048/F021
 work, cleanup receipts and the next investigation. Use the existing Ghidra
 wrapper and local tools without REA. Commit subjects must use

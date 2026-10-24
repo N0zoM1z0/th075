@@ -23,10 +23,9 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-The latest 2026-10-24 user request clears the active goal and prepares a cleanup
-and handoff checkpoint for a successor. The 95% authored-byte objective remains
-incomplete; continue reconstruction from `RE_HANDOFF.md` when resuming that
-work. Preserve all 97 pending origins and count every pending byte in the
+The latest 2026-10-24 user request resumes reconstruction after the cleanup
+and handoff checkpoint with an active 98% authored-byte exact goal. Continue
+the current cohort in `RE_HANDOFF.md`. Preserve all 97 pending origins and count every pending byte in the
 conservative denominator. Use existing Ghidra/local tools without REA and
 commit subjects `gpt-6.1-sol: ...`. Cold-build only new or affected units;
 shared header changes require replay of their dependent units. Keep compiler

@@ -2,10 +2,9 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-The latest 2026-10-24 user request is cleanup, documentation and handoff to a
-successor agent; the user cleared the active goal. This handoff checkpoint
-does not complete the 95% authored-byte objective. A successor continuing
-reconstruction should resume the current cohort in
+The latest 2026-10-24 user request resumes reconstruction with an active
+**98% authored-byte exact** goal. The preceding cleanup/handoff checkpoint did
+not complete the earlier 95% objective. Continue the current cohort in
 `docs/RE_HANDOFF.md`. Frequent commits and pushes remain authorized. Use the
 existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97

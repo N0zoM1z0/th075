@@ -58,20 +58,21 @@ class GoalAccountingTests(unittest.TestCase):
         self.assertIsNone(result["authored_exact_percent"])
         self.assertFalse(result["fifty_percent_goal_complete"])
 
-    def test_ninety_five_percent_boundary_uses_bytes(self):
-        at_boundary = self.summary(["authored", "authored"], [95, 5], [0])
-        below_boundary = self.summary(["authored", "authored"], [94, 6], [0])
+    def test_ninety_eight_percent_boundary_uses_bytes(self):
+        at_boundary = self.summary(["authored", "authored"], [98, 2], [0])
+        below_boundary = self.summary(["authored", "authored"], [97, 3], [0])
+        self.assertEqual(at_boundary["authored_exact_goal_percent"], 98)
         self.assertTrue(at_boundary["authored_exact_goal_complete"])
         self.assertFalse(below_boundary["authored_exact_goal_complete"])
 
     def test_pending_bytes_cannot_make_the_new_goal_easier(self):
-        result = self.summary(["authored", "authored", "review"], [95, 5, 1], [0])
+        result = self.summary(["authored", "authored", "review"], [98, 2, 1], [0])
         self.assertEqual(result["authored_upper_bound_bytes"], 101)
         self.assertFalse(result["authored_exact_goal_complete"])
 
     def test_small_pending_set_can_be_covered_conservatively(self):
-        result = self.summary(["authored", "authored", "review"], [960, 40, 10], [0])
+        result = self.summary(["authored", "authored", "review"], [990, 10, 10], [0])
         self.assertFalse(result["origin_review_complete"])
         self.assertEqual(result["pending_bytes"], 10)
-        self.assertGreaterEqual(result["authored_exact_lower_bound_percent"], 95)
+        self.assertGreaterEqual(result["authored_exact_lower_bound_percent"], 98)
         self.assertTrue(result["authored_exact_goal_complete"])

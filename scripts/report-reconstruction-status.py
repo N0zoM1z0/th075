@@ -13,6 +13,7 @@ import tomllib
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = ROOT / "config"
+AUTHORED_EXACT_GOAL_PERCENT = 98
 
 
 def rows(name: str) -> list[dict[str, str]]:
@@ -91,11 +92,11 @@ def load() -> tuple[list[dict[str, object]], dict[str, object]]:
         "authored_upper_bound_bytes": authored_upper_bound,
         "authored_exact_lower_bound_percent": 100.0 * exact_authored_bytes / authored_upper_bound
                                                if authored_upper_bound else None,
-        "authored_exact_goal_percent": 95,
+        "authored_exact_goal_percent": AUTHORED_EXACT_GOAL_PERCENT,
         # Pending origins can only increase the authored denominator. Use their
         # entire extents so unresolved ownership cannot inflate goal credit.
         "authored_exact_goal_complete": authored_bytes > 0
-                                        and exact_authored_bytes * 100 >= authored_upper_bound * 95,
+                                        and exact_authored_bytes * 100 >= authored_upper_bound * AUTHORED_EXACT_GOAL_PERCENT,
         # Retained for historical consumers of the original, separate milestone.
         "fifty_percent_goal_complete": summary["review"] == 0 and authored_bytes > 0
                                       and exact_authored_bytes * 2 >= authored_bytes,
@@ -162,7 +163,7 @@ def main() -> int:
         print(f"Authored bytes: {summary['exact_authored_bytes']}/{summary['authored_bytes']} exact "
               f"({percentage:.2f}%; {label})" if percentage is not None else "Authored bytes: denominator unknown")
         lower_bound = summary["authored_exact_lower_bound_percent"]
-        print("Goal (authored exact bytes >=95%, including all pending bytes in the denominator): "
+        print(f"Goal (authored exact bytes >={AUTHORED_EXACT_GOAL_PERCENT}%, including all pending bytes in the denominator): "
               + ("achieved" if summary["authored_exact_goal_complete"] else "incomplete"))
         if lower_bound is not None:
             print(f"Conservative authored coverage: {lower_bound:.2f}% "

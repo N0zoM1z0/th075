@@ -1,9 +1,8 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-24. The user cleared the active goal and requested cleanup,
-documentation and handoff to a successor agent. This checkpoint closes that
-handoff task. The reconstruction objective remains **95% authored bytes exact**
-and is incomplete. A successor should continue the F066 investigation below.
+Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
+checkpoint and set an active **98% authored bytes exact** goal. The objective
+is incomplete. Continue the F066 investigation below.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
