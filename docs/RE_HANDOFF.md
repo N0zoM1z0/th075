@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F126 actor-effect drawing investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F127 effect-pattern investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 280 / 280 / 280 |
-| Exact code bytes | 678,631 |
-| Reviewed authored coverage | 678,631 / 1,973,516 (34.39%) |
-| Conservative coverage, including every pending byte | 678,631 / 1,977,124 (34.32%) |
+| Source-present / exact functions / exact units | 282 / 282 / 282 |
+| Exact code bytes | 683,174 |
+| Reviewed authored coverage | 683,174 / 1,973,516 (34.62%) |
+| Conservative coverage, including every pending byte | 683,174 / 1,977,124 (34.55%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **220 additions /
-668,748 code bytes / 192 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **222 additions /
+673,291 code bytes / 193 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,99 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F125
+## Latest accepted functions: F126
+
+R045 fighter drawing `00453F70/2246` and R042 effect pattern08
+`0044E930/2297` pass independent canonical cold comparison: **4,543 code
+bytes,1,091 instructions,67 actual calls and all113 real relocation fields**.
+Each whole CFG, ESP/EBP/x87 join,276byte frame plus savedESI/EDI or460byte
+frame, plain RET and following INT3 is reviewed. No table or shared/cropped
+tail is present. Only the two new units were cold-built, across one object.
+
+Fighter drawing retains signed facing/frame/state fields, unsigned guards
+and colors, a no-default three-way pose policy and the actual transform
+order. Projection comparisons preserve native unordered/NaN behavior.
+The real history packet occupies164 bytes: a complete132byte quad and SDK
+D3DVECTOR12 by value, plus image/position/color/flag scalars. The callee's
+33DWORD copy and RET164 establish those carriers; its unknown record
+constructor does not establish a complete private record layout. Conditional
+double removal, ordinary/projected drawing and highlight drawing remain.
+
+Effect drawing addresses its manager at this+24, retains four double C sine
+calls with eight-byte arguments/ST0 results, seven integer truncations and
+signed index wrap checks. Original double constants, two genuine quad
+construction positions and twelve nine-argument sprite packets are retained.
+The unchanged complete174byte R128 sine primary proves its original C entry
+at +20. No helper/library/global/data/layout receives new credit.
+
+Only independently complete132byte SDK-based quad values, RECT/D3DVECTOR and
+genuine scalars are local. Every incomplete private owner/manager/frame/pose/
+history view stays pointer-only and is never instantiated or embedded.
+Bounded73/138address compiler fixtures select names and POD declaration order
+only for genuine values. No extra local/storage/scope/padding/guessed array,
+pasted decompile/code array, fake return, assembly, ABI alias, relocation mask
+or truncated extent is used. Five wrong projected/history/sine/camera/readonly
+zero bindings fail complete comparison. Original identities and unproved
+private types/layouts remain provisional.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-00453f70 --unit effect-render-pattern08-0044e930
+```
+
+All280 prior units,124 canonical objects,192 source inputs,218 origin files,
+nine shared headers,91 active drafts and4,349 other function rows remain
+unchanged. F009 plus222 additions retains673,291 code bytes and193 new inputs.
+R045/R042 historical roles remain through aliases; all97 unknown origins
+remain unknown. Preserve f126 attested/native/SDK/CFG/x87/receiver/history/
+constant/name/binding/negative/cold/parent evidence, all six previews and both
+fixtures, sources, logs, results, PDBs and the canonical object.
+
+Current totals: **282 exact functions/units,683,174 code bytes**,34.62% of
+reviewed authored bytes and **34.55% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in161.934s; seven exact-checkpoint tests
+passed in0.557s; target/tracking/diff checks passed. Only two new units were
+cold-built. Evidence-preserving cleanup removed six obsolete own game probes
+and two pure name fixtures(109,772bytes), plus375 reproducible Python bytecode
+files(8,282,863bytes). All inputs/six previews/two fixtures/native/SDK/CFG/x87/
+receiver/history/constants/name/negative/binding/cold/parent evidence, logs,
+PDBs and canonical objects remain. Receipts are retained under
+`.analysis/f126-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F127
+
+Independently review the fourteen remaining authored BattleEffect rendering
+patterns, **11,057 provisional code bytes**:
+
+| Patterns | Addresses / provisional sizes |
+| --- | --- |
+| 01–04 | `00449EE0/640`, `0044B630/830`, `0044BB50/830`, `0044C070/830` |
+| 05–07 | `0044D620/716`, `0044DA90/781`, `0044E3D0/872` |
+| 09–12 | `0044F850/662`, `0044FAF0/579`, `0044FD40/756`, `00450420/1005` |
+| 13–15 | `00450C10/699`, `00450EE0/408`, `00451440/1449` |
+
+Native-only function/callee/decompile queries under
+`.analysis/f127-effect-drawing/` have target attestation and their own
+completion markers. Full native spans/frontier hashes are retained; no
+source or exact credit is claimed. Reconcile each complete own CFG,
+code/table/tail extent, return/stack/x87 carrier, actual local-value contract,
+field widths and helper packets before source or acceptance. F126 supplies
+methodology and accepted complete SDK packet contracts, not complete private
+owner layouts. Keep every incomplete owner pointer-only, retain native
+construction and math order, and preserve unknown helper origins.
+
+All accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts/failed controls remain protected. No unchanged retries or relaxed full
+physical comparison. All97 unknown origins remain unknown and evidence
+throughR268 is immutable. The F119 row projection and all incomplete owners
+are never instantiated or embedded. QueueFile00407A50/QueueArchiveEntry00407B80
+still need a proved complete local record layout; resource00456B60 retains
+f107's actual588byte frame and unresolved texture80/layout/filename bound.
+Build serially, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while preserving inputs/evidence. Later phases deferred.
+
+## Previous accepted functions: F125
 
 Three independently authored replay drawing helpers pass canonical cold
 comparison: R052 metadata number `0042D6E0/377`, R102 eight-glyph name
@@ -96,7 +188,7 @@ receiver/prefix/glyph/cookie/addend/binding/cold/parent evidence, logs, PDBs
 and canonical objects remain. Receipts are retained under
 `.analysis/f125-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F126
+## F126 investigation at the F125 checkpoint
 
 Review two independently authored drawing candidates:
 FighterState::Render `00453F70/2246` and

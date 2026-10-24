@@ -223,3 +223,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0042D6E0,ReplayScene::DrawMetadataNumber,ReplayTextF125::DrawMetadataNumber,R052,replay-draw-metadata-number-0042d6e0
 0x0042D860,SceneText::DrawNameGlyphsAt0042D860,ReplayTextF125::DrawNameGlyphs,R102,replay-draw-name-glyphs-0042d860
 0x0042D980,ReplayScene::DrawReplayFilename,ReplayTextF125::DrawFilename,R052,replay-draw-filename-0042d980
+0x00453F70,FighterState::Render,FighterRender453F70::Render,R045,fighter-render-00453f70
+0x0044E930,BattleEffect::RenderPattern08,EffectPattern44E930::Render,R042,effect-render-pattern08-0044e930

@@ -278,3 +278,5 @@ ReplayBrowser42CA60::RenderList
 ReplayTextF125::DrawMetadataNumber
 ReplayTextF125::DrawNameGlyphs
 ReplayTextF125::DrawFilename
+FighterRender453F70::Render
+EffectPattern44E930::Render

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F125",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F126",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2afedd2f175cf4e24705ff2a5dc7fc9a12133417a19d140c9265ff175a60d2d7"
+      "current_sha256": "f30c6a5e3e11f0250ec3830a25ec031fe495a368c9973c10c582e07d3257fd19"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "4c2ae89245c75651f5674e7e39dfe72e96b7b716fd292a59d99d1b1f18f9c586"
+      "current_sha256": "504b95d65ea90f4884dc491e4b208241b71450652d13d81a8feae0832c8b6ce8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "98b7383cafed68cb08674c36935c5deeb1b6a490c36c98ec44f7770bafbce9df"
+      "current_sha256": "c22bbbd7dc77938541ee1c33832dcb2a690f08320152aba49bc25fddf428ca37"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f931a04039c4581aac637f3b8fcd4fdf8bd56121af4d477a9183252831d46f5a"
+      "current_sha256": "44d0899d9470d0c6c02a51865bc889d75914b119f5220df931160f06544c31e6"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c71eaf49cbb83bcd18ae21ba5e6f108cdac379b837d6e4c031171e927e885486"
+      "current_sha256": "8943d7d133a1ea17e1b9d4c7433545c5ea629bf7fe8af6b4028edda621aff887"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "0df38b446e541ce3717cbe7e53ee25ab408ee7a4989bdf53965630fc2502ab5b"
+      "current_sha256": "3247d5ba850d5d24ed10c2d7642d73cbe9b4e84ef34d0a0ae5780f3926bdb5e1"
     }
   },
   "functions": [
@@ -9720,6 +9720,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R052"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453F70",
+        "size": "2246",
+        "span_end": "0x00454835",
+        "current_name": "FUN_00453f70",
+        "proposed_name": "FighterState::Render",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00453F70",
+        "size": "2246",
+        "span_end": "0x00454835",
+        "current_name": "FUN_00453f70",
+        "proposed_name": "FighterRender453F70::Render",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterRender453F70::Render()",
+        "is_thunk": "false",
+        "source_file": "src/ActorEffectDrawing.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F126; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-00453f70",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F126: complete 2246byte independently canonical cold exact; cohort4543bytes/1091instructions/67calls/all113real fields. Full own CFG/ESP-EBP/x87 joins/276byte+savedESI-EDI and460byte frames/plainRET/followingINT3 reviewed, no table or cropped tail. Only complete132byte SDK quad/RECT/D3DVECTOR and genuine scalar locals; private owners/managers/frame/pose/history views pointer-only, never instantiated/embedded. Fighter preserves native signed facing/frame/state, unsigned guards/colors, threeway pose policy/transform order, NaN-aware projection checks,164byte history packet with full quad and12byte vector byvalue, conditional double pop/highlight. Effect preserves manager address this+24/four double Csin calls/seven integer truncations/index wrap/two actual quad constructions/twelve nineargument sprite packets. Full R128 sine primary/source-defined C entry retained unchanged, no helper/library/global/data/layout credit. Bounded73/138address compiler fixtures choose names/POD declaration order only for genuine values; no extra local/storage/scopes/padding/guessed array. Five wrong actual projected/history/sine/camera/readonlyzero fields rejected; no masks, aliases, ABI misdeclaration, pasted decompile/nativecode array, assembly, fake return or truncation. All280 prior units/124objects/192inputs/218originfiles/nine headers/91drafts/97unknown origins unchanged; R045/R042 historical roles retained by aliases; original identities/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x00453F70",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044E930",
+        "size": "2297",
+        "span_end": "0x0044F228",
+        "current_name": "FUN_0044e930",
+        "proposed_name": "BattleEffect::RenderPattern08",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044E930",
+        "size": "2297",
+        "span_end": "0x0044F228",
+        "current_name": "FUN_0044e930",
+        "proposed_name": "EffectPattern44E930::Render",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectPattern44E930::Render()",
+        "is_thunk": "false",
+        "source_file": "src/ActorEffectDrawing.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F126; scripts/repo-python scripts/replay-exact-units.py --unit effect-render-pattern08-0044e930",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F126: complete 2297byte independently canonical cold exact; cohort4543bytes/1091instructions/67calls/all113real fields. Full own CFG/ESP-EBP/x87 joins/276byte+savedESI-EDI and460byte frames/plainRET/followingINT3 reviewed, no table or cropped tail. Only complete132byte SDK quad/RECT/D3DVECTOR and genuine scalar locals; private owners/managers/frame/pose/history views pointer-only, never instantiated/embedded. Fighter preserves native signed facing/frame/state, unsigned guards/colors, threeway pose policy/transform order, NaN-aware projection checks,164byte history packet with full quad and12byte vector byvalue, conditional double pop/highlight. Effect preserves manager address this+24/four double Csin calls/seven integer truncations/index wrap/two actual quad constructions/twelve nineargument sprite packets. Full R128 sine primary/source-defined C entry retained unchanged, no helper/library/global/data/layout credit. Bounded73/138address compiler fixtures choose names/POD declaration order only for genuine values; no extra local/storage/scopes/padding/guessed array. Five wrong actual projected/history/sine/camera/readonlyzero fields rejected; no masks, aliases, ABI misdeclaration, pasted decompile/nativecode array, assembly, fake return or truncation. All280 prior units/124objects/192inputs/218originfiles/nine headers/91drafts/97unknown origins unchanged; R045/R042 historical roles retained by aliases; original identities/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x0044E930",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
       }
     }
   ],
@@ -129159,6 +129247,732 @@
           "target": 6555153
         }
       ]
+    },
+    "fighter-render-00453f70": {
+      "source": "src/ActorEffectDrawing.cpp",
+      "object": "build/matching/ActorEffectDrawing.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterRender453F70::Render"
+      ],
+      "symbol": "?Render@FighterRender453F70@@QAEXXZ",
+      "target_address": 4538224,
+      "size": 2246,
+      "compare_size": 2246,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_RenderCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "?g_RenderCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 78,
+          "type": "REL32",
+          "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+          "target": 4542352
+        },
+        {
+          "offset": 180,
+          "type": "REL32",
+          "symbol": "?GetTextureRect@FighterDrawingF126@@QAEXHPAUtagRECT@@@Z",
+          "target": 4249712
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@FighterDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 300,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@FighterDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 318,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@FighterDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 436,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 554,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 607,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 868,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@FighterDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 940,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1001,
+          "type": "REL32",
+          "symbol": "?SetPixelShaderMode@FighterDrawingF126@@QAEXC@Z",
+          "target": 4245632
+        },
+        {
+          "offset": 1151,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1326,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 1595,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1602,
+          "type": "DIR32",
+          "symbol": "?g_RenderByte0067161C@@3EA",
+          "target": 6755868
+        },
+        {
+          "offset": 1722,
+          "type": "REL32",
+          "symbol": "?AppendElement@FighterHistoryF126@@QAEXFMMVSpriteQuad40CA80@@U_D3DVECTOR@@KC@Z",
+          "target": 4263936
+        },
+        {
+          "offset": 1729,
+          "type": "DIR32",
+          "symbol": "?g_RenderByte0066C237@@3EA",
+          "target": 6734391
+        },
+        {
+          "offset": 1765,
+          "type": "REL32",
+          "symbol": "?RemoveFrontIfPresent@FighterHistoryF126@@QAEXXZ",
+          "target": 4264128
+        },
+        {
+          "offset": 1782,
+          "type": "REL32",
+          "symbol": "?RemoveFrontIfPresent@FighterHistoryF126@@QAEXXZ",
+          "target": 4264128
+        },
+        {
+          "offset": 1793,
+          "type": "DIR32",
+          "symbol": "__real@43d20000",
+          "target": 6649904
+        },
+        {
+          "offset": 1815,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1821,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1842,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1863,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1948,
+          "type": "REL32",
+          "symbol": "?DrawProjectedQuad@FighterDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z",
+          "target": 4246048
+        },
+        {
+          "offset": 1999,
+          "type": "REL32",
+          "symbol": "?DrawQuad@FighterDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2036,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@FighterDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 2042,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2063,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2084,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2169,
+          "type": "REL32",
+          "symbol": "?DrawProjectedQuad@FighterDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z",
+          "target": 4246048
+        },
+        {
+          "offset": 2220,
+          "type": "REL32",
+          "symbol": "?DrawQuad@FighterDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2236,
+          "type": "REL32",
+          "symbol": "?SetPixelShaderMode@FighterDrawingF126@@QAEXC@Z",
+          "target": 4245632
+        }
+      ]
+    },
+    "effect-render-pattern08-0044e930": {
+      "source": "src/ActorEffectDrawing.cpp",
+      "object": "build/matching/ActorEffectDrawing.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectPattern44E930::Render"
+      ],
+      "symbol": "?Render@EffectPattern44E930@@QAEXXZ",
+      "target_address": 4516144,
+      "size": 2297,
+      "compare_size": 2297,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "?g_RenderCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?g_RenderCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 63,
+          "type": "DIR32",
+          "symbol": "__real@3fb999999999999a",
+          "target": 6653128
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "__real@3ff0000000000000",
+          "target": 6651136
+        },
+        {
+          "offset": 80,
+          "type": "REL32",
+          "symbol": "_sin",
+          "target": 6559748
+        },
+        {
+          "offset": 89,
+          "type": "DIR32",
+          "symbol": "__real@4014000000000000",
+          "target": 6654808
+        },
+        {
+          "offset": 94,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "__real@3fb999999999999a",
+          "target": 6653128
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "__real@4000000000000000",
+          "target": 6652912
+        },
+        {
+          "offset": 132,
+          "type": "REL32",
+          "symbol": "_sin",
+          "target": 6559748
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "__real@4010000000000000",
+          "target": 6654800
+        },
+        {
+          "offset": 146,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "__real@3fb999999999999a",
+          "target": 6653128
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__real@4008000000000000",
+          "target": 6654792
+        },
+        {
+          "offset": 184,
+          "type": "REL32",
+          "symbol": "_sin",
+          "target": 6559748
+        },
+        {
+          "offset": 193,
+          "type": "DIR32",
+          "symbol": "__real@4014000000000000",
+          "target": 6654808
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 219,
+          "type": "DIR32",
+          "symbol": "__real@3fb999999999999a",
+          "target": 6653128
+        },
+        {
+          "offset": 225,
+          "type": "DIR32",
+          "symbol": "__real@4010000000000000",
+          "target": 6654800
+        },
+        {
+          "offset": 236,
+          "type": "REL32",
+          "symbol": "_sin",
+          "target": 6559748
+        },
+        {
+          "offset": 245,
+          "type": "DIR32",
+          "symbol": "__real@4018000000000000",
+          "target": 6654784
+        },
+        {
+          "offset": 250,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 424,
+          "type": "REL32",
+          "symbol": "?SetDepthEnabled@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 440,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 470,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 476,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 498,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 504,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 530,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 566,
+          "type": "DIR32",
+          "symbol": "__real@4062c00000000000",
+          "target": 6654712
+        },
+        {
+          "offset": 588,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 594,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 620,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 635,
+          "type": "DIR32",
+          "symbol": "__real@3fd999999999999a",
+          "target": 6654704
+        },
+        {
+          "offset": 641,
+          "type": "DIR32",
+          "symbol": "__real@4098000000000000",
+          "target": 6654696
+        },
+        {
+          "offset": 647,
+          "type": "DIR32",
+          "symbol": "__real@4078000000000000",
+          "target": 6654688
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 707,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 755,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 766,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 772,
+          "type": "DIR32",
+          "symbol": "__real@4064000000000000",
+          "target": 6654328
+        },
+        {
+          "offset": 794,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 809,
+          "type": "DIR32",
+          "symbol": "__real@3fd999999999999a",
+          "target": 6654704
+        },
+        {
+          "offset": 832,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 879,
+          "type": "REL32",
+          "symbol": "?DrawProjectedQuad@EffectDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z",
+          "target": 4246048
+        },
+        {
+          "offset": 970,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@MMMM@Z",
+          "target": 4250112
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 987,
+          "type": "DIR32",
+          "symbol": "__real@4064000000000000",
+          "target": 6654328
+        },
+        {
+          "offset": 1009,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 1024,
+          "type": "DIR32",
+          "symbol": "__real@3fd999999999999a",
+          "target": 6654704
+        },
+        {
+          "offset": 1078,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1125,
+          "type": "REL32",
+          "symbol": "?DrawProjectedQuad@EffectDrawingF126@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@MMMK@Z",
+          "target": 4246048
+        },
+        {
+          "offset": 1141,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1157,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1173,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1278,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1380,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1396,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1412,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1501,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1517,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1533,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 1638,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1740,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1844,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1946,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2051,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2155,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2257,
+          "type": "REL32",
+          "symbol": "?DrawSprite@EffectDrawingF126@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2273,
+          "type": "REL32",
+          "symbol": "?SetFilterMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 2289,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@EffectDrawingF126@@QAEXH@Z",
+          "target": 4245488
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -129353,6 +130167,7 @@
     "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512",
     "src/CharacterInputPollingFamily.cpp": "b9f89f4f2ae74e20863230d18367880ba6b38ef50c76f8135a21eee0e41f690a",
     "src/SettingsReplayDrawing.cpp": "bcb093bd71d078587b0d9a7164059facff17980e39a414ed4383f21762094224",
-    "src/ReplayTextHelpers.cpp": "f9347ed26883f98787719637ff6b84c65448454101dc132b6d6dad06c5e30562"
+    "src/ReplayTextHelpers.cpp": "f9347ed26883f98787719637ff6b84c65448454101dc132b6d6dad06c5e30562",
+    "src/ActorEffectDrawing.cpp": "15763e88c3a2954829ca8379e7e561e3f09115395bf7fa688e87c69d38b61866"
   }
 }
