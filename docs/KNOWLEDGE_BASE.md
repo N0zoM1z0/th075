@@ -24399,3 +24399,107 @@ retains f107's real588byte frame and unresolved texture80/layout/filename
 bound. Build serially, cold-replay only new/affected units and remove only
 obsolete reproducible outputs while retaining inputs/evidence. Later phases
 remain deferred.
+
+## F125 complete replay-text checkpoint (2026-10-25)
+
+Three independently authored replay drawing helpers pass canonical cold
+comparison: R052 metadata number `0042D6E0/377`, R102 eight-glyph name
+`0042D860/280` and R052 filename label `0042D980/315`: **972 code bytes,
+288 instructions,16 actual calls and all27 real relocation fields**. Each
+whole CFG, ESP/EBP/x87 join,164/160/172byte frame, RET20/16/16 and following
+INT3 is checked independently. No table or cropped tail is present.
+
+Only independently complete132byte AtlasQuad values, RECTs and fully evidenced
+14byte prefix/eight signed glyph arrays are local. Private scene/drawing
+owners remain pointer-only and are never instantiated or embedded. The
+filename helper genuinely constructs its quad before the glyph policy,
+although it never subsequently reads that local. Its actual constructor call
+is retained through the unchanged accepted AtlasQuad446B90 interface.
+The real DrawQuad helper consumes all33 DWORDs of the passed reference.
+
+Number drawing preserves a local copy of the value, its native fixed-width
+while loop and parameter countdown, and the variable-width zero/negative
+sentinel path. Signed division/remainder,19wide cells and11pixel left advance
+remain. Name drawing retains exactly eight signed byte reads, four separate
+quotient/remainder evaluations per glyph,19x20 cells and14pixel advance.
+
+Filename preserves the original14byte `replay\replay` prefix including NUL,
+memcmp count13, dot check at16 and source bytes13..15 plus4. Both branches
+write all eight consumed glyph codes. The glyph arrays are target data, not
+native instructions. All four prefix reference fields and true COFF addends
+0/4/8/12 are compared and cold-replayed without masking or aliasing. Its
+security cookie/save/check are generated naturally by /GS; source has no
+manual guard or EH. Original private identities and unproved types remain
+unknown, and these byte/array contracts establish no complete owner layout.
+
+One bounded70address compiler fixture measures names only for genuine numeric,
+quad/RECT/index/prefix/glyph locals. Natural name/declaration ordering reproduces
+all native frames. The second preview is whole exact with no additional local,
+scope, padding, storage or guessed larger array. Five wrong real constructor/
+quad/glyph/cookie/prefix bindings fail while preserving the actual addends.
+There is no pasted decompiler body, target-code array, fake return, manual EH,
+assembly, ABI misdeclaration, relocation mask or truncated comparison.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit replay-draw-metadata-number-0042d6e0 --unit replay-draw-name-glyphs-0042d860 --unit replay-draw-filename-0042d980
+```
+
+Only the three new units were cold-built, across one canonical object. All277
+prior units,123 canonical objects,191 source inputs,218 origin files,nine
+shared headers,91 active drafts and4,348 other function rows remain unchanged.
+F009 plus220 additions retains668,748 code bytes and192 new inputs. R052/R102
+roles remain through aliases; all97 unknown origins remain unknown. Preserve
+f125 native/attested/SDK/CFG/x87/packet/receiver/array/glyph/prefix/cookie/name/
+addend/binding/cold/parent evidence, two previews, fixture, sources, logs,
+results and PDBs. No helper/library/global/data/layout receives new credit.
+
+Current totals: **280 exact functions/units,678,631 code bytes**,34.39% of
+reviewed authored bytes and **34.32% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in155.503s; seven exact-checkpoint tests
+passed in0.540s; target/tracking/diff checks passed. Only three new units were
+cold-built. Evidence-preserving cleanup removed two obsolete own game probes
+and one pure name fixture(30,331bytes), plus375 reproducible Python bytecode
+files(8,282,863bytes). All sources/two previews/fixture/name/native/SDK/CFG/
+receiver/prefix/glyph/cookie/addend/binding/cold/parent evidence, logs, PDBs
+and canonical objects remain. Receipts are retained under
+`.analysis/f125-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F126
+
+Review two independently authored drawing candidates:
+FighterState::Render `00453F70/2246` and
+BattleEffect::RenderPattern08 `0044E930/2297`, total4,543 code bytes.
+Reconcile every own complete CFG, code/table/tail extent, actual return/
+stack/FPU carrier, local-value contract, field widths and helper packets/
+receivers before source. Complete accepted SDK-based quad contracts supply
+methodology, not a complete private actor/effect layout or automatic exact
+credit. Preserve all native ordering and unknown math-wrapper origins.
+
+Native-only F126 inputs under `.analysis/f126-actor-effect-drawing/` retain
+attested function/callee/decompile results, complete native spans and six
+bounded callee bodies. R045 fighter2246 linearly decodes554 instructions/26
+calls, actual276byte frame plus savedESI/EDI. R042 effect2297 decodes537/41,
+actual460byte frame and double math/FTOL chains. These are preliminary native
+observations, not accepted CFG/local-value/source/byte evidence.
+
+Fighter decompilation contains return-address and stack artefacts; reconcile
+actual native packets before authoring. Complete GetTextureRect0040D870/80
+writes all four RECT DWORDs and returns RET8. DrawProjectedQuad0040CA20/92
+copies33 DWORDs from the quad reference and returns RET28. AppendElement
+00411000/183 returns RET164 and copies33 DWORDs from its actual by-value
+quad argument into a local record. Its full record constructor remains
+unproved; this caller does not authorize constructing a guessed record.
+Use complete SDK quad/RECT values with truthful full native argument carriers
+and keep all incomplete sequence/record/owner views pointer-only.
+
+All accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts/failed controls remain protected. No unchanged retries or relaxed full
+physical comparison. All97 unknown origins remain unknown and evidence
+throughR268 is immutable. The F119 row projection and all incomplete owners
+are never instantiated or embedded. QueueFile00407A50/QueueArchiveEntry00407B80
+still need a proved complete local record layout; resource00456B60 retains
+f107's actual588byte frame and unresolved texture80/layout/filename bound.
+Build serially, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while preserving inputs/evidence. Later phases deferred.

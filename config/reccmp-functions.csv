@@ -276,3 +276,6 @@ CharacterInput59CDA0::PollCommands,0x0059CDA0,function
 CharacterInput5C5980::PollCommands,0x005C5980,function
 SceneRenderer4292E0::Draw,0x004292E0,function
 ReplayBrowser42CA60::RenderList,0x0042CA60,function
+ReplayTextF125::DrawMetadataNumber,0x0042D6E0,function
+ReplayTextF125::DrawNameGlyphs,0x0042D860,function
+ReplayTextF125::DrawFilename,0x0042D980,function

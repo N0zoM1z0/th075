@@ -275,3 +275,6 @@ CharacterInput59CDA0::PollCommands
 CharacterInput5C5980::PollCommands
 SceneRenderer4292E0::Draw
 ReplayBrowser42CA60::RenderList
+ReplayTextF125::DrawMetadataNumber
+ReplayTextF125::DrawNameGlyphs
+ReplayTextF125::DrawFilename

@@ -220,3 +220,6 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005C5980,CharacterAux::RunAt005C5980,CharacterInput5C5980::PollCommands,R049,character-input-005c5980
 0x004292E0,SceneRenderer::DrawAt004292E0,SceneRenderer4292E0::Draw,R065,scene-renderer-draw-004292e0
 0x0042CA60,ReplayBrowserScene::RenderList,ReplayBrowser42CA60::RenderList,R040,replay-browser-render-list-0042ca60
+0x0042D6E0,ReplayScene::DrawMetadataNumber,ReplayTextF125::DrawMetadataNumber,R052,replay-draw-metadata-number-0042d6e0
+0x0042D860,SceneText::DrawNameGlyphsAt0042D860,ReplayTextF125::DrawNameGlyphs,R102,replay-draw-name-glyphs-0042d860
+0x0042D980,ReplayScene::DrawReplayFilename,ReplayTextF125::DrawFilename,R052,replay-draw-filename-0042d980

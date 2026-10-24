@@ -22731,3 +22731,66 @@ relocations = [
   { offset = 0x8B3, type = "REL32", symbol = "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x8BD, type = "REL32", symbol = "?EndFrame@Graphics@@YAXXZ", target = 0x004027D0 },
 ]
+
+[units."replay-draw-metadata-number-0042d6e0"]
+source = "src/ReplayTextHelpers.cpp"
+object = "build/matching/ReplayTextHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayTextF125::DrawMetadataNumber"]
+symbol = "?DrawMetadataNumber@ReplayTextF125@@QAEXMMKHH@Z"
+target_address = 0x0042D6E0
+size = 377
+compare_size = 377
+relocations = [
+  { offset = 0x1A, type = "DIR32", symbol = "__real@41a00000", target = 0x0065786C },
+  { offset = 0x2F, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
+  { offset = 0x3E, type = "REL32", symbol = "??0AtlasQuad446B90@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x84, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xA6, type = "REL32", symbol = "?DrawQuad@ReplayQuadDrawingF125@@QAEXHABVAtlasQuad446B90@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0xC8, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x117, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x139, type = "REL32", symbol = "?DrawQuad@ReplayQuadDrawingF125@@QAEXHABVAtlasQuad446B90@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x16A, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+]
+
+[units."replay-draw-name-glyphs-0042d860"]
+source = "src/ReplayTextHelpers.cpp"
+object = "build/matching/ReplayTextHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayTextF125::DrawNameGlyphs"]
+symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z"
+target_address = 0x0042D860
+size = 280
+compare_size = 280
+relocations = [
+  { offset = 0x14, type = "DIR32", symbol = "__real@41a00000", target = 0x0065786C },
+  { offset = 0x21, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
+  { offset = 0x38, type = "REL32", symbol = "??0AtlasQuad446B90@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0xD3, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xF5, type = "REL32", symbol = "?DrawQuad@ReplayQuadDrawingF125@@QAEXHABVAtlasQuad446B90@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x109, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+]
+
+[units."replay-draw-filename-0042d980"]
+source = "src/ReplayTextHelpers.cpp"
+object = "build/matching/ReplayTextHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReplayTextF125::DrawFilename"]
+symbol = "?DrawFilename@ReplayTextF125@@QAEXMMKPBD@Z"
+target_address = 0x0042D980
+size = 315
+compare_size = 315
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x1C, type = "DIR32", symbol = "__real@41a00000", target = 0x0065786C },
+  { offset = 0x29, type = "DIR32", symbol = "__real@41980000", target = 0x00657F78 },
+  { offset = 0x40, type = "REL32", symbol = "??0AtlasQuad446B90@@QAE@MMMM@Z", target = 0x0040DA00 },
+  { offset = 0x46, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
+  { offset = 0x51, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
+  { offset = 0x5D, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
+  { offset = 0x6A, type = "DIR32", symbol = "$SG62175", target = 0x00657FF8 },
+  { offset = 0x83, type = "REL32", symbol = "_memcmp", target = 0x00641F00 },
+  { offset = 0xEC, type = "REL32", symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z", target = 0x0042D860 },
+  { offset = 0x129, type = "REL32", symbol = "?DrawNameGlyphs@ReplayTextF125@@QAEXMMKPBC@Z", target = 0x0042D860 },
+  { offset = 0x131, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
