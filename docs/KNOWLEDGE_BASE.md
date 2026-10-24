@@ -23735,3 +23735,98 @@ real588-byte frame and unresolved texture80/layout/meaningful filename bound.
 Keep all97 unknown origins and origin evidence throughR268 unchanged. Builds
 remain serial; replay only new or affected units and remove only obsolete
 reproducible outputs after retaining inputs and evidence.
+
+## F118 complete opening timeline checkpoint (2026-10-25)
+
+Complete independently authored R035 opening timeline `004277A0..00428C7A`
+passes canonical cold comparison: **5,339 code bytes, 1,188 instructions,
+57 calls and all 124 real relocation fields**. Five following INT3 bytes
+remain outside the extent. There are no embedded tables. Every static CFG
+instruction, ESP/EBP join, x87 stack join and the common plain RET is checked,
+including the actual 448 byte frame. No prior source or header changes.
+
+The accepted BeginFrame AL-return view is reused; EndFrame only occurs after
+a successful begin. The real constructor call at004277C5 constructs a complete
+132 byte SpriteQuad drawing value at local-152. The native routine does not
+subsequently read that value. Its actual constructor invocation remains in
+source. F064/F083 already establish the complete physical packet and the
+unchanged SDK-based header; no original owner layout or new padding is
+inferred from the local spacing. The incomplete scene and drawing-manager
+owners remain pointer-only and are never instantiated or embedded.
+
+All40 actual draw indices, drawing receivers, nine-word/RET36 packets and
+settings0/0/2 are checked. The three float-carrier calls have one argument
+each; they retain two, three and four already-pushed outer draw words. The
+decompiler's extra apparent parameters are not used as ABI evidence. Both
+00428D20 and00428D40 remain unknown/review origins under their unchanged R163
+function evidence and initial inventory origin rows. Their actual observed
+float-carrier interface does not classify them or earn helper credit.
+
+Unsigned interval arithmetic and qword FILD conversions, the1.1f/1.2f designer
+tile constant folding, SDK ARGB/XRGB packing and all eight real compiler
+float-to-byte conversions remain. The scale expression really uses double
+1.5 and1.0 constants; other observed arithmetic keeps its float widths.
+Caption-loop fade-out specifically divides first, multiplies255, then subtracts
+from255. It is not reassociated into an endpoint difference. The complete
+physical comparison includes all floating constants and native operations.
+
+One bounded compiler fixture observes115 genuine local addresses and measures
+identifier buckets. The final source names only eight actual values:
+closingScale-4, begin-8, rangeEnd-12, complete localQuad-152, inProgress-156,
+scrollPosition-160, opacity-161 and entryIndex-168; this is-172. No extra local,
+array, scope or storage is introduced. The final third preview passes whole
+physical comparison, without frame aliases or masks. The natural source
+retains the observed time intervals, drawing order, positions and alpha policy.
+
+Five wrong actual begin/constructor/draw/scalar/constant bindings fail.
+There is no pasted decompiler text, code byte array, fake return, manual EH,
+assembly, ABI alias or cropped comparison. Original names, complete scene
+layout and unproved types remain provisional. No helper, library or global
+data receives new credit. The /GS flag remains explicit reproducibility
+configuration, not an inferred executable-wide compiler profile.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit opening-timeline-004277a0
+```
+
+All 251 prior units, 116 canonical objects, 184 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows remain
+unchanged. F009 plus192 additions retains624,908 code bytes and185 new inputs.
+The R035 historical role remains through its alias. All97 unknown origins
+remain unknown. Preserve all f118 source, scalar timeline authoring, native/
+attested/callee/FP/SDK/CFG/packet/local-name/binding/cold/parent inputs,
+results, logs and PDBs, including the compiler fixture and all three previews.
+
+Validation: the selected complete unit passes canonical cold replay, seven
+checkpoint tests pass, and full CI passes 3,603 tests in 147.951s. Target
+identity, tracking, progress and diff checks pass. Cleanup removes three
+obsolete game-probe objects and one compiler name-control object (69,894 bytes),
+plus 375 Python bytecode files (8,282,863 bytes), total 8,352,757 bytes.
+Canonical objects, all sources, compiler inputs, evidence, results, logs and
+PDBs remain. Hash receipts are `.analysis/f118-final-compiler-inputs.json`,
+`.analysis/f118-object-cleanup.json` and
+`.analysis/f118-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **252 exact functions/units, 634,791 code bytes**, 32.17% of
+reviewed authored bytes and **32.11% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F119
+
+Review two complete independently authored scene drawing functions:
+R040 MusicRoomScene::RenderList `00425C80/2429` and R043
+ResultScene::RenderRecordPage `00430080/3314`, total5,743 bytes. Reconcile each
+full code/table extent, CFG, actual text/renderer/helper packet, floating
+expression, calling convention and genuine SDK/local buffer before source.
+Use unchanged accepted graphics/drawing interfaces and independently complete
+values. Private owners stay pointer-only; never allocate/embed an incomplete
+owner or infer a buffer bound merely from a stack gap.
+
+Preserve all old accepted inputs, unknown math chains,97 unknown origins and
+active drafts. F048/F061/F066/F085 remain unaccepted; do not repeat unchanged
+failed controls or weaken whole physical comparison. QueueFile00407A50/
+QueueArchiveEntry00407B80 still need a proved complete local record layout.
+Resource root00456B60 retains f107's real588-byte frame and unresolved
+texture80/layout/meaningful filename bound. Compiler builds remain serial;
+cold-replay only new or affected units and remove only obsolete reproducible
+outputs after retaining inputs and evidence. Subsequent phases remain deferred.

@@ -232,3 +232,4 @@ address,name,module,confidence,evidence
 0x00577C70,CharacterSpecialFamily::Configure577C70,CharacterSpecialFamily,inferred,"F117; own complete cold code-table exact / individual native stage CFG, packets and ordered state policies; character and layout provisional"
 0x0059B7F0,CharacterSpecialFamily::Configure59B7F0,CharacterSpecialFamily,inferred,"F117; own complete cold code-table exact / individual native stage CFG, packets and ordered state policies; character and layout provisional"
 0x005C43D0,CharacterSpecialFamily::Configure5C43D0,CharacterSpecialFamily,inferred,"F117; own complete cold code-table exact / individual native stage CFG, packets and ordered state policies; character and layout provisional"
+0x004277A0,OpeningTimeline4277A0::RenderTimeline,OpeningTimeline4277A0,inferred,"F118; whole cold exact / all CPU-x87 joins, actual draw packets and native floating order; full owner layouts and original names provisional"

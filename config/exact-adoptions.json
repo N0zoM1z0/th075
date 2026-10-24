@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F117",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F118",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "fdefeff103fce416a027002ae66c8a0e4343eae8258cac60b78fc1142a763ee7"
+      "current_sha256": "8fa3e38eb7bc1153b103e071a97f2e8757353f0e1ac95e0f83d8d2e35cca7388"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "8980833c373786a3b261d10307594870e46b80881c759c418dba86fc075a2c16"
+      "current_sha256": "19b535d7660c48a19621e996af9b84c79c76035b38c3731afcd7ea3d2abaca72"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "db4ef31c44ff97d3fdf3f0b6065b67e6d7fb24ce5e81f7c2e1b3f86442fcf378"
+      "current_sha256": "166515005b03f0f9adeebc5806b5e81b58d7d54597b9d90f544b1fc0366916d8"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "86fe73df073fe35947f2413592a80498a5a68af31d103313ad109262ae51a68b"
+      "current_sha256": "7baf1f16178c6a228403d68e49e1b61057d8ed82e37de7ab6dffb257b8af7241"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "621e77ba675e7e301c8195f7aa1581113748c166545d4935f8b787c2aa8fcf24"
+      "current_sha256": "02190b802d5cf91efd42f385f3f92de12c74b34efef090e4241fb8473008258c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "527af05ae431c165d58c1de36b1ff189b18011118bdee947eef6b15a4ee1c573"
+      "current_sha256": "46a5ecb230d30c6c2ce7b3b0e721a96e770849be4a8a0592342244b1cfa59157"
     }
   },
   "functions": [
@@ -8444,6 +8444,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004277A0",
+        "size": "5339",
+        "span_end": "0x00428C7A",
+        "current_name": "FUN_004277a0",
+        "proposed_name": "OpeningScene::RenderTimeline",
+        "module": "OpeningScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004277A0",
+        "size": "5339",
+        "span_end": "0x00428C7A",
+        "current_name": "FUN_004277a0",
+        "proposed_name": "OpeningTimeline4277A0::RenderTimeline",
+        "module": "OpeningScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void OpeningTimeline4277A0::RenderTimeline()",
+        "is_thunk": "false",
+        "source_file": "src/OpeningTimeline4277A0.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F118; scripts/repo-python scripts/replay-exact-units.py --unit opening-timeline-004277a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F118: complete 5339 byte independent canonical cold exact; all1188instructions/57real packets/124real relocation fields. Every native CFG instruction/ESP-EBP-x87 stack join/common plainRET and actual448-byte frame verified; five following INT3 excluded, no tables/cropped tails. Accepted BeginFrame AL carrier reused and EndFrame only on successful begin. Native constructor at4277C5 genuinely constructs independently complete132-byte SpriteQuad value at-152, which later code does not read; preserve actual constructor invocation without invented inert storage, padding or partial owner allocation. Accepted SDK-based packet/header unchanged. All40draw indices/real drawing receivers/nine-word RET36 packets and settings0/0/2 checked; three scalar calls carry one float each and retain2/3/4 outer draw words, rather than decompiler-implied additional parameters. All eight real compiler x87 float-to-byte conversions preserved. Unsigned interval conversions,1.1f/1.2f designer tile constant folding, exact double1.5/1.0 scale operations and SDK ARGB/XRGB macros retained. Loop caption fade-out specifically divides then multiplies255 then subtracts from255; preserve original FP order rather than reassociate endpoint difference. One bounded115address-observed compiler fixture selects names only for eight genuine values; no extra locals/scopes. Final third preview full physical exact. Incomplete scene/drawing owners are pointer-only and never instantiated/embedded; only independently established complete drawing packet is a local value. Unknown math carriers428D20/428D40 remain origin-unknown/review under unchanged R163 evidence, no helper or unknown-origin credit. Five wrong real begin/constructor/draw/scalar/constant bindings rejected; no pasted decompiler output/code array/fake return/manualEH/assembly/ABIalias/mask. All251 prior units/116canonical objects/184source inputs/218origin files/nine sharedheaders/91drafts and97unknown origins unchanged; R035 historical role retained by alias. Original names/full scene-owner layout/unproved types remain provisional; no helper/library/global-data credit."
+      },
+      "origin": {
+        "address": "0x004277A0",
+        "origin": "authored",
+        "subsystem": "OpeningScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
       }
     }
   ],
@@ -118169,6 +118213,774 @@
           "target": 6050415
         }
       ]
+    },
+    "opening-timeline-004277a0": {
+      "source": "src/OpeningTimeline4277A0.cpp",
+      "object": "build/matching/OpeningTimeline4277A0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "OpeningTimeline4277A0::RenderTimeline"
+      ],
+      "symbol": "?RenderTimeline@OpeningTimeline4277A0@@QAEXXZ",
+      "target_address": 4356000,
+      "size": 5339,
+      "compare_size": 5339,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "?BeginFrameValueAt00402660@Graphics@@YA_NXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 87,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 176,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 192,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 282,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 356,
+          "type": "DIR32",
+          "symbol": "__real@41000000",
+          "target": 6651248
+        },
+        {
+          "offset": 362,
+          "type": "DIR32",
+          "symbol": "__real@43c00000",
+          "target": 6651244
+        },
+        {
+          "offset": 382,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 420,
+          "type": "DIR32",
+          "symbol": "__real@41000000",
+          "target": 6651248
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 446,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 536,
+          "type": "DIR32",
+          "symbol": "__real@443e0000",
+          "target": 6651240
+        },
+        {
+          "offset": 610,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 616,
+          "type": "DIR32",
+          "symbol": "__real@42500000",
+          "target": 6651236
+        },
+        {
+          "offset": 636,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 674,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 680,
+          "type": "DIR32",
+          "symbol": "__real@440d0000",
+          "target": 6651232
+        },
+        {
+          "offset": 700,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 738,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 744,
+          "type": "DIR32",
+          "symbol": "__real@44868000",
+          "target": 6651228
+        },
+        {
+          "offset": 764,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 854,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 922,
+          "type": "DIR32",
+          "symbol": "__real@c4d00000",
+          "target": 6651224
+        },
+        {
+          "offset": 948,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 980,
+          "type": "DIR32",
+          "symbol": "__real@c4900000",
+          "target": 6651220
+        },
+        {
+          "offset": 1006,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1038,
+          "type": "DIR32",
+          "symbol": "__real@c4200000",
+          "target": 6651216
+        },
+        {
+          "offset": 1064,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1096,
+          "type": "DIR32",
+          "symbol": "__real@c3000000",
+          "target": 6651212
+        },
+        {
+          "offset": 1122,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1154,
+          "type": "DIR32",
+          "symbol": "__real@43c00000",
+          "target": 6651244
+        },
+        {
+          "offset": 1180,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1212,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 1238,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1328,
+          "type": "DIR32",
+          "symbol": "__real@44b00000",
+          "target": 6651208
+        },
+        {
+          "offset": 1399,
+          "type": "DIR32",
+          "symbol": "__real@c4f00000",
+          "target": 6651204
+        },
+        {
+          "offset": 1425,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1460,
+          "type": "DIR32",
+          "symbol": "__real@c4a9999a",
+          "target": 6651200
+        },
+        {
+          "offset": 1486,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1521,
+          "type": "DIR32",
+          "symbol": "__real@c4466667",
+          "target": 6651196
+        },
+        {
+          "offset": 1547,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1582,
+          "type": "DIR32",
+          "symbol": "__real@c3666668",
+          "target": 6651192
+        },
+        {
+          "offset": 1608,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1643,
+          "type": "DIR32",
+          "symbol": "__real@43a66666",
+          "target": 6651188
+        },
+        {
+          "offset": 1669,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1704,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 1730,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1820,
+          "type": "DIR32",
+          "symbol": "__real@44f00000",
+          "target": 6651184
+        },
+        {
+          "offset": 1891,
+          "type": "DIR32",
+          "symbol": "__real@c5080000",
+          "target": 6651180
+        },
+        {
+          "offset": 1917,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 1952,
+          "type": "DIR32",
+          "symbol": "__real@c4c33334",
+          "target": 6651176
+        },
+        {
+          "offset": 1978,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2013,
+          "type": "DIR32",
+          "symbol": "__real@c46cccce",
+          "target": 6651172
+        },
+        {
+          "offset": 2039,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2074,
+          "type": "DIR32",
+          "symbol": "__real@c3a66668",
+          "target": 6651168
+        },
+        {
+          "offset": 2100,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2135,
+          "type": "DIR32",
+          "symbol": "__real@438ccccc",
+          "target": 6651164
+        },
+        {
+          "offset": 2161,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2196,
+          "type": "DIR32",
+          "symbol": "__real@44600000",
+          "target": 6651252
+        },
+        {
+          "offset": 2222,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2489,
+          "type": "DIR32",
+          "symbol": "__real@44380000",
+          "target": 6651160
+        },
+        {
+          "offset": 2547,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 2553,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 2577,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 2583,
+          "type": "DIR32",
+          "symbol": "__real@43c00000",
+          "target": 6651244
+        },
+        {
+          "offset": 2605,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 2611,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 2617,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2629,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 2660,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2668,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 2680,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 2696,
+          "type": "DIR32",
+          "symbol": "__real@3ff8000000000000",
+          "target": 6651144
+        },
+        {
+          "offset": 2702,
+          "type": "DIR32",
+          "symbol": "__real@3ff0000000000000",
+          "target": 6651136
+        },
+        {
+          "offset": 2724,
+          "type": "DIR32",
+          "symbol": "__real@41000000",
+          "target": 6651248
+        },
+        {
+          "offset": 2730,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 2736,
+          "type": "DIR32",
+          "symbol": "__real@43c00000",
+          "target": 6651244
+        },
+        {
+          "offset": 2752,
+          "type": "DIR32",
+          "symbol": "__real@40400000",
+          "target": 6651128
+        },
+        {
+          "offset": 2758,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 2764,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 2776,
+          "type": "DIR32",
+          "symbol": "__real@44780000",
+          "target": 6651124
+        },
+        {
+          "offset": 2807,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 2943,
+          "type": "REL32",
+          "symbol": "?OpeningScalar428D20@@YAMM@Z",
+          "target": 4361504
+        },
+        {
+          "offset": 2952,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 2968,
+          "type": "REL32",
+          "symbol": "?OpeningScalar428D20@@YAMM@Z",
+          "target": 4361504
+        },
+        {
+          "offset": 2977,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 2983,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 2999,
+          "type": "REL32",
+          "symbol": "?OpeningScalar428D20@@YAMM@Z",
+          "target": 4361504
+        },
+        {
+          "offset": 3008,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 3014,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 3046,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3135,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3225,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3260,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3346,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3436,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3471,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3557,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3647,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3682,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3768,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 3858,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3893,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3979,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4069,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 4104,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 4190,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4276,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4323,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4480,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 4515,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 4629,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4754,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 4901,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 4907,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 4912,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 5025,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 5120,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 5155,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 5237,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 5326,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 5331,
+          "type": "REL32",
+          "symbol": "?EndFrame@Graphics@@YAXXZ",
+          "target": 4204496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -118355,6 +119167,7 @@
     "src/StreamControl407CA0.cpp": "295c7528de7a1f0f63c5ea10ac2e2cb375dca6d149af12e450df44040ece6d1d",
     "src/AudioLifecycle4073B0.cpp": "973e26b355af2923abc604177bae4f930ccca9a7fc086921595d02c81dfe088b",
     "src/CharacterSpecial470F00.cpp": "e8ce7d39ab863962902eef3fee94543b27ac120ba3537a5c073248a323bb60f2",
-    "src/CharacterSpecialFamily.cpp": "fc21b655302eb03b0847ded6c455dcaf09b80a3f6c1a644ecffdee2c3d9bce08"
+    "src/CharacterSpecialFamily.cpp": "fc21b655302eb03b0847ded6c455dcaf09b80a3f6c1a644ecffdee2c3d9bce08",
+    "src/OpeningTimeline4277A0.cpp": "d9bdbfc315dd70ff3a098a91dc3f090374ddd7cddb5ed8d6d97bed4d2e4aa8eb"
   }
 }

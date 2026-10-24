@@ -250,3 +250,4 @@ CharacterSpecialFamily::Configure5559F0,0x005559F0,function
 CharacterSpecialFamily::Configure577C70,0x00577C70,function
 CharacterSpecialFamily::Configure59B7F0,0x0059B7F0,function
 CharacterSpecialFamily::Configure5C43D0,0x005C43D0,function
+OpeningTimeline4277A0::RenderTimeline,0x004277A0,function
