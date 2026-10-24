@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F129",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F130",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "db8b1c943832b6b807ab30a62431b03781087121bceebc7356eedef5977c9355"
+      "current_sha256": "afe1d350cc7ef75dee835ef504c76a521a0124424eae0fc6da10048ee39ab05b"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "e097a493309f7a0a09008cf082b6cf03152e9e40e585827d908b518a5658f760"
+      "current_sha256": "cf0440ae53e800399bf4468f4aaceb5fa9391e723c880b7af5b5c667fcb60faa"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "1940d52c71d9ea4cde5078d6b3a8266fbdae08140782867484110b71cc98e5e5"
+      "current_sha256": "269b5e8c0995faee7ac38be42f1b5dea4694b711213fb7f11cafe23baad660e6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "62fe095fb488dd4549be18f0e9e32e5e1f3181bce0783b7778d0679511fbd477"
+      "current_sha256": "c636febd6d4acf574730533048f03f03df3035564c79181eaf8467912732ce8c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b915e38c2e1f5e8042bdcbb86da993b55892a07f0fd3251728bda217b6201cae"
+      "current_sha256": "42a3facdb9447e2b394c385463604b7cdfe159f602a0f11ef4e38123cf9b32f6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "84403287b075c4aafb307bcdc8342a0129c38c6e15b6a768ace1ed098de5a9ba"
+      "current_sha256": "9952bc731422a59298cf57cf40c026585f97e541f66e5fc0131c79d13fb7ba2d"
     }
   },
   "functions": [
@@ -11348,6 +11348,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00433CF0",
+        "size": "3045",
+        "span_end": "0x004348D4",
+        "current_name": "FUN_00433cf0",
+        "proposed_name": "CharacterSelectScene::UpdatePlayerSelection",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00433CF0",
+        "size": "3045",
+        "span_end": "0x004348D4",
+        "current_name": "FUN_00433cf0",
+        "proposed_name": "SelectionUpdateF130::Update",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SelectionUpdateF130::Update(signed char side)",
+        "is_thunk": "false",
+        "source_file": "src/SelectionControl.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F130; scripts/repo-python scripts/replay-exact-units.py --unit selection-update-player-00433cf0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F130: complete 3045byte independently canonical cold exact; two-body cohort5860codebytes/1437instructions/35calls/all93real fields including genuine zero/one COFF addends. Full own CFG/ESP-EBP/x87 joins,scene4byte frame plus savedESI/RET4 andfighter8byte frame/plainRET/followingINT3 reviewed; no own table/shared/cropped tail. Only real two byte locals at-2/-1, private selection/fighter/progress/sound/input/recorded-container owners pointer-only, never instantiated/embedded. Selection signed player byte/28stride held counters/NaN-aware float branches/positive-first individual unlock checks/wrap11/player0 progress byte/confirm andpalette collision/mode3 clearing/random countdown/logical toggles preserved. Controls preserve AI/poll/playback order/facing-relative andphysical masks/unsigned positive held buttons/one-frame equality/native direction-before-button accumulation/conditional recorded press-auxiliary-short queues/history owner+518/observed virtualslots2C-30-34 noargumentRET0. Explicit byte casts retain true mask width before promoted shifts; genuine byte countdown uses predecrement. Address-only34name fixture explains local bucket order without added storage or scope. All helper packets/return cleanup reviewed; mode5 helper193code+16own table, no helper/library/global/data/layout credit. Absolute-input wrapper andall97unknown origins remain unknown. Run00602A60 remains unaccepted:2987code+60own table needs3047fullcompare;16actual allocations/15distinct incomplete scene owners require independently complete layouts; API filename bound does not prove declared local array extent. Six wrong real absolute/sound/queue/count/sample/mode bindings rejected. No inert locals/padding/guessed array/masks/aliases/ABI misdeclaration/pasted decompile/codebytes/assembly/fake returns/truncation/conditional exact bodies. All317priorunits/128objects/196inputs/218originfiles/nineheaders/91drafts unchanged; R043/R045 original roles retained by aliases; names/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x00433CF0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00452F10",
+        "size": "2815",
+        "span_end": "0x00453A0E",
+        "current_name": "FUN_00452f10",
+        "proposed_name": "FighterState::UpdateControls",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00452F10",
+        "size": "2815",
+        "span_end": "0x00453A0E",
+        "current_name": "FUN_00452f10",
+        "proposed_name": "FighterControlsF130::UpdateControls",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterControlsF130::UpdateControls()",
+        "is_thunk": "false",
+        "source_file": "src/SelectionControl.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F130; scripts/repo-python scripts/replay-exact-units.py --unit fighter-update-controls-00452f10",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F130: complete 2815byte independently canonical cold exact; two-body cohort5860codebytes/1437instructions/35calls/all93real fields including genuine zero/one COFF addends. Full own CFG/ESP-EBP/x87 joins,scene4byte frame plus savedESI/RET4 andfighter8byte frame/plainRET/followingINT3 reviewed; no own table/shared/cropped tail. Only real two byte locals at-2/-1, private selection/fighter/progress/sound/input/recorded-container owners pointer-only, never instantiated/embedded. Selection signed player byte/28stride held counters/NaN-aware float branches/positive-first individual unlock checks/wrap11/player0 progress byte/confirm andpalette collision/mode3 clearing/random countdown/logical toggles preserved. Controls preserve AI/poll/playback order/facing-relative andphysical masks/unsigned positive held buttons/one-frame equality/native direction-before-button accumulation/conditional recorded press-auxiliary-short queues/history owner+518/observed virtualslots2C-30-34 noargumentRET0. Explicit byte casts retain true mask width before promoted shifts; genuine byte countdown uses predecrement. Address-only34name fixture explains local bucket order without added storage or scope. All helper packets/return cleanup reviewed; mode5 helper193code+16own table, no helper/library/global/data/layout credit. Absolute-input wrapper andall97unknown origins remain unknown. Run00602A60 remains unaccepted:2987code+60own table needs3047fullcompare;16actual allocations/15distinct incomplete scene owners require independently complete layouts; API filename bound does not prove declared local array extent. Six wrong real absolute/sound/queue/count/sample/mode bindings rejected. No inert locals/padding/guessed array/masks/aliases/ABI misdeclaration/pasted decompile/codebytes/assembly/fake returns/truncation/conditional exact bodies. All317priorunits/128objects/196inputs/218originfiles/nineheaders/91drafts unchanged; R043/R045 original roles retained by aliases; names/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x00452F10",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -137213,6 +137301,612 @@
           "target": 4204496
         }
       ]
+    },
+    "selection-update-player-00433cf0": {
+      "source": "src/SelectionControl.cpp",
+      "object": "build/matching/SelectionControl.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SelectionUpdateF130::Update"
+      ],
+      "symbol": "?Update@SelectionUpdateF130@@QAEXC@Z",
+      "target_address": 4406512,
+      "size": 3045,
+      "compare_size": 3045,
+      "relocations": [
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 85,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 207,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 234,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 268,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 346,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 400,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 482,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 548,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 553,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 748,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1650,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2447,
+          "type": "DIR32",
+          "symbol": "?g_SelectionDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2463,
+          "type": "DIR32",
+          "symbol": "?g_SelectionProgress@@3PAEA",
+          "target": 6756600
+        },
+        {
+          "offset": 2468,
+          "type": "REL32",
+          "symbol": "?SetSelection@SelectionProgressF130@@QAEXCC@Z",
+          "target": 4301216
+        },
+        {
+          "offset": 2534,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 2539,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 2563,
+          "type": "DIR32",
+          "symbol": "?g_SelectionCharacters@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 2591,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2631,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2669,
+          "type": "DIR32",
+          "symbol": "?g_SelectionCharacters@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 2676,
+          "type": "DIR32",
+          "symbol": "?g_SelectionCharacters@@3PACA",
+          "target": 6755528
+        },
+        {
+          "offset": 2691,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2709,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2724,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2741,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2748,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2759,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2766,
+          "type": "DIR32",
+          "symbol": "?g_SelectionPalettes@@3PACA",
+          "target": 6755500
+        },
+        {
+          "offset": 2789,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2890,
+          "type": "DIR32",
+          "symbol": "?g_SelectionProgress@@3PAEA",
+          "target": 6756600
+        },
+        {
+          "offset": 2895,
+          "type": "REL32",
+          "symbol": "?GetSelectedValue@SelectionProgressF130@@QAECXZ",
+          "target": 4426368
+        },
+        {
+          "offset": 2909,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2922,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 2927,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 2969,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2981,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 2994,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 2999,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "fighter-update-controls-00452f10": {
+      "source": "src/SelectionControl.cpp",
+      "object": "build/matching/SelectionControl.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterControlsF130::UpdateControls"
+      ],
+      "symbol": "?UpdateControls@FighterControlsF130@@QAEXXZ",
+      "target_address": 4534032,
+      "size": 2815,
+      "compare_size": 2815,
+      "relocations": [
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryWords@FighterControlsF130@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 134,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 153,
+          "type": "REL32",
+          "symbol": "?Count@RecordedBytesF130@@QBEIXZ",
+          "target": 4277296
+        },
+        {
+          "offset": 162,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 167,
+          "type": "REL32",
+          "symbol": "?Front@RecordedBytesF130@@QAEAAEXZ",
+          "target": 4541776
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 182,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedBytesF130@@QAEXXZ",
+          "target": 4541808
+        },
+        {
+          "offset": 187,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedAuxiliary@@3PAEA",
+          "target": 6756556
+        },
+        {
+          "offset": 192,
+          "type": "REL32",
+          "symbol": "?Count@RecordedBytesF130@@QBEIXZ",
+          "target": 4277296
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedAuxiliary@@3PAEA",
+          "target": 6756556
+        },
+        {
+          "offset": 206,
+          "type": "REL32",
+          "symbol": "?Front@RecordedBytesF130@@QAEAAEXZ",
+          "target": 4541776
+        },
+        {
+          "offset": 222,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedAuxiliary@@3PAEA",
+          "target": 6756556
+        },
+        {
+          "offset": 227,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedBytesF130@@QAEXXZ",
+          "target": 4541808
+        },
+        {
+          "offset": 232,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 237,
+          "type": "REL32",
+          "symbol": "?Count@RecordedSamples455580View@@QBEIXZ",
+          "target": 4277792
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 251,
+          "type": "REL32",
+          "symbol": "?Front@RecordedSamples455580View@@QAEAAFXZ",
+          "target": 4541968
+        },
+        {
+          "offset": 269,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 274,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedSamples455580View@@QAEXXZ",
+          "target": 4542000
+        },
+        {
+          "offset": 465,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 481,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 506,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 519,
+          "type": "REL32",
+          "symbol": "?ApplyMode5Direction@FighterControlsF130@@QAEXXZ",
+          "target": 4541472
+        },
+        {
+          "offset": 539,
+          "type": "DIR32",
+          "symbol": "?g_SelectionDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 549,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 556,
+          "type": "DIR32",
+          "symbol": "?g_SelectionDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 951,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 956,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedBytesF130@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 971,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedAuxiliary@@3PAEA",
+          "target": 6756556
+        },
+        {
+          "offset": 976,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedBytesF130@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 996,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedSamples455580View@@QAEXABF@Z",
+          "target": 4277824
+        },
+        {
+          "offset": 1008,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 1022,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 1027,
+          "type": "REL32",
+          "symbol": "?Count@RecordedBytesF130@@QBEIXZ",
+          "target": 4277296
+        },
+        {
+          "offset": 1036,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 1041,
+          "type": "REL32",
+          "symbol": "?Front@RecordedBytesF130@@QAEAAEXZ",
+          "target": 4541776
+        },
+        {
+          "offset": 1051,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 1056,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedBytesF130@@QAEXXZ",
+          "target": 4541808
+        },
+        {
+          "offset": 1849,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 2404,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 2418,
+          "type": "DIR32",
+          "symbol": "?g_ControlRecordedPress@@3PAEA",
+          "target": 6756516
+        },
+        {
+          "offset": 2423,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedBytesF130@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 2672,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryWords@FighterControlsF130@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 2735,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedBytesF130@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 2749,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedBytesF130@@QAEXXZ",
+          "target": 4541808
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -137411,6 +138105,7 @@
     "src/ActorEffectDrawing.cpp": "15763e88c3a2954829ca8379e7e561e3f09115395bf7fa688e87c69d38b61866",
     "src/BattleEffectRendering.cpp": "cb89e0245680962f87070e610b6ca773c07492841a81fc99f897602681e8b719",
     "src/SceneTransitionLayers.cpp": "ab9533d301679bd885ed8ad5b63534accc9cd8d586cdb7f48a5af67e867fab70",
-    "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00"
+    "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00",
+    "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322"
   }
 }

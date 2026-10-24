@@ -316,3 +316,5 @@ SpriteNodeCameraF129::Render,0x0040FC70,function
 SpriteNodeF129::Render,0x00410350,function
 NameEntryPlayerF129::Render,0x0042A560,function
 NameEntrySharedF129::Render,0x0042B570,function
+SelectionUpdateF130::Update,0x00433CF0,function
+FighterControlsF130::UpdateControls,0x00452F10,function

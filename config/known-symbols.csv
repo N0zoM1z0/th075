@@ -298,3 +298,5 @@ address,name,module,confidence,evidence
 0x00410350,SpriteNodeF129::Render,SpriteNameDrawing,inferred,F129; own whole cold exact / complete CFG/CPU-x87 joins/node pose/projection/name cursor/row SDK packets; original identities/types/private layouts provisional
 0x0042A560,NameEntryPlayerF129::Render,SpriteNameDrawing,inferred,F129; own whole cold exact / complete CFG/CPU-x87 joins/node pose/projection/name cursor/row SDK packets; original identities/types/private layouts provisional
 0x0042B570,NameEntrySharedF129::Render,SpriteNameDrawing,inferred,F129; own whole cold exact / complete CFG/CPU-x87 joins/node pose/projection/name cursor/row SDK packets; original identities/types/private layouts provisional
+0x00433CF0,SelectionUpdateF130::Update,SelectionControl,inferred,F130; own whole cold exact / complete CFG/CPU-x87 joins/selection masks/queue andvirtual packets; original identities/types/private layouts provisional
+0x00452F10,FighterControlsF130::UpdateControls,SelectionControl,inferred,F130; own whole cold exact / complete CFG/CPU-x87 joins/selection masks/queue andvirtual packets; original identities/types/private layouts provisional

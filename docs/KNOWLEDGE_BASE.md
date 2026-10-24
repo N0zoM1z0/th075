@@ -24867,7 +24867,7 @@ negative/binding/cold/parent evidence, logs, PDBs and canonical objects remain.
 Receipts are retained under
 `.analysis/f129-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F130
+## F130 investigation at the F129 checkpoint
 
 Independently review three authored candidates, **8,847 provisional code bytes**:
 
@@ -24896,3 +24896,108 @@ complete local record layout; resource00456B60 retains f107's actual588byte
 frame and unresolved texture80/layout/filename bound. Keep compiler builds
 serial, cold-replay only new/affected units and remove only obsolete
 reproducible outputs while preserving inputs/evidence. Later phases deferred.
+
+
+## F130 complete selection/control checkpoint (2026-10-25)
+
+R043 `SelectionUpdateF130::Update` at `00433CF0/3045` and R045
+`FighterControlsF130::UpdateControls` at `00452F10/2815` pass canonical cold
+comparison: **5,860 code bytes,1,437 instructions,35 actual calls and all93
+real relocation fields**, including genuine zero/one COFF addends. Complete
+CFGs, ESP/EBP/x87 joins, scene4byte frame plus savedESI/RET4 and fighter8byte
+frame/plainRET are independently reviewed. Following INT3 is excluded; no
+owned table, shared tail or cropped extent is present. Only these two new
+units were cold-built, across one canonical object.
+
+Selection retains the signed player argument,28stride held counters,
+NaN-aware positive animation branches and60 equality, positive-first
+individual unlock checks and wrap11. Progress receives the owner's byte at
+0xE0 independently of the side argument. Confirmation, palette collision, mode3
+clearing, random countdown and logical toggles remain distinct.
+
+Controls retain AI/poll/playback order, physical versus facing-relative
+masks, one-frame versus held buttons, unsigned positive button comparisons
+and native direction-before-button accumulation. Press/auxiliary/short
+sample queues remain distinct; history receives owner+518. The observed
+virtual slots2C/30/34 take no stack arguments and preserve plainRET packets.
+Explicit byte casts retain the actual mask width before promoted shifts;
+genuine signed-byte countdowns use predecrement. An address-only34name
+compiler fixture explains genuine local bucket order without added storage
+or scope. Five previews retain the failed and successful emission evidence.
+
+Only genuine byte locals at-2/-1 are constructed in the control body. All
+private selection/fighter/progress/sound/input/recorded-container owners stay
+pointer-only and are never instantiated or embedded. Helper calls keep
+actual receiver/reference widths and cleanup. The mode5 helper is193code
+bytes plus its own16byte table; it receives no new exact credit. The
+absolute-input wrapper and all97 pending origins remain unknown. Six wrong
+real absolute/sound/queue/count/sample/mode bindings fail whole comparison.
+No padding, inert locals, guessed arrays, ABI aliases, masks, shortened
+extents, pasted decompile/code bytes, assembly, fake returns or conditional
+exact bodies are used. Original names/types/private layouts stay provisional.
+
+Replay only `selection-update-player-00433cf0` and
+`fighter-update-controls-00452f10`. `.analysis/f130-cold-replay.log` records2/2
+exact across one object. All317 prior units,128 canonical objects,196 source
+inputs,218 origin files,nine shared headers,91 active drafts and4,349 other
+function rows remain unchanged. F009 plus259 additions retains702,132 code
+bytes and197 new inputs. Historical R043/R045 roles remain through aliases.
+
+`GameApplication::RunAt00602A60` remains unaccepted. Its2,987code bytes and
+own60byte/15entry table require a complete3,047byte comparison. Native code
+contains16 allocations of15 distinct private scene owners whose complete
+layouts remain unproved. Allocation sizes and constructor prefixes do not
+establish those layouts; raw-allocation/constructor shims do not satisfy the
+owner rule. The260byte filename API bound also does not prove a declared
+268byte local array. Preserve
+`.analysis/f130-selection-control-run/run-layout-prerequisites.json`; all
+pending authored bytes remain in the denominator.
+
+Current totals: **319 exact functions/units,712,015 code bytes**,36.08% of
+reviewed authored bytes and **36.01% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+The initial CI failed only because progress.svg was stale; the card was
+regenerated before the successful rerun.
+
+Validation:3603 CI tests passed in175.651s; seven exact-checkpoint tests
+passed in0.560s; target/tracking/diff checks passed. Evidence-preserving
+cleanup removed five obsolete own game probes plus one34name fixture
+(101,574bytes), and375 reproducible Python bytecode files
+(8,283,506bytes). All actual compiler inputs/five previews/native/CFG/x87/
+receivers/frames/masks/name observations/constants/negative/binding/cold/
+parent evidence, logs, PDBs and129 canonical objects remain. Receipts:
+`.analysis/f130-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F131
+
+Independently review three authored candidates, **85,265 provisional code bytes**:
+
+| Candidate | Address / provisional size |
+| --- | --- |
+| CharacterObject::AdvanceAt0050A580 | `0050A580/81539` |
+| CharacterSelectScene::UpdateChoiceAnimation | `004350E0/1923` |
+| ResultScene::UpdateSelection | `0042F970/1803` |
+
+Native-only function/caller/callee/decompile queries under
+`.analysis/f131-character-selection-frontier/` are complete; all four target
+attestation/query completion markers are verified. Complete native spans and
+`.analysis/f131-native-frontier-proof.json` retain the investigation inputs.
+The large character candidate's native CFG reaches all17,435 instructions/846
+calls. Its199entry remap and92entry pointer table require a full82,106byte
+comparison(81,539code+567table bytes); six following INT3 bytes are excluded.
+Native-only `advance-dispatch-prereview.json` and
+`.analysis/f131-dispatch-prereview-proof.json` preserve this extent review.
+Actual ABI, CPU/x87 joins, genuine locals, scalar widths and helper packets
+still require independent review before source/acceptance. No F131 source or
+exact credit is claimed. Private owners remain pointer-only; only
+independently complete SDK/local values may be constructed.
+
+Preserve accepted sources/headers/objects, all retained failed-control drafts
+and97 unknown origins; origin evidence throughR268 stays immutable. Keep
+compiler builds serial, cold-replay only new/affected units and remove only
+obsolete reproducible outputs after preserving their inputs/evidence. No
+unchanged F048/F066/F085 retries without a new supported hypothesis. Run's
+private allocations, QueueFile/ArchiveEntry's local64byte record and the
+resource loader's texture80/layout/filename extent remain unresolved. Later
+project phases stay deferred.

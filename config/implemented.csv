@@ -315,3 +315,5 @@ SpriteNodeCameraF129::Render
 SpriteNodeF129::Render
 NameEntryPlayerF129::Render
 NameEntrySharedF129::Render
+SelectionUpdateF130::Update
+FighterControlsF130::UpdateControls

@@ -260,3 +260,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00410350,SpriteScene::RenderNode,SpriteNodeF129::Render,R035,sprite-node-00410350
 0x0042A560,NameEntryScene::RenderPlayer,NameEntryPlayerF129::Render,R040,name-entry-player-render-0042a560
 0x0042B570,NameEntryScene::RenderShared,NameEntrySharedF129::Render,R040,name-entry-shared-render-0042b570
+0x00433CF0,CharacterSelectScene::UpdatePlayerSelection,SelectionUpdateF130::Update,R043,selection-update-player-00433cf0
+0x00452F10,FighterState::UpdateControls,FighterControlsF130::UpdateControls,R045,fighter-update-controls-00452f10
