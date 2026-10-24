@@ -17793,3 +17793,66 @@ relocations = [
   { offset = 0x1F4, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
   { offset = 0x201, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
 ]
+
+[units."texture-pack-save-0040bf60"]
+source = "src/TexturePack40BF60.cpp"
+object = "build/matching/TexturePack40BF60.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TexturePack40BF60::Save"]
+symbol = "?Save@TexturePack40BF60@@QAEXPBD0C@Z"
+target_address = 0x0040BF60
+size = 1046
+compare_size = 1046
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x21, type = "REL32", symbol = "?Size@TextureEntryCount40C8C0@@QAEIXZ", target = 0x0040DD20 },
+  { offset = 0x43, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x61, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0xA3, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0xC5, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0xFC, type = "DIR32", symbol = "$SG62500", target = 0x0065780C },
+  { offset = 0x108, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0x11D, type = "REL32", symbol = "?Load@BitmapPalette40C380@@QAEXPBD@Z", target = 0x0040C380 },
+  { offset = 0x13F, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x166, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x188, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x1AD, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x1E0, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x1FD, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x216, type = "DIR32", symbol = "$SG62523", target = 0x0065781C },
+  { offset = 0x222, type = "REL32", symbol = "_sprintf", target = 0x006404F0 },
+  { offset = 0x23E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x245, type = "REL32", symbol = "?LoadFile@BitmapPackSource40BF60@@QAE_NPBD@Z", target = 0x0041A3D0 },
+  { offset = 0x257, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x25E, type = "REL32", symbol = "?Encode@BitmapPackSource40BF60@@QAEXXZ", target = 0x0041B400 },
+  { offset = 0x270, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x288, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2A0, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2B8, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2CF, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x2E7, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x306, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x31F, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x338, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x351, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x36A, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x38F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x39D, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x3CA, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x3F5, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
+  { offset = 0x404, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x40C, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units."texture-pack-save-default-0040bf40"]
+source = "src/TexturePack40BF60.cpp"
+object = "build/matching/TexturePack40BF60.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["TexturePack40BF60::SaveDefault"]
+symbol = "?SaveDefault@TexturePack40BF60@@QAEXPBD0@Z"
+target_address = 0x0040BF40
+size = 31
+compare_size = 31
+relocations = [
+  { offset = 0x15, type = "REL32", symbol = "?Save@TexturePack40BF60@@QAEXPBD0C@Z", target = 0x0040BF60 },
+]

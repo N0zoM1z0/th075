@@ -21853,3 +21853,71 @@ and completion marker, recording the 31-byte R019 default-palette caller
 retained; any later exact credit requires its own source and cold comparison.
 Filename array size remains unknown; the distance to the
 security cookie alone does not prove an array extent or authorize padding.
+
+## F099 complete texture-pack save checkpoint (2026-10-24)
+
+R019 SaveTexturePack `0040BF60..0040C375` (1,046 bytes) and its default wrapper
+`0040BF40..0040BF5E` (31 bytes) independently pass canonical cold comparison as
+TexturePack40BF60::Save/SaveDefault. All 1,077 bytes, 327 instructions and 39
+physical relocation fields match. Ten/one following INT3 bytes stay outside
+the extents. Two new source/header inputs leave all old headers and sources
+unchanged. Both historical R019 roles remain by aliases. The wrapper passes
+exactly zero as the third argument, with two real parameters and RET8; the
+main method has three parameters and RET12, including a signed byte count.
+
+The save retains palette mutation and ordering: absent palette writes header
+zero; count<=1 writes header one and one 512-byte palette; count>1 appends the
+requested additional palettes after loading `%s\pal%dp.bmp` into the owner.
+Each entry receives selected format/palette, loads `%s\%04d.bmp`, encodes,
+then writes metadata in exact 4/4/4/1/4-byte order. Encoded data reloads the
+entry pointer while twelve bytes of outer WriteFile arguments remain live.
+Raw data preserves format-dependent byte size and unsigned right shift. All
+API error handling and ignored write/load results remain as observed.
+
+A complete 24-byte local serialization value groups six actual fields with
+ordinary alignment; every field is used. This source-compatible local value
+is not a complete native manager/bitmap owner or original grouping claim.
+All owner/bitmap interfaces remain pointer-only and are never constructed or
+embedded. Initial scalar probes reproduce all 313 instructions but place
+locals differently. Natural scopes, that real value model, ordinary local
+names and SDK MAX_PATH (260) reproduce the full 324-byte frame and GS output.
+The 268-byte path/cookie distance does not imply a 268-byte array: no array
+growth, explicit padding, inert storage or manual cookie code is used.
+
+All 35 main packets, the wrapper packet and both full CFGs pass review,
+including four rejected cleanup controls. Fourteen WriteFile calls use the
+real SDK DWORD output local. Eleven entry lookups preserve outer argument
+counts, including the bitmap-loader filename and encoded payload packet.
+Full 3,751/1,383-byte R021 bitmap bodies and their complete switch maps are
+revalidated; loader returns AL0/AL1 and its result is ignored here. Compiler
+cookie/check and both complete readonly string payloads bind independently.
+Original names/scopes and whole owner layouts remain unknown. No masks,
+frame/register aliases or cropped comparison. Only the two new units are cold
+compared in one serial object build; no old dependency rebuilds are needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-pack-save-0040bf60 --unit texture-pack-save-default-0040bf40
+```
+
+All 194 old units, 97 canonical objects, 164 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,349 other function rows stay unchanged.
+F009 plus 136 additions retains 557,822 code bytes and 166 inputs. Keep all
+f099 native/attested/ABI/snapshot-model/bitmap-CFG/import/physical/cold/parent
+records and compiler control sources, logs and PDBs. The 97 unknown origins and old drafts receive no credit.
+Next F100 is the complete 3,751-byte R021 bitmap loader `0041A3D0` from this
+graph. Reconcile file/format policy, actual source/output buffers, scalar
+allocator identities, AL failures and full associated switch data before
+source; never construct incomplete owners. Goal 98% remains incomplete.
+
+Current totals: 196 exact functions/units, 567,705 code bytes, 28.77% of
+reviewed authored bytes and 28.71% conservatively including all pending bytes.
+
+Final F099 CI passes 3,603 tests in 137.061s. Bounded cleanup
+removes six obsolete reproducible probe objects (119,578 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F100 complete native/dependency/switch index, existing attested root view,
+completed caller query and bounded ABI notes are retained privately; no F100
+source or exact credit yet. Three callers include both directory loaders and
+the accepted save policy. Its true scalar allocation symbols and all format/
+row-stride/return policies require independent reconciliation before source.

@@ -192,3 +192,5 @@ BitmapUpload40C590::CopyTo
 TextureUpload40C730::Upload
 TextureUpload40C730::UploadByHandle
 BitmapPalette40C380::Load
+TexturePack40BF60::Save
+TexturePack40BF60::SaveDefault
