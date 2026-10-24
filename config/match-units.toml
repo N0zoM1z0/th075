@@ -15981,3 +15981,14 @@ target_address = 0x0040FA30
 size = 142
 compare_size = 142
 relocations = []
+
+[units.sprite-transform-reset-0040fbb0]
+source = "src/SpriteTransform40FBB0.cpp"
+object = "build/matching/SpriteTransform40FBB0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["SpriteTransform40FBB0::ResetNodeTransform"]
+symbol = "?ResetNodeTransform@SpriteTransform40FBB0@@QAEXMMM@Z"
+target_address = 0x0040FBB0
+size = 158
+compare_size = 158
+relocations = [{ offset = 0x35, type = "REL32", symbol = "_memset", target = 0x00640490 }]

@@ -102,3 +102,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x005E68C0,CharacterSpecial::RenderAt005E68C0,CharacterSpecial5E68C0::RenderStage,R049,character-special-render-005e68c0
 0x005E6F70,CharacterAux::RunAt005E6F70,CharacterInput5E6F70::PollCommands,R049,character-input-policy-005e6f70
 0x0040FA30,AnimationState::AdvanceNestedFrameAt0040FA30,AnimationProgress40FA30::AdvanceNestedFrame,R103,animation-progress-0040fa30
+0x0040FBB0,SpriteScene::ResetNodeTransform,SpriteTransform40FBB0::ResetNodeTransform,R036,sprite-transform-reset-0040fbb0

@@ -156,3 +156,4 @@ CharacterSpecial5E59C0::InitializeStage
 CharacterSpecial5E68C0::RenderStage
 CharacterInput5E6F70::PollCommands
 AnimationProgress40FA30::AdvanceNestedFrame
+SpriteTransform40FBB0::ResetNodeTransform

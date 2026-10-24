@@ -20115,3 +20115,69 @@ rows and218 origin files unchanged. F066 active03 and F061/F048 live inputs rema
 pinned; F021 is untouched. Builds use niceness15, CI10; sampled available memory
 is about8.5–9.0GiB with81–93% interval CPU idle and zero interval swap-in/out.
 The active goal was cleared by the user; this handoff does not complete95%.
+
+
+## F068 transform reset acceptance and resumed 98% goal (2026-10-24)
+
+The user resumed reconstruction with an active 98% authored-byte exact goal,
+serial builds, affected-unit cold replay, frequent commits/pushes and cleanup.
+The status report now tests 98% against reviewed authored plus all pending
+bytes; boundary tests retain the conservative ownership accounting. The earlier
+95% objective and cleared-goal handoff remain historical checkpoints.
+
+R036 `0x0040FBB0..0x0040FC4D` is cold-exact as
+`SpriteTransform40FBB0::ResetNodeTransform`: all 158 bytes, 47 instructions,
+one memset relocation and one ret12; two following INT3 bytes are excluded.
+The old role is preserved by an explicit origin-name alias. Origin evidence,
+extents/hashes and all 97 unknown origins remain unchanged.
+
+Target observations: enable byte+40; preserve three float argument words at
++34/+38/+3C; call the real memset at 0x00640490 on current+10, zero, length36
+with 12-byte cdecl caller cleanup. Then write 1.0f to +1C/+20/+24, 255 to all
+four bytes +11..14, zero to shorts +16/+18/+1A and byte+10. Duplicate writes
+after the bulk clear remain. The full F066 audit pins all 57 current-receiver
+caller sites and ret12. Native frame is four bytes, this at EBP-4. Fresh
+attested Ghidra view and the complete raw native body agree.
+
+Compiler observations: natural C++ with std::memset and ordinary typed field
+writes matches the complete body using VC7.1 build3077 and the explicit
+`/Od /Ob0 /Gy /GR- /GX- /Zi /I src` profile. Independent canonical compilation
+and a separate cold replay bind every byte and the actual REL32 call field.
+No assembly, target arrays, inert locals, padding, fake returns, alternate
+bodies or ABI inventions are used. The receiver is declaration-only and never
+constructed/embedded; original names/declarations and full owner layout remain
+unknown. The older partial SpriteTransform declaration remains unchanged.
+
+All 158 previous accepted unit descriptors, canonical objects and accepted
+source/header inputs are unchanged and were not rebuilt. F009 plus 99 additions
+now retains 513,397 code bytes and 114 new source/header inputs. Total exact is
+159 functions / 523,280 code bytes: 26.52% reviewed authored and 26.47%
+conservative. F021/F048/F061/F066 receive no credit. Retain f068-bind.py,
+physical receipts, accepted cold replay/log, adoption-parent, progress and
+attested view/log under .analysis/, plus private preview inputs and canonical
+cold object. The 98% goal remains active and incomplete.
+
+F066 controls04..24 preserve the full57-state draft. Nineteen source controls
+have identical complete patched code and all696 physical bindings to active03.
+Both subtract-one conditions change the actual sequence and are rejected.
+The controls cover initializer grouping, constant promotions, equality forms,
+nested predicates, ordinary scale arithmetic, scopes and lvalue parentheses;
+none explains the first nonbranch register shift at0055F711. The summary pins
+all source/header/intent/receipt/log inputs. Do not repeat without new evidence.
+Nineteen redundant reproducible objects/1,119,252 bytes were removed after full
+equality; five have only generated local switch label renames with identical
+offsets/addends/destinations. All PDBs, inputs and active objects remain.
+The next bounded dependency is complete polar velocity0040FB70, then recorded
+range00455580 and sound/shake wrappers, while retaining the large F066 draft.
+
+F068 final verification passes all 3,603 CI tests in 149.169 seconds, tracking,
+progress-card and whitespace checks. `f068-evidence-check.json` confirms all
+158 prior units/objects, 112 prior manifest source inputs, 218 origin files,
+4,350 other function rows and every active draft unchanged. Only F068 was cold
+rebuilt. The reproducible 2,012-byte preview object was removed after complete
+COFF-byte/relocation equality against the canonical cold object, allowing only
+the explicit owner rename. After CI, generated Python bytecode under scripts/
+and tests/ was removed with per-file hashes in `f068-bytecode-cleanup.json`.
+All PDBs, sources, inputs, physical receipts and shared tools remain. Sampled
+intervals show zero swap-in/out and about 11 GiB available memory; builds use
+niceness15 and CI niceness10. The 98% goal remains active.

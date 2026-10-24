@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F068",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3ca73df46eb3fb6712be2c1969f9f49bbb9bc4b674aeea1215499461f7886342"
+      "current_sha256": "3f264fe8b6ce261dd26ea0aa7664451f20edd0cc81993a4997c3ce6d1126e237"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "e55af304507fdaa9f0f06c88e13f8fbac3f8c720ffb88e22526258f1790168a1"
+      "current_sha256": "046ffa179da7eb19fc115b17be064a12adc92a7705e7732d9fe9f75ce27e2840"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "16058d4b7b635c9307815028f9722c57a859480f345e08fb479e84253051cac1"
+      "current_sha256": "53b65c863c295c806d193ac4f1263b7e4b60c1807cf0c7edf2abdcea6609b82b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d47fe18069d56806857c04a1aae9c38dbdc25f7b60220cbb2a08a17cbba4c848"
+      "current_sha256": "41fb9bfb08fce947c7d017c1f5c22c1d593ddc4ca85a772d044aae2d428eb587"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "4d06081d4da44953d0355fc7fae940c47b01085df5a786d514a2c8e936114b82"
+      "current_sha256": "5472f02aaa2d56a3f08352c73425b503f3cd826ee07bb2ca5ac80c0eaf9f68de"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "6d534ac83466c75160257f2d0c2e79100dc6e8457805d6f96a47f82a7a7c7c01"
+      "current_sha256": "a02b7230065aca140e77f2ce32d33cf52a537d3b923e5e5d037205ab8c2dadad"
     }
   },
   "functions": [
@@ -4352,6 +4352,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040FBB0",
+        "size": "158",
+        "span_end": "0x0040FC4D",
+        "current_name": "FUN_0040fbb0",
+        "proposed_name": "SpriteScene::ResetNodeTransform",
+        "module": "SpriteScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0040FBB0",
+        "size": "158",
+        "span_end": "0x0040FC4D",
+        "current_name": "FUN_0040fbb0",
+        "proposed_name": "SpriteTransform40FBB0::ResetNodeTransform",
+        "module": "SpriteScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteTransform40FBB0::ResetNodeTransform(float x, float y, float z)",
+        "is_thunk": "false",
+        "source_file": "src/SpriteTransform40FBB0.cpp",
+        "evidence": "R036; full body hash, complete decoded CFG and local game-specific behavior reviewed; F068; scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-reset-0040fbb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F068: complete158-byte cold exact transform reset,47 instructions and one fully bound memset relocation; all36 cleared bytes and actual duplicate writes retained;57 independently audited F066 current receivers/ret12; R036 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x0040FBB0",
+        "origin": "authored",
+        "subsystem": "SpriteScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R036"
       }
     }
   ],
@@ -88810,6 +88854,35 @@
       "size": 142,
       "compare_size": 142,
       "relocations": []
+    },
+    "sprite-transform-reset-0040fbb0": {
+      "source": "src/SpriteTransform40FBB0.cpp",
+      "object": "build/matching/SpriteTransform40FBB0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteTransform40FBB0::ResetNodeTransform"
+      ],
+      "symbol": "?ResetNodeTransform@SpriteTransform40FBB0@@QAEXMMM@Z",
+      "target_address": 4258736,
+      "size": 158,
+      "compare_size": 158,
+      "relocations": [
+        {
+          "offset": 53,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -88924,6 +88997,8 @@
     "src/CharacterInput5E6F70.cpp": "bcc03c960eecbcbd0f210e5ff953db7a25c66c6b0e1d3bd225e0c49b4be9e545",
     "src/CharacterInput5E6F70.hpp": "753cafed55615cd323b4f3377e6fc2a3de0fc02c6c65ee20725bfd551d10e589",
     "src/AnimationProgress40FA30.cpp": "e9635f9524f392025e5b852fa4139bfc44dac08d5fd81fa67d2f18108c988e39",
-    "src/AnimationProgress40FA30.hpp": "58aae71e9204dbf6862e02d7184cae507a6207218a30208a97d7a1b285b6eb7e"
+    "src/AnimationProgress40FA30.hpp": "58aae71e9204dbf6862e02d7184cae507a6207218a30208a97d7a1b285b6eb7e",
+    "src/SpriteTransform40FBB0.cpp": "fcb3b65d2ff28aa54ca8063d55e3f01e77a5c5b9e48a8671b749fcdd1e85322f",
+    "src/SpriteTransform40FBB0.hpp": "424fcbf027fa8d1954cf5ea61c1ed40fc2a094e505868624858a4220eafe0077"
   }
 }

@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 158 / 158 / 158 |
-| Exact code bytes | 523,122 |
-| Reviewed authored coverage | 523,122 / 1,973,516 (26.51%) |
-| Conservative coverage, including every pending byte | 523,122 / 1,977,124 (26.46%) |
+| Source-present / exact functions / exact units | 159 / 159 / 159 |
+| Exact code bytes | 523,280 |
+| Reviewed authored coverage | 523,280 / 1,973,516 (26.52%) |
+| Conservative coverage, including every pending byte | 523,280 / 1,977,124 (26.47%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **98 additions /
-513,239 code bytes / 112 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **99 additions /
+513,397 code bytes / 114 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,46 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F067
+## Latest accepted function: F068
+
+`SpriteTransform40FBB0::ResetNodeTransform` cold-replays exact across all
+158 bytes at `0x0040FBB0..0x0040FC4D`: 47 instructions, one fully bound
+`memset` relocation, one ret12, no branches/tables. Two following INT3 bytes
+are excluded. The R036 role `SpriteScene::ResetNodeTransform` is retained by
+alias; ownership, native extent and hash remain fixed.
+
+The declaration-only receiver takes three float words, stores them at
++34/+38/+3C, enables +40, clears exactly 36 bytes at +10, and performs all
+actual scale/color/short/byte resets, including duplicate writes after the
+clear. The real memset call is cdecl with 12-byte caller cleanup. All 57 F066
+sites pass current and the callee returns with 12-byte argument cleanup.
+Original declarations/names and full owner layout remain unknown. Never
+construct or embed this receiver or the older partial SpriteTransform view.
+
+Preview, independent canonical compile and separate canonical cold replay
+match with the existing explicit VC7.1 build 3077 profile. No prior accepted
+source/header changed; all 158 earlier units/canonical objects are unchanged
+and were not rebuilt. Retain `.analysis/f068-bind.py`, both binding receipts,
+`f068-accepted-replay.json`, `f068-cold-replay.log`, `f068-adoption-parent.json`,
+`f068-progress.json`, attested transform view/log and private preview inputs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit sprite-transform-reset-0040fbb0
+```
+
+Full CI passes all **3,603 tests in 149.169 seconds**. Tracking, progress-card
+and whitespace checks pass. `f068-evidence-check.json` verifies all prior
+accepted inputs/objects/origins and active drafts unchanged. The preview object
+and generated scripts/tests bytecode were removed after verification, with
+hash receipts in `f068-obsolete-output-cleanup.json` and
+`f068-bytecode-cleanup.json`.
+
+The next bounded dependency is the complete polar velocity helper at
+`0x0040FB70` (57 bytes, R217), then recorded range `0x00455580` and sound/shake
+wrappers. F066 remains the active large caller draft. The dependency work
+counts only independently cold-accepted authored functions.
+
+## Previous accepted function: F067
 
 `AnimationProgress40FA30::AdvanceNestedFrame`, from
 `src/AnimationProgress40FA30.cpp` / `.hpp`, independently cold-replays exact at
@@ -141,6 +180,18 @@ source revision requires serial compilation with the recorded profile, complete
 physical equality and a separate canonical cold replay before any credit.
 Continue native/compiler statement and temporary-lifetime investigation at
 state 905, preserving all earlier exact units and pending origins.
+
+The resumed session tested controls 04..24 without changing active03.
+Nineteen controls emit identical complete patched bytes and all 696 physical
+bindings: scale/color chaining, velocity commas, signed/unsigned/long constant
+promotions, reversed/negated equality, double zero literals, nested guards,
+expanded scale additions, statement scopes and lvalue parentheses. Both
+subtract-one forms change the instruction sequence and are rejected. Do not
+repeat these controls without new evidence. See `f068-f066-controls.json` and
+individual source/header/intent/binding/log inputs. Removed 19 reproducible
+objects / 1,119,252 bytes after full equality; five differ only in generated
+local switch label names, whose offsets/addends/destinations remain identical.
+All inputs, evidence, PDBs and active objects are retained.
 
 ## Other active drafts
 
