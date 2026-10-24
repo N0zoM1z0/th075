@@ -167,3 +167,4 @@ CameraInputs412660::Initialize
 BattleRender43D9D0::RenderFrame
 BattleHud43E040::RenderHud
 BattleStatus440B50::RenderStatus
+BattleTimeline447340::RenderTimeline

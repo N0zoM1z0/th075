@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F076",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F077",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "aa9777045d7a08f42d12dcd74e98ac483182dc73f69531105f80135c1a2171c4"
+      "current_sha256": "26093253fc62327a569ae4127ecca5dcb487ec1773ea10cf202755101f8edd67"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6b55870e5bbc81e8b144b82bcbeb35c39cf0f5fca037b8a243f07506142bb7e9"
+      "current_sha256": "c6351b0d6bd4bcd7a569fe00bcfd2cb1e46f4aec8500c2f1c6a690e4a73702bd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "305038504f5dca1d840fbaf632a3d9a757ee0fe09a3d02f47c9e3bcbc09d4866"
+      "current_sha256": "f0437d8327ce4763612b46480ddd08268e67d711e2802f76bf2e894ec53424d7"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d9c34b978bff75d18c5e0add4aab39f5bca4a1c908bbea7ceaf34786c25b47bc"
+      "current_sha256": "8db242fb97b712c3f3483d35778c02d0bb6de04dcc9f56e3fd1688c727ab4171"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "11d503cda9f645b8cea3425419813609d4787837cb4d6d51633bb60adb428de0"
+      "current_sha256": "bc1d15447cb6dc2e3d8534b7112d3d3f38c68f3141dcb8fd610fcf11b70fa449"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "5fd2efe855b2db14c1c5585cff24cfc239e34039b08b9811cf75189fc6690149"
+      "current_sha256": "58be66b8a03105a642cf2d425524fb0db9f597bbb10cc3d0a288fd47f77099af"
     }
   },
   "functions": [
@@ -4833,6 +4833,50 @@
         "address": "0x00440B50",
         "origin": "authored",
         "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00447340",
+        "size": "3459",
+        "span_end": "0x004480C2",
+        "current_name": "FUN_00447340",
+        "proposed_name": "BattleScene::RenderOverlayTimeline",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00447340",
+        "size": "3459",
+        "span_end": "0x004480C2",
+        "current_name": "FUN_00447340",
+        "proposed_name": "BattleTimeline447340::RenderTimeline",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleTimeline447340::RenderTimeline()",
+        "is_thunk": "false",
+        "source_file": "src/BattleTimeline447340.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F077; scripts/repo-python scripts/replay-exact-units.py --unit battle-overlay-timeline-00447340",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F077: complete3459-byte cold exact overlay timeline,858 instructions/25 branches/137 fields and72 real call packets; eight full direct callees,14 named IAT calls,whole1212-byte rotation footprint and implicit ST0 alpha conversions reviewed; initialized132-byte packet and actual two-case byte switch retained; native zero-minus integer scroll and ordered positive-angle fallback preserved; R042 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x00447340",
+        "origin": "authored",
+        "subsystem": "BattleScene",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R042"
@@ -93525,6 +93569,851 @@
           "target": 4245920
         }
       ]
+    },
+    "battle-overlay-timeline-00447340": {
+      "source": "src/BattleTimeline447340.cpp",
+      "object": "build/matching/BattleTimeline447340.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleTimeline447340::RenderTimeline"
+      ],
+      "symbol": "?RenderTimeline@BattleTimeline447340@@QAEXXZ",
+      "target_address": 4485952,
+      "size": 3459,
+      "compare_size": 3459,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 157,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 181,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 233,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 323,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 343,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 375,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 423,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 435,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 459,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 482,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 514,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 546,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 600,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 612,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 636,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 659,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 691,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 723,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 738,
+          "type": "DIR32",
+          "symbol": "__real@c3480000",
+          "target": 6652740
+        },
+        {
+          "offset": 773,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 804,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 819,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 863,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 883,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 889,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 908,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 914,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 941,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 978,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 984,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1003,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 1009,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1036,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1058,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 1064,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1085,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 1091,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1118,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1150,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1187,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 1193,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 1228,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1259,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1282,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1304,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 1331,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1347,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1365,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 1370,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1438,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1454,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 1485,
+          "type": "DIR32",
+          "symbol": "__real@c3960000",
+          "target": 6652932
+        },
+        {
+          "offset": 1523,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1554,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1581,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 1612,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 1646,
+          "type": "DIR32",
+          "symbol": "__real@41700000",
+          "target": 6651068
+        },
+        {
+          "offset": 1652,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 1673,
+          "type": "DIR32",
+          "symbol": "__real@41700000",
+          "target": 6651068
+        },
+        {
+          "offset": 1679,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 1706,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1728,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1734,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 1753,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1759,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 1786,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1818,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1852,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1858,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 1896,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1927,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1981,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1997,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 2015,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 2020,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2084,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2100,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 2153,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2165,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 2189,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 2209,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2241,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2295,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2307,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 2331,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 2351,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2383,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2432,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2444,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 2468,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 2491,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2523,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 2555,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2609,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2621,
+          "type": "DIR32",
+          "symbol": "__real@43880000",
+          "target": 6652940
+        },
+        {
+          "offset": 2645,
+          "type": "DIR32",
+          "symbol": "__real@43500000",
+          "target": 6652936
+        },
+        {
+          "offset": 2668,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2700,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 2732,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2747,
+          "type": "DIR32",
+          "symbol": "__real@c3480000",
+          "target": 6652740
+        },
+        {
+          "offset": 2785,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2816,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2831,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2875,
+          "type": "REL32",
+          "symbol": "?Rotate@TimelineQuadRotation447340@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 2895,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 2901,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 2920,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 2926,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 2953,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 2990,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 2996,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 3015,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 3021,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 3048,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 3070,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 3076,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 3097,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 3103,
+          "type": "DIR32",
+          "symbol": "__real@3f99999a",
+          "target": 6652748
+        },
+        {
+          "offset": 3130,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 3162,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3199,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 3205,
+          "type": "DIR32",
+          "symbol": "__real@437f0000",
+          "target": 6651120
+        },
+        {
+          "offset": 3243,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 3274,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 3328,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 3344,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 3362,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 3367,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3435,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3451,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -93657,6 +94546,8 @@
     "src/BattleHud43E040.cpp": "3f0f02eb16aa57227d4bcfb257be5ef423fc81c75ddac86edda580b30aea94d0",
     "src/BattleHud43E040.hpp": "2d202fb01826209a109b33ddb74bd24e81c14535618e0054b6430867a28efede",
     "src/BattleStatus440B50.cpp": "862ecec74dbaf1f12e79c5f7201c5a4d566c505a70b14358096febf482cbe24a",
-    "src/BattleStatus440B50.hpp": "24ff83c5f1ce65965f656f71f2f6b98b2db09a21cddf33405184ae3fa5a7f155"
+    "src/BattleStatus440B50.hpp": "24ff83c5f1ce65965f656f71f2f6b98b2db09a21cddf33405184ae3fa5a7f155",
+    "src/BattleTimeline447340.cpp": "00efbc605d9e4a50b0dbc80323fb28112d13aa4d22f5e46c5ded773d775d4a1e",
+    "src/BattleTimeline447340.hpp": "314bb2b2ad7a3895fdd1d019fa697d66e56540aca9e85003bb6a387d84411b43"
   }
 }

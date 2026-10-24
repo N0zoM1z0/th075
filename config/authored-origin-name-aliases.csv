@@ -113,3 +113,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0043D9D0,BattleScene::RenderFrame,BattleRender43D9D0::RenderFrame,R041,battle-render-frame-0043d9d0
 0x0043E040,BattleHud::Render,BattleHud43E040::RenderHud,R040,battle-hud-render-0043e040
 0x00440B50,BattleHud::RenderStatusEffects,BattleStatus440B50::RenderStatus,R042,battle-status-render-00440b50
+0x00447340,BattleScene::RenderOverlayTimeline,BattleTimeline447340::RenderTimeline,R042,battle-overlay-timeline-00447340

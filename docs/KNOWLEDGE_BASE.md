@@ -20619,3 +20619,68 @@ Audit all packets, the full 1,212-byte six-float rotation helper and three ST0
 alpha conversions before one complete natural body. Reuse the complete packet;
 never instantiate a partial transform prefix. No F077 source/object/unit/credit
 exists. Preserve every older unit and all large unaccepted drafts.
+
+
+## F077 complete overlay timeline and native branch-order cold acceptance (2026-10-24)
+
+R042 overlay timeline 00447340..004480C2 cold-replays exact as
+`BattleTimeline447340::RenderTimeline`: all 3,459 bytes, 858 instructions, 25
+branches, 137 physical fields and 72 real call packets. Thirteen following
+INT3 bytes are excluded. Eight complete direct callees and 14 USER32!SetRect
+calls are checked. The accepted F074 caller supplies this without stack arguments.
+
+The native byte discriminator uses a two-case switch, with a real generated
+byte slot. One complete initialized 132-byte F064 packet and one shared RECT
+scoped to the switch reproduce the native 160-byte frame without added locals.
+The last case falls through to the switch exit. Every accepted shared header
+remains unchanged; the new rotation interface is pointer-only and is never
+constructed or embedded. Original names, declarations and full owner layouts
+remain unknown. No local-span estimate establishes an owner size.
+
+Native scroll arithmetic is zero minus tick*5, including width minus tick*5;
+Ghidra normalizes it to multiplication by -5. The raw positive-angle comparison
+runs rotation first and sends nonpositive/unordered results to its fallback.
+Ghidra's reversed <=0 rendering does not preserve that unordered route. The
+source retains the actual comparison order and literal signed bounds >70,
+<=75, <=10 and >65. Both first previews remain diagnostic controls; the final
+complete body matches every instruction, register, displacement and branch.
+Three actual unsigned-byte alpha conversions consume ST0 through implicit
+ftol2, preserve native low-byte extraction, and build the real white ARGB colors.
+
+The full 1,212-byte rotation helper is reviewed: all receiver memory accesses
+stay within the four coordinate records at offsets 0..63, all six float inputs
+are real stack words, and cleanup is ret24. No receiver pointer is passed to
+its math helpers. All 72 root call packets and whole CFG stack joins are checked;
+wrong SetRect/rotation cleanup controls fail. Physical bindings include 58 direct
+calls, 65 readonly float fields and 14 named imports. Payloads, widths, zero
+addends, permissions, import identity, every branch and the full extent match.
+No writable global or additional dependency receives new credit.
+
+Independent canonical compilation and separate canonical cold replay pass with
+the explicit build3077 profile. All 169 prior units/objects, 130 previous manifest
+inputs, 218 origin files, 4,350 other function rows and 84 active draft inputs
+remain unchanged and were not rebuilt. All 97 pending origins remain unknown.
+F009 plus 110 additions retains 533,723 bytes and 132 new source/header inputs.
+The 98% conservative authored-byte goal remains active and incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-overlay-timeline-00447340
+```
+
+Full CI passes **3,603 tests in 115.937 seconds**, plus tracking, progress and
+whitespace. Keep all f077 native/root/callee/caller/attested/ABI/physical/cold/
+parent/progress and preservation evidence. Three obsolete reproducible preview
+objects were removed after pinning complete source/header/profile inputs; the
+last preview first matched all canonical code and 137 relocations. Sources,
+PDBs, compiler logs, diagnostic results, canonical objects, prior active drafts
+and shared tools remain. Generated scripts/tests bytecode was removed after CI.
+
+Next F078: complete R042 end overlay 00441910..00441E95, 1,414 bytes.
+`.analysis/f078-native-index.json` pins 340 instructions, 20 branches and 30 calls:
+23 direct calls to eight complete callees plus seven SetRect calls. Full raw
+exports and fresh attested root/callee/caller views are retained. Review the
+2,766-byte mode-5 delegate 00448710, every packet, actor/atlas byte selectors and
+all four actual globals before writing one complete natural body. Quad creation
+belongs only to the non-mode-5 path. Three globals already have ledger names;
+00671624 is an unsigned-byte access view not yet added to the ledger. No F078
+source, object, canonical unit or credit exists. Keep all older units and drafts.

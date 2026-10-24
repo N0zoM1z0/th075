@@ -168,3 +168,4 @@ CameraInputs412660::Initialize,0x00412660,function
 BattleRender43D9D0::RenderFrame,0x0043D9D0,function
 BattleHud43E040::RenderHud,0x0043E040,function
 BattleStatus440B50::RenderStatus,0x00440B50,function
+BattleTimeline447340::RenderTimeline,0x00447340,function
