@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F074",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F075",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3ab0864d612c2c0a68888f6f95e66f8d371b6a8ed06fb984dcc3f7feb9aedabd"
+      "current_sha256": "12484878ac58226526ef587e739f5223df2f58707d47607c6b5ba3af24d19da9"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d94921571a4e455b0b923d7fa823c04cbd21f821c35f5edb4f701eeb3c919082"
+      "current_sha256": "be0841b5926897b5fd6dfe69725a9f7f28009691560f6f38071f88885805b32b"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "3d5cc0d7ec65996eed844ae4d113ed19cc9b88e764beddffe6d02a8b2e177073"
+      "current_sha256": "381098a4e66fb5f85aff892902907d0f9e16945dc20a6c40874c8d01167f7193"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "79af15b8646cb5d14a692c4b8b73449068e40f4725ef17b0a5a0cbbc23d12346"
+      "current_sha256": "35db4e2d66fe6880fd13c108bc8bede41bd8142949e681eaf03d5a2f16afa78c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "cae9aa3d4ceaa1f78d4ec4d10f3c10de0d99e3ccd11e487d13f87ede4f569685"
+      "current_sha256": "dcd28721c378703c16484f4a864640b275249a65b2b64c54b160e66d03b1f8ac"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "0e4f36760972d027ec70df98df9704dff62a4f8677e32dd7ab31e8da5bfe8ed3"
+      "current_sha256": "74e6716c633781fd065d91e051ed160e57d28ed2844de096abf9370dc8964ab4"
     }
   },
   "functions": [
@@ -4748,6 +4748,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043E040",
+        "size": "9841",
+        "span_end": "0x004406B0",
+        "current_name": "FUN_0043e040",
+        "proposed_name": "BattleHud::Render",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043E040",
+        "size": "9841",
+        "span_end": "0x004406B0",
+        "current_name": "FUN_0043e040",
+        "proposed_name": "BattleHud43E040::RenderHud",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleHud43E040::RenderHud()",
+        "is_thunk": "false",
+        "source_file": "src/BattleHud43E040.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F075; scripts/repo-python scripts/replay-exact-units.py --unit battle-hud-render-0043e040",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F075: complete9841-byte cold exact HUD,2401 instructions/81 branches/265 fields and189 actual call packets;13 full direct callees,36 named IAT calls,nested lookup and implicit ST0 conversion packets reviewed; complete132-byte physical quad reused unchanged; real local scopes and explicit mode3 omitted-right-gauge path retained; no complete owner layout or construction; R040 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x0043E040",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -91297,6 +91341,1619 @@
           "target": 4204496
         }
       ]
+    },
+    "battle-hud-render-0043e040": {
+      "source": "src/BattleHud43E040.cpp",
+      "object": "build/matching/BattleHud43E040.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleHud43E040::RenderHud"
+      ],
+      "symbol": "?RenderHud@BattleHud43E040@@QAEXXZ",
+      "target_address": 4448320,
+      "size": 9841,
+      "compare_size": 9841,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@RenderStyle43D9D0@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 123,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@RenderQuadPacket5E68C0@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 135,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 178,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 209,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 260,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 284,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 291,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 334,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 377,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 401,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 426,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 438,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 481,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 518,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 570,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 601,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 613,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 656,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 663,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 721,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 781,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 860,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 872,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 915,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 952,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1018,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1097,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1109,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1152,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1189,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1254,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1333,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1345,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1388,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1425,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1485,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1564,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1576,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1619,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1626,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 1734,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1741,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 1950,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2052,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2081,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2112,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2124,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2167,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2204,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2298,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2403,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2415,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2458,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2495,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2588,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2690,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2702,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2745,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2782,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2875,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2980,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2992,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3035,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 3072,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3129,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 3160,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 3172,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3215,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 3222,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 3280,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3340,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 3417,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 3429,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3472,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 3509,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3575,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 3652,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 3664,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3707,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 3744,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 3809,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 3886,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 3898,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 3941,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 3978,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 4038,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 4115,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 4127,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4170,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 4177,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C239@@3EA",
+          "target": 6734393
+        },
+        {
+          "offset": 4286,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 4310,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4317,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 4349,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4356,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 4398,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 4409,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 4427,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4445,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 4457,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4500,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 4543,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 4567,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4574,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 4606,
+          "type": "REL32",
+          "symbol": "?At@HudDirectory43E040@@QAEAAPAVHudRecordGroup43E040@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 4613,
+          "type": "REL32",
+          "symbol": "?At@HudRecordGroup43E040@@QAEPAFI@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 4655,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 4666,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 4684,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4702,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 4714,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4757,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 4800,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 4807,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 4843,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 4874,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 4886,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 4929,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 4966,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 5005,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 5025,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+          "target": 4483984
+        },
+        {
+          "offset": 5055,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 5086,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 5098,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5141,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 5178,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 5188,
+          "type": "DIR32",
+          "symbol": "?g_MaxCombatScore@@3KA",
+          "target": 6755504
+        },
+        {
+          "offset": 5208,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 5228,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+          "target": 4483984
+        },
+        {
+          "offset": 5258,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 5289,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 5301,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5344,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 5381,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 5390,
+          "type": "DIR32",
+          "symbol": "?g_SequenceCounterAt00671622@@3EA",
+          "target": 6755874
+        },
+        {
+          "offset": 5410,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 5430,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 5465,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 5496,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 5508,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5551,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 5588,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 5627,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 5647,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+          "target": 4483984
+        },
+        {
+          "offset": 5677,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 5708,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 5720,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 5763,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 5800,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 5839,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 5859,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+          "target": 4483984
+        },
+        {
+          "offset": 5869,
+          "type": "DIR32",
+          "symbol": "?g_SequenceByteAt0066C23A@@3EA",
+          "target": 6734394
+        },
+        {
+          "offset": 5923,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 5951,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 5956,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 5983,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 5988,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 6144,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 6194,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 6208,
+          "type": "DIR32",
+          "symbol": "__real@43d00000",
+          "target": 6652556
+        },
+        {
+          "offset": 6234,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 6271,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 6292,
+          "type": "DIR32",
+          "symbol": "__real@44610000",
+          "target": 6650664
+        },
+        {
+          "offset": 6320,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 6325,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 6352,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 6357,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 6513,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 6563,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 6577,
+          "type": "DIR32",
+          "symbol": "__real@43d00000",
+          "target": 6652556
+        },
+        {
+          "offset": 6603,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 6638,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 6675,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 6705,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 6733,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 6745,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 6793,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 6830,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 6865,
+          "type": "REL32",
+          "symbol": "?Scale@HudQuadOperations43E040@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 6902,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 6959,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 7034,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 7046,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7094,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 7131,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 7180,
+          "type": "DIR32",
+          "symbol": "__real@406f400000000000",
+          "target": 6652816
+        },
+        {
+          "offset": 7267,
+          "type": "DIR32",
+          "symbol": "__real@407f400000000000",
+          "target": 6652808
+        },
+        {
+          "offset": 7320,
+          "type": "DIR32",
+          "symbol": "__real@4087700000000000",
+          "target": 6652800
+        },
+        {
+          "offset": 7386,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 7465,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 7477,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7525,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 7562,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 7619,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 7698,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 7710,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 7758,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 7795,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 7844,
+          "type": "DIR32",
+          "symbol": "__real@406f400000000000",
+          "target": 6652816
+        },
+        {
+          "offset": 7931,
+          "type": "DIR32",
+          "symbol": "__real@407f400000000000",
+          "target": 6652808
+        },
+        {
+          "offset": 7984,
+          "type": "DIR32",
+          "symbol": "__real@4087700000000000",
+          "target": 6652800
+        },
+        {
+          "offset": 8050,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 8127,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 8139,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 8187,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8224,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8251,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 8282,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 8294,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 8342,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8379,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8386,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 8411,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8448,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8475,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 8506,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 8518,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 8566,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8603,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8623,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8660,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8667,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 8692,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8729,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8749,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8786,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 8813,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 8844,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 8856,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 8904,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 8980,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 9000,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 9009,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 9049,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 9061,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 9109,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 9185,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 9205,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 9289,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 9320,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 9332,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 9380,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 9417,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 9424,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 9515,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 9546,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 9558,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 9606,
+          "type": "REL32",
+          "symbol": "?Translate@HudQuadOperations43E040@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 9643,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 9666,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 9671,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 9694,
+          "type": "DIR32",
+          "symbol": "__real@43db8000",
+          "target": 6652792
+        },
+        {
+          "offset": 9714,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 9724,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 9754,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 9759,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 9782,
+          "type": "DIR32",
+          "symbol": "__real@43db8000",
+          "target": 6652792
+        },
+        {
+          "offset": 9802,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        },
+        {
+          "offset": 9819,
+          "type": "REL32",
+          "symbol": "?Render@HudCombo43E040@@QAEXXZ",
+          "target": 4445552
+        },
+        {
+          "offset": 9833,
+          "type": "REL32",
+          "symbol": "?Render@HudCombo43E040@@QAEXXZ",
+          "target": 4445552
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -91425,6 +93082,8 @@
     "src/CameraInputs412660.cpp": "d1375e001a91f3e837e77b883f961f9e55aa03021715323b188dd2339c147341",
     "src/CameraInputs412660.hpp": "bb3f56a6982921b2c11df6ef8f9150a6b02e4c2f1ef6f599d50f7c93524d95dc",
     "src/BattleRender43D9D0.cpp": "566ab440c2a6f03387e38d55253af218bdd4a30a094f5c2159536ed32dc7ebdc",
-    "src/BattleRender43D9D0.hpp": "c6e3e132b3ea5ea5d4b30337705e80e808c181e7f700ae73bf6e66904b18bb6c"
+    "src/BattleRender43D9D0.hpp": "c6e3e132b3ea5ea5d4b30337705e80e808c181e7f700ae73bf6e66904b18bb6c",
+    "src/BattleHud43E040.cpp": "3f0f02eb16aa57227d4bcfb257be5ef423fc81c75ddac86edda580b30aea94d0",
+    "src/BattleHud43E040.hpp": "2d202fb01826209a109b33ddb74bd24e81c14535618e0054b6430867a28efede"
   }
 }

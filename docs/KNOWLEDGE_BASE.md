@@ -20502,3 +20502,62 @@ all frame slots before writing one complete natural body. The accepted F064
 complete132-byte physical packet is available; Ghidra's140-byte local span
 does not prove an owner size. Never add padding,inert locals or raw owner
 buffers to force the apparent frame. Keep all97 pending origins unchanged.
+
+
+## F075 complete HUD physical reconstruction and cold acceptance (2026-10-24)
+
+R040 HUD renderer 0043E040..004406B0 is independently cold-exact as
+`BattleHud43E040::RenderHud`: all 9,841 bytes, 2,401 instructions, 81 branches,
+265 physical fields and 189 real call packets. The following 15 INT3 bytes
+are excluded. All 13 complete direct callees and 36 USER32!SetRect calls are
+checked. The complete accepted F074 caller supplies this and no stack arguments.
+
+The source reuses the unchanged complete 132-byte F064 physical quad packet.
+Its constructor initializes all transferred storage; transform helpers consume
+the coordinate prefix. A genuine quad-submission scope plus meaningful names
+for the ten real locals reproduces every frame displacement. Bounded compiler
+controls and local CodeView records support this allocation; no owner-size
+claim is derived from Ghidra's 140-byte local span. Original names, nominal
+private declarations, payload partition and full receiver layouts remain unknown.
+
+Six nested directory lookups preserve pending outer record indices. Complete
+iterator helpers establish four-byte pointer slots and 116-byte record stride;
+only borrowed shorts at record +0/+6 are read. No partial owner is constructed.
+Six ftol2 calls consume ST0 without explicit C arguments; the last two preserve
+outer style 10 and retain the native short conversion. Double meter thresholds,
+ordered float clamps, color construction, signed byte reads, all repeated draws
+and both complete combo-widget receiver calls remain intact. The final explicit
+mode-3 empty branch expresses its omitted right numeric gauge and reproduces
+the native two-jump path. A one-case switch adds an unsupported local and is
+rejected. This source choice does not establish original control-flow spelling.
+
+All 265 physical fields bind 153 direct calls, 61 readonly constants, 15 fields
+at five existing globals and 36 named imports. Actual payloads, operand widths,
+PE/COFF permissions, zero addends, import identity, all 81 branch fields and
+whole CFG stack joins are checked. Wrong nested/ftol2 cleanup controls fail.
+Independent canonical compile and separate canonical cold replay match every
+byte using the explicit build3077 profile. All 167 previous units/objects, 126
+prior manifest inputs, 218 origin files, 4,350 other function rows and 84 active
+draft inputs remain unchanged. No older unit was rebuilt. All 97 pending origins
+remain unknown and receive no credit; the 98% goal remains active and incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-hud-render-0043e040
+```
+
+Full CI passes **3,603 tests in 120.751 seconds**; tracking, progress and
+whitespace checks pass. Keep f075 native/attested/lookup/ABI/physical/cold/
+adoption-parent/progress/preservation receipts and compiler input snapshots.
+Twenty-two obsolete reproducible objects (1,310,871 bytes) were removed after
+recording their hashes and retaining inputs/results/logs/PDBs. The final preview
+matched the cold canonical code and all 265 relocations before removal. Nearest
+whole draft06 and final scoped-local control remain. Generated scripts/tests
+bytecode was removed after CI; evidence, active objects and shared tools remain.
+
+Next F076: complete R042 status renderer 00440B50..00441905, 3,510 bytes.
+`.analysis/f076-native-index.json` pins 750 instructions, 13 branches and 45
+calls: 37 direct calls to ten full callees, plus eight SetRect calls. Full raw
+exports and fresh attested callee views/log are retained. There is no F076
+source, object, canonical unit or exact credit. Review dynamic nested lookups,
+selector widths and both 44-byte score helpers 00441FE0/00442010 before writing
+one complete natural body. Keep every older accepted unit and active draft.
