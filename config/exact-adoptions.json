@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F080",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F081",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "624603c24b7dcc93a78136da61e347e52f307bfddf9c57742e4f07ed1ce6425e"
+      "current_sha256": "d81f8e92e5b78941f9f2b05668af226a3bc539b4d5cc410b4e0dab544546c600"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "88d7d39ee71f5141843faf7ea6e91cc3ed810f167b9d7d4cc1de5ed5947da741"
+      "current_sha256": "2ee28074b602caa7b606fcb07865931d4271e8f3addf55e12a5a18a57432b3e3"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "0304e461219d0bac34734a197dc45ef2d493f5716f5c47757bcb642c4ce0633e"
+      "current_sha256": "51ff4ef52e0ba11a623f36687c026bd1bfca43f25edcd44dfbba6da12d8349f1"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "dfc07aa4a4d535a3341ffbcc689fdcf1d0c04951584f3d1f6732b364142a9832"
+      "current_sha256": "86290938dc5731d59659baf1d0464650312ec3aa46ce09963c0261896dcebb98"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "3fd401bf6b8e6a11d6e380a94be87d2c1c567eba028d9b2a2ddba2e9ed180be0"
+      "current_sha256": "0d6f25a00e79ede8fae3a01d7557338ad691b0d8112574ba329f2fc653d424fa"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "7760f7d0fb67ea20e19c3091b72139cc9b4401a2a41fb138c60e565cbda09d88"
+      "current_sha256": "aa9b8c8b905ab0f182337ae745e4b036325650ba50f5eb4f2541366160b47e40"
     }
   },
   "functions": [
@@ -5012,6 +5012,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00441EA0",
+        "size": "303",
+        "span_end": "0x00441FCE",
+        "current_name": "FUN_00441ea0",
+        "proposed_name": "BattleScene::RenderRoundBanner",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00441EA0",
+        "size": "303",
+        "span_end": "0x00441FCE",
+        "current_name": "FUN_00441ea0",
+        "proposed_name": "BattleRoundBanner441EA0::RenderRoundBanner",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleRoundBanner441EA0::RenderRoundBanner()",
+        "is_thunk": "false",
+        "source_file": "src/BattleRoundBanner441EA0.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F081; scripts/repo-python scripts/replay-exact-units.py --unit battle-round-banner-00441ea0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F081: complete303-byte cold exact round banner,78 instructions/2 branches/7 fields and7 actual call packets; all6 direct callees and named SetRect import reviewed; unknown-origin28-byte math wrapper and complete R130 log10 own/auxiliary graph retained without classification/source credit; unsigned-byte truncation before integer+1,initial opacity store,complete packet lifetime and native172-byte frame preserved; R045 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x00441EA0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -95509,6 +95553,71 @@
           "target": 4208912
         }
       ]
+    },
+    "battle-round-banner-00441ea0": {
+      "source": "src/BattleRoundBanner441EA0.cpp",
+      "object": "build/matching/BattleRoundBanner441EA0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleRoundBanner441EA0::RenderRoundBanner"
+      ],
+      "symbol": "?RenderRoundBanner@BattleRoundBanner441EA0@@QAEXXZ",
+      "target_address": 4464288,
+      "size": 303,
+      "compare_size": 303,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0RenderQuadPacket5E68C0@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?BannerLog10At00442040@@YAMM@Z",
+          "target": 4464704
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 121,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 152,
+          "type": "REL32",
+          "symbol": "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 210,
+          "type": "REL32",
+          "symbol": "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 292,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+          "target": 4483936
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -95649,6 +95758,8 @@
     "src/BattleModeFive448710.cpp": "11bbb3754414aaea32a30579b3fdbbdff6d151cb7cfdcca54d238d0246c79a22",
     "src/BattleModeFive448710.hpp": "e4139141b76c0a3b66af6f301d2b700f79c82d0615f43cf5d7de6c6dfa36a1a1",
     "src/BattleDamageFlash4406C0.cpp": "6ee4fee1d9a6d0f23dc635ef418fcb0298ec876be67ba3d0f11888dbcf7c98dd",
-    "src/BattleDamageFlash4406C0.hpp": "838d70caf830dcefb4e098cd63d02d731584214fafee71b7d501382ac6993b03"
+    "src/BattleDamageFlash4406C0.hpp": "838d70caf830dcefb4e098cd63d02d731584214fafee71b7d501382ac6993b03",
+    "src/BattleRoundBanner441EA0.cpp": "a2ec910381f9b453f2545bf54c7e6bad057d3e2d4ee4c5754e20038b1c832891",
+    "src/BattleRoundBanner441EA0.hpp": "6eaf4877b415af28586c2988dfbe33eadac62c466cc4569eecd9a8afee212418"
   }
 }

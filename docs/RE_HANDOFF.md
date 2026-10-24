@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F081 round-banner investigation below; preserve the F066 draft.
+is incomplete. Continue the F082 atlas-number investigation below; preserve the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 173 / 173 / 173 |
-| Exact code bytes | 548,867 |
-| Reviewed authored coverage | 548,867 / 1,973,516 (27.81%) |
-| Conservative coverage, including every pending byte | 548,867 / 1,977,124 (27.76%) |
+| Source-present / exact functions / exact units | 174 / 174 / 174 |
+| Exact code bytes | 549,170 |
+| Reviewed authored coverage | 549,170 / 1,973,516 (27.83%) |
+| Conservative coverage, including every pending byte | 549,170 / 1,977,124 (27.78%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **113 additions /
-538,984 code bytes / 138 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **114 additions /
+539,287 code bytes / 140 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,65 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F080
+## Latest accepted function: F081
+
+R045 round banner 00441EA0..00441FCE cold-replays exact as
+`BattleRoundBanner441EA0::RenderRoundBanner`: all 303 bytes, 78 instructions,
+two branches, seven physical fields and seven real call packets. One following
+INT3 byte is excluded. Six complete direct callees and USER32!SetRect are checked.
+The accepted F074 caller supplies this with no stack arguments.
+
+The body preserves one complete 132-byte packet, initial FF opacity store,
+actual >50 branch ordering, unsigned-byte truncation before integer +1, repeated
+ARGB construction and the integer-to-float coordinate spill. Outer opacity and
+packet lifetime plus the inner count/RECT drawing scope reproduce the native
+172-byte frame. Seventeen full-body meaningful-name/scope controls isolate this
+layout; changing the real digit byte's name to count resolves the remaining four
+frame fields. Original spelling/scope remains unknown; no padding or inert locals.
+Accepted shared headers remain unchanged; no partial owner is constructed.
+
+The complete 28-byte 00442040 scalar wrapper widens its float32 argument to
+a double64 stack argument for the frozen R130 log10 runtime. Its FST32 leaves
+ST0 live for the caller's implicit ftol2 conversion after caller cleanup. The
+float declaration is a compatible access view; original nominal precision/type
+remains unknown. The wrapper stays unknown-origin and receives no credit.
+The complete 63-byte library own code, 336-byte source/auxiliary carrier and
+644-byte optimized body are checked against retained R130 hashes; unchanged
+origin proofs are not rebuilt. All 97 pending origins remain unknown.
+
+Preview, independent canonical compile and separate canonical cold replay match
+every byte with build3077 and the explicit profile. Six direct-call fields and
+one named import bind with zero addends, exact operand positions, permissions
+and import identity. Whole CFG stack joins pass; wrong SetRect/ftol2 cleanup
+controls fail. All 173 prior units, 80 old canonical objects, 138 previous source
+inputs, 218 origin files, 4,350 other function rows and 84 active draft inputs
+remain unchanged and were not rebuilt. F009 plus 114 additions retains 539,287
+bytes and 140 new inputs. The 98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-round-banner-00441ea0
+```
+
+Full CI passes **3,603 tests in 127.600 seconds**, plus tracking and progress.
+Whitespace-only source formatting was cold-replayed again; all seven checkpoint
+guards pass against the final source and manifest.
+Keep f081 native/attested/root/callee/caller/math/ABI/physical/cold/parent/progress
+and preservation evidence, all natural compiler-control source/profile inputs,
+results, logs and PDBs. Three obsolete reproducible objects and scripts/tests
+bytecode were removed after input pinning and whole-preview code/relocation equality with the cold
+canonical object. Canonical objects, PDBs, evidence, old drafts and shared tools
+remain.
+
+Next F082: complete R042 number worker 00446B90..00446D5E, 463 bytes.
+`.analysis/f082-native-index.json` pins 129 instructions, ten branches and five
+calls to three full callees. Fresh attested root/callee/caller evidence is
+retained. Reconcile indexed writable tables at 0068C868/0068C894/0068C8A0/
+0068C8CC/0068C8F8, signed-byte styles, integer division/modulo, both actual loops
+and the parameterized complete-packet constructor. Existing zero-argument packet
+headers must stay fixed; do not instantiate a partial view. No F082 source,
+object, unit or exact credit exists. Preserve all previous units and large drafts.
+
+## Previous accepted function: F080
 
 R042 damage flash 004406C0..00440AF8 cold-replays exact as
 `BattleDamageFlash4406C0::RenderFlash`: all 1,081 bytes, 292 instructions,
@@ -80,16 +138,7 @@ inputs and final-preview whole code/46-relocation equality with the cold canonic
 object. PDBs, sources, evidence, canonical objects, prior active drafts and shared
 tools remain. Scripts/tests bytecode was removed after CI.
 
-Next F081: complete R045 round banner 00441EA0..00441FCE, 303 bytes.
-`.analysis/f081-native-index.json` pins 78 instructions, two branches and seven
-calls: six direct calls to six whole callees plus one SetRect. Fresh attested
-root/callee/caller evidence is retained. Review the actual unsigned-byte conversion
-before +1, initial FF opacity store, >50 arm ordering and complete packet scope.
-The 28-byte 00442040 float/ST0 wrapper remains unknown-origin. It widens its
-four-byte argument to the existing R130 library log10 worker; full 63-byte own
-code and the retained 336-byte source/auxiliary runtime proof must be used, not
-an isolated short entry or Ghidra's void guess. No F081 source/object/unit/credit
-exists. Keep every older unit and large unaccepted draft.
+The subsequent F081 acceptance and current F082 cohort are recorded above.
 
 ## Previous accepted function: F079
 

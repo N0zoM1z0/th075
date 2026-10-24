@@ -20860,3 +20860,61 @@ four-byte argument to the existing R130 library log10 worker; full 63-byte own
 code and the retained 336-byte source/auxiliary runtime proof must be used, not
 an isolated short entry or Ghidra's void guess. No F081 source/object/unit/credit
 exists. Keep every older unit and large unaccepted draft.
+
+## F081 complete round banner and scalar/ST0 conversion cold acceptance (2026-10-24)
+
+R045 round banner 00441EA0..00441FCE cold-replays exact as
+`BattleRoundBanner441EA0::RenderRoundBanner`: all 303 bytes, 78 instructions,
+two branches, seven physical fields and seven real call packets. One following
+INT3 byte is excluded. Six complete direct callees and USER32!SetRect are checked.
+The accepted F074 caller supplies this with no stack arguments.
+
+The body preserves one complete 132-byte packet, initial FF opacity store,
+actual >50 branch ordering, unsigned-byte truncation before integer +1, repeated
+ARGB construction and the integer-to-float coordinate spill. Outer opacity and
+packet lifetime plus the inner count/RECT drawing scope reproduce the native
+172-byte frame. Seventeen full-body meaningful-name/scope controls isolate this
+layout; changing the real digit byte's name to count resolves the remaining four
+frame fields. Original spelling/scope remains unknown; no padding or inert locals.
+Accepted shared headers remain unchanged; no partial owner is constructed.
+
+The complete 28-byte 00442040 scalar wrapper widens its float32 argument to
+a double64 stack argument for the frozen R130 log10 runtime. Its FST32 leaves
+ST0 live for the caller's implicit ftol2 conversion after caller cleanup. The
+float declaration is a compatible access view; original nominal precision/type
+remains unknown. The wrapper stays unknown-origin and receives no credit.
+The complete 63-byte library own code, 336-byte source/auxiliary carrier and
+644-byte optimized body are checked against retained R130 hashes; unchanged
+origin proofs are not rebuilt. All 97 pending origins remain unknown.
+
+Preview, independent canonical compile and separate canonical cold replay match
+every byte with build3077 and the explicit profile. Six direct-call fields and
+one named import bind with zero addends, exact operand positions, permissions
+and import identity. Whole CFG stack joins pass; wrong SetRect/ftol2 cleanup
+controls fail. All 173 prior units, 80 old canonical objects, 138 previous source
+inputs, 218 origin files, 4,350 other function rows and 84 active draft inputs
+remain unchanged and were not rebuilt. F009 plus 114 additions retains 539,287
+bytes and 140 new inputs. The 98% goal remains incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-round-banner-00441ea0
+```
+
+Full CI passes **3,603 tests in 127.600 seconds**, plus tracking and progress.
+Whitespace-only source formatting was cold-replayed again; all seven checkpoint
+guards pass against the final source and manifest.
+Keep f081 native/attested/root/callee/caller/math/ABI/physical/cold/parent/progress
+and preservation evidence, all natural compiler-control source/profile inputs,
+results, logs and PDBs. Three obsolete reproducible objects and scripts/tests
+bytecode were removed after input pinning and whole-preview code/relocation equality with the cold
+canonical object. Canonical objects, PDBs, evidence, old drafts and shared tools
+remain.
+
+Next F082: complete R042 number worker 00446B90..00446D5E, 463 bytes.
+`.analysis/f082-native-index.json` pins 129 instructions, ten branches and five
+calls to three full callees. Fresh attested root/callee/caller evidence is
+retained. Reconcile indexed writable tables at 0068C868/0068C894/0068C8A0/
+0068C8CC/0068C8F8, signed-byte styles, integer division/modulo, both actual loops
+and the parameterized complete-packet constructor. Existing zero-argument packet
+headers must stay fixed; do not instantiate a partial view. No F082 source,
+object, unit or exact credit exists. Preserve all previous units and large drafts.

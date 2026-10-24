@@ -172,3 +172,4 @@ BattleTimeline447340::RenderTimeline,0x00447340,function
 BattleEndOverlay441910::RenderEndOverlay,0x00441910,function
 BattleModeFive448710::RenderMenu,0x00448710,function
 BattleDamageFlash4406C0::RenderFlash,0x004406C0,function
+BattleRoundBanner441EA0::RenderRoundBanner,0x00441EA0,function

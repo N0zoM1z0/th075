@@ -17108,3 +17108,22 @@ relocations = [
   { offset = 0x40B, type = "REL32", symbol = "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z", target = 0x00403910 },
   { offset = 0x42E, type = "REL32", symbol = "?DrawFilledRectangle@Graphics@@YAXPBUtagRECT@@K@Z", target = 0x00403910 },
 ]
+
+[units."battle-round-banner-00441ea0"]
+source = "src/BattleRoundBanner441EA0.cpp"
+object = "build/matching/BattleRoundBanner441EA0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BattleRoundBanner441EA0::RenderRoundBanner"]
+symbol = "?RenderRoundBanner@BattleRoundBanner441EA0@@QAEXXZ"
+target_address = 0x00441EA0
+size = 303
+compare_size = 303
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "??0RenderQuadPacket5E68C0@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x2C, type = "REL32", symbol = "?BannerLog10At00442040@@YAMM@Z", target = 0x00442040 },
+  { offset = 0x34, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x79, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x98, type = "REL32", symbol = "?BuildQuad@RenderQuadPacket5E68C0@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0xD2, type = "REL32", symbol = "?DrawQuad@RenderDrawing5E68C0@@QAEXHPBVRenderQuadPacket5E68C0@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x124, type = "REL32", symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z", target = 0x00446B60 },
+]
