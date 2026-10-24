@@ -20340,3 +20340,66 @@ One manually reviewed natural preview emits structural-exact1520 bytes with
 Keep camera-update-4126c0 inputs/F072Preview.obj and finish full physical bindings,
 callee ABI/source review and independent canonical cold replay. The six small
 wrapper/worker origins stay unknown and get no credit.
+
+
+## F072 complete camera update cold acceptance (2026-10-24)
+
+R035004126C0..00412CAF is cold-exact as CameraUpdate4126C0::Advance across
+all1520 bytes/336 instructions/36 branches/191 physical fields. These comprise
+48 actual readonly constants,135 global fields and8 direct calls. All operand
+positions/addends,widths,payloads and PE permissions are checked; all native
+CFG instructions/joins/exit are visited. The following00412CB0 setter is a
+separate accepted body; no padding or next-function credit. Alias retains
+CameraMotion::Update; extent/hash,origin evidence and97 pending origins stay
+unchanged. The source has one real int span,with two genuine conversion slots
+explaining the twelve-byte frame,not inert locals/padding.
+
+Native/source review retains the weighted coordinate evaluation order,ordered
+floating clamps/NaN paths,overrides,signed integer span/3,all horizontal/vertical/
+zoom smoothing branches and actual bias zero crossings. Shake keeps radians
+0.01745328866f,distinct X/Y helpers,83/107 increments,single360-degree wraps,
+0.95f decay and all three zero stores. Zoom's bound helper is genuinely called
+for both condition and assignment; retain actual +0.0f operations. Four global
+coordinate pointers are borrowed float views,not reconstructed game owners.
+All23 real globals are independently operand-bound;19 inferred views append
+to the ledger,while three accepted F018 outputs/span and F071 amplitude names
+remain unchanged. Complete96-byte/1637-byte callers each pass no explicit
+arguments. Both full exports and attested caller evidence are retained.
+
+All8 native call packets and6 complete math wrapper/worker bodies are checked:
+32-bit float arguments,cdecl cleanup,worker widening to actual double CRT
+arguments,x87 ST0 results and real debug FST32 writes. Full R128174-byte vendor
+cos/sin primaries establish their actual interior C entries; the9-byte entries
+are not substituted for full runtime evidence. Complete177-byte fabs and
+implicit ST0-to-EDX:EAX ftol2 remain library and receive no new credit. R163
+source alternatives support scoped float views while original declarations,
+nominal result precision and library-versus-authored wrapper ownership remain
+unknown. Ghidra void/thiscall guesses are rejected by the raw ABI. All six
+small math origins remain unknown and do not block independent camera policy.
+
+Natural C++ has no target arrays,assembly,fake returns,ABI inventions,inert
+locals,padding,alternate body or owner instantiation. Preview,independent
+canonical compile and separate cold replay match the complete1520-byte body
+with build3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. All164 previous units/
+canonical objects,120 prior inputs,218 origin files and4350 other function
+rows remain unchanged and were not rebuilt. Active draft/fragments stay pinned.
+F009 plus105 additions retain515,180 code bytes/122 new inputs. Total165 exact
+functions/525,063 code bytes is26.61% reviewed authored,26.56% conservative.
+The98% goal remains active and incomplete.
+
+Full3603-test CI passes in114.956 seconds; tracking,progress and whitespace
+checks pass. All source/header/native/caller/ABI/physical/cold/parent/progress
+receipts remain under .analysis/. Duplicate preview removed after complete
+COFF equality,allowing explicit namespace and three existing-global renames.
+Two new F066/G5 and/Z7 profiles on unchanged active03 have identical whole
+28868-byte code/all696 relocations and are removed only after that equality.
+These do not resolve0055F711; do not repeat without new evidence. Their pinned
+active03 source/header/profiles/logs/results remain. Generated scripts/tests
+bytecode is removed after CI. PDBs,inputs,evidence,active objects and shared
+tools remain; serial builds/CI use low priority with ample available memory.
+
+Next F073 complete96-byte camera initializer00412660 has a natural private
+preview and14 relocation fields with structural-exact correspondence. No
+source presence,canonical unit or exact credit yet. Complete native/attested
+exports are retained. Finish bindings/ABI then separate canonical cold replay;
+then review complete1637-byte render parent0043D9D0 without changing origins.

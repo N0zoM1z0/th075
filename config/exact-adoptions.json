@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F071",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F072",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "835d2385d5a9395cfc60e715b766da486896d3d22f5f9a6d3e0f7694204383cf"
+      "current_sha256": "627b851384b8e4b0946039f3d98535301151d91adaba2f913ea3ed24fb56adce"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "284a49e01547abf45d2a5faf342c039db136198519867cceeed33ecc5091da57"
+      "current_sha256": "e458aed97434e019553bb4b799f1c514516727c48bec0060750b9a8475322efa"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "f88bf6f71e436ca2cfde39946d5ba4bf8149b44607058735e2acc3fb868e9a87"
+      "current_sha256": "041cc5a326d039aab4726566420742df32cc9a53a90bde88f6b01b40c456525e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "07b15e443b41e30c25f0250c35336d79a936e3b233d6e86f04b33a6368d1fcc0"
+      "current_sha256": "3830c118f3e9684d07dcab532c7bdd80e371ac5fcd0e445ccc921d51d83a76d2"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "910bbace4b79a80dd8193f8229ddd5f67863ddee66c55c16ef7ab430840c8cad"
+      "current_sha256": "81fb0c9a09f69fea524b4db9ced70de5ec8ba9a2da48ff7af43d992eaf889ed1"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "9c8cf86ee9b00e3f7a5aceb9156b1117fb44d0dcdbd9d24c0cb82b4a56a8bfec"
+      "current_sha256": "204ca214b353f35c39bbdd8735cc866e4fab899b4dd13e0870707b05be80a70e"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "12d5b16c8377c28bf262f66825ca913eed8dc7146bb0a08912d67f00177721fc"
+      "current_sha256": "3ea25a187eadc1f8da0f52b4b0f609f90f9a5f32c1134c13ebb1458772ac1f37"
     }
   },
   "functions": [
@@ -4611,6 +4611,50 @@
       },
       "origin": {
         "address": "0x00412CB0",
+        "origin": "authored",
+        "subsystem": "CameraMotion",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R035"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004126C0",
+        "size": "1520",
+        "span_end": "0x00412CAF",
+        "current_name": "FUN_004126c0",
+        "proposed_name": "CameraMotion::Update",
+        "module": "CameraMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004126C0",
+        "size": "1520",
+        "span_end": "0x00412CAF",
+        "current_name": "FUN_004126c0",
+        "proposed_name": "CameraUpdate4126C0::Advance",
+        "module": "CameraMotion",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void CameraUpdate4126C0::Advance()",
+        "is_thunk": "false",
+        "source_file": "src/CameraUpdate4126C0.cpp",
+        "evidence": "R035; full body hash, complete decoded CFG and game-specific policy reviewed; F072; scripts/repo-python scripts/replay-exact-units.py --unit camera-update-004126c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F072: complete1520-byte cold exact camera update,336 instructions,36 branches and191 actual call/global/constant fields; native smoothing/clamps/overrides/shake/bias/zoom and signed span division retained; all8 call packets and full6 wrapper/worker bodies/CRT primaries checked; 23 external global views, no owner layout or construction; R035 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x004126C0",
         "origin": "authored",
         "subsystem": "CameraMotion",
         "disposition": "authored",
@@ -89320,6 +89364,1175 @@
           "target": 6755320
         }
       ]
+    },
+    "camera-update-004126c0": {
+      "source": "src/CameraUpdate4126C0.cpp",
+      "object": "build/matching/CameraUpdate4126C0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CameraUpdate4126C0::Advance"
+      ],
+      "symbol": "?Advance@CameraUpdate4126C0@@YAXXZ",
+      "target_address": 4269760,
+      "size": 1520,
+      "compare_size": 1520,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstXAt006713C8@@3PAMA",
+          "target": 6755272
+        },
+        {
+          "offset": 27,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 33,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 39,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondXAt006713CC@@3PAMA",
+          "target": 6755276
+        },
+        {
+          "offset": 49,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 55,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "__real@c3a00000",
+          "target": 6649984
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 96,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 102,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 115,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 126,
+          "type": "DIR32",
+          "symbol": "?g_CameraOverrideEnabledAt00671414@@3EA",
+          "target": 6755348
+        },
+        {
+          "offset": 135,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalOverrideAt006713E8@@3MA",
+          "target": 6755304
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 146,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 152,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 165,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 171,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 183,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 189,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 195,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 201,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 207,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 220,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 226,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 234,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 246,
+          "type": "DIR32",
+          "symbol": "__real@41f00000",
+          "target": 6649976
+        },
+        {
+          "offset": 252,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 258,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 276,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 289,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalTargetAt006713F0@@3MA",
+          "target": 6755312
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 300,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstXAt006713C8@@3PAMA",
+          "target": 6755272
+        },
+        {
+          "offset": 306,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondXAt006713CC@@3PAMA",
+          "target": 6755276
+        },
+        {
+          "offset": 319,
+          "type": "REL32",
+          "symbol": "?CameraAbsoluteAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 328,
+          "type": "DIR32",
+          "symbol": "__real@445c0000",
+          "target": 6649968
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 379,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 385,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstYAt006713D0@@3PAMA",
+          "target": 6755280
+        },
+        {
+          "offset": 393,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 399,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 404,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondYAt006713D4@@3PAMA",
+          "target": 6755284
+        },
+        {
+          "offset": 417,
+          "type": "REL32",
+          "symbol": "?CameraAbsoluteAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 432,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 455,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 485,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 492,
+          "type": "DIR32",
+          "symbol": "?g_CameraOverrideEnabledAt00671414@@3EA",
+          "target": 6755348
+        },
+        {
+          "offset": 501,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalOverrideAt006713BC@@3MA",
+          "target": 6755260
+        },
+        {
+          "offset": 506,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 512,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 518,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 531,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 543,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 549,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 555,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 561,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 567,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 573,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 586,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 592,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 600,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 606,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 612,
+          "type": "DIR32",
+          "symbol": "__real@41a00000",
+          "target": 6649964
+        },
+        {
+          "offset": 618,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 624,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 630,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 636,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 642,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 655,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalTargetAt00671400@@3MA",
+          "target": 6755328
+        },
+        {
+          "offset": 661,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 667,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 673,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 690,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 696,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 705,
+          "type": "REL32",
+          "symbol": "?CameraCosineAt0040D900@@YAMM@Z",
+          "target": 4249856
+        },
+        {
+          "offset": 714,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 720,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeXAt006713E0@@3MA",
+          "target": 6755296
+        },
+        {
+          "offset": 726,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 732,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 741,
+          "type": "REL32",
+          "symbol": "?CameraSineAt0040D940@@YAMM@Z",
+          "target": 4249920
+        },
+        {
+          "offset": 750,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 756,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeYAt006713D8@@3MA",
+          "target": 6755288
+        },
+        {
+          "offset": 762,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 768,
+          "type": "DIR32",
+          "symbol": "__real@42a60000",
+          "target": 6649960
+        },
+        {
+          "offset": 774,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 780,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 786,
+          "type": "DIR32",
+          "symbol": "__real@43b40000",
+          "target": 6649956
+        },
+        {
+          "offset": 799,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 805,
+          "type": "DIR32",
+          "symbol": "__real@43b40000",
+          "target": 6649956
+        },
+        {
+          "offset": 811,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseXAt00671410@@3MA",
+          "target": 6755344
+        },
+        {
+          "offset": 817,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 823,
+          "type": "DIR32",
+          "symbol": "__real@42d60000",
+          "target": 6649952
+        },
+        {
+          "offset": 829,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 835,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "__real@43b40000",
+          "target": 6649956
+        },
+        {
+          "offset": 854,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 860,
+          "type": "DIR32",
+          "symbol": "__real@43b40000",
+          "target": 6649956
+        },
+        {
+          "offset": 866,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakePhaseYAt006713FC@@3MA",
+          "target": 6755324
+        },
+        {
+          "offset": 872,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 878,
+          "type": "DIR32",
+          "symbol": "__real@3f733333",
+          "target": 6649948
+        },
+        {
+          "offset": 884,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 890,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 896,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 909,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeAmountAt006713F8@@3MA",
+          "target": 6755320
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeXAt006713E0@@3MA",
+          "target": 6755296
+        },
+        {
+          "offset": 929,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeYAt006713D8@@3MA",
+          "target": 6755288
+        },
+        {
+          "offset": 938,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstXAt006713C8@@3PAMA",
+          "target": 6755272
+        },
+        {
+          "offset": 944,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondXAt006713CC@@3PAMA",
+          "target": 6755276
+        },
+        {
+          "offset": 957,
+          "type": "REL32",
+          "symbol": "?CameraAbsoluteAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 966,
+          "type": "DIR32",
+          "symbol": "__real@445c0000",
+          "target": 6649968
+        },
+        {
+          "offset": 972,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 979,
+          "type": "DIR32",
+          "symbol": "?g_CameraOverrideEnabledAt00671414@@3EA",
+          "target": 6755348
+        },
+        {
+          "offset": 988,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomOverrideAt006713F4@@3MA",
+          "target": 6755316
+        },
+        {
+          "offset": 993,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 999,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1005,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1018,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1030,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1036,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1042,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 1051,
+          "type": "REL32",
+          "symbol": "?CameraAbsoluteAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 1060,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1066,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1079,
+          "type": "DIR32",
+          "symbol": "__real@43a00000",
+          "target": 6649980
+        },
+        {
+          "offset": 1085,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1091,
+          "type": "DIR32",
+          "symbol": "__real@42480000",
+          "target": 6649996
+        },
+        {
+          "offset": 1100,
+          "type": "REL32",
+          "symbol": "?CameraAbsoluteAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 1109,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1115,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1121,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1127,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1140,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1146,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1152,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 1158,
+          "type": "DIR32",
+          "symbol": "__real@41300000",
+          "target": 6649940
+        },
+        {
+          "offset": 1164,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1170,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1176,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1182,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1195,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1201,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1209,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1215,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1221,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 1227,
+          "type": "DIR32",
+          "symbol": "__real@41300000",
+          "target": 6649940
+        },
+        {
+          "offset": 1233,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1239,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1245,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1251,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1264,
+          "type": "DIR32",
+          "symbol": "?g_CameraZoomTargetAt006713C0@@3MA",
+          "target": 6755264
+        },
+        {
+          "offset": 1270,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewSpan@@3MA",
+          "target": 6755292
+        },
+        {
+          "offset": 1276,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1282,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1295,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1301,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 1307,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1313,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1319,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1332,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1344,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1350,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1363,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1369,
+          "type": "DIR32",
+          "symbol": "__real@41200000",
+          "target": 6649936
+        },
+        {
+          "offset": 1375,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1381,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1387,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1400,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 1409,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstYAt006713D0@@3PAMA",
+          "target": 6755280
+        },
+        {
+          "offset": 1415,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondYAt006713D4@@3PAMA",
+          "target": 6755284
+        },
+        {
+          "offset": 1432,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 1444,
+          "type": "DIR32",
+          "symbol": "?g_CameraFirstYAt006713D0@@3PAMA",
+          "target": 6755280
+        },
+        {
+          "offset": 1449,
+          "type": "DIR32",
+          "symbol": "?g_CameraSecondYAt006713D4@@3PAMA",
+          "target": 6755284
+        },
+        {
+          "offset": 1466,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 1476,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalAt006713E4@@3MA",
+          "target": 6755300
+        },
+        {
+          "offset": 1482,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeXAt006713E0@@3MA",
+          "target": 6755296
+        },
+        {
+          "offset": 1488,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 1494,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalAt00671408@@3MA",
+          "target": 6755336
+        },
+        {
+          "offset": 1500,
+          "type": "DIR32",
+          "symbol": "?g_CameraShakeYAt006713D8@@3MA",
+          "target": 6755288
+        },
+        {
+          "offset": 1506,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 1512,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetY@@3MA",
+          "target": 6755268
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -89442,6 +90655,8 @@
     "src/RecordedRange455580.cpp": "bacce172c54a2c16336ca0b49dab26d50622a7bb2a975adac15234830ccef840",
     "src/RecordedRange455580.hpp": "c8279ad4432d3028ee50fe304d8d9c0a98e5adbd3c7c665188e3d2fa637d7348",
     "src/EffectServices.cpp": "6d7ea33cb779581cef1ae4e0b238865dec49e0e8fd54f6eb98973be6c25429d6",
-    "src/EffectServices.hpp": "8d96d1198c4336ca62d70bdde5bc1a139e2a1ee86119d38d1d270da215c735e2"
+    "src/EffectServices.hpp": "8d96d1198c4336ca62d70bdde5bc1a139e2a1ee86119d38d1d270da215c735e2",
+    "src/CameraUpdate4126C0.cpp": "69f4cbad45255066f59841e4a6e9b2690bcabad5c525ecad20bf8f808302c03d",
+    "src/CameraUpdate4126C0.hpp": "d931097a0c8b01171ae54f75b6993c1b736d70e484b1f8c69f5fa00f2d896266"
   }
 }

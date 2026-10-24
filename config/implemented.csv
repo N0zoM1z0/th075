@@ -162,3 +162,4 @@ RecordedRange455580::SelectRange
 EffectSound45B860::PlaySharedSound
 FighterShake453E60::SetCameraShake
 CameraShake412CB0::SetShakeAmount
+CameraUpdate4126C0::Advance

@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 164 / 164 / 164 |
-| Exact code bytes | 523,543 |
-| Reviewed authored coverage | 523,543 / 1,973,516 (26.53%) |
-| Conservative coverage, including every pending byte | 523,543 / 1,977,124 (26.48%) |
+| Source-present / exact functions / exact units | 165 / 165 / 165 |
+| Exact code bytes | 525,063 |
+| Reviewed authored coverage | 525,063 / 1,973,516 (26.61%) |
+| Conservative coverage, including every pending byte | 525,063 / 1,977,124 (26.56%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **104 additions /
-513,660 code bytes / 120 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **105 additions /
+515,180 code bytes / 122 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,66 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted cohort: F071
+## Latest accepted function: F072
+
+R035 camera update004126C0..00412CAF is independently cold-exact as
+`CameraUpdate4126C0::Advance`: complete1520 bytes/336 instructions/36 branches,
+48 readonly constant fields,135 writable global fields and8 calls. All191
+physical fields, payloads,permissions,widths,addends and operand positions match.
+The next byte starts the already accepted setter00412CB0; no alignment or
+subsequent function bytes are credited. Alias preserves CameraMotion::Update.
+
+The natural free-function body retains weighted coordinate order, horizontal/
+vertical/zoom clamps,override controls,signed span/3,smoothing and strict bias
+crossings. Shake preserves radians0.01745328866f,83/107 phase increments,single
+360-degree wraps,0.95f decay and actual zero stores. Zoom's minimum calls its
+math helper twice and retains both +0.0f operations. All equality/unordered
+floating paths and both signed integer conversions remain exact. One actual
+int span plus two conversion temporaries explain the native twelve-byte frame.
+
+All eight real call packets and six full math wrapper/worker bodies are
+reviewed. Four-byte float inputs,worker widening to double,actual ST0 results,
+CRT fabs and complete174-byte cosine/sine primaries are pinned; the nine-byte
+interior C entries are not treated as whole runtime implementations. Implicit
+ftol2 uses ST0-to-EDX:EAX with no declared fake C arguments. Ghidra's void/
+thiscall guesses are rejected against the raw bodies and R163 alternatives.
+The six helper origins remain unknown. Original names,declarations and nominal
+return precision remain unrecovered. No owner is constructed or embedded.
+
+There are23 actual global locations. Nineteen new inferred views are appended;
+three F018 output/span names and the F071 shake amount are reused unchanged.
+The complete96-byte initializer and1637-byte render caller each invoke the
+new function without explicit arguments. Both full caller exports are pinned.
+Preview,independent canonical compile and separate canonical cold replay match
+with the explicit build3077 profile. All164 older units/objects and120 older
+inputs are unchanged and were not rebuilt. Keep f072 binder/ABI/physical/cold/
+parent/progress evidence,all dependency/caller exports and attested views/logs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit camera-update-004126c0
+```
+
+Full CI passes **3,603 tests in114.956 seconds**, plus tracking,progress and
+whitespace checks. Evidence check preserves164 prior units/objects,120 inputs,
+218 origin files,4350 other rows and all active drafts/fragments. The duplicate
+preview object and two identical F066 profile objects are removed only after
+full function/relocation equality; source/PDB/evidence/shared tools remain.
+Generated scripts/tests bytecode is removed after CI with hash receipts.
+
+New F066 controls/G5 and/Z7 on unchanged active03 also emit identical complete
+28868-byte code and all696 relocations. They do not explain the first0055F711
+register difference. Keep `.analysis/f066-profile-controls/` source hashes,
+profiles/logs/results and retained active03; do not repeat without new evidence.
+
+Next F073: complete camera initializer00412660,96 bytes,R102. Natural private
+source/header at `.analysis/camera-initialize-412660/Preview.cpp` / `.hpp`
+and active `build/probes/F073Preview.obj` are structural-exact with14 fields.
+This is diagnostic only,no source presence,unit or exact credit. Finish all
+physical/ABI bindings then canonical compile/cold replay. Its full native and
+fresh attested views also expose the next complete render parent0043D9D0,
+1637 bytes. Preserve all F066/F061/F048/F021 drafts and97 pending origins.
+
+## Previous accepted cohort: F071
 
 Three complete service bodies from `src/EffectServices.cpp` / `.hpp` are
 independently cold-exact: shared sound0045B860 (29 bytes/11 instructions),

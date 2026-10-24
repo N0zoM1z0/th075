@@ -108,3 +108,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0045B860,BattleEffect::PlaySharedSoundAt0045B860,EffectSound45B860::PlaySharedSound,R102,effect-shared-sound-0045b860
 0x00453E60,FighterState::SetCameraShakeAt00453E60,FighterShake453E60::SetCameraShake,R102,fighter-camera-shake-00453e60
 0x00412CB0,CameraMotion::SetShakeAmplitude,CameraShake412CB0::SetShakeAmount,R035,camera-shake-amount-00412cb0
+0x004126C0,CameraMotion::Update,CameraUpdate4126C0::Advance,R035,camera-update-004126c0
