@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F128 transition/layer investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F129 node/name drawing investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 296 / 296 / 296 |
-| Exact code bytes | 694,231 |
-| Reviewed authored coverage | 694,231 / 1,973,516 (35.18%) |
-| Conservative coverage, including every pending byte | 694,231 / 1,977,124 (35.11%) |
+| Source-present / exact functions / exact units | 313 / 313 / 313 |
+| Exact code bytes | 699,235 |
+| Reviewed authored coverage | 699,235 / 1,973,516 (35.43%) |
+| Conservative coverage, including every pending byte | 699,235 / 1,977,124 (35.37%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **236 additions /
-684,348 code bytes / 194 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **253 additions /
+689,352 code bytes / 195 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,104 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F127
+## Latest accepted functions: F128
+
+Eleven R043 transition renderers and six R054 effect-layer drawings pass
+canonical cold comparison: **5,004 code bytes,1,320 instructions,101 actual
+calls and all213 real relocation fields**. Each complete CFG, ESP/EBP/x87
+join, actual frame, plain RET and following INT3 is independently reviewed.
+No owned table, shared tail or cropped extent is present in these seventeen
+bodies. Only the seventeen new units were cold-built, across one object.
+
+Transitions are true cdecl functions receiving the address of a texture
+pointer; the six layers use thiscall and a this+24 drawing receiver. The
+accepted graphics interface receives four16byte coordinate records and the
+actual texture pointer. Only complete132byte SDK-based quads, RECT values
+and genuine loop/color/camera scalars are local. Incomplete private owners
+remain pointer-only and are never instantiated or embedded.
+
+The source retains color masks and repeated RGB evaluations,40pixel tiles,
+variable40-frame+1 steps,640 random columns and the actual3000float divisor,
+the observed640bottom RECT,480 sine strips and six cumulative rotations.
+Two global scalar resets are separate immediate writes; phase/amplitude
+increments, signed rand modulo and two distinct direction globals remain.
+The original float sine carrier keeps two outer translation words. Both
+whole17/28byte wrappers remain unknown; the full R128 sine primary and the
+original CRT rand owner are retained without new origin or helper credit.
+The layers retain integer camera truncations, double parallax and each
+actual source-cell/flip variant.
+
+A bounded85address compiler fixture selects semantic names only for genuine
+locals. The second preview makes sixteen bodies exact; the third restores
+the two separate reset writes. There is no added local/storage/scope/padding,
+guessed array, pasted decompile/code array, fake return, assembly, ABI alias,
+masked field or shortened comparison. Six wrong constructor/raw-quad/blend/
+sine/camera/timer bindings fail whole comparison.
+
+The unchanged previously accepted495byte graphics blend helper includes
+463 code bytes and its own32byte/eight-entry table after RET. This dependency
+review separates code from data while retaining all495 physical bytes and
+all eight targets. Its old source, unit and acceptance remain unchanged.
+No helper/library/global/data/private layout receives new credit.
+
+Replay the seventeen `transition-render-ADDRESS` and `effect-layer-ADDRESS`
+units recorded in `config/match-units.toml`; select only those units.
+`.analysis/f128-cold-replay.log` records17/17 exact across one object. All296
+prior units,126 canonical objects,194 source inputs,218 origin files,nine
+shared headers,91 active drafts and4,334 other function rows remain unchanged.
+F009 plus253 additions retains689,352 code bytes and195 new inputs. R043/R054
+roles remain through aliases; all97 unknown origins remain unknown. Preserve
+all f128 attested/native/SDK/CFG/x87/receiver/random/state/color/constant/name/
+negative/binding/cold/parent evidence, all three previews, compiler fixture,
+sources, results, logs, PDBs and the canonical object.
+
+Current totals: **313 exact functions/units,699,235 code bytes**,35.43% of
+reviewed authored bytes and **35.37% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in165.790s; seven exact-checkpoint tests
+passed in0.635s; target/tracking/diff checks passed. Only seventeen new units
+were cold-built. Evidence-preserving cleanup removed three obsolete own
+game probes and one compiler name fixture(102,269bytes), plus375 reproducible
+Python bytecode files(8,283,506bytes). All actual compiler inputs/three previews/
+fixture/native/SDK/CFG/x87/receiver/random/state/color/constant/name/negative/
+binding/cold/parent evidence, logs, PDBs and canonical objects remain. Receipts
+are retained under
+`.analysis/f128-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F129
+
+Independently review four authored drawing candidates, **6,920 provisional
+code bytes**:
+
+| Candidate | Address / provisional size |
+| --- | --- |
+| SpriteScene::RenderCameraNode | `0040FC70/1758` |
+| SpriteScene::RenderNode | `00410350/1706` |
+| NameEntryScene::RenderPlayer | `0042A560/1581` |
+| NameEntryScene::RenderShared | `0042B570/1875` |
+
+Native-only function/callee/decompile queries under
+`.analysis/f129-node-name-drawing/` are complete. Target attestation and all
+three query completion markers are verified. Complete native spans and
+`.analysis/f129-native-frontier-proof.json` retain the next investigation
+inputs; linear observations do not establish an accepted extent or CFG. No F129 source or exact
+credit is claimed. Reconcile every complete CFG/code/table/tail extent, real
+ABI, local-value contract, field width and helper packet before source.
+Accepted SDK packet interfaces supply methodology, not complete private
+owner layouts; preserve native math, state and construction order.
+
+All accepted source/header inputs and unaccepted F021/F048/F061/F066/F085
+drafts/failed controls remain protected. No unchanged retries or relaxed full
+physical comparison. All97 unknown origins remain unknown and evidence
+throughR268 is immutable. Every incomplete private owner stays pointer-only
+and is never instantiated or embedded. QueueFile00407A50/QueueArchiveEntry00407B80
+still need a proved complete local record layout; resource00456B60 retains
+f107's actual588byte frame and unresolved texture80/layout/filename bound.
+Build serially, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while preserving inputs/evidence. Later phases deferred.
+
+## Previous accepted functions: F127
 
 The fourteen remaining R042 BattleEffect drawing patterns pass canonical cold
 comparison: **11,057 code bytes,2,652 instructions,208 actual calls and all447
@@ -105,7 +202,7 @@ inputs are separately retained; canonical sources and cold objects are
 unchanged. Receipts are retained under
 `.analysis/f127-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F128
+## F128 investigation at the F127 checkpoint
 
 Independently review eleven authored SceneTransition render patterns and six
 BattleEffect layer drawing functions, **5,004 provisional code bytes**:

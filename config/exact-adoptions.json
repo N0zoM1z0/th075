@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F127",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F128",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "9ade0a1374112265828e74418119003eb29fb2a8d9530efad4bd2965d1352693"
+      "current_sha256": "e8dfe33ee324891b7a8491455df82999f770847d4f8d8d0f4ee8a33932dae99c"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7a634d35fc2e9266209caa7bdd0ac5965a6a8a0035519ec7dd2349cb3ce80eeb"
+      "current_sha256": "f6e03e3188df04db4e73f60d27c191cfedb5b9cedb08f7b45041055c89231c41"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "4837495dbbbcd540abab4b8577acaf98f58b4ae12e8e40b5a19bb197863d4d81"
+      "current_sha256": "70c7a71e204c149e083d4fe2af1ff0bc2c692a372dcfc68784d856761b0695ac"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "57ba1303d488df0f25248062f4c806873a5e974ccf12a67af8e1ab6892754c46"
+      "current_sha256": "0a0775a2242792ca5ee776f92a9a54f17e3cde6c4243529c2a941263ab6d3449"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "cdf045704d46c9e51960b653eba6542ec3e1ef2814e97fc616345318e96768f8"
+      "current_sha256": "7c61c36c6845866edb6435a3bae83b06a2dbc5a1b43f2da4f24b44f95aa32c9b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "ebcc201363765c4791e2a082e65b07241c3a358229b30315fdfcda07ac234330"
+      "current_sha256": "a1f9dbb24e7c2f40804e9f14b5cdd9adea10701305d0c9eac89a4ccdf6fe9da0"
     }
   },
   "functions": [
@@ -10424,6 +10424,754 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432200",
+        "size": "175",
+        "span_end": "0x004322AE",
+        "current_name": "FUN_00432200",
+        "proposed_name": "SceneTransition::RenderPattern01",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432200",
+        "size": "175",
+        "span_end": "0x004322AE",
+        "current_name": "FUN_00432200",
+        "proposed_name": "DrawTransition00432200",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432200(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432200",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 175byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432200",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004322B0",
+        "size": "172",
+        "span_end": "0x0043235B",
+        "current_name": "FUN_004322b0",
+        "proposed_name": "SceneTransition::RenderPattern02",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004322B0",
+        "size": "172",
+        "span_end": "0x0043235B",
+        "current_name": "FUN_004322b0",
+        "proposed_name": "DrawTransition004322B0",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition004322B0(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-004322b0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 172byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x004322B0",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432360",
+        "size": "168",
+        "span_end": "0x00432407",
+        "current_name": "FUN_00432360",
+        "proposed_name": "SceneTransition::RenderPattern03",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432360",
+        "size": "168",
+        "span_end": "0x00432407",
+        "current_name": "FUN_00432360",
+        "proposed_name": "DrawTransition00432360",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432360(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432360",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 168byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432360",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432410",
+        "size": "189",
+        "span_end": "0x004324CC",
+        "current_name": "FUN_00432410",
+        "proposed_name": "SceneTransition::RenderPattern04",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432410",
+        "size": "189",
+        "span_end": "0x004324CC",
+        "current_name": "FUN_00432410",
+        "proposed_name": "DrawTransition00432410",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432410(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432410",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 189byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432410",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004324D0",
+        "size": "389",
+        "span_end": "0x00432654",
+        "current_name": "FUN_004324d0",
+        "proposed_name": "SceneTransition::RenderPattern05",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004324D0",
+        "size": "389",
+        "span_end": "0x00432654",
+        "current_name": "FUN_004324d0",
+        "proposed_name": "DrawTransition004324D0",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition004324D0(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-004324d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 389byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x004324D0",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432660",
+        "size": "396",
+        "span_end": "0x004327EB",
+        "current_name": "FUN_00432660",
+        "proposed_name": "SceneTransition::RenderPattern06",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432660",
+        "size": "396",
+        "span_end": "0x004327EB",
+        "current_name": "FUN_00432660",
+        "proposed_name": "DrawTransition00432660",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432660(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432660",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 396byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432660",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004327F0",
+        "size": "355",
+        "span_end": "0x00432952",
+        "current_name": "FUN_004327f0",
+        "proposed_name": "SceneTransition::RenderPattern07",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004327F0",
+        "size": "355",
+        "span_end": "0x00432952",
+        "current_name": "FUN_004327f0",
+        "proposed_name": "DrawTransition004327F0",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition004327F0(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-004327f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 355byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x004327F0",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432960",
+        "size": "386",
+        "span_end": "0x00432AE1",
+        "current_name": "FUN_00432960",
+        "proposed_name": "SceneTransition::RenderPattern08",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432960",
+        "size": "386",
+        "span_end": "0x00432AE1",
+        "current_name": "FUN_00432960",
+        "proposed_name": "DrawTransition00432960",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432960(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432960",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 386byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432960",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432AF0",
+        "size": "325",
+        "span_end": "0x00432C34",
+        "current_name": "FUN_00432af0",
+        "proposed_name": "SceneTransition::RenderPattern09",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432AF0",
+        "size": "325",
+        "span_end": "0x00432C34",
+        "current_name": "FUN_00432af0",
+        "proposed_name": "DrawTransition00432AF0",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432AF0(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432af0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 325byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432AF0",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432C40",
+        "size": "300",
+        "span_end": "0x00432D6B",
+        "current_name": "FUN_00432c40",
+        "proposed_name": "SceneTransition::RenderPattern10",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432C40",
+        "size": "300",
+        "span_end": "0x00432D6B",
+        "current_name": "FUN_00432c40",
+        "proposed_name": "DrawTransition00432C40",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432C40(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432c40",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 300byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432C40",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00432D70",
+        "size": "297",
+        "span_end": "0x00432E98",
+        "current_name": "FUN_00432d70",
+        "proposed_name": "SceneTransition::RenderPattern11",
+        "module": "SceneTransition",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00432D70",
+        "size": "297",
+        "span_end": "0x00432E98",
+        "current_name": "FUN_00432d70",
+        "proposed_name": "DrawTransition00432D70",
+        "module": "SceneTransition",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawTransition00432D70(IDirect3DTexture8* const* texture)",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit transition-render-00432d70",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 297byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00432D70",
+        "origin": "authored",
+        "subsystem": "SceneTransition",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00449B50",
+        "size": "358",
+        "span_end": "0x00449CB5",
+        "current_name": "FUN_00449b50",
+        "proposed_name": "BattleEffect::DrawLayerAt00449B50",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00449B50",
+        "size": "358",
+        "span_end": "0x00449CB5",
+        "current_name": "FUN_00449b50",
+        "proposed_name": "EffectLayer00449B50::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer00449B50::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-00449b50",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 358byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x00449B50",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044A2E0",
+        "size": "358",
+        "span_end": "0x0044A445",
+        "current_name": "FUN_0044a2e0",
+        "proposed_name": "BattleEffect::DrawLayerAt0044A2E0",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044A2E0",
+        "size": "358",
+        "span_end": "0x0044A445",
+        "current_name": "FUN_0044a2e0",
+        "proposed_name": "EffectLayer0044A2E0::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer0044A2E0::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-0044a2e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 358byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x0044A2E0",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044AC60",
+        "size": "284",
+        "span_end": "0x0044AD7B",
+        "current_name": "FUN_0044ac60",
+        "proposed_name": "BattleEffect::DrawLayerAt0044AC60",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044AC60",
+        "size": "284",
+        "span_end": "0x0044AD7B",
+        "current_name": "FUN_0044ac60",
+        "proposed_name": "EffectLayer0044AC60::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer0044AC60::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-0044ac60",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 284byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x0044AC60",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044AF00",
+        "size": "284",
+        "span_end": "0x0044B01B",
+        "current_name": "FUN_0044af00",
+        "proposed_name": "BattleEffect::DrawLayerAt0044AF00",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044AF00",
+        "size": "284",
+        "span_end": "0x0044B01B",
+        "current_name": "FUN_0044af00",
+        "proposed_name": "EffectLayer0044AF00::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer0044AF00::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-0044af00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 284byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x0044AF00",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CC20",
+        "size": "284",
+        "span_end": "0x0044CD3B",
+        "current_name": "FUN_0044cc20",
+        "proposed_name": "BattleEffect::DrawLayerAt0044CC20",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044CC20",
+        "size": "284",
+        "span_end": "0x0044CD3B",
+        "current_name": "FUN_0044cc20",
+        "proposed_name": "EffectLayer0044CC20::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer0044CC20::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-0044cc20",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 284byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x0044CC20",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0044CEC0",
+        "size": "284",
+        "span_end": "0x0044CFDB",
+        "current_name": "FUN_0044cec0",
+        "proposed_name": "BattleEffect::DrawLayerAt0044CEC0",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0044CEC0",
+        "size": "284",
+        "span_end": "0x0044CFDB",
+        "current_name": "FUN_0044cec0",
+        "proposed_name": "EffectLayer0044CEC0::Draw",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectLayer0044CEC0::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SceneTransitionLayers.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F128; scripts/repo-python scripts/replay-exact-units.py --unit effect-layer-0044cec0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F128: complete 284byte independently canonical cold exact; seventeen-body cohort5004bytes/1320instructions/101calls/all213real fields. Full own CFG/ESP-EBP/x87 joins/actual frames/plainRET/followingINT3 reviewed, no table/shared/cropped tail. Eleven true cdecl texture-pointer-address functions and six thiscall layers; no fictitious method receiver or callee argument cleanup. Only complete132byte SDK quads/RECT/genuine loop/color/camera scalars local; all private effect/drawing owners pointer-only, never instantiated/embedded. Graphics coordinate-array interface consumes four16byte records; true texture pointer loaded from parameter address. Color masks/repeated RGB evaluations/40pixel tiles/variable40-frame+1 steps/640random columns/3000float divisor/actual640bottom RECT/480sine strips/separate global resets/phase increments/six cumulative rotations/signed rand modulo preserved. Two unknown float sine wrappers and full R128 primary unchanged; retained existing graphics blend495byte helper includes463code+32own table, no crop or new credit. Six layer variants preserve actual int camera/double parallax and this+24. One bounded85address compiler fixture chooses only genuine semantic local names; second preview matches sixteen functions,third fixes actual two immediate scalar resets. No extra local/storage/scope/padding/array, ABI misdeclaration, masks, aliases, pasted decompile/nativecode array, assembly, fake return or truncation. Six wrong real constructor/rawquad/blend/sine/camera/timer fields rejected. All296priorunits/126objects/194inputs/218originfiles/nineheaders/91drafts/97unknownorigins unchanged; R043/R054 roles retained by aliases; identities/types/private layouts provisional. Helpers/library/globals/data/layouts earn no new credit."
+      },
+      "origin": {
+        "address": "0x0044CEC0",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
       }
     }
   ],
@@ -133607,6 +134355,1692 @@
           "target": 4245488
         }
       ]
+    },
+    "transition-render-00432200": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432200"
+      ],
+      "symbol": "?DrawTransition00432200@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4399616,
+      "size": 175,
+      "compare_size": 175,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 132,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 142,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 164,
+          "type": "REL32",
+          "symbol": "?FillTransitionRectangleF128@@YAXPBUtagRECT@@K@Z",
+          "target": 4208912
+        }
+      ]
+    },
+    "transition-render-004322b0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition004322B0"
+      ],
+      "symbol": "?DrawTransition004322B0@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4399792,
+      "size": 172,
+      "compare_size": 172,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 129,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 139,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 161,
+          "type": "REL32",
+          "symbol": "?FillTransitionRectangleF128@@YAXPBUtagRECT@@K@Z",
+          "target": 4208912
+        }
+      ]
+    },
+    "transition-render-00432360": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432360"
+      ],
+      "symbol": "?DrawTransition00432360@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4399968,
+      "size": 168,
+      "compare_size": 168,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 89,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 157,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432410": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432410"
+      ],
+      "symbol": "?DrawTransition00432410@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4400144,
+      "size": 189,
+      "compare_size": 189,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 50,
+          "type": "REL32",
+          "symbol": "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z",
+          "target": 4250448
+        },
+        {
+          "offset": 57,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 95,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 122,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 178,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-004324d0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition004324D0"
+      ],
+      "symbol": "?DrawTransition004324D0@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4400336,
+      "size": 389,
+      "compare_size": 389,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 204,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 222,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 255,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 261,
+          "type": "DIR32",
+          "symbol": "__real@3fc00000",
+          "target": 6652384
+        },
+        {
+          "offset": 267,
+          "type": "DIR32",
+          "symbol": "__real@42b40000",
+          "target": 6652380
+        },
+        {
+          "offset": 336,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 368,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432660": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432660"
+      ],
+      "symbol": "?DrawTransition00432660@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4400736,
+      "size": 396,
+      "compare_size": 396,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 224,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 230,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 254,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 274,
+          "type": "DIR32",
+          "symbol": "__real@3fc00000",
+          "target": 6652384
+        },
+        {
+          "offset": 343,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 375,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-004327f0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition004327F0"
+      ],
+      "symbol": "?DrawTransition004327F0@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4401136,
+      "size": 355,
+      "compare_size": 355,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "__real@453b8000",
+          "target": 6648964
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "?g_TransitionColumns@@3PAMA",
+          "target": 6864472
+        },
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 234,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 265,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 290,
+          "type": "DIR32",
+          "symbol": "?g_TransitionColumns@@3PAMA",
+          "target": 6864472
+        },
+        {
+          "offset": 307,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 339,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432960": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432960"
+      ],
+      "symbol": "?DrawTransition00432960@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4401504,
+      "size": 386,
+      "compare_size": 386,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@Graphics@@YAXH@Z",
+          "target": 4202320
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 141,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 220,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 238,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 251,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 281,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 365,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432af0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432AF0"
+      ],
+      "symbol": "?DrawTransition00432AF0@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4401904,
+      "size": 325,
+      "compare_size": 325,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_TransitionPhase@@3MA",
+          "target": 6867036
+        },
+        {
+          "offset": 41,
+          "type": "DIR32",
+          "symbol": "?g_TransitionAmplitude@@3MA",
+          "target": 6867032
+        },
+        {
+          "offset": 50,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "?g_TransitionPhase@@3MA",
+          "target": 6867036
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "__real@41000000",
+          "target": 6651248
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "?g_TransitionPhase@@3MA",
+          "target": 6867036
+        },
+        {
+          "offset": 106,
+          "type": "DIR32",
+          "symbol": "?g_TransitionAmplitude@@3MA",
+          "target": 6867032
+        },
+        {
+          "offset": 112,
+          "type": "DIR32",
+          "symbol": "__real@41700000",
+          "target": 6651068
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?g_TransitionAmplitude@@3MA",
+          "target": 6867032
+        },
+        {
+          "offset": 198,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 216,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 232,
+          "type": "DIR32",
+          "symbol": "?g_TransitionPhase@@3MA",
+          "target": 6867036
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 244,
+          "type": "DIR32",
+          "symbol": "__real@40400000",
+          "target": 6651128
+        },
+        {
+          "offset": 253,
+          "type": "REL32",
+          "symbol": "?CameraSineAt0040D940@@YAMM@Z",
+          "target": 4249920
+        },
+        {
+          "offset": 262,
+          "type": "DIR32",
+          "symbol": "?g_TransitionAmplitude@@3MA",
+          "target": 6867032
+        },
+        {
+          "offset": 277,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432c40": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432C40"
+      ],
+      "symbol": "?DrawTransition00432C40@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4402240,
+      "size": 300,
+      "compare_size": 300,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?g_TransitionDirectionOne@@3MA",
+          "target": 6734404
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 156,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 197,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?g_TransitionDirectionOne@@3MA",
+          "target": 6734404
+        },
+        {
+          "offset": 224,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 255,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "transition-render-00432d70": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "DrawTransition00432D70"
+      ],
+      "symbol": "?DrawTransition00432D70@@YAXPBQAUIDirect3DTexture8@@@Z",
+      "target_address": 4402544,
+      "size": 297,
+      "compare_size": 297,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?g_TransitionDirectionTwo@@3MA",
+          "target": 6734408
+        },
+        {
+          "offset": 75,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 149,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 167,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 209,
+          "type": "DIR32",
+          "symbol": "?g_TransitionFrame@@3HA",
+          "target": 6734400
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "?g_TransitionDirectionTwo@@3MA",
+          "target": 6734408
+        },
+        {
+          "offset": 221,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 252,
+          "type": "REL32",
+          "symbol": "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265712
+        },
+        {
+          "offset": 284,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        }
+      ]
+    },
+    "effect-layer-00449b50": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer00449B50::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer00449B50@@QAEXXZ",
+      "target_address": 4496208,
+      "size": 358,
+      "compare_size": 358,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 253,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 279,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 350,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "effect-layer-0044a2e0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer0044A2E0::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer0044A2E0@@QAEXXZ",
+      "target_address": 4498144,
+      "size": 358,
+      "compare_size": 358,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 253,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 279,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 350,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "effect-layer-0044ac60": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer0044AC60::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer0044AC60@@QAEXXZ",
+      "target_address": 4500576,
+      "size": 284,
+      "compare_size": 284,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4075900000000000",
+          "target": 6653448
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "effect-layer-0044af00": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer0044AF00::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer0044AF00@@QAEXXZ",
+      "target_address": 4501248,
+      "size": 284,
+      "compare_size": 284,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4075900000000000",
+          "target": 6653448
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "effect-layer-0044cc20": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer0044CC20::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer0044CC20@@QAEXXZ",
+      "target_address": 4508704,
+      "size": 284,
+      "compare_size": 284,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "effect-layer-0044cec0": {
+      "source": "src/SceneTransitionLayers.cpp",
+      "object": "build/matching/SceneTransitionLayers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "EffectLayer0044CEC0::Draw"
+      ],
+      "symbol": "?Draw@EffectLayer0044CEC0@@QAEXXZ",
+      "target_address": 4509376,
+      "size": 284,
+      "compare_size": 284,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_LayerCameraY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@LayerDrawingF128@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 88,
+          "type": "DIR32",
+          "symbol": "__real@4069000000000000",
+          "target": 6653040
+        },
+        {
+          "offset": 104,
+          "type": "DIR32",
+          "symbol": "__real@3fe3333333333333",
+          "target": 6653048
+        },
+        {
+          "offset": 110,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 184,
+          "type": "DIR32",
+          "symbol": "__real@4074000000000000",
+          "target": 6653032
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -133803,6 +136237,7 @@
     "src/SettingsReplayDrawing.cpp": "bcb093bd71d078587b0d9a7164059facff17980e39a414ed4383f21762094224",
     "src/ReplayTextHelpers.cpp": "f9347ed26883f98787719637ff6b84c65448454101dc132b6d6dad06c5e30562",
     "src/ActorEffectDrawing.cpp": "15763e88c3a2954829ca8379e7e561e3f09115395bf7fa688e87c69d38b61866",
-    "src/BattleEffectRendering.cpp": "cb89e0245680962f87070e610b6ca773c07492841a81fc99f897602681e8b719"
+    "src/BattleEffectRendering.cpp": "cb89e0245680962f87070e610b6ca773c07492841a81fc99f897602681e8b719",
+    "src/SceneTransitionLayers.cpp": "ab9533d301679bd885ed8ad5b63534accc9cd8d586cdb7f48a5af67e867fab70"
   }
 }

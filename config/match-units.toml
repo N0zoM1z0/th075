@@ -23546,3 +23546,420 @@ relocations = [
   { offset = 0x590, type = "REL32", symbol = "?DrawQuad@EffectDrawingF127@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
   { offset = 0x5A0, type = "REL32", symbol = "?SetBlendMode@EffectDrawingF127@@QAEXH@Z", target = 0x0040C7F0 },
 ]
+
+[units."transition-render-00432200"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432200"]
+symbol = "?DrawTransition00432200@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432200
+size = 175
+compare_size = 175
+relocations = [
+  { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x84, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0x8E, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0xA4, type = "REL32", symbol = "?FillTransitionRectangleF128@@YAXPBUtagRECT@@K@Z", target = 0x00403910 },
+]
+
+[units."transition-render-004322b0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition004322B0"]
+symbol = "?DrawTransition004322B0@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x004322B0
+size = 172
+compare_size = 172
+relocations = [
+  { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x81, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+  { offset = 0x8B, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0xA1, type = "REL32", symbol = "?FillTransitionRectangleF128@@YAXPBUtagRECT@@K@Z", target = 0x00403910 },
+]
+
+[units."transition-render-00432360"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432360"]
+symbol = "?DrawTransition00432360@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432360
+size = 168
+compare_size = 168
+relocations = [
+  { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x59, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x6C, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x9D, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432410"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432410"]
+symbol = "?DrawTransition00432410@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432410
+size = 189
+compare_size = 189
+relocations = [
+  { offset = 0x20, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x32, type = "REL32", symbol = "??0RectTransitionQuadF128@@QAE@PBUtagRECT@@@Z", target = 0x0040DB50 },
+  { offset = 0x39, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x42, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x5F, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x7A, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xB2, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-004324d0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition004324D0"]
+symbol = "?DrawTransition004324D0@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x004324D0
+size = 389
+compare_size = 389
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x17, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xCC, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xDE, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xE9, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xFF, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x105, type = "DIR32", symbol = "__real@3fc00000", target = 0x006581E0 },
+  { offset = 0x10B, type = "DIR32", symbol = "__real@42b40000", target = 0x006581DC },
+  { offset = 0x150, type = "REL32", symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004116F0 },
+  { offset = 0x170, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432660"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432660"]
+symbol = "?DrawTransition00432660@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432660
+size = 396
+compare_size = 396
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x17, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xCE, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xE0, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xE6, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xFE, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x112, type = "DIR32", symbol = "__real@3fc00000", target = 0x006581E0 },
+  { offset = 0x157, type = "REL32", symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004116F0 },
+  { offset = 0x177, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-004327f0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition004327F0"]
+symbol = "?DrawTransition004327F0@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x004327F0
+size = 355
+compare_size = 355
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x16, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x45, type = "REL32", symbol = "_rand", target = 0x006418AB },
+  { offset = 0x57, type = "DIR32", symbol = "__real@453b8000", target = 0x00657484 },
+  { offset = 0x64, type = "DIR32", symbol = "?g_TransitionColumns@@3PAMA", target = 0x0068BE58 },
+  { offset = 0x6D, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x76, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xEA, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xFC, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0x109, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x122, type = "DIR32", symbol = "?g_TransitionColumns@@3PAMA", target = 0x0068BE58 },
+  { offset = 0x133, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x153, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432960"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432960"]
+symbol = "?DrawTransition00432960@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432960
+size = 386
+compare_size = 386
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x17, type = "REL32", symbol = "?SetBlendMode@Graphics@@YAXH@Z", target = 0x00401F50 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x56, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x8D, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xDC, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xEE, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xFB, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x119, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x14D, type = "REL32", symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004115C0 },
+  { offset = 0x16D, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432af0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432AF0"]
+symbol = "?DrawTransition00432AF0@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432AF0
+size = 325
+compare_size = 325
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x16, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_TransitionPhase@@3MA", target = 0x0068C85C },
+  { offset = 0x29, type = "DIR32", symbol = "?g_TransitionAmplitude@@3MA", target = 0x0068C858 },
+  { offset = 0x32, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x58, type = "DIR32", symbol = "?g_TransitionPhase@@3MA", target = 0x0068C85C },
+  { offset = 0x5E, type = "DIR32", symbol = "__real@41000000", target = 0x00657D70 },
+  { offset = 0x64, type = "DIR32", symbol = "?g_TransitionPhase@@3MA", target = 0x0068C85C },
+  { offset = 0x6A, type = "DIR32", symbol = "?g_TransitionAmplitude@@3MA", target = 0x0068C858 },
+  { offset = 0x70, type = "DIR32", symbol = "__real@41700000", target = 0x00657CBC },
+  { offset = 0x76, type = "DIR32", symbol = "?g_TransitionAmplitude@@3MA", target = 0x0068C858 },
+  { offset = 0xC6, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xD8, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xE8, type = "DIR32", symbol = "?g_TransitionPhase@@3MA", target = 0x0068C85C },
+  { offset = 0xEE, type = "DIR32", symbol = "__real@3c8efa33", target = 0x00657828 },
+  { offset = 0xF4, type = "DIR32", symbol = "__real@40400000", target = 0x00657CF8 },
+  { offset = 0xFD, type = "REL32", symbol = "?CameraSineAt0040D940@@YAMM@Z", target = 0x0040D940 },
+  { offset = 0x106, type = "DIR32", symbol = "?g_TransitionAmplitude@@3MA", target = 0x0068C858 },
+  { offset = 0x115, type = "REL32", symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z", target = 0x00411500 },
+  { offset = 0x135, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432c40"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432C40"]
+symbol = "?DrawTransition00432C40@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432C40
+size = 300
+compare_size = 300
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x16, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x1E, type = "REL32", symbol = "_rand", target = 0x006418AB },
+  { offset = 0x45, type = "DIR32", symbol = "?g_TransitionDirectionOne@@3MA", target = 0x0066C244 },
+  { offset = 0x4B, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x8A, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x9C, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xC5, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xDA, type = "DIR32", symbol = "?g_TransitionDirectionOne@@3MA", target = 0x0066C244 },
+  { offset = 0xE0, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0xFF, type = "REL32", symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004116F0 },
+  { offset = 0x11F, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."transition-render-00432d70"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["DrawTransition00432D70"]
+symbol = "?DrawTransition00432D70@@YAXPBQAUIDirect3DTexture8@@@Z"
+target_address = 0x00432D70
+size = 297
+compare_size = 297
+relocations = [
+  { offset = 0x10, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x16, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x1E, type = "REL32", symbol = "_rand", target = 0x006418AB },
+  { offset = 0x45, type = "DIR32", symbol = "?g_TransitionDirectionTwo@@3MA", target = 0x0066C248 },
+  { offset = 0x4B, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0x95, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0xA7, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0xD1, type = "DIR32", symbol = "?g_TransitionFrame@@3HA", target = 0x0066C240 },
+  { offset = 0xD7, type = "DIR32", symbol = "?g_TransitionDirectionTwo@@3MA", target = 0x0066C248 },
+  { offset = 0xDD, type = "DIR32", symbol = "__real@40000000", target = 0x00657480 },
+  { offset = 0xFC, type = "REL32", symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z", target = 0x004116F0 },
+  { offset = 0x11C, type = "REL32", symbol = "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z", target = 0x004029F0 },
+]
+
+[units."effect-layer-00449b50"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer00449B50::Draw"]
+symbol = "?Draw@EffectLayer00449B50@@QAEXXZ"
+target_address = 0x00449B50
+size = 358
+compare_size = 358
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
+
+[units."effect-layer-0044a2e0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer0044A2E0::Draw"]
+symbol = "?Draw@EffectLayer0044A2E0@@QAEXXZ"
+target_address = 0x0044A2E0
+size = 358
+compare_size = 358
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xFD, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0x103, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x117, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x15E, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
+
+[units."effect-layer-0044ac60"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer0044AC60::Draw"]
+symbol = "?Draw@EffectLayer0044AC60@@QAEXXZ"
+target_address = 0x0044AC60
+size = 284
+compare_size = 284
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4075900000000000", target = 0x00658608 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
+
+[units."effect-layer-0044af00"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer0044AF00::Draw"]
+symbol = "?Draw@EffectLayer0044AF00@@QAEXXZ"
+target_address = 0x0044AF00
+size = 284
+compare_size = 284
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4075900000000000", target = 0x00658608 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
+
+[units."effect-layer-0044cc20"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer0044CC20::Draw"]
+symbol = "?Draw@EffectLayer0044CC20@@QAEXXZ"
+target_address = 0x0044CC20
+size = 284
+compare_size = 284
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
+
+[units."effect-layer-0044cec0"]
+source = "src/SceneTransitionLayers.cpp"
+object = "build/matching/SceneTransitionLayers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["EffectLayer0044CEC0::Draw"]
+symbol = "?Draw@EffectLayer0044CEC0@@QAEXXZ"
+target_address = 0x0044CEC0
+size = 284
+compare_size = 284
+relocations = [
+  { offset = 0xB, type = "DIR32", symbol = "?g_LayerCameraX@@3MA", target = 0x00671404 },
+  { offset = 0x11, type = "DIR32", symbol = "__real@43200000", target = 0x00657834 },
+  { offset = 0x16, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x1F, type = "DIR32", symbol = "?g_LayerCameraY@@3MA", target = 0x006713C4 },
+  { offset = 0x24, type = "REL32", symbol = "__ftol2", target = 0x006406AC },
+  { offset = 0x34, type = "REL32", symbol = "?SetBlendMode@LayerDrawingF128@@QAEXH@Z", target = 0x0040C7F0 },
+  { offset = 0x52, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x58, type = "DIR32", symbol = "__real@4069000000000000", target = 0x00658470 },
+  { offset = 0x68, type = "DIR32", symbol = "__real@3fe3333333333333", target = 0x00658478 },
+  { offset = 0x6E, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0x82, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0xB2, type = "DIR32", symbol = "__real@3fe8000000000000", target = 0x006583E8 },
+  { offset = 0xB8, type = "DIR32", symbol = "__real@4074000000000000", target = 0x00658468 },
+  { offset = 0xCC, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+  { offset = 0x114, type = "REL32", symbol = "?DrawSprite@LayerDrawingF128@@QAEXHMMKMMMME@Z", target = 0x0040CA80 },
+]
