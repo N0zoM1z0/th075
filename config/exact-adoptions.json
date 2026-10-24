@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F096",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F097",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1d373f0f850d47d97a2181adce084f4042c7f0b573348fe89a7136c8638ca4ef"
+      "current_sha256": "565ea29f045cf25677f4d55deef4c9b5887461da2a48798b19c00fd302bab9e6"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "2d168f977dff028c7e59d7376adfea48af9509aec0f58afdc1bd28eee3fb51de"
+      "current_sha256": "8b399b891860184343b01c7217498edfdf20f3c0aafcf6fb08da1a44c7d57d6d"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "e2356cf124cd5ceaf673a14529561918b8955ffc505273c7bae87da65f4ccb8b"
+      "current_sha256": "0ae47cd29bf346bbb518f3d620f134a6fa4a610f3b3ea4c5bdeaf46793353137"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "6eae4d2d1ca92de1f2c74152553d4e5001694387d8006db4eb299db40b8e95e9"
+      "current_sha256": "e3c8f7a6f00b4f1dfc4636f786d57587f95f75274ba6168372aaca50659dd889"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a6ce20518e0732eae79d3dd9921bd173b756715e8e3f1a59bb31f407dad2dde7"
+      "current_sha256": "286c6f37f2c11b1e8c9d373b78b34cc3f6222aa14cf66493ffdae19ba3eebd10"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "b9ead168f9432f64cf6d05825845a9879c7956d1ba3a35031c8c282218b0d036"
+      "current_sha256": "ab5183d8cb49626c0cc787c83f8e9ab8ebd6d6f4d3141ed303b94b2eed1a2f58"
     }
   },
   "functions": [
@@ -5804,6 +5804,94 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040C730",
+        "size": "173",
+        "span_end": "0x0040C7DC",
+        "current_name": "FUN_0040c730",
+        "proposed_name": "TextureManager::UploadTexture",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R014",
+        "owner": "",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040C730",
+        "size": "173",
+        "span_end": "0x0040C7DC",
+        "current_name": "FUN_0040c730",
+        "proposed_name": "TextureUpload40C730::Upload",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TextureUpload40C730::Upload(BitmapUpload40C590*, IDirect3DTexture8**)",
+        "is_thunk": "false",
+        "source_file": "src/TextureUpload40C730.cpp",
+        "evidence": "R014; F097; scripts/repo-python scripts/replay-exact-units.py --unit texture-upload-0040c730",
+        "owner": "authored",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F097: complete173-byte independent canonical cold exact; two actual parameters/RET8 atadapter andsolecaller,all92 instructions/eight packets/three realdirectfields acrossfamily bound; callerresolvesSDKtexture,savesitinalivepointerlocal,checksnull,andpassesimage plusaddress ofSDKpointer withoriginalownerECX; adaptersavedECXotherwiseunused,allfiveSDKCOMstdcallpackets/32-byteSurfaceDesc/8-byteLockRect andtrue72-byteframe reviewed; threeactualunusedmetadata reads/stores retained,noinertpadding; GetSurfaceLevel andGetDesc precedetextureslotsnapshot,thenRelease/LockRect/byte-threewordbitmapconversion/UnlockRect; allCFGjoins andfournegativecontrols pass; flatnaturalcanonicalbody,allpartialowner/bitmapviews pointeronly andneverconstructed; oldheaders andaccepteddependency descriptors/sources/objects unchanged; R014roles retainedbyaliases; originalnames/scopes/completeownerlayout unknown"
+      },
+      "origin": {
+        "address": "0x0040C730",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R014"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040C6F0",
+        "size": "54",
+        "span_end": "0x0040C725",
+        "current_name": "FUN_0040c6f0",
+        "proposed_name": "TextureManager::UploadByHandle",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R014",
+        "owner": "",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040C6F0",
+        "size": "54",
+        "span_end": "0x0040C725",
+        "current_name": "FUN_0040c6f0",
+        "proposed_name": "TextureUpload40C730::UploadByHandle",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TextureUpload40C730::UploadByHandle(BitmapUpload40C590*, int)",
+        "is_thunk": "false",
+        "source_file": "src/TextureUpload40C730.cpp",
+        "evidence": "R014; F097; scripts/repo-python scripts/replay-exact-units.py --unit texture-upload-handle-0040c6f0",
+        "owner": "authored",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F097: complete54-byte independent canonical cold exact; two actual parameters/RET8 atadapter andsolecaller,all92 instructions/eight packets/three realdirectfields acrossfamily bound; callerresolvesSDKtexture,savesitinalivepointerlocal,checksnull,andpassesimage plusaddress ofSDKpointer withoriginalownerECX; adaptersavedECXotherwiseunused,allfiveSDKCOMstdcallpackets/32-byteSurfaceDesc/8-byteLockRect andtrue72-byteframe reviewed; threeactualunusedmetadata reads/stores retained,noinertpadding; GetSurfaceLevel andGetDesc precedetextureslotsnapshot,thenRelease/LockRect/byte-threewordbitmapconversion/UnlockRect; allCFGjoins andfournegativecontrols pass; flatnaturalcanonicalbody,allpartialowner/bitmapviews pointeronly andneverconstructed; oldheaders andaccepteddependency descriptors/sources/objects unchanged; R014roles retainedbyaliases; originalnames/scopes/completeownerlayout unknown"
+      },
+      "origin": {
+        "address": "0x0040C6F0",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R014"
       }
     }
   ],
@@ -99252,6 +99340,70 @@
           "target": 4308785
         }
       ]
+    },
+    "texture-upload-0040c730": {
+      "source": "src/TextureUpload40C730.cpp",
+      "object": "build/matching/TextureUpload40C730.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextureUpload40C730::Upload"
+      ],
+      "symbol": "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z",
+      "target_address": 4245296,
+      "size": 173,
+      "compare_size": 173,
+      "relocations": [
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z",
+          "target": 4307344
+        }
+      ]
+    },
+    "texture-upload-handle-0040c6f0": {
+      "source": "src/TextureUpload40C730.cpp",
+      "object": "build/matching/TextureUpload40C730.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TextureUpload40C730::UploadByHandle"
+      ],
+      "symbol": "?UploadByHandle@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@H@Z",
+      "target_address": 4245232,
+      "size": 54,
+      "compare_size": 54,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z",
+          "target": 4245696
+        },
+        {
+          "offset": 44,
+          "type": "REL32",
+          "symbol": "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z",
+          "target": 4245296
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -99415,6 +99567,8 @@
     "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59",
     "src/TextureHandle40C8C0.cpp": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d",
     "src/TexturePalette40C590.cpp": "7780bb6e9515d52c0b7260a049c81f9fb580d54c06c60c569a3ebbe971c11b24",
-    "src/BitmapUpload41B990.cpp": "00356d849581850141dc74fb53a494ed9d93f5b475a37f7ac740a73892279726"
+    "src/BitmapUpload41B990.cpp": "00356d849581850141dc74fb53a494ed9d93f5b475a37f7ac740a73892279726",
+    "src/TextureUpload40C730.cpp": "456c2025c3a60dedc5f84b3e59ee2a673aca226f424238a075f59c7caf59b6de",
+    "src/TextureUpload40C730.hpp": "8b15a1211eadbf3cac823e8e2f11e0b7b2612b789da74ac9d90deb6542a8fcdd"
   }
 }

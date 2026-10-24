@@ -21723,3 +21723,64 @@ notes are retained privately; no F097 source or exact credit yet. Its sole
 54-byte R014 caller passes a real live texture-pointer slot and original owner
 ECX to the 173-byte adapter; consider that complete caller as a separate unit
 after its own independent source, physical binding and cold comparison.
+
+## F097 complete texture upload and handle adapter checkpoint (2026-10-24)
+
+R014 upload adapter `0040C730..0040C7DC` (173 bytes) and its sole static caller
+`0040C6F0..0040C725` (54 bytes) independently pass canonical cold comparison as
+TextureUpload40C730::Upload and UploadByHandle. All 227 bytes, 92 instructions,
+eight call packets and three direct relocation fields match. Three/ten INT3
+alignment bytes remain outside the respective extents. Two new source/header
+inputs provide one natural body per entry and pointer-only interfaces; no old
+header or source changes. Both historical R014 roles remain by aliases.
+
+Both entries have two actual parameters and RET8. The caller resolves a texture
+by index, saves the SDK pointer in a genuine local, checks null, then passes
+its address and the bitmap with original owner ECX to the adapter. The adapter
+saves ECX without otherwise consuming it. Its second argument is a pointer to
+a live texture-pointer slot, not a direct texture pointer or constructed owner.
+Original complete owner identity/layout and ignored result prototypes remain
+unknown. Partial owner/bitmap views are never constructed or embedded.
+
+The adapter retains three actual metadata reads/stores at bitmap+4/+8/+0xC
+with no later consumer. GetSurfaceLevel uses the caller's texture slot first;
+GetDesc supplies surface Width, then the texture slot is loaded again before
+surface Release. Five COM calls use true SDK stdcall packets including this:
+12/8/4/20/8 bytes. Complete SDK surface description and lock records occupy
+32/8 bytes with Width/pBits at offsets 24/4. LockRect HRESULT zero gates the
+byte/three-word bitmap conversion and UnlockRect. The native unused Pitch and
+existing error behavior remain. No metadata computation or API ordering repair.
+
+Both full CFGs, 72/8-byte frames, actual SDK output objects and all eight packets
+pass review. Wrong converter-ret8, LockRect-ret16, adapter-ret4 and caller-ret4
+controls fail. Bounded name/scope controls explain compiler local allocation;
+the final canonical source uses flat scopes and ordinary lockInfo/pSurface
+names, with all physical frame fields equal. Original source names/scopes are
+not inferred from byte equality. No padding, inert locals, masks, aliases or
+shortened comparison. Only the two new units are cold compared in one serial
+object build; old accepted resolver/bitmap dependencies remain unchanged.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-upload-0040c730 --unit texture-upload-handle-0040c6f0
+```
+
+All 191 old units, 95 canonical objects, 161 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,349 other function rows remain unchanged.
+F009 plus 133 additions retains 556,222 code bytes and 163 inputs. Preserve all
+f097 native/attested/ABI/physical/cold/parent/progress evidence and compiler
+control sources, logs and PDBs. The 97
+unknown origins and old unaccepted drafts receive no credit.
+Next F098 is the complete 523-byte R014 bitmap-palette loader `0040C380` in the
+same texture graph. Reconcile file reads, complete format/SDK records, all 256
+palette entries and error paths before natural source. Goal 98% remains active
+and incomplete.
+
+Current totals: 193 exact functions/units, 566,105 code bytes, 28.69% of
+reviewed authored bytes and 28.63% conservatively including all pending bytes.
+
+Final F097 CI passes 3,603 tests in 145.142s. Bounded cleanup
+removes three obsolete reproducible probe objects (85,215 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F098 whole native index, root decompile, caller query and allocation-parent
+exports are retained privately; no F098 source or exact credit yet.

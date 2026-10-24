@@ -17746,3 +17746,30 @@ relocations = [
   { offset = 0x5D9, type = "DIR32", symbol = "$L434", target = 0x0041BE82 },
   { offset = 0x5DD, type = "DIR32", symbol = "$L284", target = 0x0041BF31 },
 ]
+
+[units."texture-upload-0040c730"]
+source = "src/TextureUpload40C730.cpp"
+object = "build/matching/TextureUpload40C730.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TextureUpload40C730::Upload"]
+symbol = "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z"
+target_address = 0x0040C730
+size = 173
+compare_size = 173
+relocations = [
+  { offset = 0x95, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
+]
+
+[units."texture-upload-handle-0040c6f0"]
+source = "src/TextureUpload40C730.cpp"
+object = "build/matching/TextureUpload40C730.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TextureUpload40C730::UploadByHandle"]
+symbol = "?UploadByHandle@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@H@Z"
+target_address = 0x0040C6F0
+size = 54
+compare_size = 54
+relocations = [
+  { offset = 0x11, type = "REL32", symbol = "?GetTexture@SpriteTextures40CA80@@QAEPAUIDirect3DTexture8@@H@Z", target = 0x0040C8C0 },
+  { offset = 0x2C, type = "REL32", symbol = "?Upload@TextureUpload40C730@@QAEXPAVBitmapUpload40C590@@PAPAUIDirect3DTexture8@@@Z", target = 0x0040C730 },
+]

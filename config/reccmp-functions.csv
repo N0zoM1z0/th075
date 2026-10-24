@@ -190,3 +190,5 @@ SpriteQuad40CA80::SpriteQuad40CA80,0x0040D990,function
 SpriteTextures40CA80::GetTexture,0x0040C8C0,function
 TexturePalette40C8C0::Refresh,0x0040C590,function
 BitmapUpload40C590::CopyTo,0x0041B990,function
+TextureUpload40C730::Upload,0x0040C730,function
+TextureUpload40C730::UploadByHandle,0x0040C6F0,function
