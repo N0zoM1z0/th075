@@ -174,3 +174,4 @@ BattleModeFive448710::RenderMenu,0x00448710,function
 BattleDamageFlash4406C0::RenderFlash,0x004406C0,function
 BattleRoundBanner441EA0::RenderRoundBanner,0x00441EA0,function
 DrawAtlasNumberAt00446B90,0x00446B90,function
+AtlasQuad446B90::AtlasQuad446B90,0x0040DA00,function

@@ -173,3 +173,4 @@ BattleModeFive448710::RenderMenu
 BattleDamageFlash4406C0::RenderFlash
 BattleRoundBanner441EA0::RenderRoundBanner
 DrawAtlasNumberAt00446B90
+AtlasQuad446B90::AtlasQuad446B90
