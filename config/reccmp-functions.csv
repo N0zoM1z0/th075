@@ -318,3 +318,5 @@ NameEntryPlayerF129::Render,0x0042A560,function
 NameEntrySharedF129::Render,0x0042B570,function
 SelectionUpdateF130::Update,0x00433CF0,function
 FighterControlsF130::UpdateControls,0x00452F10,function
+ChoiceAnimationF131::Update,0x004350E0,function
+ResultSelectionF131::Update,0x0042F970,function

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F130",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "afe1d350cc7ef75dee835ef504c76a521a0124424eae0fc6da10048ee39ab05b"
+      "current_sha256": "3fff908ed44b46fdc009ba7760f0c29e9fd35d424e4a9a7263fbeb970ecd9fbd"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "cf0440ae53e800399bf4468f4aaceb5fa9391e723c880b7af5b5c667fcb60faa"
+      "current_sha256": "2f9b73f45b21f7a092b65cc289793422da76479f0a0b4200d306d93dea697b6e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "269b5e8c0995faee7ac38be42f1b5dea4694b711213fb7f11cafe23baad660e6"
+      "current_sha256": "9623b2789a825738d59b554d570ae90a33b5914b0888e59b5ec56e0ab4d2e9b3"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c636febd6d4acf574730533048f03f03df3035564c79181eaf8467912732ce8c"
+      "current_sha256": "2a78cbd4a40afeb3af16f74ef9cd04aaeaeb917e26636ef0d3a9b6cfc5d17873"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "42a3facdb9447e2b394c385463604b7cdfe159f602a0f11ef4e38123cf9b32f6"
+      "current_sha256": "d499b7ebc117ec912ac421ff417ad75d6730d9783429f942713f1709563aea32"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "9952bc731422a59298cf57cf40c026585f97e541f66e5fc0131c79d13fb7ba2d"
+      "current_sha256": "8b296776dc9d0978e416bdf40610b3cc754831706ee7ec63b364d33c74933b4e"
     }
   },
   "functions": [
@@ -11436,6 +11436,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004350E0",
+        "size": "1923",
+        "span_end": "0x00435862",
+        "current_name": "FUN_004350e0",
+        "proposed_name": "CharacterSelectScene::UpdateChoiceAnimation",
+        "module": "CharacterSelectScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004350E0",
+        "size": "1923",
+        "span_end": "0x00435862",
+        "current_name": "FUN_004350e0",
+        "proposed_name": "ChoiceAnimationF131::Update",
+        "module": "CharacterSelectScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ChoiceAnimationF131::Update(signed char side)",
+        "is_thunk": "false",
+        "source_file": "src/SceneSelection.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F131; scripts/repo-python scripts/replay-exact-units.py --unit selection-choice-animation-004350e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F131: complete 1923byte independently canonical cold exact; two scene bodies3726codebytes/948instructions/42calls/all87actual real fields. Full own CFG/CPU-x87 joins,12byte choice frame/RET4 and4byte result frame+savedESI/plainRET/followingINT3 reviewed; no table/shared/cropped tail. Choice keeps signed player/28stride held counters/NaN-aware animations/true horizontal byte-1 andvertical int-8/six separate absolute calls/repeated stage mapping/unlocked loops/signed modulo/random variant/player0 countdown. Result true short AX2202-or-E/virtualslot8 noargument packet/signed inputs andselection bytes/unsigned unlock andcursor byte<255/25addition/unsigned previous-page versus explicitly signed next-page division/Count receiver+18/ESI capture before call preserved. Only two genuine direction locals;34name address-only fixture explains actual bucket placement without additional storage/scope. First preview has7local-slot differences andcursor2byte gap, second complete exact. All private scene/sound/recorded owners pointer-only, never instantiated/embedded. Unknown absolute wrapper/all97pending origins retained; no helper/library/global/data/layout credit. Large0050A580 remains unfinished:81539code+567owned table=82106full comparison; whole17435instruction/846call CPU-x87 joins and11nested SelectRange calls withouter2/3arguments reviewed, typed semantics/locals/source/emission absent. No large-function exact credit. Six wrong real absolute/sound/stage/present/count/page bindings rejected. No padding/inert locals/guessed arrays/masks/aliases/ABI misdeclarations/pasted decompile/codebytes/assembly/fake returns/truncation/conditional exact bodies. All319priorunits/129objects/197inputs/218originfiles/nineheaders/91drafts unchanged; R041/R040 roles retained byaliases; original names/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x004350E0",
+        "origin": "authored",
+        "subsystem": "CharacterSelectScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042F970",
+        "size": "1803",
+        "span_end": "0x0043007A",
+        "current_name": "FUN_0042f970",
+        "proposed_name": "ResultScene::UpdateSelection",
+        "module": "ResultScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042F970",
+        "size": "1803",
+        "span_end": "0x0043007A",
+        "current_name": "FUN_0042f970",
+        "proposed_name": "ResultSelectionF131::Update",
+        "module": "ResultScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "short ResultSelectionF131::Update()",
+        "is_thunk": "false",
+        "source_file": "src/SceneSelection.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F131; scripts/repo-python scripts/replay-exact-units.py --unit result-update-selection-0042f970",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F131: complete 1803byte independently canonical cold exact; two scene bodies3726codebytes/948instructions/42calls/all87actual real fields. Full own CFG/CPU-x87 joins,12byte choice frame/RET4 and4byte result frame+savedESI/plainRET/followingINT3 reviewed; no table/shared/cropped tail. Choice keeps signed player/28stride held counters/NaN-aware animations/true horizontal byte-1 andvertical int-8/six separate absolute calls/repeated stage mapping/unlocked loops/signed modulo/random variant/player0 countdown. Result true short AX2202-or-E/virtualslot8 noargument packet/signed inputs andselection bytes/unsigned unlock andcursor byte<255/25addition/unsigned previous-page versus explicitly signed next-page division/Count receiver+18/ESI capture before call preserved. Only two genuine direction locals;34name address-only fixture explains actual bucket placement without additional storage/scope. First preview has7local-slot differences andcursor2byte gap, second complete exact. All private scene/sound/recorded owners pointer-only, never instantiated/embedded. Unknown absolute wrapper/all97pending origins retained; no helper/library/global/data/layout credit. Large0050A580 remains unfinished:81539code+567owned table=82106full comparison; whole17435instruction/846call CPU-x87 joins and11nested SelectRange calls withouter2/3arguments reviewed, typed semantics/locals/source/emission absent. No large-function exact credit. Six wrong real absolute/sound/stage/present/count/page bindings rejected. No padding/inert locals/guessed arrays/masks/aliases/ABI misdeclarations/pasted decompile/codebytes/assembly/fake returns/truncation/conditional exact bodies. All319priorunits/129objects/197inputs/218originfiles/nineheaders/91drafts unchanged; R041/R040 roles retained byaliases; original names/types/private layouts provisional."
+      },
+      "origin": {
+        "address": "0x0042F970",
+        "origin": "authored",
+        "subsystem": "ResultScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -137907,6 +137995,576 @@
           "target": 4541808
         }
       ]
+    },
+    "selection-choice-animation-004350e0": {
+      "source": "src/SceneSelection.cpp",
+      "object": "build/matching/SceneSelection.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ChoiceAnimationF131::Update"
+      ],
+      "symbol": "?Update@ChoiceAnimationF131@@QAEXC@Z",
+      "target_address": 4411616,
+      "size": 1923,
+      "compare_size": 1923,
+      "relocations": [
+        {
+          "offset": 25,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 86,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 113,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 147,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 174,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 208,
+          "type": "DIR32",
+          "symbol": "__real@42200000",
+          "target": 6649944
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "__real@40000000",
+          "target": 6648960
+        },
+        {
+          "offset": 269,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 296,
+          "type": "DIR32",
+          "symbol": "__real@3f800000",
+          "target": 6648956
+        },
+        {
+          "offset": 323,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 382,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 387,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 588,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 616,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 644,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 760,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 809,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 825,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 832,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 968,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 984,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1012,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1069,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1117,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1134,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1141,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1162,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1219,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1268,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1285,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1315,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 1360,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 1399,
+          "type": "REL32",
+          "symbol": "?AbsoluteSelectionInputF130@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 1512,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1560,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1577,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1675,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1724,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1740,
+          "type": "DIR32",
+          "symbol": "?g_SelectionStageF131@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1753,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1758,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1823,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1828,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1850,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        }
+      ]
+    },
+    "result-update-selection-0042f970": {
+      "source": "src/SceneSelection.cpp",
+      "object": "build/matching/SceneSelection.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ResultSelectionF131::Update"
+      ],
+      "symbol": "?Update@ResultSelectionF131@@QAEFXZ",
+      "target_address": 4389232,
+      "size": 1803,
+      "compare_size": 1803,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "?PollInput@ResultSelectionF131@@QAEXXZ",
+          "target": 4394368
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?Present@Graphics@@YAXXZ",
+          "target": 4204784
+        },
+        {
+          "offset": 68,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 73,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 126,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 148,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 153,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 207,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 238,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 489,
+          "type": "REL32",
+          "symbol": "?LoadSelectedCharacterResources@ResultSelectionF131@@QAEXXZ",
+          "target": 4394720
+        },
+        {
+          "offset": 497,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 523,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 528,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 780,
+          "type": "REL32",
+          "symbol": "?LoadSelectedCharacterResources@ResultSelectionF131@@QAEXXZ",
+          "target": 4394720
+        },
+        {
+          "offset": 788,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 815,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 820,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 869,
+          "type": "REL32",
+          "symbol": "?Count@ResultRecordsF131@@QBEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 899,
+          "type": "REL32",
+          "symbol": "?BuildRecordPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395120
+        },
+        {
+          "offset": 921,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 926,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 971,
+          "type": "REL32",
+          "symbol": "?Count@ResultRecordsF131@@QBEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 1006,
+          "type": "REL32",
+          "symbol": "?BuildRecordPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395120
+        },
+        {
+          "offset": 1032,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1037,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1288,
+          "type": "REL32",
+          "symbol": "?LoadSelectedCharacterResources@ResultSelectionF131@@QAEXXZ",
+          "target": 4394720
+        },
+        {
+          "offset": 1308,
+          "type": "REL32",
+          "symbol": "?BuildRecordPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395120
+        },
+        {
+          "offset": 1334,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1339,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1592,
+          "type": "REL32",
+          "symbol": "?LoadSelectedCharacterResources@ResultSelectionF131@@QAEXXZ",
+          "target": 4394720
+        },
+        {
+          "offset": 1612,
+          "type": "REL32",
+          "symbol": "?BuildRecordPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395120
+        },
+        {
+          "offset": 1688,
+          "type": "REL32",
+          "symbol": "?BuildRecordPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395120
+        },
+        {
+          "offset": 1696,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1701,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1733,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1738,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 1756,
+          "type": "REL32",
+          "symbol": "?BuildCounterPage@ResultSelectionF131@@QAEXXZ",
+          "target": 4395856
+        },
+        {
+          "offset": 1779,
+          "type": "DIR32",
+          "symbol": "?g_SelectionSound@@3PAVSelectionSoundF130@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 1784,
+          "type": "REL32",
+          "symbol": "?Play@SelectionSoundF130@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -138106,6 +138764,7 @@
     "src/BattleEffectRendering.cpp": "cb89e0245680962f87070e610b6ca773c07492841a81fc99f897602681e8b719",
     "src/SceneTransitionLayers.cpp": "ab9533d301679bd885ed8ad5b63534accc9cd8d586cdb7f48a5af67e867fab70",
     "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00",
-    "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322"
+    "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322",
+    "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14"
   }
 }

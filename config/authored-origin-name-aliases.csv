@@ -262,3 +262,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0042B570,NameEntryScene::RenderShared,NameEntrySharedF129::Render,R040,name-entry-shared-render-0042b570
 0x00433CF0,CharacterSelectScene::UpdatePlayerSelection,SelectionUpdateF130::Update,R043,selection-update-player-00433cf0
 0x00452F10,FighterState::UpdateControls,FighterControlsF130::UpdateControls,R045,fighter-update-controls-00452f10
+0x004350E0,CharacterSelectScene::UpdateChoiceAnimation,ChoiceAnimationF131::Update,R041,selection-choice-animation-004350e0
+0x0042F970,ResultScene::UpdateSelection,ResultSelectionF131::Update,R040,result-update-selection-0042f970

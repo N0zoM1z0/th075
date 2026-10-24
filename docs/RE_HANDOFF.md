@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F131 character/selection frontier below; preserve F085 and the F066 draft.
+is incomplete. Continue the F132 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 319 / 319 / 319 |
-| Exact code bytes | 712,015 |
-| Reviewed authored coverage | 712,015 / 1,973,516 (36.08%) |
-| Conservative coverage, including every pending byte | 712,015 / 1,977,124 (36.01%) |
+| Source-present / exact functions / exact units | 321 / 321 / 321 |
+| Exact code bytes | 715,741 |
+| Reviewed authored coverage | 715,741 / 1,973,516 (36.27%) |
+| Conservative coverage, including every pending byte | 715,741 / 1,977,124 (36.20%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **259 additions /
-702,132 code bytes / 197 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **261 additions /
+705,858 code bytes / 198 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,127 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F130
+## Latest accepted functions: F131
+
+R041 choice animation `004350E0/1923` and R040 result selection
+`0042F970/1803` pass canonical cold comparison: **3,726 code bytes,948
+instructions,42 actual calls and all87 real relocation fields**. Complete
+CFGs, CPU/x87 joins,12byte choice frame/RET4 and4byte result frame plus
+savedESI/plainRET are independently reviewed. Following INT3 is excluded;
+no owned table, shared tail or cropped extent is present. Only these two
+new units were cold-built, across one canonical object.
+
+Choice animation keeps the signed side argument,28stride held counters,
+NaN-aware float animation/equality branches and two genuine direction
+locals: signed horizontal byte at-1 and vertical int at-8. All six separate
+absolute-input calls, native key-repeat conditions, signed modulo, repeated
+stage mapping and unlocked-stage loops, random variant and player0-only
+countdown remain. A34name address-only compiler fixture selects semantic
+names for these two locals without extra storage or scope.
+
+Result selection returns a true short through AX:0x2202 on cancel, otherwise0x000E.
+Its observed virtual slot8 has no stack arguments. Native input/selection
+bytes remain signed, whereas unlock flags and the cursor byte at0x1BE are
+unsigned. The cursor advances by25 only while below255. The previous-page
+wrap uses unsigned Count-minus-one division; the next-page comparison uses
+an explicit signed conversion. The selected page is loaded into ESI before
+Count as native code requires. The actual record receiver is owner+0x18.
+Character/resource/counter/record rebuild and page-reset order is retained.
+The first preview differs only in seven local-slot fields and the unsigned
+cursor comparison's two-byte size change; the second is whole exact.
+
+All private scene/sound/recorded-container owners remain pointer-only and
+are never instantiated or embedded. Native helper receivers/reference
+widths/stack cleanup and cdecl Graphics::Present are retained without helper,
+library, global, data or layout credit. The absolute-input wrapper and all97
+pending origins stay unknown. Six wrong real absolute/sound/stage/present/
+count/page bindings fail whole comparison. No masks, ABI aliases, shortened
+extents, guessed arrays, padding, inert locals, pasted decompile/code bytes,
+assembly, fake returns or conditional exact bodies are used. Original
+names/types/private layouts remain provisional.
+
+Replay `selection-choice-animation-004350e0` and
+`result-update-selection-0042f970`. `.analysis/f131-cold-replay.log` records2/2
+exact across one object. All319 prior units,129 canonical objects,197 source
+inputs,218 origin files,nine shared headers,91 older active drafts and4,349
+other function rows remain unchanged. F009 plus261 additions retains705,858
+code bytes and198 new inputs. Historical R041/R040 roles remain through
+aliases. Preserve all f131 source/two previews/native/CFG/x87/receiver/frame/
+cursor/page/stage/name/constants/negative/binding/cold/parent evidence,
+logs, PDBs and the canonical object.
+
+The large character function at0050A580 is still unaccepted. Independent
+native review now proves all17,435 instructions/846 physical call packets,
+928byte frame/this-172/plainRET and every CPU/x87 stack join(max depth2).
+Exactly11nested SelectRange calls keep two or three genuine outer effect
+argument words separately from their own two arguments/RET8. Full native
+staging windows remain. Its199entry remap/92entry pointer table add567 bytes;
+the complete required comparison is82,106 bytes. A92entry native case index
+retains all shared-exit/cross-entry edges as part of that whole function.
+
+Natural uncompiled prefix/case800 fragments and a pointer-only declaration
+view are retained under `.analysis/object-action-50a580/`, frozen by
+`.analysis/f131-advance-source-start.json`. The prefix owner/opponent chain,
+real short countdown and complete439byte case800 behavior/call widths were
+reviewed manually. No partial wrapper, fabricated default/case, padding or
+compilation is used. **91 dispatch entries remain unwritten**; typed value/
+receiver/local semantics, full natural source and emitted bytes are still
+unfinished. All81,539 code bytes remain in the conservative denominator and
+receive no source-presence or exact credit.
+
+Current totals: **321 exact functions/units,715,741 code bytes**,36.27% of
+reviewed authored bytes and **36.20% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in166.848s; seven exact-checkpoint tests
+passed in1.314s; target/tracking/progress/diff checks passed. Cleanup removed
+two obsolete own scene probes plus one34name fixture(35,450bytes),
+and375 reproducible Python bytecode files(8,283,506bytes).
+All actual compiler inputs/two previews/large-function source fragments,
+native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
+evidence, logs, PDBs and130 canonical objects remain. Receipts:
+`.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F132
+
+Continue the authored `CharacterObject::AdvanceAt0050A580` at
+`0050A580/81539`, from F131's current native/source investigation. This is the
+next reconstruction task; no unrelated easier cohort replaces it.
+
+The full required comparison is **82,106 bytes**:81,539 code,368pointer table
+and199remap bytes. Native CFG reaches17,435 instructions/846 calls; full
+CPU/x87 joins,928byte frame/this-172/plainRET and the11nested outer-argument
+packets are proved. The frame and232 observed stack-slot displacements do
+not establish original local declarations or array/object extents.
+
+Use `.analysis/f131-character-selection-frontier/` and these private proofs:
+
+- `advance-dispatch-prereview.json`, `advance-stack-review.json` and
+  `.analysis/f131-advance-abi-proof.json` preserve the whole native extent,
+  stack joins, helper spans and physical packet widths.
+- `advance-case-index.json` provides92 dispatch investigation chunks with
+  original state labels, calls and outgoing edges. Chunks are not independent
+  functions and cannot receive partial exact credit.
+- `.analysis/object-action-50a580/` contains uncompiled pointer-only header,
+  prefix and case800 source fragments;91 dispatch entries remain unwritten.
+  `.analysis/f131-advance-source-start.json` freezes their inputs/limits.
+
+Continue independent typed receiver/argument/value and genuine local-role
+review, then natural source for every remaining case/shared/default path.
+Keep one complete body and compare the whole82,106bytes; never introduce
+padding, inert locals, guessed arrays, pasted decompile/code bytes, assembly,
+fake returns, partial wrappers or ABI aliases to force compiler geometry.
+Incomplete private owners stay pointer-only, never instantiated/embedded.
+No source presence or exact credit is claimed for this large function.
+
+Preserve321 accepted units, all retained failed-control drafts and97unknown
+origins; R268 evidence stays immutable. Cold-replay only new/affected units,
+keep builds serial and remove only obsolete reproducible outputs after
+freezing inputs and evidence. Run's16scene allocations/15unproved complete
+owners, QueueFile/ArchiveEntry's local record and the resource loader's
+texture/layout/filename extent remain unresolved; later phases stay deferred.
+
+## Previous accepted functions: F130
 
 R043 `SelectionUpdateF130::Update` at `00433CF0/3045` and R045
 `FighterControlsF130::UpdateControls` at `00452F10/2815` pass canonical cold
@@ -101,7 +221,7 @@ receivers/frames/masks/name observations/constants/negative/binding/cold/
 parent evidence, logs, PDBs and129 canonical objects remain. Receipts:
 `.analysis/f130-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F131
+## F131 investigation at the F130 checkpoint
 
 Independently review three authored candidates, **85,265 provisional code bytes**:
 

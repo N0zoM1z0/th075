@@ -317,3 +317,5 @@ NameEntryPlayerF129::Render
 NameEntrySharedF129::Render
 SelectionUpdateF130::Update
 FighterControlsF130::UpdateControls
+ChoiceAnimationF131::Update
+ResultSelectionF131::Update
