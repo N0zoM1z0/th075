@@ -208,3 +208,8 @@ FighterPattern457660::Load
 ScriptResource4205F0::LoadArchive
 ScriptResource4205F0::LoadFile
 SoundArchive4076A0::Load
+ScriptResource4205F0::Parse
+ScriptRecord421200::ScriptRecord421200
+ScriptRecord421200::~ScriptRecord421200
+ScriptSequence421250::ScriptSequence421250
+ScriptSequence421250::~ScriptSequence421250

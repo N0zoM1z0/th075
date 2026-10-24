@@ -106,6 +106,8 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
 
     def test_original_and_accepted_views_allow_only_literal_selected_pairs(self):
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        # Reverse approved exact transitions before the older origin transitions.
+        source['functions.csv'] = historical_functions(source['functions.csv'])
         absolute_spec = importlib.util.spec_from_file_location(
             'crt_absolute_successor_view', ROOT / 'scripts/verify-crt-absolute-contribution-origins.py')
         absolute = importlib.util.module_from_spec(absolute_spec)
@@ -185,7 +187,6 @@ class GlobalVectorLifetimeTests(unittest.TestCase):
             view = {name: [selected[r['address']][state + '_' + ('function' if name == 'functions.csv' else 'origin')]
                            if r['address'] in selected else r for r in rows]
                     for name, rows in source.items()}
-            view['functions.csv'] = historical_functions(view['functions.csv'])
             with patch.object(V, 'rows', side_effect=lambda name: view[name]):
                 V.verify_canonical(self.plan, original)
             bad = copy.deepcopy(view)

@@ -209,3 +209,8 @@ FighterPattern457660::Load,0x00457660,function
 ScriptResource4205F0::LoadArchive,0x004205F0,function
 ScriptResource4205F0::LoadFile,0x004206D0,function
 SoundArchive4076A0::Load,0x004076A0,function
+ScriptResource4205F0::Parse,0x00420880,function
+ScriptRecord421200::ScriptRecord421200,0x00421200,function
+ScriptRecord421200::~ScriptRecord421200,0x00421220,function
+ScriptSequence421250::ScriptSequence421250,0x00421250,function
+ScriptSequence421250::~ScriptSequence421250,0x004212A0,function

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F107",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F108",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d9739f65bba449a786c025ed78caa8d3f5e6f6e635f5499eb5cb0e79f9eeeda1"
+      "current_sha256": "ec38130f3126aea9f9ec3e249e03d76a3c9b6d205719c5af1202f35b21a35aa7"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "dba2aae7fe3da7465bc3a45dc22b7e59e1396ee3afe3a95ed8041b0a065230cf"
+      "current_sha256": "6cde56a71cf376d310b60d20eff88cc680e49625a561fd14e1635ad0a8e5b481"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "5ca5d2ce2a5bb459a7002c4e666044d6c5ba4f6055ae1db3f2a9654ac3788f96"
+      "current_sha256": "33ae76410343c7d7573095b4a0f0b6f633fdf0f1b37aaac5fbfffcee8da99693"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "968eb5c73814d140b5241646258ef8838c6ee5c9981d4b9d212b750805c08ce8"
+      "current_sha256": "10a660ebe230145dadd4890cb0681b6b26f32ef1f20c646fc04f9b21577c271d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "28a0b6e65dc12f4cd6b17f0ad780fa5dee77825b8732ee23513aa277daf11ab8"
+      "current_sha256": "9a332451ac6b71546f7c26ef0d2d5c45d66b637f2739e075b9a973ae53a19a11"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "4b19869c220d5a43d54f464d6e9858122bd12ead0914b7d81a3d5c1f8f9b63ce"
+      "current_sha256": "6fec2652fa1e1a1826cb3182ae00488c93ac2bccd7b80773c1cd45b70e093900"
     }
   },
   "functions": [
@@ -6640,6 +6640,226 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00420880",
+        "size": "2301",
+        "span_end": "0x0042117C",
+        "current_name": "FUN_00420880",
+        "proposed_name": "FighterScript::ParseAt00420880",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R070; complete target body/CFG, guarded parser switch and reviewed .sce caller",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00420880",
+        "size": "2301",
+        "span_end": "0x0042117C",
+        "current_name": "FUN_00420880",
+        "proposed_name": "ScriptResource4205F0::Parse",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ScriptResource4205F0::Parse(char*, unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/ScriptParser420880.cpp",
+        "evidence": "R070; complete target body/CFG, guarded parser switch and reviewed .sce caller; F108; scripts/repo-python scripts/replay-exact-units.py --unit script-parser-00420880",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F108: complete2301byte independent canonical cold exact; family2301+24+43+75+72=2515codebytes/all701instructions/100callpackets/132actualfields,rootalsoall128dispatchbytes/2429comparisononly,no datacredit; fullnormalCFG/stackjoins/RET8or0,real128/4/8/16/16byteframes; threewholeEHgraphs118code+172data/all31fields independentlyexact,9/1/1statesparent-1,nocompiler/helpercredit; completeRecord8(kind0/value2/ownedtext4,naturalpad1)andSequence20(actualvendor deque<Record8>)fromallrealfields/memberlifetimes/strides/stackextents,ctorinitializestextonly,dtorarraydeletewithoutreset,sequenceexplicitclearthenautomaticmembercleanup; parserstates0/1/2/3/4/99 plusdefault,realP/E/N/F/M/W/V/R scopes andoriginal2byteCP932tokens,shortdecimalwrap/nondigitreprocessing/quotedallocation+1/copy/NUL/commentLF/defaultnoprogressofallcases retained; all7DWORDswitchentriesand100selectors physicallyexact,actualCOFFlocaloffsets bindrealbranch/tablefields,noaliases; identicaloldScriptResourceinterfaceandpointer-onlyscript/groupownersneverinstantiated; firstnatural5bodyshapealreadyexact,fourgenuinelyusedscalarnamesfrompriorcompilermeasurementsresolve117realframefields,nopadding/inertlocals/manualreturns/EH/assembly/masks/croppedextent; fourwrongphysicalfields/threepacketmutationcontrols rejected; all210oldunits/106objects/174inputs/97unknownorigins/headers/drafts unchanged,R070roleretainedbyalias; originalnames/grouping/copyidentities/fullscriptownerlayoutunknown,recordfieldoriginalsignednessnotuniquelyprovedbywrites,compatible16bitcarrierused"
+      },
+      "origin": {
+        "address": "0x00420880",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R070"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00421200",
+        "size": "24",
+        "span_end": "0x00421217",
+        "current_name": "FUN_00421200",
+        "proposed_name": "FighterScript::InitializeRecordBuffer",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R153; config/script-buffer-origin-evidence.json; complete source-typed script buffer lifetime policies and independent whole parser ownership context",
+        "owner": "authored",
+        "notes": "Complete own extent, all exits/branches and following alignment are preserved. Four full guarded-array constructor/destructor source families compare unmasked through the independent whole array-delete archive member and unchanged accepted scalar-delete/free owners. Equal-sized scalar delete is rejected by its actual typed destination; whole raw/SDK/custom implicit ownership controls and three inline profiles retain genuine source differences or absence of an emitted own owner. All 90 ordinary functions / 3897 bytes and 107 whole code/data/EH sections / 4458 bytes, complete 40-byte observation layout and 24 actual headers per profile cold-replay. Complete R070 parser retains eight constructor/copy/cleanup pairings and actual allocation/store/read/copy/termination of the owner +4 buffer; R072 supplies an eight-byte byte-record producer, not a raw unsigned-char element declaration. The full original frame, eight complete R020 cleanup entries and whole R037 scalar-deleting owner remain unchanged. Authored ownership is inferred from explicit script buffer policy and bounded source/SDK alternatives; original names, types/folding, full layouts and untested alternatives remain unknown. Synthetic models recover no complete game owner. Runtime auxiliaries retain original ledger status; no source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00421200",
+        "size": "24",
+        "span_end": "0x00421217",
+        "current_name": "FUN_00421200",
+        "proposed_name": "ScriptRecord421200::ScriptRecord421200",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ScriptRecord421200::ScriptRecord421200()",
+        "is_thunk": "false",
+        "source_file": "src/ScriptParser420880.cpp",
+        "evidence": "R153; config/script-buffer-origin-evidence.json; complete source-typed script buffer lifetime policies and independent whole parser ownership context; F108; scripts/repo-python scripts/replay-exact-units.py --unit script-record-constructor-00421200",
+        "owner": "authored",
+        "notes": "Complete own extent, all exits/branches and following alignment are preserved. Four full guarded-array constructor/destructor source families compare unmasked through the independent whole array-delete archive member and unchanged accepted scalar-delete/free owners. Equal-sized scalar delete is rejected by its actual typed destination; whole raw/SDK/custom implicit ownership controls and three inline profiles retain genuine source differences or absence of an emitted own owner. All 90 ordinary functions / 3897 bytes and 107 whole code/data/EH sections / 4458 bytes, complete 40-byte observation layout and 24 actual headers per profile cold-replay. Complete R070 parser retains eight constructor/copy/cleanup pairings and actual allocation/store/read/copy/termination of the owner +4 buffer; R072 supplies an eight-byte byte-record producer, not a raw unsigned-char element declaration. The full original frame, eight complete R020 cleanup entries and whole R037 scalar-deleting owner remain unchanged. Authored ownership is inferred from explicit script buffer policy and bounded source/SDK alternatives; original names, types/folding, full layouts and untested alternatives remain unknown. Synthetic models recover no complete game owner. Runtime auxiliaries retain original ledger status; no source/private ABI/mapping/exact credit.; F108: complete24byte independent canonical cold exact; family2301+24+43+75+72=2515codebytes/all701instructions/100callpackets/132actualfields,rootalsoall128dispatchbytes/2429comparisononly,no datacredit; fullnormalCFG/stackjoins/RET8or0,real128/4/8/16/16byteframes; threewholeEHgraphs118code+172data/all31fields independentlyexact,9/1/1statesparent-1,nocompiler/helpercredit; completeRecord8(kind0/value2/ownedtext4,naturalpad1)andSequence20(actualvendor deque<Record8>)fromallrealfields/memberlifetimes/strides/stackextents,ctorinitializestextonly,dtorarraydeletewithoutreset,sequenceexplicitclearthenautomaticmembercleanup; parserstates0/1/2/3/4/99 plusdefault,realP/E/N/F/M/W/V/R scopes andoriginal2byteCP932tokens,shortdecimalwrap/nondigitreprocessing/quotedallocation+1/copy/NUL/commentLF/defaultnoprogressofallcases retained; all7DWORDswitchentriesand100selectors physicallyexact,actualCOFFlocaloffsets bindrealbranch/tablefields,noaliases; identicaloldScriptResourceinterfaceandpointer-onlyscript/groupownersneverinstantiated; firstnatural5bodyshapealreadyexact,fourgenuinelyusedscalarnamesfrompriorcompilermeasurementsresolve117realframefields,nopadding/inertlocals/manualreturns/EH/assembly/masks/croppedextent; fourwrongphysicalfields/threepacketmutationcontrols rejected; all210oldunits/106objects/174inputs/97unknownorigins/headers/drafts unchanged,R153roleretainedbyalias; originalnames/grouping/copyidentities/fullscriptownerlayoutunknown,recordfieldoriginalsignednessnotuniquelyprovedbywrites,compatible16bitcarrierused"
+      },
+      "origin": {
+        "address": "0x00421200",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "complete-script-buffer-policy-typed-array-delete-and-lifetime-controls",
+        "evidence_id": "R153"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00421220",
+        "size": "43",
+        "span_end": "0x0042124A",
+        "current_name": "Concurrency::details::TaskStack::~TaskStack",
+        "proposed_name": "FighterScript::ReleaseRecordBuffer",
+        "module": "FighterScript",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R153; config/script-buffer-origin-evidence.json; complete source-typed script buffer lifetime policies and independent whole parser ownership context",
+        "owner": "authored",
+        "notes": "Complete own extent, all exits/branches and following alignment are preserved. Four full guarded-array constructor/destructor source families compare unmasked through the independent whole array-delete archive member and unchanged accepted scalar-delete/free owners. Equal-sized scalar delete is rejected by its actual typed destination; whole raw/SDK/custom implicit ownership controls and three inline profiles retain genuine source differences or absence of an emitted own owner. All 90 ordinary functions / 3897 bytes and 107 whole code/data/EH sections / 4458 bytes, complete 40-byte observation layout and 24 actual headers per profile cold-replay. Complete R070 parser retains eight constructor/copy/cleanup pairings and actual allocation/store/read/copy/termination of the owner +4 buffer; R072 supplies an eight-byte byte-record producer, not a raw unsigned-char element declaration. The full original frame, eight complete R020 cleanup entries and whole R037 scalar-deleting owner remain unchanged. Authored ownership is inferred from explicit script buffer policy and bounded source/SDK alternatives; original names, types/folding, full layouts and untested alternatives remain unknown. Synthetic models recover no complete game owner. Runtime auxiliaries retain original ledger status; no source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00421220",
+        "size": "43",
+        "span_end": "0x0042124A",
+        "current_name": "Concurrency::details::TaskStack::~TaskStack",
+        "proposed_name": "ScriptRecord421200::~ScriptRecord421200",
+        "module": "FighterScript",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ScriptRecord421200::~ScriptRecord421200()",
+        "is_thunk": "false",
+        "source_file": "src/ScriptParser420880.cpp",
+        "evidence": "R153; config/script-buffer-origin-evidence.json; complete source-typed script buffer lifetime policies and independent whole parser ownership context; F108; scripts/repo-python scripts/replay-exact-units.py --unit script-record-destructor-00421220",
+        "owner": "authored",
+        "notes": "Complete own extent, all exits/branches and following alignment are preserved. Four full guarded-array constructor/destructor source families compare unmasked through the independent whole array-delete archive member and unchanged accepted scalar-delete/free owners. Equal-sized scalar delete is rejected by its actual typed destination; whole raw/SDK/custom implicit ownership controls and three inline profiles retain genuine source differences or absence of an emitted own owner. All 90 ordinary functions / 3897 bytes and 107 whole code/data/EH sections / 4458 bytes, complete 40-byte observation layout and 24 actual headers per profile cold-replay. Complete R070 parser retains eight constructor/copy/cleanup pairings and actual allocation/store/read/copy/termination of the owner +4 buffer; R072 supplies an eight-byte byte-record producer, not a raw unsigned-char element declaration. The full original frame, eight complete R020 cleanup entries and whole R037 scalar-deleting owner remain unchanged. Authored ownership is inferred from explicit script buffer policy and bounded source/SDK alternatives; original names, types/folding, full layouts and untested alternatives remain unknown. Synthetic models recover no complete game owner. Runtime auxiliaries retain original ledger status; no source/private ABI/mapping/exact credit.; F108: complete43byte independent canonical cold exact; family2301+24+43+75+72=2515codebytes/all701instructions/100callpackets/132actualfields,rootalsoall128dispatchbytes/2429comparisononly,no datacredit; fullnormalCFG/stackjoins/RET8or0,real128/4/8/16/16byteframes; threewholeEHgraphs118code+172data/all31fields independentlyexact,9/1/1statesparent-1,nocompiler/helpercredit; completeRecord8(kind0/value2/ownedtext4,naturalpad1)andSequence20(actualvendor deque<Record8>)fromallrealfields/memberlifetimes/strides/stackextents,ctorinitializestextonly,dtorarraydeletewithoutreset,sequenceexplicitclearthenautomaticmembercleanup; parserstates0/1/2/3/4/99 plusdefault,realP/E/N/F/M/W/V/R scopes andoriginal2byteCP932tokens,shortdecimalwrap/nondigitreprocessing/quotedallocation+1/copy/NUL/commentLF/defaultnoprogressofallcases retained; all7DWORDswitchentriesand100selectors physicallyexact,actualCOFFlocaloffsets bindrealbranch/tablefields,noaliases; identicaloldScriptResourceinterfaceandpointer-onlyscript/groupownersneverinstantiated; firstnatural5bodyshapealreadyexact,fourgenuinelyusedscalarnamesfrompriorcompilermeasurementsresolve117realframefields,nopadding/inertlocals/manualreturns/EH/assembly/masks/croppedextent; fourwrongphysicalfields/threepacketmutationcontrols rejected; all210oldunits/106objects/174inputs/97unknownorigins/headers/drafts unchanged,R153roleretainedbyalias; originalnames/grouping/copyidentities/fullscriptownerlayoutunknown,recordfieldoriginalsignednessnotuniquelyprovedbywrites,compatible16bitcarrierused"
+      },
+      "origin": {
+        "address": "0x00421220",
+        "origin": "authored",
+        "subsystem": "FighterScript",
+        "disposition": "authored",
+        "confidence": "complete-script-buffer-policy-typed-array-delete-and-lifetime-controls",
+        "evidence_id": "R153"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00421250",
+        "size": "75",
+        "span_end": "0x0042129A",
+        "current_name": "FUN_00421250",
+        "proposed_name": "ContainerRecord::ConstructAndResetDeque [provisional]",
+        "module": "GameInitialization",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R212; config/paired-clear-policy-origin-evidence.json; scripts/repo-python scripts/verify-paired-clear-policy-origins.py",
+        "owner": "",
+        "notes": "Complete explicit construction/reset75 differs from full implicit constructor22. Actual first callee is deque construction72; clear and destruction source shapes may alias the accepted whole19-byte library owner. No original private declaration or API spelling is inferred. Complete native body/CFG and independent ownership context are frozen; natural complete source controls are used for the two construction policies. Generic observations and same relative offsets do not recover original private types or layouts. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00421250",
+        "size": "75",
+        "span_end": "0x0042129A",
+        "current_name": "FUN_00421250",
+        "proposed_name": "ScriptSequence421250::ScriptSequence421250",
+        "module": "GameInitialization",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ScriptSequence421250::ScriptSequence421250()",
+        "is_thunk": "false",
+        "source_file": "src/ScriptParser420880.cpp",
+        "evidence": "R212; config/paired-clear-policy-origin-evidence.json; scripts/repo-python scripts/verify-paired-clear-policy-origins.py; F108; scripts/repo-python scripts/replay-exact-units.py --unit script-sequence-constructor-00421250",
+        "owner": "authored",
+        "notes": "Complete explicit construction/reset75 differs from full implicit constructor22. Actual first callee is deque construction72; clear and destruction source shapes may alias the accepted whole19-byte library owner. No original private declaration or API spelling is inferred. Complete native body/CFG and independent ownership context are frozen; natural complete source controls are used for the two construction policies. Generic observations and same relative offsets do not recover original private types or layouts. No source/private ABI/mapping/exact credit.; F108: complete75byte independent canonical cold exact; family2301+24+43+75+72=2515codebytes/all701instructions/100callpackets/132actualfields,rootalsoall128dispatchbytes/2429comparisononly,no datacredit; fullnormalCFG/stackjoins/RET8or0,real128/4/8/16/16byteframes; threewholeEHgraphs118code+172data/all31fields independentlyexact,9/1/1statesparent-1,nocompiler/helpercredit; completeRecord8(kind0/value2/ownedtext4,naturalpad1)andSequence20(actualvendor deque<Record8>)fromallrealfields/memberlifetimes/strides/stackextents,ctorinitializestextonly,dtorarraydeletewithoutreset,sequenceexplicitclearthenautomaticmembercleanup; parserstates0/1/2/3/4/99 plusdefault,realP/E/N/F/M/W/V/R scopes andoriginal2byteCP932tokens,shortdecimalwrap/nondigitreprocessing/quotedallocation+1/copy/NUL/commentLF/defaultnoprogressofallcases retained; all7DWORDswitchentriesand100selectors physicallyexact,actualCOFFlocaloffsets bindrealbranch/tablefields,noaliases; identicaloldScriptResourceinterfaceandpointer-onlyscript/groupownersneverinstantiated; firstnatural5bodyshapealreadyexact,fourgenuinelyusedscalarnamesfrompriorcompilermeasurementsresolve117realframefields,nopadding/inertlocals/manualreturns/EH/assembly/masks/croppedextent; fourwrongphysicalfields/threepacketmutationcontrols rejected; all210oldunits/106objects/174inputs/97unknownorigins/headers/drafts unchanged,R212roleretainedbyalias; originalnames/grouping/copyidentities/fullscriptownerlayoutunknown,recordfieldoriginalsignednessnotuniquelyprovedbywrites,compatible16bitcarrierused"
+      },
+      "origin": {
+        "address": "0x00421250",
+        "origin": "authored",
+        "subsystem": "GameInitialization",
+        "disposition": "authored",
+        "confidence": "complete-explicit-construction-or-game-policy-with-independent-whole-context",
+        "evidence_id": "R212"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004212A0",
+        "size": "72",
+        "span_end": "0x004212E7",
+        "current_name": "ATL::CAtlWinModule::~CAtlWinModule",
+        "proposed_name": "ContainerRecord::ClearBeforeDequeSubobjectDestructionAt004212A0 [provisional]",
+        "module": "GameLifetime",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R257; coherent explicit deque cleanup72 with whole paired construction75, original script parser local/EH identity, real vendor providers and complete implicit alternatives",
+        "owner": "",
+        "notes": "Inferred authored cleanup before independent deque subobject destruction on the same receiver. Whole explicit member/base cohorts, ordinary implicit default19, two byte-positive implicit empty-first72 alternatives with different full construction79/two-state EH26 and actual provider chains, and empty-after98 remain preserved across three profiles. Complete script parser2301 uses and cleans the same stack object in original state8. Original member/base declaration, element type and complete owner layout remain unknown. No source, private ABI, mapping or exact credit."
+      },
+      "after": {
+        "address": "0x004212A0",
+        "size": "72",
+        "span_end": "0x004212E7",
+        "current_name": "ATL::CAtlWinModule::~CAtlWinModule",
+        "proposed_name": "ScriptSequence421250::~ScriptSequence421250",
+        "module": "GameLifetime",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ScriptSequence421250::~ScriptSequence421250()",
+        "is_thunk": "false",
+        "source_file": "src/ScriptParser420880.cpp",
+        "evidence": "R257; coherent explicit deque cleanup72 with whole paired construction75, original script parser local/EH identity, real vendor providers and complete implicit alternatives; F108; scripts/repo-python scripts/replay-exact-units.py --unit script-sequence-destructor-004212a0",
+        "owner": "authored",
+        "notes": "Inferred authored cleanup before independent deque subobject destruction on the same receiver. Whole explicit member/base cohorts, ordinary implicit default19, two byte-positive implicit empty-first72 alternatives with different full construction79/two-state EH26 and actual provider chains, and empty-after98 remain preserved across three profiles. Complete script parser2301 uses and cleans the same stack object in original state8. Original member/base declaration, element type and complete owner layout remain unknown. No source, private ABI, mapping or exact credit.; F108: complete72byte independent canonical cold exact; family2301+24+43+75+72=2515codebytes/all701instructions/100callpackets/132actualfields,rootalsoall128dispatchbytes/2429comparisononly,no datacredit; fullnormalCFG/stackjoins/RET8or0,real128/4/8/16/16byteframes; threewholeEHgraphs118code+172data/all31fields independentlyexact,9/1/1statesparent-1,nocompiler/helpercredit; completeRecord8(kind0/value2/ownedtext4,naturalpad1)andSequence20(actualvendor deque<Record8>)fromallrealfields/memberlifetimes/strides/stackextents,ctorinitializestextonly,dtorarraydeletewithoutreset,sequenceexplicitclearthenautomaticmembercleanup; parserstates0/1/2/3/4/99 plusdefault,realP/E/N/F/M/W/V/R scopes andoriginal2byteCP932tokens,shortdecimalwrap/nondigitreprocessing/quotedallocation+1/copy/NUL/commentLF/defaultnoprogressofallcases retained; all7DWORDswitchentriesand100selectors physicallyexact,actualCOFFlocaloffsets bindrealbranch/tablefields,noaliases; identicaloldScriptResourceinterfaceandpointer-onlyscript/groupownersneverinstantiated; firstnatural5bodyshapealreadyexact,fourgenuinelyusedscalarnamesfrompriorcompilermeasurementsresolve117realframefields,nopadding/inertlocals/manualreturns/EH/assembly/masks/croppedextent; fourwrongphysicalfields/threepacketmutationcontrols rejected; all210oldunits/106objects/174inputs/97unknownorigins/headers/drafts unchanged,R257roleretainedbyalias; originalnames/grouping/copyidentities/fullscriptownerlayoutunknown,recordfieldoriginalsignednessnotuniquelyprovedbywrites,compatible16bitcarrierused"
+      },
+      "origin": {
+        "address": "0x004212A0",
+        "origin": "authored",
+        "subsystem": "GameLifetime",
+        "disposition": "authored",
+        "confidence": "inferred-coherent-whole-explicit-deque-cleanup-with-independent-script-local-and-eh-provider-context",
+        "evidence_id": "R257"
       }
     }
   ],
@@ -102806,6 +103026,912 @@
           "target": 6559389
         }
       ]
+    },
+    "script-parser-00420880": {
+      "source": "src/ScriptParser420880.cpp",
+      "object": "build/matching/ScriptParser420880.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptResource4205F0::Parse"
+      ],
+      "symbol": "?Parse@ScriptResource4205F0@@QAEXPADI@Z",
+      "target_address": 4327552,
+      "size": 2301,
+      "compare_size": 2429,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$?Parse@ScriptResource4205F0@@QAEXPADI@Z",
+          "target": 6641080
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "$L6014",
+          "target": 4329881
+        },
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "$L6017",
+          "target": 4329853
+        },
+        {
+          "offset": 170,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 195,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 202,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 216,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 223,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 241,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 268,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 293,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 300,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 314,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 321,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 339,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 366,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 391,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 398,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 412,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 419,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 437,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 464,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 489,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 496,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 510,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 517,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 545,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 572,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 597,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 604,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 618,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 625,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 653,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 680,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 705,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 712,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 726,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 733,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 761,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 788,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 813,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 820,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 834,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 841,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 869,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 896,
+          "type": "REL32",
+          "symbol": "??0ScriptRecord421200@@QAE@XZ",
+          "target": 4329984
+        },
+        {
+          "offset": 921,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 928,
+          "type": "REL32",
+          "symbol": "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z",
+          "target": 4330464
+        },
+        {
+          "offset": 942,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 949,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 977,
+          "type": "REL32",
+          "symbol": "??1ScriptRecord421200@@QAE@XZ",
+          "target": 4330016
+        },
+        {
+          "offset": 1011,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1018,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1100,
+          "type": "REL32",
+          "symbol": "??0ScriptSequence421250@@QAE@XZ",
+          "target": 4330064
+        },
+        {
+          "offset": 1125,
+          "type": "REL32",
+          "symbol": "?Push@ScriptGroups4215F0@@QAEXABVScriptSequence421250@@@Z",
+          "target": 4330992
+        },
+        {
+          "offset": 1139,
+          "type": "REL32",
+          "symbol": "?Size@ScriptGroups4215F0@@QAEIXZ",
+          "target": 4330832
+        },
+        {
+          "offset": 1178,
+          "type": "REL32",
+          "symbol": "??1ScriptSequence421250@@QAE@XZ",
+          "target": 4330144
+        },
+        {
+          "offset": 1254,
+          "type": "DIR32",
+          "symbol": "$SG5548",
+          "target": 6650704
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1287,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1294,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1321,
+          "type": "DIR32",
+          "symbol": "$SG5553",
+          "target": 6650708
+        },
+        {
+          "offset": 1333,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1354,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1361,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1388,
+          "type": "DIR32",
+          "symbol": "$SG5558",
+          "target": 6650712
+        },
+        {
+          "offset": 1400,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1421,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1428,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1455,
+          "type": "DIR32",
+          "symbol": "$SG5563",
+          "target": 6650716
+        },
+        {
+          "offset": 1467,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1488,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1495,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1522,
+          "type": "DIR32",
+          "symbol": "$SG5568",
+          "target": 6650720
+        },
+        {
+          "offset": 1534,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1555,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1562,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1589,
+          "type": "DIR32",
+          "symbol": "$SG5573",
+          "target": 6650724
+        },
+        {
+          "offset": 1601,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1622,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1629,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1656,
+          "type": "DIR32",
+          "symbol": "$SG5578",
+          "target": 6650728
+        },
+        {
+          "offset": 1668,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1689,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1696,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1723,
+          "type": "DIR32",
+          "symbol": "$SG5583",
+          "target": 6650732
+        },
+        {
+          "offset": 1735,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1756,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1763,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1790,
+          "type": "DIR32",
+          "symbol": "$SG5588",
+          "target": 6650736
+        },
+        {
+          "offset": 1802,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1823,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1830,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1854,
+          "type": "DIR32",
+          "symbol": "$SG5593",
+          "target": 6650740
+        },
+        {
+          "offset": 1866,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1887,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1894,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 1918,
+          "type": "DIR32",
+          "symbol": "$SG5598",
+          "target": 6650744
+        },
+        {
+          "offset": 1930,
+          "type": "REL32",
+          "symbol": "_strncmp",
+          "target": 6561248
+        },
+        {
+          "offset": 1951,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 1958,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 2016,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 2036,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 2043,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 2063,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 2070,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 2099,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 2181,
+          "type": "REL32",
+          "symbol": "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ",
+          "target": 4330944
+        },
+        {
+          "offset": 2188,
+          "type": "REL32",
+          "symbol": "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ",
+          "target": 4330416
+        },
+        {
+          "offset": 2291,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 2301,
+          "type": "DIR32",
+          "symbol": "$L5467",
+          "target": 4327646
+        },
+        {
+          "offset": 2305,
+          "type": "DIR32",
+          "symbol": "$L5533",
+          "target": 4328620
+        },
+        {
+          "offset": 2309,
+          "type": "DIR32",
+          "symbol": "$L5544",
+          "target": 4328780
+        },
+        {
+          "offset": 2313,
+          "type": "DIR32",
+          "symbol": "$L5601",
+          "target": 4329543
+        },
+        {
+          "offset": 2317,
+          "type": "DIR32",
+          "symbol": "$L5610",
+          "target": 4329695
+        },
+        {
+          "offset": 2321,
+          "type": "DIR32",
+          "symbol": "$L5616",
+          "target": 4329805
+        },
+        {
+          "offset": 2325,
+          "type": "DIR32",
+          "symbol": "$L5464",
+          "target": 4329832
+        }
+      ]
+    },
+    "script-record-constructor-00421200": {
+      "source": "src/ScriptParser420880.cpp",
+      "object": "build/matching/ScriptParser420880.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptRecord421200::ScriptRecord421200"
+      ],
+      "symbol": "??0ScriptRecord421200@@QAE@XZ",
+      "target_address": 4329984,
+      "size": 24,
+      "compare_size": 24,
+      "relocations": []
+    },
+    "script-record-destructor-00421220": {
+      "source": "src/ScriptParser420880.cpp",
+      "object": "build/matching/ScriptParser420880.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptRecord421200::~ScriptRecord421200"
+      ],
+      "symbol": "??1ScriptRecord421200@@QAE@XZ",
+      "target_address": 4330016,
+      "size": 43,
+      "compare_size": 43,
+      "relocations": [
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        }
+      ]
+    },
+    "script-sequence-constructor-00421250": {
+      "source": "src/ScriptParser420880.cpp",
+      "object": "build/matching/ScriptParser420880.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptSequence421250::ScriptSequence421250"
+      ],
+      "symbol": "??0ScriptSequence421250@@QAE@XZ",
+      "target_address": 4330064,
+      "size": 75,
+      "compare_size": 75,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0ScriptSequence421250@@QAE@XZ",
+          "target": 6641112
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 32,
+          "type": "REL32",
+          "symbol": "??0?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAE@XZ",
+          "target": 4330224
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAEXXZ",
+          "target": 4330688
+        },
+        {
+          "offset": 67,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "script-sequence-destructor-004212a0": {
+      "source": "src/ScriptParser420880.cpp",
+      "object": "build/matching/ScriptParser420880.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ScriptSequence421250::~ScriptSequence421250"
+      ],
+      "symbol": "??1ScriptSequence421250@@QAE@XZ",
+      "target_address": 4330144,
+      "size": 72,
+      "compare_size": 72,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1ScriptSequence421250@@QAE@XZ",
+          "target": 6641144
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAEXXZ",
+          "target": 4330688
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "??1?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAE@XZ",
+          "target": 4330304
+        },
+        {
+          "offset": 64,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -102982,6 +104108,7 @@
     "src/TexturePackArchive40BBA0.cpp": "9ed8e435429f338d2913058218ab52f0e135f026f850c3279bb520716d5287d5",
     "src/BitmapLifecycle41A2D0.cpp": "f43ec01820efb559f4635c4f47fe8ac1c4df039f7031dee5528b41c7391808b3",
     "src/FighterPattern457660.cpp": "0edc3f9e386aee8582d890f3f05fc56a0074d2e3a7846e3f4f8e30c5eda90d28",
-    "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e"
+    "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e",
+    "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018"
   }
 }

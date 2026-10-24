@@ -18354,3 +18354,195 @@ relocations = [
   { offset = 0x112, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
   { offset = 0x124, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
 ]
+
+[units."script-parser-00420880"]
+source = "src/ScriptParser420880.cpp"
+object = "build/matching/ScriptParser420880.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
+functions = ["ScriptResource4205F0::Parse"]
+symbol = "?Parse@ScriptResource4205F0@@QAEXPADI@Z"
+target_address = 0x00420880
+size = 2301
+compare_size = 2429
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "__ehhandler$?Parse@ScriptResource4205F0@@QAEXPADI@Z", target = 0x006555B8 },
+  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x53, type = "DIR32", symbol = "$L6014", target = 0x00421199 },
+  { offset = 0x5A, type = "DIR32", symbol = "$L6017", target = 0x0042117D },
+  { offset = 0xAA, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0xC3, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0xCA, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0xD8, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0xDF, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0xF1, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x10C, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x125, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x12C, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x13A, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x141, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x153, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x16E, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x187, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x18E, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x19C, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x1A3, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x1B5, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x1D0, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x1E9, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x1F0, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x1FE, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x205, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x221, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x23C, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x255, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x25C, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x26A, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x271, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x28D, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x2A8, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x2C1, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x2C8, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x2D6, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x2DD, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x2F9, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x314, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x32D, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x334, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x342, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x349, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x365, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x380, type = "REL32", symbol = "??0ScriptRecord421200@@QAE@XZ", target = 0x00421200 },
+  { offset = 0x399, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x3A0, type = "REL32", symbol = "?Push@ScriptSequence421250@@QAEXABVScriptRecord421200@@@Z", target = 0x004213E0 },
+  { offset = 0x3AE, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x3B5, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x3D1, type = "REL32", symbol = "??1ScriptRecord421200@@QAE@XZ", target = 0x00421220 },
+  { offset = 0x3F3, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x3FA, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x44C, type = "REL32", symbol = "??0ScriptSequence421250@@QAE@XZ", target = 0x00421250 },
+  { offset = 0x465, type = "REL32", symbol = "?Push@ScriptGroups4215F0@@QAEXABVScriptSequence421250@@@Z", target = 0x004215F0 },
+  { offset = 0x473, type = "REL32", symbol = "?Size@ScriptGroups4215F0@@QAEIXZ", target = 0x00421550 },
+  { offset = 0x49A, type = "REL32", symbol = "??1ScriptSequence421250@@QAE@XZ", target = 0x004212A0 },
+  { offset = 0x4E6, type = "DIR32", symbol = "$SG5548", target = 0x00657B50 },
+  { offset = 0x4F2, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x507, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x50E, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x529, type = "DIR32", symbol = "$SG5553", target = 0x00657B54 },
+  { offset = 0x535, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x54A, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x551, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x56C, type = "DIR32", symbol = "$SG5558", target = 0x00657B58 },
+  { offset = 0x578, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x58D, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x594, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x5AF, type = "DIR32", symbol = "$SG5563", target = 0x00657B5C },
+  { offset = 0x5BB, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x5D0, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x5D7, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x5F2, type = "DIR32", symbol = "$SG5568", target = 0x00657B60 },
+  { offset = 0x5FE, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x613, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x61A, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x635, type = "DIR32", symbol = "$SG5573", target = 0x00657B64 },
+  { offset = 0x641, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x656, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x65D, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x678, type = "DIR32", symbol = "$SG5578", target = 0x00657B68 },
+  { offset = 0x684, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x699, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x6A0, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x6BB, type = "DIR32", symbol = "$SG5583", target = 0x00657B6C },
+  { offset = 0x6C7, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x6DC, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x6E3, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x6FE, type = "DIR32", symbol = "$SG5588", target = 0x00657B70 },
+  { offset = 0x70A, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x71F, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x726, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x73E, type = "DIR32", symbol = "$SG5593", target = 0x00657B74 },
+  { offset = 0x74A, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x75F, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x766, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x77E, type = "DIR32", symbol = "$SG5598", target = 0x00657B78 },
+  { offset = 0x78A, type = "REL32", symbol = "_strncmp", target = 0x00641DE0 },
+  { offset = 0x79F, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x7A6, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x7E0, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x7F4, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x7FB, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x80F, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x816, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x833, type = "REL32", symbol = "_memcpy", target = 0x00640F20 },
+  { offset = 0x885, type = "REL32", symbol = "?Back@ScriptGroups4215F0@@QAEAAVScriptSequence421250@@XZ", target = 0x004215C0 },
+  { offset = 0x88C, type = "REL32", symbol = "?Back@ScriptSequence421250@@QAEAAVScriptRecord421200@@XZ", target = 0x004213B0 },
+  { offset = 0x8F3, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x8FD, type = "DIR32", symbol = "$L5467", target = 0x004208DE },
+  { offset = 0x901, type = "DIR32", symbol = "$L5533", target = 0x00420CAC },
+  { offset = 0x905, type = "DIR32", symbol = "$L5544", target = 0x00420D4C },
+  { offset = 0x909, type = "DIR32", symbol = "$L5601", target = 0x00421047 },
+  { offset = 0x90D, type = "DIR32", symbol = "$L5610", target = 0x004210DF },
+  { offset = 0x911, type = "DIR32", symbol = "$L5616", target = 0x0042114D },
+  { offset = 0x915, type = "DIR32", symbol = "$L5464", target = 0x00421168 },
+]
+
+[units."script-record-constructor-00421200"]
+source = "src/ScriptParser420880.cpp"
+object = "build/matching/ScriptParser420880.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
+functions = ["ScriptRecord421200::ScriptRecord421200"]
+symbol = "??0ScriptRecord421200@@QAE@XZ"
+target_address = 0x00421200
+size = 24
+compare_size = 24
+relocations = [
+]
+
+[units."script-record-destructor-00421220"]
+source = "src/ScriptParser420880.cpp"
+object = "build/matching/ScriptParser420880.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
+functions = ["ScriptRecord421200::~ScriptRecord421200"]
+symbol = "??1ScriptRecord421200@@QAE@XZ"
+target_address = 0x00421220
+size = 43
+compare_size = 43
+relocations = [
+  { offset = 0x20, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+]
+
+[units."script-sequence-constructor-00421250"]
+source = "src/ScriptParser420880.cpp"
+object = "build/matching/ScriptParser420880.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
+functions = ["ScriptSequence421250::ScriptSequence421250"]
+symbol = "??0ScriptSequence421250@@QAE@XZ"
+target_address = 0x00421250
+size = 75
+compare_size = 75
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??0ScriptSequence421250@@QAE@XZ", target = 0x006555D8 },
+  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x20, type = "REL32", symbol = "??0?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAE@XZ", target = 0x004212F0 },
+  { offset = 0x2F, type = "REL32", symbol = "?clear@?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAEXXZ", target = 0x004214C0 },
+  { offset = 0x43, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]
+
+[units."script-sequence-destructor-004212a0"]
+source = "src/ScriptParser420880.cpp"
+object = "build/matching/ScriptParser420880.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/Zi", "/I", "src"]
+functions = ["ScriptSequence421250::~ScriptSequence421250"]
+symbol = "??1ScriptSequence421250@@QAE@XZ"
+target_address = 0x004212A0
+size = 72
+compare_size = 72
+relocations = [
+  { offset = 0x6, type = "DIR32", symbol = "__ehhandler$??1ScriptSequence421250@@QAE@XZ", target = 0x006555F8 },
+  { offset = 0xC, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x14, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+  { offset = 0x27, type = "REL32", symbol = "?clear@?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAEXXZ", target = 0x004214C0 },
+  { offset = 0x36, type = "REL32", symbol = "??1?$deque@VScriptRecord421200@@V?$allocator@VScriptRecord421200@@@std@@@std@@QAE@XZ", target = 0x00421340 },
+  { offset = 0x40, type = "DIR32", symbol = "__except_list", target = 0x00000000 },
+]

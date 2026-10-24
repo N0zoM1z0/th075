@@ -153,3 +153,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004205F0,FighterScript::LoadArchiveEntryAt004205F0,ScriptResource4205F0::LoadArchive,R070,script-archive-load-004205f0
 0x004206D0,AssetFile::LoadAndTransform,ScriptResource4205F0::LoadFile,R040,script-file-load-004206d0
 0x004076A0,SoundBank::LoadSerializedArchiveEntry,SoundArchive4076A0::Load,R016,sound-archive-load-004076a0
+0x00420880,FighterScript::ParseAt00420880,ScriptResource4205F0::Parse,R070,script-parser-00420880
+0x00421200,FighterScript::InitializeRecordBuffer,ScriptRecord421200::ScriptRecord421200,R153,script-record-constructor-00421200
+0x00421220,FighterScript::ReleaseRecordBuffer,ScriptRecord421200::~ScriptRecord421200,R153,script-record-destructor-00421220
+0x00421250,ContainerRecord::ConstructAndResetDeque [provisional],ScriptSequence421250::ScriptSequence421250,R212,script-sequence-constructor-00421250
+0x004212A0,ContainerRecord::ClearBeforeDequeSubobjectDestructionAt004212A0 [provisional],ScriptSequence421250::~ScriptSequence421250,R257,script-sequence-destructor-004212a0

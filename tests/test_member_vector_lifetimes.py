@@ -144,6 +144,8 @@ class MemberVectorLifetimeTests(unittest.TestCase):
         newest = json.loads((ROOT / next_view.EVIDENCE).read_text())
         next_view.verify_plan(newest)
         source = {name: V.rows(name) for name in ['functions.csv', 'function-origins.csv']}
+        # Reverse approved exact transitions before the older origin transitions.
+        source['functions.csv'] = historical_functions(source['functions.csv'])
         absolute_spec = importlib.util.spec_from_file_location(
             'crt_absolute_successor_view', ROOT / 'scripts/verify-crt-absolute-contribution-origins.py')
         absolute = importlib.util.module_from_spec(absolute_spec)
@@ -202,7 +204,6 @@ class MemberVectorLifetimeTests(unittest.TestCase):
         view = {name: V.historical_rows(self.plan, name, [selected[r['address']]['accepted_' + kind]
                     if r['address'] in selected else r for r in source[name]])
                 for name, kind in [('functions.csv', 'function'), ('function-origins.csv', 'origin')]}
-        view['functions.csv'] = historical_functions(view['functions.csv'])
         with patch.object(V.GLOBAL, 'rows', side_effect=lambda name: view[name]):
             V.GLOBAL.verify_canonical(old)
         bad = copy.deepcopy(view)

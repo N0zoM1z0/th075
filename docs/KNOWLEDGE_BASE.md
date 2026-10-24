@@ -22663,3 +22663,126 @@ last temporary atEBP-588. Earlier frozen notes'576-byte whole-frame shorthand
 is superseded by the f107 refinement, without overwriting their pinned inputs.
 The532-byte span between filename EBP-548 and cookie EBP-16 is still not a
 proved array bound. No buffer growth or incomplete-owner allocation was used.
+
+## F108 complete script parser and lifetime checkpoint (2026-10-25)
+
+The complete R070 parser `00420880..0042117C` (2,301 code bytes), both R153
+record lifetimes `00421200..00421217` (24) / `00421220..0042124A` (43), R212
+sequence constructor `00421250..0042129A` (75) and R257 sequence destructor
+`004212A0..004212E7` (72) independently pass canonical cold comparison.
+All 2,515 code bytes, 701 instructions, 100 calls and 132 real relocation
+fields match. The parser additionally compares all 128 dispatch bytes:
+seven DWORD entries at42117D and 100 selectors at421199. None earns code credit.
+Three/eight/five/five/eight following INT3 bytes remain outside. Five independent
+reports share one serial cold object build; no old dependency replay is needed.
+
+A natural signed-char switch emits the same states 0/1/2/3/4/99, unsigned range
+guard 99, seven actual targets and both complete tables. The former failed
+decompile supplies no source or ABI proof. Full native CFGs and stack joins
+cover every instruction, with actual frames128/4/8/16/16 belowEBP and RET8 for
+the parser /RET0 for the lifetimes. Every real local table relocation binds to
+the actual function plus its actual COFF label offset. No branch destination,
+frame slot, operand or table byte is aliased, masked or cropped.
+
+The source retains the complete language policy. State 0 handles #/B/P/E/N/
+F/M/W/V/R, parentheses and quotes, consumes one byte and updates token start.
+P/E/N append kinds 0/1/2; F/M/W/V/R append kinds 10..14 then scan a decimal value.
+B scans a signed 16 bit group number; a nondigit appends an empty sequence and
+writes the new group index without consuming that delimiter. Numeric record
+arguments likewise reprocess the nondigit in state 0. Parentheses initialize
+the value to-1 and match the eleven original two-byte CP932 prefixes, consuming
+two bytes on a match and one otherwise. Quoted text allocates length+1, stores
+the owned pointer, captures it, copies the substring and terminates it with 0.
+Only LF ends comments. No new escape, clamp, EOF guard or default-state cursor
+advance is added. Signed16 accumulation and narrowing retain native behavior.
+
+Original two-byte token payloads plus their NUL are independently checked
+against the source object's literals. Escaped byte literals preserve the real
+text encoding without relying on the compiler host's source code page; they
+are language tokens, not target code arrays. Every one of the100 call packets
+and receivers is checked, including outer record-reference arguments across
+nested back() calls, the eight separate record scopes, the sequence scope,
+all strncmp lengths and the allocation/copy counts. The old complete R025/R102
+memcpy CFG/data evidence remains; its embedded tables are not disassembled as
+new instructions and no helper/library byte receives credit.
+
+The 8-byte source-compatible record contains kind0, a 16 bit value at2 and an
+owned text pointer4, with ordinary one-byte alignment. Its constructor only
+zeros text; kind/value remain uninitialized. Its destructor conditionally
+array-deletes text without resetting it. Original field signedness is not
+uniquely proved by writes; the compatible short carrier and local signed 16 bit
+accumulator are distinguished. The 20 byte sequence contains the complete
+vendor deque<Record8> at 0, explicitly clears in its constructor and clears
+before automatic member destruction. Complete fields, member lifetimes,
+container strides and observed stack extents justify these two values. Original
+names, grouping and copy declarations remain provisional. The script/group
+owner interfaces remain pointer-only and are never instantiated. The old
+ScriptResource4205F0 interface is token-identical in the new source file;
+all accepted caller bodies and headers remain unchanged.
+
+All three complete EH graphs independently match118 code plus 172 data bytes
+and all 31 real fields. The parser's nine states each unwind to-1 and destroy
+its eight record values /one sequence. Constructor/destructor graphs each have
+one member-cleanup state. All registrations, cleanup bodies, full unwind maps
+and FuncInfo records agree. These 290 compiler bytes receive no exact credit.
+Natural C++ scopes emit these lifetimes; no manual EH or fake returns are used.
+The first five natural body shapes and all scope slots already agreed; four
+meaningful scalar names, selected from retained prior compiler measurements,
+resolve the 117 real frame fields. No padding, inert locals or artificial arrays
+were added. Four actual wrong-field comparisons and three explicit packet
+mutation comparisons fail; the latter are not compiled source variants.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit script-parser-00420880 --unit script-record-constructor-00421200 --unit script-record-destructor-00421220 --unit script-sequence-constructor-00421250 --unit script-sequence-destructor-004212a0
+```
+
+All 210 prior units, 106 canonical objects, 174 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,346 other function rows stay
+unchanged. F009 plus 155 additions retains 572,600 code bytes and 175 inputs.
+Keep all f108 source/name controls, native/attested/layout/CFG/packet/CP932/
+EH/binding/cold/parent evidence and results/logs/PDBs. All historical
+R070/R153/R212/R257 roles remain by aliases. All 97 unknown origins and older
+drafts receive no credit.
+
+Full CI passes **3,603 tests in 124.341 seconds**. The initial four historical
+fixture failures are retained in `.analysis/f108-ci.log`. Four test adapters
+now reverse only hash-pinned approved exact transitions before reversing older
+origin transitions; immutable origin evidence/verifiers and rejection of
+unapproved changes remain intact. Related 64 historical tests and seven
+checkpoint tests pass. Target, tracking, progress and whitespace checks pass.
+
+Cleanup removes only two obsolete reproducible F108 objects / 55,021 bytes
+and Python bytecode caches / 8,282,863 bytes (8,337,884 bytes total). Canonical
+objects, all compiler inputs, name measurements, native/CFG/ABI/EH evidence,
+results, logs and PDBs remain. Hash receipts and complete preservation guards
+are in `.analysis/f108-object-cleanup.json`,
+`.analysis/f108-preservation-cleanup.json` and
+`.analysis/f108-final-compiler-inputs.json`. No old unit was rebuilt.
+
+Current totals: 215 exact functions/units, 582,483 code bytes, 29.51% of
+reviewed authored bytes and 29.46% conservatively including all pending bytes.
+The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F109
+
+Continue the resource chain through the complete 348 byte R015
+SharedSound::CreateBuffer at `00406A20`. Its full native body, AL0/1 normal-return
+flow, output IID_IDirectSoundBuffer8 and actual five-word cdecl caller packet
+were reviewed in F107. Reconcile the complete SDK DSBUFFERDESC (36 bytes), all COM
+packets, shared device producer, true GS/frame/locals and meaningful source
+before acceptance. Keep the existing SoundCreation406A20 declaration in
+ResourceStreams4205F0.cpp identical. The native body reads only four of the
+five caller words; the original unused fifth formal type/name is unknown.
+A compatible DWORD carrier preserves the actual zero; do not turn it into an
+invented flag policy or erase the fifth argument. No F109 source or credit yet.
+
+The nearby complete shared-sound initialization (311 bytes) / wave loader (500 bytes) bodies can
+supply independent device/format/lifecycle evidence if needed. Inspect their
+actual target contracts before choosing an interface or SDK call. Preserve
+all old accepted units, origins, headers, compiler inputs and drafts. Do not
+replay old exact callers unless their source/interface dependencies change.
+
+The R045 resource root 00456B60 still has no accepted source or credit. Its
+80-byte texture base/layout and meaningful filename bound remain unresolved;
+retain the f107 frontier and 588 byte frame refinement. Do not instantiate the
+old partial graphics client or manufacture padding/raw storage/array growth.
