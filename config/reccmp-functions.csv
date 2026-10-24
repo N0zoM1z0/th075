@@ -274,3 +274,5 @@ CharacterInput556FA0::PollCommands,0x00556FA0,function
 CharacterInput579220::PollCommands,0x00579220,function
 CharacterInput59CDA0::PollCommands,0x0059CDA0,function
 CharacterInput5C5980::PollCommands,0x005C5980,function
+SceneRenderer4292E0::Draw,0x004292E0,function
+ReplayBrowser42CA60::RenderList,0x0042CA60,function

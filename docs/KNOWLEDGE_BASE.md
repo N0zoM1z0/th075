@@ -24295,3 +24295,107 @@ a proved complete local record layout; resource root00456B60 retains f107's
 real588byte frame and unresolved texture80/layout/filename bound. Build
 serially; cold-replay only new/affected units and remove only obsolete
 reproducible outputs while retaining inputs/evidence. Later phases deferred.
+
+## F124 complete settings-replay drawing checkpoint (2026-10-25)
+
+R065 scene drawing `004292E0/2759` and R040 replay-browser list rendering
+`0042CA60/2246` independently pass canonical cold comparison: **5,005 code
+bytes plus16 owned table bytes,1,221 instructions,128 actual calls and all144
+real relocation fields**. Every own complete CFG, shared exit, plain RET,
+ESP/EBP/x87 join and real172/240byte frame is checked. Replay saves ESI.
+The settings function's four-target table at00429DA7 immediately follows RET;
+all five dispatch/table fields and all16 bytes are included in comparison.
+Nine/ten following INT3 bytes remain outside the extents. No tail is cropped.
+
+The only aggregate locals are independently complete132byte SDK-based quad
+values and RECTs. The real DrawQuad helper copies33 DWORDs from its quad
+reference. Private scene/drawing/container interfaces remain pointer-only;
+none is instantiated or embedded. Accepted headers and source inputs remain
+unchanged. Settings keeps signed difficulty/volume and selection fields,
+unsigned option/opacity bytes, actual scale division and all cumulative
+outline translations/drawing order. Original global meanings remain provisional.
+
+Replay uses three distinct actual container receiver addresses: this+12 for
+filename slots, this+32 for records and this+52 for mode bytes. Existing R225
+evidence supplies observed4/60/1byte element widths, not complete private
+element declarations. Source uses only actual pointer results and consumed
+record offsets8/9/10/13/14, never an invented full row or container layout.
+Name drawing consumes eight signed glyph codes; filename strings remain
+pointer inputs without a guessed bound. All repeated getter/draw order is
+preserved. Nested record lookups genuinely retain one outer numeric-width
+argument or two outer SetRect arguments. Actual signed metadata/page/index
+math, unsigned mode byte and unsigned Size-result division remain unchanged.
+
+One bounded78address compiler fixture measures names only for genuine local
+page/count/index/color/menu/opacity values. The real same-bucket declaration
+order of textTint before recordIndex is retained. No extra local, scope,
+array, padding or storage is added. The second combined preview already has
+the full correct frames and differs only by the two encoding bytes for >4
+versus the native >=5 menu bound. The third preview and canonical object
+match all5,021 comparison bytes and144 fields. Five wrong real begin/quad/
+draw/record/table bindings fail. There is no pasted decompiler body, target-
+code array, fake return, manual EH, assembly, ABI alias, relocation mask or
+truncated comparison. Original identities, names, full private layouts and
+unproved types remain provisional; no helper/library/global/data/layout credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit scene-renderer-draw-004292e0 --unit replay-browser-render-list-0042ca60
+```
+
+Only the two new units were cold-built, across one canonical object. All275
+prior units,122 canonical objects,190 source inputs,218 origin files,nine
+shared headers,91 active drafts and4,349 other function rows remain unchanged.
+F009 plus217 additions retains667,776 code bytes and191 new inputs. R065/R040
+historical roles remain through aliases, all97 unknown origins remain unknown.
+Preserve f124 complete native/attested/callee/SDK/CFG/x87/packet/receiver/field/
+table/name/binding/cold/parent evidence, three previews, fixture, sources,
+results, logs and PDBs.
+
+Current totals: **277 exact functions/units,677,659 code bytes**,34.34% of
+reviewed authored bytes and **34.27% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in161.670s; seven exact-checkpoint tests
+passed in0.545s; target/tracking and diff checks passed. Only two new units
+were cold-built. Evidence-preserving cleanup removed three obsolete own game
+probes and one pure name fixture(58,990bytes total), plus375 reproducible
+Python bytecode files(8,282,863bytes). All sources/three previews/fixture/name
+measurements/native/SDK/callee/CFG/receiver/table/binding/cold/parent evidence,
+logs, PDBs and canonical objects remain. Receipts are retained under
+`.analysis/f124-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F125
+
+Review three independently authored replay drawing helpers:
+ReplayScene::DrawMetadataNumber `0042D6E0/377` (R052),
+SceneText::DrawNameGlyphsAt0042D860 `0042D860/280` (R102), and
+ReplayScene::DrawReplayFilename `0042D980/315` (R052), total972 code bytes.
+Native helper exports already exist under `.analysis/f124-scene-drawing/`.
+Reconcile every complete CFG, tail, true return/stack/FPU/scalar carrier,
+glyph/string bounds and genuine local-array/value contract before source.
+Use the unchanged complete AtlasQuad446B90 interface for the accepted259byte
+0040DA00 four-float constructor; the14byte0040D9F0 auxiliary remains unknown.
+Do not substitute the latter or instantiate an incomplete owner view.
+F124 supplies methodology and caller contracts, not automatic exact credit.
+
+Native-only F125 inputs under `.analysis/f125-replay-helpers/` retain
+attested function/callee/decompile results and full assembly. The three
+spans linearly decode115/81/92 instructions and7/4/5 calls. These receive no
+exact credit. Filename code copies14 bytes from00657FF8, including the NUL
+of the original prefix `replay\replay`, and calls memcmp with count13.
+Both glyph-output branches write all eight consumed code bytes. Retain its
+genuine AtlasQuad constructor call and independently establish the complete
+local-value/array/frame contract; unobserved frame space does not justify
+extra locals, guessed larger arrays or padding.
+
+Preserve every native glyph/sign/filename/number policy and original target
+string. Keep all accepted sources/headers and unaccepted F021/F048/F061/F066/
+F085 drafts/failed controls. No unchanged retries or relaxed physical
+comparison. Unknown math overloads and all97 unknown origins remain unknown;
+evidence throughR268 is immutable. The F119 row projection and all incomplete
+owners are never instantiated or embedded. QueueFile00407A50/QueueArchiveEntry
+00407B80 still need a proved complete local record layout; resource00456B60
+retains f107's real588byte frame and unresolved texture80/layout/filename
+bound. Build serially, cold-replay only new/affected units and remove only
+obsolete reproducible outputs while retaining inputs/evidence. Later phases
+remain deferred.

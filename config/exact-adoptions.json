@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F123",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F124",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1c4647b10bf907d0b600d60be1f46685e3275aeddbad7c11b7e55254dda2b2b2"
+      "current_sha256": "e2838f92e1e27fbd72a9b96ebf2c42b1dae45bd8eed083414072ab62cf0b71a7"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ed83380b24c95cb4768368fdd7c42f54acdfb061136f154130d1876fd33c6338"
+      "current_sha256": "24eb2a948e77ee864c86053c559ef67e0ffdb4d3f235f05790e3f5e5964a6028"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "a3b268934ab8a95542836f1a99d0756deb7f74deb5721ec2ebcef48a459dbb0d"
+      "current_sha256": "567f323373be7b2d83ba270e51831d2cdb931a601db2e34480477779aa609ac5"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "bb06559ad0d53a7e68dfbf15c6d1e0e17460f2167f4204ce21f2e9e1bc1cfb81"
+      "current_sha256": "822129865d696e0b23ac50c999dc22ec309a5cc4f2b482e6f36a28aaa0314a3e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "3c32da68dc32e7dbcef187d6ec81190c382571f31ec72b260705ebdcd92c5a93"
+      "current_sha256": "25ad839a9b192ef5a06109da110e6fbca7a9b421bd6ccdb15035ef26ed14e975"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "ada8f060590c7a4f95d79ef0fdfd75a93772ea177ff0f08cf06b08871906315e"
+      "current_sha256": "ff3c575a648ab9e066247a5d30e9fdf7e77ce61e3e25c12ccbb1328e5c15988c"
     }
   },
   "functions": [
@@ -9500,6 +9500,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004292E0",
+        "size": "2759",
+        "span_end": "0x00429DA6",
+        "current_name": "FUN_004292e0",
+        "proposed_name": "SceneRenderer::DrawAt004292E0",
+        "module": "SceneRenderer",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004292E0",
+        "size": "2759",
+        "span_end": "0x00429DA6",
+        "current_name": "FUN_004292e0",
+        "proposed_name": "SceneRenderer4292E0::Draw",
+        "module": "SceneRenderer",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SceneRenderer4292E0::Draw()",
+        "is_thunk": "false",
+        "source_file": "src/SettingsReplayDrawing.cpp",
+        "evidence": "R065; complete target body, guarded switch table, CFG and game-specific behavior; F124; scripts/repo-python scripts/replay-exact-units.py --unit scene-renderer-draw-004292e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F124: complete 2759 code bytes plus owned table where present independently canonical cold exact; cohort5005code+16table bytes/1221instructions/128calls/all144real fields. Full172/240byte frames/savedESI/plainRET/ESP-EBP-x87 CFG joins/all exits/four-target table and following INT3 independently checked, no cropped tail. Only complete132byte SDK-based quad/RECT local; private scene/drawing/container views pointer-only, never instantiated/embedded. DrawQuad reads33DWORDs from complete reference. Settings signed difficulty/volume/selection and unsigned option/opacity bytes, real scale division/cumulative outlines and all five table fields preserved. Replay three actual container receiver addresses this+12/files,+32/60stride records,+52/byte modes remain separate; only observed record pointer reads8/9/10/13/14, no invented complete row/layout. Repeated getter/draw order, genuine one outer numeric-width or two outer SetRect arguments, signed metadata and unsigned mode/Size divisions preserved. One bounded78address compiler fixture selects names/declaration order only for genuine locals. Second preview full frames exact except >4 versus actual >=5 bound; third complete exact, no extra storage/scopes/locals. Five wrong real begin/constructor/draw/record/table bindings rejected. No pasted decompile/codearray/fake return/padding/manualEH/assembly/ABIalias/mask/truncation. All275 prior units/122objects/190inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged; R065/R040 roles retained by aliases. Original names/identities/full layouts/unproved types provisional; no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x004292E0",
+        "origin": "authored",
+        "subsystem": "SceneRenderer",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R065"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042CA60",
+        "size": "2246",
+        "span_end": "0x0042D325",
+        "current_name": "FUN_0042ca60",
+        "proposed_name": "ReplayBrowserScene::RenderList",
+        "module": "ReplayBrowserScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042CA60",
+        "size": "2246",
+        "span_end": "0x0042D325",
+        "current_name": "FUN_0042ca60",
+        "proposed_name": "ReplayBrowser42CA60::RenderList",
+        "module": "ReplayBrowserScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReplayBrowser42CA60::RenderList()",
+        "is_thunk": "false",
+        "source_file": "src/SettingsReplayDrawing.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F124; scripts/repo-python scripts/replay-exact-units.py --unit replay-browser-render-list-0042ca60",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F124: complete 2246 code bytes plus owned table where present independently canonical cold exact; cohort5005code+16table bytes/1221instructions/128calls/all144real fields. Full172/240byte frames/savedESI/plainRET/ESP-EBP-x87 CFG joins/all exits/four-target table and following INT3 independently checked, no cropped tail. Only complete132byte SDK-based quad/RECT local; private scene/drawing/container views pointer-only, never instantiated/embedded. DrawQuad reads33DWORDs from complete reference. Settings signed difficulty/volume/selection and unsigned option/opacity bytes, real scale division/cumulative outlines and all five table fields preserved. Replay three actual container receiver addresses this+12/files,+32/60stride records,+52/byte modes remain separate; only observed record pointer reads8/9/10/13/14, no invented complete row/layout. Repeated getter/draw order, genuine one outer numeric-width or two outer SetRect arguments, signed metadata and unsigned mode/Size divisions preserved. One bounded78address compiler fixture selects names/declaration order only for genuine locals. Second preview full frames exact except >4 versus actual >=5 bound; third complete exact, no extra storage/scopes/locals. Five wrong real begin/constructor/draw/record/table bindings rejected. No pasted decompile/codearray/fake return/padding/manualEH/assembly/ABIalias/mask/truncation. All275 prior units/122objects/190inputs/218originfiles/nine sharedheaders/91drafts/97unknown origins unchanged; R065/R040 roles retained by aliases. Original names/identities/full layouts/unproved types provisional; no helper/library/global/data/layout credit."
+      },
+      "origin": {
+        "address": "0x0042CA60",
+        "origin": "authored",
+        "subsystem": "ReplayBrowserScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -127793,6 +127881,918 @@
           "target": 4544512
         }
       ]
+    },
+    "scene-renderer-draw-004292e0": {
+      "source": "src/SettingsReplayDrawing.cpp",
+      "object": "build/matching/SettingsReplayDrawing.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SceneRenderer4292E0::Draw"
+      ],
+      "symbol": "?Draw@SceneRenderer4292E0@@QAEXXZ",
+      "target_address": 4362976,
+      "size": 2759,
+      "compare_size": 2775,
+      "relocations": [
+        {
+          "offset": 16,
+          "type": "REL32",
+          "symbol": "?BeginFrameValueAt00402660@Graphics@@YA_NXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 38,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 54,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 70,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 97,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 115,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 177,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 205,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 237,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 301,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 360,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 378,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 401,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 469,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 493,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 511,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 534,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 599,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 606,
+          "type": "DIR32",
+          "symbol": "?g_SettingsDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 634,
+          "type": "DIR32",
+          "symbol": "$L62604",
+          "target": 4365735
+        },
+        {
+          "offset": 655,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 681,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 710,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 739,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 780,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 848,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 855,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 871,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671604@@3EA",
+          "target": 6755844
+        },
+        {
+          "offset": 893,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 918,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 941,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1009,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1016,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671430@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 1032,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671430@@3EA",
+          "target": 6755376
+        },
+        {
+          "offset": 1054,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1079,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1102,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1166,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1173,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671428@@3EA",
+          "target": 6755368
+        },
+        {
+          "offset": 1196,
+          "type": "DIR32",
+          "symbol": "?g_SettingsByte00671428@@3EA",
+          "target": 6755368
+        },
+        {
+          "offset": 1225,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1250,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1273,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1341,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1365,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1393,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1416,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1484,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1508,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1539,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1562,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1630,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1654,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1685,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1702,
+          "type": "DIR32",
+          "symbol": "?g_SettingsVolume006714B7@@3CA",
+          "target": 6755511
+        },
+        {
+          "offset": 1720,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1747,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 1770,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1838,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1862,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1893,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1916,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1984,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2008,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2039,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2056,
+          "type": "DIR32",
+          "symbol": "?g_SettingsVolume006714B6@@3CA",
+          "target": 6755510
+        },
+        {
+          "offset": 2074,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2101,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 2124,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2188,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2212,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2237,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2287,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2319,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2343,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2361,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 2384,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2432,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 2458,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2506,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 2532,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2580,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 2606,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2654,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 2680,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2743,
+          "type": "REL32",
+          "symbol": "?DrawTexturedQuad@Graphics@@YAXPAY03$$CBMPBUtagRECT@@KPAUIDirect3DTexture8@@@Z",
+          "target": 4205040
+        },
+        {
+          "offset": 2751,
+          "type": "REL32",
+          "symbol": "?EndFrame@Graphics@@YAXXZ",
+          "target": 4204496
+        },
+        {
+          "offset": 2759,
+          "type": "DIR32",
+          "symbol": "$L62190",
+          "target": 4363614
+        },
+        {
+          "offset": 2763,
+          "type": "DIR32",
+          "symbol": "$L62191",
+          "target": 4363637
+        },
+        {
+          "offset": 2767,
+          "type": "DIR32",
+          "symbol": "$L62192",
+          "target": 4363663
+        },
+        {
+          "offset": 2771,
+          "type": "DIR32",
+          "symbol": "$L62193",
+          "target": 4363692
+        }
+      ]
+    },
+    "replay-browser-render-list-0042ca60": {
+      "source": "src/SettingsReplayDrawing.cpp",
+      "object": "build/matching/SettingsReplayDrawing.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReplayBrowser42CA60::RenderList"
+      ],
+      "symbol": "?RenderList@ReplayBrowser42CA60@@QAEXXZ",
+      "target_address": 4377184,
+      "size": 2246,
+      "compare_size": 2246,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "?BeginFrameValueAt00402660@Graphics@@YA_NXZ",
+          "target": 4204128
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 98,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 148,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 209,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 241,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 265,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 296,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 328,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 399,
+          "type": "REL32",
+          "symbol": "?Size@ReplayFilesF124@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 426,
+          "type": "REL32",
+          "symbol": "?Size@ReplayFilesF124@@QAEIXZ",
+          "target": 4316496
+        },
+        {
+          "offset": 628,
+          "type": "REL32",
+          "symbol": "?At@ReplayFilesF124@@QAEPAPBDI@Z",
+          "target": 4316608
+        },
+        {
+          "offset": 682,
+          "type": "REL32",
+          "symbol": "?DrawFilename@ReplayBrowser42CA60@@QAEXMMKPBD@Z",
+          "target": 4381056
+        },
+        {
+          "offset": 709,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 761,
+          "type": "REL32",
+          "symbol": "?DrawNameGlyphs@ReplayBrowser42CA60@@QAEXMMKPBC@Z",
+          "target": 4380768
+        },
+        {
+          "offset": 790,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 846,
+          "type": "REL32",
+          "symbol": "?DrawMetadataNumber@ReplayBrowser42CA60@@QAEXMMKHH@Z",
+          "target": 4380384
+        },
+        {
+          "offset": 873,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 950,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 987,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1016,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1072,
+          "type": "REL32",
+          "symbol": "?DrawMetadataNumber@ReplayBrowser42CA60@@QAEXMMKHH@Z",
+          "target": 4380384
+        },
+        {
+          "offset": 1099,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1253,
+          "type": "REL32",
+          "symbol": "?At@ReplayModesF124@@QAEPAEI@Z",
+          "target": 4381424
+        },
+        {
+          "offset": 1292,
+          "type": "REL32",
+          "symbol": "?At@ReplayModesF124@@QAEPAEI@Z",
+          "target": 4381424
+        },
+        {
+          "offset": 1317,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1394,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1417,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 1454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1481,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1521,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1547,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1624,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1661,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1688,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1731,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 1757,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1834,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 1871,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1947,
+          "type": "REL32",
+          "symbol": "?At@ReplayRecordsF124@@QAEPAXI@Z",
+          "target": 4381600
+        },
+        {
+          "offset": 2048,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 2130,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 2162,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 2227,
+          "type": "REL32",
+          "symbol": "?DrawQuad@SceneQuadDrawingF124@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 2237,
+          "type": "REL32",
+          "symbol": "?EndFrame@Graphics@@YAXXZ",
+          "target": 4204496
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -127985,6 +128985,7 @@
     "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
     "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc",
     "src/CharacterStageRendering.cpp": "ed535950f738b8dbacd2dd7c24e50fc95717f5ce2ad0ac6c9b66921b6d414512",
-    "src/CharacterInputPollingFamily.cpp": "b9f89f4f2ae74e20863230d18367880ba6b38ef50c76f8135a21eee0e41f690a"
+    "src/CharacterInputPollingFamily.cpp": "b9f89f4f2ae74e20863230d18367880ba6b38ef50c76f8135a21eee0e41f690a",
+    "src/SettingsReplayDrawing.cpp": "bcb093bd71d078587b0d9a7164059facff17980e39a414ed4383f21762094224"
   }
 }
