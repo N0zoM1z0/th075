@@ -15992,3 +15992,17 @@ target_address = 0x0040FBB0
 size = 158
 compare_size = 158
 relocations = [{ offset = 0x35, type = "REL32", symbol = "_memset", target = 0x00640490 }]
+
+[units.object-polar-velocity-0040fb70]
+source = "src/ObjectMotion40FB70.cpp"
+object = "build/matching/ObjectMotion40FB70.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["ObjectMotion40FB70::SetPolarVelocity"]
+symbol = "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z"
+target_address = 0x0040FB70
+size = 57
+compare_size = 57
+relocations = [
+  { offset = 0xC, type = "REL32", symbol = "?ReadCosTable@MathLookup@@YAMM@Z", target = 0x0041CB40 },
+  { offset = 0x21, type = "REL32", symbol = "?ReadPhaseTable@MathLookup@@YAMM@Z", target = 0x0041CB70 },
+]

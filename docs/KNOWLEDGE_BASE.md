@@ -20181,3 +20181,40 @@ and tests/ was removed with per-file hashes in `f068-bytecode-cleanup.json`.
 All PDBs, sources, inputs, physical receipts and shared tools remain. Sampled
 intervals show zero swap-in/out and about 11 GiB available memory; builds use
 niceness15 and CI niceness10. The 98% goal remains active.
+
+
+## F069 complete polar velocity composition cold acceptance (2026-10-24)
+
+R217 `0x0040FB70..0x0040FBA8` is exact as
+`ObjectMotion40FB70::SetPolarVelocity`: all57 bytes/22 instructions, two
+physically bound REL32 calls, ret8, no branches/tables. Seven following INT3
+bytes are excluded. The historical role is preserved by alias; ownership,
+extent/hash and pending origins remain unchanged.
+
+Target observations: pass the unchanged angle word to both complete accepted
+MathLookup functions0041CB40/0041CB70 with cdecl four-byte caller cleanup and
+x87 ST0 results. Store cosine(angle)*speed at+50; negate phase(angle) before
+multiplying speed and store at+54. Native FCHS precedes FMUL, with no extra
+truncation/cached result. The F066 audit pins23 current-receiver calls and
+callee ret8; frame4 saves this atEBP-4. Fresh Ghidra decompilation's int return
+spelling for the two lookups is rejected against their full raw x87 bodies
+and accepted native/source/relocation evidence. Decompiler types are not proof.
+
+Compiler observations: one natural C++ body calls the existing unchanged
+MathLookup declarations and reproduces all57 bytes/two actual call fields.
+Preview, independent canonical compile and separate canonical cold replay use
+VC7.1 build3077 with `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`. No assembly, target
+arrays, extra locals/padding, fake results or alternate bodies. This is a
+pointer-only receiver view; original names/declarations/full owner layout
+remain unknown and it is never constructed or embedded.
+
+All159 prior units/canonical objects, accepted source/header inputs, origin
+files and active drafts remain unchanged and were not rebuilt. The manifest
+retains F009 plus100 additions/513,454 code bytes/116 new source inputs.
+Total exact160 functions/523,337 code bytes:26.52% reviewed authored and26.47%
+conservative. All97 unknown origins and R268 evidence stay fixed. The98% goal
+is active and incomplete; F021/F048/F061/F066 receive no credit. Retain private
+f069 binder/physical receipts, accepted replay/log, parent/progress, attested
+views/log and preview inputs. Focused adoption/goal checks, tracking, progress
+and whitespace checks pass; the preceding full3603-test CI checkpoint is F068.
+Next: complete recorded range00455580, then actual sound/shake wrappers.

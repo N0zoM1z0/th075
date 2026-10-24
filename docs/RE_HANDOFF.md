@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 159 / 159 / 159 |
-| Exact code bytes | 523,280 |
-| Reviewed authored coverage | 523,280 / 1,973,516 (26.52%) |
-| Conservative coverage, including every pending byte | 523,280 / 1,977,124 (26.47%) |
+| Source-present / exact functions / exact units | 160 / 160 / 160 |
+| Exact code bytes | 523,337 |
+| Reviewed authored coverage | 523,337 / 1,973,516 (26.52%) |
+| Conservative coverage, including every pending byte | 523,337 / 1,977,124 (26.47%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **99 additions /
-513,397 code bytes / 114 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **100 additions /
+513,454 code bytes / 116 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,39 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F068
+## Latest accepted function: F069
+
+`ObjectMotion40FB70::SetPolarVelocity` cold-replays exact across all 57 bytes
+at `0x0040FB70..0x0040FBA8`: 22 instructions, two complete REL32 bindings,
+ret8 and no branches/tables. Seven following INT3 bytes are excluded.
+An explicit alias preserves R217's historical role and fixed extent/hash.
+
+The X component is the accepted cosine lookup result multiplied by speed.
+The Y component negates the accepted phase lookup result before multiplying
+speed. Both callees take the unchanged float angle with cdecl four-byte caller
+cleanup and return in x87 ST0. Native FCHS precedes the second FMUL. Ghidra's
+inferred int returns for the callees are rejected against their complete native
+bodies and accepted MathLookup units. All 23 F066 calls pass current, with
+ret8 cleanup. Native frame is four bytes; this is saved at EBP-4.
+
+Preview, independent canonical compilation and separate cold replay match with
+the existing explicit build3077 profile. All 159 previous units/canonical
+objects and existing source/header inputs are unchanged and were not rebuilt.
+No prior MathLookup or partial owner layout is changed. Never construct/embed
+this receiver. Original declarations/names and complete owner layout remain
+unknown. Retain f069-bind.py, physical receipts, accepted replay/log,
+adoption-parent, progress, attested views/log and private preview inputs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit object-polar-velocity-0040fb70
+```
+
+Focused adoption/goal checks pass, along with tracking, progress and whitespace.
+The preceding full CI checkpoint is F068 (3,603 tests). Next: complete recorded
+range `0x00455580` (139 bytes, R109), then sound/shake wrappers. F066 remains
+unaccepted at its preserved active03 state.
+
+## Previous accepted function: F068
 
 `SpriteTransform40FBB0::ResetNodeTransform` cold-replays exact across all
 158 bytes at `0x0040FBB0..0x0040FC4D`: 47 instructions, one fully bound

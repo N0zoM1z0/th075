@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F068",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F069",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3f264fe8b6ce261dd26ea0aa7664451f20edd0cc81993a4997c3ce6d1126e237"
+      "current_sha256": "f162a82fa18a2b4c0a196528b30b15cff49aef6e5b465d66e14f270eb7d7aff0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "046ffa179da7eb19fc115b17be064a12adc92a7705e7732d9fe9f75ce27e2840"
+      "current_sha256": "01b0be970a85efd3155d256786ca8751727d293453d90d0e7cd28c427d616eec"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "53b65c863c295c806d193ac4f1263b7e4b60c1807cf0c7edf2abdcea6609b82b"
+      "current_sha256": "bf7eea6c39b8f68d833fe12290bf0cd1251a37c615eae543ca63b44294cddcd6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "41fb9bfb08fce947c7d017c1f5c22c1d593ddc4ca85a772d044aae2d428eb587"
+      "current_sha256": "8c6efe714b1ced7d092f7ce88aeff917ff372ec9d0ea4c7c074b06136df12be0"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "5472f02aaa2d56a3f08352c73425b503f3cd826ee07bb2ca5ac80c0eaf9f68de"
+      "current_sha256": "36c055521939911faf6029d7c5905b074b2f22a418c5e5df428da6193cbae146"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "a02b7230065aca140e77f2ce32d33cf52a537d3b923e5e5d037205ab8c2dadad"
+      "current_sha256": "eef97f6d5baac0cac3771cf525a6b6ba1ba98d0df52a5ebee6bcfb990547d437"
     }
   },
   "functions": [
@@ -4396,6 +4396,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R036"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040FB70",
+        "size": "57",
+        "span_end": "0x0040FBA8",
+        "current_name": "FUN_0040fb70",
+        "proposed_name": "GameObject::SetPolarVelocity [provisional role]",
+        "module": "GameObjectMotion",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R217; config/polar-velocity-origin-evidence.json; scripts/repo-python scripts/verify-polar-velocity-origins.py",
+        "owner": "authored",
+        "notes": "Complete custom polar velocity composition: original authored table-index/phase helpers, actual x87 multiply/negation and float stores at receiver+50/+54, confirmed by two whole independent game update policies and six actual argument/receiver call sequences. Original names, angle spelling, private owner layout and runtime numeric outcomes remain unknown. Origin only; no source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0040FB70",
+        "size": "57",
+        "span_end": "0x0040FBA8",
+        "current_name": "FUN_0040fb70",
+        "proposed_name": "ObjectMotion40FB70::SetPolarVelocity",
+        "module": "GameObjectMotion",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ObjectMotion40FB70::SetPolarVelocity(float angle, float speed)",
+        "is_thunk": "false",
+        "source_file": "src/ObjectMotion40FB70.cpp",
+        "evidence": "R217; config/polar-velocity-origin-evidence.json; scripts/repo-python scripts/verify-polar-velocity-origins.py; F069; scripts/repo-python scripts/replay-exact-units.py --unit object-polar-velocity-0040fb70",
+        "owner": "authored",
+        "notes": "Complete custom polar velocity composition: original authored table-index/phase helpers, actual x87 multiply/negation and float stores at receiver+50/+54, confirmed by two whole independent game update policies and six actual argument/receiver call sequences. Original names, angle spelling, private owner layout and runtime numeric outcomes remain unknown. Origin only; no source/private ABI/mapping/exact credit.; F069: complete57-byte cold exact polar velocity composition,22 instructions and two fully bound accepted MathLookup calls; x87 ST0 results and FCHS before the Y multiply retained;23 independently audited F066 current receivers/ret8; R217 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x0040FB70",
+        "origin": "authored",
+        "subsystem": "GameObjectMotion",
+        "disposition": "authored",
+        "confidence": "complete-game-polar-table-composition-and-independent-receiver-policies",
+        "evidence_id": "R217"
       }
     }
   ],
@@ -88883,6 +88927,41 @@
           "target": 6554768
         }
       ]
+    },
+    "object-polar-velocity-0040fb70": {
+      "source": "src/ObjectMotion40FB70.cpp",
+      "object": "build/matching/ObjectMotion40FB70.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ObjectMotion40FB70::SetPolarVelocity"
+      ],
+      "symbol": "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z",
+      "target_address": 4258672,
+      "size": 57,
+      "compare_size": 57,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "?ReadCosTable@MathLookup@@YAMM@Z",
+          "target": 4311872
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?ReadPhaseTable@MathLookup@@YAMM@Z",
+          "target": 4311920
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -88999,6 +89078,8 @@
     "src/AnimationProgress40FA30.cpp": "e9635f9524f392025e5b852fa4139bfc44dac08d5fd81fa67d2f18108c988e39",
     "src/AnimationProgress40FA30.hpp": "58aae71e9204dbf6862e02d7184cae507a6207218a30208a97d7a1b285b6eb7e",
     "src/SpriteTransform40FBB0.cpp": "fcb3b65d2ff28aa54ca8063d55e3f01e77a5c5b9e48a8671b749fcdd1e85322f",
-    "src/SpriteTransform40FBB0.hpp": "424fcbf027fa8d1954cf5ea61c1ed40fc2a094e505868624858a4220eafe0077"
+    "src/SpriteTransform40FBB0.hpp": "424fcbf027fa8d1954cf5ea61c1ed40fc2a094e505868624858a4220eafe0077",
+    "src/ObjectMotion40FB70.cpp": "374b52f6cf14a596c1b43776c5e274cfb138d790389fb089c0363469771642de",
+    "src/ObjectMotion40FB70.hpp": "1efb7be0dc8c507ecbea1c752125ee932750a5c0760387ec75ac4db1efb974f3"
   }
 }
