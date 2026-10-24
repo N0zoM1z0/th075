@@ -18819,3 +18819,117 @@ relocations = [
   { offset = 0x1BF, type = "DIR32", symbol = "__imp__WriteFile@20", target = 0x00657124 },
   { offset = 0x1CE, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
 ]
+
+[units."audio-record-open-file-00408110"]
+source = "src/AudioRecord408110.cpp"
+object = "build/matching/AudioRecord408110.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStreamRecord408110::OpenFile"]
+symbol = "?OpenFile@AudioStreamRecord408110@@QAEXPBDK@Z"
+target_address = 0x00408110
+size = 627
+compare_size = 627
+relocations = [
+  { offset = 0x1B, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x41, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x6F, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x88, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xA1, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xB9, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0xDB, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xF3, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x14D, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x17D, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x19D, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
+  { offset = 0x1AF, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+  { offset = 0x1CF, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
+  { offset = 0x21F, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+]
+
+[units."audio-record-open-archive-00408390"]
+source = "src/AudioRecord408110.cpp"
+object = "build/matching/AudioRecord408110.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStreamRecord408110::OpenArchiveEntry"]
+symbol = "?OpenArchiveEntry@AudioStreamRecord408110@@QAEXPBDK0@Z"
+target_address = 0x00408390
+size = 727
+compare_size = 727
+relocations = [
+  { offset = 0x13, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
+  { offset = 0x1D, type = "DIR32", symbol = "?archiveReadActive@@3EA", target = 0x0067138D },
+  { offset = 0x2D, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
+  { offset = 0x39, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x3F, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x4D, type = "REL32", symbol = "?Find@SoundArchiveLookup41CF00@@YAPAVArchiveContextWithoutSize41D750@@PBD@Z", target = 0x0041CF00 },
+  { offset = 0x57, type = "REL32", symbol = "?Seek@ArchiveContextWithoutSize41D750@@QAEPAXPBD@Z", target = 0x0041D750 },
+  { offset = 0x6C, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x8C, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0xA2, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0xBB, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xD4, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xE9, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x101, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x123, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x138, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x150, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x1AA, type = "REL32", symbol = "??_U@YAPAXI@Z", target = 0x006416A2 },
+  { offset = 0x1DA, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x1FA, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
+  { offset = 0x20C, type = "REL32", symbol = "??_V@YAXPAX@Z", target = 0x0064169D },
+  { offset = 0x22C, type = "REL32", symbol = "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z", target = 0x00406A20 },
+  { offset = 0x27C, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x2CC, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+]
+
+[units."audio-record-loop-file-00408670"]
+source = "src/AudioRecord408110.cpp"
+object = "build/matching/AudioRecord408110.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStreamRecord408110::ReadLoopPointsFromFile"]
+symbol = "?ReadLoopPointsFromFile@AudioStreamRecord408110@@QAEXPBD@Z"
+target_address = 0x00408670
+size = 644
+compare_size = 644
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x28, type = "DIR32", symbol = "?archiveReadActive@@3EA", target = 0x0067138D },
+  { offset = 0x34, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x51, type = "DIR32", symbol = "__imp__CreateFileA@28", target = 0x00657130 },
+  { offset = 0x66, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0x8A, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x9C, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0xB2, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0xCE, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0xD8, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0xDE, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x27A, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]
+
+[units."audio-record-loop-archive-00408900"]
+source = "src/AudioRecord408110.cpp"
+object = "build/matching/AudioRecord408110.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioStreamRecord408110::ReadLoopPointsFromArchive"]
+symbol = "?ReadLoopPointsFromArchive@AudioStreamRecord408110@@QAEXPBD0@Z"
+target_address = 0x00408900
+size = 713
+compare_size = 713
+relocations = [
+  { offset = 0xA, type = "DIR32", symbol = "___security_cookie", target = 0x0066FE30 },
+  { offset = 0x18, type = "DIR32", symbol = "$SG57200", target = 0x006577B4 },
+  { offset = 0x21, type = "REL32", symbol = "_strcmp", target = 0x006416B0 },
+  { offset = 0x63, type = "DIR32", symbol = "__imp__CreateEventA@16", target = 0x00657054 },
+  { offset = 0x6D, type = "DIR32", symbol = "?archiveReadActive@@3EA", target = 0x0067138D },
+  { offset = 0x7D, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
+  { offset = 0x89, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+  { offset = 0x8F, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0xA1, type = "REL32", symbol = "?Find@SizedArchiveLookup41CF00@@YAPAVArchiveContextWithSize41D800@@PBD@Z", target = 0x0041CF00 },
+  { offset = 0xAB, type = "REL32", symbol = "?Seek@ArchiveContextWithSize41D800@@QAEPAXPBDPAK@Z", target = 0x0041D800 },
+  { offset = 0xC0, type = "DIR32", symbol = "__imp__GetFileSize@8", target = 0x00657058 },
+  { offset = 0xE4, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x101, type = "DIR32", symbol = "__imp__SetFilePointer@16", target = 0x00657128 },
+  { offset = 0x11D, type = "DIR32", symbol = "__imp__ReadFile@20", target = 0x0065712C },
+  { offset = 0x123, type = "DIR32", symbol = "?archiveReadRequested@@3EA", target = 0x0067138C },
+  { offset = 0x2BF, type = "REL32", symbol = "@__security_check_cookie@4", target = 0x00640611 },
+]

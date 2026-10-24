@@ -224,3 +224,7 @@ SharedPcm406B80::Read,0x00406B80,function
 SoundBank4073D0::LoadWaveDirectory,0x004073D0,function
 SoundBank4073D0::LoadSerializedFile,0x00407540,function
 SoundBank4073D0::SaveSerializedFile,0x004077E0,function
+AudioStreamRecord408110::OpenFile,0x00408110,function
+AudioStreamRecord408110::OpenArchiveEntry,0x00408390,function
+AudioStreamRecord408110::ReadLoopPointsFromFile,0x00408670,function
+AudioStreamRecord408110::ReadLoopPointsFromArchive,0x00408900,function

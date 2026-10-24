@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F111",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F112",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3e52834f2a669512cd75eb598dfd496bbfa0b17e6f46e1ac1129e0fb17132732"
+      "current_sha256": "6b1b725f86cc6588e6cd04e26dae16ad09f4126bc3d997fdb8b14cbaa3156305"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7b4e5e831d84d4c6a966ee0535cfa34bf5568c15e434086d4ca158e636b1ccfd"
+      "current_sha256": "0cc48acfcee87e8adb9f85d2b6548db2019827fb3f13d95b8145d781f62c7cb8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "322e0ced0f0d39100abd0f3a636926e8bfc19ba4f22870c187b0796cd313e3f6"
+      "current_sha256": "7ba2bf52771cfd83ac034c93b012ae2d535633383fd2024eba9c7c84632e9d3e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "e301d4307f33efc89108b9c060e0cf2e586dd2561c605d1aa5d0872ceb3d7531"
+      "current_sha256": "82b62f77336723761fef2c5a72e3ec619f8f2f123cf6826c9f1ecc5e027f9e51"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "6d5b6c11818b68fa7e732a6ea76490de71739dce86f1ff2d922105643a4b916a"
+      "current_sha256": "b1a50e527a2ddae9a2c65f7f3130738efef3510f277b6d12f07cd4f3e105b357"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "82ac8f6df632b61304bfc65b7e6d091a5857abf7dfeecb4ed05777df14ec7eea"
+      "current_sha256": "7125624b05a0c20c65fd551d7af1b836a01fb667f0261268ea6720768c2c2aec"
     }
   },
   "functions": [
@@ -7300,6 +7300,182 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00408110",
+        "size": "627",
+        "span_end": "0x00408382",
+        "current_name": "FUN_00408110",
+        "proposed_name": "AudioStreamRecord::OpenFile",
+        "module": "AudioStreamRecord",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00408110",
+        "size": "627",
+        "span_end": "0x00408382",
+        "current_name": "FUN_00408110",
+        "proposed_name": "AudioStreamRecord408110::OpenFile",
+        "module": "AudioStreamRecord",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioStreamRecord408110::OpenFile(const char*, DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/AudioRecord408110.cpp",
+        "evidence": "R017; F112; scripts/repo-python scripts/replay-exact-units.py --unit audio-record-open-file-00408110",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F112: complete 627 byte independent canonical cold exact; family627+727+644+713=2711 code bytes, 824 instructions, 55 actual packets and all66 real fields; complete CFG/stack joins, true60/68/352/360 byte frames and RET8/12/4/8. Partial stream/archive interfaces and actual owner field views only, never instantiated/embedded; full owner extent and original source names unknown. Token-identical sized/unsized archive context declarations and unchanged five-word sound factory ABI; real Find outer4/8 bytes, borrowed Seek handles. File open closes prior nonzero handle, opens own handle, preserves fixed RIFF format-size offsets16/24/28 and WAVE18; archive open uses actual CreateEventA/Wait20/Close event/request1, saves entry base and resets absolute base before relative format/data seeks, no archive handle close and request0 on failure/common exit. Whole payload fallback or real half-buffer path retains ENTIREBUFFER flag, read-half/state0/half/half+start/Unlock both outputs and all ignored results. Two genuine320-byte tail arrays are independently established by ReadFile320/loop320; all15 indexed BYTE reads per scanner and repeated8-bit shifts checked. Actual cue3/adtl4 binary prefixes, offsets16..19 and scale4, missing tail bound guard/index338, short-read uninitialized tail and entry-size underflow retained. Invalid/empty input zeros loop fields and drops request; valid empty disk handle leak preserved. Missing cue or length retains old fields. The second disk GetFileSize result is genuinely stored once/unread at408710, retained from first probe, not invented frame storage. Exact wave\\bgm\\59.wav special case writes0x60E8AC/0x5E0D90 before event/claim operations. First two open shapes already right; one103-used-name measurement resolves all physical frames with same real values/scopes, no buffer growth. Four wrong binding and three packet mutations rejected; no padding/inert locals/extra scopes/fake returns/manual EH/assembly/ABI aliases/masks/cropped extents. All225 prior units/110 objects/178 inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R017 roles retained by aliases. Previous text-parser hypothesis superseded by binary cue/adtl evidence; original global volatile spelling and synchronization correctness remain unclaimed."
+      },
+      "origin": {
+        "address": "0x00408110",
+        "origin": "authored",
+        "subsystem": "AudioStreamRecord",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00408390",
+        "size": "727",
+        "span_end": "0x00408666",
+        "current_name": "FUN_00408390",
+        "proposed_name": "AudioStreamRecord::OpenArchiveEntry",
+        "module": "AudioStreamRecord",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00408390",
+        "size": "727",
+        "span_end": "0x00408666",
+        "current_name": "FUN_00408390",
+        "proposed_name": "AudioStreamRecord408110::OpenArchiveEntry",
+        "module": "AudioStreamRecord",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioStreamRecord408110::OpenArchiveEntry(const char*, DWORD, const char*)",
+        "is_thunk": "false",
+        "source_file": "src/AudioRecord408110.cpp",
+        "evidence": "R017; F112; scripts/repo-python scripts/replay-exact-units.py --unit audio-record-open-archive-00408390",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F112: complete 727 byte independent canonical cold exact; family627+727+644+713=2711 code bytes, 824 instructions, 55 actual packets and all66 real fields; complete CFG/stack joins, true60/68/352/360 byte frames and RET8/12/4/8. Partial stream/archive interfaces and actual owner field views only, never instantiated/embedded; full owner extent and original source names unknown. Token-identical sized/unsized archive context declarations and unchanged five-word sound factory ABI; real Find outer4/8 bytes, borrowed Seek handles. File open closes prior nonzero handle, opens own handle, preserves fixed RIFF format-size offsets16/24/28 and WAVE18; archive open uses actual CreateEventA/Wait20/Close event/request1, saves entry base and resets absolute base before relative format/data seeks, no archive handle close and request0 on failure/common exit. Whole payload fallback or real half-buffer path retains ENTIREBUFFER flag, read-half/state0/half/half+start/Unlock both outputs and all ignored results. Two genuine320-byte tail arrays are independently established by ReadFile320/loop320; all15 indexed BYTE reads per scanner and repeated8-bit shifts checked. Actual cue3/adtl4 binary prefixes, offsets16..19 and scale4, missing tail bound guard/index338, short-read uninitialized tail and entry-size underflow retained. Invalid/empty input zeros loop fields and drops request; valid empty disk handle leak preserved. Missing cue or length retains old fields. The second disk GetFileSize result is genuinely stored once/unread at408710, retained from first probe, not invented frame storage. Exact wave\\bgm\\59.wav special case writes0x60E8AC/0x5E0D90 before event/claim operations. First two open shapes already right; one103-used-name measurement resolves all physical frames with same real values/scopes, no buffer growth. Four wrong binding and three packet mutations rejected; no padding/inert locals/extra scopes/fake returns/manual EH/assembly/ABI aliases/masks/cropped extents. All225 prior units/110 objects/178 inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R017 roles retained by aliases. Previous text-parser hypothesis superseded by binary cue/adtl evidence; original global volatile spelling and synchronization correctness remain unclaimed."
+      },
+      "origin": {
+        "address": "0x00408390",
+        "origin": "authored",
+        "subsystem": "AudioStreamRecord",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00408670",
+        "size": "644",
+        "span_end": "0x004088F3",
+        "current_name": "FUN_00408670",
+        "proposed_name": "AudioStreamRecord::ReadLoopPointsFromFile",
+        "module": "AudioStreamRecord",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00408670",
+        "size": "644",
+        "span_end": "0x004088F3",
+        "current_name": "FUN_00408670",
+        "proposed_name": "AudioStreamRecord408110::ReadLoopPointsFromFile",
+        "module": "AudioStreamRecord",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioStreamRecord408110::ReadLoopPointsFromFile(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/AudioRecord408110.cpp",
+        "evidence": "R017; F112; scripts/repo-python scripts/replay-exact-units.py --unit audio-record-loop-file-00408670",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F112: complete 644 byte independent canonical cold exact; family627+727+644+713=2711 code bytes, 824 instructions, 55 actual packets and all66 real fields; complete CFG/stack joins, true60/68/352/360 byte frames and RET8/12/4/8. Partial stream/archive interfaces and actual owner field views only, never instantiated/embedded; full owner extent and original source names unknown. Token-identical sized/unsized archive context declarations and unchanged five-word sound factory ABI; real Find outer4/8 bytes, borrowed Seek handles. File open closes prior nonzero handle, opens own handle, preserves fixed RIFF format-size offsets16/24/28 and WAVE18; archive open uses actual CreateEventA/Wait20/Close event/request1, saves entry base and resets absolute base before relative format/data seeks, no archive handle close and request0 on failure/common exit. Whole payload fallback or real half-buffer path retains ENTIREBUFFER flag, read-half/state0/half/half+start/Unlock both outputs and all ignored results. Two genuine320-byte tail arrays are independently established by ReadFile320/loop320; all15 indexed BYTE reads per scanner and repeated8-bit shifts checked. Actual cue3/adtl4 binary prefixes, offsets16..19 and scale4, missing tail bound guard/index338, short-read uninitialized tail and entry-size underflow retained. Invalid/empty input zeros loop fields and drops request; valid empty disk handle leak preserved. Missing cue or length retains old fields. The second disk GetFileSize result is genuinely stored once/unread at408710, retained from first probe, not invented frame storage. Exact wave\\bgm\\59.wav special case writes0x60E8AC/0x5E0D90 before event/claim operations. First two open shapes already right; one103-used-name measurement resolves all physical frames with same real values/scopes, no buffer growth. Four wrong binding and three packet mutations rejected; no padding/inert locals/extra scopes/fake returns/manual EH/assembly/ABI aliases/masks/cropped extents. All225 prior units/110 objects/178 inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R017 roles retained by aliases. Previous text-parser hypothesis superseded by binary cue/adtl evidence; original global volatile spelling and synchronization correctness remain unclaimed."
+      },
+      "origin": {
+        "address": "0x00408670",
+        "origin": "authored",
+        "subsystem": "AudioStreamRecord",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00408900",
+        "size": "713",
+        "span_end": "0x00408BC8",
+        "current_name": "FUN_00408900",
+        "proposed_name": "AudioStreamRecord::ReadLoopPointsFromArchive",
+        "module": "AudioStreamRecord",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R017",
+        "owner": "",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00408900",
+        "size": "713",
+        "span_end": "0x00408BC8",
+        "current_name": "FUN_00408900",
+        "proposed_name": "AudioStreamRecord408110::ReadLoopPointsFromArchive",
+        "module": "AudioStreamRecord",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AudioStreamRecord408110::ReadLoopPointsFromArchive(const char*, const char*)",
+        "is_thunk": "false",
+        "source_file": "src/AudioRecord408110.cpp",
+        "evidence": "R017; F112; scripts/repo-python scripts/replay-exact-units.py --unit audio-record-loop-archive-00408900",
+        "owner": "authored",
+        "notes": "R017; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F112: complete 713 byte independent canonical cold exact; family627+727+644+713=2711 code bytes, 824 instructions, 55 actual packets and all66 real fields; complete CFG/stack joins, true60/68/352/360 byte frames and RET8/12/4/8. Partial stream/archive interfaces and actual owner field views only, never instantiated/embedded; full owner extent and original source names unknown. Token-identical sized/unsized archive context declarations and unchanged five-word sound factory ABI; real Find outer4/8 bytes, borrowed Seek handles. File open closes prior nonzero handle, opens own handle, preserves fixed RIFF format-size offsets16/24/28 and WAVE18; archive open uses actual CreateEventA/Wait20/Close event/request1, saves entry base and resets absolute base before relative format/data seeks, no archive handle close and request0 on failure/common exit. Whole payload fallback or real half-buffer path retains ENTIREBUFFER flag, read-half/state0/half/half+start/Unlock both outputs and all ignored results. Two genuine320-byte tail arrays are independently established by ReadFile320/loop320; all15 indexed BYTE reads per scanner and repeated8-bit shifts checked. Actual cue3/adtl4 binary prefixes, offsets16..19 and scale4, missing tail bound guard/index338, short-read uninitialized tail and entry-size underflow retained. Invalid/empty input zeros loop fields and drops request; valid empty disk handle leak preserved. Missing cue or length retains old fields. The second disk GetFileSize result is genuinely stored once/unread at408710, retained from first probe, not invented frame storage. Exact wave\\bgm\\59.wav special case writes0x60E8AC/0x5E0D90 before event/claim operations. First two open shapes already right; one103-used-name measurement resolves all physical frames with same real values/scopes, no buffer growth. Four wrong binding and three packet mutations rejected; no padding/inert locals/extra scopes/fake returns/manual EH/assembly/ABI aliases/masks/cropped extents. All225 prior units/110 objects/178 inputs/218 origin files/97 unknown origins/headers/drafts unchanged; R017 roles retained by aliases. Previous text-parser hypothesis superseded by binary cue/adtl evidence; original global volatile spelling and synchronization correctness remain unclaimed."
+      },
+      "origin": {
+        "address": "0x00408900",
+        "origin": "authored",
+        "subsystem": "AudioStreamRecord",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R017"
       }
     }
   ],
@@ -105530,6 +105706,498 @@
           "target": 6648120
         }
       ]
+    },
+    "audio-record-open-file-00408110": {
+      "source": "src/AudioRecord408110.cpp",
+      "object": "build/matching/AudioRecord408110.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStreamRecord408110::OpenFile"
+      ],
+      "symbol": "?OpenFile@AudioStreamRecord408110@@QAEXPBDK@Z",
+      "target_address": 4227344,
+      "size": 627,
+      "compare_size": 627,
+      "relocations": [
+        {
+          "offset": 27,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 65,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 161,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 185,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 219,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 243,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 333,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 381,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 413,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 431,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        },
+        {
+          "offset": 463,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 543,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        }
+      ]
+    },
+    "audio-record-open-archive-00408390": {
+      "source": "src/AudioRecord408110.cpp",
+      "object": "build/matching/AudioRecord408110.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStreamRecord408110::OpenArchiveEntry"
+      ],
+      "symbol": "?OpenArchiveEntry@AudioStreamRecord408110@@QAEXPBDK0@Z",
+      "target_address": 4227984,
+      "size": 727,
+      "compare_size": 727,
+      "relocations": [
+        {
+          "offset": 19,
+          "type": "DIR32",
+          "symbol": "__imp__CreateEventA@16",
+          "target": 6647892
+        },
+        {
+          "offset": 29,
+          "type": "DIR32",
+          "symbol": "?archiveReadActive@@3EA",
+          "target": 6755213
+        },
+        {
+          "offset": 45,
+          "type": "DIR32",
+          "symbol": "__imp__WaitForSingleObject@8",
+          "target": 6648096
+        },
+        {
+          "offset": 57,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 63,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 77,
+          "type": "REL32",
+          "symbol": "?Find@SoundArchiveLookup41CF00@@YAPAVArchiveContextWithoutSize41D750@@PBD@Z",
+          "target": 4312832
+        },
+        {
+          "offset": 87,
+          "type": "REL32",
+          "symbol": "?Seek@ArchiveContextWithoutSize41D750@@QAEPAXPBD@Z",
+          "target": 4314960
+        },
+        {
+          "offset": 108,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 162,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 187,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 212,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 233,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 291,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 312,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 336,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 426,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 474,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 506,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 524,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        },
+        {
+          "offset": 556,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 636,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        }
+      ]
+    },
+    "audio-record-loop-file-00408670": {
+      "source": "src/AudioRecord408110.cpp",
+      "object": "build/matching/AudioRecord408110.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStreamRecord408110::ReadLoopPointsFromFile"
+      ],
+      "symbol": "?ReadLoopPointsFromFile@AudioStreamRecord408110@@QAEXPBD@Z",
+      "target_address": 4228720,
+      "size": 644,
+      "compare_size": 644,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?archiveReadActive@@3EA",
+          "target": 6755213
+        },
+        {
+          "offset": 52,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 102,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 156,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 206,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 216,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 222,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 634,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "audio-record-loop-archive-00408900": {
+      "source": "src/AudioRecord408110.cpp",
+      "object": "build/matching/AudioRecord408110.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AudioStreamRecord408110::ReadLoopPointsFromArchive"
+      ],
+      "symbol": "?ReadLoopPointsFromArchive@AudioStreamRecord408110@@QAEXPBD0@Z",
+      "target_address": 4229376,
+      "size": 713,
+      "compare_size": 713,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 24,
+          "type": "DIR32",
+          "symbol": "$SG57200",
+          "target": 6649780
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "_strcmp",
+          "target": 6559408
+        },
+        {
+          "offset": 99,
+          "type": "DIR32",
+          "symbol": "__imp__CreateEventA@16",
+          "target": 6647892
+        },
+        {
+          "offset": 109,
+          "type": "DIR32",
+          "symbol": "?archiveReadActive@@3EA",
+          "target": 6755213
+        },
+        {
+          "offset": 125,
+          "type": "DIR32",
+          "symbol": "__imp__WaitForSingleObject@8",
+          "target": 6648096
+        },
+        {
+          "offset": 137,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 143,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 161,
+          "type": "REL32",
+          "symbol": "?Find@SizedArchiveLookup41CF00@@YAPAVArchiveContextWithSize41D800@@PBD@Z",
+          "target": 4312832
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "?Seek@ArchiveContextWithSize41D800@@QAEPAXPBDPAK@Z",
+          "target": 4315136
+        },
+        {
+          "offset": 192,
+          "type": "DIR32",
+          "symbol": "__imp__GetFileSize@8",
+          "target": 6647896
+        },
+        {
+          "offset": 228,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 257,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 285,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 291,
+          "type": "DIR32",
+          "symbol": "?archiveReadRequested@@3EA",
+          "target": 6755212
+        },
+        {
+          "offset": 703,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -105710,6 +106378,7 @@
     "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018",
     "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492",
     "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f",
-    "src/SoundBank4073D0.cpp": "c69459a37ac3b84077c8c9c473dc1f6864cc86a0f4ce1a9e2e4f1385cb5f528e"
+    "src/SoundBank4073D0.cpp": "c69459a37ac3b84077c8c9c473dc1f6864cc86a0f4ce1a9e2e4f1385cb5f528e",
+    "src/AudioRecord408110.cpp": "cc5c15ae67cf92e7dd7b21ec45b4f279bff839ac3f2736c8d29c21d13a3806e8"
   }
 }

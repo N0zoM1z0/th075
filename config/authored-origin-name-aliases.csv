@@ -168,3 +168,7 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x004073D0,SoundBank::LoadWaveDirectory,SoundBank4073D0::LoadWaveDirectory,R016,sound-bank-wave-directory-004073d0
 0x00407540,SoundBank::LoadSerializedFile,SoundBank4073D0::LoadSerializedFile,R016,sound-bank-file-load-00407540
 0x004077E0,SoundBank::SaveSerializedFile,SoundBank4073D0::SaveSerializedFile,R016,sound-bank-file-save-004077e0
+0x00408110,AudioStreamRecord::OpenFile,AudioStreamRecord408110::OpenFile,R017,audio-record-open-file-00408110
+0x00408390,AudioStreamRecord::OpenArchiveEntry,AudioStreamRecord408110::OpenArchiveEntry,R017,audio-record-open-archive-00408390
+0x00408670,AudioStreamRecord::ReadLoopPointsFromFile,AudioStreamRecord408110::ReadLoopPointsFromFile,R017,audio-record-loop-file-00408670
+0x00408900,AudioStreamRecord::ReadLoopPointsFromArchive,AudioStreamRecord408110::ReadLoopPointsFromArchive,R017,audio-record-loop-archive-00408900
