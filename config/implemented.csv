@@ -234,3 +234,8 @@ AudioControl407CA0::Stop
 AudioControl407CA0::ApplyVolumeOffset
 AudioControl407CA0::ScheduleFade
 AudioControl407CA0::Worker
+AudioVolume4073B0::SetSoundBankVolume
+AudioVolume4073B0::SetStreamVolume
+SoundBankPlay4079C0::Play
+AudioRecordLifecycle409290::AudioRecordLifecycle409290
+AudioRecordLifecycle409290::~AudioRecordLifecycle409290

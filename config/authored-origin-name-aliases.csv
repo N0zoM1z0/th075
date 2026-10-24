@@ -179,3 +179,8 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00407DD0,AudioStream::ApplyVolumeOffset,AudioControl407CA0::ApplyVolumeOffset,R016,stream-control-applyvolumeoffset-00407dd0
 0x00407E60,AudioStream::ScheduleFade,AudioControl407CA0::ScheduleFade,R016,stream-control-schedulefade-00407e60
 0x00407EF0,AudioStream::Worker,AudioControl407CA0::Worker,R016,stream-control-worker-00407ef0
+0x004073B0,SoundBank::SetVolume,AudioVolume4073B0::SetSoundBankVolume,R016,sound-bank-volume-004073b0
+0x004073C0,AudioStream::SetVolume,AudioVolume4073B0::SetStreamVolume,R016,stream-volume-004073c0
+0x004079C0,SoundBank::Play,SoundBankPlay4079C0::Play,R016,sound-bank-play-004079c0
+0x00409290,AudioStreamRecord::Initialize,AudioRecordLifecycle409290::AudioRecordLifecycle409290,R017,audio-record-ctor-00409290
+0x004092F0,AudioStreamRecord::ReleaseResources,AudioRecordLifecycle409290::~AudioRecordLifecycle409290,R017,audio-record-dtor-004092f0

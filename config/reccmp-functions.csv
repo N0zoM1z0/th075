@@ -235,3 +235,8 @@ AudioControl407CA0::Stop,0x00407D70,function
 AudioControl407CA0::ApplyVolumeOffset,0x00407DD0,function
 AudioControl407CA0::ScheduleFade,0x00407E60,function
 AudioControl407CA0::Worker,0x00407EF0,function
+AudioVolume4073B0::SetSoundBankVolume,0x004073B0,function
+AudioVolume4073B0::SetStreamVolume,0x004073C0,function
+SoundBankPlay4079C0::Play,0x004079C0,function
+AudioRecordLifecycle409290::AudioRecordLifecycle409290,0x00409290,function
+AudioRecordLifecycle409290::~AudioRecordLifecycle409290,0x004092F0,function

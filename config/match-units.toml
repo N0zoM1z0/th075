@@ -19113,3 +19113,70 @@ relocations = [
   { offset = 0x1FF, type = "DIR32", symbol = "?audioWorkerEvent@@3PAXA", target = 0x00671394 },
   { offset = 0x206, type = "DIR32", symbol = "__imp__WaitForSingleObject@8", target = 0x00657120 },
 ]
+
+[units."sound-bank-volume-004073b0"]
+source = "src/AudioLifecycle4073B0.cpp"
+object = "build/matching/AudioLifecycle4073B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioVolume4073B0::SetSoundBankVolume"]
+symbol = "?SetSoundBankVolume@AudioVolume4073B0@@YAXC@Z"
+target_address = 0x004073B0
+size = 13
+compare_size = 13
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "?soundBankVolume@@3CA", target = 0x0066C213 },
+]
+
+[units."stream-volume-004073c0"]
+source = "src/AudioLifecycle4073B0.cpp"
+object = "build/matching/AudioLifecycle4073B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioVolume4073B0::SetStreamVolume"]
+symbol = "?SetStreamVolume@AudioVolume4073B0@@YAXC@Z"
+target_address = 0x004073C0
+size = 13
+compare_size = 13
+relocations = [
+  { offset = 0x7, type = "DIR32", symbol = "?masterVolume@@3CA", target = 0x0066C214 },
+]
+
+[units."sound-bank-play-004079c0"]
+source = "src/AudioLifecycle4073B0.cpp"
+object = "build/matching/AudioLifecycle4073B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SoundBankPlay4079C0::Play"]
+symbol = "?Play@SoundBankPlay4079C0@@QAEXH@Z"
+target_address = 0x004079C0
+size = 142
+compare_size = 142
+relocations = [
+  { offset = 0x13, type = "REL32", symbol = "?Size@SoundBankPlay4079C0@@QAEIXZ", target = 0x004093A0 },
+  { offset = 0x26, type = "REL32", symbol = "?Unchecked@SoundBankPlay4079C0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x00409430 },
+  { offset = 0x39, type = "REL32", symbol = "?At@SoundBankPlay4079C0@@QAEAAPAUIDirectSoundBuffer8@@I@Z", target = 0x004093E0 },
+  { offset = 0x5F, type = "DIR32", symbol = "?soundBankVolume@@3CA", target = 0x0066C213 },
+]
+
+[units."audio-record-ctor-00409290"]
+source = "src/AudioLifecycle4073B0.cpp"
+object = "build/matching/AudioLifecycle4073B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioRecordLifecycle409290::AudioRecordLifecycle409290"]
+symbol = "??0AudioRecordLifecycle409290@@QAE@XZ"
+target_address = 0x00409290
+size = 83
+compare_size = 83
+relocations = [
+]
+
+[units."audio-record-dtor-004092f0"]
+source = "src/AudioLifecycle4073B0.cpp"
+object = "build/matching/AudioLifecycle4073B0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AudioRecordLifecycle409290::~AudioRecordLifecycle409290"]
+symbol = "??1AudioRecordLifecycle409290@@QAE@XZ"
+target_address = 0x004092F0
+size = 87
+compare_size = 87
+relocations = [
+  { offset = 0x24, type = "DIR32", symbol = "__imp__CloseHandle@4", target = 0x00657138 },
+]

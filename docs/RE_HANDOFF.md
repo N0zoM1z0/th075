@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F115 audio-lifecycle investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F116 R049 special-method investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 236 / 236 / 236 |
-| Exact code bytes | 591,087 |
-| Reviewed authored coverage | 591,087 / 1,973,516 (29.95%) |
-| Conservative coverage, including every pending byte | 591,087 / 1,977,124 (29.90%) |
+| Source-present / exact functions / exact units | 241 / 241 / 241 |
+| Exact code bytes | 591,425 |
+| Reviewed authored coverage | 591,425 / 1,973,516 (29.97%) |
+| Conservative coverage, including every pending byte | 591,425 / 1,977,124 (29.91%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **176 additions /
-581,204 code bytes / 181 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **181 additions /
+581,542 code bytes / 182 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,91 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F114
+## Latest accepted functions: F115
+
+The remaining independent R016/R017 audio functions pass canonical cold
+comparison: SoundBank volume `004073B0/13`, stream volume `004073C0/13`,
+SoundBank Play `004079C0/142`, record constructor `00409290/83` and record
+destructor `004092F0/87`. One new source/object adds **338 code bytes,
+121 instructions, nine actual calls and all seven real relocation fields**.
+The complete CFG, stack joins, physical returns and following INT3 boundaries
+are checked. All five bodies are exact on the first natural source probe.
+
+The setters are cdecl byte carriers; their original signedness is unknown.
+Play is thiscall RET4. It rejects a negative index or an index at/above the
+signed Size result, checks the actual unchecked element for null, then uses
+the checked At element. Its one real buffer local receives Stop,
+SetCurrentPosition(0), SetVolume((signedBankVolume-100)*50), then Play(0,0,0).
+It adds no clamp and no special treatment of zero master volume. All actual
+SDK slots, helper cleanup and ignored result behavior remain unchanged.
+
+Two actual queue-file/archive caller lifetimes prove the real constructor and
+destructor independently. Each installs EH state0 after construction, invokes
+the same destructor normally after clearing that state, and has a real
+parent-1 unwind action destroying the same ebp-0x54 local. The actual handler
+FuncInfo and unwind maps are parsed from the pinned target. This establishes
+the lifecycle roles without allocating or declaring a complete local record
+in the reconstructed source. These own bodies have no manual EH graph.
+The C++ constructor naturally returns this and performs exactly the seven
+observed zero stores at offsets0,32,36,40,44,60,8. Other fields remain untouched.
+The destructor skips CloseHandle when byte58 marks the handle borrowed;
+it leaves that borrowed handle unchanged. An owned nonnull handle is closed
+and zeroed. Independently, a nonnull buffer is Released and zeroed.
+
+Separate pointer-only views leave every prior input unchanged. Neither owner
+is instantiated, embedded or allocated, and full layouts remain unknown.
+There is no padding, extra local, artificial array, fake return, manual EH,
+assembly, ABI alias, relocation mask or cropped comparison. Four wrong real
+volume/At/unchecked/import bindings fail physical comparison. Names and types
+not established by the evidence remain provisional. No helper, global data,
+constructor-caller EH metadata or complete layout receives new credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit sound-bank-volume-004073b0 --unit stream-volume-004073c0 --unit sound-bank-play-004079c0 --unit audio-record-ctor-00409290 --unit audio-record-dtor-004092f0
+```
+
+All 236 prior units, 113 canonical objects, 181 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,346 other function rows remain
+unchanged. F009 plus181 additions retains581,542 code bytes and182 new inputs.
+R016/R017 historical names remain through aliases. All97 unknown origins
+remain unknown. Preserve all f115 source, attested/native/helper/SDK/CFG/
+packet/lifetime/binding/cold/parent evidence, results, logs and PDBs.
+
+Validation: all five selected units pass canonical cold replay, seven checkpoint
+tests pass, and full CI passes 3,603 tests in 153.360s. Target identity,
+tracking, progress and diff checks pass. Cleanup removes only one obsolete
+reproducible probe object (11,972 bytes) and 375 Python bytecode files
+(8,282,863 bytes), total 8,294,835 bytes. Canonical objects, sources, compiler
+inputs, evidence, results, logs and PDBs remain. Hash receipts are
+`.analysis/f115-final-compiler-inputs.json`,
+`.analysis/f115-object-cleanup.json` and
+`.analysis/f115-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **241 exact functions/units, 591,425 code bytes**, 29.97% of
+reviewed authored bytes and **29.91% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F116
+
+Review the complete independently authored R049 method
+CharacterSpecial::AdvanceAt00470F00, provisionally3,797 bytes. Reconcile every
+exit, switch table and shared tail; establish actual calling conventions,
+floating-point expressions, helper packets and genuine local values before
+source. Related R049 special methods may offer a coherent family after
+individual full extent, control-flow, packet and constant review. Similarity
+alone does not earn credit.
+
+Preserve all accepted inputs and use pointer-only views for incomplete owners.
+QueueFile00407A50 and QueueArchiveEntry00407B80 still need an independently
+proved complete local record layout; exact constructor/destructor methods and
+a container stride do not establish all member types. Resource root00456B60
+remains unaccepted with f107's real588-byte frame and unresolved texture80/
+layout/meaningful filename bound. Keep every old draft and all97 unknown
+origins unchanged. Builds remain serial; cold-replay only new or affected
+units and remove only obsolete reproducible outputs after preserving inputs
+and evidence. No invented padding, storage or incomplete owner allocation.
+
+## Previous accepted functions: F114
 
 The complete R016 controls independently pass canonical cold comparison in one
 new source/object: ClearPlayback `00407CA0/29`, Start `00407CC0/169`, Stop
@@ -114,7 +198,7 @@ Current totals: **236 exact functions/units, 591,087 code bytes**, 29.95% of
 reviewed authored bytes and **29.90% conservatively**, including every pending
 byte. The 98% goal remains active and incomplete.
 
-## Current reconstruction cohort: F115
+## F115 investigation at the F114 checkpoint
 
 Review the remaining independent audio lifecycle/control functions:
 SoundBank SetVolume `004073B0/13`, AudioStream SetVolume `004073C0/13`,
