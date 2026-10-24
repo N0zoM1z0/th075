@@ -25084,7 +25084,7 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F132
+## F132 investigation at the F131 checkpoint
 
 Continue the authored `CharacterObject::AdvanceAt0050A580` at
 `0050A580/81539`, from F131's current native/source investigation. This is the
@@ -25122,3 +25122,100 @@ keep builds serial and remove only obsolete reproducible outputs after
 freezing inputs and evidence. Run's16scene allocations/15unproved complete
 owners, QueueFile/ArchiveEntry's local record and the resource loader's
 texture/layout/filename extent remain unresolved; later phases stay deferred.
+
+
+## F132 large-function source checkpoint (2026-10-25)
+
+The large authored function `0050A580/81539` remains the current work.
+F132 expands the uncompiled natural source from one case to **20 of92 native
+dispatch entries**:cases800-805,808-820 and the genuine default/shared tail.
+These fragments correspond to15,399 native investigation bytes and196
+static call sites; **72 dispatch entries remain unwritten**. This is source
+work only: no emitted comparison, source-presence acceptance or new exact
+byte is claimed. The complete82,106byte acceptance requirement is unchanged.
+
+Use `.analysis/object-action-50a580/f132/`. `Prefix.inc`, `Case*.inc`,
+`Tail.inc` and the two declaration-only headers retain one future natural
+body. Private owner/opponent chains remain pointer-only, never constructed
+or embedded. The prefix keeps the actual owner/opponent freeze gates and
+short countdown. Cases retain native initialization order, NaN-aware float
+clamps/ground predicates, distinct add/subtract motion, collision flags,
+owner state/phase gates and independent frame/reset/clear calls. A clear
+call does not imply an immediate source return when native code continues
+with effect generation or later state writes.
+
+Cases808/809/810 preserve both nested random-coordinate calls inside the
+outer effect packet, plus the actual fifteen explicit repeated effect826
+calls. `fragment-review.json` checks each written entry's full native hash,
+dispatch labels and real helper-call counts; these checks do not establish
+source semantic equivalence or emitted exactness. `local-roles.json` proves
+nine genuine4byte loop counters through initialization/increment/bound uses
+at native EBP-4 through-36. Semantic source names are provisional; original
+scope/name/hash allocation and emitted slots remain unknown. No extra
+storage or forced frame geometry is added.
+
+`used-float-constants.json` verifies21 used float fields against actual
+readonly PE sections, including the distinct25/30 speed offsets and0.85
+fade factor. Raw readonly observations distinguish constants from mutable
+global aliases. Float literals and helper declarations still need future
+whole-source compiler verification. No guessed array/private layout, inert
+local, padding, pasted decompile/code byte array, assembly, fake return,
+partial wrapper or conditional exact body is introduced.
+
+`.analysis/f132-compose.py` refuses composition while any native dispatch
+entry lacks source. Its actual guard run exited2 with72 missing entries;
+no partial `Preview.cpp` or compiler object was produced. All92 entries must
+form one complete body before emitted comparison of81,539code+567table bytes.
+The existing full native CFG/CPU-x87/846call/11nested-packet evidence remains
+intact. `.analysis/f132-source-checkpoint.json` freezes every current input,
+review, generator and source fragment; preserve those files and work in a
+fresh version directory when continuing.
+
+All321 accepted units,130 canonical objects,198 accepted source/header
+inputs,218 origin evidence files,nine shared headers,91 older active drafts
+and the frozen F131 source start remain unchanged. No ledger, origin,
+compiler profile, relocation or accepted dependency changed; no compiler or
+cold replay was needed. All81,539 bytes of this large function remain
+unaccepted, and all97 unknown origins remain unknown. The98% goal stays
+active and incomplete at **715,741 exact code bytes /36.20% conservative
+coverage**, including every pending byte.
+
+Validation:all3603 CI tests passed in163.281s; target/tracking/progress/
+diff checks passed. No compiler outputs were created or deleted. Cleanup
+removed only375 reproducible Python bytecode files(8,283,506bytes),
+preserving every source fragment/native/helper/CFG/x87/local/constant/
+composition/parent input, log, PDB, canonical object and shared tool.
+Receipt:`.analysis/f132-preservation-cleanup.json`.
+
+## Current reconstruction cohort: F133
+
+Continue the same authored `CharacterObject::AdvanceAt0050A580`, starting
+with **case821 at0050E274/676 investigation bytes**. Do not replace this work
+with another easier cohort. The complete function still requires **82,106
+bytes**:81,539 code,368pointer-table and199remap bytes.
+
+F132 retained natural uncompiled source for20 of92 dispatch entries;
+**72 entries remain unwritten**. Preserve the frozen
+`.analysis/object-action-50a580/f132/` inputs and
+`.analysis/f132-source-checkpoint.json`. Copy current source fragments and
+headers to a new private version directory before further edits, then extend
+the same single future body. Reuse the unchanged complete native evidence
+under `.analysis/f131-character-selection-frontier/`, particularly
+`advance-case-index.json`, `advance-stack-review.json` and the dispatch/
+helper/CPU-x87/11nested-packet proofs.
+
+The current fragment helper-call-count checks, nine genuine counter roles
+and21 readonly float observations are investigation evidence. They do not
+prove source equivalence or emitted bytes. Continue independent typed
+receiver/value/field/local/control-flow review and natural source for every
+remaining case/default/shared path. Use the composition guard; never emit or
+accept a partial body/comparison. Keep every private owner pointer-only and
+all actual stack staging/NaN/loop/call order. No padding, dummy locals,
+guessed arrays/layouts, aliases, assembly or pasted decompile/code bytes.
+
+No source presence or exact credit exists for0050A580. Keep all81,539code
+bytes in the denominator. Preserve321 accepted units and every protected
+input/draft/origin; keep builds serial, cold-replay only new/affected units
+and perform evidence-preserving cleanup. All97 origins remain unknown and
+R268 evidence immutable. Run/queue local records/resource layouts remain
+unresolved; later project phases stay deferred.
