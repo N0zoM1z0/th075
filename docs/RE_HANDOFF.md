@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F103 texture-pack loader investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F104 archive-loader investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 199 / 199 / 199 |
-| Exact code bytes | 573,165 |
-| Reviewed authored coverage | 573,165 / 1,973,516 (29.04%) |
-| Conservative coverage, including every pending byte | 573,165 / 1,977,124 (28.99%) |
+| Source-present / exact functions / exact units | 201 / 201 / 201 |
+| Exact code bytes | 574,141 |
+| Reviewed authored coverage | 574,141 / 1,973,516 (29.09%) |
+| Conservative coverage, including every pending byte | 574,141 / 1,977,124 (29.04%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **139 additions /
-563,282 code bytes / 169 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **141 additions /
+564,258 code bytes / 170 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,92 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F102
+## Latest accepted functions: F103
+
+R019 texture-pack loader `0040B7C0..0040BB74` (949 bytes) and its default
+wrapper `0040B7A0..0040B7BA` (27 bytes) independently pass canonical cold
+comparison as TexturePackLoad40B7C0::Load/LoadDefault. All 976 bytes,
+341 instructions and 39 real relocation fields match. Eleven/five following
+INT3 bytes remain outside. The wrapper supplies exactly zero as the signed
+palette-selection argument, with one parameter/RET4; main has two/RET8.
+Both historical R019 roles remain by aliases. One new implementation file
+leaves every old source and header unchanged.
+
+Entry count is obtained before opening the file. Invalid handle exits
+immediately. File position resets to zero, then the signed palette-count
+byte is read and the old palette array deleted. A positive count allocates
+512 bytes. Selection<=count seeks to the selected palette, reads it and skips
+the rest; larger selection reads the first palette and skips count-1 blocks.
+Nonpositive header count clears the palette pointer. Signed byte arithmetic,
+negative seek offsets, actual zero default and ignored SDK results remain as
+observed. There is no palette-index clamp or error-path repair added.
+
+Each entry receives owner format/palette and flag zero before reading its
+metadata. The complete 24-byte descriptor repeats the accepted Save and
+serialized-loader definition; all six fields are actually used. Metadata
+reads remain 4/4/4/1/4 bytes. Encoded payloads use their byte size, raw high-depth
+payloads use stride*height*4, and lower depths retain the actual unsigned
+multiply/right-shift expression. The descriptor is passed to the accepted
+serialized loader, then its temporary payload is deleted. Texture creation
+uses the real word width/height, byte depth and texture-slot address. Palette
+refresh precedes deletion/clearing of the entry pixels. CloseHandle remains
+after the entry loop. Partial owner/container interfaces are pointer-only and
+never constructed or embedded; original names/grouping/layouts stay unknown.
+
+All 38 main packets and the wrapper packet pass review, including seventeen
+SDK calls, eleven ReadFiles, nine entry lookups and one texture-slot lookup.
+Nested lookups preserve the actual four/eight/twelve bytes of outer arguments.
+The real SDK factory receives byte/word values in DWORD stack carriers;
+upper carrier bits are not falsely claimed to be logical parameter bits.
+Every physical carrier/register byte still matches in the full comparison.
+Four wrong-ABI and two wrong-binding controls fail. Four array new/three array
+delete fields bind their true thunks; scalar aliases are rejected. All actual
+PE import names are checked independently.
+
+Initial source has all 329 main instructions and the exact wrapper, with only
+seven actual local-displacement bytes differing. Ordinary used-local name
+choices reproduce the complete 76/4-byte frames. The final comparison uses
+all physical bytes without normalization, padding, inert storage, assembly,
+register/frame aliases, masks or cropped extents. Separate canonical cold
+reports cover both new units in one serial object build. Old dependencies
+receive no replay or new exact credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-pack-load-0040b7c0 --unit texture-pack-load-default-0040b7a0
+```
+
+All 199 prior units, 101 canonical objects, 169 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,349 other function rows stay
+unchanged. F009 plus 141 additions retains 564,258 code bytes and 170 inputs.
+Keep all f103 native/attested/ABI/import/physical/cold/parent records and
+compiler control sources/results/logs/PDBs. The older private hypothesis note
+incorrectly said thirteen wrapper instructions; the unchanged native index
+and refined review show twelve. Original note/accepted retention hashes remain
+intact. No unknown origin or old draft receives credit.
+
+Current totals: 201 exact functions/units, 574,141 code bytes, 29.09% of
+reviewed authored bytes and 29.04% conservatively including all pending bytes.
+
+Next F104 is the complete 918-byte R019 archive texture-pack loader `0040BBA0`.
+Its palette/record/upload graph is closely related, but archive lookup/open
+calls and handle ownership require independent review. Native setup preserves
+an outer filename argument across the context lookup, then moves its result
+to ECX before opening. Reconcile both full archive callees and the caller's
+actual stack/return policy before source. No F104 source or exact credit yet.
+The 98% goal remains active and incomplete.
+
+Final F103 CI passes 3,603 tests in 114.424s. Bounded cleanup
+removes two obsolete reproducible probe/control objects (56,898 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, all source/control inputs, complete evidence, logs and PDBs
+remain. F104 full native/callee/caller exports and indices, completed own
+archive-callee decompile/caller query and bounded ABI notes are retained
+privately. The archive lookup consumes one cdecl name argument while the
+outer filename stays live for the returned context's RET4 seek method; older
+root decompile's extra argument is not an ABI fact. No F104 source or exact
+credit yet.
+
+## Previous accepted function: F102
 
 R021 serialized-record loader `0041B2B0..0041B3F5` independently passes
 canonical cold comparison as BitmapSerialized41B2B0::Load(const

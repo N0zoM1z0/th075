@@ -197,3 +197,5 @@ TexturePack40BF60::SaveDefault
 BitmapPackSource40BF60::LoadFile
 BitmapPackSource40BF60::Encode
 BitmapSerialized41B2B0::Load
+TexturePackLoad40B7C0::Load
+TexturePackLoad40B7C0::LoadDefault
