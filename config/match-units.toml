@@ -18068,3 +18068,41 @@ compare_size = 31
 relocations = [
   { offset = 0x15, type = "REL32", symbol = "?Load@TexturePackArchive40BBA0@@QAEXPBDC0@Z", target = 0x0040BBA0 },
 ]
+
+[units."bitmap-default-constructor-0041a2d0"]
+source = "src/BitmapLifecycle41A2D0.cpp"
+object = "build/matching/BitmapLifecycle41A2D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapLifecycle41A2D0::ConstructDefault"]
+symbol = "??0BitmapLifecycle41A2D0@@QAE@XZ"
+target_address = 0x0041A2D0
+size = 57
+compare_size = 57
+relocations = [
+]
+
+[units."bitmap-format-constructor-0041a310"]
+source = "src/BitmapLifecycle41A2D0.cpp"
+object = "build/matching/BitmapLifecycle41A2D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapLifecycle41A2D0::ConstructWithFormat"]
+symbol = "??0BitmapLifecycle41A2D0@@QAE@E@Z"
+target_address = 0x0041A310
+size = 105
+compare_size = 105
+relocations = [
+]
+
+[units."bitmap-destructor-0041a380"]
+source = "src/BitmapLifecycle41A2D0.cpp"
+object = "build/matching/BitmapLifecycle41A2D0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapLifecycle41A2D0::Destroy"]
+symbol = "??1BitmapLifecycle41A2D0@@QAE@XZ"
+target_address = 0x0041A380
+size = 75
+compare_size = 75
+relocations = [
+  { offset = 0x20, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0x40, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+]

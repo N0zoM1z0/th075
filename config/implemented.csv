@@ -201,3 +201,6 @@ TexturePackLoad40B7C0::Load
 TexturePackLoad40B7C0::LoadDefault
 TexturePackArchive40BBA0::Load
 TexturePackArchive40BBA0::LoadDefault
+BitmapLifecycle41A2D0::ConstructDefault
+BitmapLifecycle41A2D0::ConstructWithFormat
+BitmapLifecycle41A2D0::Destroy

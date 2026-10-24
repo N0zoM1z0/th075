@@ -22335,3 +22335,91 @@ decompiler's apparent 532-byte array is not a bound. Do not introduce padding
 classes, raw storage substitutes, artificial array growth or manual EH to
 force comparison. Continue the F105 cohort with these prerequisites before
 source; no F105 source or exact credit yet.
+
+## F105 complete bitmap lifecycle checkpoint (2026-10-24)
+
+The R021 bitmap lifecycle bodies at `0041A2D0..0041A308` (57 bytes),
+`0041A310..0041A378` (105 bytes) and `0041A380..0041A3CA` (75 bytes)
+independently pass canonical cold comparison. All 237 code bytes, 80 instructions,
+two actual relocation fields and complete reachable CFGs match. Seven/seven/five
+following INT3 bytes remain outside. One new implementation file leaves every
+previous source and header intact. Three unit reports share one serial cold
+object build; no old dependency replay is needed.
+
+Natural constructors preserve EAX=this and RET0/RET4, rather than adding a
+manual return. Both initialize format+0, pixels+28, palette+20, encoded size+16
+and palette ownership+24, in that order. The format overload accepts exactly
+8/16/24/32 and otherwise stores zero. Width, height, stride and any other
+unobserved fields remain untouched. The destructor tests pixels, deletes them
+when nonnull, then deletes the palette only when the ownership byte is set.
+It retains the native lack of pointer resets. Its frame is 12 bytes; both
+constructors use four bytes. Every real branch, stack join and RET is reviewed.
+
+The two delete fields bind to the actual R142 five-byte scalar operator-delete
+thunk at `00640F15`, which jumps to the CRT implementation. The underlying
+free destination and array-delete thunk are distinct targets; both negative
+binding controls fail. Minimal SDK headers naturally emit the observed scalar
+identity for these byte/word array deletes with this compiler profile. This is
+a reproducible compiler observation, not an executable-wide compiler claim.
+The complete 22/19-byte direct caller wrappers preserve the ECX object and RET0.
+Attested decompile, caller and xref queries are complete; the format overload
+has no recovered xrefs. Constructor/destructor identities and names remain
+source-compatible inferences. No helper/library byte receives new credit.
+
+The owner remains a pointer-only interface and is never instantiated or
+embedded. A 44-byte vector element stride does not establish the complete
+extent or extra fields of the base reached by its 22-byte constructor wrapper.
+No padding, invented fields, inert locals, manual returns, assembly, frame
+aliases, masked relocation fields or cropped extents were introduced. The first
+natural source already matched every physical byte.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-default-constructor-0041a2d0 --unit bitmap-format-constructor-0041a310 --unit bitmap-destructor-0041a380
+```
+
+All 203 prior units, 103 canonical objects, 171 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,348 other function rows stay
+unchanged. F009 plus 146 additions retains 565,444 code bytes and 172 inputs.
+Keep all f105 lifecycle source, native/attested/caller/xref/CFG/binding/cold/
+parent evidence and compiler inputs/logs/PDBs. Existing frozen f105 root notes
+are retained unchanged. All 97 unknown origins and old drafts receive no credit.
+
+Current totals: 206 exact functions/units, 575,327 code bytes, 29.15% of
+reviewed authored bytes and 29.10% conservatively including all pending bytes.
+The 98% goal remains active and incomplete.
+
+Final F105 CI passes 3,603 tests in 132.300s. Bounded cleanup removes one
+obsolete reproducible probe object (9,747 bytes) and 8,282,705 bytes of Python caches,
+with per-file hash receipts. Canonical outputs, source inputs, complete
+evidence, logs and PDBs remain.
+
+## Current reconstruction cohort: F106
+
+Continue the complete 1,186-byte R045 fighter resource loader `00456B60`,
+retaining the original f105 root exports/attestation/caller/index/ABI notes.
+This root still has no accepted source or exact credit. It allocates two
+80-byte texture owners and one 24-byte command owner through actual constructor
+new expressions, three null checks and EH cleanup states 0/1/2. Establish
+complete allocatable types before source; existing pointer-only interfaces
+cannot be instantiated. Do not substitute padding classes, raw storage,
+custom size-ignoring new, or manual exception handling.
+
+The complete `0040AD80` constructor calls the accepted graphics client base,
+then vector constructors at offsets 8/24/40 and a deque constructor at 56;
+these are actual members, not invented scalar tail fields. The last format
+byte is at 76. The vector at 8 has an observed 44-byte element stride. The
+bitmap lifecycle acceptance above establishes behavior, not the full element
+layout or the types of its remaining fields. Recover those fields and actual
+vector/deque element types from their complete users and existing origin
+evidence. `00410F30` constructs a list at offset4, stores its texture owner at
+0 and defaults at bytes16/18; the rest of the 24-byte command owner is still
+unresolved. Its clear method only calls list clear and supplies no missing
+field evidence. Keep these distinctions explicit.
+
+Reconcile the root's real GS/C++ EH graph, cleanup thunks/scope data and meaningful
+filename-buffer bound before compiling. Its native handler is `00656155`,
+cookie global `0066FE30` and check helper `00640611`. Its decompiled 532-byte
+array is not a proved bound. Do not enlarge arrays to fit the frame. Real
+character comparisons, archive keys, signed palette+1, three diagnostic calls,
+pattern/script loads, final notice mode and virtual slot0x18 must remain in
+native order. Preserve all old accepted units, origin evidence and draft inputs.
