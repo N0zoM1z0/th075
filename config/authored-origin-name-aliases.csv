@@ -195,3 +195,5 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0059B7F0,CharacterSpecial::AdvanceAt0059B7F0,CharacterSpecialFamily::Configure59B7F0,R049,character-special-stage-0059b7f0
 0x005C43D0,CharacterSpecial::AdvanceAt005C43D0,CharacterSpecialFamily::Configure5C43D0,R049,character-special-stage-005c43d0
 0x004277A0,OpeningScene::RenderTimeline,OpeningTimeline4277A0::RenderTimeline,R035,opening-timeline-004277a0
+0x00425C80,MusicRoomScene::RenderList,MusicScene425C80::RenderList,R040,music-room-render-list-00425c80
+0x00430080,ResultScene::RenderRecordPage,ResultScene430080::RenderRecordPage,R043,result-render-record-page-00430080

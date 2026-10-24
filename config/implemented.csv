@@ -250,3 +250,5 @@ CharacterSpecialFamily::Configure577C70
 CharacterSpecialFamily::Configure59B7F0
 CharacterSpecialFamily::Configure5C43D0
 OpeningTimeline4277A0::RenderTimeline
+MusicScene425C80::RenderList
+ResultScene430080::RenderRecordPage

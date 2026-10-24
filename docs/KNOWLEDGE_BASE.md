@@ -23830,3 +23830,99 @@ Resource root00456B60 retains f107's real588-byte frame and unresolved
 texture80/layout/meaningful filename bound. Compiler builds remain serial;
 cold-replay only new or affected units and remove only obsolete reproducible
 outputs after retaining inputs and evidence. Subsequent phases remain deferred.
+
+## F119 complete music-result drawing checkpoint (2026-10-25)
+
+R040 MusicRoom RenderList `00425C80/2429` and R043 Result RenderRecordPage
+`00430080/3314` independently pass canonical cold comparison: **5,743 code
+bytes, 1,405 instructions, 170 actual calls and all 171 real relocation
+fields**. One new source/object contains the two natural bodies. Every own
+static CFG, ESP/EBP/x87 stack join, plain RET and the real324/216 byte frames
+are checked. Three/fourteen following INT3 bytes remain outside the extents;
+there are no embedded tables or cropped tails. Old inputs remain unchanged.
+
+The only local aggregates are independently complete132 byte SDK-based quad
+values and complete RECTs. Private scenes, managers and the record container
+are pointer-only interfaces, never instantiated or embedded. The actual
+DrawQuad helper copies33 DWORDs from its quad reference before drawing; the
+source passes the complete132 byte value, not an undersized coordinate view.
+Accepted SpriteTransform and graphics headers retain their existing declarations.
+
+Music retains its signed list fields and bounds. The nonselected opacity128
+store precedes the selected255 store. Its two distinct row quads translate
+vertically by18 independently. All cumulative outline translations, drawing
+receivers, input rectangles, row numbering and final image/header draws remain.
+
+Result's mirrored gray backdrop actually uses manager field12; the other
+manager calls use field8. The same genuine row variable is initialized to10
+before SetBlend2 and serves as the first loop's row limit, then becomes0 and
+increments as the page's display-row counter. This reuse is retained without
+adding a count local or storage. The flag byte is zero-extended; signed page,
+category, record bytes and the actual signed Size-result comparison remain.
+All row glyph, score, outline and mode-specific draw orders are unchanged.
+
+The read-only row projection uses the independently observed16 byte stride,
+eight name glyph bytes, signed bytes8/9 and score at12. The glyph helper
+consumes at most eight signed codes; no string terminator or buffer extent is
+invented. The two unobserved alignment bytes remain unknown and have no filler
+members. The projection is never instantiated or embedded and establishes no
+complete original row/owner layout. It supplies only the observed pointer
+reads and stride; no private layout earns new credit.
+
+One bounded compiler fixture measures100 genuine local addresses. It selects
+names only for the existing quad/RECT/index/opacity values. The final third
+preview passes complete physical comparison with no extra local, array,
+scope or padding. Both own cold units preserve actual syscall/method argument
+widths, all drawing/transform receivers and the accepted BeginFrame AL view.
+Five wrong real begin/constructor/draw/builder/import bindings fail.
+There is no pasted decompiler output, target-code array, fake return, manual
+EH, assembly, ABI alias, relocation mask or cropped comparison. Original names,
+full private layouts and unproved types remain provisional; no helper,
+library or global data receives credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit music-room-render-list-00425c80 --unit result-render-record-page-00430080
+```
+
+All 252 prior units, 117 canonical objects, 185 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,349 other function rows remain
+unchanged. F009 plus194 additions retains630,651 code bytes and186 new inputs.
+R040/R043 roles remain through aliases. All97 unknown origins remain unknown.
+Preserve all f119 native/attested/callee/SDK/CFG/packet/receiver/row-view/local-
+name/binding/cold/parent inputs, sources, results, logs and PDBs, including the
+compiler fixture and all three previews.
+
+Validation: both complete units pass canonical cold replay, seven checkpoint
+tests pass, and full CI passes 3,603 tests in 154.055s. Target identity,
+tracking, progress and diff checks pass. Cleanup removes three obsolete game
+probe objects and one pure compiler fixture (65,007 bytes), plus 375 Python
+bytecode files (8,282,863 bytes), total 8,347,870 bytes. Canonical objects,
+sources, compiler inputs, evidence, results, logs and PDBs remain. Hash receipts
+are `.analysis/f119-final-compiler-inputs.json`,
+`.analysis/f119-object-cleanup.json` and
+`.analysis/f119-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **254 exact functions/units, 640,534 code bytes**, 32.46% of
+reviewed authored bytes and **32.40% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F120
+
+Review two complete independently authored R049 auxiliary actor routines:
+CharacterAux::RunAt004A80F0 `004A80F0/3935` and
+CharacterAux::RunAt00507B20 `00507B20/3000`, total6,935 bytes. Their raw prefixes
+show ordinary actor-update/relative-position work rather than constructor
+stubs. Reconcile full code/table extents, CFG, true exits/return carriers,
+floating-point conditions and every actual helper packet before source.
+Establish any genuine SDK vector/local-value contract before constructing it;
+private owners stay pointer-only. Preserve unknown math-wrapper origins.
+
+Keep all accepted source/header inputs and old F048/F061/F066/F085 drafts and
+failed controls. Do not repeat unchanged hypotheses or relax complete physical
+comparison. The record projection above is never an allocatable complete
+private owner. QueueFile00407A50/QueueArchiveEntry00407B80 still need a proved
+complete local record layout; resource root00456B60 retains f107's real588-byte
+frame and unresolved texture80/layout/meaningful filename bound. All97 unknown
+origins and evidence throughR268 remain unchanged. Builds stay serial;
+cold-replay only new or affected units and remove only obsolete reproducible
+outputs after retaining inputs and evidence. Later phases remain deferred.

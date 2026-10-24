@@ -233,3 +233,5 @@ address,name,module,confidence,evidence
 0x0059B7F0,CharacterSpecialFamily::Configure59B7F0,CharacterSpecialFamily,inferred,"F117; own complete cold code-table exact / individual native stage CFG, packets and ordered state policies; character and layout provisional"
 0x005C43D0,CharacterSpecialFamily::Configure5C43D0,CharacterSpecialFamily,inferred,"F117; own complete cold code-table exact / individual native stage CFG, packets and ordered state policies; character and layout provisional"
 0x004277A0,OpeningTimeline4277A0::RenderTimeline,OpeningTimeline4277A0,inferred,"F118; whole cold exact / all CPU-x87 joins, actual draw packets and native floating order; full owner layouts and original names provisional"
+0x00425C80,MusicScene425C80::RenderList,MenuSceneDrawing,inferred,"F119; own whole cold exact / complete CPU-x87 joins, true drawing receivers and bounded SDK-row views; original layouts and names provisional"
+0x00430080,ResultScene430080::RenderRecordPage,MenuSceneDrawing,inferred,"F119; own whole cold exact / complete CPU-x87 joins, true drawing receivers and bounded SDK-row views; original layouts and names provisional"
