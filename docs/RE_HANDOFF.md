@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 160 / 160 / 160 |
-| Exact code bytes | 523,337 |
-| Reviewed authored coverage | 523,337 / 1,973,516 (26.52%) |
-| Conservative coverage, including every pending byte | 523,337 / 1,977,124 (26.47%) |
+| Source-present / exact functions / exact units | 161 / 161 / 161 |
+| Exact code bytes | 523,476 |
+| Reviewed authored coverage | 523,476 / 1,973,516 (26.53%) |
+| Conservative coverage, including every pending byte | 523,476 / 1,977,124 (26.48%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **100 additions /
-513,454 code bytes / 116 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **101 additions /
+513,593 code bytes / 118 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,61 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F069
+## Latest accepted function: F070
+
+`RecordedRange455580::SelectRange` cold-replays exact across all 139 bytes at
+`0x00455580..0x0045560A`: 40 instructions, four branches, five actual calls,
+11 complete relocation bindings and ret8. Five following INT3 bytes are
+excluded. The R109 historical role, native extent/hash and ownership are fixed.
+
+Mode2 consumes a signed word from the shared queue when count>0, or keeps
+zero on empty. Other modes cast the real CRT rand result to short; mode1
+records the same local word by reference. The return retains signed
+`(upper-lower)*sample/32768+lower`, including truncation toward zero. Frame8
+saves this at EBP-8 and the real short sample at EBP-4. All 24 F066 calls use
+current. Full count/front/pop/push/rand bodies, the actual two-byte construction
+leaf, every branch/stack join and a wrong PushBack-cleanup negative are checked.
+
+Both mode reads bind to the existing signed byte at0066C238. Four immediate
+ECX receivers bind to006718B8; an unbounded external byte storage view plus a
+pointer-only call interface models those actual addresses. No partial container
+or game owner is instantiated/embedded, and no extent or original template
+argument is claimed. The actual push takes a pointer to the local short and
+returns with four-byte cleanup; the other four calls consume no caller args.
+All dependency origins, including unknowns, remain unchanged and get no credit.
+
+Preview, independent canonical compile and separate canonical cold replay
+match with the existing explicit build3077 profile. All 160 previous units,
+canonical objects and accepted inputs remain unchanged and were not rebuilt.
+Retain f070-bind.py, both physical receipts, accepted replay/log, parent/progress,
+full dependency exports/index, attested views/log and private preview inputs.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit recorded-random-range-00455580
+```
+
+Full CI passes **3,603 tests in 236.917 seconds**. Tracking, progress and
+whitespace checks pass; `f070-evidence-check.json` verifies all 160 prior
+units/objects, 116 prior source inputs, 218 origin files, 4,350 other function
+rows and active drafts unchanged. The preview object and generated scripts/
+tests bytecode were removed after checks with hash receipts. No swap was
+observed; sampled available memory is about 12 GiB.
+
+The F071 preview now has one natural body per complete function in
+`.analysis/effect-services-f071/Preview.cpp` / `.hpp`, with active
+`build/probes/F071Preview.obj`. The full 67 bytes and four physical bindings
+match diagnostically in `f071-draft-relocation-bindings.json`. Full native
+exports and candidate origins are pinned in `f071-candidate-index.json`.
+No F071 source presence, canonical unit, origin change or exact credit exists.
+Continue complete source/ABI review, fresh attested views, independent canonical
+compile and affected-unit cold replay. Preserve all PDBs/inputs/evidence.
+
+Next: the complete actual sound/shake wrappers at0045B860/00453E60, with the
+13-byte shake setter00412CB0 and its already retained x87 consumer evidence.
+Continue the large F066 draft only from preserved active03; none of its 976
+physical instruction differences has been resolved or accepted.
+
+## Previous accepted function: F069
 
 `ObjectMotion40FB70::SetPolarVelocity` cold-replays exact across all 57 bytes
 at `0x0040FB70..0x0040FBA8`: 22 instructions, two complete REL32 bindings,

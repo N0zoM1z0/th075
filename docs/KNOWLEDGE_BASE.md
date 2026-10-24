@@ -20218,3 +20218,76 @@ f069 binder/physical receipts, accepted replay/log, parent/progress, attested
 views/log and preview inputs. Focused adoption/goal checks, tracking, progress
 and whitespace checks pass; the preceding full3603-test CI checkpoint is F068.
 Next: complete recorded range00455580, then actual sound/shake wrappers.
+
+
+## F070 recorded random-range policy cold acceptance (2026-10-24)
+
+R109 `0x00455580..0x0045560A` is exact as
+`RecordedRange455580::SelectRange`: complete139 bytes/40 instructions, four
+branches, five calls, all11 call/global fields and ret8. Five following INT3
+bytes are excluded. The historical role is retained by alias; native extent,
+hash and origin remain fixed. All97 pending origins receive no new credit.
+
+Target observations: sample is a real signed word initialized to zero at
+EBP-4; unused incoming this is saved atEBP-8 in an eight-byte frame. Mode2
+uses shared queue count>0, reads and pops the actual front word; empty keeps
+zero. Other modes cast the actual CRT rand result to short, and mode1 passes
+the address of the same short to the full push operation. Signed scaling is
+`(upper-lower)*sample/32768+lower`, retaining division toward zero. All24 F066
+calls pass current, with ret8. Both signed mode-byte reads bind to the existing
+g_FrameClockMode at0066C238; four actual ECX immediate receivers bind006718B8.
+
+All five full dependencies are reviewed for actual this/stack/result contracts.
+Count returns unsigned EAX; Front supplies the pointer consumed by the caller's
+word load; Pop consumes no explicit arguments; Push receives the sample's
+address and returns with four-byte cleanup; rand takes no arguments. Full push
+and allocator-construction wrappers reach the real construction leaf at
+004161E0, whose actual MOV AX/word store establishes two-byte transfer. Every
+native branch/call and stack join is checked; incorrect zero cleanup for Push
+is rejected at the join. The full library bodies and all ownership decisions
+remain independent of the authored function's exact credit.
+
+Compiler observations: natural C++ with one real local short, the existing
+signed mode global, genuine rand, and a pointer-only queue call view emits the
+entire139-byte policy with all11 bindings. Unbounded external byte storage
+represents the known receiver address without defining/constructing a partial
+container or inventing its extent. Original element typedefs, template arguments,
+method declarations and complete layouts remain unknown. No assembly, target
+arrays, inert locals, padding, fake results or alternate bodies are introduced.
+Preview, independent canonical compile and separate cold replay match using
+VC7.1 build3077 and `/Od /Ob0 /Gy /GR- /GX- /Zi /I src`.
+
+All160 earlier units/canonical objects, accepted source/header inputs, origin
+files and active drafts stay unchanged and were not rebuilt. F009 plus101
+additions retain513,593 code bytes/118 new source inputs. Total161 exact
+functions/523,476 bytes:26.53% reviewed authored,26.48% conservative with every
+pending byte. F021/F048/F061/F066 remain unaccepted; the98% goal stays active.
+Private f070 binder/physical receipts, accepted replay/log, adoption-parent,
+progress, complete dependency exports/index, attested views/log and preview
+inputs are retained. A reproducible2510-byte preview object is removed only
+after full COFF function/11-relocation equality to the canonical cold object,
+allowing the explicit owner rename. All PDBs/inputs/evidence/tools stay intact.
+Next are the actual sound/shake wrappers and complete13-byte shake setter,
+with independently retained float-consumer evidence; preserve F066 active03.
+
+F070 final verification passes all3,603 CI tests in236.917 seconds, tracking,
+progress and whitespace checks. A transient file-read wait recovered during
+the run; no retry or validation exception was used. The evidence check pins
+all160 earlier unit descriptors/canonical objects,116 prior source inputs,
+218 origin files,4350 other function rows and every retained active draft.
+Only the new139-byte unit was cold-rebuilt. Generated scripts/tests bytecode
+was removed after CI with per-file hashes. Sources, PDBs, physical receipts,
+active objects and shared tools stay intact. Resource samples show no swap,
+about12GiB available memory and ample disk space; builds/CI remain low priority.
+
+The next F071 private preview at .analysis/effect-services-f071/Preview.cpp
+and .hpp covers three complete functions,67 bytes/four physical bindings:
+PlaySharedSound0045B860, SetCameraShake00453E60 and SetShakeAmount00412CB0.
+The first reuses the unchanged accepted GameLeafHelpers SoundBank declaration;
+its real callee reads a dword sound index and ret4. The shake float reaches
+actual x87 consumers in the complete1520-byte004126C0 body. Full native
+exports, candidate index, object and draft binding receipt are retained.
+These are diagnostic previews with no source-presence entry, canonical unit,
+new origin decision or exact credit. Complete ABI/source review, fresh attested
+views, independent canonical compile and separate cold replay remain required.
+The98% goal remains active; this bounded commit does not complete it.

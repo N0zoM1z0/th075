@@ -159,3 +159,4 @@ CharacterInput5E6F70::PollCommands,0x005E6F70,function
 AnimationProgress40FA30::AdvanceNestedFrame,0x0040FA30,function
 SpriteTransform40FBB0::ResetNodeTransform,0x0040FBB0,function
 ObjectMotion40FB70::SetPolarVelocity,0x0040FB70,function
+RecordedRange455580::SelectRange,0x00455580,function

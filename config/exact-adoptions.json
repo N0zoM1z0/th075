@@ -1,44 +1,44 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F069",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F070",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "f162a82fa18a2b4c0a196528b30b15cff49aef6e5b465d66e14f270eb7d7aff0"
+      "current_sha256": "8c840beb308906947d29777628efd7a65094c05f266302e49caeb3a5940054d4"
     },
     "config/known-globals.csv": {
       "size": 8096,
       "sha256": "44c885613a069e502ec825cb7120b03b13b63d3e188004fddcd09c562e5b9064",
-      "current_sha256": "bbbf11b2f53aee1da67a4aec67bd1492a79d6c4fcbac2d50672d2f586e297a39"
+      "current_sha256": "2a03c6b62227bf0431e9b9e8e6d0b3e7ce21120c5032c3768749e225507bada8"
     },
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "01b0be970a85efd3155d256786ca8751727d293453d90d0e7cd28c427d616eec"
+      "current_sha256": "372c0a1df36ff19642d5aa840b71f1db5f9fb4c3912a5e05e11427f61a9c03da"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "bf7eea6c39b8f68d833fe12290bf0cd1251a37c615eae543ca63b44294cddcd6"
+      "current_sha256": "0f70bf6ceb3ec1dc4541c7d1218dd698b18b28366c26552080c20d4192903140"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "8c6efe714b1ced7d092f7ce88aeff917ff372ec9d0ea4c7c074b06136df12be0"
+      "current_sha256": "a18c84e6fc4179caaa44c41128da5fa53f3c088679ac1e91d2607b1636eb1404"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "36c055521939911faf6029d7c5905b074b2f22a418c5e5df428da6193cbae146"
+      "current_sha256": "2150818d1e2356a5a5a54784393da63b3c9818bbbb6c40fb6655970ead4634b4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "eef97f6d5baac0cac3771cf525a6b6ba1ba98d0df52a5ebee6bcfb990547d437"
+      "current_sha256": "c88c454de1ae58c1d1f049e1295914769ee185a1c0077e2c5ee46db0e6ff20c8"
     }
   },
   "functions": [
@@ -4440,6 +4440,50 @@
         "disposition": "authored",
         "confidence": "complete-game-polar-table-composition-and-independent-receiver-policies",
         "evidence_id": "R217"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00455580",
+        "size": "139",
+        "span_end": "0x0045560A",
+        "current_name": "FUN_00455580",
+        "proposed_name": "FighterState::SelectRecordedRandomRangeAt00455580",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00455580",
+        "size": "139",
+        "span_end": "0x0045560A",
+        "current_name": "FUN_00455580",
+        "proposed_name": "RecordedRange455580::SelectRange",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "int RecordedRange455580::SelectRange(int lower, int upper)",
+        "is_thunk": "false",
+        "source_file": "src/RecordedRange455580.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F070; scripts/repo-python scripts/replay-exact-units.py --unit recorded-random-range-00455580",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F070: complete139-byte cold exact recorded random range,40 instructions and11 fully bound call/global fields; actual signed-word sample,record/replay/empty paths and signed division retained; all5 full dependency ABIs and stack joins checked;24 F066 current receivers/ret8; R109 role preserved by alias; original names/declarations and full owner layout unknown; never construct or embed this partial owner"
+      },
+      "origin": {
+        "address": "0x00455580",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
       }
     }
   ],
@@ -88962,6 +89006,95 @@
           "target": 4311920
         }
       ]
+    },
+    "recorded-random-range-00455580": {
+      "source": "src/RecordedRange455580.cpp",
+      "object": "build/matching/RecordedRange455580.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RecordedRange455580::SelectRange"
+      ],
+      "symbol": "?SelectRange@RecordedRange455580@@QAEHHH@Z",
+      "target_address": 4543872,
+      "size": 139,
+      "compare_size": 139,
+      "relocations": [
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?Count@RecordedSamples455580View@@QBEIXZ",
+          "target": 4277792
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?Front@RecordedSamples455580View@@QAEAAFXZ",
+          "target": 4541968
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "?PopFront@RecordedSamples455580View@@QAEXXZ",
+          "target": 4542000
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 82,
+          "type": "DIR32",
+          "symbol": "?g_FrameClockMode@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 96,
+          "type": "DIR32",
+          "symbol": "?g_RecordedSamplesAt006718B8@@3PAEA",
+          "target": 6756536
+        },
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?PushBack@RecordedSamples455580View@@QAEXABF@Z",
+          "target": 4277824
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -89080,6 +89213,8 @@
     "src/SpriteTransform40FBB0.cpp": "fcb3b65d2ff28aa54ca8063d55e3f01e77a5c5b9e48a8671b749fcdd1e85322f",
     "src/SpriteTransform40FBB0.hpp": "424fcbf027fa8d1954cf5ea61c1ed40fc2a094e505868624858a4220eafe0077",
     "src/ObjectMotion40FB70.cpp": "374b52f6cf14a596c1b43776c5e274cfb138d790389fb089c0363469771642de",
-    "src/ObjectMotion40FB70.hpp": "1efb7be0dc8c507ecbea1c752125ee932750a5c0760387ec75ac4db1efb974f3"
+    "src/ObjectMotion40FB70.hpp": "1efb7be0dc8c507ecbea1c752125ee932750a5c0760387ec75ac4db1efb974f3",
+    "src/RecordedRange455580.cpp": "bacce172c54a2c16336ca0b49dab26d50622a7bb2a975adac15234830ccef840",
+    "src/RecordedRange455580.hpp": "c8279ad4432d3028ee50fe304d8d9c0a98e5adbd3c7c665188e3d2fa637d7348"
   }
 }

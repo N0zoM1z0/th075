@@ -104,3 +104,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0040FA30,AnimationState::AdvanceNestedFrameAt0040FA30,AnimationProgress40FA30::AdvanceNestedFrame,R103,animation-progress-0040fa30
 0x0040FBB0,SpriteScene::ResetNodeTransform,SpriteTransform40FBB0::ResetNodeTransform,R036,sprite-transform-reset-0040fbb0
 0x0040FB70,GameObject::SetPolarVelocity [provisional role],ObjectMotion40FB70::SetPolarVelocity,R217,object-polar-velocity-0040fb70
+0x00455580,FighterState::SelectRecordedRandomRangeAt00455580,RecordedRange455580::SelectRange,R109,recorded-random-range-00455580

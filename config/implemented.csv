@@ -158,3 +158,4 @@ CharacterInput5E6F70::PollCommands
 AnimationProgress40FA30::AdvanceNestedFrame
 SpriteTransform40FBB0::ResetNodeTransform
 ObjectMotion40FB70::SetPolarVelocity
+RecordedRange455580::SelectRange
