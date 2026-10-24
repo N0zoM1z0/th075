@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F080 damage-flash investigation below; preserve the F066 draft.
+is incomplete. Continue the F081 round-banner investigation below; preserve the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 172 / 172 / 172 |
-| Exact code bytes | 547,786 |
-| Reviewed authored coverage | 547,786 / 1,973,516 (27.76%) |
-| Conservative coverage, including every pending byte | 547,786 / 1,977,124 (27.71%) |
+| Source-present / exact functions / exact units | 173 / 173 / 173 |
+| Exact code bytes | 548,867 |
+| Reviewed authored coverage | 548,867 / 1,973,516 (27.81%) |
+| Conservative coverage, including every pending byte | 548,867 / 1,977,124 (27.76%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **112 additions /
-537,903 code bytes / 136 new source/header inputs**. F021/F048/F061/F066 remain
+is unchanged. The exact-adoption manifest retains F009 and **113 additions /
+538,984 code bytes / 138 new source/header inputs**. F021/F048/F061/F066 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,68 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F079
+## Latest accepted function: F080
+
+R042 damage flash 004406C0..00440AF8 cold-replays exact as
+`BattleDamageFlash4406C0::RenderFlash`: all 1,081 bytes, 292 instructions,
+20 branches, 46 physical fields and 23 real call packets. Seven following INT3
+bytes are excluded. Five complete direct callees and two USER32!SetRect calls
+are checked. The accepted F074 caller supplies this with no stack arguments.
+
+The full handwritten body retains two explicit actor paths, frame/state/timer
+checks, actual ordered height comparison and the native color-branch order.
+One real byte component, color, shared RECT and two float view snapshots are
+preserved. Twelve implicit ftol2 calls consume ST0; coordinate conversions keep
+zero/one/two/three pending outer SetRect words. The actual integer direction*
+timer*4 contribution uses the native spill and FIADD. Both rectangle draws and
+real top+=3/bottom+=1 changes remain. No fake C parameters or return values.
+
+Both complete 58/56-byte state predicates return AL0/1 and ret0. The accepted
+IsState50To149 interface is reused unchanged; the second predicate has a new
+pointer-only AL view and receives no exact credit. The old writable float globals
+g_CombatViewOffsetX/Y are reused without header changes. Original names, nominal
+private declarations and full owner layouts remain unknown. Only SDK RECT is
+a constructible local; partial owners are never constructed or embedded.
+
+Bounded controls over meaningful names of five real locals resolve the native
+60-byte frame, including six genuine integer-conversion slots. The final names
+screenY/x retain all other source operations. Controls are diagnostic compiler
+observations, not original spelling evidence. Preview, independent canonical
+compile and separate canonical cold replay match every byte with build3077 and
+the explicit profile. All 46 fields bind 21 direct calls, 21 readonly float fields,
+two writable global fields and two named imports. Widths, payloads, zero addends,
+permissions, imports, every branch and whole CFG stack joins are checked;
+wrong SetRect/ftol2 cleanup controls fail.
+
+All 172 prior units/objects, 136 previous manifest inputs, 218 origin files,
+4,350 other function rows and 84 active draft inputs remain unchanged and were
+not rebuilt. All 97 pending origins remain unknown. F009 plus 113 additions
+retains 538,984 bytes and 138 new source/header inputs. The 98% goal is incomplete.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit battle-damage-flash-004406c0
+```
+
+Full CI passes **3,603 tests in 132.728 seconds**, plus tracking, progress and
+whitespace. Keep f080 native/root/callee/caller/attested/ABI/physical/cold/parent/
+progress/preservation evidence and all compiler-control input/results/logs.
+Seven obsolete reproducible objects were removed after pinning source/profile
+inputs and final-preview whole code/46-relocation equality with the cold canonical
+object. PDBs, sources, evidence, canonical objects, prior active drafts and shared
+tools remain. Scripts/tests bytecode was removed after CI.
+
+Next F081: complete R045 round banner 00441EA0..00441FCE, 303 bytes.
+`.analysis/f081-native-index.json` pins 78 instructions, two branches and seven
+calls: six direct calls to six whole callees plus one SetRect. Fresh attested
+root/callee/caller evidence is retained. Review the actual unsigned-byte conversion
+before +1, initial FF opacity store, >50 arm ordering and complete packet scope.
+The 28-byte 00442040 float/ST0 wrapper remains unknown-origin. It widens its
+four-byte argument to the existing R130 library log10 worker; full 63-byte own
+code and the retained 336-byte source/auxiliary runtime proof must be used, not
+an isolated short entry or Ghidra's void guess. No F081 source/object/unit/credit
+exists. Keep every older unit and large unaccepted draft.
+
+## Previous accepted function: F079
 
 R042 mode-5 menu 00448710..004491DD cold-replays exact as
 `BattleModeFive448710::RenderMenu`: all 2,766 bytes, 665 instructions, 43 branches,
@@ -74,17 +135,7 @@ were removed after pinning inputs and whole cold-canonical code/relocation equal
 PDBs, logs, source/control inputs, evidence, canonical objects, older active drafts
 and shared tools remain. Scripts/tests bytecode was removed after CI.
 
-Next F080: complete R042 damage flash 004406C0..00440AF8, 1,081 bytes.
-`.analysis/f080-native-index.json` pins 292 instructions, 20 branches and 23 calls:
-21 direct calls to five complete callees plus two SetRect calls. Fresh attested
-root/callee/caller views are retained. ABI review checks all packets and twelve
-implicit ST0 conversions; nested coordinate calls preserve zero/one/two/three
-outer SetRect words. Review the actual x87 formulas and shared byte/color local
-before one complete natural body. The original scan misclassified writable float
-00671404 as a constant; PE permission review corrects the index and preserves the
-old scan. Reuse existing g_CombatViewOffsetX/Y views without changing headers.
-No F080 source, object, canonical unit or credit exists. Keep all older units and
-large unaccepted drafts.
+The subsequent F080 acceptance and current F081 cohort are recorded above.
 
 ## Previous accepted function: F078
 
