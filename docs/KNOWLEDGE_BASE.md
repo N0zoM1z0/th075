@@ -21594,3 +21594,66 @@ reproducible objects/35,120 bytes and8,282,705 bytes of Python caches,with
 per-file hash receipts. All canonical objects,source inputs,evidence,logs and
 PDBs remain. F095 fresh root/callee/caller attested queries and native index
 are preserved privately; no F095 source or exact credit yet.
+
+## F095 complete palette-refresh checkpoint (2026-10-24)
+
+R014 palette refresh `0040C590..0040C6E3` is independently canonical cold exact
+as `TexturePalette40C8C0::Refresh(int)`: all 340 bytes, 125 instructions,
+six branches, 16 real call packets and 11 direct relocation fields. Twelve
+following INT3 bytes remain outside the extent. One new implementation file
+uses unchanged accepted interfaces. Its two repeated pointer-only class
+interfaces have identical definitions to F094; no old header/body is changed.
+The historical `TextureManager::UploadIndexedTexture` role remains by alias.
+Original complete owner/vector/bitmap layouts and source names remain unknown.
+
+Signed index validation uses the normal handle count at owner+0x18. Three
+actual entry reads at +4/+8/+0xC are stored before selection and have no later
+consumer; the source retains those observed metadata computations. The meaning
+of +0xC is unknown. A palette flag at entry+0x28 selects handle zero from
+owner+0x28 with width 256. Otherwise the normal texture yields a surface,
+its complete SDK D3DSURFACE_DESC supplies Width, the handle is looked up again,
+and the surface is released. LockRect succeeds only on HRESULT zero. The bitmap
+converter receives SDK locked pBits, a byte from entry+0, and the selected
+surface width. The native locked Pitch is unused; do not replace width with it.
+UnlockRect follows the conversion. Existing target API error handling remains.
+
+Five COM slots use actual SDK stdcall signatures including this: texture
+GetSurfaceLevel/12, surface GetDesc/8, Release/4, texture LockRect/20 and
+UnlockRect/8 bytes. SDK records are complete 32-byte surface description and
+8-byte lock record; partial owner views are never constructed or embedded.
+Both nested entry lookups retain four and twelve bytes of outer arguments;
+the converter consumes three words and RET12, with a real byte argument.
+All 16 packets, six branch joins and the 76-byte frame pass review. Wrong
+copy-ret8 and LockRect-ret16 controls fail. The full 1,448-byte R021 converter
+and both compressed switch selector/destination maps are revalidated without
+converter credit or ownership changes.
+
+The first probe is 342 bytes/126 instructions. A natural success block gives
+340/125; bounded meaningful local-name controls then reproduce all actual
+frame fields. The chosen +0xC scalar name remains explicitly provisional.
+No inert locals, padding, byte arrays, masks, frame aliases or cropped extent.
+Only the new unit is cold replayed; no old build is needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit texture-palette-refresh-0040c590
+```
+
+All 189 old units, 93 canonical objects, 159 inputs, 218 origin files, nine
+shared headers, 91 active draft inputs and 4,350 other rows remain unchanged.
+F009 plus 130 additions retains 554,547 bytes and 160 inputs. Keep all f095
+native/attested/ABI/bitmap-CFG/physical/cold/parent/progress evidence, compiler
+control sources, logs and PDBs.
+Next F096 is the complete 1,448-byte R021 bitmap converter `0041B990`, including
+both switch maps outside its code extent. Reconcile every loop and real field
+before source. The 97 unknown origins and old drafts receive no credit.
+Goal 98% remains active and incomplete.
+
+Current totals are 190 exact functions/units and 564,430 bytes: 28.60% of
+reviewed authored bytes and 28.55% conservatively including all pending bytes.
+
+Final F095 CI passes 3,603 tests in 146.206s. Bounded cleanup
+removes five obsolete reproducible probe objects (119,429 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, source/control inputs, evidence, logs and PDBs remain.
+Fresh attested F096 decompile/callers, complete native/switch index and ABI
+observations are retained privately; no F096 source or exact credit yet.

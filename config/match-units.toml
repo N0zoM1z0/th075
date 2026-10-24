@@ -17699,3 +17699,26 @@ relocations = [
   { offset = 0x83, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
   { offset = 0x96, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
 ]
+
+[units."texture-palette-refresh-0040c590"]
+source = "src/TexturePalette40C590.cpp"
+object = "build/matching/TexturePalette40C590.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["TexturePalette40C8C0::Refresh"]
+symbol = "?Refresh@TexturePalette40C8C0@@QAEXH@Z"
+target_address = 0x0040C590
+size = 340
+compare_size = 340
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "?Size@TextureHandleCount40C590@@QAEIXZ", target = 0x0040DEA0 },
+  { offset = 0x2F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x44, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x59, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x6E, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x8A, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0xA0, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0xDC, type = "REL32", symbol = "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z", target = 0x0040DEE0 },
+  { offset = 0x11F, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x135, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
+  { offset = 0x13C, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
+]

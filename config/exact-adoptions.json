@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F094",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F095",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "48a4d47fecf1fbd0e2756208b0bc92952d6aac77f0be9d256be3746e6d8caf51"
+      "current_sha256": "53d0b1f9266e179ed24d0bf647d7d5b745af74536c3fbd52ed259c1796af2e9d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "055c25ea35240e3901571e5ebae43ebb1dc5cc0d99edce2c3a2290a1fa7032c0"
+      "current_sha256": "c79c50bdc304d4a0cb036189f7e34a817b2b15a3a5a79eaa0536678ac38d0932"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "ff1d97dc714f7759dc533d55dfa1c04fc8ed1eda8d2965b33a98a8514f73782f"
+      "current_sha256": "72cec6c2a9f5e5c750b58168119e0000e53ab70109f0251fd60302d25c24ae57"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c07404541f17b161cef4a74c031d9d87e34c39db63859b685a1deab92df56096"
+      "current_sha256": "0e865208288b2dbb13d2e029c703744f8ce51da268984ac857671a04706a1185"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "087eef8a3c1f42df4ca1e8b2e16dde04ba9676c4262c345ac61a9a9ec3bc3ccc"
+      "current_sha256": "163b19cc35c18d8a23fb997c37be5c88bd1a0607eb55fbbf1aa7d48ad5d0b613"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "c8ab1fc5c7990fc14c00afed0a2c6212395a0a029657d066a67ae319650245da"
+      "current_sha256": "032133cc3b233b7b0bca34e8e6656cb570db0ea2a64fc274c3e3900671f2ef6d"
     }
   },
   "functions": [
@@ -5711,6 +5711,50 @@
       },
       "origin": {
         "address": "0x0040C8C0",
+        "origin": "authored",
+        "subsystem": "TextureManager",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R014"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0040C590",
+        "size": "340",
+        "span_end": "0x0040C6E3",
+        "current_name": "FUN_0040c590",
+        "proposed_name": "TextureManager::UploadIndexedTexture",
+        "module": "TextureManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R014",
+        "owner": "",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0040C590",
+        "size": "340",
+        "span_end": "0x0040C6E3",
+        "current_name": "FUN_0040c590",
+        "proposed_name": "TexturePalette40C8C0::Refresh",
+        "module": "TextureManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TexturePalette40C8C0::Refresh(int)",
+        "is_thunk": "false",
+        "source_file": "src/TexturePalette40C590.cpp",
+        "evidence": "R014; F095; scripts/repo-python scripts/replay-exact-units.py --unit texture-palette-refresh-0040c590",
+        "owner": "authored",
+        "notes": "R014; custom palette, texture upload/cache or rendering policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F095: complete340-byte canonical cold exact palette refresh,125 instructions/six branches/16 packets/11 physical fields; signed handle-count validation,three real metadata snapshots atentry+4/+8/+0C retained although no later consumer; palette handle0 useswidth256,normal handle usescompleteSDKsurfaceDesc.Width; realSDKlockRect.pBits and byteentrytype feedthiscall3word/RET12 bitmapconverter through nested outer4/12-byte argument packets; fiveSDKCOMstdcallslots and76-byte frame checked with rejected copy-ret8/LockRect-ret16 controls; complete1448-byte converter CFG/two switch maps rechecked without converter credit; partial pointer-only views never constructed; old shared headers unchanged; original complete owner/layout/names and metadata+0C meaning unknown; R014 role retained by alias; all old units/97 origins/active drafts preserved"
+      },
+      "origin": {
+        "address": "0x0040C590",
         "origin": "authored",
         "subsystem": "TextureManager",
         "disposition": "authored",
@@ -98980,6 +99024,95 @@
           "target": 4251360
         }
       ]
+    },
+    "texture-palette-refresh-0040c590": {
+      "source": "src/TexturePalette40C590.cpp",
+      "object": "build/matching/TexturePalette40C590.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "TexturePalette40C8C0::Refresh"
+      ],
+      "symbol": "?Refresh@TexturePalette40C8C0@@QAEXH@Z",
+      "target_address": 4244880,
+      "size": 340,
+      "compare_size": 340,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "?Size@TextureHandleCount40C590@@QAEIXZ",
+          "target": 4251296
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 68,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 89,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 220,
+          "type": "REL32",
+          "symbol": "?At@TextureHandles40C8C0@@QAEAAPAUIDirect3DTexture8@@I@Z",
+          "target": 4251360
+        },
+        {
+          "offset": 287,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "?At@SpriteEntries40CA80@@QAEPAXI@Z",
+          "target": 4250976
+        },
+        {
+          "offset": 316,
+          "type": "REL32",
+          "symbol": "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z",
+          "target": 4307344
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -99141,6 +99274,7 @@
     "src/StaffTimeline438D00.hpp": "ebdd78627785a482ec7131a6c30e37ac62ac0470a5ede780501787e427e65f27",
     "src/SpriteDraw40CA80.cpp": "27c461e578eb8b620f9bb4da7284c018116c6d4a2d9a8e54a836f8dbf5e44690",
     "src/SpriteDraw40CA80.hpp": "4737e5ca9d8b9fd2ac950b9922d7362c3c7be089b0763b5d04704d974a196c59",
-    "src/TextureHandle40C8C0.cpp": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d"
+    "src/TextureHandle40C8C0.cpp": "6e9314474a373f1c6c7fbcbf2c2dc0e8401082e8e0c59070ba529b0d2e4fc67d",
+    "src/TexturePalette40C590.cpp": "7780bb6e9515d52c0b7260a049c81f9fb580d54c06c60c569a3ebbe971c11b24"
   }
 }
