@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F116 R049 special-method investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F117 R049 family investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 241 / 241 / 241 |
-| Exact code bytes | 591,425 |
-| Reviewed authored coverage | 591,425 / 1,973,516 (29.97%) |
-| Conservative coverage, including every pending byte | 591,425 / 1,977,124 (29.91%) |
+| Source-present / exact functions / exact units | 242 / 242 / 242 |
+| Exact code bytes | 595,222 |
+| Reviewed authored coverage | 595,222 / 1,973,516 (30.16%) |
+| Conservative coverage, including every pending byte | 595,222 / 1,977,124 (30.11%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **181 additions /
-581,542 code bytes / 182 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **182 additions /
+585,339 code bytes / 183 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,92 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F115
+## Latest accepted function: F116
+
+Complete R049 stage configuration `00470F00` independently passes canonical
+cold comparison: **3,797 code bytes plus the entire 40 byte switch table**,
+935 instructions, 58 actual calls and all 164 real relocation fields. The
+comparison covers00470F00..00471DFC; three following INT3 bytes are excluded.
+Only code earns authored-byte credit. All ten table targets, the signed-stage
+default exit, common plain RET and every static CFG/stack join are checked.
+The real eight-byte frame contains this and the compiler's switch value.
+
+One natural C++ switch handles stages1..10. Its first source probe is entirely
+exact, including the compiler-generated table and each local table symbol.
+No target byte array, manual jump table, extra local or name-control build is
+needed. Every one of the78 actor/borrowed-actor field stores and19 global
+stores agrees with the hand-reviewed native stage policies. Stage1 retains
+its different camera-call ordering; stage7 omits the earlier transition reset
+stores and uses its distinct positions, durations and final round life.
+Stages8..10 only set their entry/flag fields as the native code does.
+
+The signed difficulty expressions retain multiplication, addition and signed
+IDIV with no common-expression caching. Complete native round-field callee
+004574D0 independently proves the first signed byte index, short life, three
+byte carriers, three DWORD carriers and RET32. All actual receiver and packet
+values agree. The native low-byte argument writes leave dirty upper register
+bits; those bits are included unmasked in the full physical comparison.
+Only the separate semantic packet audit normalizes the actual subword widths
+consumed by the callee. Camera calls retain their actual cdecl four-word/no-arg
+packets, and the accepted AnimationState reset retains its real borrowed
+receiver and short argument. Ignored results and original state policy remain.
+
+A pointer-only actor view and the unchanged accepted AnimationState header
+avoid allocating or embedding incomplete owners. Full layouts, original
+character/class/field names and types not proved by native reads remain
+provisional. Five wrong real stage/difficulty/helper/table-edge bindings fail
+whole comparison. There is no padding, inert local, artificial array, fake
+return, manual EH, assembly, ABI alias, relocation mask or cropped extent.
+No helper, global data or table data bytes receive new code credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-00470f00
+```
+
+All 241 prior units, 114 canonical objects, 182 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows remain
+unchanged. F009 plus182 additions retains585,339 code bytes and183 new inputs.
+The R049 historical role remains through its alias. All97 unknown origins
+remain unknown. Preserve all f116 source and its scalar-policy authoring
+input, full native/table/callee/attested/CFG/packet/store/binding/cold/parent
+evidence, results, logs and PDBs. The registered canonical cold replay is the
+acceptance evidence.
+
+Validation: the complete code-and-table unit passes canonical cold replay,
+seven checkpoint tests pass, and full CI passes 3,603 tests in 144.833s.
+Target identity, tracking, progress and diff checks pass. Cleanup removes one
+obsolete reproducible probe object (9,411 bytes) and 375 Python bytecode files
+(8,282,863 bytes), total 8,292,274 bytes. Canonical objects, all sources,
+compiler inputs, evidence, results, logs and PDBs remain. Hash receipts are
+`.analysis/f116-final-compiler-inputs.json`,
+`.analysis/f116-object-cleanup.json` and
+`.analysis/f116-preservation-cleanup.json`. No prior unit was rebuilt.
+
+Current totals: **242 exact functions/units, 595,222 code bytes**, 30.16% of
+reviewed authored bytes and **30.11% conservatively**, including every pending
+byte. The 98% goal remains active and incomplete.
+
+## Current reconstruction cohort: F117
+
+Review the remaining nine R049 special-stage methods individually:
+`00497630/3814`, `004C5150/3800`, `004E6450/3800`, `00506140/3800`,
+`00530650/3822`, `005559F0/3800`, `00577C70/3800`, `0059B7F0/3797`,
+and `005C43D0/3797`, provisionally34,230 code bytes. F116 supplies a natural
+control-flow and scalar-policy methodology. Establish every own complete
+code/table extent, call packet, state store, constant and ABI independently;
+similarity alone supplies no credit. Cold-build each new unit before accepting
+its complete code and table. No old unit needs replay without a dependency
+change. Preserve the first F116 source and all its authoring/evidence inputs.
+
+Keep accepted inputs unchanged and use pointer-only views for incomplete
+owners. QueueFile00407A50 and QueueArchiveEntry00407B80 still need a proved
+complete local record layout. Resource root00456B60 retains f107's real588-byte
+frame and unresolved texture80/layout/meaningful filename bound. Keep all old
+drafts and97 unknown origins unchanged. Compiler builds remain serial; clean
+only obsolete reproducible outputs after retaining inputs and evidence.
+No padding, invented storage or incomplete owner allocation/embedding.
+
+## Previous accepted functions: F115
 
 The remaining independent R016/R017 audio functions pass canonical cold
 comparison: SoundBank volume `004073B0/13`, stream volume `004073C0/13`,
@@ -94,7 +179,7 @@ Current totals: **241 exact functions/units, 591,425 code bytes**, 29.97% of
 reviewed authored bytes and **29.91% conservatively**, including every pending
 byte. The 98% goal remains active and incomplete.
 
-## Current reconstruction cohort: F116
+## F116 investigation at the F115 checkpoint
 
 Review the complete independently authored R049 method
 CharacterSpecial::AdvanceAt00470F00, provisionally3,797 bytes. Reconcile every

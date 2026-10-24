@@ -240,3 +240,4 @@ AudioVolume4073B0::SetStreamVolume,0x004073C0,function
 SoundBankPlay4079C0::Play,0x004079C0,function
 AudioRecordLifecycle409290::AudioRecordLifecycle409290,0x00409290,function
 AudioRecordLifecycle409290::~AudioRecordLifecycle409290,0x004092F0,function
+CharacterSpecial470F00::ConfigureStage,0x00470F00,function

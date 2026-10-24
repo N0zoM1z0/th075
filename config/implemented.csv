@@ -239,3 +239,4 @@ AudioVolume4073B0::SetStreamVolume
 SoundBankPlay4079C0::Play
 AudioRecordLifecycle409290::AudioRecordLifecycle409290
 AudioRecordLifecycle409290::~AudioRecordLifecycle409290
+CharacterSpecial470F00::ConfigureStage

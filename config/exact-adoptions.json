@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F115",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F116",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "f95c1635b2eade400437a1c45505878584db431099afa7871aba5907e7c8da4f"
+      "current_sha256": "85e08ba8954e24eae5caa52cfdba6275a01baef0c622c766271a9d2558866d41"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "8845485323a442388c5af3560d80993fa734fe723bb85547a810c3a0aa0f145f"
+      "current_sha256": "c7d5b299a6a36700be8b6d932be62348e26ac701672276d7626e0f6b82cf5d92"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7304dde3b70081b114619582e467822e0f1d118bd0f1dfa2dc16a5d57bf06d8b"
+      "current_sha256": "d6c14e047500706095ced04c4a2444f87afce560b9859aa5a6ce074eebdb9174"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "3c47c369b4f50ef7e7312115847b7acf41665b71e824127f040b8eb9434f710f"
+      "current_sha256": "1051946816695abec3145836cf36f97f7e15292d92ff84111c0f6f107cd67569"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "546418825210a8e0c498b364ddc3f3d7e88a5a778ad153bb780f0f9afa71857d"
+      "current_sha256": "85c2d59c32b3af62e9851aa8f4004ceb0b1f0075d771b89384d922ad9eb44a8b"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "e2856caf3339d454e50418c8e7d5af0daa41b3368780da11999a1d53b6eefca1"
+      "current_sha256": "a0e30747c45b504f3947a40a7e0f04ddd3fc8e37acb77dabb657e9e81e112f5f"
     }
   },
   "functions": [
@@ -8004,6 +8004,50 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R017"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00470F00",
+        "size": "3797",
+        "span_end": "0x00471DD4",
+        "current_name": "FUN_00470f00",
+        "proposed_name": "CharacterSpecial::AdvanceAt00470F00",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00470F00",
+        "size": "3797",
+        "span_end": "0x00471DD4",
+        "current_name": "FUN_00470f00",
+        "proposed_name": "CharacterSpecial470F00::ConfigureStage",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSpecial470F00::ConfigureStage()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSpecial470F00.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F116; scripts/repo-python scripts/replay-exact-units.py --unit character-special-stage-00470f00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F116: complete 3797 code bytes plus40 byte natural switch table independently canonical cold exact; all935 instructions/58 actual packets/164 real fields. Full static CFG/all ten native table edges/default/common RET and every stack join; real8-byte owner/switch frame, three following INT3 excluded. Natural signed stage switch1..10, no manually supplied table or byte array. All78 actor/other field stores and19 global stores checked against hand-reviewed policies. Native signed difficulty multiply/add/IDIV and all thresholds/durations retained without CSE; first stage camera ordering and stage7 omitted transition resets preserved. Complete native389-byte round-field callee proves signed first byte/short life/three byte carriers/three DWORD carriers/RET32; actual subword packets include native dirty upper register bits unmasked in full byte comparison, semantic-only width normalization follows actual callee reads. Actual camera cdecl4/no-arg and accepted AnimationState reset short/thiscallRET4 packets, all receivers and ignored results preserved. First natural probe exact, no new name-control or old-source builds. Borrowed accepted AnimationState declaration unchanged; separate actor pointer view, no partial owner instantiated/embedded/allocated or complete layout claim. Five wrong real global/helper/table-edge bindings rejected. No padding/inert local/array/fake return/manual EH/assembly/ABI alias/mask/cropped extent. All241 old units/114canonical objects/182source inputs/218origin files/nine sharedheaders/91drafts and97unknown origins unchanged; R049 historical role retained by alias. Original class/character/field/phase names and unproved types remain provisional; no helper/global data/table data bytes receive code credit."
+      },
+      "origin": {
+        "address": "0x00470F00",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
       }
     }
   ],
@@ -107631,6 +107675,1014 @@
           "target": 6648120
         }
       ]
+    },
+    "character-special-stage-00470f00": {
+      "source": "src/CharacterSpecial470F00.cpp",
+      "object": "build/matching/CharacterSpecial470F00.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSpecial470F00::ConfigureStage"
+      ],
+      "symbol": "?ConfigureStage@CharacterSpecial470F00@@QAEXXZ",
+      "target_address": 4656896,
+      "size": 3797,
+      "compare_size": 3837,
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "?specialStage@@3CA",
+          "target": 6755870
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "$L700",
+          "target": 4660693
+        },
+        {
+          "offset": 69,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 79,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 99,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 124,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 211,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 250,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 270,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 288,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 327,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 349,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 370,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 402,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 432,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 442,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 459,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 479,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 487,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 574,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 581,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 613,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 635,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 656,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 663,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 695,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 717,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 738,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 770,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 800,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 810,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 827,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 847,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 855,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 942,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 949,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 981,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1003,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1024,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1051,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1058,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1090,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1112,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1133,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1140,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1172,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1194,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1215,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1247,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1277,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 1287,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 1304,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1324,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1332,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 1419,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1426,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1458,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1480,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1501,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1528,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1535,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1567,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1589,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1610,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1617,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1649,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1671,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1692,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1724,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 1754,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 1764,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 1781,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 1801,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 1809,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 1896,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1903,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1935,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1957,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 1978,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 1985,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2017,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2039,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2060,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2087,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2094,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2126,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2148,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2169,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2176,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2208,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2230,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2251,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2283,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2313,
+          "type": "DIR32",
+          "symbol": "?stageTransitionCounter@@3HA",
+          "target": 6755484
+        },
+        {
+          "offset": 2323,
+          "type": "DIR32",
+          "symbol": "?stageTransitionMode@@3CA",
+          "target": 6755537
+        },
+        {
+          "offset": 2340,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 2360,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 2368,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 2455,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2462,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2494,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2516,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2537,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2544,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2576,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2598,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2619,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2646,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2653,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2685,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2707,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2728,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2735,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2767,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2789,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2810,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2817,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2849,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2871,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 2892,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 2924,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 2964,
+          "type": "DIR32",
+          "symbol": "?stageIntroCharacter@@3CA",
+          "target": 6755869
+        },
+        {
+          "offset": 2984,
+          "type": "REL32",
+          "symbol": "?SetOverride@CameraStage470F00@@YAXEMMM@Z",
+          "target": 4271296
+        },
+        {
+          "offset": 2992,
+          "type": "REL32",
+          "symbol": "?Snap@CameraStage470F00@@YAXXZ",
+          "target": 4271344
+        },
+        {
+          "offset": 3079,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3086,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3118,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3140,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3161,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3168,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3200,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3222,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3243,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3270,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3277,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3309,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3331,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3352,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3359,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3391,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3413,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3434,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3441,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3473,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3495,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3516,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3523,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3555,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3577,
+          "type": "DIR32",
+          "symbol": "?stageDifficulty@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 3598,
+          "type": "REL32",
+          "symbol": "?RecordRoundFields@CharacterSpecial470F00@@QAEXCFCCCHHH@Z",
+          "target": 4551888
+        },
+        {
+          "offset": 3630,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 3797,
+          "type": "DIR32",
+          "symbol": "$L485",
+          "target": 4656944
+        },
+        {
+          "offset": 3801,
+          "type": "DIR32",
+          "symbol": "$L510",
+          "target": 4657307
+        },
+        {
+          "offset": 3805,
+          "type": "DIR32",
+          "symbol": "$L535",
+          "target": 4657675
+        },
+        {
+          "offset": 3809,
+          "type": "DIR32",
+          "symbol": "$L560",
+          "target": 4658152
+        },
+        {
+          "offset": 3813,
+          "type": "DIR32",
+          "symbol": "$L585",
+          "target": 4658629
+        },
+        {
+          "offset": 3817,
+          "type": "DIR32",
+          "symbol": "$L610",
+          "target": 4659188
+        },
+        {
+          "offset": 3821,
+          "type": "DIR32",
+          "symbol": "$L635",
+          "target": 4659829
+        },
+        {
+          "offset": 3825,
+          "type": "DIR32",
+          "symbol": "$L660",
+          "target": 4660535
+        },
+        {
+          "offset": 3829,
+          "type": "DIR32",
+          "symbol": "$L671",
+          "target": 4660587
+        },
+        {
+          "offset": 3833,
+          "type": "DIR32",
+          "symbol": "$L682",
+          "target": 4660639
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -107815,6 +108867,7 @@
     "src/AudioRecord408110.cpp": "cc5c15ae67cf92e7dd7b21ec45b4f279bff839ac3f2736c8d29c21d13a3806e8",
     "src/AudioRefill408BD0.cpp": "1a72d9fc0036812852b81088d1f047a55e223a46706ad1834c00cc7a599ec196",
     "src/StreamControl407CA0.cpp": "295c7528de7a1f0f63c5ea10ac2e2cb375dca6d149af12e450df44040ece6d1d",
-    "src/AudioLifecycle4073B0.cpp": "973e26b355af2923abc604177bae4f930ccca9a7fc086921595d02c81dfe088b"
+    "src/AudioLifecycle4073B0.cpp": "973e26b355af2923abc604177bae4f930ccca9a7fc086921595d02c81dfe088b",
+    "src/CharacterSpecial470F00.cpp": "e8ce7d39ab863962902eef3fee94543b27ac120ba3537a5c073248a323bb60f2"
   }
 }
