@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F100",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F101",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "8ca4342e5b2cb139ff0a2495a2dddda1ea87d6ebc17ca4edbddceed658ba9104"
+      "current_sha256": "8ca4823aad362071e39eaf79698cdd16b50018f9fb58ce4ad2f6f8f0b1ba0edd"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "0aafed166aab519f3fec1262ea502969ba992e154faa2afb725bf6ae5573a679"
+      "current_sha256": "86f36c2af2b951b7c4c807430d486e3a524f637be59e8e2f13c0ae258dfc92b7"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "55e1ea16b1a8b1086ceecab76a6c446709a511ff6f47356fbcb7983fe603ee27"
+      "current_sha256": "1f623c22243f9678fea0518d0ca99cccf557395230c422af55bf853679fded1d"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "57ba6244de9f810efdb05b653cda90d894830a5b9a1c14020a06693f0c160c31"
+      "current_sha256": "193b0ad54a34be8290b5417a73914f45461b888b001ad7a696981e990670342d"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "1fb501f0b18a620ed77f48cfa079d856cdddd3ba3d78a1b5d00d84a733333686"
+      "current_sha256": "9f51494d0a93631f7f341ede9de19cab9eb00fff12b1fcfb89a360f6a296c469"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "27eaf61ec4bf354db5f44094a8c17c2e3c1cd5c82356fbb9bbca62d18e676894"
+      "current_sha256": "8a07cd1df45640c2cfc0c761a622ef5c6744ab7cb368b1a1c359602538e1ad9d"
     }
   },
   "functions": [
@@ -6063,6 +6063,50 @@
       },
       "origin": {
         "address": "0x0041A3D0",
+        "origin": "authored",
+        "subsystem": "BitmapData",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R021"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0041B400",
+        "size": "1383",
+        "span_end": "0x0041B966",
+        "current_name": "FUN_0041b400",
+        "proposed_name": "BitmapData::EncodeRuns",
+        "module": "BitmapData",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R021",
+        "owner": "",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x0041B400",
+        "size": "1383",
+        "span_end": "0x0041B966",
+        "current_name": "FUN_0041b400",
+        "proposed_name": "BitmapPackSource40BF60::Encode",
+        "module": "BitmapData",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BitmapPackSource40BF60::Encode()",
+        "is_thunk": "false",
+        "source_file": "src/BitmapEncode41B400.cpp",
+        "evidence": "R021; F101; scripts/repo-python scripts/replay-exact-units.py --unit bitmap-encode-0041b400",
+        "owner": "authored",
+        "notes": "R021; custom record-selection or bitmap/palette/run-length/upload policy; complete target CFG including all bounded switches; original ABI/name and complete owner layout unresolved; origin only, no source or exact credit.; F101: complete1383-byte canonical cold exact plus41 bytes actual generated switchdata compared across1424 physicalbytes endingexactlyatnextentry41B990; all382instructions/31branches/15actualpackets/21physicalfields agree,newCOFFlocaltable/caseoffsets bindindependently; true140byteframe/noargECX/RET0,allthree typedcases/lifetimes andbothfullcallers reviewed; byteonly255guard,WORD/DWORDcountwidths andactualHW<<1 thenelementsize shifts retained; sixtrue scalarnew/sixscalardelete/threecdeclmemcpy bindindependentlibraryidentities,whole829byte46fieldR025copybody/six120byte tables/alleightRET0routes rechecked withoutnewdependencycredit; threegenuinelyused percase constlengthfieldindicesfoldsixwriteaddresses butretainnativezeroinitializers,fullindexonecontrolchangesall3initializations+6actualwrites,originaldeclarations/namesunknown; includeNewcontrol emits12differenttruearrayoperators andcannotbealiased; oldpixelsdeletedbeforenewallocation,encodedbytecountstored,copybeforetemporarydelete,earlyencodedsizeguardanddefaultreturnpreserved; fourABI+threebindingnegativecontrols rejected; pointeronlypartialownerneverconstructed,noinertlocals/padding/assembly/masks/registerframealiases/croppedextent; old197units/99objects/167inputs/97unknownorigins/allheaders/draftsunchanged,R021role retainedbyalias"
+      },
+      "origin": {
+        "address": "0x0041B400",
         "origin": "authored",
         "subsystem": "BitmapData",
         "disposition": "authored",
@@ -100100,6 +100144,155 @@
           "target": 4305424
         }
       ]
+    },
+    "bitmap-encode-0041b400": {
+      "source": "src/BitmapEncode41B400.cpp",
+      "object": "build/matching/BitmapEncode41B400.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BitmapPackSource40BF60::Encode"
+      ],
+      "symbol": "?Encode@BitmapPackSource40BF60@@QAEXXZ",
+      "target_address": 4305920,
+      "size": 1383,
+      "compare_size": 1424,
+      "relocations": [
+        {
+          "offset": 84,
+          "type": "DIR32",
+          "symbol": "$L55394",
+          "target": 4307319
+        },
+        {
+          "offset": 91,
+          "type": "DIR32",
+          "symbol": "$L55395",
+          "target": 4307303
+        },
+        {
+          "offset": 118,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 424,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 436,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 489,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 507,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 556,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 851,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 865,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 922,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 940,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 978,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1274,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 1289,
+          "type": "REL32",
+          "symbol": "??2@YAPAXI@Z",
+          "target": 6559133
+        },
+        {
+          "offset": 1348,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 1372,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 1383,
+          "type": "DIR32",
+          "symbol": "$L55220",
+          "target": 4306015
+        },
+        {
+          "offset": 1387,
+          "type": "DIR32",
+          "symbol": "$L55270",
+          "target": 4306439
+        },
+        {
+          "offset": 1391,
+          "type": "DIR32",
+          "symbol": "$L55318",
+          "target": 4306872
+        },
+        {
+          "offset": 1395,
+          "type": "DIR32",
+          "symbol": "$L55211",
+          "target": 4307299
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -100269,6 +100462,7 @@
     "src/BitmapPalette40C380.cpp": "5a1ba93f0dc6e477edc56f40f3ad90a78ee3d2d85955672e446dae73e75a727f",
     "src/TexturePack40BF60.cpp": "efb625a36b8478c27fc8a38cd828f5f08b83b6ea85b60146b448227eeecb74e0",
     "src/TexturePack40BF60.hpp": "fd96bf3ee5e1e0dcb24fd181c7600e980348577c43311089fb4ae3fac8a13e85",
-    "src/BitmapLoad41A3D0.cpp": "4684b2bef3b2b14393c1901d0aa7daa0b9522ddf57b2c8a0f8ef0956e5dfe55a"
+    "src/BitmapLoad41A3D0.cpp": "4684b2bef3b2b14393c1901d0aa7daa0b9522ddf57b2c8a0f8ef0956e5dfe55a",
+    "src/BitmapEncode41B400.cpp": "0a55f9c25327c406e748a206e2739d228551f8c05381ff6a552e30ff86f2d2f9"
   }
 }

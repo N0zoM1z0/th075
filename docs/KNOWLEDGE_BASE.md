@@ -22001,3 +22001,87 @@ Canonical outputs, control sources/results, evidence, logs and PDBs remain.
 F101 own caller query completed with target attestation and its completion
 marker; complete native/callee/switch index and bounded ABI notes are retained
 privately. No F101 source or exact credit yet.
+
+
+## F101 complete run-encoder checkpoint (2026-10-24)
+
+R021 bitmap run encoder `0041B400..0041B966` independently passes canonical
+cold comparison as BitmapPackSource40BF60::Encode(). All 1,383 code bytes,
+382 instructions, 31 branches and 21 physical relocation fields match.
+The 1,424-byte comparison includes the full 16-byte destination table at
+`0041B967` and 25-byte selector at `0041B977`; table bytes earn no coverage.
+The next accepted function starts immediately at `0041B990`, without an INT3
+gap. One new implementation file leaves all prior headers and sources intact.
+The historical BitmapData::EncodeRuns role remains by an R021 alias.
+
+The no-argument method uses ECX and RET0 with a real 140-byte frame. An existing
+encoded size returns immediately. Separate byte, word and shared 24/32-bit
+cases retain real 1/2/4-byte run counts and colors, unsigned row/pixel loops,
+stride-aware source reads and final run emission. Only the byte case has a
+255-count guard; word/dword paths retain their observed overflow behavior.
+Temporary capacity is height*width*two elements, including the actual two
+successive allocation shifts for word/dword elements. Old pixels are deleted
+before replacement allocation; encoded byte size is stored, payload copied,
+and temporary storage deleted in that order. No validation or count repair
+is added. The pointer-only owner is never constructed or embedded.
+
+Three native zero DWORD initializers lack later loads. Genuine used per-case
+run-length field-index constants explain these stores while folding six
+count-field write addresses. The full index-one control changes all three
+initializers and all six actual stores. These are functional source constants,
+with no inert locals or padding; original declarations, names and scopes remain
+unknown. Compiler ordering controls reproduce the complete physical frame;
+all 646 earlier diagnostic name buckets also reproduce independently.
+
+Six scalar new, six scalar delete and three memcpy calls bind independently.
+A real <new> control emits twelve different array-operator identities and
+cannot bind to the scalar native calls. Complete R025 vendor memcpy remains
+829 bytes with all 46 real local relocations. Its six tables contain 120 bytes
+in total, and all 231 reachable instructions/eight RET0 routes preserve three
+cdecl arguments and the destination result in EAX. Thirty-seven extent bytes
+of alignment remain covered by the complete vendor comparison. SDK header
+and assembly context corroborate the ABI without proving original build flags.
+No library dependency receives new source or exact credit.
+
+All fifteen packets, three buffer lifetimes, the full switch CFG and both
+full callers pass review. Both callers supply only the entry receiver and
+ignore the result. Four wrong-ABI and three wrong-binding controls fail.
+All six local fields bind actual newly emitted COFF table/case offsets.
+There are no masks, register/frame aliases, patched branches, assembly or
+cropped extents. Only this new unit is cold built.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-encode-0041b400
+```
+
+All 197 prior units, 99 canonical objects, 167 source inputs, 218 origin files,
+nine shared headers, 91 active drafts and 4,350 other function rows stay
+unchanged. F009 plus 138 additions retains 562,956 code bytes and 168 inputs.
+Keep all f101 native/attested/ABI/policy/memcpy/physical/cold/parent/recovery
+records and compiler sources, controls, results, logs and PDBs. A stale input
+filename in the initial private adoption script was rejected by its guard;
+only its six new ledger rows/appends were restored, then the corrected script
+derived the input from the verified unit and completed all checks. Earlier
+accepted state and origin evidence never changed.
+
+Current totals: 198 exact functions/units, 572,839 code bytes, 29.03% of
+reviewed authored bytes and 28.97% conservatively including all pending bytes.
+
+Next F102 is the complete 326-byte R021 serialized-record loader `0041B2B0`:
+114 instructions, four branches, six calls and RET4, with ten following INT3
+bytes excluded and no switch data. It takes a descriptor pointer, copies five
+metadata fields to the owner, then allocates/copies encoded or raw pixels
+from the descriptor's data pointer. It has no file API calls. Reconcile the
+complete 24-byte descriptor field evidence, unsigned size/depth policy, actual
+one-argument ECX/RET4 and all three scalar new/memcpy packets before source.
+Preserve all 97 unknown origins and old drafts without credit. No F102 source
+or exact credit yet. The 98% goal remains active and incomplete.
+
+Final F101 CI passes 3,603 tests in 124.896s. Bounded cleanup
+removes five obsolete reproducible probe/control objects (86,740 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical outputs, all sources/controls/results, vendor ABI evidence, logs
+and PDBs remain. F102 own root/caller decompiles and caller query complete
+with target attestation and their completion markers; full native/dependency/
+caller indices and bounded ABI notes are retained privately. No F102 source
+or exact credit yet.
