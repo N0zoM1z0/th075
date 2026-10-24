@@ -253,3 +253,5 @@ CharacterSpecialFamily::Configure5C43D0,0x005C43D0,function
 OpeningTimeline4277A0::RenderTimeline,0x004277A0,function
 MusicScene425C80::RenderList,0x00425C80,function
 ResultScene430080::RenderRecordPage,0x00430080,function
+AuxiliaryActor4A80F0::Update,0x004A80F0,function
+CharacterAI507B20::ChooseAction,0x00507B20,function

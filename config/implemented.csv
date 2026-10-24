@@ -252,3 +252,5 @@ CharacterSpecialFamily::Configure5C43D0
 OpeningTimeline4277A0::RenderTimeline
 MusicScene425C80::RenderList
 ResultScene430080::RenderRecordPage
+AuxiliaryActor4A80F0::Update
+CharacterAI507B20::ChooseAction

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F119",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F120",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3daf0ec834a240b3af2dbdde8cb68776b3e126e74100fb79c3e4aa829e744c94"
+      "current_sha256": "91e32876085aa08aceaf19379b25c83f23c08e7cc096a56c5c60d6a0eed899b1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "830acd922ee9a00f7ff6c581846c0b63183059d3de6371641edb0b8b761d8af1"
+      "current_sha256": "98f931f0bf6cb7797ad1d4e950bb88fd5d4e66ee939493402483b207aca9c95e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "83d0b4307e515c816856f9b5030bb9cf8f2b33de9fe0bfb61e7833bf4fc19a09"
+      "current_sha256": "7cb46e2f60aa013f396219f7a0664cf4085223c2d1517dc534e3815379f6f452"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "18b329012e5e3f1d6dd3cf4ed3bc129ecd3102327346ad3387c149c5306cd7b4"
+      "current_sha256": "4955c8b0e94d6041dc7e64112721d1aa3e7acb32266c41504ab7311bdfccb1c9"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "898f056f32a3d8422f369bab4e3c765db221faef6718aac25bd1a232231f862d"
+      "current_sha256": "c2a4f1facfdef574903bc9633022dd53288fd56a0e84ae4208c5ed6ca41b40ab"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "126658f5007c958714f2c5abdb25b395e44696b881b7b3e58901083cd6681664"
+      "current_sha256": "c3d3d3f28c85cc8558c449e79b9fb4fe957ca29c12fa15a9d22332c8b3f87e88"
     }
   },
   "functions": [
@@ -8576,6 +8576,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004A80F0",
+        "size": "3935",
+        "span_end": "0x004A904E",
+        "current_name": "FUN_004a80f0",
+        "proposed_name": "CharacterAux::RunAt004A80F0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004A80F0",
+        "size": "3935",
+        "span_end": "0x004A904E",
+        "current_name": "FUN_004a80f0",
+        "proposed_name": "AuxiliaryActor4A80F0::Update",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AuxiliaryActor4A80F0::Update()",
+        "is_thunk": "false",
+        "source_file": "src/ActorAuxiliary.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F120; scripts/repo-python scripts/replay-exact-units.py --unit auxiliary-actor-update-004a80f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F120: complete 3935 byte independent canonical cold exact; full cohort6935bytes/1789instructions/94calls/161real relocation fields. Own CFG/shared exit/plainRET/ESP-EBP-x87 joins and120/12byte frames independently checked, no embedded tables/cropped tails. Update uses this only named local;29 genuine compiler conversion spills, signed owner orbital coords and six independent x-y slot pairs, exact angle division and FTOL-to-int-to-float paths preserved. Actual Spawn helper accepts effect short/facing-byte/layer-byte and owner receiver; all phase/collision/animation/reset/opacity/decrement ordering retained. AI has genuine complete two-float local pair; target really computes/stores vertical separation but never reads it, no dummy added storage. All predicate calls use opponent; signed facing and <=10 bound, original rand draws/order/remainders and global68D63C countdown retained. Five wrong real nested-frame/spawn/angle/rand/countdown bindings rejected. Natural typed pointer-only C++, no incomplete owner instantiated/embedded. No decompiler pasted/code array/fake return/padding/manualEH/assembly/masks/ABIaliases. All254 prior units/118canonical objects/186source inputs/218origin files/nine sharedheaders/91drafts and97unknown origins unchanged. R049 historical roles retained by aliases. Names/full original owner layouts and unproved declarations remain provisional; no unknown math/helper/library/global data/layout credit."
+      },
+      "origin": {
+        "address": "0x004A80F0",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00507B20",
+        "size": "3000",
+        "span_end": "0x005086D7",
+        "current_name": "FUN_00507b20",
+        "proposed_name": "CharacterAux::RunAt00507B20",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00507B20",
+        "size": "3000",
+        "span_end": "0x005086D7",
+        "current_name": "FUN_00507b20",
+        "proposed_name": "CharacterAI507B20::ChooseAction",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterAI507B20::ChooseAction()",
+        "is_thunk": "false",
+        "source_file": "src/ActorAuxiliary.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F120; scripts/repo-python scripts/replay-exact-units.py --unit character-ai-policy-00507b20",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F120: complete 3000 byte independent canonical cold exact; full cohort6935bytes/1789instructions/94calls/161real relocation fields. Own CFG/shared exit/plainRET/ESP-EBP-x87 joins and120/12byte frames independently checked, no embedded tables/cropped tails. Update uses this only named local;29 genuine compiler conversion spills, signed owner orbital coords and six independent x-y slot pairs, exact angle division and FTOL-to-int-to-float paths preserved. Actual Spawn helper accepts effect short/facing-byte/layer-byte and owner receiver; all phase/collision/animation/reset/opacity/decrement ordering retained. AI has genuine complete two-float local pair; target really computes/stores vertical separation but never reads it, no dummy added storage. All predicate calls use opponent; signed facing and <=10 bound, original rand draws/order/remainders and global68D63C countdown retained. Five wrong real nested-frame/spawn/angle/rand/countdown bindings rejected. Natural typed pointer-only C++, no incomplete owner instantiated/embedded. No decompiler pasted/code array/fake return/padding/manualEH/assembly/masks/ABIaliases. All254 prior units/118canonical objects/186source inputs/218origin files/nine sharedheaders/91drafts and97unknown origins unchanged. R049 historical roles retained by aliases. Names/full original owner layouts and unproved declarations remain provisional; no unknown math/helper/library/global data/layout credit."
+      },
+      "origin": {
+        "address": "0x00507B20",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
       }
     }
   ],
@@ -120143,6 +120231,1020 @@
           "target": 4204496
         }
       ]
+    },
+    "auxiliary-actor-update-004a80f0": {
+      "source": "src/ActorAuxiliary.cpp",
+      "object": "build/matching/ActorAuxiliary.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AuxiliaryActor4A80F0::Update"
+      ],
+      "symbol": "?Update@AuxiliaryActor4A80F0@@QAEXXZ",
+      "target_address": 4882672,
+      "size": 3935,
+      "compare_size": 3935,
+      "relocations": [
+        {
+          "offset": 109,
+          "type": "REL32",
+          "symbol": "?ResetNodeTransform@SpriteTransform40FBB0@@QAEXMMM@Z",
+          "target": 4258736
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 231,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 273,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 300,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 369,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 411,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 438,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 480,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 507,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 549,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1022,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1037,
+          "type": "REL32",
+          "symbol": "?AngleAt00483300@@YAMMM@Z",
+          "target": 4731648
+        },
+        {
+          "offset": 1046,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 1051,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 1071,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 1492,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 1606,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 1663,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 1706,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 1747,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2101,
+          "type": "REL32",
+          "symbol": "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z",
+          "target": 4258672
+        },
+        {
+          "offset": 2149,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2194,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2335,
+          "type": "REL32",
+          "symbol": "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z",
+          "target": 4258672
+        },
+        {
+          "offset": 2383,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2428,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 2477,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 2523,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 2633,
+          "type": "DIR32",
+          "symbol": "__real@3f000000",
+          "target": 6648952
+        },
+        {
+          "offset": 2639,
+          "type": "DIR32",
+          "symbol": "__real@40a00000",
+          "target": 6649972
+        },
+        {
+          "offset": 2671,
+          "type": "REL32",
+          "symbol": "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z",
+          "target": 4258672
+        },
+        {
+          "offset": 2793,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 2848,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 2957,
+          "type": "REL32",
+          "symbol": "?SetPolarVelocity@ObjectMotion40FB70@@QAEXMM@Z",
+          "target": 4258672
+        },
+        {
+          "offset": 3005,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3050,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 3182,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 3252,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3409,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 3479,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3594,
+          "type": "REL32",
+          "symbol": "?Spawn@EffectEmitterF120@@QAEXFMMCC@Z",
+          "target": 4536944
+        },
+        {
+          "offset": 3602,
+          "type": "REL32",
+          "symbol": "?AdvanceNestedFrame@AnimationProgress40FA30@@QAEFXZ",
+          "target": 4258352
+        },
+        {
+          "offset": 3624,
+          "type": "REL32",
+          "symbol": "?ClearField74@BattleEffect@@QAEXXZ",
+          "target": 4569136
+        },
+        {
+          "offset": 3762,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3795,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3828,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3861,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3894,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        },
+        {
+          "offset": 3927,
+          "type": "REL32",
+          "symbol": "?ResetSecondaryCounter@AnimationState@@QAEXF@Z",
+          "target": 4258624
+        }
+      ]
+    },
+    "character-ai-policy-00507b20": {
+      "source": "src/ActorAuxiliary.cpp",
+      "object": "build/matching/ActorAuxiliary.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterAI507B20::ChooseAction"
+      ],
+      "symbol": "?ChooseAction@CharacterAI507B20@@QAEXXZ",
+      "target_address": 5274400,
+      "size": 3000,
+      "compare_size": 3000,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?AbsFloatAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 65,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 92,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 154,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 185,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 216,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 232,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 280,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 292,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 365,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 377,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 408,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 430,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 442,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 471,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 493,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 505,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 534,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 556,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 568,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 629,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 641,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 699,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 711,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 766,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 778,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 836,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 848,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 877,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 906,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 931,
+          "type": "REL32",
+          "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+          "target": 4542352
+        },
+        {
+          "offset": 991,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1066,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1097,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 1122,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 1134,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1163,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1185,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1202,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1236,
+          "type": "REL32",
+          "symbol": "?IsState50To149@FighterState@@QAE_NXZ",
+          "target": 4542352
+        },
+        {
+          "offset": 1267,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1309,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1340,
+          "type": "DIR32",
+          "symbol": "__real@430c0000",
+          "target": 6656492
+        },
+        {
+          "offset": 1382,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1424,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1458,
+          "type": "DIR32",
+          "symbol": "__real@430c0000",
+          "target": 6656492
+        },
+        {
+          "offset": 1485,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1535,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1547,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1581,
+          "type": "DIR32",
+          "symbol": "__real@430c0000",
+          "target": 6656492
+        },
+        {
+          "offset": 1606,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1687,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 1712,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1772,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1784,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1809,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1846,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 1880,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1892,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1939,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 1951,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 1976,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2013,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2047,
+          "type": "DIR32",
+          "symbol": "__real@43960000",
+          "target": 6649932
+        },
+        {
+          "offset": 2063,
+          "type": "DIR32",
+          "symbol": "__real@43fa0000",
+          "target": 6656488
+        },
+        {
+          "offset": 2075,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2104,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        },
+        {
+          "offset": 2116,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2145,
+          "type": "DIR32",
+          "symbol": "__real@42f00000",
+          "target": 6656168
+        },
+        {
+          "offset": 2167,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2184,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2234,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 2250,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 2272,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2289,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2320,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 2336,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 2358,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2375,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2406,
+          "type": "DIR32",
+          "symbol": "__real@42700000",
+          "target": 6652516
+        },
+        {
+          "offset": 2422,
+          "type": "DIR32",
+          "symbol": "__real@43700000",
+          "target": 6656976
+        },
+        {
+          "offset": 2434,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2484,
+          "type": "DIR32",
+          "symbol": "__real@43f00000",
+          "target": 6651152
+        },
+        {
+          "offset": 2496,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2523,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2557,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        },
+        {
+          "offset": 2577,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2607,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2619,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2653,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2675,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 2692,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2719,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2746,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2792,
+          "type": "DIR32",
+          "symbol": "__real@43160000",
+          "target": 6656504
+        },
+        {
+          "offset": 2829,
+          "type": "REL32",
+          "symbol": "?AbsFloatAt00412D90@@YAMM@Z",
+          "target": 4271504
+        },
+        {
+          "offset": 2838,
+          "type": "DIR32",
+          "symbol": "__real@42dc0000",
+          "target": 6656172
+        },
+        {
+          "offset": 2866,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2888,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2897,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2905,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2927,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2936,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        },
+        {
+          "offset": 2943,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2961,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 2991,
+          "type": "DIR32",
+          "symbol": "?g_AI507B20Countdown@@3HA",
+          "target": 6870588
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -120331,6 +121433,7 @@
     "src/CharacterSpecial470F00.cpp": "e8ce7d39ab863962902eef3fee94543b27ac120ba3537a5c073248a323bb60f2",
     "src/CharacterSpecialFamily.cpp": "fc21b655302eb03b0847ded6c455dcaf09b80a3f6c1a644ecffdee2c3d9bce08",
     "src/OpeningTimeline4277A0.cpp": "d9bdbfc315dd70ff3a098a91dc3f090374ddd7cddb5ed8d6d97bed4d2e4aa8eb",
-    "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1"
+    "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1",
+    "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc"
   }
 }
