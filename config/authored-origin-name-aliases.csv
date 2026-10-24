@@ -165,3 +165,6 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00406A20,SharedSound::CreateBuffer,SoundCreation406A20::Create,R015,shared-sound-create-00406a20
 0x00406820,SharedSound::LoadWaveBuffer,SharedWave406820::Load,R015,shared-wave-load-00406820
 0x00406B80,SharedSound::ReadPcmWave,SharedPcm406B80::Read,R015,shared-pcm-read-00406b80
+0x004073D0,SoundBank::LoadWaveDirectory,SoundBank4073D0::LoadWaveDirectory,R016,sound-bank-wave-directory-004073d0
+0x00407540,SoundBank::LoadSerializedFile,SoundBank4073D0::LoadSerializedFile,R016,sound-bank-file-load-00407540
+0x004077E0,SoundBank::SaveSerializedFile,SoundBank4073D0::SaveSerializedFile,R016,sound-bank-file-save-004077e0

@@ -220,3 +220,6 @@ SharedSound4066C0::Initialize
 SoundCreation406A20::Create
 SharedWave406820::Load
 SharedPcm406B80::Read
+SoundBank4073D0::LoadWaveDirectory
+SoundBank4073D0::LoadSerializedFile
+SoundBank4073D0::SaveSerializedFile

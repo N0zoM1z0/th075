@@ -221,3 +221,6 @@ SharedSound4066C0::Initialize,0x004066E0,function
 SoundCreation406A20::Create,0x00406A20,function
 SharedWave406820::Load,0x00406820,function
 SharedPcm406B80::Read,0x00406B80,function
+SoundBank4073D0::LoadWaveDirectory,0x004073D0,function
+SoundBank4073D0::LoadSerializedFile,0x00407540,function
+SoundBank4073D0::SaveSerializedFile,0x004077E0,function

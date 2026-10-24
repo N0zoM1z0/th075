@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F110",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F111",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e4053e97eb05231756796ea5e1c4ce75576fc6441e4dc4a36159e32dac929569"
+      "current_sha256": "3e52834f2a669512cd75eb598dfd496bbfa0b17e6f46e1ac1129e0fb17132732"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a74152b349639eabb7c027b5076ecc268daddd58561b85fd31b0b4f2faff5ca4"
+      "current_sha256": "7b4e5e831d84d4c6a966ee0535cfa34bf5568c15e434086d4ca158e636b1ccfd"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "b34846e16cad444431f19498d9ba4b2eeea85adb2d7ff7a13b793e49959e0f98"
+      "current_sha256": "322e0ced0f0d39100abd0f3a636926e8bfc19ba4f22870c187b0796cd313e3f6"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "eec9409b6c0fa75fd72b12aa16e73a21ad0cddfec6948699a1f53ab61391216b"
+      "current_sha256": "e301d4307f33efc89108b9c060e0cf2e586dd2561c605d1aa5d0872ceb3d7531"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2a53b71d9cbe2561d24f10f3ec0c24e262ec669403a84a50289cb3ef5b1ec31b"
+      "current_sha256": "6d5b6c11818b68fa7e732a6ea76490de71739dce86f1ff2d922105643a4b916a"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "d177da2dcda8684910dafb0afd63741209141f386503bbf322eba80f0e9e900b"
+      "current_sha256": "82ac8f6df632b61304bfc65b7e6d091a5857abf7dfeecb4ed05777df14ec7eea"
     }
   },
   "functions": [
@@ -7168,6 +7168,138 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004073D0",
+        "size": "367",
+        "span_end": "0x0040753E",
+        "current_name": "FUN_004073d0",
+        "proposed_name": "SoundBank::LoadWaveDirectory",
+        "module": "SoundBank",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004073D0",
+        "size": "367",
+        "span_end": "0x0040753E",
+        "current_name": "FUN_004073d0",
+        "proposed_name": "SoundBank4073D0::LoadWaveDirectory",
+        "module": "SoundBank",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SoundBank4073D0::LoadWaveDirectory(const char*, unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/SoundBank4073D0.cpp",
+        "evidence": "R016; F111; scripts/repo-python scripts/replay-exact-units.py --unit sound-bank-wave-directory-004073d0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F111: complete 367 byte independent canonical cold exact; family367+341+472=1180 code bytes, 398 instructions, 46 actual packets and all43 real fields; complete native CFG/stack joins, real288/60/100 byte frames/RET8-4-4. Partial sound-bank interface never instantiated or embedded; original owner extent/names and actual declared filename bound remain unknown. Meaningful SDK MAX_PATH260 selected before comparison reproduces real GS frame and automatic rounding without growth or source padding. Directory count16 store, old-slot Release/zero, actual storage-reset wrapper, assign-by-pointer-reference0 and 3-word wave helper; actual outer literal0 preserved across checked At and unchecked element lookup. Storage wrapper409490/19-byte thiscall0 has proved effects but clear/destructor same-shape identity/origin remains unknown; all97 unknown origins unchanged and no helper credit. Serialized load retains initial Size, redundant SetFilePointer0, signed count, integral assign, presence1, payload size4, WAVE18 and array new/delete thunks, 5-word factory packet; no extra COM Release before overwriting old slots or SDK result checks. Save uses complete SDK DSBCAPS20 and WAVEFORMATEX18; writes size before GetFormat, captures one real unread GetCaps HRESULT exactly at native4078B9, all other ignored results unchanged; Lock entire, write full caps size from first pointer rather than returned first count, Unlock both reported regions, absent0. All SDK COM/import packets and complete typed helper ABIs checked, current accepted wave/factory interfaces unchanged. First341-byte loader already exact; positive directory success block removes2-byte continue control; bounded108-used-name measurement resolves46 true save frame fields with same locals. Final explicit int cast truthfully matches sprintf percent-d varargs without changing bytes. Four wrong physical bindings/three packet mutation controls rejected; no inert locals/extra storage/padding/fake returns/manual EH/assembly/aliases/masks/cropped extent. GetCaps result capture is a real native assignment retained from first probe, not added dummy storage. All222 prior units/109 objects/177 inputs/218 origin files/headers/drafts unchanged; R016 roles retained by aliases. No direct callers/xrefs found; runtime reachability and original entry identities remain unclaimed."
+      },
+      "origin": {
+        "address": "0x004073D0",
+        "origin": "authored",
+        "subsystem": "SoundBank",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00407540",
+        "size": "341",
+        "span_end": "0x00407694",
+        "current_name": "FUN_00407540",
+        "proposed_name": "SoundBank::LoadSerializedFile",
+        "module": "SoundBank",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00407540",
+        "size": "341",
+        "span_end": "0x00407694",
+        "current_name": "FUN_00407540",
+        "proposed_name": "SoundBank4073D0::LoadSerializedFile",
+        "module": "SoundBank",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SoundBank4073D0::LoadSerializedFile(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/SoundBank4073D0.cpp",
+        "evidence": "R016; F111; scripts/repo-python scripts/replay-exact-units.py --unit sound-bank-file-load-00407540",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F111: complete 341 byte independent canonical cold exact; family367+341+472=1180 code bytes, 398 instructions, 46 actual packets and all43 real fields; complete native CFG/stack joins, real288/60/100 byte frames/RET8-4-4. Partial sound-bank interface never instantiated or embedded; original owner extent/names and actual declared filename bound remain unknown. Meaningful SDK MAX_PATH260 selected before comparison reproduces real GS frame and automatic rounding without growth or source padding. Directory count16 store, old-slot Release/zero, actual storage-reset wrapper, assign-by-pointer-reference0 and 3-word wave helper; actual outer literal0 preserved across checked At and unchecked element lookup. Storage wrapper409490/19-byte thiscall0 has proved effects but clear/destructor same-shape identity/origin remains unknown; all97 unknown origins unchanged and no helper credit. Serialized load retains initial Size, redundant SetFilePointer0, signed count, integral assign, presence1, payload size4, WAVE18 and array new/delete thunks, 5-word factory packet; no extra COM Release before overwriting old slots or SDK result checks. Save uses complete SDK DSBCAPS20 and WAVEFORMATEX18; writes size before GetFormat, captures one real unread GetCaps HRESULT exactly at native4078B9, all other ignored results unchanged; Lock entire, write full caps size from first pointer rather than returned first count, Unlock both reported regions, absent0. All SDK COM/import packets and complete typed helper ABIs checked, current accepted wave/factory interfaces unchanged. First341-byte loader already exact; positive directory success block removes2-byte continue control; bounded108-used-name measurement resolves46 true save frame fields with same locals. Final explicit int cast truthfully matches sprintf percent-d varargs without changing bytes. Four wrong physical bindings/three packet mutation controls rejected; no inert locals/extra storage/padding/fake returns/manual EH/assembly/aliases/masks/cropped extent. GetCaps result capture is a real native assignment retained from first probe, not added dummy storage. All222 prior units/109 objects/177 inputs/218 origin files/headers/drafts unchanged; R016 roles retained by aliases. No direct callers/xrefs found; runtime reachability and original entry identities remain unclaimed."
+      },
+      "origin": {
+        "address": "0x00407540",
+        "origin": "authored",
+        "subsystem": "SoundBank",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004077E0",
+        "size": "472",
+        "span_end": "0x004079B7",
+        "current_name": "FUN_004077e0",
+        "proposed_name": "SoundBank::SaveSerializedFile",
+        "module": "SoundBank",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R016",
+        "owner": "",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004077E0",
+        "size": "472",
+        "span_end": "0x004079B7",
+        "current_name": "FUN_004077e0",
+        "proposed_name": "SoundBank4073D0::SaveSerializedFile",
+        "module": "SoundBank",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SoundBank4073D0::SaveSerializedFile(const char*)",
+        "is_thunk": "false",
+        "source_file": "src/SoundBank4073D0.cpp",
+        "evidence": "R016; F111; scripts/repo-python scripts/replay-exact-units.py --unit sound-bank-file-save-004077e0",
+        "owner": "authored",
+        "notes": "R016; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F111: complete 472 byte independent canonical cold exact; family367+341+472=1180 code bytes, 398 instructions, 46 actual packets and all43 real fields; complete native CFG/stack joins, real288/60/100 byte frames/RET8-4-4. Partial sound-bank interface never instantiated or embedded; original owner extent/names and actual declared filename bound remain unknown. Meaningful SDK MAX_PATH260 selected before comparison reproduces real GS frame and automatic rounding without growth or source padding. Directory count16 store, old-slot Release/zero, actual storage-reset wrapper, assign-by-pointer-reference0 and 3-word wave helper; actual outer literal0 preserved across checked At and unchecked element lookup. Storage wrapper409490/19-byte thiscall0 has proved effects but clear/destructor same-shape identity/origin remains unknown; all97 unknown origins unchanged and no helper credit. Serialized load retains initial Size, redundant SetFilePointer0, signed count, integral assign, presence1, payload size4, WAVE18 and array new/delete thunks, 5-word factory packet; no extra COM Release before overwriting old slots or SDK result checks. Save uses complete SDK DSBCAPS20 and WAVEFORMATEX18; writes size before GetFormat, captures one real unread GetCaps HRESULT exactly at native4078B9, all other ignored results unchanged; Lock entire, write full caps size from first pointer rather than returned first count, Unlock both reported regions, absent0. All SDK COM/import packets and complete typed helper ABIs checked, current accepted wave/factory interfaces unchanged. First341-byte loader already exact; positive directory success block removes2-byte continue control; bounded108-used-name measurement resolves46 true save frame fields with same locals. Final explicit int cast truthfully matches sprintf percent-d varargs without changing bytes. Four wrong physical bindings/three packet mutation controls rejected; no inert locals/extra storage/padding/fake returns/manual EH/assembly/aliases/masks/cropped extent. GetCaps result capture is a real native assignment retained from first probe, not added dummy storage. All222 prior units/109 objects/177 inputs/218 origin files/headers/drafts unchanged; R016 roles retained by aliases. No direct callers/xrefs found; runtime reachability and original entry identities remain unclaimed."
+      },
+      "origin": {
+        "address": "0x004077E0",
+        "origin": "authored",
+        "subsystem": "SoundBank",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R016"
       }
     }
   ],
@@ -105068,6 +105200,336 @@
           "target": 6648432
         }
       ]
+    },
+    "sound-bank-wave-directory-004073d0": {
+      "source": "src/SoundBank4073D0.cpp",
+      "object": "build/matching/SoundBank4073D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SoundBank4073D0::LoadWaveDirectory"
+      ],
+      "symbol": "?LoadWaveDirectory@SoundBank4073D0@@QAEXPBDI@Z",
+      "target_address": 4223952,
+      "size": 367,
+      "compare_size": 367,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "DIR32",
+          "symbol": "___security_cookie",
+          "target": 6749744
+        },
+        {
+          "offset": 60,
+          "type": "REL32",
+          "symbol": "?Size@SoundBank4073D0@@QAEIXZ",
+          "target": 4232096
+        },
+        {
+          "offset": 80,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 141,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 160,
+          "type": "REL32",
+          "symbol": "?ClearStorage@SoundBank4073D0@@QAEXXZ",
+          "target": 4232336
+        },
+        {
+          "offset": 198,
+          "type": "REL32",
+          "symbol": "?Assign@SoundBank4073D0@@QAEXIABQAUIDirectSoundBuffer8@@@Z",
+          "target": 4232304
+        },
+        {
+          "offset": 237,
+          "type": "DIR32",
+          "symbol": "$SG57270",
+          "target": 6649760
+        },
+        {
+          "offset": 249,
+          "type": "REL32",
+          "symbol": "_sprintf",
+          "target": 6554864
+        },
+        {
+          "offset": 283,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 311,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        },
+        {
+          "offset": 328,
+          "type": "REL32",
+          "symbol": "?At@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232160
+        },
+        {
+          "offset": 341,
+          "type": "REL32",
+          "symbol": "?Load@SharedWave406820@@YA_NPBDPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4220960
+        },
+        {
+          "offset": 357,
+          "type": "REL32",
+          "symbol": "@__security_check_cookie@4",
+          "target": 6555153
+        }
+      ]
+    },
+    "sound-bank-file-load-00407540": {
+      "source": "src/SoundBank4073D0.cpp",
+      "object": "build/matching/SoundBank4073D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SoundBank4073D0::LoadSerializedFile"
+      ],
+      "symbol": "?LoadSerializedFile@SoundBank4073D0@@QAEXPBD@Z",
+      "target_address": 4224320,
+      "size": 341,
+      "compare_size": 341,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?Size@SoundBank4073D0@@QAEIXZ",
+          "target": 4232096
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 74,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 96,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?AssignIntegral@SoundBank4073D0@@QAEXHH@Z",
+          "target": 4236992
+        },
+        {
+          "offset": 162,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 196,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 218,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 227,
+          "type": "REL32",
+          "symbol": "??_U@YAPAXI@Z",
+          "target": 6559394
+        },
+        {
+          "offset": 263,
+          "type": "DIR32",
+          "symbol": "__imp__ReadFile@20",
+          "target": 6648108
+        },
+        {
+          "offset": 277,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 295,
+          "type": "REL32",
+          "symbol": "?Create@SoundCreation406A20@@YA_NPBUtWAVEFORMATEX@@PBXKPAPAUIDirectSoundBuffer8@@K@Z",
+          "target": 4221472
+        },
+        {
+          "offset": 313,
+          "type": "REL32",
+          "symbol": "??_V@YAXPAX@Z",
+          "target": 6559389
+        },
+        {
+          "offset": 331,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
+    },
+    "sound-bank-file-save-004077e0": {
+      "source": "src/SoundBank4073D0.cpp",
+      "object": "build/matching/SoundBank4073D0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SoundBank4073D0::SaveSerializedFile"
+      ],
+      "symbol": "?SaveSerializedFile@SoundBank4073D0@@QAEXPBD@Z",
+      "target_address": 4224992,
+      "size": 472,
+      "compare_size": 472,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?Size@SoundBank4073D0@@QAEIXZ",
+          "target": 4232096
+        },
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "__imp__CreateFileA@28",
+          "target": 6648112
+        },
+        {
+          "offset": 74,
+          "type": "DIR32",
+          "symbol": "__imp__SetFilePointer@16",
+          "target": 6648104
+        },
+        {
+          "offset": 96,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 138,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 173,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 192,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 238,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 250,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 297,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 374,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 386,
+          "type": "REL32",
+          "symbol": "?Unchecked@SoundBank4073D0@@QAEAAPAUIDirectSoundBuffer8@@I@Z",
+          "target": 4232240
+        },
+        {
+          "offset": 447,
+          "type": "DIR32",
+          "symbol": "__imp__WriteFile@20",
+          "target": 6648100
+        },
+        {
+          "offset": 462,
+          "type": "DIR32",
+          "symbol": "__imp__CloseHandle@4",
+          "target": 6648120
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -105247,6 +105709,7 @@
     "src/ResourceStreams4205F0.cpp": "0029e629ae0bfa329560cae21a9949290493f535ab33fa6953d44633cd55660e",
     "src/ScriptParser420880.cpp": "a0eb138c71032b2a42cb50909ff1445a1126938d53ba4309e0807c9cab41c018",
     "src/SharedSound406610.cpp": "5e9f9df41a067126fc6a564c3be63dfb54040597c73b082735aca27d7d9c7492",
-    "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f"
+    "src/WaveStreams406820.cpp": "eba13f266594e8dbf2ddebd4367d647638b8d98876bd49c9422617320860b82f",
+    "src/SoundBank4073D0.cpp": "c69459a37ac3b84077c8c9c473dc1f6864cc86a0f4ce1a9e2e4f1385cb5f528e"
   }
 }
