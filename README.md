@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **256 exact functions / 647,469 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 32.81%; conservative
-coverage, including all 3,608 pending bytes, is **32.75%**. The objective of
+The current checkpoint has **258 exact functions / 650,113 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 32.94%; conservative
+coverage, including all 3,608 pending bytes, is **32.88%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
@@ -37,7 +37,7 @@ Never construct or embed partial reconstructed owners.
 
 The latest user request resumes reconstruction with an active 98% goal after
 the cleanup/handoff checkpoint. Start with the [current handoff](docs/RE_HANDOFF.md)
-for F120 acceptance, the complete unaccepted F085/F066 drafts, retained F061/F048/F021
+for F121 acceptance, the complete unaccepted F085/F066 drafts, retained F061/F048/F021
 work, cleanup receipts and the next investigation. Use the existing Ghidra
 wrapper and local tools without REA. Commit subjects must use
 `gpt-6.1-sol: ...`; frequent commits and pushes remain authorized. Cold-replay

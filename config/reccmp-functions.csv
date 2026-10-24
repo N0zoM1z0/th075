@@ -255,3 +255,5 @@ MusicScene425C80::RenderList,0x00425C80,function
 ResultScene430080::RenderRecordPage,0x00430080,function
 AuxiliaryActor4A80F0::Update,0x004A80F0,function
 CharacterAI507B20::ChooseAction,0x00507B20,function
+CharacterSpecial507040::Render,0x00507040,function
+CharacterInput5076F0::PollCommands,0x005076F0,function

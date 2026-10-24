@@ -254,3 +254,5 @@ MusicScene425C80::RenderList
 ResultScene430080::RenderRecordPage
 AuxiliaryActor4A80F0::Update
 CharacterAI507B20::ChooseAction
+CharacterSpecial507040::Render
+CharacterInput5076F0::PollCommands

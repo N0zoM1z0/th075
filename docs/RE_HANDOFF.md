@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F121 nearby-actor investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F122 stage-renderer investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 256 / 256 / 256 |
-| Exact code bytes | 647,469 |
-| Reviewed authored coverage | 647,469 / 1,973,516 (32.81%) |
-| Conservative coverage, including every pending byte | 647,469 / 1,977,124 (32.75%) |
+| Source-present / exact functions / exact units | 258 / 258 / 258 |
+| Exact code bytes | 650,113 |
+| Reviewed authored coverage | 650,113 / 1,973,516 (32.94%) |
+| Conservative coverage, including every pending byte | 650,113 / 1,977,124 (32.88%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **196 additions /
-637,586 code bytes / 187 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **198 additions /
+640,230 code bytes / 188 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,101 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted functions: F120
+## Latest accepted functions: F121
+
+R049 special-stage renderer `00507040/1584` and command polling
+`005076F0/1060` independently pass canonical cold comparison: **2,644 code
+bytes plus22 table/selector bytes,658 instructions,54 actual calls and all94
+real relocation fields**. Each own complete CFG, shared exit, ESP/EBP/x87
+join and actual160/4byte frame is checked. Renderer returns RET4 and consumes
+a signed stage byte; input returns plain RET. Ten/twelve following INT3 bytes
+remain outside the extents. No tail, field or owned dispatch data is cropped.
+
+The natural switch emits its complete three-target12byte table and ten-byte
+selector mapping stages1..7,8..9,10. Both dispatch fields and all three table
+fields are bound and compared, together with the actual selector bytes.
+Only an independently complete132byte SDK-based quad and RECT are local;
+private renderer/drawing owners remain pointer-only and are never instantiated
+or embedded. The actual DrawQuad helper copies33 DWORDs from its quad reference.
+Filtering uses owner field4 while all draws use field700. The signed timer,
+unsigned opacity and all conditional updates remain unchanged.
+
+Native code retains an impossible negative-opacity clamp after byte zero
+extension. The decompiler omitted that block; the source retains the actual
+unsigned check and zero store. This preserves the target's behavior and full
+emitted extent, without adding arbitrary inert storage or correcting the bug.
+
+The input routine independently retains all27 ordered literal string/count/
+window/command choices. The full helper body reads signed byte arguments and
+returns actual AL values, including4; the caller sign-extends AL. Source
+uses a signed-byte result rather than a guessed BOOL. Every actual receiver,
+initial command0 and native string byte is checked. F121's character-specific
+ordering, including early623B/421C and final NRNR/NLNL, is preserved.
+
+The first natural source preview and canonical object agree over all2,666
+comparison bytes and94 fields. No name fixture, extra local/scope/padding or
+old dependency edit is required. Five wrong real constructor/filter/draw/input/
+selector bindings fail. There is no pasted decompiler body, target-code array,
+manual table, fake return, manual EH, assembly, ABI alias, relocation mask or
+comparison truncation. Original identities, names, full private layouts and
+unproved types remain provisional; no helper/library/global/table-data code
+receives credit.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00507040 --unit character-input-005076f0
+```
+
+All256 prior units,119 canonical objects,187 source inputs,218 origin files,
+nine shared headers,91 active drafts and4,349 other function rows remain
+unchanged. F009 plus198 additions retains640,230 code bytes and188 new inputs.
+R049 roles remain through aliases; all97 unknown origins remain unknown.
+Preserve f121 complete native/attested/callee/policy/CFG/x87/dispatch/receiver/
+scalar/binding/cold/parent inputs, first preview, source, results, logs and PDBs.
+
+Current totals: **258 exact functions/units,650,113 code bytes**,32.94% of
+reviewed authored bytes and **32.88% conservatively**, including every pending
+byte. The98% goal remains active and incomplete.
+
+Validation:3603 CI tests passed in156.661s; seven exact-checkpoint tests
+passed in0.521s; target/tracking and diff checks passed. Only the two new
+units were cold-built. Evidence-preserving cleanup removed one obsolete own
+probe(15,737bytes) and375 reproducible Python bytecode files(8,282,863bytes),
+retaining all sources/inputs/native/policy/dispatch/binding/cold evidence, logs,
+PDBs and canonical objects. Receipts are `.analysis/f121-{final-compiler-inputs,
+object-cleanup,preservation-cleanup}.json`.
+
+## Current reconstruction cohort: F122
+
+Independently review the nine remaining R049 special-stage render candidates:
+`00471E00`, `00498540`, `004C6050`, `004E7350`, `00531570`, `005568F0`,
+`00578B70`, `0059C6F0`, `005C52D0`. Each provisional code extent is1,584
+bytes, total14,256 code bytes. Reconcile every own CFG, code/table/selector/
+tail extent, signed stage ABI, true frame/local-value contract, private field
+offsets and actual filtering/drawing receivers/packets before source. F121
+supplies methodology and a complete SDK-based quad contract, not automatic
+clone, layout or identity credit. Review all actual opacity/timer differences
+and any redundant emitted branches rather than trusting decompiler omissions.
+
+Native-only F122 exports are retained under `.analysis/f122-stage-renderers/`,
+with attested function/callee queries, full assembly and field projections.
+They receive no exact credit. Own tables/selectors are12+10 bytes each; all
+nine currently decode353 instructions/27 calls. Native this-derived reads
+show five x-field basesF2C/F34/F18/F10/F14, corresponding y bases40 bytes
+higher and opacity bases200 bytes higher. The first eight timers areEFE;
+005C52D0 instead usesF2A. These are operand observations, not complete layouts
+or permission to omit any individual CFG/type/packet/source/cold review.
+
+Keep all accepted inputs and unaccepted F021/F048/F061/F066/F085 drafts and
+failed controls. No unchanged retries or relaxed physical comparison. Unknown
+math overloads and all97 unknown origins remain unknown; evidence throughR268
+is immutable. Incomplete private owners and the F119 row projection are never
+instantiated or embedded. QueueFile00407A50/QueueArchiveEntry00407B80 still
+need a proved complete local record layout; resource root00456B60 retains
+f107's actual588-byte frame and unresolved texture80/layout/filename bound.
+Build serially, cold-replay only new/affected units and remove only obsolete
+reproducible outputs while retaining inputs/evidence. Later phases are deferred.
+
+## Previous accepted functions: F120
 
 Two independently authored R049 routines, auxiliary update `004A80F0/3935`
 and AI action policy `00507B20/3000`, pass canonical cold comparison:
@@ -94,7 +188,7 @@ passed in0.556s; target/tracking checks passed. Only the two new units were
 cold-built. Cleanup receipts retain all canonical objects/inputs/evidence
 before deleting four obsolete own probes and reproducible Python bytecode.
 
-## Current reconstruction cohort: F121
+## F121 investigation at the F120 checkpoint
 
 Review the nearby independently authored R049 routines:
 CharacterSpecial::RenderAt00507040 `00507040/1584` and

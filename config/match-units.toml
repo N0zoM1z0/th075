@@ -21459,3 +21459,121 @@ relocations = [
   { offset = 0xB91, type = "REL32", symbol = "_rand", target = 0x006418AB },
   { offset = 0xBAF, type = "DIR32", symbol = "?g_AI507B20Countdown@@3HA", target = 0x0068D63C },
 ]
+
+[units."character-special-render-00507040"]
+source = "src/CharacterSpecial507040.cpp"
+object = "build/matching/CharacterSpecial507040.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterSpecial507040::Render"]
+symbol = "?Render@CharacterSpecial507040@@QAEXC@Z"
+target_address = 0x00507040
+size = 1584
+compare_size = 1606
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "??0SpriteQuad40CA80@@QAE@XZ", target = 0x0040D990 },
+  { offset = 0x49, type = "DIR32", symbol = "$L62521", target = 0x0050767C },
+  { offset = 0x50, type = "DIR32", symbol = "$L62534", target = 0x00507670 },
+  { offset = 0x60, type = "REL32", symbol = "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z", target = 0x0040C860 },
+  { offset = 0x78, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x8A, type = "DIR32", symbol = "__real@42000000", target = 0x006583AC },
+  { offset = 0xA0, type = "DIR32", symbol = "__real@44800000", target = 0x00658258 },
+  { offset = 0xC9, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x113, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x12B, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x13D, type = "DIR32", symbol = "__real@42000000", target = 0x006583AC },
+  { offset = 0x153, type = "DIR32", symbol = "__real@44800000", target = 0x00658258 },
+  { offset = 0x17C, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x1C6, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x1D6, type = "REL32", symbol = "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z", target = 0x0040C860 },
+  { offset = 0x1F1, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x203, type = "DIR32", symbol = "__real@43000000", target = 0x00658398 },
+  { offset = 0x219, type = "DIR32", symbol = "__real@44200000", target = 0x00657884 },
+  { offset = 0x242, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x28C, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x2A4, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x2B6, type = "DIR32", symbol = "__real@42a00000", target = 0x00658268 },
+  { offset = 0x2CC, type = "DIR32", symbol = "__real@43980000", target = 0x0065913C },
+  { offset = 0x2F5, type = "REL32", symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z", target = 0x00427500 },
+  { offset = 0x33F, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x468, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x47A, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0x4C0, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x4E0, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x4F2, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0x53C, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x557, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x569, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0x5B3, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x5CE, type = "DIR32", symbol = "__imp__SetRect@20", target = 0x00657210 },
+  { offset = 0x5E0, type = "REL32", symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z", target = 0x00411400 },
+  { offset = 0x626, type = "REL32", symbol = "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z", target = 0x0040C9A0 },
+  { offset = 0x630, type = "DIR32", symbol = "$L62139", target = 0x00507094 },
+  { offset = 0x634, type = "DIR32", symbol = "$L62239", target = 0x00507491 },
+  { offset = 0x638, type = "DIR32", symbol = "$L62247", target = 0x00507509 },
+]
+
+[units."character-input-005076f0"]
+source = "src/CharacterSpecial507040.cpp"
+object = "build/matching/CharacterSpecial507040.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["CharacterInput5076F0::PollCommands"]
+symbol = "?PollCommands@CharacterInput5076F0@@QAEXXZ"
+target_address = 0x005076F0
+size = 1060
+compare_size = 1060
+relocations = [
+  { offset = 0x16, type = "DIR32", symbol = "$SG62275", target = 0x006597B8 },
+  { offset = 0x1E, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3D, type = "DIR32", symbol = "$SG62280", target = 0x006597C0 },
+  { offset = 0x45, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x64, type = "DIR32", symbol = "$SG62285", target = 0x006597C8 },
+  { offset = 0x6C, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x8B, type = "DIR32", symbol = "$SG62290", target = 0x006597D0 },
+  { offset = 0x93, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0xB2, type = "DIR32", symbol = "$SG62295", target = 0x006597D8 },
+  { offset = 0xBA, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0xD9, type = "DIR32", symbol = "$SG62300", target = 0x006597E0 },
+  { offset = 0xE1, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x100, type = "DIR32", symbol = "$SG62305", target = 0x006597E8 },
+  { offset = 0x108, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x127, type = "DIR32", symbol = "$SG62310", target = 0x006597F0 },
+  { offset = 0x12F, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x14E, type = "DIR32", symbol = "$SG62315", target = 0x006597F8 },
+  { offset = 0x156, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x175, type = "DIR32", symbol = "$SG62320", target = 0x00659800 },
+  { offset = 0x17D, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x19C, type = "DIR32", symbol = "$SG62325", target = 0x00659808 },
+  { offset = 0x1A4, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x1C3, type = "DIR32", symbol = "$SG62330", target = 0x00659810 },
+  { offset = 0x1CB, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x1EA, type = "DIR32", symbol = "$SG62335", target = 0x00659818 },
+  { offset = 0x1F2, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x211, type = "DIR32", symbol = "$SG62340", target = 0x00659820 },
+  { offset = 0x219, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x238, type = "DIR32", symbol = "$SG62345", target = 0x00659828 },
+  { offset = 0x240, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x25F, type = "DIR32", symbol = "$SG62350", target = 0x00659830 },
+  { offset = 0x267, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x286, type = "DIR32", symbol = "$SG62355", target = 0x00659838 },
+  { offset = 0x28E, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2AD, type = "DIR32", symbol = "$SG62360", target = 0x0065983C },
+  { offset = 0x2B5, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2D4, type = "DIR32", symbol = "$SG62365", target = 0x00659840 },
+  { offset = 0x2DC, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x2FB, type = "DIR32", symbol = "$SG62370", target = 0x00659844 },
+  { offset = 0x303, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x322, type = "DIR32", symbol = "$SG62375", target = 0x00659848 },
+  { offset = 0x32A, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x349, type = "DIR32", symbol = "$SG62380", target = 0x0065984C },
+  { offset = 0x351, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x370, type = "DIR32", symbol = "$SG62385", target = 0x00659850 },
+  { offset = 0x378, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x397, type = "DIR32", symbol = "$SG62390", target = 0x00659854 },
+  { offset = 0x39F, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3BB, type = "DIR32", symbol = "$SG62395", target = 0x00659858 },
+  { offset = 0x3C3, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x3DF, type = "DIR32", symbol = "$SG62400", target = 0x0065985C },
+  { offset = 0x3E7, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+  { offset = 0x403, type = "DIR32", symbol = "$SG62405", target = 0x00659864 },
+  { offset = 0x40B, type = "REL32", symbol = "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z", target = 0x00455800 },
+]

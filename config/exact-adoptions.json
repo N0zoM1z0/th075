@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F120",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F121",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "91e32876085aa08aceaf19379b25c83f23c08e7cc096a56c5c60d6a0eed899b1"
+      "current_sha256": "7f48dae12d44a2106f32d79af7e7635a4a490f8fcb53f4b86c8426b5576a17bc"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "98f931f0bf6cb7797ad1d4e950bb88fd5d4e66ee939493402483b207aca9c95e"
+      "current_sha256": "3b9bd0484cab5ee851c7d18e978e980b07aebd8ecc71b14618d83009cd2ab534"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7cb46e2f60aa013f396219f7a0664cf4085223c2d1517dc534e3815379f6f452"
+      "current_sha256": "e565d732d80727d18957a3f08df17c25d333fad1d34c4c4eecc2a435e6ee1a9b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "4955c8b0e94d6041dc7e64112721d1aa3e7acb32266c41504ab7311bdfccb1c9"
+      "current_sha256": "01c0ca03570527f2eca6af842cca7e9043cb069aba5e4a7e465258f2675b2876"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c2a4f1facfdef574903bc9633022dd53288fd56a0e84ae4208c5ed6ca41b40ab"
+      "current_sha256": "2b8c9165ea6beec9ab4c27481fc56547a42dff4eae23cc67cddb30e4994478e0"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "c3d3d3f28c85cc8558c449e79b9fb4fe957ca29c12fa15a9d22332c8b3f87e88"
+      "current_sha256": "75749023d0a7a7accb785fde530e1a52e4ce6aff7869d5d4e53e9c0310a5cfb9"
     }
   },
   "functions": [
@@ -8659,6 +8659,94 @@
       },
       "origin": {
         "address": "0x00507B20",
+        "origin": "authored",
+        "subsystem": "CharacterAux",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00507040",
+        "size": "1584",
+        "span_end": "0x0050766F",
+        "current_name": "FUN_00507040",
+        "proposed_name": "CharacterSpecial::RenderAt00507040",
+        "module": "CharacterSpecial",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00507040",
+        "size": "1584",
+        "span_end": "0x0050766F",
+        "current_name": "FUN_00507040",
+        "proposed_name": "CharacterSpecial507040::Render",
+        "module": "CharacterSpecial",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterSpecial507040::Render(signed char stage)",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSpecial507040.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F121; scripts/repo-python scripts/replay-exact-units.py --unit character-special-render-00507040",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F121: complete 1584 code byte independent canonical cold exact, with full own switch/selector where present; cohort2644code+22table bytes/658instructions/54calls/94real fields. Own CFG/shared exits/trueRET4 orRET/160 or4byte frames/ESP-EBP-x87 joins and10 or12 following INT3 checked. Render uses signed stage byte, three-target12byte table and ten selector bytes; complete132byte SDK-based quad/RECT locals only, owner/managers pointer-only never instantiated/embedded. Actual DrawQuad helper reads33DWORDs, source supplies full reference; filter field4/draw field700 receivers verified. Native unsigned opacity/signed timer and impossible negative clamp after zero extension retained, no decompiler omission or corrected bug. Input27ordered actual literal/count/window/command decisions independently reread; true signed byte arguments and AL return, receiver and initial command0 retained. First natural preview whole exact, no name fixture/extra locals/scopes/padding. Five wrong real constructor/filter/draw/input/selector fields rejected. No pasted decompile/code array/manualtable/fake return/EH/assembly/ABIalias/mask/truncation. All256 prior units/119objects/187inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged. R049 aliases preserved. Names/original identities/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x00507040",
+        "origin": "authored",
+        "subsystem": "CharacterSpecial",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R049"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005076F0",
+        "size": "1060",
+        "span_end": "0x00507B13",
+        "current_name": "FUN_005076f0",
+        "proposed_name": "CharacterAux::RunAt005076F0",
+        "module": "CharacterAux",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x005076F0",
+        "size": "1060",
+        "span_end": "0x00507B13",
+        "current_name": "FUN_005076f0",
+        "proposed_name": "CharacterInput5076F0::PollCommands",
+        "module": "CharacterAux",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void CharacterInput5076F0::PollCommands()",
+        "is_thunk": "false",
+        "source_file": "src/CharacterSpecial507040.cpp",
+        "evidence": "R049; full body hash, complete decoded CFG and local character-specific behavior reviewed; F121; scripts/repo-python scripts/replay-exact-units.py --unit character-input-005076f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; character identity, source and exact state remain independent; F121: complete 1060 code byte independent canonical cold exact, with full own switch/selector where present; cohort2644code+22table bytes/658instructions/54calls/94real fields. Own CFG/shared exits/trueRET4 orRET/160 or4byte frames/ESP-EBP-x87 joins and10 or12 following INT3 checked. Render uses signed stage byte, three-target12byte table and ten selector bytes; complete132byte SDK-based quad/RECT locals only, owner/managers pointer-only never instantiated/embedded. Actual DrawQuad helper reads33DWORDs, source supplies full reference; filter field4/draw field700 receivers verified. Native unsigned opacity/signed timer and impossible negative clamp after zero extension retained, no decompiler omission or corrected bug. Input27ordered actual literal/count/window/command decisions independently reread; true signed byte arguments and AL return, receiver and initial command0 retained. First natural preview whole exact, no name fixture/extra locals/scopes/padding. Five wrong real constructor/filter/draw/input/selector fields rejected. No pasted decompile/code array/manualtable/fake return/EH/assembly/ABIalias/mask/truncation. All256 prior units/119objects/187inputs/218originfiles/nine sharedheaders/91drafts and97unknown origins unchanged. R049 aliases preserved. Names/original identities/full layouts/unproved types provisional; no helper/library/global/table-data code credit."
+      },
+      "origin": {
+        "address": "0x005076F0",
         "origin": "authored",
         "subsystem": "CharacterAux",
         "disposition": "authored",
@@ -121245,6 +121333,618 @@
           "target": 6870588
         }
       ]
+    },
+    "character-special-render-00507040": {
+      "source": "src/CharacterSpecial507040.cpp",
+      "object": "build/matching/CharacterSpecial507040.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterSpecial507040::Render"
+      ],
+      "symbol": "?Render@CharacterSpecial507040@@QAEXC@Z",
+      "target_address": 5271616,
+      "size": 1584,
+      "compare_size": 1606,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 73,
+          "type": "DIR32",
+          "symbol": "$L62521",
+          "target": 5273212
+        },
+        {
+          "offset": 80,
+          "type": "DIR32",
+          "symbol": "$L62534",
+          "target": 5273200
+        },
+        {
+          "offset": 96,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 160,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 201,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 275,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 299,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 317,
+          "type": "DIR32",
+          "symbol": "__real@42000000",
+          "target": 6652844
+        },
+        {
+          "offset": 339,
+          "type": "DIR32",
+          "symbol": "__real@44800000",
+          "target": 6652504
+        },
+        {
+          "offset": 380,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 470,
+          "type": "REL32",
+          "symbol": "?SetTextureFilter@TimelineDrawing438D00@@QAEXH@Z",
+          "target": 4245600
+        },
+        {
+          "offset": 497,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "__real@43000000",
+          "target": 6652824
+        },
+        {
+          "offset": 537,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 652,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 676,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 694,
+          "type": "DIR32",
+          "symbol": "__real@42a00000",
+          "target": 6652520
+        },
+        {
+          "offset": 716,
+          "type": "DIR32",
+          "symbol": "__real@43980000",
+          "target": 6656316
+        },
+        {
+          "offset": 757,
+          "type": "REL32",
+          "symbol": "?BuildQuad@SpriteTransform@@QAEXMMMM@Z",
+          "target": 4355328
+        },
+        {
+          "offset": 831,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1128,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1146,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1216,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1248,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1266,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1340,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1367,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1385,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1459,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1486,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1504,
+          "type": "REL32",
+          "symbol": "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z",
+          "target": 4264960
+        },
+        {
+          "offset": 1574,
+          "type": "REL32",
+          "symbol": "?DrawQuad@QuadDrawingF121@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 1584,
+          "type": "DIR32",
+          "symbol": "$L62139",
+          "target": 5271700
+        },
+        {
+          "offset": 1588,
+          "type": "DIR32",
+          "symbol": "$L62239",
+          "target": 5272721
+        },
+        {
+          "offset": 1592,
+          "type": "DIR32",
+          "symbol": "$L62247",
+          "target": 5272841
+        }
+      ]
+    },
+    "character-input-005076f0": {
+      "source": "src/CharacterSpecial507040.cpp",
+      "object": "build/matching/CharacterSpecial507040.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "CharacterInput5076F0::PollCommands"
+      ],
+      "symbol": "?PollCommands@CharacterInput5076F0@@QAEXXZ",
+      "target_address": 5273328,
+      "size": 1060,
+      "compare_size": 1060,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "$SG62275",
+          "target": 6657976
+        },
+        {
+          "offset": 30,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "$SG62280",
+          "target": 6657984
+        },
+        {
+          "offset": 69,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 100,
+          "type": "DIR32",
+          "symbol": "$SG62285",
+          "target": 6657992
+        },
+        {
+          "offset": 108,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 139,
+          "type": "DIR32",
+          "symbol": "$SG62290",
+          "target": 6658000
+        },
+        {
+          "offset": 147,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 178,
+          "type": "DIR32",
+          "symbol": "$SG62295",
+          "target": 6658008
+        },
+        {
+          "offset": 186,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 217,
+          "type": "DIR32",
+          "symbol": "$SG62300",
+          "target": 6658016
+        },
+        {
+          "offset": 225,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 256,
+          "type": "DIR32",
+          "symbol": "$SG62305",
+          "target": 6658024
+        },
+        {
+          "offset": 264,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 295,
+          "type": "DIR32",
+          "symbol": "$SG62310",
+          "target": 6658032
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "$SG62315",
+          "target": 6658040
+        },
+        {
+          "offset": 342,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 373,
+          "type": "DIR32",
+          "symbol": "$SG62320",
+          "target": 6658048
+        },
+        {
+          "offset": 381,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 412,
+          "type": "DIR32",
+          "symbol": "$SG62325",
+          "target": 6658056
+        },
+        {
+          "offset": 420,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 451,
+          "type": "DIR32",
+          "symbol": "$SG62330",
+          "target": 6658064
+        },
+        {
+          "offset": 459,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 490,
+          "type": "DIR32",
+          "symbol": "$SG62335",
+          "target": 6658072
+        },
+        {
+          "offset": 498,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 529,
+          "type": "DIR32",
+          "symbol": "$SG62340",
+          "target": 6658080
+        },
+        {
+          "offset": 537,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "$SG62345",
+          "target": 6658088
+        },
+        {
+          "offset": 576,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 607,
+          "type": "DIR32",
+          "symbol": "$SG62350",
+          "target": 6658096
+        },
+        {
+          "offset": 615,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 646,
+          "type": "DIR32",
+          "symbol": "$SG62355",
+          "target": 6658104
+        },
+        {
+          "offset": 654,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 685,
+          "type": "DIR32",
+          "symbol": "$SG62360",
+          "target": 6658108
+        },
+        {
+          "offset": 693,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "$SG62365",
+          "target": 6658112
+        },
+        {
+          "offset": 732,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 763,
+          "type": "DIR32",
+          "symbol": "$SG62370",
+          "target": 6658116
+        },
+        {
+          "offset": 771,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 802,
+          "type": "DIR32",
+          "symbol": "$SG62375",
+          "target": 6658120
+        },
+        {
+          "offset": 810,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 841,
+          "type": "DIR32",
+          "symbol": "$SG62380",
+          "target": 6658124
+        },
+        {
+          "offset": 849,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 880,
+          "type": "DIR32",
+          "symbol": "$SG62385",
+          "target": 6658128
+        },
+        {
+          "offset": 888,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 919,
+          "type": "DIR32",
+          "symbol": "$SG62390",
+          "target": 6658132
+        },
+        {
+          "offset": 927,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 955,
+          "type": "DIR32",
+          "symbol": "$SG62395",
+          "target": 6658136
+        },
+        {
+          "offset": 963,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 991,
+          "type": "DIR32",
+          "symbol": "$SG62400",
+          "target": 6658140
+        },
+        {
+          "offset": 999,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        },
+        {
+          "offset": 1027,
+          "type": "DIR32",
+          "symbol": "$SG62405",
+          "target": 6658148
+        },
+        {
+          "offset": 1035,
+          "type": "REL32",
+          "symbol": "?MatchInputPattern@CharacterInput5076F0@@QAECPBDCC@Z",
+          "target": 4544512
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -121434,6 +122134,7 @@
     "src/CharacterSpecialFamily.cpp": "fc21b655302eb03b0847ded6c455dcaf09b80a3f6c1a644ecffdee2c3d9bce08",
     "src/OpeningTimeline4277A0.cpp": "d9bdbfc315dd70ff3a098a91dc3f090374ddd7cddb5ed8d6d97bed4d2e4aa8eb",
     "src/MenuSceneDrawing.cpp": "85fe3cff149508ab2d04819fe5692b92164f47a8ce32e7a25a5cf5556077b1d1",
-    "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc"
+    "src/ActorAuxiliary.cpp": "ab5091dc5418b320123e69506bc5e3560e5dd5cb3b80de3c0543f6fef1bd0ebc",
+    "src/CharacterSpecial507040.cpp": "9bd8616ec07499d7289fad5a3181a5fbb9b198b669882bafdf7b4d00aede03bc"
   }
 }
