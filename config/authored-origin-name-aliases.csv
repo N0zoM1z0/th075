@@ -133,3 +133,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0040D990,SpriteGeometry::ZeroInitialize,SpriteQuad40CA80::SpriteQuad40CA80,R011,sprite-quad-clear-0040d990
 0x0040C8C0,TextureManager::ResolveTextureHandle,SpriteTextures40CA80::GetTexture,R014,texture-resolve-0040c8c0
 0x0040C590,TextureManager::UploadIndexedTexture,TexturePalette40C8C0::Refresh,R014,texture-palette-refresh-0040c590
+0x0041B990,BitmapData::UploadDecodedPixels,BitmapUpload40C590::CopyTo,R021,bitmap-upload-0041b990

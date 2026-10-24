@@ -188,3 +188,4 @@ TimelineDrawing438D00::DrawSprite
 SpriteQuad40CA80::SpriteQuad40CA80
 SpriteTextures40CA80::GetTexture
 TexturePalette40C8C0::Refresh
+BitmapUpload40C590::CopyTo

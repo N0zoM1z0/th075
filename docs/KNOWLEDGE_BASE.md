@@ -21657,3 +21657,69 @@ and 8,282,705 bytes of Python caches, with per-file hash receipts.
 Canonical objects, source/control inputs, evidence, logs and PDBs remain.
 Fresh attested F096 decompile/callers, complete native/switch index and ABI
 observations are retained privately; no F096 source or exact credit yet.
+
+## F096 complete bitmap converter and switch-data checkpoint (2026-10-24)
+
+R021 bitmap conversion `0041B990..0041BF37` is independently canonical cold
+exact as `BitmapUpload40C590::CopyTo(void*, unsigned char, unsigned int)`.
+The comparison covers 1,530 bytes: all 1,448 code bytes plus 82 bytes of actual
+compiler-generated switch data. Only the 1,448 code bytes earn credit. Both
+25-byte selector maps and 16-byte destination tables are retained at their
+actual following addresses; six INT3 alignment bytes precede the next function.
+All 12 DIR32 fields bind actual newly emitted local COFF offsets, including
+case/default labels. No fixed binding can hide a moved table or case label.
+
+One new implementation uses the same pointer-only bitmap interface as F095.
+Its complete owner layout and original names remain unknown; it is never
+constructed or embedded. The historical BitmapData::UploadDecodedPixels role
+remains by alias. Nonzero input+0x10 selects encoded runs, zero selects raw copy.
+The three typed encoded paths preserve byte/word/DWORD run lengths and colors,
+palette conversion, source pair advancement, nested unsigned loops and terminal
+pixel guards. Only the byte path resets consumed count to the unsigned boolean
+count>run; word/DWORD paths reset zero. The converter observes width/height and
+source stride at +4/+8/+0xC, palette pointer+0x14 and source pointer+0x1C.
+These are accessed fields, without a complete original object-layout claim.
+
+Raw byte input converts palette entries into WORD output. Raw 16-bit copying
+shifts the actual output-width parameter and snapshots width/stride shifted
+by one, then copies DWORD pairs. Raw 24/32 selectors share DWORD copying.
+Odd-width behavior and source/output width units are preserved. No memcpy,
+format repair, helper extraction or guessed record instantiation is introduced.
+The first probe already has all 371 instructions and 58 branches in place;
+bounded meaningful local-name controls reproduce the real frame fields.
+Source names/scopes remain provisional even though emitted bytes match.
+
+The 164-byte frame contains three real 32-byte encoded scopes, 16/24/16-byte
+raw scopes, saved this and two compiler switch temporaries. Saved ESI occupies
+four additional stack bytes. All CFG joins, both compressed switch maps and
+RET12 are checked. Wrong RET8 and omitted ESI-pop controls fail. The accepted
+F095 caller proves the nested byte/three-word packet; the complete second
+173-byte caller independently passes the same converter arguments and has its
+own RET8. No old caller/header/body changes or old cold builds are needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-upload-0041b990
+```
+
+All 190 old units, 94 canonical objects, 160 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,350 other function rows stay unchanged.
+F009 plus 131 additions retains 555,995 code bytes and 161 inputs. Preserve all
+f096 native/attested/ABI/switch/physical/cold/parent/progress evidence and all
+compiler control sources, logs and PDBs.
+Next F097 is the complete 173-byte R014 upload adapter `0040C730`, with two
+real parameters/RET8, a pointer-to-texture argument and SDK surface/lock values.
+Reconcile all five COM packets before natural source. Unknown 97 origins and
+old drafts receive no credit. Goal 98% remains active and incomplete.
+
+Current totals: 191 exact functions/units, 565,878 code bytes, 28.67% of
+reviewed authored bytes and 28.62% conservatively including all pending bytes.
+
+Final F096 CI passes 3,603 tests in 143.025s. Bounded cleanup
+removes four obsolete reproducible probe objects (310,729 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F097 complete native index, attested root/caller views, caller query and ABI
+notes are retained privately; no F097 source or exact credit yet. Its sole
+54-byte R014 caller passes a real live texture-pointer slot and original owner
+ECX to the 173-byte adapter; consider that complete caller as a separate unit
+after its own independent source, physical binding and cold comparison.

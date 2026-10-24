@@ -17722,3 +17722,27 @@ relocations = [
   { offset = 0x135, type = "REL32", symbol = "?At@SpriteEntries40CA80@@QAEPAXI@Z", target = 0x0040DD60 },
   { offset = 0x13C, type = "REL32", symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z", target = 0x0041B990 },
 ]
+
+[units."bitmap-upload-0041b990"]
+source = "src/BitmapUpload41B990.cpp"
+object = "build/matching/BitmapUpload41B990.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/Zi", "/I", "src"]
+functions = ["BitmapUpload40C590::CopyTo"]
+symbol = "?CopyTo@BitmapUpload40C590@@QAEXPAXEI@Z"
+target_address = 0x0041B990
+size = 1448
+compare_size = 1530
+relocations = [
+  { offset = 0x4F, type = "DIR32", symbol = "$L462", target = 0x0041BF48 },
+  { offset = 0x56, type = "DIR32", symbol = "$L464", target = 0x0041BF38 },
+  { offset = 0x39A, type = "DIR32", symbol = "$L463", target = 0x0041BF71 },
+  { offset = 0x3A1, type = "DIR32", symbol = "$L465", target = 0x0041BF61 },
+  { offset = 0x5A8, type = "DIR32", symbol = "$L292", target = 0x0041B9EA },
+  { offset = 0x5AC, type = "DIR32", symbol = "$L325", target = 0x0041BB09 },
+  { offset = 0x5B0, type = "DIR32", symbol = "$L354", target = 0x0041BC06 },
+  { offset = 0x5B4, type = "DIR32", symbol = "$L289", target = 0x0041BCF6 },
+  { offset = 0x5D1, type = "DIR32", symbol = "$L388", target = 0x0041BD35 },
+  { offset = 0x5D5, type = "DIR32", symbol = "$L411", target = 0x0041BDC5 },
+  { offset = 0x5D9, type = "DIR32", symbol = "$L434", target = 0x0041BE82 },
+  { offset = 0x5DD, type = "DIR32", symbol = "$L284", target = 0x0041BF31 },
+]

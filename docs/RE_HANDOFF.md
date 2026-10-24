@@ -2,7 +2,7 @@
 
 Updated 2026-10-24. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F096 bitmap-converter investigation below; preserve F085 and the F066 draft.
+is incomplete. Continue the F097 texture-upload investigation below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 190 / 190 / 190 |
-| Exact code bytes | 564,430 |
-| Reviewed authored coverage | 564,430 / 1,973,516 (28.60%) |
-| Conservative coverage, including every pending byte | 564,430 / 1,977,124 (28.55%) |
+| Source-present / exact functions / exact units | 191 / 191 / 191 |
+| Exact code bytes | 565,878 |
+| Reviewed authored coverage | 565,878 / 1,973,516 (28.67%) |
+| Conservative coverage, including every pending byte | 565,878 / 1,977,124 (28.62%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **130 additions /
-554,547 code bytes / 160 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **131 additions /
+555,995 code bytes / 161 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,69 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function: F095
+## Latest accepted function: F096
+
+R021 bitmap conversion `0041B990..0041BF37` is independently canonical cold
+exact as `BitmapUpload40C590::CopyTo(void*, unsigned char, unsigned int)`.
+The comparison covers 1,530 bytes: all 1,448 code bytes plus 82 bytes of actual
+compiler-generated switch data. Only the 1,448 code bytes earn credit. Both
+25-byte selector maps and 16-byte destination tables are retained at their
+actual following addresses; six INT3 alignment bytes precede the next function.
+All 12 DIR32 fields bind actual newly emitted local COFF offsets, including
+case/default labels. No fixed binding can hide a moved table or case label.
+
+One new implementation uses the same pointer-only bitmap interface as F095.
+Its complete owner layout and original names remain unknown; it is never
+constructed or embedded. The historical BitmapData::UploadDecodedPixels role
+remains by alias. Nonzero input+0x10 selects encoded runs, zero selects raw copy.
+The three typed encoded paths preserve byte/word/DWORD run lengths and colors,
+palette conversion, source pair advancement, nested unsigned loops and terminal
+pixel guards. Only the byte path resets consumed count to the unsigned boolean
+count>run; word/DWORD paths reset zero. The converter observes width/height and
+source stride at +4/+8/+0xC, palette pointer+0x14 and source pointer+0x1C.
+These are accessed fields, without a complete original object-layout claim.
+
+Raw byte input converts palette entries into WORD output. Raw 16-bit copying
+shifts the actual output-width parameter and snapshots width/stride shifted
+by one, then copies DWORD pairs. Raw 24/32 selectors share DWORD copying.
+Odd-width behavior and source/output width units are preserved. No memcpy,
+format repair, helper extraction or guessed record instantiation is introduced.
+The first probe already has all 371 instructions and 58 branches in place;
+bounded meaningful local-name controls reproduce the real frame fields.
+Source names/scopes remain provisional even though emitted bytes match.
+
+The 164-byte frame contains three real 32-byte encoded scopes, 16/24/16-byte
+raw scopes, saved this and two compiler switch temporaries. Saved ESI occupies
+four additional stack bytes. All CFG joins, both compressed switch maps and
+RET12 are checked. Wrong RET8 and omitted ESI-pop controls fail. The accepted
+F095 caller proves the nested byte/three-word packet; the complete second
+173-byte caller independently passes the same converter arguments and has its
+own RET8. No old caller/header/body changes or old cold builds are needed.
+
+```bash
+scripts/repo-python scripts/replay-exact-units.py --unit bitmap-upload-0041b990
+```
+
+All 190 old units, 94 canonical objects, 160 inputs, 218 origin files, nine
+shared headers, 91 active drafts and 4,350 other function rows stay unchanged.
+F009 plus 131 additions retains 555,995 code bytes and 161 inputs. Preserve all
+f096 native/attested/ABI/switch/physical/cold/parent/progress evidence and all
+compiler control sources, logs and PDBs.
+Final F096 CI passes 3,603 tests in 143.025s. Bounded cleanup
+removes four obsolete reproducible probe objects (310,729 bytes)
+and 8,282,705 bytes of Python caches, with per-file hash receipts.
+Canonical objects, compiler/source inputs, evidence, logs and PDBs remain.
+F097 complete native index, attested root/caller views, caller query and ABI
+notes are retained privately; no F097 source or exact credit yet. Its sole
+54-byte R014 caller passes a real live texture-pointer slot and original owner
+ECX to the 173-byte adapter; consider that complete caller as a separate unit
+after its own independent source, physical binding and cold comparison.
+Next F097 is the complete 173-byte R014 upload adapter `0040C730`, with two
+real parameters/RET8, a pointer-to-texture argument and SDK surface/lock values.
+Reconcile all five COM packets before natural source. Unknown 97 origins and
+old drafts receive no credit. Goal 98% remains active and incomplete.
+
+## Previous accepted function: F095
 
 R014 palette refresh `0040C590..0040C6E3` is independently canonical cold exact
 as `TexturePalette40C8C0::Refresh(int)`: all 340 bytes, 125 instructions,
