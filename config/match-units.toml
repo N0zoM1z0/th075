@@ -25107,3 +25107,166 @@ offset = 19
 type = "REL32"
 symbol = "_memset"
 target = 0x00640490
+
+[units.fighter-select-movement-animation-00451eb0]
+source = "src/FighterMovementSelection451EB0.cpp"
+object = "build/matching/FighterMovementSelection451EB0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SelectMovementAnimation"]
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target_address = 0x00451EB0
+size = 742
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 15
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 54
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 137
+type = "REL32"
+symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ"
+target = 0x004550B0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 189
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 213
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 279
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 303
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 365
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 389
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 440
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 464
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 493
+type = "REL32"
+symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ"
+target = 0x004550B0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 554
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 578
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 619
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 643
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 679
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 726
+type = "REL32"
+symbol = "?ResetPrimaryCounters@AnimationState@@QAEXF@Z"
+target = 0x0040FAC0
+[[units.fighter-select-movement-animation-00451eb0.relocations]]
+offset = 734
+type = "REL32"
+symbol = "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ"
+target = 0x004550B0
+
+[units.effect-delete-four-deques-0045ba30]
+source = "src/FighterEffectCleanup45BA30.cpp"
+object = "build/matching/FighterEffectCleanup45BA30.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEffectManager::DeleteFourListsAt0045BA30"]
+symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+target_address = 0x0045BA30
+size = 221
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 13
+type = "REL32"
+symbol = "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ"
+target = 0x004453C0
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 21
+type = "REL32"
+symbol = "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ"
+target = 0x004453C0
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 71
+type = "REL32"
+symbol = "?begin@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ"
+target = 0x00445360
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?end@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ"
+target = 0x00445390
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 131
+type = "REL32"
+symbol = "??Eiterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AV012@H@Z"
+target = 0x00445400
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 143
+type = "REL32"
+symbol = "??9const_iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBE_NABV012@@Z"
+target = 0x00445440
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 158
+type = "REL32"
+symbol = "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ"
+target = 0x004453E0
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 171
+type = "REL32"
+symbol = "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ"
+target = 0x004453E0
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 185
+type = "REL32"
+symbol = "??3@YAXPAX@Z"
+target = 0x00640F15
+[[units.effect-delete-four-deques-0045ba30.relocations]]
+offset = 208
+type = "REL32"
+symbol = "?clear@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAEXXZ"
+target = 0x0045C0E0

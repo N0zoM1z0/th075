@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for continued reconstruction, F159.
+Updated 2026-10-26 for continued reconstruction, F160.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F159 adds36 complete functions/1,957 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F160 adds two complete functions/963 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,44 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 375 units,
-  719,545 code bytes, 141 canonical objects and 220 accepted inputs.
-- Reviewed authored coverage is 36.46%; conservative coverage is 36.39%.
+  complete cold-exact units/all actual relocations. Counts are 377 units,
+  720,508 code bytes, 143 canonical objects and 222 accepted inputs.
+- Reviewed authored coverage is 36.51%; conservative coverage is 36.44%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F160 accepted movement/cleanup:**742-byte base movement451EB0 and221-byte
+effect cleanup45BA30 pass two new canonical cold builds,963 complete bytes and
+all29 actual fields. Existing F159/GameLeaf/BattleCombat headers and all375 old
+units/141 objects/220 adoption inputs plus shared-header guards are unchanged.
+Original native roles and frozen R045/R109 origin/name/verifier guards remain
+literal through explicit role-to-call-only-COFF mappings.
+
+Movement preserves two independent ordered y<=0 tests and all repeated signed
+state/facing/axis reads, unsigned4F4 tests, exact14 reset literals/three canonical
+facing calls, including the observed crouch2-to2 reset. The two actual32-bit zero
+fields at0065782C are independently observed and replayed. Cleanup preserves
+the true four-deque range starting+4,20-byte complete vendor containers and8-byte
+complete iterators. The deletion-only pointer view is never constructed or embedded; it is
+not an original pointee/owner layout or extent. Only observed no-destructor-work
+and unsized global release are modeled. No original pointee/destructor spelling
+is inferred. A valid named raw-pointer local control has five real stack-slot
+byte differences and remains rejected; natural delete produces the required
+implicit operand temporary without padding/inert locals. All22 whole vendor
+helper bodies/actual fields match the frozen R110 graph, without new library
+credit. clear/destructor wrappers both call_Tidy; the R077 title stays literal.
+
+The complete int-truncation88 control adds an int intermediate to two real
+float-to-short conversions. All83,922 raw bytes and all2,352 actual destinations
+remain unchanged, while132 local label spellings shift. Actual offsets/types/
+addends/targets are checked independently; no alias/rebasing/crop is used. Whole
+failure remains18,539 positions/first004ADEFB. The control is closed; F160 main
+source is restored byte-for-byte to F159/F156, SHA prefix97e045e6. Both large
+functions and all97 unknown origins remain pending in the full goal denominator.
 
 **F159 accepted reset/virtual policies:**36 complete functions /1,957 bytes in
 `FighterVirtualActionsF159.cpp` pass one shared-object canonical cold build,
@@ -81,7 +110,7 @@ supersede the incomplete empty F157 shortlist without a full CFG or indirect
 write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f159/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f160/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams

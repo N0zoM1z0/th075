@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for continued reconstruction, F159.
+Updated 2026-10-26 for continued reconstruction, F160.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F159 accepts36 complete functions/1,957 bytes. Both
-large drafts remain unaccepted. Current F159 outcomes supersede the historical
-F156..F158 pending-work instructions.
+phases remain deferred. F160 accepts two complete functions/963 bytes. Both
+large drafts remain unaccepted. Current F160 outcomes supersede historical
+pending-work instructions.
 
 ## Verified reconstruction state
 
@@ -17,14 +17,14 @@ F156..F158 pending-work instructions.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 375 / 375 / 375 |
-| Exact code bytes | 719,545 |
-| Reviewed authored coverage | 719,545 / 1,973,516 (36.46%) |
-| Conservative coverage, including pending bytes | 719,545 / 1,977,124 (36.39%) |
-| Canonical objects / accepted source-header inputs | 141 / 220 |
+| Source-present / exact functions / exact units | 377 / 377 / 377 |
+| Exact code bytes | 720,508 |
+| Reviewed authored coverage | 720,508 / 1,973,516 (36.51%) |
+| Conservative coverage, including pending bytes | 720,508 / 1,977,124 (36.44%) |
+| Canonical objects / accepted source-header inputs | 143 / 222 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 315 additions / 709,662 code bytes / 220 inputs. Origin evidence through
+F009 plus 317 additions / 710,625 code bytes / 222 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -33,9 +33,9 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **cbda145 (F158)**. Earlier
-checkpoints include **f8f655c (F156)** and **d197080 (F155)**. Policy correction
-**7f34a0b** explicitly prohibits pausing.
+The preceding reconstruction checkpoint is **6afb9bb (F159)**. Earlier checkpoints
+include **cbda145 (F158)** and **f8f655c (F156)**. Policy correction **7f34a0b**
+explicitly prohibits pausing.
 F156 accepts the complete 149-byte R068 callback
 `fighter-bind-animation-00453d80` in `src/FighterAnimationReset453D80.cpp`.
 One canonical cold build passed 149/149 bytes with all five actual REL32 fields.
@@ -64,7 +64,70 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F159 outcomes and next work
+## Current F160 outcomes and continuation
+
+Two new objects pass canonical cold replay,963/963 complete authored bytes with
+all29 actual fields (27 REL32 and two DIR32):
+
+| Unit | Source | Code bytes |
+| --- | --- | --- |
+| fighter-select-movement-animation-00451eb0 | FighterMovementSelection451EB0.cpp | 742 |
+| effect-delete-four-deques-0045ba30 | FighterEffectCleanup45BA30.cpp | 221 |
+
+Both implement existing declarations from the unchanged F159 header. Native
+provisional roles remain literal; explicit unit mappings identify their actual
+call-only COFF symbols. R045/R109 origins, name/verifier/alias guards and all375
+prior units/141 objects/220 adoption inputs are unchanged. Existing shared-header
+protection also retains GameLeafHelpers.hpp; it is not in the later-adoption
+source_sha256 set. Preserve both guard sets. No existing header needed replay.
+
+Movement selection preserves two independent ordered y<=0 reads, repeated signed
+state loads/exclusions6,7,8, signed facing/axis multiplication and unsigned
+positive4F4 tests. All14 reset state literals and three existing canonical bool
+facing calls/ignored results are retained. The crouch state2-to2 reset remains
+literal. No cached fields, fake return or extra local is introduced. Both actual
+float-zero fields bind to the independently observed32-bit zero at0065782C.
+
+Cleanup uses complete vendor deque/iterator types (20/8 bytes), the observed
+four-container range atreceiver+4 and actual postfix iterator result. The
+pointee is a deletion-only pointer view with a private undefined constructor:
+never construct/embed it or treat it as an original pointee/owner extent.
+It models only the observed no-destructor-work/unsized global release contract.
+Original pointee type/size and destructor spelling stay unknown. An earlier
+valid raw-storage release with a named pointer local differs at five actual
+stack-slot bytes; it remains a rejected private control. The selected natural
+delete expression uses the genuine compiler-generated operand temporary, with
+no padding or inert local. All22 complete pointer-element vendor helper bodies
+and every field match the independently frozen R110 graph. They gain no new
+library/source/origin credit. Vendor clear()/~deque() wrappers both call_Tidy;
+the historical R077 destructor title stays unchanged and original spelling is
+not recovered. Full library proof is retained in vendor-whole-callee-checks.json.
+
+The whole move-body int-truncation88 control adds an explicit int intermediate
+to two existing float-to-short conversions. It leaves all83,922 raw bytes and
+all2,352 actual field destinations unchanged. Exactly132 source-local label
+spellings shift, with every actual local offset/type/addend/target unchanged;
+no aliasing or native-label rebasing is used. Whole comparison still fails at
+18,539 positions, first004ADEFB. The control is closed and all151 F160 source
+entries/prefix/default/shared tail restored to F159/F156, SHA prefix97e045e6.
+
+Continue fresh F161 from `.analysis/character-move-4ac040/f160/`. Keep the full
+004AC040 and0050A580 candidates and all pending bytes in the goal. Seek genuine
+source/type/expression evidence for the first register difference; do not repeat
+closed conversion or function-order cursor controls without new evidence.
+The related effect-manager lifetime85/initialization131 evidence in
+config/effect-manager-lifetime-origin-evidence.json is available for further
+whole-function investigation. Reconcile complete storage and EH paths before
+source acceptance; allocation84/stride20 alone does not recover a full owner.
+Preserve all97 unknown origins and both F159 compiler trace objects, all14 F157
+probes and every earlier active object. Cold replay only new/affected units.
+Do not pause the active98% goal.
+
+Receipts: `.analysis/f160-dependencies-unit-proof.json`,
+`.analysis/f160-dependencies-canonical-replay.json`, F160 source-evidence-audit.json,
+int-truncation88-local-symbol-observations.json and `.analysis/f160-dependencies/`.
+
+## Retained F159 outcomes and previous work
 
 One canonical cold build accepts36 complete authored functions /1,957 code bytes
 in `src/FighterVirtualActionsF159.cpp`, with its new call-only header:
@@ -662,4 +725,31 @@ objects remain. Receipts: `.analysis/f159-actions-unit-proof.json`,
 `.analysis/f159-actions-canonical-replay.json`, `.analysis/f159-preservation-final.json`,
 `.analysis/f159-cleanup.json` and `.analysis/f159-source-checkpoint.json`.
 Current exact code is719,545 bytes/375 units; conservative coverage36.39%.
+The98% goal remains active and incomplete. Do not pause it.
+
+## F160 verification
+
+Public CI passed **3,603 tests in 190.513 seconds**. Target,
+tracking, status, progress card and diff checks pass. Two new objects cold-replay
+963/963 complete authored bytes and all29 actual fields. All375 prior units,
+141 objects,220 adoption inputs plus shared-header protection, every origin/
+verifier guard, forty protected groups and all prior active objects were
+hash-verified unchanged. No old accepted dependency required replay.
+
+Six compiler builds ran serially/headless: four diagnostics/controls and two
+new canonical objects. All22 complete generic vendor helper bodies/fields
+retain their frozen R110 comparison, without new credit. The rejected named
+pointer-local cleanup has five genuine stack-slot differences. The int-truncation
+control preserves all83,922 raw bytes/all2,352 actual destinations, while132 local
+labels change; full target comparison remains18,539 differences/first004ADEFB.
+All151 current source entries/prefix/default/shared tail are restored to baseline.
+
+Cleanup removed four obsolete diagnostic objects (202,581 bytes)
+and375 bytecode files (8,285,304 bytes). Full source/header
+snapshots, raw code/native/relocation/template evidence and logs remain, along
+with both F159 traces/all14 F157 probes/all old active objects. Receipts:
+`.analysis/f160-dependencies-unit-proof.json`,
+`.analysis/f160-dependencies-canonical-replay.json`, `.analysis/f160-preservation-final.json`,
+`.analysis/f160-cleanup.json` and `.analysis/f160-source-checkpoint.json`.
+Current exact code is720,508 bytes/377 units; conservative coverage36.44%.
 The98% goal remains active and incomplete. Do not pause it.

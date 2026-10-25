@@ -374,3 +374,5 @@ SakuyaFighter::ResetRound,0x004C09A0,function
 FighterState::ResetRound,0x00457010,function
 FighterState::ClearAuxiliaryWordsAt00453A10,0x00453A10,function
 InputMapping::ClearHeldCounts,0x004071A0,function
+FighterState::SelectMovementAnimation,0x00451EB0,function
+BattleEffectManager::DeleteFourListsAt0045BA30,0x0045BA30,function

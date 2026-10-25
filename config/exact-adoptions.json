@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2f10ada7c8a81a90416e7842e4d64b2c167c459310c3155a343e1f234bd70bf5"
+      "current_sha256": "69b9512c1820109784a99fa20d87d403d0649143d56aa8905cc889426ae41823"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "dd0b34d6ad3bb1c2f8f2e573ac8ed958ad4b590f9bf2a4ed85781c0314d177d9"
+      "current_sha256": "7837ae17065f157876b39dac4fc705ee502ab8931b0ea9791fe4badc34f63b75"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "3fbcbb53f8c4b22d2ef3961f218826632ac947d6535510b72ddcf51f6586950a"
+      "current_sha256": "b51739bb4c454dfa0ffbe2acfba7273c2863dc1452154fa20a6c6e1a793a3805"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "79f135ccdc0c7a1dade4520bd970bf46757466e4a0772b29fc9491f5789f988c"
+      "current_sha256": "432751eca112e99afc33bba519871c58e37cd80c57d4e42057dc90dc38c71e44"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "3f7f4dbdf44aa75fd53637778ac6da4398e5f0629a053090e1efdefc9979bb50"
+      "current_sha256": "b90720c22cc0fa67c832b867ec4266a9bd1e13ecb777678af5067e395ba8fbfe"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -13900,6 +13900,94 @@
         "disposition": "authored",
         "confidence": "custom-policy-backed",
         "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451EB0",
+        "size": "742",
+        "span_end": "0x00452195",
+        "current_name": "FUN_00451eb0",
+        "proposed_name": "FighterState::SelectMovementAnimation",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00451EB0",
+        "size": "742",
+        "span_end": "0x00452195",
+        "current_name": "FUN_00451eb0",
+        "proposed_name": "FighterState::SelectMovementAnimation",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBaseActionsF159::SelectMovementAnimation()",
+        "is_thunk": "false",
+        "source_file": "src/FighterMovementSelection451EB0.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-select-movement-animation-00451eb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F160: complete742-byte canonical cold exact, all real exits/soleRET0 and 19 actual fields. Original provisional role retained; explicit unit maps it to call-only implementation FighterBaseActionsF159::SelectMovementAnimation. Movement preserves ordered repeated y<=0 guards, signed state/facing/axes, unsigned count comparison, exact reset literals and three existing canonical facing calls; cleanup preserves actual four-deque/iterator ABI and raw unsized global release through an unconstructed deletion-only pointer view. Original pointee type/extent/destructor spelling and full game owner layouts stay unknown. Full22 generic pointer vendor helpers match independently frozen R110 graph with all real fields; no library credit or origin/name/alias guard changes. clear/destructor wrapper identity remains ambiguous; R077 title preserved. No fake local/return/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. Only two new objects cold replayed; all375 prior units/141 objects/220 guarded inputs,97 unknown origins and both complete pending large drafts unchanged."
+      },
+      "origin": {
+        "address": "0x00451EB0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045BA30",
+        "size": "221",
+        "span_end": "0x0045BB0C",
+        "current_name": "FUN_0045ba30",
+        "proposed_name": "BattleEffectManager::DeleteFourListsAt0045BA30",
+        "module": "BattleEffectManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit"
+      },
+      "after": {
+        "address": "0x0045BA30",
+        "size": "221",
+        "span_end": "0x0045BB0C",
+        "current_name": "FUN_0045ba30",
+        "proposed_name": "BattleEffectManager::DeleteFourListsAt0045BA30",
+        "module": "BattleEffectManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RoundResetEffectsF159::DeleteFourLists()",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectCleanup45BA30.cpp",
+        "evidence": "R109; scripts/repo-python scripts/verify-game-context-origins.py; F159; scripts/repo-python scripts/replay-exact-units.py --unit effect-delete-four-deques-0045ba30",
+        "owner": "authored",
+        "notes": "Complete explicit game policy, frozen mixed-origin callees and independent game parent/virtual context; names/layouts inferred; origin only, no source or exact credit; F160: complete221-byte canonical cold exact, all real exits/soleRET0 and 10 actual fields. Original provisional role retained; explicit unit maps it to call-only implementation RoundResetEffectsF159::DeleteFourLists. Movement preserves ordered repeated y<=0 guards, signed state/facing/axes, unsigned count comparison, exact reset literals and three existing canonical facing calls; cleanup preserves actual four-deque/iterator ABI and raw unsized global release through an unconstructed deletion-only pointer view. Original pointee type/extent/destructor spelling and full game owner layouts stay unknown. Full22 generic pointer vendor helpers match independently frozen R110 graph with all real fields; no library credit or origin/name/alias guard changes. clear/destructor wrapper identity remains ambiguous; R077 title preserved. No fake local/return/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. Only two new objects cold replayed; all375 prior units/141 objects/220 guarded inputs,97 unknown origins and both complete pending large drafts unchanged."
+      },
+      "origin": {
+        "address": "0x0045BA30",
+        "origin": "authored",
+        "subsystem": "BattleEffectManager",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-mixed-context",
+        "evidence_id": "R109"
       }
     }
   ],
@@ -142507,6 +142595,226 @@
           "target": 6554768
         }
       ]
+    },
+    "fighter-select-movement-animation-00451eb0": {
+      "source": "src/FighterMovementSelection451EB0.cpp",
+      "object": "build/matching/FighterMovementSelection451EB0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SelectMovementAnimation"
+      ],
+      "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+      "target_address": 4529840,
+      "size": 742,
+      "relocations": [
+        {
+          "offset": 15,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 54,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 137,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 189,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 213,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 279,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 365,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 389,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 440,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 464,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 493,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        },
+        {
+          "offset": 554,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 578,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 619,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 643,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 679,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 726,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@AnimationState@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 734,
+          "type": "REL32",
+          "symbol": "?UpdateFacingFromOpponent@CombatActor@@QAE_NXZ",
+          "target": 4542640
+        }
+      ]
+    },
+    "effect-delete-four-deques-0045ba30": {
+      "source": "src/FighterEffectCleanup45BA30.cpp",
+      "object": "build/matching/FighterEffectCleanup45BA30.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEffectManager::DeleteFourListsAt0045BA30"
+      ],
+      "symbol": "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ",
+      "target_address": 4569648,
+      "size": 221,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "??0iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE@XZ",
+          "target": 4477888
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 131,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        },
+        {
+          "offset": 143,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 158,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 171,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QBEAAPAUEffectReleaseViewF160@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 185,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 208,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAEXXZ",
+          "target": 4571360
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -142729,6 +143037,8 @@
     "src/FighterAnimationReset453D80.hpp": "b870bf983b337d8495ddbb1d3a1765cfdc09f9ec4c0e155925b94a742b5c4319",
     "src/ProfileSelection454D00.cpp": "862ac22dfa8014eb5c4375c2683d80a1c6f6cea913627b3c0932a0d2f10f3ec0",
     "src/FighterVirtualActionsF159.cpp": "89a9a17fea1ddf2f984a27c5fa8bdbb4d195cc70b8ff8df3e23cfd35b0a865e1",
-    "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c"
+    "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c",
+    "src/FighterMovementSelection451EB0.cpp": "dfbef003a722f521b33882d89bea1ffeb2e884b936311f91c8c2e5df0f1c52a4",
+    "src/FighterEffectCleanup45BA30.cpp": "b4fe1520fdfa02e84938880bac7915e1e58535ae8b21db51c855ccf95549b9a6"
   }
 }
