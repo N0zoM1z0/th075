@@ -26061,7 +26061,7 @@ freezing actual inputs, raw code, every relocation and full evidence. All
 canonical/current/previous active objects, PDBs, logs, sources, proofs and
 shared tools remain. Receipt: `.analysis/f139-preservation-cleanup.json`.
 
-## Current reconstruction cohort: F140
+## F140 cohort at the F139 checkpoint
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
 All 92 entries have private natural source; all 81,539 main code bytes remain
@@ -26113,3 +26113,148 @@ Keep builds serial and cold replay only new/affected units. Freeze actual
 inputs/raw code/all relocations before removing obsolete reproducible
 outputs. All 97 unknown origins remain included, R268 evidence unchanged,
 and later phases / Run/queue/resource layout questions remain deferred.
+
+## F140 complete compiler profile and context controls (2026-10-25)
+
+F140 continues the same complete authored `0050A580/81539` body.
+**No new exact byte or source-presence credit is accepted.** The current
+source/header are restored byte-for-byte to the F139 virtual declaration and
+complete body. All 92 entries remain present; retain
+`build/probes/F139VirtualMain.obj` as the active diagnostic object. No
+unchanged baseline object was rebuilt.
+
+Six serial compiler controls use the complete natural source with the actual
+virtual symbol `?Advance@CharacterAdvance50A580Draft@@UAEXXZ`:
+
+| Control | Complete emitted bytes | Whole target differences |
+| --- | ---: | ---: |
+| Floating consistency `/Op` | 84,064 | 77,394 |
+| C++ exceptions `/GX` | 82,109 | 26,719 |
+| Real neighboring AI definition before main in one private TU | 82,109 | 26,719 |
+| `/Z7` instead of `/Zi` | 82,109 | 26,719 |
+| No explicit debug-format option | 82,109 | 26,719 |
+| `/O2 /Ob0 /Oy-` | 36,091-byte function AUX | Not assigned; incompatible prologue and unbound new constants |
+
+The four unchanged controls retain raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`,
+all 1,449 actual fields, 17,435 instructions and the same full relocated
+failed emission. The required target extent remains 82,106 bytes including
+the 368-byte pointer table and 199-byte remap. The 522 physical-GPR
+differences remain real failures; no field/register mask, target rebasing,
+cropped comparison or semantic-equivalence credit is used.
+
+`/Op` increases the stack allocation from 928 to **1,672 bytes** and yields
+17,732 instructions, a net increase of 297. Changed arithmetic and additional
+loads/stores contradict the native body. All its actual fields are replayed
+for the full failed comparison. This excludes that profile for this source;
+it does not establish original executable-wide floating settings.
+
+The private TU control includes the unchanged accepted
+`src/CharacterAI5086E0.cpp` before the complete main source. This is the real
+7,676-byte AI function preceding the constructor/main in target address
+order; no original TU membership is inferred. Its nine local preprocessor
+macros are cleared before main. All twelve actual compiler includes are
+recorded. The private AI copy also matches all 7,676 bytes through every
+one of its 206 real fields using its unchanged accepted manifest. Its old
+canonical object/source/header remain unchanged, and it receives no new
+acceptance or byte credit. This tested predecessor context leaves main's
+entire failed output unchanged.
+
+The no-explicit-debug object omits the function-definition AUX record.
+Instead of supplying the desired target length, an independent COFF review
+checks that the function is the sole defined function in its code section,
+starts at offset zero, and that both the section header and section-definition
+AUX specify **82,109 bytes**. The full section contains all 1,449 fields.
+The existing reader's expected-size facility is used with that independently
+proved complete section extent; no byte is discarded. The public decoder
+and all frozen verifier hashes remain unchanged. Receipt:
+`no-debug-extent-proof.json` in the F140 directory.
+
+The `/O2` control retains an eight-byte local frame and saves ESI/EDI, caching
+this in ESI. Its changed unrelocated prologue already refutes equality.
+It also introduces a constant `__real@3daaaaab` without an independently
+observed destination in this unit, so no complete target score is invented.
+All 36,091 raw function-AUX bytes and 1,056 real relocation records are
+retained. The **entire 77,033-byte object**, including all associated sections
+and data, is preserved losslessly as a checked compressed payload in
+`optimized-shape-proof.json`. The tested compiler optimizes this source;
+it does not fall back to the native unoptimized shape here.
+
+Read-only metadata of pinned `c2.dll` identifies `c2.pdb`, RSDS GUID
+`e1b1d36b-c394-45ae-b5bd-5858c23e9e21`, age 2. No matching PDB is installed
+locally. The direct and compressed Microsoft symbol endpoints for that exact
+identity both returned HTTP 404; no symbols were obtained. This records only
+those two requests, not availability elsewhere or an overall task blocker.
+Shared tools are unchanged; no game-target type/profile fact is inferred.
+Compiler metadata and HTTP observations remain private under the F140 folder.
+
+Receipts: `.analysis/object-action-50a580/f140/compiler-controls.json`, five
+complete relocation reports, actual input snapshots/include hashes,
+`neighbor-ai-diagnostic.json`, `optimized-shape-proof.json`, and
+`.analysis/f140-source-checkpoint.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative coverage**. F009 plus 270 additions
+retains 707,034 bytes and 207 new accepted source/header inputs. Every
+accepted ledger, 134 canonical objects, 207 accepted inputs, 218 origin
+files, nine shared headers, 91 older drafts and frozen F131..F139 evidence
+remain unchanged. All 97 unknown origins and their 3,608 bytes stay included;
+all 81,539 main code bytes remain pending. The 98% objective is active and
+incomplete, with later phases deferred.
+
+Validation: all 3,603 CI tests passed in 173.238s. No canonical unit was
+cold replayed or rebuilt. Cleanup removed six obsolete reproducible objects
+(742,982 bytes) and 375 Python bytecode files (8,285,264
+bytes), after freezing every input/raw body/relocation and full evidence.
+The optimized object's entire contents remain in its checked private proof.
+Every canonical/current/previous active object, PDB, source, log, proof and
+shared tool remains. Receipt: `.analysis/f140-preservation-cleanup.json`.
+
+## Current reconstruction cohort: F141
+
+Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
+All 92 entries have private natural source; all 81,539 main code bytes remain
+unaccepted. Do not substitute an unrelated easier cohort.
+
+Copy `.analysis/object-action-50a580/f140/` baseline fragments/headers and its
+composition rules to a fresh F141 version before editing. The restored
+source/header are byte-identical to F139; keep its active
+`build/probes/F139VirtualMain.obj` and all old F134/F136/F138 active objects.
+The virtual symbol remains **`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`**.
+Preserve every F131..F140 source/report/checkpoint, 330 accepted units/134
+canonical objects, 207 accepted source/header inputs, 218 origin files,
+nine shared headers and 91 older drafts.
+
+Full comparison requires **82,106 bytes**: 81,539 code plus the 368-byte
+pointer table and 199-byte remap, all exits/shared paths and real fields.
+Current output remains 82,109 bytes with 26,719 whole positional differences.
+The 522 physical-GPR differences remain at **case856/00515C0E through early
+862/00516877**, and **case998/0051E215..0051E3E1**. The first region ends at
+the ordinary float-to-short call 006406AC. Never mask, alias, rebase or crop.
+
+F140 excludes `/Op` for this source (extra spills/arithmetic/frame growth),
+and `/O2` for this source (optimized prologue, new unbound constants and
+different body). `/GX`, `/Z7`, no explicit debug-format option and one real
+accepted neighboring AI prefix TU leave the full failed output unchanged.
+The aux-less no-debug extent was derived from the entire sole-function code
+section, not the target size. Preserve its proof; do not use convenient
+expected-size arguments or truncate owned tables. Review every earlier
+F134..F139 control before probing to avoid repeated excluded spellings.
+
+Further work needs new native/compiler evidence about the actual register
+selection state. Selective optimization/space-versus-speed hypotheses, if
+pursued, need complete natural-source controls and actual option/profile
+records; broad `/O2` and `/Op` results do not establish every option combination
+or original source profile. The pinned C2 CodeView identity and two failed
+symbol requests are recorded; symbols are optional investigation aids, not
+prerequisites or a reason to stop reconstruction. Use the existing local
+tools and keep compiler observations separate from target facts.
+
+Retain all 42 genuine counters, 20 ordinary float-to-short conversions,
+64 readonly fields and the complete 846-call/11-nested-packet evidence.
+Do not introduce inert filler, guessed owner layouts, ABI changes or fake
+storage to force register selection. Source/compilation alone gives no exact
+credit. Keep builds serial and cold replay only new/affected units. Freeze
+complete inputs/raw code/all fields before cleaning obsolete outputs.
+All 97 unknown origins remain included and R268 evidence unchanged; later
+phases and Run/queue/resource layout questions remain deferred.
