@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F161.
+Updated 2026-10-26 for continued reconstruction, F162.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F161 adds three complete functions/237 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F162 adds two complete functions/373 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,43 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 380 units,
-  720,745 code bytes, 144 canonical objects and 224 accepted inputs.
-- Reviewed authored coverage is 36.52%; conservative coverage is 36.45%.
+  complete cold-exact units/all actual relocations. Counts are 382 units,
+  721,118 code bytes, 145 canonical objects and 226 accepted inputs.
+- Reviewed authored coverage is 36.54%; conservative coverage is 36.47%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F162 accepted effect dispatch:** complete166-byte selected-list45BC30 and
+207-byte four-list45BCE0 policies pass one canonical cold build,373 bytes/all15
+REL32 fields. All12 emitted pointer vendor helpers/actual fields also match
+the frozen R110 graph from the same fresh object, without library credit.
+Selected signed-byte layer uses initialized begin/end iterators and byte67 to
+select slots3/2. The four-layer loop default-constructs iterators once and
+assigns true SRET results before its byte68-gated slot4 call. Actual postfix
+result and implicit virtual-call receiver temporaries are natural compiler
+outputs. All complete extents/5 and7 branches/RET4 andRET0/excluded alignment
+were checked. No partial owner/virtual-prefix instances or full layout claims.
+Uncalled slots are positions and names are provisional; independent R109 scene
+tables do not establish an effect vtable. All380 old units,144 objects,224
+adoption inputs, R109/R110 evidence and97 unknown origins are unchanged.
+
+R103 camera-offset453EB0 remains unaccepted. Full185-byte initial/window
+controls have115 position differences to181 native bytes; both raw bodies and
+all six fields agree. Reversed equivalent comparison operands give185/111;
+/Op leaves that full body/fields unchanged. Native has FLD+memoryFCOMP while
+probes use twoFLDs+FCOMPP. No crop/credit or fake owner extent/local/ABI.
+Signed-byte formal/local/side and integer-to-float temporaries are retained;
+strict ordered-greater chooses zero, less/equal/unordered chooses signed50.
+Retain private sources, full reports/profiles and active F162CameraReversed.obj.
+
+Current complete151-entry main source is F162, unchanged from F161/F156,
+SHA prefix97e045e6. No main build/control ran; full inherited failure remains
+83,922/18,539/all2,352 fields, first004ADEFB. Continue F163 without pausing;
+both complete large drafts, camera181 and all pending bytes remain in the goal.
 
 **F161 accepted effect lifecycle:**131-byte initialization45B920,85-byte
 destruction45B9B0 and21-byte fighter binding45BA10 pass one new canonical cold
@@ -136,7 +164,7 @@ supersede the incomplete empty F157 shortlist without a full CFG or indirect
 write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f161/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f162/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams

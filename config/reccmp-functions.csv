@@ -379,3 +379,5 @@ BattleEffectManager::DeleteFourListsAt0045BA30,0x0045BA30,function
 FighterCommandQueues::InitializeAt0045B920,0x0045B920,function
 BattleEffectManager::DestroyOwnedEffectsAt0045B9B0,0x0045B9B0,function
 BattleEffectManager::BindFighterAt0045BA10,0x0045BA10,function
+BattleEffectManager::DispatchSelectedListAt0045BC30,0x0045BC30,function
+BattleEffectManager::DispatchFourListsAt0045BCE0,0x0045BCE0,function

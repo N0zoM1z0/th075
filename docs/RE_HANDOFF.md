@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F161.
+Updated 2026-10-26 for continued reconstruction, F162.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F161 accepts three complete functions/237 bytes. Both
-large drafts remain unaccepted. Current F161 outcomes supersede historical
+phases remain deferred. F162 accepts two complete functions/373 bytes. Both
+large drafts remain unaccepted. Current F162 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -35,14 +35,14 @@ user changes it. Only a new explicit user request to pause authorizes pausing.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 380 / 380 / 380 |
-| Exact code bytes | 720,745 |
-| Reviewed authored coverage | 720,745 / 1,973,516 (36.52%) |
-| Conservative coverage, including pending bytes | 720,745 / 1,977,124 (36.45%) |
-| Canonical objects / accepted source-header inputs | 144 / 224 |
+| Source-present / exact functions / exact units | 382 / 382 / 382 |
+| Exact code bytes | 721,118 |
+| Reviewed authored coverage | 721,118 / 1,973,516 (36.54%) |
+| Conservative coverage, including pending bytes | 721,118 / 1,977,124 (36.47%) |
+| Canonical objects / accepted source-header inputs | 145 / 226 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 320 additions / 710,862 code bytes / 224 inputs. Origin evidence through
+F009 plus 322 additions / 711,235 code bytes / 226 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -51,7 +51,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **c758e14 (F160)**; continuation policy
+The preceding reconstruction checkpoint is **5d51487 (F161)**, preceded by
+**c758e14 (F160)**; continuation policy
 **0322984** also removes the stale README stop instruction. Earlier checkpoints
 include **6afb9bb (F159)**, **cbda145 (F158)** and **f8f655c (F156)**.
 Policy correction **7f34a0b**
@@ -84,7 +85,84 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F161 outcomes and continuation
+## Current F162 outcomes and continuation
+
+One new object accepts two complete R109 authored dispatch policies/373 bytes
+from `src/EffectDispatchF162.cpp` and its new call-only header:
+
+| Unit | Address | Code bytes |
+| --- | --- | --- |
+| effect-dispatch-selected-list-0045bc30 | 0045BC30 | 166 |
+| effect-dispatch-four-lists-0045bce0 | 0045BCE0 | 207 |
+
+Both pass canonical cold replay with all15 actual REL32 fields. Twelve entire
+emitted pointer vendor helper bodies and every actual field also match the
+frozen R110 graph from the same fresh canonical object. They gain no library
+credit. Complete COMDAT extents, soleRET4/RET0, all5/7 branches and following
+excluded INT3 alignment are checked. No owner instances or vtables are emitted.
+
+The selected signed-byte layer chooses the container at4+layer*20. Its two
+iterators are initialized directly, then byte67 selects real virtual slot3 or2.
+The all-layer policy default-constructs two iterators once, assigns begin/end
+SRET results for each of four containers and gates slot4 on byte68. Both keep
+the real postfix result and implicit virtual-call receiver temporaries. Names
+and uncalled prefix positions do not recover original usable call signatures
+or a complete effect owner/virtual interface. R109's three-entry scene tables
+are independent scene evidence and are not treated as effect vtables. Original
+native roles, R109/R110 records, all380 old units/144 objects/224 inputs,
+all97 unknown origins and every pending byte remain unchanged.
+
+The related R103 camera-offset181 policy remains private/unaccepted under
+`.analysis/f162-camera/`. Initial direct-field source emits185 bytes with115
+whole position differences. A bounded flag/position window leaves raw bytes and
+all six fields identical. Reversing the equivalent ordered comparison operands
+still emits185 bytes with111 differences; adding /Op leaves that full raw body
+and all fields unchanged. No crop or source/exact credit. Native uses a single
+FLD and memory FCOMP at each comparison; these candidates use two FLDs/FCOMPP.
+Signed-byte formal/local/side, actual integer-to-float temporaries and both real
+camera globals agree. Ordered greater chooses zero bias; less/equal/unordered
+chooses the signed50 bias. Preserve the full reports, source snapshots/profiles
+and active `build/probes/F162CameraReversed.obj`; do not repeat closed controls
+without new source/field/compiler evidence.
+
+The complete151-entry main source is now
+`.analysis/character-move-4ac040/f162/`, byte-identical to F161/F156, SHA prefix
+97e045e6. No new main build/control ran. Inherited full comparison remains
+83,922 bytes/18,539 differences/all2,352 actual fields, first004ADEFB. Continue
+fresh F163 without pausing, pursuing genuine state89 allocation/source evidence
+and complete related authored functions. Both large drafts and camera181 remain
+in the conservative denominator. Preserve both F159 traces, all14 F157 probes,
+every older active object and the current camera baseline. Use explicit
+headless Wine process flags as documented in BUILD_MATCHING.md.
+
+Receipts: `.analysis/f162-dispatch-unit-proof.json`,
+`.analysis/f162-dispatch-canonical-replay.json`,
+`.analysis/f162-dispatch/vendor-canonical-callee-checks.json`,
+`.analysis/f162-camera/closed-controls.json` and F162 `source-evidence-audit.json`.
+
+Public CI passed **3,612 tests in 187.032 seconds**. Target,
+tracking, progress and diff checks pass. Only the two new units were cold
+replayed,373/373 authored bytes and all15 fields in one new object. Its12
+whole vendor helper bodies/actual fields also match, with no library credit.
+All380 prior units,144 canonical objects,224 adoption inputs, existing headers,
+every origin/verifier guard, forty protected groups and every older active
+object were hash-verified unchanged. No old accepted dependency needed replay.
+
+Six compiler builds ran serially with explicit no-display/no-Wine-graphics
+process environments: one dispatch diagnostic, four complete camera controls
+and one new canonical object. No new main-function build/control ran. All151
+main entries/prefix/default/shared tail/headers retain the inherited baseline.
+Cleanup removed four obsolete probes (21,135 bytes),
+377 bytecode
+files (8,312,299 bytes). Source/header/profile/whole raw code/data/
+symbol/native/field reports remain; current camera object and every accepted/
+older active object are retained. No separate F162 PDB outputs were present.
+Final receipts:
+`.analysis/f162-preservation-final.json`, `.analysis/f162-cleanup.json` and
+`.analysis/f162-source-checkpoint.json`. The98% goal stays active and incomplete;
+do not pause it or wait for another resume request.
+
+## Retained F161 outcomes
 
 One new canonical object accepts three complete authored functions/237 bytes
 from `src/EffectManagerLifetimeF161.cpp` and its new header:
