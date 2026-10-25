@@ -26698,3 +26698,361 @@ offset = 426
 type = "DIR32"
 symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
 target = 0x00671664
+
+[units.battle-handle-pause-menu-004461d0]
+source = "src/PauseDebugF175.cpp"
+object = "build/matching/PauseDebugF175.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::HandlePauseMenu"]
+symbol = "?HandlePauseMenu@PauseDebugF175@@QAEXXZ"
+target_address = 0x004461D0
+size = 751
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 25
+type = "REL32"
+symbol = "?HandleMode5Options@BattleMode5OptionsF168@@QAEXXZ"
+target = 0x004483F0
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 36
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 45
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 70
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 75
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 133
+type = "DIR32"
+symbol = "?g_ContinueCountAt00671623@@3CA"
+target = 0x00671623
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 172
+type = "DIR32"
+symbol = "?g_ContinueCountAt00671623@@3CA"
+target = 0x00671623
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 181
+type = "DIR32"
+symbol = "?g_ContinueCountAt00671623@@3CA"
+target = 0x00671623
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 187
+type = "DIR32"
+symbol = "?g_ContinueUsedAt00671624@@3EA"
+target = 0x00671624
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 194
+type = "DIR32"
+symbol = "?g_SequenceCounterAt00671622@@3EA"
+target = 0x00671622
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 232
+type = "DIR32"
+symbol = "?g_RoundSelectionAt006714CE@@3EA"
+target = 0x006714CE
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 269
+type = "DIR32"
+symbol = "?g_RoundSelectionAt006714CE@@3EA"
+target = 0x006714CE
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 316
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 325
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 344
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 353
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 364
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 369
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 396
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 405
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 416
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 421
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 449
+type = "DIR32"
+symbol = "?g_InputReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 589
+type = "DIR32"
+symbol = "?g_ContinueCountAt00671623@@3CA"
+target = 0x00671623
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 615
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-handle-pause-menu-004461d0.relocations]]
+offset = 627
+type = "DIR32"
+symbol = "?g_ContinueUsedAt00671624@@3EA"
+target = 0x00671624
+
+[units.battle-process-debug-keys-004480d0]
+source = "src/PauseDebugF175.cpp"
+object = "build/matching/PauseDebugF175.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::ProcessDebugKeys"]
+symbol = "?ProcessDebugKeys@PauseDebugF175@@QAEXXZ"
+target_address = 0x004480D0
+size = 788
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 10
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 15
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 28
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 73
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 82
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 94
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 99
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 112
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 157
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 166
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 178
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 183
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 196
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 241
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 250
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 262
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 267
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 280
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 328
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 336
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 348
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 353
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 366
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 416
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 425
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 437
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 442
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 455
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 505
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 514
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 526
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 531
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 544
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 592
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 600
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 609
+type = "DIR32"
+symbol = "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A"
+target = 0x00671638
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 614
+type = "REL32"
+symbol = "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z"
+target = 0x00407170
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 627
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 651
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 660
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618
+[[units.battle-process-debug-keys-004480d0.relocations]]
+offset = 668
+type = "DIR32"
+symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
+target = 0x0068D618

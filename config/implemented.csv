@@ -414,3 +414,5 @@ GameProgress::GetSelectedValue8At00445250
 GameProgress::GetSelectedValue12At00445290
 BattleScene::PollPauseShortcut
 BattleScene::UpdatePlayerEffects
+BattleScene::HandlePauseMenu
+BattleScene::ProcessDebugKeys

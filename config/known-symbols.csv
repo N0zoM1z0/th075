@@ -397,3 +397,5 @@ address,name,module,confidence,evidence
 0x00445290,GameProgress::GetSelectedValue12At00445290,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004456F0,BattleScene::PollPauseShortcut,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00445830,BattleScene::UpdatePlayerEffects,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004461D0,BattleScene::HandlePauseMenu,BattleScene,inferred,F175; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004480D0,BattleScene::ProcessDebugKeys,BattleScene,inferred,F175; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

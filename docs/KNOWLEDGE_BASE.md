@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F174.
+Updated 2026-10-26 for continued reconstruction, F175.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F174 accepts eight complete progress, pause and player-effects
-functions; all complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F175 accepts complete pause-menu and debug-key
+policies; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,50 @@ functions; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 416 units,
-  729,731 code bytes, 157 canonical objects and 250 accepted inputs.
-- Reviewed authored coverage is 36.98%; conservative coverage is 36.91%.
+  complete cold-exact units/all actual relocations. Counts are 418 units,
+  731,270 code bytes, 158 canonical objects and 252 accepted inputs.
+- Reviewed authored coverage is 37.05%; conservative coverage is 36.99%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F175 accepted pause/debug policies:** two complete R042 functions in
+`PauseDebugF175.cpp` pass one canonical cold build:4461D0/751 and4480D0/788,
+1,539 CODE bytes and68 actual fields (12 REL32/56 DIR32). All CFGs/plain RETs/
+alignment and no owned tables are verified. Pause keeps mode5 delegation,
+byte switch/early break, continue and selection writes, held offsets8/12/4,
+signed menu cursor and canonical signed byte replay-mode66C238 view. Existing
+dword clock view and sequence counter declaration remain unchanged. New
+671623/671624/6714CE byte names are reference-only views, not data allocations
+or recovered original identities. Debug retains eight prioritized key arms,
+shared dword counter, signed6/10/4/2 moduli and repeated division/remainder
+mirrors. Counter68D618 is in the PE's uninitialized virtual tail; native accesses
+and PE bounds support its used width, without asserting a file payload.
+
+Initial debug was exact; pause had one jump-field difference at offset245.
+The native case1 state12 arm breaks directly to the switch join. A natural
+nested break removes the common-break detour while retaining the entire751
+bytes and all actual fields. Both full sources/profiles/diagnostics are retained.
+All12 calls reuse canonical bodies; original roles stay literal via COFF maps.
+No partial owner instances, embedding, sizeof, inert locals, padding, fake
+returns, ABI tricks, assembly, conditional bodies, masks, crops or rebasing.
+All416 prior units/157 objects/250 inputs, existing headers/origin/verifier guards
+and active/frozen evidence stay unchanged. Only two new units/one object were
+cold-replayed; all97 unknowns and all pending bytes stay in the denominator.
+
+Immediately continue R065445A00:1,958 CODE plus28 owned direct-switch bytes
+requires1,986-byte comparison. Review full table/CFG/ABI, recorded events,
+keys/globals and actual COFF local offsets. Its deque helpers414810/17,414830/217,
+4464C0/32 and4464E0/164 remain reviewed library/excluded (R149/R072/R172), using
+genuine pinned vendor interfaces with no authored credit. Canonical debug,
+input and clamped-value calls are available. Keep R054455B30 pending until its
+real28-byte storage purpose is established. Continue immediately after every
+checkpoint/cleanup/commit/push; do not pause the active incomplete98% goal.
+Receipts: `.analysis/f175-pause-debug-unit-proof.json`,
+`.analysis/f175-pause-debug-canonical-replay.json` and complete native/source proof.
 
 **F174 accepted progress/pause/effects:** eight whole R103/R045/R042 functions
 in `ProgressPauseF174.cpp` pass one canonical cold build: 441FE0/44,442010/44,

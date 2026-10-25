@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F174.
+Updated 2026-10-26 for continued reconstruction, F175.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F174 accepts eight complete progress, pause and player-effects functions.
+phases remain deferred. F175 accepts complete pause-menu and debug-key policies.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F174 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F175 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 416 / 416 / 416 |
-| Exact code bytes | 729,731 |
-| Reviewed authored coverage | 729,731 / 1,973,516 (36.98%) |
-| Conservative coverage, including pending bytes | 729,731 / 1,977,124 (36.91%) |
-| Canonical objects / accepted source-header inputs | 157 / 250 |
+| Source-present / exact functions / exact units | 418 / 418 / 418 |
+| Exact code bytes | 731,270 |
+| Reviewed authored coverage | 731,270 / 1,973,516 (37.05%) |
+| Conservative coverage, including pending bytes | 731,270 / 1,977,124 (36.99%) |
+| Canonical objects / accepted source-header inputs | 158 / 252 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 356 additions / 719,848 code bytes / 250 inputs. Origin evidence through
+F009 plus 358 additions / 721,387 code bytes / 252 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **2864a9a (F173)**, preceded by
+The preceding reconstruction checkpoint is **c3e15fb (F174)**, preceded by
+**2864a9a (F173)** and
 **73565e0 (F172)** and
 **2e83de5 (F171)** and
 **0297027 (F170)** and
@@ -106,7 +107,78 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F174 outcomes and continuation
+## Current F175 outcomes and continuation
+
+One new canonical object accepts two whole R042 functions in
+`src/PauseDebugF175.cpp` and its call-only header:
+
+| Unit | Code bytes | Actual fields |
+| --- | --- | --- |
+| `battle-handle-pause-menu-004461d0` | 751 | 4 REL32 / 23 DIR32 |
+| `battle-process-debug-keys-004480d0` | 788 | 8 REL32 / 33 DIR32 |
+
+One canonical cold build passes all 1,539 CODE bytes and all 68 actual fields.
+Complete CFGs, plain RETs, absence of owned tables and following alignment are
+verified against R042. Pause processing retains canonical mode5 delegation,
+its byte switch, continue/selection state writes, held-input offsets8/12/4,
+signed byte menu cursor and signed byte replay-mode read at66C238. The existing
+canonical byte declaration is reused; its distinct dword clock view elsewhere
+is unchanged. New continue count671623, used flag671624 and selection6714CE
+remain reference-only byte views. Their original names and complete ownership
+are not established. Existing sequence counter671622 retains its declaration.
+
+The debug policy preserves eight prioritized key arms, shared dword repeat
+counter read/increment/store, signed modulo6/10/4/2 operations and all repeated
+quotient/remainder mirrors. Counter68D618 lies in the PE's uninitialized virtual
+data tail: native accesses and PE virtual bounds establish a used dword view;
+there is no file payload claim or new data allocation. All12 calls reuse
+canonical bodies. Partial owners are never instantiated, embedded or measured.
+Original roles remain literal through explicit COFF maps.
+
+Initial debug788 bytes were exact; pause751 bytes had one jump-field difference
+at offset245. Native case1 exits directly from its nested state12 arm. A natural
+nested break replaces the common-break detour, retaining the full size and every
+actual relocation. No inert local, padding, fake return, ABI trick, assembly,
+conditional body, mask, crop, alias or native-label rebasing. Both complete
+sources/profiles and diagnostics are retained. All416 prior units/157 objects/
+250 inputs, existing headers/origins/verifiers,13 active objects/all14 F157 probes/
+both F159 traces stay unchanged. Only these two new units/one object were cold-
+replayed; all97 unknowns and all pending bytes remain in the denominator.
+
+Immediately continue R065445A00 sequence policy: all1,958 CODE bytes plus its
+owned28-byte direct-switch table, requiring a1,986-byte whole comparison. Review
+the R065 direct-switch record, full CFG/ABI, recorded command events, key/global
+contracts and actual COFF local offsets. Its four deque helpers414810/17,
+414830/217,4464C0/32 and4464E0/164 are already reviewed library bodies under
+R149/R072/R172; use genuine pinned vendor interfaces and preserve their excluded
+status. Canonical debug4480D0, input and clamped-value calls are now available.
+Keep R054455B30/260 pending until the real28-byte local-storage purpose is
+established; do not introduce an arbitrary or inert array. Execute the next
+sequence action immediately after checkpoint/cleanup/commit/push; never pause.
+
+Receipts: `.analysis/f175-pause-debug-unit-proof.json`,
+`.analysis/f175-pause-debug-canonical-replay.json`, complete native CFG/data-view
+proof and both complete source/profile/diagnostic snapshots under
+`.analysis/f175-pause-debug/`.
+
+Public CI passed **3,612 tests in 196.601 seconds**. Target,
+tracking, progress and diff checks pass. Two new units in one new object were
+cold-replayed:1,539 full CODE bytes/all68 actual fields. All416 previous units,
+157 old canonical objects/250 old adoption inputs, existing headers, origin/
+verifier guards, forty protected groups,13 active objects/all14 F157 probes/both
+F159 traces were hash-verified unchanged. Three compiler builds ran serially and
+explicitly headless: two previews and one canonical cold build. No old accepted
+unit or large-function control was rebuilt. Cleanup removed two obsolete preview
+objects (29,226 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,359 bytes), retaining all full nondebug sections/
+symbols/fields/source/header/profile evidence and158 canonical/13 active objects.
+Receipts: `.analysis/f175-object-retention.json`, `.analysis/f175-cleanup.json`,
+`.analysis/f175-preservation-final.json` and `.analysis/f175-source-checkpoint.json`.
+Immediately continue full445A00 sequence and its28-byte owned table after this
+checkpoint/commit/push; the98% goal remains active and incomplete.
+
+## Retained F174 outcomes
 
 One new canonical object accepts eight complete functions in
 `src/ProgressPauseF174.cpp` and its call-only header:

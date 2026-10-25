@@ -415,3 +415,5 @@ GameProgress::GetSelectedValue8At00445250,0x00445250,function
 GameProgress::GetSelectedValue12At00445290,0x00445290,function
 BattleScene::PollPauseShortcut,0x004456F0,function
 BattleScene::UpdatePlayerEffects,0x00445830,function
+BattleScene::HandlePauseMenu,0x004461D0,function
+BattleScene::ProcessDebugKeys,0x004480D0,function
