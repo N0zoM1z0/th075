@@ -476,3 +476,4 @@ BackgroundStage::ApplyTransformAt004512C0,0x004512C0,function
 BackgroundTransform::CopyLightAt00451BC0,0x00451BC0,function
 BackgroundStage::DrawSidePairAt00451D20,0x00451D20,function
 BackgroundStage::ApplyTransformAt00451E00,0x00451E00,function
+BattleScene::RenderBackground,0x00435A70,function

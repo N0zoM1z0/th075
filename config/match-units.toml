@@ -28988,3 +28988,1187 @@ offset = 57
 type = "REL32"
 symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
 target = 0x004116F0
+
+[units.battle-render-background-00435a70]
+source = "src/RenderBackgroundF179.cpp"
+object = "build/matching/RenderBackgroundF179.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::RenderBackground"]
+symbol = "?RenderBackground@RenderBackgroundF179@@QAEXXZ"
+target_address = 0x00435A70
+size = 6404
+[[units.battle-render-background-00435a70.relocations]]
+offset = 17
+type = "REL32"
+symbol = "?BeginFrameValueAt00402660@Graphics@@YA_NXZ"
+target = 0x00402660
+[[units.battle-render-background-00435a70.relocations]]
+offset = 39
+type = "REL32"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
+target = 0x0040D990
+[[units.battle-render-background-00435a70.relocations]]
+offset = 113
+type = "REL32"
+symbol = "?SetDepthMode@BackgroundDrawingF179@@QAEXH@Z"
+target = 0x0040C840
+[[units.battle-render-background-00435a70.relocations]]
+offset = 129
+type = "REL32"
+symbol = "?SetBlendMode@BackgroundDrawingF179@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 156
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 174
+type = "REL32"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.battle-render-background-00435a70.relocations]]
+offset = 206
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 233
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 250
+type = "DIR32"
+symbol = "__real@43d00000"
+target = 0x0065828C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 274
+type = "DIR32"
+symbol = "__real@c2c00000"
+target = 0x00658288
+[[units.battle-render-background-00435a70.relocations]]
+offset = 295
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 313
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 319
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 324
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 438
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 507
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 524
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 536
+type = "DIR32"
+symbol = "__real@43d00000"
+target = 0x0065828C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 554
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 566
+type = "DIR32"
+symbol = "__real@c2c00000"
+target = 0x00658288
+[[units.battle-render-background-00435a70.relocations]]
+offset = 581
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 599
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 605
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 610
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 717
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 724
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-render-background-00435a70.relocations]]
+offset = 760
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 777
+type = "DIR32"
+symbol = "__real@43d00000"
+target = 0x0065828C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 801
+type = "DIR32"
+symbol = "__real@c2c00000"
+target = 0x00658288
+[[units.battle-render-background-00435a70.relocations]]
+offset = 822
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 851
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 869
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 875
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 880
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 993
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1023
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1040
+type = "DIR32"
+symbol = "__real@438a0000"
+target = 0x00658284
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1067
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1088
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1108
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1114
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1138
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1144
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1168
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1174
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1201
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1248
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1268
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1286
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1292
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1297
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1413
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1443
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1455
+type = "DIR32"
+symbol = "__real@43b78000"
+target = 0x00658280
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1482
+type = "DIR32"
+symbol = "__real@43978000"
+target = 0x0065827C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1508
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1528
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1546
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1552
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1557
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1673
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1697
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1714
+type = "DIR32"
+symbol = "__real@438a0000"
+target = 0x00658284
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1741
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1762
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1782
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1800
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1806
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1811
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1926
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1953
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1965
+type = "DIR32"
+symbol = "__real@43d30000"
+target = 0x00658278
+[[units.battle-render-background-00435a70.relocations]]
+offset = 1992
+type = "DIR32"
+symbol = "__real@43b30000"
+target = 0x00658274
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2018
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2038
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2056
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2062
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2067
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2183
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2252
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2269
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2281
+type = "DIR32"
+symbol = "__real@43d00000"
+target = 0x0065828C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2299
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2311
+type = "DIR32"
+symbol = "__real@c2c00000"
+target = 0x00658288
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2326
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2355
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2373
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2379
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2384
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2491
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2521
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2533
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2545
+type = "DIR32"
+symbol = "__real@43b78000"
+target = 0x00658280
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2566
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2578
+type = "DIR32"
+symbol = "__real@43978000"
+target = 0x0065827C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2598
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2618
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2636
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2642
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2647
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2756
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2780
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2797
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2809
+type = "DIR32"
+symbol = "__real@438a0000"
+target = 0x00658284
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2830
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2842
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2857
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2877
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2895
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2901
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 2906
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3015
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3042
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3054
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3066
+type = "DIR32"
+symbol = "__real@43d30000"
+target = 0x00658278
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3087
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3099
+type = "DIR32"
+symbol = "__real@43b30000"
+target = 0x00658274
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3119
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3139
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3157
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3163
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3168
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3277
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3307
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3338
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3358
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3364
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3388
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3394
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3418
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3424
+type = "DIR32"
+symbol = "__real@3f800000"
+target = 0x0065747C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3451
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3498
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3516
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3522
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3527
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3643
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3673
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3685
+type = "DIR32"
+symbol = "__real@43b78000"
+target = 0x00658280
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3712
+type = "DIR32"
+symbol = "__real@43978000"
+target = 0x0065827C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3738
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3756
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3762
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3767
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3883
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3907
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3924
+type = "DIR32"
+symbol = "__real@438a0000"
+target = 0x00658284
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3951
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3972
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3990
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 3996
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4001
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4116
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4143
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4155
+type = "DIR32"
+symbol = "__real@43d30000"
+target = 0x00658278
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4182
+type = "DIR32"
+symbol = "__real@43b30000"
+target = 0x00658274
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4208
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4226
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4232
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4237
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4353
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4425
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4437
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4449
+type = "DIR32"
+symbol = "__real@43b78000"
+target = 0x00658280
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4470
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4482
+type = "DIR32"
+symbol = "__real@43978000"
+target = 0x0065827C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4502
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4520
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4526
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4531
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4640
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4664
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4681
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4693
+type = "DIR32"
+symbol = "__real@438a0000"
+target = 0x00658284
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4714
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4726
+type = "DIR32"
+symbol = "__real@41a00000"
+target = 0x0065786C
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4741
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4759
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4765
+type = "DIR32"
+symbol = "__real@42a00000"
+target = 0x00658268
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4770
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4879
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4906
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4918
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4930
+type = "DIR32"
+symbol = "__real@43d30000"
+target = 0x00658278
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4951
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4963
+type = "DIR32"
+symbol = "__real@43b30000"
+target = 0x00658274
+[[units.battle-render-background-00435a70.relocations]]
+offset = 4983
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5001
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5007
+type = "DIR32"
+symbol = "__real@42200000"
+target = 0x00657858
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5012
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5121
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5132
+type = "REL32"
+symbol = "?RenderCards@CharacterSelectCards437380@@QAEXXZ"
+target = 0x00437380
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5265
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5283
+type = "REL32"
+symbol = "?BuildQuadFromRect@SpriteTransform@@QAEXPBUtagRECT@@@Z"
+target = 0x00411400
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5303
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5380
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5425
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5456
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5527
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5551
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5569
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5590
+type = "DIR32"
+symbol = "__real@42940000"
+target = 0x00658270
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5617
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5638
+type = "DIR32"
+symbol = "__real@41200000"
+target = 0x00657850
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5658
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5729
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5807
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5821
+type = "DIR32"
+symbol = "__real@44200000"
+target = 0x00657884
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5832
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5852
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5866
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5894
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5901
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5938
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5972
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 5979
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6008
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6050
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6075
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6098
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6116
+type = "DIR32"
+symbol = "__real@437f0000"
+target = 0x00657CF0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6122
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6127
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6211
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6218
+type = "DIR32"
+symbol = "?g_BackgroundPadNoticeAt00671621@@3EA"
+target = 0x00671621
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6233
+type = "DIR32"
+symbol = "?g_BackgroundPadFrameAt00671620@@3CA"
+target = 0x00671620
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6249
+type = "DIR32"
+symbol = "?g_BackgroundPadFrameAt00671620@@3CA"
+target = 0x00671620
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6274
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6299
+type = "REL32"
+symbol = "?BuildQuad@SpriteTransform@@QAEXMMMM@Z"
+target = 0x00427500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6322
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6354
+type = "REL32"
+symbol = "?DrawQuad@BackgroundDrawingF179@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6361
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6377
+type = "REL32"
+symbol = "?RenderOptions@SinglePlayerOptions438670@@QAEXXZ"
+target = 0x00438670
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6390
+type = "REL32"
+symbol = "?RenderOptions@CharacterSelectOptions438240@@QAEXXZ"
+target = 0x00438240
+[[units.battle-render-background-00435a70.relocations]]
+offset = 6395
+type = "REL32"
+symbol = "?EndFrame@Graphics@@YAXXZ"
+target = 0x004027D0

@@ -1,14 +1,15 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F178.
+Updated 2026-10-26 for continued reconstruction, F179.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F178 accepts54 complete background policies.
+phases remain deferred. F179 accepts the complete background renderer.
+F178 accepted54 complete background policies.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F178 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F179 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +45,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 477 / 477 / 477 |
-| Exact code bytes | 739,550 |
-| Reviewed authored coverage | 739,550 / 1,973,516 (37.47%) |
-| Conservative coverage, including pending bytes | 739,550 / 1,977,124 (37.41%) |
-| Canonical objects / accepted source-header inputs | 161 / 258 |
+| Source-present / exact functions / exact units | 478 / 478 / 478 |
+| Exact code bytes | 745,954 |
+| Reviewed authored coverage | 745,954 / 1,973,516 (37.80%) |
+| Conservative coverage, including pending bytes | 745,954 / 1,977,124 (37.73%) |
+| Canonical objects / accepted source-header inputs | 162 / 260 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 417 additions / 729,667 code bytes / 258 inputs. Origin evidence through
+F009 plus 418 additions / 736,071 code bytes / 260 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +61,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **08933b7 (F177)**, preceded by
+The preceding reconstruction checkpoint is **d865998 (F178)**, preceded by
+**08933b7 (F177)** and
 **8bd1677 (F176)** and
 **6fe11c2 (F175)** and
 **c3e15fb (F174)** and
@@ -110,7 +112,82 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F178 outcomes and continuation
+## Current F179 outcomes and continuation
+
+One new canonical object accepts the complete R040 renderer in
+`src/RenderBackgroundF179.cpp` and its call-only header. Unit
+`battle-render-background-00435a70` compares all **6,404 CODE bytes** and
+**235 actual relocation fields**, including all branch destinations. The full
+native extent has one plain RET,19 internal branches, no owned tables and12
+following INT3 bytes. Its R040 body hash, complete decoded CFG, every actual
+field and the complete emitted COMDAT were independently checked before cold
+acceptance. Only this new unit was cold-replayed.
+
+The source constructs the known complete132-byte packet and an SDK RECT16,
+keeps two genuine side brightness values in a two-byte array, and retains the
+signed portrait/label index. Meaningful names of these real values were chosen
+using existing pinned compiler allocation observations. The final frameA4,
+packet-88, rectangle-A0, tint-90/-8F and index-89 match native instructions.
+Separate scalar locals had a different physical allocation; merely moving
+scope or disabling GS changed no code. The array represents the two actual
+side values; it supplies no artificial padding or inert storage.
+
+Borrowed views of the directly observed consecutive float windows98..BC and
+CC..DC retain original field widths and operations. They reproduce native
+constant-first x87 arithmetic and the raw float argument push at both sine
+calls; raw cast expressions emitted different operand ordering and two extra
+FSTP instructions. No nominal return precision, volatility, ABI or complete
+owner layout was invented. The sine wrapper40D940 remains unknown under R163;
+its existing float(float)/ST0 contract and both actual calls remain unchanged.
+
+All27 DrawQuad calls retain actual receivers this8/this44/this48, the signed
+character/frame values, native alpha arithmetic and all coordinates, including
+the odd B4 bottom-coordinate read. Reference-only byte globals671620/671621
+receive no allocation or data credit. The full16 four-byte readonly float
+sections and all their definitions match independently in preview and fresh
+canonical objects. No masks, crops, aliases, local-label rebasing, conditional
+bodies, inert locals, assembly or partial-owner instances were introduced.
+All477 old units/161 objects/258 accepted inputs,14 active drafts, fourteen
+F157 probes, both F159 traces, forty protected groups and97 unknown origins
+remain unchanged; every pending byte stays in the conservative denominator.
+
+Immediately continue R220/R230/R232 background callbacks:449EC0,44DA70,
+44F830,451420;44B600,44BB20,44C040,44D5E0,4503E0,450BD0; and44E3A0.
+These11 complete extents total463 CODE bytes. Review their own JSON origin
+manifests, full CFGs, signed counter and double-threshold semantics, readonly bindings and
+callback ABI before natural source and complete comparison. Their attested
+headless decompile is `.analysis/f180-background-counters.c`; native review
+continues directly after this checkpoint. R231 blend callbacks separately
+contain two camera conversions stored without later native reads; their source
+purpose remains unresolved, so do not manufacture unused locals for acceptance.
+Preserve all existing large/render/sequence failures. Execute this next action
+after cleanup/commit/push; the98% goal remains active and incomplete, without
+pause or another resume request.
+
+Receipts: `.analysis/f179-render-background-unit-proof.json`,
+`.analysis/f179-render-background-canonical-replay.json`,
+`.analysis/f179-canonical-readonly.json`, complete native/float/callee evidence
+and diagnostic source/profile snapshots in `.analysis/f179-render-background/`.
+
+Public CI passed **3,612 tests in 195.060 seconds**. Target,
+tracking, progress and diff checks pass. One new unit/one fresh canonical object
+was cold-replayed:6,404 full CODE bytes/all235 actual fields. All16 whole float
+readonly sections/64 bytes and every definition also match. All477 prior units,
+161 prior canonical objects/258 inputs, old headers/origins/verifiers, forty
+protected groups and14 active drafts/all14 F157 probes/both F159 traces were
+hash-verified unchanged. Nine compiler invocations ran serially and explicitly
+headless: eight diagnostic controls/previews and one new canonical cold build.
+No old accepted unit or large-function control was rebuilt. Cleanup removed
+eight obsolete objects (135,793 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,379 bytes), retaining complete sections/symbols/
+fields/source/header/profile evidence. Receipts: `.analysis/f179-object-retention.json`,
+`.analysis/f179-cleanup.json`, `.analysis/f179-preservation-final.json` and
+`.analysis/f179-source-checkpoint.json`. Next-cohort headless decompilation is
+already complete; continue its11 full native callback reviews immediately
+after commit/push. The98% goal stays active and incomplete, without pause.
+
+## Retained F178 outcomes and continuation
 
 One new canonical object accepts54 complete R055/R056/R101 functions in
 `src/BackgroundPoliciesF178.cpp` and its call-only header:

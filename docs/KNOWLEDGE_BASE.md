@@ -7,6 +7,38 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 [RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
 policies; all complete large drafts, including0055AC80, remain unaccepted.
 
+## F179: complete background rendering
+
+R040435A70 is now canonical cold-exact across its full6,404-byte extent and
+all235 real fields. Native CFG: one plain RET/19 internal branches/no owned
+tables/12 following INT3 bytes. The source uses one complete132-byte packet,
+SDK RECT16, a real two-byte side-tint array and a signed portrait index; no
+partial scene/drawing owner is instantiated or measured. Existing scope and
+GS controls left the wrong allocation unchanged. Meaningful local names plus
+the genuine pair representation yield native frameA4/this-A4/packet-88/
+RECT-A0/tint-90,-8F/index-89. The compiler name/address fixtures are diagnostic
+observations, with no target or ownership credit.
+
+A directly dereferenced float cast can produce different x87 operand order
+and float argument marshalling from a member expression, even at /Od.
+Borrowed observed windows98..BC andCC..DC reproduce native constant-first
+FLD/FADD/FSUB and both raw float pushes to40D940, reducing the last six-byte
+size excess to zero. This is a source representation observation, not proof
+of original member names or a complete scene layout. No /Op, volatile, nominal
+return-type change or ABI workaround is needed. R163 sine remains unknown;
+its established float(float)/ST0 view and two actual calls are preserved.
+
+Every27 draw receiver and native alpha/coordinate/global operand is retained,
+including the B4 read in an otherwise AC coordinate family. All16 whole float
+readonly sections/64 bytes and all definitions match in fresh canonical output;
+no data/helper credit is added. All477 prior units/161 objects/258 inputs,
+14 active drafts and97 unknown origins remain unchanged. Current totals:
+478 exact units/745,954 CODE bytes,162 canonical objects/260 accepted inputs;
+37.73% conservatively including pending bytes. Continue the11 R220/R230/R232
+callbacks/463 bytes immediately after checkpoint. R231 camera conversions
+stored without subsequent reads require a source-purpose explanation before
+reconstruction; artificial unused locals remain prohibited.
+
 ## Authoritative inputs and evidence
 
 - Target: supplied Japanese th075.exe 1.11, SHA-256

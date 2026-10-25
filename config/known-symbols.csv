@@ -458,3 +458,4 @@ address,name,module,confidence,evidence
 0x00451BC0,BackgroundTransform::CopyLightAt00451BC0,BackgroundTransform,inferred,F178; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00451D20,BackgroundStage::DrawSidePairAt00451D20,BackgroundStage,inferred,F178; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00451E00,BackgroundStage::ApplyTransformAt00451E00,BackgroundStage,inferred,F178; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00435A70,BattleScene::RenderBackground,BattleScene,inferred,F179; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
