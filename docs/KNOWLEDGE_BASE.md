@@ -26982,3 +26982,88 @@ accepted source/header inputs. The adoption manifest retains F009 plus
 evidence remain unchanged. All 97 unknown origins/3,608 bytes and R268 are
 preserved. The 98% goal remains active and incomplete; later phases remain
 deferred.
+
+## F147 — fifty move entries and native receiver prefix
+
+**No new exact bytes or source-presence credit are accepted.** F147 adds
+**49 manually authored nondefault source fragments**, bringing the complete
+004AC040 draft to **50/151 distinct entries**. They cover the contiguous
+13,603-byte investigation interval **004AC1B9..004AF6DB**; every byte remains
+pending for full-function acceptance. Prefix, state0 and real default/common
+tail are retained from F146. **101 nondefault bodies remain**, beginning with
+state160 at004AF6DC. No partial wrapper or game diagnostic object was built.
+
+The private draft is `.analysis/character-move-4ac040/f147/`: preserve its
+`Case*.inc`, `Prefix.inc`, `Tail.inc`, `SourceDependencies.inc`, the two-method
+`CharacterMove4AC040Draft.hpp` and all native/source/parent evidence. Native
+exports for all151 entries are investigation aids, never independent units.
+The F146 seed and all older accepted/current source inputs are unchanged.
+
+**Target-observed receiver/ABI prefix:** Attested read-only Ghidra queries
+find the data reference006594AC to004AC040, then constructor004C0832's actual
+same-object store of006594A8. The complete243-byte R050 initializer at004C0820
+saves incoming ECX atEBP-4 and installs the table through that same receiver.
+Its first two entries are00453D80/004AC040: the used slot0/slot1 prefix is
+supported. Slot0's complete149-byte R068 body/hash/RET and the constructor's
+whole hash/CFG were reverified, without accepting or renaming either body.
+The neighboring ASCII `sakuya` and reviewed `SakuyaFighter::Initialize` role
+provide identity context; original class identifiers and complete layout
+remain unknown. The draft receiver is never instantiated, copied or embedded.
+
+The complete already-exact859-byte `BattleFrame::UpdateFrame` supplies four
+parameterless character slot1 calls, using actual player receiver fields44
+and48 and ECX, without stack arguments. A **fifth** call through slot1 uses
+the distinct global draw-dispatcher receiver00671424 and is explicitly
+excluded from character ABI evidence. Whole-caller native bytes, current
+accepted source/interface hashes and actual call windows are preserved in
+`receiver-vtable-proof.json`. No accepted header was changed or cold rebuilt.
+
+**Source-transcription observations:** States0..10,50..65,70..99 and140..159
+have the individually mapped bodies listed in `source-transcription-audit.json`.
+Their50 native entry hashes, all lexical direct-call targets/real slot0 calls
+in source order and outgoing shared-tail/epilogue destinations are checked.
+This is a bounded transcription audit, not a compiled CFG or byte comparison.
+All calls use current accepted interfaces; unknown original owner layouts
+and declaration spellings remain explicit.
+
+The fragments preserve state1/3's own frame-advance/return paths, state6..8's
+manual signed-word counter updates and true virtual slot0 callback, separate
+strict sign crossings, and state96's ordered <=0 versus state97's ordered
+<0 landing tests. There are **18 real float-to-short conversions** and
+**three real loop counters**, each in its own natural case scope. No inert
+locals or artificial frame storage were added. State88/96/97 keep actual
+ten-iteration effect loops; state99 keeps each short-circuit input branch
+and the observed signed indexed byte access without inventing an owner array.
+
+Read-only float/double observations retain actual constant addresses, widths,
+raw data hashes/values and source literals. State89 uses **40.0f** for field30,
+**0.0025f** for horizontal restoration and **0.01f** for vertical restoration;
+the latter negates the promoted integer before float multiplication. Source
+was corrected against these target observations before any compilation.
+State145's landing path has no inserted shared-sound call. Existing strict
+NaN-aware comparisons and float0.5 versus double0.5 arithmetic stay explicit.
+
+The entire new function still requires **82,796 code bytes +1,126 owned
+table/remap bytes =83,922 compared bytes**, all151 entries, real default,
+shared paths and actual relocations. The native whole-code hash, sole RET,
+all1,933 internal branches and every owned data-segment hash were reverified.
+No case/chunk can earn independent credit or supply a cropped acceptance.
+
+Public CI passed all **3,603 tests in 179.343 seconds**.
+Target/tracking/status/diff checks pass. No game compiler or cold replay was
+needed for these private incomplete fragments; no accepted dependency changed.
+Cleanup removed 375 reproducible bytecode files
+(8,285,269 bytes). All151 current native exports,
+source/ABI/constant/call-order/CFG/parent evidence, logs and every accepted or
+older active object remain. Receipts: `.analysis/f147-source-checkpoint.json`
+and `.analysis/f147-preservation-cleanup.json`.
+
+Totals remain **331 exact functions/units,716,968 code bytes**, **36.33%
+reviewed authored /36.26% conservative**. All135 canonical objects,209 accepted
+inputs,218 origin files,nine shared headers,91 older drafts and38 protected
+evidence groups remain unchanged, including F146's51-byte exact motion helper.
+Keep F145CanonicalViews and all older active0050A580 objects; its entire
+81,539 code bytes remain pending with the unchanged82,109-byte/26,719-difference
+diagnostic. All97 unknown origins/3,608 bytes, R268 and every pending code byte
+remain in the conservative denominator. The98% goal stays active/incomplete;
+later phases remain deferred. All tools remain headless and builds serial.
