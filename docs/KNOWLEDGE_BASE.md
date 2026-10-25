@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for continued reconstruction, F158.
+Updated 2026-10-25 for continued reconstruction, F159.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F158 adds one complete79-byte counter.
+[RE_HANDOFF.md](RE_HANDOFF.md). F159 adds36 complete functions/1,957 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,47 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 339 units,
-  717,588 code bytes, 140 canonical objects and 218 accepted inputs.
-- Reviewed authored coverage is 36.36%; conservative coverage is 36.29%.
+  complete cold-exact units/all actual relocations. Counts are 375 units,
+  719,545 code bytes, 141 canonical objects and 220 accepted inputs.
+- Reviewed authored coverage is 36.46%; conservative coverage is 36.39%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F159 accepted reset/virtual policies:**36 complete functions /1,957 bytes in
+`FighterVirtualActionsF159.cpp` pass one shared-object canonical cold build,
+including all16 real REL32 fields. R060 contributes32 independently witnessed
+fighter-vtable policies/440 bytes; R050 Sakuya reset247, R045 base reset1151,
+R103 six-DWORD clear89 and R015 held-count clear30 complete the cohort. Every
+full body/soleRET0, complete code COMDAT and excluded INT3 alignment is checked.
+Original provisional role names and every frozen origin/verifier guard stay
+unchanged; explicit match units map those roles to distinct call-only source
+views. This avoids conflicting accepted Reimu/Meiling owner declarations. No
+view is instantiated/embedded or claimed as a full owner/virtual interface.
+R015's old blank function.owner mirrors its already-authored origin; none of
+the97 unknown origins is reclassified. All339 prior units/140 objects/218 inputs
+remain unchanged; only the new object is cold-built.
+
+The Sakuya slot6 policy preserves19 word-zero writes/repeatedF16 before base
+reset. The base policy preserves repeated3A0/6E6 writes, bool-derived position/
+facing, actual slot0 animation call,28-byte held-count range and effect cleanup.
+Existing animation/header inputs remain unchanged. Full proofs/replay are the
+F159 actions receipts. Base movement451EB0/742 and effect cleanup45BA30/221 remain
+reviewed authored dependencies for follow-up, without new credit yet.
+
+F159's two headless traces compile33 genuine bodies in one TU and observe33
+entries/33 cursor initializations. Moving the real247-byte reset first causes19
+allocations, leaving cursor/head2; the next entry resets it to head1. Actual
+CALL10774FA7->10775782 is verified using captured returnPC10774FAC and pinned
+C2 bytes. All33 full bodies/687 bytes/12 fields agree between orders. Thus this
+observed path does not carry cursor phase from a previous function. Full C2 CFG,
+other global state and original target source/profile/virtual state stay unknown.
+No unused filler, fake locals/ABI/layout or compiler queue/tool/target mutation.
+Current full151-entry move source is F159, unchanged from F158/F156, SHA prefix
+97e045e6; full comparison still83,922/18,539/all2,352 fields. Continue the98% goal.
 
 **F158 accepted counter:** complete79-byte `IncrementSelectedWordCounter` at454D00
 passes canonical cold replay79/79, all20 instructions/soleRET4, zero actual
@@ -49,7 +81,7 @@ supersede the incomplete empty F157 shortlist without a full CFG or indirect
 write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f156/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f159/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams

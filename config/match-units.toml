@@ -24681,3 +24681,429 @@ symbol = "?IncrementSelectedWordCounter@ProfileSelectionF155@@QAEXC@Z"
 target_address = 0x00454D00
 size = 79
 relocations = []
+
+[units.fighter-forward-base-action-0046d2d0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::ForwardBaseActionAt0046D2D0"]
+symbol = "?ForwardBaseAction@ReimuFighterActionsF159@@QAEXXZ"
+target_address = 0x0046D2D0
+size = 19
+[[units.fighter-forward-base-action-0046d2d0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-0046d2f0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::NoOpVirtualAt0046D2F0"]
+symbol = "?NoOpSlot18@ReimuFighterActionsF159@@QAEXXZ"
+target_address = 0x0046D2F0
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-00472450]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ReimuFighter::NoOpVirtualAt00472450"]
+symbol = "?NoOpSlot9@ReimuFighterActionsF159@@QAEXXZ"
+target_address = 0x00472450
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-00493440]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::ForwardBaseActionAt00493440"]
+symbol = "?ForwardBaseAction@MarisaFighterActionsF159@@QAEXXZ"
+target_address = 0x00493440
+size = 19
+[[units.fighter-forward-base-action-00493440.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-00493460]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MarisaFighter::NoOpVirtualAt00493460"]
+symbol = "?NoOpSlot18@MarisaFighterActionsF159@@QAEXXZ"
+target_address = 0x00493460
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-004c0aa0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::ForwardBaseActionAt004C0AA0"]
+symbol = "?ForwardBaseAction@SakuyaFighterActionsF159@@QAEXXZ"
+target_address = 0x004C0AA0
+size = 19
+[[units.fighter-forward-base-action-004c0aa0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-004c0ac0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::NoOpVirtualAt004C0AC0"]
+symbol = "?NoOpSlot18@SakuyaFighterActionsF159@@QAEXXZ"
+target_address = 0x004C0AC0
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-004c66a0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::NoOpVirtualAt004C66A0"]
+symbol = "?NoOpSlot9@SakuyaFighterActionsF159@@QAEXXZ"
+target_address = 0x004C66A0
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-004e2ef0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::ForwardBaseActionAt004E2EF0"]
+symbol = "?ForwardBaseAction@AliceFighterActionsF159@@QAEXXZ"
+target_address = 0x004E2EF0
+size = 19
+[[units.fighter-forward-base-action-004e2ef0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-004e2f10]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::NoOpVirtualAt004E2F10"]
+symbol = "?NoOpSlot18@AliceFighterActionsF159@@QAEXXZ"
+target_address = 0x004E2F10
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-004e79a0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["AliceFighter::NoOpVirtualAt004E79A0"]
+symbol = "?NoOpSlot9@AliceFighterActionsF159@@QAEXXZ"
+target_address = 0x004E79A0
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-00502420]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::ForwardBaseActionAt00502420"]
+symbol = "?ForwardBaseAction@PatchouliFighterActionsF159@@QAEXXZ"
+target_address = 0x00502420
+size = 19
+[[units.fighter-forward-base-action-00502420.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-00502440]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::NoOpVirtualAt00502440"]
+symbol = "?NoOpSlot18@PatchouliFighterActionsF159@@QAEXXZ"
+target_address = 0x00502440
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-00507690]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["PatchouliFighter::NoOpVirtualAt00507690"]
+symbol = "?NoOpSlot9@PatchouliFighterActionsF159@@QAEXXZ"
+target_address = 0x00507690
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-0052d200]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::ForwardBaseActionAt0052D200"]
+symbol = "?ForwardBaseAction@YoumuFighterActionsF159@@QAEXXZ"
+target_address = 0x0052D200
+size = 19
+[[units.fighter-forward-base-action-0052d200.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-0052d220]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::NoOpVirtualAt0052D220"]
+symbol = "?NoOpSlot18@YoumuFighterActionsF159@@QAEXXZ"
+target_address = 0x0052D220
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-00531bc0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YoumuFighter::NoOpVirtualAt00531BC0"]
+symbol = "?NoOpSlot9@YoumuFighterActionsF159@@QAEXXZ"
+target_address = 0x00531BC0
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-00551bd0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::ForwardBaseActionAt00551BD0"]
+symbol = "?ForwardBaseAction@RemiliaFighterActionsF159@@QAEXXZ"
+target_address = 0x00551BD0
+size = 19
+[[units.fighter-forward-base-action-00551bd0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-00551bf0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::NoOpVirtualAt00551BF0"]
+symbol = "?NoOpSlot18@RemiliaFighterActionsF159@@QAEXXZ"
+target_address = 0x00551BF0
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-00556f40]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["RemiliaFighter::NoOpVirtualAt00556F40"]
+symbol = "?NoOpSlot9@RemiliaFighterActionsF159@@QAEXXZ"
+target_address = 0x00556F40
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-00574340]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::ForwardBaseActionAt00574340"]
+symbol = "?ForwardBaseAction@YuyukoFighterActionsF159@@QAEXXZ"
+target_address = 0x00574340
+size = 19
+[[units.fighter-forward-base-action-00574340.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-00574360]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::NoOpVirtualAt00574360"]
+symbol = "?NoOpSlot18@YuyukoFighterActionsF159@@QAEXXZ"
+target_address = 0x00574360
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-005791c0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YuyukoFighter::NoOpVirtualAt005791C0"]
+symbol = "?NoOpSlot9@YuyukoFighterActionsF159@@QAEXXZ"
+target_address = 0x005791C0
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-00597630]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::ForwardBaseActionAt00597630"]
+symbol = "?ForwardBaseAction@YukariFighterActionsF159@@QAEXXZ"
+target_address = 0x00597630
+size = 19
+[[units.fighter-forward-base-action-00597630.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-00597650]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::NoOpVirtualAt00597650"]
+symbol = "?NoOpSlot18@YukariFighterActionsF159@@QAEXXZ"
+target_address = 0x00597650
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-0059cd40]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["YukariFighter::NoOpVirtualAt0059CD40"]
+symbol = "?NoOpSlot9@YukariFighterActionsF159@@QAEXXZ"
+target_address = 0x0059CD40
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-005c0d40]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::ForwardBaseActionAt005C0D40"]
+symbol = "?ForwardBaseAction@SuikaFighterActionsF159@@QAEXXZ"
+target_address = 0x005C0D40
+size = 19
+[[units.fighter-forward-base-action-005c0d40.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-005c0d60]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::NoOpVirtualAt005C0D60"]
+symbol = "?NoOpSlot18@SuikaFighterActionsF159@@QAEXXZ"
+target_address = 0x005C0D60
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-005c5920]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SuikaFighter::NoOpVirtualAt005C5920"]
+symbol = "?NoOpSlot9@SuikaFighterActionsF159@@QAEXXZ"
+target_address = 0x005C5920
+size = 11
+relocations = []
+
+[units.fighter-forward-base-action-005e22e0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::ForwardBaseActionAt005E22E0"]
+symbol = "?ForwardBaseAction@MeilingFighterActionsF159@@QAEXXZ"
+target_address = 0x005E22E0
+size = 19
+[[units.fighter-forward-base-action-005e22e0.relocations]]
+offset = 11
+type = "REL32"
+symbol = "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00451EB0
+
+[units.fighter-no-op-slot18-005e2300]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::NoOpVirtualAt005E2300"]
+symbol = "?NoOpSlot18@MeilingFighterActionsF159@@QAEXXZ"
+target_address = 0x005E2300
+size = 11
+relocations = []
+
+[units.fighter-no-op-slot9-005e6f10]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["MeilingFighter::NoOpVirtualAt005E6F10"]
+symbol = "?NoOpSlot9@MeilingFighterActionsF159@@QAEXXZ"
+target_address = 0x005E6F10
+size = 11
+relocations = []
+
+[units.sakuya-reset-round-004c09a0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SakuyaFighter::ResetRound"]
+symbol = "?ResetRound@SakuyaFighterActionsF159@@QAEXXZ"
+target_address = 0x004C09A0
+size = 247
+[[units.sakuya-reset-round-004c09a0.relocations]]
+offset = 239
+type = "REL32"
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00457010
+
+[units.fighter-reset-round-00457010]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::ResetRound"]
+symbol = "?ResetRound@FighterBaseActionsF159@@QAEXXZ"
+target_address = 0x00457010
+size = 1151
+[[units.fighter-reset-round-00457010.relocations]]
+offset = 101
+type = "REL32"
+symbol = "?ClearAuxiliaryWords@FighterBaseActionsF159@@QAEXXZ"
+target = 0x00453A10
+[[units.fighter-reset-round-00457010.relocations]]
+offset = 877
+type = "REL32"
+symbol = "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ"
+target = 0x004071A0
+[[units.fighter-reset-round-00457010.relocations]]
+offset = 891
+type = "REL32"
+symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+target = 0x0045BA30
+
+[units.fighter-clear-auxiliary-words-00453a10]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::ClearAuxiliaryWordsAt00453A10"]
+symbol = "?ClearAuxiliaryWords@FighterBaseActionsF159@@QAEXXZ"
+target_address = 0x00453A10
+size = 89
+relocations = []
+
+[units.input-clear-held-counts-004071a0]
+source = "src/FighterVirtualActionsF159.cpp"
+object = "build/matching/FighterVirtualActionsF159.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["InputMapping::ClearHeldCounts"]
+symbol = "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ"
+target_address = 0x004071A0
+size = 30
+[[units.input-clear-held-counts-004071a0.relocations]]
+offset = 19
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490

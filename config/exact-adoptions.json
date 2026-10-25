@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e6594ed50eb2e9158ddc8110b649da470df02b9abf1f12f7c6bdc2241355288b"
+      "current_sha256": "2f10ada7c8a81a90416e7842e4d64b2c167c459310c3155a343e1f234bd70bf5"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a8888e9ba76d88439cf6a6bad6a9bc408e40b89ea018cf14b5220640482df799"
+      "current_sha256": "dd0b34d6ad3bb1c2f8f2e573ac8ed958ad4b590f9bf2a4ed85781c0314d177d9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "88b355e0f45708b0888e5560038001b25b178fce960c3f3ccd22c559db2caf84"
+      "current_sha256": "3fbcbb53f8c4b22d2ef3961f218826632ac947d6535510b72ddcf51f6586950a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f8490ba04f95ebf6def4159225cf1b9e32426fd453c1923538368b731f4d60eb"
+      "current_sha256": "79f135ccdc0c7a1dade4520bd970bf46757466e4a0772b29fc9491f5789f988c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "c28037877242f58427f5239b470a9a5cb374c2d9cb07f510c73f5e20a9495832"
+      "current_sha256": "3f7f4dbdf44aa75fd53637778ac6da4398e5f0629a053090e1efdefc9979bb50"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -12316,6 +12316,1590 @@
         "disposition": "authored",
         "confidence": "complete-explicit-game-table-and-indexed-counter-policy",
         "evidence_id": "R182"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D2D0",
+        "size": "19",
+        "span_end": "0x0046D2E2",
+        "current_name": "FUN_0046d2d0",
+        "proposed_name": "ReimuFighter::ForwardBaseActionAt0046D2D0",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0046D2D0",
+        "size": "19",
+        "span_end": "0x0046D2E2",
+        "current_name": "FUN_0046d2d0",
+        "proposed_name": "ReimuFighter::ForwardBaseActionAt0046D2D0",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReimuFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-0046d2d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation ReimuFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x0046D2D0",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D2F0",
+        "size": "11",
+        "span_end": "0x0046D2FA",
+        "current_name": "FUN_0046d2f0",
+        "proposed_name": "ReimuFighter::NoOpVirtualAt0046D2F0",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0046D2F0",
+        "size": "11",
+        "span_end": "0x0046D2FA",
+        "current_name": "FUN_0046d2f0",
+        "proposed_name": "ReimuFighter::NoOpVirtualAt0046D2F0",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReimuFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-0046d2f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation ReimuFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x0046D2F0",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00472450",
+        "size": "11",
+        "span_end": "0x0047245A",
+        "current_name": "FUN_00472450",
+        "proposed_name": "ReimuFighter::NoOpVirtualAt00472450",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00472450",
+        "size": "11",
+        "span_end": "0x0047245A",
+        "current_name": "FUN_00472450",
+        "proposed_name": "ReimuFighter::NoOpVirtualAt00472450",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ReimuFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-00472450",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation ReimuFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00472450",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00493440",
+        "size": "19",
+        "span_end": "0x00493452",
+        "current_name": "FUN_00493440",
+        "proposed_name": "MarisaFighter::ForwardBaseActionAt00493440",
+        "module": "MarisaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00493440",
+        "size": "19",
+        "span_end": "0x00493452",
+        "current_name": "FUN_00493440",
+        "proposed_name": "MarisaFighter::ForwardBaseActionAt00493440",
+        "module": "MarisaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MarisaFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-00493440",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation MarisaFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00493440",
+        "origin": "authored",
+        "subsystem": "MarisaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00493460",
+        "size": "11",
+        "span_end": "0x0049346A",
+        "current_name": "FUN_00493460",
+        "proposed_name": "MarisaFighter::NoOpVirtualAt00493460",
+        "module": "MarisaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00493460",
+        "size": "11",
+        "span_end": "0x0049346A",
+        "current_name": "FUN_00493460",
+        "proposed_name": "MarisaFighter::NoOpVirtualAt00493460",
+        "module": "MarisaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MarisaFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-00493460",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation MarisaFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00493460",
+        "origin": "authored",
+        "subsystem": "MarisaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C0AA0",
+        "size": "19",
+        "span_end": "0x004C0AB2",
+        "current_name": "FUN_004c0aa0",
+        "proposed_name": "SakuyaFighter::ForwardBaseActionAt004C0AA0",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004C0AA0",
+        "size": "19",
+        "span_end": "0x004C0AB2",
+        "current_name": "FUN_004c0aa0",
+        "proposed_name": "SakuyaFighter::ForwardBaseActionAt004C0AA0",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SakuyaFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-004c0aa0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SakuyaFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004C0AA0",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C0AC0",
+        "size": "11",
+        "span_end": "0x004C0ACA",
+        "current_name": "FUN_004c0ac0",
+        "proposed_name": "SakuyaFighter::NoOpVirtualAt004C0AC0",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004C0AC0",
+        "size": "11",
+        "span_end": "0x004C0ACA",
+        "current_name": "FUN_004c0ac0",
+        "proposed_name": "SakuyaFighter::NoOpVirtualAt004C0AC0",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SakuyaFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-004c0ac0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SakuyaFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004C0AC0",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C66A0",
+        "size": "11",
+        "span_end": "0x004C66AA",
+        "current_name": "FUN_004c66a0",
+        "proposed_name": "SakuyaFighter::NoOpVirtualAt004C66A0",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004C66A0",
+        "size": "11",
+        "span_end": "0x004C66AA",
+        "current_name": "FUN_004c66a0",
+        "proposed_name": "SakuyaFighter::NoOpVirtualAt004C66A0",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SakuyaFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-004c66a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SakuyaFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004C66A0",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E2EF0",
+        "size": "19",
+        "span_end": "0x004E2F02",
+        "current_name": "FUN_004e2ef0",
+        "proposed_name": "AliceFighter::ForwardBaseActionAt004E2EF0",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004E2EF0",
+        "size": "19",
+        "span_end": "0x004E2F02",
+        "current_name": "FUN_004e2ef0",
+        "proposed_name": "AliceFighter::ForwardBaseActionAt004E2EF0",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-004e2ef0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation AliceFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004E2EF0",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E2F10",
+        "size": "11",
+        "span_end": "0x004E2F1A",
+        "current_name": "FUN_004e2f10",
+        "proposed_name": "AliceFighter::NoOpVirtualAt004E2F10",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004E2F10",
+        "size": "11",
+        "span_end": "0x004E2F1A",
+        "current_name": "FUN_004e2f10",
+        "proposed_name": "AliceFighter::NoOpVirtualAt004E2F10",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-004e2f10",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation AliceFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004E2F10",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004E79A0",
+        "size": "11",
+        "span_end": "0x004E79AA",
+        "current_name": "FUN_004e79a0",
+        "proposed_name": "AliceFighter::NoOpVirtualAt004E79A0",
+        "module": "AliceFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x004E79A0",
+        "size": "11",
+        "span_end": "0x004E79AA",
+        "current_name": "FUN_004e79a0",
+        "proposed_name": "AliceFighter::NoOpVirtualAt004E79A0",
+        "module": "AliceFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AliceFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-004e79a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation AliceFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004E79A0",
+        "origin": "authored",
+        "subsystem": "AliceFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00502420",
+        "size": "19",
+        "span_end": "0x00502432",
+        "current_name": "FUN_00502420",
+        "proposed_name": "PatchouliFighter::ForwardBaseActionAt00502420",
+        "module": "PatchouliFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00502420",
+        "size": "19",
+        "span_end": "0x00502432",
+        "current_name": "FUN_00502420",
+        "proposed_name": "PatchouliFighter::ForwardBaseActionAt00502420",
+        "module": "PatchouliFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PatchouliFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-00502420",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation PatchouliFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00502420",
+        "origin": "authored",
+        "subsystem": "PatchouliFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00502440",
+        "size": "11",
+        "span_end": "0x0050244A",
+        "current_name": "FUN_00502440",
+        "proposed_name": "PatchouliFighter::NoOpVirtualAt00502440",
+        "module": "PatchouliFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00502440",
+        "size": "11",
+        "span_end": "0x0050244A",
+        "current_name": "FUN_00502440",
+        "proposed_name": "PatchouliFighter::NoOpVirtualAt00502440",
+        "module": "PatchouliFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PatchouliFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-00502440",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation PatchouliFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00502440",
+        "origin": "authored",
+        "subsystem": "PatchouliFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00507690",
+        "size": "11",
+        "span_end": "0x0050769A",
+        "current_name": "FUN_00507690",
+        "proposed_name": "PatchouliFighter::NoOpVirtualAt00507690",
+        "module": "PatchouliFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00507690",
+        "size": "11",
+        "span_end": "0x0050769A",
+        "current_name": "FUN_00507690",
+        "proposed_name": "PatchouliFighter::NoOpVirtualAt00507690",
+        "module": "PatchouliFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void PatchouliFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-00507690",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation PatchouliFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00507690",
+        "origin": "authored",
+        "subsystem": "PatchouliFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0052D200",
+        "size": "19",
+        "span_end": "0x0052D212",
+        "current_name": "FUN_0052d200",
+        "proposed_name": "YoumuFighter::ForwardBaseActionAt0052D200",
+        "module": "YoumuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0052D200",
+        "size": "19",
+        "span_end": "0x0052D212",
+        "current_name": "FUN_0052d200",
+        "proposed_name": "YoumuFighter::ForwardBaseActionAt0052D200",
+        "module": "YoumuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YoumuFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-0052d200",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YoumuFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x0052D200",
+        "origin": "authored",
+        "subsystem": "YoumuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0052D220",
+        "size": "11",
+        "span_end": "0x0052D22A",
+        "current_name": "FUN_0052d220",
+        "proposed_name": "YoumuFighter::NoOpVirtualAt0052D220",
+        "module": "YoumuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0052D220",
+        "size": "11",
+        "span_end": "0x0052D22A",
+        "current_name": "FUN_0052d220",
+        "proposed_name": "YoumuFighter::NoOpVirtualAt0052D220",
+        "module": "YoumuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YoumuFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-0052d220",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YoumuFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x0052D220",
+        "origin": "authored",
+        "subsystem": "YoumuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00531BC0",
+        "size": "11",
+        "span_end": "0x00531BCA",
+        "current_name": "FUN_00531bc0",
+        "proposed_name": "YoumuFighter::NoOpVirtualAt00531BC0",
+        "module": "YoumuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00531BC0",
+        "size": "11",
+        "span_end": "0x00531BCA",
+        "current_name": "FUN_00531bc0",
+        "proposed_name": "YoumuFighter::NoOpVirtualAt00531BC0",
+        "module": "YoumuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YoumuFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-00531bc0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YoumuFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00531BC0",
+        "origin": "authored",
+        "subsystem": "YoumuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00551BD0",
+        "size": "19",
+        "span_end": "0x00551BE2",
+        "current_name": "FUN_00551bd0",
+        "proposed_name": "RemiliaFighter::ForwardBaseActionAt00551BD0",
+        "module": "RemiliaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00551BD0",
+        "size": "19",
+        "span_end": "0x00551BE2",
+        "current_name": "FUN_00551bd0",
+        "proposed_name": "RemiliaFighter::ForwardBaseActionAt00551BD0",
+        "module": "RemiliaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RemiliaFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-00551bd0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation RemiliaFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00551BD0",
+        "origin": "authored",
+        "subsystem": "RemiliaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00551BF0",
+        "size": "11",
+        "span_end": "0x00551BFA",
+        "current_name": "FUN_00551bf0",
+        "proposed_name": "RemiliaFighter::NoOpVirtualAt00551BF0",
+        "module": "RemiliaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00551BF0",
+        "size": "11",
+        "span_end": "0x00551BFA",
+        "current_name": "FUN_00551bf0",
+        "proposed_name": "RemiliaFighter::NoOpVirtualAt00551BF0",
+        "module": "RemiliaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RemiliaFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-00551bf0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation RemiliaFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00551BF0",
+        "origin": "authored",
+        "subsystem": "RemiliaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00556F40",
+        "size": "11",
+        "span_end": "0x00556F4A",
+        "current_name": "FUN_00556f40",
+        "proposed_name": "RemiliaFighter::NoOpVirtualAt00556F40",
+        "module": "RemiliaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00556F40",
+        "size": "11",
+        "span_end": "0x00556F4A",
+        "current_name": "FUN_00556f40",
+        "proposed_name": "RemiliaFighter::NoOpVirtualAt00556F40",
+        "module": "RemiliaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RemiliaFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-00556f40",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation RemiliaFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00556F40",
+        "origin": "authored",
+        "subsystem": "RemiliaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00574340",
+        "size": "19",
+        "span_end": "0x00574352",
+        "current_name": "FUN_00574340",
+        "proposed_name": "YuyukoFighter::ForwardBaseActionAt00574340",
+        "module": "YuyukoFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00574340",
+        "size": "19",
+        "span_end": "0x00574352",
+        "current_name": "FUN_00574340",
+        "proposed_name": "YuyukoFighter::ForwardBaseActionAt00574340",
+        "module": "YuyukoFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YuyukoFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-00574340",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YuyukoFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00574340",
+        "origin": "authored",
+        "subsystem": "YuyukoFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00574360",
+        "size": "11",
+        "span_end": "0x0057436A",
+        "current_name": "FUN_00574360",
+        "proposed_name": "YuyukoFighter::NoOpVirtualAt00574360",
+        "module": "YuyukoFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00574360",
+        "size": "11",
+        "span_end": "0x0057436A",
+        "current_name": "FUN_00574360",
+        "proposed_name": "YuyukoFighter::NoOpVirtualAt00574360",
+        "module": "YuyukoFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YuyukoFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-00574360",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YuyukoFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00574360",
+        "origin": "authored",
+        "subsystem": "YuyukoFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005791C0",
+        "size": "11",
+        "span_end": "0x005791CA",
+        "current_name": "FUN_005791c0",
+        "proposed_name": "YuyukoFighter::NoOpVirtualAt005791C0",
+        "module": "YuyukoFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005791C0",
+        "size": "11",
+        "span_end": "0x005791CA",
+        "current_name": "FUN_005791c0",
+        "proposed_name": "YuyukoFighter::NoOpVirtualAt005791C0",
+        "module": "YuyukoFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YuyukoFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-005791c0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YuyukoFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005791C0",
+        "origin": "authored",
+        "subsystem": "YuyukoFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00597630",
+        "size": "19",
+        "span_end": "0x00597642",
+        "current_name": "FUN_00597630",
+        "proposed_name": "YukariFighter::ForwardBaseActionAt00597630",
+        "module": "YukariFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00597630",
+        "size": "19",
+        "span_end": "0x00597642",
+        "current_name": "FUN_00597630",
+        "proposed_name": "YukariFighter::ForwardBaseActionAt00597630",
+        "module": "YukariFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YukariFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-00597630",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YukariFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00597630",
+        "origin": "authored",
+        "subsystem": "YukariFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00597650",
+        "size": "11",
+        "span_end": "0x0059765A",
+        "current_name": "FUN_00597650",
+        "proposed_name": "YukariFighter::NoOpVirtualAt00597650",
+        "module": "YukariFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00597650",
+        "size": "11",
+        "span_end": "0x0059765A",
+        "current_name": "FUN_00597650",
+        "proposed_name": "YukariFighter::NoOpVirtualAt00597650",
+        "module": "YukariFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YukariFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-00597650",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YukariFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00597650",
+        "origin": "authored",
+        "subsystem": "YukariFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0059CD40",
+        "size": "11",
+        "span_end": "0x0059CD4A",
+        "current_name": "FUN_0059cd40",
+        "proposed_name": "YukariFighter::NoOpVirtualAt0059CD40",
+        "module": "YukariFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x0059CD40",
+        "size": "11",
+        "span_end": "0x0059CD4A",
+        "current_name": "FUN_0059cd40",
+        "proposed_name": "YukariFighter::NoOpVirtualAt0059CD40",
+        "module": "YukariFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void YukariFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-0059cd40",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation YukariFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x0059CD40",
+        "origin": "authored",
+        "subsystem": "YukariFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C0D40",
+        "size": "19",
+        "span_end": "0x005C0D52",
+        "current_name": "FUN_005c0d40",
+        "proposed_name": "SuikaFighter::ForwardBaseActionAt005C0D40",
+        "module": "SuikaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005C0D40",
+        "size": "19",
+        "span_end": "0x005C0D52",
+        "current_name": "FUN_005c0d40",
+        "proposed_name": "SuikaFighter::ForwardBaseActionAt005C0D40",
+        "module": "SuikaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SuikaFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-005c0d40",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SuikaFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005C0D40",
+        "origin": "authored",
+        "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C0D60",
+        "size": "11",
+        "span_end": "0x005C0D6A",
+        "current_name": "FUN_005c0d60",
+        "proposed_name": "SuikaFighter::NoOpVirtualAt005C0D60",
+        "module": "SuikaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005C0D60",
+        "size": "11",
+        "span_end": "0x005C0D6A",
+        "current_name": "FUN_005c0d60",
+        "proposed_name": "SuikaFighter::NoOpVirtualAt005C0D60",
+        "module": "SuikaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SuikaFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-005c0d60",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SuikaFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005C0D60",
+        "origin": "authored",
+        "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005C5920",
+        "size": "11",
+        "span_end": "0x005C592A",
+        "current_name": "FUN_005c5920",
+        "proposed_name": "SuikaFighter::NoOpVirtualAt005C5920",
+        "module": "SuikaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005C5920",
+        "size": "11",
+        "span_end": "0x005C592A",
+        "current_name": "FUN_005c5920",
+        "proposed_name": "SuikaFighter::NoOpVirtualAt005C5920",
+        "module": "SuikaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SuikaFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-005c5920",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SuikaFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005C5920",
+        "origin": "authored",
+        "subsystem": "SuikaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E22E0",
+        "size": "19",
+        "span_end": "0x005E22F2",
+        "current_name": "FUN_005e22e0",
+        "proposed_name": "MeilingFighter::ForwardBaseActionAt005E22E0",
+        "module": "MeilingFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005E22E0",
+        "size": "19",
+        "span_end": "0x005E22F2",
+        "current_name": "FUN_005e22e0",
+        "proposed_name": "MeilingFighter::ForwardBaseActionAt005E22E0",
+        "module": "MeilingFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MeilingFighterActionsF159::ForwardBaseAction()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-forward-base-action-005e22e0",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete19-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation MeilingFighterActionsF159::ForwardBaseAction. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005E22E0",
+        "origin": "authored",
+        "subsystem": "MeilingFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E2300",
+        "size": "11",
+        "span_end": "0x005E230A",
+        "current_name": "FUN_005e2300",
+        "proposed_name": "MeilingFighter::NoOpVirtualAt005E2300",
+        "module": "MeilingFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005E2300",
+        "size": "11",
+        "span_end": "0x005E230A",
+        "current_name": "FUN_005e2300",
+        "proposed_name": "MeilingFighter::NoOpVirtualAt005E2300",
+        "module": "MeilingFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MeilingFighterActionsF159::NoOpSlot18()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot18-005e2300",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation MeilingFighterActionsF159::NoOpSlot18. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005E2300",
+        "origin": "authored",
+        "subsystem": "MeilingFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x005E6F10",
+        "size": "11",
+        "span_end": "0x005E6F1A",
+        "current_name": "FUN_005e6f10",
+        "proposed_name": "MeilingFighter::NoOpVirtualAt005E6F10",
+        "module": "MeilingFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x005E6F10",
+        "size": "11",
+        "span_end": "0x005E6F1A",
+        "current_name": "FUN_005e6f10",
+        "proposed_name": "MeilingFighter::NoOpVirtualAt005E6F10",
+        "module": "MeilingFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void MeilingFighterActionsF159::NoOpSlot9()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R060; cold VC7 explicit virtual source, complete body, CFG and fighter vtable slot; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-no-op-slot9-005e6f10",
+        "owner": "authored",
+        "notes": "Origin reviewed; action role inferred; source and exact state independent; F159: complete11-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation MeilingFighterActionsF159::NoOpSlot9. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x005E6F10",
+        "origin": "authored",
+        "subsystem": "MeilingFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R060"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004C09A0",
+        "size": "247",
+        "span_end": "0x004C0A96",
+        "current_name": "FUN_004c09a0",
+        "proposed_name": "SakuyaFighter::ResetRound",
+        "module": "SakuyaFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004C09A0",
+        "size": "247",
+        "span_end": "0x004C0A96",
+        "current_name": "FUN_004c09a0",
+        "proposed_name": "SakuyaFighter::ResetRound",
+        "module": "SakuyaFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SakuyaFighterActionsF159::ResetRound()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R050; whole body hash, complete CFG, character constructor/factory chain and local behavior reviewed; F159; scripts/repo-python scripts/replay-exact-units.py --unit sakuya-reset-round-004c09a0",
+        "owner": "authored",
+        "notes": "Origin reviewed; method name and complete class layout inferred; source and exact state remain independent; F159: complete247-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation SakuyaFighterActionsF159::ResetRound. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004C09A0",
+        "origin": "authored",
+        "subsystem": "SakuyaFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R050"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00457010",
+        "size": "1151",
+        "span_end": "0x0045748E",
+        "current_name": "FUN_00457010",
+        "proposed_name": "FighterState::ResetRound",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00457010",
+        "size": "1151",
+        "span_end": "0x0045748E",
+        "current_name": "FUN_00457010",
+        "proposed_name": "FighterState::ResetRound",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBaseActionsF159::ResetRound()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-reset-round-00457010",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F159: complete1151-byte canonical cold exact, soleRET0/all real exits and 3 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation FighterBaseActionsF159::ResetRound. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00457010",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453A10",
+        "size": "89",
+        "span_end": "0x00453A68",
+        "current_name": "FUN_00453a10",
+        "proposed_name": "FighterState::ClearAuxiliaryWordsAt00453A10",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453A10",
+        "size": "89",
+        "span_end": "0x00453A68",
+        "current_name": "FUN_00453a10",
+        "proposed_name": "FighterState::ClearAuxiliaryWordsAt00453A10",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBaseActionsF159::ClearAuxiliaryWords()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F159; scripts/repo-python scripts/replay-exact-units.py --unit fighter-clear-auxiliary-words-00453a10",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F159: complete89-byte canonical cold exact, soleRET0/all real exits and 0 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation FighterBaseActionsF159::ClearAuxiliaryWords. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x00453A10",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004071A0",
+        "size": "30",
+        "span_end": "0x004071BD",
+        "current_name": "FUN_004071a0",
+        "proposed_name": "InputMapping::ClearHeldCounts",
+        "module": "InputMapping",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x004071A0",
+        "size": "30",
+        "span_end": "0x004071BD",
+        "current_name": "FUN_004071a0",
+        "proposed_name": "InputMapping::ClearHeldCounts",
+        "module": "InputMapping",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RoundResetInputCountsF159::ClearHeldCounts()",
+        "is_thunk": "false",
+        "source_file": "src/FighterVirtualActionsF159.cpp",
+        "evidence": "R015; F159; scripts/repo-python scripts/replay-exact-units.py --unit input-clear-held-counts-004071a0",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F159: complete30-byte canonical cold exact, soleRET0/all real exits and 1 actual REL32 fields. Original provisional role retained; explicit match unit maps this role to call-only implementation RoundResetInputCountsF159::ClearHeldCounts. Used no-argument thiscall contract; receiver views never instantiated/embedded and do not establish complete owners, vtable interfaces, original nominal types or bounds. R060 constructor/vtable/explicit override evidence and all frozen origin/verifier names/hashes stay unchanged; R015 historical blank function.owner only mirrors its already-authored origin at source adoption. Repeated native field writes, bool-derived position/facing, actual 28-byte input range and true slot0 dispatch are retained where present. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. This batch cold-builds only the new shared object; all339 prior units/140 objects/218 inputs,97 unknown origins and both complete pending large drafts stay unchanged."
+      },
+      "origin": {
+        "address": "0x004071A0",
+        "origin": "authored",
+        "subsystem": "InputMapping",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
       }
     }
   ],
@@ -140021,6 +141605,908 @@
       "target_address": 4541696,
       "size": 79,
       "relocations": []
+    },
+    "fighter-forward-base-action-0046d2d0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::ForwardBaseActionAt0046D2D0"
+      ],
+      "symbol": "?ForwardBaseAction@ReimuFighterActionsF159@@QAEXXZ",
+      "target_address": 4641488,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-0046d2f0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::NoOpVirtualAt0046D2F0"
+      ],
+      "symbol": "?NoOpSlot18@ReimuFighterActionsF159@@QAEXXZ",
+      "target_address": 4641520,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-00472450": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ReimuFighter::NoOpVirtualAt00472450"
+      ],
+      "symbol": "?NoOpSlot9@ReimuFighterActionsF159@@QAEXXZ",
+      "target_address": 4662352,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-00493440": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MarisaFighter::ForwardBaseActionAt00493440"
+      ],
+      "symbol": "?ForwardBaseAction@MarisaFighterActionsF159@@QAEXXZ",
+      "target_address": 4797504,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-00493460": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MarisaFighter::NoOpVirtualAt00493460"
+      ],
+      "symbol": "?NoOpSlot18@MarisaFighterActionsF159@@QAEXXZ",
+      "target_address": 4797536,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-004c0aa0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::ForwardBaseActionAt004C0AA0"
+      ],
+      "symbol": "?ForwardBaseAction@SakuyaFighterActionsF159@@QAEXXZ",
+      "target_address": 4983456,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-004c0ac0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::NoOpVirtualAt004C0AC0"
+      ],
+      "symbol": "?NoOpSlot18@SakuyaFighterActionsF159@@QAEXXZ",
+      "target_address": 4983488,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-004c66a0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::NoOpVirtualAt004C66A0"
+      ],
+      "symbol": "?NoOpSlot9@SakuyaFighterActionsF159@@QAEXXZ",
+      "target_address": 5007008,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-004e2ef0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::ForwardBaseActionAt004E2EF0"
+      ],
+      "symbol": "?ForwardBaseAction@AliceFighterActionsF159@@QAEXXZ",
+      "target_address": 5123824,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-004e2f10": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::NoOpVirtualAt004E2F10"
+      ],
+      "symbol": "?NoOpSlot18@AliceFighterActionsF159@@QAEXXZ",
+      "target_address": 5123856,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-004e79a0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "AliceFighter::NoOpVirtualAt004E79A0"
+      ],
+      "symbol": "?NoOpSlot9@AliceFighterActionsF159@@QAEXXZ",
+      "target_address": 5142944,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-00502420": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "PatchouliFighter::ForwardBaseActionAt00502420"
+      ],
+      "symbol": "?ForwardBaseAction@PatchouliFighterActionsF159@@QAEXXZ",
+      "target_address": 5252128,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-00502440": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "PatchouliFighter::NoOpVirtualAt00502440"
+      ],
+      "symbol": "?NoOpSlot18@PatchouliFighterActionsF159@@QAEXXZ",
+      "target_address": 5252160,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-00507690": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "PatchouliFighter::NoOpVirtualAt00507690"
+      ],
+      "symbol": "?NoOpSlot9@PatchouliFighterActionsF159@@QAEXXZ",
+      "target_address": 5273232,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-0052d200": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YoumuFighter::ForwardBaseActionAt0052D200"
+      ],
+      "symbol": "?ForwardBaseAction@YoumuFighterActionsF159@@QAEXXZ",
+      "target_address": 5427712,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-0052d220": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YoumuFighter::NoOpVirtualAt0052D220"
+      ],
+      "symbol": "?NoOpSlot18@YoumuFighterActionsF159@@QAEXXZ",
+      "target_address": 5427744,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-00531bc0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YoumuFighter::NoOpVirtualAt00531BC0"
+      ],
+      "symbol": "?NoOpSlot9@YoumuFighterActionsF159@@QAEXXZ",
+      "target_address": 5446592,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-00551bd0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RemiliaFighter::ForwardBaseActionAt00551BD0"
+      ],
+      "symbol": "?ForwardBaseAction@RemiliaFighterActionsF159@@QAEXXZ",
+      "target_address": 5577680,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-00551bf0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RemiliaFighter::NoOpVirtualAt00551BF0"
+      ],
+      "symbol": "?NoOpSlot18@RemiliaFighterActionsF159@@QAEXXZ",
+      "target_address": 5577712,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-00556f40": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "RemiliaFighter::NoOpVirtualAt00556F40"
+      ],
+      "symbol": "?NoOpSlot9@RemiliaFighterActionsF159@@QAEXXZ",
+      "target_address": 5599040,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-00574340": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YuyukoFighter::ForwardBaseActionAt00574340"
+      ],
+      "symbol": "?ForwardBaseAction@YuyukoFighterActionsF159@@QAEXXZ",
+      "target_address": 5718848,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-00574360": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YuyukoFighter::NoOpVirtualAt00574360"
+      ],
+      "symbol": "?NoOpSlot18@YuyukoFighterActionsF159@@QAEXXZ",
+      "target_address": 5718880,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-005791c0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YuyukoFighter::NoOpVirtualAt005791C0"
+      ],
+      "symbol": "?NoOpSlot9@YuyukoFighterActionsF159@@QAEXXZ",
+      "target_address": 5738944,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-00597630": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YukariFighter::ForwardBaseActionAt00597630"
+      ],
+      "symbol": "?ForwardBaseAction@YukariFighterActionsF159@@QAEXXZ",
+      "target_address": 5862960,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-00597650": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YukariFighter::NoOpVirtualAt00597650"
+      ],
+      "symbol": "?NoOpSlot18@YukariFighterActionsF159@@QAEXXZ",
+      "target_address": 5862992,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-0059cd40": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "YukariFighter::NoOpVirtualAt0059CD40"
+      ],
+      "symbol": "?NoOpSlot9@YukariFighterActionsF159@@QAEXXZ",
+      "target_address": 5885248,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-005c0d40": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SuikaFighter::ForwardBaseActionAt005C0D40"
+      ],
+      "symbol": "?ForwardBaseAction@SuikaFighterActionsF159@@QAEXXZ",
+      "target_address": 6032704,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-005c0d60": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SuikaFighter::NoOpVirtualAt005C0D60"
+      ],
+      "symbol": "?NoOpSlot18@SuikaFighterActionsF159@@QAEXXZ",
+      "target_address": 6032736,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-005c5920": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SuikaFighter::NoOpVirtualAt005C5920"
+      ],
+      "symbol": "?NoOpSlot9@SuikaFighterActionsF159@@QAEXXZ",
+      "target_address": 6052128,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-forward-base-action-005e22e0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MeilingFighter::ForwardBaseActionAt005E22E0"
+      ],
+      "symbol": "?ForwardBaseAction@MeilingFighterActionsF159@@QAEXXZ",
+      "target_address": 6169312,
+      "size": 19,
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?SelectMovementAnimation@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4529840
+        }
+      ]
+    },
+    "fighter-no-op-slot18-005e2300": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MeilingFighter::NoOpVirtualAt005E2300"
+      ],
+      "symbol": "?NoOpSlot18@MeilingFighterActionsF159@@QAEXXZ",
+      "target_address": 6169344,
+      "size": 11,
+      "relocations": []
+    },
+    "fighter-no-op-slot9-005e6f10": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "MeilingFighter::NoOpVirtualAt005E6F10"
+      ],
+      "symbol": "?NoOpSlot9@MeilingFighterActionsF159@@QAEXXZ",
+      "target_address": 6188816,
+      "size": 11,
+      "relocations": []
+    },
+    "sakuya-reset-round-004c09a0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SakuyaFighter::ResetRound"
+      ],
+      "symbol": "?ResetRound@SakuyaFighterActionsF159@@QAEXXZ",
+      "target_address": 4983200,
+      "size": 247,
+      "relocations": [
+        {
+          "offset": 239,
+          "type": "REL32",
+          "symbol": "?ResetRound@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4550672
+        }
+      ]
+    },
+    "fighter-reset-round-00457010": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::ResetRound"
+      ],
+      "symbol": "?ResetRound@FighterBaseActionsF159@@QAEXXZ",
+      "target_address": 4550672,
+      "size": 1151,
+      "relocations": [
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryWords@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 877,
+          "type": "REL32",
+          "symbol": "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ",
+          "target": 4223392
+        },
+        {
+          "offset": 891,
+          "type": "REL32",
+          "symbol": "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ",
+          "target": 4569648
+        }
+      ]
+    },
+    "fighter-clear-auxiliary-words-00453a10": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::ClearAuxiliaryWordsAt00453A10"
+      ],
+      "symbol": "?ClearAuxiliaryWords@FighterBaseActionsF159@@QAEXXZ",
+      "target_address": 4536848,
+      "size": 89,
+      "relocations": []
+    },
+    "input-clear-held-counts-004071a0": {
+      "source": "src/FighterVirtualActionsF159.cpp",
+      "object": "build/matching/FighterVirtualActionsF159.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "InputMapping::ClearHeldCounts"
+      ],
+      "symbol": "?ClearHeldCounts@RoundResetInputCountsF159@@QAEXXZ",
+      "target_address": 4223392,
+      "size": 30,
+      "relocations": [
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -140241,6 +142727,8 @@
     "src/FighterResourceParameters452B30.hpp": "8d089f86d65a9c87193d9bee76e45f89f48a10039b0462d9344f01b0c5783d76",
     "src/FighterAnimationReset453D80.cpp": "eb7ee9987a7041ffd459d3adcce9fa62372f6459b6ea6a41f7030180539ab8f8",
     "src/FighterAnimationReset453D80.hpp": "b870bf983b337d8495ddbb1d3a1765cfdc09f9ec4c0e155925b94a742b5c4319",
-    "src/ProfileSelection454D00.cpp": "862ac22dfa8014eb5c4375c2683d80a1c6f6cea913627b3c0932a0d2f10f3ec0"
+    "src/ProfileSelection454D00.cpp": "862ac22dfa8014eb5c4375c2683d80a1c6f6cea913627b3c0932a0d2f10f3ec0",
+    "src/FighterVirtualActionsF159.cpp": "89a9a17fea1ddf2f984a27c5fa8bdbb4d195cc70b8ff8df3e23cfd35b0a865e1",
+    "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c"
   }
 }

@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for continued reconstruction, F158.
+Updated 2026-10-25 for continued reconstruction, F159.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F158 adds one complete79-byte counter. Both large
-drafts remain unaccepted. The current F158 outcomes below supersede the
-historical F157 pending-work notes.
+phases remain deferred. F159 accepts36 complete functions/1,957 bytes. Both
+large drafts remain unaccepted. Current F159 outcomes supersede the historical
+F156..F158 pending-work instructions.
 
 ## Verified reconstruction state
 
@@ -17,14 +17,14 @@ historical F157 pending-work notes.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 339 / 339 / 339 |
-| Exact code bytes | 717,588 |
-| Reviewed authored coverage | 717,588 / 1,973,516 (36.36%) |
-| Conservative coverage, including pending bytes | 717,588 / 1,977,124 (36.29%) |
-| Canonical objects / accepted source-header inputs | 140 / 218 |
+| Source-present / exact functions / exact units | 375 / 375 / 375 |
+| Exact code bytes | 719,545 |
+| Reviewed authored coverage | 719,545 / 1,973,516 (36.46%) |
+| Conservative coverage, including pending bytes | 719,545 / 1,977,124 (36.39%) |
+| Canonical objects / accepted source-header inputs | 141 / 220 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 279 additions / 707,705 code bytes / 218 inputs. Origin evidence through
+F009 plus 315 additions / 709,662 code bytes / 220 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -33,8 +33,9 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **f8f655c (F156)**; its predecessor
-is **d197080 (F155)**. Policy correction **7f34a0b** explicitly prohibits pausing.
+The preceding reconstruction checkpoint is **cbda145 (F158)**. Earlier
+checkpoints include **f8f655c (F156)** and **d197080 (F155)**. Policy correction
+**7f34a0b** explicitly prohibits pausing.
 F156 accepts the complete 149-byte R068 callback
 `fighter-bind-animation-00453d80` in `src/FighterAnimationReset453D80.cpp`.
 One canonical cold build passed 149/149 bytes with all five actual REL32 fields.
@@ -45,7 +46,8 @@ F155 accepts the complete215-byte R109 policy
 `fighter-resource-parameters-00452b30` in
 `src/FighterResourceParameters452B30.cpp`. One canonical cold build passed
 215/215 bytes, all seven actual relocation fields included. Its R182 counter
-callee remains unaccepted: two complete79-byte controls each have23 differences.
+callee was then unaccepted: two complete79-byte controls each had23 differences.
+F158 subsequently accepted that complete counter, as recorded below.
 Only the resource policy gains credit. The large caller uses its canonical header.
 
 F154 accepts three whole R213/R239 policies in
@@ -62,7 +64,74 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F158 outcomes
+## Current F159 outcomes and next work
+
+One canonical cold build accepts36 complete authored functions /1,957 code bytes
+in `src/FighterVirtualActionsF159.cpp`, with its new call-only header:
+
+| Reviewed cohort | Functions | Code bytes |
+| --- | --- | --- |
+| R060 action forwards / no-op overrides | 32 | 440 |
+| R050 Sakuya round reset004C09A0 | 1 | 247 |
+| R045 base round reset00457010 | 1 | 1,151 |
+| R103 clear-six-DWORD policy00453A10 | 1 | 89 |
+| R015 held-count clear004071A0 | 1 | 30 |
+
+All36 pass complete canonical replay, including all16 actual REL32 fields.
+Each source body is a sole complete code COMDAT, every extent/soleRET0 and all
+following excluded INT3 alignment were checked. Original provisional native
+role names remain unchanged. Explicit unit role-to-COFF mappings use distinct
+call-only receiver views, avoiding conflicts with accepted Reimu/Meiling owner
+declarations. No frozen origin role/verifier or alias guard was changed. No
+receiver is instantiated/embedded or treated as a complete owner/vtable layout.
+The historical blank function.owner on R015 only mirrors its already-authored
+origin at source adoption; origin ownership itself is unchanged.
+
+The Sakuya slot6 policy preserves19 ordered word-zero stores, including repeated
+F16, then calls the complete base reset. The base reset preserves repeated3A0
+and6E6 writes, bool-derived positions/facing, true slot0 animation dispatch,
+the actual28-byte input-clear range and owned-effect cleanup. Existing animation
+header/source are unchanged. Only the new shared object was cold-built; all339
+prior units/140 objects/218 inputs, all97 unknown origins and full pending-byte
+denominator remain unchanged. Base action451EB0 and effect cleanup45BA30 remain
+independently reviewed authored callees awaiting their own source/exact credit.
+
+Two headless compiler traces use33 genuine reviewed method bodies in one TU.
+Both observe33 entries and33 cursor initializations. Reordering the real247-byte
+Sakuya reset first yields19 mapping events before the next entry: cursor/head2
+is then reset to head1. The captured return PC10774FAC independently identifies
+actual CALL10774FA7->10775782 in the pinned C2 image. All33 complete function
+bodies/687 bytes and12 actual fields remain identical across the orders. This
+closes carryover of this cursor phase from a preceding function on the observed
+3077/profile path. Other global state, full C2 CFG and original target compiler/
+virtual state remain unknown. No filler functions or queue/tool/target mutation
+were used. Reports are under `.analysis/f159-action-slots/`.
+
+Continue the full98% goal without pausing:
+
+1. Seed fresh F160 from `.analysis/character-move-4ac040/f159/`. All151 entries,
+   prefix/default/shared tail and headers remain byte-identical to F158/F156;
+   source SHA prefix97e045e6. The full failure is still83,922 bytes/18,539
+   positions/all2,352 fields, first difference004ADEFB (state89 receiverEAX
+   native versusEDX emitted). Seek genuine source/type/expression evidence.
+   The observed cursor phase is reset across function boundaries; do not add
+   unrelated function bodies or inert work to try to force it.
+2. The directly related R045 base movement policy00451EB0 is742 bytes and already
+   declared as `FighterBaseActionsF159::SelectMovementAnimation()`. Review its
+   complete control flow/owned data before reconstruction. Its body can go in a
+   new source including the unchanged F159 header, without changing the36 newly
+   accepted bodies or replaying them unnecessarily. The R109 effect cleanup
+   0045BA30/221 bytes is another independently reviewed direct dependency.
+3. Preserve375 exact units,141 canonical objects,220 inputs, both F159 trace
+   objects, all14 F157 probes and every prior active object/checkpoint. Both
+   large functions and all pending code stay in the full conservative denominator.
+   No fake ABI/layout/padding, aliases/masks/crops/rebasing or compiler queue edits.
+
+Receipts: `.analysis/f159-actions-unit-proof.json`,
+`.analysis/f159-actions-canonical-replay.json`, F159 `source-evidence-audit.json`,
+`allocator-init-correlation.json` and `allocator-reordered-correlation.json`.
+
+## Retained F158 outcomes
 
 The complete R182 counter `profile-increment-counter-00454d00` is accepted from
 `src/ProfileSelection454D00.cpp`: canonical cold replay79/79 bytes, all20
@@ -98,14 +167,12 @@ the hash-pinned C2 image. It supersedes the incomplete empty F157 shortlist.
 Indirect writes and complete compiler CFG remain outside that evidence; tool
 files, compiler queues and target bytes were not changed.
 
-## Active cohort: complete 004AC040 after F156
+## Retained F156 complete004AC040 baseline evidence
 
-Continue matching now. Read the current F158 outcomes above before choosing a
-new experiment; the following retained F156 details explain the baseline. The authoritative F156
-source and accepted counts below remain unchanged. The loose F157 `Preview.cpp`
-is an unreviewed prefix-increment experiment, not the baseline.
-
-The authoritative private source is **`.analysis/character-move-4ac040/f156/`**.
+Current continuation instructions are in the F159 section above. The retained
+F156 source/body/whole-failure measurements remain unchanged. The loose F157
+Preview is the closed all-prefix control. The retained baseline source is
+**`.analysis/character-move-4ac040/f156/`**.
 All **151/151 nondefault entries** plus the real prefix/default/shared tail are
 in one complete source body. Current `Preview.cpp` is byte-identical to the
 compiled `snapshots/baseline-dataflow/Preview.cpp`, SHA-256:
@@ -116,7 +183,7 @@ The draft remains unaccepted, with no source-presence or exact credit.
    `baseline-dataflow-relational-dataflow.json`, `closed-controls.json` and
    `.analysis/f156-animation-reset-unit-proof.json`. Retain F153..F155 audits,
    actual source transformations and the complete/focused compiler traces.
-2. F157 already exists; preserve it and seed a fresh turn before edits. Keep
+2. F157..F159 already exist; preserve them and seed fresh F160 before edits. Keep
    `F156BaselineDataflow.obj`, both active F155 and F154 objects, all three
    positive F153 objects, `F152Complete.obj`
    and every earlier active object. Preserve all native evidence and snapshots.
@@ -570,3 +637,29 @@ Receipts: `.analysis/f158-counter-unit-proof.json`,
 `.analysis/f158-cleanup.json` and `.analysis/f158-source-checkpoint.json`.
 Current exact code is717,588 bytes across339 units; conservative coverage36.29%.
 The98% objective stays active and incomplete. Do not pause it.
+
+## F159 verification
+
+Public CI passed **3,603 tests in 175.094 seconds**. Target,
+tracking, status, progress card and diff checks pass. One new canonical object
+cold-replayed36/36 complete authored units,1,957 bytes and all16 actual REL32
+fields. All339 prior units,140 objects,218 source/header inputs, all origin
+records/verifier guards, forty protected groups, fourteen F157 probes and prior
+active objects were hash-verified unchanged. No old dependency required replay.
+
+Four compiler builds ran serially/headless: two33-function compiler observations,
+one36-function diagnostic and one36-unit canonical cold build. The reordered
+trace observes a real allocating predecessor leave head2, followed by initializer
+reset to head1; all687 code bytes/12 fields are unchanged between orders. Original
+target virtual state/other compiler globals remain unknown. No filler, tool/target
+patch or queue mutation. The complete151-entry move source is unchanged, with
+its full83,922-byte/18,539-position failure/all2,352 fields retained.
+
+Cleanup removed one obsolete diagnostic object (23,185 bytes)
+and376 bytecode files (8,297,864 bytes). Full sources,
+profiles, raw native/function/relocation evidence, logs and both F159 trace
+objects remain. Receipts: `.analysis/f159-actions-unit-proof.json`,
+`.analysis/f159-actions-canonical-replay.json`, `.analysis/f159-preservation-final.json`,
+`.analysis/f159-cleanup.json` and `.analysis/f159-source-checkpoint.json`.
+Current exact code is719,545 bytes/375 units; conservative coverage36.39%.
+The98% goal remains active and incomplete. Do not pause it.

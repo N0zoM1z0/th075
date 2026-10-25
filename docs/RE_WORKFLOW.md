@@ -25,7 +25,7 @@ origin evidence. Record a durable origin batch before attempting exact credit.
 
 The user confirmed on 2026-10-25 that the 98% authored-byte objective remains
 active and explicitly prohibited pausing it. Do not pause the goal. Continue
-the current cohort and pending F157 work in `RE_HANDOFF.md`. Cleanup, handoff,
+the current cohort and reviewed dependencies in `RE_HANDOFF.md`. Cleanup, handoff,
 verification and commits are part of ongoing reconstruction and do not require
 another resume request. Earlier cleared-goal instructions are superseded.
 Preserve all 97 pending origins and count every pending byte in the
