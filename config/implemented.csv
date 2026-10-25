@@ -397,3 +397,8 @@ InputMapping::SetBindings
 FighterState::SetBindingsAt00457490
 FighterState::BindOpponentAt004574B0
 BattleState::RecordRoundFields
+BattleScene::ResolveKnockout
+ProgressRecords::MarkCardFlag
+ProgressRecords::IncrementCardCounter
+ProgressRecords::GetCardValue
+ProgressRecords::SetCardValue

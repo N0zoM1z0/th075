@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F171.
+Updated 2026-10-26 for continued reconstruction, F172.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F171 accepts four complete binding/round-record
+[RE_HANDOFF.md](RE_HANDOFF.md). F172 accepts five complete knockout/progress
 functions; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
@@ -16,15 +16,44 @@ functions; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 399 units,
-  726,428 code bytes, 154 canonical objects and 244 accepted inputs.
-- Reviewed authored coverage is 36.81%; conservative coverage is 36.74%.
+  complete cold-exact units/all actual relocations. Counts are 404 units,
+  727,784 code bytes, 155 canonical objects and 246 accepted inputs.
+- Reviewed authored coverage is 36.88%; conservative coverage is 36.81%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F172 accepted knockout/progress:** one new canonical object cold-replays
+five complete R041/R043 bodies:43C930/1150,43D430/44,43D3E0/79,43D460/40 and
+43D3B0/43;1,356 CODE/all16 fields (4 REL32/12 DIR32), CFGs/RET0/4/4/4/8/alignment
+verified. Source `KnockoutProgressF172.cpp` retains both knockout branches,
+clock1/bonus/card flag/counter/value maximum, ESI-cached second receiver through
+the getter, unsigned score maximum, state/timer writes and signed continuation.
+Reuse canonical records6718F8/clock66C238/score maximum6714B0/continuation671622;
+interpret the last unsigned byte carrier as signed only at its native signed
+read. Complete native dword read/add/write establishes reference-only67160C
+accumulation view, without new allocation/data-owner credit. Helpers use signed
+category16AC4*17F0 and signed key indexing: byte4C0 flag, unsignedword268
+postincrement and dword10 get/set. Indexed bounds, original nominal identities
+and complete owner layouts remain unknown; no instances or embedding. Original
+roles remain literal via explicit COFF maps. No inert locals, padding, fake
+returns, ABI tricks, assembly, conditional bodies, masks, crops or rebasing.
+Four zero-field descriptors explicitly declare `relocations = []` before cold.
+All399 old units/154 objects/244 inputs, existing headers/origin/verifier guards,
+13 active objects/all14 F157/both F159 remain unchanged. Only these five new
+units/one object were cold-replayed.
+
+Immediately continue complete round-end/HUD cohort43CDB0/599 (R041),43D360/66
+(R043),43D490/59 and43D4D0/154 (R043). Review complete native flows, used ABI,
+callee/global contracts and alignment before full sources/comparisons. Preserve
+all failed large functions/all97 unknowns/every pending byte in the denominator.
+Continue this action immediately after checkpoint/cleanup/commit/push; no pause.
+Receipts: `.analysis/f172-knockout-unit-proof.json`,
+`.analysis/f172-knockout-canonical-replay.json`, native cohort proof and five
+whole zero diagnostics/source/profile snapshots under `.analysis/f172-knockout/`.
 
 **F171 accepted binding/round records:** one new canonical object cold-replays
 four whole R015/R100/R103/R054 functions:406E10/110,457490/31,4574B0/25 and

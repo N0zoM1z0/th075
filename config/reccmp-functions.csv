@@ -398,3 +398,8 @@ InputMapping::SetBindings,0x00406E10,function
 FighterState::SetBindingsAt00457490,0x00457490,function
 FighterState::BindOpponentAt004574B0,0x004574B0,function
 BattleState::RecordRoundFields,0x004574D0,function
+BattleScene::ResolveKnockout,0x0043C930,function
+ProgressRecords::MarkCardFlag,0x0043D430,function
+ProgressRecords::IncrementCardCounter,0x0043D3E0,function
+ProgressRecords::GetCardValue,0x0043D460,function
+ProgressRecords::SetCardValue,0x0043D3B0,function

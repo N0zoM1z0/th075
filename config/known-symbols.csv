@@ -380,3 +380,8 @@ address,name,module,confidence,evidence
 0x00457490,FighterState::SetBindingsAt00457490,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004574B0,FighterState::BindOpponentAt004574B0,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004574D0,BattleState::RecordRoundFields,BattleState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043C930,BattleScene::ResolveKnockout,BattleScene,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D430,ProgressRecords::MarkCardFlag,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D3E0,ProgressRecords::IncrementCardCounter,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D460,ProgressRecords::GetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x0043D3B0,ProgressRecords::SetCardValue,ProgressRecords,inferred,F172; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
