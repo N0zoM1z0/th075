@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F173.
+Updated 2026-10-26 for continued reconstruction, F174.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F173 accepts four complete round-end, counter and HUD
+[RE_HANDOFF.md](RE_HANDOFF.md). F174 accepts eight complete progress, pause and player-effects
 functions; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
@@ -16,15 +16,50 @@ functions; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 408 units,
-  728,662 code bytes, 156 canonical objects and 248 accepted inputs.
-- Reviewed authored coverage is 36.92%; conservative coverage is 36.85%.
+  complete cold-exact units/all actual relocations. Counts are 416 units,
+  729,731 code bytes, 157 canonical objects and 250 accepted inputs.
+- Reviewed authored coverage is 36.98%; conservative coverage is 36.91%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F174 accepted progress/pause/effects:** eight whole R103/R045/R042 functions
+in `ProgressPauseF174.cpp` pass one canonical cold build: 441FE0/44,442010/44,
+4451D0/55,445210/55,445250/50,445290/50,4456F0/314 and445830/457. All1,069 CODE
+bytes and25 actual fields (13 REL32/12 DIR32), CFGs, RET4/4/4/4/0/0/0/0 and
+alignment are verified. Six zero-field descriptors explicitly retain empty
+relocation lists. Full reader MOVZX EAX and both caller immediate PUSH EAX uses
+support the zero-extended dword result view; nominal types remain unknown.
+Signed category16AC4*17F0/key word268/394 and selector16AC5*5FC dword8/12 remain.
+There are no complete indexed bounds/layout claims or partial owner instances.
+
+Pause keeps polling/key chord/Escape counter/held index6/state and mode guards,
+int-promoted logical toggle/menu reset/sound48/global byte mirror. Effects keep
+the two real loops, state/byte guards, clears and3600-frame countdown. Real i/j
+indices reproduce native frame slots4/8 without added storage. Existing globals,
+headers and canonical call contracts are reused; physical addends24/24/8 address
+known28-byte held blocks72apart. Initial narrow returns differed twice each;
+byte logical result emitted315 bytes/65 differences; initial index names swapped
+frame slots/23 differences. Complete rejected sources/objects/diagnostics are
+retained. Natural observed carrier/promotion/index changes resolve all bytes;
+no padding, inert locals, fake returns, ABI tricks, assembly, conditional bodies,
+masks, crops, aliases or rebasing. Referenced260-byte R054455B30 remains pending,
+with no exact credit; its used no-argument thiscall/plain-RET flow is checked.
+All408 prior units/156 objects/248 inputs and active/frozen evidence remain
+unchanged. Only eight new units/one object were cold-replayed. All97 unknowns
+and all pending bytes remain in the conservative denominator.
+
+Immediately continue full R0424461D0/751 pause menu and4480D0/788 debug policy;
+review full CFGs, owned tables, ABI, globals/calls and alignment. Investigate
+R054455B30/260 with genuine R214 deque evidence; a28-byte local memset alone
+does not justify an arbitrary or inert array. Keep it pending until storage
+purpose is established. Continue immediately after checkpoint/commit/push.
+Receipts: `.analysis/f174-progress-pause-unit-proof.json`,
+`.analysis/f174-progress-pause-canonical-replay.json` and complete private native,
+caller, source/profile and rejected diagnostic evidence.
 
 **F173 accepted round-end/counter/HUD:** four whole R041/R043 functions in
 `RoundEndHudF173.cpp` pass one canonical cold build: 43CDB0/599,43D360/66,

@@ -406,3 +406,11 @@ BattleScene::EnterRoundEnd
 ProgressRecords::IncrementModeCounter
 BattleHud::InitializeComboCounter
 BattleHud::UpdateComboCounter
+GameProgress::ReadSelectedWord268At00441FE0
+GameProgress::ReadSelectedWord394At00442010
+GameProgress::SetSelectedValue8At004451D0
+GameProgress::SetSelectedValue12At00445210
+GameProgress::GetSelectedValue8At00445250
+GameProgress::GetSelectedValue12At00445290
+BattleScene::PollPauseShortcut
+BattleScene::UpdatePlayerEffects

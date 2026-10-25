@@ -407,3 +407,11 @@ BattleScene::EnterRoundEnd,0x0043CDB0,function
 ProgressRecords::IncrementModeCounter,0x0043D360,function
 BattleHud::InitializeComboCounter,0x0043D490,function
 BattleHud::UpdateComboCounter,0x0043D4D0,function
+GameProgress::ReadSelectedWord268At00441FE0,0x00441FE0,function
+GameProgress::ReadSelectedWord394At00442010,0x00442010,function
+GameProgress::SetSelectedValue8At004451D0,0x004451D0,function
+GameProgress::SetSelectedValue12At00445210,0x00445210,function
+GameProgress::GetSelectedValue8At00445250,0x00445250,function
+GameProgress::GetSelectedValue12At00445290,0x00445290,function
+BattleScene::PollPauseShortcut,0x004456F0,function
+BattleScene::UpdatePlayerEffects,0x00445830,function

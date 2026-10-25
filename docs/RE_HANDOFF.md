@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F173.
+Updated 2026-10-26 for continued reconstruction, F174.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F173 accepts four complete round-end, counter and HUD functions.
+phases remain deferred. F174 accepts eight complete progress, pause and player-effects functions.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F173 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F174 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 408 / 408 / 408 |
-| Exact code bytes | 728,662 |
-| Reviewed authored coverage | 728,662 / 1,973,516 (36.92%) |
-| Conservative coverage, including pending bytes | 728,662 / 1,977,124 (36.85%) |
-| Canonical objects / accepted source-header inputs | 156 / 248 |
+| Source-present / exact functions / exact units | 416 / 416 / 416 |
+| Exact code bytes | 729,731 |
+| Reviewed authored coverage | 729,731 / 1,973,516 (36.98%) |
+| Conservative coverage, including pending bytes | 729,731 / 1,977,124 (36.91%) |
+| Canonical objects / accepted source-header inputs | 157 / 250 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 348 additions / 718,779 code bytes / 248 inputs. Origin evidence through
+F009 plus 356 additions / 719,848 code bytes / 250 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **73565e0 (F172)**, preceded by
+The preceding reconstruction checkpoint is **2864a9a (F173)**, preceded by
+**73565e0 (F172)** and
 **2e83de5 (F171)** and
 **0297027 (F170)** and
 **cf9b249 (F169)** and
@@ -105,7 +106,86 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F173 outcomes and continuation
+## Current F174 outcomes and continuation
+
+One new canonical object accepts eight complete functions in
+`src/ProgressPauseF174.cpp` and its call-only header:
+
+| Unit | Code bytes | Actual fields |
+| --- | --- | --- |
+| `progress-read-selected-word268-00441fe0` | 44 | 0 |
+| `progress-read-selected-word394-00442010` | 44 | 0 |
+| `progress-set-selected-value8-004451d0` | 55 | 0 |
+| `progress-set-selected-value12-00445210` | 55 | 0 |
+| `progress-get-selected-value8-00445250` | 50 | 0 |
+| `progress-get-selected-value12-00445290` | 50 | 0 |
+| `battle-poll-pause-shortcut-004456f0` | 314 | 10 REL32 / 11 DIR32 |
+| `battle-update-player-effects-00445830` | 457 | 3 REL32 / 1 DIR32 |
+
+One canonical cold build passes all 1,069 CODE bytes and 25 actual fields.
+Complete R103/R045/R042 CFGs, actual RET4/4/4/4/0/0/0/0 and following INT3
+alignment are verified. Six zero-field units explicitly keep `relocations = []`.
+The word readers retain native MOVZX EAX; both independent caller windows
+immediately push the full EAX result. A zero-extended dword return carrier
+expresses this observed contract; original nominal types remain unknown.
+Other accessors retain signed category16AC4 times17F0, signed key word268/394
+and signed second selector16AC5 times5FC for dword8/12. No complete index bounds
+or owner layout are inferred, and no partial owners are instantiated/embedded.
+
+Pause processing preserves device polling, the Alt/Enter chord, Escape counter,
+held index6 checks, state/mode guards, logical toggle, menu reset, sound48 and
+pause-byte mirror. The toggle explicitly promotes its logical result through
+int, retaining the native dword negation before the final byte store. Effects
+preserve both real two-player/five-button loops, all state guards, clears, byte
+conditions and 3600-frame countdown. Natural real index names i/j retain native
+frame slots4/8; no local was added. Existing canonical globals, input/sound and
+fighter calls stay unchanged. Physical held-block addends24/24/8 are replayed;
+known 28-byte subregions lie72 bytes apart without implying a new global owner.
+
+Initial narrow word returns had two differences each, the unpromoted logical
+result emitted315 bytes/65 differences and initial real index names exchanged
+frame slots/23 differences. Those diagnostics and full sources are retained;
+faithful result widths, promotion and real index names resolve the complete
+comparisons without padding, inert locals, fake returns, ABI tricks, assembly,
+conditional bodies, masks, cropped extents, aliases or native-label rebasing.
+The referenced complete260-byte R054455B30 body has reviewed no-argument
+thiscall/plain-RET behavior but remains unaccepted and earns no exact credit.
+All408 previous units/156 objects/248 inputs, existing headers/origins/verifiers,
+13 active objects/all14 F157 probes/both F159 traces remain unchanged. Only these
+eight new units in one object were cold-replayed; all pending bytes remain in
+the conservative denominator.
+
+Immediately continue R0424461D0/751 pause menu and4480D0/788 debug-key policy.
+Review complete CFGs, owned switch tables, used ABI, key/global/callee contracts
+and alignment before natural sources and full comparisons. Also investigate
+R054455B30/260 using the genuine R214 deque evidence: its observed28-byte local
+clear does not by itself justify an arbitrary or inert source array. Preserve
+that complete body as pending unless its real storage purpose is established.
+Execute this next action after checkpoint/cleanup/commit/push; never pause.
+
+Receipts: `.analysis/f174-progress-pause-unit-proof.json`,
+`.analysis/f174-progress-pause-canonical-replay.json`, full native reader-caller
+and direction-pack evidence, plus both complete source/profile/diagnostic
+snapshots under `.analysis/f174-progress-pause/`.
+
+Public CI passed **3,612 tests in 185.142 seconds**. Target,
+tracking, progress and diff checks pass. Eight new units in one new object were
+cold-replayed:1,069 full CODE bytes/all25 actual fields. All408 previous units,
+156 old canonical objects/248 old adoption inputs, existing headers, origin/
+verifier guards, forty protected groups,13 active objects/all14 F157 probes/both
+F159 traces were hash-verified unchanged. Three compiler builds ran serially and
+explicitly headless: two previews and one canonical cold build. No old accepted
+unit or large-function control was rebuilt. Cleanup removed two obsolete preview
+objects (30,317 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,354 bytes), retaining all full nondebug sections/
+symbols/fields/source/header/profile evidence and157 canonical/13 active objects.
+Receipts: `.analysis/f174-object-retention.json`, `.analysis/f174-cleanup.json`,
+`.analysis/f174-preservation-final.json` and `.analysis/f174-source-checkpoint.json`.
+Immediately continue full4461D0 pause menu and4480D0 debug keys after this
+checkpoint/commit/push; the98% goal remains active and incomplete.
+
+## Retained F173 outcomes
 
 One new canonical object accepts four complete functions in
 `src/RoundEndHudF173.cpp` and its call-only header:

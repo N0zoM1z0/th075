@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ed6649273bc5c6be0da8f6095816a0ea17faa31863956aab7452a6aa404b8bac"
+      "current_sha256": "47a6b338a8b4ddeffcb043d8ba0f5a5295a532474e26e66afd9971f20780ff96"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "a0a0467bfbc70ae6cee8935252c15c907280ad948ebba6bdc593141f6dfca024"
+      "current_sha256": "b8b2efa2d8e12cc2635855a1540d2f66e7d279fe0d08bd9c9d1074d7dd5ab0d5"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "d7cd9271562c8bb42accec83a40fc73ecdcd3b2146d3bb2f66f22d778c9b689f"
+      "current_sha256": "21b889842e06d0b79ef6f750a2363ceffa5599c2317b49aee92064a3ef160f10"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "15b19df7f86b76d82beb59b3ed4b87925c9a5661dd8a70fc93657e5911a9bfc5"
+      "current_sha256": "15b38c59ef50a321ff12c45f3c514425e99009bf24ea1edcbbe570b5137f7525"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "fb0cb5b082355bcb64e872ccc69cbf5072086ce00bc44a47159e639bb89f602c"
+      "current_sha256": "374fff98691c26b89765ddd0247fdf0feb0b201f975f7c761bafc04a19d355b2"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -15352,6 +15352,358 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00441FE0",
+        "size": "44",
+        "span_end": "0x0044200B",
+        "current_name": "FUN_00441fe0",
+        "proposed_name": "GameProgress::ReadSelectedWord268At00441FE0",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00441FE0",
+        "size": "44",
+        "span_end": "0x0044200B",
+        "current_name": "FUN_00441fe0",
+        "proposed_name": "GameProgress::ReadSelectedWord268At00441FE0",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned int SelectedProgressF174::ReadSelectedWord268(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-read-selected-word268-00441fe0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00441FE0",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00442010",
+        "size": "44",
+        "span_end": "0x0044203B",
+        "current_name": "FUN_00442010",
+        "proposed_name": "GameProgress::ReadSelectedWord394At00442010",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00442010",
+        "size": "44",
+        "span_end": "0x0044203B",
+        "current_name": "FUN_00442010",
+        "proposed_name": "GameProgress::ReadSelectedWord394At00442010",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned int SelectedProgressF174::ReadSelectedWord394(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-read-selected-word394-00442010",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00442010",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004451D0",
+        "size": "55",
+        "span_end": "0x00445206",
+        "current_name": "FUN_004451d0",
+        "proposed_name": "GameProgress::SetSelectedValue8At004451D0",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004451D0",
+        "size": "55",
+        "span_end": "0x00445206",
+        "current_name": "FUN_004451d0",
+        "proposed_name": "GameProgress::SetSelectedValue8At004451D0",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SelectedProgressF174::SetSelectedValue8(int)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-set-selected-value8-004451d0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x004451D0",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00445210",
+        "size": "55",
+        "span_end": "0x00445246",
+        "current_name": "FUN_00445210",
+        "proposed_name": "GameProgress::SetSelectedValue12At00445210",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00445210",
+        "size": "55",
+        "span_end": "0x00445246",
+        "current_name": "FUN_00445210",
+        "proposed_name": "GameProgress::SetSelectedValue12At00445210",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SelectedProgressF174::SetSelectedValue12(int)",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-set-selected-value12-00445210",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00445210",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00445250",
+        "size": "50",
+        "span_end": "0x00445281",
+        "current_name": "FUN_00445250",
+        "proposed_name": "GameProgress::GetSelectedValue8At00445250",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00445250",
+        "size": "50",
+        "span_end": "0x00445281",
+        "current_name": "FUN_00445250",
+        "proposed_name": "GameProgress::GetSelectedValue8At00445250",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "int SelectedProgressF174::GetSelectedValue8()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-get-selected-value8-00445250",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00445250",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00445290",
+        "size": "50",
+        "span_end": "0x004452C1",
+        "current_name": "FUN_00445290",
+        "proposed_name": "GameProgress::GetSelectedValue12At00445290",
+        "module": "GameProgress",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00445290",
+        "size": "50",
+        "span_end": "0x004452C1",
+        "current_name": "FUN_00445290",
+        "proposed_name": "GameProgress::GetSelectedValue12At00445290",
+        "module": "GameProgress",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "int SelectedProgressF174::GetSelectedValue12()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F174; scripts/repo-python scripts/replay-exact-units.py --unit progress-get-selected-value12-00445290",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00445290",
+        "origin": "authored",
+        "subsystem": "GameProgress",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004456F0",
+        "size": "314",
+        "span_end": "0x00445829",
+        "current_name": "FUN_004456f0",
+        "proposed_name": "BattleScene::PollPauseShortcut",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004456F0",
+        "size": "314",
+        "span_end": "0x00445829",
+        "current_name": "FUN_004456f0",
+        "proposed_name": "BattleScene::PollPauseShortcut",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleInputF174::PollPauseShortcut()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F174; scripts/repo-python scripts/replay-exact-units.py --unit battle-poll-pause-shortcut-004456f0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x004456F0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00445830",
+        "size": "457",
+        "span_end": "0x004459F8",
+        "current_name": "FUN_00445830",
+        "proposed_name": "BattleScene::UpdatePlayerEffects",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00445830",
+        "size": "457",
+        "span_end": "0x004459F8",
+        "current_name": "FUN_00445830",
+        "proposed_name": "BattleScene::UpdatePlayerEffects",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleInputF174::UpdatePlayerEffects()",
+        "is_thunk": "false",
+        "source_file": "src/ProgressPauseF174.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F174; scripts/repo-python scripts/replay-exact-units.py --unit battle-update-player-effects-00445830",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F174: eight completeR103/R045/R042 bodies1069CODE/all25actualfields(13REL32/12DIR32), allCFG/exits/RET4/4/4/4/0/0/0/0 and alignment retained. Nativewordreader MOVZXEAX and two caller immediatePUSHEAX uses establish zeroextendedDWORDcarrier; original nominaltypes remain unknown. Signedcategory16AC4*17F0/key word268/394 and second16AC5*5FC dword8/12 preserved withoutcompletebounds/layout. Pausepoll/keychord/escape-counter/heldindex6/guards/int-promoted logicaltoggle/reset/sound48/globalmirror retained. Effects true two/five loops, allselectedstates/clears/bytegates/3600countdown/canonicalcalls retained. Three actual DIR32addends24/24/8 remain physical, existingheld28byteblocks72apart reused. Two real i/j indices retain observed4/8 frame slots withoutstorage changes. Referenced260byteR054455B30 whole native reviewedusedABI but remains unaccepted/noexactcredit. Initialwordnarrowreturns2diff each/pause315bytes65diff/effectsslots23diff rejected; faithful DWORDcarrier/boolpromotion/natural real index names resolve withoutpadding/inertlocals/fakereturns/ABItricks/asm/alternatebodies/masks/crops/aliases/rebasing. OriginalrolesliteralviaCOFFmaps; no ownerinstances/embedding/newglobalallocations. Only8newunits/oneobject coldreplayed; all408oldunits/156objects/248inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00445830",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
       }
     }
   ],
@@ -145998,6 +146350,334 @@
           "target": 6652764
         }
       ]
+    },
+    "progress-read-selected-word268-00441fe0": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::ReadSelectedWord268At00441FE0"
+      ],
+      "symbol": "?ReadSelectedWord268@SelectedProgressF174@@QAEIC@Z",
+      "target_address": 4464608,
+      "size": 44,
+      "relocations": []
+    },
+    "progress-read-selected-word394-00442010": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::ReadSelectedWord394At00442010"
+      ],
+      "symbol": "?ReadSelectedWord394@SelectedProgressF174@@QAEIC@Z",
+      "target_address": 4464656,
+      "size": 44,
+      "relocations": []
+    },
+    "progress-set-selected-value8-004451d0": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::SetSelectedValue8At004451D0"
+      ],
+      "symbol": "?SetSelectedValue8@SelectedProgressF174@@QAEXH@Z",
+      "target_address": 4477392,
+      "size": 55,
+      "relocations": []
+    },
+    "progress-set-selected-value12-00445210": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::SetSelectedValue12At00445210"
+      ],
+      "symbol": "?SetSelectedValue12@SelectedProgressF174@@QAEXH@Z",
+      "target_address": 4477456,
+      "size": 55,
+      "relocations": []
+    },
+    "progress-get-selected-value8-00445250": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::GetSelectedValue8At00445250"
+      ],
+      "symbol": "?GetSelectedValue8@SelectedProgressF174@@QAEHXZ",
+      "target_address": 4477520,
+      "size": 50,
+      "relocations": []
+    },
+    "progress-get-selected-value12-00445290": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "GameProgress::GetSelectedValue12At00445290"
+      ],
+      "symbol": "?GetSelectedValue12@SelectedProgressF174@@QAEHXZ",
+      "target_address": 4477584,
+      "size": 50,
+      "relocations": []
+    },
+    "battle-poll-pause-shortcut-004456f0": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::PollPauseShortcut"
+      ],
+      "symbol": "?PollPauseShortcut@BattleInputF174@@QAEXXZ",
+      "target_address": 4478704,
+      "size": 314,
+      "relocations": [
+        {
+          "offset": 8,
+          "type": "REL32",
+          "symbol": "?PollKeyboard@Input@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?PollJoysticks@Input@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 18,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 23,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 28,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671680@@3VInputMapping4388D0@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 64,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 81,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 86,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 98,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+          "target": 4200608
+        },
+        {
+          "offset": 105,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 110,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 171,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 180,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 225,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 286,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 291,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 306,
+          "type": "DIR32",
+          "symbol": "?g_RenderByte0067161C@@3EA",
+          "target": 6755868
+        }
+      ]
+    },
+    "battle-update-player-effects-00445830": {
+      "source": "src/ProgressPauseF174.cpp",
+      "object": "build/matching/ProgressPauseF174.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::UpdatePlayerEffects"
+      ],
+      "symbol": "?UpdatePlayerEffects@BattleInputF174@@QAEXXZ",
+      "target_address": 4479024,
+      "size": 457,
+      "relocations": [
+        {
+          "offset": 48,
+          "type": "REL32",
+          "symbol": "?UpdateControls@FighterControlCallsF174@@QAEXXZ",
+          "target": 4534032
+        },
+        {
+          "offset": 139,
+          "type": "REL32",
+          "symbol": "?ClearAuxiliaryWords@FighterBaseActionsF159@@QAEXXZ",
+          "target": 4536848
+        },
+        {
+          "offset": 309,
+          "type": "REL32",
+          "symbol": "?PackDirectionBits@FighterControlCallsF174@@QAEXXZ",
+          "target": 4545328
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -146248,6 +146928,8 @@
     "src/KnockoutProgressF172.cpp": "01dcce215a5787e5d402eebdaaee5df5a96c77eb29ce9d4f40c1bd3c1c43bdd9",
     "src/KnockoutProgressF172.hpp": "6774f2ae3c2d7e3593750e5e870b06709225ec1145827b8eaffd49d1e922a67e",
     "src/RoundEndHudF173.cpp": "d9318dea4a66f7c5d20d004ecf9cf27fc22259f410d28a5e43cf11cd957c0843",
-    "src/RoundEndHudF173.hpp": "c9e4bf04f82ec9ed0536a5b86be99c829bcd04a6a1374b5c5854e6d16eb56522"
+    "src/RoundEndHudF173.hpp": "c9e4bf04f82ec9ed0536a5b86be99c829bcd04a6a1374b5c5854e6d16eb56522",
+    "src/ProgressPauseF174.cpp": "53d721a676f3f238699db408eeb7d5fa1ec03fbe74103839e81d8a370a1e5391",
+    "src/ProgressPauseF174.hpp": "df634eb3fef11a058175c9fc4914cf9e0ad10dbc3727a008e135707429dfec7b"
   }
 }

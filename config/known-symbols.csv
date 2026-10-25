@@ -389,3 +389,11 @@ address,name,module,confidence,evidence
 0x0043D360,ProgressRecords::IncrementModeCounter,ProgressRecords,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D490,BattleHud::InitializeComboCounter,BattleHud,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x0043D4D0,BattleHud::UpdateComboCounter,BattleHud,inferred,F173; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00441FE0,GameProgress::ReadSelectedWord268At00441FE0,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00442010,GameProgress::ReadSelectedWord394At00442010,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004451D0,GameProgress::SetSelectedValue8At004451D0,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445210,GameProgress::SetSelectedValue12At00445210,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445250,GameProgress::GetSelectedValue8At00445250,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445290,GameProgress::GetSelectedValue12At00445290,GameProgress,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004456F0,BattleScene::PollPauseShortcut,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00445830,BattleScene::UpdatePlayerEffects,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
