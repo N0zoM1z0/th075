@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ab46032f76a9e810f2843ffa763b7679390abfd3d960002fb204731403ca0979"
+      "current_sha256": "2a54c5153a7c4bf19b67502e39221ac1c4e61025363ff858349b4693cc694e86"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "d0f4af40725a29a91d178fab0367b9d3af86011bed5931ec2db532bc1db33614"
+      "current_sha256": "a7d5066954279a02d84d04bd0d61dbd8182793c5a2758486f78f7adaf3a013ca"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "551ed1d98c7db1a4a5b5af810e78de2d82068ea49999575d5d170b5693b29707"
+      "current_sha256": "f95d16088d7b76dfd9c19e65a1dbe32d85d033fe587bb24138f042ac83a40e48"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5c5a745541de7dd2d1633c97ce0c72227132606ec276e50abf7c2dc9ae736bd5"
+      "current_sha256": "25a2e2fb609a17bc721301aec92713a87d3f823e51543b526f15e51fbb54f77a"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "8fc1972687bd8b438cffb8016ad540674de46c23599431efcbb83a01ca88b402"
+      "current_sha256": "6c147513598e4efa466c494b9bcab4a4a557da81a7bbdec9aa39187d81a503a9"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "b10121a32ed25f518eb2f2ae3c66f4c3f73547834e97fd9c19c5f197c4ffd81f"
+      "current_sha256": "a6357d8690293901c154acaf3c3032b853a0579acaa5ac6059b0931410c5ab84"
     }
   },
   "functions": [
@@ -12228,6 +12228,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-mixed-context",
         "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453D80",
+        "size": "149",
+        "span_end": "0x00453E14",
+        "current_name": "FUN_00453d80",
+        "proposed_name": "FighterBase::BindAnimationAt00453D80",
+        "module": "FighterBase",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R068; complete target body/CFG and reviewed fighter vtable slots",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00453D80",
+        "size": "149",
+        "span_end": "0x00453E14",
+        "current_name": "FUN_00453d80",
+        "proposed_name": "FighterAnimationReset453D80::BindAnimation",
+        "module": "FighterBase",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterAnimationReset453D80::BindAnimation()",
+        "is_thunk": "false",
+        "source_file": "src/FighterAnimationReset453D80.cpp",
+        "evidence": "R068; complete target body/CFG and reviewed fighter vtable slots; F156; scripts/repo-python scripts/replay-exact-units.py --unit fighter-bind-animation-00453d80",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F156: complete149-byte canonical cold exact, all real exits/plainRET and five actual REL32 fields. Saved ECX at EBP-4; real table receiver at468 and signed word60/62 values passed through actual unsigned vector indices in native right-to-left call order. Address of selected frame stored74 and copied8; observed word frame+4 copied72, actual sequence count narrowed70, selected sequence pointer stored78. Complete R205/R032 vendor-at/count native bodies and R068 authored whole body/independent vtables retained; two observed slots at6594A8 remain453D80/4AC040. Eleven following INT3 bytes excluded by complete extent evidence. Original names/nominal element types/complete owner and frame layouts unknown. All receiver views are declaration-only, frame forward-declared; never instantiate/embed or use generic vendor stride to fabricate owner/array extent. No fake locals/returns/ABI/storage, padding, assembly, conditional bodies, masks/crops/aliases/rebasing. Only this new unit cold replayed; all337 prior units and97 unknown origins unchanged. Both large drafts remain pending in full; private whole004AC040 still18539 differing positions across83922 bytes."
+      },
+      "origin": {
+        "address": "0x00453D80",
+        "origin": "authored",
+        "subsystem": "FighterBase",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R068"
       }
     }
   ],
@@ -139858,6 +139902,59 @@
           "target": 6555308
         }
       ]
+    },
+    "fighter-bind-animation-00453d80": {
+      "source": "src/FighterAnimationReset453D80.cpp",
+      "object": "build/matching/FighterAnimationReset453D80.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterAnimationReset453D80::BindAnimation"
+      ],
+      "symbol": "?BindAnimation@FighterAnimationReset453D80@@UAEXXZ",
+      "target_address": 4537728,
+      "size": 149,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": "?At@AnimationSequenceF156@@QAEAAVAnimationFrameF156@@I@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "?Count@AnimationSequenceF156@@QBEIXZ",
+          "target": 4464928
+        },
+        {
+          "offset": 133,
+          "type": "REL32",
+          "symbol": "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z",
+          "target": 4464816
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -140075,6 +140172,8 @@
     "src/FighterCommandSelection454BC0.cpp": "a79391694d0fff264869a3738f8d63615f0f08a21ba5199a1d4f23b81afcce73",
     "src/FighterCommandSelection454BC0.hpp": "4241ea3d3e68145f9fd763796b7ba09176e169615423adb29eada8882249f012",
     "src/FighterResourceParameters452B30.cpp": "bea685ae555b9ccc26347d031646002f2edf05ce2d92095757f86a7dec0568a7",
-    "src/FighterResourceParameters452B30.hpp": "8d089f86d65a9c87193d9bee76e45f89f48a10039b0462d9344f01b0c5783d76"
+    "src/FighterResourceParameters452B30.hpp": "8d089f86d65a9c87193d9bee76e45f89f48a10039b0462d9344f01b0c5783d76",
+    "src/FighterAnimationReset453D80.cpp": "eb7ee9987a7041ffd459d3adcce9fa62372f6459b6ea6a41f7030180539ab8f8",
+    "src/FighterAnimationReset453D80.hpp": "b870bf983b337d8495ddbb1d3a1765cfdc09f9ec4c0e155925b94a742b5c4319"
   }
 }

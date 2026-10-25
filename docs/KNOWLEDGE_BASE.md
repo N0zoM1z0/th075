@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F155. The active 98%
+Updated 2026-10-25 for resumed reconstruction, F156. The active 98%
 authored-byte objective remains incomplete. Current state and continuation
 instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
@@ -13,9 +13,9 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 337 units,
-  717,360 code bytes, 138 canonical objects and 215 accepted inputs.
-- Reviewed authored coverage is 36.35%; conservative coverage is 36.28%.
+  complete cold-exact units/all actual relocations. Counts are 338 units,
+  717,509 code bytes, 139 canonical objects and 217 accepted inputs.
+- Reviewed authored coverage is 36.36%; conservative coverage is 36.29%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
@@ -24,13 +24,13 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 ## Current source work
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f155/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f156/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams
 have22,721 instructions. This remains unaccepted with no source-presence/exact
 credit. F155 uses canonical command and resource headers with the same complete code.
-Preserve active F155 and F154 caller/compiler-map objects, F153 resolved/window/counter objects and F152 object
+Preserve active F156 dataflow/caller and F155/F154 compiler-map objects, F153 resolved/window/counter objects and F152 object
 listed in the handoff. The first F152 failure84,234/74,320 remains frozen.
 
 The explicit profile remains pinned VC7.1 build3077, /Od /Ob0 /Gy /GR- /GX-
@@ -72,7 +72,7 @@ all151 entries exactly to frozen F152 source through only recorded changes.
 
 The first genuine byte divergence is now state89 at004ADEFB: native loads the
 receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
-the remaining register choices is established. Copy F155 to fresh F156 before
+the remaining register choices is established. Copy F156 to fresh F157 before
 working further. Four whole-source negative controls have identical raw code
 and actual relocation targets: offset-zero scalar member, accepted transform
 view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
@@ -240,7 +240,7 @@ R239 and remain preserved as history. All97 unknown origins are unchanged.
 
 The complete caller now uses the canonical header at all seven command call
 sites. Its151 source entries, raw function bytes and all relocation destinations
-are unchanged from F153; whole comparison still fails at18,539 positions. Only
+are unchanged from F153; whole comparison still fails at18,539 positions.
 At F154, three named pending-body sites remained: two resource452B30 and one unknown483300.
 Neither unknown483300/483320 nor either large draft earns new exact credit.
 
@@ -271,6 +271,51 @@ Only the unknown483300 named site lacks a canonical body; both483300/483320
 remain unknown. Full caller comparison stays83,922 bytes/18,539 differences,
 all2,352 fields replayed, first byte004ADEFB. Receipts are the F155 source audit,
 allocator-window correlation, resource unit proof and canonical replay.
+
+**F156 accepted animation binding:**149-byte `BindAnimation` at453D80
+passed one canonical cold replay,149/149 complete bytes with all five actual
+REL32 fields. R068 whole-body ownership and independently reviewed callback
+slots remain intact, with a literal historical-name alias. Native state60 and
+phase62 are signed word loads passed through the actual unsigned vector indices.
+Outer phase is pushed before the inner table lookup. The selected frame address
+goes to74 and8; its word+4 to72; sequence count low word to70; selected sequence
+pointer to78. SavedECX atEBP-4/plainRET and eleven following excluded INT3 bytes
+are retained. All three transitive library bodies are independently complete:
+R205 at()442060/4420B0 (70 bytes each, RET4), R032 count442120 (57 bytes, RET0).
+Their generic element strides identify neither an original frame type nor its
+complete layout. The source forward-declares the frame and uses declaration-only
+container/receiver views; none is instantiated/embedded. The actual6594A8 prefix
+still starts453D80/4AC040. No library or unknown origin receives new credit.
+
+All six real slot-0 calls in the large draft now have this cold-exact callback.
+The direct counts remain1,313 canonical named,41 CRT and one unknown named call;
+the six indirect sites retain their actual virtual dispatch. Both large drafts,
+the79-byte counter and all97 unknown origins remain pending.
+
+**F156 complete relational diagnostic:**22,721 actual instruction pairs and
+24,442 real CFG edges are paired through their actual code/table destinations.
+Byte-level GPR relationships include memory base/index operands, partial writes,
+call clobbers/return widths and intersections across all predecessors. All24,492
+read constraints are consistent under explicit observed ABI/memory/x87 assumptions;
+this is not formal equivalence, original-source recovery or exact proof.
+Exception/unwind/nonlocal exits are outside that normal-flow model. The
+2,839 argument/pop stack reads use actual callee widths. Each of609 initial PUSH
+values ignored for float storage is immediately fully overwritten by FSTP [ESP].
+The native target and every object remain untouched. Two negative controls change
+only in-memory emitted instruction copies: a wrong receiver base at004ADEFD and
+a wrong low-word store source are both reported. Actual script/report are
+`.analysis/f156-relational-dataflow.py` and the current baseline-dataflow report.
+Full unmasked byte comparison remains83,922/18,539/all2,352 fields.
+
+Four full caller controls are closed. Compound scalar30 +=40 in89, a lexical
+block around89 and an independently complete43-byte int-formal secondary-reset
+callee yield the same full caller code/destinations. Both formal hypotheses use
+the same physical four-byte/low-word/RET4 contract; original nominal type remains
+unknown, and the accepted short declaration/body are unchanged. A named used
+switch discriminator adds its own real slot plus compiler temporary: frame724,
+saved receiverEBP-68, two extra instructions and83,932 emitted bytes/80,231
+differences. It is rejected; no fake storage or crop is adopted. All151 current
+entries and original prefix/default/shared tail are byte-identical to F155.
 
 F149 stopped during read-only reconnaissance of390..402. No additional case
 was authored. State392's nested phase 6/phase 4 tests and400..402's three

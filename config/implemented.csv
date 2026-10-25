@@ -335,3 +335,4 @@ SpriteSequenceParametersF154::SetSamplingMode
 SpriteSequenceParametersF154::SetColorMask
 FighterCommandSelection454BC0::SetCommandSelection
 FighterResourceParameters452B30::SelectResourceParameters
+FighterAnimationReset453D80::BindAnimation

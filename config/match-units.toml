@@ -24637,3 +24637,37 @@ offset = 182
 type = "REL32"
 symbol = "__ftol2"
 target = 0x006406AC
+
+[units.fighter-bind-animation-00453d80]
+source = "src/FighterAnimationReset453D80.cpp"
+object = "build/matching/FighterAnimationReset453D80.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterAnimationReset453D80::BindAnimation"]
+symbol = "?BindAnimation@FighterAnimationReset453D80@@UAEXXZ"
+target_address = 0x00453D80
+size = 149
+[[units.fighter-bind-animation-00453d80.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z"
+target = 0x004420B0
+[[units.fighter-bind-animation-00453d80.relocations]]
+offset = 40
+type = "REL32"
+symbol = "?At@AnimationSequenceF156@@QAEAAVAnimationFrameF156@@I@Z"
+target = 0x00442060
+[[units.fighter-bind-animation-00453d80.relocations]]
+offset = 97
+type = "REL32"
+symbol = "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z"
+target = 0x004420B0
+[[units.fighter-bind-animation-00453d80.relocations]]
+offset = 104
+type = "REL32"
+symbol = "?Count@AnimationSequenceF156@@QBEIXZ"
+target = 0x00442120
+[[units.fighter-bind-animation-00453d80.relocations]]
+offset = 133
+type = "REL32"
+symbol = "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z"
+target = 0x004420B0
