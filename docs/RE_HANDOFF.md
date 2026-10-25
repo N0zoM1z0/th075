@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F135 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F136 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 321 / 321 / 321 |
-| Exact code bytes | 715,741 |
-| Reviewed authored coverage | 715,741 / 1,973,516 (36.27%) |
-| Conservative coverage, including every pending byte | 715,741 / 1,977,124 (36.20%) |
+| Source-present / exact functions / exact units | 327 / 327 / 327 |
+| Exact code bytes | 716,190 |
+| Reviewed authored coverage | 716,190 / 1,973,516 (36.29%) |
+| Conservative coverage, including every pending byte | 716,190 / 1,977,124 (36.22%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **261 additions /
-705,858 code bytes / 198 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **267 additions /
+706,307 code bytes / 200 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -30,7 +30,85 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest investigation: F134 complete large-function source
+## Latest accepted functions and compiler investigation: F135
+
+F135 accepts six complete direct/transitive dependencies of the active
+`CharacterObject::AdvanceAt0050A580` reconstruction, totaling **449 code bytes**.
+The large function itself remains unaccepted. These implementations make its
+actual effect, sound and gauge contracts reproducible without changing any
+previously accepted source, header or compiler profile.
+
+| Address | Complete bytes | Accepted source method | Origin |
+| --- | ---: | --- | --- |
+| `00453A70` | 65 | `FighterEffectPoliciesF135::SpawnBattleEffect` | R101 |
+| `00453B50` | 140 | `FighterEffectPoliciesF135::SpawnTrackedEffect` | R102 |
+| `00453C80` | 57 | `FighterEffectPoliciesF135::SpawnAuxEffect` | R101 |
+| `00453D40` | 32 | `FighterEffectPoliciesF135::PlaySound` | R100 |
+| `00453D60` | 29 | `FighterEffectPoliciesF135::PlaySharedSound` | R102 |
+| `0046D000` | 126 | `FighterEffectPoliciesF135::UpdateGaugeTimer` | R046 |
+
+`src/FighterEffectPolicies.cpp` and its new declaration-only header contain
+one natural body per method. Independent complete native review accounts for
+**163 instructions, seven direct calls and all nine actual relocation fields**.
+All instructions are statically reached, every stack join agrees, all six
+frames contain four bytes with this at EBP-4, and complete RET4/20/28 exits
+and following alignment are distinguished. There are no owned tables or
+shared external tails. All six units passed canonical cold replay together
+through one new object, `build/matching/FighterEffectPolicies.obj`.
+
+The effect forwarders retain the actual manager pointer at owner+0x2EC,
+parameter pointer at +0x314, and nonzero-flag selection of address +0x2F0.
+The nested battle callee consumes 40 argument bytes and copies 36 bytes from
+the optional transform pointer; this copy width establishes no owner layout.
+The auxiliary callee consumes 32 argument bytes. Its receiver is the existing
+global object at 006716C8, while shared sound loads a pointer from 00671618.
+The source only declares those existing external objects/pointers and uses
+pointer views; it never defines, constructs, copies or embeds private owners.
+No guessed arrays, transform values or allocation sizes are introduced.
+
+Both sound wrappers widen the actual signed-word index to the sound bank's
+signed DWORD parameter. The timer subtracts a **DWORD argument**, stores the
+low word at owner+0x3B0, then reloads that signed word before threshold checks.
+The second +0x3B6 read, positive-counter reset to 1000, and shared sound 43
+are retained. Ghidra's inferred short timer parameter is explicitly rejected
+by the native DWORD read at 0046D02D. Seven wrong real bindings/RET cleanup
+controls fail whole comparisons. Historical origin names remain via aliases;
+all original names, full types and private layouts remain provisional.
+
+Five additional complete large-body compiler controls tested case scopes,
+nested guards, return-void-call expressions, explicit float conversions and
+literal types. All five emitted the **same 82,109 bytes**, raw code SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`, with
+1,449 actual relocations and the same 26,719 whole-position differences.
+They do not resolve the physical-register frontier at 856..early 862 and 998.
+No padding, dummy storage, ABI alias, target mutation, masked comparison or
+partial source wrapper was used. The F135 large-source fragments and complete
+`Preview.cpp` were restored byte-for-byte to the protected F134 draft; retain
+`build/probes/F134CompleteFinal.obj` as its active diagnostic object.
+
+Receipts: `.analysis/f135-policy-bindings.json`,
+`.analysis/f135-accepted-replay.json`, `.analysis/f135-source-checkpoint.json`
+and `.analysis/object-action-50a580/f135/compiler-controls.json`. All old 321
+units, 130 canonical objects, 198 accepted inputs, 218 origin files, nine shared
+headers, 91 older drafts and frozen F131..F134 sources/proofs/active object
+remain unchanged. New totals are **327 exact functions/units, 716,190 code
+bytes**, **36.29% reviewed authored /36.22% conservative coverage**. F009 plus
+267 additions retains 706,307 code bytes and 200 new source/header inputs.
+All 97 unknown origins and their 3,608 pending bytes remain in the conservative
+denominator; all 81,539 main-function code bytes remain unaccepted. The 98%
+objective is active and incomplete; later phases remain deferred.
+
+Validation: all 3,603 CI tests passed in 164.538s; target/tracking/progress/
+diff checks passed. There were seven serial compiler builds: five complete
+large-body controls, one dependency probe, and one canonical cold build for six
+new units. No old unit was replayed or rebuilt. Cleanup removed only six
+obsolete reproducible probe objects (679,557 bytes) and 375 Python
+bytecode files (8,283,511 bytes), after preserving actual compiler inputs,
+raw code hashes/bytes, every relocation and complete evidence. All 131 canonical
+objects, the F134 active object, every PDB/log/source/proof and shared tool
+remain. Receipt: `.analysis/f135-preservation-cleanup.json`.
+
+## Previous investigation: F134 complete large-function source
 
 F134 completes natural private source for **all 92 native dispatch entries**
 of the same authored `0050A580/81539` function, adding the48 entries missing
@@ -229,7 +307,7 @@ preserving every source fragment/native/helper/CFG/x87/local/constant/
 composition/parent input, log, PDB, canonical object and shared tool.
 Receipt:`.analysis/f132-preservation-cleanup.json`.
 
-## Latest accepted functions: F131
+## Previous accepted functions: F131
 
 R041 choice animation `004350E0/1923` and R040 result selection
 `0042F970/1803` pass canonical cold comparison: **3,726 code bytes,948
@@ -310,7 +388,51 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F135
+## Current reconstruction cohort: F136
+
+Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
+All 92 native entries already have natural source; do not restart source
+writing or replace this cohort with unrelated functions. F135 has made its
+five direct effect/sound/gauge callees plus one shared-sound dependency
+canonical exact (six units/449 bytes); the large body itself has no credit.
+
+Preserve frozen `.analysis/object-action-50a580/f134/` and `f135/`, their
+checkpoints, all intermediate complete source/COFF reports and the active
+`build/probes/F134CompleteFinal.obj`. Copy the restored F135 fragments and
+headers to a fresh F136 version before editing. The restored complete source
+is byte-identical to F134. Keep all 327 accepted units/131 canonical objects,
+200 new accepted inputs and all previous origin/draft evidence unchanged.
+
+The complete comparison still requires **82,106 bytes**: 81,539 code plus the
+368-byte pointer table and 199-byte remap, every exit/shared path and all real
+relocations. Current output is 82,109 bytes and fails at 26,719 full positional
+bytes. The F134 audit records 522 instructions with physical GPR differences,
+at **case856/00515C0E through early 862/00516877**, and **case998/0051E215
+through 0051E3E1**. Instruction/control-edge observations do not accept bytes
+or prove register/memory/flags/x87 equivalence. Never mask, register-alias,
+rebase or crop away the failures.
+
+Review F134/F135 controls before probing. Scoped cases, nested guards,
+return-void-call expressions, explicit float conversions and the tested
+literal changes all produce identical code. The earlier 997 double-ratio
+trial adds four more bytes and remains rejected. Rich metadata contains
+several historical builds; no function-specific alternative compiler profile
+is established. Further work needs new native/compiler evidence rather than
+repeating these spellings or introducing dummy storage, padding or ABI lies.
+
+Reuse the whole native CFG/CPU-x87/846-call/11-nested-packet records under
+`.analysis/f131-character-selection-frontier/`, the 42 actual counters,
+20 standard float-to-short conversions and 64 readonly floating fields.
+The new helper ABI evidence includes actual RET40/32/4 callees, optional
+opaque transform pointers and the genuine DWORD gauge argument; decompiler
+parameter guesses are not authoritative. Private owners remain pointer-only.
+
+Keep compiler builds serial; cold replay only new/affected units. Freeze
+actual source/raw code/all relocations before removing reproducible probes.
+All 97 unknown origins and R268 evidence remain unchanged; later phases and
+Run/queue/resource layout questions remain deferred.
+
+## F135 investigation at the F134 checkpoint
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
 F134 has finished all 92 native entries; do not restart source writing or

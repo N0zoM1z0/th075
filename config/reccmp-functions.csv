@@ -320,3 +320,9 @@ SelectionUpdateF130::Update,0x00433CF0,function
 FighterControlsF130::UpdateControls,0x00452F10,function
 ChoiceAnimationF131::Update,0x004350E0,function
 ResultSelectionF131::Update,0x0042F970,function
+FighterEffectPoliciesF135::SpawnBattleEffect,0x00453A70,function
+FighterEffectPoliciesF135::SpawnTrackedEffect,0x00453B50,function
+FighterEffectPoliciesF135::SpawnAuxEffect,0x00453C80,function
+FighterEffectPoliciesF135::PlaySound,0x00453D40,function
+FighterEffectPoliciesF135::PlaySharedSound,0x00453D60,function
+FighterEffectPoliciesF135::UpdateGaugeTimer,0x0046D000,function

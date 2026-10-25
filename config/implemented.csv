@@ -319,3 +319,9 @@ SelectionUpdateF130::Update
 FighterControlsF130::UpdateControls
 ChoiceAnimationF131::Update
 ResultSelectionF131::Update
+FighterEffectPoliciesF135::SpawnBattleEffect
+FighterEffectPoliciesF135::SpawnTrackedEffect
+FighterEffectPoliciesF135::SpawnAuxEffect
+FighterEffectPoliciesF135::PlaySound
+FighterEffectPoliciesF135::PlaySharedSound
+FighterEffectPoliciesF135::UpdateGaugeTimer

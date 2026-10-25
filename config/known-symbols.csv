@@ -302,3 +302,9 @@ address,name,module,confidence,evidence
 0x00452F10,FighterControlsF130::UpdateControls,SelectionControl,inferred,F130; own whole cold exact / complete CFG/CPU-x87 joins/selection masks/queue andvirtual packets; original identities/types/private layouts provisional
 0x004350E0,ChoiceAnimationF131::Update,SceneSelection,inferred,F131; own whole cold exact / complete CFG/CPU-x87 joins/stage loops/shortAX cursor andpage packets; original identities/types/private layouts provisional
 0x0042F970,ResultSelectionF131::Update,SceneSelection,inferred,F131; own whole cold exact / complete CFG/CPU-x87 joins/stage loops/shortAX cursor andpage packets; original identities/types/private layouts provisional
+0x00453A70,FighterEffectPoliciesF135::SpawnBattleEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x00453B50,FighterEffectPoliciesF135::SpawnTrackedEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x00453C80,FighterEffectPoliciesF135::SpawnAuxEffect,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x00453D40,FighterEffectPoliciesF135::PlaySound,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x00453D60,FighterEffectPoliciesF135::PlaySharedSound,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x0046D000,FighterEffectPoliciesF135::UpdateGaugeTimer,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional

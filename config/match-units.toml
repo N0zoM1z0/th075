@@ -24389,3 +24389,84 @@ relocations = [
   { offset = 0x6F3, type = "DIR32", symbol = "?g_SelectionSound@@3PAVSelectionSoundF130@@A", target = 0x00671618 },
   { offset = 0x6F8, type = "REL32", symbol = "?Play@SelectionSoundF130@@QAEXH@Z", target = 0x004079C0 },
 ]
+
+[units."fighter-battle-effect-forwarder-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::SpawnBattleEffect"]
+symbol = "?SpawnBattleEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z"
+target_address = 0x00453A70
+size = 65
+compare_size = 65
+relocations = [
+  { offset = 0x37, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+]
+
+[units."fighter-tracked-effect-forwarder-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::SpawnTrackedEffect"]
+symbol = "?SpawnTrackedEffect@FighterEffectPoliciesF135@@QAEXFMMCCEE@Z"
+target_address = 0x00453B50
+size = 140
+compare_size = 140
+relocations = [
+  { offset = 0x49, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+  { offset = 0x82, type = "REL32", symbol = "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z", target = 0x0045BB10 },
+]
+
+[units."fighter-aux-effect-forwarder-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::SpawnAuxEffect"]
+symbol = "?SpawnAuxEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z"
+target_address = 0x00453C80
+size = 57
+compare_size = 57
+relocations = [
+  { offset = 0x2A, type = "DIR32", symbol = "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A", target = 0x006716C8 },
+  { offset = 0x2F, type = "REL32", symbol = "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z", target = 0x005F7AA0 },
+]
+
+[units."fighter-owner-sound-forwarder-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::PlaySound"]
+symbol = "?PlaySound@FighterEffectPoliciesF135@@QAEXF@Z"
+target_address = 0x00453D40
+size = 32
+compare_size = 32
+relocations = [
+  { offset = 0x16, type = "REL32", symbol = "?Play@EffectSoundBankF135@@QAEXH@Z", target = 0x004079C0 },
+]
+
+[units."fighter-shared-sound-forwarder-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::PlaySharedSound"]
+symbol = "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z"
+target_address = 0x00453D60
+size = 29
+compare_size = 29
+relocations = [
+  { offset = 0xE, type = "DIR32", symbol = "?g_SharedEffectSoundBankF135@@3PAVEffectSoundBankF135@@A", target = 0x00671618 },
+  { offset = 0x13, type = "REL32", symbol = "?Play@EffectSoundBankF135@@QAEXH@Z", target = 0x004079C0 },
+]
+
+[units."fighter-gauge-timer-f135"]
+source = "src/FighterEffectPolicies.cpp"
+object = "build/matching/FighterEffectPolicies.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterEffectPoliciesF135::UpdateGaugeTimer"]
+symbol = "?UpdateGaugeTimer@FighterEffectPoliciesF135@@QAEXH@Z"
+target_address = 0x0046D000
+size = 126
+compare_size = 126
+relocations = [
+  { offset = 0x5C, type = "REL32", symbol = "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z", target = 0x00453D60 },
+]

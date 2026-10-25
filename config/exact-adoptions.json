@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3fff908ed44b46fdc009ba7760f0c29e9fd35d424e4a9a7263fbeb970ecd9fbd"
+      "current_sha256": "1a67ff8300194419b722c2febcf097d3923b0fd205badbbfff20266a808558a1"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "2f9b73f45b21f7a092b65cc289793422da76479f0a0b4200d306d93dea697b6e"
+      "current_sha256": "5f5a736a3b89a901edeb34448a91d848ef0f5e57b6a9008e1b8ae147a3737257"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "9623b2789a825738d59b554d570ae90a33b5914b0888e59b5ec56e0ab4d2e9b3"
+      "current_sha256": "9b58609d7198d91862cfb0c84241e5a1a0c0da9870f6b9b235ea82521f660e9b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "2a78cbd4a40afeb3af16f74ef9cd04aaeaeb917e26636ef0d3a9b6cfc5d17873"
+      "current_sha256": "85848f2dcb0ee878a42f38d8b0a350228c1f29b42ca2e1890e2166ff50c66a8e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "d499b7ebc117ec912ac421ff417ad75d6730d9783429f942713f1709563aea32"
+      "current_sha256": "dc4a193193c66c9c661126d850e7727202f85020a5cd8522027e125624a16722"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "8b296776dc9d0978e416bdf40610b3cc754831706ee7ec63b364d33c74933b4e"
+      "current_sha256": "f67114b403e94635167ae4b9e2b974797b46ddfc0accb6c32e80c98bb9bccc6b"
     }
   },
   "functions": [
@@ -11524,6 +11524,270 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453A70",
+        "size": "65",
+        "span_end": "0x00453AB0",
+        "current_name": "FUN_00453a70",
+        "proposed_name": "FighterState::SpawnBattleEffectAt00453A70",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453A70",
+        "size": "65",
+        "span_end": "0x00453AB0",
+        "current_name": "FUN_00453a70",
+        "proposed_name": "FighterEffectPoliciesF135::SpawnBattleEffect",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::SpawnBattleEffect(short effect, float x, float y, signed char facing, signed char layer)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-battle-effect-forwarder-f135",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F135: full 65-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x00453A70",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453B50",
+        "size": "140",
+        "span_end": "0x00453BDB",
+        "current_name": "FUN_00453b50",
+        "proposed_name": "FighterState::SpawnTrackedEffectAt00453B50",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453B50",
+        "size": "140",
+        "span_end": "0x00453BDB",
+        "current_name": "FUN_00453b50",
+        "proposed_name": "FighterEffectPoliciesF135::SpawnTrackedEffect",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::SpawnTrackedEffect(short effect, float x, float y, signed char facing, signed char layer, unsigned char linked, unsigned char mode)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-tracked-effect-forwarder-f135",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F135: full 140-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x00453B50",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453C80",
+        "size": "57",
+        "span_end": "0x00453CB8",
+        "current_name": "FUN_00453c80",
+        "proposed_name": "FighterState::SpawnAuxEffectAt00453C80",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453C80",
+        "size": "57",
+        "span_end": "0x00453CB8",
+        "current_name": "FUN_00453c80",
+        "proposed_name": "FighterEffectPoliciesF135::SpawnAuxEffect",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::SpawnAuxEffect(short effect, float x, float y, signed char facing, signed char layer)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-aux-effect-forwarder-f135",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F135: full 57-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x00453C80",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453D40",
+        "size": "32",
+        "span_end": "0x00453D5F",
+        "current_name": "FUN_00453d40",
+        "proposed_name": "FighterState::PlaySoundAt00453D40",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453D40",
+        "size": "32",
+        "span_end": "0x00453D5F",
+        "current_name": "FUN_00453d40",
+        "proposed_name": "FighterEffectPoliciesF135::PlaySound",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::PlaySound(short sound)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-owner-sound-forwarder-f135",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F135: full 32-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x00453D40",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453D60",
+        "size": "29",
+        "span_end": "0x00453D7C",
+        "current_name": "FUN_00453d60",
+        "proposed_name": "FighterState::PlaySharedSoundAt00453D60",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453D60",
+        "size": "29",
+        "span_end": "0x00453D7C",
+        "current_name": "FUN_00453d60",
+        "proposed_name": "FighterEffectPoliciesF135::PlaySharedSound",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::PlaySharedSound(short sound)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-shared-sound-forwarder-f135",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F135: full 29-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x00453D60",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0046D000",
+        "size": "126",
+        "span_end": "0x0046D07D",
+        "current_name": "FUN_0046d000",
+        "proposed_name": "ReimuFighter::UpdateGaugeTimer",
+        "module": "ReimuFighter",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0046D000",
+        "size": "126",
+        "span_end": "0x0046D07D",
+        "current_name": "FUN_0046d000",
+        "proposed_name": "FighterEffectPoliciesF135::UpdateGaugeTimer",
+        "module": "ReimuFighter",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterEffectPoliciesF135::UpdateGaugeTimer(int amount)",
+        "is_thunk": "false",
+        "source_file": "src/FighterEffectPolicies.cpp",
+        "evidence": "R046; full body hash, complete decoded CFG and Reimu-specific behavior reviewed; F135; scripts/repo-python scripts/replay-exact-units.py --unit fighter-gauge-timer-f135",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F135: full 126-byte canonical cold exact in a six-helper dependency cohort, 449 code bytes / 163 instructions / 7 calls / all 9 actual relocations. Complete CFG and stack joins, four-byte frame, genuine RET4/20/28 and full nested RET40/32/4 contracts; following alignment excluded, no tables/shared/cropped tails. Main0050A580 directly calls five helpers and reaches shared sound through the timer helper. Preserve owner manager+2EC, parameter pointer+314, optional transform address+2F0 (callee copies36bytes), actual global auxiliary object versus shared sound-bank pointer, signed-word sound widening and post-truncation signed gauge checks after a true DWORD argument subtraction. The decompiler short gauge parameter is rejected by the native DWORD read. All private owners remain pointer-only; external declarations reference existing target storage and never define/construct/copy/embed owners. Seven wrong real binding/RET controls rejected. Original names/types/private layouts provisional, historical origin role preserved by alias. No data/manager/library/global/layout or large0050A580 exact credit; its complete82106-byte comparison still fails. All321 prior units/130objects/198inputs/218originfiles/nineheaders/91drafts and frozen F131..F134 evidence unchanged; all97unknown origins remain unknown. No dummy storage/padding/ABI aliases/fake returns/assembly/conditional exact bodies or pasted decompile/code arrays."
+      },
+      "origin": {
+        "address": "0x0046D000",
+        "origin": "authored",
+        "subsystem": "ReimuFighter",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R046"
       }
     }
   ],
@@ -138565,6 +138829,204 @@
           "target": 4225472
         }
       ]
+    },
+    "fighter-battle-effect-forwarder-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::SpawnBattleEffect"
+      ],
+      "symbol": "?SpawnBattleEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z",
+      "target_address": 4536944,
+      "size": 65,
+      "compare_size": 65,
+      "relocations": [
+        {
+          "offset": 55,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        }
+      ]
+    },
+    "fighter-tracked-effect-forwarder-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::SpawnTrackedEffect"
+      ],
+      "symbol": "?SpawnTrackedEffect@FighterEffectPoliciesF135@@QAEXFMMCCEE@Z",
+      "target_address": 4537168,
+      "size": 140,
+      "compare_size": 140,
+      "relocations": [
+        {
+          "offset": 73,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        },
+        {
+          "offset": 130,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectQueueF135@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        }
+      ]
+    },
+    "fighter-aux-effect-forwarder-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::SpawnAuxEffect"
+      ],
+      "symbol": "?SpawnAuxEffect@FighterEffectPoliciesF135@@QAEXFMMCC@Z",
+      "target_address": 4537472,
+      "size": 57,
+      "compare_size": 57,
+      "relocations": [
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z",
+          "target": 6257312
+        }
+      ]
+    },
+    "fighter-owner-sound-forwarder-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::PlaySound"
+      ],
+      "symbol": "?PlaySound@FighterEffectPoliciesF135@@QAEXF@Z",
+      "target_address": 4537664,
+      "size": 32,
+      "compare_size": 32,
+      "relocations": [
+        {
+          "offset": 22,
+          "type": "REL32",
+          "symbol": "?Play@EffectSoundBankF135@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "fighter-shared-sound-forwarder-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::PlaySharedSound"
+      ],
+      "symbol": "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z",
+      "target_address": 4537696,
+      "size": 29,
+      "compare_size": 29,
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "DIR32",
+          "symbol": "?g_SharedEffectSoundBankF135@@3PAVEffectSoundBankF135@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 19,
+          "type": "REL32",
+          "symbol": "?Play@EffectSoundBankF135@@QAEXH@Z",
+          "target": 4225472
+        }
+      ]
+    },
+    "fighter-gauge-timer-f135": {
+      "source": "src/FighterEffectPolicies.cpp",
+      "object": "build/matching/FighterEffectPolicies.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterEffectPoliciesF135::UpdateGaugeTimer"
+      ],
+      "symbol": "?UpdateGaugeTimer@FighterEffectPoliciesF135@@QAEXH@Z",
+      "target_address": 4640768,
+      "size": 126,
+      "compare_size": 126,
+      "relocations": [
+        {
+          "offset": 92,
+          "type": "REL32",
+          "symbol": "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z",
+          "target": 4537696
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -138765,6 +139227,8 @@
     "src/SceneTransitionLayers.cpp": "ab9533d301679bd885ed8ad5b63534accc9cd8d586cdb7f48a5af67e867fab70",
     "src/SpriteNameDrawing.cpp": "e3d606f56002233d0f2a16c6ece7b6b187a97682d22e507c9ed432d121815b00",
     "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322",
-    "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14"
+    "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14",
+    "src/FighterEffectPolicies.cpp": "3b87b986628fda7e3add6f2b46b3c284634466caf92f79c0a8efd75aa00d9a1f",
+    "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9"
   }
 }

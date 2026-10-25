@@ -264,3 +264,9 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00452F10,FighterState::UpdateControls,FighterControlsF130::UpdateControls,R045,fighter-update-controls-00452f10
 0x004350E0,CharacterSelectScene::UpdateChoiceAnimation,ChoiceAnimationF131::Update,R041,selection-choice-animation-004350e0
 0x0042F970,ResultScene::UpdateSelection,ResultSelectionF131::Update,R040,result-update-selection-0042f970
+0x00453A70,FighterState::SpawnBattleEffectAt00453A70,FighterEffectPoliciesF135::SpawnBattleEffect,R101,fighter-battle-effect-forwarder-f135
+0x00453B50,FighterState::SpawnTrackedEffectAt00453B50,FighterEffectPoliciesF135::SpawnTrackedEffect,R102,fighter-tracked-effect-forwarder-f135
+0x00453C80,FighterState::SpawnAuxEffectAt00453C80,FighterEffectPoliciesF135::SpawnAuxEffect,R101,fighter-aux-effect-forwarder-f135
+0x00453D40,FighterState::PlaySoundAt00453D40,FighterEffectPoliciesF135::PlaySound,R100,fighter-owner-sound-forwarder-f135
+0x00453D60,FighterState::PlaySharedSoundAt00453D60,FighterEffectPoliciesF135::PlaySharedSound,R102,fighter-shared-sound-forwarder-f135
+0x0046D000,ReimuFighter::UpdateGaugeTimer,FighterEffectPoliciesF135::UpdateGaugeTimer,R046,fighter-gauge-timer-f135
