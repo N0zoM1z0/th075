@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "aa6f0406b5364f8d1620be614917aab28ac9089374273c9e27d49eca443706d8"
+      "current_sha256": "57c8cbfd224a16e6fef642ac46cca7c999cac1c4e8a5b5adbb2355aaeddef806"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "1dcdcf8320a8724caf35419163746648105a27d38f85792cde1b23f6fde68ee9"
+      "current_sha256": "a503bfff7d694b4f3f486c5f1a4dcc9f3c918e50b8fded5293b1e5df1ff9601a"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "868df429f267f9eae4158abfa51cb7b2536081d310f845d04b02b769fd1d629f"
+      "current_sha256": "d3edcd4e2b72c0da0df6eb8e71af15c239a27cb78794637a518437865ff3a881"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "33d44af3d46fb79cbeaee189b9064f93000731534373f89d2f4bbc23744f90de"
+      "current_sha256": "76b9b1e20576d27188f5e868d61d2370cfaad65f85e614b4469522ef1d65079c"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "362b526c4be078cd5c0fe5ae669d37aa517a66a76ad9a8c0225af232e5f7282c"
+      "current_sha256": "dbef8112c7ba73b07d159a39bac43c3c79d7c5a56b118b8db3519e09fbcea5f6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14384,6 +14384,138 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454FD0",
+        "size": "61",
+        "span_end": "0x0045500C",
+        "current_name": "FUN_00454fd0",
+        "proposed_name": "FighterState::IsState150To199At00454FD0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00454FD0",
+        "size": "61",
+        "span_end": "0x0045500C",
+        "current_name": "FUN_00454fd0",
+        "proposed_name": "FighterState::IsState150To199At00454FD0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool FighterHitResponseF164::IsState150To199()",
+        "is_thunk": "false",
+        "source_file": "src/FighterHitResponseF164.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F164; scripts/repo-python scripts/replay-exact-units.py --unit fighter-is-state-150-to-199-00454fd0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F164: complete canonical cold exact/61 CODE bytes/all0 actual fields. Original native role retained through explicit COFF mapping. Signed-short inclusive150/exclusive200 logical predicate; actual bool AL result and genuine compiler boolean temporary preserved. Partial receiver never instantiated/embedded; complete owner/private nominal types unknown. No fake return/local/padding/assembly, conditional bodies, masks/crops/aliases/rebasing. Only3 new units/one object cold-replayed; all386 old units/147objects/230adoptioninputs, existing headers,97unknown origins and complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00454FD0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00455070",
+        "size": "56",
+        "span_end": "0x004550A7",
+        "current_name": "FUN_00455070",
+        "proposed_name": "FighterState::IsState95To99At00455070",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00455070",
+        "size": "56",
+        "span_end": "0x004550A7",
+        "current_name": "FUN_00455070",
+        "proposed_name": "FighterState::IsState95To99At00455070",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "bool FighterHitResponseF164::IsState95To99()",
+        "is_thunk": "false",
+        "source_file": "src/FighterHitResponseF164.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F164; scripts/repo-python scripts/replay-exact-units.py --unit fighter-is-state-95-to-99-00455070",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F164: complete canonical cold exact/56 CODE bytes/all0 actual fields. Original native role retained through explicit COFF mapping. Signed-short inclusive95/inclusive99 predicate; actual bool AL result and genuine compiler boolean temporary preserved. Partial receiver never instantiated/embedded; complete owner/private nominal types unknown. No fake return/local/padding/assembly, conditional bodies, masks/crops/aliases/rebasing. Only3 new units/one object cold-replayed; all386 old units/147objects/230adoptioninputs, existing headers,97unknown origins and complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00455070",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00455140",
+        "size": "944",
+        "span_end": "0x004554EF",
+        "current_name": "FUN_00455140",
+        "proposed_name": "BattleCombat::SelectHitResponseAt00455140",
+        "module": "BattleCombat",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R069; complete target body/CFG, guarded switch and combat state",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent"
+      },
+      "after": {
+        "address": "0x00455140",
+        "size": "944",
+        "span_end": "0x004554EF",
+        "current_name": "FUN_00455140",
+        "proposed_name": "BattleCombat::SelectHitResponseAt00455140",
+        "module": "BattleCombat",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "unsigned char FighterHitResponseF164::SelectHitResponse(unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/FighterHitResponseF164.cpp",
+        "evidence": "R069; complete target body/CFG, guarded switch and combat state; F164; scripts/repo-python scripts/replay-exact-units.py --unit fighter-select-hit-response-00455140",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state independent; F164: complete canonical cold exact/944 CODE bytes/all25 actual fields. Original native role retained through explicit COFF mapping. Full944CODE+16owned four-way switch bytes/all25 actual fields. Genuine unsigned byte choice, signed modes, repeated float differences, rand signed remainder, real state bypass to response classification, integer FIMUL, unordered branches and AL/RET4 used return preserved. All five local fields follow actual fresh COFF offsets, no label rebasing. Same fresh object verifies three entire byte-carrier vendor bodies/403bytes/7fields plus readonly zero4 without library/data credit. Nominal original byte-like type unknown; R072/R172/R129 evidence unchanged. Partial receiver never instantiated/embedded; complete owner/private nominal types unknown. No fake return/local/padding/assembly, conditional bodies, masks/crops/aliases/rebasing. Only3 new units/one object cold-replayed; all386 old units/147objects/230adoptioninputs, existing headers,97unknown origins and complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00455140",
+        "origin": "authored",
+        "subsystem": "BattleCombat",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R069"
       }
     }
   ],
@@ -143717,6 +143849,224 @@
           "target": 6755340
         }
       ]
+    },
+    "fighter-is-state-150-to-199-00454fd0": {
+      "source": "src/FighterHitResponseF164.cpp",
+      "object": "build/matching/FighterHitResponseF164.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::IsState150To199At00454FD0"
+      ],
+      "symbol": "?IsState150To199@FighterHitResponseF164@@QAE_NXZ",
+      "target_address": 4542416,
+      "size": 61,
+      "relocations": []
+    },
+    "fighter-is-state-95-to-99-00455070": {
+      "source": "src/FighterHitResponseF164.cpp",
+      "object": "build/matching/FighterHitResponseF164.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::IsState95To99At00455070"
+      ],
+      "symbol": "?IsState95To99@FighterHitResponseF164@@QAE_NXZ",
+      "target_address": 4542576,
+      "size": 56,
+      "relocations": []
+    },
+    "fighter-select-hit-response-00455140": {
+      "source": "src/FighterHitResponseF164.cpp",
+      "object": "build/matching/FighterHitResponseF164.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleCombat::SelectHitResponseAt00455140"
+      ],
+      "symbol": "?SelectHitResponse@FighterHitResponseF164@@QAEEI@Z",
+      "target_address": 4542784,
+      "size": 944,
+      "compare_size": 960,
+      "relocations": [
+        {
+          "offset": 90,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "$L6454",
+          "target": 4543728
+        },
+        {
+          "offset": 163,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 240,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 314,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 401,
+          "type": "DIR32",
+          "symbol": "?g_InputReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 411,
+          "type": "DIR32",
+          "symbol": "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A",
+          "target": 6756556
+        },
+        {
+          "offset": 416,
+          "type": "REL32",
+          "symbol": "?front@?$deque@EV?$allocator@E@std@@@std@@QAEAAEXZ",
+          "target": 4541776
+        },
+        {
+          "offset": 426,
+          "type": "DIR32",
+          "symbol": "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A",
+          "target": 6756556
+        },
+        {
+          "offset": 431,
+          "type": "REL32",
+          "symbol": "?pop_front@?$deque@EV?$allocator@E@std@@@std@@QAEXXZ",
+          "target": 4541808
+        },
+        {
+          "offset": 440,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 450,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 473,
+          "type": "DIR32",
+          "symbol": "?g_StateRepeatLevelAt006714D0@@3CA",
+          "target": 6755536
+        },
+        {
+          "offset": 482,
+          "type": "REL32",
+          "symbol": "_rand",
+          "target": 6559915
+        },
+        {
+          "offset": 509,
+          "type": "DIR32",
+          "symbol": "?g_InputReplayModeAt0066C238@@3CA",
+          "target": 6734392
+        },
+        {
+          "offset": 523,
+          "type": "DIR32",
+          "symbol": "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A",
+          "target": 6756556
+        },
+        {
+          "offset": 528,
+          "type": "REL32",
+          "symbol": "?push_back@?$deque@EV?$allocator@E@std@@@std@@QAEXABE@Z",
+          "target": 4277328
+        },
+        {
+          "offset": 568,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 647,
+          "type": "REL32",
+          "symbol": "?IsState150To199@FighterHitResponseF164@@QAE_NXZ",
+          "target": 4542416
+        },
+        {
+          "offset": 703,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 741,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 944,
+          "type": "DIR32",
+          "symbol": "$L5500",
+          "target": 4542920
+        },
+        {
+          "offset": 948,
+          "type": "DIR32",
+          "symbol": "$L5501",
+          "target": 4542927
+        },
+        {
+          "offset": 952,
+          "type": "DIR32",
+          "symbol": "$L5516",
+          "target": 4543004
+        },
+        {
+          "offset": 956,
+          "type": "DIR32",
+          "symbol": "$L5531",
+          "target": 4543078
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -143949,6 +144299,8 @@
     "src/FighterOverlayDrawingF163.cpp": "f18f6f9280b80a5c37bc81f53e649d0651f8f0129c093adb6a6c5122626354d5",
     "src/FighterOverlayDrawingF163.hpp": "8d1730ab3c636e2897121fa326ee69bd038b24acc84eef547b94c16384bb0e4f",
     "src/FighterCameraOffsetF162.cpp": "2410154181589db866619709f42a314bd816f0dccf9523443b9f57e48133762c",
-    "src/FighterCameraOffsetF162.hpp": "89300dc00fe300daa5d0ac790c94127f5445516efbf5bcd40b4e32e03dd4eca1"
+    "src/FighterCameraOffsetF162.hpp": "89300dc00fe300daa5d0ac790c94127f5445516efbf5bcd40b4e32e03dd4eca1",
+    "src/FighterHitResponseF164.cpp": "a5f1ac53a7a149f34710291c54524c721b3366378a00001878a821a7099337a3",
+    "src/FighterHitResponseF164.hpp": "3b292c78beaa6bae41c7a50412df84dc8f0ad38a22894396c446aab9196ff442"
   }
 }

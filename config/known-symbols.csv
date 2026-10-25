@@ -367,3 +367,6 @@ address,name,module,confidence,evidence
 0x004549C0,FighterState::DrawFacingSpriteAt004549C0,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
 0x00454AA0,FighterState::RenderFadeOverlay,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
 0x00453EB0,FighterState::AdjustCameraOffsetAt00453EB0,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
+0x00454FD0,FighterState::IsState150To199At00454FD0,FighterState,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
+0x00455070,FighterState::IsState95To99At00455070,FighterState,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
+0x00455140,BattleCombat::SelectHitResponseAt00455140,BattleCombat,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained

@@ -385,3 +385,6 @@ FighterState::RenderSideEffect,0x00454840,function
 FighterState::DrawFacingSpriteAt004549C0,0x004549C0,function
 FighterState::RenderFadeOverlay,0x00454AA0,function
 FighterState::AdjustCameraOffsetAt00453EB0,0x00453EB0,function
+FighterState::IsState150To199At00454FD0,0x00454FD0,function
+FighterState::IsState95To99At00455070,0x00455070,function
+BattleCombat::SelectHitResponseAt00455140,0x00455140,function

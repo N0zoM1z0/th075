@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F163.
+Updated 2026-10-26 for continued reconstruction, F164.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F163 adds four complete functions/1,004 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F164 adds three complete functions/1,061 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,41 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 386 units,
-  722,122 code bytes, 147 canonical objects and 230 accepted inputs.
-- Reviewed authored coverage is 36.59%; conservative coverage is 36.52%.
+  complete cold-exact units/all actual relocations. Counts are 389 units,
+  723,183 code bytes, 148 canonical objects and 232 accepted inputs.
+- Reviewed authored coverage is 36.64%; conservative coverage is 36.58%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F164 accepted hit response:** complete61-byte150..199 and56-byte95..99
+signed-short bool predicates plus944-byte hit-response selection pass one new
+canonical cold build:1,061 CODE/1,077 compared bytes including the complete16-byte
+four-way table/all25 actual fields. Actual local COFF offsets supply all five
+local DIR32 destinations. The response uses unsigned AL/RET4, a real byte choice,
+signed mode bytes, repeated float differences, integer FIMUL, signed rand
+remainder and replay byte-compatible deque operations. A real forward state
+bypass precedes common response classification; no empty branch/fake return or
+inert local is introduced. Compound and negated-OR guard forms leave942CODE/300
+differences. Original expression spelling/private nominal types/layout remain
+unknown; the receiver is not instantiated/embedded. The same fresh object fully
+checks three vendor COMDATs/403 bytes/7 fields and readonly zero4 without credit.
+All386 prior units/147 objects/230 adoption inputs and existing headers remain
+unchanged. Native roles and R103/R069/R072/R172/R129 evidence are preserved.
+
+The full151-entry scalar-member main control preserves all83,922 raw bytes and
+all2,352 actual field offsets/types/addends/destinations. Raw records differ in
+161 local-symbol spellings, independently verified by actual COFF offsets with
+no aliases/rebasing. It still has18,539 differences/first004ADEFB; source is
+restored to SHA prefix97e045e6 in F164. That control is closed, with no main
+credit. Continue F165 immediately: complete R112 matcher455800 and new genuine
+state89 allocation evidence. R054 packer455B30 remains pending; its assign
+callee copies one byte, so the28-byte zeroed stack tail does not establish a
+live29-byte record. Never add inert locals to force its frame. Preserve all12
+old active objects/both F159 traces/all14 F157 probes and every pending byte.
 
 **F163 accepted drawing/camera:** complete378-byte side effect454840,165-byte
 facing sprite4549C0,280-byte fade overlay454AA0 and181-byte camera offset453EB0

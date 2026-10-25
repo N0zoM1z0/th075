@@ -25602,3 +25602,158 @@ offset = 167
 type = "DIR32"
 symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
 target = 0x0067140C
+
+[units.fighter-is-state-150-to-199-00454fd0]
+relocations = []
+source = "src/FighterHitResponseF164.cpp"
+object = "build/matching/FighterHitResponseF164.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::IsState150To199At00454FD0"]
+symbol = "?IsState150To199@FighterHitResponseF164@@QAE_NXZ"
+target_address = 0x00454FD0
+size = 61
+
+[units.fighter-is-state-95-to-99-00455070]
+relocations = []
+source = "src/FighterHitResponseF164.cpp"
+object = "build/matching/FighterHitResponseF164.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::IsState95To99At00455070"]
+symbol = "?IsState95To99@FighterHitResponseF164@@QAE_NXZ"
+target_address = 0x00455070
+size = 56
+
+[units.fighter-select-hit-response-00455140]
+source = "src/FighterHitResponseF164.cpp"
+object = "build/matching/FighterHitResponseF164.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleCombat::SelectHitResponseAt00455140"]
+symbol = "?SelectHitResponse@FighterHitResponseF164@@QAEEI@Z"
+target_address = 0x00455140
+size = 944
+compare_size = 960
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 90
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "$L6454"
+target = 0x004554F0
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 240
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 314
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 401
+type = "DIR32"
+symbol = "?g_InputReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 411
+type = "DIR32"
+symbol = "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A"
+target = 0x006718CC
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 416
+type = "REL32"
+symbol = "?front@?$deque@EV?$allocator@E@std@@@std@@QAEAAEXZ"
+target = 0x00454D50
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 426
+type = "DIR32"
+symbol = "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A"
+target = 0x006718CC
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 431
+type = "REL32"
+symbol = "?pop_front@?$deque@EV?$allocator@E@std@@@std@@QAEXXZ"
+target = 0x00454D70
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 440
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 450
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 473
+type = "DIR32"
+symbol = "?g_StateRepeatLevelAt006714D0@@3CA"
+target = 0x006714D0
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 482
+type = "REL32"
+symbol = "_rand"
+target = 0x006418AB
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 509
+type = "DIR32"
+symbol = "?g_InputReplayModeAt0066C238@@3CA"
+target = 0x0066C238
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 523
+type = "DIR32"
+symbol = "?g_ReplayChoicesAt006718CC@@3V?$deque@EV?$allocator@E@std@@@std@@A"
+target = 0x006718CC
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 528
+type = "REL32"
+symbol = "?push_back@?$deque@EV?$allocator@E@std@@@std@@QAEXABE@Z"
+target = 0x00414450
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 568
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 647
+type = "REL32"
+symbol = "?IsState150To199@FighterHitResponseF164@@QAE_NXZ"
+target = 0x00454FD0
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 703
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 741
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 944
+type = "DIR32"
+symbol = "$L5500"
+target = 0x004551C8
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 948
+type = "DIR32"
+symbol = "$L5501"
+target = 0x004551CF
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 952
+type = "DIR32"
+symbol = "$L5516"
+target = 0x0045521C
+[[units.fighter-select-hit-response-00455140.relocations]]
+offset = 956
+type = "DIR32"
+symbol = "$L5531"
+target = 0x00455266

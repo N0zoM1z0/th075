@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F163.
+Updated 2026-10-26 for continued reconstruction, F164.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F163 accepts four complete functions/1,004 bytes. Both
-large drafts remain unaccepted. Current F163 outcomes supersede historical
+phases remain deferred. F164 accepts three complete functions/1,061 bytes. Both
+large drafts remain unaccepted. Current F164 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -41,14 +41,14 @@ complete or the user explicitly changes the instruction.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 386 / 386 / 386 |
-| Exact code bytes | 722,122 |
-| Reviewed authored coverage | 722,122 / 1,973,516 (36.59%) |
-| Conservative coverage, including pending bytes | 722,122 / 1,977,124 (36.52%) |
-| Canonical objects / accepted source-header inputs | 147 / 230 |
+| Source-present / exact functions / exact units | 389 / 389 / 389 |
+| Exact code bytes | 723,183 |
+| Reviewed authored coverage | 723,183 / 1,973,516 (36.64%) |
+| Conservative coverage, including pending bytes | 723,183 / 1,977,124 (36.58%) |
+| Canonical objects / accepted source-header inputs | 148 / 232 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 326 additions / 712,239 code bytes / 230 inputs. Origin evidence through
+F009 plus 329 additions / 713,300 code bytes / 232 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -57,7 +57,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **d0ecd9b (F162)**, preceded by
+The preceding reconstruction checkpoint is **22443ea (F163)**, preceded by
+**d0ecd9b (F162)** and
 **5d51487 (F161)** and
 **c758e14 (F160)**; continuation policy
 **0322984** also removes the stale README stop instruction. Earlier checkpoints
@@ -92,7 +93,82 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F163 outcomes and continuation
+## Current F164 outcomes and continuation
+
+One new canonical object accepts three complete authored functions/1,061 CODE
+bytes from `src/FighterHitResponseF164.cpp` and its call-only header:
+
+| Unit | Code bytes | Compared bytes |
+| --- | --- | --- |
+| fighter-is-state-150-to-199-00454fd0 | 61 | 61 |
+| fighter-is-state-95-to-99-00455070 | 56 | 56 |
+| fighter-select-hit-response-00455140 | 944 | 960 |
+
+All three pass canonical cold replay, 1,077 complete compared bytes including
+the owned16-byte four-way switch table and all25 actual fields. All five local
+DIR32 destinations follow actual fresh COFF offsets; no native-label rebasing.
+Full R103 predicates retain signed-short ranges and bool AL/RET0. R069 retains
+its used unsigned-byte AL result/RET4, genuine unsigned choice local, signed
+mode bytes, repeated float differences, integer FIMUL, signed rand remainder,
+replay byte-container contract and ordered/unordered comparisons. A meaningful
+forward branch bypasses direction validation for states150..199 before shared
+response classification. Compound and negated-OR guard controls emit942 CODE
+bytes/300 complete differences; the explicit bypass emits944/all fields exact.
+Original expression spelling, nominal private types and complete owner layout
+remain unknown; the partial receiver is never instantiated or embedded.
+
+The same fresh canonical object independently verifies all three called vendor
+COMDATs: front32, pop_front157, push_back214, 403 bytes/all7 actual fields,
+against frozen R072/R172 context. Complete zero-float readonly4 also matches.
+Library/data earn no authored credit. R129 rand and all original roles/origins
+remain unchanged. Existing BattleCombat.hpp and all386 prior units/147 objects/
+230 adoption inputs are unchanged; no old dependency required cold replay.
+
+One complete151-entry main control uses ordinary primitive/pointer scalar
+members. All83,922 raw bytes and all2,352 actual field offsets/types/addends/
+destinations remain identical to F156. Raw relocation records differ in161
+local-symbol spellings; their actual offsets/destinations were independently
+checked without aliases. Full comparison still fails at18,539 positions,
+first004ADEFB; all151 entries/prefix/default/tail/headers are restored to SHA
+prefix97e045e6 under `.analysis/character-move-4ac040/f164/`. No main credit.
+This scalar-member control and F163 FLOAT-only unwrapping are closed.
+
+Continue fresh F165 immediately after this checkpoint. Investigate the complete
+R112 sequence matcher00455800:695 CODE bytes plus owned pointer table68 and
+remap40 (verify full extent before acceptance). Native command decoding uses a
+real20-byte command array and deque byte-compatible iterators, not an inferred
+29-byte history element. R054 PackDirectionBits00455B30 remains pending: the
+callee copies a one-byte value; the28-byte zeroed stack tail has no proven live
+use. Do not introduce an inert array or claim a29-byte element. Also seek new
+genuine state89 allocation evidence without repeating closed controls. Both
+complete large drafts, all97 unknown origins and all pending bytes stay in the
+conservative denominator. Preserve all12 prior active objects, both F159 traces
+and all14 F157 probes. All Wine/compiler/debugger calls require explicit
+headless environments. The continuation command above remains mandatory.
+
+Receipts: `.analysis/f164-hit-unit-proof.json`,
+`.analysis/f164-hit-canonical-replay.json`,
+`.analysis/f164-hit-canonical-dependencies.json`,
+`.analysis/character-move-4ac040/f164/scalar-members-baseline-identity.json`
+and `scalar-members-whole-diagnostic.json`.
+
+Public CI passed **3,612 tests in 201.435 seconds**. Target,
+tracking, progress and diff checks pass. Only three new units/one object were
+cold replayed:1,061 CODE/1,077 full compared bytes/all25 actual fields. All386
+old units/147 objects/230 adoption inputs, every existing header, all origin/
+verifier guards, forty protected groups and all12 prior active objects were
+hash-verified unchanged. Five serial explicitly headless compiler builds ran:
+four diagnostics/controls (including one whole main build) and one canonical.
+Cleanup removed four obsolete probe objects (341,340
+bytes), 377 bytecode files (8,312,309 bytes) and
+0 separate PDBs (0 bytes). All complete
+source/header/profile/raw code/data/symbol/native/field receipts,148 canonical
+objects, all12 prior active objects, both F159 traces and all14 F157 probes stay.
+Final receipts: `.analysis/f164-preservation-final.json`,
+`.analysis/f164-cleanup.json` and `.analysis/f164-source-checkpoint.json`.
+The98% goal remains active and incomplete; execute the next task immediately.
+
+## Retained F163 outcomes
 
 Two new canonical objects accept four complete authored policies/1,004 bytes:
 
