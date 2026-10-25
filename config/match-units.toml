@@ -27056,3 +27056,65 @@ offset = 668
 type = "DIR32"
 symbol = "?g_DebugKeyRepeatAt0068D618@@3IA"
 target = 0x0068D618
+
+[units.battle-draw-atlas-number-default-00446b60]
+source = "src/LeafRenderF176.cpp"
+object = "build/matching/LeafRenderF176.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleHud::DrawAtlasNumberDefaultAt00446B60"]
+symbol = "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z"
+target_address = 0x00446B60
+size = 35
+[[units.battle-draw-atlas-number-default-00446b60.relocations]]
+offset = 26
+type = "REL32"
+symbol = "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z"
+target = 0x00446B90
+
+[units.hud-set-notice-state-00446d60]
+source = "src/LeafRenderF176.cpp"
+object = "build/matching/LeafRenderF176.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["HudNotice::SetNoticeStateAt00446D60"]
+symbol = "?SetNoticeState@HudNoticeF176@@QAEXE@Z"
+target_address = 0x00446D60
+size = 32
+relocations = []
+
+[units.fighter-spawn-aux-effect-00453cc0]
+source = "src/LeafRenderF176.cpp"
+object = "build/matching/LeafRenderF176.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SpawnAuxEffectAt00453CC0"]
+symbol = "?SpawnAuxEffect@AuxiliaryForwardersF176@@QAEXFMMCCI@Z"
+target_address = 0x00453CC0
+size = 57
+[[units.fighter-spawn-aux-effect-00453cc0.relocations]]
+offset = 42
+type = "DIR32"
+symbol = "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A"
+target = 0x006716C8
+[[units.fighter-spawn-aux-effect-00453cc0.relocations]]
+offset = 47
+type = "REL32"
+symbol = "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z"
+target = 0x005F7AA0
+
+[units.fighter-spawn-configured-aux-effect-00453d00]
+source = "src/LeafRenderF176.cpp"
+object = "build/matching/LeafRenderF176.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SpawnConfiguredAuxEffectAt00453D00"]
+symbol = "?SpawnConfiguredAuxEffect@AuxiliaryForwardersF176@@QAEXFMMCCEE@Z"
+target_address = 0x00453D00
+size = 61
+[[units.fighter-spawn-configured-aux-effect-00453d00.relocations]]
+offset = 46
+type = "DIR32"
+symbol = "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A"
+target = 0x006716C8
+[[units.fighter-spawn-configured-aux-effect-00453d00.relocations]]
+offset = 51
+type = "REL32"
+symbol = "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z"
+target = 0x005F7AA0

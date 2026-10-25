@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F175.
+Updated 2026-10-26 for continued reconstruction, F176.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F175 accepts complete pause-menu and debug-key
-policies; all complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F176 accepts four complete HUD/effect
+wrappers; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,50 @@ policies; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 418 units,
-  731,270 code bytes, 158 canonical objects and 252 accepted inputs.
-- Reviewed authored coverage is 37.05%; conservative coverage is 36.99%.
+  complete cold-exact units/all actual relocations. Counts are 422 units,
+  731,455 code bytes, 159 canonical objects and 254 accepted inputs.
+- Reviewed authored coverage is 37.06%; conservative coverage is 37.00%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F176 accepted HUD/effect wrappers:** four complete R100/R103/R101 bodies
+in `LeafRenderF176.cpp` pass one canonical cold build:446B60/35,446D60/32,
+453CC0/57 and453D00/61,185 CODE bytes/all5 actual fields (3 REL32/2 DIR32).
+All CFGs, RET0/4/24/28, no owned tables and alignment are checked. The cdecl atlas
+wrapper forwards five arguments plus0 to canonical446B90; notice writes150at60
+and byte64, with explicit empty relocation list. Auxiliary default consumes six
+slots/RET24 while reading only five: retain the genuine unused sixth dword slot
+as an unnamed carrier, with original nominal type unknown. Configured wrapper
+uses all seven slots/RET28 and both flag bytes. Reuse unchanged6716C8 manager,
+typed5F7AA0 callee and parameter pointer314; no callee exact credit. Original
+roles stay literal via COFF maps. No owner instances, layout claim, inert locals,
+padding, fake returns, ABI tricks, assembly, conditional bodies, masks or crops.
+All418 old units/158 objects/252 inputs and thirteen prior active objects plus
+all14 F157 probes/both F159 remain unchanged. Only four new units/one object
+were cold-replayed. All97 unknowns and every pending byte stay in the denominator.
+
+Full R065445A00 has1,958 CODE plus28 owned direct-switch bytes. The upfront
+front-result store at EBP-4 has no subsequent read in complete native flow;
+source purpose is unknown. Do not fabricate an inert local; no source/exact
+credit. The R054455B30/260 local28-byte clear likewise remains unresolved.
+Full R045451A00 render source uses a known complete132-byte SpriteQuad packet,
+RECT16 and two real integers, emitting440 versus446 bytes/390 differences.
+FrameB4/this-a8/x-a4 differ from B0/this-a4/x-18. One real x-to-cameraX name
+control changes no physical bytes/fields and is closed. Complete selected
+object/source is the fourteenth active object; no storage or layout was invented.
+Only the four cold-exact wrappers are in the published canonical source.
+
+Immediately continue complete R042446590/1,483 digit-atlas policy: full CFG/ABI,
+initialization loops, constructors, textures, RECT/container interfaces, all
+strings/data and alignment before natural source/full comparison. Preserve all
+pending drafts and bytes; continue immediately after checkpoint/commit/push.
+Receipts: `.analysis/f176-leaf-render-unit-proof.json`,
+`.analysis/f176-leaf-render-canonical-replay.json`, full native proofs, R065 source
+limits and complete wrapper/render source/profile/diagnostic snapshots.
 
 **F175 accepted pause/debug policies:** two complete R042 functions in
 `PauseDebugF175.cpp` pass one canonical cold build:4461D0/751 and4480D0/788,

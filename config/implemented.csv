@@ -416,3 +416,7 @@ BattleScene::PollPauseShortcut
 BattleScene::UpdatePlayerEffects
 BattleScene::HandlePauseMenu
 BattleScene::ProcessDebugKeys
+BattleHud::DrawAtlasNumberDefaultAt00446B60
+HudNotice::SetNoticeStateAt00446D60
+FighterState::SpawnAuxEffectAt00453CC0
+FighterState::SpawnConfiguredAuxEffectAt00453D00

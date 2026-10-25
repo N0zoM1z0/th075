@@ -417,3 +417,7 @@ BattleScene::PollPauseShortcut,0x004456F0,function
 BattleScene::UpdatePlayerEffects,0x00445830,function
 BattleScene::HandlePauseMenu,0x004461D0,function
 BattleScene::ProcessDebugKeys,0x004480D0,function
+BattleHud::DrawAtlasNumberDefaultAt00446B60,0x00446B60,function
+HudNotice::SetNoticeStateAt00446D60,0x00446D60,function
+FighterState::SpawnAuxEffectAt00453CC0,0x00453CC0,function
+FighterState::SpawnConfiguredAuxEffectAt00453D00,0x00453D00,function

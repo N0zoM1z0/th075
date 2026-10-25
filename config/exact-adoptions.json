@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "72fe38117f7d5f154b618941db1b5b54f08f9838d713d5b10a89ea837a4d7fac"
+      "current_sha256": "78dc81575286d3a073aa91564d07f0320bbb119d0e0e6dd53518a2786ac5b5f3"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6708a90950ad7ee056d1754526c4c552ba4e5d84f32c17bcc91360ad887781fe"
+      "current_sha256": "7f49b88c84757ba4cdcb09fd828941853e19b2aba03fbc1b6d65330ee1324c09"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "746e69e25b6e4f02ae71b45dfad7da5532ab3858416cf921ef8fbf528774d74e"
+      "current_sha256": "b806c9262552490d0e145cfd4dd176ebe43be8dc395ee9c6feea97054ca5318b"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "1faf30b625e65cf3f9642299e5dbb2949a5ed201f400964202d38be243d8b2b0"
+      "current_sha256": "f938104f651da89375d5dfe2b29ca1e2cb19a34d8263a615f7337fb5ff24968e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "26079b50ececf034f5a5d75388a878771bdaf78e37891b8b43d2fd3a24cad815"
+      "current_sha256": "302dbdd15ee776665913b479441f839a1862f264cdda1eef6557a2befa53d631"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -15792,6 +15792,182 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R042"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00446B60",
+        "size": "35",
+        "span_end": "0x00446B82",
+        "current_name": "FUN_00446b60",
+        "proposed_name": "BattleHud::DrawAtlasNumberDefaultAt00446B60",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00446B60",
+        "size": "35",
+        "span_end": "0x00446B82",
+        "current_name": "FUN_00446b60",
+        "proposed_name": "BattleHud::DrawAtlasNumberDefaultAt00446B60",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "cdecl",
+        "signature": "void __cdecl DrawAtlasNumberDefaultAt00446B60(float, float, D3DCOLOR, int, signed char)",
+        "is_thunk": "false",
+        "source_file": "src/LeafRenderF176.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F176; scripts/repo-python scripts/replay-exact-units.py --unit battle-draw-atlas-number-default-00446b60",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F176: four completeR100/R103/R101 bodies185CODE/all5actualfields(3REL32/2DIR32), fullCFG/noownedtables/alignment and trueRET0/4/24/28. Atlas defaultcdecl5slots preserves allarguments plus0 tocanonical446B90; notice writes150at60/byte64 and explicitlyretains emptyrelocations list. Aux453CC0 genuinelyunread sixth incomingDWORDslot retained as unnamedunsignedintcarrier, withoriginalnominaltypeunknown; configured453D00 has7usedslots. Both retain actualword/bytecarriers/parameterpointer314 and reuseunchangedcanonicalg_AuxiliaryEffectsF1356716C8/typedSpawn5F7AA0, withoutcalleeexactcredit. OriginalrolesliteralviaCOFFmaps, no ownerinstances/layoutclaims/inertlocals/padding/fakereturn/ABItrick/asm/conditionalbodies/masks/crops/aliases/rebasing. FullR045446renderdraft remainsunaccepted440bytes/390diff andR065sequence1958CODE+28table remainspending due unexplainedupfrontwriteonlysnapshot; no inventedstorage orcredit. Only4newunits/oneobject coldreplayed; all418oldunits/158objects/252inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00446B60",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00446D60",
+        "size": "32",
+        "span_end": "0x00446D7F",
+        "current_name": "FUN_00446d60",
+        "proposed_name": "HudNotice::SetNoticeStateAt00446D60",
+        "module": "HudNotice",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00446D60",
+        "size": "32",
+        "span_end": "0x00446D7F",
+        "current_name": "FUN_00446d60",
+        "proposed_name": "HudNotice::SetNoticeStateAt00446D60",
+        "module": "HudNotice",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void HudNoticeF176::SetNoticeState(unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/LeafRenderF176.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F176; scripts/repo-python scripts/replay-exact-units.py --unit hud-set-notice-state-00446d60",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F176: four completeR100/R103/R101 bodies185CODE/all5actualfields(3REL32/2DIR32), fullCFG/noownedtables/alignment and trueRET0/4/24/28. Atlas defaultcdecl5slots preserves allarguments plus0 tocanonical446B90; notice writes150at60/byte64 and explicitlyretains emptyrelocations list. Aux453CC0 genuinelyunread sixth incomingDWORDslot retained as unnamedunsignedintcarrier, withoriginalnominaltypeunknown; configured453D00 has7usedslots. Both retain actualword/bytecarriers/parameterpointer314 and reuseunchangedcanonicalg_AuxiliaryEffectsF1356716C8/typedSpawn5F7AA0, withoutcalleeexactcredit. OriginalrolesliteralviaCOFFmaps, no ownerinstances/layoutclaims/inertlocals/padding/fakereturn/ABItrick/asm/conditionalbodies/masks/crops/aliases/rebasing. FullR045446renderdraft remainsunaccepted440bytes/390diff andR065sequence1958CODE+28table remainspending due unexplainedupfrontwriteonlysnapshot; no inventedstorage orcredit. Only4newunits/oneobject coldreplayed; all418oldunits/158objects/252inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00446D60",
+        "origin": "authored",
+        "subsystem": "HudNotice",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453CC0",
+        "size": "57",
+        "span_end": "0x00453CF8",
+        "current_name": "FUN_00453cc0",
+        "proposed_name": "FighterState::SpawnAuxEffectAt00453CC0",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453CC0",
+        "size": "57",
+        "span_end": "0x00453CF8",
+        "current_name": "FUN_00453cc0",
+        "proposed_name": "FighterState::SpawnAuxEffectAt00453CC0",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AuxiliaryForwardersF176::SpawnAuxEffect(short, float, float, signed char, signed char, unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/LeafRenderF176.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F176; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-aux-effect-00453cc0",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F176: four completeR100/R103/R101 bodies185CODE/all5actualfields(3REL32/2DIR32), fullCFG/noownedtables/alignment and trueRET0/4/24/28. Atlas defaultcdecl5slots preserves allarguments plus0 tocanonical446B90; notice writes150at60/byte64 and explicitlyretains emptyrelocations list. Aux453CC0 genuinelyunread sixth incomingDWORDslot retained as unnamedunsignedintcarrier, withoriginalnominaltypeunknown; configured453D00 has7usedslots. Both retain actualword/bytecarriers/parameterpointer314 and reuseunchangedcanonicalg_AuxiliaryEffectsF1356716C8/typedSpawn5F7AA0, withoutcalleeexactcredit. OriginalrolesliteralviaCOFFmaps, no ownerinstances/layoutclaims/inertlocals/padding/fakereturn/ABItrick/asm/conditionalbodies/masks/crops/aliases/rebasing. FullR045446renderdraft remainsunaccepted440bytes/390diff andR065sequence1958CODE+28table remainspending due unexplainedupfrontwriteonlysnapshot; no inventedstorage orcredit. Only4newunits/oneobject coldreplayed; all418oldunits/158objects/252inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00453CC0",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453D00",
+        "size": "61",
+        "span_end": "0x00453D3C",
+        "current_name": "FUN_00453d00",
+        "proposed_name": "FighterState::SpawnConfiguredAuxEffectAt00453D00",
+        "module": "EffectForwarders",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453D00",
+        "size": "61",
+        "span_end": "0x00453D3C",
+        "current_name": "FUN_00453d00",
+        "proposed_name": "FighterState::SpawnConfiguredAuxEffectAt00453D00",
+        "module": "EffectForwarders",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void AuxiliaryForwardersF176::SpawnConfiguredAuxEffect(short, float, float, signed char, signed char, unsigned char, unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/LeafRenderF176.cpp",
+        "evidence": "R101; scripts/repo-python scripts/verify-effect-forwarder-origins.py; F176; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-configured-aux-effect-00453d00",
+        "owner": "authored",
+        "notes": "Complete game transform/effect body and CFG; reviewed custom callees, observed argument/member policy and truthful RET cleanup; inferred names/layouts, no source or exact credit; F176: four completeR100/R103/R101 bodies185CODE/all5actualfields(3REL32/2DIR32), fullCFG/noownedtables/alignment and trueRET0/4/24/28. Atlas defaultcdecl5slots preserves allarguments plus0 tocanonical446B90; notice writes150at60/byte64 and explicitlyretains emptyrelocations list. Aux453CC0 genuinelyunread sixth incomingDWORDslot retained as unnamedunsignedintcarrier, withoriginalnominaltypeunknown; configured453D00 has7usedslots. Both retain actualword/bytecarriers/parameterpointer314 and reuseunchangedcanonicalg_AuxiliaryEffectsF1356716C8/typedSpawn5F7AA0, withoutcalleeexactcredit. OriginalrolesliteralviaCOFFmaps, no ownerinstances/layoutclaims/inertlocals/padding/fakereturn/ABItrick/asm/conditionalbodies/masks/crops/aliases/rebasing. FullR045446renderdraft remainsunaccepted440bytes/390diff andR065sequence1958CODE+28table remainspending due unexplainedupfrontwriteonlysnapshot; no inventedstorage orcredit. Only4newunits/oneobject coldreplayed; all418oldunits/158objects/252inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00453D00",
+        "origin": "authored",
+        "subsystem": "EffectForwarders",
+        "disposition": "authored",
+        "confidence": "complete-game-transform-or-effect-policy",
+        "evidence_id": "R101"
       }
     }
   ],
@@ -147220,6 +147396,127 @@
           "target": 6870552
         }
       ]
+    },
+    "battle-draw-atlas-number-default-00446b60": {
+      "source": "src/LeafRenderF176.cpp",
+      "object": "build/matching/LeafRenderF176.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleHud::DrawAtlasNumberDefaultAt00446B60"
+      ],
+      "symbol": "?DrawAtlasNumberDefaultAt00446B60@@YAXMMKHC@Z",
+      "target_address": 4483936,
+      "size": 35,
+      "relocations": [
+        {
+          "offset": 26,
+          "type": "REL32",
+          "symbol": "?DrawAtlasNumberAt00446B90@@YAXMMKHCH@Z",
+          "target": 4483984
+        }
+      ]
+    },
+    "hud-set-notice-state-00446d60": {
+      "source": "src/LeafRenderF176.cpp",
+      "object": "build/matching/LeafRenderF176.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "HudNotice::SetNoticeStateAt00446D60"
+      ],
+      "symbol": "?SetNoticeState@HudNoticeF176@@QAEXE@Z",
+      "target_address": 4484448,
+      "size": 32,
+      "relocations": []
+    },
+    "fighter-spawn-aux-effect-00453cc0": {
+      "source": "src/LeafRenderF176.cpp",
+      "object": "build/matching/LeafRenderF176.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SpawnAuxEffectAt00453CC0"
+      ],
+      "symbol": "?SpawnAuxEffect@AuxiliaryForwardersF176@@QAEXFMMCCI@Z",
+      "target_address": 4537536,
+      "size": 57,
+      "relocations": [
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z",
+          "target": 6257312
+        }
+      ]
+    },
+    "fighter-spawn-configured-aux-effect-00453d00": {
+      "source": "src/LeafRenderF176.cpp",
+      "object": "build/matching/LeafRenderF176.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SpawnConfiguredAuxEffectAt00453D00"
+      ],
+      "symbol": "?SpawnConfiguredAuxEffect@AuxiliaryForwardersF176@@QAEXFMMCCEE@Z",
+      "target_address": 4537600,
+      "size": 61,
+      "relocations": [
+        {
+          "offset": 46,
+          "type": "DIR32",
+          "symbol": "?g_AuxiliaryEffectsF135@@3VAuxiliaryEffectsF135@@A",
+          "target": 6756040
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z",
+          "target": 6257312
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -147474,6 +147771,8 @@
     "src/ProgressPauseF174.cpp": "53d721a676f3f238699db408eeb7d5fa1ec03fbe74103839e81d8a370a1e5391",
     "src/ProgressPauseF174.hpp": "df634eb3fef11a058175c9fc4914cf9e0ad10dbc3727a008e135707429dfec7b",
     "src/PauseDebugF175.cpp": "d55c768ece85df35c55a3d79759dc371ab82731de99030c27c954c33afb79298",
-    "src/PauseDebugF175.hpp": "dce030ba35ecc3289d27399b577cbf1525f446bde4c94474015a1ccff65d8472"
+    "src/PauseDebugF175.hpp": "dce030ba35ecc3289d27399b577cbf1525f446bde4c94474015a1ccff65d8472",
+    "src/LeafRenderF176.cpp": "b4c5ca2ffa7990450efb8f3faae4b3b2ffd84a2fe97e15573caff0d5c4efa159",
+    "src/LeafRenderF176.hpp": "e6dc33ad1eff0e1a1bc0392931ce33f02356c330a13369c35233349ca793e2f5"
   }
 }

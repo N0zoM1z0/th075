@@ -399,3 +399,7 @@ address,name,module,confidence,evidence
 0x00445830,BattleScene::UpdatePlayerEffects,BattleScene,inferred,F174; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004461D0,BattleScene::HandlePauseMenu,BattleScene,inferred,F175; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x004480D0,BattleScene::ProcessDebugKeys,BattleScene,inferred,F175; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00446B60,BattleHud::DrawAtlasNumberDefaultAt00446B60,BattleHud,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00446D60,HudNotice::SetNoticeStateAt00446D60,HudNotice,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00453CC0,FighterState::SpawnAuxEffectAt00453CC0,EffectForwarders,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00453D00,FighterState::SpawnConfiguredAuxEffectAt00453D00,EffectForwarders,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

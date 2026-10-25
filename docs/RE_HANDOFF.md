@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F175.
+Updated 2026-10-26 for continued reconstruction, F176.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F175 accepts complete pause-menu and debug-key policies.
+phases remain deferred. F176 accepts four complete HUD/effect wrappers.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F175 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F176 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 418 / 418 / 418 |
-| Exact code bytes | 731,270 |
-| Reviewed authored coverage | 731,270 / 1,973,516 (37.05%) |
-| Conservative coverage, including pending bytes | 731,270 / 1,977,124 (36.99%) |
-| Canonical objects / accepted source-header inputs | 158 / 252 |
+| Source-present / exact functions / exact units | 422 / 422 / 422 |
+| Exact code bytes | 731,455 |
+| Reviewed authored coverage | 731,455 / 1,973,516 (37.06%) |
+| Conservative coverage, including pending bytes | 731,455 / 1,977,124 (37.00%) |
+| Canonical objects / accepted source-header inputs | 159 / 254 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 358 additions / 721,387 code bytes / 252 inputs. Origin evidence through
+F009 plus 362 additions / 721,572 code bytes / 254 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **c3e15fb (F174)**, preceded by
+The preceding reconstruction checkpoint is **6fe11c2 (F175)**, preceded by
+**c3e15fb (F174)** and
 **2864a9a (F173)** and
 **73565e0 (F172)** and
 **2e83de5 (F171)** and
@@ -107,7 +108,83 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F175 outcomes and continuation
+## Current F176 outcomes and continuation
+
+One new canonical object accepts four complete functions in
+`src/LeafRenderF176.cpp` and its call-only header:
+
+| Unit | Code bytes | Actual fields |
+| --- | --- | --- |
+| `battle-draw-atlas-number-default-00446b60` | 35 | 1 REL32 |
+| `hud-set-notice-state-00446d60` | 32 | 0 |
+| `fighter-spawn-aux-effect-00453cc0` | 57 | 1 REL32 / 1 DIR32 |
+| `fighter-spawn-configured-aux-effect-00453d00` | 61 | 1 REL32 / 1 DIR32 |
+
+One canonical cold build passes all185 CODE bytes and all5 actual fields.
+Complete R100/R103/R101 CFGs, absence of owned tables, RET0/4/24/28 and following
+INT3 alignment are verified. Atlas default is cdecl and forwards all five values
+plus zero to canonical446B90. Notice writes150 at60 and the byte at64; its unit
+explicitly retains `relocations = []`. The57-byte auxiliary wrapper has six
+incoming dword slots despite reading only the first five. Its genuinely unread
+sixth slot is retained as an unnamed dword carrier so RET24 remains truthful;
+original nominal type is unknown. The61-byte wrapper consumes all seven slots
+and keeps both supplied flag bytes/RET28. Existing g_AuxiliaryEffectsF1356716C8,
+typed Spawn5F7AA0 interface and parameter pointer314 are reused unchanged.
+The callee gains no exact credit. Original roles stay literal via explicit COFF
+maps; no owner instances, layout claims, inert locals, padding, fake returns,
+ABI tricks, assembly, conditional bodies, masks, crops, aliases or rebasing.
+All418 previous units/158 objects/252 inputs, existing headers/origins/verifiers,
+13 previous active objects/all14 F157 probes/both F159 traces remain unchanged.
+Only four new units/one object were cold-replayed.
+
+Complete R065445A00 was reviewed:1,958 CODE plus28 owned direct-switch bytes,
+all1,986 bytes retained. Native stores the upfront deque.front result to EBP-4
+without reading it again. Its original source purpose remains unknown; an inert
+local must not be invented to obtain those bytes. No source or exact credit.
+The R054455B30/260 local28-byte clear also remains unresolved and pending.
+
+A complete natural R045451A00 render draft uses the independently complete
+132-byte SpriteQuad40CA80 packet, RECT16 and two real coordinate integers.
+It emits440 versus446 bytes with390 position differences. Native frameB4/
+this-a8/x-a4 differ from emittedB0/this-a4/x-18. A real x-to-cameraX rename
+changes no physical bytes or fields and is closed. The selected complete440-
+byte object/source is retained as a fourteenth active object. No extra local,
+owner size, padding or fabricated return was added; full446 bytes remain pending.
+Only the four exact wrappers are published in the canonical source.
+
+Immediately continue complete R042446590/1,483-byte digit-atlas initialization.
+Review full native CFG/ABI, constructor/texture/RECT/container contracts, all
+strings and data, initialization loops and alignment before natural source and
+whole comparison. Preserve the render/sequence/pack drafts and every pending
+byte; do not repeat the unchanged render name control without new allocation
+evidence. Execute this next action after checkpoint/cleanup/commit/push.
+The98% goal stays active and incomplete; never pause automatically.
+
+Receipts: `.analysis/f176-leaf-render-unit-proof.json`,
+`.analysis/f176-leaf-render-canonical-replay.json`, full native cohort proof,
+R065 source-limit evidence and complete wrapper/render source/profile reports.
+
+Public CI passed **3,612 tests in 200.130 seconds**. Target,
+tracking, progress and diff checks pass. Four new units in one object were cold-
+replayed:185 full CODE bytes/all5 actual fields. All418 previous units/158 old
+canonical objects/252 old adoption inputs, existing headers, origin/verifier
+guards, forty protected groups,13 prior active objects/all14 F157 probes/both
+F159 traces were hash-verified unchanged. Four compiler builds ran serially and
+explicitly headless: wrapper preview, full render preview, unchanged render
+name control, and the new wrapper-only canonical cold build. No old accepted
+unit or large-function control was rebuilt. The selected440-byte render object
+is retained as the fourteenth active object, with no source or exact credit.
+Cleanup removed two obsolete previews (25,095 bytes),
+0 PDBs (0 bytes) and377 bytecode
+files (8,312,364 bytes), retaining all complete nondebug
+sections/symbols/fields/source/header/profile evidence and159 canonical objects.
+Receipts: `.analysis/f176-object-retention.json`, `.analysis/f176-cleanup.json`,
+`.analysis/f176-render-active-object.json`, `.analysis/f176-preservation-final.json`
+and `.analysis/f176-source-checkpoint.json`. Immediately execute the complete
+446590 digit-atlas task after this checkpoint/commit/push; the98% goal is active
+and incomplete, with no automatic pause.
+
+## Retained F175 outcomes
 
 One new canonical object accepts two whole R042 functions in
 `src/PauseDebugF175.cpp` and its call-only header:
