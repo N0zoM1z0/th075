@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for resumed reconstruction, F150.
+Updated 2026-10-25 for resumed reconstruction, F151.
 **The 98% authored-byte objective is active and incomplete.**
 The user resumed after the cleanup and handoff checkpoint. Subsequent project
 phases remain deferred. Continue the complete function cohort below.
@@ -28,26 +28,26 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding pushed reconstruction checkpoint is **fd82165 (F148)**.
+The preceding pushed reconstruction checkpoint is **c2efd6a (F150)**.
 The last new exact unit was F146's 51-byte `fighter-motion-clear-00453e20`,
 source `src/FighterMotionClear453E20.cpp`, cold51/51 with zero differences.
-F147/F148/F150 added incomplete private source, not exact bytes.
+F147/F148/F150/F151 added incomplete private source, not exact bytes.
 
-## Continue after F150: complete 004AC040
+## Continue after F151: complete 004AC040
 
-The authoritative private source is **`.analysis/character-move-4ac040/f150/`**.
-There are **104/151 nondefault entry fragments**, covering 35,886 contiguous
-native investigation bytes 004AC1B9..004B4DE6. **47 entries remain**. These
+The authoritative private source is **`.analysis/character-move-4ac040/f151/`**.
+There are **131/151 nondefault entry fragments**, covering 59,992 contiguous
+native investigation bytes 004AC1B9..004BAC10. **20 entries remain**. These
 fragments are uncompiled/unaccepted and earn no source-presence/exact credit.
 
 1. Read `native-cohort-proof.json`, `source-transcription-audit.json`,
    `receiver-vtable-proof.json` and `command-selection-native-contract.json`.
-2. Copy current inputs to a fresh F151 working directory before editing:
+2. Copy current inputs to a fresh F152 working directory before editing:
    `Case*.inc`, `Prefix.inc`, `Tail.inc`, `SourceDependencies.inc`, both private
-   receiver headers and the full native map. Preserve F148 and F150 unchanged.
+   receiver headers and the full native map. Preserve F148, F150 and F151 unchanged.
    F149 remains the cleanup/handoff receipt identifier.
-3. Continue **state 500, 004B4DE7..004B5124**, 830 bytes/232 instructions.
-   Following mapped entries are 501,502,503,504,505,506,507,508,509,594...;
+3. Continue **state 700, 004BAC11..004BAF03**, 755 bytes/199 instructions.
+   Following mapped entries are 701,702,703,704,705,706,707,731,741,742...;
    consult the full map rather than assuming numerical adjacency or combining
    labels.
 4. Complete all 151 entries, real default/shared paths, ABI, profile and actual
@@ -62,18 +62,22 @@ actual default 004C037D, common tail 004C039F, epilogue 004C03A7 and sole RET 00
 Frame 0x720, saved ESI and ECX at EBP-0x64 are observations: recover genuine locals
 and nested packets without artificial storage.
 
-The source audit checks 104 entry hashes, call evaluation order and real exits.
+The source audit checks 131 entry hashes, call evaluation order and real exits.
 All new named calls use canonical accepted units, including recorded random
 range 00455580; seven older calls retain the unaccepted R213 declaration.
-Eighteen float-to-short conversions and eleven real loop counters remain.
-This audit does not establish emitted CFG/bytes. There are 574 canonical named
+Eighteen float-to-short conversions and fifteen real loop counters remain.
+This audit does not establish emitted CFG/bytes. There are 926 canonical named
 call sites and seven calls to the unaccepted command declaration.
 F148 inputs/evidence remain frozen by their original checkpoint. Current
-inputs/evidence are frozen by `.analysis/f150-source-checkpoint.json`.
-F150 adds 24 entries/12,684 native investigation bytes. See the knowledge index
-for explicit spawn sites, native constants and genuine random loops. Nested
-random arguments are audited in native right-to-left evaluation order; lexical
-call order alone is insufficient for these four entries.
+inputs/evidence are frozen by `.analysis/f151-source-checkpoint.json`.
+F151 adds 27 entries/24,106 native investigation bytes. The new scalar audit
+checks direct float/integer constant-store width, value and order for these
+27 entries; calculated expressions/conditions and emitted bytes remain outside
+that audit. Keep both 36-site rings in 603/605 explicit and the four real loops
+in 607..610. In 607/608 the post-loop F00/F02-to-motion writes precede the
+F00 reset/F02 increment. See the knowledge index for additional native details.
+Nested random arguments remain audited in native right-to-left evaluation
+order; lexical call order alone is insufficient.
 
 ## Native contracts and details to retain
 
@@ -161,4 +165,17 @@ Cleanup removed 375 reproducible bytecode files (8,285,269 bytes).
 Source and preservation receipts: `.analysis/f150-source-checkpoint.json`,
 `.analysis/f150-preservation-before-ci.json` and `.analysis/f150-cleanup.json`.
 The 24 new fragments remain private, uncompiled and unaccepted; exact code
+remains 716,968 bytes and conservative coverage remains 36.26%.
+
+## F151 verification
+
+Public CI passed **3,603 tests in 173.573 seconds**. Target,
+tracking, status and diff checks pass. F150's 268 private files and 283 checkpoint files and all forty
+previously protected groups were hash-verified unchanged, including 331 units,
+135 canonical objects, 209 accepted source/header inputs and origin evidence.
+No accepted dependency changed; no compiler build or cold replay was needed.
+Cleanup removed 375 reproducible bytecode files (8,285,269 bytes).
+Source and preservation receipts: `.analysis/f151-source-checkpoint.json`,
+`.analysis/f151-preservation-before-ci.json` and `.analysis/f151-cleanup.json`.
+The 27 new fragments remain private, uncompiled and unaccepted; exact code
 remains 716,968 bytes and conservative coverage remains 36.26%.

@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F150. The active 98%
+Updated 2026-10-25 for resumed reconstruction, F151. The active 98%
 authored-byte objective remains incomplete. Current state and continuation
 instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
@@ -23,12 +23,12 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
 ## Current source work
 
-**004AC040, R048 authored:** `.analysis/character-move-4ac040/f150/` contains
-104/151 uncompiled nondefault fragments, full native CFG/table/entry proof,
-default/common tail and source/call/constant/ABI audits. Forty-seven entries
-remain, starting with state 500 at 004B4DE7. Whole comparison is 82,796 code +
+**004AC040, R048 authored:** `.analysis/character-move-4ac040/f151/` contains
+131/151 uncompiled nondefault fragments, full native CFG/table/entry proof,
+default/common tail and source/call/constant/ABI audits. Twenty entries
+remain, starting with state 700 at 004BAC11. Whole comparison is 82,796 code +
 1,126 owned data = 83,922 bytes. No source-presence or exact credit. Keep F148
-immutable; F150 copied its complete input set before authoring 24 more entries.
+and F150 immutable; F151 copied the complete F150 input set before editing.
 
 F150 covers the actual mapped states 390..420, adding 12,684 native
 investigation bytes (35,886 contiguous bytes with source in total). It retains
@@ -41,6 +41,31 @@ remain provisional. This source audit checks call evaluation order, not emitted
 CFG or bytes. Native constants at 006590AC and 00657F74 are 110.0f and 0.25f.
 State 416 decrements F00 without initializing it in that entry; preserve this
 observed order. No compilation, source-presence or exact credit is claimed.
+
+F151 adds 27 actual mapped entries 500..610, covering 24,106 more native
+investigation bytes (59,992 contiguous bytes with source). There are now 926
+canonical named calls, seven unaccepted command calls, fifteen genuine loops
+and eighteen float-to-short conversions. Native entry/body/CFG/table/ABI,
+source call evaluation order and real exits were rechecked. A separate scalar
+contract audit verifies all direct literal float/integer store widths, values
+and order in the 27 new entries; it does not prove calculated expressions,
+conditions, original declarations or emitted bytes.
+
+- 500/501 use repeat bounds 1/3; 502/503 use 2/4. The latter multiply motion by
+  double constants 0.25/0.1. 501 sets gravity after its auxiliary effect call.
+- 504..506 fade by 30 and launch at zero; 507..509 fade by 20 and launch after
+  the repeated phase-8 reset path. Preserve the six distinct tracked effects
+  and the post-call transform/alpha stores in each entry.
+- 594..596 decrement byte 366 before clearing motion. Only 594/595 retain the
+  pre-advance 3B6/7C guard, and 598/599 have no sound call at their spawn site.
+- 600/601 decrement the short timer only inside the pre-advance phase >4 guard.
+  Their five computed angle stores differ; 602 retains the native five-angle
+  sequence 10,5,0,5,10. Do not infer symmetric negative angles.
+- 603/605 each contain 36 distinct calls with literal angles 0..350 by 10.
+  604/606 each contain nine distinct calls with literal angles -28..28 by 7.
+  604 decrements F00 before advancing; 605/606 do not. 607..610 have four real
+  ten-iteration loops. 607/608 restore motion from short F00/F02 times 0.01f
+  before resetting/incrementing those shorts; 609/610 have no such restore.
 
 The observed two-slot receiver prefix is supported by constructor 004C0832,
 table006594A8, complete R050/R068 bodies and four actual character calls in
@@ -68,7 +93,7 @@ F149 stopped during read-only reconnaissance of390..402. No additional case
 was authored. State392's nested phase 6/phase 4 tests and400..402's three
 explicit spawn sites must be preserved from native evidence rather than
 optimized away/replaced by an invented loop. The unused duplicate work copy
-was removed; F148 retains every current source/native file.
+was removed; F148 retains that earlier source/native checkpoint.
 
 ## Historical investigations
 
