@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F145 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F146 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -29,6 +29,124 @@ The only target is the supplied Japanese `th075.exe`, reporting version 1.11:
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
+
+## Latest canonical interfaces and source-operand mapping: F145
+
+**No new exact bytes or source-presence credit are accepted.** The current
+complete main source has improved: **244 existing calls** now use already
+accepted public interfaces, comprising 205 owner helpers, 37 recorded-range
+calls and two shared-sound calls. All **801 authored/helper call fields** now
+name their actual accepted public COFF symbols and canonical destinations.
+The other 45 calls remain explicit: 20 CRT float conversions, 23 calls to
+unknown-origin `00483300`, and two to unknown-origin `00412D90`. These call
+counts are interface evidence, not authored-byte credit or new origin claims.
+
+The current source includes `FighterEffectPolicies.hpp`, `EffectServices.hpp`
+and `RecordedRange455580.hpp`; all public headers and accepted functions are
+unchanged. Eight unused helper declarations were removed from the private
+character interface, leaving its truthful virtual slot0/slot1 prefix. The
+unused private `OwnerView.hpp` is preserved with the baseline inputs rather
+than included by active source. There are now **three active private headers**.
+The 649-use word view, all 92 entries, 42 counters, 20 conversions, 64 floating
+fields, 846 calls and eleven nested packets remain intact. No game owner was
+sized, constructed, copied, embedded or allocated.
+
+**Current source is the canonical-interface composition**, SHA-256
+`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`.
+Keep **`build/probes/F145CanonicalViews.obj`** active. Retain F142WordWindow
+and every older F134/F136/F138/F139 active object. Do not revert to the older
+source merely because its emitted bytes are the same. Original actual input
+bytes are frozen under `snapshots/baseline`; current inputs are frozen under
+`snapshots/canonical-views`, both inside the private F145 directory.
+
+Five complete main builds retain **82,109 emitted bytes / 26,719 whole
+positional differences**, all **1,449 actual fields**, 17,435 instructions,
+raw SHA-256 `1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`
+and the same fully relocated failure. Required extent remains 82,106 bytes.
+The interface change renames exactly **244 external method fields** and
+**94 local COFF labels**. Every actual field offset/type/addend, local offset
+and real destination is unchanged and independently checked; local label
+spelling cannot hide a moved case. No mask, register alias, rebasing, cropped
+extent, semantic credit or accepted-unit rebuild is used.
+
+**Compiler-observed:** Actual source operands enter the instruction+28 list
+at C2 `10775667`; the executed lookup/write path at `10775A54` maps originals
+7274/7276 and12501/12503 to their existing physical registers. All four carry
+last-use flag `0x10`. Runtime observations and the executed release path show
+occupied slots cleared without advancing the pool cursor. This closes the
+missing comparison-reference path; it does not establish original target
+liveness or explain the two native frontiers.
+
+A census of F143's 342 unlinked exact tuples finds 198 with the same original
+ID/physical register at a different emitted node, and 144 without an explicit
+register-token emission for that original. These are candidate relationships,
+not assumed node lifetimes or counts of extra operations. Actual watches on
+representative original7247 see only its normal mapping write, with no pool
+reuse/reset during the run. The next focused run observes source7246 and
+result7247 sharing ECX, **zero cursor writes** for mapping4342, and the actual
+formatter using source7246 for `ADD ECX,0x19`, followed by original7248/CL in
+the byte store. This is the real alpha-plus-25 operation with an in-place
+register; the unprinted result node is not an extra allocation or statement.
+
+A fresh run of the **current** canonical source records **7,454 generic
+writes, 7,454 source-use writes, 1,603 forced writes and 11,382 explicit
+register tokens**. Every token matches the complete own COFF stream. Of the
+emitted tokens, 10,298 match an observed write tuple, 145 use an actually
+identical original/physical descriptor pointer, 937 have no observed write at
+these particular stores, and two retain stale node joins. All categories
+remain distinct. F144's watched baseline established recycling for the two
+stale-join patterns; the current log keeps both exceptions explicitly. This
+token model covers explicit register operands, not memory base/index tokens.
+
+The two current frontiers are revalidated after the source change:
+ordinal6629/original17355/map4362 selects EDX versus native EAX, and
+ordinal11311/original20487/map7408 selects EAX versus native ECX. The actual
+IDs and raw emission remain unchanged even though local COFF labels rename.
+Do not infer a missing source operation or original cursor/occupancy state.
+
+Four independent fixture builds contain **25 complete callers**. Five direct,
+immediate member-pointer or qualified call forms have identical full 106-byte
+bodies and actual fields. Boolean-result comparisons/materialization add
+instructions and fail the native shape; two conditional void call/return
+forms change the real JNE destination. Real used return-value locals,
+`register`/`const` locals and a bound reference add stack storage/instructions.
+Unsigned-return-bit casts and the signed round trip preserve the caller body;
+unsigned direct promotion changes MOVSX to MOVZX. Actual distinct toy callee
+symbols are retained; no game ABI was altered or aliased. No tested form
+justifies a game source workaround.
+
+All nine serial builds ran headless with absent displays and disabled Wine
+graphical drivers. Four native batch-GDB logs independently attest absent
+`DISPLAY` and `WAYLAND_DISPLAY`; debugger runs are capped and use nice
+priority. There are five complete main and four complete fixture COFF outputs,
+with no failed/empty compiler output. All pinned compiler components remain
+unchanged. No game process or graphical debugger was started.
+
+Receipts under `.analysis/object-action-50a580/f145/` include
+`canonical-view-source-proof.json`, `canonical-call-contracts.json`, actual
+input snapshots, five whole-main reports, `two-address-reuse-proof.json`,
+`current-mapping-correlation.json`, runtime logs/commands, all fixture bytes
+and actual fields, and whole-object/listing archives. Preserve the native
+runners, composition rules and the new active object. Baseline reports retain
+their original compilation paths/hashes and explicit immutable snapshot links.
+
+Public CI passed all **3,603 tests in 184.404 seconds**. Cleanup
+removed eight obsolete complete F145 COFFs (561,813 bytes),
+nine losslessly archived generated assembly files
+(7,892,521 bytes), and 375 bytecode files
+(8,285,264 bytes). All nine whole COFFs and listings remain
+recoverable from checked archives. The new active canonical-interface object,
+every older active/canonical object, sources/snapshots, raw fields, logs, PDBs
+and shared tools remain. Receipts: `.analysis/f145-source-checkpoint.json`
+and `.analysis/f145-preservation-cleanup.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. All 134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers, 91 older drafts and
+F131..F144 frozen evidence remain unchanged. All 97 unknown origins/3,608
+bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
+pending. The 98% goal remains active and incomplete; later phases remain
+deferred.
 
 ## Latest headless precolor and recycled-node investigation: F144
 
@@ -1188,62 +1306,80 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F145
+## Current reconstruction cohort: F146
 
 Continue the same complete **`CharacterObject::AdvanceAt0050A580`** body,
-all 92 entries and all 82,106 required bytes. Run everything headless per
-`AGENTS.md`; use native 32-bit Wine/batch GDB, absent displays and disabled
-Wine graphical drivers. Do not reuse interactive WineDbg attempts.
+all 92 entries and all 82,106 required bytes. Use only headless tools per
+`AGENTS.md`: absent display variables, disabled graphical Wine drivers,
+native 32-bit Wine/batch GDB and existing headless Ghidra. No interactive
+WineDbg, host windows or shared-tool modifications.
 
-Copy current F144 fragments, four private headers, composition rules,
-constants and whole source to fresh F145 before editing. Current source is
-byte-identical F142/F143, retaining the 649-use bounded word view. Keep
-**F142WordWindow.obj** active plus F134/F136/F138/F139 active objects. Preserve
-330 accepted units/134 canonical objects, 207 accepted inputs, 218 origin
-files, nine shared headers, 91 older drafts and all F131..F144 inputs/proofs.
-The virtual symbol remains `?Advance@CharacterAdvance50A580Draft@@UAEXXZ`.
+**Current source changed in F145.** Copy its current fragments, **three**
+private headers, composition rules, constants and whole canonical-interface
+source to fresh F146 before editing. Source SHA-256 is
+`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`.
+Keep **F145CanonicalViews.obj** active and retain F142WordWindow plus all
+older F134/F136/F138/F139 active objects. Preserve 330 accepted units/134
+canonical objects, 207 accepted inputs, 218 origin files, nine shared headers,
+91 older drafts and all F131..F145 snapshots/proofs. The virtual symbol stays
+`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`; do not restore obsolete helper
+declarations or active OwnerView.hpp. Those original inputs remain frozen in
+F145 snapshots/baseline; the active composition uses accepted public helpers.
 
-Current failure remains 82,109 bytes /26,719 positional differences and 522
+The 244 newly canonical calls are already checked against actual accepted
+symbols/addresses. All 801 authored/helper call fields use those public
+interfaces. The remaining 20 CRT conversions and25 unknown math-wrapper calls
+are explicit and earn no new credit. No accepted header/source changed, so
+no unchanged canonical unit needs a cold rebuild. Cold replay new/affected
+units only after a valid complete source/manifest comparison exists.
+
+Current failure remains 82,109 bytes /26,719 positional differences and522
 physical-GPR differences at case856 through early862 and case998. Preserve
-42 counters, 20 ordinary conversions, 64 floating fields, 846 calls, eleven
-nested packets and all 1,449 actual relocations. No masks/aliases/rebasing,
-cropped comparison or semantic-equivalence credit. Cold replay only new or
-affected accepted units; do not rebuild unchanged accepted units.
+all tables/paths, 42 counters, 20 conversions, 64 floating fields, 846 calls,
+eleven nested packets and every one of1,449 real relocations. The94 renamed
+local labels have unchanged actual COFF offsets; never alias/rebase/mask a
+failure or crop a function. All81,539 main code bytes remain pending.
 
-F144 has closed the two F143 node-address exceptions: the pool zeroes and
-reuses those addresses, then copies different logical operands there.
-Original12120/ECX and original12264/EDX are replacements, not the earlier
-mapped20276/EAX and20361/EAX retaining identity. Preserve both lifetimes and
-the failed null-pointer logger as a failed run. Use the successful raw-pointer
-watch logs and whole COFF archives; never assume address identity survives
-pool recycling.
+F145 now observes actual source-operand mapping at10775A54 and last-use
+release at10775A60. Originals7274/7276 and12501/12503 reuse existing registers
+and release occupied slots without changing the cursor. Receiver originals
+7278/12505 were forced to ECX before generic allocation, as watched in F144.
+Neither path identifies an extra frontier cursor advance.
 
-The two receiver constraints original7278 and12505 are now directly observed:
-source and copy are forced to ECX at C2 10778738/10778779 before any generic
-mapping, while the pool cursor is null. They do not provide a hidden frontier
-cursor advance. Native signed owner+82 at515BD2 excludes unsigned-word
-rewriting; explicit unsigned promotion and the narrow fixture's following
-register phase are unchanged. No new main-source spelling is justified.
+Do not count generic mapping writes as fresh allocations. Representative
+original7247 reuses ECX already held by source7246 with zero cursor writes;
+actual ADD formatting uses source7246 and the later byte store uses7248/CL.
+The342 old unlinked tuples are198 same-original/physical candidates elsewhere
+and144 without explicit-token emission; absence is not a dead/extra-operation
+proof. F144's two old node lifetimes were recycled; F145 keeps both current
+stale joins explicitly rather than assuming stable address identity.
 
-The next bounded investigation can follow the actual source-operand/reference
-propagation for originals7274/7276 and12501/12503, or the 342 exact-tuple
-unlinked mapping writes. The latter includes narrow and full physical IDs;
-absence from the emitter tuple is not proof of a dead/extra operation. Watch
-actual fields/definitions before choosing a mechanism. A nearby static
-compiler helper starts at10775667 with an instruction+28 operand list, but
-that is a static lead, not a verified propagation contract. Preserve original
-IDs, widths, actual mapped pointers and lifetimes separately; recompute IDs
-and validate C2 base after any source/profile change.
+Read F145 current-mapping-correlation.json first: 7,454 generic and7,454
+source-use writes, 1,603 forced writes, all11,382 explicit tokens matching
+own COFF, 10,298 matching write tuples,145 actual literal physical descriptors,
+937 unobserved writes at these stores and2 stale joins. The first frontiers
+remain ordinal6629/original17355/map4362 EDX versus native EAX, and
+ordinal11311/original20487/map7408 EAX versus native ECX. These IDs were
+revalidated on current source; recompute them after any new source change.
 
-First856 remains ordinal6629/original17355, map4362 to EDX versus native EAX;
-first998 remains ordinal11311/original20487, map7408 to EAX versus native ECX.
-Native registers equal the next observed source candidates, but original
-cursor/IR/source remains unknown. Do not add an extra allocation, inert
-local/expression, fake return or ABI, padding, assembly or byte arrays.
-All new source candidates need independent true CFG/ABI/data support and a
-whole real-relocation comparison. Avoid repeated full diagnostic compiles
-without a new source hypothesis or focused runtime observation. All pending
-bytes/unknown origins remain in the denominator; later phases stay deferred.
+A useful next bounded lead is actual width/copy adaptation outside the hot
+stores, for example emitted original7248/CL after the observed alpha ADD.
+The source-map width mismatch branches to107385AB; that remains a static
+lead until an executed watch confirms its real write path. Select a relevant
+operand from the937 unobserved events, track actual node/descriptor lifetime
+and avoid assuming every unobserved event has the same cause. Revalidate
+loaded C2 base and pinned hashes. Prefer a specific executed path or natural
+CFG/ABI/data hypothesis over repeated complete diagnostics.
+
+The25 F145 independent callers reject tested boolean materialization,
+conditional void-call edges and real return-value locals/reference storage.
+Immediate member-pointer/qualified calls and return-bit round trips do not
+change the caller register phase. Do not repeat these as main fixes or infer
+a native int/unsigned return ABI from the independent toy declarations.
+No dummy local/expression/allocation, fake return/ABI, arbitrary padding,
+assembly/byte arrays, alternate conditional game bodies, aliases/masks or
+cropped comparison. Unknown origins and every pending byte remain in the
+denominator; later phases remain deferred. The full98% goal is incomplete.
 
 ## F135 investigation at the F134 checkpoint
 

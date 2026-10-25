@@ -26747,3 +26747,121 @@ F131..F143 frozen evidence remain unchanged. All 97 unknown origins/3,608
 bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
 pending. The 98% goal remains active and incomplete; later phases remain
 deferred.
+
+## F145 — canonical helper interfaces and actual source-operand mapping
+
+**No new exact bytes or source-presence credit are accepted.** The current
+complete main source has improved: **244 existing calls** now use already
+accepted public interfaces, comprising 205 owner helpers, 37 recorded-range
+calls and two shared-sound calls. All **801 authored/helper call fields** now
+name their actual accepted public COFF symbols and canonical destinations.
+The other 45 calls remain explicit: 20 CRT float conversions, 23 calls to
+unknown-origin `00483300`, and two to unknown-origin `00412D90`. These call
+counts are interface evidence, not authored-byte credit or new origin claims.
+
+The current source includes `FighterEffectPolicies.hpp`, `EffectServices.hpp`
+and `RecordedRange455580.hpp`; all public headers and accepted functions are
+unchanged. Eight unused helper declarations were removed from the private
+character interface, leaving its truthful virtual slot0/slot1 prefix. The
+unused private `OwnerView.hpp` is preserved with the baseline inputs rather
+than included by active source. There are now **three active private headers**.
+The 649-use word view, all 92 entries, 42 counters, 20 conversions, 64 floating
+fields, 846 calls and eleven nested packets remain intact. No game owner was
+sized, constructed, copied, embedded or allocated.
+
+**Current source is the canonical-interface composition**, SHA-256
+`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`.
+Keep **`build/probes/F145CanonicalViews.obj`** active. Retain F142WordWindow
+and every older F134/F136/F138/F139 active object. Do not revert to the older
+source merely because its emitted bytes are the same. Original actual input
+bytes are frozen under `snapshots/baseline`; current inputs are frozen under
+`snapshots/canonical-views`, both inside the private F145 directory.
+
+Five complete main builds retain **82,109 emitted bytes / 26,719 whole
+positional differences**, all **1,449 actual fields**, 17,435 instructions,
+raw SHA-256 `1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`
+and the same fully relocated failure. Required extent remains 82,106 bytes.
+The interface change renames exactly **244 external method fields** and
+**94 local COFF labels**. Every actual field offset/type/addend, local offset
+and real destination is unchanged and independently checked; local label
+spelling cannot hide a moved case. No mask, register alias, rebasing, cropped
+extent, semantic credit or accepted-unit rebuild is used.
+
+**Compiler-observed:** Actual source operands enter the instruction+28 list
+at C2 `10775667`; the executed lookup/write path at `10775A54` maps originals
+7274/7276 and12501/12503 to their existing physical registers. All four carry
+last-use flag `0x10`. Runtime observations and the executed release path show
+occupied slots cleared without advancing the pool cursor. This closes the
+missing comparison-reference path; it does not establish original target
+liveness or explain the two native frontiers.
+
+A census of F143's 342 unlinked exact tuples finds 198 with the same original
+ID/physical register at a different emitted node, and 144 without an explicit
+register-token emission for that original. These are candidate relationships,
+not assumed node lifetimes or counts of extra operations. Actual watches on
+representative original7247 see only its normal mapping write, with no pool
+reuse/reset during the run. The next focused run observes source7246 and
+result7247 sharing ECX, **zero cursor writes** for mapping4342, and the actual
+formatter using source7246 for `ADD ECX,0x19`, followed by original7248/CL in
+the byte store. This is the real alpha-plus-25 operation with an in-place
+register; the unprinted result node is not an extra allocation or statement.
+
+A fresh run of the **current** canonical source records **7,454 generic
+writes, 7,454 source-use writes, 1,603 forced writes and 11,382 explicit
+register tokens**. Every token matches the complete own COFF stream. Of the
+emitted tokens, 10,298 match an observed write tuple, 145 use an actually
+identical original/physical descriptor pointer, 937 have no observed write at
+these particular stores, and two retain stale node joins. All categories
+remain distinct. F144's watched baseline established recycling for the two
+stale-join patterns; the current log keeps both exceptions explicitly. This
+token model covers explicit register operands, not memory base/index tokens.
+
+The two current frontiers are revalidated after the source change:
+ordinal6629/original17355/map4362 selects EDX versus native EAX, and
+ordinal11311/original20487/map7408 selects EAX versus native ECX. The actual
+IDs and raw emission remain unchanged even though local COFF labels rename.
+Do not infer a missing source operation or original cursor/occupancy state.
+
+Four independent fixture builds contain **25 complete callers**. Five direct,
+immediate member-pointer or qualified call forms have identical full 106-byte
+bodies and actual fields. Boolean-result comparisons/materialization add
+instructions and fail the native shape; two conditional void call/return
+forms change the real JNE destination. Real used return-value locals,
+`register`/`const` locals and a bound reference add stack storage/instructions.
+Unsigned-return-bit casts and the signed round trip preserve the caller body;
+unsigned direct promotion changes MOVSX to MOVZX. Actual distinct toy callee
+symbols are retained; no game ABI was altered or aliased. No tested form
+justifies a game source workaround.
+
+All nine serial builds ran headless with absent displays and disabled Wine
+graphical drivers. Four native batch-GDB logs independently attest absent
+`DISPLAY` and `WAYLAND_DISPLAY`; debugger runs are capped and use nice
+priority. There are five complete main and four complete fixture COFF outputs,
+with no failed/empty compiler output. All pinned compiler components remain
+unchanged. No game process or graphical debugger was started.
+
+Receipts under `.analysis/object-action-50a580/f145/` include
+`canonical-view-source-proof.json`, `canonical-call-contracts.json`, actual
+input snapshots, five whole-main reports, `two-address-reuse-proof.json`,
+`current-mapping-correlation.json`, runtime logs/commands, all fixture bytes
+and actual fields, and whole-object/listing archives. Preserve the native
+runners, composition rules and the new active object. Baseline reports retain
+their original compilation paths/hashes and explicit immutable snapshot links.
+
+Public CI passed all **3,603 tests in 184.404 seconds**. Cleanup
+removed eight obsolete complete F145 COFFs (561,813 bytes),
+nine losslessly archived generated assembly files
+(7,892,521 bytes), and 375 bytecode files
+(8,285,264 bytes). All nine whole COFFs and listings remain
+recoverable from checked archives. The new active canonical-interface object,
+every older active/canonical object, sources/snapshots, raw fields, logs, PDBs
+and shared tools remain. Receipts: `.analysis/f145-source-checkpoint.json`
+and `.analysis/f145-preservation-cleanup.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. All 134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers, 91 older drafts and
+F131..F144 frozen evidence remain unchanged. All 97 unknown origins/3,608
+bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
+pending. The 98% goal remains active and incomplete; later phases remain
+deferred.
