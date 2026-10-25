@@ -24485,3 +24485,25 @@ relocations = [
   { offset = 0xE7, type = "REL32", symbol = "?ResetNodeTransform@SpawnedEffectF136@@QAEXMMM@Z", target = 0x0040FBB0 },
   { offset = 0x10E, type = "REL32", symbol = "?PushBack@EffectDequeF136@@QAEXABQAVSpawnedEffectF136@@@Z", target = 0x0045BFC0 },
 ]
+
+[units."battle-effect-advance-all-0045bdb0"]
+source = "src/BattleEffectAdvance.cpp"
+object = "build/matching/BattleEffectAdvance.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEffectAdvanceF137::AdvanceAll"]
+symbol = "?AdvanceAll@BattleEffectAdvanceF137@@QAEXXZ"
+target_address = 0x0045BDB0
+size = 296
+compare_size = 296
+relocations = [
+  { offset = 0x33, type = "REL32", symbol = "?size@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEIXZ", target = 0x0045BF50 },
+  { offset = 0x66, type = "REL32", symbol = "??A?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAEAAPAVAdvancingEffectF137@@I@Z", target = 0x0045BF70 },
+  { offset = 0x8E, type = "REL32", symbol = "?begin@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445360 },
+  { offset = 0xA4, type = "REL32", symbol = "?end@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ", target = 0x00445390 },
+  { offset = 0xAD, type = "REL32", symbol = "??9const_iterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBE_NABV012@@Z", target = 0x00445440 },
+  { offset = 0xBC, type = "REL32", symbol = "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ", target = 0x004453E0 },
+  { offset = 0xCC, type = "REL32", symbol = "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ", target = 0x004453E0 },
+  { offset = 0xDA, type = "REL32", symbol = "??3@YAXPAX@Z", target = 0x00640F15 },
+  { offset = 0xFB, type = "REL32", symbol = "?erase@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@V312@@Z", target = 0x0045C0A0 },
+  { offset = 0x116, type = "REL32", symbol = "??Eiterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AV012@H@Z", target = 0x00445400 },
+]

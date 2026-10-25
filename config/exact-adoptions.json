@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F136",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2a1dce7b963f3163e9c2274a0acbb616dc671066fa7f1c1a4bda05b55b2c0d85"
+      "current_sha256": "8768a5dc0a6e8cef0ab479ff9b747118089ce5968afe7c0d41d874538a5ab8c4"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c0173d2f0fab2cf0ff4462b34d695e499cefa1547e0ae1cee4c7bd673aa5a3d0"
+      "current_sha256": "573a8114c55702d0693bd7244fe10121311ac98a533a297f474759143cc98a2c"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "148905f489fd2a74abecc6b7b051aa5683e0272fab49ca7641a3ba5e8b2d5c55"
+      "current_sha256": "46431abde4b169ca8cd823f07b03fa059325ac5fe1f527418df9979c34a2905e"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "43fb4e175fa44fa08b018d11c3c0aa21487e4b019a2d82cbeb808aa59db8af89"
+      "current_sha256": "c3da5899af788855688c52e50dc271da82e8bd6c3203a7beb1cef8146b98a5d7"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2b8614171fa27be9bb889763d3f8bf81de0abf7697b0110f52a6db675984b156"
+      "current_sha256": "ee275f1076accd10dd2f3de561db7715e12679d0ff921e531df92071bf3659f6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "4afd598a29f4267927e7f61164ca831fd49930908e43cfc3ebc07a6a98bdb363"
+      "current_sha256": "a3c4fc53d8530a2cab87b8b8279135d5a01f7249d9a9d6bee17e9ca443fc2238"
     }
   },
   "functions": [
@@ -11827,6 +11827,50 @@
       },
       "origin": {
         "address": "0x0045BB10",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045BDB0",
+        "size": "296",
+        "span_end": "0x0045BED7",
+        "current_name": "FUN_0045bdb0",
+        "proposed_name": "BattleEffect::AdvanceAll",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0045BDB0",
+        "size": "296",
+        "span_end": "0x0045BED7",
+        "current_name": "FUN_0045bdb0",
+        "proposed_name": "BattleEffectAdvanceF137::AdvanceAll",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleEffectAdvanceF137::AdvanceAll()",
+        "is_thunk": "false",
+        "source_file": "src/BattleEffectAdvance.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F137; scripts/repo-python scripts/replay-exact-units.py --unit battle-effect-advance-all-0045bdb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F137: complete 296-byte canonical cold exact, 98 instructions, ten direct calls, one virtual slot1 call, all ten actual REL32 fields. Whole own CFG, every stack join, 56-byte frame and plain RET verified; eight following INT3 bytes excluded. Four layers use actual 20-byte deque stride, signed snapshotted count and subscript traversal, then field74-zero unsized delete and iterator erase or postfix increment. Iterator initialization and natural delete expression generate the observed end/delete/erase/postfix/receiver temporaries; no fake source locals or storage. Native R142 operator delete path has no destructor dispatch or owner-size argument; pointer-only static view encodes only that path, not complete owner layout, allocation policy, original class identity or other types destruction contracts. No game owner constructed/embedded/allocated. SDK iterator values have complete known layout. Nine SDK/CRT callees remain excluded; dynamic virtual destinations unknown and receive no credit. Three preceding complete probes expose constructor/assignment overhead or real stack-slot differences; final natural source retains one body. Six wrong binding/loop-count/field/return controls rejected. Independent twelve-function narrow integer fixture excludes tested prefix/postfix/byte-cast/short-return-cast controls as GPR frontier solutions; short compound assignment changes width and reversed comparison changes code, so neither justifies a target change. The complete current 0050A580 source remains unchanged and unaccepted; no unnecessary main rebuild. All 328 previous units, 132 canonical objects, 203 accepted inputs, 218 origin files, nine headers, 91 older drafts and frozen F131..F136 evidence remain unchanged. All 97 pending origins remain unknown and included. No guessed arrays/padding/inert locals/ABI aliases/masks/cropped comparisons/assembly/pasted decompile or target bytes/conditional exact bodies. Names remain provisional; R045 role retained by alias."
+      },
+      "origin": {
+        "address": "0x0045BDB0",
         "origin": "authored",
         "subsystem": "BattleEffect",
         "disposition": "authored",
@@ -139114,6 +139158,90 @@
           "target": 4571072
         }
       ]
+    },
+    "battle-effect-advance-all-0045bdb0": {
+      "source": "src/BattleEffectAdvance.cpp",
+      "object": "build/matching/BattleEffectAdvance.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEffectAdvanceF137::AdvanceAll"
+      ],
+      "symbol": "?AdvanceAll@BattleEffectAdvanceF137@@QAEXXZ",
+      "target_address": 4570544,
+      "size": 296,
+      "compare_size": 296,
+      "relocations": [
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?size@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEIXZ",
+          "target": 4570960
+        },
+        {
+          "offset": 102,
+          "type": "REL32",
+          "symbol": "??A?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAEAAPAVAdvancingEffectF137@@I@Z",
+          "target": 4570992
+        },
+        {
+          "offset": 142,
+          "type": "REL32",
+          "symbol": "?begin@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477792
+        },
+        {
+          "offset": 164,
+          "type": "REL32",
+          "symbol": "?end@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@XZ",
+          "target": 4477840
+        },
+        {
+          "offset": 173,
+          "type": "REL32",
+          "symbol": "??9const_iterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBE_NABV012@@Z",
+          "target": 4478016
+        },
+        {
+          "offset": 188,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 204,
+          "type": "REL32",
+          "symbol": "??Diterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QBEAAPAVAdvancingEffectF137@@XZ",
+          "target": 4477920
+        },
+        {
+          "offset": 218,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "target": 6557461
+        },
+        {
+          "offset": 251,
+          "type": "REL32",
+          "symbol": "?erase@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@V312@@Z",
+          "target": 4571296
+        },
+        {
+          "offset": 278,
+          "type": "REL32",
+          "symbol": "??Eiterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AV012@H@Z",
+          "target": 4477952
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -139319,6 +139447,8 @@
     "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9",
     "src/BattleEffectSpawner.cpp": "73ddd4688532a0a230d799a4d27f8a59b4261df06b700bdda3b97064dc05a740",
     "src/BattleEffectSpawner.hpp": "e182c18329a16e431cde26334322399708a9b4c3f0d8e796446ed895c0e99da0",
-    "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387"
+    "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387",
+    "src/BattleEffectAdvance.cpp": "a9952766422741ee4c30f05ad26174ec502da97e97f2c2dcab83eef23962a036",
+    "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0"
   }
 }
