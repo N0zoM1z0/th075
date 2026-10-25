@@ -26455,7 +26455,7 @@ and F131..F141 evidence. R268 and all 97 unknown origins/3,608 bytes remain
 unchanged. The 98% objective remains active and incomplete; later phases
 remain deferred.
 
-## Current reconstruction cohort: F143
+## F143 cohort at the F142 checkpoint
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
 All 92 entries have natural private source and remain unaccepted. Preserve
@@ -26502,3 +26502,167 @@ new native/source evidence; the lack of an optional trace is not a task
 blocker. Acceptance still requires the complete natural source, all true
 ABI/relocations/extents, and a canonical cold replay of new/affected units
 only. All pending bytes remain in the conservative denominator.
+
+## F143 headless native C2 allocation tracing (2026-10-25)
+
+The user required every operation to be **headless** during F143.
+Commit **`06ec7c4`** records that requirement in `AGENTS.md`. All subsequent
+Wine/debugger commands unset `DISPLAY`/`WAYLAND_DISPLAY` and disable Wine
+graphical drivers and menu creation for their own processes. The working
+debug route is native 32-bit Wine under batch GDB, with redirected logs.
+The full-main log independently confirms both display variables absent.
+Do not reuse the earlier interactive WineDbg attempts. No game process was
+started, no target byte was patched, no shared compiler file changed, and
+private service/Funnel settings were not touched.
+
+**No new exact byte or source-presence credit is accepted.** Current main
+source, four private headers and fragments are byte-identical to F142's
+649-use bounded word-view composition. Keep
+**`build/probes/F142WordWindow.obj`** active and retain every older active
+object. No accepted header, source, origin, manifest or canonical object was
+changed or cold rebuilt.
+
+Read-only pinned C1/C1XX/C2 inspection found actual option-table entries.
+`/Bd` exposes the real frontend/backend stage packets; the independent
+assembly listing reports function flags `/Odt`. These are current compiler
+observations, not original game flags. The supported internal `-NoLUR` entry
+is passed by `/d2NoLUR` and appears in actual C2 packets. Its meaning remains
+unestablished. It leaves the complete 188-byte fixture/four real fields and
+the complete main failed emission unchanged.
+
+Both the NoLUR full-main control and the full-main runtime trace retain
+**82,109 emitted bytes / 26,719 whole target differences**, all **1,449 real
+fields**, 17,435 instructions, raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`,
+and the same full relocated failure. The required target extent is still
+82,106 bytes including its two tables. There is no mask, register alias,
+rebasing, cropped comparison or semantic-equivalence credit.
+
+Actual headless debugging now observes the register-allocation path:
+
+* A conditional `mmap2`/`mprotect` rendezvous finds the loaded C2 code before
+  inserting software breakpoints. Early hardware breakpoints failed to stop
+  these runs; this does not prove hardware debugging unavailable. Later
+  hardware access watches work after compiler initialization.
+* The actual generic mapper writes ECX to operand `+1C` at **C2
+  `10775AC4`**. A watch observed an original descriptor pointer change to
+  physical EAX descriptor `108A9804`. Operand kind `24F`, original descriptor
+  at `+18`, mapped descriptor at `+1C`, and formatter `1082C725` are supported
+  by executed instructions. These are compiler structures, never game-owner
+  layout evidence. Original descriptor `+20` values remain raw fields; the
+  first console label `original_bits` did not prove their bit width.
+* A record scoped to the mapper loop reaches the selected store in **344
+  recorded instructions**, and 96 reverse steps expose the candidate scan,
+  occupancy checks and cursor update at `108A7D0C`. The compiler's general
+  candidate IDs 1/2/3 correspond to EAX/ECX/EDX. This is actual compiler
+  behavior, not an inferred original-source operation.
+* Starting recording at the whole C2 stage encounters unsupported ioctl
+  `80046601`. A bounded retry run reached its 75-second limit; it supplies
+  no allocator or acceptance credit. Recording from the later mapper loop
+  avoids this problem. Do not expand full-stage tracing as an unbounded job.
+
+The main run captures **7,454 generic mapping writes** and **11,382 emitted
+GPR tokens**. Every emitted token matches the complete own COFF instruction
+stream. The token model accounts for the actual MASM listing's compact
+`imul reg, immediate` spelling when source/destination are the same. There
+are **7,112 matching token-to-mapping links**. Two node-address joins change
+original/physical descriptor before emission (ordinals 10969 and 11098);
+they are retained as explicit exceptions, not aliases or assumed stable
+object identity. Fixed/precolored/other paths remain outside this one store.
+An unobserved generic link alone does not prove an unused operand.
+
+| Frontier | GPR token | Original descriptor ID | Selected | Native | Next observed source candidate |
+| --- | ---: | ---: | --- | --- | --- |
+| `00515C0E`, case856 | 6,629 | 17,355 | EDX | EAX | EAX |
+| native `0051E215` / emitted `0051E216`, case998 | 11,311 | 20,487 | EAX | ECX | ECX |
+
+Native registers happen to equal the next observed source candidate at both
+frontiers. This does **not** identify a missing source operation, original
+cursor/liveness state, return type or original compiler flag. Do not add an
+inert expression/local or otherwise manufacture an allocation from it.
+
+Receipts: `.analysis/object-action-50a580/f143/compiler-controls.json`,
+`main-mapping-correlation.json`, full runtime logs and ordinal proofs,
+`native-allocator-session.log`, anchored compiler block observations,
+`complete-fixture-objects.json`, two whole-main relocation reports, source
+hashes, stage packets and pinned component hashes. Preserve the native batch
+runners/command generators. Fourteen complete COFF outputs comprise twelve
+identical full fixture bodies and two whole failed mains; two empty outputs
+are explicitly failed debug attempts. Other debugger failures are retained
+as bounded tool observations, never accepted functions.
+
+Public CI passed all **3,603 tests in 179.419 seconds**. Cleanup
+removed sixteen obsolete F143 outputs (296,830 bytes), including
+two empty failures, and 376 bytecode files (8,293,007 bytes),
+after freezing complete inputs/bytes/fields and checked whole-object archives
+for every complete toy output. All PDBs, logs, sources, proof, canonical/
+current/previous active objects and shared tools remain. Receipts:
+`.analysis/f143-source-checkpoint.json` and
+`.analysis/f143-preservation-cleanup.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. All 134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers, 91 older drafts and
+F131..F142 evidence remain unchanged. All 97 unknown origins/3,608 pending
+bytes remain included, R268 is unchanged, and all 81,539 main code bytes
+remain pending. The 98% objective remains active and incomplete; later
+phases remain deferred.
+
+## Current reconstruction cohort: F144
+
+Continue the same complete **`CharacterObject::AdvanceAt0050A580`** cohort.
+All 92 entries remain unaccepted. **Run everything headless**: unset display
+variables and disable graphical Wine drivers per `AGENTS.md`. Use the native
+32-bit Wine/batch-GDB route, not the old interactive WineDbg attempts.
+
+Copy F143 fragments, four private headers, composition rules, constants and
+current complete source to fresh F144 before editing. They remain
+byte-identical to F142 word-view source. Preserve **F142WordWindow.obj** and
+all previous F134/F136/F138/F139 objects. The virtual symbol remains
+`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`. Preserve every F131..F143
+input/report/checkpoint and 330 accepted units/134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers and 91 older drafts.
+
+Full comparison requires **82,106 bytes** (81,539 code plus 368-byte pointer
+table and 199-byte remap). Current output is 82,109 / 26,719 whole positional
+differences, with 522 real physical-GPR differences at case856 through early
+862 and case998. Do not mask, alias, rebase, crop or award semantic credit.
+Keep all 42 counters, 20 ordinary float-to-short conversions, 64 readonly
+fields, 846 calls and eleven nested packets. Cold replay new/affected units
+only; no unchanged accepted unit needs rebuilding.
+
+F143 now provides actual mapper state, not just code-generation spellings.
+Read `main-mapping-correlation.json` and the complete trace first. Source
+first856 is emitted GPR ordinal6629, original descriptor17355, generic
+mapping4362 -> EDX; native uses EAX. Source first998 is ordinal11311,
+descriptor20487, mapping7408 -> EAX; native uses ECX. Both native registers
+equal the next observed source candidate, but original target allocation
+state remains unknown. **This does not authorize adding an extra dummy
+allocation, inert value/local, false return/ABI or source padding.**
+
+The next useful investigation is the adjacent forced/precolored paths and
+source structures consistent with true callee contracts. Immediately before
+first856, emitted descriptor IDs7274/7276/7278 appear in the final comparison
+and ECX receiver reload; before first998 the corresponding IDs are
+12501/12503/12505. Their generic-map absence at a particular node address
+does not identify their allocation mechanism. Follow actual executed code
+and cursor/occupancy state rather than inferring that mechanism from the
+register name. Inspect mapping neighborhoods4359..4362 and7405..7408.
+
+Also retain the two later rewrite/reuse exceptions: emitter10969 has
+original12120/ECX where the same node address earlier mapped20276/EAX;
+emitter11098 has original12264/EDX where earlier mapped20361/EAX. A direct
+watch on the actual observed operand's `+18/+1C` after its mapping can
+identify the later rewrite without assuming heap addresses stable across
+runs. Do not discard either record or normalize away the discrepancy.
+
+Compiler addresses/descriptor IDs concern pinned C2 build3077 and this
+observed source only; revalidate addresses/base and recompute IDs after any
+change. `NoLUR` is supported but leaves the whole body unchanged; do not
+repeat it as a fix. Whole-stage record/replay hits an unsupported ioctl and
+is slow; use short pure mapper scopes and capped native watches. Keep
+builds serial and resource/log limits explicit. Source changes must remain
+natural and explain real CFG/ABI/data observations; every candidate still
+requires complete own fields/extents and eventual canonical cold acceptance.
+All unknown origins/pending bytes remain in the denominator; later phases
+remain deferred.
