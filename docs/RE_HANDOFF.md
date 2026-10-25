@@ -10,6 +10,24 @@ phases remain deferred. F160 accepts two complete functions/963 bytes. Both
 large drafts remain unaccepted. Current F160 outcomes supersede historical
 pending-work instructions.
 
+## Continuation command
+
+Carry this instruction into every successor handoff or context continuation:
+
+```text
+Continue TH075 reconstruction toward 98% authored-byte exact. The goal is
+active and incomplete. Do not pause it or wait for another resume request.
+Read AGENTS.md and the current RE_HANDOFF.md, RE_WORKFLOW.md and
+KNOWLEDGE_BASE.md; verify the working tree, target, tracking and Ghidra project;
+then execute the current cohort below. Preserve accepted units, origin evidence,
+active drafts and all pending bytes in the conservative denominator. Cold-replay
+only new or affected units, keep compiler builds serial, remain headless, and
+commit/push bounded progress with subjects "gpt-6.1-sol: ...". Cleanup,
+documentation, verification, commits and context handoff are continuation work,
+not reasons to stop or pause. Carry this command forward unchanged unless the
+user changes it. Only a new explicit user request to pause authorizes pausing.
+```
+
 ## Verified reconstruction state
 
 | Measure | Value |

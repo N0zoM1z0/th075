@@ -7,6 +7,9 @@ The user confirmed on 2026-10-25 that reconstruction must continue toward
 Do not pause the goal. Cleanup, documentation, handoff, verification and bounded
 commits do not suspend reconstruction. Historical statements that the goal was
 cleared or that resumption needs another request are superseded by this rule.
+Every handoff or continuation prompt must carry this active-goal instruction
+forward. A context switch is not a pause request; continue without waiting for
+confirmation. Only a new explicit user request to pause can authorize pausing.
 Continue the current cohort in `docs/RE_HANDOFF.md`. Frequent
 commits and pushes remain authorized. Use the existing Ghidra wrapper and
 local tools; do not use REA.
