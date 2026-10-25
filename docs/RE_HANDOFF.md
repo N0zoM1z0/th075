@@ -26,6 +26,12 @@ commit/push bounded progress with subjects "gpt-6.1-sol: ...". Cleanup,
 documentation, verification, commits and context handoff are continuation work,
 not reasons to stop or pause. Carry this command forward unchanged unless the
 user changes it. Only a new explicit user request to pause authorizes pausing.
+After each checkpoint, cleanup, commit, push or context handoff, immediately
+execute the next reconstruction task. Do not end work merely because the
+handoff is written or a bounded cohort is finished. If one candidate cannot
+advance, preserve its evidence and continue another independently reviewed
+authored candidate. Keep the goal active until the full objective is verified
+complete or the user explicitly changes the instruction.
 ```
 
 ## Verified reconstruction state

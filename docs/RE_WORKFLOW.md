@@ -28,6 +28,10 @@ active and explicitly prohibited pausing it. Do not pause the goal. Continue
 the current cohort and reviewed dependencies in `RE_HANDOFF.md`. Cleanup, handoff,
 verification and commits are part of ongoing reconstruction and do not require
 another resume request. Earlier cleared-goal instructions are superseded.
+The 2026-10-26 user instruction explicitly requires the handoff command to
+continue execution: after each checkpoint, cleanup, commit, push or handoff,
+immediately start the next reconstruction task. If one candidate stalls, retain
+its evidence and continue another independently reviewed authored candidate.
 Preserve all 97 pending origins and count every pending byte in the
 conservative denominator. Use existing Ghidra/local tools without REA and
 commit subjects `gpt-6.1-sol: ...`. Cold-build only new or affected units;

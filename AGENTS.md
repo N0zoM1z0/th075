@@ -10,6 +10,9 @@ cleared or that resumption needs another request are superseded by this rule.
 Every handoff or continuation prompt must carry this active-goal instruction
 forward. A context switch is not a pause request; continue without waiting for
 confirmation. Only a new explicit user request to pause can authorize pausing.
+The user reiterated this on 2026-10-26: change the handoff command and do not
+pause. After a checkpoint, cleanup, commit, push or handoff, immediately execute
+the next reconstruction task. A finished bounded cohort is not a stop request.
 Continue the current cohort in `docs/RE_HANDOFF.md`. Frequent
 commits and pushes remain authorized. Use the existing Ghidra wrapper and
 local tools; do not use REA.
