@@ -25977,3 +25977,153 @@ offset = 205
 type = "DIR32"
 symbol = "$L310"
 target = 0x00454C73
+
+[units.battle-mode5-options-004483f0]
+source = "src/BattleMode5OptionsF168.cpp"
+object = "build/matching/BattleMode5OptionsF168.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::HandleMode5OptionsAt004483F0 [provisional]"]
+symbol = "?HandleMode5Options@BattleMode5OptionsF168@@QAEXXZ"
+target_address = 0x004483F0
+size = 768
+compare_size = 792
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 30
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "?Unknown438A60@@YAHH@Z"
+target = 0x00438A60
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 61
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 66
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 102
+type = "DIR32"
+symbol = "$L57663"
+target = 0x004486F0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 391
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 449
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 454
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 474
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 479
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 499
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 504
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 517
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 536
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 545
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 556
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 561
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 597
+type = "DIR32"
+symbol = "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A"
+target = 0x00671664
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 606
+type = "DIR32"
+symbol = "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A"
+target = 0x006716AC
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 617
+type = "DIR32"
+symbol = "?g_SoundBank@@3PAVSoundBank@@A"
+target = 0x00671618
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 622
+type = "REL32"
+symbol = "?Play@SoundBank@@QAEXH@Z"
+target = 0x004079C0
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 768
+type = "DIR32"
+symbol = "$L57554"
+target = 0x0044845A
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 772
+type = "DIR32"
+symbol = "$L57561"
+target = 0x00448488
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 776
+type = "DIR32"
+symbol = "$L57568"
+target = 0x004484B6
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 780
+type = "DIR32"
+symbol = "$L57575"
+target = 0x004484E8
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 784
+type = "DIR32"
+symbol = "$L57582"
+target = 0x00448518
+[[units.battle-mode5-options-004483f0.relocations]]
+offset = 788
+type = "DIR32"
+symbol = "$L57589"
+target = 0x00448548

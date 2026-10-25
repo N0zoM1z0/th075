@@ -389,3 +389,4 @@ FighterState::IsState95To99At00455070
 BattleCombat::SelectHitResponseAt00455140
 BattleInput::MatchSequenceAt00455800
 FighterState::ApplyMode5DirectionAt00454C20 [provisional]
+BattleScene::HandleMode5OptionsAt004483F0 [provisional]

@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "91118d7dfd258170212cf9f36dec56d66f3ddc4df93bb9a9e61a74fc364dd054"
+      "current_sha256": "2d49b176d004b1e4ffa69df3bbe8e945b9767c1b55a1d4aa9a0a887494c5a65d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "c2067cfc917e6853124e734966a1fcd803ecad6b801a3b75745504e811cd6fd5"
+      "current_sha256": "f9063f37a0282f4ecb785e971ecdf6033187474cc1a288be045d928b77480952"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "319dedfe125c78370e0bf66dd3fd58a913057f3256ed6a29ace8edfd69af7c8b"
+      "current_sha256": "390cf78ce46aee2d979943ad6aeef7c4533db3c228f73476e332e6cbf159a6ba"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "9ff0964571884ce16555a91ebd91a2c06146ba4506d3f95e4c3c39da32308cca"
+      "current_sha256": "51924efbe501c06cd3e1740409e8d080437acfbbeb4d228f3be4c1d6a38442b4"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "1ff75eb8759a319a4fb1b3c30f86c008683867ac5328d0a5bbbe87fac1a5f131"
+      "current_sha256": "a72c54e26ef430958941b65168a5d83066239807929219808790b57a3f29beb5"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14601,6 +14601,50 @@
         "address": "0x00454C20",
         "origin": "authored",
         "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-native-game-switch-and-independent-whole-receiver-context",
+        "evidence_id": "R215"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004483F0",
+        "size": "768",
+        "span_end": "0x004486EF",
+        "current_name": "FUN_004483f0",
+        "proposed_name": "BattleScene::HandleMode5OptionsAt004483F0 [provisional]",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R215; config/game-switch-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-switch-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete mode 5 menu policy: guarded six-case cyclic game options, nine-row cursor, confirm/cancel inputs and explicit fighter state mirrors. Full pause-menu parent establishes the same game receiver; the abs forwarding/helper chain remains unknown. Complete native code/tables, full independent game contexts and unchanged extents. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x004483F0",
+        "size": "768",
+        "span_end": "0x004486EF",
+        "current_name": "FUN_004483f0",
+        "proposed_name": "BattleScene::HandleMode5OptionsAt004483F0 [provisional]",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleMode5OptionsF168::HandleMode5Options()",
+        "is_thunk": "false",
+        "source_file": "src/BattleMode5OptionsF168.cpp",
+        "evidence": "R215; config/game-switch-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-switch-policy-origins.py; F168; scripts/repo-python scripts/replay-exact-units.py --unit battle-mode5-options-004483f0",
+        "owner": "authored",
+        "notes": "Complete mode 5 menu policy: guarded six-case cyclic game options, nine-row cursor, confirm/cancel inputs and explicit fighter state mirrors. Full pause-menu parent establishes the same game receiver; the abs forwarding/helper chain remains unknown. Complete native code/tables, full independent game contexts and unchanged extents. No source/private ABI/mapping/exact credit.; F168: complete768CODE+24ownedtable=792comparedbytes/all28actualfields(7REL32/21DIR32),all7actuallocalCOFFoffsets. Real signed lowbyte horizontal snapshot retains full dword abs forwarding input; six cyclic signed options, two native switch widths, signed nine-row cursor, confirm/cancel and repeated fighter mirrors retained. Six canonical sound calls and complete28-byte held globals reuse unchanged headers. Unknown438A60 remains unknown perR163; used caller-cleaned dword/EAX contract does not recover original int/long spelling or wrapper/library ownership. Original provisional role literal via explicit COFF mapping; receiver never instantiated/embedded, full layout unknown. No inertlocals/padding/fakereturns/ABItricks/assembly/conditionalbodies/masks/crops/aliases/rebasing. Only1newunit/oneobject cold-replayed; all391oldunits/150objects/236inputs/97unknowns/13active/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x004483F0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
         "disposition": "authored",
         "confidence": "complete-native-game-switch-and-independent-whole-receiver-context",
         "evidence_id": "R215"
@@ -144441,6 +144485,198 @@
           "target": 4541555
         }
       ]
+    },
+    "battle-mode5-options-004483f0": {
+      "source": "src/BattleMode5OptionsF168.cpp",
+      "object": "build/matching/BattleMode5OptionsF168.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::HandleMode5OptionsAt004483F0 [provisional]"
+      ],
+      "symbol": "?HandleMode5Options@BattleMode5OptionsF168@@QAEXXZ",
+      "target_address": 4490224,
+      "size": 768,
+      "compare_size": 792,
+      "relocations": [
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 36,
+          "type": "REL32",
+          "symbol": "?Unknown438A60@@YAHH@Z",
+          "target": 4426336
+        },
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 61,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 66,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 102,
+          "type": "DIR32",
+          "symbol": "$L57663",
+          "target": 4490992
+        },
+        {
+          "offset": 391,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 449,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 474,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 479,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 499,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 504,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 517,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 536,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 545,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 556,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 561,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 597,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 606,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 617,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 622,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 768,
+          "type": "DIR32",
+          "symbol": "$L57554",
+          "target": 4490330
+        },
+        {
+          "offset": 772,
+          "type": "DIR32",
+          "symbol": "$L57561",
+          "target": 4490376
+        },
+        {
+          "offset": 776,
+          "type": "DIR32",
+          "symbol": "$L57568",
+          "target": 4490422
+        },
+        {
+          "offset": 780,
+          "type": "DIR32",
+          "symbol": "$L57575",
+          "target": 4490472
+        },
+        {
+          "offset": 784,
+          "type": "DIR32",
+          "symbol": "$L57582",
+          "target": 4490520
+        },
+        {
+          "offset": 788,
+          "type": "DIR32",
+          "symbol": "$L57589",
+          "target": 4490568
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -144679,6 +144915,8 @@
     "src/FighterInputSequenceF165.cpp": "c5b53fa058eb639675da02ed3cafd8f5435cd951b2ae3228deb366274c3eb73d",
     "src/FighterInputSequenceF165.hpp": "de1565dc09cabd60189f0d51085df58f66d33acd4552e179dcc30a5ce0ae7922",
     "src/FighterMode5DirectionF167.cpp": "233581e1c776369e4e932d4eb0f3d8ae2973580a06320ca010625ec6a16712db",
-    "src/FighterMode5DirectionF167.hpp": "f117129d3b67a89e1028ad5d6ffb6d7c3bd71542a085a1248f15190992d091b4"
+    "src/FighterMode5DirectionF167.hpp": "f117129d3b67a89e1028ad5d6ffb6d7c3bd71542a085a1248f15190992d091b4",
+    "src/BattleMode5OptionsF168.cpp": "e7d98934c5ee75ce521d0b5a6487cd054f2f6b841d6196b9484c78ba5e05ede6",
+    "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c"
   }
 }

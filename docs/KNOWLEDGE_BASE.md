@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F167.
+Updated 2026-10-26 for continued reconstruction, F168.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F167 accepts the complete R215 direction policy;
-the complete0055AC80 diagnostic remains unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F168 accepts the complete R215 mode5 options
+policy after F167's direction policy; the full0055AC80 diagnostic is unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,45 @@ the complete0055AC80 diagnostic remains unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 391 units,
-  724,071 code bytes, 150 canonical objects and 236 accepted inputs.
-- Reviewed authored coverage is 36.69%; conservative coverage is 36.62%.
+  complete cold-exact units/all actual relocations. Counts are 392 units,
+  724,839 code bytes, 151 canonical objects and 238 accepted inputs.
+- Reviewed authored coverage is 36.73%; conservative coverage is 36.66%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F168 accepted R215 mode5 options:** `battle-mode5-options-004483f0` passes
+one canonical cold build: all768 CODE bytes plus24 owned table bytes,792 full
+compared bytes/all28 actual fields (7 REL32/21 DIR32). All7 local fields use
+actual fresh COFF offsets. Native1RET/26branch CFG, six-entry option switch,
+byte confirm switch and eight excluded INT3 bytes before448710 are reconciled.
+The signed horizontal byte is genuinely snapshotted after sound playback while
+the unknown438A60 call receives the full dword. Preserve signed cyclic option
+moduli6/10/4/2/4/2, signed nine-row cursor, confirm/cancel and repeated fighter
+mirrors. Six canonical sound calls and complete28-byte held-input globals reuse
+unchanged headers. The whole17-byte438A60 wrapper remains unknown perR163; the
+used caller-cleaned dword/EAX ABI does not establish original int/long spelling
+or wrapper/library ownership. No unknown callee credit or origin change.
+The original provisional native role/title remains literal via explicit COFF
+mapping. Partial receivers are never instantiated/embedded; no inert local,
+padding, fake return, ABI trick, assembly, alternate body, mask, crop, alias or
+local-label rebasing. All391 old units/150 objects/236 inputs, existing headers,
+origin/verifier guards,13 active objects/all14 F157/both F159 are preserved.
+
+Immediately continue complete R102 tracked-effect policies00453AC0/136 and
+00453BE0/145 CODE bytes. Review the complete45BB10 canonical callee contract,
+all four calls, actual tracked/untracked pointer branches and RET24/RET32 before
+full-source/cold comparison. Keep pointer views at2EC/2F0/314 and full owner
+layout unknowns explicit; never instantiate/embed partial owners. No large
+control ran in F168. All failed large functions/all97 unknown origins/every
+pending byte remain in the conservative denominator. Commit/push/checkpoint
+must be followed immediately by the next reconstruction action, never a pause.
+Receipts: `.analysis/f168-options-unit-proof.json`,
+`.analysis/f168-options-canonical-replay.json` and the private F168
+`native-unit-proof.json`/`preview-whole-diagnostic.json`/`preview-source-profile.json`.
 
 **F167 accepted R215 direction policy:** `fighter-mode5-direction-00454c20`
 passes one canonical cold build: all193 CODE bytes plus the complete16-byte
