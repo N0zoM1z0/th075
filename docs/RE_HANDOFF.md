@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F144 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F145 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -29,6 +29,87 @@ The only target is the supplied Japanese `th075.exe`, reporting version 1.11:
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
+
+## Latest headless precolor and recycled-node investigation: F144
+
+**No new exact bytes or source-presence credit are accepted.** The complete
+649-use word-view source and four private headers are unchanged from F142
+and F143. Keep `build/probes/F142WordWindow.obj` active and all older active
+objects. The six complete main diagnostic builds retain **82,109 emitted
+bytes / 26,719 whole positional differences**, 17,435 instructions, all
+1,449 actual fields, and raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`.
+The required complete extent remains 82,106 bytes. No unchanged accepted
+unit was cold rebuilt, and no accepted source/header/origin/ledger changed.
+
+**Compiler-observed:** All eight serial builds ran headless. Native 32-bit
+Wine under batch GDB uses absent display variables, disabled graphical Wine
+drivers, nice priority and a 60-second cap per debugger run. Each completed
+runtime log independently confirms `DISPLAY` and `WAYLAND_DISPLAY` absent.
+There are six complete main outputs, one complete three-function independent
+fixture, and one explicitly failed empty output. Shared compiler hashes are
+unchanged. No game process or graphical debugger was started.
+
+The observed receiver originals **7278** and **12505** are copied while still
+virtual by C2's actual copy path. Hardware watches on both original and copy
+then identify the writes at **10778738** and **10778779** selecting physical
+ECX descriptor `108A9864`. A separate run captures all four stores with
+selector 2, **zero preceding generic mapping writes and a null pool cursor**.
+The complete run subsequently records the normal 7,454 generic writes.
+Thus these receiver constraints precede generic allocation; they do not
+advance its cursor at the two main frontiers. This is evidence about the
+current pinned compiler, never an inferred original allocator state.
+
+The two F143 node-address join exceptions are now resolved as **recycling**.
+Actual hardware watches see the old nodes' original/physical fields zeroed
+by the executed pool-allocation path at `107AFA65/107AFA67`, followed by a
+copy at `10759FDB` (stop `10759FDD`). The same addresses subsequently emit
+original12120/ECX and original12264/EDX. They are different logical operands;
+do not describe them as the old operands changing register. One initial
+watch logger dereferenced a zeroed original pointer and aborted with an
+empty COFF. Its raw-pointer retry completed normally and preserves all seven
+observed writes plus the two actual emissions. Keep the failure explicit.
+
+A full exact-tuple census of the unchanged F143 trace finds **342 mapping
+writes without a matching emitted node/original/physical tuple**. It includes
+274 full-register and 68 narrow-register mappings, not an established count
+of dead or extra operations. Transformations, width changes, reference
+propagation and recycling remain distinct possibilities. Do not infer a
+missing source allocation, alias registers, or manufacture an inert value.
+
+Three complete 148-byte fixture callers compare a signed-word zero test,
+the corresponding unsigned-word alias, and unsigned-int promotion. The
+unsigned-word variant changes only MOVSX to MOVZX at instruction offset `0x20`; its
+following register phase and all four real fields are unchanged. Explicit
+unsigned-int promotion is whole identical to baseline. Native instruction
+`00515BD2` independently uses MOVSX from owner+82, so unsigned-word rewriting
+is excluded for that guard. No game member type or ABI was changed.
+
+Receipts are under `.analysis/object-action-50a580/f144/`: complete runtime
+logs/command files, `compiler-controls.json`, `anchored-compiler-windows.json`,
+`unlinked-mapping-census.json`, `zero-word-types.json`, six whole-main reports,
+and lossless archives of all seven complete COFF files. Original raw inputs,
+all actual fields, whole objects, debugger failures and previous evidence
+remain available. These observations establish no original source spelling,
+compiler-wide profile, complete owner layout or game exactness.
+
+Public CI passed all **3,603 tests in 175.341 seconds**. Cleanup
+removed eight obsolete F144 COFF outputs (812,354 bytes),
+including one empty failed output, thirteen losslessly archived generated
+assembly files (10,956,510 bytes), and
+375 bytecode files (8,285,264 bytes).
+Lossless object/listing archives, original input sources, raw-byte/relocation
+reports, logs, PDBs and every current/accepted/older active object remain.
+Receipts: `.analysis/f144-source-checkpoint.json` and
+`.analysis/f144-preservation-cleanup.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. All 134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers, 91 older drafts and
+F131..F143 frozen evidence remain unchanged. All 97 unknown origins/3,608
+bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
+pending. The 98% goal remains active and incomplete; later phases remain
+deferred.
 
 ## Latest headless register-allocation investigation: F143
 
@@ -1107,64 +1188,62 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F144
+## Current reconstruction cohort: F145
 
-Continue the same complete **`CharacterObject::AdvanceAt0050A580`** cohort.
-All 92 entries remain unaccepted. **Run everything headless**: unset display
-variables and disable graphical Wine drivers per `AGENTS.md`. Use the native
-32-bit Wine/batch-GDB route, not the old interactive WineDbg attempts.
+Continue the same complete **`CharacterObject::AdvanceAt0050A580`** body,
+all 92 entries and all 82,106 required bytes. Run everything headless per
+`AGENTS.md`; use native 32-bit Wine/batch GDB, absent displays and disabled
+Wine graphical drivers. Do not reuse interactive WineDbg attempts.
 
-Copy F143 fragments, four private headers, composition rules, constants and
-current complete source to fresh F144 before editing. They remain
-byte-identical to F142 word-view source. Preserve **F142WordWindow.obj** and
-all previous F134/F136/F138/F139 objects. The virtual symbol remains
-`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`. Preserve every F131..F143
-input/report/checkpoint and 330 accepted units/134 canonical objects, 207
-accepted inputs, 218 origin files, nine shared headers and 91 older drafts.
+Copy current F144 fragments, four private headers, composition rules,
+constants and whole source to fresh F145 before editing. Current source is
+byte-identical F142/F143, retaining the 649-use bounded word view. Keep
+**F142WordWindow.obj** active plus F134/F136/F138/F139 active objects. Preserve
+330 accepted units/134 canonical objects, 207 accepted inputs, 218 origin
+files, nine shared headers, 91 older drafts and all F131..F144 inputs/proofs.
+The virtual symbol remains `?Advance@CharacterAdvance50A580Draft@@UAEXXZ`.
 
-Full comparison requires **82,106 bytes** (81,539 code plus 368-byte pointer
-table and 199-byte remap). Current output is 82,109 / 26,719 whole positional
-differences, with 522 real physical-GPR differences at case856 through early
-862 and case998. Do not mask, alias, rebase, crop or award semantic credit.
-Keep all 42 counters, 20 ordinary float-to-short conversions, 64 readonly
-fields, 846 calls and eleven nested packets. Cold replay new/affected units
-only; no unchanged accepted unit needs rebuilding.
+Current failure remains 82,109 bytes /26,719 positional differences and 522
+physical-GPR differences at case856 through early862 and case998. Preserve
+42 counters, 20 ordinary conversions, 64 floating fields, 846 calls, eleven
+nested packets and all 1,449 actual relocations. No masks/aliases/rebasing,
+cropped comparison or semantic-equivalence credit. Cold replay only new or
+affected accepted units; do not rebuild unchanged accepted units.
 
-F143 now provides actual mapper state, not just code-generation spellings.
-Read `main-mapping-correlation.json` and the complete trace first. Source
-first856 is emitted GPR ordinal6629, original descriptor17355, generic
-mapping4362 -> EDX; native uses EAX. Source first998 is ordinal11311,
-descriptor20487, mapping7408 -> EAX; native uses ECX. Both native registers
-equal the next observed source candidate, but original target allocation
-state remains unknown. **This does not authorize adding an extra dummy
-allocation, inert value/local, false return/ABI or source padding.**
+F144 has closed the two F143 node-address exceptions: the pool zeroes and
+reuses those addresses, then copies different logical operands there.
+Original12120/ECX and original12264/EDX are replacements, not the earlier
+mapped20276/EAX and20361/EAX retaining identity. Preserve both lifetimes and
+the failed null-pointer logger as a failed run. Use the successful raw-pointer
+watch logs and whole COFF archives; never assume address identity survives
+pool recycling.
 
-The next useful investigation is the adjacent forced/precolored paths and
-source structures consistent with true callee contracts. Immediately before
-first856, emitted descriptor IDs7274/7276/7278 appear in the final comparison
-and ECX receiver reload; before first998 the corresponding IDs are
-12501/12503/12505. Their generic-map absence at a particular node address
-does not identify their allocation mechanism. Follow actual executed code
-and cursor/occupancy state rather than inferring that mechanism from the
-register name. Inspect mapping neighborhoods4359..4362 and7405..7408.
+The two receiver constraints original7278 and12505 are now directly observed:
+source and copy are forced to ECX at C2 10778738/10778779 before any generic
+mapping, while the pool cursor is null. They do not provide a hidden frontier
+cursor advance. Native signed owner+82 at515BD2 excludes unsigned-word
+rewriting; explicit unsigned promotion and the narrow fixture's following
+register phase are unchanged. No new main-source spelling is justified.
 
-Also retain the two later rewrite/reuse exceptions: emitter10969 has
-original12120/ECX where the same node address earlier mapped20276/EAX;
-emitter11098 has original12264/EDX where earlier mapped20361/EAX. A direct
-watch on the actual observed operand's `+18/+1C` after its mapping can
-identify the later rewrite without assuming heap addresses stable across
-runs. Do not discard either record or normalize away the discrepancy.
+The next bounded investigation can follow the actual source-operand/reference
+propagation for originals7274/7276 and12501/12503, or the 342 exact-tuple
+unlinked mapping writes. The latter includes narrow and full physical IDs;
+absence from the emitter tuple is not proof of a dead/extra operation. Watch
+actual fields/definitions before choosing a mechanism. A nearby static
+compiler helper starts at10775667 with an instruction+28 operand list, but
+that is a static lead, not a verified propagation contract. Preserve original
+IDs, widths, actual mapped pointers and lifetimes separately; recompute IDs
+and validate C2 base after any source/profile change.
 
-Compiler addresses/descriptor IDs concern pinned C2 build3077 and this
-observed source only; revalidate addresses/base and recompute IDs after any
-change. `NoLUR` is supported but leaves the whole body unchanged; do not
-repeat it as a fix. Whole-stage record/replay hits an unsupported ioctl and
-is slow; use short pure mapper scopes and capped native watches. Keep
-builds serial and resource/log limits explicit. Source changes must remain
-natural and explain real CFG/ABI/data observations; every candidate still
-requires complete own fields/extents and eventual canonical cold acceptance.
-All unknown origins/pending bytes remain in the denominator; later phases
-remain deferred.
+First856 remains ordinal6629/original17355, map4362 to EDX versus native EAX;
+first998 remains ordinal11311/original20487, map7408 to EAX versus native ECX.
+Native registers equal the next observed source candidates, but original
+cursor/IR/source remains unknown. Do not add an extra allocation, inert
+local/expression, fake return or ABI, padding, assembly or byte arrays.
+All new source candidates need independent true CFG/ABI/data support and a
+whole real-relocation comparison. Avoid repeated full diagnostic compiles
+without a new source hypothesis or focused runtime observation. All pending
+bytes/unknown origins remain in the denominator; later phases stay deferred.
 
 ## F135 investigation at the F134 checkpoint
 

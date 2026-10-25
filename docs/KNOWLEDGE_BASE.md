@@ -26666,3 +26666,84 @@ natural and explain real CFG/ABI/data observations; every candidate still
 requires complete own fields/extents and eventual canonical cold acceptance.
 All unknown origins/pending bytes remain in the denominator; later phases
 remain deferred.
+
+## F144 — headless precolor and recycled-node investigation
+
+**No new exact bytes or source-presence credit are accepted.** The complete
+649-use word-view source and four private headers are unchanged from F142
+and F143. Keep `build/probes/F142WordWindow.obj` active and all older active
+objects. The six complete main diagnostic builds retain **82,109 emitted
+bytes / 26,719 whole positional differences**, 17,435 instructions, all
+1,449 actual fields, and raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`.
+The required complete extent remains 82,106 bytes. No unchanged accepted
+unit was cold rebuilt, and no accepted source/header/origin/ledger changed.
+
+**Compiler-observed:** All eight serial builds ran headless. Native 32-bit
+Wine under batch GDB uses absent display variables, disabled graphical Wine
+drivers, nice priority and a 60-second cap per debugger run. Each completed
+runtime log independently confirms `DISPLAY` and `WAYLAND_DISPLAY` absent.
+There are six complete main outputs, one complete three-function independent
+fixture, and one explicitly failed empty output. Shared compiler hashes are
+unchanged. No game process or graphical debugger was started.
+
+The observed receiver originals **7278** and **12505** are copied while still
+virtual by C2's actual copy path. Hardware watches on both original and copy
+then identify the writes at **10778738** and **10778779** selecting physical
+ECX descriptor `108A9864`. A separate run captures all four stores with
+selector 2, **zero preceding generic mapping writes and a null pool cursor**.
+The complete run subsequently records the normal 7,454 generic writes.
+Thus these receiver constraints precede generic allocation; they do not
+advance its cursor at the two main frontiers. This is evidence about the
+current pinned compiler, never an inferred original allocator state.
+
+The two F143 node-address join exceptions are now resolved as **recycling**.
+Actual hardware watches see the old nodes' original/physical fields zeroed
+by the executed pool-allocation path at `107AFA65/107AFA67`, followed by a
+copy at `10759FDB` (stop `10759FDD`). The same addresses subsequently emit
+original12120/ECX and original12264/EDX. They are different logical operands;
+do not describe them as the old operands changing register. One initial
+watch logger dereferenced a zeroed original pointer and aborted with an
+empty COFF. Its raw-pointer retry completed normally and preserves all seven
+observed writes plus the two actual emissions. Keep the failure explicit.
+
+A full exact-tuple census of the unchanged F143 trace finds **342 mapping
+writes without a matching emitted node/original/physical tuple**. It includes
+274 full-register and 68 narrow-register mappings, not an established count
+of dead or extra operations. Transformations, width changes, reference
+propagation and recycling remain distinct possibilities. Do not infer a
+missing source allocation, alias registers, or manufacture an inert value.
+
+Three complete 148-byte fixture callers compare a signed-word zero test,
+the corresponding unsigned-word alias, and unsigned-int promotion. The
+unsigned-word variant changes only MOVSX to MOVZX at instruction offset `0x20`; its
+following register phase and all four real fields are unchanged. Explicit
+unsigned-int promotion is whole identical to baseline. Native instruction
+`00515BD2` independently uses MOVSX from owner+82, so unsigned-word rewriting
+is excluded for that guard. No game member type or ABI was changed.
+
+Receipts are under `.analysis/object-action-50a580/f144/`: complete runtime
+logs/command files, `compiler-controls.json`, `anchored-compiler-windows.json`,
+`unlinked-mapping-census.json`, `zero-word-types.json`, six whole-main reports,
+and lossless archives of all seven complete COFF files. Original raw inputs,
+all actual fields, whole objects, debugger failures and previous evidence
+remain available. These observations establish no original source spelling,
+compiler-wide profile, complete owner layout or game exactness.
+
+Public CI passed all **3,603 tests in 175.341 seconds**. Cleanup
+removed eight obsolete F144 COFF outputs (812,354 bytes),
+including one empty failed output, thirteen losslessly archived generated
+assembly files (10,956,510 bytes), and
+375 bytecode files (8,285,264 bytes).
+Lossless object/listing archives, original input sources, raw-byte/relocation
+reports, logs, PDBs and every current/accepted/older active object remain.
+Receipts: `.analysis/f144-source-checkpoint.json` and
+`.analysis/f144-preservation-cleanup.json`.
+
+Totals remain **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. All 134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers, 91 older drafts and
+F131..F143 frozen evidence remain unchanged. All 97 unknown origins/3,608
+bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
+pending. The 98% goal remains active and incomplete; later phases remain
+deferred.
