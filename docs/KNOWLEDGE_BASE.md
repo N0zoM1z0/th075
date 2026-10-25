@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F170.
+Updated 2026-10-26 for continued reconstruction, F171.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F170 accepts the complete R045 opponent gauge
-policy; all complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F171 accepts four complete binding/round-record
+functions; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,52 @@ policy; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 395 units,
-  725,873 code bytes, 153 canonical objects and 242 accepted inputs.
-- Reviewed authored coverage is 36.78%; conservative coverage is 36.71%.
+  complete cold-exact units/all actual relocations. Counts are 399 units,
+  726,428 code bytes, 154 canonical objects and 244 accepted inputs.
+- Reviewed authored coverage is 36.81%; conservative coverage is 36.74%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F171 accepted binding/round records:** one new canonical object cold-replays
+four whole R015/R100/R103/R054 functions:406E10/110,457490/31,4574B0/25 and
+4574D0/389,555 CODE/all7 fields (5 REL32/2 DIR32). All CFGs, RET4/4/4/32 and
+alignment are reconciled. `BindingRoundF171.cpp` retains full40-byte bindingcopy,
+signed device/unsigned joystick count validation, original CP932 error and
+keyboard fallback, full28-byte held zero, this+494 forwarding, opponent2E8
+binding, signed index maximum/index1 baseline and seven1/2/4-byte indexed
+payload writes/final39E mirror. The complete23-byte CP932 string
+「パッドが見つかりません」and all actual readonly-section definitions match
+657788 in preview and fresh canonical objects. No reconstructed owner instances
+or inferred complete array/layout extents. Original roles remain literal via
+COFF maps; R015's blank source-owner view is normalized to its existing authored
+classification, with no origin evidence or unknown credit changed.
+
+Initial local$SG579 resolution wrongly borrowed an unrelated object's659394
+string address; the invalid two-byte-field diagnostic is retained. Complete
+actual COFF data/native reference correctly bind657788 without source edits or
+rebuild. Compiler-local data names must never resolve through a global name
+dictionary. Two zero-field descriptor omissions were then rejected by tracking;
+both explicitly declare `relocations = []`, and the shared new object was
+cold-replayed again with full canonical readonly validation. Code/source/actual
+relocation fields are unchanged. No padding, inert locals, fake returns, ABI
+tricks, assembly, alternate bodies, masks, crops, aliases or local rebasing.
+All395 old units/153 objects/242 inputs, existing headers/origin/verifier guards,
+13 active objects/all14 F157/both F159 are preserved. Only four new units/one
+object were cold-replayed; no old or large-function control was rebuilt.
+
+Immediately continue full R0410043C930/1,150 CODE and its four R043 helpers:
+43D430/44,43D3E0/79,43D460/40,43D3B0/43. Review whole native dataflow, used ABI,
+indexed progress storage and global bindings before complete natural sources/
+comparisons. Keep all failed large functions/all97 unknowns/every pending byte
+in the denominator; immediately continue after checkpoint/cleanup/commit/push.
+Receipts: `.analysis/f171-binding-round-unit-proof.json`,
+`.analysis/f171-binding-round-canonical-replay.json`,
+`.analysis/f171-canonical-readonly.json`, F171 full diagnostics, rejected local
+lookup and descriptor correction/first cold-object evidence.
 
 **F170 accepted R045 opponent gauge:** `fighter-opponent-gauge-change-00452c10`
 passes one canonical cold build,753 complete CODE bytes/all13 actual fields

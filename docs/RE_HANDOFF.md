@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F170.
+Updated 2026-10-26 for continued reconstruction, F171.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F170 accepts the complete R045 opponent gauge policy;
-F169 accepted both tracked-effect policies. The full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F170 outcomes supersede historical
+phases remain deferred. F171 accepts four complete binding/round-record functions.
+F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
+The complete large drafts remain unaccepted. Current F171 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 395 / 395 / 395 |
-| Exact code bytes | 725,873 |
-| Reviewed authored coverage | 725,873 / 1,973,516 (36.78%) |
-| Conservative coverage, including pending bytes | 725,873 / 1,977,124 (36.71%) |
-| Canonical objects / accepted source-header inputs | 153 / 242 |
+| Source-present / exact functions / exact units | 399 / 399 / 399 |
+| Exact code bytes | 726,428 |
+| Reviewed authored coverage | 726,428 / 1,973,516 (36.81%) |
+| Conservative coverage, including pending bytes | 726,428 / 1,977,124 (36.74%) |
+| Canonical objects / accepted source-header inputs | 154 / 244 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 335 additions / 715,990 code bytes / 242 inputs. Origin evidence through
+F009 plus 339 additions / 716,545 code bytes / 244 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **cf9b249 (F169)**, preceded by
+The preceding reconstruction checkpoint is **0297027 (F170)**, preceded by
+**cf9b249 (F169)** and
 **42d1e0b (F168)** and
 **8d53f6c (F167)** and
 **d7cb87f (F166)** and
@@ -102,7 +103,86 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F170 outcomes and continuation
+## Current F171 outcomes and continuation
+
+One new canonical object accepts all four whole functions in
+`src/BindingRoundF171.cpp` and its call-only header:
+
+| Unit | Code bytes | Actual fields |
+| --- | --- | --- |
+| `input-set-bindings-00406e10` | 110 | 4 REL32 / 2 DIR32 |
+| `fighter-set-bindings-00457490` | 31 | 1 REL32 |
+| `fighter-bind-opponent-004574b0` | 25 | 0 |
+| `battle-record-round-fields-004574d0` | 389 | 0 |
+
+Canonical cold replay passes all555 CODE bytes/all7 fields; all complete CFGs,
+RET4/4/4/32 and following INT3 alignment are reconciled with R015/R100/R103/R054.
+The110-byte callee copies all40 binding bytes, compares the signed device byte
+against the unsigned joystick count, reports the original CP932 error, applies
+the keyboard fallback and zeroes the full28-byte held block. The original error
+text「パッドが見つかりません」is a legitimate23-byte NUL-terminated string;
+its entire actual COFF readonly section/all definitions match target657788 in
+both preview and fresh canonical objects. Source escapes preserve CP932 bytes.
+Canonical ShowError/count/CRT bindings and their headers remain unchanged.
+
+The31-byte wrapper forwards through this+494; the25-byte setter stores the
+opponent at2E8. The389-byte policy keeps the signed index maximum, actual index1
+baseline stores, seven indexed1/2/4-byte payload stores and final39E mirror.
+Index ranges/complete array and owner extents remain unknown; no partial owner
+is instantiated, allocated or embedded. Original roles stay literal through
+explicit COFF maps. R015's legacy blank function-owner view is synchronized to
+its already-reviewed authored origin; no ownership/provenance classification
+or unknown-origin credit changes.
+
+An initial diagnostic incorrectly resolved local string label$SG579 through
+an unrelated object's label at659394, producing two field-byte differences.
+That lookup was rejected and retained. Actual complete COFF data plus the
+independent native reference establish657788 without source changes/rebuild.
+Never resolve compiler-local data labels from a global name map. Two zero-field
+descriptors also initially omitted their required relocation keys. Tracking
+rejected this representation; both now explicitly declare `relocations = []`.
+The shared new object was cold-replayed again after repair, and its complete
+readonly section rechecked. All code/source/physical relocations were unchanged.
+
+All395 previous units/153 canonical objects/242 adoption inputs, existing
+headers, R268 origin evidence/all97 unknowns and13 active/all14 F157/both F159
+remain unchanged. Only these four new units/one object were cold-replayed.
+No large-function control or old accepted dependency was rebuilt.
+
+Immediately continue complete R0410043C930/1,150-byte knockout resolution and
+its four independently reviewed R043 helpers0043D430/44,0043D3E0/79,
+0043D460/40 and0043D3B0/43 bytes. Review full native flows, helper argument/return
+contracts, indexed progress-record storage and all global bindings before full
+natural sources and complete comparisons. Preserve all pending large functions,
+all97 unknowns and every pending byte in the conservative denominator. Continue
+immediately after checkpoint/cleanup/commit/push; never pause automatically.
+
+Receipts: `.analysis/f171-binding-round-unit-proof.json`,
+`.analysis/f171-binding-round-canonical-replay.json`,
+`.analysis/f171-canonical-readonly.json` and the private F171 full diagnostics,
+`initial-binding-issue.json`/`descriptor-normalization.json` and retained first
+cold-object/report evidence.
+
+Public CI passed **3,612 tests in 176.636 seconds**. Target,
+tracking, progress and diff checks pass. Four new units in one new object were
+cold-replayed:555 full CODE bytes/all7 actual fields; the fresh canonical entire
+23-byte readonly section/all definitions also match. All395 prior units/153
+old canonical objects/242 old adoption inputs, existing headers, origin/verifier
+guards, forty protected groups,13 active objects/all14 F157 probes/both F159
+traces were hash-verified unchanged. Three compiler builds ran serially and
+explicitly headless: preview, first cold build, and repeated shared new object
+after required empty relocation-list schema repair. No old accepted unit or
+large-function control was rebuilt. Cleanup removed preview and first-cold
+objects (8,924 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,339 bytes), retaining complete nondebug sections/
+symbols/fields/source/header/profile evidence and154 canonical/13 active objects.
+Receipts: `.analysis/f171-object-retention.json`, `.analysis/f171-cleanup.json`,
+`.analysis/f171-preservation-final.json` and `.analysis/f171-source-checkpoint.json`.
+Immediately continue full43C930 knockout and its four R043 helpers after this
+checkpoint/commit/push; the98% goal remains active and incomplete.
+
+## Retained F170 outcomes
 
 One canonical cold build accepts complete R04500452C10 in
 `src/FighterOpponentGaugeF170.cpp` and its call-only header. Unit

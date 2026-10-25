@@ -26239,3 +26239,76 @@ offset = 724
 type = "DIR32"
 symbol = "__real@42c80000"
 target = 0x00657888
+
+[units.input-set-bindings-00406e10]
+source = "src/BindingRoundF171.cpp"
+object = "build/matching/BindingRoundF171.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["InputMapping::SetBindings"]
+symbol = "?SetBindings@InputBindingsF171@@QAEXPBX@Z"
+target_address = 0x00406E10
+size = 110
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 21
+type = "REL32"
+symbol = "_memcpy"
+target = 0x00640F20
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 38
+type = "DIR32"
+symbol = "?g_JoystickCount@Input@@3EA"
+target = 0x00671354
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 47
+type = "DIR32"
+symbol = "$SG579"
+target = 0x00657788
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 52
+type = "REL32"
+symbol = "?ShowError@Input@@YAXPBD@Z"
+target = 0x00403D00
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 71
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+[[units.input-set-bindings-00406e10.relocations]]
+offset = 97
+type = "REL32"
+symbol = "_memset"
+target = 0x00640490
+
+[units.fighter-set-bindings-00457490]
+source = "src/BindingRoundF171.cpp"
+object = "build/matching/BindingRoundF171.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SetBindingsAt00457490"]
+symbol = "?SetBindings@FighterBindingRoundF171@@QAEXPBX@Z"
+target_address = 0x00457490
+size = 31
+[[units.fighter-set-bindings-00457490.relocations]]
+offset = 21
+type = "REL32"
+symbol = "?SetBindings@InputBindingsF171@@QAEXPBX@Z"
+target = 0x00406E10
+
+[units.fighter-bind-opponent-004574b0]
+relocations = []
+source = "src/BindingRoundF171.cpp"
+object = "build/matching/BindingRoundF171.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::BindOpponentAt004574B0"]
+symbol = "?BindOpponent@FighterBindingRoundF171@@QAEXPAX@Z"
+target_address = 0x004574B0
+size = 25
+
+[units.battle-record-round-fields-004574d0]
+relocations = []
+source = "src/BindingRoundF171.cpp"
+object = "build/matching/BindingRoundF171.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleState::RecordRoundFields"]
+symbol = "?RecordRoundFields@FighterBindingRoundF171@@QAEXCFEEEIII@Z"
+target_address = 0x004574D0
+size = 389

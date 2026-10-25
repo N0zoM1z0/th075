@@ -394,3 +394,7 @@ BattleScene::HandleMode5OptionsAt004483F0 [provisional],0x004483F0,function
 FighterState::SpawnTrackedEffectAt00453AC0,0x00453AC0,function
 FighterState::SpawnTrackedEffectAt00453BE0,0x00453BE0,function
 FighterState::ApplyOpponentGaugeChange,0x00452C10,function
+InputMapping::SetBindings,0x00406E10,function
+FighterState::SetBindingsAt00457490,0x00457490,function
+FighterState::BindOpponentAt004574B0,0x004574B0,function
+BattleState::RecordRoundFields,0x004574D0,function

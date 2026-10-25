@@ -376,3 +376,7 @@ address,name,module,confidence,evidence
 0x00453AC0,FighterState::SpawnTrackedEffectAt00453AC0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453BE0,FighterState::SpawnTrackedEffectAt00453BE0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00452C10,FighterState::ApplyOpponentGaugeChange,FighterState,inferred,F170; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00406E10,InputMapping::SetBindings,InputMapping,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00457490,FighterState::SetBindingsAt00457490,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004574B0,FighterState::BindOpponentAt004574B0,FighterState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x004574D0,BattleState::RecordRoundFields,BattleState,inferred,F171; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

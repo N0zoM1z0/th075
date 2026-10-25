@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "e47363694d5e431d419f04d754f2459e87f49e2148cdf965884924291f8edf4d"
+      "current_sha256": "f0640f821a5c8d073e9a9b7827ca635e4e31b736d83b80a2ab0eea5f5c1b2c88"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "2df5fad90cab4b10b2f4cf9da279c23cd06c1eaa6ee7faf2f9a396e7f12c864e"
+      "current_sha256": "3642160c8b7f0039fbbab870cdcc3dca12e42c3bd076968bce227f4155c0e014"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "8c008b8fd5df94f1f6cc68f4a19ae9a0ce76df9cfa8afe851da3d703eadea959"
+      "current_sha256": "f626e7f839e45b54547aa1e379d7568f9a852e7f8247b9a19f9414f4062dd547"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "2a9223652c99a077d13a8b2628a1430eca5a8382478c88f972d6bff7339dfe31"
+      "current_sha256": "682403e4e84a7f4c98ce48c9885328d076abc5c135edb3660cdd0c7bdf04c93b"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f7d991873426fef1c6cef4765c851c0d252c49734a4136337e5d1f4337009ba7"
+      "current_sha256": "30caaa5ae8b65ece417fc940d3389d6b8bf5af03c29303171829c3dbd788ee68"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14780,6 +14780,182 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00406E10",
+        "size": "110",
+        "span_end": "0x00406E7D",
+        "current_name": "FUN_00406e10",
+        "proposed_name": "InputMapping::SetBindings",
+        "module": "InputMapping",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R015",
+        "owner": "",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit."
+      },
+      "after": {
+        "address": "0x00406E10",
+        "size": "110",
+        "span_end": "0x00406E7D",
+        "current_name": "FUN_00406e10",
+        "proposed_name": "InputMapping::SetBindings",
+        "module": "InputMapping",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void InputBindingsF171::SetBindings(const void*)",
+        "is_thunk": "false",
+        "source_file": "src/BindingRoundF171.cpp",
+        "evidence": "R015; F171; scripts/repo-python scripts/replay-exact-units.py --unit input-set-bindings-00406e10",
+        "owner": "authored",
+        "notes": "R015; custom shared sound, input binding, sound-bank, stream or texture ownership policy; complete target CFG; role and original ABI/name unresolved; origin only, no source or exact credit.; F171: four completeR015/R100/R103/R054 bodies555CODE/all7actualfields(5REL32/2DIR32), allCFG/exits/RET4/4/4/32 and alignment retained. Input40bytebindingcopy/28byteheldzero, signeddevice/unsignedcount validation and original23byteCP932message/fullreadonlysection/allactualdefs; canonicalShowError/globalcount/CRTbindings unchanged. Wrapperthis+494 andopponent2E8, signedindexmax/index1baseline/seven1/2/4bytepayloadstores/final39Emirror retained. OriginalrolesliteralviaexplicitCOFFmaps; R015legacy blanksourceowner view normalized to already-reviewedAuthored origin without provenance/classification change. Rejected initial$SG579lookupcollidedwithunrelated659394; actualCOFFreadonlydata/native657788binding validated, no sourcechange/rebuild. No privateownerinstances/full-layout claim/inertlocal/padding/fakereturn/ABItrick/asm/alternatebody/mask/crop/alias/rebasing. Only4newunits/oneobject coldreplayed; all395oldunits/153objects/242inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00406E10",
+        "origin": "authored",
+        "subsystem": "InputMapping",
+        "disposition": "authored",
+        "confidence": "custom-policy-backed",
+        "evidence_id": "R015"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00457490",
+        "size": "31",
+        "span_end": "0x004574AE",
+        "current_name": "FUN_00457490",
+        "proposed_name": "FighterState::SetBindingsAt00457490",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit"
+      },
+      "after": {
+        "address": "0x00457490",
+        "size": "31",
+        "span_end": "0x004574AE",
+        "current_name": "FUN_00457490",
+        "proposed_name": "FighterState::SetBindingsAt00457490",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBindingRoundF171::SetBindings(const void*)",
+        "is_thunk": "false",
+        "source_file": "src/BindingRoundF171.cpp",
+        "evidence": "R100; scripts/repo-python scripts/verify-short-game-origins.py; F171; scripts/repo-python scripts/replay-exact-units.py --unit fighter-set-bindings-00457490",
+        "owner": "authored",
+        "notes": "Complete game-policy body and CFG; reviewed custom callees, explicit fields and owner context; names/layouts inferred; no source or exact credit; F171: four completeR015/R100/R103/R054 bodies555CODE/all7actualfields(5REL32/2DIR32), allCFG/exits/RET4/4/4/32 and alignment retained. Input40bytebindingcopy/28byteheldzero, signeddevice/unsignedcount validation and original23byteCP932message/fullreadonlysection/allactualdefs; canonicalShowError/globalcount/CRTbindings unchanged. Wrapperthis+494 andopponent2E8, signedindexmax/index1baseline/seven1/2/4bytepayloadstores/final39Emirror retained. OriginalrolesliteralviaexplicitCOFFmaps; R015legacy blanksourceowner view normalized to already-reviewedAuthored origin without provenance/classification change. Rejected initial$SG579lookupcollidedwithunrelated659394; actualCOFFreadonlydata/native657788binding validated, no sourcechange/rebuild. No privateownerinstances/full-layout claim/inertlocal/padding/fakereturn/ABItrick/asm/alternatebody/mask/crop/alias/rebasing. Only4newunits/oneobject coldreplayed; all395oldunits/153objects/242inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00457490",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed-game-policy-and-reviewed-callees",
+        "evidence_id": "R100"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004574B0",
+        "size": "25",
+        "span_end": "0x004574C8",
+        "current_name": "FUN_004574b0",
+        "proposed_name": "FighterState::BindOpponentAt004574B0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004574B0",
+        "size": "25",
+        "span_end": "0x004574C8",
+        "current_name": "FUN_004574b0",
+        "proposed_name": "FighterState::BindOpponentAt004574B0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBindingRoundF171::BindOpponent(void*)",
+        "is_thunk": "false",
+        "source_file": "src/BindingRoundF171.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F171; scripts/repo-python scripts/replay-exact-units.py --unit fighter-bind-opponent-004574b0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F171: four completeR015/R100/R103/R054 bodies555CODE/all7actualfields(5REL32/2DIR32), allCFG/exits/RET4/4/4/32 and alignment retained. Input40bytebindingcopy/28byteheldzero, signeddevice/unsignedcount validation and original23byteCP932message/fullreadonlysection/allactualdefs; canonicalShowError/globalcount/CRTbindings unchanged. Wrapperthis+494 andopponent2E8, signedindexmax/index1baseline/seven1/2/4bytepayloadstores/final39Emirror retained. OriginalrolesliteralviaexplicitCOFFmaps; R015legacy blanksourceowner view normalized to already-reviewedAuthored origin without provenance/classification change. Rejected initial$SG579lookupcollidedwithunrelated659394; actualCOFFreadonlydata/native657788binding validated, no sourcechange/rebuild. No privateownerinstances/full-layout claim/inertlocal/padding/fakereturn/ABItrick/asm/alternatebody/mask/crop/alias/rebasing. Only4newunits/oneobject coldreplayed; all395oldunits/153objects/242inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x004574B0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004574D0",
+        "size": "389",
+        "span_end": "0x00457654",
+        "current_name": "FUN_004574d0",
+        "proposed_name": "BattleState::RecordRoundFields",
+        "module": "BattleState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x004574D0",
+        "size": "389",
+        "span_end": "0x00457654",
+        "current_name": "FUN_004574d0",
+        "proposed_name": "BattleState::RecordRoundFields",
+        "module": "BattleState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterBindingRoundF171::RecordRoundFields(signed char, short, unsigned char, unsigned char, unsigned char, unsigned int, unsigned int, unsigned int)",
+        "is_thunk": "false",
+        "source_file": "src/BindingRoundF171.cpp",
+        "evidence": "R054; full body hash, complete decoded CFG and local game-specific behavior reviewed; F171; scripts/repo-python scripts/replay-exact-units.py --unit battle-record-round-fields-004574d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F171: four completeR015/R100/R103/R054 bodies555CODE/all7actualfields(5REL32/2DIR32), allCFG/exits/RET4/4/4/32 and alignment retained. Input40bytebindingcopy/28byteheldzero, signeddevice/unsignedcount validation and original23byteCP932message/fullreadonlysection/allactualdefs; canonicalShowError/globalcount/CRTbindings unchanged. Wrapperthis+494 andopponent2E8, signedindexmax/index1baseline/seven1/2/4bytepayloadstores/final39Emirror retained. OriginalrolesliteralviaexplicitCOFFmaps; R015legacy blanksourceowner view normalized to already-reviewedAuthored origin without provenance/classification change. Rejected initial$SG579lookupcollidedwithunrelated659394; actualCOFFreadonlydata/native657788binding validated, no sourcechange/rebuild. No privateownerinstances/full-layout claim/inertlocal/padding/fakereturn/ABItrick/asm/alternatebody/mask/crop/alias/rebasing. Only4newunits/oneobject coldreplayed; all395oldunits/153objects/242inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x004574D0",
+        "origin": "authored",
+        "subsystem": "BattleState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R054"
       }
     }
   ],
@@ -144980,6 +145156,138 @@
           "target": 6649992
         }
       ]
+    },
+    "input-set-bindings-00406e10": {
+      "source": "src/BindingRoundF171.cpp",
+      "object": "build/matching/BindingRoundF171.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "InputMapping::SetBindings"
+      ],
+      "symbol": "?SetBindings@InputBindingsF171@@QAEXPBX@Z",
+      "target_address": 4222480,
+      "size": 110,
+      "relocations": [
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "_memcpy",
+          "target": 6557472
+        },
+        {
+          "offset": 38,
+          "type": "DIR32",
+          "symbol": "?g_JoystickCount@Input@@3EA",
+          "target": 6755156
+        },
+        {
+          "offset": 47,
+          "type": "DIR32",
+          "symbol": "$SG579",
+          "target": 6649736
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "?ShowError@Input@@YAXPBD@Z",
+          "target": 4209920
+        },
+        {
+          "offset": 71,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "_memset",
+          "target": 6554768
+        }
+      ]
+    },
+    "fighter-set-bindings-00457490": {
+      "source": "src/BindingRoundF171.cpp",
+      "object": "build/matching/BindingRoundF171.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SetBindingsAt00457490"
+      ],
+      "symbol": "?SetBindings@FighterBindingRoundF171@@QAEXPBX@Z",
+      "target_address": 4551824,
+      "size": 31,
+      "relocations": [
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "?SetBindings@InputBindingsF171@@QAEXPBX@Z",
+          "target": 4222480
+        }
+      ]
+    },
+    "fighter-bind-opponent-004574b0": {
+      "relocations": [],
+      "source": "src/BindingRoundF171.cpp",
+      "object": "build/matching/BindingRoundF171.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::BindOpponentAt004574B0"
+      ],
+      "symbol": "?BindOpponent@FighterBindingRoundF171@@QAEXPAX@Z",
+      "target_address": 4551856,
+      "size": 25
+    },
+    "battle-record-round-fields-004574d0": {
+      "relocations": [],
+      "source": "src/BindingRoundF171.cpp",
+      "object": "build/matching/BindingRoundF171.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleState::RecordRoundFields"
+      ],
+      "symbol": "?RecordRoundFields@FighterBindingRoundF171@@QAEXCFEEEIII@Z",
+      "target_address": 4551888,
+      "size": 389
     }
   },
   "source_sha256": {
@@ -145224,6 +145532,8 @@
     "src/FighterTrackedEffectsF169.cpp": "69f95f182667f2034fb92c34c71a0069974860b476d79142532ad9b1b63180d1",
     "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9",
     "src/FighterOpponentGaugeF170.cpp": "69e75b0c96fab3214e26f5bfd0d28b1beb076f41de79bda8f7c3c836889e686e",
-    "src/FighterOpponentGaugeF170.hpp": "6cb549cf37b8a03a539f6a552301c07eeaec2b29815cba4b1a0793442a2c3577"
+    "src/FighterOpponentGaugeF170.hpp": "6cb549cf37b8a03a539f6a552301c07eeaec2b29815cba4b1a0793442a2c3577",
+    "src/BindingRoundF171.cpp": "fb51cd4873badf3c6e3de5cfdeb4c90d1874823912613ec26ec7d8abf78f9d98",
+    "src/BindingRoundF171.hpp": "b7b3631f098e9c8de58851a78673ae9441b42698fd2aeaf39a21b80d527eac94"
   }
 }
