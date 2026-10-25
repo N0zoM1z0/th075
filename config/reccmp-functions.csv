@@ -388,3 +388,4 @@ FighterState::AdjustCameraOffsetAt00453EB0,0x00453EB0,function
 FighterState::IsState150To199At00454FD0,0x00454FD0,function
 FighterState::IsState95To99At00455070,0x00455070,function
 BattleCombat::SelectHitResponseAt00455140,0x00455140,function
+BattleInput::MatchSequenceAt00455800,0x00455800,function

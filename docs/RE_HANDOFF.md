@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F164.
+Updated 2026-10-26 for continued reconstruction, F165.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F164 accepts three complete functions/1,061 bytes. Both
-large drafts remain unaccepted. Current F164 outcomes supersede historical
+phases remain deferred. F165 accepts one complete function/695 CODE bytes. Both
+large drafts remain unaccepted. Current F165 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -41,14 +41,14 @@ complete or the user explicitly changes the instruction.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 389 / 389 / 389 |
-| Exact code bytes | 723,183 |
-| Reviewed authored coverage | 723,183 / 1,973,516 (36.64%) |
-| Conservative coverage, including pending bytes | 723,183 / 1,977,124 (36.58%) |
-| Canonical objects / accepted source-header inputs | 148 / 232 |
+| Source-present / exact functions / exact units | 390 / 390 / 390 |
+| Exact code bytes | 723,878 |
+| Reviewed authored coverage | 723,878 / 1,973,516 (36.68%) |
+| Conservative coverage, including pending bytes | 723,878 / 1,977,124 (36.61%) |
+| Canonical objects / accepted source-header inputs | 149 / 234 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 329 additions / 713,300 code bytes / 232 inputs. Origin evidence through
+F009 plus 330 additions / 713,995 code bytes / 234 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -57,7 +57,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **22443ea (F163)**, preceded by
+The preceding reconstruction checkpoint is **bb2f0c9 (F164)**, preceded by
+**22443ea (F163)** and
 **d0ecd9b (F162)** and
 **5d51487 (F161)** and
 **c758e14 (F160)**; continuation policy
@@ -93,7 +94,71 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F164 outcomes and continuation
+## Current F165 outcomes and continuation
+
+One new canonical object accepts the complete R112 sequence matcher00455800,
+`fighter-match-input-sequence-00455800`, from
+`src/FighterInputSequenceF165.cpp` and its call-only header. Canonical cold replay
+passes695 CODE bytes, the owned68-byte pointer table and40-byte remap:803 full
+compared bytes/all33 actual fields (20 DIR32/13 REL32). All19 local fields follow
+actual fresh COFF offsets; no native-label rebasing. Every real exit, the
+AL/RET12 used byte ABI, contiguous table/remap extents and excluded13-byte INT3
+alignment before455B30 are reconciled with frozen R112 body/switch evidence.
+
+Source retains signed byte count/history offset/facing, real20-byte command
+buffer and GS cookie, two complete8-byte vendor iterators, physical case order,
+prefix index/postfix iterator operations, repeated low/high nibble reads and
+actual return codes0..4. Unknown character cases retain their native absent
+default assignment. The live command-buffer/end-iterator scan scope produces
+the native indexEBP-C/endEBP-14 layout. Initial index-declaration/name/initializer
+controls all retain39 stack-displacement differences; a for-declaration control
+retains63. The scan scope gives zero complete differences without extra locals,
+padding, fake returns or ABI changes. Original expression spelling and private
+nominal types/layouts remain unknown. The receiver is never instantiated or
+embedded; final source differs from the successful diagnostic only in indentation.
+
+The same fresh canonical object independently checks all five complete used
+vendor bodies: end41, iterator+57, postfix++54, !=33 and dereference19, total204
+bytes/all5 fields, against frozen R032/R078/R082/R111/R112 context. Compatible
+byte/generic carrier names do not recover original nominal elements. Library
+code earns no authored credit; cookie bindings retain existing canonical targets.
+All389 prior units/148 objects/232 adoption inputs, existing headers and origin
+records through R268 are unchanged. No old dependency required cold replay.
+
+No main control ran in F165. Both complete large drafts and all pending bytes
+remain in the conservative denominator. Continue F166 immediately: prioritize
+new independently grounded source/compiler allocation evidence for the complete
+004AC040 candidate. The F165 scope result changes real stack allocation while
+preserving register choices; it is not evidence to repeat the closed F155 i88
+scope or F164 scalar-member controls. Review the observed shared slot0 callback /
+slot1 advance prefix across character tables before testing an inherited physical
+interface view; shared entries alone do not prove original C++ inheritance.
+Keep any such layout hypothesis diagnostic and do not instantiate partial views.
+Preserve every accepted unit, both large drafts, all12 prior active objects,
+both F159 traces and all14 F157 probes. The full98% goal remains active; after
+this checkpoint/commit/push, immediately execute the next reconstruction task.
+
+Receipts: `.analysis/f165-sequence-unit-proof.json`,
+`.analysis/f165-sequence-canonical-replay.json`,
+`.analysis/f165-sequence-canonical-dependencies.json` and
+`.analysis/f165-input/` with all six source/control reports.
+
+Public CI passed **3,612 tests in 183.472 seconds**. Target,
+tracking, progress and diff checks pass. Only this new unit/one object was cold
+replayed:695 CODE/803 full compared bytes/all33 fields. All389 prior units/148
+objects/232 adoption inputs, every existing header, all origin/verifier guards,
+forty protected groups and all12 prior active objects were hash-verified
+unchanged. Seven compiler builds ran serially and explicitly headless: six
+diagnostics/controls and one canonical; no main build ran. Cleanup removed six
+obsolete objects (83,998 bytes), 377 bytecode
+files (8,312,314 bytes) and 0 separate PDBs
+(0 bytes), retaining complete source/header/profile/
+raw code/data/symbol/native/field evidence, all149 canonical objects and every
+old active object. Final receipts: `.analysis/f165-preservation-final.json`,
+`.analysis/f165-cleanup.json` and `.analysis/f165-source-checkpoint.json`.
+The98% goal remains active and incomplete; execute F166 immediately.
+
+## Retained F164 outcomes
 
 One new canonical object accepts three complete authored functions/1,061 CODE
 bytes from `src/FighterHitResponseF164.cpp` and its call-only header:

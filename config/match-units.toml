@@ -25757,3 +25757,178 @@ offset = 956
 type = "DIR32"
 symbol = "$L5531"
 target = 0x00455266
+
+[units.fighter-match-input-sequence-00455800]
+source = "src/FighterInputSequenceF165.cpp"
+object = "build/matching/FighterInputSequenceF165.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleInput::MatchSequenceAt00455800"]
+symbol = "?MatchSequence@FighterInputSequenceF165@@QAEEPBDCC@Z"
+target_address = 0x00455800
+size = 695
+compare_size = 803
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 7
+type = "DIR32"
+symbol = "___security_cookie"
+target = 0x0066FE30
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 40
+type = "REL32"
+symbol = "?end@?$deque@EV?$allocator@E@std@@@std@@QAE?AViterator@12@XZ"
+target = 0x00414400
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 47
+type = "REL32"
+symbol = "??Hiterator@?$deque@EV?$allocator@E@std@@@std@@QBE?AV012@H@Z"
+target = 0x00455C60
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 65
+type = "REL32"
+symbol = "?end@?$deque@EV?$allocator@E@std@@@std@@QAE?AViterator@12@XZ"
+target = 0x00414400
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 137
+type = "DIR32"
+symbol = "$L5906"
+target = 0x00455AFB
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 144
+type = "DIR32"
+symbol = "$L5910"
+target = 0x00455AB7
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 387
+type = "REL32"
+symbol = "??Eiterator@?$deque@EV?$allocator@E@std@@@std@@QAE?AV012@H@Z"
+target = 0x00414970
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 399
+type = "REL32"
+symbol = "??9const_iterator@?$deque@EV?$allocator@E@std@@@std@@QBE_NABV012@@Z"
+target = 0x004149B0
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 431
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 503
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 558
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 595
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 615
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 635
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 655
+type = "REL32"
+symbol = "??Diterator@?$deque@EV?$allocator@E@std@@@std@@QBEAAEXZ"
+target = 0x00414950
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 685
+type = "REL32"
+symbol = "@__security_check_cookie@4"
+target = 0x00640611
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 695
+type = "DIR32"
+symbol = "$L5542"
+target = 0x00455894
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 699
+type = "DIR32"
+symbol = "$L5543"
+target = 0x004558A1
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 703
+type = "DIR32"
+symbol = "$L5544"
+target = 0x004558AE
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 707
+type = "DIR32"
+symbol = "$L5545"
+target = 0x004558BB
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 711
+type = "DIR32"
+symbol = "$L5551"
+target = 0x004558EA
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 715
+type = "DIR32"
+symbol = "$L5552"
+target = 0x004558F4
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 719
+type = "DIR32"
+symbol = "$L5558"
+target = 0x0045591D
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 723
+type = "DIR32"
+symbol = "$L5559"
+target = 0x00455927
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 727
+type = "DIR32"
+symbol = "$L5560"
+target = 0x00455931
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 731
+type = "DIR32"
+symbol = "$L5561"
+target = 0x0045593B
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 735
+type = "DIR32"
+symbol = "$L5562"
+target = 0x00455945
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 739
+type = "DIR32"
+symbol = "$L5563"
+target = 0x0045594F
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 743
+type = "DIR32"
+symbol = "$L5564"
+target = 0x00455959
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 747
+type = "DIR32"
+symbol = "$L5546"
+target = 0x004558C8
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 751
+type = "DIR32"
+symbol = "$L5553"
+target = 0x004558FE
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 755
+type = "DIR32"
+symbol = "$L5565"
+target = 0x00455963
+[[units.fighter-match-input-sequence-00455800.relocations]]
+offset = 759
+type = "DIR32"
+symbol = "$L5539"
+target = 0x0045596B

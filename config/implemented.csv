@@ -387,3 +387,4 @@ FighterState::AdjustCameraOffsetAt00453EB0
 FighterState::IsState150To199At00454FD0
 FighterState::IsState95To99At00455070
 BattleCombat::SelectHitResponseAt00455140
+BattleInput::MatchSequenceAt00455800

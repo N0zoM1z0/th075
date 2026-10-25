@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F164.
+Updated 2026-10-26 for continued reconstruction, F165.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F164 adds three complete functions/1,061 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F165 adds one complete function/695 CODE bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,38 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 389 units,
-  723,183 code bytes, 148 canonical objects and 232 accepted inputs.
-- Reviewed authored coverage is 36.64%; conservative coverage is 36.58%.
+  complete cold-exact units/all actual relocations. Counts are 390 units,
+  723,878 code bytes, 149 canonical objects and 234 accepted inputs.
+- Reviewed authored coverage is 36.68%; conservative coverage is 36.61%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F165 accepted input sequence:** complete695-byte R112 matcher455800 passes
+one new canonical cold build:803 compared bytes including owned pointertable68
+and remap40/all33 actual fields (20DIR32/13REL32), with all19 local destinations
+from actual fresh COFF offsets. Used AL/RET12, signed byte count/offset/facing,
+real20-byte commands buffer/GS cookie, complete8-byte vendor iterators, actual
+case order, prefix index/postfix iterator, repeated nibble tests and return0..4
+remain natural. Missing default assignments are preserved. A genuine live scan
+scope gives indexEBP-C/endEBP-14 and zero complete differences; initial declaration/
+name/initializer forms retain39 stack displacements and for-declaration63. Final
+source only indents the successful diagnostic. No padding/inert local/fake return/
+ABI change; original spelling/private nominal types/layout unknown, no partial
+owner instances. The same fresh object checks five entire vendor bodies/204bytes/
+5fields without library credit. All389 old units/148 objects/232 inputs, existing
+headers and original R112/source-origin evidence remain unchanged.
+
+Continue F166 immediately on independently grounded full004AC040 compiler/source
+allocation evidence. F165 scope changes stack storage while keeping GPR choices;
+do not repeat closed i88/scalar-member controls. Review shared callback/advance
+vtable evidence before an inherited used-interface diagnostic; common entries do
+not prove original inheritance. Keep hypotheses explicit and partial owners
+uninstantiated. Both complete large drafts/all97 unknowns/full pending bytes and
+all12 prior active objects/both F159 traces/all14 F157 probes remain preserved.
 
 **F164 accepted hit response:** complete61-byte150..199 and56-byte95..99
 signed-short bool predicates plus944-byte hit-response selection pass one new
