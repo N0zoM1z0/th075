@@ -1,9 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for cleanup and successor handoff after unfinished F157.
-The latest user instructions state that the active goal was cleared; the 98%
-authored-byte objective remains incomplete. F156 remains the accepted baseline.
-Current state and pending work are in [RE_HANDOFF.md](RE_HANDOFF.md).
+Updated 2026-10-25 for continued reconstruction after the F157 cleanup checkpoint.
+The 98% authored-byte goal is active and incomplete. The user explicitly
+prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
+earlier cleared-goal instructions are superseded. Continue the pending work in
+[RE_HANDOFF.md](RE_HANDOFF.md). F156 remains the accepted baseline.
 
 ## Authoritative inputs and evidence
 
@@ -32,7 +33,7 @@ The F157 root `Preview.cpp` is an unreviewed 20-field prefix-increment control;
 its baseline is `snapshots/cursor-resets/Preview.cpp`, matching F156. Keep all 14
 F157 probe objects and the 1,656 private files recorded in
 `.analysis/f157-handoff/retained-f157-inputs.json`. Read the pending-work section
-of [RE_HANDOFF.md](RE_HANDOFF.md) before resuming. Its warnings about incomplete
+of [RE_HANDOFF.md](RE_HANDOFF.md) while continuing. Its warnings about incomplete
 compiler xref scanning, unresolved return ABI and unproved broader layouts apply.
 
 **004AC040, R048 authored:** the authoritative complete source is now

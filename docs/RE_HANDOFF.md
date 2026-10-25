@@ -1,10 +1,12 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for cleanup and successor handoff after unfinished F157 work.
-**The user cleared the active goal. The 98% authored-byte objective is incomplete.**
-The latest user instructions supersede the historical active-goal statements
-below. Subsequent project phases remain deferred. No new unit was accepted in
-this cleanup checkpoint; F156 remains the accepted reconstruction baseline.
+Updated 2026-10-25 for continued reconstruction after the F157 cleanup checkpoint.
+**The 98% authored-byte goal is active and incomplete. Do not pause it.**
+The user explicitly confirmed continuation and prohibited pausing. The earlier
+pause was an agent error caused by treating stale handoff instructions as a
+current stop request. Cleanup, documentation, verification and commits do not
+suspend reconstruction or require another resume request. Subsequent project
+phases remain deferred. F156 remains the accepted baseline pending F157 review.
 
 ## Verified reconstruction state
 
@@ -58,10 +60,10 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Successor cohort: complete 004AC040 after F156
+## Active cohort: complete 004AC040 after F156
 
-Resume matching only when reconstruction is requested again. Read the pending
-F157 section below before choosing a new experiment. The authoritative F156
+Continue matching now. Read the pending F157 section below before choosing a
+new experiment. The authoritative F156
 source and accepted counts below remain unchanged. The loose F157 `Preview.cpp`
 is an unreviewed prefix-increment experiment, not the baseline.
 
@@ -96,7 +98,7 @@ The draft remains unaccepted, with no source-presence or exact credit.
    callback was cold-replayed. Neither large draft nor the79-byte counter gains
    credit. No old accepted dependency changed or needed replay.
 
-## Pending F157 work preserved for the successor
+## Pending F157 work to continue now
 
 The private directory `.analysis/character-move-4ac040/f157/` contains 1,656
 retained files. All 14 `build/probes/F157*.obj` objects are retained, with hashes
@@ -117,7 +119,7 @@ the Ghidra project are excluded from Git.
   Cleanup preserved the exact registration in
   `.analysis/f157-handoff/pending-registration.patch` and restored the manifest
   to its 338 accepted definitions. The private source/object remain available.
-  A successor must review the complete R182 extent, add a real production source,
+  Review the complete R182 extent, add a real production source,
   and run canonical cold replay before updating acceptance ledgers.
 - **Whole caller controls:** seven complete reports are retained. `/G5`, `/G7`,
   void-return expression in 88, read-only phase accessor and typed field indexing
@@ -504,5 +506,5 @@ objects, the private project and shared tools were preserved. Receipts are
 `.analysis/f157-handoff/initial-checkpoint.json`, `retained-f157-inputs.json`,
 `source-state-check.json`, `cleanup.json`, `final-verification.json` and
 `source-checkpoint.json`, all under `.analysis/f157-handoff/`.
-The latest user instructions clear the active goal. The 98% objective is
-incomplete; historical active-goal statements above do not authorize resumption.
+The cleanup checkpoint did not complete the 98% objective. Its pause was an
+agent error; the user has explicitly prohibited pausing. Continue reconstruction.
