@@ -273,3 +273,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x0045BB10,BattleEffect::Spawn,BattleEffectSpawnerF136::Spawn,R045,battle-effect-spawn-0045bb10
 0x0045BDB0,BattleEffect::AdvanceAll,BattleEffectAdvanceF137::AdvanceAll,R045,battle-effect-advance-all-0045bdb0
 0x0045B880,BattleObject::BindAnimationAt0045B880,BattleAnimationBindingF139::BindAnimation,R222,battle-animation-bind-0045b880
+0x00453E20,FighterState::ClearMotionFieldsAt00453E20,FighterMotionClear453E20::ClearMotionFields,R103,fighter-motion-clear-00453e20

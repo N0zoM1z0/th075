@@ -311,3 +311,4 @@ address,name,module,confidence,evidence
 0x0045BB10,BattleEffectSpawnerF136::Spawn,BattleEffect,inferred,F136; full cold exact/whole CFG and ABI/bounded typed record view; original owner identity/layout unknown
 0x0045BDB0,BattleEffectAdvanceF137::AdvanceAll,BattleEffect,inferred,"F137; whole cold exact and native CFG/ABI; pointer-only view, original full layout unknown"
 0x0045B880,BattleAnimationBindingF139::BindAnimation,BattleObject,inferred,F139; complete cold exact callback/whole native nested packets and installed table prefix; original full owners/records unknown
+0x00453E20,FighterMotionClear453E20::ClearMotionFields,FighterState,inferred,F146; complete canonical cold exact/whole single-block saved-this policy; original owner and field declarations unknown

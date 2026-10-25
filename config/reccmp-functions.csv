@@ -329,3 +329,4 @@ FighterEffectPoliciesF135::UpdateGaugeTimer,0x0046D000,function
 BattleEffectSpawnerF136::Spawn,0x0045BB10,function
 BattleEffectAdvanceF137::AdvanceAll,0x0045BDB0,function
 BattleAnimationBindingF139::BindAnimation,0x0045B880,function
+FighterMotionClear453E20::ClearMotionFields,0x00453E20,function

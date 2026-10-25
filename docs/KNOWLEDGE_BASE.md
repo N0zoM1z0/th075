@@ -26865,3 +26865,120 @@ F131..F144 frozen evidence remain unchanged. All 97 unknown origins/3,608
 bytes remain included; R268 is unchanged. All 81,539 main code bytes remain
 pending. The 98% goal remains active and incomplete; later phases remain
 deferred.
+
+## F146 — exact motion clear and complete character-move cohort
+
+**One new complete function is accepted: 51 code bytes.**
+`FighterMotionClear453E20::ClearMotionFields` at **00453E20** is now unit
+`fighter-motion-clear-00453e20`. Its new source/header form a declaration-only
+receiver view, never constructed or embedded. Four natural DWORD zero stores
+at offsets 50/54/58/5C preserve the observed bits without claiming original
+field declarations or the complete owner layout. The complete single-block
+body contains 15 instructions, a four-byte frame and plain RET, no calls or
+relocations; the following 13 INT3 alignment bytes are outside the body.
+The existing database title `Concurrency::details::ContextBase::ClearCancel`
+and reviewed R103 role `FighterState::ClearMotionFieldsAt00453E20` remain in
+the ledgers with an explicit name alias. No origin was reclassified.
+
+Acceptance cold-built only the new unit:
+`scripts/repo-python scripts/replay-exact-units.py --unit fighter-motion-clear-00453e20`.
+The result is **51/51 code and compared bytes, zero differences**. Keep the
+new canonical `build/matching/FighterMotionClear453E20.obj`. The explicit
+VC7.1 build3077 profile is /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src; these
+settings do not establish one executable-wide original compiler profile.
+R103 was independently reverified after acceptance: 33 bodies/2,600 bytes
+and 22 whole caller anchors pass. Receipts include
+`.analysis/f146-{motion-unit-proof,accepted-replay}.json` and the cold log.
+
+**The complete 0050A580 draft remains unaccepted and unchanged.** All five
+complete F146 main builds retain 82,109 emitted bytes /26,719 positional
+differences, all 1,449 real relocation fields and raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`.
+Its required full comparison remains 82,106 bytes, including both tables;
+all 81,539 code bytes stay pending. Keep current source SHA-256
+`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`
+and active `build/probes/F145CanonicalViews.obj`, plus all older active
+F142/F139/F138/F136/F134 objects. F146 does not supersede the source with a
+failed profile or independent fixture.
+
+**Compiler observations, not game source or layout facts:** Original7248/CL
+was already source-use write U4342 in F145; the old next-lead assumption was
+incorrect. An executed /Ob1 watch observes ECX/32 to CX/16 to CL/8 at
+107385AB, ending in the actual source-use store. All 937 previously unjoined
+tokens now have checked own-COFF roles: 393 second operands of TEST reg,reg,
+205 FNSTSW AX, 205 TEST AH, 91 low-word frame-return uses, 20 low-word CRT
+conversion uses, one low-word recorded-range use, 13 direct stack spills of
+its EAX return, eight XOR same-register tokens and one incoming-this save.
+This classifies emission roles, not 937 newly observed producer writes or
+fresh register allocations. A watched zero-test clone is created after all
+7,454 generic mappings; a distinct AX call-return definition is fixed before
+generic allocation at actual store1077A179. Descriptor20526 also receives
+its class/definition before generic allocation with a null cursor. Its late
+number does not prove late creation or identify the original target allocator.
+
+A complete /Od /Ob1 main build, actual accepted callee definitions made
+visible in the same translation unit, and 18 complete qualifier/arithmetic
+fixture callers supply no natural source fix. All five full main emissions
+are unchanged; all six qualifier forms agree within each of three real
+prefixes. Do not repeat these controls or change game qualifiers/ABI based on
+toy receivers. Ten serial builds comprise five full main outputs, one
+18-caller fixture, one motion diagnostic, its canonical cold build and two
+explicit empty debugger failures. The failed IR walk and mistaken linked
+descriptor-head lookup have retained logs; bounded corrected retries pass.
+All compilation/debugging was headless, with absent display variables and
+disabled graphical Wine drivers. No game or graphical debugger was started.
+
+**Next full-function cohort:** F146 closed these bounded 0050A580 leads
+without a supported exact fix. Continue the overall 98% objective with the
+largest remaining reviewed authored body, **004AC040**, provisional role
+`CharacterMove::AdvanceAt004AC040` (R048). This does not complete or remove
+0050A580: both entire pending code extents remain in the conservative goal.
+The newly frozen native proof covers **82,796 code bytes +1,126 owned table
+bytes =83,922 required comparison bytes**, code SHA-256
+`4dced8c8583edf4b8234505793e28732e19af2adb311d0d39a755f0036e59cfc`.
+Its sole RET, all 1,933 internal branches, four remapped/two direct switch
+guards and ten contiguous owned data segments are checked against the
+target and origin/table ledgers. There are **151 distinct nondefault entries
+covering 548 states**; equality states 50/140/300/390/596 are included.
+
+Private `next-character-move-4ac040/` under the F146 directory contains
+`native-cohort-proof.json` and uncompiled `Prefix.inc`, `Case000.inc`,
+`Tail.inc`. These preserve the observed combined entry guard, the complete
+180-byte state0 body, real default at004C037D, common tail at004C039F and
+shared epilogue/RET at004C03A7/004C03AB. The first case uses the newly exact
+motion helper and preserves independent positive/negative tests, strict
+zero crossings, 0.5f subtraction versus double0.5 addition and the signed
+3AC flag. **150 nondefault fragments remain.** No partial wrapper was
+compiled, compared or credited. Actual receiver ECX and EBP-0x64 save are
+native observations; the Ghidra unknown(void) type and absence of direct
+callers do not establish a virtual slot or original class identity.
+
+A read-only accounting audit confirms the established CODE-size objective:
+`size` determines code credit/denominator, while `compare_size` includes all
+owned table bytes for acceptance. All 43 accepted owners with 5,560 out-of-code
+table bytes already compare those bytes in full. No status utility or goal
+metric was changed; every pending function/unknown-origin code byte remains
+in the conservative denominator. New cohort tables cannot be cropped.
+
+Public CI passed all **3,603 tests in 169.978 seconds**. Cleanup
+removed seven obsolete complete F146 probe COFFs and two empty failed outputs
+(697,854 bytes), eleven losslessly archived generated
+assembly files (7,899,835 bytes) and
+375 bytecode files (8,285,269 bytes).
+All eight whole valid COFFs, including the retained new canonical object,
+and all eleven listings remain recoverable from checked archives. Every
+canonical/older active object, source/snapshot, next-cohort fragment, actual
+field report, runtime/error log, PDB and shared tool remains. Receipts:
+`.analysis/f146-source-checkpoint.json` and
+`.analysis/f146-preservation-cleanup.json`. The first CI run found one stale
+progress card; it was regenerated from the new canonical totals, its targeted
+test passed and complete CI was rerun. The initial failure log is preserved.
+
+Totals are **331 exact functions/units, 716,968 code bytes**, **36.33%
+reviewed authored /36.26% conservative**, 135 canonical objects and 209
+accepted source/header inputs. The adoption manifest retains F009 plus
+271 additions/707,085 code bytes/209 new inputs. All older units/objects,
+218 origin files, nine shared headers, 91 older drafts and F131..F145 frozen
+evidence remain unchanged. All 97 unknown origins/3,608 bytes and R268 are
+preserved. The 98% goal remains active and incomplete; later phases remain
+deferred.

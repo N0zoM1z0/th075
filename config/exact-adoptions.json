@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "8fb6ea053bcbedf3a258cfd80b87c479c564e73e57ed697252d17e76c1938e90"
+      "current_sha256": "45ea3a126e4ad4e720bc1f3c4cff2c5a49ee8f5989c0a766abba38ac72ed7552"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "feb51a4db2d8b6becd758080d7ae6885589427d9e7d32bf05382c130d5d3ffc1"
+      "current_sha256": "92a18aef87ef2f1c61dd53fe421d680ae20c89386cbabbfea9cec93fe72c5908"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "8911676df899323cccc6c05abdf963bda9c352732d40eb68309f846901f29d26"
+      "current_sha256": "7fd902fdcaabb23c8ede833cd7d67d0dcc4e53b49ccc654d68c4290654ed016f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "01d81db868a19a1e1d20df78bd1505e4931f15c3de93ce7b19eefb79dc03f830"
+      "current_sha256": "3a9173a265909e2e29702d84db00cd34aa0ae3f600dcb987f2f635d55d6d6ee9"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "2563f699c1ab220e30ed1a13347d7be3d77d23f32d984d7c1aaebab5d76d0c94"
+      "current_sha256": "5403bc6eb1debd4120544e2345cb67af902bdd109531e662c8955aff276df1b5"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "26a87f541430a5ebc5b1ea1c6e928ac76fba48d7475c03776f6b7c918d8a378c"
+      "current_sha256": "293df1f6fe68efd67e9af93dd988c0e089a56cab88907ab356619f5b421b7f02"
     }
   },
   "functions": [
@@ -11920,6 +11920,50 @@
         "disposition": "authored",
         "confidence": "whole-virtual-frame-selection-and-independent-game-resource-receiver-dispatch-context",
         "evidence_id": "R222"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453E20",
+        "size": "51",
+        "span_end": "0x00453E52",
+        "current_name": "Concurrency::details::ContextBase::ClearCancel",
+        "proposed_name": "FighterState::ClearMotionFieldsAt00453E20",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453E20",
+        "size": "51",
+        "span_end": "0x00453E52",
+        "current_name": "Concurrency::details::ContextBase::ClearCancel",
+        "proposed_name": "FighterMotionClear453E20::ClearMotionFields",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterMotionClear453E20::ClearMotionFields()",
+        "is_thunk": "false",
+        "source_file": "src/FighterMotionClear453E20.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F146; scripts/repo-python scripts/replay-exact-units.py --unit fighter-motion-clear-00453e20",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F146: complete51-byte canonical cold exact, all15 instructions and full single-block flow/sole plain RET. Saved entry ECX at EBP-4 supplies all four actual DWORD zero stores at50/54/58/5C; raw unsigned-word views preserve observed bits without asserting original field declarations or complete owner layout. No calls, branches, switch data or actual relocations; thirteen following INT3 bytes excluded. R103 independently reviewed whole parents/fields/policy and the new004AC040 caller support ownership and concrete thiscall/no-stack-argument contract; original library-like database title is retained as evidence and gives no semantic claim. Never construct/embed/allocate the partial owner; no fake local/return/ABI, arrays/padding, assembly, byte arrays, masked/aliased/rebased/cropped acceptance or conditional body. Only this new unit cold rebuilt; all330 prior units/134 canonical objects/207 source inputs and R268/97 unknown origins unchanged. Character0050A580 remains pending in full, with unchanged82109-byte/26719-difference failure; next complete82796-code-byte CharacterMove004AC040 cohort retains all six tables in its83922-byte comparison. Historical R103 role retained by literal alias."
+      },
+      "origin": {
+        "address": "0x00453E20",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     }
   ],
@@ -139340,6 +139384,28 @@
           "target": 4464816
         }
       ]
+    },
+    "fighter-motion-clear-00453e20": {
+      "source": "src/FighterMotionClear453E20.cpp",
+      "object": "build/matching/FighterMotionClear453E20.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterMotionClear453E20::ClearMotionFields"
+      ],
+      "symbol": "?ClearMotionFields@FighterMotionClear453E20@@QAEXXZ",
+      "target_address": 4537888,
+      "size": 51,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -139549,6 +139615,8 @@
     "src/BattleEffectAdvance.cpp": "a9952766422741ee4c30f05ad26174ec502da97e97f2c2dcab83eef23962a036",
     "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0",
     "src/BattleAnimationBinding.cpp": "4fe0c7435331db89c5ac66f22446c9243594a50a625d42e1348ccc7cb0d0aaaa",
-    "src/BattleAnimationBinding.hpp": "e6de169dedfc283725216c33615c40e7d4a5cc62f947f6b69da3aea25619f52a"
+    "src/BattleAnimationBinding.hpp": "e6de169dedfc283725216c33615c40e7d4a5cc62f947f6b69da3aea25619f52a",
+    "src/FighterMotionClear453E20.cpp": "535a432759f2b060ddbe8d0d35b30d567bd89706cc91cbef8afc1045844a08fe",
+    "src/FighterMotionClear453E20.hpp": "5722c3e176b17a433a516cfe145d9347a7e702fdffc61dc135ec0ab1af2fb0a4"
   }
 }

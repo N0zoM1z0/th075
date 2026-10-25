@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F146 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F147 full character-move reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -14,14 +14,14 @@ remain authorized. Keep compiler builds serial and monitor CPU/memory.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97, totaling 3,608 bytes |
-| Source-present / exact functions / exact units | 330 / 330 / 330 |
-| Exact code bytes | 716,917 |
-| Reviewed authored coverage | 716,917 / 1,973,516 (36.33%) |
-| Conservative coverage, including every pending byte | 716,917 / 1,977,124 (36.26%) |
+| Source-present / exact functions / exact units | 331 / 331 / 331 |
+| Exact code bytes | 716,968 |
+| Reviewed authored coverage | 716,968 / 1,973,516 (36.33%) |
+| Conservative coverage, including every pending byte | 716,968 / 1,977,124 (36.26%) |
 
 The ledgers and status script are authoritative. Origin evidence through R268
-is unchanged. The exact-adoption manifest retains F009 and **270 additions /
-707,034 code bytes / 207 new source/header inputs**. F021/F048/F061/F066/F085 remain
+is unchanged. The exact-adoption manifest retains F009 and **271 additions /
+707,085 code bytes / 209 new source/header inputs**. F021/F048/F061/F066/F085 remain
 unaccepted. Unknown origins receive no credit and do not block independently
 reviewed authored functions.
 
@@ -29,6 +29,123 @@ The only target is the supplied Japanese `th075.exe`, reporting version 1.11:
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
+
+## Latest exact motion helper and full next cohort: F146
+
+**One new complete function is accepted: 51 code bytes.**
+`FighterMotionClear453E20::ClearMotionFields` at **00453E20** is now unit
+`fighter-motion-clear-00453e20`. Its new source/header form a declaration-only
+receiver view, never constructed or embedded. Four natural DWORD zero stores
+at offsets 50/54/58/5C preserve the observed bits without claiming original
+field declarations or the complete owner layout. The complete single-block
+body contains 15 instructions, a four-byte frame and plain RET, no calls or
+relocations; the following 13 INT3 alignment bytes are outside the body.
+The existing database title `Concurrency::details::ContextBase::ClearCancel`
+and reviewed R103 role `FighterState::ClearMotionFieldsAt00453E20` remain in
+the ledgers with an explicit name alias. No origin was reclassified.
+
+Acceptance cold-built only the new unit:
+`scripts/repo-python scripts/replay-exact-units.py --unit fighter-motion-clear-00453e20`.
+The result is **51/51 code and compared bytes, zero differences**. Keep the
+new canonical `build/matching/FighterMotionClear453E20.obj`. The explicit
+VC7.1 build3077 profile is /Od /Ob0 /Gy /GR- /GX- /GS /Zi /I src; these
+settings do not establish one executable-wide original compiler profile.
+R103 was independently reverified after acceptance: 33 bodies/2,600 bytes
+and 22 whole caller anchors pass. Receipts include
+`.analysis/f146-{motion-unit-proof,accepted-replay}.json` and the cold log.
+
+**The complete 0050A580 draft remains unaccepted and unchanged.** All five
+complete F146 main builds retain 82,109 emitted bytes /26,719 positional
+differences, all 1,449 real relocation fields and raw SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`.
+Its required full comparison remains 82,106 bytes, including both tables;
+all 81,539 code bytes stay pending. Keep current source SHA-256
+`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`
+and active `build/probes/F145CanonicalViews.obj`, plus all older active
+F142/F139/F138/F136/F134 objects. F146 does not supersede the source with a
+failed profile or independent fixture.
+
+**Compiler observations, not game source or layout facts:** Original7248/CL
+was already source-use write U4342 in F145; the old next-lead assumption was
+incorrect. An executed /Ob1 watch observes ECX/32 to CX/16 to CL/8 at
+107385AB, ending in the actual source-use store. All 937 previously unjoined
+tokens now have checked own-COFF roles: 393 second operands of TEST reg,reg,
+205 FNSTSW AX, 205 TEST AH, 91 low-word frame-return uses, 20 low-word CRT
+conversion uses, one low-word recorded-range use, 13 direct stack spills of
+its EAX return, eight XOR same-register tokens and one incoming-this save.
+This classifies emission roles, not 937 newly observed producer writes or
+fresh register allocations. A watched zero-test clone is created after all
+7,454 generic mappings; a distinct AX call-return definition is fixed before
+generic allocation at actual store1077A179. Descriptor20526 also receives
+its class/definition before generic allocation with a null cursor. Its late
+number does not prove late creation or identify the original target allocator.
+
+A complete /Od /Ob1 main build, actual accepted callee definitions made
+visible in the same translation unit, and 18 complete qualifier/arithmetic
+fixture callers supply no natural source fix. All five full main emissions
+are unchanged; all six qualifier forms agree within each of three real
+prefixes. Do not repeat these controls or change game qualifiers/ABI based on
+toy receivers. Ten serial builds comprise five full main outputs, one
+18-caller fixture, one motion diagnostic, its canonical cold build and two
+explicit empty debugger failures. The failed IR walk and mistaken linked
+descriptor-head lookup have retained logs; bounded corrected retries pass.
+All compilation/debugging was headless, with absent display variables and
+disabled graphical Wine drivers. No game or graphical debugger was started.
+
+**Next full-function cohort:** F146 closed these bounded 0050A580 leads
+without a supported exact fix. Continue the overall 98% objective with the
+largest remaining reviewed authored body, **004AC040**, provisional role
+`CharacterMove::AdvanceAt004AC040` (R048). This does not complete or remove
+0050A580: both entire pending code extents remain in the conservative goal.
+The newly frozen native proof covers **82,796 code bytes +1,126 owned table
+bytes =83,922 required comparison bytes**, code SHA-256
+`4dced8c8583edf4b8234505793e28732e19af2adb311d0d39a755f0036e59cfc`.
+Its sole RET, all 1,933 internal branches, four remapped/two direct switch
+guards and ten contiguous owned data segments are checked against the
+target and origin/table ledgers. There are **151 distinct nondefault entries
+covering 548 states**; equality states 50/140/300/390/596 are included.
+
+Private `next-character-move-4ac040/` under the F146 directory contains
+`native-cohort-proof.json` and uncompiled `Prefix.inc`, `Case000.inc`,
+`Tail.inc`. These preserve the observed combined entry guard, the complete
+180-byte state0 body, real default at004C037D, common tail at004C039F and
+shared epilogue/RET at004C03A7/004C03AB. The first case uses the newly exact
+motion helper and preserves independent positive/negative tests, strict
+zero crossings, 0.5f subtraction versus double0.5 addition and the signed
+3AC flag. **150 nondefault fragments remain.** No partial wrapper was
+compiled, compared or credited. Actual receiver ECX and EBP-0x64 save are
+native observations; the Ghidra unknown(void) type and absence of direct
+callers do not establish a virtual slot or original class identity.
+
+A read-only accounting audit confirms the established CODE-size objective:
+`size` determines code credit/denominator, while `compare_size` includes all
+owned table bytes for acceptance. All 43 accepted owners with 5,560 out-of-code
+table bytes already compare those bytes in full. No status utility or goal
+metric was changed; every pending function/unknown-origin code byte remains
+in the conservative denominator. New cohort tables cannot be cropped.
+
+Public CI passed all **3,603 tests in 169.978 seconds**. Cleanup
+removed seven obsolete complete F146 probe COFFs and two empty failed outputs
+(697,854 bytes), eleven losslessly archived generated
+assembly files (7,899,835 bytes) and
+375 bytecode files (8,285,269 bytes).
+All eight whole valid COFFs, including the retained new canonical object,
+and all eleven listings remain recoverable from checked archives. Every
+canonical/older active object, source/snapshot, next-cohort fragment, actual
+field report, runtime/error log, PDB and shared tool remains. Receipts:
+`.analysis/f146-source-checkpoint.json` and
+`.analysis/f146-preservation-cleanup.json`. The first CI run found one stale
+progress card; it was regenerated from the new canonical totals, its targeted
+test passed and complete CI was rerun. The initial failure log is preserved.
+
+Totals are **331 exact functions/units, 716,968 code bytes**, **36.33%
+reviewed authored /36.26% conservative**, 135 canonical objects and 209
+accepted source/header inputs. The adoption manifest retains F009 plus
+271 additions/707,085 code bytes/209 new inputs. All older units/objects,
+218 origin files, nine shared headers, 91 older drafts and F131..F145 frozen
+evidence remain unchanged. All 97 unknown origins/3,608 bytes and R268 are
+preserved. The 98% goal remains active and incomplete; later phases remain
+deferred.
 
 ## Latest canonical interfaces and source-operand mapping: F145
 
@@ -1306,80 +1423,67 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F146
+## Current reconstruction cohort: F147
 
-Continue the same complete **`CharacterObject::AdvanceAt0050A580`** body,
-all 92 entries and all 82,106 required bytes. Use only headless tools per
-`AGENTS.md`: absent display variables, disabled graphical Wine drivers,
-native 32-bit Wine/batch GDB and existing headless Ghidra. No interactive
-WineDbg, host windows or shared-tool modifications.
+Continue the full **004AC040 `CharacterMove::AdvanceAt004AC040`** body from
+the frozen F146 native proof. Required comparison is **83,922 bytes**:
+82,796 code plus all 1,126 owned table/remap bytes. Preserve every shared
+path, exit, data segment and actual relocation. Do not accept a case/chunk
+or partial wrapper. The 98% goal is active and incomplete.
 
-**Current source changed in F145.** Copy its current fragments, **three**
-private headers, composition rules, constants and whole canonical-interface
-source to fresh F146 before editing. Source SHA-256 is
-`80ca174bef3d407ec40f159f292765ecb5fd5deb85808f4d17fcf96b364215b0`.
-Keep **F145CanonicalViews.obj** active and retain F142WordWindow plus all
-older F134/F136/F138/F139 active objects. Preserve 330 accepted units/134
-canonical objects, 207 accepted inputs, 218 origin files, nine shared headers,
-91 older drafts and all F131..F145 snapshots/proofs. The virtual symbol stays
-`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`; do not restore obsolete helper
-declarations or active OwnerView.hpp. Those original inputs remain frozen in
-F145 snapshots/baseline; the active composition uses accepted public helpers.
+Copy `.analysis/object-action-50a580/f146/next-character-move-4ac040/` into
+a fresh F147 working directory before editing. Read its full native proof,
+entry map and fragments first. There are 151 distinct nondefault entries,
+548 mapped/special states, four remapped and two direct switch guards.
+Prefix, full state0 and actual default/common tail are uncompiled fragments;
+150 nondefault bodies are still missing. Next is **state1, 004AC26D**, a
+212-byte/60-instruction body ending at004AC341; its outgoing branch targets
+the actual shared epilogue. Recover each real path from native evidence and
+use accepted helper interfaces. Verify original receiver/caller/vtable
+evidence before choosing a final member declaration: Ghidra's unknown(void)
+signature and zero direct callers do not establish a virtual ABI.
 
-The 244 newly canonical calls are already checked against actual accepted
-symbols/addresses. All 801 authored/helper call fields use those public
-interfaces. The remaining 20 CRT conversions and25 unknown math-wrapper calls
-are explicit and earn no new credit. No accepted header/source changed, so
-no unchanged canonical unit needs a cold rebuild. Cold replay new/affected
-units only after a valid complete source/manifest comparison exists.
+The sole RET is004C03AB; code ends004C03AC, all ten owned data segments end
+004C0812 exclusive. Actual entry frame is0x720, saved ESI and ECX atEBP-0x64.
+Recover real locals and nested packets naturally, without frame filler.
+State0 preserves strict zero crossings, independent float tests, signed flag
+and distinct float0.5/double0.5 constants. The newly exact motion helper is
+`FighterMotionClear453E20::ClearMotionFields`, unit
+`fighter-motion-clear-00453e20`. Its four DWORD stores do not establish a
+complete original owner layout. Never instantiate or embed partial views.
 
-Current failure remains 82,109 bytes /26,719 positional differences and522
-physical-GPR differences at case856 through early862 and case998. Preserve
-all tables/paths, 42 counters, 20 conversions, 64 floating fields, 846 calls,
-eleven nested packets and every one of1,449 real relocations. The94 renamed
-local labels have unchanged actual COFF offsets; never alias/rebase/mask a
-failure or crop a function. All81,539 main code bytes remain pending.
+Use only headless tools: absent DISPLAY/WAYLAND_DISPLAY, disabled graphical
+Wine drivers, native32 Wine/batch GDB and existing attested headless Ghidra.
+Keep compiler builds serial and use nice priority/caps for investigation.
+No host windows, interactive WineDbg, game process or shared-tool changes.
+Preserve all 331 accepted units/135 canonical objects, 209 accepted inputs,
+218 origin files, nine shared headers, 91 older drafts and F131..F146 frozen
+evidence. Cold-replay only new/affected units when a complete valid source,
+ABI, extent, profile and actual relocation manifest exist.
 
-F145 now observes actual source-operand mapping at10775A54 and last-use
-release at10775A60. Originals7274/7276 and12501/12503 reuse existing registers
-and release occupied slots without changing the cursor. Receiver originals
-7278/12505 were forced to ECX before generic allocation, as watched in F144.
-Neither path identifies an extra frontier cursor advance.
+**0050A580 remains pending in full**, with all 92 entries, 81,539 code bytes
+and 82,106 required comparison bytes. Preserve its F145 canonical-interface
+composition SHA80ca174b and active F145CanonicalViews.obj, plus F142WordWindow,
+F139VirtualMain, F138CallViews, F136RecordView and F134CompleteFinal. Current
+whole failure remains82,109 emitted bytes/26,719 differences and522 physical
+GPR differences, with every one of1,449 actual fields retained. The native
+frontiers are ordinal6629/original17355/map4362 EDX versus EAX and
+ordinal11311/original20487/map7408 EAX versus ECX. All 801 authored/helper
+calls already use accepted symbols; remaining20 CRT and25 unknown calls stay
+explicit. No stale source reversion or source-presence credit.
 
-Do not count generic mapping writes as fresh allocations. Representative
-original7247 reuses ECX already held by source7246 with zero cursor writes;
-actual ADD formatting uses source7246 and the later byte store uses7248/CL.
-The342 old unlinked tuples are198 same-original/physical candidates elsewhere
-and144 without explicit-token emission; absence is not a dead/extra-operation
-proof. F144's two old node lifetimes were recycled; F145 keeps both current
-stale joins explicitly rather than assuming stable address identity.
+F146's compiler-controls, unobserved-role-census, anchored windows, actual
+runtime logs and lossless archives close the bounded width/copy lead. Original
+7248 was already observed; all937 unjoined tokens have real COFF roles,
+without proving missing original operations. /Ob1, real callee-definition
+visibility and18 qualifier callers retain the main failure. Do not repeat
+these controls without new evidence. Keep all older compiler observations
+distinct from target facts and original source/allocator unknowns.
 
-Read F145 current-mapping-correlation.json first: 7,454 generic and7,454
-source-use writes, 1,603 forced writes, all11,382 explicit tokens matching
-own COFF, 10,298 matching write tuples,145 actual literal physical descriptors,
-937 unobserved writes at these stores and2 stale joins. The first frontiers
-remain ordinal6629/original17355/map4362 EDX versus native EAX, and
-ordinal11311/original20487/map7408 EAX versus native ECX. These IDs were
-revalidated on current source; recompute them after any new source change.
-
-A useful next bounded lead is actual width/copy adaptation outside the hot
-stores, for example emitted original7248/CL after the observed alpha ADD.
-The source-map width mismatch branches to107385AB; that remains a static
-lead until an executed watch confirms its real write path. Select a relevant
-operand from the937 unobserved events, track actual node/descriptor lifetime
-and avoid assuming every unobserved event has the same cause. Revalidate
-loaded C2 base and pinned hashes. Prefer a specific executed path or natural
-CFG/ABI/data hypothesis over repeated complete diagnostics.
-
-The25 F145 independent callers reject tested boolean materialization,
-conditional void-call edges and real return-value locals/reference storage.
-Immediate member-pointer/qualified calls and return-bit round trips do not
-change the caller register phase. Do not repeat these as main fixes or infer
-a native int/unsigned return ABI from the independent toy declarations.
-No dummy local/expression/allocation, fake return/ABI, arbitrary padding,
-assembly/byte arrays, alternate conditional game bodies, aliases/masks or
-cropped comparison. Unknown origins and every pending byte remain in the
-denominator; later phases remain deferred. The full98% goal is incomplete.
+No fake returns/inert locals/padding, false ABI, assembly/target byte arrays,
+conditional game bodies, aliases/masks/rebasing or cropped comparison.
+Unknown origins and every pending code byte remain in the denominator.
+Later project phases remain deferred.
 
 ## F135 investigation at the F134 checkpoint
 

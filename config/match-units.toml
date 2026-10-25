@@ -24524,3 +24524,13 @@ relocations = [
   { offset = 0x68, type = "REL32", symbol = "?size@AnimationRowF139@@QBEIXZ", target = 0x00442120 },
   { offset = 0x85, type = "REL32", symbol = "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z", target = 0x004420B0 },
 ]
+
+[units.fighter-motion-clear-00453e20]
+source = "src/FighterMotionClear453E20.cpp"
+object = "build/matching/FighterMotionClear453E20.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterMotionClear453E20::ClearMotionFields"]
+symbol = "?ClearMotionFields@FighterMotionClear453E20@@QAEXXZ"
+target_address = 0x00453E20
+size = 51
+relocations = []
