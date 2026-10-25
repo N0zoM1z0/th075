@@ -1,8 +1,9 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F156. The active 98%
-authored-byte objective remains incomplete. Current state and continuation
-instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
+Updated 2026-10-25 for cleanup and successor handoff after unfinished F157.
+The latest user instructions state that the active goal was cleared; the 98%
+authored-byte objective remains incomplete. F156 remains the accepted baseline.
+Current state and pending work are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
 ## Authoritative inputs and evidence
 
@@ -22,6 +23,17 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+F157 was interrupted before acceptance. Its private `CounterPostfix.cpp` has a
+positive 79-byte old-object diagnostic with no relocation fields; no canonical
+cold replay was performed and no credit was added. The missing-source unit
+registration was preserved privately and withdrawn from the accepted manifest.
+The F157 root `Preview.cpp` is an unreviewed 20-field prefix-increment control;
+its baseline is `snapshots/cursor-resets/Preview.cpp`, matching F156. Keep all 14
+F157 probe objects and the 1,656 private files recorded in
+`.analysis/f157-handoff/retained-f157-inputs.json`. Read the pending-work section
+of [RE_HANDOFF.md](RE_HANDOFF.md) before resuming. Its warnings about incomplete
+compiler xref scanning, unresolved return ABI and unproved broader layouts apply.
 
 **004AC040, R048 authored:** the authoritative complete source is now
 `.analysis/character-move-4ac040/f156/`, SHA prefix97e045e6. All151 entries plus
@@ -72,9 +84,9 @@ all151 entries exactly to frozen F152 source through only recorded changes.
 
 The first genuine byte divergence is now state89 at004ADEFB: native loads the
 receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
-the remaining register choices is established. Copy F156 to fresh F157 before
-working further. Four whole-source negative controls have identical raw code
-and actual relocation targets: offset-zero scalar member, accepted transform
+the remaining register choices is established. F157 already exists and must be
+preserved before working further. Four whole-source negative controls have
+identical raw code and actual relocation targets: offset-zero scalar member, accepted transform
 view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
 in88. Do not rerun them without new evidence.
 

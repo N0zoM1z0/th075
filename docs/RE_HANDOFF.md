@@ -1,9 +1,10 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for resumed reconstruction, F156.
-**The 98% authored-byte objective is active and incomplete.**
-The user resumed after the cleanup and handoff checkpoint. Subsequent project
-phases remain deferred. Continue the complete function cohort below.
+Updated 2026-10-25 for cleanup and successor handoff after unfinished F157 work.
+**The user cleared the active goal. The 98% authored-byte objective is incomplete.**
+The latest user instructions supersede the historical active-goal statements
+below. Subsequent project phases remain deferred. No new unit was accepted in
+this cleanup checkpoint; F156 remains the accepted reconstruction baseline.
 
 ## Verified reconstruction state
 
@@ -28,7 +29,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding pushed reconstruction checkpoint is **d197080 (F155)**.
+The latest pushed reconstruction checkpoint is **f8f655c (F156)**;
+its preceding checkpoint is **d197080 (F155)**.
 F156 accepts the complete 149-byte R068 callback
 `fighter-bind-animation-00453d80` in `src/FighterAnimationReset453D80.cpp`.
 One canonical cold build passed 149/149 bytes with all five actual REL32 fields.
@@ -56,7 +58,12 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Continue after F156: match complete 004AC040
+## Successor cohort: complete 004AC040 after F156
+
+Resume matching only when reconstruction is requested again. Read the pending
+F157 section below before choosing a new experiment. The authoritative F156
+source and accepted counts below remain unchanged. The loose F157 `Preview.cpp`
+is an unreviewed prefix-increment experiment, not the baseline.
 
 The authoritative private source is **`.analysis/character-move-4ac040/f156/`**.
 All **151/151 nondefault entries** plus the real prefix/default/shared tail are
@@ -69,8 +76,9 @@ The draft remains unaccepted, with no source-presence or exact credit.
    `baseline-dataflow-relational-dataflow.json`, `closed-controls.json` and
    `.analysis/f156-animation-reset-unit-proof.json`. Retain F153..F155 audits,
    actual source transformations and the complete/focused compiler traces.
-2. Seed a fresh F157 before edits. Keep `F156BaselineDataflow.obj`, both active
-   F155 and F154 objects, all three positive F153 objects, `F152Complete.obj`
+2. F157 already exists; preserve it and seed a fresh turn before edits. Keep
+   `F156BaselineDataflow.obj`, both active F155 and F154 objects, all three
+   positive F153 objects, `F152Complete.obj`
    and every earlier active object. Preserve all native evidence and snapshots.
 3. Continue state89 at004ADEFA..004AE05D, first actual byte difference004ADEFB:
    native receiverEAX, emittedEDX. Frozen F155 pre-resource inputs establish
@@ -87,6 +95,61 @@ The draft remains unaccepted, with no source-presence or exact credit.
 5. Keep the complete body, actual extents and all fields. Only the new149-byte
    callback was cold-replayed. Neither large draft nor the79-byte counter gains
    credit. No old accepted dependency changed or needed replay.
+
+## Pending F157 work preserved for the successor
+
+The private directory `.analysis/character-move-4ac040/f157/` contains 1,656
+retained files. All 14 `build/probes/F157*.obj` objects are retained, with hashes
+in `.analysis/f157-handoff/retained-f157-inputs.json`. No F157 source or exact
+credit has been entered. Preserve this workspace: private evidence, probes and
+the Ghidra project are excluded from Git.
+
+- **Counter454D00:** `CounterPostfix.cpp` naturally uses `COUNTERS[index]++`
+  with the existing declaration in `src/FighterResourceParameters452B30.hpp`.
+  `F157CounterPostfix.obj` has a positive old-object diagnostic over all 79 bytes,
+  with zero relocation fields. The report is
+  `.analysis/f157-handoff/counter-old-object-diagnostic.json`; its result is
+  `structural-exact`, not canonical cold acceptance. The earlier prefix and
+  compound-expression controls remain private. Neither an original bank type
+  nor a complete owner layout is established.
+- An unfinished `profile-increment-counter-00454d00` registration referenced
+  missing `src/ProfileSelection454D00.cpp`, causing tracking validation to fail.
+  Cleanup preserved the exact registration in
+  `.analysis/f157-handoff/pending-registration.patch` and restored the manifest
+  to its 338 accepted definitions. The private source/object remain available.
+  A successor must review the complete R182 extent, add a real production source,
+  and run canonical cold replay before updating acceptance ledgers.
+- **Whole caller controls:** seven complete reports are retained. `/G5`, `/G7`,
+  void-return expression in 88, read-only phase accessor and typed field indexing
+  still report 83,922 bytes/18,539 differences/all 2,352 fields. A mutable phase
+  accessor emits 84,021 bytes/79,585 differences and is rejected. The bounded
+  `cursor-resets` debugger build retains the same baseline comparison.
+- The eighth caller build, `F157FieldPrefix.obj`, changes 20 discarded word-field
+  increments from postfix to prefix. Its source/profile/compile log and snapshot are
+  retained under `snapshots/field-prefix/`. **No complete whole diagnostic was
+  recorded for this candidate.** Do not infer a match from compilation. Use
+  `snapshots/cursor-resets/Preview.cpp` for the F157 baseline, SHA prefix97e045e6;
+  it matches the authoritative F156 source.
+- The completed cursor trace records 8,223 maps/13,951 emissions, one initial
+  cursor initialization and zero observations of the known conditional reset.
+  This does not exclude other writes or recover the target's original virtual
+  state. `c2-cursor-xref-shortlist.json` came from an incomplete linear decode;
+  its empty `hits` must not be read as absence of cursor references.
+- Profile initializer 416640 establishes cleared storage ranges and observed
+  loop strides, not a complete nominal bank/owner layout. Related 4C stores in
+  57D580 belong to a different receiver family and do not establish Fighter4C.
+  The return-consumer scan has unresolved branch/forward cases; its five reviewed
+  candidates consume only an independently overwritten low byte. No reset return
+  ABI or broader receiver layout was adopted. All 97 unknown origins stay unknown.
+
+Cleanup adds no reconstruction bytes and runs no compiler or cold replay.
+The accepted 338 definitions, 139 canonical objects, 217 source/header inputs,
+all origin evidence, forty protected groups and prior active objects were
+hash-checked unchanged against the F157 seed. F156's 1,155 private files and
+1,176 checkpoint files are also intact. Preservation receipts are under
+`.analysis/f157-handoff/`; final validation is recorded at the end of this file.
+
+## Retained F156 complete caller evidence
 
 Current whole diagnostic: **83,922 emitted bytes** = **82,796 code + 1,126
 owned data**, **18,539 position differences**, all **2,352 actual relocation
@@ -426,3 +489,20 @@ objects remain retained. Receipts: `.analysis/f156-source-checkpoint.json`,
 `.analysis/f156-preservation-final.json`, `.analysis/f156-animation-reset-canonical-replay.json`
 and `.analysis/f156-cleanup.json`. Exact code is717,509 bytes; conservative
 coverage is36.29%. The98% objective remains active and incomplete.
+
+## F157 cleanup and handoff verification
+
+Public CI passed **3,603 tests in 180.527 seconds**. Target identity, tracking,
+status and headless Ghidra attestation pass. The accepted manifest is restored
+to 338 units; exact credit remains 717,509 bytes and conservative coverage 36.29%.
+No accepted source/header or canonical object changed, so no cold replay was
+needed. All prior evidence and all 14 F157 probe objects remain intact.
+
+Cleanup removed 375 reproducible bytecode files from scripts/tests, freeing
+8,285,289 bytes. Sources, manifests, evidence, all accepted/active/pending
+objects, the private project and shared tools were preserved. Receipts are
+`.analysis/f157-handoff/initial-checkpoint.json`, `retained-f157-inputs.json`,
+`source-state-check.json`, `cleanup.json`, `final-verification.json` and
+`source-checkpoint.json`, all under `.analysis/f157-handoff/`.
+The latest user instructions clear the active goal. The 98% objective is
+incomplete; historical active-goal statements above do not authorize resumption.
