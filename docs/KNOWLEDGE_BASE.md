@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F176.
+Updated 2026-10-26 for continued reconstruction, F177.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F176 accepts four complete HUD/effect
-wrappers; all complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F177 accepts complete digit-atlas
+initialization; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,46 @@ wrappers; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 422 units,
-  731,455 code bytes, 159 canonical objects and 254 accepted inputs.
-- Reviewed authored coverage is 37.06%; conservative coverage is 37.00%.
+  complete cold-exact units/all actual relocations. Counts are 423 units,
+  732,938 code bytes, 160 canonical objects and 256 accepted inputs.
+- Reviewed authored coverage is 37.14%; conservative coverage is 37.07%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F177 accepted digit-atlas initialization:** complete R042446590/1,483 CODE
+bytes/all77 actual DIR32 fields pass one canonical cold build. Full CFG/42
+branches, RET12/no owned tables/alignment are verified. The guarded native
+allocation passes three textures, consumes constructor EAX receiver and stores
+it at parent4C. Natural constructor view needs no fake return or source owner
+instances, embedding, sizeof or complete original identity/layout claim.
+Three canonical texture stores,14 loops/one real integer index,140 RECT entries,
+16 actual SetRect sites and42 short metadata writes retain all native values.
+Existing AtlasNumber header/global arrays/RECT16/row160 stride are unchanged;
+initialized index ranges do not prove complete outer bounds or global ownership.
+Every field/nonzero addend is replayed. Virtual BSS has no asserted file payload.
+No new global allocation, inert local, padding, ABI trick, assembly, conditional
+body, mask, crop, alias or local rebasing; original role stays literal via COFF.
+
+Initial parameter small expanded through the SDK macro and caused terminal2/
+no object. Failed source/header/log remain; secondary rename repairs only
+preprocessing. Full preview/canonical comparisons are zero. All422 prior units/
+159 objects/254 inputs and14 active objects/all14 F157/both F159 remain unchanged.
+Only one new unit/object was cold-replayed. All97 unknown origins and all pending
+bytes remain in the conservative denominator.
+
+Immediately continue full R055/R056/R101 background policy family449CE0..451E00:
+32 transforms/91 each,18 side-pair renderers/186 each, four dark/light copies/88
+each,54 complete functions/6,612 CODE. Review every full extent/ABI/caller/callee/
+copy footprint/global binding/alignment before source pattern reuse. Separate
+cycle/blend policies R220/R230/R231/R232 need their own manifests reviewed.
+Preserve all pending drafts/bytes; continue immediately after checkpoint/push.
+Receipts: `.analysis/f177-digit-atlases-unit-proof.json`,
+`.analysis/f177-digit-atlases-canonical-replay.json`, native/caller proof and
+retained failed/repaired source/header/profile/diagnostic evidence.
 
 **F176 accepted HUD/effect wrappers:** four complete R100/R103/R101 bodies
 in `LeafRenderF176.cpp` pass one canonical cold build:446B60/35,446D60/32,

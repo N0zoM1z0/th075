@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "78dc81575286d3a073aa91564d07f0320bbb119d0e0e6dd53518a2786ac5b5f3"
+      "current_sha256": "176eba48efe9da5ac9a97f35a7466de755e0bc878c14109b3448d068b5af9810"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7f49b88c84757ba4cdcb09fd828941853e19b2aba03fbc1b6d65330ee1324c09"
+      "current_sha256": "a6c4c22dc063a4788522db1ce3877fb2ddf6dfe25d8fa1d2d686bf1f247c43f8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "b806c9262552490d0e145cfd4dd176ebe43be8dc395ee9c6feea97054ca5318b"
+      "current_sha256": "891948caf4f56d68635ec0348fd3a86dd977abab8a9183f7eb51fade9f7faf3a"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "f938104f651da89375d5dfe2b29ca1e2cb19a34d8263a615f7337fb5ff24968e"
+      "current_sha256": "b88254daf5ce97c4af189d045018ccafdeb98093613833e8222cfeacc7337172"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "302dbdd15ee776665913b479441f839a1862f264cdda1eef6557a2befa53d631"
+      "current_sha256": "c01dcf5480ccfebd75ce1541c40cbd6614dba4627ad57817d861387c8d16d145"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -15968,6 +15968,50 @@
         "disposition": "authored",
         "confidence": "complete-game-transform-or-effect-policy",
         "evidence_id": "R101"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00446590",
+        "size": "1483",
+        "span_end": "0x00446B5A",
+        "current_name": "FUN_00446590",
+        "proposed_name": "BattleHud::InitializeDigitAtlases",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00446590",
+        "size": "1483",
+        "span_end": "0x00446B5A",
+        "current_name": "FUN_00446590",
+        "proposed_name": "BattleHud::InitializeDigitAtlases",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "DigitAtlasesF177::DigitAtlasesF177(IDirect3DTexture8*, IDirect3DTexture8*, IDirect3DTexture8*)",
+        "is_thunk": "false",
+        "source_file": "src/DigitAtlasesF177.cpp",
+        "evidence": "R042; full body hash, complete decoded CFG and local game-specific behavior reviewed; F177; scripts/repo-python scripts/replay-exact-units.py --unit battle-initialize-digit-atlases-00446590",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F177: completeR042constructor1483CODE/all77actualDIR32fields, fullCFG42branches/RET12/noownedtables/alignment. Guarded actualoperatornew1 caller passes3texture pointers, consumesEAXreceiver and storesparent4C; naturalconstructorview hasno fake return/sourceinstances/embedding/sizeof/fullownerlayoutclaim. Three canonicaltexture pointer stores,14real loops/oneintegerindex,140RECTentries via16actualSetRectimportsites,42short width/height/advance stores. ExistingAtlasNumber header/globalarrays/RECT16/row160stride reused unchanged. AllphysicalIAT/globalfields/addends replayed; initializedindexranges do not provecompleteouterbounds/dataownerextent and no newallocationdefinition. Initialparameter small collided withSDKmacro, terminal2/noobject; secondary renaming repairs preprocessing without ABI/flags change. OriginalroleliteralviaCOFFmap, no inertlocals/padding/asm/conditionalbody/masks/crops/aliases/rebasing. Only1newunit/oneobject coldreplayed; all422oldunits/159objects/254inputs/14active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00446590",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R042"
       }
     }
   ],
@@ -147517,6 +147561,491 @@
           "target": 6257312
         }
       ]
+    },
+    "battle-initialize-digit-atlases-00446590": {
+      "source": "src/DigitAtlasesF177.cpp",
+      "object": "build/matching/DigitAtlasesF177.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleHud::InitializeDigitAtlases"
+      ],
+      "symbol": "??0DigitAtlasesF177@@QAE@PAUIDirect3DTexture8@@00@Z",
+      "target_address": 4482448,
+      "size": 1483,
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6867092
+        },
+        {
+          "offset": 22,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6867092
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A",
+          "target": 6867092
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 94,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 129,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 136,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 145,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 154,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 163,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 225,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 232,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 241,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 250,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 259,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 318,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 325,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 334,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 343,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 352,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 416,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 423,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 432,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 441,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 450,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 515,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 522,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 531,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 540,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 549,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 614,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 621,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 630,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 639,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 648,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 712,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 719,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 728,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 737,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 746,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 811,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 818,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 827,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 836,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 845,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 910,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 917,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 926,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 935,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 944,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 1008,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1015,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1024,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 1033,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 1042,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 1101,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1108,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1144,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1151,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1160,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 1169,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 1178,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 1243,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1250,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1259,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 1268,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 1277,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 1341,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1348,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1357,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 1366,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 1375,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        },
+        {
+          "offset": 1434,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A",
+          "target": 6867192
+        },
+        {
+          "offset": 1441,
+          "type": "DIR32",
+          "symbol": "__imp__SetRect@20",
+          "target": 6648336
+        },
+        {
+          "offset": 1450,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberWidthAt0068C8CC@@3PAFA",
+          "target": 6867148
+        },
+        {
+          "offset": 1459,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberHeightAt0068C8A0@@3PAFA",
+          "target": 6867104
+        },
+        {
+          "offset": 1468,
+          "type": "DIR32",
+          "symbol": "?g_AtlasNumberAdvanceAt0068C868@@3PAFA",
+          "target": 6867048
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -147773,6 +148302,8 @@
     "src/PauseDebugF175.cpp": "d55c768ece85df35c55a3d79759dc371ab82731de99030c27c954c33afb79298",
     "src/PauseDebugF175.hpp": "dce030ba35ecc3289d27399b577cbf1525f446bde4c94474015a1ccff65d8472",
     "src/LeafRenderF176.cpp": "b4c5ca2ffa7990450efb8f3faae4b3b2ffd84a2fe97e15573caff0d5c4efa159",
-    "src/LeafRenderF176.hpp": "e6dc33ad1eff0e1a1bc0392931ce33f02356c330a13369c35233349ca793e2f5"
+    "src/LeafRenderF176.hpp": "e6dc33ad1eff0e1a1bc0392931ce33f02356c330a13369c35233349ca793e2f5",
+    "src/DigitAtlasesF177.cpp": "40924a104a35327474555175a987d1ca8d9b682efe0495b70123c956879e5c9d",
+    "src/DigitAtlasesF177.hpp": "c950e752a4a7d70efdb3a33df7a75840000209b753ab8b50e3e7f889acb11e7a"
   }
 }

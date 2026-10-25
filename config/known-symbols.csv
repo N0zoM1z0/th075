@@ -403,3 +403,4 @@ address,name,module,confidence,evidence
 0x00446D60,HudNotice::SetNoticeStateAt00446D60,HudNotice,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453CC0,FighterState::SpawnAuxEffectAt00453CC0,EffectForwarders,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453D00,FighterState::SpawnConfiguredAuxEffectAt00453D00,EffectForwarders,inferred,F176; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00446590,BattleHud::InitializeDigitAtlases,BattleHud,inferred,F177; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

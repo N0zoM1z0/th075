@@ -421,3 +421,4 @@ BattleHud::DrawAtlasNumberDefaultAt00446B60,0x00446B60,function
 HudNotice::SetNoticeStateAt00446D60,0x00446D60,function
 FighterState::SpawnAuxEffectAt00453CC0,0x00453CC0,function
 FighterState::SpawnConfiguredAuxEffectAt00453D00,0x00453D00,function
+BattleHud::InitializeDigitAtlases,0x00446590,function

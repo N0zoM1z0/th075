@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F176.
+Updated 2026-10-26 for continued reconstruction, F177.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F176 accepts four complete HUD/effect wrappers.
+phases remain deferred. F177 accepts complete digit-atlas initialization.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F176 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F177 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 422 / 422 / 422 |
-| Exact code bytes | 731,455 |
-| Reviewed authored coverage | 731,455 / 1,973,516 (37.06%) |
-| Conservative coverage, including pending bytes | 731,455 / 1,977,124 (37.00%) |
-| Canonical objects / accepted source-header inputs | 159 / 254 |
+| Source-present / exact functions / exact units | 423 / 423 / 423 |
+| Exact code bytes | 732,938 |
+| Reviewed authored coverage | 732,938 / 1,973,516 (37.14%) |
+| Conservative coverage, including pending bytes | 732,938 / 1,977,124 (37.07%) |
+| Canonical objects / accepted source-header inputs | 160 / 256 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 362 additions / 721,572 code bytes / 254 inputs. Origin evidence through
+F009 plus 363 additions / 723,055 code bytes / 256 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **6fe11c2 (F175)**, preceded by
+The preceding reconstruction checkpoint is **8bd1677 (F176)**, preceded by
+**6fe11c2 (F175)** and
 **c3e15fb (F174)** and
 **2864a9a (F173)** and
 **73565e0 (F172)** and
@@ -108,7 +109,73 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F176 outcomes and continuation
+## Current F177 outcomes and continuation
+
+One new canonical object accepts the complete R042 constructor in
+`src/DigitAtlasesF177.cpp` and its call-only header. Unit
+`battle-initialize-digit-atlases-00446590` passes all1,483 CODE bytes/all77 actual
+DIR32 fields in one canonical cold build. Full CFG/42 branches, RET12, no owned
+tables and following INT3 alignment are verified. A genuine guarded native
+allocation passes three texture pointers; its constructor EAX receiver is
+consumed and stored at parent4C. This supports the natural constructor view
+without a fake return. Its observed allocation does not establish a complete
+original owner identity, and this source never instantiates/embeds/measures it.
+
+All three canonical texture pointer stores,14 loops with one real integer
+index,140 RECT entries across14 rows,16 actual SetRect import sites and42 short
+width/height/advance stores are retained. Existing BattleAtlasNumber446B90.hpp
+arrays, RECT16 and row160 stride remain unchanged. Observed initialized indices
+do not prove complete outer extents or global ownership. No new global object
+is defined. Every actual IAT/global field and nonzero addend is replayed, and
+virtual uninitialized storage has no asserted file payload. Original R042 role
+stays literal via an explicit COFF map. No inert local, padding, ABI trick,
+assembly, conditional body, mask, crop, alias or native-label rebasing.
+
+The initial parameter name small collided with the genuine SDK's small macro:
+that compiler invocation ended2 and produced no object. Source/header/log are
+retained. Renaming it secondary repairs preprocessing without changing flags,
+ABI or values. The complete preview and canonical cold comparison are zero.
+All422 previous units/159 objects/254 inputs, existing headers/origins/verifiers,
+14 active objects/all14 F157 probes/both F159 traces remain unchanged. Only this
+one new unit/object was cold-replayed. All97 unknown origins and every pending
+byte remain in the conservative denominator.
+
+Immediately continue the independently reviewed R055/R056/R101 background
+policy family in449CE0..451E00:32 complete91-byte transforms,18 complete186-byte
+side-pair renderers and four complete88-byte dark/light copies,54 functions/
+6,612 CODE bytes. Review every full extent, ABI, caller/callee, transform/copy
+footprint, coordinate/global binding and alignment before reusing any source
+pattern. Preserve original roles and do not infer a complete owner layout.
+The separate R220/R230/R231/R232 animation/cycle/blend policies require their
+own frozen manifests before source adoption. Retain all prior large/render/
+sequence/pack failures and bytes. Execute this action immediately after
+checkpoint/cleanup/commit/push; never pause the active incomplete98% goal.
+
+Receipts: `.analysis/f177-digit-atlases-unit-proof.json`,
+`.analysis/f177-digit-atlases-canonical-replay.json`, complete native CFG/import/
+virtual-data proof and guarded allocation/caller windows, initial macro-collision
+source/log and repaired full source/profile/diagnostic under the private root.
+
+Public CI passed **3,612 tests in 195.564 seconds**. Target,
+tracking, progress and diff checks pass. One new unit/object was cold-replayed:
+1,483 full CODE bytes/all77 actual DIR32 fields. All422 previous units/159 old
+canonical objects/254 old adoption inputs, existing headers, origin/verifier
+guards, forty protected groups,14 active objects/all14 F157 probes/both F159
+traces were hash-verified unchanged. Three compiler invocations ran serially and
+explicitly headless: failed SDK-macro-collision invocation (terminal2/no object),
+repaired preview, and canonical cold build. Only these new source/header files
+were added; no old accepted unit or large-function control was rebuilt.
+Cleanup removed the obsolete preview object (14,301
+bytes),0 PDBs (0 bytes) and377
+bytecode files (8,312,369 bytes), retaining complete
+nondebug sections/symbols/fields/source/header/profile evidence and160 canonical
+objects. Receipts: `.analysis/f177-object-retention.json`,
+`.analysis/f177-cleanup.json`, `.analysis/f177-preservation-final.json` and
+`.analysis/f177-source-checkpoint.json`. Immediately execute the complete54-
+function background-policy task after this checkpoint/commit/push; the98% goal
+remains active and incomplete, with no automatic pause.
+
+## Retained F176 outcomes
 
 One new canonical object accepts four complete functions in
 `src/LeafRenderF176.cpp` and its call-only header:

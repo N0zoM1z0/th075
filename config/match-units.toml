@@ -27118,3 +27118,397 @@ offset = 51
 type = "REL32"
 symbol = "?Spawn@AuxiliaryEffectsF135@@QAEXFMMCCEEPBM@Z"
 target = 0x005F7AA0
+
+[units.battle-initialize-digit-atlases-00446590]
+source = "src/DigitAtlasesF177.cpp"
+object = "build/matching/DigitAtlasesF177.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleHud::InitializeDigitAtlases"]
+symbol = "??0DigitAtlasesF177@@QAE@PAUIDirect3DTexture8@@00@Z"
+target_address = 0x00446590
+size = 1483
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 13
+type = "DIR32"
+symbol = "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A"
+target = 0x0068C894
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 22
+type = "DIR32"
+symbol = "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A"
+target = 0x0068C894
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_AtlasNumberTexturesAt0068C894@@3PAPAUIDirect3DTexture8@@A"
+target = 0x0068C894
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 87
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 94
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 129
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 136
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 145
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 154
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 163
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 225
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 232
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 241
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 250
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 259
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 318
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 325
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 334
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 343
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 352
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 416
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 423
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 432
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 441
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 450
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 515
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 522
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 531
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 540
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 549
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 614
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 621
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 630
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 639
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 648
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 712
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 719
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 728
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 737
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 746
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 811
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 818
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 827
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 836
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 845
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 910
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 917
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 926
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 935
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 944
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1008
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1015
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1024
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1033
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1042
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1101
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1108
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1144
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1151
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1160
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1169
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1178
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1243
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1250
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1259
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1268
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1277
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1341
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1348
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1357
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1366
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1375
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1434
+type = "DIR32"
+symbol = "?g_AtlasNumberRegionsAt0068C8F8@@3PAY09UtagRECT@@A"
+target = 0x0068C8F8
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1441
+type = "DIR32"
+symbol = "__imp__SetRect@20"
+target = 0x00657210
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1450
+type = "DIR32"
+symbol = "?g_AtlasNumberWidthAt0068C8CC@@3PAFA"
+target = 0x0068C8CC
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1459
+type = "DIR32"
+symbol = "?g_AtlasNumberHeightAt0068C8A0@@3PAFA"
+target = 0x0068C8A0
+[[units.battle-initialize-digit-atlases-00446590.relocations]]
+offset = 1468
+type = "DIR32"
+symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
+target = 0x0068C868
