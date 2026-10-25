@@ -72,6 +72,12 @@ scripts/repo-python scripts/ghidra.py check
 
 ## Tools and working state
 
+- The user required every operation to be headless on 2026-10-25. Never open
+  host GUI windows. Unset `DISPLAY` and `WAYLAND_DISPLAY` for Wine/debugger
+  processes and disable Wine graphical drivers for those processes; use CLI
+  logs, batch debugging and the existing headless Ghidra wrapper. Preserve
+  shared tool installations and the existing private service settings.
+
 - On 2026-10-04 the user waived public MCP acceptance. Use local investigation
   and final verification while preserving complete evidence and cold builds.
 
