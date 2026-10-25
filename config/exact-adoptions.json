@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "d589503c85f231fe9b310c1eca71c1da3ac73a8a189943c9caf071da7cb0e0c5"
+      "current_sha256": "ed6649273bc5c6be0da8f6095816a0ea17faa31863956aab7452a6aa404b8bac"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ad135d4be8468044101b22c64cadc714007c1bc140d33f09d6de83e260292a39"
+      "current_sha256": "a0a0467bfbc70ae6cee8935252c15c907280ad948ebba6bdc593141f6dfca024"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "c4d2626dc39432fa71faf921bbe8b3fea0fbae2680da40fb9b8cb6e39945c350"
+      "current_sha256": "d7cd9271562c8bb42accec83a40fc73ecdcd3b2146d3bb2f66f22d778c9b689f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "4be80c46119d3065bdf0c7eff54b75f18de545c8a8944258d0390911bde18bf7"
+      "current_sha256": "15b19df7f86b76d82beb59b3ed4b87925c9a5661dd8a70fc93657e5911a9bfc5"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f29a55794d1bdad9373fad2e48f7a191e739e915599090be84eb6d450ced8d4a"
+      "current_sha256": "fb0cb5b082355bcb64e872ccc69cbf5072086ce00bc44a47159e639bb89f602c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -15173,6 +15173,182 @@
         "address": "0x0043D3B0",
         "origin": "authored",
         "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043CDB0",
+        "size": "599",
+        "span_end": "0x0043D006",
+        "current_name": "FUN_0043cdb0",
+        "proposed_name": "BattleScene::EnterRoundEnd",
+        "module": "BattleScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043CDB0",
+        "size": "599",
+        "span_end": "0x0043D006",
+        "current_name": "FUN_0043cdb0",
+        "proposed_name": "BattleScene::EnterRoundEnd",
+        "module": "BattleScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void RoundEndF173::EnterRoundEnd()",
+        "is_thunk": "false",
+        "source_file": "src/RoundEndHudF173.cpp",
+        "evidence": "R041; full body hash, complete decoded CFG and local game-specific behavior reviewed; F173; scripts/repo-python scripts/replay-exact-units.py --unit battle-enter-round-end-0043cdb0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F173: four completeR041/R043 bodies878CODE/all3actualfields(1REL32/2DIR32), allCFG/exits/RET0/8/8/12 and alignment retained. Parent simultaneous/first/secondKO, bytepostdecrements, restore/winner/state/timer flow retained. Counter native60byte row stride before signedkey dwordindex, pointerto15dwordrow expresses stride only without completebounds/layout. Genuine20byte nativeallocation callers consume constructorEAXreceiver, no fake return/sourceinstances/sizeof/embedding. HUD countmax-or1/payloadwords/60and90timers/negative sine*200; complete4byte radians657828 and20065835C readonlysections/all defs exact inpreview/canonical. Existing40D940 float(float)/ST0 contract reused without origin/exactcredit for unknowncallee. Initial58byte linearaddress form60differences rejected; natural rowindex form restores66bytes/ESI lifetime, no inertlocals/padding/ABItricks/asm/conditionalbody/mask/crop/alias/rebasing. OriginalrolesliteralviaexplicitCOFFmaps. Only4newunits/oneobject coldreplayed; all404oldunits/155objects/246inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x0043CDB0",
+        "origin": "authored",
+        "subsystem": "BattleScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R041"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043D360",
+        "size": "66",
+        "span_end": "0x0043D3A1",
+        "current_name": "FUN_0043d360",
+        "proposed_name": "ProgressRecords::IncrementModeCounter",
+        "module": "ProgressRecords",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D360",
+        "size": "66",
+        "span_end": "0x0043D3A1",
+        "current_name": "FUN_0043d360",
+        "proposed_name": "ProgressRecords::IncrementModeCounter",
+        "module": "ProgressRecords",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ModeCounterF173::IncrementModeCounter(signed char, signed char)",
+        "is_thunk": "false",
+        "source_file": "src/RoundEndHudF173.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F173; scripts/repo-python scripts/replay-exact-units.py --unit progress-increment-mode-counter-0043d360",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F173: four completeR041/R043 bodies878CODE/all3actualfields(1REL32/2DIR32), allCFG/exits/RET0/8/8/12 and alignment retained. Parent simultaneous/first/secondKO, bytepostdecrements, restore/winner/state/timer flow retained. Counter native60byte row stride before signedkey dwordindex, pointerto15dwordrow expresses stride only without completebounds/layout. Genuine20byte nativeallocation callers consume constructorEAXreceiver, no fake return/sourceinstances/sizeof/embedding. HUD countmax-or1/payloadwords/60and90timers/negative sine*200; complete4byte radians657828 and20065835C readonlysections/all defs exact inpreview/canonical. Existing40D940 float(float)/ST0 contract reused without origin/exactcredit for unknowncallee. Initial58byte linearaddress form60differences rejected; natural rowindex form restores66bytes/ESI lifetime, no inertlocals/padding/ABItricks/asm/conditionalbody/mask/crop/alias/rebasing. OriginalrolesliteralviaexplicitCOFFmaps. Only4newunits/oneobject coldreplayed; all404oldunits/155objects/246inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x0043D360",
+        "origin": "authored",
+        "subsystem": "ProgressRecords",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043D490",
+        "size": "59",
+        "span_end": "0x0043D4CA",
+        "current_name": "FUN_0043d490",
+        "proposed_name": "BattleHud::InitializeComboCounter",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D490",
+        "size": "59",
+        "span_end": "0x0043D4CA",
+        "current_name": "FUN_0043d490",
+        "proposed_name": "BattleHud::InitializeComboCounter",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "ComboCounterF173::ComboCounterF173(void*, signed char)",
+        "is_thunk": "false",
+        "source_file": "src/RoundEndHudF173.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F173; scripts/repo-python scripts/replay-exact-units.py --unit hud-combo-constructor-0043d490",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F173: four completeR041/R043 bodies878CODE/all3actualfields(1REL32/2DIR32), allCFG/exits/RET0/8/8/12 and alignment retained. Parent simultaneous/first/secondKO, bytepostdecrements, restore/winner/state/timer flow retained. Counter native60byte row stride before signedkey dwordindex, pointerto15dwordrow expresses stride only without completebounds/layout. Genuine20byte nativeallocation callers consume constructorEAXreceiver, no fake return/sourceinstances/sizeof/embedding. HUD countmax-or1/payloadwords/60and90timers/negative sine*200; complete4byte radians657828 and20065835C readonlysections/all defs exact inpreview/canonical. Existing40D940 float(float)/ST0 contract reused without origin/exactcredit for unknowncallee. Initial58byte linearaddress form60differences rejected; natural rowindex form restores66bytes/ESI lifetime, no inertlocals/padding/ABItricks/asm/conditionalbody/mask/crop/alias/rebasing. OriginalrolesliteralviaexplicitCOFFmaps. Only4newunits/oneobject coldreplayed; all404oldunits/155objects/246inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x0043D490",
+        "origin": "authored",
+        "subsystem": "BattleHud",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R043"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0043D4D0",
+        "size": "154",
+        "span_end": "0x0043D569",
+        "current_name": "FUN_0043d4d0",
+        "proposed_name": "BattleHud::UpdateComboCounter",
+        "module": "BattleHud",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0043D4D0",
+        "size": "154",
+        "span_end": "0x0043D569",
+        "current_name": "FUN_0043d4d0",
+        "proposed_name": "BattleHud::UpdateComboCounter",
+        "module": "BattleHud",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void ComboCounterF173::UpdateComboCounter(short, short, short)",
+        "is_thunk": "false",
+        "source_file": "src/RoundEndHudF173.cpp",
+        "evidence": "R043; full body hash, complete decoded CFG and local game-specific behavior reviewed; F173; scripts/repo-python scripts/replay-exact-units.py --unit hud-update-combo-counter-0043d4d0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F173: four completeR041/R043 bodies878CODE/all3actualfields(1REL32/2DIR32), allCFG/exits/RET0/8/8/12 and alignment retained. Parent simultaneous/first/secondKO, bytepostdecrements, restore/winner/state/timer flow retained. Counter native60byte row stride before signedkey dwordindex, pointerto15dwordrow expresses stride only without completebounds/layout. Genuine20byte nativeallocation callers consume constructorEAXreceiver, no fake return/sourceinstances/sizeof/embedding. HUD countmax-or1/payloadwords/60and90timers/negative sine*200; complete4byte radians657828 and20065835C readonlysections/all defs exact inpreview/canonical. Existing40D940 float(float)/ST0 contract reused without origin/exactcredit for unknowncallee. Initial58byte linearaddress form60differences rejected; natural rowindex form restores66bytes/ESI lifetime, no inertlocals/padding/ABItricks/asm/conditionalbody/mask/crop/alias/rebasing. OriginalrolesliteralviaexplicitCOFFmaps. Only4newunits/oneobject coldreplayed; all404oldunits/155objects/246inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x0043D4D0",
+        "origin": "authored",
+        "subsystem": "BattleHud",
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R043"
@@ -145715,6 +145891,113 @@
       "target_address": 4445104,
       "size": 43,
       "relocations": []
+    },
+    "battle-enter-round-end-0043cdb0": {
+      "source": "src/RoundEndHudF173.cpp",
+      "object": "build/matching/RoundEndHudF173.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleScene::EnterRoundEnd"
+      ],
+      "symbol": "?EnterRoundEnd@RoundEndF173@@QAEXXZ",
+      "target_address": 4443568,
+      "size": 599,
+      "relocations": []
+    },
+    "progress-increment-mode-counter-0043d360": {
+      "source": "src/RoundEndHudF173.cpp",
+      "object": "build/matching/RoundEndHudF173.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "ProgressRecords::IncrementModeCounter"
+      ],
+      "symbol": "?IncrementModeCounter@ModeCounterF173@@QAEXCC@Z",
+      "target_address": 4445024,
+      "size": 66,
+      "relocations": []
+    },
+    "hud-combo-constructor-0043d490": {
+      "source": "src/RoundEndHudF173.cpp",
+      "object": "build/matching/RoundEndHudF173.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleHud::InitializeComboCounter"
+      ],
+      "symbol": "??0ComboCounterF173@@QAE@PAXC@Z",
+      "target_address": 4445328,
+      "size": 59,
+      "relocations": []
+    },
+    "hud-update-combo-counter-0043d4d0": {
+      "source": "src/RoundEndHudF173.cpp",
+      "object": "build/matching/RoundEndHudF173.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleHud::UpdateComboCounter"
+      ],
+      "symbol": "?UpdateComboCounter@ComboCounterF173@@QAEXFFF@Z",
+      "target_address": 4445392,
+      "size": 154,
+      "relocations": [
+        {
+          "offset": 118,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 127,
+          "type": "REL32",
+          "symbol": "?CameraSineAt0040D940@@YAMM@Z",
+          "target": 4249920
+        },
+        {
+          "offset": 138,
+          "type": "DIR32",
+          "symbol": "__real@43480000",
+          "target": 6652764
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -145963,6 +146246,8 @@
     "src/BindingRoundF171.cpp": "fb51cd4873badf3c6e3de5cfdeb4c90d1874823912613ec26ec7d8abf78f9d98",
     "src/BindingRoundF171.hpp": "b7b3631f098e9c8de58851a78673ae9441b42698fd2aeaf39a21b80d527eac94",
     "src/KnockoutProgressF172.cpp": "01dcce215a5787e5d402eebdaaee5df5a96c77eb29ce9d4f40c1bd3c1c43bdd9",
-    "src/KnockoutProgressF172.hpp": "6774f2ae3c2d7e3593750e5e870b06709225ec1145827b8eaffd49d1e922a67e"
+    "src/KnockoutProgressF172.hpp": "6774f2ae3c2d7e3593750e5e870b06709225ec1145827b8eaffd49d1e922a67e",
+    "src/RoundEndHudF173.cpp": "d9318dea4a66f7c5d20d004ecf9cf27fc22259f410d28a5e43cf11cd957c0843",
+    "src/RoundEndHudF173.hpp": "c9e4bf04f82ec9ed0536a5b86be99c829bcd04a6a1374b5c5854e6d16eb56522"
   }
 }

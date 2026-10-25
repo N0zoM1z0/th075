@@ -402,3 +402,7 @@ ProgressRecords::MarkCardFlag
 ProgressRecords::IncrementCardCounter
 ProgressRecords::GetCardValue
 ProgressRecords::SetCardValue
+BattleScene::EnterRoundEnd
+ProgressRecords::IncrementModeCounter
+BattleHud::InitializeComboCounter
+BattleHud::UpdateComboCounter

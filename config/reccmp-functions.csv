@@ -403,3 +403,7 @@ ProgressRecords::MarkCardFlag,0x0043D430,function
 ProgressRecords::IncrementCardCounter,0x0043D3E0,function
 ProgressRecords::GetCardValue,0x0043D460,function
 ProgressRecords::SetCardValue,0x0043D3B0,function
+BattleScene::EnterRoundEnd,0x0043CDB0,function
+ProgressRecords::IncrementModeCounter,0x0043D360,function
+BattleHud::InitializeComboCounter,0x0043D490,function
+BattleHud::UpdateComboCounter,0x0043D4D0,function

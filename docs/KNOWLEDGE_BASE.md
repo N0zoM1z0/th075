@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F172.
+Updated 2026-10-26 for continued reconstruction, F173.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F172 accepts five complete knockout/progress
+[RE_HANDOFF.md](RE_HANDOFF.md). F173 accepts four complete round-end, counter and HUD
 functions; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
@@ -16,15 +16,48 @@ functions; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 404 units,
-  727,784 code bytes, 155 canonical objects and 246 accepted inputs.
-- Reviewed authored coverage is 36.88%; conservative coverage is 36.81%.
+  complete cold-exact units/all actual relocations. Counts are 408 units,
+  728,662 code bytes, 156 canonical objects and 248 accepted inputs.
+- Reviewed authored coverage is 36.92%; conservative coverage is 36.85%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F173 accepted round-end/counter/HUD:** four whole R041/R043 functions in
+`RoundEndHudF173.cpp` pass one canonical cold build: 43CDB0/599,43D360/66,
+43D490/59 and43D4D0/154, totaling 878 CODE bytes with all three actual fields
+(1 REL32/2 DIR32). All CFGs, RET0/8/8/12 and alignment are verified. Round-end
+keeps all simultaneous/first/second knockout arms, signed decrements, restores,
+winner/state/timer writes. Counter indexing uses the observed 60-byte row stride
+before signed key scaling. Initial linear byte arithmetic emitted 58 bytes and
+60 differences; a pointer to 15-dword rows restores native base construction,
+saved ESI and all 66 bytes without extra locals or layout/ABI changes. This
+stride view does not prove category/key bounds or complete owner layout.
+
+Two genuine guarded 20-byte allocation callers consume the constructor EAX
+receiver and store it at parent50/54; texture pointer and side1/-1 are retained.
+The natural constructor needs no fake return; no partial owner instances,
+embedding or sizeof were introduced. HUD update keeps count-maximum-or-one,
+payload words,60/90 timers and negative sine times200. Complete four-byte
+readonly sections/all definitions match radians657828 and20065835C in preview
+and fresh canonical objects. The existing float(float)/ST0 contract at unknown
+40D940 is reused without ownership/source/exact credit. All 97 unknown origins
+and every pending byte remain in the conservative denominator. Original roles
+remain literal through explicit COFF maps; no padding, inert locals, fake
+returns, ABI tricks, assembly, conditional bodies, masks, crops or rebasing.
+All404 previous units/155 objects/246 inputs and all active/frozen evidence are
+preserved. Only these four new units/one object were cold-replayed.
+
+Immediately continue full R103 progress accessors441FE0/44,442010/44,4451D0/55,
+445210/55,445250/50,445290/50; then R045 pause4456F0/314 and R042 effects445830/457.
+Review full CFGs/ABI/indices/callees/constants/alignment before complete sources
+and comparisons. Continue immediately after checkpoint/cleanup/commit/push.
+Receipts: `.analysis/f173-round-end-unit-proof.json`,
+`.analysis/f173-round-end-canonical-replay.json`,
+`.analysis/f173-canonical-readonly.json` and full native caller/source evidence.
 
 **F172 accepted knockout/progress:** one new canonical object cold-replays
 five complete R041/R043 bodies:43C930/1150,43D430/44,43D3E0/79,43D460/40 and

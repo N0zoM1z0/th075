@@ -26441,3 +26441,57 @@ symbol = "?SetCardValue@CardProgressF172@@QAEXCH@Z"
 target_address = 0x0043D3B0
 size = 43
 relocations = []
+
+[units.battle-enter-round-end-0043cdb0]
+source = "src/RoundEndHudF173.cpp"
+object = "build/matching/RoundEndHudF173.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleScene::EnterRoundEnd"]
+symbol = "?EnterRoundEnd@RoundEndF173@@QAEXXZ"
+target_address = 0x0043CDB0
+size = 599
+relocations = []
+
+[units.progress-increment-mode-counter-0043d360]
+source = "src/RoundEndHudF173.cpp"
+object = "build/matching/RoundEndHudF173.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProgressRecords::IncrementModeCounter"]
+symbol = "?IncrementModeCounter@ModeCounterF173@@QAEXCC@Z"
+target_address = 0x0043D360
+size = 66
+relocations = []
+
+[units.hud-combo-constructor-0043d490]
+source = "src/RoundEndHudF173.cpp"
+object = "build/matching/RoundEndHudF173.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleHud::InitializeComboCounter"]
+symbol = "??0ComboCounterF173@@QAE@PAXC@Z"
+target_address = 0x0043D490
+size = 59
+relocations = []
+
+[units.hud-update-combo-counter-0043d4d0]
+source = "src/RoundEndHudF173.cpp"
+object = "build/matching/RoundEndHudF173.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleHud::UpdateComboCounter"]
+symbol = "?UpdateComboCounter@ComboCounterF173@@QAEXFFF@Z"
+target_address = 0x0043D4D0
+size = 154
+[[units.hud-update-combo-counter-0043d4d0.relocations]]
+offset = 118
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+[[units.hud-update-combo-counter-0043d4d0.relocations]]
+offset = 127
+type = "REL32"
+symbol = "?CameraSineAt0040D940@@YAMM@Z"
+target = 0x0040D940
+[[units.hud-update-combo-counter-0043d4d0.relocations]]
+offset = 138
+type = "DIR32"
+symbol = "__real@43480000"
+target = 0x0065835C

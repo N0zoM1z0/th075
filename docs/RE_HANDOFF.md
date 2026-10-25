@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F172.
+Updated 2026-10-26 for continued reconstruction, F173.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F172 accepts five complete knockout/progress functions.
+phases remain deferred. F173 accepts four complete round-end, counter and HUD functions.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F172 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F173 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 404 / 404 / 404 |
-| Exact code bytes | 727,784 |
-| Reviewed authored coverage | 727,784 / 1,973,516 (36.88%) |
-| Conservative coverage, including pending bytes | 727,784 / 1,977,124 (36.81%) |
-| Canonical objects / accepted source-header inputs | 155 / 246 |
+| Source-present / exact functions / exact units | 408 / 408 / 408 |
+| Exact code bytes | 728,662 |
+| Reviewed authored coverage | 728,662 / 1,973,516 (36.92%) |
+| Conservative coverage, including pending bytes | 728,662 / 1,977,124 (36.85%) |
+| Canonical objects / accepted source-header inputs | 156 / 248 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 344 additions / 717,901 code bytes / 246 inputs. Origin evidence through
+F009 plus 348 additions / 718,779 code bytes / 248 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **2e83de5 (F171)**, preceded by
+The preceding reconstruction checkpoint is **73565e0 (F172)**, preceded by
+**2e83de5 (F171)** and
 **0297027 (F170)** and
 **cf9b249 (F169)** and
 **42d1e0b (F168)** and
@@ -104,7 +105,73 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F172 outcomes and continuation
+## Current F173 outcomes and continuation
+
+One new canonical object accepts four complete functions in
+`src/RoundEndHudF173.cpp` and its call-only header:
+
+| Unit | Code bytes | Actual fields |
+| --- | --- | --- |
+| `battle-enter-round-end-0043cdb0` | 599 | 0 |
+| `progress-increment-mode-counter-0043d360` | 66 | 0 |
+| `hud-combo-constructor-0043d490` | 59 | 0 |
+| `hud-update-combo-counter-0043d4d0` | 154 | 1 REL32 / 2 DIR32 |
+
+One canonical cold build passes all 878 CODE bytes and all three actual fields.
+Complete R041/R043 CFGs, RET0/8/8/12 and following INT3 alignment are verified.
+Zero-field descriptors explicitly retain `relocations = []`. Round-end policy
+preserves simultaneous, first and second knockouts, signed byte decrements,
+health restoration, winner byte, states and timers. The counter uses signed
+category/key indices and the observed 60-byte row stride at 16710. A pointer to
+15-dword rows expresses that stride without claiming complete indexed bounds.
+An initial linear byte-address expression emitted 58 bytes with 60 differences;
+row indexing restores the native LEA base construction, saved ESI and 66 bytes.
+No extra local, padding or ABI change was introduced.
+
+Both genuine 20-byte allocation callers consume the initializer's EAX receiver
+and store it at parent 50/54, supporting the natural constructor view. Side is
+1/-1 and the first argument is a texture pointer. No reconstructed owner is
+instantiated, embedded or measured with sizeof; its full layout remains unknown.
+The HUD update retains the count-maximum-or-one guard, three word payloads,
+60/90 timers and negative sine result times 200. Both complete four-byte COFF
+readonly sections and all definitions match native radians657828 and 20065835C
+in preview and fresh canonical objects. Existing 40D940 float(float)/ST0 contract
+is reused; its origin stays unknown and receives no source or exact credit.
+Original roles remain literal through explicit COFF maps. All 404 prior units,
+155 objects,246 inputs, existing headers/origins/verifiers and 13 active objects,
+all14 F157 probes/both F159 traces remain unchanged. Only four new units in one
+new object were cold-replayed; all pending bytes remain in the denominator.
+
+Immediately continue six complete R103 progress accessors: 441FE0/44,442010/44,
+4451D0/55,445210/55,445250/50 and445290/50; then R045 pause shortcut4456F0/314
+and R042 player-effects445830/457. Review complete native CFGs, ABI, indexed
+storage, callees, constants and alignment before natural sources/comparisons.
+After checkpoint, cleanup, commit or push, execute this action immediately.
+The 98% goal remains active and incomplete; never pause automatically.
+
+Receipts: `.analysis/f173-round-end-unit-proof.json`,
+`.analysis/f173-round-end-canonical-replay.json`,
+`.analysis/f173-canonical-readonly.json`, native allocation/caller proof and
+both full source/profile/diagnostic snapshots under `.analysis/f173-round-end/`.
+
+Public CI passed **3,612 tests in 183.529 seconds**. Target,
+tracking, progress and diff checks pass. Four new units in one new object were
+cold-replayed:878 full CODE bytes/all3 actual fields; both complete four-byte readonly sections match. All404 previous units,
+155 old canonical objects/246 old adoption inputs, existing headers, origin/
+verifier guards, forty protected groups,13 active objects/all14 F157 probes/both
+F159 traces were hash-verified unchanged. Three compiler builds ran serially and
+explicitly headless: two previews and one canonical cold build. No old accepted
+unit or large-function control was rebuilt. Cleanup removed two obsolete preview
+objects (9,660 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,349 bytes), retaining all full nondebug sections/
+symbols/fields/source/header/profile evidence and156 canonical/13 active objects.
+Receipts: `.analysis/f173-object-retention.json`, `.analysis/f173-cleanup.json`,
+`.analysis/f173-preservation-final.json` and `.analysis/f173-source-checkpoint.json`.
+Immediately continue six R103 progress accessors, pause4456F0 and effects445830 after this
+checkpoint/commit/push; the98% goal remains active and incomplete.
+
+## Retained F172 outcomes
 
 One new canonical object accepts five whole functions in
 `src/KnockoutProgressF172.cpp` and its call-only header:
