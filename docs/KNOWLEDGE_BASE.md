@@ -1,8 +1,8 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for cleanup and agent handoff. The user cleared the active
-goal. The 98% authored-byte objective remains incomplete. Current state and
-successor instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
+Updated 2026-10-25 for resumed reconstruction, F150. The active 98%
+authored-byte objective remains incomplete. Current state and continuation
+instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
 ## Authoritative inputs and evidence
 
@@ -23,12 +23,24 @@ successor instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
 ## Current source work
 
-**004AC040, R048 authored:** `.analysis/character-move-4ac040/f148/` contains
-80/151 uncompiled nondefault fragments, full native CFG/table/entry proof,
-default/common tail and source/call/constant/ABI audits. Seventy-one entries
-remain, starting with state 390 at 004B1C5B. Whole comparison is 82,796 code +
+**004AC040, R048 authored:** `.analysis/character-move-4ac040/f150/` contains
+104/151 uncompiled nondefault fragments, full native CFG/table/entry proof,
+default/common tail and source/call/constant/ABI audits. Forty-seven entries
+remain, starting with state 500 at 004B4DE7. Whole comparison is 82,796 code +
 1,126 owned data = 83,922 bytes. No source-presence or exact credit. Keep F148
-immutable; copy current inputs before writing F150.
+immutable; F150 copied its complete input set before authoring 24 more entries.
+
+F150 covers the actual mapped states 390..420, adding 12,684 native
+investigation bytes (35,886 contiguous bytes with source in total). It retains
+three explicit sites in each 400..405 volley, five explicit sites in each
+406..410 fan, and both separate five-site branches in 418. The eight real
+loops in 416/417/419/420 bring the source to eleven genuine loop counters.
+Nested `RecordedRange455580::SelectRange` arguments use the accepted 139-byte
+unit and native right-to-left argument evaluation; original names/layouts
+remain provisional. This source audit checks call evaluation order, not emitted
+CFG or bytes. Native constants at 006590AC and 00657F74 are 110.0f and 0.25f.
+State 416 decrements F00 without initializing it in that entry; preserve this
+observed order. No compilation, source-presence or exact credit is claimed.
 
 The observed two-slot receiver prefix is supported by constructor 004C0832,
 table006594A8, complete R050/R068 bodies and four actual character calls in
