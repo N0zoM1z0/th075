@@ -393,3 +393,4 @@ FighterState::ApplyMode5DirectionAt00454C20 [provisional],0x00454C20,function
 BattleScene::HandleMode5OptionsAt004483F0 [provisional],0x004483F0,function
 FighterState::SpawnTrackedEffectAt00453AC0,0x00453AC0,function
 FighterState::SpawnTrackedEffectAt00453BE0,0x00453BE0,function
+FighterState::ApplyOpponentGaugeChange,0x00452C10,function

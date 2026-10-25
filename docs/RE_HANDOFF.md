@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F169.
+Updated 2026-10-26 for continued reconstruction, F170.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F169 accepts both complete R102 tracked-effect policies.
-F168 accepted the R215 mode5 options policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F169 outcomes supersede historical
+phases remain deferred. F170 accepts the complete R045 opponent gauge policy;
+F169 accepted both tracked-effect policies. The full0055AC80 draft is unaccepted.
+The complete large drafts remain unaccepted. Current F170 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 394 / 394 / 394 |
-| Exact code bytes | 725,120 |
-| Reviewed authored coverage | 725,120 / 1,973,516 (36.74%) |
-| Conservative coverage, including pending bytes | 725,120 / 1,977,124 (36.68%) |
-| Canonical objects / accepted source-header inputs | 152 / 240 |
+| Source-present / exact functions / exact units | 395 / 395 / 395 |
+| Exact code bytes | 725,873 |
+| Reviewed authored coverage | 725,873 / 1,973,516 (36.78%) |
+| Conservative coverage, including pending bytes | 725,873 / 1,977,124 (36.71%) |
+| Canonical objects / accepted source-header inputs | 153 / 242 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 334 additions / 715,237 code bytes / 240 inputs. Origin evidence through
+F009 plus 335 additions / 715,990 code bytes / 242 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **42d1e0b (F168)**, preceded by
+The preceding reconstruction checkpoint is **cf9b249 (F169)**, preceded by
+**42d1e0b (F168)** and
 **8d53f6c (F167)** and
 **d7cb87f (F166)** and
 **486d5fa (F165)** and
@@ -101,7 +102,66 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F169 outcomes and continuation
+## Current F170 outcomes and continuation
+
+One canonical cold build accepts complete R04500452C10 in
+`src/FighterOpponentGaugeF170.cpp` and its call-only header. Unit
+`fighter-opponent-gauge-change-00452c10` passes all753 CODE bytes/all13 actual
+fields: three compiler ftol2 REL32 fields and ten DIR32 fields covering six
+readonly values and the unchanged combat-mode global. All CFG/exits, RET12,
+three signed low-word argument carriers, real short change local,44-byte frame,
+savedthisEBP-8 and saved ESI are reconciled. Original R045 role stays literal
+through an explicit COFF mapping; original nominal parameter types, field
+meanings, class identity and complete owner layout remain unknown.
+
+The source retains product order9C/A4/A0/3C0, the signed39D dynamic word index,
+computation before counter reset, exact50/143 boundaries and repeated current/
+opponent field reads. Float4/10000/100 are distinct from double0.75/0.25/1000.
+An initial complete expanded-assignment/explicit-cast draft emitted751 bytes
+with672 differences and no ESI save/restore. Natural compound updates restore
+the target's RHS/x87 operand order and destination lifetime through ftol2;
+the resulting complete753-byte diagnostic and canonical cold replay are zero.
+No extra local, padding, fake return, ABI change, assembly, alternate body,
+mask, crop, alias or native-label rebasing. Partial owners are never instantiated
+or embedded. This is evidence about this function's used lvalue dataflow, not a
+reason to repeat closed main/F066 scalar or zero-spelling controls.
+
+All394 prior units/152 canonical objects/240 adoption inputs, existing headers,
+R268 origin evidence/all97 unknowns and13 active objects/all14 F157 probes/both
+F159 traces remain unchanged. Only this new unit/one object was cold-replayed;
+no unchanged dependency or large-function control was rebuilt.
+
+Immediately continue complete binding/round-record cohort00457490/31 (R100),
+004574B0/25 (R103), and004574D0/389 (R054) CODE bytes. Review their complete
+native dataflow, used argument/return contracts and context before writing full
+sources. All current large failures and all pending/unknown bytes remain in the
+conservative denominator. Cold-replay only new/affected units; checkpoint,
+cleanup, commit and push must be followed by this next action, never a pause.
+
+Receipts: `.analysis/f170-gauge-unit-proof.json`,
+`.analysis/f170-gauge-canonical-replay.json`, and the private F170
+`compound-updates-whole-diagnostic.json`/`compound-assignment-observation.json`/
+`preview-whole-diagnostic.json` plus both source/profile snapshots.
+
+Public CI passed **3,612 tests in 180.454 seconds**. Target,
+tracking, progress and diff checks pass. Only one new unit/object was cold
+replayed:753 full CODE bytes/all13 actual fields. All394 prior units/152 old
+canonical objects/240 old adoption inputs, existing headers, origin/verifier
+guards, forty protected groups,13 active objects/all14 F157 probes/both F159
+traces were hash-verified unchanged. Three compiler builds ran serially and
+explicitly headless: initial complete diagnostic, natural compound-update
+candidate and canonical cold build. No old unit or large-function control was
+rebuilt. Cleanup removed two obsolete complete objects
+(7,142 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,334 bytes), retaining full nondebug sections/
+symbols/fields/source/header/profile evidence and153 canonical/13 active objects.
+Receipts: `.analysis/f170-object-retention.json`, `.analysis/f170-cleanup.json`,
+`.analysis/f170-preservation-final.json` and `.analysis/f170-source-checkpoint.json`.
+Immediately continue00457490/004574B0/004574D0 after checkpoint/commit/push;
+the98% goal remains active and incomplete, no additional resume is needed.
+
+## Retained F169 outcomes
 
 One canonical cold build accepts both whole R102 tracked-effect policies in
 `src/FighterTrackedEffectsF169.cpp` and its call-only header:

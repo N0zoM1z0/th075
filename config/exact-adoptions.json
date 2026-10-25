@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "ecd1b0de5e2d7737cd3e886d3982040c4d637c4cfb29fd821344204fe477f7a0"
+      "current_sha256": "e47363694d5e431d419f04d754f2459e87f49e2148cdf965884924291f8edf4d"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3b027efe38465635a111cbb34f571a8b077d1b17837fdee008fec70746b2fa7e"
+      "current_sha256": "2df5fad90cab4b10b2f4cf9da279c23cd06c1eaa6ee7faf2f9a396e7f12c864e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "88a8a7fb510cf2ad2431c143aa5659e3fa8f24a85401c95eb94db263c9940506"
+      "current_sha256": "8c008b8fd5df94f1f6cc68f4a19ae9a0ce76df9cfa8afe851da3d703eadea959"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "21b1d79d9ef4ef4d439dd83031eb85e38a8404072bbb96430cb90620a8225b44"
+      "current_sha256": "2a9223652c99a077d13a8b2628a1430eca5a8382478c88f972d6bff7339dfe31"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "f95e826a9c5a9b8d76c814c716b85fd06f9464767325d5a8431bec4d60acc466"
+      "current_sha256": "f7d991873426fef1c6cef4765c851c0d252c49734a4136337e5d1f4337009ba7"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14736,6 +14736,50 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00452C10",
+        "size": "753",
+        "span_end": "0x00452F00",
+        "current_name": "FUN_00452c10",
+        "proposed_name": "FighterState::ApplyOpponentGaugeChange",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00452C10",
+        "size": "753",
+        "span_end": "0x00452F00",
+        "current_name": "FUN_00452c10",
+        "proposed_name": "FighterState::ApplyOpponentGaugeChange",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterOpponentGaugeF170::ApplyOpponentGaugeChange(short, short, short)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOpponentGaugeF170.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F170; scripts/repo-python scripts/replay-exact-units.py --unit fighter-opponent-gauge-change-00452c10",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F170: complete753CODE/all13actualfields(3compilerftol2REL32/10DIR32); allrealCFG/exits/RET12, three signedlowword inputcarriers, realshortchange, frame44/savedthisEBP-8/ESI retained. Float4/10000/100 and double0.75/0.25/1000 remain distinct; product9C/A4/A0/3C0, dynamic signed39Dwordindex, calculations before counterreset, exact50/143 bounds and repeated opponent/currentfields preserved. Natural compound updates capture lvalue and use actualx87operandorder/ESIsaved destination throughcompilerconversion; expanded+explicitcast diagnostic751/672differences remains retained. Originalroleliteral via explicitCOFF map; private nominaltypes/full layout unknown, receiver never instantiated/embedded. No inertlocal/padding/fakereturn/ABItrick/asm/alternatebody/mask/crop/alias/rebasing. Only1newunit/oneobject cold-replayed; all394oldunits/152objects/240inputs/13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00452C10",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -144835,6 +144879,107 @@
           "target": 4569872
         }
       ]
+    },
+    "fighter-opponent-gauge-change-00452c10": {
+      "source": "src/FighterOpponentGaugeF170.cpp",
+      "object": "build/matching/FighterOpponentGaugeF170.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::ApplyOpponentGaugeChange"
+      ],
+      "symbol": "?ApplyOpponentGaugeChange@FighterOpponentGaugeF170@@QAEXFFF@Z",
+      "target_address": 4533264,
+      "size": 753,
+      "relocations": [
+        {
+          "offset": 37,
+          "type": "DIR32",
+          "symbol": "?g_CombatMode@@3CA",
+          "target": 6755508
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 165,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 172,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 252,
+          "type": "DIR32",
+          "symbol": "__real@40800000",
+          "target": 6651156
+        },
+        {
+          "offset": 258,
+          "type": "DIR32",
+          "symbol": "__real@461c4000",
+          "target": 6651956
+        },
+        {
+          "offset": 264,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 271,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 560,
+          "type": "DIR32",
+          "symbol": "__real@3fd0000000000000",
+          "target": 6652896
+        },
+        {
+          "offset": 566,
+          "type": "DIR32",
+          "symbol": "__real@408f400000000000",
+          "target": 6652864
+        },
+        {
+          "offset": 572,
+          "type": "DIR32",
+          "symbol": "__real@3fe8000000000000",
+          "target": 6652904
+        },
+        {
+          "offset": 603,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 724,
+          "type": "DIR32",
+          "symbol": "__real@42c80000",
+          "target": 6649992
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -145077,6 +145222,8 @@
     "src/BattleMode5OptionsF168.cpp": "e7d98934c5ee75ce521d0b5a6487cd054f2f6b841d6196b9484c78ba5e05ede6",
     "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c",
     "src/FighterTrackedEffectsF169.cpp": "69f95f182667f2034fb92c34c71a0069974860b476d79142532ad9b1b63180d1",
-    "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9"
+    "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9",
+    "src/FighterOpponentGaugeF170.cpp": "69e75b0c96fab3214e26f5bfd0d28b1beb076f41de79bda8f7c3c836889e686e",
+    "src/FighterOpponentGaugeF170.hpp": "6cb549cf37b8a03a539f6a552301c07eeaec2b29815cba4b1a0793442a2c3577"
   }
 }

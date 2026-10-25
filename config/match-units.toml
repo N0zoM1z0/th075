@@ -26165,3 +26165,77 @@ offset = 135
 type = "REL32"
 symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
 target = 0x0045BB10
+
+[units.fighter-opponent-gauge-change-00452c10]
+source = "src/FighterOpponentGaugeF170.cpp"
+object = "build/matching/FighterOpponentGaugeF170.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::ApplyOpponentGaugeChange"]
+symbol = "?ApplyOpponentGaugeChange@FighterOpponentGaugeF170@@QAEXFFF@Z"
+target_address = 0x00452C10
+size = 753
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 37
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "__real@40800000"
+target = 0x00657D14
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 165
+type = "DIR32"
+symbol = "__real@3fe8000000000000"
+target = 0x006583E8
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 172
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 252
+type = "DIR32"
+symbol = "__real@40800000"
+target = 0x00657D14
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 258
+type = "DIR32"
+symbol = "__real@461c4000"
+target = 0x00658034
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 264
+type = "DIR32"
+symbol = "__real@3fe8000000000000"
+target = 0x006583E8
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 271
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 560
+type = "DIR32"
+symbol = "__real@3fd0000000000000"
+target = 0x006583E0
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 566
+type = "DIR32"
+symbol = "__real@408f400000000000"
+target = 0x006583C0
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 572
+type = "DIR32"
+symbol = "__real@3fe8000000000000"
+target = 0x006583E8
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 603
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.fighter-opponent-gauge-change-00452c10.relocations]]
+offset = 724
+type = "DIR32"
+symbol = "__real@42c80000"
+target = 0x00657888

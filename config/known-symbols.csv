@@ -375,3 +375,4 @@ address,name,module,confidence,evidence
 0x004483F0,BattleScene::HandleMode5OptionsAt004483F0 [provisional],BattleScene,inferred,F168; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453AC0,FighterState::SpawnTrackedEffectAt00453AC0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
 0x00453BE0,FighterState::SpawnTrackedEffectAt00453BE0,FighterState,inferred,F169; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained
+0x00452C10,FighterState::ApplyOpponentGaugeChange,FighterState,inferred,F170; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

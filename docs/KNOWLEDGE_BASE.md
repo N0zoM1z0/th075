@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F169.
+Updated 2026-10-26 for continued reconstruction, F170.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F169 accepts both complete R102 tracked-effect
-policies; the complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F170 accepts the complete R045 opponent gauge
+policy; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,45 @@ policies; the complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 394 units,
-  725,120 code bytes, 152 canonical objects and 240 accepted inputs.
-- Reviewed authored coverage is 36.74%; conservative coverage is 36.68%.
+  complete cold-exact units/all actual relocations. Counts are 395 units,
+  725,873 code bytes, 153 canonical objects and 242 accepted inputs.
+- Reviewed authored coverage is 36.78%; conservative coverage is 36.71%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F170 accepted R045 opponent gauge:** `fighter-opponent-gauge-change-00452c10`
+passes one canonical cold build,753 complete CODE bytes/all13 actual fields
+(3 compiler ftol2 REL32/10 DIR32). All exits/CFG, RET12, three signed low-word
+argument carriers, real short change local,44-byte frame/savedthisEBP-8/ESI are
+reconciled. Original R045 role stays literal through explicit COFF mapping;
+original nominal types/field meanings/class identity/full layout remain unknown.
+Keep product9C/A4/A0/3C0, signed39D word index, computation before reset,
+exact50/143 bounds, repeated opponent/current fields and distinct float4/10000/
+100 versus double0.75/0.25/1000. Expanded assignment plus explicit RHS short
+cast emitted751 bytes/672 differences without ESI preservation. Natural
+compound updates restore the target's RHS/x87 operand order and capture the
+destination through compiler conversion, producing complete753-byte zero
+diagnostic and cold replay. No extra locals, padding, fake return, ABI trick,
+assembly, alternate body, mask, crop, alias or rebasing; partial owners are never
+instantiated/embedded. This lvalue observation applies to this function and does
+not reopen closed main/F066 scalar/zero-spelling controls without new evidence.
+All394 old units/152 objects/240 inputs, existing headers/origin/verifier guards,
+13 active objects/all14 F157/both F159 remain preserved. Only one new unit/object
+was cold-replayed; no old or large-function rebuild ran.
+
+Immediately continue the complete binding/round-record cohort00457490/31 R100,
+004574B0/25 R103 and004574D0/389 R054 CODE bytes. Review complete native dataflow,
+actual used argument/return contracts and independent contexts before writing
+whole natural sources. Preserve all failed large functions/all97 unknowns/every
+pending byte in the denominator. Continue immediately after checkpoint/cleanup/
+commit/push, never pause. Receipts: `.analysis/f170-gauge-unit-proof.json`,
+`.analysis/f170-gauge-canonical-replay.json`, F170
+`compound-updates-whole-diagnostic.json`/`compound-assignment-observation.json`
+and the retained initial full comparison/source/profile.
 
 **F169 accepted R102 tracked effects:** two whole bodies00453AC0/136 and
 00453BE0/145 pass one new canonical cold build,281 CODE/all4 actual REL32 fields.
