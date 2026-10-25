@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F165.
+Updated 2026-10-26 for continued reconstruction, F166.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F165 accepts one complete function/695 CODE bytes. Both
-large drafts remain unaccepted. Current F165 outcomes supersede historical
+phases remain deferred. F166 preserves all390 accepted units and begins the complete0055AC80 cohort.
+The two existing complete large drafts remain unaccepted. Current F166 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -57,7 +57,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **bb2f0c9 (F164)**, preceded by
+The preceding reconstruction checkpoint is **486d5fa (F165)**, preceded by
+**bb2f0c9 (F164)** and
 **22443ea (F163)** and
 **d0ecd9b (F162)** and
 **5d51487 (F161)** and
@@ -94,7 +95,89 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F165 outcomes and continuation
+## Current F166 outcomes and continuation
+
+No new source-present or exact function is registered. All390 accepted units /
+723,878 CODE bytes /149 canonical objects /234 adoption inputs and all origin
+evidence through R268 remain unchanged. The full98% objective remains active.
+
+The inherited-interface main diagnostic is closed. Eleven aligned readonly
+character-table prefixes share slot0 callback453D80 and reviewed advance slot1;
+the full R050 initializer4C0820 stores6594A8 through its incoming receiver.
+These observations support the used physical prefix, not original inheritance.
+An inherited call-only interface leaves all83,922 raw function bytes and all
+2,352 actual field offsets/types/addends/destinations identical to F156.161 local
+symbol spellings change without rebasing. The full comparison still has18,539
+differences, first004ADEFB. All151 entries/prefix/default/tail/headers are restored
+to baseline SHA prefix97e045e6 under F166. The closed object was removed only
+after complete nondebug sections/actual symbols/fields/source/profile were saved.
+
+One additional unchanged-source global /Zp1 build attempt failed before object
+emission. It shifts known live PositionWindow and TransformRecord offsets and
+triggers existing compile-time extent/offset guards. No header/guard/layout was
+relaxed. This rejects that profile with these source views; original compiler
+packing remains unknown. A comparator was inadvertently invoked after the failed
+build and reported missing object; it performed no byte comparison or acceptance.
+Do not repeat this profile by suppressing the guards.
+
+The next complete R048 authored candidate is0055AC80, provisionally
+`CharacterObject::AdvanceAt0055AC80`; the R050 initializer supplies Remilia-object
+identity context without establishing the original complete class. All28,432
+CODE bytes/7,653 instructions/1 RET/860 internal jumps, the owned232-byte pointer
+table and198-byte remap, all57 state entries800..997 and the two excluded INT3
+alignment bytes have been reverified against frozen evidence. Required whole
+comparison is28,862 bytes. Default561B83 calls frame advancement; it is not an
+empty default. The observed incoming ECX is saved atEBP-24 and the frame is412
+bytes. Constructor55ABE0/table659B34 establish the used slot0=45B880/slot1=55AC80
+prefix; partial receivers remain uninstantiated and unsized.
+
+All394 direct calls have14 distinct targets:12 already-canonical authored helpers,
+CRT ftol2 and12 calls to unknown483300. Its two-float/ST0 used-contract hypothesis
+is retained explicitly; it earns no ownership or callee exact credit. There are
+no indirect calls. Fifty-six complete readonly literal fields, including two
+8-byte constants, retain width/bits observations. Handwritten source fragments
+and ordered canonical call-contract audits are private under
+`.analysis/character-object-55ac80/f166/`. They are not an implementation or
+exact evidence. No whole source body may be assembled or compiled until all57
+real entries/default/epilogue and actual contracts are complete. Do not compile,
+compare or accept cropped state fragments or add locals/padding to force frame412.
+
+Seed fresh F167 from the frozen F166 inputs before editing checkpointed files.
+Continue this full57-entry cohort immediately, then cold-build and compare all
+28,432 CODE+430 owned-data bytes with every actual field. Keep both existing
+complete large drafts and all pending code/97 unknown origins in the conservative
+denominator. Preserve all12 prior active objects, both F159 traces and all14
+F157 probes. Closed inherited/scalar/i88/TU-order/counter/cast controls require
+new evidence before repetition. Cleanup, checkpoint, commit and push must be
+followed immediately by the next reconstruction task, never a pause.
+
+Receipts: `.analysis/f166-interface/`, F166
+`inherited-prefix-whole-diagnostic.json`/`inherited-prefix-baseline-identity.json`/
+`packing-one-failed-control.json`, and the new0055AC80
+`native-cohort-proof.json`/`readonly-constants.json`/`source-transcription-audit.json`.
+
+Public CI passed **3,612 tests in 179.184 seconds**. Target,
+tracking, progress and diff checks pass. All390 accepted units/149 canonical
+objects/234 adoption inputs, all existing headers/origin/verifier guards, forty
+protected groups and all12 prior active objects were hash-verified unchanged.
+No accepted dependency changed and no cold replay was needed. The main cohort
+has one successful full diagnostic and one guard-rejected profile attempt; the
+new0055AC80 candidate has no compiled body or exact credit. Five handwritten
+entries800..804 cover3,448 observed CODE bytes, with ordered used call contracts
+and actual this/owner receivers checked;52 complete entries remain. The full
+28,862-byte comparison remains mandatory. All eight genuine integer loop slots
+and the whole initializer/vptr/owner flow retain independent native witnesses.
+
+The previously closed inherited probe cleanup removed
+159,726 object/PDB bytes after full retention. This
+checkpoint removed 377 bytecode files/8,312,314
+bytes, retaining all raw/native/source/header/profile evidence and all149
+canonical objects/all12 active/both F159/all14 F157. Receipts:
+`.analysis/f166-preservation-final.json`, `.analysis/f166-cleanup.json` and
+`.analysis/f166-source-checkpoint.json`. Continue the full57-entry source cohort
+immediately after this checkpoint/commit/push; the98% goal remains active.
+
+## Retained F165 outcomes
 
 One new canonical object accepts the complete R112 sequence matcher00455800,
 `fighter-match-input-sequence-00455800`, from

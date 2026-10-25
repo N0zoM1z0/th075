@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F165.
+Updated 2026-10-26 for continued reconstruction, F166.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F165 adds one complete function/695 CODE bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F166 retains390 exact units and begins the complete0055AC80 source cohort.
 
 ## Authoritative inputs and evidence
 
@@ -24,6 +24,32 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F166 full-function investigation:** no new source/exact registration. The
+full004AC040 inherited physical-prefix diagnostic preserves all83,922 raw bytes /
+2,352 actual offsets/types/addends/destinations;161 local-symbol spellings differ
+without aliases/rebasing. Full failure stays18,539 positions/first004ADEFB; all151
+entries/prefix/default/tail/headers are restored97e045e6. Eleven shared readonly
+callback/advance prefixes and same-receiver constructor4C0820 do not prove original
+inheritance. Complete nondebug code/data/symbol/field/source/profile evidence was
+retained before removing the obsolete closed object. Global /Zp1 then failed
+existing live-field extent/offset guards and emitted no object; no guard/header/
+layout was relaxed. The accidental comparator call only reported missing object,
+not a byte result. Original packing remains unknown; do not suppress the guards.
+
+Continue the complete R0480055AC80 cohort:28,432CODE/28,862compare bytes including
+232-pointertable+198-remap,57 entries/7,653instructions/1RET/860jumps. Default
+advances the frame. SavedthisEBP-24/frame412 and constructor55ABE0/table659B34
+slot0=45B880/slot1=55AC80 are target observations, not complete owner types.
+All394 direct calls use14 targets:12 already-canonical authored helpers, ftol2
+and12 unknown483300 calls; the two-float/ST0 hypothesis earns no callee credit.
+Readonly literals retain56 field/width observations. Private handwritten state
+fragments and canonical call-order audits are not source presence or exactness.
+No full body or compilation before all57 entries/default/tail are complete; no
+cropped case credit or inert locals/padding. Seed fresh F167 from frozen F166
+inputs before editing checkpointed files. Preserve both old complete large
+drafts, all97 unknowns/fullpendingdenominator and all390 accepted units/149
+objects/234 inputs/all12 prior active/all14F157/bothF159. Continue immediately.
 
 **F165 accepted input sequence:** complete695-byte R112 matcher455800 passes
 one new canonical cold build:803 compared bytes including owned pointertable68
