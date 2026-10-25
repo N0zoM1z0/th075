@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F138 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F139 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -30,7 +30,88 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest accepted function and compiler investigation: F137
+## Latest complete-function investigation: F138
+
+F138 continues the same complete authored `0050A580/81539` function.
+**No new exact byte or source-presence credit is accepted.** All 92 entries
+remain implemented privately, with an unchanged required whole extent of
+82,106 bytes including the pointer table and remap.
+
+Seven complete serial compiler controls preserve all actual sources,
+headers, raw code, 1,449 relocation records, profiles and full comparisons:
+
+| Complete control | Emitted bytes | Whole positional differences |
+| --- | ---: | ---: |
+| Integer multiply commuted in 855; float conversion on denominator in 997 | 82,109 | 26,719 |
+| Explicit else at the preceding 855/997 case tails | 82,109 | 26,719 |
+| Reuse six accepted thiscall method interfaces at 557 calls | 82,109 | 26,719 |
+| Same complete body with `/G5` | 82,109 | 26,719 |
+| Same complete body with `/G6` | 82,109 | 26,719 |
+| Same complete body with `/G7` | 82,109 | 26,719 |
+| Explicit common exit for all ordinary returns | 83,312 | 28,166 |
+
+The first six emit identical raw code SHA-256
+`1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`.
+After replaying every actual relocation with its real destination or actual
+local COFF offset, all six also equal the entire previous failed F136
+emission, SHA-256
+`8fea52e21cb5cb0896c3f0c565372e64bba677c22dea3ae0e4f2762a05b02bea`.
+They retain 17,435 instructions and the genuine 928-byte frame. There is no
+mask, target rebasing, register alias or partial-credit comparison. These
+compiler observations do not prove equivalence with the target.
+
+The last control adds **279 real JMP instructions**, retaining 1,449 actual
+relocations but increasing the instruction count to 17,714. It maps real
+exit paths to one source label without adding storage, but its extra code
+contradicts the native extent. It is rejected; the current source retains
+ordinary returns and the existing switch breaks.
+
+The local pinned compiler help identifies build 13.10.3077 and `/GB` as its
+default blended CPU model. Tested `/G5`, `/G6` and `/G7` profiles do not change
+this complete body's output. No original per-function or executable-wide
+CPU/compiler profile is inferred. The actual commands/logs are preserved.
+
+The current private draft reuses accepted pointer-only declarations for
+ClearField74 (218 calls), ResetNodeTransform (85), AdvanceNestedFrame (92),
+ResetSecondaryCounter (109), ResetPrimaryCounters (4) and SetPolarVelocity
+(49). Four existing public headers supply five receiver views. Their source
+and headers remain unchanged; no old accepted unit is affected. Native
+packets and destinations remain the same. There is no new inheritance,
+complete-owner layout, allocation or ABI assumption, and no owner is
+instantiated or embedded.
+
+Those 557 actual method COFF fields now name the accepted declaring classes.
+The compiler also renames 94 local table labels, whose real COFF offsets
+remain unchanged. Every field is independently replayed; label names are not
+used to relocate a failure away. Current source is reproducible with
+`.analysis/f138-compose.py`; its active complete diagnostic object is
+`build/probes/F138CallViews.obj`. Preserve the protected previous F134 and
+F136 active objects too. No diagnostic object provides cold acceptance.
+
+Receipts: `.analysis/object-action-50a580/f138/compiler-controls.json`, all
+seven whole reports and actual source/header snapshots under that directory,
+and `.analysis/f138-source-checkpoint.json`. Current failure remains the
+522 physical-GPR difference instructions at 856..early 862 and 998; all
+81,539 main code bytes remain pending.
+
+Canonical totals remain **329 exact functions/units, 716,768 code bytes**,
+**36.32% reviewed authored / 36.25% conservative coverage**. F009 plus 269
+additions retains 706,885 bytes and 205 new accepted source/header inputs.
+All 329 units, 133 canonical objects, 205 accepted inputs, 218 origin files,
+nine shared headers, 91 older drafts and frozen F131..F137 evidence remain
+unchanged. All 97 unknown origins and their 3,608 bytes remain included in
+the conservative denominator; R268 evidence is unchanged. The 98% goal is
+active and incomplete; later phases remain deferred.
+
+Validation: all 3,603 CI tests passed in 169.463s. No accepted unit was
+cold replayed or rebuilt because no accepted input/profile/binding changed.
+Cleanup removes only six obsolete reproducible objects (810,051 bytes)
+and 375 Python bytecode files (8,283,516 bytes), after preserving
+all complete compiler inputs and evidence. Every canonical/active object,
+PDB, source, log, proof and shared tool remains. Receipt:
+`.analysis/f138-preservation-cleanup.json`.
+
+## Previous accepted function and compiler investigation: F137
 
 F137 accepts the complete **0045BDB0 / 296-byte** traversal as
 `BattleEffectAdvanceF137::AdvanceAll` (R045 authored), in the same effect
@@ -566,54 +647,51 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F138
+## Current reconstruction cohort: F139
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
-All 92 native entries have natural source. F137 accepts the effect traversal
-in its current call-chain context; all 81,539 main code bytes remain pending.
+All 92 native entries have private natural source. All 81,539 main code bytes
+remain unaccepted. Do not replace this cohort with unrelated easier work.
 
-Copy `.analysis/object-action-50a580/f137/` fragments and included headers to
-a fresh F138 version before editing. The composed current source and its
-included inputs are byte-identical to F136; retain its active
-`build/probes/F136RecordView.obj` and the protected F134 active object.
-Preserve every F131..F137 checkpoint/source/native/COFF proof, all 329 accepted
-units/133 canonical objects, 205 accepted source/header inputs, 218 origin
-files, nine shared headers and 91 older drafts.
+Copy `.analysis/object-action-50a580/f138/` fragments/headers and its current
+composition rules to a fresh F139 version before editing. Current composition
+uses the accepted pointer-only interfaces at 557 method calls; no accepted
+source/header was edited. Retain `build/probes/F138CallViews.obj`, all old
+F134/F136 active objects, every F131..F138 checkpoint/source/native/COFF proof,
+329 accepted units/133 canonical objects, 205 accepted source/header inputs,
+218 origin files, nine shared headers and 91 older drafts.
 
-The required comparison remains **82,106 bytes**: 81,539 code plus the
-368-byte pointer table and 199-byte remap, all exits/shared paths and all real
-relocations. Current output is 82,109 bytes with 26,719 whole positional
-differences. The F134 audit identifies 522 physical-GPR difference
-instructions at **case856/00515C0E through early 862/00516877**, and
-**case998/0051E215..0051E3E1**. The first region ends at the real float-to-short
-conversion call 006406AC. These instruction/control-edge observations neither
-accept bytes nor prove register/memory/flags/x87 equivalence. Never mask,
-alias, rebase or crop the failures.
+The full comparison requires **82,106 bytes**: 81,539 code plus the 368-byte
+pointer table and 199-byte remap, all exits/shared paths and real relocations.
+Current output remains 82,109 bytes with 26,719 whole positional differences.
+The frozen F134 audit records 522 physical-GPR difference instructions at
+**case856/00515C0E through early 862/00516877**, and
+**case998/0051E215..0051E3E1**. The first region ends at the ordinary
+float-to-short call 006406AC. Do not mask, alias, rebase or crop these failures.
 
-Review prior complete controls and F137's independent narrow/chained fixture
-proofs before further probing. Scoped cases, nested guards, return-void-call
-expressions, explicit float conversions, tested literal changes and the typed
-record view left the whole body unchanged. Tested narrow prefix/postfix/byte
-assignment/cast variants also leave following registers unchanged; promoted
-short arithmetic and reversed comparison alter real instructions. The 997
-double-ratio trial adds four bytes and remains rejected. Rich metadata alone
-does not establish another compiler profile. New probes need new native or
-compiler evidence, with genuine source operations and truthful ABI.
+F138 excludes commuted integer multiplication/denominator-side float cast,
+explicit else at the preceding case tails, accepted declaring-class views,
+and `/G5`/`/G6`/`/G7` as fixes for this complete source. Explicit common-exit
+gotos add 279 jumps and are rejected. Review all earlier F134..F137 controls
+before probing; scoped cases, tested nested guards, unused-return variants,
+explicit conversions, tested literals and typed records already have complete
+negative evidence. Keep the genuine 42 counters, 20 standard float-to-short
+conversions, 64 readonly fields and native 846-call/11-nested-packet records.
 
-Reuse the complete native CFG/CPU-x87/846-call/11-nested-packet records under
-`.analysis/f131-character-selection-frontier/`, 42 genuine counters,
-20 ordinary float-to-short conversions and 64 readonly float fields. Preserve
-the supported bounded 36-byte record view in cases 855/997. F135/F136/F137
-helper contracts are reproducible; original complete owner layouts and
-dynamic virtual destinations remain unknown. Do not replace the active
-cohort with unrelated easier functions or repeat excluded controls.
+Further work needs new native/compiler evidence. One focused question is
+whether exact-valued floating literal types in comparison/addition can share
+the observed four-byte readonly operands while affecting later GPR state.
+Use complete independent toy layouts first, including real FPU-status and
+integer-conversion constraints; reject incompatible operand widths. F135's
+2.0 multiplier control does not cover every comparison/addition context.
+Do not infer original types from a successful build or introduce hidden dummy
+operations, ABI changes or fake storage to force register selection.
 
-Keep compiler builds serial, monitor resources, and cold replay only new or
-affected units. Do not rebuild unchanged complete drafts or old accepted
-objects. Freeze actual inputs/raw code/all relocations before cleaning only
-obsolete reproducible outputs. All 97 unknown origins remain included and
-R268 evidence unchanged. Later phases and Run/queue/resource layout questions
-remain deferred.
+Keep builds serial and cold replay only new/affected units. Do not rebuild
+unchanged complete drafts or accepted objects. Freeze actual inputs/raw
+code/all relocations before removing obsolete reproducible outputs.
+All 97 unknown origins remain included and R268 evidence unchanged. Later
+phases and Run/queue/resource layout questions remain deferred.
 
 ## F135 investigation at the F134 checkpoint
 
