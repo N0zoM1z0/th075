@@ -27512,3 +27512,1479 @@ offset = 1468
 type = "DIR32"
 symbol = "?g_AtlasNumberAdvanceAt0068C868@@3PAFA"
 target = 0x0068C868
+
+[units.background-transform-00449ce0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00449CE0"]
+symbol = "?ApplyTransformAt00449CE0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00449CE0
+size = 91
+[[units.background-transform-00449ce0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00449ce0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044a180]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044A180"]
+symbol = "?ApplyTransformAt0044A180@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044A180
+size = 91
+[[units.background-transform-0044a180.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044a180.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044a470]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044A470"]
+symbol = "?ApplyTransformAt0044A470@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044A470
+size = 91
+[[units.background-transform-0044a470.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044a470.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044a5c0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044A5C0"]
+symbol = "?DrawSidePairAt0044A5C0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044A5C0
+size = 186
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044a5c0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044a6a0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044A6A0"]
+symbol = "?ApplyTransformAt0044A6A0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044A6A0
+size = 91
+[[units.background-transform-0044a6a0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044a6a0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044a7f0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044A7F0"]
+symbol = "?DrawSidePairAt0044A7F0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044A7F0
+size = 186
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044a7f0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044a8d0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044A8D0"]
+symbol = "?ApplyTransformAt0044A8D0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044A8D0
+size = 91
+[[units.background-transform-0044a8d0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044a8d0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044aa20]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044AA20"]
+symbol = "?DrawSidePairAt0044AA20@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044AA20
+size = 186
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044aa20.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044ab00]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044AB00"]
+symbol = "?ApplyTransformAt0044AB00@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044AB00
+size = 91
+[[units.background-transform-0044ab00.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044ab00.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044ada0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044ADA0"]
+symbol = "?ApplyTransformAt0044ADA0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044ADA0
+size = 91
+[[units.background-transform-0044ada0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044ada0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044b040]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044B040"]
+symbol = "?ApplyTransformAt0044B040@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044B040
+size = 91
+[[units.background-transform-0044b040.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044b040.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044b190]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044B190"]
+symbol = "?DrawSidePairAt0044B190@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044B190
+size = 186
+[[units.background-side-pair-0044b190.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044b190.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044b190.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044b190.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044b190.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044b190.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044b190.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044b270]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044B270"]
+symbol = "?ApplyTransformAt0044B270@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044B270
+size = 91
+[[units.background-transform-0044b270.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044b270.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044b3c0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044B3C0"]
+symbol = "?DrawSidePairAt0044B3C0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044B3C0
+size = 186
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044b3c0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044b4a0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044B4A0"]
+symbol = "?ApplyTransformAt0044B4A0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044B4A0
+size = 91
+[[units.background-transform-0044b4a0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044b4a0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044b9c0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044B9C0"]
+symbol = "?ApplyTransformAt0044B9C0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044B9C0
+size = 91
+[[units.background-transform-0044b9c0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044b9c0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044bee0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044BEE0"]
+symbol = "?ApplyTransformAt0044BEE0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044BEE0
+size = 91
+[[units.background-transform-0044bee0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044bee0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044c400]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044C400"]
+symbol = "?ApplyTransformAt0044C400@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044C400
+size = 91
+[[units.background-transform-0044c400.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044c400.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044c560]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044C560"]
+symbol = "?DrawSidePairAt0044C560@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044C560
+size = 186
+[[units.background-side-pair-0044c560.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044c560.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044c560.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c560.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044c560.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c560.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044c560.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044c640]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044C640"]
+symbol = "?ApplyTransformAt0044C640@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044C640
+size = 91
+[[units.background-transform-0044c640.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044c640.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044c7a0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044C7A0"]
+symbol = "?DrawSidePairAt0044C7A0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044C7A0
+size = 186
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044c7a0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044c880]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044C880"]
+symbol = "?ApplyTransformAt0044C880@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044C880
+size = 91
+[[units.background-transform-0044c880.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044c880.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044c9e0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044C9E0"]
+symbol = "?DrawSidePairAt0044C9E0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044C9E0
+size = 186
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044c9e0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044cac0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044CAC0"]
+symbol = "?ApplyTransformAt0044CAC0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044CAC0
+size = 91
+[[units.background-transform-0044cac0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044cac0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044cd60]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044CD60"]
+symbol = "?ApplyTransformAt0044CD60@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044CD60
+size = 91
+[[units.background-transform-0044cd60.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044cd60.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044d000]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044D000"]
+symbol = "?ApplyTransformAt0044D000@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044D000
+size = 91
+[[units.background-transform-0044d000.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044d000.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044d160]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044D160"]
+symbol = "?DrawSidePairAt0044D160@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044D160
+size = 186
+[[units.background-side-pair-0044d160.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044d160.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044d160.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044d160.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044d160.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044d160.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044d160.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044d240]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044D240"]
+symbol = "?ApplyTransformAt0044D240@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044D240
+size = 91
+[[units.background-transform-0044d240.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044d240.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044d3a0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044D3A0"]
+symbol = "?DrawSidePairAt0044D3A0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044D3A0
+size = 186
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044d3a0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044d480]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044D480"]
+symbol = "?ApplyTransformAt0044D480@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044D480
+size = 91
+[[units.background-transform-0044d480.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044d480.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-copy-dark-0044d910]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundTransform::CopyDarkAt0044D910"]
+symbol = "?CopyDarkAt0044D910@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044D910
+size = 88
+[[units.background-copy-dark-0044d910.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-copy-dark-0044d910.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-copy-dark-0044ddc0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundTransform::CopyDarkAt0044DDC0"]
+symbol = "?CopyDarkAt0044DDC0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044DDC0
+size = 88
+[[units.background-copy-dark-0044ddc0.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-copy-dark-0044ddc0.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044df20]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044DF20"]
+symbol = "?DrawSidePairAt0044DF20@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044DF20
+size = 186
+[[units.background-side-pair-0044df20.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044df20.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044df20.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044df20.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044df20.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044df20.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044df20.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044e000]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044E000"]
+symbol = "?ApplyTransformAt0044E000@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044E000
+size = 91
+[[units.background-transform-0044e000.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044e000.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044e160]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044E160"]
+symbol = "?DrawSidePairAt0044E160@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044E160
+size = 186
+[[units.background-side-pair-0044e160.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044e160.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044e160.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044e160.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044e160.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044e160.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044e160.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044e240]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044E240"]
+symbol = "?ApplyTransformAt0044E240@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044E240
+size = 91
+[[units.background-transform-0044e240.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044e240.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044e760]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044E760"]
+symbol = "?ApplyTransformAt0044E760@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044E760
+size = 91
+[[units.background-transform-0044e760.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044e760.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-0044f250]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044F250"]
+symbol = "?ApplyTransformAt0044F250@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044F250
+size = 91
+[[units.background-transform-0044f250.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044f250.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044f3b0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044F3B0"]
+symbol = "?DrawSidePairAt0044F3B0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044F3B0
+size = 186
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044f3b0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044f490]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044F490"]
+symbol = "?ApplyTransformAt0044F490@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044F490
+size = 91
+[[units.background-transform-0044f490.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044f490.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-0044f5f0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt0044F5F0"]
+symbol = "?DrawSidePairAt0044F5F0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x0044F5F0
+size = 186
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-0044f5f0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-0044f6d0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt0044F6D0"]
+symbol = "?ApplyTransformAt0044F6D0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x0044F6D0
+size = 91
+[[units.background-transform-0044f6d0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-0044f6d0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-copy-light-00450040]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundTransform::CopyLightAt00450040"]
+symbol = "?CopyLightAt00450040@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00450040
+size = 88
+[[units.background-copy-light-00450040.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-copy-light-00450040.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-004501a0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt004501A0"]
+symbol = "?DrawSidePairAt004501A0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x004501A0
+size = 186
+[[units.background-side-pair-004501a0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-004501a0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-004501a0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-004501a0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-004501a0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-004501a0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-004501a0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-00450280]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00450280"]
+symbol = "?ApplyTransformAt00450280@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00450280
+size = 91
+[[units.background-transform-00450280.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00450280.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-00450830]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00450830"]
+symbol = "?ApplyTransformAt00450830@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00450830
+size = 91
+[[units.background-transform-00450830.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00450830.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-00450990]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt00450990"]
+symbol = "?DrawSidePairAt00450990@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x00450990
+size = 186
+[[units.background-side-pair-00450990.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-00450990.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-00450990.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-00450990.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-00450990.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-00450990.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-00450990.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-00450a70]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00450A70"]
+symbol = "?ApplyTransformAt00450A70@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00450A70
+size = 91
+[[units.background-transform-00450a70.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00450a70.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-transform-00451080]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00451080"]
+symbol = "?ApplyTransformAt00451080@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00451080
+size = 91
+[[units.background-transform-00451080.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00451080.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-004511e0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt004511E0"]
+symbol = "?DrawSidePairAt004511E0@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x004511E0
+size = 186
+[[units.background-side-pair-004511e0.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-004511e0.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-004511e0.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-004511e0.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-004511e0.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-004511e0.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-004511e0.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-004512c0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt004512C0"]
+symbol = "?ApplyTransformAt004512C0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x004512C0
+size = 91
+[[units.background-transform-004512c0.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-004512c0.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-copy-light-00451bc0]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundTransform::CopyLightAt00451BC0"]
+symbol = "?CopyLightAt00451BC0@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00451BC0
+size = 88
+[[units.background-copy-light-00451bc0.relocations]]
+offset = 31
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-copy-light-00451bc0.relocations]]
+offset = 54
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0
+
+[units.background-side-pair-00451d20]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::DrawSidePairAt00451D20"]
+symbol = "?DrawSidePairAt00451D20@BackgroundPoliciesF178@@QAEXXZ"
+target_address = 0x00451D20
+size = 186
+[[units.background-side-pair-00451d20.relocations]]
+offset = 11
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.background-side-pair-00451d20.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.background-side-pair-00451d20.relocations]]
+offset = 22
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-00451d20.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.background-side-pair-00451d20.relocations]]
+offset = 36
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.background-side-pair-00451d20.relocations]]
+offset = 107
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.background-side-pair-00451d20.relocations]]
+offset = 178
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.background-transform-00451e00]
+source = "src/BackgroundPoliciesF178.cpp"
+object = "build/matching/BackgroundPoliciesF178.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BackgroundStage::ApplyTransformAt00451E00"]
+symbol = "?ApplyTransformAt00451E00@BackgroundPoliciesF178@@QAEXPAVSpriteQuad40CA80@@PAK0@Z"
+target_address = 0x00451E00
+size = 91
+[[units.background-transform-00451e00.relocations]]
+offset = 34
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.background-transform-00451e00.relocations]]
+offset = 57
+type = "REL32"
+symbol = "?RotateQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004116F0

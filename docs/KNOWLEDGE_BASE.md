@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F177.
+Updated 2026-10-26 for continued reconstruction, F178.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F177 accepts complete digit-atlas
-initialization; all complete large drafts, including0055AC80, remain unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
+policies; all complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,49 @@ initialization; all complete large drafts, including0055AC80, remain unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 423 units,
-  732,938 code bytes, 160 canonical objects and 256 accepted inputs.
-- Reviewed authored coverage is 37.14%; conservative coverage is 37.07%.
+  complete cold-exact units/all actual relocations. Counts are 477 units,
+  739,550 code bytes, 161 canonical objects and 258 accepted inputs.
+- Reviewed authored coverage is 37.47%; conservative coverage is 37.41%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F178 accepted54 background policies:** one new canonical object cold-replays
+all6,612 CODE bytes/all198 fields (144 REL32/54 DIR32) across32 whole91-byte
+transforms,18 whole186-byte side-pair renderers, two dark/two light88-byte copies.
+Every frozen full body hash/CFG/return/alignment/no-owned-table observation is
+checked independently under R055/R056/R101. Three-pointer policies preserve
+thiscall/RET12, source Scale/Rotate, all33-dword/132-byte assignment and color;
+pairs preserve plain RET, real captured camera integers and two this18 sprite
+calls with exact coordinates/pivots/colors/scale/angle/flags. Existing complete
+physical SpriteQuad view and helper/global headers stay unchanged; no partial
+owner instances or shared original class/virtual-layout inference. The entire
+four-byte160.0f COFF readonly section/all definitions match657834 in preview
+and fresh canonical objects. No helper/data credit or compiler-local rebasing.
+
+Full instruction signatures independently grouped all54 into four families;
+four manual representative natural bodies passed whole previews before expansion.
+Every one of54 bodies then passed its own whole preview and canonical cold
+comparison. Source pattern reuse itself gives no credit. Original roles remain
+literal via COFF maps; no aliases, crops, masks, fake ABI, inert locals, padding,
+fake returns, assembly or conditional exact bodies. All423 prior units/160
+objects/256 inputs and14 active objects/all14 F157/both F159 remain unchanged.
+Only54 new units/one object were cold-replayed. All97 unknowns and pending bytes
+remain in the conservative denominator.
+
+Immediately continue R040435A70/6,404-byte RenderBackground: complete CFG/ABI,
+owned-table reconciliation, local construction/packet extents, camera/math and
+all actual callee/global/readonly bindings before natural source/full comparison.
+Existing47 canonical call sites and reused drawing views supply context; R163
+40D940 remains unknown with no origin/exact credit. Preserve all pending drafts;
+separate cycle/blend policies require their own manifests before adoption.
+Continue immediately after checkpoint/commit/push; never pause automatically.
+Receipts: `.analysis/f178-background-policies-unit-proof.json`,
+`.analysis/f178-background-policies-canonical-replay.json`,
+`.analysis/f178-canonical-readonly.json` and all54 complete native/source reports.
 
 **F177 accepted digit-atlas initialization:** complete R042446590/1,483 CODE
 bytes/all77 actual DIR32 fields pass one canonical cold build. Full CFG/42
