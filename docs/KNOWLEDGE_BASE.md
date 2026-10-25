@@ -25288,7 +25288,7 @@ All source fragments, native/helper/CFG/x87/family/conversion/local/constant/
 critical-operand/guard/parent evidence, logs, PDBs, canonical objects and
 shared tools remain. Receipt:`.analysis/f133-preservation-cleanup.json`.
 
-## Current reconstruction cohort: F134
+## F134 investigation at the F133 checkpoint
 
 Continue the same authored `CharacterObject::AdvanceAt0050A580`, starting
 at **case845 /00513235/1171 investigation bytes**. Do not substitute another
@@ -25323,3 +25323,111 @@ unknown origins; R268 evidence stays immutable. Keep builds serial, cold
 replay only new/affected units and clean only obsolete reproducible outputs
 after freezing evidence. Run/queue/resource layout questions remain
 unresolved; later project phases stay deferred.
+
+
+## F134 complete large-function source and compiler frontier (2026-10-25)
+
+F134 completes natural private source for **all 92 native dispatch entries**
+of the same authored `0050A580/81539` function, adding the48 entries missing
+at F133. No entry remains unwritten. `Preview.cpp` is one complete body;
+the 91 nondefault fragments plus default cover 81,319 native investigation
+bytes, with220 prologue bytes completing the81,539 code-byte function.
+The required whole comparison remains **82,106 bytes**, including the 368 byte
+pointer table,199 byte remap, every exit and shared/default path.
+
+Current inputs and proofs are under `.analysis/object-action-50a580/f134/`.
+The complete source accounts for **826 explicit helper calls plus 20 standard
+float-to-short operations**, matching 846 actual native call sites. The
+native readonly-value review now covers **64 fields: 60 float32/four float64**;
+double 0.05/1.0 jitter, double 0.8 addition and double 998.9 comparison remain
+double. Names/layouts remain provisional; private owners are pointer-only.
+
+`local-roles.json` verifies **42 genuine counter slots**, native EBP-4 through
+-168. Case906 has two actual loops reusing its one counter. An isolated
+VC7.1 fixture shows that identical `i` identifiers in already distinct
+braced branches receive consecutive slots. The complete source uses real
+counters in existing scopes, without additional locals, padding or frame
+arrays. This compiler observation does not establish original identifiers.
+`later-homing-family-review.json` independently verifies the whole native
+869/870/871/872/873 operand relations, including their actual loop/spill
+slots and child-effect IDs. Native case900/906 owner+0x62 reads, case904's
+repeated position integration and case996's actual 998.9/900 behavior are
+retained literally.
+
+Eight serial compiler builds comprised one isolated fixture and seven whole
+body probes. All complete probe inputs, raw code hashes/bytes, actual COFF
+relocations and logs are retained. The final active object is
+`build/probes/F134CompleteFinal.obj`; the first raw probe and later rejected
+spellings are frozen through their actual complete source and reports.
+Natural owner-position-first addition fixes the earlier 800/817/849/855
+evaluation order. Removing redundant casts alone, combining the 855 final
+condition, final break/return spelling and an integer 2 multiplier do not
+resolve the remaining frontier. The 997 double-ratio trial is rejected:
+it adds four further bytes; the current source retains the float ratio.
+
+**The final whole comparison fails.** The emitted body is 82,109 bytes versus
+82,106 target, and its unmasked whole-position comparison reports 26,719
+different bytes, including the three extra bytes. Both have 17,435 code
+instructions and the 928 byte frame. `instruction-observations.json` checks
+every instruction's mnemonic, operand kinds/widths, nonbranch immediates,
+external call destinations, nonlocal displacements and direct control-edge
+instruction indices. It records **522 instructions with real physical
+register differences**, concentrated at **case856/00515C0E through early
+case862/00516877**, and **case998/0051E215..0051E3E1**. Actual local table
+addresses follow the emitted extent. These observations explain the current
+compiler frontier; they neither mask/rebase the byte comparison nor prove
+register/memory/flags/x87 equivalence. All 1,449 actual relocations are replayed
+using independent helper/global/readonly destinations or real COFF offsets.
+No source-presence acceptance, canonical cold replay or exact byte is claimed.
+
+Preserve `.analysis/f134-source-checkpoint.json`. All 321 accepted units,
+130 canonical objects,198 accepted inputs,218 origin files, nine shared
+headers,91 older drafts and frozen F131/F132/F133 source evidence remain
+unchanged. All 81,539 code bytes stay unaccepted in the conservative denominator;
+the 97 unknown origins remain unknown. The 98% goal remains active and
+incomplete at **715,741 exact bytes /36.20% conservative coverage**.
+
+Validation: all 3,603 CI tests passed in 169.469s; target/tracking/progress/
+diff checks passed. Cleanup removed only seven obsolete reproducible F134
+probe objects (810,646 bytes) and 375 Python bytecode files
+(8,283,506 bytes), after freezing their actual source/raw-code/relocation
+evidence. The current full object, every PDB, source, log, proof, canonical
+object and shared tool remains. Receipt: `.analysis/f134-preservation-cleanup.json`.
+
+## Current reconstruction cohort: F135
+
+Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
+F134 has finished all 92 native entries; do not restart source writing or
+substitute another cohort. Full acceptance still requires **82,106 bytes**:
+81,539code plus 368 byte pointer table and199 byte remap, every shared path,
+exit and actual relocation. The complete private source remains unaccepted.
+
+Preserve `.analysis/object-action-50a580/f134/`, its initial/intermediate
+complete sources/reports and `.analysis/f134-source-checkpoint.json`.
+Copy current source/headers to a fresh F135 version before editing. Retain
+`build/probes/F134CompleteFinal.obj` as the active diagnostic object and keep
+all321 canonical units/130 objects and their dependencies unchanged.
+
+Investigate natural source/compiler register allocation at **case856,
+native00515C0E, through early862/00516877**, and **case998, native0051E215
+through0051E3E1**. Current output is 82,109 bytes, three too long; the full
+unmasked comparison fails with 26,719 positional differences. The complete
+instruction audit has 522 instructions with physical-register differences,
+while 17,435 mnemonics/operand kinds/widths and direct control-edge indices
+agree. Do not mistake this audit for semantic equivalence or exact credit.
+The 1,449 real relocation destinations are independently recorded; never
+mask/register-alias/rebase away failures or crop the comparison.
+
+Use the whole native CFG, CPU/x87,846call/11nested-packet evidence under
+`.analysis/f131-character-selection-frontier/`. Preserve 42 real counters
+(906 reuses one twice),20 standard conversions and 64 readonly fields
+(60 single/four double), literal field/control order and incomplete-owner
+pointer views. Review recorded failed spelling trials before further probes.
+No fake locals/padding/returns, guessed arrays/layouts, assembly, pasted bytes,
+conditional bodies, explicit CRT shim or private-owner values are permitted.
+
+Keep compiler builds serial and cold replay only new/affected units, after
+a valid complete source/manifest comparison is ready. Freeze actual inputs,
+raw code and every relocation before removing obsolete reproducible probes.
+All 97 unknown origins and R268 evidence remain unchanged; later project
+phases and unresolved Run/queue/resource layout questions stay deferred.
