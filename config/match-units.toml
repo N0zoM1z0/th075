@@ -25270,3 +25270,106 @@ offset = 208
 type = "REL32"
 symbol = "?clear@?$deque@PAUEffectReleaseViewF160@@V?$allocator@PAUEffectReleaseViewF160@@@std@@@std@@QAEXXZ"
 target = 0x0045C0E0
+
+[units.effect-initialize-four-deques-0045b920]
+source = "src/EffectManagerLifetimeF161.cpp"
+object = "build/matching/EffectManagerLifetimeF161.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterCommandQueues::InitializeAt0045B920"]
+symbol = "??0EffectManagerLifetimeF161@@AAE@XZ"
+target_address = 0x0045B920
+size = 131
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ"
+target = 0x006563B6
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 31
+type = "DIR32"
+symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+target = 0x0045BF30
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 36
+type = "DIR32"
+symbol = "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+target = 0x0045BEE0
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 52
+type = "REL32"
+symbol = "??_L@YGXPAXIHP6EX0@Z1@Z"
+target = 0x00641C78
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 101
+type = "REL32"
+symbol = "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ"
+target = 0x0045C0E0
+[[units.effect-initialize-four-deques-0045b920.relocations]]
+offset = 123
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+[units.effect-destroy-owned-effects-0045b9b0]
+source = "src/EffectManagerLifetimeF161.cpp"
+object = "build/matching/EffectManagerLifetimeF161.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEffectManager::DestroyOwnedEffectsAt0045B9B0"]
+symbol = "??1EffectManagerLifetimeF161@@QAE@XZ"
+target_address = 0x0045B9B0
+size = 85
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 6
+type = "DIR32"
+symbol = "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ"
+target = 0x006563D6
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 12
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 20
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 39
+type = "REL32"
+symbol = "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ"
+target = 0x0045BA30
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 51
+type = "DIR32"
+symbol = "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ"
+target = 0x0045BF30
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 67
+type = "REL32"
+symbol = "??_M@YGXPAXIHP6EX0@Z@Z"
+target = 0x00641D4A
+[[units.effect-destroy-owned-effects-0045b9b0.relocations]]
+offset = 77
+type = "DIR32"
+symbol = "__except_list"
+target = 0x00000000
+
+[units.effect-bind-fighter-0045ba10]
+source = "src/EffectManagerLifetimeF161.cpp"
+object = "build/matching/EffectManagerLifetimeF161.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleEffectManager::BindFighterAt0045BA10"]
+symbol = "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z"
+target_address = 0x0045BA10
+size = 21
+relocations = []

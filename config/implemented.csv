@@ -375,3 +375,6 @@ FighterState::ClearAuxiliaryWordsAt00453A10
 InputMapping::ClearHeldCounts
 FighterState::SelectMovementAnimation
 BattleEffectManager::DeleteFourListsAt0045BA30
+FighterCommandQueues::InitializeAt0045B920
+BattleEffectManager::DestroyOwnedEffectsAt0045B9B0
+BattleEffectManager::BindFighterAt0045BA10

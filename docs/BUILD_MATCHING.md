@@ -94,6 +94,23 @@ replayed, including switch dispatch/table labels. Same-section destinations
 must agree with the freshly built COFF symbol offsets. A size mismatch or
 unreviewed relocation prevents exact acceptance.
 
+The effect lifecycle source also owns exception cleanup/handler code and
+unwind/state data outside its main function sections. Its acceptance requires
+the complete coupled source graph from the same freshly built object:
+
+```bash
+env -u DISPLAY -u WAYLAND_DISPLAY WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d' \
+  scripts/repo-python scripts/replay-exact-units.py --unit effect-initialize-four-deques-0045b920 --unit effect-destroy-owned-effects-0045b9b0 --unit effect-bind-fighter-0045ba10
+scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/replay/summary.json
+```
+
+The second command verifies all24 whole code/data sections and46 fields,
+including both actual SafeSEH roots and actual source-local destinations.
+It checks the cold receipt against that object/source/profile. The three
+authored bodies earn237 code bytes; associated compiler/library/data sections
+receive no authored credit. Nine public checks guard the frozen plan and
+reject incomplete EH evidence even when the main function is unchanged.
+
 Public invocation uses the same entry point:
 
 ```bash

@@ -376,3 +376,6 @@ FighterState::ClearAuxiliaryWordsAt00453A10,0x00453A10,function
 InputMapping::ClearHeldCounts,0x004071A0,function
 FighterState::SelectMovementAnimation,0x00451EB0,function
 BattleEffectManager::DeleteFourListsAt0045BA30,0x0045BA30,function
+FighterCommandQueues::InitializeAt0045B920,0x0045B920,function
+BattleEffectManager::DestroyOwnedEffectsAt0045B9B0,0x0045B9B0,function
+BattleEffectManager::BindFighterAt0045BA10,0x0045BA10,function

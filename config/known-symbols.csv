@@ -358,3 +358,6 @@ address,name,module,confidence,evidence
 0x004071A0,InputMapping::ClearHeldCounts,InputMapping,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
 0x00451EB0,FighterState::SelectMovementAnimation,FighterState,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
 0x0045BA30,BattleEffectManager::DeleteFourListsAt0045BA30,BattleEffectManager,inferred,F159; complete canonical cold exact; explicit call-only source-symbol mapping; original role retained/full owner unknown
+0x0045B920,FighterCommandQueues::InitializeAt0045B920,GameContextPolicy,inferred,F161; complete canonical cold exact plus coupled whole EH/source graph; original role retained; no complete owner claim
+0x0045B9B0,BattleEffectManager::DestroyOwnedEffectsAt0045B9B0,BattleEffectManager,inferred,F161; complete canonical cold exact plus coupled whole EH/source graph; original role retained; no complete owner claim
+0x0045BA10,BattleEffectManager::BindFighterAt0045BA10,BattleEffectManager,inferred,F161; complete canonical cold exact plus coupled whole EH/source graph; original role retained; no complete owner claim

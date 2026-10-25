@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F160.
+Updated 2026-10-26 for continued reconstruction, F161.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F160 adds two complete functions/963 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F161 adds three complete functions/237 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,41 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 377 units,
-  720,508 code bytes, 143 canonical objects and 222 accepted inputs.
-- Reviewed authored coverage is 36.51%; conservative coverage is 36.44%.
+  complete cold-exact units/all actual relocations. Counts are 380 units,
+  720,745 code bytes, 144 canonical objects and 224 accepted inputs.
+- Reviewed authored coverage is 36.52%; conservative coverage is 36.45%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F161 accepted effect lifecycle:**131-byte initialization45B920,85-byte
+destruction45B9B0 and21-byte fighter binding45BA10 pass one new canonical cold
+build,237 complete authored bytes and15 primary fields. The same fresh object
+passes coupled whole-section verification:24 complete sections /1,076 bytes /
+46 fields, including both32-byte cleanup/handler sections, both36-byte
+unwind/state carriers,17 whole vendor helpers/703 bytes and both actual SafeSEH
+symbol-index roots. Local destinations follow actual fresh COFF offsets, never
+an alias or fixed native-label rebasing. Compiler/library/data add no credit.
+The new frozen manifest/checker and nine public positive/negative checks
+supplement the unchanged canonical comparator; run the coupled workflow in
+BUILD_MATCHING.md when replaying any affected lifecycle source inputs.
+
+The source claims only an observed lifetime prefix with live bound fighter at0
+and four complete pointer vendor deques at4. Constructor private; no view
+instances, allocations or sizeof-owner use. No complete original owner/pointee
+type or class spelling is recovered. Natural member construction/destruction
+also emits complete exceptional cleanup; explicit policies retain the actual
+four-clear loop and call to accepted owned-pointer cleanup. Original native
+roles and R166/R244/R241 origin records remain literal. All377 prior units,
+143 objects,222 adoption inputs and97 unknown origins are unchanged.
+
+Current complete151-entry main source is F161, copied byte-for-byte from F160/
+F156, SHA prefix97e045e6. No new main compiler build/control ran; inherited full
+failure stays83,922/18,539/all2,352 fields, first004ADEFB. Continue F162 without
+pausing; the full pending large functions remain in the conservative denominator.
 
 **F160 accepted movement/cleanup:**742-byte base movement451EB0 and221-byte
 effect cleanup45BA30 pass two new canonical cold builds,963 complete bytes and
@@ -110,7 +136,7 @@ supersede the incomplete empty F157 shortlist without a full CFG or indirect
 write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f160/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f161/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams

@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F160.
+Updated 2026-10-26 for continued reconstruction, F161.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F160 accepts two complete functions/963 bytes. Both
-large drafts remain unaccepted. Current F160 outcomes supersede historical
+phases remain deferred. F161 accepts three complete functions/237 bytes. Both
+large drafts remain unaccepted. Current F161 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -35,14 +35,14 @@ user changes it. Only a new explicit user request to pause authorizes pausing.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 377 / 377 / 377 |
-| Exact code bytes | 720,508 |
-| Reviewed authored coverage | 720,508 / 1,973,516 (36.51%) |
-| Conservative coverage, including pending bytes | 720,508 / 1,977,124 (36.44%) |
-| Canonical objects / accepted source-header inputs | 143 / 222 |
+| Source-present / exact functions / exact units | 380 / 380 / 380 |
+| Exact code bytes | 720,745 |
+| Reviewed authored coverage | 720,745 / 1,973,516 (36.52%) |
+| Conservative coverage, including pending bytes | 720,745 / 1,977,124 (36.45%) |
+| Canonical objects / accepted source-header inputs | 144 / 224 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 317 additions / 710,625 code bytes / 222 inputs. Origin evidence through
+F009 plus 320 additions / 710,862 code bytes / 224 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -51,8 +51,10 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **6afb9bb (F159)**. Earlier checkpoints
-include **cbda145 (F158)** and **f8f655c (F156)**. Policy correction **7f34a0b**
+The preceding reconstruction checkpoint is **c758e14 (F160)**; continuation policy
+**0322984** also removes the stale README stop instruction. Earlier checkpoints
+include **6afb9bb (F159)**, **cbda145 (F158)** and **f8f655c (F156)**.
+Policy correction **7f34a0b**
 explicitly prohibits pausing.
 F156 accepts the complete 149-byte R068 callback
 `fighter-bind-animation-00453d80` in `src/FighterAnimationReset453D80.cpp`.
@@ -82,7 +84,85 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F160 outcomes and continuation
+## Current F161 outcomes and continuation
+
+One new canonical object accepts three complete authored functions/237 bytes
+from `src/EffectManagerLifetimeF161.cpp` and its new header:
+
+| Unit | Address | Code bytes |
+| --- | --- | --- |
+| effect-initialize-four-deques-0045b920 | 0045B920 | 131 |
+| effect-destroy-owned-effects-0045b9b0 | 0045B9B0 | 85 |
+| effect-bind-fighter-0045ba10 | 0045BA10 | 21 |
+
+All three pass canonical cold replay, including all15 primary relocation fields.
+The same fresh object also passes `scripts/verify-effect-lifecycle-exact.py`:
+all24 complete code/data sections /1,076 bytes /46 actual fields, including two
+entire32-byte cleanup/handler sections, two entire36-byte unwind/state sections,
+17 entire vendor helper bodies /703 bytes, and both actual SafeSEH symbol-index
+roots. Main bodies alone are insufficient: use the coupled commands in
+`BUILD_MATCHING.md` after any affected source/header/profile/field change.
+Compiler/library/metadata sections add no authored credit. The existing generic
+comparator and every frozen origin verifier/evidence file are unchanged.
+
+The source models an observed lifetime prefix: the live bound fighter pointer
+at0, followed by four complete vendor pointer deques at4. Its constructor is
+private and no view instance, allocation or sizeof-owner use exists. This does
+not recover the complete original owner, nominal pointee type or class spelling.
+Member construction/destruction and exceptional cleanup are compiler generated;
+the real four-clear loop and owned-pointer release call are explicit natural
+C++. Original R166/R244/R241 role names remain literal through explicit COFF
+maps; all377 prior units/143 objects/222 adoption inputs and97 unknown origins
+are preserved. Nine new public checks reject missing/cropped EH/data, wrong
+SafeSEH roots, shifted local labels with old absolute bindings and unlisted
+owned sections, including corruption that leaves the main body unchanged.
+
+The complete151-entry main source is now preserved at
+`.analysis/character-move-4ac040/f161/`, byte-identical to F160/F156,
+SHA prefix97e045e6. No main compiler build or new main source control ran in
+F161. Its inherited whole failure stays83,922 bytes /18,539 differences /
+all2,352 fields, first004ADEFB; both large drafts remain in the full goal.
+
+Continue fresh F162 from this full baseline without pausing. Seek genuine
+source/type/expression evidence for the state89 register difference and retain
+the closed-controls history. The lifecycle dependencies are now accepted;
+their surrounding real fighter initialization4567B0 and effect creation45BB10
+contexts may guide further whole-function reconstruction. Check current ledgers
+before selecting them. Never infer owner84 from allocation or stride20 alone.
+Preserve every active older object, both F159 traces and all14 F157 probes.
+
+Receipts: `.analysis/f161-lifecycle-unit-proof.json`,
+`.analysis/f161-lifecycle-canonical-replay.json`,
+`.analysis/f161-lifecycle-canonical-sections.json`,
+`config/effect-lifecycle-exact-sections.json` and F161 `source-evidence-audit.json`.
+
+Public CI passed **3,612 tests in 185.644 seconds**. Target,
+tracking, progress and diff checks pass. Only the three new units were cold
+replayed,237/237 authored bytes and15 primary fields in one new object. The
+same fresh object passes all24 complete source sections /1,076 bytes /46 fields
+and both SafeSEH roots; compiler/library/data add no authored credit. All377
+prior units,143 canonical objects,222 adoption inputs, existing headers, every
+origin/verifier guard, forty protected groups and all older active objects were
+hash-verified unchanged. No existing accepted dependency required replay.
+
+Four compiler builds ran serially: two diagnostics and two canonical builds of
+the new shared object. The first three invocations inherited the host display
+environment; their graphical-driver control was not verified. After discovering
+this wrapper behavior, the final canonical replay explicitly unsets DISPLAY and
+WAYLAND_DISPLAY and disables Wine graphical drivers, then rechecks the complete
+source/EH graph against that fresh object. It supersedes the earlier receipt.
+Use the explicit environment in BUILD_MATCHING.md; shared tools/settings are
+unchanged. Correction: `.analysis/f161-headless-correction.json`.
+No main-function control/build ran; all151 source entries,
+prefix/default/shared tail and headers remain byte-identical to F160/F156.
+Cleanup removed two obsolete probes (29,237 bytes)
+and377 bytecode files (8,312,294 bytes); complete raw
+code/data/symbol/relocation/source/profile receipts remain. Final receipts:
+`.analysis/f161-preservation-final.json`, `.analysis/f161-cleanup.json` and
+`.analysis/f161-source-checkpoint.json`. The98% goal stays active and incomplete;
+do not pause it or wait for another resume request.
+
+## Retained F160 outcomes
 
 Two new objects pass canonical cold replay,963/963 complete authored bytes with
 all29 actual fields (27 REL32 and two DIR32):

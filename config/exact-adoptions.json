@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "69b9512c1820109784a99fa20d87d403d0649143d56aa8905cc889426ae41823"
+      "current_sha256": "8c65ad148bf848bc4f09d495bd2aec29ec001782c9a2fcc9bb917303e144519a"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7837ae17065f157876b39dac4fc705ee502ab8931b0ea9791fe4badc34f63b75"
+      "current_sha256": "bfe42e29a3630ffc5f567eb71de72c544b32b5043008c3236eb83a493d7d1f70"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "b51739bb4c454dfa0ffbe2acfba7273c2863dc1452154fa20a6c6e1a793a3805"
+      "current_sha256": "f1b439c1c08fc7541d22a7f8fc0c85b152ad0fd9c9926c40144fcf53cead5cba"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "432751eca112e99afc33bba519871c58e37cd80c57d4e42057dc90dc38c71e44"
+      "current_sha256": "beb8d50dcad6c6f529c85891632f6347f17b6777a0012ee14c7159d3d1b17915"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "b90720c22cc0fa67c832b867ec4266a9bd1e13ecb777678af5067e395ba8fbfe"
+      "current_sha256": "fa323f0308474a27d5decf14ffa8dfcf7e2a668ee7e4a7b48c76644cc11a9025"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -13988,6 +13988,138 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-mixed-context",
         "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045B920",
+        "size": "131",
+        "span_end": "0x0045B9A2",
+        "current_name": "FUN_0045b920",
+        "proposed_name": "FighterCommandQueues::InitializeAt0045B920",
+        "module": "GameContextPolicy",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R166; config/game-parent-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-parent-policy-origins.py",
+        "owner": "authored",
+        "notes": "Complete observed custom policy and independent whole authored parent, real call/field/loop/EH context and natural source controls; no ownership inferred from caller labels alone. Three whole policy controls compare unmasked; the 203-byte sparse-default virtual initializer is supported by full target policy/parent witnesses and a full distinct implicit-construction control, not a source match. SDK clear/destructor aliases and original method spelling/types/private layouts remain unknown. Independent list/deque/base helpers and protected lifetime/copy/math/destruction policies retain original origins; no reconstructed source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0045B920",
+        "size": "131",
+        "span_end": "0x0045B9A2",
+        "current_name": "FUN_0045b920",
+        "proposed_name": "FighterCommandQueues::InitializeAt0045B920",
+        "module": "GameContextPolicy",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "EffectManagerLifetimeF161::EffectManagerLifetimeF161()",
+        "is_thunk": "false",
+        "source_file": "src/EffectManagerLifetimeF161.cpp",
+        "evidence": "R166; config/game-parent-policy-origin-evidence.json; scripts/repo-python scripts/verify-game-parent-policy-origins.py; F161; scripts/repo-python scripts/replay-exact-units.py --unit effect-initialize-four-deques-0045b920; scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/f161-lifecycle-canonical-replay.json",
+        "owner": "authored",
+        "notes": "Complete observed custom policy and independent whole authored parent, real call/field/loop/EH context and natural source controls; no ownership inferred from caller labels alone. Three whole policy controls compare unmasked; the 203-byte sparse-default virtual initializer is supported by full target policy/parent witnesses and a full distinct implicit-construction control, not a source match. SDK clear/destructor aliases and original method spelling/types/private layouts remain unknown. Independent list/deque/base helpers and protected lifetime/copy/math/destruction policies retain original origins; no reconstructed source/private ABI/mapping/exact credit.; F161: complete canonical cold exact from one new lifecycle object. Original provisional role/ownership retained via explicit source-symbol map. Known lifetime prefix only: live bound fighter at0, four complete pointer deques at4; no view instances/owner allocation/sizeof-owner use or claim of complete original layout. Natural private constructor/member-array initialization and four-clear loop, pointer binding, explicit owned release before implicit member destruction. Both entire32-byte cleanup/handler sections and36-byte unwind/state sections,17 complete vendor helpers,46 actual graph fields and both SafeSEH symbol-index roots match from the same fresh canonical object. Compiler/library/data receive no authored credit. No fake ABI/local/padding/assembly, conditional bodies, masks/crops/rebasing. Only3 new units cold-replayed; all377 prior units/143 objects/222 adoption inputs,97 unknowns and both full pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x0045B920",
+        "origin": "authored",
+        "subsystem": "GameContextPolicy",
+        "disposition": "authored",
+        "confidence": "complete-custom-game-policy-with-whole-authored-parent-and-source-controls",
+        "evidence_id": "R166"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045B9B0",
+        "size": "85",
+        "span_end": "0x0045BA04",
+        "current_name": "FUN_0045b9b0",
+        "proposed_name": "BattleEffectManager::DestroyOwnedEffectsAt0045B9B0",
+        "module": "BattleEffectManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R244; config/effect-manager-lifetime-origin-evidence.json; scripts/repo-python scripts/verify-effect-manager-lifetime-origins.py",
+        "owner": "authored",
+        "notes": "Whole85-byte lifetime body calls independently accepted custom deletion of four owned-pointer queues before array member destruction at+4 with count4/stride20 and real deque destructor callback. Full scalar deleting pair44 and registered cleanup/handler/metadata retain the same owner and exceptional member cleanup. Natural explicit cleanup destructor85 reproduces including all seven fields; entire implicit and empty explicit32 alternatives differ. Generic84-byte observations do not recover the original private class/ABI/layout/compiler profile. Prior geometry14/lifetime ambiguities stay unknown. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0045B9B0",
+        "size": "85",
+        "span_end": "0x0045BA04",
+        "current_name": "FUN_0045b9b0",
+        "proposed_name": "BattleEffectManager::DestroyOwnedEffectsAt0045B9B0",
+        "module": "BattleEffectManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "EffectManagerLifetimeF161::~EffectManagerLifetimeF161()",
+        "is_thunk": "false",
+        "source_file": "src/EffectManagerLifetimeF161.cpp",
+        "evidence": "R244; config/effect-manager-lifetime-origin-evidence.json; scripts/repo-python scripts/verify-effect-manager-lifetime-origins.py; F161; scripts/repo-python scripts/replay-exact-units.py --unit effect-destroy-owned-effects-0045b9b0; scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/f161-lifecycle-canonical-replay.json",
+        "owner": "authored",
+        "notes": "Whole85-byte lifetime body calls independently accepted custom deletion of four owned-pointer queues before array member destruction at+4 with count4/stride20 and real deque destructor callback. Full scalar deleting pair44 and registered cleanup/handler/metadata retain the same owner and exceptional member cleanup. Natural explicit cleanup destructor85 reproduces including all seven fields; entire implicit and empty explicit32 alternatives differ. Generic84-byte observations do not recover the original private class/ABI/layout/compiler profile. Prior geometry14/lifetime ambiguities stay unknown. No source/mapping/exact credit.; F161: complete canonical cold exact from one new lifecycle object. Original provisional role/ownership retained via explicit source-symbol map. Known lifetime prefix only: live bound fighter at0, four complete pointer deques at4; no view instances/owner allocation/sizeof-owner use or claim of complete original layout. Natural private constructor/member-array initialization and four-clear loop, pointer binding, explicit owned release before implicit member destruction. Both entire32-byte cleanup/handler sections and36-byte unwind/state sections,17 complete vendor helpers,46 actual graph fields and both SafeSEH symbol-index roots match from the same fresh canonical object. Compiler/library/data receive no authored credit. No fake ABI/local/padding/assembly, conditional bodies, masks/crops/rebasing. Only3 new units cold-replayed; all377 prior units/143 objects/222 adoption inputs,97 unknowns and both full pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x0045B9B0",
+        "origin": "authored",
+        "subsystem": "BattleEffectManager",
+        "disposition": "authored",
+        "confidence": "whole-custom-owned-effect-cleanup-before-member-array-destruction-with-independent-pair-and-registered-eh",
+        "evidence_id": "R244"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045BA10",
+        "size": "21",
+        "span_end": "0x0045BA24",
+        "current_name": "FUN_0045ba10",
+        "proposed_name": "BattleEffectManager::BindFighterAt0045BA10",
+        "module": "BattleEffectManager",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R241; config/effect-owner-binding-origin-evidence.json; scripts/repo-python scripts/verify-effect-owner-binding-origins.py",
+        "owner": "authored",
+        "notes": "Complete21-byte incoming pointer write with RET4. Full fighter initialization allocates84 bytes, completes custom four-queue construction, stores the manager atfighter+0x2EC and then binds that same fighter. Whole effect spawn consumes the bound pointer for real virtual allocation and fighter fields. Natural ordinary/template21 reproduce; full pointer constructor24, genuine implicit assignment26, assignment caller15 and borrowed pointer13 remain distinct. Complete scene/base34 explicit/implicit construction ambiguity stays unknown. Original names/types/private layout/compiler profile/ABI remain unknown; no source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x0045BA10",
+        "size": "21",
+        "span_end": "0x0045BA24",
+        "current_name": "FUN_0045ba10",
+        "proposed_name": "BattleEffectManager::BindFighterAt0045BA10",
+        "module": "BattleEffectManager",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void EffectManagerLifetimeF161::BindFighter(FighterBaseActionsF159*)",
+        "is_thunk": "false",
+        "source_file": "src/EffectManagerLifetimeF161.cpp",
+        "evidence": "R241; config/effect-owner-binding-origin-evidence.json; scripts/repo-python scripts/verify-effect-owner-binding-origins.py; F161; scripts/repo-python scripts/replay-exact-units.py --unit effect-bind-fighter-0045ba10; scripts/repo-python scripts/verify-effect-lifecycle-exact.py --receipt .analysis/f161-lifecycle-canonical-replay.json",
+        "owner": "authored",
+        "notes": "Complete21-byte incoming pointer write with RET4. Full fighter initialization allocates84 bytes, completes custom four-queue construction, stores the manager atfighter+0x2EC and then binds that same fighter. Whole effect spawn consumes the bound pointer for real virtual allocation and fighter fields. Natural ordinary/template21 reproduce; full pointer constructor24, genuine implicit assignment26, assignment caller15 and borrowed pointer13 remain distinct. Complete scene/base34 explicit/implicit construction ambiguity stays unknown. Original names/types/private layout/compiler profile/ABI remain unknown; no source/mapping/exact credit.; F161: complete canonical cold exact from one new lifecycle object. Original provisional role/ownership retained via explicit source-symbol map. Known lifetime prefix only: live bound fighter at0, four complete pointer deques at4; no view instances/owner allocation/sizeof-owner use or claim of complete original layout. Natural private constructor/member-array initialization and four-clear loop, pointer binding, explicit owned release before implicit member destruction. Both entire32-byte cleanup/handler sections and36-byte unwind/state sections,17 complete vendor helpers,46 actual graph fields and both SafeSEH symbol-index roots match from the same fresh canonical object. Compiler/library/data receive no authored credit. No fake ABI/local/padding/assembly, conditional bodies, masks/crops/rebasing. Only3 new units cold-replayed; all377 prior units/143 objects/222 adoption inputs,97 unknowns and both full pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x0045BA10",
+        "origin": "authored",
+        "subsystem": "BattleEffectManager",
+        "disposition": "authored",
+        "confidence": "whole-post-construction-fighter-reference-binding-with-independent-effect-allocation-initialization-and-spawn-consumption",
+        "evidence_id": "R241"
       }
     }
   ],
@@ -142815,6 +142947,164 @@
           "target": 4571360
         }
       ]
+    },
+    "effect-initialize-four-deques-0045b920": {
+      "source": "src/EffectManagerLifetimeF161.cpp",
+      "object": "build/matching/EffectManagerLifetimeF161.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterCommandQueues::InitializeAt0045B920"
+      ],
+      "symbol": "??0EffectManagerLifetimeF161@@AAE@XZ",
+      "target_address": 4569376,
+      "size": 131,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ",
+          "target": 6644662
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "target": 4570928
+        },
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "target": 4570848
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "??_L@YGXPAXIHP6EX0@Z1@Z",
+          "target": 6560888
+        },
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+          "target": 4571360
+        },
+        {
+          "offset": 123,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "effect-destroy-owned-effects-0045b9b0": {
+      "source": "src/EffectManagerLifetimeF161.cpp",
+      "object": "build/matching/EffectManagerLifetimeF161.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEffectManager::DestroyOwnedEffectsAt0045B9B0"
+      ],
+      "symbol": "??1EffectManagerLifetimeF161@@QAE@XZ",
+      "target_address": 4569520,
+      "size": 85,
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ",
+          "target": 6644694
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ",
+          "target": 4569648
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "target": 4570928
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??_M@YGXPAXIHP6EX0@Z@Z",
+          "target": 6561098
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "target": 0
+        }
+      ]
+    },
+    "effect-bind-fighter-0045ba10": {
+      "source": "src/EffectManagerLifetimeF161.cpp",
+      "object": "build/matching/EffectManagerLifetimeF161.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEffectManager::BindFighterAt0045BA10"
+      ],
+      "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z",
+      "target_address": 4569616,
+      "size": 21,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -143039,6 +143329,8 @@
     "src/FighterVirtualActionsF159.cpp": "89a9a17fea1ddf2f984a27c5fa8bdbb4d195cc70b8ff8df3e23cfd35b0a865e1",
     "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c",
     "src/FighterMovementSelection451EB0.cpp": "dfbef003a722f521b33882d89bea1ffeb2e884b936311f91c8c2e5df0f1c52a4",
-    "src/FighterEffectCleanup45BA30.cpp": "b4fe1520fdfa02e84938880bac7915e1e58535ae8b21db51c855ccf95549b9a6"
+    "src/FighterEffectCleanup45BA30.cpp": "b4fe1520fdfa02e84938880bac7915e1e58535ae8b21db51c855ccf95549b9a6",
+    "src/EffectManagerLifetimeF161.cpp": "3fd83e3f5dc494d540c3fcb8314696e470b60009fd9583b030091923e2707e5a",
+    "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9"
   }
 }

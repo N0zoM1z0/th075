@@ -1,0 +1,1050 @@
+{
+  "schema_version": 1,
+  "target_sha256": "bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98",
+  "source": "src/EffectManagerLifetimeF161.cpp",
+  "object": "build/matching/EffectManagerLifetimeF161.obj",
+  "profile": [
+    "/Od",
+    "/Ob0",
+    "/Gy",
+    "/GR-",
+    "/GX",
+    "/GS",
+    "/Zi",
+    "/I",
+    "src"
+  ],
+  "units": [
+    "effect-initialize-four-deques-0045b920",
+    "effect-destroy-owned-effects-0045b9b0",
+    "effect-bind-fighter-0045ba10"
+  ],
+  "inputs": {
+    "src/EffectManagerLifetimeF161.cpp": "3fd83e3f5dc494d540c3fcb8314696e470b60009fd9583b030091923e2707e5a",
+    "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9",
+    "src/FighterVirtualActionsF159.hpp": "95419c0758a1176858c6e0c61f24ae4cc44160364b21e0ea32fc68c60dd2d73c"
+  },
+  "origin_evidence": {
+    "config/effect-owner-binding-origin-evidence.json": "f05fcecfb44b753f2061a0d04b3562941563922e1ddee7f92be525a444b1e0e2",
+    "config/effect-manager-lifetime-origin-evidence.json": "116da4a1fc4c1bbc5547cb4d84b7dcfa414b579b0c3113b8d4f10b4d462e375e",
+    "config/game-parent-policy-origin-evidence.json": "9d81bb9ab16f401bfcc986f59b091479813279e9f7f130dd42f31715a74c5900",
+    "config/deque-game-dependency-origin-evidence.json": "2872c4c93e0aa8da01b708e8a989383637ab74346eaa45c38406d97e4fb8e585",
+    "config/compiler-eh-frames.csv": "51c503bf7b7c072cfd9de80099cf9840c1b8091443ad808178bc392caad98dce"
+  },
+  "safe_handlers": [
+    "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ",
+    "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ"
+  ],
+  "sections": [
+    {
+      "symbol": "??0EffectManagerLifetimeF161@@AAE@XZ",
+      "symbol_offset": 0,
+      "address": 4569376,
+      "size": 131,
+      "kind": "authored",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0EffectManagerLifetimeF161@@AAE@XZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ",
+          "addend": 0,
+          "target": 6644662
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        },
+        {
+          "offset": 31,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4570928
+        },
+        {
+          "offset": 36,
+          "type": "DIR32",
+          "symbol": "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4570848
+        },
+        {
+          "offset": 52,
+          "type": "REL32",
+          "symbol": "??_L@YGXPAXIHP6EX0@Z1@Z",
+          "addend": 0,
+          "target": 6560888
+        },
+        {
+          "offset": 101,
+          "type": "REL32",
+          "symbol": "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target": 4571360
+        },
+        {
+          "offset": 123,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        }
+      ],
+      "target_sha256": "13fd2f20dbabe36c1bef6b712e9311dd7fd2edd02808a3ea5494dd2be0b2b3c8",
+      "native_origin": {
+        "address": "0x0045B920",
+        "origin": "authored",
+        "subsystem": "GameContextPolicy",
+        "disposition": "authored",
+        "confidence": "complete-custom-game-policy-with-whole-authored-parent-and-source-controls",
+        "evidence_id": "R166"
+      }
+    },
+    {
+      "symbol": "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ",
+      "symbol_offset": 22,
+      "address": 6644640,
+      "size": 32,
+      "kind": "compiler-code",
+      "name": ".text$x",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "$L5917",
+          "offset": 0,
+          "type": 32,
+          "storage": 3
+        },
+        {
+          "symbol": "__ehhandler$??0EffectManagerLifetimeF161@@AAE@XZ",
+          "offset": 22,
+          "type": 32,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4570928
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "??_M@YGXPAXIHP6EX0@Z@Z",
+          "addend": 0,
+          "target": 6561098
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "$T5921",
+          "addend": 0,
+          "target": 6724700
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "___CxxFrameHandler",
+          "addend": 0,
+          "target": 6555576
+        }
+      ],
+      "target_sha256": "c697779be14b6c03bb55488a1c4a7c5cdd94b434193594f2a9e259b6d8f1b722"
+    },
+    {
+      "symbol": "$T5921",
+      "symbol_offset": 8,
+      "address": 6724692,
+      "size": 36,
+      "kind": "metadata",
+      "name": ".xdata$x",
+      "flags": 1076891712,
+      "definitions": [
+        {
+          "symbol": "$T5921",
+          "offset": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T5924",
+          "offset": 0,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "$L5917",
+          "addend": 0,
+          "target": 6644640
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "$T5924",
+          "addend": 0,
+          "target": 6724692
+        }
+      ],
+      "target_sha256": "ff0c9ef239329613358c11d3d35632e88e6848490df659cca76f0854ac9ace11"
+    },
+    {
+      "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z",
+      "symbol_offset": 0,
+      "address": 4569616,
+      "size": 21,
+      "kind": "authored",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?BindFighter@EffectManagerLifetimeF161@@QAEXPAVFighterBaseActionsF159@@@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "cd58c319c44228943d5708625a6cdaaf4520a65b37fc81a1fb4956bdb192463f",
+      "native_origin": {
+        "address": "0x0045BA10",
+        "origin": "authored",
+        "subsystem": "BattleEffectManager",
+        "disposition": "authored",
+        "confidence": "whole-post-construction-fighter-reference-binding-with-independent-effect-allocation-initialization-and-spawn-consumption",
+        "evidence_id": "R241"
+      }
+    },
+    {
+      "symbol": "??1EffectManagerLifetimeF161@@QAE@XZ",
+      "symbol_offset": 0,
+      "address": 4569520,
+      "size": 85,
+      "kind": "authored",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??1EffectManagerLifetimeF161@@QAE@XZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 6,
+          "type": "DIR32",
+          "symbol": "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ",
+          "addend": 0,
+          "target": 6644694
+        },
+        {
+          "offset": 12,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        },
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?DeleteFourLists@RoundResetEffectsF159@@QAEXXZ",
+          "addend": 0,
+          "target": 4569648
+        },
+        {
+          "offset": 51,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4570928
+        },
+        {
+          "offset": 67,
+          "type": "REL32",
+          "symbol": "??_M@YGXPAXIHP6EX0@Z@Z",
+          "addend": 0,
+          "target": 6561098
+        },
+        {
+          "offset": 77,
+          "type": "DIR32",
+          "symbol": "__except_list",
+          "addend": 0,
+          "target": 0
+        }
+      ],
+      "target_sha256": "4fadda00bed19223e4ef537fa76a109c82dd2a4552f4713b9751e81d41b6c492",
+      "native_origin": {
+        "address": "0x0045B9B0",
+        "origin": "authored",
+        "subsystem": "BattleEffectManager",
+        "disposition": "authored",
+        "confidence": "whole-custom-owned-effect-cleanup-before-member-array-destruction-with-independent-pair-and-registered-eh",
+        "evidence_id": "R244"
+      }
+    },
+    {
+      "symbol": "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ",
+      "symbol_offset": 22,
+      "address": 6644672,
+      "size": 32,
+      "kind": "compiler-code",
+      "name": ".text$x",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "$L5932",
+          "offset": 0,
+          "type": 32,
+          "storage": 3
+        },
+        {
+          "symbol": "__ehhandler$??1EffectManagerLifetimeF161@@QAE@XZ",
+          "offset": 22,
+          "type": 32,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 1,
+          "type": "DIR32",
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4570928
+        },
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "??_M@YGXPAXIHP6EX0@Z@Z",
+          "addend": 0,
+          "target": 6561098
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "$T5934",
+          "addend": 0,
+          "target": 6724736
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "___CxxFrameHandler",
+          "addend": 0,
+          "target": 6555576
+        }
+      ],
+      "target_sha256": "c77a25dc1f124d58100d16e9f0129ed282b3de62140fa8adbe0faab49057e3a1"
+    },
+    {
+      "symbol": "$T5934",
+      "symbol_offset": 8,
+      "address": 6724728,
+      "size": 36,
+      "kind": "metadata",
+      "name": ".xdata$x",
+      "flags": 1076891712,
+      "definitions": [
+        {
+          "symbol": "$T5934",
+          "offset": 8,
+          "type": 0,
+          "storage": 3
+        },
+        {
+          "symbol": "$T5936",
+          "offset": 0,
+          "type": 0,
+          "storage": 3
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 4,
+          "type": "DIR32",
+          "symbol": "$L5932",
+          "addend": 0,
+          "target": 6644672
+        },
+        {
+          "offset": 16,
+          "type": "DIR32",
+          "symbol": "$T5936",
+          "addend": 0,
+          "target": 6724728
+        }
+      ],
+      "target_sha256": "d341d0b8740c716eaa57e2549f5fd0eca7f45436d5a60bdcdbcd8081158d6137"
+    },
+    {
+      "symbol": "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+      "symbol_offset": 0,
+      "address": 4570848,
+      "size": 72,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "??0?$allocator@PAX@std@@QAE@XZ",
+          "addend": 0,
+          "target": 4572544
+        },
+        {
+          "offset": 21,
+          "type": "REL32",
+          "symbol": "??0?$_Deque_val@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+          "addend": 0,
+          "target": 4572480
+        }
+      ],
+      "target_sha256": "55b126d690d0b6fad6d8e6d36113a7158cacedf35b30d97385f419097736d246",
+      "native_origin": {
+        "address": "0x0045BEE0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-helper-family",
+        "evidence_id": "R073"
+      }
+    },
+    {
+      "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+      "symbol_offset": 0,
+      "address": 4570928,
+      "size": 19,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??1?$deque@PAXV?$allocator@PAX@std@@@std@@QAE@XZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?_Tidy@?$deque@PAXV?$allocator@PAX@std@@@std@@IAEXXZ",
+          "addend": 0,
+          "target": 4572288
+        }
+      ],
+      "target_sha256": "4d6416906c4d6caf01d433ec6b7d1c17d398f7143d463d467ca5d17360bc387e",
+      "native_origin": {
+        "address": "0x0045BF30",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-destructor-family",
+        "evidence_id": "R077"
+      }
+    },
+    {
+      "symbol": "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+      "symbol_offset": 0,
+      "address": 4571360,
+      "size": 19,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?clear@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 11,
+          "type": "REL32",
+          "symbol": "?_Tidy@?$deque@PAXV?$allocator@PAX@std@@@std@@IAEXXZ",
+          "addend": 0,
+          "target": 4572288
+        }
+      ],
+      "target_sha256": "bb8aa2502c2732e1f5577a74ba33669f72e2f2b92ab5ecb4f6078398609a2ec0",
+      "native_origin": {
+        "address": "0x0045C0E0",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-destructor-family",
+        "evidence_id": "R077"
+      }
+    },
+    {
+      "symbol": "?_Tidy@?$deque@PAXV?$allocator@PAX@std@@@std@@IAEXXZ",
+      "symbol_offset": 0,
+      "address": 4572288,
+      "size": 177,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?_Tidy@?$deque@PAXV?$allocator@PAX@std@@@std@@IAEXXZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 13,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAXV?$allocator@PAX@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target": 4572720
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "?pop_back@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+          "addend": 0,
+          "target": 4572928
+        },
+        {
+          "offset": 95,
+          "type": "REL32",
+          "symbol": "?deallocate@?$allocator@PAX@std@@QAEXPAPAXI@Z",
+          "addend": 0,
+          "target": 4573232
+        },
+        {
+          "offset": 116,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAPAX@std@@QAEXPAPAPAX@Z",
+          "addend": 0,
+          "target": 4573328
+        },
+        {
+          "offset": 149,
+          "type": "REL32",
+          "symbol": "?deallocate@?$allocator@PAPAX@std@@QAEXPAPAPAXI@Z",
+          "addend": 0,
+          "target": 4573264
+        }
+      ],
+      "target_sha256": "2518344b1f956ea24d625c31e1e00d5a1fce7da4ab1285937c78d4f58da45413",
+      "native_origin": {
+        "address": "0x0045C480",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-operation-family",
+        "evidence_id": "R072"
+      }
+    },
+    {
+      "symbol": "??0?$_Deque_val@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+      "symbol_offset": 0,
+      "address": 4572480,
+      "size": 53,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0?$_Deque_val@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "REL32",
+          "symbol": "??0?$allocator@PAX@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target": 4573216
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "??0?$_Deque_map@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+          "addend": 0,
+          "target": 4573184
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": "??0?$allocator@PAX@std@@QAE@ABV01@@Z",
+          "addend": 0,
+          "target": 4573216
+        }
+      ],
+      "target_sha256": "ac05be3ccb63484770a4c332ade0fe0d32c8f78fcb6353f0acc037076f28dda4",
+      "native_origin": {
+        "address": "0x0045C540",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-helper-family",
+        "evidence_id": "R073"
+      }
+    },
+    {
+      "symbol": "??0?$allocator@PAX@std@@QAE@XZ",
+      "symbol_offset": 0,
+      "address": 4572544,
+      "size": 14,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0?$allocator@PAX@std@@QAE@XZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "befca35709395b425403c72a706d2f3c715162ad22664d93df30e0255a4d4e8c",
+      "native_origin": {
+        "address": "0x0045C580",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R087"
+      }
+    },
+    {
+      "symbol": "?empty@?$deque@PAXV?$allocator@PAX@std@@@std@@QBE_NXZ",
+      "symbol_offset": 0,
+      "address": 4572720,
+      "size": 25,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?empty@?$deque@PAXV?$allocator@PAX@std@@@std@@QBE_NXZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "b465d741b423f02fcdaef11e791c2a6d9442c0cbda3a1a55e5a6fa2baa6e92c3",
+      "native_origin": {
+        "address": "0x0045C630",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-access",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R086"
+      }
+    },
+    {
+      "symbol": "?pop_back@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+      "symbol_offset": 0,
+      "address": 4572928,
+      "size": 154,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?pop_back@?$deque@PAXV?$allocator@PAX@std@@@std@@QAEXXZ",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 14,
+          "type": "REL32",
+          "symbol": "?empty@?$deque@PAXV?$allocator@PAX@std@@@std@@QBE_NXZ",
+          "addend": 0,
+          "target": 4572720
+        },
+        {
+          "offset": 111,
+          "type": "REL32",
+          "symbol": "?destroy@?$allocator@PAX@std@@QAEXPAPAX@Z",
+          "addend": 0,
+          "target": 4573440
+        }
+      ],
+      "target_sha256": "cc00eba56f608806caa4a922e231bc2a037d71e609cd7743cb5fad4e9613745f",
+      "native_origin": {
+        "address": "0x0045C700",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-operation-family",
+        "evidence_id": "R072"
+      }
+    },
+    {
+      "symbol": "??0?$_Deque_map@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+      "symbol_offset": 0,
+      "address": 4573184,
+      "size": 28,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0?$_Deque_map@PAXV?$allocator@PAX@std@@@std@@IAE@V?$allocator@PAX@1@@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "??$?0PAX@?$allocator@PAPAX@std@@QAE@ABV?$allocator@PAX@1@@Z",
+          "addend": 0,
+          "target": 4574048
+        }
+      ],
+      "target_sha256": "0303b6b25b7ebe54f5bdfca0ab27542ad62096df3527c34585c0025c51c8e3e6",
+      "native_origin": {
+        "address": "0x0045C800",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      }
+    },
+    {
+      "symbol": "??0?$allocator@PAX@std@@QAE@ABV01@@Z",
+      "symbol_offset": 0,
+      "address": 4573216,
+      "size": 16,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??0?$allocator@PAX@std@@QAE@ABV01@@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "08591b9c945863c4a421e0123378c589f44fe525fd590f731e33703824d80440",
+      "native_origin": {
+        "address": "0x0045C820",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R087"
+      }
+    },
+    {
+      "symbol": "?deallocate@?$allocator@PAX@std@@QAEXPAPAXI@Z",
+      "symbol_offset": 0,
+      "address": 4573232,
+      "size": 25,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?deallocate@?$allocator@PAX@std@@QAEXPAPAXI@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target": 6557461
+        }
+      ],
+      "target_sha256": "579e350d704761280e764b5a7675516d8002409b29f0283f5860d079bdf63e79",
+      "native_origin": {
+        "address": "0x0045C830",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      }
+    },
+    {
+      "symbol": "?deallocate@?$allocator@PAPAX@std@@QAEXPAPAPAXI@Z",
+      "symbol_offset": 0,
+      "address": 4573264,
+      "size": 25,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?deallocate@?$allocator@PAPAX@std@@QAEXPAPAPAXI@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??3@YAXPAX@Z",
+          "addend": 0,
+          "target": 6557461
+        }
+      ],
+      "target_sha256": "6f78003fa782c13e509456e3006c698c8798fe26c57b43a4e4c6daf52b5ca6ac",
+      "native_origin": {
+        "address": "0x0045C850",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      }
+    },
+    {
+      "symbol": "?destroy@?$allocator@PAPAX@std@@QAEXPAPAPAX@Z",
+      "symbol_offset": 0,
+      "address": 4573328,
+      "size": 25,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?destroy@?$allocator@PAPAX@std@@QAEXPAPAPAX@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@PAPAX@std@@YAXPAPAPAX@Z",
+          "addend": 0,
+          "target": 4574096
+        }
+      ],
+      "target_sha256": "5e91ab8c436b5983babde899cf27e804ea2b89920acc2ce3e2c68c2effc53707",
+      "native_origin": {
+        "address": "0x0045C890",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      }
+    },
+    {
+      "symbol": "?destroy@?$allocator@PAX@std@@QAEXPAPAX@Z",
+      "symbol_offset": 0,
+      "address": 4573440,
+      "size": 25,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "?destroy@?$allocator@PAX@std@@QAEXPAPAX@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [
+        {
+          "offset": 12,
+          "type": "REL32",
+          "symbol": "??$_Destroy@PAX@std@@YAXPAPAX@Z",
+          "addend": 0,
+          "target": 4574112
+        }
+      ],
+      "target_sha256": "7cf2171500bafdfd6ebe21d74c15112a621939fefe3e617bc192e10c93629987",
+      "native_origin": {
+        "address": "0x0045C900",
+        "origin": "library",
+        "subsystem": "VC7STL",
+        "disposition": "exclude",
+        "confidence": "complete-vc7-deque-callee-family",
+        "evidence_id": "R074"
+      }
+    },
+    {
+      "symbol": "??$?0PAX@?$allocator@PAPAX@std@@QAE@ABV?$allocator@PAX@1@@Z",
+      "symbol_offset": 0,
+      "address": 4574048,
+      "size": 16,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??$?0PAX@?$allocator@PAPAX@std@@QAE@ABV?$allocator@PAX@1@@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "08591b9c945863c4a421e0123378c589f44fe525fd590f731e33703824d80440",
+      "native_origin": {
+        "address": "0x0045CB60",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R088"
+      }
+    },
+    {
+      "symbol": "??$_Destroy@PAPAX@std@@YAXPAPAPAX@Z",
+      "symbol_offset": 0,
+      "address": 4574096,
+      "size": 5,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??$_Destroy@PAPAX@std@@YAXPAPAPAX@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "native_origin": {
+        "address": "0x0045CB90",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R088"
+      }
+    },
+    {
+      "symbol": "??$_Destroy@PAX@std@@YAXPAPAX@Z",
+      "symbol_offset": 0,
+      "address": 4574112,
+      "size": 5,
+      "kind": "library",
+      "name": ".text",
+      "flags": 1615859744,
+      "definitions": [
+        {
+          "symbol": "??$_Destroy@PAX@std@@YAXPAPAX@Z",
+          "offset": 0,
+          "type": 32,
+          "storage": 2
+        }
+      ],
+      "relocations": [],
+      "target_sha256": "7178bc05f1e5707e6c3dae3e068488f3df05d53b0e5eb728edd1abc56533f087",
+      "native_origin": {
+        "address": "0x0045CBA0",
+        "origin": "library",
+        "subsystem": "vc7-stl-deque-helpers",
+        "disposition": "exclude",
+        "confidence": "high",
+        "evidence_id": "R088"
+      }
+    }
+  ],
+  "vendor_headers": {
+    ".tools/msvc710/Vc7/include/list": "d84ebe1cc335d155e11428382aa23d4081fe79b32afe8e0918fcd4ea34cb0bfe",
+    ".tools/msvc710/Vc7/include/functional": "9dfa4acf64ff646a3d44afc9d799f3fc854e5bdbfdffa10b6827a3394c0067e6",
+    ".tools/msvc710/Vc7/include/xstddef": "e3b1fa3dcb3281ee2f22f79150303d943362263ea0b95874cd313b2798112a27",
+    ".tools/msvc710/Vc7/include/yvals.h": "b9340f3de0fd2f1c0e0b81b99e9f42252a0ec5652267536e9c62b0b4f1bf8980",
+    ".tools/msvc710/Vc7/include/use_ansi.h": "56ba75ecabe4ff0af0ab227d88ce407c31e0f0c8d05c1e42423186da04069fdc",
+    ".tools/msvc710/Vc7/include/cstddef": "f83f50123dd77e05f5b112abcf7f47b2a9e7076727955f91db471ae273e67430",
+    ".tools/msvc710/Vc7/include/stddef.h": "491ce357cd01c533b07664fb9a97403a172e277096ee58a924696c0046a96afe",
+    ".tools/msvc710/Vc7/include/memory": "81895e7a4ef1c432ec68484b072bcd14f953a75d99af77c0f83667c1c7cf9bf4",
+    ".tools/msvc710/Vc7/include/iterator": "030f894a4ba6cb78bd1c98ca20a28bcab7443697eafc740c1162eb41a73c48d6",
+    ".tools/msvc710/Vc7/include/xutility": "177f47d09110228013374513e62a9de2e9be2f9bd22e4ae15bb31c584da4db7b",
+    ".tools/msvc710/Vc7/include/climits": "ccd3e243fd3d9b28d7ef487c6c203ff39e7fbc039eadd28384f7ae8f8e133a0e",
+    ".tools/msvc710/Vc7/include/limits.h": "d3ad33ce7c8eb1c3f7c5f151339efdcd44ae1d76506a314f0b91daf26c004522",
+    ".tools/msvc710/Vc7/include/utility": "77d42e02d0abc5e8aceefe893c2fad9fe7b55dce409a88c3bc2e3f3809ad12d4",
+    ".tools/msvc710/Vc7/include/iosfwd": "ceb0247fc75f4fe840dcef2b04f41eb71c115d57748ad6eb0e9416713f658cd9",
+    ".tools/msvc710/Vc7/include/cstdio": "0ce255cdf0ff57258ea2ecc8b203658f9945f17eedd9c6366bc5caa227c8df96",
+    ".tools/msvc710/Vc7/include/stdio.h": "96f0b2c746b580b6a5d9a13f9a221275d210de79ef832e2265e0ed70b0c914e1",
+    ".tools/msvc710/Vc7/include/cstring": "363e4858a9b1d3fd3ef07d300f7b384615b8af48c0d1e9e4c294ea86a1d7d620",
+    ".tools/msvc710/Vc7/include/string.h": "b68e9db97d695655abe65dd36d9fc0f92e5bc304371eb9c8a9d2144e55eb8c37",
+    ".tools/msvc710/Vc7/include/cwchar": "13448c9868fdc9b220822f2433ee52c6af825dde539707377c10572af2133820",
+    ".tools/msvc710/Vc7/include/wchar.h": "85e9bfe575fa70bd37eb694cb8b8ca5ca2ca9d0fb811d983054a42afc06ecfa1",
+    ".tools/msvc710/Vc7/include/xmemory": "e3a2baa7cb199323b2a0226cd84da797b5224777e8709f7cb1e4273b27919d94",
+    ".tools/msvc710/Vc7/include/cstdlib": "e7c431e5c256b9458bb31bce7e770d99481b23ff22f609b4b6a91c50f183ec24",
+    ".tools/msvc710/Vc7/include/stdlib.h": "64ff5e0893b39638f7f8e510b7992f8f9c9bb09c046c9747072c44b3348cf946",
+    ".tools/msvc710/Vc7/include/new": "bd97c3f682c039eb7ee00c9acfc2d4cf44c55671b373fba777af7652faf15fd9",
+    ".tools/msvc710/Vc7/include/exception": "994d4a23a837d92100205d89ac38c13c317cfb1851c2ae1fdc4d80b0e052c40c",
+    ".tools/msvc710/Vc7/include/eh.h": "6ee4653126d60011021b2c57abe3e01b3030c3103248346da5299ecdf8e9d932",
+    ".tools/msvc710/Vc7/include/stdexcept": "bc3e7b40b6413b1aa2a2cc011057ca42aa03a714f409f927734c4f507aaea2a7",
+    ".tools/msvc710/Vc7/include/xstring": "c715ae6f152ca41d73e701c5d77dd5da0b61832250c967d2a8376b9471656943",
+    ".tools/msvc710/Vc7/include/deque": "8180a844c7f3948ab6daae2ce2f117fbaf5636590c7b50cd06110ed714ebb585"
+  }
+}

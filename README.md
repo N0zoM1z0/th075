@@ -26,9 +26,9 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **377 exact functions / 720,508 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 36.51%; conservative
-coverage, including all 3,608 pending bytes, is **36.44%**. The objective of
+The current checkpoint has **380 exact functions / 720,745 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 36.52%; conservative
+coverage, including all 3,608 pending bytes, is **36.45%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
