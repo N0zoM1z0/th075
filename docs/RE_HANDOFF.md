@@ -1,13 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F166.
+Updated 2026-10-26 for continued reconstruction, F167.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F166 preserves all390 accepted units and begins the complete0055AC80 cohort.
-The two existing complete large drafts remain unaccepted. Current F166 outcomes supersede historical
+phases remain deferred. F167 accepts one complete R215 direction policy and
+finishes the complete0055AC80 diagnostic without accepting that large function.
+The complete large drafts remain unaccepted. Current F167 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -32,6 +33,8 @@ handoff is written or a bounded cohort is finished. If one candidate cannot
 advance, preserve its evidence and continue another independently reviewed
 authored candidate. Keep the goal active until the full objective is verified
 complete or the user explicitly changes the instruction.
+Each checkpoint must name the next concrete reconstruction action and execute
+it as part of this active goal. A successor must resume that action directly.
 ```
 
 ## Verified reconstruction state
@@ -41,14 +44,14 @@ complete or the user explicitly changes the instruction.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 390 / 390 / 390 |
-| Exact code bytes | 723,878 |
-| Reviewed authored coverage | 723,878 / 1,973,516 (36.68%) |
-| Conservative coverage, including pending bytes | 723,878 / 1,977,124 (36.61%) |
-| Canonical objects / accepted source-header inputs | 149 / 234 |
+| Source-present / exact functions / exact units | 391 / 391 / 391 |
+| Exact code bytes | 724,071 |
+| Reviewed authored coverage | 724,071 / 1,973,516 (36.69%) |
+| Conservative coverage, including pending bytes | 724,071 / 1,977,124 (36.62%) |
+| Canonical objects / accepted source-header inputs | 150 / 236 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 330 additions / 713,995 code bytes / 234 inputs. Origin evidence through
+F009 plus 331 additions / 714,188 code bytes / 236 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -57,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **486d5fa (F165)**, preceded by
+The preceding reconstruction checkpoint is **d7cb87f (F166)**, preceded by
+**486d5fa (F165)** and
 **bb2f0c9 (F164)** and
 **22443ea (F163)** and
 **d0ecd9b (F162)** and
@@ -95,7 +99,84 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F166 outcomes and continuation
+## Current F167 outcomes and continuation
+
+One canonical cold build accepts the whole R215 direction policy00454C20 from
+`src/FighterMode5DirectionF167.cpp` and its call-only header. Unit
+`fighter-mode5-direction-00454c20` passes193 CODE+16 owned table=209 compared
+bytes/all7 DIR32 fields; all5 local destinations use actual fresh COFF offsets.
+The complete1RET/10branch CFG, four switch entries, signed command bytes530/531,
+signed direction dwords4DC/4E0, ordered620/660 float comparisons and real
+parameterless slot11/2C call with ignored result are retained. Uncalled virtual
+declarations establish indices only; original signatures/names/full owner
+layout remain unknown. No receiver instance, padding, inert local, fake return,
+ABI trick, assembly, alternate body, mask, crop, alias or label rebasing is used.
+The original provisional role/title and R215 evidence remain literal.
+
+The complete0055AC80 draft now contains all57 entries/prefix/default/tail and
+all394 ordered calls with actual this/owner receivers checked. Its native
+412-byte frame, savedthisEBP-24 and all7,653 instructions are reproduced without
+padding. Four complete builds were run: the initial rounded radian literal
+was rejected before comparison; exact0.01745328866f corrects that literal, and
+physical operand order/real early exits correct five position expressions and
+three branch destinations. The selected full diagnostic still emits28,438 CODE
+plus430 owned data=28,868 bytes against required28,862, with8,545 differing
+positions/all696 actual fields. Its58 actual local pointer fields and198-byte
+remap retain complete extents; every local destination comes from COFF offsets.
+The first position difference0055ACA8 is a shifted epilogue displacement; the
+first remaining nonbranch difference0055F711 begins a register allocation
+disagreement through states905..914. Six accumulator encodings explain the
+six extra bytes. A genuine case905 lexical scope changes no raw bytes or actual
+field bindings. It is closed. No large-function source presence/exact credit.
+
+Historical F066 already records this register disagreement and19 unchanged
+controls. Retain `.analysis/f066-progress.json` and
+`.analysis/f068-f066-controls.json`; do not repeat zero spelling/chains,
+phase promotion/comma/grouped stores or owner-failure break/return controls.
+F167 uses fresh canonical helper contracts and actual local COFF offsets;
+historical native-label correspondence is not reused as relocation evidence.
+An independent six-method word-operation compiler model confirms genuine16-bit
+prefix/postfix updates versus32-bit assigned arithmetic; it is not a game unit.
+
+Selected inputs and complete diagnostics are private under
+`.analysis/character-object-55ac80/f167/`. The selected source SHA begins
+71f88697; keep `F167Remilia-physical-flow.obj` in addition to all12 prior active
+objects, all14 F157 probes and both F159 traces. Frozen F166 files are unchanged.
+One new direction unit/one object was cold-replayed; all390 old units/149 old
+canonical objects/234 old adoption inputs and all origin evidence remain intact.
+
+Immediately continue the pending R215004483F0 policy: all768 CODE bytes plus
+its24-byte table, using frozen game-switch-policy evidence and attested queries.
+R21500444650 is already cold-exact and supplies context; do not re-register or
+replay it without a changed dependency.
+Preserve the entire failed0055AC80 cohort, both other complete large drafts,
+all97 unknown origins and every pending byte in the conservative denominator.
+Only new/affected units need cold replay. Do not repeat closed allocator controls
+without new evidence or stop after checkpoint/cleanup/commit/push.
+
+Receipts: `.analysis/f167-direction-unit-proof.json`,
+`.analysis/f167-direction-canonical-replay.json`, and the F167
+`full-function-checkpoint.json`/`physical-flow-whole-diagnostic.json`/
+`source-transcription-audit.json`/`progress-checkpoint.json`.
+
+Public CI passed **3,612 tests in 175.093 seconds**. Target,
+tracking, progress and diff checks pass. Only one new unit/object was cold-built:
+193 CODE/209 full compared bytes/all7 actual fields. All390 prior units/149 old
+canonical objects/234 old adoption inputs, every existing header, origin and
+verifier guard, forty protected groups, frozen F166 inputs, all12 prior active
+objects, both F159 traces and all14 F157 probes were hash-verified unchanged.
+Seven compiler builds ran serially and explicitly headless: four whole0055AC80,
+one independent word model, one direction preview and one canonical cold build.
+Cleanup removed five obsolete objects (183,757 bytes),
+0 PDBs (0 bytes) and377 bytecode files
+(8,312,319 bytes) after complete raw-section/symbol/field/
+source/profile retention. All150 canonical objects and13 active objects remain.
+Receipts: `.analysis/f167-object-retention.json`, `.analysis/f167-cleanup.json`,
+`.analysis/f167-preservation-final.json` and `.analysis/f167-source-checkpoint.json`.
+The98% goal remains active and incomplete. Immediately execute004483F0 after
+this checkpoint/commit/push; no further resume request is needed.
+
+## Retained F166 outcomes
 
 No new source-present or exact function is registered. All390 accepted units /
 723,878 CODE bytes /149 canonical objects /234 adoption inputs and all origin

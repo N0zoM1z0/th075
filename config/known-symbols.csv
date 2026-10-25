@@ -371,3 +371,4 @@ address,name,module,confidence,evidence
 0x00455070,FighterState::IsState95To99At00455070,FighterState,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
 0x00455140,BattleCombat::SelectHitResponseAt00455140,BattleCombat,inferred,F164; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
 0x00455800,BattleInput::MatchSequenceAt00455800,BattleInput,inferred,F165; whole canonical cold exact; explicit call-only source-symbol map; native role and complete-owner unknowns retained
+0x00454C20,FighterState::ApplyMode5DirectionAt00454C20 [provisional],FighterState,inferred,F167; whole canonical cold exact; explicit call-only COFF mapping; native role and complete-owner unknowns retained

@@ -25932,3 +25932,48 @@ offset = 759
 type = "DIR32"
 symbol = "$L5539"
 target = 0x0045596B
+
+[units.fighter-mode5-direction-00454c20]
+source = "src/FighterMode5DirectionF167.cpp"
+object = "build/matching/FighterMode5DirectionF167.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi"]
+functions = ["FighterState::ApplyMode5DirectionAt00454C20 [provisional]"]
+symbol = "?ApplyMode5Direction@FighterMode5DirectionF167@@QAEXXZ"
+target_address = 0x00454C20
+size = 193
+compare_size = 209
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 34
+type = "DIR32"
+symbol = "$L338"
+target = 0x00454CE1
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 118
+type = "DIR32"
+symbol = "__real@441b0000"
+target = 0x00658E7C
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 150
+type = "DIR32"
+symbol = "__real@44250000"
+target = 0x00658E78
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 193
+type = "DIR32"
+symbol = "$L301"
+target = 0x00454C46
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 197
+type = "DIR32"
+symbol = "$L304"
+target = 0x00454C55
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 201
+type = "DIR32"
+symbol = "$L307"
+target = 0x00454C64
+[[units.fighter-mode5-direction-00454c20.relocations]]
+offset = 205
+type = "DIR32"
+symbol = "$L310"
+target = 0x00454C73

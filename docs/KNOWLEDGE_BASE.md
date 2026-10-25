@@ -1,10 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F166.
+Updated 2026-10-26 for continued reconstruction, F167.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F166 retains390 exact units and begins the complete0055AC80 source cohort.
+[RE_HANDOFF.md](RE_HANDOFF.md). F167 accepts the complete R215 direction policy;
+the complete0055AC80 diagnostic remains unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +16,65 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 390 units,
-  723,878 code bytes, 149 canonical objects and 234 accepted inputs.
-- Reviewed authored coverage is 36.68%; conservative coverage is 36.61%.
+  complete cold-exact units/all actual relocations. Counts are 391 units,
+  724,071 code bytes, 150 canonical objects and 236 accepted inputs.
+- Reviewed authored coverage is 36.69%; conservative coverage is 36.62%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F167 accepted R215 direction policy:** `fighter-mode5-direction-00454c20`
+passes one canonical cold build: all193 CODE bytes plus the complete16-byte
+four-way table,209 compared bytes/all7 DIR32 fields. All5 local fields use
+actual fresh COFF offsets. The original provisional role remains literal in
+the ledgers with an explicit source/COFF mapping. `FighterMode5DirectionF167`
+preserves signed commands530/531, signed direction dwords4DC/4E0, strict ordered
+620/660 float thresholds, full1RET/10branch CFG and actual parameterless
+slot11/2C call with ignored result. Uncalled virtual declarations establish
+indices only; no original signatures or complete owner layout are inferred.
+The partial receiver is never instantiated/embedded. No inert locals, padding,
+fake returns, ABI tricks, assembly, alternate bodies, masks, crops, aliases or
+native-label rebasing. All390 previous units/149 objects/234 inputs, existing
+headers and origin evidence through R268 remain unchanged.
+
+**F167 complete0055AC80 diagnostic:** all57 entries/prefix/default/tail now exist
+and all394 calls/actual this-or-owner receivers are audited. Four full builds
+were run. Initial0.01745329f rounded one ULP above native3C8EFA33 and was rejected
+before comparison;0.01745328866f preserves the observed literal. Physical
+position operand order and real early returns were then reconciled. The selected
+whole output remains28,868 versus28,862 required bytes,8,545 differing positions,
+all696 actual fields;28,438 emitted CODE versus28,432 target. Native412-byte
+frame/savedthisEBP-24/all7,653 instructions are reproduced naturally. The owned
+232-byte table/all58 actual local fields and198-byte remap remain complete.
+Actual local COFF offsets are never replaced with native labels. First position
+difference0055ACA8 is the shifted epilogue field; first remaining nonbranch
+difference0055F711 starts a register disagreement through states905..914. Six
+accumulator encodings explain the six extra bytes. A case905 lexical scope
+changes no raw bytes or field bindings and is closed. No source/exact credit.
+
+Historical F066 already records this disagreement and19 unchanged controls in
+`.analysis/f068-f066-controls.json`; avoid repeating zero spelling/chains,
+phase promotion/comma/grouped stores and owner-failure break/return controls.
+The current full diagnostic uses canonical helper contracts and actual COFF
+local offsets. An independent six-method word-operation model confirms native
+16-bit prefix/postfix versus32-bit assigned arithmetic; no game credit follows.
+Selected complete source SHA begins71f88697 under
+`.analysis/character-object-55ac80/f167/`; retain its full diagnostic, input
+snapshots and `F167Remilia-physical-flow.obj` alongside all12 prior active objects,
+all14 F157 probes and both F159 traces. Frozen F166 inputs remain unchanged.
+
+Immediately continue the pending R215004483F0 policy:768 CODE plus24 owned
+table bytes. R21500444650 is already cold-exact and supplies context without
+another registration or replay. The entire failed0055AC80 cohort,
+both other complete large drafts, all97 unknown origins and all pending bytes
+remain in the conservative denominator. Checkpoint/cleanup/commit/push must be
+followed by this next action, never a pause. Only new/affected units need replay.
+Receipts: `.analysis/f167-direction-unit-proof.json`,
+`.analysis/f167-direction-canonical-replay.json` and F167
+`full-function-checkpoint.json`/`physical-flow-whole-diagnostic.json`.
 
 **F166 full-function investigation:** no new source/exact registration. The
 full004AC040 inherited physical-prefix diagnostic preserves all83,922 raw bytes /

@@ -13,6 +13,8 @@ confirmation. Only a new explicit user request to pause can authorize pausing.
 The user reiterated this on 2026-10-26: change the handoff command and do not
 pause. After a checkpoint, cleanup, commit, push or handoff, immediately execute
 the next reconstruction task. A finished bounded cohort is not a stop request.
+Each checkpoint must name the next concrete action and execute it within the
+active goal; a successor resumes that action directly.
 Continue the current cohort in `docs/RE_HANDOFF.md`. Frequent
 commits and pushes remain authorized. Use the existing Ghidra wrapper and
 local tools; do not use REA.
