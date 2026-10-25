@@ -24593,3 +24593,47 @@ offset = 51
 type = "REL32"
 symbol = "?SetColorMask@SpriteSequenceParametersF154@@QAEXI@Z"
 target = 0x00410FE0
+
+[units.fighter-resource-parameters-00452b30]
+source = "src/FighterResourceParameters452B30.cpp"
+object = "build/matching/FighterResourceParameters452B30.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterResourceParameters452B30::SelectResourceParameters"]
+symbol = "?SelectResourceParameters@FighterResourceParameters452B30@@QAEXXZ"
+target_address = 0x00452B30
+size = 215
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 36
+type = "DIR32"
+symbol = "?g_CombatMode@@3CA"
+target = 0x006714B4
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 118
+type = "DIR32"
+symbol = "?g_FrameClockMode@@3CA"
+target = 0x0066C238
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 149
+type = "DIR32"
+symbol = "?g_ProfileSelectionAt006718F8@@3PAEA"
+target = 0x006718F8
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 154
+type = "REL32"
+symbol = "?IncrementSelectedWordCounter@ProfileSelectionF155@@QAEXC@Z"
+target = 0x00454D00
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 171
+type = "DIR32"
+symbol = "__real@46098000"
+target = 0x00658E74
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 177
+type = "DIR32"
+symbol = "__real@44610000"
+target = 0x00657B28
+[[units.fighter-resource-parameters-00452b30.relocations]]
+offset = 182
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC

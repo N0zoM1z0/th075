@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F154. The active 98%
+Updated 2026-10-25 for resumed reconstruction, F155. The active 98%
 authored-byte objective remains incomplete. Current state and continuation
 instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
@@ -13,9 +13,9 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 336 units,
-  717,145 code bytes, 137 canonical objects and 213 accepted inputs.
-- Reviewed authored coverage is 36.34%; conservative coverage is 36.27%.
+  complete cold-exact units/all actual relocations. Counts are 337 units,
+  717,360 code bytes, 138 canonical objects and 215 accepted inputs.
+- Reviewed authored coverage is 36.35%; conservative coverage is 36.28%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
@@ -24,13 +24,13 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 ## Current source work
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f154/`, SHA prefix22d81ff5. All151 entries plus
+`.analysis/character-move-4ac040/f155/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams
 have22,721 instructions. This remains unaccepted with no source-presence/exact
-credit. F154 uses the canonical command header with the same complete code.
-Preserve active F154 caller/compiler-map objects, F153 resolved/window/counter objects and F152 object
+credit. F155 uses canonical command and resource headers with the same complete code.
+Preserve active F155 and F154 caller/compiler-map objects, F153 resolved/window/counter objects and F152 object
 listed in the handoff. The first F152 failure84,234/74,320 remains frozen.
 
 The explicit profile remains pinned VC7.1 build3077, /Od /Ob0 /Gy /GR- /GX-
@@ -72,7 +72,7 @@ all151 entries exactly to frozen F152 source through only recorded changes.
 
 The first genuine byte divergence is now state89 at004ADEFB: native loads the
 receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
-the remaining register choices is established. Copy F154 to fresh F155 before
+the remaining register choices is established. Copy F155 to fresh F156 before
 working further. Four whole-source negative controls have identical raw code
 and actual relocation targets: offset-zero scalar member, accepted transform
 view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
@@ -94,6 +94,25 @@ place of native four-byte loads; their new constant destinations were left
 unresolved and the candidate rejected. No such control is adopted as a fix.
 The full debugger build retains the same raw code and all2,352 relocation fields.
 Raw Rich observations give no function-specific or executable-wide profile.
+
+F155's bounded debugger trace narrows the first current-source choice further.
+Immediately before event737, busyEAX/ECX/EDX are all zero and virtual18681 is
+absent from all three per-physical interference sets. Candidate head3 is selected
+asEDX, then the cursor advances to1. Hardware watches record actual writes around
+maps730..740; stopped PCs are after writes. The compiler exited normally with
+8,223 maps/13,951 emissions. All56 logged emission values (1325..1380) agree with
+the complete own COFF; this is not a new full-value trace. At ordinal1352 the
+actual receiver load isEDX versus nativeEAX. Only the frozen pre-resource-migration
+input bundle establishes those logical labels. Target original virtual state and
+post-resource-migration labels remain unknown. No queue, tool file or target was
+patched. The full83,922 bytes/all2,352 fields agree with F154.
+
+Two further complete caller controls are closed: lifting the genuine i88
+declaration to function scope and /Zc:forScope. Both retain raw code/actual
+destinations and18,539 differences; the first merely renumbers29 local labels.
+Do not repeat them without new evidence. F155's source audit projects all151
+entries exactly to F154 by reversing only the two accepted resource declaration
+renames; prefix/default/shared exits and real operations stay unchanged.
 
 Read-only constructor context did not establish an access to4C, so no broader
 position/motion view spanning that unknown field was introduced. R045
@@ -140,8 +159,12 @@ conditions, original declarations or emitted bytes.
 F152 adds the final20 entries700..796/22,380 native investigation bytes. All151
 entry fragments now cover82,372 contiguous investigation bytes. The source
 audit retains1,290 canonical named calls,21 pending named calls,41 float-to-short
-conversions and24 real loop counters/25 loops. The full native function has
-1,358 calls including six true slot-0 calls. The scalar audit checks direct
+conversions and24 real loop counters/25 loops. The151 nondefault entries have
+1,358 calls including six true slot-0 calls. F155 independently recounts1,361
+whole-function calls: the default/shared tail adds three canonical calls at
+004C0380/004C0398/004C03A2. The current whole count is1,313 canonical named,
+41 CRT, six virtual and one pending named; the earlier1,290 canonical fragment
+count excluded those same three. This corrects reporting, not code or credit. The scalar audit checks direct
 literal float/integer store width/value/order in all20 new entries, not computed
 conditions or expressions. The audits are frozen precompilation/preacceptance
 snapshots. Eleven pending sites now have independently exact bodies in the new
@@ -170,9 +193,9 @@ scalar helper units; ten pending sites remain (seven454BC0,two452B30,one483300).
   unknown483300 aim call and actual divisor0.017453288659453392f at00657828.
   795/796 retain their fade/resource calls; only796 writes byte3CF after reset19.
 
-Pending contracts are fully exported in `pending-helper-native-contracts.json`.
-Resource452B30 is an authored215-byte policy with mixed transitive callees, not
-accepted. Unknown483300 forwards two float stack slots to483320 and returns ST0;
+F152 preacceptance contracts are exported in `pending-helper-native-contracts.json`.
+Resource452B30 was an authored215-byte policy with mixed transitive callees,
+then unaccepted; F155 acceptance is recorded below. Unknown483300 forwards two float stack slots to483320 and returns ST0;
 483320 widens to doubles for642240 and performs FST single before returning ST0.
 The private float return declaration is a used-ABI hypothesis, not ownership or
 proof of original precision. Both unknown origins remain unchanged.
@@ -218,8 +241,36 @@ R239 and remain preserved as history. All97 unknown origins are unchanged.
 The complete caller now uses the canonical header at all seven command call
 sites. Its151 source entries, raw function bytes and all relocation destinations
 are unchanged from F153; whole comparison still fails at18,539 positions. Only
-three named pending-body sites remain: two resource452B30 and one unknown483300.
+At F154, three named pending-body sites remained: two resource452B30 and one unknown483300.
 Neither unknown483300/483320 nor either large draft earns new exact credit.
+
+**F155 accepted resource policy:**215-byte `SelectResourceParameters` at452B30
+passed one canonical cold replay,215/215 complete bytes exact with all seven
+actual fields. It clears word3A2, tests signed byte2CD/global6714B4, stores9999
+at3A0, and copies selected DWORDs from3D0/400 to3A4/3A8 using signed byte39D.
+Clock mode1 forwards selected byte384 to the actual6718F8 profile receiver.
+The other path computes float36C*8800.0f/900.0f, converts to integer before
+adding1201/narrowing to word3A0, then clears byte464. SavedECX atEBP-4/plainRET,
+all four branches and nine following excluded INT3 bytes are retained. R109
+full native/independent game context and historical name remain preserved.
+The current header claims call contracts and external storage only, never an
+owner size, array dimensions, original nominal type or word signedness.
+
+The transitive counter454D00 remains R182 authored but unaccepted. Its complete
+79-byte body sign-extends byte argument/bank16AC4, uses stride17F0 and base394,
+increments a word and returnsRET4. Both complete natural pointer/unknown-bound
+array-reference controls emit79 bytes with23 differences: their RHS computes
+the bank before loading the argument index, while native loads the index first.
+No fake bank structure, padding or array extent was added to force it. Those
+sources/evidence remain private and gain no source/exact credit. The resource
+policy's seven fields instead bind to independently retained native callee/data
+contracts. Both large drafts and all97 unknown origins remain pending.
+
+The two resource sites in the complete caller now use the canonical header.
+Only the unknown483300 named site lacks a canonical body; both483300/483320
+remain unknown. Full caller comparison stays83,922 bytes/18,539 differences,
+all2,352 fields replayed, first byte004ADEFB. Receipts are the F155 source audit,
+allocator-window correlation, resource unit proof and canonical replay.
 
 F149 stopped during read-only reconnaissance of390..402. No additional case
 was authored. State392's nested phase 6/phase 4 tests and400..402's three

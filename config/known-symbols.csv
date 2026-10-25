@@ -317,3 +317,4 @@ address,name,module,confidence,evidence
 0x00410FA0,SpriteSequenceParametersF154::SetSamplingMode,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00410FE0,SpriteSequenceParametersF154::SetColorMask,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00454BC0,FighterCommandSelection454BC0::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
+0x00452B30,FighterResourceParameters452B30::SelectResourceParameters,FighterState,inferred,F155; whole canonical cold exact/observed saved-this and no-argument call contract; original names and complete owner unknown

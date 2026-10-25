@@ -335,3 +335,4 @@ FighterMoveScalarHelpers::BeginFadeParameters,0x00454A70,function
 SpriteSequenceParametersF154::SetSamplingMode,0x00410FA0,function
 SpriteSequenceParametersF154::SetColorMask,0x00410FE0,function
 FighterCommandSelection454BC0::SetCommandSelection,0x00454BC0,function
+FighterResourceParameters452B30::SelectResourceParameters,0x00452B30,function
