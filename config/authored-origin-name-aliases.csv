@@ -281,3 +281,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00454BC0,FighterState::SetCommandSelectionAt00454BC0 [provisional],FighterCommandSelection454BC0::SetCommandSelection,R213,fighter-command-selection-00454bc0
 0x00452B30,FighterState::SelectResourceParametersAt00452B30,FighterResourceParameters452B30::SelectResourceParameters,R109,fighter-resource-parameters-00452b30
 0x00453D80,FighterBase::BindAnimationAt00453D80,FighterAnimationReset453D80::BindAnimation,R068,fighter-bind-animation-00453d80
+0x00454D00,ProfileSelection::IncrementSelectedWordCounterAt00454D00,ProfileSelectionF155::IncrementSelectedWordCounter,R182,profile-increment-counter-00454d00

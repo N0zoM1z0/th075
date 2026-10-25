@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for continued reconstruction after the F157 cleanup checkpoint.
+Updated 2026-10-25 for continued reconstruction, F158.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F156 remains the accepted baseline.
+[RE_HANDOFF.md](RE_HANDOFF.md). F158 adds one complete79-byte counter.
 
 ## Authoritative inputs and evidence
 
@@ -15,8 +15,8 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 338 units,
-  717,509 code bytes, 139 canonical objects and 217 accepted inputs.
+  complete cold-exact units/all actual relocations. Counts are 339 units,
+  717,588 code bytes, 140 canonical objects and 218 accepted inputs.
 - Reviewed authored coverage is 36.36%; conservative coverage is 36.29%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
@@ -25,16 +25,28 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 
 ## Current source work
 
-F157 was interrupted before acceptance. Its private `CounterPostfix.cpp` has a
-positive 79-byte old-object diagnostic with no relocation fields; no canonical
-cold replay was performed and no credit was added. The missing-source unit
-registration was preserved privately and withdrawn from the accepted manifest.
-The F157 root `Preview.cpp` is an unreviewed 20-field prefix-increment control;
-its baseline is `snapshots/cursor-resets/Preview.cpp`, matching F156. Keep all 14
-F157 probe objects and the 1,656 private files recorded in
-`.analysis/f157-handoff/retained-f157-inputs.json`. Read the pending-work section
-of [RE_HANDOFF.md](RE_HANDOFF.md) while continuing. Its warnings about incomplete
-compiler xref scanning, unresolved return ABI and unproved broader layouts apply.
+**F158 accepted counter:** complete79-byte `IncrementSelectedWordCounter` at454D00
+passes canonical cold replay79/79, all20 instructions/soleRET4, zero actual
+relocations. Native signed byte argument and bank16AC4 form the word address
+bank*17F0+394+index*2. Natural discarded postfix preserves repeated-address order
+and word arithmetic. The existing pointer-only header and accepted resource
+caller are unchanged. R182 complete body/independent ownership, historical name
+alias, one following excluded INT3 and next function454D50 are retained. No
+original nominal word type, bounds or complete bank/owner layout is inferred;
+no owner is instantiated/embedded. Proof/replay are `.analysis/f158-counter-unit-proof.json`
+and `.analysis/f158-counter-canonical-replay.json`. Only this new unit was cold-built;
+all338 old units,139 objects,217 inputs and all97 unknown origins are unchanged.
+F157's missing-source registration and old-object diagnostic remain history.
+
+Current F158 caller source is restored byte-for-byte to F156 after two complete
+controls: inherited20-field all-prefix and new96-field all-postfix. Both retain
+identical raw83,922 bytes and all2,352 actual relocation records, with18,539 byte
+differences. The baseline has116 discarded field operations:96 prefix corrected
+in F153 plus20 older postfix sites. Genuine loops/ABI/storage are unchanged.
+Both controls are closed, with full snapshots/raw reports retained. Keep all14
+F157 probes and all earlier active objects. F158's four known C2 cursor references
+supersede the incomplete empty F157 shortlist without a full CFG or indirect
+write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
 `.analysis/character-move-4ac040/f156/`, SHA prefix97e045e6. All151 entries plus
@@ -85,8 +97,8 @@ all151 entries exactly to frozen F152 source through only recorded changes.
 
 The first genuine byte divergence is now state89 at004ADEFB: native loads the
 receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
-the remaining register choices is established. F157 already exists and must be
-preserved before working further. Four whole-source negative controls have
+the remaining register choices is established. F157/F158 already exist and must
+be preserved before working further. Four whole-source negative controls have
 identical raw code and actual relocation targets: offset-zero scalar member, accepted transform
 view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
 in88. Do not rerun them without new evidence.
@@ -269,7 +281,8 @@ full native/independent game context and historical name remain preserved.
 The current header claims call contracts and external storage only, never an
 owner size, array dimensions, original nominal type or word signedness.
 
-The transitive counter454D00 remains R182 authored but unaccepted. Its complete
+At F155 the transitive counter454D00 was R182 authored but unaccepted; current
+F158 acceptance above supersedes that status. The historical controls follow: Its complete
 79-byte body sign-extends byte argument/bank16AC4, uses stride17F0 and base394,
 increments a word and returnsRET4. Both complete natural pointer/unknown-bound
 array-reference controls emit79 bytes with23 differences: their RHS computes

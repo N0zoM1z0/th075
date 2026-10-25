@@ -319,3 +319,4 @@ address,name,module,confidence,evidence
 0x00454BC0,FighterCommandSelection454BC0::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
 0x00452B30,FighterResourceParameters452B30::SelectResourceParameters,FighterState,inferred,F155; whole canonical cold exact/observed saved-this and no-argument call contract; original names and complete owner unknown
 0x00453D80,FighterAnimationReset453D80::BindAnimation,FighterBase,inferred,F156; whole canonical cold exact/native slot0 and saved-this binding policy; original names/complete owners unknown
+0x00454D00,ProfileSelectionF155::IncrementSelectedWordCounter,ProfileSelection,inferred,F158; complete canonical cold exact/signed indexed word-counter policy; original names/complete owner unknown

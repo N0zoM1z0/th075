@@ -1,12 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for continued reconstruction after the F157 cleanup checkpoint.
+Updated 2026-10-25 for continued reconstruction, F158.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F156 remains the accepted baseline pending F157 review.
+phases remain deferred. F158 adds one complete79-byte counter. Both large
+drafts remain unaccepted. The current F158 outcomes below supersede the
+historical F157 pending-work notes.
 
 ## Verified reconstruction state
 
@@ -15,14 +17,14 @@ phases remain deferred. F156 remains the accepted baseline pending F157 review.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 338 / 338 / 338 |
-| Exact code bytes | 717,509 |
-| Reviewed authored coverage | 717,509 / 1,973,516 (36.36%) |
-| Conservative coverage, including pending bytes | 717,509 / 1,977,124 (36.29%) |
-| Canonical objects / accepted source-header inputs | 139 / 217 |
+| Source-present / exact functions / exact units | 339 / 339 / 339 |
+| Exact code bytes | 717,588 |
+| Reviewed authored coverage | 717,588 / 1,973,516 (36.36%) |
+| Conservative coverage, including pending bytes | 717,588 / 1,977,124 (36.29%) |
+| Canonical objects / accepted source-header inputs | 140 / 218 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 278 additions / 707,626 code bytes / 217 inputs. Origin evidence through
+F009 plus 279 additions / 707,705 code bytes / 218 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -31,8 +33,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The latest pushed reconstruction checkpoint is **f8f655c (F156)**;
-its preceding checkpoint is **d197080 (F155)**.
+The preceding reconstruction checkpoint is **f8f655c (F156)**; its predecessor
+is **d197080 (F155)**. Policy correction **7f34a0b** explicitly prohibits pausing.
 F156 accepts the complete 149-byte R068 callback
 `fighter-bind-animation-00453d80` in `src/FighterAnimationReset453D80.cpp`.
 One canonical cold build passed 149/149 bytes with all five actual REL32 fields.
@@ -60,10 +62,46 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
+## Current F158 outcomes
+
+The complete R182 counter `profile-increment-counter-00454d00` is accepted from
+`src/ProfileSelection454D00.cpp`: canonical cold replay79/79 bytes, all20
+instructions and soleRET4, zero actual relocations. Its natural discarded
+postfix word increment retains the native repeated-address order. Signed byte
+argument and bank16AC4 form address bank*17F0+394+index*2. One following INT3
+is excluded and the next function starts454D50. Existing pointer-only header
+and accepted resource caller are unchanged; no owner is instantiated/embedded.
+Original names, nominal word type, array bounds and complete owner stay unknown.
+Proof and replay: `.analysis/f158-counter-unit-proof.json` and
+`.analysis/f158-counter-canonical-replay.json`. Only this new unit was cold-built;
+all338 prior definitions,139 objects,217 inputs and all97 unknown origins remain
+unchanged. The resource policy's authored counter dependency is now closed.
+
+Current complete caller source is `.analysis/character-move-4ac040/f158/`, restored
+byte-for-byte to the F156 baseline after the controls below. Read its
+`source-evidence-audit.json` before seeding fresh F159 work. Preserve every prior
+active object, all14 F157 probes and all source/evidence/checkpoints.
+
+Two whole source controls are closed with identical raw code and all actual
+relocation records: inherited F157 `field-prefix` changes20 existing postfix
+increments to prefix; F158 `all-postfix` changes96 existing prefix operations to
+postfix, leaving the20 old postfix sites. The baseline has116 discarded field
+operations: the96 F153 corrections plus20 older postfix operations. Genuine int
+loops, field widths, values, exits, ABI and storage are unchanged. Both full
+comparisons remain83,922 bytes/18,539 differences/all2,352 fields. Neither is
+adopted as a fix. The inherited prefix control is now fully compared; its old
+pending note below is historical. Retain snapshots and complete raw reports.
+
+F158 `c2-known-cursor-references.json` freezes four actual .text literal cursor
+references and individually decodes the known read/init/advance/reset MOVs in
+the hash-pinned C2 image. It supersedes the incomplete empty F157 shortlist.
+Indirect writes and complete compiler CFG remain outside that evidence; tool
+files, compiler queues and target bytes were not changed.
+
 ## Active cohort: complete 004AC040 after F156
 
-Continue matching now. Read the pending F157 section below before choosing a
-new experiment. The authoritative F156
+Continue matching now. Read the current F158 outcomes above before choosing a
+new experiment; the following retained F156 details explain the baseline. The authoritative F156
 source and accepted counts below remain unchanged. The loose F157 `Preview.cpp`
 is an unreviewed prefix-increment experiment, not the baseline.
 
@@ -94,11 +132,11 @@ The draft remains unaccepted, with no source-presence or exact credit.
    diagnostic evidence, not formal equivalence, original type recovery or exactness.
    Investigate supported source/compiler IR and allocation evidence; do not add
    inert work, alter queues or invent ABI/layout to obtain native register names.
-5. Keep the complete body, actual extents and all fields. Only the new149-byte
-   callback was cold-replayed. Neither large draft nor the79-byte counter gains
-   credit. No old accepted dependency changed or needed replay.
+5. Keep the complete body, actual extents and all fields. F156 cold-replayed the
+   new149-byte callback; F158 cold-replayed the new79-byte counter. Both large
+   drafts remain unaccepted. No old accepted dependency changed or needed replay.
 
-## Pending F157 work to continue now
+## Historical F157 pending work; current resolutions are above
 
 The private directory `.analysis/character-move-4ac040/f157/` contains 1,656
 retained files. All 14 `build/probes/F157*.obj` objects are retained, with hashes
@@ -508,3 +546,27 @@ objects, the private project and shared tools were preserved. Receipts are
 `source-checkpoint.json`, all under `.analysis/f157-handoff/`.
 The cleanup checkpoint did not complete the 98% objective. Its pause was an
 agent error; the user has explicitly prohibited pausing. Continue reconstruction.
+
+## F158 verification
+
+Public CI passed **3603 tests in 166.926 seconds**. Target,
+tracking, status, generated progress card and diff checks pass. Only the new
+counter was cold-replayed:79/79 complete bytes exact with zero actual fields.
+All338 prior unit definitions,139 canonical objects,217 accepted source/header
+inputs, forty protected groups, origin evidence through R268, all14 F157 probes
+and prior active objects were hash-verified unchanged. No old unit needed replay.
+
+Two compiler builds ran serially/headless: the new canonical counter and one
+whole caller control. The inherited prefix control was compared from its retained
+object. Both full controls retain83,922 bytes/18,539 differences/all2,352 fields;
+neither earns exact credit. All151 F158 entries and prefix/default/shared tail
+were restored byte-for-byte to F156. The first real difference remains004ADEFB.
+
+Cleanup removed one obsolete reproducible control object (159,716 bytes)
+and 375 bytecode files (8,285,294 bytes). Full source/control
+snapshots, profiles, raw bytes/actual relocation/native reports and logs remain.
+Receipts: `.analysis/f158-counter-unit-proof.json`,
+`.analysis/f158-counter-canonical-replay.json`, `.analysis/f158-preservation-final.json`,
+`.analysis/f158-cleanup.json` and `.analysis/f158-source-checkpoint.json`.
+Current exact code is717,588 bytes across339 units; conservative coverage36.29%.
+The98% objective stays active and incomplete. Do not pause it.

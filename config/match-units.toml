@@ -24671,3 +24671,13 @@ offset = 133
 type = "REL32"
 symbol = "?At@AnimationSequencesF156@@QAEAAPAVAnimationSequenceF156@@I@Z"
 target = 0x004420B0
+
+[units.profile-increment-counter-00454d00]
+source = "src/ProfileSelection454D00.cpp"
+object = "build/matching/ProfileSelection454D00.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["ProfileSelectionF155::IncrementSelectedWordCounter"]
+symbol = "?IncrementSelectedWordCounter@ProfileSelectionF155@@QAEXC@Z"
+target_address = 0x00454D00
+size = 79
+relocations = []
