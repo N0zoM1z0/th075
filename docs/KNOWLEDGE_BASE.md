@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F152. The active 98%
+Updated 2026-10-25 for resumed reconstruction, F153. The active 98%
 authored-byte objective remains incomplete. Current state and continuation
 instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
@@ -23,29 +23,64 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
 ## Current source work
 
-**004AC040, R048 authored:** `.analysis/character-move-4ac040/f152/` contains
-all 151 nondefault fragments, real prefix/default/common tail and the first
-complete compiled `Preview.cpp` (SHA prefix24ea3a57). Whole comparison remains
-82,796 code + 1,126 owned data = 83,922 bytes. The draft emits 84,234 bytes,
-including 83,108 code bytes (+312), with 74,320 position differences after
-resolving all 2,352 actual relocation fields. No source-presence or exact
-credit. Preserve F148/F150/F151/F152 and `build/probes/F152Complete.obj`.
+**004AC040, R048 authored:** the authoritative complete source is now
+`.analysis/character-move-4ac040/f153/`, SHA prefix22d81ff5. All151 entries plus
+the real prefix/default/shared tail compile as one body. Current whole diagnostic
+emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
+positions after replaying all2,352 actual relocation fields. Both code streams
+have22,721 instructions. This remains unaccepted with no source-presence/exact
+credit. Preserve the active F153 resolved/window/counter objects and F152 object
+listed in the handoff. The first F152 failure84,234/74,320 remains frozen.
 
-Compiler observations: the 0x720 frame, saved ESI, EBP-0x64 receiver and 377-byte
-dispatch prefix structure agree. Six pointer tables retain their actual widths
-and all four byte remaps agree. These do not establish original locals/profile.
-The explicit diagnostic profile is pinned VC7.1 build3077, /Od /Ob0 /Gy /GR-
-/GX- /GS /Zi /I src. One Windows `PlaySound` macro collision was removed at the
-complete source include boundary; accepted headers remain unchanged. All actual
-local COFF offsets remain actual, with no native-label rebasing. Full unmasked
-comparison remains authoritative; per-entry diagnostics are investigation only.
+The explicit profile remains pinned VC7.1 build3077, /Od /Ob0 /Gy /GR- /GX-
+/GS /Zi /I src. Frame0x720, savedESI, EBP-0x64 receiver, six table widths and four
+byte remaps agree. All actual local COFF offsets remain actual; whole comparison
+uses no masks, crops, aliases or native-label rebasing. The separate colorless
+instruction diagnostic discards eax/ecx/edx identity for investigation only.
+It finds no remaining shape differences, which proves neither data flow nor
+exactness. Seventy entries still have physical differences.
 
-Next frontier: state6 has the first genuine instruction-order differences in
-two floating expressions, despite equal403-byte size. Native loads both receiver
-addresses before the x87 operand; emitted code loads the x87 operand between
-them. State88 is the first size delta (+12), including native DWORD field copying
-versus emitted x87 copying. No natural source correction is established yet.
-Copy F152 inputs into a fresh F153 before further changes.
+F153's bounded pointer views describe observed scalar windows, never a complete
+owner or a proven original nominal subobject. They are not instantiated/embedded
+to size an owner. No explicit padding, synthetic storage, arrays or inert locals
+were added. Actual fields and compiler-supplied alignment only:
+
+- At40: byte flag40 and float positions44/48. Compiler alignment occupies41..43;
+  the original identities of those bytes remain unknown and are never accessed.
+- At50: float50/54, observed raw DWORD58 and float5C. The independently exact
+  motion-clear helper writes all four DWORDs; polar velocity and main arithmetic
+  provide the used float accesses. Raw58's original declaration stays unknown.
+- At94: the two observed launch floats94/98. Their direct copy now emits the
+  native DWORD copy rather than an x87 round trip.
+- At2F0: the independently copied36-byte transform record followed immediately
+  by four float parameters314..320. Canonical fighter forwarders pass these
+  actual pointers; the accepted spawner copies the complete transform and reads
+  all four parameters. This corrects the ten parameter314 argument loads in
+  states751/752. Opponent positions use the same observed position view.
+- At10: reuse of the accepted36-byte transform record for alpha11/scalar30 did
+  not change bytes, but keeps the already established field interface.
+
+All96 discarded small counter results were checked against the native field
+load, arithmetic and store widths, paired in field/sign/order within complete
+entries. Native byte/word operations now use natural ++/-- instead of promoted
+assignment arithmetic. State414 uses integer `0 - F02 * 4`, matching the actual
+XOR-zero/SUB sequence before conversion. State771 uses `F04 += F06`, matching
+the actual RHS-before-LHS loads and add into the LHS value. These source changes
+add no artificial locals or ABI changes. The source transformation audit projects
+all151 entries exactly to frozen F152 source through only recorded changes.
+
+The first genuine byte divergence is now state89 at004ADEFB: native loads the
+receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
+the remaining register choices is established. Copy F153 to fresh F154 before
+working further. Four whole-source negative controls have identical raw code
+and actual relocation targets: offset-zero scalar member, accepted transform
+view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
+in88. Do not rerun them without new evidence.
+
+Read-only constructor context did not establish an access to4C, so no broader
+position/motion view spanning that unknown field was introduced. R045
+initialize4567B0 calls458650/458670, whose observed wrappers only install vtables;
+both remain unknown. Existing ownership and all97 pending origins stay unchanged.
 
 F150 covers the actual mapped states 390..420, adding 12,684 native
 investigation bytes (35,886 contiguous bytes with source in total). It retains
@@ -143,8 +178,8 @@ The first tests the signed low word and returns without a store when negative,
 otherwise writes word3B8. The second writes byteF0 at538 then argument byte539.
 R103 origin roles/native bodies and all real exits remain independently checked;
 literal aliases preserve the old names. Neither interface establishes a complete
-owner. The large source still uses its frozen pending view; migrate declarations
-only in the next complete revision and compare all actual relocations again.
+owner. F153 migrates the large source to the canonical scalar declaration at all
+eleven sites; the complete whole comparison still fails and earns no credit.
 
 **Earlier accepted code:** F146's 51-byte motion helper00453E20, unit
 `fighter-motion-clear-00453e20`, cold51/51 exact. The R103 role and original
