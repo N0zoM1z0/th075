@@ -25466,3 +25466,139 @@ offset = 176
 type = "REL32"
 symbol = "??Diterator@?$deque@PAVDispatchingEffectF162@@V?$allocator@PAVDispatchingEffectF162@@@std@@@std@@QBEAAPAVDispatchingEffectF162@@XZ"
 target = 0x004453E0
+
+[units.fighter-render-side-effect-00454840]
+source = "src/FighterOverlayDrawingF163.cpp"
+object = "build/matching/FighterOverlayDrawingF163.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::RenderSideEffect"]
+symbol = "?RenderSideEffect@FighterOverlayDrawingF163@@QAEXXZ"
+target_address = 0x00454840
+size = 378
+[[units.fighter-render-side-effect-00454840.relocations]]
+offset = 193
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.fighter-render-side-effect-00454840.relocations]]
+offset = 370
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.fighter-draw-facing-sprite-004549c0]
+source = "src/FighterOverlayDrawingF163.cpp"
+object = "build/matching/FighterOverlayDrawingF163.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::DrawFacingSpriteAt004549C0"]
+symbol = "?DrawFacingSprite@FighterOverlayDrawingF163@@QAEXFMMK@Z"
+target_address = 0x004549C0
+size = 165
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 44
+type = "DIR32"
+symbol = "__real@00000000"
+target = 0x0065782C
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 53
+type = "DIR32"
+symbol = "__real@43800000"
+target = 0x006583A0
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 59
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 82
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 111
+type = "DIR32"
+symbol = "__real@44200000"
+target = 0x00657884
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 120
+type = "DIR32"
+symbol = "__real@43800000"
+target = 0x006583A0
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 126
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 132
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.fighter-draw-facing-sprite-004549c0.relocations]]
+offset = 155
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.fighter-render-fade-overlay-00454aa0]
+source = "src/FighterOverlayDrawingF163.cpp"
+object = "build/matching/FighterOverlayDrawingF163.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::RenderFadeOverlay"]
+symbol = "?RenderFadeOverlay@FighterOverlayDrawingF163@@QAEXXZ"
+target_address = 0x00454AA0
+size = 280
+[[units.fighter-render-fade-overlay-00454aa0.relocations]]
+offset = 28
+type = "REL32"
+symbol = "_abs"
+target = 0x00641DAA
+[[units.fighter-render-fade-overlay-00454aa0.relocations]]
+offset = 168
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+[[units.fighter-render-fade-overlay-00454aa0.relocations]]
+offset = 272
+type = "REL32"
+symbol = "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z"
+target = 0x0040CA80
+
+[units.fighter-camera-offset-00453eb0]
+source = "src/FighterCameraOffsetF162.cpp"
+object = "build/matching/FighterCameraOffsetF162.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::AdjustCameraOffsetAt00453EB0"]
+symbol = "?AdjustCameraOffset@FighterCameraOffsetF162@@QAEXC@Z"
+target_address = 0x00453EB0
+size = 181
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 56
+type = "DIR32"
+symbol = "?g_CameraHorizontalBiasAt006713EC@@3MA"
+target = 0x006713EC
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 87
+type = "DIR32"
+symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
+target = 0x0067140C
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 99
+type = "DIR32"
+symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
+target = 0x0067140C
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 124
+type = "DIR32"
+symbol = "?g_CameraHorizontalBiasAt006713EC@@3MA"
+target = 0x006713EC
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 155
+type = "DIR32"
+symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
+target = 0x0067140C
+[[units.fighter-camera-offset-00453eb0.relocations]]
+offset = 167
+type = "DIR32"
+symbol = "?g_CameraVerticalBiasAt0067140C@@3MA"
+target = 0x0067140C

@@ -1,10 +1,10 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F162.
+Updated 2026-10-26 for continued reconstruction, F163.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F162 adds two complete functions/373 bytes.
+[RE_HANDOFF.md](RE_HANDOFF.md). F163 adds four complete functions/1,004 bytes.
 
 ## Authoritative inputs and evidence
 
@@ -15,15 +15,49 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 382 units,
-  721,118 code bytes, 145 canonical objects and 226 accepted inputs.
-- Reviewed authored coverage is 36.54%; conservative coverage is 36.47%.
+  complete cold-exact units/all actual relocations. Counts are 386 units,
+  722,122 code bytes, 147 canonical objects and 230 accepted inputs.
+- Reviewed authored coverage is 36.59%; conservative coverage is 36.52%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F163 accepted drawing/camera:** complete378-byte side effect454840,165-byte
+facing sprite4549C0,280-byte fade overlay454AA0 and181-byte camera offset453EB0
+pass two new canonical cold builds,1,004 authored bytes/all20 actual fields
+(7REL32/13DIR32). Every exit/RET0/RET16/RET4, full COMDAT and excluded alignment
+is checked. Six draw calls use the existing canonical DrawSprite contract.
+R263 abs11 and four complete readonly4-byte literal COMDATs retain full evidence
+without new library/data credit. Repeated signed-short products, asymmetric
+coordinates, unsigned alpha/sprite reads, real byte local and signed integer
+division/float conversions remain natural. Float-y/color forwarding uses a
+separate used-contract view; original nominal formals/full owners stay unknown.
+No existing header changes. Graphics.hpp is independently unchanged from the
+parent Git blob; it is not in the adoption/shared-header guard sets. All382
+prior units/145 objects/226 adoption inputs and origin evidence remain intact.
+
+Camera181 is solved by ordinary unwrapped scalar float dereferences, retaining
+native singleFLD/memoryFCOMP and all six actual global fields. Parenthesized
+scalar reads are materialized differently by the pinned compiler; original
+expression spelling is not recovered. Signed byte argument/local/side and
+strict ordered-greater0 versus less/equal/unordered signed50 bias remain.
+Typed-opponent/virtual-prefix controls leave185/111; bare reversed comparison
+gives181/8. Generic member/raw/window54 and complete policy172 observations,
+including a separately packed generic model, make no original owner layout or
+alignment/packing claim. Those controls are not adopted. Older F162 camera
+failure/current object remains historical negative evidence, without credit.
+
+One full main control unwraps only FLOAT. All83,922 raw bytes and2,352 actual
+raw relocation records stay identical to F156; full comparison remains18,539
+differences/first004ADEFB. This control is closed; all151 entries/prefix/default/
+tail/headers are restored to baseline under F163, SHA prefix97e045e6. Both large
+drafts and97 unknown origins remain pending in the full conservative denominator.
+Continue F164 without pausing; inspect the actual earlier field-window controls
+before testing another representation. Preserve the checkpoint's12 active
+objects, both F159 traces, all14 F157 probes and every older active object.
 
 **F162 accepted effect dispatch:** complete166-byte selected-list45BC30 and
 207-byte four-list45BCE0 policies pass one canonical cold build,373 bytes/all15
@@ -164,7 +198,7 @@ supersede the incomplete empty F157 shortlist without a full CFG or indirect
 write exclusion. No compiler/target bytes or queues were changed.
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f162/`, SHA prefix97e045e6. All151 entries plus
+`.analysis/character-move-4ac040/f163/`, SHA prefix97e045e6. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams

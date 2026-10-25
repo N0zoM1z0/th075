@@ -381,3 +381,7 @@ BattleEffectManager::DestroyOwnedEffectsAt0045B9B0,0x0045B9B0,function
 BattleEffectManager::BindFighterAt0045BA10,0x0045BA10,function
 BattleEffectManager::DispatchSelectedListAt0045BC30,0x0045BC30,function
 BattleEffectManager::DispatchFourListsAt0045BCE0,0x0045BCE0,function
+FighterState::RenderSideEffect,0x00454840,function
+FighterState::DrawFacingSpriteAt004549C0,0x004549C0,function
+FighterState::RenderFadeOverlay,0x00454AA0,function
+FighterState::AdjustCameraOffsetAt00453EB0,0x00453EB0,function

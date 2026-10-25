@@ -1,13 +1,13 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F162.
+Updated 2026-10-26 for continued reconstruction, F163.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F162 accepts two complete functions/373 bytes. Both
-large drafts remain unaccepted. Current F162 outcomes supersede historical
+phases remain deferred. F163 accepts four complete functions/1,004 bytes. Both
+large drafts remain unaccepted. Current F163 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -35,14 +35,14 @@ user changes it. Only a new explicit user request to pause authorizes pausing.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 382 / 382 / 382 |
-| Exact code bytes | 721,118 |
-| Reviewed authored coverage | 721,118 / 1,973,516 (36.54%) |
-| Conservative coverage, including pending bytes | 721,118 / 1,977,124 (36.47%) |
-| Canonical objects / accepted source-header inputs | 145 / 226 |
+| Source-present / exact functions / exact units | 386 / 386 / 386 |
+| Exact code bytes | 722,122 |
+| Reviewed authored coverage | 722,122 / 1,973,516 (36.59%) |
+| Conservative coverage, including pending bytes | 722,122 / 1,977,124 (36.52%) |
+| Canonical objects / accepted source-header inputs | 147 / 230 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 322 additions / 711,235 code bytes / 226 inputs. Origin evidence through
+F009 plus 326 additions / 712,239 code bytes / 230 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -51,7 +51,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **5d51487 (F161)**, preceded by
+The preceding reconstruction checkpoint is **d0ecd9b (F162)**, preceded by
+**5d51487 (F161)** and
 **c758e14 (F160)**; continuation policy
 **0322984** also removes the stale README stop instruction. Earlier checkpoints
 include **6afb9bb (F159)**, **cbda145 (F158)** and **f8f655c (F156)**.
@@ -85,7 +86,93 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F162 outcomes and continuation
+## Current F163 outcomes and continuation
+
+Two new canonical objects accept four complete authored policies/1,004 bytes:
+
+| Unit | Source | Code bytes |
+| --- | --- | --- |
+| fighter-render-side-effect-00454840 | FighterOverlayDrawingF163.cpp | 378 |
+| fighter-draw-facing-sprite-004549c0 | FighterOverlayDrawingF163.cpp | 165 |
+| fighter-render-fade-overlay-00454aa0 | FighterOverlayDrawingF163.cpp | 280 |
+| fighter-camera-offset-00453eb0 | FighterCameraOffsetF162.cpp | 181 |
+
+All four pass canonical cold replay with all20 actual fields (7 REL32/13 DIR32),
+every real exit/RET0/RET16/RET4, full COMDAT extents and excluded alignment. All
+six drawing calls use the existing canonical DrawSprite body/contract. The abs
+call retains independently frozen R263 library evidence and adds no credit.
+All four complete readonly4-byte literal COMDATs also match the observed target
+0/160/256/640 values, without data credit. Native roles and R045/R102/R103 origin
+records remain literal through explicit COFF mappings. Existing headers and all
+382 prior units/145 objects/226 adoption inputs remain unchanged. Graphics.hpp
+is outside those adoption/shared-header guard sets; its unchanged contents were
+additionally verified against the parent Git blob, without relaxing any guard.
+
+Rendering preserves repeated signed-short products and actual asymmetric
+0-u*u-v*v-96/u*u+v*v+704 coordinates, signed/unsigned sprite-byte distinctions,
+SDK alpha packing, real byte-alpha local, signed abs/division and half-width
+conversions. Facing draw forwards float-y and DWORD-color stack slots through
+a separate used-contract view; original nominal formals remain unknown and the
+older shared declarations are unchanged. No incomplete owner is instantiated.
+
+Camera181 is now accepted. Unwrapped ordinary scalar float dereferences remove
+the pinned compiler's extra floating-load materialization: native singleFLD /
+memoryFCOMP, complete181 bytes/all six globals exact. Reversing that change back
+to parenthesized scalar reads recovers the original failed source; this does not
+recover original expression spelling. Signed-byte argument/local/side, real
+integer-to-float temporaries and strict ordered-greater0 versus less/equal/
+unordered signed50 bias are preserved. Typed-opponent and virtual-prefix
+controls retain185/111; a bare reversed comparison gives181/8. Complete generic
+member/raw/window observations, including a separately packed generic model,
+retain their own54/172-byte bodies: no original owner alignment/packing/layout
+claim follows, and those changes are not adopted. Retain all source/profile/raw
+field reports and the old F162 camera object as historical negative evidence.
+
+The same evidence motivated one complete151-entry main control: only FLOAT's
+expansion changed from parenthesized FIELD(float) to an ordinary dereference.
+All83,922 raw bytes and all2,352 actual raw relocation records remain identical
+to F156. Full comparison still fails at18,539 positions/first004ADEFB. The
+control is closed, and all151 entries/prefix/default/tail/headers are restored
+to SHA prefix97e045e6 in `.analysis/character-move-4ac040/f163/`. No main credit.
+
+Continue fresh F164 without pausing. Seek genuine state89 source/compiler
+allocation evidence and complete related authored policies. Review actual old
+offset-zero/field-window control source before proposing another scalar-access
+control; do not repeat a closed form without new evidence. Both complete large
+drafts and all97 unknown origins remain in the conservative denominator. Seed
+the next prior-active list from the current checkpoint's active_objects (12),
+including retained F162CameraReversed.obj, and preserve both F159 traces/all14
+F157 probes/every older active object. All Wine processes need the explicit
+headless environment in BUILD_MATCHING.md.
+
+Receipts: `.analysis/f163-drawing-unit-proof.json`,
+`.analysis/f163-drawing-canonical-replay.json`,
+`.analysis/f163-render/canonical-readonly-literals.json`, `.analysis/f163-camera/`
+and F163 `source-evidence-audit.json`/`float-lvalues-whole-diagnostic.json`.
+
+Public CI passed **3,612 tests in 189.135 seconds**. Target,
+tracking, progress and diff checks pass. Only four new units were cold replayed,
+1,004/1,004 complete authored bytes and20 actual fields across two new objects.
+Four entire literal COMDATs and the R263 abs11 body retain separate complete
+checks without data/library credit. All382 old units,145 canonical objects,
+226 adoption inputs, existing headers, every origin/verifier guard, forty
+protected groups and all12 prior active objects were hash-verified unchanged.
+No old accepted dependency required replay.
+
+Eleven compiler builds ran serially with explicit no-display/no-Wine-graphics
+environments: nine diagnostics/controls (including one whole main build) and
+two canonical objects. The main control preserves all83,922 raw bytes/all2,352
+actual field records; all151 source entries/prefix/default/tail are restored.
+Cleanup removed nine obsolete probes (192,881 bytes) and377 bytecode
+files (8,312,304 bytes). Associated PDB outputs present at cleanup:
+0 (0 bytes). Complete source/header/profile/raw code/data/symbol/
+native/field receipts remain, along with every old active object and all147
+canonical objects. Final receipts:
+`.analysis/f163-preservation-final.json`, `.analysis/f163-cleanup.json` and
+`.analysis/f163-source-checkpoint.json`. The98% goal stays active and incomplete;
+do not pause it or wait for another resume request.
+
+## Retained F162 outcomes
 
 One new object accepts two complete R109 authored dispatch policies/373 bytes
 from `src/EffectDispatchF162.cpp` and its new call-only header:

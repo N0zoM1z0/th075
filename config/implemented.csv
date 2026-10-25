@@ -380,3 +380,7 @@ BattleEffectManager::DestroyOwnedEffectsAt0045B9B0
 BattleEffectManager::BindFighterAt0045BA10
 BattleEffectManager::DispatchSelectedListAt0045BC30
 BattleEffectManager::DispatchFourListsAt0045BCE0
+FighterState::RenderSideEffect
+FighterState::DrawFacingSpriteAt004549C0
+FighterState::RenderFadeOverlay
+FighterState::AdjustCameraOffsetAt00453EB0

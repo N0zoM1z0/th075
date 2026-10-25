@@ -363,3 +363,7 @@ address,name,module,confidence,evidence
 0x0045BA10,BattleEffectManager::BindFighterAt0045BA10,BattleEffectManager,inferred,F161; complete canonical cold exact plus coupled whole EH/source graph; original role retained; no complete owner claim
 0x0045BC30,BattleEffectManager::DispatchSelectedListAt0045BC30,BattleEffectManager,inferred,F162; whole canonical cold exact; explicit call-only COFF map; original role and complete-owner unknowns retained
 0x0045BCE0,BattleEffectManager::DispatchFourListsAt0045BCE0,BattleEffectManager,inferred,F162; whole canonical cold exact; explicit call-only COFF map; original role and complete-owner unknowns retained
+0x00454840,FighterState::RenderSideEffect,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
+0x004549C0,FighterState::DrawFacingSpriteAt004549C0,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
+0x00454AA0,FighterState::RenderFadeOverlay,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained
+0x00453EB0,FighterState::AdjustCameraOffsetAt00453EB0,FighterState,inferred,F163; whole canonical cold exact; explicit call-only source-symbol map; original role and complete-owner unknowns retained

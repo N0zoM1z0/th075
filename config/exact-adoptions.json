@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "b5d8254c88eb6b5c4bd7870f985ba86f89bc06ee6f1e59d0af8ccdc4d45353bf"
+      "current_sha256": "aa6f0406b5364f8d1620be614917aab28ac9089374273c9e27d49eca443706d8"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "3ea0512548b081e94d3e1cab17eeebde86bacd46c7ccb588bcb46e99b229216e"
+      "current_sha256": "1dcdcf8320a8724caf35419163746648105a27d38f85792cde1b23f6fde68ee9"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "40d6ea9b45f09ca193ed344b6930b1e459498c7989d8eab480de7aa76b6fc64b"
+      "current_sha256": "868df429f267f9eae4158abfa51cb7b2536081d310f845d04b02b769fd1d629f"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "ac5a59fba4b559babeb8bd24f19eb5d59c83e1d7f0d0ac1eb5cc88d78749d8b7"
+      "current_sha256": "33d44af3d46fb79cbeaee189b9064f93000731534373f89d2f4bbc23744f90de"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "85ffd0b28ad9fbd4b07a78da6241547011589cce1ca65a556829c75b53d8271c"
+      "current_sha256": "362b526c4be078cd5c0fe5ae669d37aa517a66a76ad9a8c0225af232e5f7282c"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14208,6 +14208,182 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-mixed-context",
         "evidence_id": "R109"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454840",
+        "size": "378",
+        "span_end": "0x004549B9",
+        "current_name": "FUN_00454840",
+        "proposed_name": "FighterState::RenderSideEffect",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00454840",
+        "size": "378",
+        "span_end": "0x004549B9",
+        "current_name": "FUN_00454840",
+        "proposed_name": "FighterState::RenderSideEffect",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterOverlayDrawingF163::RenderSideEffect()",
+        "is_thunk": "false",
+        "source_file": "src/FighterOverlayDrawingF163.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F163; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-side-effect-00454840",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F163: complete canonical cold exact/378 bytes/all2 actual fields. Original native role retained through explicit call-only COFF mapping. Repeated signed-short squares, actual left0-u*u-v*v-96/rightu*u+v*v+704 coordinates, signed sprite byte and SDK alpha packing are preserved without cached reads. Partial owners never instantiated/embedded; full private layouts/types remain unknown. No fake ABI/return/local/padding/assembly, conditional source bodies, masks/crops/aliases/rebasing. Only4 new units/two new objects cold-replayed; all382 old units/145 objects/226 adoption inputs, existing headers,97 unknown origins and both complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00454840",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x004549C0",
+        "size": "165",
+        "span_end": "0x00454A64",
+        "current_name": "FUN_004549c0",
+        "proposed_name": "FighterState::DrawFacingSpriteAt004549C0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x004549C0",
+        "size": "165",
+        "span_end": "0x00454A64",
+        "current_name": "FUN_004549c0",
+        "proposed_name": "FighterState::DrawFacingSpriteAt004549C0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterOverlayDrawingF163::DrawFacingSprite(short, float, float, DWORD)",
+        "is_thunk": "false",
+        "source_file": "src/FighterOverlayDrawingF163.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F163; scripts/repo-python scripts/replay-exact-units.py --unit fighter-draw-facing-sprite-004549c0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F163: complete canonical cold exact/165 bytes/all9 actual fields. Original native role retained through explicit call-only COFF mapping. All7 actual readonly32-bit float fields (0/160/256/640) and2 draw calls retained; float-y and DWORD-color forwarding are used ABI views, not recovered original nominal formals. Legacy shared declarations remain unchanged. Partial owners never instantiated/embedded; full private layouts/types remain unknown. No fake ABI/return/local/padding/assembly, conditional source bodies, masks/crops/aliases/rebasing. Only4 new units/two new objects cold-replayed; all382 old units/145 objects/226 adoption inputs, existing headers,97 unknown origins and both complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x004549C0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454AA0",
+        "size": "280",
+        "span_end": "0x00454BB7",
+        "current_name": "FUN_00454aa0",
+        "proposed_name": "FighterState::RenderFadeOverlay",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00454AA0",
+        "size": "280",
+        "span_end": "0x00454BB7",
+        "current_name": "FUN_00454aa0",
+        "proposed_name": "FighterState::RenderFadeOverlay",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterOverlayDrawingF163::RenderFadeOverlay()",
+        "is_thunk": "false",
+        "source_file": "src/FighterOverlayDrawingF163.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F163; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-fade-overlay-00454aa0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F163: complete canonical cold exact/280 bytes/all3 actual fields. Original native role retained through explicit call-only COFF mapping. Actual byte alpha local, signed abs/product/division, repeated byte amount reads, asymmetric integer half-width coordinates and unsigned sprite-byte call preserved. Entire11-byte abs callee has independent R263 source-order library evidence and gains no credit. Partial owners never instantiated/embedded; full private layouts/types remain unknown. No fake ABI/return/local/padding/assembly, conditional source bodies, masks/crops/aliases/rebasing. Only4 new units/two new objects cold-replayed; all382 old units/145 objects/226 adoption inputs, existing headers,97 unknown origins and both complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00454AA0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453EB0",
+        "size": "181",
+        "span_end": "0x00453F64",
+        "current_name": "FUN_00453eb0",
+        "proposed_name": "FighterState::AdjustCameraOffsetAt00453EB0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453EB0",
+        "size": "181",
+        "span_end": "0x00453F64",
+        "current_name": "FUN_00453eb0",
+        "proposed_name": "FighterState::AdjustCameraOffsetAt00453EB0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterCameraOffsetF162::AdjustCameraOffset(signed char)",
+        "is_thunk": "false",
+        "source_file": "src/FighterCameraOffsetF162.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F163; scripts/repo-python scripts/replay-exact-units.py --unit fighter-camera-offset-00453eb0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F163: complete canonical cold exact/181 bytes/all6 actual fields. Original native role retained through explicit call-only COFF mapping. Signed-byte argument/local/side, genuine integer-to-float temporaries, both camera globals and ordered-greater0 versus less/equal/unordered signed50 bias retained. Ordinary unwrapped scalar float dereferences match native singleFLD/memoryFCOMP; no original expression spelling or alignment/layout/ABI inference. Partial owners never instantiated/embedded; full private layouts/types remain unknown. No fake ABI/return/local/padding/assembly, conditional source bodies, masks/crops/aliases/rebasing. Only4 new units/two new objects cold-replayed; all382 old units/145 objects/226 adoption inputs, existing headers,97 unknown origins and both complete pending large drafts preserved."
+      },
+      "origin": {
+        "address": "0x00453EB0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
       }
     }
   ],
@@ -143329,6 +143505,218 @@
           "target": 4477920
         }
       ]
+    },
+    "fighter-render-side-effect-00454840": {
+      "source": "src/FighterOverlayDrawingF163.cpp",
+      "object": "build/matching/FighterOverlayDrawingF163.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::RenderSideEffect"
+      ],
+      "symbol": "?RenderSideEffect@FighterOverlayDrawingF163@@QAEXXZ",
+      "target_address": 4540480,
+      "size": 378,
+      "relocations": [
+        {
+          "offset": 193,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 370,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "fighter-draw-facing-sprite-004549c0": {
+      "source": "src/FighterOverlayDrawingF163.cpp",
+      "object": "build/matching/FighterOverlayDrawingF163.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::DrawFacingSpriteAt004549C0"
+      ],
+      "symbol": "?DrawFacingSprite@FighterOverlayDrawingF163@@QAEXFMMK@Z",
+      "target_address": 4540864,
+      "size": 165,
+      "relocations": [
+        {
+          "offset": 44,
+          "type": "DIR32",
+          "symbol": "__real@00000000",
+          "target": 6649900
+        },
+        {
+          "offset": 53,
+          "type": "DIR32",
+          "symbol": "__real@43800000",
+          "target": 6652832
+        },
+        {
+          "offset": 59,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 82,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 111,
+          "type": "DIR32",
+          "symbol": "__real@44200000",
+          "target": 6649988
+        },
+        {
+          "offset": 120,
+          "type": "DIR32",
+          "symbol": "__real@43800000",
+          "target": 6652832
+        },
+        {
+          "offset": 126,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 132,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 155,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "fighter-render-fade-overlay-00454aa0": {
+      "source": "src/FighterOverlayDrawingF163.cpp",
+      "object": "build/matching/FighterOverlayDrawingF163.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::RenderFadeOverlay"
+      ],
+      "symbol": "?RenderFadeOverlay@FighterOverlayDrawingF163@@QAEXXZ",
+      "target_address": 4541088,
+      "size": 280,
+      "relocations": [
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "_abs",
+          "target": 6561194
+        },
+        {
+          "offset": 168,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        },
+        {
+          "offset": 272,
+          "type": "REL32",
+          "symbol": "?DrawSprite@TimelineDrawing438D00@@QAEXHMMKMMMME@Z",
+          "target": 4246144
+        }
+      ]
+    },
+    "fighter-camera-offset-00453eb0": {
+      "source": "src/FighterCameraOffsetF162.cpp",
+      "object": "build/matching/FighterCameraOffsetF162.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::AdjustCameraOffsetAt00453EB0"
+      ],
+      "symbol": "?AdjustCameraOffset@FighterCameraOffsetF162@@QAEXC@Z",
+      "target_address": 4538032,
+      "size": 181,
+      "relocations": [
+        {
+          "offset": 56,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 87,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 99,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 124,
+          "type": "DIR32",
+          "symbol": "?g_CameraHorizontalBiasAt006713EC@@3MA",
+          "target": 6755308
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        },
+        {
+          "offset": 167,
+          "type": "DIR32",
+          "symbol": "?g_CameraVerticalBiasAt0067140C@@3MA",
+          "target": 6755340
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -143557,6 +143945,10 @@
     "src/EffectManagerLifetimeF161.cpp": "3fd83e3f5dc494d540c3fcb8314696e470b60009fd9583b030091923e2707e5a",
     "src/EffectManagerLifetimeF161.hpp": "8ca19a2058469d8d7423d1a9b798640137e4005c674fcc04b1216c23ea3e4ef9",
     "src/EffectDispatchF162.cpp": "c3f6357c36710c4f199d278208724a307068952306fc20e95516c6f042b23210",
-    "src/EffectDispatchF162.hpp": "d9807c6f5b425eb968a7530518c2cc373e32c2e03ae2071daade9b1e0c082911"
+    "src/EffectDispatchF162.hpp": "d9807c6f5b425eb968a7530518c2cc373e32c2e03ae2071daade9b1e0c082911",
+    "src/FighterOverlayDrawingF163.cpp": "f18f6f9280b80a5c37bc81f53e649d0651f8f0129c093adb6a6c5122626354d5",
+    "src/FighterOverlayDrawingF163.hpp": "8d1730ab3c636e2897121fa326ee69bd038b24acc84eef547b94c16384bb0e4f",
+    "src/FighterCameraOffsetF162.cpp": "2410154181589db866619709f42a314bd816f0dccf9523443b9f57e48133762c",
+    "src/FighterCameraOffsetF162.hpp": "89300dc00fe300daa5d0ac790c94127f5445516efbf5bcd40b4e32e03dd4eca1"
   }
 }
