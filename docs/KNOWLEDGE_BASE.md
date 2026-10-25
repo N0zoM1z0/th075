@@ -26326,7 +26326,7 @@ objects (365,043 bytes) and 375 bytecode files
 receipts. The 98% goal remains active and incomplete; later phases remain
 deferred.
 
-## Current reconstruction cohort: F142
+## F142 cohort at the F141 checkpoint
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
 All 92 entries have private natural source; all 81,539 main code bytes remain
@@ -26368,3 +26368,137 @@ successful compilation alone earn no credit. Keep compiler builds serial;
 cold replay only new/affected units. Freeze all actual inputs/raw code/fields
 before cleaning obsolete objects. All 97 unknown origins/3,608 bytes remain
 in the conservative denominator; preserve accepted evidence through R268.
+
+## F142 bounded word view and complete register-phase controls (2026-10-25)
+
+F142 retains the same complete authored `0050A580/81539` cohort.
+**No new exact or source-presence credit is accepted.** Nine serial builds
+comprise three complete-main controls and six independent fixture builds.
+
+All three complete main controls retain **82,109 emitted bytes / 26,719 whole
+target differences**, all **1,449 real fields**, 17,435 instructions, the
+same raw SHA-256 `1b66fff11d9eaef36e600a10bd9454aca89101caa57b07ea63aff19290c0740f`
+and the same fully relocated failed emission. Required extent remains
+82,106 bytes including both owned tables. The controls are: replacing four
+conditional returns in cases855/997 with switch breaks in the actual large
+jump-table context; splitting the final case855 logical AND into nested
+guards; and the new bounded word view described below. The first two
+variants remain frozen in their own snapshots; they are not the active body.
+
+The complete 146-byte constructor at `0050A4E0` independently proves six
+adjacent two-byte zero stores at `D8, DA, DC, DE, E0, E2`. A private verifier
+tracks each receiver from saved entry ECX and invalidates volatile registers
+at the one call. The twelve-byte window has no unobserved gap or declared
+padding. Current natural source now uses a pointer-only
+`AuxiliaryWordWindowF142` for **649 signed-word accesses to D8..DE**.
+E0/E2 have no accesses in this main body; their original signedness remains
+unknown and the view represents their observed zero-initialized bits as
+unsigned words. Neither an original subobject name nor a complete owner
+size, inheritance or allocation layout is inferred. No owner is instantiated
+or embedded. The private receiver declaration and virtual symbol remain
+unchanged. This source improvement leaves the whole emitted failure intact.
+
+**Current source is the F142 word-view composition**, not byte-identical
+F139 source. Retain **`build/probes/F142WordWindow.obj`** as active, together
+with every previous F134/F136/F138/F139 active object. The original F139
+source and the F142 baseline snapshot remain unchanged. Constructor and all
+81,539 main code bytes remain unaccepted.
+
+The independent fixtures close specific gaps in earlier small controls:
+
+* Three complete callers with helper declarations only, real definitions
+  before caller, or definitions after caller have the same entire 106 bytes,
+  actual relocation records and following switch-case registers.
+* Eleven narrow-integer/float operator and comparison forms across three
+  observable prefix states give **33 complete callers**. First scalar
+  receivers actually cover **ECX, EDX and EAX**. Every form equals its direct
+  baseline within each state through all real fields and following registers.
+* Seven combinations of zero-argument thiscall members, fastcall members and
+  free fastcall ECX-pointer functions give **21 callers** across those prefix
+  states. Full toy next callees are all 36 bytes; clear callees are all 21
+  bytes, with identical complete bodies/fields within each role. Caller raw
+  bytes and relocation geometry are equal; their actual differing symbol
+  names remain recorded. No resolved native-target equality, original ABI
+  or game declaration change is inferred from this toy observation.
+* Six equivalent integer predicates across three states give **18 callers**.
+  Equality, logical-not guard, De Morgan and not-unequal forms are identical.
+  Subtraction-zero and negated-subtraction forms change exactly one opcode
+  from CMP to SUB; following GPR bytes stay identical. Native uses CMP, so
+  this supplies no matching hidden-register transition.
+
+The prefix writes are real observable fixture state updates; none is added
+to game source. All six entire fixture objects are losslessly archived with
+checked hashes and all actual bodies/fields. A bounded read-only printable
+string/export inspection of pinned C2 exposed no allocation diagnostic
+switch in those results; absence of other diagnostics is not asserted.
+Shared tools remain unchanged and no REA or runtime tracing was used.
+
+Receipts under `.analysis/object-action-50a580/f142/`: `compiler-controls.json`,
+three full relocation reports and source/input snapshots, visibility/phase/
+convention/predicate proofs, `word-window-native-review.json` and
+`compiler-diagnostic-inspection.json`. Preserve the F142 composition script
+and all generator/inspection scripts. Private source/cleanup checkpoints
+record the complete inventory and checks.
+
+Public CI passed **3,603 tests in 213.924 seconds**. Accepted dependencies
+were unchanged; no canonical unit was cold replayed or rebuilt. Only eight
+obsolete F142 objects (336,392 bytes) and 376 bytecode
+files (8,292,925 bytes) were removed after evidence preservation;
+the new active object, all prior active/canonical objects, PDBs, sources,
+logs, proofs and shared tools remain. Receipt:
+`.analysis/f142-preservation-cleanup.json`.
+
+Totals stay **330 exact functions/units, 716,917 code bytes**, **36.33%
+reviewed authored / 36.26% conservative**. Preserve all 134 canonical objects,
+207 accepted inputs, 218 origin files, nine shared headers, 91 older drafts
+and F131..F141 evidence. R268 and all 97 unknown origins/3,608 bytes remain
+unchanged. The 98% objective remains active and incomplete; later phases
+remain deferred.
+
+## Current reconstruction cohort: F143
+
+Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
+All 92 entries have natural private source and remain unaccepted. Preserve
+F085/F066 and every accepted unit/origin, with later phases deferred.
+
+Copy current F142 fragments, four private headers, composition rules and
+constant observations into fresh F143 before editing. Current main source
+includes the proved pointer-only twelve-byte word view for 649 uses;
+composition performs that transformation on the unchanged raw fragments.
+Keep **`build/probes/F142WordWindow.obj`** active and retain all previous
+F134/F136/F138/F139 objects and source snapshots. The virtual symbol remains
+`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`. Preserve all F131..F142
+evidence/checkpoints, 330 units/134 canonical objects, 207 accepted inputs,
+218 origin files, nine shared headers and 91 older drafts.
+
+Full comparison still requires **82,106 bytes**: 81,539 code, 368-byte pointer
+table and 199-byte remap, all exits/shared paths and every actual field.
+Current output is 82,109 bytes with 26,719 whole positional differences.
+The 522 physical-GPR differences at case856/00515C0E through early
+862/00516877 and case998/0051E215..0051E3E1 remain real failures. The first
+interval ends at the fixed-register ordinary float-to-short helper 006406AC.
+Never mask, alias, rebase or crop; no semantic-equivalence credit applies.
+
+Do not repeat F134..F142 controls without new evidence. F142 adds complete
+large-switch exit/nested-guard controls, definitions-before/after visibility,
+33 operator callers covering all three actual receiver phases, 21
+calling-convention callers with complete own callees, 18 predicate callers,
+and the 649-use independently bounded word view. None resolves the register
+transition. Keep all genuine 42 counters, 20 ordinary float-to-short
+conversions, 64 readonly fields, 846 calls and eleven nested packets.
+Do not alter correct game prototypes, add fixture writes to game source,
+declare guessed gaps/owners, or add further views solely as a register knob.
+
+The next investigation should seek direct compiler evidence about the
+transition rather than another unsupported operator spelling. Read-only
+inspection of the pinned C1/C1XX diagnostic surface and existing local
+debug tooling on a tiny known fixture is an available next action; only C2
+printable strings/exports have been examined here. Keep actual observed
+diagnostic output separate from guesses, cap runtime/log size, retain tool
+hashes, and do not modify shared installations or use REA. A useful trace
+must explain a real allocation decision, not merely duplicate assembly.
+If no usable diagnostic emerges, retain that bounded observation and pursue
+new native/source evidence; the lack of an optional trace is not a task
+blocker. Acceptance still requires the complete natural source, all true
+ABI/relocations/extents, and a canonical cold replay of new/affected units
+only. All pending bytes remain in the conservative denominator.
