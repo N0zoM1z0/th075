@@ -1,11 +1,11 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-26 for continued reconstruction, F168.
+Updated 2026-10-26 for continued reconstruction, F169.
 The 98% authored-byte goal is active and incomplete. The user explicitly
 prohibited pausing it. Cleanup and handoff do not suspend reconstruction;
 earlier cleared-goal instructions are superseded. Continue the pending work in
-[RE_HANDOFF.md](RE_HANDOFF.md). F168 accepts the complete R215 mode5 options
-policy after F167's direction policy; the full0055AC80 diagnostic is unaccepted.
+[RE_HANDOFF.md](RE_HANDOFF.md). F169 accepts both complete R102 tracked-effect
+policies; the complete large drafts, including0055AC80, remain unaccepted.
 
 ## Authoritative inputs and evidence
 
@@ -16,15 +16,44 @@ policy after F167's direction policy; the full0055AC80 diagnostic is unaccepted.
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 392 units,
-  724,839 code bytes, 151 canonical objects and 238 accepted inputs.
-- Reviewed authored coverage is 36.73%; conservative coverage is 36.66%.
+  complete cold-exact units/all actual relocations. Counts are 394 units,
+  725,120 code bytes, 152 canonical objects and 240 accepted inputs.
+- Reviewed authored coverage is 36.74%; conservative coverage is 36.68%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
   for full acceptance. Never crop owned data or change the metric.
 
 ## Current source work
+
+**F169 accepted R102 tracked effects:** two whole bodies00453AC0/136 and
+00453BE0/145 pass one new canonical cold build,281 CODE/all4 actual REL32 fields.
+Source is `FighterTrackedEffectsF169.cpp` with its call-only header. Each full
+CFG/RET24 or RET32 and both real branches are retained;8/15 following INT3 bytes
+are excluded. Four calls reuse unchanged canonical45BB10, its282-byte body,
+10-argument/RET40 contract and unchanged header. The receiver is loaded from2EC;
+parameters314 are always forwarded, optional transform2F0 or null follows the
+unsigned linked-byte guard, signed facing/layer and optional unsigned flag bytes
+are forwarded unchanged, trailing mode0. Four-float parameter and36-byte
+transform observations come from the complete canonical callee, not a claim
+about the complete private owner layout. No partial owner instance/embedding,
+inert local, padding, fake return, ABI trick, assembly, alternate body, mask,
+crop, alias or local rebasing. Literal R102 roles and original evidence stay
+unchanged through explicit COFF mappings. All392 old units/151 objects/238
+inputs, existing headers/origin/verifier guards,13 active objects/all14 F157/
+both F159 remain preserved. Only two new units/one object were cold-replayed.
+
+Immediately continue complete R04500452C10/753 CODE bytes, provisionally
+`FighterState::ApplyOpponentGaugeChange`. Three direct calls lower real casts
+through compiler ftol2; they earn no authored callee credit. Reconcile all full
+CFG/exits, exact literal widths/floating order and opponent/current field flow,
+then compare every byte and actual field. No large control ran in F169. Keep all
+failed large functions/all97 unknowns/every pending byte in the denominator;
+never force a frame or instantiate incomplete owners. Continue immediately
+after checkpoint/cleanup/commit/push, without pausing. Receipts:
+`.analysis/f169-tracked-unit-proof.json`,
+`.analysis/f169-tracked-canonical-replay.json`, F169 `native-cohort-proof.json`
+and both complete method diagnostic reports.
 
 **F168 accepted R215 mode5 options:** `battle-mode5-options-004483f0` passes
 one canonical cold build: all768 CODE bytes plus24 owned table bytes,792 full

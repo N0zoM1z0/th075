@@ -26127,3 +26127,41 @@ offset = 788
 type = "DIR32"
 symbol = "$L57589"
 target = 0x00448548
+
+[units.fighter-spawn-tracked-effect-00453ac0]
+source = "src/FighterTrackedEffectsF169.cpp"
+object = "build/matching/FighterTrackedEffectsF169.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SpawnTrackedEffectAt00453AC0"]
+symbol = "?SpawnTrackedEffect@FighterTrackedEffectsF169@@QAEXFMMCCE@Z"
+target_address = 0x00453AC0
+size = 136
+[[units.fighter-spawn-tracked-effect-00453ac0.relocations]]
+offset = 72
+type = "REL32"
+symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+target = 0x0045BB10
+[[units.fighter-spawn-tracked-effect-00453ac0.relocations]]
+offset = 126
+type = "REL32"
+symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+target = 0x0045BB10
+
+[units.fighter-spawn-tracked-effect-flags-00453be0]
+source = "src/FighterTrackedEffectsF169.cpp"
+object = "build/matching/FighterTrackedEffectsF169.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::SpawnTrackedEffectAt00453BE0"]
+symbol = "?SpawnTrackedEffectWithFlags@FighterTrackedEffectsF169@@QAEXFMMCCEEE@Z"
+target_address = 0x00453BE0
+size = 145
+[[units.fighter-spawn-tracked-effect-flags-00453be0.relocations]]
+offset = 76
+type = "REL32"
+symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+target = 0x0045BB10
+[[units.fighter-spawn-tracked-effect-flags-00453be0.relocations]]
+offset = 135
+type = "REL32"
+symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+target = 0x0045BB10

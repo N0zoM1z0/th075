@@ -1,14 +1,14 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F168.
+Updated 2026-10-26 for continued reconstruction, F169.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F168 accepts the complete R215 mode5 options policy;
-F167 accepted its direction policy and completed the unaccepted0055AC80 diagnostic.
-The complete large drafts remain unaccepted. Current F168 outcomes supersede historical
+phases remain deferred. F169 accepts both complete R102 tracked-effect policies.
+F168 accepted the R215 mode5 options policy; the full0055AC80 draft is unaccepted.
+The complete large drafts remain unaccepted. Current F169 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -44,14 +44,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 392 / 392 / 392 |
-| Exact code bytes | 724,839 |
-| Reviewed authored coverage | 724,839 / 1,973,516 (36.73%) |
-| Conservative coverage, including pending bytes | 724,839 / 1,977,124 (36.66%) |
-| Canonical objects / accepted source-header inputs | 151 / 238 |
+| Source-present / exact functions / exact units | 394 / 394 / 394 |
+| Exact code bytes | 725,120 |
+| Reviewed authored coverage | 725,120 / 1,973,516 (36.74%) |
+| Conservative coverage, including pending bytes | 725,120 / 1,977,124 (36.68%) |
+| Canonical objects / accepted source-header inputs | 152 / 240 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 332 additions / 714,956 code bytes / 238 inputs. Origin evidence through
+F009 plus 334 additions / 715,237 code bytes / 240 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -60,7 +60,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **8d53f6c (F167)**, preceded by
+The preceding reconstruction checkpoint is **42d1e0b (F168)**, preceded by
+**8d53f6c (F167)** and
 **d7cb87f (F166)** and
 **486d5fa (F165)** and
 **bb2f0c9 (F164)** and
@@ -100,7 +101,66 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F168 outcomes and continuation
+## Current F169 outcomes and continuation
+
+One canonical cold build accepts both whole R102 tracked-effect policies in
+`src/FighterTrackedEffectsF169.cpp` and its call-only header:
+
+| Unit | Code / compared bytes | Actual fields |
+| --- | --- | --- |
+| `fighter-spawn-tracked-effect-00453ac0` | 136 / 136 | 2 REL32 |
+| `fighter-spawn-tracked-effect-flags-00453be0` | 145 / 145 | 2 REL32 |
+
+All281 CODE bytes/all4 actual fields pass; preview and fresh canonical object
+are both complete exact. Each full CFG has one real RET and the two branch
+arms; native RET24/RET32 and8/15 excluded INT3 bytes before the next functions
+are retained. Both real calls per body use the unchanged canonical282-byte
+45BB10 spawner/10 stack arguments/RET40. The receiver comes from2EC; parameters
+at314 are always forwarded, transform2F0 is forwarded only when the unsigned
+linked byte is nonzero, otherwise null. Facing/layer byte carriers and optional
+unsigned flags retain their actual widths; trailing mode is zero. The canonical
+callee supplies the four-float parameter and36-byte transform observations;
+these do not establish the complete private owner layout. No owner is
+constructed, allocated or embedded. Original R102 roles remain literal through
+explicit COFF mappings. No inert locals, padding, fake returns, ABI tricks,
+assembly, alternate bodies, masks, crops, aliases or native-label rebasing.
+
+All392 prior units/151 old canonical objects/238 old adoption inputs, existing
+headers, R268 origin evidence/all97 unknowns,13 active objects/all14 F157 probes/
+both F159 traces remain unchanged. Only these two units/one new object were cold
+replayed; no large-function control or unchanged dependency was rebuilt.
+
+Immediately continue the complete R045753-byte policy00452C10, provisionally
+`FighterState::ApplyOpponentGaugeChange`. Its three direct calls are compiler
+ftol2 lowering, not new authored callees. Reconcile the full CFG, all exits,
+floating widths/order and actual opponent/current field flow before comparing
+every emitted/native byte and field. Keep the entire failed large cohorts,
+all97 unknowns and all pending code in the conservative denominator. No partial
+owner instances or forced locals/padding/ABI changes. The98% goal remains
+active; checkpoint/cleanup/commit/push must be followed by this next action.
+
+Receipts: `.analysis/f169-tracked-unit-proof.json`,
+`.analysis/f169-tracked-canonical-replay.json` and the private F169
+`native-cohort-proof.json`/both method `*-whole-diagnostic.json` files.
+
+Public CI passed **3,612 tests in 181.530 seconds**. Target,
+tracking, progress and diff checks pass. Only two new units in one new object
+were cold-replayed:281 full CODE bytes/all4 actual REL32 fields. All392 prior
+units/151 old canonical objects/238 old adoption inputs, existing headers,
+origin/verifier guards, forty protected groups,13 active objects, all14 F157
+probes and both F159 traces were hash-verified unchanged. Both compiler builds
+ran serially and explicitly headless: one complete preview and one canonical
+cold build. No old unit or large-function control was rebuilt. Cleanup removed
+one obsolete preview (2,942 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,329 bytes), retaining complete raw sections/symbols/
+fields/source/header/profile evidence and all152 canonical/all13 active objects.
+Receipts: `.analysis/f169-object-retention.json`, `.analysis/f169-cleanup.json`,
+`.analysis/f169-preservation-final.json` and `.analysis/f169-source-checkpoint.json`.
+Immediately continue R04500452C10 after checkpoint/commit/push; the98% goal is
+active and incomplete, no additional resume request is needed.
+
+## Retained F168 outcomes
 
 One canonical cold build accepts the whole R215 mode5 options policy004483F0
 from `src/BattleMode5OptionsF168.cpp` and its call-only header. Unit

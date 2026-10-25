@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "2d49b176d004b1e4ffa69df3bbe8e945b9767c1b55a1d4aa9a0a887494c5a65d"
+      "current_sha256": "ecd1b0de5e2d7737cd3e886d3982040c4d637c4cfb29fd821344204fe477f7a0"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "f9063f37a0282f4ecb785e971ecdf6033187474cc1a288be045d928b77480952"
+      "current_sha256": "3b027efe38465635a111cbb34f571a8b077d1b17837fdee008fec70746b2fa7e"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "390cf78ce46aee2d979943ad6aeef7c4533db3c228f73476e332e6cbf159a6ba"
+      "current_sha256": "88a8a7fb510cf2ad2431c143aa5659e3fa8f24a85401c95eb94db263c9940506"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "51924efbe501c06cd3e1740409e8d080437acfbbeb4d228f3be4c1d6a38442b4"
+      "current_sha256": "21b1d79d9ef4ef4d439dd83031eb85e38a8404072bbb96430cb90620a8225b44"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "a72c54e26ef430958941b65168a5d83066239807929219808790b57a3f29beb5"
+      "current_sha256": "f95e826a9c5a9b8d76c814c716b85fd06f9464767325d5a8431bec4d60acc466"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -14648,6 +14648,94 @@
         "disposition": "authored",
         "confidence": "complete-native-game-switch-and-independent-whole-receiver-context",
         "evidence_id": "R215"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453AC0",
+        "size": "136",
+        "span_end": "0x00453B47",
+        "current_name": "FUN_00453ac0",
+        "proposed_name": "FighterState::SpawnTrackedEffectAt00453AC0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453AC0",
+        "size": "136",
+        "span_end": "0x00453B47",
+        "current_name": "FUN_00453ac0",
+        "proposed_name": "FighterState::SpawnTrackedEffectAt00453AC0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterTrackedEffectsF169::SpawnTrackedEffect(short, float, float, signed char, signed char, unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/FighterTrackedEffectsF169.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F169; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-tracked-effect-00453ac0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F169: complete canonical cold exact over both full R102 bodies/281CODE/all4REL32fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call unchanged canonical45BB10 with receiver at2EC, parameter address314, optional transform2F0 ornull and mode0. Canonicalcallee witnesses4float parameters/36byte transform only; original fullownerlayout/private nominaltypes unknown, receiver never instantiated/embedded. Original native roles retained via explicit COFF maps. No inertlocal/padding/fakereturn/ABItrick/assembly/conditionalbody/mask/crop/alias/rebasing. Only2newunits/oneobject cold-replayed; all392oldunits/151objects/238inputs/all13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00453AC0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453BE0",
+        "size": "145",
+        "span_end": "0x00453C70",
+        "current_name": "FUN_00453be0",
+        "proposed_name": "FighterState::SpawnTrackedEffectAt00453BE0",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453BE0",
+        "size": "145",
+        "span_end": "0x00453C70",
+        "current_name": "FUN_00453be0",
+        "proposed_name": "FighterState::SpawnTrackedEffectAt00453BE0",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterTrackedEffectsF169::SpawnTrackedEffectWithFlags(short, float, float, signed char, signed char, unsigned char, unsigned char, unsigned char)",
+        "is_thunk": "false",
+        "source_file": "src/FighterTrackedEffectsF169.cpp",
+        "evidence": "R102; scripts/repo-python scripts/verify-short-game-origins.py --cohort R102; F169; scripts/repo-python scripts/replay-exact-units.py --unit fighter-spawn-tracked-effect-flags-00453be0",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game policy; complete fields, call/context witnesses and unchanged RET cleanup; inferred names/layouts, no source or exact credit; F169: complete canonical cold exact over both full R102 bodies/281CODE/all4REL32fields. Actual RET24/RET32, unsigned linked-byte guard and signed facing/layer/unsigned flags preserved. Both real branches call unchanged canonical45BB10 with receiver at2EC, parameter address314, optional transform2F0 ornull and mode0. Canonicalcallee witnesses4float parameters/36byte transform only; original fullownerlayout/private nominaltypes unknown, receiver never instantiated/embedded. Original native roles retained via explicit COFF maps. No inertlocal/padding/fakereturn/ABItrick/assembly/conditionalbody/mask/crop/alias/rebasing. Only2newunits/oneobject cold-replayed; all392oldunits/151objects/238inputs/all13active/all97unknowns/fullpendinglargefunctions preserved."
+      },
+      "origin": {
+        "address": "0x00453BE0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R102"
       }
     }
   ],
@@ -144677,6 +144765,76 @@
           "target": 4490568
         }
       ]
+    },
+    "fighter-spawn-tracked-effect-00453ac0": {
+      "source": "src/FighterTrackedEffectsF169.cpp",
+      "object": "build/matching/FighterTrackedEffectsF169.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SpawnTrackedEffectAt00453AC0"
+      ],
+      "symbol": "?SpawnTrackedEffect@FighterTrackedEffectsF169@@QAEXFMMCCE@Z",
+      "target_address": 4537024,
+      "size": 136,
+      "relocations": [
+        {
+          "offset": 72,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        },
+        {
+          "offset": 126,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        }
+      ]
+    },
+    "fighter-spawn-tracked-effect-flags-00453be0": {
+      "source": "src/FighterTrackedEffectsF169.cpp",
+      "object": "build/matching/FighterTrackedEffectsF169.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::SpawnTrackedEffectAt00453BE0"
+      ],
+      "symbol": "?SpawnTrackedEffectWithFlags@FighterTrackedEffectsF169@@QAEXFMMCCEEE@Z",
+      "target_address": 4537312,
+      "size": 145,
+      "relocations": [
+        {
+          "offset": 76,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        },
+        {
+          "offset": 135,
+          "type": "REL32",
+          "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+          "target": 4569872
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -144917,6 +145075,8 @@
     "src/FighterMode5DirectionF167.cpp": "233581e1c776369e4e932d4eb0f3d8ae2973580a06320ca010625ec6a16712db",
     "src/FighterMode5DirectionF167.hpp": "f117129d3b67a89e1028ad5d6ffb6d7c3bd71542a085a1248f15190992d091b4",
     "src/BattleMode5OptionsF168.cpp": "e7d98934c5ee75ce521d0b5a6487cd054f2f6b841d6196b9484c78ba5e05ede6",
-    "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c"
+    "src/BattleMode5OptionsF168.hpp": "79f5b7bb24d286b9af3439d02268ebbf06b3075025d655142c752ec9acc4d29c",
+    "src/FighterTrackedEffectsF169.cpp": "69f95f182667f2034fb92c34c71a0069974860b476d79142532ad9b1b63180d1",
+    "src/FighterTrackedEffectsF169.hpp": "07b71fb757c13001ce1e2a87cad47ec6b9dd44a50fea6658bdb04f95d0994fa9"
   }
 }
