@@ -26,25 +26,30 @@ This pins the supplied sample; its official distribution provenance has not
 been independently corroborated. The localized `th075c.exe` has a different
 identity and cannot substitute for the target.
 
-The current checkpoint has **321 exact functions / 715,741 code bytes** from
-4,351 provisional candidates. Reviewed authored coverage is 36.27%; conservative
-coverage, including all 3,608 pending bytes, is **36.20%**. The objective of
+The current checkpoint has **331 exact functions / 716,968 code bytes** from
+4,351 provisional candidates. Reviewed authored coverage is 36.33%; conservative
+coverage, including all 3,608 pending bytes, is **36.26%**. The objective of
 98% authored bytes exact remains incomplete. At R268, 1,002 authored, 2,671
 library and 581 compiler-generated candidates are classified; 97 remain unknown.
 Unknown origins receive no exact credit. Candidate count does not establish
 ownership, and original names and complete object layouts remain provisional.
 Never construct or embed partial reconstructed owners.
 
-The latest user request resumes reconstruction with an active 98% goal after
-the cleanup/handoff checkpoint. Start with the [current handoff](docs/RE_HANDOFF.md)
-for F131 acceptance, the complete unaccepted F085/F066 drafts, retained F061/F048/F021
-work, cleanup receipts and the next investigation. Use the existing Ghidra
-wrapper and local tools without REA. Commit subjects must use
+The latest user request (2026-10-25) is cleanup and handoff to another agent;
+the active goal was cleared. Start with the [current handoff](docs/RE_HANDOFF.md)
+for the uncompiled 004AC040 draft (80 of 151 entries), next state 390, the full
+pending 0050A580 draft, older work and cleanup receipts. The 98% objective remains
+unachieved. Private source/evidence stays local: preserve this workspace when
+switching agents. Use the existing Ghidra wrapper and local tools without REA.
+Every operation must remain headless. Commit subjects must use
 `gpt-6.1-sol: ...`; frequent commits and pushes remain authorized. Cold-replay
 only new or affected units and keep compiler builds serial.
 
-Historical origin and reconstruction checkpoints are preserved in the
-[handoff archive](docs/RE_HANDOFF_HISTORY.md) and
+Complete documents through F148 are preserved in the
+[handoff history](docs/history/RE_HANDOFF_THROUGH_F148.md) and
+[knowledge history](docs/history/KNOWLEDGE_BASE_THROUGH_F148.md). Earlier
+origin/reconstruction checkpoints remain in the
+[older handoff archive](docs/RE_HANDOFF_HISTORY.md) and
 [origin review journal](docs/ORIGIN_REVIEW.md). Start with the
 [current handoff](docs/RE_HANDOFF.md) for accepted units, all active drafts,
 local retention requirements and validation commands.
