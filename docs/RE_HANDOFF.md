@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F141 large character reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F142 large character reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -30,7 +30,74 @@ SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
 
-## Latest complete-function compiler investigation: F140
+## Latest complete-function compiler investigation: F141
+
+F141 investigates the same complete authored `0050A580/81539` body.
+**No new exact or source-presence credit is accepted.** Source/header remain
+byte-identical to F139; retain `build/probes/F139VirtualMain.obj`. All 92
+entries remain present. No unchanged baseline or canonical unit was rebuilt.
+
+Three complete-main controls used the pinned compiler serially:
+
+| Control added after `/Od` | Complete emitted bytes | Result |
+| --- | ---: | --- |
+| `/Ot` | 82,109 | Same 26,719 whole target differences through all 1,449 fields |
+| `/Os` | 83,203 | Changed own GPR/load sequence; 1,586 fields; new unbound constant |
+| `/Og` | 36,091 | Eight-byte frame, ESI/EDI saves and changed body; 1,056 fields |
+
+The `/Ot` raw bytes and fully relocated failed emission equal F139, including
+all 17,435 instructions. `/Os` reuses EAX for the early receiver chain where
+native uses EAX/ECX/EDX, and introduces `__real@c1c00000`. `/Og` has an
+optimized entry and introduces `__real@3daaaaab`. Neither shape control gets
+an invented complete target score or new constant binding. Both entire
+objects, all associated sections/data, complete function-AUX bytes and every
+real field are preserved in checked compressed private proofs.
+
+Three independent toy fixture builds test source abstractions without game
+layout assumptions. Four complete callers compare two direct scalar writes
+with a member inline helper, forced member helper and forced free helper.
+Under `/Ob0`, even the forced helpers retain real calls, unlike native.
+Under `/Ob1`, all three helper forms inline and alter following GPR choices,
+but increase the local frame from eight to twelve bytes and caller extent
+from 117 to 125 bytes. They materialize an additional pointer slot and
+address instructions. This explains a real compiler mechanism, but does
+not fit the native body. No game helper, field, ABI or main edit is inferred.
+
+A separate four-caller fixture changes conditional and final `return`/`break`
+spellings in a function-final switch. All four complete 106-byte callers,
+their two actual relocation records and following switch-case registers are
+identical. F134 tested the final exit alone; F141 additionally tests the
+conditional exit. No redundant complete-main build follows this negative
+fixture. All fixture sources and complete objects are retained losslessly.
+
+Read-only COFF metadata of the retained F139 probe has numeric
+`@comp.id=0x00600c05` (96/3077), also present in the target's aggregate Rich
+records with count 17. This is only a raw tag correlation. It establishes
+neither original compiler ownership per function, product names, original TU
+membership nor an executable-wide compiler profile. Rich origin evidence
+and all 97 unknown origins remain unchanged.
+
+Receipts: `.analysis/object-action-50a580/f141/compiler-controls.json`,
+`baseline-source-freeze.json`, `/Ot` whole relocation report, two shape
+proofs, three fixture proofs, `compiler-tag-correlation.json`, and
+`.analysis/f141-source-checkpoint.json`. Six builds were serial. Only six
+obsolete reproducible F141 objects and Python bytecode are cleaned after CI
+and complete evidence preservation; PDBs, logs, source, active/canonical
+objects, prior evidence and shared tools remain.
+
+Totals stay **330 exact functions/units and 716,917 exact code bytes**:
+**36.33% reviewed authored / 36.26% conservative**. The 81,539 main code
+bytes remain pending, as do the two owned tables for full comparison.
+Every accepted ledger, 134 canonical objects, 207 accepted inputs, 218 origin
+files, nine shared headers, 91 older drafts and F131..F140 evidence remain
+unchanged. All 3,603 CI tests passed in 169.903 seconds; tracking
+and target verification also passed. Cleanup removed six obsolete probe
+objects (365,043 bytes) and 375 bytecode files
+(8,285,264 bytes). Details are in the private source/cleanup
+receipts. The 98% goal remains active and incomplete; later phases remain
+deferred.
+
+## Previous complete-function compiler investigation: F140
 
 F140 continues the same complete authored `0050A580/81539` body.
 **No new exact byte or source-presence credit is accepted.** The current
@@ -849,54 +916,48 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F141
+## Current reconstruction cohort: F142
 
 Continue **the same complete `CharacterObject::AdvanceAt0050A580` body**.
 All 92 entries have private natural source; all 81,539 main code bytes remain
-unaccepted. Do not substitute an unrelated easier cohort.
+unaccepted. Preserve the F085/F066 drafts and every previous exact unit.
 
-Copy `.analysis/object-action-50a580/f140/` baseline fragments/headers and its
-composition rules to a fresh F141 version before editing. The restored
-source/header are byte-identical to F139; keep its active
-`build/probes/F139VirtualMain.obj` and all old F134/F136/F138 active objects.
-The virtual symbol remains **`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`**.
-Preserve every F131..F140 source/report/checkpoint, 330 accepted units/134
-canonical objects, 207 accepted source/header inputs, 218 origin files,
-nine shared headers and 91 older drafts.
+Copy F141 fragments/headers and composition rules into a fresh F142 folder
+before editing. Its current source/header are byte-identical to F139.
+Retain the active `build/probes/F139VirtualMain.obj` and previous F134/F136/
+F138 objects. The truthful virtual symbol remains
+`?Advance@CharacterAdvance50A580Draft@@UAEXXZ`. Preserve every F131..F141
+proof/source/checkpoint, 330 accepted units/134 canonical objects, 207
+accepted inputs, 218 origin files, nine shared headers and 91 older drafts.
 
-Full comparison requires **82,106 bytes**: 81,539 code plus the 368-byte
-pointer table and 199-byte remap, all exits/shared paths and real fields.
+Compare the complete **82,106 bytes**: 81,539 code, 368-byte pointer table
+and 199-byte remap, all exits/shared paths and actual relocation fields.
 Current output remains 82,109 bytes with 26,719 whole positional differences.
-The 522 physical-GPR differences remain at **case856/00515C0E through early
-862/00516877**, and **case998/0051E215..0051E3E1**. The first region ends at
-the ordinary float-to-short call 006406AC. Never mask, alias, rebase or crop.
+There are 522 physical-GPR differences at case856/00515C0E through early
+862/00516877 and case998/0051E215..0051E3E1. The first interval ends at the
+ordinary float-to-short helper 006406AC. These are failures, not exact or
+semantic-equivalence credit. Never mask, alias, rebase or crop them away.
 
-F140 excludes `/Op` for this source (extra spills/arithmetic/frame growth),
-and `/O2` for this source (optimized prologue, new unbound constants and
-different body). `/GX`, `/Z7`, no explicit debug-format option and one real
-accepted neighboring AI prefix TU leave the full failed output unchanged.
-The aux-less no-debug extent was derived from the entire sole-function code
-section, not the target size. Preserve its proof; do not use convenient
-expected-size arguments or truncate owned tables. Review every earlier
-F134..F139 control before probing to avoid repeated excluded spellings.
+Review existing F134..F141 controls before trying another spelling/profile.
+F140 excluded `/Op` and `/O2` for this source; GX, Z7, no explicit debug and
+the real neighboring AI prefix TU left the whole failed output unchanged.
+F141 adds unchanged `/Ot`, incompatible `/Os` and `/Og`, and independently
+tested inline helpers and conditional break/return. The helper fixture can
+alter following GPR choices only with extra actual storage/instructions in
+these tested forms, unlike native. Do not inject that mechanism into game
+source, invent helper bindings, or repeat the same controls without new
+evidence. Compiler tag correlation is aggregate, never per-function proof.
 
-Further work needs new native/compiler evidence about the actual register
-selection state. Selective optimization/space-versus-speed hypotheses, if
-pursued, need complete natural-source controls and actual option/profile
-records; broad `/O2` and `/Op` results do not establish every option combination
-or original source profile. The pinned C2 CodeView identity and two failed
-symbol requests are recorded; symbols are optional investigation aids, not
-prerequisites or a reason to stop reconstruction. Use the existing local
-tools and keep compiler observations separate from target facts.
-
-Retain all 42 genuine counters, 20 ordinary float-to-short conversions,
-64 readonly fields and the complete 846-call/11-nested-packet evidence.
-Do not introduce inert filler, guessed owner layouts, ABI changes or fake
-storage to force register selection. Source/compilation alone gives no exact
-credit. Keep builds serial and cold replay only new/affected units. Freeze
-complete inputs/raw code/all fields before cleaning obsolete outputs.
-All 97 unknown origins remain included and R268 evidence unchanged; later
-phases and Run/queue/resource layout questions remain deferred.
+Further work needs concrete native/compiler evidence about the two register
+selection transitions, including surrounding source trees and the fixed
+register float-to-short boundary. Retain 42 genuine counters, 20 ordinary
+float-to-short conversions, 64 readonly fields, 846 calls and all eleven
+nested packets. No inert filler, guessed owner layout, false ABI, fake
+storage, conditionally split body or assembly is permitted. Source and
+successful compilation alone earn no credit. Keep compiler builds serial;
+cold replay only new/affected units. Freeze all actual inputs/raw code/fields
+before cleaning obsolete objects. All 97 unknown origins/3,608 bytes remain
+in the conservative denominator; preserve accepted evidence through R268.
 
 ## F135 investigation at the F134 checkpoint
 
