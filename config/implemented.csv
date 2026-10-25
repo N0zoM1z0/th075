@@ -325,3 +325,4 @@ FighterEffectPoliciesF135::SpawnAuxEffect
 FighterEffectPoliciesF135::PlaySound
 FighterEffectPoliciesF135::PlaySharedSound
 FighterEffectPoliciesF135::UpdateGaugeTimer
+BattleEffectSpawnerF136::Spawn

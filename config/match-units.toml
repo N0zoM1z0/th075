@@ -24470,3 +24470,18 @@ compare_size = 126
 relocations = [
   { offset = 0x5C, type = "REL32", symbol = "?PlaySharedSound@FighterEffectPoliciesF135@@QAEXF@Z", target = 0x00453D60 },
 ]
+
+[units."battle-effect-spawn-0045bb10"]
+source = "src/BattleEffectSpawner.cpp"
+object = "build/matching/BattleEffectSpawner.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/Oi", "/I", "src"]
+functions = ["BattleEffectSpawnerF136::Spawn"]
+symbol = "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z"
+target_address = 0x0045BB10
+size = 282
+compare_size = 282
+relocations = [
+  { offset = 0x27, type = "REL32", symbol = "?ResetPrimaryCounters@SpawnedEffectF136@@QAEXF@Z", target = 0x0040FAC0 },
+  { offset = 0xE7, type = "REL32", symbol = "?ResetNodeTransform@SpawnedEffectF136@@QAEXMMM@Z", target = 0x0040FBB0 },
+  { offset = 0x10E, type = "REL32", symbol = "?PushBack@EffectDequeF136@@QAEXABQAVSpawnedEffectF136@@@Z", target = 0x0045BFC0 },
+]

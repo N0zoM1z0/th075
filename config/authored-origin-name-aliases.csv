@@ -270,3 +270,4 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00453D40,FighterState::PlaySoundAt00453D40,FighterEffectPoliciesF135::PlaySound,R100,fighter-owner-sound-forwarder-f135
 0x00453D60,FighterState::PlaySharedSoundAt00453D60,FighterEffectPoliciesF135::PlaySharedSound,R102,fighter-shared-sound-forwarder-f135
 0x0046D000,ReimuFighter::UpdateGaugeTimer,FighterEffectPoliciesF135::UpdateGaugeTimer,R046,fighter-gauge-timer-f135
+0x0045BB10,BattleEffect::Spawn,BattleEffectSpawnerF136::Spawn,R045,battle-effect-spawn-0045bb10

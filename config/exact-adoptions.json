@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F136",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "1a67ff8300194419b722c2febcf097d3923b0fd205badbbfff20266a808558a1"
+      "current_sha256": "2a1dce7b963f3163e9c2274a0acbb616dc671066fa7f1c1a4bda05b55b2c0d85"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "5f5a736a3b89a901edeb34448a91d848ef0f5e57b6a9008e1b8ae147a3737257"
+      "current_sha256": "c0173d2f0fab2cf0ff4462b34d695e499cefa1547e0ae1cee4c7bd673aa5a3d0"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "9b58609d7198d91862cfb0c84241e5a1a0c0da9870f6b9b235ea82521f660e9b"
+      "current_sha256": "148905f489fd2a74abecc6b7b051aa5683e0272fab49ca7641a3ba5e8b2d5c55"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "85848f2dcb0ee878a42f38d8b0a350228c1f29b42ca2e1890e2166ff50c66a8e"
+      "current_sha256": "43fb4e175fa44fa08b018d11c3c0aa21487e4b019a2d82cbeb808aa59db8af89"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "dc4a193193c66c9c661126d850e7727202f85020a5cd8522027e125624a16722"
+      "current_sha256": "2b8614171fa27be9bb889763d3f8bf81de0abf7697b0110f52a6db675984b156"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "f67114b403e94635167ae4b9e2b974797b46ddfc0accb6c32e80c98bb9bccc6b"
+      "current_sha256": "4afd598a29f4267927e7f61164ca831fd49930908e43cfc3ebc07a6a98bdb363"
     }
   },
   "functions": [
@@ -11788,6 +11788,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R046"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045BB10",
+        "size": "282",
+        "span_end": "0x0045BC29",
+        "current_name": "FUN_0045bb10",
+        "proposed_name": "BattleEffect::Spawn",
+        "module": "BattleEffect",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0045BB10",
+        "size": "282",
+        "span_end": "0x0045BC29",
+        "current_name": "FUN_0045bb10",
+        "proposed_name": "BattleEffectSpawnerF136::Spawn",
+        "module": "BattleEffect",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleEffectSpawnerF136::Spawn(short effect, float x, float y, signed char facing, signed char layer, unsigned char flagA, unsigned char flagB, const float* parameters, const void* transform, unsigned char mode)",
+        "is_thunk": "false",
+        "source_file": "src/BattleEffectSpawner.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F136; scripts/repo-python scripts/replay-exact-units.py --unit battle-effect-spawn-0045bb10",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F136: full282byte canonical cold exact,87instructions/3direct calls/one actual virtualslot7 call/all3real relocations. Complete own CFG/stack joins/8byte frame plus savedESI/EDI, genuine node output atEBP-4 andthisEBP-8, RET40 andsixfollowingINT3 excluded. Preserve allocator output packet4, signedlayer20stride deque receiver, four scalar parameter copies, unsignedmode byte-to-word widening, rawcontext fieldcopy and optionalreset/whole36byte transform record assignment. The bounded record view has14independently observed byte/short/float fields from complete accepted reset/render contexts, natural one-byte alignment andno explicit padding/array; original alignment-byte identity andfull enclosing owner layouts remain unknown. No owner or record local is constructed/embedded/allocated. The first two natural memcpy probes differ in13real bytes ofcopy operand order; bounded typed record assignment reproduces thewhole source without assembly orfake storage. Sixwrong binding/copycount/layer/RET controls rejected. Selected virtualprefix positions are not usable contracts for uncalled methods; dynamic virtual destinations unknown/no origin credit. VC7deque callee remainslibrary/excluded. Build3077 and/Oi are explicit reproducibility settings, not exe-wide compiler facts. Main0050A580 remains complete butunaccepted; true record access in855/997 leaves its82109byte/26719difference failure unchanged. All327prior units/131objects/200inputs/218originfiles/nineheaders/91olderdrafts andF131..F135frozen evidence unchanged; all97unknown origins retained. No arbitrary padding/inert locals/guessed arrays/ABI aliases/masks/cropped extents/pasted decompile orcodebytes/assembly/fake returns/conditional exact bodies; names/types/layouts provisional andR045historical role preserved byalias."
+      },
+      "origin": {
+        "address": "0x0045BB10",
+        "origin": "authored",
+        "subsystem": "BattleEffect",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -139027,6 +139071,49 @@
           "target": 4537696
         }
       ]
+    },
+    "battle-effect-spawn-0045bb10": {
+      "source": "src/BattleEffectSpawner.cpp",
+      "object": "build/matching/BattleEffectSpawner.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/Oi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleEffectSpawnerF136::Spawn"
+      ],
+      "symbol": "?Spawn@BattleEffectSpawnerF136@@QAEXFMMCCEEPBMPBXE@Z",
+      "target_address": 4569872,
+      "size": 282,
+      "compare_size": 282,
+      "relocations": [
+        {
+          "offset": 39,
+          "type": "REL32",
+          "symbol": "?ResetPrimaryCounters@SpawnedEffectF136@@QAEXF@Z",
+          "target": 4258496
+        },
+        {
+          "offset": 231,
+          "type": "REL32",
+          "symbol": "?ResetNodeTransform@SpawnedEffectF136@@QAEXMMM@Z",
+          "target": 4258736
+        },
+        {
+          "offset": 270,
+          "type": "REL32",
+          "symbol": "?PushBack@EffectDequeF136@@QAEXABQAVSpawnedEffectF136@@@Z",
+          "target": 4571072
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -139229,6 +139316,9 @@
     "src/SelectionControl.cpp": "5b37fe94876723c4b6258b3c4f45754a2c40419b8d5ff190d5f319cf070fb322",
     "src/SceneSelection.cpp": "f9fb9aab4058e8bb44fa313652f330693b15969dfbedcc92c902d9b8b87b3d14",
     "src/FighterEffectPolicies.cpp": "3b87b986628fda7e3add6f2b46b3c284634466caf92f79c0a8efd75aa00d9a1f",
-    "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9"
+    "src/FighterEffectPolicies.hpp": "fd05d43e870cbf1fb47f06d617c6364eedbad567c7e80e26522e597b6c23e8b9",
+    "src/BattleEffectSpawner.cpp": "73ddd4688532a0a230d799a4d27f8a59b4261df06b700bdda3b97064dc05a740",
+    "src/BattleEffectSpawner.hpp": "e182c18329a16e431cde26334322399708a9b4c3f0d8e796446ed895c0e99da0",
+    "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387"
   }
 }

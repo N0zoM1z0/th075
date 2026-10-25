@@ -326,3 +326,4 @@ FighterEffectPoliciesF135::SpawnAuxEffect,0x00453C80,function
 FighterEffectPoliciesF135::PlaySound,0x00453D40,function
 FighterEffectPoliciesF135::PlaySharedSound,0x00453D60,function
 FighterEffectPoliciesF135::UpdateGaugeTimer,0x0046D000,function
+BattleEffectSpawnerF136::Spawn,0x0045BB10,function

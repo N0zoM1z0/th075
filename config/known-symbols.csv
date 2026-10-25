@@ -308,3 +308,4 @@ address,name,module,confidence,evidence
 0x00453D40,FighterEffectPoliciesF135::PlaySound,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
 0x00453D60,FighterEffectPoliciesF135::PlaySharedSound,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
 0x0046D000,FighterEffectPoliciesF135::UpdateGaugeTimer,FighterEffects,inferred,F135; full canonical cold exact / whole native CFG and ABI / pointer-only views; original names/layouts provisional
+0x0045BB10,BattleEffectSpawnerF136::Spawn,BattleEffect,inferred,F136; full cold exact/whole CFG and ABI/bounded typed record view; original owner identity/layout unknown
