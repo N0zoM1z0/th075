@@ -2,7 +2,7 @@
 
 Updated 2026-10-25. The user resumed reconstruction after the cleanup/handoff
 checkpoint and set an active **98% authored bytes exact** goal. The objective
-is incomplete. Continue the F148 full character-move reconstruction below; preserve F085 and the F066 draft.
+is incomplete. Continue the F149 full character-move reconstruction below; preserve F085 and the F066 draft.
 Subsequent project phases remain deferred. Use existing Ghidra/local tools,
 without REA; commit subjects must use `gpt-6.1-sol: ...`. Commits and pushes
 remain authorized. Keep compiler builds serial and monitor CPU/memory.
@@ -29,6 +29,73 @@ The only target is the supplied Japanese `th075.exe`, reporting version 1.11:
 SHA-256 `bd441e99075436e8dcad26f86ffcf5e6aac4f58b0ed3ee7442e4cb39d8e22c98`.
 Identity is pinned to the supplied archive, without independent official
 provenance corroboration. Never substitute `th075c.exe` or patch target bytes.
+
+## Latest movement/action/attack source cohort: F148
+
+**No new exact bytes or source-presence credit are accepted.** F148 adds
+**30 hand-authored entries** to the same complete004AC040 function. There are
+now **80/151 nondefault source fragments**, covering the contiguous native
+investigation interval004AC1B9..004B1C5A (**23,202 bytes**); **71 entries remain**.
+The new30 entries account for9,599 additional native investigation bytes.
+No partial wrapper was assembled/compiled or awarded independent credit.
+
+The current draft is `.analysis/character-move-4ac040/f148/`. F147's50 source
+fragments, full151 native exports, prefix/default/tail and supported virtual
+prefix were copied before editing and remain frozen in the earlier directory.
+Preserve the new `Case*.inc`, dependency include, private receiver declarations,
+`source-transcription-audit.json` and `command-selection-native-contract.json`.
+The existing135 canonical objects/209 accepted inputs and all40 protected
+source/origin/evidence groups are unchanged. Builds remain serial/headless.
+
+**Target/source observations:** States160..181 preserve per-tick field368
+increment/cap, actual signed-word resource updates, mode-specific transitions,
+ordered float conditions and real early returns. States200..210 retain the
+signed facing/input product tests, independent pre/post-advance phase reads,
+manual signed-word counters and actual virtual slot0 callback. The explicit
+three-field motion clears do not acquire a spurious fourth-field store.
+States300..310 retain duplicate guarded sound/effect sites, initial-state
+writes, ground/air tests and their different landing/advance returns.
+
+A source audit checks all80 target entry hashes, lexical call order, actual
+shared-epilogue/tail destinations and constant widths/values. **374 named call
+sites** resolve to current canonical units. **Seven** calls use the new
+private declaration `FighterCommandSelection454BC0::SetCommandSelection`;
+these are explicitly unaccepted contracts, not canonical-symbol/byte credit.
+All three genuine loop counters and18 float-to-short conversions are retained.
+Static source-call order is not evidence of emitted instructions or exactness.
+
+**Declaration evidence:** The complete61-byte00454BC0 wrapper saves incoming
+ECX, stores the first DWORD at47C, forwards the low byte of its second stack
+slot and the full third DWORD through the actual receiver pointer480, then
+returns with RET12. The full22-byte410FA0/410FE0 callees each use RET4 and
+perform byte10/DWORD14 stores. Their whole hashes and single-block CFGs were
+reverified against frozen authored evidence. Original names/signedness/full
+owner layouts remain provisional; the partial receiver is never instantiated.
+
+The latest origin ledger already classifies the wrapper as **R213 authored**
+and both setters as **R239 authored**. The old functions.csv statement that
+these setters remain unknown is historical and superseded; no origin was
+reclassified. All three bodies remain unaccepted. All97 current unknown
+origins stay unknown. A future exact dependency cohort can reconstruct these
+complete bodies, retaining the original R213/R239 evidence and raw names.
+
+Public CI passed all **3,603 tests in 165.407 seconds**.
+Target/tracking/status/diff checks pass. No game compiler or cold replay was
+needed for these private incomplete fragments; no accepted dependency changed.
+Cleanup removed 375 reproducible bytecode files
+(8,285,269 bytes). All151 current native exports,
+source/ABI/constant/call-order/CFG/parent evidence, logs and every accepted or
+older active object remain. Receipts: `.analysis/f148-source-checkpoint.json`
+and `.analysis/f148-preservation-cleanup.json`.
+
+Totals remain **331 exact functions/units,716,968 code bytes**, **36.33%
+reviewed authored /36.26% conservative**. Full004AC040 acceptance still needs
+82,796 code+1,126 owned table/remap bytes=**83,922 complete comparison bytes**,
+all151 entries, actual relocations and shared paths. Full0050A580 remains
+pending with its unchanged82,109-byte/26,719-difference diagnostic and all
+older active objects. R268, all pending code bytes and all97 unknown origins
+remain in the conservative denominator. The98% goal stays active/incomplete;
+subsequent phases are deferred.
 
 ## Latest complete move source and receiver proof: F147
 
@@ -1508,61 +1575,53 @@ native/helper/CFG/CPU-x87/nested-packet/case-index/negative/cold/parent
 evidence, logs, PDBs and130 canonical objects remain. Receipts:
 `.analysis/f131-{final-compiler-inputs,object-cleanup,preservation-cleanup}.json`.
 
-## Current reconstruction cohort: F148
+## Current reconstruction cohort: F149
 
-Continue the **same complete004AC040 body** from
-`.analysis/character-move-4ac040/f147/`. Copy its50 current source fragments,
-prefix/default/common tail, two-method private header, dependency macros,
-full native proof and source audit to a fresh F148 working directory before
-editing. Preserve F146's original seed and all F147 source/evidence hashes.
-Required comparison remains **83,922 bytes**:82,796 code plus1,126 owned
-table/remap bytes, all151 entries, every shared path/exit and actual field.
+Continue the same complete004AC040 body from
+`.analysis/character-move-4ac040/f148/`. Copy its80 current source fragments,
+prefix/default/tail, dependency include, two private receiver headers, full
+native proof and source/ABI/constant audit to a fresh F149 directory before
+editing. Preserve all F147/F148 source/evidence hashes. Full acceptance still
+requires **83,922 bytes**:82,796 code plus1,126 owned table/remap bytes,
+all151 entries, real shared tails/default/RET and every actual relocation.
 
-**50 nondefault entries have source;101 are missing.** Next is **state160,
-004AF6DC..004AF7EF**,276 bytes/73 instructions. Consult the immutable full
-entry map before assuming another state or grouping common labels. The
-current50 source chunks cover13,603 native investigation bytes; this is no
-source-presence, compiled-byte or exact credit. No game object was compiled.
-Do not assemble/compile a partial wrapper or synthesize remaining cases.
+**80 nondefault entries have source;71 are missing.** Next is special equality
+**state390,004B1C5B..004B1D6F**,277 bytes/84 instructions. Consult the full
+entry map before grouping labels or assuming numerical adjacency. Current
+source covers23,202 native investigation bytes, not compiled or exact credit.
+Do not compile a partial wrapper, invent missing cases or crop acceptance.
 
-The first50 fragments preserve18 real float-to-short conversions and three
-genuine loop counters, canonical helper interfaces, short-circuit predicates,
-strict crossings and distinct float/double constants. Preserve state96 <=0
-versus state97 <0; state89 uses40.0f, horizontal0.0025f and vertical0.01f
-with integer negation before conversion. Its static source/target-call order
-audit does not establish emitted instruction identity or original declarations.
-Recover actual locals/nested packets naturally; never add frame filler.
+The80 source fragments preserve374 canonical named calls, seven explicitly
+unaccepted calls to454BC0,18 genuine float-to-short conversions and three
+real loop counters. Keep independent pre/post-frame reads, strict/ordered
+float predicates, signed short counters, effect argument order and separate
+repeated phase guards. R213 wrapper454BC0 has three stack slots and RET12;
+R239 setters410FA0/410FE0 have byte/DWORD reads and RET4. All three are already
+authored in the origin ledger but unaccepted; old functions.csv notes about
+unknown setters are historical. Their private declaration/proof establishes
+no complete owner or original signedness. Keep all97 current unknown origins.
 
-Native constructor004C0820 installs006594A8 at004C0832 through actual saved
-incoming ECX. The table's used prefix is slot0=00453D80,slot1=004AC040.
-`receiver-vtable-proof.json` freezes whole R050/R068 body hashes/CFG and four
-actual character slot1 calls in already-exact BattleFrame::UpdateFrame.
-The separate draw-dispatcher slot1 call is excluded. The private two-method
-receiver declaration is now supported; no complete owner/class layout or
-original identifiers are recovered. Never construct/copy/embed partial views.
+Main receiver prefix remains constructor004C0832/table006594A8:
+slot0=00453D80,slot1=004AC040, supported by the whole R050/R068 bodies and four
+actual character calls in already-exact BattleFrame::UpdateFrame. A separate
+draw-dispatcher slot1 call is excluded. No complete owner is instantiated,
+copied or embedded. Entry frame0x720/savedESI/ECXatEBP-0x64 are observations;
+recover actual locals/nested packets naturally without frame filler.
 
-Use the151 native chunk exports and full CFG/table proof. Code ends004C03AC;
-all ten owned data segments end004C0812 exclusive. Actual entry frame0x720,
-saved ESI and ECX atEBP-0x64 are observations, not storage to manufacture.
-Default004C037D/common tail004C039F/shared epilogue004C03A7/RET004C03AB
-must all remain. No partial, masked, aliased, rebased or cropped comparison.
+Preserve all331 accepted units/135 canonical objects/209 accepted inputs,
+all40 protected groups, R268 and full0050A580 pending source80ca174b/active
+F145CanonicalViews plus olderF142/F139/F138/F136/F134 objects. Its entire
+81,539 code/82,106 compare bytes remain pending, with the full82,109-byte/
+26,719-difference failure and all1,449 actual fields. Do not repeat F146's
+closed compiler controls without new evidence. Cold-replay only valid new
+or affected whole units; private fragments changed no accepted dependency.
 
-Preserve all331 exact units/135 canonical objects/209 accepted inputs and
-every previous active object, origin and evidence group. Keep full0050A580
-pending: all92 entries,81,539 code/82,106 compare bytes, current source80ca174b,
-activeF145CanonicalViews plus F142/F139/F138/F136/F134 objects. Its unchanged
-82,109-byte/26,719-difference failure and all1,449 actual fields remain. F146
-closed the old width/copy/937-token, /Ob1, visible-callee and18-qualifier leads;
-do not repeat them without new evidence. Cold-build only new/affected valid
-complete units; no unchanged exact unit needs a rebuild for private fragments.
-
-All work stays headless: unset displays, disabled graphical Wine drivers,
-native32 Wine/batch GDB and existing attested Ghidra, no host windows or shared
-tool changes. Serial compiler builds and bounded/nice investigations only.
-No fake returns/ABI, inert locals/padding, assembly/target arrays, conditional
-game bodies or invented owner layout. All97 unknown origins, R268 and every
-pending code byte stay in the conservative denominator. The98% goal remains
-active and incomplete; subsequent phases are deferred.
+Everything stays headless: unset displays, disabled graphical Wine drivers,
+native32 Wine/batch GDB and existing attested Ghidra; no host windows or
+shared-tool changes. Serial compilers, bounded/nice investigation, no fake
+locals/returns/ABI, padding, assembly/byte arrays, conditional bodies,
+aliases/masks/rebasing/cropping. All pending code remains in the denominator.
+The98% goal is active/incomplete and later phases remain deferred.
 
 ## F135 investigation at the F134 checkpoint
 

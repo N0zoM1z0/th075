@@ -27067,3 +27067,70 @@ Keep F145CanonicalViews and all older active0050A580 objects; its entire
 diagnostic. All97 unknown origins/3,608 bytes, R268 and every pending code byte
 remain in the conservative denominator. The98% goal stays active/incomplete;
 later phases remain deferred. All tools remain headless and builds serial.
+
+## F148 — eighty move entries and reviewed command contract
+
+**No new exact bytes or source-presence credit are accepted.** F148 adds
+**30 hand-authored entries** to the same complete004AC040 function. There are
+now **80/151 nondefault source fragments**, covering the contiguous native
+investigation interval004AC1B9..004B1C5A (**23,202 bytes**); **71 entries remain**.
+The new30 entries account for9,599 additional native investigation bytes.
+No partial wrapper was assembled/compiled or awarded independent credit.
+
+The current draft is `.analysis/character-move-4ac040/f148/`. F147's50 source
+fragments, full151 native exports, prefix/default/tail and supported virtual
+prefix were copied before editing and remain frozen in the earlier directory.
+Preserve the new `Case*.inc`, dependency include, private receiver declarations,
+`source-transcription-audit.json` and `command-selection-native-contract.json`.
+The existing135 canonical objects/209 accepted inputs and all40 protected
+source/origin/evidence groups are unchanged. Builds remain serial/headless.
+
+**Target/source observations:** States160..181 preserve per-tick field368
+increment/cap, actual signed-word resource updates, mode-specific transitions,
+ordered float conditions and real early returns. States200..210 retain the
+signed facing/input product tests, independent pre/post-advance phase reads,
+manual signed-word counters and actual virtual slot0 callback. The explicit
+three-field motion clears do not acquire a spurious fourth-field store.
+States300..310 retain duplicate guarded sound/effect sites, initial-state
+writes, ground/air tests and their different landing/advance returns.
+
+A source audit checks all80 target entry hashes, lexical call order, actual
+shared-epilogue/tail destinations and constant widths/values. **374 named call
+sites** resolve to current canonical units. **Seven** calls use the new
+private declaration `FighterCommandSelection454BC0::SetCommandSelection`;
+these are explicitly unaccepted contracts, not canonical-symbol/byte credit.
+All three genuine loop counters and18 float-to-short conversions are retained.
+Static source-call order is not evidence of emitted instructions or exactness.
+
+**Declaration evidence:** The complete61-byte00454BC0 wrapper saves incoming
+ECX, stores the first DWORD at47C, forwards the low byte of its second stack
+slot and the full third DWORD through the actual receiver pointer480, then
+returns with RET12. The full22-byte410FA0/410FE0 callees each use RET4 and
+perform byte10/DWORD14 stores. Their whole hashes and single-block CFGs were
+reverified against frozen authored evidence. Original names/signedness/full
+owner layouts remain provisional; the partial receiver is never instantiated.
+
+The latest origin ledger already classifies the wrapper as **R213 authored**
+and both setters as **R239 authored**. The old functions.csv statement that
+these setters remain unknown is historical and superseded; no origin was
+reclassified. All three bodies remain unaccepted. All97 current unknown
+origins stay unknown. A future exact dependency cohort can reconstruct these
+complete bodies, retaining the original R213/R239 evidence and raw names.
+
+Public CI passed all **3,603 tests in 165.407 seconds**.
+Target/tracking/status/diff checks pass. No game compiler or cold replay was
+needed for these private incomplete fragments; no accepted dependency changed.
+Cleanup removed 375 reproducible bytecode files
+(8,285,269 bytes). All151 current native exports,
+source/ABI/constant/call-order/CFG/parent evidence, logs and every accepted or
+older active object remain. Receipts: `.analysis/f148-source-checkpoint.json`
+and `.analysis/f148-preservation-cleanup.json`.
+
+Totals remain **331 exact functions/units,716,968 code bytes**, **36.33%
+reviewed authored /36.26% conservative**. Full004AC040 acceptance still needs
+82,796 code+1,126 owned table/remap bytes=**83,922 complete comparison bytes**,
+all151 entries, actual relocations and shared paths. Full0050A580 remains
+pending with its unchanged82,109-byte/26,719-difference diagnostic and all
+older active objects. R268, all pending code bytes and all97 unknown origins
+remain in the conservative denominator. The98% goal stays active/incomplete;
+subsequent phases are deferred.
