@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for resumed reconstruction, F151.
+Updated 2026-10-25 for resumed reconstruction, F152.
 **The 98% authored-byte objective is active and incomplete.**
 The user resumed after the cleanup and handoff checkpoint. Subsequent project
 phases remain deferred. Continue the complete function cohort below.
@@ -12,14 +12,14 @@ phases remain deferred. Continue the complete function cohort below.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 331 / 331 / 331 |
-| Exact code bytes | 716,968 |
-| Reviewed authored coverage | 716,968 / 1,973,516 (36.33%) |
-| Conservative coverage, including pending bytes | 716,968 / 1,977,124 (36.26%) |
-| Canonical objects / accepted source-header inputs | 135 / 209 |
+| Source-present / exact functions / exact units | 333 / 333 / 333 |
+| Exact code bytes | 717,040 |
+| Reviewed authored coverage | 717,040 / 1,973,516 (36.33%) |
+| Conservative coverage, including pending bytes | 717,040 / 1,977,124 (36.27%) |
+| Canonical objects / accepted source-header inputs | 136 / 211 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 271 additions / 707,085 code bytes / 209 inputs. Origin evidence through
+F009 plus 273 additions / 707,157 code bytes / 211 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -28,31 +28,50 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding pushed reconstruction checkpoint is **c2efd6a (F150)**.
-The last new exact unit was F146's 51-byte `fighter-motion-clear-00453e20`,
-source `src/FighterMotionClear453E20.cpp`, cold51/51 with zero differences.
-F147/F148/F150/F151 added incomplete private source, not exact bytes.
+The preceding pushed reconstruction checkpoint is **92894f8 (F151)**.
+F152 accepts two new whole R103 policies in `src/FighterMoveScalarHelpers.cpp`:
+`fighter-set-nonnegative-word-00453e80` (37 bytes) and
+`fighter-begin-fade-parameters-00454a70` (35 bytes). Both passed canonical cold
+replay, 72/72 bytes with zero differences, across one new object. Both have no
+actual relocations. Names and complete owner layout remain provisional.
+F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Continue after F151: complete 004AC040
+## Continue after F152: match complete 004AC040
 
-The authoritative private source is **`.analysis/character-move-4ac040/f151/`**.
-There are **131/151 nondefault entry fragments**, covering 59,992 contiguous
-native investigation bytes 004AC1B9..004BAC10. **20 entries remain**. These
-fragments are uncompiled/unaccepted and earn no source-presence/exact credit.
+The authoritative private source is **`.analysis/character-move-4ac040/f152/`**.
+All **151/151 nondefault entries** now exist, covering 82,372 contiguous native
+investigation bytes 004AC1B9..004C037C. `Preview.cpp` composes those entries plus
+the real prefix/default/shared tail into one complete body. Source SHA-256:
+`24ea3a57edbb6a7e6f28a0ebae10df9252d8141bb2223bf2bc2408ee14549e96`.
+The complete draft compiles, but remains unaccepted with no source-presence or
+exact credit.
 
-1. Read `native-cohort-proof.json`, `source-transcription-audit.json`,
-   `receiver-vtable-proof.json` and `command-selection-native-contract.json`.
-2. Copy current inputs to a fresh F152 working directory before editing:
-   `Case*.inc`, `Prefix.inc`, `Tail.inc`, `SourceDependencies.inc`, both private
-   receiver headers and the full native map. Preserve F148, F150 and F151 unchanged.
-   F149 remains the cleanup/handoff receipt identifier.
-3. Continue **state 700, 004BAC11..004BAF03**, 755 bytes/199 instructions.
-   Following mapped entries are 701,702,703,704,705,706,707,731,741,742...;
-   consult the full map rather than assuming numerical adjacency or combining
-   labels.
-4. Complete all 151 entries, real default/shared paths, ABI, profile and actual
-   relocations before compiling a complete source or configuring acceptance.
-   Never compile a partial wrapper or accept a case/chunk.
+1. Read the native/source/receiver/scalar audits, `complete-source-profile.json`,
+   `complete-whole-diagnostic.json`, `complete-dispatch-diagnostic.json` and
+   `pending-helper-native-contracts.json`. The source audits predate compilation
+   and the two helper acceptances; preserve those snapshots unchanged.
+2. Copy current source/control inputs to a fresh F153 directory before editing.
+   Preserve F148/F150/F151/F152, the full native map, `build/probes/F152Complete.obj`
+   and their evidence. F149 remains the cleanup/handoff receipt identifier.
+3. Investigate **state 6, 004AC4E7..004AC679**, first genuine instruction-order
+   divergence: two x87 operand loads occur between receiver-address loads in the
+   draft but after both receiver-address loads in the target. State 88 is the
+   first extent difference (+12 bytes), including native DWORD motion copying
+   versus emitted x87 copying. These are observations, not a proven source fix.
+4. Keep one complete source body and explicit flags. Recheck used ABI and every
+   actual relocation after source changes. Never compile a partial wrapper,
+   normalize/rebase bytes for acceptance, or accept a case/chunk.
+
+First whole diagnostic: **84,234 emitted bytes** = 83,108 code + 1,126 owned
+data, **74,320 position differences**, 2,352 actual relocation fields. The
+emitted code is 312 bytes longer than the target. All four byte remaps match;
+all six pointer tables retain their actual entries/widths. The emitted 0x720
+frame, saved ESI and EBP-0x64 receiver slot agree with target observations.
+These facts do not prove the original locals, types or profile. The diagnostic
+replays every real local COFF offset and independently evidenced external
+destination without masking, cropping, aliases or native-label rebasing.
+Dispatch-local instruction diagnostics only locate differences and earn no
+credit. Preserve the separate full unmasked result as authoritative.
 
 Required comparison remains **83,922 bytes**:82,796 code plus 1,126 owned
 switch/remap bytes. Four remapped/two direct guards, five equality states,
@@ -62,22 +81,24 @@ actual default 004C037D, common tail 004C039F, epilogue 004C03A7 and sole RET 00
 Frame 0x720, saved ESI and ECX at EBP-0x64 are observations: recover genuine locals
 and nested packets without artificial storage.
 
-The source audit checks 131 entry hashes, call evaluation order and real exits.
-All new named calls use canonical accepted units, including recorded random
-range 00455580; seven older calls retain the unaccepted R213 declaration.
-Eighteen float-to-short conversions and fifteen real loop counters remain.
-This audit does not establish emitted CFG/bytes. There are 926 canonical named
-call sites and seven calls to the unaccepted command declaration.
-F148 inputs/evidence remain frozen by their original checkpoint. Current
-inputs/evidence are frozen by `.analysis/f151-source-checkpoint.json`.
-F151 adds 27 entries/24,106 native investigation bytes. The new scalar audit
-checks direct float/integer constant-store width, value and order for these
-27 entries; calculated expressions/conditions and emitted bytes remain outside
-that audit. Keep both 36-site rings in 603/605 explicit and the four real loops
-in 607..610. In 607/608 the post-loop F00/F02-to-motion writes precede the
-F00 reset/F02 increment. See the knowledge index for additional native details.
-Nested random arguments remain audited in native right-to-left evaluation
-order; lexical call order alone is insufficient.
+The source audit checks all 151 entry hashes, native call evaluation order and
+real exits. There are 24 genuine loop counters/25 loop statements and 41
+float-to-short conversions. F152 adds 20 entries/22,380 native investigation
+bytes; its scalar audit checks direct literal store widths, values and order
+in those entries. It does not prove computed expressions or conditions.
+The preacceptance call audit had 1,290 canonical named calls, 21 pending named
+calls, 41 CRT conversions and six true slot-0 calls. Eleven pending call sites
+now have independently cold-exact helper bodies (nine 453E80, two 454A70).
+Ten remain without canonical bodies: seven command454BC0, two resource452B30
+and one unknown483300. The draft still uses the frozen pending receiver view;
+adopting the new canonical declaration belongs to the next complete revision.
+Both483300/483320 remain unknown. Do not reclassify ownership from call ABI.
+
+Current source/evidence is frozen by `.analysis/f152-source-checkpoint.json`.
+Earlier checkpoints remain immutable. Preserve both explicit 36-site rings in
+603/605, four real loops in607..610, repeated signed-global level reads and
+all short motion snapshots/restores. Nested random arguments retain native
+right-to-left evaluation order. See the knowledge index for further details.
 
 ## Native contracts and details to retain
 
@@ -179,3 +200,26 @@ Source and preservation receipts: `.analysis/f151-source-checkpoint.json`,
 `.analysis/f151-preservation-before-ci.json` and `.analysis/f151-cleanup.json`.
 The 27 new fragments remain private, uncompiled and unaccepted; exact code
 remains 716,968 bytes and conservative coverage remains 36.26%.
+
+## F152 verification
+
+Public CI passed **3,603 tests in 152.063 seconds**. Target,
+tracking, status and diff checks pass. Both new helper units passed one canonical
+cold build, 72/72 complete bytes exact. All 331 prior unit definitions, 209 prior
+accepted source/header inputs, all origin evidence and forty protected groups
+were checked; 134 prior objects remain byte-for-byte unchanged. An accidental
+default R100 verifier invocation rebuilt the remaining graphics object; its
+complete 495-byte canonical replay passed exact. The explicit R103 check passed
+and performed no builds. No other accepted unit needed cold replay.
+
+F151's 296 private files and 313 checkpoint files were hash-verified
+unchanged. The complete 151-entry draft was compiled once successfully after an
+include-macro error; its full 84,234-byte diagnostic remains a failure with 74,320
+position differences and earns no credit. All sources, native evidence, active
+objects and acceptance manifests are retained. Cleanup removed 375
+reproducible bytecode files (8,285,274 bytes). Receipts:
+`.analysis/f152-source-checkpoint.json`, `.analysis/f152-preservation-final.json`,
+`.analysis/f152-scalar-canonical-replay.json`,
+`.analysis/f152-unintended-r100-anchor-replay.json` and `.analysis/f152-cleanup.json`.
+Exact code is 717,040 bytes; conservative coverage is 36.27%. The 98% goal remains
+active and incomplete.

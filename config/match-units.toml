@@ -24534,3 +24534,23 @@ symbol = "?ClearMotionFields@FighterMotionClear453E20@@QAEXXZ"
 target_address = 0x00453E20
 size = 51
 relocations = []
+
+[units.fighter-set-nonnegative-word-00453e80]
+source = "src/FighterMoveScalarHelpers.cpp"
+object = "build/matching/FighterMoveScalarHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterMoveScalarHelpers::SetNonnegativeWord"]
+symbol = "?SetNonnegativeWord@FighterMoveScalarHelpers@@QAEXF@Z"
+target_address = 0x00453E80
+size = 37
+relocations = []
+
+[units.fighter-begin-fade-parameters-00454a70]
+source = "src/FighterMoveScalarHelpers.cpp"
+object = "build/matching/FighterMoveScalarHelpers.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterMoveScalarHelpers::BeginFadeParameters"]
+symbol = "?BeginFadeParameters@FighterMoveScalarHelpers@@QAEXE@Z"
+target_address = 0x00454A70
+size = 35
+relocations = []

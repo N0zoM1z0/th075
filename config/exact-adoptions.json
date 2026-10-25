@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "45ea3a126e4ad4e720bc1f3c4cff2c5a49ee8f5989c0a766abba38ac72ed7552"
+      "current_sha256": "f7a09bdb37e097d351e7528672a2e4a7ca4a96270a5fc0c766b0afbf43d98b8f"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "92a18aef87ef2f1c61dd53fe421d680ae20c89386cbabbfea9cec93fe72c5908"
+      "current_sha256": "7bcc202ae6b3088dc641fe4cd50586286c7d2e35f73c7164a4fd3afc005306d1"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "7fd902fdcaabb23c8ede833cd7d67d0dcc4e53b49ccc654d68c4290654ed016f"
+      "current_sha256": "584278ebe89d7150cd319cc81fdbe8b9c158a5e1acbcb7b0bbac5f45f7e96168"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "3a9173a265909e2e29702d84db00cd34aa0ae3f600dcb987f2f635d55d6d6ee9"
+      "current_sha256": "d78c9b9cfcef6cc04fb24a80ad8a5c389390263d4eb5d14775697a97e15bec55"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "5403bc6eb1debd4120544e2345cb67af902bdd109531e662c8955aff276df1b5"
+      "current_sha256": "e1775d396bb8fe28626c92b543dab2c4685e79caf5117a39656d03c8241fbbc6"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "293df1f6fe68efd67e9af93dd988c0e089a56cab88907ab356619f5b421b7f02"
+      "current_sha256": "14c4e062b87b6910e14701e0860aafb444cf781cb1f3ed89c82b6e66a311eb10"
     }
   },
   "functions": [
@@ -11959,6 +11959,94 @@
       },
       "origin": {
         "address": "0x00453E20",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00453E80",
+        "size": "37",
+        "span_end": "0x00453EA4",
+        "current_name": "FUN_00453e80",
+        "proposed_name": "FighterState::SetNonnegativeWordAt00453E80",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00453E80",
+        "size": "37",
+        "span_end": "0x00453EA4",
+        "current_name": "FUN_00453e80",
+        "proposed_name": "FighterMoveScalarHelpers::SetNonnegativeWord",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterMoveScalarHelpers::SetNonnegativeWord(short value)",
+        "is_thunk": "false",
+        "source_file": "src/FighterMoveScalarHelpers.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F152; scripts/repo-python scripts/replay-exact-units.py --unit fighter-set-nonnegative-word-00453e80",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F152: complete 37-byte canonical cold exact, 14 instructions, all real branches/exits and sole RET4. Signed low-word argument; negative values take the real early exit, otherwise store the word at +3B8. Saved entry ECX at EBP-4; source views retain only observed widths and used ABI. No calls, owned switch data or actual relocations. Following 11 INT3 alignment bytes excluded by complete extent evidence. R103 whole policy/independent parents retained; additional whole004AC040 native call sites support the receiver/argument contract. Original identifiers and full owner layout remain unknown; never instantiate/embed the declaration-only receiver. No fake locals/returns/ABI, arrays, padding, assembly, conditional bodies, masks, aliases, rebasing or cropped acceptance. Two new units cold replayed in one object. All331 previous unit definitions and all97 unknown origins preserved; both large drafts remain unaccepted in full. Historical R103 role retained by literal alias."
+      },
+      "origin": {
+        "address": "0x00453E80",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-game-policy-with-batch-context",
+        "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454A70",
+        "size": "35",
+        "span_end": "0x00454A92",
+        "current_name": "FUN_00454a70",
+        "proposed_name": "FighterState::BeginFadeParametersAt00454A70",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit"
+      },
+      "after": {
+        "address": "0x00454A70",
+        "size": "35",
+        "span_end": "0x00454A92",
+        "current_name": "FUN_00454a70",
+        "proposed_name": "FighterMoveScalarHelpers::BeginFadeParameters",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterMoveScalarHelpers::BeginFadeParameters(unsigned char mode)",
+        "is_thunk": "false",
+        "source_file": "src/FighterMoveScalarHelpers.cpp",
+        "evidence": "R103; scripts/repo-python scripts/verify-short-game-origins.py --cohort R103; F152; scripts/repo-python scripts/replay-exact-units.py --unit fighter-begin-fade-parameters-00454a70",
+        "owner": "authored",
+        "notes": "Batch-scanned then manually reviewed whole game state/record policy; complete fields and independently reviewed parent; names/layouts inferred, no source or exact credit; F152: complete 35-byte canonical cold exact, 12 instructions, all real branches/exits and sole RET4. Store byte F0 at +538, then the low-byte argument at +539. Saved entry ECX at EBP-4; source views retain only observed widths and used ABI. No calls, owned switch data or actual relocations. Following 13 INT3 alignment bytes excluded by complete extent evidence. R103 whole policy/independent parents retained; additional whole004AC040 native call sites support the receiver/argument contract. Original identifiers and full owner layout remain unknown; never instantiate/embed the declaration-only receiver. No fake locals/returns/ABI, arrays, padding, assembly, conditional bodies, masks, aliases, rebasing or cropped acceptance. Two new units cold replayed in one object. All331 previous unit definitions and all97 unknown origins preserved; both large drafts remain unaccepted in full. Historical R103 role retained by literal alias."
+      },
+      "origin": {
+        "address": "0x00454A70",
         "origin": "authored",
         "subsystem": "FighterState",
         "disposition": "authored",
@@ -139406,6 +139494,50 @@
       "target_address": 4537888,
       "size": 51,
       "relocations": []
+    },
+    "fighter-set-nonnegative-word-00453e80": {
+      "source": "src/FighterMoveScalarHelpers.cpp",
+      "object": "build/matching/FighterMoveScalarHelpers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterMoveScalarHelpers::SetNonnegativeWord"
+      ],
+      "symbol": "?SetNonnegativeWord@FighterMoveScalarHelpers@@QAEXF@Z",
+      "target_address": 4537984,
+      "size": 37,
+      "relocations": []
+    },
+    "fighter-begin-fade-parameters-00454a70": {
+      "source": "src/FighterMoveScalarHelpers.cpp",
+      "object": "build/matching/FighterMoveScalarHelpers.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterMoveScalarHelpers::BeginFadeParameters"
+      ],
+      "symbol": "?BeginFadeParameters@FighterMoveScalarHelpers@@QAEXE@Z",
+      "target_address": 4541040,
+      "size": 35,
+      "relocations": []
     }
   },
   "source_sha256": {
@@ -139617,6 +139749,8 @@
     "src/BattleAnimationBinding.cpp": "4fe0c7435331db89c5ac66f22446c9243594a50a625d42e1348ccc7cb0d0aaaa",
     "src/BattleAnimationBinding.hpp": "e6de169dedfc283725216c33615c40e7d4a5cc62f947f6b69da3aea25619f52a",
     "src/FighterMotionClear453E20.cpp": "535a432759f2b060ddbe8d0d35b30d567bd89706cc91cbef8afc1045844a08fe",
-    "src/FighterMotionClear453E20.hpp": "5722c3e176b17a433a516cfe145d9347a7e702fdffc61dc135ec0ab1af2fb0a4"
+    "src/FighterMotionClear453E20.hpp": "5722c3e176b17a433a516cfe145d9347a7e702fdffc61dc135ec0ab1af2fb0a4",
+    "src/FighterMoveScalarHelpers.cpp": "c4a4ca0a7c0cbd0f288f4fcde8449cdbd8951a7f12ac00e08a8d73af4690b559",
+    "src/FighterMoveScalarHelpers.hpp": "81f87eba2a4fd8286a96873113f01ebf016cbc776653d442c45f41a63fbef033"
   }
 }

@@ -329,3 +329,5 @@ BattleEffectSpawnerF136::Spawn
 BattleEffectAdvanceF137::AdvanceAll
 BattleAnimationBindingF139::BindAnimation
 FighterMotionClear453E20::ClearMotionFields
+FighterMoveScalarHelpers::SetNonnegativeWord
+FighterMoveScalarHelpers::BeginFadeParameters

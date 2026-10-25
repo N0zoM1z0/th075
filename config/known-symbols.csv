@@ -312,3 +312,5 @@ address,name,module,confidence,evidence
 0x0045BDB0,BattleEffectAdvanceF137::AdvanceAll,BattleEffect,inferred,"F137; whole cold exact and native CFG/ABI; pointer-only view, original full layout unknown"
 0x0045B880,BattleAnimationBindingF139::BindAnimation,BattleObject,inferred,F139; complete cold exact callback/whole native nested packets and installed table prefix; original full owners/records unknown
 0x00453E20,FighterMotionClear453E20::ClearMotionFields,FighterState,inferred,F146; complete canonical cold exact/whole single-block saved-this policy; original owner and field declarations unknown
+0x00453E80,FighterMoveScalarHelpers::SetNonnegativeWord,FighterState,inferred,F152; complete canonical cold exact/saved-this scalar policy; original owner and field declarations unknown
+0x00454A70,FighterMoveScalarHelpers::BeginFadeParameters,FighterState,inferred,F152; complete canonical cold exact/saved-this scalar policy; original owner and field declarations unknown
