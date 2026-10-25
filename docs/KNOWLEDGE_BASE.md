@@ -25187,7 +25187,7 @@ preserving every source fragment/native/helper/CFG/x87/local/constant/
 composition/parent input, log, PDB, canonical object and shared tool.
 Receipt:`.analysis/f132-preservation-cleanup.json`.
 
-## Current reconstruction cohort: F133
+## F133 investigation at the F132 checkpoint
 
 Continue the same authored `CharacterObject::AdvanceAt0050A580`, starting
 with **case821 at0050E274/676 investigation bytes**. Do not replace this work
@@ -25218,4 +25218,108 @@ bytes in the denominator. Preserve321 accepted units and every protected
 input/draft/origin; keep builds serial, cold-replay only new/affected units
 and perform evidence-preserving cleanup. All97 origins remain unknown and
 R268 evidence immutable. Run/queue local records/resource layouts remain
+unresolved; later project phases stay deferred.
+
+
+## F133 large-function source and floating-value checkpoint (2026-10-25)
+
+F133 continues the same authored `0050A580/81539` function. The uncompiled
+natural source now covers **44 of92 native dispatch entries**, adding
+cases821-844 to the frozen F132 fragments. The written chunks correspond to
+**35,816 native investigation bytes and402 static call sites**; **48 entries
+remain unwritten**. No source-presence acceptance, emitted comparison or new
+exact byte is claimed. The full82,106byte acceptance requirement remains.
+
+Current inputs live under `.analysis/object-action-50a580/f133/`; F131/F132
+sources and proofs remain frozen. The one future body keeps distinct owner
+state/phase checks, orbit/phase updates, alpha comparisons, collision/clear/
+reset order, repeated trigonometric evaluations and signed short fields.
+The new native patterns include randomized scales/velocities,
+tracking angles, multiple orbit stages and late owner state writes. Private
+owners/opponents remain pointer-only, never constructed or embedded.
+
+`homing-family-review.json` independently verifies the whole native operand
+relation for cases827/829/831/833/835:only their actual loop/spill slots and
+child-effect IDs differ. `trail-and-conversion-review.json` verifies four
+whole trail variants and11 true float-to-short operations. Standard C++ casts
+retain the native CRT conversion/lowAX word stores without declaring or
+replacing a compiler helper. The manual source has391 explicit helper calls
+plus11 conversions corresponding to402 native call instructions. These are
+native/source investigation checks, not emitted-code equivalence or credit.
+
+The double0.05/1.0 jitter expression remains double; separate single0.92,
+0.93 and0.98 decay factors remain single. `used-float-constants.json` verifies
+**45 readonly fields:43float32 andtwofloat64**, including actual width/raw
+value/PE section ownership. `local-roles.json` now proves **19 genuine4byte
+loop counters**, at native EBP-4 through-76, through their real initialization,
+increment and bound uses. Source names/scope/hash allocation and future
+emitted stack slots are still provisional; no padding, dummy variables,
+guessed arrays or forced frame geometry is added.
+
+A critical case842 observation is preserved literally:the instruction at
+`00512AE5` reads the owner's **word at0x62**, and `00512AE9` compares that
+value with704. This is distinct from the nearby owner0x60 state read; the
+source retains the actual operands. Case844 preserves the radius140
+initialization exception and the native if/else update, rather than adding
+a second same-frame clamp. Trigonometric calls used for both own and owner
+angle writes remain separate calls.
+
+`fragment-review.json` checks every written native chunk hash/dispatch label
+and accounts for actual helper calls/conversions. These checks do not prove
+source semantics or compiler emission. `.analysis/f133-compose.py` exited2
+with48 missing entries and emitted no partial `Preview.cpp`; there were no
+compiler builds or cold replays. All92 entries must form one natural body
+before the whole81,539code+567table bytes can be compared and cold accepted.
+No partial wrappers, fake returns, ABI aliases, masks, assembly, pasted
+decompile/code arrays, conditional exact bodies or incomplete-owner values
+are introduced. `.analysis/f133-source-checkpoint.json` freezes this work.
+
+All321 accepted units,130 canonical objects,198 accepted inputs,218 origin
+files,nine shared headers,91 older active drafts and frozen F131/F132 inputs
+remain unchanged. Every81,539code byte of this large function stays unaccepted
+in the conservative denominator; all97 unknown origins stay unknown. The98%
+goal remains active and incomplete, with **715,741 exact bytes /36.20%
+conservative coverage** unchanged.
+
+Validation:all3603 CI tests passed in162.336s; target/tracking/progress/
+diff checks passed. No compiler outputs were created or removed. Cleanup
+removed only375 reproducible Python bytecode files(8,283,506bytes).
+All source fragments, native/helper/CFG/x87/family/conversion/local/constant/
+critical-operand/guard/parent evidence, logs, PDBs, canonical objects and
+shared tools remain. Receipt:`.analysis/f133-preservation-cleanup.json`.
+
+## Current reconstruction cohort: F134
+
+Continue the same authored `CharacterObject::AdvanceAt0050A580`, starting
+at **case845 /00513235/1171 investigation bytes**. Do not substitute another
+cohort. Full acceptance still requires **82,106 bytes**:81,539code plus the
+368byte pointer table and199byte remap, including every shared/default path.
+
+F133 retains uncompiled natural source for44 of92 dispatch entries;
+**48 remain unwritten**. Preserve `.analysis/object-action-50a580/f133/` and
+`.analysis/f133-source-checkpoint.json`. Copy current fragments andheaders
+to a fresh private version before further edits. Reuse complete native
+`advance-case-index.json`/`advance-stack-review.json` and the whole CFG,
+CPU/x87,846call/11nested-packet evidence under
+`.analysis/f131-character-selection-frontier/`.
+
+Current checks account for391 explicit source helper calls plus11 standard
+float-to-short conversions at402 native calls,19 genuine loop counters and
+45 readonly floating fields. Whole native homing/trail variant relations and
+the case842 owner+0x62 comparison are recorded. These do not establish source
+semantic equivalence or emitted bytes. Preserve the two double constants,
+actual single-precision factors, native field widths/control order and
+source-level conversions; no explicit CRT helper shim or private values.
+
+Continue independent typed receiver/field/value/local/CFG review and natural
+source for every remaining entry. The composition guard must reject any
+incomplete body. Keep one complete source and the full comparison; no masks,
+aliases, assembly, pasted decompile/code bytes, padding, dummy storage or
+guessed arrays/layouts. Every incomplete private owner remains pointer-only.
+No source presence or exact credit yet exists for this large function.
+
+Preserve all321 accepted units, every protected input/draft/origin andall97
+unknown origins; R268 evidence stays immutable. Keep builds serial, cold
+replay only new/affected units and clean only obsolete reproducible outputs
+after freezing evidence. Run/queue/resource layout questions remain
 unresolved; later project phases stay deferred.
