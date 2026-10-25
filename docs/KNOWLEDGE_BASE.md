@@ -1,6 +1,6 @@
 # TH075 reconstruction knowledge index
 
-Updated 2026-10-25 for resumed reconstruction, F153. The active 98%
+Updated 2026-10-25 for resumed reconstruction, F154. The active 98%
 authored-byte objective remains incomplete. Current state and continuation
 instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 
@@ -13,9 +13,9 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
   `function-origins.csv` holds ownership. Source presence, names, Ghidra types,
   successful compilation and byte equality are separate facts.
 - `config/match-units.toml`, `matches.csv`, `exact-adoptions.json` retain
-  complete cold-exact units/all actual relocations. Counts are 333 units,
-  717,040 code bytes, 136 canonical objects and 211 accepted inputs.
-- Reviewed authored coverage is 36.33%; conservative coverage is 36.27%.
+  complete cold-exact units/all actual relocations. Counts are 336 units,
+  717,145 code bytes, 137 canonical objects and 213 accepted inputs.
+- Reviewed authored coverage is 36.34%; conservative coverage is 36.27%.
   All 97 unknown origins/3,608 bytes and all pending code stay in the conservative
   denominator. Origin evidence through R268 is unchanged.
 - CODE size determines goal credit; compare_size includes owned tables/remaps
@@ -24,12 +24,13 @@ instructions are in [RE_HANDOFF.md](RE_HANDOFF.md).
 ## Current source work
 
 **004AC040, R048 authored:** the authoritative complete source is now
-`.analysis/character-move-4ac040/f153/`, SHA prefix22d81ff5. All151 entries plus
+`.analysis/character-move-4ac040/f154/`, SHA prefix22d81ff5. All151 entries plus
 the real prefix/default/shared tail compile as one body. Current whole diagnostic
 emits exactly83,922 bytes (82,796 code +1,126 owned data), with18,539 differing
 positions after replaying all2,352 actual relocation fields. Both code streams
 have22,721 instructions. This remains unaccepted with no source-presence/exact
-credit. Preserve the active F153 resolved/window/counter objects and F152 object
+credit. F154 uses the canonical command header with the same complete code.
+Preserve active F154 caller/compiler-map objects, F153 resolved/window/counter objects and F152 object
 listed in the handoff. The first F152 failure84,234/74,320 remains frozen.
 
 The explicit profile remains pinned VC7.1 build3077, /Od /Ob0 /Gy /GR- /GX-
@@ -71,11 +72,28 @@ all151 entries exactly to frozen F152 source through only recorded changes.
 
 The first genuine byte divergence is now state89 at004ADEFB: native loads the
 receiver intoEAX, emitted intoEDX. Earlier states6/88 are resolved. No fix for
-the remaining register choices is established. Copy F153 to fresh F154 before
+the remaining register choices is established. Copy F154 to fresh F155 before
 working further. Four whole-source negative controls have identical raw code
 and actual relocation targets: offset-zero scalar member, accepted transform
 view, prefix/postfix loop increment in88 and explicit/implicit float truth tests
 in88. Do not rerun them without new evidence.
+
+F154's frozen baseline compiler observation matches all13,951 explicit GPR
+tokens to its full COFF. Actual counts:8,223 mapping/8,223 use/2,639 forced-binding events.
+First target difference is token1352, actual mapping event737: current virtual
+descriptor18681 maps toEDX withEAX next; native expectsEAX. These descriptor labels belong only to the frozen baseline header inputs.
+Identical code after canonical-header migration does not infer its logical IDs.
+The native original virtual identities/liveness are not established. Twenty-one latest-node-write
+tuple exceptions stay explicit; memory base/index operands are outside this
+token model. Do not treat descriptor IDs as extra source operations or pad source.
+
+Five F154 controls emit exactly the same full code/actual fields:545 observed
+word-window accesses, nested final guard in88, implicit snapshot conversions
+in88, /G6 tuning and /GX exception handling. Two double-zero comparisons emit eight-byte constants in
+place of native four-byte loads; their new constant destinations were left
+unresolved and the candidate rejected. No such control is adopted as a fix.
+The full debugger build retains the same raw code and all2,352 relocation fields.
+Raw Rich observations give no function-specific or executable-wide profile.
 
 Read-only constructor context did not establish an access to4C, so no broader
 position/motion view spanning that unknown field was introduced. R045
@@ -186,11 +204,22 @@ eleven sites; the complete whole comparison still fails and earns no credit.
 database title are preserved by literal alias. Four DWORD zero stores do not
 establish original field declarations or a complete owner layout.
 
-**Pending command declaration:** wrapper 454BC0 (61bytes, RET12) is R213
-authored; setters 410FA0/410FE0 (22bytes each, RET4) are R239 authored. All
-remain unaccepted. The wrapper forwards byte/DWORD values through pointer 480.
-Historical functions.csv notes about unknown setters are superseded by the
-existing origin ledger. Original identifiers/signedness remain provisional.
+**F154 accepted command closure:**61-byte `SetCommandSelection` at454BC0
+and22-byte setters410FA0/410FE0 passed one canonical cold build,105/105 complete
+bytes exact. The wrapper stores a DWORD at47C, forwards the low-byte mode through
+pointer480 to the byte10 setter, then forwards the DWORD color mask to the +0x14
+DWORD setter. RET12/RET4, savedECX atEBP-4, all exits and both actual REL32 fields
+are retained. R213/R239 original roles and independent created-owner/action/draw
+contexts remain frozen, with literal aliases. Original names, signedness and
+complete owner layouts stay provisional; neither receiver view is instantiated.
+Historical R213 notes saying the setters are unknown were already superseded by
+R239 and remain preserved as history. All97 unknown origins are unchanged.
+
+The complete caller now uses the canonical header at all seven command call
+sites. Its151 source entries, raw function bytes and all relocation destinations
+are unchanged from F153; whole comparison still fails at18,539 positions. Only
+three named pending-body sites remain: two resource452B30 and one unknown483300.
+Neither unknown483300/483320 nor either large draft earns new exact credit.
 
 F149 stopped during read-only reconnaissance of390..402. No additional case
 was authored. State392's nested phase 6/phase 4 tests and400..402's three

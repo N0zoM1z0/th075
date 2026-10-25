@@ -1,6 +1,6 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-25 for resumed reconstruction, F153.
+Updated 2026-10-25 for resumed reconstruction, F154.
 **The 98% authored-byte objective is active and incomplete.**
 The user resumed after the cleanup and handoff checkpoint. Subsequent project
 phases remain deferred. Continue the complete function cohort below.
@@ -12,14 +12,14 @@ phases remain deferred. Continue the complete function cohort below.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 333 / 333 / 333 |
-| Exact code bytes | 717,040 |
-| Reviewed authored coverage | 717,040 / 1,973,516 (36.33%) |
-| Conservative coverage, including pending bytes | 717,040 / 1,977,124 (36.27%) |
-| Canonical objects / accepted source-header inputs | 136 / 211 |
+| Source-present / exact functions / exact units | 336 / 336 / 336 |
+| Exact code bytes | 717,145 |
+| Reviewed authored coverage | 717,145 / 1,973,516 (36.34%) |
+| Conservative coverage, including pending bytes | 717,145 / 1,977,124 (36.27%) |
+| Canonical objects / accepted source-header inputs | 137 / 213 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 273 additions / 707,157 code bytes / 211 inputs. Origin evidence through
+F009 plus 276 additions / 707,262 code bytes / 213 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -28,7 +28,14 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding pushed reconstruction checkpoint is **e247b1e (F152)**.
+The preceding pushed reconstruction checkpoint is **228b979 (F153)**.
+F154 accepts three whole R213/R239 policies in
+`src/FighterCommandSelection454BC0.cpp`: `fighter-command-selection-00454bc0`
+(61 bytes), `sprite-sampling-mode-00410fa0` (22 bytes) and
+`sprite-color-mask-00410fe0` (22 bytes). All passed one canonical cold build,
+105/105 complete bytes with both real REL32 fields replayed. The current large
+caller uses their canonical header; its whole comparison still fails.
+
 F152 accepts two new whole R103 policies in `src/FighterMoveScalarHelpers.cpp`:
 `fighter-set-nonnegative-word-00453e80` (37 bytes) and
 `fighter-begin-fade-parameters-00454a70` (35 bytes). Both passed canonical cold
@@ -36,31 +43,38 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Continue after F153: match complete 004AC040
+## Continue after F154: match complete 004AC040
 
-The authoritative private source is **`.analysis/character-move-4ac040/f153/`**.
+The authoritative private source is **`.analysis/character-move-4ac040/f154/`**.
 All **151/151 nondefault entries** plus the real prefix/default/shared tail are
 in one complete source body. Current `Preview.cpp` is byte-identical to the
-compiled `snapshots/resolved-shapes/Preview.cpp`, SHA-256:
+compiled `snapshots/canonical-command/Preview.cpp`, SHA-256:
 `22d81ff55e7b6e6f0396a147848605ba7e6c505da5f634b1fd9bf1f3942495da`.
 The draft remains unaccepted, with no source-presence or exact credit.
 
-1. Read `source-transformation-audit.json`, the three field-view hypothesis
-   records, `counter-width-applied.json`, `resolved-shapes-source-profile.json`,
-   `resolved-shapes-whole-diagnostic.json` and the physical dispatch diagnostic.
-   The original F152 native/source/receiver/scalar audits remain frozen.
-2. Copy current source/control inputs to a fresh F154 directory before editing.
-   Preserve F148/F150/F151/F152/F153 and their native evidence. Keep active
-   `build/probes/F153ResolvedShapes.obj`, `F153WindowViews.obj`,
-   `F153NativeCounters.obj` and `F152Complete.obj`, plus all earlier active objects.
-3. Investigate **state 89, 004ADEFA..004AE05D**, now the first actual byte
-   divergence at **004ADEFB**. Native begins `mov eax,[ebp-64]`; emitted begins
-   `mov edx,[ebp-64]`. Earlier state6/88 instruction differences are resolved.
-   The remaining physical register choices are unproved; do not normalize them
-   or change ABI/add inert source to force a match.
-4. Keep one complete source body, explicit flags and every actual relocation.
-   Never compile/accept a case or partial wrapper. New/affected canonical units
-   alone need cold replay; none changed in F153.
+1. Read `source-evidence-audit.json`, `canonical-command-interface.json`,
+   `canonical-command-source-profile.json`, `canonical-command-whole-diagnostic.json`,
+   `baseline-mapping-correlation.json` and `baseline-map-session.log`. The F153
+   source/field/counter audits and earlier native evidence remain frozen.
+2. Copy current source/control inputs to a fresh F155 before editing. Preserve
+   F148/F150/F151/F152/F153/F154 and their native evidence. Keep new active
+   `build/probes/F154CanonicalCommand.obj` and `F154BaselineMap.obj`, all three
+   positive F153 objects, `F152Complete.obj` and the earlier active objects.
+3. Continue **state 89, 004ADEFA..004AE05D**, first actual byte divergence at
+   **004ADEFB**: native loads the receiver intoEAX; emitted loads intoEDX. The
+   complete frozen baseline trace confirms mapper event737 choosesEDX for
+   its virtual descriptor18681, leavingEAX next. Descriptor labels belong to
+   those baseline header inputs; identical caller code after header migration
+   does not prove identical logical descriptors. This is current-source
+   evidence, not the original target's virtual-register/liveness state.
+4. Investigate actual mapper producer/release and expression/liveness evidence
+   near event737. All13,951 explicit GPR emissions agree with the complete own
+   COFF;21 latest-node-write tuple exceptions remain explicit. Memory base/index
+   operands are outside that token model. Do not infer missing source operations
+   from descriptor numbers or add inert work/change unsupported ABI to steer it.
+5. Keep one complete body, explicit flags and every actual relocation. Never
+   accept a case, partial wrapper or normalized result. Only new/affected
+   canonical units need cold replay; F154 replayed the three new units only.
 
 Current whole diagnostic: **83,922 emitted bytes** = **82,796 code + 1,126
 owned data**, **18,539 position differences**, all **2,352 actual relocation
@@ -83,11 +97,21 @@ See the knowledge index and source-transformation audit. All 151 current entries
 project byte-for-byte to F152 source through only those recorded transformations;
 the earlier native call-order/exit/literal contracts remain retained.
 
-Four controls changed no raw function bytes or relocation destinations:
-offset-zero scalar view, reuse of the accepted transform view, loop prefix versus
-postfix increment in88, and implicit float truth tests in88. Do not repeat them
-without new evidence. The transform view remains as a truthful existing record
-interface; the other negative controls were not adopted as new source behavior.
+F153's four no-change controls remain closed. F154 additionally closed five
+whole-source controls with identical raw function bytes and relocation targets:
+545 observed word-field views, nested final guard in88, implicit snapshot
+conversions in88, /G6 tuning and /GX exception handling. None were adopted to claim progress in bytes.
+Two double-zero comparisons in88 instead emit8-byte constant loads versus the
+native4-byte loads; that candidate was rejected with both new constant fields
+explicitly unresolved. Never invent a native constant destination or mask them.
+
+The bounded headless compiler debugger completed normally:8,223 mapping events,
+8,223 use events,2,639 forced bindings and13,951 emission tokens. Its whole
+83,922-byte object and all2,352 actual fields equal F153. There are5,913 explicit
+register-token differences from target; this is a diagnostic count, not goal
+credit or a complete data-flow proof. The first difference is token1352/event737.
+The compiler build remains hash-pinned3077. Raw Rich observations include
+multiple historical builds and do not identify this function's original profile.
 
 Required comparison remains **83,922 bytes**:82,796 code plus 1,126 owned
 switch/remap bytes. Four remapped/two direct guards, five equality states,
@@ -105,12 +129,12 @@ in those entries. It does not prove computed expressions or conditions.
 The preacceptance call audit had 1,290 canonical named calls, 21 pending named
 calls, 41 CRT conversions and six true slot-0 calls. Eleven pending call sites
 now have independently cold-exact helper bodies (nine 453E80, two 454A70).
-Ten remain without canonical bodies: seven command454BC0, two resource452B30
-and one unknown483300. F153 uses the new canonical scalar helper declaration at all eleven sites;
+F154 adds canonical bodies for all seven command454BC0 sites. Three named
+sites remain without canonical bodies: two resource452B30 and one unknown483300. F153 uses the new canonical scalar helper declaration at all eleven sites;
 all actual relocation targets remain independently checked.
 Both483300/483320 remain unknown. Do not reclassify ownership from call ABI.
 
-Current source/evidence is frozen by `.analysis/f153-source-checkpoint.json`.
+Current source/evidence is frozen by `.analysis/f154-source-checkpoint.json`.
 Earlier checkpoints remain immutable. Preserve both explicit 36-site rings in
 603/605, four real loops in607..610, repeated signed-global level reads and
 all short motion snapshots/restores. Nested random arguments retain native
@@ -129,7 +153,7 @@ right-to-left evaluation order. See the knowledge index for further details.
   short-circuit branches, effect argument order and repeated phase guards.
 - R213 wrapper 454BC0 is 61 bytes: DWORD selection/low-byte mode/DWORD mask,
   pointer 480 receiver and RET12. Its 22-byte setters 410FA0/410FE0 use RET4 and
-  byte at +0x10 / DWORD at +0x14 stores. All three are already authored (R213/R239), unaccepted.
+  byte at +0x10 / DWORD at +0x14 stores. All three are authored (R213/R239) and now cold-exact in F154.
   Old functions.csv notes calling the setters unknown are historical. Do not
   change any current unknown origin on that basis.
 - F149 only read states 390..402; no new source was written. State392's actual
@@ -262,3 +286,28 @@ function/relocation evidence remain retained. Keep the three positive F153
 objects and every earlier active object. Receipts:
 `.analysis/f153-source-checkpoint.json`, `.analysis/f153-preservation-final.json`
 and `.analysis/f153-cleanup.json`. The 98% goal remains active and incomplete.
+
+## F154 verification
+
+Public CI passed **3,603 tests in 160.234 seconds**. Target,
+tracking, status and diff checks pass. Three new units passed one canonical cold
+build, 105/105 complete bytes exact including both actual REL32 fields. All 333
+prior unit definitions, 136 prior objects, 211 prior accepted source/header inputs,
+all origin evidence and forty protected groups were hash-verified unchanged.
+F153's 1491 private files and 1510 checkpoint files remain intact.
+No accepted dependency changed; no old unit needed cold replay.
+
+The complete caller now uses the canonical command header. Its 83,922 emitted
+bytes, all 2,352 fields and 18,539 differences are unchanged. Eight private complete
+caller builds, one helper diagnostic and one canonical group build ran serially
+and headless. The bounded compiler debugger completed normally; its 13,951 explicit
+register emissions agree with the whole own COFF. Descriptor labels belong only
+to the frozen baseline inputs, not inferred target or post-migration identities.
+
+Cleanup removed 6 obsolete reproducible control objects
+(958,396 bytes) and 375 bytecode files (8,285,279 bytes).
+Source/control snapshots, native/raw-COFF evidence, compiler logs and active
+objects remain preserved. Receipts: `.analysis/f154-source-checkpoint.json`,
+`.analysis/f154-preservation-final.json`, `.analysis/f154-command-canonical-replay.json`
+and `.analysis/f154-cleanup.json`. Exact code is 717,145 bytes; conservative
+coverage remains 36.27%. The 98% goal is active and incomplete.

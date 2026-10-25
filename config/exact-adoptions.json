@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "f7a09bdb37e097d351e7528672a2e4a7ca4a96270a5fc0c766b0afbf43d98b8f"
+      "current_sha256": "c8a625ace894fb6b7fde724ba54988e281787fa032a6a629b1b90d385ef3a635"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "7bcc202ae6b3088dc641fe4cd50586286c7d2e35f73c7164a4fd3afc005306d1"
+      "current_sha256": "2d4ea8117430ceedba232df1d73af968cf49abf2eeaf45d2dafd28f1824e09b8"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "584278ebe89d7150cd319cc81fdbe8b9c158a5e1acbcb7b0bbac5f45f7e96168"
+      "current_sha256": "73915f0ede1b9f1ec7a5725e19f045ddd5ab409fe226f0378f8636a01471ae48"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "d78c9b9cfcef6cc04fb24a80ad8a5c389390263d4eb5d14775697a97e15bec55"
+      "current_sha256": "fbfe4500664b52e0382737f05f7a7198c32635e7c08f8d19e325eec97dc57b4e"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "e1775d396bb8fe28626c92b543dab2c4685e79caf5117a39656d03c8241fbbc6"
+      "current_sha256": "bdf081a2fcbdc715e2e5cf7f9a312138dca8bd6d214a2f8a6c12ea98e1e1b6c4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "14c4e062b87b6910e14701e0860aafb444cf781cb1f3ed89c82b6e66a311eb10"
+      "current_sha256": "94acae6747bfb8023a2248a61adee7f0175a0a450b00a0aaadd588184eff4692"
     }
   },
   "functions": [
@@ -12052,6 +12052,138 @@
         "disposition": "authored",
         "confidence": "complete-game-policy-with-batch-context",
         "evidence_id": "R103"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00410FA0",
+        "size": "22",
+        "span_end": "0x00410FB5",
+        "current_name": "FUN_00410fa0",
+        "proposed_name": "SpriteSequence::SetSamplingModeAt00410FA0",
+        "module": "SpriteSequence",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R239; config/sprite-render-parameter-origin-evidence.json; scripts/repo-python scripts/verify-sprite-render-parameter-origins.py",
+        "owner": "authored",
+        "notes": "Complete22-byte incoming parameter write with RET4, independently created same sprite owner in full R213 resource/selection/action context and whole R035 drawing consumers: signed byte sampling guards/modulo at+0x10, color-mask application at+0x14. Full ordinary and genuine template methods reproduce; complete borrowed-field source remains distinct. Source-family inference only; original spelling/type/signedness/template/private layout/compiler profile/ABI remain unknown. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00410FA0",
+        "size": "22",
+        "span_end": "0x00410FB5",
+        "current_name": "FUN_00410fa0",
+        "proposed_name": "SpriteSequenceParametersF154::SetSamplingMode",
+        "module": "SpriteSequence",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteSequenceParametersF154::SetSamplingMode(unsigned char mode)",
+        "is_thunk": "false",
+        "source_file": "src/FighterCommandSelection454BC0.cpp",
+        "evidence": "R239; config/sprite-render-parameter-origin-evidence.json; scripts/repo-python scripts/verify-sprite-render-parameter-origins.py; F154; scripts/repo-python scripts/replay-exact-units.py --unit sprite-sampling-mode-00410fa0",
+        "owner": "authored",
+        "notes": "Complete22-byte incoming parameter write with RET4, independently created same sprite owner in full R213 resource/selection/action context and whole R035 drawing consumers: signed byte sampling guards/modulo at+0x10, color-mask application at+0x14. Full ordinary and genuine template methods reproduce; complete borrowed-field source remains distinct. Source-family inference only; original spelling/type/signedness/template/private layout/compiler profile/ABI remain unknown. No source/mapping/exact credit.; F154: complete 22-byte canonical cold exact, 10 native instructions, all real exits/RET4. Saved entry ECX at EBP-4. Low-byte argument store at10. No calls or relocations. Following 10 INT3 bytes excluded by full extent evidence. R213/R239 complete native ownership, independent created-owner/action/draw contexts and literal historical roles retained. Original names, parameter signedness and complete owner layouts remain provisional; never instantiate/embed these partial receiver views. No fake locals/returns/ABI, padding, arrays, assembly, conditional bodies, masks, aliases, rebasing or cropped acceptance. Three new units cold replayed across one new object; all333 previous units and all97 unknown origins unchanged. Both large drafts remain pending in full; current004AC040 still has18539 differences across83922 bytes."
+      },
+      "origin": {
+        "address": "0x00410FA0",
+        "origin": "authored",
+        "subsystem": "SpriteSequence",
+        "disposition": "authored",
+        "confidence": "whole-sprite-sampling-and-color-mask-writes-with-independent-created-owner-selection-action-and-draw-context",
+        "evidence_id": "R239"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00410FE0",
+        "size": "22",
+        "span_end": "0x00410FF5",
+        "current_name": "FUN_00410fe0",
+        "proposed_name": "SpriteSequence::SetColorMaskAt00410FE0",
+        "module": "SpriteSequence",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R239; config/sprite-render-parameter-origin-evidence.json; scripts/repo-python scripts/verify-sprite-render-parameter-origins.py",
+        "owner": "authored",
+        "notes": "Complete22-byte incoming parameter write with RET4, independently created same sprite owner in full R213 resource/selection/action context and whole R035 drawing consumers: signed byte sampling guards/modulo at+0x10, color-mask application at+0x14. Full ordinary and genuine template methods reproduce; complete borrowed-field source remains distinct. Source-family inference only; original spelling/type/signedness/template/private layout/compiler profile/ABI remain unknown. No source/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00410FE0",
+        "size": "22",
+        "span_end": "0x00410FF5",
+        "current_name": "FUN_00410fe0",
+        "proposed_name": "SpriteSequenceParametersF154::SetColorMask",
+        "module": "SpriteSequence",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void SpriteSequenceParametersF154::SetColorMask(unsigned int mask)",
+        "is_thunk": "false",
+        "source_file": "src/FighterCommandSelection454BC0.cpp",
+        "evidence": "R239; config/sprite-render-parameter-origin-evidence.json; scripts/repo-python scripts/verify-sprite-render-parameter-origins.py; F154; scripts/repo-python scripts/replay-exact-units.py --unit sprite-color-mask-00410fe0",
+        "owner": "authored",
+        "notes": "Complete22-byte incoming parameter write with RET4, independently created same sprite owner in full R213 resource/selection/action context and whole R035 drawing consumers: signed byte sampling guards/modulo at+0x10, color-mask application at+0x14. Full ordinary and genuine template methods reproduce; complete borrowed-field source remains distinct. Source-family inference only; original spelling/type/signedness/template/private layout/compiler profile/ABI remain unknown. No source/mapping/exact credit.; F154: complete 22-byte canonical cold exact, 10 native instructions, all real exits/RET4. Saved entry ECX at EBP-4. DWORD argument store at14. No calls or relocations. Following 10 INT3 bytes excluded by full extent evidence. R213/R239 complete native ownership, independent created-owner/action/draw contexts and literal historical roles retained. Original names, parameter signedness and complete owner layouts remain provisional; never instantiate/embed these partial receiver views. No fake locals/returns/ABI, padding, arrays, assembly, conditional bodies, masks, aliases, rebasing or cropped acceptance. Three new units cold replayed across one new object; all333 previous units and all97 unknown origins unchanged. Both large drafts remain pending in full; current004AC040 still has18539 differences across83922 bytes."
+      },
+      "origin": {
+        "address": "0x00410FE0",
+        "origin": "authored",
+        "subsystem": "SpriteSequence",
+        "disposition": "authored",
+        "confidence": "whole-sprite-sampling-and-color-mask-writes-with-independent-created-owner-selection-action-and-draw-context",
+        "evidence_id": "R239"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00454BC0",
+        "size": "61",
+        "span_end": "0x00454BFC",
+        "current_name": "FUN_00454bc0",
+        "proposed_name": "FighterState::SetCommandSelectionAt00454BC0 [provisional]",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R213; config/frame-index-policy-origin-evidence.json; scripts/repo-python scripts/verify-frame-index-policy-origins.py",
+        "owner": "",
+        "notes": "Complete native game selection and state writes; independently whole authored initializer/action-state/resource-loader contexts and actual receiver provenance. Short command setters remain unchanged unknown; no original private layout is inferred. No source/private ABI/mapping/exact credit."
+      },
+      "after": {
+        "address": "0x00454BC0",
+        "size": "61",
+        "span_end": "0x00454BFC",
+        "current_name": "FUN_00454bc0",
+        "proposed_name": "FighterCommandSelection454BC0::SetCommandSelection",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void FighterCommandSelection454BC0::SetCommandSelection(int selection, unsigned char mode, unsigned int mask)",
+        "is_thunk": "false",
+        "source_file": "src/FighterCommandSelection454BC0.cpp",
+        "evidence": "R213; config/frame-index-policy-origin-evidence.json; scripts/repo-python scripts/verify-frame-index-policy-origins.py; F154; scripts/repo-python scripts/replay-exact-units.py --unit fighter-command-selection-00454bc0",
+        "owner": "authored",
+        "notes": "Complete native game selection and state writes; independently whole authored initializer/action-state/resource-loader contexts and actual receiver provenance. Short command setters remain unchanged unknown; no original private layout is inferred. No source/private ABI/mapping/exact credit.; F154: complete 61-byte canonical cold exact, 20 native instructions, all real exits/RET12. Saved entry ECX at EBP-4. DWORD selection store at47C; pointer480 supplies the same native sprite receiver for low-byte sampling and DWORD color-mask calls, in native order; both actual REL32 fields independently bound to the newly cold-exact complete setters. Following 3 INT3 bytes excluded by full extent evidence. R213/R239 complete native ownership, independent created-owner/action/draw contexts and literal historical roles retained. Original names, parameter signedness and complete owner layouts remain provisional; never instantiate/embed these partial receiver views. No fake locals/returns/ABI, padding, arrays, assembly, conditional bodies, masks, aliases, rebasing or cropped acceptance. Three new units cold replayed across one new object; all333 previous units and all97 unknown origins unchanged. Both large drafts remain pending in full; current004AC040 still has18539 differences across83922 bytes."
+      },
+      "origin": {
+        "address": "0x00454BC0",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "complete-native-game-composition-with-independent-whole-context",
+        "evidence_id": "R213"
       }
     }
   ],
@@ -139538,6 +139670,85 @@
       "target_address": 4541040,
       "size": 35,
       "relocations": []
+    },
+    "sprite-sampling-mode-00410fa0": {
+      "source": "src/FighterCommandSelection454BC0.cpp",
+      "object": "build/matching/FighterCommandSelection454BC0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteSequenceParametersF154::SetSamplingMode"
+      ],
+      "symbol": "?SetSamplingMode@SpriteSequenceParametersF154@@QAEXE@Z",
+      "target_address": 4263840,
+      "size": 22,
+      "relocations": []
+    },
+    "sprite-color-mask-00410fe0": {
+      "source": "src/FighterCommandSelection454BC0.cpp",
+      "object": "build/matching/FighterCommandSelection454BC0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "SpriteSequenceParametersF154::SetColorMask"
+      ],
+      "symbol": "?SetColorMask@SpriteSequenceParametersF154@@QAEXI@Z",
+      "target_address": 4263904,
+      "size": 22,
+      "relocations": []
+    },
+    "fighter-command-selection-00454bc0": {
+      "source": "src/FighterCommandSelection454BC0.cpp",
+      "object": "build/matching/FighterCommandSelection454BC0.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterCommandSelection454BC0::SetCommandSelection"
+      ],
+      "symbol": "?SetCommandSelection@FighterCommandSelection454BC0@@QAEXHEI@Z",
+      "target_address": 4541376,
+      "size": 61,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?SetSamplingMode@SpriteSequenceParametersF154@@QAEXE@Z",
+          "target": 4263840
+        },
+        {
+          "offset": 51,
+          "type": "REL32",
+          "symbol": "?SetColorMask@SpriteSequenceParametersF154@@QAEXI@Z",
+          "target": 4263904
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -139751,6 +139962,8 @@
     "src/FighterMotionClear453E20.cpp": "535a432759f2b060ddbe8d0d35b30d567bd89706cc91cbef8afc1045844a08fe",
     "src/FighterMotionClear453E20.hpp": "5722c3e176b17a433a516cfe145d9347a7e702fdffc61dc135ec0ab1af2fb0a4",
     "src/FighterMoveScalarHelpers.cpp": "c4a4ca0a7c0cbd0f288f4fcde8449cdbd8951a7f12ac00e08a8d73af4690b559",
-    "src/FighterMoveScalarHelpers.hpp": "81f87eba2a4fd8286a96873113f01ebf016cbc776653d442c45f41a63fbef033"
+    "src/FighterMoveScalarHelpers.hpp": "81f87eba2a4fd8286a96873113f01ebf016cbc776653d442c45f41a63fbef033",
+    "src/FighterCommandSelection454BC0.cpp": "a79391694d0fff264869a3738f8d63615f0f08a21ba5199a1d4f23b81afcce73",
+    "src/FighterCommandSelection454BC0.hpp": "4241ea3d3e68145f9fd763796b7ba09176e169615423adb29eada8882249f012"
   }
 }

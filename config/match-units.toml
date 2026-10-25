@@ -24554,3 +24554,42 @@ symbol = "?BeginFadeParameters@FighterMoveScalarHelpers@@QAEXE@Z"
 target_address = 0x00454A70
 size = 35
 relocations = []
+
+[units.sprite-sampling-mode-00410fa0]
+source = "src/FighterCommandSelection454BC0.cpp"
+object = "build/matching/FighterCommandSelection454BC0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteSequenceParametersF154::SetSamplingMode"]
+symbol = "?SetSamplingMode@SpriteSequenceParametersF154@@QAEXE@Z"
+target_address = 0x00410FA0
+size = 22
+relocations = []
+
+[units.sprite-color-mask-00410fe0]
+source = "src/FighterCommandSelection454BC0.cpp"
+object = "build/matching/FighterCommandSelection454BC0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["SpriteSequenceParametersF154::SetColorMask"]
+symbol = "?SetColorMask@SpriteSequenceParametersF154@@QAEXI@Z"
+target_address = 0x00410FE0
+size = 22
+relocations = []
+
+[units.fighter-command-selection-00454bc0]
+source = "src/FighterCommandSelection454BC0.cpp"
+object = "build/matching/FighterCommandSelection454BC0.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterCommandSelection454BC0::SetCommandSelection"]
+symbol = "?SetCommandSelection@FighterCommandSelection454BC0@@QAEXHEI@Z"
+target_address = 0x00454BC0
+size = 61
+[[units.fighter-command-selection-00454bc0.relocations]]
+offset = 33
+type = "REL32"
+symbol = "?SetSamplingMode@SpriteSequenceParametersF154@@QAEXE@Z"
+target = 0x00410FA0
+[[units.fighter-command-selection-00454bc0.relocations]]
+offset = 51
+type = "REL32"
+symbol = "?SetColorMask@SpriteSequenceParametersF154@@QAEXI@Z"
+target = 0x00410FE0

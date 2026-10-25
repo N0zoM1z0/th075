@@ -332,3 +332,6 @@ BattleAnimationBindingF139::BindAnimation,0x0045B880,function
 FighterMotionClear453E20::ClearMotionFields,0x00453E20,function
 FighterMoveScalarHelpers::SetNonnegativeWord,0x00453E80,function
 FighterMoveScalarHelpers::BeginFadeParameters,0x00454A70,function
+SpriteSequenceParametersF154::SetSamplingMode,0x00410FA0,function
+SpriteSequenceParametersF154::SetColorMask,0x00410FE0,function
+FighterCommandSelection454BC0::SetCommandSelection,0x00454BC0,function

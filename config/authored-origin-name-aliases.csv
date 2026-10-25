@@ -276,3 +276,6 @@ address,reviewed_role,mapped_role,origin_evidence,exact_unit
 0x00453E20,FighterState::ClearMotionFieldsAt00453E20,FighterMotionClear453E20::ClearMotionFields,R103,fighter-motion-clear-00453e20
 0x00453E80,FighterState::SetNonnegativeWordAt00453E80,FighterMoveScalarHelpers::SetNonnegativeWord,R103,fighter-set-nonnegative-word-00453e80
 0x00454A70,FighterState::BeginFadeParametersAt00454A70,FighterMoveScalarHelpers::BeginFadeParameters,R103,fighter-begin-fade-parameters-00454a70
+0x00410FA0,SpriteSequence::SetSamplingModeAt00410FA0,SpriteSequenceParametersF154::SetSamplingMode,R239,sprite-sampling-mode-00410fa0
+0x00410FE0,SpriteSequence::SetColorMaskAt00410FE0,SpriteSequenceParametersF154::SetColorMask,R239,sprite-color-mask-00410fe0
+0x00454BC0,FighterState::SetCommandSelectionAt00454BC0 [provisional],FighterCommandSelection454BC0::SetCommandSelection,R213,fighter-command-selection-00454bc0

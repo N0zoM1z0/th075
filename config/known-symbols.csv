@@ -314,3 +314,6 @@ address,name,module,confidence,evidence
 0x00453E20,FighterMotionClear453E20::ClearMotionFields,FighterState,inferred,F146; complete canonical cold exact/whole single-block saved-this policy; original owner and field declarations unknown
 0x00453E80,FighterMoveScalarHelpers::SetNonnegativeWord,FighterState,inferred,F152; complete canonical cold exact/saved-this scalar policy; original owner and field declarations unknown
 0x00454A70,FighterMoveScalarHelpers::BeginFadeParameters,FighterState,inferred,F152; complete canonical cold exact/saved-this scalar policy; original owner and field declarations unknown
+0x00410FA0,SpriteSequenceParametersF154::SetSamplingMode,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
+0x00410FE0,SpriteSequenceParametersF154::SetColorMask,SpriteSequence,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
+0x00454BC0,FighterCommandSelection454BC0::SetCommandSelection,FighterState,inferred,F154; whole canonical cold exact/actual saved-this stores and call contracts; original names and full owners unknown
