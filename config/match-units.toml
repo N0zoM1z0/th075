@@ -24507,3 +24507,20 @@ relocations = [
   { offset = 0xFB, type = "REL32", symbol = "?erase@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AViterator@12@V312@@Z", target = 0x0045C0A0 },
   { offset = 0x116, type = "REL32", symbol = "??Eiterator@?$deque@PAVAdvancingEffectF137@@V?$allocator@PAVAdvancingEffectF137@@@std@@@std@@QAE?AV012@H@Z", target = 0x00445400 },
 ]
+
+[units."battle-animation-bind-0045b880"]
+source = "src/BattleAnimationBinding.cpp"
+object = "build/matching/BattleAnimationBinding.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["BattleAnimationBindingF139::BindAnimation"]
+symbol = "?BindAnimation@BattleAnimationBindingF139@@UAEXXZ"
+target_address = 0x0045B880
+size = 149
+compare_size = 149
+relocations = [
+  { offset = 0x21, type = "REL32", symbol = "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z", target = 0x004420B0 },
+  { offset = 0x28, type = "REL32", symbol = "?at@AnimationRowF139@@QAEAAVAnimationFrameF139@@I@Z", target = 0x00442060 },
+  { offset = 0x61, type = "REL32", symbol = "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z", target = 0x004420B0 },
+  { offset = 0x68, type = "REL32", symbol = "?size@AnimationRowF139@@QBEIXZ", target = 0x00442120 },
+  { offset = 0x85, type = "REL32", symbol = "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z", target = 0x004420B0 },
+]

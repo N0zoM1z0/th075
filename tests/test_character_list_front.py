@@ -1,4 +1,4 @@
-from exact_checkpoint import retained_bytes
+from exact_checkpoint import retained_bytes, historical_functions
 import copy
 import importlib.util
 import json
@@ -8,6 +8,15 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('character_front',ROOT/'scripts/verify-character-list-front-origins.py')
 V=importlib.util.module_from_spec(spec);spec.loader.exec_module(V)
+
+# Keep the frozen origin proof on its complete, approved pre-exact rows.
+_current_rows = V.rows
+
+def _historical_rows(name):
+    values = _current_rows(name)
+    return historical_functions(values) if name == 'functions.csv' else values
+
+V.rows = _historical_rows
 
 
 class CharacterListFrontTests(unittest.TestCase):

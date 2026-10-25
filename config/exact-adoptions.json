@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "8768a5dc0a6e8cef0ab479ff9b747118089ce5968afe7c0d41d874538a5ab8c4"
+      "current_sha256": "8fb6ea053bcbedf3a258cfd80b87c479c564e73e57ed697252d17e76c1938e90"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,27 +18,27 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "573a8114c55702d0693bd7244fe10121311ac98a533a297f474759143cc98a2c"
+      "current_sha256": "feb51a4db2d8b6becd758080d7ae6885589427d9e7d32bf05382c130d5d3ffc1"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "46431abde4b169ca8cd823f07b03fa059325ac5fe1f527418df9979c34a2905e"
+      "current_sha256": "8911676df899323cccc6c05abdf963bda9c352732d40eb68309f846901f29d26"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "c3da5899af788855688c52e50dc271da82e8bd6c3203a7beb1cef8146b98a5d7"
+      "current_sha256": "01d81db868a19a1e1d20df78bd1505e4931f15c3de93ce7b19eefb79dc03f830"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "ee275f1076accd10dd2f3de561db7715e12679d0ff921e531df92071bf3659f6"
+      "current_sha256": "2563f699c1ab220e30ed1a13347d7be3d77d23f32d984d7c1aaebab5d76d0c94"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
       "sha256": "ae53a63cddfe05681d7a67785e06f6ede5197b1f7a35032f56db00685232ea94",
-      "current_sha256": "a3c4fc53d8530a2cab87b8b8279135d5a01f7249d9a9d6bee17e9ca443fc2238"
+      "current_sha256": "26a87f541430a5ebc5b1ea1c6e928ac76fba48d7475c03776f6b7c918d8a378c"
     }
   },
   "functions": [
@@ -11876,6 +11876,50 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0045B880",
+        "size": "149",
+        "span_end": "0x0045B914",
+        "current_name": "FUN_0045b880",
+        "proposed_name": "BattleObject::BindAnimationAt0045B880",
+        "module": "BattleObject",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R222; config/virtual-frame-origin-evidence.json; scripts/repo-python scripts/verify-virtual-frame-origins.py",
+        "owner": "authored",
+        "notes": "Complete regular virtual policy composes original nested vector accesses and updates selected frame, copied record word, sequence count and cache fields. Complete game initialization supplies the lookup owner; actual callback tables, whole fighter peer and game counter/action dispatch establish independent context. Generic asset-view source remains an ordinary alternative; implicit construction does not select frames. Names, element types and private class/ABI remain provisional; no source/exact credit."
+      },
+      "after": {
+        "address": "0x0045B880",
+        "size": "149",
+        "span_end": "0x0045B914",
+        "current_name": "FUN_0045b880",
+        "proposed_name": "BattleAnimationBindingF139::BindAnimation",
+        "module": "BattleObject",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void BattleAnimationBindingF139::BindAnimation()",
+        "is_thunk": "false",
+        "source_file": "src/BattleAnimationBinding.cpp",
+        "evidence": "R222; config/virtual-frame-origin-evidence.json; scripts/repo-python scripts/verify-virtual-frame-origins.py; F139; scripts/repo-python scripts/replay-exact-units.py --unit battle-animation-bind-0045b880",
+        "owner": "authored",
+        "notes": "Complete regular virtual policy composes original nested vector accesses and updates selected frame, copied record word, sequence count and cache fields. Complete game initialization supplies the lookup owner; actual callback tables, whole fighter peer and game counter/action dispatch establish independent context. Generic asset-view source remains an ordinary alternative; implicit construction does not select frames. Names, element types and private class/ABI remain provisional; no source/exact credit.; F139: complete 149-byte canonical cold exact, 48 instructions, five direct call sites and all five real REL32 fields. Whole own CFG/stack path, four-byte frame/this at EBP-4, nested four-plus-four argument staging, plain RET and eleven following INT3 alignment bytes verified. R205 bounds-checked vector at and R032 size remain library/excluded. Pointer/reference-only row/table/frame interfaces retain selected-frame74, mirror8, raw copied word72 from frame+4, narrowed sequence count70 and selected-row78. No unknown frame record or owner is sized, instantiated, embedded or allocated; generic116-byte stride does not establish private fields. Native constructor0050A4E0 installs00659870, whose first entries are this callback and0050A580; only the observed virtual prefix and C4 lookup relation are established. The main private header now truthfully marks virtual slot1, with an uncalled slot0 label; original class identity and complete layouts remain unknown. Main virtual symbol/profileGS-off probes retain the previous 82109-byte/26719-difference failure; no main or constructor credit. Fifteen independent floating fixtures exclude tested double literals by incompatible readonly width, and tested integer/compound/prefix/postfix updates and redundant conversion by unchanged whole output. Six wrong binding/field/return controls rejected. All 329 prior units/133 canonical objects/205 inputs/218 origin files/nine headers/91 older drafts and frozen F131..F138 evidence remain unchanged; all 97 unknown origins remain included. No guessed arrays/padding/inert locals/ABI aliases/masks/rebased or shortened comparisons/assembly/pasted decompile/target byte arrays/conditional exact bodies. Names and original types remain provisional; R222 historical role preserved by alias."
+      },
+      "origin": {
+        "address": "0x0045B880",
+        "origin": "authored",
+        "subsystem": "BattleObject",
+        "disposition": "authored",
+        "confidence": "whole-virtual-frame-selection-and-independent-game-resource-receiver-dispatch-context",
+        "evidence_id": "R222"
       }
     }
   ],
@@ -139242,6 +139286,60 @@
           "target": 4477952
         }
       ]
+    },
+    "battle-animation-bind-0045b880": {
+      "source": "src/BattleAnimationBinding.cpp",
+      "object": "build/matching/BattleAnimationBinding.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "BattleAnimationBindingF139::BindAnimation"
+      ],
+      "symbol": "?BindAnimation@BattleAnimationBindingF139@@UAEXXZ",
+      "target_address": 4569216,
+      "size": 149,
+      "compare_size": 149,
+      "relocations": [
+        {
+          "offset": 33,
+          "type": "REL32",
+          "symbol": "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 40,
+          "type": "REL32",
+          "symbol": "?at@AnimationRowF139@@QAEAAVAnimationFrameF139@@I@Z",
+          "target": 4464736
+        },
+        {
+          "offset": 97,
+          "type": "REL32",
+          "symbol": "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z",
+          "target": 4464816
+        },
+        {
+          "offset": 104,
+          "type": "REL32",
+          "symbol": "?size@AnimationRowF139@@QBEIXZ",
+          "target": 4464928
+        },
+        {
+          "offset": 133,
+          "type": "REL32",
+          "symbol": "?at@AnimationRowsF139@@QAEAAPAVAnimationRowF139@@I@Z",
+          "target": 4464816
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -139449,6 +139547,8 @@
     "src/BattleEffectSpawner.hpp": "e182c18329a16e431cde26334322399708a9b4c3f0d8e796446ed895c0e99da0",
     "src/TransformRecordF136.hpp": "63c226c416bcee0037669d17d2a75615a09cda238003807569dda0c1767a7387",
     "src/BattleEffectAdvance.cpp": "a9952766422741ee4c30f05ad26174ec502da97e97f2c2dcab83eef23962a036",
-    "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0"
+    "src/BattleEffectAdvance.hpp": "014b6f77b3cf86d68f7f125765ca720e406a03326136c2a03dde5def1f3228f0",
+    "src/BattleAnimationBinding.cpp": "4fe0c7435331db89c5ac66f22446c9243594a50a625d42e1348ccc7cb0d0aaaa",
+    "src/BattleAnimationBinding.hpp": "e6de169dedfc283725216c33615c40e7d4a5cc62f947f6b69da3aea25619f52a"
   }
 }

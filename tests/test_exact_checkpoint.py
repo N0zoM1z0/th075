@@ -42,12 +42,13 @@ class ExactCheckpointTests(unittest.TestCase):
                 E.retained_bytes(path)
 
     def test_only_complete_function_pairs_can_be_projected(self):
-        item = E.plan()["functions"][0]
-        self.assertEqual(E.historical_functions([item["after"]]), [item["before"]])
-        bad = copy.deepcopy(item["after"])
-        bad["signature"] = "unapproved"
-        with self.assertRaises(ValueError):
-            E.historical_functions([bad])
+        changes = E.plan()["functions"]
+        for item in [changes[0], changes[-1]]:
+            self.assertEqual(E.historical_functions([item["after"]]), [item["before"]])
+            bad = copy.deepcopy(item["after"])
+            bad["signature"] = "unapproved"
+            with self.assertRaises(ValueError):
+                E.historical_functions([bad])
 
     def test_unrelated_rows_are_never_projected(self):
         row = {"address": "0x00401020", "calling_convention": "unapproved"}
@@ -55,7 +56,7 @@ class ExactCheckpointTests(unittest.TestCase):
 
     def test_unknown_origins_receive_no_adoption_credit(self):
         plan = E.plan()
-        self.assertEqual(len(plan["functions"]), 269)
+        self.assertEqual(len(plan["functions"]), 270)
         self.assertTrue(all(item["origin"]["disposition"] == "authored"
                             for item in plan["functions"]))
-        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 706885)
+        self.assertEqual(sum(unit["size"] for unit in plan["added_units"].values()), 707034)
