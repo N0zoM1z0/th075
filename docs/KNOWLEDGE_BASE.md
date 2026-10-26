@@ -7,6 +7,30 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 [RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
 policies; all complete large drafts, including0055AC80, remain unaccepted.
 
+## F182: name-entry input policies
+
+Both complete R04042AB90/722 and42BCD0/764 policies pass one canonical cold
+build:1,486 CODE bytes/all76 real fields (24 REL32/52 DIR32). Each native extent
+has one RET/33 branches/no tables and verified following INT3 alignment. Both
+first natural previews were exact. All24 calls reuse unchanged canonical input,
+window-mode and sound helpers; every actual nonzero global addend is retained.
+
+Separate natural source bodies keep one real int loop index, actual72-byte
+player spacing through existing held-count views, signed modulo6/+/-30 repeat
+logic, true short INC/DEC widths, reset/bounds and the shared policy's extra
+short toggle. No complete input owner or array of partial owners is invented.
+There is no new readonly literal/data/helper credit, padding, inert local or
+ABI workaround. All490 old units/164 objects/264 inputs/14 frozen active drafts
+and97 unknown origins remain unchanged. Totals:492 units/748,349 CODE bytes,
+165 canonical objects/266 inputs,37.85% conservatively including pending bytes.
+
+Immediately continue R04143A7A0/1089 title rendering: one RET/four branches/no
+owned tables, complete attested native/decompile evidence already retained.
+Review actual drawing receivers, packet132/RECT16/int loop slots, ten item/stripe
+transforms, alpha/highlight packing, SetRect import and40C860 contract. Separate
+428F00 owns a switch table;43AD10 is an unaccepted EH constructor with new
+allocations. Neither supplies fake owner layouts or permission to emit EH bytes.
+
 ## F181: measured camera-local allocation closes the timed sprite
 
 Complete R045451A00 now passes canonical cold replay:446 CODE bytes/all18

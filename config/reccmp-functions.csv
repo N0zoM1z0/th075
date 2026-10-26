@@ -489,3 +489,5 @@ BackgroundStage::AdvanceBG07aCycleAt004503E0,0x004503E0,function
 BackgroundStage::AdvanceBG08aCycleAt00450BD0,0x00450BD0,function
 BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0,0x0044E3A0,function
 FighterState::RenderTimedSprite,0x00451A00,function
+NameEntryScene::PollPlayerInput,0x0042AB90,function
+NameEntryScene::PollSharedInput,0x0042BCD0,function

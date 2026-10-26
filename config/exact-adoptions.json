@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181; F182",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "3d7d0325f1bd0a4f37b3cdf44cc47f705604a2571d704702807a634653e2f909"
+      "current_sha256": "5a44becae0d22101eec71a55344368e0a8ad80d2eb2717e8b8e1de97f1926a3c"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "6da3c166cda41f210eb81ac88c4459d0841f12d02bb5afa82e0201cd76a57947"
+      "current_sha256": "c32e4e7adb2aee6b5c3dd730e6586c6eb41f21ede99f072395f3d9c7522e2af0"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "2139901942b637e96f85552c9d1b0e92e8d9e7e1e11753ad1a9f61009ac56395"
+      "current_sha256": "d3e0728085f1cdb25fde8255101d663e8e95e7f8ccabcd699faadeb2fdb013d7"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "5bc7b6bc870d06ac2c2232b318f11c094bde1d7e29cd76a1666b141894db0906"
+      "current_sha256": "5c96eda0a04bb83a0b2cc9e362fd6343b81ccf42899f7e9bcee782f8764a2449"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "79d32b7e84ddb18d3e92ff3c2d27e8879d117a4ddc35bddedb358088b96c70b4"
+      "current_sha256": "46b377302cf3813c307281a85d47e711c8327979d3d8070d1ac085bbe21da843"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -18960,6 +18960,94 @@
         "disposition": "authored",
         "confidence": "target-observed",
         "evidence_id": "R045"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042AB90",
+        "size": "722",
+        "span_end": "0x0042AE61",
+        "current_name": "FUN_0042ab90",
+        "proposed_name": "NameEntryScene::PollPlayerInput",
+        "module": "NameEntryScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042AB90",
+        "size": "722",
+        "span_end": "0x0042AE61",
+        "current_name": "FUN_0042ab90",
+        "proposed_name": "NameEntryScene::PollPlayerInput",
+        "module": "NameEntryScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void NameEntryInputF182::PollPlayerInput()",
+        "is_thunk": "false",
+        "source_file": "src/NameEntryInputF182.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F182; scripts/repo-python scripts/replay-exact-units.py --unit name-entry-poll-player-0042ab90",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F182: Two full R040 name-entry policies722+764=1486 CODE/all76 actual fields(24REL32/52DIR32), each1plainRET/33internalbranches/no owned tables/excluded INT3 alignment independently checked. Natural separate bodies retain one real int loop index, two actual players at72-byte stride via existing held-count views, signed modulo6/+/-30 repeats, true short INC/DEC widths, bounds/reset and shared extra short toggle. All24 calls target unchanged canonical helpers; actual nonzero global addends retained. No complete scene/input owner instance or invented owner array. No inert locals/padding/ABI tricks/assembly/conditional bodies/masks/crops/aliases/rebasing. All490 old units/164 objects/264 inputs/14 frozen active drafts/97 unknown origins/full pending denominator preserved; only two new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0042AB90",
+        "origin": "authored",
+        "subsystem": "NameEntryScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
+      }
+    },
+    {
+      "before": {
+        "address": "0x0042BCD0",
+        "size": "764",
+        "span_end": "0x0042BFCB",
+        "current_name": "FUN_0042bcd0",
+        "proposed_name": "NameEntryScene::PollSharedInput",
+        "module": "NameEntryScene",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x0042BCD0",
+        "size": "764",
+        "span_end": "0x0042BFCB",
+        "current_name": "FUN_0042bcd0",
+        "proposed_name": "NameEntryScene::PollSharedInput",
+        "module": "NameEntryScene",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void NameEntryInputF182::PollSharedInput()",
+        "is_thunk": "false",
+        "source_file": "src/NameEntryInputF182.cpp",
+        "evidence": "R040; full body hash, complete decoded CFG and local game-specific behavior reviewed; F182; scripts/repo-python scripts/replay-exact-units.py --unit name-entry-poll-shared-0042bcd0",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F182: Two full R040 name-entry policies722+764=1486 CODE/all76 actual fields(24REL32/52DIR32), each1plainRET/33internalbranches/no owned tables/excluded INT3 alignment independently checked. Natural separate bodies retain one real int loop index, two actual players at72-byte stride via existing held-count views, signed modulo6/+/-30 repeats, true short INC/DEC widths, bounds/reset and shared extra short toggle. All24 calls target unchanged canonical helpers; actual nonzero global addends retained. No complete scene/input owner instance or invented owner array. No inert locals/padding/ABI tricks/assembly/conditional bodies/masks/crops/aliases/rebasing. All490 old units/164 objects/264 inputs/14 frozen active drafts/97 unknown origins/full pending denominator preserved; only two new units receive canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x0042BCD0",
+        "origin": "authored",
+        "subsystem": "NameEntryScene",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R040"
       }
     }
   ],
@@ -155222,6 +155310,508 @@
           "target": 4245488
         }
       ]
+    },
+    "name-entry-poll-player-0042ab90": {
+      "source": "src/NameEntryInputF182.cpp",
+      "object": "build/matching/NameEntryInputF182.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "NameEntryScene::PollPlayerInput"
+      ],
+      "symbol": "?PollPlayerInput@NameEntryInputF182@@QAEXXZ",
+      "target_address": 4369296,
+      "size": 722,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "?PollKeyboard@Input@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "?PollJoysticks@Input@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671680@@3VInputMapping4388D0@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 88,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+          "target": 4200608
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 180,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 196,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 226,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 241,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 266,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 277,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 282,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 312,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 327,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 352,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 363,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 368,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 398,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 413,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 438,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 449,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 454,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 484,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 516,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 525,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 545,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 554,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        }
+      ]
+    },
+    "name-entry-poll-shared-0042bcd0": {
+      "source": "src/NameEntryInputF182.cpp",
+      "object": "build/matching/NameEntryInputF182.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "NameEntryScene::PollSharedInput"
+      ],
+      "symbol": "?PollSharedInput@NameEntryInputF182@@QAEXXZ",
+      "target_address": 4373712,
+      "size": 764,
+      "relocations": [
+        {
+          "offset": 10,
+          "type": "REL32",
+          "symbol": "?PollKeyboard@Input@@YAXXZ",
+          "target": 4210256
+        },
+        {
+          "offset": 15,
+          "type": "REL32",
+          "symbol": "?PollJoysticks@Input@@YAXXZ",
+          "target": 4210496
+        },
+        {
+          "offset": 20,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 25,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 30,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671680@@3VInputMapping4388D0@@A",
+          "target": 6755968
+        },
+        {
+          "offset": 35,
+          "type": "REL32",
+          "symbol": "?UpdateHeldCounts@InputMapping4388D0@@QAEXXZ",
+          "target": 4222592
+        },
+        {
+          "offset": 42,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 47,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 61,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 66,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 83,
+          "type": "DIR32",
+          "symbol": "?g_InputMappingAt00671638@@3VInputMapping4388D0@@A",
+          "target": 6755896
+        },
+        {
+          "offset": 88,
+          "type": "REL32",
+          "symbol": "?IsKeyDown@InputMapping4388D0@@QAE_NE@Z",
+          "target": 4223344
+        },
+        {
+          "offset": 100,
+          "type": "REL32",
+          "symbol": "?ToggleWindowMode@Graphics@@YAXXZ",
+          "target": 4200608
+        },
+        {
+          "offset": 140,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 155,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 180,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 191,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 196,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 247,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 262,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 287,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 298,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 303,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 354,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 369,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 394,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 405,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 410,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 440,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 455,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 480,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 491,
+          "type": "DIR32",
+          "symbol": "?g_SoundBank@@3PAVSoundBank@@A",
+          "target": 6755864
+        },
+        {
+          "offset": 496,
+          "type": "REL32",
+          "symbol": "?Play@SoundBank@@QAEXH@Z",
+          "target": 4225472
+        },
+        {
+          "offset": 526,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 558,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 567,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        },
+        {
+          "offset": 587,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt00671664@@3UHeldInputBlock4388D0@@A",
+          "target": 6755940
+        },
+        {
+          "offset": 596,
+          "type": "DIR32",
+          "symbol": "?g_HeldInputAt006716AC@@3UHeldInputBlock4388D0@@A",
+          "target": 6756012
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -155488,6 +156078,8 @@
     "src/BackgroundCountersF180.cpp": "5a7e31712872aa7cf308283eeffaac689b7a75cf71bcd4ce459b94120e1c1580",
     "src/BackgroundCountersF180.hpp": "0a23a71a99de83b69fcb444e930a1c66c42ecbe9464e4b484aaccdbbc7913bf4",
     "src/TimedSpriteF181.cpp": "20d4cb93afc5e81121f841db0fafb0247020845fc5f4b16dc75344b511dc5591",
-    "src/TimedSpriteF181.hpp": "2bac4a6ace5d47cfed548587307039fc2fd7c07de804f4496e2ac04de7406092"
+    "src/TimedSpriteF181.hpp": "2bac4a6ace5d47cfed548587307039fc2fd7c07de804f4496e2ac04de7406092",
+    "src/NameEntryInputF182.cpp": "bc2d84b4828ca39601095b9f09274b7ab3aadd3eb2a2a1c9834cb88d31b5015f",
+    "src/NameEntryInputF182.hpp": "d961bb8f0c3aea5b6361d7c5230b127f1eb3fba14f61286c99c404033ae6634e"
   }
 }
