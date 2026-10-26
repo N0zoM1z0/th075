@@ -30290,3 +30290,102 @@ symbol = "?AdvanceAt0044E3A0@BackgroundCountersF180@@QAEXXZ"
 target_address = 0x0044E3A0
 size = 45
 relocations = []
+
+[units.fighter-render-timed-sprite-00451a00]
+source = "src/TimedSpriteF181.cpp"
+object = "build/matching/TimedSpriteF181.obj"
+profile = ["/Od", "/Ob0", "/Gy", "/GR-", "/GX-", "/GS", "/Zi", "/I", "src"]
+functions = ["FighterState::RenderTimedSprite"]
+symbol = "?RenderTimedSprite@TimedSpriteF181@@QAEXXZ"
+target_address = 0x00451A00
+size = 446
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 17
+type = "DIR32"
+symbol = "?g_CombatViewOffsetX@@3MA"
+target = 0x00671404
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 23
+type = "DIR32"
+symbol = "__real@43200000"
+target = 0x00657834
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 28
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 40
+type = "DIR32"
+symbol = "?g_CombatViewOffsetY@@3MA"
+target = 0x006713C4
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 45
+type = "REL32"
+symbol = "__ftol2"
+target = 0x006406AC
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 87
+type = "REL32"
+symbol = "??0SpriteQuad40CA80@@QAE@XZ"
+target = 0x0040D990
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 209
+type = "DIR32"
+symbol = "__real@3c8efa33"
+target = 0x00657828
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 215
+type = "DIR32"
+symbol = "__real@3f40624dd2f1a9fc"
+target = 0x00658D58
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 226
+type = "REL32"
+symbol = "_sin"
+target = 0x00641804
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 235
+type = "DIR32"
+symbol = "__real@4028000000000000"
+target = 0x00658D50
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 241
+type = "DIR32"
+symbol = "__real@3fb999999999999a"
+target = 0x006584C8
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 276
+type = "REL32"
+symbol = "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z"
+target = 0x004115C0
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 345
+type = "REL32"
+symbol = "?TranslateQuad@SpriteTransform@@QAEXMMM@Z"
+target = 0x00411500
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 361
+type = "REL32"
+symbol = "?SetDepthMode@TimedSpriteDrawingF181@@QAEXH@Z"
+target = 0x0040C840
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 377
+type = "REL32"
+symbol = "?SetDepthMode@TimedSpriteDrawingF181@@QAEXH@Z"
+target = 0x0040C840
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 393
+type = "REL32"
+symbol = "?SetBlendMode@TimedSpriteDrawingF181@@QAEXH@Z"
+target = 0x0040C7F0
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 422
+type = "REL32"
+symbol = "?DrawQuad@TimedSpriteDrawingF181@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z"
+target = 0x0040C9A0
+[[units.fighter-render-timed-sprite-00451a00.relocations]]
+offset = 438
+type = "REL32"
+symbol = "?SetBlendMode@TimedSpriteDrawingF181@@QAEXH@Z"
+target = 0x0040C7F0

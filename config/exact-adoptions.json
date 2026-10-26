@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "checkpoint": "a57b43e",
-  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180",
+  "batch": "F010-F020; F022-F047; F049-F060; F062-F065; F067-F084; F086-F131; F135-F137; F139; F146; F152; F154; F155; F156; F158; F159; F160; F161; F162; F163; F164; F165; F167; F168; F169; F170; F171; F172; F173; F174; F175; F176; F177; F178; F179; F180; F181",
   "baseline_exact_functions": 60,
   "baseline_exact_bytes": 9883,
   "files": {
     "config/implemented.csv": {
       "size": 1692,
       "sha256": "db893a24e6cb5c3d2bda66c51cc870c1bf1fbd021e0f3da4fc3b752eb230a7e1",
-      "current_sha256": "73f0a2f1afcfba1f7dca3d27e21bba1b74b929b1c3186bd40424e14c41392ab0"
+      "current_sha256": "3d7d0325f1bd0a4f37b3cdf44cc47f705604a2571d704702807a634653e2f909"
     },
     "config/known-globals.csv": {
       "size": 8096,
@@ -18,22 +18,22 @@
     "config/known-symbols.csv": {
       "size": 5783,
       "sha256": "3a1dd41584347de7a706e331087ae50673e9548aa6e62fddbabde79aa01eccee",
-      "current_sha256": "ae1273b24d3c168cfdc901c5f118a460c95ab37d12257386f9fd26b5840a760f"
+      "current_sha256": "6da3c166cda41f210eb81ac88c4459d0841f12d02bb5afa82e0201cd76a57947"
     },
     "config/match-units.toml": {
       "size": 79348,
       "sha256": "8b51dbeda519edaa1c2ccfb9b6f5767646366d18eacad37c5c328ef5d943eae6",
-      "current_sha256": "32e99173b3a21470a615c54a3455d37dab9ccc031a3aef858569f47a32b6111a"
+      "current_sha256": "2139901942b637e96f85552c9d1b0e92e8d9e7e1e11753ad1a9f61009ac56395"
     },
     "config/matches.csv": {
       "size": 11363,
       "sha256": "75ef9958a177182b1344a1af1fc6cee04a01b279e576a81c1f5161f761a4d74c",
-      "current_sha256": "917b407a97f4fdd98a12459cea693450edfd6ed000cd56a6753b596aad989e56"
+      "current_sha256": "5bc7b6bc870d06ac2c2232b318f11c094bde1d7e29cd76a1666b141894db0906"
     },
     "config/reccmp-functions.csv": {
       "size": 2910,
       "sha256": "33ee831b4c7124dfcd0fec5c91305c3deffb1767cba23e17688f67836cb42ea7",
-      "current_sha256": "33b5cace87a17de0ee2580b727c163da341efefd006912000493fd34fbe59939"
+      "current_sha256": "79d32b7e84ddb18d3e92ff3c2d27e8879d117a4ddc35bddedb358088b96c70b4"
     },
     "config/authored-origin-name-aliases.csv": {
       "size": 2202,
@@ -18916,6 +18916,50 @@
         "disposition": "authored",
         "confidence": "whole-background-cycle-policy-and-independent-asset-callback-render-provenance",
         "evidence_id": "R232"
+      }
+    },
+    {
+      "before": {
+        "address": "0x00451A00",
+        "size": "446",
+        "span_end": "0x00451BBD",
+        "current_name": "FUN_00451a00",
+        "proposed_name": "FighterState::RenderTimedSprite",
+        "module": "FighterState",
+        "status": "unclassified",
+        "match_percent": "0.00",
+        "calling_convention": "",
+        "signature": "",
+        "is_thunk": "false",
+        "source_file": "",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent"
+      },
+      "after": {
+        "address": "0x00451A00",
+        "size": "446",
+        "span_end": "0x00451BBD",
+        "current_name": "FUN_00451a00",
+        "proposed_name": "FighterState::RenderTimedSprite",
+        "module": "FighterState",
+        "status": "matching",
+        "match_percent": "100.00",
+        "calling_convention": "thiscall",
+        "signature": "void TimedSpriteF181::RenderTimedSprite()",
+        "is_thunk": "false",
+        "source_file": "src/TimedSpriteF181.cpp",
+        "evidence": "R045; full body hash, complete decoded CFG and local game-specific behavior reviewed; F181; scripts/repo-python scripts/replay-exact-units.py --unit fighter-render-timed-sprite-00451a00",
+        "owner": "authored",
+        "notes": "Origin reviewed; role inferred; source and exact state remain independent; F181: Whole R045451A00 render446 CODE/all18 actual fields, 1 plain RET/no branches/no owned tables/2 following INT3 bytes. Known complete132-byte packet/SDK RECT16/two real integer camera values; all coordinates/vector stores/sin double expression and float narrowing preserved. Only meaningful cameraX bucket9 to cameraHorizontal bucket12 changes real horizontal value allocation; frameB4/this-A8/x-A4 now match. Old same-bucket name control remains closed; frozen F176 source/object unchanged. All5 complete readonly sections/32 bytes/all definitions independently match. No extra local/array/padding/ABI/precision/volatile tricks or partial owner instances; no masks/crops/aliases/rebasing/conditional bodies. All489 old units/163 objects/262 inputs/14 active drafts/97 unknown origins/full pending denominator preserved; only new unit receives canonical cold acceptance."
+      },
+      "origin": {
+        "address": "0x00451A00",
+        "origin": "authored",
+        "subsystem": "FighterState",
+        "disposition": "authored",
+        "confidence": "target-observed",
+        "evidence_id": "R045"
       }
     }
   ],
@@ -155047,6 +155091,137 @@
       "target_address": 4514720,
       "size": 45,
       "relocations": []
+    },
+    "fighter-render-timed-sprite-00451a00": {
+      "source": "src/TimedSpriteF181.cpp",
+      "object": "build/matching/TimedSpriteF181.obj",
+      "profile": [
+        "/Od",
+        "/Ob0",
+        "/Gy",
+        "/GR-",
+        "/GX-",
+        "/GS",
+        "/Zi",
+        "/I",
+        "src"
+      ],
+      "functions": [
+        "FighterState::RenderTimedSprite"
+      ],
+      "symbol": "?RenderTimedSprite@TimedSpriteF181@@QAEXXZ",
+      "target_address": 4528640,
+      "size": 446,
+      "relocations": [
+        {
+          "offset": 17,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetX@@3MA",
+          "target": 6755332
+        },
+        {
+          "offset": 23,
+          "type": "DIR32",
+          "symbol": "__real@43200000",
+          "target": 6649908
+        },
+        {
+          "offset": 28,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 40,
+          "type": "DIR32",
+          "symbol": "?g_CombatViewOffsetY@@3MA",
+          "target": 6755268
+        },
+        {
+          "offset": 45,
+          "type": "REL32",
+          "symbol": "__ftol2",
+          "target": 6555308
+        },
+        {
+          "offset": 87,
+          "type": "REL32",
+          "symbol": "??0SpriteQuad40CA80@@QAE@XZ",
+          "target": 4250000
+        },
+        {
+          "offset": 209,
+          "type": "DIR32",
+          "symbol": "__real@3c8efa33",
+          "target": 6649896
+        },
+        {
+          "offset": 215,
+          "type": "DIR32",
+          "symbol": "__real@3f40624dd2f1a9fc",
+          "target": 6655320
+        },
+        {
+          "offset": 226,
+          "type": "REL32",
+          "symbol": "_sin",
+          "target": 6559748
+        },
+        {
+          "offset": 235,
+          "type": "DIR32",
+          "symbol": "__real@4028000000000000",
+          "target": 6655312
+        },
+        {
+          "offset": 241,
+          "type": "DIR32",
+          "symbol": "__real@3fb999999999999a",
+          "target": 6653128
+        },
+        {
+          "offset": 276,
+          "type": "REL32",
+          "symbol": "?ScaleQuad@SpriteTransform@@QAEXMMMMMM@Z",
+          "target": 4265408
+        },
+        {
+          "offset": 345,
+          "type": "REL32",
+          "symbol": "?TranslateQuad@SpriteTransform@@QAEXMMM@Z",
+          "target": 4265216
+        },
+        {
+          "offset": 361,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimedSpriteDrawingF181@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 377,
+          "type": "REL32",
+          "symbol": "?SetDepthMode@TimedSpriteDrawingF181@@QAEXH@Z",
+          "target": 4245568
+        },
+        {
+          "offset": 393,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimedSpriteDrawingF181@@QAEXH@Z",
+          "target": 4245488
+        },
+        {
+          "offset": 422,
+          "type": "REL32",
+          "symbol": "?DrawQuad@TimedSpriteDrawingF181@@QAEXHABVSpriteQuad40CA80@@PBUtagRECT@@K@Z",
+          "target": 4245920
+        },
+        {
+          "offset": 438,
+          "type": "REL32",
+          "symbol": "?SetBlendMode@TimedSpriteDrawingF181@@QAEXH@Z",
+          "target": 4245488
+        }
+      ]
     }
   },
   "source_sha256": {
@@ -155311,6 +155486,8 @@
     "src/RenderBackgroundF179.cpp": "1c56d74e4e69c07fbdf91ab0d77e159a330a36cc874aec756c8382d5f20d8bad",
     "src/RenderBackgroundF179.hpp": "c8555b5ba8ec256188bc286d5def36885ffc672b09bd48df22ff7fdab5a5ea33",
     "src/BackgroundCountersF180.cpp": "5a7e31712872aa7cf308283eeffaac689b7a75cf71bcd4ce459b94120e1c1580",
-    "src/BackgroundCountersF180.hpp": "0a23a71a99de83b69fcb444e930a1c66c42ecbe9464e4b484aaccdbbc7913bf4"
+    "src/BackgroundCountersF180.hpp": "0a23a71a99de83b69fcb444e930a1c66c42ecbe9464e4b484aaccdbbc7913bf4",
+    "src/TimedSpriteF181.cpp": "20d4cb93afc5e81121f841db0fafb0247020845fc5f4b16dc75344b511dc5591",
+    "src/TimedSpriteF181.hpp": "2bac4a6ace5d47cfed548587307039fc2fd7c07de804f4496e2ac04de7406092"
   }
 }

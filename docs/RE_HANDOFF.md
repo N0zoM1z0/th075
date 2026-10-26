@@ -1,16 +1,17 @@
 # TH075 function reconstruction handoff
 
-Updated 2026-10-26 for continued reconstruction, F180.
+Updated 2026-10-26 for continued reconstruction, F181.
 **The 98% authored-byte goal is active and incomplete. Do not pause it.**
 The user explicitly confirmed continuation and prohibited pausing. The earlier
 pause was an agent error caused by treating stale handoff instructions as a
 current stop request. Cleanup, documentation, verification and commits do not
 suspend reconstruction or require another resume request. Subsequent project
-phases remain deferred. F180 accepts11 complete background callbacks.
+phases remain deferred. F181 accepts the complete timed-sprite renderer.
+F180 accepted11 complete background callbacks.
 F179 accepted the complete background renderer.
 F178 accepted54 complete background policies.
 F170 accepted the R045 opponent gauge policy; the full0055AC80 draft is unaccepted.
-The complete large drafts remain unaccepted. Current F180 outcomes supersede historical
+The complete large drafts remain unaccepted. Current F181 outcomes supersede historical
 pending-work instructions.
 
 ## Continuation command
@@ -46,14 +47,14 @@ it as part of this active goal. A successor must resume that action directly.
 | Provisional candidates | 4,351 |
 | Reviewed authored / library / compiler | 1,002 / 2,671 / 581 |
 | Unknown origins | 97 / 3,608 code bytes |
-| Source-present / exact functions / exact units | 489 / 489 / 489 |
-| Exact code bytes | 746,417 |
-| Reviewed authored coverage | 746,417 / 1,973,516 (37.82%) |
-| Conservative coverage, including pending bytes | 746,417 / 1,977,124 (37.75%) |
-| Canonical objects / accepted source-header inputs | 163 / 262 |
+| Source-present / exact functions / exact units | 490 / 490 / 490 |
+| Exact code bytes | 746,863 |
+| Reviewed authored coverage | 746,863 / 1,973,516 (37.84%) |
+| Conservative coverage, including pending bytes | 746,863 / 1,977,124 (37.78%) |
+| Canonical objects / accepted source-header inputs | 164 / 264 |
 
 The ledgers and status script are authoritative. The adoption manifest retains
-F009 plus 429 additions / 736,534 code bytes / 262 inputs. Origin evidence through
+F009 plus 430 additions / 736,980 code bytes / 264 inputs. Origin evidence through
 R268 is intact. Every pending code byte remains in the conservative denominator.
 CODE `size` determines credit; full `compare_size` also includes owned tables.
 
@@ -62,7 +63,8 @@ Only use the supplied Japanese th075.exe 1.11, SHA-256
 Identity is pinned to the user's archive, without independent official
 provenance corroboration. Never substitute th075c.exe or patch target bytes.
 
-The preceding reconstruction checkpoint is **2a697d8 (F179)**, preceded by
+The preceding reconstruction checkpoint is **4ecb7fb (F180)**, preceded by
+**2a697d8 (F179)** and
 **d865998 (F178)** and
 **08933b7 (F177)** and
 **8bd1677 (F176)** and
@@ -114,7 +116,75 @@ replay, 72/72 bytes with zero differences, across one new object. Both have no
 actual relocations. Names and complete owner layout remain provisional.
 F146's 51-byte motion helper remains accepted. The large drafts earn no credit.
 
-## Current F180 outcomes and continuation
+## Current F181 outcomes and continuation
+
+One new canonical object accepts the complete R045 timed-sprite renderer in
+`src/TimedSpriteF181.cpp` and its call-only header. Unit
+`fighter-render-timed-sprite-00451a00` cold-compares all446 CODE bytes and all18
+actual relocation fields. The full native extent has one plain RET, no branches
+or owned tables and two following INT3 bytes. Its frozen R045 body hash/full
+F176 native evidence and fresh attested decompile independently anchor the
+complete comparison. Only this new unit was cold-replayed.
+
+The source retains the complete132-byte sprite packet, SDK RECT16 and two real
+integer camera values. Only the horizontal-camera local's meaningful name
+changes its allocation: measured cameraX bucket9 to cameraHorizontal bucket12.
+CodeView now reports this-A8, cameraHorizontal-A4, quad-A0, y-14 and rectangle-10,
+matching native frameB4. Both long horizontal-local accesses explain the old
+six-byte size deficit; every emitted byte and field now matches without extra
+storage, scope, type, layout, operation, math, volatility or ABI changes.
+The old x-to-cameraX same-bucket control remains closed. Frozen F176 source,
+header, object and metadata remain unchanged and retained.
+
+All vector stores, rectangle bounds, canonical depth/blend/draw calls, sine
+argument and double expression, real float narrowing and translated coordinates
+are preserved. All five entire readonly sections/32 bytes and every definition
+match in preview and fresh canonical output. A call-only receiver does not
+recover a complete owner or original class name; no partial owner is constructed
+or embedded. No fake locals/padding, assembly, conditional body, masks, crops,
+aliases or local-label rebasing. All489 prior units/163 objects/262 inputs,
+14 frozen active drafts, all fourteen F157 probes/both F159 traces, forty
+protected groups and97 unknown origins remain unchanged. Every pending byte
+stays in the conservative denominator.
+
+Immediately continue full R040 name-entry input policies42AB90/722 and
+42BCD0/764,1,486 CODE bytes. The attested decompile and independent native proof
+are `.analysis/f182-name-entry.c`, `-ghidra.log`, `-native-proof.json` and
+`-native.asm`. Each extent has one RET/33 internal branches/no owned tables;
+all24 call sites already target canonical input, window-mode and sound helpers.
+Reuse existing held-count globals and actual72-byte player spacing without
+embedding a partial input owner. Preserve signed repeat/modulo6 logic, native
+short update widths, row/column bounds, reset command and shared policy's
+extra short toggle. Write natural separate bodies, then compare full extents/
+actual relocations before cold replay. Continue this action immediately after
+checkpoint/cleanup/commit/push; no pause or additional resume request.
+
+Receipts: `.analysis/f181-timed-sprite-unit-proof.json`,
+`.analysis/f181-timed-sprite-canonical-replay.json`,
+`.analysis/f181-canonical-readonly.json`, frozen F176 evidence and the complete
+new source/profile/CodeView/name control under `.analysis/f181-timed-sprite/`.
+
+Public CI passed **3,612 tests in 214.654 seconds**. Target,
+tracking, progress and diff checks pass. One new unit/one fresh canonical object
+was cold-replayed:446 full CODE bytes/all18 actual fields. Five whole readonly
+sections/32 bytes and every definition also match. All489 prior units/163
+canonical objects/262 inputs, old headers/origins/verifiers, forty protected
+groups and14 frozen active drafts/all14 F157 probes/both F159 traces were
+hash-verified unchanged, including the retained F176 source/header/object.
+Two compiler invocations ran serially and explicitly headless: one measured
+name-control preview and one new canonical cold build. No old accepted unit
+or large-function control was rebuilt. Cleanup removed one obsolete preview
+(10,932 bytes),0 PDBs
+(0 bytes) and377 bytecode files
+(8,312,389 bytes), retaining complete sections/symbols/
+fields/source/header/profile evidence. Receipts: `.analysis/f181-object-retention.json`,
+`.analysis/f181-cleanup.json`, `.analysis/f181-preservation-final.json` and
+`.analysis/f181-source-checkpoint.json`. The next two name-entry policies already
+have complete native CFG/callee proofs and attested headless decompiles.
+Execute their natural source/full comparison immediately after commit/push.
+The98% goal stays active and incomplete, without pause.
+
+## Retained F180 outcomes and continuation
 
 One new canonical object accepts11 complete R220/R230/R232 callbacks in
 `src/BackgroundCountersF180.cpp` and its call-only header: four26-byte ordinary

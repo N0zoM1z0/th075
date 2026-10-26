@@ -7,6 +7,30 @@ earlier cleared-goal instructions are superseded. Continue the pending work in
 [RE_HANDOFF.md](RE_HANDOFF.md). F178 accepts54 complete background
 policies; all complete large drafts, including0055AC80, remain unaccepted.
 
+## F181: measured camera-local allocation closes the timed sprite
+
+Complete R045451A00 now passes canonical cold replay:446 CODE bytes/all18
+actual fields, one plain RET/no branches/no owned tables/two excluded INT3
+bytes. Source remains the known complete132-byte packet/SDK RECT16/two actual
+integer camera values. Measured cameraHorizontal bucket12 places the real X
+value at-A4; cameraX and original x share bucket9 and their old control was
+unchanged. CodeView confirms this-A8/quad-A0/y-14/rectangle-10 and frameB4.
+The two long X accesses account for the old440-versus446 size deficit. No extra
+local, padding, scope, type, operation, layout, math, volatility or ABI change
+was needed. Frozen F176 source/header/object and every prior receipt are intact.
+
+The entire five readonly float/double sections/32 bytes and every definition
+match fresh canonical output. Vector coordinates, sine double argument/math,
+float narrowing, camera translation and depth/blend/draw operations are retained.
+No partial owner instance or complete owner identity is claimed. All489 prior
+units/163 objects/262 inputs/14 frozen active drafts and97 unknown origins stay
+unchanged. Totals:490 exact units/746,863 CODE bytes,164 canonical objects/
+264 inputs,37.78% conservatively including pending bytes. Continue the full
+R04042AB90/722 and42BCD0/764 name-entry input policies immediately. Their own
+complete native extents each have one RET/33 branches/no tables; all24 call
+sites already target canonical helpers. Preserve actual72-byte player spacing,
+signed repeats/modulo, short updates, bounds/reset and the extra shared toggle.
+
 ## F180: background counters and cycles
 
 Eleven complete R220/R230/R232 callbacks now pass one canonical cold build:

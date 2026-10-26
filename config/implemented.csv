@@ -487,3 +487,4 @@ BackgroundStage::AdvanceBG04aCycleAt0044D5E0
 BackgroundStage::AdvanceBG07aCycleAt004503E0
 BackgroundStage::AdvanceBG08aCycleAt00450BD0
 BackgroundStage::AdvanceBG05aReverseCycleAt0044E3A0
+FighterState::RenderTimedSprite
