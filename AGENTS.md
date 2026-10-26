@@ -2,22 +2,17 @@
 
 Current scope is function reconstruction and reproducible function-level byte
 comparison. The user explicitly deferred subsequent project phases.
-The user confirmed on 2026-10-25 that reconstruction must continue toward
-98% authored-byte exact and explicitly prohibited pausing the active goal.
-Do not pause the goal. Cleanup, documentation, handoff, verification and bounded
-commits do not suspend reconstruction. Historical statements that the goal was
-cleared or that resumption needs another request are superseded by this rule.
-Every handoff or continuation prompt must carry this active-goal instruction
-forward. A context switch is not a pause request; continue without waiting for
-confirmation. Only a new explicit user request to pause can authorize pausing.
-The user reiterated this on 2026-10-26: change the handoff command and do not
-pause. After a checkpoint, cleanup, commit, push or handoff, immediately execute
-the next reconstruction task. A finished bounded cohort is not a stop request.
-Each checkpoint must name the next concrete action and execute it within the
-active goal; a successor resumes that action directly.
-Continue the current cohort in `docs/RE_HANDOFF.md`. Frequent
-commits and pushes remain authorized. Use the existing Ghidra wrapper and
-local tools; do not use REA.
+The latest 2026-10-26 instruction cleared the active goal and requested cleanup,
+documentation and handoff. No goal is active at this checkpoint; the assistant
+did not pause it. The 98% authored-byte exact objective remains incomplete.
+Do not start another reconstruction batch during this requested handoff.
+A successor asked to resume reconstruction should use the prepared F184 cohort
+in `docs/RE_HANDOFF.md` and the private H184 resumption seed. Historical active-
+goal commands are superseded by this explicit cleared-goal checkpoint.
+Do not automatically pause a future active goal: cleanup, verification, commits
+and context handoff alone are not pause requests. Follow the user's current
+instruction and goal state. Frequent commits and pushes remain authorized.
+Use the existing Ghidra wrapper and local tools; do not use REA.
 Preserve all accepted exact units and origin evidence through R268. The 97
 unresolved origins remain unknown; they do not block reconstruction of
 independently reviewed authored functions. Include all pending bytes in the conservative goal denominator.

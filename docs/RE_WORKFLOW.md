@@ -23,15 +23,14 @@ compiler-generated, and library code separately. Consult `function-origins.csv`
 and `ORIGIN_REVIEW.md` for the current reviewed set; an imported name is not
 origin evidence. Record a durable origin batch before attempting exact credit.
 
-The user confirmed on 2026-10-25 that the 98% authored-byte objective remains
-active and explicitly prohibited pausing it. Do not pause the goal. Continue
-the current cohort and reviewed dependencies in `RE_HANDOFF.md`. Cleanup, handoff,
-verification and commits are part of ongoing reconstruction and do not require
-another resume request. Earlier cleared-goal instructions are superseded.
-The 2026-10-26 user instruction explicitly requires the handoff command to
-continue execution: after each checkpoint, cleanup, commit, push or handoff,
-immediately start the next reconstruction task. If one candidate stalls, retain
-its evidence and continue another independently reviewed authored candidate.
+The latest 2026-10-26 instruction cleared the active goal and requested cleanup
+and handoff. This checkpoint has no active goal; no pause action was taken.
+The 98% objective remains incomplete. During this requested handoff, preserve
+and verify the current state without starting another reconstruction batch.
+When reconstruction is requested again, use the current cohort and private
+resumption seed in `RE_HANDOFF.md`. Older active-goal continuation commands
+are historical. Do not automatically pause a future active goal merely because
+cleanup, verification, a commit or a context handoff is complete.
 Preserve all 97 pending origins and count every pending byte in the
 conservative denominator. Use existing Ghidra/local tools without REA and
 commit subjects `gpt-6.1-sol: ...`. Cold-build only new or affected units;
@@ -65,7 +64,10 @@ Form an ABI and behavior hypothesis, then write a small natural C++ probe below
 `.analysis/probes/`. Compiler flags must be explicit:
 
 ```bash
-scripts/compile-probe.sh .analysis/probes/example.cpp build/probes/example.obj /Od /Zi
+env -u DISPLAY -u WAYLAND_DISPLAY \
+  WINEDLLOVERRIDES='winex11.drv,winewayland.drv,winemac.drv=d;winemenubuilder.exe=d' \
+  WINEPREFIX="$PWD/.analysis/vc71-wine" \
+  scripts/compile-probe.sh .analysis/probes/example.cpp build/probes/example.obj /Od /Zi
 scripts/repo-python scripts/compare-coff-function.py build/probes/example.obj SYMBOL ADDRESS SIZE --json
 ```
 
